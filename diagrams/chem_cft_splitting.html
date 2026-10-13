@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; position: relative; background: #fff; padding-bottom: 4px; }
+  .title { text-align: center; font-size: 24px; font-weight: 800; color: #071A4D; padding-top: 20px; }
+  .subtitle { text-align: center; font-size: 14px; color: #5A6478; margin-top: 4px; }
+  .row { display: flex; gap: 26px; justify-content: center; margin-top: 16px; padding: 0 30px; }
+  .panel { width: 690px; background: #FCFDFF; border: 1.5px solid #D5DCEA; border-radius: 14px; padding: 13px 16px; }
+  .panel h2 { font-size: 18px; font-weight: 800; text-align: center; margin-bottom: 6px; padding-bottom: 5px; border-bottom: 3px solid; }
+  .weak h2 { color: #B4380F; border-color: #D2481F; }
+  .strong h2 { color: #4E7A00; border-color: #7FB800; }
+  .panel p { font-size: 13.5px; color: #1B2333; line-height: 1.42; margin: 5px 0; }
+  .panel p b { color: #071A4D; }
+  .series { margin: 16px 30px 14px; background: #FFFBEA; border: 1.5px solid #C9A20C; border-radius: 12px; padding: 11px 16px; }
+  .series h3 { font-size: 16px; color: #9A7B07; font-weight: 800; margin-bottom: 5px; }
+  .series p { font-size: 14.5px; color: #5B4A05; line-height: 1.5; font-weight: 600; }
+  .series p b { color: #9A7B07; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="title">CRYSTAL FIELD SPLITTING IN AN OCTAHEDRAL COMPLEX — THE d ORBITALS BREAK RANKS</div>
+  <div class="subtitle">Six ligands approach along the axes: orbitals pointing AT ligands (e&#8322;g) rise, orbitals between them (t&#8322;g) sink. The gap is &#916;&#8320;.</div>
+
+  <div class="row">
+    <div class="panel weak">
+      <h2>WEAK-FIELD LIGAND (e.g. F&#8315;) &#8594; HIGH SPIN</h2>
+      <svg width="650" height="270" viewBox="0 0 650 270">
+        <line x1="30" y1="60" x2="620" y2="60" stroke="#B4380F" stroke-width="2"/>
+        <text x="24" y="46" font-size="13" fill="#B4380F" font-weight="700">e&#8322;g</text>
+        <!-- two eg orbitals -->
+        <rect x="120" y="66" width="150" height="5" fill="#071A4D"/>
+        <rect x="360" y="66" width="150" height="5" fill="#071A4D"/>
+        <text x="130" y="92" font-size="20" fill="#071A4D">&#8593;&#8595;</text>
+        <text x="370" y="92" font-size="20" fill="#071A4D">&#8593;&#8595;</text>
+        <!-- gap arrow -->
+        <line x1="580" y1="66" x2="580" y2="180" stroke="#D2481F" stroke-width="2"/>
+        <polygon points="575,74 580,64 585,74" fill="#D2481F"/>
+        <polygon points="575,172 580,182 585,172" fill="#D2481F"/>
+        <text x="560" y="128" font-size="14" fill="#B4380F" font-weight="800" text-anchor="end">&#916;&#8320; small</text>
+        <!-- t2g -->
+        <line x1="30" y1="180" x2="620" y2="180" stroke="#B4380F" stroke-width="2"/>
+        <text x="24" y="166" font-size="13" fill="#B4380F" font-weight="700">t&#8322;g</text>
+        <rect x="120" y="186" width="150" height="5" fill="#071A4D"/>
+        <rect x="360" y="186" width="150" height="5" fill="#071A4D"/>
+        <rect x="490" y="244" width="0" height="0" fill="#071A4D"/>
+        <text x="130" y="212" font-size="20" fill="#071A4D">&#8593;</text>
+        <text x="370" y="212" font-size="20" fill="#071A4D">&#8593;</text>
+        <text x="590" y="212" font-size="20" fill="#071A4D">&#8593;</text>
+      </svg>
+      <p><b>Story:</b> the gap is too small to force pairing. Electrons obey Hund's rule first &#8212; <b>4 unpaired electrons in a d&#8309; case</b> &#8594; paramagnetic, weakly coloured.</p>
+      <p><b>Classic pairs:</b> [CoF&#8326;]&#179;&#8315;, [Fe(H&#8322;O)&#8326;]&#178;&#8314;, [MnF&#8326;]&#179;&#8315; &#8212; "outer orbital" sp&#179;d&#178; in VBT language.</p>
+    </div>
+
+    <div class="panel strong">
+      <h2>STRONG-FIELD LIGAND (e.g. CN&#8315;) &#8594; LOW SPIN</h2>
+      <svg width="650" height="270" viewBox="0 0 650 270">
+        <line x1="30" y1="60" x2="620" y2="60" stroke="#4E7A00" stroke-width="2"/>
+        <text x="24" y="46" font-size="13" fill="#4E7A00" font-weight="700">e&#8322;g</text>
+        <rect x="120" y="66" width="150" height="5" fill="#071A4D"/>
+        <rect x="360" y="66" width="150" height="5" fill="#071A4D"/>
+        <text x="130" y="92" font-size="20" fill="#071A4D">&#8593;&#8595;</text>
+        <text x="370" y="92" font-size="20" fill="#071A4D">&#8593;</text>
+        <line x1="580" y1="66" x2="580" y2="180" stroke="#4E7A00" stroke-width="2"/>
+        <polygon points="575,74 580,64 585,74" fill="#4E7A00"/>
+        <polygon points="575,172 580,182 585,172" fill="#4E7A00"/>
+        <text x="560" y="128" font-size="14" fill="#4E7A00" font-weight="800" text-anchor="end">&#916;&#8320; large</text>
+        <line x1="30" y1="180" x2="620" y2="180" stroke="#4E7A00" stroke-width="2"/>
+        <text x="24" y="166" font-size="13" fill="#4E7A00" font-weight="700">t&#8322;g</text>
+        <rect x="120" y="186" width="150" height="5" fill="#071A4D"/>
+        <rect x="360" y="186" width="150" height="5" fill="#071A4D"/>
+        <text x="130" y="212" font-size="20" fill="#071A4D">&#8593;&#8595;</text>
+        <text x="370" y="212" font-size="20" fill="#071A4D">&#8593;&#8595;</text>
+        <text x="590" y="212" font-size="20" fill="#071A4D">&#8593;&#8595;</text>
+      </svg>
+      <p><b>Story:</b> the gap beats the pairing cost. Electrons cram into t&#8322;g first &#8212; <b>1 unpaired electron in a d&#8309; case</b> &#8594; less paramagnetic, deeper colour, extra CFSE.</p>
+      <p><b>Classic pairs:</b> [Co(CN)&#8326;]&#179;&#8315;, [Fe(CN)&#8326;]&#179;&#8315;, [Co(NH&#8323;)&#8326;]&#179;&#8314; &#8212; "inner orbital" d&#178;sp&#179; in VBT language.</p>
+    </div>
+  </div>
+
+  <div class="series">
+    <h3>THE SPECTROCHEMICAL SERIES — memorise the order, not the whole list</h3>
+    <p>I&#8315; &lt; Br&#8315; &lt; SCN&#8315; &lt; Cl&#8315; &lt; S&#178;&#8315; &lt; F&#8315; &lt; OH&#8315; &lt; C&#8322;O&#8324;&#178;&#8315; &lt; H&#8322;O &lt; NCS&#8315; &lt; <b>edta&#8308;&#8315;</b> &lt; <b>NH&#8323;</b> &lt; en &lt; <b>bipy</b> &lt; <b>phen</b> &lt; <b>NO&#8322;&#8315;</b> &lt; <b>CN&#8315; &#8776; CO</b> &nbsp;&#8212;&nbsp; left side = weak field (high spin) &#183; right side = strong field (low spin)</p>
+  </div>
+</div>
+</body>
+</html>

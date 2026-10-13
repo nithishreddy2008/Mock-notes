@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: 1080px; position: relative; background: #fff; }
+  svg.wires { position: absolute; inset: 0; width: 1480px; height: 1080px; }
+  .center {
+    position: absolute; left: 545px; top: 430px; width: 390px; height: 100px;
+    background: #071A4D; border-radius: 16px; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(7,26,77,.25);
+    border-bottom: 5px solid #B8FF34;
+  }
+  .center .t { color: #fff; font-size: 21px; font-weight: 800; letter-spacing: .3px; text-align: center; }
+  .center .s { color: #B8FF34; font-size: 12.5px; font-weight: 700; letter-spacing: 1.5px; margin-top: 4px; }
+  .card {
+    position: absolute; width: 470px; background: #FCFDFF; border: 1.5px solid #D5DCEA;
+    border-radius: 14px; padding: 13px 16px 12px;
+  }
+  .card h2 { font-size: 19px; color: #071A4D; font-weight: 800; margin-bottom: 7px;
+             padding-bottom: 5px; border-bottom: 3px solid; display: inline-block; }
+  .leaf { font-size: 13.4px; color: #1B2333; margin: 4px 0; padding-left: 16px; position: relative; line-height: 1.28; }
+  .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
+  .b .leaf::before { background: #1F5EFF; }
+  .l .leaf::before { background: #7FB800; }
+  .leaf b { color: #071A4D; }
+  .b h2 { border-color: #1F5EFF; }
+  .l h2 { border-color: #7FB800; }
+  .left { left: 30px; }
+  .right { left: 980px; }
+  .exc {
+    position: absolute; left: 480px; top: 900px; width: 520px; background: #FFF3EC;
+    border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px;
+  }
+  .exc h2 { font-size: 17px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
+  .exc .leaf { font-size: 12.8px; margin: 3.5px 0; padding-left: 14px; color: #7A2A12; }
+  .exc .leaf::before { background: #D2481F; }
+  .exc b { color: #B4380F; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <svg class="wires" viewBox="0 0 1480 1080">
+    <path d="M 545 465 C 505 465, 520 135, 502 132" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 545 480 C 508 480, 520 385, 502 382" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 545 495 C 508 495, 520 645, 502 642" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 935 465 C 975 465, 960 135, 978 132" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 935 480 C 970 480, 958 385, 978 382" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 935 495 C 970 495, 958 645, 978 642" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 740 530 C 740 660, 740 835, 740 898" fill="none" stroke="#D2481F" stroke-width="2.5" stroke-dasharray="7 5" opacity=".6"/>
+  </svg>
+
+  <div class="center">
+    <div class="t">CONSUMER<br>PROTECTION</div>
+    <div class="s">UNIT XII &#183; COMPLETE CHAPTER MAP</div>
+  </div>
+
+  <div class="card left b" style="top:52px">
+    <h2>Meaning &amp; Importance</h2>
+    <div class="leaf"><b>Consumer protection</b> = protecting consumers from unfair, exploitative and deceptive trade practices</div>
+    <div class="leaf"><b>Why needed:</b> consumers are <b>unorganised</b>, often <b>ignorant</b> of rights, and exploitation is widespread — adulteration, spurious goods, hoarding, black marketing, false ads</div>
+    <div class="leaf"><b>Importance for business too:</b> long-term interest, ethical duty, government pressure, social responsibility — satisfied consumers are repeat consumers</div>
+  </div>
+
+  <div class="card left l" style="top:302px">
+    <h2>Six Consumer Rights</h2>
+    <div class="leaf"><b>1</b> Right to Safety — protection from hazardous goods</div>
+    <div class="leaf"><b>2</b> Right to be Informed — quality, quantity, purity, price, standards</div>
+    <div class="leaf"><b>3</b> Right to Choose — access to a variety at fair prices</div>
+    <div class="leaf"><b>4</b> Right to be Heard — grievances heard at proper forums</div>
+    <div class="leaf"><b>5</b> Right to Seek Redressal — relief against unfair practices</div>
+    <div class="leaf"><b>6</b> Right to Consumer Education — learn rights and remedies</div>
+  </div>
+
+  <div class="card left b" style="top:592px">
+    <h2>Consumer Responsibilities</h2>
+    <div class="leaf">Check <b>quality marks</b> — ISI, Agmark, Hallmark</div>
+    <div class="leaf">Ask for a <b>cash memo / bill</b> — always</div>
+    <div class="leaf">Read labels <b>honestly</b>; buy only what is needed</div>
+    <div class="leaf">Be <b>ecologically responsible</b>; recycle where possible</div>
+    <div class="leaf"><b>Form consumer societies</b>; complain <b>genuinely</b>, not frivolously</div>
+  </div>
+
+  <div class="card right l" style="top:52px">
+    <h2>Consumer Protection Act, 2019</h2>
+    <div class="leaf"><b>Replaced</b> the 1986 Act — covers goods <b>and services</b>, e-commerce included</div>
+    <div class="leaf"><b>Three-tier machinery:</b> District (≤ ₹50 lakh) $arrow$ State (₹50 lakh–₹2 crore) $arrow$ National (&gt; ₹2 crore) — limits revised in 2021</div>
+    <div class="leaf"><b>Appeals:</b> District $arrow$ State $arrow$ National $arrow$ Supreme Court</div>
+    <div class="leaf"><b>Complaint within 2 years</b> of the cause of action</div>
+  </div>
+
+  <div class="card right b" style="top:312px">
+    <h2>Who Can File &amp; What Remedies</h2>
+    <div class="leaf"><b>Who:</b> the consumer $arrow$ registered consumer organisation $arrow$ Central/State Government $arrow$ many consumers on behalf of all $arrow$ legal heir</div>
+    <div class="leaf"><b>Remedies:</b> remove defects $arrow$ replace $arrow$ refund $arrow$ compensation $arrow$ punitive damages $arrow$ stop unfair practice $arrow$ withdraw hazardous goods $arrow$ corrective advertisement</div>
+  </div>
+
+  <div class="card right l" style="top:542px">
+    <h2>Ways of Protection + Role of NGOs</h2>
+    <div class="leaf"><b>Ways:</b> self-regulation by business &#183; business associations' codes &#183; consumer awareness &#183; consumer organisations &#183; government / legal redressal (CPA 2019)</div>
+    <div class="leaf"><b>Consumer organisations &amp; NGOs:</b> educate consumers &#183; publish journals &#183; test product samples &#183; file complaints and PILs &#183; give legal aid &#183; run awareness campaigns</div>
+  </div>
+
+  <div class="exc">
+    <h2>Traps that catch most students</h2>
+    <div class="leaf"><b>Rights vs responsibilities</b> — asking for a bill is a responsibility; being heard is a right</div>
+    <div class="leaf"><b>The two money walls:</b> ₹50 lakh and ₹2 crore — District, State, National in order</div>
+    <div class="leaf"><b>CPA 2019 replaced 1986</b> — and added e-commerce coverage</div>
+    <div class="leaf"><b>Complaint time limit = 2 years</b> from the cause of action — not 1, not 3</div>
+  </div>
+</div>
+</body>
+</html>

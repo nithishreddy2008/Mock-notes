@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: 940px; position: relative; background: #fff; padding: 26px 30px; display: flex; flex-direction: column; }
+  .head { background: #071A4D; border-radius: 14px; padding: 14px 22px; display: flex; align-items: baseline; justify-content: space-between; }
+  .head .t { color: #fff; font-size: 24px; font-weight: 800; letter-spacing: .5px; }
+  .head .s { color: #B8FF34; font-size: 13.5px; font-weight: 700; letter-spacing: 2px; }
+  .cols { display: flex; gap: 26px; margin-top: 20px; flex: 1; }
+  .col { flex: 1; border-radius: 14px; border: 1.5px solid #D5DCEA; overflow: hidden; background: #FCFDFF; display: flex; flex-direction: column; }
+  .col h2 { color: #fff; font-size: 19px; font-weight: 800; padding: 13px 18px 11px; }
+  .col h2 .sub { display: block; font-size: 12.5px; font-weight: 600; letter-spacing: 1.2px; opacity: .85; margin-top: 2px; }
+  .in h2 { background: #071A4D; }
+  .ex h2 { background: #1F5EFF; }
+  .row { padding: 11px 18px 12px; border-top: 1px solid #E4E9F2; }
+  .row .k { font-size: 11.5px; font-weight: 800; letter-spacing: 1.6px; color: #1F5EFF; }
+  .in .row .k { color: #1F5EFF; }
+  .ex .row .k { color: #0B3EDB; }
+  .row .v { font-size: 14.5px; color: #1B2333; line-height: 1.42; margin-top: 3px; }
+  .row .v b { color: #071A4D; }
+  .hot { margin-top: 20px; background: #071A4D; border-radius: 14px; padding: 14px 20px 16px; }
+  .hot h2 { color: #B8FF34; font-size: 16.5px; font-weight: 800; letter-spacing: 1px; margin-bottom: 10px; }
+  .hot h2 span { color: #fff; font-size: 12.5px; font-weight: 600; letter-spacing: .4px; margin-left: 12px; }
+  .chips { display: flex; gap: 14px; }
+  .chip { flex: 1; background: rgba(255,255,255,.07); border: 1px solid rgba(184,255,52,.45); border-radius: 10px; padding: 10px 14px 11px; }
+  .chip b { color: #B8FF34; display: block; font-size: 15px; font-weight: 800; margin-bottom: 3px; }
+  .chip span { font-size: 12.5px; color: rgba(255,255,255,.88); line-height: 1.35; display: block; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="head">
+    <div class="t">IN SITU v/s EX SITU — TWO WAYS TO SAVE A SPECIES</div>
+    <div class="s">UNIT X &#183; CONSERVATION METHODS</div>
+  </div>
+
+  <div class="cols">
+    <div class="col in">
+      <h2>IN SITU<span>&#8220;IN THE ORIGINAL PLACE&#8221; — PROTECT IT AT HOME</span></h2>
+      <div class="row"><div class="k">DEFINITION</div>
+        <div class="v">The species is protected <b>inside its natural habitat</b> — the whole ecosystem is fenced, guarded and left alive.</div></div>
+      <div class="row"><div class="k">MAIN TOOLS (WITH EXAMPLES)</div>
+        <div class="v"><b>National parks</b> (strict protection) &#183; <b>wildlife sanctuaries</b> (animal-focused) &#183; <b>biosphere reserves</b> (whole ecosystems + research) &#183; <b>sacred groves</b> (Khasi &amp; Jaintia Hills, Meghalaya; Bishnoi villages, Rajasthan).</div></div>
+      <div class="row"><div class="k">WHEN IT IS USED</div>
+        <div class="v">The habitat can still support the species — this is <b>always the first choice</b>, the ideal method.</div></div>
+      <div class="row"><div class="k">ONE-LINE ADVANTAGE</div>
+        <div class="v"><b>Saves the entire ecosystem with all its species at once</b> — and is the cheaper, more natural route.</div></div>
+    </div>
+
+    <div class="col ex">
+      <h2>EX SITU<span>&#8220;AWAY FROM THE ORIGINAL PLACE&#8221; — PROTECT IT IN HUMAN CARE</span></h2>
+      <div class="row"><div class="k">DEFINITION</div>
+        <div class="v">The threatened species (or its seeds, gametes, tissues) is protected <b>outside its natural habitat</b>, under human care.</div></div>
+      <div class="row"><div class="k">MAIN TOOLS (WITH EXAMPLES)</div>
+        <div class="v"><b>Zoological parks</b> with captive breeding &#183; <b>wildlife safari parks</b> &#183; <b>seed and pollen banks</b> &#183; <b>tissue culture</b> for plants &#183; <b>cryopreservation</b> of gametes at &#8722;196&#176;C in liquid nitrogen.</div></div>
+      <div class="row"><div class="k">WHEN IT IS USED</div>
+        <div class="v">The habitat is already gone, or the wild population is <b>too small to survive alone</b> — the backup plan.</div></div>
+      <div class="row"><div class="k">ONE-LINE ADVANTAGE</div>
+        <div class="v"><b>Works even when there is no wild home left to return to</b> — it banks life for a future release.</div></div>
+    </div>
+  </div>
+
+  <div class="hot">
+    <h2>INDIA'S BIODIVERSITY HOTSPOTS<span>CRITERIA: VERY HIGH ENDEMISM + VERY HIGH HABITAT LOSS</span></h2>
+    <div class="chips">
+      <div class="chip"><b>1 &#183; WESTERN GHATS&#8211;SRI LANKA</b><span>Evergreen mountain belt on India's west coast — enormous endemic plant and amphibian wealth under heavy pressure.</span></div>
+      <div class="chip"><b>2 &#183; HIMALAYA</b><span>The entire mountain arc in the north — endemic alpine species squeezed by shrinking habitat.</span></div>
+      <div class="chip"><b>3 &#183; INDO-BURMA</b><span>North-east India and neighbouring regions — species-rich forests being lost fast.</span></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

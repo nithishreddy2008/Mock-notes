@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: auto; background: #fff; padding: 26px 30px 24px; position: relative; }
+  .title { text-align: center; font-size: 32px; font-weight: 800; color: #071A4D; margin-bottom: 6px; }
+  .subtitle { text-align: center; font-size: 19px; color: #5A6478; margin-bottom: 26px; }
+  .row { display: flex; justify-content: center; align-items: stretch; gap: 0; }
+  .node {
+    width: 305px; background: #FCFDFF; border: 1.5px solid #D5DCEA; border-radius: 13px;
+    padding: 14px 16px 13px; position: relative; margin: 0 26px;
+  }
+  .node .num {
+    position: absolute; top: -17px; left: -17px; width: 40px; height: 40px; border-radius: 50%;
+    background: #071A4D; color: #B8FF34; font-weight: 800; font-size: 19px;
+    display: flex; align-items: center; justify-content: center; border: 2.5px solid #fff;
+    box-shadow: 0 3px 8px rgba(7,26,77,.28);
+  }
+  .node h3 { font-size: 21px; color: #071A4D; font-weight: 800; margin-bottom: 6px; padding-bottom: 5px;
+             border-bottom: 2.5px solid #1F5EFF; display: inline-block; }
+  .node p { font-size: 16.5px; color: #1B2333; line-height: 1.4; }
+  .node p b { color: #071A4D; }
+  .node.dr h3 { border-color: #D2481F; }
+  .node.dr { background: #FFF8F5; }
+  .node.cr h3 { border-color: #7FB800; }
+  .node.cr { background: #FBFFF4; }
+  .arrow { align-self: center; width: 0; height: 0; border-top: 15px solid transparent;
+           border-bottom: 15px solid transparent; border-left: 22px solid #1F5EFF; margin: 0 -6px; }
+  .arrow.down { border-left: 15px solid transparent; border-right: 15px solid transparent;
+                border-top: 22px solid #1F5EFF; border-bottom: none; margin: 4px 0; }
+  .spacer { width: 357px; }
+  .rowgap { height: 40px; display: flex; justify-content: center; }
+  .downwrap { display: flex; flex-direction: column; align-items: center; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="title">What Happens When a New Partner Joins</div>
+  <div class="subtitle">The admission journey — from consent to the new profit-sharing ratio</div>
+
+  <div class="row">
+    <div class="node cr">
+      <div class="num">1</div>
+      <h3>New partner admitted</h3>
+      <p>With the <b>consent of all partners</b> the old agreement ends and a <b>new agreement</b> begins.</p>
+    </div>
+    <div class="arrow"></div>
+    <div class="node cr">
+      <div class="num">2</div>
+      <h3>Old PSR surrendered</h3>
+      <p>Old partners agree on a <b>new ratio</b>; each old share is compared with the new share.</p>
+    </div>
+    <div class="arrow"></div>
+    <div class="node dr">
+      <div class="num">3</div>
+      <h3>Sacrificing ratio found</h3>
+      <p><b>Sacrifice = old share &#8722; new share</b>, partner by partner. Gainers pick up the slack.</p>
+    </div>
+    <div class="arrow"></div>
+    <div class="node">
+      <div class="num">4</div>
+      <h3>Goodwill + revaluation + reserves</h3>
+      <p><b>Premium</b> is credited to old partners in the <b>sacrificing ratio</b>; revaluation profit and reserves also go to old partners in the <b>old ratio</b>.</p>
+    </div>
+  </div>
+
+  <div class="rowgap"><div class="downwrap"><div class="arrow down"></div></div></div>
+
+  <div class="row">
+    <div class="spacer"></div>
+    <div class="node">
+      <div class="num">5</div>
+      <h3>Capitals adjusted</h3>
+      <p>New capital is fixed as agreed — <b>cash brought in</b> or balances equalised through <b>current accounts</b>.</p>
+    </div>
+    <div class="arrow"></div>
+    <div class="node">
+      <div class="num">6</div>
+      <h3>New PSR begins</h3>
+      <p>From the admission date, profit is shared in the <b>new ratio</b> — the firm runs on fresh terms.</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

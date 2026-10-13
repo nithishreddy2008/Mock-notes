@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: auto; background: #fff; padding: 26px 30px 24px; position: relative; }
+  .title { text-align: center; font-size: 32px; font-weight: 800; color: #071A4D; margin-bottom: 6px; }
+  .subtitle { text-align: center; font-size: 19px; color: #5A6478; margin-bottom: 26px; }
+  .row { display: flex; justify-content: center; align-items: stretch; gap: 0; }
+  .node {
+    width: 305px; background: #FCFDFF; border: 1.5px solid #D5DCEA; border-radius: 13px;
+    padding: 14px 16px 13px; position: relative; margin: 0 26px;
+  }
+  .node .num {
+    position: absolute; top: -17px; left: -17px; width: 40px; height: 40px; border-radius: 50%;
+    background: #071A4D; color: #B8FF34; font-weight: 800; font-size: 19px;
+    display: flex; align-items: center; justify-content: center; border: 2.5px solid #fff;
+    box-shadow: 0 3px 8px rgba(7,26,77,.28);
+  }
+  .node h3 { font-size: 21px; color: #071A4D; font-weight: 800; margin-bottom: 6px; padding-bottom: 5px;
+             border-bottom: 2.5px solid #1F5EFF; display: inline-block; }
+  .node p { font-size: 16.5px; color: #1B2333; line-height: 1.4; }
+  .node p b { color: #071A4D; }
+  .node.dr h3 { border-color: #D2481F; }
+  .node.dr { background: #FFF8F5; }
+  .node.cr h3 { border-color: #7FB800; }
+  .node.cr { background: #FBFFF4; }
+  .arrow { align-self: center; width: 0; height: 0; border-top: 15px solid transparent;
+           border-bottom: 15px solid transparent; border-left: 22px solid #1F5EFF; margin: 0 -6px; }
+  .arrow.down { border-left: 15px solid transparent; border-right: 15px solid transparent;
+                border-top: 22px solid #1F5EFF; border-bottom: none; margin: 4px 0; }
+  .spacer { width: 357px; }
+  .rowgap { height: 40px; display: flex; justify-content: center; }
+  .downwrap { display: flex; flex-direction: column; align-items: center; }
+  .sidenote {
+    width: 620px; border-radius: 13px; padding: 14px 18px 13px; margin: 0 20px;
+  }
+  .sidenote .tag { display: inline-block; font-size: 12px; font-weight: 800; letter-spacing: 2px;
+                   padding: 3px 10px; border-radius: 5px; color: #fff; margin-bottom: 7px; }
+  .sidenote h3 { font-size: 20px; font-weight: 800; margin-bottom: 5px; }
+  .sidenote p { font-size: 15.5px; line-height: 1.42; color: #1B2333; }
+  .side-safe { background: #F6FFE8; border: 1.5px solid #7FB800; }
+  .side-safe .tag { background: #7FB800; }
+  .side-safe h3 { color: #4E7A00; }
+  .side-safe p b { color: #4E7A00; }
+  .side-rnai { background: #F3F7FF; border: 1.5px solid #1F5EFF; }
+  .side-rnai .tag { background: #1F5EFF; }
+  .side-rnai h3 { color: #071A4D; }
+  .side-rnai p b { color: #071A4D; }
+  .divider { height: 0; border-top: 1.5px dashed #C7CFDF; margin: 26px 60px 20px; position: relative; }
+  .divider span { position: absolute; left: 50%; top: -11px; transform: translateX(-50%);
+                  background: #fff; padding: 0 16px; font-size: 13px; font-weight: 800;
+                  letter-spacing: 2.5px; color: #5A6478; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="title">How Bt Cotton Kills the Bollworm</div>
+  <div class="subtitle">Five stops of the cry-protein journey — plus two side notes that finish the story</div>
+
+  <div class="row">
+    <div class="node">
+      <div class="num">1</div>
+      <h3>Bt cotton carries cry genes</h3>
+      <p>The plant was given <b>cryIAc</b> (bollworm) and <b>cryIIAb</b> (corn borer) from <b><i>Bacillus thuringiensis</i></b>.</p>
+    </div>
+    <div class="arrow"></div>
+    <div class="node">
+      <div class="num">2</div>
+      <h3>Plant packs protoxin crystals</h3>
+      <p>Inside the plant the toxin is stored as <b>inactive protoxin crystals</b> — harmless until the right gut arrives.</p>
+    </div>
+    <div class="arrow"></div>
+    <div class="node dr">
+      <div class="num">3</div>
+      <h3>Insect eats — gut dissolves</h3>
+      <p>The bollworm chews the leaf. Its <b>alkaline gut</b> (high pH) dissolves the crystal.</p>
+    </div>
+  </div>
+
+  <div class="rowgap"><div class="downwrap"><div class="arrow down"></div></div></div>
+
+  <div class="row">
+    <div class="node dr">
+      <div class="num">4</div>
+      <h3>Protoxin activated — binds</h3>
+      <p>The freed toxin becomes <b>active</b> and locks onto the <b>midgut lining cells</b>.</p>
+    </div>
+    <div class="arrow"></div>
+    <div class="node cr">
+      <div class="num">5</div>
+      <h3>Gut wall breaks — insect dies</h3>
+      <p><b>Pores</b> form, the cells swell and burst; the bollworm stops feeding and dies.</p>
+    </div>
+  </div>
+
+  <div class="divider"><span>SIDE NOTES</span></div>
+
+  <div class="row" style="align-items: flex-start;">
+    <div class="sidenote side-safe">
+      <span class="tag">SIDE NOTE 1</span>
+      <h3>Safe for humans</h3>
+      <p>Our gut is <b>acidic</b>, not alkaline — the crystal never dissolves — and human gut cells carry <b>no receptor</b> for the toxin. The code never fits our lock.</p>
+    </div>
+    <div class="sidenote side-rnai">
+      <span class="tag">SIDE NOTE 2</span>
+      <h3>RNAi kills differently</h3>
+      <p>No toxin at all: tobacco given nematode-specific genes makes <b>dsRNA</b> that <b>silences the pest's own mRNA</b> — <i>Meloidogyne incognita</i> cannot survive.</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

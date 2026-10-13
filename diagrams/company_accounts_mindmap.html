@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: 1060px; position: relative; background: #fff; }
+  svg.wires { position: absolute; inset: 0; width: 1480px; height: 1060px; }
+  .center {
+    position: absolute; left: 555px; top: 380px; width: 370px; height: 110px;
+    background: #071A4D; border-radius: 16px; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(7,26,77,.25);
+    border-bottom: 5px solid #B8FF34;
+  }
+  .center .t { color: #fff; font-size: 22px; font-weight: 800; letter-spacing: .5px; text-align: center; line-height: 1.25; }
+  .center .s { color: #B8FF34; font-size: 13px; font-weight: 700; letter-spacing: 2px; margin-top: 5px; }
+  .card {
+    position: absolute; width: 470px; background: #FCFDFF; border: 1.5px solid #D5DCEA;
+    border-radius: 14px; padding: 13px 16px 12px;
+  }
+  .card h2 { font-size: 20px; color: #071A4D; font-weight: 800; margin-bottom: 7px;
+             padding-bottom: 5px; border-bottom: 3px solid; display: inline-block; }
+  .leaf { font-size: 14.5px; color: #1B2333; margin: 5px 0; padding-left: 16px; position: relative; line-height: 1.32; }
+  .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
+  .b .leaf::before { background: #1F5EFF; }
+  .l .leaf::before { background: #7FB800; }
+  .leaf b { color: #071A4D; }
+  .b h2 { border-color: #1F5EFF; }
+  .l h2 { border-color: #7FB800; }
+  .left { left: 30px; }
+  .right { left: 980px; }
+  .exc {
+    position: absolute; left: 525px; top: 868px; width: 430px; background: #FFF3EC;
+    border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px;
+  }
+  .exc h2 { font-size: 17px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
+  .exc .leaf { font-size: 13px; margin: 3px 0; padding-left: 14px; color: #7A2A12; }
+  .exc .leaf::before { background: #D2481F; }
+  .exc b { color: #B4380F; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <svg class="wires" viewBox="0 0 1480 1060">
+    <path d="M 555 415 C 505 415, 520 165, 502 160" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 555 435 C 515 435, 520 430, 502 430" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 555 455 C 505 455, 520 700, 502 705" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 925 415 C 975 415, 960 165, 978 160" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 925 435 C 965 435, 960 430, 978 430" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 925 455 C 975 455, 960 700, 978 705" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 740 490 C 740 640, 740 800, 740 866" fill="none" stroke="#D2481F" stroke-width="2.5" stroke-dasharray="7 5" opacity=".6"/>
+  </svg>
+
+  <div class="center">
+    <div class="t">COMPANY ACCOUNTS:<br>SHARES &amp; DEBENTURES</div>
+    <div class="s">UNIT IV &#183; COMPLETE CHAPTER MAP</div>
+  </div>
+
+  <div class="card left b" style="top:62px">
+    <h2>Companies: Features &amp; Types</h2>
+    <div class="leaf"><b>Separate legal entity:</b> the company owns assets and owes debts in its <b>own name</b>, not the members'</div>
+    <div class="leaf"><b>Perpetual succession:</b> members may come and go — the company lives on; also an <b>artificial person</b> created by law</div>
+    <div class="leaf"><b>Limited liability:</b> a member loses only what he agreed to pay on his shares</div>
+    <div class="leaf"><b>Private vs Public:</b> private — 2 to 200 members, no public invitation; public — min 7, no maximum</div>
+  </div>
+
+  <div class="card left l" style="top:322px">
+    <h2>The Share Capital Ladder</h2>
+    <div class="leaf"><b>Authorised</b> = maximum allowed by the Memorandum (the ceiling)</div>
+    <div class="leaf"><b>Issued</b> = offered to the public; <b>Subscribed</b> = actually taken up</div>
+    <div class="leaf"><b>Called-up</b> = demanded so far; <b>Paid-up</b> = money truly received</div>
+    <div class="leaf">Paid-up = called-up <b>less calls in arrears</b>; forfeited amount is <b>added</b> back in the note</div>
+  </div>
+
+  <div class="card left b" style="top:600px">
+    <h2>Forfeiture &amp; Re-issue</h2>
+    <div class="leaf">Forfeit = cancel shares after <b>due notice</b> for non-payment of calls</div>
+    <div class="leaf">Debit <b>Share Capital</b> with called-up; credit <b>Forfeited Shares</b> with money received; debit <b>Securities Premium</b> only if premium is unpaid</div>
+    <div class="leaf">Re-issue discount per batch <b>cannot exceed</b> the forfeited amount</div>
+    <div class="leaf">Leftover forfeited money after re-issue &#8594; <b>Capital Reserve</b></div>
+  </div>
+
+  <div class="card right l" style="top:62px">
+    <h2>Issue of Shares</h2>
+    <div class="leaf">Money timeline: <b>Application &#8594; Allotment &#8594; Calls</b> (min application 5% of issue price)</div>
+    <div class="leaf"><b>At premium:</b> extra over face value goes to <b>Securities Premium Reserve</b> — never to P&amp;L</div>
+    <div class="leaf"><b>Over-subscription:</b> excess application money adjusts allotment; rejected applicants <b>refunded</b></div>
+    <div class="leaf"><b>Calls in arrears</b> = not yet paid (deduct); <b>calls in advance</b> = paid early (liability till due)</div>
+  </div>
+
+  <div class="card right b" style="top:322px">
+    <h2>Balance Sheet Presentation</h2>
+    <div class="leaf">Schedule III: Equity &amp; Liabilities &#8594; Shareholders' Funds &#8594; <b>(a) Share Capital</b></div>
+    <div class="leaf">Note shows <b>Authorised / Issued / Subscribed</b>, then "fully paid" and "not fully paid" lines</div>
+    <div class="leaf"><b>Less calls in arrears</b> from called-up; <b>add Forfeited Shares A/c</b> to paid-up</div>
+    <div class="leaf">Debentures sit under <b>Long-term Borrowings</b></div>
+  </div>
+
+  <div class="card right l" style="top:600px">
+    <h2>Debentures</h2>
+    <div class="leaf">An <b>IOU of the company</b>: fixed interest, fixed repayment, holder is a <b>creditor</b>, not an owner</div>
+    <div class="leaf">Issued at <b>par / premium / discount</b>; discount is a capital loss written off over the life</div>
+    <div class="leaf"><b>Interest is a charge</b> — paid even in a loss year, before any dividend</div>
+    <div class="leaf"><b>Collateral security:</b> note only, or <b>Debentures Suspense A/c</b> entry; write off discount by <b>fixed</b> or <b>floating</b> instalments</div>
+  </div>
+
+  <div class="exc">
+    <h2>COMMON ERRORS &amp; TRAPS</h2>
+    <div class="leaf"><b>Shares cannot be issued at discount</b> (Sec 53) — only sweat equity is allowed; debentures CAN be</div>
+    <div class="leaf"><b>Securities Premium never touches P&amp;L</b> — only the four uses listed in Sec 52</div>
+    <div class="leaf"><b>Debenture interest is a charge</b>, not an appropriation of profit</div>
+    <div class="leaf"><b>Re-issue discount cap:</b> never more than the amount forfeited on those very shares</div>
+  </div>
+</div>
+</body>
+</html>

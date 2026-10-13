@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; background: #fff; padding: 26px 30px 28px; }
+  .strip {
+    background: #071A4D; border-radius: 14px; padding: 18px 26px 16px;
+    border-bottom: 5px solid #B8FF34; margin-bottom: 22px;
+  }
+  .strip h1 { color: #fff; font-size: 27px; font-weight: 800; letter-spacing: .3px; }
+  .strip p { color: #B8FF34; font-size: 14px; font-weight: 700; letter-spacing: 1.6px; margin-top: 6px; }
+  .row { display: flex; gap: 22px; align-items: stretch; }
+  .card {
+    flex: 1; background: #FCFDFF; border: 1.5px solid #D5DCEA; border-radius: 14px;
+    padding: 16px 18px 15px; display: flex; flex-direction: column;
+  }
+  .card h2 { font-size: 21px; color: #071A4D; font-weight: 800; padding-bottom: 6px; margin-bottom: 4px;
+             border-bottom: 3px solid #1F5EFF; display: inline-block; align-self: flex-start; }
+  .sub { font-size: 13.5px; color: #5A6478; font-weight: 600; margin: 6px 0 14px; }
+  .pyr { display: flex; flex-direction: column; align-items: center; gap: 7px; margin-bottom: 16px; }
+  .tier { height: 46px; border-radius: 7px; display: flex; align-items: center; justify-content: center;
+          font-size: 14.5px; font-weight: 700; text-align: center; line-height: 1.15; }
+  .t4 { width: 30%; background: #B8FF34; color: #071A4D; }
+  .t3 { width: 52%; background: #6E97FF; color: #fff; }
+  .t2 { width: 74%; background: #1F5EFF; color: #fff; }
+  .t1 { width: 96%; background: #071A4D; color: #fff; }
+  .base-tag { font-size: 12.5px; color: #5A6478; font-weight: 700; margin-top: 2px; letter-spacing: .4px; }
+  .note { border-radius: 10px; padding: 11px 13px; font-size: 13.5px; line-height: 1.42; margin-top: auto; }
+  .note b { color: #071A4D; }
+  .warn { background: #FFF3EC; border: 1.5px solid #D2481F; color: #7A2A12; }
+  .warn b { color: #B4380F; }
+  .lime { background: #F6FFDF; border: 1.5px solid #7FB800; color: #2F4A08; }
+  .arrowline { display: flex; align-items: center; justify-content: center; gap: 10px;
+               margin: 4px 0 12px; font-size: 12.5px; font-weight: 700; color: #5A6478; letter-spacing: .6px; }
+  .footer {
+    margin-top: 22px; background: #EEF1F8; border: 1.5px solid #071A4D; border-radius: 12px;
+    padding: 12px 18px; font-size: 15px; color: #071A4D; text-align: center; font-weight: 600;
+  }
+  .footer b { color: #071A4D; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="strip">
+    <h1>Ecological pyramids — three lenses on the same ecosystem</h1>
+    <p>COUNT THE ORGANISMS &#183; WEIGH THE BIOMASS &#183; TRACK THE ENERGY</p>
+  </div>
+
+  <div class="row">
+    <div class="card">
+      <h2>Pyramid of number</h2>
+      <div class="sub">What is counted: how many organisms sit at each trophic level.</div>
+      <div class="pyr">
+        <div class="tier t4">T4 &#183; top carnivores</div>
+        <div class="tier t3">T3 &#183; carnivores</div>
+        <div class="tier t2">T2 &#183; herbivores</div>
+        <div class="tier t1">T1 &#183; producers (grass plants)</div>
+      </div>
+      <div class="base-tag">&#9650; WIDEST LAYER = MOST ORGANISMS (GRASSLAND)</div>
+      <div class="note warn" style="margin-top:14px">
+        <b>Upright in a grassland.</b> <b>INVERTED in a tree ecosystem</b> — one single tree (T1) supports
+        hundreds of fruit-eating insects and birds (T2), so the top layer outnumbers the base.
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Pyramid of biomass</h2>
+      <div class="sub">What is weighed: the dry living mass present at each level at a given time.</div>
+      <div class="pyr">
+        <div class="tier t4">T4 &#183; top carnivores</div>
+        <div class="tier t3">T3 &#183; carnivores</div>
+        <div class="tier t2">T2 &#183; herbivores</div>
+        <div class="tier t1">T1 &#183; producers</div>
+      </div>
+      <div class="base-tag">&#9650; WIDEST LAYER = MOST LIVING MASS (ON LAND)</div>
+      <div class="note warn" style="margin-top:14px">
+        <b>Upright on land.</b> <b>INVERTED in the ocean</b> — the standing crop of phytoplankton is small
+        at any instant, yet it keeps feeding a larger zooplankton mass because phytoplankton multiply fast.
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Pyramid of energy</h2>
+      <div class="sub">What is tracked: energy stored in new living matter at each level (kJ/m&#178;/yr).</div>
+      <div class="pyr">
+        <div class="tier t4">T4 &#183; 10 kJ</div>
+        <div class="tier t3">T3 &#183; 100 kJ</div>
+        <div class="tier t2">T2 &#183; 1,000 kJ</div>
+        <div class="tier t1">T1 &#183; 10,000 kJ</div>
+      </div>
+      <div class="base-tag">&#9650; EACH LAYER = 10% OF THE ONE BELOW</div>
+      <div class="note lime" style="margin-top:14px">
+        <b>ALWAYS upright — never inverted.</b> Why: at every transfer about 90% of the energy is lost
+        as heat (second law of thermodynamics), so no level above can ever hold more energy than the level below.
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    Whichever way the upper layers bend, <b>the producers always form the base</b> — and <b>energy always narrows on the way up</b>.
+  </div>
+</div>
+</body>
+</html>

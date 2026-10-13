@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: 880px; position: relative; background: #fff; }
+  .title { position: absolute; top: 24px; left: 0; width: 1480px; text-align: center;
+           font-size: 26px; font-weight: 800; color: #071A4D; letter-spacing: .5px; }
+  .title span { color: #1F5EFF; }
+  .step { position: absolute; width: 440px; height: 118px; background: #FCFDFF;
+          border: 1.6px solid #C9D3E6; border-radius: 14px; padding: 14px 18px 12px; }
+  .step .num { display: inline-block; width: 34px; height: 34px; border-radius: 50%;
+               background: #071A4D; color: #B8FF34; font-size: 17px; font-weight: 800;
+               text-align: center; line-height: 34px; margin-right: 10px; vertical-align: -8px; }
+  .step h2 { display: inline-block; font-size: 19px; color: #071A4D; font-weight: 800; }
+  .step .leaf { font-size: 13.8px; color: #1B2333; margin-top: 7px; line-height: 1.35; }
+  .step b { color: #071A4D; }
+  .s1 { left: 80px;  top: 92px; }
+  .s2 { left: 960px; top: 92px; }
+  .s3 { left: 80px;  top: 264px; }
+  .s4 { left: 960px; top: 264px; }
+  .s5 { left: 80px;  top: 436px; }
+  .s6 { left: 960px; top: 436px; }
+  .s7 { left: 80px;  top: 608px; }
+  svg.wires { position: absolute; inset: 0; width: 1480px; height: 880px; }
+  .loop { position: absolute; left: 960px; top: 608px; width: 440px; height: 118px;
+          background: #FFF3EC; border: 1.6px solid #D2481F; border-radius: 14px;
+          padding: 14px 18px 12px; }
+  .loop h2 { font-size: 18px; color: #B4380F; font-weight: 800; margin-bottom: 5px; }
+  .loop .leaf { font-size: 13.8px; color: #7A2A12; line-height: 1.35; }
+  .loop b { color: #B4380F; }
+  .foot { position: absolute; left: 80px; top: 770px; width: 1320px; background: #EAF0FF;
+          border-left: 5px solid #1F5EFF; border-radius: 0 12px 12px 0; padding: 13px 18px;
+          font-size: 14.5px; color: #1B2333; }
+  .foot b { color: #071A4D; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <svg class="wires" viewBox="0 0 1480 880">
+    <path d="M 520 150 C 620 150, 860 150, 954 150" fill="none" stroke="#1F5EFF" stroke-width="3" opacity=".55"/>
+    <path d="M 1180 214 L 1180 258" fill="none" stroke="#1F5EFF" stroke-width="3" opacity=".55"/>
+    <path d="M 954 322 C 860 322, 620 322, 526 322" fill="none" stroke="#1F5EFF" stroke-width="3" opacity=".55"/>
+    <path d="M 300 386 L 300 430" fill="none" stroke="#1F5EFF" stroke-width="3" opacity=".55"/>
+    <path d="M 520 494 C 620 494, 860 494, 954 494" fill="none" stroke="#1F5EFF" stroke-width="3" opacity=".55"/>
+    <path d="M 1180 558 L 1180 602" fill="none" stroke="#1F5EFF" stroke-width="3" opacity=".55"/>
+    <path d="M 954 666 C 860 666, 620 666, 526 666" fill="none" stroke="#D2481F" stroke-width="3" stroke-dasharray="8 6" opacity=".55"/>
+    <text x="720" y="145" font-size="13" fill="#1F5EFF" font-weight="700">then</text>
+    <text x="700" y="317" font-size="13" fill="#1F5EFF" font-weight="700">then</text>
+    <text x="720" y="489" font-size="13" fill="#1F5EFF" font-weight="700">then</text>
+  </svg>
+
+  <div class="title">THE PLANNING PROCESS — <span>seven steps from goal to follow-up</span></div>
+
+  <div class="step s1">
+    <span class="num">1</span><h2>Setting objectives</h2>
+    <div class="leaf">State exactly <b>what is to be achieved</b> — for the whole firm and for each unit. Objectives are the <b>destination</b> every later step serves.</div>
+  </div>
+  <div class="step s2">
+    <span class="num">2</span><h2>Developing premises</h2>
+    <div class="leaf">Build the <b>assumptions about the future</b> — demand, prices, technology, policies. All plans stand on these premises, so all managers must agree on them.</div>
+  </div>
+  <div class="step s3">
+    <span class="num">3</span><h2>Identifying alternatives</h2>
+    <div class="leaf">List <b>every sensible way</b> to reach the objectives — expand, diversify, outsource, licence. The more honest the list, the better the plan.</div>
+  </div>
+  <div class="step s4">
+    <span class="num">4</span><h2>Evaluating alternatives</h2>
+    <div class="leaf">Weigh each option for <b>cost, risk, feasibility and fit</b> with the premises — positive and negative points, calculated not guessed.</div>
+  </div>
+  <div class="step s5">
+    <span class="num">5</span><h2>Selecting the best alternative</h2>
+    <div class="leaf">Choose the option with the <b>best balance of benefit and risk</b> — or a combination of options. This is the moment of decision.</div>
+  </div>
+  <div class="step s6">
+    <span class="num">6</span><h2>Implementing the plan</h2>
+    <div class="leaf">Put the chosen plan <b>into action</b> — assign tasks, allocate budgets, buy materials, schedule work. A plan on paper produces nothing.</div>
+  </div>
+  <div class="step s7">
+    <span class="num">7</span><h2>Follow-up action</h2>
+    <div class="leaf">Compare actual results with the plan, <b>find deviations</b>, and correct course — the bridge to controlling and the next plan.</div>
+  </div>
+
+  <div class="loop">
+    <h2>The loop closes</h2>
+    <div class="leaf">Follow-up feeds <b>controlling</b>, and its lessons become next year's <b>objectives and premises</b> — planning is a cycle, not a line.</div>
+  </div>
+
+  <div class="foot"><b>Exam anchor:</b> questions describe a situation ("the firm first listed four ways to raise ₹50 crore, then compared their costs") and ask <b>which step</b> it shows — memorise the order and each step's one-line job.</div>
+</div>
+</body>
+</html>

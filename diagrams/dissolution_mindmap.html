@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: 1060px; position: relative; background: #fff; }
+  svg.wires { position: absolute; inset: 0; width: 1480px; height: 1060px; }
+  .center {
+    position: absolute; left: 535px; top: 380px; width: 410px; height: 108px;
+    background: #071A4D; border-radius: 16px; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(7,26,77,.25);
+    border-bottom: 5px solid #B8FF34;
+  }
+  .center .t { color: #fff; font-size: 22.5px; font-weight: 800; letter-spacing: .4px; text-align: center; }
+  .center .s { color: #B8FF34; font-size: 13px; font-weight: 700; letter-spacing: 2px; margin-top: 5px; }
+  .card {
+    position: absolute; width: 470px; background: #FCFDFF; border: 1.5px solid #D5DCEA;
+    border-radius: 14px; padding: 13px 16px 12px;
+  }
+  .card h2 { font-size: 19.5px; color: #071A4D; font-weight: 800; margin-bottom: 7px;
+             padding-bottom: 5px; border-bottom: 3px solid; display: inline-block; }
+  .leaf { font-size: 14.5px; color: #1B2333; margin: 5px 0; padding-left: 16px; position: relative; line-height: 1.32; }
+  .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
+  .b .leaf::before { background: #1F5EFF; }
+  .l .leaf::before { background: #7FB800; }
+  .leaf b { color: #071A4D; }
+  .b h2 { border-color: #1F5EFF; }
+  .l h2 { border-color: #7FB800; }
+  .left { left: 30px; }
+  .right { left: 980px; }
+  .exc {
+    position: absolute; left: 500px; top: 872px; width: 480px; background: #FFF3EC;
+    border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px;
+  }
+  .exc h2 { font-size: 17px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
+  .exc .leaf { font-size: 12.8px; margin: 3px 0; padding-left: 14px; color: #7A2A12; }
+  .exc .leaf::before { background: #D2481F; }
+  .exc b { color: #B4380F; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <svg class="wires" viewBox="0 0 1480 1060">
+    <path d="M 535 415 C 495 415, 520 165, 502 160" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 535 432 C 505 432, 520 430, 502 430" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 535 449 C 495 449, 520 700, 502 705" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 945 415 C 985 415, 960 165, 978 160" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 945 432 C 975 432, 960 430, 978 430" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 945 449 C 985 449, 960 700, 978 705" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 740 488 C 740 640, 740 800, 740 870" fill="none" stroke="#D2481F" stroke-width="2.5" stroke-dasharray="7 5" opacity=".6"/>
+  </svg>
+
+  <div class="center">
+    <div class="t">DISSOLUTION OF<br>PARTNERSHIP FIRM</div>
+    <div class="s">UNIT III &#183; COMPLETE CHAPTER MAP</div>
+  </div>
+
+  <div class="card left b" style="top:56px">
+    <h2>Dissolution vs Reconstitution</h2>
+    <div class="leaf"><b>Firm dissolves:</b> the business closes and the books are shut completely</div>
+    <div class="leaf"><b>Partnership dissolves:</b> only the mix changes — the business carries on</div>
+    <div class="leaf">Reconstitution (admission, retirement, death) = new ratio, <b>same live books</b></div>
+    <div class="leaf">Every firm-dissolution ends the partnership — <b>the reverse is not true</b></div>
+  </div>
+
+  <div class="card left l" style="top:318px">
+    <h2>Modes of Dissolution</h2>
+    <div class="leaf"><b>By agreement:</b> all partners consent (Sec 40) — the cleanest route</div>
+    <div class="leaf"><b>Compulsory:</b> all (or all but one) insolvent, or the business turns unlawful (Sec 41)</div>
+    <div class="leaf"><b>Contingency:</b> fixed term ends, venture completes, death or insolvency of a partner (Sec 42)</div>
+    <div class="leaf"><b>By notice (Sec 43)</b> for a partnership at will; <b>by court (Sec 44)</b> for misconduct, losses, breach</div>
+  </div>
+
+  <div class="card left b" style="top:598px">
+    <h2>Order of Settlement — Sec 48</h2>
+    <div class="leaf"><b>Losses applied:</b> from profits &#8594; from capitals &#8594; by partners in the old PSR</div>
+    <div class="leaf"><b>Assets applied:</b> outside liabilities &#8594; partners&#8217; loans &#8594; capitals &#8594; surplus in PSR</div>
+    <div class="leaf">A partner&#8217;s <b>loan ranks above capital</b> but below outsiders&#8217; claims</div>
+    <div class="leaf">Final proof of correct work: the <b>Cash/Bank A/c closes at nil</b></div>
+  </div>
+
+  <div class="card right l" style="top:56px">
+    <h2>Realisation Account</h2>
+    <div class="leaf"><b>Dr:</b> all assets at book value; cash paid for liabilities, expenses</div>
+    <div class="leaf"><b>Cr:</b> outside liabilities transferred; sale proceeds; unrecorded assets realised</div>
+    <div class="leaf"><b>Stays out:</b> Cash/Bank balance itself — it is already money, nothing to &#8220;realise&#8221;</div>
+    <div class="leaf">Result (profit or loss) &#8594; partners&#8217; capitals in the <b>OLD profit-sharing ratio</b></div>
+  </div>
+
+  <div class="card right b" style="top:318px">
+    <h2>Partners&#8217; Capital &amp; Loan A/cs</h2>
+    <div class="leaf">Capitals absorb the <b>realisation result</b> in the old PSR, then get paid off</div>
+    <div class="leaf">A partner&#8217;s <b>loan is not capital</b> — repaid in full, interest is a charge</div>
+    <div class="leaf">Only a real loan gets a <b>Loan A/c column</b> — losses are never pushed into it</div>
+    <div class="leaf">Closing line of every capital A/c: <b>To Cash/Bank — final payment</b></div>
+  </div>
+
+  <div class="card right l" style="top:598px">
+    <h2>Cash/Bank Account</h2>
+    <div class="leaf"><b>Opens</b> with the old cash balance; collects every rupee of realisation</div>
+    <div class="leaf"><b>Pays out</b> in the Sec 48 order: outsiders &#8594; loans &#8594; capitals</div>
+    <div class="leaf">The <b>final proof</b> — receipts and payments must match exactly</div>
+    <div class="leaf">Mismatch means an entry is <b>missing or on the wrong side</b> — recheck</div>
+  </div>
+
+  <div class="exc">
+    <h2>COMMON ERRORS &amp; TRAPS</h2>
+    <div class="leaf"><b>Realisation &#8800; Revaluation.</b> Realisation uses SALE values on shutdown; revaluation values a going business</div>
+    <div class="leaf"><b>Partner&#8217;s loan is not shared for losses</b> — it is repaid in full before capitals</div>
+    <div class="leaf"><b>Accumulated reserves</b> go to partners&#8217; capitals (or Realisation, per method) — never forgotten</div>
+    <div class="leaf"><b>Expenses borne by a partner but paid by the firm</b> — debit the partner&#8217;s capital, not Realisation</div>
+  </div>
+</div>
+</body>
+</html>

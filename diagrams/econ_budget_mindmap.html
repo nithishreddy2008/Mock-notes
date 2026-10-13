@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: 1080px; position: relative; background: #fff; }
+  svg.wires { position: absolute; inset: 0; width: 1480px; height: 1080px; }
+  .center {
+    position: absolute; left: 520px; top: 470px; width: 440px; height: 104px;
+    background: #071A4D; border-radius: 16px; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(7,26,77,.25);
+    border-bottom: 5px solid #B8FF34;
+  }
+  .center .t { color: #fff; font-size: 21px; font-weight: 800; letter-spacing: .5px; text-align: center; }
+  .center .s { color: #B8FF34; font-size: 13px; font-weight: 700; letter-spacing: 2px; margin-top: 4px; }
+  .card {
+    position: absolute; width: 465px; background: #FCFDFF; border: 1.5px solid #D5DCEA;
+    border-radius: 14px; padding: 13px 16px 12px;
+  }
+  .card h2 { font-size: 19px; color: #071A4D; font-weight: 800; margin-bottom: 7px;
+             padding-bottom: 5px; border-bottom: 3px solid; display: inline-block; }
+  .leaf { font-size: 14px; color: #1B2333; margin: 5px 0; padding-left: 16px; position: relative; line-height: 1.32; }
+  .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
+  .b .leaf::before { background: #1F5EFF; }
+  .l .leaf::before { background: #7FB800; }
+  .leaf b { color: #071A4D; }
+  .b h2 { border-color: #1F5EFF; }
+  .l h2 { border-color: #7FB800; }
+  .left { left: 30px; }
+  .right { left: 985px; }
+  .exc {
+    position: absolute; left: 470px; top: 905px; width: 540px; background: #FFF3EC;
+    border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px;
+  }
+  .exc h2 { font-size: 17px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
+  .exc .leaf { font-size: 13px; margin: 3px 0; padding-left: 14px; color: #7A2A12; }
+  .exc .leaf::before { background: #D2481F; }
+  .exc b { color: #B4380F; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <svg class="wires" viewBox="0 0 1480 1080">
+    <path d="M 520 505 C 470 505, 495 158, 500 155" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 520 520 C 480 520, 495 438, 500 438" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 520 535 C 470 535, 495 718, 500 718" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 960 505 C 1010 505, 985 158, 980 155" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 960 520 C 1000 520, 985 438, 980 438" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 960 535 C 1010 535, 985 718, 980 718" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 740 574 C 740 700, 740 830, 740 903" fill="none" stroke="#D2481F" stroke-width="2.5" stroke-dasharray="7 5" opacity=".6"/>
+  </svg>
+
+  <div class="center">
+    <div class="t">GOVERNMENT BUDGET &amp; THE ECONOMY</div>
+    <div class="s">COURSE II MACRO &#183; COMPLETE CHAPTER MAP</div>
+  </div>
+
+  <div class="card left b" style="top:58px">
+    <h2>Budget — Meaning &amp; Objectives</h2>
+    <div class="leaf"><b>The Annual Financial Statement:</b> estimated receipts and expenditure of the coming fiscal year (1 April – 31 March)</div>
+    <div class="leaf"><b>Objectives:</b> reallocate resources, redistribute income, stabilise the economy, manage public enterprises, encourage growth</div>
+    <div class="leaf"><b>Two budget parts:</b> revenue budget and capital budget</div>
+  </div>
+
+  <div class="card left l" style="top:352px">
+    <h2>Receipts — Revenue vs Capital</h2>
+    <div class="leaf"><b>Revenue receipts</b> (tax + non-tax): neither create liability nor reduce assets</div>
+    <div class="leaf"><b>Direct tax</b> burden can't shift (income tax) &#183; <b>indirect</b> shifts (GST)</div>
+    <div class="leaf"><b>Capital receipts:</b> borrowings (liability born) + recovery of loans &amp; disinvestment (assets shrink)</div>
+    <div class="leaf"><b>The two tests sort every line</b> — liability or asset, otherwise revenue</div>
+  </div>
+
+  <div class="card left b" style="top:648px">
+    <h2>Expenditure — Revenue vs Capital</h2>
+    <div class="leaf"><b>Revenue expenditure:</b> no asset born, no liability cleared — salaries, subsidies, interest, pensions</div>
+    <div class="leaf"><b>Capital expenditure:</b> creates assets (roads, buildings, machines) OR reduces liabilities (loan repayment)</div>
+    <div class="leaf"><b>Same two tests, spending side</b></div>
+  </div>
+
+  <div class="card right l" style="top:58px">
+    <h2>Budget Balance Types</h2>
+    <div class="leaf"><b>Balanced:</b> receipts = expenditure (the classic textbook ideal)</div>
+    <div class="leaf"><b>Surplus:</b> receipts &gt; expenditure — cools an overheated economy</div>
+    <div class="leaf"><b>Deficit:</b> expenditure &gt; receipts — the normal modern state, measured three ways</div>
+  </div>
+
+  <div class="card right b" style="top:352px">
+    <h2>The Deficit Family</h2>
+    <div class="leaf"><b>RD = RE − RR</b> — borrowing for daily consumption</div>
+    <div class="leaf"><b>FD = Total expenditure − Total receipts (excl. borrowings)</b> = the borrowing requirement; fuels debt and crowds out private credit</div>
+    <div class="leaf"><b>PD = FD − interest payments</b> — this year's own overspending only</div>
+    <div class="leaf"><b>FD ≥ PD always;</b> PD = 0 means borrowing only to pay old interest</div>
+  </div>
+
+  <div class="card right l" style="top:648px">
+    <h2>Deficit Implications</h2>
+    <div class="leaf"><b>RD:</b> government dissaving — consumption financed by debt</div>
+    <div class="leaf"><b>FD:</b> debt trap risk (interest on interest), inflationary financing, crowding out of private investment</div>
+    <div class="leaf"><b>PD:</b> the clean reading of the CURRENT year's fiscal stance</div>
+  </div>
+
+  <div class="exc">
+    <h2>Traps that catch most students</h2>
+    <div class="leaf"><b>Borrowings are a CAPITAL receipt</b> — they create a liability; and FD = borrowings exactly</div>
+    <div class="leaf"><b>Interest payment = revenue expenditure</b> — repaying PRINCIPAL is the capital one</div>
+    <div class="leaf"><b>Recovery of loans ≠ borrowing</b> — one shrinks assets (capital receipt), the other grows liabilities</div>
+    <div class="leaf"><b>PD can be zero while FD is huge</b> — the government may be borrowing only to pay inherited interest</div>
+  </div>
+</div>
+</body>
+</html>

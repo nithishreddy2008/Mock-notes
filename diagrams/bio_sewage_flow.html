@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: auto; background: #fff; padding: 26px 30px 24px; position: relative; }
+  .title { text-align: center; font-size: 32px; font-weight: 800; color: #071A4D; margin-bottom: 6px; }
+  .subtitle { text-align: center; font-size: 19px; color: #5A6478; margin-bottom: 28px; }
+  .row { display: flex; justify-content: center; align-items: stretch; gap: 0; }
+  .node {
+    width: 350px; background: #FCFDFF; border: 1.5px solid #D5DCEA; border-radius: 13px;
+    padding: 14px 16px 13px; position: relative; margin: 0 26px;
+  }
+  .node .num {
+    position: absolute; top: -17px; left: -17px; width: 40px; height: 40px; border-radius: 50%;
+    background: #071A4D; color: #B8FF34; font-weight: 800; font-size: 19px;
+    display: flex; align-items: center; justify-content: center; border: 2.5px solid #fff;
+    box-shadow: 0 3px 8px rgba(7,26,77,.28);
+  }
+  .node h3 { font-size: 20px; color: #071A4D; font-weight: 800; margin-bottom: 6px; padding-bottom: 5px;
+             border-bottom: 2.5px solid #1F5EFF; display: inline-block; }
+  .node p { font-size: 15.5px; color: #1B2333; line-height: 1.4; }
+  .node p b { color: #071A4D; }
+  .node.phys h3 { border-color: #1F5EFF; }
+  .node.bio h3 { border-color: #7FB800; }
+  .node.bio { background: #FBFFF4; }
+  .node.gas h3 { border-color: #D2481F; }
+  .node.gas { background: #FFF8F5; }
+  .arrow { align-self: center; width: 0; height: 0; border-top: 15px solid transparent;
+           border-bottom: 15px solid transparent; border-left: 22px solid #1F5EFF; margin: 0 -6px; }
+  .arrow.down { border-left: 15px solid transparent; border-right: 15px solid transparent;
+                border-top: 22px solid #1F5EFF; border-bottom: none; margin: 4px 0; }
+  .rowgap { height: 44px; display: flex; justify-content: center; }
+  .side {
+    margin: 34px auto 0; width: 880px; background: #FDFEF0; border: 2px dashed #7FB800;
+    border-radius: 13px; padding: 14px 20px 13px;
+  }
+  .side h3 { font-size: 18px; color: #3E6600; font-weight: 800; margin-bottom: 5px; }
+  .side p { font-size: 16px; color: #33422A; line-height: 1.45; }
+  .side p b { color: #3E6600; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="title">How a Sewage Treatment Plant Cleans Water</div>
+  <div class="subtitle">The primary (physical) and secondary (biological) journey of city sewage, stage by stage</div>
+
+  <div class="row">
+    <div class="node phys">
+      <div class="num">1</div>
+      <h3>Primary treatment</h3>
+      <p><b>Screens</b> trap big objects, a <b>grit remover</b> drops sand, and sedimentation tanks let solids settle as <b>primary sludge</b>.</p>
+    </div>
+    <div class="arrow"></div>
+    <div class="node bio">
+      <div class="num">2</div>
+      <h3>Into the aeration tank</h3>
+      <p>The liquid <b>effluent</b> moves on. <b>Flocs</b> — masses of bacteria with fungal filaments — grow as air is pumped in.</p>
+    </div>
+    <div class="arrow"></div>
+    <div class="node bio">
+      <div class="num">3</div>
+      <h3>Bacteria eat the waste</h3>
+      <p>With plenty of oxygen, the microbes digest most of the <b>organic matter</b>. The <b>BOD of the effluent drops</b>.</p>
+    </div>
+  </div>
+
+  <div class="rowgap"><div class="arrow down"></div></div>
+
+  <div class="row">
+    <div class="node bio">
+      <div class="num">4</div>
+      <h3>Settling tank</h3>
+      <p>The flow stops and the flocs sink as <b>activated sludge</b>. A small part is returned to the aeration tank.</p>
+    </div>
+    <div class="arrow"></div>
+    <div class="node gas">
+      <div class="num">5</div>
+      <h3>Anaerobic digester</h3>
+      <p>Most sludge is pumped into a sealed tank where <b>methanogens</b> — microbes that hate oxygen — finish the job.</p>
+    </div>
+    <div class="arrow"></div>
+    <div class="node gas">
+      <div class="num">6</div>
+      <h3>Biogas + clean water</h3>
+      <p>The digester yields <b>biogas (mostly methane)</b>; the effluent, now with <b>low BOD</b>, is released into water bodies.</p>
+    </div>
+  </div>
+
+  <div class="side">
+    <h3>SIDE CARD — BOD, the water-quality meter</h3>
+    <p><b>BOD = biochemical oxygen demand</b> — the oxygen microbes would need to eat the organic waste in the water. The dirtier the water, the higher the BOD. So a <b>lower BOD = cleaner water</b>.</p>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: 1120px; position: relative; background: #fff; }
+  svg.wires { position: absolute; inset: 0; width: 1480px; height: 1120px; }
+  .center {
+    position: absolute; left: 555px; top: 385px; width: 370px; height: 100px;
+    background: #071A4D; border-radius: 16px; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(7,26,77,.25);
+    border-bottom: 5px solid #B8FF34;
+  }
+  .center .t { color: #fff; font-size: 26px; font-weight: 800; letter-spacing: 1px; }
+  .center .s { color: #B8FF34; font-size: 13.5px; font-weight: 700; letter-spacing: 2px; margin-top: 4px; }
+  .card {
+    position: absolute; width: 470px; background: #FCFDFF; border: 1.5px solid #D5DCEA;
+    border-radius: 14px; padding: 13px 16px 12px;
+  }
+  .card h2 { font-size: 20px; color: #071A4D; font-weight: 800; margin-bottom: 7px;
+             padding-bottom: 5px; border-bottom: 3px solid; display: inline-block; }
+  .leaf { font-size: 14px; color: #1B2333; margin: 5px 0; padding-left: 16px; position: relative; line-height: 1.32; }
+  .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
+  .b .leaf::before { background: #1F5EFF; }
+  .l .leaf::before { background: #7FB800; }
+  .leaf b { color: #071A4D; }
+  .b h2 { border-color: #1F5EFF; }
+  .l h2 { border-color: #7FB800; }
+  .left { left: 30px; }
+  .right { left: 980px; }
+  .exc {
+    position: absolute; left: 500px; top: 890px; width: 480px; background: #FFF3EC;
+    border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px;
+  }
+  .exc h2 { font-size: 17px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
+  .exc .leaf { font-size: 12.5px; margin: 3px 0; padding-left: 14px; color: #7A2A12; }
+  .exc .leaf::before { background: #D2481F; }
+  .exc b { color: #B4380F; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <svg class="wires" viewBox="0 0 1480 1120">
+    <path d="M 555 420 C 505 420, 520 165, 502 160" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 555 435 C 515 435, 520 430, 502 430" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 555 450 C 505 450, 520 700, 502 705" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 925 420 C 975 420, 960 165, 978 160" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 925 435 C 965 435, 960 430, 978 430" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 925 450 C 975 450, 960 700, 978 705" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 740 485 C 740 640, 740 810, 740 870" fill="none" stroke="#D2481F" stroke-width="2.5" stroke-dasharray="7 5" opacity=".6"/>
+  </svg>
+
+  <div class="center">
+    <div class="t">ECOSYSTEM</div>
+    <div class="s">UNIT X &#183; COMPLETE CHAPTER MAP</div>
+  </div>
+
+  <div class="card left b" style="top:56px">
+    <h2>Structure &amp; Function</h2>
+    <div class="leaf"><b>Definition:</b> organisms + their physical surroundings, interacting as one working system</div>
+    <div class="leaf"><b>Pond example:</b> water + dissolved nutrients feed producers &#8594; herbivores &#8594; carnivores &#8594; decomposers</div>
+    <div class="leaf"><b>Species composition</b> = which species live there; <b>stratification</b> = vertical layers</div>
+    <div class="leaf"><b>Four roles:</b> producers make food &#183; herbivores eat &#183; carnivores hunt &#183; decomposers recycle</div>
+  </div>
+
+  <div class="card left l" style="top:318px">
+    <h2>Productivity — GPP &amp; NPP</h2>
+    <div class="leaf"><b>GPP:</b> rate at which producers build organic matter (g/m&#178;/yr — a rate, not a stock)</div>
+    <div class="leaf"><b>NPP = GPP &#8722; R:</b> R = producers&#8217; respiration; NPP is the only share consumers can eat</div>
+    <div class="leaf"><b>Standing crop</b> = mass of living matter now; <b>standing state</b> = nutrients in soil now</div>
+    <div class="leaf"><b>Oceans:</b> ~70% of Earth&#8217;s surface yet a smaller share of output — light + nutrients limit them</div>
+  </div>
+
+  <div class="card left b" style="top:596px">
+    <h2>Decomposition — 5 Steps</h2>
+    <div class="leaf"><b>Detritus</b> = dead leaves, bodies, droppings; eaten by <b>detritivores</b> (earthworm)</div>
+    <div class="leaf"><b>Order:</b> fragmentation &#8594; leaching &#8594; catabolism &#8594; humification &#8594; mineralisation</div>
+    <div class="leaf"><b>Humus:</b> dark, amorphous, decomposes very slowly — a reservoir of nutrients</div>
+    <div class="leaf"><b>Fast</b> when warm + moist + oxygen-rich; slow when waterlogged; sugars fast, lignin slow</div>
+  </div>
+
+  <div class="card right l" style="top:56px">
+    <h2>Energy Flow — One Way</h2>
+    <div class="leaf"><b>Source:</b> the Sun; plants can use only <b>PAR</b> — less than 50% of sunlight</div>
+    <div class="leaf"><b>Trophic level</b> = one step of the chain; producers sit at level 1</div>
+    <div class="leaf"><b>10% rule (Lindeman):</b> each level hands on about 10% of its energy</div>
+    <div class="leaf"><b>Never cycles back:</b> the lost part leaves as heat at every step</div>
+  </div>
+
+  <div class="card right b" style="top:318px">
+    <h2>Food Chains &amp; Food Web</h2>
+    <div class="leaf"><b>GFC:</b> starts with living producers — grass &#8594; rabbit &#8594; fox</div>
+    <div class="leaf"><b>DFC:</b> starts with detritus &#8594; decomposers &#8594; predators; joins the GFC where its animals become prey</div>
+    <div class="leaf"><b>Food web:</b> many chains interlinked — one organism, many eaters</div>
+    <div class="leaf"><b>Chains stay short</b> (3&#8211;4 levels): energy runs out</div>
+  </div>
+
+  <div class="card right l" style="top:596px">
+    <h2>Ecological Pyramids</h2>
+    <div class="leaf"><b>Producers form the base;</b> layers stacked by trophic level — 3 kinds</div>
+    <div class="leaf"><b>Number:</b> upright in grassland; inverted for a tree (one tree &#8594; many insects)</div>
+    <div class="leaf"><b>Biomass:</b> upright on land; inverted in the ocean (small phytoplankton, big zooplankton)</div>
+    <div class="leaf"><b>Energy:</b> ALWAYS upright — heat is lost at every transfer</div>
+  </div>
+
+  <div class="exc">
+    <h2>COMMON ERRORS &amp; TRAPS</h2>
+    <div class="leaf"><b>NPP &#8800; GPP &#8722; decomposition.</b> NPP = GPP &#8722; respiration of producers</div>
+    <div class="leaf"><b>Productivity is a rate</b> (per year) — never a stored pile of matter</div>
+    <div class="leaf"><b>Energy pyramid never inverts;</b> number and biomass can</div>
+    <div class="leaf"><b>Don&#8217;t skip leaching</b> when listing the 5 decomposition steps in order</div>
+  </div>
+</div>
+</body>
+</html>

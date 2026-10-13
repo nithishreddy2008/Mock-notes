@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: 860px; position: relative; background: #fff; }
+  .title { position: absolute; top: 24px; left: 0; width: 1480px; text-align: center;
+           font-size: 26px; font-weight: 800; color: #071A4D; letter-spacing: .5px; }
+  .title span { color: #1F5EFF; }
+  .step { position: absolute; width: 445px; height: 158px; background: #FCFDFF;
+          border: 1.6px solid #C9D3E6; border-radius: 14px; padding: 15px 18px 12px; }
+  .step .num { display: inline-block; width: 36px; height: 36px; border-radius: 50%;
+               background: #071A4D; color: #B8FF34; font-size: 17px; font-weight: 800;
+               text-align: center; line-height: 36px; margin-right: 10px; vertical-align: -9px; }
+  .step h2 { display: inline-block; font-size: 18.5px; color: #071A4D; font-weight: 800; }
+  .step .leaf { font-size: 13.8px; color: #1B2333; margin-top: 8px; line-height: 1.35; }
+  .step b { color: #071A4D; }
+  .s1 { left: 45px;  top: 90px; }
+  .s2 { left: 990px; top: 90px; }
+  .s3 { left: 45px;  top: 282px; }
+  .s4 { left: 990px; top: 282px; }
+  .s5 { left: 45px;  top: 474px; }
+  .s6 { left: 990px; top: 474px; }
+  .s7 { left: 45px;  top: 666px; }
+  .s8 { left: 990px; top: 666px; }
+  svg.wires { position: absolute; inset: 0; width: 1480px; height: 860px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <svg class="wires" viewBox="0 0 1480 860">
+    <path d="M 492 168 C 620 168, 860 168, 986 168" fill="none" stroke="#1F5EFF" stroke-width="3" opacity=".55"/>
+    <path d="M 1212 250 L 1212 278" fill="none" stroke="#1F5EFF" stroke-width="3" opacity=".55"/>
+    <path d="M 986 360 C 860 360, 620 360, 494 360" fill="none" stroke="#1F5EFF" stroke-width="3" opacity=".55"/>
+    <path d="M 267 442 L 267 470" fill="none" stroke="#1F5EFF" stroke-width="3" opacity=".55"/>
+    <path d="M 492 552 C 620 552, 860 552, 986 552" fill="none" stroke="#1F5EFF" stroke-width="3" opacity=".55"/>
+    <path d="M 1212 634 L 1212 662" fill="none" stroke="#1F5EFF" stroke-width="3" opacity=".55"/>
+  </svg>
+
+  <div class="title">THE STAFFING PROCESS — <span>eight steps from counting needs to paying and growing people</span></div>
+
+  <div class="step s1">
+    <span class="num">1</span><h2>Estimating manpower requirements</h2>
+    <div class="leaf">Count how many people of <b>which skills</b> the firm needs — workload analysis (work to be done) and workforce analysis (skills available now).</div>
+  </div>
+  <div class="step s2">
+    <span class="num">2</span><h2>Recruitment</h2>
+    <div class="leaf"><b>Search for suitable candidates</b> and stimulate them to apply — through internal sources (transfer, promotion) and external sources (ads, campuses, portals).</div>
+  </div>
+  <div class="step s3">
+    <span class="num">3</span><h2>Selection</h2>
+    <div class="leaf">Choose the <b>most suitable</b> from the applicants — tests, interviews, references — rejecting those who do not fit. Selection is a <b>negative</b> process.</div>
+  </div>
+  <div class="step s4">
+    <span class="num">4</span><h2>Placement and orientation</h2>
+    <div class="leaf">Put the selected person <b>on the right job</b> (placement) and introduce them to colleagues, rules and workplace (orientation).</div>
+  </div>
+  <div class="step s5">
+    <span class="num">5</span><h2>Training and development</h2>
+    <div class="leaf">Systematically improve skills <b>for the present job</b> (training) and overall growth <b>for future roles</b> (development).</div>
+  </div>
+  <div class="step s6">
+    <span class="num">6</span><h2>Performance appraisal</h2>
+    <div class="leaf">Measure how well each employee performs against the <b>standards of the job</b> — strengths, weaknesses and potential.</div>
+  </div>
+  <div class="step s7">
+    <span class="num">7</span><h2>Promotion and career planning</h2>
+    <div class="leaf">Reward better performers with <b>higher posts and pay</b>, and plan each person's <b>growth path</b> in the firm.</div>
+  </div>
+  <div class="step s8">
+    <span class="num">8</span><h2>Compensation</h2>
+    <div class="leaf">Fix and pay fair remuneration — <b>wages, salaries, benefits</b> — matched to the job's worth and the person's performance.</div>
+  </div>
+</div>
+</body>
+</html>

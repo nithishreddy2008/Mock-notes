@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; padding: 28px 34px 22px; background: #fff; }
+  .titlebar { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
+  .titlebar .tag { background: #071A4D; color: #fff; font-size: 15px; font-weight: 700;
+                   padding: 7px 16px; border-radius: 8px; letter-spacing: 1px; }
+  .titlebar h1 { font-size: 26px; color: #071A4D; font-weight: 800; }
+  .canvas { border: 1.5px solid #D5DCEA; border-radius: 14px; padding: 10px; background: #FCFDFF; }
+  .legend { display: flex; flex-wrap: wrap; gap: 8px 26px; margin-top: 14px; padding: 12px 18px;
+            background: #EEF1F8; border-radius: 10px; font-size: 15.5px; color: #1B2333; }
+  .legend b { color: #071A4D; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="titlebar">
+    <div class="tag">DIAGRAM</div>
+    <h1>Ultrastructure of a Typical Animal Cell — Organelles You Must Label in NEST / IAT</h1>
+  </div>
+  <div class="canvas">
+    <svg width="1400" height="640" viewBox="0 0 1400 640">
+      <!-- cell membrane (slightly irregular circle) -->
+      <ellipse cx="700" cy="330" rx="360" ry="280" fill="#EAF0FF" stroke="#1F5EFF" stroke-width="5"/>
+      <ellipse cx="700" cy="330" rx="352" ry="272" fill="none" stroke="#B8C2D8" stroke-width="2" stroke-dasharray="8 7"/>
+
+      <!-- nucleus -->
+      <circle cx="610" cy="300" r="120" fill="#DCE7FF" stroke="#1F5EFF" stroke-width="4"/>
+      <circle cx="610" cy="300" r="108" fill="none" stroke="#1F5EFF" stroke-width="2" stroke-dasharray="4 6"/>
+      <!-- chromatin -->
+      <g stroke="#5A7DE0" stroke-width="3.5" fill="none" opacity="0.75">
+        <path d="M 560 260 q 20 -18 40 0 q 20 18 40 0"/>
+        <path d="M 550 320 q 22 16 44 0 q 22 -16 44 0"/>
+        <path d="M 590 350 q 24 -14 48 0"/>
+      </g>
+      <!-- nucleolus -->
+      <circle cx="636" cy="286" r="30" fill="#1F5EFF" opacity="0.85"/>
+      <!-- nuclear pore marks -->
+      <g fill="#1F5EFF">
+        <circle cx="523" cy="252" r="4"/><circle cx="500" cy="300" r="4"/><circle cx="523" cy="350" r="4"/>
+        <circle cx="697" cy="252" r="4"/><circle cx="720" cy="300" r="4"/><circle cx="697" cy="350" r="4"/>
+      </g>
+
+      <!-- mitochondrion 1 -->
+      <g transform="translate(880,180) rotate(-18)">
+        <ellipse cx="0" cy="0" rx="88" ry="44" fill="#F6FFDF" stroke="#7FB800" stroke-width="3.5"/>
+        <path d="M -70 0 q 12 -22 24 0 q 12 22 24 0 q 12 -22 24 0 q 12 22 24 0 q 12 -22 24 0 q 12 22 24 0"
+              fill="none" stroke="#7FB800" stroke-width="3"/>
+      </g>
+      <!-- mitochondrion 2 -->
+      <g transform="translate(560,510) rotate(12)">
+        <ellipse cx="0" cy="0" rx="74" ry="38" fill="#F6FFDF" stroke="#7FB800" stroke-width="3.5"/>
+        <path d="M -56 0 q 10 -18 20 0 q 10 18 20 0 q 10 -18 20 0 q 10 18 20 0 q 10 -18 20 0"
+              fill="none" stroke="#7FB800" stroke-width="3"/>
+      </g>
+
+      <!-- rough ER (with ribosomes) -->
+      <g transform="translate(430,150)">
+        <path d="M 0 0 q 30 -34 60 0 q 30 34 60 0 q 30 -34 60 0" fill="none" stroke="#0A7A3D" stroke-width="8" stroke-linecap="round"/>
+        <g fill="#0A7A3D">
+          <circle cx="12" cy="-8" r="5.5"/><circle cx="44" cy="-26" r="5.5"/><circle cx="76" cy="-8" r="5.5"/>
+          <circle cx="108" cy="-26" r="5.5"/><circle cx="140" cy="-8" r="5.5"/>
+        </g>
+      </g>
+
+      <!-- smooth ER -->
+      <g transform="translate(880,420) rotate(8)">
+        <path d="M 0 0 q 28 -30 56 0 q 28 30 56 0 q 28 -30 56 0" fill="none" stroke="#0A7A3D" stroke-width="8" stroke-linecap="round" opacity="0.65"/>
+      </g>
+
+      <!-- Golgi apparatus -->
+      <g transform="translate(850,510) rotate(-6)">
+        <path d="M 0 0 q 40 -22 80 0 q 40 22 80 0" fill="none" stroke="#B4380F" stroke-width="7" stroke-linecap="round"/>
+        <path d="M 8 22 q 40 -22 80 0 q 40 22 80 0" fill="none" stroke="#B4380F" stroke-width="7" stroke-linecap="round" opacity="0.85"/>
+        <path d="M 16 44 q 40 -22 80 0 q 40 22 80 0" fill="none" stroke="#B4380F" stroke-width="7" stroke-linecap="round" opacity="0.7"/>
+        <circle cx="188" cy="60" r="7" fill="#B4380F" opacity="0.7"/>
+        <circle cx="205" cy="72" r="5" fill="#B4380F" opacity="0.55"/>
+      </g>
+
+      <!-- lysosome -->
+      <g transform="translate(380,470)">
+        <circle cx="0" cy="0" r="40" fill="#FFE9DC" stroke="#E2540A" stroke-width="3.5"/>
+        <g fill="#E2540A" opacity="0.8">
+          <circle cx="-12" cy="-8" r="6"/><circle cx="10" cy="4" r="5"/><circle cx="-2" cy="16" r="5"/>
+        </g>
+      </g>
+
+      <!-- centrioles -->
+      <g transform="translate(760,120)">
+        <rect x="-34" y="-16" width="30" height="52" rx="6" fill="none" stroke="#5A6478" stroke-width="3.5"/>
+        <g stroke="#5A6478" stroke-width="2"><line x1="-26" y1="-16" x2="-26" y2="36"/><line x1="-18" y1="-16" x2="-18" y2="36"/><line x1="-10" y1="-16" x2="-10" y2="36"/></g>
+        <rect x="14" y="-34" width="52" height="30" rx="6" fill="none" stroke="#5A6478" stroke-width="3.5"/>
+        <g stroke="#5A6478" stroke-width="2"><line x1="14" y1="-26" x2="66" y2="-26"/><line x1="14" y1="-18" x2="66" y2="-18"/><line x1="14" y1="-10" x2="66" y2="-10"/></g>
+      </g>
+
+      <!-- ribosomes free -->
+      <g fill="#0A7A3D">
+        <circle cx="520" cy="430" r="6"/><circle cx="540" cy="448" r="6"/><circle cx="502" cy="452" r="6"/>
+        <circle cx="812" cy="310" r="6"/><circle cx="830" cy="330" r="6"/>
+      </g>
+
+      <!-- ===================== LABELS ===================== -->
+      <g font-size="18" fill="#1B2333" font-weight="600">
+        <!-- nucleus -->
+        <line x1="540" y1="230" x2="300" y2="120" stroke="#5A6478" stroke-width="2"/>
+        <circle cx="540" cy="230" r="4" fill="#1F5EFF"/>
+        <text x="140" y="112" fill="#1F5EFF" font-weight="800">Nucleus</text>
+        <text x="140" y="134" font-size="15" fill="#5A6478">double membrane w/ pores · chromatin</text>
+        <!-- nucleolus -->
+        <line x1="648" y1="268" x2="820" y2="70" stroke="#5A6478" stroke-width="2"/>
+        <circle cx="648" cy="268" r="4" fill="#1F5EFF"/>
+        <text x="826" y="70" fill="#1F5EFF" font-weight="800">Nucleolus</text>
+        <text x="826" y="92" font-size="15" fill="#5A6478">rRNA factory</text>
+        <!-- rough ER -->
+        <line x1="452" y1="150" x2="250" y2="215" stroke="#5A6478" stroke-width="2"/>
+        <circle cx="452" cy="150" r="4" fill="#0A7A3D"/>
+        <text x="60" y="212" fill="#0A7A3D" font-weight="800">Rough ER</text>
+        <text x="60" y="234" font-size="15" fill="#5A6478">ribosomes studded · protein synthesis</text>
+        <!-- centrioles -->
+        <line x1="770" y1="112" x2="960" y2="60" stroke="#5A6478" stroke-width="2"/>
+        <circle cx="770" cy="112" r="4" fill="#5A6478"/>
+        <text x="966" y="60" fill="#5A6478" font-weight="800">Centrioles</text>
+        <text x="966" y="82" font-size="15" fill="#5A6478">spindle during cell division</text>
+        <!-- mitochondrion 1 -->
+        <line x1="940" y1="140" x2="1090" y2="130" stroke="#5A6478" stroke-width="2"/>
+        <circle cx="940" cy="140" r="4" fill="#7FB800"/>
+        <text x="1096" y="126" fill="#4E7A00" font-weight="800">Mitochondrion</text>
+        <text x="1096" y="148" font-size="15" fill="#5A6478">cristae · ATP — powerhouse</text>
+        <!-- smooth ER -->
+        <line x1="930" y1="408" x2="1105" y2="380" stroke="#5A6478" stroke-width="2"/>
+        <circle cx="930" cy="408" r="4" fill="#0A7A3D"/>
+        <text x="1112" y="378" fill="#0A7A3D" font-weight="800">Smooth ER</text>
+        <text x="1112" y="400" font-size="15" fill="#5A6478">lipid + steroid synthesis</text>
+        <!-- ribosomes -->
+        <line x1="822" y1="322" x2="1120" y2="300" stroke="#5A6478" stroke-width="2"/>
+        <circle cx="822" cy="322" r="4" fill="#0A7A3D"/>
+        <text x="1126" y="298" fill="#0A7A3D" font-weight="800">Ribosomes (70S vs 80S)</text>
+        <text x="1126" y="320" font-size="15" fill="#5A6478">protein assembly</text>
+        <!-- Golgi -->
+        <line x1="940" y1="540" x2="1090" y2="560" stroke="#5A6478" stroke-width="2"/>
+        <circle cx="940" cy="540" r="4" fill="#B4380F"/>
+        <text x="1096" y="556" fill="#B4380F" font-weight="800">Golgi apparatus</text>
+        <text x="1096" y="578" font-size="15" fill="#5A6478">packaging · glycosylation</text>
+        <!-- lysosome -->
+        <line x1="380" y1="500" x2="300" y2="580" stroke="#5A6478" stroke-width="2"/>
+        <circle cx="380" cy="500" r="4" fill="#E2540A"/>
+        <text x="150" y="600" fill="#B4380F" font-weight="800">Lysosome</text>
+        <text x="150" y="622" font-size="15" fill="#5A6478">acid hydrolases · suicide bags</text>
+        <!-- membrane -->
+        <line x1="360" y1="440" x2="150" y2="330" stroke="#5A6478" stroke-width="2"/>
+        <circle cx="360" cy="440" r="4" fill="#1F5EFF"/>
+        <text x="10" y="326" fill="#1F5EFF" font-weight="800">Plasma membrane</text>
+        <text x="10" y="348" font-size="15" fill="#5A6478">fluid mosaic bilayer</text>
+        <!-- cytoplasm -->
+        <line x1="700" y1="430" x2="620" y2="630" stroke="#5A6478" stroke-width="2"/>
+        <circle cx="700" cy="430" r="4" fill="#5A6478"/>
+        <text x="560" y="620" fill="#5A6478" font-weight="800">Cytoplasm</text>
+      </g>
+    </svg>
+  </div>
+  <div class="legend">
+    <span><b>Must-know pairs:</b> RER&#8594;protein, SER&#8594;lipid, Golgi&#8594;package, Lysosome&#8594;digest, Mitochondria&#8594;ATP</span>
+    <span><b>NEST trap:</b> ribosome = 70S in prokaryotes, 80S in eukaryotes</span>
+  </div>
+</div>
+</body>
+</html>

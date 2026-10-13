@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: 1060px; position: relative; background: #fff; }
+  svg.wires { position: absolute; inset: 0; width: 1480px; height: 1060px; }
+  .center {
+    position: absolute; left: 555px; top: 400px; width: 370px; height: 100px;
+    background: #071A4D; border-radius: 16px; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(7,26,77,.25);
+    border-bottom: 5px solid #B8FF34;
+  }
+  .center .t { color: #fff; font-size: 24px; font-weight: 800; letter-spacing: .5px; }
+  .center .s { color: #B8FF34; font-size: 13px; font-weight: 700; letter-spacing: 2px; margin-top: 4px; }
+  .card {
+    position: absolute; width: 470px; background: #FCFDFF; border: 1.5px solid #D5DCEA;
+    border-radius: 14px; padding: 13px 16px 12px;
+  }
+  .card h2 { font-size: 19px; color: #071A4D; font-weight: 800; margin-bottom: 7px;
+             padding-bottom: 5px; border-bottom: 3px solid; display: inline-block; }
+  .leaf { font-size: 13.8px; color: #1B2333; margin: 4.5px 0; padding-left: 16px; position: relative; line-height: 1.3; }
+  .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
+  .b .leaf::before { background: #1F5EFF; }
+  .l .leaf::before { background: #7FB800; }
+  .leaf b { color: #071A4D; }
+  .b h2 { border-color: #1F5EFF; }
+  .l h2 { border-color: #7FB800; }
+  .left { left: 30px; }
+  .right { left: 980px; }
+  .exc {
+    position: absolute; left: 490px; top: 890px; width: 500px; background: #FFF3EC;
+    border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px;
+  }
+  .exc h2 { font-size: 17px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
+  .exc .leaf { font-size: 13px; margin: 3.5px 0; padding-left: 14px; color: #7A2A12; }
+  .exc .leaf::before { background: #D2481F; }
+  .exc b { color: #B4380F; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <svg class="wires" viewBox="0 0 1480 1060">
+    <path d="M 555 435 C 505 435, 520 145, 502 142" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 555 450 C 510 450, 522 400, 502 398" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 555 465 C 510 465, 522 660, 502 658" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 925 435 C 975 435, 960 145, 978 142" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 925 450 C 970 450, 958 400, 978 398" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 925 465 C 970 465, 958 660, 978 658" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 740 500 C 740 650, 740 830, 740 888" fill="none" stroke="#D2481F" stroke-width="2.5" stroke-dasharray="7 5" opacity=".6"/>
+  </svg>
+
+  <div class="center">
+    <div class="t">BUSINESS<br>ENVIRONMENT</div>
+    <div class="s">UNIT III &#183; COMPLETE CHAPTER MAP</div>
+  </div>
+
+  <div class="card left b" style="top:56px">
+    <h2>Meaning &amp; Features</h2>
+    <div class="leaf"><b>Business environment</b> = the sum of all individuals, institutions and forces outside a business that affect its performance</div>
+    <div class="leaf"><b>Features:</b> totality of external forces &#183; specific + general forces &#183; inter-relatedness &#183; dynamic &#183; uncertainty &#183; complexity &#183; relativity</div>
+    <div class="leaf"><b>Specific</b> = customers, suppliers, competitors (affects one industry); <b>general</b> = government, social trends (affects all)</div>
+  </div>
+
+  <div class="card left l" style="top:306px">
+    <h2>Importance (5 Points)</h2>
+    <div class="leaf"><b>First mover advantage</b> — spot opportunities before rivals do</div>
+    <div class="leaf"><b>Early warning</b> — identify threats before they strike</div>
+    <div class="leaf"><b>Tapping useful resources</b> — environment supplies inputs; the firm returns goods and services</div>
+    <div class="leaf"><b>Coping with rapid changes</b> &#183; <b>planning and policy</b> — plans are built on environment scanning</div>
+  </div>
+
+  <div class="card left b" style="top:556px">
+    <h2>Demonetisation — One Event, Five Dimensions</h2>
+    <div class="leaf"><b>Economic:</b> ₹500 and ₹1000 notes cancelled overnight</div>
+    <div class="leaf"><b>Political:</b> government's move against black money and tax evasion</div>
+    <div class="leaf"><b>Legal:</b> RBI notification under the RBI Act, 1934</div>
+    <div class="leaf"><b>Technological:</b> surge in digital payments and wallets</div>
+    <div class="leaf"><b>Social:</b> people's payment habits changed within months</div>
+  </div>
+
+  <div class="card right l" style="top:56px">
+    <h2>Five Dimensions (1)</h2>
+    <div class="leaf"><b>Economic:</b> interest rates, inflation, income, stock indices — the money climate</div>
+    <div class="leaf"><b>Social:</b> customs, traditions, values, trends, literacy, demographics</div>
+    <div class="leaf"><b>Technological:</b> new techniques and innovations in products and processes</div>
+    <div class="leaf">Example: rising literacy &#8594; more demand for books; smartphone replaced cameras</div>
+  </div>
+
+  <div class="card right b" style="top:322px">
+    <h2>Five Dimensions (2)</h2>
+    <div class="leaf"><b>Political:</b> stability, attitude of government towards business, party ideology</div>
+    <div class="leaf"><b>Legal:</b> legislation, administrative orders, court judgments</div>
+    <div class="leaf">Example: statutory warnings on tobacco packs = legal; investor-friendly government = political</div>
+  </div>
+
+  <div class="card right l" style="top:556px">
+    <h2>Impact of Environment on Business</h2>
+    <div class="leaf">Environment supplies <b>inputs</b> (men, money, material, power); business returns <b>outputs</b> (goods, services, taxes)</div>
+    <div class="leaf"><b>Inter-related forces:</b> soft-drink demand &#8594; glass and refrigerator demand rise too</div>
+    <div class="leaf">The same event is read differently by <b>different firms</b> — that is <b>relativity</b></div>
+  </div>
+
+  <div class="exc">
+    <h2>Traps that catch most students</h2>
+    <div class="leaf"><b>Specific ≠ general forces:</b> customers/suppliers are specific; government/social trends are general</div>
+    <div class="leaf"><b>GST or demonetisation</b> span <b>several dimensions at once</b> — expect multi-dimension answers</div>
+    <div class="leaf"><b>Political</b> (attitude, stability) ≠ <b>legal</b> (actual laws, courts, orders)</div>
+    <div class="leaf"><b>Uncertainty is hard to predict</b> — fashion, technology; complex = many forces easy to understand but hard to grasp together</div>
+  </div>
+</div>
+</body>
+</html>

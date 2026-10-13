@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: auto; background: #fff; padding: 26px 30px 24px; position: relative; }
+  .title { text-align: center; font-size: 32px; font-weight: 800; color: #071A4D; margin-bottom: 6px; }
+  .subtitle { text-align: center; font-size: 19px; color: #5A6478; margin-bottom: 26px; }
+  .row { display: flex; justify-content: center; align-items: stretch; gap: 0; }
+  .node {
+    width: 320px; background: #FCFDFF; border: 1.5px solid #D5DCEA; border-radius: 13px;
+    padding: 14px 16px 13px; position: relative; margin: 0 26px;
+  }
+  .node .num {
+    position: absolute; top: -17px; left: -17px; width: 40px; height: 40px; border-radius: 50%;
+    background: #071A4D; color: #B8FF34; font-weight: 800; font-size: 19px;
+    display: flex; align-items: center; justify-content: center; border: 2.5px solid #fff;
+    box-shadow: 0 3px 8px rgba(7,26,77,.28);
+  }
+  .node h3 { font-size: 20.5px; color: #071A4D; font-weight: 800; margin-bottom: 6px; padding-bottom: 5px;
+             border-bottom: 2.5px solid #1F5EFF; display: inline-block; }
+  .node p { font-size: 16px; color: #1B2333; line-height: 1.4; }
+  .node p b { color: #071A4D; }
+  .node.dr h3 { border-color: #D2481F; }
+  .node.dr { background: #FFF8F5; }
+  .node.dr .num { background: #B4380F; color: #FFE3D6; }
+  .node.cr h3 { border-color: #7FB800; }
+  .node.cr { background: #FBFFF4; }
+  .arrow { align-self: center; width: 0; height: 0; border-top: 15px solid transparent;
+           border-bottom: 15px solid transparent; border-left: 22px solid #1F5EFF; margin: 0 -6px; }
+  .arrow.down { border-left: 15px solid transparent; border-right: 15px solid transparent;
+                border-top: 22px solid #1F5EFF; border-bottom: none; margin: 4px 0; }
+  .rowgap { height: 30px; display: flex; justify-content: center; align-items: center;
+            flex-direction: column; }
+  .losslabel {
+    margin: 2px 0 14px; text-align: center; font-size: 17px; font-weight: 800;
+    color: #B4380F; letter-spacing: .6px;
+  }
+  .losslabel span {
+    background: #FFF3EC; border: 1.5px solid #D2481F; border-radius: 9px; padding: 7px 18px;
+    display: inline-block;
+  }
+  .spacer { width: 220px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="title">The Order of Settlement on Dissolution</div>
+  <div class="subtitle">Section 48, Indian Partnership Act 1932 — who gets paid first, and who absorbs the loss</div>
+
+  <div class="row">
+    <div class="node cr">
+      <div class="num">1</div>
+      <h3>Outside liabilities</h3>
+      <p><b>Creditors, bills payable, bank loans</b> — the firm's debts to strangers are cleared first, in full.</p>
+    </div>
+    <div class="arrow"></div>
+    <div class="node cr">
+      <div class="num">2</div>
+      <h3>Partners' loans</h3>
+      <p>Money partners <b>lent</b> to the firm is repaid <b>in full</b> — before any capital comes back.</p>
+    </div>
+    <div class="arrow"></div>
+    <div class="node cr">
+      <div class="num">3</div>
+      <h3>Partners' capitals</h3>
+      <p>What the firm still owes each partner's <b>capital account</b> — after absorbing the realisation result.</p>
+    </div>
+    <div class="arrow"></div>
+    <div class="node">
+      <div class="num">4</div>
+      <h3>Surplus in PSR</h3>
+      <p>Anything left after every payment is shared by the partners in their <b>old profit-sharing ratio</b>.</p>
+    </div>
+  </div>
+
+  <div class="rowgap"><div class="arrow down"></div></div>
+  <div class="losslabel"><span>AND IF THE DISSOLUTION ENDS IN A LOSS — THE LOSS IS APPLIED IN THIS ORDER</span></div>
+
+  <div class="row">
+    <div class="node dr">
+      <div class="num">5</div>
+      <h3>From profits</h3>
+      <p>First the loss is absorbed out of any <b>profits still available</b> for distribution.</p>
+    </div>
+    <div class="arrow"></div>
+    <div class="node dr">
+      <div class="num">6</div>
+      <h3>From capitals</h3>
+      <p>Next the loss eats into the partners' <b>capital balances</b>, partner by partner.</p>
+    </div>
+    <div class="arrow"></div>
+    <div class="node dr">
+      <div class="num">7</div>
+      <h3>By partners in PSR</h3>
+      <p>Still short? The partners bear the balance <b>in their old profit-sharing ratio</b>.</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

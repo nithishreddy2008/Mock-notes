@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: 860px; position: relative; background: #fff; }
+  .title { position: absolute; top: 24px; left: 0; width: 1480px; text-align: center;
+           font-size: 26px; font-weight: 800; color: #071A4D; letter-spacing: .5px; }
+  .title span { color: #1F5EFF; }
+  .band { position: absolute; display: flex; flex-direction: column; align-items: center;
+          justify-content: center; color: #fff; text-align: center; }
+  .band .nm { font-size: 20px; font-weight: 800; }
+  .band .wd { font-size: 13.5px; margin-top: 4px; opacity: .95; max-width: 420px; }
+  .b1 { left: 585px; top: 96px;  width: 310px;  height: 118px; background: #071A4D;
+        clip-path: polygon(50% 0%, 90% 100%, 10% 100%); padding-top: 30px; }
+  .b1 .nm { font-size: 16px; max-width: 170px; line-height: 1.2; }
+  .b2 { left: 540px; top: 222px; width: 400px;  height: 122px; background: #12308F;
+        clip-path: polygon(26% 0%, 74% 0%, 93% 100%, 7% 100%); padding-top: 10px; }
+  .b2 .nm { font-size: 17px; }
+  .b3 { left: 495px; top: 352px; width: 490px;  height: 122px; background: #1F5EFF;
+        clip-path: polygon(22% 0%, 78% 0%, 95% 100%, 5% 100%); padding-top: 12px; }
+  .b4 { left: 450px; top: 482px; width: 580px;  height: 122px; background: #47A3FF;
+        clip-path: polygon(19% 0%, 81% 0%, 97% 100%, 3% 100%); padding-top: 14px; }
+  .b4 .nm, .b4 .wd { color: #06214D; }
+  .b5 { left: 405px; top: 612px; width: 670px;  height: 122px; background: #6EDB00;
+        clip-path: polygon(17% 0%, 83% 0%, 100% 100%, 0% 100%); padding-top: 16px; }
+  .b5, .b5 * { color: #071A4D; }
+  .side { position: absolute; width: 300px; background: #FCFDFF; border: 1.5px solid #D5DCEA;
+          border-radius: 14px; padding: 13px 15px 12px; }
+  .side h2 { font-size: 16.5px; color: #071A4D; font-weight: 800; margin-bottom: 6px;
+             padding-bottom: 4px; border-bottom: 3px solid; display: inline-block; }
+  .leaf { font-size: 13px; color: #1B2333; margin: 5px 0; padding-left: 15px; position: relative; line-height: 1.32; }
+  .leaf::before { content: ""; position: absolute; left: 0; top: 6px; width: 8px; height: 8px; border-radius: 50%; }
+  .leaf b { color: #071A4D; }
+  .blue h2 { border-color: #1F5EFF; } .blue .leaf::before { background: #1F5EFF; }
+  .lime h2 { border-color: #7FB800; } .lime .leaf::before { background: #7FB800; }
+  .left  { left: 45px; }
+  .right { left: 1135px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="title">MASLOW'S HIERARCHY OF NEEDS — <span>five rungs, climbed one at a time</span></div>
+
+  <div class="band b1"><div class="nm">Self-actualisation</div><div class="wd">realise one's fullest potential</div></div>
+  <div class="band b2"><div class="nm">Esteem needs</div><div class="wd">self-respect, recognition, status</div></div>
+  <div class="band b3"><div class="nm">Social needs</div><div class="wd">belonging, affection, friendship</div></div>
+  <div class="band b4"><div class="nm">Safety / security needs</div><div class="wd">job security, pension, safe conditions</div></div>
+  <div class="band b5"><div class="nm">Physiological (basic) needs</div><div class="wd">food, clothing, shelter — the base salary pays for these first</div></div>
+
+  <div class="side left blue" style="top:120px">
+    <h2>The climb rule</h2>
+    <div class="leaf">A satisfied need <b>no longer motivates</b> — once a rung is met, the next rung pulls</div>
+    <div class="leaf">People climb <b>bottom to top</b>: pay first, praise later</div>
+    <div class="leaf">A manager must find <b>which rung</b> the employee is on and motivate there</div>
+  </div>
+
+  <div class="side left lime" style="top:470px">
+    <h2>How firms feed each rung</h2>
+    <div class="leaf"><b>Physiological:</b> basic salary, canteen</div>
+    <div class="leaf"><b>Security:</b> job security, pension, insurance</div>
+    <div class="leaf"><b>Social:</b> team events, friendly workplace</div>
+    <div class="leaf"><b>Esteem:</b> titles, awards, recognition</div>
+    <div class="leaf"><b>Self-actualisation:</b> challenging work, growth, autonomy</div>
+  </div>
+
+  <div class="side right blue" style="top:120px">
+    <h2>Why it matters for motivation</h2>
+    <div class="leaf">Money reaches the <b>lower rungs</b> — above them, non-financial motivators work better</div>
+    <div class="leaf">Motivating at the <b>wrong rung</b> wastes money and goodwill</div>
+    <div class="leaf">The theory explains why <b>both</b> financial and non-financial incentives exist</div>
+  </div>
+
+  <div class="side right lime" style="top:470px">
+    <h2>One line to remember</h2>
+    <div class="leaf"><b>Unsatisfied need</b> = the motivator; satisfied need = the retired one</div>
+    <div class="leaf">The pyramid is <b>hierarchical</b> — lower needs dominate until met</div>
+    <div class="leaf">Order to memorise: <b>physiological &#8594; security &#8594; social &#8594; esteem &#8594; self-actualisation</b></div>
+  </div>
+</div>
+</body>
+</html>

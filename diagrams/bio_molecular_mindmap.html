@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: 1060px; position: relative; background: #fff; }
+  svg.wires { position: absolute; inset: 0; width: 1480px; height: 1060px; }
+  .center {
+    position: absolute; left: 545px; top: 385px; width: 390px; height: 100px;
+    background: #071A4D; border-radius: 16px; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(7,26,77,.25);
+    border-bottom: 5px solid #B8FF34;
+  }
+  .center .t { color: #fff; font-size: 23px; font-weight: 800; letter-spacing: .5px; }
+  .center .s { color: #B8FF34; font-size: 13.5px; font-weight: 700; letter-spacing: 2px; margin-top: 4px; }
+  .card {
+    position: absolute; width: 470px; background: #FCFDFF; border: 1.5px solid #D5DCEA;
+    border-radius: 14px; padding: 13px 16px 12px;
+  }
+  .card h2 { font-size: 20px; color: #071A4D; font-weight: 800; margin-bottom: 7px;
+             padding-bottom: 5px; border-bottom: 3px solid; display: inline-block; }
+  .leaf { font-size: 14.5px; color: #1B2333; margin: 5px 0; padding-left: 16px; position: relative; line-height: 1.32; }
+  .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
+  .b .leaf::before { background: #1F5EFF; }
+  .l .leaf::before { background: #7FB800; }
+  .leaf b { color: #071A4D; }
+  .b h2 { border-color: #1F5EFF; }
+  .l h2 { border-color: #7FB800; }
+  .left { left: 30px; }
+  .right { left: 980px; }
+  .exc {
+    position: absolute; left: 505px; top: 872px; width: 470px; background: #FFF3EC;
+    border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px;
+  }
+  .exc h2 { font-size: 17px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
+  .exc .leaf { font-size: 13px; margin: 3px 0; padding-left: 14px; color: #7A2A12; }
+  .exc .leaf::before { background: #D2481F; }
+  .exc b { color: #B4380F; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <svg class="wires" viewBox="0 0 1480 1060">
+    <path d="M 545 420 C 495 420, 520 165, 502 160" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 545 435 C 505 435, 520 430, 502 430" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 545 450 C 495 450, 520 700, 502 705" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 935 420 C 985 420, 960 165, 978 160" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 935 435 C 975 435, 960 430, 978 430" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 935 450 C 985 450, 960 700, 978 705" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 740 485 C 740 640, 740 800, 740 870" fill="none" stroke="#D2481F" stroke-width="2.5" stroke-dasharray="7 5" opacity=".6"/>
+  </svg>
+
+  <div class="center">
+    <div class="t">MOLECULAR BASIS OF INHERITANCE</div>
+    <div class="s">UNIT VII &#183; COMPLETE CHAPTER MAP</div>
+  </div>
+
+  <div class="card left b" style="top:56px">
+    <h2>DNA Structure &amp; Packaging</h2>
+    <div class="leaf"><b>Double helix (Watson + Crick 1953):</b> 2 nm wide, one turn 3.4 nm with ~10 bp; strands antiparallel 5'&#8594;3' vs 3'&#8594;5'</div>
+    <div class="leaf"><b>Base pairing:</b> A=T (2 H-bonds), G&#8801;C (3 H-bonds); Chargaff: A = T and G = C</div>
+    <div class="leaf"><b>Nucleosome:</b> ~200 bp wound 1&#190; turns round a histone octamer (H2A, H2B, H3, H4 &#215;2) + linker H1</div>
+    <div class="leaf"><b>Prokaryotes:</b> supercoiled DNA in the nucleoid — basic proteins, no histones</div>
+  </div>
+
+  <div class="card left l" style="top:322px">
+    <h2>The Search for Genetic Material</h2>
+    <div class="leaf"><b>Griffith 1928:</b> heat-killed S + live R <em>Streptococcus</em> killed mice — a "transforming principle" moved across</div>
+    <div class="leaf"><b>Avery 1944:</b> protease + RNase did not stop transformation; DNase did &#8594; the transformer is DNA</div>
+    <div class="leaf"><b>Hershey-Chase 1952:</b> &#179;&#178;P (DNA) entered cells, &#179;&#8309;S (protein) stayed in the supernatant</div>
+    <div class="leaf"><b>Verdict:</b> DNA, not protein, carries heredity</div>
+  </div>
+
+  <div class="card left b" style="top:600px">
+    <h2>Replication</h2>
+    <div class="leaf"><b>Semi-conservative:</b> every daughter duplex = one old strand + one new strand</div>
+    <div class="leaf"><b>Meselson-Stahl 1958:</b> &#185;&#8309;N &#8594; &#185;&#8308;N; generation 1 all hybrid, generation 2 half light + half hybrid</div>
+    <div class="leaf"><b>Machinery:</b> origin starts it; DNA pol builds 5'&#8594;3'; lagging strand = Okazaki pieces; ligase seals</div>
+    <div class="leaf"><b>Taylor:</b> &#179;H-thymidine in <em>Vicia faba</em> roots — chromosomes replicate semi-conservatively too</div>
+  </div>
+
+  <div class="card right l" style="top:56px">
+    <h2>Transcription &amp; RNA Types</h2>
+    <div class="leaf"><b>Transcription unit:</b> promoter (start) + structural gene + terminator (stop)</div>
+    <div class="leaf"><b>Template strand</b> is read; the coding strand matches the RNA (with U in place of T)</div>
+    <div class="leaf"><b>Bacteria:</b> RNA pol + sigma factor (initiation) + rho (termination); <b>eukaryotes:</b> Pol I rRNA, Pol II mRNA, Pol III tRNA</div>
+    <div class="leaf"><b>hnRNA processing:</b> 5' cap + 3' poly-A tail + introns spliced out; mRNA message, tRNA adapter, rRNA scaffold</div>
+  </div>
+
+  <div class="card right b" style="top:322px">
+    <h2>Genetic Code &amp; Translation</h2>
+    <div class="leaf"><b>Code properties:</b> triplet, degenerate, unambiguous, universal, commaless, colinear</div>
+    <div class="leaf"><b>Counts:</b> 64 codons — 61 sense + 3 stop; AUG = start (Met); UAA/UAG/UGA stop</div>
+    <div class="leaf"><b>tRNA adapter:</b> anticodon at one end, amino-acid acceptor arm at the other; charged by aminoacyl-tRNA synthetase</div>
+    <div class="leaf"><b>Translation:</b> initiation &#8594; elongation &#8594; termination; polysome = many ribosomes on one mRNA</div>
+  </div>
+
+  <div class="card right l" style="top:600px">
+    <h2>Regulation, HGP &amp; Fingerprinting</h2>
+    <div class="leaf"><b>Lac operon:</b> no lactose &#8594; repressor on operator &#8594; OFF; lactose present &#8594; repressor lifts &#8594; ON</div>
+    <div class="leaf"><b>HGP 1990&#8211;2003:</b> ~3 billion bp sequenced, ~20,000 genes found, &lt;2% of genome codes for proteins</div>
+    <div class="leaf"><b>Fingerprinting:</b> satellite DNA + VNTR repeats give polymorphism — the basis of a unique profile</div>
+    <div class="leaf"><b>Steps:</b> isolate &#8594; digest/amplify &#8594; gel &#8594; Southern blot &#8594; labelled probe &#8594; autoradiogram</div>
+  </div>
+
+  <div class="exc">
+    <h2>COMMON ERRORS &amp; TRAPS</h2>
+    <div class="leaf"><b>&#179;&#178;P = DNA, &#179;&#8309;S = protein.</b> Students swap the labels — P sits in DNA, S sits in cysteine/methionine</div>
+    <div class="leaf"><b>Repressor binds the operator,</b> not the promoter; 61 codons code for amino acids, 3 do not</div>
+    <div class="leaf"><b>Splicing is eukaryote-only</b> in the NCERT story; a nucleosome wraps ~200 bp, never 2,000</div>
+  </div>
+</div>
+</body>
+</html>

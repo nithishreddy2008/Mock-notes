@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: 950px; position: relative; background: #fff; }
+  .title {
+    position: absolute; left: 30px; top: 22px; width: 1420px; height: 58px;
+    background: #071A4D; border-radius: 12px; display: flex; align-items: center; justify-content: center;
+  }
+  .title .t { color: #fff; font-size: 24px; font-weight: 800; letter-spacing: 1px; }
+  .title .t b { color: #B8FF34; }
+  .panel {
+    position: absolute; top: 104px; width: 692px; height: 654px;
+    background: #FCFDFF; border: 1.5px solid #D5DCEA; border-radius: 14px; padding: 14px 18px;
+  }
+  .left  { left: 30px; }
+  .right { left: 758px; }
+  .panel h2 { font-size: 21px; font-weight: 800; margin-bottom: 2px; }
+  .left h2 { color: #1F5EFF; } .right h2 { color: #7FB800; }
+  .panel .sub { font-size: 14px; color: #5A6478; margin-bottom: 6px; }
+  .panel .sub b { color: #071A4D; }
+  .legend { display: flex; gap: 12px; margin: 4px 0; flex-wrap: wrap; }
+  .legend span { font-size: 13px; font-weight: 700; color: #1B2333; }
+  .dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 4px; vertical-align: -1px; }
+  .note { font-size: 13.5px; color: #1B2333; line-height: 1.4; margin-top: 6px; }
+  .note b { color: #071A4D; }
+  .strip { position: absolute; left: 30px; top: 778px; width: 1420px; display: flex; gap: 14px; }
+  .trap { flex: 1; background: #FFF3EC; border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px; }
+  .trap h3 { font-size: 14.5px; color: #B4380F; font-weight: 800; margin-bottom: 3px; }
+  .trap p { font-size: 13.5px; color: #7A2A12; line-height: 1.4; }
+  .trap p b { color: #B4380F; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="title"><div class="t">INCOME DETERMINATION &amp; <b>THE TWO GAPS THE GOVERNMENT FIGHTS</b></div></div>
+
+  <div class="panel left">
+    <h2>Two-sector equilibrium — where AD meets the 45° line</h2>
+    <div class="sub"><b>AD = C + I</b> meets the 45° line (Y = AD) at E — planned spending exactly equals output <b>OY*</b></div>
+    <div class="legend">
+      <span><span class="dot" style="background:#5A6478"></span>45° line: AD = Y</span>
+      <span><span class="dot" style="background:#0E7A4D"></span>C (consumption)</span>
+      <span><span class="dot" style="background:#1F5EFF"></span>AD = C + I</span>
+    </div>
+    <svg width="656" height="380" viewBox="0 0 656 380">
+      <line x1="52" y1="16" x2="52" y2="322" stroke="#071A4D" stroke-width="2.5"/>
+      <line x1="52" y1="322" x2="626" y2="322" stroke="#071A4D" stroke-width="2.5"/>
+      <text x="58" y="12" font-size="13" font-weight="800" fill="#071A4D">AD (planned spending, ₹ cr)</text>
+      <text x="540" y="342" font-size="13" font-weight="800" fill="#071A4D">Income, Y (₹ cr)</text>
+      <!-- 45 line -->
+      <line x1="80" y1="300" x2="600" y2="40" stroke="#5A6478" stroke-width="3"/>
+      <text x="250" y="160" font-size="13.5" font-weight="800" fill="#5A6478">45°: AD = Y</text>
+      <!-- C line: intercept 250 (y=250 at x=52?) -> from (52,252) slope: rises 210 over 548 -> to (600,60) -->
+      <line x1="52" y1="252" x2="600" y2="70" stroke="#0E7A4D" stroke-width="3.5"/>
+      <text x="606" y="70" font-size="13.5" font-weight="800" fill="#0E7A4D">C</text>
+      <!-- AD = C + I: parallel, 40 above -->
+      <line x1="52" y1="212" x2="600" y2="30" stroke="#1F5EFF" stroke-width="3.5"/>
+      <text x="500" y="44" font-size="13.5" font-weight="800" fill="#1F5EFF">AD = C + I</text>
+      <!-- vertical gap I arrow between C and AD at x=560 -->
+      <path d="M 460 112 L 460 82" stroke="#B4380F" stroke-width="2.5" marker-end="url(#arrI)"/>
+      <text x="400" y="100" font-size="12.5" font-weight="700" fill="#B4380F">I = 40</text>
+      <defs><marker id="arrI" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#B4380F"/></marker></defs>
+      <!-- E: 45 line (80,300)-(600,40): y=300-260t, x=80+520t ; AD: (52,212)-(600,30): y=212-182s, x=52+548s. Solve: 80+520t=52+548s ; 300-260t=212-182s -> 88=260t-182s ; x: t=(548s-28)/520=1.0538s-0.05385. 88=260(1.0538s-0.05385)-182s = 274s-14-182s=92s-14 -> s=1.1087 -> x=52+607.5=659 — off graph. Adjust AD slope steeper: make AD end (600,58): slope 154/548. y=212-154s. 88=260t-154s, t=1.0538s-0.05385 -> 88=274-14... recompute: 260t = 274.0s - 14.0; so 88 = 274s -14 -154s = 120s -14 -> s=0.85 -> x=52+465.8=517.8, y=212-130.9=81.1. 45 line at x=517.8: t=(517.8-80)/520=0.842 -> y=300-218.9=81.1 ✓ -->
+      <circle cx="518" cy="81" r="7" fill="#071A4D"/>
+      <text x="420" y="64" font-size="13.5" font-weight="800" fill="#071A4D">E: AD = AS</text>
+      <line x1="518" y1="81" x2="518" y2="322" stroke="#5A6478" stroke-width="1.6" stroke-dasharray="4 4"/>
+      <line x1="52" y1="81" x2="518" y2="81" stroke="#5A6478" stroke-width="1.6" stroke-dasharray="4 4"/>
+      <text x="58" y="74" font-size="13" font-weight="700" fill="#071A4D">AD*</text>
+      <text x="500" y="340" font-size="13" font-weight="800" fill="#071A4D">Y*</text>
+      <text x="110" y="338" font-size="12" font-weight="700" fill="#5A6478">OY* = equilibrium income</text>
+      <!-- left-of-E annotation -->
+    </svg>
+    <div class="note"><b>Read it once:</b> the 45° line shows every point where spending = income. Wherever AD crosses it, planned spending equals output — firms' inventories are stable, nobody changes production. That Y* is equilibrium income.</div>
+  </div>
+
+  <div class="panel right">
+    <h2>Excess demand vs deficient demand — the two gaps</h2>
+    <div class="sub">Compare AD with the <b>full-employment output</b> line: a vertical gap above = inflationary gap; below = deflationary gap</div>
+    <div class="legend">
+      <span><span class="dot" style="background:#5A6478"></span>45° line</span>
+      <span><span class="dot" style="background:#0E7A4D"></span>AD at full employment</span>
+      <span><span class="dot" style="background:#B4380F"></span>AD with excess demand</span>
+      <span><span class="dot" style="background:#1F5EFF"></span>AD with deficient demand</span>
+    </div>
+    <svg width="656" height="380" viewBox="0 0 656 380">
+      <line x1="52" y1="16" x2="52" y2="322" stroke="#071A4D" stroke-width="2.5"/>
+      <line x1="52" y1="322" x2="626" y2="322" stroke="#071A4D" stroke-width="2.5"/>
+      <text x="58" y="12" font-size="13" font-weight="800" fill="#071A4D">AD (₹ cr)</text>
+      <text x="540" y="342" font-size="13" font-weight="800" fill="#071A4D">Income (₹ cr)</text>
+      <!-- 45 line -->
+      <line x1="80" y1="300" x2="600" y2="40" stroke="#5A6478" stroke-width="3"/>
+      <text x="600" y="56" font-size="13.5" font-weight="800" fill="#5A6478">45°</text>
+      <!-- full-employment vertical at x=330 -->
+      <line x1="330" y1="322" x2="330" y2="20" stroke="#071A4D" stroke-width="2" stroke-dasharray="6 4"/>
+      <text x="286" y="340" font-size="13" font-weight="800" fill="#071A4D">Y(FE)</text>
+      <!-- AD_FE crosses 45 at x=330,y=155 -->
+      <line x1="52" y1="248" x2="600" y2="60" stroke="#0E7A4D" stroke-width="3.5"/>
+      <text x="528" y="94" font-size="13" font-weight="800" fill="#0E7A4D">AD(FE)</text>
+      <!-- excess: parallel 46 above -->
+      <line x1="52" y1="202" x2="600" y2="14" stroke="#B4380F" stroke-width="3.5"/>
+      <text x="470" y="12" font-size="13" font-weight="800" fill="#B4380F">AD(excess)</text>
+      <!-- deficient: parallel 40 below -->
+      <line x1="52" y1="288" x2="600" y2="100" stroke="#1F5EFF" stroke-width="3.5"/>
+      <text x="498" y="148" font-size="13" font-weight="800" fill="#1F5EFF">AD(deficient)</text>
+      <!-- gaps at x=330: FE AD y=248-188*(278/548)=248-95.3=152.7; excess y=202-188*0.5073=106.6; deficient y=288-95.3=192.7 -->
+      <path d="M 348 153 L 348 107" stroke="#B4380F" stroke-width="3" marker-end="url(#aR2)"/>
+      <text x="358" y="128" font-size="12.5" font-weight="800" fill="#B4380F">INFLATIONARY gap</text>
+      <path d="M 348 193 L 348 154" stroke="#1F5EFF" stroke-width="3" marker-end="url(#aB2)"/>
+      <text x="390" y="186" font-size="12.5" font-weight="800" fill="#1F5EFF">DEFLATIONARY gap</text>
+      <defs>
+        <marker id="aR2" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#B4380F"/></marker>
+        <marker id="aB2" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#1F5EFF"/></marker>
+      </defs>
+      <circle cx="330" cy="153" r="6" fill="#071A4D"/>
+      <text x="140" y="118" font-size="12.5" font-weight="800" fill="#071A4D">E(FE): the target</text>
+    </svg>
+    <div class="note"><b>Read it once:</b> beyond full employment, extra demand cannot call out extra output — prices simply climb (inflationary gap). Below it, machines and workers sit idle — output and jobs shrink (deflationary gap). Policy exists to close both gaps.</div>
+  </div>
+
+  <div class="strip">
+    <div class="trap"><h3>TRAP 1</h3><p><b>Two equilibrium twins:</b> AD = AS (spending view) and S = I (leakage view) — the SAME Y*. But equilibrium ≠ full employment; gaps can persist.</p></div>
+    <div class="trap"><h3>TRAP 2</h3><p><b>Multiplier = 1/MPS = 1/(1 − MPC).</b> MPC 0.8 → K = 5; forget to invert and every numerical collapses.</p></div>
+    <div class="trap"><h3>TRAP 3</h3><p><b>Correction directions:</b> deficient demand → spend MORE, tax LESS, expand money; excess demand → the exact reverse.</p></div>
+  </div>
+</div>
+</body>
+</html>

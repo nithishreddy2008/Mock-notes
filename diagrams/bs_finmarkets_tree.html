@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: 880px; position: relative; background: #fff; }
+  .title { position: absolute; top: 24px; left: 0; width: 1480px; text-align: center;
+           font-size: 26px; font-weight: 800; color: #071A4D; letter-spacing: .5px; }
+  .title span { color: #1F5EFF; }
+  svg.wires { position: absolute; inset: 0; width: 1480px; height: 880px; }
+  .root { position: absolute; left: 540px; top: 84px; width: 400px; height: 80px;
+          background: #071A4D; border-radius: 14px; display: flex; flex-direction: column;
+          align-items: center; justify-content: center; border-bottom: 4px solid #B8FF34; }
+  .root .t { color: #fff; font-size: 21px; font-weight: 800; }
+  .root .s { color: #B8FF34; font-size: 12.5px; font-weight: 700; letter-spacing: 1.5px; margin-top: 3px; }
+  .lvl { position: absolute; width: 560px; height: 92px; border-radius: 14px;
+         display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+  .money { left: 80px;  top: 240px; background: #1F5EFF; }
+  .cap    { left: 840px; top: 240px; background: #12308F; }
+  .lvl .t { color: #fff; font-size: 20px; font-weight: 800; }
+  .lvl .s { color: #B8FF34; font-size: 13px; font-weight: 700; margin-top: 3px; }
+  .leaf { position: absolute; width: 560px; background: #FCFDFF; border: 1.6px solid #C9D3E6;
+          border-radius: 14px; padding: 13px 17px 12px; }
+  .leaf h2 { font-size: 17.5px; color: #071A4D; font-weight: 800; margin-bottom: 5px;
+             padding-bottom: 4px; border-bottom: 3px solid; display: inline-block; }
+  .leaf .txt { font-size: 13.6px; color: #1B2333; line-height: 1.38; margin: 4px 0; padding-left: 15px; position: relative; }
+  .leaf .txt::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
+  .leaf b { color: #071A4D; }
+  .blue h2 { border-color: #1F5EFF; } .blue .txt::before { background: #1F5EFF; }
+  .navy h2 { border-color: #071A4D; } .navy .txt::before { background: #071A4D; }
+  .l1 { left: 45px;  top: 406px; }
+  .l2 { left: 640px; top: 406px; }
+  .l3 { left: 45px;  top: 570px; }
+  .l4 { left: 640px; top: 570px; }
+  .foot { position: absolute; left: 45px; top: 762px; width: 1390px; background: #EAF0FF;
+          border-left: 5px solid #1F5EFF; border-radius: 0 12px 12px 0; padding: 13px 18px;
+          font-size: 14.5px; color: #1B2333; }
+  .foot b { color: #071A4D; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <svg class="wires" viewBox="0 0 1480 880">
+    <path d="M 620 166 C 540 200, 420 220, 380 236" fill="none" stroke="#1F5EFF" stroke-width="3" opacity=".55"/>
+    <path d="M 860 166 C 940 200, 1060 220, 1100 236" fill="none" stroke="#12308F" stroke-width="3" opacity=".55"/>
+    <path d="M 360 334 L 360 402" fill="none" stroke="#1F5EFF" stroke-width="3" opacity=".55"/>
+    <path d="M 360 566 L 360 566" fill="none" stroke="#1F5EFF" stroke-width="3" opacity=".55"/>
+    <path d="M 1120 334 L 1120 402" fill="none" stroke="#12308F" stroke-width="3" opacity=".55"/>
+    <path d="M 1120 500 L 1120 566" fill="none" stroke="#12308F" stroke-width="3" opacity=".55"/>
+  </svg>
+
+  <div class="root"><div class="t">FINANCIAL MARKET</div><div class="s">WHERE SAVINGS MEET THOSE WHO NEED FUNDS</div></div>
+
+  <div class="lvl money"><div class="t">MONEY MARKET</div><div class="s">SHORT-TERM FUNDS — UP TO ONE YEAR</div></div>
+  <div class="lvl cap"><div class="t">CAPITAL MARKET</div><div class="s">LONG-TERM FUNDS — MORE THAN ONE YEAR</div></div>
+
+  <div class="leaf blue l1">
+    <h2>Money market instruments</h2>
+    <div class="txt"><b>Call money</b> — overnight borrowing between banks to balance cash reserves</div>
+    <div class="txt"><b>Treasury bills (T-bills)</b> — RBI's short-term papers issued at a discount for the government</div>
+    <div class="txt"><b>Commercial paper</b> — big, creditworthy firms' unsecured promissory notes (15 days – 1 year)</div>
+    <div class="txt"><b>Certificate of deposit</b> — banks' time-deposit receipts, tradable</div>
+    <div class="txt"><b>Commercial bill</b> — trade bill for goods bought on credit, discountable before maturity</div>
+  </div>
+
+  <div class="leaf navy l2">
+    <h2>Primary market — new issues</h2>
+    <div class="txt">Securities are sold for the <b>first time</b> — money flows to the <b>company</b></div>
+    <div class="txt"><b>IPO / public issue</b> through an offer document &#183; <b>Rights issue</b> to existing shareholders</div>
+    <div class="txt"><b>Private placement</b> to select investors &#183; <b>e-IPO</b> through the internet</div>
+    <div class="txt">Capital formation happens here — the firm's bank account actually receives funds</div>
+  </div>
+
+  <div class="leaf navy l3">
+    <h2>Secondary market — existing securities</h2>
+    <div class="txt">Buying and selling of <b>already-issued</b> securities on stock exchanges</div>
+    <div class="txt">Money flows <b>investor to investor</b> — the company gets nothing from the trade</div>
+    <div class="txt">Gives liquidity to primary-market buyers — exit is always possible</div>
+  </div>
+
+  <div class="leaf blue l4">
+    <h2>Two one-line distinctions</h2>
+    <div class="txt"><b>Money vs capital:</b> one year is the wall — instruments up to 1 year sit in the money market</div>
+    <div class="txt"><b>Primary vs secondary:</b> company receives funds only in the <b>primary</b> market</div>
+    <div class="txt">Both markets <b>need each other</b> — liquidity in the secondary keeps primary buyers willing</div>
+  </div>
+
+  <div class="foot"><b>Exam anchor:</b> classification questions dominate this unit — read the instrument's tenure (≤ 1 year = money market) and the destination of the money (to the company = primary; to another investor = secondary), and the answer falls out.</div>
+</div>
+</body>
+</html>

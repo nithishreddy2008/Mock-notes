@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; padding: 28px 34px 22px; background: #fff; }
+  .titlebar { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
+  .titlebar .tag { background: #071A4D; color: #fff; font-size: 15px; font-weight: 700;
+                   padding: 7px 16px; border-radius: 8px; letter-spacing: 1px; }
+  .titlebar h1 { font-size: 26px; color: #071A4D; font-weight: 800; }
+  .canvas { border: 1.5px solid #D5DCEA; border-radius: 14px; padding: 10px; background: #FCFDFF; }
+  .legend { display: flex; gap: 26px; margin-top: 14px; padding: 12px 18px;
+            background: #EEF1F8; border-radius: 10px; font-size: 16px; color: #1B2333; }
+  .legend b { color: #071A4D; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="titlebar">
+    <div class="tag">DIAGRAM</div>
+    <h1>Definite Integral as Area Under the Curve — Riemann Sum Picture</h1>
+  </div>
+  <div class="canvas">
+    <svg width="1400" height="580" viewBox="0 0 1400 580">
+      <!-- axes -->
+      <line x1="80" y1="480" x2="1330" y2="480" stroke="#5A6478" stroke-width="2"/>
+      <line x1="80" y1="480" x2="80" y2="50" stroke="#5A6478" stroke-width="2"/>
+      <polygon points="1330,480 1312,473 1312,487" fill="#5A6478"/>
+      <polygon points="80,50 73,68 87,68" fill="#5A6478"/>
+      <text x="1320" y="510" font-size="18" fill="#5A6478" font-weight="600">x</text>
+      <text x="52" y="62" font-size="18" fill="#5A6478" font-weight="600">y</text>
+
+      <!-- curve: smooth cubic-ish from x=260 to x=1100 -->
+      <path d="M 200 440 C 420 120, 700 100, 830 200 C 950 292, 1060 330, 1180 350"
+            fill="none" stroke="#071A4D" stroke-width="4.5"/>
+
+      <!-- Riemann strips between a=320 and b=1060 (widths 92) heights sampled -->
+      <g fill="#1F5EFF" fill-opacity="0.16" stroke="#1F5EFF" stroke-width="2">
+        <rect x="320" y="300" width="92" height="180"/>
+        <rect x="412" y="242" width="92" height="238"/>
+        <rect x="504" y="204" width="92" height="276"/>
+        <rect x="596" y="176" width="92" height="304"/>
+        <rect x="688" y="164" width="92" height="316"/>
+        <rect x="780" y="172" width="92" height="308"/>
+        <rect x="872" y="204" width="92" height="276"/>
+        <rect x="964" y="252" width="92" height="228"/>
+      </g>
+
+      <!-- verticals at a and b -->
+      <line x1="320" y1="480" x2="320" y2="300" stroke="#B4380F" stroke-width="3"/>
+      <line x1="1060" y1="480" x2="1060" y2="252" stroke="#B4380F" stroke-width="3"/>
+
+      <!-- a and b markers -->
+      <text x="308" y="516" font-size="21" font-weight="800" fill="#B4380F">a</text>
+      <text x="1048" y="516" font-size="21" font-weight="800" fill="#B4380F">b</text>
+
+      <!-- f(x) label -->
+      <text x="330" y="140" font-size="22" font-weight="700" fill="#071A4D">y = f (x)</text>
+
+      <!-- area annotation -->
+      <text x="565" y="420" font-size="24" font-weight="800" fill="#1F5EFF">A = &#8747;</text>
+      <text x="530" y="447" font-size="17" fill="#1F5EFF" font-weight="700">b</text>
+      <text x="556" y="398" font-size="17" fill="#1F5EFF" font-weight="700">a</text>
+
+      <!-- strip callout -->
+      <line x1="733" y1="164" x2="840" y2="92" stroke="#7FB800" stroke-width="2.5"/>
+      <rect x="838" y="58" width="440" height="60" rx="10" fill="#F6FFDF" stroke="#7FB800" stroke-width="1.5"/>
+      <text x="856" y="95" font-size="19" fill="#1B2333">&#916;x &#8594; 0 :&#160; sum of strips &#8594; exact area</text>
+
+      <!-- property badges -->
+      <g transform="translate(120,530)">
+        <rect x="0" y="0" width="520" height="46" rx="9" fill="#EAF0FF" stroke="#1F5EFF" stroke-width="1.3"/>
+        <text x="18" y="30" font-size="18" fill="#071A4D" font-weight="600">&#8747;&#8336;&#7500; f(x)dx = &#8722;&#8747;&#7500;&#8336; f(x)dx&#160;&#160;&#160;(reversing limits flips sign)</text>
+      </g>
+      <g transform="translate(680,530)">
+        <rect x="0" y="0" width="560" height="46" rx="9" fill="#EAF0FF" stroke="#1F5EFF" stroke-width="1.3"/>
+        <text x="18" y="30" font-size="18" fill="#071A4D" font-weight="600">&#8747;&#8336;&#7500; f(x)dx = &#8747;&#8336;&#7500; f(a+b&#8722;x)dx&#160;&#160;&#160;(King property)</text>
+      </g>
+    </svg>
+  </div>
+  <div class="legend">
+    <span><b>Blue strips:</b> Riemann sum &#931; f(x&#7522;)&#916;x</span>
+    <span><b>Shaded region:</b> &#8747;&#8336;&#7500; f(x)dx = signed area between curve and x-axis</span>
+    <span><b>Below axis:</b> area counts negative</span>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; position: relative; background: #fff; padding-bottom: 10px; }
+  .title { text-align: center; font-size: 24px; font-weight: 800; color: #071A4D; padding-top: 20px; }
+  .subtitle { text-align: center; font-size: 14px; color: #5A6478; margin-top: 4px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 18px; margin: 18px 40px 0; }
+  .fam { background: #FCFDFF; border: 1.5px solid #D5DCEA; border-radius: 14px; padding: 12px 14px; }
+  .fam h2 { font-size: 16.5px; font-weight: 800; margin-bottom: 7px; padding-bottom: 5px; border-bottom: 3px solid; color: #071A4D; }
+  .f1 h2 { border-color: #1F5EFF; } .f2 h2 { border-color: #7FB800; }
+  .f3 h2 { border-color: #C9A20C; } .f4 h2 { border-color: #D2481F; }
+  .row { display: flex; gap: 8px; margin: 6px 0; align-items: flex-start; }
+  .tag { min-width: 96px; max-width: 96px; font-size: 11.5px; font-weight: 800; color: #fff; border-radius: 6px; padding: 4px 6px; text-align: center; }
+  .f1 .tag { background: #1F5EFF; } .f2 .tag { background: #5E8F13; }
+  .f3 .tag { background: #9A7B07; } .f4 .tag { background: #D2481F; }
+  .txt { font-size: 12.5px; color: #1B2333; line-height: 1.4; }
+  .txt b { color: #071A4D; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="title">THE FOUR BIOMOLECULE FAMILIES — ONE CARD EACH</div>
+  <div class="subtitle">Sugars run on carbon · proteins do the work · vitamins regulate · nucleic acids remember</div>
+
+  <div class="grid">
+    <div class="fam f1">
+      <h2>CARBOHYDRATES — fuel &amp; frame</h2>
+      <div class="row"><span class="tag">Sugars</span><span class="txt"><b>Glucose C&#8326;H&#8321;&#8322;O&#8326;</b> — aldohexose, pyranose ring, D-configuration; from cane sugar hydrolysis or starch</span></div>
+      <div class="row"><span class="tag">Disaccharides</span><span class="txt"><b>Sucrose</b> (glucose + fructose, non-reducing, &#945;1,2-link), <b>maltose</b> (2 glucose, &#945;1,4), <b>lactose</b> (galactose + glucose, &#946;1,4)</span></div>
+      <div class="row"><span class="tag">Polysaccharides</span><span class="txt"><b>Starch</b> (amylose helix + amylopectin), <b>cellulose</b> (&#946;1,4 — wood, fibre), <b>glycogen</b> (animal storage, branched)</span></div>
+      <div class="row"><span class="tag">Evidence</span><span class="txt">Glucose: 5-OH + CHO (penta-acetate, Br&#8322; water), no free CHO in solution (hemiacetal ring) &#8594; pyranose</span></div>
+    </div>
+
+    <div class="fam f2">
+      <h2>AMINO ACIDS &amp; PROTEINS — the workers</h2>
+      <div class="row"><span class="tag">Amino acids</span><span class="txt">H&#8322;N&#8211;CH(R)&#8211;COOH; <b>essential</b> (10, diet-only: valine, leucine, lysine...) vs <b>non-essential</b> (body makes: glycine, alanine...)</span></div>
+      <div class="row"><span class="tag">Zwitterion</span><span class="txt">In water: &#8314;H&#8323;N&#8211;CHR&#8211;COO&#8315; — amphoteric, high melting</span></div>
+      <div class="row"><span class="tag">Structures</span><span class="txt"><b>Primary</b> (sequence) &#8594; <b>secondary</b> (&#945;-helix, &#946;-sheet, H-bonds) &#8594; <b>tertiary</b> (3-D fold, S&#8211;S bridges) &#8594; <b>quaternary</b> (subunit assembly, e.g. haemoglobin)</span></div>
+      <div class="row"><span class="tag">Denaturation</span><span class="txt">Heat/pH breaks 2&#176;/3&#176; only (egg boiling) &#8212; primary chain survives; globular &#8594; fibrous, biological activity lost</span></div>
+    </div>
+
+    <div class="fam f3">
+      <h2>ENZYMES &amp; VITAMINS — regulate &amp; protect</h2>
+      <div class="row"><span class="tag">Enzymes</span><span class="txt">Globular proteins, catalysts: <b>lock-and-key</b> / induced-fit; named substrate + -ase (urease, invertase); extremely specific, mild conditions</span></div>
+      <div class="row"><span class="tag">Fat-soluble</span><span class="txt"><b>A</b> (night blindness), <b>D</b> (rickets), <b>E</b>, <b>K</b> (clotting)</span></div>
+      <div class="row"><span class="tag">Water-soluble</span><span class="txt"><b>B-complex</b> (beriberi = B&#8321;, pernicious anaemia = B&#8321;&#8322;), <b>C</b> (scurvy) — not stored, daily diet</span></div>
+    </div>
+
+    <div class="fam f4">
+      <h2>NUCLEIC ACIDS &amp; HORMONES — memory &amp; messengers</h2>
+      <div class="row"><span class="tag">DNA</span><span class="txt">Sugar = <b>&#946;-D-2-deoxyribose</b>; bases A T G C; <b>double helix</b> (Watson-Crick), A=T, G&#8801;C pairing; stores heredity</span></div>
+      <div class="row"><span class="tag">RNA</span><span class="txt">Sugar = <b>ribose</b>; bases A U G C; single strand; runs protein synthesis (m/t/r-RNA)</span></div>
+      <div class="row"><span class="tag">Units</span><span class="txt">Nucleotide = base + sugar + phosphate; backbone = sugar-phosphate ester chain</span></div>
+      <div class="row"><span class="tag">Hormones</span><span class="txt">Steroids (testosterone, cortisol), amines (adrenaline, thyroxine), peptides (insulin); deficiency: diabetes (insulin), goitre (thyroxine/iodine), dwarfism (growth hormone)</span></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: 1060px; position: relative; background: #fff; }
+  svg.wires { position: absolute; inset: 0; width: 1480px; height: 1060px; }
+  .center {
+    position: absolute; left: 545px; top: 375px; width: 390px; height: 120px;
+    background: #071A4D; border-radius: 16px; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; text-align: center;
+    box-shadow: 0 6px 18px rgba(7,26,77,.25);
+    border-bottom: 5px solid #B8FF34;
+  }
+  .center .t { color: #fff; font-size: 22px; font-weight: 800; letter-spacing: .5px; line-height: 1.15; padding: 0 12px; }
+  .center .s { color: #B8FF34; font-size: 13px; font-weight: 700; letter-spacing: 2px; margin-top: 6px; }
+  .card {
+    position: absolute; width: 470px; background: #FCFDFF; border: 1.5px solid #D5DCEA;
+    border-radius: 14px; padding: 13px 16px 12px;
+  }
+  .card h2 { font-size: 20px; color: #071A4D; font-weight: 800; margin-bottom: 7px;
+             padding-bottom: 5px; border-bottom: 3px solid; display: inline-block; }
+  .leaf { font-size: 14.5px; color: #1B2333; margin: 5px 0; padding-left: 16px; position: relative; line-height: 1.32; }
+  .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
+  .b .leaf::before { background: #1F5EFF; }
+  .l .leaf::before { background: #7FB800; }
+  .leaf b { color: #071A4D; }
+  .b h2 { border-color: #1F5EFF; }
+  .l h2 { border-color: #7FB800; }
+  .left { left: 30px; }
+  .right { left: 980px; }
+  .exc {
+    position: absolute; left: 500px; top: 865px; width: 480px; background: #FFF3EC;
+    border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px;
+  }
+  .exc h2 { font-size: 17px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
+  .exc .leaf { font-size: 13px; margin: 3px 0; padding-left: 14px; color: #7A2A12; }
+  .exc .leaf::before { background: #D2481F; }
+  .exc b { color: #B4380F; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <svg class="wires" viewBox="0 0 1480 1060">
+    <path d="M 545 425 C 495 425, 520 165, 502 160" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 545 440 C 505 440, 520 430, 502 430" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 545 465 C 495 465, 520 700, 502 705" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 935 425 C 985 425, 960 165, 978 160" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 935 440 C 975 440, 960 430, 978 430" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 935 465 C 985 465, 960 700, 978 705" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 740 495 C 740 640, 740 800, 740 863" fill="none" stroke="#D2481F" stroke-width="2.5" stroke-dasharray="7 5" opacity=".6"/>
+  </svg>
+
+  <div class="center">
+    <div class="t">ANALYSIS OF FINANCIAL STATEMENTS</div>
+    <div class="s">UNIT V &#183; COMPLETE CHAPTER MAP</div>
+  </div>
+
+  <div class="card left b" style="top:62px">
+    <h2>Financial Statements of a Company</h2>
+    <div class="leaf"><b>Schedule III format:</b> company statements follow fixed major headings &#8212; the skill is placing each item under the right one</div>
+    <div class="leaf"><b>Balance Sheet heads:</b> Shareholders' funds &#183; Non-current liabilities &#183; Current liabilities; Assets: Non-current &#183; Current</div>
+    <div class="leaf"><b>Statement of P&amp;L:</b> revenue from operations &#8594; other income &#8594; expenses &#8594; profit before tax &#8594; tax &#8594; profit after tax</div>
+    <div class="leaf">Statements show <b>the position, not the reason</b> &#8212; analysis supplies the why</div>
+  </div>
+
+  <div class="card left l" style="top:322px">
+    <h2>Why Analyse? Meaning &amp; Limits</h2>
+    <div class="leaf"><b>Meaning:</b> working through the figures systematically to judge profitability, efficiency and solvency</div>
+    <div class="leaf"><b>Significance:</b> earning capacity &#183; short-term &amp; long-term solvency &#183; operating efficiency &#183; easy comparison</div>
+    <div class="leaf"><b>Users:</b> management, investors, banks &amp; lenders, employees, government</div>
+    <div class="leaf"><b>Limitations:</b> historical figures &#183; window dressing &#183; ignores price changes &#183; ignores qualitative facts</div>
+  </div>
+
+  <div class="card left b" style="top:600px">
+    <h2>Comparative Statements</h2>
+    <div class="leaf"><b>Four columns:</b> previous year &#183; current year &#183; absolute change &#183; % change</div>
+    <div class="leaf"><b>% change</b> = absolute change &#247; previous-year figure &#215; 100 &#8212; the base is always the <b>earlier</b> year</div>
+    <div class="leaf"><b>Two forms:</b> comparative income statement (profit trend) &#183; comparative balance sheet (position trend)</div>
+    <div class="leaf">Rupee changes ignore size; <b>% changes make years comparable</b></div>
+  </div>
+
+  <div class="card right l" style="top:62px">
+    <h2>Common-Size Statements</h2>
+    <div class="leaf"><b>Every item</b> restated as a % of revenue from operations (P&amp;L) or of the balance-sheet total</div>
+    <div class="leaf"><b>Each column totals 100</b> &#8212; the size of the firm stops mattering</div>
+    <div class="leaf"><b>Read vertically:</b> which head eats the biggest slice of revenue or assets</div>
+    <div class="leaf">The best tool for comparing <b>two firms of different sizes</b></div>
+  </div>
+
+  <div class="card right b" style="top:322px">
+    <h2>Accounting Ratios</h2>
+    <div class="leaf"><b>Four families:</b> Liquidity &#183; Solvency &#183; Activity (turnover) &#183; Profitability</div>
+    <div class="leaf"><b>Ideal marks:</b> current ratio 2:1 &#183; quick ratio 1:1 (commonly quoted benchmarks)</div>
+    <div class="leaf">Every ratio is <b>one relationship</b>: a part &#247; a whole, or a flow &#247; a balance</div>
+    <div class="leaf">Turnover ratios use the <b>average</b> of opening &amp; closing figures when both are given</div>
+  </div>
+
+  <div class="card right l" style="top:600px">
+    <h2>Cash Flow Statement</h2>
+    <div class="leaf"><b>Three activities:</b> Operating &#183; Investing &#183; Financing</div>
+    <div class="leaf"><b>Indirect method:</b> net profit before tax &#8594; add back non-cash items &#8594; adjust working-capital changes &#8594; tax paid</div>
+    <div class="leaf"><b>Class 12 convention:</b> interest &amp; dividend paid &#8594; financing; interest &amp; dividend received &#8594; investing</div>
+    <div class="leaf"><b>Check line:</b> net change in cash = closing cash &#8722; opening cash</div>
+  </div>
+
+  <div class="exc">
+    <h2>COMMON ERRORS &amp; TRAPS</h2>
+    <div class="leaf"><b>Closing inventory &#8800; average inventory</b> &#8212; turnover ratios need (opening + closing) &#247; 2</div>
+    <div class="leaf"><b>Quick assets exclude inventory &amp; prepaid expenses</b> &#8212; the quick ratio drops them; the current ratio does not</div>
+    <div class="leaf"><b>% change on a negative base is meaningless</b> &#8212; a profit of &#8377;1,00,000 to a loss of &#8377;50,000 is a 150% fall? No &#8212; state the reversal in words</div>
+  </div>
+</div>
+</body>
+</html>

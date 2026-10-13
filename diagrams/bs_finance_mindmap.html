@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: 1080px; position: relative; background: #fff; }
+  svg.wires { position: absolute; inset: 0; width: 1480px; height: 1080px; }
+  .center {
+    position: absolute; left: 555px; top: 430px; width: 370px; height: 100px;
+    background: #071A4D; border-radius: 16px; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(7,26,77,.25);
+    border-bottom: 5px solid #B8FF34;
+  }
+  .center .t { color: #fff; font-size: 24px; font-weight: 800; letter-spacing: .5px; }
+  .center .s { color: #B8FF34; font-size: 13px; font-weight: 700; letter-spacing: 2px; margin-top: 4px; }
+  .card {
+    position: absolute; width: 470px; background: #FCFDFF; border: 1.5px solid #D5DCEA;
+    border-radius: 14px; padding: 13px 16px 12px;
+  }
+  .card h2 { font-size: 19px; color: #071A4D; font-weight: 800; margin-bottom: 7px;
+             padding-bottom: 5px; border-bottom: 3px solid; display: inline-block; }
+  .leaf { font-size: 13.5px; color: #1B2333; margin: 4px 0; padding-left: 16px; position: relative; line-height: 1.3; }
+  .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
+  .b .leaf::before { background: #1F5EFF; }
+  .l .leaf::before { background: #7FB800; }
+  .leaf b { color: #071A4D; }
+  .b h2 { border-color: #1F5EFF; }
+  .l h2 { border-color: #7FB800; }
+  .left { left: 30px; }
+  .right { left: 980px; }
+  .exc {
+    position: absolute; left: 480px; top: 900px; width: 520px; background: #FFF3EC;
+    border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px;
+  }
+  .exc h2 { font-size: 17px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
+  .exc .leaf { font-size: 12.8px; margin: 3.5px 0; padding-left: 14px; color: #7A2A12; }
+  .exc .leaf::before { background: #D2481F; }
+  .exc b { color: #B4380F; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <svg class="wires" viewBox="0 0 1480 1080">
+    <path d="M 555 465 C 505 465, 520 135, 502 132" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 555 480 C 510 480, 522 385, 502 382" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 555 495 C 510 495, 522 645, 502 642" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 925 465 C 975 465, 960 135, 978 132" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 925 480 C 970 480, 958 385, 978 382" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 925 495 C 970 495, 958 645, 978 642" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 740 530 C 740 660, 740 835, 740 898" fill="none" stroke="#D2481F" stroke-width="2.5" stroke-dasharray="7 5" opacity=".6"/>
+  </svg>
+
+  <div class="center">
+    <div class="t">BUSINESS FINANCE</div>
+    <div class="s">UNIT IX &#183; COMPLETE CHAPTER MAP</div>
+  </div>
+
+  <div class="card left b" style="top:52px">
+    <h2>Meaning, Role &amp; Objective of FM</h2>
+    <div class="leaf"><b>Business finance</b> = the money and credit needed to carry out business activities — raised, used and managed</div>
+    <div class="leaf"><b>Role:</b> no activity runs without money — fixed assets, stock, salaries, expansion all lean on finance</div>
+    <div class="leaf"><b>Objective of financial management:</b> <b>wealth maximisation</b> — decisions should raise the long-term market value of shareholders' wealth (not just this year's profit)</div>
+  </div>
+
+  <div class="card left l" style="top:292px">
+    <h2>Financial Planning</h2>
+    <div class="leaf"><b>Meaning:</b> decide <b>how much</b> money the firm needs and <b>from where</b> it will come</div>
+    <div class="leaf"><b>Importance:</b> prepares for the future &#183; avoids both shortage and surplus &#183; coordinates departments &#183; links present needs with future growth &#183; prevents waste</div>
+    <div class="leaf"><b>Shortage</b> stalls operations; <b>surplus</b> sits idle earning nothing — planning keeps both away</div>
+  </div>
+
+  <div class="card left b" style="top:572px">
+    <h2>Capital Structure — The Mix</h2>
+    <div class="leaf"><b>Capital structure</b> = the proportion of <b>debt</b> and <b>equity</b> in the firm's long-term funds</div>
+    <div class="leaf"><b>Factors:</b> cash flow position &#183; interest coverage ratio (ICR) &#183; control &#183; cost of debt &#183; floatation costs &#183; state of capital markets &#183; trading on equity &#183; tax rate &#183; risk consideration &#183; flexibility</div>
+    <div class="leaf"><b>Trading on equity:</b> using cheap debt to boost returns for shareholders — works only when earnings are stable</div>
+  </div>
+
+  <div class="card right l" style="top:52px">
+    <h2>Three Financial Decisions</h2>
+    <div class="leaf"><b>Investment:</b> where to put money — long-term (capital budgeting) + short-term (current assets). Factors: cash flows, rate of return, risk</div>
+    <div class="leaf"><b>Financing:</b> the equity–debt mix. Factors: cost, risk, control, floatation cost, capital market state</div>
+    <div class="leaf"><b>Dividend:</b> distribute or retain profit. Factors: earnings, stability, growth prospects, cash flow, shareholder preference, taxation</div>
+  </div>
+
+  <div class="card right b" style="top:322px">
+    <h2>Fixed Capital — Factors</h2>
+    <div class="leaf"><b>Fixed capital</b> = money locked in long-term assets (land, plant, machines) for years</div>
+    <div class="leaf"><b>Factors affecting requirement:</b> nature of business (railway vs shop) &#183; scale of operations &#183; choice of technique (capital vs labour intensive) &#183; growth prospects &#183; technology upgradation &#183; business cycles</div>
+    <div class="leaf">Capital-intensive businesses need <b>much more</b> fixed capital than service firms</div>
+  </div>
+
+  <div class="card right l" style="top:602px">
+    <h2>Working Capital — Factors</h2>
+    <div class="leaf"><b>Working capital</b> = money for day-to-day operations — current assets minus current liabilities</div>
+    <div class="leaf"><b>Factors affecting requirement:</b> nature of business &#183; scale of operations &#183; credit policy (buying and selling) &#183; availability of credit &#183; seasonal factors &#183; operating efficiency &#183; growth and inflation</div>
+    <div class="leaf">Trading firms need <b>high</b> working capital; service firms need <b>low</b></div>
+  </div>
+
+  <div class="exc">
+    <h2>Traps that catch most students</h2>
+    <div class="leaf"><b>Objective = wealth maximisation</b>, not profit maximisation — profit is this year, wealth is long-term value</div>
+    <div class="leaf"><b>Trading on equity</b> works only when the rate of return exceeds the cost of debt</div>
+    <div class="leaf"><b>Fixed capital</b> = long-term assets; <b>working capital</b> = day-to-day — do not swap their factors</div>
+    <div class="leaf"><b>Dividends need cash</b> — a profitable firm with tight cash flow may still skip dividends</div>
+  </div>
+</div>
+</body>
+</html>

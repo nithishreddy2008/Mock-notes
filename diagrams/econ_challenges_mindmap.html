@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: 1080px; position: relative; background: #fff; }
+  svg.wires { position: absolute; inset: 0; width: 1480px; height: 1080px; }
+  .center {
+    position: absolute; left: 520px; top: 470px; width: 440px; height: 104px;
+    background: #071A4D; border-radius: 16px; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(7,26,77,.25);
+    border-bottom: 5px solid #B8FF34;
+  }
+  .center .t { color: #fff; font-size: 20px; font-weight: 800; letter-spacing: .5px; text-align: center; }
+  .center .s { color: #B8FF34; font-size: 13px; font-weight: 700; letter-spacing: 2px; margin-top: 4px; }
+  .card {
+    position: absolute; width: 465px; background: #FCFDFF; border: 1.5px solid #D5DCEA;
+    border-radius: 14px; padding: 13px 16px 12px;
+  }
+  .card h2 { font-size: 19px; color: #071A4D; font-weight: 800; margin-bottom: 7px;
+             padding-bottom: 5px; border-bottom: 3px solid; display: inline-block; }
+  .leaf { font-size: 14px; color: #1B2333; margin: 5px 0; padding-left: 16px; position: relative; line-height: 1.32; }
+  .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
+  .b .leaf::before { background: #1F5EFF; }
+  .l .leaf::before { background: #7FB800; }
+  .leaf b { color: #071A4D; }
+  .b h2 { border-color: #1F5EFF; }
+  .l h2 { border-color: #7FB800; }
+  .left { left: 30px; }
+  .right { left: 985px; }
+  .exc {
+    position: absolute; left: 470px; top: 905px; width: 540px; background: #FFF3EC;
+    border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px;
+  }
+  .exc h2 { font-size: 17px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
+  .exc .leaf { font-size: 13px; margin: 3px 0; padding-left: 14px; color: #7A2A12; }
+  .exc .leaf::before { background: #D2481F; }
+  .exc b { color: #B4380F; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <svg class="wires" viewBox="0 0 1480 1080">
+    <path d="M 520 505 C 470 505, 495 158, 500 155" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 520 520 C 480 520, 495 438, 500 438" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 520 535 C 470 535, 495 718, 500 718" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 960 505 C 1010 505, 985 158, 980 155" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 960 520 C 1000 520, 985 438, 980 438" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 960 535 C 1010 535, 985 718, 980 718" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 740 574 C 740 700, 740 830, 740 903" fill="none" stroke="#D2481F" stroke-width="2.5" stroke-dasharray="7 5" opacity=".6"/>
+  </svg>
+
+  <div class="center">
+    <div class="t">CURRENT CHALLENGES — INDIAN ECONOMY</div>
+    <div class="s">COURSE III IED &#183; COMPLETE CHAPTER MAP</div>
+  </div>
+
+  <div class="card left b" style="top:58px">
+    <h2>Human Capital Formation</h2>
+    <div class="leaf"><b>People become resource</b> through education, health, training, migration and information spending</div>
+    <div class="leaf"><b>Payoff:</b> higher earnings, innovation, growth with equity — knowledge stays with its owner</div>
+    <div class="leaf"><b>India's education arc:</b> literacy 18% → 74%+, institutes multiplied; quality and vacancies still bite</div>
+  </div>
+
+  <div class="card left l" style="top:352px">
+    <h2>Rural Credit &amp; Marketing</h2>
+    <div class="leaf"><b>Institutional credit:</b> cooperatives, banks, RRBs, SHGs — cheap and safe; non-institutional (moneylenders) costly and exploitative</div>
+    <div class="leaf"><b>Marketing hurdles:</b> intermediaries, distress sales, no storage, no grading</div>
+    <div class="leaf"><b>Fixes:</b> regulated markets (APMC), MSP, cooperatives, warehousing, grading</div>
+  </div>
+
+  <div class="card left b" style="top:648px">
+    <h2>Diversification &amp; Organic Farming</h2>
+    <div class="leaf"><b>Three lanes:</b> crop diversification, allied activities (dairy, poultry, fisheries, horticulture), non-farm employment (food processing, rural tourism)</div>
+    <div class="leaf"><b>Organic farming:</b> chemical-free, export premiums, sustainability — vs lower early yields and certification costs</div>
+  </div>
+
+  <div class="card right l" style="top:58px">
+    <h2>Employment Structure</h2>
+    <div class="leaf"><b>Three worker types:</b> self-employed (largest), regular salaried (fewest), casual wage (most insecure)</div>
+    <div class="leaf"><b>Formal vs informal:</b> contract + benefits + security vs none — most workers are informal</div>
+    <div class="leaf"><b>Women's participation</b> lags sharply; jobless growth is the standing worry</div>
+  </div>
+
+  <div class="card right b" style="top:352px">
+    <h2>Employment Policies</h2>
+    <div class="leaf"><b>MGNREGA 2005:</b> right to work — 100 days guaranteed wage employment per rural household</div>
+    <div class="leaf"><b>Self-employment &amp; skill programmes</b> layered on top for the youth</div>
+  </div>
+
+  <div class="card right l" style="top:648px">
+    <h2>Environment &amp; Sustainability</h2>
+    <div class="leaf"><b>Four environment functions:</b> resource supply, waste sink, life support, quality of life</div>
+    <div class="leaf"><b>India's strain:</b> air and water pollution, deforestation, soil erosion, falling groundwater</div>
+    <div class="leaf"><b>Sustainable development:</b> present needs without killing future options (Brundtland)</div>
+    <div class="leaf"><b>Strategies:</b> solar, wind, CNG/LPG, bio-composting, mini-hydel, traditional practices</div>
+  </div>
+
+  <div class="exc">
+    <h2>Traps that catch most students</h2>
+    <div class="leaf"><b>Human capital ≠ physical capital</b> — knowledge cannot be sold apart from its owner</div>
+    <div class="leaf"><b>Institutional ≠ non-institutional credit</b> — moneylenders are the NON-institutional (exploitative) side</div>
+    <div class="leaf"><b>Formal ≠ government job only</b> — the test is written contract + benefits, in any firm size</div>
+    <div class="leaf"><b>Sustainable development ≠ stopping growth</b> — it means growing WITHOUT exhausting the base</div>
+  </div>
+</div>
+</body>
+</html>

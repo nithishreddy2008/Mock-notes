@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: 1080px; position: relative; background: #fff; }
+  svg.wires { position: absolute; inset: 0; width: 1480px; height: 1080px; }
+  .center {
+    position: absolute; left: 530px; top: 420px; width: 420px; height: 100px;
+    background: #071A4D; border-radius: 16px; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(7,26,77,.25);
+    border-bottom: 5px solid #B8FF34;
+  }
+  .center .t { color: #fff; font-size: 22px; font-weight: 800; letter-spacing: .5px; text-align: center; }
+  .center .s { color: #B8FF34; font-size: 13.5px; font-weight: 700; letter-spacing: 2px; margin-top: 4px; }
+  .card {
+    position: absolute; width: 470px; background: #FCFDFF; border: 1.5px solid #D5DCEA;
+    border-radius: 14px; padding: 13px 16px 12px;
+  }
+  .card h2 { font-size: 20px; color: #071A4D; font-weight: 800; margin-bottom: 7px;
+             padding-bottom: 5px; border-bottom: 3px solid; display: inline-block; }
+  .leaf { font-size: 14px; color: #1B2333; margin: 5px 0; padding-left: 16px; position: relative; line-height: 1.32; }
+  .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
+  .b .leaf::before { background: #1F5EFF; }
+  .l .leaf::before { background: #7FB800; }
+  .leaf b { color: #071A4D; }
+  .b h2 { border-color: #1F5EFF; }
+  .l h2 { border-color: #7FB800; }
+  .left { left: 30px; }
+  .right { left: 980px; }
+  .exc {
+    position: absolute; left: 510px; top: 900px; width: 460px; background: #FFF3EC;
+    border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px;
+  }
+  .exc h2 { font-size: 17px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
+  .exc .leaf { font-size: 13px; margin: 3px 0; padding-left: 14px; color: #7A2A12; }
+  .exc .leaf::before { background: #D2481F; }
+  .exc b { color: #B4380F; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <svg class="wires" viewBox="0 0 1480 1080">
+    <path d="M 530 455 C 480 455, 500 150, 502 148" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 530 470 C 490 470, 505 420, 502 418" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 530 485 C 490 485, 505 690, 502 688" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 950 455 C 1000 455, 975 150, 978 148" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 950 470 C 990 470, 975 420, 978 418" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 950 485 C 990 485, 975 690, 978 688" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 740 520 C 740 660, 740 830, 740 898" fill="none" stroke="#D2481F" stroke-width="2.5" stroke-dasharray="7 5" opacity=".6"/>
+  </svg>
+
+  <div class="center">
+    <div class="t">NATURE &amp; SIGNIFICANCE<br>OF MANAGEMENT</div>
+    <div class="s">UNIT I &#183; COMPLETE CHAPTER MAP</div>
+  </div>
+
+  <div class="card left b" style="top:62px">
+    <h2>Concept &amp; Characteristics</h2>
+    <div class="leaf"><b>Management</b> = process of getting things done with the aim of achieving goals <b>effectively and efficiently</b></div>
+    <div class="leaf"><b>Effectiveness</b> = reaching the goal on time; <b>efficiency</b> = reaching it at minimum cost</div>
+    <div class="leaf"><b>Characteristics:</b> goal-oriented &#183; all-pervasive &#183; multidimensional &#183; continuous &#183; group activity &#183; dynamic &#183; intangible force</div>
+    <div class="leaf"><b>Multidimensional:</b> manages work, people and operations</div>
+  </div>
+
+  <div class="card left l" style="top:318px">
+    <h2>Objectives of Management</h2>
+    <div class="leaf"><b>Organisational:</b> survival, profit, growth</div>
+    <div class="leaf"><b>Social:</b> eco-friendly production, basic amenities, opportunities for disadvantaged groups</div>
+    <div class="leaf"><b>Personal:</b> competitive salary, peer recognition, growth of each employee</div>
+    <div class="leaf">All three sets must be balanced, not traded off</div>
+  </div>
+
+  <div class="card left b" style="top:568px">
+    <h2>Importance (Why It Matters)</h2>
+    <div class="leaf"><b>Achieves group goals</b> — directs individual effort toward the common target</div>
+    <div class="leaf"><b>Increases efficiency</b> — lowers cost through better planning and organising</div>
+    <div class="leaf"><b>Creates a dynamic organisation</b> — helps members accept change</div>
+    <div class="leaf"><b>Achieves personal objectives</b> &#183; <b>develops society</b> — quality goods, jobs, new technology</div>
+  </div>
+
+  <div class="card right l" style="top:62px">
+    <h2>Management as Science, Art, Profession</h2>
+    <div class="leaf"><b>Science?</b> Yes — systematised body of knowledge, principles from experimentation — but an <b>inexact (social) science</b></div>
+    <div class="leaf"><b>Art?</b> Yes — personal skill, creativity, learned by practice; every manager applies theory in own style</div>
+    <div class="leaf"><b>Profession?</b> Partly — body of knowledge &amp; association (AIMA) exist, but <b>no compulsory licence or entry test</b>; not yet a full profession</div>
+    <div class="leaf">Conclusion: <b>science + art</b>, developing profession</div>
+  </div>
+
+  <div class="card right b" style="top:318px">
+    <h2>Levels &amp; Functions</h2>
+    <div class="leaf"><b>Top</b> (Board, CEO) — vision, policies &#183; <b>Middle</b> (dept heads) — interpret, link &#183; <b>Supervisory</b> (foremen) — day-to-day</div>
+    <div class="leaf"><b>Five functions:</b> Planning &#8594; Organising &#8594; Staffing &#8594; Directing &#8594; Controlling</div>
+    <div class="leaf">Controlling compares performance with the <b>standard</b> set in planning and feeds back</div>
+    <div class="leaf">Authority flows <b>down</b>, accountability flows <b>up</b></div>
+  </div>
+
+  <div class="card right l" style="top:568px">
+    <h2>Coordination — Essence of Management</h2>
+    <div class="leaf"><b>Coordination</b> = force that synchronises and integrates group effort to achieve common goals</div>
+    <div class="leaf"><b>Nature:</b> integral &#183; continuous &#183; group effort &#183; all-pervasive &#183; duty of every manager &#183; deliberate</div>
+    <div class="leaf"><b>Why needed:</b> growth in size, functional differentiation, specialisation</div>
+    <div class="leaf"><b>Coordination &#8800; cooperation:</b> cooperation is voluntary willingness; coordination is deliberate synchronisation and includes it</div>
+  </div>
+
+  <div class="exc">
+    <h2>Traps that catch most students</h2>
+    <div class="leaf"><b>Effectiveness</b> is about the <b>end</b>; <b>efficiency</b> is about the <b>cost</b> — do not swap them</div>
+    <div class="leaf">Management is <b>not a full profession</b> — no compulsory license or restricted entry</div>
+    <div class="leaf">Management is needed in <b>every organisation</b> — schools, clubs, hospitals — not only profit businesses</div>
+    <div class="leaf">Cooperation alone <b>cannot</b> guarantee coordination</div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: 900px; position: relative; background: #fff; }
+  svg.wires { position: absolute; inset: 0; width: 1480px; height: 900px; }
+  .title { position: absolute; top: 24px; left: 0; width: 1480px; text-align: center;
+           font-size: 26px; font-weight: 800; color: #071A4D; letter-spacing: .5px; }
+  .title span { color: #1F5EFF; }
+  .head { position: absolute; width: 420px; height: 62px; border-radius: 13px;
+          display: flex; flex-direction: column; align-items: center; justify-content: center;
+          color: #fff; box-shadow: 0 5px 14px rgba(7,26,77,.22); }
+  .head .t { font-size: 20px; font-weight: 800; }
+  .head .s { font-size: 12.5px; font-weight: 700; letter-spacing: 1.5px; margin-top: 2px; }
+  .hp { left: 190px; top: 92px; background: #1F5EFF; border-bottom: 4px solid #B8FF34; }
+  .hp .s { color: #B8FF34; }
+  .hd { left: 870px; top: 92px; background: #071A4D; border-bottom: 4px solid #B8FF34; }
+  .hd .s { color: #B8FF34; }
+  .grp { position: absolute; top: 190px; width: 640px; height: 74px; border-radius: 12px;
+         display: flex; align-items: center; justify-content: center; font-weight: 800; }
+  .gp { left: 80px; background: #EAF0FF; color: #1F5EFF; border: 2px solid #1F5EFF; font-size: 19px; }
+  .gd { left: 760px; background: #EEF3FF; color: #071A4D; border: 2px solid #071A4D; font-size: 19px; }
+  .gsp { position: absolute; font-size: 13px; font-weight: 700; color: #6B7690; letter-spacing: 1px; }
+  .cardrow { position: absolute; top: 300px; }
+  .fcard { position: absolute; top: 0; width: 148px; height: 108px; background: #FCFDFF;
+           border: 1.6px solid #C9D3E6; border-radius: 12px; padding: 10px 8px;
+           text-align: center; }
+  .fcard .nm { font-size: 15.5px; font-weight: 800; color: #071A4D; line-height: 1.2; }
+  .fcard .fn { font-size: 12px; color: #55607A; margin-top: 5px; line-height: 1.25; }
+  .p1 { left: 80px; } .p2 { left: 240px; } .p3 { left: 400px; } .p4 { left: 560px; }
+  .p5 { left: 760px; } .p6 { left: 920px; } .p7 { left: 1080px; } .p8 { left: 1240px; }
+  .worker { position: absolute; left: 555px; top: 700px; width: 370px; height: 92px;
+            background: #B8FF34; border-radius: 14px; display: flex; flex-direction: column;
+            align-items: center; justify-content: center; color: #071A4D;
+            box-shadow: 0 6px 16px rgba(7,26,77,.18); }
+  .worker .t { font-size: 22px; font-weight: 800; }
+  .worker .s { font-size: 13.5px; font-weight: 700; margin-top: 3px; }
+  .note { position: absolute; font-size: 14px; color: #414D68; background: #F5F8FF;
+          border-left: 4px solid #1F5EFF; border-radius: 0 10px 10px 0; padding: 10px 14px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <svg class="wires" viewBox="0 0 1480 900">
+    <!-- planning foremen arrows to worker -->
+    <path d="M 154 408 C 154 560, 500 640, 590 698" fill="none" stroke="#1F5EFF" stroke-width="2.2" opacity=".5"/>
+    <path d="M 314 408 C 314 570, 520 650, 600 698" fill="none" stroke="#1F5EFF" stroke-width="2.2" opacity=".5"/>
+    <path d="M 474 408 C 474 580, 545 660, 615 698" fill="none" stroke="#1F5EFF" stroke-width="2.2" opacity=".5"/>
+    <path d="M 634 408 C 634 590, 575 660, 635 698" fill="none" stroke="#1F5EFF" stroke-width="2.2" opacity=".5"/>
+    <!-- production foremen arrows to worker -->
+    <path d="M 846 408 C 846 590, 905 660, 845 698" fill="none" stroke="#071A4D" stroke-width="2.2" opacity=".5"/>
+    <path d="M 1006 408 C 1006 580, 935 660, 865 698" fill="none" stroke="#071A4D" stroke-width="2.2" opacity=".5"/>
+    <path d="M 1166 408 C 1166 570, 960 650, 880 698" fill="none" stroke="#071A4D" stroke-width="2.2" opacity=".5"/>
+    <path d="M 1326 408 C 1326 560, 980 640, 890 698" fill="none" stroke="#071A4D" stroke-width="2.2" opacity=".5"/>
+  </svg>
+
+  <div class="title">FUNCTIONAL FOREMANSHIP — <span>one worker, eight specialist bosses (Taylor's technique)</span></div>
+
+  <div class="head hp"><div class="t">PLANNING INCHARGE</div><div class="s">PLANS THE WORK — DOES NOT EXECUTE</div></div>
+  <div class="head hd"><div class="t">PRODUCTION INCHARGE</div><div class="s">EXECUTES THE PLAN ON THE FLOOR</div></div>
+
+  <div class="grp gp">PLANNING FOREMEN</div>
+  <div class="grp gd">PRODUCTION FOREMEN</div>
+
+  <div class="cardrow">
+    <div class="fcard p1"><div class="nm">Route Clerk</div><div class="fn">Decides the route — the sequence of steps for each job</div></div>
+    <div class="fcard p2"><div class="nm">Instruction Card Clerk</div><div class="fn">Writes the instructions for each worker on cards</div></div>
+    <div class="fcard p3"><div class="nm">Time &amp; Cost Clerk</div><div class="fn">Fixes time limits and cost targets for every job</div></div>
+    <div class="fcard p4"><div class="nm">Disciplinarian</div><div class="fn">Keeps order, rules and discipline in the factory</div></div>
+    <div class="fcard p5"><div class="nm">Speed Boss</div><div class="fn">Keeps the work moving at the promised speed</div></div>
+    <div class="fcard p6"><div class="nm">Gang Boss</div><div class="fn">Keeps machines, tools and materials ready</div></div>
+    <div class="fcard p7"><div class="nm">Repair Boss</div><div class="fn">Keeps machines and equipment in working order</div></div>
+    <div class="fcard p8"><div class="nm">Inspector</div><div class="fn">Checks the quality of everything produced</div></div>
+  </div>
+
+  <div class="worker">
+    <div class="t">THE WORKER</div>
+    <div class="s">receives day-to-day orders from all eight specialists</div>
+  </div>
+
+  <div class="note" style="left:80px; top:836px; width:590px;">
+    <b>Why Taylor designed it:</b> no single foreman can master every skill — so
+    each boss gives orders only in his own speciality.
+  </div>
+  <div class="note" style="left:760px; top:836px; width:640px;">
+    <b>The trade-off:</b> specialisation gained, but <b>unity of command is
+    violated</b> — one worker answers to eight bosses. That tension is a
+    favourite question.
+  </div>
+</div>
+</body>
+</html>

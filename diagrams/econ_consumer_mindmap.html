@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: 1080px; position: relative; background: #fff; }
+  svg.wires { position: absolute; inset: 0; width: 1480px; height: 1080px; }
+  .center {
+    position: absolute; left: 520px; top: 470px; width: 440px; height: 104px;
+    background: #071A4D; border-radius: 16px; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(7,26,77,.25);
+    border-bottom: 5px solid #B8FF34;
+  }
+  .center .t { color: #fff; font-size: 21px; font-weight: 800; letter-spacing: .5px; text-align: center; }
+  .center .s { color: #B8FF34; font-size: 13px; font-weight: 700; letter-spacing: 2px; margin-top: 4px; }
+  .card {
+    position: absolute; width: 465px; background: #FCFDFF; border: 1.5px solid #D5DCEA;
+    border-radius: 14px; padding: 13px 16px 12px;
+  }
+  .card h2 { font-size: 20px; color: #071A4D; font-weight: 800; margin-bottom: 7px;
+             padding-bottom: 5px; border-bottom: 3px solid; display: inline-block; }
+  .leaf { font-size: 14.5px; color: #1B2333; margin: 5px 0; padding-left: 16px; position: relative; line-height: 1.32; }
+  .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
+  .b .leaf::before { background: #1F5EFF; }
+  .l .leaf::before { background: #7FB800; }
+  .leaf b { color: #071A4D; }
+  .b h2 { border-color: #1F5EFF; }
+  .l h2 { border-color: #7FB800; }
+  .left { left: 30px; }
+  .right { left: 985px; }
+  .exc {
+    position: absolute; left: 470px; top: 905px; width: 540px; background: #FFF3EC;
+    border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px;
+  }
+  .exc h2 { font-size: 17px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
+  .exc .leaf { font-size: 13px; margin: 3px 0; padding-left: 14px; color: #7A2A12; }
+  .exc .leaf::before { background: #D2481F; }
+  .exc b { color: #B4380F; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <svg class="wires" viewBox="0 0 1480 1080">
+    <path d="M 520 505 C 470 505, 495 158, 500 155" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 520 520 C 480 520, 495 438, 500 438" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 520 535 C 470 535, 495 718, 500 718" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 960 505 C 1010 505, 985 158, 980 155" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 960 520 C 1000 520, 985 438, 980 438" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 960 535 C 1010 535, 985 718, 980 718" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 740 574 C 740 700, 740 830, 740 903" fill="none" stroke="#D2481F" stroke-width="2.5" stroke-dasharray="7 5" opacity=".6"/>
+  </svg>
+
+  <div class="center">
+    <div class="t">CONSUMER BEHAVIOUR</div>
+    <div class="s">COURSE I MICRO &#183; COMPLETE CHAPTER MAP</div>
+  </div>
+
+  <div class="card left b" style="top:58px">
+    <h2>Micro &amp; Central Problems</h2>
+    <div class="leaf"><b>Micro</b> studies one buyer, one firm, one market; <b>macro</b> studies economy-wide totals</div>
+    <div class="leaf"><b>Scarcity</b> (limited resources, unlimited wants) forces every economy to answer <b>what / how / for whom</b></div>
+    <div class="leaf"><b>Opportunity cost</b> = the next best thing given up; PPF shows the max combos, bowed out because resources are not equally suited to both goods</div>
+  </div>
+
+  <div class="card left l" style="top:352px">
+    <h2>The Utility Engine</h2>
+    <div class="leaf"><b>MU = &#916;TU</b> (extra utility from one more unit); <b>TU = sum of MUs</b></div>
+    <div class="leaf"><b>Law of diminishing MU:</b> each extra unit gives less extra satisfaction &#8212; the 3rd ice cream never beats the 1st</div>
+    <div class="leaf"><b>MU in money:</b> divide utils by utils-per-rupee to compare with price in &#8377;</div>
+  </div>
+
+  <div class="card left b" style="top:648px">
+    <h2>Consumer's Equilibrium (Utility Approach)</h2>
+    <div class="leaf"><b>One good:</b> keep buying while MU<sub>x</sub> &gt; P<sub>x</sub> (in money terms); stop at <b>MU<sub>x</sub> = MU of money</b></div>
+    <div class="leaf"><b>Two goods:</b> shift spending until <b>MU<sub>x</sub>/P<sub>x</sub> = MU<sub>y</sub>/P<sub>y</sub> = MU of money</b>, with the budget exactly spent</div>
+    <div class="leaf"><b>Budget line:</b> P<sub>x</sub>X + P<sub>y</sub>Y = M; slope = P<sub>x</sub>/P<sub>y</sub>; income shifts it parallel, a price change pivots it</div>
+  </div>
+
+  <div class="card right l" style="top:58px">
+    <h2>Demand &amp; Its Behaviour</h2>
+    <div class="leaf"><b>Demand = desire + ability + willingness</b> to pay &#8212; miss one and it is only a wish</div>
+    <div class="leaf"><b>Law of demand:</b> own price &#8595; &#8594; quantity demanded &#8593; (other things equal)</div>
+    <div class="leaf"><b>Determinants:</b> income (normal vs inferior), prices of substitutes &amp; complements, tastes, expectations, population</div>
+    <div class="leaf"><b>Market demand</b> = horizontal sum of all individual demands</div>
+  </div>
+
+  <div class="card right b" style="top:352px">
+    <h2>Movement vs Shift</h2>
+    <div class="leaf"><b>Own price changes</b> &#8594; <b>movement along</b> the same curve (expansion &#8595;price, contraction &#8593;price)</div>
+    <div class="leaf"><b>Any non-price factor</b> &#8594; <b>whole curve shifts</b> right (increase) or left (decrease)</div>
+    <div class="leaf"><b>Words carry marks:</b> "change in quantity demanded" = movement; "change in demand" = shift</div>
+  </div>
+
+  <div class="card right l" style="top:648px">
+    <h2>Price Elasticity of Demand</h2>
+    <div class="leaf"><b>Percentage method:</b> e<sub>p</sub> = %&#916;Q &#247; %&#916;P (drop the minus sign)</div>
+    <div class="leaf"><b>Total expenditure method:</b> P &#8593; and TE same &#8594; e = 1; TE rises &#8594; e &gt; 1; TE falls &#8594; e &lt; 1</div>
+    <div class="leaf"><b>Degrees:</b> 0 (perfectly inelastic) &lt; e &lt; 1 (inelastic) &lt; e = 1 (unitary) &lt; e &gt; 1 (elastic) &#8594; &#8734;</div>
+    <div class="leaf"><b>More elastic when:</b> many substitutes, luxury, big budget share, many uses, longer time</div>
+  </div>
+
+  <div class="exc">
+    <h2>Traps that catch most students</h2>
+    <div class="leaf"><b>Own price never shifts</b> the demand curve &#8212; it only moves you along it</div>
+    <div class="leaf"><b>Demand &#8800; desire</b> &#8212; all three conditions (want + money + willingness) must hold</div>
+    <div class="leaf"><b>TE method only classifies</b> (&gt;1, =1, &lt;1) &#8212; it can never give the exact elasticity value</div>
+    <div class="leaf"><b>Inferior goods flip the income rule</b> &#8212; income rises, demand falls; Giffen goods even break the law of demand</div>
+  </div>
+</div>
+</body>
+</html>

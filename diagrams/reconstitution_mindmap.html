@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: 1130px; position: relative; background: #fff; }
+  svg.wires { position: absolute; inset: 0; width: 1480px; height: 1130px; }
+  .center {
+    position: absolute; left: 530px; top: 430px; width: 420px; height: 104px;
+    background: #071A4D; border-radius: 16px; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(7,26,77,.25);
+    border-bottom: 5px solid #B8FF34;
+  }
+  .center .t { color: #fff; font-size: 23px; font-weight: 800; letter-spacing: .5px; text-align: center; }
+  .center .s { color: #B8FF34; font-size: 13.5px; font-weight: 700; letter-spacing: 2px; margin-top: 4px; }
+  .card {
+    position: absolute; width: 480px; background: #FCFDFF; border: 1.5px solid #D5DCEA;
+    border-radius: 14px; padding: 13px 16px 12px;
+  }
+  .card h2 { font-size: 20px; color: #071A4D; font-weight: 800; margin-bottom: 7px;
+             padding-bottom: 5px; border-bottom: 3px solid; display: inline-block; }
+  .leaf { font-size: 14.5px; color: #1B2333; margin: 5px 0; padding-left: 16px; position: relative; line-height: 1.32; }
+  .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
+  .b .leaf::before { background: #1F5EFF; }
+  .l .leaf::before { background: #7FB800; }
+  .leaf b { color: #071A4D; }
+  .b h2 { border-color: #1F5EFF; }
+  .l h2 { border-color: #7FB800; }
+  .left { left: 30px; }
+  .right { left: 970px; }
+  .exc {
+    position: absolute; left: 505px; top: 950px; width: 470px; background: #FFF3EC;
+    border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px;
+  }
+  .exc h2 { font-size: 17px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
+  .exc .leaf { font-size: 13px; margin: 3px 0; padding-left: 14px; color: #7A2A12; }
+  .exc .leaf::before { background: #D2481F; }
+  .exc b { color: #B4380F; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <svg class="wires" viewBox="0 0 1480 1130">
+    <path d="M 530 452 C 495 452, 525 150, 512 145" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 530 470 C 495 470, 525 425, 512 420" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 530 488 C 495 488, 525 695, 512 700" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 950 452 C 985 452, 955 150, 968 145" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 950 470 C 985 470, 955 425, 968 420" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 950 488 C 985 488, 955 695, 968 700" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 740 534 C 740 660, 740 850, 740 948" fill="none" stroke="#D2481F" stroke-width="2.5" stroke-dasharray="7 5" opacity=".6"/>
+  </svg>
+
+  <div class="center">
+    <div class="t">RECONSTITUTION OF A<br>PARTNERSHIP FIRM</div>
+    <div class="s">UNIT II &#183; COMPLETE CHAPTER MAP</div>
+  </div>
+
+  <div class="card left b" style="top:40px">
+    <h2>Change in PSR</h2>
+    <div class="leaf"><b>New ratio decides everything:</b> who gains, who sacrifices, who is untouched</div>
+    <div class="leaf"><b>Sacrificing ratio</b> = old share &#8722; new share (the part given up)</div>
+    <div class="leaf"><b>Gaining ratio</b> = new share &#8722; old share (the part picked up)</div>
+    <div class="leaf">Only the <b>gaining partners pay</b> for goodwill — sacrificers never pay</div>
+  </div>
+
+  <div class="card left l" style="top:315px">
+    <h2>Revaluation A/c</h2>
+    <div class="leaf"><b>Why:</b> bring assets &amp; liabilities to true values on the reconstitution date</div>
+    <div class="leaf"><b>Credit:</b> rise in assets, fall in liabilities; <b>Debit:</b> fall in assets, rise in liabilities</div>
+    <div class="leaf">Profit or loss goes to <b>OLD partners in the OLD ratio</b> — never the incoming partner</div>
+    <div class="leaf">A nominal account: opened, filled, <b>closed on the same day</b></div>
+  </div>
+
+  <div class="card left b" style="top:595px">
+    <h2>Reserves &amp; Accumulated Profits</h2>
+    <div class="leaf"><b>General Reserve &#183; P&amp;L balance &#183; Workmen Comp Fund surplus</b> belong to old partners</div>
+    <div class="leaf">Shared in the <b>OLD ratio</b> at admission or retirement</div>
+    <div class="leaf"><b>Workmen Comp Fund:</b> claim above the fund &#8594; extra debited to Revaluation A/c</div>
+    <div class="leaf"><b>Investment Fluctuation Fund:</b> fall in value first met from the fund, rest via Revaluation</div>
+  </div>
+
+  <div class="card right l" style="top:40px">
+    <h2>Goodwill &amp; Valuation</h2>
+    <div class="leaf"><b>Goodwill</b> = the money value of a firm's reputation — power to earn <b>extra profit</b></div>
+    <div class="leaf"><b>Average profit:</b> goodwill = average profit &#215; number of years' purchase</div>
+    <div class="leaf"><b>Super profit:</b> normal = capital &#215; NRR/100; super = avg &#8722; normal; goodwill = super &#215; N</div>
+    <div class="leaf"><b>Capitalisation:</b> goodwill = capitalised value of profits &#8722; net assets</div>
+  </div>
+
+  <div class="card right b" style="top:315px">
+    <h2>Admission of a Partner</h2>
+    <div class="leaf">Admission needs <b>consent of all partners</b> — a new agreement begins</div>
+    <div class="leaf"><b>Premium for goodwill:</b> his share &#215; firm's goodwill, credited to old partners in the <b>sacrificing ratio</b></div>
+    <div class="leaf">Revaluation profit + reserves go to <b>old partners only</b></div>
+    <div class="leaf">Capitals adjusted to the new agreement; the <b>new PSR begins</b></div>
+  </div>
+
+  <div class="card right l" style="top:595px">
+    <h2>Retirement / Death</h2>
+    <div class="leaf"><b>Claim</b> = capital + goodwill share + revaluation profit + reserves &#8722; drawings</div>
+    <div class="leaf">Continuing partners take the outgoing share in the <b>gaining ratio</b> (new &#8722; old)</div>
+    <div class="leaf">On death, the balance moves to the <b>Executor's Account</b>, then to a <b>Loan A/c</b></div>
+    <div class="leaf">Loan instalments earn <b>6% p.a. interest</b> when the deed is silent</div>
+  </div>
+
+  <div class="exc">
+    <h2>COMMON ERRORS &amp; TRAPS</h2>
+    <div class="leaf"><b>Revaluation profit never touches the new partner</b> — old partners only, in the old ratio</div>
+    <div class="leaf"><b>Gaining ratio &#8800; new ratio.</b> It is new &#8722; old, partner by partner — never computed in bulk</div>
+    <div class="leaf"><b>Accumulated LOSSES also belong to old partners</b> — debited, not credited, in the old ratio</div>
+  </div>
+</div>
+</body>
+</html>

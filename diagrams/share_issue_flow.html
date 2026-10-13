@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: auto; background: #fff; padding: 26px 30px 24px; position: relative; }
+  .title { text-align: center; font-size: 32px; font-weight: 800; color: #071A4D; margin-bottom: 6px; }
+  .subtitle { text-align: center; font-size: 19px; color: #5A6478; margin-bottom: 28px; }
+  .row { display: flex; justify-content: center; align-items: stretch; gap: 0; }
+  .node {
+    width: 290px; background: #FCFDFF; border: 1.5px solid #D5DCEA; border-radius: 13px;
+    padding: 14px 16px 13px; position: relative; margin: 0 18px;
+  }
+  .node .num {
+    position: absolute; top: -17px; left: -17px; width: 40px; height: 40px; border-radius: 50%;
+    background: #071A4D; color: #B8FF34; font-weight: 800; font-size: 19px;
+    display: flex; align-items: center; justify-content: center; border: 2.5px solid #fff;
+    box-shadow: 0 3px 8px rgba(7,26,77,.28);
+  }
+  .node h3 { font-size: 20px; color: #071A4D; font-weight: 800; margin-bottom: 6px; padding-bottom: 5px;
+             border-bottom: 2.5px solid #1F5EFF; display: inline-block; }
+  .node p { font-size: 16px; color: #1B2333; line-height: 1.4; }
+  .node p b { color: #071A4D; }
+  .node.dr h3 { border-color: #D2481F; }
+  .node.dr { background: #FFF8F5; }
+  .node.cr h3 { border-color: #7FB800; }
+  .node.cr { background: #FBFFF4; }
+  .arrow { align-self: center; width: 0; height: 0; border-top: 15px solid transparent;
+           border-bottom: 15px solid transparent; border-left: 22px solid #1F5EFF; margin: 0 -6px; }
+  .arrow.down { border-left: 15px solid transparent; border-right: 15px solid transparent;
+                border-top: 22px solid #1F5EFF; border-bottom: none; margin: 4px 0; }
+  .arrow.down.red { border-top-color: #D2481F; }
+  .spacer { width: 290px; }
+  .rowgap { height: 40px; display: flex; justify-content: center; align-items: center; }
+  .branch-label { font-size: 17px; font-weight: 800; color: #B4380F; margin-left: 14px; }
+  .downwrap { display: flex; flex-direction: column; align-items: center; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="title">Life of a Share Issue</div>
+  <div class="subtitle">Follow one share from the boardroom decision to full payment — and what happens when money stops coming</div>
+
+  <div class="row">
+    <div class="node">
+      <div class="num">1</div>
+      <h3>Company decides the issue</h3>
+      <p>Board and shareholders approve. The <b>authorised capital</b> in the Memorandum caps how much can be raised.</p>
+    </div>
+    <div class="arrow"></div>
+    <div class="node">
+      <div class="num">2</div>
+      <h3>Application money invited</h3>
+      <p>Public applies on a form. Application money is at least <b>5%</b> of the issue price; allotment needs <b>90% minimum subscription</b>.</p>
+    </div>
+    <div class="arrow"></div>
+    <div class="node">
+      <div class="num">3</div>
+      <h3>Applications received</h3>
+      <p>Applied shares vs offered shares decide the fate: <b>over-subscribed</b> (more demand) or <b>under-subscribed</b> (less).</p>
+    </div>
+    <div class="arrow"></div>
+    <div class="node">
+      <div class="num">4</div>
+      <h3>Allotment — pro-rata logic</h3>
+      <p>2 applied : 1 allotted means excess application money <b>adjusts the allotment</b>; rejected applicants get a <b>refund</b>.</p>
+    </div>
+  </div>
+
+  <div class="rowgap"><div class="downwrap"><div class="arrow down"></div></div></div>
+
+  <div class="row">
+    <div class="spacer"></div>
+    <div class="node">
+      <div class="num">5</div>
+      <h3>Calls are made</h3>
+      <p><b>Allotment</b>, then <b>first &amp; final call</b>. Each call is a debt due from the shareholder on demand.</p>
+    </div>
+    <div class="arrow"></div>
+    <div class="node cr">
+      <div class="num">6</div>
+      <h3>Shares fully paid</h3>
+      <p>The full ₹10 face value is collected — the holder is now a <b>complete owner</b> with all shareholder rights.</p>
+    </div>
+    <div class="spacer"></div>
+  </div>
+
+  <div class="rowgap">
+    <div class="downwrap"><div class="arrow down red"></div></div>
+    <span class="branch-label">side path — only if a shareholder defaults</span>
+  </div>
+
+  <div class="row">
+    <div class="node dr">
+      <div class="num">A</div>
+      <h3>Default</h3>
+      <p>After a <b>14-day notice</b>, the money is still unpaid on allotment or a call.</p>
+    </div>
+    <div class="arrow" style="border-left-color:#D2481F"></div>
+    <div class="node dr">
+      <div class="num">B</div>
+      <h3>Forfeiture</h3>
+      <p>Shares are <b>cancelled</b>: Share Capital debited with called-up, <b>Forfeited Shares A/c</b> credited with money already received.</p>
+    </div>
+    <div class="arrow" style="border-left-color:#D2481F"></div>
+    <div class="node cr">
+      <div class="num">C</div>
+      <h3>Re-issue</h3>
+      <p>Sold again — discount <b>cannot exceed</b> the forfeited amount. What is left becomes a <b>Capital Reserve</b>.</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

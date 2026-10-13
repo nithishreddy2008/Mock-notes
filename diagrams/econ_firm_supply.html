@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: 950px; position: relative; background: #fff; }
+  .title {
+    position: absolute; left: 30px; top: 22px; width: 1420px; height: 58px;
+    background: #071A4D; border-radius: 12px; display: flex; align-items: center; justify-content: center;
+  }
+  .title .t { color: #fff; font-size: 24px; font-weight: 800; letter-spacing: 1px; }
+  .title .t b { color: #B8FF34; }
+  .panel {
+    position: absolute; top: 104px; width: 692px; height: 654px;
+    background: #FCFDFF; border: 1.5px solid #D5DCEA; border-radius: 14px; padding: 14px 18px;
+  }
+  .left  { left: 30px; }
+  .right { left: 758px; }
+  .panel h2 { font-size: 21px; font-weight: 800; margin-bottom: 2px; }
+  .left h2 { color: #1F5EFF; } .right h2 { color: #7FB800; }
+  .panel .sub { font-size: 14px; color: #5A6478; margin-bottom: 6px; }
+  .panel .sub b { color: #071A4D; }
+  .legend { display: flex; gap: 12px; margin: 4px 0; flex-wrap: wrap; }
+  .legend span { font-size: 13px; font-weight: 700; color: #1B2333; }
+  .dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 4px; vertical-align: -1px; }
+  .note { font-size: 13.5px; color: #1B2333; line-height: 1.4; margin-top: 6px; }
+  .note b { color: #071A4D; }
+  .strip { position: absolute; left: 30px; top: 778px; width: 1420px; display: flex; gap: 14px; }
+  .trap { flex: 1; background: #FFF3EC; border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px; }
+  .trap h3 { font-size: 14.5px; color: #B4380F; font-weight: 800; margin-bottom: 3px; }
+  .trap p { font-size: 13.5px; color: #7A2A12; line-height: 1.4; }
+  .trap p b { color: #B4380F; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="title"><div class="t">THE FIRM'S EQUILIBRIUM &amp; <b>THE MARKET'S EQUILIBRIUM PRICE</b></div></div>
+
+  <div class="panel left">
+    <h2>The firm: price taker, profit maximiser</h2>
+    <div class="sub"><b>Horizontal price line</b> (AR = MR = P) meets the U-shaped MC — the firm stops where <b>MC = MR on the RISING branch</b></div>
+    <div class="legend">
+      <span><span class="dot" style="background:#B4380F"></span>MC (rising after its dip)</span>
+      <span><span class="dot" style="background:#0E7A4D"></span>AVC</span>
+      <span><span class="dot" style="background:#1F5EFF"></span>P = AR = MR</span>
+    </div>
+    <svg width="656" height="360" viewBox="0 0 656 360">
+      <line x1="52" y1="16" x2="52" y2="322" stroke="#071A4D" stroke-width="2.5"/>
+      <line x1="52" y1="322" x2="626" y2="322" stroke="#071A4D" stroke-width="2.5"/>
+      <text x="58" y="12" font-size="13" font-weight="800" fill="#071A4D">Cost / Revenue (₹)</text>
+      <text x="556" y="342" font-size="13" font-weight="800" fill="#071A4D">Output (q)</text>
+      <!-- AVC -->
+      <path d="M 74 180 C 130 262, 180 288, 245 282 C 330 274, 440 210, 580 120" fill="none" stroke="#0E7A4D" stroke-width="3"/>
+      <text x="584" y="116" font-size="13" font-weight="800" fill="#0E7A4D">AVC</text>
+      <!-- MC -->
+      <path d="M 70 250 C 115 296, 155 306, 200 288 C 260 262, 330 186, 420 118 C 490 66, 550 42, 600 30" fill="none" stroke="#B4380F" stroke-width="3.5"/>
+      <text x="604" y="28" font-size="13" font-weight="800" fill="#B4380F">MC</text>
+      <!-- price line -->
+      <line x1="52" y1="140" x2="600" y2="140" stroke="#1F5EFF" stroke-width="3.5"/>
+      <text x="540" y="130" font-size="13.5" font-weight="800" fill="#1F5EFF">P = AR = MR</text>
+      <!-- false crossing: MC rising? MC at x=210 is ~285 (dip region), price line at 140 — no false crossing drawn; instead show single true crossing at (368,140) -->
+      <line x1="368" y1="140" x2="368" y2="322" stroke="#1F5EFF" stroke-width="1.8" stroke-dasharray="4 4"/>
+      <circle cx="368" cy="140" r="7" fill="#071A4D"/>
+      <text x="64" y="124" font-size="13.5" font-weight="800" fill="#071A4D">E: MC = MR (rising) → output q*</text>
+      <text x="354" y="340" font-size="13.5" font-weight="800" fill="#071A4D">q*</text>
+      <!-- shutdown zone -->
+      <path d="M 52 262 L 626 262" stroke="#B4380F" stroke-width="1.5" stroke-dasharray="5 5" opacity=".7"/>
+      <text x="300" y="254" font-size="12.5" font-weight="700" fill="#B4380F">P < AVC min → produce nothing</text>
+      <circle cx="245" cy="282" r="5.5" fill="#0E7A4D"/>
+      <text x="160" y="304" font-size="12" font-weight="700" fill="#0E7A4D">AVC minimum = shutdown point</text>
+    </svg>
+    <div class="note"><b>Read it once:</b> the price line is flat because the firm is too small to move the market. Produce every unit whose MC is below the price; stop at E where MC = MR on the RISING arm — and only if the price covers AVC.</div>
+  </div>
+
+  <div class="panel right">
+    <h2>The market: where the price is decided</h2>
+    <div class="sub">Buyers and sellers together set <b>equilibrium price P*</b>; a demand or supply shift re-prices the market</div>
+    <div class="legend">
+      <span><span class="dot" style="background:#1F5EFF"></span>Demand</span>
+      <span><span class="dot" style="background:#0E7A4D"></span>Supply</span>
+      <span><span class="dot" style="background:#5A6478"></span>D after increase</span>
+    </div>
+    <svg width="656" height="360" viewBox="0 0 656 360">
+      <line x1="52" y1="16" x2="52" y2="322" stroke="#071A4D" stroke-width="2.5"/>
+      <line x1="52" y1="322" x2="626" y2="322" stroke="#071A4D" stroke-width="2.5"/>
+      <text x="58" y="12" font-size="13" font-weight="800" fill="#071A4D">Price (₹)</text>
+      <text x="560" y="342" font-size="13" font-weight="800" fill="#071A4D">Quantity (Q)</text>
+      <!-- D -->
+      <line x1="90" y1="50" x2="330" y2="300" stroke="#1F5EFF" stroke-width="3.5"/>
+      <text x="300" y="296" font-size="14" font-weight="800" fill="#1F5EFF">D</text>
+      <!-- D2 -->
+      <line x1="180" y1="50" x2="420" y2="300" stroke="#5A6478" stroke-width="3" stroke-dasharray="8 5"/>
+      <text x="424" y="300" font-size="14" font-weight="800" fill="#5A6478">D&#8242;</text>
+      <!-- S -->
+      <line x1="130" y1="300" x2="420" y2="60" stroke="#0E7A4D" stroke-width="3.5"/>
+      <text x="424" y="58" font-size="14" font-weight="800" fill="#0E7A4D">S</text>
+      <!-- E1: D x S: D param (90,50)-(330,300): x=90+240t, y=50+250t ; S: (130,300)-(420,60): x=130+290u, y=300-240u. Solve: 90+240t=130+290u; 50+250t=300-240u -> t=(250-240u)/250=1-0.96u; x=90+240(1-0.96u)=330-230.4u =130+290u -> 200=520.4u -> u=.3843; x=241.4, y=300-92.2=207.8 -->
+      <circle cx="241" cy="208" r="7" fill="#071A4D"/>
+      <text x="130" y="196" font-size="13.5" font-weight="800" fill="#071A4D">E&#8321;</text>
+      <line x1="52" y1="208" x2="241" y2="208" stroke="#5A6478" stroke-width="1.5" stroke-dasharray="4 4"/>
+      <text x="58" y="200" font-size="13" font-weight="700" fill="#071A4D">P&#8321;</text>
+      <!-- E2: D2 x S: 180+240t=130+290u; 50+250t=300-240u -> t=1-0.96u; x=180+240-230.4u=420-230.4u=130+290u -> 290=520.4u -> u=.5573; x=291.6, y=300-133.7=166.3 -->
+      <circle cx="292" cy="166" r="7" fill="#B4380F"/>
+      <text x="304" y="158" font-size="13.5" font-weight="800" fill="#B4380F">E&#8322;: price rises</text>
+      <line x1="52" y1="166" x2="292" y2="166" stroke="#B4380F" stroke-width="1.5" stroke-dasharray="4 4"/>
+      <text x="58" y="158" font-size="13" font-weight="700" fill="#B4380F">P&#8322;</text>
+      <!-- shift arrow -->
+      <path d="M 210 160 L 275 118" stroke="#B4380F" stroke-width="3" marker-end="url(#arrS)"/>
+      <defs><marker id="arrS" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+        <path d="M0,0 L9,4.5 L0,9 z" fill="#B4380F"/></marker></defs>
+      <text x="62" y="240" font-size="12.5" font-weight="700" fill="#5A6478">D shifts right</text>
+      <text x="62" y="258" font-size="12.5" font-weight="700" fill="#5A6478">(income, taste)</text>
+    </svg>
+    <div class="note"><b>Read it once:</b> above P* supply beats demand (excess supply pushes price DOWN); below P* demand beats supply (excess demand pushes price UP). Any shift of D or S re-prices the market — demand right: P&#8593; Q&#8593;; supply right: P&#8595; Q&#8593;.</div>
+  </div>
+
+  <div class="strip">
+    <div class="trap"><h3>TRAP 1</h3><p><b>The supply curve's own price NEVER shifts it.</b> Own price slides you ALONG the S curve; input costs, technology and taxes shift it.</p></div>
+    <div class="trap"><h3>TRAP 2</h3><p><b>MC = MR is not enough.</b> Equilibrium needs the RISING branch — and the shutdown check: P below AVC's minimum means produce nothing at all.</p></div>
+    <div class="trap"><h3>TRAP 3</h3><p><b>Market supply adds QUANTITIES, not prices</b> — at each price, sum every firm's quantity (horizontal summation), exactly like market demand.</p></div>
+  </div>
+</div>
+</body>
+</html>

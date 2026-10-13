@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: auto; background: #fff; padding: 26px 30px 24px; position: relative; }
+  .title { text-align: center; font-size: 32px; font-weight: 800; color: #071A4D; margin-bottom: 6px; }
+  .subtitle { text-align: center; font-size: 19px; color: #5A6478; margin-bottom: 26px; }
+  .row { display: flex; justify-content: center; align-items: stretch; gap: 0; }
+  .node {
+    width: 305px; background: #FCFDFF; border: 1.5px solid #D5DCEA; border-radius: 13px;
+    padding: 14px 16px 13px; position: relative; margin: 0 26px;
+  }
+  .node .num {
+    position: absolute; top: -17px; left: -17px; width: 40px; height: 40px; border-radius: 50%;
+    background: #071A4D; color: #B8FF34; font-weight: 800; font-size: 19px;
+    display: flex; align-items: center; justify-content: center; border: 2.5px solid #fff;
+    box-shadow: 0 3px 8px rgba(7,26,77,.28);
+  }
+  .node h3 { font-size: 21px; color: #071A4D; font-weight: 800; margin-bottom: 6px; padding-bottom: 5px;
+             border-bottom: 2.5px solid #1F5EFF; display: inline-block; }
+  .node p { font-size: 16.5px; color: #1B2333; line-height: 1.4; }
+  .node p b { color: #071A4D; }
+  .node.stop h3 { border-color: #7FB800; }
+  .node.stop { background: #FBFFF4; }
+  .arrow { align-self: center; width: 0; height: 0; border-top: 15px solid transparent;
+           border-bottom: 15px solid transparent; border-left: 22px solid #1F5EFF; margin: 0 -6px; }
+  .arrow.down { border-left: 15px solid transparent; border-right: 15px solid transparent;
+                border-top: 22px solid #1F5EFF; border-bottom: none; margin: 4px 0; }
+  .spacer { width: 357px; }
+  .rowgap { height: 40px; display: flex; justify-content: center; }
+  .downwrap { display: flex; flex-direction: column; align-items: center; }
+  .sides { display: flex; justify-content: center; gap: 34px; margin-top: 34px; }
+  .side {
+    width: 620px; border-radius: 13px; padding: 14px 18px 13px;
+  }
+  .side.lac { background: #F4F7FF; border: 1.5px solid #1F5EFF; }
+  .side.mut { background: #FFF3EC; border: 1.5px solid #D2481F; }
+  .side h3 { font-size: 19px; font-weight: 800; margin-bottom: 6px; }
+  .side.lac h3 { color: #071A4D; }
+  .side.mut h3 { color: #B4380F; }
+  .side p { font-size: 16px; color: #1B2333; line-height: 1.45; }
+  .side p b { color: #071A4D; }
+  .side.mut p b { color: #B4380F; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="title">The Central Dogma, Step by Step</div>
+  <div class="subtitle">How information stored in DNA becomes a working protein — the storyline of the whole chapter</div>
+
+  <div class="row">
+    <div class="node">
+      <div class="num">1</div>
+      <h3>Replication</h3>
+      <p>DNA copies itself before a cell divides. <b>Semi-conservative:</b> each daughter duplex gets one old + one new strand; the template strand rules the sequence.</p>
+    </div>
+    <div class="arrow"></div>
+    <div class="node">
+      <div class="num">2</div>
+      <h3>Transcription</h3>
+      <p>One gene &#8594; pre-mRNA. RNA polymerase starts at the <b>promoter</b> and stops at the <b>terminator</b>, reading the template strand 3'&#8594;5'.</p>
+    </div>
+    <div class="arrow"></div>
+    <div class="node">
+      <div class="num">3</div>
+      <h3>Splicing</h3>
+      <p><b>Introns out, exons joined.</b> A methyl-guanosine cap goes on the 5' end and a poly-A tail on the 3' end (eukaryotes).</p>
+    </div>
+  </div>
+
+  <div class="rowgap"><div class="downwrap"><div class="arrow down"></div></div></div>
+
+  <div class="row">
+    <div class="spacer"></div>
+    <div class="node">
+      <div class="num">4</div>
+      <h3>Translation</h3>
+      <p>mRNA is read in <b>codons</b> on the ribosome; tRNAs bring matching amino acids. AUG starts; UAA, UAG, UGA stop.</p>
+    </div>
+    <div class="arrow"></div>
+    <div class="node stop">
+      <div class="num">5</div>
+      <h3>Polypeptide &#8594; protein</h3>
+      <p>The finished chain <b>folds</b> into its working 3-D shape — the gene product the cell actually uses.</p>
+    </div>
+  </div>
+
+  <div class="sides">
+    <div class="side lac">
+      <h3>Side card — Lac operon in one line</h3>
+      <p><b>Lactose present &#8594; repressor lifts &#8594; transcription ON.</b> With no lactose the repressor sits on the operator and blocks RNA polymerase — an inducible, negative-control switch.</p>
+    </div>
+    <div class="side mut">
+      <h3>Side card — Mutations</h3>
+      <p><b>One base change (point mutation)</b> alters a single codon; an insertion or deletion can shift every codon after it (<b>frameshift</b>) and change the whole protein.</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

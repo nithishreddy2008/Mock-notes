@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: 1060px; position: relative; background: #fff; }
+  svg.wires { position: absolute; inset: 0; width: 1480px; height: 1060px; }
+  .center {
+    position: absolute; left: 545px; top: 385px; width: 390px; height: 100px;
+    background: #071A4D; border-radius: 16px; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(7,26,77,.25);
+    border-bottom: 5px solid #B8FF34;
+  }
+  .center .t { color: #fff; font-size: 23px; font-weight: 800; letter-spacing: .5px; text-align: center; }
+  .center .s { color: #B8FF34; font-size: 13.5px; font-weight: 700; letter-spacing: 2px; margin-top: 4px; }
+  .card {
+    position: absolute; width: 470px; background: #FCFDFF; border: 1.5px solid #D5DCEA;
+    border-radius: 14px; padding: 13px 16px 12px;
+  }
+  .card h2 { font-size: 20px; color: #071A4D; font-weight: 800; margin-bottom: 7px;
+             padding-bottom: 5px; border-bottom: 3px solid; display: inline-block; }
+  .leaf { font-size: 14px; color: #1B2333; margin: 5px 0; padding-left: 16px; position: relative; line-height: 1.3; }
+  .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
+  .b .leaf::before { background: #1F5EFF; }
+  .l .leaf::before { background: #7FB800; }
+  .leaf b { color: #071A4D; }
+  .b h2 { border-color: #1F5EFF; }
+  .l h2 { border-color: #7FB800; }
+  .left { left: 30px; }
+  .right { left: 980px; }
+  .exc {
+    position: absolute; left: 510px; top: 878px; width: 460px; background: #FFF3EC;
+    border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px;
+  }
+  .exc h2 { font-size: 17px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
+  .exc .leaf { font-size: 13px; margin: 3px 0; padding-left: 14px; color: #7A2A12; }
+  .exc .leaf::before { background: #D2481F; }
+  .exc b { color: #B4380F; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <svg class="wires" viewBox="0 0 1480 1060">
+    <path d="M 545 420 C 495 420, 520 165, 502 160" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 545 435 C 505 435, 520 430, 502 430" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 545 450 C 495 450, 520 700, 502 705" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 935 420 C 985 420, 960 165, 978 160" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 935 435 C 975 435, 960 430, 978 430" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 935 450 C 985 450, 960 700, 978 705" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 740 485 C 740 640, 740 808, 740 876" fill="none" stroke="#D2481F" stroke-width="2.5" stroke-dasharray="7 5" opacity=".6"/>
+  </svg>
+
+  <div class="center">
+    <div class="t">MICROBES IN HUMAN WELFARE</div>
+    <div class="s">UNIT VIII &#183; COMPLETE CHAPTER MAP</div>
+  </div>
+
+  <div class="card left b" style="top:62px">
+    <h2>Household Products</h2>
+    <div class="leaf"><b>Curd:</b> Lactobacillus turns milk sugar into lactic acid; also adds vitamin B&#8321;&#8322;</div>
+    <div class="leaf"><b>Dosa &amp; idli:</b> bacteria + yeasts ferment the batter; CO&#8322; puffs it spongy</div>
+    <div class="leaf"><b>Bread:</b> baker's yeast <i>Saccharomyces cerevisiae</i> raises the dough</div>
+    <div class="leaf"><b>Cheese:</b> Swiss holes = CO&#8322; of <i>Propionibacterium</i>; Roquefort veins = fungi</div>
+  </div>
+
+  <div class="card left l" style="top:330px">
+    <h2>Industrial Products</h2>
+    <div class="leaf"><b>Beverages:</b> yeast ferments malted cereals + fruit juices into ethanol</div>
+    <div class="leaf"><b>Antibiotics:</b> penicillin from <i>Penicillium</i> — Fleming 1928; Chain &amp; Florey 1942</div>
+    <div class="leaf"><b>Enzymes:</b> lipases scrub clothes in detergents; pectinases clear bottled juice</div>
+    <div class="leaf"><b>Bioactive:</b> Cyclosporin A shields transplants; statins cut cholesterol</div>
+  </div>
+
+  <div class="card left b" style="top:610px">
+    <h2>Sewage Treatment</h2>
+    <div class="leaf"><b>Primary (physical):</b> screening &#8594; grit removal &#8594; sedimentation</div>
+    <div class="leaf"><b>Secondary (biological):</b> flocs grow in the aeration tank; BOD falls</div>
+    <div class="leaf">Settling tank sinks the flocs as <b>activated sludge</b> &#8594; anaerobic digester</div>
+    <div class="leaf">Effluent is released <b>only when BOD is low</b> enough</div>
+  </div>
+
+  <div class="card right l" style="top:62px">
+    <h2>Biogas</h2>
+    <div class="leaf"><b>Made by methanogens</b> — microbes that work without any oxygen</div>
+    <div class="leaf"><b>Mix:</b> methane 50&#8211;70% + CO&#8322; + traces of other gases</div>
+    <div class="leaf"><i>Methanobacterium</i> lives in cattle rumen &#8594; gobar gas from dung</div>
+    <div class="leaf">Burns <b>without smoke</b>; spent slurry is a good fertiliser</div>
+  </div>
+
+  <div class="card right b" style="top:330px">
+    <h2>Biocontrol Agents</h2>
+    <div class="leaf"><b>Bacillus thuringiensis:</b> spores kill caterpillars; its genes built Bt cotton</div>
+    <div class="leaf"><b>Baculovirus</b> (nucleopolyhedrovirus): species-specific, fits organic farming</div>
+    <div class="leaf"><b>Trichoderma</b> (a fungus) fights root pathogens</div>
+    <div class="leaf"><b>Ladybirds</b> eat aphids; dragonflies hunt mosquitoes</div>
+  </div>
+
+  <div class="card right l" style="top:610px">
+    <h2>Biofertilisers</h2>
+    <div class="leaf"><b>Rhizobium:</b> lives in legume root nodules, fixes N&#8322; (symbiosis)</div>
+    <div class="leaf"><b>Azotobacter + Azospirillum:</b> free-living fixers in the soil</div>
+    <div class="leaf"><b>Mycorrhiza (Glomus):</b> better phosphorus + water uptake; drought shield</div>
+    <div class="leaf"><b>Cyanobacteria</b> (Anabaena, Nostoc): fix nitrogen in paddy fields</div>
+  </div>
+
+  <div class="exc">
+    <h2>COMMON ERRORS &amp; TRAPS</h2>
+    <div class="leaf"><b>Swiss cheese holes</b> come from <i>Propionibacterium</i> CO&#8322; — not from yeasts</div>
+    <div class="leaf"><b>Flocs</b> are masses of bacteria <b>+ fungi</b> — not pure bacteria</div>
+    <div class="leaf"><b>BOD goes down</b> as treatment succeeds; methanogens work <b>without</b> oxygen</div>
+  </div>
+</div>
+</body>
+</html>

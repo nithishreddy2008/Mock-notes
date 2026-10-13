@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: 1080px; position: relative; background: #fff; }
+  svg.wires { position: absolute; inset: 0; width: 1480px; height: 1080px; }
+  .center {
+    position: absolute; left: 520px; top: 470px; width: 440px; height: 104px;
+    background: #071A4D; border-radius: 16px; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(7,26,77,.25);
+    border-bottom: 5px solid #B8FF34;
+  }
+  .center .t { color: #fff; font-size: 22px; font-weight: 800; letter-spacing: .5px; text-align: center; }
+  .center .s { color: #B8FF34; font-size: 13.5px; font-weight: 700; letter-spacing: 2px; margin-top: 4px; }
+  .card {
+    position: absolute; width: 465px; background: #FCFDFF; border: 1.5px solid #D5DCEA;
+    border-radius: 14px; padding: 13px 16px 12px;
+  }
+  .card h2 { font-size: 20px; color: #071A4D; font-weight: 800; margin-bottom: 7px;
+             padding-bottom: 5px; border-bottom: 3px solid; display: inline-block; }
+  .leaf { font-size: 14.5px; color: #1B2333; margin: 5px 0; padding-left: 16px; position: relative; line-height: 1.32; }
+  .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
+  .b .leaf::before { background: #1F5EFF; }
+  .l .leaf::before { background: #7FB800; }
+  .leaf b { color: #071A4D; }
+  .b h2 { border-color: #1F5EFF; }
+  .l h2 { border-color: #7FB800; }
+  .left { left: 30px; }
+  .right { left: 985px; }
+  .exc {
+    position: absolute; left: 470px; top: 905px; width: 540px; background: #FFF3EC;
+    border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px;
+  }
+  .exc h2 { font-size: 17px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
+  .exc .leaf { font-size: 13px; margin: 3px 0; padding-left: 14px; color: #7A2A12; }
+  .exc .leaf::before { background: #D2481F; }
+  .exc b { color: #B4380F; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <svg class="wires" viewBox="0 0 1480 1080">
+    <path d="M 520 505 C 470 505, 495 158, 500 155" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 520 520 C 480 520, 495 438, 500 438" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 520 535 C 470 535, 495 718, 500 718" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 960 505 C 1010 505, 985 158, 980 155" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 960 520 C 1000 520, 985 438, 980 438" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 960 535 C 1010 535, 985 718, 980 718" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 740 574 C 740 700, 740 830, 740 903" fill="none" stroke="#D2481F" stroke-width="2.5" stroke-dasharray="7 5" opacity=".6"/>
+  </svg>
+
+  <div class="center">
+    <div class="t">AMINES</div>
+    <div class="s">UNIT IX &#183; COMPLETE CHAPTER MAP</div>
+  </div>
+
+  <div class="card left b" style="top:58px">
+    <h2>Structure, Class &amp; Names</h2>
+    <div class="leaf"><b>N is sp&#179;</b> with a lone pair &#8212; pyramidal, ~108&#176;; that lone pair IS the basicity story</div>
+    <div class="leaf"><b>1&#176;/2&#176;/3&#176; amines</b> (alkyl on N: one/two/three), plus <b>quaternary</b> (R&#8324;N&#8314;X&#8315;, no lone pair, not basic)</div>
+    <div class="leaf"><b>Names:</b> alkanamine / N-methylmethanamine / N,N-dimethyl... ; benzene ring: aniline (benzenamine)</div>
+    <div class="leaf"><b>Amide vs amine:</b> CONH&#8322; (acid derivative, neutral) vs NH&#8322; (basic) &#8212; never confuse the two</div>
+  </div>
+
+  <div class="card left l" style="top:352px">
+    <h2>Preparation Board</h2>
+    <div class="leaf"><b>Alkylation:</b> NH&#8323; + R&#8211;X gives 1&#176; then 2&#176; then 3&#176; then quaternary (over-alkylation mess)</div>
+    <div class="leaf"><b>Reduction:</b> nitro (Sn/HCl, Fe/HCl, H&#8322;/Ni), nitriles (LiAlH&#8324;), amides (LiAlH&#8324;), oximes</div>
+    <div class="leaf"><b>Gabriel phthalimide:</b> clean 1&#176; aliphatic amines only (no 2&#176;/3&#176;, no aniline)</div>
+    <div class="leaf"><b>Hofmann bromamide:</b> amide + Br&#8322;/KOH &#8594; amine with ONE carbon fewer</div>
+  </div>
+
+  <div class="card left b" style="top:648px">
+    <h2>Basicity Ladders (the famous ladders!)</h2>
+    <div class="leaf"><b>Gas phase:</b> 3&#176; &gt; 2&#176; &gt; 1&#176; &gt; NH&#8323; (alkyl push)</div>
+    <div class="leaf"><b>Aqueous 1&#176;/2&#176;/3&#176;:</b> 2&#176; &gt; 1&#176; &gt; 3&#176; &gt; NH&#8323; (solvation vs inductio­n tug-of-war)</div>
+    <div class="leaf"><b>Substituted anilines:</b> p-toluidine &gt; aniline &gt; p-nitroaniline (donors up, EWG down)</div>
+    <div class="leaf"><b>All amines beat ammonia's ring cousins:</b> aliphatic &gt;&gt; aniline &gt; ... (lone pair asleep in the ring)</div>
+  </div>
+
+  <div class="card right l" style="top:58px">
+    <h2>Chemistry of Amines</h2>
+    <div class="leaf"><b>H-bonding:</b> 1&#176;/2&#176; boil high (N&#8211;H donors); 3&#176; has none &#8212; 3&#176; boils lowest of the trio</div>
+    <div class="leaf"><b>Salt formation:</b> amines dissolve in acid (C&#8322;H&#8325;NH&#8322; + HCl &#8594; salt) &#8212; the separation trick</div>
+    <div class="leaf"><b>Acylation/alkylation:</b> acyl chloride + amine &#8594; amide (Hinsberg's playground)</div>
+    <div class="leaf"><b>Carbylamine test:</b> 1&#176; only + CHCl&#8323;/KOH &#8594; foul isocyanide (2&#176;/3&#176; silent)</div>
+    <div class="leaf"><b>Hinsberg:</b> benzenesulphonyl chloride sorts 1&#176;/2&#176;/3&#176; by solubility</div>
+  </div>
+
+  <div class="card right b" style="top:392px">
+    <h2>Reactions on the Ring</h2>
+    <div class="leaf"><b>Aniline is a hyper-activator:</b> bromine water &#8594; 2,4,6-tribromoaniline (white ppt) instantly</div>
+    <div class="leaf"><b>To control it:</b> acylate first (acetanilide), react, deprotect &#8212; NH&#8322; tamed into NHCOCH&#8323;</div>
+    <div class="leaf"><b>Nitration:</b> needs protection too (oxidation + meta-mess otherwise); protected route gives p-nitroaniline</div>
+    <div class="leaf"><b>Sulphonation:</b> sulphanilic acid &#8212; the zwitterion</div>
+  </div>
+
+  <div class="card right l" style="top:712px">
+    <h2>Diazonium Salts &amp; Uses</h2>
+    <div class="leaf"><b>Diazotisation:</b> aniline + NaNO&#8322;/HCl at 273&#8211;278 K &#8594; benzenediazonium chloride</div>
+    <div class="leaf"><b>Seven exits:</b> Sandmeyer (Cl/Br/CN), Balz-Schiemann (F), KI, H&#8322;O (phenol), H&#8323;PO&#8322; (H), coupling (azo dyes)</div>
+    <div class="leaf"><b>The logic:</b> nitration &#8594; reduction &#8594; diazotisation &#8594; exit &#8212; the universal conversion route</div>
+    <div class="leaf"><b>Uses:</b> azo dyes, sulpha drugs, quaternary salts as detergents, adrenalin/serotonin are amines</div>
+  </div>
+
+  <div class="exc">
+    <h2>WATCH-OUTS THAT SET MCQ TRAPS</h2>
+    <div class="leaf"><b>Basicity order flips between gas and water:</b> memorise BOTH ladders and read which is asked</div>
+    <div class="leaf"><b>3&#176; amines fail carbylamine and Hinsberg</b> — no N–H at all</div>
+    <div class="leaf"><b>Gabriel cannot make aniline</b> — aryl halides refuse S&#8317;2</div>
+    <div class="leaf"><b>Hofmann bromamide LOSES one carbon</b> — the amide carbonyl leaves as carbonate</div>
+  </div>
+</div>
+</body>
+</html>

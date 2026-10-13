@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: 950px; position: relative; background: #fff; }
+  .title {
+    position: absolute; left: 30px; top: 22px; width: 1420px; height: 58px;
+    background: #071A4D; border-radius: 12px; display: flex; align-items: center; justify-content: center;
+  }
+  .title .t { color: #fff; font-size: 24px; font-weight: 800; letter-spacing: 1px; }
+  .title .t b { color: #B8FF34; }
+  .panel {
+    position: absolute; top: 104px; width: 692px; height: 654px;
+    background: #FCFDFF; border: 1.5px solid #D5DCEA; border-radius: 14px; padding: 14px 18px;
+  }
+  .left  { left: 30px; }
+  .right { left: 758px; }
+  .panel h2 { font-size: 21px; font-weight: 800; margin-bottom: 2px; }
+  .left h2 { color: #1F5EFF; } .right h2 { color: #7FB800; }
+  .panel .sub { font-size: 14px; color: #5A6478; margin-bottom: 6px; }
+  .panel .sub b { color: #071A4D; }
+  .legend { display: flex; gap: 12px; margin: 4px 0; flex-wrap: wrap; }
+  .legend span { font-size: 13px; font-weight: 700; color: #1B2333; }
+  .dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 4px; vertical-align: -1px; }
+  .note { font-size: 13.5px; color: #1B2333; line-height: 1.4; margin-top: 6px; }
+  .note b { color: #071A4D; }
+  .strip { position: absolute; left: 30px; top: 778px; width: 1420px; display: flex; gap: 14px; }
+  .trap { flex: 1; background: #FFF3EC; border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px; }
+  .trap h3 { font-size: 14.5px; color: #B4380F; font-weight: 800; margin-bottom: 3px; }
+  .trap p { font-size: 13.5px; color: #7A2A12; line-height: 1.4; }
+  .trap p b { color: #B4380F; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="title"><div class="t">PRICE CEILING vs PRICE FLOOR — <b>WHERE THE GOVERNMENT DARES TO BEND THE PRICE</b></div></div>
+
+  <div class="panel left">
+    <h2>PRICE CEILING — maximum legal price</h2>
+    <div class="sub">Set BELOW equilibrium so it binds → chronic <b>SHORTAGE</b> (Qd &gt; Qs), queues and black markets</div>
+    <div class="legend">
+      <span><span class="dot" style="background:#1F5EFF"></span>Demand</span>
+      <span><span class="dot" style="background:#0E7A4D"></span>Supply</span>
+      <span><span class="dot" style="background:#B4380F"></span>Ceiling (max price)</span>
+    </div>
+    <svg width="656" height="380" viewBox="0 0 656 380">
+      <line x1="52" y1="16" x2="52" y2="330" stroke="#071A4D" stroke-width="2.5"/>
+      <line x1="52" y1="330" x2="626" y2="330" stroke="#071A4D" stroke-width="2.5"/>
+      <text x="58" y="12" font-size="13" font-weight="800" fill="#071A4D">Price (₹)</text>
+      <text x="556" y="350" font-size="13" font-weight="800" fill="#071A4D">Quantity (Q)</text>
+      <!-- D -->
+      <line x1="95" y1="55" x2="350" y2="305" stroke="#1F5EFF" stroke-width="3.5"/>
+      <text x="354" y="310" font-size="14" font-weight="800" fill="#1F5EFF">D</text>
+      <!-- S -->
+      <line x1="120" y1="305" x2="400" y2="55" stroke="#0E7A4D" stroke-width="3.5"/>
+      <text x="404" y="55" font-size="14" font-weight="800" fill="#0E7A4D">S</text>
+      <!-- E: D x S. D:(95,55)-(350,305): x=95+255t,y=55+250t. S:(120,305)-(400,55): x=120+280u,y=305-250u. 95+255t=120+280u; 55+250t=305-250u -> t=1-u; 95+255-255u=120+280u -> 230=535u -> u=.4299; x=240.4, y=197.5 -->
+      <circle cx="240" cy="198" r="7" fill="#071A4D"/>
+      <text x="180" y="186" font-size="13.5" font-weight="800" fill="#071A4D">E: P* = ₹60, Q* = 100</text>
+      <line x1="52" y1="198" x2="240" y2="198" stroke="#5A6478" stroke-width="1.5" stroke-dasharray="4 4"/>
+      <text x="58" y="190" font-size="13" font-weight="700" fill="#071A4D">P*</text>
+      <!-- ceiling at y=262 (₹40) -->
+      <line x1="52" y1="262" x2="560" y2="262" stroke="#B4380F" stroke-width="3.5"/>
+      <text x="470" y="250" font-size="13.5" font-weight="800" fill="#B4380F">Ceiling ₹40 (max)</text>
+      <!-- at ceiling: D: y=262 -> t=(262-55)/250=.828 -> x=95+211.1=306.1 ; S: y=262 -> u=(305-262)/250=.172 -> x=120+48.2=168.2 -->
+      <circle cx="306" cy="262" r="6" fill="#1F5EFF"/>
+      <text x="312" y="282" font-size="12.5" font-weight="700" fill="#1F5EFF">Qd = 140</text>
+      <circle cx="168" cy="262" r="6" fill="#0E7A4D"/>
+      <text x="112" y="282" font-size="12.5" font-weight="700" fill="#0E7A4D">Qs = 70</text>
+      <!-- shortage bracket -->
+      <path d="M 168 300 L 168 306 L 306 306 L 306 300" fill="none" stroke="#B4380F" stroke-width="2.5"/>
+      <text x="196" y="322" font-size="13" font-weight="800" fill="#B4380F">SHORTAGE = 70 units</text>
+      <line x1="240" y1="198" x2="240" y2="330" stroke="#5A6478" stroke-width="1.5" stroke-dasharray="4 4"/>
+    </svg>
+    <div class="note"><b>Read it once:</b> at ₹40 buyers want 140 units but sellers offer only 70 — a permanent gap of 70. Rationing, queues and black-market premiums fill the space that the missing price used to fill.</div>
+  </div>
+
+  <div class="panel right">
+    <h2>PRICE FLOOR — minimum legal price</h2>
+    <div class="sub">Set ABOVE equilibrium so it binds → chronic <b>SURPLUS</b> (Qs &gt; Qd) that the government must buy (MSP, buffer stock)</div>
+    <div class="legend">
+      <span><span class="dot" style="background:#1F5EFF"></span>Demand</span>
+      <span><span class="dot" style="background:#0E7A4D"></span>Supply</span>
+      <span><span class="dot" style="background:#B4380F"></span>Floor (min price)</span>
+    </div>
+    <svg width="656" height="380" viewBox="0 0 656 380">
+      <line x1="52" y1="16" x2="52" y2="330" stroke="#071A4D" stroke-width="2.5"/>
+      <line x1="52" y1="330" x2="626" y2="330" stroke="#071A4D" stroke-width="2.5"/>
+      <text x="58" y="12" font-size="13" font-weight="800" fill="#071A4D">Price (₹)</text>
+      <text x="556" y="350" font-size="13" font-weight="800" fill="#071A4D">Quantity (Q)</text>
+      <!-- D -->
+      <line x1="95" y1="55" x2="350" y2="305" stroke="#1F5EFF" stroke-width="3.5"/>
+      <text x="354" y="310" font-size="14" font-weight="800" fill="#1F5EFF">D</text>
+      <!-- S -->
+      <line x1="120" y1="305" x2="400" y2="55" stroke="#0E7A4D" stroke-width="3.5"/>
+      <text x="404" y="55" font-size="14" font-weight="800" fill="#0E7A4D">S</text>
+      <!-- E same -->
+      <circle cx="240" cy="198" r="7" fill="#071A4D"/>
+      <text x="180" y="186" font-size="13.5" font-weight="800" fill="#071A4D">E: P* = ₹1,800, Q* = 100</text>
+      <line x1="52" y1="198" x2="240" y2="198" stroke="#5A6478" stroke-width="1.5" stroke-dasharray="4 4"/>
+      <text x="58" y="190" font-size="13" font-weight="700" fill="#071A4D">P*</text>
+      <!-- floor at y=134 (₹2,000) -->
+      <line x1="52" y1="134" x2="560" y2="134" stroke="#B4380F" stroke-width="3.5"/>
+      <text x="462" y="122" font-size="13.5" font-weight="800" fill="#B4380F">Floor ₹2,000 (min)</text>
+      <!-- at floor: D: t=(134-55)/250=.316 -> x=95+80.6=175.6 ; S: u=(305-134)/250=.684 -> x=120+191.5=311.5 -->
+      <circle cx="176" cy="134" r="6" fill="#1F5EFF"/>
+      <text x="120" y="112" font-size="12.5" font-weight="700" fill="#1F5EFF">Qd = 80</text>
+      <circle cx="312" cy="134" r="6" fill="#0E7A4D"/>
+      <text x="318" y="152" font-size="12.5" font-weight="700" fill="#0E7A4D">Qs = 120</text>
+      <!-- surplus bracket -->
+      <path d="M 176 96 L 176 90 L 312 90 L 312 96" fill="none" stroke="#B4380F" stroke-width="2.5"/>
+      <text x="188" y="82" font-size="13" font-weight="800" fill="#B4380F">SURPLUS = 40 units — govt buys</text>
+      <line x1="240" y1="198" x2="240" y2="330" stroke="#5A6478" stroke-width="1.5" stroke-dasharray="4 4"/>
+    </svg>
+    <div class="note"><b>Read it once:</b> at ₹2,000 farmers plant more (120) while buyers cut back (80) — 40 units pile up. The government procures them at MSP into buffer stocks; otherwise the unsold grain itself would drag the price back down.</div>
+  </div>
+
+  <div class="strip">
+    <div class="trap"><h3>TRAP 1</h3><p><b>A ceiling binds only BELOW P*; a floor binds only ABOVE P*.</b> On the wrong side of equilibrium the policy does nothing — the market ignores it.</p></div>
+    <div class="trap"><h3>TRAP 2</h3><p><b>Both interventions cost the market something:</b> ceiling → shortage, black marketing, quality fall; floor → surplus, storage cost, government spending.</p></div>
+    <div class="trap"><h3>TRAP 3</h3><p><b>Directions are opposite:</b> ceiling = maximum (affordability for buyers); floor = minimum (income for sellers). Mixing the two purposes is the classic MCQ bait.</p></div>
+  </div>
+</div>
+</body>
+</html>

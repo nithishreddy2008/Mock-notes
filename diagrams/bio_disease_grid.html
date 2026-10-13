@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; padding: 26px 30px 30px; background: #fff; }
+  .title { text-align: center; margin-bottom: 20px; }
+  .title .t { display: inline-block; background: #071A4D; color: #fff; font-size: 26px; font-weight: 800;
+              padding: 10px 30px; border-radius: 12px; letter-spacing: .5px; border-bottom: 4px solid #B8FF34; }
+  .title .s { color: #5A6478; font-size: 14.5px; margin-top: 8px; font-weight: 600; }
+  .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+  .dc { background: #FCFDFF; border: 1.5px solid #D5DCEA; border-top: 5px solid #071A4D;
+        border-radius: 14px; padding: 14px 15px 12px; }
+  .dc h2 { font-size: 19px; color: #071A4D; font-weight: 800; margin-bottom: 6px; }
+  .tag { display: inline-block; font-size: 11px; font-weight: 800; letter-spacing: .8px; color: #fff;
+         border-radius: 6px; padding: 2.5px 8px; margin-bottom: 8px; text-transform: uppercase; }
+  .bact { background: #1F5EFF; }
+  .viral { background: #071A4D; }
+  .proto { background: #7FB800; }
+  .helm { background: #B4380F; }
+  .fung { background: #D97E00; }
+  .row { font-size: 13.5px; color: #1B2333; line-height: 1.38; margin: 5px 0; padding-left: 15px; position: relative; }
+  .row::before { content: ""; position: absolute; left: 0; top: 7px; width: 7px; height: 7px; border-radius: 50%; background: #1F5EFF; }
+  .row b { color: #071A4D; }
+  .fact { background: #F4FBE7; border-left: 3px solid #7FB800; border-radius: 6px;
+          font-size: 13px; color: #33430F; padding: 6px 9px; margin-top: 8px; }
+  .fact b { color: #4E6A00; }
+  .legend { margin-top: 18px; text-align: center; font-size: 12.5px; color: #5A6478; font-weight: 600; }
+  .legend span { display: inline-block; margin: 0 7px; }
+  .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 4px; vertical-align: middle; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="title">
+    <div class="t">DISEASE QUICK-MAP</div>
+    <div class="s">Eight common human diseases — pathogen &#183; how it spreads &#183; the one fact exams check</div>
+  </div>
+
+  <div class="grid">
+    <div class="dc">
+      <h2>Typhoid</h2>
+      <span class="tag bact">Bacterial</span>
+      <div class="row"><b>Pathogen:</b> <i>Salmonella typhi</i></div>
+      <div class="row"><b>Spread:</b> contaminated food and water</div>
+      <div class="fact"><b>Key fact:</b> confirmed by the Widal test; high fever weeks 1–2</div>
+    </div>
+
+    <div class="dc">
+      <h2>Pneumonia</h2>
+      <span class="tag bact">Bacterial</span>
+      <div class="row"><b>Pathogen:</b> <i>Streptococcus pneumoniae</i>, <i>Haemophilus influenzae</i></div>
+      <div class="row"><b>Spread:</b> inhaling infected droplets/aerosols</div>
+      <div class="fact"><b>Key fact:</b> alveoli fill with fluid — breathing turns hard</div>
+    </div>
+
+    <div class="dc">
+      <h2>Common cold</h2>
+      <span class="tag viral">Viral</span>
+      <div class="row"><b>Pathogen:</b> Rhinoviruses (a group of viruses)</div>
+      <div class="row"><b>Spread:</b> cough/sneeze droplets, contaminated objects</div>
+      <div class="fact"><b>Key fact:</b> nasal congestion, sore throat — clears in 3–7 days</div>
+    </div>
+
+    <div class="dc">
+      <h2>Malaria</h2>
+      <span class="tag proto">Protozoan</span>
+      <div class="row"><b>Pathogen:</b> <i>Plasmodium vivax</i>, <i>P. falciparum</i></div>
+      <div class="row"><b>Spread:</b> bite of infected <i>female Anopheles</i> mosquito</div>
+      <div class="fact"><b>Key fact:</b> recurring fever with chills every 3–4 days</div>
+    </div>
+
+    <div class="dc">
+      <h2>Amoebiasis</h2>
+      <span class="tag proto">Protozoan</span>
+      <div class="row"><b>Pathogen:</b> <i>Entamoeba histolytica</i></div>
+      <div class="row"><b>Spread:</b> faecal contamination of food and water</div>
+      <div class="fact"><b>Key fact:</b> constipation, abdominal pain, cramps, mucus-stool</div>
+    </div>
+
+    <div class="dc">
+      <h2>Ascariasis</h2>
+      <span class="tag helm">Helminthic</span>
+      <div class="row"><b>Pathogen:</b> <i>Ascaris lumbricoides</i> (round worm)</div>
+      <div class="row"><b>Spread:</b> water/vegetables soiled with worm eggs</div>
+      <div class="fact"><b>Key fact:</b> internal bleeding, muscular pain, gut blockage</div>
+    </div>
+
+    <div class="dc">
+      <h2>Filariasis</h2>
+      <span class="tag helm">Helminthic</span>
+      <div class="row"><b>Pathogen:</b> <i>Wuchereria bancrofti</i> (filarial worm)</div>
+      <div class="row"><b>Spread:</b> bite of infected <i>female Culex</i> mosquito</div>
+      <div class="fact"><b>Key fact:</b> elephantiasis — slow swelling of limbs/genitals</div>
+    </div>
+
+    <div class="dc">
+      <h2>Ringworm</h2>
+      <span class="tag fung">Fungal</span>
+      <div class="row"><b>Pathogen:</b> <i>Trichophyton rubrum</i>, <i>T. mentagrophytes</i></div>
+      <div class="row"><b>Spread:</b> shared towels, clothes, combs (warm, moist skin)</div>
+      <div class="fact"><b>Key fact:</b> dry, scaly, itching lesions with ring edges</div>
+    </div>
+  </div>
+
+  <div class="legend">
+    <span><i style="background:#1F5EFF"></i>Bacterial</span>
+    <span><i style="background:#071A4D"></i>Viral</span>
+    <span><i style="background:#7FB800"></i>Protozoan</span>
+    <span><i style="background:#B4380F"></i>Helminthic</span>
+    <span><i style="background:#D97E00"></i>Fungal</span>
+  </div>
+</div>
+</body>
+</html>

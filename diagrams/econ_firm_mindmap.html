@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: 1080px; position: relative; background: #fff; }
+  svg.wires { position: absolute; inset: 0; width: 1480px; height: 1080px; }
+  .center {
+    position: absolute; left: 520px; top: 470px; width: 440px; height: 104px;
+    background: #071A4D; border-radius: 16px; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(7,26,77,.25);
+    border-bottom: 5px solid #B8FF34;
+  }
+  .center .t { color: #fff; font-size: 20px; font-weight: 800; letter-spacing: .5px; text-align: center; }
+  .center .s { color: #B8FF34; font-size: 13px; font-weight: 700; letter-spacing: 2px; margin-top: 4px; }
+  .card {
+    position: absolute; width: 465px; background: #FCFDFF; border: 1.5px solid #D5DCEA;
+    border-radius: 14px; padding: 13px 16px 12px;
+  }
+  .card h2 { font-size: 19px; color: #071A4D; font-weight: 800; margin-bottom: 7px;
+             padding-bottom: 5px; border-bottom: 3px solid; display: inline-block; }
+  .leaf { font-size: 14px; color: #1B2333; margin: 5px 0; padding-left: 16px; position: relative; line-height: 1.32; }
+  .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
+  .b .leaf::before { background: #1F5EFF; }
+  .l .leaf::before { background: #7FB800; }
+  .leaf b { color: #071A4D; }
+  .b h2 { border-color: #1F5EFF; }
+  .l h2 { border-color: #7FB800; }
+  .left { left: 30px; }
+  .right { left: 985px; }
+  .exc {
+    position: absolute; left: 470px; top: 905px; width: 540px; background: #FFF3EC;
+    border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px;
+  }
+  .exc h2 { font-size: 17px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
+  .exc .leaf { font-size: 13px; margin: 3px 0; padding-left: 14px; color: #7A2A12; }
+  .exc .leaf::before { background: #D2481F; }
+  .exc b { color: #B4380F; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <svg class="wires" viewBox="0 0 1480 1080">
+    <path d="M 520 505 C 470 505, 495 158, 500 155" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 520 520 C 480 520, 495 438, 500 438" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 520 535 C 470 535, 495 718, 500 718" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 960 505 C 1010 505, 985 158, 980 155" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 960 520 C 1000 520, 985 438, 980 438" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 960 535 C 1010 535, 985 718, 980 718" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 740 574 C 740 700, 740 830, 740 903" fill="none" stroke="#D2481F" stroke-width="2.5" stroke-dasharray="7 5" opacity=".6"/>
+  </svg>
+
+  <div class="center">
+    <div class="t">FIRM UNDER PERFECT COMPETITION</div>
+    <div class="s">COURSE I MICRO &#183; COMPLETE CHAPTER MAP</div>
+  </div>
+
+  <div class="card left b" style="top:58px">
+    <h2>Perfect Competition — Features</h2>
+    <div class="leaf"><b>Many buyers and sellers</b> — each too small to move the market price</div>
+    <div class="leaf"><b>Homogeneous product</b> — identical units, so no branding, no premium</div>
+    <div class="leaf"><b>Free entry and exit</b> — profits attract firms, losses send them out (long run)</div>
+    <div class="leaf"><b>Perfect knowledge</b> + <b>perfect mobility</b> of factors; firm = <b>price taker</b>, industry = price maker</div>
+  </div>
+
+  <div class="card left l" style="top:352px">
+    <h2>Profit Maximisation (3 conditions)</h2>
+    <div class="leaf"><b>1.</b> MC = MR — the last unit pays for itself exactly</div>
+    <div class="leaf"><b>2.</b> MC RISING at that point — kills the false crossing on the falling arm</div>
+    <div class="leaf"><b>3.</b> P ≥ AVC (short run) — below AVC's minimum, shut down, lose only TFC</div>
+  </div>
+
+  <div class="card left b" style="top:648px">
+    <h2>Supply: Schedule, Curve, Market</h2>
+    <div class="leaf"><b>Supply = willingness + ability to OFFER</b> at each price, per period</div>
+    <div class="leaf"><b>Law of supply:</b> own price ↑ → quantity supplied ↑ (direct relation, upward-sloping S)</div>
+    <div class="leaf"><b>Determinants:</b> input prices, technology, taxes &amp; subsidies, future price expectations, number of firms, natural shocks</div>
+    <div class="leaf"><b>Market supply</b> = horizontal sum of firms' quantities at each price</div>
+  </div>
+
+  <div class="card right l" style="top:58px">
+    <h2>Movement vs Shift (supply side)</h2>
+    <div class="leaf"><b>Own price changes</b> → movement ALONG the S curve (extension ↑P / contraction ↓P)</div>
+    <div class="leaf"><b>Non-price factors</b> (costs, tech, taxes) → whole curve SHIFTS right (increase) or left (decrease)</div>
+    <div class="leaf"><b>Words carry marks:</b> "change in quantity supplied" vs "change in supply"</div>
+  </div>
+
+  <div class="card right b" style="top:352px">
+    <h2>Price Elasticity of Supply</h2>
+    <div class="leaf"><b>PES = %ΔQ supplied ÷ %ΔP</b> (absolute value; positive by nature)</div>
+    <div class="leaf"><b>Degrees:</b> 0 (perfectly inelastic — land supply) &lt; 1 &gt; = 1 &gt; 1 → ∞ (a single firm's demand-side view)</div>
+    <div class="leaf"><b>More elastic when:</b> longer time, larger stocks, spare capacity, easy storage; <b>less elastic</b> for perishables and fixed land</div>
+  </div>
+
+  <div class="card right l" style="top:648px">
+    <h2>Price Determination &amp; Shift Effects</h2>
+    <div class="leaf"><b>Equilibrium:</b> D = S; above P* excess supply pushes price down; below P* excess demand pushes it up</div>
+    <div class="leaf"><b>D right →</b> P↑ Q↑ &#183; <b>D left →</b> P↓ Q↓</div>
+    <div class="leaf"><b>S right →</b> P↓ Q↑ &#183; <b>S left →</b> P↑ Q↓ (both supply cases flip the price)</div>
+  </div>
+
+  <div class="exc">
+    <h2>Traps that catch most students</h2>
+    <div class="leaf"><b>Own price never shifts the S curve</b> — input costs, technology and taxes do; own price only moves you along it</div>
+    <div class="leaf"><b>Rising MC, not just MC = MR</b> — the falling-arm crossing is a false equilibrium</div>
+    <div class="leaf"><b>Supply has a DIRECT price relation</b> — upward-sloping S, opposite to demand's downward slope; MCQs love flipping this</div>
+    <div class="leaf"><b>PES uses absolute value too</b> — and time is the biggest elasticity lever (momentary vs short vs long)</div>
+  </div>
+</div>
+</body>
+</html>

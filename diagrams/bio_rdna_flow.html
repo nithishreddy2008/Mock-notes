@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: auto; background: #fff; padding: 26px 30px 24px; position: relative; }
+  .title { text-align: center; font-size: 32px; font-weight: 800; color: #071A4D; margin-bottom: 6px; }
+  .subtitle { text-align: center; font-size: 19px; color: #5A6478; margin-bottom: 26px; }
+  .row { display: flex; justify-content: center; align-items: stretch; gap: 0; }
+  .node {
+    width: 305px; background: #FCFDFF; border: 1.5px solid #D5DCEA; border-radius: 13px;
+    padding: 14px 16px 13px; position: relative; margin: 0 26px;
+  }
+  .node .num {
+    position: absolute; top: -17px; left: -17px; width: 40px; height: 40px; border-radius: 50%;
+    background: #071A4D; color: #B8FF34; font-weight: 800; font-size: 19px;
+    display: flex; align-items: center; justify-content: center; border: 2.5px solid #fff;
+    box-shadow: 0 3px 8px rgba(7,26,77,.28);
+  }
+  .node h3 { font-size: 21px; color: #071A4D; font-weight: 800; margin-bottom: 6px; padding-bottom: 5px;
+             border-bottom: 2.5px solid #1F5EFF; display: inline-block; }
+  .node p { font-size: 16.5px; color: #1B2333; line-height: 1.4; }
+  .node p b { color: #071A4D; }
+  .node.cut h3 { border-color: #D2481F; }
+  .node.cut { background: #FFF8F5; }
+  .node.paste h3 { border-color: #7FB800; }
+  .node.paste { background: #FBFFF4; }
+  .arrow { align-self: center; width: 0; height: 0; border-top: 15px solid transparent;
+           border-bottom: 15px solid transparent; border-left: 22px solid #1F5EFF; margin: 0 -6px; }
+  .arrow.down { border-left: 15px solid transparent; border-right: 15px solid transparent;
+                border-top: 22px solid #1F5EFF; border-bottom: none; margin: 4px 0; }
+  .spacer { width: 357px; }
+  .rowgap { height: 40px; display: flex; justify-content: center; }
+  .downwrap { display: flex; flex-direction: column; align-items: center; }
+  .sidenote {
+    width: 300px; background: #FDFEDF; border: 1.5px dashed #7FB800; border-radius: 13px;
+    padding: 14px 16px 13px; margin: 18px 0 0 26px; align-self: flex-start;
+  }
+  .sidenote h3 { font-size: 19px; color: #4E6B00; font-weight: 800; margin-bottom: 6px;
+                 padding-bottom: 5px; border-bottom: 2.5px solid #B8FF34; display: inline-block; }
+  .sidenote p { font-size: 15.5px; color: #33410A; line-height: 1.4; }
+  .sidenote p b { color: #4E6B00; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="title">How a Gene Is Cloned — the rDNA Journey</div>
+  <div class="subtitle">Seven stops from a cell full of DNA to a scaled-up product in a bioreactor</div>
+
+  <div class="row">
+    <div class="node cut">
+      <div class="num">1</div>
+      <h3>Isolate + cut</h3>
+      <p>DNA is pulled out of the cell; a <b>restriction enzyme</b> cuts out the gene of interest.</p>
+    </div>
+    <div class="arrow"></div>
+    <div class="node">
+      <div class="num">2</div>
+      <h3>Separate on a gel</h3>
+      <p>Fragments run through <b>agarose gel</b>; the wanted piece is cut out and <b>eluted</b> (extracted).</p>
+    </div>
+    <div class="arrow"></div>
+    <div class="node">
+      <div class="num">3</div>
+      <h3>Cut the vector</h3>
+      <p>The plasmid vector is opened with the <b>SAME enzyme</b> — matching sticky ends result.</p>
+    </div>
+    <div class="arrow"></div>
+    <div class="node paste">
+      <div class="num">4</div>
+      <h3>Ligate</h3>
+      <p><b>DNA ligase</b> seals the gene into the vector — recombinant DNA (rDNA) is born.</p>
+    </div>
+  </div>
+
+  <div class="rowgap"><div class="downwrap"><div class="arrow down"></div></div></div>
+
+  <div class="row">
+    <div class="spacer"></div>
+    <div class="node">
+      <div class="num">5</div>
+      <h3>Transfer into host</h3>
+      <p>rDNA enters a <b>competent host cell</b> — CaCl&#8322; treated, or shot in by a gene gun.</p>
+    </div>
+    <div class="arrow"></div>
+    <div class="node paste">
+      <div class="num">6</div>
+      <h3>Select the transformed</h3>
+      <p><b>Antibiotic plates</b> or insertional inactivation pick out only cells carrying rDNA.</p>
+    </div>
+    <div class="arrow"></div>
+    <div class="node">
+      <div class="num">7</div>
+      <h3>Scale up + purify</h3>
+      <p>Cells multiply in a <b>bioreactor</b>; <b>downstream processing</b> purifies the product.</p>
+    </div>
+    <div class="sidenote">
+      <h3>Side note — PCR</h3>
+      <p>PCR <b>multiplies the gene in the tube</b> — no cell needed. Three temperature steps double the copy number every cycle, so a few molecules become billions.</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

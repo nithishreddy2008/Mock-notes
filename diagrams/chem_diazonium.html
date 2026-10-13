@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; position: relative; background: #fff; padding-bottom: 12px; }
+  .title { text-align: center; font-size: 24px; font-weight: 800; color: #071A4D; padding-top: 20px; }
+  .subtitle { text-align: center; font-size: 14px; color: #5A6478; margin-top: 4px; }
+  .cols { display: flex; gap: 24px; margin: 18px 40px 0; }
+  .col { flex: 1; background: #FCFDFF; border: 1.5px solid #D5DCEA; border-radius: 14px; padding: 14px 16px; }
+  .col h2 { font-size: 18px; font-weight: 800; text-align: center; margin-bottom: 10px; padding: 6px; border-radius: 8px; color: #fff; }
+  .gas h2 { background: #1F5EFF; } .aq h2 { background: #071A4D; }
+  .step { display: flex; gap: 10px; margin: 9px 0; align-items: center; }
+  .num { min-width: 34px; height: 34px; border-radius: 50%; color: #fff; font-size: 15px; font-weight: 800;
+         display: flex; align-items: center; justify-content: center; }
+  .gas .num { background: #4A7BFF; } .aq .num { background: #23366F; }
+  .txt { font-size: 14px; color: #1B2333; line-height: 1.42; }
+  .txt b { color: #071A4D; }
+  .eq { font-size: 13.5px; background: #EEF1F8; border-radius: 7px; padding: 6px 10px; margin: 6px 0 6px 44px; color: #071A4D; font-weight: 600; }
+  .strip { margin: 16px 40px 4px; background: #F6FFDF; border: 1.5px solid #7FB800; border-radius: 12px; padding: 11px 16px; }
+  .strip p { font-size: 13.5px; color: #3F5C10; line-height: 1.5; }
+  .strip b { color: #4E7A00; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="title">THE DIAZONIUM FACTORY — EVERY ARYL GROUP PASSES THROUGH N&#8322;&#8314;</div>
+  <div class="subtitle">Diazotisation at 273&#8211;278 K makes benzenediazonium chloride; from there, seven exit doors build the aromatic toolbox</div>
+
+  <div class="cols">
+    <div class="col gas">
+      <h2>MAKING THE SALT (diazotisation)</h2>
+      <div class="step"><div class="num">1</div><div class="txt"><b>Cool aniline in dilute HCl</b> to 273&#8211;278 K (ice bath) &#8212; cold, or the salt decomposes.</div></div>
+      <div class="eq">C&#8326;H&#8325;NH&#8322; + NaNO&#8322; + 2HCl &#8594; C&#8326;H&#8325;N&#8322;&#8314;Cl&#8315; + NaCl + 2H&#8322;O</div>
+      <div class="step"><div class="num">2</div><div class="txt"><b>NaNO&#8322; + HCl</b> generates nitrous acid in the flask; the amine grabs its NO&#8314;.</div></div>
+      <div class="step"><div class="num">3</div><div class="txt"><b>Use it immediately</b> &#8212; dry diazonium salts are shock-explosive; solutions stay stable in the cold.</div></div>
+    </div>
+
+    <div class="col aq">
+      <h2>SEVEN EXITS (synthesis doors)</h2>
+      <div class="step"><div class="num">A</div><div class="txt"><b>Sandmeyer:</b> Cu&#8322;Cl&#8322;/Cu&#8322;Br&#8322;/CuCN &#8594; Ar&#8211;Cl, Ar&#8211;Br, Ar&#8211;CN</div></div>
+      <div class="step"><div class="num">B</div><div class="txt"><b>Gattermann:</b> Cu powder + HX &#8212; the gentler version</div></div>
+      <div class="step"><div class="num">C</div><div class="txt"><b>Balz-Schiemann:</b> HBF&#8324; then heat &#8594; Ar&#8211;F (the fluorine door)</div></div>
+      <div class="step"><div class="num">D</div><div class="txt"><b>KI, warm:</b> &#8594; Ar&#8211;I (no catalyst needed)</div></div>
+      <div class="step"><div class="num">E</div><div class="txt"><b>H&#8322;O, warm:</b> &#8594; phenol (the mild OH door)</div></div>
+      <div class="step"><div class="num">F</div><div class="txt"><b>H&#8323;PO&#8322; or ethanol:</b> &#8594; benzene (H replaces N&#8322;&#8314; &#8212; the eraser)</div></div>
+      <div class="step"><div class="num">G</div><div class="txt"><b>Coupling:</b> phenol/aniline + base &#8594; azo dyes (p-hydroxyazobenzene, orange-red)</div></div>
+    </div>
+  </div>
+
+  <div class="strip">
+    <p><b>Why this matters:</b> direct ring substitution cannot put F, I, CN or OH exactly where you want them with clean control &#8212; but every one of them is one diazonium step away. The NH&#8322; group is a <b>temporary handle</b>: install it by nitration + reduction, then swap it for whatever the target needs. That two-step indirection &#8212; nitration &#8594; reduction &#8594; diazotisation &#8594; exit &#8212; is the standard route map for dozens of conversion questions.</p>
+  </div>
+</div>
+</body>
+</html>

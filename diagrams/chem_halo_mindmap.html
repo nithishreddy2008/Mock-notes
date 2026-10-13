@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: 1080px; position: relative; background: #fff; }
+  svg.wires { position: absolute; inset: 0; width: 1480px; height: 1080px; }
+  .center {
+    position: absolute; left: 520px; top: 470px; width: 440px; height: 104px;
+    background: #071A4D; border-radius: 16px; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(7,26,77,.25);
+    border-bottom: 5px solid #B8FF34;
+  }
+  .center .t { color: #fff; font-size: 21px; font-weight: 800; letter-spacing: .5px; text-align: center; }
+  .center .s { color: #B8FF34; font-size: 13.5px; font-weight: 700; letter-spacing: 2px; margin-top: 4px; }
+  .card {
+    position: absolute; width: 465px; background: #FCFDFF; border: 1.5px solid #D5DCEA;
+    border-radius: 14px; padding: 13px 16px 12px;
+  }
+  .card h2 { font-size: 20px; color: #071A4D; font-weight: 800; margin-bottom: 7px;
+             padding-bottom: 5px; border-bottom: 3px solid; display: inline-block; }
+  .leaf { font-size: 14.5px; color: #1B2333; margin: 5px 0; padding-left: 16px; position: relative; line-height: 1.32; }
+  .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
+  .b .leaf::before { background: #1F5EFF; }
+  .l .leaf::before { background: #7FB800; }
+  .leaf b { color: #071A4D; }
+  .b h2 { border-color: #1F5EFF; }
+  .l h2 { border-color: #7FB800; }
+  .left { left: 30px; }
+  .right { left: 985px; }
+  .exc {
+    position: absolute; left: 470px; top: 905px; width: 540px; background: #FFF3EC;
+    border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px;
+  }
+  .exc h2 { font-size: 17px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
+  .exc .leaf { font-size: 13px; margin: 3px 0; padding-left: 14px; color: #7A2A12; }
+  .exc .leaf::before { background: #D2481F; }
+  .exc b { color: #B4380F; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <svg class="wires" viewBox="0 0 1480 1080">
+    <path d="M 520 505 C 470 505, 495 158, 500 155" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 520 520 C 480 520, 495 438, 500 438" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 520 535 C 470 535, 495 718, 500 718" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 960 505 C 1010 505, 985 158, 980 155" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 960 520 C 1000 520, 985 438, 980 438" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 960 535 C 1010 535, 985 718, 980 718" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 740 574 C 740 700, 740 830, 740 903" fill="none" stroke="#D2481F" stroke-width="2.5" stroke-dasharray="7 5" opacity=".6"/>
+  </svg>
+
+  <div class="center">
+    <div class="t">HALOALKANES &amp; HALOARENES</div>
+    <div class="s">UNIT VI &#183; COMPLETE CHAPTER MAP</div>
+  </div>
+
+  <div class="card left b" style="top:58px">
+    <h2>Classification &amp; the C&#8211;X Bond</h2>
+    <div class="leaf"><b>By carbon type:</b> 1&#176;/2&#176;/3&#176; (sp&#179;), allylic&#8211;benzylic, vinylic&#8211;aryl (sp&#178;)</div>
+    <div class="leaf"><b>C&#8211;X bond:</b> polar (X more electronegative) but not ionic enough to dissolve in water</div>
+    <div class="leaf"><b>Bond length grows, enthalpy shrinks:</b> C&#8211;F strongest/shortest &#8594; C&#8211;I weakest/longest &#8212; RI is the most reactive</div>
+    <div class="leaf"><b>Dipole quirk:</b> CH&#8323;Cl &gt; CH&#8323;F (C&#8211;F's shortness offsets its polarity)</div>
+  </div>
+
+  <div class="card left l" style="top:352px">
+    <h2>Preparation Toolkit</h2>
+    <div class="leaf"><b>From alcohols:</b> HX (Lucas: ZnCl&#8322;+HCl fastest for 3&#176;), PX&#8323;/PX&#8325;, and best: SOCl&#8322; (clean gases escape)</div>
+    <div class="leaf"><b>From hydrocarbons:</b> UV halogenation (mixture), electrophilic substitution on arenes (o/p mix, FeX&#8323; catalyst)</div>
+    <div class="leaf"><b>Halide exchange:</b> Finkelstein (NaI in acetone: RCl &#8594; RI), Swarts (AgF/Hg&#8322;F&#8322;: RCl &#8594; RF)</div>
+    <div class="leaf"><b>From amines (arenes):</b> Sandmeyer (Cu&#8322;X&#8322;/diazonium), Balz-Schiemann (HBF&#8324; for ArF), Gattermann (Cu powder)</div>
+  </div>
+
+  <div class="card left b" style="top:648px">
+    <h2>Reactions of Haloalkanes</h2>
+    <div class="leaf"><b>S&#8317;2:</b> one concerted backside step; rate = k[RX][Nu]; inversion; methyl &gt; 1&#176; &gt; 2&#176; &gt; 3&#176;</div>
+    <div class="leaf"><b>S&#8317;1:</b> carbocation first; rate = k[RX]; racemisation; 3&#176; &gt; 2&#176; &gt; 1&#176;</div>
+    <div class="leaf"><b>Elimination:</b> alcoholic KOH, Saytzeff's alkene; competes with S&#8317;</div>
+    <div class="leaf"><b>With metals:</b> Grignard RMgX in dry ether; Wurtz (Na, R&#8211;R), Fittig + Wurtz-Fittig for arenes</div>
+  </div>
+
+  <div class="card right l" style="top:58px">
+    <h2>Physical Properties</h2>
+    <div class="leaf"><b>Boiling point:</b> RI &gt; RBr &gt; RCl &gt; RF (mass + London forces); isomers: 1&#176; &gt; 2&#176; &gt; 3&#176; (branching shrinks the surface)</div>
+    <div class="leaf"><b>Density:</b> bromides/iodides heavier than water; density falls as the chain grows</div>
+    <div class="leaf"><b>Solubility:</b> insoluble in water &#8212; they cannot H-bond; soluble in organic solvents</div>
+    <div class="leaf"><b>Melting point oddity:</b> para-isomers melt HIGHER than ortho (symmetry packs better)</div>
+  </div>
+
+  <div class="card right b" style="top:368px">
+    <h2>Haloarenes: The Reluctant Ones</h2>
+    <div class="leaf"><b>Why aryl C&#8211;X refuses S&#8317;:</b> resonance gives double-bond character; sp&#178; carbon holds s-character tightly; phenyl cation is unstable; the ring repels backside attack</div>
+    <div class="leaf"><b>Still do EAS:</b> halogen is o,p-directing though deactivating (its resonance donates, its &#8722;I withdraws)</div>
+    <div class="leaf"><b>Dow process:</b> chlorobenzene + NaOH at 623 K / 300 atm &#8594; phenol (harsh conditions prove the reluctance)</div>
+    <div class="leaf"><b>Nitro rescues S&#8317;Ar:</b> o/p-NO&#8322; groups pull electrons out &#8212; 2,4,6-trinitrochlorobenzene hydrolyses gently</div>
+  </div>
+
+  <div class="card right l" style="top:700px">
+    <h2>Polyhalogen Compounds</h2>
+    <div class="leaf"><b>CH&#8322;Cl&#8322; (DCM):</b> paint remover, degreaser; CHCl&#8323;: anaesthetic of the past &#8594; phosgene COCl&#8322; + HCl in air (store in dark bottles)</div>
+    <div class="leaf"><b>CHI&#8323; (iodoform):</b> yellow antiseptic powder; CCl&#8324;: fire extinguisher, cleaning fluid (toxic &#8594; phosgene on hot metal)</div>
+    <div class="leaf"><b>Freons (CFCs):</b> refrigerants that shred ozone &#8212; banned by the Montreal Protocol</div>
+    <div class="leaf"><b>DDT:</b> malaria-fighting insecticide, now banned for persistence and biomagnification</div>
+  </div>
+
+  <div class="exc">
+    <h2>WATCH-OUTS THAT SET MCQ TRAPS</h2>
+    <div class="leaf"><b>SN1 vs SN2 reactivity orders are OPPOSITE</b> — 3&#176; wins SN1, methyl wins SN2; check which is asked</div>
+    <div class="leaf"><b>Racemisation ≠ inversion:</b> SN1 gives partial racemisation (not 50:50), SN2 gives full inversion</div>
+    <div class="leaf"><b>Haloarenes vs haloalkanes:</b> same nucleophiles, wildly different rates — resonance is the culprit</div>
+    <div class="leaf"><b>o,p-directing ≠ activating:</b> halogens direct o,p yet DEACTIVATE the ring — both facts in one option pair</div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: auto; background: #fff; padding: 26px 30px 24px; position: relative; }
+  .title { text-align: center; font-size: 32px; font-weight: 800; color: #071A4D; margin-bottom: 6px; }
+  .subtitle { text-align: center; font-size: 19px; color: #5A6478; margin-bottom: 26px; }
+  .row { display: flex; justify-content: center; align-items: stretch; gap: 0; }
+  .node {
+    width: 305px; background: #FCFDFF; border: 1.5px solid #D5DCEA; border-radius: 13px;
+    padding: 14px 16px 13px; position: relative; margin: 0 26px;
+  }
+  .node .num {
+    position: absolute; top: -17px; left: -17px; width: 40px; height: 40px; border-radius: 50%;
+    background: #071A4D; color: #B8FF34; font-weight: 800; font-size: 19px;
+    display: flex; align-items: center; justify-content: center; border: 2.5px solid #fff;
+    box-shadow: 0 3px 8px rgba(7,26,77,.28);
+  }
+  .node h3 { font-size: 21px; color: #071A4D; font-weight: 800; margin-bottom: 6px; padding-bottom: 5px;
+             border-bottom: 2.5px solid #1F5EFF; display: inline-block; }
+  .node p { font-size: 16.5px; color: #1B2333; line-height: 1.4; }
+  .node p b { color: #071A4D; }
+  .node.df h3 { border-color: #7FB800; }
+  .node.df { background: #FBFFF4; }
+  .arrow { align-self: center; width: 0; height: 0; border-top: 15px solid transparent;
+           border-bottom: 15px solid transparent; border-left: 22px solid #1F5EFF; margin: 0 -6px; }
+  .arrow.down { border-left: 15px solid transparent; border-right: 15px solid transparent;
+                border-top: 22px solid #1F5EFF; border-bottom: none; margin: 4px 0; }
+  .rowgap { height: 40px; display: flex; justify-content: center; }
+  .downwrap { display: flex; flex-direction: column; align-items: center; }
+  .strip {
+    margin: 30px auto 6px; width: 1180px; background: #071A4D; border-radius: 12px;
+    padding: 15px 22px; text-align: center; border-bottom: 4px solid #B8FF34;
+  }
+  .strip .a { color: #fff; font-size: 20px; font-weight: 700; }
+  .strip .a b { color: #B8FF34; font-weight: 800; letter-spacing: .5px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="title">From Pollen to Seed</div>
+  <div class="subtitle">The double fertilisation journey — seven steps from a landing pollen grain to a finished seed</div>
+
+  <div class="row">
+    <div class="node">
+      <div class="num">1</div>
+      <h3>Pollination</h3>
+      <p>Pollen lands on the <b>stigma</b>, the sticky landing pad at the top of the pistil.</p>
+    </div>
+    <div class="arrow"></div>
+    <div class="node">
+      <div class="num">2</div>
+      <h3>Pollen tube grows</h3>
+      <p>A tube pushes down through the <b>style</b>, carrying the two <b>male gametes</b> at its tip.</p>
+    </div>
+    <div class="arrow"></div>
+    <div class="node">
+      <div class="num">3</div>
+      <h3>Through the gate</h3>
+      <p>The tube slips into a <b>synergid</b> through the <b>micropyle</b>, the ovule's tiny doorway.</p>
+    </div>
+    <div class="arrow"></div>
+    <div class="node df">
+      <div class="num">4</div>
+      <h3>SYNGAMY</h3>
+      <p>One sperm + the <b>egg</b> &#8594; <b>zygote (2n)</b>, the first cell of the new plant.</p>
+    </div>
+  </div>
+
+  <div class="rowgap"><div class="downwrap"><div class="arrow down"></div></div></div>
+
+  <div class="row">
+    <div class="node df">
+      <div class="num">5</div>
+      <h3>TRIPLE FUSION</h3>
+      <p>The <b>second</b> sperm + the <b>2 polar nuclei</b> &#8594; primary endosperm nucleus (<b>3n</b>).</p>
+    </div>
+    <div class="arrow"></div>
+    <div class="node">
+      <div class="num">6</div>
+      <h3>Feeding the embryo</h3>
+      <p>Endosperm stores food while the zygote divides and builds the <b>embryo</b>.</p>
+    </div>
+    <div class="arrow"></div>
+    <div class="node">
+      <div class="num">7</div>
+      <h3>Seed and fruit</h3>
+      <p>The <b>ovule matures into the seed</b>; the <b>ovary swells into the fruit</b>.</p>
+    </div>
+  </div>
+
+  <div class="strip">
+    <div class="a">Steps 4 and 5 together = <b>DOUBLE FERTILISATION</b> — found only in angiosperms</div>
+  </div>
+</div>
+</body>
+</html>

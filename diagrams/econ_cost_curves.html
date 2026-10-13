@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: 950px; position: relative; background: #fff; }
+  .title {
+    position: absolute; left: 30px; top: 22px; width: 1420px; height: 58px;
+    background: #071A4D; border-radius: 12px; display: flex; align-items: center; justify-content: center;
+  }
+  .title .t { color: #fff; font-size: 24px; font-weight: 800; letter-spacing: 1px; }
+  .title .t b { color: #B8FF34; }
+  .panel {
+    position: absolute; top: 104px; width: 692px; height: 654px;
+    background: #FCFDFF; border: 1.5px solid #D5DCEA; border-radius: 14px; padding: 14px 18px;
+  }
+  .left  { left: 30px; }
+  .right { left: 758px; }
+  .panel h2 { font-size: 21px; font-weight: 800; margin-bottom: 2px; }
+  .left h2 { color: #1F5EFF; } .right h2 { color: #7FB800; }
+  .panel .sub { font-size: 14px; color: #5A6478; margin-bottom: 6px; }
+  .panel .sub b { color: #071A4D; }
+  .legend { display: flex; gap: 12px; margin: 4px 0; flex-wrap: wrap; }
+  .legend span { font-size: 13px; font-weight: 700; color: #1B2333; }
+  .dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 4px; vertical-align: -1px; }
+  .note { font-size: 13.5px; color: #1B2333; line-height: 1.4; margin-top: 6px; }
+  .note b { color: #071A4D; }
+  .strip { position: absolute; left: 30px; top: 778px; width: 1420px; display: flex; gap: 14px; }
+  .trap { flex: 1; background: #FFF3EC; border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px; }
+  .trap h3 { font-size: 14.5px; color: #B4380F; font-weight: 800; margin-bottom: 3px; }
+  .trap p { font-size: 13.5px; color: #7A2A12; line-height: 1.4; }
+  .trap p b { color: #B4380F; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="title"><div class="t">PRODUCT CURVES &amp; COST CURVES — <b>THE TWO MANDATORY DIAGRAMS</b></div></div>
+
+  <div class="panel left">
+    <h2>Product curves — one variable input (labour)</h2>
+    <div class="sub"><b>Top:</b> Total Product (TP) &nbsp;&#183;&nbsp; <b>Bottom:</b> MP and AP, with the three phases of the law of variable proportions</div>
+    <div class="legend">
+      <span><span class="dot" style="background:#1F5EFF"></span>TP (total product)</span>
+      <span><span class="dot" style="background:#B4380F"></span>MP (marginal product)</span>
+      <span><span class="dot" style="background:#0E7A4D"></span>AP (average product)</span>
+    </div>
+    <svg width="656" height="290" viewBox="0 0 656 290">
+      <!-- TP mini-graph -->
+      <line x1="46" y1="12" x2="46" y2="118" stroke="#071A4D" stroke-width="2.5"/>
+      <line x1="46" y1="118" x2="620" y2="118" stroke="#071A4D" stroke-width="2.5"/>
+      <text x="16" y="24" font-size="13" font-weight="800" fill="#071A4D">TP</text>
+      <text x="600" y="134" font-size="13" font-weight="800" fill="#071A4D">L</text>
+      <path d="M 60 112 C 160 106, 220 92, 300 62 C 370 36, 430 26, 470 26 C 520 27, 560 34, 590 42" fill="none" stroke="#1F5EFF" stroke-width="3.5"/>
+      <circle cx="300" cy="62" r="5" fill="#B4380F"/>
+      <text x="286" y="52" font-size="12" font-weight="700" fill="#B4380F">inflexion</text>
+      <text x="478" y="20" font-size="12" font-weight="700" fill="#5A6478">plateau (MP = 0)</text>
+      <text x="60" y="105" font-size="12.5" font-weight="700" fill="#5A6478">slow start &#8594; steep rise &#8594; flattens</text>
+      <!-- MP/AP mini-graph -->
+      <line x1="46" y1="160" x2="46" y2="272" stroke="#071A4D" stroke-width="2.5"/>
+      <line x1="46" y1="272" x2="620" y2="272" stroke="#071A4D" stroke-width="2.5"/>
+      <text x="10" y="172" font-size="13" font-weight="800" fill="#071A4D">MP/AP</text>
+      <text x="600" y="288" font-size="13" font-weight="800" fill="#071A4D">L</text>
+      <!-- phase bands -->
+      <rect x="72" y="160" width="225" height="112" fill="#EAF0FF" opacity=".55"/>
+      <rect x="297" y="160" width="133" height="112" fill="#F6FFDF" opacity=".6"/>
+      <rect x="430" y="160" width="120" height="112" fill="#FFF3EC" opacity=".7"/>
+      <text x="105" y="176" font-size="12.5" font-weight="800" fill="#1F5EFF">PHASE I</text>
+      <text x="318" y="176" font-size="12.5" font-weight="800" fill="#4E7A00">PHASE II</text>
+      <text x="452" y="176" font-size="12.5" font-weight="800" fill="#B4380F">PHASE III</text>
+      <!-- AP -->
+      <path d="M 66 268 C 120 240, 170 214, 230 202 C 270 196, 300 196, 340 199 C 400 205, 470 226, 560 258" fill="none" stroke="#0E7A4D" stroke-width="3"/>
+      <!-- MP -->
+      <path d="M 66 268 C 110 215, 150 185, 210 183 C 250 182, 285 188, 300 197 C 330 215, 380 245, 430 268 C 465 277, 505 280, 540 280" fill="none" stroke="#B4380F" stroke-width="3"/>
+      <circle cx="300" cy="197" r="5.5" fill="#B4380F"/>
+      <text x="238" y="152" font-size="12" font-weight="800" fill="#B4380F">MP = AP exactly at AP's MAX</text>
+      <text x="455" y="264" font-size="12" font-weight="700" fill="#B4380F">MP &lt; 0 below axis</text>
+      <text x="92" y="228" font-size="12" font-weight="700" fill="#4E7A00">MP &gt; AP, so AP rises</text>
+    </svg>
+    <div class="note"><b>Read it once:</b> TP rises slowly, then steeply, then flattens where MP = 0. MP rises first, peaks, falls, and cuts AP exactly at AP's maximum — then dives below zero (Phase III: too many workers on the same land).</div>
+  </div>
+
+  <div class="panel right">
+    <h2>Cost curves — short run (U-shaped family)</h2>
+    <div class="sub"><b>AFC always falls;</b> AVC, AC and MC are U-shaped; <b>MC cuts AVC and AC at their minimum points</b></div>
+    <div class="legend">
+      <span><span class="dot" style="background:#5A6478"></span>AFC</span>
+      <span><span class="dot" style="background:#0E7A4D"></span>AVC</span>
+      <span><span class="dot" style="background:#1F5EFF"></span>AC</span>
+      <span><span class="dot" style="background:#B4380F"></span>MC</span>
+    </div>
+    <svg width="656" height="330" viewBox="0 0 656 330">
+      <line x1="52" y1="16" x2="52" y2="292" stroke="#071A4D" stroke-width="2.5"/>
+      <line x1="52" y1="292" x2="626" y2="292" stroke="#071A4D" stroke-width="2.5"/>
+      <text x="58" y="12" font-size="13" font-weight="800" fill="#071A4D">Cost (₹)</text>
+      <text x="600" y="310" font-size="13" font-weight="800" fill="#071A4D">Q</text>
+      <!-- AFC -->
+      <path d="M 60 40 C 140 96, 240 190, 380 246 C 470 278, 560 286, 620 289" fill="none" stroke="#5A6478" stroke-width="3" stroke-dasharray="8 5"/>
+      <text x="580" y="278" font-size="13" font-weight="800" fill="#5A6478">AFC</text>
+      <!-- AVC -->
+      <path d="M 74 170 C 130 240, 180 262, 240 258 C 320 252, 420 196, 560 116" fill="none" stroke="#0E7A4D" stroke-width="3"/>
+      <text x="566" y="112" font-size="13" font-weight="800" fill="#0E7A4D">AVC</text>
+      <!-- AC -->
+      <path d="M 74 120 C 140 220, 210 254, 300 246 C 400 236, 490 172, 580 84" fill="none" stroke="#1F5EFF" stroke-width="3"/>
+      <text x="584" y="80" font-size="13" font-weight="800" fill="#1F5EFF">AC</text>
+      <!-- MC -->
+      <path d="M 70 240 C 120 278, 170 286, 240 258 C 275 250, 310 245, 370 222 C 450 190, 530 92, 596 28" fill="none" stroke="#B4380F" stroke-width="3.5"/>
+      <text x="600" y="30" font-size="13" font-weight="800" fill="#B4380F">MC</text>
+      <!-- crossing 1: AVC min at ~(240,258) -->
+      <line x1="240" y1="258" x2="240" y2="292" stroke="#B4380F" stroke-width="1.8" stroke-dasharray="4 4"/>
+      <circle cx="240" cy="258" r="6" fill="#B4380F"/>
+      <text x="150" y="308" font-size="12.5" font-weight="800" fill="#B4380F">MC = AVC (AVC minimum)</text>
+      <!-- crossing 2: AC min at ~(300,246) -->
+      <line x1="300" y1="246" x2="300" y2="292" stroke="#1F5EFF" stroke-width="1.8" stroke-dasharray="4 4"/>
+      <circle cx="300" cy="246" r="6" fill="#1F5EFF"/>
+      <text x="318" y="322" font-size="12.5" font-weight="800" fill="#1F5EFF">MC = AC (AC minimum)</text>
+      <!-- gap label AC vs AVC = AFC -->
+      <path d="M 560 116 L 560 84" stroke="#5A6478" stroke-width="1.5" stroke-dasharray="3 3"/>
+      <text x="470" y="104" font-size="12" font-weight="700" fill="#5A6478">AC − AVC = AFC</text>
+    </svg>
+    <div class="note"><b>Why the U-shape:</b> falling AFC + spreading fixed cost pull AC down at first; eventually diminishing returns push MC up hard, and MC drags AVC and AC back up. MC is the fastest mover — it bottoms first, then AVC, then AC.</div>
+  </div>
+
+  <div class="strip">
+    <div class="trap"><h3>TRAP 1</h3><p><b>MC crosses AVC and AC at their MINIMUM points</b> — exactly there, not before, not after. Any diagram showing otherwise is wrong.</p></div>
+    <div class="trap"><h3>TRAP 2</h3><p><b>AFC never touches the x-axis.</b> TFC spread over more and more units shrinks forever but never reaches zero.</p></div>
+    <div class="trap"><h3>TRAP 3</h3><p><b>A rational producer stays in Phase II</b> of the law of variable proportions — Phase III means MP is negative: fewer workers would produce MORE.</p></div>
+  </div>
+</div>
+</body>
+</html>

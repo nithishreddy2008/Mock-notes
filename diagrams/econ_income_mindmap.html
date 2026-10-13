@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: 1080px; position: relative; background: #fff; }
+  svg.wires { position: absolute; inset: 0; width: 1480px; height: 1080px; }
+  .center {
+    position: absolute; left: 520px; top: 470px; width: 440px; height: 104px;
+    background: #071A4D; border-radius: 16px; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(7,26,77,.25);
+    border-bottom: 5px solid #B8FF34;
+  }
+  .center .t { color: #fff; font-size: 19px; font-weight: 800; letter-spacing: .5px; text-align: center; }
+  .center .s { color: #B8FF34; font-size: 13px; font-weight: 700; letter-spacing: 2px; margin-top: 4px; }
+  .card {
+    position: absolute; width: 465px; background: #FCFDFF; border: 1.5px solid #D5DCEA;
+    border-radius: 14px; padding: 13px 16px 12px;
+  }
+  .card h2 { font-size: 19px; color: #071A4D; font-weight: 800; margin-bottom: 7px;
+             padding-bottom: 5px; border-bottom: 3px solid; display: inline-block; }
+  .leaf { font-size: 14px; color: #1B2333; margin: 5px 0; padding-left: 16px; position: relative; line-height: 1.32; }
+  .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
+  .b .leaf::before { background: #1F5EFF; }
+  .l .leaf::before { background: #7FB800; }
+  .leaf b { color: #071A4D; }
+  .b h2 { border-color: #1F5EFF; }
+  .l h2 { border-color: #7FB800; }
+  .left { left: 30px; }
+  .right { left: 985px; }
+  .exc {
+    position: absolute; left: 470px; top: 905px; width: 540px; background: #FFF3EC;
+    border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px;
+  }
+  .exc h2 { font-size: 17px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
+  .exc .leaf { font-size: 13px; margin: 3px 0; padding-left: 14px; color: #7A2A12; }
+  .exc .leaf::before { background: #D2481F; }
+  .exc b { color: #B4380F; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <svg class="wires" viewBox="0 0 1480 1080">
+    <path d="M 520 505 C 470 505, 495 158, 500 155" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 520 520 C 480 520, 495 438, 500 438" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 520 535 C 470 535, 495 718, 500 718" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 960 505 C 1010 505, 985 158, 980 155" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 960 520 C 1000 520, 985 438, 980 438" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 960 535 C 1010 535, 985 718, 980 718" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 740 574 C 740 700, 740 830, 740 903" fill="none" stroke="#D2481F" stroke-width="2.5" stroke-dasharray="7 5" opacity=".6"/>
+  </svg>
+
+  <div class="center">
+    <div class="t">INCOME &amp; EMPLOYMENT DETERMINATION</div>
+    <div class="s">COURSE II MACRO &#183; COMPLETE CHAPTER MAP</div>
+  </div>
+
+  <div class="card left b" style="top:58px">
+    <h2>Aggregate Demand &amp; Components</h2>
+    <div class="leaf"><b>Two-sector AD = C + I;</b> full model adds G and (X − M)</div>
+    <div class="leaf"><b>C:</b> household spending — the biggest, steadiest component</div>
+    <div class="leaf"><b>I:</b> firms' NEW capital + inventory change — volatile, autonomous</div>
+    <div class="leaf"><b>Ex-ante (planned)</b> values are what the model uses</div>
+  </div>
+
+  <div class="card left l" style="top:352px">
+    <h2>Consumption &amp; Propensities</h2>
+    <div class="leaf"><b>C = c&#772; + b·Y</b> — autonomous spending (c&#772;) + MPC × income</div>
+    <div class="leaf"><b>S = −c&#772; + (1 − b)·Y</b> — dissaving below breakeven</div>
+    <div class="leaf"><b>MPC + MPS = 1 always;</b> APC + APS = 1 too</div>
+    <div class="leaf"><b>Breakeven:</b> C = Y, S = 0, APC = 1</div>
+  </div>
+
+  <div class="card left b" style="top:648px">
+    <h2>Two-Sector Equilibrium</h2>
+    <div class="leaf"><b>AD = AS</b> (spending view) — where C + I crosses the 45° line</div>
+    <div class="leaf"><b>S = I</b> (leakage view) — planned saving exactly funds investment</div>
+    <div class="leaf"><b>Solve:</b> Y = (c&#772; + I) ÷ (1 − MPC)</div>
+    <div class="leaf"><b>Equilibrium ≠ full employment</b> — gaps can sit either side</div>
+  </div>
+
+  <div class="card right l" style="top:58px">
+    <h2>The Multiplier</h2>
+    <div class="leaf"><b>K = 1/(1 − MPC) = 1/MPS</b> — MPC 0.8 → K = 5</div>
+    <div class="leaf"><b>ΔY = K × ΔI</b> — ₹100 of new investment lifts income by ₹500</div>
+    <div class="leaf"><b>Why it ripples:</b> one person's spending is another's income — round after round</div>
+    <div class="leaf"><b>Higher MPC → bigger K</b> — the leak (saving) is smaller</div>
+  </div>
+
+  <div class="card right b" style="top:352px">
+    <h2>The Two Gaps</h2>
+    <div class="leaf"><b>Excess demand:</b> AD beyond full-employment output → inflationary gap → prices climb, output can't</div>
+    <div class="leaf"><b>Deficient demand:</b> AD short of full-employment output → deflationary gap → idle machines, unemployment</div>
+    <div class="leaf"><b>Both are measured against Y(FE)</b>, the full-employment income</div>
+  </div>
+
+  <div class="card right l" style="top:648px">
+    <h2>Correction Levers</h2>
+    <div class="leaf"><b>Deficient demand →</b> raise government spending, cut taxes, expand money supply</div>
+    <div class="leaf"><b>Excess demand →</b> cut government spending, raise taxes, contract money supply</div>
+    <div class="leaf"><b>Fiscal levers move G and T;</b> monetary lever (RBI) moves money supply and credit</div>
+  </div>
+
+  <div class="exc">
+    <h2>Traps that catch most students</h2>
+    <div class="leaf"><b>Multiplier inverts:</b> K = 1/MPS — MPC 0.75 gives K = 4, not 1.33</div>
+    <div class="leaf"><b>S = I is about PLANNED values</b> — unplanned inventory swings are the signal that Y is off equilibrium</div>
+    <div class="leaf"><b>Inflationary gap ≠ rising output</b> — beyond full employment only PRICES rise</div>
+    <div class="leaf"><b>Equilibrium income can sit below full employment</b> — the Keynesian lesson: markets need policy help</div>
+  </div>
+</div>
+</body>
+</html>

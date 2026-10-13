@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: 1080px; position: relative; background: #fff; }
+  svg.wires { position: absolute; inset: 0; width: 1480px; height: 1080px; }
+  .center {
+    position: absolute; left: 520px; top: 470px; width: 440px; height: 104px;
+    background: #071A4D; border-radius: 16px; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(7,26,77,.25);
+    border-bottom: 5px solid #B8FF34;
+  }
+  .center .t { color: #fff; font-size: 22px; font-weight: 800; letter-spacing: .5px; text-align: center; }
+  .center .s { color: #B8FF34; font-size: 13.5px; font-weight: 700; letter-spacing: 2px; margin-top: 4px; }
+  .card {
+    position: absolute; width: 465px; background: #FCFDFF; border: 1.5px solid #D5DCEA;
+    border-radius: 14px; padding: 13px 16px 12px;
+  }
+  .card h2 { font-size: 20px; color: #071A4D; font-weight: 800; margin-bottom: 7px;
+             padding-bottom: 5px; border-bottom: 3px solid; display: inline-block; }
+  .leaf { font-size: 14.5px; color: #1B2333; margin: 5px 0; padding-left: 16px; position: relative; line-height: 1.32; }
+  .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
+  .b .leaf::before { background: #1F5EFF; }
+  .l .leaf::before { background: #7FB800; }
+  .leaf b { color: #071A4D; }
+  .b h2 { border-color: #1F5EFF; }
+  .l h2 { border-color: #7FB800; }
+  .left { left: 30px; }
+  .right { left: 985px; }
+  .exc {
+    position: absolute; left: 470px; top: 905px; width: 540px; background: #FFF3EC;
+    border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px;
+  }
+  .exc h2 { font-size: 17px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
+  .exc .leaf { font-size: 13px; margin: 3px 0; padding-left: 14px; color: #7A2A12; }
+  .exc .leaf::before { background: #D2481F; }
+  .exc b { color: #B4380F; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <svg class="wires" viewBox="0 0 1480 1080">
+    <path d="M 520 505 C 470 505, 495 158, 500 155" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 520 520 C 480 520, 495 438, 500 438" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 520 535 C 470 535, 495 718, 500 718" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 960 505 C 1010 505, 985 158, 980 155" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 960 520 C 1000 520, 985 438, 980 438" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 960 535 C 1010 535, 985 718, 980 718" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 740 574 C 740 700, 740 830, 740 903" fill="none" stroke="#D2481F" stroke-width="2.5" stroke-dasharray="7 5" opacity=".6"/>
+  </svg>
+
+  <div class="center">
+    <div class="t">CHEMICAL KINETICS</div>
+    <div class="s">UNIT III &#183; COMPLETE CHAPTER MAP</div>
+  </div>
+
+  <div class="card left b" style="top:58px">
+    <h2>Rate of a Reaction</h2>
+    <div class="leaf"><b>Average rate:</b> change over a chosen interval &#8212; &#916;[R]/&#916;t</div>
+    <div class="leaf"><b>Instantaneous rate:</b> rate at one moment &#8212; slope of the tangent, &#8722;d[R]/dt</div>
+    <div class="leaf"><b>Stoichiometry matters:</b> divide by the coefficient &#8212; rate = &#8722;&#189;d[N&#8322;]/dt = +&#189;d[NH&#8323;]/dt</div>
+    <div class="leaf"><b>Units:</b> mol L⁻¹ s⁻¹ (always the same, whatever the order)</div>
+  </div>
+
+  <div class="card left l" style="top:340px">
+    <h2>Rate Law, Order &amp; Molecularity</h2>
+    <div class="leaf"><b>Rate law:</b> Rate = k[A]<sup>x</sup>[B]<sup>y</sup> &#8212; exponents come from EXPERIMENT only</div>
+    <div class="leaf"><b>Order:</b> x + y &#8212; can be 0, fractional, even negative; found from data</div>
+    <div class="leaf"><b>k's units shift with order:</b> zero: mol L⁻¹ s⁻¹; first: s⁻¹; second: L mol⁻¹ s⁻¹</div>
+    <div class="leaf"><b>Molecularity:</b> molecules colliding in one elementary step &#8212; whole number 1-3, never zero</div>
+    <div class="leaf"><b>Order = experimental; molecularity = theoretical</b> &#8212; they need not match</div>
+  </div>
+
+  <div class="card left b" style="top:638px">
+    <h2>Integrated Laws &amp; Half-Life</h2>
+    <div class="leaf"><b>Zero order:</b> [A] = [A]&#8320; &#8722; kt; t&#189; = [A]&#8320;/2k &#8212; falls as reaction proceeds</div>
+    <div class="leaf"><b>First order:</b> k = (2.303/t) log([A]&#8320;/[A]); t&#189; = 0.693/k &#8212; constant, concentration-independent</div>
+    <div class="leaf"><b>First-order plots:</b> log[A] vs t is straight; [A] vs t curves down</div>
+    <div class="leaf"><b>75% done = two half-lives</b> &#8212; add t&#189;'s, don't double the rate</div>
+  </div>
+
+  <div class="card right l" style="top:58px">
+    <h2>Factors That Change the Rate</h2>
+    <div class="leaf"><b>Concentration:</b> more crowding, more collisions, faster (until order says otherwise)</div>
+    <div class="leaf"><b>Temperature:</b> rough rule &#8212; every 10&#176;C rise nearly doubles the rate (k climbs via Arrhenius)</div>
+    <div class="leaf"><b>Catalyst:</b> offers a lower-energy path; speeds up forward AND backward equally; never consumed</div>
+    <div class="leaf"><b>Surface area &amp; pressure:</b> powdered solids and compressed gases react faster</div>
+  </div>
+
+  <div class="card right b" style="top:362px">
+    <h2>Pseudo First Order</h2>
+    <div class="leaf"><b>Trick:</b> a second-order reaction where one reactant (usually water) is in such huge excess that its concentration barely moves</div>
+    <div class="leaf"><b>Ester hydrolysis:</b> CH&#8323;COOC&#8322;H&#8325; + H&#8322;O &#8594; acid + alcohol &#8212; water stays ~55.5 M, so rate depends only on [ester]</div>
+    <div class="leaf"><b>Sugar inversion:</b> sucrose + water, acid-catalysed &#8212; again water's excess hides it</div>
+    <div class="leaf"><b>Test for it:</b> kinetics that behave first-order despite a two-molecule equation</div>
+  </div>
+
+  <div class="card right l" style="top:660px">
+    <h2>Arrhenius &amp; Collision Theory</h2>
+    <div class="leaf"><b>Arrhenius:</b> k = A e<sup>&#8722;Ea/RT</sup>; log form: log k = log A &#8722; E<sub>a</sub>/2.303RT</div>
+    <div class="leaf"><b>Two-temperature shortcut:</b> log(k&#8322;/k&#8321;) = E<sub>a</sub>(T&#8322;&#8722;T&#8321;)/2.303RT&#8321;T&#8322;</div>
+    <div class="leaf"><b>Slope of log k vs 1/T</b> = &#8722;E<sub>a</sub>/2.303R &#8212; read E<sub>a</sub> straight off the graph</div>
+    <div class="leaf"><b>Collision theory:</b> rate = fraction of collisions with energy &#8805; threshold AND correct orientation; weak at explaining complex molecules (treats them as hard spheres)</div>
+  </div>
+
+  <div class="exc">
+    <h2>WATCH-OUTS THAT SET MCQ TRAPS</h2>
+    <div class="leaf"><b>Order is experimental:</b> never read exponents off the balanced equation</div>
+    <div class="leaf"><b>k's units are a fingerprint:</b> they reveal the order when the question hides it</div>
+    <div class="leaf"><b>First-order t&#189; is constant:</b> independent of starting concentration (zero-order t&#189; is not)</div>
+    <div class="leaf"><b>Catalyst changes neither &#916;H nor K</b> — it lowers E<sub>a</sub> for both directions equally</div>
+  </div>
+</div>
+</body>
+</html>

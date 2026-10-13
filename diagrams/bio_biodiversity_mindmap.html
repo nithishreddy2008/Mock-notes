@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: 1060px; position: relative; background: #fff; }
+  svg.wires { position: absolute; inset: 0; width: 1480px; height: 1060px; }
+  .center {
+    position: absolute; left: 545px; top: 385px; width: 390px; height: 100px;
+    background: #071A4D; border-radius: 16px; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(7,26,77,.25);
+    border-bottom: 5px solid #B8FF34;
+  }
+  .center .t { color: #fff; font-size: 22px; font-weight: 800; letter-spacing: .5px; text-align: center; }
+  .center .s { color: #B8FF34; font-size: 13.5px; font-weight: 700; letter-spacing: 2px; margin-top: 4px; }
+  .card {
+    position: absolute; width: 470px; background: #FCFDFF; border: 1.5px solid #D5DCEA;
+    border-radius: 14px; padding: 13px 16px 12px;
+  }
+  .card h2 { font-size: 20px; color: #071A4D; font-weight: 800; margin-bottom: 7px;
+             padding-bottom: 5px; border-bottom: 3px solid; display: inline-block; }
+  .leaf { font-size: 14.5px; color: #1B2333; margin: 5px 0; padding-left: 16px; position: relative; line-height: 1.32; }
+  .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
+  .b .leaf::before { background: #1F5EFF; }
+  .l .leaf::before { background: #7FB800; }
+  .leaf b { color: #071A4D; }
+  .b h2 { border-color: #1F5EFF; }
+  .l h2 { border-color: #7FB800; }
+  .left { left: 30px; }
+  .right { left: 980px; }
+  .exc {
+    position: absolute; left: 470px; top: 878px; width: 540px; background: #FFF3EC;
+    border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px;
+  }
+  .exc h2 { font-size: 17px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
+  .exc .leaf { font-size: 13px; margin: 3px 0; padding-left: 14px; color: #7A2A12; }
+  .exc .leaf::before { background: #D2481F; }
+  .exc b { color: #B4380F; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <svg class="wires" viewBox="0 0 1480 1060">
+    <path d="M 545 420 C 495 420, 520 165, 502 160" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 545 435 C 505 435, 520 430, 502 430" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 545 450 C 495 450, 520 700, 502 705" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 935 420 C 985 420, 960 165, 978 160" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 935 435 C 975 435, 960 430, 978 430" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 935 450 C 985 450, 960 700, 978 705" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 740 485 C 740 640, 740 810, 740 876" fill="none" stroke="#D2481F" stroke-width="2.5" stroke-dasharray="7 5" opacity=".6"/>
+  </svg>
+
+  <div class="center">
+    <div class="t">BIODIVERSITY &amp; CONSERVATION</div>
+    <div class="s">UNIT X &#183; COMPLETE CHAPTER MAP</div>
+  </div>
+
+  <div class="card left b" style="top:62px">
+    <h2>Levels of Biodiversity</h2>
+    <div class="leaf"><b>Genetic:</b> variety within one species — 50,000+ rice strains, ~1,000 mango varieties in India</div>
+    <div class="leaf"><b>Species:</b> variety of species in a place — Western Ghats beat Eastern Ghats for amphibians</div>
+    <div class="leaf"><b>Ecological:</b> variety of ecosystems — India's deserts-to-coral-reefs range beats Norway</div>
+    <div class="leaf"><b>Counted so far:</b> ~1.7–1.8 million species described; Robert May estimates ~7 million exist</div>
+  </div>
+
+  <div class="card left l" style="top:322px">
+    <h2>Patterns of Richness</h2>
+    <div class="leaf"><b>Latitudinal gradient:</b> richness rises towards the tropics — Colombia ~1,400 birds vs Greenland 56</div>
+    <div class="leaf"><b>Why tropics win:</b> long evolutionary time &#183; constant climate &#183; more solar energy</div>
+    <div class="leaf"><b>Species–area:</b> S = C&#183;A<sup>z</sup> &#8212; log S = log C + z log A</div>
+    <div class="leaf"><b>Slope z:</b> 0.1–0.2 for small regions; 0.6–1.2 for whole continents</div>
+  </div>
+
+  <div class="card left b" style="top:600px">
+    <h2>Causes of Loss — the Evil Quartet</h2>
+    <div class="leaf"><b>Habitat loss &amp; fragmentation</b> (biggest): Amazon cut for soy and cattle; rain forest 14% &#8594; 6%</div>
+    <div class="leaf"><b>Over-exploitation:</b> Steller's sea cow and the passenger pigeon hunted to extinction</div>
+    <div class="leaf"><b>Alien invasions:</b> Nile perch killed 200+ cichlids; Lantana, water hyacinth, Parthenium in India</div>
+    <div class="leaf"><b>Co-extinction:</b> parasites and pollinators die with their partners</div>
+  </div>
+
+  <div class="card right l" style="top:62px">
+    <h2>Why It Matters — 3 Views</h2>
+    <div class="leaf"><b>Narrowly utilitarian:</b> food, fibre, firewood; ~25% of world drugs come from plants</div>
+    <div class="leaf"><b>Broadly utilitarian:</b> free ecosystem services — Amazon &#8776; 20% of atmospheric oxygen; services &#8776; US $33 trillion/yr</div>
+    <div class="leaf"><b>Ethical:</b> every species has intrinsic value; pass nature on intact</div>
+    <div class="leaf"><b>Bioprospecting:</b> searching biodiversity for useful products</div>
+  </div>
+
+  <div class="card right b" style="top:322px">
+    <h2>In Situ Conservation</h2>
+    <div class="leaf"><b>Idea:</b> protect species inside their natural home — the whole ecosystem stays alive</div>
+    <div class="leaf"><b>Tools:</b> national parks &#183; wildlife sanctuaries &#183; biosphere reserves &#183; sacred groves</div>
+    <div class="leaf"><b>Sacred groves:</b> Khasi &amp; Jaintia Hills (Meghalaya); Bishnoi villages (Rajasthan)</div>
+    <div class="leaf"><b>Hotspots:</b> very high endemism + very high habitat loss — India has 3 (see strip below)</div>
+  </div>
+
+  <div class="card right l" style="top:600px">
+    <h2>Ex Situ Conservation</h2>
+    <div class="leaf"><b>Idea:</b> protect the species away from its natural home, under human care</div>
+    <div class="leaf"><b>Tools:</b> zoos (captive breeding) &#183; wildlife safari parks &#183; seed &amp; pollen banks</div>
+    <div class="leaf"><b>Lab routes:</b> tissue culture &#183; in vitro fertilisation &#183; cryopreservation at &#8722;196&#176;C</div>
+    <div class="leaf"><b>Used when:</b> habitat is gone or wild numbers are too small to survive alone</div>
+  </div>
+
+  <div class="exc">
+    <h2>COMMON ERRORS &amp; TRAPS</h2>
+    <div class="leaf"><b>Hotspot needs BOTH:</b> high endemism AND high habitat loss — not just many species</div>
+    <div class="leaf"><b>Nile perch = alien invasion</b>, not over-exploitation</div>
+    <div class="leaf"><b>Sacred groves are in situ</b> — the forest is protected exactly where it stands</div>
+    <div class="leaf"><b>Endemic &#8800; extinct:</b> endemic means "found nowhere else", not "already gone"</div>
+  </div>
+</div>
+</body>
+</html>

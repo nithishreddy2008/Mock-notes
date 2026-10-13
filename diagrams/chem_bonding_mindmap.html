@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: 1050px; position: relative; background: #fff; padding: 0; }
+  svg.wires { position: absolute; inset: 0; width: 1480px; height: 1050px; }
+  .center {
+    position: absolute; left: 570px; top: 380px; width: 340px; height: 100px;
+    background: #071A4D; border-radius: 16px; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(7,26,77,.25);
+    border-bottom: 5px solid #B8FF34;
+  }
+  .center .t { color: #fff; font-size: 25px; font-weight: 800; letter-spacing: .5px; }
+  .center .s { color: #B8FF34; font-size: 14px; font-weight: 700; letter-spacing: 2px; margin-top: 4px; }
+  .card {
+    position: absolute; width: 470px; background: #FCFDFF; border: 1.5px solid #D5DCEA;
+    border-radius: 14px; padding: 13px 16px 12px;
+  }
+  .card h2 { font-size: 20px; color: #071A4D; font-weight: 800; margin-bottom: 7px;
+             padding-bottom: 5px; border-bottom: 3px solid; display: inline-block; }
+  .leaf { font-size: 15px; color: #1B2333; margin: 5px 0; padding-left: 16px; position: relative; line-height: 1.32; }
+  .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
+  .b .leaf::before { background: #1F5EFF; }
+  .l .leaf::before { background: #7FB800; }
+  .leaf b { color: #071A4D; }
+  .b h2 { border-color: #1F5EFF; }
+  .l h2 { border-color: #7FB800; }
+  .left { left: 30px; }
+  .right { left: 980px; }
+  .exc {
+    position: absolute; left: 545px; top: 875px; width: 390px; background: #FFF3EC;
+    border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px;
+  }
+  .exc h2 { font-size: 17px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
+  .exc .leaf { font-size: 13.5px; margin: 3px 0; padding-left: 14px; color: #7A2A12; }
+  .exc .leaf::before { background: #D2481F; }
+  .exc b { color: #B4380F; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <svg class="wires" viewBox="0 0 1480 1050">
+    <path d="M 570 415 C 510 415, 520 175, 502 165" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 570 430 C 520 430, 520 430, 502 430" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 570 445 C 510 445, 520 690, 502 700" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 910 415 C 970 415, 960 175, 978 165" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 910 430 C 960 430, 960 430, 978 430" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 910 445 C 970 445, 960 690, 978 700" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 740 480 C 740 640, 740 800, 740 873" fill="none" stroke="#D2481F" stroke-width="2.5" stroke-dasharray="7 5" opacity=".6"/>
+  </svg>
+
+  <div class="center">
+    <div class="t">CHEMICAL BONDING</div>
+    <div class="s">COMPLETE CHAPTER MAP</div>
+  </div>
+
+  <div class="card left b" style="top:75px">
+    <h2>Ionic Bonding</h2>
+    <div class="leaf"><b>Metal &#215; non-metal:</b> electrons <b>transferred</b>, ions held by electrostatic force</div>
+    <div class="leaf"><b>Octet rule</b> drives formation &#8212; stable noble-gas configuration</div>
+    <div class="leaf"><b>Lattice enthalpy &#8593;</b> &#8658; melting point &#8593;, hardness &#8593;, solubility in water</div>
+    <div class="leaf">Conduct electricity only when <b>molten or aqueous</b> (ions free to move)</div>
+  </div>
+
+  <div class="card left l" style="top:330px">
+    <h2>VSEPR Theory</h2>
+    <div class="leaf">Repulsion order: <b>lone pair&#8211;lp &gt; lp&#8211;bond pair &gt; bp&#8211;bp</b></div>
+    <div class="leaf"><b>Lone pairs compress angles:</b> CH&#8324; 109.5&#176; &#8594; NH&#8323; 107&#176; &#8594; H&#8322;O 104.5&#176;</div>
+    <div class="leaf">Shapes by electron pairs: <b>linear &#8594; trigonal planar &#8594; tetrahedral &#8594; trigonal bipyramidal &#8594; octahedral</b></div>
+    <div class="leaf">Count <b>both</b> bonded atoms and lone pairs around the central atom</div>
+  </div>
+
+  <div class="card left b" style="top:605px">
+    <h2>Molecular Orbital Theory</h2>
+    <div class="leaf"><b>Bond order = (N&#8320; &#8722; N*) / 2</b> &#8212; bonding minus antibonding electrons</div>
+    <div class="leaf"><b>BO &#8593; &#8658; stability &#8593;, bond length &#8595;</b> (N&#8322; BO 3 &gt; O&#8322; BO 2)</div>
+    <div class="leaf"><b>O&#8322; is paramagnetic</b> &#8212; 2 unpaired electrons in &#960;* orbitals</div>
+    <div class="leaf">Fill &#963;1s &#8594; &#963;*1s &#8594; &#963;2s &#8594; &#963;*2s &#8594; &#960;2p = &#963;2p &#8594; &#960;*2p &#8594; &#963;*2p</div>
+  </div>
+
+  <div class="card right l" style="top:75px">
+    <h2>Covalent Bonding &amp; Parameters</h2>
+    <div class="leaf">Electrons <b>shared</b>; best Lewis structure = lowest <b>formal charge</b></div>
+    <div class="leaf"><b>Bond length &#8595; as bond order &#8593;</b>; resonance = one real averaged structure</div>
+    <div class="leaf"><b>Dipole moment</b> = bond polarity + geometry &#8658; CO&#8322; is net zero</div>
+    <div class="leaf"><b>Fajan's rules:</b> small cation, big anion &#8658; more covalent character</div>
+  </div>
+
+  <div class="card right b" style="top:330px">
+    <h2>Hybridisation</h2>
+    <div class="leaf"><b>sp 180&#176;</b> (BeCl&#8322;, C&#8322;H&#8322;) &#183; <b>sp&#178; 120&#176;</b> (BF&#8323;, C&#8322;H&#8324;) &#183; <b>sp&#179; 109.5&#176;</b> (CH&#8324;, NH&#8323;)</div>
+    <div class="leaf"><b>sp&#179;d</b> (PCl&#8325;, trigonal bipyramidal) &#183; <b>sp&#179;d&#178;</b> (SF&#8326;, octahedral)</div>
+    <div class="leaf">Shortcut: <b>H = &#189;(V + M &#8722; C + A)</b> &#8212; valence + monovalent &#8722; cation + anion</div>
+    <div class="leaf">Sigma bonds use hybrids; free p-orbitals make <b>&#960; bonds</b></div>
+  </div>
+
+  <div class="card right l" style="top:605px">
+    <h2>Hydrogen Bonding</h2>
+    <div class="leaf">H on <b>F, O, N</b> &#8594; attracted to a lone pair on a neighbouring molecule</div>
+    <div class="leaf"><b>Intermolecular</b> (H&#8322;O, HF, NH&#8323;) vs <b>intramolecular</b> (o-nitrophenol)</div>
+    <div class="leaf">Explains: <b>ice floats</b>, H&#8322;O boils highest among hydrides of group 16</div>
+    <div class="leaf">o-nitrophenol is steam-volatile &#8212; intramolecular H-bond kills clustering</div>
+  </div>
+
+  <div class="exc">
+    <h2>EXCEPTIONS &amp; TRAPS</h2>
+    <div class="leaf"><b>Octet broken:</b> BeCl&#8322;, BF&#8323; (incomplete) &#183; PCl&#8325;, SF&#8326; (expanded)</div>
+    <div class="leaf"><b>O&#8322; paramagnetic</b> &#8212; Lewis fails, MOT explains</div>
+    <div class="leaf"><b>CO&#8322; has polar bonds but zero dipole</b> &#8212; linear symmetry</div>
+  </div>
+</div>
+</body>
+</html>

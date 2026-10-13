@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: 900px; position: relative; background: #fff; }
+  svg.wires { position: absolute; inset: 0; width: 1480px; height: 900px; }
+  .title { position: absolute; top: 24px; left: 0; width: 1480px; text-align: center;
+           font-size: 26px; font-weight: 800; color: #071A4D; letter-spacing: .5px; }
+  .title span { color: #1F5EFF; }
+  .firm {
+    position: absolute; left: 560px; top: 360px; width: 360px; height: 150px;
+    background: #071A4D; border-radius: 18px; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; box-shadow: 0 8px 20px rgba(7,26,77,.28);
+    border-bottom: 5px solid #B8FF34;
+  }
+  .firm .t { color: #fff; font-size: 25px; font-weight: 800; }
+  .firm .s { color: #B8FF34; font-size: 13px; font-weight: 700; letter-spacing: 1.8px; margin-top: 6px; text-align: center; }
+  .dim { position: absolute; width: 400px; background: #FCFDFF; border: 1.6px solid #D5DCEA;
+         border-radius: 14px; padding: 13px 16px 12px; }
+  .dim h2 { font-size: 19px; color: #071A4D; font-weight: 800; margin-bottom: 6px;
+            padding-bottom: 4px; border-bottom: 3px solid; display: inline-block; }
+  .dim .leaf { font-size: 13.8px; color: #1B2333; margin: 4px 0; padding-left: 15px; position: relative; line-height: 1.3; }
+  .dim .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
+  .dim b { color: #071A4D; }
+  .d1 { left: 90px;  top: 96px; }  .d1 h2 { border-color: #1F5EFF; } .d1 .leaf::before { background: #1F5EFF; }
+  .d2 { left: 990px; top: 96px; }  .d2 h2 { border-color: #7FB800; } .d2 .leaf::before { background: #7FB800; }
+  .d3 { left: 90px;  top: 560px; } .d3 h2 { border-color: #7FB800; } .d3 .leaf::before { background: #7FB800; }
+  .d4 { left: 990px; top: 560px; } .d4 h2 { border-color: #1F5EFF; } .d4 .leaf::before { background: #1F5EFF; }
+  .d5 { left: 540px; top: 610px; width: 400px; } .d5 h2 { border-color: #D2481F; } .d5 .leaf::before { background: #D2481F; }
+  .tag { display: inline-block; background: #EAF0FF; color: #1F5EFF; font-size: 12.5px;
+         font-weight: 800; border-radius: 8px; padding: 3px 9px; margin-left: 8px; vertical-align: 3px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <svg class="wires" viewBox="0 0 1480 900">
+    <path d="M 480 200 C 540 240, 560 280, 610 352" fill="none" stroke="#1F5EFF" stroke-width="2.4" opacity=".5"/>
+    <path d="M 1000 200 C 940 240, 920 280, 870 352" fill="none" stroke="#7FB800" stroke-width="2.4" opacity=".5"/>
+    <path d="M 480 570 C 540 530, 560 500, 610 522" fill="none" stroke="#7FB800" stroke-width="2.4" opacity=".5"/>
+    <path d="M 1000 570 C 940 530, 920 500, 870 522" fill="none" stroke="#1F5EFF" stroke-width="2.4" opacity=".5"/>
+    <path d="M 740 600 L 740 516" fill="none" stroke="#D2481F" stroke-width="2.4" stroke-dasharray="7 5" opacity=".6"/>
+  </svg>
+
+  <div class="title">THE FIVE DIMENSIONS OF BUSINESS ENVIRONMENT — <span>everything outside the firm's walls that shapes it</span></div>
+
+  <div class="firm">
+    <div class="t">THE BUSINESS</div>
+    <div class="s">SURROUNDED · SHAPED · LIMITED BY ITS ENVIRONMENT</div>
+  </div>
+
+  <div class="dim d1">
+    <h2>Economic</h2>
+    <span class="tag">MONEY CONDITIONS</span>
+    <div class="leaf"><b>Interest rates, inflation, income levels, stock market indices</b> — the cost of money and the size of demand</div>
+    <div class="leaf">Lower interest rates &#8594; cheaper loans &#8594; firms expand; inflation raises input costs</div>
+  </div>
+
+  <div class="dim d2">
+    <h2>Social</h2>
+    <span class="tag">PEOPLE &amp; VALUES</span>
+    <div class="leaf"><b>Customs, traditions, values, social trends, literacy, demographics</b> — how society lives and what it expects</div>
+    <div class="leaf">Demand for fast food, festivals, clothing follows social customs; literacy raises demand for books</div>
+  </div>
+
+  <div class="dim d3">
+    <h2>Technological</h2>
+    <span class="tag">NEW WAYS TO MAKE &amp; SELL</span>
+    <div class="leaf"><b>New techniques, innovations, scientific improvements</b> in products and processes</div>
+    <div class="leaf">Smartphones replaced cameras and torches; UPI changed how shops collect money</div>
+  </div>
+
+  <div class="dim d4">
+    <h2>Political</h2>
+    <span class="tag">GOVERNMENT &amp; STABILITY</span>
+    <div class="leaf"><b>Political stability, attitude of government towards business</b>, ideology of parties in power</div>
+    <div class="leaf">A government that welcomes industry signals calm for investors; sudden policy shifts unsettle plans</div>
+  </div>
+
+  <div class="dim d5">
+    <h2>Legal</h2>
+    <span class="tag">LAWS &amp; COURTS</span>
+    <div class="leaf"><b>Legislation passed by Parliament, administrative orders, court judgments</b> — the rules every firm must obey</div>
+    <div class="leaf">Compulsory statutory warnings on tobacco packs; the Companies Act; consumer protection law</div>
+  </div>
+</div>
+</body>
+</html>

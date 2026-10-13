@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: 690px; position: relative; background: #fff; }
+  svg.wires { position: absolute; inset: 0; width: 1480px; height: 690px; }
+  .titlebar {
+    position: absolute; left: 30px; top: 26px; width: 1420px; height: 72px;
+    background: #071A4D; border-radius: 14px; display: flex; align-items: center;
+    justify-content: space-between; padding: 0 26px; box-shadow: 0 5px 16px rgba(7,26,77,.22);
+    border-bottom: 4px solid #B8FF34;
+  }
+  .titlebar .t { color: #fff; font-size: 23px; font-weight: 800; letter-spacing: .5px; }
+  .titlebar .s { color: #B8FF34; font-size: 13px; font-weight: 700; letter-spacing: 1.2px; text-align: right; }
+  .card {
+    position: absolute; width: 215px; height: 150px; background: #FCFDFF;
+    border: 1.5px solid #D5DCEA; border-bottom-width: 4px; border-radius: 12px;
+    padding: 10px 12px 8px;
+  }
+  .card .date { font-size: 15px; font-weight: 800; letter-spacing: .3px; margin-bottom: 5px; }
+  .card .ev { font-size: 12.5px; color: #1B2333; line-height: 1.32; }
+  .card .ev b { color: #071A4D; }
+  .r1 { border-bottom-color: #1F5EFF; }
+  .r1 .date { color: #1F5EFF; }
+  .r2 { border-bottom-color: #7FB800; }
+  .r2 .date { color: #5F9400; }
+  .dotnum {
+    position: absolute; width: 22px; height: 22px; border-radius: 50%;
+    color: #fff; font-size: 12px; font-weight: 800; display: flex;
+    align-items: center; justify-content: center;
+  }
+  .n1 { background: #1F5EFF; }
+  .n2 { background: #7FB800; }
+  .cont {
+    position: absolute; right: 96px; top: 404px; width: 200px; text-align: center;
+    color: #5A6478; font-size: 12px; font-weight: 700; letter-spacing: 1px;
+    background: #fff; padding: 0 8px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <svg class="wires" viewBox="0 0 1480 690">
+    <defs>
+      <marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+        <path d="M0,0 L9,4.5 L0,9 z" fill="#1F5EFF"/>
+      </marker>
+      <marker id="ar2" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+        <path d="M0,0 L9,4.5 L0,9 z" fill="#7FB800"/>
+      </marker>
+      <marker id="arc" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+        <path d="M0,0 L9,4.5 L0,9 z" fill="#1F5EFF" opacity=".55"/>
+      </marker>
+    </defs>
+    <line x1="40" y1="210" x2="1432" y2="210" stroke="#1F5EFF" stroke-width="4" stroke-linecap="round" marker-end="url(#ar)"/>
+    <line x1="40" y1="458" x2="1432" y2="458" stroke="#7FB800" stroke-width="4" stroke-linecap="round" marker-end="url(#ar2)"/>
+    <path d="M 1432 218 L 1432 432 L 60 432 L 60 446" fill="none" stroke="#1F5EFF" stroke-width="2.5"
+          stroke-dasharray="8 6" opacity=".5" marker-end="url(#arc)"/>
+    <!-- row 1 dots -->
+    <circle cx="159" cy="210" r="8" fill="#fff" stroke="#1F5EFF" stroke-width="3.5"/>
+    <circle cx="392" cy="210" r="8" fill="#fff" stroke="#1F5EFF" stroke-width="3.5"/>
+    <circle cx="624" cy="210" r="8" fill="#fff" stroke="#1F5EFF" stroke-width="3.5"/>
+    <circle cx="857" cy="210" r="8" fill="#fff" stroke="#1F5EFF" stroke-width="3.5"/>
+    <circle cx="1090" cy="210" r="8" fill="#fff" stroke="#1F5EFF" stroke-width="3.5"/>
+    <circle cx="1322" cy="210" r="8" fill="#fff" stroke="#1F5EFF" stroke-width="3.5"/>
+    <!-- row 2 dots -->
+    <circle cx="159" cy="458" r="8" fill="#fff" stroke="#7FB800" stroke-width="3.5"/>
+    <circle cx="392" cy="458" r="8" fill="#fff" stroke="#7FB800" stroke-width="3.5"/>
+    <circle cx="624" cy="458" r="8" fill="#fff" stroke="#7FB800" stroke-width="3.5"/>
+    <circle cx="857" cy="458" r="8" fill="#fff" stroke="#7FB800" stroke-width="3.5"/>
+    <circle cx="1090" cy="458" r="8" fill="#fff" stroke="#7FB800" stroke-width="3.5"/>
+    <circle cx="1322" cy="458" r="8" fill="#fff" stroke="#7FB800" stroke-width="3.5"/>
+  </svg>
+
+  <div class="titlebar">
+    <div class="t">EVOLUTION TIMELINE &#8212; LIFE THROUGH THE AGES</div>
+    <div class="s">12 MILESTONES &#183; EARLY EARTH &#8594; HOMO SAPIENS</div>
+  </div>
+
+  <div class="dotnum n1" style="left:148px; top:199px;">1</div>
+  <div class="dotnum n1" style="left:381px; top:199px;">2</div>
+  <div class="dotnum n1" style="left:613px; top:199px;">3</div>
+  <div class="dotnum n1" style="left:846px; top:199px;">4</div>
+  <div class="dotnum n1" style="left:1079px; top:199px;">5</div>
+  <div class="dotnum n1" style="left:1311px; top:199px;">6</div>
+  <div class="dotnum n2" style="left:148px; top:447px;">7</div>
+  <div class="dotnum n2" style="left:381px; top:447px;">8</div>
+  <div class="dotnum n2" style="left:613px; top:447px;">9</div>
+  <div class="dotnum n2" style="left:846px; top:447px;">10</div>
+  <div class="dotnum n2" style="left:1079px; top:447px;">11</div>
+  <div class="dotnum n2" style="left:1311px; top:447px;">12</div>
+
+  <!-- row 1 cards -->
+  <div class="card r1" style="left:52px; top:236px;">
+    <div class="date">4.5 BYA</div>
+    <div class="ev"><b>Earth forms</b> from the cloud around the young Sun. No oxygen in the air yet.</div>
+  </div>
+  <div class="card r1" style="left:284px; top:236px;">
+    <div class="date">3.8 BYA</div>
+    <div class="ev"><b>First cells</b> appear. Giant RNA molecules came before them — the RNA world.</div>
+  </div>
+  <div class="card r1" style="left:516px; top:236px;">
+    <div class="date">2000 MYA</div>
+    <div class="ev"><b>Invertebrates flourish</b> — soft-bodied sea animals without backbones.</div>
+  </div>
+  <div class="card r1" style="left:749px; top:236px;">
+    <div class="date">500 MYA</div>
+    <div class="ev"><b>Jawless fish</b> evolve — the first backboned animals swim the seas.</div>
+  </div>
+  <div class="card r1" style="left:982px; top:236px;">
+    <div class="date">350 MYA</div>
+    <div class="ev"><b>Giant ferns</b> cover swampy forests; <b>amphibians</b> step onto land.</div>
+  </div>
+  <div class="card r1" style="left:1215px; top:236px;">
+    <div class="date">230 MYA</div>
+    <div class="ev"><b>Dinosaurs rise</b> — reptiles rule the land for over 160 million years.</div>
+  </div>
+
+  <div class="cont">CONTINUES &#8595;</div>
+
+  <!-- row 2 cards -->
+  <div class="card r2" style="left:52px; top:484px;">
+    <div class="date">65 MYA</div>
+    <div class="ev"><b>Dinosaurs vanish</b> suddenly. <b>Mammals spread</b> into the empty world.</div>
+  </div>
+  <div class="card r2" style="left:284px; top:484px;">
+    <div class="date">3&#8211;4 MYA</div>
+    <div class="ev"><b>Australopithecus</b> ("Lucy") walks upright in East Africa and hunts.</div>
+  </div>
+  <div class="card r2" style="left:516px; top:484px;">
+    <div class="date">2 MYA</div>
+    <div class="ev"><b>Homo habilis</b> — the "handy man" — makes the first stone tools.</div>
+  </div>
+  <div class="card r2" style="left:749px; top:484px;">
+    <div class="date">1.5 MYA</div>
+    <div class="ev"><b>Homo erectus</b> — larger brain, almost certainly ate meat.</div>
+  </div>
+  <div class="card r2" style="left:982px; top:484px;">
+    <div class="date">100,000&#8211;40,000 YA</div>
+    <div class="ev"><b>Neanderthal man</b> used hides for clothing and buried his dead.</div>
+  </div>
+  <div class="card r2" style="left:1215px; top:484px;">
+    <div class="date">~75,000 YA</div>
+    <div class="ev"><b>Homo sapiens</b> spreads out; agriculture begins ~10,000 years ago.</div>
+  </div>
+</div>
+</body>
+</html>

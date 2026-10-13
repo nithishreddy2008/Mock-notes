@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: 1080px; position: relative; background: #fff; }
+  svg.wires { position: absolute; inset: 0; width: 1480px; height: 1080px; }
+  .center {
+    position: absolute; left: 520px; top: 470px; width: 440px; height: 104px;
+    background: #071A4D; border-radius: 16px; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(7,26,77,.25);
+    border-bottom: 5px solid #B8FF34;
+  }
+  .center .t { color: #fff; font-size: 21px; font-weight: 800; letter-spacing: .5px; text-align: center; }
+  .center .s { color: #B8FF34; font-size: 13.5px; font-weight: 700; letter-spacing: 2px; margin-top: 4px; }
+  .card {
+    position: absolute; width: 465px; background: #FCFDFF; border: 1.5px solid #D5DCEA;
+    border-radius: 14px; padding: 13px 16px 12px;
+  }
+  .card h2 { font-size: 20px; color: #071A4D; font-weight: 800; margin-bottom: 7px;
+             padding-bottom: 5px; border-bottom: 3px solid; display: inline-block; }
+  .leaf { font-size: 14.5px; color: #1B2333; margin: 5px 0; padding-left: 16px; position: relative; line-height: 1.32; }
+  .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
+  .b .leaf::before { background: #1F5EFF; }
+  .l .leaf::before { background: #7FB800; }
+  .leaf b { color: #071A4D; }
+  .b h2 { border-color: #1F5EFF; }
+  .l h2 { border-color: #7FB800; }
+  .left { left: 30px; }
+  .right { left: 985px; }
+  .exc {
+    position: absolute; left: 470px; top: 905px; width: 540px; background: #FFF3EC;
+    border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px;
+  }
+  .exc h2 { font-size: 17px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
+  .exc .leaf { font-size: 13px; margin: 3px 0; padding-left: 14px; color: #7A2A12; }
+  .exc .leaf::before { background: #D2481F; }
+  .exc b { color: #B4380F; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <svg class="wires" viewBox="0 0 1480 1080">
+    <path d="M 520 505 C 470 505, 495 158, 500 155" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 520 520 C 480 520, 495 438, 500 438" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 520 535 C 470 535, 495 718, 500 718" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 960 505 C 1010 505, 985 158, 980 155" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 960 520 C 1000 520, 985 438, 980 438" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 960 535 C 1010 535, 985 718, 980 718" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 740 574 C 740 700, 740 830, 740 903" fill="none" stroke="#D2481F" stroke-width="2.5" stroke-dasharray="7 5" opacity=".6"/>
+  </svg>
+
+  <div class="center">
+    <div class="t">COORDINATION COMPOUNDS</div>
+    <div class="s">UNIT V &#183; COMPLETE CHAPTER MAP</div>
+  </div>
+
+  <div class="card left b" style="top:58px">
+    <h2>Vocabulary That Runs the Unit</h2>
+    <div class="leaf"><b>Coordination entity:</b> central metal + ligands in brackets; counter ions sit outside</div>
+    <div class="leaf"><b>Ligands:</b> mono (NH&#8323;, Cl&#8315;), bidentate (en, oxalate), polydentate (EDTA&#8308;&#8315;); ambidentate (NO&#8322;&#8315;, SCN&#8315;) bite two ways</div>
+    <div class="leaf"><b>Coordination number:</b> ligand donor atoms bound &#8212; 4 or 6 in this course</div>
+    <div class="leaf"><b>Homoleptic vs heteroleptic:</b> one ligand kind vs mixed ([Co(NH&#8323;)&#8326;]&#179;&#8314; vs [Co(NH&#8323;)&#8324;Cl&#8322;]&#8314;)</div>
+  </div>
+
+  <div class="card left l" style="top:352px">
+    <h2>Naming &amp; Isomerism</h2>
+    <div class="leaf"><b>Name order:</b> ligands (alphabetical, di/tri/tetra prefixes) + metal + oxidation number in ( ) &#8212; cation first, anion last</div>
+    <div class="leaf"><b>Anionic metal endings:</b> ferrate, cuprate, zincate, argentate</div>
+    <div class="leaf"><b>Structural isomers:</b> ionisation, hydrate, linkage, coordination</div>
+    <div class="leaf"><b>Stereo:</b> cis/trans for Ma&#8324;b&#8322; octahedral + square planar Ma&#8322;b&#8322;; optical for [M(en)&#8323;]&#179;&#8314; and cis-Ma&#8322;b&#8322;(en)</div>
+  </div>
+
+  <div class="card left b" style="top:648px">
+    <h2>Valence Bond Theory</h2>
+    <div class="leaf"><b>Inner orbital (d&#178;sp&#179;):</b> uses (n&#8722;1)d &#8212; strong-field ligands, low spin: [Co(NH&#8323;)&#8326;]&#179;&#8314;, [Fe(CN)&#8326;]&#179;&#8315;</div>
+    <div class="leaf"><b>Outer orbital (sp&#179;d&#178;):</b> uses n d &#8212; weak-field ligands, high spin: [CoF&#8326;]&#179;&#8315;</div>
+    <div class="leaf"><b>Test:</b> count unpaired electrons magnetically, then match the hybridisation</div>
+    <div class="leaf"><b>Limitations:</b> no colour explanation, no &#916;&#8320;, treats all ligands alike, clumsy for geometry prediction</div>
+  </div>
+
+  <div class="card right l" style="top:58px">
+    <h2>Crystal Field Theory</h2>
+    <div class="leaf"><b>Idea:</b> ligands are point charges; their field splits the d orbitals into low t&#8322;g and high e&#8322;g sets, gap = &#916;&#8320;</div>
+    <div class="leaf"><b>Strong field:</b> pair up first &#8212; low spin; weak field: spread out &#8212; high spin</div>
+    <div class="leaf"><b>Spectrochemical series:</b> I&#8315; &lt; Br&#8315; &lt; Cl&#8315; &lt; F&#8315; &lt; H&#8322;O &lt; NH&#8323; &lt; en &lt; CN&#8315; &#8776; CO</div>
+    <div class="leaf"><b>Colour:</b> absorbed light = &#916;&#8320;; ligand change shifts the colour of [Ti(H&#8322;O)&#8326;]&#179;&#8314;</div>
+    <div class="leaf"><b>Limitations:</b> ignores covalency, no explanation of ligand order fully, silent on &#960;-bonding</div>
+  </div>
+
+  <div class="card right b" style="top:418px">
+    <h2>Metal Carbonyls</h2>
+    <div class="leaf"><b>Ni(CO)&#8324;:</b> tetrahedral, sp&#179;, diamagnetic &#8212; Ni(0) d&#185;&#8309;</div>
+    <div class="leaf"><b>Fe(CO)&#8325;:</b> trigonal bipyramidal, dsp&#179;, Fe(0)</div>
+    <div class="leaf"><b>Synergic bond:</b> CO gives &#963; (carbon lone pair &#8594; metal) AND takes &#960; back-donation (metal &#8594; CO &#960;*) &#8212; a two-way handshake that strengthens both</div>
+    <div class="leaf"><b>M&#8211;C bond is shorter/stronger</b> than a plain single bond because of that back-donation</div>
+  </div>
+
+  <div class="card right l" style="top:700px">
+    <h2>Why Coordination Chemistry Matters</h2>
+    <div class="leaf"><b>Extraction:</b> Ag and Au dissolve in dilute cyanide (Mac-Arthur–Forrest), then displace with Zn</div>
+    <div class="leaf"><b>Medicine:</b> cis-platin fights cancer; EDTA treats lead poisoning (chelation therapy)</div>
+    <div class="leaf"><b>Life itself:</b> haemoglobin (Fe), chlorophyll (Mg), vitamin B&#8321;&#8322; (Co)</div>
+    <div class="leaf"><b>Analysis:</b> Ni&#178;&#8314; confirmed with DMG (bright red), Fe&#179;&#8314; with SCN&#8315; (blood red), water hardness by EDTA titration</div>
+  </div>
+
+  <div class="exc">
+    <h2>WATCH-OUTS THAT SET MCQ TRAPS</h2>
+    <div class="leaf"><b>Oxidation number vs coordination number:</b> charge of the metal vs count of donor atoms — not the same</div>
+    <div class="leaf"><b>Bidentate counts twice:</b> en or oxalate gives 2 each — [Co(en)&#8323;]&#179;&#8314; has CN = 6 with 3 ligands</div>
+    <div class="leaf"><b>Linkage isomerism needs ambidentate ligands</b> — NO&#8322;&#8315; (nitro/nitrito), SCN&#8315; (thiocyanato/isothiocyanato)</div>
+    <div class="leaf"><b>Ma&#8322;b&#8322; tetrahedral has NO cis/trans</b> — only square planar Ma&#8322;b&#8322; does; octahedral Ma&#8324;b&#8322; does</div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: 940px; position: relative; background: #fff; }
+  .title { position: absolute; top: 26px; left: 0; width: 1480px; text-align: center;
+           font-size: 27px; font-weight: 800; color: #071A4D; letter-spacing: .5px; }
+  .title span { color: #1F5EFF; }
+
+  /* pyramid bands */
+  .band { position: absolute; display: flex; flex-direction: column; align-items: center;
+          justify-content: center; color: #fff; text-align: center; }
+  .band .lv { font-size: 12px; font-weight: 800; letter-spacing: 2px; opacity: .92; }
+  .band .nm { font-size: 19px; font-weight: 800; margin-top: 3px; }
+  .band .who { font-size: 13.5px; margin-top: 4px; opacity: .95; }
+  .b1 { left: 560px; top: 92px;  width: 360px;  height: 150px; background: #071A4D;
+        clip-path: polygon(50% 0%, 88% 100%, 12% 100%); padding-top: 40px; }
+  .b1 .nm { font-size: 15px; max-width: 170px; line-height: 1.15; }
+  .b1 .who { font-size: 12.5px; margin-top: 2px; }
+  .b2 { left: 500px; top: 252px; width: 480px;  height: 150px; background: #1F5EFF;
+        clip-path: polygon(24% 0%, 76% 0%, 94% 100%, 6% 100%); padding-top: 8px; }
+  .b2 .nm { max-width: 340px; }
+  .b3 { left: 440px; top: 412px; width: 600px;  height: 150px; background: #6EDB00;
+        clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%); padding-top: 10px; }
+  .b3 .nm { max-width: 420px; }
+  .b3, .b3 * { color: #071A4D; }
+  .b3 .lv { opacity: 1; }
+  .b3 .who { font-weight: 600; }
+
+  /* arrows down the pyramid */
+  .arr { position: absolute; font-size: 30px; color: #8A93A8; font-weight: 700; }
+
+  /* side cards */
+  .side { position: absolute; width: 330px; background: #FCFDFF; border: 1.5px solid #D5DCEA;
+          border-radius: 14px; padding: 14px 17px 13px; }
+  .side h2 { font-size: 19px; color: #071A4D; font-weight: 800; margin-bottom: 8px;
+             padding-bottom: 5px; border-bottom: 3px solid; display: inline-block; }
+  .leaf { font-size: 14px; color: #1B2333; margin: 6px 0; padding-left: 16px; position: relative; line-height: 1.34; }
+  .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
+  .leaf b { color: #071A4D; }
+  .blue h2 { border-color: #1F5EFF; } .blue .leaf::before { background: #1F5EFF; }
+  .lime h2 { border-color: #7FB800; } .lime .leaf::before { background: #7FB800; }
+  .left  { left: 55px; }
+  .right { left: 1095px; }
+
+  .focus { position: absolute; left: 0; top: 648px; width: 1480px; height: 250px; }
+  .fcard { position: absolute; top: 0; width: 440px; background: #FCFDFF; border: 1.5px solid #D5DCEA;
+           border-radius: 14px; padding: 13px 16px 12px; }
+  .fcard h2 { font-size: 17px; color: #071A4D; font-weight: 800; margin-bottom: 6px; padding-bottom: 4px;
+              border-bottom: 3px solid; display: inline-block; }
+  .fcard .leaf { font-size: 13.5px; }
+  .f1 { left: 45px; }  .f1 h2 { border-color: #071A4D; } .f1 .leaf::before { background: #071A4D; }
+  .f2 { left: 520px; } .f2 h2 { border-color: #1F5EFF; } .f2 .leaf::before { background: #1F5EFF; }
+  .f3 { left: 995px; } .f3 h2 { border-color: #7FB800; } .f3 .leaf::before { background: #7FB800; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="title">LEVELS OF MANAGEMENT — <span>who sits where, and what each level owns</span></div>
+
+  <!-- Pyramid -->
+  <div class="band b1">
+    <div class="lv">TOP LEVEL</div>
+    <div class="nm">Board &#183; CEO</div>
+    <div class="who">Chairman &#183; MD &#183; CFO &#183; COO</div>
+  </div>
+  <div class="band b2">
+    <div class="lv">MIDDLE LEVEL</div>
+    <div class="nm">Divisional &amp; Departmental Heads</div>
+    <div class="who">Operations managers &#183; Plant superintendents</div>
+  </div>
+  <div class="band b3">
+    <div class="lv">SUPERVISORY (FIRST-LINE) LEVEL</div>
+    <div class="nm">Supervisors &#183; Foremen &#183; In-charges</div>
+    <div class="who">Office managers &#183; direct link to the workforce</div>
+  </div>
+
+  <div class="arr" style="left:726px; top:212px;">&#9660;</div>
+  <div class="arr" style="left:726px; top:372px;">&#9660;</div>
+
+  <!-- Left cards -->
+  <div class="side left blue" style="top:120px">
+    <h2>Top level owns</h2>
+    <div class="leaf"><b>Direction of the whole organisation</b> — vision, objectives and broad policies</div>
+    <div class="leaf"><b>Survival and growth</b> — answerable to shareholders and society for everything</div>
+    <div class="leaf"><b>Titles:</b> Board of Directors, Chairman, CEO, CFO, COO, MD, VP</div>
+  </div>
+
+  <div class="side left lime" style="top:430px">
+    <h2>Middle level owns</h2>
+    <div class="leaf"><b>Interpreting policies</b> — turns top's plans into departmental programmes</div>
+    <div class="leaf"><b>The link</b> — carries orders down and reports up between top and first-line</div>
+    <div class="leaf"><b>Titles:</b> divisional heads, operations management, plant superintendent</div>
+  </div>
+
+  <!-- Right cards -->
+  <div class="side right blue" style="top:120px">
+    <h2>Supervisory level owns</h2>
+    <div class="leaf"><b>Day-to-day running</b> — daily targets and on-the-spot decisions</div>
+    <div class="leaf"><b>People care</b> — safety, work conditions, grievances of workers</div>
+    <div class="leaf"><b>Titles:</b> supervisor, foreman, section in-charge, office manager</div>
+  </div>
+
+  <div class="side right lime" style="top:430px">
+    <h2>One line to remember</h2>
+    <div class="leaf"><b>Authority flows down</b> the pyramid; <b>accountability flows up</b> it</div>
+    <div class="leaf">More <b>strategy</b> at the top, more <b>operations</b> at the base</div>
+    <div class="leaf">Levels exist so that no manager has <b>too many people</b> to supervise directly</div>
+  </div>
+
+  <!-- Bottom focus row -->
+  <div class="focus">
+    <div class="fcard f1">
+      <h2>Top level — decisions about</h2>
+      <div class="leaf">Where the organisation is going (objectives, expansion, diversification)</div>
+      <div class="leaf">Policies for every department; big money decisions</div>
+    </div>
+    <div class="fcard f2">
+      <h2>Middle level — decisions about</h2>
+      <div class="leaf">How each department meets the top's plan (programmes, budgets)</div>
+      <div class="leaf">Matching manpower and machines to the department's share</div>
+    </div>
+    <div class="fcard f3">
+      <h2>Supervisory — decisions about</h2>
+      <div class="leaf">Who does which job today, and how many units must be produced</div>
+      <div class="leaf">Fixing small problems before they reach the middle level</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

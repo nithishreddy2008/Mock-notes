@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: 1060px; position: relative; background: #fff; }
+  svg.wires { position: absolute; inset: 0; width: 1480px; height: 1060px; }
+  .center {
+    position: absolute; left: 555px; top: 385px; width: 370px; height: 100px;
+    background: #071A4D; border-radius: 16px; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(7,26,77,.25);
+    border-bottom: 5px solid #B8FF34;
+  }
+  .center .t { color: #fff; font-size: 26px; font-weight: 800; letter-spacing: .5px; }
+  .center .s { color: #B8FF34; font-size: 13.5px; font-weight: 700; letter-spacing: 2px; margin-top: 4px; }
+  .card {
+    position: absolute; width: 470px; background: #FCFDFF; border: 1.5px solid #D5DCEA;
+    border-radius: 14px; padding: 13px 16px 12px;
+  }
+  .card h2 { font-size: 20px; color: #071A4D; font-weight: 800; margin-bottom: 7px;
+             padding-bottom: 5px; border-bottom: 3px solid; display: inline-block; }
+  .leaf { font-size: 14.5px; color: #1B2333; margin: 5px 0; padding-left: 16px; position: relative; line-height: 1.32; }
+  .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
+  .b .leaf::before { background: #1F5EFF; }
+  .l .leaf::before { background: #7FB800; }
+  .leaf b { color: #071A4D; }
+  .b h2 { border-color: #1F5EFF; }
+  .l h2 { border-color: #7FB800; }
+  .left { left: 30px; }
+  .right { left: 980px; }
+  .exc {
+    position: absolute; left: 530px; top: 880px; width: 420px; background: #FFF3EC;
+    border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px;
+  }
+  .exc h2 { font-size: 17px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
+  .exc .leaf { font-size: 13px; margin: 3px 0; padding-left: 14px; color: #7A2A12; }
+  .exc .leaf::before { background: #D2481F; }
+  .exc b { color: #B4380F; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <svg class="wires" viewBox="0 0 1480 1060">
+    <path d="M 555 420 C 505 420, 520 165, 502 160" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 555 435 C 515 435, 520 430, 502 430" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 555 450 C 505 450, 520 700, 502 705" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 925 420 C 975 420, 960 165, 978 160" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 925 435 C 965 435, 960 430, 978 430" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 925 450 C 975 450, 960 700, 978 705" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 740 485 C 740 640, 740 810, 740 878" fill="none" stroke="#D2481F" stroke-width="2.5" stroke-dasharray="7 5" opacity=".6"/>
+  </svg>
+
+  <div class="center">
+    <div class="t">EVOLUTION</div>
+    <div class="s">UNIT VII &#183; COMPLETE CHAPTER MAP</div>
+  </div>
+
+  <div class="card left b" style="top:52px">
+    <h2>Origin of Life (Miller)</h2>
+    <div class="leaf"><b>Miller&#8211;Urey 1953:</b> CH&#8324; + NH&#8323; + H&#8322; + H&#8322;O vapour + electric spark (~800&#176;C) &#8594; <b>amino acids</b> formed</div>
+    <div class="leaf"><b>Earth ~4.5 bya,</b> no O&#8322; early; life appeared ~4 bya; first cells ~3.8 bya</div>
+    <div class="leaf"><b>Oparin&#8211;Haldane:</b> chemical evolution — life rose step-by-step from non-living molecules</div>
+    <div class="leaf"><b>RNA</b> was the first genetic material (RNA world)</div>
+  </div>
+
+  <div class="card left l" style="top:322px">
+    <h2>Darwin &amp; Natural Selection</h2>
+    <div class="leaf"><b>Beagle voyage 1831&#8211;36,</b> Gal&#225;pagos finch beaks noticed</div>
+    <div class="leaf"><b>Selection needs:</b> tiny heritable variations + struggle for existence + survival &amp; reproduction of the fittest + branching descent</div>
+    <div class="leaf"><b>Wallace</b> co-proposed selection (1858); <b>Origin of Species</b> 1859</div>
+    <div class="leaf"><b>Industrial melanism:</b> dark <i>Biston betularia</i> moths won after soot darkened trunks</div>
+  </div>
+
+  <div class="card left b" style="top:610px">
+    <h2>Evidences — 4 Kinds</h2>
+    <div class="leaf"><b>Palaeontology:</b> fossils; deeper rock = older; <i>Archaeopteryx</i> = missing link</div>
+    <div class="leaf"><b>Embryology:</b> vertebrate embryos share gill pouches &amp; tail early</div>
+    <div class="leaf"><b>Comparative anatomy:</b> homologous (divergent) vs analogous (convergent)</div>
+    <div class="leaf"><b>Industrial melanism:</b> selection happening live, in ecology</div>
+  </div>
+
+  <div class="card right l" style="top:52px">
+    <h2>Adaptive Radiation</h2>
+    <div class="leaf"><b>Idea:</b> one ancestor &#8594; many forms, each fitted to a new niche</div>
+    <div class="leaf"><b>Darwin's finches:</b> seed-eater &#8594; insect-eater, vegetation-eater, woodpecker-like beaks</div>
+    <div class="leaf"><b>Australian marsupials</b> mirror placental look-alikes (mouse, mole, wolf) — parallel radiation</div>
+  </div>
+
+  <div class="card right b" style="top:322px">
+    <h2>Hardy&#8211;Weinberg + 5 Factors</h2>
+    <div class="leaf"><b>p&#178; + 2pq + q&#178; = 1</b> and p + q = 1; p&#178; = AA &#183; 2pq = Aa &#183; q&#178; = aa</div>
+    <div class="leaf"><b>Equilibrium:</b> large population + random mating + no disturbing forces &#8594; frequencies constant</div>
+    <div class="leaf"><b>5 disturbing factors:</b> gene migration, genetic drift, mutation, recombination, natural selection</div>
+    <div class="leaf"><b>Evolution = change in allele frequency</b> between generations</div>
+  </div>
+
+  <div class="card right l" style="top:610px">
+    <h2>Human Evolution Ladder</h2>
+    <div class="leaf"><b>Dryopithecus &amp; Ramapithecus</b> ~15 mya — ape-like, first hominid hints</div>
+    <div class="leaf"><b>Australopithecus "Lucy"</b> ~3&#8211;4 mya, upright walker &#8594; <b>Homo habilis</b> ~2 mya (tools) &#8594; <b>H. erectus</b> ~1.5 mya (meat)</div>
+    <div class="leaf"><b>Neanderthal</b> 100,000&#8211;40,000 ya, buried dead &#8594; <b>Homo sapiens</b> ~75,000 ya; farming ~10,000 ya</div>
+    <div class="leaf">A <b>bush of relatives</b>, not a tidy ladder</div>
+  </div>
+
+  <div class="exc">
+    <h2>COMMON ERRORS &amp; TRAPS</h2>
+    <div class="leaf"><b>Homology &#8800; analogy.</b> Test the structure, not the job: same plan = homologous</div>
+    <div class="leaf"><b>Convergent = analogous; divergent = homologous</b> — students flip the pair</div>
+    <div class="leaf"><b>2pq = heterozygotes.</b> Dominant phenotype = p&#178; + 2pq — a classic numeric trap</div>
+  </div>
+</div>
+</body>
+</html>

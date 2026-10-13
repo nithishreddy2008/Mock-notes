@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: 1060px; position: relative; background: #fff; }
+  svg.wires { position: absolute; inset: 0; width: 1480px; height: 1060px; }
+  .center {
+    position: absolute; left: 540px; top: 385px; width: 400px; height: 100px;
+    background: #071A4D; border-radius: 16px; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(7,26,77,.25);
+    border-bottom: 5px solid #B8FF34;
+  }
+  .center .t { color: #fff; font-size: 23px; font-weight: 800; letter-spacing: .5px; }
+  .center .s { color: #B8FF34; font-size: 13px; font-weight: 700; letter-spacing: 2px; margin-top: 4px; }
+  .card {
+    position: absolute; width: 470px; background: #FCFDFF; border: 1.5px solid #D5DCEA;
+    border-radius: 14px; padding: 13px 16px 12px;
+  }
+  .card h2 { font-size: 19px; color: #071A4D; font-weight: 800; margin-bottom: 7px;
+             padding-bottom: 5px; border-bottom: 3px solid; display: inline-block; }
+  .leaf { font-size: 14px; color: #1B2333; margin: 5px 0; padding-left: 16px; position: relative; line-height: 1.32; }
+  .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
+  .b .leaf::before { background: #1F5EFF; }
+  .l .leaf::before { background: #7FB800; }
+  .leaf b { color: #071A4D; }
+  .b h2 { border-color: #1F5EFF; }
+  .l h2 { border-color: #7FB800; }
+  .left { left: 30px; }
+  .right { left: 980px; }
+  .exc {
+    position: absolute; left: 500px; top: 880px; width: 480px; background: #FFF3EC;
+    border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px;
+  }
+  .exc h2 { font-size: 17px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
+  .exc .leaf { font-size: 12.5px; margin: 3px 0; padding-left: 14px; color: #7A2A12; }
+  .exc .leaf::before { background: #D2481F; }
+  .exc b { color: #B4380F; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <svg class="wires" viewBox="0 0 1480 1060">
+    <path d="M 540 420 C 490 420, 505 165, 502 160" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 540 435 C 500 435, 505 430, 502 430" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 540 450 C 490 450, 505 700, 502 705" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 940 420 C 990 420, 975 165, 978 160" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 940 435 C 980 435, 975 430, 978 430" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 940 450 C 990 450, 975 700, 978 705" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 740 485 C 740 640, 740 810, 740 878" fill="none" stroke="#D2481F" stroke-width="2.5" stroke-dasharray="7 5" opacity=".6"/>
+  </svg>
+
+  <div class="center">
+    <div class="t">ORGANISMS &amp; POPULATIONS</div>
+    <div class="s">UNIT X &#183; COMPLETE CHAPTER MAP</div>
+  </div>
+
+  <div class="card left b" style="top:62px">
+    <h2>The Big Four Abiotic Factors</h2>
+    <div class="leaf"><b>Temperature:</b> eurythermal = wide tolerance &#183; stenothermal = narrow (both names explained in S1)</div>
+    <div class="leaf"><b>Water:</b> salinity &#8776; 5&#8240; inland waters vs 30&#8211;35&#8240; sea &#8212; halophiles handle salt</div>
+    <div class="leaf"><b>Light:</b> photoperiod times flowering &amp; migration; deep sea lives without it</div>
+    <div class="leaf"><b>Soil:</b> texture + composition decide which plants, and so which animals, live there</div>
+  </div>
+
+  <div class="card left l" style="top:322px">
+    <h2>Responses &amp; Adaptations</h2>
+    <div class="leaf"><b>Regulate:</b> hold a steady inside state &#8212; sweat, shiver (mammals, birds)</div>
+    <div class="leaf"><b>Conform:</b> body follows the outside temperature (most invertebrates)</div>
+    <div class="leaf"><b>Migrate:</b> move away for the season &#8212; Siberian birds fly to Bharatpur</div>
+    <div class="leaf"><b>Suspend:</b> pause life &#8212; hibernation (winter), aestivation (summer), diapause (insects)</div>
+  </div>
+
+  <div class="card left b" style="top:600px">
+    <h2>Population Attributes</h2>
+    <div class="leaf"><b>Birth &amp; death rate:</b> per-capita numbers &#8212; 20 births per 1,000 &#8594; 0.02 per year</div>
+    <div class="leaf"><b>Sex ratio:</b> the females-to-males share in the population</div>
+    <div class="leaf"><b>Age pyramids:</b> wide base = growing &#183; even sides = stable &#183; narrow base = declining</div>
+    <div class="leaf"><b>Size when counting fails:</b> use % cover or biomass instead of head-counts</div>
+  </div>
+
+  <div class="card right l" style="top:62px">
+    <h2>Growth Models</h2>
+    <div class="leaf"><b>Exponential:</b> dN/dt = rN &#8594; J-curve, no limits &#8212; crashes follow</div>
+    <div class="leaf"><b>N<sub>t</sub> = N<sub>0</sub> &#215; e<sup>rt</sup></b> &#8212; r = intrinsic rate of natural increase</div>
+    <div class="leaf"><b>Logistic:</b> dN/dt = rN(K&#8722;N)/K &#8594; S-curve capped by K (carrying capacity)</div>
+    <div class="leaf"><b>Fastest at K/2;</b> r-strategists vs K-strategists live by different rules</div>
+  </div>
+
+  <div class="card right b" style="top:322px">
+    <h2>Life History Variation</h2>
+    <div class="leaf"><b>Breed once</b> (bamboo, Pacific salmon) <b>vs many times</b> (birds, mammals)</div>
+    <div class="leaf"><b>Age at first breeding:</b> earlier or later, set by habitat pressures</div>
+    <div class="leaf"><b>Clutch size trade-off:</b> few-precious young vs many-cheap eggs</div>
+    <div class="leaf"><b>Energy budget</b> decides every trade-off a species makes</div>
+  </div>
+
+  <div class="card right l" style="top:600px">
+    <h2>Population Interactions &#8212; 6 Ways</h2>
+    <div class="leaf"><b>Mutualism +/+</b> (lichen, fig&#8211;wasp) &#183; <b>Competition &#8722;/&#8722;</b> (Gause's Paramecium)</div>
+    <div class="leaf"><b>Predation +/&#8722;</b> (tiger&#8211;deer) &#183; <b>Parasitism +/&#8722;</b> (lice, tapeworm)</div>
+    <div class="leaf"><b>Commensalism +/0</b> (cattle egret + cattle) &#183; <b>Amensalism &#8722;/0</b> (Penicillium)</div>
+    <div class="leaf"><b>Same niche &#8594; exclusion;</b> partition the niche &#8594; coexist</div>
+  </div>
+
+  <div class="exc">
+    <h2>COMMON ERRORS &amp; TRAPS</h2>
+    <div class="leaf"><b>Conformers do NOT hold a steady body temperature</b> &#8212; regulators do</div>
+    <div class="leaf"><b>Exponential ignores K;</b> logistic slows near K and stops at K</div>
+    <div class="leaf"><b>Commensalism = +/0, not +/&#8722;</b> &#8212; and amensalism = &#8722;/0 (causer gains nothing)</div>
+    <div class="leaf"><b>Cuckoo&#8211;crow is brood parasitism (+/&#8722;),</b> never commensalism</div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: 1080px; position: relative; background: #fff; }
+  svg.wires { position: absolute; inset: 0; width: 1480px; height: 1080px; }
+  .center {
+    position: absolute; left: 530px; top: 395px; width: 420px; height: 100px;
+    background: #071A4D; border-radius: 16px; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(7,26,77,.25);
+    border-bottom: 5px solid #B8FF34;
+  }
+  .center .t { color: #fff; font-size: 22px; font-weight: 800; letter-spacing: .5px; }
+  .center .s { color: #B8FF34; font-size: 13px; font-weight: 700; letter-spacing: 2px; margin-top: 4px; }
+  .card {
+    position: absolute; width: 470px; background: #FCFDFF; border: 1.5px solid #D5DCEA;
+    border-radius: 14px; padding: 13px 16px 12px;
+  }
+  .card h2 { font-size: 20px; color: #071A4D; font-weight: 800; margin-bottom: 7px;
+             padding-bottom: 5px; border-bottom: 3px solid; display: inline-block; }
+  .leaf { font-size: 14.5px; color: #1B2333; margin: 5px 0; padding-left: 16px; position: relative; line-height: 1.32; }
+  .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
+  .b .leaf::before { background: #1F5EFF; }
+  .l .leaf::before { background: #7FB800; }
+  .leaf b { color: #071A4D; }
+  .b h2 { border-color: #1F5EFF; }
+  .l h2 { border-color: #7FB800; }
+  .left { left: 30px; }
+  .right { left: 980px; }
+  .exc {
+    position: absolute; left: 530px; top: 890px; width: 420px; background: #FFF3EC;
+    border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px;
+  }
+  .exc h2 { font-size: 17px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
+  .exc .leaf { font-size: 13px; margin: 3px 0; padding-left: 14px; color: #7A2A12; }
+  .exc .leaf::before { background: #D2481F; }
+  .exc b { color: #B4380F; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <svg class="wires" viewBox="0 0 1480 1080">
+    <path d="M 530 420 C 480 420, 520 165, 502 160" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 530 435 C 520 435, 520 430, 502 430" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 530 455 C 480 455, 520 705, 502 710" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 950 420 C 1000 420, 960 165, 978 160" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 950 435 C 960 435, 960 430, 978 430" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 950 455 C 1000 455, 960 705, 978 710" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 740 495 C 740 640, 740 820, 740 888" fill="none" stroke="#D2481F" stroke-width="2.5" stroke-dasharray="7 5" opacity=".6"/>
+  </svg>
+
+  <div class="center">
+    <div class="t">BIOTECHNOLOGY: PRINCIPLES &amp; PROCESSES</div>
+    <div class="s">UNIT IX &#183; COMPLETE CHAPTER MAP</div>
+  </div>
+
+  <div class="card left b" style="top:62px">
+    <h2>Principles — the Two Arms</h2>
+    <div class="leaf"><b>EFB definition:</b> using live organisms or enzymes to make a useful product at scale</div>
+    <div class="leaf"><b>Arm 1 — genetic engineering:</b> change the DNA itself — cut, paste and transfer genes</div>
+    <div class="leaf"><b>Arm 2 — bioprocess engineering:</b> grow cells in bioreactors to make product in bulk</div>
+    <div class="leaf"><b>Why not breeding?</b> Breeding mixes whole genomes randomly; rDNA moves one known gene only</div>
+  </div>
+
+  <div class="card left l" style="top:330px">
+    <h2>Tools of rDNA Technology</h2>
+    <div class="leaf"><b>Restriction enzymes:</b> molecular scissors — EcoRI cuts GAATTC into sticky ends</div>
+    <div class="leaf"><b>Cloning vectors:</b> plasmids like pBR322 — need ori, selectable marker, cloning sites</div>
+    <div class="leaf"><b>Competent host:</b> CaCl&#8322; + cold shock makes cell walls let rDNA in</div>
+    <div class="leaf"><b>Other entry routes:</b> micro-injection, gene gun (biolistics), electroporation</div>
+  </div>
+
+  <div class="card left b" style="top:600px">
+    <h2>rDNA Process — End to End</h2>
+    <div class="leaf"><b>Isolate:</b> lysozyme + EDTA open cells; RNase + protease clean the DNA</div>
+    <div class="leaf"><b>Separate:</b> agarose gel — fragments run to the + electrode, smallest run fastest</div>
+    <div class="leaf"><b>Cut + ligate:</b> same enzyme for gene and vector; DNA ligase seals the paste</div>
+    <div class="leaf"><b>Transfer + select:</b> into host; antibiotic plates pick out the transformed cells</div>
+  </div>
+
+  <div class="card right l" style="top:62px">
+    <h2>PCR — the DNA Photocopier</h2>
+    <div class="leaf"><b>Denaturation:</b> ~94–95&#176;C — the two DNA strands separate</div>
+    <div class="leaf"><b>Primer annealing:</b> ~50–60&#176;C — short primers sit on the strand ends</div>
+    <div class="leaf"><b>Extension:</b> 72&#176;C — Taq polymerase (from <i>Thermus aquaticus</i>) builds new DNA</div>
+    <div class="leaf"><b>Exponential:</b> 1 copy &#8594; 2 &#8594; 4 &#8594; 8 &#8594; 16 — each cycle doubles the count</div>
+  </div>
+
+  <div class="card right b" style="top:330px">
+    <h2>Bioreactors</h2>
+    <div class="leaf"><b>Job:</b> grow engineered cells in bulk — a 100–1000 L stirred vessel, not a flask</div>
+    <div class="leaf"><b>Controls:</b> temperature &#183; pH &#183; oxygen &#183; agitator &#183; foam breaker</div>
+    <div class="leaf"><b>Simple stirred-tank:</b> paddles mix; <b>sparged</b> = air bubbled through from below</div>
+    <div class="leaf"><b>Raw material:</b> cheap sugars + salts + optimum conditions = more product</div>
+  </div>
+
+  <div class="card right l" style="top:600px">
+    <h2>Downstream Processing (DSP)</h2>
+    <div class="leaf"><b>Separation:</b> pull the product out of the spent cells and broth</div>
+    <div class="leaf"><b>Purification:</b> strip out water, salts and leftover cell parts</div>
+    <div class="leaf"><b>Formulation:</b> add preservatives; shape it into tablets, syrup or injection</div>
+    <div class="leaf"><b>Quality control + trials:</b> clinical testing before the product reaches a shelf</div>
+  </div>
+
+  <div class="exc">
+    <h2>COMMON ERRORS &amp; TRAPS</h2>
+    <div class="leaf"><b>EcoRI leaves sticky ends,</b> not blunt — the overhang is the whole point of pasting</div>
+    <div class="leaf"><b>Gel separates by size,</b> not charge — the charge (phosphate) is the same for every fragment</div>
+    <div class="leaf"><b>The selectable marker lives in the vector,</b> not in the host cell</div>
+  </div>
+</div>
+</body>
+</html>

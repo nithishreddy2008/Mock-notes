@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: 1080px; position: relative; background: #fff; }
+  svg.wires { position: absolute; inset: 0; width: 1480px; height: 1080px; }
+  .center {
+    position: absolute; left: 555px; top: 430px; width: 370px; height: 100px;
+    background: #071A4D; border-radius: 16px; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(7,26,77,.25);
+    border-bottom: 5px solid #B8FF34;
+  }
+  .center .t { color: #fff; font-size: 26px; font-weight: 800; letter-spacing: .5px; }
+  .center .s { color: #B8FF34; font-size: 13px; font-weight: 700; letter-spacing: 2px; margin-top: 4px; }
+  .card {
+    position: absolute; width: 470px; background: #FCFDFF; border: 1.5px solid #D5DCEA;
+    border-radius: 14px; padding: 13px 16px 12px;
+  }
+  .card h2 { font-size: 19px; color: #071A4D; font-weight: 800; margin-bottom: 7px;
+             padding-bottom: 5px; border-bottom: 3px solid; display: inline-block; }
+  .leaf { font-size: 13.6px; color: #1B2333; margin: 4px 0; padding-left: 16px; position: relative; line-height: 1.3; }
+  .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
+  .b .leaf::before { background: #1F5EFF; }
+  .l .leaf::before { background: #7FB800; }
+  .leaf b { color: #071A4D; }
+  .b h2 { border-color: #1F5EFF; }
+  .l h2 { border-color: #7FB800; }
+  .left { left: 30px; }
+  .right { left: 980px; }
+  .exc {
+    position: absolute; left: 480px; top: 905px; width: 520px; background: #FFF3EC;
+    border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px;
+  }
+  .exc h2 { font-size: 17px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
+  .exc .leaf { font-size: 12.8px; margin: 3.5px 0; padding-left: 14px; color: #7A2A12; }
+  .exc .leaf::before { background: #D2481F; }
+  .exc b { color: #B4380F; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <svg class="wires" viewBox="0 0 1480 1080">
+    <path d="M 555 465 C 505 465, 520 135, 502 132" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 555 480 C 510 480, 522 385, 502 382" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 555 495 C 510 495, 522 645, 502 642" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 925 465 C 975 465, 960 135, 978 132" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 925 480 C 970 480, 958 385, 978 382" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 925 495 C 970 495, 958 645, 978 642" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 740 530 C 740 670, 740 840, 740 903" fill="none" stroke="#D2481F" stroke-width="2.5" stroke-dasharray="7 5" opacity=".6"/>
+  </svg>
+
+  <div class="center">
+    <div class="t">DIRECTING</div>
+    <div class="s">UNIT VII &#183; COMPLETE CHAPTER MAP</div>
+  </div>
+
+  <div class="card left b" style="top:52px">
+    <h2>Meaning &amp; Importance</h2>
+    <div class="leaf"><b>Directing</b> = instructing, guiding, motivating and leading people so they act willingly toward goals</div>
+    <div class="leaf"><b>Importance:</b> initiates action &#183; integrates efforts &#183; means of motivation &#183; helps realise potential &#183; supports change &#183; brings stability &amp; balance</div>
+    <div class="leaf">Directing is <b>continuous</b> and flows from <b>every manager</b> to <b>every subordinate</b></div>
+  </div>
+
+  <div class="card left l" style="top:292px">
+    <h2>Supervision &amp; Motivation</h2>
+    <div class="leaf"><b>Supervisor</b> = the link between workers and management — oversees work, guides, feeds back, settles grievances</div>
+    <div class="leaf"><b>Motivation</b> = the process of stimulating people to act to accomplish goals</div>
+    <div class="leaf"><b>Maslow:</b> physiological $arrow$ security $arrow$ social $arrow$ esteem $arrow$ self-actualisation — a satisfied need no longer motivates</div>
+  </div>
+
+  <div class="card left b" style="top:542px">
+    <h2>Incentives</h2>
+    <div class="leaf"><b>Financial:</b> pay and allowances, bonus, profit-sharing, co-partnership/stock options, perquisites, retirement benefits</div>
+    <div class="leaf"><b>Non-financial:</b> status, career growth, job enrichment, job security, recognition, employee participation, delegation/autonomy</div>
+    <div class="leaf">Money feeds the <b>lower</b> Maslow rungs; recognition and growth feed the <b>upper</b> rungs</div>
+  </div>
+
+  <div class="card right l" style="top:52px">
+    <h2>Leadership — Three Styles</h2>
+    <div class="leaf"><b>Authoritative:</b> leader decides alone, orders flow down — fast, but kills initiative</div>
+    <div class="leaf"><b>Democratic (participative):</b> decisions with the group — commitment rises, decisions slower</div>
+    <div class="leaf"><b>Laissez-faire (free-rein):</b> full freedom to the team — experts thrive, coordination suffers</div>
+    <div class="leaf"><b>Leadership</b> = influencing people to work <b>willingly</b> toward group goals</div>
+  </div>
+
+  <div class="card right b" style="top:312px">
+    <h2>Communication</h2>
+    <div class="leaf"><b>Communication</b> = exchange of ideas, facts and feelings so both sides understand alike</div>
+    <div class="leaf"><b>Formal:</b> official channels, planned networks — accountability clear, but slow</div>
+    <div class="leaf"><b>Informal (grapevine):</b> social, fast, no record — good feedback, but rumours spread</div>
+    <div class="leaf">Process: sender $arrow$ message $arrow$ encoding $arrow$ medium $arrow$ receiver $arrow$ feedback</div>
+  </div>
+
+  <div class="card right l" style="top:582px">
+    <h2>Barriers &amp; Remedies</h2>
+    <div class="leaf"><b>Semantic:</b> words with many meanings, jargon $arrow$ use simple, clear language</div>
+    <div class="leaf"><b>Psychological:</b> premature judgment, distrust, emotions $arrow$ listen, be patient</div>
+    <div class="leaf"><b>Organisational:</b> rigid rules, long chains $arrow$ shorten lines, allow two-way flow</div>
+    <div class="leaf"><b>Personal:</b> fear of authority, lack of confidence $arrow$ build trust, openness</div>
+  </div>
+
+  <div class="exc">
+    <h2>Traps that catch most students</h2>
+    <div class="leaf"><b>Directing is not just ordering</b> — it includes guiding, motivating, leading, communicating</div>
+    <div class="leaf"><b>Satisfied needs stop motivating</b> — the unmet rung is the motivator</div>
+    <div class="leaf"><b>Laissez-faire is not absence of leadership</b> — the leader still sets goals and watches results</div>
+    <div class="leaf"><b>Grapevine = informal communication</b> — it can carry both truth and rumour</div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: 880px; position: relative; background: #fff; }
+  .title { position: absolute; top: 24px; left: 0; width: 1480px; text-align: center;
+           font-size: 26px; font-weight: 800; color: #071A4D; letter-spacing: .5px; }
+  .title span { color: #1F5EFF; }
+  .mix { position: absolute; left: 530px; top: 96px; width: 420px; height: 84px;
+         background: #071A4D; border-radius: 14px; display: flex; flex-direction: column;
+         align-items: center; justify-content: center; border-bottom: 4px solid #B8FF34; }
+  .mix .t { color: #fff; font-size: 22px; font-weight: 800; }
+  .mix .s { color: #B8FF34; font-size: 12.5px; font-weight: 700; letter-spacing: 1.5px; margin-top: 3px; }
+  .pcard { position: absolute; width: 690px; height: 300px; background: #FCFDFF;
+           border: 1.6px solid #C9D3E6; border-radius: 16px; padding: 17px 20px 14px; }
+  .pcard .head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 8px; }
+  .pcard .letter { font-size: 40px; font-weight: 800; color: #1F5EFF; line-height: 1; }
+  .pcard h2 { font-size: 21px; color: #071A4D; font-weight: 800; }
+  .pcard .q { font-size: 13.5px; color: #55607A; font-weight: 700; margin-left: auto; }
+  .pcard .leaf { font-size: 14px; color: #1B2333; margin: 7px 0; padding-left: 16px; position: relative; line-height: 1.35; }
+  .pcard .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
+  .pcard .leaf b { color: #071A4D; }
+  .p1 { left: 45px;  top: 224px; }
+  .p2 { left: 745px; top: 224px; }
+  .p3 { left: 45px;  top: 548px; }
+  .p4 { left: 745px; top: 548px; }
+  .p3 .letter { color: #7FB800; } .p3 .leaf::before { background: #7FB800; }
+  .p2 .leaf::before { background: #1F5EFF; }
+  .p4 .letter { color: #7FB800; } .p4 .leaf::before { background: #7FB800; }
+  .p1 .leaf::before { background: #1F5EFF; }
+  .foot { position: absolute; left: 45px; top: 862px; width: 1390px; background: #EAF0FF;
+          border-left: 5px solid #1F5EFF; border-radius: 0 12px 12px 0; padding: 12px 18px;
+          font-size: 14px; color: #1B2333; }
+  .foot b { color: #071A4D; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="mix"><div class="t">THE MARKETING MIX — 4 Ps</div><div class="s">EVERYTHING THE FIRM TUNES TO SERVE A NEED</div></div>
+
+  <div class="pcard p1">
+    <div class="head"><span class="letter">P1</span><h2>Product</h2><span class="q">WHAT do we offer?</span></div>
+    <div class="leaf"><b>Covers:</b> the good or service plus brand, label, package, design and after-sale support</div>
+    <div class="leaf"><b>Classification:</b> consumer goods (convenience, shopping, specialty) and industrial goods</div>
+    <div class="leaf"><b>Brand:</b> name + mark that identifies the product; <b>label</b> describes it; <b>package</b> protects and sells it</div>
+  </div>
+
+  <div class="pcard p2">
+    <div class="head"><span class="letter">P2</span><h2>Price</h2><span class="q">WHAT does the customer pay?</span></div>
+    <div class="leaf"><b>Covers:</b> list price, discounts, credit terms — the value exchange in money</div>
+    <div class="leaf"><b>Factors:</b> cost of the product, demand and utility, competition, government regulation, pricing objectives, marketing method used</div>
+    <div class="leaf">Price is the only P that <b>earns</b> revenue — the other three Ps spend it</div>
+  </div>
+
+  <div class="pcard p3">
+    <div class="head"><span class="letter">P3</span><h2>Place (Physical Distribution)</h2><span class="q">HOW does it reach the buyer?</span></div>
+    <div class="leaf"><b>Components:</b> transportation, warehousing, inventory control, order processing</div>
+    <div class="leaf"><b>Channel types:</b> zero-level (direct), one-level (retailer), two-level (wholesaler + retailer), three-level (agent too)</div>
+    <div class="leaf"><b>Choice factors:</b> the product's nature, the company's resources, the market's size and spread, competition</div>
+  </div>
+
+  <div class="pcard p4">
+    <div class="head"><span class="letter">P4</span><h2>Promotion</h2><span class="q">HOW do customers learn and buy?</span></div>
+    <div class="leaf"><b>Promotion mix:</b> advertising, personal selling, sales promotion, public relations</div>
+    <div class="leaf"><b>Advertising:</b> paid, non-personal, mass — wide reach, low per-head cost; criticised for adding cost and tempting false claims</div>
+    <div class="leaf"><b>Personal selling</b> persuades face to face; <b>sales promotion</b> offers short-run incentives; <b>PR</b> builds the image for free</div>
+  </div>
+
+  <div class="foot"><b>Exam anchor:</b> "Which element of the marketing mix does this action belong to?" — decide first whether the action concerns <b>what</b> is offered (product), <b>what</b> is charged (price), <b>where</b> it travels (place), or <b>how</b> people hear about it (promotion).</div>
+</div>
+</body>
+</html>

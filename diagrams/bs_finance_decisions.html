@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: 880px; position: relative; background: #fff; }
+  .title { position: absolute; top: 24px; left: 0; width: 1480px; text-align: center;
+           font-size: 26px; font-weight: 800; color: #071A4D; letter-spacing: .5px; }
+  .title span { color: #1F5EFF; }
+  .fm { position: absolute; left: 540px; top: 88px; width: 400px; height: 76px;
+        background: #071A4D; border-radius: 14px; display: flex; flex-direction: column;
+        align-items: center; justify-content: center; border-bottom: 4px solid #B8FF34; }
+  .fm .t { color: #fff; font-size: 21px; font-weight: 800; }
+  .fm .s { color: #B8FF34; font-size: 12.5px; font-weight: 700; letter-spacing: 1.5px; margin-top: 3px; }
+  .card { position: absolute; width: 440px; height: 610px; background: #FCFDFF;
+          border: 1.6px solid #C9D3E6; border-radius: 16px; padding: 17px 18px 14px; }
+  .card h2 { font-size: 20px; color: #071A4D; font-weight: 800; margin-bottom: 3px; }
+  .card .tag { display: inline-block; background: #EAF0FF; color: #1F5EFF; font-size: 12.5px;
+               font-weight: 800; border-radius: 8px; padding: 3px 10px; margin-bottom: 9px; }
+  .card .leaf { font-size: 14px; color: #1B2333; margin: 8px 0; padding-left: 16px; position: relative; line-height: 1.35; }
+  .card .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
+  .card .leaf b { color: #071A4D; }
+  .c1 { left: 45px; }  .c1 .leaf::before { background: #1F5EFF; }
+  .c2 { left: 520px; } .c2 .leaf::before { background: #7FB800; }
+  .c3 { left: 995px; } .c3 .leaf::before { background: #D2481F; }
+  .c3 .tag { background: #FFF3EC; color: #D2481F; }
+  svg.wires { position: absolute; inset: 0; width: 1480px; height: 880px; }
+  .foot { position: absolute; left: 45px; top: 760px; width: 1390px; background: #EAF0FF;
+          border-left: 5px solid #1F5EFF; border-radius: 0 12px 12px 0; padding: 13px 18px;
+          font-size: 14.5px; color: #1B2333; }
+  .foot b { color: #071A4D; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <svg class="wires" viewBox="0 0 1480 880">
+    <path d="M 620 166 C 560 200, 420 210, 300 214" fill="none" stroke="#1F5EFF" stroke-width="3" opacity=".55"/>
+    <path d="M 740 166 L 740 212" fill="none" stroke="#7FB800" stroke-width="3" opacity=".55"/>
+    <path d="M 860 166 C 920 200, 1060 210, 1180 214" fill="none" stroke="#D2481F" stroke-width="3" opacity=".55"/>
+  </svg>
+
+  <div class="fm"><div class="t">FINANCIAL MANAGEMENT</div><div class="s">THREE DECISIONS · EVERY ONE AFFECTS WEALTH</div></div>
+
+  <div class="card c1">
+    <h2>1. Investment Decision</h2>
+    <span class="tag">WHERE TO PUT THE MONEY</span>
+    <div class="leaf"><b>Long-term (capital budgeting):</b> which machines, plants and projects to buy — money locked in for years</div>
+    <div class="leaf"><b>Short-term:</b> how much to keep in current assets — cash, inventory, receivables</div>
+    <div class="leaf"><b>Factor — cash flows:</b> the project must generate usable inflows, not just paper profits</div>
+    <div class="leaf"><b>Factor — rate of return:</b> compare the expected return with the cost of funds</div>
+    <div class="leaf"><b>Factor — risk:</b> higher return usually hides higher risk — weigh both together</div>
+    <div class="leaf"><b>The rule:</b> invest where return beats cost at acceptable risk</div>
+  </div>
+
+  <div class="card c2">
+    <h2>2. Financing Decision</h2>
+    <span class="tag">WHERE THE MONEY COMES FROM</span>
+    <div class="leaf"><b>The mix:</b> how much from <b>shareholders' equity</b> and how much from <b>borrowed debt</b></div>
+    <div class="leaf"><b>Factor — cost:</b> the cheapest source wins — debt usually costs less than equity</div>
+    <div class="leaf"><b>Factor — risk:</b> debt brings fixed interest and repayment duty — more risk</div>
+    <div class="leaf"><b>Factor — control:</b> more equity = more owners sharing control; debt dilutes nothing</div>
+    <div class="leaf"><b>Factor — floatation cost:</b> issuing shares or debentures costs money — count it</div>
+    <div class="leaf"><b>Factor — state of capital markets:</b> a bullish market welcomes equity issues</div>
+  </div>
+
+  <div class="card c3">
+    <h2>3. Dividend Decision</h2>
+    <span class="tag">DISTRIBUTE OR RETAIN</span>
+    <div class="leaf"><b>The choice:</b> pay profit to shareholders as dividends — or <b>retain</b> it inside the firm for growth</div>
+    <div class="leaf"><b>Factor — earnings:</b> stable, healthy earnings support steady dividends</div>
+    <div class="leaf"><b>Factor — growth prospects:</b> firms with big expansion plans prefer to retain</div>
+    <div class="leaf"><b>Factor — cash flow position:</b> dividends need cash, not just profits on paper</div>
+    <div class="leaf"><b>Factor — shareholder preference:</b> income-seekers want dividends; growth-seekers accept retention</div>
+    <div class="leaf"><b>Factor — taxation:</b> tax rates on dividends vs retention tilt the choice</div>
+  </div>
+
+  <div class="foot"><b>Exam anchor:</b> every question hands you a situation — "a firm with stable earnings and no expansion plans declares a high dividend" — and asks which <b>decision</b> and which <b>factor</b> it shows. Memorise the three headings and their factor lists as one package.</div>
+</div>
+</body>
+</html>

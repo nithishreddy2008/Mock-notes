@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: 960px; position: relative; background: #fff; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div style="text-align:center; font-size:24px; font-weight:800; color:#071A4D; padding-top:20px;">THE DANIELL CELL — Zn | Zn&#178;&#8314; (1 M) || Cu&#178;&#8314; (1 M) | Cu</div>
+  <div style="text-align:center; font-size:14px; color:#5A6478; margin-top:4px;">A galvanic cell: the spontaneous reaction Zn(s) + Cu&#178;&#8314;(aq) &#8594; Zn&#178;&#8314;(aq) + Cu(s) becomes a steady electric current</div>
+
+  <svg width="1480" height="880" viewBox="0 0 1480 880" style="position:absolute; top:80px; left:0;">
+    <!-- ===== wires from electrode tops up to the bulb ===== -->
+    <path d="M 323 265 L 323 110 L 690 110" fill="none" stroke="#071A4D" stroke-width="5"/>
+    <path d="M 790 110 L 1157 110 L 1157 265" fill="none" stroke="#071A4D" stroke-width="5"/>
+    <!-- electron flow arrows on the wire -->
+    <polygon points="470,101 496,110 470,119" fill="#1F5EFF"/>
+    <polygon points="940,101 966,110 940,119" fill="#1F5EFF"/>
+    <text x="380" y="92" font-size="15" font-weight="800" fill="#1F5EFF">electrons (e&#8315;) flow this way</text>
+    <text x="1010" y="92" font-size="15" font-weight="800" fill="#1F5EFF">e&#8315; arrive here</text>
+
+    <!-- ===== bulb / load ===== -->
+    <circle cx="740" cy="110" r="47" fill="#FFFBEA" stroke="#071A4D" stroke-width="4"/>
+    <text x="740" y="120" font-size="26" font-weight="800" fill="#B4380F" text-anchor="middle">e&#8315;</text>
+    <text x="740" y="185" font-size="14" font-weight="700" fill="#5A6478" text-anchor="middle">the lamp glows: chemistry is doing the pushing</text>
+
+    <!-- ===== left beaker with ZnSO4 ===== -->
+    <path d="M 130 265 L 130 660 Q 130 690 160 690 L 480 690 Q 510 690 510 660 L 510 265" fill="#EAF0FF" stroke="#5A6478" stroke-width="3"/>
+    <path d="M 132 560 L 508 560 L 508 660 Q 508 688 480 688 L 160 688 Q 132 688 132 660 Z" fill="#DCE7FB"/>
+    <text x="150" y="545" font-size="15.5" font-weight="700" fill="#1F5EFF">ZnSO&#8324; (1 M)</text>
+
+    <!-- ===== right beaker with CuSO4 ===== -->
+    <path d="M 970 265 L 970 660 Q 970 690 1000 690 L 1320 690 Q 1350 690 1350 660 L 1350 265" fill="#FDF2E7" stroke="#5A6478" stroke-width="3"/>
+    <path d="M 972 560 L 1348 560 L 1348 660 Q 1348 688 1320 688 L 1000 688 Q 972 688 972 660 Z" fill="#F9E4CB"/>
+    <text x="1000" y="545" font-size="15.5" font-weight="700" fill="#B4560F">CuSO&#8324; (1 M)</text>
+
+    <!-- ===== electrodes ===== -->
+    <rect x="300" y="290" width="46" height="330" rx="6" fill="url(#zng)" stroke="#5A6478" stroke-width="2"/>
+    <rect x="1134" y="290" width="46" height="330" rx="6" fill="url(#cug)" stroke="#8A4A1D" stroke-width="2"/>
+    <defs>
+      <linearGradient id="zng" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0" stop-color="#9AA4BC"/><stop offset="1" stop-color="#C7CEDD"/>
+      </linearGradient>
+      <linearGradient id="cug" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0" stop-color="#C77B3F"/><stop offset="1" stop-color="#E3A468"/>
+      </linearGradient>
+    </defs>
+    <text x="270" y="320" font-size="17" font-weight="800" fill="#071A4D" text-anchor="end">Zn anode</text>
+    <text x="270" y="343" font-size="15" font-weight="800" fill="#B4380F" text-anchor="end">NEGATIVE (&#8722;)</text>
+    <text x="270" y="366" font-size="14" font-weight="600" fill="#5A6478" text-anchor="end">oxidation &#183; the Zn rod slowly dissolves</text>
+    <text x="1210" y="320" font-size="17" font-weight="800" fill="#071A4D">Cu cathode</text>
+    <text x="1210" y="343" font-size="15" font-weight="800" fill="#B4380F">POSITIVE (+)</text>
+    <text x="1210" y="366" font-size="14" font-weight="600" fill="#5A6478">reduction &#183; Cu deposits on the rod</text>
+    <!-- deposit hint on cathode -->
+    
+
+    <!-- ===== salt bridge (inverted U, jelly body) ===== -->
+    <path d="M 490 620 L 490 330 L 990 330 L 990 620" fill="none" stroke="#7FB800" stroke-width="34" opacity="0.95"/>
+    <path d="M 490 620 L 490 330 L 990 330 L 990 620" fill="none" stroke="#4E7A00" stroke-width="34" opacity="0.18"/>
+    <text x="740" y="310" font-size="16" font-weight="800" fill="#4E7A00" text-anchor="middle">SALT BRIDGE &#8212; KCl set in agar jelly</text>
+    <text x="740" y="440" font-size="15" font-weight="700" fill="#4E7A00" text-anchor="middle">K&#8314; drifts &#8594; towards the Cu side</text>
+    <text x="740" y="466" font-size="15" font-weight="700" fill="#4E7A00" text-anchor="middle">Cl&#8315; drifts &#8592; towards the Zn side</text>
+
+    <!-- ===== half reactions ===== -->
+    <text x="320" y="735" font-size="16.5" font-weight="800" fill="#B4380F" text-anchor="middle">OXIDATION: Zn(s) &#8594; Zn&#178;&#8314;(aq) + 2e&#8315;</text>
+    <text x="1160" y="735" font-size="16.5" font-weight="800" fill="#4E7A00" text-anchor="middle">REDUCTION: Cu&#178;&#8314;(aq) + 2e&#8315; &#8594; Cu(s)</text>
+    <text x="320" y="758" font-size="13.5" fill="#5A6478" text-anchor="middle">E&#176;(Zn&#178;&#8314;/Zn) = &#8722;0.76 V</text>
+    <text x="1160" y="758" font-size="13.5" fill="#5A6478" text-anchor="middle">E&#176;(Cu&#178;&#8314;/Cu) = +0.34 V</text>
+
+    <!-- ===== net reaction banner ===== -->
+    <rect x="330" y="790" width="820" height="62" rx="12" fill="#071A4D"/>
+    <text x="740" y="822" font-size="18" font-weight="800" fill="#FFFFFF" text-anchor="middle">NET: Zn(s) + Cu&#178;&#8314;(aq) &#8594; Zn&#178;&#8314;(aq) + Cu(s)</text>
+    <text x="740" y="843" font-size="14" font-weight="700" fill="#B8FF34" text-anchor="middle">E&#176;cell = 0.34 &#8722; (&#8722;0.76) = +1.10 V &#8658; spontaneous</text>
+  </svg>
+
+  <!-- side cards -->
+  <div style="position:absolute; left:36px; top:120px; width:290px; background:#FCFDFF; border:1.5px solid #D5DCEA; border-radius:12px; padding:11px 14px;">
+    <div style="font-size:15.5px; color:#071A4D; font-weight:800; margin-bottom:4px;">Why a salt bridge?</div>
+    <div style="font-size:13.5px; color:#1B2333; line-height:1.42;">Keeps both half-cells <b>electrically neutral</b> and completes the circuit. Without it, charge piles up and the current stops within seconds.</div>
+  </div>
+  <div style="position:absolute; left:1154px; top:120px; width:290px; background:#FCFDFF; border:1.5px solid #D5DCEA; border-radius:12px; padding:11px 14px;">
+    <div style="font-size:15.5px; color:#071A4D; font-weight:800; margin-bottom:4px;">Cell notation, one line</div>
+    <div style="font-size:13.5px; color:#1B2333; line-height:1.42;">Anode | anode solution || cathode solution | cathode. Writing 1 M means standard conditions &#8212; the cell then delivers its <b>standard</b> potential E&#176;.</div>
+  </div>
+</div>
+</body>
+</html>

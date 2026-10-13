@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: 1080px; position: relative; background: #fff; }
+  svg.wires { position: absolute; inset: 0; width: 1480px; height: 1080px; }
+  .center {
+    position: absolute; left: 555px; top: 430px; width: 370px; height: 100px;
+    background: #071A4D; border-radius: 16px; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(7,26,77,.25);
+    border-bottom: 5px solid #B8FF34;
+  }
+  .center .t { color: #fff; font-size: 26px; font-weight: 800; letter-spacing: .5px; }
+  .center .s { color: #B8FF34; font-size: 13px; font-weight: 700; letter-spacing: 2px; margin-top: 4px; }
+  .card {
+    position: absolute; width: 470px; background: #FCFDFF; border: 1.5px solid #D5DCEA;
+    border-radius: 14px; padding: 13px 16px 12px;
+  }
+  .card h2 { font-size: 19px; color: #071A4D; font-weight: 800; margin-bottom: 7px;
+             padding-bottom: 5px; border-bottom: 3px solid; display: inline-block; }
+  .leaf { font-size: 13.6px; color: #1B2333; margin: 4px 0; padding-left: 16px; position: relative; line-height: 1.3; }
+  .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
+  .b .leaf::before { background: #1F5EFF; }
+  .l .leaf::before { background: #7FB800; }
+  .leaf b { color: #071A4D; }
+  .b h2 { border-color: #1F5EFF; }
+  .l h2 { border-color: #7FB800; }
+  .left { left: 30px; }
+  .right { left: 980px; }
+  .exc {
+    position: absolute; left: 480px; top: 905px; width: 520px; background: #FFF3EC;
+    border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px;
+  }
+  .exc h2 { font-size: 17px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
+  .exc .leaf { font-size: 12.8px; margin: 3.5px 0; padding-left: 14px; color: #7A2A12; }
+  .exc .leaf::before { background: #D2481F; }
+  .exc b { color: #B4380F; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <svg class="wires" viewBox="0 0 1480 1080">
+    <path d="M 555 465 C 505 465, 520 135, 502 132" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 555 480 C 510 480, 522 385, 502 382" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 555 495 C 510 495, 522 645, 502 642" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 925 465 C 975 465, 960 135, 978 132" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 925 480 C 970 480, 958 385, 978 382" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 925 495 C 970 495, 958 645, 978 642" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 740 530 C 740 670, 740 840, 740 903" fill="none" stroke="#D2481F" stroke-width="2.5" stroke-dasharray="7 5" opacity=".6"/>
+  </svg>
+
+  <div class="center">
+    <div class="t">STAFFING</div>
+    <div class="s">UNIT VI &#183; COMPLETE CHAPTER MAP</div>
+  </div>
+
+  <div class="card left b" style="top:52px">
+    <h2>Meaning &amp; Staffing within HRM</h2>
+    <div class="leaf"><b>Staffing</b> = putting the <b>right person at the right job</b> — filling and keeping filled every position</div>
+    <div class="leaf"><b>HRM is wider:</b> it also covers job design, welfare, labour relations, grievance handling — staffing is the <b>core part</b> of HRM</div>
+    <div class="leaf"><b>Importance:</b> right people = performance &#183; optimum use of human resources &#183; motivation &#183; survival &amp; growth</div>
+  </div>
+
+  <div class="card left l" style="top:302px">
+    <h2>Recruitment — Positive Process</h2>
+    <div class="leaf"><b>Recruitment</b> = searching for candidates and <b>stimulating them to apply</b> — it gathers applicants (positive)</div>
+    <div class="leaf"><b>Internal sources:</b> transfer (same level) + promotion (higher level)</div>
+    <div class="leaf">+ motivates, known person, cheap, quick &#8594; − no fresh talent, limited choice, inbreeding, politics</div>
+    <div class="leaf"><b>External sources:</b> ads, employment exchanges, agencies, campus, web portals, labour contractors, factory gate, recommendations</div>
+    <div class="leaf">+ fresh talent, wide choice, new ideas &#8594; − costly, slow, demotivates existing staff</div>
+  </div>
+
+  <div class="card left b" style="top:592px">
+    <h2>Selection — Negative Process</h2>
+    <div class="leaf"><b>Selection</b> = choosing the most suitable and <b>rejecting the unsuitable</b> — each step is a hurdle</div>
+    <div class="leaf"><b>Process:</b> screening $arrow$ tests (intelligence, aptitude, personality, trade) $arrow$ interview $arrow$ reference &amp; background checks $arrow$ selection decision $arrow$ medical exam $arrow$ job offer $arrow$ employment contract</div>
+  </div>
+
+  <div class="card right l" style="top:52px">
+    <h2>Staffing Process (8 Steps)</h2>
+    <div class="leaf"><b>1</b> Estimate manpower requirements &#183; <b>2</b> Recruitment &#183; <b>3</b> Selection &#183; <b>4</b> Placement &amp; orientation</div>
+    <div class="leaf"><b>5</b> Training &amp; development &#183; <b>6</b> Performance appraisal &#183; <b>7</b> Promotion &amp; career planning &#183; <b>8</b> Compensation</div>
+    <div class="leaf">Starts with <b>counting needs</b> (workload + workforce analysis); ends with <b>paying and growing</b> people</div>
+  </div>
+
+  <div class="card right b" style="top:302px">
+    <h2>On-the-Job Training Methods</h2>
+    <div class="leaf"><b>Apprenticeship:</b> trainee works under a master for a trade — long period, learns the craft</div>
+    <div class="leaf"><b>Internship:</b> theory-trained student works in a real firm — joins knowledge with practice</div>
+    <div class="leaf"><b>Job rotation:</b> moved job to job for all-round exposure — builds versatile managers</div>
+    <div class="leaf"><b>Induction training:</b> the new employee's introduction to job, colleagues and rules</div>
+  </div>
+
+  <div class="card right l" style="top:592px">
+    <h2>Off-the-Job Methods &amp; Training vs Development</h2>
+    <div class="leaf"><b>Classroom lectures / conferences:</b> theory away from the workplace — knowledge transmission</div>
+    <div class="leaf"><b>Vestibule training:</b> train on <b>dummy machines in a training room</b> — real equipment feel, zero production risk</div>
+    <div class="leaf"><b>Training</b> = skills for the <b>current job</b> (technical) $arrow$ <b>Development</b> = overall growth for <b>future roles</b> (conceptual)</div>
+  </div>
+
+  <div class="exc">
+    <h2>Traps that catch most students</h2>
+    <div class="leaf"><b>Recruitment is positive</b> (invite applicants); <b>selection is negative</b> (reject the unfit) — do not swap them</div>
+    <div class="leaf"><b>Transfer</b> = same level move; <b>promotion</b> = higher post + pay — both internal sources</div>
+    <div class="leaf"><b>Vestibule</b> = dummy machines off the floor; <b>internship</b> = student in a real firm</div>
+    <div class="leaf"><b>Selection tests</b> come <b>before</b> the interview; the <b>job offer</b> comes after the medical exam</div>
+  </div>
+</div>
+</body>
+</html>

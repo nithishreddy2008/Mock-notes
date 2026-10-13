@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: 1080px; position: relative; background: #fff; }
+  svg.wires { position: absolute; inset: 0; width: 1480px; height: 1080px; }
+  .center {
+    position: absolute; left: 555px; top: 430px; width: 370px; height: 100px;
+    background: #071A4D; border-radius: 16px; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(7,26,77,.25);
+    border-bottom: 5px solid #B8FF34;
+  }
+  .center .t { color: #fff; font-size: 26px; font-weight: 800; letter-spacing: .5px; }
+  .center .s { color: #B8FF34; font-size: 13px; font-weight: 700; letter-spacing: 2px; margin-top: 4px; }
+  .card {
+    position: absolute; width: 470px; background: #FCFDFF; border: 1.5px solid #D5DCEA;
+    border-radius: 14px; padding: 13px 16px 12px;
+  }
+  .card h2 { font-size: 19px; color: #071A4D; font-weight: 800; margin-bottom: 7px;
+             padding-bottom: 5px; border-bottom: 3px solid; display: inline-block; }
+  .leaf { font-size: 13.6px; color: #1B2333; margin: 4px 0; padding-left: 16px; position: relative; line-height: 1.3; }
+  .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
+  .b .leaf::before { background: #1F5EFF; }
+  .l .leaf::before { background: #7FB800; }
+  .leaf b { color: #071A4D; }
+  .b h2 { border-color: #1F5EFF; }
+  .l h2 { border-color: #7FB800; }
+  .left { left: 30px; }
+  .right { left: 980px; }
+  .exc {
+    position: absolute; left: 480px; top: 905px; width: 520px; background: #FFF3EC;
+    border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px;
+  }
+  .exc h2 { font-size: 17px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
+  .exc .leaf { font-size: 12.8px; margin: 3.5px 0; padding-left: 14px; color: #7A2A12; }
+  .exc .leaf::before { background: #D2481F; }
+  .exc b { color: #B4380F; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <svg class="wires" viewBox="0 0 1480 1080">
+    <path d="M 555 465 C 505 465, 520 135, 502 132" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 555 480 C 510 480, 522 385, 502 382" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 555 495 C 510 495, 522 645, 502 642" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 925 465 C 975 465, 960 135, 978 132" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 925 480 C 970 480, 958 385, 978 382" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 925 495 C 970 495, 958 645, 978 642" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 740 530 C 740 670, 740 840, 740 903" fill="none" stroke="#D2481F" stroke-width="2.5" stroke-dasharray="7 5" opacity=".6"/>
+  </svg>
+
+  <div class="center">
+    <div class="t">ORGANISING</div>
+    <div class="s">UNIT V &#183; COMPLETE CHAPTER MAP</div>
+  </div>
+
+  <div class="card left b" style="top:52px">
+    <h2>Meaning, Process &amp; Importance</h2>
+    <div class="leaf"><b>Organising</b> = defining and grouping activities and establishing authority relationships among them</div>
+    <div class="leaf"><b>Process (4 steps):</b> divide work &#8594; departmentalise &#8594; assign duties &#8594; establish reporting relationships</div>
+    <div class="leaf"><b>Importance:</b> specialisation &#183; clarity in relationships &#183; optimum use of resources &#183; adaptation to change &#183; effective administration &#183; growth &#183; development of personnel</div>
+  </div>
+
+  <div class="card left l" style="top:292px">
+    <h2>Structures: Functional vs Divisional</h2>
+    <div class="leaf"><b>Functional:</b> grouped by functions — production, marketing, finance, HR. Best for <b>large, single-product</b> firms</div>
+    <div class="leaf">+ specialisation, efficiency, less duplication &#8594; − one function's interest dominates, coordination harder</div>
+    <div class="leaf"><b>Divisional:</b> grouped by product lines or regions, each with its own functions. Best for <b>multi-product</b> firms</div>
+    <div class="leaf">+ product accountability, fast decisions, easy expansion &#8594; − duplication of resources, rivalry, high cost</div>
+  </div>
+
+  <div class="card left b" style="top:542px">
+    <h2>Formal vs Informal Organisation</h2>
+    <div class="leaf"><b>Formal:</b> deliberately designed structure of authority-responsibility relationships; shown in the org chart</div>
+    <div class="leaf">+ fixed accountability, no overlapping &#8594; − rigid, slow, impersonal</div>
+    <div class="leaf"><b>Informal:</b> arises from social interaction — friends at work, no written rules, fast grapevine</div>
+    <div class="leaf">+ speed, belongingness, fills gaps &#8594; − rumours, resistance to change, no accountability</div>
+  </div>
+
+  <div class="card right l" style="top:52px">
+    <h2>Delegation — Elements &amp; Importance</h2>
+    <div class="leaf"><b>Delegation</b> = manager grants authority to a subordinate to perform assigned duties</div>
+    <div class="leaf"><b>Elements (3):</b> Authority (right to decide) &#8594; Responsibility (duty to perform) &#8594; Accountability (answerability — <b>cannot be delegated!</b>)</div>
+    <div class="leaf">Authority = responsibility; accountability flows <b>always upward</b> to the boss</div>
+    <div class="leaf"><b>Importance:</b> reduces workload &#8594; employee development &#8594; quick decisions &#8594; expansion &#183; specialisation &#8594; basis of hierarchy</div>
+  </div>
+
+  <div class="card right b" style="top:302px">
+    <h2>Decentralisation — Meaning &amp; Importance</h2>
+    <div class="leaf"><b>Decentralisation</b> = systematic dispersal of decision-making authority to <b>all levels</b> of management</div>
+    <div class="leaf">It extends delegation to the <b>whole organisation</b> — the top deliberately keeps less power</div>
+    <div class="leaf"><b>Importance:</b> develops initiative at all levels &#8594; develops future managers &#8594; quick decisions at the spot &#8594; relieves top of routine burden &#8594; better control (profit centres) &#8594; growth</div>
+  </div>
+
+  <div class="card right l" style="top:562px">
+    <h2>Delegation vs Decentralisation</h2>
+    <div class="leaf"><b>Origin:</b> delegation arises from <b>law/position</b> (compulsory); decentralisation is the <b>top's voluntary choice</b></div>
+    <div class="leaf"><b>Scope:</b> delegation is between <b>two individuals</b>; decentralisation spreads across <b>all levels</b></div>
+    <div class="leaf"><b>Control:</b> delegation keeps control with the boss; decentralisation needs <b>result-based control</b> (ROIs)</div>
+    <div class="leaf"><b>Freedom:</b> delegation is more freedom for subordinates; decentralisation is the <b>maximum</b></div>
+  </div>
+
+  <div class="exc">
+    <h2>Traps that catch most students</h2>
+    <div class="leaf"><b>Accountability cannot be delegated</b> — the boss stays answerable even after passing the duty</div>
+    <div class="leaf"><b>Authority and responsibility must match</b> — authority without responsibility corrupts; responsibility without authority frustrates</div>
+    <div class="leaf"><b>Delegation = compulsory</b> (all managers delegate); <b>decentralisation = optional</b> (top management's policy choice)</div>
+    <div class="leaf"><b>Informal organisation has no org chart</b> — it grows from friendships, not design; and it can spread <b>rumours</b></div>
+  </div>
+</div>
+</body>
+</html>

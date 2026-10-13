@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; background: #fff; padding: 26px 30px 28px; }
+  .title { background: #071A4D; border-radius: 14px; padding: 16px 24px 14px; margin-bottom: 20px;
+           border-bottom: 5px solid #B8FF34; display: flex; align-items: baseline; justify-content: space-between; }
+  .title .t { color: #fff; font-size: 27px; font-weight: 800; letter-spacing: .5px; }
+  .title .s { color: #B8FF34; font-size: 13.5px; font-weight: 700; letter-spacing: 1.6px; }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .m { background: #FCFDFF; border: 1.5px solid #D5DCEA; border-radius: 14px; padding: 14px 16px 13px; }
+  .m h2 { color: #071A4D; font-size: 23px; font-weight: 800; letter-spacing: .5px; }
+  .m .full { color: #1F5EFF; font-size: 13px; font-weight: 700; margin: 2px 0 9px; }
+  .row { margin: 7px 0; font-size: 13.5px; color: #1B2333; line-height: 1.34; }
+  .row .k { display: inline-block; background: #EEF1F8; color: #071A4D; font-size: 11px; font-weight: 800;
+            letter-spacing: .8px; border-radius: 6px; padding: 2px 7px; margin-bottom: 3px; }
+  .route { display: inline-block; background: #F6FFDF; border: 1.5px solid #7FB800; color: #4A6B00;
+           font-size: 12.5px; font-weight: 800; border-radius: 7px; padding: 2px 8px; }
+  .m b { color: #071A4D; }
+  .m.check { background: #071A4D; border-color: #071A4D; }
+  .m.check h2 { color: #B8FF34; font-size: 19px; }
+  .m.check .row { color: #E6ECF8; }
+  .m.check .row .k { background: rgba(255,255,255,.12); color: #B8FF34; }
+  .m.check .route { background: rgba(184,255,52,.14); border-color: #B8FF34; color: #B8FF34; }
+  .m.check b { color: #fff; }
+  .strip { margin-top: 20px; background: #071A4D; border-radius: 14px; padding: 14px 24px;
+           border-left: 8px solid #B8FF34; color: #fff; font-size: 15.5px; font-weight: 600; line-height: 1.4; }
+  .strip b { color: #B8FF34; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="title">
+    <div class="t">ASSISTED REPRODUCTIVE TECHNOLOGIES AT A GLANCE</div>
+    <div class="s">UNIT VI &#183; INFERTILITY SPECIALISTS' TOOLKIT</div>
+  </div>
+
+  <div class="grid">
+    <div class="m">
+      <h2>IVF</h2>
+      <div class="full">In Vitro Fertilisation — &quot;in glass&quot;, outside the body</div>
+      <div class="row"><span class="k">TRANSFERRED</span><br><b>Embryo grown in glassware</b>, moved at 8 or more blastomeres.</div>
+      <div class="row"><span class="k">WHERE IT GOES</span><br><span class="route">INTO THE UTERUS</span></div>
+      <div class="row"><span class="k">BEST WHEN</span><br>Tubes are blocked or counts are very low — the famous <b>test-tube baby</b> method.</div>
+    </div>
+
+    <div class="m">
+      <h2>ZIFT</h2>
+      <div class="full">Zygote Intrafallopian Transfer</div>
+      <div class="row"><span class="k">TRANSFERRED</span><br><b>Zygote or early embryo with up to 8 blastomeres</b>.</div>
+      <div class="row"><span class="k">WHERE IT GOES</span><br><span class="route">INTO THE FALLOPIAN TUBE</span></div>
+      <div class="row"><span class="k">BEST WHEN</span><br>Tubes are healthy — the zygote then rides naturally down to the uterus.</div>
+    </div>
+
+    <div class="m">
+      <h2>GIFT</h2>
+      <div class="full">Gamete Intrafallopian Transfer</div>
+      <div class="row"><span class="k">TRANSFERRED</span><br><b>Unfertilised gametes — egg + sperm</b>; no lab fertilisation step.</div>
+      <div class="row"><span class="k">WHERE IT GOES</span><br><span class="route">INTO THE FALLOPIAN TUBE</span></div>
+      <div class="row"><span class="k">BEST WHEN</span><br>Fertilisation should happen <b>inside the body</b>, in the tube itself.</div>
+    </div>
+
+    <div class="m">
+      <h2>ICSI</h2>
+      <div class="full">Intra Cytoplasmic Sperm Injection</div>
+      <div class="row"><span class="k">TRANSFERRED</span><br><b>One sperm injected straight into the egg's cytoplasm</b> — a lab step added to IVF.</div>
+      <div class="row"><span class="k">WHERE IT GOES</span><br><span class="route">EMBRYO INTO THE UTERUS</span></div>
+      <div class="row"><span class="k">BEST WHEN</span><br>Sperm cannot enter the egg on its own.</div>
+    </div>
+
+    <div class="m">
+      <h2>IUI</h2>
+      <div class="full">Intra Uterine Insemination</div>
+      <div class="row"><span class="k">TRANSFERRED</span><br><b>Prepared semen</b> — washed and concentrated in the lab.</div>
+      <div class="row"><span class="k">WHERE IT GOES</span><br><span class="route">INTO THE UTERUS</span></div>
+      <div class="row"><span class="k">BEST WHEN</span><br>Low sperm count or poor sperm quality; a simpler first option.</div>
+    </div>
+
+    <div class="m check">
+      <h2>READ THE ROUTE IN 5 SECONDS</h2>
+      <div class="row"><span class="k">DESTINATION: UTERUS</span><br><span class="route">IVF &#183; ICSI &#183; IUI</span></div>
+      <div class="row"><span class="k">DESTINATION: TUBE</span><br><span class="route">ZIFT &#183; GIFT</span></div>
+      <div class="row"><span class="k">BLASTOMERE RULE</span><br><b>Up to 8 &#8594; tube</b> (ZIFT) &#183; <b>8 or more &#8594; uterus</b> (IVF)</div>
+    </div>
+  </div>
+
+  <div class="strip">
+    <b>Surrogacy and adoption are real options too</b> — a surrogate mother carries the couple's baby, and adoption gives a child a family. Both are regulated by law in India (ART Act, 2021).
+  </div>
+</div>
+</body>
+</html>

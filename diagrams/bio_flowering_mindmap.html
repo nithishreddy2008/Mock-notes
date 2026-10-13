@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: 1080px; position: relative; background: #fff; }
+  svg.wires { position: absolute; inset: 0; width: 1480px; height: 1080px; }
+  .center {
+    position: absolute; left: 540px; top: 385px; width: 400px; height: 104px;
+    background: #071A4D; border-radius: 16px; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(7,26,77,.25);
+    border-bottom: 5px solid #B8FF34; padding: 0 14px; text-align: center;
+  }
+  .center .t { color: #fff; font-size: 20px; font-weight: 800; letter-spacing: .4px; line-height: 1.2; }
+  .center .s { color: #B8FF34; font-size: 13px; font-weight: 700; letter-spacing: 2px; margin-top: 5px; }
+  .card {
+    position: absolute; width: 470px; background: #FCFDFF; border: 1.5px solid #D5DCEA;
+    border-radius: 14px; padding: 13px 16px 12px;
+  }
+  .card h2 { font-size: 20px; color: #071A4D; font-weight: 800; margin-bottom: 7px;
+             padding-bottom: 5px; border-bottom: 3px solid; display: inline-block; }
+  .leaf { font-size: 14.5px; color: #1B2333; margin: 5px 0; padding-left: 16px; position: relative; line-height: 1.32; }
+  .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
+  .b .leaf::before { background: #1F5EFF; }
+  .l .leaf::before { background: #7FB800; }
+  .leaf b { color: #071A4D; }
+  .b h2 { border-color: #1F5EFF; }
+  .l h2 { border-color: #7FB800; }
+  .left { left: 30px; }
+  .right { left: 980px; }
+  .exc {
+    position: absolute; left: 460px; top: 880px; width: 560px; background: #FFF3EC;
+    border: 1.5px solid #D2481F; border-radius: 12px; padding: 10px 14px;
+  }
+  .exc h2 { font-size: 17px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
+  .exc .leaf { font-size: 13px; margin: 3px 0; padding-left: 14px; color: #7A2A12; }
+  .exc .leaf::before { background: #D2481F; }
+  .exc b { color: #B4380F; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <svg class="wires" viewBox="0 0 1480 1080">
+    <path d="M 540 410 C 505 410, 520 165, 502 160" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 540 435 C 515 435, 520 430, 502 430" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 540 462 C 505 462, 520 700, 502 705" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 940 410 C 975 410, 960 165, 978 160" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 940 435 C 965 435, 960 430, 978 430" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 940 462 C 975 462, 960 700, 978 705" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 740 490 C 740 640, 740 815, 740 878" fill="none" stroke="#D2481F" stroke-width="2.5" stroke-dasharray="7 5" opacity=".6"/>
+  </svg>
+
+  <div class="center">
+    <div class="t">SEXUAL REPRODUCTION<br>IN FLOWERING PLANTS</div>
+    <div class="s">UNIT VI &#183; COMPLETE CHAPTER MAP</div>
+  </div>
+
+  <div class="card left b" style="top:62px">
+    <h2>Stamen &amp; Pollen</h2>
+    <div class="leaf"><b>Stamen</b> = anther + filament; anther is bilobed with <b>4 microsporangia</b> (dithecous)</div>
+    <div class="leaf"><b>Wall layers:</b> epidermis &#8594; endothecium &#8594; middle layers &#8594; tapetum (feeds pollen)</div>
+    <div class="leaf"><b>Microsporogenesis:</b> pollen mother cell (2n) &#8212;meiosis&#8594; 4 microspores in a tetrad</div>
+    <div class="leaf"><b>Pollen:</b> tough exine (sporopollenin) + thin intine; at shedding 60% two-celled, 40% three-celled</div>
+  </div>
+
+  <div class="card left l" style="top:325px">
+    <h2>Pistil &amp; Embryo Sac</h2>
+    <div class="leaf"><b>Pistil</b> = stigma + style + ovary; ovule parts: funicle, hilum, integuments, micropyle, chalaza, nucellus</div>
+    <div class="leaf"><b>Megasporogenesis:</b> megaspore mother cell (2n) &#8594; 4 megaspores in a row &#8212; the chalazal one survives</div>
+    <div class="leaf"><b>Embryo sac:</b> egg + 2 synergids (micropylar end), 2 polar nuclei in the centre, 3 antipodals (chalazal end)</div>
+    <div class="leaf">Count it as <b>7 cells, 8 nuclei</b>; filiform apparatus of synergids guides the pollen tube</div>
+  </div>
+
+  <div class="card left b" style="top:600px">
+    <h2>Endosperm &amp; Embryo</h2>
+    <div class="leaf"><b>Endosperm (3n):</b> free-nuclear divisions first, then cellular — coconut water vs coconut meat</div>
+    <div class="leaf"><b>Albuminous</b> seeds keep endosperm (castor, coconut); <b>non-albuminous</b> use it up (pea, bean, groundnut)</div>
+    <div class="leaf"><b>Dicot embryo:</b> 2 cotyledons, plumule up, radicle down; <b>monocot:</b> scutellum, coleoptile, coleorrhiza</div>
+    <div class="leaf">Seed coats: <b>testa</b> outside, <b>tegmen</b> inside; perisperm = leftover nucellus (castor)</div>
+  </div>
+
+  <div class="card right l" style="top:62px">
+    <h2>Pollination &amp; Agents</h2>
+    <div class="leaf"><b>Autogamy</b> (same flower; cleistogamy in Viola, Commelina) &#183; <b>geitonogamy</b> (same plant) &#183; <b>xenogamy</b> (different plant — the only true cross)</div>
+    <div class="leaf"><b>Wind:</b> light, dry, non-sticky pollen; feathery stigmas (grasses)</div>
+    <div class="leaf"><b>Water:</b> rare hydrophily — Vallisneria, Zostera; pollen shielded from wetting</div>
+    <div class="leaf"><b>Insects:</b> colour, scent, nectar; Yucca–moth obligate pair; pollen robbers take the reward, bring nothing</div>
+  </div>
+
+  <div class="card right b" style="top:325px">
+    <h2>Double Fertilisation</h2>
+    <div class="leaf"><b>Pollen tube</b> grows through the style and enters a synergid via the micropyle</div>
+    <div class="leaf"><b>Syngamy:</b> sperm + egg &#8594; zygote (2n), the first cell of the new plant</div>
+    <div class="leaf"><b>Triple fusion:</b> second sperm + 2 polar nuclei &#8594; primary endosperm nucleus (3n)</div>
+    <div class="leaf">Both together = <b>double fertilisation — only in angiosperms</b>; food is made only after fertilisation succeeds</div>
+  </div>
+
+  <div class="card right l" style="top:600px">
+    <h2>Apomixis &amp; Polyembryony</h2>
+    <div class="leaf"><b>Apomixis:</b> seeds without meiosis or fusion — a clone of the mother (diploid egg or nucellar cells)</div>
+    <div class="leaf"><b>Examples:</b> Citrus and Mango (nucellar embryony); apomictic hybrids keep their edge year after year</div>
+    <div class="leaf"><b>Polyembryony:</b> many embryos in one seed (Citrus, from nucellar cells)</div>
+    <div class="leaf"><b>Fruit</b> = mature ovary; <b>parthenocarpy</b> = seedless fruit without fertilisation (banana, seedless grapes)</div>
+  </div>
+
+  <div class="exc">
+    <h2>COMMON ERRORS &amp; TRAPS</h2>
+    <div class="leaf"><b>Endosperm is 3n, not 2n</b> — one sperm + two polar nuclei, all haploid</div>
+    <div class="leaf"><b>Syngamy uses one sperm, triple fusion the other</b> — the two fuse events together are "double" fertilisation</div>
+    <div class="leaf"><b>The chalazal megaspore survives</b> — the three micropylar ones degenerate</div>
+    <div class="leaf"><b>Coconut water = free-nuclear endosperm</b>; coconut meat = cellular endosperm — do not flip them</div>
+  </div>
+</div>
+</body>
+</html>

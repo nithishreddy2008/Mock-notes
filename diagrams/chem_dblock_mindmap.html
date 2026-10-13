@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: 1080px; position: relative; background: #fff; }
+  svg.wires { position: absolute; inset: 0; width: 1480px; height: 1080px; }
+  .center {
+    position: absolute; left: 520px; top: 470px; width: 440px; height: 104px;
+    background: #071A4D; border-radius: 16px; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(7,26,77,.25);
+    border-bottom: 5px solid #B8FF34;
+  }
+  .center .t { color: #fff; font-size: 21px; font-weight: 800; letter-spacing: .5px; text-align: center; }
+  .center .s { color: #B8FF34; font-size: 13.5px; font-weight: 700; letter-spacing: 2px; margin-top: 4px; }
+  .card {
+    position: absolute; width: 465px; background: #FCFDFF; border: 1.5px solid #D5DCEA;
+    border-radius: 14px; padding: 13px 16px 12px;
+  }
+  .card h2 { font-size: 20px; color: #071A4D; font-weight: 800; margin-bottom: 7px;
+             padding-bottom: 5px; border-bottom: 3px solid; display: inline-block; }
+  .leaf { font-size: 14.5px; color: #1B2333; margin: 5px 0; padding-left: 16px; position: relative; line-height: 1.32; }
+  .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
+  .b .leaf::before { background: #1F5EFF; }
+  .l .leaf::before { background: #7FB800; }
+  .leaf b { color: #071A4D; }
+  .b h2 { border-color: #1F5EFF; }
+  .l h2 { border-color: #7FB800; }
+  .left { left: 30px; }
+  .right { left: 985px; }
+  .exc {
+    position: absolute; left: 470px; top: 905px; width: 540px; background: #FFF3EC;
+    border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px;
+  }
+  .exc h2 { font-size: 17px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
+  .exc .leaf { font-size: 13px; margin: 3px 0; padding-left: 14px; color: #7A2A12; }
+  .exc .leaf::before { background: #D2481F; }
+  .exc b { color: #B4380F; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <svg class="wires" viewBox="0 0 1480 1080">
+    <path d="M 520 505 C 470 505, 495 158, 500 155" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 520 520 C 480 520, 495 438, 500 438" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 520 535 C 470 535, 495 718, 500 718" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 960 505 C 1010 505, 985 158, 980 155" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 960 520 C 1000 520, 985 438, 980 438" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 960 535 C 1010 535, 985 718, 980 718" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 740 574 C 740 700, 740 830, 740 903" fill="none" stroke="#D2481F" stroke-width="2.5" stroke-dasharray="7 5" opacity=".6"/>
+  </svg>
+
+  <div class="center">
+    <div class="t">d &amp; f BLOCK ELEMENTS</div>
+    <div class="s">UNIT IV &#183; COMPLETE CHAPTER MAP</div>
+  </div>
+
+  <div class="card left b" style="top:58px">
+    <h2>Position &amp; Configuration</h2>
+    <div class="leaf"><b>d-block:</b> groups 3&#8211;12, filling (n&#8722;1)d &#8212; three series: 3d (Sc&#8211;Zn), 4d (Y&#8211;Cd), 5d (La, Hf&#8211;Hg)</div>
+    <div class="leaf"><b>Config:</b> (n&#8722;1)d&#185;&#8311;&#8309; ns&#185;&#8311;&#178;; exceptions Cr = 3d&#8309;4s&#185;, Cu = 3d&#185;&#8309;4s&#185; (half/full-filled stability)</div>
+    <div class="leaf"><b>Transition element (strict):</b> an atom/ion with a partly filled d subshell &#8212; Zn, Cd, Hg are d-block but usually not "transition"</div>
+    <div class="leaf"><b>f-block:</b> lanthanoids (4f, Ce&#8211;Lu) and actinoids (5f, Th&#8211;Lr), placed below the table</div>
+  </div>
+
+  <div class="card left l" style="top:352px">
+    <h2>Size, Contraction &amp; Ionisation</h2>
+    <div class="leaf"><b>Atomic size dips mid-series</b> then rises slightly (e&#8211;e&#8322; repulsion in d subshell wins at the end)</div>
+    <div class="leaf"><b>Ionic size shrinks with oxidation state:</b> Fe&#179;&#8314; &lt; Fe&#178;&#8314; &#8212; more charge pulls harder</div>
+    <div class="leaf"><b>Lanthanoid contraction:</b> poor 4f shielding shrinks the 5d series to near-4d sizes &#8212; hence Zr &#8776; Hf twins</div>
+    <div class="leaf"><b>Ionisation enthalpy rises</b> across; second-row (4d) metals are bigger and more easily oxidised</div>
+  </div>
+
+  <div class="card left b" style="top:640px">
+    <h2>Oxidation States &amp; Potentials</h2>
+    <div class="leaf"><b>Variable states from ns + (n&#8722;1)d sharing:</b> Mn spans +2 &#8594; +7; Sc&#179;&#8314;/Zn&#178;&#8314; barely vary</div>
+    <div class="leaf"><b>Down a group, higher states stabilise</b> &#8212; opposite of p-block: CrO&#8324;&#178;&#8315; strong, Mo/W even more so</div>
+    <div class="leaf"><b>Cu's E&#176;(Cu&#178;&#8314;/Cu) = +0.34 V (positive!)</b> &#8212; high atomisation + ionisation costs; Cu refuses dilute acids</div>
+    <div class="leaf"><b>M&#179;&#8314;/M&#178;&#8314;:</b> only Fe (+0.77) and Mn (+1.57) and Co (+1.97-ish) are strong oxidisers; V is negative (V&#178;&#8314; is the stable friend)</div>
+  </div>
+
+  <div class="card right l" style="top:58px">
+    <h2>Magnetism &amp; Colour</h2>
+    <div class="leaf"><b>Spin-only moment:</b> &#956; = &#8730;(n(n+2)) BM &#8212; n = unpaired electrons; Fe&#179;&#8314; (d&#8309;) &#8776; 5.92 BM max</div>
+    <div class="leaf"><b>Colour = d&#8211;d transitions:</b> Cu&#178;&#8314; (d&#8309;) blue, Ni&#178;&#8314; (d&#8312;) green; Sc&#179;&#8314; (d&#8320;) and Zn&#178;&#8314; (d&#185;&#8309;) are colourless</div>
+    <div class="leaf"><b>Charge-transfer colour:</b> MnO&#8324;&#8315; and CrO&#8324;&#178;&#8315; are intensely coloured with d&#8320;/d&#8309; ions &#8212; electron hops, not d&#8211;d</div>
+    <div class="leaf"><b>Complexes:</b> small size + high charge + vacant d orbitals &#8594; coordination numbers 4&#8211;6 everywhere</div>
+  </div>
+
+  <div class="card right b" style="top:368px">
+    <h2>Superpowers of the d-Block</h2>
+    <div class="leaf"><b>Catalysis:</b> Fe (Haber NH&#8323;), V&#8322;O&#8325; (contact H&#8322;SO&#8324;), Ni (hydrogenation), TiCl&#8324;/AlMe&#8323; (Ziegler plastics)</div>
+    <div class="leaf"><b>Interstitial compounds:</b> small atoms (H, C, N) hide in lattice holes &#8212; steel, cast iron: hard, conducting, non-stoichiometric</div>
+    <div class="leaf"><b>Alloys:</b> similar radii let metals swap freely &#8212; ferrochrome, stainless steel, bronze</div>
+    <div class="leaf"><b>Oxides:</b> basic &#8594; amphoteric &#8594; acidic across the series and as oxidation state climbs (MnO basic, Mn&#8322;O&#8327; acidic)</div>
+  </div>
+
+  <div class="card right l" style="top:668px">
+    <h2>The f-Block Twins</h2>
+    <div class="leaf"><b>Lanthanoids:</b> all +3 mainly; Eu&#178;&#8314;/Tb&#8308;&#8314; exist (+2 half-filled, +4 half-filled logic); colours from f&#8211;f jumps</div>
+    <div class="leaf"><b>Contraction cause:</b> 4f electrons shield poorly &#8212; each step pulls the shell in; consequences in the 5d row</div>
+    <div class="leaf"><b>Actinoids:</b> 5f is bigger and lazier &#8212; oxidation states from +3 up to +7; all radioactive</div>
+    <div class="leaf"><b>Applications:</b> Mish-metal lighter flints, Nd magnets, Sm&#8211;Co magnets, thorium in nuclear fuel, CeO&#8322; glass polish</div>
+  </div>
+
+  <div class="exc">
+    <h2>WATCH-OUTS THAT SET MCQ TRAPS</h2>
+    <div class="leaf"><b>"d-block = transition" is FALSE:</b> Zn/Cd/Hg have full d&#185;&#8309; in every common state</div>
+    <div class="leaf"><b>Cr and Cu steal the 4s electron</b> — configurations 3d&#8309;4s&#185; and 3d&#185;&#8309;4s&#185;</div>
+    <div class="leaf"><b>Copper dissolves in neither dilute HCl nor H&#8322;SO&#8324;</b> — its positive E&#176; blocks it (oxidising acids like HNO&#8323; still work)</div>
+    <div class="leaf"><b>KMnO&#8324;'s electron count depends on pH:</b> 5 (acid), 3 (mild alkaline), 1 (strong alkaline) &#8212; check the medium first</div>
+  </div>
+</div>
+</body>
+</html>

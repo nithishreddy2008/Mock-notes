@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: 960px; position: relative; background: #fff; }
+  .title {
+    position: absolute; left: 30px; top: 22px; width: 1420px; height: 58px;
+    background: #071A4D; border-radius: 12px; display: flex; align-items: center; justify-content: center;
+  }
+  .title .t { color: #fff; font-size: 24px; font-weight: 800; letter-spacing: 1px; }
+  .title .t b { color: #B8FF34; }
+  .panel {
+    position: absolute; top: 104px; width: 692px; height: 664px;
+    background: #FCFDFF; border: 1.5px solid #D5DCEA; border-radius: 14px; padding: 14px 18px;
+  }
+  .left  { left: 30px; }
+  .right { left: 758px; }
+  .panel h2 { font-size: 21px; font-weight: 800; margin-bottom: 2px; }
+  .left h2 { color: #1F5EFF; } .right h2 { color: #7FB800; }
+  .panel .sub { font-size: 14px; color: #5A6478; margin-bottom: 6px; }
+  .panel .sub b { color: #071A4D; }
+  .note { font-size: 13.5px; color: #1B2333; line-height: 1.4; margin-top: 6px; }
+  .note b { color: #071A4D; }
+  .strip { position: absolute; left: 30px; top: 788px; width: 1420px; display: flex; gap: 14px; }
+  .trap { flex: 1; background: #FFF3EC; border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px; }
+  .trap h3 { font-size: 14.5px; color: #B4380F; font-weight: 800; margin-bottom: 3px; }
+  .trap p { font-size: 13.5px; color: #7A2A12; line-height: 1.4; }
+  .trap p b { color: #B4380F; }
+  .box { border-radius: 11px; padding: 8px 12px; font-weight: 800; text-align: center; }
+  .leafbox { border-radius: 9px; padding: 7px 10px; font-size: 13px; font-weight: 700; text-align: center; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="title"><div class="t">THE BUDGET'S SKELETON &amp; <b>THE THREE DEFICITS THAT MEASURE IT</b></div></div>
+
+  <div class="panel left">
+    <h2>Budget structure — every rupee has a bucket</h2>
+    <div class="sub"><b>Two tests sort everything:</b> does it create a liability or reduce an asset? → capital; otherwise → revenue</div>
+
+    <div class="box" style="background:#071A4D;color:#fff;font-size:16px;">GOVERNMENT BUDGET (Annual Financial Statement)</div>
+    <div style="display:flex; gap:10px; margin-top:10px;">
+      <div style="flex:1; border:2px solid #1F5EFF; border-radius:12px; padding:8px;">
+        <div class="box" style="background:#EAF0FF;color:#1F5EFF;">REVENUE BUDGET</div>
+        <div class="leafbox" style="background:#071A4D;color:#fff;margin-top:8px;">Revenue Receipts</div>
+        <div class="leafbox" style="background:#F6FFDF;color:#4E7A00;margin-top:5px;">Tax: GST, income tax, excise</div>
+        <div class="leafbox" style="background:#F6FFDF;color:#4E7A00;margin-top:5px;">Non-tax: interest, fees, profits, grants</div>
+        <div class="leafbox" style="background:#FFF3EC;color:#B4380F;margin-top:8px;">Revenue Expenditure</div>
+        <div class="leafbox" style="background:#EEF1F8;color:#5A6478;margin-top:5px;">Salaries, subsidies, interest payments</div>
+        <div class="leafbox" style="background:#EEF1F8;color:#5A6478;margin-top:5px;">No asset born, no liability cleared</div>
+      </div>
+      <div style="flex:1; border:2px solid #7FB800; border-radius:12px; padding:8px;">
+        <div class="box" style="background:#F6FFDF;color:#4E7A00;">CAPITAL BUDGET</div>
+        <div class="leafbox" style="background:#071A4D;color:#fff;margin-top:8px;">Capital Receipts</div>
+        <div class="leafbox" style="background:#F6FFDF;color:#4E7A00;margin-top:5px;">Borrowings (create liability)</div>
+        <div class="leafbox" style="background:#F6FFDF;color:#4E7A00;margin-top:5px;">Loan recovery, disinvestment (asset down)</div>
+        <div class="leafbox" style="background:#FFF3EC;color:#B4380F;margin-top:8px;">Capital Expenditure</div>
+        <div class="leafbox" style="background:#EEF1F8;color:#5A6478;margin-top:5px;">Roads, schools, buildings (asset born)</div>
+        <div class="leafbox" style="background:#EEF1F8;color:#5A6478;margin-top:5px;">Loan repayment (liability cleared)</div>
+      </div>
+    </div>
+    <div class="note"><b>Read it once:</b> the two questions — "did the government OWE anyone new?" (liability) and "did it GAIN something lasting?" (asset) — sort every single line of the budget into its bucket.</div>
+  </div>
+
+  <div class="panel right">
+    <h2>The three deficits — one worked budget</h2>
+    <div class="sub">Given: RR ₹1,400 cr · RE ₹1,520 cr · capital receipts ₹600 cr (borrowings ₹560 + recoveries ₹25 + disinvestment ₹15) · CE ₹480 cr · interest payments ₹320 cr</div>
+    <table style="width:100%; border-collapse:separate; border-spacing:0 6px; font-size:13.5px; color:#1B2333;">
+      <tr>
+        <td style="width:170px; background:#EAF0FF; border-radius:9px; padding:9px 10px; font-weight:800; color:#1F5EFF;">Revenue deficit</td>
+        <td style="padding:0 8px;"><b>RD = RE − RR</b> = 1,520 − 1,400 = <b>₹120 cr</b><br><span style="color:#5A6478; font-size:12.5px;">Government must BORROW just to run its daily bills — consumption financed by debt</span></td>
+      </tr>
+      <tr>
+        <td style="background:#F6FFDF; border-radius:9px; padding:9px 10px; font-weight:800; color:#4E7A00;">Fiscal deficit</td>
+        <td style="padding:0 8px;"><b>FD = Total expenditure − Total receipts (excl. borrowings)</b> = 2,000 − 1,440 = <b>₹560 cr</b><br><span style="color:#5A6478; font-size:12.5px;">= the borrowing requirement itself (₹560 borrowed ✓). Feeds the debt trap and crowds out private credit</span></td>
+      </tr>
+      <tr>
+        <td style="background:#FFF3EC; border-radius:9px; padding:9px 10px; font-weight:800; color:#B4380F;">Primary deficit</td>
+        <td style="padding:0 8px;"><b>PD = FD − interest payments</b> = 560 − 320 = <b>₹240 cr</b><br><span style="color:#5A6478; font-size:12.5px;">THIS year's own overspending, stripped of inherited interest — shows the fiscal stance cleanly</span></td>
+      </tr>
+    </table>
+    <svg width="656" height="150" viewBox="0 0 656 150">
+      <line x1="40" y1="120" x2="620" y2="120" stroke="#071A4D" stroke-width="2"/>
+      <!-- bars: RD 120, PD 240, FD 560 -> scale 0.15: 18, 36, 84 px -->
+      <rect x="90" y="102" width="90" height="18" fill="#1F5EFF"/>
+      <rect x="280" y="84" width="90" height="36" fill="#D2481F"/>
+      <rect x="470" y="36" width="90" height="84" fill="#071A4D"/>
+      <text x="95" y="96" font-size="12.5" font-weight="800" fill="#1F5EFF">RD 120</text>
+      <text x="285" y="78" font-size="12.5" font-weight="800" fill="#D2481F">PD 240</text>
+      <text x="470" y="30" font-size="12.5" font-weight="800" fill="#071A4D">FD 560</text>
+      <text x="60" y="138" font-size="12" font-weight="700" fill="#5A6478">All in ₹ crore — FD always ≥ PD ≥ 0; RD is a different (revenue-side) cut</text>
+    </svg>
+    <div class="note"><b>Read it once:</b> FD is the WHOLE borrowing need; PD subtracts the interest inherited from PAST deficits; RD is the revenue budget's own shortfall. Three lenses, one budget.</div>
+  </div>
+
+  <div class="strip">
+    <div class="trap"><h3>TRAP 1</h3><p><b>The two tests decide everything:</b> capital receipt = creates liability OR reduces assets; capital expenditure = creates asset OR reduces liability. Revenue = neither.</p></div>
+    <div class="trap"><h3>TRAP 2</h3><p><b>FD equals the borrowing requirement</b> — by definition. If a numerical's borrowings don't match FD, recheck your subtraction.</p></div>
+    <div class="trap"><h3>TRAP 3</h3><p><b>Interest payment is REVENUE expenditure</b> (it clears no asset, and repaying principal is the capital part) — and it is subtracted AGAIN inside primary deficit.</p></div>
+  </div>
+</div>
+</body>
+</html>

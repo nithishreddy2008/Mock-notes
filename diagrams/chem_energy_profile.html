@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: 1000px; position: relative; background: #fff; }
+  .title { text-align: center; font-size: 24px; font-weight: 800; color: #071A4D; padding-top: 20px; }
+  .subtitle { text-align: center; font-size: 14px; color: #5A6478; margin-top: 4px; }
+  .card { position: absolute; width: 450px; background: #FCFDFF; border: 1.5px solid #D5DCEA; border-radius: 12px; padding: 11px 14px; }
+  .card h3 { font-size: 16px; color: #071A4D; font-weight: 800; margin-bottom: 4px; }
+  .card p { font-size: 13.5px; color: #1B2333; line-height: 1.42; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="title">ACTIVATION ENERGY — THE HILL EVERY REACTION MUST CLIMB</div>
+  <div class="subtitle">Energy profile of an exothermic reaction: uncatalysed path (blue) vs catalysed path (green). The hill shrinks — the start and end points never move.</div>
+
+  <svg width="1480" height="700" viewBox="0 0 1480 700" style="position:absolute; top:90px; left:0;">
+    <!-- axes -->
+    <line x1="90" y1="30" x2="90" y2="600" stroke="#5A6478" stroke-width="2.5"/>
+    <line x1="90" y1="600" x2="1400" y2="600" stroke="#5A6478" stroke-width="2.5"/>
+    <text x="22" y="55" font-size="16" font-weight="700" fill="#5A6478">Energy</text>
+    <text x="745" y="655" font-size="16" font-weight="700" fill="#5A6478" text-anchor="middle">Reaction coordinate — progress of the reaction</text>
+
+    <!-- uncatalysed curve -->
+    <path d="M 130 380 L 420 380 C 560 380, 600 120, 740 120 C 880 120, 920 500, 1060 500 L 1360 500"
+          fill="none" stroke="#1F5EFF" stroke-width="4"/>
+    <!-- catalysed curve -->
+    <path d="M 130 380 L 420 380 C 560 380, 620 260, 740 260 C 860 260, 920 500, 1060 500 L 1360 500"
+          fill="none" stroke="#7FB800" stroke-width="4" stroke-dasharray="10 7"/>
+
+    <!-- species labels -->
+    <text x="135" y="358" font-size="17" font-weight="800" fill="#071A4D">REACTANTS (A + B)</text>
+    <text x="1085" y="538" font-size="17" font-weight="800" fill="#071A4D">PRODUCTS (C + D)</text>
+    <text x="760" y="102" font-size="15.5" font-weight="800" fill="#1F5EFF" text-anchor="middle">transition state (uncatalysed)</text>
+    <text x="700" y="238" font-size="15.5" font-weight="800" fill="#4E7A00" text-anchor="middle">transition state (with catalyst)</text>
+
+    <!-- Ea arrows -->
+    <path d="M 500 380 L 500 128" fill="none" stroke="#D2481F" stroke-width="2.5"/>
+    <polygon points="495,138 500,126 505,138" fill="#D2481F"/>
+    <text x="514" y="150" font-size="16" font-weight="800" fill="#B4380F">E<tspan baseline-shift="sub" font-size="12">a</tspan> (uncatalysed)</text>
+
+    <path d="M 445 380 L 445 268" fill="none" stroke="#4E7A00" stroke-width="2.5"/>
+    <polygon points="440,278 445,266 450,278" fill="#4E7A00"/>
+    <text x="310" y="315" font-size="16" font-weight="800" fill="#4E7A00" text-anchor="end">E<tspan baseline-shift="sub" font-size="12">a</tspan></text>
+    <text x="310" y="336" font-size="16" font-weight="800" fill="#4E7A00" text-anchor="end">(catalysed)</text>
+
+    <!-- delta H bracket -->
+    <line x1="1230" y1="382" x2="1230" y2="498" stroke="#9A7B07" stroke-width="2.5"/>
+    <text x="1248" y="420" font-size="15.5" font-weight="800" fill="#9A7B07">&#916;H &lt; 0 (exothermic):</text>
+    <text x="1248" y="442" font-size="14.5" font-weight="600" fill="#9A7B07">products sit lower than reactants</text>
+    <text x="1248" y="464" font-size="14.5" font-weight="600" fill="#9A7B07">&#916;H identical with or without catalyst</text>
+  </svg>
+
+  <div class="card" style="left:36px; top:820px;">
+    <h3>Read the picture in three lines</h3>
+    <p><b>1.</b> Molecules must reach the top of the hill (the transition state) before they can roll down to products. &nbsp;<b>2.</b> E<sub>a</sub> = height of that hill measured from the reactant plateau. &nbsp;<b>3.</b> A catalyst cuts a lower pass through the hill — it cannot move the start or end points.</p>
+  </div>
+  <div class="card" style="left:515px; top:820px;">
+    <h3>Why a catalyst speeds things up</h3>
+    <p>A lower hill means a much bigger fraction of molecules own enough energy to cross. In Arrhenius language, a smaller E<sub>a</sub> makes the exponential factor e<sup>&#8722;Ea/RT</sup> larger — exponentially more successful collisions per second, so the reaction finishes sooner.</p>
+  </div>
+  <div class="card" style="left:994px; top:820px;">
+    <h3>Exothermic vs endothermic</h3>
+    <p>This sketch shows products <b>lower</b> than reactants: energy released, &#916;H &lt; 0 (exothermic). For an endothermic reaction the product plateau sits <b>higher</b> — but the hill-crossing story is exactly the same.</p>
+  </div>
+</div>
+</body>
+</html>

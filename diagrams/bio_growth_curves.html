@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: 980px; position: relative; background: #fff; }
+  .banner {
+    position: absolute; left: 30px; top: 28px; width: 1420px; height: 72px;
+    background: #071A4D; border-radius: 14px; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(7,26,77,.22);
+    border-bottom: 5px solid #B8FF34;
+  }
+  .banner .t { color: #fff; font-size: 27px; font-weight: 800; letter-spacing: 1px; }
+  .banner .s { color: #B8FF34; font-size: 13px; font-weight: 700; letter-spacing: 2.5px; margin-top: 3px; }
+  .panel {
+    position: absolute; top: 122px; width: 700px; height: 700px;
+    background: #FCFDFF; border: 1.5px solid #D5DCEA; border-radius: 14px; padding: 16px 20px;
+  }
+  .panel.left { left: 30px; }
+  .panel.right { left: 750px; }
+  .panel h2 { font-size: 21px; color: #071A4D; font-weight: 800; }
+  .panel h2 .tag { display: inline-block; color: #fff; font-size: 13px; font-weight: 800;
+                   padding: 3px 10px; border-radius: 8px; margin-left: 10px; vertical-align: 3px; }
+  .panel.left h2 .tag { background: #1F5EFF; }
+  .panel.right h2 .tag { background: #7FB800; }
+  .panel .sub { font-size: 14px; color: #5A6478; margin: 3px 0 6px; }
+  .chart { display: block; }
+  .note {
+    margin-top: 8px; border-radius: 10px; padding: 10px 13px; font-size: 14.5px; line-height: 1.4;
+    border: 1.5px solid; background: #fff;
+  }
+  .panel.left .note { border-color: #1F5EFF; color: #12306E; }
+  .panel.right .note { border-color: #7FB800; color: #3D5A12; }
+  .note b { color: #071A4D; }
+  .strip {
+    position: absolute; left: 30px; top: 856px; width: 1420px; height: 92px;
+    background: #F7FFDF; border: 1.5px solid #B8FF34; border-radius: 14px;
+    display: flex; align-items: center; justify-content: center; gap: 26px; padding: 0 24px;
+  }
+  .strip .half { font-size: 17.5px; color: #071A4D; font-weight: 700; }
+  .strip .half b { color: #071A4D; }
+  .strip .dot { width: 10px; height: 10px; border-radius: 50%; background: #071A4D; flex: none; }
+  .strip .lbl { font-size: 12px; font-weight: 800; letter-spacing: 2px; color: #5A6478; }
+  .eq {
+    display: inline-block; background: #071A4D; color: #fff; border-radius: 8px;
+    padding: 5px 12px; font-size: 15.5px; font-weight: 700; letter-spacing: .5px;
+  }
+  svg text { font-family: 'Segoe UI', Arial, sans-serif; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="banner">
+    <div class="t">TWO WAYS A POPULATION GROWS</div>
+    <div class="s">EXPONENTIAL J-CURVE &#183; LOGISTIC S-CURVE</div>
+  </div>
+
+  <div class="panel left">
+    <h2>Exponential growth <span class="tag">J-CURVE</span></h2>
+    <div class="sub">Food and space assumed unlimited &#8212; nothing holds the line back.</div>
+    <svg class="chart" width="656" height="470" viewBox="0 0 656 470">
+      <!-- axes -->
+      <line x1="60" y1="410" x2="620" y2="410" stroke="#9AA4B8" stroke-width="2"/>
+      <line x1="60" y1="410" x2="60" y2="30" stroke="#9AA4B8" stroke-width="2"/>
+      <polygon points="620,410 608,404 608,416" fill="#9AA4B8"/>
+      <polygon points="60,30 54,42 66,42" fill="#9AA4B8"/>
+      <text x="618" y="436" font-size="14" fill="#5A6478" text-anchor="end">time &#8594;</text>
+      <text x="26" y="60" font-size="14" fill="#5A6478">population</text>
+      <text x="26" y="78" font-size="14" fill="#5A6478">size N</text>
+      <!-- N0 dot -->
+      <circle cx="60" cy="402" r="6" fill="#071A4D"/>
+      <text x="76" y="398" font-size="14" fill="#071A4D" font-weight="700">N&#8320; starts here</text>
+      <!-- J curve -->
+      <path d="M 60 402 C 200 398, 330 382, 430 330 C 505 290, 560 190, 585 55"
+            fill="none" stroke="#1F5EFF" stroke-width="5" stroke-linecap="round"/>
+      <!-- crash continuation -->
+      <path d="M 585 55 C 592 38, 597 30, 601 22" fill="none" stroke="#D2481F"
+            stroke-width="4" stroke-dasharray="8 6" stroke-linecap="round"/>
+      <polygon points="604,14 593,24 605,29" fill="#D2481F"/>
+      <text x="470" y="70" font-size="14.5" fill="#D2481F" font-weight="700">no ceiling &#8212; then a crash</text>
+      <!-- equation badge -->
+      <rect x="80" y="90" rx="9" width="170" height="38" fill="#071A4D"/>
+      <text x="165" y="115" font-size="17" fill="#fff" text-anchor="middle" font-weight="700">dN/dt = rN</text>
+      <!-- r note -->
+      <text x="80" y="150" font-size="14" fill="#12306E">r = intrinsic rate of natural increase</text>
+      <text x="80" y="170" font-size="14" fill="#12306E">steeper J = bigger r</text>
+    </svg>
+    <div class="note"><b>No limits &#8212; crashes follow.</b> Every pair of parents adds more breeders, so the curve doubles faster and faster. Real habitats run out of food or space, and the overshoot ends in a population crash.</div>
+  </div>
+
+  <div class="panel right">
+    <h2>Logistic growth <span class="tag">S-CURVE</span></h2>
+    <div class="sub">Resources are finite &#8212; K, the carrying capacity, sets the ceiling.</div>
+    <svg class="chart" width="656" height="470" viewBox="0 0 656 470">
+      <!-- axes -->
+      <line x1="60" y1="410" x2="620" y2="410" stroke="#9AA4B8" stroke-width="2"/>
+      <line x1="60" y1="410" x2="60" y2="30" stroke="#9AA4B8" stroke-width="2"/>
+      <polygon points="620,410 608,404 608,416" fill="#9AA4B8"/>
+      <polygon points="60,30 54,42 66,42" fill="#9AA4B8"/>
+      <text x="618" y="436" font-size="14" fill="#5A6478" text-anchor="end">time &#8594;</text>
+      <text x="26" y="60" font-size="14" fill="#5A6478">population</text>
+      <text x="26" y="78" font-size="14" fill="#5A6478">size N</text>
+      <!-- K dashed line -->
+      <line x1="60" y1="110" x2="620" y2="110" stroke="#071A4D" stroke-width="3" stroke-dasharray="10 7"/>
+      <text x="612" y="98" font-size="15" fill="#071A4D" font-weight="800" text-anchor="end">K &#8212; carrying capacity</text>
+      <!-- S curve -->
+      <path d="M 60 402 C 150 399, 225 372, 295 322 C 365 272, 430 172, 495 130 C 525 111, 565 107, 605 107"
+            fill="none" stroke="#7FB800" stroke-width="5" stroke-linecap="round"/>
+      <!-- inflection dot at K/2 -->
+      <circle cx="300" cy="272" r="7" fill="#B4380F"/>
+      <text x="316" y="266" font-size="14.5" fill="#B4380F" font-weight="700">N = K/2 &#8212; fastest growth</text>
+      <!-- phase labels -->
+      <text x="120" y="380" font-size="13.5" fill="#5A6478">slow start</text>
+      <text x="255" y="180" font-size="13.5" fill="#5A6478">steep run</text>
+      <text x="470" y="70" font-size="13.5" fill="#5A6478">flattens at K</text>
+      <!-- equation badge -->
+      <rect x="80" y="90" rx="9" width="230" height="38" fill="#071A4D"/>
+      <text x="195" y="115" font-size="16" fill="#fff" text-anchor="middle" font-weight="700">dN/dt = rN(K &#8722; N)/K</text>
+    </svg>
+    <div class="note"><b>Growth slows near K, stops at K.</b> As N climbs, free resources (K &#8722; N)/K shrink, so the same r delivers less and less growth &#8212; the curve levels off exactly at the ceiling.</div>
+  </div>
+
+  <div class="strip">
+    <span class="lbl">ONE CURVE, TWO LIFESTYLES</span>
+    <span class="dot"></span>
+    <span class="half"><b>r-strategists:</b> many offspring, no care &#8212; ride the J-curve</span>
+    <span class="dot"></span>
+    <span class="half"><b>K-strategists:</b> few offspring, heavy care &#8212; live near K</span>
+  </div>
+</div>
+</body>
+</html>

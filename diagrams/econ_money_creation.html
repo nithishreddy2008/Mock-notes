@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: 960px; position: relative; background: #fff; }
+  .title {
+    position: absolute; left: 30px; top: 22px; width: 1420px; height: 58px;
+    background: #071A4D; border-radius: 12px; display: flex; align-items: center; justify-content: center;
+  }
+  .title .t { color: #fff; font-size: 24px; font-weight: 800; letter-spacing: 1px; }
+  .title .t b { color: #B8FF34; }
+  .panel {
+    position: absolute; top: 104px; width: 692px; height: 664px;
+    background: #FCFDFF; border: 1.5px solid #D5DCEA; border-radius: 14px; padding: 14px 18px;
+  }
+  .left  { left: 30px; }
+  .right { left: 758px; }
+  .panel h2 { font-size: 21px; font-weight: 800; margin-bottom: 2px; }
+  .left h2 { color: #1F5EFF; } .right h2 { color: #7FB800; }
+  .panel .sub { font-size: 14px; color: #5A6478; margin-bottom: 6px; }
+  .panel .sub b { color: #071A4D; }
+  .note { font-size: 13.5px; color: #1B2333; line-height: 1.4; margin-top: 6px; }
+  .note b { color: #071A4D; }
+  .strip { position: absolute; left: 30px; top: 788px; width: 1420px; display: flex; gap: 14px; }
+  .trap { flex: 1; background: #FFF3EC; border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px; }
+  .trap h3 { font-size: 14.5px; color: #B4380F; font-weight: 800; margin-bottom: 3px; }
+  .trap p { font-size: 13.5px; color: #7A2A12; line-height: 1.4; }
+  .trap p b { color: #B4380F; }
+  .stage { display:flex; align-items:center; gap:8px; margin: 7px 0; }
+  .sbox { min-width: 150px; text-align:center; font-size: 13px; font-weight: 800; border-radius: 9px; padding: 8px 10px; }
+  .sarr { font-size: 20px; font-weight: 800; color: #5A6478; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="title"><div class="t">HOW BANKS CREATE MONEY — <b>AND HOW THE RBI STEERS IT</b></div></div>
+
+  <div class="panel left">
+    <h2>Credit creation — the ₹10,000 that became ₹1,00,000</h2>
+    <div class="sub"><b>CRR = 10%.</b> Every bank keeps 10% as reserves and lends the rest — the same money hops from bank to bank, shrinking each hop</div>
+
+    <div class="stage"><div class="sbox" style="background:#071A4D;color:#fff">DEPOSIT ₹10,000</div><div class="sarr">→</div><div class="sbox" style="background:#EAF0FF;color:#1F5EFF">reserve ₹1,000</div><div class="sarr">→</div><div class="sbox" style="background:#F6FFDF;color:#4E7A00">LOAN ₹9,000</div></div>
+    <div class="stage" style="margin-left:120px"><div class="sbox" style="background:#071A4D;color:#fff">re-deposit ₹9,000</div><div class="sarr">→</div><div class="sbox" style="background:#EAF0FF;color:#1F5EFF">reserve ₹900</div><div class="sarr">→</div><div class="sbox" style="background:#F6FFDF;color:#4E7A00">LOAN ₹8,100</div></div>
+    <div class="stage" style="margin-left:60px"><div class="sbox" style="background:#071A4D;color:#fff">re-deposit ₹8,100</div><div class="sarr">→</div><div class="sbox" style="background:#EAF0FF;color:#1F5EFF">reserve ₹810</div><div class="sarr">→</div><div class="sbox" style="background:#F6FFDF;color:#4E7A00">LOAN ₹7,290</div></div>
+    <div class="stage" style="margin-left:20px"><div class="sbox" style="background:#EEF1F8;color:#5A6478">... and on, and on ...</div><div class="sbox" style="background:#FFF3EC;color:#B4380F">TOTAL deposits → ₹1,00,000</div></div>
+
+    <svg width="656" height="230" viewBox="0 0 656 230">
+      <line x1="52" y1="16" x2="52" y2="192" stroke="#071A4D" stroke-width="2.5"/>
+      <line x1="52" y1="192" x2="620" y2="192" stroke="#071A4D" stroke-width="2.5"/>
+      <text x="14" y="30" font-size="13" font-weight="800" fill="#071A4D">₹ (total</text>
+      <text x="14" y="48" font-size="13" font-weight="800" fill="#071A4D">deposits)</text>
+      <text x="592" y="212" font-size="13" font-weight="800" fill="#071A4D">Rounds</text>
+      <!-- steps: 10k, 19k, 27.1k, ... 100k asymptote; curve rising to asymptote -->
+      <line x1="52" y1="42" x2="600" y2="42" stroke="#B4380F" stroke-width="1.8" stroke-dasharray="7 5"/>
+      <text x="452" y="34" font-size="13" font-weight="800" fill="#B4380F">₹1,00,000 = 10 × initial</text>
+      <path d="M 70 182 C 130 130, 200 88, 290 66 C 380 48, 480 43, 590 42" fill="none" stroke="#1F5EFF" stroke-width="4"/>
+      <circle cx="70" cy="182" r="6" fill="#071A4D"/>
+      <text x="58" y="206" font-size="12" font-weight="700" fill="#071A4D">₹10,000</text>
+      <text x="120" y="112" font-size="12" font-weight="700" fill="#1F5EFF">each round adds 90% of the previous</text>
+      <text x="120" y="130" font-size="12" font-weight="700" fill="#1F5EFF">round's fresh deposit</text>
+    </svg>
+    <div class="note"><b>Read it once:</b> the banking system MULTIPLIES the initial deposit by <b>1/CRR</b> (here 1 ÷ 0.10 = 10). Lower the CRR, steeper the curve — the reserve requirement is the brake pedal on money creation.</div>
+  </div>
+
+  <div class="panel right">
+    <h2>The RBI's control panel — tools that move money supply</h2>
+    <div class="sub">Three <b>quantitative</b> levers change the volume of money; <b>repo</b> changes its price</div>
+    <table style="width:100%; border-collapse:separate; border-spacing:0 7px; font-size:13.5px; color:#1B2333;">
+      <tr>
+        <td style="width:150px; background:#EAF0FF; border-radius:9px; padding:9px 10px; font-weight:800; color:#1F5EFF;">CRR</td>
+        <td style="padding:0 8px;">Cash Reserve Ratio — the share banks MUST park with the RBI. <b>CRR ↑ → lendable funds ↓ → money supply ↓</b></td>
+      </tr>
+      <tr>
+        <td style="background:#EAF0FF; border-radius:9px; padding:9px 10px; font-weight:800; color:#1F5EFF;">SLR</td>
+        <td style="padding:0 8px;">Statutory Liquidity Ratio — the share banks must hold as liquid assets (cash, gold, approved securities). <b>SLR ↑ → loan capacity ↓</b></td>
+      </tr>
+      <tr>
+        <td style="background:#EAF0FF; border-radius:9px; padding:9px 10px; font-weight:800; color:#1F5EFF;">Repo rate</td>
+        <td style="padding:0 8px;">Rate at which the RBI LENDS to banks. <b>Repo ↑ → borrowing costlier → credit ↓</b>. Reverse repo: RBI BORROWS from banks, absorbing liquidity.</td>
+      </tr>
+      <tr>
+        <td style="background:#EAF0FF; border-radius:9px; padding:9px 10px; font-weight:800; color:#1F5EFF;">OMO</td>
+        <td style="padding:0 8px;">Open Market Operations — RBI SELLS securities → money leaves the system; BUYS securities → money enters.</td>
+      </tr>
+      <tr>
+        <td style="background:#F6FFDF; border-radius:9px; padding:9px 10px; font-weight:800; color:#4E7A00;">Margin req.</td>
+        <td style="padding:0 8px;">The gap between a loan's value and its collateral — raising it shrinks credit (selective/qualitative tool).</td>
+      </tr>
+    </table>
+    <div class="note"><b>Read it once:</b> every tool answers one question — "how much money, at what price?" The RBI tightens (raises CRR/SLR/repo, sells securities) to cool inflation; loosens to fight recession.</div>
+  </div>
+
+  <div class="strip">
+    <div class="trap"><h3>TRAP 1</h3><p><b>Money multiplier = 1/CRR</b> — but only banks together create this money; a SINGLE bank cannot, because its loan may leave to another bank.</p></div>
+    <div class="trap"><h3>TRAP 2</h3><p><b>Repo vs reverse repo are opposite doors:</b> repo = RBI lends (injects); reverse repo = RBI borrows (absorbs). Read the door before answering.</p></div>
+    <div class="trap"><h3>TRAP 3</h3><p><b>M1 is the exam's default "money supply":</b> currency with public + demand deposits + other deposits with RBI. Time deposits join only in M2/M3.</p></div>
+  </div>
+</div>
+</body>
+</html>

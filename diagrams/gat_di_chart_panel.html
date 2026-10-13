@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: 800px; position: relative; background: #fff; padding: 26px 30px; }
+  .head { text-align: center; margin-bottom: 16px; }
+  .head .t { font-size: 26px; font-weight: 800; color: #071A4D; letter-spacing: .5px; }
+  .head .s { font-size: 14px; color: #5A6478; font-weight: 600; margin-top: 4px; letter-spacing: 1.5px; }
+  .cols { display: flex; gap: 22px; }
+  .chartcard { flex: 1.15; border: 1.5px solid #D5DCEA; border-radius: 14px; background: #FCFDFF; padding: 16px 20px 14px; }
+  .chartcard h2 { color: #071A4D; font-size: 19px; font-weight: 800; margin-bottom: 2px; }
+  .chartcard .sub { color: #5A6478; font-size: 12.5px; font-weight: 600; margin-bottom: 12px; }
+  .chart { display: flex; align-items: flex-end; gap: 34px; height: 300px; padding: 0 14px; border-bottom: 2.5px solid #071A4D; }
+  .bar { flex: 1; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; }
+  .bar .val { font-size: 14px; font-weight: 800; color: #071A4D; margin-bottom: 4px; }
+  .bar .stick { width: 100%; border-radius: 6px 6px 0 0; background: #1F5EFF; }
+  .bar.hi .stick { background: #071A4D; }
+  .bar.hi .val { color: #0E7A4A; }
+  .bar .stick::after { content: ""; }
+  .bars-labels { display: flex; gap: 34px; padding: 6px 14px 0; }
+  .bars-labels .bl { flex: 1; text-align: center; font-size: 13.5px; font-weight: 700; color: #1B2333; }
+  .axis-note { margin-top: 10px; font-size: 12.5px; color: #5A6478; text-align: center; font-weight: 600; }
+  .method { flex: 1; display: flex; flex-direction: column; gap: 12px; }
+  .step { background: #FCFDFF; border: 1.5px solid #D5DCEA; border-radius: 12px; padding: 11px 15px 11px; border-left: 4px solid #1F5EFF; }
+  .step h3 { font-size: 15.5px; color: #071A4D; font-weight: 800; margin-bottom: 4px; }
+  .step .n { display: inline-block; width: 22px; height: 22px; border-radius: 50%; background: #071A4D; color: #B8FF34;
+             font-weight: 800; font-size: 12px; text-align: center; line-height: 22px; margin-right: 7px; }
+  .step p { font-size: 13.3px; color: #1B2333; line-height: 1.36; }
+  .step p b { color: #071A4D; }
+  .solve { background: #F6FFDF; border: 1.5px solid #7FB800; border-radius: 12px; padding: 11px 15px; }
+  .solve h3 { font-size: 15.5px; color: #4E7A00; font-weight: 800; margin-bottom: 5px; }
+  .solve p { font-size: 13.3px; color: #1B2333; line-height: 1.45; }
+  .solve p b { color: #4E7A00; }
+  .trap { margin-top: 16px; background: #FFF3EC; border: 1.5px solid #D2481F; border-radius: 12px; padding: 10px 16px; }
+  .trap h3 { color: #B4380F; font-size: 15px; font-weight: 800; margin-bottom: 5px; }
+  .trap .leafs { display: flex; gap: 18px; }
+  .trap .lf { flex: 1; font-size: 12.8px; color: #7A2A12; line-height: 1.32; padding-left: 14px; position: relative; }
+  .trap .lf::before { content: ""; position: absolute; left: 0; top: 6px; width: 7px; height: 7px; border-radius: 50%; background: #D2481F; }
+  .trap .lf b { color: #B4380F; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="head">
+    <div class="t">READING A BAR CHART — THE 3-STEP ROUTINE</div>
+    <div class="s">CUET UG &#183; GENERAL APTITUDE TEST &#183; NUMERICAL ABILITY &amp; DATA INTERPRETATION</div>
+  </div>
+
+  <div class="cols">
+    <div class="chartcard">
+      <h2>Monthly Sales of a Small Shop</h2>
+      <div class="sub">Sales in Rs hundreds &#183; January to April &#183; every chart answers to the same routine</div>
+      <div class="chart">
+        <div class="bar"><div class="val">40</div><div class="stick" style="height: 171px;"></div></div>
+        <div class="bar"><div class="val">55</div><div class="stick" style="height: 236px;"></div></div>
+        <div class="bar"><div class="val">45</div><div class="stick" style="height: 193px;"></div></div>
+        <div class="bar hi"><div class="val">70</div><div class="stick" style="height: 300px;"></div></div>
+      </div>
+      <div class="bars-labels"><div class="bl">January</div><div class="bl">February</div><div class="bl">March</div><div class="bl">April</div></div>
+      <div class="axis-note">Axis: each unit = Rs 100 of sales &#183; the units line is the FIRST thing to read</div>
+    </div>
+
+    <div class="method">
+      <div class="step">
+        <h3><span class="n">1</span>Read the frame: title, axes, units</h3>
+        <p>Title says <b>what</b> is shown, axes say <b>in what units</b>. Here: sales in <b>Rs hundreds</b> — a bar marked 40 means Rs 4,000. Skipping units is the #1 DI error.</p>
+      </div>
+      <div class="step">
+        <h3><span class="n">2</span>Read the question before the bars</h3>
+        <p>"Highest month?" needs only comparisons. "Percentage increase Jan to Apr?" needs the <b>two exact values</b> — 40 and 70. The question tells you which bars to touch.</p>
+      </div>
+      <div class="step">
+        <h3><span class="n">3</span>Pull the numbers, compute, sanity-check</h3>
+        <p>Work with the bar values; check the answer <b>against the picture</b> — a "75% rise" between the shortest and tallest bar passes the eye test.</p>
+      </div>
+      <div class="solve">
+        <h3>Solved on this chart</h3>
+        <p><b>Highest month:</b> April (70). <b>% increase Jan to Apr:</b> rise = 70 − 40 = 30; on base 40 → 30/40 = <b>75%</b>. <b>Average of the four months:</b> (40+55+45+70) ÷ 4 = 210 ÷ 4 = <b>52.5</b> (Rs 5,250).</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="trap">
+    <h3>Traps that catch most students</h3>
+    <div class="leafs">
+      <div class="lf"><b>Ignoring the units line</b> — hundreds vs thousands flips every answer</div>
+      <div class="lf"><b>Comparing bar heights by eye</b> for exact questions — pull the numbers instead</div>
+      <div class="lf"><b>Percent-change on the wrong base</b> — change is always divided by the ORIGINAL value</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: 960px; position: relative; background: #fff; }
+  .title {
+    position: absolute; left: 30px; top: 22px; width: 1420px; height: 58px;
+    background: #071A4D; border-radius: 12px; display: flex; align-items: center; justify-content: center;
+  }
+  .title .t { color: #fff; font-size: 24px; font-weight: 800; letter-spacing: 1px; }
+  .title .t b { color: #B8FF34; }
+  .panel {
+    position: absolute; top: 104px; width: 1420px; left: 30px; height: 664px;
+    background: #FCFDFF; border: 1.5px solid #D5DCEA; border-radius: 14px; padding: 14px 20px;
+  }
+  .panel h2 { font-size: 21px; font-weight: 800; color: #1F5EFF; margin-bottom: 4px; }
+  .panel .sub { font-size: 14px; color: #5A6478; margin-bottom: 4px; }
+  .lane { position: absolute; left: 40px; right: 40px; top: 240px; height: 6px; background: #071A4D; border-radius: 3px; }
+  .tick { position: absolute; width: 3px; background: #071A4D; }
+  .ev { position: absolute; width: 178px; }
+  .ev .yr { display: inline-block; background: #071A4D; color: #fff; font-size: 14.5px; font-weight: 800; border-radius: 7px; padding: 3px 9px; }
+  .ev.hot .yr { background: #B4380F; }
+  .ev h3 { font-size: 14px; color: #071A4D; font-weight: 800; margin: 4px 0 2px; line-height: 1.2; }
+  .ev p { font-size: 12.5px; color: #1B2333; line-height: 1.32; margin: 0; }
+  .ev p b { color: #B4380F; }
+  .strip { position: absolute; left: 30px; top: 788px; width: 1420px; display: flex; gap: 14px; }
+  .trap { flex: 1; background: #FFF3EC; border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px; }
+  .trap h3 { font-size: 14.5px; color: #B4380F; font-weight: 800; margin-bottom: 3px; }
+  .trap p { font-size: 13.5px; color: #7A2A12; line-height: 1.4; }
+  .trap p b { color: #B4380F; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="title"><div class="t">1947 &#8594; 1991 — <b>THE ROAD THAT ENDED AT THE CRISIS</b></div></div>
+
+  <div class="panel">
+    <h2>Four decades of policy in one line</h2>
+    <div class="sub"><b>Above the lane:</b> the event &#183; <b>below the lane:</b> why it matters for the exam</div>
+
+    <!-- timeline lane -->
+    <div class="lane"></div>
+
+    <!-- events above lane -->
+    <div class="ev" style="left:28px; top:78px;">
+      <span class="yr">1947</span>
+      <h3>Eve of independence</h3>
+      <p>Stagnant agriculture, de-industrialised trade, 16% literacy, life expectancy 32 years.</p>
+    </div>
+    <div class="ev" style="left:238px; top:96px;">
+      <span class="yr">1950-51</span>
+      <h3>Planning begins</h3>
+      <p>Planning Commission set up (1950); First Five Year Plan (1951-56) — agriculture, Harrod-Domar model.</p>
+    </div>
+    <div class="ev" style="left:448px; top:78px;">
+      <span class="yr">1956</span>
+      <h3>The industrial turn</h3>
+      <p>Second Plan (1956-61) — Mahalanobis model; IPR 1956 puts the state at the command post.</p>
+    </div>
+    <div class="ev" style="left:658px; top:96px;">
+      <span class="yr">1966</span>
+      <h3>Green Revolution</h3>
+      <p>HYV seeds + irrigation + fertilisers break the food deadlock — wheat and rice lead.</p>
+    </div>
+    <div class="ev" style="left:868px; top:78px;">
+      <span class="yr">1969</span>
+      <h3>Banks nationalised</h3>
+      <p>14 big banks taken over — credit steered to priority sectors; plan holiday already passed (1966-69).</p>
+    </div>
+    <div class="ev" style="left:1044px; top:96px; width:170px;">
+      <span class="yr">1980s</span>
+      <h3>Slow loosening</h3>
+      <p>Growth picks up but deficits and imports balloon — the fiscal strain builds silently.</p>
+    </div>
+    <div class="ev hot" style="left:1230px; top:78px;">
+      <span class="yr">1991</span>
+      <h3>The crisis</h3>
+      <p>Reserves down to about two weeks of imports; gold flown out as collateral; IMF conditions.</p>
+    </div>
+
+    <!-- exam notes below lane -->
+    <div class="ev" style="left:28px; top:268px;">
+      <p><b>Exam hook:</b> the four features of the inherited economy — ask "what kind of country did planners inherit?"</p>
+    </div>
+    <div class="ev" style="left:238px; top:268px;">
+      <p><b>Exam hook:</b> goals of planning — growth, modernisation, self-reliance, equity — memorise all four.</p>
+    </div>
+    <div class="ev" style="left:448px; top:268px;">
+      <p><b>Exam hook:</b> IPR 1956 = "industrial policy spectrum" — Schedule A/B/C industries; licence raj begins.</p>
+    </div>
+    <div class="ev" style="left:658px; top:268px;">
+      <p><b>Exam hook:</b> the middle path on subsidies — adoption vs misuse, both sides needed in answers.</p>
+    </div>
+    <div class="ev" style="left:868px; top:268px;">
+      <p><b>Exam hook:</b> SSI reservation and employment — the small-scale debate links here.</p>
+    </div>
+    <div class="ev" style="left:1044px; top:268px; width:170px;">
+      <p><b>Exam hook:</b> inward-looking trade — tariffs and quotas to substitute imports.</p>
+    </div>
+    <div class="ev" style="left:1224px; top:268px; width:170px;">
+      <p><b>Exam hook:</b> NEP = stabilisation + structural reform = LPG. Know all three words' features.</p>
+    </div>
+
+    <!-- 1991 indicators strip inside panel -->
+    <div style="position:absolute; left:20px; right:20px; top:390px; display:flex; gap:12px;">
+      <div style="flex:1; background:#EAF0FF; border-radius:11px; padding:10px 12px;">
+        <h3 style="margin:0 0 4px; font-size:15px; color:#1F5EFF;">LIBERALISATION</h3>
+        <p style="margin:0; font-size:13px; line-height:1.45; color:#1B2333;">Delicensing of industry · deregulation of prices · freedom to import/export · rupee devalued (1991) · financial-sector reform. The state retreats from day-to-day control.</p>
+      </div>
+      <div style="flex:1; background:#F6FFDF; border-radius:11px; padding:10px 12px;">
+        <h3 style="margin:0 0 4px; font-size:15px; color:#4E7A00;">PRIVATISATION</h3>
+        <p style="margin:0; font-size:13px; line-height:1.45; color:#1B2333;">Disinvestment of PSU equity · fewer industries reserved for the public sector · autonomy packages (MoUs, Navratna-style status) to make PSUs compete.</p>
+      </div>
+      <div style="flex:1; background:#FFF3EC; border-radius:11px; padding:10px 12px;">
+        <h3 style="margin:0 0 4px; font-size:15px; color:#B4380F;">GLOBALISATION</h3>
+        <p style="margin:0; font-size:13px; line-height:1.45; color:#1B2333;">Tariff cuts peak rates · quantitative restrictions phased out · FDI and FII invited · WTO membership (1995) locks openness in.</p>
+      </div>
+    </div>
+    <div style="position:absolute; left:20px; right:20px; top:540px; background:#071A4D; border-radius:11px; padding:11px 14px;">
+      <p style="margin:0; font-size:13.5px; line-height:1.5; color:#fff;"><b style="color:#B8FF34;">Appraisal in one line:</b> reforms sped up growth, rebuilt reserves and revived competition — but critics count jobless growth, neglected agriculture and rising inequality; the debate is never one-sided.</p>
+    </div>
+  </div>
+
+  <div class="strip">
+    <div class="trap"><h3>TRAP 1</h3><p><b>Eve of independence ≠ empty economy.</b> Railways and some modern industry existed — but backward, foreign-owned and low-capacity.</p></div>
+    <div class="trap"><h3>TRAP 2</h3><p><b>Green Revolution = 1966, not the Second Plan.</b> The Second Plan (1956) is the INDUSTRY turn — pairing the wrong decade is the classic MCQ.</p></div>
+    <div class="trap"><h3>TRAP 3</h3><p><b>1991 crisis → NEP = LPG.</b> Stabilisation (short-run) + structural adjustment (long-run) — know which parts belong to which.</p></div>
+  </div>
+</div>
+</body>
+</html>

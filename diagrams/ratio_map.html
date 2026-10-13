@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: auto; background: #fff; padding: 26px 30px 24px; position: relative; }
+  .strip {
+    background: #071A4D; border-radius: 14px; border-bottom: 5px solid #B8FF34;
+    text-align: center; padding: 16px 20px 14px; margin-bottom: 8px;
+    box-shadow: 0 6px 18px rgba(7,26,77,.22);
+  }
+  .strip .t { color: #fff; font-size: 30px; font-weight: 800; letter-spacing: .5px; }
+  .strip .s { color: #B8FF34; font-size: 15px; font-weight: 700; letter-spacing: 2px; margin-top: 6px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 18px; }
+  .card {
+    background: #FCFDFF; border: 1.5px solid #D5DCEA; border-radius: 14px; padding: 15px 18px 13px;
+  }
+  .card h2 { font-size: 22px; color: #071A4D; font-weight: 800; margin-bottom: 2px;
+             padding-bottom: 5px; border-bottom: 3px solid; display: inline-block; }
+  .card .q { font-size: 14px; color: #5A6478; font-style: italic; margin: 4px 0 8px; }
+  .b h2 { border-color: #1F5EFF; }
+  .l h2 { border-color: #7FB800; }
+  .r { font-size: 15px; color: #1B2333; margin: 7px 0; padding-left: 16px; position: relative; line-height: 1.38; }
+  .r::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
+  .b .r::before { background: #1F5EFF; }
+  .l .r::before { background: #7FB800; }
+  .r b { color: #071A4D; }
+  .r .f { color: #1F5EFF; font-weight: 700; }
+  .foot {
+    margin-top: 18px; background: #EEF1F8; border: 1.5px solid #D5DCEA; border-radius: 12px;
+    padding: 11px 16px; font-size: 14.5px; color: #071A4D; text-align: center; line-height: 1.45;
+  }
+  .foot b { color: #1F5EFF; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="strip">
+    <div class="t">ACCOUNTING RATIOS &#8212; THE FAMILY MAP</div>
+    <div class="s">FOUR FAMILIES &#183; FOURTEEN RATIOS &#183; ONE JOB EACH</div>
+  </div>
+
+  <div class="grid">
+    <div class="card b">
+      <h2>Liquidity Ratios</h2>
+      <div class="q">Can the firm pay its short-term dues on time?</div>
+      <div class="r"><b>Current ratio</b> = <span class="f">Current assets &#247; Current liabilities</span> &#8212; covers dues payable within a year; commonly quoted ideal 2:1</div>
+      <div class="r"><b>Quick ratio</b> = <span class="f">(CA &#8722; Inventory &#8722; Prepaid) &#247; Current liabilities</span> &#8212; the same test without slow-moving stock; commonly quoted ideal 1:1</div>
+    </div>
+
+    <div class="card l">
+      <h2>Solvency Ratios</h2>
+      <div class="q">Can the firm carry its long-term debt safely?</div>
+      <div class="r"><b>Debt-Equity ratio</b> = <span class="f">Long-term debt &#247; Shareholders' funds</span> &#8212; how heavily the firm borrows; lower is safer</div>
+      <div class="r"><b>Proprietary ratio</b> = <span class="f">Shareholders' funds &#247; Total assets</span> &#8212; the owners' slice of the assets</div>
+      <div class="r"><b>Total assets to debt</b> = <span class="f">Total assets &#247; Long-term debt</span> &#8212; the asset cushion standing behind the debt</div>
+      <div class="r"><b>Interest coverage</b> = <span class="f">Profit before interest &amp; tax &#247; Interest on long-term debt</span> &#8212; how many times profit can pay the interest bill</div>
+    </div>
+
+    <div class="card l">
+      <h2>Activity (Turnover) Ratios</h2>
+      <div class="q">How fast do assets turn into sales and cash?</div>
+      <div class="r"><b>Inventory turnover</b> = <span class="f">Cost of revenue &#247; Average inventory</span> &#8212; how many times stock is sold in a year</div>
+      <div class="r"><b>Receivables turnover</b> = <span class="f">Net credit revenue &#247; Average trade receivables</span> &#8212; collection speed; days = 365 &#247; ratio</div>
+      <div class="r"><b>Payables turnover</b> = <span class="f">Net credit purchases &#247; Average trade payables</span> &#8212; how fast the firm pays suppliers</div>
+      <div class="r"><b>Working capital turnover</b> = <span class="f">Revenue from operations &#247; Working capital</span> &#8212; sales squeezed out of each rupee of working capital</div>
+    </div>
+
+    <div class="card b">
+      <h2>Profitability Ratios</h2>
+      <div class="q">Is every rupee of sales leaving a profit behind?</div>
+      <div class="r"><b>Gross profit ratio</b> = <span class="f">Gross profit &#247; Revenue &#215; 100</span> &#8212; margin before operating costs</div>
+      <div class="r"><b>Net profit ratio</b> = <span class="f">Net profit &#247; Revenue &#215; 100</span> &#8212; the final margin after everything</div>
+      <div class="r"><b>Operating ratio</b> = <span class="f">(Cost of revenue + Operating expenses) &#247; Revenue &#215; 100</span> &#8212; the cost slice; lower is better</div>
+      <div class="r"><b>Operating profit ratio</b> = <span class="f">Operating profit &#247; Revenue &#215; 100</span> &#8212; the operating margin; it and the operating ratio always total 100%</div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <b>Ground rules:</b> "Average" = (opening + closing) &#247; 2 when both are given &#183; "Revenue" means revenue from operations &#183;
+    every ratio gains meaning only when compared &#8212; with past years, other firms or a quoted benchmark.
+  </div>
+</div>
+</body>
+</html>

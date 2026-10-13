@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: 960px; position: relative; background: #fff; }
+  .title {
+    position: absolute; left: 30px; top: 22px; width: 1420px; height: 58px;
+    background: #071A4D; border-radius: 12px; display: flex; align-items: center; justify-content: center;
+  }
+  .title .t { color: #fff; font-size: 24px; font-weight: 800; letter-spacing: 1px; }
+  .title .t b { color: #B8FF34; }
+  .panel {
+    position: absolute; top: 104px; width: 692px; height: 664px;
+    background: #FCFDFF; border: 1.5px solid #D5DCEA; border-radius: 14px; padding: 14px 18px;
+  }
+  .left  { left: 30px; }
+  .right { left: 758px; }
+  .panel h2 { font-size: 21px; font-weight: 800; margin-bottom: 2px; }
+  .left h2 { color: #1F5EFF; } .right h2 { color: #7FB800; }
+  .panel .sub { font-size: 14px; color: #5A6478; margin-bottom: 6px; }
+  .panel .sub b { color: #071A4D; }
+  .note { font-size: 13.5px; color: #1B2333; line-height: 1.4; margin-top: 6px; }
+  .note b { color: #071A4D; }
+  .strip { position: absolute; left: 30px; top: 788px; width: 1420px; display: flex; gap: 14px; }
+  .trap { flex: 1; background: #FFF3EC; border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px; }
+  .trap h3 { font-size: 14.5px; color: #B4380F; font-weight: 800; margin-bottom: 3px; }
+  .trap p { font-size: 13.5px; color: #7A2A12; line-height: 1.4; }
+  .trap p b { color: #B4380F; }
+  table.bop { width: 100%; border-collapse: collapse; font-size: 13px; color: #1B2333; }
+  table.bop td, table.bop th { padding: 5px 8px; }
+  table.bop th { background: #EAF0FF; color: #071A4D; font-weight: 800; text-align: left; }
+  table.bop td { border-bottom: 1px solid #E3E8F2; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="title"><div class="t">THE BOP ACCOUNT FORMAT &amp; <b>THE FOREX MARKET THAT PRICES THE RUPEE</b></div></div>
+
+  <div class="panel left">
+    <h2>Balance of Payments — the account's actual shape</h2>
+    <div class="sub"><b>Credits (+)</b> bring foreign currency IN (exports, FDI coming); <b>debits (−)</b> send it OUT — the statement reads like a bank passbook</div>
+    <table class="bop">
+      <tr><th style="width:52%">CURRENT ACCOUNT (flow of goods, services, income)</th><th>Credit (+)</th><th>Debit (−)</th></tr>
+      <tr><td>1. Merchandise trade — goods (VISIBLE items)</td><td>tea, textiles sold abroad</td><td>crude oil, phones bought</td></tr>
+      <tr><td>2. Services — software, transport, tourism (INVISIBLES)</td><td>IT exports</td><td>students' fees abroad</td></tr>
+      <tr><td>3. Income — interest, profit, dividends on investments</td><td>earnings from US assets</td><td>profit repatriated by MNCs</td></tr>
+      <tr><td>4. Current transfers — remittances, gifts, donations</td><td>NRI remittances</td><td>gifts sent abroad</td></tr>
+      <tr><th style="width:52%">CAPITAL ACCOUNT (flow of ownership of assets)</th><th>Credit (+)</th><th>Debit (−)</th></tr>
+      <tr><td>Foreign Direct Investment (FDI) — factories, control</td><td>Toyota builds a plant here</td><td>an Indian firm buys abroad</td></tr>
+      <tr><td>Portfolio investment — shares, bonds (paper, no control)</td><td>FII buys Indian equities</td><td>FII pulls money out</td></tr>
+      <tr><td>Loans and banking capital</td><td>External commercial borrowing</td><td>repayment of loans</td></tr>
+      <tr><td>Official reserve transactions (RBI) — the ACCOMMODATING item</td><td>RBI draws down reserves</td><td>RBI accumulates reserves</td></tr>
+    </table>
+    <div class="note"><b>Read it once:</b> the current account is about EARNING this year (things consumed within the period); the capital account is about CHANGING ownership of assets. Autonomous items happen for profit; accommodating items (RBI reserves) exist only to balance the book.</div>
+  </div>
+
+  <div class="panel right">
+    <h2>Forex market — where the rupee gets its price</h2>
+    <div class="sub"><b>Demand for $</b> = our payments abroad (imports, investing out) · <b>Supply</b> = our receipts (exports, FDI in)</div>
+    <svg width="656" height="400" viewBox="0 0 656 400">
+      <line x1="52" y1="16" x2="52" y2="330" stroke="#071A4D" stroke-width="2.5"/>
+      <line x1="52" y1="330" x2="626" y2="330" stroke="#071A4D" stroke-width="2.5"/>
+      <text x="58" y="12" font-size="13" font-weight="800" fill="#071A4D">Exchange rate (₹ per $)</text>
+      <text x="540" y="350" font-size="13" font-weight="800" fill="#071A4D">Quantity of $</text>
+      <!-- D1 -->
+      <line x1="100" y1="60" x2="360" y2="300" stroke="#1F5EFF" stroke-width="3.5"/>
+      <text x="364" y="306" font-size="14" font-weight="800" fill="#1F5EFF">D₁</text>
+      <!-- D2 right shift -->
+      <line x1="190" y1="60" x2="450" y2="300" stroke="#5A6478" stroke-width="3" stroke-dasharray="8 5"/>
+      <text x="454" y="306" font-size="14" font-weight="800" fill="#5A6478">D₂</text>
+      <!-- S -->
+      <line x1="140" y1="300" x2="420" y2="55" stroke="#0E7A4D" stroke-width="3.5"/>
+      <text x="424" y="55" font-size="14" font-weight="800" fill="#0E7A4D">S</text>
+      <!-- E1: D1 x S. D1: x=100+260t, y=60+240t. S: x=140+280u, y=300-245u. 100+260t=140+280u; 60+240t=300-245u -> t=1-1.0208u; x=100+260-265.4u=360-265.4u=140+280u -> 220=545.4u -> u=0.4034; x=253, y=300-98.8=201.2 -->
+      <circle cx="253" cy="201" r="7" fill="#071A4D"/>
+      <text x="150" y="188" font-size="13" font-weight="800" fill="#071A4D">E₁: ₹80 per $</text>
+      <line x1="52" y1="201" x2="253" y2="201" stroke="#5A6478" stroke-width="1.5" stroke-dasharray="4 4"/>
+      <text x="58" y="193" font-size="13" font-weight="700" fill="#071A4D">80</text>
+      <!-- E2: D2 x S: x=190+260t, y=60+240t. 190+260t=140+280u; 60+240t=300-245u -> t=1-1.0208u; x=450-265.4u=140+280u -> 310=545.4u -> u=0.5683; x=299.1, y=300-139.2=160.8 -->
+      <circle cx="299" cy="161" r="7" fill="#B4380F"/>
+      <text x="312" y="150" font-size="13" font-weight="800" fill="#B4380F">E₂: ₹88 per $</text>
+      <line x1="52" y1="161" x2="299" y2="161" stroke="#B4380F" stroke-width="1.5" stroke-dasharray="4 4"/>
+      <text x="58" y="153" font-size="13" font-weight="700" fill="#B4380F">88</text>
+      <!-- shift arrow -->
+      <path d="M 232 118 L 280 96" stroke="#B4380F" stroke-width="3" marker-end="url(#aF)"/>
+      <defs><marker id="aF" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#B4380F"/></marker></defs>
+      <!-- regime note box -->
+            <text x="480" y="284" font-size="12.5" font-weight="700" fill="#5A6478">imports rise, FIIs exit →</text>
+      <text x="480" y="302" font-size="12.5" font-weight="700" fill="#5A6478">D for $ jumps right:</text>
+      <text x="474" y="320" font-size="12.5" font-weight="800" fill="#B4380F">rupee DEPRECIATES</text>
+<rect x="52" y="352" width="576" height="36" rx="9" fill="#F6FFDF" stroke="#7FB800" stroke-width="1.5"/>
+      <text x="340" y="375" font-size="13.5" font-weight="800" fill="#4E7A00" text-anchor="middle">Flexible: market decides · Fixed: RBI pegs · Managed float: market + RBI intervention</text>
+    </svg>
+    <div class="note"><b>Read it once:</b> more dollars demanded than supplied → the dollar's price in rupees rises → DEPRECIATION (imports costlier, exports cheaper for the world). Under a fixed regime the RBI absorbs the pressure by selling reserves.</div>
+  </div>
+
+  <div class="strip">
+    <div class="trap"><h3>TRAP 1</h3><p><b>Balance of trade ≠ balance of payments.</b> BoT = goods (visibles) only, a current-account slice; BoP = the WHOLE account book.</p></div>
+    <div class="trap"><h3>TRAP 2</h3><p><b>Depreciation ≠ devaluation.</b> Depreciation is the MARKET letting the rupee slide (flexible regime); devaluation is a DELIBERATE government cut of a fixed peg.</p></div>
+    <div class="trap"><h3>TRAP 3</h3><p><b>Autonomous vs accommodating:</b> autonomous items happen for profit regardless of BoP; accommodating items (reserve transactions) exist ONLY to plug the gap.</p></div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: 1080px; position: relative; background: #fff; }
+  svg.wires { position: absolute; inset: 0; width: 1480px; height: 1080px; }
+  .center {
+    position: absolute; left: 555px; top: 430px; width: 370px; height: 100px;
+    background: #071A4D; border-radius: 16px; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(7,26,77,.25);
+    border-bottom: 5px solid #B8FF34;
+  }
+  .center .t { color: #fff; font-size: 26px; font-weight: 800; letter-spacing: .5px; }
+  .center .s { color: #B8FF34; font-size: 13px; font-weight: 700; letter-spacing: 2px; margin-top: 4px; }
+  .card {
+    position: absolute; width: 470px; background: #FCFDFF; border: 1.5px solid #D5DCEA;
+    border-radius: 14px; padding: 13px 16px 12px;
+  }
+  .card h2 { font-size: 19px; color: #071A4D; font-weight: 800; margin-bottom: 7px;
+             padding-bottom: 5px; border-bottom: 3px solid; display: inline-block; }
+  .leaf { font-size: 13.4px; color: #1B2333; margin: 4px 0; padding-left: 16px; position: relative; line-height: 1.28; }
+  .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
+  .b .leaf::before { background: #1F5EFF; }
+  .l .leaf::before { background: #7FB800; }
+  .leaf b { color: #071A4D; }
+  .b h2 { border-color: #1F5EFF; }
+  .l h2 { border-color: #7FB800; }
+  .left { left: 30px; }
+  .right { left: 980px; }
+  .exc {
+    position: absolute; left: 470px; top: 900px; width: 540px; background: #FFF3EC;
+    border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px;
+  }
+  .exc h2 { font-size: 17px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
+  .exc .leaf { font-size: 12.6px; margin: 3.5px 0; padding-left: 14px; color: #7A2A12; }
+  .exc .leaf::before { background: #D2481F; }
+  .exc b { color: #B4380F; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <svg class="wires" viewBox="0 0 1480 1080">
+    <path d="M 555 465 C 505 465, 520 135, 502 132" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 555 480 C 510 480, 522 385, 502 382" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 555 495 C 510 495, 522 645, 502 642" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 925 465 C 975 465, 960 135, 978 132" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 925 480 C 970 480, 958 385, 978 382" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 925 495 C 970 495, 958 645, 978 642" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 740 530 C 740 660, 740 835, 740 898" fill="none" stroke="#D2481F" stroke-width="2.5" stroke-dasharray="7 5" opacity=".6"/>
+  </svg>
+
+  <div class="center">
+    <div class="t">MARKETING</div>
+    <div class="s">UNIT XI &#183; COMPLETE CHAPTER MAP</div>
+  </div>
+
+  <div class="card left b" style="top:52px">
+    <h2>Meaning, Functions &amp; Philosophies</h2>
+    <div class="leaf"><b>Marketing</b> = a social process of identifying needs and satisfying them profitably — starts <b>before</b> production, continues <b>after</b> the sale</div>
+    <div class="leaf"><b>Functions:</b> gather market info &#183; plan &#183; design &#183; standardise &#183; package &#183; brand &#183; support customers &#183; price &#183; promote &#183; distribute</div>
+    <div class="leaf"><b>Philosophies:</b> production $arrow$ product $arrow$ selling $arrow$ marketing $arrow$ societal — each era widens the focus from factory to society</div>
+  </div>
+
+  <div class="card left l" style="top:312px">
+    <h2>Marketing vs Selling</h2>
+    <div class="leaf"><b>Focus:</b> marketing = customer needs; selling = the product</div>
+    <div class="leaf"><b>Aim:</b> satisfaction + profit through it vs only profit through volume</div>
+    <div class="leaf"><b>Starts:</b> marketing before production; selling after it</div>
+    <div class="leaf"><b>Scope:</b> marketing is wider — selling is one part of it</div>
+  </div>
+
+  <div class="card left b" style="top:562px">
+    <h2>Product &amp; Price</h2>
+    <div class="leaf"><b>Consumer goods:</b> convenience (bought often, little effort) &#183; shopping (compared) &#183; specialty (special effort)</div>
+    <div class="leaf"><b>Industrial goods:</b> materials &amp; parts, capital items, supplies &amp; services</div>
+    <div class="leaf"><b>Branding</b> = name/mark identifying the product; <b>label</b> = written description; <b>packaging</b> = protection + promotion</div>
+    <div class="leaf"><b>Price factors:</b> cost, demand &amp; utility, competition, government regulation, pricing objectives, marketing method</div>
+  </div>
+
+  <div class="card right l" style="top:52px">
+    <h2>The Marketing Mix — 4 Ps</h2>
+    <div class="leaf"><b>Product</b> — what is offered (goods, services, brand, package)</div>
+    <div class="leaf"><b>Price</b> — what the customer pays; the only revenue-earning P</div>
+    <div class="leaf"><b>Place</b> — how it reaches the buyer (channels, transport, warehouses)</div>
+    <div class="leaf"><b>Promotion</b> — how people hear and are persuaded</div>
+    <div class="leaf">All four must <b>fit together</b> — a premium product on a weak channel fails</div>
+  </div>
+
+  <div class="card right b" style="top:312px">
+    <h2>Physical Distribution &amp; Channels</h2>
+    <div class="leaf"><b>Components:</b> transportation &#183; warehousing &#183; inventory control &#183; order processing</div>
+    <div class="leaf"><b>Channel levels:</b> zero (direct) $arrow$ one (retailer) $arrow$ two (wholesaler + retailer) $arrow$ three (agent added)</div>
+    <div class="leaf"><b>Choice factors:</b> product nature (perishable = short), company funds, market size &amp; spread, competition, legal rules</div>
+  </div>
+
+  <div class="card right l" style="top:572px">
+    <h2>Promotion — The Four Tools</h2>
+    <div class="leaf"><b>Advertising:</b> paid, non-personal, mass medium — wide reach, low per-head cost</div>
+    <div class="leaf"><b>Personal selling:</b> face-to-face persuasion — flexible, relationship-building</div>
+    <div class="leaf"><b>Sales promotion:</b> short-run incentives — discounts, coupons, contests</div>
+    <div class="leaf"><b>Public relations:</b> free image-building — news, events, sponsorships</div>
+    <div class="leaf"><b>Objections to advertising:</b> adds cost, undermines social values, confuses buyers; <b>replies:</b> scale economies, information, consumer education</div>
+  </div>
+
+  <div class="exc">
+    <h2>Traps that catch most students</h2>
+    <div class="leaf"><b>Marketing ≠ selling</b> — selling is one part; marketing begins before production</div>
+    <div class="leaf"><b>Convenience vs shopping goods</b> — effort decides the class, not the price alone</div>
+    <div class="leaf"><b>Zero-level channel = direct</b> — no middleman at all; count the middlemen, not the customers</div>
+    <div class="leaf"><b>Price is the only revenue-earning P</b> — product, place and promotion all cost money</div>
+  </div>
+</div>
+</body>
+</html>

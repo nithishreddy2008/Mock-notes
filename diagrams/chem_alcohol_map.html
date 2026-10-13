@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; position: relative; background: #fff; padding-bottom: 8px; }
+  .title { text-align: center; font-size: 24px; font-weight: 800; color: #071A4D; padding-top: 20px; }
+  .subtitle { text-align: center; font-size: 14px; color: #5A6478; margin-top: 4px; }
+  .lane { position: relative; margin: 60px 40px 0; height: 480px; }
+  .src { position: absolute; left: 40px; top: 150px; width: 240px; height: 110px; background: #071A4D;
+         border-radius: 14px; border-bottom: 5px solid #B8FF34; display: flex; flex-direction: column;
+         align-items: center; justify-content: center; box-shadow: 0 6px 16px rgba(7,26,77,.25); }
+  .src .t { color: #fff; font-size: 24px; font-weight: 800; }
+  .src .s { color: #B8FF34; font-size: 13px; font-weight: 700; letter-spacing: 2px; margin-top: 3px; }
+  svg.wires { position: absolute; inset: 0; width: 1400px; height: 480px; }
+  .branch { position: absolute; width: 330px; background: #FCFDFF; border: 1.5px solid #D5DCEA; border-radius: 12px; padding: 10px 13px; }
+  .branch h3 { font-size: 15.5px; font-weight: 800; color: #1F5EFF; margin-bottom: 4px; }
+  .branch p { font-size: 13px; color: #1B2333; line-height: 1.4; }
+  .branch p b { color: #071A4D; }
+  .reagent { display: inline-block; background: #EAF0FF; border-radius: 6px; padding: 2px 7px; font-size: 12.5px; font-weight: 800; color: #1F5EFF; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="title">THE ALCOHOL REACTION MAP — ONE GROUP, SIX DESTINATIONS</div>
+  <div class="subtitle">Every S&#8317; route attacks the C&#8211;OH bond; oxidation attacks the O&#8211;H side. Pick the reagent, predict the product.</div>
+
+  <div class="lane">
+    <svg class="wires" viewBox="0 0 1400 480">
+      <path d="M 280 205 L 470 205 L 470 55 L 560 55" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".6"/>
+      <path d="M 280 205 L 470 205 L 470 140 L 560 140" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".6"/>
+      <path d="M 280 205 L 470 205 L 470 225 L 560 225" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".6"/>
+      <path d="M 280 205 L 470 205 L 470 310 L 560 310" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".6"/>
+      <path d="M 280 205 L 470 205 L 470 395 L 560 395" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".6"/>
+      <path d="M 280 205 L 470 205 L 470 462 L 560 462" fill="none" stroke="#D2481F" stroke-width="2.5" opacity=".6"/>
+    </svg>
+
+    <div class="src"><div class="t">R&#8211;OH</div><div class="s">THE ALCOHOL HUB</div></div>
+
+    <div class="branch" style="left:560px; top:20px;">
+      <h3>1. Substitute &#8594; alkyl halide</h3>
+      <p><span class="reagent">HX (Lucas: ZnCl&#8322;+HCl)</span> or <span class="reagent">SOCl&#8322;</span> or <span class="reagent">PX&#8323;/PX&#8325;</span><br>
+      3&#176; bubbles instantly in Lucas, 2&#176; in minutes, 1&#176; only on heating. SOCl&#8322; gives the purest chloride (gases escape).</p>
+    </div>
+
+    <div class="branch" style="left:560px; top:105px;">
+      <h3>2. Dehydrate &#8594; alkene or ether</h3>
+      <p><span class="reagent">conc. H&#8322;SO&#8324;, 443 K</span> &#8594; alkene (Saytzeff wins: but-2-ene &gt; but-1-ene). Milder <span class="reagent">413 K</span> &#8594; ether (two alcohols join). 3&#176; dehydrates easiest.</p>
+    </div>
+
+    <div class="branch" style="left:560px; top:190px;">
+      <h3>3. Esterify (keep the O&#8211;H!)</h3>
+      <p><span class="reagent">RCOOH + acid, heat</span> &#8594; ester + water. The C&#8211;O bond of the ALCOHOL stays whole &#8212; the oxygen in the ester comes from the alcohol (isotope proof).</p>
+    </div>
+
+    <div class="branch" style="left:560px; top:275px;">
+      <h3>4. Act as a weak acid</h3>
+      <p><span class="reagent">Na / NaH</span> &#8594; alkoxide + H&#8322; gas. Acidity order: <b>methanol &gt; 1&#176; &gt; 2&#176; &gt; 3&#176;</b> &#8212; alkyl groups push electrons and weaken the O&#8211;H.</p>
+    </div>
+
+    <div class="branch" style="left:560px; top:360px;">
+      <h3>5. Oxidise (the class decides!)</h3>
+      <p><span class="reagent">K&#8322;Cr&#8322;O&#8327;/H&#8314;</span>: 1&#176; &#8594; aldehyde &#8594; acid; 2&#176; &#8594; ketone; 3&#176; resists (no C&#8211;H on the carbinol carbon). Cu at 573 K dehydrogenates instead: 1&#176; &#8594; aldehyde, 2&#176; &#8594; ketone, 3&#176; &#8594; alkene.</p>
+    </div>
+
+    <div class="branch" style="left:560px; top:447px; background:#FFF3EC; border-color:#D2481F;">
+      <h3 style="color:#B4380F;">6. With HBr watch the class</h3>
+      <p style="color:#7A2A12;">3&#176; goes S&#8317;1 (fast, via carbocation); 1&#176; goes S&#8317;2 (slow, backside) &#8212; the mechanism switch you learned in Unit VI decides everything.</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

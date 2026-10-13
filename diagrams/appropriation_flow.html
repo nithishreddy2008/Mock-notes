@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: auto; background: #fff; padding: 26px 30px 24px; position: relative; }
+  .title { text-align: center; font-size: 32px; font-weight: 800; color: #071A4D; margin-bottom: 6px; }
+  .subtitle { text-align: center; font-size: 19px; color: #5A6478; margin-bottom: 26px; }
+  .row { display: flex; justify-content: center; align-items: stretch; gap: 0; }
+  .node {
+    width: 305px; background: #FCFDFF; border: 1.5px solid #D5DCEA; border-radius: 13px;
+    padding: 14px 16px 13px; position: relative; margin: 0 26px;
+  }
+  .node .num {
+    position: absolute; top: -17px; left: -17px; width: 40px; height: 40px; border-radius: 50%;
+    background: #071A4D; color: #B8FF34; font-weight: 800; font-size: 19px;
+    display: flex; align-items: center; justify-content: center; border: 2.5px solid #fff;
+    box-shadow: 0 3px 8px rgba(7,26,77,.28);
+  }
+  .node h3 { font-size: 21px; color: #071A4D; font-weight: 800; margin-bottom: 6px; padding-bottom: 5px;
+             border-bottom: 2.5px solid #1F5EFF; display: inline-block; }
+  .node p { font-size: 16.5px; color: #1B2333; line-height: 1.4; }
+  .node p b { color: #071A4D; }
+  .node.dr h3 { border-color: #D2481F; }
+  .node.dr { background: #FFF8F5; }
+  .node.cr h3 { border-color: #7FB800; }
+  .node.cr { background: #FBFFF4; }
+  .arrow { align-self: center; width: 0; height: 0; border-top: 15px solid transparent;
+           border-bottom: 15px solid transparent; border-left: 22px solid #1F5EFF; margin: 0 -6px; }
+  .arrow.down { border-left: 15px solid transparent; border-right: 15px solid transparent;
+                border-top: 22px solid #1F5EFF; border-bottom: none; margin: 4px 0; }
+  .spacer { width: 357px; }
+  .rowgap { height: 40px; display: flex; justify-content: center; }
+  .downwrap { display: flex; flex-direction: column; align-items: center; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="title">Where Does the Year's Profit Actually Go?</div>
+  <div class="subtitle">The Profit &amp; Loss Appropriation journey — from the P&amp;L account into the partners' pockets</div>
+
+  <div class="row">
+    <div class="node cr">
+      <div class="num">1</div>
+      <h3>Net profit arrives</h3>
+      <p>P&amp;L A/c closes and hands its balance to the <b>P&amp;L Appropriation A/c</b> (credit side).</p>
+    </div>
+    <div class="arrow"></div>
+    <div class="node cr">
+      <div class="num">2</div>
+      <h3>Add interest on drawings</h3>
+      <p>Money partners took out earns <b>interest for the firm</b> — credited here.</p>
+    </div>
+    <div class="arrow"></div>
+    <div class="node dr">
+      <div class="num">3</div>
+      <h3>Deduct deed items</h3>
+      <p>Debit side: <b>IoC</b> &#183; partner <b>salary</b> &#183; <b>commission</b> &#183; transfer to <b>reserve</b>.</p>
+    </div>
+    <div class="arrow"></div>
+    <div class="node">
+      <div class="num">4</div>
+      <h3>Divisible profit</h3>
+      <p>Whatever remains is the profit the partners <b>share between themselves</b>.</p>
+    </div>
+  </div>
+
+  <div class="rowgap"><div class="downwrap"><div class="arrow down"></div></div></div>
+
+  <div class="row">
+    <div class="spacer"></div>
+    <div class="node">
+      <div class="num">5</div>
+      <h3>Share in the agreed ratio</h3>
+      <p>Divisible profit is split in the <b>profit-sharing ratio</b> of the deed (equally if silent).</p>
+    </div>
+    <div class="arrow"></div>
+    <div class="node">
+      <div class="num">6</div>
+      <h3>Credit each partner</h3>
+      <p>Each share is credited to the partner's <b>Current A/c</b> (fixed system) or <b>Capital A/c</b> (fluctuating).</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

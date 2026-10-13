@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: 668px; background: #fff; position: relative; }
+  .top {
+    height: 64px; background: #071A4D; display: flex; align-items: center;
+    justify-content: space-between; padding: 0 34px;
+  }
+  .top .t { color: #fff; font-size: 23px; font-weight: 800; letter-spacing: .4px; }
+  .top .s { color: #B8FF34; font-size: 13px; font-weight: 700; letter-spacing: 2px; }
+  .panels { display: flex; gap: 24px; padding: 20px 30px 0; }
+  .panel { flex: 1; border: 1.5px solid #D5DCEA; border-radius: 14px; background: #FCFDFF; padding: 14px 16px; }
+  .panel h2 { font-size: 18.5px; color: #071A4D; font-weight: 800; margin-bottom: 2px; }
+  .panel .sub { font-size: 13.5px; color: #44506B; margin-bottom: 10px; }
+  .panel h2 span { color: #1F5EFF; }
+  table.pun { border-collapse: collapse; margin: 0 auto; }
+  table.pun td, table.pun th {
+    border: 1.5px solid #C6CFDF; width: 92px; height: 52px; text-align: center;
+    font-size: 16px; font-weight: 700; color: #1B2333;
+  }
+  table.pun th { background: #071A4D; color: #fff; font-size: 16px; width: 64px; }
+  table.pun th.corner { background: #1F5EFF; font-size: 11px; letter-spacing: .5px; line-height: 1.25; }
+  .tall  { background: #B8FF34; }
+  .het   { background: #DCFF8F; }
+  .dwarf { background: #EDF0F6; border-style: dashed !important; }
+  .ry  { background: #B8FF34; font-size: 14px; }
+  .rg  { background: #BFD5FF; font-size: 14px; }
+  .wy  { background: #E4E9F4; font-size: 14px; }
+  .wg  { background: #FFFFFF; font-size: 14px; border-style: dashed !important; }
+  .legend { display: flex; gap: 10px; justify-content: center; margin-top: 10px; flex-wrap: nowrap; }
+  .chip { font-size: 12.5px; font-weight: 700; color: #071A4D; border: 1.3px solid #C6CFDF;
+          border-radius: 20px; padding: 3px 11px; background: #fff; }
+  .chip i { display: inline-block; width: 11px; height: 11px; border-radius: 3px; margin-right: 5px;
+            vertical-align: -1px; border: 1px solid rgba(7,26,77,.25); }
+  .ratios { display: flex; gap: 12px; margin-top: 12px; }
+  .ratio { flex: 1; border-radius: 10px; padding: 8px 12px; font-size: 14.5px; font-weight: 700;
+           color: #071A4D; text-align: center; }
+  .ratio small { display: block; font-weight: 600; font-size: 12px; color: #44506B; margin-top: 2px; }
+  .r-gen { background: #E7EEFF; border: 1.3px solid #1F5EFF; }
+  .r-phe { background: #F2FFD4; border: 1.3px solid #7FB800; }
+  .r9 { background: #F2FFD4; border: 1.3px solid #7FB800; }
+  .note {
+    margin: 16px 30px 0; background: #071A4D; border-radius: 10px; padding: 9px 16px;
+    color: #fff; font-size: 14.5px; text-align: center;
+  }
+  .note b { color: #B8FF34; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <div class="t">TWO CROSSES EVERY GENETICS QUESTION STARTS FROM</div>
+    <div class="s">READING PUNNETT SQUARES</div>
+  </div>
+
+  <div class="panels">
+    <div class="panel">
+      <h2>CROSS 1 <span>&#183;</span> MONOHYBRID — Tt &#215; Tt</h2>
+      <div class="sub">Tall (dominant T) &#215; Tall pea, both parents heterozygous — the F&#8321; self-cross</div>
+      <table class="pun">
+        <tr><th class="corner">F&#8321;<br>gametes</th><th>T</th><th>t</th></tr>
+        <tr><th>T</th><td class="tall">TT</td><td class="het">Tt</td></tr>
+        <tr><th>t</th><td class="het">Tt</td><td class="dwarf">tt</td></tr>
+      </table>
+      <div class="ratios">
+        <div class="ratio r-gen">Genotypes 1 TT : 2 Tt : 1 tt<small>all three genotypes are visible in the grid</small></div>
+        <div class="ratio r-phe">Phenotypes 3 Tall : 1 Dwarf<small>any T makes the plant tall — tt alone is dwarf</small></div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2>CROSS 2 <span>&#183;</span> DIHYBRID — RrYy &#215; RrYy</h2>
+      <div class="sub">Seed shape R/r (round/wrinkled) &#215; seed colour Y/y (yellow/green) — 4 gamete types</div>
+      <table class="pun">
+        <tr><th class="corner">F&#8321;<br>gametes</th><th>RY</th><th>Ry</th><th>rY</th><th>ry</th></tr>
+        <tr><th>RY</th><td class="ry">RRYY</td><td class="ry">RRYy</td><td class="ry">RrYY</td><td class="ry">RrYy</td></tr>
+        <tr><th>Ry</th><td class="ry">RRYy</td><td class="rg">RRyy</td><td class="ry">RrYy</td><td class="rg">Rryy</td></tr>
+        <tr><th>rY</th><td class="ry">RrYY</td><td class="ry">RrYy</td><td class="wy">rrYY</td><td class="wy">rrYy</td></tr>
+        <tr><th>ry</th><td class="ry">RrYy</td><td class="rg">Rryy</td><td class="wy">rrYy</td><td class="wg">rryy</td></tr>
+      </table>
+      <div class="legend">
+        <span class="chip"><i style="background:#B8FF34"></i>Round-Yellow &#215;9</span>
+        <span class="chip"><i style="background:#BFD5FF"></i>Round-Green &#215;3</span>
+        <span class="chip"><i style="background:#E4E9F4"></i>Wrinkled-Yellow &#215;3</span>
+        <span class="chip"><i style="background:#fff"></i>Wrinkled-Green &#215;1</span>
+      </div>
+      <div class="ratios">
+        <div class="ratio r9">Phenotypes 9 : 3 : 3 : 1<small>count the 16 boxes group by group — colour makes the ratio visible</small></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="note">Read every Punnett square the same way: <b>list the gametes, fill the boxes, count each phenotype</b> — the ratio is simply the box count.</div>
+</div>
+</body>
+</html>

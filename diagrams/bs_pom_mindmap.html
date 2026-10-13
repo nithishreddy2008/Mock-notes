@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: 1100px; position: relative; background: #fff; }
+  svg.wires { position: absolute; inset: 0; width: 1480px; height: 1100px; }
+  .center {
+    position: absolute; left: 555px; top: 440px; width: 370px; height: 100px;
+    background: #071A4D; border-radius: 16px; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(7,26,77,.25);
+    border-bottom: 5px solid #B8FF34;
+  }
+  .center .t { color: #fff; font-size: 23px; font-weight: 800; letter-spacing: .5px; text-align: center; }
+  .center .s { color: #B8FF34; font-size: 13px; font-weight: 700; letter-spacing: 2px; margin-top: 4px; }
+  .card {
+    position: absolute; width: 470px; background: #FCFDFF; border: 1.5px solid #D5DCEA;
+    border-radius: 14px; padding: 13px 16px 12px;
+  }
+  .card h2 { font-size: 19px; color: #071A4D; font-weight: 800; margin-bottom: 7px;
+             padding-bottom: 5px; border-bottom: 3px solid; display: inline-block; }
+  .leaf { font-size: 13.8px; color: #1B2333; margin: 4.5px 0; padding-left: 16px; position: relative; line-height: 1.3; }
+  .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
+  .b .leaf::before { background: #1F5EFF; }
+  .l .leaf::before { background: #7FB800; }
+  .leaf b { color: #071A4D; }
+  .b h2 { border-color: #1F5EFF; }
+  .l h2 { border-color: #7FB800; }
+  .left { left: 30px; }
+  .right { left: 980px; }
+  .exc {
+    position: absolute; left: 490px; top: 920px; width: 500px; background: #FFF3EC;
+    border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px;
+  }
+  .exc h2 { font-size: 17px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
+  .exc .leaf { font-size: 12.8px; margin: 3.5px 0; padding-left: 14px; color: #7A2A12; }
+  .exc .leaf::before { background: #D2481F; }
+  .exc b { color: #B4380F; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <svg class="wires" viewBox="0 0 1480 1100">
+    <path d="M 555 475 C 505 475, 520 155, 502 152" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 555 490 C 510 490, 522 435, 502 432" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 555 505 C 510 505, 522 715, 502 712" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 925 475 C 975 475, 960 155, 978 152" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 925 490 C 970 490, 958 435, 978 432" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 925 505 C 970 505, 958 715, 978 712" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 740 540 C 740 680, 740 855, 740 918" fill="none" stroke="#D2481F" stroke-width="2.5" stroke-dasharray="7 5" opacity=".6"/>
+  </svg>
+
+  <div class="center">
+    <div class="t">PRINCIPLES OF<br>MANAGEMENT</div>
+    <div class="s">UNIT II &#183; COMPLETE CHAPTER MAP</div>
+  </div>
+
+  <div class="card left b" style="top:62px">
+    <h2>Meaning &amp; Nature</h2>
+    <div class="leaf"><b>Principles</b> = general guidelines for decision-making and behaviour of managers</div>
+    <div class="leaf"><b>Universal</b> — usable in every organisation, big or small</div>
+    <div class="leaf"><b>General guidelines</b>, not readymade answers — applied with judgment</div>
+    <div class="leaf"><b>Formed by practice</b> &amp; experience &#183; <b>flexible</b> &#183; mainly <b>behavioural</b> &#183; show <b>cause &amp; effect</b> &#183; <b>contingent</b> on the situation</div>
+  </div>
+
+  <div class="card left l" style="top:332px">
+    <h2>Significance</h2>
+    <div class="leaf"><b>Meeting changing environment</b> — flexible guides that adapt</div>
+    <div class="leaf"><b>Training value</b> — principles are taught in management courses</div>
+    <div class="leaf"><b>Role of management</b> — shows what managers actually do</div>
+    <div class="leaf"><b>Optimum utilisation</b> of resources &#183; <b>scientific decisions</b> — balanced, not hasty &#183; <b>coordination</b> of all activities</div>
+  </div>
+
+  <div class="card left b" style="top:602px">
+    <h2>Taylor's Techniques</h2>
+    <div class="leaf"><b>Functional foremanship</b> — 8 specialist bosses (4 planning + 4 production)</div>
+    <div class="leaf"><b>Standardisation &amp; simplification</b> — of tools, materials, methods</div>
+    <div class="leaf"><b>Method study</b> — find one best way &#183; <b>Motion study</b> — remove wasteful movements</div>
+    <div class="leaf"><b>Time study</b> — standard time per task &#183; <b>Differential piece wage</b> — efficient workers earn more per piece</div>
+  </div>
+
+  <div class="card right l" style="top:62px">
+    <h2>Fayol's 14 Principles (1–7)</h2>
+    <div class="leaf"><b>1</b> Division of Work — specialise for speed and accuracy</div>
+    <div class="leaf"><b>2</b> Authority &amp; Responsibility — power must match duty</div>
+    <div class="leaf"><b>3</b> Discipline — obedience to agreements and rules</div>
+    <div class="leaf"><b>4</b> Unity of Command — one boss per employee</div>
+    <div class="leaf"><b>5</b> Unity of Direction — one head one plan per goal-group</div>
+    <div class="leaf"><b>6</b> Subordination of Individual to General Interest</div>
+    <div class="leaf"><b>7</b> Remuneration — fair pay keeps employees satisfied</div>
+  </div>
+
+  <div class="card right b" style="top:400px">
+    <h2>Fayol's 14 Principles (8–14)</h2>
+    <div class="leaf"><b>8</b> Centralisation &amp; Decentralisation — the right balance of power</div>
+    <div class="leaf"><b>9</b> Scalar Chain — formal ladder; <b>gang plank</b> = shortcut between peers</div>
+    <div class="leaf"><b>10</b> Order — a place for everything and everyone</div>
+    <div class="leaf"><b>11</b> Equity — kind, fair, no discrimination</div>
+    <div class="leaf"><b>12</b> Stability of Personnel — avoid frequent transfers</div>
+    <div class="leaf"><b>13</b> Initiative — encourage employees to suggest and act</div>
+    <div class="leaf"><b>14</b> Esprit de Corps — team spirit; 'union is strength'</div>
+  </div>
+
+  <div class="card right l" style="top:672px">
+    <h2>Taylor's 4 Principles</h2>
+    <div class="leaf"><b>Science, not rule of thumb</b> — study each task scientifically</div>
+    <div class="leaf"><b>Harmony, not discord</b> — complete mental revolution on both sides</div>
+    <div class="leaf"><b>Cooperation, not individualism</b> — share suggestions together</div>
+    <div class="leaf"><b>Development of each person</b> to their greatest efficiency and prosperity</div>
+  </div>
+
+  <div class="exc">
+    <h2>Traps that catch most students</h2>
+    <div class="leaf"><b>Unity of command</b> (one boss per person) &#8800; <b>unity of direction</b> (one head one plan for a group of activities)</div>
+    <div class="leaf"><b>Gang plank</b> is the <b>exception</b> that cuts across the scalar chain — not a new principle</div>
+    <div class="leaf"><b>Time study</b> = standard time per task; <b>motion study</b> = removing wasteful body movements</div>
+    <div class="leaf"><b>Fayol</b> = general, top-level manager, 14 principles; <b>Taylor</b> = shop-floor, scientific management techniques</div>
+  </div>
+</div>
+</body>
+</html>

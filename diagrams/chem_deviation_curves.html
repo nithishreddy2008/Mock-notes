@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: 760px; position: relative; background: #fff; padding: 26px 30px 20px; }
+  .title { text-align: center; font-size: 24px; font-weight: 800; color: #071A4D; letter-spacing: .4px; }
+  .subtitle { text-align: center; font-size: 14px; color: #5A6478; margin-top: 4px; }
+  .panels { display: flex; gap: 26px; margin-top: 20px; justify-content: center; }
+  .panel { width: 440px; background: #FCFDFF; border: 1.5px solid #D5DCEA; border-radius: 14px; padding: 14px 16px 12px; }
+  .panel h2 { font-size: 19px; font-weight: 800; text-align: center; padding-bottom: 6px; border-bottom: 3px solid; display: block; margin-bottom: 8px; }
+  .ideal h2 { color: #071A4D; border-color: #1F5EFF; }
+  .pos h2 { color: #B4380F; border-color: #D2481F; }
+  .neg h2 { color: #4E7A00; border-color: #7FB800; }
+  .fact { font-size: 14px; color: #1B2333; margin: 4px 0; padding-left: 15px; position: relative; line-height: 1.35; }
+  .fact::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
+  .ideal .fact::before { background: #1F5EFF; }
+  .pos .fact::before { background: #D2481F; }
+  .neg .fact::before { background: #7FB800; }
+  .fact b { color: #071A4D; }
+  .azo { display: flex; gap: 26px; justify-content: center; margin-top: 18px; }
+  .azocard { width: 690px; background: #FFFBEA; border: 1.5px solid #C9A20C; border-radius: 12px; padding: 12px 16px; }
+  .azocard h3 { font-size: 16.5px; color: #9A7B07; font-weight: 800; margin-bottom: 5px; }
+  .azocard .fact { font-size: 13.5px; }
+  .azocard .fact::before { background: #C9A20C; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="title">RAOULT'S LAW ON A GRAPH — IDEAL vs POSITIVE vs NEGATIVE DEVIATION</div>
+  <div class="subtitle">Dashed line = what Raoult's law predicts &nbsp;&#183;&nbsp; Solid curve = what the real solution does</div>
+
+  <div class="panels">
+    <!-- IDEAL -->
+    <div class="panel ideal">
+      <h2>IDEAL — curve sits ON the line</h2>
+      <svg width="404" height="250" viewBox="0 0 404 250">
+        <line x1="46" y1="20" x2="46" y2="212" stroke="#5A6478" stroke-width="2"/>
+        <line x1="46" y1="212" x2="384" y2="212" stroke="#5A6478" stroke-width="2"/>
+        <text x="10" y="34" font-size="12" fill="#5A6478">p</text>
+        <text x="372" y="232" font-size="12" fill="#5A6478">x</text>
+        <text x="386" y="236" font-size="11" fill="#5A6478">B</text>
+        <line x1="46" y1="46" x2="384" y2="176" stroke="#9AA4BC" stroke-width="2.5" stroke-dasharray="7 5"/>
+        <line x1="46" y1="176" x2="384" y2="46" stroke="#9AA4BC" stroke-width="2.5" stroke-dasharray="7 5"/>
+        <line x1="46" y1="46" x2="384" y2="176" stroke="#1F5EFF" stroke-width="3"/>
+        <line x1="46" y1="176" x2="384" y2="46" stroke="#B8FF34" stroke-width="3"/>
+        <circle cx="215" cy="111" r="5" fill="#071A4D"/>
+        <text x="54" y="40" font-size="12" fill="#071A4D" font-weight="700">p&#8321;&#176;</text>
+        <text x="352" y="40" font-size="12" fill="#071A4D" font-weight="700">p&#8322;&#176;</text>
+      </svg>
+      <div class="fact"><b>A&#8211;B pull = A&#8211;A pull = B&#8211;B pull</b> — no one notices the mixing</div>
+      <div class="fact"><b>&#916;H<sub>mix</sub> = 0</b> (no heat change) and <b>&#916;V<sub>mix</sub> = 0</b> (no volume change)</div>
+      <div class="fact"><b>Classic pair:</b> benzene + toluene; also n-hexane + n-heptane, bromoethane + chloroethane</div>
+      <div class="fact"><b>Raoult's law holds</b> at every mole fraction, both components</div>
+    </div>
+
+    <!-- POSITIVE -->
+    <div class="panel pos">
+      <h2>POSITIVE — curve bulges ABOVE</h2>
+      <svg width="404" height="250" viewBox="0 0 404 250">
+        <line x1="46" y1="20" x2="46" y2="212" stroke="#5A6478" stroke-width="2"/>
+        <line x1="46" y1="212" x2="384" y2="212" stroke="#5A6478" stroke-width="2"/>
+        <text x="10" y="34" font-size="12" fill="#5A6478">p</text>
+        <text x="372" y="232" font-size="12" fill="#5A6478">x</text>
+        <text x="386" y="236" font-size="11" fill="#5A6478">B</text>
+        <line x1="46" y1="46" x2="384" y2="176" stroke="#9AA4BC" stroke-width="2.5" stroke-dasharray="7 5"/>
+        <line x1="46" y1="176" x2="384" y2="46" stroke="#9AA4BC" stroke-width="2.5" stroke-dasharray="7 5"/>
+        <path d="M 46 46 C 150 40, 280 74, 384 176" fill="none" stroke="#D2481F" stroke-width="3"/>
+        <path d="M 46 176 C 150 158, 300 52, 384 46" fill="none" stroke="#B8FF34" stroke-width="3"/>
+        <circle cx="215" cy="88" r="5" fill="#B4380F"/>
+        <text x="226" y="80" font-size="12" fill="#B4380F" font-weight="700">above the dashed line</text>
+      </svg>
+      <div class="fact"><b>A&#8211;B pull is WEAKER</b> than A&#8211;A and B&#8211;B — molecules escape more easily</div>
+      <div class="fact"><b>Vapour pressure higher than predicted</b>; &#916;H<sub>mix</sub> &gt; 0, &#916;V<sub>mix</sub> &gt; 0</div>
+      <div class="fact"><b>Classic pairs:</b> ethanol + acetone, CS&#8322; + acetone, water + ethanol</div>
+      <div class="fact"><b>Ends the plot with a minimum-boiling azeotrope</b> (ethanol&#8211;water 95%)</div>
+    </div>
+
+    <!-- NEGATIVE -->
+    <div class="panel neg">
+      <h2>NEGATIVE — curve dips BELOW</h2>
+      <svg width="404" height="250" viewBox="0 0 404 250">
+        <line x1="46" y1="20" x2="46" y2="212" stroke="#5A6478" stroke-width="2"/>
+        <line x1="46" y1="212" x2="384" y2="212" stroke="#5A6478" stroke-width="2"/>
+        <text x="10" y="34" font-size="12" fill="#5A6478">p</text>
+        <text x="372" y="232" font-size="12" fill="#5A6478">x</text>
+        <text x="386" y="236" font-size="11" fill="#5A6478">B</text>
+        <line x1="46" y1="46" x2="384" y2="176" stroke="#9AA4BC" stroke-width="2.5" stroke-dasharray="7 5"/>
+        <line x1="46" y1="176" x2="384" y2="46" stroke="#9AA4BC" stroke-width="2.5" stroke-dasharray="7 5"/>
+        <path d="M 46 46 C 160 96, 270 128, 384 176" fill="none" stroke="#D2481F" stroke-width="3"/>
+        <path d="M 46 176 C 150 172, 280 88, 384 46" fill="none" stroke="#B8FF34" stroke-width="3"/>
+        <circle cx="215" cy="128" r="5" fill="#4E7A00"/>
+        <text x="226" y="146" font-size="12" fill="#4E7A00" font-weight="700">below the dashed line</text>
+      </svg>
+      <div class="fact"><b>A&#8211;B pull is STRONGER</b> — molecules hold each other back (often H-bonding)</div>
+      <div class="fact"><b>Vapour pressure lower than predicted</b>; &#916;H<sub>mix</sub> &lt; 0, &#916;V<sub>mix</sub> &lt; 0</div>
+      <div class="fact"><b>Classic pairs:</b> chloroform + acetone, phenol + aniline, HCl + water, nitric acid + water</div>
+      <div class="fact"><b>Ends the plot with a maximum-boiling azeotrope</b> (68% HNO&#8323; + water)</div>
+    </div>
+  </div>
+
+  <div class="azo">
+    <div class="azocard">
+      <h3>WHY CHLOROFORM + ACETONE SHOWS A NEGATIVE DEVIATION</h3>
+      <div class="fact"><b>New H-bond forms:</b> the chloroform H and the acetone O lock together — an attraction neither pure liquid had</div>
+      <div class="fact"><b>Result:</b> molecules stick harder, escape less, vapour pressure drops, and the mixture boils ABOVE both pure liquids</div>
+    </div>
+    <div class="azocard">
+      <h3>ETHANOL + ACETONE SHOWS A POSITIVE DEVIATION</h3>
+      <div class="fact"><b>Old H-bonds break:</b> acetone molecules get between ethanol molecules and weaken the ethanol&#8211;ethanol hydrogen bonds</div>
+      <div class="fact"><b>Result:</b> molecules escape more freely, vapour pressure rises, and the mixture boils BELOW both pure liquids (95% ethanol azeotrope)</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

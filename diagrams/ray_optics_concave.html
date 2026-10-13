@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; padding: 28px 34px 22px; background: #fff; }
+  .titlebar { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
+  .titlebar .tag { background: #071A4D; color: #fff; font-size: 15px; font-weight: 700;
+                   padding: 7px 16px; border-radius: 8px; letter-spacing: 1px; }
+  .titlebar h1 { font-size: 26px; color: #071A4D; font-weight: 800; }
+  .canvas { border: 1.5px solid #D5DCEA; border-radius: 14px; padding: 10px; background: #FCFDFF; }
+  .legend { display: flex; gap: 26px; margin-top: 14px; padding: 12px 18px;
+            background: #EEF1F8; border-radius: 10px; font-size: 16px; color: #1B2333; }
+  .legend b { color: #071A4D; }
+  .chip { display: inline-block; width: 26px; height: 0; border-top: 3.5px solid; vertical-align: middle; margin-right: 7px; border-radius: 2px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="titlebar">
+    <div class="tag">DIAGRAM</div>
+    <h1>Image Formation by a Concave Mirror — Object Beyond C</h1>
+  </div>
+  <div class="canvas">
+    <svg width="1400" height="560" viewBox="0 0 1400 560">
+      <!-- principal axis -->
+      <line x1="40" y1="300" x2="1360" y2="300" stroke="#5A6478" stroke-width="2"/>
+      <text x="1300" y="286" font-size="14" fill="#5A6478">principal axis</text>
+
+      <!-- mirror arc (concave, opening left), pole P at (1240,300) -->
+      <path d="M 1290 100 A 470 470 0 0 0 1290 500" fill="none" stroke="#071A4D" stroke-width="7"/>
+      <g stroke="#B8C2D8" stroke-width="2">
+        <line x1="1291" y1="108" x2="1320" y2="92"/><line x1="1292" y1="140" x2="1321" y2="124"/>
+        <line x1="1293" y1="172" x2="1322" y2="156"/><line x1="1294" y1="204" x2="1323" y2="188"/>
+        <line x1="1295" y1="236" x2="1324" y2="220"/><line x1="1295" y1="268" x2="1324" y2="252"/>
+        <line x1="1295" y1="332" x2="1324" y2="348"/><line x1="1295" y1="364" x2="1324" y2="380"/>
+        <line x1="1294" y1="396" x2="1323" y2="412"/><line x1="1293" y1="428" x2="1322" y2="444"/>
+        <line x1="1292" y1="460" x2="1321" y2="476"/><line x1="1291" y1="492" x2="1320" y2="508"/>
+      </g>
+
+      <!-- landmarks: P(1240,300)  F(900,300)  C(560,300) -->
+      <circle cx="1240" cy="300" r="6" fill="#071A4D"/>
+      <text x="1128" y="268" font-size="18" font-weight="700" fill="#071A4D">P (pole)</text>
+      <circle cx="900" cy="300" r="6" fill="#1F5EFF"/>
+      <text x="884" y="338" font-size="18" font-weight="700" fill="#1F5EFF">F (focus)</text>
+      <circle cx="560" cy="300" r="6" fill="#7FB800"/>
+      <text x="528" y="338" font-size="18" font-weight="700" fill="#4E7A00">C (centre, 2f)</text>
+
+      <!-- object: x=200, height 80, tip (200,220) -->
+      <line x1="200" y1="300" x2="200" y2="220" stroke="#0A7A3D" stroke-width="6"/>
+      <polygon points="200,208 188,232 212,232" fill="#0A7A3D"/>
+      <text x="120" y="192" font-size="18" font-weight="700" fill="#0A7A3D">Object (beyond C)</text>
+
+      <!-- image: x=735, height 38 inverted, tip (735,338) -->
+      <line x1="735" y1="300" x2="735" y2="338" stroke="#B4380F" stroke-width="6"/>
+      <polygon points="735,350 723,326 747,326" fill="#B4380F"/>
+      <text x="640" y="382" font-size="18" font-weight="700" fill="#B4380F">Image (between C &amp; F)</text>
+
+      <!-- RAY 1 (blue): (200,220) -> mirror(1249,220) -> through F -> image tip(735,338) -->
+      <line x1="200" y1="220" x2="1249" y2="220" stroke="#1F5EFF" stroke-width="3"/>
+      <line x1="1249" y1="220" x2="735" y2="338" stroke="#1F5EFF" stroke-width="3"/>
+      <polygon points="760,332 783,323 781,341" fill="#1F5EFF"/>
+      <text x="620" y="196" font-size="15.5" fill="#1F5EFF" font-weight="600">Ray 1 &#8741; axis &#8594; reflects through F</text>
+
+      <!-- RAY 2 (orange): (200,220) -> through C(560,300) -> mirror(1252,454) -> retraces -->
+      <line x1="200" y1="220" x2="1252" y2="454" stroke="#E2540A" stroke-width="3"/>
+      <line x1="1252" y1="454" x2="200" y2="220" stroke="#E2540A" stroke-width="3" stroke-dasharray="10 7"/>
+      <polygon points="980,367 1002,362 992,381" fill="#E2540A"/>
+      <text x="905" y="512" font-size="15.5" fill="#C24A08" font-weight="600">Ray 2 through C &#8594; retraces</text>
+
+      <!-- RAY 3 (green): (200,220) -> through F(900,300) -> mirror(1272,343) -> parallel back -->
+      <line x1="200" y1="220" x2="1272" y2="343" stroke="#0A7A3D" stroke-width="3"/>
+      <line x1="1272" y1="343" x2="735" y2="343" stroke="#0A7A3D" stroke-width="3" stroke-dasharray="10 7"/>
+      <polygon points="800,336 778,336 789,352" fill="#0A7A3D"/>
+      <text x="1062" y="150" font-size="15.5" fill="#0A7A3D" font-weight="600">Ray 3 through F &#8594; back &#8741; axis</text>
+
+      <!-- badges -->
+      <g transform="translate(60,468)">
+        <rect x="0" y="0" width="580" height="60" rx="10" fill="#EAF0FF" stroke="#1F5EFF" stroke-width="1.5"/>
+        <text x="18" y="38" font-size="20" fill="#071A4D" font-weight="700">Mirror formula:&#160;&#160;1/v + 1/u = 1/f ,&#160;&#160; f = R/2 ,&#160;&#160; m = &#8722;v/u</text>
+      </g>
+      <g transform="translate(680,468)">
+        <rect x="0" y="0" width="660" height="60" rx="10" fill="#F6FFDF" stroke="#7FB800" stroke-width="1.5"/>
+        <text x="18" y="38" font-size="20" fill="#1B2333">Object beyond C &#8594; image <tspan font-weight="700" fill="#B4380F">between C and F</tspan>: real, inverted, diminished</text>
+      </g>
+    </svg>
+  </div>
+  <div class="legend">
+    <span><span class="chip" style="border-color:#1F5EFF"></span><b>Ray 1:</b> parallel to axis &#8594; passes through F</span>
+    <span><span class="chip" style="border-color:#E2540A"></span><b>Ray 2:</b> through C &#8594; retraces (normal incidence)</span>
+    <span><span class="chip" style="border-color:#0A7A3D"></span><b>Ray 3:</b> through F &#8594; emerges parallel to axis</span>
+  </div>
+</div>
+</body>
+</html>
