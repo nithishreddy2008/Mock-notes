@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #fff; width: 1480px; }
+  .wrap { width: 1480px; height: 950px; background: #fff; padding: 24px 30px; }
+  .head { display: flex; align-items: baseline; gap: 16px; margin-bottom: 16px; }
+  .head h1 { font-size: 30px; color: #071A4D; font-weight: 800; }
+  .head .tag { font-size: 14px; color: #fff; background: #1F5EFF; border-radius: 999px; padding: 5px 14px; font-weight: 700; letter-spacing: 1px; }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 14px; }
+  .c { background: #071A4D; border-radius: 14px; padding: 14px 16px; }
+  .c h2 { color: #B8FF34; font-size: 17.5px; font-weight: 800; margin-bottom: 4px; }
+  .c .fm { color: #fff; font-size: 13.5px; font-family: Georgia, serif; font-style: italic; background: rgba(255,255,255,.08); border: 1px solid rgba(184,255,52,.4); border-radius: 9px; padding: 7px 10px; margin-bottom: 8px; }
+  .c .fm b { color: #B8FF34; }
+  .c .r { color: #C9D4EE; font-size: 12.5px; line-height: 1.42; margin: 4px 0; }
+  .c .r b { color: #fff; }
+  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 12px; }
+  .zone { background: #FCFDFF; border: 1.5px solid #D5DCEA; border-radius: 14px; padding: 12px 16px; }
+  .zone h2 { font-size: 18.5px; color: #071A4D; font-weight: 800; margin-bottom: 7px; padding-bottom: 5px; border-bottom: 3px solid #1F5EFF; display: inline-block; }
+  .zone.lime h2 { border-color: #7FB800; }
+  .zone .r { font-size: 13px; color: #33405C; margin: 5px 0; line-height: 1.36; }
+  .zone .r b { color: #071A4D; }
+  .criss { display: flex; align-items: center; gap: 14px; margin-top: 8px; }
+  .criss .box { display: flex; flex-direction: column; gap: 6px; }
+  .criss .item { background: #F4F7FE; border: 1.5px solid #D5DCEA; border-radius: 8px; padding: 6px 12px; font-size: 13px; color: #071A4D; font-weight: 700; }
+  .criss .x { font-size: 22px; color: #1F5EFF; font-weight: 800; }
+  .criss .res { font-size: 13px; color: #071A4D; font-weight: 800; background: #E9FBD0; border: 1.5px solid #7FB800; border-radius: 8px; padding: 6px 12px; }
+  .trap { background: #FFF3EC; border: 1.5px solid #D2481F; border-radius: 12px; padding: 10px 16px; }
+  .trap h2 { font-size: 16px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
+  .traps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px 18px; }
+  .traps div { font-size: 12.5px; color: #7A2A12; padding-left: 13px; position: relative; line-height: 1.3; }
+  .traps div::before { content: ""; position: absolute; left: 0; top: 6px; width: 7px; height: 7px; border-radius: 50%; background: #D2481F; }
+  .traps b { color: #B4380F; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="head">
+    <h1>THE APPLIED-NUMBERS ENGINE ROOM</h1>
+    <span class="tag">CUET UG · MATHEMATICS · NUMERICAL APPLICATIONS</span>
+  </div>
+
+  <div class="grid">
+    <div class="c">
+      <h2>MODULO &amp; CONGRUENCE</h2>
+      <div class="fm">a mod n = <b>remainder on dividing by n</b>; a ≡ b (mod n) ⇔ n | (a − b)</div>
+      <div class="r"><b>Rules:</b> reduce before you multiply — (a·b) mod n = ((a mod n)(b mod n)) mod n</div>
+      <div class="r"><b>Congruence:</b> 29 ≡ 5 (mod 12) because 24 is a multiple of 12 — clock logic</div>
+      <div class="r"><b>Powers:</b> 7¹⁰ mod 5 → 2¹⁰ mod 5 → 1024 mod 5 = 4</div>
+    </div>
+    <div class="c">
+      <h2>ALLEGATION &amp; MIXTURE</h2>
+      <div class="fm">cheap : dear = <b>(dear − mean) : (mean − cheap)</b></div>
+      <div class="r"><b>Mean price</b> sits between the two; the ratio is the criss-cross of gaps</div>
+      <div class="r"><b>Check:</b> ₹30 and ₹45 mixed at ₹36 → (45−36):(36−30) = 9:6 = 3:2 cheap:dear</div>
+      <div class="r"><b>Verify:</b> (3·30 + 2·45)/5 = 180/5 = ₹36 ✓</div>
+    </div>
+    <div class="c">
+      <h2>RATES THAT COMBINE</h2>
+      <div class="fm">work rate adds; empty pipes subtract</div>
+      <div class="r"><b>Pipes:</b> A fills 1/6 per h, B 1/4, C empties 1/12 → net (2+3−1)/12 = 1/3 → <b>3 h</b></div>
+      <div class="r"><b>Boats:</b> u = b − s (upstream), d = b + s → <b>b = (u+d)/2</b>, <b>s = (d−u)/2</b></div>
+      <div class="r"><b>Time = work / rate</b> — always in per-hour (or per-day) fractions</div>
+    </div>
+  </div>
+
+  <div class="cols">
+    <div class="zone">
+      <h2>Races &amp; Games — reading the handicap</h2>
+      <div class="r"><b>"A gives B 10 m in a 100 m race"</b> = when A finishes 100 m, B has run 90 m — a *start* of 10 m or a 10 m beat.</div>
+      <div class="r"><b>"A gives B 10 seconds"</b> = B may start 10 s late; compare speeds on the shared clock.</div>
+      <div class="r"><b>Killer ratio:</b> speed of A : speed of B = 100 : 90 in the first case — distances in the SAME time carry the speed ratio.</div>
+      <div class="r"><b>Games of skill:</b> convert "wins 2 of 3" language into probabilities or score ratios before computing.</div>
+    </div>
+    <div class="zone lime">
+      <h2>Numerical inequalities — the flip rule</h2>
+      <div class="r"><b>Add/subtract anything</b> on both sides: inequality keeps its direction.</div>
+      <div class="r"><b>Multiply/divide by a POSITIVE</b> number: direction keeps.</div>
+      <div class="r"><b>Multiply/divide by a NEGATIVE</b> number: direction FLIPS — the entire topic in one line.</div>
+      <div class="r"><b>Example:</b> a &gt; b ⇒ −a &lt; −b; 3 &gt; 2 but −3 &lt; −2.</div>
+      <div class="r"><b>Reciprocal care:</b> for positives, a &gt; b ⇒ 1/a &lt; 1/b.</div>
+    </div>
+  </div>
+
+  <div class="trap">
+    <h2>TRAPS THE OPTIONS ARE BUILT AROUND</h2>
+    <div class="traps">
+      <div><b>Remainder of a product ≠ product of remainders without re-reducing</b> — mod the result again</div>
+      <div><b>Congruence needs the DIFFERENCE divisible</b>, not the numbers equal</div>
+      <div><b>Allegation ratio order</b> — cheap:dear attaches to (dear−mean):(mean−cheap), reversed</div>
+      <div><b>Boat formulas:</b> b = (u+d)/2 — averaging speeds without halving is the slip</div>
+      <div><b>Empty pipes</b> must be subtracted, never added</div>
+      <div><b>Negative flip:</b> multiplying an inequality by −1 without flipping is the classic</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
