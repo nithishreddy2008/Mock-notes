@@ -362,7 +362,7 @@ In ordinary batteries the reactants sit inside the casing; when they run out, th
 
 = Practice Questions (Exam Pattern)
 
-Ten questions in the CUET UG style. Attempt all of them — the paper gives $+5$ for each correct answer and takes nothing away for a wrong one.
+Ten questions in the CUET UG style. Attempt all of them — the paper gives $+5$ for each correct answer and $-1$ for every incorrect answer.
 
 #mcq(1, [In a galvanic cell, oxidation takes place at the electrode that is:], (
   [negative and called the cathode], [positive and called the anode], [negative and called the anode], [positive and called the cathode],

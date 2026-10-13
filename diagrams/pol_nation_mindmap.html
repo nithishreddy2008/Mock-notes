@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: 1080px; position: relative; background: #fff; }
+  svg.wires { position: absolute; inset: 0; width: 1480px; height: 1080px; }
+  .center {
+    position: absolute; left: 490px; top: 470px; width: 500px; height: 104px;
+    background: #071A4D; border-radius: 16px; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(7,26,77,.25);
+    border-bottom: 5px solid #B8FF34;
+  }
+  .center .t { color: #fff; font-size: 19px; font-weight: 800; letter-spacing: .5px; text-align: center; }
+  .center .s { color: #B8FF34; font-size: 13px; font-weight: 700; letter-spacing: 2px; margin-top: 4px; }
+  .card {
+    position: absolute; width: 465px; background: #FCFDFF; border: 1.5px solid #D5DCEA;
+    border-radius: 14px; padding: 13px 16px 12px;
+  }
+  .card h2 { font-size: 19px; color: #071A4D; font-weight: 800; margin-bottom: 7px;
+             padding-bottom: 5px; border-bottom: 3px solid; display: inline-block; }
+  .leaf { font-size: 14px; color: #1B2333; margin: 5px 0; padding-left: 16px; position: relative; line-height: 1.32; }
+  .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
+  .b .leaf::before { background: #1F5EFF; }
+  .l .leaf::before { background: #7FB800; }
+  .leaf b { color: #071A4D; }
+  .b h2 { border-color: #1F5EFF; }
+  .l h2 { border-color: #7FB800; }
+  .left { left: 30px; }
+  .right { left: 985px; }
+  .exc {
+    position: absolute; left: 470px; top: 893px; width: 540px; background: #FFF3EC;
+    border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px;
+  }
+  .exc h2 { font-size: 17px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
+  .exc .leaf { font-size: 13px; margin: 3px 0; padding-left: 14px; color: #7A2A12; }
+  .exc .leaf::before { background: #D2481F; }
+  .exc b { color: #B4380F; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <svg class="wires" viewBox="0 0 1480 1080">
+    <path d="M 520 505 C 470 505, 495 158, 500 155" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 520 520 C 480 520, 495 438, 500 438" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 520 535 C 470 535, 495 718, 500 718" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 960 505 C 1010 505, 985 158, 980 155" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 960 520 C 1000 520, 985 438, 980 438" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 960 535 C 1010 535, 985 718, 980 718" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 740 574 C 740 700, 740 830, 740 891" fill="none" stroke="#D2481F" stroke-width="2.5" stroke-dasharray="7 5" opacity=".6"/>
+  </svg>
+
+  <div class="center">
+    <div class="t">NATION-BUILDING AND ITS PROBLEMS</div>
+    <div class="s">POLITICS IN INDIA SINCE INDEPENDENCE &#183; CH. 1</div>
+  </div>
+
+  <div class="card left b" style="top:58px">
+    <h2>Nehru's Approach</h2>
+    <div class="leaf"><b>Two tasks at once:</b> shape one nation out of diversity AND build democracy — simultaneously, not one after the other</div>
+    <div class="leaf"><b>Unity in diversity:</b> accommodation of languages and cultures instead of forced uniformity</div>
+    <div class="leaf"><b>Secular promise:</b> after Partition's violence, Muslims who stayed = equal citizens by choice</div>
+    <div class="leaf"><b>Hesitation accepted:</b> Nehru resisted linguistic states, then bowed to democratic pressure — and unity held</div>
+  </div>
+
+  <div class="card left l" style="top:352px">
+    <h2>Partition Legacy &amp; Refugees</h2>
+    <div class="leaf"><b>The violence:</b> lakhs killed; the border cut through Bengal and Punjab communities</div>
+    <div class="leaf"><b>About 80 lakh refugees:</b> camps in Delhi, West Bengal, Punjab; rehabilitation ministries</div>
+    <div class="leaf"><b>Identity loss:</b> refugees rebuilt homes, trades and citizenship from zero</div>
+    <div class="leaf"><b>Gandhi's last fast:</b> Calcutta 1947 against riots — assassinated Jan 1948</div>
+  </div>
+
+  <div class="card left b" style="top:648px">
+    <h2>Integration of 565 States</h2>
+    <div class="leaf"><b>Patel + V.P. Menon:</b> States Department; persuasion + pressure; Instrument of Accession</div>
+    <div class="leaf"><b>Most joined by 15 Aug 1947</b> — defence, external affairs, communications to the Union</div>
+    <div class="leaf"><b>Junagadh:</b> plebiscite 1948 &#183; <b>Hyderabad:</b> police action Sept 1948 against Nizam + Razakars</div>
+    <div class="leaf"><b>Manipur, Tripura, Nagaland belt:</b> mergers negotiated 1947-49; Nagaland becomes a state only in 1963</div>
+  </div>
+
+  <div class="card right l" style="top:58px">
+    <h2>The Kashmir Problem</h2>
+    <div class="leaf"><b>Oct 1947:</b> tribal invasion backed by Pakistan; Maharaja Hari Singh signs the Instrument of Accession</div>
+    <div class="leaf"><b>Sheikh Abdullah + National Conference</b> backed accession to India</div>
+    <div class="leaf"><b>War 1947-48:</b> ceasefire line (later LoC) splits the state; UN involvement</div>
+    <div class="leaf"><b>Article 370:</b> special status from the accession terms; Delhi Agreement 1952; wars 1965, 1971 keep the dispute alive</div>
+  </div>
+
+  <div class="card right b" style="top:352px">
+    <h2>Reorganisation of States</h2>
+    <div class="leaf"><b>First refusals:</b> Dhar Commission 1948 + JVP Committee — language rejected as the basis</div>
+    <div class="leaf"><b>Potti Sriramulu's fast:</b> 58 days; dies 15 Dec 1952; Andhra State 1953 follows</div>
+    <div class="leaf"><b>SRC (Fazl Ali, Panikkar, Kunzru):</b> 1953-55; language accepted with unity safeguards</div>
+    <div class="leaf"><b>1956 Act:</b> 14 states + 6 UTs; then Bombay split 1960, Nagaland 1963, Punjab split 1966</div>
+  </div>
+
+  <div class="card right l" style="top:648px">
+    <h2>Language Conflicts</h2>
+    <div class="leaf"><b>Constitution:</b> Hindi official with a 15-year English transition; 14 languages in the Eighth Schedule</div>
+    <div class="leaf"><b>Nehru's 1959 assurance:</b> English remains as long as non-Hindi states want</div>
+    <div class="leaf"><b>Official Languages Act 1963:</b> English continues beyond 1965</div>
+    <div class="leaf"><b>Madras 1965:</b> anti-Hindi agitation; three-language formula defuses the duel</div>
+  </div>
+
+  <div class="exc">
+    <h2>Traps that catch most students</h2>
+    <div class="leaf"><b>Andhra State ≠ Andhra Pradesh:</b> 1953 carved Andhra from Madras; 1956 added Telangana to make Andhra Pradesh</div>
+    <div class="leaf"><b>Who accepted language?</b> The SRC — not Dhar or JVP, which both rejected language as the basis</div>
+    <div class="leaf"><b>Accession subjects are limited:</b> defence + external affairs + communications — not total surrender of powers</div>
+    <div class="leaf"><b>Kashmir's ally:</b> the National Conference supported accession — do not credit the Congress party for it</div>
+  </div>
+</div>
+</body>
+</html>

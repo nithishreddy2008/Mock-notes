@@ -152,7 +152,7 @@ Aliphatic diazonium salts explode even in solution — useless. Aromatic ones ar
 
 = Practice Questions (Exam Pattern)
 
-Ten questions in the CUET UG style. Attempt all of them — the paper gives $+5$ for each correct answer and takes nothing away for a wrong one.
+Ten questions in the CUET UG style. Attempt all of them — the paper gives $+5$ for each correct answer and $-1$ for every incorrect answer.
 
 #mcq(1, [In the gaseous phase, the correct order of basicity is:], (
   [$"NH"_3 > 1° > 2° > 3°$], [$3° > 2° > 1° > "NH"_3$], [$2° > 1° > 3° > "NH"_3$], [$1° > 2° > 3° > "NH"_3$],

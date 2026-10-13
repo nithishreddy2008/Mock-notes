@@ -222,7 +222,7 @@ Chlorobenzene meets $"NaOH"$ and... nothing happens at room temperature — the 
 
 = Practice Questions (Exam Pattern)
 
-Ten questions in the CUET UG style. Attempt all of them — the paper gives $+5$ for each correct answer and takes nothing away for a wrong one.
+Ten questions in the CUET UG style. Attempt all of them — the paper gives $+5$ for each correct answer and $-1$ for every incorrect answer.
 
 #mcq(1, [Which alkyl halide reacts fastest by the S_N2 mechanism?], (
   [tert-butyl bromide], [isopropyl bromide], [ethyl bromide], [methyl bromide],

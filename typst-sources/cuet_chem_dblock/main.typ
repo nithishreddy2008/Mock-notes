@@ -249,7 +249,7 @@ Pull the fourteen elements from cerium to lutetium (plus lanthanum) out of perio
 
 = Practice Questions (Exam Pattern)
 
-Ten questions in the CUET UG style. Attempt all of them — the paper gives $+5$ for each correct answer and takes nothing away for a wrong one.
+Ten questions in the CUET UG style. Attempt all of them — the paper gives $+5$ for each correct answer and $-1$ for every incorrect answer.
 
 #mcq(1, [Which of the following electronic configurations corresponds to chromium (Z = 24)?], (
   [$["Ar"] 3d^4 4s^2$], [$["Ar"] 3d^5 4s^1$], [$["Ar"] 3d^6 4s^0$], [$["Ar"] 3d^3 4s^2 4p^1$],

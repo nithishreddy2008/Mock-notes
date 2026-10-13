@@ -385,7 +385,7 @@ Cover the answers, say each one aloud, then check. If any answer takes longer th
 
 = Practice Questions (Exam Pattern)
 
-Ten questions in the CUET UG style. Attempt all of them — the paper gives $+5$ for each correct answer and takes nothing away for a wrong one.
+Ten questions in the CUET UG style. Attempt all of them — the paper gives $+5$ for each correct answer and $-1$ for every incorrect answer.
 
 #mcq(1, [The central problems of an economy — what, how and for whom to produce — arise directly from:], (
   [government planning], [scarcity of resources relative to wants], [high population], [modern technology],

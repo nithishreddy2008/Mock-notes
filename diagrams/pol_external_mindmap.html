@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: 1080px; position: relative; background: #fff; }
+  svg.wires { position: absolute; inset: 0; width: 1480px; height: 1080px; }
+  .center {
+    position: absolute; left: 490px; top: 470px; width: 500px; height: 104px;
+    background: #071A4D; border-radius: 16px; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(7,26,77,.25);
+    border-bottom: 5px solid #B8FF34;
+  }
+  .center .t { color: #fff; font-size: 19px; font-weight: 800; letter-spacing: .5px; text-align: center; }
+  .center .s { color: #B8FF34; font-size: 13px; font-weight: 700; letter-spacing: 2px; margin-top: 4px; }
+  .card {
+    position: absolute; width: 465px; background: #FCFDFF; border: 1.5px solid #D5DCEA;
+    border-radius: 14px; padding: 13px 16px 12px;
+  }
+  .card h2 { font-size: 19px; color: #071A4D; font-weight: 800; margin-bottom: 7px;
+             padding-bottom: 5px; border-bottom: 3px solid; display: inline-block; }
+  .leaf { font-size: 14px; color: #1B2333; margin: 5px 0; padding-left: 16px; position: relative; line-height: 1.32; }
+  .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
+  .b .leaf::before { background: #1F5EFF; }
+  .l .leaf::before { background: #7FB800; }
+  .leaf b { color: #071A4D; }
+  .b h2 { border-color: #1F5EFF; }
+  .l h2 { border-color: #7FB800; }
+  .left { left: 30px; }
+  .right { left: 985px; }
+  .exc {
+    position: absolute; left: 470px; top: 893px; width: 540px; background: #FFF3EC;
+    border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px;
+  }
+  .exc h2 { font-size: 17px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
+  .exc .leaf { font-size: 13px; margin: 3px 0; padding-left: 14px; color: #7A2A12; }
+  .exc .leaf::before { background: #D2481F; }
+  .exc b { color: #B4380F; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <svg class="wires" viewBox="0 0 1480 1080">
+    <path d="M 520 505 C 470 505, 495 158, 500 155" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 520 520 C 480 520, 495 438, 500 438" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 520 535 C 470 535, 495 718, 500 718" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 960 505 C 1010 505, 985 158, 980 155" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 960 520 C 1000 520, 985 438, 980 438" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 960 535 C 1010 535, 985 718, 980 718" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 740 574 C 740 700, 740 830, 740 891" fill="none" stroke="#D2481F" stroke-width="2.5" stroke-dasharray="7 5" opacity=".6"/>
+  </svg>
+
+  <div class="center">
+    <div class="t">INDIA'S EXTERNAL RELATIONS</div>
+    <div class="s">POLITICS IN INDIA SINCE INDEPENDENCE &#183; CH. 3</div>
+  </div>
+
+  <div class="card left b" style="top:58px">
+    <h2>Nehru's Foreign Policy</h2>
+    <div class="leaf"><b>Non-alignment:</b> no bloc membership, independent judgment on every issue</div>
+    <div class="leaf"><b>Panchsheel 1954:</b> five co-existence principles — signed with CHINA</div>
+    <div class="leaf"><b>Anti-colonial voice:</b> Bandung 1955, Afro-Asian solidarity, Commonwealth membership without dominion status</div>
+    <div class="leaf"><b>UN activism:</b> Korea mediation, early peacekeeping voice</div>
+  </div>
+
+  <div class="card left l" style="top:352px">
+    <h2>The China Collapse</h2>
+    <div class="leaf"><b>1950-59 ladder:</b> Tibet absorbed → Panchsheel → Dalai Lama's asylum (1959)</div>
+    <div class="leaf"><b>Two disputed fronts:</b> Aksai Chin (Ladakh, China's road) + McMahon Line (NEFA)</div>
+    <div class="leaf"><b>Oct-Nov 1962:</b> simultaneous attacks; defences collapse; Menon resigns</div>
+    <div class="leaf"><b>Aftermath:</b> unilateral ceasefire; Aksai Chin held; defence budgets and grief both jump</div>
+  </div>
+
+  <div class="card left b" style="top:648px">
+    <h2>The Pakistan Wars</h2>
+    <div class="leaf"><b>1965:</b> Kutch skirmishes → Operation Gibraltar → full war → Tashkent (Jan 1966); Shastri dies there</div>
+    <div class="leaf"><b>1971:</b> East Pakistan crackdown → 80 lakh refugees → Indo-Soviet Treaty (Aug) → two-front war</div>
+    <div class="leaf"><b>16 Dec 1971:</b> Dhaka falls; BANGLADESH born</div>
+    <div class="leaf"><b>1972:</b> Shimla Agreement — ceasefire line becomes the Line of Control</div>
+  </div>
+
+  <div class="card right l" style="top:58px">
+    <h2>Shifting Alliances</h2>
+    <div class="leaf"><b>1950s:</b> courted by both blocs; Pakistan signs US pacts (SEATO 1954, CENTO)</div>
+    <div class="leaf"><b>1962:</b> US-UK emergency airlift during the China war</div>
+    <div class="leaf"><b>1965:</b> US embargo bites India; USSR brokers Tashkent</div>
+    <div class="leaf"><b>Aug 1971:</b> 20-year Indo-Soviet Treaty — the decisive shift</div>
+  </div>
+
+  <div class="card right b" style="top:352px">
+    <h2>The Nuclear Programme</h2>
+    <div class="leaf"><b>1948:</b> Atomic Energy Commission; Homi Bhabha's peaceful-atom vision</div>
+    <div class="leaf"><b>18 May 1974:</b> Pokhran-I "Smiling Buddha" — a "peaceful nuclear explosion"</div>
+    <div class="leaf"><b>NPT 1968 refused:</b> the treaty freezes a have/have-not world — discriminatory</div>
+    <div class="leaf"><b>The posture:</b> universal disarmament demanded; the option preserved</div>
+  </div>
+
+  <div class="card right l" style="top:648px">
+    <h2>How the Syllabus Lines Map</h2>
+    <div class="leaf"><b>"Nehru's foreign policy":</b> non-alignment + Panchsheel + anti-colonial voice</div>
+    <div class="leaf"><b>"1962, 1965, 1971":</b> three wars, three outcomes — learn cause-war-treaty chains</div>
+    <div class="leaf"><b>"Nuclear programme":</b> 1948 commission → 1974 Pokhran → NPT refusal</div>
+    <div class="leaf"><b>"Shifting alliance":</b> solo non-alignment → Indo-Soviet Treaty 1971</div>
+  </div>
+
+  <div class="exc">
+    <h2>Traps that catch most students</h2>
+    <div class="leaf"><b>Non-alignment ≠ neutrality:</b> independent judgment per issue — India took sides (1971)</div>
+    <div class="leaf"><b>Tashkent ≠ Shimla:</b> 1966 after 1965 (Shastri); 1972 after 1971 (Indira-Bhutto, Line of Control)</div>
+    <div class="leaf"><b>Panchsheel partner is China:</b> 1954 — the treaty the 1962 war shamed</div>
+    <div class="leaf"><b>Pokhran-I is 1974:</b> "peaceful nuclear explosion" — Pokhran-II belongs to 1998</div>
+  </div>
+</div>
+</body>
+</html>

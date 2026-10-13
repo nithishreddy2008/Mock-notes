@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: 1010px; position: relative; background: #fff; }
+  .title {
+    position: absolute; left: 30px; top: 22px; width: 1420px; height: 58px;
+    background: #071A4D; border-radius: 12px; display: flex; align-items: center; justify-content: center;
+  }
+  .title .t { color: #fff; font-size: 24px; font-weight: 800; letter-spacing: 1px; }
+  .title .t b { color: #B8FF34; }
+  .cards { position: absolute; left: 30px; top: 100px; width: 1420px; display: flex; gap: 16px; }
+  .fcard {
+    flex: 1; background: #071A4D; border-radius: 14px; padding: 14px 16px; height: 330px;
+    border-bottom: 5px solid #B8FF34;
+  }
+  .fcard .tag { display: inline-block; background: #B8FF34; color: #071A4D; font-size: 14px; font-weight: 800; border-radius: 7px; padding: 3px 10px; letter-spacing: .5px; }
+  .fcard h3 { color: #fff; font-size: 19px; font-weight: 800; margin: 8px 0 4px; }
+  .fcard p { color: #E8EDFA; font-size: 13.2px; line-height: 1.45; margin: 6px 0; }
+  .fcard p b { color: #B8FF34; }
+  .mid { position: absolute; left: 30px; top: 452px; width: 1420px; display: flex; gap: 16px; }
+  .ladder {
+    flex: 1.4; background: #FCFDFF; border: 1.5px solid #D5DCEA; border-radius: 14px; padding: 12px 16px;
+  }
+  .ladder h2 { font-size: 19px; color: #1F5EFF; font-weight: 800; margin-bottom: 8px; }
+  .step { display: flex; align-items: flex-start; gap: 10px; margin: 7px 0; }
+  .step .n {
+    min-width: 30px; height: 30px; border-radius: 50%; background: #1F5EFF; color: #fff;
+    font-size: 15px; font-weight: 800; display: flex; align-items: center; justify-content: center;
+  }
+  .step .n.hot { background: #B4380F; }
+  .step .n.gold { background: #7FB800; }
+  .step p { font-size: 13.4px; color: #1B2333; line-height: 1.4; margin: 0; }
+  .step p b { color: #071A4D; }
+  .lang {
+    flex: 1; background: #F6FFDF; border: 1.5px solid #7FB800; border-radius: 14px; padding: 12px 16px;
+  }
+  .lang h2 { font-size: 19px; color: #4E7A00; font-weight: 800; margin-bottom: 7px; }
+  .lang .leaf { font-size: 13.4px; color: #1B2333; margin: 6px 0; padding-left: 16px; position: relative; line-height: 1.36; }
+  .lang .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; background: #7FB800; }
+  .lang .leaf b { color: #071A4D; }
+  .strip { position: absolute; left: 30px; top: 824px; width: 1420px; display: flex; gap: 14px; }
+  .trap { flex: 1; background: #FFF3EC; border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px; }
+  .trap h3 { font-size: 14.5px; color: #B4380F; font-weight: 800; margin-bottom: 3px; }
+  .trap p { font-size: 13.2px; color: #7A2A12; line-height: 1.4; }
+  .trap p b { color: #B4380F; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="title"><div class="t">1947'S THREE FRONTS — <b>PARTITION, PRINCELY STATES, LANGUAGE</b></div></div>
+
+  <div class="cards">
+    <div class="fcard">
+      <span class="tag">FRONT 1</span>
+      <h3>Partition's Legacy &amp; Refugees</h3>
+      <p><b>The human cost:</b> lakhs killed in communal violence; about <b>80 lakh refugees</b> crossed into India from Pakistan — the largest migration of the century.</p>
+      <p><b>The challenge:</b> shelter, food, jobs and identity for ruined families — Punjabis and Sindhis in the west, Bengalis in the east — while cities like Delhi and Calcutta overflowed.</p>
+      <p><b>The response:</b> refugee camps, rehabilitation ministries, citizenship guarantees; the trauma also shaped India's secular promise — Muslims who stayed were equal citizens.</p>
+    </div>
+    <div class="fcard">
+      <span class="tag">FRONT 2</span>
+      <h3>565 Princely States</h3>
+      <p><b>The players:</b> Sardar Patel + V.P. Menon (States Department) used persuasion, pressure and the <b>Instrument of Accession</b> — defence, external affairs, communications to the Union.</p>
+      <p><b>Most signed by 15 Aug 1947.</b> Three holdouts became legends:</p>
+      <p><b>Junagadh:</b> Muslim ruler, Hindu majority — plebiscite (1948) joined India &#183; <b>Hyderabad:</b> Nizam + Razakars — "police action" Sept 1948 &#183; <b>Kashmir:</b> tribal invasion Oct 1947 — Hari Singh acceded, war followed.</p>
+    </div>
+    <div class="fcard">
+      <span class="tag">FRONT 3</span>
+      <h3>Language &amp; the States Map</h3>
+      <p><b>The demand:</b> draw state borders on language — the Congress itself had promised it (1921 linguistic provinces).</p>
+      <p><b>The hesitation:</b> after Partition, language-based division looked dangerous — Dhar Commission (1948) and JVP Committee said NO to language as the basis.</p>
+      <p><b>The turning point:</b> Potti Sriramulu's 58-day fast for a Telugu state — he died on <b>15 Dec 1952</b>; Andhra State (1953) followed, then the SRC map of <b>1956: 14 states + 6 UTs</b>.</p>
+    </div>
+  </div>
+
+  <div class="mid">
+    <div class="ladder">
+      <h2>The reorganisation ladder — five rungs to remember</h2>
+      <div class="step"><div class="n">1</div><p><b>1948 — Dhar Commission:</b> favours administrative convenience, rejects language as the basis for states.</p></div>
+      <div class="step"><div class="n">2</div><p><b>1948-49 — JVP Committee</b> (Jawaharlal, Vallabhbhai, Pattabhi): reconfirms the rejection — but public feeling keeps building.</p></div>
+      <div class="step"><div class="n hot">3</div><p><b>1952 — Potti Sriramulu dies</b> after a 58-day fast; riots force the Centre's hand; <b>Andhra State, Oct 1953</b> — the first linguistic state.</p></div>
+      <div class="step"><div class="n">4</div><p><b>1953-55 — States Reorganisation Commission:</b> Fazl Ali, K.M. Panikkar, H.N. Kunzru — language accepted WITH unity safeguards.</p></div>
+      <div class="step"><div class="n gold">5</div><p><b>1956 — States Reorganisation Act:</b> 14 states + 6 union territories; later splits: Bombay &#8594; Maharashtra + Gujarat (1960), Nagaland (1963), Punjab &#8594; Haryana (1966).</p></div>
+    </div>
+    <div class="lang">
+      <h2>Language politics — the long duel</h2>
+      <div class="leaf"><b>Hindi's status:</b> the Constitution made Hindi in Devanagari the official language — with a 15-year transition from English.</div>
+      <div class="leaf"><b>Nehru's guarantee (1959):</b> English stays as long as non-Hindi states want it — a promise that calmed the south.</div>
+      <div class="leaf"><b>Official Languages Act 1963:</b> English continues beyond 1965 — the legal fix.</div>
+      <div class="leaf"><b>Jan 1965, Madras:</b> anti-Hindi agitation erupts anyway; deaths, self-immolations — Hindi never imposed.</div>
+      <div class="leaf"><b>Three-language formula:</b> Hindi + English + a regional language — the compromise schools still carry.</div>
+    </div>
+  </div>
+
+  <div class="strip">
+    <div class="trap"><h3>TRAP 1</h3><p><b>Instrument of Accession = limited subjects.</b> Rulers ceded only defence, external affairs and communications — NOT full legislative power. That is why Article 370's special status grew from the accession terms.</p></div>
+    <div class="trap"><h3>TRAP 2</h3><p><b>Andhra STATE 1953 ≠ Andhra PRADESH 1956.</b> 1953 carved Andhra out of Madras; the 1956 Act rebuilt it as Andhra Pradesh by adding Telangana (Hyderabad region).</p></div>
+    <div class="trap"><h3>TRAP 3</h3><p><b>The Commission that accepted language was the SRC (1953-55)</b> — NOT the Dhar Commission or JVP Committee, which REJECTED language as the basis. Pair the right body with the right verdict.</p></div>
+  </div>
+</div>
+</body>
+</html>

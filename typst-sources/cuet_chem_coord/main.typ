@@ -208,7 +208,7 @@ Metal carbonyls — $ "Ni"("CO")_4 $, $ "Fe"("CO")_5 $ — are homoleptic comple
 
 = Practice Questions (Exam Pattern)
 
-Ten questions in the CUET UG style. Attempt all of them — the paper gives $+5$ for each correct answer and takes nothing away for a wrong one.
+Ten questions in the CUET UG style. Attempt all of them — the paper gives $+5$ for each correct answer and $-1$ for every incorrect answer.
 
 #mcq(1, [The coordination number and oxidation state of cobalt in $["Co"("en")_2 "Cl"_2] "Cl"$ are respectively:], (
   [4 and +3], [6 and +3], [6 and +2], [4 and +2],

@@ -175,7 +175,7 @@ Cover the answers, say each one aloud, then check. If any answer takes longer th
 
 = Practice Questions (Exam Pattern)
 
-Ten questions in the CUET UG style. Attempt all of them — the paper gives $+5$ for each correct answer and takes nothing away for a wrong one.
+Ten questions in the CUET UG style. Attempt all of them — the paper gives $+5$ for each correct answer and $-1$ for every incorrect answer.
 
 #mcq(1, [The balance of payments account records:], (
   [only trade in goods], [only capital flows], [all economic transactions between residents and the rest of the world], [only government transactions],

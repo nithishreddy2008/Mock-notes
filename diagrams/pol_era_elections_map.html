@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: 1000px; position: relative; background: #fff; }
+  .title {
+    position: absolute; left: 30px; top: 22px; width: 1420px; height: 58px;
+    background: #071A4D; border-radius: 12px; display: flex; align-items: center; justify-content: center;
+  }
+  .title .t { color: #fff; font-size: 24px; font-weight: 800; letter-spacing: 1px; }
+  .title .t b { color: #B8FF34; }
+  .cards { position: absolute; left: 30px; top: 100px; width: 1420px; display: flex; gap: 16px; }
+  .ecard {
+    flex: 1; background: #071A4D; border-radius: 14px; padding: 14px 16px; height: 300px;
+    border-bottom: 5px solid #B8FF34;
+  }
+  .ecard .yr { display: inline-block; background: #B8FF34; color: #071A4D; font-size: 15px; font-weight: 800; border-radius: 7px; padding: 3px 10px; letter-spacing: .5px; }
+  .ecard h3 { color: #fff; font-size: 19px; font-weight: 800; margin: 8px 0 2px; }
+  .ecard .row { display: flex; gap: 10px; margin-top: 9px; }
+  .ecard .num { flex: 1; background: rgba(255,255,255,.10); border-radius: 9px; padding: 7px 9px; }
+  .ecard .num .v { color: #B8FF34; font-size: 21px; font-weight: 800; }
+  .ecard .num .k { color: #C9D4F2; font-size: 11.5px; line-height: 1.25; margin-top: 1px; }
+  .ecard p { color: #E8EDFA; font-size: 12.8px; line-height: 1.42; margin-top: 9px; }
+  .ecard p b { color: #B8FF34; }
+  .mid { position: absolute; left: 30px; top: 424px; width: 1420px; display: flex; gap: 16px; }
+  .why {
+    flex: 1.35; background: #FCFDFF; border: 1.5px solid #D5DCEA; border-radius: 14px; padding: 12px 16px;
+  }
+  .why h2 { font-size: 19px; color: #1F5EFF; font-weight: 800; margin-bottom: 7px; }
+  .why .leaf { font-size: 13.8px; color: #1B2333; margin: 6px 0; padding-left: 17px; position: relative; line-height: 1.34; }
+  .why .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; background: #1F5EFF; }
+  .why .leaf b { color: #071A4D; }
+  .opp {
+    flex: 1; background: #F6FFDF; border: 1.5px solid #7FB800; border-radius: 14px; padding: 12px 16px;
+  }
+  .opp h2 { font-size: 19px; color: #4E7A00; font-weight: 800; margin-bottom: 7px; }
+  .opp table { width: 100%; border-collapse: collapse; }
+  .opp th { font-size: 12.5px; color: #071A4D; text-align: left; padding: 3px 5px; border-bottom: 2px solid #7FB800; }
+  .opp td { font-size: 13px; color: #1B2333; padding: 4px 5px; border-bottom: 1px solid #D8E8B0; }
+  .opp td.s { font-weight: 800; color: #071A4D; }
+  .states { position: absolute; left: 30px; top: 712px; width: 1420px; background: #EAF0FF; border: 1.5px solid #1F5EFF; border-radius: 14px; padding: 12px 16px; }
+  .states h2 { font-size: 18px; color: #1F5EFF; font-weight: 800; margin-bottom: 6px; }
+  .states p { font-size: 13.6px; color: #1B2333; line-height: 1.5; margin: 0; }
+  .states p b { color: #B4380F; }
+  .strip { position: absolute; left: 30px; top: 848px; width: 1420px; display: flex; gap: 14px; }
+  .trap { flex: 1; background: #FFF3EC; border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px; }
+  .trap h3 { font-size: 14.5px; color: #B4380F; font-weight: 800; margin-bottom: 3px; }
+  .trap p { font-size: 13.2px; color: #7A2A12; line-height: 1.4; }
+  .trap p b { color: #B4380F; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="title"><div class="t">THE FIRST THREE GENERAL ELECTIONS — <b>HOW ONE PARTY CAME TO DOMINATE</b></div></div>
+
+  <div class="cards">
+    <div class="ecard">
+      <span class="yr">1951-52</span>
+      <h3>First General Election</h3>
+      <div class="row">
+        <div class="num"><div class="v">17 cr+</div><div class="k">eligible voters, 85% unable to read or write</div></div>
+        <div class="num"><div class="v">489</div><div class="k">Lok Sabha seats + ~3,200 MLAs elected together</div></div>
+      </div>
+      <p><b>Congress 364 seats (74%):</b> Nehru becomes the first elected PM. CPI is the largest opposition with 16 seats. Universal adult franchise exercised for the first time — voting by party symbols so an illiterate voter could still choose.</p>
+    </div>
+    <div class="ecard">
+      <span class="yr">1957</span>
+      <h3>Second General Election</h3>
+      <div class="row">
+        <div class="num"><div class="v">371</div><div class="k">Congress seats out of 494 — dominance holds</div></div>
+        <div class="num"><div class="v">27</div><div class="k">CPI seats — now the largest opposition again</div></div>
+      </div>
+      <p><b>Kerala turns communist:</b> CPI under E.M.S. Namboodiripad forms the world's first elected communist government (1957). In 1959 the Centre dismisses it and imposes President's rule — the first such use against an elected state government.</p>
+    </div>
+    <div class="ecard">
+      <span class="yr">1962</span>
+      <h3>Third General Election</h3>
+      <div class="row">
+        <div class="num"><div class="v">361</div><div class="k">Congress seats out of 494 — a dip, not a defeat</div></div>
+        <div class="num"><div class="v">4</div><div class="k">serious opposition blocs now in the Lok Sabha</div></div>
+      </div>
+      <p><b>Opposition matures:</b> CPI 29, Swatantra 18, Jana Sangh 14, PSP 12 — a multi-party opposition bench is forming, yet Congress still crosses the majority mark with ease. The one-party era continues till 1967.</p>
+    </div>
+  </div>
+
+  <div class="mid">
+    <div class="why">
+      <h2>Why the Congress dominated — five engines</h2>
+      <div class="leaf"><b>Inherited credibility:</b> the party of the freedom struggle — Gandhi's network, the 1942 Quit India generation, goodwill banked over decades</div>
+      <div class="leaf"><b>Organisation everywhere:</b> committees reaching the village; experienced state leaders; funds, cadres and a symbol every voter recognised</div>
+      <div class="leaf"><b>Nehru's charisma:</b> the single most popular national leader — his campaigns alone could swing whole states</div>
+      <div class="leaf"><b>Coalition of every group:</b> castes, classes, regions and ideologies all found a faction of their own inside the party</div>
+      <div class="leaf"><b>Fragmented opposition:</b> socialists, communists and the right fought each other as much as they fought Congress</div>
+    </div>
+    <div class="opp">
+      <h2>Opposition scoreboard — Lok Sabha seats</h2>
+      <table>
+        <tr><th>Party</th><th>1952</th><th>1957</th><th>1962</th></tr>
+        <tr><td class="s">Congress</td><td class="s">364</td><td class="s">371</td><td class="s">361</td></tr>
+        <tr><td>CPI (Communist Party of India)</td><td>16</td><td>27</td><td>29</td></tr>
+        <tr><td>Socialists (SP &#8594; PSP)</td><td>12</td><td>19</td><td>12</td></tr>
+        <tr><td>Swatantra Party (from 1959)</td><td>—</td><td>—</td><td>18</td></tr>
+        <tr><td>Bharatiya Jana Sangh</td><td>3</td><td>4</td><td>14</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="states">
+    <h2>Dominance was UNEVEN at the state level — where Congress did not rule the roost</h2>
+    <p><b>Kerala:</b> CPI won in 1957 &#183; <b>Jammu &amp; Kashmir:</b> National Conference, not Congress &#183; <b>Punjab/PEPSU:</b> Akali Dal strongholds &#183; <b>Madras (Tamil Nadu):</b> Dravidian politics rising (DMK) &#183; <b>West Bengal &amp; Orissa:</b> left and regional forces pockets. Congress faced real competition in these pockets even in its strongest decade.</p>
+  </div>
+
+  <div class="strip">
+    <div class="trap"><h3>TRAP 1</h3><p><b>One-party dominance ≠ one-party rule without opposition.</b> Opposition existed, won seats and even a state — but it could not form an alternative at the Centre. That is the precise meaning of "dominance".</p></div>
+    <div class="trap"><h3>TRAP 2</h3><p><b>The 1957 Kerala government was communist and ELECTED.</b> Do not confuse the 1959 dismissal (Centre's move) with the 1957 victory (the people's verdict).</p></div>
+    <div class="trap"><h3>TRAP 3</h3><p><b>Congress share of VOTES (~45%) vs share of SEATS (~75%).</b> The first-past-the-post system converts a large vote lead into a massive seat lead — the two percentages are not interchangeable.</p></div>
+  </div>
+</div>
+</body>
+</html>

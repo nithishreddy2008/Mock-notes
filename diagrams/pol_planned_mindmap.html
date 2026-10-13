@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: 1080px; position: relative; background: #fff; }
+  svg.wires { position: absolute; inset: 0; width: 1480px; height: 1080px; }
+  .center {
+    position: absolute; left: 490px; top: 470px; width: 500px; height: 104px;
+    background: #071A4D; border-radius: 16px; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(7,26,77,.25);
+    border-bottom: 5px solid #B8FF34;
+  }
+  .center .t { color: #fff; font-size: 19px; font-weight: 800; letter-spacing: .5px; text-align: center; }
+  .center .s { color: #B8FF34; font-size: 13px; font-weight: 700; letter-spacing: 2px; margin-top: 4px; }
+  .card {
+    position: absolute; width: 465px; background: #FCFDFF; border: 1.5px solid #D5DCEA;
+    border-radius: 14px; padding: 13px 16px 12px;
+  }
+  .card h2 { font-size: 19px; color: #071A4D; font-weight: 800; margin-bottom: 7px;
+             padding-bottom: 5px; border-bottom: 3px solid; display: inline-block; }
+  .leaf { font-size: 14px; color: #1B2333; margin: 5px 0; padding-left: 16px; position: relative; line-height: 1.32; }
+  .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
+  .b .leaf::before { background: #1F5EFF; }
+  .l .leaf::before { background: #7FB800; }
+  .leaf b { color: #071A4D; }
+  .b h2 { border-color: #1F5EFF; }
+  .l h2 { border-color: #7FB800; }
+  .left { left: 30px; }
+  .right { left: 985px; }
+  .exc {
+    position: absolute; left: 470px; top: 893px; width: 540px; background: #FFF3EC;
+    border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px;
+  }
+  .exc h2 { font-size: 17px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
+  .exc .leaf { font-size: 13px; margin: 3px 0; padding-left: 14px; color: #7A2A12; }
+  .exc .leaf::before { background: #D2481F; }
+  .exc b { color: #B4380F; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <svg class="wires" viewBox="0 0 1480 1080">
+    <path d="M 520 505 C 470 505, 495 158, 500 155" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 520 520 C 480 520, 495 438, 500 438" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 520 535 C 470 535, 495 718, 500 718" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 960 505 C 1010 505, 985 158, 980 155" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 960 520 C 1000 520, 985 438, 980 438" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 960 535 C 1010 535, 985 718, 980 718" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 740 574 C 740 700, 740 830, 740 891" fill="none" stroke="#D2481F" stroke-width="2.5" stroke-dasharray="7 5" opacity=".6"/>
+  </svg>
+
+  <div class="center">
+    <div class="t">POLITICS OF PLANNED DEVELOPMENT</div>
+    <div class="s">POLITICS IN INDIA SINCE INDEPENDENCE &#183; CH. 2</div>
+  </div>
+
+  <div class="card left b" style="top:58px">
+    <h2>What "Development" Meant</h2>
+    <div class="leaf"><b>The Left (Nehru):</b> planning, heavy industry, a socialistic pattern — the state leads growth</div>
+    <div class="leaf"><b>The Right (Rajaji, later Swantantra):</b> free economy, small state — planning breeds permits and queues</div>
+    <div class="leaf"><b>The Gandhian view:</b> villages, handicrafts and decentralisation before steel mills</div>
+    <div class="leaf"><b>Bombay Plan 1944-45:</b> big industrialists THEMSELVES asked for state-led industry — the consensus was wide</div>
+  </div>
+
+  <div class="card left l" style="top:352px">
+    <h2>The Planning Machinery</h2>
+    <div class="leaf"><b>Planning Commission 1950:</b> executive resolution, advisory; the PM chairs it — Nehru the first chairman</div>
+    <div class="leaf"><b>NDC 1952:</b> PM + Chief Ministers approve plans — the federal seal</div>
+    <div class="leaf"><b>Five-year rhythm:</b> targets, outlays, reviews — the plan becomes the state's clock</div>
+    <div class="leaf"><b>First Plan 1951-56:</b> agriculture, Harrod-Domar — target ~2.1%, achieved ~3.6%</div>
+  </div>
+
+  <div class="card left b" style="top:648px">
+    <h2>The Industrial Turn</h2>
+    <div class="leaf"><b>Avadi 1955:</b> Congress adopts "socialistic pattern of society"</div>
+    <div class="leaf"><b>Mahalanobis model:</b> Second Plan 1956-61 — machines that make machines</div>
+    <div class="leaf"><b>IPR 1956:</b> Schedule A (17 industries, state exclusive), B (state-led), C (private under licence)</div>
+    <div class="leaf"><b>Licence raj begins:</b> every licence = a permit, a queue, an inspector — and a favour</div>
+  </div>
+
+  <div class="card right l" style="top:58px">
+    <h2>State Sector Expansion</h2>
+    <div class="leaf"><b>Steel with many flags:</b> Bhilai-USSR, Rourkela-West Germany, Durgapur-UK — non-alignment in concrete</div>
+    <div class="leaf"><b>Takeovers:</b> Imperial Bank &#8594; SBI (1955); life insurance &#8594; LIC (1956)</div>
+    <div class="leaf"><b>Public sector becomes the economy's spine:</b> dams, plants, railways, research labs</div>
+    <div class="leaf"><b>The costs:</b> shortages, queues, weak competition — inefficiency freezes in</div>
+  </div>
+
+  <div class="card right b" style="top:352px">
+    <h2>Food Crisis to Green Revolution</h2>
+    <div class="leaf"><b>1957-58:</b> foreign-exchange crisis — machinery AND food imports together</div>
+    <div class="leaf"><b>PL-480:</b> American wheat against rupees keeps the republic fed</div>
+    <div class="leaf"><b>Land reforms stall:</b> state governments drag their feet — rural elites block</div>
+    <div class="leaf"><b>1966:</b> HYV + irrigation + fertiliser = Green Revolution — famine fear ends in Punjab-Haryana-west UP</div>
+  </div>
+
+  <div class="card right l" style="top:648px">
+    <h2>New Economic Interests</h2>
+    <div class="leaf"><b>Big industry:</b> licences made fortunes — then complaints made Swatantra</div>
+    <div class="leaf"><b>Rich farmers:</b> irrigation and subsidies build a rural lobby that plans must answer</div>
+    <div class="leaf"><b>Organised workers:</b> public-sector unions bargain — and strike — with the plan state</div>
+    <div class="leaf"><b>The pattern:</b> every expansion of the state creates a group organised around it</div>
+  </div>
+
+  <div class="exc">
+    <h2>Traps that catch most students</h2>
+    <div class="leaf"><b>Harrod-Domar vs Mahalanobis:</b> agriculture's First Plan used Harrod-Domar; industry's Second used Mahalanobis — never swap</div>
+    <div class="leaf"><b>Planning Commission 1950 ≠ NDC 1952:</b> two bodies, two years, two jobs — commission plans, council approves</div>
+    <div class="leaf"><b>IPR 1956 has THREE schedules:</b> A exclusive-state (17 industries), B state-led, C licensed private — not two</div>
+    <div class="leaf"><b>Bombay Plan ≠ communist plan:</b> it came from INDUSTRIALISTS (Tata-Birla circle) asking for state-led industry</div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: 1080px; position: relative; background: #fff; }
+  svg.wires { position: absolute; inset: 0; width: 1480px; height: 1080px; }
+  .center {
+    position: absolute; left: 490px; top: 470px; width: 500px; height: 104px;
+    background: #071A4D; border-radius: 16px; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(7,26,77,.25);
+    border-bottom: 5px solid #B8FF34;
+  }
+  .center .t { color: #fff; font-size: 19px; font-weight: 800; letter-spacing: .5px; text-align: center; }
+  .center .s { color: #B8FF34; font-size: 13px; font-weight: 700; letter-spacing: 2px; margin-top: 4px; }
+  .card {
+    position: absolute; width: 465px; background: #FCFDFF; border: 1.5px solid #D5DCEA;
+    border-radius: 14px; padding: 13px 16px 12px;
+  }
+  .card h2 { font-size: 19px; color: #071A4D; font-weight: 800; margin-bottom: 7px;
+             padding-bottom: 5px; border-bottom: 3px solid; display: inline-block; }
+  .leaf { font-size: 14px; color: #1B2333; margin: 5px 0; padding-left: 16px; position: relative; line-height: 1.32; }
+  .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
+  .b .leaf::before { background: #1F5EFF; }
+  .l .leaf::before { background: #7FB800; }
+  .leaf b { color: #071A4D; }
+  .b h2 { border-color: #1F5EFF; }
+  .l h2 { border-color: #7FB800; }
+  .left { left: 30px; }
+  .right { left: 985px; }
+  .exc {
+    position: absolute; left: 470px; top: 893px; width: 540px; background: #FFF3EC;
+    border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px;
+  }
+  .exc h2 { font-size: 17px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
+  .exc .leaf { font-size: 13px; margin: 3px 0; padding-left: 14px; color: #7A2A12; }
+  .exc .leaf::before { background: #D2481F; }
+  .exc b { color: #B4380F; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <svg class="wires" viewBox="0 0 1480 1080">
+    <path d="M 520 505 C 470 505, 495 158, 500 155" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 520 520 C 480 520, 495 438, 500 438" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 520 535 C 470 535, 495 718, 500 718" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 960 505 C 1010 505, 985 158, 980 155" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 960 520 C 1000 520, 985 438, 980 438" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 960 535 C 1010 535, 985 718, 980 718" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 740 574 C 740 700, 740 830, 740 903" fill="none" stroke="#D2481F" stroke-width="2.5" stroke-dasharray="7 5" opacity=".6"/>
+  </svg>
+
+  <div class="center">
+    <div class="t">ERA OF ONE-PARTY DOMINANCE 1947-67</div>
+    <div class="s">POLITICS IN INDIA SINCE INDEPENDENCE &#183; CH. 2</div>
+  </div>
+
+  <div class="card left b" style="top:58px">
+    <h2>The First Three Elections</h2>
+    <div class="leaf"><b>Universal adult franchise:</b> every adult could vote from day one — 17 crore+ voters, 85% illiterate</div>
+    <div class="leaf"><b>1951-52:</b> Congress 364/489; symbols made voting possible for non-readers</div>
+    <div class="leaf"><b>1957:</b> Congress 371/494; Kerala elects the world's first communist government</div>
+    <div class="leaf"><b>1962:</b> Congress 361/494; opposition bench grows (CPI 29, Swatantra 18, BJS 14)</div>
+  </div>
+
+  <div class="card left l" style="top:352px">
+    <h2>Nature of Congress Dominance</h2>
+    <div class="leaf"><b>National level:</b> office at the Centre and in almost every state for two decades</div>
+    <div class="leaf"><b>Consensus-based:</b> dominance won by agreement and inclusion, not by force or fraud</div>
+    <div class="leaf"><b>"Congress system" (Rajni Kothari):</b> one dominant party + opposition acting as pressure groups</div>
+    <div class="leaf"><b>Elections stayed free:</b> rivals campaigned openly; Nehru accepted defeats and defied his own party when needed</div>
+  </div>
+
+  <div class="card left b" style="top:648px">
+    <h2>Coalitional Nature of Congress</h2>
+    <div class="leaf"><b>Ideological rainbow:</b> socialists, conservatives, traditionalists — all housed in one party</div>
+    <div class="leaf"><b>Social rainbow:</b> upper castes, peasants, workers, Dalits, minorities — factions for each</div>
+    <div class="leaf"><b>Faction management:</b> state bosses bargained with the high command; conflict stayed inside the party</div>
+    <div class="leaf"><b>Effect:</b> groups fought for power WITHIN Congress instead of leaving it — dominance fed on inclusion</div>
+  </div>
+
+  <div class="card right l" style="top:58px">
+    <h2>Uneven Dominance in the States</h2>
+    <div class="leaf"><b>Kerala:</b> CPI's 1957 win — Congress out of power in a full state</div>
+    <div class="leaf"><b>J&amp;K:</b> National Conference dominated, not Congress</div>
+    <div class="leaf"><b>Punjab / PEPSU:</b> Akali Dal strong; <b>Madras:</b> DMK rising</div>
+    <div class="leaf"><b>West Bengal, Orissa:</b> left and regional pockets resisted Congress sweeps</div>
+  </div>
+
+  <div class="card right b" style="top:352px">
+    <h2>Major Opposition Parties</h2>
+    <div class="leaf"><b>Socialists (SP &#8594; PSP 1952):</b> JP Narayan, Lohia — democratic socialism, "third force"</div>
+    <div class="leaf"><b>CPI:</b> 1951 programme chose constitutional path; Kerala 1957 its landmark</div>
+    <div class="leaf"><b>Jana Sangh (1951):</b> S.P. Mookerjee — one nation one culture, Hindi, uniform civil code</div>
+    <div class="leaf"><b>Swatantra (1959):</b> C. Rajagopalachari — free enterprise against the licence raj</div>
+  </div>
+
+  <div class="card right l" style="top:648px">
+    <h2>What the Opposition Did</h2>
+    <div class="leaf"><b>Parties of pressure:</b> they shaped policy without forming the government — socialists pushed land reform, Swatantra pushed free-market debate</div>
+    <div class="leaf"><b>Kerala model:</b> showed a non-Congress government was possible — and survivable</div>
+    <div class="leaf"><b>Idea benches:</b> Jana Sangh's cultural nationalism and CPI's class politics broadened the national debate</div>
+    <div class="leaf"><b>Seed of 1967:</b> the scattered opposition of this era regrouped to break Congress in half the states</div>
+  </div>
+
+  <div class="exc">
+    <h2>Traps that catch most students</h2>
+    <div class="leaf"><b>Votes vs seats:</b> Congress polled ~45% of votes but won ~75% of seats — first-past-the-post magnifies leads</div>
+    <div class="leaf"><b>PSP ≠ SP:</b> the Socialist Party merged with Kripalani's KMPP in 1952 to form the Praja Socialist Party</div>
+    <div class="leaf"><b>Swatantra is 1959</b> — it fought only the 1962 election in this chapter's span; do not list it in 1952</div>
+    <div class="leaf"><b>Dominance ≠ absence of democracy</b> — the era had free elections and real defeats</div>
+  </div>
+</div>
+</body>
+</html>

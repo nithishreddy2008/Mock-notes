@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: 1020px; position: relative; background: #fff; }
+  .title {
+    position: absolute; left: 30px; top: 22px; width: 1420px; height: 58px;
+    background: #071A4D; border-radius: 12px; display: flex; align-items: center; justify-content: center;
+  }
+  .title .t { color: #fff; font-size: 24px; font-weight: 800; letter-spacing: 1px; }
+  .title .t b { color: #B8FF34; }
+  .mach { position: absolute; left: 30px; top: 100px; width: 1420px; height: 118px; background: #071A4D; border-radius: 14px; padding: 12px 16px; border-bottom: 5px solid #B8FF34; }
+  .mach h3 { color: #fff; font-size: 17px; font-weight: 800; margin: 0 0 6px; }
+  .mach .row { display: flex; gap: 12px; }
+  .mach .chip { flex: 1; background: rgba(255,255,255,.10); border-radius: 9px; padding: 7px 11px; }
+  .mach .chip .v { color: #B8FF34; font-size: 14.5px; font-weight: 800; }
+  .mach .chip .k { color: #C9D4F2; font-size: 12px; line-height: 1.3; margin-top: 1px; }
+  .cards { position: absolute; left: 30px; top: 238px; width: 1420px; display: flex; gap: 16px; }
+  .fcard {
+    flex: 1; background: #FCFDFF; border: 1.5px solid #D5DCEA; border-radius: 14px; padding: 12px 16px; height: 252px;
+  }
+  .fcard h3 { font-size: 18.5px; font-weight: 800; color: #1F5EFF; margin-bottom: 7px; padding-bottom: 5px; border-bottom: 3px solid #1F5EFF; display: inline-block; }
+  .fcard.right h3 { color: #4E7A00; border-color: #7FB800; }
+  .leaf { font-size: 13.6px; color: #1B2333; margin: 6px 0; padding-left: 16px; position: relative; line-height: 1.36; }
+  .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; background: #1F5EFF; }
+  .fcard.right .leaf::before { background: #7FB800; }
+  .leaf b { color: #071A4D; }
+  .chain { position: absolute; left: 30px; top: 508px; width: 1420px; background: #EAF0FF; border: 1.5px solid #1F5EFF; border-radius: 14px; padding: 12px 16px; }
+  .chain h3 { font-size: 18px; color: #1F5EFF; font-weight: 800; margin: 0 0 8px; }
+  .chain .steps { display: flex; gap: 10px; align-items: stretch; }
+  .chain .s { flex: 1; background: #fff; border: 1.2px solid #B9C6E4; border-radius: 10px; padding: 8px 11px; }
+  .chain .s .y { display: inline-block; background: #071A4D; color: #fff; font-size: 12.5px; font-weight: 800; border-radius: 6px; padding: 2px 8px; }
+  .chain .s p { font-size: 12.6px; color: #1B2333; line-height: 1.35; margin: 5px 0 0; }
+  .chain .s p b { color: #B4380F; }
+  .interests { position: absolute; left: 30px; top: 702px; width: 1420px; background: #F6FFDF; border: 1.5px solid #7FB800; border-radius: 14px; padding: 12px 16px; }
+  .interests h3 { font-size: 18px; color: #4E7A00; font-weight: 800; margin: 0 0 6px; }
+  .interests .grid { display: flex; gap: 12px; }
+  .interests .g { flex: 1; font-size: 13.2px; color: #1B2333; line-height: 1.42; }
+  .interests .g b { color: #071A4D; display: block; font-size: 14px; margin-bottom: 2px; }
+  .strip { position: absolute; left: 30px; top: 894px; width: 1420px; display: flex; gap: 14px; }
+  .trap { flex: 1; background: #FFF3EC; border: 1.5px solid #D2481F; border-radius: 12px; padding: 10px 14px; }
+  .trap h3 { font-size: 14px; color: #B4380F; font-weight: 800; margin-bottom: 3px; }
+  .trap p { font-size: 12.8px; color: #7A2A12; line-height: 1.38; }
+  .trap p b { color: #B4380F; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="title"><div class="t">PLANNED DEVELOPMENT — <b>THE MACHINERY, THE PLANS, THE NEW INTERESTS</b></div></div>
+
+  <div class="mach">
+    <h3>THE PLANNING MACHINERY — three facts to carry</h3>
+    <div class="row">
+      <div class="chip"><div class="v">Planning Commission — 1950</div><div class="k">Set up by an executive resolution, NOT by law; the Prime Minister chairs it — Nehru was the first chairman</div></div>
+      <div class="chip"><div class="v">Advisory, not executive</div><div class="k">It recommends; the Union and state governments execute. Extra-constitutional by design</div></div>
+      <div class="chip"><div class="v">NDC — 1952</div><div class="k">National Development Council: PM + Chief Ministers — the federal table where plans get approved</div></div>
+    </div>
+  </div>
+
+  <div class="cards">
+    <div class="fcard">
+      <h3>Plan I (1951-56) vs Plan II (1956-61)</h3>
+      <div class="leaf"><b>First Plan — agriculture first:</b> Harrod-Domar growth arithmetic; food, irrigation, community development. Target ~2.1% — achieved ~3.6%. A success.</div>
+      <div class="leaf"><b>Why it worked:</b> good monsoons + modest targets + the room Partition's food crisis left for quick wins.</div>
+      <div class="leaf"><b>Second Plan — the industrial turn:</b> P.C. Mahalanobis's two-sector model — machines that make machines; heavy industry over quick consumer goods.</div>
+      <div class="leaf"><b>Its price:</b> imports of machinery and food soared; a foreign-exchange crisis hit by 1957-58.</div>
+    </div>
+    <div class="fcard right">
+      <h3>Expanding the state sector</h3>
+      <div class="leaf"><b>Avadi 1955:</b> the Congress adopted a "socialistic pattern of society" as the official goal — planning got an ideology.</div>
+      <div class="leaf"><b>IPR 1956:</b> Schedule A — 17 industries EXCLUSIVE to the state; Schedule B — state-led with private entry; Schedule C — private under licence.</div>
+      <div class="leaf"><b>Steel with many flags:</b> Bhilai (USSR), Rourkela (West Germany), Durgapur (UK) — non-alignment turned into steel plants.</div>
+      <div class="leaf"><b>State takeovers:</b> Imperial Bank &#8594; SBI (1955); life insurance nationalised &#8594; LIC (1956).</div>
+    </div>
+  </div>
+
+  <div class="chain">
+    <h3>THE FOOD CHAIN — how the plan crisis became a farm-policy revolution</h3>
+    <div class="steps">
+      <div class="s"><span class="y">1956-57</span><p>Food output dips; industry imports surge — <b>foreign-exchange crisis</b> within two years of the Second Plan.</p></div>
+      <div class="s"><span class="y">Response</span><p>America's <b>PL-480</b> supplies wheat against rupee payments — food imports keep the republic fed.</p></div>
+      <div class="s"><span class="y">1960s</span><p>"Grow More Food" plus irrigation and fertiliser packages — but <b>land reforms stall</b> in the states.</p></div>
+      <div class="s"><span class="y">1966</span><p>The <b>Green Revolution</b>: HYV seeds + assured irrigation break the famine fear — in Punjab, Haryana, west UP first.</p></div>
+      <div class="s"><span class="y">Political result</span><p>Prosperous farmers emerge as a <b>new economic interest</b> — the countryside becomes a lobby the plans must answer.</p></div>
+    </div>
+  </div>
+
+  <div class="interests">
+    <h3>THE RISE OF NEW ECONOMIC INTERESTS — who organised as planning grew the pie</h3>
+    <div class="grid">
+      <div class="g"><b>Big industry</b>Earlier than the state: the Bombay Plan (1944-45, Tata-Birla circle) itself ASKED for state-led heavy industry — protection and licences later built the "permit raj" the same class complained about.</div>
+      <div class="g"><b>Rich farmers</b>Irrigation, subsidies and HYV packages created a prosperous agrarian class that pushed its demands through state politics — land reforms died where these interests ruled.</div>
+      <div class="g"><b>Organised workers</b>Public-sector expansion multiplied unions in railways, steel and banks — strikes became a normal instrument of bargaining with the plan state.</div>
+    </div>
+  </div>
+
+  <div class="strip">
+    <div class="trap"><h3>TRAP 1</h3><p><b>Planning Commission ≠ constitutional body.</b> A 1950 executive resolution created it; the Finance Commission is the constitutional one. The NCERT stresses this contrast.</p></div>
+    <div class="trap"><h3>TRAP 2</h3><p><b>Model-plan pairing:</b> Harrod-Domar &#8594; First Plan (agriculture); Mahalanobis &#8594; Second Plan (industry). Swapping them is the classic MCQ.</p></div>
+    <div class="trap"><h3>TRAP 3</h3><p><b>Steel plants map to blocs:</b> Bhilai-USSR, Rourkela-West Germany, Durgapur-UK. Non-alignment funded BOTH blocs' presence — do not mis-assign.</p></div>
+  </div>
+</div>
+</body>
+</html>

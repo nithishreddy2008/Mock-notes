@@ -89,7 +89,7 @@ Bread, rice, potato and sugar share one chemistry: *carbohydrates* — polyhydro
 
 = Practice Questions (Exam Pattern)
 
-Ten questions in the CUET UG style. Attempt all of them — the paper gives $+5$ for each correct answer and takes nothing away for a wrong one.
+Ten questions in the CUET UG style. Attempt all of them — the paper gives $+5$ for each correct answer and $-1$ for every incorrect answer.
 
 #mcq(1, [Which sugar is NOT a reducing sugar?], (
   [glucose], [maltose], [lactose], [sucrose],
