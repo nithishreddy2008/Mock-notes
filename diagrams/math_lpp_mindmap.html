@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: 1080px; position: relative; background: #fff; }
+  svg.wires { position: absolute; inset: 0; width: 1480px; height: 1080px; }
+  .center {
+    position: absolute; left: 520px; top: 470px; width: 440px; height: 104px;
+    background: #071A4D; border-radius: 16px; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(7,26,77,.25);
+    border-bottom: 5px solid #B8FF34;
+  }
+  .center .t { color: #fff; font-size: 19px; font-weight: 800; letter-spacing: .5px; text-align: center; }
+  .center .s { color: #B8FF34; font-size: 13px; font-weight: 700; letter-spacing: 2px; margin-top: 4px; }
+  .card {
+    position: absolute; width: 465px; background: #FCFDFF; border: 1.5px solid #D5DCEA;
+    border-radius: 14px; padding: 13px 16px 12px;
+  }
+  .card h2 { font-size: 19px; color: #071A4D; font-weight: 800; margin-bottom: 7px;
+             padding-bottom: 5px; border-bottom: 3px solid; display: inline-block; }
+  .leaf { font-size: 14px; color: #1B2333; margin: 5px 0; padding-left: 16px; position: relative; line-height: 1.32; }
+  .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
+  .b .leaf::before { background: #1F5EFF; }
+  .l .leaf::before { background: #7FB800; }
+  .leaf b { color: #071A4D; }
+  .b h2 { border-color: #1F5EFF; }
+  .l h2 { border-color: #7FB800; }
+  .left { left: 30px; }
+  .right { left: 985px; }
+  .exc {
+    position: absolute; left: 470px; top: 905px; width: 540px; background: #FFF3EC;
+    border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px;
+  }
+  .exc h2 { font-size: 17px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
+  .exc .leaf { font-size: 13px; margin: 3px 0; padding-left: 14px; color: #7A2A12; }
+  .exc .leaf::before { background: #D2481F; }
+  .exc b { color: #B4380F; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <svg class="wires" viewBox="0 0 1480 1080">
+    <path d="M 520 505 C 470 505, 495 158, 500 155" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 520 520 C 480 520, 495 438, 500 438" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 520 535 C 470 535, 495 718, 500 718" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 960 505 C 1010 505, 985 158, 980 155" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 960 520 C 1000 520, 985 438, 980 438" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 960 535 C 1010 535, 985 718, 980 718" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 740 574 C 740 700, 740 830, 740 903" fill="none" stroke="#D2481F" stroke-width="2.5" stroke-dasharray="7 5" opacity=".6"/>
+  </svg>
+
+  <div class="center">
+    <div class="t">LINEAR PROGRAMMING</div>
+    <div class="s">CUET UG MATHEMATICS</div>
+  </div>
+
+  <div class="card left b" style="top:58px">
+    <h2>Vocabulary (serves A + B1 + B2)</h2>
+    <div class="leaf"><b>Decision variables:</b> x, y — the things you control</div>
+    <div class="leaf"><b>Objective function:</b> Z = ax + by, maximise profit or minimise cost</div>
+    <div class="leaf"><b>Constraints + non-negativity:</b> inequalities from the story, x, y ≥ 0</div>
+    <div class="leaf"><b>Formulation</b> is itself a scored skill — name, then translate</div>
+  </div>
+
+  <div class="card right b" style="top:58px">
+    <h2>Half-Planes &amp; the Feasible Region</h2>
+    <div class="leaf"><b>Each inequality</b> shades a half-plane; test the origin for the side</div>
+    <div class="leaf"><b>Feasible region:</b> the common overlap of ALL half-planes</div>
+    <div class="leaf"><b>Feasible point</b> inside · <b>infeasible</b> outside</div>
+    <div class="leaf"><b>Bounded or unbounded</b> — read the region's shape first</div>
+  </div>
+
+  <div class="card left l" style="top:350px">
+    <h2>Corner Point Theorem</h2>
+    <div class="leaf"><b>The optimum of Z lives at a vertex</b> of the feasible region</div>
+    <div class="leaf"><b>List every corner</b> — origin, axis hits, line intersections</div>
+    <div class="leaf"><b>Evaluate Z at all of them</b>, pick the best</div>
+    <div class="leaf"><b>Ties:</b> an iso-profit line along an edge = every edge point optimal</div>
+  </div>
+
+  <div class="card right l" style="top:350px">
+    <h2>The Five-Step Pipeline</h2>
+    <div class="leaf"><b>1 Formulate</b> → <b>2 draw lines</b> → <b>3 shade agreement</b> → <b>4 corners</b> → <b>5 evaluate Z</b></div>
+    <div class="leaf"><b>Simultaneous equations</b> find the winning corner</div>
+    <div class="leaf"><b>Verify</b> the winner obeys every constraint</div>
+    <div class="leaf"><b>Answer the asked thing:</b> the point or the value of Z</div>
+  </div>
+
+  <div class="card left b" style="top:642px">
+    <h2>Region Moods</h2>
+    <div class="leaf"><b>Bounded:</b> max and min both exist at corners</div>
+    <div class="leaf"><b>Unbounded:</b> maximum needs proof — slide the iso-profit line</div>
+    <div class="leaf"><b>Empty region:</b> constraints contradict → infeasible LPP</div>
+    <div class="leaf"><b>Minimisation</b> often lives on unbounded regions</div>
+  </div>
+
+  <div class="card right b" style="top:642px">
+    <h2>The Classic (know it cold)</h2>
+    <div class="leaf"><b>Max Z = 3x + 2y</b>; x + 2y ≤ 10, 3x + y ≤ 15, x, y ≥ 0</div>
+    <div class="leaf"><b>Corners:</b> (0,0)→0, (5,0)→15, (4,3)→18, (0,5)→10</div>
+    <div class="leaf"><b>Max = 18 at (4,3)</b> — the two-line intersection</div>
+    <div class="leaf"><b>Same skeleton</b> under every cost/profit story</div>
+  </div>
+
+  <div class="exc">
+    <h2>TOP TRAPS</h2>
+    <div class="leaf"><b>Origin forgotten</b> as a corner candidate</div>
+    <div class="leaf"><b>Unbounded declared "no maximum"</b> without the iso-profit check</div>
+    <div class="leaf"><b>Point vs value</b> — the stem decides which one to quote</div>
+  </div>
+</div>
+</body>
+</html>
