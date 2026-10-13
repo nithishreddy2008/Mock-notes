@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #fff; width: 1480px; }
+  .wrap { width: 1480px; height: 960px; background: #fff; padding: 24px 30px; }
+  .head { display: flex; align-items: baseline; gap: 16px; margin-bottom: 16px; }
+  .head h1 { font-size: 30px; color: #071A4D; font-weight: 800; }
+  .head .tag { font-size: 14px; color: #fff; background: #1F5EFF; border-radius: 999px; padding: 5px 14px; font-weight: 700; letter-spacing: 1px; }
+  .prod { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 14px; }
+  .p { background: #071A4D; border-radius: 14px; padding: 14px 16px; }
+  .p h2 { color: #B8FF34; font-size: 18px; font-weight: 800; margin-bottom: 4px; }
+  .p .fm { color: #fff; font-size: 14px; font-family: Georgia, serif; font-style: italic; background: rgba(255,255,255,.08); border: 1px solid rgba(184,255,52,.4); border-radius: 9px; padding: 7px 10px; margin-bottom: 8px; }
+  .p .fm b { color: #B8FF34; }
+  .p .r { color: #C9D4EE; font-size: 12.5px; line-height: 1.42; margin: 4px 0; }
+  .p .r b { color: #fff; }
+  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 12px; }
+  .zone { background: #FCFDFF; border: 1.5px solid #D5DCEA; border-radius: 14px; padding: 12px 16px; }
+  .zone h2 { font-size: 18.5px; color: #071A4D; font-weight: 800; margin-bottom: 7px; padding-bottom: 5px; border-bottom: 3px solid #1F5EFF; display: inline-block; }
+  .zone .r { font-size: 12.8px; color: #33405C; margin: 5px 0; line-height: 1.36; }
+  .zone .r b { color: #071A4D; }
+  .f { font-family: Georgia, serif; font-style: italic; color: #071A4D; }
+  .trap { background: #FFF3EC; border: 1.5px solid #D2481F; border-radius: 12px; padding: 10px 16px; }
+  .trap h2 { font-size: 16px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
+  .traps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px 18px; }
+  .traps div { font-size: 12.5px; color: #7A2A12; padding-left: 13px; position: relative; line-height: 1.3; }
+  .traps div::before { content: ""; position: absolute; left: 0; top: 6px; width: 7px; height: 7px; border-radius: 50%; background: #D2481F; }
+  .traps b { color: #B4380F; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="head">
+    <h1>THE VECTOR PRODUCT SUITE + LINE &amp; PLANE KIT</h1>
+    <span class="tag">CUET UG · MATHEMATICS · VECTORS &amp; 3D GEOMETRY</span>
+  </div>
+
+  <div class="prod">
+    <div class="p">
+      <h2>DOT (scalar) — a · b</h2>
+      <div class="fm">a · b = <b>|a||b| cos θ</b> = a₁b₁ + a₂b₂ + a₃b₃</div>
+      <div class="r"><b>Output:</b> a number · <b>Zero</b> ⇔ perpendicular (θ = 90°)</div>
+      <div class="r"><b>Angle:</b> cos θ = a·b / (|a||b|)</div>
+      <div class="r"><b>Projection of a on b:</b> (a·b)/|b| — the shadow length</div>
+      <div class="r"><b>Commutative:</b> a·b = b·a</div>
+    </div>
+    <div class="p">
+      <h2>CROSS (vector) — a × b</h2>
+      <div class="fm">|a × b| = <b>|a||b| sin θ</b>; direction by right-hand rule</div>
+      <div class="r"><b>Output:</b> a vector ⊥ to both · <b>Zero</b> ⇔ parallel (θ = 0°)</div>
+      <div class="r"><b>Area:</b> parallelogram = |a × b|; triangle = ½|a × b|</div>
+      <div class="r"><b>Anti-commutative:</b> a × b = −(b × a)</div>
+      <div class="r"><b>2×2 minors:</b> components come from cofactor expansion with î, ĵ, k̂</div>
+    </div>
+    <div class="p">
+      <h2>SCALAR TRIPLE — [a b c]</h2>
+      <div class="fm">[a b c] = <b>a · (b × c)</b> = det of the 3×3 of components</div>
+      <div class="r"><b>Output:</b> a number · <b>|value|</b> = volume of the parallelepiped</div>
+      <div class="r"><b>Zero ⇔ coplanar</b> — the flatness test</div>
+      <div class="r"><b>Dot-cross swap:</b> a·(b×c) = (a×b)·c; any two swap = sign flip</div>
+      <div class="r"><b>Volume of tetrahedron:</b> (1/6)|[a b c]|</div>
+    </div>
+  </div>
+
+  <div class="cols">
+    <div class="zone">
+      <h2>Lines in 3D</h2>
+      <div class="r"><b>Vector equation:</b> <span class="f">r = a + λ b</span> — point a, direction b</div>
+      <div class="r"><b>Cartesian:</b> <span class="f">(x−x₁)/l = (y−y₁)/m = (z−z₁)/n</span></div>
+      <div class="r"><b>Direction cosines:</b> l, m, n with <b>l² + m² + n² = 1</b>; direction ratios only need proportionality</div>
+      <div class="r"><b>Angle between lines:</b> cos θ = |b₁·b₂|/(|b₁||b₂|)</div>
+      <div class="r"><b>Skew lines:</b> not parallel, never meet; SD = |(a₂−a₁)·(b₁×b₂)| / |b₁×b₂|</div>
+      <div class="r"><b>Parallel lines:</b> SD = |(a₂−a₁)×b| / |b|</div>
+    </div>
+    <div class="zone" style="border-top:5px solid #7FB800;">
+      <h2>Planes in 3D</h2>
+      <div class="r"><b>Normal form:</b> <span class="f">r · n̂ = d</span>; cartesian <span class="f">lx + my + nz = d</span></div>
+      <div class="r"><b>Through a point, ⊥ to n:</b> <span class="f">(r − a)·n = 0</span></div>
+      <div class="r"><b>Angle between planes:</b> angle between normals, cos θ = |n₁·n₂|/(|n₁||n₂|)</div>
+      <div class="r"><b>Line ⊥ plane angle:</b> sin θ = |b·n|/(|b||n|)</div>
+      <div class="r"><b>Distance point → plane:</b> |ax₁+by₁+cz₁−d| / √(a²+b²+c²)</div>
+      <div class="r"><b>Plane through 3 points:</b> fit coefficients from the three position vectors (or triple-product form)</div>
+    </div>
+  </div>
+
+  <div class="trap">
+    <h2>TRAPS THE OPTIONS ARE BUILT AROUND</h2>
+    <div class="traps">
+      <div><b>Dot = 0 means ⊥, cross = 0 means ∥</b> — swapped, they wreck the verdict</div>
+      <div><b>Direction cosines vs ratios:</b> cosines satisfy l²+m²+n² = 1, ratios only proportions</div>
+      <div><b>Line-plane angle uses sin</b>, plane-plane uses cos — the trig flip</div>
+      <div><b>Cross product anti-commutes</b> — order flips the sign</div>
+      <div><b>SD of skew lines</b> needs b₁×b₂ — try the parallel formula and it divides by zero</div>
+      <div><b>Distance uses the FULL plane ax+by+cz−d</b> — sign does not matter inside |·|</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
