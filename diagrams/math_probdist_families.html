@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #fff; width: 1480px; }
+  .wrap { width: 1480px; height: 940px; background: #fff; padding: 24px 30px; }
+  .head { display: flex; align-items: baseline; gap: 16px; margin-bottom: 16px; }
+  .head h1 { font-size: 30px; color: #071A4D; font-weight: 800; }
+  .head .tag { font-size: 14px; color: #fff; background: #1F5EFF; border-radius: 999px; padding: 5px 14px; font-weight: 700; letter-spacing: 1px; }
+  .fam { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 14px; }
+  .f { background: #071A4D; border-radius: 14px; padding: 14px 16px; }
+  .f h2 { color: #B8FF34; font-size: 18px; font-weight: 800; margin-bottom: 4px; }
+  .f .sub { color: #C9D4EE; font-size: 12.5px; font-style: italic; margin-bottom: 8px; }
+  .f .fm { color: #fff; font-size: 14px; font-family: Georgia, serif; font-style: italic; background: rgba(255,255,255,.08); border: 1px solid rgba(184,255,52,.4); border-radius: 9px; padding: 7px 10px; margin-bottom: 8px; }
+  .f .fm b { color: #B8FF34; }
+  .f .r { color: #C9D4EE; font-size: 12.5px; line-height: 1.4; margin: 4px 0; }
+  .f .r b { color: #fff; }
+  .twocol { display: grid; grid-template-columns: 1.1fr 1fr; gap: 16px; margin-bottom: 12px; }
+  .zone { background: #FCFDFF; border: 1.5px solid #D5DCEA; border-radius: 14px; padding: 12px 16px; }
+  .zone h2 { font-size: 18.5px; color: #071A4D; font-weight: 800; margin-bottom: 8px; padding-bottom: 5px; border-bottom: 3px solid #1F5EFF; display: inline-block; }
+  .zone.lime h2 { border-color: #7FB800; }
+  .zone .r { font-size: 13px; color: #33405C; margin: 5px 0; line-height: 1.36; }
+  .zone .r b { color: #071A4D; }
+  .bell { display: flex; flex-direction: column; align-items: center; gap: 4px; margin-top: 6px; }
+  .band { display: flex; gap: 2px; align-items: flex-end; height: 64px; }
+  .band span { width: 30px; background: #1F5EFF; border-radius: 4px 4px 0 0; display: flex; align-items: flex-start; justify-content: center; color: #fff; font-size: 10.5px; font-weight: 800; padding-top: 3px; }
+  .axis { font-size: 11.5px; color: #33405C; display: flex; gap: 2px; }
+  .axis span { width: 30px; text-align: center; }
+  .zone .cap { font-size: 12px; color: #33405C; margin-top: 4px; line-height: 1.35; }
+  .trap { background: #FFF3EC; border: 1.5px solid #D2481F; border-radius: 12px; padding: 10px 16px; }
+  .trap h2 { font-size: 16px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
+  .traps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px 18px; }
+  .traps div { font-size: 12.5px; color: #7A2A12; padding-left: 13px; position: relative; line-height: 1.3; }
+  .traps div::before { content: ""; position: absolute; left: 0; top: 6px; width: 7px; height: 7px; border-radius: 50%; background: #D2481F; }
+  .traps b { color: #B4380F; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="head">
+    <h1>THREE DISTRIBUTIONS, ONE DECISION TREE</h1>
+    <span class="tag">CUET UG · MATHEMATICS · PROBABILITY DISTRIBUTIONS</span>
+  </div>
+
+  <div class="fam">
+    <div class="f">
+      <h2>BINOMIAL</h2>
+      <div class="sub">n fixed tries, success/failure each time, constant p</div>
+      <div class="fm">P(X = r) = <b>C(n, r)</b> p<sup>r</sup> q<sup>n−r</sup>, &nbsp; q = 1 − p</div>
+      <div class="r"><b>Mean:</b> np &nbsp;·&nbsp; <b>Variance:</b> npq &nbsp;·&nbsp; <b>SD:</b> √(npq)</div>
+      <div class="r"><b>Fires when:</b> "in n tosses / draws / shots, find P(exactly r successes)"</div>
+      <div class="r"><b>Example:</b> 5 tosses, P(exactly 2 heads) = C(5,2)(1/2)⁵ = 5/16</div>
+    </div>
+    <div class="f">
+      <h2>POISSON</h2>
+      <div class="sub">rare events in a fixed window — calls, accidents, typos per page</div>
+      <div class="fm">P(X = r) = <b>e<sup>−λ</sup> λ<sup>r</sup> / r!</b></div>
+      <div class="r"><b>Mean:</b> λ &nbsp;·&nbsp; <b>Variance:</b> λ (the signature: they are EQUAL)</div>
+      <div class="r"><b>Fires when:</b> n is huge, p is tiny, the rate λ = np is the only number given</div>
+      <div class="r"><b>Example:</b> λ = 2 → P(X = 0) = e<sup>−2</sup> ≈ 0.135</div>
+    </div>
+    <div class="f">
+      <h2>NORMAL</h2>
+      <div class="sub">continuous bell — heights, marks, measurement error</div>
+      <div class="fm">z = <b>(x − μ) / σ</b> — the standard normal variate</div>
+      <div class="r"><b>Area rule:</b> μ ± 1σ → <b>68%</b> · μ ± 2σ → <b>95%</b> · μ ± 3σ → <b>99.7%</b></div>
+      <div class="r"><b>Fires when:</b> a continuous measurement with bell behaviour is described</div>
+      <div class="r"><b>Note:</b> P(X = exact value) = 0 — only intervals carry area</div>
+    </div>
+  </div>
+
+  <div class="twocol">
+    <div class="zone">
+      <h2>Discrete random variables — the table comes first</h2>
+      <div class="r"><b>Build:</b> list every value X can take, attach each probability from the story.</div>
+      <div class="r"><b>Police:</b> every pᵢ in [0, 1] and the column sums to exactly 1 — check before anything else.</div>
+      <div class="r"><b>Expectation:</b> E(X) = Σ xᵢpᵢ — the long-run average per trial.</div>
+      <div class="r"><b>Variance:</b> Var(X) = Σ xᵢ²pᵢ − (E(X))² — subtract the squared mean, always.</div>
+      <div class="r"><b>Worked:</b> two coins, X = heads → E = 1, Var = ½.</div>
+    </div>
+    <div class="zone lime">
+      <h2>The normal bell, area per band</h2>
+      <div class="bell">
+        <div class="band">
+          <span style="height:8px"></span><span style="height:16px"></span><span style="height:30px"></span>
+          <span style="height:48px; background:#071A4D;">34%</span>
+          <span style="height:60px; background:#B8FF34; color:#071A4D;">34%</span>
+          <span style="height:48px; background:#071A4D;">14%</span>
+          <span style="height:30px">2%</span><span style="height:16px"></span><span style="height:8px"></span>
+        </div>
+        <div class="axis"><span>μ−3σ</span><span>μ−2σ</span><span>μ−σ</span><span>μ</span><span>μ+σ</span><span>μ+2σ</span><span>μ+3σ</span></div>
+      </div>
+      <div class="cap">Roughly: half the data sits within 1σ of the mean; almost everything within 3σ. Convert any x to a z-score and read the tail from the table.</div>
+    </div>
+  </div>
+
+  <div class="trap">
+    <h2>TRAPS THE OPTIONS ARE BUILT AROUND</h2>
+    <div class="traps">
+      <div><b>Mean = variance = λ</b> is POISSON only — never binomial, never normal</div>
+      <div><b>Binomial mean np, not n(1−p)</b> — success probability, not failure</div>
+      <div><b>q = 1 − p</b> — forgetting the flip breaks every binomial term</div>
+      <div><b>P(X = x) = 0</b> for continuous X — only P(a &lt; X &lt; b) has area</div>
+      <div><b>z uses (x − μ)/σ</b> — flipped subtraction inverts the tail</div>
+      <div><b>e^(−λ) λʳ / r!</b> — missing e^(−λ) is the classic Poisson slip</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
