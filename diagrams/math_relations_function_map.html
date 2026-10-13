@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #fff; width: 1480px; }
+  .wrap { width: 1480px; height: 950px; background: #fff; padding: 24px 30px; }
+  .head { display: flex; align-items: baseline; gap: 16px; margin-bottom: 16px; }
+  .head h1 { font-size: 30px; color: #071A4D; font-weight: 800; }
+  .head .tag { font-size: 14px; color: #fff; background: #1F5EFF; border-radius: 999px; padding: 5px 14px; font-weight: 700; letter-spacing: 1px; }
+  .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-bottom: 14px; }
+  .zone { background: #FCFDFF; border: 1.5px solid #D5DCEA; border-radius: 14px; padding: 12px 16px; }
+  .zone h2 { font-size: 18.5px; color: #071A4D; font-weight: 800; margin-bottom: 7px; padding-bottom: 5px; border-bottom: 3px solid #1F5EFF; display: inline-block; }
+  .zone.lime h2 { border-color: #7FB800; }
+  .zone .r { font-size: 13px; color: #33405C; margin: 5px 0; line-height: 1.36; }
+  .zone .r b { color: #071A4D; }
+  .dark { background: #071A4D; border-radius: 14px; padding: 13px 18px; margin-bottom: 14px; }
+  .dark h2 { color: #B8FF34; font-size: 17px; font-weight: 800; letter-spacing: 1px; margin-bottom: 9px; }
+  .branches { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .br { background: rgba(255,255,255,.07); border: 1px solid rgba(184,255,52,.35); border-radius: 10px; padding: 8px 12px; }
+  .br .nm { color: #fff; font-size: 14px; font-weight: 800; }
+  .br .dm { color: #B8FF34; font-size: 12.5px; margin-top: 2px; font-family: Georgia, serif; font-style: italic; }
+  .br .rg { color: #C9D4EE; font-size: 12.5px; margin-top: 1px; font-family: Georgia, serif; font-style: italic; }
+  .br .tx { color: #C9D4EE; font-size: 11.5px; margin-top: 3px; line-height: 1.3; }
+  .br .tx b { color: #fff; }
+  .trap { background: #FFF3EC; border: 1.5px solid #D2481F; border-radius: 12px; padding: 10px 16px; }
+  .trap h2 { font-size: 16px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
+  .traps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px 18px; }
+  .traps div { font-size: 12.5px; color: #7A2A12; padding-left: 13px; position: relative; line-height: 1.3; }
+  .traps div::before { content: ""; position: absolute; left: 0; top: 6px; width: 7px; height: 7px; border-radius: 50%; background: #D2481F; }
+  .traps b { color: #B4380F; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="head">
+    <h1>RELATIONS, FUNCTIONS &amp; THE INVERSE-TRIG BRANCHES</h1>
+    <span class="tag">CUET UG · MATHEMATICS · RELATIONS &amp; FUNCTIONS</span>
+  </div>
+
+  <div class="grid">
+    <div class="zone">
+      <h2>Relation checklists (run all three)</h2>
+      <div class="r"><b>Reflexive:</b> (a, a) ∈ R for EVERY a in A — one missing pair breaks it</div>
+      <div class="r"><b>Symmetric:</b> (a, b) ∈ R ⇒ (b, a) ∈ R — every arrow needs its mirror</div>
+      <div class="r"><b>Transitive:</b> (a, b), (b, c) ∈ R ⇒ (a, c) ∈ R — check every chain</div>
+      <div class="r"><b>Equivalence:</b> all three at once — the identity relation always qualifies</div>
+      <div class="r"><b>Worked feel:</b> R = {(1,1),(2,2),(3,3),(1,2),(2,1)} on {1,2,3} → all three ✓ = equivalence</div>
+    </div>
+    <div class="zone lime">
+      <h2>Function classifications</h2>
+      <div class="r"><b>One-one (injective):</b> different inputs → different outputs; no repeated images</div>
+      <div class="r"><b>Onto (surjective):</b> every codomain element gets used; range = codomain</div>
+      <div class="r"><b>Bijective:</b> both — the only kind that owns an inverse</div>
+      <div class="r"><b>Composite:</b> f∘g means g first, then f — read inside-out, never swap casually</div>
+      <div class="r"><b>Inverse:</b> undo the machine — f⁻¹(f(x)) = x; 1/f is NOT f⁻¹</div>
+    </div>
+  </div>
+
+  <div class="dark">
+    <h2>INVERSE TRIGONOMETRIC — DOMAIN, RANGE, PRINCIPAL BRANCH (memorise cold)</h2>
+    <div class="branches">
+      <div class="br"><div class="nm">sin⁻¹x</div><div class="dm">Domain [−1, 1]</div><div class="rg">Range [−π/2, π/2]</div><div class="tx">Odd function; <b>sin⁻¹x + cos⁻¹x = π/2</b></div></div>
+      <div class="br"><div class="nm">cos⁻¹x</div><div class="dm">Domain [−1, 1]</div><div class="rg">Range [0, π]</div><div class="tx">Not odd; mirrors sin⁻¹ by the sum rule above</div></div>
+      <div class="br"><div class="nm">tan⁻¹x</div><div class="dm">Domain ℝ</div><div class="rg">Range (−π/2, π/2)</div><div class="tx">Open bounds — ±π/2 never attained; <b>tan⁻¹x + cot⁻¹x = π/2</b></div></div>
+      <div class="br"><div class="nm">cot⁻¹x</div><div class="dm">Domain ℝ</div><div class="rg">Range (0, π)</div><div class="tx">Pair-partner of tan⁻¹ via the sum rule</div></div>
+      <div class="br"><div class="nm">sec⁻¹x</div><div class="dm">Domain ℝ − (−1, 1)</div><div class="rg">Range [0, π] − {π/2}</div><div class="tx">|x| ≥ 1 only; π/2 is skipped</div></div>
+      <div class="br"><div class="nm">cosec⁻¹x</div><div class="dm">Domain ℝ − (−1, 1)</div><div class="rg">Range [−π/2, π/2] − {0}</div><div class="tx">|x| ≥ 1 only; 0 is skipped</div></div>
+    </div>
+  </div>
+
+  <div class="trap">
+    <h2>TRAPS THE OPTIONS ARE BUILT AROUND</h2>
+    <div class="traps">
+      <div><b>Reflexive needs EVERY (a,a)</b> — a single absent pair sinks it</div>
+      <div><b>Transitive chains:</b> one broken (a,c) link disqualifies the relation</div>
+      <div><b>f⁻¹ ≠ 1/f</b> — the inverse is an undo, not a reciprocal</div>
+      <div><b>f∘g ≠ g∘f</b> — composition order is content, not style</div>
+      <div><b>sin not one-one on ℝ</b> — that is WHY principal branches exist</div>
+      <div><b>Range brackets matter:</b> tan⁻¹ never reaches ±π/2; sec⁻¹ skips π/2</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

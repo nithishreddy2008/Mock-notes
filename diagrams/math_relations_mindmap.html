@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: 1080px; position: relative; background: #fff; }
+  svg.wires { position: absolute; inset: 0; width: 1480px; height: 1080px; }
+  .center {
+    position: absolute; left: 520px; top: 470px; width: 440px; height: 104px;
+    background: #071A4D; border-radius: 16px; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(7,26,77,.25);
+    border-bottom: 5px solid #B8FF34;
+  }
+  .center .t { color: #fff; font-size: 19px; font-weight: 800; letter-spacing: .5px; text-align: center; }
+  .center .s { color: #B8FF34; font-size: 13px; font-weight: 700; letter-spacing: 2px; margin-top: 4px; }
+  .card {
+    position: absolute; width: 465px; background: #FCFDFF; border: 1.5px solid #D5DCEA;
+    border-radius: 14px; padding: 13px 16px 12px;
+  }
+  .card h2 { font-size: 19px; color: #071A4D; font-weight: 800; margin-bottom: 7px;
+             padding-bottom: 5px; border-bottom: 3px solid; display: inline-block; }
+  .leaf { font-size: 14px; color: #1B2333; margin: 5px 0; padding-left: 16px; position: relative; line-height: 1.32; }
+  .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
+  .b .leaf::before { background: #1F5EFF; }
+  .l .leaf::before { background: #7FB800; }
+  .leaf b { color: #071A4D; }
+  .b h2 { border-color: #1F5EFF; }
+  .l h2 { border-color: #7FB800; }
+  .left { left: 30px; }
+  .right { left: 985px; }
+  .exc {
+    position: absolute; left: 470px; top: 905px; width: 540px; background: #FFF3EC;
+    border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px;
+  }
+  .exc h2 { font-size: 17px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
+  .exc .leaf { font-size: 13px; margin: 3px 0; padding-left: 14px; color: #7A2A12; }
+  .exc .leaf::before { background: #D2481F; }
+  .exc b { color: #B4380F; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <svg class="wires" viewBox="0 0 1480 1080">
+    <path d="M 520 505 C 470 505, 495 158, 500 155" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 520 520 C 480 520, 495 438, 500 438" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 520 535 C 470 535, 495 718, 500 718" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 960 505 C 1010 505, 985 158, 980 155" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 960 520 C 1000 520, 985 438, 980 438" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 960 535 C 1010 535, 985 718, 980 718" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 740 574 C 740 700, 740 830, 740 903" fill="none" stroke="#D2481F" stroke-width="2.5" stroke-dasharray="7 5" opacity=".6"/>
+  </svg>
+
+  <div class="center">
+    <div class="t">RELATIONS &amp; FUNCTIONS</div>
+    <div class="s">CUET UG MATHEMATICS</div>
+  </div>
+
+  <div class="card left b" style="top:58px">
+    <h2>Relations &amp; Their Types</h2>
+    <div class="leaf"><b>Relation:</b> any set of ordered pairs from A × A</div>
+    <div class="leaf"><b>Reflexive:</b> every (a, a) present — no exceptions</div>
+    <div class="leaf"><b>Symmetric:</b> arrows come in mirror pairs</div>
+    <div class="leaf"><b>Transitive:</b> chains close: a→b→c forces a→c</div>
+    <div class="leaf"><b>Equivalence:</b> all three — sorts A into classes</div>
+  </div>
+
+  <div class="card right b" style="top:58px">
+    <h2>One-One, Onto, Bijective</h2>
+    <div class="leaf"><b>One-one:</b> no two inputs share an output</div>
+    <div class="leaf"><b>Onto:</b> range = codomain, nothing unused</div>
+    <div class="leaf"><b>Bijective:</b> both at once — perfect pairing</div>
+    <div class="leaf"><b>x² test:</b> not one-one on ℝ; 2x + 3 is bijective ℝ → ℝ</div>
+  </div>
+
+  <div class="card left l" style="top:350px">
+    <h2>Composition &amp; Inverse</h2>
+    <div class="leaf"><b>(f∘g)(x) = f(g(x))</b> — inside first, order matters</div>
+    <div class="leaf"><b>g's output must fit f's domain</b> — the range check</div>
+    <div class="leaf"><b>Inverse needs bijection</b> — swap and solve: y = 2x + 3 → f⁻¹(y) = (y−3)/2</div>
+    <div class="leaf"><b>f⁻¹ ≠ 1/f</b> — undo machine, not reciprocal</div>
+  </div>
+
+  <div class="card right l" style="top:350px">
+    <h2>Why Principal Branches Exist</h2>
+    <div class="leaf"><b>sin, cos, tan repeat</b> — not one-one on their natural domains</div>
+    <div class="leaf"><b>Restrict to one clean branch</b> — then the inverse is a function</div>
+    <div class="leaf"><b>Principal values:</b> sin⁻¹ ∈ [−π/2, π/2], cos⁻¹ ∈ [0, π], tan⁻¹ ∈ (−π/2, π/2)</div>
+    <div class="leaf"><b>Sum rules:</b> sin⁻¹x + cos⁻¹x = π/2; tan⁻¹x + cot⁻¹x = π/2</div>
+  </div>
+
+  <div class="card left b" style="top:642px">
+    <h2>Domain &amp; Range (inverse trig)</h2>
+    <div class="leaf"><b>sin⁻¹, cos⁻¹:</b> domain [−1, 1] — inputs are sine/cosine values</div>
+    <div class="leaf"><b>tan⁻¹, cot⁻¹:</b> domain ℝ — slopes/roots go anywhere</div>
+    <div class="leaf"><b>sec⁻¹, cosec⁻¹:</b> domain |x| ≥ 1</div>
+    <div class="leaf"><b>Brackets matter:</b> open vs closed ends are the MCQ</div>
+  </div>
+
+  <div class="card right b" style="top:642px">
+    <h2>Checking a Relation (workflow)</h2>
+    <div class="leaf"><b>Step 1:</b> list every (a, a) for reflexive — one miss = fail</div>
+    <div class="leaf"><b>Step 2:</b> mirror-scan every pair for symmetry</div>
+    <div class="leaf"><b>Step 3:</b> walk every 2-step chain for transitivity</div>
+    <div class="leaf"><b>Verdict:</b> 3/3 → equivalence; name the failing test otherwise</div>
+  </div>
+
+  <div class="exc">
+    <h2>TOP TRAPS</h2>
+    <div class="leaf"><b>One missing (a,a)</b> breaks reflexivity — scan, don't assume</div>
+    <div class="leaf"><b>f∘g computed as g(f(x))</b> — the order flip</div>
+    <div class="leaf"><b>tan⁻¹ range brackets</b> — (−π/2, π/2), never square</div>
+  </div>
+</div>
+</body>
+</html>
