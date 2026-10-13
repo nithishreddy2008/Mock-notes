@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #fff; width: 1480px; }
+  .wrap { width: 1480px; height: 930px; background: #fff; padding: 24px 30px; }
+  .head { display: flex; align-items: baseline; gap: 16px; margin-bottom: 16px; }
+  .head h1 { font-size: 30px; color: #071A4D; font-weight: 800; }
+  .head .tag { font-size: 14px; color: #fff; background: #1F5EFF; border-radius: 999px; padding: 5px 14px; font-weight: 700; letter-spacing: 1px; }
+  .pick { background: #071A4D; border-radius: 14px; padding: 13px 18px; margin-bottom: 14px; }
+  .pick h2 { color: #B8FF34; font-size: 18px; font-weight: 800; letter-spacing: 1px; margin-bottom: 8px; }
+  .flow { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+  .step { background: rgba(255,255,255,.07); border: 1px solid rgba(184,255,52,.35); border-radius: 10px; padding: 9px 12px; }
+  .step .nm { color: #fff; font-size: 15px; font-weight: 800; }
+  .step .when { color: #B8FF34; font-size: 12.5px; margin-top: 2px; font-style: italic; }
+  .step .ex { color: #C9D4EE; font-size: 12.5px; margin-top: 3px; }
+  .step .ex b { color: #fff; }
+  .cols { display: grid; grid-template-columns: 1.15fr 1fr; gap: 16px; margin-bottom: 12px; }
+  .zone { background: #FCFDFF; border: 1.5px solid #D5DCEA; border-radius: 14px; padding: 12px 16px; }
+  .zone h2 { font-size: 19px; color: #071A4D; font-weight: 800; margin-bottom: 8px; padding-bottom: 5px; border-bottom: 3px solid #1F5EFF; display: inline-block; }
+  .zone.lime h2 { border-color: #7FB800; }
+  .ftable { width: 100%; border-collapse: collapse; }
+  .ftable td { font-size: 13px; color: #1B2333; padding: 4px 8px; border-bottom: 1px solid #E7ECF7; }
+  .ftable td.f { font-family: Georgia, serif; font-style: italic; color: #071A4D; font-size: 13.5px; width: 52%; }
+  .steps { counter-reset: st; }
+  .steps div { font-size: 13px; color: #33405C; margin: 6px 0; padding-left: 30px; position: relative; line-height: 1.32; }
+  .steps div::before { counter-increment: st; content: counter(st); position: absolute; left: 0; top: 0; width: 21px; height: 21px; border-radius: 50%; background: #071A4D; color: #B8FF34; font-weight: 800; font-size: 12px; display: flex; align-items: center; justify-content: center; }
+  .steps b { color: #071A4D; }
+  .trap { background: #FFF3EC; border: 1.5px solid #D2481F; border-radius: 12px; padding: 10px 16px; }
+  .trap h2 { font-size: 16px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
+  .traps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px 18px; }
+  .traps div { font-size: 12.5px; color: #7A2A12; padding-left: 13px; position: relative; line-height: 1.3; }
+  .traps div::before { content: ""; position: absolute; left: 0; top: 6px; width: 7px; height: 7px; border-radius: 50%; background: #D2481F; }
+  .traps b { color: #B4380F; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="head">
+    <h1>THE INTEGRATION DECISION FLOW</h1>
+    <span class="tag">CUET UG · MATHEMATICS · INTEGRATION</span>
+  </div>
+
+  <div class="pick">
+    <h2>LOOK AT THE INTEGRAND, ASK IN ORDER — THE FIRST "YES" IS YOUR METHOD</h2>
+    <div class="flow">
+      <div class="step"><div class="nm">1 · Standard form?</div><div class="when">it matches a table entry</div><div class="ex"><b>xⁿ, 1/x, eˣ, sin x, sec²x</b> → write the antiderivative, add C</div></div>
+      <div class="step"><div class="nm">2 · Substitution?</div><div class="when">an inner function's derivative sits outside</div><div class="ex"><b>2x/(x²+1)</b> — the 2x is the derivative of x²+1 → ln|x²+1| + C</div></div>
+      <div class="step"><div class="nm">3 · Partial fractions?</div><div class="when">rational with factorable denominator</div><div class="ex"><b>1/(x²−1)</b> → ½[1/(x−1) − 1/(x+1)] → ½ ln|(x−1)/(x+1)|</div></div>
+      <div class="step"><div class="nm">4 · By parts?</div><div class="when">a product of two different families</div><div class="ex"><b>x eˣ</b> → ILATE picks u = x → (x−1)eˣ + C</div></div>
+    </div>
+  </div>
+
+  <div class="cols">
+    <div class="zone">
+      <h2>Standard antiderivatives (+C always)</h2>
+      <table class="ftable">
+        <tr><td class="f">∫ xⁿ dx = xⁿ⁺¹/(n+1) + C (n ≠ −1)</td><td>the power rule</td></tr>
+        <tr><td class="f">∫ dx/x = ln|x| + C</td><td>the n = −1 rescue</td></tr>
+        <tr><td class="f">∫ eˣ dx = eˣ + C · ∫ aˣ dx = aˣ/ln a + C</td><td>exponentials</td></tr>
+        <tr><td class="f">∫ sin x dx = −cos x + C · ∫ cos x dx = sin x + C</td><td>signs alternate</td></tr>
+        <tr><td class="f">∫ sec²x dx = tan x + C · ∫ cosec²x dx = −cot x + C</td><td>the squared pair</td></tr>
+        <tr><td class="f">∫ dx/(x²+a²) = (1/a) tan⁻¹(x/a) + C</td><td>arctan family</td></tr>
+        <tr><td class="f">∫ dx/√(a²−x²) = sin⁻¹(x/a) + C</td><td>arcsin family</td></tr>
+        <tr><td class="f">∫ dx/(x²−a²) = (1/2a) ln|(x−a)/(x+a)| + C</td><td>log family</td></tr>
+        <tr><td class="f">∫ √(a²−x²) dx = x/2·√(a²−x²) + a²/2·sin⁻¹(x/a) + C</td><td>quarter-circle engine</td></tr>
+      </table>
+    </div>
+    <div class="zone lime">
+      <h2>Definite integrals → area (the 4-step pipeline)</h2>
+      <div class="steps">
+        <div><b>Antiderivative F(x)</b> by any method above — no +C needed for definite work</div>
+        <div><b>FTC:</b> ∫<sub>a</sub><sup>b</sup> f(x) dx = F(b) − F(a) — upper minus lower, in order</div>
+        <div><b>Root–Split–Flip</b> for "area bounded": split at every x-axis crossing, take absolute values</div>
+        <div><b>Between curves:</b> ∫ (upper − lower) dx — verify who is on top at a sample point</div>
+      </div>
+      <div style="margin-top:8px; font-size:12.5px; color:#33405C; background:#F4F7FE; border:1px solid #D5DCEA; border-radius:8px; padding:7px 10px;">
+        <b style="color:#071A4D;">King's rule:</b> ∫<sub>0</sub><sup>a</sup> f(x) dx = ∫<sub>0</sub><sup>a</sup> f(a−x) dx — reflecting the interval often collapses the integral in one line.
+      </div>
+    </div>
+  </div>
+
+  <div class="trap">
+    <h2>TRAPS THE OPTIONS ARE BUILT AROUND</h2>
+    <div class="traps">
+      <div><b>Missing +C</b> on indefinite integrals — the minus-C option sits waiting</div>
+      <div><b>∫ dx/x</b> is ln|x|, not ln x — the modulus matters for negative x</div>
+      <div><b>∫ sin x = −cos x</b> — the sign flip is the oldest distractor in the book</div>
+      <div><b>Area is never negative</b> — Root–Split–Flip before quoting</div>
+      <div><b>Definite = F(b) − F(a)</b> — reversed order flips the sign silently</div>
+      <div><b>By parts twice:</b> ∫eˣ f'(x)-style integrals can circle back — do not panic-loop</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
