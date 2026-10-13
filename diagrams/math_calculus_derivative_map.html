@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #fff; width: 1480px; }
+  .wrap { width: 1480px; height: 920px; background: #fff; padding: 24px 30px; }
+  .head { display: flex; align-items: baseline; gap: 16px; margin-bottom: 16px; }
+  .head h1 { font-size: 30px; color: #071A4D; font-weight: 800; }
+  .head .tag { font-size: 14px; color: #fff; background: #1F5EFF; border-radius: 999px; padding: 5px 14px; font-weight: 700; letter-spacing: 1px; }
+  .gate { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 14px; }
+  .gcard { background: #FCFDFF; border: 1.5px solid #D5DCEA; border-radius: 14px; padding: 12px 16px; }
+  .gcard h2 { font-size: 19px; color: #071A4D; font-weight: 800; margin-bottom: 6px; padding-bottom: 4px; border-bottom: 3px solid #1F5EFF; display: inline-block; }
+  .gcard .r { font-size: 13.5px; color: #33405C; margin: 4px 0; line-height: 1.35; }
+  .gcard .r b { color: #071A4D; }
+  .toolkit { background: #071A4D; border-radius: 14px; padding: 13px 18px; margin-bottom: 14px; }
+  .toolkit h2 { color: #B8FF34; font-size: 18px; font-weight: 800; letter-spacing: 1px; margin-bottom: 8px; }
+  .tools { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .tool { background: rgba(255,255,255,.07); border: 1px solid rgba(184,255,52,.35); border-radius: 10px; padding: 8px 12px; }
+  .tool .nm { color: #fff; font-size: 14.5px; font-weight: 800; }
+  .tool .fm { color: #B8FF34; font-size: 13px; margin-top: 2px; font-family: Georgia, serif; font-style: italic; }
+  .tool .us { color: #C9D4EE; font-size: 12px; margin-top: 2px; }
+  .apps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 12px; }
+  .app { background: #FCFDFF; border: 1.5px solid #D5DCEA; border-radius: 14px; padding: 11px 14px; border-top: 5px solid #7FB800; }
+  .app h3 { color: #071A4D; font-size: 16.5px; font-weight: 800; margin-bottom: 4px; }
+  .app .r { font-size: 12.5px; color: #33405C; margin: 3px 0; line-height: 1.3; padding-left: 13px; position: relative; }
+  .app .r::before { content: ""; position: absolute; left: 0; top: 6px; width: 6px; height: 6px; border-radius: 50%; background: #7FB800; }
+  .app .r b { color: #071A4D; }
+  .trap { background: #FFF3EC; border: 1.5px solid #D2481F; border-radius: 12px; padding: 10px 16px; }
+  .trap h2 { font-size: 16px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
+  .traps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px 18px; }
+  .traps div { font-size: 12.5px; color: #7A2A12; padding-left: 13px; position: relative; line-height: 1.3; }
+  .traps div::before { content: ""; position: absolute; left: 0; top: 6px; width: 7px; height: 7px; border-radius: 50%; background: #D2481F; }
+  .traps b { color: #B4380F; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="head">
+    <h1>THE CALCULUS MAP — FROM SMOOTHNESS TO OPTIMUM</h1>
+    <span class="tag">CUET UG · MATHEMATICS · CALCULUS</span>
+  </div>
+
+  <div class="gate">
+    <div class="gcard">
+      <h2>Gate 1 · Continuity at a point c</h2>
+      <div class="r"><b>Three checks:</b> f(c) exists · <b>lim<sub>x→c</sub></b> f(x) exists (left = right) · the limit <b>equals</b> f(c)</div>
+      <div class="r"><b>Everyday read:</b> you can draw the graph through c without lifting the pen</div>
+      <div class="r"><b>Classic breaks:</b> piecewise mismatches, 1/x at 0, greatest-integer jumps</div>
+    </div>
+    <div class="gcard">
+      <h2>Gate 2 · Differentiability at c</h2>
+      <div class="r"><b>Test:</b> the left and right derivatives at c must <b>match</b> — the graph is smooth, no corner</div>
+      <div class="r"><b>Order of ideas:</b> differentiable ⇒ continuous; continuous ⇏ differentiable</div>
+      <div class="r"><b>Classic break:</b> |x| at 0 — perfectly continuous, sharply cornered</div>
+    </div>
+  </div>
+
+  <div class="toolkit">
+    <h2>THE DERIVATIVE TOOLKIT — SIX WAYS IN</h2>
+    <div class="tools">
+      <div class="tool"><div class="nm">Chain rule</div><div class="fm">dy/dx = dy/du · du/dx</div><div class="us">peel the function from outside in</div></div>
+      <div class="tool"><div class="nm">Inverse trig</div><div class="fm">d/dx sin⁻¹x = 1/√(1−x²)</div><div class="us">tan⁻¹x → 1/(1+x²); cos⁻¹x is the negative twin</div></div>
+      <div class="tool"><div class="nm">Implicit</div><div class="fm">differentiate both sides, collect dy/dx</div><div class="us">x² + y² = 25 → dy/dx = −x/y</div></div>
+      <div class="tool"><div class="nm">Exponential / log</div><div class="fm">d/dx eˣ = eˣ · d/dx ln x = 1/x</div><div class="us">aˣ = aˣ ln a; log<sub>a</sub>x = 1/(x ln a)</div></div>
+      <div class="tool"><div class="nm">Logarithmic diff.</div><div class="fm">take ln of both sides first</div><div class="us">the move for y = xˣ and f = u·v·w/(powers)</div></div>
+      <div class="tool"><div class="nm">Parametric</div><div class="fm">dy/dx = (dy/dt)/(dx/dt)</div><div class="us">both derivatives taken against the parameter t</div></div>
+    </div>
+  </div>
+
+  <div class="apps">
+    <div class="app">
+      <h3>Rate of change</h3>
+      <div class="r"><b>dy/dx is a rate:</b> how fast y responds to x</div>
+      <div class="r"><b>Time rates:</b> dA/dt = dA/dr · dr/dt — chain through the geometry</div>
+      <div class="r"><b>Example:</b> balloon r = 10, dr/dt = 2 → dA/dt = 40π</div>
+    </div>
+    <div class="app">
+      <h3>Increasing / decreasing</h3>
+      <div class="r"><b>f' &gt; 0</b> rising · <b>f' &lt; 0</b> falling on the interval</div>
+      <div class="r"><b>Routine:</b> domain → f' → critical points → sign chart</div>
+      <div class="r"><b>Example:</b> x³ − 12x rises, then falls, then rises again</div>
+    </div>
+    <div class="app">
+      <h3>Maxima &amp; minima</h3>
+      <div class="r"><b>Critical points:</b> f' = 0 (or undefined) — candidates only</div>
+      <div class="r"><b>First test:</b> f' changes + to − (max) or − to + (min)</div>
+      <div class="r"><b>Second test:</b> f'' &lt; 0 peak · f'' &gt; 0 valley · f'' = 0 → inconclusive</div>
+    </div>
+  </div>
+
+  <div class="trap">
+    <h2>TRAPS THE OPTIONS ARE BUILT AROUND</h2>
+    <div class="traps">
+      <div><b>Continuous ⇏ differentiable</b> — |x| settles it in one line</div>
+      <div><b>Chain rule:</b> forgetting the inner derivative is the #1 slip</div>
+      <div><b>cos⁻¹x derivative is negative</b> — the sign flip is the whole question</div>
+      <div><b>f'(c) = 0 is not a verdict</b> — inflection points pass it too</div>
+      <div><b>f''(c) = 0 says "keep looking"</b> — use the first-derivative test</div>
+      <div><b>Parametric flip:</b> dy/dx = (dy/dt)/(dx/dt), not the reciprocal</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
