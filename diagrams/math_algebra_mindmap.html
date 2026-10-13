@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: 1080px; position: relative; background: #fff; }
+  svg.wires { position: absolute; inset: 0; width: 1480px; height: 1080px; }
+  .center {
+    position: absolute; left: 520px; top: 470px; width: 440px; height: 104px;
+    background: #071A4D; border-radius: 16px; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(7,26,77,.25);
+    border-bottom: 5px solid #B8FF34;
+  }
+  .center .t { color: #fff; font-size: 19px; font-weight: 800; letter-spacing: .5px; text-align: center; }
+  .center .s { color: #B8FF34; font-size: 13px; font-weight: 700; letter-spacing: 2px; margin-top: 4px; }
+  .card {
+    position: absolute; width: 465px; background: #FCFDFF; border: 1.5px solid #D5DCEA;
+    border-radius: 14px; padding: 13px 16px 12px;
+  }
+  .card h2 { font-size: 19px; color: #071A4D; font-weight: 800; margin-bottom: 7px;
+             padding-bottom: 5px; border-bottom: 3px solid; display: inline-block; }
+  .leaf { font-size: 14px; color: #1B2333; margin: 5px 0; padding-left: 16px; position: relative; line-height: 1.32; }
+  .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
+  .b .leaf::before { background: #1F5EFF; }
+  .l .leaf::before { background: #7FB800; }
+  .leaf b { color: #071A4D; }
+  .b h2 { border-color: #1F5EFF; }
+  .l h2 { border-color: #7FB800; }
+  .left { left: 30px; }
+  .right { left: 985px; }
+  .exc {
+    position: absolute; left: 470px; top: 905px; width: 540px; background: #FFF3EC;
+    border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px;
+  }
+  .exc h2 { font-size: 17px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
+  .exc .leaf { font-size: 13px; margin: 3px 0; padding-left: 14px; color: #7A2A12; }
+  .exc .leaf::before { background: #D2481F; }
+  .exc b { color: #B4380F; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <svg class="wires" viewBox="0 0 1480 1080">
+    <path d="M 520 505 C 470 505, 495 158, 500 155" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 520 520 C 480 520, 495 438, 500 438" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 520 535 C 470 535, 495 718, 500 718" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 960 505 C 1010 505, 985 158, 980 155" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 960 520 C 1000 520, 985 438, 980 438" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 960 535 C 1010 535, 985 718, 980 718" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 740 574 C 740 700, 740 830, 740 903" fill="none" stroke="#D2481F" stroke-width="2.5" stroke-dasharray="7 5" opacity=".6"/>
+  </svg>
+
+  <div class="center">
+    <div class="t">ALGEBRA — MATRICES &amp; DETERMINANTS</div>
+    <div class="s">CUET UG MATHEMATICS</div>
+  </div>
+
+  <div class="card left b" style="top:58px">
+    <h2>Matrix Basics</h2>
+    <div class="leaf"><b>Order:</b> m × n = m rows, n columns; element a<sub>ij</sub> sits in row i, column j</div>
+    <div class="leaf"><b>Equality:</b> same order + every entry equal — how you build "find x, y" questions</div>
+    <div class="leaf"><b>Types:</b> row, column, square, zero O, diagonal, scalar, identity I, triangular</div>
+    <div class="leaf"><b>Symmetric:</b> A&#8242; = A · <b>Skew:</b> A&#8242; = −A, so its diagonal is all 0</div>
+  </div>
+
+  <div class="card right b" style="top:58px">
+    <h2>Matrix Operations</h2>
+    <div class="leaf"><b>Add / subtract:</b> same order only, element-wise</div>
+    <div class="leaf"><b>Scalar k:</b> multiplies every entry</div>
+    <div class="leaf"><b>Product AB:</b> rows of A dot columns of B; (m×n)(n×p) = m×p</div>
+    <div class="leaf"><b>Breaks algebra:</b> AB ≠ BA; AB = O possible with A, B ≠ O; AB = AC ⇏ B = C</div>
+  </div>
+
+  <div class="card left l" style="top:350px">
+    <h2>Transpose &amp; Symmetry</h2>
+    <div class="leaf"><b>Laws:</b> (A&#8242;)&#8242; = A, (A + B)&#8242; = A&#8242; + B&#8242;, (kA)&#8242; = kA&#8242;, (AB)&#8242; = B&#8242;A&#8242;</div>
+    <div class="leaf"><b>Split:</b> A = ½(A + A&#8242;) + ½(A − A&#8242;) = symmetric + skew</div>
+    <div class="leaf"><b>Build tests:</b> A + A&#8242; is always symmetric, A − A&#8242; always skew</div>
+  </div>
+
+  <div class="card right l" style="top:350px">
+    <h2>Determinants</h2>
+    <div class="leaf"><b>2×2:</b> |A| = ad − bc · <b>3×3:</b> expand along a row via cofactors</div>
+    <div class="leaf"><b>Properties:</b> row swap flips sign; two equal rows ⇒ 0; |A&#8242;| = |A|; |AB| = |A||B|</div>
+    <div class="leaf"><b>|kA| = kⁿ|A|</b> — the exponent is the matrix order</div>
+    <div class="leaf"><b>Area of triangle</b> = ½|det|; zero determinant ⇔ collinear points</div>
+  </div>
+
+  <div class="card left b" style="top:642px">
+    <h2>Adjoint &amp; Inverse</h2>
+    <div class="leaf"><b>adj A</b> = transpose of the cofactor matrix</div>
+    <div class="leaf"><b>A(adj A) = |A| I</b> — the identity that powers everything</div>
+    <div class="leaf"><b>A&#8315;&#185; = adj A / |A|</b> exists iff |A| ≠ 0 (non-singular), and is unique</div>
+    <div class="leaf"><b>2×2 shortcut:</b> swap diagonal, negate the other two, divide by |A|</div>
+  </div>
+
+  <div class="card right b" style="top:642px">
+    <h2>The Matrix Method (AX = B)</h2>
+    <div class="leaf"><b>Write</b> the system as AX = B with A = coefficients, X = variables, B = constants</div>
+    <div class="leaf"><b>|A| ≠ 0:</b> unique solution X = A&#8315;&#185;B — solve in one multiplication</div>
+    <div class="leaf"><b>|A| = 0:</b> either no solution (inconsistent) or infinitely many</div>
+    <div class="leaf"><b>Check:</b> substitute the answer pair into the original equations</div>
+  </div>
+
+  <div class="exc">
+    <h2>TOP TRAPS</h2>
+    <div class="leaf"><b>|kA|</b> is kⁿ|A|, never k|A|</div>
+    <div class="leaf"><b>(A + B)²</b> ≠ A² + 2AB + B² because AB ≠ BA</div>
+    <div class="leaf"><b>Odd-order skew-symmetric</b> ⇒ |A| = 0, so no inverse</div>
+  </div>
+</div>
+</body>
+</html>
