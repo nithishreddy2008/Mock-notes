@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: 1080px; position: relative; background: #fff; }
+  svg.wires { position: absolute; inset: 0; width: 1480px; height: 1080px; }
+  .center {
+    position: absolute; left: 520px; top: 470px; width: 440px; height: 104px;
+    background: #071A4D; border-radius: 16px; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(7,26,77,.25);
+    border-bottom: 5px solid #B8FF34;
+  }
+  .center .t { color: #fff; font-size: 19px; font-weight: 800; letter-spacing: .5px; text-align: center; }
+  .center .s { color: #B8FF34; font-size: 13px; font-weight: 700; letter-spacing: 2px; margin-top: 4px; }
+  .card {
+    position: absolute; width: 465px; background: #FCFDFF; border: 1.5px solid #D5DCEA;
+    border-radius: 14px; padding: 13px 16px 12px;
+  }
+  .card h2 { font-size: 19px; color: #071A4D; font-weight: 800; margin-bottom: 7px;
+             padding-bottom: 5px; border-bottom: 3px solid; display: inline-block; }
+  .leaf { font-size: 14px; color: #1B2333; margin: 5px 0; padding-left: 16px; position: relative; line-height: 1.32; }
+  .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
+  .b .leaf::before { background: #1F5EFF; }
+  .l .leaf::before { background: #7FB800; }
+  .leaf b { color: #071A4D; }
+  .b h2 { border-color: #1F5EFF; }
+  .l h2 { border-color: #7FB800; }
+  .left { left: 30px; }
+  .right { left: 985px; }
+  .exc {
+    position: absolute; left: 470px; top: 905px; width: 540px; background: #FFF3EC;
+    border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px;
+  }
+  .exc h2 { font-size: 17px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
+  .exc .leaf { font-size: 13px; margin: 3px 0; padding-left: 14px; color: #7A2A12; }
+  .exc .leaf::before { background: #D2481F; }
+  .exc b { color: #B4380F; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <svg class="wires" viewBox="0 0 1480 1080">
+    <path d="M 520 505 C 470 505, 495 158, 500 155" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 520 520 C 480 520, 495 438, 500 438" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 520 535 C 470 535, 495 718, 500 718" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 960 505 C 1010 505, 985 158, 980 155" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 960 520 C 1000 520, 985 438, 980 438" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 960 535 C 1010 535, 985 718, 980 718" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 740 574 C 740 700, 740 830, 740 903" fill="none" stroke="#D2481F" stroke-width="2.5" stroke-dasharray="7 5" opacity=".6"/>
+  </svg>
+
+  <div class="center">
+    <div class="t">PROBABILITY — CONDITIONING &amp; BAYES</div>
+    <div class="s">CUET UG MATHEMATICS</div>
+  </div>
+
+  <div class="card left b" style="top:58px">
+    <h2>Foundations (the A5 refresher)</h2>
+    <div class="leaf"><b>P(E)</b> = favourable / total, always in [0, 1]</div>
+    <div class="leaf"><b>Complement:</b> P(not E) = 1 − P(E) — the rescue move</div>
+    <div class="leaf"><b>Certain + impossible:</b> P = 1 and P = 0 are the boundary posts</div>
+    <div class="leaf"><b>Simple sets:</b> dice (36 ordered pairs), cards (52), coins (2ⁿ)</div>
+  </div>
+
+  <div class="card right b" style="top:58px">
+    <h2>Addition Rule</h2>
+    <div class="leaf"><b>P(A∪B) = P(A) + P(B) − P(A∩B)</b></div>
+    <div class="leaf"><b>Mutually exclusive:</b> overlap is 0, so just add</div>
+    <div class="leaf"><b>Exhaustive:</b> the parts together cover everything</div>
+    <div class="leaf"><b>Trap:</b> forgetting the subtracted overlap</div>
+  </div>
+
+  <div class="card left l" style="top:350px">
+    <h2>Conditional Probability</h2>
+    <div class="leaf"><b>P(A|B) = P(A∩B) / P(B)</b> — the universe shrinks to B</div>
+    <div class="leaf"><b>Card reflex:</b> given red, P(king) = 2/26 = 1/13</div>
+    <div class="leaf"><b>Arrow discipline:</b> P(A|B) and P(B|A) are different animals</div>
+    <div class="leaf"><b>Read the words:</b> "given that" names the new universe</div>
+  </div>
+
+  <div class="card right l" style="top:350px">
+    <h2>Multiplication &amp; Independence</h2>
+    <div class="leaf"><b>Chain:</b> P(A∩B) = P(B) · P(A|B) — and along the tree for 3+</div>
+    <div class="leaf"><b>Independent:</b> P(A∩B) = P(A) · P(B)</div>
+    <div class="leaf"><b>Not exclusive:</b> disjoint ≠ independent — the classic confusion</div>
+    <div class="leaf"><b>At least one:</b> 1 − P(none) — compute the back door</div>
+  </div>
+
+  <div class="card left b" style="top:642px">
+    <h2>Total Probability</h2>
+    <div class="leaf"><b>Doors E₁…Eₙ</b> partition the space; A arrives through one</div>
+    <div class="leaf"><b>P(A) = Σ P(Eᵢ)·P(A|Eᵢ)</b> — weighted door sum</div>
+    <div class="leaf"><b>Bulb story:</b> three machines, one defect rate each</div>
+    <div class="leaf"><b>Discipline:</b> the door weights must sum to 1</div>
+  </div>
+
+  <div class="card right b" style="top:642px">
+    <h2>Bayes' Theorem</h2>
+    <div class="leaf"><b>P(Eᵢ|A) = P(Eᵢ)·P(A|Eᵢ) / Σ P(Eⱼ)·P(A|Eⱼ)</b></div>
+    <div class="leaf"><b>One door on top</b>, all doors on the bottom</div>
+    <div class="leaf"><b>Tree habit:</b> draw branches, multiply along, add across, divide</div>
+    <div class="leaf"><b>NCERT classic:</b> defective bulb → 25/69 for machine A</div>
+  </div>
+
+  <div class="exc">
+    <h2>TOP TRAPS</h2>
+    <div class="leaf"><b>Flipped conditional</b> — P(A|B) answered as P(B|A)</div>
+    <div class="leaf"><b>Bayes denominator</b> — one door used instead of the full sum</div>
+    <div class="leaf"><b>Replacement ignored</b> — second-draw probabilities shift without it</div>
+  </div>
+</div>
+</body>
+</html>

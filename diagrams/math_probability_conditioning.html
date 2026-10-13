@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #fff; width: 1480px; }
+  .wrap { width: 1480px; height: 930px; background: #fff; padding: 24px 30px; }
+  .head { display: flex; align-items: baseline; gap: 16px; margin-bottom: 16px; }
+  .head h1 { font-size: 30px; color: #071A4D; font-weight: 800; }
+  .head .tag { font-size: 14px; color: #fff; background: #1F5EFF; border-radius: 999px; padding: 5px 14px; font-weight: 700; letter-spacing: 1px; }
+  .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-bottom: 14px; }
+  .law { background: #FCFDFF; border: 1.5px solid #D5DCEA; border-radius: 14px; padding: 12px 16px; }
+  .law h2 { font-size: 18px; color: #071A4D; font-weight: 800; margin-bottom: 6px; padding-bottom: 4px; border-bottom: 3px solid #1F5EFF; display: inline-block; }
+  .law .f { font-family: Georgia, serif; font-style: italic; color: #071A4D; font-size: 14.5px; margin: 5px 0; }
+  .law .r { font-size: 12.5px; color: #33405C; margin: 3px 0; line-height: 1.32; }
+  .law .r b { color: #071A4D; }
+  .tree { background: #071A4D; border-radius: 14px; padding: 14px 18px; margin-bottom: 14px; }
+  .tree h2 { color: #B8FF34; font-size: 17px; font-weight: 800; letter-spacing: 1px; margin-bottom: 10px; }
+  .tgrid { display: grid; grid-template-columns: 200px 1fr 1fr 1fr; gap: 8px; align-items: center; }
+  .tgrid .lab { color: #fff; font-size: 13px; font-weight: 700; }
+  .node { background: rgba(255,255,255,.08); border: 1px solid rgba(184,255,52,.4); border-radius: 9px; padding: 7px 10px; color: #fff; font-size: 12.5px; line-height: 1.3; }
+  .node b { color: #B8FF34; }
+  .arrowcol { color: #B8FF34; font-size: 16px; font-weight: 800; text-align: center; }
+  .final { background: rgba(184,255,52,.15); border: 1.5px solid #B8FF34; }
+  .trap { background: #FFF3EC; border: 1.5px solid #D2481F; border-radius: 12px; padding: 10px 16px; }
+  .trap h2 { font-size: 16px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
+  .traps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px 18px; }
+  .traps div { font-size: 12.5px; color: #7A2A12; padding-left: 13px; position: relative; line-height: 1.3; }
+  .traps div::before { content: ""; position: absolute; left: 0; top: 6px; width: 7px; height: 7px; border-radius: 50%; background: #D2481F; }
+  .traps b { color: #B4380F; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="head">
+    <h1>THE CONDITIONING TOOLKIT — FROM P(A|B) TO BAYES</h1>
+    <span class="tag">CUET UG · MATHEMATICS · PROBABILITY</span>
+  </div>
+
+  <div class="grid">
+    <div class="law">
+      <h2>Conditional probability</h2>
+      <div class="f">P(A | B) = P(A ∩ B) / P(B), &nbsp; P(B) &gt; 0</div>
+      <div class="r"><b>Read:</b> "given B happened, how likely is A?" — the universe shrinks to B</div>
+      <div class="r"><b>Reflex:</b> cards — given the card is red, P(king) = 2/26 = 1/13</div>
+    </div>
+    <div class="law">
+      <h2>Multiplication theorem</h2>
+      <div class="f">P(A ∩ B) = P(B) · P(A | B) = P(A) · P(B | A)</div>
+      <div class="r"><b>Chains:</b> three events multiply along the tree — draw it, never memorise blind</div>
+      <div class="r"><b>Independent events:</b> P(A ∩ B) = P(A) · P(B) — knowledge of one changes nothing</div>
+    </div>
+    <div class="law">
+      <h2>Total probability</h2>
+      <div class="f">P(A) = Σ P(Eᵢ) · P(A | Eᵢ)</div>
+      <div class="r"><b>Setup:</b> events Eᵢ partition the sample space (mutually exclusive, exhaustive)</div>
+      <div class="r"><b>Use:</b> A can arrive through several doors — add the door probabilities weighted by their sizes</div>
+    </div>
+    <div class="law">
+      <h2>Bayes' theorem</h2>
+      <div class="f">P(Eᵢ | A) = P(Eᵢ) · P(A | Eᵢ) / Σ P(Eⱼ) · P(A | Eⱼ)</div>
+      <div class="r"><b>Flips the arrow:</b> you saw the effect, you want the causing door</div>
+      <div class="r"><b>Example:</b> defective bulb found — which machine most likely made it?</div>
+    </div>
+  </div>
+
+  <div class="tree">
+    <h2>THE BAYES TREE — "DEFECTIVE BULB, WHICH MACHINE?"</h2>
+    <div class="tgrid">
+      <div class="lab">Machine share</div>
+      <div class="node"><b>A:</b> 25% of output, defect rate 5%</div>
+      <div class="node"><b>B:</b> 35% of output, defect rate 4%</div>
+      <div class="node"><b>C:</b> 40% of output, defect rate 2%</div>
+      <div class="lab">Door weights</div>
+      <div class="node">P(A)·P(D|A) = .25 × .05 = <b>.0125</b></div>
+      <div class="node">P(B)·P(D|B) = .35 × .04 = <b>.0140</b></div>
+      <div class="node">P(C)·P(D|C) = .40 × .02 = <b>.0080</b></div>
+      <div class="lab">Total</div>
+      <div class="node" style="grid-column: 2 / 4;">P(D) = .0125 + .0140 + .0080 = <b>.0345</b> — the denominator is the whole tree added up</div>
+      <div class="arrowcol">→</div>
+      <div class="lab">Answer</div>
+      <div class="node final" style="grid-column: 2 / 4;">P(A | D) = .0125 / .0345 = <b>25/69</b> — effect observed, cause asked</div>
+      <div class="arrowcol">→</div>
+    </div>
+  </div>
+
+  <div class="trap">
+    <h2>TRAPS THE OPTIONS ARE BUILT AROUND</h2>
+    <div class="traps">
+      <div><b>P(A|B) vs P(B|A)</b> — the arrow direction is the entire question</div>
+      <div><b>Independence ≠ mutually exclusive</b> — disjoint events with positive probability are dependent</div>
+      <div><b>Bayes numerator</b> is one door, denominator is all doors — forgetting the sum kills it</div>
+      <div><b>"At least one"</b> = 1 − P(none) — direct chains overcount and waste time</div>
+      <div><b>With replacement</b> keeps probabilities equal; <b>without</b> shifts them — read the words</div>
+      <div><b>P(A∪B) = P(A) + P(B) − P(A∩B)</b> — the subtracted overlap is not optional</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
