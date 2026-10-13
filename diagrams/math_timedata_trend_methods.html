@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #fff; width: 1480px; }
+  .wrap { width: 1480px; height: 940px; background: #fff; padding: 24px 30px; }
+  .head { display: flex; align-items: baseline; gap: 16px; margin-bottom: 16px; }
+  .head h1 { font-size: 30px; color: #071A4D; font-weight: 800; }
+  .head .tag { font-size: 14px; color: #fff; background: #1F5EFF; border-radius: 999px; padding: 5px 14px; font-weight: 700; letter-spacing: 1px; }
+  .comp { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 14px; }
+  .k { background: #071A4D; border-radius: 14px; padding: 13px 15px; }
+  .k .letter { color: #B8FF34; font-size: 26px; font-weight: 800; line-height: 1; }
+  .k h2 { color: #fff; font-size: 15.5px; font-weight: 800; margin: 4px 0 5px; }
+  .k .r { color: #C9D4EE; font-size: 12px; line-height: 1.4; margin: 3px 0; }
+  .k .r b { color: #B8FF34; }
+  .methods { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-bottom: 12px; }
+  .m { background: #FCFDFF; border: 1.5px solid #D5DCEA; border-radius: 14px; padding: 12px 16px; border-top: 5px solid #1F5EFF; }
+  .m:nth-child(2) { border-top-color: #7FB800; }
+  .m:nth-child(3) { border-top-color: #1F5EFF; }
+  .m:nth-child(4) { border-top-color: #7FB800; }
+  .m h2 { font-size: 17.5px; color: #071A4D; font-weight: 800; margin-bottom: 5px; }
+  .m .r { font-size: 12.8px; color: #33405C; margin: 4px 0; line-height: 1.36; }
+  .m .r b { color: #071A4D; }
+  .f { font-family: Georgia, serif; font-style: italic; color: #071A4D; }
+  .trap { background: #FFF3EC; border: 1.5px solid #D2481F; border-radius: 12px; padding: 10px 16px; }
+  .trap h2 { font-size: 16px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
+  .traps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px 18px; }
+  .traps div { font-size: 12.5px; color: #7A2A12; padding-left: 13px; position: relative; line-height: 1.3; }
+  .traps div::before { content: ""; position: absolute; left: 0; top: 6px; width: 7px; height: 7px; border-radius: 50%; background: #D2481F; }
+  .traps b { color: #B4380F; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="head">
+    <h1>TIME SERIES — COMPONENTS &amp; TREND METHODS</h1>
+    <span class="tag">CUET UG · MATHEMATICS · TIME BASED DATA</span>
+  </div>
+
+  <div class="comp">
+    <div class="k"><div class="letter">T</div><h2>Trend (Secular)</h2><div class="r"><b>Long-run direction</b> over years — growth, decline, flat</div><div class="r">Ex: smartphone users rising for a decade</div></div>
+    <div class="k"><div class="letter">S</div><h2>Seasonal</h2><div class="r"><b>Fixed-calendar repeats</b> within a year</div><div class="r">Ex: ice-cream every summer, umbrellas every monsoon</div></div>
+    <div class="k"><div class="letter">C</div><h2>Cyclical</h2><div class="r"><b>Multi-year waves</b>, no fixed calendar — booms and recessions</div><div class="r">Ex: business cycle up-down over 5–10 years</div></div>
+    <div class="k"><div class="letter">I</div><h2>Irregular</h2><div class="r"><b>One-off shocks</b> — unpredictable spikes</div><div class="r">Ex: a strike, a flood, a viral trend</div></div>
+  </div>
+
+  <div class="methods">
+    <div class="m">
+      <h2>1 · Freehand (Graphical)</h2>
+      <div class="r"><b>Do:</b> plot the points, draw a smooth line by eye through the middle.</div>
+      <div class="r"><b>Pros:</b> instant, no maths. <b>Cons:</b> subjective — two people draw two lines.</div>
+      <div class="r"><b>Fits:</b> a first look, quick reports.</div>
+    </div>
+    <div class="m">
+      <h2>2 · Semi-Averages</h2>
+      <div class="r"><b>Do:</b> split the data into two equal halves, average each, plot the two means at each half's midpoint, join.</div>
+      <div class="r"><b>Trend line</b> = the straight line through those two points.</div>
+      <div class="r"><b>Care:</b> needs an even number of periods (odd → drop the middle year).</div>
+    </div>
+    <div class="m">
+      <h2>3 · Moving Averages</h2>
+      <div class="r"><b>Do:</b> average each span of 3 (or 4) consecutive years, write it at the middle year, slide along.</div>
+      <div class="r"><b>Effect:</b> smooths seasonal/irregular wiggles into a clean trend ribbon.</div>
+      <div class="r"><b>Care:</b> a 4-point MA has no centre year — centre it with a second 2-point MA.</div>
+    </div>
+    <div class="m">
+      <h2>4 · Least Squares (best fit)</h2>
+      <div class="r"><b>Model:</b> <span class="f">y = a + bx</span> with <span class="f">b = Σxy / Σx²</span>, <span class="f">a = Σy / n</span> (coded x, Σx = 0).</div>
+      <div class="r"><b>Why "least squares":</b> the line minimising the squared vertical misses.</div>
+      <div class="r"><b>Care:</b> code odd n as −2…2; even n as half-steps −2.5…+2.5.</div>
+    </div>
+  </div>
+
+  <div class="trap">
+    <h2>TRAPS THE OPTIONS ARE BUILT AROUND</h2>
+    <div class="traps">
+      <div><b>Seasonal vs cyclical:</b> calendar-fixed = seasonal; multi-year wave = cyclical</div>
+      <div><b>Semi-averages need TWO equal halves</b> — an odd count must drop the middle</div>
+      <div><b>3-year MA sits on a year; 4-year MA sits BETWEEN</b> two years</div>
+      <div><b>Least squares needs Σx = 0</b> — forget the coding and the arithmetic explodes</div>
+      <div><b>Trend is the long run</b> — one festive spike is seasonal/irregular, not trend</div>
+      <div><b>Moving averages kill the endpoints</b> — first and last spans have no MA</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
