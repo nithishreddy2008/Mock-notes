@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: 1040px; position: relative; background: #fff; }
+  .title {
+    position: absolute; left: 30px; top: 20px; width: 1420px; height: 58px;
+    background: #071A4D; border-radius: 12px; display: flex; align-items: center; justify-content: center;
+  }
+  .title .t { color: #fff; font-size: 23px; font-weight: 800; letter-spacing: 1px; }
+  .title .t b { color: #B8FF34; }
+  .mach { position: absolute; left: 30px; top: 96px; width: 1420px; height: 116px; background: #071A4D; border-radius: 14px; padding: 12px 16px; border-bottom: 5px solid #B8FF34; }
+  .mach h3 { color: #fff; font-size: 16.5px; font-weight: 800; margin: 0 0 6px; }
+  .mach .row { display: flex; gap: 12px; }
+  .mach .chip { flex: 1; background: rgba(255,255,255,.10); border-radius: 9px; padding: 7px 11px; }
+  .mach .chip .v { color: #B8FF34; font-size: 14.5px; font-weight: 800; }
+  .mach .chip .k { color: #C9D4F2; font-size: 11.8px; line-height: 1.3; margin-top: 1px; }
+  .cards { position: absolute; left: 30px; top: 230px; width: 1420px; display: flex; gap: 16px; }
+  .fcard {
+    flex: 1; background: #FCFDFF; border: 1.5px solid #D5DCEA; border-radius: 14px; padding: 12px 16px; height: 260px;
+  }
+  .fcard h3 { font-size: 18px; font-weight: 800; color: #1F5EFF; margin-bottom: 7px; padding-bottom: 5px; border-bottom: 3px solid #1F5EFF; display: inline-block; }
+  .fcard.right h3 { color: #4E7A00; border-color: #7FB800; }
+  .leaf { font-size: 13.5px; color: #1B2333; margin: 6px 0; padding-left: 16px; position: relative; line-height: 1.35; }
+  .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; background: #1F5EFF; }
+  .fcard.right .leaf::before { background: #7FB800; }
+  .leaf b { color: #071A4D; }
+  .chain { position: absolute; left: 30px; top: 510px; width: 1420px; background: #EAF0FF; border: 1.5px solid #1F5EFF; border-radius: 14px; padding: 12px 16px; }
+  .chain h3 { font-size: 17.5px; color: #1F5EFF; font-weight: 800; margin: 0 0 8px; }
+  .chain .steps { display: flex; gap: 10px; align-items: stretch; }
+  .chain .s { flex: 1; background: #fff; border: 1.2px solid #B9C6E4; border-radius: 10px; padding: 8px 11px; }
+  .chain .s .y { display: inline-block; background: #071A4D; color: #fff; font-size: 12px; font-weight: 800; border-radius: 6px; padding: 2px 7px; }
+  .chain .s p { font-size: 12.5px; color: #1B2333; line-height: 1.35; margin: 5px 0 0; }
+  .chain .s p b { color: #B4380F; }
+  .interests { position: absolute; left: 30px; top: 712px; width: 1420px; background: #F6FFDF; border: 1.5px solid #7FB800; border-radius: 14px; padding: 12px 16px; }
+  .interests h3 { font-size: 17.5px; color: #4E7A00; font-weight: 800; margin: 0 0 6px; }
+  .interests .grid { display: flex; gap: 12px; }
+  .interests .g { flex: 1; font-size: 13px; color: #1B2333; line-height: 1.4; }
+  .interests .g b { color: #071A4D; display: block; font-size: 13.8px; margin-bottom: 2px; }
+  .strip { position: absolute; left: 30px; top: 914px; width: 1420px; display: flex; gap: 14px; }
+  .trap { flex: 1; background: #FFF3EC; border: 1.5px solid #D2481F; border-radius: 12px; padding: 10px 14px; }
+  .trap h3 { font-size: 14px; color: #B4380F; font-weight: 800; margin-bottom: 3px; }
+  .trap p { font-size: 12.6px; color: #7A2A12; line-height: 1.35; }
+  .trap p b { color: #B4380F; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="title"><div class="t">CRISES OF THE CONSTITUTIONAL ORDER — <b>THE EMERGENCY ENGINE (1973–1977)</b></div></div>
+
+  <div class="mach">
+    <h3>THE THREE-ACT CRISIS — from judicial clash to democratic restoration</h3>
+    <div class="row">
+      <div class="chip"><div class="v">1973–74: Resistance Erupts</div><div class="k">Kesavananda Bharati clash &#8594; CJI supersession; Gujarat Navnirman; JP leads Bihar Total Revolution</div></div>
+      <div class="chip"><div class="v">12–25 June 1975: The Spark</div><div class="k">Allahabad HC unseats Indira; SC grants conditional stay; JP calls Ramlila rally; Emergency declared</div></div>
+      <div class="chip"><div class="v">1975–77: 21 Months of Emergency</div><div class="k">MISA arrests (1.11 lakh), press censorship, Sanjay Gandhi's excesses, 42nd "Mini-Constitution" amendment</div></div>
+      <div class="chip"><div class="v">March 1977: Democratic Rebound</div><div class="k">Congress wiped out in North; Janata Party takes 295 seats; Morarji Desai sworn in as first non-Cong PM</div></div>
+    </div>
+  </div>
+
+  <div class="cards">
+    <div class="fcard">
+      <h3>The Extra-Constitutional Dimensions</h3>
+      <div class="leaf"><b>Sanjay Gandhi's Caucus:</b> Ran executive policy without holding any formal cabinet or constitutional post.</div>
+      <div class="leaf"><b>Forced Sterilisations:</b> Coercive family planning targets enforced on poor, rural labourers and slum dwellers.</div>
+      <div class="leaf"><b>Turkman Gate Demolitions:</b> Bulldozers flattened centuries-old Delhi settlements overnight; protests shot down.</div>
+      <div class="leaf"><b>The 42nd Amendment (1976):</b> Stripped Fundamental Rights; barred judicial review of amendments; extended Lok Sabha tenure to 6 years.</div>
+    </div>
+    <div class="fcard right">
+      <h3>The Resistance &amp; Democratic Response</h3>
+      <div class="leaf"><b>Clandestine Press:</b> Underground newsletters; <i>Himmat</i>, <i>Sadhana</i>, <i>Seminar</i> closed rather than submit.</div>
+      <div class="leaf"><b>Award Refusals:</b> Kannada writer Shivarama Karanth and Hindi novelist Phanishwarnath Renu returned state honours.</div>
+      <div class="leaf"><b>Legal Defiance:</b> Courageous habeas corpus pleas; HC judges resisted before Supreme Court folded in ADM Jabalpur (1976).</div>
+      <div class="leaf"><b>The Ballot Box Verdict:</b> Indian electorate decisively proved that democracy cannot be suspended by executive decree.</div>
+    </div>
+  </div>
+
+  <div class="chain">
+    <h3>THE JUNE 1975 COUNTDOWN — from court verdict to midnight decree</h3>
+    <div class="steps">
+      <div class="s">
+        <div class="y">12 JUNE 1975</div>
+        <p>Justice <b>J.L. Sinha</b> of Allahabad HC invalidates Indira's 1971 election for corrupt campaign practices (Raj Narain petition).</p>
+      </div>
+      <div class="s">
+        <div class="y">24 JUNE 1975</div>
+        <p>Supreme Court vacation judge <b>V.R. Krishna Iyer</b> grants conditional stay: Indira can remain PM, but cannot vote in Parliament.</p>
+      </div>
+      <div class="s">
+        <div class="y">25 JUNE 1975</div>
+        <p>JP leads massive rally at Ramlila Maidan; calls for civil disobedience and asks armed forces to disobey unconstitutional orders.</p>
+      </div>
+      <div class="s">
+        <div class="y">MIDNIGHT 25 JUNE</div>
+        <p>President <b>Fakhruddin Ali Ahmed</b> signs Emergency under Art 352 ("internal disturbance"); electricity to newspapers cut off.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="interests">
+    <h3>THE TWO KEY POST-EMERGENCY COMMISSIONS &amp; CONSTITUTIONAL SAFEGUARDS</h3>
+    <div class="grid">
+      <div class="g">
+        <b>Shah Commission of Inquiry (May 1977)</b>
+        Headed by former CJI J.C. Shah. Disclosed that Emergency was declared without consulting Cabinet; documented custodial torture, illegal detentions, and administrative subversion.
+      </div>
+      <div class="g">
+        <b>The 44th Constitutional Amendment (1978)</b>
+        Passed by Janata government. Replaced "internal disturbance" with "armed rebellion"; mandated written Cabinet advice; made Articles 20 and 21 non-suspendable even during Emergency.
+      </div>
+      <div class="g">
+        <b>Rise of Civil Liberties Bodies</b>
+        The trauma of Emergency led to the birth of human rights watchdog organizations: People's Union for Civil Liberties (PUCL) and People's Union for Democratic Rights (PUDR).
+      </div>
+    </div>
+  </div>
+
+  <div class="strip">
+    <div class="trap">
+      <h3>TRAP 1: The Grounds of Emergency</h3>
+      <p>1975 Emergency was proclaimed under <b>"internal disturbance"</b> (Article 352). It was the 44th Amendment in 1978 that replaced this vague phrase with <b>"armed rebellion"</b>.</p>
+    </div>
+    <div class="trap">
+      <h3>TRAP 2: ADM Jabalpur (1976) vs Kesavananda Bharati (1973)</h3>
+      <p><b>Kesavananda Bharati (1973)</b> established the Basic Structure doctrine. <b>ADM Jabalpur (1976)</b> notoriously ruled that citizens had no right to life (Art 21) during Emergency (Justice H.R. Khanna dissented).</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>
