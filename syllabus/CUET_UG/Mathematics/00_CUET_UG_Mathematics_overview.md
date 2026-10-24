@@ -30,7 +30,7 @@ Total topics saved: **20**. Source: NTA official CUET(UG) 2026 syllabus — Math
 | 17 | TIME BASED DATA | Section B2: Applied Mathematics · Unit V | Class 12 | `CUET UG_Mathematics_TIME BASED DATA.md` |
 | 18 | INFERENTIAL STATISTICS | Section B2: Applied Mathematics · Unit VI | Class 12 | `CUET UG_Mathematics_INFERENTIAL STATISTICS.md` |
 | 19 | FINANCIAL MATHEMATICS | Section B2: Applied Mathematics · Unit VII | Class 12 | `CUET UG_Mathematics_FINANCIAL MATHEMATICS.md` |
-| 20 | LINEAR PROGRAMMING | Section B2: Applied Mathematics · Unit VIII | Class 12 | `CUET UG_Mathematics_LINEAR PROGRAMMING.md` |
+| 20 | LINEAR PROGRAMMING | Section B2: Applied Mathematics · Unit VIII | Class 12 | `CUET UG_Mathematics_LINEAR PROGRAMMING (Applied).md` |
 
 ---
 *OurMocks syllabus archive*
