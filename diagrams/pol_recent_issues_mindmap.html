@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: 1080px; position: relative; background: #fff; }
+  svg.wires { position: absolute; inset: 0; width: 1480px; height: 1080px; }
+  .center {
+    position: absolute; left: 470px; top: 465px; width: 540px; height: 110px;
+    background: #071A4D; border-radius: 16px; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(7,26,77,.25);
+    border-bottom: 5px solid #B8FF34;
+  }
+  .center .t { color: #fff; font-size: 19px; font-weight: 800; letter-spacing: .5px; text-align: center; }
+  .center .s { color: #B8FF34; font-size: 13px; font-weight: 700; letter-spacing: 2px; margin-top: 4px; }
+  .card {
+    position: absolute; width: 465px; background: #FCFDFF; border: 1.5px solid #D5DCEA;
+    border-radius: 14px; padding: 13px 16px 12px;
+  }
+  .card h2 { font-size: 18.5px; color: #071A4D; font-weight: 800; margin-bottom: 7px;
+             padding-bottom: 5px; border-bottom: 3px solid; display: inline-block; }
+  .leaf { font-size: 13.8px; color: #1B2333; margin: 5px 0; padding-left: 16px; position: relative; line-height: 1.32; }
+  .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
+  .b .leaf::before { background: #1F5EFF; }
+  .l .leaf::before { background: #7FB800; }
+  .leaf b { color: #071A4D; }
+  .b h2 { border-color: #1F5EFF; }
+  .l h2 { border-color: #7FB800; }
+  .left { left: 30px; }
+  .right { left: 985px; }
+  .exc {
+    position: absolute; left: 450px; top: 893px; width: 580px; background: #FFF3EC;
+    border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px;
+  }
+  .exc h2 { font-size: 16.5px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
+  .exc .leaf { font-size: 13px; margin: 3px 0; padding-left: 14px; color: #7A2A12; }
+  .exc .leaf::before { background: #D2481F; }
+  .exc b { color: #B4380F; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <svg class="wires" viewBox="0 0 1480 1080">
+    <path d="M 520 505 C 470 505, 495 158, 500 155" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 520 520 C 480 520, 495 438, 500 438" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 520 535 C 470 535, 495 718, 500 718" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 960 505 C 1010 505, 985 158, 980 155" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 960 520 C 1000 520, 985 438, 980 438" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 960 535 C 1010 535, 985 718, 980 718" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 740 575 C 740 700, 740 830, 740 891" fill="none" stroke="#D2481F" stroke-width="2.5" stroke-dasharray="7 5" opacity=".6"/>
+  </svg>
+
+  <div class="center">
+    <div class="t">RECENT ISSUES AND CHALLENGES</div>
+    <div class="s">POLITICS IN INDIA SINCE INDEPENDENCE &#183; CH. 8 (TOPIC 9)</div>
+  </div>
+
+  <div class="card left b" style="top:52px">
+    <h2>1. Globalisation &amp; Economic Reforms (1991)</h2>
+    <div class="leaf"><b>1991 Crisis:</b> Forex dropped to 2 weeks of imports; rupee devalued; gold pledged to Bank of England.</div>
+    <div class="leaf"><b>LPG Policies:</b> Industrial delicensing, tariff reductions, FDI promotion, privatisation of loss-making PSUs.</div>
+    <div class="leaf"><b>Opposition to Reforms:</b> Left trade unions protested job insecurity; farmers opposed patent regimes &amp; WTO subsidies.</div>
+    <div class="leaf"><b>Cultural Resistance:</b> Protests against Valentine's Day and Western consumerism by both Left and Right fronts.</div>
+  </div>
+
+  <div class="card left l" style="top:328px">
+    <h2>2. Rise of OBCs in North Indian Politics</h2>
+    <div class="leaf"><b>Intermediate Castes:</b> Land-owning peasant castes (Yadavs, Kurmis, Jats) mobilized following the Green Revolution.</div>
+    <div class="leaf"><b>Mandal Catalyst:</b> 27% job quota sparked political consciousness; established OBCs as decisive electoral voting blocs.</div>
+    <div class="leaf"><b>Regional Powerhouses:</b> Samajwadi Party (Mulayam Singh), RJD (Lalu Yadav), and JD(U) displaced upper-caste hegemony.</div>
+    <div class="leaf"><b>Sub-categorization:</b> Most Backward Classes (MBCs) demanded separate quotas to prevent dominant OBC monopoly.</div>
+  </div>
+
+  <div class="card left b" style="top:604px">
+    <h2>3. Dalit Politics: Electoral Assertion (BSP)</h2>
+    <div class="leaf"><b>Kanshi Ram's Groundwork:</b> BAMCEF (1978) employee union &#8594; DS-4 (1981) activist front &#8594; <b>BSP founded in 1984</b>.</div>
+    <div class="leaf"><b>Bahujan Paradigm:</b> United SC, ST, OBC, and religious minorities (the 85% majority) against elite hegemony.</div>
+    <div class="leaf"><b>Mayawati Leadership:</b> First Dalit woman Chief Minister of UP (1995); engineered historic Dalit-Brahmin social coalition (2007).</div>
+    <div class="leaf"><b>Pragmatic Power:</b> Formed tactical alliances with both SP and BJP to demonstrate Dalit state power.</div>
+  </div>
+
+  <div class="card right l" style="top:52px">
+    <h2>4. Dalit Politics: Non-Electoral Assertion</h2>
+    <div class="leaf"><b>Dalit Panthers (1972):</b> Founded in Maharashtra by Namdeo Dhasal and J.V. Pawar inspired by the US Black Panthers.</div>
+    <div class="leaf"><b>Direct Action:</b> Fought violent atrocities, untouchability, and caste oppression; demanded strict enforcement of legal rights.</div>
+    <div class="leaf"><b>Dalit Literature:</b> Pioneered revolutionary Marathi literature, poetry, and autobiographies exposing caste apartheid.</div>
+    <div class="leaf"><b>Legislative Fruit:</b> Persistent struggles led to the passage of the <b>SC/ST Prevention of Atrocities Act, 1989</b>.</div>
+  </div>
+
+  <div class="card right b" style="top:328px">
+    <h2>5. The Ayodhya Dispute &amp; Communalism</h2>
+    <div class="leaf"><b>1986 Unlocking:</b> Faizabad district judge ordered locks of Babri structure opened for Hindu worship.</div>
+    <div class="leaf"><b>Rath Yatra (1990):</b> L.K. Advani's mobilization from Somnath mobilized mass support for Ram Janmabhoomi temple.</div>
+    <div class="leaf"><b>Demolition (6 Dec 1992):</b> Structure pulled down by Karsevaks; Kalyan Singh government resigned; riots in Mumbai.</div>
+    <div class="leaf"><b>Constitutional Fallouts:</b> Central govt dismissed 4 BJP state governments under Art. 356; Liberhan Commission appointed.</div>
+  </div>
+
+  <div class="card right l" style="top:604px">
+    <h2>6. Gujarat Riots (2002) &amp; Secularism Debates</h2>
+    <div class="leaf"><b>Godhra Trigger:</b> Burning of Sabarmati Express coach at Godhra (27 Feb 2002), killing 57 passengers.</div>
+    <div class="leaf"><b>Subsequent Riots:</b> Widespread communal violence across Gujarat; over 1,000 casualties; NHRC intervened for victims.</div>
+    <div class="leaf"><b>Supreme Court Oversight:</b> Transferred key riot trials outside Gujarat (Best Bakery case to Maharashtra) for fair justice.</div>
+    <div class="leaf"><b>Two Models of Secularism:</b> Indian principled distance (equal respect for all faiths) vs Western strict separation of state &amp; religion.</div>
+  </div>
+
+  <div class="exc">
+    <h2>EXAM PITFALLS &#8212; ORGANISATIONS, LEADERS &amp; DATES</h2>
+    <div class="leaf"><b>BAMCEF (1978) vs BSP (1984):</b> BAMCEF was an employee union; BSP was the political party! Both founded by Kanshi Ram.</div>
+    <div class="leaf"><b>Dalit Panthers (1972):</b> Founded in Maharashtra (Namdeo Dhasal/J.V. Pawar), NOT in Uttar Pradesh or Bihar!</div>
+    <div class="leaf"><b>SC/ST Atrocities Act (1989):</b> Passed during Rajiv Gandhi's tenure, just before the Mandal implementation.</div>
+  </div>
+</div>
+</body>
+</html>
