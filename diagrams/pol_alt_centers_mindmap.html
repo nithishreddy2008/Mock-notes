@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: 1080px; position: relative; background: #fff; }
+  svg.wires { position: absolute; inset: 0; width: 1480px; height: 1080px; }
+  .center {
+    position: absolute; left: 470px; top: 465px; width: 540px; height: 110px;
+    background: #071A4D; border-radius: 16px; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(7,26,77,.25);
+    border-bottom: 5px solid #B8FF34;
+  }
+  .center .t { color: #fff; font-size: 18.5px; font-weight: 800; letter-spacing: .5px; text-align: center; }
+  .center .s { color: #B8FF34; font-size: 13px; font-weight: 700; letter-spacing: 2px; margin-top: 4px; }
+  .card {
+    position: absolute; width: 465px; background: #FCFDFF; border: 1.5px solid #D5DCEA;
+    border-radius: 14px; padding: 13px 16px 12px;
+  }
+  .card h2 { font-size: 18.5px; color: #071A4D; font-weight: 800; margin-bottom: 7px;
+             padding-bottom: 5px; border-bottom: 3px solid; display: inline-block; }
+  .leaf { font-size: 13.8px; color: #1B2333; margin: 5px 0; padding-left: 16px; position: relative; line-height: 1.32; }
+  .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
+  .b .leaf::before { background: #1F5EFF; }
+  .l .leaf::before { background: #7FB800; }
+  .leaf b { color: #071A4D; }
+  .b h2 { border-color: #1F5EFF; }
+  .l h2 { border-color: #7FB800; }
+  .left { left: 30px; }
+  .right { left: 985px; }
+  .exc {
+    position: absolute; left: 450px; top: 893px; width: 580px; background: #FFF3EC;
+    border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px;
+  }
+  .exc h2 { font-size: 16.5px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
+  .exc .leaf { font-size: 13px; margin: 3px 0; padding-left: 14px; color: #7A2A12; }
+  .exc .leaf::before { background: #D2481F; }
+  .exc b { color: #B4380F; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <svg class="wires" viewBox="0 0 1480 1080">
+    <path d="M 520 505 C 470 505, 495 158, 500 155" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 520 520 C 480 520, 495 438, 500 438" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 520 535 C 470 535, 495 718, 500 718" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 960 505 C 1010 505, 985 158, 980 155" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 960 520 C 1000 520, 985 438, 980 438" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 960 535 C 1010 535, 985 718, 980 718" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 740 575 C 740 700, 740 830, 740 891" fill="none" stroke="#D2481F" stroke-width="2.5" stroke-dasharray="7 5" opacity=".6"/>
+  </svg>
+
+  <div class="center">
+    <div class="t">ALTERNATIVE CENTERS OF POWER</div>
+    <div class="s">CONTEMPORARY WORLD POLITICS &#183; CH. 2 (TOPIC 11)</div>
+  </div>
+
+  <div class="card left b" style="top:52px">
+    <h2>1. The European Union (EU)</h2>
+    <div class="leaf"><b>Treaty of Rome (1957):</b> Established European Economic Community (EEC); evolved from 1948 Marshall Plan.</div>
+    <div class="leaf"><b>Maastricht Treaty (1992):</b> Formally established the European Union; created common citizenship and single market.</div>
+    <div class="leaf"><b>Euro Currency (2002):</b> Adopted by Eurozone states; EU flag with 12 gold stars (symbolizing perfection and unity).</div>
+    <div class="leaf"><b>Global Clout:</b> World's second largest economy; France holds a permanent veto seat on UN Security Council.</div>
+  </div>
+
+  <div class="card left l" style="top:328px">
+    <h2>2. ASEAN: Regional Economic Dynamo</h2>
+    <div class="leaf"><b>Bangkok Declaration (1967):</b> Founded by 5 nations: Indonesia, Malaysia, Philippines, Singapore, Thailand.</div>
+    <div class="leaf"><b>The 'ASEAN Way':</b> Unique diplomatic culture of informal, non-confrontational, and consensus-based cooperation.</div>
+    <div class="leaf"><b>Three Pillars (2003):</b> ASEAN Security Community, ASEAN Economic Community, and ASEAN Socio-Cultural Community.</div>
+    <div class="leaf"><b>ARF (1994):</b> ASEAN Regional Forum established to coordinate security and defense dialogue in the Asia-Pacific.</div>
+  </div>
+
+  <div class="card left b" style="top:604px">
+    <h2>3. The Rise of China as Superpower</h2>
+    <div class="leaf"><b>Four Modernisations (1973):</b> Zhou Enlai proposed agriculture, industry, defense, and science &amp; technology.</div>
+    <div class="leaf"><b>Open Door Policy (1978):</b> Deng Xiaoping ended Maoist isolationism; phased privatization (agriculture 1982, industry 1998).</div>
+    <div class="leaf"><b>Special Economic Zones (SEZs):</b> Attracted massive foreign direct investment; joined the WTO in 2001.</div>
+    <div class="leaf"><b>Economic Dominance:</b> World's factory; projected to surpass the US as the largest economy by 2040.</div>
+  </div>
+
+  <div class="card right l" style="top:52px">
+    <h2>4. India-China Relations: Trade vs Rivalry</h2>
+    <div class="leaf"><b>Panchsheel (1954) to 1962 War:</b> Friendship collapsed over Tibet asylum to Dalai Lama (1959) and 1962 border war.</div>
+    <div class="leaf"><b>Rajiv Gandhi Visit (1988):</b> Breakthrough visit restored diplomatic normalisation while delinking border dispute.</div>
+    <div class="leaf"><b>Economic Integration:</b> Bilateral trade crossed $100 billion; India remains dependent on Chinese manufacturing imports.</div>
+    <div class="leaf"><b>Strategic Friction:</b> Doklam standoff (2017), Galwan clash (2020), CPEC passing through PoK, and border standoffs on LAC.</div>
+  </div>
+
+  <div class="card right b" style="top:328px">
+    <h2>5. India's Ties with Japan &amp; South Korea</h2>
+    <div class="leaf"><b>Japan (Special Strategic Partner):</b> Co-financing Mumbai-Ahmedabad High Speed Rail (Shinkansen); Quad member.</div>
+    <div class="leaf"><b>Tokyo Declaration (2014):</b> Elevated ties to Special Strategic and Global Partnership; joint Malabar naval drills.</div>
+    <div class="leaf"><b>South Korea (CEPA 2010):</b> Comprehensive Economic Partnership Agreement; major investments by Samsung, Hyundai, LG.</div>
+    <div class="leaf"><b>Act East Synergy:</b> Integration of Indian economic growth with East Asian manufacturing supply chains.</div>
+  </div>
+
+  <div class="card right l" style="top:604px">
+    <h2>6. BRICS &amp; Alternative Financial Bodies</h2>
+    <div class="leaf"><b>BRIC to BRICS:</b> Brazil, Russia, India, China formed bloc in 2006; South Africa joined in 2010.</div>
+    <div class="leaf"><b>New Development Bank (NDB):</b> Established in 2014 at Fortaleza Summit (headquartered in Shanghai) as alternative to IMF/WB.</div>
+    <div class="leaf"><b>South-South Cooperation:</b> Promotes local currency settlement, infrastructure lending, and reform of Bretton Woods institutions.</div>
+    <div class="leaf"><b>Expansion (2024):</b> Inducted new members (Egypt, Ethiopia, Iran, UAE), accelerating global multipolar transition.</div>
+  </div>
+
+  <div class="exc">
+    <h2>EXAM PITFALLS &#8212; DATES, TREATIES &amp; CURRENCIES</h2>
+    <div class="leaf"><b>EU Treaties:</b> Treaty of Rome (1957) created EEC; <b>Maastricht Treaty (1992)</b> created the EU.</div>
+    <div class="leaf"><b>ASEAN Founding 5:</b> Indonesia, Malaysia, Philippines, Singapore, Thailand &#8212; Vietnam, Laos, Myanmar joined later!</div>
+    <div class="leaf"><b>China WTO Entry:</b> China joined the World Trade Organization in <b>2001</b>, NOT 1978!</div>
+  </div>
+</div>
+</body>
+</html>
