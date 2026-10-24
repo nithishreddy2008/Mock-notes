@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: 1080px; position: relative; background: #fff; }
+  svg.wires { position: absolute; inset: 0; width: 1480px; height: 1080px; }
+  .center {
+    position: absolute; left: 470px; top: 465px; width: 540px; height: 110px;
+    background: #071A4D; border-radius: 16px; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(7,26,77,.25);
+    border-bottom: 5px solid #B8FF34;
+  }
+  .center .t { color: #fff; font-size: 18.5px; font-weight: 800; letter-spacing: .5px; text-align: center; }
+  .center .s { color: #B8FF34; font-size: 13px; font-weight: 700; letter-spacing: 2px; margin-top: 4px; }
+  .card {
+    position: absolute; width: 465px; background: #FCFDFF; border: 1.5px solid #D5DCEA;
+    border-radius: 14px; padding: 13px 16px 12px;
+  }
+  .card h2 { font-size: 18.5px; color: #071A4D; font-weight: 800; margin-bottom: 7px;
+             padding-bottom: 5px; border-bottom: 3px solid; display: inline-block; }
+  .leaf { font-size: 13.8px; color: #1B2333; margin: 5px 0; padding-left: 16px; position: relative; line-height: 1.32; }
+  .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
+  .b .leaf::before { background: #1F5EFF; }
+  .l .leaf::before { background: #7FB800; }
+  .leaf b { color: #071A4D; }
+  .b h2 { border-color: #1F5EFF; }
+  .l h2 { border-color: #7FB800; }
+  .left { left: 30px; }
+  .right { left: 985px; }
+  .exc {
+    position: absolute; left: 450px; top: 893px; width: 580px; background: #FFF3EC;
+    border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px;
+  }
+  .exc h2 { font-size: 16.5px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
+  .exc .leaf { font-size: 13px; margin: 3px 0; padding-left: 14px; color: #7A2A12; }
+  .exc .leaf::before { background: #D2481F; }
+  .exc b { color: #B4380F; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <svg class="wires" viewBox="0 0 1480 1080">
+    <path d="M 520 505 C 470 505, 495 158, 500 155" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 520 520 C 480 520, 495 438, 500 438" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 520 535 C 470 535, 495 718, 500 718" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 960 505 C 1010 505, 985 158, 980 155" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 960 520 C 1000 520, 985 438, 980 438" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 960 535 C 1010 535, 985 718, 980 718" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 740 575 C 740 700, 740 830, 740 891" fill="none" stroke="#D2481F" stroke-width="2.5" stroke-dasharray="7 5" opacity=".6"/>
+  </svg>
+
+  <div class="center">
+    <div class="t">DEMOCRATIC UPSURGE &amp; COALITION POLITICS</div>
+    <div class="s">POLITICS IN INDIA SINCE INDEPENDENCE &#183; CH. 7 (TOPIC 8)</div>
+  </div>
+
+  <div class="card left b" style="top:52px">
+    <h2>1. The 1990s Transition &amp; 5 Shifts</h2>
+    <div class="leaf"><b>End of Congress system:</b> 1989 election defeat ushered in 25 years of multi-party coalition rule.</div>
+    <div class="leaf"><b>Mandal Commission:</b> V.P. Singh implemented 27% OBC job quota (Aug 1990); transformed caste representation.</div>
+    <div class="leaf"><b>New Economic Policy:</b> 1991 LPG reforms under P.V. Narasimha Rao and Dr. Manmohan Singh.</div>
+    <div class="leaf"><b>Ayodhya Dispute:</b> Demolition of Babri structure (Dec 1992); BJP emerged as the primary national pole.</div>
+  </div>
+
+  <div class="card left l" style="top:328px">
+    <h2>2. The Rise of the Janata Dal &amp; NF</h2>
+    <div class="leaf"><b>Janata Dal (1988):</b> Merged Jan Morcha, Lok Dal, and Congress (S) under <b>V.P. Singh</b> against Bofors corruption.</div>
+    <div class="leaf"><b>National Front (1989&#8211;90):</b> Formed government supported from the outside by BOTH <b>BJP</b> and <b>Left Front</b>!</div>
+    <div class="leaf"><b>Collapse:</b> Fell when Advani was arrested during Rath Yatra; Chandra Shekhar took over with Congress support.</div>
+    <div class="leaf"><b>Mandalisation:</b> Solidified OBC assertion; spawned regional leaders (Lalu Yadav, Mulayam Singh, Nitish Kumar).</div>
+  </div>
+
+  <div class="card left b" style="top:604px">
+    <h2>3. United Front Era (1996&#8211;1998)</h2>
+    <div class="leaf"><b>1996 Fractured verdict:</b> BJP won 161 seats; Vajpayee's 13-day ministry fell for want of majority.</div>
+    <div class="leaf"><b>United Front:</b> 13 regional/secular parties formed government backed from outside by Congress and CPI.</div>
+    <div class="leaf"><b>Two Prime Ministers:</b> <b>H.D. Deve Gowda</b> (1996&#8211;97) followed by <b>I.K. Gujral</b> (1997&#8211;98).</div>
+    <div class="leaf"><b>Gujral Doctrine:</b> Policy of unilateral non-reciprocal goodwill towards smaller South Asian neighbours.</div>
+  </div>
+
+  <div class="card right l" style="top:52px">
+    <h2>4. NDA &amp; Vajpayee Era (1998&#8211;2004)</h2>
+    <div class="leaf"><b>National Democratic Alliance:</b> Pre-poll coalition led by BJP; first stable non-Congress multi-party regime.</div>
+    <div class="leaf"><b>Vajpayee leadership:</b> 13-month govt in 1998 (fell by 1 vote); returned with decisive majority in 1999 (full 5-year term).</div>
+    <div class="leaf"><b>Key Milestones:</b> <b>Pokhran-II</b> nuclear tests (May 1998); <b>1999 Kargil War</b> victory; Golden Quadrilateral highways.</div>
+    <div class="leaf"><b>Pragmatism over ideology:</b> Hardline ideological planks kept aside to preserve coalition consensus with allies.</div>
+  </div>
+
+  <div class="card right b" style="top:328px">
+    <h2>5. UPA Era &amp; Rights Revolution (2004&#8211;14)</h2>
+    <div class="leaf"><b>United Progressive Alliance:</b> Congress-led coalition under <b>Dr. Manmohan Singh</b> and Sonia Gandhi (UPA Chair).</div>
+    <div class="leaf"><b>UPA-I (2004&#8211;09):</b> Backed by Left; landmark laws: <b>RTI Act (2005)</b>, <b>MGNREGA (2005)</b>; Indo-US nuclear deal 2008.</div>
+    <div class="leaf"><b>UPA-II (2009&#8211;14):</b> Returned with 206 Congress seats; passed Right to Education (2009) and Food Security (2013).</div>
+    <div class="leaf"><b>Anti-corruption surge:</b> Anna Hazare movement (2011) and policy paralysis laid ground for political change.</div>
+  </div>
+
+  <div class="card right l" style="top:604px">
+    <h2>6. NDA III &amp; IV: Dominant Coalition (2014&#8211;19)</h2>
+    <div class="leaf"><b>2014 Landmark:</b> BJP under <b>Narendra Modi</b> won 282 seats &#8212; first single-party majority in 30 years!</div>
+    <div class="leaf"><b>2019 Expansion:</b> Re-elected with 303 BJP seats (353 NDA); ended fragmented coalition instability.</div>
+    <div class="leaf"><b>Three Democratic Upsurges:</b> 1st = Adult franchise; 2nd = Backward caste/OBC surge; 3rd = Vikas &amp; governance delivery.</div>
+    <div class="leaf"><b>New Hegemony:</b> Transition from Congress dominance to a BJP-centred national political architecture.</div>
+  </div>
+
+  <div class="exc">
+    <h2>EXAM PITFALLS &#8212; ALLIANCES, PRIME MINISTERS &amp; DATES</h2>
+    <div class="leaf"><b>National Front (1989):</b> Supported by BOTH <b>BJP and Left</b> from outside! (Unprecedented ideological paradox).</div>
+    <div class="leaf"><b>Mandal Commission:</b> Appointed in <b>1978</b> by Janata govt (B.P. Mandal); implemented in <b>1990</b> by V.P. Singh.</div>
+    <div class="leaf"><b>Coalition Chronology:</b> National Front (1989) &#8594; United Front (1996) &#8594; NDA (1998) &#8594; UPA (2004) &#8594; NDA-III (2014).</div>
+  </div>
+</div>
+</body>
+</html>
