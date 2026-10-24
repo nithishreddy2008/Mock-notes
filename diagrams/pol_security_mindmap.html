@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: 1080px; position: relative; background: #fff; }
+  svg.wires { position: absolute; inset: 0; width: 1480px; height: 1080px; }
+  .center {
+    position: absolute; left: 470px; top: 465px; width: 540px; height: 110px;
+    background: #071A4D; border-radius: 16px; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(7,26,77,.25);
+    border-bottom: 5px solid #B8FF34;
+  }
+  .center .t { color: #fff; font-size: 19px; font-weight: 800; letter-spacing: .5px; text-align: center; }
+  .center .s { color: #B8FF34; font-size: 13px; font-weight: 700; letter-spacing: 2px; margin-top: 4px; }
+  .card {
+    position: absolute; width: 465px; background: #FCFDFF; border: 1.5px solid #D5DCEA;
+    border-radius: 14px; padding: 13px 16px 12px;
+  }
+  .card h2 { font-size: 18.5px; color: #071A4D; font-weight: 800; margin-bottom: 7px;
+             padding-bottom: 5px; border-bottom: 3px solid; display: inline-block; }
+  .leaf { font-size: 13.8px; color: #1B2333; margin: 5px 0; padding-left: 16px; position: relative; line-height: 1.32; }
+  .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
+  .b .leaf::before { background: #1F5EFF; }
+  .l .leaf::before { background: #7FB800; }
+  .leaf b { color: #071A4D; }
+  .b h2 { border-color: #1F5EFF; }
+  .l h2 { border-color: #7FB800; }
+  .left { left: 30px; }
+  .right { left: 985px; }
+  .exc {
+    position: absolute; left: 450px; top: 893px; width: 580px; background: #FFF3EC;
+    border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px;
+  }
+  .exc h2 { font-size: 16.5px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
+  .exc .leaf { font-size: 13px; margin: 3px 0; padding-left: 14px; color: #7A2A12; }
+  .exc .leaf::before { background: #D2481F; }
+  .exc b { color: #B4380F; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <svg class="wires" viewBox="0 0 1480 1080">
+    <path d="M 520 505 C 470 505, 495 158, 500 155" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 520 520 C 480 520, 495 438, 500 438" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 520 535 C 470 535, 495 718, 500 718" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 960 505 C 1010 505, 985 158, 980 155" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 960 520 C 1000 520, 985 438, 980 438" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 960 535 C 1010 535, 985 718, 980 718" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 740 575 C 740 700, 740 830, 740 891" fill="none" stroke="#D2481F" stroke-width="2.5" stroke-dasharray="7 5" opacity=".6"/>
+  </svg>
+
+  <div class="center">
+    <div class="t">SECURITY IN CONTEMPORARY WORLD</div>
+    <div class="s">CONTEMPORARY WORLD POLITICS &#183; CH. 5 (TOPIC 14)</div>
+  </div>
+
+  <div class="card left b" style="top:52px">
+    <h2>1. Traditional Security: External Threats</h2>
+    <div class="leaf"><b>Core Threat:</b> Military invasion by another state threatening sovereignty, territory, and civilian lives.</div>
+    <div class="leaf"><b>State Responses:</b> <b>Deterrence</b> (preventing war), <b>Defense</b> (defeating an attack), or surrender.</div>
+    <div class="leaf"><b>Balance of Power:</b> Building economic/military strength to avoid falling vulnerable to aggressive neighbors.</div>
+    <div class="leaf"><b>Alliance Building:</b> Coalitions of states to deter aggression (e.g., NATO); collective defense under treaty pacts.</div>
+  </div>
+
+  <div class="card left l" style="top:328px">
+    <h2>2. Traditional Security: Arms Control</h2>
+    <div class="leaf"><b>Disarmament Treaties:</b> <b>BWC (1972)</b> banned biological weapons; <b>CWC (1992)</b> banned chemical weapons.</div>
+    <div class="leaf"><b>Nuclear Arms Control:</b> <b>NPT (1968)</b> created 1 Jan 1967 cutoff; ABM Treaty (1972); SALT I &amp; II; START I &amp; II treaties.</div>
+    <div class="leaf"><b>Confidence Building Measures:</b> Military transparency, advance notification of drills, and hotlines between generals.</div>
+    <div class="leaf"><b>Internal Security:</b> Containing civil war, separatist rebellions, and maintaining internal constitutional order.</div>
+  </div>
+
+  <div class="card left b" style="top:604px">
+    <h2>3. Non-Traditional: Human Security</h2>
+    <div class="leaf"><b>Shift in Referent:</b> Protection of <i>individual people</i> and communities rather than state borders alone.</div>
+    <div class="leaf"><b>Broad vs Narrow:</b> <b>Freedom from Fear</b> (violence/torture) vs <b>Freedom from Want</b> (hunger, disease, natural disasters).</div>
+    <div class="leaf"><b>Global Health Epidemics:</b> HIV-AIDS, SARS, Ebola, COVID-19 cross international borders, crippling health systems.</div>
+    <div class="leaf"><b>Human Rights Violations:</b> International community invoked Responsibility to Protect (R2P) against genocides (Rwanda 1994).</div>
+  </div>
+
+  <div class="card right l" style="top:52px">
+    <h2>4. Non-Traditional: Global Threats</h2>
+    <div class="leaf"><b>International Terrorism:</b> Deliberate, indiscriminate targeting of civilians to generate terror (e.g. 9/11, 26/11 Mumbai).</div>
+    <div class="leaf"><b>Global Poverty &amp; Inequality:</b> Demographic divide between aging wealthy Global North and rapidly growing Global South.</div>
+    <div class="leaf"><b>Climate &amp; Environmental Insecurity:</b> Global warming, rising sea levels, desertification, and conflict over scarce clean water.</div>
+    <div class="leaf"><b>Cooperative Security:</b> Requires global multilateral collaboration; unilateral military force is useless against pandemics.</div>
+  </div>
+
+  <div class="card right b" style="top:328px">
+    <h2>5. Migration: Refugees vs IDPs</h2>
+    <div class="leaf"><b>Refugees:</b> Flee across <i>international borders</i> due to war, persecution, or natural disasters; protected by 1951 Refugee Convention.</div>
+    <div class="leaf"><b>Internally Displaced Persons (IDPs):</b> Flee homes but remain <i>within their own national borders</i> (e.g. Kashmiri Pandits 1990).</div>
+    <div class="leaf"><b>Economic Migrants:</b> Voluntarily move for better livelihoods; do not possess automatic legal right of international asylum.</div>
+    <div class="leaf"><b>Host State Backlash:</b> Influx of migrants triggers political friction over jobs, scarce resources, and cultural identity.</div>
+  </div>
+
+  <div class="card right l" style="top:604px">
+    <h2>6. India's Fourfold Security Strategy</h2>
+    <div class="leaf"><b>1. Military Strength:</b> Deterred nuclear/conventional threats; fought 4 wars with Pakistan; nuclear tests (1974 &amp; 1998).</div>
+    <div class="leaf"><b>2. International Norms:</b> Supported universal non-discriminatory disarmament, Asian solidarity, NAM, and UN peacekeeping.</div>
+    <div class="leaf"><b>3. Internal Cohesion:</b> Accommodated regional, linguistic, and tribal autonomy demands to prevent national balkanization.</div>
+    <div class="leaf"><b>4. Economic Growth:</b> Eradicating mass poverty and structural deprivation to maintain democratic stability.</div>
+  </div>
+
+  <div class="exc">
+    <h2>EXAM PITFALLS &#8212; DEFINITIONS, DATES &amp; TREATIES</h2>
+    <div class="leaf"><b>Refugee vs IDP:</b> Refugees cross international borders; IDPs stay within their own country's territory!</div>
+    <div class="leaf"><b>NPT Discrimination:</b> Recognizes only countries that exploded a nuclear device prior to <b>1 January 1967</b> as nuclear states.</div>
+    <div class="leaf"><b>Disarmament Dates:</b> Biological Weapons Convention in <b>1972</b>; Chemical Weapons Convention in <b>1992</b>.</div>
+  </div>
+</div>
+</body>
+</html>

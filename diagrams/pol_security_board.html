@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: 1040px; position: relative; background: #fff; }
+  .title {
+    position: absolute; left: 30px; top: 20px; width: 1420px; height: 58px;
+    background: #071A4D; border-radius: 12px; display: flex; align-items: center; justify-content: center;
+  }
+  .title .t { color: #fff; font-size: 23px; font-weight: 800; letter-spacing: 1px; }
+  .title .t b { color: #B8FF34; }
+  .mach { position: absolute; left: 30px; top: 96px; width: 1420px; height: 116px; background: #071A4D; border-radius: 14px; padding: 12px 16px; border-bottom: 5px solid #B8FF34; }
+  .mach h3 { color: #fff; font-size: 16.5px; font-weight: 800; margin: 0 0 6px; }
+  .mach .row { display: flex; gap: 12px; }
+  .mach .chip { flex: 1; background: rgba(255,255,255,.10); border-radius: 9px; padding: 7px 11px; }
+  .mach .chip .v { color: #B8FF34; font-size: 14.5px; font-weight: 800; }
+  .mach .chip .k { color: #C9D4F2; font-size: 11.8px; line-height: 1.3; margin-top: 1px; }
+  .cards { position: absolute; left: 30px; top: 230px; width: 1420px; display: flex; gap: 16px; }
+  .fcard {
+    flex: 1; background: #FCFDFF; border: 1.5px solid #D5DCEA; border-radius: 14px; padding: 12px 16px; height: 260px;
+  }
+  .fcard h3 { font-size: 18px; font-weight: 800; color: #1F5EFF; margin-bottom: 7px; padding-bottom: 5px; border-bottom: 3px solid #1F5EFF; display: inline-block; }
+  .fcard.right h3 { color: #4E7A00; border-color: #7FB800; }
+  .leaf { font-size: 13.5px; color: #1B2333; margin: 6px 0; padding-left: 16px; position: relative; line-height: 1.35; }
+  .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; background: #1F5EFF; }
+  .fcard.right .leaf::before { background: #7FB800; }
+  .leaf b { color: #071A4D; }
+  .chain { position: absolute; left: 30px; top: 510px; width: 1420px; background: #EAF0FF; border: 1.5px solid #1F5EFF; border-radius: 14px; padding: 12px 16px; }
+  .chain h3 { font-size: 17.5px; color: #1F5EFF; font-weight: 800; margin: 0 0 8px; }
+  .chain .steps { display: flex; gap: 10px; align-items: stretch; }
+  .chain .s { flex: 1; background: #fff; border: 1.2px solid #B9C6E4; border-radius: 10px; padding: 8px 11px; }
+  .chain .s .y { display: inline-block; background: #071A4D; color: #fff; font-size: 12px; font-weight: 800; border-radius: 6px; padding: 2px 7px; }
+  .chain .s p { font-size: 12.5px; color: #1B2333; line-height: 1.35; margin: 5px 0 0; }
+  .chain .s p b { color: #B4380F; }
+  .interests { position: absolute; left: 30px; top: 712px; width: 1420px; background: #F6FFDF; border: 1.5px solid #7FB800; border-radius: 14px; padding: 12px 16px; }
+  .interests h3 { font-size: 17.5px; color: #4E7A00; font-weight: 800; margin: 0 0 6px; }
+  .interests .grid { display: flex; gap: 12px; }
+  .interests .g { flex: 1; font-size: 13px; color: #1B2333; line-height: 1.4; }
+  .interests .g b { color: #071A4D; display: block; font-size: 13.8px; margin-bottom: 2px; }
+  .strip { position: absolute; left: 30px; top: 914px; width: 1420px; display: flex; gap: 14px; }
+  .trap { flex: 1; background: #FFF3EC; border: 1.5px solid #D2481F; border-radius: 12px; padding: 10px 14px; }
+  .trap h3 { font-size: 14px; color: #B4380F; font-weight: 800; margin-bottom: 3px; }
+  .trap p { font-size: 12.6px; color: #7A2A12; line-height: 1.35; }
+  .trap p b { color: #B4380F; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="title"><div class="t">CONTEMPORARY SECURITY PARADIGMS — <b>THE TRADITIONAL &amp; HUMAN SECURITY MATRIX</b></div></div>
+
+  <div class="mach">
+    <h3>FOUR CORE PILLARS OF SECURITY THEORY &amp; PRACTICE</h3>
+    <div class="row">
+      <div class="chip"><div class="v">1. Traditional External</div><div class="k">Military threats from states &#8594; Deterrence, defense, balance of power, alliance pacts (NATO, Warsaw).</div></div>
+      <div class="chip"><div class="v">2. Disarmament &amp; Arms Control</div><div class="k">Biological Weapons Convention (1972); Chemical Weapons Convention (1992); NPT (1968); START treaties.</div></div>
+      <div class="chip"><div class="v">3. Non-Traditional / Human</div><div class="k">Referent is individuals; Freedom from Fear &amp; Want; Global pandemics, poverty, forced migration, terrorism.</div></div>
+      <div class="chip"><div class="v">4. India's 4-Pillar Strategy</div><div class="k">Military strength; International norms &amp; treaties; Domestic democratic accommodation; Economic growth.</div></div>
+    </div>
+  </div>
+
+  <div class="cards">
+    <div class="fcard">
+      <h3>Traditional vs Non-Traditional Security</h3>
+      <div class="leaf"><b>Referent Object:</b> Traditional secures the <i>state and sovereignty</i>; Non-traditional secures <i>individual human beings</i>.</div>
+      <div class="leaf"><b>Nature of Threats:</b> Traditional deals with military aggression and war; Non-traditional deals with disease, climate, and hunger.</div>
+      <div class="leaf"><b>Primary Actor:</b> Traditional relies on national militaries and intelligence; Non-traditional requires international cooperation.</div>
+      <div class="leaf"><b>Use of Force:</b> Military force is central to traditional defense; force is largely futile against pandemics or climate change.</div>
+      <div class="leaf"><b>Scope:</b> Traditional is narrow and interstate; Non-traditional encompasses global and transnational civil society.</div>
+    </div>
+    <div class="fcard right">
+      <h3>Key Disarmament &amp; Arms Control Treaties</h3>
+      <div class="leaf"><b>Biological Weapons Convention (BWC, 1972):</b> Banned the development, production, and stockpiling of biological weapons.</div>
+      <div class="leaf"><b>Chemical Weapons Convention (CWC, 1992):</b> Completely outlawed chemical weapons; mandated verifiable destruction of stockpiles.</div>
+      <div class="leaf"><b>Nuclear Non-Proliferation Treaty (NPT, 1968):</b> Froze nuclear status to states testing prior to <b>1 January 1967</b>; India refused to sign.</div>
+      <div class="leaf"><b>Anti-Ballistic Missile (ABM) Treaty (1972):</b> Limited US and USSR from deploying nationwide ballistic missile shield defenses.</div>
+      <div class="leaf"><b>START I &amp; II (1991, 1993):</b> Strategic Arms Reduction Treaties mandating verified reductions in nuclear warhead stockpiles.</div>
+    </div>
+  </div>
+
+  <div class="chain">
+    <h3>CHRONOLOGY OF GLOBAL DISARMAMENT, CONVENTIONS &amp; PARADIGM SHIFTS</h3>
+    <div class="steps">
+      <div class="s">
+        <span class="y">1968</span>
+        <p><b>NPT Signed:</b> 1 Jan 1967 cutoff; divides world into nuclear haves &amp; have-nots. India boycotts as discriminatory.</p>
+      </div>
+      <div class="s">
+        <span class="y">1972</span>
+        <p><b>BWC &amp; ABM:</b> Biological weapons banned; US and USSR sign Anti-Ballistic Missile Treaty in Moscow.</p>
+      </div>
+      <div class="s">
+        <span class="y">1991–1993</span>
+        <p><b>Cold War Drawdown:</b> START-I reduces strategic nuclear warheads; Chemical Weapons Convention (CWC) adopted in 1992.</p>
+      </div>
+      <div class="s">
+        <span class="y">1994</span>
+        <p><b>Human Security:</b> UNDP Human Development Report formally coins 'Human Security' following Rwandan genocide.</p>
+      </div>
+      <div class="s">
+        <span class="y">11 Sept 2001</span>
+        <p><b>9/11 Terror Attacks:</b> Al-Qaeda attacks WTC/Pentagon; terrorism recognized as premier global transnational threat.</p>
+      </div>
+      <div class="s">
+        <span class="y">2020+</span>
+        <p><b>Pandemic Insecurity:</b> COVID-19 pandemic kills millions, shutting down global economy and highlighting health security.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="interests">
+    <h3>INDIA'S FOURFOLD NATIONAL SECURITY STRATEGY</h3>
+    <div class="grid">
+      <div class="g">
+        <b>1. Strengthening Military Defense</b>
+        Deterring nuclear and conventional threats from Pakistan and China. Testing nuclear devices in 1974 (Pokhran-I) and 1998 (Pokhran-II) to build a "credible minimum nuclear deterrent" with a strict No-First-Use doctrine.
+      </div>
+      <div class="g">
+        <b>2. Strengthening International Norms</b>
+        Championing universal, non-discriminatory disarmament, Asian solidarity, the Non-Aligned Movement (NAM), and active participation in United Nations Peacekeeping Operations to preserve international rule of law.
+      </div>
+      <div class="g">
+        <b>3. Preserving Internal Unity &amp; Cohesion</b>
+        Accommodating regional, linguistic, and ethnic autonomy demands (Northeast, Kashmir, Punjab) through federalism, democratic elections, and constitutional flexibility to prevent internal balkanization.
+      </div>
+    </div>
+  </div>
+
+  <div class="strip">
+    <div class="trap">
+      <h3>PITFALL 1: Refugee vs Internally Displaced Person (IDP)</h3>
+      <p>A <b>Refugee</b> leaves their country and flees across <i>international borders</i>. An <b>IDP</b> flees their home due to violence or disaster but remains <i>within the national borders of their own country</i>.</p>
+    </div>
+    <div class="trap">
+      <h3>PITFALL 2: Disarmament vs Arms Control</h3>
+      <p><b>Disarmament</b> requires states to give up certain kinds of weapons altogether (e.g., BWC, CWC). <b>Arms Control</b> regulates the acquisition, testing, or size of weapon stockpiles (e.g., NPT, SALT, START).</p>
+    </div>
+    <div class="trap">
+      <h3>PITFALL 3: India's Opposition to the NPT</h3>
+      <p>India refused to sign the NPT (1968) NOT because it opposed non-proliferation, but because the treaty was fundamentally <b>discriminatory</b>, creating an arbitrary cutoff date of 1 January 1967.</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>
