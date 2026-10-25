@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1440, height=880">
+  <title>Moving Coil Galvanometer, Meters & Magnetic Materials</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 1440px;
+      height: 880px;
+      background-color: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0F172A;
+      padding: 32px 40px;
+      overflow: hidden;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 24px;
+      border-bottom: 2px solid #E2E8F0;
+      padding-bottom: 16px;
+    }
+    .title-group h1 {
+      font-size: 26px;
+      font-weight: 800;
+      color: #0F2C59;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+    .title-group p {
+      font-size: 14px;
+      color: #64748B;
+      font-weight: 500;
+    }
+    .badge {
+      background: #0066FF;
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      height: calc(100% - 110px);
+    }
+    .card {
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      border-radius: 14px;
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+      position: relative;
+    }
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      border-radius: 14px 14px 0 0;
+    }
+    .card-1::before { background: #0284C7; }
+    .card-2::before { background: #16A34A; }
+    .card-3::before { background: #D97706; }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+    .card-title {
+      font-size: 17px;
+      font-weight: 800;
+      color: #0F2C59;
+    }
+    .tag {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+      text-transform: uppercase;
+    }
+    .tag-cyan { background: #F0F9FF; color: #0284C7; }
+    .tag-green { background: #F0FDF4; color: #16A34A; }
+    .tag-amber { background: #FFFBEB; color: #D97706; }
+
+    .svg-container {
+      width: 100%;
+      height: 240px;
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 10px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .formula-block {
+      background: #F1F5F9;
+      border-left: 3px solid #0284C7;
+      padding: 10px 14px;
+      border-radius: 0 6px 6px 0;
+      font-family: "SF Mono", Consolas, Menlo, monospace;
+      font-size: 12px;
+      color: #0F172A;
+      margin-bottom: 12px;
+      line-height: 1.5;
+    }
+    .formula-block.green { border-left-color: #16A34A; }
+    .formula-block.amber { border-left-color: #D97706; }
+
+    .bullet-list {
+      list-style: none;
+      font-size: 12.5px;
+      color: #334155;
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .bullet-list li {
+      position: relative;
+      padding-left: 16px;
+    }
+    .bullet-list li::before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      color: #0284C7;
+      font-weight: 800;
+    }
+    .card-2 .bullet-list li::before { color: #16A34A; }
+    .card-3 .bullet-list li::before { color: #D97706; }
+
+    .highlight {
+      font-weight: 700;
+      color: #0F2C59;
+    }
+    .footer-bar {
+      margin-top: 14px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: #94A3B8;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="title-group">
+      <h1>Moving Coil Galvanometer, Circuit Meters & Magnetic Materials</h1>
+      <p>NCERT Class XII Physics · Unit 3 (Chapters 4 & 5) · Radial Field Torque, Meter Conversions & Magnetic Classification</p>
+    </div>
+    <div class="badge">CUET UG Physics · Unit 3</div>
+  </div>
+
+  <div class="grid">
+    <!-- Card 1: Moving Coil Galvanometer (MCG) -->
+    <div class="card card-1">
+      <div class="card-header">
+        <div class="card-title">1. Moving Coil Galvanometer</div>
+        <div class="tag tag-cyan">Radial Field</div>
+      </div>
+      <div class="svg-container">
+        <svg viewBox="0 0 380 220" width="370" height="210">
+          <!-- Concave North Pole -->
+          <path d="M 30,50 L 90,50 C 70,85 70,135 90,170 L 30,170 Z" fill="#EFF6FF" stroke="#0066FF" stroke-width="2"/>
+          <text x="45" y="115" font-size="18" fill="#0066FF" font-weight="900">N</text>
+
+          <!-- Concave South Pole -->
+          <path d="M 350,50 L 290,50 C 310,85 310,135 290,170 L 350,170 Z" fill="#EFF6FF" stroke="#0066FF" stroke-width="2"/>
+          <text x="325" y="115" font-size="18" fill="#0066FF" font-weight="900">S</text>
+
+          <!-- Radial Field Lines -->
+          <path d="M 80,75 Q 150,100 190,110" fill="none" stroke="#94A3B8" stroke-dasharray="3" stroke-width="1.2"/>
+          <path d="M 80,110 L 300,110" fill="none" stroke="#0066FF" stroke-width="1.5"/>
+          <polygon points="200,110 190,106 190,114" fill="#0066FF"/>
+          <path d="M 80,145 Q 150,120 190,110" fill="none" stroke="#94A3B8" stroke-dasharray="3" stroke-width="1.2"/>
+
+          <!-- Soft Iron Core (Cylinder) -->
+          <circle cx="190" cy="110" r="38" fill="#E2E8F0" stroke="#475569" stroke-width="2"/>
+          <text x="160" y="114" font-size="10" fill="#334155" font-weight="700">Soft Iron</text>
+
+          <!-- Rectangular Coil cross-section -->
+          <rect x="142" y="80" width="96" height="60" rx="3" fill="none" stroke="#DC2626" stroke-width="2.2"/>
+          <text x="145" y="73" font-size="11" fill="#DC2626" font-weight="800">Coil (N turns, Area A)</text>
+
+          <!-- Suspension / Pointer -->
+          <line x1="190" y1="110" x2="230" y2="40" stroke="#0F2C59" stroke-width="2"/>
+          <circle cx="190" cy="110" r="4" fill="#0F2C59"/>
+          <!-- Scale arc -->
+          <path d="M 210,35 Q 235,42 260,55" fill="none" stroke="#0F2C59" stroke-width="1.5"/>
+          <text x="240" y="32" font-size="11" fill="#0F2C59" font-weight="800">θ (Deflection)</text>
+
+          <text x="50" y="198" font-size="11" fill="#0284C7" font-weight="700">Radial Field ⟹ θ = 90° always ⟹ τ = NIAB</text>
+        </svg>
+      </div>
+      <div class="formula-block">
+        Deflecting Torque: τ_d = N I A B (sin 90° = 1)<br>
+        Restoring Torque: τ_r = C · θ<br>
+        Equilibrium: θ = (N A B / C) · I ⟹ θ ∝ I
+      </div>
+      <ul class="bullet-list">
+        <li><span class="highlight">Radial Magnetic Field:</span> Concave poles + soft iron core ensure field is always parallel to coil plane, yielding a strictly linear scale.</li>
+        <li><span class="highlight">Current Sensitivity:</span> I_s = θ / I = (N A B) / C [rad/A or div/A].</li>
+        <li><span class="highlight">Voltage Sensitivity:</span> V_s = θ / V = (N A B) / (C · R_g) [rad/V]. Note: Doubling N doubles R_g, leaving V_s unchanged.</li>
+      </ul>
+    </div>
+
+    <!-- Card 2: Conversion to Ammeter & Voltmeter -->
+    <div class="card card-2">
+      <div class="card-header">
+        <div class="card-title">2. Ammeter & Voltmeter Design</div>
+        <div class="tag tag-green">Instrument Conversion</div>
+      </div>
+      <div class="svg-container">
+        <svg viewBox="0 0 380 220" width="370" height="210">
+          <!-- Top Half: Ammeter Conversion -->
+          <rect x="25" y="20" width="330" height="85" rx="8" fill="#F0FDF4" stroke="#16A34A" stroke-width="1.2"/>
+          <text x="35" y="38" font-size="12" fill="#16A34A" font-weight="800">Ammeter: Low Shunt (S) in Parallel</text>
+
+          <!-- Main line -->
+          <line x1="45" y1="65" x2="80" y2="65" stroke="#0F2C59" stroke-width="2"/>
+          <text x="50" y="58" font-size="11" fill="#0F2C59" font-weight="700">I</text>
+
+          <!-- Galvanometer branch -->
+          <line x1="80" y1="65" x2="110" y2="48" stroke="#0066FF" stroke-width="1.8"/>
+          <rect x="110" y="38" width="65" height="20" rx="4" fill="#FFFFFF" stroke="#0066FF" stroke-width="1.5"/>
+          <text x="135" y="52" font-size="11" fill="#0066FF" font-weight="800">G</text>
+          <line x1="175" y1="48" x2="205" y2="65" stroke="#0066FF" stroke-width="1.8"/>
+          <text x="82" y="36" font-size="10" fill="#0066FF" font-weight="700">I_g</text>
+
+          <!-- Shunt branch -->
+          <line x1="80" y1="65" x2="110" y2="82" stroke="#16A34A" stroke-width="1.8"/>
+          <rect x="110" y="72" width="65" height="20" rx="4" fill="#FFFFFF" stroke="#16A34A" stroke-width="1.5"/>
+          <text x="138" y="86" font-size="11" fill="#16A34A" font-weight="800">S</text>
+          <line x1="175" y1="82" x2="205" y2="65" stroke="#16A34A" stroke-width="1.8"/>
+          <text x="75" y="96" font-size="10" fill="#16A34A" font-weight="700">I - I_g</text>
+
+          <line x1="205" y1="65" x2="235" y2="65" stroke="#0F2C59" stroke-width="2"/>
+          <text x="220" y="45" font-size="11" fill="#16A34A" font-weight="800">S = I_g G / (I - I_g)</text>
+
+          <!-- Bottom Half: Voltmeter Conversion -->
+          <rect x="25" y="118" width="330" height="85" rx="8" fill="#EFF6FF" stroke="#0066FF" stroke-width="1.2"/>
+          <text x="35" y="136" font-size="12" fill="#0066FF" font-weight="800">Voltmeter: High Resistance (R_s) in Series</text>
+
+          <line x1="45" y1="165" x2="75" y2="165" stroke="#0F2C59" stroke-width="2"/>
+          <text x="50" y="156" font-size="10.5" fill="#0F2C59" font-weight="700">I_g</text>
+
+          <!-- G in series -->
+          <rect x="75" y="155" width="55" height="20" rx="4" fill="#FFFFFF" stroke="#0066FF" stroke-width="1.5"/>
+          <text x="98" y="169" font-size="11" fill="#0066FF" font-weight="800">G</text>
+
+          <line x1="130" y1="165" x2="155" y2="165" stroke="#0F2C59" stroke-width="2"/>
+
+          <!-- R_s in series -->
+          <rect x="155" y="155" width="60" height="20" rx="4" fill="#FFFFFF" stroke="#D97706" stroke-width="1.5"/>
+          <text x="175" y="169" font-size="11" fill="#D97706" font-weight="800">R_s</text>
+
+          <line x1="215" y1="165" x2="245" y2="165" stroke="#0F2C59" stroke-width="2"/>
+          <text x="215" y="194" font-size="11" fill="#0066FF" font-weight="800">R_s = (V / I_g) - G</text>
+        </svg>
+      </div>
+      <div class="formula-block green">
+        Ammeter Shunt: S = (I_g · G) / (I - I_g) | R_A = (G·S)/(G+S) ≈ 0<br>
+        Voltmeter Series: R_s = (V / I_g) - G | R_V = G + R_s ≈ ∞<br>
+        Galvanometer Figure of Merit: k = 1 / I_s = I / θ
+      </div>
+      <ul class="bullet-list">
+        <li><span class="highlight">Ammeter Connection:</span> Connected in *series* with circuit branch; ideal ammeter resistance R_A = 0 to avoid altering circuit current.</li>
+        <li><span class="highlight">Voltmeter Connection:</span> Connected in *parallel* across branch; ideal voltmeter resistance R_V = ∞ to draw zero current.</li>
+        <li><span class="highlight">Range Extension:</span> To increase ammeter range by factor n = I / I_g, choose shunt S = G / (n - 1).</li>
+      </ul>
+    </div>
+
+    <!-- Card 3: Magnetic Materials & Hysteresis -->
+    <div class="card card-3">
+      <div class="card-header">
+        <div class="card-title">3. Magnetic Materials & Hysteresis</div>
+        <div class="tag tag-amber">Dia, Para & Ferro</div>
+      </div>
+      <div class="svg-container">
+        <svg viewBox="0 0 380 220" width="370" height="210">
+          <!-- Hysteresis B-H Curve -->
+          <line x1="40" y1="110" x2="340" y2="110" stroke="#CBD5E1" stroke-width="1.5"/>
+          <text x="325" y="125" font-size="11" fill="#64748B" font-weight="700">H [A/m]</text>
+
+          <line x1="190" y1="20" x2="190" y2="200" stroke="#CBD5E1" stroke-width="1.5"/>
+          <text x="198" y="32" font-size="11" fill="#64748B" font-weight="700">B [Tesla]</text>
+
+          <!-- Hysteresis Loop -->
+          <path d="M 190,110 Q 250,55 300,50 Q 260,70 190,75 Q 120,80 100,110 Q 80,140 100,170 Q 140,165 190,145 Q 260,140 280,110 Q 295,80 300,50" 
+                fill="#FFFBEB" stroke="#D97706" stroke-width="2.5"/>
+
+          <!-- Retentivity (B_r) -->
+          <circle cx="190" cy="75" r="3.5" fill="#DC2626"/>
+          <text x="142" y="73" font-size="10.5" fill="#DC2626" font-weight="800">Retentivity B_r</text>
+
+          <!-- Coercivity (H_c) -->
+          <circle cx="148" cy="110" r="3.5" fill="#0066FF"/>
+          <text x="100" y="103" font-size="10.5" fill="#0066FF" font-weight="800">Coercivity -H_c</text>
+
+          <!-- Saturation point -->
+          <circle cx="300" cy="50" r="3.5" fill="#16A34A"/>
+          <text x="245" y="44" font-size="10" fill="#16A34A" font-weight="700">Saturation (B_s)</text>
+
+          <!-- Material Classification summary table snippet -->
+          <rect x="35" y="145" width="130" height="50" rx="4" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
+          <text x="42" y="160" font-size="9.5" fill="#475569" font-weight="700">Dia: χ &lt; 0, μ_r &lt; 1</text>
+          <text x="42" y="174" font-size="9.5" fill="#475569" font-weight="700">Para: 0 &lt; χ ≪ 1, χ ∝ 1/T</text>
+          <text x="42" y="188" font-size="9.5" fill="#475569" font-weight="700">Ferro: χ ≫ 1, Domain</text>
+        </svg>
+      </div>
+      <div class="formula-block amber">
+        B = μ₀ (H + M) = μ₀ μ_r H | χ = M / H<br>
+        Curie's Law (Para): χ = C / T<br>
+        Curie-Weiss Law (Ferro): χ = C / (T - T_c) [T &gt; T_c]
+      </div>
+      <ul class="bullet-list">
+        <li><span class="highlight">Diamagnetism:</span> Paired electrons, negative susceptibility independent of temperature, repelled from stronger to weaker fields.</li>
+        <li><span class="highlight">Paramagnetism:</span> Unpaired spins, weakly attracted, obeys Curie's law (χ ∝ 1/T).</li>
+        <li><span class="highlight">Electromagnets vs Permanent:</span> Soft iron (narrow loop, high retentivity, low coercivity) for electromagnets; Steel/Alnico (broad loop, high coercivity) for permanent magnets.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bar">
+    <span>OurMocks Exam Prep Series · CUET UG Physics Core Diagrams</span>
+    <span>NCERT Class XII Physics · Unit 3: Moving Coil Galvanometer & Materials · Verified Syllabus</span>
+  </div>
+</body>
+</html>

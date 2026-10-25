@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1440, height=880">
+  <title>Magnetic Fields, Biot-Savart & Lorentz Force Dynamics</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 1440px;
+      height: 880px;
+      background-color: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0F172A;
+      padding: 32px 40px;
+      overflow: hidden;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 24px;
+      border-bottom: 2px solid #E2E8F0;
+      padding-bottom: 16px;
+    }
+    .title-group h1 {
+      font-size: 26px;
+      font-weight: 800;
+      color: #0F2C59;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+    .title-group p {
+      font-size: 14px;
+      color: #64748B;
+      font-weight: 500;
+    }
+    .badge {
+      background: #0066FF;
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      height: calc(100% - 110px);
+    }
+    .card {
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      border-radius: 14px;
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+      position: relative;
+    }
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      border-radius: 14px 14px 0 0;
+    }
+    .card-1::before { background: #0066FF; }
+    .card-2::before { background: #0EA5E9; }
+    .card-3::before { background: #8B5CF6; }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+    .card-title {
+      font-size: 17px;
+      font-weight: 800;
+      color: #0F2C59;
+    }
+    .tag {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+      text-transform: uppercase;
+    }
+    .tag-blue { background: #EFF6FF; color: #0066FF; }
+    .tag-cyan { background: #F0F9FF; color: #0284C7; }
+    .tag-purple { background: #F5F3FF; color: #7C3AED; }
+
+    .svg-container {
+      width: 100%;
+      height: 240px;
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 10px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .formula-block {
+      background: #F1F5F9;
+      border-left: 3px solid #0066FF;
+      padding: 10px 14px;
+      border-radius: 0 6px 6px 0;
+      font-family: "SF Mono", Consolas, Menlo, monospace;
+      font-size: 12px;
+      color: #0F172A;
+      margin-bottom: 12px;
+      line-height: 1.5;
+    }
+    .formula-block.cyan { border-left-color: #0EA5E9; }
+    .formula-block.purple { border-left-color: #8B5CF6; }
+
+    .bullet-list {
+      list-style: none;
+      font-size: 12.5px;
+      color: #334155;
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .bullet-list li {
+      position: relative;
+      padding-left: 16px;
+    }
+    .bullet-list li::before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      color: #0066FF;
+      font-weight: 800;
+    }
+    .card-2 .bullet-list li::before { color: #0EA5E9; }
+    .card-3 .bullet-list li::before { color: #8B5CF6; }
+
+    .highlight {
+      font-weight: 700;
+      color: #0F2C59;
+    }
+    .footer-bar {
+      margin-top: 14px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: #94A3B8;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="title-group">
+      <h1>Magnetic Effects of Current: Biot-Savart, Ampere's Law & Lorentz Force</h1>
+      <p>NCERT Class XII Physics · Unit 3 (Chapter 4) · Field Generation, Circuital Integrals & Trajectory Dynamics</p>
+    </div>
+    <div class="badge">CUET UG Physics · Unit 3</div>
+  </div>
+
+  <div class="grid">
+    <!-- Card 1: Biot-Savart Law & Circular Loop -->
+    <div class="card card-1">
+      <div class="card-header">
+        <div class="card-title">1. Biot-Savart Law & Circular Coil</div>
+        <div class="tag tag-blue">Current Elements</div>
+      </div>
+      <div class="svg-container">
+        <svg viewBox="0 0 380 220" width="370" height="210">
+          <!-- Background coordinate grid -->
+          <line x1="20" y1="110" x2="360" y2="110" stroke="#CBD5E1" stroke-dasharray="4" stroke-width="1.2"/>
+          <text x="350" y="102" font-size="11" fill="#64748B" font-weight="700">x-axis</text>
+
+          <!-- Circular Loop in y-z plane (drawn as ellipse) -->
+          <ellipse cx="100" cy="110" rx="36" ry="65" fill="none" stroke="#0066FF" stroke-width="3"/>
+          <!-- Current direction arrows -->
+          <polygon points="100,43 108,45 100,49" fill="#0066FF"/>
+          <text x="106" y="38" font-size="12" fill="#0066FF" font-weight="800">I</text>
+
+          <!-- Radius R -->
+          <line x1="100" y1="110" x2="100" y2="45" stroke="#64748B" stroke-width="1.5" stroke-dasharray="3"/>
+          <text x="84" y="82" font-size="11" fill="#475569" font-weight="700">R</text>
+
+          <!-- Axial Point P -->
+          <circle cx="250" cy="110" r="4.5" fill="#0F2C59"/>
+          <text x="245" y="130" font-size="11" fill="#0F2C59" font-weight="800">P (x, 0, 0)</text>
+
+          <!-- Distance r to dl -->
+          <line x1="100" y1="45" x2="250" y2="110" stroke="#94A3B8" stroke-width="1.5"/>
+          <text x="170" y="70" font-size="11" fill="#64748B" font-weight="700">r = √(R² + x²)</text>
+
+          <!-- Distance x -->
+          <line x1="100" y1="145" x2="250" y2="145" stroke="#64748B" stroke-width="1"/>
+          <line x1="100" y1="140" x2="100" y2="150" stroke="#64748B" stroke-width="1"/>
+          <line x1="250" y1="140" x2="250" y2="150" stroke="#64748B" stroke-width="1"/>
+          <text x="170" y="160" font-size="11" fill="#475569" font-weight="700">x</text>
+
+          <!-- Field vector B at P -->
+          <line x1="250" y1="110" x2="330" y2="110" stroke="#DC2626" stroke-width="2.5"/>
+          <polygon points="330,110 320,105 320,115" fill="#DC2626"/>
+          <text x="270" y="98" font-size="13" fill="#DC2626" font-weight="800">B_axial</text>
+
+          <!-- Center field note -->
+          <text x="40" y="195" font-size="11" fill="#0066FF" font-weight="700">B_center = μ₀ I / (2R)</text>
+          <text x="220" y="195" font-size="11" fill="#DC2626" font-weight="700">B_ax ∝ 1/x³ (x ≫ R)</text>
+        </svg>
+      </div>
+      <div class="formula-block">
+        dB = (μ₀ / 4π) · (I dl × r̂) / r²<br>
+        B_axial = [μ₀ N I R²] / [2 (R² + x²)^(3/2)]<br>
+        B_center = (μ₀ N I) / (2R)
+      </div>
+      <ul class="bullet-list">
+        <li><span class="highlight">Current Element (I dl):</span> Vector source of magnetic field; direction along instantaneous current.</li>
+        <li><span class="highlight">Inverse Square Attenuation:</span> Field scales as 1/r²; strictly perpendicular to both dl and position vector r.</li>
+        <li><span class="highlight">Axial Behavior:</span> Near center (x ≪ R), B varies quadratically; far along axis (x ≫ R), B mimics magnetic dipole: B = (μ₀ / 4π)·(2M / x³).</li>
+      </ul>
+    </div>
+
+    <!-- Card 2: Ampere's Law & Solenoid -->
+    <div class="card card-2">
+      <div class="card-header">
+        <div class="card-title">2. Ampere's Law & Solenoid</div>
+        <div class="tag tag-cyan">Circuital Theorems</div>
+      </div>
+      <div class="svg-container">
+        <svg viewBox="0 0 380 220" width="370" height="210">
+          <!-- Solenoid representation -->
+          <rect x="50" y="60" width="280" height="90" rx="8" fill="#F0FDF4" stroke="#16A34A" stroke-width="1.5" stroke-dasharray="4"/>
+          <text x="140" y="48" font-size="12" fill="#16A34A" font-weight="800">Ideal Long Solenoid (n turns/m)</text>
+
+          <!-- Solenoid windings top (out of page) -->
+          <g fill="#0284C7">
+            <circle cx="80" cy="60" r="5"/><circle cx="120" cy="60" r="5"/><circle cx="160" cy="60" r="5"/>
+            <circle cx="200" cy="60" r="5"/><circle cx="240" cy="60" r="5"/><circle cx="280" cy="60" r="5"/>
+          </g>
+          <g fill="#FFFFFF">
+            <circle cx="80" cy="60" r="2"/><circle cx="120" cy="60" r="2"/><circle cx="160" cy="60" r="2"/>
+            <circle cx="200" cy="60" r="2"/><circle cx="240" cy="60" r="2"/><circle cx="280" cy="60" r="2"/>
+          </g>
+          <text x="295" y="64" font-size="10" fill="#0284C7" font-weight="700">⊙ Current OUT</text>
+
+          <!-- Solenoid windings bottom (into page) -->
+          <g fill="#0284C7">
+            <circle cx="80" cy="150" r="5"/><circle cx="120" cy="150" r="5"/><circle cx="160" cy="150" r="5"/>
+            <circle cx="200" cy="150" r="5"/><circle cx="240" cy="150" r="5"/><circle cx="280" cy="150" r="5"/>
+          </g>
+          <g stroke="#FFFFFF" stroke-width="1.5">
+            <line x1="77" y1="147" x2="83" y2="153"/><line x1="83" y1="147" x2="77" y2="153"/>
+            <line x1="117" y1="147" x2="123" y2="153"/><line x1="123" y1="147" x2="117" y2="153"/>
+            <line x1="157" y1="147" x2="163" y2="153"/><line x1="163" y1="147" x2="157" y2="153"/>
+            <line x1="197" y1="147" x2="203" y2="153"/><line x1="203" y1="147" x2="197" y2="153"/>
+            <line x1="237" y1="147" x2="243" y2="153"/><line x1="243" y1="147" x2="237" y2="153"/>
+            <line x1="277" y1="147" x2="283" y2="153"/><line x1="283" y1="147" x2="277" y2="153"/>
+          </g>
+          <text x="295" y="154" font-size="10" fill="#0284C7" font-weight="700">⊗ Current IN</text>
+
+          <!-- Uniform Field Lines inside -->
+          <line x1="70" y1="95" x2="300" y2="95" stroke="#0066FF" stroke-width="2.2"/>
+          <polygon points="200,95 190,90 190,100" fill="#0066FF"/>
+
+          <line x1="70" y1="115" x2="300" y2="115" stroke="#0066FF" stroke-width="2.2"/>
+          <polygon points="200,115 190,110 190,120" fill="#0066FF"/>
+
+          <text x="130" y="110" font-size="13" fill="#0066FF" font-weight="800">B_inside = μ₀ n I (Uniform)</text>
+          <text x="145" y="180" font-size="11" fill="#64748B" font-weight="700">B_outside ≈ 0 | B_end = ½ μ₀ n I</text>
+        </svg>
+      </div>
+      <div class="formula-block cyan">
+        ∮ B · dl = μ₀ · I_enc<br>
+        Straight Wire: B = (μ₀ I) / (2π r)<br>
+        Solenoid: B_core = μ₀ n I | B_end = ½ μ₀ n I
+      </div>
+      <ul class="bullet-list">
+        <li><span class="highlight">Ampere's Circuital Law:</span> Valid for steady currents; requires high geometric symmetry for analytic solution.</li>
+        <li><span class="highlight">Long Straight Wire:</span> Concentric circular field lines; right-hand thumb rule sets orientation.</li>
+        <li><span class="highlight">Core Uniformity:</span> Inside a long solenoid, field lines are intensely dense, parallel, and uniform; exterior leakage field is virtually zero.</li>
+      </ul>
+    </div>
+
+    <!-- Card 3: Lorentz Force & Trajectories -->
+    <div class="card card-3">
+      <div class="card-header">
+        <div class="card-title">3. Lorentz Force & Motion</div>
+        <div class="tag tag-purple">Particle Dynamics</div>
+      </div>
+      <div class="svg-container">
+        <svg viewBox="0 0 380 220" width="370" height="210">
+          <!-- Magnetic field grid into page -->
+          <g fill="#CBD5E1" font-size="12" font-family="monospace">
+            <text x="40" y="40">×</text><text x="100" y="40">×</text><text x="160" y="40">×</text><text x="220" y="40">×</text><text x="280" y="40">×</text><text x="340" y="40">×</text>
+            <text x="40" y="80">×</text><text x="100" y="80">×</text><text x="160" y="80">×</text><text x="220" y="80">×</text><text x="280" y="80">×</text><text x="340" y="80">×</text>
+            <text x="40" y="120">×</text><text x="100" y="120">×</text><text x="160" y="120">×</text><text x="220" y="120">×</text><text x="280" y="120">×</text><text x="340" y="120">×</text>
+            <text x="40" y="160">×</text><text x="100" y="160">×</text><text x="160" y="160">×</text><text x="220" y="160">×</text><text x="280" y="160">×</text><text x="340" y="160">×</text>
+            <text x="40" y="200">×</text><text x="100" y="200">×</text><text x="160" y="200">×</text><text x="220" y="200">×</text><text x="280" y="200">×</text><text x="340" y="200">×</text>
+          </g>
+          <text x="260" y="25" font-size="11" fill="#64748B" font-weight="700">B (into page: ⊗)</text>
+
+          <!-- Circular Path (v ⊥ B) -->
+          <circle cx="140" cy="120" r="55" fill="none" stroke="#8B5CF6" stroke-width="2.2" stroke-dasharray="4"/>
+          <!-- Particle -->
+          <circle cx="140" cy="65" r="6" fill="#7C3AED"/>
+          <text x="135" y="69" font-size="10" fill="#FFFFFF" font-weight="800">+</text>
+
+          <!-- Velocity vector v -->
+          <line x1="140" y1="65" x2="195" y2="65" stroke="#0EA5E9" stroke-width="2.5"/>
+          <polygon points="195,65 185,60 185,70" fill="#0EA5E9"/>
+          <text x="175" y="55" font-size="11" fill="#0EA5E9" font-weight="800">v</text>
+
+          <!-- Force vector F toward center -->
+          <line x1="140" y1="65" x2="140" y2="105" stroke="#EF4444" stroke-width="2.5"/>
+          <polygon points="140,105 135,95 145,95" fill="#EF4444"/>
+          <text x="145" y="92" font-size="11" fill="#EF4444" font-weight="800">F_m</text>
+
+          <!-- Center mark -->
+          <circle cx="140" cy="120" r="2.5" fill="#64748B"/>
+          <text x="105" y="125" font-size="11" fill="#7C3AED" font-weight="700">r = mv / qB</text>
+
+          <!-- Velocity selector annotation -->
+          <rect x="235" y="85" width="130" height="70" rx="6" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2"/>
+          <text x="245" y="105" font-size="11" fill="#0F2C59" font-weight="800">Velocity Selector</text>
+          <text x="245" y="123" font-size="10.5" fill="#475569">qE = qvB  ⟹</text>
+          <text x="245" y="142" font-size="12" fill="#7C3AED" font-weight="800">v = E / B (Undeviated)</text>
+        </svg>
+      </div>
+      <div class="formula-block purple">
+        F = q (E + v × B)<br>
+        Circular Radius: r = (m v_⊥) / (q B)<br>
+        Period: T = (2π m) / (q B) | Pitch: p = v_∥ · T
+      </div>
+      <ul class="bullet-list">
+        <li><span class="highlight">Magnetic Work is Zero:</span> Since F_m ⊥ v, instantaneous power P = F · v = 0; magnetic field alters direction only, never kinetic energy.</li>
+        <li><span class="highlight">Helical Trajectory:</span> When v is at angle θ to B, component v_∥ = v cos θ yields translation, v_⊥ = v sin θ yields gyration.</li>
+        <li><span class="highlight">Cyclotron Frequency:</span> f = (q B) / (2π m) is independent of particle speed and orbit radius.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bar">
+    <span>OurMocks Exam Prep Series · CUET UG Physics Core Diagrams</span>
+    <span>NCERT Class XII Physics · Unit 3: Magnetic Effects of Current · Verified Syllabus Architecture</span>
+  </div>
+</body>
+</html>

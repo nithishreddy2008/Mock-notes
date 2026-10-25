@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1440, height=880">
+  <title>Magnetic Effects of Current & Magnetism Master Synthesis Mindmap</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 1440px;
+      height: 880px;
+      background-color: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0F172A;
+      padding: 24px 36px;
+      overflow: hidden;
+      position: relative;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 16px;
+      border-bottom: 2px solid #E2E8F0;
+      padding-bottom: 12px;
+    }
+    .title-group h1 {
+      font-size: 24px;
+      font-weight: 800;
+      color: #0F2C59;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+    .title-group p {
+      font-size: 13px;
+      color: #64748B;
+      font-weight: 500;
+    }
+    .badge {
+      background: #0066FF;
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .mindmap-canvas {
+      width: 100%;
+      height: calc(100% - 90px);
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: stretch;
+    }
+
+    .svg-connectors {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Central Hub */
+    .central-hub {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 250px;
+      background: linear-gradient(135deg, #0F2C59 0%, #0066FF 100%);
+      color: white;
+      border-radius: 16px;
+      padding: 22px 18px;
+      text-align: center;
+      box-shadow: 0 10px 25px -5px rgba(15, 44, 89, 0.35);
+      border: 2px solid #93C5FD;
+      z-index: 10;
+    }
+    .central-hub .sub-label {
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      color: #93C5FD;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .central-hub .hub-title {
+      font-size: 17px;
+      font-weight: 800;
+      line-height: 1.25;
+      margin-bottom: 6px;
+    }
+    .central-hub .hub-desc {
+      font-size: 11px;
+      color: #E2E8F0;
+      line-height: 1.4;
+    }
+
+    /* Mindmap Column Containers */
+    .column-left, .column-right {
+      width: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      z-index: 5;
+    }
+
+    .mm-card {
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      border-radius: 12px;
+      padding: 12px 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+      position: relative;
+    }
+    .mm-card::before {
+      content: "";
+      position: absolute;
+      top: 0; bottom: 0; left: 0;
+      width: 4px;
+      border-radius: 12px 0 0 12px;
+    }
+
+    .c1::before { background: #0066FF; }
+    .c2::before { background: #0EA5E9; }
+    .c3::before { background: #D97706; }
+    .c4::before { background: #8B5CF6; }
+    .c5::before { background: #16A34A; }
+    .c6::before { background: #E11D48; }
+
+    .card-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+    .card-title-row h3 {
+      font-size: 13.5px;
+      font-weight: 800;
+      color: #0F2C59;
+    }
+    .card-tag {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+    .tag-blue { background: #EFF6FF; color: #0066FF; }
+    .tag-cyan { background: #F0F9FF; color: #0284C7; }
+    .tag-amber { background: #FFFBEB; color: #D97706; }
+    .tag-purple { background: #F5F3FF; color: #7C3AED; }
+    .tag-green { background: #F0FDF4; color: #16A34A; }
+    .tag-rose { background: #FFF1F2; color: #E11D48; }
+
+    .mm-list {
+      list-style: none;
+      font-size: 11px;
+      color: #334155;
+      line-height: 1.45;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .mm-list li {
+      position: relative;
+      padding-left: 13px;
+    }
+    .mm-list li::before {
+      content: "▪";
+      position: absolute;
+      left: 0;
+      color: #64748B;
+    }
+    .c1 .mm-list li::before { color: #0066FF; }
+    .c2 .mm-list li::before { color: #0EA5E9; }
+    .c3 .mm-list li::before { color: #D97706; }
+    .c4 .mm-list li::before { color: #8B5CF6; }
+    .c5 .mm-list li::before { color: #16A34A; }
+    .c6 .mm-list li::before { color: #E11D48; }
+
+    .formula-tag {
+      font-family: "SF Mono", Consolas, monospace;
+      font-weight: 700;
+      color: #0F172A;
+      background: #F1F5F9;
+      padding: 1px 4px;
+      border-radius: 3px;
+    }
+
+    .footer-bar {
+      margin-top: 10px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 10.5px;
+      color: #94A3B8;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="title-group">
+      <h1>Unit 3: Magnetic Effects of Current & Magnetism Master Mindmap</h1>
+      <p>Biot-Savart Law, Ampere's Theorem, Lorentz Dynamics, Current Dipoles, Galvanometer Conversions & Magnetic Materials</p>
+    </div>
+    <div class="badge">CUET UG Physics · Unit 3</div>
+  </div>
+
+  <div class="mindmap-canvas">
+    <!-- SVG Connector Lines -->
+    <svg class="svg-connectors" viewBox="0 0 1368 720">
+      <!-- To Top-Left (Card 1) -->
+      <path d="M 560,340 C 470,280 440,140 400,100" fill="none" stroke="#93C5FD" stroke-width="2.2" stroke-dasharray="5"/>
+      <!-- To Mid-Left (Card 2) -->
+      <path d="M 560,360 C 470,360 440,360 400,360" fill="none" stroke="#7DD3FC" stroke-width="2.2" stroke-dasharray="5"/>
+      <!-- To Bot-Left (Card 3) -->
+      <path d="M 560,380 C 470,440 440,580 400,620" fill="none" stroke="#FDE68A" stroke-width="2.2" stroke-dasharray="5"/>
+
+      <!-- To Top-Right (Card 4) -->
+      <path d="M 808,340 C 900,280 930,140 970,100" fill="none" stroke="#C4B5FD" stroke-width="2.2" stroke-dasharray="5"/>
+      <!-- To Mid-Right (Card 5) -->
+      <path d="M 808,360 C 900,360 930,360 970,360" fill="none" stroke="#86EFAC" stroke-width="2.2" stroke-dasharray="5"/>
+      <!-- To Bot-Right (Card 6) -->
+      <path d="M 808,380 C 900,440 930,580 970,620" fill="none" stroke="#FDA4AF" stroke-width="2.2" stroke-dasharray="5"/>
+    </svg>
+
+    <!-- Left Column (Cards 1, 2, 3) -->
+    <div class="column-left">
+      <!-- Branch 1: Biot-Savart & Circular Loop -->
+      <div class="mm-card c1">
+        <div class="card-title-row">
+          <h3>1. Biot-Savart Law & Circular Coil</h3>
+          <span class="card-tag tag-blue">Current Elements</span>
+        </div>
+        <ul class="mm-list">
+          <li><b>Biot-Savart Formula:</b> <span class="formula-tag">dB = (μ₀/4π)(I dl × r̂)/r²</span></li>
+          <li><b>Center of Circular Coil:</b> <span class="formula-tag">B_center = (μ₀ N I) / (2R)</span></li>
+          <li><b>Axial Field:</b> <span class="formula-tag">B_ax = [μ₀ N I R²] / [2(R² + x²)^(3/2)]</span></li>
+          <li><b>Far Axial Dipole:</b> For <span class="formula-tag">x ≫ R</span>, mimics dipole <span class="formula-tag">B = (μ₀/4π)(2M / x³)</span></li>
+          <li><b>Right-Hand Palm Rule:</b> Fingers along current, thumb gives magnetic field.</li>
+        </ul>
+      </div>
+
+      <!-- Branch 2: Ampere's Law & Parallel Conductors -->
+      <div class="mm-card c2">
+        <div class="card-title-row">
+          <h3>2. Ampere's Law & Conductor Forces</h3>
+          <span class="card-tag tag-cyan">Circuital Laws</span>
+        </div>
+        <ul class="mm-list">
+          <li><b>Ampere's Circuital Law:</b> <span class="formula-tag">∮ B · dl = μ₀ · I_enc</span></li>
+          <li><b>Long Straight Wire:</b> <span class="formula-tag">B = (μ₀ I) / (2π r)</span></li>
+          <li><b>Solenoid:</b> Core field <span class="formula-tag">B = μ₀ n I</span>; End field <span class="formula-tag">B_end = ½ μ₀ n I</span></li>
+          <li><b>Force on Current:</b> <span class="formula-tag">F = I (L × B) = I L B sin θ</span></li>
+          <li><b>Parallel Wires:</b> Force per length <span class="formula-tag">f = (μ₀ I₁ I₂) / (2π d)</span>. Like attract, opposite repel (1 A = 2×10⁻⁷ N/m).</li>
+        </ul>
+      </div>
+
+      <!-- Branch 3: Lorentz Force & Trajectories -->
+      <div class="mm-card c3">
+        <div class="card-title-row">
+          <h3>3. Lorentz Force & Particle Motion</h3>
+          <span class="card-tag tag-amber">Particle Dynamics</span>
+        </div>
+        <ul class="mm-list">
+          <li><b>Lorentz Equation:</b> <span class="formula-tag">F = q (E + v × B)</span>; magnetic force <span class="formula-tag">F_m = q (v × B)</span></li>
+          <li><b>Zero Work Invariant:</b> <span class="formula-tag">F_m ⊥ v ⟹ P = 0</span>; KE remains strictly constant.</li>
+          <li><b>Circular Orbit (v ⊥ B):</b> Radius <span class="formula-tag">r = (m v) / (q B)</span>; Period <span class="formula-tag">T = (2π m) / (q B)</span></li>
+          <li><b>Helical Path (angle θ):</b> Pitch <span class="formula-tag">p = v_∥ · T = (2π m v cos θ) / (q B)</span></li>
+          <li><b>Velocity Selector:</b> Crossed fields select <span class="formula-tag">v = E / B</span> undeviated.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Central Hub -->
+    <div class="central-hub">
+      <div class="sub-label">CUET UG Physics Core</div>
+      <div class="hub-title">Unit 3: Magnetic Effects & Magnetism</div>
+      <div class="hub-desc">Fields, Circuital Integrals, Particle Dynamics, Instruments & Material Magnetism</div>
+    </div>
+
+    <!-- Right Column (Cards 4, 5, 6) -->
+    <div class="column-right">
+      <!-- Branch 4: Magnetic Dipole & Bar Magnet -->
+      <div class="mm-card c4">
+        <div class="card-title-row">
+          <h3>4. Magnetic Dipole & Bar Magnet</h3>
+          <span class="card-tag tag-purple">Dipole Physics</span>
+        </div>
+        <ul class="mm-list">
+          <li><b>Current Loop Dipole:</b> <span class="formula-tag">M = N I A</span> (vector normal to loop plane).</li>
+          <li><b>Bohr Magneton:</b> Minimum atomic moment <span class="formula-tag">μ_B = (e ℏ) / (2 m_e) ≈ 9.27×10⁻²⁴ A·m²</span></li>
+          <li><b>Torque on Dipole:</b> <span class="formula-tag">τ = M × B = M B sin θ</span> (stable at 0°, unstable at 180°).</li>
+          <li><b>Potential Energy:</b> <span class="formula-tag">U = - M · B = - M B cos θ</span>; Work <span class="formula-tag">W = M B(cos θ₁ - cos θ₂)</span></li>
+          <li><b>Gauss's Law for Magnetism:</b> <span class="formula-tag">∮ B · dA = 0</span> (No magnetic monopoles).</li>
+        </ul>
+      </div>
+
+      <!-- Branch 5: Moving Coil Galvanometer -->
+      <div class="mm-card c5">
+        <div class="card-title-row">
+          <h3>5. Moving Coil Galvanometer & Meters</h3>
+          <span class="card-tag tag-green">Instrument Design</span>
+        </div>
+        <ul class="mm-list">
+          <li><b>Radial Magnetic Field:</b> Concave poles + soft iron core ensure <span class="formula-tag">θ = 90°</span>; <span class="formula-tag">τ = N I A B</span>.</li>
+          <li><b>Linear Deflection:</b> Restoring torque <span class="formula-tag">C θ = N I A B ⟹ θ = (N A B / C) · I</span></li>
+          <li><b>Current Sensitivity:</b> <span class="formula-tag">I_s = θ / I = (N A B) / C</span> [div/A]</li>
+          <li><b>Ammeter Conversion:</b> Low parallel shunt <span class="formula-tag">S = (I_g G) / (I - I_g)</span>; <span class="formula-tag">R_A ≈ 0</span></li>
+          <li><b>Voltmeter Conversion:</b> High series resistor <span class="formula-tag">R_s = (V / I_g) - G</span>; <span class="formula-tag">R_V ≈ ∞</span></li>
+        </ul>
+      </div>
+
+      <!-- Branch 6: Magnetic Materials & Hysteresis -->
+      <div class="mm-card c6">
+        <div class="card-title-row">
+          <h3>6. Magnetic Properties & Materials</h3>
+          <span class="card-tag tag-rose">Material Physics</span>
+        </div>
+        <ul class="mm-list">
+          <li><b>Permeability & Susceptibility:</b> <span class="formula-tag">B = μ₀ (H + M)</span>; <span class="formula-tag">μ_r = 1 + χ_m</span></li>
+          <li><b>Diamagnetic:</b> <span class="formula-tag">χ &lt; 0, μ_r &lt; 1</span>, repelled from strong fields (Bi, Cu, H₂O, Pb).</li>
+          <li><b>Paramagnetic:</b> <span class="formula-tag">0 &lt; χ ≪ 1, μ_r &gt; 1</span>; Curie's law <span class="formula-tag">χ = C / T</span> (Al, Na, O₂).</li>
+          <li><b>Ferromagnetic:</b> <span class="formula-tag">χ ≫ 1, μ_r ≫ 1</span>, domain structure; Curie-Weiss <span class="formula-tag">χ = C/(T - T_c)</span> (Fe, Ni).</li>
+          <li><b>Hysteresis Loop:</b> Retentivity B_r, Coercivity H_c; Soft iron for electromagnets, Steel/Alnico for permanent magnets.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bar">
+    <span>OurMocks Exam Prep Series · CUET UG Physics Core Diagrams</span>
+    <span>NCERT Class XII Physics · Unit 3: Magnetic Effects & Magnetism · Verified Syllabus Architecture</span>
+  </div>
+</body>
+</html>
