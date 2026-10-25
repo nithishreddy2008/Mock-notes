@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Vijayanagara Empire: Politics, Economy and Architecture — Full Topic Summary Mindmap</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background-color: #071A4D;
+    background-image: 
+      radial-gradient(circle at 10% 15%, rgba(31, 94, 255, 0.18) 0%, transparent 40%),
+      radial-gradient(circle at 90% 85%, rgba(184, 255, 52, 0.12) 0%, transparent 40%),
+      radial-gradient(circle at 50% 50%, rgba(15, 23, 42, 0.6) 0%, transparent 100%);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #F8FAFC;
+    padding: 24px 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+
+  /* Header */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    padding-bottom: 10px;
+  }
+  .badge {
+    background: rgba(184, 255, 52, 0.12);
+    border: 1px solid #B8FF34;
+    color: #B8FF34;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 3px 12px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 4px;
+  }
+  .title {
+    font-size: 23px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: #FFFFFF;
+  }
+  .subtitle {
+    font-size: 12.5px;
+    color: #94A3B8;
+    margin-top: 2px;
+  }
+  .brand-pill {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: 11.5px;
+    color: #E2E8F0;
+    font-weight: 600;
+    text-align: right;
+  }
+  .brand-pill span {
+    color: #B8FF34;
+    display: block;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  /* Mindmap Grid */
+  .mindmap-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 14px;
+    margin-top: 10px;
+    flex-grow: 1;
+  }
+
+  .branch-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 12px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    backdrop-filter: blur(8px);
+    border-top: 3px solid #1F5EFF;
+  }
+
+  .branch-card.hub {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    background: linear-gradient(145deg, rgba(31, 94, 255, 0.15) 0%, rgba(15, 23, 42, 0.8) 100%);
+    border: 1.5px solid rgba(184, 255, 52, 0.4);
+    border-top: 3px solid #B8FF34;
+  }
+
+  .branch-card.b1 { border-top-color: #38BDF8; }
+  .branch-card.b2 { border-top-color: #B8FF34; }
+  .branch-card.b3 { border-top-color: #F59E0B; }
+  .branch-card.b4 { border-top-color: #A855F7; }
+  .branch-card.b5 { border-top-color: #EC4899; }
+
+  .branch-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .branch-title {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #FFFFFF;
+  }
+  .branch-card.hub .branch-title { color: #B8FF34; font-size: 14px; }
+  .branch-card.b1 .branch-title { color: #38BDF8; }
+  .branch-card.b2 .branch-title { color: #B8FF34; }
+  .branch-card.b3 .branch-title { color: #FCD34D; }
+  .branch-card.b4 .branch-title { color: #C084FC; }
+  .branch-card.b5 .branch-title { color: #F472B6; }
+
+  .branch-tag {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    background: rgba(255, 255, 255, 0.08);
+    color: #94A3B8;
+  }
+
+  .bullet-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 11px;
+    line-height: 1.38;
+    color: #CBD5E1;
+  }
+  .bullet-list li {
+    position: relative;
+    padding-left: 13px;
+    word-break: break-word;
+  }
+  .bullet-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+    color: #1F5EFF;
+  }
+  .branch-card.hub .bullet-list li::before { color: #B8FF34; }
+  .branch-card.b1 .bullet-list li::before { color: #38BDF8; }
+  .branch-card.b2 .bullet-list li::before { color: #B8FF34; }
+  .branch-card.b3 .bullet-list li::before { color: #F59E0B; }
+  .branch-card.b4 .bullet-list li::before { color: #A855F7; }
+  .branch-card.b5 .bullet-list li::before { color: #EC4899; }
+
+  .bullet-list strong { color: #FFFFFF; }
+
+  /* Footer */
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 8px;
+    font-size: 11px;
+    color: #64748B;
+  }
+  .footer strong { color: #B8FF34; }
+</style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div>
+      <div class="badge">Comprehensive Topic Map · Themes in Indian History Part II</div>
+      <div class="title">Vijayanagara Empire: Politics, Economy and Architecture (c. 1336 – 1565 CE)</div>
+      <div class="subtitle">Complete chapter architectural framework: dynastic statecraft, military feudalism, hydraulic engineering, and sacred/royal centers</div>
+    </div>
+    <div class="brand-pill">
+      <span>OurMocks Study Visuals</span>
+      CUET UG History · Chapter 7
+    </div>
+  </div>
+
+  <!-- Mindmap Grid -->
+  <div class="mindmap-container">
+
+    <!-- Branch 1: Foundation & Discovery -->
+    <div class="branch-card b1">
+      <div class="branch-header">
+        <div class="branch-title">1. Foundation & Colin Mackenzie</div>
+        <div class="branch-tag">1336 & 1800 CE</div>
+      </div>
+      <ul class="bullet-list">
+        <li><strong>Origins:</strong> Founded in 1336 CE by brothers <strong>Harihara</strong> and <strong>Bukka</strong> of the Sangama dynasty on the Tungabhadra river.</li>
+        <li><strong>Sacred Mythology:</strong> Capital established near sacred hills linked to monkey kingdom (Kishkindha) and shrine of local mother goddess <strong>Pampadevi</strong>.</li>
+        <li><strong>Rediscovery:</strong> Ruins of Hampi brought to light in 1800 by <strong>Colonel Colin Mackenzie</strong> (surveyor and first Surveyor General of India).</li>
+        <li><strong>Foreign Travellers:</strong> Documented by Nicolo de Conti (1420), Abdur Razzaq (1440s), Duarte Barbosa, Domingo Paes, and Fernao Nuniz (16th c.).</li>
+      </ul>
+    </div>
+
+    <!-- Central Hub: Imperial Hegemony -->
+    <div class="branch-card hub">
+      <div class="branch-header">
+        <div class="branch-title">★ Core Axis: Imperial Power & Cultural Synthesis</div>
+        <div class="branch-tag">Statecraft & Divine Kingship</div>
+      </div>
+      <ul class="bullet-list">
+        <li><strong>Hindu Suratrana:</strong> Rulers claimed divine delegation to rule on behalf of guardian deity <strong>Virupaksha</strong>; styled themselves "Sultans among Hindu Kings".</li>
+        <li><strong>Raichur Doab Wars:</strong> Continuous geopolitical contest against Bahmani Sultanate and Deccan Sultanates for control of fertile river basins and ports.</li>
+        <li><strong>Mahanavami Legitimacy:</strong> Rulers asserted ritual sovereignty during the 10-day Autumn Navaratri festival through royal inspection and tribute.</li>
+        <li><strong>Architectural Synthesis:</strong> Blended traditional South Indian Dravidian stone temple traditions with Indo-Islamic vaulted arches and domes.</li>
+      </ul>
+    </div>
+
+    <!-- Branch 2: Dynastic Politics & Krishnadeva Raya -->
+    <div class="branch-card b2">
+      <div class="branch-header">
+        <div class="branch-title">2. Dynasties & Krishnadeva Raya</div>
+        <div class="branch-tag">Zenith to Talikota</div>
+      </div>
+      <ul class="bullet-list">
+        <li><strong>Four Dynasties:</strong> Sangama (1336–1485), Saluva (1485–1505), Tuluva (1505–1570), and Aravidu (1570–1646).</li>
+        <li><strong>Krishnadeva Raya (r. 1509–1529):</strong> Greatest Tuluva ruler; captured Raichur doab (1512); authored political treatise <strong>Amuktamalyada</strong> in Telugu.</li>
+        <li><strong>Patronage & Townships:</strong> Built the suburb <strong>Nagalapuram</strong> (named after mother); constructed the hall and Eastern Gopuram of Virupaksha temple.</li>
+        <li><strong>Battle of Talikota (1565):</strong> Allied Deccan Sultans (Bijapur, Golconda, Ahmadnagar) routed Rama Raya's army at Rakshasi-Tangadi; city destroyed.</li>
+      </ul>
+    </div>
+
+    <!-- Branch 3: Military & Amaranayakas -->
+    <div class="branch-card b3">
+      <div class="branch-header">
+        <div class="branch-title">3. Amaranayaka Feudal System</div>
+        <div class="branch-tag">Military Administration</div>
+      </div>
+      <ul class="bullet-list">
+        <li><strong>Amaranayaka Framework:</strong> Derived from Sultanate *Iqta* system; military chiefs (*nayakas*) administered designated territories (*amaram*).</li>
+        <li><strong>Taxes & Obligations:</strong> Collected revenue from peasants; maintained stipulated contingent of cavalry, war horses, and war elephants.</li>
+        <li><strong>Imperial Control:</strong> Sent annual cash tribute; personally attended court at Mahanavami with gifts; king exercised power to transfer them.</li>
+        <li><strong>War Horse Trade:</strong> Critical reliance on imported Arabian horses; managed by local merchants (<em>kudirai chettis</em>) and Portuguese traders.</li>
+      </ul>
+    </div>
+
+    <!-- Branch 4: Hydraulic Grid & Walls -->
+    <div class="branch-card b4">
+      <div class="branch-header">
+        <div class="branch-title">4. Hydraulic & Defensive Grid</div>
+        <div class="branch-tag">7 Concentric Walls</div>
+      </div>
+      <ul class="bullet-list">
+        <li><strong>Tungabhadra Basin:</strong> Natural amphitheater surrounded by granite boulder hills; seasonal rainwater streams dammed into reservoirs.</li>
+        <li><strong>Canals & Tanks:</strong> <strong>Kamalapuram tank</strong> irrigated fields and piped water to Royal Centre; <strong>Hiriya canal</strong> watered the central valley.</li>
+        <li><strong>Seven Lines of Forts:</strong> Abdur Razzaq noted walls encircling not just the citadel, but agricultural fields, orchards, and forests to resist sieges.</li>
+        <li><strong>Dry Masonry:</strong> Built with wedge-shaped granite stones using mortice-and-tenon joints without any mortar or cementing paste.</li>
+      </ul>
+    </div>
+
+    <!-- Branch 5: Architecture: Sacred & Royal -->
+    <div class="branch-card b5">
+      <div class="branch-header">
+        <div class="branch-title">5. Sacred & Royal Architecture</div>
+        <div class="branch-tag">Temples & Palaces</div>
+      </div>
+      <ul class="bullet-list">
+        <li><strong>Virupaksha Temple:</strong> Ancient Shaivite shrine; pillared hall used for marriage of deities; central painted ceilings.</li>
+        <li><strong>Vitthala Temple:</strong> Dedicated to Vishnu; iconic monolithic <strong>Stone Chariot</strong> and 56 musical acoustic pillars.</li>
+        <li><strong>Mahanavami Dibba:</strong> Massive 40-ft high stone platform (11,000 sq ft) with carved bas-reliefs of horse riders, dancers, and elephants.</li>
+        <li><strong>Secular Palaces:</strong> <strong>Lotus Mahal</strong> (council chamber with cusped arches), vaulted <strong>Elephant Stables</strong>, and <strong>Hazara Rama</strong> temple.</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div><strong>Exam Blueprint:</strong> Master Colin Mackenzie's discovery, Krishnadeva Raya's achievements, the Amaranayaka system, and the 7-tier fortification network.</div>
+    <div>1st Surveyor: <strong>Colin Mackenzie</strong> · Telugu Text: <strong>Amuktamalyada</strong> · 1565 Battle: <strong>Talikota / Rakshasi-Tangadi</strong> · www.ourmocks.com</div>
+  </div>
+
+</body>
+</html>

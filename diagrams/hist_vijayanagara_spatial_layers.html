@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Spatial Architecture of Vijayanagara: Sacred, Royal & Urban Zones</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background-color: #071A4D;
+    background-image: 
+      radial-gradient(circle at 12% 16%, rgba(31, 94, 255, 0.18) 0%, transparent 40%),
+      radial-gradient(circle at 88% 84%, rgba(184, 255, 52, 0.1) 0%, transparent 40%);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #F8FAFC;
+    padding: 24px 38px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+
+  /* Header */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    padding-bottom: 10px;
+  }
+  .badge {
+    background: rgba(184, 255, 52, 0.12);
+    border: 1px solid #B8FF34;
+    color: #B8FF34;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 3px 12px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 4px;
+  }
+  .title {
+    font-size: 23px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: #FFFFFF;
+  }
+  .subtitle {
+    font-size: 12.5px;
+    color: #94A3B8;
+    margin-top: 2px;
+  }
+  .brand-pill {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: 11.5px;
+    color: #E2E8F0;
+    font-weight: 600;
+    text-align: right;
+  }
+  .brand-pill span {
+    color: #B8FF34;
+    display: block;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  /* 3-Tier Layer Stack */
+  .stack-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 10px;
+    flex-grow: 1;
+  }
+
+  .layer-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 12px 18px;
+    backdrop-filter: blur(8px);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    border-left: 4px solid #1F5EFF;
+  }
+
+  .layer-card.sacred { border-left-color: #38BDF8; }
+  .layer-card.royal { border-left-color: #B8FF34; }
+  .layer-card.urban { border-left-color: #F59E0B; }
+
+  .layer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: 5px;
+  }
+  .layer-title {
+    font-size: 14px;
+    font-weight: 800;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .layer-card.sacred .layer-title { color: #38BDF8; }
+  .layer-card.royal .layer-title { color: #B8FF34; }
+  .layer-card.urban .layer-title { color: #FCD34D; }
+
+  .layer-badge {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.08);
+    color: #CBD5E1;
+    text-transform: uppercase;
+  }
+
+  /* 3-Column Sub-elements Grid */
+  .layer-subgrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 4px;
+  }
+
+  .sub-box {
+    background: rgba(0, 0, 0, 0.22);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+    padding: 8px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .sub-heading {
+    font-size: 11.5px;
+    font-weight: 700;
+    color: #FFFFFF;
+  }
+  .layer-card.sacred .sub-heading { color: #7DD3FC; }
+  .layer-card.royal .sub-heading { color: #BEF264; }
+  .layer-card.urban .sub-heading { color: #FDE68A; }
+
+  .sub-body {
+    font-size: 10.5px;
+    line-height: 1.35;
+    color: #CBD5E1;
+  }
+  .sub-body strong { color: #FFFFFF; }
+
+  /* Footer */
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 8px;
+    font-size: 11px;
+    color: #64748B;
+  }
+  .footer strong { color: #B8FF34; }
+</style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div>
+      <div class="badge">Themes in Indian History Part II · Chapter 7</div>
+      <div class="title">The Spatial Organization of Vijayanagara: Three Concentric Urban Zones</div>
+      <div class="subtitle">Structural layer-stack mapping the Sacred Centre, the Royal Centre, and the Urban Core across Hampi’s topography</div>
+    </div>
+    <div class="brand-pill">
+      <span>OurMocks Study Visuals</span>
+      CUET UG History · Vijayanagara Zones
+    </div>
+  </div>
+
+  <!-- Layer Stack -->
+  <div class="stack-container">
+
+    <!-- Tier 1: The Sacred Centre -->
+    <div class="layer-card sacred">
+      <div class="layer-top">
+        <div class="layer-title">Zone 1 · The Sacred Centre (Northern Riverfront & Rocky Hills)</div>
+        <div class="layer-badge">Gods, Rituals & Dynastic Legitimacy</div>
+      </div>
+      <div class="layer-subgrid">
+        <div class="sub-box">
+          <div class="sub-heading">Virupaksha Temple Complex</div>
+          <div class="sub-body">Ancient shrine of Shiva (Virupaksha), guardian deity of the kingdom. Krishnadeva Raya added the grand <strong>Eastern Gopuram</strong> and pillared central hall in 1509 CE.</div>
+        </div>
+        <div class="sub-box">
+          <div class="sub-heading">Vitthala Temple & Stone Chariot</div>
+          <div class="sub-body">Dedicated to Vishnu (Vitthala) from Maharashtra; features an iconic monolithic <strong>Stone Chariot</strong> sanctum and 56 musical pillars (*sa-re-ga-ma* acoustic resonance).</div>
+        </div>
+        <div class="sub-box">
+          <div class="sub-heading">Raya Gopurams & Bazaar Streets</div>
+          <div class="sub-body">Colossal monumental gateway towers (*Raya Gopurams*) visible from miles away; broad paved temple avenues served as bustling diamond and spice markets.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tier 2: The Royal Centre -->
+    <div class="layer-card royal">
+      <div class="layer-top">
+        <div class="layer-title">Zone 2 · The Royal Centre (Southwestern Administrative & Imperial Enclave)</div>
+        <div class="layer-badge">Power, Ceremonies & Statecraft</div>
+      </div>
+      <div class="layer-subgrid">
+        <div class="sub-box">
+          <div class="sub-heading">Mahanavami Dibba & King's Hall</div>
+          <div class="sub-body">Massive 40-ft high stone ceremonial platform (11,000 sq ft) for the 10-day <strong>Navaratri festival</strong>; military reviews, animal sacrifices, wrestler bouts, and tribute presentation.</div>
+        </div>
+        <div class="sub-box">
+          <div class="sub-heading">Lotus Mahal & Council Pavilion</div>
+          <div class="sub-body">Exquisite Indo-Islamic pavilion named by British officers; features cusped arches and multi-tiered vaults, likely used as an executive council chamber for confidential statecraft.</div>
+        </div>
+        <div class="sub-box">
+          <div class="sub-heading">Hazara Rama & Elephant Stables</div>
+          <div class="sub-body"><strong>Hazara Rama</strong> was reserved exclusively for the royal family with sculpted Ramayana scenes; adjacent grand arched stables housed eleven royal state elephants.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tier 3: The Urban Core & Agricultural Ring -->
+    <div class="layer-card urban">
+      <div class="layer-top">
+        <div class="layer-title">Zone 3 · The Urban Core & Fortified Agricultural Valleys (Outer Perimeter)</div>
+        <div class="layer-badge">Civilian Habitats, Guilds & Hydraulic Defense</div>
+      </div>
+      <div class="layer-subgrid">
+        <div class="sub-box">
+          <div class="sub-heading">Seven Concentric Fort Walls</div>
+          <div class="sub-body">Persian envoy Abdur Razzaq noted <strong>seven concentric rings of walls</strong> constructed from dry interlocking granite blocks, enclosing agricultural fields, gardens, and forests.</div>
+        </div>
+        <div class="sub-box">
+          <div class="sub-heading">Hiriya Canal & Kamalapuram Tank</div>
+          <div class="sub-body">Dam across Tungabhadra diverted water via the <strong>Hiriya Canal</strong> to cultivate the river valley; Kamalapuram tank piped fresh water directly to royal complexes.</div>
+        </div>
+        <div class="sub-box">
+          <div class="sub-heading">Residential Quarters & Shards</div>
+          <div class="sub-body">Excavations revealed fine <strong>Chinese porcelain</strong> in affluent merchant sectors, tombs and mosques in Muslim quarters, and simple mud-thatch homes of peasant artisans.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div><strong>Key Architectural Insight:</strong> Vijayanagara rulers styled themselves <em>Hindu Suratrana</em> ("Sultans among Hindu Kings"), synthesizing indigenous Dravidian and Indo-Islamic styles.</div>
+    <div>Guardian Deity: <strong>Virupaksha</strong> · Mother Goddess: <strong>Pampadevi</strong> · Royal Platform: <strong>Mahanavami Dibba</strong> · 7 Fort Walls: <strong>Abdur Razzaq</strong> · www.ourmocks.com</div>
+  </div>
+
+</body>
+</html>

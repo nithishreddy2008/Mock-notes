@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Vijayanagara Hydraulic & Fortification Grid: Process & Defense Systems</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background-color: #071A4D;
+    background-image: 
+      radial-gradient(circle at 15% 15%, rgba(31, 94, 255, 0.16) 0%, transparent 40%),
+      radial-gradient(circle at 85% 85%, rgba(184, 255, 52, 0.09) 0%, transparent 35%);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #F8FAFC;
+    padding: 24px 38px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+
+  /* Header */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    padding-bottom: 10px;
+  }
+  .badge {
+    background: rgba(184, 255, 52, 0.12);
+    border: 1px solid #B8FF34;
+    color: #B8FF34;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 3px 12px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 4px;
+  }
+  .title {
+    font-size: 23px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: #FFFFFF;
+  }
+  .subtitle {
+    font-size: 12.5px;
+    color: #94A3B8;
+    margin-top: 2px;
+  }
+  .brand-pill {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: 11.5px;
+    color: #E2E8F0;
+    font-weight: 600;
+    text-align: right;
+  }
+  .brand-pill span {
+    color: #B8FF34;
+    display: block;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  /* 4-Step Process Flow */
+  .flow-container {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 10px;
+    flex-grow: 1;
+  }
+
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+  }
+
+  .step-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    backdrop-filter: blur(8px);
+    border-top: 3px solid #1F5EFF;
+  }
+  .step-card.s1 { border-top-color: #38BDF8; }
+  .step-card.s2 { border-top-color: #B8FF34; }
+  .step-card.s3 { border-top-color: #F59E0B; }
+  .step-card.s4 { border-top-color: #EC4899; }
+
+  .step-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: 5px;
+  }
+  .step-idx {
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+  .step-card.s1 .step-idx { color: #38BDF8; }
+  .step-card.s2 .step-idx { color: #B8FF34; }
+  .step-card.s3 .step-idx { color: #FCD34D; }
+  .step-card.s4 .step-idx { color: #F472B6; }
+
+  .step-tag {
+    font-size: 9.5px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.08);
+    color: #94A3B8;
+  }
+
+  .step-name {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #FFFFFF;
+  }
+  .step-desc {
+    font-size: 11px;
+    line-height: 1.4;
+    color: #CBD5E1;
+  }
+  .step-desc strong { color: #FFFFFF; }
+
+  /* 3 Bottom Synthesis Panels */
+  .panels-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 14px;
+    margin-top: 4px;
+  }
+
+  .panel-box {
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    padding: 12px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    border-left: 3px solid #1F5EFF;
+  }
+  .panel-box.p1 { border-left-color: #F59E0B; }
+  .panel-box.p2 { border-left-color: #A855F7; }
+  .panel-box.p3 { border-left-color: #B8FF34; }
+
+  .panel-title {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .panel-box.p1 .panel-title { color: #FCD34D; }
+  .panel-box.p2 .panel-title { color: #C084FC; }
+  .panel-box.p3 .panel-title { color: #BEF264; }
+
+  .panel-body {
+    font-size: 11px;
+    line-height: 1.38;
+    color: #CBD5E1;
+  }
+  .panel-body strong { color: #FFFFFF; }
+
+  /* Footer */
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 8px;
+    font-size: 11px;
+    color: #64748B;
+  }
+  .footer strong { color: #B8FF34; }
+</style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div>
+      <div class="badge">Themes in Indian History Part II · Chapter 7</div>
+      <div class="title">Vijayanagara Hydraulic & Fortification Grid: Process & Defense Systems</div>
+      <div class="subtitle">Systems flow analyzing how riverine dams, irrigation canals, and 7-tier fortification walls ensured urban survival during long medieval sieges</div>
+    </div>
+    <div class="brand-pill">
+      <span>OurMocks Study Visuals</span>
+      CUET UG History · Hydraulic & Defense
+    </div>
+  </div>
+
+  <!-- Flow Container -->
+  <div class="flow-container">
+
+    <!-- 4-Step Process Grid -->
+    <div class="process-steps">
+
+      <!-- Step 1 -->
+      <div class="step-card s1">
+        <div class="step-header">
+          <div class="step-idx">Stage 1 · Catchment</div>
+          <div class="step-tag">Natural Basin</div>
+        </div>
+        <div class="step-name">Tungabhadra River Basin</div>
+        <div class="step-desc">
+          The natural granite hill amphitheater formed a rugged natural fortress. Rulers constructed stone embankments across rainwater streams flowing down into the river to form catchment reservoirs.
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="step-card s2">
+        <div class="step-header">
+          <div class="step-idx">Stage 2 · Distribution</div>
+          <div class="step-tag">Canals & Tanks</div>
+        </div>
+        <div class="step-name">Hiriya Canal & Kamalapuram</div>
+        <div class="step-desc">
+          <strong>Kamalapuram tank</strong> stored water for paddy fields and piped supplies to the Royal Centre; the <strong>Hiriya canal</strong> diverted river water across dams to irrigate the central agricultural valley.
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="step-card s3">
+        <div class="step-header">
+          <div class="step-idx">Stage 3 · Fortification</div>
+          <div class="step-tag">7 Concentric Walls</div>
+        </div>
+        <div class="step-name">Enclosing Agriculture</div>
+        <div class="step-desc">
+          First tier of walls linked rocky hills to enclose vast swathes of cultivated fields, orchards, and canals. Subsequent tiers encircled the urban quarters and the royal palaces.
+        </div>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="step-card s4">
+        <div class="step-header">
+          <div class="step-idx">Stage 4 · Defense</div>
+          <div class="step-tag">Anti-Starvation</div>
+        </div>
+        <div class="step-name">Siege Immunity</div>
+        <div class="step-desc">
+          Besieging armies could not starve the capital into submission because massive food supplies and perennial freshwater were protected securely inside the fortified perimeter.
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 3 Bottom Panels -->
+    <div class="panels-row">
+
+      <div class="panel-box p1">
+        <div class="panel-title">1. Why Enclose Agricultural Fields?</div>
+        <div class="panel-body">
+          Medieval sieges often lasted months or years. Traditional rulers stored grain in silos, but Vijayanagara incorporated living agricultural fields and perennial canals directly within its defensive walls to guarantee self-sufficiency.
+        </div>
+      </div>
+
+      <div class="panel-box p2">
+        <div class="panel-title">2. Dry Masonry & Interlocking Joints</div>
+        <div class="panel-body">
+          No mortar or cementing agent was used. Giant granite blocks were wedge-shaped and fitted seamlessly using <strong>mortice-and-tenon interlocking joints</strong>, with earthen rubble packed between stone faces for artillery absorption.
+        </div>
+      </div>
+
+      <div class="panel-box p3">
+        <div class="panel-title">3. European & Persian Testimonies</div>
+        <div class="panel-body">
+          Persian envoy <strong>Abdur Razzaq</strong> marveled that between the 1st and 3rd walls were cultivated fields and gardens; Portuguese visitor <strong>Domingo Paes</strong> noted that rice and wheat grew inside the city.
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div><strong>Key Strategic Innovation:</strong> Enclosing the agricultural base inside the perimeter walls neutralized the primary weapon of medieval siege warfare: famine.</div>
+    <div>River: <strong>Tungabhadra</strong> · Water Tank: <strong>Kamalapuram</strong> · Valley Canal: <strong>Hiriya</strong> · Eyewitness: <strong>Abdur Razzaq</strong> · www.ourmocks.com</div>
+  </div>
+
+</body>
+</html>
