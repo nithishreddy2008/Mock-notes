@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Typology of World Seaports</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    body {
+      background-color: #F8FAFC;
+      color: #0F172A;
+      width: 1440px;
+      height: 880px;
+      padding: 24px 32px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #CBD5E1;
+    }
+    .brand-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .badge {
+      background-color: #0F172A;
+      color: #CCFF00;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 6px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    h1 {
+      font-size: 20px;
+      font-weight: 800;
+      color: #0F172A;
+      letter-spacing: -0.02em;
+    }
+    .subtitle {
+      font-size: 12px;
+      color: #64748B;
+      font-weight: 500;
+    }
+    .main-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 12px;
+      margin-bottom: 8px;
+    }
+    .section-title {
+      font-size: 11.5px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #2563EB;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .tier-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    .tier-grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+    .tier-grid-5 {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+    }
+    .port-card {
+      background: #FFFFFF;
+      border: 1.5pt solid #CBD5E1;
+      border-radius: 10px;
+      padding: 12px 14px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .card-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #F1F5F9;
+      padding-bottom: 5px;
+    }
+    .card-title {
+      font-size: 13.5px;
+      font-weight: 800;
+      color: #0F172A;
+    }
+    .tag {
+      font-size: 9.5px;
+      font-weight: 800;
+      padding: 2.5px 6px;
+      border-radius: 4px;
+    }
+    .tag-blue { background: #EFF6FF; color: #1D4ED8; border: 1px solid #BFDBFE; }
+    .tag-green { background: #ECFDF5; color: #047857; border: 1px solid #A7F3D0; }
+    .tag-amber { background: #FFFBEB; color: #B45309; border: 1px solid #FDE68A; }
+    .tag-purple { background: #FAF5FF; color: #7E22CE; border: 1px solid #E9D5FF; }
+    .tag-rose { background: #FFF1F2; color: #BE123C; border: 1px solid #FECDD3; }
+
+    .port-desc {
+      font-size: 11px;
+      color: #334155;
+      line-height: 1.45;
+    }
+    .ex-box {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      padding: 6px 8px;
+      border-radius: 5px;
+      font-size: 10.5px;
+      color: #0F172A;
+      margin-top: 2px;
+    }
+    .ex-label {
+      font-size: 9px;
+      font-weight: 800;
+      color: #64748B;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 2px;
+    }
+    footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 10px;
+      border-top: 1.5pt solid #CBD5E1;
+      font-size: 11px;
+      color: #64748B;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand-title">
+      <span class="badge">OURMOCKS CUET UG</span>
+      <div>
+        <h1>TYPOLOGY OF WORLD SEAPORTS & TRADE GATEWAYS</h1>
+        <p class="subtitle">Classification of Maritime Gateways by Cargo Handled, Geographical Location, and Specialized Function</p>
+      </div>
+    </div>
+    <div style="text-align: right;">
+      <span style="font-size: 11px; font-weight: 700; color: #0F172A;">GEOGRAPHY (313)</span>
+      <p style="font-size: 10.5px; color: #64748B;">Transport, Communication & Trade</p>
+    </div>
+  </header>
+
+  <div class="main-grid">
+    <!-- SECTION 1 -->
+    <div>
+      <div class="section-title">▸ TIER 1: CLASSIFICATION ON THE BASIS OF CARGO HANDLED</div>
+      <div class="tier-grid-3">
+        <div class="port-card">
+          <div class="card-head">
+            <span class="card-title">Industrial Ports</span>
+            <span class="tag tag-amber">BULK RAW CARGO</span>
+          </div>
+          <p class="port-desc">Specialize in handling colossal volumes of loose bulk raw materials like iron ore, metallurgical coal, petroleum, grains, and heavy industrial chemicals.</p>
+          <div class="ex-box">
+            <span class="ex-label">CUET High-Yield Examples</span>
+            <strong>Rotterdam</strong> (crude & coal), <strong>Port Hedland</strong> (Western Australia iron ore), <strong>Dampier</strong> (LNG & minerals).
+          </div>
+        </div>
+
+        <div class="port-card">
+          <div class="card-head">
+            <span class="card-title">Commercial Ports</span>
+            <span class="tag tag-blue">MANUFACTURED GOODS</span>
+          </div>
+          <p class="port-desc">Handle general packaged cargo, consumer goods, engineering machinery, and passenger liners. Equipped with multi-modal road and rail logistics links.</p>
+          <div class="ex-box">
+            <span class="ex-label">CUET High-Yield Examples</span>
+            <strong>London</strong> (general cargo), <strong>Mumbai</strong> (machinery & consumer cargo), <strong>Hamburg</strong> (containerized goods).
+          </div>
+        </div>
+
+        <div class="port-card">
+          <div class="card-head">
+            <span class="card-title">Comprehensive Ports</span>
+            <span class="tag tag-green">INTEGRATED MEGA-HUBS</span>
+          </div>
+          <p class="port-desc">Modern mega-ports combining massive bulk raw material terminals with state-of-the-art containerized freight transshipment on a global maritime scale.</p>
+          <div class="ex-box">
+            <span class="ex-label">CUET High-Yield Examples</span>
+            <strong>Singapore</strong>, <strong>Shanghai</strong>, <strong>Antwerp</strong>, <strong>Rotterdam</strong> (premier global comprehensive ports).
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 2 -->
+    <div>
+      <div class="section-title">▸ TIER 2: CLASSIFICATION ON THE BASIS OF GEOGRAPHICAL LOCATION</div>
+      <div class="tier-grid-2">
+        <div class="port-card">
+          <div class="card-head">
+            <span class="card-title">Inland Ports (Riverine & Canal Ports)</span>
+            <span class="tag tag-purple">INTERIOR WATERWAY LINK</span>
+          </div>
+          <p class="port-desc">Located far inland away from the open sea coast; connected to the ocean via navigable rivers or engineered ship canals. Cargo arrives via specialized flat-bottom river barges and ocean-going shallow river vessels.</p>
+          <div class="ex-box">
+            <span class="ex-label">Key Geographical Benchmarks</span>
+            <strong>Kolkata</strong> (River Hooghly, 128 km from Bay of Bengal), <strong>Duisburg & Mannheim</strong> (River Rhine, Germany), <strong>Manchester</strong> (Manchester Ship Canal, UK), <strong>Memphis</strong> (Mississippi River, USA).
+          </div>
+        </div>
+
+        <div class="port-card">
+          <div class="card-head">
+            <span class="card-title">Outports (Deep-Water Satellite Ports)</span>
+            <span class="tag tag-rose">DEEP-DRAFT ANCHORAGE</span>
+          </div>
+          <p class="port-desc">Deep-water ports constructed at coastal entrances outside shallow, silted parent ports. They accommodate massive modern supertankers and post-Panamax container ships that cannot safely enter narrow river channels.</p>
+          <div class="ex-box">
+            <span class="ex-label">Key Geographical Benchmarks</span>
+            <strong>Piraeus</strong> (deep outport for Athens), <strong>Bremerhaven</strong> (outport for Bremen), <strong>Avonmouth</strong> (outport for Bristol), <strong>Haldia</strong> (deep-draft outport for Kolkata).
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 3 -->
+    <div>
+      <div class="section-title">▸ TIER 3: CLASSIFICATION ON THE BASIS OF SPECIALIZED STRATEGIC FUNCTION</div>
+      <div class="tier-grid-5">
+        <!-- Oil Ports -->
+        <div class="port-card">
+          <div class="card-head">
+            <span class="card-title">Oil Ports</span>
+            <span class="tag tag-amber">TANKERS</span>
+          </div>
+          <p class="port-desc">Tanker terminals with submarine pipelines and offshore tanker berths for loading and refining crude petroleum.</p>
+          <div class="ex-box">
+            <span class="ex-label">Key Examples</span>
+            <strong>Tripoli & Sidon</strong> (Lebanon), <strong>Abadan</strong> (Persian Gulf), <strong>Maracaibo</strong> (Venezuela).
+          </div>
+        </div>
+
+        <!-- Ports of Call -->
+        <div class="port-card">
+          <div class="card-head">
+            <span class="card-title">Ports of Call</span>
+            <span class="tag tag-blue">REFUELLING</span>
+          </div>
+          <p class="port-desc">Strategic oceanic nodes situated along trunk sea lanes to provide bunker fuel, boiler water, and ship victuals.</p>
+          <div class="ex-box">
+            <span class="ex-label">Key Examples</span>
+            <strong>Aden</strong> (Red Sea entry), <strong>Honolulu</strong> (Pacific hub), <strong>Singapore</strong> (Malacca Strait).
+          </div>
+        </div>
+
+        <!-- Packet Stations -->
+        <div class="port-card">
+          <div class="card-head">
+            <span class="card-title">Packet Stations</span>
+            <span class="tag tag-green">FERRY / MAIL</span>
+          </div>
+          <p class="port-desc">Ferry terminals operating across narrow water channels exclusively transporting passengers, autos, and mail.</p>
+          <div class="ex-box">
+            <span class="ex-label">Key Examples</span>
+            <strong>Dover</strong> (United Kingdom) and <strong>Calais</strong> (France) across the English Channel.
+          </div>
+        </div>
+
+        <!-- Entrepot Ports -->
+        <div class="port-card">
+          <div class="card-head">
+            <span class="card-title">Entrepot Ports</span>
+            <span class="tag tag-purple">RE-EXPORT</span>
+          </div>
+          <p class="port-desc">Bonded transshipment hubs where goods from foreign nations are stored duty-free and redistributed to regional markets.</p>
+          <div class="ex-box">
+            <span class="ex-label">Key Examples</span>
+            <strong>Singapore</strong> (SE Asia), <strong>Rotterdam</strong> (Europe), <strong>Hong Kong</strong> (East Asia).
+          </div>
+        </div>
+
+        <!-- Naval Ports -->
+        <div class="port-card">
+          <div class="card-head">
+            <span class="card-title">Naval Ports</span>
+            <span class="tag tag-rose">DEFENSE</span>
+          </div>
+          <p class="port-desc">Sovereign military naval defense bases with warship berths, naval arsenals, and specialized ship-repair drydocks.</p>
+          <div class="ex-box">
+            <span class="ex-label">Key Examples</span>
+            <strong>Cochin & Karwar</strong> (India), <strong>Portsmouth</strong> (UK), <strong>Pearl Harbor</strong> (USA).
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <span>OURMOCKS EXAM PREPARATION · HIGH-YIELD GEOGRAPHY NOTES</span>
+    <span>NCERT CLASS 12 FUNDAMENTALS OF HUMAN GEOGRAPHY · UNIT IV</span>
+  </footer>
+</body>
+</html>

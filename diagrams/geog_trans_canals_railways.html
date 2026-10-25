@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Major Trans-Continental Transport Systems</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    body {
+      background-color: #F8FAFC;
+      color: #0F172A;
+      width: 1440px;
+      height: 880px;
+      padding: 24px 32px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #E2E8F0;
+    }
+    .brand-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .badge {
+      background-color: #0F172A;
+      color: #CCFF00;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 6px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    h1 {
+      font-size: 20px;
+      font-weight: 800;
+      color: #0F172A;
+      letter-spacing: -0.02em;
+    }
+    .subtitle {
+      font-size: 12px;
+      color: #64748B;
+      font-weight: 500;
+    }
+    .main-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      flex: 1;
+      margin-top: 14px;
+    }
+    .section-label {
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #2563EB;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .canals-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .canal-card {
+      background: #FFFFFF;
+      border: 1.5pt solid #CBD5E1;
+      border-radius: 10px;
+      padding: 16px 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    .card-title {
+      font-size: 16px;
+      font-weight: 800;
+      color: #0F172A;
+    }
+    .canal-tag {
+      font-size: 10.5px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 5px;
+    }
+    .tag-suez {
+      background-color: #EFF6FF;
+      color: #1D4ED8;
+      border: 1px solid #BFDBFE;
+    }
+    .tag-panama {
+      background-color: #ECFDF5;
+      color: #047857;
+      border: 1px solid #A7F3D0;
+    }
+    .specs-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      padding: 8px 10px;
+      border-radius: 6px;
+    }
+    .spec-item {
+      display: flex;
+      flex-direction: column;
+    }
+    .spec-label {
+      font-size: 9.5px;
+      color: #64748B;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .spec-val {
+      font-size: 12px;
+      color: #0F172A;
+      font-weight: 800;
+    }
+    .bullet-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .bullet-list li {
+      font-size: 11.5px;
+      line-height: 1.45;
+      color: #334155;
+      padding-left: 14px;
+      position: relative;
+    }
+    .bullet-list li::before {
+      content: "▪";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #2563EB;
+      font-weight: bold;
+    }
+    .railways-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      flex: 1;
+    }
+    .rail-card {
+      background: #FFFFFF;
+      border: 1.5pt solid #CBD5E1;
+      border-radius: 10px;
+      padding: 14px 16px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .rail-header {
+      border-bottom: 1px solid #F1F5F9;
+      padding-bottom: 6px;
+    }
+    .rail-title {
+      font-size: 14px;
+      font-weight: 800;
+      color: #0F172A;
+      margin-bottom: 3px;
+    }
+    .rail-route {
+      font-size: 10.5px;
+      font-weight: 700;
+      color: #1E293B;
+      background: #F1F5F9;
+      padding: 3px 6px;
+      border-radius: 4px;
+      display: inline-block;
+      margin-bottom: 5px;
+    }
+    .rail-stat {
+      font-size: 11px;
+      font-weight: 800;
+      color: #0284C7;
+    }
+    footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 10px;
+      border-top: 1.5pt solid #E2E8F0;
+      font-size: 11px;
+      color: #64748B;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand-title">
+      <span class="badge">OURMOCKS CUET UG</span>
+      <div>
+        <h1>MAJOR TRANS-CONTINENTAL TRANSPORT SYSTEMS</h1>
+        <p class="subtitle">Comparative Architecture of Global Shipping Canals and Continental Railway Arteries</p>
+      </div>
+    </div>
+    <div style="text-align: right;">
+      <span style="font-size: 11px; font-weight: 700; color: #0F172A;">GEOGRAPHY (313)</span>
+      <p style="font-size: 10.5px; color: #64748B;">Fundamentals of Human Geography</p>
+    </div>
+  </header>
+
+  <div class="main-grid">
+    <div>
+      <div class="section-label">▸ PART A: THE TWO CARDINAL GLOBAL SHIPPING CANALS</div>
+      <div class="canals-container">
+        <!-- Suez Canal -->
+        <div class="canal-card">
+          <div>
+            <div class="card-top">
+              <div>
+                <div class="card-title">Suez Canal (Egypt)</div>
+                <div style="font-size: 11px; color: #64748B; font-weight: 600;">Sea-Level Canal without Locks</div>
+              </div>
+              <span class="canal-tag tag-suez">MEDITERRANEAN ⇄ RED SEA</span>
+            </div>
+            <div class="specs-grid">
+              <div class="spec-item">
+                <span class="spec-label">Opened</span>
+                <span class="spec-val">1869 CE</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Total Length</span>
+                <span class="spec-val">160 km</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Average Depth</span>
+                <span class="spec-val">11 to 15 m</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Distance Saved</span>
+                <span class="spec-val">~9,600 km</span>
+              </div>
+            </div>
+            <ul class="bullet-list">
+              <li><strong>Terminal Ports:</strong> Port Said in the north (Mediterranean) and Port Tewfik / Suez in the south (Red Sea).</li>
+              <li><strong>Physical Engineering:</strong> Completely sea-level canal constructed through the Isthmus of Suez; zero lock gates required.</li>
+              <li><strong>Strategic Impact:</strong> Connects Western Europe directly with South Asia, East Asia, and Australia; bypasses the Cape of Good Hope.</li>
+              <li><strong>Administration & Tolls:</strong> Nationalized by Egypt (1956); heavy toll revenue contributes significantly to Egyptian national economy.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Panama Canal -->
+        <div class="canal-card">
+          <div>
+            <div class="card-top">
+              <div>
+                <div class="card-title">Panama Canal (Panama)</div>
+                <div style="font-size: 11px; color: #64748B; font-weight: 600;">Lock-and-Dam Inland Waterway</div>
+              </div>
+              <span class="canal-tag tag-panama">ATLANTIC ⇄ PACIFIC</span>
+            </div>
+            <div class="specs-grid">
+              <div class="spec-item">
+                <span class="spec-label">Opened</span>
+                <span class="spec-val">1914 CE</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Total Length</span>
+                <span class="spec-val">72 km</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Lock Lift Height</span>
+                <span class="spec-val">26 m (85 ft)</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Distance Saved</span>
+                <span class="spec-val">~13,000 km</span>
+              </div>
+            </div>
+            <ul class="bullet-list">
+              <li><strong>Terminal Ports:</strong> Colon in the north (Atlantic / Caribbean Sea) and Panama City in the south (Pacific Ocean).</li>
+              <li><strong>Lock System Architecture:</strong> Ships are raised 26m by 3 sets of twin locks to cross artificial Gatun Lake and Culebra Cut.</li>
+              <li><strong>Strategic Impact:</strong> Shortens maritime journey between New York and San Francisco by ~13,000 km; bypasses Cape Horn.</li>
+              <li><strong>Economic Lifeline:</strong> Key conduit for trade between eastern US seaboard, Latin America, Europe, and Pacific Rim nations.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="flex: 1; display: flex; flex-direction: column;">
+      <div class="section-label">▸ PART B: MAJOR TRANS-CONTINENTAL RAILWAY ARTERIES</div>
+      <div class="railways-container">
+        <!-- Trans-Siberian Railway -->
+        <div class="rail-card">
+          <div class="rail-header">
+            <div class="rail-title">Trans-Siberian Railway</div>
+            <span class="rail-route">St. Petersburg ➔ Vladivostok</span>
+            <div class="rail-stat">9,332 km · Electrified Double-Track</div>
+          </div>
+          <ul class="bullet-list">
+            <li><strong>Longest in World:</strong> Traverses 8 time zones across European Russia and Asian Siberia.</li>
+            <li><strong>Key Junctions:</strong> Moscow, Ufa, Novosibirsk, Krasnoyarsk, Irkutsk, and Chita.</li>
+            <li><strong>Strategic Cargo:</strong> Moves Siberian timber, coal, minerals, and grain westward.</li>
+            <li><strong>Connecting Branches:</strong> Linked southward to Mongolia (Ulaanbaatar) and China (Beijing).</li>
+          </ul>
+        </div>
+
+        <!-- Canadian Pacific Railway -->
+        <div class="rail-card">
+          <div class="rail-header">
+            <div class="rail-title">Canadian Pacific Railway</div>
+            <span class="rail-route">Halifax / Montreal ➔ Vancouver</span>
+            <div class="rail-stat">7,050 km · Constructed 1886</div>
+          </div>
+          <ul class="bullet-list">
+            <li><strong>Economic Spine:</strong> Joined British Columbia to the Canadian Federation.</li>
+            <li><strong>Prairie Wheat Belt:</strong> Traverses Winnipeg, Regina, and Calgary through Kicking Horse Pass.</li>
+            <li><strong>Resource Conveyor:</strong> Wheat, livestock meat, and timber hauled to Pacific & Atlantic ports.</li>
+            <li><strong>Great Lakes Connection:</strong> Loop line connects to the industrial Great Lakes waterways.</li>
+          </ul>
+        </div>
+
+        <!-- Australian Trans-Continental -->
+        <div class="rail-card">
+          <div class="rail-header">
+            <div class="rail-title">Australian Trans-Continental</div>
+            <span class="rail-route">Sydney ➔ Perth (East to West)</span>
+            <div class="rail-stat">4,352 km · Standard Gauge Line</div>
+          </div>
+          <ul class="bullet-list">
+            <li><strong>Arid Crossing:</strong> Traverses the desert Nullarbor Plain in Western/South Australia.</li>
+            <li><strong>Mining Hubs:</strong> Links Broken Hill silver-lead-zinc and Kalgoorlie gold mining centres.</li>
+            <li><strong>North-South Spur:</strong> Connects at Port Augusta with line running to Alice Springs and Darwin.</li>
+            <li><strong>Unified Gauge:</strong> Overcame early inter-state gauge differences across Australian colonies.</li>
+          </ul>
+        </div>
+
+        <!-- Orient Express -->
+        <div class="rail-card">
+          <div class="rail-header">
+            <div class="rail-title">The Orient Express</div>
+            <span class="rail-route">Paris ➔ Istanbul (Western to SE Europe)</span>
+            <div class="rail-stat">~3,000 km · Opened 1883</div>
+          </div>
+          <ul class="bullet-list">
+            <li><strong>Balkan Gateway:</strong> Connects Paris via Strasbourg, Munich, Vienna, Budapest, and Belgrade.</li>
+            <li><strong>Historical Route:</strong> Drastically reduced travel time between Western Europe and the Ottoman/Balkan world.</li>
+            <li><strong>High-Value Cargo:</strong> Cheese, bacon, luxury textiles, wine, and machinery exported eastward.</li>
+            <li><strong>Modern Successor:</strong> Replaced by modern high-speed European rail corridors and flights.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <span>OURMOCKS EXAM PREPARATION · HIGH-YIELD GEOGRAPHY NOTES</span>
+    <span>NCERT CLASS 12 FUNDAMENTALS OF HUMAN GEOGRAPHY · UNIT IV</span>
+  </footer>
+</body>
+</html>

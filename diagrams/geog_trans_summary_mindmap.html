@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Summary Mindmap: Transport, Communication & International Trade</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    body {
+      background-color: #F8FAFC;
+      color: #0F172A;
+      width: 1440px;
+      height: 880px;
+      padding: 20px 28px;
+      overflow: hidden;
+      position: relative;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #CBD5E1;
+      position: relative;
+      z-index: 10;
+    }
+    .brand-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .badge {
+      background-color: #0F172A;
+      color: #CCFF00;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 6px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    h1 {
+      font-size: 20px;
+      font-weight: 800;
+      color: #0F172A;
+      letter-spacing: -0.02em;
+    }
+    .subtitle {
+      font-size: 12px;
+      color: #64748B;
+      font-weight: 500;
+    }
+    svg.connections {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1440px;
+      height: 880px;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .center-hub {
+      position: absolute;
+      left: 505px;
+      top: 385px;
+      width: 430px;
+      height: 135px;
+      background: #0F172A;
+      color: #FFFFFF;
+      border-radius: 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 14px 20px;
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.18);
+      border: 3px solid #CCFF00;
+      z-index: 5;
+    }
+    .center-tag {
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      color: #CCFF00;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .center-title {
+      font-size: 16px;
+      font-weight: 800;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+      color: #FFFFFF;
+    }
+    .center-sub {
+      font-size: 11px;
+      color: #94A3B8;
+      margin-top: 4px;
+    }
+    .branch-card {
+      position: absolute;
+      width: 385px;
+      background: #FFFFFF;
+      border: 1.5pt solid #CBD5E1;
+      border-radius: 10px;
+      padding: 10px 14px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.04);
+      z-index: 5;
+    }
+    .branch-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1.5pt solid #F1F5F9;
+      padding-bottom: 4px;
+      margin-bottom: 6px;
+    }
+    .branch-title {
+      font-size: 13px;
+      font-weight: 800;
+      color: #0F172A;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .branch-tag {
+      font-size: 9.5px;
+      font-weight: 800;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+    .b-blue { background: #EFF6FF; color: #1D4ED8; border: 1px solid #BFDBFE; }
+    .b-green { background: #ECFDF5; color: #047857; border: 1px solid #A7F3D0; }
+    .b-amber { background: #FFFBEB; color: #B45309; border: 1px solid #FDE68A; }
+    .b-purple { background: #FAF5FF; color: #7E22CE; border: 1px solid #E9D5FF; }
+    .b-rose { background: #FFF1F2; color: #BE123C; border: 1px solid #FECDD3; }
+    .b-cyan { background: #ECFEFF; color: #0E7490; border: 1px solid #A5F3FC; }
+
+    .bullet-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .bullet-list li {
+      font-size: 11px;
+      line-height: 1.38;
+      color: #334155;
+      padding-left: 12px;
+      position: relative;
+    }
+    .bullet-list li::before {
+      content: "▪";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #2563EB;
+      font-weight: bold;
+    }
+    footer {
+      position: absolute;
+      bottom: 12px;
+      left: 28px;
+      right: 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 8px;
+      border-top: 1.5pt solid #CBD5E1;
+      font-size: 10.5px;
+      color: #64748B;
+      font-weight: 600;
+      z-index: 10;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand-title">
+      <span class="badge">OURMOCKS CUET UG</span>
+      <div>
+        <h1>COMPLETE CONCEPT MINDMAP: TRANSPORT, COMMUNICATION & TRADE</h1>
+        <p class="subtitle">Comprehensive Architectural Synthesis · NCERT Class 12 Fundamentals of Human Geography · Unit IV</p>
+      </div>
+    </div>
+    <div style="text-align: right;">
+      <span style="font-size: 11px; font-weight: 700; color: #0F172A;">GEOGRAPHY (313)</span>
+      <p style="font-size: 10.5px; color: #64748B;">Comprehensive Topic Overview</p>
+    </div>
+  </header>
+
+  <!-- SVG Connecting Curves -->
+  <svg class="connections">
+    <!-- Center to Top-Left -->
+    <path d="M 505 420 C 455 420, 455 180, 430 180" fill="none" stroke="#60A5FA" stroke-width="2.5" stroke-dasharray="4 3"/>
+    <!-- Center to Mid-Left -->
+    <path d="M 505 452 C 460 452, 460 425, 430 425" fill="none" stroke="#34D399" stroke-width="2.5" stroke-dasharray="4 3"/>
+    <!-- Center to Bottom-Left -->
+    <path d="M 505 485 C 455 485, 455 670, 430 670" fill="none" stroke="#FBBF24" stroke-width="2.5" stroke-dasharray="4 3"/>
+    <!-- Center to Top-Right -->
+    <path d="M 935 420 C 985 420, 985 180, 1010 180" fill="none" stroke="#C084FC" stroke-width="2.5" stroke-dasharray="4 3"/>
+    <!-- Center to Mid-Right -->
+    <path d="M 935 452 C 980 452, 980 425, 1010 425" fill="none" stroke="#F87171" stroke-width="2.5" stroke-dasharray="4 3"/>
+    <!-- Center to Bottom-Right -->
+    <path d="M 935 485 C 985 485, 985 670, 1010 670" fill="none" stroke="#38BDF8" stroke-width="2.5" stroke-dasharray="4 3"/>
+  </svg>
+
+  <!-- Central Hub -->
+  <div class="center-hub">
+    <span class="center-tag">NCERT SYLLABUS CORE</span>
+    <div class="center-title">TRANSPORT, COMMUNICATION<br>& INTERNATIONAL TRADE</div>
+    <div class="center-sub">Global Networks, Sea Canals, Satellites & WTO Framework</div>
+  </div>
+
+  <!-- BRANCH 1: Land Transport (Top-Left) -->
+  <div class="branch-card" style="left: 45px; top: 92px;">
+    <div class="branch-header">
+      <span class="branch-title">1. Land Transport & Railways</span>
+      <span class="branch-tag b-blue">HIGHWAYS & RAILS</span>
+    </div>
+    <ul class="bullet-list">
+      <li><strong>Trans-Continental Highways:</strong> Pan-American Highway (Alaska to Chile); Trans-Canadian Highway (St. John's to Victoria); Stuart Highway (Darwin to Melbourne).</li>
+      <li><strong>Railway Gauges:</strong> Broad gauge (1.676m - India); Standard gauge (1.435m - UK/Europe/USA); Meter gauge (1m); Narrow gauge (mountain lines).</li>
+      <li><strong>Trans-Siberian Line:</strong> St. Petersburg to Vladivostok (9,332 km, world's longest, electrified double-track).</li>
+      <li><strong>Canadian Pacific:</strong> Halifax/Montreal to Vancouver (7,050 km, wheat & timber artery through Kicking Horse Pass).</li>
+      <li><strong>Australian Railway:</strong> Sydney to Perth across Nullarbor Plain; connects Port Augusta to Darwin.</li>
+    </ul>
+  </div>
+
+  <!-- BRANCH 2: Water Transport & Canals (Mid-Left) -->
+  <div class="branch-card" style="left: 45px; top: 338px;">
+    <div class="branch-header">
+      <span class="branch-title">2. Waterways & Ocean Canals</span>
+      <span class="branch-tag b-green">INLAND & SEA</span>
+    </div>
+    <ul class="bullet-list">
+      <li><strong>Inland Waterways:</strong> Rhine River (world's most heavily trafficked inland waterway, Rotterdam to Basel); Danube (Black Sea); Mississippi-Ohio; Volga; St. Lawrence Seaway.</li>
+      <li><strong>North Atlantic Sea Route:</strong> "Big Trunk Route" connecting NE North America & NW Europe; carries 1/4th of global foreign tonnage.</li>
+      <li><strong>Suez Canal (1869):</strong> Sea-level canal (160 km) between Port Said & Suez; cuts 9,600 km UK-India journey; bypasses Cape of Good Hope.</li>
+      <li><strong>Panama Canal (1914):</strong> Lock-and-dam canal (72 km) with 6-stage lock lift of 26m; cuts 13,000 km New York-San Francisco journey.</li>
+    </ul>
+  </div>
+
+  <!-- BRANCH 3: Air & Pipeline Transport (Bottom-Left) -->
+  <div class="branch-card" style="left: 45px; top: 585px;">
+    <div class="branch-header">
+      <span class="branch-title">3. Air & Pipeline Transport</span>
+      <span class="branch-tag b-amber">RAPID & BULK</span>
+    </div>
+    <ul class="bullet-list">
+      <li><strong>Air Routes:</strong> Concentrated in Northern Hemisphere (dense nodal network between USA and Western Europe); unhindered by topography.</li>
+      <li><strong>Supersonic Stratosphere Flight:</strong> Flying above weather friction minimizes turbulence and optimizes fuel economy.</li>
+      <li><strong>Big Inch Pipeline:</strong> 24-inch diameter petroleum pipeline carrying crude oil from Gulf of Mexico wells to NE industrial refineries.</li>
+      <li><strong>Tapline & Gas Grids:</strong> Trans-Arabian Pipeline (Tapline) connects Persian Gulf to Mediterranean; cross-border Siberian natural gas grids to Europe.</li>
+    </ul>
+  </div>
+
+  <!-- BRANCH 4: Communication & Cyberspace (Top-Right) -->
+  <div class="branch-card" style="left: 1010px; top: 92px;">
+    <div class="branch-header">
+      <span class="branch-title">4. Communication & Cyberspace</span>
+      <span class="branch-tag b-purple">DIGITAL REVOLUTION</span>
+    </div>
+    <ul class="bullet-list">
+      <li><strong>Satellite Communications:</strong> Geostationary artificial satellites revolutionized telecommunication, television transmission, and GPS navigation.</li>
+      <li><strong>Optical Fiber Submarine Cables:</strong> Deep-sea fiber cables carry over 95% of international internet and high-speed financial transactions.</li>
+      <li><strong>Cyberspace (Internet):</strong> Electronic digital space facilitating e-commerce, tele-medicine, distance education, and global connectivity.</li>
+      <li><strong>Digital Divide:</strong> Acute spatial and socio-economic disparity in ICT access between developed Western economies and developing regions.</li>
+    </ul>
+  </div>
+
+  <!-- BRANCH 5: International Trade & WTO (Mid-Right) -->
+  <div class="branch-card" style="left: 1010px; top: 338px;">
+    <div class="branch-header">
+      <span class="branch-title">5. International Trade & WTO</span>
+      <span class="branch-tag b-rose">COMMERCE & BLOCS</span>
+    </div>
+    <ul class="bullet-list">
+      <li><strong>Historical Evolution:</strong> Ancient Silk Route (Rome to China); 15th-century slave trade; post-colonial multilateral trading regimes.</li>
+      <li><strong>Basis of Trade:</strong> Differences in national natural resources, geological relief, population size, capital stage, and transport costs.</li>
+      <li><strong>Balance of Trade:</strong> Favorable (Exports > Imports) vs. Unfavorable (Imports > Exports); trade deficit impacts currency reserves.</li>
+      <li><strong>WTO (World Trade Organization):</strong> Formed 1 Jan 1995 from GATT (1948); HQ in Geneva; enforces global tariff rules and resolves disputes.</li>
+      <li><strong>Regional Blocs:</strong> EU, ASEAN, NAFTA/USMCA, OPEC, LAIA, and CIS reduce intra-regional trade tariffs.</li>
+    </ul>
+  </div>
+
+  <!-- BRANCH 6: Seaports & Gateways (Bottom-Right) -->
+  <div class="branch-card" style="left: 1010px; top: 585px;">
+    <div class="branch-header">
+      <span class="branch-title">6. World Seaports & Gateways</span>
+      <span class="branch-tag b-cyan">GATEWAYS OF COMMERCE</span>
+    </div>
+    <ul class="bullet-list">
+      <li><strong>Cargo Typology:</strong> Industrial (bulk ores/crude); Commercial (packaged freight); Comprehensive mega-ports (Rotterdam, Singapore, Shanghai).</li>
+      <li><strong>Locational Types:</strong> Inland river ports (Kolkata, Duisburg, Manchester) vs. Outports (Piraeus for Athens, Bremerhaven for Bremen, Haldia).</li>
+      <li><strong>Specialized Ports:</strong> Oil ports (Abadan, Tripoli, Maracaibo); Ports of call (Aden, Honolulu); Packet ferry stations (Dover-Calais).</li>
+      <li><strong>Entrepot Hubs:</strong> Singapore and Rotterdam serve as bonded transshipment duty-free collection and re-export centers.</li>
+      <li><strong>Naval Bases:</strong> Sovereign military harbors (Cochin, Karwar, Portsmouth).</li>
+    </ul>
+  </div>
+
+  <footer>
+    <span>OURMOCKS EXAM PREPARATION · HIGH-YIELD GEOGRAPHY NOTES</span>
+    <span>NCERT CLASS 12 FUNDAMENTALS OF HUMAN GEOGRAPHY · UNIT IV COMPLETE SYNTHESIS</span>
+  </footer>
+</body>
+</html>
