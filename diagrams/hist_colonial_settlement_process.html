@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Colonial Agrarian Settlements & Structural Mechanics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 1440px;
+      height: 880px;
+      background: #060B19;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: #F8FAFC;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 32px 40px;
+      overflow: hidden;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding-bottom: 16px;
+    }
+    .topic-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(239, 68, 68, 0.15);
+      border: 1px solid rgba(239, 68, 68, 0.4);
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+      color: #F87171;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 26px;
+      font-weight: 700;
+      color: #FFFFFF;
+      letter-spacing: -0.02em;
+    }
+    .subtitle {
+      font-size: 13px;
+      color: #94A3B8;
+      margin-top: 3px;
+    }
+    .brand-meta {
+      text-align: right;
+    }
+    .brand-logo {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: #B8FF34;
+      letter-spacing: 0.06em;
+    }
+    .doc-pointer {
+      font-size: 11px;
+      color: #64748B;
+      margin-top: 2px;
+    }
+
+    /* Main Grid: 2 Grand Settlement Systems + Central Mechanism Bar */
+    .settlement-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      flex: 1;
+      margin-top: 20px;
+      margin-bottom: 14px;
+    }
+
+    .settlement-card {
+      background: rgba(15, 23, 42, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .settlement-card.permanent {
+      border-top: 4px solid #3B82F6;
+    }
+    .settlement-card.ryotwari {
+      border-top: 4px solid #F59E0B;
+    }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .card-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: #FFFFFF;
+    }
+    .card-tag {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 6px;
+      text-transform: uppercase;
+    }
+    .tag-blue { background: rgba(59, 130, 246, 0.2); color: #60A5FA; }
+    .tag-yellow { background: rgba(245, 158, 11, 0.2); color: #FBBF24; }
+
+    .feature-list {
+      list-style-type: none;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+      font-size: 12px;
+      color: #94A3B8;
+      line-height: 1.48;
+    }
+    .feature-list li {
+      position: relative;
+      padding-left: 16px;
+    }
+    .permanent .feature-list li::before {
+      content: "▪";
+      position: absolute;
+      left: 0;
+      color: #60A5FA;
+      font-size: 14px;
+    }
+    .ryotwari .feature-list li::before {
+      content: "▪";
+      position: absolute;
+      left: 0;
+      color: #FBBF24;
+      font-size: 14px;
+    }
+    .feature-list b {
+      color: #F1F5F9;
+      font-weight: 600;
+    }
+
+    .sub-box {
+      margin-top: 14px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 8px;
+      padding: 10px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .sub-box-title {
+      font-size: 10.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .permanent .sub-box-title { color: #60A5FA; }
+    .ryotwari .sub-box-title { color: #FBBF24; }
+    .sub-box-text {
+      font-size: 11.5px;
+      color: #CBD5E1;
+      line-height: 1.4;
+    }
+
+    /* Bottom Synthesis Bar */
+    .synthesis-bar {
+      background: rgba(30, 41, 59, 0.55);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      padding: 12px 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 16px;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .synth-col {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .synth-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: #B8FF34;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .synth-val {
+      font-size: 11.5px;
+      color: #CBD5E1;
+      line-height: 1.4;
+    }
+
+    /* Footer */
+    .footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      color: #64748B;
+    }
+    .exam-focus {
+      color: #CBD5E1;
+      font-weight: 500;
+    }
+    .exam-focus strong {
+      color: #F87171;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div>
+      <div class="topic-badge">Themes in Indian History Part III · Chapter 10</div>
+      <div class="title">Colonial Revenue Systems: Permanent Settlement vs Ryotwari</div>
+      <div class="subtitle">Comparative institutional framework: legal property definitions, fiscal realization, zamindari dynamics, and rural peasant credit</div>
+    </div>
+    <div class="brand-meta">
+      <div class="brand-logo">OURMOCKS STUDY VISUALS</div>
+      <div class="doc-pointer">CUET UG History · Unit 9</div>
+    </div>
+  </div>
+
+  <!-- Main Container: 2-Column Comparison -->
+  <div class="settlement-container">
+    
+    <!-- Left: Permanent Settlement -->
+    <div class="settlement-card permanent">
+      <div>
+        <div class="card-top">
+          <div class="card-title">Permanent Settlement (1793)</div>
+          <div class="card-tag tag-blue">Bengal, Bihar & Orissa</div>
+        </div>
+        <ul class="feature-list">
+          <li><b>Architect:</b> Introduced by <b>Lord Charles Cornwallis</b> to secure fixed, predictable revenues for the East India Company.</li>
+          <li><b>Property Conversion:</b> Transformed traditional rajas and taluqdars into legal <b>proprietors of the soil</b> (Zamindars).</li>
+          <li><b>Invariable State Demand:</b> Revenue demand was fixed in perpetuity; state could never claim future agricultural improvements.</li>
+          <li><b>The Sunset Law:</b> If revenue dues were not paid by sunset of the specified cutoff date, the zamindari estate was auctioned.</li>
+          <li><b>Rise of Jotedars:</b> Rich resident peasants (known as <b>haoladars</b> or <b>gantidars</b>) in North Bengal acquired extensive land and manipulated auctions.</li>
+        </ul>
+      </div>
+
+      <div class="sub-box">
+        <div class="sub-box-title">Zamindars' Survival Strategies</div>
+        <div class="sub-box-text">
+          Zamindars countered auctions through <b>benami (fictitious) transactions</b>—transferring property to women (e.g. Burdwan Raja's mother) or utilizing agents to bid up prices and intentionally default, forcing continuous re-auctions.
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: Ryotwari System -->
+    <div class="settlement-card ryotwari">
+      <div>
+        <div class="card-top">
+          <div class="card-title">Ryotwari System (1820s)</div>
+          <div class="card-tag tag-yellow">Bombay Deccan & Madras</div>
+        </div>
+        <ul class="feature-list">
+          <li><b>Ideological Roots:</b> Influenced by <b>David Ricardo’s economic rent theory</b>; Company avoided creating parasitic feudal intermediaries.</li>
+          <li><b>Direct State-Peasant Contract:</b> Revenue settlement made directly with the individual cultivator (<b>ryot</b>) as registered landholder.</li>
+          <li><b>Periodic Revision:</b> Unlike Bengal, land was surveyed, soil classified, and revenue rates reassessed <b>every 30 years</b>.</li>
+          <li><b>Exorbitant Demand:</b> Initial assessments in the 1820s demanded nearly <b>50% of gross produce</b>, triggering peasant flight and debt traps.</li>
+          <li><b>Moneylender Predation:</b> Cultivators relied on moneylenders (<b>sahukars / vanis</b>) to pay rigid cash installments during crop failure.</li>
+        </ul>
+      </div>
+
+      <div class="sub-box">
+        <div class="sub-box-title">Deccan Agrarian Crisis & Riots (1875)</div>
+        <div class="sub-box-text">
+          Collapse of the <b>Cotton Boom (1861–65)</b> following the American Civil War, combined with the <b>Limitation Law of 1859</b>, led sahukars to refuse credit. Peasants revolted at Supa, burning debt bonds and account books (<b>bahikhatas</b>).
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bottom Synthesis Bar -->
+  <div class="synthesis-bar">
+    <div class="synth-col">
+      <div class="synth-label">The Fifth Report (1813)</div>
+      <div class="synth-val">Submitted to British Parliament by a select committee; highlighted zamindari auction distress to lobby against the Company's trade monopoly.</div>
+    </div>
+    <div class="synth-col">
+      <div class="synth-label">Jotedars vs Zamindars</div>
+      <div class="synth-val">While zamindars lived in urban mansions, jotedars lived in villages directly controlling sharecroppers (<b>adhiyars / bargadars</b>).</div>
+    </div>
+    <div class="synth-col">
+      <div class="synth-label">Deccan Riots Commission (1878)</div>
+      <div class="synth-val">Official inquiry concluded that peasant distress stemmed from usurious moneylenders rather than excessive colonial revenue assessments.</div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="exam-focus">
+      <strong>Core Exam Pointers:</strong> Permanent Settlement (1793, Cornwallis) · Sunset Law & Benami sales · Jotedars (haoladars) · Ryotwari & Ricardian rent · Deccan Riots 1875
+    </div>
+    <div>www.ourmocks.com · NTA CUET UG History Mastery</div>
+  </div>
+
+</body>
+</html>

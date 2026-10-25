@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Colonialism and Rural Society - Summary Mindmap</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 1440px;
+      height: 880px;
+      background: #070D1E;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: #F8FAFC;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 32px 40px;
+      overflow: hidden;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding-bottom: 16px;
+    }
+    .topic-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(239, 68, 68, 0.15);
+      border: 1px solid rgba(239, 68, 68, 0.4);
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+      color: #F87171;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 26px;
+      font-weight: 700;
+      color: #FFFFFF;
+      letter-spacing: -0.02em;
+    }
+    .subtitle {
+      font-size: 13px;
+      color: #94A3B8;
+      margin-top: 3px;
+    }
+    .brand-meta {
+      text-align: right;
+    }
+    .brand-logo {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: #B8FF34;
+      letter-spacing: 0.06em;
+    }
+    .doc-pointer {
+      font-size: 11px;
+      color: #64748B;
+      margin-top: 2px;
+    }
+
+    /* 6-Card Mindmap Grid */
+    .mindmap-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 16px;
+      flex: 1;
+      margin-top: 18px;
+      margin-bottom: 14px;
+    }
+
+    .mindmap-card {
+      background: rgba(15, 23, 42, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 16px 18px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .mindmap-card.core-axis {
+      border: 1px solid rgba(239, 68, 68, 0.4);
+      background: radial-gradient(circle at 50% 0%, rgba(239, 68, 68, 0.12), rgba(15, 23, 42, 0.8) 75%);
+    }
+
+    .card-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .card-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: #FFFFFF;
+    }
+    .core-axis .card-title {
+      color: #F87171;
+    }
+    .card-pill {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+      text-transform: uppercase;
+      background: rgba(255, 255, 255, 0.07);
+      color: #94A3B8;
+    }
+    .core-axis .card-pill {
+      background: rgba(239, 68, 68, 0.2);
+      color: #FCA5A5;
+    }
+
+    .card-bullets {
+      list-style-type: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 11.5px;
+      color: #94A3B8;
+      line-height: 1.45;
+    }
+    .card-bullets li {
+      position: relative;
+      padding-left: 14px;
+    }
+    .card-bullets li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #38BDF8;
+      font-weight: bold;
+    }
+    .core-axis .card-bullets li::before {
+      color: #F87171;
+    }
+    .card-bullets b {
+      color: #F1F5F9;
+      font-weight: 600;
+    }
+
+    /* Footer */
+    .footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      color: #64748B;
+    }
+    .blueprint {
+      color: #CBD5E1;
+    }
+    .blueprint strong {
+      color: #B8FF34;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div>
+      <div class="topic-badge">Comprehensive Topic Map · Themes in Indian History Part III</div>
+      <div class="title">Colonialism and Rural Society: Official Reports (18th–19th Century)</div>
+      <div class="subtitle">Complete chapter framework: Permanent Settlement, Jotedars, Buchanan's surveys, Santhal Hul, and Deccan agrarian riots</div>
+    </div>
+    <div class="brand-meta">
+      <div class="brand-logo">OURMOCKS STUDY VISUALS</div>
+      <div class="doc-pointer">CUET UG History · Chapter 9</div>
+    </div>
+  </div>
+
+  <!-- 6-Card Mindmap Grid -->
+  <div class="mindmap-grid">
+    
+    <!-- Card 1 -->
+    <div class="mindmap-card">
+      <div class="card-head">
+        <div class="card-title">1. Permanent Settlement & Zamindars</div>
+        <div class="card-pill">1793 · BENGAL</div>
+      </div>
+      <ul class="card-bullets">
+        <li><b>Enactment:</b> Introduced by <b>Lord Charles Cornwallis</b> (1793); fixed state revenue demand in perpetuity.</li>
+        <li><b>Why Defaults Occurred:</b> Initial demands were artificially high; agricultural prices were low; <b>Sunset Law</b> enforced auction of defaulted estates.</li>
+        <li><b>Burdwan Auction (1797):</b> Famous auction of Raja of Burdwan's estates, exposing widespread fictitious sales.</li>
+        <li><b>Benami Tactics:</b> Zamindars transferred lands to women (exempt from seizure) and used agents to repeatedly buy back estates at auction.</li>
+      </ul>
+    </div>
+
+    <!-- Card 2: Core Axis -->
+    <div class="mindmap-card core-axis">
+      <div class="card-head">
+        <div class="card-title">★ Core Axis: Revenue Intermediaries & Jotedars</div>
+        <div class="card-pill">RURAL SOCIAL DYNAMICS</div>
+      </div>
+      <ul class="card-bullets">
+        <li><b>Rise of Jotedars:</b> Rich resident peasants in North Bengal (Dinajpur, Rangpur); also called <b>haoladars</b>, <b>gantidars</b>, or <b>mandals</b>.</li>
+        <li><b>Sharecroppers (Adhiyars):</b> Cultivated land via sharecroppers (<b>bargadars</b>) who handed over half the produce.</li>
+        <li><b>Direct Village Control:</b> Unlike absentee urban zamindars, jotedars lived in villages and directly mobilized peasants to delay revenue payments.</li>
+        <li><b>Buying Out Zamindars:</b> Jotedars eagerly bought up auctioned zamindari lands, steadily undermining traditional landed aristocracy.</li>
+      </ul>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="mindmap-card">
+      <div class="card-head">
+        <div class="card-title">2. The Fifth Report & Archives</div>
+        <div class="card-pill">1813 CE</div>
+      </div>
+      <ul class="card-bullets">
+        <li><b>Parliamentary Submission:</b> Fifth of a series of reports submitted to the British Parliament in 1813 on Company administration.</li>
+        <li><b>Documentary Substance:</b> Contained 1,002 pages, with over 800 pages reproducing petitions of zamindars, collectors' reports, and revenue accounts.</li>
+        <li><b>Political Agenda:</b> Crafted by a Select Committee to criticize the East India Company's monopoly, exaggerating the collapse of zamindaris.</li>
+        <li><b>Official Bias:</b> Reflected official colonial administrative views and neglected subaltern peasant perspectives.</li>
+      </ul>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="mindmap-card">
+      <div class="card-head">
+        <div class="card-title">3. The Hoe & Plough: Rajmahal Hills</div>
+        <div class="card-pill">ECOLOGICAL CONFLICT</div>
+      </div>
+      <ul class="card-bullets">
+        <li><b>Francis Buchanan's Surveys:</b> Company surgeon and surveyor; observed landscapes through the lens of colonial commercial utility.</li>
+        <li><b>Paharias (The Hoe):</b> Hill folk living around Rajmahal; shifting cultivators, gatherers of mahua/silk, resistant to colonial pacification.</li>
+        <li><b>Santhals (The Plough):</b> Settled cultivators invited by British to clear lowland forests and establish settled agriculture.</li>
+        <li><b>Damin-i-Koh (1832):</b> Enclosed territory demarcated with masonry boundary pillars for exclusive Santhal settlement.</li>
+      </ul>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="mindmap-card">
+      <div class="card-head">
+        <div class="card-title">4. The Santhal Hul (Rebellion)</div>
+        <div class="card-pill">1855–1856 CE</div>
+      </div>
+      <ul class="card-bullets">
+        <li><b>Roots of Revolt:</b> Moneylenders (<b>dikus</b>) charged 50% to 500% interest; state levied heavy cash taxes; zamindars encroached on Damin-i-Koh.</li>
+        <li><b>Leadership:</b> Brothers <b>Sidhu and Kanhu Murmu</b> mobilized thousands of Santhals, declaring divine mandate from Thakurji.</li>
+        <li><b>Military Pacification:</b> British dispatched armed troops; declared martial law; burnt Santhal villages to suppress the rebellion.</li>
+        <li><b>Administrative Concession:</b> Creation of <b>Santhal Pargana</b> district (5,500 sq miles) with special tribal land laws.</li>
+      </ul>
+    </div>
+
+    <!-- Card 6 -->
+    <div class="mindmap-card">
+      <div class="card-head">
+        <div class="card-title">5. Bombay Deccan & Deccan Riots</div>
+        <div class="card-pill">1875 UPRISING</div>
+      </div>
+      <ul class="card-bullets">
+        <li><b>Ryotwari Framework:</b> Revenue settled directly with the ryot; based on <b>Ricardian rent theory</b>; revised every 30 years.</li>
+        <li><b>Cotton Boom (1861–65):</b> American Civil War boosted cotton exports; moneylenders (<b>sahukars / vanis</b>) offered easy credit.</li>
+        <li><b>Post-War Slump:</b> Cotton prices collapsed in 1865; <b>Limitation Law of 1859</b> prompted moneylenders to compound debts and refuse new loans.</li>
+        <li><b>Deccan Riots:</b> Began in <b>Supa</b> (Poona district) in May 1875; peasants seized and burnt debt bonds and account books (<b>bahikhatas</b>).</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="blueprint">
+      <strong>Exam Blueprint:</strong> Permanent Settlement (1793, Cornwallis) · Jotedars (haoladars) · Fifth Report (1813) · Damin-i-Koh (1832) · Santhal Hul (1855–56) · Deccan Riots (1875)
+    </div>
+    <div>www.ourmocks.com · NTA CUET UG History Mastery</div>
+  </div>
+
+</body>
+</html>
