@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mughal Zabti Revenue & Fiscal Flow</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 1440px;
+      height: 880px;
+      background: #080D1A;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: #F8FAFC;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 32px 40px;
+      overflow: hidden;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding-bottom: 16px;
+    }
+    .topic-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(184, 255, 52, 0.12);
+      border: 1px solid rgba(184, 255, 52, 0.35);
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+      color: #B8FF34;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 26px;
+      font-weight: 700;
+      color: #FFFFFF;
+      letter-spacing: -0.02em;
+    }
+    .subtitle {
+      font-size: 13px;
+      color: #94A3B8;
+      margin-top: 3px;
+    }
+    .brand-meta {
+      text-align: right;
+    }
+    .brand-logo {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: #38BDF8;
+      letter-spacing: 0.06em;
+    }
+    .doc-pointer {
+      font-size: 11px;
+      color: #64748B;
+      margin-top: 2px;
+    }
+
+    /* 5-Step Process Flow */
+    .process-container {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+      flex: 1;
+      margin-top: 24px;
+      margin-bottom: 16px;
+      align-items: stretch;
+      position: relative;
+    }
+
+    .process-step {
+      background: rgba(15, 23, 42, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 18px 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+    .process-step.step-1 { border-top: 4px solid #3B82F6; }
+    .process-step.step-2 { border-top: 4px solid #10B981; }
+    .process-step.step-3 { border-top: 4px solid #F59E0B; }
+    .process-step.step-4 { border-top: 4px solid #EF4444; }
+    .process-step.step-5 { border-top: 4px solid #8B5CF6; }
+
+    .step-number {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 6px;
+    }
+    .step-1 .step-number { background: rgba(59, 130, 246, 0.2); color: #60A5FA; }
+    .step-2 .step-number { background: rgba(16, 185, 129, 0.2); color: #34D399; }
+    .step-3 .step-number { background: rgba(245, 158, 11, 0.2); color: #FBBF24; }
+    .step-4 .step-number { background: rgba(239, 68, 68, 0.2); color: #F87171; }
+    .step-5 .step-number { background: rgba(139, 92, 246, 0.2); color: #A78BFA; }
+
+    .step-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: #FFFFFF;
+      line-height: 1.25;
+      margin-bottom: 12px;
+      min-height: 40px;
+    }
+
+    .step-content {
+      font-size: 12px;
+      color: #94A3B8;
+      line-height: 1.5;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex: 1;
+    }
+    .step-content ul {
+      list-style-type: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .step-content li {
+      position: relative;
+      padding-left: 14px;
+    }
+    .step-content li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #38BDF8;
+      font-weight: bold;
+    }
+    .step-content b {
+      color: #F1F5F9;
+      font-weight: 600;
+    }
+
+    .step-tag-box {
+      margin-top: 14px;
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: 6px;
+      padding: 8px 10px;
+      font-size: 11px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .tag-label {
+      color: #64748B;
+      font-size: 10px;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      margin-bottom: 2px;
+    }
+    .tag-val {
+      color: #E2E8F0;
+      font-weight: 600;
+    }
+
+    /* Comparison Box at Bottom */
+    .comparison-banner {
+      background: rgba(30, 41, 59, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      padding: 12px 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 16px;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .comp-item {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .comp-term {
+      font-size: 11px;
+      font-weight: 700;
+      color: #B8FF34;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .comp-desc {
+      font-size: 11.5px;
+      color: #CBD5E1;
+    }
+
+    /* Footer */
+    .footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      color: #64748B;
+    }
+    .exam-focus {
+      color: #CBD5E1;
+      font-weight: 500;
+    }
+    .exam-focus strong {
+      color: #38BDF8;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div>
+      <div class="topic-badge">Themes in Indian History Part II · Chapter 8</div>
+      <div class="title">The Mughal Zabti Revenue Assessment & Fiscal Flow</div>
+      <div class="subtitle">Sequential pipeline: land surveying, crop classification, Dahsala pricing, revenue extraction, and monetary circulation</div>
+    </div>
+    <div class="brand-meta">
+      <div class="brand-logo">OURMOCKS STUDY VISUALS</div>
+      <div class="doc-pointer">CUET UG History · Unit 8</div>
+    </div>
+  </div>
+
+  <!-- 5-Step Process Flow -->
+  <div class="process-container">
+    
+    <!-- Step 1 -->
+    <div class="process-step step-1">
+      <div>
+        <div class="step-number">Stage 01</div>
+        <div class="step-title">Surveying & Land Classification</div>
+        <div class="step-content">
+          <ul>
+            <li><b>Jarib Measurement:</b> Standardized bamboo rods linked with iron rings measured cultivated bighas.</li>
+            <li><b>Four Soil Categories:</b>
+              <br>• <b>Polaj:</b> Annually cultivated.
+              <br>• <b>Parauti:</b> Fallow for 1–2 years.
+              <br>• <b>Chachar:</b> Fallow for 3–4 years.
+              <br>• <b>Banjar:</b> Uncultivated 5+ years.
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="step-tag-box">
+        <div class="tag-label">Key Official</div>
+        <div class="tag-val">Qanungo & Village Patwari</div>
+      </div>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="process-step step-2">
+      <div>
+        <div class="step-number">Stage 02</div>
+        <div class="step-title">Dahsala Yield Averaging</div>
+        <div class="step-content">
+          <ul>
+            <li><b>Todar Mal's Bandobast:</b> Introduced in 1580 (24th regnal year of Akbar).</li>
+            <li><b>10-Year Rolling Average:</b> Average produce of crops calculated over 1570–1580.</li>
+            <li><b>Crop Yield Schedules:</b> Differentiated good, middling, and bad yields to calculate average state share (one-third).</li>
+          </ul>
+        </div>
+      </div>
+      <div class="step-tag-box">
+        <div class="tag-label">Metric</div>
+        <div class="tag-val">Ain-i-Dahsala Schedules</div>
+      </div>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="process-step step-3">
+      <div>
+        <div class="step-number">Stage 03</div>
+        <div class="step-title">Revenue Assessment: Jama</div>
+        <div class="step-content">
+          <ul>
+            <li><b>Cash Conversion:</b> Commuted grain shares into fixed cash rates (<b>dastur</b>) per bigha.</li>
+            <li><b>Jama Concept:</b> The theoretical assessed revenue expected from a given territory.</li>
+            <li><b>Jins-i-Kamil:</b> State actively encouraged high-value cash crops (cotton, sugarcane, oilseeds).</li>
+          </ul>
+        </div>
+      </div>
+      <div class="step-tag-box">
+        <div class="tag-label">Revenue Valuation</div>
+        <div class="tag-val">Jama in Dams & Rupees</div>
+      </div>
+    </div>
+
+    <!-- Step 4 -->
+    <div class="process-step step-4">
+      <div>
+        <div class="step-number">Stage 04</div>
+        <div class="step-title">Collection & Realization: Hasil</div>
+        <div class="step-content">
+          <ul>
+            <li><b>Hasil Concept:</b> The actual revenue realized and paid into imperial custody.</li>
+            <li><b>Amil-guzar Duty:</b> Encouraged cash payment, though crop-sharing (<b>kankut / batai</b>) remained permitted.</li>
+            <li><b>Fotadar's Receipt:</b> Treasurers issued official receipts to prevent double taxation.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="step-tag-box">
+        <div class="tag-label">Core Official</div>
+        <div class="tag-val">Amil-guzar & Fotadar</div>
+      </div>
+    </div>
+
+    <!-- Step 5 -->
+    <div class="process-step step-5">
+      <div>
+        <div class="step-number">Stage 05</div>
+        <div class="step-title">Silver Monetization & Treasury</div>
+        <div class="step-content">
+          <ul>
+            <li><b>Silver Influx:</b> Favorable foreign trade brought massive streams of American silver bullion.</li>
+            <li><b>Imperial Mints:</b> Melted imported bullion into high-purity silver <b>rupiya</b> coins.</li>
+            <li><b>Monetary Stability:</b> Facilitated widespread commercial transactions and tax monetization across rural India.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="step-tag-box">
+        <div class="tag-label">Macro Economic Effect</div>
+        <div class="tag-val">Cash Economy Integration</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Comparison Banner -->
+  <div class="comparison-banner">
+    <div class="comp-item">
+      <div class="comp-term">Zabti System</div>
+      <div class="comp-desc">Revenue assessed on measured land area at fixed cash rates per bigha.</div>
+    </div>
+    <div class="comp-item">
+      <div class="comp-term">Jama vs Hasil</div>
+      <div class="comp-desc">Jama = estimated assessed tax; Hasil = actual collected tax revenue.</div>
+    </div>
+    <div class="comp-item">
+      <div class="comp-term">Jins-i-Kamil</div>
+      <div class="comp-desc">"Perfect crops" (cotton, sugarcane) fetching higher state revenue dues.</div>
+    </div>
+    <div class="comp-item">
+      <div class="comp-term">Ain-i-Akbari</div>
+      <div class="comp-desc">Third book of Akbarnama containing Mulk-abadi fiscal tables by Abu'l-Fazl.</div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="exam-focus">
+      <strong>CUET Exam Focus:</strong> Polaj / Parauti / Chachar / Banjar soil types · Todar Mal's Dahsala (1580) · Jama vs Hasil distinction · Influx of silver bullion
+    </div>
+    <div>www.ourmocks.com · NTA CUET UG History Mastery</div>
+  </div>
+
+</body>
+</html>

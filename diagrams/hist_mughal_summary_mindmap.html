@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Mughal Empire and Agrarian Society - Summary Mindmap</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 1440px;
+      height: 880px;
+      background: #070D1E;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: #F8FAFC;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 32px 40px;
+      overflow: hidden;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding-bottom: 16px;
+    }
+    .topic-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(184, 255, 52, 0.15);
+      border: 1px solid rgba(184, 255, 52, 0.4);
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+      color: #B8FF34;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 26px;
+      font-weight: 700;
+      color: #FFFFFF;
+      letter-spacing: -0.02em;
+    }
+    .subtitle {
+      font-size: 13px;
+      color: #94A3B8;
+      margin-top: 3px;
+    }
+    .brand-meta {
+      text-align: right;
+    }
+    .brand-logo {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: #B8FF34;
+      letter-spacing: 0.06em;
+    }
+    .doc-pointer {
+      font-size: 11px;
+      color: #64748B;
+      margin-top: 2px;
+    }
+
+    /* 6-Card Mindmap Grid */
+    .mindmap-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 16px;
+      flex: 1;
+      margin-top: 18px;
+      margin-bottom: 14px;
+    }
+
+    .mindmap-card {
+      background: rgba(15, 23, 42, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 16px 18px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .mindmap-card.core-axis {
+      border: 1px solid rgba(184, 255, 52, 0.4);
+      background: radial-gradient(circle at 50% 0%, rgba(184, 255, 52, 0.1), rgba(15, 23, 42, 0.8) 75%);
+    }
+
+    .card-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .card-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: #FFFFFF;
+    }
+    .core-axis .card-title {
+      color: #B8FF34;
+    }
+    .card-pill {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+      text-transform: uppercase;
+      background: rgba(255, 255, 255, 0.07);
+      color: #94A3B8;
+    }
+    .core-axis .card-pill {
+      background: rgba(184, 255, 52, 0.18);
+      color: #B8FF34;
+    }
+
+    .card-bullets {
+      list-style-type: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 11.5px;
+      color: #94A3B8;
+      line-height: 1.45;
+    }
+    .card-bullets li {
+      position: relative;
+      padding-left: 14px;
+    }
+    .card-bullets li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #38BDF8;
+      font-weight: bold;
+    }
+    .core-axis .card-bullets li::before {
+      color: #B8FF34;
+    }
+    .card-bullets b {
+      color: #F1F5F9;
+      font-weight: 600;
+    }
+
+    /* Footer */
+    .footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      color: #64748B;
+    }
+    .blueprint {
+      color: #CBD5E1;
+    }
+    .blueprint strong {
+      color: #B8FF34;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div>
+      <div class="topic-badge">Comprehensive Topic Map · Themes in Indian History Part II</div>
+      <div class="title">The Mughal Empire and Agrarian Society (c. 16th–17th Century)</div>
+      <div class="subtitle">Complete chapter framework: primary sources, peasant categories, village community, zamindari feudalism, and fiscal monetization</div>
+    </div>
+    <div class="brand-meta">
+      <div class="brand-logo">OURMOCKS STUDY VISUALS</div>
+      <div class="doc-pointer">CUET UG History · Chapter 8</div>
+    </div>
+  </div>
+
+  <!-- 6-Card Mindmap Grid -->
+  <div class="mindmap-grid">
+    
+    <!-- Card 1 -->
+    <div class="mindmap-card">
+      <div class="card-head">
+        <div class="card-title">1. Sources & Abu'l-Fazl's Ain</div>
+        <div class="card-pill">1598 CE</div>
+      </div>
+      <ul class="card-bullets">
+        <li><b>Akbarnama Third Book:</b> Written by <b>Abu'l-Fazl</b>; documented Akbar's imperial administration and agrarian statistical accounts.</li>
+        <li><b>Five Books (Daftars):</b> <b>Manzil-abadi</b> (royal household), <b>Sipah-abadi</b> (military/mansabdars), and <b>Mulk-abadi</b> (fiscal/revenue tables).</li>
+        <li><b>Non-Mughal Sources:</b> Revenue records of Gujarat, Maharashtra (*watan* documents), and Rajasthan (17th–18th century).</li>
+        <li><b>Historiographical Bias:</b> Viewed society strictly through elite court eyes, assuming peasant submissiveness.</li>
+      </ul>
+    </div>
+
+    <!-- Card 2: Core Axis -->
+    <div class="mindmap-card core-axis">
+      <div class="card-head">
+        <div class="card-title">★ Core Axis: Land Revenue & Zabti</div>
+        <div class="card-pill">TODAR MAL'S BANDOBAST</div>
+      </div>
+      <ul class="card-bullets">
+        <li><b>Zabti System:</b> Assessment of measured land at fixed cash rates (<b>dastur</b>) per bigha.</li>
+        <li><b>Dahsala System (1580):</b> 10-year rolling average of crop production and state demand (one-third).</li>
+        <li><b>Four Land Types:</b> <b>Polaj</b> (annual), <b>Parauti</b> (fallow 1–2 yrs), <b>Chachar</b> (fallow 3–4 yrs), and <b>Banjar</b> (fallow 5+ yrs).</li>
+        <li><b>Jama vs Hasil:</b> <b>Jama</b> = theoretical assessed tax; <b>Hasil</b> = actual realized revenue collected.</li>
+      </ul>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="mindmap-card">
+      <div class="card-head">
+        <div class="card-title">2. Peasants & Agricultural Crops</div>
+        <div class="card-pill">AGRARIAN BASE</div>
+      </div>
+      <ul class="card-bullets">
+        <li><b>Two Categories:</b> <b>Khud-kasht</b> (resident landholders) and <b>Pahi-kasht</b> (non-resident contractual migrant cultivators).</li>
+        <li><b>Jins-i-Kamil:</b> "Perfect crops" (cotton, sugarcane, oilseeds) actively promoted by state for higher cash revenue.</li>
+        <li><b>New World Influx:</b> Introduction of American crops via global trade — <b>tobacco</b> (banned by Jahangir in 1617), <b>maize</b>, tomatoes, potatoes, chillies, papaya.</li>
+        <li><b>Irrigation Aids:</b> Persian wheel (<b>rahat</b>), seasonal monsoons, and state-subsidized canal maintenance.</li>
+      </ul>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="mindmap-card">
+      <div class="card-head">
+        <div class="card-title">3. The Village Community & Gender</div>
+        <div class="card-pill">COMMUNITY DYNAMICS</div>
+      </div>
+      <ul class="card-bullets">
+        <li><b>Village Headman:</b> <b>Muqaddam</b> or <b>Mandal</b>, chosen by village elders and ratified by the zamindar; handled village revenue accounts.</li>
+        <li><b>Patwari & Panchayat:</b> Caste elder assembly governed social norms; financed by a common village fund (<b>khisam</b>).</li>
+        <li><b>Artisan Reciprocity:</b> Hereditary services compensated via harvest shares or <b>watan/miras</b> land rights in Maharashtra.</li>
+        <li><b>Gender Division:</b> Men plowed and tilled; women sowed, weeded, threshed, winnowed, and spun cotton thread.</li>
+      </ul>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="mindmap-card">
+      <div class="card-head">
+        <div class="card-title">4. Zamindars & Feudal Retainers</div>
+        <div class="card-pill">LANDED GENTRY</div>
+      </div>
+      <ul class="card-bullets">
+        <li><b>Landed Aristocracy:</b> Held hereditary proprietary lands called <b>milkiyat</b> worked by hired agricultural laborers.</li>
+        <li><b>State Intermediaries:</b> Collected land revenue for the Mughal state in exchange for a fixed fiscal commission.</li>
+        <li><b>Military Might:</b> Maintained fortified castles (<b>qilachas</b>), cavalry squadrons, artillery, and infantry retinues.</li>
+        <li><b>Commercialization:</b> Zamindari rights (*taaluqdari*) could be bought, mortgaged, and sold through registered commercial title deeds.</li>
+      </ul>
+    </div>
+
+    <!-- Card 6 -->
+    <div class="mindmap-card">
+      <div class="card-head">
+        <div class="card-title">5. Forests, Tribes & Silver Currency</div>
+        <div class="card-pill">MONEY & ECOLOGY</div>
+      </div>
+      <ul class="card-bullets">
+        <li><b>Forest Dwellers (Jangal):</b> Tribes (Bhils, Gonds, Santhals) practiced shifting cultivation (<b>jhum</b>), hunting, and gathering.</li>
+        <li><b>State Penetration:</b> Mughals demanded forest products (lac, honey, wax) and elephants as state tribute (<b>peshkash</b>).</li>
+        <li><b>Flow of Silver:</b> India's favorable foreign export trade brought massive influx of American silver via European merchants.</li>
+        <li><b>Silver Rupee (Rupiya):</b> Standardized silver coinage facilitated nationwide tax monetization and vibrant rural markets.</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="blueprint">
+      <strong>Exam Blueprint:</strong> Abu'l-Fazl's *Ain-i-Akbari* (5 Daftars) · Khud-kasht vs Pahi-kasht · Todar Mal's Dahsala (1580) · Jama vs Hasil · Silver rupiya monetization
+    </div>
+    <div>www.ourmocks.com · NTA CUET UG History Mastery</div>
+  </div>
+
+</body>
+</html>
