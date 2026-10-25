@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1440, height=880">
+  <title>Electromagnetic Waves: Displacement Current & Transverse Propagation</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 1440px;
+      height: 880px;
+      background-color: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0F172A;
+      padding: 32px 40px;
+      overflow: hidden;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 24px;
+      border-bottom: 2px solid #E2E8F0;
+      padding-bottom: 16px;
+    }
+    .title-group h1 {
+      font-size: 26px;
+      font-weight: 800;
+      color: #0F2C59;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+    .title-group p {
+      font-size: 14px;
+      color: #64748B;
+      font-weight: 500;
+    }
+    .badge {
+      background: #0066FF;
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      height: calc(100% - 110px);
+    }
+    .card {
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      border-radius: 14px;
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+      position: relative;
+    }
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      border-radius: 14px 14px 0 0;
+    }
+    .card-1::before { background: #0066FF; }
+    .card-2::before { background: #0EA5E9; }
+    .card-3::before { background: #8B5CF6; }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+    .card-title {
+      font-size: 17px;
+      font-weight: 800;
+      color: #0F2C59;
+    }
+    .tag {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+      text-transform: uppercase;
+    }
+    .tag-blue { background: #EFF6FF; color: #0066FF; }
+    .tag-cyan { background: #F0F9FF; color: #0284C7; }
+    .tag-purple { background: #F5F3FF; color: #7C3AED; }
+
+    .svg-container {
+      width: 100%;
+      height: 240px;
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 10px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .formula-block {
+      background: #F1F5F9;
+      border-left: 3px solid #0066FF;
+      padding: 10px 14px;
+      border-radius: 0 6px 6px 0;
+      font-family: "SF Mono", Consolas, Menlo, monospace;
+      font-size: 12px;
+      color: #0F172A;
+      margin-bottom: 12px;
+      line-height: 1.5;
+    }
+    .formula-block.cyan { border-left-color: #0EA5E9; }
+    .formula-block.purple { border-left-color: #8B5CF6; }
+
+    .bullet-list {
+      list-style: none;
+      font-size: 12px;
+      color: #334155;
+      line-height: 1.55;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .bullet-list li {
+      position: relative;
+      padding-left: 16px;
+    }
+    .bullet-list li::before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      color: #0066FF;
+      font-weight: 800;
+    }
+    .card-2 .bullet-list li::before { color: #0EA5E9; }
+    .card-3 .bullet-list li::before { color: #8B5CF6; }
+
+    .highlight {
+      font-weight: 700;
+      color: #0F2C59;
+    }
+    .footer-bar {
+      margin-top: auto;
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: #94A3B8;
+      font-weight: 600;
+      padding-top: 10px;
+      border-top: 1px solid #F1F5F9;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="title-group">
+      <h1>Electromagnetic Waves: Maxwell's Synthesis & Wave Dynamics</h1>
+      <p>Displacement Current Continuity • Orthogonal Transverse EM Fields • Poynting Vector & Radiation Pressure</p>
+    </div>
+    <div class="badge">CUET UG Physics • Unit 5</div>
+  </div>
+
+  <div class="grid">
+    <!-- Card 1: Displacement Current & Ampere-Maxwell Law -->
+    <div class="card card-1">
+      <div class="card-header">
+        <div class="card-title">1. Displacement Current</div>
+        <div class="tag tag-blue">Ampere-Maxwell Law</div>
+      </div>
+
+      <div class="svg-container">
+        <svg viewBox="0 0 380 230" width="380" height="230">
+          <defs>
+            <marker id="arr-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M 0 1 L 10 5 L 0 9 z" fill="#0066FF"/>
+            </marker>
+            <marker id="arr-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M 0 1 L 10 5 L 0 9 z" fill="#EF4444"/>
+            </marker>
+          </defs>
+
+          <!-- Capacitor Plates -->
+          <!-- Left Plate (+) -->
+          <rect x="120" y="40" width="12" height="150" rx="3" fill="#3B82F6"/>
+          <text x="126" y="32" font-size="11" font-weight="800" fill="#1D4ED8" text-anchor="middle">+Q Plate</text>
+
+          <!-- Right Plate (-) -->
+          <rect x="230" y="40" width="12" height="150" rx="3" fill="#94A3B8"/>
+          <text x="236" y="32" font-size="11" font-weight="800" fill="#475569" text-anchor="middle">-Q Plate</text>
+
+          <!-- Connecting Wires -->
+          <line x1="30" y1="115" x2="120" y2="115" stroke="#0F2C59" stroke-width="4"/>
+          <line x1="242" y1="115" x2="350" y2="115" stroke="#0F2C59" stroke-width="4"/>
+
+          <!-- Conduction Current Ic arrows -->
+          <line x1="45" y1="95" x2="95" y2="95" stroke="#0066FF" stroke-width="2.5" marker-end="url(#arr-blue)"/>
+          <text x="70" y="88" font-size="11" font-weight="800" fill="#0066FF" text-anchor="middle">Ic (Wire)</text>
+
+          <line x1="265" y1="95" x2="315" y2="95" stroke="#0066FF" stroke-width="2.5" marker-end="url(#arr-blue)"/>
+          <text x="290" y="88" font-size="11" font-weight="800" fill="#0066FF" text-anchor="middle">Ic (Wire)</text>
+
+          <!-- Electric Field Lines inside Gap -->
+          <g stroke="#EF4444" stroke-width="2" marker-end="url(#arr-red)">
+            <line x1="135" y1="65" x2="225" y2="65"/>
+            <line x1="135" y1="95" x2="225" y2="95"/>
+            <line x1="135" y1="125" x2="225" y2="125"/>
+            <line x1="135" y1="155" x2="225" y2="155"/>
+          </g>
+          <text x="180" y="112" font-size="11" font-weight="800" fill="#EF4444" text-anchor="middle">Time-Varying E(t)</text>
+          <text x="180" y="142" font-size="10" font-weight="700" fill="#7C3AED" text-anchor="middle">Id = ε₀(dΦE/dt)</text>
+
+          <!-- Magnetic field dashed loops inside gap -->
+          <ellipse cx="180" cy="115" rx="20" ry="60" fill="none" stroke="#10B981" stroke-width="1.8" stroke-dasharray="3,3"/>
+          <text x="180" y="205" font-size="10" font-weight="800" fill="#10B981" text-anchor="middle">Induced B Loop</text>
+        </svg>
+      </div>
+
+      <div class="formula-block">
+        Id = ε₀ (dΦE / dt) = ε₀ A (dE / dt)<br>
+        ∮ B · dl = μ₀ (Ic + Id)  [Ampere-Maxwell Law]
+      </div>
+
+      <ul class="bullet-list">
+        <li><span class="highlight">Continuity of Current:</span> Outside plates, conduction current Ic exists (Id = 0); inside gap, displacement current Id exists (Ic = 0). Across any boundary, Ic = Id.</li>
+        <li><span class="highlight">Source of B:</span> Magnetic fields are generated by both conduction currents (charges in motion) and displacement currents (time-varying electric fields).</li>
+        <li><span class="highlight">Steady DC State:</span> When fully charged, E is constant (dE/dt = 0), so Id = 0 and current ceases.</li>
+      </ul>
+
+      <div class="footer-bar">
+        <span>Maxwellian Inconsistency Resolution</span>
+        <span>Generalized Ampere's Law</span>
+      </div>
+    </div>
+
+    <!-- Card 2: Transverse Nature & Orthogonal Fields -->
+    <div class="card card-2">
+      <div class="card-header">
+        <div class="card-title">2. Transverse EM Wave</div>
+        <div class="tag tag-cyan">Orthogonal Fields</div>
+      </div>
+
+      <div class="svg-container">
+        <svg viewBox="0 0 380 230" width="380" height="230">
+          <defs>
+            <marker id="arr-cyan" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M 0 1 L 10 5 L 0 9 z" fill="#0284C7"/>
+            </marker>
+          </defs>
+
+          <!-- Axes -->
+          <!-- X axis (Propagation) -->
+          <line x1="40" y1="130" x2="355" y2="130" stroke="#0F172A" stroke-width="2" marker-end="url(#arr-cyan)"/>
+          <text x="355" y="145" font-size="11" font-weight="800" fill="#0F172A">x (c, k)</text>
+
+          <!-- Y axis (Electric Field E) -->
+          <line x1="50" y1="210" x2="50" y2="25" stroke="#EF4444" stroke-width="2"/>
+          <text x="35" y="30" font-size="11" font-weight="800" fill="#EF4444">+y (E)</text>
+
+          <!-- Z axis (Magnetic Field B) -->
+          <line x1="20" y1="150" x2="90" y2="95" stroke="#0066FF" stroke-width="2"/>
+          <text x="85" y="90" font-size="11" font-weight="800" fill="#0066FF">+z (B)</text>
+
+          <!-- Electric Field Sine Wave (Vertical, Red) -->
+          <path d="M 50 130 Q 100 45, 150 130 Q 200 215, 250 130 Q 300 45, 350 130" fill="none" stroke="#EF4444" stroke-width="2.5"/>
+
+          <!-- Magnetic Field Sine Wave (Oblique/Horizontal, Blue) -->
+          <path d="M 50 130 Q 120 165, 150 130 Q 180 95, 250 130 Q 320 165, 350 130" fill="none" stroke="#0066FF" stroke-width="2" stroke-dasharray="3,2"/>
+
+          <!-- E field vector arrows in crest 1 -->
+          <line x1="100" y1="130" x2="100" y2="52" stroke="#EF4444" stroke-width="1.8"/>
+          <polygon points="100,48 97,55 103,55" fill="#EF4444"/>
+          <text x="108" y="65" font-size="10" font-weight="800" fill="#EF4444">E₀</text>
+
+          <!-- B field vector arrows in crest 1 -->
+          <line x1="100" y1="130" x2="120" y2="160" stroke="#0066FF" stroke-width="1.8"/>
+          <polygon points="122,163 116,158 122,154" fill="#0066FF"/>
+          <text x="126" y="172" font-size="10" font-weight="800" fill="#0066FF">B₀</text>
+
+          <!-- Wavelength indicator -->
+          <line x1="50" y1="218" x2="250" y2="218" stroke="#64748B" stroke-width="1.5"/>
+          <line x1="50" y1="213" x2="50" y2="223" stroke="#64748B" stroke-width="1.5"/>
+          <line x1="250" y1="213" x2="250" y2="223" stroke="#64748B" stroke-width="1.5"/>
+          <text x="150" y="214" font-size="11" font-weight="800" fill="#0F2C59" text-anchor="middle">Wavelength λ</text>
+
+          <!-- Wave vector badge -->
+          <rect x="220" y="35" width="135" height="42" rx="6" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1"/>
+          <text x="287" y="52" font-size="10" font-weight="800" fill="#0F2C59" text-anchor="middle">c = E₀ / B₀ = 3×10⁸ m/s</text>
+          <text x="287" y="68" font-size="9" font-weight="700" fill="#64748B" text-anchor="middle">k ∥ (E × B)</text>
+        </svg>
+      </div>
+
+      <div class="formula-block cyan">
+        Ey = E₀ sin(kx - ωt) | Bz = B₀ sin(kx - ωt)<br>
+        c = 1 / √(μ₀ ε₀) = ω / k = E₀ / B₀
+      </div>
+
+      <ul class="bullet-list">
+        <li><span class="highlight">Transverse Nature:</span> E and B vectors oscillate mutually perpendicular to each other and perpendicular to direction of wave propagation (k ∥ E × B).</li>
+        <li><span class="highlight">Phase Coherence:</span> E and B reach their maximum and zero values at the same instant and position (phase difference = 0).</li>
+        <li><span class="highlight">Medium Independence:</span> Propagate through vacuum without mechanical medium; speed in medium: v = 1/√(μ ε) = c/n.</li>
+      </ul>
+
+      <div class="footer-bar">
+        <span>Speed of Light in Vacuum</span>
+        <span>Wave Vector k = 2π/λ</span>
+      </div>
+    </div>
+
+    <!-- Card 3: Energy Density, Poynting Vector & Momentum -->
+    <div class="card card-3">
+      <div class="card-header">
+        <div class="card-title">3. Energetics & Momentum</div>
+        <div class="tag tag-purple">Radiation Pressure</div>
+      </div>
+
+      <div class="svg-container">
+        <svg viewBox="0 0 380 230" width="380" height="230">
+          <!-- Equipartition of Energy Illustration -->
+          <rect x="25" y="30" width="150" height="85" rx="8" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1.5"/>
+          <text x="100" y="52" font-size="11" font-weight="800" fill="#1D4ED8" text-anchor="middle">ELECTRIC ENERGY</text>
+          <text x="100" y="75" font-size="12" font-weight="800" fill="#0F2C59" text-anchor="middle">uE = ½ ε₀ E²</text>
+          <text x="100" y="98" font-size="10" font-weight="700" fill="#64748B" text-anchor="middle">uE,avg = ¼ ε₀ E₀²</text>
+
+          <rect x="205" y="30" width="150" height="85" rx="8" fill="#F5F3FF" stroke="#8B5CF6" stroke-width="1.5"/>
+          <text x="280" y="52" font-size="11" font-weight="800" fill="#6D28D9" text-anchor="middle">MAGNETIC ENERGY</text>
+          <text x="280" y="75" font-size="12" font-weight="800" fill="#0F2C59" text-anchor="middle">uB = B² / (2μ₀)</text>
+          <text x="280" y="98" font-size="10" font-weight="700" fill="#64748B" text-anchor="middle">uB,avg = B₀² / (4μ₀)</text>
+
+          <!-- Equal sign between them -->
+          <circle cx="190" cy="72" r="14" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+          <text x="190" y="77" font-size="16" font-weight="800" fill="#0F2C59" text-anchor="middle">=</text>
+
+          <!-- Radiation Pressure & Poynting Flux -->
+          <rect x="25" y="130" width="330" height="85" rx="8" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.5"/>
+          <text x="190" y="150" font-size="11" font-weight="800" fill="#0F2C59" text-anchor="middle">POYNTING FLUX & RADIATION MOMENTUM</text>
+
+          <text x="45" y="174" font-size="11" font-weight="700" fill="#334155">• Poynting Vector: S = (1/μ₀)(E × B) [W/m²]</text>
+          <text x="45" y="193" font-size="11" font-weight="700" fill="#334155">• Momentum p = U / c | Prad = I/c (Absorb), 2I/c (Reflect)</text>
+          <text x="45" y="208" font-size="10" font-weight="600" fill="#0066FF">Average Intensity I = u_avg · c = ½ ε₀ c E₀²</text>
+        </svg>
+      </div>
+
+      <div class="formula-block purple">
+        u_avg = ½ ε₀ E₀² = B₀² / (2μ₀)  [Equipartition]<br>
+        I = u_avg · c = ½ ε₀ c E₀²  |  p = U / c
+      </div>
+
+      <ul class="bullet-list">
+        <li><span class="highlight">Equipartition of Energy:</span> Total energy is divided equally between electric and magnetic fields: u_avg,E = u_avg,B.</li>
+        <li><span class="highlight">Radiation Pressure:</span> Exerts pressure on surfaces: Prad = I/c for complete absorption; Prad = 2I/c for perfect reflection.</li>
+        <li><span class="highlight">Optical Effect:</span> Electric field vector E is primarily responsible for optical sensations and photographic effects (referred to as the light vector).</li>
+      </ul>
+
+      <div class="footer-bar">
+        <span>Equipartition & Poynting Theorem</span>
+        <span>Radiation Force F = Δp/Δt</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1440, height=880">
+  <title>The Electromagnetic Spectrum: Classification, Production & Applications</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 1440px;
+      height: 880px;
+      background-color: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0F172A;
+      padding: 32px 40px;
+      overflow: hidden;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 24px;
+      border-bottom: 2px solid #E2E8F0;
+      padding-bottom: 16px;
+    }
+    .title-group h1 {
+      font-size: 26px;
+      font-weight: 800;
+      color: #0F2C59;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+    .title-group p {
+      font-size: 14px;
+      color: #64748B;
+      font-weight: 500;
+    }
+    .badge {
+      background: #0066FF;
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      height: calc(100% - 110px);
+    }
+    .card {
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      border-radius: 14px;
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+      position: relative;
+    }
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      border-radius: 14px 14px 0 0;
+    }
+    .card-1::before { background: #0066FF; }
+    .card-2::before { background: #0EA5E9; }
+    .card-3::before { background: #8B5CF6; }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+    .card-title {
+      font-size: 17px;
+      font-weight: 800;
+      color: #0F2C59;
+    }
+    .tag {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+      text-transform: uppercase;
+    }
+    .tag-blue { background: #EFF6FF; color: #0066FF; }
+    .tag-cyan { background: #F0F9FF; color: #0284C7; }
+    .tag-purple { background: #F5F3FF; color: #7C3AED; }
+
+    .svg-container {
+      width: 100%;
+      height: 240px;
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 10px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .formula-block {
+      background: #F1F5F9;
+      border-left: 3px solid #0066FF;
+      padding: 10px 14px;
+      border-radius: 0 6px 6px 0;
+      font-family: "SF Mono", Consolas, Menlo, monospace;
+      font-size: 12px;
+      color: #0F172A;
+      margin-bottom: 12px;
+      line-height: 1.5;
+    }
+    .formula-block.cyan { border-left-color: #0EA5E9; }
+    .formula-block.purple { border-left-color: #8B5CF6; }
+
+    .bullet-list {
+      list-style: none;
+      font-size: 12px;
+      color: #334155;
+      line-height: 1.55;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .bullet-list li {
+      position: relative;
+      padding-left: 16px;
+    }
+    .bullet-list li::before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      color: #0066FF;
+      font-weight: 800;
+    }
+    .card-2 .bullet-list li::before { color: #0EA5E9; }
+    .card-3 .bullet-list li::before { color: #8B5CF6; }
+
+    .highlight {
+      font-weight: 700;
+      color: #0F2C59;
+    }
+    .footer-bar {
+      margin-top: auto;
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: #94A3B8;
+      font-weight: 600;
+      padding-top: 10px;
+      border-top: 1px solid #F1F5F9;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="title-group">
+      <h1>Electromagnetic Spectrum: Classification, Production & Applications</h1>
+      <p>Wavelength & Frequency Bands • Physical Generation Mechanisms • High-Yield CUET UG Exam Applications</p>
+    </div>
+    <div class="badge">CUET UG Physics • Unit 5</div>
+  </div>
+
+  <div class="grid">
+    <!-- Card 1: Spectrum Landscape & Energy Bands -->
+    <div class="card card-1">
+      <div class="card-header">
+        <div class="card-title">1. The Spectral Landscape</div>
+        <div class="tag tag-blue">Wavelength Ladder</div>
+      </div>
+
+      <div class="svg-container">
+        <svg viewBox="0 0 380 230" width="380" height="230">
+          <!-- Gradient Spectral Bar -->
+          <defs>
+            <linearGradient id="specGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#7C3AED"/>
+              <stop offset="15%" stop-color="#4F46E5"/>
+              <stop offset="30%" stop-color="#0284C7"/>
+              <stop offset="45%" stop-color="#10B981"/>
+              <stop offset="60%" stop-color="#EAB308"/>
+              <stop offset="75%" stop-color="#EA580C"/>
+              <stop offset="100%" stop-color="#DC2626"/>
+            </linearGradient>
+          </defs>
+
+          <!-- Spectral Bands from high energy to low energy -->
+          <!-- Top Arrow: Increasing Energy / Frequency -->
+          <line x1="30" y1="28" x2="350" y2="28" stroke="#0066FF" stroke-width="2"/>
+          <polygon points="30,28 36,24 36,32" fill="#0066FF"/>
+          <text x="190" y="20" font-size="10" font-weight="800" fill="#0066FF" text-anchor="middle">INCREASING FREQUENCY (ν) & PHOTON ENERGY (hν)</text>
+
+          <!-- Spectral Blocks -->
+          <!-- Gamma -->
+          <rect x="25" y="42" width="45" height="110" rx="4" fill="#581C87"/>
+          <text x="47" y="90" font-size="10" font-weight="800" fill="#FFFFFF" text-anchor="middle">γ-rays</text>
+          <text x="47" y="105" font-size="8" font-weight="700" fill="#DDD6FE" text-anchor="middle">&lt;10⁻¹²m</text>
+
+          <!-- X-rays -->
+          <rect x="74" y="42" width="45" height="110" rx="4" fill="#3B82F6"/>
+          <text x="96" y="90" font-size="10" font-weight="800" fill="#FFFFFF" text-anchor="middle">X-rays</text>
+          <text x="96" y="105" font-size="8" font-weight="700" fill="#BFDBFE" text-anchor="middle">10⁻¹⁰m</text>
+
+          <!-- UV -->
+          <rect x="123" y="42" width="45" height="110" rx="4" fill="#8B5CF6"/>
+          <text x="145" y="90" font-size="10" font-weight="800" fill="#FFFFFF" text-anchor="middle">UV</text>
+          <text x="145" y="105" font-size="8" font-weight="700" fill="#DDD6FE" text-anchor="middle">10⁻⁸m</text>
+
+          <!-- Visible -->
+          <rect x="172" y="42" width="42" height="110" rx="4" fill="url(#specGrad)" stroke="#0F172A" stroke-width="1.5"/>
+          <text x="193" y="88" font-size="10" font-weight="800" fill="#FFFFFF" text-anchor="middle">Visible</text>
+          <text x="193" y="102" font-size="8" font-weight="800" fill="#FFFFFF" text-anchor="middle">400-700</text>
+          <text x="193" y="114" font-size="7" font-weight="800" fill="#FFFFFF" text-anchor="middle">nm</text>
+
+          <!-- IR -->
+          <rect x="218" y="42" width="45" height="110" rx="4" fill="#EF4444"/>
+          <text x="240" y="90" font-size="10" font-weight="800" fill="#FFFFFF" text-anchor="middle">Infrared</text>
+          <text x="240" y="105" font-size="8" font-weight="700" fill="#FECACA" text-anchor="middle">10⁻⁶m</text>
+
+          <!-- Microwave -->
+          <rect x="267" y="42" width="45" height="110" rx="4" fill="#F97316"/>
+          <text x="289" y="90" font-size="9" font-weight="800" fill="#FFFFFF" text-anchor="middle">Micro</text>
+          <text x="289" y="105" font-size="8" font-weight="700" fill="#FED7AA" text-anchor="middle">10⁻³m</text>
+
+          <!-- Radio -->
+          <rect x="316" y="42" width="45" height="110" rx="4" fill="#64748B"/>
+          <text x="338" y="90" font-size="10" font-weight="800" fill="#FFFFFF" text-anchor="middle">Radio</text>
+          <text x="338" y="105" font-size="8" font-weight="700" fill="#E2E8F0" text-anchor="middle">&gt;0.1m</text>
+
+          <!-- Bottom Arrow: Increasing Wavelength -->
+          <line x1="30" y1="170" x2="350" y2="170" stroke="#EF4444" stroke-width="2"/>
+          <polygon points="350,170 344,166 344,174" fill="#EF4444"/>
+          <text x="190" y="185" font-size="10" font-weight="800" fill="#EF4444" text-anchor="middle">INCREASING WAVELENGTH (λ)</text>
+
+          <!-- Wavelength relations pill -->
+          <rect x="35" y="196" width="310" height="24" rx="4" fill="#F1F5F9" stroke="#CBD5E1"/>
+          <text x="190" y="212" font-size="10" font-weight="700" fill="#0F2C59" text-anchor="middle">c = ν · λ = 3 × 10⁸ m/s (Constant in Vacuum)</text>
+        </svg>
+      </div>
+
+      <div class="formula-block">
+        c = ν · λ = 3 × 10⁸ m/s  |  E = hν = hc / λ<br>
+        λ_gamma &lt; λ_X &lt; λ_UV &lt; λ_Vis &lt; λ_IR &lt; λ_Micro &lt; λ_Radio
+      </div>
+
+      <ul class="bullet-list">
+        <li><span class="highlight">Continuity:</span> No sharp boundary exists between adjacent regions of the electromagnetic spectrum; overlapping regions are classified by method of production.</li>
+        <li><span class="highlight">Energy Hierarchy:</span> Gamma rays have highest photon energy ($E \sim \text{MeV}$); Radio waves have lowest energy ($E \sim 10^{-6}\text{ eV}$).</li>
+        <li><span class="highlight">Visible Octave:</span> Spans narrow band from $400\text{ nm}$ (violet, $7.5 \times 10^{14}\text{ Hz}$) to $700\text{ nm}$ (red, $4.3 \times 10^{14}\text{ Hz}$).</li>
+      </ul>
+
+      <div class="footer-bar">
+        <span>Order of Wavelengths & Energies</span>
+        <span>Dispersionless in Vacuum</span>
+      </div>
+    </div>
+
+    <!-- Card 2: Production & Detection -->
+    <div class="card card-2">
+      <div class="card-header">
+        <div class="card-title">2. Sources & Detectors</div>
+        <div class="tag tag-cyan">Physical Mechanisms</div>
+      </div>
+
+      <div class="svg-container">
+        <svg viewBox="0 0 380 230" width="380" height="230">
+          <!-- Production & Detection Grid -->
+          <rect x="20" y="20" width="165" height="190" rx="8" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.2"/>
+          <text x="102" y="38" font-size="11" font-weight="800" fill="#0284C7" text-anchor="middle">SOURCES / ORIGIN</text>
+
+          <text x="30" y="58" font-size="9.5" font-weight="700" fill="#334155">• <tspan fill="#581C87" font-weight="800">γ:</tspan> Nuclear transitions (Co-60)</text>
+          <text x="30" y="78" font-size="9.5" font-weight="700" fill="#334155">• <tspan fill="#2563EB" font-weight="800">X:</tspan> Fast e⁻ on heavy target (Coolidge)</text>
+          <text x="30" y="98" font-size="9.5" font-weight="700" fill="#334155">• <tspan fill="#7C3AED" font-weight="800">UV:</tspan> Arc lamps, inner shell transitions</text>
+          <text x="30" y="118" font-size="9.5" font-weight="700" fill="#334155">• <tspan fill="#10B981" font-weight="800">Vis:</tspan> Valence e⁻ transitions, hot solids</text>
+          <text x="30" y="138" font-size="9.5" font-weight="700" fill="#334155">• <tspan fill="#EF4444" font-weight="800">IR:</tspan> Molecular vibrations, hot bodies</text>
+          <text x="30" y="158" font-size="9.5" font-weight="700" fill="#334155">• <tspan fill="#F97316" font-weight="800">Micro:</tspan> Klystron, Magnetron, Gunn</text>
+          <text x="30" y="178" font-size="9.5" font-weight="700" fill="#334155">• <tspan fill="#64748B" font-weight="800">Radio:</tspan> Accelerated charges in LC tank</text>
+
+          <rect x="195" y="20" width="165" height="190" rx="8" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.2"/>
+          <text x="277" y="38" font-size="11" font-weight="800" fill="#7C3AED" text-anchor="middle">DETECTION MODALITY</text>
+
+          <text x="205" y="58" font-size="9.5" font-weight="700" fill="#334155">• <tspan fill="#581C87" font-weight="800">γ:</tspan> GM tube, Scintillation counter</text>
+          <text x="205" y="78" font-size="9.5" font-weight="700" fill="#2563EB" font-weight="800">• <tspan fill="#2563EB" font-weight="800">X:</tspan> Photographic plate, Ion chamber</text>
+          <text x="205" y="98" font-size="9.5" font-weight="700" fill="#334155">• <tspan fill="#7C3AED" font-weight="800">UV:</tspan> Photocells, Fluorescent screen</text>
+          <text x="205" y="118" font-size="9.5" font-weight="700" fill="#334155">• <tspan fill="#10B981" font-weight="800">Vis:</tspan> Human eye, Photoemissive cells</text>
+          <text x="205" y="138" font-size="9.5" font-weight="700" fill="#334155">• <tspan fill="#EF4444" font-weight="800">IR:</tspan> Thermopile, Bolometer, Pyroelectric</text>
+          <text x="205" y="158" font-size="9.5" font-weight="700" fill="#334155">• <tspan fill="#F97316" font-weight="800">Micro:</tspan> Point contact diodes, Horn antenna</text>
+          <text x="205" y="178" font-size="9.5" font-weight="700" fill="#334155">• <tspan fill="#64748B" font-weight="800">Radio:</tspan> Tuned resonant receiver circuits</text>
+        </svg>
+      </div>
+
+      <div class="formula-block cyan">
+        LC Resonance: ν = 1 / (2π√(LC)) [Radio Waves]<br>
+        Duane-Hunt Law: λ_min = hc / (e·V) [X-ray Cutoff]
+      </div>
+
+      <ul class="bullet-list">
+        <li><span class="highlight">Bremsstrahlung X-Rays:</span> Decelerating electrons emit continuous X-rays with cut-off $\lambda_{\text{min}} = 12400 / V\text{ (\AA)}$.</li>
+        <li><span class="highlight">Ozone Absorption:</span> Stratospheric ozone ($O_3$) strongly absorbs solar UV below $300\text{ nm}$, protecting organic life.</li>
+        <li><span class="highlight">Greenhouse Trap:</span> Earth absorbs visible light and re-emits long-wavelength IR; atmospheric $CO_2$ and $H_2O$ vapour absorb IR, trapping thermal energy.</li>
+      </ul>
+
+      <div class="footer-bar">
+        <span>Atomic & Electronic Oscillators</span>
+        <span>Radiation Diagnostics</span>
+      </div>
+    </div>
+
+    <!-- Card 3: Key Applications & CUET Facts -->
+    <div class="card card-3">
+      <div class="card-header">
+        <div class="card-title">3. High-Yield CUET Facts</div>
+        <div class="tag tag-purple">Technological Uses</div>
+      </div>
+
+      <div class="svg-container">
+        <svg viewBox="0 0 380 230" width="380" height="230">
+          <!-- 4 Applications Badges -->
+          <rect x="25" y="25" width="155" height="85" rx="8" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1.2"/>
+          <text x="102" y="44" font-size="11" font-weight="800" fill="#1D4ED8" text-anchor="middle">MICROWAVE OVENS</text>
+          <text x="35" y="65" font-size="9.5" font-weight="600" fill="#334155">• Frequency match: ~2.45 GHz</text>
+          <text x="35" y="80" font-size="9.5" font-weight="600" fill="#334155">• Resonant water absorption</text>
+          <text x="35" y="95" font-size="9.5" font-weight="700" fill="#0066FF">• Glass/ceramic: non-absorbing</text>
+
+          <rect x="200" y="25" width="155" height="85" rx="8" fill="#F5F3FF" stroke="#8B5CF6" stroke-width="1.2"/>
+          <text x="277" y="44" font-size="11" font-weight="800" fill="#6D28D9" text-anchor="middle">LASIK & STERILIZATION</text>
+          <text x="210" y="65" font-size="9.5" font-weight="600" fill="#334155">• UV radiation destroys DNA</text>
+          <text x="210" y="80" font-size="9.5" font-weight="600" fill="#334155">• Narrow beam eye cornea surgery</text>
+          <text x="210" y="95" font-size="9.5" font-weight="700" fill="#7C3AED">• Water purifiers (germicidal)</text>
+
+          <rect x="25" y="125" width="155" height="85" rx="8" fill="#FEF2F2" stroke="#EF4444" stroke-width="1.2"/>
+          <text x="102" y="144" font-size="11" font-weight="800" fill="#B91C1C" text-anchor="middle">INFRARED HAZE PENETRATION</text>
+          <text x="35" y="165" font-size="9.5" font-weight="600" fill="#334155">• Rayleigh scattering: I ∝ 1/λ⁴</text>
+          <text x="35" y="180" font-size="9.5" font-weight="600" fill="#334155">• Long λ scatters minimally</text>
+          <text x="35" y="195" font-size="9.5" font-weight="700" fill="#DC2626">• Used for fog photography</text>
+
+          <rect x="200" y="125" width="155" height="85" rx="8" fill="#F0FDF4" stroke="#16A34A" stroke-width="1.2"/>
+          <text x="277" y="144" font-size="11" font-weight="800" fill="#15803D" text-anchor="middle">X-RAY & GAMMA MEDICINE</text>
+          <text x="210" y="165" font-size="9.5" font-weight="600" fill="#334155">• X-rays: Bone imaging & Bragg</text>
+          <text x="210" y="180" font-size="9.5" font-weight="600" fill="#334155">• γ-rays: Target malignant tumours</text>
+          <text x="210" y="195" font-size="9.5" font-weight="700" fill="#16A34A">• Sterilizing surgical equipment</text>
+        </svg>
+      </div>
+
+      <div class="formula-block purple">
+        Rayleigh Scattering: I_scattered ∝ 1 / λ⁴<br>
+        Radio Bands: AM (530-1710 kHz) | FM (88-108 MHz) | Cellular UHF
+      </div>
+
+      <ul class="bullet-list">
+        <li><span class="highlight">Microwave Radar:</span> Short wavelength ($1\text{ mm} - 30\text{ cm}$) produces narrow directive beams without spreading, ideal for aircraft navigation and speed guns.</li>
+        <li><span class="highlight">Infrared Remote Controls:</span> Light emitting diodes (LEDs) emit pulses of infrared radiation picked up by phototransistors in televisions.</li>
+        <li><span class="highlight">Welders Mask:</span> Special glass goggles with high UV absorption are worn by welders to shield retinas from harmful UV radiation produced in electric arcs.</li>
+      </ul>
+
+      <div class="footer-bar">
+        <span>Real-World Engineering Applications</span>
+        <span>Everyday Spectral Devices</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
