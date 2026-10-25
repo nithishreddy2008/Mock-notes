@@ -1,118 +1,247 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<title>Harappan Urban Anatomy & Settlement Hierarchy</title>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #ffffff; width: 1480px; }
-  .wrap { width: 1480px; height: 1080px; position: relative; background: #ffffff; }
-  svg.wires { position: absolute; inset: 0; width: 1480px; height: 1080px; }
-  .center {
-    position: absolute; left: 470px; top: 465px; width: 540px; height: 110px;
-    background: #071A4D; border-radius: 16px; display: flex; flex-direction: column;
-    align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(7,26,77,.25);
-    border-bottom: 5px solid #B8FF34;
-  }
-  .center .t { font-family: 'Outfit', sans-serif; color: #fff; font-size: 20px; font-weight: 800; letter-spacing: .5px; text-align: center; }
-  .center .s { color: #B8FF34; font-size: 13px; font-weight: 700; letter-spacing: 2px; margin-top: 4px; }
-  .card {
-    position: absolute; width: 465px; background: #FCFDFF; border: 1.5px solid #D5DCEA;
-    border-radius: 14px; padding: 13px 16px 12px;
-  }
-  .card h2 { font-family: 'Outfit', sans-serif; font-size: 18px; color: #071A4D; font-weight: 800; margin-bottom: 7px;
-             padding-bottom: 5px; border-bottom: 3px solid; display: inline-block; }
-  .leaf { font-size: 13.8px; color: #1B2333; margin: 5px 0; padding-left: 16px; position: relative; line-height: 1.34; }
-  .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
-  .b .leaf::before { background: #1F5EFF; }
-  .l .leaf::before { background: #7FB800; }
-  .leaf b { color: #071A4D; }
-  .b h2 { border-color: #1F5EFF; }
-  .l h2 { border-color: #7FB800; }
-  .left { left: 30px; }
-  .right { left: 985px; }
-  .exc {
-    position: absolute; left: 450px; top: 893px; width: 580px; background: #FFF3EC;
-    border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px;
-  }
-  .exc h2 { font-family: 'Outfit', sans-serif; font-size: 16.5px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
-  .exc .leaf { font-size: 13px; margin: 3px 0; padding-left: 14px; color: #7A2A12; }
-  .exc .leaf::before { background: #D2481F; }
-  .exc b { color: #B4380F; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harappan Urban Hierarchy · Layer Stack</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --color-paper:    #ffffff;
+      --color-paper-2:  #f8fafc;
+      --color-ink:      #0f172a;
+      --color-muted:    #475569;
+      --color-soft:     #64748b;
+      --color-rule:     rgba(15, 23, 42, 0.12);
+      --color-accent:   #2563eb;
+      --color-accent-soft: rgba(37, 99, 235, 0.08);
+      --color-lime:     #16a34a;
+      --color-lime-soft: rgba(22, 163, 74, 0.08);
+      --font-display:   'Outfit', -apple-system, sans-serif;
+      --font-sans:      'Inter', -apple-system, sans-serif;
+      --font-mono:      'JetBrains Mono', ui-monospace, monospace;
+    }
+    body {
+      font-family: var(--font-sans);
+      background: var(--color-paper-2);
+      min-height: 100vh;
+      padding: 2.5rem 2rem;
+      color: var(--color-ink);
+      width: 1480px;
+      margin: 0 auto;
+    }
+    .container { max-width: 1400px; margin: 0 auto; }
+    .header { margin-bottom: 2rem; }
+    .header-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: 0.6rem;
+    }
+    h1 {
+      font-family: var(--font-display);
+      font-size: 2.35rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      color: var(--color-ink);
+      margin-bottom: 0.5rem;
+    }
+    .subtitle {
+      font-size: 1.05rem;
+      line-height: 1.5;
+      color: var(--color-muted);
+      max-width: 90ch;
+    }
+    .diagram-container {
+      background: #ffffff;
+      border-radius: 12px;
+      border: 1.5px solid var(--color-rule);
+      padding: 1.75rem 2rem;
+      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+    }
+    svg { width: 100%; display: block; }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-top: 1.75rem;
+    }
+    .card {
+      background: #ffffff;
+      border-radius: 10px;
+      border: 1.5px solid var(--color-rule);
+      padding: 1.25rem 1.5rem;
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
+    }
+    .card.focal {
+      border-color: var(--color-accent);
+      background: #f0f7ff;
+    }
+    .card .eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-soft);
+      margin-bottom: 0.5rem;
+    }
+    .card.focal .eyebrow { color: var(--color-accent); }
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid var(--color-rule);
+    }
+    .card-dot { width: 9px; height: 9px; border-radius: 50%; }
+    .card-dot.blue { background: var(--color-accent); }
+    .card-dot.green { background: var(--color-lime); }
+    .card-dot.navy { background: var(--color-ink); }
+    .card h3 {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--color-ink);
+    }
+    .card p {
+      color: var(--color-muted);
+      font-size: 0.88rem;
+      line-height: 1.5;
+    }
+    .card p b { color: var(--color-ink); }
+    .footer {
+      margin-top: 1.75rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--color-rule);
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      color: var(--color-soft);
+      display: flex;
+      justify-content: space-between;
+    }
+  </style>
 </head>
 <body>
-<div class="wrap">
-  <svg class="wires" viewBox="0 0 1480 1080">
-    <path d="M 520 505 C 470 505, 495 158, 500 155" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
-    <path d="M 520 520 C 480 520, 495 438, 500 438" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 520 535 C 470 535, 495 718, 500 718" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
-    <path d="M 960 505 C 1010 505, 985 158, 980 155" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 960 520 C 1000 520, 985 438, 980 438" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
-    <path d="M 960 535 C 1010 535, 985 718, 980 718" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 740 575 C 740 700, 740 830, 740 891" fill="none" stroke="#D2481F" stroke-width="2.5" stroke-dasharray="7 5" opacity=".6"/>
-  </svg>
+  <div class="container">
+    <div class="header">
+      <p class="header-eyebrow">Visual Archetype: Layer Stack Hierarchy · Diagram Design</p>
+      <h1>Harappan Settlement Anatomy · Five Structural Tiers</h1>
+      <p class="subtitle">From the elevated ritual and governance summit of the Citadel down to municipal sanitary arteries, residential privacy, and frontier resource-extraction outposts across ancient South Asia.</p>
+    </div>
 
-  <div class="center">
-    <div class="t">HARAPPAN URBAN ANATOMY &amp; SETTLEMENTS</div>
-    <div class="s">THEMES IN INDIAN HISTORY PART I &#183; THEME 1 (CUET UG)</div>
-  </div>
+    <div class="diagram-container">
+      <svg viewBox="0 0 1320 620" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="layers-title layers-desc">
+        <title id="layers-title">Harappan Settlement Anatomy · Five Structural Tiers</title>
+        <desc id="layers-desc">Stratified layer stack diagram illustrating the 5 tiers of Harappan urbanism: Citadel summit, municipal infrastructure, domestic housing, agricultural base, and specialized peripheral outposts.</desc>
+        <defs>
+          <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse">
+            <circle cx="2" cy="2" r="1.2" fill="rgba(15, 23, 42, 0.09)"/>
+          </pattern>
+        </defs>
 
-  <div class="card left b" style="top:52px">
-    <h2>1. The Dual-Town Model (Mohenjodaro)</h2>
-    <div class="leaf"><b>Citadel (West):</b> Elevated on mud-brick platforms; fortified by perimeter walls; reserved for civic, ceremonial &amp; public governance.</div>
-    <div class="leaf"><b>Lower Town (East):</b> Vastly larger residential area; also walled; divided into sectors by planned streets.</div>
-    <div class="leaf"><b>Standardized Bricks:</b> Uniform ratio of <b>1 : 2 : 4</b> (thickness : width : length) across every Harappan site from Gujarat to Punjab.</div>
-    <div class="leaf"><b>Settlement Variations:</b> Dholavira features a unique tripartite division (Citadel, Middle Town, Lower Town) with massive stone fortifications.</div>
-  </div>
+        <rect width="100%" height="100%" fill="#ffffff" rx="8"/>
+        <rect width="100%" height="100%" fill="url(#dots)" opacity="0.6"/>
 
-  <div class="card left l" style="top:328px">
-    <h2>2. Monumental Public Architecture</h2>
-    <div class="leaf"><b>The Great Bath:</b> Rectangular tank on Citadel; watertight with gypsum mortar; flights of steps on north &amp; south sides.</div>
-    <div class="leaf"><b>Colonnaded Corridors:</b> Great Bath surrounded by rooms on 3 sides; one room contained a large brick well; water drained into street canal.</div>
-    <div class="leaf"><b>Warehouse / Granary:</b> Massive brick base survived at Mohenjodaro; upper timber superstructures decayed over millennia.</div>
-    <div class="leaf"><b>Ritual Significance:</b> Scholars unanimously link the Great Bath to exclusive ritual purification and state ceremonies.</div>
-  </div>
+        <!-- Left Direction Axis (Spatial & Social Scale) -->
+        <text x="35" y="70" fill="#2563eb" font-size="10.5" font-family="'JetBrains Mono', monospace" font-weight="700" letter-spacing="0.18em">CITADEL SUMMIT</text>
+        <line x1="85" y1="85" x2="85" y2="520" stroke="rgba(15, 23, 42, 0.25)" stroke-width="1.5"/>
+        <polygon points="80,85 90,85 85,75" fill="#2563eb"/>
+        <polygon points="80,520 90,520 85,530" fill="#475569"/>
+        <text x="30" y="550" fill="#475569" font-size="10.5" font-family="'JetBrains Mono', monospace" font-weight="700" letter-spacing="0.18em">FRONTIER OUTPOSTS</text>
 
-  <div class="card left b" style="top:604px">
-    <h2>3. Street Grid &amp; Advanced Drainage</h2>
-    <div class="leaf"><b>Gridiron Layout:</b> Streets intersected at precise <b>right angles (90&#176;)</b>; houses aligned along straight street grids.</div>
-    <div class="leaf"><b>Covered Drains:</b> Street drains constructed of kiln-fired bricks or dressed stone slabs; easily removable for cleaning.</div>
-    <div class="leaf"><b>Domestic Connection:</b> Every house had at least one wall bordering a street; waste water flowed into street drains via soak pits.</div>
-    <div class="leaf"><b>Drain Sump Basins:</b> Solid refuse settled in private sump pits; only clarified water entered the municipal channels.</div>
-  </div>
+        <!-- Stack Container Perimeter Box -->
+        <line x1="160" y1="80" x2="1280" y2="80" stroke="rgba(15, 23, 42, 0.15)" stroke-width="1.5"/>
+        <line x1="160" y1="530" x2="1280" y2="530" stroke="rgba(15, 23, 42, 0.15)" stroke-width="1.5"/>
 
-  <div class="card right l" style="top:52px">
-    <h2>4. Domestic Architecture &amp; Privacy</h2>
-    <div class="leaf"><b>Courtyard-Centric:</b> Rooms arranged around an open central courtyard; courtyard served as hub for cooking, spinning &amp; craft.</div>
-    <div class="leaf"><b>Strict Visual Privacy:</b> No ground-floor windows facing exterior streets; main entrance never gave a direct view into courtyard.</div>
-    <div class="leaf"><b>Private Bathrooms:</b> Paved with waterproof bricks; individual drains ran directly through outer wall into municipal drain.</div>
-    <div class="leaf"><b>Public &amp; Private Wells:</b> Mohenjodaro boasted ~<b>700 wells</b>, many accessible from street for passing travelers.</div>
-  </div>
+        <!-- TIER 5: The Citadel Summit (FOCAL TIER: Accent stroke + soft blue tint) -->
+        <rect x="160" y="80" width="1120" height="90" fill="rgba(37, 99, 235, 0.07)"/>
+        <rect x="160" y="80" width="1120" height="90" fill="none" stroke="#2563eb" stroke-width="2"/>
+        <text x="185" y="122" fill="#2563eb" font-size="11" font-family="'JetBrains Mono', monospace" font-weight="700" letter-spacing="0.14em">TIER 05</text>
+        <text x="270" y="125" fill="#0f172a" font-size="20" font-weight="800" font-family="'Outfit', sans-serif">The Citadel (West) · Ritual &amp; Governance Summit</text>
+        <text x="270" y="148" fill="#475569" font-size="13.5" font-family="'Inter', sans-serif">Elevated on massive mud-brick platforms; Great Bath (watertight with gypsum mortar); Central Granary/Warehouse; Priest-King statue.</text>
+        <rect x="1140" y="105" width="120" height="34" rx="6" fill="#2563eb"/>
+        <text x="1200" y="127" fill="#ffffff" font-size="12" font-family="'Outfit', sans-serif" font-weight="700" text-anchor="middle">CEREMONIAL</text>
 
-  <div class="card right b" style="top:328px">
-    <h2>5. Agricultural Base &amp; Water Management</h2>
-    <div class="leaf"><b>Crops Cultivated:</b> Wheat, barley, lentil, chickpea, sesame, and mustard; millets found in Gujarat; rice was exceptionally rare.</div>
-    <div class="leaf"><b>Ploughed Field:</b> Kalibangan (Rajasthan) yielded early Harappan ploughed field with two perpendicular furrow sets (double cropping).</div>
-    <div class="leaf"><b>Irrigation Systems:</b> Canals traced at <b>Shortughai</b> (Afghanistan); stone water reservoirs discovered at <b>Dholavira</b> (Gujarat).</div>
-    <div class="leaf"><b>Animal Traction:</b> Terracotta models of plough found at Cholistan and <b>Banawali</b> (Haryana); humped zebu oxen used for draught.</div>
-  </div>
+        <!-- TIER 4: Municipal Infrastructure & Sanitation -->
+        <rect x="160" y="170" width="1120" height="90" fill="#ffffff"/>
+        <line x1="160" y1="260" x2="1280" y2="260" stroke="rgba(15, 23, 42, 0.12)" stroke-width="1.5"/>
+        <text x="185" y="212" fill="#64748b" font-size="11" font-family="'JetBrains Mono', monospace" font-weight="600" letter-spacing="0.14em">TIER 04</text>
+        <text x="270" y="215" fill="#0f172a" font-size="19" font-weight="700" font-family="'Outfit', sans-serif">Municipal Grid &amp; Covered Drainage Network</text>
+        <text x="270" y="238" fill="#475569" font-size="13.5" font-family="'Inter', sans-serif">Planned gridiron layout intersecting at 90&#176;; street sewers of kiln-baked bricks; removable limestone covers; domestic soak pits for solid waste.</text>
+        <rect x="1140" y="195" width="120" height="34" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+        <text x="1200" y="217" fill="#334155" font-size="12" font-family="'Outfit', sans-serif" font-weight="700" text-anchor="middle">CIVIC WORKS</text>
 
-  <div class="card right l" style="top:604px">
-    <h2>6. Specialized Craft Production Centers</h2>
-    <div class="leaf"><b>Chanhudaro:</b> Tiny settlement (~7 hectares) exclusively devoted to craft: bead-making, seal-cutting, shell-working &amp; weights.</div>
-    <div class="leaf"><b>Coastal Outposts:</b> <b>Nageshwar</b> and <b>Balakot</b> specialized in maritime shell objects (bangles, ladles, inlay work).</div>
-    <div class="leaf"><b>Lothal:</b> Harbor port city in Gujarat; specialized in carnelian bead factories and copper metallurgy; brick dockyard basin.</div>
-    <div class="leaf"><b>Raw Material Outposts:</b> Shortughai established in Badakhshan near best source of prized dark blue <b>lapis lazuli</b>.</div>
-  </div>
+        <!-- TIER 3: Domestic Architecture & Urban Privacy -->
+        <rect x="160" y="260" width="1120" height="90" fill="#f8fafc"/>
+        <line x1="160" y1="350" x2="1280" y2="350" stroke="rgba(15, 23, 42, 0.12)" stroke-width="1.5"/>
+        <text x="185" y="302" fill="#64748b" font-size="11" font-family="'JetBrains Mono', monospace" font-weight="600" letter-spacing="0.14em">TIER 03</text>
+        <text x="270" y="305" fill="#0f172a" font-size="19" font-weight="700" font-family="'Outfit', sans-serif">The Lower Town (East) · Domestic Architecture &amp; Privacy</text>
+        <text x="270" y="328" fill="#475569" font-size="13.5" font-family="'Inter', sans-serif">Courtyard-centric houses; zero ground-floor exterior windows (strict visual privacy); private brick bathrooms; ~700 municipal and private wells.</text>
+        <rect x="1140" y="285" width="120" height="34" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+        <text x="1200" y="307" fill="#334155" font-size="12" font-family="'Outfit', sans-serif" font-weight="700" text-anchor="middle">RESIDENTIAL</text>
 
-  <div class="exc">
-    <h2>&#9888; CRITICAL CUET EXAM TRAPS &amp; COMMONLY CONFUSED SITES</h2>
-    <div class="leaf"><b>Kalibangan vs Banawali:</b> Ploughed field is at <b>Kalibangan</b>; terracotta plough models are at <b>Banawali</b> and Cholistan.</div>
-    <div class="leaf"><b>Shortughai vs Dholavira:</b> Canals found at <b>Shortughai</b> (Afghanistan); stone water harvesting reservoirs at <b>Dholavira</b> (Gujarat).</div>
-    <div class="leaf"><b>Chanhudaro:</b> Only Harappan settlement with <b>NO fortified citadel</b>; 100% craft-oriented industrial town.</div>
+        <!-- TIER 2: Agricultural Base & Hydraulic Engineering -->
+        <rect x="160" y="350" width="1120" height="90" fill="#ffffff"/>
+        <line x1="160" y1="440" x2="1280" y2="440" stroke="rgba(15, 23, 42, 0.12)" stroke-width="1.5"/>
+        <text x="185" y="392" fill="#64748b" font-size="11" font-family="'JetBrains Mono', monospace" font-weight="600" letter-spacing="0.14em">TIER 02</text>
+        <text x="270" y="395" fill="#0f172a" font-size="19" font-weight="700" font-family="'Outfit', sans-serif">Agricultural Agrarian Hinterland &amp; Water Harvesting</text>
+        <text x="270" y="418" fill="#475569" font-size="13.5" font-family="'Inter', sans-serif">Ploughed field at Kalibangan (perpendicular double-cropping furrows); terracotta ploughs at Banawali; giant stone water reservoirs at Dholavira.</text>
+        <rect x="1140" y="375" width="120" height="34" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+        <text x="1200" y="397" fill="#334155" font-size="12" font-family="'Outfit', sans-serif" font-weight="700" text-anchor="middle">SUBSISTENCE</text>
+
+        <!-- TIER 1: Peripheral Craft Factories & Coastal Harbors -->
+        <rect x="160" y="440" width="1120" height="90" fill="#f0fdf4"/>
+        <line x1="160" y1="530" x2="1280" y2="530" stroke="rgba(15, 23, 42, 0.15)" stroke-width="1.5"/>
+        <text x="185" y="482" fill="#16a34a" font-size="11" font-family="'JetBrains Mono', monospace" font-weight="700" letter-spacing="0.14em">TIER 01</text>
+        <text x="270" y="485" fill="#0f172a" font-size="19" font-weight="700" font-family="'Outfit', sans-serif">Industrial Workshops &amp; Frontier Resource Outposts</text>
+        <text x="270" y="508" fill="#475569" font-size="13.5" font-family="'Inter', sans-serif">Chanhudaro (7 ha craft center, no citadel); Lothal (brick dockyard &amp; bead factory); Nageshwar &amp; Balakot (marine shell work); Shortughai (lapis lazuli).</text>
+        <rect x="1140" y="465" width="120" height="34" rx="6" fill="#16a34a"/>
+        <text x="1200" y="487" fill="#ffffff" font-size="12" font-family="'Outfit', sans-serif" font-weight="700" text-anchor="middle">PRODUCTION</text>
+      </svg>
+    </div>
+
+    <!-- Editorial Synthesis Cards -->
+    <div class="cards">
+      <div class="card focal">
+        <p class="eyebrow">Key Exam Focus · Urban Architecture</p>
+        <div class="card-header">
+          <div class="card-dot blue"></div>
+          <h3>Standardized Bricks &amp; The Great Bath</h3>
+        </div>
+        <p>Across all Harappan settlements from Baluchistan to Gujarat, baked bricks preserved a rigid ratio of <b>1 : 2 : 4</b> (thickness : width : length). The Great Bath on Mohenjodaro's Citadel was waterproofed with edge-laid bricks sealed by <b>gypsum mortar</b>, indicating highly organized collective ceremonial cleansing.</p>
+      </div>
+
+      <div class="card">
+        <p class="eyebrow">Municipal Infrastructure</p>
+        <div class="card-header">
+          <div class="card-dot green"></div>
+          <h3>Grid Drainage &amp; Visual Privacy</h3>
+        </div>
+        <p>Streets intersected at strict <b>90&#176; right angles</b>. Streets and drains were engineered <i>before</i> houses were built along them. In residential houses, ground-level perimeter walls had <b>zero windows</b>, and the front entrance never allowed passersby a direct line of sight into the central courtyard.</p>
+      </div>
+
+      <div class="card">
+        <p class="eyebrow">Agricultural &amp; Industrial Sites</p>
+        <div class="card-header">
+          <div class="card-dot navy"></div>
+          <h3>Crucial Site Disambiguations</h3>
+        </div>
+        <p>NTA traps frequently test exact site locations: <b>Kalibangan</b> possesses the ploughed field; <b>Banawali</b> and <b>Cholistan</b> have terracotta plough models; <b>Shortughai</b> (Afghanistan) holds irrigation canals and lapis lazuli; and <b>Chanhudaro</b> is the only site with <b>no fortified citadel</b>.</p>
+      </div>
+    </div>
+
+    <div class="footer">
+      <span>OurMocks Study Archive · CUET UG History (Theme 1)</span>
+      <span>Layer Stack Model · Rendered via Diagram Design</span>
+    </div>
   </div>
-</div>
 </body>
 </html>

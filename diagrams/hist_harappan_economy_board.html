@@ -1,134 +1,254 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<title>Harappan Economy, Long-Distance Trade & Archaeological Historiography</title>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #ffffff; width: 1480px; }
-  .wrap { width: 1480px; height: 1040px; position: relative; background: #ffffff; }
-  .title {
-    position: absolute; left: 30px; top: 20px; width: 1420px; height: 58px;
-    background: #071A4D; border-radius: 12px; display: flex; align-items: center; justify-content: center;
-  }
-  .title .t { font-family: 'Outfit', sans-serif; color: #fff; font-size: 22px; font-weight: 800; letter-spacing: 1px; }
-  .title .t b { color: #B8FF34; }
-  .mach { position: absolute; left: 30px; top: 96px; width: 1420px; height: 116px; background: #071A4D; border-radius: 14px; padding: 12px 16px; border-bottom: 5px solid #B8FF34; }
-  .mach h3 { font-family: 'Outfit', sans-serif; color: #fff; font-size: 16px; font-weight: 800; margin: 0 0 6px; }
-  .mach .row { display: flex; gap: 12px; }
-  .mach .chip { flex: 1; background: rgba(255,255,255,.10); border-radius: 9px; padding: 7px 11px; }
-  .mach .chip .v { font-family: 'Outfit', sans-serif; color: #B8FF34; font-size: 14px; font-weight: 800; }
-  .mach .chip .k { color: #C9D4F2; font-size: 11.8px; line-height: 1.32; margin-top: 1px; }
-  .cards { position: absolute; left: 30px; top: 230px; width: 1420px; display: flex; gap: 16px; }
-  .fcard {
-    flex: 1; background: #FCFDFF; border: 1.5px solid #D5DCEA; border-radius: 14px; padding: 12px 16px; height: 260px;
-  }
-  .fcard h3 { font-family: 'Outfit', sans-serif; font-size: 17.5px; font-weight: 800; color: #1F5EFF; margin-bottom: 7px; padding-bottom: 5px; border-bottom: 3px solid #1F5EFF; display: inline-block; }
-  .fcard.right h3 { color: #4E7A00; border-color: #7FB800; }
-  .leaf { font-size: 13.5px; color: #1B2333; margin: 5.5px 0; padding-left: 16px; position: relative; line-height: 1.35; }
-  .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; background: #1F5EFF; }
-  .fcard.right .leaf::before { background: #7FB800; }
-  .leaf b { color: #071A4D; }
-  .chain { position: absolute; left: 30px; top: 510px; width: 1420px; background: #EAF0FF; border: 1.5px solid #1F5EFF; border-radius: 14px; padding: 12px 16px; }
-  .chain h3 { font-family: 'Outfit', sans-serif; font-size: 17px; color: #1F5EFF; font-weight: 800; margin: 0 0 8px; }
-  .chain .steps { display: flex; gap: 10px; align-items: stretch; }
-  .chain .s { flex: 1; background: #fff; border: 1.2px solid #B9C6E4; border-radius: 10px; padding: 8px 11px; }
-  .chain .s .y { font-family: 'Outfit', sans-serif; display: inline-block; background: #071A4D; color: #fff; font-size: 11.5px; font-weight: 800; border-radius: 6px; padding: 2px 7px; }
-  .chain .s p { font-size: 12.3px; color: #1B2333; line-height: 1.34; margin: 5px 0 0; }
-  .chain .s p b { color: #071A4D; }
-  .interests { position: absolute; left: 30px; top: 712px; width: 1420px; background: #F6FFDF; border: 1.5px solid #7FB800; border-radius: 14px; padding: 12px 16px; }
-  .interests h3 { font-family: 'Outfit', sans-serif; font-size: 17px; color: #4E7A00; font-weight: 800; margin: 0 0 6px; }
-  .interests .grid { display: flex; gap: 12px; }
-  .interests .g { flex: 1; font-size: 13px; color: #1B2333; line-height: 1.4; }
-  .interests .g b { color: #071A4D; display: block; font-size: 13.8px; margin-bottom: 2px; }
-  .strip { position: absolute; left: 30px; top: 914px; width: 1420px; display: flex; gap: 14px; }
-  .trap { flex: 1; background: #FFF3EC; border: 1.5px solid #D2481F; border-radius: 12px; padding: 10px 14px; }
-  .trap h3 { font-family: 'Outfit', sans-serif; font-size: 14px; color: #B4380F; font-weight: 800; margin-bottom: 3px; }
-  .trap p { font-size: 12.6px; color: #7A2A12; line-height: 1.35; }
-  .trap p b { color: #B4380F; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harappan Chronology & Discovery · Milestone Timeline</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --color-paper:    #ffffff;
+      --color-paper-2:  #f8fafc;
+      --color-ink:      #0f172a;
+      --color-muted:    #475569;
+      --color-soft:     #64748b;
+      --color-rule:     rgba(15, 23, 42, 0.12);
+      --color-accent:   #2563eb;
+      --color-accent-soft: rgba(37, 99, 235, 0.08);
+      --color-lime:     #16a34a;
+      --color-amber:    #d97706;
+      --font-display:   'Outfit', -apple-system, sans-serif;
+      --font-sans:      'Inter', -apple-system, sans-serif;
+      --font-mono:      'JetBrains Mono', ui-monospace, monospace;
+    }
+    body {
+      font-family: var(--font-sans);
+      background: var(--color-paper-2);
+      min-height: 100vh;
+      padding: 2.5rem 2rem;
+      color: var(--color-ink);
+      width: 1480px;
+      margin: 0 auto;
+    }
+    .container { max-width: 1400px; margin: 0 auto; }
+    .header { margin-bottom: 2rem; }
+    .header-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: 0.6rem;
+    }
+    h1 {
+      font-family: var(--font-display);
+      font-size: 2.35rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      color: var(--color-ink);
+      margin-bottom: 0.5rem;
+    }
+    .subtitle {
+      font-size: 1.05rem;
+      line-height: 1.5;
+      color: var(--color-muted);
+      max-width: 90ch;
+    }
+    .diagram-container {
+      background: #ffffff;
+      border-radius: 12px;
+      border: 1.5px solid var(--color-rule);
+      padding: 1.75rem 2rem;
+      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+    }
+    svg { width: 100%; display: block; }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-top: 1.75rem;
+    }
+    .card {
+      background: #ffffff;
+      border-radius: 10px;
+      border: 1.5px solid var(--color-rule);
+      padding: 1.25rem 1.5rem;
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
+    }
+    .card.focal {
+      border-color: var(--color-accent);
+      background: #f0f7ff;
+    }
+    .card .eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-soft);
+      margin-bottom: 0.5rem;
+    }
+    .card.focal .eyebrow { color: var(--color-accent); }
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid var(--color-rule);
+    }
+    .card-dot { width: 9px; height: 9px; border-radius: 50%; }
+    .card-dot.blue { background: var(--color-accent); }
+    .card-dot.green { background: var(--color-lime); }
+    .card-dot.amber { background: var(--color-amber); }
+    .card h3 {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--color-ink);
+    }
+    .card p {
+      color: var(--color-muted);
+      font-size: 0.88rem;
+      line-height: 1.5;
+    }
+    .card p b { color: var(--color-ink); }
+    .footer {
+      margin-top: 1.75rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--color-rule);
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      color: var(--color-soft);
+      display: flex;
+      justify-content: space-between;
+    }
+  </style>
 </head>
 <body>
-<div class="wrap">
-  <div class="title"><div class="t">HARAPPAN ECONOMIC LIFE &amp; ARCHAEOLOGICAL HISTORIOGRAPHY — <b>THE EVIDENCE MATRIX</b></div></div>
+  <div class="container">
+    <div class="header">
+      <p class="header-eyebrow">Visual Archetype: Milestone Timeline · Diagram Design</p>
+      <h1>From Bronze Age Maritime Trade to Stratigraphic Discovery</h1>
+      <p class="subtitle">A 4,500-year historical trajectory: from third-millennium BCE Mesopotamian trade links and urban disintegration to 20th-century stratigraphic excavations that placed the Indus Civilisation on the global map.</p>
+    </div>
 
-  <div class="mach">
-    <h3>FOUR PILLARS OF HARAPPAN MATERIAL EXCHANGE &amp; COGNITIVE ARTIFACTS</h3>
-    <div class="row">
-      <div class="chip"><div class="v">1. Material Sourcing</div><div class="k">Steatite (Rajasthan/Gujarat), Lapis Lazuli (Shortughai), Carnelian (Bharuch/Lothal), Copper (Khetri/Oman), Gold (Kolar, S. India).</div></div>
-      <div class="chip"><div class="v">2. Maritime Trade (Mesopotamia)</div><div class="k">Cuneiform texts cite <b>Meluhha</b> (seafarers/Harappa), <b>Magan</b> (Oman - nickel traces in copper), and <b>Dilmun</b> (Bahrain island).</div></div>
-      <div class="chip"><div class="v">3. Script &amp; Sealing System</div><div class="k">~375–400 pictographic signs; written <b>Right-to-Left</b>; longest text has 26 signs; stamped wet clay tags on tied trade bundles.</div></div>
-      <div class="chip"><div class="v">4. Metrology &amp; Weights</div><div class="k">Cubical chert weights; <b>binary</b> lower series (1, 2, 4, 8, 16, 32 up to 12,800); <b>decimal</b> system for higher values &amp; jewel scale pans.</div></div>
+    <div class="diagram-container">
+      <svg viewBox="0 0 1320 540" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="timeline-title timeline-desc">
+        <title id="timeline-title">Harappan Chronology &amp; Archaeological Discovery Timeline</title>
+        <desc id="timeline-desc">Timeline of key milestones: c. 2600 BCE mature Harappan trade, c. 1900 BCE decline, 1875 Cunningham's seal, 1921-24 Marshall's announcement, 1944 Wheeler's stratigraphy, and post-1947 excavations.</desc>
+        <defs>
+          <pattern id="dots2" width="24" height="24" patternUnits="userSpaceOnUse">
+            <circle cx="2" cy="2" r="1.2" fill="rgba(15, 23, 42, 0.09)"/>
+          </pattern>
+        </defs>
+
+        <rect width="100%" height="100%" fill="#ffffff" rx="8"/>
+        <rect width="100%" height="100%" fill="url(#dots2)" opacity="0.6"/>
+
+        <!-- Large Background Era Watermarks -->
+        <text x="70" y="470" fill="rgba(15, 23, 42, 0.04)" font-size="80" font-weight="800" font-family="'Outfit', sans-serif">BRONZE AGE</text>
+        <text x="680" y="470" fill="rgba(15, 23, 42, 0.04)" font-size="80" font-weight="800" font-family="'Outfit', sans-serif">MODERN ASI DISCOVERY</text>
+
+        <!-- Main Timeline Baseline -->
+        <line x1="50" y1="260" x2="1270" y2="260" stroke="#0f172a" stroke-width="2.5"/>
+
+        <!-- Start & End Axis Caps -->
+        <line x1="50" y1="245" x2="50" y2="275" stroke="#0f172a" stroke-width="2.5"/>
+        <line x1="1270" y1="245" x2="1270" y2="275" stroke="#0f172a" stroke-width="2.5"/>
+
+        <!-- TIME BREAK DIVIDER (between 1900 BCE and 1875 CE) -->
+        <path d="M 405 240 L 415 280 M 415 240 L 425 280" stroke="#d97706" stroke-width="2.5" fill="none"/>
+        <text x="415" y="305" fill="#d97706" font-size="10" font-family="'JetBrains Mono', monospace" font-weight="700" text-anchor="middle">3,700-YR HIATUS</text>
+
+        <!-- MILESTONE 1: c. 2600–1900 BCE (Top) -->
+        <line x1="140" y1="260" x2="140" y2="105" stroke="#2563eb" stroke-width="1.8" stroke-dasharray="3 3"/>
+        <circle cx="140" cy="260" r="7" fill="#2563eb"/>
+        <rect x="40" y="30" width="200" height="75" rx="8" fill="#ffffff" stroke="#2563eb" stroke-width="1.5" filter="drop-shadow(0 2px 4px rgba(37,99,235,0.12))"/>
+        <text x="55" y="52" fill="#2563eb" font-size="10" font-family="'JetBrains Mono', monospace" font-weight="700">c. 2600–1900 BCE</text>
+        <text x="55" y="73" fill="#0f172a" font-size="13.5" font-weight="700" font-family="'Outfit', sans-serif">Mature Urban Peak</text>
+        <text x="55" y="92" fill="#475569" font-size="11" font-family="'Inter', sans-serif">Meluhha trade with Mesopotamia, standard weights &amp; R-to-L script.</text>
+
+        <!-- MILESTONE 2: c. 1900–1800 BCE (Bottom) -->
+        <line x1="310" y1="260" x2="310" y2="395" stroke="#64748b" stroke-width="1.8" stroke-dasharray="3 3"/>
+        <circle cx="310" cy="260" r="7" fill="#64748b"/>
+        <rect x="210" y="395" width="200" height="75" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.05))"/>
+        <text x="225" y="417" fill="#64748b" font-size="10" font-family="'JetBrains Mono', monospace" font-weight="700">c. 1900–1800 BCE</text>
+        <text x="225" y="438" fill="#0f172a" font-size="13.5" font-weight="700" font-family="'Outfit', sans-serif">De-urbanization</text>
+        <text x="225" y="457" fill="#475569" font-size="11" font-family="'Inter', sans-serif">Drying rivers &amp; climate shift; writing &amp; seals disappear; eastward drift.</text>
+
+        <!-- MILESTONE 3: 1875 CE (Top) -->
+        <line x1="520" y1="260" x2="520" y2="105" stroke="#64748b" stroke-width="1.8" stroke-dasharray="3 3"/>
+        <circle cx="520" cy="260" r="7" fill="#64748b"/>
+        <rect x="420" y="30" width="200" height="75" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.05))"/>
+        <text x="435" y="52" fill="#64748b" font-size="10" font-family="'JetBrains Mono', monospace" font-weight="700">1875 CE</text>
+        <text x="435" y="73" fill="#0f172a" font-size="13.5" font-weight="700" font-family="'Outfit', sans-serif">Cunningham's Seal</text>
+        <text x="435" y="92" fill="#475569" font-size="11" font-family="'Inter', sans-serif">1st DG of ASI missed antiquity due to 6th c. BCE Ganga valley bias.</text>
+
+        <!-- MILESTONE 4: 1921–1924 CE (Bottom - FOCAL MILESTONE) -->
+        <line x1="720" y1="260" x2="720" y2="395" stroke="#2563eb" stroke-width="2"/>
+        <circle cx="720" cy="260" r="9" fill="#2563eb" stroke="#ffffff" stroke-width="2"/>
+        <rect x="610" y="395" width="220" height="85" rx="8" fill="#f0f7ff" stroke="#2563eb" stroke-width="2" filter="drop-shadow(0 4px 8px rgba(37,99,235,0.18))"/>
+        <text x="625" y="417" fill="#2563eb" font-size="10.5" font-family="'JetBrains Mono', monospace" font-weight="700">1921–1924 CE · FOCAL</text>
+        <text x="625" y="438" fill="#0f172a" font-size="14" font-weight="800" font-family="'Outfit', sans-serif">World Announcement</text>
+        <text x="625" y="457" fill="#334155" font-size="11" font-family="'Inter', sans-serif">Sahni (Harappa) &amp; Banerji (Mohenjodaro); John Marshall announces Indus civilisation.</text>
+
+        <!-- MILESTONE 5: 1944 CE (Top) -->
+        <line x1="940" y1="260" x2="940" y2="105" stroke="#16a34a" stroke-width="1.8" stroke-dasharray="3 3"/>
+        <circle cx="940" cy="260" r="7" fill="#16a34a"/>
+        <rect x="840" y="30" width="200" height="75" rx="8" fill="#ffffff" stroke="#16a34a" stroke-width="1.5" filter="drop-shadow(0 2px 4px rgba(22,163,74,0.12))"/>
+        <text x="855" y="52" fill="#16a34a" font-size="10" font-family="'JetBrains Mono', monospace" font-weight="700">1944 CE</text>
+        <text x="855" y="73" fill="#0f172a" font-size="13.5" font-weight="700" font-family="'Outfit', sans-serif">Wheeler's Stratigraphy</text>
+        <text x="855" y="92" fill="#475569" font-size="11" font-family="'Inter', sans-serif">Rectified horizontal digging by following soil strata with military precision.</text>
+
+        <!-- MILESTONE 6: Post-1947 CE (Bottom) -->
+        <line x1="1150" y1="260" x2="1150" y2="395" stroke="#64748b" stroke-width="1.8" stroke-dasharray="3 3"/>
+        <circle cx="1150" cy="260" r="7" fill="#64748b"/>
+        <rect x="1050" y="395" width="200" height="75" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.05))"/>
+        <text x="1065" y="417" fill="#64748b" font-size="10" font-family="'JetBrains Mono', monospace" font-weight="700">POST-1947 CE</text>
+        <text x="1065" y="438" fill="#0f172a" font-size="13.5" font-weight="700" font-family="'Outfit', sans-serif">Indian Archaeological Era</text>
+        <text x="1065" y="457" fill="#475569" font-size="11" font-family="'Inter', sans-serif">S.R. Rao (Lothal), B.B. Lal (Kalibangan), R.S. Bisht (Dholavira &amp; Banawali).</text>
+      </svg>
+    </div>
+
+    <!-- Editorial Synthesis Cards -->
+    <div class="cards">
+      <div class="card focal">
+        <p class="eyebrow">Trade Geography</p>
+        <div class="card-header">
+          <div class="card-dot blue"></div>
+          <h3>The Mesopotamian Trade Triangle</h3>
+        </div>
+        <p>Cuneiform tablets name <b>Meluhha</b> as the land of seafarers exporting carnelian, lapis lazuli, gold, and timber. <b>Magan</b> was Oman, confirmed by shared nickel traces in copper. <b>Dilmun</b> was the island of Bahrain serving as an intermediate Persian Gulf maritime entrepôt.</p>
+      </div>
+
+      <div class="card">
+        <p class="eyebrow">Methodology Shift</p>
+        <div class="card-header">
+          <div class="card-dot green"></div>
+          <h3>Marshall's Scraping vs Wheeler's Stratigraphy</h3>
+        </div>
+        <p>John Marshall dug along arbitrary <b>horizontal</b> depths, grouping objects from different centuries together. In 1944, <b>R.E.M. Wheeler</b> introduced military precision and scientific <b>stratigraphy</b>, excavating along natural cultural mound layers to establish true chronology.</p>
+      </div>
+
+      <div class="card">
+        <p class="eyebrow">Historiographical Critique</p>
+        <div class="card-header">
+          <div class="card-dot amber"></div>
+          <h3>The 'Aryan Massacre' Myth Refuted</h3>
+        </div>
+        <p>Wheeler linked Rigvedic Indra (Purandara - 'fort destroyer') to skeletons in Deadman Lane. Anthropologist <b>George Dales</b> proved the skeletons came from different chronological strata and showed no unhealed battle trauma, debunking the sudden invasion theory.</p>
+      </div>
+    </div>
+
+    <div class="footer">
+      <span>OurMocks Study Archive · CUET UG History (Theme 1)</span>
+      <span>Milestone Timeline Model · Rendered via Diagram Design</span>
     </div>
   </div>
-
-  <div class="cards">
-    <div class="fcard">
-      <h3>Social Differences &amp; Burials</h3>
-      <div class="leaf"><b>Burial Practices:</b> Dead laid in simple pits; oriented North-South; occasionally lined with fired bricks.</div>
-      <div class="leaf"><b>Modest Grave Goods:</b> Pottery, shell bangles, bone beads &amp; rare copper mirrors; no vast gold hordes like Egyptian Pharaohs.</div>
-      <div class="leaf"><b>Belief in Afterlife:</b> Goods placed in graves intended for use in the next world; Harappans did not entomb heavy wealth.</div>
-      <div class="leaf"><b>Utilitarian vs Luxury:</b> Daily stone querns &amp; needles vs rare, costly miniature <b>faience perfume pots</b> concentrated in major cities.</div>
-    </div>
-    <div class="fcard right">
-      <h3>Religious Evidence &amp; Interpretation</h3>
-      <div class="leaf"><b>"Mother Goddess":</b> Elaborate terracotta female figurines with heavy necklaces &amp; fan-shaped headdresses.</div>
-      <div class="leaf"><b>"Priest-King":</b> Seated stone sculpture at Mohenjodaro draped in an embroidered cloak with trefoil pattern.</div>
-      <div class="leaf"><b>"Proto-Shiva" Seal:</b> Yogic figure in cross-legged posture surrounded by elephant, tiger, rhino, buffalo &amp; two deer below seat.</div>
-      <div class="leaf"><b>Ritual Installations:</b> Conical stones classified as lingas; brick <b>fire altars</b> excavated at Kalibangan and Lothal.</div>
-    </div>
-  </div>
-
-  <div class="chain">
-    <h3>HISTORIOGRAPHY: FIVE MILESTONES IN EXCAVATION &amp; DISCOVERY</h3>
-    <div class="steps">
-      <div class="s">
-        <span class="y">1875 &#183; Alexander Cunningham</span>
-        <p>1st Director-General of ASI ("Father of Indian Archaeology"). Confused by Harappan seal; mistakenly believed Indian urbanization began with 6th c. BCE Ganga valley cities.</p>
-      </div>
-      <div class="s">
-        <span class="y">1921–22 &#183; Sahni &amp; Banerji</span>
-        <p><b>Daya Ram Sahni</b> found seals at Harappa (1921); <b>Rakhal Das Banerji</b> found identical seals at Mohenjodaro (1922), proving a unified civilization across Punjab and Sindh.</p>
-      </div>
-      <div class="s">
-        <span class="y">1924 &#183; John Marshall</span>
-        <p>DG of ASI announced Indus Civilisation to the world. Excavated horizontally along regular levels; ignored <b>stratigraphy</b>, blending artifacts from different time horizons.</p>
-      </div>
-      <div class="s">
-        <span class="y">1944 &#183; R.E.M. Wheeler</span>
-        <p>DG of ASI; brought military precision. Rectified Marshall's flaw by excavating strictly along <b>stratigraphic mound layers</b> rather than arbitrary horizontal lines.</p>
-      </div>
-      <div class="s">
-        <span class="y">Post-1947 &#183; Indian Archaeology</span>
-        <p>Partition left Harappa &amp; Mohenjodaro in Pakistan. Extensive surveys in India revealed major sites: <b>S.R. Rao</b> (Lothal), <b>B.B. Lal &amp; B.K. Thapar</b> (Kalibangan), <b>R.S. Bisht</b> (Dholavira).</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="interests">
-    <h3>THEORIES OF COLLAPSE &amp; DEBUNKING THE "MASSACRE" MYTH</h3>
-    <div class="grid">
-      <div class="g"><b>1. Ecological &amp; River Factors:</b> Climatic drying, deforestation from brick-firing, river shifts (drying of Saraswati/Ghaggar-Hakra system) led to gradual abandonment of cities.</div>
-      <div class="g"><b>2. Transformation to Late Harappan:</b> Around 1800 BCE, mature urban markers (weights, seals, standardized bricks, drainage) vanished; population migrated to Gujarat, Haryana &amp; Western UP.</div>
-      <div class="g"><b>3. Debunking the Aryan Invasion:</b> Wheeler cited Rigvedic Indra (Purandara - "fort destroyer") &amp; Deadman Lane skeletons. George Dales demonstrated skeletons showed no unhealed battle wounds or mass massacre.</div>
-    </div>
-  </div>
-
-  <div class="strip">
-    <div class="trap">
-      <h3>&#9888; TRAP 1: MARSHALL VS WHEELER</h3>
-      <p>Marshall excavated <b>horizontally</b> regardless of strata; Wheeler introduced scientific <b>stratigraphy</b> (following soil layers).</p>
-    </div>
-    <div class="trap">
-      <h3>&#9888; TRAP 2: MESOPOTAMIAN PLACE NAMES</h3>
-      <p><b>Meluhha</b> = Harappan region; <b>Magan</b> = Oman (nickel copper); <b>Dilmun</b> = Bahrain island. Meluhha was called "land of seafarers".</p>
-    </div>
-    <div class="trap">
-      <h3>&#9888; TRAP 3: SCRIPT DIRECTION &amp; METROLOGY</h3>
-      <p>Harappan script is written <b>Right-to-Left</b> (cramping on left edge). Lower weights are <b>binary</b>; higher weights are <b>decimal</b>.</p>
-    </div>
-  </div>
-</div>
 </body>
 </html>
