@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Medieval Society through Travellers' Eyes — Comparative Synthesis Matrix</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background-color: #071A4D;
+    background-image: 
+      radial-gradient(circle at 12% 18%, rgba(31, 94, 255, 0.18) 0%, transparent 40%),
+      radial-gradient(circle at 88% 82%, rgba(184, 255, 52, 0.1) 0%, transparent 40%);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #F8FAFC;
+    padding: 26px 38px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+
+  /* Header */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    padding-bottom: 12px;
+  }
+  .badge {
+    background: rgba(184, 255, 52, 0.12);
+    border: 1px solid #B8FF34;
+    color: #B8FF34;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 3px 12px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 5px;
+  }
+  .title {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: #FFFFFF;
+  }
+  .subtitle {
+    font-size: 13px;
+    color: #94A3B8;
+    margin-top: 2px;
+  }
+  .brand-pill {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: 11.5px;
+    color: #E2E8F0;
+    font-weight: 600;
+    text-align: right;
+  }
+  .brand-pill span {
+    color: #B8FF34;
+    display: block;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  /* 3-Column Comparative Layout */
+  .matrix-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    margin-top: 14px;
+    flex-grow: 1;
+  }
+
+  .traveller-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    backdrop-filter: blur(8px);
+    border-top: 3px solid #1F5EFF;
+  }
+
+  .traveller-card.albiruni { border-top-color: #38BDF8; }
+  .traveller-card.ibnbattuta { border-top-color: #B8FF34; }
+  .traveller-card.bernier { border-top-color: #F59E0B; }
+
+  .card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .traveller-name {
+    font-size: 15px;
+    font-weight: 800;
+    color: #FFFFFF;
+  }
+  .traveller-card.albiruni .traveller-name { color: #38BDF8; }
+  .traveller-card.ibnbattuta .traveller-name { color: #B8FF34; }
+  .traveller-card.bernier .traveller-name { color: #FCD34D; }
+
+  .century-pill {
+    font-size: 10.5px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.08);
+    color: #CBD5E1;
+  }
+
+  .meta-grid {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 4px 10px;
+    font-size: 11px;
+    margin-bottom: 12px;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 8px 10px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  .meta-label {
+    color: #94A3B8;
+    font-weight: 600;
+  }
+  .meta-val {
+    color: #F1F5F9;
+    font-weight: 500;
+  }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: #94A3B8;
+    margin-bottom: 6px;
+    margin-top: 4px;
+  }
+
+  .bullet-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6.5px;
+    font-size: 11.5px;
+    line-height: 1.4;
+    color: #CBD5E1;
+  }
+  .bullet-list li {
+    position: relative;
+    padding-left: 13px;
+    word-break: break-word;
+  }
+  .bullet-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+    color: #1F5EFF;
+  }
+  .traveller-card.albiruni .bullet-list li::before { color: #38BDF8; }
+  .traveller-card.ibnbattuta .bullet-list li::before { color: #B8FF34; }
+  .traveller-card.bernier .bullet-list li::before { color: #F59E0B; }
+
+  .bullet-list strong { color: #FFFFFF; }
+  .bullet-list em { color: #E2E8F0; font-style: normal; }
+
+  /* Footer */
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 8px;
+    font-size: 11px;
+    color: #64748B;
+  }
+  .footer strong { color: #B8FF34; }
+</style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div>
+      <div class="badge">Themes in Indian History Part II · Chapter 5</div>
+      <div class="title">Through the Eyes of Travellers: Comparative Matrix of Accounts</div>
+      <div class="subtitle">Systematic comparative analysis of Al-Biruni, Ibn Battuta, and François Bernier across origin, textual methodology, and societal perceptions</div>
+    </div>
+    <div class="brand-pill">
+      <span>OurMocks Study Visuals</span>
+      CUET UG History · Travellers' Accounts
+    </div>
+  </div>
+
+  <!-- Matrix Grid -->
+  <div class="matrix-container">
+
+    <!-- Column 1: Al-Biruni -->
+    <div class="traveller-card albiruni">
+      <div class="card-top">
+        <div class="traveller-name">1. Al-Biruni (c. 973 – 1048 CE)</div>
+        <div class="century-pill">11th Century · Khwarizm</div>
+      </div>
+      <div class="meta-grid">
+        <div class="meta-label">Text:</div>
+        <div class="meta-val"><strong>Kitab al-Hind</strong> (Arabic, 80 chapters)</div>
+        <div class="meta-label">Context:</div>
+        <div class="meta-val">Brought to Ghazni by Sultan Mahmud (1017)</div>
+        <div class="meta-label">Primary Method:</div>
+        <div class="meta-val">Textual Indology (Sanskrit texts, Vedas, Puranas)</div>
+      </div>
+
+      <div class="section-label">Key Observations & Perspectives</div>
+      <ul class="bullet-list">
+        <li><strong>Three Barriers to Understanding:</strong> Sanskrit language complexity, religious insularity/prejudices of Brahmanas, and psychological self-absorption of local society.</li>
+        <li><strong>Geometric Textual Method:</strong> Each chapter began with a question, followed by a description based on Sanskrit traditions, and concluded with a comparison to other civilizations (ancient Greece/Persia).</li>
+        <li><strong>Critique of Pollution:</strong> Rejected the Brahmanical concept of untouchable ritual pollution, arguing that natural law ensures that anything impure strives to regain original purity (sun cleanses air, salt purifies sea).</li>
+        <li><strong>Social Divisions:</strong> Noted 4 varnas and 8 categories of crafts-people (*Antyaja*) outside the varna system, who rendered essential civic services.</li>
+      </ul>
+    </div>
+
+    <!-- Column 2: Ibn Battuta -->
+    <div class="traveller-card ibnbattuta">
+      <div class="card-top">
+        <div class="traveller-name">2. Ibn Battuta (1304 – 1377 CE)</div>
+        <div class="century-pill">14th Century · Tangier (Morocco)</div>
+      </div>
+      <div class="meta-grid">
+        <div class="meta-label">Text:</div>
+        <div class="meta-val"><strong>Rihla</strong> (Arabic, "Travels")</div>
+        <div class="meta-label">Context:</div>
+        <div class="meta-val">Qazi of Delhi under Muhammad bin Tughlaq</div>
+        <div class="meta-label">Primary Method:</div>
+        <div class="meta-val">Empirical observation, ethnographic interviews</div>
+      </div>
+
+      <div class="section-label">Key Observations & Perspectives</div>
+      <ul class="bullet-list">
+        <li><strong>Encounter with Unfamiliar:</strong> Astonished by the <strong>Coconut</strong> (compared to a human head with eyes and brain) and <strong>Paan / Betel</strong> (leaf cultivated like vine, chewed with areca nut and lime).</li>
+        <li><strong>Vibrant Urban Network:</strong> Described Delhi as a vast city with 28 massive gates (*Darwaza*); highlighted Daulatabad's bustling market for musicians (*Tarababad*).</li>
+        <li><strong>Efficiency of Postal System:</strong> Documented the state communication grid: horse post (<em>uluq</em>, every 4 miles) and faster foot post (<em>dawa</em>, 3 stations per mile; news reached Delhi in 5 days instead of 50).</li>
+        <li><strong>Slaves & Domestic Labor:</strong> Noted widespread domestic slavery, female singers, concubines, and slave couriers employed for royal surveillance and service.</li>
+      </ul>
+    </div>
+
+    <!-- Column 3: Francois Bernier -->
+    <div class="traveller-card bernier">
+      <div class="card-top">
+        <div class="traveller-name">3. François Bernier (1620 – 1688 CE)</div>
+        <div class="century-pill">17th Century · France</div>
+      </div>
+      <div class="meta-grid">
+        <div class="meta-label">Text:</div>
+        <div class="meta-val"><strong>Travels in the Mogul Empire</strong> (French)</div>
+        <div class="meta-label">Context:</div>
+        <div class="meta-val">Physician to Prince Dara Shukoh & Danishmand Khan</div>
+        <div class="meta-label">Primary Method:</div>
+        <div class="meta-val">Binary Eurocentric comparative political theory</div>
+      </div>
+
+      <div class="section-label">Key Observations & Perspectives</div>
+      <ul class="bullet-list">
+        <li><strong>Absence of Private Property in Land:</strong> Postulated that the Mughal Emperor was the sole proprietor of all land, claiming this ruined agriculture and impoverished peasants.</li>
+        <li><strong>Binary Opposition:</strong> Systematically compared India unfavorably to France; depicted India as having only "beggars and barbarians" ruled by a "king of kings".</li>
+        <li><strong>Urban Critique ("Camp Towns"):</strong> Dismissed flourishing Mughal cities as transient "camp towns" dependent entirely upon royal imperial military movements.</li>
+        <li><strong>Global Historiographical Impact:</strong> His flawed thesis of crown ownership influenced Montesquieu's concept of <em>Oriental Despotism</em> and Karl Marx's <em>Asiatic Mode of Production</em>.</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div><strong>Historiographical Takeaway:</strong> Travellers did not passively document India; their perceptions were filtered through distinct linguistic, religious, and political paradigms.</div>
+    <div>Kitab al-Hind: <strong>Al-Biruni</strong> · Foot Post (Dawa): <strong>Ibn Battuta</strong> · Crown Land Ownership Theory: <strong>François Bernier</strong> · www.ourmocks.com</div>
+  </div>
+
+</body>
+</html>
