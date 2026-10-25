@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>India Mineral and Energy Resources Taxonomy</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      width: 1440px;
+      height: 880px;
+      background-color: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0F172A;
+      position: relative;
+      overflow: hidden;
+      padding: 24px 32px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #E2E8F0;
+      padding-bottom: 12px;
+      margin-bottom: 20px;
+    }
+    .header-left h1 {
+      font-size: 22px;
+      font-weight: 800;
+      color: #071A4D;
+      letter-spacing: -0.02em;
+    }
+    .header-left p {
+      font-size: 13px;
+      color: #475569;
+      margin-top: 2px;
+      font-weight: 500;
+    }
+    .header-badge {
+      background: #EFF6FF;
+      color: #1E40AF;
+      border: 1px solid #BFDBFE;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 14px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* 4-Column Grid */
+    .taxonomy-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      height: 720px;
+    }
+
+    .tax-card {
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      border-radius: 14px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+      overflow: hidden;
+    }
+
+    .tax-head {
+      padding: 14px 16px;
+      border-bottom: 1px solid #E2E8F0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .tax-head h2 {
+      font-size: 15px;
+      font-weight: 800;
+      color: #071A4D;
+    }
+    .tax-badge {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+      text-transform: uppercase;
+    }
+
+    /* Color themes */
+    .c-ferrous { border-top: 5px solid #2563EB; }
+    .c-ferrous .tax-badge { background: #EFF6FF; color: #1E40AF; }
+
+    .c-nonferrous { border-top: 5px solid #0D9488; }
+    .c-nonferrous .tax-badge { background: #F0FDFA; color: #0F766E; }
+
+    .c-fossil { border-top: 5px solid #EA580C; }
+    .c-fossil .tax-badge { background: #FFF7ED; color: #C2410C; }
+
+    .c-renewable { border-top: 5px solid #16A34A; }
+    .c-renewable .tax-badge { background: #F0FDF4; color: #15803D; }
+
+    .tax-body {
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      flex: 1;
+    }
+
+    .item-box {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 8px;
+      padding: 10px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .item-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+    .item-title {
+      font-size: 13px;
+      font-weight: 800;
+      color: #0F172A;
+    }
+    .item-tag {
+      font-size: 9.5px;
+      font-weight: 700;
+      color: #64748B;
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      padding: 1px 6px;
+      border-radius: 4px;
+    }
+
+    .item-desc {
+      font-size: 11px;
+      color: #334155;
+      line-height: 1.35;
+    }
+    .item-desc strong {
+      color: #071A4D;
+    }
+
+    .item-belts {
+      font-size: 10.5px;
+      color: #475569;
+      background: #FFFFFF;
+      border-left: 3px solid #2563EB;
+      padding: 4px 6px;
+      border-radius: 0 4px 4px 0;
+      margin-top: 2px;
+    }
+    .c-nonferrous .item-belts { border-left-color: #0D9488; }
+    .c-fossil .item-belts { border-left-color: #EA580C; }
+    .c-renewable .item-belts { border-left-color: #16A34A; }
+
+    footer {
+      position: absolute;
+      bottom: 12px;
+      left: 32px;
+      right: 32px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: #64748B;
+      border-top: 1px solid #E2E8F0;
+      padding-top: 8px;
+    }
+    footer strong {
+      color: #071A4D;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-left">
+      <h1>India: Mineral &amp; Energy Resources — Taxonomy &amp; Spatial Belts Matrix</h1>
+      <p>Unit 7 Architecture: Ferrous &amp; Non-Ferrous Minerals, Fossil Fuels &amp; Clean Renewable Energy Networks</p>
+    </div>
+    <div class="header-badge">NCERT Class XII Geography</div>
+  </header>
+
+  <div class="taxonomy-grid">
+
+    <!-- Column 1: Ferrous Minerals -->
+    <div class="tax-card c-ferrous">
+      <div class="tax-head">
+        <h2>1. Ferrous Minerals</h2>
+        <span class="tax-badge">Iron Base</span>
+      </div>
+      <div class="tax-body">
+        <div class="item-box">
+          <div class="item-head">
+            <span class="item-title">Iron Ore (Hematite &amp; Magnetite)</span>
+            <span class="item-tag">Peninsular Shields</span>
+          </div>
+          <div class="item-desc">
+            <strong>Geological Ore:</strong> High-grade Hematite (60–70% iron content) and Magnetite. India has premier reserves in Asia.
+          </div>
+          <div class="item-belts">
+            <strong>Key Belts:</strong><br>
+            • <em>Odisha-Jharkhand:</em> Badampahar, Mayurbhanj, Kendujhar; Noamundi, Gua.<br>
+            • <em>Durg-Bastar-Chandrapur:</em> Bailadila range (super-high grade exported via Vizag).<br>
+            • <em>Ballari-Chitradurga:</em> Kudremukh pipeline to Mangaluru port; Ratnagiri/Goa.
+          </div>
+        </div>
+
+        <div class="item-box">
+          <div class="item-head">
+            <span class="item-title">Manganese Ore</span>
+            <span class="item-tag">Steel Smelting Alloy</span>
+          </div>
+          <div class="item-desc">
+            <strong>Industrial Use:</strong> Essential for smelting iron ore and manufacturing ferro-manganese alloys (nearly 10 kg manganese per tonne of steel).
+          </div>
+          <div class="item-belts">
+            <strong>Leading Belts:</strong> Odisha (Sundargarh, Kendujhar), Madhya Pradesh (Balaghat), Maharashtra (Nagpur, Bhandara), Karnataka (Ballari).
+          </div>
+        </div>
+
+        <div class="item-box">
+          <div class="item-head">
+            <span class="item-title">Chromite</span>
+            <span class="item-tag">Refractory &amp; Chemical</span>
+          </div>
+          <div class="item-desc">
+            <strong>Dominance:</strong> Odisha accounts for over 90% of total Indian output (Sukinda ultramafic valley in Jajpur district).
+          </div>
+          <div class="item-belts">
+            <strong>Leading States:</strong> Odisha, Karnataka (Hassan), Maharashtra.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Column 2: Non-Ferrous & Non-Metallic Minerals -->
+    <div class="tax-card c-nonferrous">
+      <div class="tax-head">
+        <h2>2. Non-Ferrous &amp; Non-Metallic</h2>
+        <span class="tax-badge">Alloy &amp; Electrical</span>
+      </div>
+      <div class="tax-body">
+        <div class="item-box">
+          <div class="item-head">
+            <span class="item-title">Bauxite (Aluminium Ore)</span>
+            <span class="item-tag">Residual Weathering</span>
+          </div>
+          <div class="item-desc">
+            <strong>Characteristics:</strong> Formed by decomposition of surface rocks rich in aluminium silicates; extreme lightness &amp; electrical conductivity.
+          </div>
+          <div class="item-belts">
+            <strong>Key Belts:</strong> Odisha leading (Panchpatmali in Koraput, Kalahandi, Bolangir); Amarkantak plateau (MP/Chhattisgarh); Katni-Jabalpur; Kolhapur (Maharashtra).
+          </div>
+        </div>
+
+        <div class="item-box">
+          <div class="item-head">
+            <span class="item-title">Copper Ore</span>
+            <span class="item-tag">Deficit Resource</span>
+          </div>
+          <div class="item-desc">
+            <strong>Properties:</strong> Highly malleable, ductile, excellent thermal &amp; electrical conductor. India is critically deficient in domestic reserves.
+          </div>
+          <div class="item-belts">
+            <strong>Key Belts:</strong> Balaghat mines (Madhya Pradesh — 52% output), Khetri copper belt (Jharkhand-Rajasthan), Singhbhum (Jharkhand).
+          </div>
+        </div>
+
+        <div class="item-box">
+          <div class="item-head">
+            <span class="item-title">Mica (Non-Metallic)</span>
+            <span class="item-tag">Electrical Insulator</span>
+          </div>
+          <div class="item-desc">
+            <strong>Qualities:</strong> Easily splits into thin sheets; exceptional dielectric strength, low power loss factor, insulating resistance.
+          </div>
+          <div class="item-belts">
+            <strong>Key Belts:</strong> Jharkhand (Koderma, Giridih, Hazaribagh); Andhra Pradesh (Nellore); Rajasthan (Bhilwara, Jaipur).
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Column 3: Conventional Energy -->
+    <div class="tax-card c-fossil">
+      <div class="tax-head">
+        <h2>3. Conventional Energy</h2>
+        <span class="tax-badge">Fossil Fuels</span>
+      </div>
+      <div class="tax-body">
+        <div class="item-box">
+          <div class="item-head">
+            <span class="item-title">Coal (Gondwana vs Tertiary)</span>
+            <span class="item-tag">Primary Energy Backbone</span>
+          </div>
+          <div class="item-desc">
+            <strong>Gondwana Coal (~200 Ma):</strong> 98% of reserves; metallurgical bituminous quality in river valleys (Damodar, Son, Mahanadi, Godavari).<br>
+            <strong>Tertiary Coal (~55 Ma):</strong> High moisture &amp; sulphur; Assam, Meghalaya, Arunachal; Lignite at Neyveli (Tamil Nadu).
+          </div>
+          <div class="item-belts">
+            <strong>Premier Fields:</strong> Jharia (largest coking coal field), Raniganj (oldest mine), Bokaro, Singrauli, Talcher, Korba.
+          </div>
+        </div>
+
+        <div class="item-box">
+          <div class="item-head">
+            <span class="item-title">Petroleum (Crude Oil)</span>
+            <span class="item-tag">Liquid Hydrocarbon</span>
+          </div>
+          <div class="item-desc">
+            <strong>Occurrence:</strong> Sedimentary basins in anticlines and fault traps.
+          </div>
+          <div class="item-belts">
+            <strong>Key Producing Basins:</strong><br>
+            • <em>Assam:</em> Digboi (oldest operational refinery in India), Naharkatiya, Moran-Hugrijan.<br>
+            • <em>Western Offshore:</em> Mumbai High (discovered 1973, largest output), Bassein.<br>
+            • <em>Gujarat:</em> Ankleshwar, Kalol, Mehsana, Cambay.
+          </div>
+        </div>
+
+        <div class="item-box">
+          <div class="item-head">
+            <span class="item-title">Natural Gas</span>
+            <span class="item-tag">Clean Transition Fuel</span>
+          </div>
+          <div class="item-desc">
+            <strong>Distribution:</strong> KG Basin (Krishna-Godavari offshore), Mumbai High, Barmer (Rajasthan), Tripura. GAIL HVJ Pipeline network.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Column 4: Non-Conventional & Clean Energy -->
+    <div class="tax-card c-renewable">
+      <div class="tax-head">
+        <h2>4. Non-Conventional Energy</h2>
+        <span class="tax-badge">Green &amp; Sustainable</span>
+      </div>
+      <div class="tax-body">
+        <div class="item-box">
+          <div class="item-head">
+            <span class="item-title">Nuclear / Atomic Energy</span>
+            <span class="item-tag">Strategic Power</span>
+          </div>
+          <div class="item-desc">
+            <strong>Mineral Base:</strong> Uranium (Dharwar rocks in Jaduguda, Singhbhum; Udaipur); Thorium derived from Monazite sands of Kerala coast.
+          </div>
+          <div class="item-belts">
+            <strong>Key Power Plants:</strong> Tarapur (Maharashtra), Rawatbhata (Rajasthan), Kalpakkam &amp; Kudankulam (Tamil Nadu), Narora (UP), Kakrapar (Gujarat), Kaiga (Karnataka).
+          </div>
+        </div>
+
+        <div class="item-box">
+          <div class="item-head">
+            <span class="item-title">Solar &amp; Wind Energy</span>
+            <span class="item-tag">Renewable Surge</span>
+          </div>
+          <div class="item-desc">
+            <strong>Solar:</strong> Immense insolation in western dry tracts; Bhadla Solar Park (Rajasthan — one of world's largest), Pavagada (Karnataka).<br>
+            <strong>Wind:</strong> Muppandal wind farm cluster (Tamil Nadu to Kanyakumari — premier hub), Jaisalmer (Rajasthan), Gujarat coast.
+          </div>
+          <div class="item-belts">
+            <strong>Policy:</strong> International Solar Alliance (ISA), PM-KUSUM.
+          </div>
+        </div>
+
+        <div class="item-box">
+          <div class="item-head">
+            <span class="item-title">Tidal, Geothermal &amp; Bio</span>
+            <span class="item-tag">Niche Potential</span>
+          </div>
+          <div class="item-desc">
+            <strong>Geothermal:</strong> Manikaran (Himachal Pradesh), Puga Valley (Ladakh).<br>
+            <strong>Tidal:</strong> Gulf of Khambhat, Gulf of Kuchchh, Sundarbans.
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <span>OurMocks Exam Prep Series · Geography Core Diagrams</span>
+    <span>Source: Geological Survey of India, Ministry of Mines &amp; NCERT Class XII <em>India: People and Economy</em></span>
+  </footer>
+
+</body>
+</html>

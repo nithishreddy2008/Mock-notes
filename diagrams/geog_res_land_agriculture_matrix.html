@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>India Land and Agricultural Resources Matrix</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      width: 1440px;
+      height: 880px;
+      background-color: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0F172A;
+      position: relative;
+      overflow: hidden;
+      padding: 24px 32px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #E2E8F0;
+      padding-bottom: 12px;
+      margin-bottom: 20px;
+    }
+    .header-left h1 {
+      font-size: 22px;
+      font-weight: 800;
+      color: #071A4D;
+      letter-spacing: -0.02em;
+    }
+    .header-left p {
+      font-size: 13px;
+      color: #475569;
+      margin-top: 2px;
+      font-weight: 500;
+    }
+    .header-badge {
+      background: #EFF6FF;
+      color: #1E40AF;
+      border: 1px solid #BFDBFE;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 14px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Grid layout: 4 Columns */
+    .matrix-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      height: 720px;
+    }
+
+    .crop-col {
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      border-radius: 14px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+      overflow: hidden;
+    }
+
+    .col-header {
+      padding: 14px 16px;
+      border-bottom: 1px solid #E2E8F0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .col-header h2 {
+      font-size: 15px;
+      font-weight: 800;
+      color: #071A4D;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .col-badge {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+      text-transform: uppercase;
+    }
+
+    /* Color acccents */
+    .col-food { border-top: 5px solid #2563EB; }
+    .col-food .col-badge { background: #EFF6FF; color: #1E40AF; }
+
+    .col-cash { border-top: 5px solid #059669; }
+    .col-cash .col-badge { background: #ECFDF5; color: #065F46; }
+
+    .col-plantation { border-top: 5px solid #D97706; }
+    .col-plantation .col-badge { background: #FFFBEB; color: #92400E; }
+
+    .col-strategy { border-top: 5px solid #7C3AED; }
+    .col-strategy .col-badge { background: #FAF5FF; color: #6B21A8; }
+
+    .col-body {
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      flex: 1;
+      overflow-y: hidden;
+    }
+
+    .crop-card {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 8px;
+      padding: 10px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .crop-card-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+    .crop-name {
+      font-size: 13px;
+      font-weight: 800;
+      color: #0F172A;
+    }
+    .crop-season {
+      font-size: 9.5px;
+      font-weight: 700;
+      color: #64748B;
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      padding: 1px 6px;
+      border-radius: 4px;
+    }
+
+    .crop-specs {
+      font-size: 11px;
+      color: #334155;
+      line-height: 1.35;
+    }
+    .crop-specs strong {
+      color: #071A4D;
+    }
+    .crop-regions {
+      font-size: 10.5px;
+      color: #475569;
+      background: #FFFFFF;
+      border-left: 3px solid #2563EB;
+      padding: 4px 6px;
+      border-radius: 0 4px 4px 0;
+      margin-top: 2px;
+    }
+    .col-cash .crop-regions { border-left-color: #059669; }
+    .col-plantation .crop-regions { border-left-color: #D97706; }
+    .col-strategy .crop-regions { border-left-color: #7C3AED; }
+
+    .challenge-box {
+      background: #FFF1F2;
+      border: 1px solid #FECDD3;
+      border-radius: 8px;
+      padding: 9px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .challenge-box h3 {
+      font-size: 11.5px;
+      font-weight: 800;
+      color: #9F1239;
+    }
+    .challenge-box p {
+      font-size: 10.5px;
+      color: #4C0519;
+      line-height: 1.35;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 12px;
+      left: 32px;
+      right: 32px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: #64748B;
+      border-top: 1px solid #E2E8F0;
+      padding-top: 8px;
+    }
+    footer strong {
+      color: #071A4D;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-left">
+      <h1>India: Land &amp; Agricultural Resources — Cropping Matrix &amp; Farming Systems</h1>
+      <p>Unit 7 Core Architecture: Major Food Grains, Cash Crops, Plantations, Green Revolution &amp; Structural Challenges</p>
+    </div>
+    <div class="header-badge">NCERT Class XII Geography</div>
+  </header>
+
+  <div class="matrix-grid">
+
+    <!-- Column 1: Food Grains -->
+    <div class="crop-col col-food">
+      <div class="col-header">
+        <h2>1. Food Grains</h2>
+        <span class="col-badge">Core Staples</span>
+      </div>
+      <div class="col-body">
+        <div class="crop-card">
+          <div class="crop-card-head">
+            <span class="crop-name">Rice (Oryza sativa)</span>
+            <span class="crop-season">Kharif · Aus/Aman/Boro</span>
+          </div>
+          <div class="crop-specs">
+            <strong>Thermal/Moisture:</strong> 20°C–27°C; >100 cm rainfall; deep clayey/loamy alluvium.
+          </div>
+          <div class="crop-regions">
+            <strong>Key States:</strong> West Bengal (leading producer), Uttar Pradesh, Punjab, Andhra Pradesh, Bihar.
+          </div>
+        </div>
+
+        <div class="crop-card">
+          <div class="crop-card-head">
+            <span class="crop-name">Wheat (Triticum)</span>
+            <span class="crop-season">Rabi Season</span>
+          </div>
+          <div class="crop-specs">
+            <strong>Thermal/Moisture:</strong> 10°C–15°C (sowing), 21°C–26°C (harvest); 75 cm rain / canal irrigation.
+          </div>
+          <div class="crop-regions">
+            <strong>Key States:</strong> Uttar Pradesh (highest output), Punjab &amp; Haryana (highest per-hectare yields).
+          </div>
+        </div>
+
+        <div class="crop-card">
+          <div class="crop-card-head">
+            <span class="crop-name">Millets (Jowar / Bajra)</span>
+            <span class="crop-season">Kharif / Dryland</span>
+          </div>
+          <div class="crop-specs">
+            <strong>Jowar:</strong> Rainfed coarse grain; Maharashtra (leading).<br>
+            <strong>Bajra:</strong> Drought-tolerant on sandy soils; Rajasthan (leading).
+          </div>
+          <div class="crop-regions">
+            <strong>Key States:</strong> Maharashtra, Rajasthan, Karnataka, Gujarat, MP.
+          </div>
+        </div>
+
+        <div class="crop-card">
+          <div class="crop-card-head">
+            <span class="crop-name">Pulses (Gram / Tur)</span>
+            <span class="crop-season">Rabi &amp; Kharif</span>
+          </div>
+          <div class="crop-specs">
+            <strong>Ecological Role:</strong> Leguminous nitrogen-fixers; vital protein staple; dryland rainfed regimes.
+          </div>
+          <div class="crop-regions">
+            <strong>Key States:</strong> Madhya Pradesh (leading pulses hub), Rajasthan, Maharashtra, UP.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Column 2: Cash & Commercial Crops -->
+    <div class="crop-col col-cash">
+      <div class="col-header">
+        <h2>2. Cash &amp; Commercial Crops</h2>
+        <span class="col-badge">Industrial Raw Material</span>
+      </div>
+      <div class="col-body">
+        <div class="crop-card">
+          <div class="crop-card-head">
+            <span class="crop-name">Cotton (White Gold)</span>
+            <span class="crop-season">Kharif · 210 Frost-Free Days</span>
+          </div>
+          <div class="crop-specs">
+            <strong>Pedology:</strong> Deep moisture-retentive black Regur soils; short-staple (Indian) &amp; long-staple (American/Narma).
+          </div>
+          <div class="crop-regions">
+            <strong>Key States:</strong> Gujarat, Maharashtra, Telangana, Andhra Pradesh, Punjab.
+          </div>
+        </div>
+
+        <div class="crop-card">
+          <div class="crop-card-head">
+            <span class="crop-name">Jute (Golden Fibre)</span>
+            <span class="crop-season">Kharif · Delta Floodplains</span>
+          </div>
+          <div class="crop-specs">
+            <strong>Conditions:</strong> Hot &amp; humid climate (>150 cm rain); annual silt-replenished fertile floodplains.
+          </div>
+          <div class="crop-regions">
+            <strong>Key States:</strong> West Bengal (produces 3/4th of national total), Bihar, Assam (Brahmaputra Valley).
+          </div>
+        </div>
+
+        <div class="crop-card">
+          <div class="crop-card-head">
+            <span class="crop-name">Sugarcane</span>
+            <span class="crop-season">Long Duration (10–12 Mo)</span>
+          </div>
+          <div class="crop-specs">
+            <strong>Thermal/Moisture:</strong> 21°C–27°C; 75–100 cm rain; high sucrose yield in maritime peninsular climate.
+          </div>
+          <div class="crop-regions">
+            <strong>Key States:</strong> Uttar Pradesh (highest acreage), Maharashtra &amp; Karnataka (higher recovery rate).
+          </div>
+        </div>
+
+        <div class="crop-card">
+          <div class="crop-card-head">
+            <span class="crop-name">Oilseeds (Groundnut/Mustard)</span>
+            <span class="crop-season">Kharif (Groundnut) · Rabi (Mustard)</span>
+          </div>
+          <div class="crop-specs">
+            <strong>Groundnut:</strong> Gujarat leading producer.<br>
+            <strong>Rapeseed &amp; Mustard:</strong> Rajasthan &amp; MP leading.
+          </div>
+          <div class="crop-regions">
+            <strong>Key States:</strong> Gujarat, Rajasthan, Tamil Nadu, Madhya Pradesh.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Column 3: Plantation & Beverages -->
+    <div class="crop-col col-plantation">
+      <div class="col-header">
+        <h2>3. Plantation Crops</h2>
+        <span class="col-badge">Export &amp; Estate Agriculture</span>
+      </div>
+      <div class="col-body">
+        <div class="crop-card">
+          <div class="crop-card-head">
+            <span class="crop-name">Tea (Camellia sinensis)</span>
+            <span class="crop-season">Perennial Shrub</span>
+          </div>
+          <div class="crop-specs">
+            <strong>Conditions:</strong> Sub-tropical climate; 150–200 cm rain; undulating well-drained slopes; acidic humus soil; shade trees.
+          </div>
+          <div class="crop-regions">
+            <strong>Key States:</strong> Assam (Brahmaputra &amp; Surma valley — over 50% output), West Bengal (Darjeeling/Jalpaiguri), Tamil Nadu.
+          </div>
+        </div>
+
+        <div class="crop-card">
+          <div class="crop-card-head">
+            <span class="crop-name">Coffee (Arabica &amp; Robusta)</span>
+            <span class="crop-season">Shade Plantation</span>
+          </div>
+          <div class="crop-specs">
+            <strong>Varieties:</strong> High-grade Arabica (global demand) &amp; hardy Robusta; grown on shaded highland slopes (900–1,800 m).
+          </div>
+          <div class="crop-regions">
+            <strong>Key States:</strong> Karnataka (over 70% national output: Kodagu, Chikkamagaluru, Hassan), Kerala, Tamil Nadu.
+          </div>
+        </div>
+
+        <div class="crop-card">
+          <div class="crop-card-head">
+            <span class="crop-name">Natural Rubber</span>
+            <span class="crop-season">Equatorial Plantation</span>
+          </div>
+          <div class="crop-specs">
+            <strong>Requirements:</strong> Moist &amp; humid climate; >200 cm rainfall; temperatures above 25°C; deep porous red loams.
+          </div>
+          <div class="crop-regions">
+            <strong>Key States:</strong> Kerala (accounts for ~90% of total Indian production), Tamil Nadu, Tripura.
+          </div>
+        </div>
+
+        <div class="crop-card">
+          <div class="crop-card-head">
+            <span class="crop-name">Spices &amp; Horticulture</span>
+            <span class="crop-season">Diverse Agro-Climates</span>
+          </div>
+          <div class="crop-specs">
+            <strong>Spices:</strong> Cardamom, black pepper, ginger (Malabar coast).<br>
+            <strong>Fruits:</strong> Mango (UP/AP), Apple (J&amp;K/HP), Orange (Nagpur).
+          </div>
+          <div class="crop-regions">
+            <strong>Key States:</strong> Kerala, Karnataka, Andhra Pradesh, Maharashtra.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Column 4: Strategy & Challenges -->
+    <div class="crop-col col-strategy">
+      <div class="col-header">
+        <h2>4. Agrarian Strategy &amp; Crises</h2>
+        <span class="col-badge">Policy &amp; Transformation</span>
+      </div>
+      <div class="col-body">
+        <div class="crop-card">
+          <div class="crop-card-head">
+            <span class="crop-name">The Green Revolution</span>
+            <span class="crop-season">1960s Package Technology</span>
+          </div>
+          <div class="crop-specs">
+            <strong>Triad Inputs:</strong> High Yielding Variety (HYV) Mexican semi-dwarf seeds, assured canal/tubewell irrigation &amp; chemical NPK fertilizers.
+          </div>
+          <div class="crop-regions">
+            <strong>Core Impact Belt:</strong> Punjab, Haryana, Western Uttar Pradesh; turned India self-sufficient in wheat and rice.
+          </div>
+        </div>
+
+        <div class="challenge-box">
+          <h3>Ecological Degradation</h3>
+          <p>Over-irrigation in Punjab and Haryana caused widespread waterlogging, soil salinization (reh/kallar), and acute depletion of groundwater aquifers.</p>
+        </div>
+
+        <div class="challenge-box">
+          <h3>Structural Vulnerabilities</h3>
+          <p>Extreme landholding fragmentation (>85% small and marginal farmers with &lt;2 hectares), high dependence on unpredictable monsoon, and lack of cold storage chains.</p>
+        </div>
+
+        <div class="crop-card">
+          <div class="crop-card-head">
+            <span class="crop-name">Sustainable Transitions</span>
+            <span class="crop-season">Modern Missions</span>
+          </div>
+          <div class="crop-specs">
+            <strong>Initiatives:</strong> Pradhan Mantri Krishi Sinchayee Yojana (Per Drop More Crop), Soil Health Card, Zero Budget Natural Farming (ZBNF).
+          </div>
+          <div class="crop-regions">
+            <strong>Target:</strong> Climate-resilient agriculture &amp; income stability.
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <span>OurMocks Exam Prep Series · Geography Core Diagrams</span>
+    <span>Source: Ministry of Agriculture and Farmers Welfare &amp; NCERT Class XII <em>India: People and Economy</em></span>
+  </footer>
+
+</body>
+</html>

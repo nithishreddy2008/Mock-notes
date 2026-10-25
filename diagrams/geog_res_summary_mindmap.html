@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>India Resources and Development Summary Mindmap</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      width: 1440px;
+      height: 880px;
+      background-color: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0F172A;
+      position: relative;
+      overflow: hidden;
+      padding: 24px 32px;
+    }
+
+    header {
+      position: absolute;
+      top: 18px;
+      left: 32px;
+      right: 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #E2E8F0;
+      padding-bottom: 8px;
+      z-index: 10;
+    }
+    .header-left h1 {
+      font-size: 22px;
+      font-weight: 800;
+      color: #071A4D;
+      letter-spacing: -0.02em;
+    }
+    .header-left p {
+      font-size: 12.5px;
+      color: #475569;
+      margin-top: 2px;
+      font-weight: 500;
+    }
+    .header-badge {
+      background: #EFF6FF;
+      color: #1E40AF;
+      border: 1px solid #BFDBFE;
+      font-size: 10.5px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* SVG Connectors */
+    svg.connections {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1440px;
+      height: 880px;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Central Hub */
+    .mindmap-center {
+      position: absolute;
+      top: 385px;
+      left: 580px;
+      width: 280px;
+      height: 110px;
+      background: #071A4D;
+      border: 3px solid #1F5EFF;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(7, 26, 77, 0.18), 0 0 0 6px #EFF6FF;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 12px 16px;
+      z-index: 5;
+    }
+    .mindmap-center .sub-label {
+      font-size: 9.5px;
+      font-weight: 800;
+      color: #B8FF34;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 3px;
+    }
+    .mindmap-center h2 {
+      font-size: 15.5px;
+      font-weight: 900;
+      color: #FFFFFF;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+    }
+    .mindmap-center .bottom-tag {
+      font-size: 9.5px;
+      color: #94A3B8;
+      margin-top: 4px;
+      font-weight: 500;
+    }
+
+    /* Branch Cards */
+    .branch-card {
+      position: absolute;
+      width: 390px;
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      border-radius: 12px;
+      padding: 10px 14px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+      z-index: 4;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    /* Left Positions */
+    .card-left-1 { top: 80px; left: 40px; height: 232px; border-left: 5px solid #2563EB; }
+    .card-left-2 { top: 326px; left: 40px; height: 234px; border-left: 5px solid #059669; }
+    .card-left-3 { top: 572px; left: 40px; height: 236px; border-left: 5px solid #0D9488; }
+
+    /* Right Positions */
+    .card-right-1 { top: 80px; left: 1010px; height: 232px; border-right: 5px solid #D97706; }
+    .card-right-2 { top: 326px; left: 1010px; height: 234px; border-right: 5px solid #EA580C; }
+    .card-right-3 { top: 572px; left: 1010px; height: 236px; border-right: 5px solid #7C3AED; }
+
+    .card-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #F1F5F9;
+      padding-bottom: 4px;
+    }
+    .card-head h3 {
+      font-size: 13px;
+      font-weight: 800;
+      color: #0F172A;
+    }
+    .badge {
+      font-size: 9.5px;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+    .b-blue { background: #EFF6FF; color: #1E40AF; }
+    .b-green { background: #ECFDF5; color: #065F46; }
+    .b-teal { background: #F0FDFA; color: #0F766E; }
+    .b-amber { background: #FFFBEB; color: #92400E; }
+    .b-orange { background: #FFF7ED; color: #C2410C; }
+    .b-purple { background: #FAF5FF; color: #7E22CE; }
+
+    .bullet-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 3.5px;
+      font-size: 10.2px;
+      color: #334155;
+      line-height: 1.35;
+    }
+    .bullet-list li {
+      position: relative;
+      padding-left: 12px;
+    }
+    .bullet-list li::before {
+      content: "▪";
+      position: absolute;
+      left: 0;
+      color: #2563EB;
+      font-size: 10px;
+    }
+    .card-left-2 .bullet-list li::before { color: #059669; }
+    .card-left-3 .bullet-list li::before { color: #0D9488; }
+    .card-right-1 .bullet-list li::before { color: #D97706; }
+    .card-right-2 .bullet-list li::before { color: #EA580C; }
+    .card-right-3 .bullet-list li::before { color: #7C3AED; }
+
+    .bullet-list strong {
+      color: #0F172A;
+    }
+
+    .key-metric-strip {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 5px;
+      padding: 4px 7px;
+      font-size: 9.8px;
+      color: #475569;
+      margin-top: 1px;
+      line-height: 1.3;
+    }
+    .key-metric-strip strong {
+      color: #071A4D;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 8px;
+      left: 32px;
+      right: 32px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 10.5px;
+      color: #64748B;
+      border-top: 1px solid #E2E8F0;
+      padding-top: 6px;
+      z-index: 10;
+    }
+    footer strong {
+      color: #071A4D;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-left">
+      <h1>India: Resources &amp; Development — Comprehensive Synthesis Mindmap</h1>
+      <p>Unit 7 Master Architecture: Land, Agriculture, Water, Minerals, Energy &amp; Industrial Corridors</p>
+    </div>
+    <div class="header-badge">Full Unit Master Map</div>
+  </header>
+
+  <!-- SVG Connectors -->
+  <svg class="connections">
+    <!-- Top-Left -->
+    <path d="M 580 410 C 490 410, 490 196, 430 196" fill="none" stroke="#2563EB" stroke-width="2.5" opacity="0.8"/>
+    <!-- Mid-Left -->
+    <path d="M 580 440 C 490 440, 490 443, 430 443" fill="none" stroke="#059669" stroke-width="2.5" opacity="0.8"/>
+    <!-- Bottom-Left -->
+    <path d="M 580 470 C 490 470, 490 690, 430 690" fill="none" stroke="#0D9488" stroke-width="2.5" opacity="0.8"/>
+
+    <!-- Top-Right -->
+    <path d="M 860 410 C 950 410, 950 196, 1010 196" fill="none" stroke="#D97706" stroke-width="2.5" opacity="0.8"/>
+    <!-- Mid-Right -->
+    <path d="M 860 440 C 950 440, 950 443, 1010 443" fill="none" stroke="#EA580C" stroke-width="2.5" opacity="0.8"/>
+    <!-- Bottom-Right -->
+    <path d="M 860 470 C 950 470, 950 690, 1010 690" fill="none" stroke="#7C3AED" stroke-width="2.5" opacity="0.8"/>
+  </svg>
+
+  <!-- Central Hub -->
+  <div class="mindmap-center">
+    <div class="sub-label">CUET UG GEOGRAPHY</div>
+    <h2>RESOURCES &amp; DEVELOPMENT<br>INDIA (PEOPLE &amp; ECONOMY)</h2>
+    <div class="bottom-tag">NCERT Class XII · Unit 7 Architecture</div>
+  </div>
+
+  <!-- Left 1: Land Use & Seasons -->
+  <div class="branch-card card-left-1">
+    <div class="card-head">
+      <h3>1. Land Use &amp; Cropping Seasons</h3>
+      <span class="badge b-blue">Agro-Ecological</span>
+    </div>
+    <ul class="bullet-list">
+      <li><strong>Land Classification:</strong> 9 reporting categories; Net Sown Area (~45.5%), Forests (~23.3%), Current Fallow (&lt;1 yr), Fallow other than current, Culturable Waste (&gt;5 yrs).</li>
+      <li><strong>Kharif Season (Jun–Sep):</strong> Coincides with SW Monsoon; Rice, Cotton, Jute, Jowar, Bajra, Groundnut.</li>
+      <li><strong>Rabi Season (Oct–Mar):</strong> Sown in autumn, harvested in spring; Wheat, Gram, Rapeseed/Mustard, Barley.</li>
+      <li><strong>Zaid Season (Apr–Jun):</strong> Short summer cropping; Watermelon, cucumber, vegetables, fodder.</li>
+    </ul>
+    <div class="key-metric-strip">
+      <strong>Cropping Intensity:</strong> (Gross Cropped Area ÷ Net Sown Area) × 100.
+    </div>
+  </div>
+
+  <!-- Left 2: Agricultural Production & Crops -->
+  <div class="branch-card card-left-2">
+    <div class="card-head">
+      <h3>2. Major Crops &amp; Green Revolution</h3>
+      <span class="badge b-green">Food &amp; Cash Crops</span>
+    </div>
+    <ul class="bullet-list">
+      <li><strong>Rice &amp; Wheat:</strong> Rice leading in WB, UP, Punjab; Wheat leading in UP (yield in Punjab/Haryana).</li>
+      <li><strong>Coarse Cereals &amp; Pulses:</strong> Jowar (Maharashtra), Bajra (Rajasthan), Pulses (MP leading; nitrogen fixation).</li>
+      <li><strong>Cash &amp; Fibres:</strong> Cotton (Gujarat, Maharashtra regur soils), Jute (WB delta), Sugarcane (UP, Maharashtra).</li>
+      <li><strong>Plantations:</strong> Tea (Assam, Darjeeling), Coffee (Karnataka Arabica/Robusta), Rubber (Kerala 90%).</li>
+    </ul>
+    <div class="key-metric-strip">
+      <strong>Green Revolution:</strong> HYV Mexican wheat seeds + canal irrigation + chemical fertilizers.
+    </div>
+  </div>
+
+  <!-- Left 3: Water Resources & Watersheds -->
+  <div class="branch-card card-left-3">
+    <div class="card-head">
+      <h3>3. Water Resources &amp; Watersheds</h3>
+      <span class="badge b-teal">Hydrological Matrix</span>
+    </div>
+    <ul class="bullet-list">
+      <li><strong>Surface Water (1,869 BCM):</strong> Only 690 BCM (32%) utilisable; Ganga &amp; Brahmaputra basins carry 60% runoff.</li>
+      <li><strong>Groundwater (433 BCM):</strong> Stage of development >100% in Punjab, Haryana, Rajasthan (over-exploited).</li>
+      <li><strong>Sectoral Utilization:</strong> Agriculture consumes 89% surface water and 92% groundwater.</li>
+      <li><strong>Watershed Management:</strong> <em>Haryali</em> (Central Govt), <em>Neeru-Meeru</em> (Andhra Pradesh), <em>Arvary Pani Sansad</em> (Alwar, Rajasthan).</li>
+    </ul>
+    <div class="key-metric-strip">
+      <strong>Mandate:</strong> Rainwater harvesting mandatory in Tamil Nadu; National Water Policy 2012.
+    </div>
+  </div>
+
+  <!-- Right 1: Minerals -->
+  <div class="branch-card card-right-1">
+    <div class="card-head">
+      <h3>4. Mineral Resources &amp; Belts</h3>
+      <span class="badge b-amber">Metallic / Non-Metallic</span>
+    </div>
+    <ul class="bullet-list">
+      <li><strong>Iron Ore (Hematite/Magnetite):</strong> Odisha (Badampahar), Jharkhand (Noamundi), Chhattisgarh (Bailadila), Karnataka (Kudremukh).</li>
+      <li><strong>Manganese &amp; Chromite:</strong> Manganese (MP Balaghat, Odisha Sundargarh); Chromite (Odisha Sukinda >90%).</li>
+      <li><strong>Bauxite &amp; Copper:</strong> Bauxite (Odisha Panchpatmali in Koraput); Copper (MP Balaghat, Rajasthan Khetri).</li>
+      <li><strong>Non-Metallic Minerals:</strong> Mica (Jharkhand Koderma, AP Nellore); Limestone (cement industry base).</li>
+    </ul>
+    <div class="key-metric-strip">
+      <strong>Mineral Belts:</strong> North-Eastern Plateau, South-Western Plateau, North-Western Region.
+    </div>
+  </div>
+
+  <!-- Right 2: Energy Resources -->
+  <div class="branch-card card-right-2">
+    <div class="card-head">
+      <h3>5. Conventional &amp; Renewable Energy</h3>
+      <span class="badge b-orange">Power Matrix</span>
+    </div>
+    <ul class="bullet-list">
+      <li><strong>Coal Reserves:</strong> Gondwana coal (98% of reserves, Jharia, Raniganj, Bokaro) vs Tertiary coal (Neyveli lignite, Assam).</li>
+      <li><strong>Petroleum &amp; Natural Gas:</strong> Digboi (oldest), Mumbai High (largest offshore), Ankleshwar (Gujarat), KG Basin (gas).</li>
+      <li><strong>Nuclear Energy:</strong> Uranium (Jaduguda) &amp; Thorium (Monazite sands); Tarapur, Rawatbhata, Kudankulam, Narora.</li>
+      <li><strong>Renewable Surge:</strong> Solar (Bhadla Park, Rajasthan), Wind (Muppandal cluster, Tamil Nadu), Bio-energy, Geothermal (Puga/Manikaran).</li>
+    </ul>
+    <div class="key-metric-strip">
+      <strong>Clean Transition:</strong> PM-KUSUM, International Solar Alliance (ISA), Green Hydrogen.
+    </div>
+  </div>
+
+  <!-- Right 3: Industrial Clusters -->
+  <div class="branch-card card-right-3">
+    <div class="card-head">
+      <h3>6. 8 Major Industrial Regions</h3>
+      <span class="badge b-purple">Manufacturing Nodes</span>
+    </div>
+    <ul class="bullet-list">
+      <li><strong>Mumbai-Pune:</strong> Textiles, chemicals, engineering, petrochemicals, IT hubs.</li>
+      <li><strong>Hugli Region:</strong> Jute, tea packaging, engineering, chemicals along river Hugli.</li>
+      <li><strong>Chotanagpur:</strong> Heavy metallurgy, iron &amp; steel (Jamshedpur, Bokaro, Durgapur).</li>
+      <li><strong>Bengaluru-Tamil Nadu:</strong> Electronics, aeronautics, textiles (Coimbatore), automotives (Chennai).</li>
+      <li><strong>Gujarat, Delhi-Meerut, Vizag-Guntur &amp; Kollam:</strong> Petrochemicals, consumer goods, pharmaceuticals, coir.</li>
+    </ul>
+    <div class="key-metric-strip">
+      <strong>Industrial Policy:</strong> Liberalization (1991), delicensing, Make in India, DMIC corridor.
+    </div>
+  </div>
+
+  <footer>
+    <span>OurMocks Exam Prep Series · Geography Core Mindmaps</span>
+    <span>Source: Ministry of Agriculture, Mines, Power &amp; NCERT Class XII <em>India: People and Economy</em> · Resources</span>
+  </footer>
+
+</body>
+</html>
