@@ -1,4 +1,4 @@
-# OurMocks — Content Instructions (v2.2)
+# OurMocks — Content Instructions (v2.3)
 
 **How every notes PDF for CUET UG · IISER IAT · NISER NEST · COMEDK UGET must be written, designed and checked.**
 Read this file BEFORE writing or editing any topic. If a rule here conflicts with an old PDF, this file wins.
@@ -108,13 +108,47 @@ Every notes PDF follows this exact skeleton, in this order:
   - The same discipline applies to worked examples: never chain more than one "=" conclusion and one result on a single math line.
   - **Verify visually:** render every box page at ~95 dpi and confirm nothing pokes outside its box before publishing.
 - **Tables are our default structure** — for maps (object position → image), contrasts, fact clusters. Header row navy-tint, generous insets.
-- **Mindmaps & visualizations are expected, not optional, in upcoming subjects:**
-  - Every topic gets at least one full-width diagram (HTML/SVG → Playwright PNG at 2x device scale, ≥1480px logical width).
-  - Chapter-closing **mindmap**: one image that shows the whole topic as branches (e.g. Chemical Bonding → ionic / covalent / VSEPR / hybridisation / MOT / H-bond, each with 2–3 leaf facts). Build as HTML with brand colours (#071A4D, #1F5EFF, #B8FF34), render at 2x, embed full-width.
-  - **Rotate the visualization menu (v2.2):** vary and add visual types so each topic gets the picture that fits it — mindmap (chapter overview), numbered flow/process diagram (accounting cycle, reaction sequence), comparison chart (two methods side by side), timeline (history/law topics), icon-legend strip, T-account/ledger visual, statement format mock-up. Students remember pictures, not paragraphs — a new visualization kind is always welcome.
-  - Label every figure: `Figure N — <what it shows>.` Caption 9.5pt grey.
-- Brand palette: navy `#071A4D`, blue `#1F5EFF`, lime `#B8FF34`; box accents per component (blue formula, lime analogy, navy exam-pointer, red-amber exceptions).
-- Lists are left-aligned, never justified. Page fills matter: dense pages, no big whitespace, no orphan headings at page bottom (if a heading would be the last thing on a page, add content or let Typst push it).
+
+### 4.1 DIAGRAM GENERATION & ARCHETYPES (v2.3 — mandatory)
+
+Visual clarity is central to OurMocks notes. Every student should grasp the structure of a chapter and its core mechanisms at a glance.
+
+1. **Mandatory 3 Diagrams per Topic (2 + 1 Rule):**
+   - Every single topic must include exactly **three (3) high-fidelity diagrams**:
+     - **Diagram 1 & 2:** Two specialized conceptual/model diagrams using distinct visual archetypes from the `diagram-design` skill that best fit the specific sub-topics.
+     - **Diagram 3 (Mandatory Full-Topic Summary Mindmap):** One comprehensive chapter-closing mindmap synthesizing the entire topic (all major themes, chronological periods, institutions, key figures, and core exam facts) into one structured multi-branch visual.
+   - Total = **2 specialized conceptual diagrams + 1 full-topic summary mindmap = 3 diagrams total**.
+
+2. **Diverse Archetype Selection from `diagram-design` Skill:**
+   - Choose the visual archetype that naturally fits the underlying conceptual structure instead of repeating the same generic layout across topics:
+     - **Milestone Timeline / Chronological Arc:** Historical evolutions, sequence of events, dynastic transitions, legal/constitutional milestones.
+     - **Layer Stack Hierarchy:** Stratified social orders, administrative tiers, settlement architecture, multi-level state structures.
+     - **Tree / Decomposition Diagram:** Classifications, dynastic branches, institutional subdivisions, textual traditions.
+     - **Quadrant / Matrix:** 2x2 comparisons, dual-axis trade-offs, contrasting schools of thought, comparative actor analysis.
+     - **Process Flow / Swimlanes / Data Flow:** Administrative and revenue machinery, procedural steps, economic circulation, trade routes.
+     - **Pyramid / Funnel:** Hierarchical structures, varna/social pyramids, state resource extraction pipelines.
+     - **Venn Diagram / Overlap:** Ideological synthesis, intersecting cultural traditions, syncretic movements.
+     - **Radial / Multi-branch Mindmap:** Broad chapter summaries, multifaceted thematic maps, core-and-periphery concepts.
+
+3. **ABSOLUTELY NO LABELLING OF DIAGRAM TYPE ON THE PNG:**
+   - **Never print diagram archetype metadata or taxonomy on the visual.** Labels such as `"Visual Archetype: Layer Stack Hierarchy"`, `"Archetype: Timeline"`, or design categorization badges are strictly forbidden on the diagram PNG.
+   - The visual must contain only authentic educational headings, pedagogical subtitles, topic badges (e.g. `"THEMES IN INDIAN HISTORY · CHAPTER 2"`), and clear analytical content.
+
+4. **ZERO TEXT TRUNCATION, EDGE CLIPPING, AND BOX OVERFLOW (Strict Layout Containment):**
+   - **No text cutting at edges or bottom:** Every card, label, footnote, and footer must be fully visible within the rendered canvas with generous breathing margins.
+   - **No sentence overflow:** Long sentences must never spill out of cards, badges, or bounding boxes.
+   - **Strict CSS containment rules for HTML diagrams:**
+     - Cards must use flexbox/grid layouts with automatic height or generous min-heights.
+     - Apply `word-break: break-word`, `overflow-wrap: break-word`, and `line-height: 1.35–1.45` to all explanatory text.
+     - Set explicit canvas dimensions (e.g. `1400px × 850px` or `1440px × 920px`) matching the exact bounding box of the visual, leaving at least 32px padding around the outermost elements.
+     - Viewport size for Playwright screenshotting must match the HTML body dimensions exactly (or use full-page clipping without scrollbar inclusion).
+     - Verify every rendered PNG to ensure no text baseline is sliced and no cards are cut in half.
+
+5. **Rendering & Asset Pipeline:**
+   - Source code in `diagrams/<name>.html` using HTML5/SVG + CSS (OurMocks palette: navy `#071A4D`, blue `#1F5EFF`, lime `#B8FF34`, slate `#64748B`, slate-100 `#F8FAFC`).
+   - High-DPI rasterization via Playwright:
+     `npx playwright screenshot --device "Desktop Chrome HiDPI" --channel chrome --viewport-size "<w>,<h>" "file://$(pwd)/diagrams/<name>.html" diagrams/png/<name>.png`
+   - Copy PNGs to `typst-sources/<topic>/assets/` and embed using `#figure(image("assets/<name>.png", width: 100%), caption: [...])`.
 
 ---
 
@@ -180,10 +214,9 @@ Every notes PDF follows this exact skeleton, in this order:
 - [ ] Body text is 11.5pt (v2.1); lists left-aligned; bullets bold-anchored; sentences short.
 - [ ] Zero paragraphs over ~4 sentences; no graduation-student tone anywhere; simple everyday words throughout (§1.1b).
 - [ ] Every box stacks content vertically (§4): no formula line pokes outside its box — check box pages at ~95 dpi.
-- [ ] Maths/Physics: concept broken into steps first, quick technique after, ≥1 worked example per technique, Formula Cheatsheet section present.
-- [ ] Chemistry/Physics: Exceptions & Traps section present and visible.
-- [ ] At least one full-width diagram; upcoming topics include a chapter mindmap; figures captioned.
-- [ ] Analogy boxes present (no memory hooks anywhere).
+- [ ] Exactly three (3) diagrams per topic: 2 specialized conceptual archetypes + 1 mandatory full-topic summary mindmap (2 + 1 rule, §4.1).
+- [ ] No diagram-type or archetype classification labels on the PNG (zero "Visual Archetype: ...", clean pedagogical headings only).
+- [ ] Zero text truncation: no clipped text at canvas edges/bottom, no sentences overflowing boxes/cards; layout verified.
 - [ ] No exam-claims language (search the source for: asks, loves, prefers, usually, engineered, every alternate year, favourite distractor, paper is built).
 - [ ] 10 MCQs match the target exam's pattern; every solution ends with `Answer: (X)`; no answer-key box.
 - [ ] Watermark on all content pages at 15% opacity; header/footer correct; footer page numbers.
