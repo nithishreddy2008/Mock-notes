@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Microscopic Conduction, Drift Mechanics and Ohm's Law Architecture Matrix</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      width: 1440px;
+      height: 880px;
+      background-color: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0F172A;
+      position: relative;
+      overflow: hidden;
+      padding: 24px 32px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #E2E8F0;
+      padding-bottom: 12px;
+      margin-bottom: 20px;
+    }
+    .header-left h1 {
+      font-size: 22px;
+      font-weight: 800;
+      color: #071A4D;
+      letter-spacing: -0.02em;
+    }
+    .header-left p {
+      font-size: 13px;
+      color: #475569;
+      margin-top: 2px;
+      font-weight: 500;
+    }
+    .header-badge {
+      background: #EFF6FF;
+      color: #1E40AF;
+      border: 1px solid #BFDBFE;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 14px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* 4-Column Layout */
+    .matrix-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      height: 720px;
+    }
+
+    .column {
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      border-radius: 14px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+      overflow: hidden;
+    }
+
+    .col-header {
+      padding: 12px 14px;
+      border-bottom: 1px solid #E2E8F0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .col-header h2 {
+      font-size: 13.5px;
+      font-weight: 800;
+      color: #071A4D;
+    }
+    .col-badge {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+      text-transform: uppercase;
+    }
+
+    /* Column Themes */
+    .col-drift { border-top: 5px solid #0284C7; }
+    .col-drift .col-badge { background: #E0F2FE; color: #0369A1; }
+
+    .col-ohm { border-top: 5px solid #16A34A; }
+    .col-ohm .col-badge { background: #DCFCE7; color: #15803D; }
+
+    .col-mat { border-top: 5px solid #D97706; }
+    .col-mat .col-badge { background: #FEF3C7; color: #92400E; }
+
+    .col-power { border-top: 5px solid #7C3AED; }
+    .col-power .col-badge { background: #FAF5FF; color: #6B21A8; }
+
+    .col-content {
+      padding: 10px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      overflow: hidden;
+      flex: 1;
+    }
+
+    .card {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 8px;
+      padding: 7px 9px;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .card-title {
+      font-size: 11.5px;
+      font-weight: 800;
+      color: #0F172A;
+    }
+    .tag {
+      font-size: 9px;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 4px;
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      color: #475569;
+    }
+
+    .card p {
+      font-size: 10.5px;
+      color: #334155;
+      line-height: 1.35;
+    }
+    .card strong {
+      color: #0F172A;
+      font-weight: 700;
+    }
+
+    .formula-row {
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      border-radius: 6px;
+      padding: 4px 7px;
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+      font-size: 10.5px;
+      font-weight: 700;
+      color: #0F172A;
+      text-align: center;
+      margin: 2px 0;
+    }
+
+    .callout {
+      border-left: 3px solid #0284C7;
+      background: #E0F2FE;
+      padding: 4px 7px;
+      border-radius: 0 6px 6px 0;
+      font-size: 10px;
+      color: #0369A1;
+      line-height: 1.3;
+      margin-top: 2px;
+    }
+    .callout-green {
+      border-left-color: #16A34A;
+      background: #DCFCE7;
+      color: #15803D;
+    }
+    .callout-amber {
+      border-left-color: #D97706;
+      background: #FFFBEB;
+      color: #92400E;
+    }
+    .callout-purple {
+      border-left-color: #7C3AED;
+      background: #FAF5FF;
+      color: #6B21A8;
+    }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 14px;
+      font-size: 11px;
+      color: #64748B;
+      font-weight: 500;
+      border-top: 1px solid #E2E8F0;
+      padding-top: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-left">
+      <h1>Microscopic Conduction, Drift Mechanics & Ohm's Law Architecture Matrix</h1>
+      <p>Electron Transport Mechanics, Drift Velocity, Current Density, Resistivity & Temperature Dynamics</p>
+    </div>
+    <div class="header-badge">CUET UG Physics · Unit 2</div>
+  </header>
+
+  <div class="matrix-grid">
+
+    <!-- Column 1: Drift Velocity & Mobility -->
+    <div class="column col-drift">
+      <div class="col-header">
+        <h2>1. Drift Velocity & Mobility</h2>
+        <span class="col-badge">Microscopic Transport</span>
+      </div>
+      <div class="col-content">
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Thermal Motion vs Drift</span>
+            <span class="tag">Zero Net Flux</span>
+          </div>
+          <p><strong>Thermal Speed:</strong> Random Maxwellian motion (~10⁵ m/s at 300 K); average thermal velocity ⟨v_th⟩ = 0.</p>
+          <p><strong>Relaxation Time (τ):</strong> Mean time between two successive electron-ion lattice collisions (~10⁻¹⁴ s).</p>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Drift Velocity Formulation</span>
+            <span class="tag">v_d = e E τ / m</span>
+          </div>
+          <div class="formula-row">v_d = (e E τ) / m_e = (e V τ) / (m_e L)</div>
+          <p><strong>Magnitude:</strong> Typically ~10⁻⁴ m/s (fraction of mm/s). Directed strictly opposite to electric field vector E.</p>
+          <div class="callout">
+            <strong>Signal Speed:</strong> Electrical impulse propagates at speed of light in dielectric (~10⁸ m/s), despite microscopic sluggish drift.
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Electron Mobility (μ)</span>
+            <span class="tag">μ = v_d / E</span>
+          </div>
+          <div class="formula-row">μ = v_d / E = (e τ) / m_e</div>
+          <p><strong>Definition:</strong> Drift velocity acquired per unit electric field [m²·V⁻¹·s⁻¹]. Independent of applied field; depends solely on material and temperature.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Column 2: Current & Ohm's Law -->
+    <div class="column col-ohm">
+      <div class="col-header">
+        <h2>2. Current & Ohm's Law</h2>
+        <span class="col-badge">Constitutive Relations</span>
+      </div>
+      <div class="col-content">
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Current & Drift Relation</span>
+            <span class="tag">I = n e A v_d</span>
+          </div>
+          <div class="formula-row">I = n e A v_d = n e A (e E τ / m)</div>
+          <p><strong>Current Density (J):</strong> Current per unit cross-sectional area: <strong>J = I / A = n e v_d</strong> [A/m²]. J is a true vector quantity.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Microscopic Ohm's Law</span>
+            <span class="tag">J = σ E</span>
+          </div>
+          <div class="formula-row">J = σ E = E / ρ</div>
+          <p><strong>Conductivity (σ):</strong> <strong>σ = (n e² τ) / m</strong> [Ω⁻¹·m⁻¹ or S/m].</p>
+          <p><strong>Resistivity (ρ):</strong> <strong>ρ = 1/σ = m / (n e² τ)</strong> [Ω·m]. Independent of dimensions; depends on material properties (n, τ).</p>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Macroscopic Ohm's Law</span>
+            <span class="tag">V = I R</span>
+          </div>
+          <div class="formula-row">R = ρ L / A = (m L) / (n e² τ A)</div>
+          <p><strong>Resistance (R):</strong> Ratio of potential difference to current at constant temperature. Slope of V-I characteristic gives resistance.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Column 3: Material Resistivity & Temperature -->
+    <div class="column col-mat">
+      <div class="col-header">
+        <h2>3. Resistivity & Temperature</h2>
+        <span class="col-badge">Thermal Coefficients</span>
+      </div>
+      <div class="col-content">
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Temperature Dependence</span>
+            <span class="tag">ρ(T) = ρ₀(1 + α ΔT)</span>
+          </div>
+          <p><strong>Temperature Coefficient (α):</strong> Fractional change in resistivity per degree rise: <strong>α = (1/ρ₀)(dρ/dT)</strong> [K⁻¹ or °C⁻¹].</p>
+          <div class="callout callout-amber">
+            <strong>Key Mechanism:</strong> In metals, electron density n is constant; temperature rise increases lattice vibrations, reducing relaxation time τ (dρ/dT &gt; 0).
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Classification of Materials</span>
+            <span class="tag">Conductors / Alloys / Semi</span>
+          </div>
+          <p><strong>Metals (Cu, Al, Ag):</strong> α &gt; 0 (positive). Resistivity increases linearly with temperature near room temp.</p>
+          <p><strong>Standard Alloys (Manganin, Constantan, Nichrome):</strong> Extremely high ρ and almost negligible α (~10⁻⁵ K⁻¹); used for standard resistor coils.</p>
+          <p><strong>Semiconductors & Electrolytes (Si, Ge, C):</strong> α &lt; 0 (negative). Thermal energy ionizes covalent bonds, exponentially increasing carrier density n.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Non-Ohmic Devices</span>
+            <span class="tag">Non-Linear V-I</span>
+          </div>
+          <p><strong>Deviations from Ohm's Law:</strong> p-n junction diodes (asymmetric V-I), thyristors, GaAs (negative resistance region), electrolytes, discharge tubes.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Column 4: Electrical Energy & Power -->
+    <div class="column col-power">
+      <div class="col-header">
+        <h2>4. Electrical Energy & Power</h2>
+        <span class="col-badge">Joule Heating</span>
+      </div>
+      <div class="col-content">
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Joule's Law of Heating</span>
+            <span class="tag">H = I² R t</span>
+          </div>
+          <div class="formula-row">P = V I = I² R = V² / R</div>
+          <p><strong>Energy:</strong> <strong>W = P · t = V I t</strong> [Joules]. Commercial billing unit: <strong>1 kWh = 3.6 × 10⁶ J</strong> (1 B.O.T. Unit).</p>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Bulbs in Series & Parallel</span>
+            <span class="tag">Rated vs Actual</span>
+          </div>
+          <p><strong>Rated Resistance:</strong> <strong>R = V_rated² / P_rated</strong> (constant property).</p>
+          <p><strong>Series (Equal Current):</strong> P_actual = I² R ⟹ <em>Lower wattage bulb has higher resistance and glows brighter!</em></p>
+          <p><strong>Parallel (Equal Voltage):</strong> P_actual = V² / R ⟹ <em>Higher wattage bulb draws more current and glows brighter!</em></p>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Maximum Power Transfer Theorem</span>
+            <span class="tag">Matching Load</span>
+          </div>
+          <div class="formula-row">P_max = E² / (4 r) &nbsp; (when R_L = r)</div>
+          <p>Maximum power is delivered from a real source of EMF E and internal resistance r to a load resistor R_L when <strong>R_L = r</strong> (Efficiency η = 50%).</p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <span>OurMocks Exam Prep Series · CUET UG Physics Core Diagrams</span>
+    <span>NCERT Class XII Physics · Chapter 3: Current Electricity · Verified Syllabus Architecture</span>
+  </footer>
+
+</body>
+</html>

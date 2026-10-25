@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DC Circuits, Cell Networks and Kirchhoff's Laws Architecture Matrix</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      width: 1440px;
+      height: 880px;
+      background-color: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0F172A;
+      position: relative;
+      overflow: hidden;
+      padding: 24px 32px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #E2E8F0;
+      padding-bottom: 12px;
+      margin-bottom: 20px;
+    }
+    .header-left h1 {
+      font-size: 22px;
+      font-weight: 800;
+      color: #071A4D;
+      letter-spacing: -0.02em;
+    }
+    .header-left p {
+      font-size: 13px;
+      color: #475569;
+      margin-top: 2px;
+      font-weight: 500;
+    }
+    .header-badge {
+      background: #F0FDF4;
+      color: #166534;
+      border: 1px solid #BBF7D0;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 14px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* 4-Column Layout */
+    .matrix-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      height: 720px;
+    }
+
+    .column {
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      border-radius: 14px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+      overflow: hidden;
+    }
+
+    .col-header {
+      padding: 12px 14px;
+      border-bottom: 1px solid #E2E8F0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .col-header h2 {
+      font-size: 13.5px;
+      font-weight: 800;
+      color: #071A4D;
+    }
+    .col-badge {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+      text-transform: uppercase;
+    }
+
+    /* Column Themes */
+    .col-emf { border-top: 5px solid #2563EB; }
+    .col-emf .col-badge { background: #EFF6FF; color: #1E40AF; }
+
+    .col-cells { border-top: 5px solid #0D9488; }
+    .col-cells .col-badge { background: #F0FDFA; color: #0F766E; }
+
+    .col-kcl { border-top: 5px solid #EA580C; }
+    .col-kcl .col-badge { background: #FFEDD5; color: #C2410C; }
+
+    .col-bridge { border-top: 5px solid #9333EA; }
+    .col-bridge .col-badge { background: #F3E8FF; color: #7E22CE; }
+
+    .col-content {
+      padding: 10px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      overflow: hidden;
+      flex: 1;
+    }
+
+    .card {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 8px;
+      padding: 7px 9px;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .card-title {
+      font-size: 11.5px;
+      font-weight: 800;
+      color: #0F172A;
+    }
+    .tag {
+      font-size: 9px;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 4px;
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      color: #475569;
+    }
+
+    .card p {
+      font-size: 10.5px;
+      color: #334155;
+      line-height: 1.35;
+    }
+    .card strong {
+      color: #0F172A;
+      font-weight: 700;
+    }
+
+    .formula-row {
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      border-radius: 6px;
+      padding: 4px 7px;
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+      font-size: 10.5px;
+      font-weight: 700;
+      color: #0F172A;
+      text-align: center;
+      margin: 2px 0;
+    }
+
+    .callout {
+      border-left: 3px solid #2563EB;
+      background: #EFF6FF;
+      padding: 4px 7px;
+      border-radius: 0 6px 6px 0;
+      font-size: 10px;
+      color: #1E40AF;
+      line-height: 1.3;
+      margin-top: 2px;
+    }
+    .callout-teal {
+      border-left-color: #0D9488;
+      background: #F0FDFA;
+      color: #0F766E;
+    }
+    .callout-orange {
+      border-left-color: #EA580C;
+      background: #FFEDD5;
+      color: #C2410C;
+    }
+    .callout-purple {
+      border-left-color: #9333EA;
+      background: #F3E8FF;
+      color: #7E22CE;
+    }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 14px;
+      font-size: 11px;
+      color: #64748B;
+      font-weight: 500;
+      border-top: 1px solid #E2E8F0;
+      padding-top: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-left">
+      <h1>DC Circuits, Cell Networks & Kirchhoff's Laws Architecture Matrix</h1>
+      <p>EMF Dynamics, Internal Resistance, Grouping of Cells, Kirchhoff's Conservation Rules & Wheatstone Bridge</p>
+    </div>
+    <div class="header-badge">CUET UG Physics · Unit 2</div>
+  </header>
+
+  <div class="matrix-grid">
+
+    <!-- Column 1: EMF & Internal Resistance -->
+    <div class="column col-emf">
+      <div class="col-header">
+        <h2>1. EMF & Internal Resistance</h2>
+        <span class="col-badge">Source Dynamics</span>
+      </div>
+      <div class="col-content">
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">EMF vs Terminal Potential (V)</span>
+            <span class="tag">Open vs Closed</span>
+          </div>
+          <p><strong>Electromotive Force (E):</strong> Potential difference across terminals when no current is drawn (open circuit, I = 0).</p>
+          <p><strong>Terminal Voltage (V):</strong> Potential difference across terminals when current flows through closed circuit.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Operating Regimes of a Cell</span>
+            <span class="tag">Discharge vs Charge</span>
+          </div>
+          <p><strong>Discharging (supplying current):</strong> <strong>V = E - I r</strong> &nbsp; (V &lt; E).</p>
+          <p><strong>Charging (driven by source):</strong> <strong>V = E + I r</strong> &nbsp; (V &gt; E).</p>
+          <p><strong>Open Circuit:</strong> I = 0 ⟹ <strong>V = E</strong>.</p>
+          <p><strong>Short Circuit:</strong> R = 0 ⟹ V = 0, <strong>I_max = E / r</strong>.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Internal Resistance (r)</span>
+            <span class="tag">Electrolyte Factors</span>
+          </div>
+          <div class="formula-row">r = [(E - V) / V] · R = (E / V - 1) · R</div>
+          <div class="callout">
+            <strong>Dependence:</strong> r increases with plate separation and electrolyte concentration; r decreases with immersed plate area and temperature.
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Column 2: Combination of Cells -->
+    <div class="column col-cells">
+      <div class="col-header">
+        <h2>2. Combination of Cells</h2>
+        <span class="col-badge">Series / Parallel</span>
+      </div>
+      <div class="col-content">
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Series Combination (n Cells)</span>
+            <span class="tag">Additive EMF</span>
+          </div>
+          <div class="formula-row">E_eq = n E, &nbsp; r_eq = n r</div>
+          <p><strong>Current:</strong> <strong>I = (n E) / (R + n r)</strong>.</p>
+          <p><strong>Optimization:</strong> Advantageous when <strong>R &gt;&gt; n r</strong> (external load dominates internal resistance).</p>
+          <div class="callout callout-teal">
+            <strong>Reversed Cells:</strong> If m cells are connected in reverse: E_eq = (n - 2m) E, but total internal resistance remains r_eq = n r!
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Parallel Combination (m Cells)</span>
+            <span class="tag">Current Capacity</span>
+          </div>
+          <div class="formula-row">E_eq = E, &nbsp; r_eq = r / m</div>
+          <p><strong>Current:</strong> <strong>I = E / (R + r / m)</strong>.</p>
+          <p><strong>Optimization:</strong> Advantageous when <strong>R &lt;&lt; r</strong> (internal resistance dominates external load).</p>
+          <p><strong>Unequal Cells (E₁, r₁ and E₂, r₂):</strong></p>
+          <div class="formula-row">E_eq = (E₁/r₁ + E₂/r₂) / (1/r₁ + 1/r₂)</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Column 3: Kirchhoff's Laws -->
+    <div class="column col-kcl">
+      <div class="col-header">
+        <h2>3. Kirchhoff's Laws</h2>
+        <span class="col-badge">Network Theorems</span>
+      </div>
+      <div class="col-content">
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Junction Rule (KCL)</span>
+            <span class="tag">Charge Conservation</span>
+          </div>
+          <div class="formula-row">Σ I_in = Σ I_out &nbsp; ⟹ &nbsp; Σ I = 0</div>
+          <p><strong>Physical Basis:</strong> Total current entering a junction equals total current leaving. Electric charge cannot accumulate at a junction.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Loop Rule (KVL)</span>
+            <span class="tag">Energy Conservation</span>
+          </div>
+          <div class="formula-row">Σ ΔV = 0 &nbsp; ⟹ &nbsp; Σ E = Σ I R</div>
+          <p><strong>Physical Basis:</strong> The algebraic sum of changes in electric potential around any closed loop is zero (conservative field).</p>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Sign Conventions for Loop Traversal</span>
+            <span class="tag">Consistent Analysis</span>
+          </div>
+          <p><strong>Resistors:</strong> Moving in direction of current: <strong>ΔV = -I R</strong> (potential drop); moving opposite to current: <strong>ΔV = +I R</strong>.</p>
+          <p><strong>EMF Sources:</strong> Moving from negative to positive terminal: <strong>ΔV = +E</strong>; moving positive to negative: <strong>ΔV = -E</strong>.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Column 4: Wheatstone Bridge -->
+    <div class="column col-bridge">
+      <div class="col-header">
+        <h2>4. Wheatstone Bridge</h2>
+        <span class="col-badge">Null Deflection</span>
+      </div>
+      <div class="col-content">
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Bridge Balance Condition</span>
+            <span class="tag">I_g = 0</span>
+          </div>
+          <div class="formula-row">P / Q = R / S &nbsp; (or P / R = Q / S)</div>
+          <p><strong>Zero Galvanometer Current:</strong> When potentials at bridge corners B and D equalize (V_B = V_D), zero current flows through galvanometer.</p>
+          <div class="callout callout-purple">
+            <strong>Conjugate Arms:</strong> If battery and galvanometer positions are interchanged, the balance condition remains completely unchanged!
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Meter Bridge (Slide Wire)</span>
+            <span class="tag">Null Method</span>
+          </div>
+          <div class="formula-row">X = R · [(100 - l) / l]</div>
+          <p><strong>Operation:</strong> Uses 1-meter uniform resistance wire. Balancing length l from zero end yields unknown resistance X.</p>
+          <p><strong>Max Sensitivity:</strong> Null point should be adjusted near the center (l ≈ 50 cm) by choosing R comparable to X.</p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <span>OurMocks Exam Prep Series · CUET UG Physics Core Diagrams</span>
+    <span>NCERT Class XII Physics · Chapter 3: Current Electricity · Verified Syllabus Architecture</span>
+  </footer>
+
+</body>
+</html>
