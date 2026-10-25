@@ -15,7 +15,6 @@
       --color-soft:     #64748b;
       --color-rule:     rgba(15, 23, 42, 0.12);
       --color-accent:   #2563eb;
-      --color-accent-soft: rgba(37, 99, 235, 0.08);
       --color-lime:     #16a34a;
       --color-amber:    #d97706;
       --font-display:   'Outfit', -apple-system, sans-serif;
@@ -25,58 +24,70 @@
     body {
       font-family: var(--font-sans);
       background: var(--color-paper-2);
-      min-height: 100vh;
-      padding: 2.5rem 2rem;
-      color: var(--color-ink);
       width: 1480px;
+      height: 1040px;
       margin: 0 auto;
+      padding: 1.5rem 2rem 1.25rem;
+      color: var(--color-ink);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
-    .container { max-width: 1400px; margin: 0 auto; }
-    .header { margin-bottom: 2rem; }
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .header { margin-bottom: 0.65rem; }
     .header-eyebrow {
       font-family: var(--font-mono);
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       font-weight: 600;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
       color: var(--color-accent);
-      margin-bottom: 0.6rem;
+      margin-bottom: 0.35rem;
     }
     h1 {
       font-family: var(--font-display);
-      font-size: 2.35rem;
+      font-size: 2.1rem;
       font-weight: 800;
       letter-spacing: -0.02em;
       line-height: 1.15;
       color: var(--color-ink);
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.25rem;
     }
     .subtitle {
-      font-size: 1.05rem;
-      line-height: 1.5;
+      font-size: 0.95rem;
+      line-height: 1.4;
       color: var(--color-muted);
-      max-width: 90ch;
+      max-width: 95ch;
     }
     .diagram-container {
       background: #ffffff;
-      border-radius: 12px;
+      border-radius: 10px;
       border: 1.5px solid var(--color-rule);
-      padding: 1.75rem 2rem;
+      padding: 1.1rem 1.5rem;
       box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
     }
     svg { width: 100%; display: block; }
     .cards {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 1.25rem;
-      margin-top: 1.75rem;
+      gap: 1rem;
+      margin-top: 0.85rem;
     }
     .card {
       background: #ffffff;
-      border-radius: 10px;
+      border-radius: 8px;
       border: 1.5px solid var(--color-rule);
-      padding: 1.25rem 1.5rem;
-      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
+      padding: 0.85rem 1.15rem;
+      box-shadow: 0 2px 6px rgba(15, 23, 42, 0.02);
     }
     .card.focal {
       border-color: var(--color-accent);
@@ -84,44 +95,43 @@
     }
     .card .eyebrow {
       font-family: var(--font-mono);
-      font-size: 0.72rem;
+      font-size: 0.68rem;
       font-weight: 600;
-      letter-spacing: 0.15em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--color-soft);
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.35rem;
     }
     .card.focal .eyebrow { color: var(--color-accent); }
     .card-header {
       display: flex;
       align-items: center;
-      gap: 0.6rem;
-      margin-bottom: 0.75rem;
-      padding-bottom: 0.6rem;
+      gap: 0.5rem;
+      margin-bottom: 0.45rem;
+      padding-bottom: 0.4rem;
       border-bottom: 1px solid var(--color-rule);
     }
-    .card-dot { width: 9px; height: 9px; border-radius: 50%; }
+    .card-dot { width: 8px; height: 8px; border-radius: 50%; }
     .card-dot.blue { background: var(--color-accent); }
     .card-dot.green { background: var(--color-lime); }
     .card-dot.amber { background: var(--color-amber); }
     .card h3 {
       font-family: var(--font-display);
-      font-size: 1.05rem;
+      font-size: 0.98rem;
       font-weight: 700;
       color: var(--color-ink);
     }
     .card p {
       color: var(--color-muted);
-      font-size: 0.88rem;
-      line-height: 1.5;
+      font-size: 0.82rem;
+      line-height: 1.42;
     }
     .card p b { color: var(--color-ink); }
     .footer {
-      margin-top: 1.75rem;
-      padding-top: 1.25rem;
+      padding-top: 0.65rem;
       border-top: 1px solid var(--color-rule);
       font-family: var(--font-mono);
-      font-size: 0.78rem;
+      font-size: 0.74rem;
       letter-spacing: 0.06em;
       color: var(--color-soft);
       display: flex;
@@ -132,18 +142,18 @@
 <body>
   <div class="container">
     <div class="header">
-      <p class="header-eyebrow">Visual Archetype: Milestone Timeline · Diagram Design</p>
+      <p class="header-eyebrow">Historiography &amp; Economic Exchange · 4,500-Year Chronology</p>
       <h1>From Bronze Age Maritime Trade to Stratigraphic Discovery</h1>
       <p class="subtitle">A 4,500-year historical trajectory: from third-millennium BCE Mesopotamian trade links and urban disintegration to 20th-century stratigraphic excavations that placed the Indus Civilisation on the global map.</p>
     </div>
 
     <div class="diagram-container">
-      <svg viewBox="0 0 1320 540" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="timeline-title timeline-desc">
+      <svg viewBox="0 0 1320 450" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="timeline-title timeline-desc">
         <title id="timeline-title">Harappan Chronology &amp; Archaeological Discovery Timeline</title>
         <desc id="timeline-desc">Timeline of key milestones: c. 2600 BCE mature Harappan trade, c. 1900 BCE decline, 1875 Cunningham's seal, 1921-24 Marshall's announcement, 1944 Wheeler's stratigraphy, and post-1947 excavations.</desc>
         <defs>
           <pattern id="dots2" width="24" height="24" patternUnits="userSpaceOnUse">
-            <circle cx="2" cy="2" r="1.2" fill="rgba(15, 23, 42, 0.09)"/>
+            <circle cx="2" cy="2" r="1.2" fill="rgba(15, 23, 42, 0.08)"/>
           </pattern>
         </defs>
 
@@ -151,67 +161,67 @@
         <rect width="100%" height="100%" fill="url(#dots2)" opacity="0.6"/>
 
         <!-- Large Background Era Watermarks -->
-        <text x="70" y="470" fill="rgba(15, 23, 42, 0.04)" font-size="80" font-weight="800" font-family="'Outfit', sans-serif">BRONZE AGE</text>
-        <text x="680" y="470" fill="rgba(15, 23, 42, 0.04)" font-size="80" font-weight="800" font-family="'Outfit', sans-serif">MODERN ASI DISCOVERY</text>
+        <text x="70" y="390" fill="rgba(15, 23, 42, 0.04)" font-size="70" font-weight="800" font-family="'Outfit', sans-serif">BRONZE AGE</text>
+        <text x="680" y="390" fill="rgba(15, 23, 42, 0.04)" font-size="70" font-weight="800" font-family="'Outfit', sans-serif">MODERN ASI DISCOVERY</text>
 
         <!-- Main Timeline Baseline -->
-        <line x1="50" y1="260" x2="1270" y2="260" stroke="#0f172a" stroke-width="2.5"/>
+        <line x1="50" y1="225" x2="1270" y2="225" stroke="#0f172a" stroke-width="2.5"/>
 
         <!-- Start & End Axis Caps -->
-        <line x1="50" y1="245" x2="50" y2="275" stroke="#0f172a" stroke-width="2.5"/>
-        <line x1="1270" y1="245" x2="1270" y2="275" stroke="#0f172a" stroke-width="2.5"/>
+        <line x1="50" y1="212" x2="50" y2="238" stroke="#0f172a" stroke-width="2.5"/>
+        <line x1="1270" y1="212" x2="1270" y2="238" stroke="#0f172a" stroke-width="2.5"/>
 
         <!-- TIME BREAK DIVIDER (between 1900 BCE and 1875 CE) -->
-        <path d="M 405 240 L 415 280 M 415 240 L 425 280" stroke="#d97706" stroke-width="2.5" fill="none"/>
-        <text x="415" y="305" fill="#d97706" font-size="10" font-family="'JetBrains Mono', monospace" font-weight="700" text-anchor="middle">3,700-YR HIATUS</text>
+        <path d="M 405 205 L 415 245 M 415 205 L 425 245" stroke="#d97706" stroke-width="2.5" fill="none"/>
+        <text x="415" y="268" fill="#d97706" font-size="10" font-family="'JetBrains Mono', monospace" font-weight="700" text-anchor="middle">3,700-YR HIATUS</text>
 
         <!-- MILESTONE 1: c. 2600–1900 BCE (Top) -->
-        <line x1="140" y1="260" x2="140" y2="105" stroke="#2563eb" stroke-width="1.8" stroke-dasharray="3 3"/>
-        <circle cx="140" cy="260" r="7" fill="#2563eb"/>
-        <rect x="40" y="30" width="200" height="75" rx="8" fill="#ffffff" stroke="#2563eb" stroke-width="1.5" filter="drop-shadow(0 2px 4px rgba(37,99,235,0.12))"/>
-        <text x="55" y="52" fill="#2563eb" font-size="10" font-family="'JetBrains Mono', monospace" font-weight="700">c. 2600–1900 BCE</text>
-        <text x="55" y="73" fill="#0f172a" font-size="13.5" font-weight="700" font-family="'Outfit', sans-serif">Mature Urban Peak</text>
-        <text x="55" y="92" fill="#475569" font-size="11" font-family="'Inter', sans-serif">Meluhha trade with Mesopotamia, standard weights &amp; R-to-L script.</text>
+        <line x1="140" y1="225" x2="140" y2="90" stroke="#2563eb" stroke-width="1.8" stroke-dasharray="3 3"/>
+        <circle cx="140" cy="225" r="7" fill="#2563eb"/>
+        <rect x="40" y="20" width="200" height="70" rx="7" fill="#ffffff" stroke="#2563eb" stroke-width="1.5" filter="drop-shadow(0 2px 4px rgba(37,99,235,0.12))"/>
+        <text x="55" y="40" fill="#2563eb" font-size="9.5" font-family="'JetBrains Mono', monospace" font-weight="700">c. 2600–1900 BCE</text>
+        <text x="55" y="59" fill="#0f172a" font-size="13" font-weight="700" font-family="'Outfit', sans-serif">Mature Urban Peak</text>
+        <text x="55" y="76" fill="#475569" font-size="10.5" font-family="'Inter', sans-serif">Meluhha trade with Mesopotamia, standard weights &amp; R-to-L script.</text>
 
         <!-- MILESTONE 2: c. 1900–1800 BCE (Bottom) -->
-        <line x1="310" y1="260" x2="310" y2="395" stroke="#64748b" stroke-width="1.8" stroke-dasharray="3 3"/>
-        <circle cx="310" cy="260" r="7" fill="#64748b"/>
-        <rect x="210" y="395" width="200" height="75" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.05))"/>
-        <text x="225" y="417" fill="#64748b" font-size="10" font-family="'JetBrains Mono', monospace" font-weight="700">c. 1900–1800 BCE</text>
-        <text x="225" y="438" fill="#0f172a" font-size="13.5" font-weight="700" font-family="'Outfit', sans-serif">De-urbanization</text>
-        <text x="225" y="457" fill="#475569" font-size="11" font-family="'Inter', sans-serif">Drying rivers &amp; climate shift; writing &amp; seals disappear; eastward drift.</text>
+        <line x1="310" y1="225" x2="310" y2="340" stroke="#64748b" stroke-width="1.8" stroke-dasharray="3 3"/>
+        <circle cx="310" cy="225" r="7" fill="#64748b"/>
+        <rect x="210" y="340" width="200" height="70" rx="7" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.05))"/>
+        <text x="225" y="360" fill="#64748b" font-size="9.5" font-family="'JetBrains Mono', monospace" font-weight="700">c. 1900–1800 BCE</text>
+        <text x="225" y="379" fill="#0f172a" font-size="13" font-weight="700" font-family="'Outfit', sans-serif">De-urbanization</text>
+        <text x="225" y="396" fill="#475569" font-size="10.5" font-family="'Inter', sans-serif">Drying rivers &amp; climate shift; writing &amp; seals disappear; eastward drift.</text>
 
         <!-- MILESTONE 3: 1875 CE (Top) -->
-        <line x1="520" y1="260" x2="520" y2="105" stroke="#64748b" stroke-width="1.8" stroke-dasharray="3 3"/>
-        <circle cx="520" cy="260" r="7" fill="#64748b"/>
-        <rect x="420" y="30" width="200" height="75" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.05))"/>
-        <text x="435" y="52" fill="#64748b" font-size="10" font-family="'JetBrains Mono', monospace" font-weight="700">1875 CE</text>
-        <text x="435" y="73" fill="#0f172a" font-size="13.5" font-weight="700" font-family="'Outfit', sans-serif">Cunningham's Seal</text>
-        <text x="435" y="92" fill="#475569" font-size="11" font-family="'Inter', sans-serif">1st DG of ASI missed antiquity due to 6th c. BCE Ganga valley bias.</text>
+        <line x1="520" y1="225" x2="520" y2="90" stroke="#64748b" stroke-width="1.8" stroke-dasharray="3 3"/>
+        <circle cx="520" cy="225" r="7" fill="#64748b"/>
+        <rect x="420" y="20" width="200" height="70" rx="7" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.05))"/>
+        <text x="435" y="40" fill="#64748b" font-size="9.5" font-family="'JetBrains Mono', monospace" font-weight="700">1875 CE</text>
+        <text x="435" y="59" fill="#0f172a" font-size="13" font-weight="700" font-family="'Outfit', sans-serif">Cunningham's Seal</text>
+        <text x="435" y="76" fill="#475569" font-size="10.5" font-family="'Inter', sans-serif">1st DG of ASI missed antiquity due to 6th c. BCE Ganga valley bias.</text>
 
         <!-- MILESTONE 4: 1921–1924 CE (Bottom - FOCAL MILESTONE) -->
-        <line x1="720" y1="260" x2="720" y2="395" stroke="#2563eb" stroke-width="2"/>
-        <circle cx="720" cy="260" r="9" fill="#2563eb" stroke="#ffffff" stroke-width="2"/>
-        <rect x="610" y="395" width="220" height="85" rx="8" fill="#f0f7ff" stroke="#2563eb" stroke-width="2" filter="drop-shadow(0 4px 8px rgba(37,99,235,0.18))"/>
-        <text x="625" y="417" fill="#2563eb" font-size="10.5" font-family="'JetBrains Mono', monospace" font-weight="700">1921–1924 CE · FOCAL</text>
-        <text x="625" y="438" fill="#0f172a" font-size="14" font-weight="800" font-family="'Outfit', sans-serif">World Announcement</text>
-        <text x="625" y="457" fill="#334155" font-size="11" font-family="'Inter', sans-serif">Sahni (Harappa) &amp; Banerji (Mohenjodaro); John Marshall announces Indus civilisation.</text>
+        <line x1="720" y1="225" x2="720" y2="340" stroke="#2563eb" stroke-width="2"/>
+        <circle cx="720" cy="225" r="9" fill="#2563eb" stroke="#ffffff" stroke-width="2"/>
+        <rect x="610" y="340" width="220" height="78" rx="8" fill="#f0f7ff" stroke="#2563eb" stroke-width="2" filter="drop-shadow(0 4px 8px rgba(37,99,235,0.18))"/>
+        <text x="625" y="360" fill="#2563eb" font-size="10" font-family="'JetBrains Mono', monospace" font-weight="700">1921–1924 CE · FOCAL</text>
+        <text x="625" y="379" fill="#0f172a" font-size="13.5" font-weight="800" font-family="'Outfit', sans-serif">World Announcement</text>
+        <text x="625" y="396" fill="#334155" font-size="10.5" font-family="'Inter', sans-serif">Sahni (Harappa) &amp; Banerji (Mohenjodaro); John Marshall announces Indus civilisation.</text>
 
         <!-- MILESTONE 5: 1944 CE (Top) -->
-        <line x1="940" y1="260" x2="940" y2="105" stroke="#16a34a" stroke-width="1.8" stroke-dasharray="3 3"/>
-        <circle cx="940" cy="260" r="7" fill="#16a34a"/>
-        <rect x="840" y="30" width="200" height="75" rx="8" fill="#ffffff" stroke="#16a34a" stroke-width="1.5" filter="drop-shadow(0 2px 4px rgba(22,163,74,0.12))"/>
-        <text x="855" y="52" fill="#16a34a" font-size="10" font-family="'JetBrains Mono', monospace" font-weight="700">1944 CE</text>
-        <text x="855" y="73" fill="#0f172a" font-size="13.5" font-weight="700" font-family="'Outfit', sans-serif">Wheeler's Stratigraphy</text>
-        <text x="855" y="92" fill="#475569" font-size="11" font-family="'Inter', sans-serif">Rectified horizontal digging by following soil strata with military precision.</text>
+        <line x1="940" y1="225" x2="940" y2="90" stroke="#16a34a" stroke-width="1.8" stroke-dasharray="3 3"/>
+        <circle cx="940" cy="225" r="7" fill="#16a34a"/>
+        <rect x="840" y="20" width="200" height="70" rx="7" fill="#ffffff" stroke="#16a34a" stroke-width="1.5" filter="drop-shadow(0 2px 4px rgba(22,163,74,0.12))"/>
+        <text x="855" y="40" fill="#16a34a" font-size="9.5" font-family="'JetBrains Mono', monospace" font-weight="700">1944 CE</text>
+        <text x="855" y="59" fill="#0f172a" font-size="13" font-weight="700" font-family="'Outfit', sans-serif">Wheeler's Stratigraphy</text>
+        <text x="855" y="76" fill="#475569" font-size="10.5" font-family="'Inter', sans-serif">Rectified horizontal digging by following soil strata with military precision.</text>
 
         <!-- MILESTONE 6: Post-1947 CE (Bottom) -->
-        <line x1="1150" y1="260" x2="1150" y2="395" stroke="#64748b" stroke-width="1.8" stroke-dasharray="3 3"/>
-        <circle cx="1150" cy="260" r="7" fill="#64748b"/>
-        <rect x="1050" y="395" width="200" height="75" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.05))"/>
-        <text x="1065" y="417" fill="#64748b" font-size="10" font-family="'JetBrains Mono', monospace" font-weight="700">POST-1947 CE</text>
-        <text x="1065" y="438" fill="#0f172a" font-size="13.5" font-weight="700" font-family="'Outfit', sans-serif">Indian Archaeological Era</text>
-        <text x="1065" y="457" fill="#475569" font-size="11" font-family="'Inter', sans-serif">S.R. Rao (Lothal), B.B. Lal (Kalibangan), R.S. Bisht (Dholavira &amp; Banawali).</text>
+        <line x1="1150" y1="225" x2="1150" y2="340" stroke="#64748b" stroke-width="1.8" stroke-dasharray="3 3"/>
+        <circle cx="1150" cy="225" r="7" fill="#64748b"/>
+        <rect x="1050" y="340" width="200" height="70" rx="7" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.05))"/>
+        <text x="1065" y="360" fill="#64748b" font-size="9.5" font-family="'JetBrains Mono', monospace" font-weight="700">POST-1947 CE</text>
+        <text x="1065" y="379" fill="#0f172a" font-size="13" font-weight="700" font-family="'Outfit', sans-serif">Indian Archaeological Era</text>
+        <text x="1065" y="396" fill="#475569" font-size="10.5" font-family="'Inter', sans-serif">S.R. Rao (Lothal), B.B. Lal (Kalibangan), R.S. Bisht (Dholavira &amp; Banawali).</text>
       </svg>
     </div>
 
@@ -223,7 +233,7 @@
           <div class="card-dot blue"></div>
           <h3>The Mesopotamian Trade Triangle</h3>
         </div>
-        <p>Cuneiform tablets name <b>Meluhha</b> as the land of seafarers exporting carnelian, lapis lazuli, gold, and timber. <b>Magan</b> was Oman, confirmed by shared nickel traces in copper. <b>Dilmun</b> was the island of Bahrain serving as an intermediate Persian Gulf maritime entrepôt.</p>
+        <p>Cuneiform tablets name <b>Meluhha</b> as the land of seafarers exporting carnelian, lapis lazuli, gold, and timber. <b>Magan</b> was Oman (nickel copper); <b>Dilmun</b> was Bahrain serving as an intermediate Persian Gulf entrepôt.</p>
       </div>
 
       <div class="card">
@@ -232,7 +242,7 @@
           <div class="card-dot green"></div>
           <h3>Marshall's Scraping vs Wheeler's Stratigraphy</h3>
         </div>
-        <p>John Marshall dug along arbitrary <b>horizontal</b> depths, grouping objects from different centuries together. In 1944, <b>R.E.M. Wheeler</b> introduced military precision and scientific <b>stratigraphy</b>, excavating along natural cultural mound layers to establish true chronology.</p>
+        <p>John Marshall dug along arbitrary <b>horizontal</b> depths, grouping objects from different centuries together. In 1944, <b>R.E.M. Wheeler</b> introduced military precision and scientific <b>stratigraphy</b> along natural cultural mound layers.</p>
       </div>
 
       <div class="card">
@@ -241,13 +251,13 @@
           <div class="card-dot amber"></div>
           <h3>The 'Aryan Massacre' Myth Refuted</h3>
         </div>
-        <p>Wheeler linked Rigvedic Indra (Purandara - 'fort destroyer') to skeletons in Deadman Lane. Anthropologist <b>George Dales</b> proved the skeletons came from different chronological strata and showed no unhealed battle trauma, debunking the sudden invasion theory.</p>
+        <p>Wheeler linked Rigvedic Indra (Purandara - 'fort destroyer') to skeletons in Deadman Lane. Anthropologist <b>George Dales</b> proved the skeletons came from different chronological strata and showed no unhealed battle trauma.</p>
       </div>
     </div>
 
     <div class="footer">
       <span>OurMocks Study Archive · CUET UG History (Theme 1)</span>
-      <span>Milestone Timeline Model · Rendered via Diagram Design</span>
+      <span>Milestone Timeline Architecture · High-Yield Revision</span>
     </div>
   </div>
 </body>

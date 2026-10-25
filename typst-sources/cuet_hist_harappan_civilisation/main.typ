@@ -10,24 +10,56 @@
 = Syllabus Alignment
 
 #table(
-  columns: (1.5fr, 3.5fr),
-  stroke: 0.5pt + om-navy.lighten(60%),
-  fill: (x, y) => if y == 0 { om-navy-soft } else if calc.even(y) { om-grey } else { white },
-  [#text(weight: "bold", fill: white)[Syllabus Element]],
-  [#text(weight: "bold", fill: white)[Core Concepts Tested by NTA]],
-
-  [Early and Mature Harappan], [Chronology (c. 2600--1900 BCE), regional cultures, subsistence strategies, botanical and faunal remains.],
-  [Agricultural Technologies], [Ploughed field at Kalibangan, terracotta plough models at Banawali and Cholistan, canals at Shortughai, reservoirs at Dholavira.],
-  [Urban Planning & Architecture], [Mohenjodaro layout, Citadel vs Lower Town, brick ratio 1:2:4, Great Bath, warehouse, street grid, covered drainage, courtyard houses.],
-  [Craft Production & Trade], [Chanhudaro workshop hub, shell work at Nageshwar and Balakot, bead-making materials, drills, procurement from Khetri, South India, Oman, and Mesopotamia.],
-  [Seals, Script & Metrology], [Steatite seals with animal motifs, pictographic undeciphered script written right-to-left, cubical chert weights in binary and decimal series.],
-  [Social Differences & Burials], [North-South burials, modest grave goods, copper mirrors, utilitarian vs luxury goods (faience pots).],
-  [Religious Interpretations], [Mother Goddess figurines, Priest-King sculpture, Proto-Shiva yogi seal, conical stone lingas, fire altars at Kalibangan and Lothal.],
-  [Decline & Historiography], [Disintegration theories, Cunningham's confusion, Marshall's horizontal excavation, Wheeler's stratigraphy, and post-1947 Indian discoveries.],
+  columns: (1.1fr, 2fr, 1.15fr),
+  table.header[*Sub-topic*][*Official syllabus pointer (NTA CUET(UG) History syllabus 2026, the current 2027 baseline — Themes in Indian History Part I)*][*Skills the questions test*],
+  [*Early & Mature Chronology*], [
+    Harappan Civilisation and Archaeology: chronological phases, regional cultures, and subsistence strategies.
+  ], [
+    Classifying Early, Mature, and Late Harappan periods; analyzing archaeobotanical seeds and faunal dietary remains.
+  ],
+  [*Agricultural Technologies*], [
+    Agricultural systems, field furrow layouts, animal traction, and hydraulic infrastructure.
+  ], [
+    Identifying ploughed field at Kalibangan, plough models at Banawali and Cholistan, canals at Shortughai, and stone reservoirs at Dholavira.
+  ],
+  [*Planned Urban Center*], [
+    Mohenjodaro urban anatomy: Citadel vs Lower Town, Great Bath, central warehouse, street grid, and covered drainage.
+  ], [
+    Evaluating public ceremonial architecture, standardized 1:2:4 brick ratios, municipal sanitation, and domestic courtyard privacy.
+  ],
+  [*Craft & Trade Networks*], [
+    Specialized craft production at Chanhudaro, Lothal, Nageshwar, and Balakot; raw material procurement and long-distance trade.
+  ], [
+    Tracing material sources (lapis lazuli, carnelian, steatite, copper, gold) and Mesopotamian cuneiform trade records (Meluhha, Magan, Dilmun).
+  ],
+  [*Seals, Script & Metrology*], [
+    Steatite seals, pictographic script, and cubical chert weights.
+  ], [
+    Analyzing right-to-left undeciphered script (375--400 signs), binary lower denominations, and decimal higher metrology.
+  ],
+  [*Social Differences & Burials*], [
+    Burial customs, modest grave goods, and utilitarian versus luxury artifacts.
+  ], [
+    Examining North-South burial pits, copper mirrors, absence of royal gold tombs, and distribution of luxury miniature faience pots.
+  ],
+  [*Religious Interpretations*], [
+    Material evidence of religion: Mother Goddess, Priest-King, Proto-Shiva seal, lingas, and fire altars.
+  ], [
+    Interpreting religious motifs through retrospective analogy; evaluating Pashupati yogi iconography and fire altars at Kalibangan and Lothal.
+  ],
+  [*Decline & Historiography*], [
+    Theories of collapse, the Aryan invasion debate, and historical milestones of archaeological discovery.
+  ], [
+    Tracing discoveries by Cunningham, Sahni, Banerji, Marshall, Wheeler, and post-1947 explorers; George Dales' refutation of the massacre myth.
+  ],
 )
 
-#exam-pointer(title: "CUET Exam Strategy & Scoring Tips")[
-  *CUET Scoring Tip:* NTA frequently sets chronological matching questions pairing archaeological pioneers with their exact methodological breakthroughs: Cunningham (1875, missed antiquity), Daya Ram Sahni (1921, Harappa seals), Rakhal Das Banerji (1922, Mohenjodaro), John Marshall (1924, world announcement, horizontal digs), and Mortimer Wheeler (1944, stratigraphy). Master the geographical distribution of raw materials: lapis lazuli was procured strictly from *Shortughai* in Afghanistan, carnelian from *Bharuch*, copper from *Khetri* and *Oman*, and steatite from *Rajasthan/north Gujarat*.
+#v(8pt)
+
+#info-box(title: "CUET UG Exam Strategy — Theme 1 Focus (Ancient India)")[
+  - *Pattern:* 50 Multiple Choice Questions (attempt any 40) in 60 minutes.
+  - *Marking:* $+5$ marks for correct choice, $-1$ mark negative deduction for incorrect choice.
+  - *High-Yield Angles:* Archaeological pioneers and their methodologies (Cunningham's blindspot, Marshall's horizontal digging, Wheeler's stratigraphy), exact site attributions (Kalibangan ploughed field vs Banawali terracotta plough), and Mesopotamian cuneiform names (*Meluhha*, *Magan*, *Dilmun*).
 ]
 
 = 1. Beginnings and Chronological Framework
@@ -121,13 +153,8 @@ Craft production formed the economic engine of Harappan urban life.
 Harappans secured distant raw materials through multiple channels:
 
 #table(
-  columns: (1.5fr, 1.8fr, 2fr),
-  stroke: 0.5pt + om-navy.lighten(60%),
-  fill: (x, y) => if y == 0 { om-navy-soft } else if calc.even(y) { om-grey } else { white },
-  [#text(weight: "bold", fill: white)[Raw Material]],
-  [#text(weight: "bold", fill: white)[Source Region]],
-  [#text(weight: "bold", fill: white)[Procurement Method / Mechanism]],
-
+  columns: (1.2fr, 1.8fr, 2.2fr),
+  table.header[*Raw Material*][*Source Region*][*Procurement Method / Mechanism*],
   [Copper], [Khetri (Rajasthan) & Oman (Magan)], [Expeditions sent to Ganeshwar-Jodhpura culture; maritime voyages across the Arabian Sea.],
   [Lapis Lazuli], [Shortughai (Badakhshan, Afghanistan)], [Specialized frontier trade outpost located directly beside mines.],
   [Carnelian], [Bharuch & Lothal (Gujarat)], [Regional barter and coastal transit from Narmada basin.],
@@ -209,13 +236,8 @@ By *c. 1800 BCE*, mature Harappan urban life disintegrated across Sindh and Punj
 == Archaeological Historiography: Key Pioneers
 
 #table(
-  columns: (1.5fr, 1.5fr, 3fr),
-  stroke: 0.5pt + om-navy.lighten(60%),
-  fill: (x, y) => if y == 0 { om-navy-soft } else if calc.even(y) { om-grey } else { white },
-  [#text(weight: "bold", fill: white)[Archaeologist]],
-  [#text(weight: "bold", fill: white)[Period / Year]],
-  [#text(weight: "bold", fill: white)[Key Contribution & Methodological Impact]],
-
+  columns: (1.3fr, 1.1fr, 2.6fr),
+  table.header[*Archaeologist*][*Period / Year*][*Key Contribution & Methodological Impact*],
   [Alexander Cunningham], [1875], [First Director-General of ASI ("Father of Indian Archaeology"). Missed the true antiquity of a Harappan seal because he believed Indian urbanization began in the 6th century BCE Ganga valley.],
   [Daya Ram Sahni], [1921], [Discovered the first ancient seals at Harappa in Montgomery district, West Punjab.],
   [Rakhal Das Banerji], [1922], [Found identical seals at Mohenjodaro in Larkana district, Sindh, proving a shared culture.],
@@ -299,81 +321,80 @@ By *c. 1800 BCE*, mature Harappan urban life disintegrated across Sindh and Punj
   ("John Marshall", "Daya Ram Sahni", "George Dales", "Alexander Cunningham"),
 )
 
-= Step-by-Step Solutions
+= Detailed Solutions
 
 #solution(
   1,
   [A ploughed field dating to early Harappan levels was discovered at *Kalibangan* in Rajasthan. It featured two sets of furrows cutting at right angles, showing that two different crops were cultivated together. Terracotta plough models were found at Banawali and Cholistan, not the ploughed field.],
-  answer: "B",
+  answer: [B],
 )
 
 #solution(
   2,
   [*Shortughai* in northern Afghanistan was established directly near the prized quarries of deep blue *lapis lazuli*. Carnelian came from Bharuch, copper from Khetri and Oman, and steatite from Rajasthan.],
-  answer: "C",
+  answer: [C],
 )
 
 #solution(
   3,
   [Harappan baked bricks possessed a strictly standardized ratio where thickness was 1 unit, width was twice the thickness (2 units), and length was four times the thickness (4 units), giving a ratio of *1 : 2 : 4*.],
-  answer: "B",
+  answer: [B],
 )
 
 #solution(
   4,
   [*Chanhudaro* was a tiny industrial site of under 7 hectares completely dedicated to specialized craft manufacturing including bead drilling, shell cutting, seal engraving, and weight fabrication. It is also famous for having no fortified citadel.],
-  answer: "C",
+  answer: [C],
 )
 
 #solution(
   5,
   [Cuneiform tablets from Mesopotamia describe *Meluhha* as the land of seafarers from which they imported carnelian, lapis lazuli, gold, and copper. Magan was Oman, and Dilmun was Bahrain.],
-  answer: "C",
+  answer: [C],
 )
 
 #solution(
   6,
   [Lower denominations of Harappan cubical chert weights were strictly *binary* ($1, 2, 4, 8, 16, 32$ up to $12,800$), whereas higher denominations operated on the decimal system.],
-  answer: "C",
+  answer: [C],
 )
 
 #solution(
   7,
   [Cunningham relied heavily on 7th century CE Chinese pilgrim accounts (Xuanzang) and held the firm preconception that Indian urbanization originated in the *Ganga valley* around the 6th century BCE, thereby misdating the Harappan seal.],
-  answer: "B",
+  answer: [B],
 )
 
 #solution(
   8,
   [Marshall excavated *horizontally* across units of uniform measured depth. As a result, artifacts belonging to different historical strata were grouped together, obscuring archaeological chronology. Wheeler introduced scientific *stratigraphy* in 1944.],
-  answer: "B",
+  answer: [B],
 )
 
 #solution(
   9,
   [Brick structures classified by archaeologists as *fire altars* used for ritual oblations were unearthed at *Kalibangan* (Rajasthan) and *Lothal* (Gujarat).],
-  answer: "B",
+  answer: [B],
 )
 
 #solution(
   10,
   [In 1964, archaeologist *George Dales* published a systematic critique showing that the skeletons in Deadman Lane at Mohenjodaro were buried at different stratigraphic depths and showed no signs of violent slaughter or unhealed blade trauma, disproving Wheeler's invasion myth.],
-  answer: "C",
+  answer: [C],
 )
 
-= Wrong-Answer Clinic
+== Wrong-Answer Clinic — the one-line corrections
 
 #table(
-  columns: (1.5fr, 1.8fr, 2.7fr),
-  stroke: 0.5pt + om-navy.lighten(60%),
-  fill: (x, y) => if y == 0 { om-navy-soft } else if calc.even(y) { om-grey } else { white },
-  [#text(weight: "bold", fill: white)[Common Student Mistake]],
-  [#text(weight: "bold", fill: white)[Why Candidates Pick It]],
-  [#text(weight: "bold", fill: white)[The Accurate CUET Rule]],
-
-  [Confusing Banawali and Kalibangan], [Both are northern sites related to farming.], [The *ploughed field* is at Kalibangan (Rajasthan). Terracotta *plough models* are at Banawali (Haryana).],
-  [Assuming Harappans buried gold hordes], [Believing ancient civilisations buried treasure like Egyptian pyramids.], [Harappan burials contained modest pottery, shell bangles, and copper mirrors. They avoided burying heavy gold in graves.],
-  [Assuming Harappan script was written Left-to-Right], [Assuming ancient scripts match modern Devanagari or English.], [The Harappan script was written *Right-to-Left*. Words are spacious on the right but compressed on the left edge.],
-  [Confusing Meluhha with Magan], [Both are foreign regions mentioned in Mesopotamian texts.], [*Meluhha* is the Harappan land ("land of seafarers"). *Magan* is Oman, proven by nickel traces in copper artifacts.],
-  [Attributing stratigraphy to Marshall], [Marshall is famous for announcing the discovery in 1924.], [Marshall excavated *horizontally*, ignoring stratigraphy. *R.E.M. Wheeler* introduced stratigraphy in 1944.],
+  columns: (1.05fr, 1.5fr, 1.45fr),
+  table.header[*If you answered...*][*Your slip was...*][*The corrected rule, in one line*],
+  [Q1 option A], [Confusing Banawali with Kalibangan], [The *ploughed field* is at Kalibangan; terracotta *plough models* are at Banawali and Cholistan.],
+  [Q2 option A], [Selecting Carnelian for Shortughai], [*Shortughai* in Badakhshan was established exclusively near quarries of deep blue *lapis lazuli*; carnelian came from Gujarat.],
+  [Q3 option C], [Using irregular brick proportions], [Harappan bricks strictly preserved the uniform standard ratio of *1 : 2 : 4* (thickness : width : length).],
+  [Q4 option A], [Choosing Mohenjodaro for tiny craft center], [*Chanhudaro* (under 7 hectares) was the specialized industrial settlement with no fortified citadel.],
+  [Q5 option A], [Confusing Meluhha with Magan], [*Meluhha* was the Harappan land ("land of seafarers"); *Magan* was Oman with nickel-bearing copper.],
+  [Q7 option A], [Assuming Cunningham thought it was a forgery], [Cunningham misdated the seal because he believed Indian urbanization began in the *6th century BCE Ganga valley*.],
+  [Q8 option B], [Attributing stratigraphy to Marshall], [Marshall excavated *horizontally*, mixing strata; *R.E.M. Wheeler* introduced scientific stratigraphy in 1944.],
+  [Q9 option A], [Looking for fire altars at Mohenjodaro], [Brick *fire altars* were discovered at *Kalibangan* and *Lothal*, not at Mohenjodaro or Harappa.],
+  [Q10 option B], [Crediting Sahni with disproving the massacre], [Anthropologist *George Dales* disproved Wheeler's invasion myth by demonstrating skeletons had no unhealed battle trauma.],
 )
