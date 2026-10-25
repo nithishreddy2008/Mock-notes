@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Human Development Paradigm: Pillars, Approaches & Measurement</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      width: 1440px;
+      height: 880px;
+      background: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "Plus Jakarta Sans", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0F172A;
+      padding: 34px 44px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 1.5pt solid #E2E8F0;
+      padding-bottom: 15px;
+    }
+    .header-left h1 {
+      font-size: 27px;
+      font-weight: 800;
+      color: #0F172A;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+    .header-left p {
+      font-size: 13.5px;
+      color: #64748B;
+      font-weight: 500;
+    }
+    .header-badge {
+      background: #EFF6FF;
+      color: #1D4ED8;
+      border: 1px solid #BFDBFE;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    /* Main Container (Two Main Columns: Left = Pillars & Approaches, Right = HDI Dimensions & Tiers) */
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 20px;
+      margin-top: 16px;
+      flex: 1;
+    }
+
+    /* Section Column */
+    .sec-col {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    /* Block Card */
+    .block-card {
+      background: #FFFFFF;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 12px;
+      padding: 18px 20px;
+      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.03);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .block-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      border-bottom: 1px solid #F1F5F9;
+      padding-bottom: 8px;
+    }
+    .block-title {
+      font-size: 16px;
+      font-weight: 800;
+      color: #0F172A;
+    }
+    .block-tag {
+      font-size: 10.5px;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: 5px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .tag-blue { background: #EFF6FF; color: #1D4ED8; }
+    .tag-purple { background: #FAF5FF; color: #7E22CE; }
+    .tag-emerald { background: #ECFDF5; color: #047857; }
+
+    /* 4-Item Subgrid (Pillars / Approaches) */
+    .sub-grid-4 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+    .sub-item {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 8px;
+      padding: 10px 12px;
+    }
+    .sub-item-header {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 4px;
+    }
+    .dot-num {
+      width: 17px;
+      height: 17px;
+      border-radius: 50%;
+      background: #0F172A;
+      color: #FFFFFF;
+      font-size: 10px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .sub-item-title {
+      font-size: 12.5px;
+      font-weight: 800;
+      color: #0F172A;
+    }
+    .sub-item-desc {
+      font-size: 11px;
+      color: #475569;
+      line-height: 1.4;
+    }
+
+    /* Right Column: Dimensions of Measurement */
+    .dim-card {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 8px;
+      padding: 10px 13px;
+      margin-bottom: 8px;
+    }
+    .dim-top {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 3px;
+    }
+    .dim-name {
+      font-size: 12.5px;
+      font-weight: 800;
+      color: #0F172A;
+    }
+    .dim-weight {
+      font-size: 10.5px;
+      font-weight: 700;
+      color: #1D4ED8;
+      background: #DBEAFE;
+      padding: 1px 6px;
+      border-radius: 4px;
+    }
+    .dim-metric {
+      font-size: 11.5px;
+      color: #334155;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+    .dim-detail {
+      font-size: 11px;
+      color: #64748B;
+      line-height: 1.35;
+    }
+
+    /* Tier Table */
+    .tier-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 6px;
+      font-size: 11.5px;
+    }
+    .tier-table th {
+      background: #F1F5F9;
+      color: #334155;
+      font-weight: 800;
+      text-align: left;
+      padding: 6px 10px;
+      border: 1px solid #CBD5E1;
+      font-size: 10.5px;
+      text-transform: uppercase;
+    }
+    .tier-table td {
+      padding: 6px 10px;
+      border: 1px solid #E2E8F0;
+      color: #334155;
+      line-height: 1.3;
+    }
+    .tier-badge {
+      font-weight: 800;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 10px;
+    }
+    .tb-veryhigh { background: #D1FAE5; color: #065F46; }
+    .tb-high { background: #DBEAFE; color: #1E40AF; }
+    .tb-medium { background: #FEF3C7; color: #92400E; }
+    .tb-low { background: #FEE2E2; color: #991B1B; }
+
+    /* Footer */
+    .footer-strip {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 10px;
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 14px;
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.02);
+    }
+    .footer-left {
+      font-size: 12.5px;
+      color: #334155;
+    }
+    .footer-left strong {
+      color: #0F172A;
+    }
+    .footer-right {
+      font-size: 11.5px;
+      color: #64748B;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Header -->
+  <div class="header">
+    <div class="header-left">
+      <h1>The Human Development Paradigm: Pillars, Approaches & Measurement</h1>
+      <p>Conceptual architecture of Dr. Mahbub-ul-Haq and Prof. Amartya Sen: capability expansion, welfare, and global indexation</p>
+    </div>
+    <div class="header-badge">
+      CUET UG Geography · Analytical Matrix
+    </div>
+  </div>
+
+  <!-- Main Content Grid -->
+  <div class="content-grid">
+
+    <!-- Left Column: The 4 Pillars & The 4 Approaches -->
+    <div class="sec-col">
+
+      <!-- The 4 Pillars -->
+      <div class="block-card">
+        <div class="block-header">
+          <div class="block-title">The Four Structural Pillars of Human Development</div>
+          <span class="block-tag tag-blue">Core Dimensions</span>
+        </div>
+        <div class="sub-grid-4">
+          <div class="sub-item">
+            <div class="sub-item-header">
+              <span class="dot-num">1</span>
+              <span class="sub-item-title">Equity</span>
+            </div>
+            <div class="sub-item-desc">Equal, fair access to opportunities available to everybody, regardless of gender, race, income, caste, or social status. Removes institutional barriers.</div>
+          </div>
+          <div class="sub-item">
+            <div class="sub-item-header">
+              <span class="dot-num">2</span>
+              <span class="sub-item-title">Sustainability</span>
+            </div>
+            <div class="sub-item-desc">Continuity in the availability of opportunities for future generations. All environmental, financial, and human resources must be utilized sustainably.</div>
+          </div>
+          <div class="sub-item">
+            <div class="sub-item-header">
+              <span class="dot-num">3</span>
+              <span class="sub-item-title">Productivity</span>
+            </div>
+            <div class="sub-item-desc">Human labor productivity enhanced through building continuous capabilities. People are the true wealth of a nation; investing in health and skills raises productivity.</div>
+          </div>
+          <div class="sub-item">
+            <div class="sub-item-header">
+              <span class="dot-num">4</span>
+              <span class="sub-item-title">Empowerment</span>
+            </div>
+            <div class="sub-item-desc">The freedom and capability to make real choices. Demands good governance, democratic decentralization, and empowerment of marginalized groups.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- The 4 Approaches -->
+      <div class="block-card">
+        <div class="block-header">
+          <div class="block-title">The Four Methodological Approaches</div>
+          <span class="block-tag tag-purple">Evolution of Thought</span>
+        </div>
+        <div class="sub-grid-4">
+          <div class="sub-item">
+            <div class="sub-item-header">
+              <span class="dot-num">1</span>
+              <span class="sub-item-title">Income Approach</span>
+            </div>
+            <div class="sub-item-desc">The oldest approach; human development is linked directly to income. Higher income reflects higher freedom and greater access to opportunities.</div>
+          </div>
+          <div class="sub-item">
+            <div class="sub-item-header">
+              <span class="dot-num">2</span>
+              <span class="sub-item-title">Welfare Approach</span>
+            </div>
+            <div class="sub-item-desc">Views humans as passive beneficiaries. Proposes government maximizes public expenditure on education, healthcare, and amenities.</div>
+          </div>
+          <div class="sub-item">
+            <div class="sub-item-header">
+              <span class="dot-num">3</span>
+              <span class="sub-item-title">Basic Needs Approach</span>
+            </div>
+            <div class="sub-item-desc">Pioneered by the International Labour Organisation (ILO). Emphasizes 6 non-negotiable basic needs: health, education, food, water, sanitation, and housing.</div>
+          </div>
+          <div class="sub-item">
+            <div class="sub-item-header">
+              <span class="dot-num">4</span>
+              <span class="sub-item-title">Capability Approach</span>
+            </div>
+            <div class="sub-item-desc">Associated with Nobel Laureate Amartya Sen. Focuses on building human capabilities in health and education to unlock true human agency and freedom.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Right Column: Measurement of HDI & Global Classification Tiers -->
+    <div class="sec-col">
+
+      <!-- Measurement Card -->
+      <div class="block-card">
+        <div class="block-header">
+          <div class="block-title">HDI Measurement Dimensions (1/3 Weight Each)</div>
+          <span class="block-tag tag-emerald">UNDP Methodology</span>
+        </div>
+
+        <div class="dim-card">
+          <div class="dim-top">
+            <span class="dim-name">1. Longevity & Health</span>
+            <span class="dim-weight">Weight 1/3</span>
+          </div>
+          <div class="dim-metric">Indicator: Life Expectancy at Birth</div>
+          <div class="dim-detail">Higher life expectancy indicates a longer, healthier life with robust healthcare infrastructure and disease protection.</div>
+        </div>
+
+        <div class="dim-card">
+          <div class="dim-top">
+            <span class="dim-name">2. Knowledge & Education</span>
+            <span class="dim-weight">Weight 1/3</span>
+          </div>
+          <div class="dim-metric">Indicators: Mean Years & Expected Years of Schooling</div>
+          <div class="dim-detail">Adult literacy rate and combined gross enrolment ratio reflect a society's access to knowledge and skill formation.</div>
+        </div>
+
+        <div class="dim-card">
+          <div class="dim-top">
+            <span class="dim-name">3. Decent Standard of Living</span>
+            <span class="dim-weight">Weight 1/3</span>
+          </div>
+          <div class="dim-metric">Indicator: Gross National Income (GNI) per capita in PPP US$</div>
+          <div class="dim-detail">Purchasing Power Parity adjusts for international price differences to evaluate real command over economic resources.</div>
+        </div>
+      </div>
+
+      <!-- International Tiers Card -->
+      <div class="block-card">
+        <div class="block-header">
+          <div class="block-title">International Comparison Tiers (UNDP HDR)</div>
+        </div>
+
+        <table class="tier-table">
+          <thead>
+            <tr>
+              <th>Development Tier</th>
+              <th>HDI Score Range</th>
+              <th>Representative Countries</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="tier-badge tb-veryhigh">Very High</span></td>
+              <td><strong>0.800 and above</strong></td>
+              <td>Norway, Switzerland, Ireland, Germany, Australia, Singapore</td>
+            </tr>
+            <tr>
+              <td><span class="tier-badge tb-high">High</span></td>
+              <td><strong>0.700 to 0.799</strong></td>
+              <td>Malaysia, Thailand, Brazil, Iran, Sri Lanka</td>
+            </tr>
+            <tr>
+              <td><span class="tier-badge tb-medium">Medium</span></td>
+              <td><strong>0.550 to 0.699</strong></td>
+              <td>India, Bangladesh, Indonesia, South Africa, Vietnam</td>
+            </tr>
+            <tr>
+              <td><span class="tier-badge tb-low">Low</span></td>
+              <td><strong>Below 0.550</strong></td>
+              <td>Chad, Niger, Central African Republic, South Sudan</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Bottom Exam Strip -->
+  <div class="footer-strip">
+    <div class="footer-left">
+      <strong>Core Conceptual Law:</strong> Economic growth is quantitative and value-neutral; Human Development is qualitative, value-positive, and centered on widening human choices.
+    </div>
+    <div class="footer-right">
+      Source: NCERT Class 12 Fundamentals of Human Geography (Chapter 4) · OurMocks Exam System
+    </div>
+  </div>
+
+</body>
+</html>

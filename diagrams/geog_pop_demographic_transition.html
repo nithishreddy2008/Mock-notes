@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Demographic Transition Theory & Population Pyramids</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      width: 1440px;
+      height: 880px;
+      background: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "Plus Jakarta Sans", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0F172A;
+      padding: 36px 44px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* Top Header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 1.5pt solid #E2E8F0;
+      padding-bottom: 16px;
+    }
+    .header-left h1 {
+      font-size: 27px;
+      font-weight: 800;
+      color: #0F172A;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+    .header-left p {
+      font-size: 13.5px;
+      color: #64748B;
+      font-weight: 500;
+    }
+    .header-badge {
+      background: #EFF6FF;
+      color: #1D4ED8;
+      border: 1px solid #BFDBFE;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    /* Main Grid */
+    .main-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 18px;
+      flex: 1;
+    }
+
+    /* Stage Card */
+    .stage-card {
+      background: #FFFFFF;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 14px;
+      padding: 20px 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.03);
+      position: relative;
+    }
+    .stage-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4.5px;
+      border-radius: 14px 14px 0 0;
+    }
+    .stage-1::before { background: #DC2626; }
+    .stage-2::before { background: #D97706; }
+    .stage-3::before { background: #059669; }
+
+    .card-top {
+      margin-bottom: 12px;
+    }
+    .card-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+    .badge-stage {
+      font-size: 10.5px;
+      font-weight: 800;
+      padding: 3px 9px;
+      border-radius: 6px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .stage-1 .badge-stage { background: #FEE2E2; color: #991B1B; }
+    .stage-2 .badge-stage { background: #FEF3C7; color: #92400E; }
+    .stage-3 .badge-stage { background: #D1FAE5; color: #065F46; }
+
+    .phase-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: #64748B;
+    }
+
+    .card-title {
+      font-size: 19px;
+      font-weight: 800;
+      color: #0F172A;
+      margin-bottom: 4px;
+    }
+    .card-subtitle {
+      font-size: 12.5px;
+      color: #475569;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    /* Key Attributes Block */
+    .attr-box {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 8px;
+      padding: 11px 13px;
+      margin: 10px 0;
+    }
+    .attr-title {
+      font-size: 10px;
+      font-weight: 800;
+      color: #64748B;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+    }
+    .attr-desc {
+      font-size: 12px;
+      color: #334155;
+      line-height: 1.45;
+    }
+
+    /* Pyramid Mini-Card */
+    .pyramid-box {
+      border-radius: 8px;
+      padding: 11px 13px;
+      margin-top: 6px;
+      border: 1px dashed #CBD5E1;
+      background: #FFFFFF;
+    }
+    .pyramid-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 4px;
+    }
+    .pyramid-title {
+      font-size: 11.5px;
+      font-weight: 800;
+      color: #0F172A;
+    }
+    .pyramid-shape {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 4px;
+      background: #F1F5F9;
+      color: #475569;
+    }
+    .pyramid-desc {
+      font-size: 11px;
+      color: #475569;
+      line-height: 1.4;
+    }
+
+    /* Benchmark Examples */
+    .benchmark-box {
+      background: #F8FAFC;
+      border-left: 3px solid;
+      border-radius: 0 6px 6px 0;
+      padding: 8px 11px;
+      margin-top: 10px;
+      font-size: 11.5px;
+      line-height: 1.4;
+      color: #334155;
+    }
+    .stage-1 .benchmark-box { border-left-color: #DC2626; }
+    .stage-2 .benchmark-box { border-left-color: #D97706; }
+    .stage-3 .benchmark-box { border-left-color: #059669; }
+
+    /* Bottom Exam Strip */
+    .footer-strip {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 10px;
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 16px;
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.02);
+    }
+    .footer-left {
+      font-size: 12.5px;
+      color: #334155;
+    }
+    .footer-left strong {
+      color: #0F172A;
+    }
+    .footer-right {
+      font-size: 11.5px;
+      color: #64748B;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Header -->
+  <div class="header">
+    <div class="header-left">
+      <h1>The Demographic Transition Model & Population Pyramids</h1>
+      <p>Three progressive demographic epochs, vital rates divergence, and corresponding age-sex structures</p>
+    </div>
+    <div class="header-badge">
+      CUET UG Geography · Model Architecture
+    </div>
+  </div>
+
+  <!-- Main 3-Stage Grid -->
+  <div class="main-grid">
+
+    <!-- Stage 1 -->
+    <div class="stage-card stage-1">
+      <div class="card-top">
+        <div class="card-meta">
+          <span class="badge-stage">Stage 1: High Fluctuating</span>
+          <span class="phase-label">Primitive Agrarian</span>
+        </div>
+        <div class="card-title">High Fertility & Mortality</div>
+        <div class="card-subtitle">Stable or extremely slow population growth with low life expectancy</div>
+
+        <div class="attr-box">
+          <div class="attr-title">Demographic Mechanism</div>
+          <div class="attr-desc">High birth rates compensate for catastrophic mortality caused by epidemics, famine, and variable food supply. Agriculture is the primary occupation with large families regarded as economic assets.</div>
+        </div>
+
+        <div class="attr-box">
+          <div class="attr-title">Socio-Economic Environment</div>
+          <div class="attr-desc">Illiteracy is pervasive; technology is primitive. Life expectancy is exceptionally low (below 35 years). Most of the world was in this stage two centuries ago.</div>
+        </div>
+
+        <div class="pyramid-box">
+          <div class="pyramid-header">
+            <span class="pyramid-title">Associated Age-Sex Structure</span>
+            <span class="pyramid-shape">Wide Base & Steep Taper</span>
+          </div>
+          <div class="pyramid-desc">High proportion of children, very small elderly cohort due to heavy infant and adult mortality.</div>
+        </div>
+      </div>
+
+      <div class="benchmark-box">
+        <strong>Benchmark Examples:</strong> Rainforest tribal communities in the Amazon/Congo basin; Bangladesh before independence; all human societies prior to the Industrial Revolution.
+      </div>
+    </div>
+
+    <!-- Stage 2 -->
+    <div class="stage-card stage-2">
+      <div class="card-top">
+        <div class="card-meta">
+          <span class="badge-stage">Stage 2: Expanding Population</span>
+          <span class="phase-label">Early Developing</span>
+        </div>
+        <div class="card-title">High Fertility, Falling Mortality</div>
+        <div class="card-subtitle">Population explosion driven by a widening gap between birth and death rates</div>
+
+        <div class="attr-box">
+          <div class="attr-title">Demographic Mechanism</div>
+          <div class="attr-desc">Fertility remains stubbornly high initially due to cultural norms, while death rates plunge dramatically due to clean sanitation, antibiotics, piped water, and medical advancements.</div>
+        </div>
+
+        <div class="attr-box">
+          <div class="attr-title">Socio-Economic Environment</div>
+          <div class="attr-desc">Rapid urbanization, early industrialization, and expansion of basic healthcare. Net natural increase accelerates rapidly, creating massive young cohorts.</div>
+        </div>
+
+        <div class="pyramid-box">
+          <div class="pyramid-header">
+            <span class="pyramid-title">Associated Age-Sex Structure</span>
+            <span class="pyramid-shape">Triangular Pyramid</span>
+          </div>
+          <div class="pyramid-desc">Broad base reflecting large birth cohorts (high child dependency ratio) tapering smoothly toward the apex.</div>
+        </div>
+      </div>
+
+      <div class="benchmark-box">
+        <strong>Benchmark Examples:</strong> Nigeria, Kenya, Peru, Mexico, Sri Lanka; developing nations experiencing accelerated demographic expansion.
+      </div>
+    </div>
+
+    <!-- Stage 3 -->
+    <div class="stage-card stage-3">
+      <div class="card-top">
+        <div class="card-meta">
+          <span class="badge-stage">Stage 3: Low Fluctuating</span>
+          <span class="phase-label">Urban Industrial</span>
+        </div>
+        <div class="card-title">Low Fertility & Low Mortality</div>
+        <div class="card-subtitle">Population stabilizes or grows very slowly with aging demographic composition</div>
+
+        <div class="attr-box">
+          <div class="attr-title">Demographic Mechanism</div>
+          <div class="attr-desc">Both birth and death rates converge at low levels. Deliberate family planning, widespread contraception, and female labor force participation depress fertility below replacement level.</div>
+        </div>
+
+        <div class="attr-box">
+          <div class="attr-title">Socio-Economic Environment</div>
+          <div class="attr-desc">Highly urbanized, literate, service-oriented society. High technological sophistication, high living standards, and advanced geriatric healthcare.</div>
+        </div>
+
+        <div class="pyramid-box">
+          <div class="pyramid-header">
+            <span class="pyramid-title">Associated Age-Sex Structure</span>
+            <span class="pyramid-shape">Bell-Shaped / Contracting</span>
+          </div>
+          <div class="pyramid-desc">Equal birth/death cohorts (Australia, bell-shaped) or narrow base with bulging top indicating aging population (Japan, contracting).</div>
+        </div>
+      </div>
+
+      <div class="benchmark-box">
+        <strong>Benchmark Examples:</strong> Japan (contracting population), Australia (constant/bell-shaped), Canada, Germany, United States, Western Europe.
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bottom Exam Strip -->
+  <div class="footer-strip">
+    <div class="footer-left">
+      <strong>Core Exam Law:</strong> The transition progresses from <em>rural, agrarian, illiterate</em> with high rates to <em>urban, industrial, literate</em> with low rates, demonstrating human control over reproduction.
+    </div>
+    <div class="footer-right">
+      Source: NCERT Class 12 Fundamentals of Human Geography (Chapter 2 & 3) · OurMocks
+    </div>
+  </div>
+
+</body>
+</html>

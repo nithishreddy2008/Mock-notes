@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>World Population & Human Development Mindmap</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      width: 1440px;
+      height: 880px;
+      background: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "Plus Jakarta Sans", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0F172A;
+      padding: 34px 44px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 1.5pt solid #E2E8F0;
+      padding-bottom: 14px;
+      position: relative;
+      z-index: 2;
+    }
+    .header-left h1 {
+      font-size: 26px;
+      font-weight: 800;
+      color: #0F172A;
+      letter-spacing: -0.02em;
+      margin-bottom: 3px;
+    }
+    .header-left p {
+      font-size: 13.5px;
+      color: #64748B;
+      font-weight: 500;
+    }
+    .header-badge {
+      background: #EFF6FF;
+      color: #1D4ED8;
+      border: 1px solid #BFDBFE;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    /* Mindmap Canvas */
+    .mindmap-area {
+      flex: 1;
+      position: relative;
+      margin: 12px 0;
+    }
+
+    /* Central Hub */
+    .central-hub {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 250px;
+      background: #FFFFFF;
+      border: 2.5px solid #0284C7;
+      border-radius: 16px;
+      padding: 16px 20px;
+      text-align: center;
+      box-shadow: 0 10px 25px -5px rgba(2, 132, 199, 0.15);
+      z-index: 10;
+    }
+    .central-hub h2 {
+      font-size: 17px;
+      font-weight: 800;
+      color: #0F172A;
+      margin-bottom: 4px;
+      line-height: 1.25;
+    }
+    .central-hub span {
+      font-size: 10.5px;
+      font-weight: 700;
+      color: #0284C7;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    /* Branch Cards */
+    .branch-card {
+      position: absolute;
+      width: 330px;
+      background: #FFFFFF;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 12px;
+      padding: 10px 14px;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03);
+      z-index: 5;
+    }
+    .branch-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3.5px;
+      border-radius: 12px 12px 0 0;
+    }
+
+    /* Card Layout Positions */
+    .pos-top-left { top: 0px; left: 30px; }
+    .pos-mid-left { top: 235px; left: 10px; }
+    .pos-bot-left { bottom: 0px; left: 30px; }
+
+    .pos-top-right { top: 0px; right: 30px; }
+    .pos-mid-right { top: 235px; right: 10px; }
+    .pos-bot-right { bottom: 0px; right: 30px; }
+
+    /* Branch Accent Colors */
+    .b-blue::before { background: #2563EB; }
+    .b-emerald::before { background: #059669; }
+    .b-amber::before { background: #D97706; }
+    .b-purple::before { background: #7C3AED; }
+    .b-rose::before { background: #E11D48; }
+    .b-indigo::before { background: #4F46E5; }
+
+    .card-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 7px;
+      padding-bottom: 5px;
+      border-bottom: 1px solid #F1F5F9;
+    }
+    .card-title {
+      font-size: 13px;
+      font-weight: 800;
+      color: #0F172A;
+    }
+    .tag {
+      font-size: 9px;
+      font-weight: 800;
+      padding: 2px 6px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .tag-blue { background: #EFF6FF; color: #1D4ED8; }
+    .tag-emerald { background: #ECFDF5; color: #047857; }
+    .tag-amber { background: #FFFBEB; color: #B45309; }
+    .tag-purple { background: #FAF5FF; color: #7E22CE; }
+    .tag-rose { background: #FFF1F2; color: #BE123C; }
+    .tag-indigo { background: #EEF2FF; color: #4338CA; }
+
+    .point-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 3.5px;
+    }
+    .point-list li {
+      font-size: 10.5px;
+      color: #334155;
+      line-height: 1.34;
+      position: relative;
+      padding-left: 11px;
+    }
+    .point-list li::before {
+      content: "›";
+      position: absolute;
+      left: 0;
+      color: #64748B;
+      font-weight: 800;
+      font-size: 12px;
+    }
+    .point-list strong {
+      color: #0F172A;
+    }
+
+    /* SVG Connecting Lines */
+    .connector-svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Footer */
+    .footer-strip {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 10px;
+      padding: 11px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.02);
+    }
+    .footer-left {
+      font-size: 12px;
+      color: #334155;
+    }
+    .footer-left strong {
+      color: #0F172A;
+    }
+    .footer-right {
+      font-size: 11.5px;
+      color: #64748B;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-left">
+      <h1>People: World Population & Human Development — Comprehensive Mindmap</h1>
+      <p>Six core pillars of demographic dynamics, structural composition, transition models, and human development</p>
+    </div>
+    <div class="header-badge">
+      Class 12 Geography · Unit II Mindmap
+    </div>
+  </div>
+
+  <!-- Mindmap Canvas -->
+  <div class="mindmap-area">
+
+    <!-- SVG Connecting Lines -->
+    <svg class="connector-svg">
+      <!-- To Top Left -->
+      <path d="M 595 290 C 470 290, 420 150, 360 90" stroke="#CBD5E1" stroke-width="1.8" fill="none" stroke-dasharray="4,4" />
+      <!-- To Mid Left -->
+      <path d="M 595 320 C 480 320, 420 310, 340 300" stroke="#CBD5E1" stroke-width="1.8" fill="none" stroke-dasharray="4,4" />
+      <!-- To Bot Left -->
+      <path d="M 595 350 C 470 350, 420 480, 360 520" stroke="#CBD5E1" stroke-width="1.8" fill="none" stroke-dasharray="4,4" />
+      <!-- To Top Right -->
+      <path d="M 845 290 C 970 290, 1020 150, 1080 90" stroke="#CBD5E1" stroke-width="1.8" fill="none" stroke-dasharray="4,4" />
+      <!-- To Mid Right -->
+      <path d="M 845 320 C 960 320, 1020 310, 1100 300" stroke="#CBD5E1" stroke-width="1.8" fill="none" stroke-dasharray="4,4" />
+      <!-- To Bot Right -->
+      <path d="M 845 350 C 970 350, 1020 480, 1080 520" stroke="#CBD5E1" stroke-width="1.8" fill="none" stroke-dasharray="4,4" />
+    </svg>
+
+    <!-- Central Hub -->
+    <div class="central-hub">
+      <h2>People: Population & Development</h2>
+      <span>Fundamentals · Unit II</span>
+    </div>
+
+    <!-- Branch 1: Distribution & Density (Top Left) -->
+    <div class="branch-card pos-top-left b-blue">
+      <div class="card-head">
+        <span class="card-title">1. Distribution & Density</span>
+        <span class="tag tag-blue">Spatial Patterns</span>
+      </div>
+      <ul class="point-list">
+        <li><strong>George Cressey:</strong> "Asia has many places where people are few and few places where people are very many."</li>
+        <li><strong>Top 10 Populous Nations:</strong> Account for ~60% of humanity; 6 located in Asia (China, India, Indonesia, Pakistan, Bangladesh, Russia).</li>
+        <li><strong>Arithmetic Density:</strong> Total Population / Total Land Area (persons/km²).</li>
+        <li><strong>High vs Low Density:</strong> High: NW Europe, East/South Asia; Sparse: Polar biomes, hyper-arid deserts, high altitudes.</li>
+      </ul>
+    </div>
+
+    <!-- Branch 2: Factors Influencing Population (Mid Left) -->
+    <div class="branch-card pos-mid-left b-emerald">
+      <div class="card-head">
+        <span class="card-title">2. Distribution Determinants</span>
+        <span class="tag tag-emerald">Drivers</span>
+      </div>
+      <ul class="point-list">
+        <li><strong>Geographical:</strong> Fresh water availability, flat river plains (Ganga, Nile), moderate Mediterranean climate, fertile loamy soils.</li>
+        <li><strong>Minerals:</strong> Katanga-Zambia copper belt (Africa) attracting mining settlements.</li>
+        <li><strong>Urban & Industrial:</strong> Kobe-Osaka region (Japan) and Tokyo megalopolis offering employment, services, and agglomeration.</li>
+        <li><strong>Socio-Cultural:</strong> Religious centers (Varanasi, Jerusalem) and political stability attracting in-migration.</li>
+      </ul>
+    </div>
+
+    <!-- Branch 3: Population Change & Migration (Bot Left) -->
+    <div class="branch-card pos-bot-left b-amber">
+      <div class="card-head">
+        <span class="card-title">3. Components of Change</span>
+        <span class="tag tag-amber">Demodynamics</span>
+      </div>
+      <ul class="point-list">
+        <li><strong>Natural Growth:</strong> Births minus Deaths; <strong>Actual Growth:</strong> (Births - Deaths) + (In-migrants - Out-migrants).</li>
+        <li><strong>Crude Birth/Death Rates:</strong> Live births or deaths per 1,000 population per year (CBR, CDR).</li>
+        <li><strong>Push Factors:</strong> Unemployment, poor living standards, political turmoil, droughts, famines.</li>
+        <li><strong>Pull Factors:</strong> Better job opportunities, higher wages, peace, stable climate, educational amenities.</li>
+      </ul>
+    </div>
+
+    <!-- Branch 4: Demographic Transition Model (Top Right) -->
+    <div class="branch-card pos-top-right b-purple">
+      <div class="card-head">
+        <span class="card-title">4. Demographic Transition</span>
+        <span class="tag tag-purple">Theory</span>
+      </div>
+      <ul class="point-list">
+        <li><strong>Progression:</strong> Rural, agrarian, illiterate stage to urban, industrial, literate stage.</li>
+        <li><strong>Stage 1 (High Fluctuating):</strong> High birth & death rates, low life expectancy, primitive agriculture (rainforest tribes).</li>
+        <li><strong>Stage 2 (Expanding):</strong> High birth rate + plunging death rate due to sanitation/medicine (Kenya, Nigeria, Sri Lanka).</li>
+        <li><strong>Stage 3 (Low Fluctuating):</strong> Both rates low, aging society, zero/slow growth (Japan, Canada, Western Europe).</li>
+      </ul>
+    </div>
+
+    <!-- Branch 5: Population Composition & Pyramids (Mid Right) -->
+    <div class="branch-card pos-mid-right b-rose">
+      <div class="card-head">
+        <span class="card-title">5. Composition & Pyramids</span>
+        <span class="tag tag-rose">Age-Sex</span>
+      </div>
+      <ul class="point-list">
+        <li><strong>Triangular Pyramid (Expanding):</strong> Wide base, rapid fertility, youthful population (Nigeria, Bangladesh, Mexico).</li>
+        <li><strong>Bell-Shaped Pyramid (Constant):</strong> Tapered top with equal birth and death rates (Australia).</li>
+        <li><strong>Narrow-Base Pyramid (Declining):</strong> Low birth rates and bulging top, high aging dependency (Japan).</li>
+        <li><strong>Sex Ratio:</strong> World (Males per 1,000 females); India (Females per 1,000 males).</li>
+      </ul>
+    </div>
+
+    <!-- Branch 6: Human Development Index (Bot Right) -->
+    <div class="branch-card pos-bot-right b-indigo">
+      <div class="card-head">
+        <span class="card-title">6. Human Development</span>
+        <span class="tag tag-indigo">Paradigms</span>
+      </div>
+      <ul class="point-list">
+        <li><strong>Pioneers:</strong> Dr. Mahbub-ul-Haq (expanding choices) & Prof. Amartya Sen (capability expansion).</li>
+        <li><strong>4 Pillars:</strong> Equity, Sustainability, Productivity, Empowerment.</li>
+        <li><strong>4 Approaches:</strong> Income, Welfare, Basic Needs (ILO: 6 needs), Capability.</li>
+        <li><strong>3 Dimensions (1/3 each):</strong> Life expectancy, Schooling (Mean/Expected), GNI per capita (PPP$).</li>
+        <li><strong>Global Tiers:</strong> Very High (>0.800), High (0.700–0.799), Medium (0.550–0.699), Low (<0.550).</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Footer Strip -->
+  <div class="footer-strip">
+    <div class="footer-left">
+      <strong>Core Conceptual Synthesis:</strong> Population is the true dynamic resource of the Earth; human development transforms mere numbers into empowered, healthy, and productive citizens.
+    </div>
+    <div class="footer-right">
+      Source: NCERT Class 12 Fundamentals of Human Geography · OurMocks Exam System
+    </div>
+  </div>
+
+</body>
+</html>
