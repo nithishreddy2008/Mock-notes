@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Chishti Sufi Silsila & Khanqah Ecosystem — Lineage Tree</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background-color: #071A4D;
+    background-image: 
+      radial-gradient(circle at 14% 16%, rgba(31, 94, 255, 0.18) 0%, transparent 40%),
+      radial-gradient(circle at 86% 84%, rgba(184, 255, 52, 0.1) 0%, transparent 40%);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #F8FAFC;
+    padding: 24px 38px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+
+  /* Header */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    padding-bottom: 10px;
+  }
+  .badge {
+    background: rgba(184, 255, 52, 0.12);
+    border: 1px solid #B8FF34;
+    color: #B8FF34;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 3px 12px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 4px;
+  }
+  .title {
+    font-size: 23px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: #FFFFFF;
+  }
+  .subtitle {
+    font-size: 12.5px;
+    color: #94A3B8;
+    margin-top: 2px;
+  }
+  .brand-pill {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: 11.5px;
+    color: #E2E8F0;
+    font-weight: 600;
+    text-align: right;
+  }
+  .brand-pill span {
+    color: #B8FF34;
+    display: block;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  /* Content Layout: Left Silsila Tree + Right Khanqah Institutions */
+  .content-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 16px;
+    margin-top: 10px;
+    flex-grow: 1;
+  }
+
+  /* Silsila Tree Column */
+  .tree-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 14px 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    backdrop-filter: blur(8px);
+    border-top: 3px solid #1F5EFF;
+  }
+
+  .tree-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .tree-title {
+    font-size: 14px;
+    font-weight: 800;
+    color: #38BDF8;
+  }
+  .tree-tag {
+    font-size: 10.5px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.08);
+    color: #94A3B8;
+  }
+
+  /* Spiritual Nodes Chain */
+  .silsila-chain {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin-top: 4px;
+  }
+
+  .chain-node {
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    padding: 8px 12px;
+    display: grid;
+    grid-template-columns: 28px 1fr auto;
+    align-items: center;
+    gap: 10px;
+    border-left: 3px solid #38BDF8;
+  }
+  .chain-node.n1 { border-left-color: #F59E0B; }
+  .chain-node.n2 { border-left-color: #B8FF34; }
+  .chain-node.n3 { border-left-color: #38BDF8; }
+  .chain-node.n4 { border-left-color: #A855F7; }
+  .chain-node.n5 { border-left-color: #EC4899; }
+
+  .node-idx {
+    font-size: 12px;
+    font-weight: 800;
+    color: #94A3B8;
+    text-align: center;
+  }
+  .node-main {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .saint-name {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: #FFFFFF;
+  }
+  .saint-loc {
+    font-size: 11px;
+    color: #CBD5E1;
+  }
+  .saint-date {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.08);
+    color: #CBD5E1;
+    white-space: nowrap;
+  }
+
+  /* Right Institutions Column */
+  .inst-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 14px 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    backdrop-filter: blur(8px);
+    border-top: 3px solid #B8FF34;
+  }
+
+  .inst-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .inst-title {
+    font-size: 14px;
+    font-weight: 800;
+    color: #B8FF34;
+  }
+  .inst-tag {
+    font-size: 10.5px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.08);
+    color: #94A3B8;
+  }
+
+  .inst-blocks {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 4px;
+  }
+
+  .block-item {
+    background: rgba(0, 0, 0, 0.22);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 8px;
+    padding: 9px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+  .block-title {
+    font-size: 11.5px;
+    font-weight: 700;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .block-item:nth-child(1) .block-title { color: #BEF264; }
+  .block-item:nth-child(2) .block-title { color: #7DD3FC; }
+  .block-item:nth-child(3) .block-title { color: #FCD34D; }
+  .block-item:nth-child(4) .block-title { color: #F472B6; }
+
+  .block-desc {
+    font-size: 10.5px;
+    line-height: 1.35;
+    color: #CBD5E1;
+  }
+  .block-desc strong { color: #FFFFFF; }
+
+  /* Footer */
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 8px;
+    font-size: 11px;
+    color: #64748B;
+  }
+  .footer strong { color: #B8FF34; }
+</style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div>
+      <div class="badge">Themes in Indian History Part II · Chapter 6</div>
+      <div class="title">The Chishti Sufi Silsila & Khanqah Ecosystem: Lineage & Institutions</div>
+      <div class="subtitle">Spiritual genealogy (silsila) of the premier Chishti masters and socio-religious organization of the medieval hospice (khanqah)</div>
+    </div>
+    <div class="brand-pill">
+      <span>OurMocks Study Visuals</span>
+      CUET UG History · Sufi Lineage
+    </div>
+  </div>
+
+  <!-- Content Grid -->
+  <div class="content-grid">
+
+    <!-- Left Column: The 5 Paramount Chishti Masters -->
+    <div class="tree-card">
+      <div class="tree-header">
+        <div class="tree-title">Chishti Spiritual Lineage (*Silsila* Chain in India)</div>
+        <div class="tree-tag">Unbroken Transmission</div>
+      </div>
+      
+      <div class="silsila-chain">
+
+        <div class="chain-node n1">
+          <div class="node-idx">1</div>
+          <div class="node-main">
+            <div class="saint-name">Khwaja Muinuddin Chishti (*Gharib Nawaz*)</div>
+            <div class="saint-loc">Hospice: <strong>Ajmer (Rajasthan)</strong> · Introduced order to India in 1192 CE; visited by Akbar 14 times.</div>
+          </div>
+          <div class="saint-date">d. 1235 CE</div>
+        </div>
+
+        <div class="chain-node n2">
+          <div class="node-idx">2</div>
+          <div class="node-main">
+            <div class="saint-name">Khwaja Qutbuddin Bakhtiyar Kaki</div>
+            <div class="saint-loc">Hospice: <strong>Delhi (Mehrauli)</strong> · Beloved master of Delhi Sultanate; Qutb Minar commemorates him.</div>
+          </div>
+          <div class="saint-date">d. 1235 CE</div>
+        </div>
+
+        <div class="chain-node n3">
+          <div class="node-idx">3</div>
+          <div class="node-main">
+            <div class="saint-name">Shaikh Fariduddin Ganj-i Shakar (*Baba Farid*)</div>
+            <div class="saint-loc">Hospice: <strong>Ajodhan / Pakpattan (Punjab)</strong> · Composed in Punjabi; hymns incorporated into Guru Granth Sahib.</div>
+          </div>
+          <div class="saint-date">d. 1265 CE</div>
+        </div>
+
+        <div class="chain-node n4">
+          <div class="node-idx">4</div>
+          <div class="node-main">
+            <div class="saint-name">Shaikh Nizamuddin Auliya (*Sultan-ul-Mashaikh*)</div>
+            <div class="saint-loc">Hospice: <strong>Ghiyaspur (Delhi)</strong> · Reached zenith of spiritual influence; disciples included Amir Khusrau.</div>
+          </div>
+          <div class="saint-date">d. 1325 CE</div>
+        </div>
+
+        <div class="chain-node n5">
+          <div class="node-idx">5</div>
+          <div class="node-main">
+            <div class="saint-name">Shaikh Nasiruddin Mahmud (*Chiragh-i Dehli*)</div>
+            <div class="saint-loc">Hospice: <strong>Delhi</strong> · "Lamp of Delhi"; preserved Chishti simplicity following Tughlaq disruptions.</div>
+          </div>
+          <div class="saint-date">d. 1356 CE</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Right Column: Khanqah Institutional Ecosystem -->
+    <div class="inst-card">
+      <div class="inst-header">
+        <div class="inst-title">Khanqah: Core Institutional Practices</div>
+        <div class="inst-tag">Community & Devotion</div>
+      </div>
+
+      <div class="inst-blocks">
+        
+        <div class="block-item">
+          <div class="block-title">1. The Shaikh & Jama'at Khana</div>
+          <div class="block-desc">
+            The master (<strong>Shaikh</strong>, <strong>Pir</strong>, or <strong>Murshid</strong>) resided in a large hall (<em>jama'at khana</em>) surrounded by disciples (<em>murids</em>), initiating devotees, assigning tasks, and nominating successors (<strong>khalifas</strong>).
+          </div>
+        </div>
+
+        <div class="block-item">
+          <div class="block-title">2. Open Communal Langar</div>
+          <div class="block-desc">
+            Fed hundreds of visitors daily regardless of faith, caste, or wealth; operated purely on unsolicited charitable gifts (<strong>futuh</strong>) and distributed all food without hoarding.
+          </div>
+        </div>
+
+        <div class="block-item">
+          <div class="block-title">3. Sama' & Musical Mysticism</div>
+          <div class="block-desc">
+            Spiritual audition sessions where <strong>qawwals</strong> recited mystical Persian and Hindavi poetry; induced intense ecstatic divine love (<strong>wajd</strong>); pioneered by Amir Khusrau.
+          </div>
+        </div>
+
+        <div class="block-item">
+          <div class="block-title">4. Ziyarat & Urs Festivities</div>
+          <div class="block-desc">
+            Pilgrimage (<strong>ziyarat</strong>) to the tomb-shrine (<em>dargah</em>) on the master's death anniversary (<strong>urs</strong>), celebrating the soul's divine marriage/union with God.
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div><strong>Key Concept:</strong> <em>Silsila</em> means an unbroken spiritual chain connecting the Sufi Shaikh through Ali to the Prophet Muhammad.</div>
+    <div>Ajmer Master: <strong>Muinuddin Chishti</strong> · Ghiyaspur Shaikh: <strong>Nizamuddin Auliya</strong> · Poet Disciple: <strong>Amir Khusrau</strong> · www.ourmocks.com</div>
+  </div>
+
+</body>
+</html>

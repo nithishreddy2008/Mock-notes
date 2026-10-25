@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>The Bhakti Movement: Comparative Quadrant Matrix of Devotional Streams</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background-color: #071A4D;
+    background-image: 
+      radial-gradient(circle at 15% 15%, rgba(31, 94, 255, 0.16) 0%, transparent 40%),
+      radial-gradient(circle at 85% 85%, rgba(184, 255, 52, 0.08) 0%, transparent 35%);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #F8FAFC;
+    padding: 28px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+
+  /* Header */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    padding-bottom: 12px;
+  }
+  .badge {
+    background: rgba(184, 255, 52, 0.12);
+    border: 1px solid #B8FF34;
+    color: #B8FF34;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 3px 12px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 5px;
+  }
+  .title {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: #FFFFFF;
+  }
+  .subtitle {
+    font-size: 13px;
+    color: #94A3B8;
+    margin-top: 2px;
+  }
+  .brand-pill {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: 11.5px;
+    color: #E2E8F0;
+    font-weight: 600;
+    text-align: right;
+  }
+  .brand-pill span {
+    color: #B8FF34;
+    display: block;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  /* 4 Quadrants Grid */
+  .quadrant-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 16px;
+    margin-top: 14px;
+    flex-grow: 1;
+  }
+
+  .quad-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 16px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    backdrop-filter: blur(8px);
+    border-top: 3px solid #1F5EFF;
+  }
+
+  .quad-card.alvars { border-top-color: #38BDF8; }
+  .quad-card.lingayats { border-top-color: #B8FF34; }
+  .quad-card.nirguna { border-top-color: #F59E0B; }
+  .quad-card.saguna { border-top-color: #EC4899; }
+
+  .quad-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .quad-title {
+    font-size: 14.5px;
+    font-weight: 700;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .quad-card.alvars .quad-title { color: #38BDF8; }
+  .quad-card.lingayats .quad-title { color: #B8FF34; }
+  .quad-card.nirguna .quad-title { color: #FCD34D; }
+  .quad-card.saguna .quad-title { color: #F472B6; }
+
+  .quad-tag {
+    font-size: 10.5px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    background: rgba(255, 255, 255, 0.08);
+    color: #94A3B8;
+  }
+
+  .bullet-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    font-size: 11.5px;
+    line-height: 1.42;
+    color: #CBD5E1;
+  }
+  .bullet-list li {
+    position: relative;
+    padding-left: 14px;
+    word-break: break-word;
+  }
+  .bullet-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #1F5EFF;
+    font-weight: bold;
+  }
+  .quad-card.alvars .bullet-list li::before { color: #38BDF8; }
+  .quad-card.lingayats .bullet-list li::before { color: #B8FF34; }
+  .quad-card.nirguna .bullet-list li::before { color: #F59E0B; }
+  .quad-card.saguna .bullet-list li::before { color: #EC4899; }
+
+  .bullet-list strong { color: #FFFFFF; }
+
+  /* Footer */
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 10px;
+    font-size: 11px;
+    color: #64748B;
+  }
+  .footer strong { color: #B8FF34; }
+</style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div>
+      <div class="badge">Themes in Indian History Part II · Chapter 6</div>
+      <div class="title">Bhakti Traditions: Comparative Quadrant Matrix of Devotional Movements</div>
+      <div class="subtitle">Systematic comparative spectrum contrasting southern temple-based bhakti, anti-caste Virashaivism, northern Nirguna, and Saguna worship</div>
+    </div>
+    <div class="brand-pill">
+      <span>OurMocks Study Visuals</span>
+      CUET UG History · Bhakti Streams
+    </div>
+  </div>
+
+  <!-- Quadrant Grid -->
+  <div class="quadrant-grid">
+    
+    <!-- Quadrant 1: Alvars & Nayanars -->
+    <div class="quad-card alvars">
+      <div class="quad-header">
+        <div class="quad-title">Quadrant 1 · Alvars & Nayanars (Tamil South)</div>
+        <div class="quad-tag">c. 6th – 9th Century CE</div>
+      </div>
+      <ul class="bullet-list">
+        <li><strong>Devotional Objects:</strong> <strong>Alvars</strong> were immersed in Vishnu; <strong>Nayanars</strong> were devotees of Shiva; traveled singing hymns at sacred shrines.</li>
+        <li><strong>Anti-Brahmanical Ethos:</strong> Accepted lower castes, agriculturalists (*Vellalas*), and outcastes; contested Buddhist and Jain influence.</li>
+        <li><strong>Major Textual Canons:</strong> <em>Nalayira Divyaprabandham</em> (4,000 verses composed by 12 Alvars, hailed as "Tamil Veda"); <em>Tevaram</em> (poems of Appar, Sambandar, Sundarar).</li>
+        <li><strong>Celebrated Women Saints:</strong> <strong>Andal</strong> (female Alvar who saw herself as the beloved bride of Vishnu) and <strong>Karaikkal Ammaiyar</strong> (female Nayanar who adopted severe asceticism and skeletal form).</li>
+      </ul>
+    </div>
+
+    <!-- Quadrant 2: Virashaivas / Lingayats -->
+    <div class="quad-card lingayats">
+      <div class="quad-header">
+        <div class="quad-title">Quadrant 2 · Virashaivas / Lingayats (Karnataka)</div>
+        <div class="quad-tag">c. 12th Century CE</div>
+      </div>
+      <ul class="bullet-list">
+        <li><strong>Founding Leadership:</strong> Initiated by <strong>Basavanna</strong> (Brahmana minister in the Kalachuri court) alongside Allama Prabhu and the female poet Akka Mahadevi.</li>
+        <li><strong>Sacred Emblem:</strong> Worshipped Shiva as a linga; adult followers wore a miniature silver linga encased over their left shoulder (*Lingayats*).</li>
+        <li><strong>Radical Social Ruptures:</strong> Rejected the varna system, Brahmanical notions of ritual pollution, rebirth, idol-worship, animal sacrifice, and child marriage; permitted widow remarriage.</li>
+        <li><strong>Burial Rituals & Literature:</strong> Buried their dead instead of cremating, believing the departed soul merged directly with Shiva; composed vernacular prose-poetry (*Vachanas*) in Kannada.</li>
+      </ul>
+    </div>
+
+    <!-- Quadrant 3: Nirguna Bhakti -->
+    <div class="quad-card nirguna">
+      <div class="quad-header">
+        <div class="quad-title">Quadrant 3 · Nirguna Bhakti (Kabir & Guru Nanak)</div>
+        <div class="quad-tag">Formless Transcendent God</div>
+      </div>
+      <ul class="bullet-list">
+        <li><strong>Theological Doctrine:</strong> Devotion to an abstract, unmanifest, formless supreme divine reality devoid of gender, attributes, or anthropomorphic representations.</li>
+        <li><strong>Kabir (c. 14th–15th c.):</strong> Varanasi weaver (*julaha*); rejected both Vedic sacrifices and Islamic orthodoxy; celebrated for *Ulatbansi* (upside-down poetry); preserved in *Bijak* and *Adi Granth*.</li>
+        <li><strong>Baba Guru Nanak (1469–1539 CE):</strong> Preached a formless God (*Nirankar*); rejected external austerities, pilgrimages, and caste; advocated moral living and true worship through *Shabad*.</li>
+        <li><strong>Egalitarian Institutions:</strong> Established collective congregational singing (*sangat*) and a free community kitchen (*langar*) where all ate together regardless of caste or religion.</li>
+      </ul>
+    </div>
+
+    <!-- Quadrant 4: Saguna Bhakti -->
+    <div class="quad-card saguna">
+      <div class="quad-header">
+        <div class="quad-title">Quadrant 4 · Saguna Bhakti (Mirabai & Devotional Icons)</div>
+        <div class="quad-tag">Personal Deity with Attributes</div>
+      </div>
+      <ul class="bullet-list">
+        <li><strong>Theological Doctrine:</strong> Devotion to God conceived with specific divine forms, anthropomorphic attributes, mythological pastimes (*lila*), and iconographic images (Krishna, Rama).</li>
+        <li><strong>Mirabai (c. 15th–16th c.):</strong> Rajput princess of Merta married into the royal house of Mewar (Sisodias); defied in-laws and royal status to dedicate her life entirely to Lord Krishna (*Giridhar Gopal*).</li>
+        <li><strong>Subversion of Caste & Gender:</strong> Defied palace confines, drank the poison cup sent by her brother-in-law unharmed, and chose <strong>Raidas</strong>, an untouchable leather-worker, as her spiritual guru.</li>
+        <li><strong>Poetic Legacy:</strong> Composed passionate emotional bhajans expressing intense longing for union with Krishna; her songs entered popular oral folk tradition across Rajasthan and Gujarat.</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div><strong>Philosophical Distinction:</strong> <em>Saguna</em> worships the deity with form and attributes; <em>Nirguna</em> contemplates the formless transcendent ultimate reality.</div>
+    <div>Tamil Veda: <strong>Divyaprabandham</strong> · Lingayat Guru: <strong>Basavanna</strong> · Nirguna Preachers: <strong>Kabir & Nanak</strong> · Krishna Devotee: <strong>Mirabai</strong> · www.ourmocks.com</div>
+  </div>
+
+</body>
+</html>

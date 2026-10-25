@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Religious History: Bhakti-Sufi Traditions — Full Topic Summary Mindmap</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background-color: #071A4D;
+    background-image: 
+      radial-gradient(circle at 10% 15%, rgba(31, 94, 255, 0.18) 0%, transparent 40%),
+      radial-gradient(circle at 90% 85%, rgba(184, 255, 52, 0.12) 0%, transparent 40%),
+      radial-gradient(circle at 50% 50%, rgba(15, 23, 42, 0.6) 0%, transparent 100%);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #F8FAFC;
+    padding: 24px 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+
+  /* Header */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    padding-bottom: 10px;
+  }
+  .badge {
+    background: rgba(184, 255, 52, 0.12);
+    border: 1px solid #B8FF34;
+    color: #B8FF34;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 3px 12px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 4px;
+  }
+  .title {
+    font-size: 23px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: #FFFFFF;
+  }
+  .subtitle {
+    font-size: 12.5px;
+    color: #94A3B8;
+    margin-top: 2px;
+  }
+  .brand-pill {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: 11.5px;
+    color: #E2E8F0;
+    font-weight: 600;
+    text-align: right;
+  }
+  .brand-pill span {
+    color: #B8FF34;
+    display: block;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  /* Mindmap Grid */
+  .mindmap-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 14px;
+    margin-top: 10px;
+    flex-grow: 1;
+  }
+
+  .branch-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 12px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    backdrop-filter: blur(8px);
+    border-top: 3px solid #1F5EFF;
+  }
+
+  .branch-card.hub {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    background: linear-gradient(145deg, rgba(31, 94, 255, 0.15) 0%, rgba(15, 23, 42, 0.8) 100%);
+    border: 1.5px solid rgba(184, 255, 52, 0.4);
+    border-top: 3px solid #B8FF34;
+  }
+
+  .branch-card.b1 { border-top-color: #38BDF8; }
+  .branch-card.b2 { border-top-color: #B8FF34; }
+  .branch-card.b3 { border-top-color: #F59E0B; }
+  .branch-card.b4 { border-top-color: #A855F7; }
+  .branch-card.b5 { border-top-color: #EC4899; }
+
+  .branch-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .branch-title {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #FFFFFF;
+  }
+  .branch-card.hub .branch-title { color: #B8FF34; font-size: 14px; }
+  .branch-card.b1 .branch-title { color: #38BDF8; }
+  .branch-card.b2 .branch-title { color: #B8FF34; }
+  .branch-card.b3 .branch-title { color: #FCD34D; }
+  .branch-card.b4 .branch-title { color: #C084FC; }
+  .branch-card.b5 .branch-title { color: #F472B6; }
+
+  .branch-tag {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    background: rgba(255, 255, 255, 0.08);
+    color: #94A3B8;
+  }
+
+  .bullet-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 11px;
+    line-height: 1.38;
+    color: #CBD5E1;
+  }
+  .bullet-list li {
+    position: relative;
+    padding-left: 13px;
+    word-break: break-word;
+  }
+  .bullet-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+    color: #1F5EFF;
+  }
+  .branch-card.hub .bullet-list li::before { color: #B8FF34; }
+  .branch-card.b1 .bullet-list li::before { color: #38BDF8; }
+  .branch-card.b2 .bullet-list li::before { color: #B8FF34; }
+  .branch-card.b3 .bullet-list li::before { color: #F59E0B; }
+  .branch-card.b4 .bullet-list li::before { color: #A855F7; }
+  .branch-card.b5 .bullet-list li::before { color: #EC4899; }
+
+  .bullet-list strong { color: #FFFFFF; }
+
+  /* Footer */
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 8px;
+    font-size: 11px;
+    color: #64748B;
+  }
+  .footer strong { color: #B8FF34; }
+</style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div>
+      <div class="badge">Comprehensive Topic Map · Themes in Indian History Part II</div>
+      <div class="title">Religious History: Bhakti-Sufi Traditions (c. 8th – 18th Century CE)</div>
+      <div class="subtitle">Complete chapter architectural framework: integration of cults, southern temple hymns, Sufi hospices, and northern sant movements</div>
+    </div>
+    <div class="brand-pill">
+      <span>OurMocks Study Visuals</span>
+      CUET UG History · Chapter 6
+    </div>
+  </div>
+
+  <!-- Mindmap Grid -->
+  <div class="mindmap-container">
+
+    <!-- Branch 1: Integration of Cults & Tantricism -->
+    <div class="branch-card b1">
+      <div class="branch-header">
+        <div class="branch-title">1. Integration of Cults & Tantra</div>
+        <div class="branch-tag">Great & Little Traditions</div>
+      </div>
+      <ul class="bullet-list">
+        <li><strong>Two Processes:</strong> Dissemination of Brahmanical texts via accessible Puranas; assimilation of local folk and tribal deities into the pantheon.</li>
+        <li><strong>Jagannatha at Puri:</strong> Local wooden tribal deity identified as a form of Vishnu; worshipped alongside Balabhadra and Subhadra.</li>
+        <li><strong>Goddess Cults:</strong> Regional stone deities smeared with vermilion integrated as consorts of major gods (Lakshmi, Parvati).</li>
+        <li><strong>Tantric Practices:</strong> Open to all men and women regardless of varna; rejected Vedic authority; influenced both Shaivism and Buddhism.</li>
+      </ul>
+    </div>
+
+    <!-- Central Hub: Core Devotional Axis -->
+    <div class="branch-card hub">
+      <div class="branch-header">
+        <div class="branch-title">★ Core Axis: Personal Devotion & Social Equity</div>
+        <div class="branch-tag">Bhakti & Tasawwuf</div>
+      </div>
+      <ul class="bullet-list">
+        <li><strong>Rejection of Vedic Exclusivism:</strong> Direct personal emotional bond with the Divine, bypassing sacrificial rituals and priestly monopoly.</li>
+        <li><strong>Vernacular Medium:</strong> Composed songs in spoken languages (Tamil, Kannada, Punjabi, Braj, Hindavi, Dakhani) rather than elite Sanskrit.</li>
+        <li><strong>Gender & Subaltern Empowerment:</strong> High visibility of female mystics (Andal, Karaikkal Ammaiyar, Akka Mahadevi, Mirabai) and low-caste saints.</li>
+        <li><strong>Syncretic Cosmopolitanism:</strong> Exchange between Sufi mysticism and Yogic/Bhakti devotionalism across regional khanqahs and shrines.</li>
+      </ul>
+    </div>
+
+    <!-- Branch 2: Southern Bhakti -->
+    <div class="branch-card b2">
+      <div class="branch-header">
+        <div class="branch-title">2. Alvars & Nayanars (Tamil South)</div>
+        <div class="branch-tag">c. 6th–9th Century CE</div>
+      </div>
+      <ul class="bullet-list">
+        <li><strong>Alvars & Nayanars:</strong> Alvars worshipped Vishnu; Nayanars worshipped Shiva; traveled from shrine to shrine singing ecstatic Tamil hymns.</li>
+        <li><strong>Textual Canons:</strong> <em>Nalayira Divyaprabandham</em> (composed by 12 Alvars, praised as the "Tamil Veda"); <em>Tevaram</em> (compiled Nayanar songs).</li>
+        <li><strong>Women Mystics:</strong> <strong>Andal</strong> (saw herself as Vishnu's divine bride); <strong>Karaikkal Ammaiyar</strong> (renounced beauty, lived as ascetic demoness).</li>
+        <li><strong>Imperial Chola Patronage:</strong> Rulers (Parantaka I, Rajaraja I) built monumental stone temples (Thanjavur, Chidambaram) and consecrated Nataraja bronzes.</li>
+      </ul>
+    </div>
+
+    <!-- Branch 3: Virashaivas of Karnataka -->
+    <div class="branch-card b3">
+      <div class="branch-header">
+        <div class="branch-title">3. Virashaivas / Lingayats</div>
+        <div class="branch-tag">12th Century Karnataka</div>
+      </div>
+      <ul class="bullet-list">
+        <li><strong>Founding Leader:</strong> Initiated by <strong>Basavanna</strong>, a Brahmana minister in the Kalachuri kingdom, with Allama Prabhu and Akka Mahadevi.</li>
+        <li><strong>Sacred Linga:</strong> Worshipped Shiva exclusively as a linga; wore a small silver-encased linga looped over the left shoulder (*Lingayats*).</li>
+        <li><strong>Radical Social Reform:</strong> Fiercely rejected the caste hierarchy, Brahmanical ritual pollution, rebirth, child marriage, and idol worship.</li>
+        <li><strong>Burial & Vachanas:</strong> Buried their dead without cremation (believing they united with Shiva); composed lyrical Kannada prose (*Vachanas*).</li>
+      </ul>
+    </div>
+
+    <!-- Branch 4: Sufi Silsilas & Khanqahs -->
+    <div class="branch-card b4">
+      <div class="branch-header">
+        <div class="branch-title">4. Sufi Silsilas & Chishti Khanqahs</div>
+        <div class="branch-tag">Mystic Hospices</div>
+      </div>
+      <ul class="bullet-list">
+        <li><strong>Silsila Lineage:</strong> Spiritual genealogy tracing back to Prophet Muhammad; <strong>Chishti order</strong> introduced by Muinuddin Chishti of Ajmer (1192 CE).</li>
+        <li><strong>Hospice Ecosystem (*Khanqah*):</strong> Community kitchen (*langar*), musical audition (*sama'* featuring qawwals), and pilgrimage (*ziyarat*) on death anniversary (*urs*).</li>
+        <li><strong>Shaikh Nizamuddin Auliya:</strong> Master of Delhi (d. 1325 CE); maintained spiritual independence from Sultans; disciple Amir Khusrau pioneered Hindavi verse.</li>
+        <li><strong>Vernacular Genres:</strong> Composed Sufi romances (*Premakhyans*, e.g. Jayasi's *Padmavat*) and household songs (*Lurinama*, *Charkhanama*).</li>
+      </ul>
+    </div>
+
+    <!-- Branch 5: Northern Sants -->
+    <div class="branch-card b5">
+      <div class="branch-header">
+        <div class="branch-title">5. Northern Sants: Kabir, Nanak & Mira</div>
+        <div class="branch-tag">Saguna vs Nirguna</div>
+      </div>
+      <ul class="bullet-list">
+        <li><strong>Kabir (c. 14th–15th c.):</strong> Nirguna monotheism; challenged both Vedic and Islamic orthodoxies; renowned for <em>Ulatbansi</em>; compiled in *Bijak* and *Adi Granth*.</li>
+        <li><strong>Baba Guru Nanak (1469–1539 CE):</strong> Preached formless God (*Nirankar*); established *Sangat* (congregation) and *Langar* (free kitchen); poems compiled in *Adi Granth* (1604).</li>
+        <li><strong>Khalsa Panth (1699):</strong> Transformed by Guru Gobind Singh with the *Five Ks* into a community of saint-soldiers.</li>
+        <li><strong>Mirabai:</strong> Rajput princess who rejected palace luxury, dedicated her life to Krishna (*Giridhar Gopal*), and chose untouchable leather-worker <strong>Raidas</strong> as guru.</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div><strong>Exam Blueprint:</strong> Master the Alvars/Nayanars canon, Basavanna's Lingayats, the Chishti Silsila chronology, and the distinction between Kabir, Nanak, and Mira.</div>
+    <div>Tamil Veda: <strong>Nalayira Divyaprabandham</strong> · Silver Linga: <strong>Basavanna</strong> · Ajmer Saint: <strong>Muinuddin Chishti</strong> · www.ourmocks.com</div>
+  </div>
+
+</body>
+</html>
