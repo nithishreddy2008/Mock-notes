@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1440, height=880">
+  <title>Electromagnetic Induction: Faraday, Lenz & Induction Dynamics</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 1440px;
+      height: 880px;
+      background-color: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0F172A;
+      padding: 32px 40px;
+      overflow: hidden;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 24px;
+      border-bottom: 2px solid #E2E8F0;
+      padding-bottom: 16px;
+    }
+    .title-group h1 {
+      font-size: 26px;
+      font-weight: 800;
+      color: #0F2C59;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+    .title-group p {
+      font-size: 14px;
+      color: #64748B;
+      font-weight: 500;
+    }
+    .badge {
+      background: #0066FF;
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      height: calc(100% - 110px);
+    }
+    .card {
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      border-radius: 14px;
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+      position: relative;
+    }
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      border-radius: 14px 14px 0 0;
+    }
+    .card-1::before { background: #0066FF; }
+    .card-2::before { background: #0EA5E9; }
+    .card-3::before { background: #8B5CF6; }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+    .card-title {
+      font-size: 17px;
+      font-weight: 800;
+      color: #0F2C59;
+    }
+    .tag {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+      text-transform: uppercase;
+    }
+    .tag-blue { background: #EFF6FF; color: #0066FF; }
+    .tag-cyan { background: #F0F9FF; color: #0284C7; }
+    .tag-purple { background: #F5F3FF; color: #7C3AED; }
+
+    .svg-container {
+      width: 100%;
+      height: 240px;
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 10px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .formula-block {
+      background: #F1F5F9;
+      border-left: 3px solid #0066FF;
+      padding: 10px 14px;
+      border-radius: 0 6px 6px 0;
+      font-family: "SF Mono", Consolas, Menlo, monospace;
+      font-size: 12px;
+      color: #0F172A;
+      margin-bottom: 12px;
+      line-height: 1.5;
+    }
+    .formula-block.cyan { border-left-color: #0EA5E9; }
+    .formula-block.purple { border-left-color: #8B5CF6; }
+
+    .bullet-list {
+      list-style: none;
+      font-size: 12.5px;
+      color: #334155;
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .bullet-list li {
+      position: relative;
+      padding-left: 16px;
+    }
+    .bullet-list li::before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      color: #0066FF;
+      font-weight: 800;
+    }
+    .card-2 .bullet-list li::before { color: #0EA5E9; }
+    .card-3 .bullet-list li::before { color: #8B5CF6; }
+
+    .highlight {
+      font-weight: 700;
+      color: #0F2C59;
+    }
+    .footer-bar {
+      margin-top: 14px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: #94A3B8;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="title-group">
+      <h1>Electromagnetic Induction: Faraday, Lenz & Inductive Coupling</h1>
+      <p>NCERT Class XII Physics · Unit 4 (Chapter 6) · Flux Dynamics, Motional EMF & Inductance Theorems</p>
+    </div>
+    <div class="badge">CUET UG Physics · Unit 4</div>
+  </div>
+
+  <div class="grid">
+    <!-- Card 1: Faraday's & Lenz's Law -->
+    <div class="card card-1">
+      <div class="card-header">
+        <div class="card-title">1. Faraday & Lenz's Law</div>
+        <div class="tag tag-blue">Flux Opposition</div>
+      </div>
+      <div class="svg-container">
+        <svg viewBox="0 0 380 220" width="370" height="210">
+          <!-- Approaching Bar Magnet -->
+          <g transform="translate(40, 75)">
+            <rect x="0" y="0" width="60" height="40" fill="#EF4444" rx="4"/>
+            <text x="25" y="25" font-size="14" fill="#FFFFFF" font-weight="900">N</text>
+            <rect x="60" y="0" width="60" height="40" fill="#0066FF" rx="4"/>
+            <text x="85" y="25" font-size="14" fill="#FFFFFF" font-weight="900">S</text>
+            <!-- Motion arrow -->
+            <line x1="130" y1="20" x2="165" y2="20" stroke="#0F2C59" stroke-width="2.5"/>
+            <polygon points="165,20 155,15 155,25" fill="#0F2C59"/>
+            <text x="135" y="12" font-size="11" fill="#0F2C59" font-weight="800">v (approaching)</text>
+          </g>
+
+          <!-- Magnetic field lines emerging from N -->
+          <path d="M 40,85 C 0,50 200,30 250,70" fill="none" stroke="#DC2626" stroke-dasharray="3" stroke-width="1.2"/>
+          <path d="M 40,105 L 250,105" fill="none" stroke="#DC2626" stroke-width="1.5"/>
+          <path d="M 40,125 C 0,160 200,180 250,140" fill="none" stroke="#DC2626" stroke-dasharray="3" stroke-width="1.2"/>
+
+          <!-- Conducting Loop (viewed edge-on as ellipse) -->
+          <ellipse cx="260" cy="95" rx="20" ry="55" fill="#F8FAFC" stroke="#0F2C59" stroke-width="3"/>
+
+          <!-- Induced North Pole (Repulsive force opposing approach) -->
+          <circle cx="260" cy="95" r="14" fill="#EFF6FF" stroke="#0066FF" stroke-width="1.5"/>
+          <text x="254" y="100" font-size="13" fill="#0066FF" font-weight="900">N</text>
+
+          <!-- Current arrows on loop -->
+          <polygon points="260,40 266,41 262,46" fill="#0066FF"/>
+          <text x="285" y="45" font-size="10.5" fill="#0066FF" font-weight="800">I_ind (CCW)</text>
+
+          <!-- Galvanometer connected -->
+          <path d="M 260,150 L 260,180 L 300,180" fill="none" stroke="#64748B" stroke-width="1.5"/>
+          <circle cx="315" cy="180" r="12" fill="#FFFFFF" stroke="#0F2C59" stroke-width="1.5"/>
+          <text x="310" y="184" font-size="10" fill="#0F2C59" font-weight="800">G</text>
+          <line x1="315" y1="180" x2="322" y2="173" stroke="#DC2626" stroke-width="1.5"/>
+
+          <text x="45" y="185" font-size="11" fill="#DC2626" font-weight="700">Lenz's Law: Induced field opposes ΔΦ</text>
+          <text x="45" y="202" font-size="10.5" fill="#64748B">Mechanical work done against repulsion converts to electrical energy</text>
+        </svg>
+      </div>
+      <div class="formula-block">
+        Faraday's Law: e = - N · (dΦ_B / dt)<br>
+        Magnetic Flux: Φ_B = B · A = B A cos θ<br>
+        Induced Current: i = e / R = - (N / R) · (dΦ_B / dt)
+      </div>
+      <ul class="bullet-list">
+        <li><span class="highlight">Negative Sign (Lenz's Law):</span> The polarity of induced EMF is always such that it opposes the change in flux that produces it.</li>
+        <li><span class="highlight">Energy Conservation:</span> External work done moving a magnet against induced repulsion accounts directly for Joule heating in the loop.</li>
+        <li><span class="highlight">Charge Flow Independence:</span> Total charge flown ΔQ = ΔΦ / R is strictly independent of the rate of flux change.</li>
+      </ul>
+    </div>
+
+    <!-- Card 2: Motional EMF & Self/Mutual Inductance -->
+    <div class="card card-2">
+      <div class="card-header">
+        <div class="card-title">2. Motional EMF & Inductance</div>
+        <div class="tag tag-cyan">Dynamic Induction</div>
+      </div>
+      <div class="svg-container">
+        <svg viewBox="0 0 380 220" width="370" height="210">
+          <!-- Magnetic field into page grid -->
+          <g fill="#CBD5E1" font-size="12" font-family="monospace">
+            <text x="50" y="40">×</text><text x="110" y="40">×</text><text x="170" y="40">×</text><text x="230" y="40">×</text><text x="290" y="40">×</text>
+            <text x="50" y="80">×</text><text x="110" y="80">×</text><text x="170" y="80">×</text><text x="230" y="80">×</text><text x="290" y="80">×</text>
+            <text x="50" y="120">×</text><text x="110" y="120">×</text><text x="170" y="120">×</text><text x="230" y="120">×</text><text x="290" y="120">×</text>
+            <text x="50" y="160">×</text><text x="110" y="160">×</text><text x="170" y="160">×</text><text x="230" y="160">×</text><text x="290" y="160">×</text>
+          </g>
+          <text x="310" y="35" font-size="10.5" fill="#64748B" font-weight="700">B (into page)</text>
+
+          <!-- U-shaped rails -->
+          <path d="M 60,60 L 280,60 M 60,140 L 280,140" stroke="#0F2C59" stroke-width="2.5"/>
+          <line x1="60" y1="60" x2="60" y2="140" stroke="#0F2C59" stroke-width="2.5"/>
+          <rect x="52" y="90" width="16" height="20" rx="3" fill="#FFFFFF" stroke="#0066FF" stroke-width="1.5"/>
+          <text x="56" y="104" font-size="10" fill="#0066FF" font-weight="800">R</text>
+
+          <!-- Moving Rod of length L -->
+          <rect x="175" y="50" width="10" height="100" rx="2" fill="#0EA5E9" stroke="#0284C7" stroke-width="1.5"/>
+          <text x="190" y="105" font-size="11" fill="#0284C7" font-weight="800">Rod (L)</text>
+
+          <!-- Velocity vector -->
+          <line x1="185" y1="100" x2="235" y2="100" stroke="#DC2626" stroke-width="2.5"/>
+          <polygon points="235,100 225,95 225,105" fill="#DC2626"/>
+          <text x="210" y="92" font-size="11" fill="#DC2626" font-weight="800">v</text>
+
+          <!-- Induced current direction (upward through rod) -->
+          <line x1="180" y1="120" x2="180" y2="80" stroke="#FFFFFF" stroke-width="2"/>
+          <polygon points="180,75 176,83 184,83" fill="#FFFFFF"/>
+          <text x="135" y="80" font-size="10.5" fill="#0066FF" font-weight="800">I_ind</text>
+
+          <!-- Motional EMF formula annotation -->
+          <text x="50" y="180" font-size="11" fill="#0284C7" font-weight="800">e = B v L  |  I = B v L / R</text>
+          <text x="50" y="198" font-size="10.5" fill="#64748B">Magnetic retarding force: F = I L B = B² L² v / R</text>
+        </svg>
+      </div>
+      <div class="formula-block cyan">
+        Motional EMF: e = B v L | Power: P = (B² L² v²) / R<br>
+        Self-Inductance: e = - L · (dI / dt) | L = μ₀ n² A l<br>
+        Energy in Inductor: U = ½ L I² | Mutual: M = k √(L₁ L₂)
+      </div>
+      <ul class="bullet-list">
+        <li><span class="highlight">Motional EMF:</span> Generated by Lorentz magnetic force on conduction electrons ($q v B$); polarity given by Fleming's Right-Hand Rule.</li>
+        <li><span class="highlight">Self-Inductance (Electrical Inertia):</span> Inductor opposes any rise or decay of circuit current; stored magnetic energy $U = 1/2 L I^2$.</li>
+        <li><span class="highlight">Mutual Inductance:</span> Coupling between concentric solenoids $M = mu_0 n_1 n_2 pi r_1^2 l$; coefficient $k = M / sqrt(L_1 L_2) <= 1$.</li>
+      </ul>
+    </div>
+
+    <!-- Card 3: AC Generator & Sinusoidal EMF -->
+    <div class="card card-3">
+      <div class="card-header">
+        <div class="card-title">3. AC Generator Mechanics</div>
+        <div class="tag tag-purple">Rotational Induction</div>
+      </div>
+      <div class="svg-container">
+        <svg viewBox="0 0 380 220" width="370" height="210">
+          <!-- Permanent Magnet Poles N and S -->
+          <rect x="25" y="60" width="55" height="80" rx="4" fill="#EF4444"/>
+          <text x="45" y="105" font-size="16" fill="#FFFFFF" font-weight="900">N</text>
+
+          <rect x="300" y="60" width="55" height="80" rx="4" fill="#0066FF"/>
+          <text x="320" y="105" font-size="16" fill="#FFFFFF" font-weight="900">S</text>
+
+          <!-- Magnetic field lines across gap -->
+          <line x1="80" y1="80" x2="300" y2="80" stroke="#CBD5E1" stroke-dasharray="4"/>
+          <line x1="80" y1="100" x2="300" y2="100" stroke="#CBD5E1" stroke-dasharray="4"/>
+          <line x1="80" y1="120" x2="300" y2="120" stroke="#CBD5E1" stroke-dasharray="4"/>
+
+          <!-- Rotating Rectangular Armature Loop -->
+          <polygon points="150,70 230,70 200,130 120,130" fill="#F5F3FF" stroke="#7C3AED" stroke-width="2.5"/>
+          <text x="150" y="105" font-size="11" fill="#7C3AED" font-weight="800">Armature (N turns)</text>
+
+          <!-- Rotation axis & arrow -->
+          <line x1="175" y1="35" x2="175" y2="165" stroke="#64748B" stroke-dasharray="3" stroke-width="1.2"/>
+          <path d="M 160,45 Q 175,35 190,45" fill="none" stroke="#DC2626" stroke-width="2"/>
+          <polygon points="190,45 186,40 183,47" fill="#DC2626"/>
+          <text x="195" y="45" font-size="11" fill="#DC2626" font-weight="800">ω</text>
+
+          <!-- Output Waveform diagram inset -->
+          <rect x="235" y="145" width="125" height="55" rx="5" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
+          <!-- Axis -->
+          <line x1="240" y1="172" x2="350" y2="172" stroke="#94A3B8" stroke-width="1"/>
+          <!-- Sine wave -->
+          <path d="M 245,172 Q 260,150 275,172 T 305,172 T 335,172" fill="none" stroke="#7C3AED" stroke-width="2"/>
+          <text x="245" y="157" font-size="9" fill="#7C3AED" font-weight="800">e = e₀ sin(ωt)</text>
+          <text x="310" y="195" font-size="8.5" fill="#64748B">e₀ = NBAω</text>
+
+          <text x="45" y="190" font-size="10.5" fill="#0F2C59" font-weight="700">Slip Rings + Carbon Brushes tap AC voltage</text>
+        </svg>
+      </div>
+      <div class="formula-block purple">
+        Flux: Φ(t) = N B A cos(ωt)<br>
+        Instantaneous EMF: e = - dΦ/dt = N B A ω · sin(ωt)<br>
+        Peak EMF: e₀ = N B A ω = 2π f · N B A
+      </div>
+      <ul class="bullet-list">
+        <li><span class="highlight">Continuous Alternation:</span> When loop normal is perpendicular to field ($theta = 90 degree$), flux is zero but rate of change $d Phi / d t$ and induced EMF are *maximum*.</li>
+        <li><span class="highlight">Slip Rings Function:</span> Maintain continuous electrical contact without twisting lead wires, preserving alternating polarity.</li>
+        <li><span class="highlight">Frequency:</span> In India, commercial AC is generated at $f = 50" Hz"$ ($omega = 100 pi approx 314" rad/s"$).</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bar">
+    <span>OurMocks Exam Prep Series · CUET UG Physics Core Diagrams</span>
+    <span>NCERT Class XII Physics · Unit 4: Electromagnetic Induction · Verified Syllabus Architecture</span>
+  </div>
+</body>
+</html>
