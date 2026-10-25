@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Three Great Mass Movements of the Indian National Movement</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      width: 1440px;
+      height: 880px;
+      background: #0B1120;
+      color: #F8FAFC;
+      font-family: 'Inter', sans-serif;
+      padding: 36px 44px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 2px solid #1E293B;
+      padding-bottom: 16px;
+    }
+    .title-block h1 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 26px;
+      font-weight: 800;
+      color: #F8FAFC;
+      letter-spacing: -0.02em;
+    }
+    .title-block p {
+      font-size: 13.5px;
+      color: #94A3B8;
+      margin-top: 4px;
+    }
+    .badge {
+      background: rgba(234, 88, 12, 0.15);
+      border: 1px solid rgba(234, 88, 12, 0.4);
+      color: #FB923C;
+      font-size: 11.5px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .timeline-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 18px;
+      flex-grow: 1;
+    }
+    .movement-card {
+      background: #111C33;
+      border: 1px solid #1E293B;
+      border-radius: 14px;
+      padding: 20px 22px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .phase-tag {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
+    .year-tag {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 800;
+    }
+    .card-ncm {
+      border-top: 4px solid #38BDF8;
+    }
+    .card-ncm .phase-tag {
+      background: rgba(56, 189, 248, 0.15);
+      color: #38BDF8;
+    }
+    .card-ncm .year-tag {
+      color: #38BDF8;
+    }
+    .card-cdm {
+      border-top: 4px solid #F59E0B;
+    }
+    .card-cdm .phase-tag {
+      background: rgba(245, 158, 11, 0.15);
+      color: #F59E0B;
+    }
+    .card-cdm .year-tag {
+      color: #F59E0B;
+    }
+    .card-qim {
+      border-top: 4px solid #10B981;
+    }
+    .card-qim .phase-tag {
+      background: rgba(16, 185, 129, 0.15);
+      color: #10B981;
+    }
+    .card-qim .year-tag {
+      color: #10B981;
+    }
+    .movement-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 18px;
+      font-weight: 800;
+      color: #FFFFFF;
+      margin-bottom: 6px;
+      line-height: 1.3;
+    }
+    .movement-slogan {
+      font-size: 12.5px;
+      font-style: italic;
+      color: #94A3B8;
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .info-group {
+      margin-bottom: 11px;
+    }
+    .info-label {
+      font-size: 10.5px;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: #64748B;
+      margin-bottom: 4px;
+    }
+    .info-content {
+      font-size: 12.5px;
+      color: #E2E8F0;
+      line-height: 1.45;
+      background: rgba(15, 23, 42, 0.6);
+      padding: 7px 10px;
+      border-radius: 7px;
+      border-left: 3px solid #334155;
+    }
+    .highlights-box {
+      margin-top: auto;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 8px;
+      padding: 9px 12px;
+    }
+    .highlights-box h4 {
+      font-size: 11px;
+      font-weight: 700;
+      color: #CBD5E1;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .highlights-box ul {
+      list-style: none;
+      font-size: 12px;
+      color: #94A3B8;
+      line-height: 1.4;
+    }
+    .highlights-box li {
+      position: relative;
+      padding-left: 14px;
+      margin-bottom: 3px;
+    }
+    .highlights-box li::before {
+      content: "•";
+      position: absolute;
+      left: 3px;
+      color: #EA580C;
+      font-weight: 800;
+    }
+    .footer-bar {
+      margin-top: 16px;
+      background: #0F172A;
+      border: 1px solid #1E293B;
+      border-radius: 8px;
+      padding: 10px 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: #94A3B8;
+    }
+    .footer-bar strong {
+      color: #F8FAFC;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="title-block">
+      <h1>The Three Great Gandhian Mass Movements (1920–1942)</h1>
+      <p>Comparative structural analysis of catalysts, mobilization techniques, social bases, and outcomes</p>
+    </div>
+    <div class="badge">CUET UG History · High-Yield Timeline</div>
+  </div>
+
+  <div class="timeline-container">
+    <!-- NCM -->
+    <div class="movement-card card-ncm">
+      <div class="card-top">
+        <span class="phase-tag">Mass Phase I</span>
+        <span class="year-tag">1920 – 1922</span>
+      </div>
+      <h2 class="movement-title">Non-Cooperation Movement</h2>
+      <p class="movement-slogan">"Swaraj in One Year" through non-violent non-cooperation</p>
+
+      <div class="info-group">
+        <div class="info-label">Catalysts & Spark</div>
+        <div class="info-content">Rowlatt Act (1919), Jallianwala Bagh massacre, Hunter Report, and Khilafat issue (Ali Brothers).</div>
+      </div>
+
+      <div class="info-group">
+        <div class="info-label">Methods of Resistance</div>
+        <div class="info-content">Boycott of law courts, government schools, titles surrendered; picketing liquor shops; adoption of Charkha and Khadi.</div>
+      </div>
+
+      <div class="info-group">
+        <div class="info-label">Social Spread</div>
+        <div class="info-content">Urban middle class, peasants in Awadh (Baba Ramchandra), tribal revolt in Andhra (Alluri Sitarama Raju), tea-garden workers.</div>
+      </div>
+
+      <div class="highlights-box">
+        <h4>Suspension & Turning Point</h4>
+        <ul>
+          <li><strong>Chauri Chaura incident</strong> (4 Feb 1922): 22 policemen killed in Gorakhpur.</li>
+          <li>Gandhi unilaterally withdrew movement citing lack of discipline in Ahimsa.</li>
+          <li>Sentenced to 6 years imprisonment by Judge C.N. Broomfield.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- CDM -->
+    <div class="movement-card card-cdm">
+      <div class="card-top">
+        <span class="phase-tag">Mass Phase II</span>
+        <span class="year-tag">1930 – 1934</span>
+      </div>
+      <h2 class="movement-title">Civil Disobedience Movement</h2>
+      <p class="movement-slogan">Defiance of colonial laws starting with the Salt Satyagraha</p>
+
+      <div class="info-group">
+        <div class="info-label">Catalysts & Spark</div>
+        <div class="info-content">Simon Commission boycott (1928), Nehru Report, Lahore Purna Swaraj declaration (1929), Irwin's refusal of 11 Demands.</div>
+      </div>
+
+      <div class="info-group">
+        <div class="info-label">Methods of Resistance</div>
+        <div class="info-content">Dandi Salt March (12 Mar – 6 Apr 1930; 240 miles, 78 marchers); non-payment of chowkidari tax and land revenue; forest law violations.</div>
+      </div>
+
+      <div class="info-group">
+        <div class="info-label">Social Spread</div>
+        <div class="info-content">Extensive female mobilization (Sarojini Naidu, Kamaladevi Chattopadhyay), business classes (FICCI), Red Shirts (Khan Abdul Ghaffar Khan).</div>
+      </div>
+
+      <div class="highlights-box">
+        <h4>Diplomacy & Settlement</h4>
+        <ul>
+          <li><strong>Gandhi-Irwin Pact</strong> (March 1931): CDM suspended; Gandhi attended 2nd RTC.</li>
+          <li>Deadlock in London over separate electorates &rarr; Communal Award (1932).</li>
+          <li><strong>Poona Pact</strong> (Sept 1932) with Dr. B.R. Ambedkar for reserved seats.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- QIM -->
+    <div class="movement-card card-qim">
+      <div class="card-top">
+        <span class="phase-tag">Mass Phase III</span>
+        <span class="year-tag">1942</span>
+      </div>
+      <h2 class="movement-title">Quit India Movement</h2>
+      <p class="movement-slogan">"Do or Die" (Karo ya Maro) — Orderly British withdrawal</p>
+
+      <div class="info-group">
+        <div class="info-label">Catalysts & Spark</div>
+        <div class="info-content">Failure of Cripps Mission (March 1942), threat of Japanese invasion, wartime inflation, and severe food scarcity.</div>
+      </div>
+
+      <div class="info-group">
+        <div class="info-label">Methods of Resistance</div>
+        <div class="info-content">Gowalia Tank Bombay resolution (8 Aug 1942); disruption of railway lines, telegraphs; underground radio networks (Usha Mehta).</div>
+      </div>
+
+      <div class="info-group">
+        <div class="info-label">Social Spread</div>
+        <div class="info-content">Spontaneous pan-Indian youth uprising; socialist leadership (Jayaprakash Narayan, Aruna Asaf Ali, Ram Manohar Lohia); labor strikes.</div>
+      </div>
+
+      <div class="highlights-box">
+        <h4>Parallel Governments (Prati Sarkar)</h4>
+        <ul>
+          <li><strong>Ballia</strong> (UP) under Chittu Pandey: Released prisoners, formed administration.</li>
+          <li><strong>Tamluk</strong> (Midnapore): Jatiya Sarkar with Vidyut Vahinis.</li>
+          <li><strong>Satara</strong> (Maharashtra): Nana Patil's Prati Sarkar lasting till 1945.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bar">
+    <div><strong>Key Exam Distinction:</strong> NCM was non-cooperation with colonial machinery; CDM was active breaking of colonial laws; QIM was total termination of British rule.</div>
+    <div><strong>Source:</strong> NCERT Class 12 Themes in Indian History (Part III) · OurMocks Exam System</div>
+  </div>
+
+</body>
+</html>

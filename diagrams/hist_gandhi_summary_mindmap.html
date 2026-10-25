@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mahatma Gandhi and the Nationalist Movement - Summary Mindmap</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      width: 1440px;
+      height: 880px;
+      background: #0B1120;
+      color: #F8FAFC;
+      font-family: 'Inter', sans-serif;
+      padding: 28px 36px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #1E293B;
+      padding-bottom: 12px;
+    }
+    .title-block h1 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 24px;
+      font-weight: 800;
+      color: #F8FAFC;
+      letter-spacing: -0.02em;
+    }
+    .title-block p {
+      font-size: 13px;
+      color: #94A3B8;
+      margin-top: 2px;
+    }
+    .badge {
+      background: rgba(234, 88, 12, 0.15);
+      border: 1px solid rgba(234, 88, 12, 0.4);
+      color: #FB923C;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .mindmap-board {
+      position: relative;
+      width: 100%;
+      height: 720px;
+      margin-top: 10px;
+    }
+    .center-hub {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 250px;
+      height: 140px;
+      background: linear-gradient(135deg, #1E293B, #0F172A);
+      border: 2px solid #EA580C;
+      border-radius: 18px;
+      box-shadow: 0 0 35px rgba(234, 88, 12, 0.25);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 14px;
+      z-index: 10;
+    }
+    .center-hub h2 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 17px;
+      font-weight: 800;
+      color: #FFFFFF;
+      line-height: 1.25;
+    }
+    .center-hub span {
+      font-size: 11px;
+      font-weight: 600;
+      color: #FB923C;
+      margin-top: 5px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .node {
+      position: absolute;
+      width: 335px;
+      background: #111C33;
+      border: 1px solid #1E293B;
+      border-radius: 12px;
+      padding: 12px 14px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.4);
+      z-index: 5;
+    }
+    .node-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 7px;
+      padding-bottom: 5px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .node-header h3 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #FFFFFF;
+    }
+    .node-tag {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 2px 7px;
+      border-radius: 4px;
+    }
+    .node ul {
+      list-style: none;
+      font-size: 11px;
+      line-height: 1.4;
+      color: #CBD5E1;
+    }
+    .node li {
+      position: relative;
+      padding-left: 13px;
+      margin-bottom: 4px;
+    }
+    .node li:last-child {
+      margin-bottom: 0;
+    }
+    .node li::before {
+      content: "›";
+      position: absolute;
+      left: 2px;
+      color: #EA580C;
+      font-weight: 800;
+      font-size: 12px;
+    }
+    .node li strong {
+      color: #F8FAFC;
+    }
+
+    /* Node positioning */
+    .n1 { top: 10px; left: 35px; border-top: 3px solid #38BDF8; }
+    .n1 .node-tag { background: rgba(56, 189, 248, 0.15); color: #38BDF8; }
+
+    .n2 { top: 10px; right: 35px; border-top: 3px solid #F59E0B; }
+    .n2 .node-tag { background: rgba(245, 158, 11, 0.15); color: #F59E0B; }
+
+    .n3 { top: 260px; left: 15px; border-top: 3px solid #10B981; }
+    .n3 .node-tag { background: rgba(16, 185, 129, 0.15); color: #10B981; }
+
+    .n4 { top: 260px; right: 15px; border-top: 3px solid #EC4899; }
+    .n4 .node-tag { background: rgba(236, 72, 153, 0.15); color: #F472B6; }
+
+    .n5 { bottom: 15px; left: 35px; border-top: 3px solid #A855F7; }
+    .n5 .node-tag { background: rgba(168, 85, 247, 0.15); color: #C084FC; }
+
+    .n6 { bottom: 15px; right: 35px; border-top: 3px solid #06B6D4; }
+    .n6 .node-tag { background: rgba(6, 182, 212, 0.15); color: #22D3EE; }
+
+    /* SVG Connecting lines */
+    .connections {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
+    }
+    line {
+      stroke: #334155;
+      stroke-width: 1.5;
+      stroke-dasharray: 4 4;
+    }
+    .footer-bar {
+      background: #0F172A;
+      border: 1px solid #1E293B;
+      border-radius: 8px;
+      padding: 7px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11.5px;
+      color: #94A3B8;
+    }
+    .footer-bar strong {
+      color: #F8FAFC;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="title-block">
+      <h1>Mahatma Gandhi & The Nationalist Movement — Comprehensive Mindmap</h1>
+      <p>Six core thematic dimensions of Gandhian leadership, mass mobilization, constitutional struggle, and independence</p>
+    </div>
+    <div class="badge">Class 12 History · Theme 13 Mindmap</div>
+  </div>
+
+  <div class="mindmap-board">
+    <svg class="connections">
+      <!-- Hub (720, 360) to nodes -->
+      <line x1="720" y1="310" x2="202" y2="120" />
+      <line x1="720" y1="310" x2="1237" y2="120" />
+      <line x1="600" y1="360" x2="350" y2="350" />
+      <line x1="840" y1="360" x2="1090" y2="350" />
+      <line x1="720" y1="410" x2="202" y2="590" />
+      <line x1="720" y1="410" x2="1237" y2="590" />
+    </svg>
+
+    <!-- Center Hub -->
+    <div class="center-hub">
+      <h2>Mahatma Gandhi & The Nationalist Era</h2>
+      <span>1915 – 1948 · SATYAGRAHA TO SWARAJ</span>
+    </div>
+
+    <!-- Node 1: Early Experiments -->
+    <div class="node n1">
+      <div class="node-header">
+        <h3>1. South Africa & Early Satyagrahas</h3>
+        <span class="node-tag">1915–1918</span>
+      </div>
+      <ul>
+        <li><strong>Return to India (Jan 1915):</strong> G.K. Gokhale advised one year travel to understand the real India.</li>
+        <li><strong>BHU Opening (Feb 1916):</strong> Admonished elite; declared salvation lies with peasants and workers.</li>
+        <li><strong>Champaran (1917):</strong> Defied tinkathia indigo sharecropping system; first Civil Disobedience test.</li>
+        <li><strong>Ahmedabad & Kheda (1918):</strong> Cotton mill wage dispute (first hunger strike) & revenue remission satyagraha.</li>
+      </ul>
+    </div>
+
+    <!-- Node 2: NCM & Khilafat -->
+    <div class="node n2">
+      <div class="node-header">
+        <h3>2. Rowlatt, Khilafat & Non-Cooperation</h3>
+        <span class="node-tag">1919–1922</span>
+      </div>
+      <ul>
+        <li><strong>Rowlatt Act (1919):</strong> Detention without trial; Jallianwala Bagh massacre (13 April 1919) by Dyer.</li>
+        <li><strong>Khilafat Alliance:</strong> Joined Ali Brothers to unite Hindus and Muslims on an unprecedented scale.</li>
+        <li><strong>Non-Cooperation Movement (1920):</strong> Boycott of courts, schools, foreign cloth, and titles.</li>
+        <li><strong>Chauri Chaura (Feb 1922):</strong> Violence ended movement; Gandhi sentenced to 6 years by Broomfield.</li>
+      </ul>
+    </div>
+
+    <!-- Node 3: Constructive Work -->
+    <div class="node n3">
+      <div class="node-header">
+        <h3>3. Constructive Programme & Simon Boycott</h3>
+        <span class="node-tag">1923–1929</span>
+      </div>
+      <ul>
+        <li><strong>Swarajists vs No-Changers:</strong> CR Das and Motilal Nehru entered councils; Gandhi focused on villages.</li>
+        <li><strong>Constructive Program:</strong> Hand-spinning (Charkha), removal of untouchability, national schools.</li>
+        <li><strong>Simon Commission (1928):</strong> All-white commission boycotted; Lala Lajpat Rai assaulted and died.</li>
+        <li><strong>Lahore Session (Dec 1929):</strong> Nehru proclaimed Purna Swaraj; 26 Jan 1930 celebrated as Independence Day.</li>
+      </ul>
+    </div>
+
+    <!-- Node 4: CDM & Round Table -->
+    <div class="node n4">
+      <div class="node-header">
+        <h3>4. Salt March, CDM & Round Table</h3>
+        <span class="node-tag">1930–1934</span>
+      </div>
+      <ul>
+        <li><strong>Dandi Salt March:</strong> 12 March – 6 April 1930; 240 miles from Sabarmati; universal defiance of salt tax.</li>
+        <li><strong>Mass Resistance:</strong> Peshawar Red Shirts (Khan Abdul Ghaffar Khan); Dharasana raid by Sarojini Naidu.</li>
+        <li><strong>Gandhi-Irwin Pact (1931):</strong> Truce signed; Gandhi attended Second RTC in London as sole Congress voice.</li>
+        <li><strong>Poona Pact (1932):</strong> Fast against Communal Award; agreed with Ambedkar on joint electorates with reserved seats.</li>
+      </ul>
+    </div>
+
+    <!-- Node 5: WWII & Quit India -->
+    <div class="node n5">
+      <div class="node-header">
+        <h3>5. WWII, Cripps & Quit India</h3>
+        <span class="node-tag">1939–1945</span>
+      </div>
+      <ul>
+        <li><strong>Resignation of Ministries (1939):</strong> Protest against dragging India into war without legislative consent.</li>
+        <li><strong>Individual Satyagraha (1940):</strong> Vinoba Bhave first satyagrahi, followed by Jawaharlal Nehru.</li>
+        <li><strong>Cripps Mission (1942):</strong> Rejected as a "post-dated cheque on a crashing bank."</li>
+        <li><strong>Quit India Movement (Aug 1942):</strong> "Do or Die" call; spontaneous uprisings; parallel governments in Ballia, Tamluk, Satara.</li>
+      </ul>
+    </div>
+
+    <!-- Node 6: Independence & Legacy -->
+    <div class="node n6">
+      <div class="node-header">
+        <h3>6. Partition, Martyrdom & Historiography</h3>
+        <span class="node-tag">1946–1948</span>
+      </div>
+      <ul>
+        <li><strong>Cabinet Mission (1946):</strong> Grouping plan rejected; Direct Action Day (16 Aug 1946) sparked massacres.</li>
+        <li><strong>One-Man Boundary Force:</strong> Gandhi walked barefoot through Noakhali, Bihar, and Calcutta to halt riots.</li>
+        <li><strong>Martyrdom (30 Jan 1948):</strong> Assassinated by Nathuram Godse during evening prayer at Birla House.</li>
+        <li><strong>Historical Sources:</strong> Autobiographies, police confidential reports, private letters, and newspaper archives.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bar">
+    <div><strong>Mandatory Overview:</strong> Visual synthesis of NCERT Theme 13 covering all high-yield sub-themes for CUET UG History.</div>
+    <div><strong>Source:</strong> NCERT Class 12 Themes in Indian History (Part III) · OurMocks Notes</div>
+  </div>
+
+</body>
+</html>
