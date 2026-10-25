@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>India Rural Settlement Typologies Matrix</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      width: 1440px;
+      height: 880px;
+      background-color: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0F172A;
+      padding: 26px 36px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      border-bottom: 2px solid #E2E8F0;
+      padding-bottom: 12px;
+    }
+    .header-left h1 {
+      font-size: 24px;
+      font-weight: 800;
+      color: #071A4D;
+      letter-spacing: -0.02em;
+    }
+    .header-left p {
+      font-size: 13px;
+      color: #475569;
+      margin-top: 3px;
+      font-weight: 500;
+    }
+    .header-badge {
+      background: #EFF6FF;
+      color: #1E40AF;
+      border: 1px solid #BFDBFE;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .main-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 20px;
+      margin: 12px 0;
+      flex: 1;
+    }
+
+    /* Left: 4 Types Grid */
+    .types-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .type-card {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 10px;
+      padding: 14px 16px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .tc-clustered { border-top: 4px solid #2563EB; }
+    .tc-semiclustered { border-top: 4px solid #D97706; }
+    .tc-hamleted { border-top: 4px solid #7C3AED; }
+    .tc-dispersed { border-top: 4px solid #059669; }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+    .type-pill {
+      font-size: 10.5px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 5px;
+      text-transform: uppercase;
+    }
+    .tp-blue { background: #EFF6FF; color: #1E40AF; }
+    .tp-amber { background: #FFFBEB; color: #B45309; }
+    .tp-purple { background: #FAF5FF; color: #7E22CE; }
+    .tp-green { background: #ECFDF5; color: #047857; }
+
+    .alt-name {
+      font-size: 11px;
+      font-weight: 600;
+      color: #64748B;
+    }
+    .type-card h3 {
+      font-size: 14px;
+      font-weight: 800;
+      color: #0F172A;
+      margin-bottom: 6px;
+    }
+
+    .bullet-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      font-size: 11px;
+      color: #334155;
+      line-height: 1.4;
+    }
+    .bullet-list li {
+      position: relative;
+      padding-left: 13px;
+    }
+    .bullet-list li::before {
+      content: "▪";
+      position: absolute;
+      left: 0;
+      color: #2563EB;
+      font-size: 11px;
+    }
+    .bullet-list strong {
+      color: #0F172A;
+    }
+
+    .region-box {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 6px;
+      padding: 6px 10px;
+      font-size: 10.5px;
+      color: #475569;
+      margin-top: 8px;
+    }
+    .region-box strong {
+      color: #071A4D;
+    }
+
+    /* Right Column: Determinants & Patterns */
+    .right-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .side-card {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 10px;
+      padding: 14px 16px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+    }
+    .side-card h2 {
+      font-size: 14.5px;
+      font-weight: 800;
+      color: #071A4D;
+      border-bottom: 1.5px solid #F1F5F9;
+      padding-bottom: 6px;
+      margin-bottom: 8px;
+    }
+
+    .det-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .det-item {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      font-size: 11px;
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 6px;
+      padding: 7px 10px;
+    }
+    .det-item strong {
+      color: #0F172A;
+      font-size: 11.5px;
+    }
+    .det-item p {
+      color: #475569;
+      line-height: 1.35;
+    }
+
+    .local-names-box {
+      background: #EFF6FF;
+      border: 1px solid #BFDBFE;
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-size: 11px;
+      color: #1E293B;
+      line-height: 1.45;
+    }
+    .local-names-box h4 {
+      font-size: 11px;
+      font-weight: 800;
+      color: #1D4ED8;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 4px;
+    }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: #64748B;
+      border-top: 1px solid #E2E8F0;
+      padding-top: 8px;
+    }
+    footer strong {
+      color: #071A4D;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-left">
+      <h1>India: Rural Settlement Typologies & Spatial Dynamics</h1>
+      <p>NCERT Class XII Geography Framework · Clustered, Semi-Clustered, Hamleted &amp; Dispersed Typologies</p>
+    </div>
+    <div class="header-badge">CUET UG Geography · Unit 6</div>
+  </header>
+
+  <div class="main-grid">
+    
+    <!-- Left: 4 Settlement Types Grid -->
+    <div class="types-grid">
+      
+      <!-- 1. Clustered -->
+      <div class="type-card tc-clustered">
+        <div>
+          <div class="card-top">
+            <span class="type-pill tp-blue">Type 1</span>
+            <span class="alt-name">Nucleated / Agglomerated</span>
+          </div>
+          <h3>Clustered Rural Settlement</h3>
+          <ul class="bullet-list">
+            <li>Compact, closely built-up houses sharing contiguous common walls or narrow alleys.</li>
+            <li>Living space is clearly demarcated and distinct from surrounding cultivated fields.</li>
+            <li>Streets present recognizable geometric patterns: linear, rectangular, radial, or checkerboard.</li>
+            <li>Enforced by defense/security (Bundelkhand, Nagaland) or water scarcity (Rajasthan compact oasis villages).</li>
+          </ul>
+        </div>
+        <div class="region-box">
+          <strong>Key Regions:</strong> Fertile Northern Plain (Ganga-Brahmaputra), Malwa plateau, coastal river deltas.
+        </div>
+      </div>
+
+      <!-- 2. Semi-Clustered -->
+      <div class="type-card tc-semiclustered">
+        <div>
+          <div class="card-top">
+            <span class="type-pill tp-amber">Type 2</span>
+            <span class="alt-name">Fragmented / Clustered</span>
+          </div>
+          <h3>Semi-Clustered Settlement</h3>
+          <ul class="bullet-list">
+            <li>Results from clustering within a restricted area or social segregation of rural populace.</li>
+            <li>A large compact village becomes fragmented when sections of agrarian workers live on fringes.</li>
+            <li><strong>Socio-Caste Cleavage:</strong> Land-owning dominant caste commands the central core; landless manual castes/artisans inhabit outer peripheral hamlets.</li>
+          </ul>
+        </div>
+        <div class="region-box">
+          <strong>Key Regions:</strong> Widespread across the Gujarat Plain and parts of Rajasthan arid/semi-arid tracts.
+        </div>
+      </div>
+
+      <!-- 3. Hamleted -->
+      <div class="type-card tc-hamleted">
+        <div>
+          <div class="card-top">
+            <span class="type-pill tp-purple">Type 3</span>
+            <span class="alt-name">Segmented Hamlets</span>
+          </div>
+          <h3>Hamleted Settlement</h3>
+          <ul class="bullet-list">
+            <li>Village is physically fragmented into several distinct spatial units separated by fields.</li>
+            <li>All fragmented hamlets bear a single common administrative revenue village name.</li>
+            <li>Driven by social stratification, caste isolation, and micro-relief fragmentation.</li>
+            <li>Locally designated across India by diverse vernacular nomenclature.</li>
+          </ul>
+        </div>
+        <div class="region-box">
+          <strong>Key Regions:</strong> Middle and Lower Ganga Plain, Chhattisgarh basin, and lower sub-Himalayan valleys.
+        </div>
+      </div>
+
+      <!-- 4. Dispersed -->
+      <div class="type-card tc-dispersed">
+        <div>
+          <div class="card-top">
+            <span class="type-pill tp-green">Type 4</span>
+            <span class="alt-name">Isolated / Scattered</span>
+          </div>
+          <h3>Dispersed Rural Settlement</h3>
+          <ul class="bullet-list">
+            <li>Pattern appears in the form of isolated solitary huts or tiny hamlets of 2–3 houses.</li>
+            <li>Scattered over remote undulating hills, forested slopes, or individual farmsteads.</li>
+            <li>Caused by severe physical fragmentation of terrain and scattered agricultural patches.</li>
+            <li>Exhibits minimal social interaction compared to dense nucleated villages.</li>
+          </ul>
+        </div>
+        <div class="region-box">
+          <strong>Key Regions:</strong> Meghalaya, Uttarakhand, Himachal Pradesh, Nilgiris, and coastal Kerala.
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Right: Determinants & Local Nomenclature -->
+    <div class="right-stack">
+      
+      <div class="side-card">
+        <h2>Three Determinant Factors of Rural Typology</h2>
+        <div class="det-list">
+          <div class="det-item">
+            <strong>1. Physical Environmental Factors</strong>
+            <p>Relief topography, altitude, drainage networks, perennial water supply, and soil quality dictate physical agglomeration.</p>
+          </div>
+          <div class="det-item">
+            <strong>2. Cultural and Ethnic Factors</strong>
+            <p>Caste hierarchies, religious segmentation, and joint family structures dictate spatial clustering or peripheral segregation.</p>
+          </div>
+          <div class="det-item">
+            <strong>3. Security and Defense Factors</strong>
+            <p>Historic vulnerability to dacoits, marauding pastoral invaders, or tribal conflicts enforced compact fortified nucleated villages (Bundelkhand, Nagaland).</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Local Nomenclature Box -->
+      <div class="local-names-box">
+        <h4>Vernacular Nomenclature of Hamlets</h4>
+        <p>Across diverse linguistic regions of India, sub-units of hamleted settlements are locally termed:</p>
+        <p style="margin-top: 4px;">
+          • <strong>Panna</strong> / <strong>Para</strong> (Eastern Hindi / Bengal)<br>
+          • <strong>Palli</strong> (Southern / Coastal states)<br>
+          • <strong>Nagla</strong> (Western Uttar Pradesh / Haryana)<br>
+          • <strong>Dhani</strong> (Rajasthan / Desert plains)<br>
+          • <strong>Mazra</strong> (North-Central India)
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <footer>
+    <span>OurMocks Exam Prep Series · Geography Core Revision</span>
+    <span>Source: NCERT Class XII <em>India: People and Economy</em> · Human Settlements</span>
+  </footer>
+
+</body>
+</html>

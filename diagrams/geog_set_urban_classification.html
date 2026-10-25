@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>India Urban Settlement Evolution & Functional Classification</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      width: 1440px;
+      height: 880px;
+      background-color: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0F172A;
+      padding: 24px 36px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      border-bottom: 2px solid #E2E8F0;
+      padding-bottom: 10px;
+    }
+    .header-left h1 {
+      font-size: 24px;
+      font-weight: 800;
+      color: #071A4D;
+      letter-spacing: -0.02em;
+    }
+    .header-left p {
+      font-size: 13px;
+      color: #475569;
+      margin-top: 2px;
+      font-weight: 500;
+    }
+    .header-badge {
+      background: #EFF6FF;
+      color: #1E40AF;
+      border: 1px solid #BFDBFE;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .main-container {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin: 10px 0;
+      flex: 1;
+    }
+
+    /* Section 1: Evolution */
+    .section-title-bar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .section-title-bar .dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+    }
+    .dot-blue { background: #2563EB; }
+    .dot-purple { background: #7C3AED; }
+    .section-title-bar h2 {
+      font-size: 14.5px;
+      font-weight: 800;
+      color: #071A4D;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .evolution-row {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr 1.9fr;
+      gap: 14px;
+    }
+
+    .evo-card {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 10px;
+      padding: 12px 14px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .evo-ancient { border-top: 3.5px solid #EA580C; }
+    .evo-medieval { border-top: 3.5px solid #0284C7; }
+    .evo-modern { border-top: 3.5px solid #16A34A; }
+
+    .evo-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 4px;
+    }
+    .evo-pill {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+    .ep-orange { background: #FFF7ED; color: #C2410C; }
+    .ep-blue { background: #F0F9FF; color: #0369A1; }
+    .ep-green { background: #F0FDF4; color: #15803D; }
+
+    .evo-card h3 {
+      font-size: 13.5px;
+      font-weight: 800;
+      color: #0F172A;
+      margin-bottom: 4px;
+    }
+    .evo-desc {
+      font-size: 11px;
+      color: #475569;
+      line-height: 1.4;
+      margin-bottom: 6px;
+    }
+    .evo-examples {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 6px;
+      padding: 5px 8px;
+      font-size: 10.5px;
+      color: #334155;
+    }
+    .evo-examples strong {
+      color: #071A4D;
+    }
+
+    /* Section 2: Functional 9-Fold Grid */
+    .functional-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 11px;
+    }
+
+    .func-card {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 8px;
+      padding: 9px 12px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .func-card:hover {
+      border-color: #CBD5E1;
+    }
+    .func-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .func-head h4 {
+      font-size: 12.5px;
+      font-weight: 800;
+      color: #0F172A;
+    }
+    .func-cat-tag {
+      font-size: 9.5px;
+      font-weight: 700;
+      padding: 1px 6px;
+      border-radius: 4px;
+      background: #F1F5F9;
+      color: #475569;
+    }
+    .func-role {
+      font-size: 10.5px;
+      color: #64748B;
+      line-height: 1.35;
+    }
+    .func-towns {
+      font-size: 10.5px;
+      color: #071A4D;
+      font-weight: 600;
+      margin-top: 2px;
+      background: #F8FAFC;
+      border-radius: 4px;
+      padding: 3px 6px;
+    }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: #64748B;
+      border-top: 1px solid #E2E8F0;
+      padding-top: 8px;
+    }
+    footer strong {
+      color: #071A4D;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-left">
+      <h1>India: Urban Settlement Evolution &amp; Functional Typologies</h1>
+      <p>Three Historic Epochs of Urban Growth &amp; The Census 9-Fold Functional Classification Matrix</p>
+    </div>
+    <div class="header-badge">CUET UG Geography · Unit 6</div>
+  </header>
+
+  <div class="main-container">
+    
+    <!-- Part 1: Three Epochs of Urban Evolution -->
+    <div class="section-title-bar">
+      <div class="dot dot-blue"></div>
+      <h2>Part A: Historical Epochs of Urban Evolution in India</h2>
+    </div>
+
+    <div class="evolution-row">
+      <!-- Ancient Towns -->
+      <div class="evo-card evo-ancient">
+        <div>
+          <div class="evo-head">
+            <span class="evo-pill ep-orange">Ancient Epoch</span>
+            <span style="font-size: 10.5px; font-weight: 700; color: #C2410C;">&gt; 2,000 Years Old</span>
+          </div>
+          <h3>Ancient Religious &amp; Cultural Towns</h3>
+          <p class="evo-desc">Developed as prominent religious, pilgrimage, and cultural centers during antiquity. Sustained continuous urban life for millennia.</p>
+        </div>
+        <div class="evo-examples">
+          <strong>Key Towns:</strong> Varanasi, Prayag (Allahabad), Pataliputra (Patna), Madurai, Ujjain, Ayodhya.
+        </div>
+      </div>
+
+      <!-- Medieval Towns -->
+      <div class="evo-card evo-medieval">
+        <div>
+          <div class="evo-head">
+            <span class="evo-pill ep-blue">Medieval Epoch</span>
+            <span style="font-size: 10.5px; font-weight: 700; color: #0369A1;">8th – 18th Century CE</span>
+          </div>
+          <h3>Medieval Fort Capitals &amp; Feudal Hubs</h3>
+          <p class="evo-desc">Emerged as fortified headquarters of princely kingdoms, sultanates, and Mughal subahs. Built around royal palaces and grand mosques.</p>
+        </div>
+        <div class="evo-examples">
+          <strong>Key Towns:</strong> Delhi, Hyderabad, Jaipur, Lucknow, Agra, Nagpur, Gwalior, Golconda.
+        </div>
+      </div>
+
+      <!-- Modern Towns -->
+      <div class="evo-card evo-modern">
+        <div>
+          <div class="evo-head">
+            <span class="evo-pill ep-green">Modern Epoch</span>
+            <span style="font-size: 10.5px; font-weight: 700; color: #15803D;">British Colonial &amp; Post-1947</span>
+          </div>
+          <h3>Colonial Seaports, Hill Sanatoria &amp; Planned Cities</h3>
+          <p class="evo-desc">British/European footholds on coasts (Bombay, Calcutta, Madras, Goa, Pondicherry), sanatoria hill stations (Shimla, Darjeeling), and post-1947 planned state capitals &amp; industrial steel towns.</p>
+        </div>
+        <div class="evo-examples">
+          <strong>Colonial/Planned:</strong> Mumbai, Kolkata, Chennai; <em>Planned Capitals:</em> Chandigarh, Gandhinagar, Bhubaneswar; <em>Industrial:</em> Bhilai, Rourkela, Durgapur, Bokaro.
+        </div>
+      </div>
+    </div>
+
+    <!-- Part 2: Census 9-Fold Functional Classification -->
+    <div class="section-title-bar" style="margin-top: 4px;">
+      <div class="dot dot-purple"></div>
+      <h2>Part B: 9-Fold Functional Classification of Indian Towns (Census of India)</h2>
+    </div>
+
+    <div class="functional-grid">
+      
+      <!-- 1. Administrative -->
+      <div class="func-card">
+        <div class="func-head">
+          <h4>1. Administrative Towns</h4>
+          <span class="func-cat-tag">Governance</span>
+        </div>
+        <p class="func-role">Headquarters of national or state governments supporting executive administration.</p>
+        <div class="func-towns">New Delhi, Chandigarh, Bhopal, Gandhinagar, Dispur, Imphal.</div>
+      </div>
+
+      <!-- 2. Industrial -->
+      <div class="func-card">
+        <div class="func-head">
+          <h4>2. Industrial Towns</h4>
+          <span class="func-cat-tag">Manufacturing</span>
+        </div>
+        <p class="func-role">Dominated by heavy manufacturing, steel mills, chemicals, and engineering plants.</p>
+        <div class="func-towns">Jamshedpur, Bhilai, Durgapur, Rourkela, Modinagar, Salem.</div>
+      </div>
+
+      <!-- 3. Transport -->
+      <div class="func-card">
+        <div class="func-head">
+          <h4>3. Transport Towns</h4>
+          <span class="func-cat-tag">Logistics</span>
+        </div>
+        <p class="func-role">Major sea ports, break-of-bulk terminals, and cardinal railway junction hubs.</p>
+        <div class="func-towns">Kandla, Kochi, Visakhapatnam, Mughalsarai, Itarsi, Katni.</div>
+      </div>
+
+      <!-- 4. Commercial -->
+      <div class="func-card">
+        <div class="func-head">
+          <h4>4. Commercial Towns</h4>
+          <span class="func-cat-tag">Trade &amp; Finance</span>
+        </div>
+        <p class="func-role">Specialized in wholesale trade, banking, financial exchanges, and agro-mandis.</p>
+        <div class="func-towns">Mumbai, Kolkata, Saharanpur, Satna, Muzaffarnagar.</div>
+      </div>
+
+      <!-- 5. Mining -->
+      <div class="func-card">
+        <div class="func-head">
+          <h4>5. Mining Towns</h4>
+          <span class="func-cat-tag">Resource Extraction</span>
+        </div>
+        <p class="func-role">Developed directly on mineral ore fields, coal basins, and petroleum fields.</p>
+        <div class="func-towns">Raniganj, Jharia, Bokaro, Digboi, Singrauli, Ankleshwar.</div>
+      </div>
+
+      <!-- 6. Garrison / Cantonment -->
+      <div class="func-card">
+        <div class="func-head">
+          <h4>6. Garrison / Cantt Towns</h4>
+          <span class="func-cat-tag">Defense</span>
+        </div>
+        <p class="func-role">Established as permanent military bases, cantonments, and defense depots.</p>
+        <div class="func-towns">Ambala, Jalandhar, Mhow, Babina, Udhampur, Kamptee.</div>
+      </div>
+
+      <!-- 7. Educational -->
+      <div class="func-card">
+        <div class="func-head">
+          <h4>7. Educational Towns</h4>
+          <span class="func-cat-tag">Academia</span>
+        </div>
+        <p class="func-role">Towns whose economic identity centers on premier universities and research institutes.</p>
+        <div class="func-towns">Roorkee, Varanasi, Aligarh, Pilani, Manipal, Vallabh Vidyanagar.</div>
+      </div>
+
+      <!-- 8. Religious & Cultural -->
+      <div class="func-card">
+        <div class="func-head">
+          <h4>8. Religious / Cultural Towns</h4>
+          <span class="func-cat-tag">Heritage</span>
+        </div>
+        <p class="func-role">Celebrated for famous temples, shrines, pilgrimage circuits, and historic culture.</p>
+        <div class="func-towns">Varanasi, Mathura, Amritsar, Puri, Tirupati, Ajmer, Haridwar.</div>
+      </div>
+
+      <!-- 9. Tourist -->
+      <div class="func-card">
+        <div class="func-head">
+          <h4>9. Tourist Towns</h4>
+          <span class="func-cat-tag">Recreation</span>
+        </div>
+        <p class="func-role">Pleasant hill stations and beach resorts attracting national &amp; global visitors.</p>
+        <div class="func-towns">Nainital, Mussoorie, Shimla, Pachmarhi, Mount Abu, Ooty, Kodaikanal.</div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <footer>
+    <span>OurMocks Exam Prep Series · Geography Core Revision</span>
+    <span>Source: Census of India &amp; NCERT Class XII <em>India: People and Economy</em> · Human Settlements</span>
+  </footer>
+
+</body>
+</html>

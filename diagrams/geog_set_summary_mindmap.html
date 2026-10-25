@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>India Human Settlements Summary Mindmap</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      width: 1440px;
+      height: 880px;
+      background-color: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0F172A;
+      position: relative;
+      overflow: hidden;
+      padding: 24px 32px;
+    }
+
+    header {
+      position: absolute;
+      top: 20px;
+      left: 32px;
+      right: 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #E2E8F0;
+      padding-bottom: 10px;
+      z-index: 10;
+    }
+    .header-left h1 {
+      font-size: 22px;
+      font-weight: 800;
+      color: #071A4D;
+      letter-spacing: -0.02em;
+    }
+    .header-left p {
+      font-size: 12.5px;
+      color: #475569;
+      margin-top: 2px;
+      font-weight: 500;
+    }
+    .header-badge {
+      background: #EFF6FF;
+      color: #1E40AF;
+      border: 1px solid #BFDBFE;
+      font-size: 10.5px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* SVG Connectors */
+    svg.connections {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1440px;
+      height: 880px;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Central Hub */
+    .mindmap-center {
+      position: absolute;
+      top: 385px;
+      left: 580px;
+      width: 280px;
+      height: 110px;
+      background: #071A4D;
+      border: 3px solid #1F5EFF;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(7, 26, 77, 0.18), 0 0 0 6px #EFF6FF;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 12px 16px;
+      z-index: 5;
+    }
+    .mindmap-center .sub-label {
+      font-size: 9.5px;
+      font-weight: 800;
+      color: #B8FF34;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 3px;
+    }
+    .mindmap-center h2 {
+      font-size: 16px;
+      font-weight: 900;
+      color: #FFFFFF;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+    }
+    .mindmap-center .bottom-tag {
+      font-size: 10px;
+      color: #94A3B8;
+      margin-top: 4px;
+      font-weight: 500;
+    }
+
+    /* Cards */
+    .branch-card {
+      position: absolute;
+      width: 390px;
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      border-radius: 12px;
+      padding: 12px 14px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+      z-index: 4;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    /* Left Positions */
+    .card-left-1 { top: 82px; left: 40px; height: 232px; border-left: 5px solid #2563EB; }
+    .card-left-2 { top: 326px; left: 40px; height: 236px; border-left: 5px solid #0D9488; }
+    .card-left-3 { top: 574px; left: 40px; height: 236px; border-left: 5px solid #7C3AED; }
+
+    /* Right Positions */
+    .card-right-1 { top: 82px; left: 1010px; height: 232px; border-right: 5px solid #EA580C; }
+    .card-right-2 { top: 328px; left: 1010px; height: 232px; border-right: 5px solid #16A34A; }
+    .card-right-3 { top: 574px; left: 1010px; height: 234px; border-right: 5px solid #E11D48; }
+
+    .card-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #F1F5F9;
+      padding-bottom: 4px;
+    }
+    .card-head h3 {
+      font-size: 13px;
+      font-weight: 800;
+      color: #0F172A;
+    }
+    .badge {
+      font-size: 9.5px;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+    .b-blue { background: #EFF6FF; color: #1E40AF; }
+    .b-teal { background: #F0FDFA; color: #0F766E; }
+    .b-purple { background: #FAF5FF; color: #7E22CE; }
+    .b-orange { background: #FFF7ED; color: #C2410C; }
+    .b-green { background: #F0FDF4; color: #15803D; }
+    .b-rose { background: #FFF1F2; color: #BE123C; }
+
+    .bullet-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 3.5px;
+      font-size: 10.2px;
+      color: #334155;
+      line-height: 1.35;
+    }
+    .bullet-list li {
+      position: relative;
+      padding-left: 12px;
+    }
+    .bullet-list li::before {
+      content: "▪";
+      position: absolute;
+      left: 0;
+      color: #2563EB;
+      font-size: 10px;
+    }
+    .bullet-list strong {
+      color: #0F172A;
+    }
+
+    .key-metric-strip {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 5px;
+      padding: 4px 7px;
+      font-size: 9.8px;
+      color: #475569;
+      margin-top: 1px;
+      line-height: 1.3;
+    }
+    .key-metric-strip strong {
+      color: #071A4D;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 10px;
+      left: 32px;
+      right: 32px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 10.5px;
+      color: #64748B;
+      border-top: 1px solid #E2E8F0;
+      padding-top: 6px;
+      z-index: 10;
+    }
+    footer strong {
+      color: #071A4D;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-left">
+      <h1>India: Human Settlements — Comprehensive Synthesis Mindmap</h1>
+      <p>Unit 6 Master Architecture: Rural Settlement Typologies, Urban Epochs, Functional Classes &amp; Urbanization</p>
+    </div>
+    <div class="header-badge">Full Unit Master Map</div>
+  </header>
+
+  <!-- SVG Connectors -->
+  <svg class="connections">
+    <!-- Top-Left -->
+    <path d="M 580 410 C 490 410, 490 198, 430 198" fill="none" stroke="#2563EB" stroke-width="2.5" stroke-dasharray="none" opacity="0.8"/>
+    <!-- Mid-Left -->
+    <path d="M 580 440 C 490 440, 490 444, 430 444" fill="none" stroke="#0D9488" stroke-width="2.5" stroke-dasharray="none" opacity="0.8"/>
+    <!-- Bottom-Left -->
+    <path d="M 580 470 C 490 470, 490 692, 430 692" fill="none" stroke="#7C3AED" stroke-width="2.5" stroke-dasharray="none" opacity="0.8"/>
+
+    <!-- Top-Right -->
+    <path d="M 860 410 C 950 410, 950 198, 1010 198" fill="none" stroke="#EA580C" stroke-width="2.5" stroke-dasharray="none" opacity="0.8"/>
+    <!-- Mid-Right -->
+    <path d="M 860 440 C 950 440, 950 444, 1010 444" fill="none" stroke="#16A34A" stroke-width="2.5" stroke-dasharray="none" opacity="0.8"/>
+    <!-- Bottom-Right -->
+    <path d="M 860 470 C 950 470, 950 692, 1010 692" fill="none" stroke="#E11D48" stroke-width="2.5" stroke-dasharray="none" opacity="0.8"/>
+  </svg>
+
+  <!-- Central Hub -->
+  <div class="mindmap-center">
+    <div class="sub-label">CUET UG GEOGRAPHY</div>
+    <h2>HUMAN SETTLEMENTS<br>INDIA (PEOPLE &amp; ECONOMY)</h2>
+    <div class="bottom-tag">NCERT Class XII · Unit 6 Architecture</div>
+  </div>
+
+  <!-- Left 1: Rural Typologies -->
+  <div class="branch-card card-left-1">
+    <div class="card-head">
+      <h3>1. Rural Settlement Typologies</h3>
+      <span class="badge b-blue">4 Core Types</span>
+    </div>
+    <ul class="bullet-list">
+      <li><strong>Clustered / Nucleated:</strong> Compact, contiguous dwellings; defense (Bundelkhand, Nagaland) or water security; fertile plains.</li>
+      <li><strong>Semi-Clustered:</strong> Social segregation; dominant land-owning caste in central village, laborers on outer periphery (Gujarat/Rajasthan).</li>
+      <li><strong>Hamleted:</strong> Physically segmented units (Panna, Para, Palli, Nagla, Dhani) bearing common name; Middle/Lower Ganga plain.</li>
+      <li><strong>Dispersed:</strong> Isolated solitary huts on slopes; Meghalaya, Uttarakhand, Himachal, and coastal Kerala.</li>
+    </ul>
+    <div class="key-metric-strip">
+      <strong>Determinants:</strong> Physical relief, water sources, social caste cleavage &amp; defense.
+    </div>
+  </div>
+
+  <!-- Left 2: Urban Evolutionary Epochs -->
+  <div class="branch-card card-left-2">
+    <div class="card-head">
+      <h3>2. Historical Epochs of Indian Towns</h3>
+      <span class="badge b-teal">3 Epochs</span>
+    </div>
+    <ul class="bullet-list">
+      <li><strong>Ancient Towns (&gt;2,000 yrs):</strong> Cultural &amp; religious origins; continuous survival; Varanasi, Prayag, Pataliputra, Madurai.</li>
+      <li><strong>Medieval Towns (8th–18th C):</strong> Fortified headquarters of kingdoms, sultans &amp; Mughals; Delhi, Hyderabad, Jaipur, Agra, Lucknow.</li>
+      <li><strong>Modern Colonial Towns:</strong> British trading footholds (Mumbai, Kolkata, Chennai); hill stations (Shimla, Darjeeling); cantonments.</li>
+      <li><strong>Post-1947 Planned Towns:</strong> Administrative capitals (Chandigarh, Gandhinagar) &amp; industrial steel cities (Bhilai, Rourkela, Bokaro).</li>
+    </ul>
+    <div class="key-metric-strip">
+      <strong>Planned Stature:</strong> Chandigarh designed by Swiss-French architect Le Corbusier.
+    </div>
+  </div>
+
+  <!-- Left 3: Census Hierarchy & Million-Plus Cities -->
+  <div class="branch-card card-left-3">
+    <div class="card-head">
+      <h3>3. Census Urban Hierarchy</h3>
+      <span class="badge b-purple">Class I – VI Towns</span>
+    </div>
+    <ul class="bullet-list">
+      <li><strong>Class I Cities:</strong> Population &ge; 1,00,000; account for <strong>60%+ of total urban populace</strong>, exhibiting top-heavy urbanization.</li>
+      <li><strong>Million-Plus (Metropolitan) Cities:</strong> Population 10 to 50 lakh; count grew from 35 (2001) to <strong>53 cities (2011)</strong>.</li>
+      <li><strong>Mega-Cities:</strong> Population &gt; 50 lakh; Greater Mumbai (18.4 M), Delhi (16.3 M), Kolkata (14.1 M), Chennai, Bengaluru, Hyderabad.</li>
+      <li><strong>Urban Agglomeration (UA):</strong> Continuous urban spread consisting of a town and its adjoining outgrowths (OGs).</li>
+    </ul>
+    <div class="key-metric-strip">
+      <strong>Top-Heavy Urbanization:</strong> Class I cities dominate aggregate urban growth.
+    </div>
+  </div>
+
+  <!-- Right 1: Functional Classification -->
+  <div class="branch-card card-right-1">
+    <div class="card-head">
+      <h3>4. 9-Fold Functional Classification</h3>
+      <span class="badge b-orange">Census Matrix</span>
+    </div>
+    <ul class="bullet-list">
+      <li><strong>Administrative &amp; Industrial:</strong> State capitals (New Delhi, Chandigarh) &amp; manufacturing hubs (Jamshedpur, Bhilai).</li>
+      <li><strong>Transport &amp; Commercial:</strong> Seaports (Kandla, Kochi, Vizag) &amp; commercial hubs (Mumbai).</li>
+      <li><strong>Mining &amp; Energy:</strong> Mineral basins (Raniganj, Jharia, Bokaro, Digboi, Ankleshwar).</li>
+      <li><strong>Garrison, Educational &amp; Religious:</strong> Cantonments (Mhow), academia (Roorkee), pilgrimage (Puri, Tirupati).</li>
+    </ul>
+    <div class="key-metric-strip">
+      <strong>Multi-Functional Shift:</strong> Static single functions evolve into complex metropolis.
+    </div>
+  </div>
+
+  <!-- Right 2: Smart Cities & Morphology -->
+  <div class="branch-card card-right-2">
+    <div class="card-head">
+      <h3>5. Urban Morphology &amp; Smart Cities</h3>
+      <span class="badge b-green">Mission 100 Cities</span>
+    </div>
+    <ul class="bullet-list">
+      <li><strong>Morphological Duality:</strong> Historic congested walled core (narrow alleys, chowks) vs planned colonial/modern civil lines and suburban sectors.</li>
+      <li><strong>Peri-Urban Fringe:</strong> Rapid ribbon sprawl along transport highways; conversion of rural agricultural land into real estate layouts.</li>
+      <li><strong>Smart Cities Mission:</strong> Core infrastructure, clean environment, digital governance, retrofitting, redevelopment &amp; greenfield expansion.</li>
+      <li><strong>Sustainable Transit:</strong> High-speed metro rail networks, bus rapid transit (BRT), and smart traffic management.</li>
+    </ul>
+    <div class="key-metric-strip">
+      <strong>Mission Objective:</strong> Quality of life, clean sustainable environment &amp; smart solutions.
+    </div>
+  </div>
+
+  <!-- Right 3: Urban Problems & Slum Geography -->
+  <div class="branch-card card-right-3">
+    <div class="card-head">
+      <h3>6. Urban Problems &amp; Slum Geography</h3>
+      <span class="badge b-rose">Challenges</span>
+    </div>
+    <ul class="bullet-list">
+      <li><strong>Acute Housing Shortage:</strong> Escalating land costs force low-income migrants into unhygienic squatter settlements and slums.</li>
+      <li><strong>Dharavi (Mumbai):</strong> One of Asia's largest slums; intense informal recycling, leather, and pottery micro-enterprises alongside civic deficits.</li>
+      <li><strong>Severe Infrastructure Stress:</strong> Drinking water deficits, uncollected municipal solid waste, clogged drains, open sewers, and flash floods.</li>
+      <li><strong>Environmental Pollution:</strong> Hazardous air quality (PM2.5), vehicular traffic gridlocks, and toxic industrial effluent contamination.</li>
+    </ul>
+    <div class="key-metric-strip">
+      <strong>Policy Mandate:</strong> AMRUT &amp; PMAY (Pradhan Mantri Awas Yojana) housing missions.
+    </div>
+  </div>
+
+  <footer>
+    <span>OurMocks Exam Prep Series · Geography Core Mindmaps</span>
+    <span>Source: Census of India &amp; NCERT Class XII <em>India: People and Economy</em> · Human Settlements</span>
+  </footer>
+
+</body>
+</html>
