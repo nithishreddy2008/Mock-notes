@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Global Agricultural Typologies: Comparative Analysis</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      width: 1440px;
+      height: 880px;
+      background: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "Plus Jakarta Sans", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0F172A;
+      padding: 34px 44px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 1.5pt solid #E2E8F0;
+      padding-bottom: 15px;
+    }
+    .header-left h1 {
+      font-size: 27px;
+      font-weight: 800;
+      color: #0F172A;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+    .header-left p {
+      font-size: 13.5px;
+      color: #64748B;
+      font-weight: 500;
+    }
+    .header-badge {
+      background: #EFF6FF;
+      color: #1D4ED8;
+      border: 1px solid #BFDBFE;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    /* 6-Card Grid (2 rows x 3 columns) */
+    .agri-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 16px;
+      flex: 1;
+    }
+
+    .agri-card {
+      background: #FFFFFF;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 12px;
+      padding: 14px 17px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03);
+      position: relative;
+    }
+    .agri-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3.5px;
+      border-radius: 12px 12px 0 0;
+    }
+    .c-amber::before { background: #D97706; }
+    .c-blue::before { background: #2563EB; }
+    .c-emerald::before { background: #059669; }
+    .c-purple::before { background: #7C3AED; }
+    .c-rose::before { background: #E11D48; }
+    .c-teal::before { background: #0D9488; }
+
+    .card-top {
+      margin-bottom: 6px;
+    }
+    .card-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 5px;
+    }
+    .badge-type {
+      font-size: 10px;
+      font-weight: 800;
+      padding: 2px 7px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .b-amber { background: #FEF3C7; color: #92400E; }
+    .b-blue { background: #DBEAFE; color: #1E40AF; }
+    .b-emerald { background: #D1FAE5; color: #065F46; }
+    .b-purple { background: #EDE9FE; color: #5B21B6; }
+    .b-rose { background: #FFE4E6; color: #9F1239; }
+    .b-teal { background: #CCFBF1; color: #115E59; }
+
+    .scale-label {
+      font-size: 10.5px;
+      font-weight: 700;
+      color: #64748B;
+    }
+
+    .card-title {
+      font-size: 15.5px;
+      font-weight: 800;
+      color: #0F172A;
+      margin-bottom: 3px;
+    }
+    .card-desc {
+      font-size: 11.5px;
+      color: #475569;
+      line-height: 1.38;
+      margin-bottom: 6px;
+    }
+
+    /* Trait Grid */
+    .trait-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 6px;
+      padding: 7px 10px;
+      margin-bottom: 7px;
+    }
+    .trait-item {
+      font-size: 10.5px;
+      color: #334155;
+      line-height: 1.35;
+    }
+    .trait-item strong {
+      color: #0F172A;
+      display: block;
+      font-size: 9.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 1px;
+    }
+
+    .region-strip {
+      font-size: 11px;
+      color: #334155;
+      background: #FFFFFF;
+      border-left: 2.5px solid;
+      padding: 4px 8px;
+      line-height: 1.35;
+    }
+    .c-amber .region-strip { border-left-color: #D97706; }
+    .c-blue .region-strip { border-left-color: #2563EB; }
+    .c-emerald .region-strip { border-left-color: #059669; }
+    .c-purple .region-strip { border-left-color: #7C3AED; }
+    .c-rose .region-strip { border-left-color: #E11D48; }
+    .c-teal .region-strip { border-left-color: #0D9488; }
+
+    /* Footer */
+    .footer-strip {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 10px;
+      padding: 11px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 14px;
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.02);
+    }
+    .footer-left {
+      font-size: 12px;
+      color: #334155;
+    }
+    .footer-left strong {
+      color: #0F172A;
+    }
+    .footer-right {
+      font-size: 11.5px;
+      color: #64748B;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Header -->
+  <div class="header">
+    <div class="header-left">
+      <h1>Global Agricultural Typologies: Comparative Systems Matrix</h1>
+      <p>Six primary farming regimes: input intensities, labor organization, land-yield ratios, and regional geography</p>
+    </div>
+    <div class="header-badge">
+      CUET UG Geography · Primary Activities
+    </div>
+  </div>
+
+  <!-- 6-Card Grid -->
+  <div class="agri-grid">
+
+    <!-- 1. Primitive Subsistence -->
+    <div class="agri-card c-amber">
+      <div class="card-top">
+        <div class="card-meta">
+          <span class="badge-type b-amber">Slash-and-Burn</span>
+          <span class="scale-label">Tribal Subsistence</span>
+        </div>
+        <div class="card-title">Primitive Subsistence (Shifting)</div>
+        <div class="card-desc">Forest plots cleared by fire; ash enriches soil. Primitive tools (machete, digging sticks); plot abandoned when fertility drops.</div>
+      </div>
+      <div class="trait-grid">
+        <div class="trait-item"><strong>Land / Labor Yield</strong>Low per hectare; low per worker.</div>
+        <div class="trait-item"><strong>Primary Crops</strong>Yams, cassava, millets, maize.</div>
+      </div>
+      <div class="region-strip">
+        <strong>Regional Names:</strong> <em>Jhuming</em> (NE India), <em>Milpa</em> (Central America/Mexico), <em>Ladang</em> (Malaysia/Indonesia), <em>Taungya</em> (Myanmar).
+      </div>
+    </div>
+
+    <!-- 2. Intensive Subsistence -->
+    <div class="agri-card c-blue">
+      <div class="card-top">
+        <div class="card-meta">
+          <span class="badge-type b-blue">High Density</span>
+          <span class="scale-label">Family Labor</span>
+        </div>
+        <div class="card-title">Intensive Subsistence Farming</div>
+        <div class="card-desc">Dense monsoon population; small fragmented holdings; manual human labor and animal draft power; intensive multi-cropping.</div>
+      </div>
+      <div class="trait-grid">
+        <div class="trait-item"><strong>Wet Paddy Dominated</strong>Ganga plain, SE Asia, southern China.</div>
+        <div class="trait-item"><strong>Non-Paddy Dominated</strong>Wheat, barley, pulses (drier regions).</div>
+      </div>
+      <div class="region-strip">
+        <strong>Economic Paradox:</strong> <em>High yield per unit area</em> (intensive land use) but <em>low productivity per labor unit</em>.
+      </div>
+    </div>
+
+    <!-- 3. Plantation Agriculture -->
+    <div class="agri-card c-emerald">
+      <div class="card-top">
+        <div class="card-meta">
+          <span class="badge-type b-emerald">Commercial Estate</span>
+          <span class="scale-label">Colonial Origin</span>
+        </div>
+        <div class="card-title">Plantation Agriculture</div>
+        <div class="card-desc">Large estates managed scientifically; introduced by Europeans in tropics; single cash crop focus; factory processing on estate.</div>
+      </div>
+      <div class="trait-grid">
+        <div class="trait-item"><strong>Capital & Labor</strong>High capital, cheap local labor, rail links.</div>
+        <div class="trait-item"><strong>Key Cash Crops</strong>Tea, coffee, rubber, cocoa, sugarcane.</div>
+      </div>
+      <div class="region-strip">
+        <strong>NCERT Benchmarks:</strong> Tea in India/Sri Lanka; Rubber in Malaysia; Coffee (<em>Fazendas</em>) in Brazil; Sugarcane in Cuba.
+      </div>
+    </div>
+
+    <!-- 4. Extensive Commercial Grain -->
+    <div class="agri-card c-purple">
+      <div class="card-top">
+        <div class="card-meta">
+          <span class="badge-type b-purple">Mechanized</span>
+          <span class="scale-label">Market Monoculture</span>
+        </div>
+        <div class="card-title">Extensive Commercial Grain Cultivation</div>
+        <div class="card-desc">Practiced in interior semi-arid continental grasslands; giant farms (hundreds of hectares); complete mechanization from plough to combine.</div>
+      </div>
+      <div class="trait-grid">
+        <div class="trait-item"><strong>Core Monoculture</strong>Wheat is dominant; corn and barley.</div>
+        <div class="trait-item"><strong>Yield Dynamics</strong>Low per hectare; <em>very high per worker</em>.</div>
+      </div>
+      <div class="region-strip">
+        <strong>Global Grasslands:</strong> Prairies (N. America), Steppes (Eurasia), Pampas (Argentina), Velds (S. Africa), Downs (Australia).
+      </div>
+    </div>
+
+    <!-- 5. Dairy Farming & Mixed Farming -->
+    <div class="agri-card c-rose">
+      <div class="card-top">
+        <div class="card-meta">
+          <span class="badge-type b-rose">Capital Intensive</span>
+          <span class="scale-label">Livestock & Crops</span>
+        </div>
+        <div class="card-title">Dairy & Commercial Mixed Farming</div>
+        <div class="card-desc">Highly specialized dairy cattle rearing; stall feeding, veterinary care, mechanical milking; mixed farming balances crops and livestock.</div>
+      </div>
+      <div class="trait-grid">
+        <div class="trait-item"><strong>Labor & Capital</strong>Heavy capital (sheds, silos, refrigeration).</div>
+        <div class="trait-item"><strong>Market Proximity</strong>Located close to urban-industrial centers.</div>
+      </div>
+      <div class="region-strip">
+        <strong>Leading Regions:</strong> NW Europe (Denmark, Netherlands), SE Australia, New Zealand; mixed farming in temperate Europe/North America.
+      </div>
+    </div>
+
+    <!-- 6. Mediterranean Agriculture -->
+    <div class="agri-card c-teal">
+      <div class="card-top">
+        <div class="card-meta">
+          <span class="badge-type b-teal">Specialized</span>
+          <span class="scale-label">Commercial Orchard</span>
+        </div>
+        <div class="card-title">Mediterranean Agriculture</div>
+        <div class="card-desc">Unique climate with mild, wet winters and hot, dry summers; commercial fruit and vegetable cultivation commanding premium global prices.</div>
+      </div>
+      <div class="trait-grid">
+        <div class="trait-item"><strong>Viticulture (Grapes)</strong>Best quality wines; dried raisins & currants.</div>
+        <div class="trait-item"><strong>Citrus & Olives</strong>Oranges, lemons, figs, premium olive oil.</div>
+      </div>
+      <div class="region-strip">
+        <strong>Zones:</strong> Mediterranean basin (S. Europe & N. Africa), Central California, Central Chile, SW South Africa, SW Australia.
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer Strip -->
+  <div class="footer-strip">
+    <div class="footer-left">
+      <strong>Core Exam Rule:</strong> Differentiate <em>yield per hectare</em> (highest in Intensive Subsistence) vs <em>yield per person/worker</em> (highest in Extensive Commercial Grain).
+    </div>
+    <div class="footer-right">
+      Source: NCERT Class 12 Fundamentals of Human Geography (Chapter 5) · OurMocks Exam System
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Human Activities Comprehensive Mindmap</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      width: 1440px;
+      height: 880px;
+      background: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "Plus Jakarta Sans", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0F172A;
+      padding: 34px 44px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 1.5pt solid #E2E8F0;
+      padding-bottom: 14px;
+      position: relative;
+      z-index: 2;
+    }
+    .header-left h1 {
+      font-size: 26px;
+      font-weight: 800;
+      color: #0F172A;
+      letter-spacing: -0.02em;
+      margin-bottom: 3px;
+    }
+    .header-left p {
+      font-size: 13.5px;
+      color: #64748B;
+      font-weight: 500;
+    }
+    .header-badge {
+      background: #EFF6FF;
+      color: #1D4ED8;
+      border: 1px solid #BFDBFE;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    /* Mindmap Canvas */
+    .mindmap-area {
+      flex: 1;
+      position: relative;
+      margin: 12px 0;
+    }
+
+    /* Central Hub */
+    .central-hub {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 250px;
+      background: #FFFFFF;
+      border: 2.5px solid #0284C7;
+      border-radius: 16px;
+      padding: 16px 20px;
+      text-align: center;
+      box-shadow: 0 10px 25px -5px rgba(2, 132, 199, 0.15);
+      z-index: 10;
+    }
+    .central-hub h2 {
+      font-size: 17px;
+      font-weight: 800;
+      color: #0F172A;
+      margin-bottom: 4px;
+      line-height: 1.25;
+    }
+    .central-hub span {
+      font-size: 10.5px;
+      font-weight: 700;
+      color: #0284C7;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    /* Branch Cards */
+    .branch-card {
+      position: absolute;
+      width: 330px;
+      background: #FFFFFF;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 12px;
+      padding: 10px 14px;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03);
+      z-index: 5;
+    }
+    .branch-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3.5px;
+      border-radius: 12px 12px 0 0;
+    }
+
+    /* Positions */
+    .pos-top-left { top: 0px; left: 30px; }
+    .pos-mid-left { top: 235px; left: 10px; }
+    .pos-bot-left { bottom: 0px; left: 30px; }
+
+    .pos-top-right { top: 0px; right: 30px; }
+    .pos-mid-right { top: 235px; right: 10px; }
+    .pos-bot-right { bottom: 0px; right: 30px; }
+
+    /* Accents */
+    .b-red::before { background: #DC2626; }
+    .b-amber::before { background: #D97706; }
+    .b-blue::before { background: #2563EB; }
+    .b-emerald::before { background: #059669; }
+    .b-purple::before { background: #7C3AED; }
+    .b-indigo::before { background: #4F46E5; }
+
+    .card-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+      padding-bottom: 4px;
+      border-bottom: 1px solid #F1F5F9;
+    }
+    .card-title {
+      font-size: 13px;
+      font-weight: 800;
+      color: #0F172A;
+    }
+    .tag {
+      font-size: 9px;
+      font-weight: 800;
+      padding: 2px 6px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .tag-red { background: #FEE2E2; color: #991B1B; }
+    .tag-amber { background: #FFFBEB; color: #B45309; }
+    .tag-blue { background: #EFF6FF; color: #1D4ED8; }
+    .tag-emerald { background: #ECFDF5; color: #047857; }
+    .tag-purple { background: #FAF5FF; color: #7E22CE; }
+    .tag-indigo { background: #EEF2FF; color: #4338CA; }
+
+    .point-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 3.5px;
+    }
+    .point-list li {
+      font-size: 10.5px;
+      color: #334155;
+      line-height: 1.34;
+      position: relative;
+      padding-left: 11px;
+    }
+    .point-list li::before {
+      content: "›";
+      position: absolute;
+      left: 0;
+      color: #64748B;
+      font-weight: 800;
+      font-size: 12px;
+    }
+    .point-list strong {
+      color: #0F172A;
+    }
+
+    /* SVG Connecting Lines */
+    .connector-svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Footer */
+    .footer-strip {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 10px;
+      padding: 11px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.02);
+    }
+    .footer-left {
+      font-size: 12px;
+      color: #334155;
+    }
+    .footer-left strong {
+      color: #0F172A;
+    }
+    .footer-right {
+      font-size: 11.5px;
+      color: #64748B;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-left">
+      <h1>Human Activities: Primary, Secondary, Tertiary & Quaternary — Comprehensive Mindmap</h1>
+      <p>Six structural pillars of production, resource conversion, services, knowledge economy, and global labor dynamics</p>
+    </div>
+    <div class="header-badge">
+      Class 12 Geography · Unit III Mindmap
+    </div>
+  </div>
+
+  <!-- Mindmap Canvas -->
+  <div class="mindmap-area">
+
+    <!-- SVG Connecting Lines -->
+    <svg class="connector-svg">
+      <path d="M 595 290 C 470 290, 420 150, 360 90" stroke="#CBD5E1" stroke-width="1.8" fill="none" stroke-dasharray="4,4" />
+      <path d="M 595 320 C 480 320, 420 310, 340 300" stroke="#CBD5E1" stroke-width="1.8" fill="none" stroke-dasharray="4,4" />
+      <path d="M 595 350 C 470 350, 420 480, 360 520" stroke="#CBD5E1" stroke-width="1.8" fill="none" stroke-dasharray="4,4" />
+      <path d="M 845 290 C 970 290, 1020 150, 1080 90" stroke="#CBD5E1" stroke-width="1.8" fill="none" stroke-dasharray="4,4" />
+      <path d="M 845 320 C 960 320, 1020 310, 1100 300" stroke="#CBD5E1" stroke-width="1.8" fill="none" stroke-dasharray="4,4" />
+      <path d="M 845 350 C 970 350, 1020 480, 1080 520" stroke="#CBD5E1" stroke-width="1.8" fill="none" stroke-dasharray="4,4" />
+    </svg>
+
+    <!-- Central Hub -->
+    <div class="central-hub">
+      <h2>Human Activities Hierarchy</h2>
+      <span>Fundamentals · Unit III</span>
+    </div>
+
+    <!-- Branch 1: Primary & Pastoralism (Top Left) -->
+    <div class="branch-card pos-top-left b-red">
+      <div class="card-head">
+        <span class="card-title">1. Primary & Pastoralism</span>
+        <span class="tag tag-red">Extractive</span>
+      </div>
+      <ul class="point-list">
+        <li><strong>Hunting & Gathering:</strong> Oldest economic activities; high latitudes (N. Canada, Eurasia) and low latitudes (Amazon, Congo).</li>
+        <li><strong>Nomadic Herding:</strong> Subsistence transhumance; Gujjars, Bakarwals, Gaddis, Bhotiyas in Himalayas; Kirghiz in Central Asia.</li>
+        <li><strong>Commercial Ranching:</strong> Western organized, capital-intensive, permanent ranches (USA, Australia, New Zealand, Argentina).</li>
+        <li><strong>Red-Collar Workers:</strong> Outdoor labor directly extracting raw nature.</li>
+      </ul>
+    </div>
+
+    <!-- Branch 2: Agriculture Systems (Mid Left) -->
+    <div class="branch-card pos-mid-left b-amber">
+      <div class="card-head">
+        <span class="card-title">2. Global Agriculture</span>
+        <span class="tag tag-amber">Cultivation</span>
+      </div>
+      <ul class="point-list">
+        <li><strong>Primitive Subsistence:</strong> Shifting/slash-and-burn (<em>Jhuming</em>, <em>Milpa</em>, <em>Ladang</em>); low productivity.</li>
+        <li><strong>Intensive Subsistence:</strong> Wet paddy dominated (high yield/hectare, low yield/worker) vs non-paddy (wheat, pulses).</li>
+        <li><strong>Plantation Agriculture:</strong> European cash estates; Tea (India/Sri Lanka), Rubber (Malaysia), Coffee (Brazil <em>Fazendas</em>).</li>
+        <li><strong>Extensive Commercial Grain:</strong> Continental grasslands (Prairies, Steppes); high mechanization, low per hectare, high per worker.</li>
+      </ul>
+    </div>
+
+    <!-- Branch 3: Mining Systems (Bot Left) -->
+    <div class="branch-card pos-bot-left b-emerald">
+      <div class="card-head">
+        <span class="card-title">3. Mining & Geology</span>
+        <span class="tag tag-emerald">Mineral Base</span>
+      </div>
+      <ul class="point-list">
+        <li><strong>Surface / Open-Cast:</strong> Cheapest method; overhead costs low; extracted when ore lies close to surface.</li>
+        <li><strong>Underground / Shaft Mining:</strong> Deep vertical shafts, elevators, ventilation; capital intensive, hazardous (fire, poisonous gas, flooding).</li>
+        <li><strong>Economic Factors:</strong> Grade and size of deposit, global commodity prices, transport proximity, and technological readiness.</li>
+        <li><strong>Katanga-Zambia Belt:</strong> Prominent copper mining zone in Central Africa.</li>
+      </ul>
+    </div>
+
+    <!-- Branch 4: Secondary Activities (Top Right) -->
+    <div class="branch-card pos-top-right b-blue">
+      <div class="card-head">
+        <span class="card-title">4. Secondary & Manufacturing</span>
+        <span class="tag tag-blue">Value Addition</span>
+      </div>
+      <ul class="point-list">
+        <li><strong>Size Classification:</strong> Cottage/household (local raw materials), small-scale (local labor, workshops), large-scale (assembly lines).</li>
+        <li><strong>Raw Material Base:</strong> Agro-based (sugar, textiles), mineral-based (iron & steel), chemical-based (plastics, fertilizer), forest-based.</li>
+        <li><strong>Basic vs Consumer Goods:</strong> Basic industries (steel feeds other factories); consumer goods (direct retail consumption).</li>
+        <li><strong>Ruhr Coalfield (Germany):</strong> Transitioning from heavy smokestack "rust bowl" to advanced clean-tech manufacturing.</li>
+      </ul>
+    </div>
+
+    <!-- Branch 5: Tertiary Activities & Services (Mid Right) -->
+    <div class="branch-card pos-mid-right b-purple">
+      <div class="card-head">
+        <span class="card-title">5. Tertiary & Commerce</span>
+        <span class="tag tag-purple">Services</span>
+      </div>
+      <ul class="point-list">
+        <li><strong>Trade & Commerce:</strong> Rural periodic markets (weekly mandis), urban malls, wholesale commerce, retail chains.</li>
+        <li><strong>Transport & Communication:</strong> Network of nodes (settlements) and links (routes); cyber-space and fiber-optics.</li>
+        <li><strong>Services:</strong> Low-order everyday services vs high-order specialized legal, financial, and educational services.</li>
+        <li><strong>Tourism & Medical Tourism:</strong> High employment multiplier; India, Thailand, and Singapore leading in world medical travel.</li>
+      </ul>
+    </div>
+
+    <!-- Branch 6: Quaternary & Quinary (Bot Right) -->
+    <div class="branch-card pos-bot-right b-indigo">
+      <div class="card-head">
+        <span class="card-title">6. Quaternary & Quinary</span>
+        <span class="tag tag-indigo">Knowledge & R&D</span>
+      </div>
+      <ul class="point-list">
+        <li><strong>Quaternary:</strong> Knowledge-based, software coding, data research, financial analysis (white-collar specialists).</li>
+        <li><strong>Quinary Activities:</strong> Highest executive decision makers, policy architects, legal minds ("Gold-Collar" workers).</li>
+        <li><strong>Outsourcing / Offshoring:</strong> BPO (call centers) and KPO (high-skill research); India and Philippines leading global hubs.</li>
+        <li><strong>Digital Divide:</strong> Wide gap in ICT infrastructure access between developed and developing nations and rural-urban areas.</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Footer Strip -->
+  <div class="footer-strip">
+    <div class="footer-left">
+      <strong>Core Structural Synthesis:</strong> Human civilization advances as societies master nature (Primary), engineer goods (Secondary), coordinate exchange (Tertiary), and innovate knowledge (Quaternary/Quinary).
+    </div>
+    <div class="footer-right">
+      Source: NCERT Class 12 Fundamentals of Human Geography · OurMocks Exam System
+    </div>
+  </div>
+
+</body>
+</html>
