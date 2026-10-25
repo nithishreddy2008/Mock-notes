@@ -109,7 +109,7 @@ Every notes PDF follows this exact skeleton, in this order:
   - **Verify visually:** render every box page at ~95 dpi and confirm nothing pokes outside its box before publishing.
 - **Tables are our default structure** — for maps (object position → image), contrasts, fact clusters. Header row navy-tint, generous insets.
 
-### 4.1 DIAGRAM GENERATION & ARCHETYPES (v2.3 — mandatory)
+### 4.1 DIAGRAM GENERATION & ARCHETYPES (v2.4 — mandatory)
 
 Visual clarity is central to OurMocks notes. Every student should grasp the structure of a chapter and its core mechanisms at a glance.
 
@@ -130,22 +130,27 @@ Visual clarity is central to OurMocks notes. Every student should grasp the stru
      - **Venn Diagram / Overlap:** Ideological synthesis, intersecting cultural traditions, syncretic movements.
      - **Radial / Multi-branch Mindmap:** Broad chapter summaries, multifaceted thematic maps, core-and-periphery concepts.
 
-3. **ABSOLUTELY NO LABELLING OF DIAGRAM TYPE ON THE PNG:**
-   - **Never print diagram archetype metadata or taxonomy on the visual.** Labels such as `"Visual Archetype: Layer Stack Hierarchy"`, `"Archetype: Timeline"`, or design categorization badges are strictly forbidden on the diagram PNG.
-   - The visual must contain only authentic educational headings, pedagogical subtitles, topic badges (e.g. `"THEMES IN INDIAN HISTORY · CHAPTER 2"`), and clear analytical content.
+3. **MANDATORY LIGHT-THEMED BACKGROUND FOR DIAGRAMS (v2.4 — Readability standard):**
+   - **Light background requirement:** All generated diagrams must use clean, elegant light-colored backgrounds (e.g. crisp off-white `#F8FAFC`, soft warm slate `#F1F5F9`, light paper `#FAFAFA`, or subtle modern light tint `#F0F4F8`) instead of dark/bright background colors.
+   - **High-contrast readability:** Text and node typography must use dark, high-contrast colors (deep navy `#0F172A`, slate-900 `#0F172A`, slate-800 `#1E293B`, charcoal `#334155`) with refined border strokes (`#E2E8F0`, `#CBD5E1`) and vivid, premium accent colors for badges, icons, and connectors (sapphire blue `#2563EB`, teal `#0D9488`, amber `#D97706`, forest emerald `#059669`, violet `#7C3AED`, coral `#EA580C`).
+   - This guarantees optimal contrast and legibility both on digital screens and in printed notes, ensuring seamless visual harmony with the white paper background of our Typst notes PDFs.
 
-4. **ZERO TEXT TRUNCATION, EDGE CLIPPING, AND BOX OVERFLOW (Strict Layout Containment):**
+4. **ABSOLUTELY NO LABELLING OF DIAGRAM TYPE ON THE PNG:**
+   - **Never print diagram archetype metadata or taxonomy on the visual.** Labels such as `"Visual Archetype: Layer Stack Hierarchy"`, `"Archetype: Timeline"`, or design categorization badges are strictly forbidden on the diagram PNG.
+   - The visual must contain only authentic educational headings, pedagogical subtitles, topic badges (e.g. `"FUNDAMENTALS OF HUMAN GEOGRAPHY · CHAPTER 1"`), and clear analytical content.
+
+5. **ZERO TEXT TRUNCATION, EDGE CLIPPING, AND BOX OVERFLOW (Strict Layout Containment):**
    - **No text cutting at edges or bottom:** Every card, label, footnote, and footer must be fully visible within the rendered canvas with generous breathing margins.
    - **No sentence overflow:** Long sentences must never spill out of cards, badges, or bounding boxes.
    - **Strict CSS containment rules for HTML diagrams:**
      - Cards must use flexbox/grid layouts with automatic height or generous min-heights.
      - Apply `word-break: break-word`, `overflow-wrap: break-word`, and `line-height: 1.35–1.45` to all explanatory text.
-     - Set explicit canvas dimensions (e.g. `1400px × 850px` or `1440px × 920px`) matching the exact bounding box of the visual, leaving at least 32px padding around the outermost elements.
+     - Set explicit canvas dimensions (e.g. `1440px × 880px` or `1440px × 920px`) matching the exact bounding box of the visual, leaving at least 32px padding around the outermost elements.
      - Viewport size for Playwright screenshotting must match the HTML body dimensions exactly (or use full-page clipping without scrollbar inclusion).
      - Verify every rendered PNG to ensure no text baseline is sliced and no cards are cut in half.
 
-5. **Rendering & Asset Pipeline:**
-   - Source code in `diagrams/<name>.html` using HTML5/SVG + CSS (OurMocks palette: navy `#071A4D`, blue `#1F5EFF`, lime `#B8FF34`, slate `#64748B`, slate-100 `#F8FAFC`).
+6. **Rendering & Asset Pipeline:**
+   - Source code in `diagrams/<name>.html` using HTML5/SVG + CSS (light canvas, clean contrast, crisp typography).
    - High-DPI rasterization via Playwright:
      `npx playwright screenshot --device "Desktop Chrome HiDPI" --channel chrome --viewport-size "<w>,<h>" "file://$(pwd)/diagrams/<name>.html" diagrams/png/<name>.png`
    - Copy PNGs to `typst-sources/<topic>/assets/` and embed using `#figure(image("assets/<name>.png", width: 100%), caption: [...])`.
