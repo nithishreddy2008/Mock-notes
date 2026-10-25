@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Making of the Indian Constitution: Chronological Milestones</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      width: 1440px;
+      height: 880px;
+      background: #0B1120;
+      color: #F8FAFC;
+      font-family: 'Inter', sans-serif;
+      padding: 34px 42px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 2px solid #1E293B;
+      padding-bottom: 14px;
+    }
+    .title-block h1 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 26px;
+      font-weight: 800;
+      color: #F8FAFC;
+      letter-spacing: -0.02em;
+    }
+    .title-block p {
+      font-size: 13.5px;
+      color: #94A3B8;
+      margin-top: 4px;
+    }
+    .badge {
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      color: #10B981;
+      font-size: 11.5px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .timeline-track {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+      margin-top: 18px;
+      flex-grow: 1;
+    }
+    .step-card {
+      background: #111C33;
+      border: 1px solid #1E293B;
+      border-radius: 12px;
+      padding: 18px 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+    .step-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .step-number {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: 5px;
+      text-transform: uppercase;
+    }
+    .step-date {
+      font-size: 12px;
+      font-weight: 700;
+      color: #94A3B8;
+    }
+    .s1 { border-top: 4px solid #38BDF8; }
+    .s1 .step-number { background: rgba(56, 189, 248, 0.15); color: #38BDF8; }
+    .s2 { border-top: 4px solid #F59E0B; }
+    .s2 .step-number { background: rgba(245, 158, 11, 0.15); color: #F59E0B; }
+    .s3 { border-top: 4px solid #A855F7; }
+    .s3 .step-number { background: rgba(168, 85, 247, 0.15); color: #C084FC; }
+    .s4 { border-top: 4px solid #EC4899; }
+    .s4 .step-number { background: rgba(236, 72, 153, 0.15); color: #F472B6; }
+    .s5 { border-top: 4px solid #10B981; }
+    .s5 .step-number { background: rgba(16, 185, 129, 0.15); color: #10B981; }
+
+    .step-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 800;
+      color: #FFFFFF;
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+    .step-body {
+      font-size: 11.5px;
+      color: #CBD5E1;
+      line-height: 1.45;
+      background: rgba(15, 23, 42, 0.6);
+      padding: 10px 10px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+    .step-body ul {
+      list-style: none;
+    }
+    .step-body li {
+      position: relative;
+      padding-left: 12px;
+      margin-bottom: 5px;
+    }
+    .step-body li:last-child {
+      margin-bottom: 0;
+    }
+    .step-body li::before {
+      content: "•";
+      position: absolute;
+      left: 1px;
+      color: #EA580C;
+      font-weight: 800;
+    }
+    .step-body strong {
+      color: #F8FAFC;
+    }
+    .step-footer {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 6px;
+      padding: 7px 9px;
+      font-size: 11px;
+      color: #94A3B8;
+      line-height: 1.35;
+    }
+    .step-footer strong {
+      color: #E2E8F0;
+    }
+    .footer-bar {
+      margin-top: 14px;
+      background: #0F172A;
+      border: 1px solid #1E293B;
+      border-radius: 8px;
+      padding: 10px 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: #94A3B8;
+    }
+    .footer-bar strong {
+      color: #F8FAFC;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="title-block">
+      <h1>The Making of the Indian Constitution: Five Historic Milestones</h1>
+      <p>The journey from the Cabinet Mission plan to the inauguration of the Sovereign Democratic Republic</p>
+    </div>
+    <div class="badge">CUET UG History · Process Timeline</div>
+  </div>
+
+  <div class="timeline-track">
+    <!-- Step 1 -->
+    <div class="step-card s1">
+      <div>
+        <div class="step-header">
+          <span class="step-number">Stage 1</span>
+          <span class="step-date">Dec 1946</span>
+        </div>
+        <h2 class="step-title">Inaugural Session & Objectives Resolution</h2>
+        <div class="step-body">
+          <ul>
+            <li><strong>9 Dec 1946:</strong> First meeting of Constituent Assembly; Dr. Sachchidananda Sinha interim President.</li>
+            <li><strong>11 Dec 1946:</strong> Dr. Rajendra Prasad elected permanent President.</li>
+            <li><strong>13 Dec 1946:</strong> Jawaharlal Nehru moved historic <strong>Objectives Resolution</strong>; adopted unanimously 22 Jan 1947.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="step-footer">
+        <strong>Pillar:</strong> Defined India as an "Independent Sovereign Republic" with justice, equality, and minority safeguards.
+      </div>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="step-card s2">
+      <div>
+        <div class="step-header">
+          <span class="step-number">Stage 2</span>
+          <span class="step-date">Aug 1947</span>
+        </div>
+        <h2 class="step-title">Partition & Drafting Committee</h2>
+        <div class="step-body">
+          <ul>
+            <li><strong>14–15 Aug 1947:</strong> Partition reduced Assembly membership from 389 to <strong>299 members</strong>.</li>
+            <li><strong>29 Aug 1947:</strong> <strong>Drafting Committee</strong> appointed with <strong>Dr. B.R. Ambedkar</strong> as Chairman.</li>
+            <li>Civil servants <strong>Sir B.N. Rau</strong> (Advisor) and <strong>S.N. Mukherjee</strong> (Chief Draftsman) prepared foundational text.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="step-footer">
+        <strong>Pillar:</strong> Ambedkar's legal brilliance provided the structural framework of constitutional morality.
+      </div>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="step-card s3">
+      <div>
+        <div class="step-header">
+          <span class="step-number">Stage 3</span>
+          <span class="step-date">Feb – Oct 1948</span>
+        </div>
+        <h2 class="step-title">Draft Publication & Public Consultation</h2>
+        <div class="step-body">
+          <ul>
+            <li><strong>Feb 1948:</strong> First Draft of Constitution published by Drafting Committee.</li>
+            <li>Subjected to <strong>8 months</strong> of open public scrutiny, bar associations, and press criticism.</li>
+            <li>Special Committee refined provisions on citizenship, language, and emergency powers.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="step-footer">
+        <strong>Pillar:</strong> Embodied deliberative democracy with extensive grassroots feedback.
+      </div>
+    </div>
+
+    <!-- Step 4 -->
+    <div class="step-card s4">
+      <div>
+        <div class="step-header">
+          <span class="step-number">Stage 4</span>
+          <span class="step-date">1948 – 1949</span>
+        </div>
+        <h2 class="step-title">Clause-by-Clause Readings & Debates</h2>
+        <div class="step-body">
+          <ul>
+            <li>Assembly sat for <strong>11 sessions</strong> over <strong>165 days</strong> across 2 years, 11 months, 18 days.</li>
+            <li>Out of <strong>7,635 amendments</strong> tabled by members, <strong>2,473</strong> were vigorously debated.</li>
+            <li>Intense deliberation on Untouchability (Art 17), Federal Lists, and Munshi-Ayyangar language formula.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="step-footer">
+        <strong>Pillar:</strong> Compromises negotiated by the triumvirate: Nehru, Patel, and Prasad.
+      </div>
+    </div>
+
+    <!-- Step 5 -->
+    <div class="step-card s5">
+      <div>
+        <div class="step-header">
+          <span class="step-number">Stage 5</span>
+          <span class="step-date">Nov 1949 – Jan 1950</span>
+        </div>
+        <h2 class="step-title">Final Adoption & Republic Enforcement</h2>
+        <div class="step-body">
+          <ul>
+            <li><strong>26 Nov 1949:</strong> Final Constitution adopted; signed by <strong>284 members</strong> (Constitution Day / Samvidhan Diwas).</li>
+            <li><strong>24 Jan 1950:</strong> Final session; signed text; "Jana Gana Mana" adopted as National Anthem.</li>
+            <li><strong>26 Jan 1950:</strong> Constitution fully came into effect, commemorating the 1930 Purna Swaraj Day.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="step-footer">
+        <strong>Pillar:</strong> Transformed India into the world's largest constitutional republic with universal adult franchise.
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bar">
+    <div><strong>Key Exam Statistic:</strong> Exactly 2 years, 11 months, and 18 days elapsed between the first sitting (9 Dec 1946) and final adoption (26 Nov 1949).</div>
+    <div><strong>Source:</strong> NCERT Class 12 Themes in Indian History (Part III) · OurMocks Exam System</div>
+  </div>
+
+</body>
+</html>

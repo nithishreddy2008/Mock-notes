@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Four Great Debates of the Constituent Assembly</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      width: 1440px;
+      height: 880px;
+      background: #0B1120;
+      color: #F8FAFC;
+      font-family: 'Inter', sans-serif;
+      padding: 34px 42px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 2px solid #1E293B;
+      padding-bottom: 14px;
+    }
+    .title-block h1 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 26px;
+      font-weight: 800;
+      color: #F8FAFC;
+      letter-spacing: -0.02em;
+    }
+    .title-block p {
+      font-size: 13.5px;
+      color: #94A3B8;
+      margin-top: 4px;
+    }
+    .badge {
+      background: rgba(56, 189, 248, 0.15);
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      color: #38BDF8;
+      font-size: 11.5px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .matrix-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 18px;
+      margin-top: 16px;
+      flex-grow: 1;
+    }
+    .debate-card {
+      background: #111C33;
+      border: 1px solid #1E293B;
+      border-radius: 12px;
+      padding: 20px 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+    .debate-tag {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
+    .d1 { border-top: 3.5px solid #F59E0B; }
+    .d1 .debate-tag { background: rgba(245, 158, 11, 0.15); color: #F59E0B; }
+
+    .d2 { border-top: 3.5px solid #10B981; }
+    .d2 .debate-tag { background: rgba(16, 185, 129, 0.15); color: #10B981; }
+
+    .d3 { border-top: 3.5px solid #38BDF8; }
+    .d3 .debate-tag { background: rgba(56, 189, 248, 0.15); color: #38BDF8; }
+
+    .d4 { border-top: 3.5px solid #A855F7; }
+    .d4 .debate-tag { background: rgba(168, 85, 247, 0.15); color: #C084FC; }
+
+    .debate-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 17px;
+      font-weight: 800;
+      color: #FFFFFF;
+      margin-bottom: 8px;
+    }
+    .arguments-box {
+      background: rgba(15, 23, 42, 0.65);
+      border-radius: 8px;
+      padding: 10px 12px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+    .arg-column h4 {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 5px;
+    }
+    .arg-left h4 { color: #F87171; }
+    .arg-right h4 { color: #60A5FA; }
+    .arg-column p {
+      font-size: 11.5px;
+      color: #CBD5E1;
+      line-height: 1.4;
+    }
+    .arg-column strong {
+      color: #F8FAFC;
+    }
+    .consensus-strip {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 6px;
+      padding: 8px 12px;
+      font-size: 12px;
+      line-height: 1.4;
+      color: #94A3B8;
+    }
+    .consensus-strip strong {
+      color: #38BDF8;
+    }
+    .footer-bar {
+      margin-top: 14px;
+      background: #0F172A;
+      border: 1px solid #1E293B;
+      border-radius: 8px;
+      padding: 10px 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: #94A3B8;
+    }
+    .footer-bar strong {
+      color: #F8FAFC;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="title-block">
+      <h1>The Four Great Debates of the Constituent Assembly (1946–1949)</h1>
+      <p>Ideological contentions, protagonist positions, and the constitutional consensus shaping modern India</p>
+    </div>
+    <div class="badge">CUET UG History · Core Analysis Matrix</div>
+  </div>
+
+  <div class="matrix-grid">
+    <!-- Debate 1 -->
+    <div class="debate-card d1">
+      <div>
+        <div class="card-top">
+          <span class="debate-tag">Debate I</span>
+          <span style="font-size: 12px; color: #94A3B8;">Political Equality vs. Minority Voice</span>
+        </div>
+        <h2 class="debate-title">Separate Electorates vs. Universal Joint Franchise</h2>
+        <div class="arguments-box">
+          <div class="arg-column arg-left">
+            <h4>Case for Separate Electorates</h4>
+            <p><strong>B. Pocker Bahadur</strong> argued separate electorates were vital to prevent political marginalization and ensure Muslims elected their authentic voice.</p>
+          </div>
+          <div class="arg-column arg-right">
+            <h4>Case for Joint Electorates</h4>
+            <p><strong>Patel & Pant</strong> denounced separate electorates as "poison" that led to Partition. <strong>Begum Aizaz Rasul</strong> called them self-destructive for minorities.</p>
+          </div>
+        </div>
+      </div>
+      <div class="consensus-strip">
+        <strong>Constitutional Consensus:</strong> Separate electorates abolished; replaced by single universal joint electorate with fundamental rights protecting religious minorities (Articles 25–30).
+      </div>
+    </div>
+
+    <!-- Debate 2 -->
+    <div class="debate-card d2">
+      <div>
+        <div class="card-top">
+          <span class="debate-tag">Debate II</span>
+          <span style="font-size: 12px; color: #94A3B8;">Fiscal Autonomy vs. National Security</span>
+        </div>
+        <h2 class="debate-title">Federalism: Centralized State vs. Provincial Autonomy</h2>
+        <div class="arguments-box">
+          <div class="arg-column arg-left">
+            <h4>Case for Provincial Autonomy</h4>
+            <p><strong>K. Santhanam</strong> (Madras) warned an overburdened Center would fail; provinces stripped of revenue would become "beggars at the door of the Center."</p>
+          </div>
+          <div class="arg-column arg-right">
+            <h4>Case for a Strong Center</h4>
+            <p><strong>Nehru, Ambedkar & Ayyangar</strong> argued only a formidable Center could withstand communal violence, integrate princely states, and plan national growth.</p>
+          </div>
+        </div>
+      </div>
+      <div class="consensus-strip">
+        <strong>Constitutional Consensus:</strong> Strong federal system with unitary bias; 3 Legislative Lists (Union, State, Concurrent); Union holds residuary powers, emergency powers (Art 356), and core revenues.
+      </div>
+    </div>
+
+    <!-- Debate 3 -->
+    <div class="debate-card d3">
+      <div>
+        <div class="card-top">
+          <span class="debate-tag">Debate III</span>
+          <span style="font-size: 12px; color: #94A3B8;">Linguistic Nationalism vs. Regional Inclusion</span>
+        </div>
+        <h2 class="debate-title">National Language Controversy: Hindi vs. Hindustani & English</h2>
+        <div class="arguments-box">
+          <div class="arg-column arg-left">
+            <h4>Pro-Hindi Demand</h4>
+            <p><strong>R.V. Dhulekar</strong> aggressively advocated Hindi in Devanagari script as the sole National Language, asserting non-Hindi speakers must learn it to stay in India.</p>
+          </div>
+          <div class="arg-column arg-right">
+            <h4>Southern Counter-Arguments</h4>
+            <p><strong>G. Durgabai & Ramalingam Chettiar</strong> warned linguistic imposition would spark alienation; supported Gandhi's inclusive <strong>Hindustani</strong> model.</p>
+          </div>
+        </div>
+      </div>
+      <div class="consensus-strip">
+        <strong>Constitutional Consensus (Munshi-Ayyangar Formula):</strong> Hindi declared the "Official Language" (not National Language) of the Union; English continued for official work for 15 years (later extended).
+      </div>
+    </div>
+
+    <!-- Debate 4 -->
+    <div class="debate-card d4">
+      <div>
+        <div class="card-top">
+          <span class="debate-tag">Debate IV</span>
+          <span style="font-size: 12px; color: #94A3B8;">Social Reparation vs. Formal Equality</span>
+        </div>
+        <h2 class="debate-title">Affirmative Action & Rights of Depressed Castes & Tribals</h2>
+        <div class="arguments-box">
+          <div class="arg-column arg-left">
+            <h4>Demand for Protection</h4>
+            <p><strong>Jaipal Singh</strong> (Adivasis) demanded land protection; <strong>Nagappa & Khanderkar</strong> emphasized Dalits suffered structural social exclusion, not mere numerical minority.</p>
+          </div>
+          <div class="arg-column arg-right">
+            <h4>Democratic State Commitment</h4>
+            <p><strong>Dr. B.R. Ambedkar</strong> insisted political democracy is hollow without social democracy, requiring enforceable constitutional guarantees against discrimination.</p>
+          </div>
+        </div>
+      </div>
+      <div class="consensus-strip">
+        <strong>Constitutional Consensus:</strong> Complete abolition of Untouchability (Article 17); legislative and public employment reservations for Scheduled Castes and Scheduled Tribes; Fifth/Sixth Schedules.
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bar">
+    <div><strong>Historical Insight:</strong> The Indian Constitution was not an imported compromise, but the product of intense deliberative consensus addressing deep societal fractures.</div>
+    <div><strong>Source:</strong> NCERT Class 12 Themes in Indian History (Part III) · OurMocks Exam System</div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Making of the Constitution - Summary Mindmap</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      width: 1440px;
+      height: 880px;
+      background: #0B1120;
+      color: #F8FAFC;
+      font-family: 'Inter', sans-serif;
+      padding: 28px 36px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #1E293B;
+      padding-bottom: 12px;
+    }
+    .title-block h1 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 24px;
+      font-weight: 800;
+      color: #F8FAFC;
+      letter-spacing: -0.02em;
+    }
+    .title-block p {
+      font-size: 13px;
+      color: #94A3B8;
+      margin-top: 2px;
+    }
+    .badge {
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      color: #34D399;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .mindmap-board {
+      position: relative;
+      width: 100%;
+      height: 720px;
+      margin-top: 10px;
+    }
+    .center-hub {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 250px;
+      height: 140px;
+      background: linear-gradient(135deg, #1E293B, #0F172A);
+      border: 2px solid #10B981;
+      border-radius: 18px;
+      box-shadow: 0 0 35px rgba(16, 185, 129, 0.25);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 14px;
+      z-index: 10;
+    }
+    .center-hub h2 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 17px;
+      font-weight: 800;
+      color: #FFFFFF;
+      line-height: 1.25;
+    }
+    .center-hub span {
+      font-size: 11px;
+      font-weight: 600;
+      color: #34D399;
+      margin-top: 5px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .node {
+      position: absolute;
+      width: 335px;
+      background: #111C33;
+      border: 1px solid #1E293B;
+      border-radius: 12px;
+      padding: 12px 14px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.4);
+      z-index: 5;
+    }
+    .node-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 7px;
+      padding-bottom: 5px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .node-header h3 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #FFFFFF;
+    }
+    .node-tag {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 2px 7px;
+      border-radius: 4px;
+    }
+    .node ul {
+      list-style: none;
+      font-size: 11px;
+      line-height: 1.4;
+      color: #CBD5E1;
+    }
+    .node li {
+      position: relative;
+      padding-left: 13px;
+      margin-bottom: 4px;
+    }
+    .node li:last-child {
+      margin-bottom: 0;
+    }
+    .node li::before {
+      content: "›";
+      position: absolute;
+      left: 2px;
+      color: #10B981;
+      font-weight: 800;
+      font-size: 12px;
+    }
+    .node li strong {
+      color: #F8FAFC;
+    }
+
+    /* Node positioning */
+    .n1 { top: 10px; left: 35px; border-top: 3px solid #38BDF8; }
+    .n1 .node-tag { background: rgba(56, 189, 248, 0.15); color: #38BDF8; }
+
+    .n2 { top: 10px; right: 35px; border-top: 3px solid #F59E0B; }
+    .n2 .node-tag { background: rgba(245, 158, 11, 0.15); color: #F59E0B; }
+
+    .n3 { top: 260px; left: 15px; border-top: 3px solid #10B981; }
+    .n3 .node-tag { background: rgba(16, 185, 129, 0.15); color: #10B981; }
+
+    .n4 { top: 260px; right: 15px; border-top: 3px solid #EC4899; }
+    .n4 .node-tag { background: rgba(236, 72, 153, 0.15); color: #F472B6; }
+
+    .n5 { bottom: 15px; left: 35px; border-top: 3px solid #A855F7; }
+    .n5 .node-tag { background: rgba(168, 85, 247, 0.15); color: #C084FC; }
+
+    .n6 { bottom: 15px; right: 35px; border-top: 3px solid #06B6D4; }
+    .n6 .node-tag { background: rgba(6, 182, 212, 0.15); color: #22D3EE; }
+
+    /* SVG Connecting lines */
+    .connections {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
+    }
+    line {
+      stroke: #334155;
+      stroke-width: 1.5;
+      stroke-dasharray: 4 4;
+    }
+    .footer-bar {
+      background: #0F172A;
+      border: 1px solid #1E293B;
+      border-radius: 8px;
+      padding: 7px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11.5px;
+      color: #94A3B8;
+    }
+    .footer-bar strong {
+      color: #F8FAFC;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="title-block">
+      <h1>The Making of the Constitution — Comprehensive Mindmap</h1>
+      <p>Six core pillars of India's constituent process, key debates, architectural choices, and final adoption</p>
+    </div>
+    <div class="badge">Class 12 History · Theme 15 Mindmap</div>
+  </div>
+
+  <div class="mindmap-board">
+    <svg class="connections">
+      <!-- Hub (720, 360) to nodes -->
+      <line x1="720" y1="310" x2="202" y2="120" />
+      <line x1="720" y1="310" x2="1237" y2="120" />
+      <line x1="600" y1="360" x2="350" y2="350" />
+      <line x1="840" y1="360" x2="1090" y2="350" />
+      <line x1="720" y1="410" x2="202" y2="590" />
+      <line x1="720" y1="410" x2="1237" y2="590" />
+    </svg>
+
+    <!-- Center Hub -->
+    <div class="center-hub">
+      <h2>Framing The Constitution</h2>
+      <span>1946 – 1950 · REPUBLIC FOUNDATION</span>
+    </div>
+
+    <!-- Node 1: Historical Crucible -->
+    <div class="node n1">
+      <div class="node-header">
+        <h3>1. Crucible of Partition & Genesis</h3>
+        <span class="node-tag">Context</span>
+      </div>
+      <ul>
+        <li><strong>Cabinet Mission Plan (1946):</strong> Assembly indirectly elected by provincial legislatures.</li>
+        <li><strong>Partition Impact:</strong> Membership reduced from 389 to 299; Muslim League boycotted.</li>
+        <li><strong>Turmoil:</strong> Framing occurred amidst horrific communal riots, refugee crisis, and integration of 565 princely states.</li>
+        <li><strong>Congress Dominance:</strong> Congress held 82% of seats, but encompassed a vast plural spectrum.</li>
+      </ul>
+    </div>
+
+    <!-- Node 2: Key Architects -->
+    <div class="node n2">
+      <div class="node-header">
+        <h3>2. The Architects & Leadership</h3>
+        <span class="node-tag">Leadership</span>
+      </div>
+      <ul>
+        <li><strong>Congress Triumvirate:</strong> Nehru (democratic vision), Patel (reconciler & state integration), Prasad (Assembly President).</li>
+        <li><strong>Dr. B.R. Ambedkar:</strong> Chairman of the Drafting Committee; anchored constitutional morality.</li>
+        <li><strong>Sir B.N. Rau:</strong> Constitutional Advisor; synthesized global constitutional frameworks.</li>
+        <li><strong>S.N. Mukherjee:</strong> Chief Draftsman; translated complex ideas into precise legal language.</li>
+      </ul>
+    </div>
+
+    <!-- Node 3: Objectives Resolution -->
+    <div class="node n3">
+      <div class="node-header">
+        <h3>3. Objectives Resolution & Ideals</h3>
+        <span class="node-tag">Vision</span>
+      </div>
+      <ul>
+        <li><strong>Moved 13 Dec 1946:</strong> Jawaharlal Nehru introduced the defining ideological charter.</li>
+        <li><strong>Sovereign Republic:</strong> Proclaimed India an Independent Sovereign Republic (later Socialist, Secular).</li>
+        <li><strong>Core Guarantees:</strong> Social, economic, and political justice; equality of status and opportunity.</li>
+        <li><strong>Universal Franchise:</strong> Adopted universal adult franchise without property or educational curbs.</li>
+      </ul>
+    </div>
+
+    <!-- Node 4: Rights & Minorities -->
+    <div class="node n4">
+      <div class="node-header">
+        <h3>4. Rights, Minorities & Social Equity</h3>
+        <span class="node-tag">Debates</span>
+      </div>
+      <ul>
+        <li><strong>Separate Electorates Defeated:</strong> Opposed by Patel, Pant, and Begum Aizaz Rasul as divisive.</li>
+        <li><strong>Untouchability Abolished:</strong> Article 17 outlawed caste untouchability completely.</li>
+        <li><strong>Adivasi Advocacy:</strong> Jaipal Singh demanded land protection and tribal representation.</li>
+        <li><strong>Affirmative Action:</strong> Legislative and public job reservations for SCs and STs.</li>
+      </ul>
+    </div>
+
+    <!-- Node 5: Federal Structure -->
+    <div class="node n5">
+      <div class="node-header">
+        <h3>5. Federalism & Distribution of Powers</h3>
+        <span class="node-tag">Structure</span>
+      </div>
+      <ul>
+        <li><strong>Strong Center:</strong> Championed by Nehru and Ambedkar to preserve national unity and planning.</li>
+        <li><strong>Provincial Protest:</strong> K. Santhanam warned a financially starved province would cripple governance.</li>
+        <li><strong>Three Lists:</strong> Union List (97 items), State List (66 items), Concurrent List (47 items).</li>
+        <li><strong>Emergency Powers:</strong> Union given sweeping powers under Article 356 and residuary authority.</li>
+      </ul>
+    </div>
+
+    <!-- Node 6: Language & Enactment -->
+    <div class="node n6">
+      <div class="node-header">
+        <h3>6. Language Compromise & Enactment</h3>
+        <span class="node-tag">Adoption</span>
+      </div>
+      <ul>
+        <li><strong>Language Conflict:</strong> R.V. Dhulekar pushed for Hindi; resisted by South (G. Durgabai).</li>
+        <li><strong>Munshi-Ayyangar Formula:</strong> Hindi as Official Language; English continued for official use.</li>
+        <li><strong>Adoption (26 Nov 1949):</strong> Signed by 284 members; celebrated as Constitution Day.</li>
+        <li><strong>Enforcement (26 Jan 1950):</strong> Inaugurated Republic, commemorating the 1930 Purna Swaraj Day.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bar">
+    <div><strong>Mandatory Overview:</strong> Visual synthesis of NCERT Theme 15 covering all high-yield sub-themes for CUET UG History.</div>
+    <div><strong>Source:</strong> NCERT Class 12 Themes in Indian History (Part III) · OurMocks Notes</div>
+  </div>
+
+</body>
+</html>
