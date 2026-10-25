@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Shastric Norms vs Historical Deviations — Comparative Quadrant Matrix</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background-color: #071A4D;
+    background-image: 
+      radial-gradient(circle at 15% 15%, rgba(31, 94, 255, 0.16) 0%, transparent 40%),
+      radial-gradient(circle at 85% 85%, rgba(184, 255, 52, 0.08) 0%, transparent 35%);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #F8FAFC;
+    padding: 30px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+
+  /* Header */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    padding-bottom: 14px;
+  }
+  .badge {
+    background: rgba(184, 255, 52, 0.12);
+    border: 1px solid #B8FF34;
+    color: #B8FF34;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 6px;
+  }
+  .title {
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: #FFFFFF;
+  }
+  .subtitle {
+    font-size: 13px;
+    color: #94A3B8;
+    margin-top: 3px;
+  }
+  .brand-pill {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 7px 14px;
+    border-radius: 8px;
+    font-size: 11.5px;
+    color: #E2E8F0;
+    font-weight: 600;
+    text-align: right;
+  }
+  .brand-pill span {
+    color: #B8FF34;
+    display: block;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  /* Quadrant Grid */
+  .quadrant-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 16px;
+    margin-top: 14px;
+    flex-grow: 1;
+  }
+
+  .quad-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 16px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    backdrop-filter: blur(8px);
+    position: relative;
+  }
+
+  .quad-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .quad-title {
+    font-size: 14.5px;
+    font-weight: 700;
+    color: #B8FF34;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .quad-tag {
+    font-size: 10.5px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    background: rgba(31, 94, 255, 0.2);
+    border: 1px solid rgba(31, 94, 255, 0.4);
+    color: #93C5FD;
+  }
+
+  .sub-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    flex-grow: 1;
+  }
+
+  .sub-box {
+    background: rgba(255, 255, 255, 0.025);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 8px;
+    padding: 10px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .sub-box.norm { border-top: 3px solid #1F5EFF; }
+  .sub-box.deviation { border-top: 3px solid #F59E0B; }
+
+  .sub-label {
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 2px;
+  }
+  .sub-box.norm .sub-label { color: #93C5FD; }
+  .sub-box.deviation .sub-label { color: #FCD34D; }
+
+  .sub-body {
+    font-size: 11.5px;
+    line-height: 1.4;
+    color: #CBD5E1;
+    word-break: break-word;
+  }
+  .sub-body strong {
+    color: #FFFFFF;
+  }
+
+  /* Footer */
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 10px;
+    font-size: 11.5px;
+    color: #64748B;
+  }
+  .footer strong {
+    color: #B8FF34;
+  }
+</style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div>
+      <div class="badge">Themes in Indian History · Chapter 3</div>
+      <div class="title">Kinship, Gender & Authority: Shastric Norms vs Historical Deviations</div>
+      <div class="subtitle">Analytical 2×2 matrix contrasting orthodox Brahmanical rules against documented archaeological, epigraphic, and textual realities</div>
+    </div>
+    <div class="brand-pill">
+      <span>OurMocks Study Visuals</span>
+      CUET UG History · Early Societies
+    </div>
+  </div>
+
+  <!-- Quadrant Grid -->
+  <div class="quadrant-grid">
+    
+    <!-- Quadrant 1: Marriage Norms & Forms -->
+    <div class="quad-card">
+      <div class="quad-header">
+        <div class="quad-title">Quadrant 1 · Marriage Systems & The 8 Forms</div>
+        <div class="quad-tag">Conjugal Framework</div>
+      </div>
+      <div class="sub-columns">
+        <div class="sub-box norm">
+          <div class="sub-label">Dharmashastric Norm</div>
+          <div class="sub-body"><strong>Exogamy Mandatory:</strong> Marrying outside the unit; <em>Kanyadana</em> (gifting daughter at puberty) is father's supreme religious duty. Manusmriti lists <strong>8 marriage types</strong>: first 4 praised (dowered gifts), last 4 condemned (abduction, purchase).</div>
+        </div>
+        <div class="sub-box deviation">
+          <div class="sub-label">Documented Reality</div>
+          <div class="sub-body"><strong>Endogamy & Polyandry:</strong> Cross-cousin marriage was celebrated in southern India; <strong>Satavahana kings practiced polygyny</strong> (multiple wives); the central epic hero Draupadi engaged in <strong>polyandry</strong> (five Pandava husbands).</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quadrant 2: Gotra Rules & Matronymics -->
+    <div class="quad-card">
+      <div class="quad-header">
+        <div class="quad-title">Quadrant 2 · The Gotra System & Rulers' Identities</div>
+        <div class="quad-tag">Lineage Rules</div>
+      </div>
+      <div class="sub-columns">
+        <div class="sub-box norm">
+          <div class="sub-label">Brahmanical Rule (c. 1000 BCE)</div>
+          <div class="sub-body"><strong>Two Strict Principles:</strong> 1. Women must abandon father's gotra and adopt husband's gotra upon marriage; 2. Persons sharing the same Vedic gotra (clan ancestor) could never marry each other (*sagotra* taboo).</div>
+        </div>
+        <div class="sub-box deviation">
+          <div class="sub-label">Satavahana Counter-Evidence</div>
+          <div class="sub-body"><strong>Retained Gotra & Matronymics:</strong> Satavahana queens retained father's gotras (Gautama and Vashistha); rulers used <strong>matronymics</strong> (*Gautamiputra*, *Vashisthiputra*); royal marriages occurred within the same gotra clan.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quadrant 3: Property Inheritance & Gender -->
+    <div class="quad-card">
+      <div class="quad-header">
+        <div class="quad-title">Quadrant 3 · Gendered Access to Property & Wealth</div>
+        <div class="quad-tag">Economic Rights</div>
+      </div>
+      <div class="sub-columns">
+        <div class="sub-box norm">
+          <div class="sub-label">Manusmriti Legal Injunctions</div>
+          <div class="sub-body"><strong>Patrilineal Devolution:</strong> Paternal estate divided strictly among sons upon father's death (special share for eldest); women had no claim on ancestral land; entitled only to <strong>Stridhana</strong> (bridal gifts) which husbands could not touch.</div>
+        </div>
+        <div class="sub-box deviation">
+          <div class="sub-label">Royal Women's Exceptions</div>
+          <div class="sub-body"><strong>Prabhavati Gupta's Land Grants:</strong> Inscriptions show queen regent Prabhavati Gupta granted land directly to Brahmanas, demonstrating that elite royal women exercised property agency barred to common women.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quadrant 4: Ideological Justifications of Hierarchy -->
+    <div class="quad-card">
+      <div class="quad-header">
+        <div class="quad-title">Quadrant 4 · Divine Creation vs The Social Contract</div>
+        <div class="quad-tag">Legitimizing Ideology</div>
+      </div>
+      <div class="sub-columns">
+        <div class="sub-box norm">
+          <div class="sub-label">Vedic / Shastric Theory</div>
+          <div class="sub-body"><strong>Cosmic Divine Ordination:</strong> Social rank is ordained by birth in the cosmic <em>Purusha Sukta</em>; kings rule by divine mandate; poverty or low varna status is justified as karmic retribution for past deeds.</div>
+        </div>
+        <div class="sub-box deviation">
+          <div class="sub-label">Buddhist Sutta Pitaka Myth</div>
+          <div class="sub-body"><strong>The Mahasammata Contract:</strong> Kingship was human-made! In a golden age, human greed led people to elect a leader (*Mahasammata* / "the great chosen") to maintain order in exchange for 1/6th rice. Kingship is contractual, not divine.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div><strong>Key Exam Distinction:</strong> Dharmashastras represented ideal prescriptive norms written by Brahmanas, not uniform social practice across the subcontinent.</div>
+    <div>Eight Marriage Forms: <strong>First 4 Praised</strong> · Satavahana Queens: <strong>Gautami & Vashisthi</strong> · Buddhist Myth: <strong>Mahasammata (Sutta Pitaka)</strong> · www.ourmocks.com</div>
+  </div>
+
+</body>
+</html>
