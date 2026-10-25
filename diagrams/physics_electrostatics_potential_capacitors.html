@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Electric Potential, Dielectrics and Capacitance Architecture Matrix</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      width: 1440px;
+      height: 880px;
+      background-color: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0F172A;
+      position: relative;
+      overflow: hidden;
+      padding: 24px 32px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #E2E8F0;
+      padding-bottom: 12px;
+      margin-bottom: 20px;
+    }
+    .header-left h1 {
+      font-size: 22px;
+      font-weight: 800;
+      color: #071A4D;
+      letter-spacing: -0.02em;
+    }
+    .header-left p {
+      font-size: 13px;
+      color: #475569;
+      margin-top: 2px;
+      font-weight: 500;
+    }
+    .header-badge {
+      background: #F0FDF4;
+      color: #166534;
+      border: 1px solid #BBF7D0;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 14px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* 4-Column Layout */
+    .matrix-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      height: 720px;
+    }
+
+    .column {
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      border-radius: 14px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+      overflow: hidden;
+    }
+
+    .col-header {
+      padding: 12px 14px;
+      border-bottom: 1px solid #E2E8F0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .col-header h2 {
+      font-size: 13.5px;
+      font-weight: 800;
+      color: #071A4D;
+    }
+    .col-badge {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+      text-transform: uppercase;
+    }
+
+    /* Column Themes */
+    .col-pot { border-top: 5px solid #0284C7; }
+    .col-pot .col-badge { background: #E0F2FE; color: #0369A1; }
+
+    .col-equi { border-top: 5px solid #16A34A; }
+    .col-equi .col-badge { background: #DCFCE7; color: #15803D; }
+
+    .col-diel { border-top: 5px solid #EA580C; }
+    .col-diel .col-badge { background: #FFEDD5; color: #C2410C; }
+
+    .col-cap { border-top: 5px solid #9333EA; }
+    .col-cap .col-badge { background: #F3E8FF; color: #7E22CE; }
+
+    .col-content {
+      padding: 10px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      overflow: hidden;
+      flex: 1;
+    }
+
+    .card {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 8px;
+      padding: 7px 9px;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .card-title {
+      font-size: 11.5px;
+      font-weight: 800;
+      color: #0F172A;
+    }
+    .tag {
+      font-size: 9px;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 4px;
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      color: #475569;
+    }
+
+    .card p {
+      font-size: 10.5px;
+      color: #334155;
+      line-height: 1.35;
+    }
+    .card strong {
+      color: #0F172A;
+      font-weight: 700;
+    }
+
+    .formula-row {
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      border-radius: 6px;
+      padding: 4px 7px;
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+      font-size: 10.5px;
+      font-weight: 700;
+      color: #0F172A;
+      text-align: center;
+      margin: 2px 0;
+    }
+
+    .callout {
+      border-left: 3px solid #0284C7;
+      background: #E0F2FE;
+      padding: 4px 7px;
+      border-radius: 0 6px 6px 0;
+      font-size: 10px;
+      color: #0369A1;
+      line-height: 1.3;
+      margin-top: 2px;
+    }
+    .callout-green {
+      border-left-color: #16A34A;
+      background: #DCFCE7;
+      color: #15803D;
+    }
+    .callout-orange {
+      border-left-color: #EA580C;
+      background: #FFEDD5;
+      color: #C2410C;
+    }
+    .callout-purple {
+      border-left-color: #9333EA;
+      background: #F3E8FF;
+      color: #7E22CE;
+    }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 14px;
+      font-size: 11px;
+      color: #64748B;
+      font-weight: 500;
+      border-top: 1px solid #E2E8F0;
+      padding-top: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-left">
+      <h1>Electric Potential, Dielectrics & Capacitance Architecture Matrix</h1>
+      <p>Scalar Potential Fields, Equipotential Topologies, Polarization Mechanics & Capacitive Energy Networks</p>
+    </div>
+    <div class="header-badge">CUET UG Physics · Unit 1</div>
+  </header>
+
+  <div class="matrix-grid">
+
+    <!-- Column 1: Electric Potential -->
+    <div class="column col-pot">
+      <div class="col-header">
+        <h2>1. Electrostatic Potential</h2>
+        <span class="col-badge">Scalar Energy</span>
+      </div>
+      <div class="col-content">
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Potential & Potential Difference</span>
+            <span class="tag">Work / Charge</span>
+          </div>
+          <div class="formula-row">V_B - V_A = -∫_A^B E · dr = W_ext / q₀</div>
+          <p><strong>Scalar Nature:</strong> 1 Volt = 1 Joule / Coulomb. Independent of path (conservative field, <strong>∮ E · dr = 0</strong>).</p>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Point Charge & Dipole Potential</span>
+            <span class="tag">Radial Decay</span>
+          </div>
+          <p><strong>Point Charge:</strong> <strong>V(r) = [1 / (4πε₀)] · [q / r]</strong> (retains sign of q; falls as 1/r).</p>
+          <p><strong>Short Dipole:</strong> <strong>V(r, θ) = [1 / (4πε₀)] · [p cos θ / r²]</strong>.</p>
+          <div class="callout">
+            <strong>Equatorial Plane (θ = 90°):</strong> V = 0 everywhere, but E ≠ 0! Potential decays as 1/r².
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Potential Gradient & Field</span>
+            <span class="tag">Gradient Vector</span>
+          </div>
+          <div class="formula-row">E = -dV/dr ⟹ E = -(∂V/∂x î + ∂V/∂y ĵ + ∂V/∂z k̂)</div>
+          <p><strong>Directional Rule:</strong> Electric field points strictly in direction of maximum potential decrease.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Column 2: Equipotential & System Energy -->
+    <div class="column col-equi">
+      <div class="col-header">
+        <h2>2. Equipotential & System Energy</h2>
+        <span class="col-badge">Surfaces & Energy</span>
+      </div>
+      <div class="col-content">
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Equipotential Surfaces</span>
+            <span class="tag">Zero Work</span>
+          </div>
+          <p><strong>Core Properties:</strong> Potential is identical at all points (ΔV = 0 ⟹ W = q·ΔV = 0).</p>
+          <p><strong>Orthogonality:</strong> Electric field lines are always mutually perpendicular (normal) to equipotential surfaces.</p>
+          <div class="callout callout-green">
+            <strong>Surface Geometries:</strong> Point charge: concentric spheres; Line charge: coaxial cylinders; Uniform field: parallel equidistant planes.
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">System Potential Energy (U)</span>
+            <span class="tag">Assembly Work</span>
+          </div>
+          <div class="formula-row">U = [1 / (4πε₀)] · [q₁ q₂ / r₁₂]</div>
+          <p><strong>Multi-Charge System:</strong> Total energy is algebraic sum over all distinct pairs: <strong>U_total = Σ_(i&lt;j) [k q_i q_j / r_ij]</strong>.</p>
+          <p><strong>Like Charges (q₁q₂ &gt; 0):</strong> U &gt; 0 (repulsive work); <strong>Unlike Charges (q₁q₂ &lt; 0):</strong> U &lt; 0 (bound state).</p>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Dipole in Electrostatic Field</span>
+            <span class="tag">Orientational U</span>
+          </div>
+          <p><strong>Potential Energy:</strong> <strong>U = -p · E = -p E cos θ</strong>.</p>
+          <p><strong>Rotation Work:</strong> Work to rotate dipole from θ₁ to θ₂: <strong>W = p E (cos θ₁ - cos θ₂)</strong>.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Column 3: Dielectrics & Polarization -->
+    <div class="column col-diel">
+      <div class="col-header">
+        <h2>3. Dielectrics & Polarization</h2>
+        <span class="col-badge">Material Response</span>
+      </div>
+      <div class="col-content">
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Polar vs Non-Polar Dielectrics</span>
+            <span class="tag">Molecular Dipoles</span>
+          </div>
+          <p><strong>Non-Polar:</strong> Centers of + and - charges coincide (H₂, O₂, CO₂). Permanent dipole moment = 0. Acquire induced dipole in E.</p>
+          <p><strong>Polar:</strong> Centers are separated (H₂O, HCl, NH₃). Possess permanent dipoles; torque aligns them against thermal agitation.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Polarization Vector & Bound Charge</span>
+            <span class="tag">P = χ_e ε₀ E</span>
+          </div>
+          <div class="formula-row">E_net = E₀ - E_p = E₀ / K</div>
+          <p><strong>Polarization (P):</strong> Dipole moment per unit volume [C/m²]. Induces bound surface charge <strong>σ_b = P · n̂</strong>.</p>
+          <div class="callout callout-orange">
+            <strong>Dielectric Constant (K):</strong> K = ε_r = 1 + χ_e. Internal field is reduced by factor K, where K ≥ 1 (K = ∞ for metals).
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Dielectric Strength & Breakdown</span>
+            <span class="tag">Field Limits</span>
+          </div>
+          <p><strong>Definition:</strong> Maximum electric field a dielectric withstands without ionization breakdown (Air: ~3 × 10⁶ V/m).</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Column 4: Capacitors & Energy -->
+    <div class="column col-cap">
+      <div class="col-header">
+        <h2>4. Capacitors & Energy Dynamics</h2>
+        <span class="col-badge">Storage Networks</span>
+      </div>
+      <div class="col-content">
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Parallel Plate Capacitor</span>
+            <span class="tag">C = Q / V</span>
+          </div>
+          <p><strong>Vacuum:</strong> <strong>C₀ = ε₀ A / d</strong>. Isolated spherical conductor: C = 4πε₀ R.</p>
+          <p><strong>Dielectric Slab (thickness t):</strong> <strong>C = ε₀ A / [d - t(1 - 1/K)]</strong>.</p>
+          <p><strong>Conducting Slab (t):</strong> K = ∞ ⟹ <strong>C = ε₀ A / (d - t)</strong>.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Series & Parallel Combinations</span>
+            <span class="tag">Network Rules</span>
+          </div>
+          <p><strong>Series (Equal Q):</strong> <strong>1/C_s = 1/C₁ + 1/C₂ + ...</strong> (C_s &lt; smallest C).</p>
+          <p><strong>Parallel (Equal V):</strong> <strong>C_p = C₁ + C₂ + ...</strong> (C_p &gt; largest C).</p>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Energy Stored & Density</span>
+            <span class="tag">U = ½ C V²</span>
+          </div>
+          <div class="formula-row">U = ½ C V² = Q² / (2C) = ½ Q V</div>
+          <p><strong>Electrostatic Energy Density:</strong> <strong>u = ½ ε₀ E²</strong> [J/m³].</p>
+          <div class="callout callout-purple">
+            <strong>Dielectric Insertion Impact:</strong><br>
+            • Battery Disconnected (Q const): C ↑ K, V ↓ V₀/K, U ↓ U₀/K.<br>
+            • Battery Connected (V const): C ↑ K, Q ↑ KQ₀, U ↑ KU₀.
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <span>OurMocks Exam Prep Series · CUET UG Physics Core Diagrams</span>
+    <span>NCERT Class XII Physics · Chapter 2: Electrostatic Potential and Capacitance · Verified Syllabus Architecture</span>
+  </footer>
+
+</body>
+</html>

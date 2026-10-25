@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CUET UG Physics Unit 1 Electrostatics Master Synthesis Mindmap</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      width: 1440px;
+      height: 880px;
+      background-color: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0F172A;
+      position: relative;
+      overflow: hidden;
+      padding: 24px 32px;
+    }
+
+    header {
+      position: absolute;
+      top: 18px;
+      left: 32px;
+      right: 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #E2E8F0;
+      padding-bottom: 8px;
+      z-index: 10;
+    }
+    .header-left h1 {
+      font-size: 22px;
+      font-weight: 800;
+      color: #071A4D;
+      letter-spacing: -0.02em;
+    }
+    .header-left p {
+      font-size: 12.5px;
+      color: #475569;
+      margin-top: 2px;
+      font-weight: 500;
+    }
+    .header-badge {
+      background: #EFF6FF;
+      color: #1E40AF;
+      border: 1px solid #BFDBFE;
+      font-size: 10.5px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* SVG Connectors */
+    svg.connections {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1440px;
+      height: 880px;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Central Hub */
+    .mindmap-center {
+      position: absolute;
+      top: 385px;
+      left: 575px;
+      width: 290px;
+      height: 110px;
+      background: #071A4D;
+      border: 3px solid #2563EB;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(7, 26, 77, 0.18), 0 0 0 6px #EFF6FF;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 12px 16px;
+      z-index: 5;
+    }
+    .mindmap-center .sub-label {
+      font-size: 9.5px;
+      font-weight: 800;
+      color: #38BDF8;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 3px;
+    }
+    .mindmap-center h2 {
+      font-size: 15px;
+      font-weight: 900;
+      color: #FFFFFF;
+      letter-spacing: -0.01em;
+      line-height: 1.25;
+    }
+    .mindmap-center .bottom-tag {
+      font-size: 9.5px;
+      color: #94A3B8;
+      margin-top: 4px;
+      font-weight: 500;
+    }
+
+    /* Branch Cards */
+    .branch-card {
+      position: absolute;
+      width: 395px;
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      border-radius: 12px;
+      padding: 10px 14px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+      z-index: 4;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    /* Left Positions */
+    .card-left-1 { top: 78px; left: 40px; height: 236px; border-left: 5px solid #2563EB; }
+    .card-left-2 { top: 326px; left: 40px; height: 234px; border-left: 5px solid #0D9488; }
+    .card-left-3 { top: 572px; left: 40px; height: 236px; border-left: 5px solid #D97706; }
+
+    /* Right Positions */
+    .card-right-1 { top: 78px; left: 1005px; height: 236px; border-right: 5px solid #7C3AED; }
+    .card-right-2 { top: 326px; left: 1005px; height: 234px; border-right: 5px solid #0284C7; }
+    .card-right-3 { top: 572px; left: 1005px; height: 236px; border-right: 5px solid #9333EA; }
+
+    .card-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #F1F5F9;
+      padding-bottom: 4px;
+    }
+    .card-head h3 {
+      font-size: 13px;
+      font-weight: 800;
+      color: #0F172A;
+    }
+    .badge {
+      font-size: 9.5px;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+    .b-blue { background: #EFF6FF; color: #1E40AF; }
+    .b-teal { background: #F0FDFA; color: #0F766E; }
+    .b-amber { background: #FEF3C7; color: #92400E; }
+    .b-purple { background: #FAF5FF; color: #6B21A8; }
+    .b-sky { background: #E0F2FE; color: #0369A1; }
+    .b-violet { background: #F3E8FF; color: #7E22CE; }
+
+    .bullet-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 2.5px;
+      font-size: 9.8px;
+      color: #334155;
+      line-height: 1.32;
+    }
+    .bullet-list li {
+      position: relative;
+      padding-left: 12px;
+    }
+    .bullet-list li::before {
+      content: "▪";
+      position: absolute;
+      left: 0;
+      font-size: 10px;
+    }
+    .card-left-1 .bullet-list li::before { color: #2563EB; }
+    .card-left-2 .bullet-list li::before { color: #0D9488; }
+    .card-left-3 .bullet-list li::before { color: #D97706; }
+    .card-right-1 .bullet-list li::before { color: #7C3AED; }
+    .card-right-2 .bullet-list li::before { color: #0284C7; }
+    .card-right-3 .bullet-list li::before { color: #9333EA; }
+
+    .bullet-list strong {
+      color: #0F172A;
+    }
+
+    .key-metric-strip {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 5px;
+      padding: 3.5px 7px;
+      font-size: 9.2px;
+      color: #475569;
+      margin-top: 1px;
+      line-height: 1.25;
+      font-family: "SFMono-Regular", Consolas, Menlo, monospace;
+    }
+    .key-metric-strip strong {
+      color: #0F172A;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 12px;
+      left: 32px;
+      right: 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      color: #64748B;
+      font-weight: 500;
+      border-top: 1px solid #E2E8F0;
+      padding-top: 6px;
+      z-index: 10;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-left">
+      <h1>Unit 1: Electrostatics Master Synthesis Mindmap</h1>
+      <p>Charges, Coulomb Interactions, Field Lines, Gauss's Theorem, Potential Topologies & Capacitive Networks</p>
+    </div>
+    <div class="header-badge">CUET UG Physics · Unit 1</div>
+  </header>
+
+  <!-- SVG Connectors -->
+  <svg class="connections">
+    <!-- Center to Left 1 -->
+    <path d="M 575 420 C 490 420, 470 196, 435 196" fill="none" stroke="#2563EB" stroke-width="2" stroke-dasharray="4,3" opacity="0.6"/>
+    <!-- Center to Left 2 -->
+    <path d="M 575 440 C 500 440, 480 443, 435 443" fill="none" stroke="#0D9488" stroke-width="2" stroke-dasharray="4,3" opacity="0.6"/>
+    <!-- Center to Left 3 -->
+    <path d="M 575 460 C 490 460, 470 690, 435 690" fill="none" stroke="#D97706" stroke-width="2" stroke-dasharray="4,3" opacity="0.6"/>
+
+    <!-- Center to Right 1 -->
+    <path d="M 865 420 C 945 420, 965 196, 1005 196" fill="none" stroke="#7C3AED" stroke-width="2" stroke-dasharray="4,3" opacity="0.6"/>
+    <!-- Center to Right 2 -->
+    <path d="M 865 440 C 940 440, 960 443, 1005 443" fill="none" stroke="#0284C7" stroke-width="2" stroke-dasharray="4,3" opacity="0.6"/>
+    <!-- Center to Right 3 -->
+    <path d="M 865 460 C 945 460, 965 690, 1005 690" fill="none" stroke="#9333EA" stroke-width="2" stroke-dasharray="4,3" opacity="0.6"/>
+  </svg>
+
+  <!-- Central Hub -->
+  <div class="mindmap-center">
+    <div class="sub-label">CUET UG Physics Core</div>
+    <h2>Unit 1: Electrostatics</h2>
+    <div class="bottom-tag">Forces, Fields, Potentials & Capacitance</div>
+  </div>
+
+  <!-- Left 1: Charges & Coulomb's Law -->
+  <div class="branch-card card-left-1">
+    <div class="card-head">
+      <h3>1. Charges & Coulomb Force</h3>
+      <span class="badge b-blue">Point Charges</span>
+    </div>
+    <ul class="bullet-list">
+      <li><strong>Postulates of Charge:</strong> Quantization (<strong>q = ±ne</strong>, e = 1.6 × 10⁻¹⁹ C), conservation of total charge, relativistic invariance.</li>
+      <li><strong>Coulomb's Law:</strong> <strong>F = [1 / (4πε₀)] · [q₁ q₂ / r²] r̂</strong>. Central, conservative, obeys Newton's 3rd Law.</li>
+      <li><strong>Dielectric Permittivity:</strong> Force in medium <strong>F_m = F₀ / K</strong>, where K = ε_r ≥ 1 (K = ∞ for ideal conductors).</li>
+      <li><strong>Principle of Superposition:</strong> Net force on test charge is vector sum: <strong>F_net = Σ F_i</strong>. Two-body forces remain invariant.</li>
+    </ul>
+    <div class="key-metric-strip">
+      <strong>Constants:</strong> ε₀ = 8.854 × 10⁻¹² C²·N⁻¹·m⁻² | 1/(4πε₀) = 8.99 × 10⁹ N·m²·C⁻²
+    </div>
+  </div>
+
+  <!-- Left 2: Electric Fields & Dipole -->
+  <div class="branch-card card-left-2">
+    <div class="card-head">
+      <h3>2. Electric Fields & Dipoles</h3>
+      <span class="badge b-teal">Field Topologies</span>
+    </div>
+    <ul class="bullet-list">
+      <li><strong>Field Definition:</strong> Force per unit positive test charge: <strong>E = lim(q₀→0) [F/q₀] = [kq / r²] r̂</strong> [N/C or V/m].</li>
+      <li><strong>Field Lines:</strong> Continuous curves from +q to -q; never intersect; tangents give direction; dense lines denote strong E.</li>
+      <li><strong>Electric Dipole Moment:</strong> <strong>p = q · 2a</strong> (directed strictly from -q to +q).</li>
+      <li><strong>Dipole Fields:</strong> Axial: <strong>E_ax = 2kp / r³</strong> (along p); Equatorial: <strong>E_eq = kp / r³</strong> (antiparallel to p); <strong>E_ax = 2·E_eq</strong>.</li>
+    </ul>
+    <div class="key-metric-strip">
+      <strong>Dipole Scaling:</strong> E ∝ 1/r³ (short dipole) vs E ∝ 1/r² (point charge monopole).
+    </div>
+  </div>
+
+  <!-- Left 3: Dipole in External Field -->
+  <div class="branch-card card-left-3">
+    <div class="card-head">
+      <h3>3. Dipole Dynamics in External Fields</h3>
+      <span class="badge b-amber">Torque & Energy</span>
+    </div>
+    <ul class="bullet-list">
+      <li><strong>Uniform Field Dynamics:</strong> Net translational force <strong>F_net = 0</strong>; pure torque <strong>τ = p × E = p E sin θ</strong>.</li>
+      <li><strong>Non-Uniform Field:</strong> Experiences both net translational force <strong>F ≠ 0</strong> and torque <strong>τ ≠ 0</strong>.</li>
+      <li><strong>Electrostatic Potential Energy:</strong> <strong>U = -p · E = -p E cos θ</strong>.</li>
+      <li><strong>Equilibrium States:</strong> θ = 0° (Stable, U_min = -pE); θ = 180° (Unstable, U_max = +pE).</li>
+    </ul>
+    <div class="key-metric-strip">
+      <strong>Work of Rotation:</strong> W(θ₁ → θ₂) = -ΔU = p E (cos θ₁ - cos θ₂).
+    </div>
+  </div>
+
+  <!-- Right 1: Gauss's Law Applications -->
+  <div class="branch-card card-right-1">
+    <div class="card-head">
+      <h3>4. Gauss's Law & Symmetries</h3>
+      <span class="badge b-purple">Flux Theorem</span>
+    </div>
+    <ul class="bullet-list">
+      <li><strong>Gauss's Theorem:</strong> <strong>Φ_E = ∮ E · dA = q_enclosed / ε₀</strong>. Independent of Gaussian surface geometry or charge position.</li>
+      <li><strong>Infinite Straight Wire:</strong> Coaxial cylinder ⟹ <strong>E = λ / (2 π ε₀ r)</strong> [E ∝ 1/r, radial].</li>
+      <li><strong>Infinite Plane Sheet:</strong> Pillbox surface ⟹ <strong>E = σ / (2 ε₀)</strong> [Uniform, distance-independent].</li>
+      <li><strong>Thin Spherical Shell:</strong> Inside (r &lt; R): <strong>E = 0</strong>; Surface: <strong>E = σ / ε₀</strong>; Outside (r ≥ R): <strong>E = kq / r²</strong>.</li>
+    </ul>
+    <div class="key-metric-strip">
+      <strong>Boundary Jump:</strong> Normal component jumps by ΔE = σ / ε₀ across charged sheet.
+    </div>
+  </div>
+
+  <!-- Right 2: Potential & Equipotential Surfaces -->
+  <div class="branch-card card-right-2">
+    <div class="card-head">
+      <h3>5. Potential & Equipotential Planes</h3>
+      <span class="badge b-sky">Scalar Potential</span>
+    </div>
+    <ul class="bullet-list">
+      <li><strong>Conservative Line Integral:</strong> <strong>∮ E · dr = 0 ⟹ V_B - V_A = -∫_A^B E · dr</strong> [1 V = 1 J/C].</li>
+      <li><strong>Potential Formulas:</strong> Point charge: <strong>V = kq/r</strong>; Dipole: <strong>V = [kp cos θ / r²]</strong> (Equatorial V = 0).</li>
+      <li><strong>Potential Gradient:</strong> <strong>E = -dV/dr</strong>. Field points along maximum potential descent.</li>
+      <li><strong>Equipotential Surfaces:</strong> Surfaces of uniform V (ΔV = 0 ⟹ W = 0); E lines are always orthogonal (E ⊥ surface).</li>
+    </ul>
+    <div class="key-metric-strip">
+      <strong>Conductor Rule:</strong> Volume is equipotential; E_inside = 0, E_surface = (σ/ε₀) n̂.
+    </div>
+  </div>
+
+  <!-- Right 3: Capacitors & Dielectrics -->
+  <div class="branch-card card-right-3">
+    <div class="card-head">
+      <h3>6. Capacitors & Dielectrics</h3>
+      <span class="badge b-violet">Storage Networks</span>
+    </div>
+    <ul class="bullet-list">
+      <li><strong>Parallel Plate:</strong> <strong>C₀ = ε₀ A / d</strong>; with dielectric slab (t): <strong>C = ε₀ A / [d - t(1 - 1/K)]</strong>.</li>
+      <li><strong>Polarization Mechanics:</strong> <strong>P = χ_e ε₀ E</strong>; bound surface charge σ_b reduces internal field: <strong>E = E₀ / K</strong>.</li>
+      <li><strong>Capacitor Combinations:</strong> Series: <strong>1/C_s = Σ (1/C_i)</strong>; Parallel: <strong>C_p = Σ C_i</strong>.</li>
+      <li><strong>Stored Energy & Density:</strong> <strong>U = ½ C V² = Q² / (2C)</strong>; Energy density <strong>u = ½ ε₀ E²</strong> [J/m³].</li>
+    </ul>
+    <div class="key-metric-strip">
+      <strong>Charge Sharing:</strong> V_c = (C₁V₁ + C₂V₂) / (C₁ + C₂) | Loss: ΔU = C₁C₂(V₁-V₂)² / [2(C₁+C₂)]
+    </div>
+  </div>
+
+  <footer>
+    <span>OurMocks Exam Prep Series · CUET UG Physics Core Diagrams</span>
+    <span>NCERT Class XII Physics · Unit 1: Electrostatics (Chapters 1 & 2) · Verified Syllabus Architecture</span>
+  </footer>
+
+</body>
+</html>

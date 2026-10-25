@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Electrostatic Forces, Electric Fields and Gauss's Law Applications</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      width: 1440px;
+      height: 880px;
+      background-color: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0F172A;
+      position: relative;
+      overflow: hidden;
+      padding: 24px 32px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #E2E8F0;
+      padding-bottom: 12px;
+      margin-bottom: 20px;
+    }
+    .header-left h1 {
+      font-size: 22px;
+      font-weight: 800;
+      color: #071A4D;
+      letter-spacing: -0.02em;
+    }
+    .header-left p {
+      font-size: 13px;
+      color: #475569;
+      margin-top: 2px;
+      font-weight: 500;
+    }
+    .header-badge {
+      background: #EFF6FF;
+      color: #1E40AF;
+      border: 1px solid #BFDBFE;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 14px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* 4-Column Layout */
+    .matrix-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      height: 720px;
+    }
+
+    .column {
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      border-radius: 14px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+      overflow: hidden;
+    }
+
+    .col-header {
+      padding: 12px 14px;
+      border-bottom: 1px solid #E2E8F0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .col-header h2 {
+      font-size: 13.5px;
+      font-weight: 800;
+      color: #071A4D;
+    }
+    .col-badge {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+      text-transform: uppercase;
+    }
+
+    /* Column Themes */
+    .col-coulomb { border-top: 5px solid #2563EB; }
+    .col-coulomb .col-badge { background: #EFF6FF; color: #1E40AF; }
+
+    .col-dipole { border-top: 5px solid #0D9488; }
+    .col-dipole .col-badge { background: #F0FDFA; color: #0F766E; }
+
+    .col-gauss { border-top: 5px solid #D97706; }
+    .col-gauss .col-badge { background: #FEF3C7; color: #92400E; }
+
+    .col-shell { border-top: 5px solid #7C3AED; }
+    .col-shell .col-badge { background: #FAF5FF; color: #6B21A8; }
+
+    .col-content {
+      padding: 10px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      overflow: hidden;
+      flex: 1;
+    }
+
+    .card {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 8px;
+      padding: 7px 9px;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .card-title {
+      font-size: 11.5px;
+      font-weight: 800;
+      color: #0F172A;
+    }
+    .tag {
+      font-size: 9px;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 4px;
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      color: #475569;
+    }
+
+    .card p {
+      font-size: 10.5px;
+      color: #334155;
+      line-height: 1.35;
+    }
+    .card strong {
+      color: #0F172A;
+      font-weight: 700;
+    }
+
+    .formula-row {
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      border-radius: 6px;
+      padding: 4px 7px;
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+      font-size: 10.5px;
+      font-weight: 700;
+      color: #0F172A;
+      text-align: center;
+      margin: 2px 0;
+    }
+
+    .callout {
+      border-left: 3px solid #2563EB;
+      background: #EFF6FF;
+      padding: 4px 7px;
+      border-radius: 0 6px 6px 0;
+      font-size: 10px;
+      color: #1E40AF;
+      line-height: 1.3;
+      margin-top: 2px;
+    }
+    .callout-teal {
+      border-left-color: #0D9488;
+      background: #F0FDFA;
+      color: #0F766E;
+    }
+    .callout-amber {
+      border-left-color: #D97706;
+      background: #FFFBEB;
+      color: #92400E;
+    }
+    .callout-purple {
+      border-left-color: #7C3AED;
+      background: #FAF5FF;
+      color: #6B21A8;
+    }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 14px;
+      font-size: 11px;
+      color: #64748B;
+      font-weight: 500;
+      border-top: 1px solid #E2E8F0;
+      padding-top: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-left">
+      <h1>Electrostatic Forces, Electric Fields & Gauss's Law Architecture Matrix</h1>
+      <p>Coulomb Interactions, Field Line Topologies, Dipole Mechanics & High-Symmetry Flux Formulations</p>
+    </div>
+    <div class="header-badge">CUET UG Physics · Unit 1</div>
+  </header>
+
+  <div class="matrix-grid">
+
+    <!-- Column 1: Coulomb's Law & Charges -->
+    <div class="column col-coulomb">
+      <div class="col-header">
+        <h2>1. Coulomb Force & Charges</h2>
+        <span class="col-badge">Point Charges</span>
+      </div>
+      <div class="col-content">
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Charge Quantization & Invariance</span>
+            <span class="tag">Basic Postulates</span>
+          </div>
+          <p><strong>Quantization:</strong> Total charge is integral multiple of elementary unit: <strong>q = ±n·e</strong> where e = 1.602 × 10⁻¹⁹ C.</p>
+          <p><strong>Relativistic Invariance:</strong> Charge magnitude is strictly independent of speed or frame of reference (unlike relativistic mass).</p>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Coulomb's Law (Vector Form)</span>
+            <span class="tag">Inverse Square</span>
+          </div>
+          <div class="formula-row">F₁₂ = [1 / (4πε₀)] · [q₁ q₂ / r²] r̂₂₁</div>
+          <p><strong>Properties:</strong> Central, conservative, obeys Newton's 3rd Law (F₁₂ = -F₂₁). ε₀ = 8.854 × 10⁻¹² C²·N⁻¹·m⁻².</p>
+          <div class="callout">
+            <strong>Dielectric Medium:</strong> F_med = F_vac / K. Force decreases by factor K (relative permittivity ε_r ≥ 1).
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Superposition & Distributions</span>
+            <span class="tag">Multi-Body</span>
+          </div>
+          <p><strong>Superposition:</strong> Net force on charge is vector sum: <strong>F_net = Σ F_i</strong>. Two-body interaction is unaffected by other charges.</p>
+          <p><strong>Charge Densities:</strong> Linear <strong>λ = dq/dL</strong> [C/m], Surface <strong>σ = dq/dA</strong> [C/m²], Volume <strong>ρ = dq/dV</strong> [C/m³].</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Column 2: Electric Field & Dipole -->
+    <div class="column col-dipole">
+      <div class="col-header">
+        <h2>2. Electric Field & Dipole</h2>
+        <span class="col-badge">Vector Field</span>
+      </div>
+      <div class="col-content">
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Field Definition & Field Lines</span>
+            <span class="tag">Force / Charge</span>
+          </div>
+          <div class="formula-row">E = lim(q₀→0) [F / q₀] = [1 / (4πε₀)] · [q / r²] r̂</div>
+          <p><strong>Field Line Rules:</strong> Originate on +q, terminate on -q; never form closed loops; tangents show direction; density indicates field intensity.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Electric Dipole (p = q · 2a)</span>
+            <span class="tag">Dipole Fields</span>
+          </div>
+          <p><strong>Axial Line (End-on):</strong> E_axial = [2 k p / r³] along p̂ (for r &gt;&gt; a).</p>
+          <p><strong>Equatorial Line (Broadside):</strong> E_equat = [k p / r³] antiparallel to p̂.</p>
+          <div class="callout callout-teal">
+            <strong>Critical Ratio:</strong> E_axial = 2 · E_equat at same distance r. Both fall off as 1/r³ (faster than point charge 1/r²).
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Dipole in External Field (E)</span>
+            <span class="tag">Torque & Energy</span>
+          </div>
+          <p><strong>Uniform Field:</strong> Net force F_net = 0; Torque <strong>τ = p × E = p E sin θ</strong>.</p>
+          <p><strong>Potential Energy:</strong> <strong>U = -p · E = -p E cos θ</strong>.</p>
+          <p><strong>Equilibria:</strong> θ = 0° (Stable, U_min = -pE); θ = 180° (Unstable, U_max = +pE); Work done from θ₁ to θ₂ = pE(cos θ₁ - cos θ₂).</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Column 3: Gauss's Law & 1D/2D Symmetries -->
+    <div class="column col-gauss">
+      <div class="col-header">
+        <h2>3. Gauss's Law & Planar / Linear</h2>
+        <span class="col-badge">Flux Theorem</span>
+      </div>
+      <div class="col-content">
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Gauss's Theorem Formulation</span>
+            <span class="tag">Total Flux</span>
+          </div>
+          <div class="formula-row">Φ_E = ∮ E · dA = q_enclosed / ε₀</div>
+          <p><strong>Flux Invariance:</strong> Net flux depends solely on net enclosed charge; independent of shape, size, or position within closed Gaussian surface.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Infinite Straight Wire (Linear λ)</span>
+            <span class="tag">Cylindrical Symmetry</span>
+          </div>
+          <div class="formula-row">E = λ / (2 π ε₀ r)</div>
+          <p><strong>Gaussian Surface:</strong> Coaxial cylinder of radius r, length L. Flat end caps contribute zero flux (E ⊥ n̂). Field is purely radial: <strong>E ∝ 1/r</strong>.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Infinite Plane Sheet of Charge (σ)</span>
+            <span class="tag">Planar Symmetry</span>
+          </div>
+          <div class="formula-row">E = σ / (2 ε₀)</div>
+          <p><strong>Independence of Distance:</strong> Field is uniform everywhere perpendicular to sheet, regardless of distance r from surface.</p>
+          <div class="callout callout-amber">
+            <strong>Oppositely Charged Sheets (±σ):</strong> Outside plates: E = 0; Between plates: E = σ/ε₀ (foundation of parallel plate capacitor).
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Column 4: Spherical Shell & Conductors -->
+    <div class="column col-shell">
+      <div class="col-header">
+        <h2>4. Spherical Shell & Conductors</h2>
+        <span class="col-badge">Spherical Symmetry</span>
+      </div>
+      <div class="col-content">
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Thin Spherical Shell (Radius R)</span>
+            <span class="tag">Total Charge q</span>
+          </div>
+          <p><strong>Outside (r &gt; R):</strong> E_out = [1 / (4πε₀)] · [q / r²] = (σ R²)/(ε₀ r²).</p>
+          <p><strong>Surface (r = R):</strong> E_surf = [1 / (4πε₀)] · [q / R²] = σ / ε₀ (maximum).</p>
+          <p><strong>Inside (r &lt; R):</strong> q_enc = 0 ⟹ <strong>E_in = 0</strong> everywhere.</p>
+          <div class="callout callout-purple">
+            <strong>E-Discontinuity:</strong> Field jumps abruptly from 0 to σ/ε₀ at shell boundary r = R.
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Conductor Electrostatics</span>
+            <span class="tag">Equilibrium Rules</span>
+          </div>
+          <p><strong>Inside Conductor:</strong> Net electrostatic field E = 0; net interior volume charge ρ = 0.</p>
+          <p><strong>Surface Field:</strong> <strong>E = (σ / ε₀) n̂</strong> (strictly normal to surface).</p>
+          <p><strong>Constant Potential:</strong> Electrostatic potential V is uniform throughout volume and equal to surface value (equipotential body).</p>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Electrostatic Shielding</span>
+            <span class="tag">Faraday Cage</span>
+          </div>
+          <p>Field inside any cavity in a conductor is zero, shielded from external electrical disturbances. Used in sensitive coaxial cables & instruments.</p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <span>OurMocks Exam Prep Series · CUET UG Physics Core Diagrams</span>
+    <span>NCERT Class XII Physics · Chapter 1: Electric Charges and Fields · Verified Syllabus Architecture</span>
+  </footer>
+
+</body>
+</html>
