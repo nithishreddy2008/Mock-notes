@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>History of Buddhism and Jainism: Cultural Developments — Full Topic Summary Mindmap</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background-color: #071A4D;
+    background-image: 
+      radial-gradient(circle at 10% 20%, rgba(31, 94, 255, 0.18) 0%, transparent 40%),
+      radial-gradient(circle at 90% 80%, rgba(184, 255, 52, 0.12) 0%, transparent 40%),
+      radial-gradient(circle at 50% 50%, rgba(15, 23, 42, 0.6) 0%, transparent 100%);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #F8FAFC;
+    padding: 24px 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+
+  /* Header */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    padding-bottom: 10px;
+  }
+  .badge {
+    background: rgba(184, 255, 52, 0.12);
+    border: 1px solid #B8FF34;
+    color: #B8FF34;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 3px 12px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 4px;
+  }
+  .title {
+    font-size: 23px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: #FFFFFF;
+  }
+  .subtitle {
+    font-size: 12.5px;
+    color: #94A3B8;
+    margin-top: 2px;
+  }
+  .brand-pill {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: 11.5px;
+    color: #E2E8F0;
+    font-weight: 600;
+    text-align: right;
+  }
+  .brand-pill span {
+    color: #B8FF34;
+    display: block;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  /* Layout: Central Hub + Surrounding 5 Branches */
+  .mindmap-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 14px;
+    margin-top: 10px;
+    flex-grow: 1;
+  }
+
+  .branch-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 12px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    backdrop-filter: blur(8px);
+    border-top: 3px solid #1F5EFF;
+  }
+
+  .branch-card.hub {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    background: linear-gradient(145deg, rgba(31, 94, 255, 0.15) 0%, rgba(15, 23, 42, 0.8) 100%);
+    border: 1.5px solid rgba(184, 255, 52, 0.4);
+    border-top: 3px solid #B8FF34;
+  }
+
+  .branch-card.b1 { border-top-color: #38BDF8; }
+  .branch-card.b2 { border-top-color: #B8FF34; }
+  .branch-card.b3 { border-top-color: #F59E0B; }
+  .branch-card.b4 { border-top-color: #A855F7; }
+  .branch-card.b5 { border-top-color: #EC4899; }
+
+  .branch-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .branch-title {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #FFFFFF;
+  }
+  .branch-card.hub .branch-title { color: #B8FF34; font-size: 14.5px; }
+  .branch-card.b1 .branch-title { color: #38BDF8; }
+  .branch-card.b2 .branch-title { color: #B8FF34; }
+  .branch-card.b3 .branch-title { color: #FCD34D; }
+  .branch-card.b4 .branch-title { color: #C084FC; }
+  .branch-card.b5 .branch-title { color: #F472B6; }
+
+  .branch-tag {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    background: rgba(255, 255, 255, 0.08);
+    color: #94A3B8;
+  }
+
+  .bullet-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 11px;
+    line-height: 1.38;
+    color: #CBD5E1;
+  }
+  .bullet-list li {
+    position: relative;
+    padding-left: 13px;
+    word-break: break-word;
+  }
+  .bullet-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+    color: #1F5EFF;
+  }
+  .branch-card.hub .bullet-list li::before { color: #B8FF34; }
+  .branch-card.b1 .bullet-list li::before { color: #38BDF8; }
+  .branch-card.b2 .bullet-list li::before { color: #B8FF34; }
+  .branch-card.b3 .bullet-list li::before { color: #F59E0B; }
+  .branch-card.b4 .bullet-list li::before { color: #A855F7; }
+  .branch-card.b5 .bullet-list li::before { color: #EC4899; }
+
+  .bullet-list strong { color: #FFFFFF; }
+  .bullet-list em { color: #E2E8F0; font-style: normal; }
+
+  /* Footer */
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 8px;
+    font-size: 11px;
+    color: #64748B;
+  }
+  .footer strong { color: #B8FF34; }
+</style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div>
+      <div class="badge">Comprehensive Topic Map · Themes in Indian History Part I</div>
+      <div class="title">History of Buddhism & Jainism: Cultural Developments (c. 600 BCE – 600 CE)</div>
+      <div class="subtitle">Complete chapter architectural framework: philosophical ferment, monastic sanghas, stupa architecture, and early temple arts</div>
+    </div>
+    <div class="brand-pill">
+      <span>OurMocks Study Visuals</span>
+      CUET UG History · Chapter 4
+    </div>
+  </div>
+
+  <!-- 6-Grid Mindmap -->
+  <div class="mindmap-container">
+
+    <!-- Branch 1: 1st Millennium BCE Ferment -->
+    <div class="branch-card b1">
+      <div class="branch-header">
+        <div class="branch-title">1. Mid-1st Millennium BCE Ferment</div>
+        <div class="branch-tag">64 Sects & Debates</div>
+      </div>
+      <ul class="bullet-list">
+        <li><strong>Global Awakening:</strong> Parallel philosophical surge across Greece (Socrates/Plato), Iran (Zarathustra), China (Kong Zi), and Gangetic India.</li>
+        <li><strong>Kutagarashala:</strong> Pointed-roof debate huts in groves where mendicant teachers questioned Vedic authority and animal sacrifices.</li>
+        <li><strong>Heterodox Skepticism:</strong> Fatalists (<em>Ajivikas</em> under Makkhali Gosala) and Materialists (<em>Lokayatas</em> under Ajita Kesakambalin) rejected karma.</li>
+        <li><strong>Linguistic Shift:</strong> Teachers discarded elite Vedic Sanskrit, communicating directly in vernacular <strong>Prakrit</strong> dialects.</li>
+      </ul>
+    </div>
+
+    <!-- Central Hub: Buddhism & Jainism Core -->
+    <div class="branch-card hub">
+      <div class="branch-header">
+        <div class="branch-title">★ Core Axis: Renunciation & Ethical Reform</div>
+        <div class="branch-tag">Core Tenets</div>
+      </div>
+      <ul class="bullet-list">
+        <li><strong>Vedic Critique:</strong> Buddhism and Jainism rejected infallible Vedic authority, hereditary varna supremacy, and bloody rituals.</li>
+        <li><strong>Universal Empathy:</strong> Rebirth driven by moral conduct; liberation accessible to all castes, women, and householders through ethical living.</li>
+        <li><strong>Monastic Orders:</strong> Institutionalized wanderers into structured communities governed by democratic communal consensus.</li>
+        <li><strong>Canon Conservation:</strong> Codification of oral wisdom into written canonical pitakas and agamas upon master's demise.</li>
+      </ul>
+    </div>
+
+    <!-- Branch 2: Jainism & Mahavira -->
+    <div class="branch-card b2">
+      <div class="branch-header">
+        <div class="branch-title">2. Jain Philosophy & Mahavira</div>
+        <div class="branch-tag">Tirthankara Path</div>
+      </div>
+      <ul class="bullet-list">
+        <li><strong>24 Tirthankaras:</strong> Vardhamana Mahavira was the 24th teacher, preceded by Rishabhanatha (1st) and Parshvanatha (23rd).</li>
+        <li><strong>Cosmic Jiva:</strong> Entire world is animate; stones, water, wind, and fire have souls (*jiva*); extreme non-violence (*ahimsa*).</li>
+        <li><strong>Ascetic Penance:</strong> Karma purged only through rigorous monastic self-denial, world-renunciation, and voluntary fasting death (*Sallekhana*).</li>
+        <li><strong>Five Mahavratas & Schism:</strong> Non-injury, truth, non-stealing, non-possession, celibacy; split into <em>Digambara</em> and <em>Shvetambara</em>.</li>
+      </ul>
+    </div>
+
+    <!-- Branch 3: The Buddha & Dhamma -->
+    <div class="branch-card b3">
+      <div class="branch-header">
+        <div class="branch-title">3. The Buddha, Dhamma & Sangha</div>
+        <div class="branch-tag">The Middle Path</div>
+      </div>
+      <ul class="bullet-list">
+        <li><strong>Four Great Sights:</strong> Siddhartha Gautama encountered old man, sick man, corpse, and ascetic; attained enlightenment under Bodhi tree.</li>
+        <li><strong>Core Dhamma:</strong> World is transient (<em>anicca</em>), soulless (<em>anatta</em>), filled with sorrow (<em>dukkha</em>); avoided Jain extremes via <strong>Middle Path</strong>.</li>
+        <li><strong>The Sangha:</strong> Monastic order of <em>bhikkhus</em>; women admitted as <em>bhikkhunis</em> through stepmother Mahapajapati Gotami at Ananda's urging.</li>
+        <li><strong>Tripitaka ("Three Baskets"):</strong> <em>Vinaya Pitaka</em> (monastic rules), <em>Sutta Pitaka</em> (Buddha's discourses), <em>Abhidhamma Pitaka</em> (philosophical analysis).</li>
+      </ul>
+    </div>
+
+    <!-- Branch 4: Stupa Architecture & Symbolism -->
+    <div class="branch-card b4">
+      <div class="branch-header">
+        <div class="branch-title">4. Stupas: Architecture & Preservation</div>
+        <div class="branch-tag">Sanchi vs Amaravati</div>
+      </div>
+      <ul class="bullet-list">
+        <li><strong>Sacred Mounds:</strong> Reared over bodily relics of the Buddha; 4 sacred sites: Lumbini (birth), Bodh Gaya (enlightenment), Sarnath (first sermon), Kusinara (parinirvana).</li>
+        <li><strong>Anatomy of Stupa:</strong> <em>Anda</em> (hemispherical dome), <em>Harmika</em> (balcony of gods), <em>Yashti</em> (central mast), <em>Chhatri</em> (triple umbrellas), <em>Toranas</em> (gateways).</li>
+        <li><strong>Sanchi Miracle:</strong> Preserved in situ due to Shahjehan Begum and Sultan Jehan Begum funding plaster casts, museum, and John Marshall's volumes.</li>
+        <li><strong>Amaravati Tragedy:</strong> Stripped of exquisite limestone friezes by Colin Mackenzie, Walter Elliot, and British officials; ruined by in-situ neglect.</li>
+      </ul>
+    </div>
+
+    <!-- Branch 5: Mahayana & Early Temples -->
+    <div class="branch-card b5">
+      <div class="branch-header">
+        <div class="branch-title">5. Mahayana & Structural Temples</div>
+        <div class="branch-tag">Image & Bhakti</div>
+      </div>
+      <ul class="bullet-list">
+        <li><strong>Rise of Mahayana:</strong> Deification of Buddha, worship of compassionate <strong>Bodhisattvas</strong> who postpone personal nirvana to save all living beings.</li>
+        <li><strong>Sculptural Schools:</strong> Anthropomorphic Buddha images created at Gandhara (Greco-Roman realistic drapery) and Mathura (fleshy indigenous sandstone).</li>
+        <li><strong>Puranic Hinduism:</strong> Vaishnavism (10 *avataras* restoring cosmic order) and Shaivism (linga and anthropomorphic Shiva); accessible Puranas.</li>
+        <li><strong>Temple Evolution:</strong> Small square cell (<em>Garbhagriha</em>) → tall towering spire (<em>Shikhara</em>) → assembly halls (<em>Mandapa</em>); Ellora rock-cut monolith.</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div><strong>Exam Blueprint:</strong> Master Sanchi's preservation patronesses, Amaravati's despoilation, the components of a Stupa, and the differences between Hinayana and Mahayana.</div>
+    <div>Sanchi Patrons: <strong>Bhopal Begums</strong> · Stupa Mast: <strong>Yashti</strong> · 1st Nun: <strong>Mahapajapati Gotami</strong> · www.ourmocks.com</div>
+  </div>
+
+</body>
+</html>

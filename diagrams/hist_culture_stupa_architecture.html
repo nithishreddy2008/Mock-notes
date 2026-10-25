@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Anatomy & Sacred Symbolism of the Buddhist Stupa</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background-color: #071A4D;
+    background-image: 
+      radial-gradient(circle at 12% 15%, rgba(31, 94, 255, 0.16) 0%, transparent 40%),
+      radial-gradient(circle at 88% 85%, rgba(184, 255, 52, 0.08) 0%, transparent 35%);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #F8FAFC;
+    padding: 30px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+
+  /* Header */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    padding-bottom: 14px;
+  }
+  .badge {
+    background: rgba(184, 255, 52, 0.12);
+    border: 1px solid #B8FF34;
+    color: #B8FF34;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 6px;
+  }
+  .title {
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: #FFFFFF;
+  }
+  .subtitle {
+    font-size: 13px;
+    color: #94A3B8;
+    margin-top: 3px;
+  }
+  .brand-pill {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 7px 14px;
+    border-radius: 8px;
+    font-size: 11.5px;
+    color: #E2E8F0;
+    font-weight: 600;
+    text-align: right;
+  }
+  .brand-pill span {
+    color: #B8FF34;
+    display: block;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  /* Main Container */
+  .layout-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-top: 14px;
+    flex-grow: 1;
+  }
+
+  /* Left: 5 Structural Components */
+  .components-col {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+  }
+
+  .comp-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 11px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    border-left: 4px solid #1F5EFF;
+    backdrop-filter: blur(8px);
+  }
+
+  .comp-card.tier-apex {
+    border-left-color: #B8FF34;
+    background: rgba(184, 255, 52, 0.06);
+  }
+
+  .comp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .comp-title {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .comp-card.tier-apex .comp-title { color: #B8FF34; }
+
+  .comp-tag {
+    font-size: 10.5px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.08);
+    color: #94A3B8;
+  }
+
+  .comp-desc {
+    font-size: 11.5px;
+    line-height: 1.4;
+    color: #CBD5E1;
+    word-break: break-word;
+  }
+  .comp-desc strong { color: #FFFFFF; }
+
+  /* Right: Historiography & Conservation */
+  .analysis-col {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .panel-box {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 12px 16px;
+    backdrop-filter: blur(8px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .panel-title {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #93C5FD;
+  }
+
+  .bullet-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 11.5px;
+    line-height: 1.38;
+    color: #CBD5E1;
+  }
+  .bullet-list li {
+    position: relative;
+    padding-left: 14px;
+    word-break: break-word;
+  }
+  .bullet-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #1F5EFF;
+    font-weight: bold;
+  }
+  .bullet-list strong { color: #FFF; }
+
+  /* Footer */
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 10px;
+    font-size: 11.5px;
+    color: #64748B;
+  }
+  .footer strong {
+    color: #B8FF34;
+  }
+</style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div>
+      <div class="badge">Themes in Indian History · Chapter 4</div>
+      <div class="title">The Stupa at Sanchi: Architectural Anatomy & Sacred Symbolism</div>
+      <div class="subtitle">Structural decomposition of the cosmic stupa mound and the preservation contrast between Sanchi and Amaravati</div>
+    </div>
+    <div class="brand-pill">
+      <span>OurMocks Study Visuals</span>
+      CUET UG History · Cultural Developments
+    </div>
+  </div>
+
+  <!-- Main Content Layout -->
+  <div class="layout-grid">
+    
+    <!-- Left Column: The 5 Structural Elements of Stupa Anatomy -->
+    <div class="components-col">
+      
+      <div class="comp-card tier-apex">
+        <div class="comp-header">
+          <span class="comp-title">1. Chhatras & Yashti (The Pinnacle Mast)</span>
+          <span class="comp-tag">Apex Symbol</span>
+        </div>
+        <div class="comp-desc">A central vertical mast (<strong>Yashti</strong>) rising from the harmika, crowned by three stone umbrellas (<strong>Chhatras</strong>) symbolizing the <em>Triratna</em> (Three Jewels: Buddha, Dhamma, Sangha) and spiritual sovereignty.</div>
+      </div>
+
+      <div class="comp-card">
+        <div class="comp-header">
+          <span class="comp-title">2. Harmika (The Abode of the Gods)</span>
+          <span class="comp-tag">Celestial Balcony</span>
+        </div>
+        <div class="comp-desc">A square balcony-like pavilion placed atop the hemispherical dome. In ancient cosmological symbolism, it represented the sacred dwelling-place of the gods and the transition to the heavens.</div>
+      </div>
+
+      <div class="comp-card">
+        <div class="comp-header">
+          <span class="comp-title">3. Anda (The Cosmic Egg / Relic Mound)</span>
+          <span class="comp-tag">Hemispherical Dome</span>
+        </div>
+        <div class="comp-desc">The core semi-circular earthen and brick mound. Literally meaning "egg" in Sanskrit, the <strong>Anda</strong> symbolizes both the cosmic universe and the casket enclosing the physical ashes (*dhatu*) of the Buddha or senior monks.</div>
+      </div>
+
+      <div class="comp-card">
+        <div class="comp-header">
+          <span class="comp-title">4. Pradakshina Patha (The Circumambulatory Way)</span>
+          <span class="comp-tag">Ritual Procession</span>
+        </div>
+        <div class="comp-desc">Paved walking path encircling the mound (both at ground level and upper terrace). Pilgrims circumambulate clockwise (*pradakshina*), keeping the sacred stupa mound continuously on their right side.</div>
+      </div>
+
+      <div class="comp-card">
+        <div class="comp-header">
+          <span class="comp-title">5. Vedika & Toranas (Railings & Gateways)</span>
+          <span class="comp-tag">Monumental Boundaries</span>
+        </div>
+        <div class="comp-desc">Surrounding stone railing (<strong>Vedika</strong>) mimicking ancient wooden bamboo fences, entered via four monumental ornamental gateways (<strong>Toranas</strong>) oriented strictly to the four cardinal directions (North, South, East, West).</div>
+      </div>
+
+    </div>
+
+    <!-- Right Column: Historiography & Sanchi vs Amaravati -->
+    <div class="analysis-col">
+      
+      <div class="panel-box">
+        <div class="panel-header">
+          <span class="panel-title">Why Sanchi Survived while Amaravati was Destroyed</span>
+          <span style="font-size:10px; color:#B8FF34; text-transform:uppercase; font-weight:700;">Critical Historiography</span>
+        </div>
+        <ul class="bullet-list">
+          <li><strong>Bhopal Begums' Enlightened Patronage:</strong> Rulers of Bhopal, <strong>Shahjehan Begum</strong> and her successor <strong>Sultan Jehan Begum</strong>, funded the museum, guesthouse, and conservation by John Marshall; they satisfied French and British collectors with precision plaster casts.</li>
+          <li><strong>The Tragic Plunder of Amaravati:</strong> Discovered in 1796 by Colin Mackenzie; in 1854 commissioner Walter Elliot carted slabs to Madras ("Elliot marbles"); slabs were installed in private gardens and shipped to London; Amaravati was turned into a denuded brick pit before protective laws existed.</li>
+        </ul>
+      </div>
+
+      <div class="panel-box">
+        <div class="panel-header">
+          <span class="panel-title">Decoding Stupa Art: Aniconic & Folk Motifs</span>
+          <span style="font-size:10px; color:#93C5FD; text-transform:uppercase; font-weight:700;">Sculptural Iconography</span>
+        </div>
+        <ul class="bullet-list">
+          <li><strong>Aniconic Buddha:</strong> Early Buddhist art never showed Buddha as a human being. His presence was conveyed through symbols: <strong>Empty Seat</strong> (Meditation), <strong>Wheel</strong> (First Sermon at Sarnath), and <strong>Stupa</strong> (Mahaparinirvana).</li>
+          <li><strong>Shalabhanjika:</strong> Auspicious woman swinging from a blossoming tree branch, originating from pre-Buddhist fertility beliefs; her touch caused trees to flower.</li>
+          <li><strong>Gajalakshmi:</strong> Goddess surrounded by elephants pouring holy water from lotuses, celebrated as the deity of good fortune, prosperity, and auspiciousness.</li>
+        </ul>
+      </div>
+
+      <div class="panel-box">
+        <div class="panel-header">
+          <span class="panel-title">The Four Sacred Pilgrimage Centers</span>
+          <span style="font-size:10px; color:#FBBF24; text-transform:uppercase; font-weight:700;">Buddhist Geography</span>
+        </div>
+        <ul class="bullet-list">
+          <li><strong>Lumbini (Nepal):</strong> Site of Siddhartha Gautama's birth into the royal Shakya clan.</li>
+          <li><strong>Bodh Gaya (Bihar):</strong> Site where the Buddha attained Supreme Enlightenment under the Bodhi tree.</li>
+          <li><strong>Sarnath (Varanasi):</strong> Site of the First Sermon turning the Wheel of Law (*Dhammachakkappavattana*).</li>
+          <li><strong>Kusinara (UP):</strong> Site of the Buddha's death and physical passing (*Mahaparinirvana*).</li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div><strong>Archaeological Rule:</strong> H.H. Cole in 1881 advocated preserving ancient monuments in situ: "It seems to me a suicidal policy to strip the country of original works of art."</div>
+    <div>Sanchi Excavator: <strong>John Marshall (1912–1919)</strong> · Amaravati Surveyor: <strong>Colin Mackenzie (1796)</strong> · Bhopal Begums · www.ourmocks.com</div>
+  </div>
+
+</body>
+</html>

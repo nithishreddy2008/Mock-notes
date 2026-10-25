@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Early Religious Traditions & Philosophies — Comparative Quadrant Matrix</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background-color: #071A4D;
+    background-image: 
+      radial-gradient(circle at 15% 15%, rgba(31, 94, 255, 0.16) 0%, transparent 40%),
+      radial-gradient(circle at 85% 85%, rgba(184, 255, 52, 0.08) 0%, transparent 35%);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #F8FAFC;
+    padding: 30px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+
+  /* Header */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    padding-bottom: 14px;
+  }
+  .badge {
+    background: rgba(184, 255, 52, 0.12);
+    border: 1px solid #B8FF34;
+    color: #B8FF34;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 6px;
+  }
+  .title {
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: #FFFFFF;
+  }
+  .subtitle {
+    font-size: 13px;
+    color: #94A3B8;
+    margin-top: 3px;
+  }
+  .brand-pill {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 7px 14px;
+    border-radius: 8px;
+    font-size: 11.5px;
+    color: #E2E8F0;
+    font-weight: 600;
+    text-align: right;
+  }
+  .brand-pill span {
+    color: #B8FF34;
+    display: block;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  /* Quadrant Grid */
+  .quadrant-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 16px;
+    margin-top: 14px;
+    flex-grow: 1;
+  }
+
+  .quad-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 16px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    backdrop-filter: blur(8px);
+    border-top: 3px solid #1F5EFF;
+  }
+
+  .quad-card.jaina { border-top-color: #B8FF34; }
+  .quad-card.theravada { border-top-color: #38BDF8; }
+  .quad-card.mahayana { border-top-color: #F59E0B; }
+  .quad-card.puranic { border-top-color: #EC4899; }
+
+  .quad-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .quad-title {
+    font-size: 14.5px;
+    font-weight: 700;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .quad-card.jaina .quad-title { color: #B8FF34; }
+  .quad-card.theravada .quad-title { color: #38BDF8; }
+  .quad-card.mahayana .quad-title { color: #FCD34D; }
+  .quad-card.puranic .quad-title { color: #F472B6; }
+
+  .quad-tag {
+    font-size: 10.5px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    background: rgba(255, 255, 255, 0.08);
+    color: #94A3B8;
+  }
+
+  .bullet-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    font-size: 11.5px;
+    line-height: 1.42;
+    color: #CBD5E1;
+  }
+  .bullet-list li {
+    position: relative;
+    padding-left: 14px;
+    word-break: break-word;
+  }
+  .bullet-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #1F5EFF;
+    font-weight: bold;
+  }
+  .quad-card.jaina .bullet-list li::before { color: #B8FF34; }
+  .quad-card.theravada .bullet-list li::before { color: #38BDF8; }
+  .quad-card.mahayana .bullet-list li::before { color: #F59E0B; }
+  .quad-card.puranic .bullet-list li::before { color: #EC4899; }
+
+  .bullet-list strong { color: #FFFFFF; }
+
+  /* Footer */
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 10px;
+    font-size: 11.5px;
+    color: #64748B;
+  }
+  .footer strong {
+    color: #B8FF34;
+  }
+</style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div>
+      <div class="badge">Themes in Indian History · Chapter 4</div>
+      <div class="title">Early Religious Traditions & Philosophies (c. 600 BCE – 600 CE)</div>
+      <div class="subtitle">Comparative quadrant matrix contrasting Jainism, Theravada, Mahayana, and Puranic Hinduism</div>
+    </div>
+    <div class="brand-pill">
+      <span>OurMocks Study Visuals</span>
+      CUET UG History · Cultural Developments
+    </div>
+  </div>
+
+  <!-- Quadrant Grid -->
+  <div class="quadrant-grid">
+    
+    <!-- Quadrant 1: Jain Philosophy & Mahavira -->
+    <div class="quad-card jaina">
+      <div class="quad-header">
+        <div class="quad-title">Quadrant 1 · Jainism (Tirthankaras & Severe Asceticism)</div>
+        <div class="quad-tag">Animist & Ascetic Ethic</div>
+      </div>
+      <ul class="bullet-list">
+        <li><strong>Universal Animism:</strong> The entire cosmos is animated; even stones, rocks, water, and fire possess living souls (*jiva*).</li>
+        <li><strong>Strict Ahimsa:</strong> Extreme non-injury to humans, animals, plants, and insects forms the bedrock of Jain ethics.</li>
+        <li><strong>Karma & Asceticism:</strong> Cycle of rebirth is shaped by karma; the soul can only be liberated from karma through severe penance, world-renunciation, and self-starvation (*Sallekhana*).</li>
+        <li><strong>Five Great Vows (*Mahavratas*):</strong> Barred killing, lying, stealing, property ownership (*aparigraha*), and mandated celibacy (*brahmacharya*); split into <em>Digambaras</em> and <em>Shvetambaras</em>.</li>
+      </ul>
+    </div>
+
+    <!-- Quadrant 2: Early Buddhism (Theravada / Hinayana) -->
+    <div class="quad-card theravada">
+      <div class="quad-header">
+        <div class="quad-title">Quadrant 2 · Early Buddhism (Theravada / The Lesser Vehicle)</div>
+        <div class="quad-tag">The Middle Path</div>
+      </div>
+      <ul class="bullet-list">
+        <li><strong>The Middle Path (*Majjhima Patipada*):</strong> Rejected both extreme self-indulgence and extreme self-mortification practiced by Jains and ascetics.</li>
+        <li><strong>Cosmic Realities:</strong> The world is transient (*anicca*), devoid of an immortal eternal soul (*anatta*), and sorrow (*dukkha*) is universal.</li>
+        <li><strong>Self-Effort & Nibbana:</strong> The Buddha was a mortal teacher, not a god; liberation from rebirth (*nibbana* - extinction of ego and desire) achieved strictly by personal meditation and moral conduct.</li>
+        <li><strong>Aniconic Art & Canon:</strong> Buddha was never depicted as a human statue, but through symbols (tree, wheel, stupa); teachings preserved in Pali *Tripitaka* (Vinaya, Sutta, Abhidhamma).</li>
+      </ul>
+    </div>
+
+    <!-- Quadrant 3: Mahayana Buddhism & Bodhisattvas -->
+    <div class="quad-card mahayana">
+      <div class="quad-header">
+        <div class="quad-title">Quadrant 3 · Mahayana Buddhism (The Great Vehicle)</div>
+        <div class="quad-tag">Theistic & Bodhisattva Cult</div>
+      </div>
+      <ul class="bullet-list">
+        <li><strong>Deification of the Buddha:</strong> The Buddha was transformed from a human guide into a supreme, transcendent divine savior who responded to devotional prayer.</li>
+        <li><strong>The Bodhisattva Ideal:</strong> Cult of deeply compassionate spiritual beings who achieved enlightenment but deliberately postponed entering nirvana to stay behind and rescue suffering humanity.</li>
+        <li><strong>Image Worship:</strong> Elaborate human statues of the Buddha and Bodhisattvas (Avalokiteshvara, Maitreya) sculpted in Gandhara and Mathura schools, worshipped with incense and flowers.</li>
+        <li><strong>Sectarian Terminology:</strong> Followers styled their tradition <strong>Mahayana</strong> ("Great Vehicle") and dismissed older conservative monks as <strong>Hinayana</strong> ("Lesser Vehicle" / Theravadins).</li>
+      </ul>
+    </div>
+
+    <!-- Quadrant 4: Puranic Hinduism & Structural Temples -->
+    <div class="quad-card puranic">
+      <div class="quad-header">
+        <div class="quad-title">Quadrant 4 · Puranic Hinduism & Early Temples</div>
+        <div class="quad-tag">Bhakti & Temple Architecture</div>
+      </div>
+      <ul class="bullet-list">
+        <li><strong>Bhakti & Theistic Cults:</strong> Salvation through intense personal loving devotion (*bhakti*) to a chosen personal deity, primarily within <strong>Vaishnavism</strong> (10 avatars of Vishnu) and <strong>Shaivism</strong> (Shiva as linga and dancer).</li>
+        <li><strong>Puranas:</strong> Composed in accessible Sanskrit by Brahmanas to integrate local folk deities, female goddesses, and lower castes excluded from formal Vedic rites.</li>
+        <li><strong>Temple Architectural Evolution:</strong> Began as small square rock-cut cells (<strong>Garbhagriha</strong> housing the deity) → topped by tall ornate towers (<strong>Shikhara</strong>) → pillared assembly halls (<strong>Mandapa</strong>).</li>
+        <li><strong>Kailashnatha at Ellora:</strong> 8th c. CE monolithic architectural marvel carved entirely out of a single living basalt hillside from top to bottom.</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div><strong>Philosophical Rule:</strong> The mid-first millennium BCE witnessed a global intellectual turning point across Greece (Socrates), Iran (Zarathustra), China (Kong Zi), and India (Buddha/Mahavira).</div>
+    <div>Jain Supreme Vow: <strong>Ahimsa</strong> · Buddhist Path: <strong>Middle Way</strong> · Mahayana Saviour: <strong>Bodhisattva</strong> · Monolithic Temple: <strong>Ellora</strong> · www.ourmocks.com</div>
+  </div>
+
+</body>
+</html>
