@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>India Transport, Communication and Trade Summary Mindmap</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      width: 1440px;
+      height: 880px;
+      background-color: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0F172A;
+      position: relative;
+      overflow: hidden;
+      padding: 24px 32px;
+    }
+
+    header {
+      position: absolute;
+      top: 18px;
+      left: 32px;
+      right: 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #E2E8F0;
+      padding-bottom: 8px;
+      z-index: 10;
+    }
+    .header-left h1 {
+      font-size: 22px;
+      font-weight: 800;
+      color: #071A4D;
+      letter-spacing: -0.02em;
+    }
+    .header-left p {
+      font-size: 12.5px;
+      color: #475569;
+      margin-top: 2px;
+      font-weight: 500;
+    }
+    .header-badge {
+      background: #EFF6FF;
+      color: #1E40AF;
+      border: 1px solid #BFDBFE;
+      font-size: 10.5px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* SVG Connectors */
+    svg.connections {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1440px;
+      height: 880px;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Central Hub */
+    .mindmap-center {
+      position: absolute;
+      top: 385px;
+      left: 575px;
+      width: 290px;
+      height: 110px;
+      background: #071A4D;
+      border: 3px solid #1F5EFF;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(7, 26, 77, 0.18), 0 0 0 6px #EFF6FF;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 12px 16px;
+      z-index: 5;
+    }
+    .mindmap-center .sub-label {
+      font-size: 9.5px;
+      font-weight: 800;
+      color: #B8FF34;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 3px;
+    }
+    .mindmap-center h2 {
+      font-size: 15px;
+      font-weight: 900;
+      color: #FFFFFF;
+      letter-spacing: -0.01em;
+      line-height: 1.25;
+    }
+    .mindmap-center .bottom-tag {
+      font-size: 9.5px;
+      color: #94A3B8;
+      margin-top: 4px;
+      font-weight: 500;
+    }
+
+    /* Branch Cards */
+    .branch-card {
+      position: absolute;
+      width: 395px;
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      border-radius: 12px;
+      padding: 10px 14px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+      z-index: 4;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    /* Left Positions */
+    .card-left-1 { top: 80px; left: 40px; height: 232px; border-left: 5px solid #2563EB; }
+    .card-left-2 { top: 326px; left: 40px; height: 234px; border-left: 5px solid #059669; }
+    .card-left-3 { top: 572px; left: 40px; height: 236px; border-left: 5px solid #0D9488; }
+
+    /* Right Positions */
+    .card-right-1 { top: 80px; left: 1005px; height: 232px; border-right: 5px solid #0284C7; }
+    .card-right-2 { top: 326px; left: 1005px; height: 234px; border-right: 5px solid #7C3AED; }
+    .card-right-3 { top: 572px; left: 1005px; height: 236px; border-right: 5px solid #EA580C; }
+
+    .card-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #F1F5F9;
+      padding-bottom: 4px;
+    }
+    .card-head h3 {
+      font-size: 13px;
+      font-weight: 800;
+      color: #0F172A;
+    }
+    .badge {
+      font-size: 9.5px;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+    .b-blue { background: #EFF6FF; color: #1E40AF; }
+    .b-green { background: #ECFDF5; color: #065F46; }
+    .b-teal { background: #F0FDFA; color: #0F766E; }
+    .b-sky { background: #E0F2FE; color: #0369A1; }
+    .b-purple { background: #FAF5FF; color: #7E22CE; }
+    .b-orange { background: #FFF7ED; color: #C2410C; }
+
+    .bullet-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 2.5px;
+      font-size: 9.8px;
+      color: #334155;
+      line-height: 1.3;
+    }
+    .bullet-list li {
+      position: relative;
+      padding-left: 12px;
+    }
+    .bullet-list li::before {
+      content: "▪";
+      position: absolute;
+      left: 0;
+      color: #2563EB;
+      font-size: 10px;
+    }
+    .card-left-2 .bullet-list li::before { color: #059669; }
+    .card-left-3 .bullet-list li::before { color: #0D9488; }
+    .card-right-1 .bullet-list li::before { color: #0284C7; }
+    .card-right-2 .bullet-list li::before { color: #7C3AED; }
+    .card-right-3 .bullet-list li::before { color: #EA580C; }
+
+    .bullet-list strong {
+      color: #0F172A;
+    }
+
+    .key-metric-strip {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 5px;
+      padding: 3.5px 7px;
+      font-size: 9.5px;
+      color: #475569;
+      margin-top: 1px;
+      line-height: 1.25;
+    }
+    .key-metric-strip strong {
+      color: #0F172A;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 12px;
+      left: 32px;
+      right: 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      color: #64748B;
+      font-weight: 500;
+      border-top: 1px solid #E2E8F0;
+      padding-top: 6px;
+      z-index: 10;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-left">
+      <h1>India: Transport, Communication & International Trade</h1>
+      <p>Master Synthesis Mindmap · Arterial Networks, Coastal Gateways, Telecom & Foreign Trade Dynamics</p>
+    </div>
+    <div class="header-badge">NCERT Class XII Geography · Unit 8</div>
+  </header>
+
+  <!-- SVG Connectors -->
+  <svg class="connections">
+    <!-- Center to Left 1 -->
+    <path d="M 575 420 C 490 420, 470 196, 435 196" fill="none" stroke="#2563EB" stroke-width="2" stroke-dasharray="4,3" opacity="0.6"/>
+    <!-- Center to Left 2 -->
+    <path d="M 575 440 C 500 440, 480 443, 435 443" fill="none" stroke="#059669" stroke-width="2" stroke-dasharray="4,3" opacity="0.6"/>
+    <!-- Center to Left 3 -->
+    <path d="M 575 460 C 490 460, 470 690, 435 690" fill="none" stroke="#0D9488" stroke-width="2" stroke-dasharray="4,3" opacity="0.6"/>
+
+    <!-- Center to Right 1 -->
+    <path d="M 865 420 C 945 420, 965 196, 1005 196" fill="none" stroke="#0284C7" stroke-width="2" stroke-dasharray="4,3" opacity="0.6"/>
+    <!-- Center to Right 2 -->
+    <path d="M 865 440 C 940 440, 960 443, 1005 443" fill="none" stroke="#7C3AED" stroke-width="2" stroke-dasharray="4,3" opacity="0.6"/>
+    <!-- Center to Right 3 -->
+    <path d="M 865 460 C 945 460, 965 690, 1005 690" fill="none" stroke="#EA580C" stroke-width="2" stroke-dasharray="4,3" opacity="0.6"/>
+  </svg>
+
+  <!-- Central Hub -->
+  <div class="mindmap-center">
+    <div class="sub-label">Unit 8 Syllabus Architecture</div>
+    <h2>Transport, Communication & International Trade</h2>
+    <div class="bottom-tag">Lifelines of India's National Economy</div>
+  </div>
+
+  <!-- Left 1: Roadways & Expressways -->
+  <div class="branch-card card-left-1">
+    <div class="card-head">
+      <h3>1. Roadways & Strategic Corridors</h3>
+      <span class="badge b-blue">Surface Mobility</span>
+    </div>
+    <ul class="bullet-list">
+      <li><strong>Golden Quadrilateral (GQ):</strong> 5,846 km (4/6-lane high-density corridor) interconnecting <em>Delhi – Mumbai – Chennai – Kolkata</em>; managed by NHAI.</li>
+      <li><strong>North-South & East-West:</strong> NS corridor (4,076 km, Srinagar to Kanyakumari) and EW corridor (3,300 km, Silchar to Porbandar); intersect at <em>Jhansi</em>.</li>
+      <li><strong>Border Roads Organisation (BRO):</strong> Est. May 1960 for defense mobility and socio-economic development of northern/northeastern borders.</li>
+      <li><strong>Engineering Landmark:</strong> <em>Atal Tunnel, Rohtang</em> (9.02 km, 3,000+ m altitude) provides year-round connectivity to Lahaul-Spiti valley.</li>
+    </ul>
+    <div class="key-metric-strip">
+      <strong>Bharatmala Pariyojana:</strong> Focus on economic corridors, inter-corridors, coastal & port connectivity, and border logistics bypasses.
+    </div>
+  </div>
+
+  <!-- Left 2: Indian Railways & DFCs -->
+  <div class="branch-card card-left-2">
+    <div class="card-head">
+      <h3>2. Indian Railways & DFCs</h3>
+      <span class="badge b-green">Heavy Freight Spine</span>
+    </div>
+    <ul class="bullet-list">
+      <li><strong>Network Dimensions:</strong> 4th largest global railway network; divided into 18 operational zones; first train ran in 1853 (Bombay to Thane, 34 km).</li>
+      <li><strong>Project Unigauge:</strong> Phasing out Metre (1.000 m) and Narrow (0.762 m & 0.610 m) tracks to standardize on <em>Broad Gauge (1.676 m)</em> (>90% route km).</li>
+      <li><strong>Konkan Railway (1998):</strong> 760 km route connecting Roha (Maharashtra) to Thokur/Mangaluru (Karnataka); traverses 146 rivers, 2,000 bridges, 91 tunnels.</li>
+      <li><strong>Dedicated Freight Corridors:</strong> Western DFC (Dadri to JNPT, 1,504 km) and Eastern DFC (Ludhiana to Dankuni, 1,856 km) for high-speed freight.</li>
+    </ul>
+    <div class="key-metric-strip">
+      <strong>Engineering Marvel:</strong> Panval Nadi viaduct (64 m height) and Karbude tunnel (6.5 km) on Konkan rail stretch.
+    </div>
+  </div>
+
+  <!-- Left 3: Waterways, Pipelines & Aviation -->
+  <div class="branch-card card-left-3">
+    <div class="card-head">
+      <h3>3. Waterways, Pipelines & Aviation</h3>
+      <span class="badge b-teal">Multi-Modal Logistics</span>
+    </div>
+    <ul class="bullet-list">
+      <li><strong>Inland Waterways (IWAI, 1986):</strong> NW-1 (1,620 km, Prayagraj-Haldia on Ganga); NW-2 (891 km, Sadiya-Dhubri on Brahmaputra); NW-3 (205 km, West Coast Canal, Kerala).</li>
+      <li><strong>Pipelines:</strong> Zero transit loss and continuous supply; <em>HVJ Pipeline</em> (1,750 km: Hazira-Vijaipur-Jagdishpur) feeds fertilizer & power plants; Salaya-Mathura crude line.</li>
+      <li><strong>Civil Aviation (Inception 1911):</strong> First airmail flight (Allahabad to Naini); nationalized in 1953; managed by Airports Authority of India (AAI).</li>
+      <li><strong>Regional & Offshore Support:</strong> <em>UDAN Scheme</em> expands tier-2/3 connectivity; <em>Pawan Hans Helicopters</em> serves ONGC offshore & rugged frontiers.</li>
+    </ul>
+    <div class="key-metric-strip">
+      <strong>High Efficiency:</strong> Waterways and pipelines offer the lowest energy consumption per tonne-km.
+    </div>
+  </div>
+
+  <!-- Right 1: Seaports & Gateways -->
+  <div class="branch-card card-right-1">
+    <div class="card-head">
+      <h3>4. Major Seaports & Gateways</h3>
+      <span class="badge b-sky">Maritime Gateways</span>
+    </div>
+    <ul class="bullet-list">
+      <li><strong>Western Gateways:</strong> Kandla (tidal port, NW hinterland), Mumbai (largest natural harbour), JNPT (India's premier container hub), Marmagao, New Mangalore, Kochi.</li>
+      <li><strong>Eastern Gateways:</strong> Kolkata (inland riverine, Hooghly siltation), Haldia (bulk downstream satellite), Paradip (lagoon, mineral exports), Visakhapatnam, Chennai, Tuticorin.</li>
+      <li><strong>Corporate Port:</strong> <em>Ennore (Kamarajar Port)</em> built north of Chennai as India's first corporatised port to handle thermal coal.</li>
+      <li><strong>Cargo Traffic:</strong> ~95% of India's international trade volume and 68% of value moves through these coastal seaports.</li>
+    </ul>
+    <div class="key-metric-strip">
+      <strong>Specialized Terminals:</strong> Visakhapatnam & Marmagao export iron ore; Kandla & Vadinar handle crude oil.
+    </div>
+  </div>
+
+  <!-- Right 2: Communication & Satellites -->
+  <div class="branch-card card-right-2">
+    <div class="card-head">
+      <h3>5. Communication & Satellites</h3>
+      <span class="badge b-purple">Information Infrastructure</span>
+    </div>
+    <ul class="bullet-list">
+      <li><strong>Dual Classification:</strong> <em>Personal Communication</em> (telephony, SMS, internet, postal mail) vs <em>Mass Communication</em> (radio, television, press, cinema).</li>
+      <li><strong>Broadcasting Network:</strong> All India Radio (Akashvani) broadcasts in 23 languages; Doordarshan operates national terrestrial and DTH services.</li>
+      <li><strong>INSAT Satellite Constellation:</strong> Multi-purpose geostationary satellites for telecommunication, meteorology, cyclone warning & TV broadcasting.</li>
+      <li><strong>IRS (Indian Remote Sensing):</strong> Polar orbiters for natural resource monitoring, hydrology, agriculture, managed by ISRO & NRSC Hyderabad.</li>
+    </ul>
+    <div class="key-metric-strip">
+      <strong>Digital Revolution:</strong> BharatNet optical fibre deployment and mobile internet penetration bridging rural-urban knowledge divide.
+    </div>
+  </div>
+
+  <!-- Right 3: Trade Composition & Direction -->
+  <div class="branch-card card-right-3">
+    <div class="card-head">
+      <h3>6. International Trade & Balance</h3>
+      <span class="badge b-orange">Global Economic Linkages</span>
+    </div>
+    <ul class="bullet-list">
+      <li><strong>Structural Transformation:</strong> Shift from raw colonial commodities to manufactured goods (~70-75% of exports), engineering items, pharma, gems & jewellery.</li>
+      <li><strong>Import Composition:</strong> Heavy reliance on <em>POL (25-30% of import bill)</em>, capital equipment, electronic goods, precious metals, and chemical fertilizers.</li>
+      <li><strong>Directional Pivot:</strong> Major partners include USA (leading export market), China (leading import origin), UAE, Saudi Arabia, Singapore, EU.</li>
+      <li><strong>Trade Balance:</strong> Merchandise trade deficit consistently offset by surplus in software services, ICT solutions, and robust diaspora remittances.</li>
+    </ul>
+    <div class="key-metric-strip">
+      <strong>Regional Hegemony:</strong> Asia and ASEAN constitute India's largest trading continent-bloc by total volume and value.
+    </div>
+  </div>
+
+  <footer>
+    <span>OurMocks Exam Prep Series · Geography Core Diagrams</span>
+    <span>NCERT Class XII India: People and Economy · Units & Sub-themes Synthesis</span>
+  </footer>
+
+</body>
+</html>

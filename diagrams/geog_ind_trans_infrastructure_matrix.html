@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>India Multimodal Transport Infrastructure Matrix</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      width: 1440px;
+      height: 880px;
+      background-color: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0F172A;
+      position: relative;
+      overflow: hidden;
+      padding: 24px 32px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #E2E8F0;
+      padding-bottom: 12px;
+      margin-bottom: 20px;
+    }
+    .header-left h1 {
+      font-size: 22px;
+      font-weight: 800;
+      color: #071A4D;
+      letter-spacing: -0.02em;
+    }
+    .header-left p {
+      font-size: 13px;
+      color: #475569;
+      margin-top: 2px;
+      font-weight: 500;
+    }
+    .header-badge {
+      background: #EFF6FF;
+      color: #1E40AF;
+      border: 1px solid #BFDBFE;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 14px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* 4-Column Grid */
+    .matrix-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      height: 720px;
+    }
+
+    .transport-col {
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      border-radius: 14px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+      overflow: hidden;
+    }
+
+    .col-header {
+      padding: 14px 16px;
+      border-bottom: 1px solid #E2E8F0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .col-header h2 {
+      font-size: 15px;
+      font-weight: 800;
+      color: #071A4D;
+    }
+    .col-badge {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+      text-transform: uppercase;
+    }
+
+    /* Color accents */
+    .col-road { border-top: 5px solid #2563EB; }
+    .col-road .col-badge { background: #EFF6FF; color: #1E40AF; }
+
+    .col-rail { border-top: 5px solid #059669; }
+    .col-rail .col-badge { background: #ECFDF5; color: #065F46; }
+
+    .col-water-pipe { border-top: 5px solid #0D9488; }
+    .col-water-pipe .col-badge { background: #F0FDFA; color: #0F766E; }
+
+    .col-air { border-top: 5px solid #7C3AED; }
+    .col-air .col-badge { background: #FAF5FF; color: #6B21A8; }
+
+    .col-body {
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      flex: 1;
+    }
+
+    .item-card {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 8px;
+      padding: 10px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .item-card-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+    .item-title {
+      font-size: 13px;
+      font-weight: 800;
+      color: #0F172A;
+    }
+    .item-tag {
+      font-size: 9.5px;
+      font-weight: 700;
+      color: #64748B;
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      padding: 1px 6px;
+      border-radius: 4px;
+    }
+
+    .item-desc {
+      font-size: 11px;
+      color: #334155;
+      line-height: 1.35;
+    }
+    .item-desc strong {
+      color: #071A4D;
+    }
+
+    .item-strip {
+      font-size: 10.5px;
+      color: #475569;
+      background: #FFFFFF;
+      border-left: 3px solid #2563EB;
+      padding: 4px 6px;
+      border-radius: 0 4px 4px 0;
+      margin-top: 2px;
+    }
+    .col-rail .item-strip { border-left-color: #059669; }
+    .col-water-pipe .item-strip { border-left-color: #0D9488; }
+    .col-air .item-strip { border-left-color: #7C3AED; }
+
+    footer {
+      position: absolute;
+      bottom: 12px;
+      left: 32px;
+      right: 32px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: #64748B;
+      border-top: 1px solid #E2E8F0;
+      padding-top: 8px;
+    }
+    footer strong {
+      color: #071A4D;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-left">
+      <h1>India: Multimodal Transport Infrastructure — Arterial Networks &amp; Corridors</h1>
+      <p>Unit 8 Core Architecture: National Highways, Indian Railways, Inland Waterways, Strategic Pipelines &amp; Civil Aviation</p>
+    </div>
+    <div class="header-badge">NCERT Class XII Geography</div>
+  </header>
+
+  <div class="matrix-grid">
+
+    <!-- Column 1: Roadways & Expressways -->
+    <div class="transport-col col-road">
+      <div class="col-header">
+        <h2>1. Roadways &amp; Corridors</h2>
+        <span class="col-badge">Surface Mobility</span>
+      </div>
+      <div class="col-body">
+        <div class="item-card">
+          <div class="item-card-head">
+            <span class="item-title">Golden Quadrilateral (GQ)</span>
+            <span class="item-tag">5,846 km · 4/6 Lanes</span>
+          </div>
+          <div class="item-desc">
+            <strong>Mega-Corridor:</strong> Connects the 4 premier metropolitan hubs: <em>Delhi – Mumbai – Chennai – Kolkata</em>.<br>
+            Managed by <strong>NHAI</strong>; drastically reduces transit time and freight logistics cost.
+          </div>
+          <div class="item-strip">
+            <strong>Economic Backbone:</strong> Drives inter-state commerce and industrial connectivity.
+          </div>
+        </div>
+
+        <div class="item-card">
+          <div class="item-card-head">
+            <span class="item-title">North-South &amp; East-West</span>
+            <span class="item-tag">7,142 km Total</span>
+          </div>
+          <div class="item-desc">
+            <strong>NS Corridor (4,076 km):</strong> Srinagar (J&amp;K) to Kanyakumari (Tamil Nadu).<br>
+            <strong>EW Corridor (3,300 km):</strong> Silchar (Assam) to Porbandar (Gujarat).<br>
+            <strong>Intersection Point:</strong> <em>Jhansi</em> (Uttar Pradesh).
+          </div>
+          <div class="item-strip">
+            <strong>National Integration:</strong> Binds frontier border regions to mainlands.
+          </div>
+        </div>
+
+        <div class="item-card">
+          <div class="item-card-head">
+            <span class="item-title">Border Roads (BRO)</span>
+            <span class="item-tag">Strategic Security</span>
+          </div>
+          <div class="item-desc">
+            <strong>Established:</strong> May 1960. Constructs &amp; maintains high-altitude roads in northern and northeastern frontiers.<br>
+            <strong>Milestone:</strong> <em>Atal Tunnel, Rohtang</em> (9.02 km) at 3,000+ m altitude, connecting Manali to Lahaul-Spiti valley year-round.
+          </div>
+          <div class="item-strip">
+            <strong>Defense Mobility:</strong> Facilitates rapid armed forces deployment.
+          </div>
+        </div>
+
+        <div class="item-card">
+          <div class="item-card-head">
+            <span class="item-title">Bharatmala Pariyojana</span>
+            <span class="item-tag">Economic Corridors</span>
+          </div>
+          <div class="item-desc">
+            <strong>Program Focus:</strong> Greenfield expressways, coastal &amp; port connectivity roads, border highways, and ring bypasses around congested cities.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Column 2: Indian Railways -->
+    <div class="transport-col col-rail">
+      <div class="col-header">
+        <h2>2. Indian Railways</h2>
+        <span class="col-badge">Bulk Freight Spine</span>
+      </div>
+      <div class="col-body">
+        <div class="item-card">
+          <div class="item-card-head">
+            <span class="item-title">Track Gauge Classification</span>
+            <span class="item-tag">Project Unigauge</span>
+          </div>
+          <div class="item-desc">
+            <strong>Broad Gauge (1.676 m):</strong> Accounts for over 90% of total route length; standardized for heavy express freight and passenger traffic.<br>
+            <strong>Metre Gauge (1.000 m):</strong> Being converted systematically.<br>
+            <strong>Narrow Gauge (0.762 m &amp; 0.610 m):</strong> Hill railways (Darjeeling, Kalka-Shimla, Nilgiri Mountain Railway).
+          </div>
+        </div>
+
+        <div class="item-card">
+          <div class="item-card-head">
+            <span class="item-title">Konkan Railway Marvel</span>
+            <span class="item-tag">760 km · Western Ghats</span>
+          </div>
+          <div class="item-desc">
+            <strong>Route:</strong> Connects <em>Roha (Maharashtra)</em> to <em>Thokur / Mangaluru (Karnataka)</em> through Goa.<br>
+            <strong>Engineering Feat:</strong> Spans 146 rivers/streams, 2,000 bridges, 91 mountain tunnels; features the 64m-high <em>Panval Nadi viaduct</em>.
+          </div>
+          <div class="item-strip">
+            <strong>Direct Link:</strong> Cut Mumbai-Mangaluru travel time by 12+ hours.
+          </div>
+        </div>
+
+        <div class="item-card">
+          <div class="item-card-head">
+            <span class="item-title">Dedicated Freight Corridors</span>
+            <span class="item-tag">High-Axle DFCs</span>
+          </div>
+          <div class="item-desc">
+            <strong>Western DFC (1,504 km):</strong> Dadri (UP) to JNPT (Mumbai).<br>
+            <strong>Eastern DFC (1,856 km):</strong> Ludhiana (Punjab) to Dankuni (West Bengal).<br>
+            Separates freight from passenger lines for rapid raw material movement.
+          </div>
+          <div class="item-strip">
+            <strong>Zonal Matrix:</strong> Indian Railways divided into 18 operational zones.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Column 3: Inland Waterways & Pipelines -->
+    <div class="transport-col col-water-pipe">
+      <div class="col-header">
+        <h2>3. Waterways &amp; Pipelines</h2>
+        <span class="col-badge">Eco-Friendly Bulk</span>
+      </div>
+      <div class="col-body">
+        <div class="item-card">
+          <div class="item-card-head">
+            <span class="item-title">National Waterways (IWAI)</span>
+            <span class="item-tag">Inland Navigation</span>
+          </div>
+          <div class="item-desc">
+            <strong>NW-1 (1,620 km):</strong> <em>Ganga-Bhagirathi-Hooghly</em> river system from Prayagraj to Haldia (longest operational NW).<br>
+            <strong>NW-2 (891 km):</strong> <em>Brahmaputra river</em> from Sadiya to Dhubri (vital connectivity for Northeast India).<br>
+            <strong>NW-3 (205 km):</strong> <em>West Coast Canal</em> in Kerala (Kottapuram to Kollam) including Udyogamandal and Champakkara canals.
+          </div>
+          <div class="item-strip">
+            <strong>IWAI:</strong> Inland Waterways Authority of India founded in 1986.
+          </div>
+        </div>
+
+        <div class="item-card">
+          <div class="item-card-head">
+            <span class="item-title">Major Pipeline Networks</span>
+            <span class="item-tag">Zero Transit Losses</span>
+          </div>
+          <div class="item-desc">
+            <strong>HVJ Pipeline (1,750 km):</strong> <em>Hazira (Gujarat) – Vijaipur (MP) – Jagdishpur (UP)</em>. Gas arterial line feeding fertilizer and thermal power complexes.<br>
+            <strong>Salaya-Mathura:</strong> Crude pipeline from Gulf of Kutch to Koyali and Mathura refineries.<br>
+            <strong>Naharkatiya-Nunmati-Barauni:</strong> First long-distance crude line.
+          </div>
+          <div class="item-strip">
+            <strong>Efficiency:</strong> Unaffected by weather, minimal operational energy costs.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Column 4: Civil Aviation & UDAN -->
+    <div class="transport-col col-air">
+      <div class="col-header">
+        <h2>4. Civil Aviation &amp; UDAN</h2>
+        <span class="col-badge">High-Speed Transit</span>
+      </div>
+      <div class="col-body">
+        <div class="item-card">
+          <div class="item-card-head">
+            <span class="item-title">Air Transport Evolution</span>
+            <span class="item-tag">1911 Allahabad Debut</span>
+          </div>
+          <div class="item-desc">
+            <strong>Inception:</strong> First airmail flight (10 km) from Allahabad to Naini in 1911. Nationalized in 1953.<br>
+            <strong>AAI:</strong> Airports Authority of India manages 125+ airports, providing air traffic management and CNS infrastructure across Indian airspace.
+          </div>
+          <div class="item-strip">
+            <strong>Key Gateways:</strong> Delhi (IGI), Mumbai (CSMIA), Bengaluru, Chennai.
+          </div>
+        </div>
+
+        <div class="item-card">
+          <div class="item-card-head">
+            <span class="item-title">Pawan Hans Helicopters</span>
+            <span class="item-tag">Rugged Terrain Services</span>
+          </div>
+          <div class="item-desc">
+            <strong>Mandate:</strong> Helicopter support to petroleum sector (ONGC offshore Mumbai High), remote hilly regions in Northeast, J&amp;K, Himachal, and pilgrimage spots (Kedarnath, Amarnath).
+          </div>
+        </div>
+
+        <div class="item-card">
+          <div class="item-card-head">
+            <span class="item-title">UDAN Mission</span>
+            <span class="item-tag">Regional Connectivity</span>
+          </div>
+          <div class="item-desc">
+            <strong>Full Form:</strong> <em>Ude Desh ka Aam Naagrik</em>.<br>
+            <strong>Focus:</strong> Affordable air travel, capping regional airfares, operationalizing unserved and underserved airstrips across Tier-2/3 towns through Viability Gap Funding (VGF).
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <span>OurMocks Exam Prep Series · Geography Core Diagrams</span>
+    <span>Source: Ministry of Road Transport, Railways, Ports, Civil Aviation &amp; NCERT Class XII <em>India: People and Economy</em></span>
+  </footer>
+
+</body>
+</html>

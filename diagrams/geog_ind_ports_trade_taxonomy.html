@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>India Major Seaports and International Trade Architecture</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      width: 1440px;
+      height: 880px;
+      background-color: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0F172A;
+      position: relative;
+      overflow: hidden;
+      padding: 24px 32px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #E2E8F0;
+      padding-bottom: 12px;
+      margin-bottom: 20px;
+    }
+    .header-left h1 {
+      font-size: 22px;
+      font-weight: 800;
+      color: #071A4D;
+      letter-spacing: -0.02em;
+    }
+    .header-left p {
+      font-size: 13px;
+      color: #475569;
+      margin-top: 2px;
+      font-weight: 500;
+    }
+    .header-badge {
+      background: #EFF6FF;
+      color: #1E40AF;
+      border: 1px solid #BFDBFE;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 14px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* 4-Column Layout */
+    .taxonomy-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      height: 720px;
+    }
+
+    .column {
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      border-radius: 14px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+      overflow: hidden;
+    }
+
+    .col-header {
+      padding: 12px 14px;
+      border-bottom: 1px solid #E2E8F0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .col-header h2 {
+      font-size: 14px;
+      font-weight: 800;
+      color: #071A4D;
+    }
+    .col-badge {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+      text-transform: uppercase;
+    }
+
+    /* Accent top borders */
+    .col-west { border-top: 5px solid #0284C7; }
+    .col-west .col-badge { background: #E0F2FE; color: #0369A1; }
+
+    .col-east { border-top: 5px solid #0D9488; }
+    .col-east .col-badge { background: #CCFBF1; color: #0F766E; }
+
+    .col-composition { border-top: 5px solid #7C3AED; }
+    .col-composition .col-badge { background: #F3E8FF; color: #6D28D9; }
+
+    .col-direction { border-top: 5px solid #EA580C; }
+    .col-direction .col-badge { background: #FFEDD5; color: #C2410C; }
+
+    .col-content {
+      padding: 9px 11px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      overflow: hidden;
+      flex: 1;
+    }
+
+    .card {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 7px;
+      padding: 6px 9px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .card-title {
+      font-size: 11.5px;
+      font-weight: 800;
+      color: #0F172A;
+    }
+    .tag {
+      font-size: 8.5px;
+      font-weight: 700;
+      padding: 2px 5px;
+      border-radius: 4px;
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      color: #475569;
+    }
+
+    .card p {
+      font-size: 10.5px;
+      color: #334155;
+      line-height: 1.3;
+    }
+
+    .card strong {
+      color: #0F172A;
+      font-weight: 700;
+    }
+
+    .callout {
+      border-left: 3px solid #2563EB;
+      background: #EFF6FF;
+      padding: 5px 8px;
+      border-radius: 0 6px 6px 0;
+      font-size: 10px;
+      color: #1E40AF;
+      line-height: 1.3;
+      margin-top: 2px;
+    }
+
+    .callout-amber {
+      border-left-color: #D97706;
+      background: #FFFBEB;
+      color: #92400E;
+    }
+
+    .callout-emerald {
+      border-left-color: #059669;
+      background: #ECFDF5;
+      color: #065F46;
+    }
+
+    .callout-purple {
+      border-left-color: #7C3AED;
+      background: #FAF5FF;
+      color: #6B21A8;
+    }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 14px;
+      font-size: 11px;
+      color: #64748B;
+      font-weight: 500;
+      border-top: 1px solid #E2E8F0;
+      padding-top: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-left">
+      <h1>India: Major Seaports & International Trade Architecture</h1>
+      <p>Maritime Gateways, Hinterlands, Commodity Composition Shifts & Global Trade Direction</p>
+    </div>
+    <div class="header-badge">NCERT Class XII Geography</div>
+  </header>
+
+  <div class="taxonomy-grid">
+
+    <!-- Column 1: Western Coast Ports -->
+    <div class="column col-west">
+      <div class="col-header">
+        <h2>1. Western Coast Ports</h2>
+        <span class="col-badge">Arabian Sea Hubs</span>
+      </div>
+      <div class="col-content">
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Kandla (Deendayal)</span>
+            <span class="tag">Tidal Port · Gujarat</span>
+          </div>
+          <p><strong>Origin:</strong> Developed in Gulf of Kutch post-1947 to compensate for Karachi port loss. Serves broad NW hinterland (Punjab, Haryana, Rajasthan).</p>
+          <p><strong>Cargo:</strong> Heavy crude oil imports, fertilizers, foodgrains.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Mumbai Port</span>
+            <span class="tag">Natural Harbour</span>
+          </div>
+          <p><strong>Profile:</strong> Largest port of India; natural sheltered deep-water harbour. Gateway to Western/Central India.</p>
+          <p><strong>Cargo:</strong> General cargo, petroleum products, engineering goods.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Jawaharlal Nehru (JNPT)</span>
+            <span class="tag">Nhava Sheva</span>
+          </div>
+          <p><strong>Profile:</strong> Built as a satellite port to decongest Mumbai port; now India's largest container port handling over 50% of container cargo.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Marmagao Port</span>
+            <span class="tag">Estuarine · Goa</span>
+          </div>
+          <p><strong>Location:</strong> Natural harbour situated at the entrance of Zuari estuary. Remodeled with specialized mechanised berths.</p>
+          <p><strong>Specialization:</strong> Leading exporter of high-grade iron ore to Japan.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">New Mangalore</span>
+            <span class="tag">Karnataka Coast</span>
+          </div>
+          <p><strong>Cargo Focus:</strong> Caters to export of iron ore concentrates (Kudremukh), coffee, tea, cashew, fertilizers, and petroleum products.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Kochi Port</span>
+            <span class="tag">Vembanad Kayal</span>
+          </div>
+          <p><strong>Layout:</strong> Natural harbour located on Willingdon Island. Known as "Queen of the Arabian Sea".</p>
+          <p><strong>Exports:</strong> Spices, tea, coffee, coir; imports crude oil for Kochi refinery.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Column 2: Eastern Coast Ports -->
+    <div class="column col-east">
+      <div class="col-header">
+        <h2>2. Eastern Coast Ports</h2>
+        <span class="col-badge">Bay of Bengal Hubs</span>
+      </div>
+      <div class="col-content">
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Kolkata Port</span>
+            <span class="tag">Riverine · Hooghly</span>
+          </div>
+          <p><strong>Location:</strong> Riverine port 128 km inland on Hooghly river. Siltation managed via Farakka Barrage water head flushing.</p>
+          <p><strong>Hinterland:</strong> Entire Ganga-Brahmaputra plain, plus landlocked Nepal & Bhutan.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Haldia Port</span>
+            <span class="tag">Downstream Satellite</span>
+          </div>
+          <p><strong>Purpose:</strong> Constructed downstream at Hooghly-Haldi confluence to relieve heavy cargo congestion from Kolkata.</p>
+          <p><strong>Cargo:</strong> Bulk coal, petroleum, chemicals, heavy machinery.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Paradip Port</span>
+            <span class="tag">Deepwater · Odisha</span>
+          </div>
+          <p><strong>Profile:</strong> Deepwater port on Mahanadi delta with artificial lagoon harbour. Handles mineral wealth of Odisha & Jharkhand.</p>
+          <p><strong>Traffic:</strong> Bulk iron ore exports (Japan), thermal coal, and bauxite.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Visakhapatnam Port</span>
+            <span class="tag">Landlocked Harbour</span>
+          </div>
+          <p><strong>Harbour:</strong> Deep natural harbour protected by Dolphin's Nose hill & outer harbour built for large carriers.</p>
+          <p><strong>Specialization:</strong> Exports iron ore from Bailadila mines (Chhattisgarh).</p>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Chennai & Kamarajar</span>
+            <span class="tag">Artificial Harbours</span>
+          </div>
+          <p><strong>Chennai:</strong> One of oldest artificial harbours (1859); container & auto hub.</p>
+          <p><strong>Ennore (Kamarajar):</strong> India's first corporate port, built north of Chennai to handle coal for Tamil Nadu power plants.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Tuticorin (V.O.C.)</span>
+            <span class="tag">Gulf of Mannar</span>
+          </div>
+          <p><strong>Profile:</strong> Artificial deep-sea harbour in southern Tamil Nadu. Handles coal, salt, foodgrains, and coastal trade with Sri Lanka.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Column 3: Changing Composition of Trade -->
+    <div class="column col-composition">
+      <div class="col-header">
+        <h2>3. Trade Composition</h2>
+        <span class="col-badge">Structural Shift</span>
+      </div>
+      <div class="col-content">
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Export Basket Transformation</span>
+            <span class="tag">Manufactured Dominance</span>
+          </div>
+          <p><strong>Shift:</strong> Post-independence shift from colonial raw materials to value-added manufactured goods (~70-75% share).</p>
+          <div class="callout callout-purple">
+            <strong>Key Exports:</strong> Engineering goods, Gems & jewellery, Petroleum products (Jamnagar/Mangalore refineries), Chemicals & Pharma.
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Agri & Mineral Exports</span>
+            <span class="tag">Niche Value-Add</span>
+          </div>
+          <p><strong>Agri Share:</strong> Traditional bulk tea/jute reduced; replaced by marine products, Basmati rice, spices, organic vegetables.</p>
+          <p><strong>Minerals:</strong> Iron ore, manganese, bauxite (regulated to ensure domestic steel security).</p>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Import Basket Structure</span>
+            <span class="tag">POL & Capital Goods</span>
+          </div>
+          <p><strong>POL Dominance:</strong> Petroleum, Oil & Lubricants account for ~25-30% of total import expenditure (critical energy dependence).</p>
+          <div class="callout callout-amber">
+            <strong>Capital Goods:</strong> Industrial machinery, electrical & transport equipment, aircrafts, electronics, metallurgical ores.
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Precious Metals & Raw Inputs</span>
+            <span class="tag">Re-export Inputs</span>
+          </div>
+          <p><strong>Gems & Metals:</strong> Uncut diamonds, gold, and silver imported for domestic fabrication and re-export in gems/jewellery cluster.</p>
+          <p><strong>Fertilizers & Chemicals:</strong> Rock phosphate, potassic salts, and sulfur for domestic agricultural productivity.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Column 4: Direction, Balance & Gateway Logistics -->
+    <div class="column col-direction">
+      <div class="col-header">
+        <h2>4. Direction & Trade Balance</h2>
+        <span class="col-badge">Global Links</span>
+      </div>
+      <div class="col-content">
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Geographical Diversification</span>
+            <span class="tag">Look East & West</span>
+          </div>
+          <p><strong>Historical:</strong> UK and Commonwealth dominated pre-1970s; now replaced by diversified multi-polar trade partnerships.</p>
+          <div class="callout callout-emerald">
+            <strong>Top Partners:</strong> USA (largest export destination), China (largest import source), UAE, Saudi Arabia, Singapore, Iraq, Germany.
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Regional Trading Blocs</span>
+            <span class="tag">Integration</span>
+          </div>
+          <p><strong>Asia & ASEAN:</strong> India's largest trading regional bloc is Asia & ASEAN, followed by Europe and North America.</p>
+          <p><strong>West Asia:</strong> Vital energy supplier (crude oil, LNG) and remittance source.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Merchandise Trade Balance</span>
+            <span class="tag">Deficit Dynamics</span>
+          </div>
+          <p><strong>Deficit Pattern:</strong> Chronic merchandise deficit driven by inelastic POL and electronics import bills.</p>
+          <div class="callout callout-amber">
+            <strong>Service Offset:</strong> Surpluses in IT software exports, business services, tourism, and diaspora remittances cushion current account.
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Maritime Logistics Leverage</span>
+            <span class="tag">95% Volume</span>
+          </div>
+          <p><strong>Volume vs Value:</strong> ~95% of foreign trade volume and ~68% of value moves through maritime gateways.</p>
+          <p><strong>Air Cargo:</strong> Handles remaining ~30% value (high-value low-bulk: gems, electronics, lifesaving pharma, perishable floriculture).</p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <span>OurMocks Exam Prep Series · Geography Core Diagrams</span>
+    <span>Source: Ministry of Ports, Shipping & Waterways, DGFT & NCERT Class XII India: People and Economy</span>
+  </footer>
+
+</body>
+</html>
