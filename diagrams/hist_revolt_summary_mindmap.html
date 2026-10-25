@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Revolt of 1857: Patterns and Representations - Summary Mindmap</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 1440px;
+      height: 880px;
+      background: #070D1E;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: #F8FAFC;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 32px 40px;
+      overflow: hidden;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding-bottom: 16px;
+    }
+    .topic-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(239, 68, 68, 0.15);
+      border: 1px solid rgba(239, 68, 68, 0.4);
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+      color: #F87171;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 26px;
+      font-weight: 700;
+      color: #FFFFFF;
+      letter-spacing: -0.02em;
+    }
+    .subtitle {
+      font-size: 13px;
+      color: #94A3B8;
+      margin-top: 3px;
+    }
+    .brand-meta {
+      text-align: right;
+    }
+    .brand-logo {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: #B8FF34;
+      letter-spacing: 0.06em;
+    }
+    .doc-pointer {
+      font-size: 11px;
+      color: #64748B;
+      margin-top: 2px;
+    }
+
+    /* 6-Card Mindmap Grid */
+    .mindmap-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 16px;
+      flex: 1;
+      margin-top: 18px;
+      margin-bottom: 14px;
+    }
+
+    .mindmap-card {
+      background: rgba(15, 23, 42, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 16px 18px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .mindmap-card.core-axis {
+      border: 1px solid rgba(239, 68, 68, 0.4);
+      background: radial-gradient(circle at 50% 0%, rgba(239, 68, 68, 0.12), rgba(15, 23, 42, 0.8) 75%);
+    }
+
+    .card-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .card-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: #FFFFFF;
+    }
+    .core-axis .card-title {
+      color: #F87171;
+    }
+    .card-pill {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+      text-transform: uppercase;
+      background: rgba(255, 255, 255, 0.07);
+      color: #94A3B8;
+    }
+    .core-axis .card-pill {
+      background: rgba(239, 68, 68, 0.2);
+      color: #FCA5A5;
+    }
+
+    .card-bullets {
+      list-style-type: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 11.5px;
+      color: #94A3B8;
+      line-height: 1.45;
+    }
+    .card-bullets li {
+      position: relative;
+      padding-left: 14px;
+    }
+    .card-bullets li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #38BDF8;
+      font-weight: bold;
+    }
+    .core-axis .card-bullets li::before {
+      color: #F87171;
+    }
+    .card-bullets b {
+      color: #F1F5F9;
+      font-weight: 600;
+    }
+
+    /* Footer */
+    .footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      color: #64748B;
+    }
+    .blueprint {
+      color: #CBD5E1;
+    }
+    .blueprint strong {
+      color: #B8FF34;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div>
+      <div class="topic-badge">Comprehensive Topic Map · Themes in Indian History Part III</div>
+      <div class="title">Revolt of 1857: Patterns and Representations (1857–1858)</div>
+      <div class="subtitle">Complete chapter framework: outbreak patterns, regional commands, Awadh epicenter, rumors, and colonial/nationalist representations</div>
+    </div>
+    <div class="brand-meta">
+      <div class="brand-logo">OURMOCKS STUDY VISUALS</div>
+      <div class="doc-pointer">CUET UG History · Chapter 10</div>
+    </div>
+  </div>
+
+  <!-- 6-Card Mindmap Grid -->
+  <div class="mindmap-grid">
+    
+    <!-- Card 1 -->
+    <div class="mindmap-card">
+      <div class="card-head">
+        <div class="card-title">1. Patterns & Communication</div>
+        <div class="card-pill">10 MAY 1857</div>
+      </div>
+      <ul class="card-bullets">
+        <li><b>The Mutiny Pattern:</b> Began at Meerut; signaled by evening gun/bugle; broke open jails; raided <b>bell of arms</b> (shastragaar); cut telegraphs.</li>
+        <li><b>Midnight March to Delhi:</b> Reached Red Fort on 11 May during Ramadan; secured <b>Bahadur Shah Zafar's</b> symbolic leadership.</li>
+        <li><b>Circulation Networks:</b> Distribution of <b>chapatis</b> from village to village and red lotuses as silent symbols of collective mobilization.</li>
+        <li><b>Regimental Panchayats:</b> Sepoy representatives from different lines gathered in night councils to coordinate simultaneous uprisings.</li>
+      </ul>
+    </div>
+
+    <!-- Card 2: Core Axis -->
+    <div class="mindmap-card core-axis">
+      <div class="card-head">
+        <div class="card-title">★ Core Axis: Awadh in Total Revolt</div>
+        <div class="card-pill">CIVIL INSURRECTION</div>
+      </div>
+      <ul class="card-bullets">
+        <li><b>Dalhousie's Annexation (1856):</b> Deposed Nawab <b>Wajid Ali Shah</b> on grounds of misgovernment; called Awadh <i>"a cherry that will fall into our mouth"</i>.</li>
+        <li><b>Summary Settlement of 1856:</b> Dispossessed traditional <b>taluqdars</b> of 50% to 67% of their villages, demolishing forts and disarming retainers.</li>
+        <li><b>"Nursery of the Bengal Army":</b> Almost every peasant family in Awadh had a son in the sepoy ranks; sepoy grievances mirrored rural fury.</li>
+        <li><b>Total Mobilization:</b> Begum <b>Hazrat Mahal</b> and young Birjis Qadr rallied court nobles, taluqdars, and peasants in an unyielding popular war.</li>
+      </ul>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="mindmap-card">
+      <div class="card-head">
+        <div class="card-title">2. Leaders & Rebellious Centers</div>
+        <div class="card-pill">COMMAND HIERARCHY</div>
+      </div>
+      <ul class="card-bullets">
+        <li><b>Delhi:</b> <b>Bahadur Shah Zafar</b> (sovereign head) & General <b>Bakht Khan</b> (military commander from Bareilly).</li>
+        <li><b>Kanpur:</b> <b>Nana Sahib</b> (Peshwa Baji Rao II's adopted son) and general <b>Tatya Tope</b>.</li>
+        <li><b>Jhansi:</b> <b>Rani Lakshmibai</b>, dispossessed by Dalhousie's Doctrine of Lapse; fought valiantly in male attire.</li>
+        <li><b>Bihar & Local Heroes:</b> <b>Kunwar Singh</b> (Arrah zamindar); <b>Shah Mal</b> (mobilized 84 Jat villages in Baghpat); <b>Gonoo</b> (Kol tribal leader in Singhbhum).</li>
+      </ul>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="mindmap-card">
+      <div class="card-head">
+        <div class="card-title">3. Rumours, Prophecies & Unity</div>
+        <div class="card-pill">POPULAR MENTALITY</div>
+      </div>
+      <ul class="card-bullets">
+        <li><b>The Enfield Cartridges:</b> Rumour that bullet grease contained cow fat (sacred to Hindus) and pig fat (forbidden to Muslims).</li>
+        <li><b>Bazaar Flour Contamination:</b> Widespread belief that British mixed <b>bone dust</b> of cows and pigs into flour (*atta*).</li>
+        <li><b>Centenary Prophecy:</b> Prophesied that East India Company rule would end 100 years after the <b>Battle of Plassey (23 June 1757)</b>.</li>
+        <li><b>The Azamgarh Proclamation (1857):</b> Appealed to all castes and communities; enforced total ban on cow slaughter in rebel territories.</li>
+      </ul>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="mindmap-card">
+      <div class="card-head">
+        <div class="card-title">4. British Reconquest & Counter-Terror</div>
+        <div class="card-pill">1857–1858 CE</div>
+      </div>
+      <ul class="card-bullets">
+        <li><b>Recapture of Delhi:</b> British forces under <b>John Nicholson</b> breached Kashmiri Gate (Sept 1857); Zafar arrested at Humayun's tomb.</li>
+        <li><b>Relief of Lucknow:</b> Sir Colin Campbell, Outram, and Havelock broke through the Lucknow Residency siege in March 1858.</li>
+        <li><b>Savage Retribution:</b> Martial law declared; indiscriminate burning of villages; rebels blown alive from the mouths of cannons.</li>
+        <li><b>Crown Rule (1858):</b> Queen Victoria's Proclamation ended East India Company rule, transferring India directly to the British Crown.</li>
+      </ul>
+    </div>
+
+    <!-- Card 6 -->
+    <div class="mindmap-card">
+      <div class="card-head">
+        <div class="card-title">5. Visual Arts & Nationalist Memory</div>
+        <div class="card-pill">REPRESENTATION</div>
+      </div>
+      <ul class="card-bullets">
+        <li><b>Thomas Jones Barker (1859):</b> <i>"Relief of Lucknow"</i> celebrated British military commanders (Campbell, Havelock) as heroic imperial saviors.</li>
+        <li><b>Joseph Noel Paton (1859):</b> <i>"In Memoriam"</i> depicted helpless British women and children awaiting death, justifying brutal retribution.</li>
+        <li><b>Satirical Cartoons:</b> British magazine <i>Punch</i> published cartoons depicting imperial "Justice" slaying rebel "monsters".</li>
+        <li><b>Nationalist Transformation:</b> Celebrated as the <b>First War of Independence</b> (V.D. Savarkar, 1909); Rani Lakshmibai romanticized in folklore.</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="blueprint">
+      <strong>Exam Blueprint:</strong> Meerut outbreak · Dalhousie's Awadh annexation · Summary Settlement (1856) · Azamgarh Proclamation · Barker's *Relief of Lucknow* · Savarkar's 1909 thesis
+    </div>
+    <div>www.ourmocks.com · NTA CUET UG History Mastery</div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anatomy of the 1857 Revolt - Catalysts & Leadership Matrix</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 1440px;
+      height: 880px;
+      background: #080D1D;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: #F8FAFC;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 32px 40px;
+      overflow: hidden;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding-bottom: 16px;
+    }
+    .topic-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(239, 68, 68, 0.15);
+      border: 1px solid rgba(239, 68, 68, 0.4);
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+      color: #F87171;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 26px;
+      font-weight: 700;
+      color: #FFFFFF;
+      letter-spacing: -0.02em;
+    }
+    .subtitle {
+      font-size: 13px;
+      color: #94A3B8;
+      margin-top: 3px;
+    }
+    .brand-meta {
+      text-align: right;
+    }
+    .brand-logo {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: #B8FF34;
+      letter-spacing: 0.06em;
+    }
+    .doc-pointer {
+      font-size: 11px;
+      color: #64748B;
+      margin-top: 2px;
+    }
+
+    /* Matrix Grid: 2 Large Sections (Causes/Catalysts + Regional Centers & Leaders) */
+    .matrix-container {
+      display: grid;
+      grid-template-columns: 1.1fr 1.3fr;
+      gap: 20px;
+      flex: 1;
+      margin-top: 20px;
+      margin-bottom: 14px;
+      align-items: stretch;
+    }
+
+    /* Left: Catalysts & Grievances */
+    .catalyst-box {
+      background: rgba(15, 23, 42, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 18px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-top: 4px solid #EF4444;
+    }
+    .sec-head {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin-bottom: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      padding-bottom: 8px;
+    }
+    .sec-tag {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+      text-transform: uppercase;
+      background: rgba(239, 68, 68, 0.2);
+      color: #F87171;
+    }
+
+    .catalyst-items {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .cat-item {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 8px;
+      padding: 10px 12px;
+    }
+    .cat-title {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #F1F5F9;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 3px;
+    }
+    .cat-desc {
+      font-size: 11.5px;
+      color: #94A3B8;
+      line-height: 1.45;
+    }
+    .cat-desc b {
+      color: #F87171;
+    }
+
+    /* Right: Leadership & Regional Mapping Table */
+    .leadership-box {
+      background: rgba(15, 23, 42, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 18px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-top: 4px solid #3B82F6;
+    }
+    .sec-tag-blue {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+      text-transform: uppercase;
+      background: rgba(59, 130, 246, 0.2);
+      color: #60A5FA;
+    }
+
+    .leader-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .leader-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 8px;
+      padding: 10px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .center-name {
+      font-size: 11px;
+      font-weight: 800;
+      color: #38BDF8;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .leader-name {
+      font-size: 13px;
+      font-weight: 700;
+      color: #FFFFFF;
+    }
+    .leader-role {
+      font-size: 11px;
+      color: #94A3B8;
+      line-height: 1.35;
+    }
+
+    /* Bottom Info Banner */
+    .bottom-banner {
+      background: rgba(30, 41, 59, 0.55);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      padding: 12px 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 16px;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .banner-node {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .node-title {
+      font-size: 11px;
+      font-weight: 700;
+      color: #B8FF34;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .node-desc {
+      font-size: 11.5px;
+      color: #CBD5E1;
+      line-height: 1.4;
+    }
+
+    /* Footer */
+    .footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      color: #64748B;
+    }
+    .exam-focus {
+      color: #CBD5E1;
+      font-weight: 500;
+    }
+    .exam-focus strong {
+      color: #F87171;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div>
+      <div class="topic-badge">Themes in Indian History Part III · Chapter 11</div>
+      <div class="title">Anatomy of the 1857 Revolt: Underlying Catalysts & Leadership Matrix</div>
+      <div class="subtitle">Systematic matrix mapping military, political, and agrarian catalysts with regional rebel commands and grassroot insurgencies</div>
+    </div>
+    <div class="brand-meta">
+      <div class="brand-logo">OURMOCKS STUDY VISUALS</div>
+      <div class="doc-pointer">CUET UG History · Unit 10</div>
+    </div>
+  </div>
+
+  <!-- Matrix Container -->
+  <div class="matrix-container">
+    
+    <!-- Left: Catalysts -->
+    <div class="catalyst-box">
+      <div>
+        <div class="sec-head">
+          <span>Structural Catalysts of Insurrection</span>
+          <span class="sec-tag">4 Core Dimensions</span>
+        </div>
+        
+        <div class="catalyst-items">
+          <div class="cat-item">
+            <div class="cat-title">1. Military Grievances & Cartridges</div>
+            <div class="cat-desc">
+              Introduction of the <b>Enfield rifle</b> requiring sepoys to bite cartridges greased with cow and pig fat. Reinforced by racial slurs from British officers, low pay, and denial of overseas allowances (<i>batta</i>).
+            </div>
+          </div>
+
+          <div class="cat-item">
+            <div class="cat-title">2. Annexation of Awadh (1856)</div>
+            <div class="cat-desc">
+              Dalhousie deposed Nawab <b>Wajid Ali Shah</b> on grounds of "misgovernment", calling Awadh <i>"a cherry that will fall into our mouth one day"</i>. Disbanded royal court; humiliated regional pride.
+            </div>
+          </div>
+
+          <div class="cat-item">
+            <div class="cat-title">3. Summary Settlement of 1856</div>
+            <div class="cat-desc">
+              Dispossessed Awadh <b>taluqdars</b> of 50% to 67% of their estates. As the <i>"nursery of the Bengal Army"</i>, grievances of dispossessed rural taluqdars immediately infected the sepoy ranks.
+            </div>
+          </div>
+
+          <div class="cat-item">
+            <div class="cat-title">4. Rumours & Prophecies</div>
+            <div class="cat-desc">
+              Rumours of <b>bone dust</b> mixed into bazaar flour (*atta*); circulation of <b>chapatis</b> from village to village; prophecy that British rule would collapse on the centenary of the <b>Battle of Plassey (23 June 1857)</b>.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: Regional Leadership Matrix -->
+    <div class="leadership-box">
+      <div>
+        <div class="sec-head">
+          <span>Regional Rebel Centers & Leadership Matrix</span>
+          <span class="sec-tag-blue">Command Structure</span>
+        </div>
+
+        <div class="leader-grid">
+          
+          <div class="leader-card">
+            <div class="center-name">Delhi (Imperial Symbol)</div>
+            <div class="leader-name">Bahadur Shah Zafar & Bakht Khan</div>
+            <div class="leader-role">Aged Mughal Emperor proclaimed Shahenshah-i-Hindustan; actual defense commanded by General Bakht Khan (Bareilly subedar).</div>
+          </div>
+
+          <div class="leader-card">
+            <div class="center-name">Kanpur</div>
+            <div class="leader-name">Nana Sahib & Tatya Tope</div>
+            <div class="leader-role">Adopted son of last Peshwa Baji Rao II denied pension; led revolt with general Tatya Tope and Azimullah Khan.</div>
+          </div>
+
+          <div class="leader-card">
+            <div class="center-name">Lucknow (Awadh)</div>
+            <div class="leader-name">Begum Hazrat Mahal & Birjis Qadr</div>
+            <div class="leader-role">Wife and young son of exiled Nawab; rallied court, taluqdars, and peasants to lay siege to the British Residency.</div>
+          </div>
+
+          <div class="leader-card">
+            <div class="center-name">Jhansi (Bundelkhand)</div>
+            <div class="leader-name">Rani Lakshmibai</div>
+            <div class="leader-role">Deposed under Dalhousie's <b>Doctrine of Lapse</b>; fought fiercely in male attire alongside Afghan mercenaries and Tatya Tope.</div>
+          </div>
+
+          <div class="leader-card">
+            <div class="center-name">Arrah / Jagdishpur (Bihar)</div>
+            <div class="leader-name">Kunwar Singh</div>
+            <div class="leader-role">80-year-old Rajput zamindar dispossessed of his estates; conducted masterful guerrilla campaigns across Bihar and Awadh.</div>
+          </div>
+
+          <div class="leader-card">
+            <div class="center-name">Faizabad (Popular Cleric)</div>
+            <div class="leader-name">Maulvi Ahmadullah Shah</div>
+            <div class="leader-role">Charismatic "Danka Shah" traveling in a palanquin; preached armed jihad; routed British forces under Henry Lawrence at Chinhat.</div>
+          </div>
+
+          <div class="leader-card">
+            <div class="center-name">Baghpat (Western UP)</div>
+            <div class="leader-name">Shah Mal</div>
+            <div class="leader-role">Mobilized Jat cultivators across <i>Chaurasee des</i> (84 villages); established rebel communication depot before dying in battle.</div>
+          </div>
+
+          <div class="leader-card">
+            <div class="center-name">Singhbhum (Chotanagpur)</div>
+            <div class="leader-name">Gonoo</div>
+            <div class="leader-role">Tribal cultivator who mobilized the Kol tribals of the region to fight alongside rebellious mutineers.</div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bottom Banner -->
+  <div class="bottom-banner">
+    <div class="banner-node">
+      <div class="node-title">The Azamgarh Proclamation (1857)</div>
+      <div class="node-desc">Issued by Firoz Shah appealing to zamindars, merchants, and artisans; championed complete Hindu-Muslim solidarity.</div>
+    </div>
+    <div class="banner-node">
+      <div class="node-title">Awadh: The Core Epicenter</div>
+      <div class="node-desc">Over 75,000 sepoys hailed from Awadh villages. The revolt here was a total civil and popular insurrection, not just a mutiny.</div>
+    </div>
+    <div class="banner-node">
+      <div class="node-title">Communication Networks</div>
+      <div class="node-desc">Uniformity of revolt across far-flung cantonments was facilitated by night pan-regiment *panchayats* and courier sepoys.</div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="exam-focus">
+      <strong>Core Exam Pointers:</strong> Enfield rifle & fat greased cartridges · Annexation of Awadh (1856) · Begum Hazrat Mahal · Kunwar Singh · Shah Mal & Gonoo
+    </div>
+    <div>www.ourmocks.com · NTA CUET UG History Mastery</div>
+  </div>
+
+</body>
+</html>
