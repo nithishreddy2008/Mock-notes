@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Harappan Urban Anatomy & Settlement Hierarchy</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #ffffff; width: 1480px; }
+  .wrap { width: 1480px; height: 1080px; position: relative; background: #ffffff; }
+  svg.wires { position: absolute; inset: 0; width: 1480px; height: 1080px; }
+  .center {
+    position: absolute; left: 470px; top: 465px; width: 540px; height: 110px;
+    background: #071A4D; border-radius: 16px; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(7,26,77,.25);
+    border-bottom: 5px solid #B8FF34;
+  }
+  .center .t { font-family: 'Outfit', sans-serif; color: #fff; font-size: 20px; font-weight: 800; letter-spacing: .5px; text-align: center; }
+  .center .s { color: #B8FF34; font-size: 13px; font-weight: 700; letter-spacing: 2px; margin-top: 4px; }
+  .card {
+    position: absolute; width: 465px; background: #FCFDFF; border: 1.5px solid #D5DCEA;
+    border-radius: 14px; padding: 13px 16px 12px;
+  }
+  .card h2 { font-family: 'Outfit', sans-serif; font-size: 18px; color: #071A4D; font-weight: 800; margin-bottom: 7px;
+             padding-bottom: 5px; border-bottom: 3px solid; display: inline-block; }
+  .leaf { font-size: 13.8px; color: #1B2333; margin: 5px 0; padding-left: 16px; position: relative; line-height: 1.34; }
+  .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
+  .b .leaf::before { background: #1F5EFF; }
+  .l .leaf::before { background: #7FB800; }
+  .leaf b { color: #071A4D; }
+  .b h2 { border-color: #1F5EFF; }
+  .l h2 { border-color: #7FB800; }
+  .left { left: 30px; }
+  .right { left: 985px; }
+  .exc {
+    position: absolute; left: 450px; top: 893px; width: 580px; background: #FFF3EC;
+    border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px;
+  }
+  .exc h2 { font-family: 'Outfit', sans-serif; font-size: 16.5px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
+  .exc .leaf { font-size: 13px; margin: 3px 0; padding-left: 14px; color: #7A2A12; }
+  .exc .leaf::before { background: #D2481F; }
+  .exc b { color: #B4380F; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <svg class="wires" viewBox="0 0 1480 1080">
+    <path d="M 520 505 C 470 505, 495 158, 500 155" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 520 520 C 480 520, 495 438, 500 438" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 520 535 C 470 535, 495 718, 500 718" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 960 505 C 1010 505, 985 158, 980 155" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 960 520 C 1000 520, 985 438, 980 438" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
+    <path d="M 960 535 C 1010 535, 985 718, 980 718" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
+    <path d="M 740 575 C 740 700, 740 830, 740 891" fill="none" stroke="#D2481F" stroke-width="2.5" stroke-dasharray="7 5" opacity=".6"/>
+  </svg>
+
+  <div class="center">
+    <div class="t">HARAPPAN URBAN ANATOMY &amp; SETTLEMENTS</div>
+    <div class="s">THEMES IN INDIAN HISTORY PART I &#183; THEME 1 (CUET UG)</div>
+  </div>
+
+  <div class="card left b" style="top:52px">
+    <h2>1. The Dual-Town Model (Mohenjodaro)</h2>
+    <div class="leaf"><b>Citadel (West):</b> Elevated on mud-brick platforms; fortified by perimeter walls; reserved for civic, ceremonial &amp; public governance.</div>
+    <div class="leaf"><b>Lower Town (East):</b> Vastly larger residential area; also walled; divided into sectors by planned streets.</div>
+    <div class="leaf"><b>Standardized Bricks:</b> Uniform ratio of <b>1 : 2 : 4</b> (thickness : width : length) across every Harappan site from Gujarat to Punjab.</div>
+    <div class="leaf"><b>Settlement Variations:</b> Dholavira features a unique tripartite division (Citadel, Middle Town, Lower Town) with massive stone fortifications.</div>
+  </div>
+
+  <div class="card left l" style="top:328px">
+    <h2>2. Monumental Public Architecture</h2>
+    <div class="leaf"><b>The Great Bath:</b> Rectangular tank on Citadel; watertight with gypsum mortar; flights of steps on north &amp; south sides.</div>
+    <div class="leaf"><b>Colonnaded Corridors:</b> Great Bath surrounded by rooms on 3 sides; one room contained a large brick well; water drained into street canal.</div>
+    <div class="leaf"><b>Warehouse / Granary:</b> Massive brick base survived at Mohenjodaro; upper timber superstructures decayed over millennia.</div>
+    <div class="leaf"><b>Ritual Significance:</b> Scholars unanimously link the Great Bath to exclusive ritual purification and state ceremonies.</div>
+  </div>
+
+  <div class="card left b" style="top:604px">
+    <h2>3. Street Grid &amp; Advanced Drainage</h2>
+    <div class="leaf"><b>Gridiron Layout:</b> Streets intersected at precise <b>right angles (90&#176;)</b>; houses aligned along straight street grids.</div>
+    <div class="leaf"><b>Covered Drains:</b> Street drains constructed of kiln-fired bricks or dressed stone slabs; easily removable for cleaning.</div>
+    <div class="leaf"><b>Domestic Connection:</b> Every house had at least one wall bordering a street; waste water flowed into street drains via soak pits.</div>
+    <div class="leaf"><b>Drain Sump Basins:</b> Solid refuse settled in private sump pits; only clarified water entered the municipal channels.</div>
+  </div>
+
+  <div class="card right l" style="top:52px">
+    <h2>4. Domestic Architecture &amp; Privacy</h2>
+    <div class="leaf"><b>Courtyard-Centric:</b> Rooms arranged around an open central courtyard; courtyard served as hub for cooking, spinning &amp; craft.</div>
+    <div class="leaf"><b>Strict Visual Privacy:</b> No ground-floor windows facing exterior streets; main entrance never gave a direct view into courtyard.</div>
+    <div class="leaf"><b>Private Bathrooms:</b> Paved with waterproof bricks; individual drains ran directly through outer wall into municipal drain.</div>
+    <div class="leaf"><b>Public &amp; Private Wells:</b> Mohenjodaro boasted ~<b>700 wells</b>, many accessible from street for passing travelers.</div>
+  </div>
+
+  <div class="card right b" style="top:328px">
+    <h2>5. Agricultural Base &amp; Water Management</h2>
+    <div class="leaf"><b>Crops Cultivated:</b> Wheat, barley, lentil, chickpea, sesame, and mustard; millets found in Gujarat; rice was exceptionally rare.</div>
+    <div class="leaf"><b>Ploughed Field:</b> Kalibangan (Rajasthan) yielded early Harappan ploughed field with two perpendicular furrow sets (double cropping).</div>
+    <div class="leaf"><b>Irrigation Systems:</b> Canals traced at <b>Shortughai</b> (Afghanistan); stone water reservoirs discovered at <b>Dholavira</b> (Gujarat).</div>
+    <div class="leaf"><b>Animal Traction:</b> Terracotta models of plough found at Cholistan and <b>Banawali</b> (Haryana); humped zebu oxen used for draught.</div>
+  </div>
+
+  <div class="card right l" style="top:604px">
+    <h2>6. Specialized Craft Production Centers</h2>
+    <div class="leaf"><b>Chanhudaro:</b> Tiny settlement (~7 hectares) exclusively devoted to craft: bead-making, seal-cutting, shell-working &amp; weights.</div>
+    <div class="leaf"><b>Coastal Outposts:</b> <b>Nageshwar</b> and <b>Balakot</b> specialized in maritime shell objects (bangles, ladles, inlay work).</div>
+    <div class="leaf"><b>Lothal:</b> Harbor port city in Gujarat; specialized in carnelian bead factories and copper metallurgy; brick dockyard basin.</div>
+    <div class="leaf"><b>Raw Material Outposts:</b> Shortughai established in Badakhshan near best source of prized dark blue <b>lapis lazuli</b>.</div>
+  </div>
+
+  <div class="exc">
+    <h2>&#9888; CRITICAL CUET EXAM TRAPS &amp; COMMONLY CONFUSED SITES</h2>
+    <div class="leaf"><b>Kalibangan vs Banawali:</b> Ploughed field is at <b>Kalibangan</b>; terracotta plough models are at <b>Banawali</b> and Cholistan.</div>
+    <div class="leaf"><b>Shortughai vs Dholavira:</b> Canals found at <b>Shortughai</b> (Afghanistan); stone water harvesting reservoirs at <b>Dholavira</b> (Gujarat).</div>
+    <div class="leaf"><b>Chanhudaro:</b> Only Harappan settlement with <b>NO fortified citadel</b>; 100% craft-oriented industrial town.</div>
+  </div>
+</div>
+</body>
+</html>
