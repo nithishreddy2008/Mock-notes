@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>India Selected Issues and Environmental Problems Summary Mindmap</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      width: 1440px;
+      height: 880px;
+      background-color: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0F172A;
+      position: relative;
+      overflow: hidden;
+      padding: 24px 32px;
+    }
+
+    header {
+      position: absolute;
+      top: 18px;
+      left: 32px;
+      right: 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #E2E8F0;
+      padding-bottom: 8px;
+      z-index: 10;
+    }
+    .header-left h1 {
+      font-size: 22px;
+      font-weight: 800;
+      color: #071A4D;
+      letter-spacing: -0.02em;
+    }
+    .header-left p {
+      font-size: 12.5px;
+      color: #475569;
+      margin-top: 2px;
+      font-weight: 500;
+    }
+    .header-badge {
+      background: #EFF6FF;
+      color: #1E40AF;
+      border: 1px solid #BFDBFE;
+      font-size: 10.5px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* SVG Connectors */
+    svg.connections {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1440px;
+      height: 880px;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Central Hub */
+    .mindmap-center {
+      position: absolute;
+      top: 385px;
+      left: 575px;
+      width: 290px;
+      height: 110px;
+      background: #071A4D;
+      border: 3px solid #1F5EFF;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(7, 26, 77, 0.18), 0 0 0 6px #EFF6FF;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 12px 16px;
+      z-index: 5;
+    }
+    .mindmap-center .sub-label {
+      font-size: 9.5px;
+      font-weight: 800;
+      color: #B8FF34;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 3px;
+    }
+    .mindmap-center h2 {
+      font-size: 15px;
+      font-weight: 900;
+      color: #FFFFFF;
+      letter-spacing: -0.01em;
+      line-height: 1.25;
+    }
+    .mindmap-center .bottom-tag {
+      font-size: 9.5px;
+      color: #94A3B8;
+      margin-top: 4px;
+      font-weight: 500;
+    }
+
+    /* Branch Cards */
+    .branch-card {
+      position: absolute;
+      width: 395px;
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      border-radius: 12px;
+      padding: 10px 14px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+      z-index: 4;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    /* Left Positions */
+    .card-left-1 { top: 80px; left: 40px; height: 232px; border-left: 5px solid #0284C7; }
+    .card-left-2 { top: 326px; left: 40px; height: 234px; border-left: 5px solid #D97706; }
+    .card-left-3 { top: 572px; left: 40px; height: 236px; border-left: 5px solid #7C3AED; }
+
+    /* Right Positions */
+    .card-right-1 { top: 80px; left: 1005px; height: 232px; border-right: 5px solid #EA580C; }
+    .card-right-2 { top: 326px; left: 1005px; height: 234px; border-right: 5px solid #E11D48; }
+    .card-right-3 { top: 572px; left: 1005px; height: 236px; border-right: 5px solid #0D9488; }
+
+    .card-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #F1F5F9;
+      padding-bottom: 4px;
+    }
+    .card-head h3 {
+      font-size: 13px;
+      font-weight: 800;
+      color: #0F172A;
+    }
+    .badge {
+      font-size: 9.5px;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+    .b-sky { background: #E0F2FE; color: #0369A1; }
+    .b-amber { background: #FEF3C7; color: #92400E; }
+    .b-purple { background: #F3E8FF; color: #6D28D9; }
+    .b-orange { background: #FFEDD5; color: #C2410C; }
+    .b-rose { background: #FFE4E6; color: #BE123C; }
+    .b-teal { background: #CCFBF1; color: #0F766E; }
+
+    .bullet-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 2.5px;
+      font-size: 9.8px;
+      color: #334155;
+      line-height: 1.3;
+    }
+    .bullet-list li {
+      position: relative;
+      padding-left: 12px;
+    }
+    .bullet-list li::before {
+      content: "▪";
+      position: absolute;
+      left: 0;
+      font-size: 10px;
+    }
+    .card-left-1 .bullet-list li::before { color: #0284C7; }
+    .card-left-2 .bullet-list li::before { color: #D97706; }
+    .card-left-3 .bullet-list li::before { color: #7C3AED; }
+    .card-right-1 .bullet-list li::before { color: #EA580C; }
+    .card-right-2 .bullet-list li::before { color: #E11D48; }
+    .card-right-3 .bullet-list li::before { color: #0D9488; }
+
+    .bullet-list strong {
+      color: #0F172A;
+    }
+
+    .key-metric-strip {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 5px;
+      padding: 3.5px 7px;
+      font-size: 9.5px;
+      color: #475569;
+      margin-top: 1px;
+      line-height: 1.25;
+    }
+    .key-metric-strip strong {
+      color: #0F172A;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 12px;
+      left: 32px;
+      right: 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      color: #64748B;
+      font-weight: 500;
+      border-top: 1px solid #E2E8F0;
+      padding-top: 6px;
+      z-index: 10;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-left">
+      <h1>India: Geographical Perspective on Selected Issues & Problems</h1>
+      <p>Master Synthesis Mindmap · Environmental Pollution, Solid Waste, Slums, Land Degradation & Watershed Models</p>
+    </div>
+    <div class="header-badge">NCERT Class XII Geography · Unit 9</div>
+  </header>
+
+  <!-- SVG Connectors -->
+  <svg class="connections">
+    <!-- Center to Left 1 -->
+    <path d="M 575 420 C 490 420, 470 196, 435 196" fill="none" stroke="#0284C7" stroke-width="2" stroke-dasharray="4,3" opacity="0.6"/>
+    <!-- Center to Left 2 -->
+    <path d="M 575 440 C 500 440, 480 443, 435 443" fill="none" stroke="#D97706" stroke-width="2" stroke-dasharray="4,3" opacity="0.6"/>
+    <!-- Center to Left 3 -->
+    <path d="M 575 460 C 490 460, 470 690, 435 690" fill="none" stroke="#7C3AED" stroke-width="2" stroke-dasharray="4,3" opacity="0.6"/>
+
+    <!-- Center to Right 1 -->
+    <path d="M 865 420 C 945 420, 965 196, 1005 196" fill="none" stroke="#EA580C" stroke-width="2" stroke-dasharray="4,3" opacity="0.6"/>
+    <!-- Center to Right 2 -->
+    <path d="M 865 440 C 940 440, 960 443, 1005 443" fill="none" stroke="#E11D48" stroke-width="2" stroke-dasharray="4,3" opacity="0.6"/>
+    <!-- Center to Right 3 -->
+    <path d="M 865 460 C 945 460, 965 690, 1005 690" fill="none" stroke="#0D9488" stroke-width="2" stroke-dasharray="4,3" opacity="0.6"/>
+  </svg>
+
+  <!-- Central Hub -->
+  <div class="mindmap-center">
+    <div class="sub-label">Unit 9 Syllabus Architecture</div>
+    <h2>Selected Issues & Environmental Problems</h2>
+    <div class="bottom-tag">Anthropogenic Pressures & Ecological Balance</div>
+  </div>
+
+  <!-- Left 1: Water Pollution -->
+  <div class="branch-card card-left-1">
+    <div class="card-head">
+      <h3>1. Water Pollution & River Depletion</h3>
+      <span class="badge b-sky">Aquatic Ecology</span>
+    </div>
+    <ul class="bullet-list">
+      <li><strong>Source Dualism:</strong> <em>Point sources</em> (industrial pipes, municipal sewer outfalls) vs <em>Non-point sources</em> (agricultural runoff, open urban runoff).</li>
+      <li><strong>Oxygen Depletion:</strong> High organic waste elevates <em>Biochemical Oxygen Demand (BOD)</em>, exhausting Dissolved Oxygen and causing severe fish kills.</li>
+      <li><strong>Critical Hotspots:</strong> Ganga from Kannauj to Varanasi (Kanpur tanneries, chromium toxicity); Yamuna in Delhi (Wazirabad to Okhla, zero DO).</li>
+      <li><strong>Remediation Missions:</strong> Ganga Action Plan (GAP, 1985) succeeded by the comprehensive <em>Namami Gange Mission (2014)</em>.</li>
+    </ul>
+    <div class="key-metric-strip">
+      <strong>Water Quality Index:</strong> Clean river water maintains BOD under 2 mg/L; polluted stretches often exceed 15-30 mg/L.
+    </div>
+  </div>
+
+  <!-- Left 2: Air Pollution -->
+  <div class="branch-card card-left-2">
+    <div class="card-head">
+      <h3>2. Air Pollution & Atmospheric Toxins</h3>
+      <span class="badge b-amber">Atmospheric Stress</span>
+    </div>
+    <ul class="bullet-list">
+      <li><strong>Major Emission Vectors:</strong> Coal-based thermal power plants (SO₂, NOₓ, fly ash) and explosive urban vehicular growth (CO, unburnt HC, lead).</li>
+      <li><strong>Particulate Matter:</strong> <em>PM2.5 & PM10</em> penetrate deep pulmonary alveoli, causing chronic bronchitis, asthma, and cardiovascular mortality.</li>
+      <li><strong>Winter Inversion & Smog:</strong> Atmospheric temperature inversion in Indo-Gangetic plains trapping smoke, exacerbated by post-monsoon stubble burning.</li>
+      <li><strong>Acid Precipitation:</strong> Atmospheric SO₂ and NO₂ convert into dilute sulfuric and nitric acids, damaging monuments and aquatic ecosystems.</li>
+    </ul>
+    <div class="key-metric-strip">
+      <strong>Policy Response:</strong> National Clean Air Programme (NCAP) and leapfrogging directly to BS-VI vehicular fuel standards.
+    </div>
+  </div>
+
+  <!-- Left 3: Noise Pollution -->
+  <div class="branch-card card-left-3">
+    <div class="card-head">
+      <h3>3. Noise Pollution & Sound Stress</h3>
+      <span class="badge b-purple">Acoustic Stress</span>
+    </div>
+    <ul class="bullet-list">
+      <li><strong>Logarithmic Metrics:</strong> Measured in <em>Decibels (dB)</em>; residential daytime limit: 55 dB, night: 45 dB; commercial daytime limit: 65 dB; industrial: 75 dB.</li>
+      <li><strong>Acoustic Vectors:</strong> Heavy motor traffic, aircraft take-offs, express rail corridors, construction machinery, and industrial sirens.</li>
+      <li><strong>Health Impacts:</strong> Chronic auditory fatigue, permanent hearing impairment (above 85 dB), hypertension, constriction of blood vessels, and insomnia.</li>
+      <li><strong>Statutory Zoning:</strong> Demarcation of <em>Silence Zones</em> within a 100-metre radius surrounding hospitals, educational campuses, and courts.</li>
+    </ul>
+    <div class="key-metric-strip">
+      <strong>Regulatory Norms:</strong> Noise Pollution (Regulation and Control) Rules, 2000 under the Environment Protection Act.
+    </div>
+  </div>
+
+  <!-- Right 1: Solid Waste Crisis -->
+  <div class="branch-card card-right-1">
+    <div class="card-head">
+      <h3>4. Urban Solid Waste Crisis</h3>
+      <span class="badge b-orange">Civic Waste</span>
+    </div>
+    <ul class="bullet-list">
+      <li><strong>Generation Burden:</strong> Urban India generates ~62 million tonnes of municipal solid waste annually; ~50% compostable organic, 20% recyclable.</li>
+      <li><strong>Open Dumping Dilemma:</strong> Massive unlined landfills (Ghazipur, Bhalswa in Delhi, Deonar in Mumbai) leaching toxic effluents into aquifers.</li>
+      <li><strong>Spontaneous Fires:</strong> Anaerobic decomposition deep within landfill layers generates methane (CH₄), fueling uncontrollable subterranean fires.</li>
+      <li><strong>Plastic & E-Waste:</strong> Non-biodegradable single-use plastics choke urban storm drainage; informal e-waste scraping releases cadmium and lead.</li>
+    </ul>
+    <div class="key-metric-strip">
+      <strong>Swachh Bharat 2.0:</strong> Focus on complete source segregation, 100% scientific processing, and remediation of legacy dumpsites.
+    </div>
+  </div>
+
+  <!-- Right 2: Migration & Slums -->
+  <div class="branch-card card-right-2">
+    <div class="card-head">
+      <h3>5. Rural-Urban Migration & Slums</h3>
+      <span class="badge b-rose">Informal Habitats</span>
+    </div>
+    <ul class="bullet-list">
+      <li><strong>Agrarian Push vs Urban Pull:</strong> Rural poverty, land fragmentation, and drought push migrants toward cities seeking casual informal employment.</li>
+      <li><strong>Shelter Poverty:</strong> Prohibitive formal housing costs force migrants to squat illegally on railway margins, canal embankments, and marshlands.</li>
+      <li><strong>Dharavi (Mumbai) Ecosystem:</strong> World's densest slum (~300,000/sq km) spanning 2.16 sq km; generates $1B+ informal industrial output (leather, pottery).</li>
+      <li><strong>Sanitary Deprivation:</strong> Up to 80% households lack private toilets; open drains, contaminated water, and high incidence of tuberculosis.</li>
+    </ul>
+    <div class="key-metric-strip">
+      <strong>Redevelopment Dilemma:</strong> Vertical high-rise rehabilitation risks dismantling community artisan manufacturing networks.
+    </div>
+  </div>
+
+  <!-- Right 3: Land Degradation & Watersheds -->
+  <div class="branch-card card-right-3">
+    <div class="card-head">
+      <h3>6. Land Degradation & Watersheds</h3>
+      <span class="badge b-teal">Landscape Restoration</span>
+    </div>
+    <ul class="bullet-list">
+      <li><strong>Wasteland Atlas:</strong> NRSC categorizes 13 wasteland classes (~17% of total area); gullied lands, ravenous tracts, desert dunes, degraded forests.</li>
+      <li><strong>Chemical Degradation:</strong> Over-irrigation in canal commands (Indira Gandhi Canal, Punjab) induces waterlogging, salinization, and alkalization (<em>Reh/Kallar</em>).</li>
+      <li><strong>Jhabua District (MP) Model:</strong> Rejuvenation of severely degraded tribal land through contour bunding, check-dams, and social fencing (<em>Charnoi</em>).</li>
+      <li><strong>Ralegan Siddhi (MH):</strong> Anna Hazare's community watershed paradigm: bans on tree-felling (<em>Kurhad-bandi</em>), open grazing (<em>Chara-bandi</em>), and <em>Shramdaan</em>.</li>
+    </ul>
+    <div class="key-metric-strip">
+      <strong>Ecological Balance:</strong> Community-led watershed management replenishes water tables and restores soil organic fertility.
+    </div>
+  </div>
+
+  <footer>
+    <span>OurMocks Exam Prep Series · Geography Core Diagrams</span>
+    <span>NCERT Class XII India: People and Economy · Units & Sub-themes Synthesis</span>
+  </footer>
+
+</body>
+</html>

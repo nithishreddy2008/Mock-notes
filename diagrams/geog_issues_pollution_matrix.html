@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Environmental Pollution Typology and Ecological Impact Matrix</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      width: 1440px;
+      height: 880px;
+      background-color: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0F172A;
+      position: relative;
+      overflow: hidden;
+      padding: 24px 32px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #E2E8F0;
+      padding-bottom: 12px;
+      margin-bottom: 20px;
+    }
+    .header-left h1 {
+      font-size: 22px;
+      font-weight: 800;
+      color: #071A4D;
+      letter-spacing: -0.02em;
+    }
+    .header-left p {
+      font-size: 13px;
+      color: #475569;
+      margin-top: 2px;
+      font-weight: 500;
+    }
+    .header-badge {
+      background: #EFF6FF;
+      color: #1E40AF;
+      border: 1px solid #BFDBFE;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 14px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* 4-Column Layout */
+    .matrix-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      height: 720px;
+    }
+
+    .column {
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      border-radius: 14px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+      overflow: hidden;
+    }
+
+    .col-header {
+      padding: 12px 14px;
+      border-bottom: 1px solid #E2E8F0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .col-header h2 {
+      font-size: 14px;
+      font-weight: 800;
+      color: #071A4D;
+    }
+    .col-badge {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+      text-transform: uppercase;
+    }
+
+    /* Column Themes */
+    .col-water { border-top: 5px solid #0284C7; }
+    .col-water .col-badge { background: #E0F2FE; color: #0369A1; }
+
+    .col-air { border-top: 5px solid #D97706; }
+    .col-air .col-badge { background: #FEF3C7; color: #92400E; }
+
+    .col-noise { border-top: 5px solid #7C3AED; }
+    .col-noise .col-badge { background: #F3E8FF; color: #6D28D9; }
+
+    .col-soil { border-top: 5px solid #059669; }
+    .col-soil .col-badge { background: #D1FAE5; color: #065F46; }
+
+    .col-content {
+      padding: 11px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+      overflow: hidden;
+      flex: 1;
+    }
+
+    .card {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 8px;
+      padding: 8px 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .card-title {
+      font-size: 12px;
+      font-weight: 800;
+      color: #0F172A;
+    }
+    .tag {
+      font-size: 9px;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 4px;
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      color: #475569;
+    }
+
+    .card p {
+      font-size: 10.8px;
+      color: #334155;
+      line-height: 1.35;
+    }
+    .card strong {
+      color: #0F172A;
+      font-weight: 700;
+    }
+
+    .callout {
+      border-left: 3px solid #2563EB;
+      background: #EFF6FF;
+      padding: 5px 8px;
+      border-radius: 0 6px 6px 0;
+      font-size: 10.2px;
+      color: #1E40AF;
+      line-height: 1.35;
+      margin-top: 2px;
+    }
+    .callout-amber {
+      border-left-color: #D97706;
+      background: #FFFBEB;
+      color: #92400E;
+    }
+    .callout-purple {
+      border-left-color: #7C3AED;
+      background: #FAF5FF;
+      color: #6B21A8;
+    }
+    .callout-emerald {
+      border-left-color: #059669;
+      background: #ECFDF5;
+      color: #065F46;
+    }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 14px;
+      font-size: 11px;
+      color: #64748B;
+      font-weight: 500;
+      border-top: 1px solid #E2E8F0;
+      padding-top: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-left">
+      <h1>India: Environmental Pollution Typology & Ecological Impact Matrix</h1>
+      <p>Source Classifications, Contaminant Chemistry, Biological Vectors & National Remediation Frameworks</p>
+    </div>
+    <div class="header-badge">NCERT Class XII Geography · Unit 9</div>
+  </header>
+
+  <div class="matrix-grid">
+
+    <!-- Column 1: Water Pollution -->
+    <div class="column col-water">
+      <div class="col-header">
+        <h2>1. Water Pollution</h2>
+        <span class="col-badge">Aquatic Crisis</span>
+      </div>
+      <div class="col-content">
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Point vs Non-Point Sources</span>
+            <span class="tag">Emission Vectors</span>
+          </div>
+          <p><strong>Point Sources:</strong> Specific identifiable discharge conduits (industrial effluent pipes, municipal sewage outfalls).</p>
+          <p><strong>Non-Point Sources:</strong> Diffuse agricultural runoff (fertilizers, pesticides) and surface urban storm runoff without single entry.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Biochemical Oxygen Demand (BOD)</span>
+            <span class="tag">Oxygen Depletion</span>
+          </div>
+          <p><strong>Mechanism:</strong> Organic waste decomposition exhausts Dissolved Oxygen (DO), triggering anaerobic conditions and massive fish mortality.</p>
+          <div class="callout">
+            <strong>Key Metrics:</strong> High BOD signifies severe organic pollution; pristine river water maintains BOD under 2 mg/L.
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Critical River Reaches</span>
+            <span class="tag">Severe Degradation</span>
+          </div>
+          <p><strong>Ganga Hotspots:</strong> Kannauj to Varanasi stretch (Kanpur tanneries, untreated civic sewage, toxic chromium).</p>
+          <p><strong>Yamuna Hotspot:</strong> Delhi (Wazirabad to Okhla) — receives 70% of city's untreated wastewater; virtually zero DO in dry season.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Remediation Initiatives</span>
+            <span class="tag">Namami Gange</span>
+          </div>
+          <p><strong>Evolution:</strong> Ganga Action Plan (GAP, 1985) expanded into <em>Namami Gange</em> integrated mission (2014) for sewage treatment, river-front development, and afforestation.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Column 2: Air Pollution -->
+    <div class="column col-air">
+      <div class="col-header">
+        <h2>2. Air Pollution</h2>
+        <span class="col-badge">Atmospheric Toxicity</span>
+      </div>
+      <div class="col-content">
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Combustion & Industrial Sources</span>
+            <span class="tag">Primary Vectors</span>
+          </div>
+          <p><strong>Thermal Power Plants:</strong> Coal combustion releases fly ash, sulfur dioxide (SO₂), and nitrogen oxides (NOₓ).</p>
+          <p><strong>Vehicular Emissions:</strong> High-density urban traffic produces carbon monoxide (CO), lead, and unburnt hydrocarbons.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Particulate Matter (PM)</span>
+            <span class="tag">Inhalable Aerosols</span>
+          </div>
+          <p><strong>PM2.5 & PM10:</strong> Microscopic particles penetrating deep into bronchial passages and alveoli.</p>
+          <div class="callout callout-amber">
+            <strong>Health Toll:</strong> Chronic bronchitis, asthma, emphysema, reduced lung capacity, and cardiovascular mortality.
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Urban Smog & Acid Rain</span>
+            <span class="tag">Atmospheric Hazards</span>
+          </div>
+          <p><strong>Winter Smog:</strong> Smoke + fog inversion in Indo-Gangetic plains aggravated by post-harvest agricultural stubble burning in Punjab & Haryana.</p>
+          <p><strong>Acid Rain:</strong> SO₂ and NO₂ reacting with moisture to form sulfuric and nitric acids, corroding monuments and acidifying soils.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Clean Air Interventions</span>
+            <span class="tag">NCAP & Standards</span>
+          </div>
+          <p><strong>Measures:</strong> National Clean Air Programme (NCAP), Bharat Stage VI (BS-VI) fuel norms, CNG public transit, and solar energy substitution.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Column 3: Noise Pollution -->
+    <div class="column col-noise">
+      <div class="col-header">
+        <h2>3. Noise Pollution</h2>
+        <span class="col-badge">Acoustic Stress</span>
+      </div>
+      <div class="col-content">
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Acoustic Thresholds (Decibels)</span>
+            <span class="tag">Measurement Unit</span>
+          </div>
+          <p><strong>Decibel (dB):</strong> Logarithmic scale of sound pressure level. Permissible residential day limit: 55 dB; commercial: 65 dB; industrial: 75 dB.</p>
+          <div class="callout callout-purple">
+            <strong>Hazard Threshold:</strong> Continuous exposure above 85 dB induces permanent hearing loss and acoustic trauma.
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Major Urban Sound Sources</span>
+            <span class="tag">Noise Vectors</span>
+          </div>
+          <p><strong>Transportation:</strong> Heavy vehicular horns, express railways, aircraft jet engines during landing and take-off near metropolitan airports.</p>
+          <p><strong>Industrial & Civic:</strong> Construction machinery, pneumatic drills, diesel generators, loudspeakers at socio-religious gatherings.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Physiological & Psychological Toll</span>
+            <span class="tag">Health Impact</span>
+          </div>
+          <p><strong>Somatic Stress:</strong> Hypertension, elevated heart rate, constriction of blood vessels, and chronic sleep deprivation (insomnia).</p>
+          <p><strong>Mental Fatigue:</strong> Anxiety, reduced cognitive focus, behavioral irritability, and impaired scholastic performance in children.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Regulatory Framework</span>
+            <span class="tag">Noise Rules 2000</span>
+          </div>
+          <p><strong>Statutory Zoning:</strong> Demarcation of "Silence Zones" within 100 metres of hospitals, educational institutions, and courts.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Column 4: Land & Soil Pollution -->
+    <div class="column col-soil">
+      <div class="col-header">
+        <h2>4. Soil & Land Degradation</h2>
+        <span class="col-badge">Edaphic Decline</span>
+      </div>
+      <div class="col-content">
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Agrochemical Toxicity</span>
+            <span class="tag">Excessive Inputs</span>
+          </div>
+          <p><strong>Intensive Agriculture:</strong> Over-application of chemical nitrogenous fertilizers (urea) and organophosphate pesticides disrupts soil biomes.</p>
+          <div class="callout callout-emerald">
+            <strong>Biomagnification:</strong> Persistent chemical toxics enter food chains, concentrating in higher trophic levels and human milk.
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Salinization & Alkalinization</span>
+            <span class="tag">Canal Over-Irrigation</span>
+          </div>
+          <p><strong>Mechanism:</strong> Excessive canal irrigation in arid/semi-arid plains (Punjab, Haryana, Rajasthan) creates waterlogging and capillary action.</p>
+          <p><strong>Result:</strong> Dissolved mineral salts rise to surface, forming toxic white efflorescence (Kallar/Reh), rendering soils sterile.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Industrial Leachates & Mining</span>
+            <span class="tag">Toxic Slag</span>
+          </div>
+          <p><strong>Heavy Metal Infiltration:</strong> Lead, cadmium, and arsenic leaching from industrial sludge into groundwater tables.</p>
+          <p><strong>Mining Debris:</strong> Open-cast coal and iron mines leaving unreclaimed overburden and topsoil erosion.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Reclamation Practices</span>
+            <span class="tag">Edaphic Restoration</span>
+          </div>
+          <p><strong>Remedies:</strong> Gypsum application on alkaline soils, organic compost, balanced NPK ratios, and afforestation shelterbelts.</p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <span>OurMocks Exam Prep Series · Geography Core Diagrams</span>
+    <span>Source: Central Pollution Control Board (CPCB), Ministry of Environment, Forest & Climate Change (MoEFCC) & NCERT Class XII</span>
+  </footer>
+
+</body>
+</html>

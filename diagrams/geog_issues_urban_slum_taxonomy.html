@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>India Urban Waste, Slum Dynamics and Land Degradation Taxonomy</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      width: 1440px;
+      height: 880px;
+      background-color: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0F172A;
+      position: relative;
+      overflow: hidden;
+      padding: 24px 32px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #E2E8F0;
+      padding-bottom: 12px;
+      margin-bottom: 20px;
+    }
+    .header-left h1 {
+      font-size: 22px;
+      font-weight: 800;
+      color: #071A4D;
+      letter-spacing: -0.02em;
+    }
+    .header-left p {
+      font-size: 13px;
+      color: #475569;
+      margin-top: 2px;
+      font-weight: 500;
+    }
+    .header-badge {
+      background: #EFF6FF;
+      color: #1E40AF;
+      border: 1px solid #BFDBFE;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 14px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* 4-Column Layout */
+    .taxonomy-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      height: 720px;
+    }
+
+    .column {
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      border-radius: 14px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+      overflow: hidden;
+    }
+
+    .col-header {
+      padding: 12px 14px;
+      border-bottom: 1px solid #E2E8F0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .col-header h2 {
+      font-size: 14px;
+      font-weight: 800;
+      color: #071A4D;
+    }
+    .col-badge {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+      text-transform: uppercase;
+    }
+
+    /* Accent top borders */
+    .col-waste { border-top: 5px solid #EA580C; }
+    .col-waste .col-badge { background: #FFEDD5; color: #C2410C; }
+
+    .col-slums { border-top: 5px solid #E11D48; }
+    .col-slums .col-badge { background: #FFE4E6; color: #BE123C; }
+
+    .col-dharavi { border-top: 5px solid #7C3AED; }
+    .col-dharavi .col-badge { background: #F3E8FF; color: #6D28D9; }
+
+    .col-land { border-top: 5px solid #0D9488; }
+    .col-land .col-badge { background: #CCFBF1; color: #0F766E; }
+
+    .col-content {
+      padding: 10px 11px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      overflow: hidden;
+      flex: 1;
+    }
+
+    .card {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 8px;
+      padding: 7px 9px;
+      display: flex;
+      flex-direction: column;
+      gap: 2.5px;
+    }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .card-title {
+      font-size: 11.5px;
+      font-weight: 800;
+      color: #0F172A;
+    }
+    .tag {
+      font-size: 8.5px;
+      font-weight: 700;
+      padding: 2px 5px;
+      border-radius: 4px;
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      color: #475569;
+    }
+
+    .card p {
+      font-size: 10.5px;
+      color: #334155;
+      line-height: 1.32;
+    }
+    .card strong {
+      color: #0F172A;
+      font-weight: 700;
+    }
+
+    .callout {
+      border-left: 3px solid #EA580C;
+      background: #FFF7ED;
+      padding: 4px 7px;
+      border-radius: 0 5px 5px 0;
+      font-size: 10px;
+      color: #C2410C;
+      line-height: 1.3;
+      margin-top: 2px;
+    }
+    .callout-rose {
+      border-left-color: #E11D48;
+      background: #FFF1F2;
+      color: #BE123C;
+    }
+    .callout-purple {
+      border-left-color: #7C3AED;
+      background: #FAF5FF;
+      color: #6B21A8;
+    }
+    .callout-teal {
+      border-left-color: #0D9488;
+      background: #F0FDFA;
+      color: #0F766E;
+    }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 14px;
+      font-size: 11px;
+      color: #64748B;
+      font-weight: 500;
+      border-top: 1px solid #E2E8F0;
+      padding-top: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-left">
+      <h1>India: Urban Waste, Slum Dynamics & Land Degradation Taxonomy</h1>
+      <p>Municipal Solid Waste Dilemmas, Informal Squatter Ecosystems, Dharavi Case & Watershed Interventions</p>
+    </div>
+    <div class="header-badge">NCERT Class XII Geography · Unit 9</div>
+  </header>
+
+  <div class="taxonomy-grid">
+
+    <!-- Column 1: Municipal Solid Waste Crisis -->
+    <div class="column col-waste">
+      <div class="col-header">
+        <h2>1. Solid Waste Crisis</h2>
+        <span class="col-badge">Urban Accumulation</span>
+      </div>
+      <div class="col-content">
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Volume & Generation Pattern</span>
+            <span class="tag">62M Tonnes/Yr</span>
+          </div>
+          <p><strong>Composition:</strong> ~50% biodegradable organic waste, ~20% recyclable materials (paper, plastics, glass), ~30% inert construction debris.</p>
+          <p><strong>Generation Driver:</strong> Consumerist urban lifestyle, rapid packaging expansion, and disposable plastic culture.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Open Dumping Hazards</span>
+            <span class="tag">Leachate & Fires</span>
+          </div>
+          <p><strong>Unlined Landfills:</strong> Massive open garbage mountains (Ghazipur/Bhallswa in Delhi, Deonar in Mumbai).</p>
+          <div class="callout">
+            <strong>Aquifer Poisoning:</strong> Rainwater percolation through unlined dumps generates toxic black leachate, contaminating groundwater with heavy metals.
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Atmospheric Emissions & Vectors</span>
+            <span class="tag">Methane Plumes</span>
+          </div>
+          <p><strong>Spontaneous Fires:</strong> Anaerobic digestion generates methane gas (CH₄), triggering toxic persistent landfill infernos.</p>
+          <p><strong>Biological Disease Vectors:</strong> Uncontrolled breeding ground for flies, rodents, mosquitoes, transmitting typhoid, cholera, and dengue.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Scientific Management Cycle</span>
+            <span class="tag">Swachh Bharat</span>
+          </div>
+          <p><strong>Hierarchical Approach:</strong> Source segregation (wet vs dry), decentralized composting, material recovery facilities (MRFs), sanitary landfilling, and waste-to-energy conversion.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Column 2: Rural-Urban Migration & Slums -->
+    <div class="column col-slums">
+      <div class="col-header">
+        <h2>2. Migration & Slums</h2>
+        <span class="col-badge">Informal Growth</span>
+      </div>
+      <div class="col-content">
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Rural Push Factors</span>
+            <span class="tag">Agrarian Distress</span>
+          </div>
+          <p><strong>Underlying Drivers:</strong> Severe land fragmentation, rural underemployment, recurrent crop failures, indebtedness, and caste discrimination in feudal agrarian setups.</p>
+          <p><strong>Ecological Push:</strong> Chronic droughts and desertification in rainfed drylands.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Urban Pull Dynamics</span>
+            <span class="tag">Wage & Services</span>
+          </div>
+          <p><strong>Attractions:</strong> Higher wage opportunities in construction, transport, domestic help, and casual informal manufacturing, alongside access to civic services.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Shelter Poverty & Encroachment</span>
+            <span class="tag">Squatter Shanties</span>
+          </div>
+          <p><strong>Genesis:</strong> Inability of low-income rural migrants to afford exorbitant urban real estate rents forces occupation of marginal public lands.</p>
+          <div class="callout callout-rose">
+            <strong>Locations:</strong> Canal banks, railway tracks, marshy floodplains, and precarious steep hillslopes prone to flash floods.
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Deprivation & Living Conditions</span>
+            <span class="tag">Sanitary Deficit</span>
+          </div>
+          <p><strong>Characteristics:</strong> Dilapidated tin/polythene huts, extreme overcrowding (6-8 persons per tiny room), lack of piped drinking water, open drainage, and lack of private toilets.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Column 3: Dharavi Case Study -->
+    <div class="column col-dharavi">
+      <div class="col-header">
+        <h2>3. Dharavi Case Study</h2>
+        <span class="col-badge">Microcosm of Slum</span>
+      </div>
+      <div class="col-content">
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Geographic & Demographic Profile</span>
+            <span class="tag">Central Mumbai</span>
+          </div>
+          <p><strong>Location:</strong> Spans 2.16 sq km sandwiched between Western and Central suburban rail arteries; population estimated between 700,000 to 1,000,000.</p>
+          <div class="callout callout-purple">
+            <strong>Density:</strong> World's highest population density (~300,000+ people/sq km), with multi-story tin tenements lining 1-metre alleys.
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Informal Industrial Powerhouse</span>
+            <span class="tag">$1B+ Turnover</span>
+          </div>
+          <p><strong>Thriving Micro-Economy:</strong> Operates thousands of micro-enterprises: leather tanning, garment fabrication, Kumbharwada pottery, brass metal work.</p>
+          <p><strong>Recycling Capital:</strong> Recycles over 80% of Mumbai's recyclable plastic waste through highly specialized labour networks.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Acuteness of Infrastructure Deficits</span>
+            <span class="tag">Sanitary Stress</span>
+          </div>
+          <p><strong>Deficit Indicators:</strong> Up to 80% households rely on shared public community toilets; intermittent chlorinated water supply; zero natural ventilation.</p>
+          <p><strong>Disease Burden:</strong> High prevalence of pulmonary tuberculosis, skin infections, and waterborne gastroenteritis.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Redevelopment Paradox</span>
+            <span class="tag">In-Situ vs High-Rise</span>
+          </div>
+          <p><strong>Challenge:</strong> Transforming slums into modern towers risks destroying the ground-floor informal manufacturing workspaces and community artisan clusters.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Column 4: Land Degradation & Wasteland Reclamation -->
+    <div class="column col-land">
+      <div class="col-header">
+        <h2>4. Land Degradation</h2>
+        <span class="col-badge">Wasteland Dynamics</span>
+      </div>
+      <div class="col-content">
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">NRSC Wasteland Classification</span>
+            <span class="tag">13 Categories</span>
+          </div>
+          <p><strong>Scope:</strong> National Remote Sensing Centre identifies ~17% of India's land as wastelands (gullied/ravinous land, shifting sands, waterlogged areas, saline soils, degraded forest).</p>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Chambal Ravines & Water Erosion</span>
+            <span class="tag">Gully Erosion</span>
+          </div>
+          <p><strong>Genesis:</strong> Accelerated hydraulic dissection of deep alluvial soils in Madhya Pradesh, Rajasthan, and UP, creating inhospitable "badlands" (Bhihad).</p>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Jhabua Watershed Model (MP)</span>
+            <span class="tag">Tribal Rejuvenation</span>
+          </div>
+          <p><strong>Context:</strong> Western MP tribal district (Bhil community) suffered acute environmental degradation and out-migration.</p>
+          <div class="callout callout-teal">
+            <strong>Interventions:</strong> Under Rajiv Gandhi Watershed Mission, built contour bunds, check dams, and social fencing of pasturelands (<em>Charnoi</em>), restoring aquifers and cropping.
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+            <span class="card-title">Ralegan Siddhi Experience</span>
+            <span class="tag">Ahmednagar · MH</span>
+          </div>
+          <p><strong>Community Watershed:</strong> Spearheaded by Anna Hazare; implemented water percolation tanks, ban on open grazing (<em>Chara-bandi</em>), tree felling (<em>Kurhad-bandi</em>), and voluntary collective labour (<em>Shramdaan</em>).</p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <span>OurMocks Exam Prep Series · Geography Core Diagrams</span>
+    <span>Source: National Remote Sensing Centre (NRSC), Ministry of Housing and Urban Affairs & NCERT Class XII</span>
+  </footer>
+
+</body>
+</html>
