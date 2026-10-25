@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>India Demographic Growth Phases & Spatial Density Matrix</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      width: 1440px;
+      height: 880px;
+      background-color: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0F172A;
+      padding: 32px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      border-bottom: 2px solid #E2E8F0;
+      padding-bottom: 16px;
+    }
+    .header-left h1 {
+      font-size: 26px;
+      font-weight: 800;
+      color: #071A4D;
+      letter-spacing: -0.02em;
+    }
+    .header-left p {
+      font-size: 13.5px;
+      color: #475569;
+      margin-top: 4px;
+      font-weight: 500;
+    }
+    .header-badge {
+      background: #EFF6FF;
+      color: #1E40AF;
+      border: 1px solid #BFDBFE;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    
+    .main-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 24px;
+      height: calc(880px - 140px);
+    }
+
+    .section-col {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .col-title-bar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding-bottom: 4px;
+    }
+    .col-title-bar .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+    .dot-blue { background: #2563EB; }
+    .dot-amber { background: #D97706; }
+    .col-title-bar h2 {
+      font-size: 16px;
+      font-weight: 800;
+      color: #0F172A;
+    }
+
+    .phase-timeline {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      flex: 1;
+    }
+
+    .card {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 10px;
+      padding: 16px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .card-phase-1 { border-top: 4px solid #64748B; }
+    .card-phase-2 { border-top: 4px solid #0284C7; }
+    .card-phase-3 { border-top: 4px solid #DC2626; }
+    .card-phase-4 { border-top: 4px solid #16A34A; }
+
+    .card-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+    .phase-tag {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+      text-transform: uppercase;
+    }
+    .tag-1 { background: #F1F5F9; color: #475569; }
+    .tag-2 { background: #E0F2FE; color: #0369A1; }
+    .tag-3 { background: #FEE2E2; color: #B91C1C; }
+    .tag-4 { background: #DCFCE7; color: #15803D; }
+
+    .period {
+      font-size: 12px;
+      font-weight: 700;
+      color: #64748B;
+    }
+    .card h3 {
+      font-size: 14.5px;
+      font-weight: 800;
+      color: #0F172A;
+      margin-bottom: 6px;
+    }
+    .bullet-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-size: 11.5px;
+      color: #334155;
+      line-height: 1.45;
+    }
+    .bullet-list li {
+      position: relative;
+      padding-left: 14px;
+    }
+    .bullet-list li::before {
+      content: "▪";
+      position: absolute;
+      left: 0;
+      color: #2563EB;
+      font-size: 12px;
+    }
+    .metric-badge {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 6px;
+      padding: 6px 10px;
+      font-size: 11px;
+      margin-top: 8px;
+      color: #0F172A;
+    }
+    .metric-badge strong {
+      color: #071A4D;
+    }
+
+    /* Right Column: Density & Formulas */
+    .density-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      flex: 1;
+    }
+
+    .density-card {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 10px;
+      padding: 13px 16px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+    }
+    .density-high { border-left: 5px solid #DC2626; }
+    .density-mod { border-left: 5px solid #F59E0B; }
+    .density-low { border-left: 5px solid #10B981; }
+
+    .density-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 5px;
+    }
+    .density-header h4 {
+      font-size: 13.5px;
+      font-weight: 800;
+      color: #0F172A;
+    }
+    .density-val {
+      font-size: 11.5px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+    .val-high { background: #FEF2F2; color: #B91C1C; }
+    .val-mod { background: #FFFBEB; color: #B45309; }
+    .val-low { background: #ECFDF5; color: #047857; }
+
+    .density-desc {
+      font-size: 11.5px;
+      color: #334155;
+      line-height: 1.4;
+      margin-bottom: 4px;
+    }
+    .density-states {
+      font-size: 11px;
+      color: #475569;
+    }
+    .density-states span {
+      font-weight: 700;
+      color: #0F172A;
+    }
+
+    .formula-box {
+      background: #EFF6FF;
+      border: 1px solid #BFDBFE;
+      border-radius: 8px;
+      padding: 10px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .formula-title {
+      font-size: 11px;
+      font-weight: 800;
+      color: #1D4ED8;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .formula-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: #1E293B;
+      padding: 3px 0;
+      border-bottom: 1px dashed #DBEAFE;
+    }
+    .formula-row:last-child {
+      border-bottom: none;
+    }
+    .formula-eq {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-weight: 600;
+      color: #071A4D;
+    }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: #64748B;
+      border-top: 1px solid #E2E8F0;
+      padding-top: 10px;
+      margin-top: 4px;
+    }
+    footer strong {
+      color: #071A4D;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-left">
+      <h1>India: Demographic Growth Phases & Spatial Density Matrix</h1>
+      <p>Census of India Demographic Analysis · Four Historic Epochs (1901–2011+) & State-Wise Density Typologies</p>
+    </div>
+    <div class="header-badge">CUET UG Geography · Unit 5</div>
+  </header>
+
+  <div class="main-grid">
+    <!-- Left Column: 4 Growth Phases -->
+    <div class="section-col">
+      <div class="col-title-bar">
+        <div class="dot dot-blue"></div>
+        <h2>Four Historic Phases of Population Growth in India (1901–2011+)</h2>
+      </div>
+
+      <div class="phase-timeline">
+        <!-- Phase 1 -->
+        <div class="card card-phase-1">
+          <div>
+            <div class="card-head">
+              <span class="phase-tag tag-1">Phase I</span>
+              <span class="period">1901 – 1921</span>
+            </div>
+            <h3>Period of Stagnant / Dormant Growth</h3>
+            <ul class="bullet-list">
+              <li>Birth Rate & Death Rate both exceptionally high (~48 & 47 per 1,000).</li>
+              <li>Widespread famines, epidemics (influenza, plague, cholera), and food shortages.</li>
+              <li>Negative growth recorded in 1911–1921 decade (<strong>-0.31%</strong>).</li>
+            </ul>
+          </div>
+          <div class="metric-badge">
+            <strong>Census Benchmark:</strong> 1921 is the <em>"Year of the Great Divide"</em>.
+          </div>
+        </div>
+
+        <!-- Phase 2 -->
+        <div class="card card-phase-2">
+          <div>
+            <div class="card-head">
+              <span class="phase-tag tag-2">Phase II</span>
+              <span class="period">1921 – 1951</span>
+            </div>
+            <h3>Period of Steady Population Growth</h3>
+            <ul class="bullet-list">
+              <li>Improvements in sanitation, medical hygiene, and public health lowered mortality.</li>
+              <li>Better transport distribution mitigated catastrophic famine mortality.</li>
+              <li>Crude birth rate remained stubbornly high, widening the natural increase gap.</li>
+            </ul>
+          </div>
+          <div class="metric-badge">
+            <strong>Growth Trend:</strong> Modest, steady annual growth rate of 1.0% to 1.3%.
+          </div>
+        </div>
+
+        <!-- Phase 3 -->
+        <div class="card card-phase-3">
+          <div>
+            <div class="card-head">
+              <span class="phase-tag tag-3">Phase III</span>
+              <span class="period">1951 – 1981</span>
+            </div>
+            <h3>Period of Population Explosion</h3>
+            <ul class="bullet-list">
+              <li>Developmental planning via Five-Year Plans raised living standards.</li>
+              <li>Massive mortality drop due to antibiotics, vaccines, and disease eradication.</li>
+              <li>High fertility sustained; supplemented by international immigration (Tibet, BD, Pak).</li>
+            </ul>
+          </div>
+          <div class="metric-badge">
+            <strong>Peak Rate:</strong> Decadal growth soared above <strong>24.8%</strong> (1961–71).
+          </div>
+        </div>
+
+        <!-- Phase 4 -->
+        <div class="card card-phase-4">
+          <div>
+            <div class="card-head">
+              <span class="phase-tag tag-4">Phase IV</span>
+              <span class="period">1981 – 2011+</span>
+            </div>
+            <h3>High Growth with Definite Slowing Down</h3>
+            <ul class="bullet-list">
+              <li>Crude birth rates began a downward trajectory; female literacy surged.</li>
+              <li>Postponement of marriage age and adoption of small family norms.</li>
+              <li>Adolescent population (10–19 yrs) peaked at 20.9% (2011), driving demographic dividend.</li>
+            </ul>
+          </div>
+          <div class="metric-badge">
+            <strong>Current Decadal:</strong> Growth decelerated to <strong>17.64%</strong> (2001–2011).
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Column: Density Classification & Metrics -->
+    <div class="section-col">
+      <div class="col-title-bar">
+        <div class="dot dot-amber"></div>
+        <h2>Spatial Density Typologies & Pressure Indices</h2>
+      </div>
+
+      <div class="density-stack">
+        <!-- High Density -->
+        <div class="density-card density-high">
+          <div class="density-header">
+            <h4>High Density Zones</h4>
+            <span class="density-val val-high">&gt; 500 persons/km²</span>
+          </div>
+          <p class="density-desc">Fertile alluvial river plains, perennial canal irrigation, flat terrain, and historic urban-industrial corridors.</p>
+          <p class="density-states"><span>Leading States:</span> Bihar (1,106), West Bengal (1,028), Uttar Pradesh (829), Kerala (860), Delhi UT (11,320).</p>
+        </div>
+
+        <!-- Moderate Density -->
+        <div class="density-card density-mod">
+          <div class="density-header">
+            <h4>Moderate Density Zones</h4>
+            <span class="density-val val-mod">251 – 500 persons/km²</span>
+          </div>
+          <p class="density-desc">Peninsular plateau tracts, rainfed agricultural areas, moderate mineral-industrial development.</p>
+          <p class="density-states"><span>States:</span> Assam (398), Gujarat (308), Andhra Pradesh (308), Karnataka (319), Odisha (270), Jharkhand (414).</p>
+        </div>
+
+        <!-- Low Density -->
+        <div class="density-card density-low">
+          <div class="density-header">
+            <h4>Low Density Zones</h4>
+            <span class="density-val val-low">&lt; 250 persons/km²</span>
+          </div>
+          <p class="density-desc">Rugged montane relief, extreme arid deserts, dense forest canopies, and harsh climate.</p>
+          <p class="density-states"><span>States:</span> Arunachal Pradesh (17 — lowest in India), Mizoram (52), Sikkim (86), Nagaland (119), Ladakh.</p>
+        </div>
+
+        <!-- Formula Box -->
+        <div class="formula-box">
+          <div class="formula-title">Core Land-Man Relationship Indices</div>
+          <div class="formula-row">
+            <span>Arithmetic Density:</span>
+            <span class="formula-eq">Total Pop / Total Geographical Area</span>
+          </div>
+          <div class="formula-row">
+            <span>Physiological Density:</span>
+            <span class="formula-eq">Total Population / Net Cultivated Area</span>
+          </div>
+          <div class="formula-row">
+            <span>Agricultural Density:</span>
+            <span class="formula-eq">Total Agricultural Pop / Net Sown Area</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <span>OurMocks Exam Prep Series · Geography Core Revision</span>
+    <span>Source: Census of India (2011) & NCERT Class XII <em>India: People and Economy</em></span>
+  </footer>
+
+</body>
+</html>

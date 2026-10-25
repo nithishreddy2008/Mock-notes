@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>India People Summary Mindmap</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      width: 1440px;
+      height: 880px;
+      background-color: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0F172A;
+      position: relative;
+      overflow: hidden;
+      padding: 24px 32px;
+    }
+
+    header {
+      position: absolute;
+      top: 20px;
+      left: 32px;
+      right: 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #E2E8F0;
+      padding-bottom: 10px;
+      z-index: 10;
+    }
+    .header-left h1 {
+      font-size: 22px;
+      font-weight: 800;
+      color: #071A4D;
+      letter-spacing: -0.02em;
+    }
+    .header-left p {
+      font-size: 12.5px;
+      color: #475569;
+      margin-top: 2px;
+      font-weight: 500;
+    }
+    .header-badge {
+      background: #EFF6FF;
+      color: #1E40AF;
+      border: 1px solid #BFDBFE;
+      font-size: 10.5px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Central SVG Connectors */
+    svg.connections {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1440px;
+      height: 880px;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Central Mindmap Core */
+    .mindmap-center {
+      position: absolute;
+      top: 385px;
+      left: 580px;
+      width: 280px;
+      height: 110px;
+      background: #071A4D;
+      border: 3px solid #1F5EFF;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(7, 26, 77, 0.18), 0 0 0 6px #EFF6FF;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 12px 16px;
+      z-index: 5;
+    }
+    .mindmap-center .sub-label {
+      font-size: 9.5px;
+      font-weight: 800;
+      color: #B8FF34;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 3px;
+    }
+    .mindmap-center h2 {
+      font-size: 16px;
+      font-weight: 900;
+      color: #FFFFFF;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+    }
+    .mindmap-center .bottom-tag {
+      font-size: 10px;
+      color: #94A3B8;
+      margin-top: 4px;
+      font-weight: 500;
+    }
+
+    /* Cards */
+    .branch-card {
+      position: absolute;
+      width: 390px;
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      border-radius: 12px;
+      padding: 12px 14px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+      z-index: 4;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    /* Left Positions */
+    .card-left-1 { top: 92px; left: 40px; height: 224px; border-left: 5px solid #2563EB; }
+    .card-left-2 { top: 334px; left: 40px; height: 232px; border-left: 5px solid #0D9488; }
+    .card-left-3 { top: 584px; left: 40px; height: 232px; border-left: 5px solid #7C3AED; }
+
+    /* Right Positions */
+    .card-right-1 { top: 92px; left: 1010px; height: 224px; border-right: 5px solid #EA580C; }
+    .card-right-2 { top: 334px; left: 1010px; height: 232px; border-right: 5px solid #16A34A; }
+    .card-right-3 { top: 584px; left: 1010px; height: 232px; border-right: 5px solid #E11D48; }
+
+    .card-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #F1F5F9;
+      padding-bottom: 5px;
+    }
+    .card-head h3 {
+      font-size: 13.5px;
+      font-weight: 800;
+      color: #0F172A;
+    }
+    .badge {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 5px;
+      text-transform: uppercase;
+    }
+    .b-blue { background: #EFF6FF; color: #1E40AF; }
+    .b-teal { background: #F0FDFA; color: #0F766E; }
+    .b-purple { background: #FAF5FF; color: #7E22CE; }
+    .b-orange { background: #FFF7ED; color: #C2410C; }
+    .b-green { background: #F0FDF4; color: #15803D; }
+    .b-rose { background: #FFF1F2; color: #BE123C; }
+
+    .bullet-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      font-size: 11px;
+      color: #334155;
+      line-height: 1.4;
+    }
+    .bullet-list li {
+      position: relative;
+      padding-left: 14px;
+    }
+    .bullet-list li::before {
+      content: "▪";
+      position: absolute;
+      left: 0;
+      color: #2563EB;
+      font-size: 11px;
+    }
+    .bullet-list strong {
+      color: #0F172A;
+    }
+
+    .key-metric-strip {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 5px;
+      padding: 5px 8px;
+      font-size: 10.5px;
+      color: #475569;
+      margin-top: 2px;
+    }
+    .key-metric-strip strong {
+      color: #071A4D;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 12px;
+      left: 32px;
+      right: 32px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: #64748B;
+      border-top: 1px solid #E2E8F0;
+      padding-top: 8px;
+      z-index: 10;
+    }
+    footer strong {
+      color: #071A4D;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-left">
+      <h1>India: People &amp; Economy — Comprehensive Synthesis Mindmap</h1>
+      <p>Unit 5 Core Architecture: Distribution, Growth Phases, Composition, Rural-Urban Matrix &amp; Occupational Structure</p>
+    </div>
+    <div class="header-badge">Full Unit Master Map</div>
+  </header>
+
+  <!-- SVG Connectors -->
+  <svg class="connections">
+    <!-- Top-Left -->
+    <path d="M 580 410 C 500 410, 500 204, 430 204" fill="none" stroke="#2563EB" stroke-width="2.5" stroke-dasharray="none" opacity="0.8"/>
+    <!-- Mid-Left -->
+    <path d="M 580 440 C 500 440, 500 450, 430 450" fill="none" stroke="#0D9488" stroke-width="2.5" stroke-dasharray="none" opacity="0.8"/>
+    <!-- Bottom-Left -->
+    <path d="M 580 470 C 500 470, 500 700, 430 700" fill="none" stroke="#7C3AED" stroke-width="2.5" stroke-dasharray="none" opacity="0.8"/>
+
+    <!-- Top-Right -->
+    <path d="M 860 410 C 940 410, 940 204, 1010 204" fill="none" stroke="#EA580C" stroke-width="2.5" stroke-dasharray="none" opacity="0.8"/>
+    <!-- Mid-Right -->
+    <path d="M 860 440 C 940 440, 940 450, 1010 450" fill="none" stroke="#16A34A" stroke-width="2.5" stroke-dasharray="none" opacity="0.8"/>
+    <!-- Bottom-Right -->
+    <path d="M 860 470 C 940 470, 940 700, 1010 700" fill="none" stroke="#E11D48" stroke-width="2.5" stroke-dasharray="none" opacity="0.8"/>
+  </svg>
+
+  <!-- Central Hub -->
+  <div class="mindmap-center">
+    <div class="sub-label">CUET UG GEOGRAPHY</div>
+    <h2>PEOPLE: INDIA<br>(PEOPLE &amp; ECONOMY)</h2>
+    <div class="bottom-tag">Census 2011 · Unit 5 Architecture</div>
+  </div>
+
+  <!-- Left 1: Distribution & Density -->
+  <div class="branch-card card-left-1">
+    <div class="card-head">
+      <h3>1. Distribution &amp; Spatial Density</h3>
+      <span class="badge b-blue">382 persons/km²</span>
+    </div>
+    <ul class="bullet-list">
+      <li><strong>Uneven Spatial Dispersion:</strong> High concentration in fertile Northern Plains and coastal deltas; sparse in Himalayas &amp; western desert.</li>
+      <li><strong>Density Hierarchy:</strong> Bihar (1,106) &amp; West Bengal (1,028) highest; Arunachal Pradesh (17) lowest among states.</li>
+      <li><strong>Pressure Metrics:</strong> Physiological density (Pop / Net Cultivated Area) and Agricultural density reflect real agricultural land stress.</li>
+    </ul>
+    <div class="key-metric-strip">
+      <strong>Core Exam Point:</strong> Delhi UT density soars to 11,320 persons/km².
+    </div>
+  </div>
+
+  <!-- Left 2: Growth Phases -->
+  <div class="branch-card card-left-2">
+    <div class="card-head">
+      <h3>2. Four Population Growth Phases</h3>
+      <span class="badge b-teal">1901 – 2011+</span>
+    </div>
+    <ul class="bullet-list">
+      <li><strong>Phase I (1901–21):</strong> Stagnant; high birth &amp; death rates; negative growth in 1911–21 (-0.31%); <em>1921 Year of Great Divide</em>.</li>
+      <li><strong>Phase II (1921–51):</strong> Steady growth; mortality drops via sanitation &amp; transport; modest 1.0–1.3% annual growth.</li>
+      <li><strong>Phase III (1951–81):</strong> Population explosion; Five-Year plans, healthcare; decadal growth peaked at <strong>24.8%</strong> (1961–71).</li>
+      <li><strong>Phase IV (1981–2011+):</strong> Decelerating growth; decadal slowed to <strong>17.64%</strong> (2001–11); family planning &amp; literacy surge.</li>
+    </ul>
+    <div class="key-metric-strip">
+      <strong>Adolescents:</strong> 20.9% (10–19 yrs) forming core demographic dividend.
+    </div>
+  </div>
+
+  <!-- Left 3: Regional Disparities & Policies -->
+  <div class="branch-card card-left-3">
+    <div class="card-head">
+      <h3>3. Regional Growth &amp; Policies</h3>
+      <span class="badge b-purple">NPP 2000 &amp; NYP</span>
+    </div>
+    <ul class="bullet-list">
+      <li><strong>North-South Growth Divide:</strong> Southern states (Kerala, Tamil Nadu, Andhra Pradesh, Karnataka) below 16% decadal growth.</li>
+      <li><strong>High Growth Belt (EAG States):</strong> Bihar (25.4%), UP (20.2%), Rajasthan (21.3%), MP (20.3%) maintain high natural growth.</li>
+      <li><strong>National Population Policy (2000):</strong> Free compulsory education up to age 14, reduce IMR &lt; 30/1,000, universal immunization.</li>
+      <li><strong>National Youth Policy (2014):</strong> Defined youth as 15–29 years; focus on skill acquisition, digital empowerment &amp; employment.</li>
+    </ul>
+    <div class="key-metric-strip">
+      <strong>Policy Focus:</strong> Addressing adolescent anemia, school dropouts &amp; child marriage.
+    </div>
+  </div>
+
+  <!-- Right 1: Linguistic & Religious Composition -->
+  <div class="branch-card card-right-1">
+    <div class="card-head">
+      <h3>4. Linguistic &amp; Religious Composition</h3>
+      <span class="badge b-orange">Plural Mosaic</span>
+    </div>
+    <ul class="bullet-list">
+      <li><strong>4 Language Families:</strong> Indo-Aryan (73%), Dravidian (20%), Austroasiatic/Nishada (1.38%), Sino-Tibetan/Kirata (0.85%).</li>
+      <li><strong>Scheduled Tongues:</strong> 22 languages in 8th Schedule; Hindi (43.6%) largest, Bengali (8.03%) 2nd largest speaker base.</li>
+      <li><strong>Religious Breakdown:</strong> Hindus (79.8%), Muslims (14.2% — largest minority), Christians (2.3%), Sikhs (1.7%), Buddhists (0.7%), Jains (0.4%).</li>
+    </ul>
+    <div class="key-metric-strip">
+      <strong>Minority Concentrations:</strong> Border states, valleys, and specific coastal districts.
+    </div>
+  </div>
+
+  <!-- Right 2: Rural-Urban Dynamics -->
+  <div class="branch-card card-right-2">
+    <div class="card-head">
+      <h3>5. Rural-Urban Matrix &amp; Migration</h3>
+      <span class="badge b-green">68.8% R · 31.2% U</span>
+    </div>
+    <ul class="bullet-list">
+      <li><strong>Rural Concentration:</strong> 83.3 Crore in 6.4 lakh villages; Himachal Pradesh (89.97%) and Bihar (88.71%) most rural.</li>
+      <li><strong>Urban Concentration:</strong> 37.7 Crore; Goa (62.2%) most urbanized major state; Maharashtra has largest absolute urban pop.</li>
+      <li><strong>Census Urban Criteria:</strong> Municipality/Cantt; &ge;5,000 pop; &ge;75% male workers in non-agriculture; density &ge;400/km².</li>
+      <li><strong>Migration Streams:</strong> Rural-to-Rural (female-dominated for marriage); Rural-to-Urban (male-dominated for employment).</li>
+    </ul>
+    <div class="key-metric-strip">
+      <strong>Metropolitan Pull:</strong> Greater Mumbai, Delhi, and Kolkata mega-clusters.
+    </div>
+  </div>
+
+  <!-- Right 3: Occupational Structure -->
+  <div class="branch-card card-right-3">
+    <div class="card-head">
+      <h3>6. Occupational Structure &amp; Workers</h3>
+      <span class="badge b-rose">Work Rate: 39.8%</span>
+    </div>
+    <ul class="bullet-list">
+      <li><strong>Economic Classification:</strong> Main Workers (&ge;183 days, 77.8%), Marginal Workers (&lt;183 days, 22.2%), Non-Workers (60.2%).</li>
+      <li><strong>4 Standard Categories:</strong> Cultivators (24.6%), Agri Labourers (30.0%), Household Industry (3.8%), Other Workers (41.6%).</li>
+      <li><strong>Primary Sector Shift:</strong> Agriculture accounts for 54.6% of workforce (down from 66.8% in 1991); Tertiary sector rising.</li>
+      <li><strong>Gender Participation:</strong> Male (53.3%) vs Female (25.5%); higher female work rate in tribal &amp; mountain agrarian belts.</li>
+    </ul>
+    <div class="key-metric-strip">
+      <strong>Structural Dependency:</strong> 60% dependent population highlights economic imperative.
+    </div>
+  </div>
+
+  <footer>
+    <span>OurMocks Exam Prep Series · Geography Core Mindmaps</span>
+    <span>Source: Census of India (2011) & NCERT Class XII <em>India: People and Economy</em></span>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>India Population Composition Taxonomy</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      width: 1440px;
+      height: 880px;
+      background-color: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0F172A;
+      padding: 24px 36px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      border-bottom: 2px solid #E2E8F0;
+      padding-bottom: 10px;
+    }
+    .header-left h1 {
+      font-size: 24px;
+      font-weight: 800;
+      color: #071A4D;
+      letter-spacing: -0.02em;
+    }
+    .header-left p {
+      font-size: 13px;
+      color: #475569;
+      margin-top: 2px;
+      font-weight: 500;
+    }
+    .header-badge {
+      background: #EFF6FF;
+      color: #1E40AF;
+      border: 1px solid #BFDBFE;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 12px 0;
+      flex: 1;
+    }
+
+    .pillar-card {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 10px;
+      padding: 12px 16px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .pillar-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 6px;
+      border-bottom: 1.5px solid #F1F5F9;
+      margin-bottom: 8px;
+    }
+    .pillar-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .pillar-title .icon-circle {
+      width: 24px;
+      height: 24px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 12px;
+    }
+    .ic-blue { background: #DBEAFE; color: #1E40AF; }
+    .ic-purple { background: #F3E8FF; color: #7E22CE; }
+    .ic-emerald { background: #D1FAE5; color: #065F46; }
+    .ic-amber { background: #FEF3C7; color: #B45309; }
+
+    .pillar-title h2 {
+      font-size: 14.5px;
+      font-weight: 800;
+      color: #0F172A;
+    }
+    .pillar-badge {
+      font-size: 10.5px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 5px;
+    }
+    .pb-blue { background: #EFF6FF; color: #1E40AF; }
+    .pb-purple { background: #FAF5FF; color: #7E22CE; }
+    .pb-emerald { background: #ECFDF5; color: #047857; }
+    .pb-amber { background: #FFFBEB; color: #B45309; }
+
+    .sub-rows {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      flex: 1;
+    }
+
+    .sub-item {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 6px;
+      padding: 6px 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .sub-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .sub-head h3 {
+      font-size: 12px;
+      font-weight: 800;
+      color: #0F172A;
+    }
+    .share-pill {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 1px 6px;
+      border-radius: 4px;
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      color: #0F172A;
+    }
+    .sub-desc {
+      font-size: 10.5px;
+      color: #475569;
+      line-height: 1.4;
+    }
+    .sub-desc strong {
+      color: #1E293B;
+    }
+
+    .stat-bar-container {
+      display: flex;
+      height: 6px;
+      border-radius: 3px;
+      overflow: hidden;
+      margin: 4px 0 2px 0;
+      background: #E2E8F0;
+    }
+    .bar-seg { height: 100%; }
+
+    .bottom-highlight {
+      background: #F1F5F9;
+      border-radius: 5px;
+      padding: 5px 10px;
+      font-size: 10.5px;
+      color: #334155;
+      margin-top: 6px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .bottom-highlight strong {
+      color: #071A4D;
+    }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: #64748B;
+      border-top: 1px solid #E2E8F0;
+      padding-top: 8px;
+    }
+    footer strong {
+      color: #071A4D;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-left">
+      <h1>India: Comprehensive Population Composition Framework</h1>
+      <p>Syllabus Classification: Linguistic Families · Religious Groups · Rural-Urban Proportions · Occupational Matrix</p>
+    </div>
+    <div class="header-badge">CUET UG Geography · Unit 5</div>
+  </header>
+
+  <div class="grid-container">
+    
+    <!-- 1. Linguistic Composition -->
+    <div class="pillar-card">
+      <div class="pillar-header">
+        <div class="pillar-title">
+          <div class="icon-circle ic-blue">L</div>
+          <h2>1. Linguistic Composition (Grierson Survey)</h2>
+        </div>
+        <span class="pillar-badge pb-blue">4 Language Families</span>
+      </div>
+
+      <div class="sub-rows">
+        <div class="sub-item">
+          <div class="sub-head">
+            <h3>Indo-Aryan (Indo-European Family)</h3>
+            <span class="share-pill">73% of Population</span>
+          </div>
+          <p class="sub-desc"><strong>Spatial Belt:</strong> Northern, Western, and Central India. Hindi, Bengali, Marathi, Gujarati, Punjabi, Odia, Assamese, Urdu, Rajasthani, Maithili.</p>
+        </div>
+
+        <div class="sub-item">
+          <div class="sub-head">
+            <h3>Dravidian (Dravida Family)</h3>
+            <span class="share-pill">20% of Population</span>
+          </div>
+          <p class="sub-desc"><strong>Spatial Belt:</strong> Peninsular India. Telugu (largest Dravidian speaker base), Tamil, Kannada, Malayalam, and tribal tongues (Gondi, Kurukh/Oraon).</p>
+        </div>
+
+        <div class="sub-item">
+          <div class="sub-head">
+            <h3>Austroasiatic / Nishada Family</h3>
+            <span class="share-pill">1.38% of Population</span>
+          </div>
+          <p class="sub-desc"><strong>Spatial Belt:</strong> Chotanagpur plateau and Meghalaya. Santhali, Mundari, Ho, Birhor, and Khasi (Mon-Khmer branch in Meghalaya).</p>
+        </div>
+
+        <div class="sub-item">
+          <div class="sub-head">
+            <h3>Sino-Tibetan / Kirata Family</h3>
+            <span class="share-pill">0.85% of Population</span>
+          </div>
+          <p class="sub-desc"><strong>Spatial Belt:</strong> Himalayan borderlands and Northeast. Tibeto-Himalayan (Bhotia, Kinnauri), North Assam (Mishi, Dafla), and Assam-Myanmarese (Bodo, Naga, Manipuri).</p>
+        </div>
+      </div>
+
+      <div class="bottom-highlight">
+        <span><strong>Constitutional Benchmark:</strong> 22 Languages in 8th Schedule</span>
+        <span>Largest: Hindi (~43.6%)</span>
+      </div>
+    </div>
+
+    <!-- 2. Religious Composition -->
+    <div class="pillar-card">
+      <div class="pillar-header">
+        <div class="pillar-title">
+          <div class="icon-circle ic-purple">R</div>
+          <h2>2. Religious Composition & Spatial Clusters</h2>
+        </div>
+        <span class="pillar-badge pb-purple">Census 2011 Data</span>
+      </div>
+
+      <div class="sub-rows">
+        <div class="sub-item">
+          <div class="sub-head">
+            <h3>Hindus (Majoritarian Distribution)</h3>
+            <span class="share-pill">79.8% · 96.6 Crore</span>
+          </div>
+          <p class="sub-desc">Majoritarian presence across most states; exceeds 80–90% in Himachal Pradesh, Odisha, and Chhattisgarh. Less than 50% in J&amp;K, Punjab, and Northeast.</p>
+        </div>
+
+        <div class="sub-item">
+          <div class="sub-head">
+            <h3>Muslims (Largest Religious Minority)</h3>
+            <span class="share-pill">14.2% · 17.2 Crore</span>
+          </div>
+          <p class="sub-desc">Concentrated in Jammu &amp; Kashmir (majority), Lakshadweep (majority), West Bengal, Uttar Pradesh, Bihar, Kerala, and Hyderabad.</p>
+        </div>
+
+        <div class="sub-item">
+          <div class="sub-head">
+            <h3>Christians, Sikhs, Buddhists &amp; Jains</h3>
+            <span class="share-pill">Combined ~5.0%</span>
+          </div>
+          <p class="sub-desc"><strong>Christians (2.3%):</strong> Nagaland, Mizoram, Meghalaya, Goa, Kerala. <strong>Sikhs (1.7%):</strong> Punjab (majority). <strong>Buddhists (0.7%):</strong> Maharashtra, Ladakh, Sikkim. <strong>Jains (0.4%):</strong> Rajasthan, Gujarat, Mumbai.</p>
+        </div>
+
+        <div class="stat-bar-container">
+          <div class="bar-seg" style="width: 79.8%; background: #F97316;"></div>
+          <div class="bar-seg" style="width: 14.2%; background: #10B981;"></div>
+          <div class="bar-seg" style="width: 2.3%; background: #3B82F6;"></div>
+          <div class="bar-seg" style="width: 1.7%; background: #F59E0B;"></div>
+          <div class="bar-seg" style="width: 2.0%; background: #8B5CF6;"></div>
+        </div>
+      </div>
+
+      <div class="bottom-highlight">
+        <span><strong>Religious Pluralism:</strong> High minority concentrations in border zones</span>
+        <span>Jains: Urban trade</span>
+      </div>
+    </div>
+
+    <!-- 3. Rural-Urban Composition -->
+    <div class="pillar-card">
+      <div class="pillar-header">
+        <div class="pillar-title">
+          <div class="icon-circle ic-emerald">U</div>
+          <h2>3. Rural-Urban Structure & Urbanization</h2>
+        </div>
+        <span class="pillar-badge pb-emerald">68.8% Rural · 31.2% Urban</span>
+      </div>
+
+      <div class="sub-rows">
+        <div class="sub-item">
+          <div class="sub-head">
+            <h3>Rural Demographics (83.3 Crore)</h3>
+            <span class="share-pill">68.8% of India</span>
+          </div>
+          <p class="sub-desc">Inhabits 6,40,867 inhabited villages. Highest rural share in <strong>Himachal Pradesh (89.97%)</strong> and <strong>Bihar (88.71%)</strong>. Heavy agrarian dependence.</p>
+        </div>
+
+        <div class="sub-item">
+          <div class="sub-head">
+            <h3>Urban Demographics (37.7 Crore)</h3>
+            <span class="share-pill">31.2% of India</span>
+          </div>
+          <p class="sub-desc">Among major states, <strong>Goa (62.17%)</strong> has the highest urban share, followed by Mizoram (52.1%) and Tamil Nadu (48.4%). Lowest in Himachal Pradesh (10.03%).</p>
+        </div>
+
+        <div class="sub-item">
+          <div class="sub-head">
+            <h3>Census Definition Criteria for "Urban Area"</h3>
+            <span class="share-pill">Statutory &amp; Census Towns</span>
+          </div>
+          <p class="sub-desc">1. Municipality or Cantonment Board. 2. Minimum population of <strong>5,000</strong>. 3. At least <strong>75% male workers</strong> in non-agricultural pursuits. 4. Density &ge; <strong>400 persons/km²</strong>.</p>
+        </div>
+      </div>
+
+      <div class="bottom-highlight">
+        <span><strong>Mega-Cities:</strong> Greater Mumbai, Delhi, Kolkata, Chennai, Bengaluru</span>
+        <span>Driver: Rural-Urban migration</span>
+      </div>
+    </div>
+
+    <!-- 4. Occupational Structure -->
+    <div class="pillar-card">
+      <div class="pillar-header">
+        <div class="pillar-title">
+          <div class="icon-circle ic-amber">W</div>
+          <h2>4. Occupational Matrix & Economic Status</h2>
+        </div>
+        <span class="pillar-badge pb-amber">Work Participation: 39.8%</span>
+      </div>
+
+      <div class="sub-rows">
+        <div class="sub-item">
+          <div class="sub-head">
+            <h3>Economic Work Status Classification</h3>
+            <span class="share-pill">Census Criterion: 183 Days</span>
+          </div>
+          <p class="sub-desc"><strong>Main Workers:</strong> Work for &ge; 183 days (6 months) in the year (77.8% of workers). <strong>Marginal Workers:</strong> Work for &lt; 183 days (22.2%). <strong>Non-Workers:</strong> Dependent population (60.2% of India).</p>
+        </div>
+
+        <div class="sub-item">
+          <div class="sub-head">
+            <h3>Four Standard Occupational Categories</h3>
+            <span class="share-pill">Sectoral Shift</span>
+          </div>
+          <p class="sub-desc">1. <strong>Cultivators:</strong> 24.6% (declining). 2. <strong>Agricultural Labourers:</strong> 30.0% (landless). 3. <strong>Household Industry:</strong> 3.8%. 4. <strong>Other Workers:</strong> 41.6% (manufacturing, trade, transport, services).</p>
+        </div>
+
+        <div class="sub-item">
+          <div class="sub-head">
+            <h3>Gender &amp; Spatial Variations in Participation</h3>
+            <span class="share-pill">Male 53.3% · Female 25.5%</span>
+          </div>
+          <p class="sub-desc">Higher female work participation in tribal, hill, and agrarian states (Himachal Pradesh, Nagaland, Chhattisgarh) compared to urban-industrial regions.</p>
+        </div>
+      </div>
+
+      <div class="bottom-highlight">
+        <span><strong>Structural Transition:</strong> Shift from Primary (54.6%) toward Tertiary services</span>
+        <span>High dependency ratio</span>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <span>OurMocks Exam Prep Series · Geography Core Revision</span>
+    <span>Source: Census of India (2011) & NCERT Class XII <em>India: People and Economy</em></span>
+  </footer>
+
+</body>
+</html>
