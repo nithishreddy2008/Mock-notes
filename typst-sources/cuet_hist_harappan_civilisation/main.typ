@@ -248,6 +248,11 @@ By *c. 1800 BCE*, mature Harappan urban life disintegrated across Sindh and Punj
 
 = Key Facts & Terms: One-Stop Revision
 
+#figure(
+  image("assets/hist_harappan_summary_mindmap.png", width: 100%),
+  caption: [Figure 3 — Comprehensive Topic Summary Mindmap: synthesis of Harappan chronology, urban sanitation, subsistence, craft production, trade routes, and decline theories.],
+)
+
 - *Citadel:* Elevated western fortification of Harappan settlements housing public monuments.
 - *Lower Town:* Eastern residential quarter planned on a strict gridiron pattern.
 - *Steatite:* Soft talc stone used to manufacture seals, beads, and the Priest-King statue.

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Harappan Civilisation — Chapter Summary Mindmap</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background-color: #071A4D;
+    background-image: 
+      radial-gradient(circle at 10% 15%, rgba(31, 94, 255, 0.15) 0%, transparent 40%),
+      radial-gradient(circle at 90% 85%, rgba(184, 255, 52, 0.08) 0%, transparent 35%);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #F8FAFC;
+    padding: 32px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+
+  /* Header */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    padding-bottom: 16px;
+  }
+  .badge {
+    background: rgba(184, 255, 52, 0.12);
+    border: 1px solid #B8FF34;
+    color: #B8FF34;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 6px;
+  }
+  .title {
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: #FFFFFF;
+  }
+  .subtitle {
+    font-size: 13.5px;
+    color: #94A3B8;
+    margin-top: 4px;
+  }
+  .brand-pill {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 12px;
+    color: #E2E8F0;
+    font-weight: 600;
+    text-align: right;
+  }
+  .brand-pill span {
+    color: #B8FF34;
+    display: block;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  /* Main Grid */
+  .mindmap-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 18px;
+    margin-top: 18px;
+    flex-grow: 1;
+  }
+
+  .branch-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 18px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+    backdrop-filter: blur(8px);
+  }
+
+  .branch-card.hub {
+    background: linear-gradient(135deg, rgba(31, 94, 255, 0.22) 0%, rgba(7, 26, 77, 0.7) 100%);
+    border: 1.5px solid rgba(31, 94, 255, 0.5);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  }
+
+  .branch-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .branch-num {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: #1F5EFF;
+    color: #FFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 800;
+    flex-shrink: 0;
+  }
+
+  .branch-card.hub .branch-num {
+    background: #B8FF34;
+    color: #071A4D;
+  }
+
+  .branch-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #F8FAFC;
+    letter-spacing: -0.2px;
+  }
+
+  .branch-card.hub .branch-title {
+    color: #B8FF34;
+    font-size: 16px;
+  }
+
+  .leaf-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .leaf-item {
+    font-size: 12.5px;
+    line-height: 1.45;
+    color: #CBD5E1;
+    position: relative;
+    padding-left: 14px;
+    word-break: break-word;
+  }
+
+  .leaf-item::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #1F5EFF;
+    font-weight: bold;
+    font-size: 14px;
+  }
+
+  .branch-card.hub .leaf-item::before {
+    color: #B8FF34;
+  }
+
+  .leaf-item strong {
+    color: #FFFFFF;
+    font-weight: 600;
+  }
+
+  .tag-pill {
+    display: inline-block;
+    padding: 2px 7px;
+    background: rgba(31, 94, 255, 0.25);
+    border: 0.5px solid rgba(31, 94, 255, 0.4);
+    border-radius: 4px;
+    color: #93C5FD;
+    font-size: 11px;
+    font-weight: 600;
+    margin-right: 4px;
+  }
+
+  /* Footer Strip */
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 11.5px;
+    color: #64748B;
+  }
+  .footer-links {
+    display: flex;
+    gap: 20px;
+  }
+  .footer-links span {
+    color: #94A3B8;
+  }
+  .footer-links strong {
+    color: #B8FF34;
+  }
+</style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div>
+      <div class="badge">NCERT Themes in Indian History · Chapter 1</div>
+      <div class="title">The Harappan Civilisation — Complete Topic Summary Mindmap</div>
+      <div class="subtitle">Comprehensive conceptual synthesis across settlement planning, subsistence, trade networks, social order, and decline</div>
+    </div>
+    <div class="brand-pill">
+      <span>OurMocks Study Visuals</span>
+      CUET UG History · 2027 Cycle
+    </div>
+  </div>
+
+  <!-- Mindmap Grid: 6 thematic sectors -->
+  <div class="mindmap-container">
+    
+    <!-- Central Hub: Core Chronology & Identity -->
+    <div class="branch-card hub">
+      <div class="branch-header">
+        <div class="branch-num">★</div>
+        <div class="branch-title">Core Chronology & Geographic Extent</div>
+      </div>
+      <ul class="leaf-list">
+        <li class="leaf-item"><strong>Date Bracket:</strong> Mature Harappan phase dated to <strong>c. 2600 – 1900 BCE</strong> (Early Harappan before 2600, Late post-1900).</li>
+        <li class="leaf-item"><strong>Geographic Boundaries:</strong> Manda (North/J&K), Daimabad (South/Maharashtra), Sutkagen Dor (West/Makran), Alamgirpur (East/UP).</li>
+        <li class="leaf-item"><strong>Nomenclature:</strong> Named after <strong>Harappa</strong> (first excavated site, 1921 by Daya Ram Sahni). Also known as Indus Valley Civilisation.</li>
+        <li class="leaf-item"><strong>Key Pioneer Archaeologists:</strong> Alexander Cunningham (first DG of ASI, missed date), John Marshall (announced 1924), R.E.M. Wheeler (stratigraphy, 1944).</li>
+      </ul>
+    </div>
+
+    <!-- Sector 1: Settlement & Urban Planning -->
+    <div class="branch-card">
+      <div class="branch-header">
+        <div class="branch-num">1</div>
+        <div class="branch-title">Urban Planning & Sanitation</div>
+      </div>
+      <ul class="leaf-list">
+        <li class="leaf-item"><strong>Dual Settlement:</strong> Raised <strong>Citadel</strong> (west, mud-brick platforms, public buildings) and larger <strong>Lower Town</strong> (east, residential quarters).</li>
+        <li class="leaf-item"><strong>Standardized Bricks:</strong> Sun-dried and baked bricks in strict <strong>1:2:4 ratio</strong> (thickness : width : length) across all regional sites.</li>
+        <li class="leaf-item"><strong>Grid Drain Network:</strong> Streets laid in grid pattern cutting at right angles; domestic drains connected directly into covered street mains with sumps.</li>
+        <li class="leaf-item"><strong>Monumental Citadel Structures:</strong> <strong>Great Bath</strong> at Mohenjodaro (bitumen-sealed waterproof tank) and the massive Warehouse / Granary.</li>
+      </ul>
+    </div>
+
+    <!-- Sector 2: Subsistence & Agriculture -->
+    <div class="branch-card">
+      <div class="branch-header">
+        <div class="branch-num">2</div>
+        <div class="branch-title">Subsistence & Agriculture</div>
+      </div>
+      <ul class="leaf-list">
+        <li class="leaf-item"><strong>Crops & Flora:</strong> Wheat, barley, lentils, chickpea, sesame; <strong>millets</strong> prominent in Gujarat; rice rare (found at Lothal/Rangpur).</li>
+        <li class="leaf-item"><strong>Faunal Remains:</strong> Cattle, sheep, goat, buffalo, pig (domesticated); wild boar, deer, gharial; fish and fowl consumed.</li>
+        <li class="leaf-item"><strong>Agricultural Tech:</strong> Terracotta plough models at <strong>Cholistan & Banawali</strong>; ploughed field with criss-cross furrows at <strong>Kalibangan</strong>.</li>
+        <li class="leaf-item"><strong>Irrigation Works:</strong> Canals identified at <strong>Shortughai</strong> (Afghanistan); rock-cut water reservoirs at <strong>Dholavira</strong> (Gujarat).</li>
+      </ul>
+    </div>
+
+    <!-- Sector 3: Craft Production & Technology -->
+    <div class="branch-card">
+      <div class="branch-header">
+        <div class="branch-num">3</div>
+        <div class="branch-title">Craft Production & Material Culture</div>
+      </div>
+      <ul class="leaf-list">
+        <li class="leaf-item"><strong>Specialized Craft Centres:</strong> <strong>Chanhudaro</strong> (< 7 hectares, exclusively devoted to bead-making, seal-carving, weight-making); shell-work at <strong>Balakot & Nageshwar</strong>.</li>
+        <li class="leaf-item"><strong>Raw Material Sources:</strong> Carnelian (Bharuch), Lapis Lazuli (Shortughai), Steatite (South Rajasthan/North Gujarat), Copper (Khetri mines, Rajasthan & Oman).</li>
+        <li class="leaf-item"><strong>Weight System:</strong> Cubical <strong>chert weights</strong>; lower denominations binary (1, 2, 4, 8, 16, 32... up to 12,800); higher denominations decimal.</li>
+        <li class="leaf-item"><strong>Luxury vs Utilitarian:</strong> Faience pots (luxury, rare); querns, pottery, needles, flesh-rubbers (utilitarian, widely distributed).</li>
+      </ul>
+    </div>
+
+    <!-- Sector 4: Long-Distance Trade & Epigraphy -->
+    <div class="branch-card">
+      <div class="branch-header">
+        <div class="branch-num">4</div>
+        <div class="branch-title">Trade Networks & Epigraphy</div>
+      </div>
+      <ul class="leaf-list">
+        <li class="leaf-item"><strong>Oman Connection:</strong> Chemical nickel tracing links Harappan copper artifacts to <strong>Omani copper</strong>; black-clay Harappan jars found at Omani sites.</li>
+        <li class="leaf-item"><strong>Mesopotamian Texts:</strong> Refer to <strong>Magan</strong> (Oman) and <strong>Meluhha</strong> ("land of seafarers", Harappa); mention carnelian, lapis, copper, gold.</li>
+        <li class="leaf-item"><strong>Harappan Script:</strong> Undeciphered, written right-to-left (boustrophedon evidenced), <strong>375 to 400 distinct signs</strong>; longest inscription has 26 signs.</li>
+        <li class="leaf-item"><strong>Seals & Sealings:</strong> Steatite seals with animal motifs (unicorn, humped bull, elephant) used to stamp clay tags on tied goods to verify uncompromised transit.</li>
+      </ul>
+    </div>
+
+    <!-- Sector 5: Social Organization & Decline -->
+    <div class="branch-card">
+      <div class="branch-header">
+        <div class="branch-num">5</div>
+        <div class="branch-title">Society, Religion & Theories of Decline</div>
+      </div>
+      <ul class="leaf-list">
+        <li class="leaf-item"><strong>Burial Practices:</strong> Extended pits; grave goods modest (pottery, copper mirrors, beads); lack of massive wealth indicates no royal pyramid-style hoarding.</li>
+        <li class="leaf-item"><strong>Religious Beliefs:</strong> "Pashupati" seal (seated proto-Shiva surrounded by animals), terracotta "Mother Goddess" figurines, conical stones (lingas), sacred pipal tree.</li>
+        <li class="leaf-item"><strong>Authority Debate:</strong> Single state hypothesis (standardized bricks, planned grids, uniform weights) vs multiple city-states (Mohenjodaro, Harappa).</li>
+        <li class="leaf-item"><strong>Decline (c. 1900 BCE):</strong> Climate change, tectonic shifts/flooding, drying of Ghaggar-Hakra; abandonment of core cities; Wheeler's "Aryan invasion" thesis disproven.</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div><strong>Visual Synthesis:</strong> Core mindmap for rapid revision of all 5 syllabus themes in Harappan Archaeology</div>
+    <div class="footer-links">
+      <span>Total Signs: <strong>375–400</strong></span>
+      <span>Brick Ratio: <strong>1:2:4</strong></span>
+      <span>Chert Weights: <strong>Binary/Decimal</strong></span>
+      <span>Mature Era: <strong>2600–1900 BCE</strong></span>
+      <span>www.ourmocks.com</span>
+    </div>
+  </div>
+
+</body>
+</html>
