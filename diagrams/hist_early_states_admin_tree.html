@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Mauryan State & Military Administration — Structural Tree</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background-color: #071A4D;
+    background-image: 
+      radial-gradient(circle at 15% 15%, rgba(31, 94, 255, 0.18) 0%, transparent 40%),
+      radial-gradient(circle at 85% 85%, rgba(184, 255, 52, 0.08) 0%, transparent 35%);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #F8FAFC;
+    padding: 30px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+
+  /* Header */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    padding-bottom: 14px;
+  }
+  .badge {
+    background: rgba(184, 255, 52, 0.12);
+    border: 1px solid #B8FF34;
+    color: #B8FF34;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 6px;
+  }
+  .title {
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: #FFFFFF;
+  }
+  .subtitle {
+    font-size: 13px;
+    color: #94A3B8;
+    margin-top: 3px;
+  }
+  .brand-pill {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 7px 14px;
+    border-radius: 8px;
+    font-size: 11.5px;
+    color: #E2E8F0;
+    font-weight: 600;
+    text-align: right;
+  }
+  .brand-pill span {
+    color: #B8FF34;
+    display: block;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  /* Layout Structure */
+  .tree-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 10px;
+    flex-grow: 1;
+  }
+
+  /* Tier 1: Apex & Provincial Hub */
+  .tier-apex {
+    display: grid;
+    grid-template-columns: 1.3fr 2fr;
+    gap: 14px;
+  }
+
+  .card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 14px 18px;
+    backdrop-filter: blur(8px);
+  }
+
+  .card-apex {
+    background: linear-gradient(135deg, rgba(31, 94, 255, 0.25) 0%, rgba(7, 26, 77, 0.8) 100%);
+    border: 1.5px solid rgba(31, 94, 255, 0.6);
+  }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .card-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #F8FAFC;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .card-apex .card-title {
+    color: #B8FF34;
+  }
+
+  .tag {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.08);
+    color: #94A3B8;
+  }
+
+  .bullet-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 12px;
+    line-height: 1.4;
+    color: #CBD5E1;
+  }
+  .bullet-list li {
+    position: relative;
+    padding-left: 14px;
+    word-break: break-word;
+  }
+  .bullet-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #1F5EFF;
+    font-weight: bold;
+  }
+  .card-apex .bullet-list li::before {
+    color: #B8FF34;
+  }
+  .bullet-list strong {
+    color: #FFF;
+    font-weight: 600;
+  }
+
+  /* Provincial Centers Grid */
+  .provincial-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-top: 4px;
+  }
+  .prov-pill {
+    background: rgba(31, 94, 255, 0.12);
+    border: 1px solid rgba(31, 94, 255, 0.3);
+    border-radius: 8px;
+    padding: 6px 8px;
+    text-align: center;
+  }
+  .prov-name {
+    font-size: 12px;
+    font-weight: 700;
+    color: #93C5FD;
+  }
+  .prov-role {
+    font-size: 10.5px;
+    color: #94A3B8;
+    margin-top: 2px;
+  }
+
+  /* Tier 2: Megasthenes 6 Military Sub-Committees */
+  .tier-military {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 12px 18px;
+  }
+  .military-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+    margin-top: 8px;
+  }
+  .comm-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-top: 3px solid #1F5EFF;
+  }
+  .comm-num {
+    font-size: 10px;
+    font-weight: 800;
+    color: #B8FF34;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+  }
+  .comm-wing {
+    font-size: 13px;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin: 3px 0 4px 0;
+  }
+  .comm-desc {
+    font-size: 11px;
+    color: #94A3B8;
+    line-height: 1.35;
+    word-break: break-word;
+  }
+
+  /* Tier 3: Civic & Dhamma Machinery */
+  .tier-lower {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  /* Footer */
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 10px;
+    font-size: 11.5px;
+    color: #64748B;
+  }
+  .footer strong {
+    color: #B8FF34;
+  }
+</style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div>
+      <div class="badge">Themes in Indian History · Chapter 2</div>
+      <div class="title">Mauryan Imperial State & Military Structure</div>
+      <div class="subtitle">Structural decomposition of central monarchy, provincial viceroyalties, and Megasthenes' 6 military sub-committees</div>
+    </div>
+    <div class="brand-pill">
+      <span>OurMocks Study Visuals</span>
+      CUET UG History · Early States
+    </div>
+  </div>
+
+  <!-- Layout Structure -->
+  <div class="tree-layout">
+    
+    <!-- Tier 1: Apex Monarchy & Provincial Viceroyalties -->
+    <div class="tier-apex">
+      
+      <!-- Central Monarchy -->
+      <div class="card card-apex">
+        <div class="card-header">
+          <div class="card-title">Central Monarchy & Council (Mantriparishad)</div>
+          <div class="tag">Pataliputra Apex</div>
+        </div>
+        <ul class="bullet-list">
+          <li><strong>King at the Centre:</strong> Absolute executive, legislative, and judicial fountainhead; advised by Chanakya's ministerial council.</li>
+          <li><strong>Pataliputra Capital:</strong> Directly administered imperial core surrounded by a massive wooden palisade with 570 towers and 64 gates.</li>
+          <li><strong>Imperial Cadres:</strong> High-ranking officials (*Mahamattas*), revenue collectors (*Samaharta*), and imperial treasurers (*Sannidhata*).</li>
+        </ul>
+      </div>
+
+      <!-- 4 Provincial Hubs -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Four Strategic Provincial Viceroyalties (Kumaramatyas)</div>
+          <div class="tag">Regional Nodes</div>
+        </div>
+        <p style="font-size:12px; color:#94A3B8; margin-bottom:8px;">Headed by royal princes (*Kumaras*) along long-distance overland and maritime trade arteries:</p>
+        <div class="provincial-grid">
+          <div class="prov-pill">
+            <div class="prov-name">Taxila</div>
+            <div class="prov-role">North-West Route / Silk Route access</div>
+          </div>
+          <div class="prov-pill">
+            <div class="prov-name">Ujjayini</div>
+            <div class="prov-role">Western Route / Malwa trade node</div>
+          </div>
+          <div class="prov-pill">
+            <div class="prov-name">Tosali</div>
+            <div class="prov-role">Coastal Odisha / Kalinga control</div>
+          </div>
+          <div class="prov-pill">
+            <div class="prov-name">Suvarnagiri</div>
+            <div class="prov-role">"Golden Mountain" / Karnataka gold mines</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Tier 2: Megasthenes 6 Military Sub-Committees -->
+    <div class="tier-military">
+      <div class="card-header" style="margin-bottom:6px; padding-bottom:6px;">
+        <div class="card-title" style="color:#FFF;">
+          <span>Military Committee Coordination — 30 Members across 6 Operational Sub-Committees</span>
+        </div>
+        <div class="tag" style="background:rgba(31,94,255,0.2); color:#93C5FD;">Megasthenes' Indica Account</div>
+      </div>
+      <div class="military-grid">
+        <div class="comm-card">
+          <div class="comm-num">Branch I</div>
+          <div class="comm-wing">Navy</div>
+          <div class="comm-desc">Maintained riverine and coastal flotillas along the Ganga, Son, and maritime gateways.</div>
+        </div>
+        <div class="comm-card">
+          <div class="comm-num">Branch II</div>
+          <div class="comm-wing">Transport & Supply</div>
+          <div class="comm-desc">Procured bullock-carts, forage, rations for soldiers, and hired mechanical artisans/drummers.</div>
+        </div>
+        <div class="comm-card">
+          <div class="comm-num">Branch III</div>
+          <div class="comm-wing">Infantry</div>
+          <div class="comm-desc">Oversaw foot-soldiers armed with broadswords, bamboo longbows, and javelins.</div>
+        </div>
+        <div class="comm-card">
+          <div class="comm-num">Branch IV</div>
+          <div class="comm-wing">Cavalry</div>
+          <div class="comm-desc">Managed war-horses imported from Kamboja and Bactria; saddles and bridle upkeep.</div>
+        </div>
+        <div class="comm-card">
+          <div class="comm-num">Branch V</div>
+          <div class="comm-wing">War Chariots</div>
+          <div class="comm-desc">Maintained fighting chariots carrying archers and charioteers on flat plains.</div>
+        </div>
+        <div class="comm-card">
+          <div class="comm-num">Branch VI</div>
+          <div class="comm-wing">War Elephants</div>
+          <div class="comm-desc">Procured, tamed, and armored wild elephants from the dense forests of Jharkhand/Kalinga.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tier 3: Civic Machinery & Dhamma Bureaucracy -->
+    <div class="tier-lower">
+      
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Pataliputra Municipal Board (30 Members)</div>
+          <div class="tag">6 Civic Committees</div>
+        </div>
+        <ul class="bullet-list">
+          <li><strong>Industrial & Artisan Oversight:</strong> Regulated craft wages, guild rules, and material authenticity.</li>
+          <li><strong>Care of Foreigners:</strong> Managed foreign travellers, lodgings, medical care, and burial of deceased.</li>
+          <li><strong>Vital Statistics & Trade:</strong> Compulsory birth/death registration; monitored weights, measures, and 10% sales tax collection.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Dhamma Mahamattas & Moral Ideology</div>
+          <div class="tag">Ashokan Policy</div>
+        </div>
+        <ul class="bullet-list">
+          <li><strong>Special Imperial Cadre:</strong> Appointed in Ashoka's 14th regnal year to spread *Dhamma* across all sects and classes.</li>
+          <li><strong>Non-Sectarian Principles:</strong> Obedience to parents/elders, generosity to Brahmanas and ascetics, humane treatment of slaves/servants.</li>
+          <li><strong>Epigraphic Propagation:</strong> Inscribed on living rocks and polished monolithic sandstone pillars across the empire.</li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div><strong>Key Administrative Rule:</strong> Mauryan state power was uneven — intense around the Pataliputra core and provincial nodes, limited along peripheral forest tracts.</div>
+    <div>Capital: <strong>Pataliputra</strong> · Military Board: <strong>30 Members (5×6)</strong> · Official Scribe: <strong>Chapada</strong> · www.ourmocks.com</div>
+  </div>
+
+</body>
+</html>

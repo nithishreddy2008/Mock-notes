@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Early States & Economies — Complete Topic Summary Mindmap</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background-color: #071A4D;
+    background-image: 
+      radial-gradient(circle at 12% 15%, rgba(31, 94, 255, 0.16) 0%, transparent 40%),
+      radial-gradient(circle at 88% 85%, rgba(184, 255, 52, 0.08) 0%, transparent 35%);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #F8FAFC;
+    padding: 30px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+
+  /* Header */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    padding-bottom: 14px;
+  }
+  .badge {
+    background: rgba(184, 255, 52, 0.12);
+    border: 1px solid #B8FF34;
+    color: #B8FF34;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 6px;
+  }
+  .title {
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: #FFFFFF;
+  }
+  .subtitle {
+    font-size: 13px;
+    color: #94A3B8;
+    margin-top: 3px;
+  }
+  .brand-pill {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 7px 14px;
+    border-radius: 8px;
+    font-size: 11.5px;
+    color: #E2E8F0;
+    font-weight: 600;
+    text-align: right;
+  }
+  .brand-pill span {
+    color: #B8FF34;
+    display: block;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  /* Main Grid */
+  .mindmap-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 16px;
+    margin-top: 14px;
+    flex-grow: 1;
+  }
+
+  .branch-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    backdrop-filter: blur(8px);
+  }
+
+  .branch-card.hub {
+    background: linear-gradient(135deg, rgba(31, 94, 255, 0.22) 0%, rgba(7, 26, 77, 0.7) 100%);
+    border: 1.5px solid rgba(31, 94, 255, 0.55);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  }
+
+  .branch-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .branch-num {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: #1F5EFF;
+    color: #FFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 800;
+    flex-shrink: 0;
+  }
+
+  .branch-card.hub .branch-num {
+    background: #B8FF34;
+    color: #071A4D;
+  }
+
+  .branch-title {
+    font-size: 14.5px;
+    font-weight: 700;
+    color: #F8FAFC;
+    letter-spacing: -0.2px;
+  }
+
+  .branch-card.hub .branch-title {
+    color: #B8FF34;
+    font-size: 15.5px;
+  }
+
+  .leaf-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .leaf-item {
+    font-size: 12px;
+    line-height: 1.42;
+    color: #CBD5E1;
+    position: relative;
+    padding-left: 14px;
+    word-break: break-word;
+  }
+
+  .leaf-item::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #1F5EFF;
+    font-weight: bold;
+    font-size: 13px;
+  }
+
+  .branch-card.hub .leaf-item::before {
+    color: #B8FF34;
+  }
+
+  .leaf-item strong {
+    color: #FFFFFF;
+    font-weight: 600;
+  }
+
+  /* Footer Strip */
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 10px;
+    font-size: 11.5px;
+    color: #64748B;
+  }
+  .footer-links {
+    display: flex;
+    gap: 18px;
+  }
+  .footer-links span {
+    color: #94A3B8;
+  }
+  .footer-links strong {
+    color: #B8FF34;
+  }
+</style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div>
+      <div class="badge">NCERT Themes in Indian History · Chapter 2</div>
+      <div class="title">Early States & Economies (c. 600 BCE – 600 CE) — Topic Summary Mindmap</div>
+      <div class="subtitle">Complete conceptual synthesis: Mahajanapadas, Mauryan Empire, Kingship, Agrarian expansion, Trade, and Epigraphy</div>
+    </div>
+    <div class="brand-pill">
+      <span>OurMocks Study Visuals</span>
+      CUET UG History · 2027 Cycle
+    </div>
+  </div>
+
+  <!-- Mindmap Grid: 6 thematic sectors -->
+  <div class="mindmap-container">
+    
+    <!-- Central Hub: Timeline & The 6th Century BCE Watershed -->
+    <div class="branch-card hub">
+      <div class="branch-header">
+        <div class="branch-num">★</div>
+        <div class="branch-title">Core Watershed: The 6th Century BCE</div>
+      </div>
+      <ul class="leaf-list">
+        <li class="leaf-item"><strong>Second Urbanization:</strong> Rapid emergence of fortified cities, punch-marked coinage, wide iron tool usage, and early states.</li>
+        <li class="leaf-item"><strong>New Religious Movements:</strong> Rise of heterodox thinkers — Gautama Buddha and Vardhamana Mahavira challenging Vedic sacrificial rituals.</li>
+        <li class="leaf-item"><strong>Political Systems:</strong> Coexistence of <strong>monarchies</strong> (*rajyas*) and oligarchic clan-based republics (<strong>ganas / sanghas</strong> like Vajji).</li>
+        <li class="leaf-item"><strong>Dharmasutras:</strong> Sanskrit texts composed by Brahmanas codifying royal conduct, tax rates (1/6th of produce), and varna obligations.</li>
+      </ul>
+    </div>
+
+    <!-- Sector 1: The 16 Mahajanapadas & Magadha -->
+    <div class="branch-card">
+      <div class="branch-header">
+        <div class="branch-num">1</div>
+        <div class="branch-title">The 16 Mahajanapadas & Magadha's Rise</div>
+      </div>
+      <ul class="leaf-list">
+        <li class="leaf-item"><strong>Key Mahajanapadas:</strong> Magadha, Kosala, Kuru, Panchala, Gandhara, Avanti, and the Vajji confederacy (capital: Vaishali).</li>
+        <li class="leaf-item"><strong>Magadhan Dominance:</strong> Emerge as the supreme state (c. 6th–4th cent. BCE) under Bimbisara, Ajatasattu, and the Nandas.</li>
+        <li class="leaf-item"><strong>Strategic Advantages:</strong> Rich iron-ore deposits in Jharkhand; fertile alluvium of Ganga/Son; war elephants; natural river communications.</li>
+        <li class="leaf-item"><strong>Capitals:</strong> First at fortified <strong>Rajagriha</strong> ("house of the king" ringed by hills); shifted to riverine <strong>Pataliputra</strong> (Patna) in 4th cent. BCE.</li>
+      </ul>
+    </div>
+
+    <!-- Sector 2: The Mauryan Empire & Ashokan Dhamma -->
+    <div class="branch-card">
+      <div class="branch-header">
+        <div class="branch-num">2</div>
+        <div class="branch-title">The Mauryan Empire & Dhamma</div>
+      </div>
+      <ul class="leaf-list">
+        <li class="leaf-item"><strong>Foundation (321 BCE):</strong> Chandragupta Maurya overthrowing Nandas; guided by Chanakya (author of <em>Arthashastra</em>).</li>
+        <li class="leaf-item"><strong>Sources:</strong> Megasthenes' <em>Indica</em>, Buddhist/Jaina chronicles, and Emperor Ashoka's monumental rock/pillar edicts.</li>
+        <li class="leaf-item"><strong>Military Organization:</strong> Megasthenes notes a central board of 30 members coordinating <strong>6 sub-committees</strong> (Navy, Supply, Infantry, Cavalry, Chariots, Elephants).</li>
+        <li class="leaf-item"><strong>Ashokan Dhamma:</strong> Moral ethos of non-violence, elder respect, religious tolerance; propagated by dedicated <em>Dhamma Mahamattas</em>.</li>
+      </ul>
+    </div>
+
+    <!-- Sector 3: New Notions of Kingship -->
+    <div class="branch-card">
+      <div class="branch-header">
+        <div class="branch-num">3</div>
+        <div class="branch-title">Divine Kingship & Regional Kingdoms</div>
+      </div>
+      <ul class="leaf-list">
+        <li class="leaf-item"><strong>Kushana Divine Kingship:</strong> Colossal statues unearthed at Mat (Mathura) and Surkh Kotal; rulers assumed title <strong>Devaputra</strong> ("son of God").</li>
+        <li class="leaf-item"><strong>Gupta Prashastis:</strong> Kings praised as divine protectors; court poet Harishena authored the famous <strong>Prayag Prashasti</strong> (Allahabad Pillar) for Samudragupta.</li>
+        <li class="leaf-item"><strong>Chiefdoms of the South:</strong> Cholas, Cheras, and Pandyas in <em>Tamilakam</em>; patronized early Sangam bardic poetry and maritime trade.</li>
+        <li class="leaf-item"><strong>Feudatory Ties:</strong> Guptas governed through <em>samantas</em> (subordinate lords) who provided military levies and tributes to the sovereign.</li>
+      </ul>
+    </div>
+
+    <!-- Sector 4: Agrarian Expansion & Land Grants -->
+    <div class="branch-card">
+      <div class="branch-header">
+        <div class="branch-num">4</div>
+        <div class="branch-title">Agrarian Tech, Land Grants & Gender</div>
+      </div>
+      <ul class="leaf-list">
+        <li class="leaf-item"><strong>Productivity Tech:</strong> Spread of iron-tipped ploughshares and labour-intensive <strong>paddy transplantation</strong> in alluvial zones.</li>
+        <li class="leaf-item"><strong>Hydraulic Engineering:</strong> The rock-cut <strong>Sudarshana Lake</strong> (Gujarat) built by Mauryas, rebuilt by Saka ruler Rudradaman, and restored by Guptas.</li>
+        <li class="leaf-item"><strong>Agrahara Grants:</strong> Tax-free land endowments granted by monarchs to Brahmanas and temples, recorded on copper plates (*tamrapatra*).</li>
+        <li class="leaf-item"><strong>Prabhavati Gupta:</strong> Daughter of Chandragupta II married into Vakatakas; exceptionally granted land despite Dharmashastric restrictions on women.</li>
+      </ul>
+    </div>
+
+    <!-- Sector 5: Trade, Currency & Epigraphy -->
+    <div class="branch-card">
+      <div class="branch-header">
+        <div class="branch-num">5</div>
+        <div class="branch-title">Trade, Coins & Inscriptional Decipherment</div>
+      </div>
+      <ul class="leaf-list">
+        <li class="leaf-item"><strong>Numismatic Evolution:</strong> Silver/copper <strong>punch-marked coins</strong> (6th c. BCE) → Kushanas issue first gold coins (1st c. CE) → Guptas issue purest gold dinars.</li>
+        <li class="leaf-item"><strong>Merchant Guilds (Shrenis):</strong> Organized banking, raw material procurement, and manufacture; made collective votive stupa donations.</li>
+        <li class="leaf-item"><strong>Decipherment Breakthrough:</strong> <strong>James Prinsep (1838)</strong> unlocked Ashokan Brahmi and Kharosthi, identifying king "Piyadassi" as Ashoka.</li>
+        <li class="leaf-item"><strong>Epigraphic Limits:</strong> Weathered stones, missing letters, royal eulogy bias (*prashastis*), and total silence on ordinary peasants.</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div><strong>Visual Synthesis:</strong> Core mindmap for rapid revision of all syllabus themes in Early Indian States and Economies</div>
+    <div class="footer-links">
+      <span>Key Scripts: <strong>Brahmi & Kharosthi</strong></span>
+      <span>First Gold Coins: <strong>Kushanas (c. 1st c. CE)</strong></span>
+      <span>Decipherment: <strong>1838 (Prinsep)</strong></span>
+      <span>Era: <strong>600 BCE – 600 CE</strong></span>
+      <span>www.ourmocks.com</span>
+    </div>
+  </div>
+
+</body>
+</html>

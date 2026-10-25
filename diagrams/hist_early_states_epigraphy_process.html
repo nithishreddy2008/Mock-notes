@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Epigraphy & Decipherment — Historical Methodology & Limitations</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background-color: #071A4D;
+    background-image: 
+      radial-gradient(circle at 10% 20%, rgba(31, 94, 255, 0.16) 0%, transparent 40%),
+      radial-gradient(circle at 90% 80%, rgba(184, 255, 52, 0.08) 0%, transparent 35%);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #F8FAFC;
+    padding: 30px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+
+  /* Header */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    padding-bottom: 14px;
+  }
+  .badge {
+    background: rgba(184, 255, 52, 0.12);
+    border: 1px solid #B8FF34;
+    color: #B8FF34;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 6px;
+  }
+  .title {
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: #FFFFFF;
+  }
+  .subtitle {
+    font-size: 13px;
+    color: #94A3B8;
+    margin-top: 3px;
+  }
+  .brand-pill {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 7px 14px;
+    border-radius: 8px;
+    font-size: 11.5px;
+    color: #E2E8F0;
+    font-weight: 600;
+    text-align: right;
+  }
+  .brand-pill span {
+    color: #B8FF34;
+    display: block;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  /* Main Container */
+  .content-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 12px;
+    flex-grow: 1;
+  }
+
+  /* Top Section: 4-Step Decipherment Pipeline */
+  .section-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 16px 20px;
+    backdrop-filter: blur(8px);
+  }
+
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .section-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #B8FF34;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .tag-pill {
+    background: rgba(31, 94, 255, 0.2);
+    border: 1px solid rgba(31, 94, 255, 0.4);
+    color: #93C5FD;
+    font-size: 10.5px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+
+  .steps-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    position: relative;
+  }
+
+  .step-box {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-top: 3px solid #1F5EFF;
+  }
+
+  .step-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+  }
+
+  .step-num {
+    font-size: 11px;
+    font-weight: 800;
+    color: #B8FF34;
+    text-transform: uppercase;
+  }
+
+  .step-year {
+    font-size: 11px;
+    color: #94A3B8;
+    font-weight: 600;
+  }
+
+  .step-heading {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-bottom: 6px;
+    line-height: 1.3;
+  }
+
+  .step-body {
+    font-size: 11.5px;
+    line-height: 1.45;
+    color: #CBD5E1;
+    word-break: break-word;
+  }
+  .step-body strong {
+    color: #FFFFFF;
+  }
+
+  /* Bottom Section: 5 Structural Limitations of Epigraphy */
+  .limitations-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+  }
+
+  .limit-card {
+    background: rgba(239, 68, 68, 0.05);
+    border: 1px solid rgba(239, 68, 68, 0.25);
+    border-radius: 10px;
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .limit-num {
+    font-size: 10.5px;
+    font-weight: 800;
+    color: #F87171;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .limit-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #FECACA;
+    margin-bottom: 6px;
+    line-height: 1.3;
+  }
+
+  .limit-text {
+    font-size: 11px;
+    line-height: 1.4;
+    color: #CBD5E1;
+    word-break: break-word;
+  }
+  .limit-text strong {
+    color: #FFFFFF;
+  }
+
+  /* Footer */
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 10px;
+    font-size: 11.5px;
+    color: #64748B;
+  }
+  .footer strong {
+    color: #B8FF34;
+  }
+</style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div>
+      <div class="badge">Themes in Indian History · Chapter 2</div>
+      <div class="title">Inscriptional Epigraphy: Decipherment Process & Historical Limits</div>
+      <div class="subtitle">From James Prinsep's breakthrough to the methodological constraints of epigraphic evidence</div>
+    </div>
+    <div class="brand-pill">
+      <span>OurMocks Study Visuals</span>
+      CUET UG History · Early States
+    </div>
+  </div>
+
+  <!-- Content Grid -->
+  <div class="content-grid">
+    
+    <!-- Top: 4-Step Decipherment Pipeline -->
+    <div class="section-card">
+      <div class="section-header">
+        <div class="section-title">
+          <span>The Decipherment of Early Scripts (Prinsep's Breakthrough)</span>
+        </div>
+        <div class="tag-pill">Methodological Milestones</div>
+      </div>
+      <div class="steps-row">
+        
+        <div class="step-box">
+          <div class="step-meta">
+            <span class="step-num">Step 01</span>
+            <span class="step-year">Late 18th – 1830s</span>
+          </div>
+          <div class="step-heading">Bilingual Coin Analysis</div>
+          <div class="step-body">European scholars examined coins of <strong>Indo-Greek rulers</strong> containing Greek on the obverse and <strong>Kharosthi</strong> on the reverse. Comparing known Greek royal names (e.g., Apollodotus) allowed letter-by-letter phonetic matching.</div>
+        </div>
+
+        <div class="step-box">
+          <div class="step-meta">
+            <span class="step-num">Step 02</span>
+            <span class="step-year">1838 Milestone</span>
+          </div>
+          <div class="step-heading">Prinsep Deciphers Asokan Brahmi</div>
+          <div class="step-body"><strong>James Prinsep</strong> (mint officer, Asiatic Society of Bengal) deciphered <strong>Brahmi</strong> by matching recurring votive phrases on Sanchi stupa railings: matching words like <em>danam</em> ("gift") with Sanskrit/Prakrit equivalents.</div>
+        </div>
+
+        <div class="step-box">
+          <div class="step-meta">
+            <span class="step-num">Step 03</span>
+            <span class="step-year">Epigraphic Cross-Check</span>
+          </div>
+          <div class="step-heading">The "Piyadassi" Mystery Solved</div>
+          <div class="step-body">Most edicts referred to a king as <strong>Devanampiya Piyadassi</strong> ("Beloved of the Gods, of pleasant appearance"). Sri Lankan Buddhist chronicles (<strong>Dipavamsa & Mahavamsa</strong>) confirmed this title referred directly to <strong>Emperor Ashoka</strong>.</div>
+        </div>
+
+        <div class="step-box">
+          <div class="step-meta">
+            <span class="step-num">Step 04</span>
+            <span class="step-year">Corpus Identification</span>
+          </div>
+          <div class="step-heading">Discovery of Named Edicts</div>
+          <div class="step-body">Later discoveries at <strong>Maski</strong> (Karnataka), <strong>Gujarra</strong> (MP), Nittur, and Udegolam explicitly stated <em>Devanampiya Asoka</em>, confirming beyond all doubt the singular authorship of the pan-Indian edicts.</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Bottom: 5 Structural Limitations of Epigraphy -->
+    <div class="section-card" style="background: rgba(255, 255, 255, 0.025); border-color: rgba(239, 68, 68, 0.2);">
+      <div class="section-header" style="border-bottom-color: rgba(239, 68, 68, 0.15);">
+        <div class="section-title" style="color: #F87171;">
+          <span>The Five Inherent Limitations of Epigraphic Evidence</span>
+        </div>
+        <div class="tag-pill" style="background: rgba(239,68,68,0.15); border-color: rgba(239,68,68,0.3); color: #FCA5A5;">Critical Historiography</div>
+      </div>
+      <div class="limitations-grid">
+        
+        <div class="limit-card">
+          <div class="limit-num">Limit 01</div>
+          <div class="limit-title">Technical Damage & Weathering</div>
+          <div class="limit-text">Letters are often very faintly engraved; wind, rain, and stone fracturing have chipped away characters, forcing scholars to rely on uncertain reconstructions.</div>
+        </div>
+
+        <div class="limit-card">
+          <div class="limit-num">Limit 02</div>
+          <div class="limit-title">Uncertain Word Meanings</div>
+          <div class="limit-text">Ancient Prakrit and regional dialects contain idioms and administrative technical terms whose precise situational meaning is no longer known today.</div>
+        </div>
+
+        <div class="limit-card">
+          <div class="limit-num">Limit 03</div>
+          <div class="limit-title">Selective Survival Rate</div>
+          <div class="limit-text">Thousands of inscriptions were commissioned on perishable palm leaf, cloth, or destroyed stone; only a tiny fraction survived modern discovery and documentation.</div>
+        </div>
+
+        <div class="limit-card">
+          <div class="limit-num">Limit 04</div>
+          <div class="limit-title">Elite & Royal Commission Bias</div>
+          <div class="limit-text">Inscriptions recorded only what the wealthy commissioners (kings, queens, rich guilds) wanted displayed; royal defeats, famines, and tax burdens are rarely recorded.</div>
+        </div>
+
+        <div class="limit-card">
+          <div class="limit-num">Limit 05</div>
+          <div class="limit-title">Silence on Subaltern Lives</div>
+          <div class="limit-text">Ordinary agricultural labourers, marginal peasants, forest dwellers, and artisans left no stone records; daily hardships remain completely unrecorded in formal epigraphy.</div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div><strong>Epigrapher's Rule:</strong> An inscription does not automatically provide impartial historical truth; it mirrors the political ambitions and worldview of its patron.</div>
+    <div>James Prinsep Decipherment: <strong>1838</strong> · Key Inscribed Scripts: <strong>Brahmi & Kharosthi</strong> · Language: <strong>Prakrit / Greek / Aramaic</strong> · www.ourmocks.com</div>
+  </div>
+
+</body>
+</html>
