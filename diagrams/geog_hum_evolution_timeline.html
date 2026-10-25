@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Human Geography Through the Corridors of Time</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      width: 1440px;
+      height: 880px;
+      background: #F8FAFC;
+      color: #0F172A;
+      font-family: 'Inter', sans-serif;
+      padding: 34px 42px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 2px solid #E2E8F0;
+      padding-bottom: 14px;
+    }
+    .title-block h1 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 26px;
+      font-weight: 800;
+      color: #0F172A;
+      letter-spacing: -0.02em;
+    }
+    .title-block p {
+      font-size: 13.5px;
+      color: #64748B;
+      margin-top: 4px;
+    }
+    .badge {
+      background: #ECFDF5;
+      border: 1px solid #A7F3D0;
+      color: #047857;
+      font-size: 11.5px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .stages-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 1fr 1fr;
+      gap: 18px;
+      margin-top: 18px;
+      flex-grow: 1;
+    }
+    .stage-card {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 12px;
+      padding: 18px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
+      position: relative;
+    }
+    .card-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+    .period-badge {
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 5px;
+      letter-spacing: 0.05em;
+    }
+    .approach-name {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 16px;
+      font-weight: 800;
+      color: #0F172A;
+      margin-bottom: 6px;
+    }
+    .s1 { border-left: 4px solid #3B82F6; }
+    .s1 .period-badge { background: #EFF6FF; color: #1D4ED8; }
+    .s2 { border-left: 4px solid #0D9488; }
+    .s2 .period-badge { background: #F0FDFA; color: #0F766E; }
+    .s3 { border-left: 4px solid #F59E0B; }
+    .s3 .period-badge { background: #FFFBEB; color: #B45309; }
+    .s4 { border-left: 4px solid #8B5CF6; }
+    .s4 .period-badge { background: #F5F3FF; color: #6D28D9; }
+    .s5 { border-left: 4px solid #EC4899; }
+    .s5 .period-badge { background: #FDF2F8; color: #BE185D; }
+    .s6 { border-left: 4px solid #059669; }
+    .s6 .period-badge { background: #ECFDF5; color: #047857; }
+
+    .card-body {
+      font-size: 12px;
+      color: #334155;
+      line-height: 1.45;
+      background: #F8FAFC;
+      border: 1px solid #F1F5F9;
+      padding: 8px 12px;
+      border-radius: 6px;
+      margin-bottom: 8px;
+    }
+    .card-body strong {
+      color: #0F172A;
+    }
+    .card-footer {
+      font-size: 11px;
+      color: #64748B;
+      line-height: 1.35;
+    }
+    .card-footer span {
+      font-weight: 700;
+      color: #0F172A;
+    }
+    .footer-bar {
+      margin-top: 14px;
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 8px;
+      padding: 10px 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: #64748B;
+    }
+    .footer-bar strong {
+      color: #0F172A;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="title-block">
+      <h1>Evolution of Human Geography: The Corridors of Time</h1>
+      <p>Chronological sequence of disciplinary paradigms, epistemological shifts, and core analytical approaches</p>
+    </div>
+    <div class="badge">CUET UG Geography · Chronological Evolution</div>
+  </div>
+
+  <div class="stages-grid">
+    <!-- Stage 1 -->
+    <div class="stage-card s1">
+      <div>
+        <div class="card-head">
+          <span class="period-badge">Early Colonial Period</span>
+          <span style="font-size: 11px; color: #94A3B8; font-weight: 600;">Phase 1</span>
+        </div>
+        <h2 class="approach-name">Exploration & Description</h2>
+        <div class="card-body">
+          Imperial and trade interests motivated exploration of uncharted territories. Encyclopedic collection of travelogues and descriptive inventories of foreign resources.
+        </div>
+      </div>
+      <div class="card-footer">
+        <span>Focus:</span> Discovering new lands, charting coastlines, and cataloguing flora, fauna, and trade wealth for European empires.
+      </div>
+    </div>
+
+    <!-- Stage 2 -->
+    <div class="stage-card s2">
+      <div>
+        <div class="card-head">
+          <span class="period-badge">Later Colonial Period</span>
+          <span style="font-size: 11px; color: #94A3B8; font-weight: 600;">Phase 2</span>
+        </div>
+        <h2 class="approach-name">Regional Analysis</h2>
+        <div class="card-body">
+          Detailed, comprehensive investigation of all physical and human aspects of defined geographic units. Premised on the holistic idea that regions constitute interdependent parts of the whole earth.
+        </div>
+      </div>
+      <div class="card-footer">
+        <span>Focus:</span> Regional synthesis; understanding local balance to extract raw materials and administer colonies systematically.
+      </div>
+    </div>
+
+    <!-- Stage 3 -->
+    <div class="stage-card s3">
+      <div>
+        <div class="card-head">
+          <span class="period-badge">1930s – Inter-War Period</span>
+          <span style="font-size: 11px; color: #94A3B8; font-weight: 600;">Phase 3</span>
+        </div>
+        <h2 class="approach-name">Areal Differentiation</h2>
+        <div class="card-body">
+          Focus on identifying the unique identity and distinguishing traits of particular places. Emphasized explaining why and how one geographic area differed from neighboring areas.
+        </div>
+      </div>
+      <div class="card-footer">
+        <span>Focus:</span> Spatial uniqueness (idiographic study), separating distinct physical-cultural landscapes across continents.
+      </div>
+    </div>
+
+    <!-- Stage 4 -->
+    <div class="stage-card s4">
+      <div>
+        <div class="card-head">
+          <span class="period-badge">Late 1950s – Late 1960s</span>
+          <span style="font-size: 11px; color: #94A3B8; font-weight: 600;">Phase 4</span>
+        </div>
+        <h2 class="approach-name">Spatial Organisation (Quantitative Revolution)</h2>
+        <div class="card-body">
+          Application of computers, statistical modelling, and universal laws of physics to human behaviour. Replaced descriptive accounts with quantifiable spatial patterns and mathematical laws.
+        </div>
+      </div>
+      <div class="card-footer">
+        <span>Focus:</span> Positivist models of market catchments, transport network geometries, and central place hierarchies.
+      </div>
+    </div>
+
+    <!-- Stage 5 -->
+    <div class="stage-card s5">
+      <div>
+        <div class="card-head">
+          <span class="period-badge">1970s Radical Shift</span>
+          <span style="font-size: 11px; color: #94A3B8; font-weight: 600;">Phase 5</span>
+        </div>
+        <h2 class="approach-name">Humanistic, Radical & Behavioural Schools</h2>
+        <div class="card-body">
+          Backlash against sterile quantitative models. Three revolutionary schools emerged: <strong>Welfare/Humanistic</strong> (social well-being: housing, health), <strong>Radical</strong> (Marxian critique of poverty), and <strong>Behavioural</strong> (lived perception).
+        </div>
+      </div>
+      <div class="card-footer">
+        <span>Focus:</span> Re-humanising geography; tackling real-world social deprivation, racial segregation, and economic injustice.
+      </div>
+    </div>
+
+    <!-- Stage 6 -->
+    <div class="stage-card s6">
+      <div>
+        <div class="card-head">
+          <span class="period-badge">1990s to Present</span>
+          <span style="font-size: 11px; color: #94A3B8; font-weight: 600;">Phase 6</span>
+        </div>
+        <h2 class="approach-name">Post-Modernism in Geography</h2>
+        <div class="card-body">
+          Rejection of all-encompassing universal theories and grand global narratives. Emphasis on local context, plural subjective realities, cultural relativity, and marginalized voices.
+        </div>
+      </div>
+      <div class="card-footer">
+        <span>Focus:</span> Deconstructing power structures; recognizing historical specificity and diverse spatial experiences.
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bar">
+    <div><strong>Exam Note:</strong> Direct questions are regularly framed from NCERT Table 1.1 matching historical periods with their respective geographical approaches.</div>
+    <div><strong>Source:</strong> NCERT Class 12 Fundamentals of Human Geography · OurMocks Exam System</div>
+  </div>
+
+</body>
+</html>

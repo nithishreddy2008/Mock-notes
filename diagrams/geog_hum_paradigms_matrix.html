@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Philosophical Paradigms of Human-Nature Interaction</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      width: 1440px;
+      height: 880px;
+      background: #F8FAFC;
+      color: #0F172A;
+      font-family: 'Inter', sans-serif;
+      padding: 34px 42px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 2px solid #E2E8F0;
+      padding-bottom: 14px;
+    }
+    .title-block h1 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 26px;
+      font-weight: 800;
+      color: #0F172A;
+      letter-spacing: -0.02em;
+    }
+    .title-block p {
+      font-size: 13.5px;
+      color: #64748B;
+      margin-top: 4px;
+    }
+    .badge {
+      background: #EFF6FF;
+      border: 1px solid #BFDBFE;
+      color: #1D4ED8;
+      font-size: 11.5px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .paradigm-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 18px;
+      flex-grow: 1;
+    }
+    .paradigm-card {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 14px;
+      padding: 22px 24px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+      position: relative;
+    }
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .phase-tag {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
+    .motto-tag {
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .c-det {
+      border-top: 4px solid #DC2626;
+    }
+    .c-det .phase-tag {
+      background: #FEE2E2;
+      color: #B91C1C;
+    }
+    .c-det .motto-tag {
+      color: #DC2626;
+    }
+    .c-pos {
+      border-top: 4px solid #2563EB;
+    }
+    .c-pos .phase-tag {
+      background: #DBEAFE;
+      color: #1D4ED8;
+    }
+    .c-pos .motto-tag {
+      color: #2563EB;
+    }
+    .c-neo {
+      border-top: 4px solid #059669;
+    }
+    .c-neo .phase-tag {
+      background: #D1FAE5;
+      color: #047857;
+    }
+    .c-neo .motto-tag {
+      color: #059669;
+    }
+
+    .paradigm-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 19px;
+      font-weight: 800;
+      color: #0F172A;
+      margin-bottom: 4px;
+    }
+    .key-thinkers {
+      font-size: 12.5px;
+      font-weight: 600;
+      color: #64748B;
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #F1F5F9;
+    }
+    .section-block {
+      margin-bottom: 12px;
+    }
+    .section-label {
+      font-size: 10.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #94A3B8;
+      margin-bottom: 4px;
+    }
+    .section-text {
+      font-size: 12.5px;
+      color: #334155;
+      line-height: 1.45;
+      background: #F8FAFC;
+      border: 1px solid #F1F5F9;
+      border-left: 3px solid #CBD5E1;
+      padding: 8px 12px;
+      border-radius: 6px;
+    }
+    .case-box {
+      margin-top: auto;
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 8px;
+      padding: 10px 14px;
+    }
+    .case-box h4 {
+      font-size: 11px;
+      font-weight: 700;
+      color: #475569;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 5px;
+    }
+    .case-box p {
+      font-size: 12px;
+      color: #475569;
+      line-height: 1.4;
+    }
+    .case-box strong {
+      color: #0F172A;
+    }
+    .footer-bar {
+      margin-top: 16px;
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 8px;
+      padding: 10px 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: #64748B;
+    }
+    .footer-bar strong {
+      color: #0F172A;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="title-block">
+      <h1>Philosophical Paradigms of Human-Nature Interaction</h1>
+      <p>Comparative analysis of Environmental Determinism, Possibilism, and Neo-Determinism</p>
+    </div>
+    <div class="badge">CUET UG Geography · Conceptual Framework</div>
+  </div>
+
+  <div class="paradigm-grid">
+    <!-- Determinism -->
+    <div class="paradigm-card c-det">
+      <div class="card-top">
+        <span class="phase-tag">Naturalisation of Humans</span>
+        <span class="motto-tag">State of Necessity</span>
+      </div>
+      <h2 class="paradigm-title">Environmental Determinism</h2>
+      <div class="key-thinkers">Friedrich Ratzel, Ellen Churchill Semple, Alexander von Humboldt</div>
+
+      <div class="section-block">
+        <div class="section-label">Core Hypothesis</div>
+        <div class="section-text">
+          Nature is an active, supreme force; human beings are passive agents shaped and dictated entirely by physical environmental forces.
+        </div>
+      </div>
+
+      <div class="section-block">
+        <div class="section-label">Technological Stage</div>
+        <div class="section-text">
+          Low technological development; primitive social order; human beings worship natural forces out of reverence and fear.
+        </div>
+      </div>
+
+      <div class="case-box">
+        <h4>NCERT Benchmark Case</h4>
+        <p><strong>Benda of Abujh Maad (Central India):</strong> Lives in primitive harmony with deep forests, drinks from mountain streams, gathers roots, and practices shifting <em>Penda</em> agriculture with a simple digging stick.</p>
+      </div>
+    </div>
+
+    <!-- Possibilism -->
+    <div class="paradigm-card c-pos">
+      <div class="card-top">
+        <span class="phase-tag">Humanisation of Nature</span>
+        <span class="motto-tag">State of Freedom</span>
+      </div>
+      <h2 class="paradigm-title">Possibilism</h2>
+      <div class="key-thinkers">Paul Vidal de la Blache, Lucian Febvre</div>
+
+      <div class="section-block">
+        <div class="section-label">Core Hypothesis</div>
+        <div class="section-text">
+          Nature provides raw materials and opportunities; human beings actively use technology to modify nature and leave imprint on landscape.
+        </div>
+      </div>
+
+      <div class="section-block">
+        <div class="section-label">Technological Stage</div>
+        <div class="section-text">
+          Advanced technology unlocked through scientific understanding of natural laws (aerodynamics, genetic science, thermodynamics).
+        </div>
+      </div>
+
+      <div class="case-box">
+        <h4>NCERT Benchmark Case</h4>
+        <p><strong>Kari of Trondheim (Norway):</strong> Overcomes sub-zero Nordic winters through artificial heating, glasshouses producing tropical fruits, and computers connecting across the globe regardless of snow.</p>
+      </div>
+    </div>
+
+    <!-- Neo-Determinism -->
+    <div class="paradigm-card c-neo">
+      <div class="card-top">
+        <span class="phase-tag">Stop-and-Go Determinism</span>
+        <span class="motto-tag">Sustainable Middle Path</span>
+      </div>
+      <h2 class="paradigm-title">Neo-Determinism</h2>
+      <div class="key-thinkers">Griffith Taylor (Middle Path / Madhyam Marg)</div>
+
+      <div class="section-block">
+        <div class="section-label">Core Hypothesis</div>
+        <div class="section-text">
+          Neither absolute necessity nor complete freedom. Humans can conquer nature only by obeying its fundamental ecological laws.
+        </div>
+      </div>
+
+      <div class="section-block">
+        <div class="section-label">Traffic Light Analogy</div>
+        <div class="section-text">
+          <strong>Red (Stop):</strong> Pause before nature's limits. <strong>Amber (Get Ready):</strong> Prepare. <strong>Green (Go):</strong> Advance within sustainable carrying capacity.
+        </div>
+      </div>
+
+      <div class="case-box">
+        <h4>Environmental Repercussions</h4>
+        <p>Blind pursuit of possibilism creates <strong>ozone depletion, global warming, retreating glaciers, and land degradation</strong>. Neo-determinism balances development with ecological conservation.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bar">
+    <div><strong>Key Exam Distinction:</strong> Determinism = passive humans / active nature; Possibilism = active humans / passive nature; Neo-Determinism = interactive balance & sustainability.</div>
+    <div><strong>Source:</strong> NCERT Class 12 Fundamentals of Human Geography (Chapter 1) · OurMocks Exam System</div>
+  </div>
+
+</body>
+</html>
