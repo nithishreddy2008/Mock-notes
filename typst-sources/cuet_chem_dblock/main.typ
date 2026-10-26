@@ -3,332 +3,425 @@
 #show: om-doc.with(
   exam: "CUET UG",
   subject: "Chemistry",
-  topic-title: "d and f Block Elements",
-  subtitle: "Official Syllabus Unit IV · Class 12 · CUET UG 2027 Cycle Notes",
+  topic-title: "d- and f-Block Elements",
+  subtitle: "Official Syllabus Unit IV · Class 12 · Comprehensive Theory, Reaction Mechanisms & 15 Exam-Pattern MCQs",
 )
 
-= Syllabus Alignment
+= Syllabus Alignment & Exam Blueprint
 
 #table(
-  columns: (1.1fr, 2fr, 1.15fr),
-  table.header[*Sub-topic*][*Official syllabus pointer (NTA CUET(UG) Chemistry syllabus 2026, the current 2027 baseline, Unit IV)*][*Skills the questions test*],
-  [*Position and configuration*], [
-    General introduction to d and f-block elements, Position of d- and f-block elements in the periodic Table, Electronic configurations of the d- and f-block elements
+  columns: (1.1fr, 2.1fr, 1.2fr),
+  table.header[*Sub-Topic*][*Official Syllabus Parameters (NTA CUET UG Chemistry)*][*Core Exam Competencies Tested*],
+  [*Position & Configurations*], [
+    General introduction to d- and f-block elements, periodic positions, electronic configurations of $(n-1)d^(1-10) n s^(1-2)$, chromium & copper exceptions, definition of transition metals.
   ], [
-    Writing $(n-1)d^(1-10) n s^(1-2)$ configurations, spotting the Cr and Cu exceptions, and deciding why Zn, Cd, Hg sit outside the strict "transition element" club.
+    Writing configurations, identifying anomalous half/full-filled states, explaining why Zn, Cd, Hg are excluded from strict transition metals.
   ],
-  [*General trends of transition elements*], [
-    General properties of the transition elements & their trends: Physical properties, atomic & ionic sizes - lanthanoid contraction, Ionisation Enthalpies, Oxidation States, Standard electrode potential trends for M2+/M & M3+/M2+, Stability of Higher oxidation states, Chemical reactivity and E° values
+  [*3d Periodic Trends*], [
+    Physical properties, atomic and ionic radii, lanthanoid contraction causes & consequences, ionisation enthalpies, oxidation state ladders, standard electrode potentials $E^circle.small (M^(2+) / M)$ and $E^circle.small (M^(3+) / M^(2+))$.
   ], [
-    Explaining size and ionisation trends, listing the oxidation-state ladder of the 3d series, and reading E° values (including the copper anomaly) correctly.
+    Explaining the Cu positive $E^circle.small$ anomaly, predicting stability of oxidation states down groups, calculating spin-only magnetic moments.
   ],
-  [*Magnetism, colour, complexes, catalysis*], [
-    Magnetic properties, Formation of coloured Ions, Formation of Complex compounds, Catalytic properties, Formation of Interstitial Compounds, Alloy Formation
+  [*Chemical Properties & Superpowers*], [
+    Magnetic properties, formation of coloured ions ($d-d$ transitions vs charge-transfer), catalytic mechanisms, interstitial compounds, substitutional alloys, oxides and oxoanions.
   ], [
-    Computing spin-only moments from unpaired electrons, deciding which ions are coloured, and naming the standard catalyst, interstitial and alloy examples.
+    Applying $\mu = sqrt(n(n+2)) "BM"$, diagnosing colour origins in $d^0$ ions ($"MnO"_4^(-), "CrO"_4^(2-)$), ordering oxide acidity with oxidation number.
   ],
-  [*Oxides and key compounds*], [
-    Nature of Oxides & Oxanions of d-block Metals, Some important compounds of transition elements- K2Cr2O7 and KMnO4
+  [*Workhorse Oxidisers*], [
+    Preparation, properties, structures, pH-dependent equilibria, and oxidising half-reactions of $"K"_2"Cr"_2"O"_7$ and $"KMnO"_4$ across diverse media.
   ], [
-    Ordering oxide acidity across the series and with oxidation state, and reproducing the chromate/dichromate switch and the permanganate half-equations in acid and alkali.
+    Balancing redox titrations (oxalate, $I^(-)$, $"Fe"^(2+)$), medium-dependent n-factors (acidic = 5, neutral = 3, alkaline = 1), self-indicator principles.
   ],
-  [*The f-block*], [
-    Lanthanoids & actinoids: general properties, Atomic & Ionic sizes, Oxidation States, Comparison of actinoids with Lanthanoids, Applications of d-and f-Block elements
+  [*The f-Block: Lanthanoids & Actinoids*], [
+    Electronic configurations, oxidation states (+3 dominant, +2/+4 anomalies), lanthanoid contraction, basicity of hydroxides, actinoid characteristics and comparative analysis.
   ], [
-    Stating the lanthanoid contraction and its consequences, contrasting actinoid and lanthanoid behaviour, and naming everyday applications.
+    Contrasting $4f$ vs $5f$ shielding, explaining $"Ce"^(4+)$ oxidising and $"Eu"^(2+)$ reducing behaviors, identifying Mischmetal composition and uses.
   ],
 )
 
 #exam-pointer[
-  CUET UG pattern (NTA official information bulletin and syllabus, 2026 cycle — the
-  current 2027 baseline): each subject paper carries *50 compulsory questions* in
-  *60 minutes*, with $+5$ for every correct answer and $-1$ for every incorrect answer. The Chemistry paper maps strictly to NCERT
-  Class 12, and Unit IV is the most fact-dense unit on the paper: configurations,
-  trends, colours and the two named workhorse compounds.
+  *CUET UG Paper Pattern & Weightage:* The Chemistry paper carries *50 compulsory questions* in *60 minutes* ($+5$ marks for correct, $-1$ mark for incorrect). Unit IV (d- and f-Block Elements) contributes 4 to 6 questions focusing on anomalous configurations, redox half-reactions, magnetic moments, and lanthanoid contraction consequences.
 ]
 
-= The d-Block: Where the Periodic Table Gets Interesting
+= Module 1: Position, Configurations & Transition Metal Definition
 
-Sweep your finger across the middle of the periodic table and you cross the industrial heart of chemistry — iron rails, copper wires, titanium jet engines, the platinum in a car's catalytic converter. These are the *d-block elements*: their distinguishing electron lands in the second-outermost shell, the $(n-1)d$ subshell, while the outermost $n s$ fills first. That odd "fill the inside shell last" habit gives them a partly filled d subshell in most states — and every famous property of this chapter flows from that single fact: variable oxidation states, colour, magnetism, catalysis.
+The d-block occupies groups 3 to 12 in periods 4, 5, 6, and 7 of the periodic table, bridging the electropositive s-block metals and the electronegative p-block non-metals. The distinguishing electron enters the penultimate $(n-1)d$ subshell.
 
-- *Position:* groups 3 to 12, sandwiched between the s-block (left) and p-block (right). The d-block plus group 12 are collectively the *transition metals* in casual talk — but the strict definition is tighter (below).
-- *Three series:* 3d (Sc to Zn), 4d (Y to Cd), 5d (La, then Hf to Hg — with the f-block ducking out in between). A 6d series begins at Ac.
-- *General configuration:* $ (n-1)d^(1-10) n s^(1-2) $ — note the d count starts from 1 (Sc: $3d^1 4s^2$), never zero.
-- *The two famous exceptions:* chromium takes $3d^5 4s^1$ and copper $3d^10 4s^1$ — each steals its 4s electron because a *half-filled* or *fully-filled* d subshell carries extra stability. These two configurations are guaranteed one-mark questions.
-- *The strict definition:* a *transition element* is one whose atom *or a common ion* has a partly filled d subshell. Zinc, cadmium and mercury end with $d^10$ in the atom *and* in their only common ions ($"Zn"^(2+)$ is $3d^10$), so they are d-block but not truly transition — and they predictably lack colour, variable states and catalytic superpowers.
-
-#table(
-  columns: (1.1fr, 1.5fr, 1.5fr),
-  table.header[*Element*][*Configuration written*][*Why / consequence*],
-  [Sc (Z = 21)], [$3d^1 4s^2$], [First of the 3d series; only the +3 state in practice ($3d^0$, colourless)],
-  [Cr (Z = 24)], [$3d^5 4s^1$], [Half-filled d subshell — extra stability; 6 unpaired electrons in the atom],
-  [Cu (Z = 29)], [$3d^10 4s^1$], [Fully-filled d subshell; explains Cu(II) being $3d^9$ and coloured while Cu(I) is $3d^10$],
-  [Zn (Z = 30)], [$3d^10 4s^2$], [Full d in atom and in $ "Zn"^(2+) $ — no d–d transitions, no colour, no variable states],
-)
-
-= Physical and Size Trends Across the Series
-
-- *All metals, properly hard:* dense, lustrous, high melting points, good conductors — the d electrons join the metallic bonding party, gluing atoms tightly together.
-- *Melting points climb, peak, then dip:* strength of metallic bonding grows as unpaired d electrons increase, peaks near the middle (tungsten holds the all-time record among metals; in the 3d row, chromium and manganese region peak around vanadium), then falls as d-electron pairing sets in. Manganese is the classic anomaly — its $3d^5 4s^2$ atoms bond weakly (stable configuration, unwilling to share), so Mn melts far lower than its neighbours.
-- *Atomic size shrinks, then swells:* across the 3d row, added d electrons screen each other poorly, so size contracts up to about chromium; near the end, electron–electron repulsion inside the crowded d subshell wins and the size ticks back up (Zn > Cu).
-- *Ionic size tracks charge:* for the same element, higher oxidation state means smaller ion — $ "Fe"^(3+) $ (0.65 Å) < $ "Fe"^(2+) $ (0.76 Å). More positive charge pulls the electron cloud in.
-- *Density rises across each series:* shrinking size plus growing mass — osmium and iridium are the density champions of the entire periodic table.
-
-== The lanthanoid contraction: a shrinkage with consequences
-
-- *What it is:* the steady, cumulative decrease in atomic and ionic radii from lanthanum to lutetium, caused by the poor shielding of nuclear charge by 4f electrons — each added 4f electron pulls the outer shell in slightly, and the effect adds up over fourteen elements.
-- *Consequence 1:* the 5d series (after the f-block) starts at nearly the *same size* as the 4d series above it. Zirconium and hafnium become near-perfect size twins (Zr 160 pm, Hf 159 pm) — which is why their chemistry is so similar that separating them was a chemical nightmare.
-- *Consequence 2:* the 5d elements are denser and more electropositive than their 4d twins, and the +3 ions of the lanthanoids themselves differ so little in size that separating individual lanthanoids is famously hard.
-- *Consequence 3:* basic strength of lanthanoid hydroxides *decreases* from $ "La"("OH")_3 $ to $ "Lu"("OH")_3 $ — smaller ions hold their hydroxides more covalently.
-
-= Ionisation Enthalpies and Oxidation States
-
-- *Ionisation enthalpy climbs across a series* — the shrinking radius holds electrons tighter — with small dips (Cr, Cu) where the d subshell is half/full and the electron hands over easily.
-- *Second and third ionisations reveal the $n s$ electrons leave first:* removing $4s$ costs little; once the $d$ subshell is being emptied, the costs jump. That staircase is the mechanical reason variable oxidation states exist at all.
-- *Why so many oxidation states?* The $4s$ and $3d$ electrons sit at nearly the same energy, so the element can lose or share any number from 0 to 7 — the whole ladder sits within reach. The p-block cannot do this (its p electrons only), and neither can the s-block.
+- *General Electronic Configuration:* $(n-1)d^(1-10) n s^(1-2)$ (with exceptions where $n s^1$ or $n s^0$ occurs due to inter-electronic exchange stability).
+- *Four Transition Series:*
+  - *3d Series (Period 4):* Scandium ($Z = 21, ["Ar"] 3d^1 4s^2$) to Zinc ($Z = 30, ["Ar"] 3d^(10) 4s^2$).
+  - *4d Series (Period 5):* Yttrium ($Z = 39, ["Kr"] 4d^1 5s^2$) to Cadmium ($Z = 48, ["Kr"] 4d^(10) 5s^2$).
+  - *5d Series (Period 6):* Lanthanum ($Z = 57, ["Xe"] 5d^1 6s^2$), followed by Hafnium ($Z = 72$) to Mercury ($Z = 80$).
+  - *6d Series (Period 7):* Incomplete/radioactive series beginning at Actinium ($Z = 89$).
 
 #table(
-  columns: (1fr, 1.05fr, 1fr, 1.05fr),
-  table.header[*Element*][*States seen*][*Element*][*States seen*],
-  [Sc], [+3 only], [Fe], [+2, +3 (also +6 in ferrates)],
-  [Ti], [+2, +3, +4], [Co], [+2, +3],
-  [V], [+2, +3, +4, +5], [Ni], [+2, +3 (rare)],
-  [Cr], [+2, +3, +6], [Cu], [+1, +2],
-  [Mn], [+2, +3, +4, +6, +7], [Zn], [+2 only (d#super[10])],
+  columns: (1fr, 1.15fr, 1.55fr, 1.4fr),
+  table.header[*Element*][*Atomic No. (Z)*][*Ground-State Configuration*][*Common Oxidation States*],
+  [Scandium ("Sc")], [21], [$["Ar"] 3d^1 4s^2$], [+3 only (diamagnetic, $3d^0$)],
+  [Titanium ("Ti")], [22], [$["Ar"] 3d^2 4s^2$], [+2, +3, *+4* (most stable)],
+  [Vanadium ("V")], [23], [$["Ar"] 3d^3 4s^2$], [+2, +3, +4, *+5*],
+  [Chromium ("Cr")], [24], [*$["Ar"] 3d^5 4s^1$ (Exception)*], [+2, *+3*, *+6* (strong oxidiser)],
+  [Manganese ("Mn")], [25], [$["Ar"] 3d^5 4s^2$], [*+2*, +3, +4, +6, *+7* (max spread)],
+  [Iron ("Fe")], [26], [$["Ar"] 3d^6 4s^2$], [*+2*, *+3* (most common)],
+  [Cobalt ("Co")], [27], [$["Ar"] 3d^7 4s^2$], [*+2*, *+3* (octahedral complexes)],
+  [Nickel ("Ni")], [28], [$["Ar"] 3d^8 4s^2$], [*+2* (square planar/octahedral)],
+  [Copper ("Cu")], [29], [*$["Ar"] 3d^(10) 4s^1$ (Exception)*], [+1, *+2* (aqueous stable)],
+  [Zinc ("Zn")], [30], [$["Ar"] 3d^(10) 4s^2$], [*+2 only* (pseudo-transition)],
 )
 
-- *Manganese is the spread champion* (+2 to +7) because its $d^5$ heart can shed or share electrons in neat steps; Sc and Zn bookend the row with a single state each ($3d^0$ and $3d^10$ — nothing left to vary).
-- *Middle states rule the 3d row:* +2 and +3 dominate. The $ "M"^(2+) $ state is easiest to reach (4s electrons go first) and stays common for every element from Ti to Cu.
-- *Down a group, higher states gain stability* — the exact *opposite* of the p-block trend. Chromium(VI) is a fierce oxidiser (it wants to fall to +3), while molybdenum(VI) and tungsten(VI) are stable and peaceful. Same story down group 7: Mn(VII) oxidises, Tc(VII) and Re(VII) barely bother.
+#exception-box(title: "The Strict IUPAC Definition of Transition Elements")[
+  An element is defined as a *transition metal* only if it possesses a *partially filled d-subshell* in its ground atomic state OR in any of its common oxidation states.
+  - *Why Zn, Cd, Hg are excluded:* Zinc ($Z = 30$), Cadmium ($Z = 48$), and Mercury ($Z = 80$) possess completely filled $(n-1)d^(10)$ subshells in their neutral ground states as well as in their divalent ions ($"Zn"^(2+) = ["Ar"] 3d^(10)$). Consequently, they do not exhibit typical transition characteristics (no $d-d$ transitions, colourless salts, diamagnetism, no variable oxidation states). They are classified as d-block elements, but *not* transition metals.
+  - *Why Copper is a transition metal:* Although neutral copper atoms possess a filled $3d^(10) 4s^1$ subshell, copper commonly exists in the $+2$ oxidation state ($"Cu"^(2+) = ["Ar"] 3d^9$), which contains an incompletely filled d-subshell. Hence, copper is unequivocally a transition metal.
+]
 
-= Standard Electrode Potentials and Reactivity
+= Module 2: Periodic Physical Trends in the 3d Series
 
-- *The $ "M"^(2+)"/M" $ ladder:* most 3d metals sit at negative potentials (Zn −0.76 V, Ni −0.25 V) — they dissolve in acids. *Copper is the exception* at +0.34 V: its full cost sheet (atomisation + two ionisations, with poor hydration payback) exceeds the refund, so copper refuses dilute acids like HCl and $ "H"_2 "SO"_4 $ (oxidising acids such as $ "HNO"_3 $ still attack it, by a different route).
-- *A general zigzag:* the values do not fall smoothly — V, then a rise, dips at Cu, rises again to Zn — because each value bundles three different costs (atomisation, ionisation, hydration) that trend differently.
-- *The $ "M"^(3+)"/M"^(2+) $ ladder:* here the picture is clean and useful:
-  - *$"Sc"^(3+)$ is the most stable +3:* $ "Sc"^(3+) $ ($3d^0$) never reverts — the $ "Sc"^(3+)"/Sc"^(2+) $ couple has no meaningful existence.
-  - *$"Fe"^(3+)$/$"Fe"^(2+)$ at +0.77 V:* moderately strong oxidiser — $ "Fe"^(3+) $ loves returning to the extra-stable half-filled $3d^5$ of $ "Fe"^(2+) $... in fact $ "Fe"^(2+) $ ($3d^6$) is *less* stable, so the couple reads positive.
-  - *$"Mn"^(3+)$ (+1.57 V) and $"Co"^(3+)$ (+1.97 V) are the fierce ones:* they are desperate to reach $3d^5$ ($"Mn"^(2+)$) and $3d^6$-octahedral-low-spin ($"Co"^(3+)$) respectively — hence Mn(III) and Co(III) compounds oxidise water itself.
-  - *$"V"^(3+)$/$"V"^(2+)$ at −0.26 V:* vanadium's +2 is a happy $3d^3$... and the couple stays negative — $ "V"^(2+) $ is a gentle reducing agent, no rush to oxidise.
-- *Chemical reactivity, row by row:* the 3d metals are *more* reactive than 4d/5d cousins (smaller size, better access). Chromium and nickel passivate — a thin oxide film shuts down further attack (that is why chromium plating protects bumpers).
+== 1. Atomic and Ionic Radii Trends
+- *Across the 3d Series:* Atomic radii decrease steadily from Scandium (164 pm) to Chromium (128 pm) due to increasing effective nuclear charge ($Z_("eff")$) as protons are added to the nucleus while intervening $3d$ electrons provide imperfect screening.
+- *Mid-Series Constancy:* From Iron (126 pm) to Cobalt (125 pm) and Nickel (124 pm), increasing nuclear attraction is almost perfectly counterbalanced by repulsive forces between added $3d$ electrons, keeping the atomic radius essentially flat.
+- *End-Series Uptick:* At Copper (128 pm) and Zinc (137 pm), electron-electron repulsions among paired $3d$ electrons exceed the nuclear pull, causing a slight expansion in atomic size.
+- *Ionic Radii:* For equivalent oxidation states ($M^(2+)$ or $M^(3+)$), ionic radii decrease monotonically across the series as $Z_("eff")$ climbs without shielding compensation.
 
-= Magnetism and Colour: The d-Electron Light Show
+== 2. High Enthalpies of Atomisation & Melting Points
+- Transition metals exhibit remarkably high melting and boiling points and high enthalpies of atomisation ($Delta_a H^circle.small$).
+- *Physical Cause:* Metallic bonding involves participation of both outer $n s$ electrons and unpaired $(n-1)d$ electrons. The greater the number of unpaired d-electrons, the stronger the inter-atomic covalent bonding within the metallic crystal lattice.
+- *Peak at Middle:* Atomisation enthalpy peaks at Vanadium and Chromium where unpaired d-electrons are abundant, and dips abruptly at Manganese ($["Ar"] 3d^5 4s^2$) where electrons are tightly bound in a stable half-filled d-subshell and unwilling to delocalise freely into metallic bonding.
+- *Tungsten ("W"):* Has the highest melting point ($3422^circle.small "C"$) among all pure metals due to optimal $5d$ covalent bonding overlap.
 
-== Magnetic properties
-
-- *Unpaired d electrons = paramagnetism.* Each unpaired electron carries a magnetic moment; paired ones cancel. Compute the *spin-only* moment:
-  $ mu = sqrt(n(n+2)) "BM" $
-  with $n$ = number of unpaired electrons. Iron(III), $3d^5$, has $n = 5$: $ mu = sqrt(35) approx 5.92 "BM" $ — the maximum in the row.
-- *Measure and you can count:* a magnetic measurement is a hidden electron-counting exercise — it distinguishes $ "Fe"^(3+) (d^5) $ from $ "Fe"^(2+) (d^6) $, or tells you a complex is low-spin.
-
-#table(
-  columns: (1fr, 1.1fr, 1fr, 1.1fr),
-  table.header[*Ion*][*d-count, unpaired, moment*][*Ion*][*d-count, unpaired, moment*],
-  [$"Ti"^(3+)$], [$d^1$, 1, 1.73 BM], [$"Mn"^(2+)$], [$d^5$, 5, 5.92 BM],
-  [$"V"^(3+)$], [$d^2$, 2, 2.83 BM], [$"Fe"^(2+)$], [$d^6$, 4, 4.90 BM],
-  [$"Cr"^(3+)$], [$d^3$, 3, 3.87 BM], [$"Co"^(2+)$], [$d^7$, 3, 3.87 BM],
-  [$"Mn"^(3+)$], [$d^4$, 4, 4.90 BM], [$"Ni"^(2+)$], [$d^8$, 2, 2.83 BM],
-  [$"Cr"^(2+)$], [$d^4$, 4, 4.90 BM], [$"Cu"^(2+)$], [$d^9$, 1, 1.73 BM],
-  [$"Mn"^(4+)$...], [$d^3$ (in $"MnO"_2$), 3], [$"Zn"^(2+)$], [$d^10$, 0, 0 BM (diamagnetic)],
-)
-
-== Colour from d–d transitions
-
-- *The mechanism:* in a complex, the five d orbitals split into two energy sets. White light kicks a d electron from the lower set to the upper one — a *d–d transition* — and the light that is *not* absorbed gives the ion its colour. Blue aqueous $ "Cu"^(2+) $ absorbs red-orange light; the complementary blue reaches your eye.
-- *No partly filled d, no colour:* $ "Sc"^(3+) (d^0) $, $ "Ti"^(4+) (d^0) $, $ "Zn"^(2+) (d^10) $, $ "Cu"^(+) (d^10) $ — all colourless. There is no electron to promote, or no empty d slot to promote it into.
-- *The charge-transfer surprise:* $ "MnO"_4^(-) $ (deep purple) and $ "CrO"_4^(2-) $ (bright yellow) contain Mn(VII) and Cr(VI) — both $3d^0$: *no d electrons at all*, yet they are among the most colourful ions in chemistry. Their colour comes from *charge transfer* — an electron momentarily hopping from oxygen to the metal. Remember this exception; it is a beloved MCQ.
-
-= Complexes, Catalysts, Interstitials and Alloys
-
-- *Complex formation:* transition ions are small, highly charged, and own vacant d orbitals that can accept lone pairs from ligands — so coordination numbers of 4 and 6 come naturally: $["Fe"("CN")_6]^(4-)$, $["Cu"("NH"_3)_4]^(2+)$, $["Ni"("CO")_4]$. The main-group ions (like $ "Na"^(+) $) rarely bother.
-- *Catalytic behaviour:* the same flexibility powers catalysis — surface atoms accept and hand back reactant molecules, or cycle through oxidation states. The syllabus's standard set: *Fe* (Haber process, $ "NH"_3 $), *$"V"_2 "O"_5$* (contact process, $ "H"_2 "SO"_4 $), *Ni* (vegetable-oil hydrogenation), *$"TiCl"_4$ with AlMe₃* (Ziegler–Natta polythene), *Pd/ Pt/ Rh* (car exhaust converters).
-- *Interstitial compounds:* small atoms — H, C, N — slip into the holes of the metal lattice without changing its shape. Products stay metallic: hard, dense, electrically conducting, and *non-stoichiometric* (steel is Fe with interstitial C at a few per cent; cast iron has more). These compounds are chemically inert yet very hard — steel nails, drill bits.
-- *Alloy formation:* transition metals have similar radii, so one metal's atoms substitute freely in another's lattice — brass (Cu + Zn), bronze (Cu + Sn), stainless steel (Fe + Cr + Ni), ferrochrome. The 4d/5d twins (Zr/Hf) alloy with each other almost indistinguishably — a direct echo of the lanthanoid contraction.
-
-= Oxides and Oxoanions: Acidity Follows Charge
-
-- *Across the series (same oxidation state):* oxides turn from basic to amphoteric to acidic — MnO is basic, "FeO" basic-ish, CrO amphoteric, $ "Cr"_2 "O"_3 $ amphoteric — the clean exam-ready ladder is for *manganese*: $ "MnO" $ (basic) → $ "Mn"_3 "O"_4 $ → $ "Mn"_2 "O"_3 $ → $ "MnO"_2 $ (amphoteric) → $ "Mn"_2 "O"_7 $ (strongly acidic, gives $ "HMnO"_4 $).
-- *The rule that matters:* *higher oxidation state = more acidic oxide.* The +7 metal in $ "Mn"_2 "O"_7 $ pulls electron density so hard that its O–H bonds turn fully acidic. Low states keep ionic, basic character.
-- *Oxoanions carry the top states:* $ "VO"_2^(+) $ (V), $ "CrO"_4^(2-) $, $ "Cr"_2 "O"_7^(2-) $ (Cr), $ "MnO"_4^(-) $ (Mn) — stable, colourful, and the homes of the highest oxidation states in aqueous chemistry.
-
-= The Two Workhorses: $"K"_2 "Cr"_2 "O"_7$ and $"KMnO"_4$
+== 3. Ionisation Enthalpy Trends ($I E_1, I E_2, I E_3$)
+- Ionisation enthalpies generally increase from left to right, but show distinct anomalies dictated by electronic subshell stability:
+  - *Second Ionisation Enthalpy ($I E_2$):* Unusually high for Chromium ($3d^5 arrow.r 3d^4$) and Copper ($3d^(10) arrow.r 3d^9$) because removing a second electron disrupts an exceptionally stable half-filled or completely filled d-subshell.
+  - *Third Ionisation Enthalpy ($I E_3$):* Extremely high for Manganese ($"Mn"^(2+) [3d^5] arrow.r "Mn"^(3+) [3d^4]$) and Zinc ($"Zn"^(2+) [3d^(10)] arrow.r "Zn"^(3+) [3d^9]$), explaining why $"Mn"^(2+)$ and $"Zn"^(2+)$ form exceptionally stable ionic complexes.
 
 #figure(
-  image("assets/chem_oxidisers_board.png", width: 100%),
-  caption: [The two named compounds side by side: preparations, structures, pH-switched equilibria, oxidising half-equations and classic uses of potassium dichromate and potassium permanganate.],
+  image("assets/chem_lanthanoid_transition_trends.png", width: 82%),
+  caption: [Quantitative periodic radii curves across 3d, 4d, and 5d series, illustrating the 4f shielding failure mechanism, overlap of chemical twin pairs ("Zr" approx "Hf", "Nb" approx "Ta"), and basicity gradation of lanthanoid hydroxides.],
 )
 
-- *Potassium dichromate, preparation line:* chromite ore $ ("Fe" "Cr"_2 "O"_4) $ roasted with sodium carbonate → sodium chromate; acidified → dichromate; crystallised with KCl. The chromate–dichromate switch is a pure pH lever:
-  $ 2 "CrO"_4^(2-) + 2 H^(+) arrow.r.r "Cr"_2 "O"_7^(2-) + "H"_2 "O" $
-  Alkali pushes it left (yellow chromate); acid pushes it right (orange dichromate). Same chromium, same charge — just pH.
-- *Dichromate as oxidiser (acid medium):* Cr(VI) → Cr(III), orange to green, three electrons per chromium:
-  $ "Cr"_2 "O"_7^(2-) + 14 H^(+) + 6 e^(-) -> 2 "Cr"^(3+) + 7 "H"_2 "O" $
-  It oxidises $I^-$ to $I_2$, $ "Fe"^(2+) $ to $ "Fe"^(3+) $, $ "Sn"^(2+) $ to $ "Sn"^(4+) $ — and because its solution is stable, it serves as a *primary standard* in titrations.
-- *Potassium permanganate, preparation line:* $"MnO"_2$ fused with KOH and an oxidant (air/KNO₃) → green manganate $ "MnO"_4^(2-) $; electrolytic oxidation → purple $ "MnO"_4^(-) $.
-- *Permanganate's pH-dependent strength* — the same ion delivers a different electron count in each medium:
-  $ "Acid": "MnO"_4^(-) + 8 H^(+) + 5 e^(-) -> "Mn"^(2+) + 4 "H"_2 "O" quad (5 "electrons") $
-  $ "Mild alkaline": "MnO"_4^(-) + 2 "H"_2 "O" + 3 e^(-) -> "MnO"_2 + 4 "OH"^(-) quad (3 "electrons") $
-  $ "Strong alkaline": "MnO"_4^(-) + e^(-) -> "MnO"_4^(2-) quad (1 "electron") $
-- *Permanganate's classic jobs:* titrating $"Fe"^(2+)$ and oxalate (hot, acidified, slow until $"Mn"^(2+)$ appears — *autocatalysis*), the Baeyer alkene test (cold alkaline $ "KMnO"_4 $ decolourised by C=C), disinfecting water. Unlike dichromate it is *not* a primary standard — sunlight slowly decomposes it.
+= Quantitative Analysis: Lanthanoid Contraction Mechanics
 
-= The f-Block: Lanthanoids and Actinoids
+The *Lanthanoid Contraction* refers to the steady, cumulative decrease in atomic and ionic radii of lanthanoid elements from Lanthanum ($Z = 57, "La"^(3+) = 103 "pm"$) to Lutetium ($Z = 71, "Lu"^(3+) = 86 "pm"$).
 
-Pull the fourteen elements from cerium to lutetium (plus lanthanum) out of period 6 and park them in a row below the table — that is the *lanthanoid* series, filling the inner 4f subshell. The *actinoids* (thorium to lawrencium, filling 5f) mirror them in period 7. They are "inner transition elements" — the transition metals' transition metals.
+== 1. Theoretical Cause: The $4f$ Screening Deficiency
+In the Aufbau sequence, the fourteen electrons across the lanthanoid series enter the inner $(n-2)f = 4f$ orbitals.
+- The spatial distribution of $f$-orbitals is highly diffuse and multi-lobed.
+- The shielding power of electron orbitals follows the strict hierarchy: $s > p > d > f$.
+- Because $4f$ electrons screen nuclear charge very poorly, each additional nuclear proton ($+1$ charge) added from Ce to Lu is felt strongly by the outer $5s, 5p$, and $6s$ valence electrons.
+- The net effective nuclear charge ($Z_("eff")$) increases relentlessly across the series, drawing all outer electron shells progressively closer to the nucleus.
 
-== Lanthanoids: the +3 family
+== 2. The Four Major Consequences (CUET High-Yield)
+1. *Identical Radii of 4d and 5d Elements ("Chemical Twins"):*
+   - Normal periodic expectation: Size should expand significantly moving down a group ($3d < 4d < 5d$).
+   - Reality: The insertion of 14 lanthanoids before Hafnium causes a contraction of $approx 18 "pm"$, which completely cancels the expected size expansion from $4d$ to $5d$.
+   - Consequently, elements of the second ($4d$) and third ($5d$) transition series in the same group possess virtually identical atomic and ionic radii:
+     $ "Zr" (160 "pm") approx "Hf" (159 "pm"); quad "Nb" (146 "pm") approx "Ta" (146 "pm"); quad "Mo" (139 "pm") approx "W" (139 "pm") $
+   - Because their radii, valence electron configurations, and charge densities are nearly identical, Zr and Hf occur together in nature and are extremely difficult to separate by chemical precipitation. They require multi-stage ion-exchange chromatography or solvent extraction.
+2. *Massive Density Jump in 5d Metals:*
+   - While atomic radii remain nearly constant from 4d to 5d congeners, atomic mass nearly doubles. As density $rho = "mass" / "volume"$, third-row transition metals possess extraordinarily high densities.
+   - Osmium ($22.59 "g/cm"^3$) and Iridium ($22.61 "g/cm"^3$) are the densest elements known.
+3. *Basicity Gradation of Lanthanoid Hydroxides:*
+   - As ionic radius decreases from $"La"^(3+) (103 "pm")$ to $"Lu"^(3+) (86 "pm")$, charge density of the cation increases.
+   - According to Fajan's rules, smaller cations polarize hydroxide ions more strongly, increasing covalent character of the $"Ln"-"OH"$ bond.
+   - Therefore, the ease of $"OH"^(-)$ cleavage decreases across the series:
+     $ "La"("OH")_3 " (Most Basic)" > "Ce"("OH")_3 > dots > "Lu"("OH")_3 " (Least Basic / Amphoteric)" $
+4. *Difficulty in Separating Lanthanoids:*
+   - Because all trivalent lanthanoids have similar sizes and identical $+3$ ionic charges, their chemical behavior in aqueous solution is virtually indistinguishable, necessitating complex fractional crystallization or ion-exchange separation.
 
-- *Configurations:* $["Xe"] 4f^(1-14) 5d^(0-1) 6s^2$ — the 4f electrons sit deep inside, shielded by the 5s and 5p shells, which is why f-electron chemistry is so uniform.
-- *Oxidation states:* +3 dominates across all of them. The two honoured exceptions follow the half-filled/full-filled logic you already met in the d-block: $ "Eu"^(2+) $ ($4f^7$, half-filled — stable) and $ "Tb"^(4+) $ ($4f^7$); plus $ "Ce"^(4+) $ ($4f^0$, empty — stable) and $ "Yb"^(2+) $ ($4f^14$).
-- *Physical look:* silvery-white soft metals, high melting points, very dense; slow tarnishing in air.
-- *Sizes shrink steadily* — the *lanthanoid contraction* explained in the d-block section — and ionic radii change so little between neighbours that separating adjacent lanthanoids took chemists decades of ion-exchange grinding.
-- *Colours and magnetism return:* f–f transitions give many lanthanoid ions lovely colours, and unpaired f electrons give paramagnetism — but the f electrons are so deeply buried that bonding is almost entirely ionic.
-- *Applications:* mischmetal (a cerium-rich alloy, ~95% lanthanoids + iron) sparks lighter flints; neodymium magnets are the strongest permanent magnets sold; cerium oxide polishes glass; thorium feeds experimental nuclear reactors.
+= Module 3: Oxidation States, Redox Ladders & $E^circle.small$ Potentials
 
-== Actinoids: the radioactive wild cousins
+== 1. Variable Oxidation States
+Unlike main-group elements whose oxidation states typically differ by units of 2 (due to electron pair sharing), transition metals exhibit multiple oxidation states differing by single units (e.g. Fe: $+2, +3$; Mn: $+2, +3, +4, +6, +7$).
+- *Reason:* Energies of $(n-1)d$ and $n s$ subshells are very close. Valence electrons from both levels participate in bonding.
+- *Highest States:* Achieved at the center of the series (Mn reaches $+7$ in $"MnO"_4^(-)$).
+- *Down the Group Stability:* In the d-block, *higher oxidation states become progressively more stable down a group* — the exact opposite of the p-block (where the inert-pair effect stabilises lower oxidation states).
+  - In Group 6: Chromium(VI) in $"K"_2"Cr"_2"O"_7$ is a fierce oxidising agent (eager to fall to stable Cr(III)), whereas Molybdenum(VI) in $"MoO"_3$ and Tungsten(VI) in $"WO"_3$ are thermodynamically stable and non-oxidising.
 
-- *Configurations:* $["Rn"] 5f^(1-14) 6d^(0-1) 7s^2$ — the 5f subshell is bigger, more diffuse, and *participates in bonding*, unlike the tucked-away 4f.
-- *Oxidation states sprawl from +3 to +7* (neptunium and plutonium reach +7) — the direct consequence of 5f's looseness. Every actinoid is radioactive; none beyond uranium occurs naturally in quantity.
-- *The comparison the syllabus wants:*
+== 2. Standard Electrode Potentials: The $M^(2+) / M$ Couple
+The standard electrode potential $E^circle.small (M^(2+) / M)$ represents the energetic balance of three sequential thermodynamic parameters:
+$ M(s) arrow.r^(Delta_a H^circle.small) M(g) arrow.r^(I E_1 + I E_2) M^(2+)(g) arrow.r^(Delta_("hyd") H^circle.small) M^(2+)("aq.") $
 
 #table(
-  columns: (1.1fr, 1.5fr, 1.5fr),
-  table.header[*Property*][*Lanthanoids*][*Actinoids*],
-  [Filling], [4f, well shielded], [5f, less shielded, more involved],
-  [Oxidation states], [+3 overwhelmingly (+2, +4 rarities)], [+3 to +7, often several at once],
-  [Radioactivity], [Only promethium (and late members)], [All of them, all the time],
-  [Chemical variety], [Near-identical ionic chemistry], [Rich covalent, complex-forming chemistry],
-  [Bonding], [Almost purely ionic], [Significant covalency in high states],
+  columns: (1fr, 1.2fr, 1.8fr),
+  table.header[*Metal Couple*][*$E^circle.small (M^(2+)/M)$ Value*][*Thermodynamic Rationale & Chemical Behavior*],
+  [$"Ti"^(2+) / "Ti"$], [$-1.63 "V"$], [Strong reducing agent; readily releases electrons to form Ti(IV).],
+  [$"V"^(2+) / "V"$], [$-1.18 "V"$], [Negative potential; dissolves readily in mineral acids evolving $H_2$.],
+  [$"Cr"^(2+) / "Cr"$], [$-0.90 "V"$], [Reducing; Cr(II) readily oxidises to the stable $t_(2g)^3$ Cr(III) state.],
+  [$"Mn"^(2+) / "Mn"$], [$-1.18 "V"$], [More negative than expected due to extra stability of half-filled $3d^5$ $"Mn"^(2+).$],
+  [$"Fe"^(2+) / "Fe"$], [$-0.44 "V"$], [Moderate negative potential; dissolves in dilute non-oxidising acids.],
+  [$"Ni"^(2+) / "Ni"$], [$-0.25 "V"$], [More negative than expected due to uniquely high hydration enthalpy ($Delta_("hyd") H^circle.small$) of $"Ni"^(2+).$],
+  [$"Cu"^(2+) / "Cu"$], [*$+0.34 "V"$ (Anomaly)*], [*Only positive potential in 3d series.* High atomisation + ionisation enthalpies exceed hydration refund. Does not liberate $H_2$ from dilute acids.],
+  [$"Zn"^(2+) / "Zn"$], [$-0.76 "V"$], [More negative due to removal of electrons from stable $d^(10)$ structure releasing large hydration energy.],
 )
 
-= Key Reactions & Rules: One-Stop Revision
+#info-box(title: "The $M^(3+) / M^(2+)$ Redox Couple Analysis")[
+  - *$"Mn"^(3+) / "Mn"^(2+)$ Couple ($E^circle.small = +1.57 "V"$):* Highly positive. $"Mn"^(3+) (3d^4)$ is a ferocious oxidising agent because reduction gains an electron to attain the half-filled, extra-stable $3d^5$ configuration of $"Mn"^(2+)$.
+  - *$"Co"^(3+) / "Co"^(2+)$ Couple ($E^circle.small = +1.97 "V"$):* Powerful oxidiser in aqueous solution capable of oxidising water to oxygen gas. In the presence of strong-field nitrogen ligands (e.g. $N H_3$), $"Co"^(3+)$ forms octahedral complexes with diamagnetic $t_(2g)^6$ configuration, becoming exceptionally stable.
+  - *$"Fe"^(3+) / "Fe"^(2+)$ Couple ($E^circle.small = +0.77 "V"$):* Positive, but much lower than Mn; $"Fe"^(3+) (3d^5)$ is relatively stable against reduction.
+  - *$"Cr"^(3+) / "Cr"^(2+)$ Couple ($E^circle.small = -0.41 "V"$):* Negative. $"Cr"^(2+) (3d^4)$ is a potent reducing agent because oxidation yields $"Cr"^(3+) (3d^3)$, where the crystal field splits d-orbitals into a stable, half-filled $t_(2g)^3$ sub-level in octahedral aqueous medium.
+]
 
-#cheatsheet-box(title: "Configurations, Moments, Equations")[
+= Module 4: Magnetism, Colour, Catalysis & Interstitials
+
+== 1. Magnetic Properties & Spin-Only Formula
+Paramagnetism arises from the presence of unpaired electrons, which possess an intrinsic magnetic dipole moment. Diamagnetism occurs when all electrons are paired.
+- In 3d transition metal complexes, orbital angular momentum is largely "quenched" by the electrostatic ligand field. The magnetic moment is calculated using the *spin-only formula*:
+  $ mu_s = sqrt(n(n+2)) quad "Bohr Magnetons (BM)" $
+  where $n$ is the exact number of unpaired electrons in the ion.
+
+#table(
+  columns: (1fr, 1.2fr, 1fr, 1.4fr),
+  table.header[*Ion*][*Outer Configuration*][*Unpaired ($n$)*][*Calculated $\mu_s$ (BM)*],
+  [$"Sc"^(3+), "Ti"^(4+)$], [$3d^0$], [0], [0.00 BM (Diamagnetic)],
+  [$"Ti"^(3+), "V"^(4+)$], [$3d^1$], [1], [$sqrt(1(3)) = 1.73 "BM"$],
+  [$"V"^(3+)$], [$3d^2$], [2], [$sqrt(2(4)) = 2.83 "BM"$],
+  [$"Cr"^(3+), "V"^(2+)$], [$3d^3$], [3], [$sqrt(3(5)) = 3.87 "BM"$],
+  [$"Cr"^(2+), "Mn"^(3+)$], [$3d^4$], [4], [$sqrt(4(6)) = 4.90 "BM"$],
+  [$"Mn"^(2+), "Fe"^(3+)$], [$3d^5$], [5], [*$sqrt(5(7)) = 5.92 "BM"$ (Maximum)*],
+  [$"Fe"^(2+), "Co"^(3+)$], [$3d^6$], [4], [$sqrt(4(6)) = 4.90 "BM"$],
+  [$"Co"^(2+)$], [$3d^7$], [3], [$sqrt(3(5)) = 3.87 "BM"$],
+  [$"Ni"^(2+)$], [$3d^8$], [2], [$sqrt(2(4)) = 2.83 "BM"$],
+  [$"Cu"^(2+)$], [$3d^9$], [1], [$sqrt(1(3)) = 1.73 "BM"$],
+  [$"Zn"^(2+), "Cu"^+$], [$3d^(10)$], [0], [0.00 BM (Diamagnetic)],
+)
+
+== 2. Origin of Colour: $d-d$ Transitions vs Charge Transfer
+1. *$d-d$ Transitions:* In an isolated gaseous transition metal atom, all five d-orbitals are degenerate. In coordination complexes or hydrated salts, the electrostatic field of surrounding ligands splits the d-orbitals into two distinct energy sets (e.g. lower $t_(2g)$ and higher $e_g$ in octahedral geometry). Visible light promotes an electron from the lower to the higher d-orbital. The complementary transmitted colour is perceived:
+   - $"Cu"^(2+) (3d^9)$: Absorbs red-orange photons; transmits sky blue.
+   - $"Ni"^(2+) (3d^8)$: Absorbs red photons; transmits green.
+   - $"Sc"^(3+) (3d^0), "Ti"^(4+) (3d^0), "Zn"^(2+) (3d^(10))$: *Colourless* (no electron available for promotion or no vacant d-orbital to receive one).
+2. *Charge-Transfer Absorption (High-Yield Exception):*
+   - Certain transition metal compounds display dazzling coloration despite possessing *zero d-electrons ($3d^0$)*:
+     - Potassium Permanganate ($"KMnO"_4$): Intense purple ($"Mn"^(7+) [3d^0]$).
+     - Potassium Dichromate ($"K"_2"Cr"_2"O"_7$): Intense orange ($"Cr"^(6+) [3d^0]$).
+     - Potassium Chromate ($"K"_2"CrO"_4$): Bright yellow ($"Cr"^(6+) [3d^0]$).
+   - *Mechanism:* Absorption occurs via *Ligand-to-Metal Charge Transfer (LMCT)*. An electron momentarily hops from filled $2p$ orbitals of oxygen ligands into empty $3d$ orbitals of the central metal ion.
+
+== 3. Catalysis, Interstitials & Alloy Formation
+- *Catalytic Activity:* Transition metals and their oxides act as industrial catalysts due to variable oxidation states (cycling through redox intermediates, e.g. $V_2 O_5$ in Contact process) and surface adsorption (forming transient coordinate bonds that lower $E_a$).
+- *Interstitial Compounds:* Formed when small non-metal atoms ($H, B, C, N$) trap inside interstitial holes of the crystal lattice:
+  - *Key Characteristics:* Non-stoichiometric (e.g. $"TiH"_(1.7), "VH"_(0.56)$), extremely hard (approaching diamond), high melting points, retain metallic electrical conductivity, and chemically inert.
+- *Alloy Formation:* Transition metals have similar atomic radii ($< 15%$ difference, Hume-Rothery rule). Atoms substitute freely in the crystal lattice (e.g. Brass: $"Cu" + "Zn"$; Bronze: $"Cu" + "Sn"$; Stainless Steel: $"Fe" + "Cr" + "Ni"$).
+
+= Module 5: Oxides, Oxoanions & The Workhorse Oxidisers
+
+== 1. Acidity Ladder of Transition Metal Oxides
+As oxidation state increases, covalent character increases due to high cation polarisation (Fajan's rule):
+- *Low States ($+2, +3$):* Ionic and *basic* (e.g. $M n O$ dissolves in acids to give $M n^(2+)$ salts).
+- *Intermediate States ($+4$):* *Amphoteric* (e.g. $M n O_2, C r_2 O_3, V_2 O_5$).
+- *Highest States ($+5, +6, +7$):* Strongly covalent and *acidic* (e.g. $M n_2 O_7$ is a covalent green acidic oil; $C r O_3$ forms chromic acid).
+$ "MnO (Basic)" arrow.r "Mn"_3 "O"_4 " (Basic)" arrow.r "Mn"_2 "O"_3 " (Weakly Basic)" arrow.r "MnO"_2 " (Amphoteric)" arrow.r "Mn"_2 "O"_7 " (Acidic)" $
+
+#figure(
+  image("assets/chem_oxidisers_board.png", width: 82%),
+  caption: [Side-by-side industrial synthesis, molecular geometries, pH-switch dynamic equilibria, and medium-dependent redox stoichiometry of Potassium Dichromate vs Potassium Permanganate.],
+)
+
+= Technical Profile: Potassium Dichromate ($"K"_2"Cr"_2"O"_7$)
+
+== 1. Industrial Manufacture from Chromite Ore ($"FeCr"_2"O"_4$)
+1. *Fusion with Alkali:* $4 "FeCr"_2 "O"_4 + 8 "Na"_2 "CO"_3 + 7 "O"_2 arrow.r 8 "Na"_2 "CrO"_4 " (Yellow)" + 2 "Fe"_2 "O"_3 + 8 "CO"_2$
+2. *Acidification to Dichromate:* $2 "Na"_2 "CrO"_4 + 2 "H"^+ arrow.r "Na"_2 "Cr"_2 "O"_7 " (Orange)" + 2 "Na"^+ + "H"_2 "O"$
+3. *Potassium Salt Formation:* $"Na"_2 "Cr"_2 "O"_7 + 2 "KCl" arrow.r "K"_2 "Cr"_2 "O"_7 arrow.b " (Orange crystals)" + 2 "NaCl"$ (less soluble, crystallises out).
+
+== 2. Crystal Structure & Dynamic pH Equilibrium
+- *Structure:* Dichromate ion ($"Cr"_2"O"_7^(2-)$) consists of two tetrahedral $"CrO"_4$ units sharing a corner oxygen ($C r - O - C r$ angle = $126^circle.small$; bridging $C r - O$ length = $179 "pm"$, six terminal $C r - O$ lengths = $163 "pm"$).
+- *pH Equilibrium:* Chromate and dichromate interconvert with $p H$:
+  $ 2 "CrO"_4^(2-) " (Yellow)" + 2 "H"^+ arrow.r.l "Cr"_2 "O"_7^(2-) " (Orange)" + "H"_2 "O" $
+  Acid ($p H < 7$) shifts to orange $"Cr"_2"O"_7^(2-)$; alkali ($p H > 7$) shifts to yellow $"CrO"_4^(2-)$. Chromium remains $+6$ in both.
+
+== 3. Oxidising Reactions in Acidic Medium ($E^circle.small = +1.33 "V"$)
+$ "Cr"_2 "O"_7^(2-) + 14 "H"^+ + 6 e^- arrow.r 2 "Cr"^(3+) " (Green)" + 7 "H"_2 "O" quad (n-"factor" = 6) $
+- *Oxidation of Iodide:* $6 I^- + "Cr"_2 "O"_7^(2-) + 14 "H"^+ arrow.r 3 I_2 + 2 "Cr"^(3+) + 7 "H"_2 "O"$
+- *Oxidation of Ferrous to Ferric:* $6 "Fe"^(2+) + "Cr"_2 "O"_7^(2-) + 14 "H"^+ arrow.r 6 "Fe"^(3+) + 2 "Cr"^(3+) + 7 "H"_2 "O"$
+- *Oxidation of $H_2 S$:* $3 "H"_2 "S" + "Cr"_2 "O"_7^(2-) + 8 "H"^+ arrow.r 3 "S" arrow.b + 2 "Cr"^(3+) + 7 "H"_2 "O"$
+- *Primary Standard:* Available pure and non-hygroscopic; standard volumetric solutions retain exact concentration indefinitely.
+
+= Technical Profile: Potassium Permanganate ($"KMnO"_4$)
+
+== 1. Industrial Manufacture from Pyrolusite Ore ($"MnO"_2$)
+1. *Oxidative Fusion:* $2 "MnO"_2 + 4 "KOH" + "O"_2 arrow.r 2 "K"_2 "MnO"_4 " (Dark Green Manganate)" + 2 "H"_2 "O"$
+2. *Electrolytic Oxidation:* $"MnO"_4^(2-) " (Green)" arrow.r "MnO"_4^- " (Purple)" + e^- quad ("at Anode")$
+   _Lab Alternative:_ $3 "MnO"_4^(2-) + 4 "H"^+ arrow.r 2 "MnO"_4^- + "MnO"_2 arrow.b + 2 "H"_2 "O"$ (Disproportionation).
+
+== 2. Medium-Dependent Redox Stoichiometry
+1. *Acidic Medium (dil. $H_2 S O_4$):* $"MnO"_4^- + 8 "H"^+ + 5 e^- arrow.r "Mn"^(2+) " (Colourless)" + 4 "H"_2 "O" quad (Delta "O.S." = 5, n = 5)$
+   - *Oxalate Oxidation:* $5 "C"_2 "O"_4^(2-) + 2 "MnO"_4^- + 16 "H"^+ arrow.r^(60^circle.small "C") 10 "CO"_2 + 2 "Mn"^(2+) + 8 "H"_2 "O"$ (Autocatalysed by product $"Mn"^(2+)$).
+   - *Nitrite Oxidation:* $5 "NO"_2^- + 2 "MnO"_4^- + 6 "H"^+ arrow.r 5 "NO"_3^- + 2 "Mn"^(2+) + 3 "H"_2 "O"$.
+2. *Neutral / Faintly Alkaline (Baeyer's Condition):* $"MnO"_4^- + 2 "H"_2 "O" + 3 e^- arrow.r "MnO"_2 " (Brown ppt)" + 4 "OH"^- quad (Delta "O.S." = 3, n = 3)$
+   - *Iodide Oxidation (Crucial CUET Trap):*
+     $ "In acid:\ " 2 "MnO"_4^- + 10 "I"^- + 16 "H"^+ arrow.r 2 "Mn"^(2+) + 5 "I"_2 + 8 "H"_2 "O" $
+     $ "In neutral/alkali:\ " 2 "MnO"_4^- + "H"_2 "O" + "I"^- arrow.r 2 "MnO"_2 + 2 "OH"^- + "IO"_3^- " (Iodate!)" $
+3. *Strongly Alkaline Medium:* $"MnO"_4^- + e^- arrow.r "MnO"_4^(2-) " (Green Manganate)" quad (Delta "O.S." = 1, n = 1)$
+
+#exception-box(title: "Titration Practical Rules for Permanganate")[
+  - *Why $H C l$ is Prohibited:* $"KMnO"_4$ oxidises $C l^-$ to toxic chlorine gas ($2 "MnO"_4^- + 10 "Cl"^- + 16 "H"^+ arrow.r 2 "Mn"^(2+) + 5 "Cl"_2 + 8 "H"_2 "O"$), spoiling the titration volume.
+  - *Why $H N O_3$ is Prohibited:* Nitric acid is an oxidising acid that competes with permanganate. Only dilute $H_2 S O_4$ provides an inert acid medium.
+  - *Self-Indicator:* The end point is detected by the first permanent, faint pink colour.
+]
+
+= Module 6: Inner Transition Elements (f-Block)
+
+== 1. Lanthanoids: Configurations & Anomalous States
+- *Electronic Configuration:* $["Xe"] 4f^(1-14) 5d^(0-1) 6s^2$.
+- *Dominant State:* $+3$ is universally the most stable oxidation state for all lanthanoids ($"Ln"^(3+)$).
+- *Special $+2$ and $+4$ Anomalies:* Arise from stability of empty ($4f^0$), half-filled ($4f^7$), or full-filled ($4f^(14)$) subshells:
+  - *Cerium ($"Ce"^(4+)$):* Empty $4f^0$ noble gas configuration; powerful analytical oxidant ($E^circle.small = +1.74 "V"$) reducing to favored $"Ce"^(3+)$.
+  - *Europium ($"Eu"^(2+)$):* Half-filled $4f^7$; potent reducing agent oxidising back to $"Eu"^(3+)$.
+  - *Terbium ($"Tb"^(4+)$):* Half-filled $4f^7$; strong oxidising agent.
+  - *Ytterbium ($"Yb"^(2+)$):* Completely filled $4f^(14)$; reducing agent.
+- *Mischmetal:* Pyrophoric alloy: $approx 95\%$ lanthanoids (principally Cerium $approx 50\%$), $approx 5\%$ Iron, and trace S, C, Ca. Used in lighter flints and tracer shells.
+
+== 2. Actinoids vs Lanthanoids: Comparative Analysis
+
+#table(
+  columns: (1.1fr, 1.45fr, 1.45fr),
+  table.header[*Property*][*Lanthanoids (4f Series)*][*Actinoids (5f Series)*],
+  [*Subshell Shielding*], [4f orbitals deeply buried; poor shielding.], [5f orbitals more diffuse; even poorer shielding.],
+  [*Contraction Extent*], [Lanthanoid contraction is steady.], [*Actinoid contraction is greater* element-to-element.],
+  [*Oxidation States*], [Strictly dominated by *+3* (rare +2, +4).], [*Wide range: +3 to +7* ($U, N p, P u$ reach +7).],
+  [*Bonding Nature*], [Predominantly ionic; minimal covalency.], [Significant covalent character in high oxidation states.],
+  [*Radioactivity*], [Non-radioactive (except Promethium, $Z=61$).], [*All actinoids are strictly radioactive*.],
+  [*Oxocations*], [Do not form oxocations.], [Readily form oxocations ($"UO"_2^(2+), "PuO"_2^(2+)$).],
+)
+
+#pagebreak()
+
+#figure(
+  image("assets/chem_dblock_mindmap.png", width: 78%),
+  caption: [Master Synthesis Architecture: Complete Unit IV cognitive roadmap integrating electronic configurations, periodic trends, redox ladders, coordination properties, and inner-transition elements.],
+)
+
+#v(-4pt)
+
+#cheatsheet-box(title: "Unit IV Master Formula & High-Yield Cheatsheet")[
+  #set text(size: 8.5pt)
   #table(
-    columns: (1.35fr, 1.9fr, 1.75fr),
-    table.header[*Rule / formula*][*Symbols in plain words*][*When to reach for it*],
-    [$(n-1)d^(1-10) n s^(1-2)$], [d-block filling pattern; the $n s$ pair fills first], [Every configuration question],
-    [Cr: $3d^5 4s^1$; Cu: $3d^10 4s^1$], [half/full-filled d stability], [The guaranteed one-mark exceptions],
-    [$mu = sqrt(n(n+2))$ BM], [n = unpaired electrons; $"Fe"^(3+)$ gives 5.92], [Spin-only moment calculations],
-    [Coloured $arrow.r.r$ partly filled d], [d–d transitions absorb light], [Colour predictions ($"Sc"^(3+)$, $"Zn"^(2+)$ colourless)],
-    [Charge-transfer colour], [$"MnO"_4^(-)$ purple, $"CrO"_4^(2-)$ yellow with d#super[0] ions], [The colour-without-d-electrons trap],
-    [$"Fe"^(3+) < "Fe"^(2+) $ size], [higher charge, smaller ion], [Ionic radius comparisons],
-    [Higher OS $arrow.r.r$ more acidic oxide], [MnO basic → $"Mn"_2 "O"_7$ acidic], [Oxide acidity ladders],
-    [Down a group: high OS stabilises], [opposite of p-block], [$"CrO"_4^(2-)$ vs MoO₄²⁻/WO₄²⁻ checks],
-    [$2 "CrO"_4^(2-) + 2 H^(+) arrow.r.r "Cr"_2 "O"_7^(2-) + "H"_2 "O"$], [yellow $arrow.r.r$ orange, pH lever], [Chromate–dichromate conversions],
-    [$"Cr"_2 "O"_7^(2-) + 14 H^(+) + 6 e^(-) -> 2 "Cr"^(3+) + 7 "H"_2 "O"$], [orange → green, E° = +1.33 V], [Dichromate titrations],
-    [$"MnO"_4^(-) + 8 H^(+) + 5 e^(-) -> "Mn"^(2+) + 4 "H"_2 "O"$], [acid: 5 electrons, purple → colourless], [Permanganate in acid medium],
-    [$"MnO"_4^(-) + 3 e^(-) -> "MnO"_2$ (mild alkali); $+ e^(-) -> "MnO"_4^(2-)$ (strong alkali)], [3 and 1 electrons], [Permanganate in weak/strong alkali],
-    [Lanthanoid contraction], [poor 4f shielding; Zr $approx$ Hf sizes], [Size and consequence questions],
-    [$"Eu"^(2+)$ ($4f^7$), $"Tb"^(4+)$ ($4f^7$), $"Ce"^(4+)$ ($4f^0$)], [half/full/empty f-shell logic], [Lanthanoid oxidation-state exceptions],
+    columns: (1.2fr, 1.8fr, 2fr),
+    inset: 3.5pt,
+    table.header[*Core Law / Rule*][*Mathematical Expression / Formula*][*Application & CUET Problem Strategy*],
+    [Spin-Only Moment], [$\mu_s = sqrt(n(n+2)) "BM"$], [Unpaired d-electrons: $n=1 arrow.r 1.73, n=2 arrow.r 2.83, n=3 arrow.r 3.87, n=4 arrow.r 4.90, n=5 arrow.r 5.92 "BM"$.],
+    [Cu $E^circle.small$ Anomaly], [$E^circle.small ("Cu"^(2+) / "Cu") = +0.34 "V"$], [High $Delta_a H^circle.small + I E_1 + I E_2$ not compensated by hydration energy; does not displace $H_2$ from acids.],
+    [Dichromate Acidic Half-Reaction], [$"Cr"_2"O"_7^(2-) + 14 "H"^+ + 6 e^- arrow.r 2 "Cr"^(3+) + 7 "H"_2 "O"$], [$E^circle.small = +1.33 "V"$, orange to green. n-factor = 6 (Eq mass = $M / 6$). Primary standard.],
+    [Permanganate Acidic Half-Reaction], [$"MnO"_4^- + 8 "H"^+ + 5 e^- arrow.r "Mn"^(2+) + 4 "H"_2 "O"$], [$E^circle.small = +1.51 "V"$, purple to colourless. n-factor = 5 (Eq mass = $M / 5$). Self-indicator.],
+    [Permanganate Faint Alkaline], [$"MnO"_4^- + 2 "H"_2 "O" + 3 e^- arrow.r "MnO"_2 + 4 "OH"^-$], [Baeyer's reagent. n-factor = 3 (Eq mass = $M / 3$). Oxidises $I^-$ to $I O_3^-$ (iodate).],
+    [Chromate-Dichromate Switch], [$2 "CrO"_4^(2-) " (Yellow)" + 2 "H"^+ arrow.r.l "Cr"_2"O"_7^(2-) " (Orange)" + "H"_2 "O"$], [pH lever: Acid ($p H < 7$) orange; Alkali ($p H > 7$) yellow. Oxidation state remains $+6$.],
+    [Lanthanoid Contraction Twins], [$"Zr" (160 "pm") approx "Hf" (159 "pm"); quad "Nb" approx "Ta"$], [Poor $4f$ screening cancels 4d to 5d expansion; identical radii and separation difficulty.],
+    [Ln Hydroxide Basicity], [$"La"("OH")_3 " (Most Basic)" > dots > "Lu"("OH")_3 " (Least Basic)"$], [Shrinking ionic radius increases covalent character, reducing $"OH"^(-)$ dissociation.],
+    [Anomalous Ln States], [$"Ce"^(4+) (4f^0), "Eu"^(2+) (4f^7), "Tb"^(4+) (4f^7), "Yb"^(2+) (4f^(14))$], [Empty, half-filled, and full-filled $4f$ configurations explain special stability and redox behavior.],
   )
 ]
 
-= Exceptions & Traps
+#pagebreak()
 
-#exception-box(title: "The Traps This Chapter Sets — Read Before the Mock")[
-  #table(
-    columns: (1.25fr, 1.35fr, 1.4fr),
-    table.header[*The rule you assume*][*The exception / twist*][*The trap in the question*],
-    [All d-block elements are "transition"], [Zn, Cd, Hg have d#super[10] atoms and d#super[10] ions], [The definition demands a *partly filled* d subshell in atom or common ion],
-    [4s fills before 3d, so 4s fills first in ions too], [Ions lose the 4s electrons FIRST], [$"Fe"^(2+)$ is 3d#super[6] (not 3d#super[4] 4s#super[2]); $"Fe"^(3+)$ is 3d#super[5]],
-    [Down the group, lower states stabilise (p-block habit)], [d-block is the opposite: higher states stabilise down], [Mn(VII) oxidises; Tc(VII), Re(VII) do not],
-    [Colour always needs d electrons], [$"MnO"_4^(-)$ and $"CrO"_4^(2-)$ are d#super[0] yet intensely coloured], [Charge-transfer absorption — the classic "how is d#super[0] purple?" question],
-    [Cu dissolves in dilute acids like other metals], [E°($"Cu"^(2+)$/Cu) = +0.34 V blocks $H^(+)$], [Copper needs oxidising acids (HNO₃) — dilute HCl/$"H"_2 "SO"_4$ do nothing],
-    [Lanthanoids show many oxidation states like actinoids], [Lanthanoids are +3 monogamists], [Actinoids sprawl to +7; the comparison table decides such questions],
-    [All purple/coloured ions are d–d coloured], [Charge transfer paints $"MnO"_4^(-)$; the medium changes its electron count], [5 electrons in acid, 3 in mild alkali, 1 in strong alkali],
-    [Interstitial compounds are new stoichiometric compounds], [They are non-stoichiometric], [Steel's carbon content varies continuously — no fixed formula],
-  )
+#block(fill: om-navy, inset: (y: 6pt, x: 12pt), radius: 4pt, width: 100%)[
+  #text(fill: white, font: om-display-font, size: 13pt, weight: 800)[Practice Questions (Exam Pattern) — Part 1 (Q1 to Q5)]
 ]
 
-= The Whole Chapter in One Picture
-
-#figure(
-  image("assets/chem_dblock_mindmap.png", width: 100%),
-  caption: [Chapter mindmap: position and configurations, sizes and the lanthanoid contraction, oxidation states and electrode potentials, magnetism and colour, catalysis-interstitials-alloys, and the f-block twins — with the traps that catch most students.],
-)
-
-= Practice Questions (Exam Pattern)
-
-Ten questions in the CUET UG style. Attempt all of them — the paper gives $+5$ for each correct answer and $-1$ for every incorrect answer.
-
-#mcq(1, [Which of the following electronic configurations corresponds to chromium (Z = 24)?], (
-  [$["Ar"] 3d^4 4s^2$], [$["Ar"] 3d^5 4s^1$], [$["Ar"] 3d^6 4s^0$], [$["Ar"] 3d^3 4s^2 4p^1$],
+#mcq(1, [Which of the following electronic configurations corresponds to the ground state of a Chromium atom ($Z = 24$)?], (
+  [$["Ar"] 3d^4 4s^2$], [$["Ar"] 3d^5 4s^1$],
+  [$["Ar"] 3d^6 4s^0$], [$["Ar"] 3d^3 4s^2 4p^1$],
 ))
+#solution(1, [Chromium attains extra stability by shifting a 4s electron into the 3d subshell to achieve a symmetrical half-filled subshell with maximized exchange energy ($["Ar"] 3d^5 4s^1$).], answer: [B])
 
-#mcq(2, [Zn, Cd and Hg are generally NOT regarded as transition elements because:], (
-  [they are soft metals], [their atoms and common ions have completely filled d#super[10] subshells], [they show only +2 oxidation states], [they do not conduct electricity],
+#mcq(2, [Zinc, Cadmium, and Mercury are classified as d-block elements, yet are NOT regarded as typical transition metals because:], (
+  [They are unusually soft with low melting points], [Their atoms and common divalent ions possess completely filled $(n-1)d^(10)$ subshells],
+  [They do not react with dilute non-oxidising mineral acids], [They form only colorless covalent compounds],
 ))
+#solution(2, [By IUPAC definition, transition metals must have partially filled d-subshells in ground atomic state or common oxidation states. Zn, Cd, and Hg have filled $d^(10)$ subshells in both atomic and ionic states.], answer: [B])
 
-#mcq(3, [The magnetic moment (spin-only) of $"Fe"^(3+)$ (3d#super[5]) is about:], (
-  [1.73 BM], [3.87 BM], [4.90 BM], [5.92 BM],
+#mcq(3, [The spin-only magnetic moment of an aqueous solution containing Ferric ions ($"Fe"^(3+), Z = 26$) is equal to:], (
+  [1.73 BM], [3.87 BM],
+  [4.90 BM], [5.92 BM],
 ))
+#solution(3, [$"Fe"^(3+)$ has configuration $3d^5$ with $n = 5$ unpaired electrons. $\mu_s = sqrt(5(5+2)) = sqrt(35) approx 5.92 "BM"$.], answer: [D])
 
-#mcq(4, [Which aqueous ion is colourless?], (
-  [$"Cu"^(2+)$], [$"Ni"^(2+)$], [$"Zn"^(2+)$], [$"Fe"^(3+)$],
+#mcq(4, [Which of the following aqueous metal ions is completely colourless in dilute solution?], (
+  [$"Cu"^(2+)$], [$"Ni"^(2+)$],
+  [$"Zn"^(2+)$], [$"Fe"^(3+)$],
 ))
+#solution(4, [$"Zn"^(2+)$ has configuration $3d^(10)$. With a completely filled d-subshell, no $d-d$ transition can occur, rendering the ion colorless. $"Cu"^(2+) (3d^9)$ is blue, $"Ni"^(2+) (3d^8)$ is green, and $"Fe"^(3+) (3d^5)$ is yellow-brown.], answer: [C])
 
-#mcq(5, [The deep purple colour of $"MnO"_4^(-)$ (Mn in +7, 3d#super[0]) is due to:], (
-  [d–d transitions], [charge transfer between oxygen and manganese], [unpaired electrons], [metal–metal bonds],
+#mcq(5, [The intense dark purple colour of Potassium Permanganate ($"KMnO"_4$) despite the Manganese ion having a $3d^0$ configuration originates from:], (
+  [Ligand-field splitting and $d-d$ transition], [Ligand-to-Metal Charge Transfer (LMCT) from $O^(2-)$ to $"Mn"^(7+)$],
+  [Presence of unpaired electrons in the 4s orbital], [Metal-to-Metal charge transfer across the crystal lattice],
 ))
+#solution(5, [Mn in $"KMnO"_4$ is in $+7$ state with $3d^0$. Its intense purple color is caused by LMCT: an electron momentarily transitions from filled $O(2p)$ orbitals to empty $"Mn"(3d)$ orbitals.], answer: [B])
 
-#mcq(6, [In acidic medium, one $"MnO"_4^(-)$ ion accepts how many electrons?], (
-  [1], [3], [5], [7],
+#pagebreak()
+
+#block(fill: om-navy, inset: (y: 6pt, x: 12pt), radius: 4pt, width: 100%)[
+  #text(fill: white, font: om-display-font, size: 13pt, weight: 800)[Practice Questions (Exam Pattern) — Part 2 (Q6 to Q10)]
+]
+
+#mcq(6, [When one mole of Potassium Permanganate ($"KMnO"_4$) oxidises Ferrous ions in acidic medium, the number of moles of electrons transferred per mole of permanganate is:], (
+  [1 mole], [3 moles],
+  [5 moles], [7 moles],
 ))
+#solution(6, [In acidic medium, permanganate undergoes: $"MnO"_4^- + 8 "H"^+ + 5 e^- arrow.r "Mn"^(2+) + 4 "H"_2 "O"$. The oxidation state changes from $+7$ to $+2$, transferring 5 electrons ($n = 5$).], answer: [C])
 
-#mcq(7, [The lanthanoid contraction is responsible for:], (
-  [the +3 state of lanthanoids], [Zr and Hf having almost identical radii], [the colour of $"Cu"^(2+)$], [the acidity of $"Mn"_2 "O"_7$],
+#mcq(7, [Which pair of transition metals represents "chemical twins" having almost identical atomic and ionic radii due to the Lanthanoid Contraction?], (
+  [Scandium and Yttrium], [Zirconium and Hafnium],
+  [Iron and Cobalt], [Copper and Zinc],
 ))
+#solution(7, [Zirconium (4d, 160 pm) and Hafnium (5d, 159 pm) have nearly identical radii because insertion of fourteen $4f$ lanthanoid elements before Hf cancels the expected downward periodic expansion.], answer: [B])
 
-#mcq(8, [When the pH of a chromate/dichromate solution is lowered (acid added), the equilibrium:], (
-  [shifts to yellow chromate], [shifts to orange dichromate], [does not shift], [precipitates chromium metal],
+#mcq(8, [When dilute sulphuric acid is added to a bright yellow aqueous solution of Potassium Chromate ($"K"_2"CrO"_4$), the solution turns orange because:], (
+  [Chromium is reduced from Cr(VI) to Cr(III)], [Chromate ions are converted reversibly to dichromate ions ($"Cr"_2"O"_7^(2-)$)],
+  [Chromium metal precipitates out of solution], [Hydrogen gas reduces the chromate complex],
 ))
+#solution(8, [Acidification shifts the dynamic equilibrium $2 "CrO"_4^(2-) + 2 "H"^+ arrow.r.l "Cr"_2"O"_7^(2-) + "H"_2 "O"$ to the right, forming orange dichromate without altering Cr's $+6$ oxidation state.], answer: [B])
 
-#mcq(9, [Which pair shows the p-block-contrary trend "higher oxidation states become more stable DOWN the group"?], (
-  [$"Pb"^(2+)$ vs $"Pb"^(4+)$], [Cr(VI) vs Mo(VI) vs W(VI)], [Na⁺ vs K⁺], [Cl⁻ vs Br⁻],
+#mcq(9, [Unlike p-block elements where lower oxidation states are favored down a group, in the d-block:], (
+  [Lower oxidation states become exceptionally stable down a group], [Higher oxidation states become progressively more stable down a group],
+  [All oxidation states remain unchanged down a group], [Metals form only monovalent cations in the 5d series],
 ))
+#solution(9, [In transition metal groups, heavier 4d and 5d metals stabilize high oxidation states. E.g. in Group 6, Cr(VI) in $"K"_2"Cr"_2"O"_7$ is strongly oxidising, whereas Mo(VI) and W(VI) are highly stable and non-oxidising.], answer: [B])
 
-#mcq(10, [Steel and cast iron are everyday examples of:], (
-  [alloys formed by substitution], [interstitial compounds], [coordination compounds], [charge-transfer complexes],
+#mcq(10, [Steel, cast iron, and titanium hydride are prominent examples of:], (
+  [Substitutional solid-solution alloys], [Non-stoichiometric interstitial compounds],
+  [Coordination complexes with chelate rings], [Ionic charge-transfer salts],
 ))
+#solution(10, [Small non-metal atoms ($C, H, N$) occupy interstitial voids within the transition metal crystal lattice, forming non-stoichiometric, exceptionally hard interstitial compounds that retain metallic electrical conductivity.], answer: [B])
 
-= Detailed Solutions
+#pagebreak()
 
-#solution(1, [Chromium steals one 4s electron into 3d: $["Ar"] 3d^5 4s^1$ — the half-filled d subshell plus single 4s electron sits lower in energy than $3d^4 4s^2$. Copper does the same for a *fully* filled $3d^10$.], answer: [B])
+#block(fill: om-navy, inset: (y: 6pt, x: 12pt), radius: 4pt, width: 100%)[
+  #text(fill: white, font: om-display-font, size: 13pt, weight: 800)[Practice Questions (Exam Pattern) — Part 3 (Q11 to Q15)]
+]
 
-#solution(2, [The strict definition needs a *partly filled* d subshell in the atom or a common ion. $"Zn"^(2+)$ is 3d#super[10] — full — so no d–d transitions, no colour, no variable states: d-block, yes; transition, no.], answer: [B])
+#mcq(11, [Among the following lanthanoid ions, which one acts as a powerful analytical oxidising agent due to an empty $4f^0$ configuration?], (
+  [$"Eu"^(2+)$], [$"Ce"^(4+)$],
+  [$"Tb"^(4+)$], [$"Yb"^(2+)$],
+))
+#solution(11, [$"Ce"^(4+)$ attains noble gas $["Xe"] 4f^0$, but because $+3$ is universally the thermodynamic ground state for lanthanoids, $"Ce"^(4+)$ readily reduces to $"Ce"^(3+)$ with $E^circle.small = +1.74 "V"$, acting as an oxidiser.], answer: [B])
 
-#solution(3, [Spin-only formula with $n = 5$: $mu = sqrt(5 times 7) = sqrt(35) approx 5.92$ BM. Memorise the ladder: 1 → 1.73, 2 → 2.83, 3 → 3.87, 4 → 4.90, 5 → 5.92.], answer: [D])
+#mcq(12, [What is the correct decreasing order of basic strength among the following lanthanoid hydroxides?], (
+  [$"Lu"("OH")_3 > "Eu"("OH")_3 > "La"("OH")_3$], [$"La"("OH")_3 > "Eu"("OH")_3 > "Lu"("OH")_3$],
+  [$"Eu"("OH")_3 > "La"("OH")_3 > "Lu"("OH")_3$], [$"La"("OH")_3 > "Lu"("OH")_3 > "Eu"("OH")_3$],
+))
+#solution(12, [As cation radius shrinks from $"La"^(3+) (103 "pm")$ to $"Lu"^(3+) (86 "pm")$, covalent character of the $"Ln"-"OH"$ bond increases (Fajan's rule), decreasing basicity: $"La"("OH")_3 > "Eu"("OH")_3 > "Lu"("OH")_3$.], answer: [B])
 
-#solution(4, [$"Zn"^(2+)$ is 3d#super[10] — no electron can jump between d levels, so no d–d absorption, so colourless. $"Cu"^(2+)$ (blue), $"Ni"^(2+)$ (green) and $"Fe"^(3+)$ (yellow-brown in water) all have partly filled d subshells.], answer: [C])
+#mcq(13, [In neutral or faintly alkaline medium (Baeyer's condition), Potassium Permanganate oxidises Potassium Iodide ($K I$) into:], (
+  [Iodine gas ($I_2$)], [Potassium Iodate ($K I O_3$)],
+  [Potassium Periodate ($K I O_4$)], [Potassium Hypoiodite ($K I O$)],
+))
+#solution(13, [In acid medium, permanganate oxidises $I^-$ to $I_2$. In neutral or faint alkaline medium, permanganate oxidises iodide to iodate: $2 "MnO"_4^- + "H"_2 "O" + I^- arrow.r 2 "MnO"_2 + 2 "OH"^- + "IO"_3^-$.], answer: [B])
 
-#solution(5, [Mn(VII) has zero d electrons — no d–d transition is possible. The purple comes from charge transfer: an oxygen electron momentarily hops to manganese. Same story for yellow $"CrO"_4^(2-)$.], answer: [B])
+#mcq(14, [Why does Copper exhibit a unique positive standard electrode potential ($E^circle.small ("Cu"^(2+) / "Cu") = +0.34 "V"$) in the 3d transition series?], (
+  [Copper has a low first ionisation enthalpy], [The sum of its enthalpy of atomisation and ionisation enthalpies is not compensated by its hydration enthalpy],
+  [Copper(II) has a completely filled 3d subshell], [Copper reacts vigorously with atmospheric nitrogen],
+))
+#solution(14, [Transforming $"Cu"(s)$ to $"Cu"^(2+)("aq.")$ requires high atomisation and ionisation energy that is not balanced by the hydration enthalpy, resulting in positive $E^circle.small$ and refusal to liberate $H_2$ from dilute acids.], answer: [B])
 
-#solution(6, [Acid medium: $ "MnO"_4^(-) + 8 H^(+) + 5 e^(-) -> "Mn"^(2+) + 4 "H"_2 "O" $ — five electrons, the maximum punch. Mild alkali gives 3 (to brown $"MnO"_2$); strong alkali gives 1 (to green manganate).], answer: [C])
-
-#solution(7, [Fourteen poorly-shielding 4f electrons shrink the lanthanoids cumulatively, so the 5d row starts at 4d-sized radii — Zr (160 pm) and Hf (159 pm) become twins. The +3 state, $"Cu"^(2+)$'s colour and $"Mn"_2 "O"_7$'s acidity live elsewhere in the chapter.], answer: [B])
-
-#solution(8, [Lower pH means more $H^(+)$, so the equilibrium $ 2 "CrO"_4^(2-) + 2 H^(+) arrow.r.r "Cr"_2 "O"_7^(2-) + "H"_2 "O" $ shifts right — yellow chromate turns orange dichromate. Adding alkali reverses it.], answer: [B])
-
-#solution(9, [The d-block defies the p-block habit: down group 6, Cr(VI) is a strong oxidiser but Mo(VI) and W(VI) are stable and mild — higher states stabilise down the group. $"Pb"^(2+)$/$"Pb"^(4+)$ shows the *p-block* trend (inert pair).], answer: [B])
-
-#solution(10, [Carbon atoms sit in the *holes* of the iron lattice — interstitial compounds: hard, conducting, non-stoichiometric. Brass and bronze are substitutional alloys; coordination complexes are a different family entirely. The same interstitial idea explains why steel drills cut where pure iron bends.], answer: [B])
-
-== Wrong-Answer Clinic — the one-line corrections
-
-Dropped marks above? Find your slip here and rewrite the corrected rule in your own words.
-
-#table(
-  columns: (1.05fr, 1.5fr, 1.45fr),
-  table.header[*If you answered...*][*Your slip was...*][*The corrected rule, in one line*],
-  [Q1 option A], [Filling 3d before stealing 4s], [Half-filled beats regular: Cr keeps only ONE 4s electron — 3d#super[5]4s¹],
-  [Q3 option C], [Using n = 4 in the formula], [$"Fe"^(3+)$ is 3d#super[5] — five unpaired electrons, $sqrt(35) approx 5.92$ BM, the row's maximum],
-  [Q6 option B], [Mixing media], [Count electrons by medium: acid 5, mild alkali 3, strong alkali 1 — always read the medium first],
-  [Q7 option A], [Confusing the cause and the effect], [The contraction is a *size* story (poor 4f shielding); its twin-effect headline is Zr $approx$ Hf],
-  [Q9 option A], [Applying the p-block habit], [Lead follows the inert-pair rule (p-block); only d-block rows stabilise high states downward],
-  [Q8 option A], [Reading "lower pH" as "more alkali"], [More acid pushes $2 "CrO"_4^(2-) + 2 H^(+) arrow.r.r "Cr"_2 "O"_7^(2-) + "H"_2 "O"$ to the RIGHT: yellow orange],
-  [Q10 option A], [Calling steel an alloy of substitution], [Steel's carbon hides in lattice holes (interstitial); brass/bronze are the substitutional alloy examples],
-)
+#mcq(15, [Mischmetal is a prominent pyrophoric alloy widely utilized in lighter flints. Its major constituent is:], (
+  [Lanthanoid metals ($approx 95%$, chiefly Cerium $approx 50%$) with Iron ($approx 5%$) and traces of S, C, Ca], [Actinoid metals ($approx 80%$) alloyed with Chromium and Nickel],
+  [Pure metallic Titanium blended with Vanadium], [An alloy of Copper ($approx 70%$) and Zinc ($approx 30%$) with trace Lead],
+))
+#solution(15, [Mischmetal consists of approximately $95\%$ lanthanoids (principally Cerium $approx 50\%$, Lanthanum, and Neodymium) with $approx 5\%$ Iron and trace non-metals, renowned for its pyrophoric sparking properties.], answer: [A])
 
 #block(width: 100%, inset: (top: 4pt), above: 4pt)[
-  #align(center, text(fill: om-grey, size: 8pt)[© OurMocks · www.ourmocks.com · CUET UG Chemistry · d and f Block Elements · 2027 cycle])
+  #align(center, text(fill: om-grey, size: 8pt, weight: 600)[
+    © OurMocks · www.ourmocks.com · CUET UG Chemistry · Unit IV: d- and f-Block Elements · 2027 Examination Baseline
+  ])
 ]
