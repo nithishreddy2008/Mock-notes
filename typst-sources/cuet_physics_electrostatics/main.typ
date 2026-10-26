@@ -160,7 +160,7 @@ An electric dipole consists of equal and opposite charges ($+q, -q$) separated b
 $ vec(p) = q (2 vec(a)) quad ["SI unit: C"dot"m"] $
 
 #figure(
-  image("assets/physics_electrostatics_fields_gauss.png", width: 55%),
+  image("assets/physics_electrostatics_fields_gauss.png", width: 72%),
   caption: [Electrostatic Forces, Electric Fields and Gauss's Law Architecture Matrix],
 )
 
@@ -268,7 +268,7 @@ $ V(r, theta) = 1 / (4 pi epsilon_0) (p cos theta) / r^2 $
     $ V_("center") = 3 / 2 (1 / (4 pi epsilon_0) q / R) = 1.5 V_("surface") $
 
 #figure(
-  image("assets/physics_electrostatics_potential_capacitors.png", width: 55%),
+  image("assets/physics_electrostatics_potential_capacitors.png", width: 72%),
   caption: [Electric Potential, Dielectrics and Capacitance Architecture Matrix],
 )
 
@@ -328,7 +328,7 @@ The net field is reduced: $vec(E) = vec(E)_0 - vec(E)_p = vec(E)_0 / K$, where $
 - *Dielectric strength:* Maximum electric field a dielectric withstands without breakdown (dry air: $3 times 10^6" V/m"$).
 
 #figure(
-  image("assets/physics_electrostatics_mindmap.png", width: 55%),
+  image("assets/physics_electrostatics_mindmap.png", width: 72%),
   caption: [Unit 1: Electrostatics Master Synthesis Mindmap],
 )
 
