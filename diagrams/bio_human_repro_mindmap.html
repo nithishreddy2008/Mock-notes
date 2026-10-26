@@ -1,117 +1,370 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
+<title>Human Reproduction Master Synthesis Mindmap</title>
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
-  .wrap { width: 1480px; height: 1060px; position: relative; background: #fff; }
-  svg.wires { position: absolute; inset: 0; width: 1480px; height: 1060px; }
-  .center {
-    position: absolute; left: 555px; top: 385px; width: 370px; height: 100px;
-    background: #071A4D; border-radius: 16px; display: flex; flex-direction: column;
-    align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(7,26,77,.25);
-    border-bottom: 5px solid #B8FF34;
+  * { margin: 0; padding: 0; box-sizing: border-box; box-shadow: none !important; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    color: #0F172A;
+    overflow: hidden;
+    position: relative;
+    padding: 22px 28px;
   }
-  .center .t { color: #fff; font-size: 24px; font-weight: 800; letter-spacing: .5px; }
-  .center .s { color: #B8FF34; font-size: 13.5px; font-weight: 700; letter-spacing: 2px; margin-top: 4px; }
-  .card {
-    position: absolute; width: 470px; background: #FCFDFF; border: 1.5px solid #D5DCEA;
-    border-radius: 14px; padding: 13px 16px 12px;
+
+  /* Header */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #CBD5E1;
+    padding-bottom: 12px;
+    margin-bottom: 14px;
   }
-  .card h2 { font-size: 20px; color: #071A4D; font-weight: 800; margin-bottom: 7px;
-             padding-bottom: 5px; border-bottom: 3px solid; display: inline-block; }
-  .leaf { font-size: 14.5px; color: #1B2333; margin: 5px 0; padding-left: 16px; position: relative; line-height: 1.32; }
-  .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
-  .b .leaf::before { background: #1F5EFF; }
-  .l .leaf::before { background: #7FB800; }
-  .leaf b { color: #071A4D; }
-  .b h2 { border-color: #1F5EFF; }
-  .l h2 { border-color: #7FB800; }
-  .left { left: 30px; }
-  .right { left: 980px; }
-  .exc {
-    position: absolute; left: 530px; top: 852px; width: 420px; background: #FFF3EC;
-    border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px;
+  .title-group h1 {
+    font-size: 21px;
+    font-weight: 800;
+    color: #071A4D;
+    display: flex;
+    align-items: center;
+    gap: 10px;
   }
-  .exc h2 { font-size: 17px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
-  .exc .leaf { font-size: 13px; margin: 3px 0; padding-left: 14px; color: #7A2A12; }
-  .exc .leaf::before { background: #D2481F; }
-  .exc b { color: #B4380F; }
+  .title-group h1 span.badge {
+    background: #071A4D;
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 4px;
+  }
+  .title-group p {
+    font-size: 12.5px;
+    color: #64748B;
+    margin-top: 2px;
+    font-weight: 500;
+  }
+  .exam-tags {
+    display: flex;
+    gap: 8px;
+  }
+  .chip {
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+  }
+  .chip-navy { background: #EEF1F8; color: #071A4D; border: 1px solid #CBD5E1; }
+  .chip-blue { background: #EAF0FF; color: #1F5EFF; border: 1px solid #BFDBFE; }
+  .chip-rose { background: #FFF1F2; color: #E11D48; border: 1px solid #FECDD3; }
+
+  /* 4-Quadrant Mindmap Grid */
+  .mindmap-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 14px;
+    height: 615px;
+    position: relative;
+  }
+
+  .branch-card {
+    background: #FFFFFF;
+    border: 1.5px solid #CBD5E1;
+    border-radius: 10px;
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+  }
+  .branch-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 6px;
+    border-bottom: 2px solid #E2E8F0;
+    margin-bottom: 8px;
+  }
+  .branch-title {
+    font-size: 14.5px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .title-blue { color: #1E40AF; }
+  .title-rose { color: #BE123C; }
+  .title-amber { color: #B45309; }
+  .title-purple { color: #6D28D9; }
+
+  .branch-badge {
+    font-size: 10.5px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 4px;
+  }
+  .badge-blue { background: #EFF6FF; color: #1E40AF; border: 1px solid #BFDBFE; }
+  .badge-rose { background: #FFF1F2; color: #BE123C; border: 1px solid #FECDD3; }
+  .badge-amber { background: #FFFBEB; color: #B45309; border: 1px solid #FDE68A; }
+  .badge-purple { background: #FAF5FF; color: #6D28D9; border: 1px solid #DDD6FE; }
+
+  /* Content Sub-Items */
+  .sub-items-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    flex: 1;
+  }
+  .sub-item {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    padding: 7px 9px;
+    font-size: 11px;
+    line-height: 1.4;
+  }
+  .sub-item strong {
+    display: block;
+    font-size: 11.5px;
+    color: #071A4D;
+    margin-bottom: 2px;
+  }
+  .sub-item b {
+    color: #0F172A;
+  }
+
+  /* Central Floating Hub Badge */
+  .center-hub {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #071A4D;
+    border: 2.5px solid #B8FF34;
+    border-radius: 12px;
+    padding: 10px 18px;
+    text-align: center;
+    z-index: 10;
+    width: 250px;
+  }
+  .center-hub h3 {
+    color: #FFFFFF;
+    font-size: 12.5px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    line-height: 1.3;
+  }
+  .center-hub span {
+    color: #B8FF34;
+    font-size: 10.5px;
+    font-weight: 700;
+    display: block;
+    margin-top: 3px;
+    letter-spacing: 1px;
+  }
+
+  /* Bottom Synthesis Footer */
+  .bottom-footer {
+    position: absolute;
+    bottom: 20px;
+    left: 28px;
+    right: 28px;
+    background: #071A4D;
+    color: #FFFFFF;
+    border-radius: 8px;
+    padding: 10px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid #B8FF34;
+  }
+  .footer-item {
+    font-size: 11.5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .footer-item strong {
+    color: #B8FF34;
+    font-size: 12px;
+  }
+  .footer-tag {
+    background: rgba(255,255,255,0.15);
+    padding: 2px 7px;
+    border-radius: 4px;
+    font-size: 10.5px;
+    font-weight: 600;
+  }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <svg class="wires" viewBox="0 0 1480 1060">
-    <path d="M 555 420 C 505 420, 520 165, 502 160" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
-    <path d="M 555 435 C 515 435, 520 430, 502 430" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 555 450 C 505 450, 520 700, 502 705" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
-    <path d="M 925 420 C 975 420, 960 165, 978 160" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 925 435 C 965 435, 960 430, 978 430" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
-    <path d="M 925 450 C 975 450, 960 700, 978 705" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 740 485 C 740 620, 740 790, 740 848" fill="none" stroke="#D2481F" stroke-width="2.5" stroke-dasharray="7 5" opacity=".6"/>
-  </svg>
 
-  <div class="center">
-    <div class="t">HUMAN REPRODUCTION</div>
-    <div class="s">UNIT VI &#183; COMPLETE CHAPTER MAP</div>
+  <!-- Header -->
+  <div class="header">
+    <div class="title-group">
+      <h1>
+        Human Reproduction Master Synthesis Mindmap
+        <span class="badge">FIGURE 3</span>
+      </h1>
+      <p>Complete Chapter Blueprint: Reproductive Organs, Gametogenesis, Menstrual Endocrine Control, Fertilization, Embryogeny, and Parturition</p>
+    </div>
+    <div class="exam-tags">
+      <div class="chip chip-navy">CUET UG Biology</div>
+      <div class="chip chip-blue">Complete Unit VI Synthesis</div>
+      <div class="chip chip-rose">High-Yield Revision</div>
+    </div>
   </div>
 
-  <div class="card left b" style="top:62px">
-    <h2>The Male Reproductive System</h2>
-    <div class="leaf"><b>Testes in the scrotum:</b> kept 2&#8211;2.5&#176;C below body temperature — sperm need cooler air</div>
-    <div class="leaf"><b>Inside each testis:</b> seminiferous tubules — the sperm factories</div>
-    <div class="leaf"><b>Three cell types:</b> germ cells make sperm &#183; Sertoli nurse them &#183; Leydig cells make testosterone</div>
-    <div class="leaf"><b>Duct ladder:</b> rete testis &#8594; vasa efferentia &#8594; epididymis &#8594; vas deferens &#8594; urethra</div>
+  <!-- 4-Quadrant Mindmap Grid -->
+  <div class="mindmap-grid">
+
+    <!-- Center Hub -->
+    <div class="center-hub">
+      <h3>HUMAN REPRODUCTION</h3>
+      <span>NCERT CORE BLUEPRINT</span>
+    </div>
+
+    <!-- Quadrant 1: Male System & Spermatogenesis -->
+    <div class="branch-card" style="padding-right: 25px;">
+      <div class="branch-header">
+        <h2 class="branch-title title-blue">
+          <span>1. Male Reproductive System & Sperms</span>
+        </h2>
+        <span class="branch-badge badge-blue">Testes & Spermatogenesis</span>
+      </div>
+      <div class="sub-items-grid">
+        <div class="sub-item">
+          <strong>Testicular Architecture</strong>
+          Scrotum maintains <b>2–2.5°C lower</b> temperature. 250 lobules, each with 1–3 seminiferous tubules containing <b>Sertoli cells</b> (nurse/FSH) & <b>Leydig cells</b> (testosterone/LH).
+        </div>
+        <div class="sub-item">
+          <strong>Duct Pathway</strong>
+          Rete testis &rarr; Vasa efferentia &rarr; <b>Epididymis</b> (storage/maturation) &rarr; Vas deferens &rarr; Ejaculatory duct &rarr; Urethra.
+        </div>
+        <div class="sub-item">
+          <strong>Accessory Glands</strong>
+          &bull; <b>Seminal vesicles (paired):</b> Fructose, prostaglandins, clotting enzymes (60–70% semen).<br>
+          &bull; <b>Prostate:</b> Alkaline fluid, citrate.<br>
+          &bull; <b>Bulbourethral:</b> Mucus for lubrication.
+        </div>
+        <div class="sub-item">
+          <strong>Sperm Cytology</strong>
+          Head (haploid nucleus + <b>Acrosome</b>), Neck (proximal centriole), Middle piece (mitochondrial <b>Nebenkern</b>, ATP), Tail (flagellum). 200–300M sperms per ejaculate.
+        </div>
+      </div>
+    </div>
+
+    <!-- Quadrant 2: Female System & Oogenesis -->
+    <div class="branch-card" style="padding-left: 25px;">
+      <div class="branch-header">
+        <h2 class="branch-title title-rose">
+          <span>2. Female Reproductive System & Ovum</span>
+        </h2>
+        <span class="branch-badge badge-rose">Ovaries & Folliculogenesis</span>
+      </div>
+      <div class="sub-items-grid">
+        <div class="sub-item">
+          <strong>Ovarian Ducts & Uterus</strong>
+          Fallopian tube: Fimbriae &rarr; Infundibulum &rarr; <b>Ampulla (fertilization site!)</b> &rarr; Isthmus. Uterus: Perimetrium, Myometrium (smooth muscle), Endometrium (sheds).
+        </div>
+        <div class="sub-item">
+          <strong>Oogenesis Timeline</strong>
+          Prenatal origin (~2M oogonia); arrested at <b>Prophase I (Diplotene)</b> at birth. Only 60K–80K primary follicles remain at puberty.
+        </div>
+        <div class="sub-item">
+          <strong>Follicular Evolution</strong>
+          Primary follicle &rarr; Secondary &rarr; Tertiary (fluid-filled <b>Antrum</b>) &rarr; Mature Graafian follicle. Meiosis I completes just before ovulation &rarr; Secondary oocyte + 1st polar body.
+        </div>
+        <div class="sub-item">
+          <strong>Ovulated Secondary Oocyte</strong>
+          Arrested at <b>Metaphase II</b> until sperm entry. Enveloped by <b>Zona Pellucida</b> (glycoprotein coat) and outer <b>Corona Radiata</b>.
+        </div>
+      </div>
+    </div>
+
+    <!-- Quadrant 3: Menstrual Cycle & Fertilization -->
+    <div class="branch-card" style="padding-right: 25px;">
+      <div class="branch-header">
+        <h2 class="branch-title title-amber">
+          <span>3. Menstrual Cycle & Fertilization</span>
+        </h2>
+        <span class="branch-badge badge-amber">Endocrine Control & Syngamy</span>
+      </div>
+      <div class="sub-items-grid">
+        <div class="sub-item">
+          <strong>28-Day Cycle Phases</strong>
+          &bull; <b>Menstrual (1–5):</b> Bleeding, lowest steroids.<br>
+          &bull; <b>Follicular (6–13):</b> FSH & Estrogen rise, endometrium repairs.<br>
+          &bull; <b>Ovulatory (14):</b> <b>LH Surge</b> causes ovulation.<br>
+          &bull; <b>Luteal (15–28):</b> Corpus luteum secretes Progesterone.
+        </div>
+        <div class="sub-item">
+          <strong>Fertilization Mechanics</strong>
+          Sperm capacitation in female tract &rarr; Acrosomal enzymes digest corona/zona &rarr; Depolarization & <b>Cortical reaction</b> permanently blocks polyspermy.
+        </div>
+        <div class="sub-item">
+          <strong>Completion of Meiosis II</strong>
+          Sperm entry triggers secondary oocyte to finish Meiosis II &rarr; <b>Haploid Ovum (Ootid) + 2nd Polar Body</b>.
+        </div>
+        <div class="sub-item">
+          <strong>Syngamy & Cleavage</strong>
+          Sperm & ovum pronuclei fuse forming <b>Zygote (2n, 46)</b>. Rapid mitotic holoblastic cleavage begins in oviduct: 2 &rarr; 4 &rarr; 8 &rarr; 16 cells (<b>Morula</b>).
+        </div>
+      </div>
+    </div>
+
+    <!-- Quadrant 4: Implantation, Gestation & Parturition -->
+    <div class="branch-card" style="padding-left: 25px;">
+      <div class="branch-header">
+        <h2 class="branch-title title-purple">
+          <span>4. Gestation, Placenta & Birth</span>
+        </h2>
+        <span class="branch-badge badge-purple">Blastocyst to Parturition</span>
+      </div>
+      <div class="sub-items-grid">
+        <div class="sub-item">
+          <strong>Blastocyst & Implantation</strong>
+          Comprises outer <b>Trophoblast</b> (implants into endometrium ~Day 7) + <b>Inner Cell Mass (ICM)</b> (embryo progenitor; pluripotent stem cells).
+        </div>
+        <div class="sub-item">
+          <strong>Placenta Endocrinology</strong>
+          Interlocked chorionic villi + uterine wall. Secretes <b>hCG, hPL, Estrogen, Progesterone</b>, and <b>Relaxin</b> (hCG, hPL, Relaxin exclusive to pregnancy!).
+        </div>
+        <div class="sub-item">
+          <strong>Parturition Mechanism</strong>
+          <b>Fetal Ejection Reflex:</b> Mature fetus & placenta induce mild uterine contractions &rarr; Maternal posterior pituitary releases <b>Oxytocin</b> &rarr; Powerful contractions expel fetus.
+        </div>
+        <div class="sub-item">
+          <strong>Lactation & Colostrum</strong>
+          <b>Prolactin</b> drives milk synthesis; <b>Oxytocin</b> drives milk ejection. First milk (<b>Colostrum</b>) is rich in maternal <b>secretory IgA antibodies</b>.
+        </div>
+      </div>
+    </div>
+
   </div>
 
-  <div class="card left l" style="top:322px">
-    <h2>The Female Reproductive System</h2>
-    <div class="leaf"><b>Paired ovaries:</b> make the eggs plus oestrogen &amp; progesterone</div>
-    <div class="leaf"><b>Tube parts in order:</b> infundibulum (fimbriae catch the egg) &#8594; ampulla (fertilisation site) &#8594; isthmus</div>
-    <div class="leaf"><b>Uterus walls:</b> perimetrium outer &#183; myometrium muscle &#183; endometrium lining that rebuilds monthly</div>
-    <div class="leaf"><b>Mammary glands:</b> alveoli make milk; ducts carry it to the nipple</div>
+  <!-- Bottom Synthesis Footer -->
+  <div class="bottom-footer">
+    <div class="footer-item">
+      <strong>FERTILIZATION SITE:</strong>
+      <span>Strictly at the <b>Ampullary-isthmic junction / Ampulla</b> of the fallopian tube</span>
+      <span class="footer-tag">CUET High-Frequency</span>
+    </div>
+    <div class="footer-item">
+      <strong>EXCLUSIVE PREGNANCY HORMONES:</strong>
+      <span><b>hCG, hPL, Relaxin</b> are produced in females <i>only</i> during pregnancy</span>
+      <span class="footer-tag">Diagnostic Marker</span>
+    </div>
+    <div class="footer-item">
+      <strong>CENTRIOLE LEGACY:</strong>
+      <span>Sperm contributes <b>proximal centriole</b>; unfertilized egg lacks centriole for cleavage</span>
+      <span class="footer-tag">Cleavage Trigger</span>
+    </div>
   </div>
 
-  <div class="card left b" style="top:600px">
-    <h2>Gametogenesis — Making Gametes</h2>
-    <div class="leaf"><b>Spermatogenesis:</b> 1 spermatogonium &#8594; 4 sperm; starts at puberty (mitosis first, then meiosis)</div>
-    <div class="leaf"><b>Oogenesis:</b> 1 oocyte &#8594; 1 ovum + tiny polar bodies; starts <b>before birth</b></div>
-    <div class="leaf"><b>Two arrests:</b> prophase-I before birth &#183; metaphase-II until a sperm enters</div>
-    <div class="leaf"><b>Sperm parts:</b> head with acrosome cap &#183; middle piece (mitochondria) &#183; tail</div>
-  </div>
-
-  <div class="card right l" style="top:62px">
-    <h2>The Menstrual Cycle</h2>
-    <div class="leaf"><b>28 days, 4 phases:</b> menstrual (1&#8211;5) &#8594; follicular (5&#8211;13) &#8594; ovulation (day 14) &#8594; luteal (15&#8211;28)</div>
-    <div class="leaf"><b>Hormone logic:</b> FSH grows follicles &#8594; oestrogen rebuilds the lining &#8594; LH surge &#8594; egg released</div>
-    <div class="leaf"><b>Luteal phase:</b> corpus luteum makes progesterone, which keeps the lining ready</div>
-    <div class="leaf"><b>No pregnancy?</b> Corpus luteum dies, progesterone falls, lining sheds = next period</div>
-  </div>
-
-  <div class="card right b" style="top:322px">
-    <h2>Fertilisation &amp; Implantation</h2>
-    <div class="leaf"><b>Site:</b> ampullary-isthmic junction of the fallopian tube — not the uterus</div>
-    <div class="leaf"><b>Sperm entry:</b> acrosome enzymes cross the zona pellucida; cortical reaction blocks a second sperm</div>
-    <div class="leaf"><b>Counts:</b> ovum 23 + sperm 23 = zygote 46; meiosis-II finishes only after entry</div>
-    <div class="leaf"><b>Cleavage:</b> 2 &#8594; 4 &#8594; 8 &#8594; 16-cell morula &#8594; blastocyst &#8594; implants at ~6&#8211;7 days</div>
-  </div>
-
-  <div class="card right l" style="top:600px">
-    <h2>Pregnancy, Parturition &amp; Lactation</h2>
-    <div class="leaf"><b>Placenta:</b> chorionic villi + uterine tissue; does nutrition, respiration and excretion for the foetus</div>
-    <div class="leaf"><b>Placental hormones:</b> hCG &#183; hPL &#183; oestrogens &#183; progesterone (relaxin comes from the ovary)</div>
-    <div class="leaf"><b>Milestones:</b> heart by month 1 &#183; limbs by month 2 &#183; organ systems by 12 weeks &#183; hair by month 5</div>
-    <div class="leaf"><b>Birth:</b> foetal ejection reflex &#8594; oxytocin &#8594; stronger contractions; colostrum = baby's first IgA</div>
-  </div>
-
-  <div class="exc">
-    <h2>COMMON ERRORS &amp; TRAPS</h2>
-    <div class="leaf"><b>Meiosis starts at puberty in males</b> — spermatogonia divide by mitosis until then</div>
-    <div class="leaf"><b>Oogenesis arrests twice</b>; polar bodies are discarded — they are not eggs</div>
-    <div class="leaf"><b>LH surge (day 14) causes ovulation</b> — not FSH; fertilisation happens in the ampulla, not the uterus</div>
-    <div class="leaf"><b>Sertoli = nurse cells; Leydig = testosterone</b> — students swap these roles</div>
-  </div>
-</div>
 </body>
 </html>

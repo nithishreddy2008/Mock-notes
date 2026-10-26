@@ -10,890 +10,458 @@
 = Syllabus Alignment
 
 #table(
-  columns: (1.05fr, 1.9fr, 1.25fr),
-  table.header[*Sub-topic*][*Official syllabus pointer (NTA CUET(UG) Biology syllabus 2026, the current 2027 baseline, Unit VI)*][*Skills the questions test*],
-  [*Male and female reproductive system*], [
-    Male and female reproductive system;
+  columns: (1.1fr, 1.8fr, 1.3fr),
+  table.header[*Sub-topic*][*Official syllabus pointer (NTA CUET UG Biology 2026 / 2027 Baseline)*][*Exam Skills & Question Types*],
+  [*Male Reproductive System*], [
+    Male reproductive system; microscopic anatomy of testis; accessory ducts and glands.
   ], [
-    Naming every part and matching it to its one-line function.
+    Scrotal thermoregulation ($2 degree "C"$ drop); Sertoli vs Leydig cells; duct order; seminal fluid biochemistry.
   ],
-  [*Microscopic anatomy of testis and ovary*], [
-    Microscopic anatomy of testis and ovary;
+  [*Female Reproductive System*], [
+    Female reproductive system; microscopic anatomy of ovary; fallopian tube and uterine wall layers.
   ], [
-    Identifying cell types in a section and stating what each one does.
+    Ampullary fertilization site; endometrium cyclical shedding; myometrium oxytocin response; ovarian histology.
   ],
-  [*Gametogenesis — spermatogenesis and oogenesis*], [
-    Gametogenesis – spermatogenesis and oogenesis;
+  [*Gametogenesis & Sperm/Ovum*], [
+    Gametogenesis — spermatogenesis and oogenesis; structural organization of gametes.
   ], [
-    Ordering the stages and tracking chromosome numbers (46 vs 23).
+    Spermatogonia to sperm pathway; spermiogenesis vs spermiation; dual female meiotic arrests (Prophase I, Metaphase II).
   ],
-  [*Menstrual cycle*], [
-    Menstrual cycle
+  [*Menstrual Cycle Endocrinology*], [
+    Menstrual cycle: phases, hormonal regulation (LH, FSH, estrogen, progesterone).
   ], [
-    Placing the four phases and the hormones on the 28-day timeline.
+    28-day timeline; mid-cycle LH surge; follicular vs luteal phases; corpus luteum progesterone secretion.
   ],
-  [*Fertilisation and embryo development up to blastocyst, implantation*], [
-    Fertilisation, embryo development up to blastocyst formation, implantation;
+  [*Fertilisation & Implantation*], [
+    Fertilisation, embryo development up to blastocyst formation, implantation.
   ], [
-    Sequencing events from sperm entry to the buried blastocyst.
+    Capacitation; acrosome reaction; cortical block to polyspermy; cleavage; morula; blastocyst ICM vs trophoblast.
   ],
-  [*Pregnancy, embryonic development and placenta*], [
-    Pregnancy and embryonic development and placenta;
+  [*Pregnancy, Placenta & Birth*], [
+    Pregnancy and embryonic development; placenta; parturition and lactation.
   ], [
-    Linking placenta functions and foetal milestones to the right month.
-  ],
-  [*Parturition and lactation*], [
-    Parturition and lactation
-  ], [
-    Explaining the oxytocin feedback loop and the value of colostrum.
+    Placental hormones (hCG, hPL, relaxin); fetal ejection reflex; oxytocin positive feedback; colostrum IgA.
   ],
 )
 
 #exam-pointer[
-  CUET UG pattern (NTA official information bulletin and syllabus, 2026 cycle — the
-  current 2027 baseline): each subject paper carries *50 compulsory questions* in
-  *60 minutes*, with $+5$ for every correct answer and $-1$ for every incorrect answer. The Biology paper maps strictly to NCERT
-  Class 12, and Unit VI opens the reproduction block: systems, gametes, the cycle
-  that times them, and the nine months that follow.
+  *Official CUET UG Biology Pattern (NTA 2026/2027 Baseline):* The Biology domain paper carries *50 compulsory questions* to be answered in *60 minutes* ($+5$ correct, $-1$ incorrect). Human Reproduction is among the top three highest-frequency chapters in domain Biology, with heavy emphasis on hormone flux graphs, cellular ploidy, developmental arrest checkpoints, and sequence-based reproductive physiology.
 ]
 
-= The Male Reproductive System
+= Module 1: The Male Reproductive System & Testicular Histology
 
-The male system is a factory with a delivery route. The testes make the sperm, a
-ladder of tubes matures and stores them, and three glands blend their fluids
-into semen. Every part has exactly one job, and questions love to hand you a
-part and ask for that job. So we will walk the whole line, from the factory
-floor to the final exit, and then pin a one-line function to every part.
+Humans are sexually reproducing, viviparous mammals exhibiting marked sexual dimorphism. The male reproductive system is situated predominantly in the pelvic region and comprises primary sex organs (*testes*), secondary accessory ducts, accessory reproductive glands, and external genitalia.
 
-- *The scrotum — the cooling pouch:* a bag of skin that hangs the two testes
-  outside the body cavity.
-- *Why outside?* Making sperm needs a temperature 2–2.5 °C *below* body
-  temperature; the scrotum holds the testes in exactly that cooler zone.
-- *The testes — paired gonads:* gonads are organs that make gametes (sex cells)
-  plus sex hormones; each testis is an oval gland about 4–5 cm long.
-- *Seminiferous tubules:* inside each testis are tightly coiled tubes called
-  seminiferous tubules — the actual sperm factories.
-- *Male germ cells (spermatogonia):* cells lining each tubule that divide and
-  slowly turn into sperm; spermatogonium is the name for one such cell.
-- *Sertoli cells — the nurse cells:* tall cells inside the tubule wall that
-  feed, protect and finally release the growing sperm.
-- *Interstitial (Leydig) cells:* they sit in the spaces *between* tubules and
-  secrete testosterone, the hormone that drives sperm production and male traits.
-- *The duct ladder, in order:* rete testis → vasa efferentia → epididymis →
-  vas deferens → ejaculatory duct → urethra.
-- *The epididymis:* a tightly coiled tube pressed against each testis; it
-  stores sperm for weeks and matures them so they learn to swim.
-- *Accessory glands:* seminal vesicles, prostate gland and bulbourethral
-  (Cowper's) glands — their fluids mix with sperm to form semen.
-- *Semen, the finished mix:* sperm are only a small share of semen; most of the
-  volume is gland fluid that feeds and protects them on the journey.
-- *Why alkaline matters:* the vagina is acidic, so the semen's alkaline
-  secretions shield the sperm as they enter.
+== Scrotal Thermoregulation & Testis Micro-Anatomy
 
-== Every part, one line each
+- *Scrotal Thermoregulation:* The testes are extra-abdominal organs suspended in a cutaneous pouch called the *scrotum*.
+  - *Temperature Differential:* The scrotum functions as a biological thermostat, maintaining testicular temperature *2 degree "C" to 2.5 degree "C" lower than internal body temperature* ($34.5 degree "C"$ to $35 degree "C"$ vs $37 degree "C"$).
+  - *Spermatogenic Imperative:* Human germinal epithelium cannot undergo meiosis at core abdominal temperatures. Undescended testes (*cryptorchidism*) result in complete germ cell atrophy and permanent sterility, though androgen production by Leydig cells remains partially functional.
+  - *Thermoregulatory Muscles:* The *dartos muscle* in the scrotal subcutaneous tissue contracts in cold weather to reduce surface area, while the *cremaster muscle* elevates the testes closer to the pelvic floor for warmth.
+- *Testicular Compartmentalization:*
+  - Each adult testis is an oval body (length 4--5 cm, width 2--3 cm, weight 10--15 g) encased in a tough fibrous capsule, the *tunica albuginea*.
+  - Internally, fibrous septa partition each testis into approximately *250 testicular lobules*.
+  - Each lobule contains *1 to 3 highly convoluted seminiferous tubules*, totaling approximately 750 tubules per testis, with an aggregate length exceeding 250 meters.
+
+== Cytology of the Seminiferous Tubule Niche
+
+A transverse section of a seminiferous tubule reveals a complex germinal epithelium surrounded by a specialized interstitial microenvironment:
 
 #table(
-  columns: (1.1fr, 1.35fr, 1.4fr),
-  table.header[*Part*][*Structure in one line*][*The job it does*],
-  [Scrotum], [Skin pouch outside the abdomen], [Keeps testes 2–2.5 °C cooler for sperm making],
-  [Testis], [Paired oval gonad packed with tubules], [Makes sperm and testosterone],
-  [Seminiferous tubule], [Coiled tube inside the testis], [Site of sperm production],
-  [Sertoli cell], [Nurse cell in the tubule wall], [Feeds developing sperm; releases finished ones],
-  [Leydig cell], [Sits in spaces between tubules], [Secretes testosterone],
-  [Rete testis], [Tiny network where tubules empty], [Collects sperm from the tubules],
-  [Vasa efferentia], [Short fine tubes], [Carry sperm to the epididymis],
-  [Epididymis], [Coiled tube on the testis surface], [Stores and matures sperm],
-  [Vas deferens], [Long tube rising into the abdomen], [Pushes sperm towards the urethra],
-  [Ejaculatory duct], [Where vas deferens meets seminal vesicle], [Delivers sperm plus fluid into the urethra],
-  [Urethra], [Single shared exit tube], [Carries urine or semen, never both together],
-  [Seminal vesicles], [Paired glands behind the bladder], [Add most of the semen fluid, rich in fructose for energy],
-  [Prostate gland], [Single gland below the bladder], [Adds milky alkaline fluid that protects sperm],
-  [Bulbourethral (Cowper's) glands], [Two small pea-sized glands], [Add clear mucus that lubricates and cleans the path],
+  columns: (1fr, 0.9fr, 2.1fr),
+  table.header[*Cell Type*][*Ploidy*][*Histological Architecture & Exact Physiological Role*],
+  [*Spermatogonia* \ (Male Germ Cells)], [$2n$ \ (46 chr)], [Line the inner basement membrane; stem cell reserve (*Type A*) renews population, while committed cells (*Type B*) differentiate into primary spermatocytes.],
+  [*Primary Spermatocytes*], [$2n$ \ (46 chr, 92 chromatids)], [Enormous cells undergoing Meiosis I; synthesize RNA and proteins during prolonged prophase I before reductional division.],
+  [*Secondary Spermatocytes*], [$n$ \ (23 chr, 46 chromatids)], [Short-lived haploid intermediates that immediately undergo Meiosis II (equational division) without an intervening interphase.],
+  [*Spermatids*], [$n$ \ (23 chr, 23 chromatids)], [Small, circular, non-motile haploid cells embedded in Sertoli cell apical recesses; undergo spermiogenesis.],
+  [*Sertoli Cells* \ (Nurse / Sustentacular)], [$2n$ \ (Somatic)], [Tall pyramidal epithelial cells spanning basement membrane to lumen. Key roles: (1) physical support and nutritional supply to germ cells; (2) phagocytose discarded spermatid residual bodies; (3) construct the *blood-testis barrier* via basal tight junctions, shielding foreign haploid antigens from the immune system; (4) secrete *Androgen-Binding Protein (ABP)* under FSH stimulation to concentrate testosterone; (5) synthesize *Inhibin* to exert selective negative feedback on anterior pituitary FSH.],
+  [*Leydig Cells* \ (Interstitial Cells)], [$2n$ \ (Somatic)], [Clustered in interstitial connective tissue between seminiferous tubules alongside blood vessels and immunocompetent cells. Stimulated by pituitary *LH (ICSH)* to synthesize and secrete *androgens* (principally *Testosterone*).],
 )
 
-#analogy-box(title: "Everyday Example — A Car Factory")[
-  Picture a car plant and map it honestly. The *seminiferous tubules* are the
-  production floor where cars (sperm) are built. *Sertoli cells* are the line
-  supervisors who feed parts to each worker. *Leydig cells* are the factory's
-  announcement system — their message (testosterone) travels body-wide and
-  tells every tissue to grow male features. The *epididymis* is the finished
-  goods warehouse, the *vas deferens* the highway out, and the three glands are
-  the paint-and-fuel stations that finally hand over a working vehicle (semen).
+== Male Accessory Ducts & Transport Architecture
+
+Spermatozoa leave the seminiferous tubules and traverse a strict anatomical hierarchy of paired conduits:
+$ "Seminiferous Tubules" arrow.r "Rete Testis" arrow.r "Vasa Efferentia" arrow.r "Epididymis" arrow.r "Vas Deferens" arrow.r "Ejaculatory Duct" arrow.r "Urethra" $
+
+- *Rete Testis:* A labyrinth of anastomosing cuboidal-lined tubules in the mediastinum testis that aggregates sperm from all seminiferous tubules.
+- *Vasa Efferentia (10 to 20 fine tubules):* Ciliated ducts that pierce the tunica albuginea and convey non-motile sperms from rete testis into the epididymal head.
+- *Epididymis (Head/Caput, Body/Corpus, Tail/Cauda):*
+  - A tightly coiled, 6-meter-long tube lined with pseudostratified stereociliated columnar epithelium.
+  - *Function:* Serves as the site for *physiological maturation, acquisition of progressive forward motility, membrane remodeling, and temporary storage* of spermatozoa. Sperm can survive in the cauda epididymis for up to a month.
+- *Vas Deferens (Ductus Deferens — 45 cm):*
+  - A muscular tube that ascends from the cauda epididymis through the *inguinal canal* into the pelvic cavity.
+  - Loops over the ureter, expands into the *ampulla*, joins the duct of the seminal vesicle, and forms the *ejaculatory duct* (2 cm), which penetrates the prostate to open into the prostatic urethra.
+- *Urethra (20 cm):* Common urogenital conduit divided into prostatic, membranous, and penile/spongy segments, terminating at the external *urethral meatus*.
+
+== Accessory Sex Glands & Semen Biochemistry
+
+Seminal plasma is an alkaline, nutrient-dense fluid synthesized by three sets of accessory sex glands:
+
+#table(
+  columns: (1fr, 0.7fr, 2.3fr),
+  table.header[*Accessory Gland*][*Volume %*][*Biochemical Composition & Physiological Significance*],
+  [*Seminal Vesicles* \ (Paired, convoluted glands)], [60--70%], [Secretion is viscous, yellowish, and alkaline. Contains: (1) *Fructose* (exclusive metabolic substrate for sperm mitochondrial ATP generation); (2) *Prostaglandins* (stimulate smooth muscle reverse peristalsis in female uterus/oviducts); (3) *Seminogelin / Clotting Proteins* (coagulates semen post-ejaculation to prevent vaginal loss).],
+  [*Prostate Gland* \ (Single, walnut-sized)], [20--30%], [Encircles the urethra below the bladder. Secretes a thin, milky, slightly alkaline fluid ($"pH" 7.3$) rich in *citrate* (nutrient), *calcium*, *phosphate*, and proteolytic enzymes (*prostate-specific antigen, PSA*, and *fibrinolysin*) that liquify the coagulated semen clot within 15--20 minutes.],
+  [*Bulbourethral Glands* \ (Cowper's — Paired)], [~5%], [Pea-sized glands located beneath the prostate. Prior to ejaculation, secrete an alkaline, clear, viscous mucus that coats the urethra to *neutralize residual acidic urine* and lubricates the glans penis.],
+)
+
+- *Semen Composition:* Average ejaculate is *2.5 to 4 mL*, containing *200 to 300 million spermatozoa* suspended in alkaline seminal plasma ($"pH" 7.2 - 7.7$).
+- *WHO Fertility Benchmark:* At least *60% of sperms must exhibit normal morphology*, and at least *40% must demonstrate vigorous progressive motility*.
+- *Clinical Anomalies:* *Oligospermia* ($<15$ million sperms/mL), *Azoospermia* (complete absence of sperms), *Asthenozoospermia* (defective motility), and *Teratozoospermia* (abnormal morphology).
+
+== External Genitalia: The Penis
+
+- *Erectile Columns:* Composed of three cylindrical vascular bodies bound by fibrous sheaths: two dorsolateral *corpora cavernosa* and one ventromedial *corpus spongiosum* enclosing the penile urethra and expanding distally into the sensitive *glans penis* (covered by retractable *prepuce* / foreskin).
+- *Erection & Ejaculation:* Sexual arousal triggers parasympathetic *Nitric Oxide (NO)* release, elevating cGMP to relax arteriolar smooth muscle; blood engorges cavernous spaces producing rigid erection. Ejaculation is a sympathetic spinal reflex expelling semen through the urethral meatus.
+
+= Module 2: The Female Reproductive System & Ovarian Histology
+
+The female reproductive system generates ova, receives spermatozoa, provides the fertilization site, sustains 9 months of gestation, and delivers and nourishes the infant.
+
+== Ovarian Architecture & Follicular Development
+
+- *Ovaries:* Paired primary sex organs (length 2--4 cm) anchored by the *suspensory ligament* (to pelvic wall) and *ovarian ligament* (to uterus). Covered by cuboidal *germinal epithelium* and fibrous *tunica albuginea*.
+- *Ovarian Stroma:* Outer *cortex* (houses ovarian follicles) and inner *medulla* (blood vessels, lymphatics, nerves).
+- *Follicular Stratigraphy:*
+  - *Primordial Follicle:* Primary oocyte ($2n$, arrested at diplotene) surrounded by a single layer of squamous follicular cells.
+  - *Primary Follicle:* Granulosa cells become stratified cuboidal; *zona pellucida* (glycoprotein coat) begins forming.
+  - *Secondary Follicle:* Multiple granulosa layers enclosed by an organizing stromal *theca*.
+  - *Tertiary Follicle:* Characterized by a fluid-filled cavity (*Antrum*). Theca differentiates into an angiogenic, steroidogenic *theca interna* (synthesizes androgens aromatized to estrogen by granulosa cells) and a fibrous *theca externa*. Primary oocyte completes Meiosis I to form the *Secondary Oocyte ($n$)* and First Polar Body.
+  - *Mature Graafian Follicle (18--25 mm):* Large antrum; secondary oocyte suspended on a granulosa mound (*cumulus oophorus*).
+
+== Female Accessory Ducts: Fallopian Tubes & Uterus
+
+- *Fallopian Tubes (Oviducts — 10 to 12 cm):* Ciliated simple columnar epithelium with secretory peg cells:
+  - *1. Fimbriae:* Finger-like margins that sweep the ovarian surface to catch the ovulated secondary oocyte.
+  - *2. Infundibulum:* Funnel-shaped conduit bearing the abdominal ostium.
+  - *3. Ampulla:* Widest, longest segment (approx. 7 cm). *The ampullary-isthmic junction is the definitive biological site of fertilization.*
+  - *4. Isthmus:* Narrow, thick-walled muscular conduit opening into the uterine cornu.
+- *The Uterus (Womb):* Inverted pear-shaped organ (fundus, body, cervix) with a three-layered wall:
+  - *Perimetrium:* Outer serous peritoneum.
+  - *Myometrium:* Thick interlaced smooth muscle; undergoes hypertrophy in pregnancy and contracts vigorously during labour under *Oxytocin*.
+  - *Endometrium:* Inner vascular mucosal coat. Permanent *stratum basale* regenerates the superficial *stratum functionale*, which proliferates cyclically and sloughs off during menstruation.
+- *Cervix & Vagina:* Cervical canal $+$ vagina constitutes the *birth canal*. Vagina (8--10 cm) is lined by non-keratinized stratified squamous epithelium; commensal *Lactobacillus acidophilus* ferment shed glycogen into lactic acid ($"pH" 3.8 - 4.5$), creating an acidic antimicrobial barrier.
+
+== External Genitalia (*Vulva*) & Mammary Glands
+
+- *Vulval Structures & Male Homologies:*
+  - *Mons Pubis:* Adipose cushion over pubic symphysis covered with pubic hair.
+  - *Labia Majora:* Paired fleshy cutaneous folds (*homologous to male scrotum*).
+  - *Labia Minora:* Paired delicate mucous folds medial to labia majora (*homologous to penile urethra skin*).
+  - *Clitoris:* Sensitive erectile cylinder at anterior junction of labia minora (*homologous to glans penis*).
+  - *Hymen:* Vascular mucous membrane partially occluding the vaginal introitus; torn by coitus, sports, or physical activity; *unreliable index of virginity*.
+  - *Bartholin's Glands:* Greater vestibular glands (*homologous to bulbourethral glands*); secrete lubricating mucus.
+- *Mammary Glands:* Modified sweat glands with 15--20 lobes composed of milk-secreting *alveoli*.
+  - *Milk Ejection Route:* $"Alveoli" arrow.r "Mammary Tubules" arrow.r "Mammary Ducts" arrow.r "Ampulla" arrow.r "Lactiferous Ducts" arrow.r "Nipple"$.
+
+= Module 3: Gametogenesis: Spermatogenesis vs Oogenesis
+
+Gametogenesis is the production of haploid gametes (spermatozoa and ova) from diploid primordial germ cells through meiotic reduction:
+
+#figure(
+  image("assets/bio_gametogenesis_human.png", width: 68%),
+  caption: [Comparative cytogenetic architecture, meiotic progression, hormonal feedback axes, and morphological organization of spermatogenesis versus oogenesis.]
+)
+
+== Spermatogenesis Cytogenetics & Hormonal Control
+
+- *Initiation:* Initiated strictly at puberty (age 13--14) in response to pulsatile hypothalamic *Gonadotropin-Releasing Hormone (GnRH)*.
+- *Cytogenetic Sequence:*
+  - *Multiplication Phase:* Spermatogonia ($2n, 46$ chromosomes) situated on the basement membrane divide mitotically. *Type A spermatogonia* remain as stem cells, while *Type B spermatogonia* differentiate and enlarge into *Primary Spermatocytes ($2n, 46$)*.
+  - *Growth & Meiosis I:* Primary spermatocytes duplicate their DNA ($46$ chromosomes, $92$ chromatids, $4C$ DNA content) and undergo a prolonged prophase I (pachytene crossing over). Completion of Meiosis I yields two equal haploid *Secondary Spermatocytes ($n, 23$ chromosomes, $46$ chromatids, $2C$ DNA content)*.
+  - *Meiosis II:* Secondary spermatocytes immediately undergo equational Meiosis II without interkinesis, dividing centromeres to produce four uniflagellate haploid *Spermatids ($n, 23$ chromosomes, $23$ chromatids, $1C$ DNA content)*.
+- *Spermiogenesis & Spermiation:*
+  - *Spermiogenesis:* The cellular metamorphosis of spherical, non-motile spermatids into functional spermatozoa: (1) Golgi apparatus condenses into the acrosomal cap; (2) nucleus elongates and dehydrates; (3) centrioles align; (4) mitochondria spiral around axial filament forming the *Nebenkern*; (5) excess cytoplasm is shed as a residual body.
+  - *Spermiation:* The release of finished spermatozoa from Sertoli cell crypts into the seminiferous tubule lumen.
+- *Endocrine Circuit:*
+  $ "Hypothalamus (GnRH)" arrow.r "Anterior Pituitary" cases(
+    arrow.r "LH" arrow.r "Leydig Cells" arrow.r "Testosterone" arrow.r "Spermatogenesis",
+    arrow.r "FSH" arrow.r "Sertoli Cells" arrow.r "ABP & Factors" arrow.r "Spermiogenesis"
+  ) $
+  - *Feedback:* High testosterone suppresses hypothalamic GnRH and pituitary LH; Sertoli cells secrete *Inhibin*, which selectively suppresses pituitary FSH synthesis.
+
+== Oogenesis Cytogenetics & The Dual Meiotic Arrests
+
+Oogenesis is initiated during embryonic development, ceases postnatally, resumes cyclically at puberty, and terminates permanently at menopause (~50 years):
+
+- *Prenatal Phase:* Primordial germ cells migrate from yolk sac endoderm into fetal genital ridges, multiplying mitotically to form approximately *2 million oogonia ($2n, 46$)* per ovary by the 20th week of gestation. *Zero oogonia are formed or added after birth.*
+- *Arrest I (Prophase I — Diplotene):* All oogonia enter Meiosis I and arrest at the *diplotene stage of Prophase I*, becoming *primary oocytes ($2n, 46$)* surrounded by pre-granulosa cells (*primordial follicles*).
+- *Follicular Atresia:* Most follicles degenerate (*atresia*). By birth, count falls to ~1 million; by puberty (menarche), only *60,000 to 80,000 primary follicles* survive in each ovary.
+- *Pubertal Resumption:* Each month, FSH stimulates ~15--20 primary follicles. A single dominant tertiary follicle matures into a Graafian follicle.
+- *Meiosis I Completion:* Hours prior to ovulation, the primary oocyte completes Meiosis I.
+  - *Extreme Asymmetric Cytokinesis:* Cleavage furrow forms at the extreme cell periphery, allocating almost all cytoplasm, yolk, glycogen, and maternal organelles to the *Secondary Oocyte ($n, 23$)*, while extruding a tiny nucleus with negligible cytoplasm as the *First Polar Body ($n, 23$)*.
+- *Arrest II (Metaphase II) & Ovulation:* The secondary oocyte begins Meiosis II but arrests at *Metaphase II* due to activity of *Cytostatic Factor (CSF)*. *Ovulation discharges the secondary oocyte arrested at Metaphase II.*
+- *Meiosis II Completion:* When a fertilizing sperm penetrates the plasma membrane, an intracellular calcium surge degrades CSF and MPF. The secondary oocyte rapidly completes Meiosis II, extruding the *Second Polar Body ($n$)* and leaving the mature haploid *Ovum (Ootid, $n$)*.
+
+== Morphological Architecture of Mature Gametes
+
+#table(
+  columns: (1fr, 1.5fr, 1.5fr),
+  table.header[*Parameter*][*Spermatozoon (Male Gamete)*][*Secondary Oocyte / Ovum (Female Gamete)*],
+  [*Dimensions*], [Slender, microscopic (length ~60 $mu m$, width ~3 $mu m$)], [Enormous, spherical, non-motile (diameter ~100--120 $mu m$)],
+  [*Motility*], [Highly motile; flagellar propulsion speed 1.5--3 mm/min], [Completely non-motile; propelled passively by oviduct ciliary beat],
+  [*Nutritional Reserves*], [Dehydrated, no food reserves; relies on seminal fructose], [Enriched with maternal cytoplasm, enzymes, lipids, and glycogen],
+  [*Envelopes*], [Covered by continuous plasma membrane], [Enclosed by plasma membrane, *Zona Pellucida*, and *Corona Radiata*],
+  [*Centrioles*], [Possesses proximal and distal centrioles], [Centrosome lost during meiotic divisions; lacks centrioles],
+  [*Output per MMC*], [1 primary spermatocyte $arrow.r$ 4 viable spermatozoa], [1 primary oocyte $arrow.r$ 1 functional ovum $+$ 2--3 polar bodies],
+)
+
+= Module 4: Menstrual Cycle Endocrinology & Uterine Dynamics
+
+The reproductive cycle in non-pregnant female primates (humans, apes, Old World monkeys) is termed the *menstrual cycle*. Its average duration is *28 days* (ranging from 25 to 35 days).
+
+#figure(
+  image("assets/bio_menstrual_flow.png", width: 68%),
+  caption: [Synchronized 28-day endocrine orchestration of the human menstrual cycle: pituitary gonadotropins (LH, FSH), ovarian steroids (estrogens, progesterone), and endometrial structural remodeling.]
+)
+
+== The Four Phases of the 28-Day Cycle
+
+- *1. Menstrual Phase (Days 1 to 5):*
+  - Initiated when fertilization does not occur. Progesterone and estrogen levels crash due to regression of the corpus luteum.
+  - *Vascular Ischemia:* Sudden withdrawal of progesterone triggers sharp spasmodic contractions of endometrial spiral arterioles, causing ischemic tissue necrosis.
+  - *Menstrual Flow:* The necrotic stratum functionale sloughs off, discharging approximately 40--80 mL of blood, glandular mucus, and unfertilized secondary oocyte debris through the vagina.
+- *2. Follicular / Proliferative Phase (Days 6 to 13):*
+  - Hypothalamic GnRH stimulates anterior pituitary *FSH* and *LH* secretion.
+  - FSH recruits and matures a cohort of ovarian follicles (Primary $arrow.r$ Secondary $arrow.r$ Tertiary $arrow.r$ Graafian).
+  - Growing granulosa and theca interna cells secrete escalating quantities of *Estrogens*.
+  - *Endometrial Repair:* High estrogen stimulates rapid mitotic proliferation of uterine stroma, blood vessels, and tubular glands, restoring endometrial thickness to 3--5 mm. Cervical mucus becomes clear, watery, and alkaline to facilitate sperm migration.
+- *3. Ovulatory Phase (Day 14 — Mid-Cycle Peak):*
+  - Estrogen levels surpass a critical physiological threshold, triggering a neuroendocrine switch from negative feedback to *positive feedback* on the pituitary.
+  - *LH Surge:* A massive, sharp spike in LH secretion (accompanied by a smaller FSH surge) reaches peak levels at mid-cycle.
+  - *Ovulation:* The LH surge induces proteolytic enzymes that dissolve the follicular wall. The mature Graafian follicle ruptures, discharging the *Secondary Oocyte ($n$, arrested at Metaphase II)* into the peritoneal cavity. Basal body temperature rises by $0.3 degree "C"$ to $0.5 degree "C"$ due to early progesterone synthesis.
+- *4. Luteal / Secretory Phase (Days 15 to 28 — Invariable 14 Days):*
+  - Under LH influence, the collapsed remnant of the ruptured Graafian follicle transforms into a bright yellow endocrine body called the *Corpus Luteum*.
+  - *Progesterone Dominance:* Corpus luteum secretes immense amounts of *Progesterone* (the hormone of pregnancy) and moderate estrogen.
+  - *Secretory Transformation:* Endometrium reaches maximum thickness (6--8 mm); uterine glands become highly tortuous, coiled, and secrete a glycogen-rich fluid ("uterine milk") to nourish the impending blastocyst.
+  - *Dual Fate Rule:*
+    - *If Unfertilized:* High progesterone exerts strong negative feedback inhibiting pituitary LH; lack of LH causes corpus luteum to degenerate into a fibrous scar called the *Corpus Albicans*. Progesterone plunges, triggering the next menstrual cycle.
+    - *If Fertilized:* The implanting blastocyst secretes *hCG*, rescuing the corpus luteum and maintaining high progesterone to prevent menstruation.
+
+#worked-example("Worked Example — Menstrual Cycle Cycle Calculations")[
+  *Clinical Scenario:* A female patient exhibits an irregular menstrual cycle averaging *34 days*. On which day of her cycle is ovulation expected to occur, and what is her fertile window?
+  
+  *Step-by-Step Physiological Calculation:*
+  - *Rule of Fixed Luteal Phase:* In human females, the post-ovulatory luteal (secretory) phase has a strictly fixed biological duration of *14 days* across all cycle lengths. Variations in cycle length are due entirely to changes in the follicular/proliferative phase.
+  - *Ovulation Day Calculation:*
+    $ "Ovulation Day" = "Total Cycle Length" - 14 "days" = 34 - 14 = "Day 20" $
+  - *Fertile Window:* Secondary oocyte survives 24 hours post-ovulation; viable sperms persist up to 72 hours in the female tract. Therefore, the fertile window spans *Day 17 to Day 21*.
 ]
 
-#worked-example("Worked Example — Trace the Journey")[
-  A question lists six stops in scrambled order: urethra, epididymis, rete
-  testis, vas deferens, vasa efferentia, ejaculatory duct. Put them in the
-  order a sperm travels.
-
-  - *Start where sperm are born:* the seminiferous tubules empty into the
-    *rete testis*.
-  - *Small pipes next:* the *vasa efferentia* lift sperm out to the epididymis.
-  - *Warehouse, then highway:* sperm mature in the *epididymis*, then ride the
-    *vas deferens* up and over the bladder.
-  - *Final blend:* the *ejaculatory duct* joins the urethra, and the *urethra*
-    carries semen out.
-
-  Answer: rete testis → vasa efferentia → epididymis → vas deferens →
-  ejaculatory duct → urethra. Learn the ladder once; sequence questions
-  become free marks.
-]
-
-= The Female Reproductive System
-
-The female system fits in a space smaller than your hand, yet it runs a monthly
-construction project, catches a tiny egg, and grows a whole baby when needed.
-The ovaries make the eggs and the hormones; a pair of tubes carries each egg a
-few centimetres; and the uterus is the room that gets redecorated every month.
-Here too, the game is the same: part → structure → function.
-
-- *The ovaries — paired gonads:* almond-shaped glands, one on each side of the
-  abdomen, that make eggs (ova) plus the hormones oestrogen and progesterone.
-- *Oestrogen:* the hormone that develops female traits and rebuilds the uterine
-  lining; progesterone keeps that lining in place.
-- *Fallopian tubes (oviducts):* each is about 10–12 cm long and has three parts
-  in a fixed order: infundibulum → ampulla → isthmus.
-- *Infundibulum:* the funnel-shaped end near the ovary, fringed with
-  finger-like *fimbriae* that sweep the released egg into the tube.
-- *Ampulla:* the wider middle stretch — the usual site where sperm meets egg.
-- *Isthmus:* the narrow last stretch that opens into the uterus.
-- *The uterus — the womb:* an upside-down pear, about the size of a fist, with
-  three wall layers (next table).
-- *Cervix:* the narrow neck of the uterus that opens into the vagina.
-- *Vagina:* the passage that receives semen, lets the baby out at birth, and
-  carries the monthly flow out.
-- *External genitalia:* together called the vulva — skin folds and openings
-  around the vaginal entrance.
-- *Mammary glands:* the milk glands of the breasts; tiny sacs called alveoli
-  make the milk, and ducts carry it to the nipple.
-
-== Every part, one line each
-
-#table(
-  columns: (1.1fr, 1.35fr, 1.4fr),
-  table.header[*Part*][*Structure in one line*][*The job it does*],
-  [Ovary], [Almond-sized paired gland], [Makes eggs; releases oestrogen and progesterone],
-  [Fimbriae], [Finger-like fringes on the tube end], [Catch the egg released into the body cavity],
-  [Infundibulum], [Funnel of the fallopian tube], [Guides the egg into the tube],
-  [Ampulla], [Wider middle part of the tube], [Usual site of fertilisation],
-  [Isthmus], [Narrow last part of the tube], [Passes the egg on to the uterus],
-  [Perimetrium], [Thin outer covering of the uterus], [Wraps and protects],
-  [Myometrium], [Thick middle muscle layer], [Contracts strongly during labour],
-  [Endometrium], [Inner gland-rich lining], [Rebuilds every month; the bed an embryo implants in; sheds if unused],
-  [Cervix], [Narrow neck of the uterus], [Opens into the vagina; widens at birth],
-  [Vagina], [Muscular tube to the outside], [Receives semen; birth canal; exit for the monthly flow],
-  [Mammary alveoli], [Tiny milk sacs in the breast], [Make and store milk],
-  [Milk ducts], [Branching tubes from alveoli], [Carry milk to the nipple],
-)
-
-#analogy-box(title: "Everyday Example — A Catch at the Boundary")[
-  The ovary is not connected to the fallopian tube by a pipe — the egg is
-  released straight into the small body space around it. The *fimbriae* are
-  the fielder at the boundary: they flex and sweep just as the egg pops out,
-  and their motion pulls it into the *infundibulum*. If the catch is missed,
-  the egg has no road to the uterus — that is why the fimbriae moment matters.
-]
-
-#worked-example("Worked Example — Which Wall Layer Does What?")[
-  Three statements, three layers — decide which layer each statement names.
-
-  - *"I contract and push the baby out."* Muscle that contracts = *myometrium*.
-  - *"I am rebuilt and shed every month."* The monthly lining = *endometrium*.
-  - *"I am just the thin outer wrap."* Outer cover = *perimetrium*.
-
-  Trap to note: students often say the *myometrium* sheds. Only the
-  endometrium bleeds and sheds — the muscle layer stays put.
-]
-
-== Quick drill — one line each
-
-#table(
-  columns: (1.6fr, 1.6fr),
-  table.header[*Question*][*Answer in one line*],
-  [First part of the tube to receive the egg?], [Infundibulum — the fimbriae sweep the egg in],
-  [Usual fertilisation site?], [The ampulla — the tube's wider middle stretch],
-  [Which wall layer is muscle for labour?], [Myometrium],
-  [Which wall layer rebuilds and sheds monthly?], [Endometrium],
-  [Milk makers vs milk carriers?], [Alveoli make milk; ducts carry it to the nipple],
-)
-
-- *One egg a month:* after puberty the ovary releases one egg per cycle — and
-  remember, the ovary's full stock of eggs was laid down before birth.
-- *Two-way traffic:* the tube carries the egg downward while sperm swim upward
-  past the isthmus and ampulla — the two meet in the middle stretch.
-
-= Spermatogenesis — the Sperm Factory
-
-Spermatogenesis is the name for the whole process that turns a simple lining
-cell into a swimming sperm. It is a story of two cell divisions in a fixed
-order, and the classic check here is simple: how many cells, and with how many
-chromosomes, at each stage? Keep counting as you read — 46 halving to
-23 is the whole trick. The process starts only at *puberty*, when hormones
-switch it on.
-
-- *Definition in one line:* spermatogenesis = the making of sperm (spermatozoa)
-  from male germ cells inside the seminiferous tubules.
-- *Step 1 — spermatogonia multiply:* each spermatogonium (46 chromosomes)
-  divides by *mitosis*; some daughters stay as reserve stock, others grow.
-- *Step 2 — primary spermatocyte:* a grown-up spermatogonium (still 46) is now
-  called a primary spermatocyte, ready for the first meiotic division.
-- *Step 3 — meiosis-I:* the primary spermatocyte (46) splits into *two
-  secondary spermatocytes*, each with 23 chromosomes.
-- *Step 4 — meiosis-II:* each secondary spermatocyte splits again, giving *two
-  spermatids* — so four spermatids from one primary spermatocyte, all with 23.
-- *Step 5 — spermiogenesis:* each round spermatid reshapes into a slim,
-  swimming *spermatozoon* (sperm). No cell division here — only remodelling.
-- *Step 6 — spermiation:* the Sertoli cells release the finished sperm into
-  the tubule's central canal (the lumen).
-
-#formula-box(title: "The Cell Ladder — One Line at a Time")[
-  1 spermatogonium (46) → mitosis → 1 primary spermatocyte (46)
-
-  1 primary spermatocyte (46) → meiosis-I → 2 secondary spermatocytes (23 each)
-
-  1 secondary spermatocyte (23) → meiosis-II → 2 spermatids (23 each)
-
-  4 spermatids (23) → spermiogenesis → 4 spermatozoa (23)
-
-  #v(4pt)
-  *Carry the bottom line:* one primary spermatocyte gives *4 sperm* — equal,
-  tiny and motile. Contrast with oogenesis in the next section.
-]
-
-== Hormones that run the factory
-
-- *GnRH starts it all:* the hypothalamus releases GnRH (gonadotropin-releasing
-  hormone), which reaches the pituitary and switches it on.
-- *LH (ICSH) — the testosterone switch:* luteinising hormone acts on Leydig
-  cells, which secrete testosterone; without it, sperm cannot be made.
-- *FSH — the nurse signal:* follicle-stimulating hormone acts on Sertoli
-  cells, which then support and release the growing sperm.
-- *Both together:* testosterone + FSH push spermatogenesis forward — a classic
-  matching question pairs each hormone with the cell it acts on.
-
-== Reading a sperm
-
-#table(
-  columns: (1fr, 1.6fr, 1.25fr),
-  table.header[*Part*][*What it holds*][*Why it matters*],
-  [Head], [The nucleus with 23 chromosomes, capped by the acrosome], [Carries the father's 23 chromosomes to the egg],
-  [Acrosome], [A cap over the head, packed with enzymes], [Dissolves a path through the egg's protective layers],
-  [Middle piece], [Many mitochondria (cell powerhouses) coiled tightly], [Burns fuel to whip the tail — the sperm's engine],
-  [Tail], [A long flagellum (whip-like propeller)], [Pushes the sperm forward through the fluids],
-)
-
-- *Size check:* a human sperm is about 60 micrometres long — a head, an engine
-  and a propeller packed into one cell.
-
-== The hormone chain, cell by cell
-
-#table(
-  columns: (0.95fr, 1.05fr, 1fr, 1.35fr),
-  table.header[*Signal*][*Made by*][*Acts on*][*Effect*],
-  [GnRH], [Hypothalamus], [Pituitary], [Switches LH and FSH release on],
-  [LH (ICSH)], [Pituitary], [Leydig cells], [They secrete testosterone],
-  [FSH], [Pituitary], [Sertoli cells], [They feed sperm and release finished ones],
-  [Testosterone], [Leydig cells], [Tubules and the whole body], [Builds male traits; supports sperm making],
-)
-
-- *Why the chain matters:* for any "which hormone acts where" question, name
-  the *cell* first — hormone-to-cell matching is the whole trick.
-- *Numbers to carry:* 46 halving to 23, four sperm per primary spermatocyte,
-  sperm about 60 micrometres long, testes running 2–2.5 °C cooler.
-
-#worked-example("Worked Example — Six Judges, True or False")[
-  Judge each statement before you read the verdict.
-
-  - *"Spermatogonia divide by meiosis."* — *False.* They divide by mitosis;
-    meiosis begins with the primary spermatocyte.
-  - *"One primary spermatocyte gives four sperm."* — *True.* Two meiotic
-    divisions, four equal products.
-  - *"Spermiogenesis is a cell division."* — *False.* It is pure reshaping of
-    a spermatid into a sperm; no division happens.
-  - *"Spermiation and spermiogenesis are the same."* — *False.* Spermiogenesis
-    reshapes the cell; spermiation is the Sertoli cell releasing it into the
-    lumen.
-  - *"FSH acts on Leydig cells."* — *False.* FSH acts on Sertoli cells; LH
-    (ICSH) acts on Leydig cells.
-  - *"Sperm are made at body temperature."* — *False.* They need 2–2.5 °C
-    below body temperature, which is the scrotum's whole point.
-]
-
-= Oogenesis — the Egg Factory
-
-Oogenesis makes eggs, and it breaks every rule you just learned. It starts
-*before the girl is born*, pauses twice, and ends with one big egg plus tiny
-discarded cells instead of four equal sperm. The pauses are the most-asked
-facts in this chapter, so we will name each one and the exact stage it freezes
-at.
-
-- *Before birth — the big start:* in the foetal ovary, oogonia (46) multiply by
-  mitosis, then enter meiosis-I and *freeze in prophase-I* as primary oocytes.
-- *Key exam fact:* every primary oocyte is already arrested (paused) in
-  prophase-I *before the girl is even born* — no new oogonia are made after birth.
-- *At puberty — one a month:* each month, one primary oocyte finishes meiosis-I.
-- *Meiosis-I is unequal:* the cell splits into a huge *secondary oocyte* (23
-  chromosomes) plus a tiny *first polar body* — a half-sized cell that gets
-  discarded.
-- *Second pause:* the secondary oocyte freezes in *metaphase-II* and is released
-  at ovulation in that state.
-- *Meiosis-II finishes only after sperm entry:* when a sperm enters, the
-  secondary oocyte completes meiosis-II, giving the *ovum* (23) plus a second
-  polar body.
-- *The follicle around the egg:* follicle cells surround and feed the oocyte;
-  the mature, fluid-filled one is the *Graafian follicle*, and its burst is
-  ovulation.
-- *Zona pellucida:* a thick glycoprotein jacket (sugar-protein layer) around the
-  egg that sperm must cross.
-- *After the burst:* the empty follicle turns into the *corpus luteum*, which
-  secretes progesterone — the pregnancy-support hormone.
-
-== Spermatogenesis vs Oogenesis — side by side
-
-#table(
-  columns: (1.1fr, 1.45fr, 1.45fr),
-  table.header[*Question*][*Spermatogenesis*][*Oogenesis*],
-  [Where?], [Seminiferous tubules of the testis], [Follicles of the ovary],
-  [When does it start?], [Only at puberty], [Before birth (arrested till puberty)],
-  [Cells from one parent cell], [4 equal sperm], [1 ovum + polar bodies (discarded)],
-  [Pauses (arrests)?], [None — runs straight through], [Twice: prophase-I before birth; metaphase-II till sperm entry],
-  [Parent cell size], [Equal, tiny divisions], [Very unequal — almost all cytoplasm goes to one egg],
-  [Hormone that runs it], [FSH on Sertoli; LH/ICSH on Leydig], [FSH on follicles; LH surge bursts the Graafian follicle],
-  [Finished product], [Motile sperm, made continuously], [One egg per month, non-motile, food-rich],
-)
-
-#analogy-box(title: "Everyday Example — Two Divisions, Two Styles")[
-  *Spermatogenesis* is a four-cup idli maker: one batch of batter (46) is poured
-  so that four equal, light idlis (23 each) come out at once. *Oogenesis* is a
-  single-bowl celebration cake: almost all the batter (the cytoplasm and food
-  store) goes into one big cake (the ovum), while two-three tiny crumbs (the
-  polar bodies) are swept off the counter. The mapping is exact — equal share
-  versus near-total share to one product.
-]
-
-#worked-example("Worked Example — Count the Cells")[
-  State the chromosome number and cell count at each point.
-
-  - *One primary spermatocyte after meiosis-I:* two secondary spermatocytes,
-    each with *23* chromosomes.
-  - *Both secondary spermatocytes after meiosis-II:* four spermatids, 23 each —
-    so 2 × 2 = *4 sperm* finally.
-  - *One primary oocyte after meiosis-I:* one secondary oocyte + one first
-    polar body, both with *23* chromosomes — but only *1* will become an egg.
-
-  The same divisions, opposite products: 4 equal sperm versus 1 egg plus
-  leftovers. That single line answers most gametogenesis questions.
-]
-
-== The follicle grows with the egg
-
-The egg never travels alone — a coat of follicle cells grows around it, stage
-by stage, and each stage has a name the exam checks.
-
-#table(
-  columns: (1.1fr, 2.1fr),
-  table.header[*Stage*][*What happens*],
-  [Primary follicle], [A single layer of cells wraps the primary oocyte],
-  [Secondary follicle], [More layers of cells pile on around the oocyte],
-  [Tertiary follicle], [A fluid-filled cavity appears; the oocyte sits off-centre],
-  [Graafian follicle], [Mature and fluid-swollen — ready to burst on day 14],
-  [After the burst], [The emptied follicle becomes the corpus luteum, the progesterone factory],
-)
-
-- *Zona pellucida timing:* the thick glycoprotein jacket forms as the follicle
-  grows — the sperm will have to cross it later.
-- *Two stories, two halves:* before day 14 the follicle's story is oestrogen;
-  after day 14 the corpus luteum's story is progesterone.
-
-= The Menstrual Cycle
-
-Think of the cycle as the uterus preparing a bed every month. The ovary grows
-an egg, and the uterine lining turns into a soft, blood-rich bed for it. If the
-egg is not fertilised, the bed is stripped and rebuilt — and that shedding is
-the period. One cycle is counted from the first day of bleeding to the first
-day of the next, and the standard model length is *28 days*.
-
-- *Four phases in order:* menstrual (days 1–5) → follicular (days 5–13) →
-  ovulation (day 14) → luteal (days 15–28).
-- *Menstrual phase (days 1–5):* the endometrium sheds out as the flow; all
-  hormones sit at their lowest.
-- *Follicular phase (days 5–13):* FSH grows several follicles in the ovary;
-  one becomes dominant; its oestrogen rebuilds the endometrium.
-- *Ovulation (day 14):* a sudden *LH surge* bursts the Graafian follicle; the
-  secondary oocyte is released and caught by the fimbriae.
-- *Luteal phase (days 15–28):* the empty follicle becomes the corpus luteum and
-  makes progesterone, which keeps the bed warm and waiting.
-- *If no fertilisation:* the corpus luteum dies after about 14 days, progesterone
-  falls, the lining loses support — and day 1 begins again.
-- *If fertilisation happens:* the corpus luteum is kept alive and progesterone
-  keeps flowing, so no period comes and the pregnancy holds.
-
-#figure(image("assets/bio_menstrual_flow.png", width: 100%), caption: [The 28-day menstrual cycle — four phases, their day ranges and the hormones that drive each one.])
-
-== The hormone timeline, phase by phase
-
-#table(
-  columns: (1.05fr, 0.75fr, 1.2fr, 1.2fr),
-  table.header[*Phase*][*Days*][*Hormone at its peak*][*What the body does*],
-  [Menstrual], [1–5], [All hormones low], [Endometrium sheds as the monthly flow],
-  [Follicular], [5–13], [FSH rising, then oestrogen climbing], [Follicles grow; endometrium rebuilds layer by layer],
-  [Ovulation], [14], [LH surge (biggest spike of the month)], [Graafian follicle bursts; secondary oocyte released],
-  [Luteal], [15–28], [Progesterone high, oestrogen moderate], [Corpus luteum forms; lining stays plush and waiting],
-)
-
-#analogy-box(title: "Everyday Example — The Monthly Hotel Room")[
-  Treat the uterus as a hotel room prepared for a guest. The *follicular phase*
-  is housekeeping: fresh sheets (the endometrium) laid day by day. The *LH
-  surge* is the doorbell — the egg arrives on day 14. *Progesterone* is the
-  "room reserved" sign that keeps the sheets on. If the guest (an embryo)
-  checks in, the sign stays up; if nobody arrives by day 28, housekeeping
-  strips the room and the cycle restarts.
-]
-
-- *When the cycle pauses:* pregnancy stops it completely (no shed bed while an
-  embryo rests on it).
-- *Lactational amenorrhoea:* during intense breast-feeding, cycles often stay
-  switched off — this is called lactational amenorrhoea (amenorrhoea = absence
-  of menstruation).
-- *Menarche — the first period:* the cycle's starting whistle at puberty, when
-  the hormone system first switches the whole routine on.
-- *Menopause — the last period:* at about 45–50 years of age the ovaries
-  retire, cycles stop for good, and menstruation ends.
-
-== Two keywords per phase
-
-#table(
-  columns: (1.05fr, 1.35fr, 1.35fr),
-  table.header[*Phase (days)*][*Ovary keyword*][*Uterus keyword*],
-  [Menstrual (1–5)], [All hormones low], [Lining sheds as the flow],
-  [Follicular (5–13)], [FSH grows follicles; oestrogen rises], [Lining rebuilds layer by layer],
-  [Ovulation (14)], [LH surge bursts the Graafian follicle], [Egg released and caught by fimbriae],
-  [Luteal (15–28)], [Corpus luteum makes progesterone], [Lining stays plush and waiting],
-)
-
-- *Revision trick:* say the two keywords aloud in order — "shed, rebuild,
-  burst, wait" — and the 28-day map replays itself in four words.
-
-= Fertilisation, Cleavage and Implantation
-
-One sperm, one egg, and a race with a deadline. Of the millions of sperm
-released, only a few hundred reach the tube, and just one is allowed inside.
-From that single meeting, the body runs a fixed programme: divide, travel,
-bury. Learn the three numbers — day of meeting, day of arrival, day of burial
-— and this section becomes easy marks.
-
-- *The deposit:* semen is released into the vagina (about 200–300 million sperm
-  per release); sperm swim up through the uterus into the fallopian tubes.
-- *Capacitation:* the fluids of the female tract prime the sperm's outer
-  membrane — only then can it fertilise.
-- *The acrosome reaction:* at the egg, the acrosome bursts and releases enzymes
-  that digest a path through the cells and the zona pellucida.
-- *The cortical reaction:* the moment one sperm enters, the egg's outer layer
-  hardens so no second sperm can enter — the polyspermy block.
-- *Where it happens:* fertilisation occurs at the *ampullary-isthmic junction*
-  — the meeting point of the tube's middle and last parts.
-- *Sperm entry completes meiosis-II:* the secondary oocyte finishes its second
-  division, giving the ovum (23) plus a second polar body.
-- *The zygote:* sperm nucleus (23) + ovum (23) = zygote with 46 chromosomes —
-  the single cell that starts a whole human.
-
-== Cleavage: divide first, grow later
-
-- *Cleavage:* a series of quick mitotic divisions of the zygote; the cells
-  divide again and again *without growing in between*.
-- *The count:* 2 → 4 → 8 → 16 cells; the 16-cell ball is the *morula* (Latin
-  for mulberry — it looks like one).
-- *The journey:* cleavage starts in the tube while cilia (tiny hairs) and muscle
-  push the morula towards the uterus.
-- *The blastocyst:* in the uterus the morula becomes a hollow ball — outer
-  flat cells (trophoblast) + a knob of cells inside (inner cell mass).
-- *Who becomes what:* the trophoblast grows into the placenta's embryonic side;
-  the inner cell mass becomes the embryo proper.
-- *Implantation:* about 6–7 days after fertilisation, the trophoblast attaches
-  to the endometrium, and uterine cells grow over and bury it.
-
-#table(
-  columns: (1.15fr, 0.85fr, 1.35fr),
-  table.header[*Stage*][*Cells*][*Where it sits*],
-  [Zygote], [1 (46 chromosomes)], [Ampullary-isthmic junction of the tube],
-  [Early cleavage (2, 4, 8 cells)], [2–8], [Still travelling down the fallopian tube],
-  [Morula], [16], [Near the end of the tube],
-  [Blastocyst], [About 100+], [Free in the uterine cavity],
-  [Implanted blastocyst], [Trophoblast + inner cell mass], [Buried in the endometrium (~6–7 days after fertilisation)],
-)
-
-#analogy-box(title: "Everyday Example — The Guest Checks In")[
-  Recall the hotel from the last section. The egg was the doorbell day; now the
-  guest actually arrives — a blastocyst drifting into a prepared room. The
-  *trophoblast* is the guest's sticky luggage: it presses against the sheets
-  (the endometrium) and the room wraps around it (implantation). From then on,
-  room service runs day and night for nine months — and that service desk is
-  the placenta, next section.
-]
-
-== The barriers one sperm must cross
-
-#table(
-  columns: (1.3fr, 1.9fr),
-  table.header[*Barrier*][*How it is crossed*],
-  [Fluids of the female tract], [Capacitation primes the sperm's outer membrane],
-  [Cells around the egg], [Acrosomal enzymes push a path through],
-  [Zona pellucida], [Enzymes digest a way in; exactly one sperm enters],
-  [The egg's hardening shell], [The cortical reaction blocks every second sperm — the polyspermy block],
-)
-
-- *Why the block matters:* two sperm entering one egg would give 69
-  chromosomes — the cortical reaction keeps the count at exactly 46.
-- *Symmetry of the meeting:* the sperm arrives with 23 and finishes the egg's
-  meiosis-II, so both halves contribute 23 — zygote 46.
-- *Division drill:* from 1 zygote to a 16-cell morula takes exactly *four
-  rounds* of cleavage — 1 → 2 → 4 → 8 → 16.
-- *Fluid in the ball:* the blastocyst carries a fluid-filled space that helps
-  it swell and settle onto the lining before implantation.
-
-#worked-example("Worked Example — The Number Journey")[
-  Follow the numbers from first meeting to buried blastocyst.
-
-  - *At fertilisation:* sperm 23 + ovum 23 = *zygote 46 chromosomes*.
-  - *By cleavage's end:* 16 cells — the morula, each cell still 46.
-  - *At the blastocyst:* about 100+ cells in two teams — trophoblast outside,
-    inner cell mass inside.
-  - *At implantation:* roughly *6–7 days* after fertilisation, buried in the
-    endometrium.
-
-  Four numbers — 46, 16, two teams, day 6–7 — carry this whole section.
-]
-
-= Pregnancy, Placenta and Development
-
-From implantation onwards, mother and embryo share one traffic junction: the
-placenta. It is the baby's lungs, kitchen and dustbin rolled into one disc,
-while the baby builds itself organ by organ on a fixed month-wise timetable.
-Doctors know that timetable by heart, and so should you — the milestone table
-below is a direct question bank.
-
-- *How the placenta forms:* after implantation, finger-like *chorionic villi*
-  grow from the trophoblast into the uterine tissue; the interlocking of villi
-  and uterine tissue is the placenta.
-- *Nutrition:* glucose, amino acids (protein building blocks) and vitamins cross
-  from mother's blood to the foetus.
-- *Respiration:* the placenta is the foetus's lungs — oxygen crosses in,
-  carbon-dioxide crosses out.
-- *Excretion:* the foetus's nitrogen wastes (like urea) cross into the mother's
-  blood, which filters them out.
-- *The umbilical cord:* the rope connecting foetus to placenta, carrying two
-  arteries and one vein.
-- *Placental hormones:* human chorionic gonadotropin (hCG), human placental
-  lactogen (hPL), oestrogens and progesterone.
-- *Relaxin:* an ovarian hormone of late pregnancy that relaxes the pelvic
-  ligaments and softens the cervix for birth.
-
-== Foetal milestones — the month-wise timetable
-
-#table(
-  columns: (0.9fr, 1.75fr),
-  table.header[*Time after fertilisation*][*What the foetus can do*],
-  [By the end of the first month], [The heart is formed and beating],
-  [By the end of the second month], [Limbs and digits (fingers and toes) appear],
-  [By the end of 12 weeks], [Most major organ systems are laid down (first trimester done)],
-  [By the end of the fifth month], [First movements and hair on the head show],
-  [By the end of 24 weeks], [Eyelids separate and eyelashes appear],
-  [By the end of nine months], [The body is fully formed and properly proportioned],
-)
-
-- *Three layers, one baby:* the early embryo's cells sort into ectoderm (outer
-  layer), mesoderm (middle) and endoderm (inner); every adult organ system
-  traces back to one of these three germ layers.
-- *First trimester = building,* later months = growing and maturing — that is
-  why the first twelve weeks carry the highest risk if harmful drugs or
-  infections cross the placenta.
-
-#worked-example("Worked Example — Milestone Match")[
-  Match each event to its timing, then check yourself against the table.
-
-  - *"Heart is formed and beating"* → by the end of the *first month* — the
-    earliest milestone in the list.
-  - *"Limbs and digits"* → by the end of the *second month*.
-  - *"Eyelids separate, eyelashes appear"* → by the end of *24 weeks* — sixth
-    month, not the fifth.
-  - *"Body fully proportioned"* → end of the *ninth month*.
-
-  Trap: fifth month = movements + hair; sixth month (24 weeks) = eyelids +
-  eyelashes. Students shift these by one month.
-]
-
-== Three germ layers, every organ
-
-#table(
-  columns: (1.2fr, 2fr),
-  table.header[*Germ layer*][*What it grows into*],
-  [Ectoderm (outer)], [Skin surface and the whole nervous system],
-  [Mesoderm (middle)], [Muscles, bones, heart, blood vessels, kidneys],
-  [Endoderm (inner)], [Gut lining, lungs, liver, pancreas],
-)
-
-- *Nine months, three trimesters:* pregnancy runs about nine months, counted
-  as three trimesters of three months each.
-- *Hormone handover:* the placenta's own hormone output rises through the
-  first trimester, alongside the corpus luteum's progesterone supply.
-- *Cushion and shock-absorber:* the foetus floats in amniotic fluid, which
-  protects it from bumps and lets it move freely.
-- *The pregnancy-test hormone:* hCG appears in the mother's urine in early
-  pregnancy — home pregnancy kits detect exactly this hormone.
-- *One rope, three vessels:* the umbilical cord carries two arteries and one
-  vein between foetus and placenta.
-
-#worked-example("Worked Example — Who Makes Which Pregnancy Hormone?")[
-  Match each hormone to its maker and its job.
-
-  - *hCG* → placenta; keeps the corpus luteum alive in early pregnancy, so
-    progesterone never dips.
-  - *hPL* → placenta; helps meet the mother's energy demands of pregnancy.
-  - *Oestrogens + progesterone* → placenta (the big late-pregnancy supply);
-    progesterone holds the lining, oestrogens grow the uterus.
-  - *Relaxin* → *ovary*, not the placenta — it relaxes pelvic ligaments and
-    softens the cervix for the birth to come.
-
-  Trap: relaxin is the odd one out — students file it under the placenta.
-]
-
-= Parturition and Lactation
-
-Birth is not an accident on a random day — it is a reflex with a schedule.
-When the baby is fully developed, signals pass between foetus, placenta and
-mother, mild contractions begin, and a hormone loop takes over that grows
-stronger until the baby is out. Then the same body switches on its next job:
-feeding the newborn.
-
-- *Parturition:* the technical name for the delivery of the baby (birth).
-- *The signal to start:* the fully developed foetus and the placenta send
-  signals that trigger mild uterine contractions — the *foetal ejection reflex*.
-- *Foetal cortisol in one line:* the mature foetus releases cortisol (a stress
-  hormone), one of the signals that helps switch labour on.
-- *Oxytocin enters:* the contractions signal the mother's posterior pituitary
-  to release *oxytocin*.
-- *The loop:* oxytocin makes contractions *stronger* → stronger contractions
-  make the pituitary release *more* oxytocin → the loop repeats until the baby
-  is expelled.
-- *This is positive feedback:* the output (contractions) increases its own
-  cause (oxytocin) — the opposite of the calming negative feedback you meet in
-  temperature control.
-- *Stages of birth:* labour (cervix widens) → baby delivered → *afterbirth*
-  (the placenta is expelled last).
-
-#table(
-  columns: (1fr, 2.2fr),
-  table.header[*Stage*][*What happens*],
-  [Labour], [Strong rhythmic contractions widen the cervix],
-  [Delivery], [The baby is pushed out through the birth canal],
-  [Afterbirth], [The placenta detaches and is expelled last],
-)
-
-
-== Lactation: the milk switch
-
-- *After delivery:* high prolactin turns the mammary glands on; the alveoli
-  start making milk.
-- *Oxytocin's second job:* it squeezes the milk ducts to push milk out when the
-  baby suckles (the let-down reflex).
-- *Colostrum:* the *first milk* — thick and yellowish, made in the first few
-  days.
-- *Why colostrum matters:* it is packed with *IgA antibodies* (proteins that
-  fight infection), which coat the newborn's gut — the baby's first immunity
-  before its own immune system matures.
-
-#analogy-box(title: "Everyday Example — The Growing Applause")[
-  Positive feedback is a crowd's applause loop: a few people clap (mild
-  contractions), the noise excites more people to join (more oxytocin), the
-  clapping grows louder (stronger contractions), which excites even more
-  people — until the hall erupts (the baby is out). In negative feedback the
-  crowd would *hush itself down*; in birth, the loop must build, so the
-  applause only grows. The mapping is honest: each round strengthens the next
-  until the event completes.
-]
-
-#worked-example("Worked Example — Put the Birth Sequence in Order")[
-  A question scrambles five events: baby delivered, placenta expelled, mild
-  contractions begin, oxytocin loop strengthens, cervix widens.
-
-  - *Step 1:* foetal + placental signals → mild contractions begin.
-  - *Step 2:* posterior pituitary releases oxytocin; the loop strengthens
-    contractions.
-  - *Step 3:* cervix widens through labour.
-  - *Step 4:* baby delivered.
-  - *Step 5:* afterbirth — placenta expelled.
-
-  The loop sits *before* delivery, and the placenta always leaves *last* —
-  both classic sequence checks.
-]
-
-== The hormone cast at the end
-
-#table(
-  columns: (1fr, 1.25fr, 1.65fr),
-  table.header[*Hormone*][*Source*][*Job here*],
-  [Oxytocin], [Posterior pituitary], [Strengthens contractions in the birth loop; later pushes milk out],
-  [Prolactin], [Pituitary gland], [Switches the mammary glands on after delivery],
-  [Relaxin], [Ovary], [Relaxes pelvic ligaments; softens the cervix],
-)
-
-- *Two jobs, one hormone:* oxytocin runs birth and breast-feeding — stronger
-  contractions before the birth, milk let-down after it.
-- *Feeding keeps feeding:* suckling keeps both hormones working — more
-  suckling, more milk made and released.
-- *Why breast helps early:* the IgA from colostrum coats the baby's gut, which
-  is why breast-fed newborns face fewer early gut infections.
-
-== Colostrum vs mature milk
-
-#table(
-  columns: (1.1fr, 1.5fr, 1.5fr),
-  table.header[*Feature*][*Colostrum (first days)*][*Mature milk (after ~1 week)*],
-  [Look], [Thick and yellowish], [Thinner and whitish],
-  [Special load], [Packed with IgA antibodies], [Balanced food for growth],
-  [Job], [Baby's first immunity shield], [Steady fuel and building material],
-)
-
-- *Same gland, two recipes:* the alveoli change their output over the first
-  week — immunity first, volume next.
-
-= Key Facts & Terms Cheatsheet
-
-#cheatsheet-box(title: "Key Facts & Terms Cheatsheet — Human Reproduction")[
+= Module 5: Fertilisation, Cleavage & Implantation
+
+- *Insemination & Transport:* During coitus, 200 to 300 million sperms are deposited in the vagina. Sperms swim through the cervix and uterus into the fallopian tube within minutes, assisted by uterine muscular contractions and their own flagellar propulsion.
+- *Capacitation:* Freshly ejaculated sperms cannot fertilize an ovum. Over 5 to 7 hours in the female reproductive tract, sperms undergo *capacitation*---removal of inhibitory cholesterol and glycoproteins from the acrosomal membrane and influx of $"Ca"^(2+)$, hyperactivating flagellar motility.
+- *Fertilisation Locus:* Fertilization occurs strictly at the *Ampullary-isthmic junction (Ampulla)* of the fallopian tube.
+
+== The Acrosome Reaction & Prevention of Polyspermy
+
+1. *Acrosome Reaction:* When the capacitated sperm contacts the ovum, it binds to specific *ZP3 glycoprotein receptors* on the zona pellucida. This triggers exocytosis of the acrosomal vesicle, releasing *hyaluronidase* (digests corona radiata cells) and *acrosin* (digests a passage through the zona pellucida).
+2. *Fast Block to Polyspermy:* The binding of the first sperm membrane triggers immediate sodium influx, causing *rapid electrical depolarization of the oocyte plasma membrane* within 2--3 seconds, transiently preventing further sperm fusions.
+3. *Slow Block (Cortical Reaction — Permanent):* Fusion triggers intracellular calcium wave release, causing thousands of *cortical granules* beneath the oocyte membrane to exocytose enzymes into the perivitelline space. These enzymes hydrolyze ZP3 receptors and cross-link glycoproteins (*zona hardening*), permanently barring any additional sperm from entering.
+4. *Syngamy:* The sperm nucleus, proximal centriole, and mitochondria enter the oocyte cytoplasm. Sperm entry induces the secondary oocyte to complete Meiosis II, forming the haploid *female pronucleus* and the *Second Polar Body*. The male and female pronuclei fuse (*karyogamy / syngamy*), restoring the diploid condition: the *Zygote ($2n, 46$)*.
+
+== Cleavage & Blastocyst Morphogenesis
+
+Within 24 hours of fertilization, the zygote undergoes rapid mitotic divisions called *cleavage* as it is propelled along the fallopian tube towards the uterus by ciliary currents:
+
+- *Holoblastic Cleavage:* Human cleavage is holoblastic (divides entire zygote) and slightly unequal.
+  - $1 "cell" (2n) arrow.r 2 "cells" arrow.r 4 "cells" arrow.r 8 "cells" arrow.r 16 "cells"$ (*Morula*).
+  - *Morula:* A solid, mulberry-like ball of 16 blastomeres (Days 3--4 post-fertilization), encased firmly within the intact zona pellucida to prevent ectopic tubal implantation.
+- *Blastocyst Formation:*
+  - On Day 4--5, fluid enters the morula forming a central cavity (*blastocoel*). The embryo is now a *Blastocyst*.
+  - *Trophoblast:* An outer single layer of flattened epithelial cells; later develops into chorionic villi and contributes to the fetal placenta.
+  - *Inner Cell Mass (ICM / Embryoblast):* A cluster of cells attached to one pole of the trophoblast; represents the true progenitor of the embryo proper. ICM cells are *pluripotent stem cells* capable of differentiating into all body tissues.
+- *Hatching & Implantation:*
+  - By Day 6--7, the blastocyst reaches the uterine cavity and sheds its zona pellucida (*hatching*).
+  - *Implantation:* The trophoblast cells secrete lytic enzymes that digest uterine endometrial stroma, allowing the blastocyst to embed deeply within the vascular endometrium. Implantation is completed by Day 11--12.
+
+= Module 6: Gestation, Placenta, Parturition & Lactation
+
+- *Placenta Formation:* Following implantation, finger-like projections called *chorionic villi* sprout from the trophoblast and interdigitate intimately with maternal endometrial crypts, forming the *Placenta*---a joint structural and functional vascular bridge between fetus and mother. Connected to embryo by the *umbilical cord* (houses 2 umbilical arteries and 1 umbilical vein).
+- *Endocrine Placenta:* The placenta acts as a temporary, vital endocrine gland secreting:
+  - *hCG (Human Chorionic Gonadotropin):* Rescues corpus luteum to sustain progesterone; excreted in maternal urine (diagnostic marker in pregnancy test kits).
+  - *hPL (Human Placental Lactogen):* Modulates maternal metabolism and stimulates breast development.
+  - *Estrogens & Progestogens:* Maintain uterine endometrium and suppress maternal gonadotropins.
+  - *Relaxin:* Peptide hormone secreted by ovary and placenta in late pregnancy to soften pubic symphysis.
+  - *CUET High-Yield Trap:* *hCG, hPL, and Relaxin are synthesized in females ONLY during pregnancy.*
+- *Embryonic Germ Layers & Stem Cells:* Inner cell mass differentiates into three primary germ layers: outer *Ectoderm*, middle *Mesoderm*, and inner *Endoderm*, which collectively give rise to all adult tissues and organs. ICM contains *pluripotent stem cells*.
+- *Timeline of Embryonic Milestones (High-Yield NCERT Sequence):*
+  - *1st Month:* Embryonic heart forms (first clinical sign: detection of fetal heartbeat via stethoscope).
+  - *2nd Month:* Limbs and digits differentiate; primary organogenesis initiates.
+  - *12 Weeks (End of 1st Trimester):* Major organ systems established; external genitalia clearly defined.
+  - *5th Month:* *First fetal movements (Quickening)* observed by mother; fine hair appears on head.
+  - *24 Weeks (End of 2nd Trimester):* Body covered with fine hair (*lanugo*); eyelids separate; eyelashes form.
+  - *9 Months:* Full-term maturity finished; fetus turns cephalic (head-down), prepared for birth.
+- *Parturition (Childbirth) & Ferguson Reflex:* Average human gestation period is 9 months (approx. 280 days).
+  - *Fetal Ejection Reflex:* Fully mature fetus and placenta initiate mild neuroendocrine signals that induce early contractions.
+  - *Oxytocin Positive Feedback Loop:* Impulses travel to maternal posterior pituitary, releasing *Oxytocin*. Oxytocin stimulates powerful myometrial contractions; contractions press fetal head against cervix, sending sensory impulses for increased oxytocin release, generating an escalating positive feedback loop culminating in expulsion of the infant.
+- *Lactation & Colostrum:* Mammary alveoli synthesize milk under anterior pituitary *Prolactin*. Milk letdown (ejection) during suckling is mediated by posterior pituitary *Oxytocin*.
+  - *Colostrum:* The yellowish, watery milk secreted during initial days post-birth. Highly rich in proteins, minerals, and maternal *secretory IgA antibodies*, providing critical passive immunity to protect the newborn infant against gastrointestinal infections.
+
+#pagebreak()
+
+= High-Yield Formula & Concept Cheatsheet
+
+#block(width: 100%)[
+  #set text(size: 8.5pt)
+  #set table(inset: (x: 4pt, y: 2pt))
   #table(
-    columns: (1.25fr, 1.7fr, 1.15fr),
-    table.header[*Term / fact*][*What it means*][*Example / number to carry*],
-    [Scrotum temperature gap], [Testes sit outside the body because sperm need cooler air], [2–2.5 °C below body temperature],
-    [Sertoli cells], [Nurse cells inside the tubule wall], [Feed developing sperm; do spermiation (release)],
-    [Leydig cells], [Interstitial cells between tubules], [Secrete testosterone, driven by LH/ICSH],
-    [Duct ladder], [Route sperm travel out of the testis], [Rete testis → vasa efferentia → epididymis → vas deferens → ejaculatory duct → urethra],
-    [Tube parts in order], [The three stretches of each fallopian tube], [Infundibulum (fimbriae) → ampulla → isthmus],
-    [Uterus wall layers], [Outer to inner], [Perimetrium → myometrium (muscle) → endometrium (lining that sheds)],
-    [Spermatogenesis yield], [Equal products from one parent cell], [1 primary spermatocyte → 4 sperm (23 each)],
-    [Oogenesis yield], [Very unequal products], [1 primary oocyte → 1 ovum + polar bodies (discarded)],
-    [Arrest 1], [Meiotic pause before birth], [Primary oocyte frozen in prophase-I],
-    [Arrest 2], [Meiotic pause at ovulation], [Secondary oocyte frozen in metaphase-II until sperm entry],
-    [Cycle phases], [The 28-day model], [Menstrual 1–5 → follicular 5–13 → ovulation day 14 → luteal 15–28],
-    [Ovulation trigger], [The day-14 hormonal event], [LH surge bursts the Graafian follicle],
-    [Fertilisation site], [Where sperm meets egg], [Ampullary-isthmic junction],
-    [Morula vs blastocyst], [The two early embryo stages], [Morula = 16 cells; blastocyst = hollow ball (trophoblast + inner cell mass)],
-    [Implantation timing], [When the blastocyst buries itself], [~6–7 days after fertilisation],
-    [Placenta hormones], [Four from the placenta], [hCG, hPL, oestrogens, progesterone (relaxin from the ovary)],
-    [Milestones], [Month-wise foetal timetable], [Heart month 1; limbs month 2; organ systems by 12 weeks; hair month 5; eyelids 24 weeks],
-    [Oxytocin loop], [The birth reflex], [Positive feedback: contractions → oxytocin → stronger contractions],
-    [Colostrum], [The first milk], [Yellow, thick, rich in IgA antibodies],
+    columns: (1fr, 0.9fr, 2.1fr),
+    table.header[*Concept / Structure*][*Formula / Ratio*][*Essential Exam Memory Trigger*],
+    [*Spermatogenesis Output*], [1 Primary $arrow.r$ 4 Sperms], [1 primary spermatocyte ($2n$) yields 4 functional motile spermatozoa ($n$).],
+    [*Oogenesis Output*], [1 Primary $arrow.r$ 1 Ovum], [1 primary oocyte ($2n$) yields only 1 functional ovum ($n$) $+$ 2--3 polar bodies.],
+    [*Meiotic Arrest 1*], [Prophase I (Diplotene)], [Initiated prenatally; primary oocytes remain arrested here until puberty.],
+    [*Meiotic Arrest 2*], [Metaphase II], [Secondary oocyte ovulated in Metaphase II; completed *only upon sperm entry*.],
+    [*LH Surge Target*], [Day 14 (Mid-Cycle)], [Triggers rupture of Graafian follicle and release of secondary oocyte.],
+    [*Fertilization Site*], [Ampulla (Oviduct)], [Specific locus at ampullary-isthmic junction; cleavage begins inside oviduct.],
+    [*Pregnancy Hormones*], [hCG, hPL, Relaxin], [Produced in female body *exclusively* during pregnancy; absent in non-pregnant state.],
+    [*Milk Reflex Dual Axis*], [Prolactin vs Oxytocin], [Prolactin synthesizes milk; Oxytocin ejects milk ("milk letdown reflex").],
   )
-
-  #v(4pt)
-  *One-line revision chain:* cooler testes → tubules → 46 to 23 → 4 sperm or
-  1 egg → day-14 LH surge → ampulla meeting → 46 zygote → morula 16 →
-  blastocyst → buried by day 7 → placenta takes over → oxytocin loop →
-  colostrum first.
 ]
 
-= Common Errors and Special Cases
+#figure(
+  image("assets/bio_human_repro_mindmap.png", width: 66%),
+  caption: [Master synthesis mindmap of Human Reproduction: coordinating male/female anatomy, gametogenesis, menstrual hormonal dynamics, fertilization, embryogeny, and parturition.]
+)
 
-#exception-box(title: "Common Errors & Special Cases")[
-  #table(
-    columns: (1.45fr, 1.55fr, 1fr),
-    table.header[*The mistake students make*][*What is right*][*Why / the trap*],
-    [Saying meiosis in males starts before puberty],
-    [Spermatogonia divide by *mitosis* until puberty; meiosis starts when hormones switch on],
-    [Puberty is the meiosis gate],
-    [Treating oogenesis as one continuous run],
-    [It arrests *twice*: prophase-I before birth, metaphase-II until a sperm enters],
-    [Two pauses, two stages],
-    [Blaming the FSH surge for ovulation],
-    [The *LH surge* (day 14) bursts the Graafian follicle],
-    [FSH grows follicles; LH bursts them],
-    [Placing fertilisation in the uterus],
-    [It happens at the *ampullary-isthmic junction* of the tube],
-    [Uterus hosts implantation, not fertilisation],
-    [Counting polar bodies as eggs],
-    [Polar bodies are tiny, discarded leftovers],
-    [Only one usable product per oocyte],
-    [Swapping Sertoli and Leydig jobs],
-    [*Sertoli* nourish sperm; *Leydig* secrete testosterone],
-    [Nurse vs hormone-maker],
-    [Calling birth negative feedback],
-    [Oxytocin loop is *positive* feedback — output increases its own cause],
-    [The loop must build, not calm down],
-  )
+#pagebreak()
+#set text(size: 9.8pt)
+#set par(leading: 0.55em, spacing: 0.75em)
 
-  #v(4pt)
-  *Three checking habits before you mark an option:* (1) name the *stage* of
-  every meiotic pause, not just "paused"; (2) for any hormone question, name
-  the *cell* it acts on first; (3) before saying "uterus", ask whether the
-  event is fertilisation (tube) or implantation and pregnancy (uterus).
-]
+= Practice Questions — Part 1 (Q1 to Q5)
 
-= The Whole Chapter on One Page
-
-#figure(image("assets/bio_human_repro_mindmap.png", width: 100%), caption: [Chapter mindmap — the six blocks of Unit VI and the traps that catch most students.])
-
-= Practice Questions
-
-#mcq(1, [The testes are held in the scrotum, outside the abdominal cavity, because sperm formation needs a temperature that is:], (
-  [equal to normal body temperature], [2–2.5 °C above body temperature], [2–2.5 °C below body temperature], [4–5 °C above body temperature],
+#mcq(1, [In human males, the testes are situated outside the abdominal cavity within the scrotal sac primarily because:], (
+  [The scrotal position protects testes from abdominal hydrostatic pressure],
+  [Spermatogenesis requires an optimal temperature 2°C to 2.5°C lower than core internal body temperature],
+  [The scrotum provides an increased volume of interstitial tissue for androgen storage],
+  [Testicular descent facilitates direct drainage of seminal fluid into the urinary bladder],
 ))
+#solution(1, [Normal human spermatogenesis is heat-sensitive and cannot proceed at internal body core temperature ($37 degree "C"$). The scrotum functions as a physical thermoregulator, maintaining the testes at $34.5 degree "C"$ ($2 degree "C"$ to $2.5 degree "C"$ below core temperature). Undescended testes (*cryptorchidism*) result in sterility due to germ cell degeneration.], answer: [B])
 
-#mcq(2, [Which sequence correctly shows the path a sperm travels from the seminiferous tubules to the outside?], (
-  [epididymis → rete testis → vasa efferentia → vas deferens → urethra], [rete testis → epididymis → vasa efferentia → vas deferens → urethra], [vasa efferentia → rete testis → epididymis → vas deferens → urethra], [rete testis → vasa efferentia → epididymis → vas deferens → ejaculatory duct → urethra],
+#mcq(2, [Which pituitary gonadotropin directly stimulates Leydig cells to synthesize androgens, and which hormone acts on Sertoli cells to support spermiogenesis?], (
+  [FSH acts on Leydig cells; LH acts on Sertoli cells],
+  [LH acts on Leydig cells; FSH acts on Sertoli cells],
+  [Prolactin acts on Leydig cells; Oxytocin acts on Sertoli cells],
+  [GnRH acts on Leydig cells; Inhibin acts on Sertoli cells],
 ))
+#solution(2, [Pituitary Luteinizing Hormone (LH / ICSH) stimulates interstitial Leydig cells to synthesize and secrete androgens (principally testosterone). Follicle Stimulating Hormone (FSH) acts directly on Sertoli cells, stimulating them to secrete androgen-binding protein (ABP) and factors essential for spermiogenesis.], answer: [B])
 
-#mcq(3, [Testosterone, the hormone that drives sperm production and male traits, is secreted by:], (
-  [interstitial (Leydig) cells], [Sertoli cells], [spermatogonia], [secondary spermatocytes],
+#mcq(3, [What is the specific contribution of the proximal centriole brought into the egg by the fertilizing sperm?], (
+  [It provides the energy-generating mitochondrial sheath for early embryonic motility],
+  [It organizes the first mitotic cleavage spindle apparatus in the centriole-deficient ovum],
+  [It triggers the cortical reaction by enzymatically hydrolyzing the glycoprotein matrix],
+  [It directly induces transcription of embryonic paternal genome alleles],
 ))
+#solution(3, [The unfertilized human ovum loses its centrosome during the second meiotic division and lacks a functional centriole. The penetrating spermatozoon contributes its proximal centriole, which organizes the pericentriolar material into the spindle apparatus necessary for the first mitotic cleavage of the diploid zygote.], answer: [B])
 
-#mcq(4, [A primary spermatocyte with 46 chromosomes finally yields how many sperm, each with how many chromosomes?], (
-  [2 sperm with 46 chromosomes each], [4 sperm with 23 chromosomes each], [4 sperm with 46 chromosomes each], [1 sperm with 23 chromosomes],
+#mcq(4, [During human oogenesis, at which precise cytological stage does the primary oocyte arrest from fetal life until puberty, and at which stage is the secondary oocyte arrested at ovulation?], (
+  [Arrest 1: Metaphase I; Arrest 2: Telophase II],
+  [Arrest 1: Diplotene of Prophase I; Arrest 2: Metaphase II],
+  [Arrest 1: Pachytene of Prophase I; Arrest 2: Anaphase I],
+  [Arrest 1: Leptotene of Prophase I; Arrest 2: Prophase II],
 ))
+#solution(4, [Oogenesis features two prominent developmental arrests: (1) Primary oocytes arrest prenatally at the *diplotene stage of Prophase I* within primordial follicles until puberty; (2) Upon completing Meiosis I prior to ovulation, the secondary oocyte enters Meiosis II and arrests at *Metaphase II*, which is released at ovulation.], answer: [B])
 
-#mcq(5, [In a newborn girl, every primary oocyte is already paused at which stage of meiosis?], (
-  [metaphase-II], [anaphase-I], [prophase-I], [metaphase-I],
+#mcq(5, [The formation of a fluid-filled cavity called the antrum is the distinctive histological hallmark of which ovarian follicular stage?], (
+  [Primordial follicle],
+  [Primary follicle],
+  [Secondary follicle],
+  [Tertiary follicle],
 ))
+#solution(5, [The secondary follicle transforms into a tertiary follicle upon the appearance of a fluid-filled follicular cavity called the *Antrum*. The tertiary follicle is also characterized by the differentiation of the surrounding theca into an inner glandular theca interna and an outer fibrous theca externa.], answer: [D])
 
-#mcq(6, [The sudden hormonal event on day 14 of the cycle that bursts the Graafian follicle and releases the oocyte is the:], (
-  [FSH surge], [progesterone peak], [sudden fall of oestrogen], [LH surge],
+#pagebreak()
+
+= Practice Questions — Part 2 (Q6 to Q10)
+
+#mcq(6, [The LH surge that triggers ovulation in a normal 28-day human menstrual cycle occurs precisely at which time point and under what hormonal stimulus?], (
+  [Day 1 to 5, stimulated by high progesterone from the corpus luteum],
+  [Day 14 (mid-cycle), induced by positive feedback from peak estrogen levels],
+  [Day 21, stimulated by low levels of both gonadotropins],
+  [Day 28, triggered by ischemic necrosis of the stratum basale],
 ))
+#solution(6, [During the late follicular phase, peak estrogen secreted by the mature Graafian follicle surpasses a critical threshold, triggering positive feedback on the anterior pituitary. This causes a massive, rapid release of LH (*LH surge*) at mid-cycle (Day 14), which induces rupture of the Graafian follicle and ovulation.], answer: [B])
 
-#mcq(7, [Sperm normally meets the egg at the:], (
-  [ampullary-isthmic junction of the fallopian tube], [uterine cavity], [cervix], [ovary],
+#mcq(7, [What is the endocrine function of the corpus luteum during the post-ovulatory luteal phase, and what causes its degeneration in the absence of pregnancy?], (
+  [It secretes massive quantities of FSH; degenerates due to elevated oxytocin levels],
+  [It secretes large amounts of progesterone to maintain the endometrium; degenerates due to falling LH support],
+  [It secretes relaxin to trigger menstruation; degenerates due to estrogen feedback],
+  [It secretes prolactin to stimulate milk ducts; degenerates due to falling body temperature],
 ))
+#solution(7, [The corpus luteum secretes large amounts of *Progesterone* (and some estrogen), which transforms the endometrium into a glandular, secretory bed. In the absence of fertilization, high progesterone suppresses pituitary LH. Lacking LH trophic support, the corpus luteum regresses into a fibrous *corpus albicans*.], answer: [B])
 
-#mcq(8, [A blastocyst buries itself in the endometrium (implantation) about how many days after fertilisation?], (
-  [1–2 days], [6–7 days], [14 days], [28 days],
+#mcq(8, [In the human female reproductive tract, fertilization of the secondary oocyte by a viable sperm occurs definitively at which anatomical location?], (
+  [Cervical canal],
+  [Uterine fundus],
+  [Ampullary region of the fallopian tube],
+  [Infundibular fimbriae],
 ))
+#solution(8, [Fertilization in humans takes place specifically within the *ampulla (ampullary-isthmic junction)* of the fallopian tube (oviduct). The ovulated secondary oocyte is swept by fimbriae into the infundibulum and conveyed into the ampulla, where it meets capacitated sperms.], answer: [C])
 
-#mcq(9, [Which set of hormones is produced by the placenta during pregnancy?], (
-  [FSH, LH, GnRH], [oxytocin, vasopressin, prolactin], [hCG, hPL, oestrogens, progesterone], [insulin, cortisol, adrenaline],
+#mcq(9, [The permanent, irreversible block to polyspermy in humans is achieved primarily through which physiological mechanism?], (
+  [Rapid hyperpolarization of the corona radiata cells by sodium ions],
+  [Depolarization of the sperm middle piece by mitochondrial calcium release],
+  [Exocytosis of cortical granules that enzymatically alter and harden the zona pellucida],
+  [Mechanical contraction of the myometrium expelling excess sperms],
 ))
+#solution(9, [While membrane depolarization provides a transient fast block, the permanent slow block to polyspermy is the *cortical reaction*. Sperm-egg fusion triggers intracellular $"Ca"^(2+)$ release, causing oocyte cortical granules to exocytose enzymes into the perivitelline space, destroying sperm receptors and hardening the zona pellucida.], answer: [C])
 
-#mcq(10, [Colostrum, the first milk, is precious for the newborn mainly because it is rich in:], (
-  [fat for rapid weight gain], [IgA antibodies that give first immunity], [starch for energy], [urea and salts],
+#mcq(10, [What biological event directly triggers the arrested secondary oocyte to resume and complete its second meiotic division?], (
+  [Contact of the sperm flagellum with cervical mucus],
+  [Binding of LH to luteal receptors on the corona radiata],
+  [Penetration and entry of the sperm into the oocyte cytoplasm],
+  [Implantation of the morula into the endometrial stroma],
 ))
+#solution(10, [The secondary oocyte is arrested at Metaphase II. Entry of the fertilizing sperm provides the calcium stimulus that degrades Maturation Promoting Factor (MPF), prompting the oocyte to complete Meiosis II. This unequal division extrudes the *Second Polar Body* and yields the haploid female pronucleus (*Ovum*).], answer: [C])
 
-= Solutions
+#pagebreak()
 
-#solution(1, [Sperm formation runs best slightly cooler than the body core, so the scrotum holds the testes *outside* at 2–2.5 °C below body temperature. Options above or equal to body temperature would damage spermatogenesis.], answer: "C")
+= Practice Questions — Part 3 (Q11 to Q15)
 
-#solution(2, [Trace the ladder: tubules empty into the *rete testis*, small *vasa efferentia* lift sperm to the *epididymis* (storage + maturation), the *vas deferens* pushes them up, the *ejaculatory duct* joins the *urethra*, and the urethra exits. Only option (D) keeps every rung in order.], answer: "D")
+#mcq(11, [In a developing human blastocyst prior to implantation, what are the respective developmental fates of the trophoblast and the inner cell mass?], (
+  [Trophoblast forms the nervous system; inner cell mass forms the placenta],
+  [Trophoblast attaches to endometrium and forms chorionic villi; inner cell mass forms the embryo proper],
+  [Trophoblast forms the amnion; inner cell mass undergoes complete apoptosis],
+  [Trophoblast develops into the umbilical cord; inner cell mass forms maternal decidua],
+))
+#solution(11, [A blastocyst consists of an outer epithelial layer, the *Trophoblast*, and an internal cluster of cells, the *Inner Cell Mass (ICM)*. The trophoblast attaches to the endometrium, digests uterine stroma, and forms fetal chorionic villi of the placenta. The pluripotent cells of the ICM differentiate into all tissues of the embryo proper.], answer: [B])
 
-#solution(3, [LH (also called ICSH in males) acts on the *Leydig cells* sitting between the tubules, and they secrete testosterone. Sertoli cells are nurse cells; spermatogonia and secondary spermatocytes are germ cells, not hormone-makers.], answer: "A")
+#mcq(12, [Which trio of hormones is synthesized in the human female body exclusively during the state of pregnancy?], (
+  [Estrogen, Progesterone, and Oxytocin],
+  [hCG, hPL, and Relaxin],
+  [FSH, LH, and Prolactin],
+  [Cortisol, Thyroxine, and Aldosterone],
+))
+#solution(12, [Human Chorionic Gonadotropin (*hCG*), Human Placental Lactogen (*hPL*), and *Relaxin* (produced by ovary/placenta in late pregnancy) are synthesized *exclusively during pregnancy*. Other hormones like estrogen and progesterone circulate in non-pregnant cycling females as well.], answer: [B])
 
-#solution(4, [Count it: one primary spermatocyte (46) → meiosis-I → two secondary spermatocytes (23 each) → meiosis-II → four spermatids (23) → spermiogenesis → *four sperm with 23 chromosomes each*. Equal, tiny products — the opposite of oogenesis.], answer: "B")
+#mcq(13, [The neuroendocrine reflex that triggers the onset of labour (parturition) in humans is termed the:], (
+  [Milk ejection reflex, mediated by anterior pituitary prolactin],
+  [Fetal ejection reflex, initiated by the fully developed fetus and placenta],
+  [Baroreceptor reflex, triggered by placental vasoconstriction],
+  [Luteal regression reflex, stimulated by sudden estrogen surge],
+))
+#solution(13, [Parturition is induced by a complex neuroendocrine mechanism called the *fetal ejection reflex*. Signals originating from the fully developed fetus and placenta induce mild uterine contractions. This stimulates the maternal posterior pituitary to secrete *Oxytocin*, initiating a positive feedback cascade of vigorous contractions.], answer: [B])
 
-#solution(5, [Oogonia multiply before birth and enter meiosis-I, which freezes at *prophase-I*. The cell stays a primary oocyte until puberty; metaphase-II is the *second* arrest, reached only after meiosis-I completes at puberty.], answer: "C")
+#mcq(14, [During lactation, which hormone is primarily responsible for milk synthesis within mammary alveoli, and which hormone mediates milk ejection (let-down)?], (
+  [Oxytocin stimulates synthesis; Prolactin stimulates ejection],
+  [Prolactin stimulates synthesis; Oxytocin stimulates ejection],
+  [Estrogen stimulates synthesis; Progesterone stimulates ejection],
+  [hPL stimulates synthesis; Relaxin stimulates ejection],
+))
+#solution(14, [Anterior pituitary *Prolactin* stimulates the glandular alveoli of the mammary glands to synthesize and secrete milk. Posterior pituitary *Oxytocin* contracts the myoepithelial cells surrounding the alveoli, causing the physical ejection or "let-down" of milk in response to infant suckling.], answer: [B])
 
-#solution(6, [The mid-cycle event is the *LH surge*: a sharp spike of luteinising hormone on about day 14 that ruptures the Graafian follicle. FSH grows follicles in the follicular phase but does not burst them.], answer: "D")
-
-#solution(7, [The classic site is the *ampullary-isthmic junction* — where the tube's wide middle part (ampulla) meets its narrow last part (isthmus). The uterus is where implantation happens, not fertilisation.], answer: "A")
-
-#solution(8, [After fertilisation, cleavage takes about 3–4 days in the tube, the blastocyst reaches the uterus, and implantation happens *about 6–7 days after fertilisation*. Fourteen and twenty-eight days belong to cycle timing, not burial.], answer: "B")
-
-#solution(9, [The placenta is an endocrine organ: it secretes *hCG, hPL, oestrogens and progesterone*. FSH/LH and GnRH stay in the brain–pituitary axis, and oxytocin comes from the mother's posterior pituitary, not the placenta.], answer: "C")
-
-#solution(10, [Colostrum is the thick, yellowish first milk of the first few days, loaded with *IgA antibodies* that coat the baby's gut and guard against infection while the baby's own immune system is still immature.], answer: "D")
+#mcq(15, [Why is the initial yellowish milk (*colostrum*) secreted by the mother during the first few days post-partum deemed indispensable for the newborn infant?], (
+  [It contains exceptionally high concentrations of lipids for adipose insulation],
+  [It is packed with maternal secretory IgA antibodies that confer essential passive immunity],
+  [It provides synthetic growth hormones that induce rapid epiphyseal closure],
+  [It contains clotting factors that permanently occlude the ductus arteriosus],
+))
+#solution(15, [*Colostrum* is rich in proteins, vitamins, and maternal *secretory IgA (sIgA) antibodies*. Because the newborn's immune system is naive, these ingested IgA antibodies coat the infant's mucosal surfaces, providing critical *passive immunity* against gastrointestinal and respiratory pathogens.], answer: [B])
 
 #v(10pt)
-#align(center)[#text(fill: om-grey, size: 9pt)[© OurMocks · www.ourmocks.com · CUET UG Biology · Human Reproduction · 2027 cycle]]
+#align(center)[
+  #text(fill: om-grey, size: 8.5pt)[
+    © OurMocks · www.ourmocks.com · CUET UG Biology · Human Reproduction · 2027 Cycle
+  ]
+]

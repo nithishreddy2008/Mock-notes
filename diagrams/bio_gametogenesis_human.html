@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Human Gametogenesis: Spermatogenesis vs Oogenesis Architecture</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; box-shadow: none !important; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    color: #0F172A;
+    overflow: hidden;
+    position: relative;
+    padding: 22px 28px;
+  }
+
+  /* Header */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #CBD5E1;
+    padding-bottom: 12px;
+    margin-bottom: 14px;
+  }
+  .title-group h1 {
+    font-size: 21px;
+    font-weight: 800;
+    color: #071A4D;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .title-group h1 span.badge {
+    background: #071A4D;
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 4px;
+  }
+  .title-group p {
+    font-size: 12.5px;
+    color: #64748B;
+    margin-top: 2px;
+    font-weight: 500;
+  }
+  .exam-tags {
+    display: flex;
+    gap: 8px;
+  }
+  .chip {
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+  }
+  .chip-navy { background: #EEF1F8; color: #071A4D; border: 1px solid #CBD5E1; }
+  .chip-blue { background: #EAF0FF; color: #1F5EFF; border: 1px solid #BFDBFE; }
+  .chip-rose { background: #FFF1F2; color: #E11D48; border: 1px solid #FECDD3; }
+
+  /* 2-Column Main Layout */
+  .main-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    height: 640px;
+  }
+
+  .col-card {
+    background: #FFFFFF;
+    border: 1.5px solid #CBD5E1;
+    border-radius: 10px;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+  }
+  .col-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #E2E8F0;
+  }
+  .col-header h2 {
+    font-size: 16px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .male-title { color: #1E40AF; }
+  .female-title { color: #BE123C; }
+
+  .tag-pill {
+    font-size: 10.5px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 4px;
+  }
+  .tag-male { background: #EFF6FF; color: #1E40AF; border: 1px solid #BFDBFE; }
+  .tag-female { background: #FFF1F2; color: #BE123C; border: 1px solid #FECDD3; }
+
+  /* Stage Blocks */
+  .stage-box {
+    border-radius: 8px;
+    padding: 9px 12px;
+    border: 1px solid #E2E8F0;
+    background: #F8FAFC;
+  }
+  .stage-box h3 {
+    font-size: 12.5px;
+    font-weight: 700;
+    margin-bottom: 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .stage-box p {
+    font-size: 11.2px;
+    line-height: 1.42;
+    color: #334155;
+  }
+  .stage-box b {
+    color: #0F172A;
+  }
+
+  .ploidy-tag {
+    font-size: 10px;
+    font-weight: 800;
+    padding: 1px 6px;
+    border-radius: 3px;
+  }
+  .ploidy-2n { background: #FEF3C7; color: #92400E; border: 1px solid #FCD34D; }
+  .ploidy-n { background: #DCFCE7; color: #166534; border: 1px solid #86EFAC; }
+  .ploidy-arrest { background: #FEE2E2; color: #991B1B; border: 1px solid #FCA5A5; }
+
+  /* Subgrid Anatomy */
+  .anatomy-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+    margin-top: 4px;
+  }
+  .anatomy-card {
+    background: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    border-radius: 6px;
+    padding: 6px 7px;
+    font-size: 10.5px;
+  }
+  .anatomy-card strong {
+    display: block;
+    color: #0F172A;
+    font-size: 11px;
+    margin-bottom: 2px;
+  }
+
+  /* Layers Grid for Ovum */
+  .ovum-layers-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+    margin-top: 4px;
+  }
+
+  /* Bottom Comparative Banner */
+  .bottom-summary {
+    position: absolute;
+    bottom: 20px;
+    left: 28px;
+    right: 28px;
+    background: #071A4D;
+    color: #FFFFFF;
+    border-radius: 8px;
+    padding: 10px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid #B8FF34;
+  }
+  .summary-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11.5px;
+  }
+  .summary-item strong {
+    color: #B8FF34;
+    font-size: 12px;
+  }
+  .summary-pill {
+    background: rgba(255,255,255,0.15);
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 10.5px;
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="title-group">
+      <h1>
+        Human Gametogenesis: Spermatogenesis vs Oogenesis
+        <span class="badge">FIGURE 1</span>
+      </h1>
+      <p>Comparative cytogenetics, developmental timing, meiotic arrest checkpoints, and mature gametic structural anatomy</p>
+    </div>
+    <div class="exam-tags">
+      <div class="chip chip-navy">CUET UG Biology</div>
+      <div class="chip chip-blue">Unit VI Reproduction</div>
+      <div class="chip chip-rose">NCERT Class 12 Core</div>
+    </div>
+  </div>
+
+  <!-- 2-Column Main Grid -->
+  <div class="main-grid">
+
+    <!-- Male Column: Spermatogenesis -->
+    <div class="col-card">
+      <div class="col-header">
+        <h2 class="male-title">
+          <span>♂ Spermatogenesis (Seminiferous Tubules)</span>
+        </h2>
+        <span class="tag-pill tag-male">Continuous from Puberty</span>
+      </div>
+
+      <!-- Hormonal Initiation -->
+      <div class="stage-box" style="background: #EFF6FF; border-color: #BFDBFE;">
+        <h3>
+          <span style="color: #1E40AF;">1. Endocrine Regulation & Niche</span>
+          <span class="ploidy-tag ploidy-2n">Somatic Cells: 2n</span>
+        </h3>
+        <p>Pubertal hypothalamic <b>GnRH</b> stimulates anterior pituitary <b>LH</b> and <b>FSH</b>:</p>
+        <div class="anatomy-grid" style="grid-template-columns: 1fr 1fr; margin-top: 5px;">
+          <div class="anatomy-card">
+            <strong style="color: #1E40AF;">Leydig Cells (LH target)</strong>
+            Interstitial endocrine cells; synthesize and secrete androgens (<b>Testosterone</b>).
+          </div>
+          <div class="anatomy-card">
+            <strong style="color: #1E40AF;">Sertoli Cells (FSH target)</strong>
+            Nurse cells; provide nutrition, form blood-testis barrier, secrete ABP and <b>Inhibin</b>.
+          </div>
+        </div>
+      </div>
+
+      <!-- Meiotic Cytogenetic Progression -->
+      <div class="stage-box">
+        <h3>
+          <span>2. Meiotic Progression & Differentiation</span>
+          <span class="ploidy-tag ploidy-n">1 Primary (2n) → 4 Sperms (n)</span>
+        </h3>
+        <p><b>Spermatogonia (2n, 46)</b> mitotically proliferate on basement membrane. Some grow into <b>Primary Spermatocytes (2n, 46)</b>. Undergo <b>Meiosis I</b> to yield <b>2 Secondary Spermatocytes (n, 23)</b>. Meiosis II yields <b>4 Spermatids (n, 23)</b>.</p>
+        <p style="margin-top: 4px; font-size: 10.8px; color: #475569;">
+          &bull; <b>Spermiogenesis:</b> Transformation of non-motile circular spermatids into flagellated motile spermatozoa.<br>
+          &bull; <b>Spermiation:</b> Release of mature spermatozoa from Sertoli cells into the seminiferous tubule lumen.
+        </p>
+      </div>
+
+      <!-- Sperm Structural Anatomy -->
+      <div class="stage-box" style="flex: 1;">
+        <h3>
+          <span style="color: #1E40AF;">3. Mature Sperm Morphology (Spermatozoon)</span>
+          <span class="ploidy-tag ploidy-n">200–300M per Ejaculate</span>
+        </h3>
+        <div class="anatomy-grid">
+          <div class="anatomy-card">
+            <strong>Head</strong>
+            Haploid nucleus; capped by <b>Acrosome</b> (Golgi-derived, hyaluronidase/enzymes).
+          </div>
+          <div class="anatomy-card">
+            <strong>Neck</strong>
+            Contains <b>Proximal Centriole</b> (initiates zygote cleavage) & distal centriole.
+          </div>
+          <div class="anatomy-card" style="background: #FEF3C7; border-color: #FCD34D;">
+            <strong style="color: #92400E;">Middle Piece</strong>
+            Spiral mitochondria (<b>Nebenkern</b>); ATP engine for vigorous motility.
+          </div>
+          <div class="anatomy-card">
+            <strong>Tail</strong>
+            Axial axoneme (9+2 microtubule array); facilitates whip-like movement.
+          </div>
+        </div>
+        <p style="margin-top: 7px; font-size: 10.8px; color: #334155;">
+          <b>Normal Fertility Criteria:</b> &ge;60% sperms must have normal morphology; &ge;40% of those must exhibit vigorous motility.
+        </p>
+      </div>
+    </div>
+
+    <!-- Female Column: Oogenesis -->
+    <div class="col-card">
+      <div class="col-header">
+        <h2 class="female-title">
+          <span>♀ Oogenesis (Ovarian Cortex)</span>
+        </h2>
+        <span class="tag-pill tag-female">Embryonic Origin · Discontinuous</span>
+      </div>
+
+      <!-- Embryonic Origin & Arrest I -->
+      <div class="stage-box" style="background: #FFF1F2; border-color: #FECDD3;">
+        <h3>
+          <span style="color: #BE123C;">1. Prenatal Origin & Diplotene Arrest</span>
+          <span class="ploidy-tag ploidy-arrest">Arrest I: Prophase I</span>
+        </h3>
+        <p>~2 million <b>Oogonia (2n, 46)</b> form in fetal ovary; zero oogonia added after birth. Form <b>Primary Oocytes (2n, 46)</b>, which enter Meiosis I and arrest at <b>Prophase I (Diplotene)</b> until puberty.</p>
+        <p style="margin-top: 4px; font-size: 10.8px; color: #9F1239;">
+          <b>Follicular Atresia:</b> Only 60,000–80,000 primary follicles survive in each ovary at menarche.
+        </p>
+      </div>
+
+      <!-- Pubertal Progression & Arrest II -->
+      <div class="stage-box">
+        <h3>
+          <span>2. Meiosis I Completion & Ovulation</span>
+          <span class="ploidy-tag ploidy-arrest">Arrest II: Metaphase II</span>
+        </h3>
+        <p>Tertiary follicle completes Meiosis I just before ovulation: unequal cytokinesis yields <b>1 Secondary Oocyte (n, 23)</b> + <b>First Polar Body (n)</b>. Enters Meiosis II and arrests at <b>Metaphase II</b>. Ovulated at this stage under LH surge!</p>
+        <p style="margin-top: 4px; font-size: 10.8px; color: #475569;">
+          <b>Meiosis II Completion:</b> Triggered <b>only by sperm entry</b> in ampulla, forming haploid <b>Ovum (Ootid, n)</b> + <b>2nd Polar Body (n)</b>.
+        </p>
+      </div>
+
+      <!-- Ovum Layers & Protection -->
+      <div class="stage-box" style="flex: 1;">
+        <h3>
+          <span style="color: #BE123C;">3. Ovulated Ovum Protective Envelopes</span>
+          <span class="ploidy-tag ploidy-n">Polyspermy Barrier</span>
+        </h3>
+        <div class="ovum-layers-grid">
+          <div class="anatomy-card" style="background: #FFFBEB; border-color: #FCD34D;">
+            <strong style="color: #B45309;">Corona Radiata</strong>
+            Outer layer of radiating follicular granulosa cells cemented by hyaluronic acid.
+          </div>
+          <div class="anatomy-card" style="background: #FDF2F8; border-color: #FBCFE8;">
+            <strong style="color: #9D174D;">Zona Pellucida</strong>
+            Non-cellular glycoproteinaceous coat; mediates sperm binding & cortical block to polyspermy.
+          </div>
+          <div class="anatomy-card">
+            <strong>Perivitelline Space</strong>
+            Fluid-filled space between plasma membrane and zona pellucida where polar bodies lie.
+          </div>
+        </div>
+        <p style="margin-top: 7px; font-size: 10.8px; color: #334155;">
+          <b>Cortical Reaction:</b> Upon sperm fusion, cortical granules release exocytic enzymes that harden the zona pellucida, permanently preventing polyspermy.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bottom Summary Banner -->
+  <div class="bottom-summary">
+    <div class="summary-item">
+      <strong>YIELD RATIO COMPARISON:</strong>
+      <span>1 Primary Spermatocyte &rarr; <b>4 Functional Sperms</b> vs 1 Primary Oocyte &rarr; <b>1 Functional Ovum + Polar Bodies</b></span>
+      <span class="summary-pill">4:1 vs 1:1</span>
+    </div>
+    <div class="summary-item">
+      <strong>FEMALE DUAL ARREST:</strong>
+      <span>Arrest 1 at <b>Prophase I (Diplotene)</b> at birth &bull; Arrest 2 at <b>Metaphase II</b> until sperm fertilizes</span>
+      <span class="summary-pill">Essential CUET Trap</span>
+    </div>
+    <div class="summary-item">
+      <strong>SPERM ENZYMES:</strong>
+      <span>Acrosomal <b>Hyaluronidase</b> digests corona; <b>Acrosin</b> penetrates zona pellucida</span>
+      <span class="summary-pill">Biochemical Entry</span>
+    </div>
+  </div>
+
+</body>
+</html>
