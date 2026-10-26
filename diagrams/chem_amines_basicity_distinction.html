@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Amine Basicity & Diagnostic Distinction Tests</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px; height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #1E293B;
+    overflow: hidden;
+    position: relative;
+    padding: 24px 32px;
+  }
+  * { box-shadow: none !important; }
+
+  .header {
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  .header-badge {
+    display: inline-block;
+    background: #071A4D;
+    color: #B8FF34;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .header h1 {
+    font-size: 25px;
+    font-weight: 800;
+    color: #071A4D;
+    letter-spacing: -0.02em;
+  }
+  .header p {
+    font-size: 13px;
+    color: #64748B;
+    margin-top: 3px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 350px 320px;
+    gap: 16px;
+  }
+
+  .card {
+    background: #FFFFFF;
+    border: 1.5px solid #E2E8F0;
+    border-radius: 10px;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+  }
+  .card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid;
+  }
+  .card-title {
+    font-size: 15px;
+    font-weight: 800;
+    color: #071A4D;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .badge {
+    font-size: 10px;
+    font-weight: 800;
+    padding: 3px 8px;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  /* Themes */
+  .c-blue { border-color: #1F5EFF; }
+  .c-blue .card-top { border-color: #1F5EFF; }
+  .c-blue .badge { background: #EEF4FF; color: #1F5EFF; border: 1px solid #C7D9FE; }
+
+  .c-green { border-color: #5E8F13; }
+  .c-green .card-top { border-color: #5E8F13; }
+  .c-green .badge { background: #F4FBE8; color: #5E8F13; border: 1px solid #D2ECA6; }
+
+  .c-amber { border-color: #9A7B07; }
+  .c-amber .card-top { border-color: #9A7B07; }
+  .c-amber .badge { background: #FEF9E7; color: #9A7B07; border: 1px solid #F8E7A2; }
+
+  .c-orange { border-color: #B4380F; }
+  .c-orange .card-top { border-color: #B4380F; }
+  .c-orange .badge { background: #FEF3F0; color: #B4380F; border: 1px solid #FCD3C7; }
+
+  .item-list {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    flex: 1;
+  }
+  .item {
+    background: #F8FAFC;
+    border: 1px solid #EDF2F7;
+    border-radius: 6px;
+    padding: 7px 10px;
+    font-size: 12px;
+    line-height: 1.35;
+  }
+  .item-header {
+    font-weight: 800;
+    color: #071A4D;
+    margin-bottom: 2px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .order-chip {
+    background: #071A4D;
+    color: #FFFFFF;
+    font-family: "SF Mono", Menlo, Consolas, monospace;
+    font-size: 11px;
+    padding: 5px 8px;
+    border-radius: 5px;
+    margin-top: 4px;
+    line-height: 1.4;
+  }
+  .order-chip strong { color: #B8FF34; }
+
+  .footer-bar {
+    margin-top: 14px;
+    background: #071A4D;
+    color: #FFFFFF;
+    border-radius: 8px;
+    padding: 9px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 12px;
+  }
+  .footer-tag {
+    background: #B8FF34;
+    color: #071A4D;
+    font-weight: 800;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-right: 8px;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-badge">CUET UG Chemistry · Core Concept Archetype 1</div>
+  <h1>AMINE BASICITY ORDERS &amp; DIAGNOSTIC DISTINCTION TESTS</h1>
+  <p>Gas vs Aqueous Phase Hierarchy, Aniline Resonance Suppression, Hinsberg Separation, and Carbylamine Fingerprint</p>
+</div>
+
+<div class="grid">
+
+  <!-- CARD 1: Amine Basicity: Gas vs Water -->
+  <div class="card c-blue">
+    <div class="card-top">
+      <div class="card-title">1. Amine Basicity: Gas vs Aqueous Phase</div>
+      <span class="badge">Inductive vs Hydration</span>
+    </div>
+    <div class="item-list">
+      <div class="item">
+        <div class="item-header"><span>Gas Phase Order (Pure Inductive +I Effect)</span></div>
+        In gas phase without solvent hydration, basicity depends solely on electron-density release by alkyl groups onto nitrogen:
+        <div class="order-chip"><strong>GAS PHASE:</strong> 3° Amine &gt; 2° Amine &gt; 1° Amine &gt; NH₃</div>
+      </div>
+      <div class="item">
+        <div class="item-header"><span>Aqueous Phase Interplay (Three Competing Factors)</span></div>
+        Dictated by combined balance of: (1) <b>+I Inductive effect</b>, (2) <b>Steric hindrance</b> of alkyl groups, and (3) <b>Hydration energy</b> of substituted ammonium cation (1° cation has 3 H-bonds with water, 2° has 2, 3° has only 1).
+        <div class="order-chip">
+          <strong>METHYL SERIES (213 Rule):</strong> (CH₃)₂NH (2°) &gt; CH₃NH₂ (1°) &gt; (CH₃)₃N (3°) &gt; NH₃<br>
+          <strong>ETHYL SERIES (231 Rule):</strong> (C₂H₅)₂NH (2°) &gt; (C₂H₅)₃N (3°) &gt; C₂H₅NH₂ (1°) &gt; NH₃
+        </div>
+        <b>Key Rule:</b> <i>Secondary amines (2°) are ALWAYS the strongest bases in aqueous solution!</i>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 2: Aromatic Amine Basicity (Aniline) -->
+  <div class="card c-amber">
+    <div class="card-top">
+      <div class="card-title">2. Aniline Basicity Suppression &amp; Substituent Effects</div>
+      <span class="badge">Resonance vs Protonation</span>
+    </div>
+    <div class="item-list">
+      <div class="item">
+        <div class="item-header"><span>Why Aniline is a Very Weak Base (pKb = 9.38)</span></div>
+        • <b>Resonance Delocalization:</b> The nitrogen lone pair delocalizes into the benzene ring (+R effect) across 5 canonical structures, drastically diminishing electron density on nitrogen.<br>
+        • <b>Anilinium Destabilization:</b> Aniline has 5 resonance structures, whereas protonated anilinium ion (C₆H₅NH₃⁺) has only 2 structures! Protonation reduces resonance stability.
+      </div>
+      <div class="item">
+        <div class="item-header"><span>Ring Substituents on Basicity (CUET Ranking)</span></div>
+        • <b>Electron-Withdrawing Groups (-I, -M):</b> (-NO₂, -CN, -X) severely decrease basicity. Nitro group at ortho/para position withdraws lone pair most powerfully.<br>
+        • <b>Electron-Donating Groups (+I, +M):</b> (-OCH₃, -CH₃) pump electron density, increasing basicity (p-methoxyaniline &gt; aniline).<br>
+        • <b>Ortho Effect:</b> Ortho-substituted anilines are almost always weaker bases than aniline, regardless of whether group is EWG or EDG!
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 3: Hinsberg Test -->
+  <div class="card c-green">
+    <div class="card-top">
+      <div class="card-title">3. The Hinsberg Test (Distinction of 1°, 2°, 3°)</div>
+      <span class="badge">Benzenesulphonyl Chloride</span>
+    </div>
+    <div class="item-list">
+      <div class="item">
+        <div class="item-header"><span>Reagent: Benzenesulphonyl Chloride (C₆H₅SO₂Cl)</span></div>
+        Used universally to detect, distinguish, and separate mixtures of primary, secondary, and tertiary amines based on acidic N-H protons.
+      </div>
+      <div class="item">
+        <div class="item-header"><span>1° Amine → Soluble in Aqueous KOH</span></div>
+        Forms <i>N-alkylbenzenesulphonamide</i>. Because of the strong electron-withdrawing SO₂ group, the remaining hydrogen attached to nitrogen is <b>strongly acidic</b>. It dissolves in aqueous KOH to form a soluble salt. Acidification reprecipitates it.
+      </div>
+      <div class="item">
+        <div class="item-header"><span>2° Amine → Insoluble in Aqueous KOH</span></div>
+        Forms <i>N,N-dialkylbenzenesulphonamide</i>. It contains <b>no acidic hydrogen</b> attached to nitrogen; hence it is insoluble in aqueous KOH and remains an insoluble solid.
+      </div>
+      <div class="item">
+        <div class="item-header"><span>3° Amine → No Reaction</span></div>
+        Tertiary amines possess no hydrogen atom on nitrogen and <b>do not react</b> with benzenesulphonyl chloride. Remains insoluble in alkali, dissolves in dilute HCl.
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 4: Carbylamine & Nitrous Acid Tests -->
+  <div class="card c-orange">
+    <div class="card-top">
+      <div class="card-title">4. Carbylamine &amp; Nitrous Acid Fingerprints</div>
+      <span class="badge">Isocyanides &amp; Diazonium</span>
+    </div>
+    <div class="item-list">
+      <div class="item">
+        <div class="item-header"><span>Carbylamine Reaction (Isocyanide Test for 1° Amines)</span></div>
+        Warming any primary amine (aliphatic or aromatic) with <b>chloroform (CHCl₃) and ethanolic KOH</b> produces an <b>alkyl/aryl isocyanide (carbylamine, R-NC)</b>:
+        <div class="order-chip">R-NH₂ + CHCl₃ + 3 KOH → <strong>R-NC (Intolerable Foul Odour)</strong> + 3 KCl + 3 H₂O</div>
+        <b>CUET Distinction:</b> Secondary and tertiary amines do NOT give this test!
+      </div>
+      <div class="item">
+        <div class="item-header"><span>Reaction with Nitrous Acid (HNO₂ / NaNO₂ + HCl)</span></div>
+        • <b>1° Aliphatic Amine:</b> Yields unstable alkyldiazonium salt that decomposes instantly with <b>brisk effervescence of N₂ gas</b> and forms alcohols.<br>
+        • <b>1° Aromatic Amine (Aniline):</b> At 273–278 K forms stable <b>Benzenediazonium Chloride (C₆H₅N₂⁺Cl⁻)</b>.<br>
+        • <b>2° Amines:</b> Form yellow oily <b>N-nitrosamines (R₂N-NO)</b> (Liebermann's nitroso test).<br>
+        • <b>3° Aliphatic:</b> Form soluble nitrite salts; aromatic yields p-nitroso derivative.
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer-bar">
+  <div><span class="footer-tag">CUET VERDICT</span> <b>Aqueous basicity: 2° is always #1 (213 for methyl, 231 for ethyl). Hinsberg: 1° dissolves in KOH, 2° is insoluble, 3° no reaction. Carbylamine is exclusive to 1° amines!</b></div>
+  <div>© OurMocks CUET Architecture</div>
+</div>
+
+</body>
+</html>

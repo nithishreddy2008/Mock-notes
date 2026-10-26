@@ -1,58 +1,272 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
+<title>Diazonium Salts Synthesis & Conversions</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
-  .wrap { width: 1480px; position: relative; background: #fff; padding-bottom: 12px; }
-  .title { text-align: center; font-size: 24px; font-weight: 800; color: #071A4D; padding-top: 20px; }
-  .subtitle { text-align: center; font-size: 14px; color: #5A6478; margin-top: 4px; }
-  .cols { display: flex; gap: 24px; margin: 18px 40px 0; }
-  .col { flex: 1; background: #FCFDFF; border: 1.5px solid #D5DCEA; border-radius: 14px; padding: 14px 16px; }
-  .col h2 { font-size: 18px; font-weight: 800; text-align: center; margin-bottom: 10px; padding: 6px; border-radius: 8px; color: #fff; }
-  .gas h2 { background: #1F5EFF; } .aq h2 { background: #071A4D; }
-  .step { display: flex; gap: 10px; margin: 9px 0; align-items: center; }
-  .num { min-width: 34px; height: 34px; border-radius: 50%; color: #fff; font-size: 15px; font-weight: 800;
-         display: flex; align-items: center; justify-content: center; }
-  .gas .num { background: #4A7BFF; } .aq .num { background: #23366F; }
-  .txt { font-size: 14px; color: #1B2333; line-height: 1.42; }
-  .txt b { color: #071A4D; }
-  .eq { font-size: 13.5px; background: #EEF1F8; border-radius: 7px; padding: 6px 10px; margin: 6px 0 6px 44px; color: #071A4D; font-weight: 600; }
-  .strip { margin: 16px 40px 4px; background: #F6FFDF; border: 1.5px solid #7FB800; border-radius: 12px; padding: 11px 16px; }
-  .strip p { font-size: 13.5px; color: #3F5C10; line-height: 1.5; }
-  .strip b { color: #4E7A00; }
+  body {
+    width: 1440px; height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #1E293B;
+    overflow: hidden;
+    position: relative;
+    padding: 24px 32px;
+  }
+  * { box-shadow: none !important; }
+
+  .header {
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  .header-badge {
+    display: inline-block;
+    background: #071A4D;
+    color: #B8FF34;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .header h1 {
+    font-size: 25px;
+    font-weight: 800;
+    color: #071A4D;
+    letter-spacing: -0.02em;
+  }
+  .header p {
+    font-size: 13px;
+    color: #64748B;
+    margin-top: 3px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 350px 320px;
+    gap: 16px;
+  }
+
+  .card {
+    background: #FFFFFF;
+    border: 1.5px solid #E2E8F0;
+    border-radius: 10px;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+  }
+  .card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid;
+  }
+  .card-title {
+    font-size: 15px;
+    font-weight: 800;
+    color: #071A4D;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .badge {
+    font-size: 10px;
+    font-weight: 800;
+    padding: 3px 8px;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  /* Themes */
+  .c-blue { border-color: #1F5EFF; }
+  .c-blue .card-top { border-color: #1F5EFF; }
+  .c-blue .badge { background: #EEF4FF; color: #1F5EFF; border: 1px solid #C7D9FE; }
+
+  .c-green { border-color: #5E8F13; }
+  .c-green .card-top { border-color: #5E8F13; }
+  .c-green .badge { background: #F4FBE8; color: #5E8F13; border: 1px solid #D2ECA6; }
+
+  .c-amber { border-color: #9A7B07; }
+  .c-amber .card-top { border-color: #9A7B07; }
+  .c-amber .badge { background: #FEF9E7; color: #9A7B07; border: 1px solid #F8E7A2; }
+
+  .c-orange { border-color: #B4380F; }
+  .c-orange .card-top { border-color: #B4380F; }
+  .c-orange .badge { background: #FEF3F0; color: #B4380F; border: 1px solid #FCD3C7; }
+
+  .item-list {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    flex: 1;
+  }
+  .item {
+    background: #F8FAFC;
+    border: 1px solid #EDF2F7;
+    border-radius: 6px;
+    padding: 7px 10px;
+    font-size: 12px;
+    line-height: 1.35;
+  }
+  .item-header {
+    font-weight: 800;
+    color: #071A4D;
+    margin-bottom: 2px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .chem-eq {
+    font-family: "SF Mono", Menlo, Consolas, monospace;
+    font-size: 11px;
+    color: #0F172A;
+    background: #F1F5F9;
+    padding: 3px 6px;
+    border-radius: 4px;
+    margin-top: 3px;
+    display: block;
+    word-break: break-all;
+  }
+  .chem-eq strong { color: #1F5EFF; }
+
+  .footer-bar {
+    margin-top: 14px;
+    background: #071A4D;
+    color: #FFFFFF;
+    border-radius: 8px;
+    padding: 9px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 12px;
+  }
+  .footer-tag {
+    background: #B8FF34;
+    color: #071A4D;
+    font-weight: 800;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-right: 8px;
+  }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <div class="title">THE DIAZONIUM FACTORY — EVERY ARYL GROUP PASSES THROUGH N&#8322;&#8314;</div>
-  <div class="subtitle">Diazotisation at 273&#8211;278 K makes benzenediazonium chloride; from there, seven exit doors build the aromatic toolbox</div>
 
-  <div class="cols">
-    <div class="col gas">
-      <h2>MAKING THE SALT (diazotisation)</h2>
-      <div class="step"><div class="num">1</div><div class="txt"><b>Cool aniline in dilute HCl</b> to 273&#8211;278 K (ice bath) &#8212; cold, or the salt decomposes.</div></div>
-      <div class="eq">C&#8326;H&#8325;NH&#8322; + NaNO&#8322; + 2HCl &#8594; C&#8326;H&#8325;N&#8322;&#8314;Cl&#8315; + NaCl + 2H&#8322;O</div>
-      <div class="step"><div class="num">2</div><div class="txt"><b>NaNO&#8322; + HCl</b> generates nitrous acid in the flask; the amine grabs its NO&#8314;.</div></div>
-      <div class="step"><div class="num">3</div><div class="txt"><b>Use it immediately</b> &#8212; dry diazonium salts are shock-explosive; solutions stay stable in the cold.</div></div>
-    </div>
-
-    <div class="col aq">
-      <h2>SEVEN EXITS (synthesis doors)</h2>
-      <div class="step"><div class="num">A</div><div class="txt"><b>Sandmeyer:</b> Cu&#8322;Cl&#8322;/Cu&#8322;Br&#8322;/CuCN &#8594; Ar&#8211;Cl, Ar&#8211;Br, Ar&#8211;CN</div></div>
-      <div class="step"><div class="num">B</div><div class="txt"><b>Gattermann:</b> Cu powder + HX &#8212; the gentler version</div></div>
-      <div class="step"><div class="num">C</div><div class="txt"><b>Balz-Schiemann:</b> HBF&#8324; then heat &#8594; Ar&#8211;F (the fluorine door)</div></div>
-      <div class="step"><div class="num">D</div><div class="txt"><b>KI, warm:</b> &#8594; Ar&#8211;I (no catalyst needed)</div></div>
-      <div class="step"><div class="num">E</div><div class="txt"><b>H&#8322;O, warm:</b> &#8594; phenol (the mild OH door)</div></div>
-      <div class="step"><div class="num">F</div><div class="txt"><b>H&#8323;PO&#8322; or ethanol:</b> &#8594; benzene (H replaces N&#8322;&#8314; &#8212; the eraser)</div></div>
-      <div class="step"><div class="num">G</div><div class="txt"><b>Coupling:</b> phenol/aniline + base &#8594; azo dyes (p-hydroxyazobenzene, orange-red)</div></div>
-    </div>
-  </div>
-
-  <div class="strip">
-    <p><b>Why this matters:</b> direct ring substitution cannot put F, I, CN or OH exactly where you want them with clean control &#8212; but every one of them is one diazonium step away. The NH&#8322; group is a <b>temporary handle</b>: install it by nitration + reduction, then swap it for whatever the target needs. That two-step indirection &#8212; nitration &#8594; reduction &#8594; diazotisation &#8594; exit &#8212; is the standard route map for dozens of conversion questions.</p>
-  </div>
+<div class="header">
+  <div class="header-badge">CUET UG Chemistry · Core Concept Archetype 2</div>
+  <h1>DIAZONIUM SALTS: THE UNIVERSAL AROMATIC SYNTHESIS BRIDGE</h1>
+  <p>Diazotisation Protocol, Sandmeyer/Gattermann/Schiemann Conversions, Deamination, and Azo Dye Coupling</p>
 </div>
+
+<div class="grid">
+
+  <!-- CARD 1: Diazotisation & Structure -->
+  <div class="card c-blue">
+    <div class="card-top">
+      <div class="card-title">1. Diazotisation Protocol &amp; Ion Resonance</div>
+      <span class="badge">Ice-Bath: 273 - 278 K</span>
+    </div>
+    <div class="item-list">
+      <div class="item">
+        <div class="item-header"><span>Reaction Protocol (In Situ Nitrous Acid)</span></div>
+        Aniline is dissolved in dilute mineral acid (HCl) and treated with cold aqueous sodium nitrite (NaNO₂) at <b>0–5°C (273–278 K)</b>:
+        <span class="chem-eq">C₆H₅NH₂ + NaNO₂ + 2 HCl → <strong>C₆H₅-N₂⁺ Cl⁻ (Benzenediazonium Chloride)</strong> + NaCl + 2 H₂O</span>
+      </div>
+      <div class="item">
+        <div class="item-header"><span>Why 273–278 K Temperature Limit is Critical</span></div>
+        Above 278 K (5°C), diazonium salts rapidly hydrolyse with water to form <b>Phenol</b> with violent release of N₂ gas! Alkyldiazonium salts cannot be isolated at any temperature (decompose instantly).
+      </div>
+      <div class="item">
+        <div class="item-header"><span>Resonance Stabilization of Arenediazonium Cation</span></div>
+        The positive charge on the terminal nitrogen is dispersed across the benzene ring by resonance (+R interaction with aromatic π-electrons), providing short-term stability in cold aqueous solution.
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 2: Halogenation & Cyano Replacement -->
+  <div class="card c-green">
+    <div class="card-top">
+      <div class="card-title">2. Nucleophilic Substitutions (N₂ as Super Leaving Group)</div>
+      <span class="badge">Sandmeyer &amp; Schiemann</span>
+    </div>
+    <div class="item-list">
+      <div class="item">
+        <div class="item-header"><span>Sandmeyer Reaction (Cu(I) Catalyst)</span></div>
+        Treating diazonium solution with cuprous halide/cyanide in presence of corresponding halogen acid yields aryl halides or cyanides with high yields:
+        <span class="chem-eq">Ar-N₂⁺Cl⁻ + Cu₂Cl₂ / HCl → <strong>Ar-Cl</strong> + N₂↑ &nbsp;|&nbsp; + Cu₂Br₂ / HBr → <strong>Ar-Br</strong> &nbsp;|&nbsp; + CuCN / KCN → <strong>Ar-CN</strong></span>
+      </div>
+      <div class="item">
+        <div class="item-header"><span>Gattermann Reaction (Copper Powder Variant)</span></div>
+        Uses <b>Cu powder + HCl or HBr</b> instead of cuprous salts. Yield is lower than Sandmeyer.
+      </div>
+      <div class="item">
+        <div class="item-header"><span>Iodination &amp; Fluorination (Unique Doors)</span></div>
+        • <b>Iodobenzene:</b> Simply warm diazonium solution with <b>aqueous KI</b> (no copper catalyst needed!).<br>
+        • <b>Balz-Schiemann Reaction (Ar-F):</b> Precipitates insoluble <b>Ar-N₂⁺ BF₄⁻</b> with fluoroboric acid (HBF₄); controlled dry heating yields <b>Fluorobenzene</b> cleanly!
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 3: Replacement by -H, -OH, -NO2 -->
+  <div class="card c-amber">
+    <div class="card-top">
+      <div class="card-title">3. Replacement by -H (Deamination), -OH, and -NO₂</div>
+      <span class="badge">Aromatic Eraser</span>
+    </div>
+    <div class="item-list">
+      <div class="item">
+        <div class="item-header"><span>Deamination (Replacement by -H: The Molecular Eraser)</span></div>
+        Mild reduction with <b>hypophosphorous acid (phosphinic acid, H₃PO₂) in water</b> or <b>ethanol (CH₃CH₂OH)</b> reduces the diazonium group directly to a C-H bond, producing <b>Benzene</b>:
+        <span class="chem-eq">Ar-N₂⁺Cl⁻ + H₃PO₂ + H₂O → <strong>Ar-H (Benzene)</strong> + H₃PO₃ + N₂↑ + HCl</span>
+        <span class="chem-eq">Ar-N₂⁺Cl⁻ + CH₃CH₂OH → <strong>Ar-H (Benzene)</strong> + CH₃CHO + N₂↑ + HCl</span>
+      </div>
+      <div class="item">
+        <div class="item-header"><span>Replacement by -OH (Phenol Synthesis)</span></div>
+        Warming the aqueous diazonium solution slowly to <b>~283 K (10°C) or adding steam</b> hydrolyses it cleanly into <b>Phenol</b>: Ar-N₂⁺Cl⁻ + H₂O → <b>Ar-OH</b> + N₂↑ + HCl.
+      </div>
+      <div class="item">
+        <div class="item-header"><span>Replacement by -NO₂ (Nitrobenzene Synthesis)</span></div>
+        Heating fluoroborate salt (Ar-N₂⁺ BF₄⁻) with <b>aqueous NaNO₂ in presence of Copper powder</b> yields <b>Nitrobenzene</b> cleanly.
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 4: Azo Coupling Reactions -->
+  <div class="card c-orange">
+    <div class="card-top">
+      <div class="card-title">4. Azo Dye Coupling Reactions (Azo Dyes)</div>
+      <span class="badge">Electrophilic Aromatic Substitution</span>
+    </div>
+    <div class="item-list">
+      <div class="item">
+        <div class="item-header"><span>Mechanism &amp; The Intact -N=N- Chromophore</span></div>
+        Arenediazonium ion acts as a weak electrophile, attacking the electron-rich para position of highly activated aromatic rings (phenols and aromatic amines) without loss of nitrogen.
+      </div>
+      <div class="item">
+        <div class="item-header"><span>Coupling with Phenol (Orange Dye, pH 9–10)</span></div>
+        Carried out in <b>mildly alkaline medium (pH 9–10)</b> to generate the strongly nucleophilic phenoxide ion (C₆H₅O⁻):
+        <span class="chem-eq">C₆H₅-N₂⁺Cl⁻ + C₆H₅-OH + OH⁻ → <strong>p-hydroxyazobenzene (Intense Orange Dye)</strong> + Cl⁻ + H₂O</span>
+      </div>
+      <div class="item">
+        <div class="item-header"><span>Coupling with Aniline (Yellow Dye, pH 4–5)</span></div>
+        Carried out in <b>mildly acidic medium (pH 4–5)</b> to avoid protonating the aniline -NH₂ group:
+        <span class="chem-eq">C₆H₅-N₂⁺Cl⁻ + C₆H₅-NH₂ + H⁺ → <strong>p-aminoazobenzene (Brilliant Yellow Dye)</strong> + HCl</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer-bar">
+  <div><span class="footer-tag">SYNTHETIC STRATEGY</span> <b>Diazonium is chemistry's master pivot: Aniline → N₂⁺Cl⁻ → Ar-F (Schiemann), Ar-I (KI), Ar-CN/Cl/Br (Sandmeyer), Benzene (H₃PO₂), Phenol (H₂O), Azo Dyes (Coupling).</b></div>
+  <div>© OurMocks CUET Architecture</div>
+</div>
+
 </body>
 </html>

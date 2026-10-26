@@ -1,118 +1,304 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
+<title>Amines & Diazonium Salts Master Mindmap</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
-  .wrap { width: 1480px; height: 1080px; position: relative; background: #fff; }
-  svg.wires { position: absolute; inset: 0; width: 1480px; height: 1080px; }
-  .center {
-    position: absolute; left: 520px; top: 470px; width: 440px; height: 104px;
-    background: #071A4D; border-radius: 16px; display: flex; flex-direction: column;
-    align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(7,26,77,.25);
-    border-bottom: 5px solid #B8FF34;
+  body {
+    width: 1440px; height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #1E293B;
+    overflow: hidden;
+    position: relative;
+    padding: 20px 28px;
   }
-  .center .t { color: #fff; font-size: 22px; font-weight: 800; letter-spacing: .5px; text-align: center; }
-  .center .s { color: #B8FF34; font-size: 13.5px; font-weight: 700; letter-spacing: 2px; margin-top: 4px; }
+  * { box-shadow: none !important; }
+
+  .header {
+    text-align: center;
+    margin-bottom: 14px;
+  }
+  .header-badge {
+    display: inline-block;
+    background: #071A4D;
+    color: #B8FF34;
+    font-size: 10.5px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 4px;
+    margin-bottom: 4px;
+  }
+  .header h1 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #071A4D;
+    letter-spacing: -0.02em;
+  }
+  .header p {
+    font-size: 12.5px;
+    color: #64748B;
+  }
+
+  /* Center Hub */
+  .center-hub {
+    position: absolute;
+    left: 535px; top: 350px;
+    width: 370px; height: 120px;
+    background: #071A4D;
+    border-radius: 12px;
+    border: 2px solid #1F5EFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 18px;
+    z-index: 10;
+    text-align: center;
+  }
+  .hub-tag {
+    color: #B8FF34;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .hub-title {
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 1.25;
+  }
+  .hub-sub {
+    color: #94A3B8;
+    font-size: 11px;
+    margin-top: 4px;
+  }
+
+  /* SVG Wires */
+  svg.wires {
+    position: absolute;
+    inset: 0;
+    width: 1440px; height: 880px;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* Peripheral Cards */
   .card {
-    position: absolute; width: 465px; background: #FCFDFF; border: 1.5px solid #D5DCEA;
-    border-radius: 14px; padding: 13px 16px 12px;
+    position: absolute;
+    width: 440px;
+    background: #FFFFFF;
+    border: 1.5px solid #CBD5E1;
+    border-radius: 9px;
+    padding: 12px 14px;
+    z-index: 5;
+    font-size: 11.5px;
+    line-height: 1.35;
   }
-  .card h2 { font-size: 20px; color: #071A4D; font-weight: 800; margin-bottom: 7px;
-             padding-bottom: 5px; border-bottom: 3px solid; display: inline-block; }
-  .leaf { font-size: 14.5px; color: #1B2333; margin: 5px 0; padding-left: 16px; position: relative; line-height: 1.32; }
-  .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
-  .b .leaf::before { background: #1F5EFF; }
-  .l .leaf::before { background: #7FB800; }
-  .leaf b { color: #071A4D; }
-  .b h2 { border-color: #1F5EFF; }
-  .l h2 { border-color: #7FB800; }
-  .left { left: 30px; }
-  .right { left: 985px; }
-  .exc {
-    position: absolute; left: 470px; top: 905px; width: 540px; background: #FFF3EC;
-    border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px;
+  .card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 6px;
+    padding-bottom: 4px;
+    border-bottom: 2px solid;
   }
-  .exc h2 { font-size: 17px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
-  .exc .leaf { font-size: 13px; margin: 3px 0; padding-left: 14px; color: #7A2A12; }
-  .exc .leaf::before { background: #D2481F; }
-  .exc b { color: #B4380F; }
+  .card-title {
+    font-size: 13.5px;
+    font-weight: 800;
+    color: #071A4D;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .badge {
+    font-size: 9px;
+    font-weight: 800;
+    padding: 2px 6px;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+
+  /* Themes */
+  .c-blue { border-color: #1F5EFF; }
+  .c-blue .card-top { border-color: #1F5EFF; }
+  .c-blue .badge { background: #EEF4FF; color: #1F5EFF; }
+
+  .c-green { border-color: #5E8F13; }
+  .c-green .card-top { border-color: #5E8F13; }
+  .c-green .badge { background: #F4FBE8; color: #5E8F13; }
+
+  .c-amber { border-color: #9A7B07; }
+  .c-amber .card-top { border-color: #9A7B07; }
+  .c-amber .badge { background: #FEF9E7; color: #9A7B07; }
+
+  .c-orange { border-color: #B4380F; }
+  .c-orange .card-top { border-color: #B4380F; }
+  .c-orange .badge { background: #FEF3F0; color: #B4380F; }
+
+  .c-purple { border-color: #6366F1; }
+  .c-purple .card-top { border-color: #6366F1; }
+  .c-purple .badge { background: #EEF2FF; color: #6366F1; }
+
+  .c-teal { border-color: #0D9488; }
+  .c-teal .card-top { border-color: #0D9488; }
+  .c-teal .badge { background: #F0FDFA; color: #0D9488; }
+
+  .card-bullet {
+    margin-bottom: 5px;
+    padding-left: 10px;
+    position: relative;
+  }
+  .card-bullet::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #1F5EFF;
+    font-weight: 800;
+  }
+  .card-bullet strong { color: #071A4D; }
+
+  /* Positions */
+  .pos-tl { left: 45px; top: 92px; height: 185px; }
+  .pos-ml { left: 45px; top: 295px; height: 215px; }
+  .pos-bl { left: 45px; top: 528px; height: 205px; }
+
+  .pos-tr { right: 45px; top: 92px; height: 185px; }
+  .pos-mr { right: 45px; top: 295px; height: 215px; }
+  .pos-br { right: 45px; top: 528px; height: 205px; }
+
+  .bottom-bar {
+    position: absolute;
+    bottom: 20px; left: 45px; right: 45px;
+    background: #071A4D;
+    color: #FFFFFF;
+    border-radius: 8px;
+    padding: 9px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 11.5px;
+    z-index: 10;
+  }
+  .bottom-tag {
+    background: #B8FF34;
+    color: #071A4D;
+    font-weight: 800;
+    padding: 2px 7px;
+    border-radius: 4px;
+    margin-right: 8px;
+  }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <svg class="wires" viewBox="0 0 1480 1080">
-    <path d="M 520 505 C 470 505, 495 158, 500 155" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
-    <path d="M 520 520 C 480 520, 495 438, 500 438" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 520 535 C 470 535, 495 718, 500 718" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
-    <path d="M 960 505 C 1010 505, 985 158, 980 155" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 960 520 C 1000 520, 985 438, 980 438" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
-    <path d="M 960 535 C 1010 535, 985 718, 980 718" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 740 574 C 740 700, 740 830, 740 903" fill="none" stroke="#D2481F" stroke-width="2.5" stroke-dasharray="7 5" opacity=".6"/>
-  </svg>
 
-  <div class="center">
-    <div class="t">AMINES</div>
-    <div class="s">UNIT IX &#183; COMPLETE CHAPTER MAP</div>
-  </div>
-
-  <div class="card left b" style="top:58px">
-    <h2>Structure, Class &amp; Names</h2>
-    <div class="leaf"><b>N is sp&#179;</b> with a lone pair &#8212; pyramidal, ~108&#176;; that lone pair IS the basicity story</div>
-    <div class="leaf"><b>1&#176;/2&#176;/3&#176; amines</b> (alkyl on N: one/two/three), plus <b>quaternary</b> (R&#8324;N&#8314;X&#8315;, no lone pair, not basic)</div>
-    <div class="leaf"><b>Names:</b> alkanamine / N-methylmethanamine / N,N-dimethyl... ; benzene ring: aniline (benzenamine)</div>
-    <div class="leaf"><b>Amide vs amine:</b> CONH&#8322; (acid derivative, neutral) vs NH&#8322; (basic) &#8212; never confuse the two</div>
-  </div>
-
-  <div class="card left l" style="top:352px">
-    <h2>Preparation Board</h2>
-    <div class="leaf"><b>Alkylation:</b> NH&#8323; + R&#8211;X gives 1&#176; then 2&#176; then 3&#176; then quaternary (over-alkylation mess)</div>
-    <div class="leaf"><b>Reduction:</b> nitro (Sn/HCl, Fe/HCl, H&#8322;/Ni), nitriles (LiAlH&#8324;), amides (LiAlH&#8324;), oximes</div>
-    <div class="leaf"><b>Gabriel phthalimide:</b> clean 1&#176; aliphatic amines only (no 2&#176;/3&#176;, no aniline)</div>
-    <div class="leaf"><b>Hofmann bromamide:</b> amide + Br&#8322;/KOH &#8594; amine with ONE carbon fewer</div>
-  </div>
-
-  <div class="card left b" style="top:648px">
-    <h2>Basicity Ladders (the famous ladders!)</h2>
-    <div class="leaf"><b>Gas phase:</b> 3&#176; &gt; 2&#176; &gt; 1&#176; &gt; NH&#8323; (alkyl push)</div>
-    <div class="leaf"><b>Aqueous 1&#176;/2&#176;/3&#176;:</b> 2&#176; &gt; 1&#176; &gt; 3&#176; &gt; NH&#8323; (solvation vs inductio­n tug-of-war)</div>
-    <div class="leaf"><b>Substituted anilines:</b> p-toluidine &gt; aniline &gt; p-nitroaniline (donors up, EWG down)</div>
-    <div class="leaf"><b>All amines beat ammonia's ring cousins:</b> aliphatic &gt;&gt; aniline &gt; ... (lone pair asleep in the ring)</div>
-  </div>
-
-  <div class="card right l" style="top:58px">
-    <h2>Chemistry of Amines</h2>
-    <div class="leaf"><b>H-bonding:</b> 1&#176;/2&#176; boil high (N&#8211;H donors); 3&#176; has none &#8212; 3&#176; boils lowest of the trio</div>
-    <div class="leaf"><b>Salt formation:</b> amines dissolve in acid (C&#8322;H&#8325;NH&#8322; + HCl &#8594; salt) &#8212; the separation trick</div>
-    <div class="leaf"><b>Acylation/alkylation:</b> acyl chloride + amine &#8594; amide (Hinsberg's playground)</div>
-    <div class="leaf"><b>Carbylamine test:</b> 1&#176; only + CHCl&#8323;/KOH &#8594; foul isocyanide (2&#176;/3&#176; silent)</div>
-    <div class="leaf"><b>Hinsberg:</b> benzenesulphonyl chloride sorts 1&#176;/2&#176;/3&#176; by solubility</div>
-  </div>
-
-  <div class="card right b" style="top:392px">
-    <h2>Reactions on the Ring</h2>
-    <div class="leaf"><b>Aniline is a hyper-activator:</b> bromine water &#8594; 2,4,6-tribromoaniline (white ppt) instantly</div>
-    <div class="leaf"><b>To control it:</b> acylate first (acetanilide), react, deprotect &#8212; NH&#8322; tamed into NHCOCH&#8323;</div>
-    <div class="leaf"><b>Nitration:</b> needs protection too (oxidation + meta-mess otherwise); protected route gives p-nitroaniline</div>
-    <div class="leaf"><b>Sulphonation:</b> sulphanilic acid &#8212; the zwitterion</div>
-  </div>
-
-  <div class="card right l" style="top:712px">
-    <h2>Diazonium Salts &amp; Uses</h2>
-    <div class="leaf"><b>Diazotisation:</b> aniline + NaNO&#8322;/HCl at 273&#8211;278 K &#8594; benzenediazonium chloride</div>
-    <div class="leaf"><b>Seven exits:</b> Sandmeyer (Cl/Br/CN), Balz-Schiemann (F), KI, H&#8322;O (phenol), H&#8323;PO&#8322; (H), coupling (azo dyes)</div>
-    <div class="leaf"><b>The logic:</b> nitration &#8594; reduction &#8594; diazotisation &#8594; exit &#8212; the universal conversion route</div>
-    <div class="leaf"><b>Uses:</b> azo dyes, sulpha drugs, quaternary salts as detergents, adrenalin/serotonin are amines</div>
-  </div>
-
-  <div class="exc">
-    <h2>WATCH-OUTS THAT SET MCQ TRAPS</h2>
-    <div class="leaf"><b>Basicity order flips between gas and water:</b> memorise BOTH ladders and read which is asked</div>
-    <div class="leaf"><b>3&#176; amines fail carbylamine and Hinsberg</b> — no N–H at all</div>
-    <div class="leaf"><b>Gabriel cannot make aniline</b> — aryl halides refuse S&#8317;2</div>
-    <div class="leaf"><b>Hofmann bromamide LOSES one carbon</b> — the amide carbonyl leaves as carbonate</div>
-  </div>
+<div class="header">
+  <div class="header-badge">CUET UG Chemistry · Master Synthesis Architecture</div>
+  <h1>AMINES &amp; DIAZONIUM SALTS ROADMAP</h1>
+  <p>Holistic Conceptual Blueprint: Amine Preparations, Basicity Rules, Diagnostic Tests, and Diazonium Conversions</p>
 </div>
+
+<!-- SVG Orthogonal Connectors -->
+<svg class="wires">
+  <!-- Center to Top-Left -->
+  <path d="M 535 390 L 500 390 L 500 185 L 485 185" fill="none" stroke="#1F5EFF" stroke-width="2" stroke-dasharray="4 3"/>
+  <!-- Center to Mid-Left -->
+  <path d="M 535 410 L 485 410" fill="none" stroke="#5E8F13" stroke-width="2"/>
+  <!-- Center to Bottom-Left -->
+  <path d="M 535 430 L 500 430 L 500 630 L 485 630" fill="none" stroke="#9A7B07" stroke-width="2" stroke-dasharray="4 3"/>
+
+  <!-- Center to Top-Right -->
+  <path d="M 905 390 L 940 390 L 940 185 L 955 185" fill="none" stroke="#B4380F" stroke-width="2" stroke-dasharray="4 3"/>
+  <!-- Center to Mid-Right -->
+  <path d="M 905 410 L 955 410" fill="none" stroke="#6366F1" stroke-width="2"/>
+  <!-- Center to Bottom-Right -->
+  <path d="M 905 430 L 940 430 L 940 630 L 955 630" fill="none" stroke="#0D9488" stroke-width="2" stroke-dasharray="4 3"/>
+</svg>
+
+<!-- CENTER HUB -->
+<div class="center-hub">
+  <div class="hub-tag">UNIT IX · NCERT / CUET CORE</div>
+  <div class="hub-title">ORGANIC NITROGEN COMPOUNDS<br>(AMINES &amp; DIAZONIUM SALTS)</div>
+  <div class="hub-sub">Pyramidal Nitrogen · Lewis Basicity · Diazonium Master Pivot</div>
+</div>
+
+<!-- TOP-LEFT: Reduction Preparations -->
+<div class="card pos-tl c-blue">
+  <div class="card-top">
+    <div class="card-title">1. Reductive Preparations of Amines</div>
+    <span class="badge">Nitro / Nitriles / Amides</span>
+  </div>
+  <div class="card-bullet"><strong>Reduction of Nitro Compounds:</strong> Ar-NO₂ + Fe/HCl or Sn/HCl → Ar-NH₂. Fe/HCl is industrially preferred because FeCl₂ hydrolyses to regenerate HCl, needing only catalytic acid!</div>
+  <div class="card-bullet"><strong>Reduction of Nitriles (Mendius):</strong> R-CN + H₂/Ni or LiAlH₄ → R-CH₂-NH₂ (Chain length preserved; adds 1 carbon relative to starting halide).</div>
+  <div class="card-bullet"><strong>Reduction of Amides:</strong> R-CONH₂ + LiAlH₄ / ether → R-CH₂-NH₂ (Same number of carbons).</div>
+</div>
+
+<!-- MID-LEFT: Gabriel & Hoffmann Bromamide -->
+<div class="card pos-ml c-green">
+  <div class="card-top">
+    <div class="card-title">2. Gabriel Phthalimide &amp; Hoffmann Bromamide</div>
+    <span class="badge">Pure 1° Amines &amp; Degradation</span>
+  </div>
+  <div class="card-bullet"><strong>Gabriel Phthalimide Synthesis:</strong> Phthalimide + ethanolic KOH → Potassium phthalimide + R-X → N-alkylphthalimide → (aq. NaOH) pure 1° aliphatic amine + sodium phthalate.</div>
+  <div class="card-bullet"><strong>The Gabriel Limitation:</strong> Aromatic 1° amines (Aniline) CANNOT be made this way because aryl halides cannot undergo nucleophilic substitution (SN2) with phthalimide anion!</div>
+  <div class="card-bullet"><strong>Hoffmann Bromamide Degradation:</strong> R-CONH₂ + Br₂ + 4 NaOH → R-NH₂ + Na₂CO₃ + 2 NaBr + 2 H₂O. Yields 1° amine with <b>ONE LESS CARBON</b> via isocyanate (R-N=C=O) intermediate!</div>
+</div>
+
+<!-- BOTTOM-LEFT: Basicity Hierarchies -->
+<div class="card pos-bl c-amber">
+  <div class="card-top">
+    <div class="card-title">3. Basicity Laws: Gas vs Aqueous Phase</div>
+    <span class="badge">Inductive · Steric · Hydration</span>
+  </div>
+  <div class="card-bullet"><strong>Gas Phase Order:</strong> 3° Amine &gt; 2° Amine &gt; 1° Amine &gt; NH₃ (governed strictly by +I inductive effect of alkyl groups).</div>
+  <div class="card-bullet"><strong>Aqueous Phase (Methyl series):</strong> (CH₃)₂NH (2°) &gt; CH₃NH₂ (1°) &gt; (CH₃)₃N (3°) &gt; NH₃ (<b>213 Rule</b>).</div>
+  <div class="card-bullet"><strong>Aqueous Phase (Ethyl series):</strong> (C₂H₅)₂NH (2°) &gt; (C₂H₅)₃N (3°) &gt; C₂H₅NH₂ (1°) &gt; NH₃ (<b>231 Rule</b>).</div>
+  <div class="card-bullet"><strong>Aniline Suppression:</strong> Lone pair delocalises into ring (+R effect, 5 resonance structures). Aniline (pKb = 9.38) is far weaker than aliphatic amines!</div>
+</div>
+
+<!-- TOP-RIGHT: Diagnostic Distinction Tests -->
+<div class="card pos-tr c-orange">
+  <div class="card-top">
+    <div class="card-title">4. Diagnostic Chemical Tests</div>
+    <span class="badge">Hinsberg &amp; Carbylamine</span>
+  </div>
+  <div class="card-bullet"><strong>Carbylamine Reaction:</strong> 1° amine (aliphatic/aromatic) + CHCl₃ + 3 KOH, Δ → R-NC (intolerably foul-smelling isocyanide). 2° and 3° amines fail!</div>
+  <div class="card-bullet"><strong>Hinsberg Test (C₆H₅SO₂Cl):</strong> 1° amine gives N-alkyl sulphonamide (soluble in KOH); 2° amine gives N,N-dialkyl sulphonamide (insoluble in KOH); 3° amine does not react!</div>
+  <div class="card-bullet"><strong>Nitrous Acid (HNO₂):</strong> 1° aliphatic gives brisk effervescence of N₂↑ + alcohol; Aniline at 273–278 K gives stable diazonium salt; 2° amine gives yellow oily N-nitrosamine.</div>
+</div>
+
+<!-- MID-RIGHT: Electrophilic Substitution of Aniline -->
+<div class="card pos-mr c-purple">
+  <div class="card-top">
+    <div class="card-title">5. Electrophilic Reactions of Aniline</div>
+    <span class="badge">Super-Activation &amp; Protection</span>
+  </div>
+  <div class="card-bullet"><strong>Bromination:</strong> Aniline + Br₂/H₂O → 2,4,6-tribromoaniline (White ppt) instantaneously! Nitrogen lone pair over-activates ring to trisubstitution.</div>
+  <div class="card-bullet"><strong>Nitration:</strong> Conc. HNO₃ + H₂SO₄ yields 51% para, <b>47% meta</b>, 2% ortho! In strongly acidic medium, aniline is protonated to <b>anilinium ion (-NH₃⁺)</b>, which is meta-directing!</div>
+  <div class="card-bullet"><strong>Amino Group Protection:</strong> Acetylation with (CH₃CO)₂O / pyridine gives acetanilide (-NHCOCH₃), reducing lone pair donation; hydrolysed back to -NH₂ after reaction.</div>
+</div>
+
+<!-- BOTTOM-RIGHT: Diazonium Conversions -->
+<div class="card pos-br c-teal">
+  <div class="card-top">
+    <div class="card-title">6. Diazonium Synthetic Conversions</div>
+    <span class="badge">Sandmeyer / Schiemann / Dyes</span>
+  </div>
+  <div class="card-bullet"><strong>Diazotisation:</strong> C₆H₅NH₂ + NaNO₂ + 2 HCl (273–278 K) → C₆H₅N₂⁺Cl⁻. Temperature &gt; 278 K gives phenol!</div>
+  <div class="card-bullet"><strong>Replacements:</strong> Cu₂Cl₂/Cu₂Br₂/CuCN (Sandmeyer); HBF₄ + Δ (Balz-Schiemann Ar-F); KI warm (Ar-I); H₃PO₂ or ethanol (Deamination to Benzene); H₂O warm (Phenol).</div>
+  <div class="card-bullet"><strong>Azo Coupling:</strong> + Phenol (pH 9–10) → p-hydroxyazobenzene (Orange dye); + Aniline (pH 4–5) → p-aminoazobenzene (Yellow dye).</div>
+</div>
+
+<!-- BOTTOM STRIP -->
+<div class="bottom-bar">
+  <div><span class="bottom-tag">MASTER VERDICT</span> <b>Gabriel makes pure 1° aliphatic amines; Hoffmann bromamide sheds 1 carbon; 2° amine is most basic in water; Hinsberg separates 1°/2°/3°; Diazonium bridges ring transformations.</b></div>
+  <div>© OurMocks CUET Architecture</div>
+</div>
+
 </body>
 </html>
