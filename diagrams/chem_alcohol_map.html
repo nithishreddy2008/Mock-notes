@@ -1,75 +1,288 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
+<title>Alcohol Classification, Distinction Tests and Oxidation Pathways</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
-  .wrap { width: 1480px; position: relative; background: #fff; padding-bottom: 8px; }
-  .title { text-align: center; font-size: 24px; font-weight: 800; color: #071A4D; padding-top: 20px; }
-  .subtitle { text-align: center; font-size: 14px; color: #5A6478; margin-top: 4px; }
-  .lane { position: relative; margin: 60px 40px 0; height: 480px; }
-  .src { position: absolute; left: 40px; top: 150px; width: 240px; height: 110px; background: #071A4D;
-         border-radius: 14px; border-bottom: 5px solid #B8FF34; display: flex; flex-direction: column;
-         align-items: center; justify-content: center; box-shadow: 0 6px 16px rgba(7,26,77,.25); }
-  .src .t { color: #fff; font-size: 24px; font-weight: 800; }
-  .src .s { color: #B8FF34; font-size: 13px; font-weight: 700; letter-spacing: 2px; margin-top: 3px; }
-  svg.wires { position: absolute; inset: 0; width: 1400px; height: 480px; }
-  .branch { position: absolute; width: 330px; background: #FCFDFF; border: 1.5px solid #D5DCEA; border-radius: 12px; padding: 10px 13px; }
-  .branch h3 { font-size: 15.5px; font-weight: 800; color: #1F5EFF; margin-bottom: 4px; }
-  .branch p { font-size: 13px; color: #1B2333; line-height: 1.4; }
-  .branch p b { color: #071A4D; }
-  .reagent { display: inline-block; background: #EAF0FF; border-radius: 6px; padding: 2px 7px; font-size: 12.5px; font-weight: 800; color: #1F5EFF; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: #0F172A;
+    padding: 24px 32px;
+    box-shadow: none !important;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 14px;
+    margin-bottom: 18px;
+  }
+  .header-left h1 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #071A4D;
+    letter-spacing: -0.02em;
+  }
+  .header-left p {
+    font-size: 13.5px;
+    color: #64748B;
+    margin-top: 3px;
+  }
+  .badge-tag {
+    background: #071A4D;
+    color: #B8FF34;
+    font-size: 11.5px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    padding: 6px 14px;
+    border-radius: 6px;
+    text-transform: uppercase;
+  }
+  .grid-top {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 18px;
+    margin-bottom: 16px;
+  }
+  .class-card {
+    background: #FFFFFF;
+    border: 1.5px solid #E2E8F0;
+    border-radius: 10px;
+    padding: 16px 18px;
+  }
+  .class-card.c1 { border-top: 4px solid #1F5EFF; }
+  .class-card.c2 { border-top: 4px solid #059669; }
+  .class-card.c3 { border-top: 4px solid #D97706; }
+  .card-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .card-head h2 {
+    font-size: 17px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .pill {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 9px;
+    border-radius: 5px;
+  }
+  .pill-blue { background: #EFF6FF; color: #1F5EFF; }
+  .pill-green { background: #ECFDF5; color: #059669; }
+  .pill-amber { background: #FEF3C7; color: #D97706; }
+  .sub-box {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    padding: 8px 10px;
+    margin-bottom: 8px;
+    font-size: 12px;
+    line-height: 1.4;
+  }
+  .sub-box:last-child { margin-bottom: 0; }
+  .sub-label {
+    font-weight: 800;
+    color: #071A4D;
+    margin-bottom: 2px;
+    font-size: 11.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .highlight {
+    font-weight: 700;
+  }
+  .h-blue { color: #1F5EFF; }
+  .h-green { color: #059669; }
+  .h-amber { color: #D97706; }
+  .h-red { color: #DC2626; }
+  .bottom-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+  .matrix-card {
+    background: #FFFFFF;
+    border: 1.5px solid #E2E8F0;
+    border-radius: 10px;
+    padding: 14px 18px;
+  }
+  .matrix-card h3 {
+    font-size: 14.5px;
+    font-weight: 800;
+    color: #071A4D;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .test-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+  }
+  .test-table th {
+    background: #F1F5F9;
+    color: #334155;
+    font-weight: 700;
+    padding: 6px 8px;
+    text-align: left;
+    border: 1px solid #CBD5E1;
+  }
+  .test-table td {
+    padding: 6px 8px;
+    border: 1px solid #E2E8F0;
+    color: #1E293B;
+  }
+  .red-cell { background: #FEF2F2; color: #DC2626; font-weight: 700; }
+  .blue-cell { background: #EFF6FF; color: #1F5EFF; font-weight: 700; }
+  .gray-cell { background: #F8FAFC; color: #64748B; font-weight: 700; }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <div class="title">THE ALCOHOL REACTION MAP — ONE GROUP, SIX DESTINATIONS</div>
-  <div class="subtitle">Every S&#8317; route attacks the C&#8211;OH bond; oxidation attacks the O&#8211;H side. Pick the reagent, predict the product.</div>
 
-  <div class="lane">
-    <svg class="wires" viewBox="0 0 1400 480">
-      <path d="M 280 205 L 470 205 L 470 55 L 560 55" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".6"/>
-      <path d="M 280 205 L 470 205 L 470 140 L 560 140" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".6"/>
-      <path d="M 280 205 L 470 205 L 470 225 L 560 225" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".6"/>
-      <path d="M 280 205 L 470 205 L 470 310 L 560 310" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".6"/>
-      <path d="M 280 205 L 470 205 L 470 395 L 560 395" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".6"/>
-      <path d="M 280 205 L 470 205 L 470 462 L 560 462" fill="none" stroke="#D2481F" stroke-width="2.5" opacity=".6"/>
-    </svg>
+<div class="header">
+  <div class="header-left">
+    <h1>Alcohol Classification, Distinction Tests &amp; Oxidation Pathways</h1>
+    <p>Lucas turbidity kinetics, Victor Meyer colorimetry, Cu/573 K catalytic divergence &amp; relative acidities</p>
+  </div>
+  <div class="badge-tag">CUET Diagnostic Core</div>
+</div>
 
-    <div class="src"><div class="t">R&#8211;OH</div><div class="s">THE ALCOHOL HUB</div></div>
-
-    <div class="branch" style="left:560px; top:20px;">
-      <h3>1. Substitute &#8594; alkyl halide</h3>
-      <p><span class="reagent">HX (Lucas: ZnCl&#8322;+HCl)</span> or <span class="reagent">SOCl&#8322;</span> or <span class="reagent">PX&#8323;/PX&#8325;</span><br>
-      3&#176; bubbles instantly in Lucas, 2&#176; in minutes, 1&#176; only on heating. SOCl&#8322; gives the purest chloride (gases escape).</p>
+<div class="grid-top">
+  <!-- 1° Alcohol Card -->
+  <div class="class-card c1">
+    <div class="card-head">
+      <h2>Primary (1°) Alcohols</h2>
+      <span class="pill pill-blue">R-CH₂-OH</span>
     </div>
-
-    <div class="branch" style="left:560px; top:105px;">
-      <h3>2. Dehydrate &#8594; alkene or ether</h3>
-      <p><span class="reagent">conc. H&#8322;SO&#8324;, 443 K</span> &#8594; alkene (Saytzeff wins: but-2-ene &gt; but-1-ene). Milder <span class="reagent">413 K</span> &#8594; ether (two alcohols join). 3&#176; dehydrates easiest.</p>
+    <div class="sub-box">
+      <div class="sub-label">Lucas Reagent (anhy. ZnCl₂ + conc. HCl)</div>
+      <div><span class="highlight h-blue">No turbidity at room temperature</span>. Forms oily alkyl chloride layer only upon vigorous prolonged heating.</div>
     </div>
-
-    <div class="branch" style="left:560px; top:190px;">
-      <h3>3. Esterify (keep the O&#8211;H!)</h3>
-      <p><span class="reagent">RCOOH + acid, heat</span> &#8594; ester + water. The C&#8211;O bond of the ALCOHOL stays whole &#8212; the oxygen in the ester comes from the alcohol (isotope proof).</p>
+    <div class="sub-box">
+      <div class="sub-label">Controlled Oxidation (PCC vs Jones)</div>
+      <div><b>PCC in CH₂Cl₂:</b> Halts cleanly at <span class="highlight h-blue">Aldehyde (R-CHO)</span>.<br><b>KMnO₄ / K₂Cr₂O₇ / Jones:</b> Direct oxidation to <span class="highlight h-blue">Carboxylic acid (R-COOH)</span> with same carbon count.</div>
     </div>
-
-    <div class="branch" style="left:560px; top:275px;">
-      <h3>4. Act as a weak acid</h3>
-      <p><span class="reagent">Na / NaH</span> &#8594; alkoxide + H&#8322; gas. Acidity order: <b>methanol &gt; 1&#176; &gt; 2&#176; &gt; 3&#176;</b> &#8212; alkyl groups push electrons and weaken the O&#8211;H.</p>
+    <div class="sub-box">
+      <div class="sub-label">Catalytic Dehydrogenation (Cu / 573 K)</div>
+      <div>R-CH₂OH &rarr; <span class="highlight h-blue">Aldehyde (R-CHO) + H₂&uarr;</span> (True dehydrogenation; loss of hydrogen without carbon rearrangement).</div>
     </div>
-
-    <div class="branch" style="left:560px; top:360px;">
-      <h3>5. Oxidise (the class decides!)</h3>
-      <p><span class="reagent">K&#8322;Cr&#8322;O&#8327;/H&#8314;</span>: 1&#176; &#8594; aldehyde &#8594; acid; 2&#176; &#8594; ketone; 3&#176; resists (no C&#8211;H on the carbinol carbon). Cu at 573 K dehydrogenates instead: 1&#176; &#8594; aldehyde, 2&#176; &#8594; ketone, 3&#176; &#8594; alkene.</p>
+    <div class="sub-box">
+      <div class="sub-label">Relative Acidity &amp; +I Effect</div>
+      <div><span class="highlight h-blue">Highest acidity among alcohols</span> (1° &gt; 2° &gt; 3°). Minimal +I inductive destabilization of conjugate alkoxide ion (R-CH₂-O⁻).</div>
     </div>
+  </div>
 
-    <div class="branch" style="left:560px; top:447px; background:#FFF3EC; border-color:#D2481F;">
-      <h3 style="color:#B4380F;">6. With HBr watch the class</h3>
-      <p style="color:#7A2A12;">3&#176; goes S&#8317;1 (fast, via carbocation); 1&#176; goes S&#8317;2 (slow, backside) &#8212; the mechanism switch you learned in Unit VI decides everything.</p>
+  <!-- 2° Alcohol Card -->
+  <div class="class-card c2">
+    <div class="card-head">
+      <h2>Secondary (2°) Alcohols</h2>
+      <span class="pill pill-green">R₂CH-OH</span>
+    </div>
+    <div class="sub-box">
+      <div class="sub-label">Lucas Reagent (anhy. ZnCl₂ + conc. HCl)</div>
+      <div>Turbidity / cloudiness appears <span class="highlight h-green">within 5 minutes</span> at room temperature due to moderate secondary carbocation stability.</div>
+    </div>
+    <div class="sub-box">
+      <div class="sub-label">Controlled &amp; Strong Oxidation</div>
+      <div>Both PCC and strong oxidizers (K₂Cr₂O₇/H₂SO₄) convert 2° alcohols exclusively to <span class="highlight h-green">Ketones (R₂C=O)</span> with the same number of carbon atoms. Resists further mild oxidation.</div>
+    </div>
+    <div class="sub-box">
+      <div class="sub-label">Catalytic Dehydrogenation (Cu / 573 K)</div>
+      <div>R₂CH-OH &rarr; <span class="highlight h-green">Ketone (R₂C=O) + H₂&uarr;</span> (Smooth loss of two hydrogens; clean carbonyl formation).</div>
+    </div>
+    <div class="sub-box">
+      <div class="sub-label">Relative Acidity &amp; +I Effect</div>
+      <div><span class="highlight h-green">Intermediate acidity</span>. Two electron-releasing alkyl groups intensify negative charge on oxygen, weakening proton release.</div>
+    </div>
+  </div>
+
+  <!-- 3° Alcohol Card -->
+  <div class="class-card c3">
+    <div class="card-head">
+      <h2>Tertiary (3°) Alcohols</h2>
+      <span class="pill pill-amber">R₃C-OH</span>
+    </div>
+    <div class="sub-box">
+      <div class="sub-label">Lucas Reagent (anhy. ZnCl₂ + conc. HCl)</div>
+      <div><span class="highlight h-amber">Instant turbidity immediately</span> at room temperature! Highly stable 3° carbocation forms rapidly via S_N1 displacement.</div>
+    </div>
+    <div class="sub-box">
+      <div class="sub-label">Oxidation Behavior (No α-H)</div>
+      <div><span class="highlight h-red">Resists neutral/alkaline oxidation</span> (lacks α-hydrogen). Under vigorous acidic oxidation (hot HNO₃), C-C cleavage occurs &rarr; <b>acid mixture with fewer carbons</b>.</div>
+    </div>
+    <div class="sub-box">
+      <div class="sub-label">Cu / 573 K (CRITICAL EXAM TRAP)</div>
+      <div>Does NOT dehydrogenate! Undergoes catalytic <span class="highlight h-red">dehydration to an Alkene</span>: (CH₃)₃C-OH &rarr; <b>2-Methylpropene + H₂O</b>.</div>
+    </div>
+    <div class="sub-box">
+      <div class="sub-label">Relative Acidity &amp; +I Effect</div>
+      <div><span class="highlight h-amber">Lowest acidity among alcohols</span>. Three +I alkyl groups push electron density onto oxygen, heavily destabilizing tert-butoxide.</div>
     </div>
   </div>
 </div>
+
+<div class="bottom-grid">
+  <!-- Victor Meyer Test -->
+  <div class="matrix-card">
+    <h3><span style="color:#DC2626;">●</span> Victor Meyer's Test (Red, Blue &amp; Colourless Rule)</h3>
+    <table class="test-table">
+      <thead>
+        <tr>
+          <th>Class</th>
+          <th>Reagent Sequence (P+I₂ &rarr; AgNO₂ &rarr; HNO₂)</th>
+          <th>+ NaOH Treatment</th>
+          <th>Observed Colour</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>1° Alcohol</b></td>
+          <td>Forms Nitrolic Acid: R-C(=NOH)-NO₂</td>
+          <td>Forms soluble sodium nitrolate salt</td>
+          <td class="red-cell">BLOOD RED COLOUR</td>
+        </tr>
+        <tr>
+          <td><b>2° Alcohol</b></td>
+          <td>Forms Pseudonitrol: R₂C(NO)-NO₂</td>
+          <td>Insoluble in alkali, stays unchanged</td>
+          <td class="blue-cell">DEEP BLUE COLOUR</td>
+        </tr>
+        <tr>
+          <td><b>3° Alcohol</b></td>
+          <td>No reaction with HNO₂ (no α-H)</td>
+          <td>No reaction occurs</td>
+          <td class="gray-cell">COLOURLESS (No Change)</td>
+        </tr>
+      </tbody>
+    </table>
+    <div style="font-size:11.5px; color:#64748B; margin-top:6px;"><b>Memory Mnemonic:</b> <b>R-B-C</b> &rarr; 1° is <b>R</b>ed, 2° is <b>B</b>lue, 3° is <b>C</b>olourless. Classic CUET direct 5-mark match.</div>
+  </div>
+
+  <!-- Acidity & Esterification Kinetics -->
+  <div class="matrix-card">
+    <h3><span style="color:#1F5EFF;">■</span> Acidity Comparison &amp; Esterification Trends</h3>
+    <div style="font-size:12px; color:#334155; line-height:1.45;">
+      <b>Absolute Acidity Hierarchy:</b><br>
+      <span style="color:#071A4D; font-weight:700;">H₂O (pKₐ = 15.7) &gt; R-OH (pKₐ = 16–18) &gt; Terminal Alkyne &gt; NH₃ &gt; Alkane</span><br>
+      <i>Exception:</i> <b>Methanol (CH₃OH, pKₐ = 15.5)</b> is slightly <i>more acidic than water</i>! All other aliphatic alcohols are weaker acids than water (alkoxide R-O⁻ is a stronger base than OH⁻).<br><br>
+      <b>Esterification Kinetics (Fischer Esterification):</b><br>
+      Rate is controlled by steric hindrance around the reaction center:
+      <ul style="margin-left:16px; margin-top:2px;">
+        <li><b>Reactivity of Alcohols:</b> CH₃OH &gt; 1° &gt; 2° &gt; 3° (tertiary alcohols are slowest).</li>
+        <li><b>Reactivity of Carboxylic Acids:</b> HCOOH &gt; CH₃COOH &gt; R₂CHCOOH &gt; R₃CCOOH.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>

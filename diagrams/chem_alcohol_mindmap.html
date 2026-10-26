@@ -1,116 +1,280 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
+<title>Alcohols, Phenols and Ethers Master Synthesis Architecture</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
-  .wrap { width: 1480px; height: 1080px; position: relative; background: #fff; }
-  svg.wires { position: absolute; inset: 0; width: 1480px; height: 1080px; }
-  .center {
-    position: absolute; left: 520px; top: 470px; width: 440px; height: 104px;
-    background: #071A4D; border-radius: 16px; display: flex; flex-direction: column;
-    align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(7,26,77,.25);
-    border-bottom: 5px solid #B8FF34;
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: #0F172A;
+    position: relative;
+    overflow: hidden;
+    box-shadow: none !important;
   }
-  .center .t { color: #fff; font-size: 21px; font-weight: 800; letter-spacing: .5px; text-align: center; }
-  .center .s { color: #B8FF34; font-size: 13.5px; font-weight: 700; letter-spacing: 2px; margin-top: 4px; }
-  .card {
-    position: absolute; width: 465px; background: #FCFDFF; border: 1.5px solid #D5DCEA;
-    border-radius: 14px; padding: 13px 16px 12px;
+  .header {
+    position: absolute;
+    top: 20px;
+    left: 36px;
+    right: 36px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 10px;
+    z-index: 10;
   }
-  .card h2 { font-size: 20px; color: #071A4D; font-weight: 800; margin-bottom: 7px;
-             padding-bottom: 5px; border-bottom: 3px solid; display: inline-block; }
-  .leaf { font-size: 14.5px; color: #1B2333; margin: 5px 0; padding-left: 16px; position: relative; line-height: 1.32; }
-  .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
-  .b .leaf::before { background: #1F5EFF; }
-  .l .leaf::before { background: #7FB800; }
-  .leaf b { color: #071A4D; }
-  .b h2 { border-color: #1F5EFF; }
-  .l h2 { border-color: #7FB800; }
-  .left { left: 30px; }
-  .right { left: 985px; }
-  .exc {
-    position: absolute; left: 470px; top: 905px; width: 540px; background: #FFF3EC;
-    border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px;
+  .header h1 {
+    font-size: 21px;
+    font-weight: 800;
+    color: #071A4D;
+    letter-spacing: -0.02em;
   }
-  .exc h2 { font-size: 17px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
-  .exc .leaf { font-size: 13px; margin: 3px 0; padding-left: 14px; color: #7A2A12; }
-  .exc .leaf::before { background: #D2481F; }
-  .exc b { color: #B4380F; }
+  .header p {
+    font-size: 12.5px;
+    color: #64748B;
+  }
+  .badge-tag {
+    background: #071A4D;
+    color: #B8FF34;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    padding: 5px 12px;
+    border-radius: 5px;
+    text-transform: uppercase;
+  }
+  svg.connector-canvas {
+    position: absolute;
+    inset: 0;
+    width: 1440px;
+    height: 880px;
+    pointer-events: none;
+    z-index: 1;
+  }
+  .center-hub {
+    position: absolute;
+    left: 550px;
+    top: 380px;
+    width: 340px;
+    height: 120px;
+    background: #071A4D;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #1F5EFF;
+    z-index: 5;
+    padding: 12px;
+    text-align: center;
+  }
+  .center-hub h2 {
+    color: #FFFFFF;
+    font-size: 17px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+  }
+  .center-hub .sub {
+    color: #B8FF34;
+    font-size: 11.5px;
+    font-weight: 700;
+    margin-top: 4px;
+    letter-spacing: 0.12em;
+  }
+  .center-hub .core-meta {
+    font-size: 11px;
+    color: #94A3B8;
+    margin-top: 3px;
+  }
+  .topic-card {
+    position: absolute;
+    width: 380px;
+    background: #FFFFFF;
+    border: 1.5px solid #E2E8F0;
+    border-radius: 10px;
+    padding: 12px 16px;
+    z-index: 5;
+  }
+  .topic-card h3 {
+    font-size: 13.5px;
+    font-weight: 800;
+    color: #071A4D;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .topic-card ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 4.5px;
+  }
+  .topic-card li {
+    font-size: 11.5px;
+    color: #334155;
+    line-height: 1.35;
+    padding-left: 12px;
+    position: relative;
+  }
+  .topic-card li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    font-weight: 800;
+  }
+  .tag-pill {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 4px;
+  }
+  .blue-tag { background: #EFF6FF; color: #1F5EFF; }
+  .green-tag { background: #ECFDF5; color: #059669; }
+  .amber-tag { background: #FEF3C7; color: #D97706; }
+  .red-tag { background: #FEF2F2; color: #DC2626; }
+  .purple-tag { background: #FAF5FF; color: #7E22CE; }
+  .c1 { border-top: 3.5px solid #1F5EFF; }
+  .c1 li::before { color: #1F5EFF; }
+  .c2 { border-top: 3.5px solid #059669; }
+  .c2 li::before { color: #059669; }
+  .c3 { border-top: 3.5px solid #D97706; }
+  .c3 li::before { color: #D97706; }
+  .c4 { border-top: 3.5px solid #DC2626; }
+  .c4 li::before { color: #DC2626; }
+  .c5 { border-top: 3.5px solid #7E22CE; }
+  .c5 li::before { color: #7E22CE; }
+  .c6 { border-top: 3.5px solid #0284C7; }
+  .c6 li::before { color: #0284C7; }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <svg class="wires" viewBox="0 0 1480 1080">
-    <path d="M 520 505 C 470 505, 495 158, 500 155" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
-    <path d="M 520 520 C 480 520, 495 438, 500 438" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 520 535 C 470 535, 495 718, 500 718" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
-    <path d="M 960 505 C 1010 505, 985 158, 980 155" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 960 520 C 1000 520, 985 438, 980 438" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
-    <path d="M 960 535 C 1010 535, 985 718, 980 718" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 740 574 C 740 700, 740 830, 740 903" fill="none" stroke="#D2481F" stroke-width="2.5" stroke-dasharray="7 5" opacity=".6"/>
-  </svg>
 
-  <div class="center">
-    <div class="t">ALCOHOLS, PHENOLS &amp; ETHERS</div>
-    <div class="s">UNIT VII &#183; COMPLETE CHAPTER MAP</div>
+<div class="header">
+  <div>
+    <h1>Unit VII: Alcohols, Phenols and Ethers — Master Synthesis Architecture</h1>
+    <p>Comprehensive cognitive roadmap: Preparation methods, distinction tests, phenoxide resonance, hallmark name reactions &amp; ether cleavage</p>
   </div>
-
-  <div class="card left b" style="top:58px">
-    <h2>Classification &amp; Naming</h2>
-    <div class="leaf"><b>Alcohols by carbon:</b> 1&#176;, 2&#176;, 3&#176;; by count: mono-, di-, tri-hydric (glycol, glycerol)</div>
-    <div class="leaf"><b>Allylic/benzylic</b> (next to C=C or ring, sp&#179; carbon) vs <b>vinylic</b> (on C=C &#8212; hard to react)</div>
-    <div class="leaf"><b>Names:</b> -ol, -diol, -triol with lowest locant; ethers = alkoxyalkane (methoxyethane)</div>
-    <div class="leaf"><b>Phenol:</b> OH directly on the ring; cresols, catechol, resorcinol, hydroquinone</div>
-  </div>
-
-  <div class="card left l" style="top:352px">
-    <h2>Preparation Toolkit</h2>
-    <div class="leaf"><b>Alcohols:</b> alkene + H&#8322;O/H&#8314; (Markovnikov) or hydroboration-oxidation (anti-Markovnikov); reduction of aldehydes/ketones/acids/esters (LiAlH&#8324;, NaBH&#8324;); Grignard + aldehyde/ketone</div>
-    <div class="leaf"><b>Phenol:</b> Dow (chlorobenzene + NaOH, 623 K), diazonium + water, cumene process (with acetone bonus)</div>
-    <div class="leaf"><b>Ethers:</b> dehydration at 413 K (2 R&#8211;OH), Williamson: R&#8211;X + R'ONa &#8212; use primary halides or elimination wins</div>
-  </div>
-
-  <div class="card left b" style="top:648px">
-    <h2>Physical Properties</h2>
-    <div class="leaf"><b>Boiling:</b> H-bonding puts alcohols far above alkanes/ethers of similar mass (ethanol 351 K vs dimethyl ether 248 K)</div>
-    <div class="leaf"><b>Solubility:</b> small alcohols mix fully with water; large chains drown the &#8211;OH</div>
-    <div class="leaf"><b>Phenol:</b> barely soluble (the ring dominates); ortho isomers H-bond intramolecularly, so o-nitrophenol is steam-volatile</div>
-  </div>
-
-  <div class="card right l" style="top:58px">
-    <h2>Alcohol Chemistry</h2>
-    <div class="leaf"><b>C&#8211;OH cleavage:</b> HX/Lucas, PX&#8323;, SOCl&#8322;; 3&#176; via S&#8317;1, 1&#176; via S&#8317;2</div>
-    <div class="leaf"><b>Dehydration:</b> 443 K alkene (Saytzeff), 413 K ether; ease 3&#176; &gt; 2&#176; &gt; 1&#176;</div>
-    <div class="leaf"><b>Acidity:</b> methanol &gt; 1&#176; &gt; 2&#176; &gt; 3&#176; &#8212; still weaker than water</div>
-    <div class="leaf"><b>Oxidation:</b> 1&#176; &#8594; aldehyde &#8594; acid; 2&#176; &#8594; ketone; 3&#176; refuses; Cu/573 K dehydrogenates</div>
-    <div class="leaf"><b>Esterification:</b> with acids, C&#8211;O stays intact (isotope proof)</div>
-  </div>
-
-  <div class="card right b" style="top:392px">
-    <h2>Phenol Chemistry</h2>
-    <div class="leaf"><b>More acidic than alcohols/water</b> (pKa ~10): the phenoxide ion is resonance-stabilised; nitro groups boost acidity (picric acid), alkyl groups cut it</div>
-    <div class="leaf"><b>Ring reactions, no catalyst needed:</b> bromination &#8594; 2,4,6-tribromophenol (white ppt); nitration &#8594; o- and p-nitrophenol</div>
-    <div class="leaf"><b>Kolbe:</b> phenoxide + CO&#8322; &#8594; salicylic acid (aspirin's parent); <b>Reimer-Tiemann:</b> CHCl&#8323;/NaOH &#8594; salicylaldehyde</div>
-    <div class="leaf"><b>Oxidation:</b> quinone; <b>test:</b> violet complex with FeCl&#8323;</div>
-  </div>
-
-  <div class="card right l" style="top:712px">
-    <h2>Ethers &amp; the Commercial Duo</h2>
-    <div class="leaf"><b>Ethers:</b> inert, good solvents; HI cleaves them &#8212; 1 eq gives alcohol + iodide, excess gives 2 iodides; 3&#176;/benzyl go S&#8317;1</div>
-    <div class="leaf"><b>Diethyl ether:</b> low BP, the solvent for Grignard (donates lone pairs to Mg)</div>
-    <div class="leaf"><b>Methanol:</b> wood spirit &#8212; from CO + H&#8322;; toxic, blinds/kills; never drink</div>
-    <div class="leaf"><b>Ethanol:</b> fermentation of sugar; 95.6% azeotrope &#8212; absolute alcohol via CuO/CaO; denatured with methanol for industry</div>
-  </div>
-
-  <div class="exc">
-    <h2>WATCH-OUTS THAT SET MCQ TRAPS</h2>
-    <div class="leaf"><b>Acidity ladders differ:</b> phenol &gt; water &gt; alcohol; within alcohols, methanol &gt; 1&#176; &gt; 2&#176; &gt; 3&#176;</div>
-    <div class="leaf"><b>Dehydration temperature decides the product</b> — 413 K ether, 443 K alkene</div>
-    <div class="leaf"><b>Hydroboration is anti-Markovnikov</b> — propene + BH&#8323; gives propan-1-ol, not propan-2-ol</div>
-    <div class="leaf"><b>Williamson needs primary halides</b> — with 2&#176;/3&#176; halides the base eliminates instead of substituting</div>
-  </div>
+  <div class="badge-tag">CUET UG 2027 Baseline</div>
 </div>
+
+<svg class="connector-canvas" viewBox="0 0 1440 880">
+  <defs>
+    <style>
+      .ortho-line { stroke: #94A3B8; stroke-width: 1.5; stroke-dasharray: 4 3; fill: none; }
+      .line-label { font-size: 10.5px; fill: #475569; font-weight: 700; font-family: 'Inter', sans-serif; }
+      .label-bg { fill: #F8FAFC; rx: 3px; }
+    </style>
+  </defs>
+
+  <!-- Connectors from Center Hub (550, 380, w:340, h:120) -> Center: (720, 440) -->
+  <!-- Top Left: Card 1 (x: 50, y: 80, w:380, h:160) -> (430, 160) -->
+  <path d="M 550 410 L 480 410 L 480 160 L 430 160" class="ortho-line" />
+  <rect x="446" y="300" width="70" height="18" class="label-bg"/>
+  <text x="450" y="313" class="line-label">Synthesis</text>
+
+  <!-- Mid Left: Card 2 (x: 50, y: 340, w:380, h:200) -> (430, 440) -->
+  <path d="M 550 440 L 430 440" class="ortho-line" />
+  <rect x="456" y="432" width="68" height="18" class="label-bg"/>
+  <text x="460" y="445" class="line-label">Distinction</text>
+
+  <!-- Bottom Left: Card 3 (x: 50, y: 620, w:380, h:180) -> (430, 710) -->
+  <path d="M 550 470 L 480 470 L 480 710 L 430 710" class="ortho-line" />
+  <rect x="446" y="580" width="70" height="18" class="label-bg"/>
+  <text x="454" y="593" class="line-label">Acidity</text>
+
+  <!-- Top Right: Card 4 (x: 1010, y: 80, w:380, h:160) -> (1010, 160) -->
+  <path d="M 890 410 L 960 410 L 960 160 L 1010 160" class="ortho-line" />
+  <rect x="925" y="300" width="70" height="18" class="label-bg"/>
+  <text x="930" y="313" class="line-label">Reactions</text>
+
+  <!-- Mid Right: Card 5 (x: 1010, y: 340, w:380, h:200) -> (1010, 440) -->
+  <path d="M 890 440 L 1010 440" class="ortho-line" />
+  <rect x="926" y="432" width="68" height="18" class="label-bg"/>
+  <text x="932" y="445" class="line-label">Ethers</text>
+
+  <!-- Bottom Right: Card 6 (x: 1010, y: 620, w:380, h:180) -> (1010, 710) -->
+  <path d="M 890 470 L 960 470 L 960 710 L 1010 710" class="ortho-line" />
+  <rect x="924" y="580" width="74" height="18" class="label-bg"/>
+  <text x="928" y="593" class="line-label">Cleavage</text>
+</svg>
+
+<!-- Center Hub -->
+<div class="center-hub">
+  <h2>ALCOHOLS, PHENOLS &amp; ETHERS</h2>
+  <div class="sub">UNIT VII · COMPREHENSIVE ARCHITECTURE</div>
+  <div class="core-meta">C-OH &amp; C-O-C Chemistry · Intermolecular H-Bonding · Williamson &amp; Kolbe</div>
+</div>
+
+<!-- Left Top: Card 1 -->
+<div class="topic-card c1" style="left: 50px; top: 80px;">
+  <h3><span>1. Preparation Methods</span><span class="tag-pill blue-tag">Key Routes</span></h3>
+  <ul>
+    <li><b>From Alkenes (Hydration):</b> Acid-catalysed hydration follows Markovnikov's rule via carbocation (rearrangements possible).</li>
+    <li><b>Hydroboration-Oxidation:</b> B₂H₆ followed by alkaline H₂O₂ &rarr; overall <b>anti-Markovnikov syn-addition of H and OH</b>. No rearrangement!</li>
+    <li><b>Reduction of Carbonyls:</b> Aldehydes &rarr; 1° alcohols; Ketones &rarr; 2° alcohols using NaBH₄ or LiAlH₄. Esters/Acids &rarr; 1° alcohols with LiAlH₄.</li>
+    <li><b>Grignard Addition:</b> HCHO + RMgX &rarr; 1°; RCHO + RMgX &rarr; 2°; R₂CO + RMgX &rarr; 3° alcohols. Cumene auto-oxidation yields Phenol + Acetone.</li>
+  </ul>
+</div>
+
+<!-- Left Mid: Card 2 -->
+<div class="topic-card c2" style="left: 50px; top: 320px;">
+  <h3><span>2. Alcohol Distinction Tests</span><span class="tag-pill green-tag">Diagnostics</span></h3>
+  <ul>
+    <li><b>Lucas Test (ZnCl₂ + conc. HCl):</b> 3° instant turbidity; 2° within 5 minutes; 1° only upon heating. Tests S_N1 carbocation rate.</li>
+    <li><b>Victor Meyer Test:</b> 1° alcohol gives <b>Blood Red</b> (sodium nitrolate); 2° gives <b>Deep Blue</b> (pseudonitrol); 3° gives <b>Colourless</b> (R-B-C rule).</li>
+    <li><b>Dehydrogenation over Cu / 573 K:</b> 1° &rarr; Aldehyde; 2° &rarr; Ketone; 3° undergoes <b>dehydration to an Alkene</b> (no dehydrogenation!).</li>
+    <li><b>Oxidation (PCC vs Jones):</b> PCC halts at aldehyde; acidic KMnO₄ / K₂Cr₂O₇ oxidizes 1° to carboxylic acids directly.</li>
+  </ul>
+</div>
+
+<!-- Left Bottom: Card 3 -->
+<div class="topic-card c3" style="left: 50px; top: 600px;">
+  <h3><span>3. Acidity of Alcohols &amp; Phenols</span><span class="tag-pill amber-tag">pKa Trends</span></h3>
+  <ul>
+    <li><b>Alcohols vs Water:</b> Water (pKₐ = 15.7) is more acidic than all alcohols (pKₐ = 16–18), EXCEPT <b>Methanol (CH₃OH, pKₐ = 15.5)</b>!</li>
+    <li><b>Alcohol Acidity Order:</b> 1° &gt; 2° &gt; 3° due to destabilizing +I inductive electron donation onto alkoxide oxygen (R-O⁻).</li>
+    <li><b>Phenol Acidity:</b> Phenol (pKₐ &approx; 10) is 10⁶ times more acidic than alcohols due to resonance stabilisation of phenoxide ion (C₆H₅O⁻).</li>
+    <li><b>Substituent Effects:</b> Electron-withdrawing groups (-NO₂) at ortho/para elevate acidity (Picric acid pKₐ = 0.71). -CH₃ decreases acidity.</li>
+  </ul>
+</div>
+
+<!-- Right Top: Card 4 -->
+<div class="topic-card c4" style="left: 1010px; top: 80px;">
+  <h3><span>4. Hallmark Phenol Reactions</span><span class="tag-pill red-tag">Name Reactions</span></h3>
+  <ul>
+    <li><b>Kolbe's Reaction:</b> Sodium phenoxide + CO₂ (400 K, 4–7 atm) &rarr; Salicylic acid (o-hydroxybenzoic acid). Precursor to Aspirin.</li>
+    <li><b>Reimer-Tiemann Reaction:</b> Phenol + CHCl₃ + aq. NaOH &rarr; Salicylaldehyde via neutral <b>dichlorocarbene (:CCl₂)</b> electrophile.</li>
+    <li><b>Electrophilic Halogenation:</b> Br₂ in CS₂ &rarr; o- &amp; p-bromophenol (p major); Br₂ in H₂O &rarr; <b>2,4,6-tribromophenol white precipitate</b>.</li>
+    <li><b>Nitration:</b> Dilute HNO₃ &rarr; o- &amp; p-nitrophenol (separable by steam distillation: o has intra-H bond, p has inter-H bond). Conc. HNO₃ &rarr; Picric acid.</li>
+  </ul>
+</div>
+
+<!-- Right Mid: Card 5 -->
+<div class="topic-card c5" style="left: 1010px; top: 320px;">
+  <h3><span>5. Ethers: Williamson Synthesis</span><span class="tag-pill purple-tag">S_N2 Rules</span></h3>
+  <ul>
+    <li><b>Williamson Synthesis:</b> R-O⁻ Na⁺ + R'-X &rarr; R-O-R' + NaX via S_N2 mechanism.</li>
+    <li><b>Strict 1° Halide Rule:</b> Alkyl halide R'-X MUST be primary! With 3° halides, alkoxide behaves as a strong base &rarr; <b>exclusive E2 alkene elimination</b>.</li>
+    <li><b>Preparing tert-Butyl Ethers:</b> Must react Sodium tert-butoxide with Methyl halide ((CH₃)₃C-O⁻Na⁺ + CH₃I), NOT tert-butyl halide with methoxide.</li>
+    <li><b>Dehydration of Ethanol:</b> H₂SO₄ at 413 K &rarr; Diethyl ether (S_N2 intermolecular); at 443 K &rarr; Ethene (intramolecular elimination).</li>
+  </ul>
+</div>
+
+<!-- Right Bottom: Card 6 -->
+<div class="topic-card c6" style="left: 1010px; top: 600px;">
+  <h3><span>6. Ether Cleavage by Halogen Acids (HI)</span><span class="tag-pill blue-tag">Site Selection</span></h3>
+  <ul>
+    <li><b>Unsymmetrical Ethers (1°/2°):</b> I⁻ attacks the smaller, less sterically hindered alkyl group via S_N2 &rarr; smaller alkyl iodide + larger alcohol.</li>
+    <li><b>Tertiary Ether Cleavage:</b> (CH₃)₃C-O-CH₃ + HI &rarr; <b>tert-butyl iodide (S_N1) + methanol</b> (forms stable 3° carbocation).</li>
+    <li><b>Alkyl Aryl Ethers (Anisole):</b> Cleaves to Phenol + Methyl iodide. Ar-O bond has partial double-bond character (+R effect) and cannot cleave.</li>
+    <li><b>Electrophilic Substitution of Anisole:</b> -OCH₃ is activating and ortho/para-directing (+R &gt; -I). Para-isomer is major.</li>
+  </ul>
+</div>
+
 </body>
 </html>

@@ -11,261 +11,436 @@
 
 #table(
   columns: (1.1fr, 2fr, 1.15fr),
-  table.header[*Sub-topic*][*Official syllabus pointer (NTA CUET(UG) Chemistry syllabus 2026, the current 2027 baseline, Unit VII)*][*Skills the questions test*],
-  [*Classification, naming, structures*], [
-    Classification & nomenclature of alcohols, phenols & Ethers, Structures of functional groups (alcohol, phenols & ethers)
+  table.header[*Sub-topic*][*Official syllabus pointer (NTA CUET(UG) Chemistry syllabus, the current 2027 baseline, Unit VII)*][*Skills the questions test*],
+  [*Classification & Structures*], [
+    Classification of Alcohols, Phenols and Ethers (mono-, di-, tri- or polyhydric; 1°/2°/3°), IUPAC nomenclature, electronic structures of functional groups ($C-O-H$ and $C-O-C$ bond angles).
   ], [
-    Sorting alcohols as 1°/2°/3°, mono/di/tri-hydric, spotting allylic/benzylic/vinylic positions, and writing -ol/alkoxy names.
+    Classifying hydroxy/alkoxy compounds, assigning IUPAC names, explaining why the $C-O-C$ angle in ethers exceeds the tetrahedral angle ($111.7^circle.small$).
   ],
-  [*Preparation*], [
-    Methods of preparation of alcohols, Phenols and Ethers
+  [*Preparation of Alcohols & Phenols*], [
+    Methods of preparation of Alcohols (hydration of alkenes, hydroboration-oxidation, reduction of carbonyls and esters, Grignard additions) and Phenols (from haloarenes, benzenesulphonic acid, diazonium salts, and cumene).
   ], [
-    Choosing acid hydration vs hydroboration (Markovnikov vs anti-Markovnikov), reductions, Grignard builds, the cumene/Dow/diazonium routes to phenol, and Williamson vs dehydration for ethers.
+    Applying Markovnikov vs anti-Markovnikov syn addition, distinguishing $"NaBH"_4$ vs $"LiAlH"_4$ selectivity, and detailing the industrial cumene-to-phenol process.
   ],
-  [*Physical properties*], [
-    Physical properties of alcohols, phenols and Ethers (boiling point & solubility)
+  [*Physical & Chemical Properties*], [
+    Physical properties (boiling points, intermolecular hydrogen bonding, solubility). Chemical reactions of alcohols (acidity, esterification, reactions involving $C-O$ cleavage, Lucas test, Victor Meyer test, dehydrogenation over Cu, dehydration).
   ], [
-    Ranking boiling points via hydrogen bonding (alcohol > ether > alkane) and explaining solubility fall with chain length.
+    Ordering boiling points and solubilities, predicting Lucas turbidity times, calculating esterification rates, and identifying dehydration alkene products.
   ],
-  [*Chemical properties*], [
-    Chemical properties of alcohols involving cleavage of -C-OH bond & -CO-H bond, Chemical properties of phenols including oxidation & Reduction, Chemical properties of Ethers
+  [*Chemistry of Phenols*], [
+    Reactivity of Phenols: acidity and substituent effects ($-"NO"_2$ vs $-"CH"_3$), electrophilic aromatic substitutions (halogenation, nitration), Kolbe's reaction, Reimer-Tiemann reaction, reaction with zinc dust, oxidation.
   ], [
-    Predicting Lucas-test speeds, dehydration products at 413 K vs 443 K, oxidation outcomes by alcohol class, phenol's acidity and ring reactions (Kolbe, Reimer-Tiemann), and ether cleavage by HI.
+    Explaining phenoxide resonance stability, separating o- and p-nitrophenol by steam distillation, deducing dichlorocarbene intermediate, and synthesizing aspirin.
   ],
-  [*Commercial alcohols*], [
-    Some Commercially important Alcohols like methanol & Ethanol
+  [*Ethers: Synthesis & Cleavage*], [
+    Methods of preparation of Ethers (acid-catalysed dehydration of alcohols, Williamson ether synthesis), physical properties, chemical reactions (cleavage of $C-O$ bond by hydrogen halides, electrophilic substitution of anisole).
   ], [
-    Recalling methanol's toxicity and CO route, ethanol's fermentation, azeotrope and denaturing.
+    Executing Williamson syntheses with primary halides vs avoiding $3^circle$ elimination, predicting $"HI"$ cleavage products ($S_N 2$ vs $S_N 1$), and directing anisole substitutions.
+  ],
+  [*Commercial Alcohols*], [
+    Manufacture, uses, and physiological hazards of Methanol ($"CH"_3 "OH"$) and Ethanol ($"C"_2 "H"_5 "OH"$), denatured alcohol.
+  ], [
+    Detailing water gas catalytic synthesis of methanol, yeast enzyme fermentation steps (invertase and zymase), and physiological toxicity mechanisms.
   ],
 )
 
 #exam-pointer[
-  CUET UG pattern (NTA official information bulletin and syllabus, 2026 cycle — the
-  current 2027 baseline): each subject paper carries *50 compulsory questions* in
-  *60 minutes*, with $+5$ for every correct answer and $-1$ for every incorrect answer. The Chemistry paper maps strictly to NCERT
-  Class 12, and Unit VII is the functional-group unit where reagent-choice logic
-  decides nearly every answer.
+  *CUET UG Paper Pattern & Weightage:* The Chemistry paper carries *50 compulsory questions* in *60 minutes* ($+5$ marks for correct, $-1$ mark for incorrect). Unit VII (Alcohols, Phenols and Ethers) contributes 4 to 6 questions focusing on Lucas & Victor Meyer distinctions, Williamson synthesis with $3^circle$ halides, Kolbe and Reimer-Tiemann mechanisms, ether cleavage with $"HI"$, and phenol substituent acidity trends.
 ]
 
-= Classification and Naming: Reading the Addresses
+= Module 1: Classification, Nomenclature & Structural Geometry
 
-One hydroxyl group, many homes. When OH hangs on an sp³ carbon, you have an *alcohol*; when it sits *directly on the ring*, you have a *phenol*; when oxygen bridges two carbons, you have an *ether*. The same O–H chemistry runs through the first two families, but the ring rewrites phenol's personality completely — this chapter is largely the story of that contrast.
+== 1. Classification & Nomenclature
+1. *Alcohols:*
+   - *By Hydroxyl Group Count:* Monohydric (ethanol), Dihydric / Glycols (ethane-1,2-diol), Trihydric / Glycerols (propane-1,2,3-triol), and Polyhydric (sorbitol, mannitol).
+   - *By Carbon Hybridisation ($C(s p^3)-"OH"$):*
+     - *Primary ($1^circle$):* $-"OH"$ attached to $-"CH"_2-$ (e.g. ethanol, propan-1-ol).
+     - *Secondary ($2^circle$):* $-"OH"$ attached to $>"CH"-$ (e.g. propan-2-ol, butan-2-ol).
+     - *Tertiary ($3^circle$):* $-"OH"$ attached to $>"C"-$ (e.g. 2-methylpropan-2-ol).
+     - *Allylic Alcohols:* $-"OH"$ bonded to $s p^3$ carbon adjacent to $C=C$ ($"CH"_2 = "CH" - "CH"_2 "OH"$).
+     - *Benzylic Alcohols:* $-"OH"$ bonded to $s p^3$ carbon adjacent to benzene ring ($"C"_6 "H"_5 "CH"_2 "OH"$).
+   - *Vinylic Alcohols ($C(s p^2)-"OH"$):* $-"OH"$ attached directly to $C=C$ (e.g. vinyl alcohol, $"CH"_2 = "CH-OH"$, which rapidly tautomerises to acetaldehyde).
+2. *Phenols:* Hydroxyl group is bonded directly to an aromatic benzene ring ($"Ar-OH"$).
+   - Monohydric: Phenol ($"C"_6 "H"_5 "OH"$), o-cresol (2-methylphenol), m-cresol, p-cresol.
+   - Dihydric: Catechol (benzene-1,2-diol), Resorcinol (benzene-1,3-diol), Quinol / Hydroquinone (benzene-1,4-diol).
+   - Trihydric: Pyrogallol (benzene-1,2,3-triol), Hydroxyquinol (benzene-1,2,4-triol), Phloroglucinol (benzene-1,3,5-triol).
+3. *Ethers:* Compounds containing an alkoxy or aryloxy group ($R-O-R'$ or $R-O-"Ar"$).
+   - *Symmetrical / Simple Ethers:* Both alkyl groups are identical (e.g. diethyl ether, $"C"_2 "H"_5 - O - "C"_2 "H"_5$).
+   - *Unsymmetrical / Mixed Ethers:* Alkyl/aryl groups differ (e.g. ethyl methyl ether, $"C"_2 "H"_5 - O - "CH"_3$; anisole, $"C"_6 "H"_5 - O - "CH"_3$).
 
-- *Alcohols by the carbinol carbon:* *primary* (one carbon neighbour), *secondary* (two), *tertiary* (three) — the same 1°/2°/3° ladder that steered Unit VI's S_N questions, because converting an alcohol to a halide follows them too.
-- *By how many OH:* monohydric ($C_2 "H"_5 "OH"$), dihydric (ethylene glycol, $"CH"_2 "OH" - "CH"_2 "OH"$), trihydric (glycerol) — antifreeze and cosmetics own the latter two.
-- *By position flavour:* *allylic* (OH next to a C=C on an sp³ carbon), *benzylic* (next to the ring), *vinylic* (OH directly ON the C=C carbon — rare, unreactive, and excluded from the alcohol club in practice).
-- *Names:* the -ol suffix with the lowest locant — propan-2-ol, ethane-1,2-diol, propane-1,2,3-triol. In rings, cyclohexanol; when OH is not the senior group, it becomes a *hydroxy* prefix.
-- *Phenols:* the parent plus methylated cresols (o-, m-, p-cresol) and the dihydroxy trio — catechol (1,2), resorcinol (1,3), hydroquinone (1,4).
-- *Ethers:* name the smaller side as an *alkoxy* prefix on the bigger chain — methoxyethane ($"CH"_3 "OCH"_2 "CH"_3$), ethoxybenzene. Symmetrical ones get the "di" form: diethyl ether.
+== 2. Molecular Geometry & Bond Angle Comparison
+In alcohols, phenols, and ethers, the oxygen atom is $s p^3$-hybridised with two bonding pairs and two non-bonding lone pairs:
+- *Methanol ($C-O-H$):* The bond angle is $108.9^circle.small$, slightly smaller than the ideal tetrahedral angle ($109.5^circle.small$). This slight compression is caused by the greater electrostatic repulsion exerted by the two unshared lone pairs on oxygen against the bonding pairs (*lone pair - bonding pair repulsion*).
+- *Phenol ($C-O-H$):* The bond angle is $109^circle.small$. The $C-O$ bond length in phenol ($136 "pm"$) is substantially shorter than in methanol ($142 "pm"$). This shortening arises from:
+  1. *Resonance Effect:* Partial double-bond character between ring carbon and oxygen.
+  2. *Hybridisation Difference:* Carbon is $s p^2$-hybridised (33% s-character), holding electrons tighter.
+- *Dimethyl Ether ($C-O-C$):* The bond angle is $111.7^circle.small$, significantly *larger than the tetrahedral angle* ($109.5^circle.small$).
+  *Critical Examination Fact:* The repulsive steric interaction between the two bulky, electron-rich alkyl groups outweighs the lone-pair compression, forcing the $C-O-C$ bond angle to widen to $111.7^circle.small$.
 
-== Structures of the functional groups
+= Module 2: Preparation of Alcohols and Phenols
 
-- *Alcohol O:* both bonds from sp³ oxygen — C–O–H angle near 108.9°, C–O length 142 pm.
-- *Phenol O:* sp²-flavoured (lone pair delocalised into the ring) — C–O shortens to 136 pm and the ring's electron density rises; every phenol specialty flows from this delocalisation.
-- *Ether O:* sp³ like the alcohol but two carbon friends; bent shape, polar C–O bonds, and *no O–H bond at all* — no self-hydrogen-bonding, and much lower boiling points.
+== 1. Synthesis of Alcohols
+1. *From Alkenes:*
+   - *Acid-Catalysed Hydration:* Direct addition of water in the presence of dilute mineral acid ($"H"_2 "SO"_4$):
+     $ "CH"_3 - "CH" = "CH"_2 + "H"_2 "O" arrow.r^("H"^+) "CH"_3 - "CH"("OH") - "CH"_3 quad ("Markovnikov addition") $
+     *Mechanism:* Stepwise addition via a planar carbocation intermediate. Prone to 1,2-hydride or 1,2-methyl shifts to yield rearranged alcohols.
+   - *Hydroboration-Oxidation (H.C. Brown, Nobel Prize 1979):* Diborane ($B_2 H_6$) reacts with alkenes to form trialkylboranes, which are oxidized by alkaline hydrogen peroxide ($"H"_2 "O"_2 / "OH"^-$):
+     $ 3 "CH"_3 - "CH" = "CH"_2 + ("BH"_3)_2 arrow.r ("CH"_3 "CH"_2 "CH"_2)_3 B arrow.r^("H"_2 "O"_2 / "OH"^-) 3 "CH"_3 "CH"_2 "CH"_2 "OH" + "B"("OH")_3 $
+     *CUET Hallmark Rule:* Overall results in *anti-Markovnikov addition of water* via concerted *syn-addition*. Because no carbocation is formed, *no structural rearrangements occur*.
+2. *From Carbonyl Compounds:*
+   - *Reduction of Aldehydes and Ketones:*
+     - Aldehydes are reduced to primary ($1^circle$) alcohols; ketones are reduced to secondary ($2^circle$) alcohols.
+     - Reagents: Sodium borohydride ($"NaBH"_4$) in ethanol or Lithium aluminium hydride ($"LiAlH"_4$) in dry ether.
+   - *Reduction of Carboxylic Acids & Esters:*
+     - Carboxylic acids are reduced exclusively to $1^circle$ alcohols by the powerful reducing agent $"LiAlH"_4$.
+     - Commercially, acids are converted to esters and reduced via catalytic hydrogenation (*Bouveault-Blanc Reduction*):
+       $ R-"COOH" arrow.r^("R'OH / H"^+) R-"COOR'" arrow.r^("H"_2 / "Catalyst") R-"CH"_2 "OH" + R'-"OH" $
+3. *From Grignard Reagents (Carbon-Carbon Chain Extension):*
+   Nucleophilic addition of $R-"MgX"$ to carbonyl groups followed by acidic hydrolysis:
+   - *Methanal (Formaldehyde, $"HCHO"$):* Yields *Primary ($1^circle$) Alcohols*:
+     $ "HCHO" + R-"MgX" arrow.r R-"CH"_2 "OMgX" arrow.r^("H"_2 "O") R-"CH"_2 "OH" + "Mg"("OH")X $
+   - *Other Aldehydes ($R'-"CHO"$):* Yields *Secondary ($2^circle$) Alcohols*:
+     $ R'-"CHO" + R-"MgX" arrow.r R'-"CH"("OMgX")-R arrow.r^("H"_2 "O") R'-"CH"("OH")-R $
+   - *Ketones ($R'_2 "C=O"$):* Yields *Tertiary ($3^circle$) Alcohols*:
+     $ R'_2 "C=O" + R-"MgX" arrow.r R'_2 C("OMgX")-R arrow.r^("H"_2 "O") R'_2 C("OH")-R $
 
-= Preparation: Building the O–H and C–O
-
-== Making alcohols
-
-- *From alkenes — acid hydration (Markovnikov):* $"CH"_3 - "CH" = "CH"_2 + "H"_2 "O" arrow.r^("H"^(+)) "CH"_3 - "CH"("OH") - "CH"_3$ — the OH lands on the *more substituted* carbon, via the more stable carbocation.
-- *From alkenes — hydroboration-oxidation (anti-Markovnikov):* $"BH"_3$ adds boron to the *less* crowded carbon; $"H"_2 "O"_2 / "OH"^(-)$ then swaps B for OH — propene gives *propan-1-ol*. The clean way to beat Markovnikov.
-- *By reduction:* aldehydes $arrow.r$ 1° alcohols, ketones $arrow.r$ 2° (reagents: $"NaBH"_4$, $"LiAlH"_4$); carboxylic acids and esters $arrow.r$ 1° with $"LiAlH"_4$.
-- *From Grignard reagents:* $R"–MgX"$ + formaldehyde $arrow.r$ 1° (one carbon longer); + other aldehydes $arrow.r$ 2°; + ketones $arrow.r$ 3°. Hydrolysis releases the alcohol. Chain-building on demand.
-
-== Making phenols
-
-- *Dow process:* chlorobenzene + NaOH at 623 K, 300 atm, then acidification — brute force (Unit VI revisited).
-- *From diazonium salts:* warm $"ArN"_2^(+) "Cl"^(-)$ with water $arrow.r$ phenol + $"N"_2$ — the mild, classic lab route.
-- *Cumene process (industrial champion):* benzene + propene $arrow.r$ cumene; air oxidation $arrow.r$ cumene hydroperoxide; dilute acid splits it into *phenol + acetone* — two valuable products from one reaction, which is why industry loves it.
-
-== Making ethers
-
-- *Dehydration of alcohols (413 K, conc. $"H"_2 "SO"_4$):* two alcohol molecules lose water between them — $2 R"–OH" arrow.r R"–O–R" + "H"_2 "O"$. Limited to 1° alcohols (2°/3° prefer to eliminate), and gives symmetrical ethers only.
-- *Williamson synthesis (the general route):* an alkyl halide + sodium alkoxide: $R"–X" + R'"O"^(-) "Na"^(+) arrow.r R"–O–R'" + "NaX"$. Works for any ether *if the halide is primary* — with secondary/tertiary halides, the alkoxide (a base!) eliminates instead. To make an aryl alkyl ether, use the *sodium phenoxide* + alkyl halide: $"C"_6 "H"_5 "O"^(-) "Na"^(+) + "CH"_3 "Br" arrow.r "C"_6 "H"_5 "OCH"_3$.
-
-= Physical Properties: The Hydrogen-Bond Tax
-
-- *Boiling points:* alcohols tower over alkanes and ethers of similar mass because their O–H bonds network molecules together — ethanol (M = 46) boils at 351 K while dimethyl ether (also M = 46, but no O–H) boils at 248 K. Same mass, 100 K apart: that is the hydrogen-bond tax.
-- *Among isomeric alcohols:* branching lowers boiling point (less surface contact) — the 1° > 2° > 3° order again.
-- *Solubility:* methanol and ethanol mix with water in every proportion; solubility falls as the hydrophobic chain grows (octanol barely dissolves). Within isomers, branching *raises* solubility.
-- *Phenol:* only moderately water-soluble — the ring dominates; its o-nitro cousin hydrogen-bonds *internally* (chelation), which is why o-nitrophenol is steam-volatile while the p-isomer, hydrogen-bonding *externally*, is not. A beloved separation question.
-- *Ethers:* no O–H means no self-association — low boiling, but still *water-miscible in small members* (their bent oxygen accepts water's H-bonds).
-
-= Alcohols: Two Bonds, Two Attack Plans
-
-The reactions of alcohols split by *which bond breaks*: the C–OH bond (substitutions, dehydration) or the O–H bond (acidity, esterification).
+== 2. Industrial & Laboratory Synthesis of Phenols
+1. *From Cumene (Isopropylbenzene — Dominant Commercial Route):*
+   Over $90%$ of global synthetic phenol is manufactured via this single elegant process:
+   - Cumene is oxidized by passing air or oxygen through it at $368-408 "K"$ to produce *cumene hydroperoxide*.
+   - Cumene hydroperoxide is treated with dilute sulphuric acid ($"H"_2 "SO"_4$) at $323-363 "K"$:
+     $ "C"_6 "H"_5 - "CH"("CH"_3)_2 + "O"_2 arrow.r "C"_6 "H"_5 - C("CH"_3)_2 - "O-O-H" arrow.r^("H"^+) "C"_6 "H"_5 "OH" + "CH"_3 "COCH"_3 $
+     *Industrial Merit:* Generates equimolar quantities of *Acetone (propan-2-one)* as a high-value commercial byproduct.
+2. *From Haloarenes (Dow's Process):*
+   Chlorobenzene is heated with $6-8%$ aqueous sodium hydroxide at $623 "K"$ under $300 "atm"$ pressure, followed by acidification:
+   $ "C"_6 "H"_5 "Cl" + 2 "NaOH" arrow.r^(623 "K", 300 "atm") "C"_6 "H"_5 "ONa" + "NaCl" + "H"_2 "O" arrow.r^("HCl") "C"_6 "H"_5 "OH" $
+3. *From Benzenediazonium Salts:*
+   Benzenediazonium chloride is warmed gently with water or dilute mineral acid:
+   $ "C"_6 "H"_5 - "N"_2^+ "Cl"^- + "H"_2 "O" arrow.r^("warm") "C"_6 "H"_5 "OH" + "N"_2 arrow.t + "HCl" $
+4. *From Benzenesulphonic Acid:*
+   Benzene is sulphonated with oleum; sodium benzenesulphonate is fused with solid sodium hydroxide at $573 "K"$, yielding sodium phenoxide which on acidification gives phenol.
 
 #figure(
-  image("assets/chem_alcohol_map.png", width: 100%),
-  caption: [The alcohol reaction map: six destinations from one R–OH hub — halides, alkenes or ethers by dehydration, esters, alkoxides, and oxidation products chosen by alcohol class.],
+  image("assets/chem_alcohol_map.png", width: 82%),
+  caption: [Alcohol classification, diagnostic distinction tests (Lucas turbidity kinetics & Victor Meyer colorimetry), Cu/573 K catalytic divergence, and relative acidities.],
 )
 
-== Cleaving the C–OH bond
+= Module 3: Physical Properties & Distinction Tests of Alcohols
 
-- *With HX (the Lucas test):* $R"–OH" + "HX" arrow.r R"–X" + "H"_2 "O"$ — Lucas reagent ($"HCl" + "ZnCl"_2$) reads the classes by turbidity: 3° clouds *instantly* (S_N1 via a stable carbocation), 2° in minutes, 1° only on heating (S_N2, slow). The order 3° > 2° > 1° is carbocation logic.
-- *With phosphorus halides:* $3 R"–OH" + "PCl"_3 arrow.r 3 R"–Cl" + "H"_3 "PO"_3$; PBr₃ and PI₃ (from red P + Br₂/I₂) make the bromides and iodides.
-- *With thionyl chloride:* $R"–OH" + "SOCl"_2 arrow.r R"–Cl" + "SO"_2 arrow.r + "HCl" arrow.r$ — gaseous by-products escape, giving the purest alkyl chloride.
-- *Dehydration — temperature chooses the product:* conc. $"H"_2 "SO"_4$ at *413 K* joins two alcohols into an ether; at *443 K* each molecule loses water into an alkene. Ease of dehydration: 3° > 2° > 1° (carbocation again), and *Saytzeff's rule* picks the more substituted alkene.
-- *Oxidation — the class fingerprint:* acidified $"K"_2 "Cr"_2 "O"_7$ turns 1° alcohols into aldehydes then (further) acids, and 2° into ketones; *3° refuses* — no C–H on the carbinol carbon to remove. With hot Cu at 573 K the route is *dehydrogenation*: 1° $arrow.r$ aldehyde, 2° $arrow.r$ ketone, 3° $arrow.r$ alkene (dehydration wins instead).
+== 1. Physical Properties Trends
+- *Boiling Points:* Alcohols have strikingly higher boiling points than alkanes, haloalkanes, or ethers of comparable molecular mass:
+  $ "Ethanol" ("M"=46, "b.p." = 351 "K") quad "versus" quad "Propane" ("M"=44, "b.p." = 231 "K") quad "versus" quad "Methoxymethane" ("M"=46, "b.p." = 248 "K") $
+  *Explanation:* Intermolecular hydrogen bonding ($O - H dots.c O$) links alcohol molecules into extensive dynamic polymeric aggregates, requiring substantial thermal energy to vaporise.
+- *Effect of Branching on Isomers:* Boiling point decreases with chain branching:
+  $ "n-butyl alcohol" (391 "K") > "isobutyl alcohol" (381 "K") > "sec-butyl alcohol" (373 "K") > "tert-butyl alcohol" (356 "K") $
+  Branching diminishes surface area, making the molecule more compact and weakening van der Waals dispersion forces.
+- *Water Solubility:* Lower alcohols (methanol, ethanol, propanol) are completely miscible with water in all proportions because their hydroxyl groups form strong hydrogen bonds with water molecules. Solubility drops sharply as the non-polar, hydrophobic hydrocarbon chain extends ($C_5$ and higher).
 
-== Cleaving the O–H bond: acidity and esters
+== 2. Chemical Properties & Acidity of Alcohols
+Alcohols act as versatile amphoteric compounds (both weak Brønsted acids and Lewis bases):
+1. *Acidity Hierarchy:*
+   $ "H"_2 "O" (p K_a = 15.7) > R-"OH" (p K_a = 16-18) > "Terminal Alkynes" > "NH"_3 > "Alkanes" $
+   *Crucial Exception:* *Methanol ($"CH"_3 "OH"$, $p K_a = 15.5$)* is slightly *more acidic than water*! All other aliphatic alcohols are weaker acids than water. Consequently, alkoxide ions ($R-O^-$) are stronger bases than hydroxide ion ($"OH"^-$).
+2. *Acidity Order Among Alcohol Classes:*
+   $ 1^circle "Alcohol" > 2^circle "Alcohol" > 3^circle "Alcohol" $
+   *Mechanism:* Alkyl groups are electron-releasing ($+I$ inductive effect). In tertiary alcohols, three alkyl groups pump electron density onto oxygen, intensifying the negative charge on the conjugate alkoxide ion and heavily destabilizing it.
+3. *Esterification (Fischer Esterification):*
+   Reaction of alcohols with carboxylic acids in the presence of concentrated $"H"_2 "SO"_4$:
+   $ R-"COOH" + R'-"OH" arrow.r.l^("H"^+) R-"COOR'" + "H"_2 "O" $
+   - *Steric Factor Dictates Rate:* Reactivity of alcohols follows: $"CH"_3 "OH" > 1^circle > 2^circle > 3^circle$. Bulkier tertiary alcohols esterify sluggishly.
+   - *Mechanism Fact:* The $C-O$ bond of the acid breaks, and the $O-H$ bond of the alcohol breaks (proven by $attach("O", tl: 18)$ isotopic labelling).
 
-- *Acidity order:* methanol > 1° > 2° > 3° — alkyl groups push electrons (+I), weakening the O–H grip on its proton. All alcohols are *weaker acids than water*, so sodium metal on wet hands is wasted on water first; Na/NaH convert alcohols to *alkoxides* ($R"O"^(-)$), the workhorse bases of the Williamson synthesis.
-- *Esterification:* $R"–OH" + R'"COOH" arrow.r^("acid") R'"COOR" + "H"_2 "O"$ — and here is the isotope proof the exam enjoys: using $18 "O"$-labelled alcohol, the heavy oxygen appears in the *ester*, not the water — so the alcohol's C–O bond never broke.
+== 3. Diagnostic Chemical Distinction Tests
+1. *The Lucas Test (Distinction via $C-O$ Cleavage Kinetics):*
+   Uses Lucas Reagent (concentrated $"HCl"$ and anhydrous $"ZnCl"_2$). Alcohols convert into insoluble alkyl chlorides, creating turbidity/cloudiness:
+   - *Tertiary ($3^circle$) Alcohols:* Produce instant turbidity immediately at room temperature (forms stable $3^circle$ carbocation via $S_N 1$).
+   - *Secondary ($2^circle$) Alcohols:* Turbidity appears within 5 minutes at room temperature.
+   - *Primary ($1^circle$) Alcohols:* Remain clear at room temperature; turbidity appears only upon prolonged heating.
+2. *Victor Meyer's Test (Distinction via Colorimetry):*
+   Sequence: Alcohol $+ P/I_2 arrow.r$ Iodoalkane $+ "AgNO"_2 arrow.r$ Nitroalkane $+ "HNO"_2 arrow.r$ Alkali ($"NaOH"$):
+   - *Primary ($1^circle$) Alcohol:* Forms nitrolic acid, which dissolves in $"NaOH"$ to yield an intense *Blood Red colour*.
+   - *Secondary ($2^circle$) Alcohol:* Forms pseudonitrol, which is insoluble in alkali and produces a *Deep Blue colour*.
+   - *Tertiary ($3^circle$) Alcohol:* Lacks $alpha$-hydrogen; does not react with nitrous acid, remaining completely *Colourless*.
+   *CUET Memory Formula:* *R-B-C* ($1^circle = "Red", 2^circle = "Blue", 3^circle = "Colourless"$).
+3. *Catalytic Dehydrogenation over Heated Copper ($"Cu" / 573 "K"$):*
+   - *Primary ($1^circle$) Alcohol:* Dehydrogenated cleanly to an *Aldehyde*:
+     $ R-"CH"_2 "OH" arrow.r^("Cu" / 573 "K") R-"CHO" + "H"_2 arrow.t $
+   - *Secondary ($2^circle$) Alcohol:* Dehydrogenated to a *Ketone*:
+     $ R_2 "CH-OH" arrow.r^("Cu" / 573 "K") R_2 "C=O" + "H"_2 arrow.t $
+   - *Tertiary ($3^circle$) Alcohol (HIGH-YIELD TRAP):* Because it lacks an $alpha$-hydrogen atom, it *cannot dehydrogenate*. Instead, it undergoes catalytic *dehydration to an Alkene*:
+     $ ("CH"_3)_3 C-"OH" arrow.r^("Cu" / 573 "K") ("CH"_3)_2 C = "CH"_2 + "H"_2 "O" quad ("2-methylpropene") $
 
-= Phenols: The Ring Changes Everything
+#figure(
+  image("assets/chem_alcohol_phenol_tests.png", width: 82%),
+  caption: [Phenols acidity mechanisms, phenoxide resonance stabilization, hallmark name reactions (Kolbe, Reimer-Tiemann), Williamson ether synthesis constraints, and $"HI"$ cleavage regiochemistry.],
+)
 
-- *Acidity:* phenol (pKa ≈ 10) beats water and every alcohol, because the *phenoxide ion spreads its negative charge into the ring* by resonance — the charge never concentrates. Electron-pulling nitro groups stretch the difference further (picric acid, 2,4,6-trinitrophenol, is nearly a strong acid); alkyl groups shrink it.
-- *Reactions of the O–H:* with Na $arrow.r$ sodium phenoxide + $H_2$ (like alcohols); with NaOH $arrow.r$ phenoxide (unlike alcohols — evidence of the higher acidity); *not* with $"NaHCO"_3$ (that distinguishes phenol from carboxylic acids, which do fizz).
-- *Ring reactions — no catalyst, no heat:* the activated ring over-delivers. Bromine water *instantly* gives 2,4,6-tribromophenol as a white precipitate (no $"FeBr"_3$ needed); dilute $"HNO"_3$ at low temperature gives o- and p-nitrophenol.
-- *Kolbe reaction:* sodium phenoxide + $"CO"_2$ under pressure, then acid $arrow.r$ *salicylic acid* — the feedstock of aspirin.
-- *Reimer-Tiemann reaction:* phenol + $"CHCl"_3$ / NaOH, then acid $arrow.r$ *salicylaldehyde* (an aldehyde lands ortho to OH).
-- *Oxidation and reduction:* chromic acid oxidises phenol to *quinone* (a yellow ring-diketone); catalytic hydrogenation forces the ring to cyclohexanol.
-- *The classic test:* neutral $"FeCl"_3$ gives a *violet complex* — a one-tube identification of phenols.
+= Module 4: Chemical Properties & Name Reactions of Phenols
 
-= Ethers: The Quiet Family
+== 1. Acidity of Phenols & Substituent Effects
+Phenol ($p K_a approx 10$) is an acidic organic compound—approximately *one million times more acidic than aliphatic alcohols* ($p K_a approx 16-18$):
+- *Phenoxide Ion Resonance Stabilisation:* Ionisation yields a phenoxide ion ($"C"_6 "H"_5 "O"^-$). The negative charge is delocalised over the ortho and para positions of the aromatic ring across five contributing resonance structures. In contrast, the alkoxide ion ($R-O^-$) has its negative charge localized entirely on oxygen and is destabilized by $+I$ alkyl groups.
+- *Phenol vs Carboxylic Acid:* Although phenol turns blue litmus red and dissolves in aqueous $"NaOH"$, it is a weaker acid than carbonic acid ($"H"_2 "CO"_3$) and carboxylic acids ($R-"COOH"$). Hence, *phenol does NOT react with sodium bicarbonate ($"NaHCO"_3$)* and produces no effervescence of $"CO"_2$.
+- *Substituent Influence on Phenol Acidity:*
+  - *Electron-Withdrawing Groups ($-"NO"_2, -"CN"$, Halogens):* Disperse negative charge from the phenoxide ring via $-I$ and $-R$ effects, dramatically increasing acidity. The activating effect is maximal at *ortho* and *para* positions:
+    $ "2,4,6-trinitrophenol (Picric acid)" (p K_a = 0.71) > "2,4-dinitrophenol" (p K_a = 4.0) > "p-nitrophenol" (p K_a = 7.15) > "o-nitrophenol" (p K_a = 7.23) > "m-nitrophenol" (p K_a = 8.35) > "Phenol" (p K_a = 9.98) $
+    *Examination Fact:* Picric acid is so strongly acidic that it decomposes aqueous $"NaHCO"_3$, releasing effervescence of $"CO"_2$!
+  - *Electron-Donating Groups ($-"CH"_3, -"OCH"_3, -"NH"_2$):* Intensify negative charge on the phenoxide ring via $+I$ and hyperconjugation/resonance, decreasing acidity:
+    $ "Phenol" (p K_a = 10.0) > "p-cresol" (p K_a = 10.26) > "m-cresol" (p K_a = 10.08) > "o-cresol" (p K_a = 10.28) $
 
-- *Inertness:* no O–H, no carbonyl, no leaving group — ethers dissolve almost anything and react with almost nothing, which is exactly why *dry ether* hosts Grignard reagents (the oxygen donates lone pairs to magnesium).
-- *Cleavage by HI (the one reaction they own):* $R"–O–R'" + "HI" arrow.r R"–I" + R'"–OH"$ at heat. One equivalent stops at alcohol + iodide; *excess* HI takes the alcohol on to a second iodide ($2 R"–I"$). Mechanism splits by class: 1° alkyl goes S_N2 (I⁻ attacks the less hindered side), 3°/benzylic go S_N1 (carbocation first). With *aryl* alkyl ethers, the aryl–O bond refuses to break — you always get the alkyl iodide + phenol.
-- *Electrophilic substitution:* the alkoxy group is a strong activator, o,p-directing — anisole nitrates gently to o- and p-nitroanisole.
+== 2. Electrophilic Aromatic Substitution of Phenols
+The hydroxyl group is powerfully activating and strictly *ortho/para-directing*:
+1. *Halogenation in Different Solvents:*
+   - *In Non-Polar Solvent ($"CS"_2$ or $"CHCl"_3$ at $273 "K"$):* Phenol is minimally ionised; monobromination yields *p-bromophenol (major)* and o-bromophenol (minor):
+     $ "C"_6 "H"_5 "OH" + "Br"_2 arrow.r^("CS"_2, 273 "K") "p-bromophenol (80%)" + "o-bromophenol (20%)" $
+   - *In Aqueous Medium ($"Br"_2 / "H"_2 "O"$):* Water ionises phenol completely into phenoxide ion ($"C"_6 "H"_5 "O"^-$), which hyperactivates the ring towards electrophilic attack. Instantaneous tribromination occurs, yielding a characteristic *white precipitate of 2,4,6-tribromophenol*:
+     $ "C"_6 "H"_5 "OH" + 3 "Br"_2 ("aq") arrow.r "2,4,6-tribromophenol" arrow.b quad ("White Precipitate") + 3 "HBr" $
+2. *Nitration of Phenol:*
+   - *With Dilute Nitric Acid ($"dil. HNO"_3$ at $298 "K"$):* Yields a mixture of ortho-nitrophenol and para-nitrophenol:
+     - *o-Nitrophenol:* Features *intramolecular hydrogen bonding* (chelation within the same molecule). It has a lower boiling point and is *steam volatile*.
+     - *p-Nitrophenol:* Features *intermolecular hydrogen bonding* (linking separate molecules into aggregates). It has a higher boiling point and is *non-steam volatile*.
+     *Industrial Separation:* The two isomers are cleanly separated by *steam distillation*.
+   - *With Concentrated Nitric Acid ($"conc. HNO"_3 / "conc. H"_2 "SO"_4$):* Direct nitration produces *2,4,6-trinitrophenol (Picric acid)* in poor yields due to destructive oxidation of the ring.
 
-= Methanol and Ethanol: The Commercial Duo
+== 3. Hallmark Name Reactions of Phenols
+1. *Kolbe's Reaction (Synthesis of Salicylic Acid):*
+   Phenoxide ion is treated with carbon dioxide ($"CO"_2$) at $400 "K"$ under $4-7 "atm"$ pressure, followed by acidification:
+   $ "C"_6 "H"_5 "ONa" + "CO"_2 arrow.r^(400 "K", 4-7 "atm") "o-hydroxybenzoic acid (Salicylic acid)" $
+   *Pharmaceutical Gateway:* Acetylation of salicylic acid with acetic anhydride in the presence of acid yields *Aspirin (acetylsalicylic acid)*:
+   $ "Salicylic Acid" + ("CH"_3 "CO")_2 "O" arrow.r^("H"^+) "Acetylsalicylic acid (Aspirin)" + "CH"_3 "COOH" $
+2. *Reimer-Tiemann Reaction (Synthesis of Salicylaldehyde):*
+   Heating phenol with chloroform ($"CHCl"_3$) in aqueous sodium hydroxide at $340 "K"$ followed by acidic hydrolysis:
+   $ "C"_6 "H"_5 "OH" + "CHCl"_3 + 3 "NaOH" arrow.r^(340 "K") "Salicylaldehyde (o-hydroxybenzaldehyde)" + 3 "NaCl" + 2 "H"_2 "O" $
+   *Crucial Mechanistic Intermediates:* The reactive electrophile is neutral *dichlorocarbene ($:C "Cl"_2$)* generated in situ via $alpha$-elimination from chloroform:
+   $ "CHCl"_3 + "OH"^- arrow.r.l :C "Cl"_3^- + "H"_2 "O" arrow.r :C "Cl"_2 + "Cl"^- $
+   If carbon tetrachloride ($"CCl"_4$) is used instead of chloroform, the reaction yields *Salicylic acid*.
+3. *Reaction with Zinc Dust:*
+   Distillation of phenol with zinc dust strips the oxygen, reducing it to *benzene*:
+   $ "C"_6 "H"_5 "OH" + "Zn" arrow.r^(Delta) "C"_6 "H"_5 - "H" + "ZnO" $
+4. *Oxidation with Chromic Acid ($"Na"_2 "Cr"_2 "O"_7 / "H"_2 "SO"_4$):*
+   Conjugated oxidation generates *p-benzoquinone*, a bright yellow conjugated diketone.
+5. *Neutral Ferric Chloride Test ($"FeCl"_3$):*
+   Phenols react with neutral $"FeCl"_3$ to form intensely coloured violet/purple coordination complexes: $[ "Fe"("OC"_6 "H"_5)_6 ]^(3-)$. Aliphatic alcohols give no colour.
 
-- *Methanol ("wood spirit"):* made industrially from $"CO" + 2"H"_2$ over a ZnO–"Cr"_2 "O"_3 catalyst. *Deadly poison* — metabolised to formaldehyde and formic acid; it blinds and kills. Never tasted, never sipped.
-- *Ethanol:* the fermentation product — $"C"_6 "H"_12 "O"_6 arrow.r^("zymase") 2 "C"_2 "H"_5 "OH" + 2 "CO"_2$. Distillation stalls at *95.6%* (a water-ethanol azeotrope); "absolute" alcohol needs drying (CuO, or molecular sieves). *Denatured* ethanol carries methanol (or other additives) to make it undrinkable — industrial use without beverage tax.
-- *Everyday anchor:* ethanol is the solvent of tinctures and perfumes; methanol the feedstock of formaldehyde.
+= Module 5: Ethers — Synthesis, Properties & Acidic Cleavage
 
-= Key Reactions & Rules: One-Stop Revision
+== 1. Methods of Preparation of Ethers
+1. *Dehydration of Alcohols (Temperature-Controlled Divergence):*
+   When ethanol is heated with concentrated sulphuric acid, the reaction outcome is controlled by temperature:
+   - *At $413 "K"$ ($140^circle.small "C"$):* Intermolecular dehydration via bimolecular nucleophilic substitution ($S_N 2$) yields *Diethyl ether*:
+     $ 2 "C"_2 "H"_5 "OH" arrow.r^("conc. H"_2 "SO"_4, 413 "K") "C"_2 "H"_5 - O - "C"_2 "H"_5 + "H"_2 "O" $
+   - *At $443 "K"$ ($170^circle.small "C"$):* Intramolecular dehydration via $beta$-elimination dominates, yielding *Ethene*:
+     $ "C"_2 "H"_5 "OH" arrow.r^("conc. H"_2 "SO"_4, 443 "K") "CH"_2 = "CH"_2 + "H"_2 "O" $
+2. *Williamson Ether Synthesis (Universal Laboratory Route):*
+   An alkyl halide is heated with a sodium alkoxide or phenoxide in an $S_N 2$ displacement:
+   $ R-O^- "Na"^+ + R'-X arrow.r R-O-R' + "NaX" $
+   *THE SACRED WILLIAMSON LIMITATION (MUST MASTER FOR CUET):*
+   - The alkyl halide $R'-X$ *must strictly be primary ($1^circle$)*!
+   - If a *tertiary ($3^circle$) alkyl halide* is used, the alkoxide behaves as a strong base rather than a nucleophile, causing *exclusive $"E2"$ dehydrohalogenation to an Alkene*:
+     $ "CH"_3 "O"^- "Na"^+ + ("CH"_3)_3 C-"Br" arrow.r ("CH"_3)_2 C = "CH"_2 (100% "alkene") + "CH"_3 "OH" + "NaBr" $
+   - To prepare tert-butyl methyl ether, one must react *sodium tert-butoxide with methyl bromide*:
+     $ ("CH"_3)_3 C-O^- "Na"^+ + "CH"_3 "Br" arrow.r ("CH"_3)_3 C - O - "CH"_3 + "NaBr" quad ("Smooth S_N2 synthesis") $
 
-#cheatsheet-box(title: "Routes, Orders, Named Reactions")[
+== 2. Acidic Cleavage of Ethers by Halogen Acids ($"HI" / "HBr"$)
+Ethers are relatively unreactive compounds, but their etherial $C-O$ linkage is cleaved under vigorous conditions by concentrated halogen acids ($"HI" > "HBr" >> "HCl"$):
+1. *Cleavage of Symmetrical Ethers:*
+   $ R-O-R + "HI" arrow.r R-I + R-"OH" arrow.r^("excess HI", Delta) 2 R-I + "H"_2 "O" $
+2. *Cleavage of Unsymmetrical Ethers Containing Primary / Secondary Alkyl Groups ($S_N 2$):*
+   When an unsymmetrical ether containing $1^circle$ or $2^circle$ alkyl groups is cleaved with equimolar cold $"HI"$, the halide ion ($I^-$) attacks the *less sterically hindered carbon atom*:
+   $ "CH"_3 - O - "CH"_2 "CH"_2 "CH"_3 + "HI" arrow.r "CH"_3 - I + "CH"_3 "CH"_2 "CH"_2 "OH" $
+3. *Cleavage of Ethers Containing a Tertiary Alkyl Group ($S_N 1$):*
+   If one of the alkyl groups is tertiary ($3^circle$), cleavage proceeds via an $S_N 1$ mechanism through a highly stable tertiary carbocation. The halide ion attacks the tertiary carbon:
+   $ ("CH"_3)_3 C - O - "CH"_3 + "HI" arrow.r ("CH"_3)_3 C - I + "CH"_3 "OH" $
+4. *Cleavage of Alkyl Aryl Ethers (Anisole):*
+   When anisole ($"C"_6 "H"_5 - O - "CH"_3$) is heated with concentrated $"HI"$, the products are exclusively *Phenol and Methyl Iodide*:
+   $ "C"_6 "H"_5 - O - "CH"_3 + "HI" arrow.r "C"_6 "H"_5 "OH" + "CH"_3 I $
+   *Mechanism Justification:* Oxygen lone pair resonance delocalises into the aromatic ring, giving the $"Ar"-O$ bond partial double-bond character. The $"Ar"-O$ bond is extraordinarily strong and cannot be cleaved; nucleophilic attack occurs strictly at the $s p^3$ methyl carbon. Iodobenzene is never formed.
+
+= Module 6: Commercially Important Industrial Alcohols
+
+1. *Methanol (Methyl Alcohol / Wood Spirit, $"CH"_3 "OH"$):*
+   - Historically obtained by the destructive distillation of wood.
+   - *Modern Industrial Synthesis:* Catalytic reduction of carbon monoxide (water gas) with hydrogen:
+     $ "CO" + 2 "H"_2 arrow.r^("ZnO" - "Cr"_2 "O"_3, 573-673 "K", 200-300 "atm") "CH"_3 "OH" $
+   - *Physical Properties & Uses:* Colourless liquid ($b.p. = 337 "K"$). Used as an industrial solvent for paints and varnishes, and in the manufacture of formaldehyde ($"HCHO"$).
+   - *Severe Toxicology:* Ingestion of even $10 "mL"$ causes permanent retinal blindness; $30 "mL"$ causes death. In the body, alcohol dehydrogenase oxidizes methanol to formaldehyde ($"HCHO"$) and formic acid ($"HCOOH"$), which coagulates cellular protoplasm and induces acute metabolic acidosis.
+2. *Ethanol (Ethyl Alcohol / Grain Alcohol, $"C"_2 "H"_5 "OH"$):*
+   - *Manufacture by Fermentation:* Prepared from sugary molasses or starchy grains using yeast enzymes:
+     - Invertase converts sucrose into glucose and fructose:
+       $ "C"_(12) "H"_(22) "O"_(11) + "H"_2 "O" arrow.r^("Invertase") "C"_6 "H"_(12) "O"_6 + "C"_6 "H"_(12) "O"_6 $
+     - Zymase ferments glucose/fructose into ethanol and carbon dioxide:
+       $ "C"_6 "H"_(12) "O"_6 arrow.r^("Zymase") 2 "C"_2 "H"_5 "OH" + 2 "CO"_2 arrow.t $
+     Fermentation terminates naturally when ethanol concentration reaches $14%$, because higher concentrations poison the yeast enzyme.
+   - *Denatured Alcohol (Methylated Spirit):* Commercial ethanol is rendered unfit for drinking by adding $5%$ toxic methanol, copper sulphate (imparting a warning blue colour), and pyridine (a foul-smelling liquid) to curb industrial tax evasion.
+
+#pagebreak()
+
+#figure(
+  image("assets/chem_alcohol_mindmap.png", width: 78%),
+  caption: [Master Synthesis Architecture: Complete Unit VII cognitive roadmap integrating alcohol distinctions, phenoxide resonance, hallmark name reactions, Williamson ether rules, and $"HI"$ cleavage mechanisms.],
+)
+
+#v(-4pt)
+
+#cheatsheet-box(title: "Unit VII Master Formula & High-Yield Cheatsheet")[
+  #set text(size: 8.5pt)
   #table(
-    columns: (1.35fr, 1.9fr, 1.75fr),
-    table.header[*Rule / route*][*Symbols in plain words*][*When to reach for it*],
-    [Alkene + $H_2 O/H^+$], [Markovnikov: OH to the richer carbon], [Alcohol from alkene (default)],
-    [Hydroboration: $"BH"_3$ then $H_2 O_2/"OH"^-$], [anti-Markovnikov OH], [Making 1° alcohols from alkenes],
-    [$R "MgX"$ + HCHO / RCHO / RCOR'], [1° / 2° / 3° alcohols after hydrolysis], [Chain-building by Grignard],
-    [$"LiAlH"_4$, $"NaBH"_4$], [reduce carbonyls to alcohols], [Aldehyde $arrow.r$ 1°, ketone $arrow.r$ 2°],
-    [Cumene process], [phenol + acetone from benzene + propene + air], [Industrial phenol questions],
-    [Williamson: $R–X + R'"ONa"$], [primary halides only; phenoxide for aryl ethers], [Any ether synthesis],
-    [Dehydration: 413 K vs 443 K], [ether vs alkene (Saytzeff)], [Temperature-choice questions],
-    [Lucas test: $"HCl" + "ZnCl"_2$], [3° instant, 2° minutes, 1° heat], [Classifying alcohols fast],
-    [$"SOCl"_2$], [purest chloride — gases escape], [Clean R–Cl preparation],
-    [Oxidation by $"K"_2 "Cr"_2 "O"_7$], [1° $arrow.r$ aldehyde $arrow.r$ acid; 2° $arrow.r$ ketone; 3° resists], [Class-fingerprint questions],
-    [Cu, 573 K], [dehydrogenation: 1° $arrow.r$ aldehyde, 2° $arrow.r$ ketone, 3° $arrow.r$ alkene], [The Cu-vs-oxidant contrast],
-    [Acidity: $"PhOH" > "H"_2 "O" > 1° > 2° > 3°$; within: $"MeOH" > 1° > 2° > 3°$], [phenoxide is resonance-stabilised], [pKa ordering questions],
-    [Kolbe: phenoxide + $"CO"_2$], [salicylic acid], [Aspirin synthesis route],
-    [Reimer-Tiemann: $"CHCl"_3 / "NaOH"$], [salicylaldehyde], [Formylation of phenol],
-    [$"FeCl"_3$ test], [violet complex with phenols], [Spot-test identification],
-    [Ethers + excess HI], [1 eq: alcohol + iodide; excess: two iodides; aryl C–O never breaks], [Cleavage-product predictions],
-    [Ethanol 95.6% azeotrope], [absolute alcohol needs drying; denatured = + methanol], [Commercial alcohol facts],
+    columns: (1.2fr, 1.8fr, 2fr),
+    inset: 3.5pt,
+    table.header[*Core Concept / Law*][*Expression / Formulation*][*Application & CUET Problem Strategy*],
+    [Ether Bond Angle], [$C-O-C = 111.7^circle.small > 109.5^circle.small$ (Tetrahedral)], [Steric repulsion between two bulky alkyl groups widens the bond angle.],
+    [Hydroboration-Oxidation], [Alkene $plus "B"_2 "H"_6 arrow.r^("H"_2 "O"_2 \/ "OH"^-)$ Alcohol], [Overall anti-Markovnikov syn addition of water. Zero rearrangements.],
+    [Lucas Test Distinction], [Conc. $"HCl" + "anhy. ZnCl"_2$ turbidity], [$3^circle$: Instant turbidity; $2^circle$: 5 minutes; $1^circle$: Turbidity only on heating.],
+    [Victor Meyer (R-B-C)], [Sequence: $P/I_2 arrow.r "AgNO"_2 arrow.r "HNO"_2 arrow.r "NaOH"$], [$1^circle = "Blood Red"$; $2^circle = "Deep Blue"$; $3^circle = "Colourless"$ (no reaction).],
+    [Dehydrogenation ($"Cu"/573 "K"$)], [$1^circle arrow.r$ Aldehyde; $2^circle arrow.r$ Ketone; $3^circle arrow.r$ Alkene], [Tertiary alcohol dehydrates to alkene; does not dehydrogenate!],
+    [Phenol Acidity], [Phenol ($p K_a approx 10$) is $10^6$ times more acidic than alcohols], [Phenoxide ion is resonance-stabilized. Picric acid ($p K_a = 0.71$) releases $"CO"_2$ from $"NaHCO"_3$.],
+    [Kolbe's Reaction], [Sodium phenoxide $plus "CO"_2 arrow.r^(400 "K", 4-7 "atm") arrow.r^("H"^+)$ Salicylic acid], [Synthesis of o-hydroxybenzoic acid; precursor to Aspirin.],
+    [Reimer-Tiemann Reaction], [Phenol $plus "CHCl"_3 + "NaOH" arrow.r^("H"^+)$ Salicylaldehyde], [Electrophile is neutral dichlorocarbene ($:C "Cl"_2$) from chloroform.],
+    [Phenol Tests], [Neutral $"FeCl"_3 arrow.r$ Violet complex; $"Br"_2/"H"_2 "O" arrow.r$ White ppt], [Neutral $"FeCl"_3$ test $[ "Fe"("OC"_6 "H"_5)_6 ]^(3-)$; 2,4,6-tribromophenol white precipitate.],
+    [Steam Distillation], [o-nitrophenol (steam volatile) vs p-nitrophenol (non-volatile)], [Ortho has intramolecular H-bonding; Para has intermolecular H-bonding.],
+    [Williamson Synthesis], [$R-O^- "Na"^+ + R'-X arrow.r R-O-R' + "NaX"$], [$R'-X$ must be $1^circle$! Reaction with $3^circle$ halide gives 100% alkene elimination.],
+    [HI Ether Cleavage], [Simple: $I^-$ attacks less hindered carbon; $3^circle$: forms $3^circle$ iodide], [Anisole ($"C"_6 "H"_5 - O - "CH"_3$) gives Phenol $+ "CH"_3 I$ (Ar-O never cleaves).],
   )
 ]
 
-= Exceptions & Traps
+#pagebreak()
 
-#exception-box(title: "The Traps This Chapter Sets — Read Before the Mock")[
-  #table(
-    columns: (1.25fr, 1.35fr, 1.4fr),
-    table.header[*The rule you assume*][*The exception / twist*][*The trap in the question*],
-    [More alkyl groups = more acidic (as in carbocation stability)], [Reversed for O–H: 3° alcohol is the *weakest* acid], [Acidity ordering 1°/2°/3° — the +I push weakens O–H],
-    [Phenol and alcohol behave alike], [Phenol dissolves in NaOH (alcohol does not) but not in $"NaHCO"_3$ (acids do)], [The three-way separation: alcohol / phenol / acid],
-    [Hydration always gives Markovnikov], [Hydroboration-oxidation is anti-Markovnikov], [Propene $arrow.r$ propan-1-ol vs propan-2-ol],
-    [Williamson works with any halide], [2°/3° halides eliminate (alkoxide = base); use the other side instead], [Making methyl tert-butyl ether: tert-butoxide + methyl bromide, never the reverse],
-    [Dehydration gives the alkene at any temperature], [413 K gives ether; 443 K gives alkene], [Product-vs-temperature MCQs],
-    [3° alcohols oxidise easily], [They refuse — no carbinol C–H], ["Which alcohol resists acidified dichromate" — the 3° one],
-    [Esterification breaks the alcohol's C–O], [It survives — the isotope $18 "O"$ lands in the ester], [The labelled-oxygen tracing question],
-    [Ethers split symmetrically with HI], [Splits depend on class; aryl–O bond NEVER breaks], [Anisole + HI always yields phenol + $"CH"_3 I$],
-  )
+#block(width: 100%, inset: (y: 6pt, x: 10pt), fill: om-navy, radius: 4pt)[
+  #text(fill: white, font: om-display-font, size: 13pt, weight: 800)[Practice Questions (Exam Pattern) — Part 1 (Q1 to Q5)]
 ]
 
-= The Whole Chapter in One Picture
-
-#figure(
-  image("assets/chem_alcohol_mindmap.png", width: 100%),
-  caption: [Chapter mindmap: classification and naming, the three preparation toolkits, hydrogen-bonded boiling points, the two attack plans of alcohols, phenol's ring chemistry, ether cleavage, and the commercial duo — with the traps that catch most students.],
-)
-
-= Practice Questions (Exam Pattern)
-
-Ten questions in the CUET UG style. Attempt all of them — the paper gives $+5$ for each correct answer and $-1$ for every incorrect answer.
-
-#mcq(1, [Propene reacts with water in presence of dilute acid. The main product is:], (
-  [propan-1-ol], [propan-2-ol], [propane-1,2-diol], [propyl hydrogensulphate only],
+#mcq(1, [An unknown alcohol reacts with Lucas reagent (concentrated $"HCl"$ and anhydrous $"ZnCl"_2$) to produce instantaneous cloudiness / turbidity at room temperature. The alcohol is most likely:], (
+  [Butan-1-ol],
+  [Butan-2-ol],
+  [2-Methylpropan-2-ol (tert-butyl alcohol)],
+  [2-Methylpropan-1-ol (isobutyl alcohol)],
 ))
+#solution(1, [Lucas reagent reacts via an $S_N 1$ mechanism wherein the rate is governed by carbocation stability. Tertiary alcohols form exceptionally stable $3^circle$ carbocations, undergoing immediate conversion into insoluble alkyl chlorides and producing instant turbidity at room temperature: $3^circle$ (instant) $> 2^circle$ (5 mins) $> 1^circle$ (heat only). 2-Methylpropan-2-ol is a $3^circle$ alcohol.], answer: [C])
 
-#mcq(2, [Which reagent converts propene to propan-1-ol (anti-Markovnikov)?], (
-  [$H_2 O/H^+$], [$"BH"_3$ then $H_2 O_2/"OH"^-$], [$"LiAlH"_4$], [$"SOCl"_2$],
+#mcq(2, [In the Victor Meyer test for distinguishing alcohols, the colours produced by primary, secondary, and tertiary alcohols after treatment with alkali ($"NaOH"$) are respectively:], (
+  [Blue, Red, and Colourless],
+  [Blood Red, Deep Blue, and Colourless],
+  [Colourless, Blood Red, and Deep Blue],
+  [Blood Red, Colourless, and Deep Blue],
 ))
+#solution(2, [In the Victor Meyer test, primary alcohols form nitrolic acid which dissolves in alkali giving a characteristic Blood Red colour. Secondary alcohols form pseudonitrol which is alkali-insoluble and appears Deep Blue. Tertiary alcohols lack an $alpha$-hydrogen, failing to react with nitrous acid and remaining Colourless (*R-B-C Rule*).], answer: [B])
 
-#mcq(3, [With Lucas reagent, the alcohol that clouds instantly is:], (
-  [ethanol], [propan-1-ol], [propan-2-ol], [2-methylpropan-2-ol],
+#mcq(3, [When vapours of 2-methylpropan-2-ol (tert-butyl alcohol) are passed over heated copper metal at $573 "K"$ ($300^circle.small "C"$), the organic product formed is:], (
+  [2-Methylpropanal],
+  [2-Methylpropanoic acid],
+  [2-Methylpropene],
+  [Butan-2-one],
 ))
+#solution(3, [Primary and secondary alcohols undergo catalytic dehydrogenation over heated copper at $573 "K"$ to yield aldehydes and ketones respectively. However, tertiary alcohols lack an $alpha$-hydrogen atom on the hydroxyl-bearing carbon and cannot undergo dehydrogenation; instead, they undergo catalytic *dehydration* to eliminate water and form an alkene: $("CH"_3)_3 C-"OH" arrow.r^("Cu"/573 "K") ("CH"_3)_2 C = "CH"_2 + "H"_2 "O"$.], answer: [C])
 
-#mcq(4, [The increasing order of acidity among alcohols is:], (
-  [3° < 2° < 1° < methanol], [methanol < 1° < 2° < 3°], [1° < 2° < 3° < methanol], [all equal],
+#mcq(4, [Propene is subjected to hydroboration-oxidation by treatment with diborane ($B_2 H_6$) followed by alkaline hydrogen peroxide ($"H"_2 "O"_2 / "OH"^-$). The major alcohol obtained is:], (
+  [Propan-2-ol],
+  [Propan-1-ol],
+  [Propane-1,2-diol],
+  [A 50:50 mixture of propan-1-ol and propan-2-ol],
 ))
+#solution(4, [Hydroboration-oxidation involves concerted syn-addition of borane ($"BH"_3$) across the double bond, followed by oxidative cleavage with alkaline $"H"_2 "O"_2$. The net transformation corresponds to the stereospecific *anti-Markovnikov addition of water* without any carbocation formation or skeletal rearrangement, yielding pure propan-1-ol as the exclusive product.], answer: [B])
 
-#mcq(5, [Heating ethanol with conc. $"H"_2 "SO"_4$ at 413 K gives mainly:], (
-  [ethene], [ethoxyethane], [acetaldehyde], [ethyl hydrogensulphate],
+#mcq(5, [Which of the following compounds exhibits the HIGHEST acidic strength in aqueous solution?], (
+  [Phenol],
+  [p-Nitrophenol],
+  [p-Cresol],
+  [2,4,6-Trinitrophenol (Picric acid)],
 ))
+#solution(5, [Picric acid contains three strongly electron-withdrawing nitro groups ($-"NO"_2$) at the two ortho and one para positions. Through powerful $-I$ and $-R$ effects, they delocalise and stabilize the conjugate phenoxide anion to an extraordinary extent ($p K_a = 0.71$). It is more acidic than acetic acid and easily decomposes aqueous sodium bicarbonate ($"NaHCO"_3$), releasing effervescence of $"CO"_2$.], answer: [D])
 
-#mcq(6, [Phenol is more acidic than ethanol because:], (
-  [phenol has more carbon atoms], [the phenoxide ion is stabilised by resonance], [phenol's O–H bond is longer], [ethanol cannot hydrogen bond],
+#pagebreak()
+
+#block(width: 100%, inset: (y: 6pt, x: 10pt), fill: om-navy, radius: 4pt)[
+  #text(fill: white, font: om-display-font, size: 13pt, weight: 800)[Practice Questions (Exam Pattern) — Part 2 (Q6 to Q10)]
+]
+
+#mcq(6, [The reactive intermediate electrophile responsible for formylation in the Reimer-Tiemann reaction of phenol with chloroform in aqueous sodium hydroxide is:], (
+  [Formyl cation ($"H-C"^+ = O$)],
+  [Dichlorocarbene ($:C "Cl"_2$)],
+  [Trichloromethyl carbanion ($:C "Cl"_3^-$)],
+  [Chloromethyl radical ($dot("C")"H"_2 "Cl"$)],
 ))
+#solution(6, [In the Reimer-Tiemann reaction, hydroxide ion abstracts the acidic proton from chloroform ($"CHCl"_3$), followed by loss of a chloride ion ($alpha$-elimination) to generate the neutral, electron-deficient *dichlorocarbene ($:C "Cl"_2$)* intermediate with an unfilled sextet of electrons. This carbene acts as the active electrophile attacking the phenoxide ring.], answer: [B])
 
-#mcq(7, [Phenol + bromine water at room temperature gives:], (
-  [bromobenzene], [2,4,6-tribromophenol (white ppt)], [phenyl bromide + HBr only], [no reaction without $"FeBr"_3$],
+#mcq(7, [A mixture of ortho-nitrophenol and para-nitrophenol obtained from the nitration of phenol with dilute nitric acid can be cleanly separated by steam distillation because:], (
+  [o-Nitrophenol possesses intramolecular hydrogen bonding and is steam volatile],
+  [p-Nitrophenol possesses intramolecular hydrogen bonding and is steam volatile],
+  [o-Nitrophenol has a higher boiling point due to extensive intermolecular association],
+  [p-Nitrophenol is completely insoluble in boiling water],
 ))
+#solution(7, [o-Nitrophenol forms a stable 6-membered ring via *intramolecular hydrogen bonding* between its hydroxyl and adjacent nitro groups (chelation). This prevents association with neighboring molecules, resulting in lower boiling point and high steam volatility. In contrast, p-nitrophenol forms *intermolecular hydrogen bonds* linking molecules into polymeric chains, conferring a high boiling point and non-steam volatility.], answer: [A])
 
-#mcq(8, [The Kolbe reaction converts sodium phenoxide into salicylic acid using:], (
-  [$"CO"_2$, then acid], [$"CHCl"_3 / "NaOH"$], [$"CH"_3 "Cl"$], [$"HNO"_3$],
+#mcq(8, [Salicylic acid is converted into the globally utilized analgesic and anti-inflammatory drug Aspirin (acetylsalicylic acid) by treatment with:], (
+  [Methanol in the presence of concentrated sulphuric acid],
+  [Acetic anhydride in the presence of an acid catalyst],
+  [Phenol in the presence of phosphorus oxychloride],
+  [Sodium hydroxide followed by carbon dioxide at 400 K],
 ))
+#solution(8, [Aspirin is manufactured by acetylating the phenolic hydroxyl group of salicylic acid using acetic anhydride in the presence of catalytic concentrated sulphuric acid or phosphoric acid: $"o-HO-C"_6 "H"_4 -"COOH" + ("CH"_3 "CO")_2 "O" arrow.r^("H"^+) "o-CH"_3 "COO-C"_6 "H"_4 -"COOH" + "CH"_3 "COOH"$.], answer: [B])
 
-#mcq(9, [Anisole ($C_6 H_5 "OCH"_3$) with excess HI gives:], (
-  [$"CH"_3 I$ + phenol], [methanol + iodobenzene], [two methyl iodides], [no reaction],
+#mcq(9, [In Williamson ether synthesis, treating sodium methoxide ($"CH"_3 "O"^- "Na"^+$) with 2-bromo-2-methylpropane (tert-butyl bromide) results in the formation of:], (
+  [tert-Butyl methyl ether],
+  [2-Methylpropene (Isobutylene)],
+  [Dimethyl ether],
+  [Di-tert-butyl ether],
 ))
+#solution(9, [Williamson ether synthesis is an $S_N 2$ displacement. Alkoxide ions are both strong nucleophiles and powerful Brønsted bases. When confronted with a sterically hindered tertiary alkyl halide, the alkoxide behaves exclusively as a base, abstracting a $beta$-hydrogen in an $"E2"$ elimination to yield *2-methylpropene (100%)* rather than the substitution ether product.], answer: [B])
 
-#mcq(10, [Absolute (100%) ethanol cannot be got by simple distillation because:], (
-  [ethanol decomposes], [a 95.6% azeotrope forms], [ethanol is too volatile], [water is denser],
+#mcq(10, [When anisole (methoxybenzene, $"C"_6 "H"_5 - O - "CH"_3$) is heated with an equimolar amount of concentrated hydroiodic acid ($"HI"$), the products formed are:], (
+  [Iodobenzene and Methanol],
+  [Phenol and Methyl Iodide],
+  [Phenol and Methanol],
+  [Iodobenzene and Methyl Iodide],
 ))
+#solution(10, [In anisole, the oxygen lone pair is delocalised into the aromatic ring ($+R$ resonance effect), imparting significant partial double-bond character to the $"Ar"-O$ bond ($136 "pm"$). The $"Ar"-O$ bond is exceptionally strong and cannot be cleaved. The iodide ion ($I^-$) attacks the weaker $s p^3$ methyl carbon via $S_N 2$, yielding *Phenol and Methyl Iodide*. Iodobenzene is never formed.], answer: [B])
 
-= Detailed Solutions
+#pagebreak()
 
-#solution(1, [Acid hydration follows Markovnikov: the OH lands on the carbon holding more alkyl groups — the secondary carbon. Propan-2-ol results; propan-1-ol needs hydroboration instead.], answer: [B])
+#block(width: 100%, inset: (y: 6pt, x: 10pt), fill: om-navy, radius: 4pt)[
+  #text(fill: white, font: om-display-font, size: 13pt, weight: 800)[Practice Questions (Exam Pattern) — Part 3 (Q11 to Q15)]
+]
 
-#solution(2, [Hydroboration-oxidation is the anti-Markovnikov route: boron rides to the less crowded end, oxidation swaps it for OH. Propene $arrow.r$ propan-1-ol. Acid water would have given propan-2-ol.], answer: [B])
+#mcq(11, [Cleavage of 2-methoxy-2-methylpropane ($("CH"_3)_3 C - O - "CH"_3$) with one equivalent of concentrated hydroiodic acid ($"HI"$) produces:], (
+  [tert-Butyl alcohol and Methyl iodide],
+  [tert-Butyl iodide and Methanol],
+  [2-Methylpropene and Methanol],
+  [Equal molar amounts of iodomethane and iodoethane],
+))
+#solution(11, [Unlike primary and secondary ethers which cleave via $S_N 2$, ethers containing a tertiary alkyl group undergo cleavage via an $S_N 1$ mechanism. Protonation of the ether oxygen is followed by heterolytic cleavage to generate the extraordinarily stable tertiary carbocation ($("CH"_3)_3 C^+$). Attack by iodide ion on this carbocation yields *tert-butyl iodide ($("CH"_3)_3 C-I$)* and *methanol ($"CH"_3 "OH"$)*.], answer: [B])
 
-#solution(3, [Instant turbidity means a fast S_N1 — a stable tertiary carbocation. 2-methylpropan-2-ol is the tertiary member; the 1° and 2° options need minutes or heat.], answer: [D])
+#mcq(12, [The experimental $C-O-C$ bond angle in dimethyl ether ($111.7^circle.small$) is noticeably larger than the normal tetrahedral angle ($109.5^circle.small$). This widening is primarily caused by:], (
+  [Resonance between carbon and oxygen orbitals],
+  [Steric repulsion between the two bulky methyl groups],
+  [Strong hydrogen bonding between adjacent ether molecules],
+  [Attraction between the lone pairs of oxygen and methyl hydrogens],
+))
+#solution(12, [Although the oxygen atom in ethers is $s p^3$-hybridised with two non-bonding lone pairs, the steric hindrance and electrostatic electron-cloud repulsion between the two bulky alkyl groups attached to oxygen push them apart, expanding the $C-O-C$ bond angle from the tetrahedral value of $109.5^circle.small$ to $111.7^circle.small$.], answer: [B])
 
-#solution(4, [Alkyl groups push electrons (+I) and weaken the O–H grip on H. So acidity *rises* as substitution falls: 3° < 2° < 1° < methanol — and every one of them is weaker than water.], answer: [A])
+#mcq(13, [Phenol reacts with aqueous bromine water ($"Br"_2 / "H"_2 "O"$) and with bromine in carbon disulphide ($"Br"_2 / "CS"_2$) at $273 "K"$ to give respectively:], (
+  [p-Bromophenol and 2,4,6-tribromophenol],
+  [2,4,6-Tribromophenol (white ppt) and p-bromophenol (major)],
+  [o-Bromophenol and m-bromophenol],
+  [2,4,6-Tribromophenol and bromobenzene],
+))
+#solution(13, [In aqueous medium, water facilitates extensive ionisation of phenol into phenoxide ion ($"C"_6 "H"_5 "O"^-$), which hyperactivates the benzene ring to undergo polybromination, precipitating 2,4,6-tribromophenol as a white solid. In non-polar $"CS"_2$, phenol does not ionise; its ring is less activated, undergoing monobromination to yield p-bromophenol as the major product.], answer: [B])
 
-#solution(5, [Temperature decides: 413 K joins two ethanol molecules into ethoxyethane (ether); 443 K would dehydrate to ethene. The classic two-temperature question.], answer: [B])
+#mcq(14, [In the commercial manufacturing process of Phenol from Cumene (isopropylbenzene), the valuable organic byproduct obtained in equimolar yield is:], (
+  [Acetaldehyde],
+  [Benzaldehyde],
+  [Acetone (Propan-2-one)],
+  [Formic acid],
+))
+#solution(14, [In the cumene process, cumene is air-oxidized to cumene hydroperoxide, which undergoes acid-catalysed rearrangement with dilute sulphuric acid to cleave into equimolar amounts of *Phenol* and *Acetone (propan-2-one)*: $"C"_6 "H"_5 - C("CH"_3)_2 - "OOH" arrow.r^("H"^+) "C"_6 "H"_5 "OH" + "CH"_3 "COCH"_3$. The simultaneous recovery of acetone makes this the world's primary industrial process.], answer: [C])
 
-#solution(6, [When phenol loses H⁺, the negative charge spreads into the ring by resonance — the phenoxide ion never concentrates its charge. Ethoxide has no such escape. Resonance stabilisation = stronger acid.], answer: [B])
-
-#solution(7, [The ring is so activated that bromine water reacts without any catalyst, instantly, at all three o/p positions: 2,4,6-tribromophenol, a white precipitate. FeBr₃ is for the *unactivated* benzene.], answer: [B])
-
-#solution(8, [Kolbe: sodium phenoxide + CO₂ under pressure, then acidification $arrow.r$ salicylic acid (OH and COOH neighbours). Reimer-Tiemann with CHCl₃/NaOH gives salicylaldehyde instead.], answer: [A])
-
-#solution(9, [HI cleaves the alkyl–O bond only — the aryl C–O bond never breaks (resonance double-bond character). So anisole yields methyl iodide + phenol; excess HI leaves the phenol untouched.], answer: [A])
-
-#solution(10, [Ethanol–water forms a minimum-boiling azeotrope at 95.6% ethanol — vapour and liquid share the composition, so distillation cannot cross it. Chemical drying (or molecular sieves) finishes the job.], answer: [B])
-
-== Wrong-Answer Clinic — the one-line corrections
-
-Dropped marks above? Find your slip here and rewrite the corrected rule in your own words.
-
-#table(
-  columns: (1.05fr, 1.5fr, 1.45fr),
-  table.header[*If you answered...*][*Your slip was...*][*The corrected rule, in one line*],
-  [Q1 option A], [Assuming OH takes the simpler end], [Markovnikov: the *richer* carbon gets the OH — only hydroboration reverses this],
-  [Q4 option B], [Reusing carbocation-stability logic], [Carbocations love alkyl groups; O–H acidity hates them — two opposite ladders],
-  [Q5 option A], [Ignoring the temperature dial], [413 K ether, 443 K alkene — the question always states one],
-  [Q7 option D], [Requiring the catalyst out of habit], [Phenol's ring needs NO catalyst — it reacts with bromine water instantly],
-  [Q9 option B], [Cleaving the aryl bond], [Resonance makes aryl–O unbreakable; the alkyl side always leaves as the iodide],
-)
+#mcq(15, [Commercial ethanol is intentionally converted into 'Denatured Alcohol' (Methylated Spirit) before sale by adding small quantities of:], (
+  [Water and sugar],
+  [Copper sulphate, pyridine, and methanol],
+  [Acetic acid and sodium chloride],
+  [Chloroform and diethyl ether],
+))
+#solution(15, [To prevent the illicit diversion and consumption of duty-free industrial alcohol, commercial ethanol is 'denatured' (rendered poisonous and foul-tasting) by blending it with toxic methanol (approx. 5%), pyridine (imparting an intolerable noxious odour), and copper sulphate (giving a warning blue colouration).], answer: [B])
 
 #block(width: 100%, inset: (top: 4pt), above: 4pt)[
-  #align(center, text(fill: om-grey, size: 8pt)[© OurMocks · www.ourmocks.com · CUET UG Chemistry · Alcohols, Phenols and Ethers · 2027 cycle])
+  #align(center, text(fill: om-grey, size: 8pt)[© OurMocks · www.ourmocks.com · CUET UG Chemistry · Unit VII: Alcohols, Phenols and Ethers · 2027 Examination Baseline])
 ]

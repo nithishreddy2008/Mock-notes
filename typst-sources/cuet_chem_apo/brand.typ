@@ -240,25 +240,23 @@
   #body
 ]
 
-// MCQ block — exam pattern question
-// NOTE: option content must be fetched with .at(1); plain `.1` renders the
-// array dump (the bug seen in the v1 PDFs).
+// MCQ block — exam pattern question (compact for 5 MCQs per page budget)
 #let mcq(number, question, options, marks-note: none) = block(
   width: 100%,
-  inset: (x: 11pt, y: 9pt),
-  radius: 6pt,
-  stroke: 0.7pt + om-navy.lighten(55%),
+  inset: (x: 7pt, y: 2.8pt),
+  radius: 4pt,
+  stroke: 0.6pt + om-navy.lighten(55%),
   breakable: false,
-  above: 7pt,
-  below: 7pt,
+  above: 1.5pt,
+  below: 1.5pt,
 )[
   #text(weight: 800, fill: om-navy)[Q#number.] #h(3pt) #question
-  #if marks-note != none { text(fill: om-grey, size: 8pt)[ #marks-note] }
-  #v(5pt)
+  #if marks-note != none { text(fill: om-grey, size: 7.5pt)[ #marks-note] }
+  #v(1.5pt)
   #grid(
     columns: (1fr, 1fr),
-    column-gutter: 14pt,
-    row-gutter: 5pt,
+    column-gutter: 8pt,
+    row-gutter: 1.5pt,
     ..options.enumerate(start: 1).map(pair => {
       let letter = "ABCD".at(pair.first() - 1)
       [#text(fill: om-blue, weight: 800)[(#letter)] #h(3pt) #pair.at(1)]
@@ -269,17 +267,17 @@
 // Solution block — inline answer line (no separate answer key anywhere)
 #let solution(number, body, answer: none) = block(
   width: 100%,
-  inset: (x: 11pt, y: 9pt),
+  inset: (x: 7pt, y: 2.8pt),
   fill: rgb("#FAFBFD"),
-  radius: 6pt,
+  radius: 4pt,
   stroke: (left: 2.5pt + om-lime.darken(10%)),
-  breakable: true,
-  above: 6pt,
-  below: 6pt,
+  breakable: false,
+  above: 1.5pt,
+  below: 1.8pt,
 )[
   #text(fill: om-navy, weight: 800)[Sol. Q#number.]  #body
   #if answer != none [
-    #v(2pt)
+    #h(6pt)
     #text(fill: rgb("#4E7A00"), weight: 800)[Answer: ( #answer )]
   ]
 ]
@@ -289,10 +287,10 @@
 #let om-doc(exam: "", subject: "", topic-title: "", subtitle: "", body) = {
   om-cover(exam, subject, topic-title, subtitle)
 
-  set text(font: om-body-font, lang: "en", size: 11.5pt, fill: om-ink)
+  set text(font: om-body-font, lang: "en", size: 11pt, fill: om-ink)
   set page(
     numbering: "1",
-    margin: (x: 1.85cm, top: 2.15cm, bottom: 1.95cm),
+    margin: (x: 1.80cm, top: 2.05cm, bottom: 1.85cm),
     header: om-header(exam),
     footer: om-footer(exam, subject),
     background: om-watermark,
