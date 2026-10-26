@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Proteins, Nucleic Acids & Vitamins Architecture</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    color: #0F172A;
+    overflow: hidden;
+    position: relative;
+    padding: 24px 28px;
+  }
+  * { box-shadow: none !important; }
+
+  /* Header */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 14px;
+    margin-bottom: 18px;
+  }
+  .title-group h1 {
+    font-size: 22px;
+    font-weight: 800;
+    color: #071A4D;
+    letter-spacing: -0.02em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .title-group h1 span.badge {
+    background: #5E8F13;
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+  }
+  .title-group p {
+    font-size: 12.5px;
+    color: #64748B;
+    margin-top: 3px;
+    font-weight: 500;
+  }
+  .exam-tags {
+    display: flex;
+    gap: 8px;
+  }
+  .chip {
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11.5px;
+    font-weight: 700;
+  }
+  .chip-navy { background: #071A4D; color: #FFFFFF; }
+  .chip-green { background: #DCFCE7; color: #166534; border: 1px solid #86EFAC; }
+
+  /* 3-Column Layout */
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1.2fr 1.15fr 1.25fr;
+    gap: 18px;
+    height: calc(880px - 95px);
+  }
+
+  .col {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .card {
+    background: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    border-radius: 8px;
+    padding: 13px 15px;
+    position: relative;
+  }
+
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+    border-bottom: 1.5px solid #F1F5F9;
+  }
+  .card-title {
+    font-size: 13.5px;
+    font-weight: 800;
+    color: #071A4D;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .card-tag {
+    font-size: 10px;
+    font-weight: 800;
+    padding: 2px 6px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .tag-green { background: #F0FDF4; color: #166534; border: 1px solid #BBF7D0; }
+  .tag-blue { background: #EFF6FF; color: #1E40AF; border: 1px solid #BFDBFE; }
+  .tag-purple { background: #FAF5FF; color: #6B21A8; border: 1px solid #E9D5FF; }
+  .tag-amber { background: #FFFBEB; color: #92400E; border: 1px solid #FDE68A; }
+
+  .chem-box {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    padding: 8px 10px;
+    margin-bottom: 8px;
+    font-size: 11.5px;
+    line-height: 1.45;
+  }
+  .chem-box:last-child { margin-bottom: 0; }
+  .chem-box b { color: #071A4D; }
+  .formula { font-family: 'Consolas', 'Courier New', monospace; font-weight: 700; color: #1E40AF; }
+
+  .hierarchy-step {
+    border-left: 3px solid #1F5EFF;
+    padding: 5px 8px 5px 10px;
+    margin-bottom: 6px;
+    background: #F8FAFC;
+    border-radius: 0 4px 4px 0;
+    font-size: 11.5px;
+  }
+  .hierarchy-step:nth-child(2) { border-color: #10B981; }
+  .hierarchy-step:nth-child(3) { border-color: #F59E0B; }
+  .hierarchy-step:nth-child(4) { border-color: #8B5CF6; }
+
+  .mini-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 11px;
+    margin-top: 6px;
+  }
+  .mini-table th, .mini-table td {
+    padding: 4.5px 6px;
+    border: 1px solid #E2E8F0;
+    text-align: left;
+  }
+  .mini-table th {
+    background: #F1F5F9;
+    color: #071A4D;
+    font-weight: 700;
+  }
+  .mini-table tr:nth-child(even) { background: #F8FAFC; }
+
+  .strategy-alert {
+    background: #FEF2F2;
+    border-left: 3px solid #DC2626;
+    padding: 7px 10px;
+    font-size: 11px;
+    color: #991B1B;
+    border-radius: 0 4px 4px 0;
+    margin-top: 6px;
+    line-height: 1.4;
+  }
+  .strategy-alert b { color: #7F1D1D; font-weight: 800; }
+
+  .tip-box {
+    background: #F0FDF4;
+    border-left: 3px solid #16A34A;
+    padding: 6px 9px;
+    font-size: 11px;
+    color: #14532D;
+    border-radius: 0 4px 4px 0;
+    margin-top: 6px;
+    line-height: 1.35;
+  }
+  .tip-box b { color: #052E16; font-weight: 800; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="title-group">
+    <h1>Proteins, Nucleic Acids &amp; Vitamins Architecture <span class="badge">UNIT X HIGHER FLOORS</span></h1>
+    <p>Structural hierarchies of peptide folds, genetic code transmission, denaturation thermodynamics &amp; nutritional biocatalysis</p>
+  </div>
+  <div class="exam-tags">
+    <div class="chip chip-green">DNA: A=T (2 H-bonds) · G≡C (3 H-bonds)</div>
+    <div class="chip chip-navy">CUET UG High-Yield</div>
+  </div>
+</div>
+
+<div class="grid-container">
+
+  <!-- Column 1: Amino Acids & 4 Structural Floors -->
+  <div class="col">
+    <div class="card" style="flex: 1.05;">
+      <div class="card-header">
+        <div class="card-title">1. Amino Acids &amp; Zwitterion</div>
+        <div class="card-tag tag-green">Monomer Foundations</div>
+      </div>
+      <div class="chem-box">
+        <b>General Formula:</b> <span class="formula">H₂N-CH(R)-COOH</span> ($\alpha$-amino acids). All naturally occurring proteinogenic amino acids have <b>L-configuration</b>.
+      </div>
+      <div class="chem-box">
+        <b>Chirality Rule:</b> All $\alpha$-amino acids are optically active EXCEPT <b>Glycine</b> (<span class="formula">R = H</span>, achiral).
+      </div>
+      <div class="chem-box">
+        <b>Zwitterion &amp; Isoelectric Point (pI):</b> In aqueous solution, internal proton transfer creates a dipolar ion: <span class="formula">⁺H₃N-CH(R)-COO⁻</span>. At <b>pI</b>, net charge = 0 $\implies$ no migration in an electric field!
+      </div>
+      <div class="tip-box">
+        <b>Essential vs Non-Essential:</b> 10 Essential amino acids must come from diet: <i>Val, Leu, Ile, Lys, Met, Phe, Thr, Trp, His, Arg</i>.
+      </div>
+    </div>
+
+    <div class="card" style="flex: 1.25;">
+      <div class="card-header">
+        <div class="card-title">2. Four Protein Structural Floors</div>
+        <div class="card-tag tag-blue">Folding Hierarchy</div>
+      </div>
+      
+      <div class="hierarchy-step">
+        <b>1° Structure (Primary):</b> Linear covalent sequence of amino acids joined by rigid, planar trans <b>peptide bonds (-CO-NH-)</b>.
+      </div>
+      <div class="hierarchy-step">
+        <b>2° Structure (Secondary):</b> Regular localized folding governed by <b>intramolecular H-bonds</b> ($\alpha$-helix: between C=O of residue $n$ and N-H of $n+4$) or <b>intermolecular H-bonds</b> ($\beta$-pleated sheets).
+      </div>
+      <div class="hierarchy-step">
+        <b>3° Structure (Tertiary):</b> Overall 3D spatial folding into fibrous or globular shape. Stabilized by: <b>Disulfide bridges (-S-S-)</b>, H-bonds, salt bridges, and hydrophobic forces.
+      </div>
+      <div class="hierarchy-step">
+        <b>4° Structure (Quaternary):</b> Spatial assembly of two or more distinct polypeptide subunits (e.g. <b>Haemoglobin:</b> $2\alpha + 2\beta$ tetramer).
+      </div>
+      
+      <div class="strategy-alert">
+        <b>Denaturation Rule:</b> Heat or extreme pH disrupts 2°, 3°, and 4° structures, causing protein uncoiling and biological inactivation. <b>The primary (1°) covalent structure remains COMPLETELY INTACT!</b>
+      </div>
+    </div>
+  </div>
+
+  <!-- Column 2: Nucleic Acids (DNA vs RNA) -->
+  <div class="col">
+    <div class="card" style="flex: 1.25;">
+      <div class="card-header">
+        <div class="card-title">3. Nucleic Acid Chemistry</div>
+        <div class="card-tag tag-purple">Genetic Code</div>
+      </div>
+      
+      <div class="chem-box">
+        <b>Nucleoside vs Nucleotide:</b>
+        <ul style="padding-left: 16px; margin-top: 3px;">
+          <li><b>Nucleoside:</b> Nitrogenous Base + Pentose Sugar (attached at C-1').</li>
+          <li><b>Nucleotide:</b> Nucleoside + Phosphate group (esterified at C-5').</li>
+        </ul>
+      </div>
+
+      <div class="chem-box">
+        <b>Backbone &amp; Linkage:</b> Nucleotides are linked sequentially via <b>3', 5'-phosphodiester linkages</b> to form a directional polynucleotide strand ($5' \to 3'$).
+      </div>
+
+      <table class="mini-table">
+        <thead>
+          <tr>
+            <th>Property</th>
+            <th>DNA</th>
+            <th>RNA</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>Sugar</b></td>
+            <td>β-D-2-deoxyribose</td>
+            <td>β-D-ribose</td>
+          </tr>
+          <tr>
+            <td><b>Bases</b></td>
+            <td>A, T, G, C</td>
+            <td>A, U, G, C (Uracil)</td>
+          </tr>
+          <tr>
+            <td><b>Strands</b></td>
+            <td>Double helix (antiparallel)</td>
+            <td>Single stranded</td>
+          </tr>
+          <tr>
+            <td><b>H-Bonding</b></td>
+            <td>A = T (2 bonds), G ≡ C (3)</td>
+            <td>Local loops only</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="tip-box" style="margin-top: 8px;">
+        <b>Chargaff's Equivalence Rule (DNA):</b> In double-stranded DNA, the molar ratio of Adenine to Thymine and Guanine to Cytosine is strictly 1:1 $\implies A = T$, $G = C$, and $\text{Purines} (A+G) = \text{Pyrimidines} (T+C)$.
+      </div>
+    </div>
+
+    <div class="card" style="flex: 1.05;">
+      <div class="card-header">
+        <div class="card-title">4. Enzymes &amp; Hormones</div>
+        <div class="card-tag tag-blue">Biochemical Regulators</div>
+      </div>
+      <div class="chem-box">
+        <b>Enzymes (Biocatalysts):</b> Globular proteins that accelerate metabolic reactions under physiological temperature ($310\text{ K}$) and pH ($7.4$) with extreme substrate specificity via <b>lock-and-key</b> active sites.
+      </div>
+      <div class="chem-box">
+        <b>Hormone Classification:</b>
+        <ul style="padding-left: 16px; margin-top: 3px;">
+          <li><b>Steroids:</b> Estrogen, Progesterone, Testosterone, Cortisone.</li>
+          <li><b>Peptides / Proteins:</b> Insulin (51 residues), Glucagon, Oxytocin.</li>
+          <li><b>Amine Derivatives:</b> Adrenaline (Epinephrine), Thyroxine (iodinated).</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Column 3: Vitamins Master Reference -->
+  <div class="col">
+    <div class="card" style="flex: 1;">
+      <div class="card-header">
+        <div class="card-title">5. Vitamins Master Reference &amp; Deficiencies</div>
+        <div class="card-tag tag-amber">Direct Match Table</div>
+      </div>
+      
+      <div class="chem-box">
+        <b>Solubility Classification:</b>
+        <ul style="padding-left: 16px; margin-top: 3px;">
+          <li><b>Fat-Soluble (A, D, E, K):</b> Stored in liver and adipose tissue. Excess intake causes hypervitaminosis.</li>
+          <li><b>Water-Soluble (B-Complex, C):</b> Readily excreted in urine; require daily dietary intake. <b>Exception: Vitamin B₁₂ is stored in the liver for several years!</b></li>
+        </ul>
+      </div>
+
+      <table class="mini-table">
+        <thead>
+          <tr>
+            <th>Vitamin</th>
+            <th>Name &amp; Type</th>
+            <th>Deficiency Disease</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>Vit. A</b></td>
+            <td>Retinol · Fat</td>
+            <td><b>Xerophthalmia</b> (corneal hardening), Night Blindness</td>
+          </tr>
+          <tr>
+            <td><b>Vit. B₁</b></td>
+            <td>Thiamine · Water</td>
+            <td><b>Beriberi</b> (loss of appetite, muscle atrophy)</td>
+          </tr>
+          <tr>
+            <td><b>Vit. B₂</b></td>
+            <td>Riboflavin · Water</td>
+            <td><b>Cheilosis</b> (fissures at mouth corners), digestive disorders</td>
+          </tr>
+          <tr>
+            <td><b>Vit. B₆</b></td>
+            <td>Pyridoxine · Water</td>
+            <td><b>Convulsions</b>, peripheral neuropathy</td>
+          </tr>
+          <tr>
+            <td><b>Vit. B₁₂</b></td>
+            <td>Cyanocobalamin · Water</td>
+            <td><b>Pernicious Anaemia</b> (severe RBC deficiency)</td>
+          </tr>
+          <tr>
+            <td><b>Vit. C</b></td>
+            <td>Ascorbic Acid · Water</td>
+            <td><b>Scurvy</b> (bleeding gums, delayed wound healing)</td>
+          </tr>
+          <tr>
+            <td><b>Vit. D</b></td>
+            <td>Calciferol · Fat</td>
+            <td><b>Rickets</b> (in children), <b>Osteomalacia</b> (in adults)</td>
+          </tr>
+          <tr>
+            <td><b>Vit. E</b></td>
+            <td>Tocopherol · Fat</td>
+            <td>Increased RBC fragility, muscular weakness</td>
+          </tr>
+          <tr>
+            <td><b>Vit. K</b></td>
+            <td>Phylloquinone · Fat</td>
+            <td><b>Increased blood clotting time</b> (severe haemorrhage)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="strategy-alert">
+        <b>Top CUET Pairings:</b> Vit. B₁₂ $\leftrightarrow$ Pernicious Anaemia; Vit. B₁ $\leftrightarrow$ Beriberi; Vit. C $\leftrightarrow$ Scurvy; Vit. K $\leftrightarrow$ Delayed Clotting. Guaranteed match questions every examination cycle!
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

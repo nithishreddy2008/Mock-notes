@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Biomolecules Master Synthesis Mindmap</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    color: #0F172A;
+    overflow: hidden;
+    position: relative;
+    padding: 24px 28px;
+  }
+  * { box-shadow: none !important; }
+
+  /* Header */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #CBD5E1;
+    padding-bottom: 12px;
+    margin-bottom: 16px;
+  }
+  .title-group h1 {
+    font-size: 21px;
+    font-weight: 800;
+    color: #071A4D;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .title-group h1 span.badge {
+    background: #071A4D;
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 4px;
+  }
+  .title-group p {
+    font-size: 12.5px;
+    color: #64748B;
+    margin-top: 2px;
+    font-weight: 500;
+  }
+  .exam-tags {
+    display: flex;
+    gap: 8px;
+  }
+  .chip {
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+  }
+  .chip-navy { background: #071A4D; color: #FFFFFF; }
+  .chip-blue { background: #EFF6FF; color: #1E40AF; border: 1px solid #BFDBFE; }
+
+  /* Canvas Layout */
+  .canvas {
+    position: relative;
+    width: 1384px;
+    height: 770px;
+  }
+
+  /* Center Hub */
+  .hub {
+    position: absolute;
+    left: 562px;
+    top: 285px;
+    width: 260px;
+    height: 125px;
+    background: #071A4D;
+    border: 3px solid #1F5EFF;
+    border-radius: 12px;
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px 14px;
+    z-index: 10;
+  }
+  .hub-title { font-size: 16px; font-weight: 800; letter-spacing: 0.02em; }
+  .hub-sub { font-size: 11px; color: #93C5FD; margin-top: 4px; }
+  .hub-badge {
+    margin-top: 6px;
+    background: #1F5EFF;
+    color: #FFFFFF;
+    font-size: 9.5px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 4px;
+  }
+
+  /* Branch Cards */
+  .branch-card {
+    position: absolute;
+    background: #FFFFFF;
+    border-radius: 8px;
+    padding: 12px 14px;
+    z-index: 5;
+    border: 1px solid #CBD5E1;
+  }
+
+  .branch-card h3 {
+    font-size: 13.5px;
+    font-weight: 800;
+    margin-bottom: 7px;
+    padding-bottom: 4px;
+    border-bottom: 2px solid;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .branch-card ul {
+    list-style: none;
+    font-size: 11px;
+    line-height: 1.45;
+  }
+  .branch-card li {
+    margin-bottom: 5px;
+    position: relative;
+    padding-left: 13px;
+  }
+  .branch-card li::before {
+    content: "▪";
+    position: absolute;
+    left: 0;
+    font-size: 12px;
+  }
+
+  /* 4 Quadrants */
+  /* Top-Left: Carbohydrates */
+  .card-carbs {
+    left: 20px;
+    top: 15px;
+    width: 480px;
+    height: 330px;
+    border-top: 4px solid #1F5EFF;
+  }
+  .card-carbs h3 { color: #1E40AF; border-color: #1F5EFF; }
+  .card-carbs li::before { color: #1F5EFF; }
+
+  /* Bottom-Left: Proteins & Amino Acids */
+  .card-proteins {
+    left: 20px;
+    top: 365px;
+    width: 480px;
+    height: 390px;
+    border-top: 4px solid #10B981;
+  }
+  .card-proteins h3 { color: #065F46; border-color: #10B981; }
+  .card-proteins li::before { color: #10B981; }
+
+  /* Top-Right: Enzymes & Vitamins */
+  .card-vitamins {
+    left: 884px;
+    top: 15px;
+    width: 480px;
+    height: 330px;
+    border-top: 4px solid #F59E0B;
+  }
+  .card-vitamins h3 { color: #92400E; border-color: #F59E0B; }
+  .card-vitamins li::before { color: #F59E0B; }
+
+  /* Bottom-Right: Nucleic Acids & Hormones */
+  .card-nucleic {
+    left: 884px;
+    top: 365px;
+    width: 480px;
+    height: 390px;
+    border-top: 4px solid #8B5CF6;
+  }
+  .card-nucleic h3 { color: #5B21B6; border-color: #8B5CF6; }
+  .card-nucleic li::before { color: #8B5CF6; }
+
+  /* Bottom Synthesis Banner */
+  .banner-synthesis {
+    position: absolute;
+    left: 520px;
+    top: 440px;
+    width: 344px;
+    height: 315px;
+    background: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    border-top: 4px solid #DC2626;
+    border-radius: 8px;
+    padding: 10px 12px;
+    z-index: 5;
+    font-size: 11px;
+    line-height: 1.45;
+  }
+  .banner-synthesis h4 {
+    font-size: 12px;
+    font-weight: 800;
+    color: #991B1B;
+    margin-bottom: 6px;
+    padding-bottom: 4px;
+    border-bottom: 1.5px solid #FEE2E2;
+  }
+
+  .connector-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1384px;
+    height: 770px;
+    pointer-events: none;
+    z-index: 1;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="title-group">
+    <h1>Master Synthesis Mindmap: Biomolecules (Unit X) <span class="badge">NTA NCERT 2027</span></h1>
+    <p>Unified cognitive architecture connecting carbohydrates, proteins, biocatalytic enzymes, vitamins, nucleic acids &amp; hormonal signals</p>
+  </div>
+  <div class="exam-tags">
+    <div class="chip chip-blue">Four Biomolecular Pillars</div>
+    <div class="chip chip-navy">100% NCERT Grounded</div>
+  </div>
+</div>
+
+<div class="canvas">
+
+  <!-- SVG Orthogonal Connectors -->
+  <svg class="connector-svg">
+    <!-- Hub to Carbs -->
+    <path d="M 562 320 L 500 320" fill="none" stroke="#1F5EFF" stroke-width="2.5" stroke-dasharray="4,4"/>
+    <!-- Hub to Proteins -->
+    <path d="M 562 380 L 500 380" fill="none" stroke="#10B981" stroke-width="2.5" stroke-dasharray="4,4"/>
+    <!-- Hub to Vitamins -->
+    <path d="M 822 320 L 884 320" fill="none" stroke="#F59E0B" stroke-width="2.5" stroke-dasharray="4,4"/>
+    <!-- Hub to Nucleic Acids -->
+    <path d="M 822 380 L 884 380" fill="none" stroke="#8B5CF6" stroke-width="2.5" stroke-dasharray="4,4"/>
+    <!-- Hub to Synthesis Banner -->
+    <path d="M 692 410 L 692 440" fill="none" stroke="#DC2626" stroke-width="2.5"/>
+  </svg>
+
+  <!-- Center Hub -->
+  <div class="hub">
+    <div class="hub-title">BIOMOLECULES</div>
+    <div class="hub-sub">Chemical Logic of Living Organisms</div>
+    <div class="hub-badge">Class 12 Unit X</div>
+  </div>
+
+  <!-- Quadrant 1: Carbohydrates (Top-Left) -->
+  <div class="branch-card card-carbs">
+    <h3>CARBOHYDRATES: STRUCTURE &amp; STORAGE <span style="font-size:10px; font-weight:700; color:#1F5EFF;">ENERGY &amp; SKELETON</span></h3>
+    <ul>
+      <li><b>Classification:</b> Monosaccharides (Glc, Fru, Gal), Disaccharides (Sucrose, Maltose, Lactose), Polysaccharides (Starch, Cellulose, Glycogen).</li>
+      <li><b>Reducing Criterion:</b> Free anomeric C-1/C-2 hemiacetal reduces Fehling's/Tollens'. All monosaccharides reduce; <b>Sucrose is NON-reducing</b> (1,2-bond).</li>
+      <li><b>D/L vs (+/-):</b> D/L assigned by C-5 configuration in Fischer projection. D-glucose is dextrorotatory <b>D-(+)-glucose</b>.</li>
+      <li><b>Evidence Chain:</b> HI $\to$ n-hexane; HCN $\to$ cyanohydrin; Br₂/H₂O $\to$ Gluconic acid; conc. HNO₃ $\to$ Saccharic acid; Ac₂O $\to$ Pentaacetate.</li>
+      <li><b>Mutarotation Equilibrium:</b> α-D-glucopyranose (+112°) $\rightleftharpoons$ Equilibrium (+52.7°) $\rightleftharpoons$ β-D-glucopyranose (+19°).</li>
+      <li><b>Invert Sugar:</b> Dextro sucrose (+66.5°) hydrolyses to D-(+)-glucose (+52.7°) + D-(-)-fructose (-92.4°), yielding <b>laevorotatory mixture (-39.9°)</b>.</li>
+      <li><b>Polysaccharides:</b> Amylose ($\alpha$-1,4 unbranched) vs Amylopectin ($\alpha$-1,4 + $\alpha$-1,6 branched) vs Cellulose ($\beta$-1,4 linear) vs Glycogen (animal starch).</li>
+    </ul>
+  </div>
+
+  <!-- Quadrant 2: Proteins & Amino Acids (Bottom-Left) -->
+  <div class="branch-card card-proteins">
+    <h3>PROTEINS &amp; AMINO ACIDS <span style="font-size:10px; font-weight:700; color:#10B981;">CELLULAR WORKFORCE</span></h3>
+    <ul>
+      <li><b>Monomers:</b> 20 standard $\alpha$-amino acids. All are <b>L-amino acids</b>. All are chiral and optically active EXCEPT <b>Glycine (achiral)</b>.</li>
+      <li><b>Essential Amino Acids (10):</b> Val, Leu, Ile, Lys, Met, Phe, Thr, Trp, His, Arg. Must be supplied through diet.</li>
+      <li><b>Zwitterion:</b> Dipolar ion <span style="color:#065F46; font-weight:700;">⁺H₃N-CH(R)-COO⁻</span>. At <b>Isoelectric Point (pI)</b>, net charge is zero; minimal solubility.</li>
+      <li><b>Peptide Bond (-CO-NH-):</b> Planar trans amide linkage formed by condensation. Partial double bond character prevents free rotation.</li>
+      <li><b>Four Structural Floors:</b>
+        <br>▪ <b>1° (Primary):</b> Linear sequence of amino acids (covalent peptide bonds).
+        <br>▪ <b>2° (Secondary):</b> Regular coils: $\alpha$-helix (intramolecular H-bonds) &amp; $\beta$-sheet (intermolecular H-bonds).
+        <br>▪ <b>3° (Tertiary):</b> 3D folding into Fibrous vs Globular. Stabilized by -S-S- bridges, H-bonds, salt bridges, hydrophobic forces.
+        <br>▪ <b>4° (Quaternary):</b> Multi-subunit arrangement (e.g. Haemoglobin: $2\alpha + 2\beta$).</li>
+      <li><b>Denaturation:</b> Physical/chemical stress destroys 2°, 3°, 4° structures. Globular unfolds; biological activity is lost. <b>1° structure NEVER breaks!</b></li>
+      <li><b>Fibrous vs Globular:</b> Fibrous (Keratin, Myosin, Collagen — insoluble, structural) vs Globular (Albumin, Haemoglobin, Insulin — soluble, functional).</li>
+    </ul>
+  </div>
+
+  <!-- Quadrant 3: Enzymes & Vitamins (Top-Right) -->
+  <div class="branch-card card-vitamins">
+    <h3>ENZYMES &amp; VITAMINS <span style="font-size:10px; font-weight:700; color:#F59E0B;">CATALYSIS &amp; DEFENCE</span></h3>
+    <ul>
+      <li><b>Enzymes:</b> Highly specific globular protein catalysts that drastically lower the activation energy of biochemical reactions.</li>
+      <li><b>Catalytic Mechanism:</b> Lock-and-key model and induced-fit hypothesis. Highly sensitive to optimum pH (~7.4) and body temperature (~310 K).</li>
+      <li><b>Enzyme Naming:</b> Substrate + suffix <i>'-ase'</i> (e.g. Maltase, Invertase, Urease, Pepsin, Zymase).</li>
+      <li><b>Vitamins Classification:</b>
+        <br>▪ <b>Fat-Soluble:</b> A, D, E, K (stored in liver and adipose; danger of hypervitaminosis).
+        <br>▪ <b>Water-Soluble:</b> B-complex, C (excreted in urine; daily requirement; <b>Exception: B₁₂ stored in liver</b>).</li>
+      <li><b>High-Yield Deficiency Pairings:</b>
+        <br>▪ Vit. A (Retinol) $\to$ <b>Xerophthalmia</b> &amp; Night Blindness.
+        <br>▪ Vit. B₁ (Thiamine) $\to$ <b>Beriberi</b>.
+        <br>▪ Vit. B₂ (Riboflavin) $\to$ <b>Cheilosis</b>.
+        <br>▪ Vit. B₁₂ (Cyanocobalamin) $\to$ <b>Pernicious Anaemia</b>.
+        <br>▪ Vit. C (Ascorbic Acid) $\to$ <b>Scurvy</b>.
+        <br>▪ Vit. D (Calciferol) $\to$ <b>Rickets</b> &amp; Osteomalacia.
+        <br>▪ Vit. K (Phylloquinone) $\to$ <b>Delayed blood clotting</b>.</li>
+    </ul>
+  </div>
+
+  <!-- Quadrant 4: Nucleic Acids & Hormones (Bottom-Right) -->
+  <div class="branch-card card-nucleic">
+    <h3>NUCLEIC ACIDS &amp; HORMONES <span style="font-size:10px; font-weight:700; color:#8B5CF6;">HEREDITY &amp; SIGNALS</span></h3>
+    <ul>
+      <li><b>Chemical Composition:</b> Pentose Sugar + Heterocyclic Nitrogenous Base + Phosphoric Acid.</li>
+      <li><b>Structural Units:</b>
+        <br>▪ <b>Nucleoside:</b> Base + Sugar (C-1' glycosidic linkage).
+        <br>▪ <b>Nucleotide:</b> Base + Sugar + Phosphate (C-5' phosphoester linkage).</li>
+      <li><b>Polynucleotide Backbone:</b> Alternating sugar and phosphate units linked via <b>3',5'-phosphodiester bridges</b> with $5' \to 3'$ polarity.</li>
+      <li><b>DNA vs RNA:</b>
+        <br>▪ <b>DNA:</b> $\beta$-D-2-deoxyribose; Bases: A, T, G, C; Double helix; A=T (2 H-bonds) &amp; G≡C (3 H-bonds).
+        <br>▪ <b>RNA:</b> $\beta$-D-ribose; Bases: A, U, G, C (Uracil replaces Thymine); Single-stranded (mRNA, tRNA, rRNA).</li>
+      <li><b>Chargaff's Rules:</b> $[A] = [T]$, $[G] = [C]$, and $\text{Purines} (A+G) = \text{Pyrimidines} (T+C)$.</li>
+      <li><b>Hormones:</b> Intercellular endocrine chemical regulators:
+        <br>▪ <b>Steroids:</b> Testosterone, Estrogen, Progesterone, Cortisone.
+        <br>▪ <b>Peptides / Proteins:</b> Insulin (controls blood glucose), Glucagon, Oxytocin.
+        <br>▪ <b>Amine Derivatives:</b> Epinephrine (adrenaline), Thyroxine (iodine-containing).</li>
+      <li><b>Hormone Deficiencies:</b> Insulin $\to$ Diabetes mellitus; Thyroxine $\to$ Hypothyroidism/Goitre.</li>
+    </ul>
+  </div>
+
+  <!-- Center-Bottom Synthesis Banner -->
+  <div class="banner-synthesis">
+    <h4>EXAM QUICK-FIRE TRAPS</h4>
+    <p><b>1. Sucrose Linkage:</b> $\alpha$-D-Glc-(1$\to$2)-$\beta$-D-Fru. Both anomeric carbons are locked $\implies$ non-reducing.</p>
+    <p style="margin-top:4px;"><b>2. Invert Sugar:</b> Rotation flips from <b>+66.5° to -39.9°</b> due to fructose's high negative specific rotation (-92.4°).</p>
+    <p style="margin-top:4px;"><b>3. Denaturation:</b> Boiled egg or curdling destroys 2°, 3°, 4° structures, but <b>1° peptide bonds are completely preserved</b>.</p>
+    <p style="margin-top:4px;"><b>4. Glycine:</b> The ONLY standard amino acid lacking a chiral center (optically inactive).</p>
+    <p style="margin-top:4px;"><b>5. Base Pairing:</b> A=T (2 H-bonds) and G≡C (3 H-bonds). DNA with higher GC content has higher melting temperature ($T_m$).</p>
+    <p style="margin-top:4px;"><b>6. Vitamin Storage:</b> Water-soluble vitamins are excreted in urine, but <b>Vitamin B₁₂ is stored in liver</b>.</p>
+  </div>
+
+</div>
+
+</body>
+</html>
