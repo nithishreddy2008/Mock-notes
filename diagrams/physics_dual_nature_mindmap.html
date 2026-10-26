@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1440, height=880">
+  <title>Dual Nature of Matter & Radiation: Master Concept Mindmap</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 1440px;
+      height: 880px;
+      background-color: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0F172A;
+      padding: 24px 36px;
+      overflow: hidden;
+      position: relative;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 16px;
+      border-bottom: 2px solid #E2E8F0;
+      padding-bottom: 12px;
+    }
+    .title-group h1 {
+      font-size: 24px;
+      font-weight: 800;
+      color: #0F2C59;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+    .title-group p {
+      font-size: 13px;
+      color: #64748B;
+      font-weight: 500;
+    }
+    .badge {
+      background: #0066FF;
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .mindmap-canvas {
+      width: 100%;
+      height: calc(100% - 90px);
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: stretch;
+    }
+
+    .svg-connectors {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Central Hub */
+    .central-hub {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 250px;
+      background: linear-gradient(135deg, #0F2C59 0%, #0066FF 100%);
+      color: white;
+      border-radius: 16px;
+      padding: 22px 18px;
+      text-align: center;
+      box-shadow: 0 10px 25px -5px rgba(15, 44, 89, 0.35);
+      border: 2px solid #93C5FD;
+      z-index: 10;
+    }
+    .central-hub .sub-label {
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      color: #93C5FD;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .central-hub .hub-title {
+      font-size: 17px;
+      font-weight: 800;
+      line-height: 1.25;
+      margin-bottom: 6px;
+    }
+    .central-hub .hub-desc {
+      font-size: 11px;
+      color: #E2E8F0;
+      line-height: 1.4;
+    }
+
+    /* Mindmap Column Containers */
+    .column-left, .column-right {
+      width: 410px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      z-index: 5;
+    }
+
+    .mm-card {
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      border-radius: 12px;
+      padding: 12px 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+      position: relative;
+    }
+    .mm-card::before {
+      content: "";
+      position: absolute;
+      top: 0; bottom: 0; left: 0;
+      width: 4px;
+      border-radius: 12px 0 0 12px;
+    }
+
+    .c1::before { background: #0066FF; }
+    .c2::before { background: #0EA5E9; }
+    .c3::before { background: #D97706; }
+    .c4::before { background: #8B5CF6; }
+    .c5::before { background: #16A34A; }
+    .c6::before { background: #E11D48; }
+
+    .card-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+    .card-header-title {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #0F2C59;
+    }
+    .card-tag {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 10px;
+      text-transform: uppercase;
+    }
+    .tag-blue { background: #EFF6FF; color: #1D4ED8; }
+    .tag-cyan { background: #ECFEFF; color: #0E7490; }
+    .tag-amber { background: #FFFBEB; color: #B45309; }
+    .tag-purple { background: #F5F3FF; color: #6D28D9; }
+    .tag-green { background: #F0FDF4; color: #15803D; }
+    .tag-red { background: #FFF1F2; color: #BE123C; }
+
+    .formula-line {
+      font-family: "SF Pro Text", Consolas, "Courier New", monospace;
+      font-size: 12px;
+      font-weight: 700;
+      color: #0F172A;
+      background: #F8FAFC;
+      border-radius: 5px;
+      padding: 4px 8px;
+      margin: 4px 0 6px 0;
+      border: 1px solid #E2E8F0;
+    }
+
+    .bullet-list {
+      list-style: none;
+      font-size: 11px;
+      color: #334155;
+      display: flex;
+      flex-direction: column;
+      gap: 3.5px;
+      line-height: 1.35;
+    }
+    .bullet-list li {
+      position: relative;
+      padding-left: 13px;
+    }
+    .bullet-list li::before {
+      content: "▸";
+      position: absolute;
+      left: 1px;
+      color: #64748B;
+      font-size: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="title-group">
+      <h1>Dual Nature of Matter and Radiation: Master Synthesis Mindmap</h1>
+      <p>CUET UG Physics (Code 322) · 6 Core Branches: Radiation Duality, Experimental Photoelectric Effect & Matter Waves</p>
+    </div>
+    <div class="badge">Unit 7 Mindmap</div>
+  </div>
+
+  <div class="mindmap-canvas">
+    <!-- SVG Connector Lines -->
+    <svg class="svg-connectors" viewBox="0 0 1368 730">
+      <!-- Left branches from center (684, 365) -->
+      <!-- Branch 1 (Top Left) -->
+      <path d="M 600 340 C 500 330, 480 120, 410 115" fill="none" stroke="#93C5FD" stroke-width="2" stroke-dasharray="4,4"/>
+      <!-- Branch 2 (Mid Left) -->
+      <path d="M 580 365 C 500 365, 480 365, 410 365" fill="none" stroke="#7DD3FC" stroke-width="2" stroke-dasharray="4,4"/>
+      <!-- Branch 3 (Bottom Left) -->
+      <path d="M 600 390 C 500 400, 480 610, 410 615" fill="none" stroke="#FDE68A" stroke-width="2" stroke-dasharray="4,4"/>
+
+      <!-- Right branches from center (684, 365) -->
+      <!-- Branch 4 (Top Right) -->
+      <path d="M 768 340 C 868 330, 888 120, 958 115" fill="none" stroke="#C4B5FD" stroke-width="2" stroke-dasharray="4,4"/>
+      <!-- Branch 5 (Mid Right) -->
+      <path d="M 788 365 C 868 365, 888 365, 958 365" fill="none" stroke="#86EFAC" stroke-width="2" stroke-dasharray="4,4"/>
+      <!-- Branch 6 (Bottom Right) -->
+      <path d="M 768 390 C 868 400, 888 610, 958 615" fill="none" stroke="#FECDD3" stroke-width="2" stroke-dasharray="4,4"/>
+    </svg>
+
+    <!-- LEFT COLUMN -->
+    <div class="column-left">
+      <!-- 1. Electron Emission & Work Function -->
+      <div class="mm-card c1">
+        <div class="card-title-row">
+          <div class="card-header-title">1. Electron Emission & Work Function</div>
+          <span class="card-tag tag-blue">Foundations</span>
+        </div>
+        <div class="formula-line">Φ₀ = h ν₀ = h c / λ₀ &nbsp;(1 eV = 1.6 × 10⁻¹⁹ J)</div>
+        <ul class="bullet-list">
+          <li><b>Emission Modes:</b> Thermionic (heat), Field/Cold emission (strong E ~ 10⁸ V/m), Photoelectric (light), Secondary (impact).</li>
+          <li><b>Work Function (Φ₀):</b> Minimum energy to pull an electron from metal surface. Sensitive to surface purity.</li>
+          <li><b>Extremes:</b> Lowest for Alkali metals (Cs = 2.14 eV, K = 2.3 eV); Highest for Platinum (Pt = 5.65 eV).</li>
+        </ul>
+      </div>
+
+      <!-- 2. Experimental Laws of Photoelectric Effect -->
+      <div class="mm-card c2">
+        <div class="card-title-row">
+          <div class="card-header-title">2. Experimental Study & Laws</div>
+          <span class="card-tag tag-cyan">4 Empirical Laws</span>
+        </div>
+        <div class="formula-line">i_photo ∝ Intensity &nbsp;|&nbsp; K_max = e V₀ ∝ (ν - ν₀)</div>
+        <ul class="bullet-list">
+          <li><b>Photocurrent vs Intensity:</b> Strictly linear at fixed ν &gt; ν₀. Saturation current doubles when intensity doubles.</li>
+          <li><b>Stopping Potential (V₀):</b> Independent of intensity; strictly linear function of radiation frequency ν.</li>
+          <li><b>Threshold Frequency (ν₀):</b> No emission occurs if ν &lt; ν₀, regardless of light intensity or illumination duration.</li>
+          <li><b>No Time Lag:</b> Emission begins within &lt; 10⁻⁹ seconds (instantaneous quantum interaction).</li>
+        </ul>
+      </div>
+
+      <!-- 3. Einstein's Equation & Photon Picture -->
+      <div class="mm-card c3">
+        <div class="card-title-row">
+          <div class="card-header-title">3. Einstein's Equation & Photon Theory</div>
+          <span class="card-tag tag-amber">Nobel Prize 1921</span>
+        </div>
+        <div class="formula-line">h ν = Φ₀ + K_max = h ν₀ + e V₀ ⟹ V₀ = (h/e)ν - Φ₀/e</div>
+        <ul class="bullet-list">
+          <li><b>Photon Properties:</b> Energy E = hν, momentum p = h/λ = E/c, speed c in vacuum, rest mass = 0, charge = 0.</li>
+          <li><b>Collision:</b> 1 photon interacts with exactly 1 electron (all-or-none energy transfer). Photon is absorbed.</li>
+          <li><b>Millikan's Slope:</b> V₀ vs ν graph has universal slope = h/e (~4.14 × 10⁻¹⁵ V·s) for all metals!</li>
+          <li><b>Wave Theory Collapse:</b> Wave theory failed on instantaneous emission, threshold frequency, and K_max intensity independence.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- CENTRAL HUB -->
+    <div class="central-hub">
+      <div class="sub-label">CUET UG Physics · Code 322</div>
+      <div class="hub-title">DUAL NATURE<br>OF MATTER & RADIATION</div>
+      <div class="hub-desc">
+        Light exhibits wave (interference, diffraction) and particle (photoelectric, Compton) nature.<br><br>
+        Matter particles likewise exhibit wave nature governed by de Broglie wavelength λ = h/p.
+      </div>
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="column-right">
+      <!-- 4. de Broglie Matter Waves -->
+      <div class="mm-card c4">
+        <div class="card-title-row">
+          <div class="card-header-title">4. de Broglie Matter Waves</div>
+          <span class="card-tag tag-purple">Particle-Wave</span>
+        </div>
+        <div class="formula-line">λ = h / p = h / (m v) = h / √(2 m q V)</div>
+        <ul class="bullet-list">
+          <li><b>de Broglie Hypothesis:</b> Nature loves symmetry; if radiation has particle nature, matter must have wave nature.</li>
+          <li><b>Accelerated Electron:</b> λ_e = 12.27 / √V Å = 1.227 / √V nm (e.g. V = 100 V ⟹ λ = 1.227 Å).</li>
+          <li><b>Heavy Particles:</b> Proton λ_p = 0.286/√V Å; Deuteron λ_d = 0.202/√V Å; Alpha λ_α = 0.101/√V Å.</li>
+          <li><b>Thermal Neutrons:</b> λ = h / √(3 m k_B T) ≈ 25.2 / √T Å (at 300 K, λ ≈ 1.45 Å).</li>
+        </ul>
+      </div>
+
+      <!-- 5. Davisson-Germer Experiment -->
+      <div class="mm-card c5">
+        <div class="card-title-row">
+          <div class="card-header-title">5. Davisson-Germer Experiment</div>
+          <span class="card-tag tag-green">Experimental Proof</span>
+        </div>
+        <div class="formula-line">Peak: V = 54 V, ϕ = 50° ⟹ θ = 65° ⟹ λ = 1.65 Å ≈ 1.67 Å</div>
+        <ul class="bullet-list">
+          <li><b>Target & Technique:</b> Collimated electron beam scattered from Nickel crystal onto movable Faraday detector.</li>
+          <li><b>Diffraction Peak:</b> Prominent intensity bump at 54 V and 50° due to constructive interference of electron waves.</li>
+          <li><b>Bragg Verification:</b> 2d sin θ = nλ with d = 0.91 Å yields λ = 1.65 Å, matching theoretical de Broglie 1.67 Å.</li>
+          <li><b>G.P. Thomson:</b> Independently verified electron wave diffraction through thin gold foil (shared 1937 Nobel Prize).</li>
+        </ul>
+      </div>
+
+      <!-- 6. CUET High-Yield Ratios & Traps -->
+      <div class="mm-card c6">
+        <div class="card-title-row">
+          <div class="card-header-title">6. High-Yield Formulas & Exam Traps</div>
+          <span class="card-tag tag-red">Speed Shortcuts</span>
+        </div>
+        <div class="formula-line">Same V: λ ∝ 1/√(m q) &nbsp;|&nbsp; Same E: λ ∝ 1/√m</div>
+        <ul class="bullet-list">
+          <li><b>Ratio Trap (p, d, α at same V):</b> λ_p : λ_d : λ_α = 1 : 1/√2 : 1/(2√2) ≈ 2√2 : 2 : 1.</li>
+          <li><b>Bohr Orbit Standing Wave:</b> Circumference 2πr_n = nλ ⟹ m v r_n = n h / (2π).</li>
+          <li><b>Radiation Pressure:</b> Perfect absorbing plate P = I/c; Perfect reflecting plate P = 2I/c.</li>
+          <li><b>Photon Flux:</b> Number of photons striking per sec N/t = P / (h ν) = P λ / (h c).</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

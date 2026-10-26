@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1440, height=880">
+  <title>Dual Nature: Photoelectric Effect & Einstein's Equation</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 1440px;
+      height: 880px;
+      background-color: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0F172A;
+      padding: 30px 40px;
+      overflow: hidden;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #E2E8F0;
+      padding-bottom: 14px;
+    }
+    .title-group h1 {
+      font-size: 25px;
+      font-weight: 800;
+      color: #0F2C59;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+    .title-group p {
+      font-size: 13.5px;
+      color: #64748B;
+      font-weight: 500;
+    }
+    .badge {
+      background: #0066FF;
+      color: white;
+      font-size: 11.5px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1.15fr 1.35fr 1.1fr;
+      gap: 20px;
+      height: calc(100% - 95px);
+    }
+    .card {
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      border-radius: 12px;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+      position: relative;
+    }
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      border-radius: 12px 12px 0 0;
+    }
+    .card-setup::before { background: #0066FF; }
+    .card-graphs::before { background: #059669; }
+    .card-theory::before { background: #D97706; }
+
+    .card-title {
+      font-size: 15.5px;
+      font-weight: 700;
+      color: #0F2C59;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .card-title svg { width: 18px; height: 18px; }
+
+    .formula-box {
+      background: #F1F5F9;
+      border-left: 3px solid #0066FF;
+      border-radius: 6px;
+      padding: 10px 12px;
+      margin-bottom: 12px;
+    }
+    .formula-title {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #0066FF;
+      margin-bottom: 4px;
+    }
+    .formula-math {
+      font-family: "SF Pro Text", Consolas, "Courier New", monospace;
+      font-size: 14px;
+      font-weight: 700;
+      color: #0F2C59;
+    }
+
+    .key-points {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      font-size: 12px;
+      color: #334155;
+      line-height: 1.45;
+    }
+    .key-points li {
+      position: relative;
+      padding-left: 15px;
+    }
+    .key-points li::before {
+      content: "•";
+      position: absolute;
+      left: 2px;
+      color: #0066FF;
+      font-weight: bold;
+      font-size: 15px;
+      line-height: 1;
+    }
+
+    .graphs-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      flex: 1;
+    }
+    .graph-cell {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 8px;
+      padding: 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .graph-title {
+      font-size: 11px;
+      font-weight: 700;
+      color: #1E293B;
+      margin-bottom: 4px;
+      text-align: center;
+    }
+
+    .table-container {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 11.5px;
+      margin-top: 6px;
+    }
+    .table-container th {
+      background: #E2E8F0;
+      color: #1E293B;
+      padding: 6px 8px;
+      text-align: left;
+      font-weight: 700;
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+    }
+    .table-container td {
+      padding: 5px 8px;
+      border-bottom: 1px solid #E2E8F0;
+      color: #334155;
+    }
+    .highlight-pill {
+      display: inline-block;
+      padding: 2px 7px;
+      border-radius: 10px;
+      font-size: 10.5px;
+      font-weight: 700;
+    }
+    .pill-blue { background: #DBEAFE; color: #1D4ED8; }
+    .pill-green { background: #D1FAE5; color: #047857; }
+    .pill-amber { background: #FEF3C7; color: #B45309; }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="title-group">
+      <h1>Physics · Unit 7: Photoelectric Effect & Einstein's Equation</h1>
+      <p>Experimental Apparatus, 4 Core I-V Graphs, Work Function & Wave Theory Failure</p>
+    </div>
+    <div class="badge">CUET UG Physics</div>
+  </div>
+
+  <div class="grid">
+    <!-- Card 1: Experimental Setup & Work Function -->
+    <div class="card card-setup">
+      <div class="card-title">
+        <svg fill="none" stroke="#0066FF" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        Apparatus & Key Definitions
+      </div>
+
+      <!-- Schematic SVG -->
+      <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px; padding: 6px; margin-bottom: 10px; text-align: center;">
+        <svg width="340" height="150" viewBox="0 0 340 150">
+          <!-- Glass Tube -->
+          <rect x="50" y="25" width="240" height="75" rx="37.5" fill="#FFFFFF" stroke="#64748B" stroke-width="1.8" stroke-dasharray="0"/>
+          <!-- Quartz Window -->
+          <rect x="70" y="20" width="35" height="10" rx="3" fill="#93C5FD" stroke="#2563EB" stroke-width="1.2"/>
+          <text x="87" y="15" font-size="9" font-weight="700" fill="#2563EB" text-anchor="middle">Quartz Window</text>
+          <!-- UV Rays -->
+          <line x1="75" y1="2" x2="82" y2="28" stroke="#3B82F6" stroke-width="1.5" stroke-dasharray="3,2"/>
+          <line x1="87" y1="2" x2="87" y2="28" stroke="#3B82F6" stroke-width="1.5" stroke-dasharray="3,2"/>
+          <line x1="99" y1="2" x2="92" y2="28" stroke="#3B82F6" stroke-width="1.5" stroke-dasharray="3,2"/>
+          <text x="118" y="14" font-size="9" font-weight="600" fill="#3B82F6">UV light (hν)</text>
+
+          <!-- Cathode C (Emitter) -->
+          <line x1="95" y1="40" x2="95" y2="85" stroke="#DC2626" stroke-width="4" stroke-linecap="round"/>
+          <text x="80" y="65" font-size="10" font-weight="700" fill="#DC2626">C (Cathode)</text>
+
+          <!-- Photoelectrons -->
+          <circle cx="120" cy="52" r="3" fill="#0284C7"/>
+          <circle cx="150" cy="62" r="3" fill="#0284C7"/>
+          <circle cx="180" cy="55" r="3" fill="#0284C7"/>
+          <path d="M125 52 L140 52 M155 62 L170 62 M185 55 L200 55" stroke="#0284C7" stroke-width="1.2" stroke-linecap="round"/>
+          <text x="160" y="45" font-size="9" font-weight="600" fill="#0284C7">Photoelectrons (e⁻)</text>
+
+          <!-- Anode A (Collector) -->
+          <line x1="240" y1="40" x2="240" y2="85" stroke="#059669" stroke-width="4" stroke-linecap="round"/>
+          <text x="246" y="65" font-size="10" font-weight="700" fill="#059669">A (Anode)</text>
+
+          <!-- Circuit Lines -->
+          <line x1="95" y1="85" x2="95" y2="125" stroke="#475569" stroke-width="1.5"/>
+          <line x1="95" y1="125" x2="140" y2="125" stroke="#475569" stroke-width="1.5"/>
+
+          <!-- Microammeter -->
+          <circle cx="155" cy="125" r="10" fill="#FFFFFF" stroke="#0F172A" stroke-width="1.4"/>
+          <text x="155" y="128.5" font-size="9" font-weight="700" fill="#0F172A" text-anchor="middle">μA</text>
+
+          <line x1="165" y1="125" x2="200" y2="125" stroke="#475569" stroke-width="1.5"/>
+          <!-- Commutator & Battery Box -->
+          <rect x="200" y="115" width="40" height="20" rx="3" fill="#E2E8F0" stroke="#64748B" stroke-width="1.2"/>
+          <text x="220" y="129" font-size="8.5" font-weight="700" fill="#334155" text-anchor="middle">± V (Var)</text>
+
+          <line x1="240" y1="125" x2="240" y2="85" stroke="#475569" stroke-width="1.5"/>
+        </svg>
+      </div>
+
+      <div class="formula-box">
+        <div class="formula-title">Work Function (Φ₀) & Threshold Frequency</div>
+        <div class="formula-math">Φ₀ = h ν₀ = h c / λ₀</div>
+        <div style="font-size: 11px; color: #475569; margin-top: 3px;">
+          Minimum energy required to liberate an electron from metal surface. Lowest for <b>Cs (2.14 eV)</b>, highest for <b>Pt (5.65 eV)</b>.
+        </div>
+      </div>
+
+      <ul class="key-points">
+        <li><b>Hertz & Hallwachs Observation:</b> Zn plate loses negative charge rapidly when irradiated with UV light due to electron emission.</li>
+        <li><b>Instantaneous Process:</b> Time lag between incident radiation and emission is &lt; 10⁻⁹ s (~1 ns).</li>
+        <li><b>Retarding Potential:</b> When A is made negative w.r.t C, electrons are repelled. The potential at which photocurrent drops to zero is Stopping Potential (V₀).</li>
+      </ul>
+    </div>
+
+    <!-- Card 2: 4 Core Characteristic Graphs -->
+    <div class="card card-graphs">
+      <div class="card-title">
+        <svg fill="none" stroke="#059669" stroke-width="2" viewBox="0 0 24 24"><path d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"/></svg>
+        4 Core Characteristic Graphs (CUET High-Yield)
+      </div>
+
+      <div class="graphs-grid">
+        <!-- Graph 1: Current vs Intensity -->
+        <div class="graph-cell">
+          <div class="graph-title">1. Current vs Light Intensity</div>
+          <svg width="180" height="120" viewBox="0 0 180 120">
+            <line x1="25" y1="100" x2="165" y2="100" stroke="#64748B" stroke-width="1.5"/>
+            <line x1="25" y1="100" x2="25" y2="15" stroke="#64748B" stroke-width="1.5"/>
+            <text x="165" y="112" font-size="9" fill="#475569" text-anchor="end">Intensity (I)</text>
+            <text x="15" y="20" font-size="9" fill="#475569" text-anchor="middle" transform="rotate(-90 15 20)">Current (i)</text>
+            <line x1="25" y1="100" x2="155" y2="25" stroke="#0066FF" stroke-width="2.2"/>
+            <text x="95" y="55" font-size="9" font-weight="700" fill="#0066FF">i ∝ Intensity</text>
+          </svg>
+          <div style="font-size: 10px; color: #475569; text-align: center; margin-top: 2px;">
+            At fixed frequency &gt; ν₀, number of emitted photoelectrons/sec ∝ light intensity.
+          </div>
+        </div>
+
+        <!-- Graph 2: Current vs Potential (Different Intensities) -->
+        <div class="graph-cell">
+          <div class="graph-title">2. Current vs V (Var. Intensity, Fixed ν)</div>
+          <svg width="180" height="120" viewBox="0 0 180 120">
+            <line x1="15" y1="90" x2="170" y2="90" stroke="#64748B" stroke-width="1.2"/>
+            <line x1="75" y1="105" x2="75" y2="15" stroke="#64748B" stroke-width="1.2"/>
+            <text x="170" y="102" font-size="8.5" fill="#475569" text-anchor="end">+ V (Collector)</text>
+            <text x="25" y="102" font-size="8.5" fill="#475569">- V</text>
+            <!-- Curve I3 -->
+            <path d="M 40 90 Q 60 88, 75 55 T 160 30" fill="none" stroke="#DC2626" stroke-width="1.8"/>
+            <text x="162" y="32" font-size="8" font-weight="700" fill="#DC2626">I₃</text>
+            <!-- Curve I2 -->
+            <path d="M 40 90 Q 60 88, 75 67 T 160 50" fill="none" stroke="#059669" stroke-width="1.8"/>
+            <text x="162" y="52" font-size="8" font-weight="700" fill="#059669">I₂</text>
+            <!-- Curve I1 -->
+            <path d="M 40 90 Q 60 88, 75 78 T 160 70" fill="none" stroke="#2563EB" stroke-width="1.8"/>
+            <text x="162" y="72" font-size="8" font-weight="700" fill="#2563EB">I₁</text>
+            <circle cx="40" cy="90" r="3" fill="#7C3AED"/>
+            <text x="40" y="102" font-size="8.5" font-weight="700" fill="#7C3AED" text-anchor="middle">-V₀</text>
+          </svg>
+          <div style="font-size: 10px; color: #475569; text-align: center; margin-top: 2px;">
+            Same V₀ for all intensities! Saturation current ∝ Intensity (I₃ &gt; I₂ &gt; I₁).
+          </div>
+        </div>
+
+        <!-- Graph 3: Current vs Potential (Different Frequencies) -->
+        <div class="graph-cell">
+          <div class="graph-title">3. Current vs V (Var. ν, Fixed Intensity)</div>
+          <svg width="180" height="120" viewBox="0 0 180 120">
+            <line x1="15" y1="90" x2="170" y2="90" stroke="#64748B" stroke-width="1.2"/>
+            <line x1="105" y1="105" x2="105" y2="15" stroke="#64748B" stroke-width="1.2"/>
+            <!-- Curves converge to same saturation current -->
+            <path d="M 30 90 Q 75 88, 105 50 T 165 42" fill="none" stroke="#DC2626" stroke-width="1.8"/>
+            <path d="M 55 90 Q 85 88, 105 50 T 165 42" fill="none" stroke="#059669" stroke-width="1.8"/>
+            <path d="M 80 90 Q 95 88, 105 50 T 165 42" fill="none" stroke="#2563EB" stroke-width="1.8"/>
+            <!-- V0 points -->
+            <text x="30" y="102" font-size="8" font-weight="700" fill="#DC2626" text-anchor="middle">-V₀₃</text>
+            <text x="55" y="102" font-size="8" font-weight="700" fill="#059669" text-anchor="middle">-V₀₂</text>
+            <text x="80" y="102" font-size="8" font-weight="700" fill="#2563EB" text-anchor="middle">-V₀₁</text>
+            <text x="145" y="35" font-size="8" font-weight="700" fill="#1E293B">Same i_sat</text>
+          </svg>
+          <div style="font-size: 10px; color: #475569; text-align: center; margin-top: 2px;">
+            Higher frequency requires higher retarding potential: V₀₃ &gt; V₀₂ &gt; V₀₁ (ν₃ &gt; ν₂ &gt; ν₁).
+          </div>
+        </div>
+
+        <!-- Graph 4: V0 vs Frequency -->
+        <div class="graph-cell">
+          <div class="graph-title">4. Stopping Potential (V₀) vs Frequency (ν)</div>
+          <svg width="180" height="120" viewBox="0 0 180 120">
+            <line x1="20" y1="80" x2="165" y2="80" stroke="#64748B" stroke-width="1.2"/>
+            <line x1="45" y1="115" x2="45" y2="15" stroke="#64748B" stroke-width="1.2"/>
+            <text x="165" y="92" font-size="8.5" fill="#475569" text-anchor="end">Frequency (ν)</text>
+            <text x="38" y="20" font-size="8.5" fill="#475569" text-anchor="end">V₀</text>
+            <!-- Line with threshold intercept -->
+            <line x1="45" y1="110" x2="80" y2="80" stroke="#94A3B8" stroke-width="1.4" stroke-dasharray="2,2"/>
+            <line x1="80" y1="80" x2="160" y2="20" stroke="#D97706" stroke-width="2.2"/>
+            <circle cx="80" cy="80" r="3" fill="#D97706"/>
+            <text x="80" y="92" font-size="8.5" font-weight="700" fill="#D97706" text-anchor="middle">ν₀</text>
+            <!-- Slope label -->
+            <text x="110" y="42" font-size="8.5" font-weight="700" fill="#0F2C59">Slope = h/e</text>
+            <text x="40" y="112" font-size="7.5" font-weight="700" fill="#DC2626" text-anchor="end">-Φ₀/e</text>
+          </svg>
+          <div style="font-size: 10px; color: #475569; text-align: center; margin-top: 2px;">
+            Universal slope = <b>h/e</b> for all metals! Intercept on ν-axis gives threshold frequency ν₀.
+          </div>
+        </div>
+      </div>
+
+      <div style="background: #ECFDF5; border-left: 3px solid #059669; border-radius: 6px; padding: 6px 10px; margin-top: 8px; font-size: 11px; color: #065F46;">
+        <b>Crucial CUET takeaway:</b> The slope of V₀ vs ν graph is independent of metal nature (always h/e). Different metals give parallel lines shifted along frequency axis!
+      </div>
+    </div>
+
+    <!-- Card 3: Einstein's Equation & Wave Theory Failure -->
+    <div class="card card-theory">
+      <div class="card-title">
+        <svg fill="none" stroke="#D97706" stroke-width="2" viewBox="0 0 24 24"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+        Einstein's Equation & Wave Theory
+      </div>
+
+      <div class="formula-box" style="border-left-color: #D97706;">
+        <div class="formula-title" style="color: #D97706;">Einstein's Photoelectric Equation</div>
+        <div class="formula-math" style="font-size: 13px;">K_max = h ν - Φ₀ = e V₀</div>
+        <div class="formula-math" style="font-size: 12px; margin-top: 4px; color: #475569;">
+          K_max = h (ν - ν₀) = h c (1/λ - 1/λ₀)
+        </div>
+      </div>
+
+      <table class="table-container">
+        <thead>
+          <tr>
+            <th>Photon Property</th>
+            <th>Value / Relation</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Energy (E)</td>
+            <td>E = h ν = h c / λ</td>
+          </tr>
+          <tr>
+            <td>Momentum (p)</td>
+            <td>p = E / c = h / λ</td>
+          </tr>
+          <tr>
+            <td>Rest Mass (m₀)</td>
+            <td>Strictly zero (m₀ = 0)</td>
+          </tr>
+          <tr>
+            <td>Speed in Vacuum</td>
+            <td>c = 3 × 10⁸ m/s</td>
+          </tr>
+          <tr>
+            <td>Electric Charge</td>
+            <td>Neutral (not deflected in E, B)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div style="margin-top: 10px;">
+        <div style="font-size: 11.5px; font-weight: 700; color: #991B1B; margin-bottom: 4px;">
+          Why Wave Theory Failed:
+        </div>
+        <ul class="key-points" style="font-size: 11px; gap: 5px;">
+          <li><b>Intensity independence:</b> Wave theory predicted K_max ∝ Intensity. Experiment showed K_max depends solely on frequency ν.</li>
+          <li><b>Threshold Frequency:</b> Wave theory allowed emission at any frequency given enough intensity. Experiment found zero emission below ν₀.</li>
+          <li><b>Time Lag:</b> Wave theory calculated minutes to hours to absorb enough wavefront energy. Experiment showed instantaneous emission (&lt;10⁻⁹ s).</li>
+        </ul>
+      </div>
+
+      <div style="margin-top: 8px; background: #FEF3C7; border: 1px solid #FDE68A; border-radius: 6px; padding: 6px; font-size: 10.5px; color: #92400E;">
+        <b>Nobel Prize (1921):</b> Albert Einstein was awarded the Nobel Prize specifically for the discovery of the law of photoelectric effect, establishing photon quantization.
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
