@@ -1,117 +1,281 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
+<title>Haloalkanes and Haloarenes Master Synthesis Architecture</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
-  .wrap { width: 1480px; height: 1080px; position: relative; background: #fff; }
-  svg.wires { position: absolute; inset: 0; width: 1480px; height: 1080px; }
-  .center {
-    position: absolute; left: 520px; top: 470px; width: 440px; height: 104px;
-    background: #071A4D; border-radius: 16px; display: flex; flex-direction: column;
-    align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(7,26,77,.25);
-    border-bottom: 5px solid #B8FF34;
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: #0F172A;
+    position: relative;
+    overflow: hidden;
+    box-shadow: none !important;
   }
-  .center .t { color: #fff; font-size: 21px; font-weight: 800; letter-spacing: .5px; text-align: center; }
-  .center .s { color: #B8FF34; font-size: 13.5px; font-weight: 700; letter-spacing: 2px; margin-top: 4px; }
-  .card {
-    position: absolute; width: 465px; background: #FCFDFF; border: 1.5px solid #D5DCEA;
-    border-radius: 14px; padding: 13px 16px 12px;
+  .header {
+    position: absolute;
+    top: 20px;
+    left: 36px;
+    right: 36px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 10px;
+    z-index: 10;
   }
-  .card h2 { font-size: 20px; color: #071A4D; font-weight: 800; margin-bottom: 7px;
-             padding-bottom: 5px; border-bottom: 3px solid; display: inline-block; }
-  .leaf { font-size: 14.5px; color: #1B2333; margin: 5px 0; padding-left: 16px; position: relative; line-height: 1.32; }
-  .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
-  .b .leaf::before { background: #1F5EFF; }
-  .l .leaf::before { background: #7FB800; }
-  .leaf b { color: #071A4D; }
-  .b h2 { border-color: #1F5EFF; }
-  .l h2 { border-color: #7FB800; }
-  .left { left: 30px; }
-  .right { left: 985px; }
-  .exc {
-    position: absolute; left: 470px; top: 905px; width: 540px; background: #FFF3EC;
-    border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px;
+  .header h1 {
+    font-size: 21px;
+    font-weight: 800;
+    color: #071A4D;
+    letter-spacing: -0.02em;
   }
-  .exc h2 { font-size: 17px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
-  .exc .leaf { font-size: 13px; margin: 3px 0; padding-left: 14px; color: #7A2A12; }
-  .exc .leaf::before { background: #D2481F; }
-  .exc b { color: #B4380F; }
+  .header p {
+    font-size: 12.5px;
+    color: #64748B;
+  }
+  .badge-tag {
+    background: #071A4D;
+    color: #B8FF34;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    padding: 5px 12px;
+    border-radius: 5px;
+    text-transform: uppercase;
+  }
+  svg.connector-canvas {
+    position: absolute;
+    inset: 0;
+    width: 1440px;
+    height: 880px;
+    pointer-events: none;
+    z-index: 1;
+  }
+  .center-hub {
+    position: absolute;
+    left: 550px;
+    top: 380px;
+    width: 340px;
+    height: 120px;
+    background: #071A4D;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #1F5EFF;
+    z-index: 5;
+    padding: 12px;
+    text-align: center;
+  }
+  .center-hub h2 {
+    color: #FFFFFF;
+    font-size: 17px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+  }
+  .center-hub .sub {
+    color: #B8FF34;
+    font-size: 11.5px;
+    font-weight: 700;
+    margin-top: 4px;
+    letter-spacing: 0.12em;
+  }
+  .center-hub .core-meta {
+    font-size: 11px;
+    color: #94A3B8;
+    margin-top: 3px;
+  }
+  .topic-card {
+    position: absolute;
+    width: 380px;
+    background: #FFFFFF;
+    border: 1.5px solid #E2E8F0;
+    border-radius: 10px;
+    padding: 12px 16px;
+    z-index: 5;
+  }
+  .topic-card h3 {
+    font-size: 13.5px;
+    font-weight: 800;
+    color: #071A4D;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .topic-card ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 4.5px;
+  }
+  .topic-card li {
+    font-size: 11.5px;
+    color: #334155;
+    line-height: 1.35;
+    padding-left: 12px;
+    position: relative;
+  }
+  .topic-card li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    font-weight: 800;
+  }
+  .tag-pill {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 4px;
+  }
+  .blue-tag { background: #EFF6FF; color: #1F5EFF; }
+  .green-tag { background: #ECFDF5; color: #059669; }
+  .amber-tag { background: #FEF3C7; color: #D97706; }
+  .red-tag { background: #FEF2F2; color: #DC2626; }
+  .purple-tag { background: #FAF5FF; color: #7E22CE; }
+  .c1 { border-top: 3.5px solid #1F5EFF; }
+  .c1 li::before { color: #1F5EFF; }
+  .c2 { border-top: 3.5px solid #059669; }
+  .c2 li::before { color: #059669; }
+  .c3 { border-top: 3.5px solid #D97706; }
+  .c3 li::before { color: #D97706; }
+  .c4 { border-top: 3.5px solid #DC2626; }
+  .c4 li::before { color: #DC2626; }
+  .c5 { border-top: 3.5px solid #7E22CE; }
+  .c5 li::before { color: #7E22CE; }
+  .c6 { border-top: 3.5px solid #0284C7; }
+  .c6 li::before { color: #0284C7; }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <svg class="wires" viewBox="0 0 1480 1080">
-    <path d="M 520 505 C 470 505, 495 158, 500 155" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
-    <path d="M 520 520 C 480 520, 495 438, 500 438" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 520 535 C 470 535, 495 718, 500 718" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
-    <path d="M 960 505 C 1010 505, 985 158, 980 155" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 960 520 C 1000 520, 985 438, 980 438" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
-    <path d="M 960 535 C 1010 535, 985 718, 980 718" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 740 574 C 740 700, 740 830, 740 903" fill="none" stroke="#D2481F" stroke-width="2.5" stroke-dasharray="7 5" opacity=".6"/>
-  </svg>
 
-  <div class="center">
-    <div class="t">HALOALKANES &amp; HALOARENES</div>
-    <div class="s">UNIT VI &#183; COMPLETE CHAPTER MAP</div>
+<div class="header">
+  <div>
+    <h1>Unit VI: Haloalkanes and Haloarenes — Master Synthesis Architecture</h1>
+    <p>Comprehensive cognitive roadmap: Preparation, C-X bonding, S<sub>N</sub>1/S<sub>N</sub>2/E2 mechanisms, organometallics &amp; environmental polyhalogens</p>
   </div>
-
-  <div class="card left b" style="top:58px">
-    <h2>Classification &amp; the C&#8211;X Bond</h2>
-    <div class="leaf"><b>By carbon type:</b> 1&#176;/2&#176;/3&#176; (sp&#179;), allylic&#8211;benzylic, vinylic&#8211;aryl (sp&#178;)</div>
-    <div class="leaf"><b>C&#8211;X bond:</b> polar (X more electronegative) but not ionic enough to dissolve in water</div>
-    <div class="leaf"><b>Bond length grows, enthalpy shrinks:</b> C&#8211;F strongest/shortest &#8594; C&#8211;I weakest/longest &#8212; RI is the most reactive</div>
-    <div class="leaf"><b>Dipole quirk:</b> CH&#8323;Cl &gt; CH&#8323;F (C&#8211;F's shortness offsets its polarity)</div>
-  </div>
-
-  <div class="card left l" style="top:352px">
-    <h2>Preparation Toolkit</h2>
-    <div class="leaf"><b>From alcohols:</b> HX (Lucas: ZnCl&#8322;+HCl fastest for 3&#176;), PX&#8323;/PX&#8325;, and best: SOCl&#8322; (clean gases escape)</div>
-    <div class="leaf"><b>From hydrocarbons:</b> UV halogenation (mixture), electrophilic substitution on arenes (o/p mix, FeX&#8323; catalyst)</div>
-    <div class="leaf"><b>Halide exchange:</b> Finkelstein (NaI in acetone: RCl &#8594; RI), Swarts (AgF/Hg&#8322;F&#8322;: RCl &#8594; RF)</div>
-    <div class="leaf"><b>From amines (arenes):</b> Sandmeyer (Cu&#8322;X&#8322;/diazonium), Balz-Schiemann (HBF&#8324; for ArF), Gattermann (Cu powder)</div>
-  </div>
-
-  <div class="card left b" style="top:648px">
-    <h2>Reactions of Haloalkanes</h2>
-    <div class="leaf"><b>S&#8317;2:</b> one concerted backside step; rate = k[RX][Nu]; inversion; methyl &gt; 1&#176; &gt; 2&#176; &gt; 3&#176;</div>
-    <div class="leaf"><b>S&#8317;1:</b> carbocation first; rate = k[RX]; racemisation; 3&#176; &gt; 2&#176; &gt; 1&#176;</div>
-    <div class="leaf"><b>Elimination:</b> alcoholic KOH, Saytzeff's alkene; competes with S&#8317;</div>
-    <div class="leaf"><b>With metals:</b> Grignard RMgX in dry ether; Wurtz (Na, R&#8211;R), Fittig + Wurtz-Fittig for arenes</div>
-  </div>
-
-  <div class="card right l" style="top:58px">
-    <h2>Physical Properties</h2>
-    <div class="leaf"><b>Boiling point:</b> RI &gt; RBr &gt; RCl &gt; RF (mass + London forces); isomers: 1&#176; &gt; 2&#176; &gt; 3&#176; (branching shrinks the surface)</div>
-    <div class="leaf"><b>Density:</b> bromides/iodides heavier than water; density falls as the chain grows</div>
-    <div class="leaf"><b>Solubility:</b> insoluble in water &#8212; they cannot H-bond; soluble in organic solvents</div>
-    <div class="leaf"><b>Melting point oddity:</b> para-isomers melt HIGHER than ortho (symmetry packs better)</div>
-  </div>
-
-  <div class="card right b" style="top:368px">
-    <h2>Haloarenes: The Reluctant Ones</h2>
-    <div class="leaf"><b>Why aryl C&#8211;X refuses S&#8317;:</b> resonance gives double-bond character; sp&#178; carbon holds s-character tightly; phenyl cation is unstable; the ring repels backside attack</div>
-    <div class="leaf"><b>Still do EAS:</b> halogen is o,p-directing though deactivating (its resonance donates, its &#8722;I withdraws)</div>
-    <div class="leaf"><b>Dow process:</b> chlorobenzene + NaOH at 623 K / 300 atm &#8594; phenol (harsh conditions prove the reluctance)</div>
-    <div class="leaf"><b>Nitro rescues S&#8317;Ar:</b> o/p-NO&#8322; groups pull electrons out &#8212; 2,4,6-trinitrochlorobenzene hydrolyses gently</div>
-  </div>
-
-  <div class="card right l" style="top:700px">
-    <h2>Polyhalogen Compounds</h2>
-    <div class="leaf"><b>CH&#8322;Cl&#8322; (DCM):</b> paint remover, degreaser; CHCl&#8323;: anaesthetic of the past &#8594; phosgene COCl&#8322; + HCl in air (store in dark bottles)</div>
-    <div class="leaf"><b>CHI&#8323; (iodoform):</b> yellow antiseptic powder; CCl&#8324;: fire extinguisher, cleaning fluid (toxic &#8594; phosgene on hot metal)</div>
-    <div class="leaf"><b>Freons (CFCs):</b> refrigerants that shred ozone &#8212; banned by the Montreal Protocol</div>
-    <div class="leaf"><b>DDT:</b> malaria-fighting insecticide, now banned for persistence and biomagnification</div>
-  </div>
-
-  <div class="exc">
-    <h2>WATCH-OUTS THAT SET MCQ TRAPS</h2>
-    <div class="leaf"><b>SN1 vs SN2 reactivity orders are OPPOSITE</b> — 3&#176; wins SN1, methyl wins SN2; check which is asked</div>
-    <div class="leaf"><b>Racemisation ≠ inversion:</b> SN1 gives partial racemisation (not 50:50), SN2 gives full inversion</div>
-    <div class="leaf"><b>Haloarenes vs haloalkanes:</b> same nucleophiles, wildly different rates — resonance is the culprit</div>
-    <div class="leaf"><b>o,p-directing ≠ activating:</b> halogens direct o,p yet DEACTIVATE the ring — both facts in one option pair</div>
-  </div>
+  <div class="badge-tag">CUET UG 2027 Baseline</div>
 </div>
+
+<svg class="connector-canvas" viewBox="0 0 1440 880">
+  <defs>
+    <style>
+      .ortho-line { stroke: #94A3B8; stroke-width: 1.5; stroke-dasharray: 4 3; fill: none; }
+      .line-label { font-size: 10.5px; fill: #475569; font-weight: 700; font-family: 'Inter', sans-serif; }
+      .label-bg { fill: #F8FAFC; rx: 3px; }
+    </style>
+  </defs>
+
+  <!-- Connectors from Center Hub (550, 380, w:340, h:120) -> Center: (720, 440) -->
+  <!-- Top Left: Card 1 (x: 50, y: 80, w:380, h:160) -> (430, 160) -->
+  <path d="M 550 410 L 480 410 L 480 160 L 430 160" class="ortho-line" />
+  <rect x="446" y="300" width="70" height="18" class="label-bg"/>
+  <text x="450" y="313" class="line-label">Synthesis</text>
+
+  <!-- Mid Left: Card 2 (x: 50, y: 340, w:380, h:200) -> (430, 440) -->
+  <path d="M 550 440 L 430 440" class="ortho-line" />
+  <rect x="456" y="432" width="68" height="18" class="label-bg"/>
+  <text x="460" y="445" class="line-label">Mechanisms</text>
+
+  <!-- Bottom Left: Card 3 (x: 50, y: 620, w:380, h:180) -> (430, 710) -->
+  <path d="M 550 470 L 480 470 L 480 710 L 430 710" class="ortho-line" />
+  <rect x="446" y="580" width="70" height="18" class="label-bg"/>
+  <text x="452" y="593" class="line-label">Elimination</text>
+
+  <!-- Top Right: Card 4 (x: 1010, y: 80, w:380, h:160) -> (1010, 160) -->
+  <path d="M 890 410 L 960 410 L 960 160 L 1010 160" class="ortho-line" />
+  <rect x="925" y="300" width="70" height="18" class="label-bg"/>
+  <text x="932" y="313" class="line-label">Couplings</text>
+
+  <!-- Mid Right: Card 5 (x: 1010, y: 340, w:380, h:200) -> (1010, 440) -->
+  <path d="M 890 440 L 1010 440" class="ortho-line" />
+  <rect x="926" y="432" width="68" height="18" class="label-bg"/>
+  <text x="930" y="445" class="line-label">Haloarenes</text>
+
+  <!-- Bottom Right: Card 6 (x: 1010, y: 620, w:380, h:180) -> (1010, 710) -->
+  <path d="M 890 470 L 960 470 L 960 710 L 1010 710" class="ortho-line" />
+  <rect x="924" y="580" width="74" height="18" class="label-bg"/>
+  <text x="928" y="593" class="line-label">Polyhalogen</text>
+</svg>
+
+<!-- Center Hub -->
+<div class="center-hub">
+  <h2>HALOALKANES &amp; HALOARENES</h2>
+  <div class="sub">UNIT VI · COMPREHENSIVE ARCHITECTURE</div>
+  <div class="core-meta">Aliphatic C(sp³)-X vs Aromatic C(sp²)-X · Walden Inversion · S_NAr</div>
+</div>
+
+<!-- Left Top: Card 1 -->
+<div class="topic-card c1" style="left: 50px; top: 80px;">
+  <h3><span>1. Classification &amp; Preparation</span><span class="tag-pill blue-tag">Core Routes</span></h3>
+  <ul>
+    <li><b>C-X Dipole Moment:</b> CH₃Cl (1.86 D) &gt; CH₃F (1.84 D) &gt; CH₃Br (1.83 D) &gt; CH₃I (1.64 D). C-F is shortest/strongest; C-I is longest/weakest.</li>
+    <li><b>From Alcohols:</b> SOCl₂ + Pyridine (Darzens Process, best route as byproducts SO₂ &amp; HCl are escapable gases). PCl₅ &rarr; POCl₃; PCl₃ &rarr; H₃PO₃.</li>
+    <li><b>Halide Exchange:</b> <i>Finkelstein:</i> R-Cl/Br + NaI &rarr;[dry acetone] R-I (NaCl/NaBr precipitates). <i>Swarts:</i> R-Br/Cl + AgF (or Hg₂F₂, CoF₃, SbF₃) &rarr; R-F.</li>
+    <li><b>From Hydrocarbons:</b> Free-radical allylic halogenation via NBS; Markovnikov &amp; Anti-Markovnikov (Peroxide / Kharasch effect with HBr only).</li>
+  </ul>
+</div>
+
+<!-- Left Mid: Card 2 -->
+<div class="topic-card c2" style="left: 50px; top: 320px;">
+  <h3><span>2. Nucleophilic Substitution (S_N1 &amp; S_N2)</span><span class="tag-pill green-tag">Mechanisms</span></h3>
+  <ul>
+    <li><b>S_N2 (Concerted):</b> Rate = k[R-X][Nu⁻], 1 step, pentacoordinate TS, CH₃X &gt; 1° &gt; 2° &gt;&gt; 3°. Complete 100% Walden inversion. Polar aprotic solvent.</li>
+    <li><b>S_N1 (Stepwise):</b> Rate = k[R-X], 2 steps via planar sp² carbocation, 3° &gt; 2° &gt; 1° &gt; CH₃X. Racemisation (inversion &gt; retention). Polar protic solvent.</li>
+    <li><b>Ambidentate Nucleophiles:</b> KCN (ionic) &rarr; R-CN (nitrile); AgCN (covalent) &rarr; R-NC (isocyanide). KNO₂ &rarr; R-ONO (nitrite); AgNO₂ &rarr; R-NO₂ (nitroalkane).</li>
+    <li><b>Leaving Group Ability:</b> I⁻ &gt; Br⁻ &gt; Cl⁻ &gt;&gt; F⁻ (matches conjugate acid strength HI &gt; HBr &gt; HCl &gt; HF).</li>
+  </ul>
+</div>
+
+<!-- Left Bottom: Card 3 -->
+<div class="topic-card c3" style="left: 50px; top: 600px;">
+  <h3><span>3. Elimination Reactions (β-Elimination)</span><span class="tag-pill amber-tag">Regiochemistry</span></h3>
+  <ul>
+    <li><b>Dehydrohalogenation (E2):</b> Alkyl halide heated with alcoholic KOH eliminates HX across α-C and β-C, forming an alkene.</li>
+    <li><b>Saytzeff (Zaitsev) Rule:</b> Eliminates β-H from carbon with fewer hydrogens &rarr; yields the more substituted, thermodynamically stable alkene (major).</li>
+    <li><b>Hofmann Elimination:</b> Bulky bases (t-BuO⁻K⁺) or poor leaving groups (fluoride R-F) eliminate from less hindered β-C &rarr; less substituted alkene (major).</li>
+    <li><b>Competition:</b> 1° halides favor S_N2; 3° halides with hot alcoholic base undergo exclusive E2 elimination over substitution.</li>
+  </ul>
+</div>
+
+<!-- Right Top: Card 4 -->
+<div class="topic-card c4" style="left: 1010px; top: 80px;">
+  <h3><span>4. Organometallics &amp; Couplings</span><span class="tag-pill red-tag">C-C Bonds</span></h3>
+  <ul>
+    <li><b>Grignard Reagent:</b> R-X + Mg &rarr;[dry ether] R-MgX. Strong carbanion source; hydrolyzes violently with active hydrogen (H₂O, ROH, RNH₂) to form alkanes (R-H).</li>
+    <li><b>Wurtz Reaction:</b> 2 R-X + 2 Na &rarr;[dry ether] R-R + 2 NaX (symmetrical alkanes with even number of carbons; methane cannot be prepared).</li>
+    <li><b>Fittig &amp; Wurtz-Fittig:</b> Ar-X + R-X + 2 Na &rarr; Ar-R (Wurtz-Fittig &rarr; alkylarene); 2 Ar-X + 2 Na &rarr; Ar-Ar (Fittig &rarr; biphenyl). Ullmann uses Cu for Ar-I.</li>
+    <li><b>Frankland Reaction:</b> 2 R-X + Zn &rarr; R-R + ZnX₂ (symmetrical coupling using dialkylzinc).</li>
+  </ul>
+</div>
+
+<!-- Right Mid: Card 5 -->
+<div class="topic-card c5" style="left: 1010px; top: 320px;">
+  <h3><span>5. Chemistry of Haloarenes (Ar-X)</span><span class="tag-pill purple-tag">Aromatic C-X</span></h3>
+  <ul>
+    <li><b>Low S_N Reactivity:</b> C-Cl has partial double bond character (+R resonance), sp² hybridised C (more s-character, shorter C-Cl), unstable phenyl cation, π-repulsion.</li>
+    <li><b>Dow's Process:</b> Chlorobenzene + NaOH at 623 K, 300 atm &rarr; Sodium phenoxide &rarr;[H⁺] Phenol.</li>
+    <li><b>Activating Effect of -NO₂:</b> Nitro groups at ortho and para positions stabilize Meisenheimer carbanion intermediate. 2,4,6-trinitrochlorobenzene hydrolyzes in warm water &rarr; Picric acid!</li>
+    <li><b>Electrophilic Substitution:</b> Halogens are deactivating (-I effect) but ortho/para directing (+R resonance). Para-isomer is major due to steric relief.</li>
+  </ul>
+</div>
+
+<!-- Right Bottom: Card 6 -->
+<div class="topic-card c6" style="left: 1010px; top: 600px;">
+  <h3><span>6. Polyhalogen Compounds &amp; Environment</span><span class="tag-pill blue-tag">Applied &amp; Ecology</span></h3>
+  <ul>
+    <li><b>Dichloromethane (CH₂Cl₂):</b> Paint remover, aerosol propellant; CNS depressant, damages cornea.</li>
+    <li><b>Chloroform (CHCl₃):</b> Anaesthetic; slowly oxidized by air and light to lethal <b>Phosgene (COCl₂)</b>. Stored in dark amber bottles completely filled with 1% ethanol (stabilizer).</li>
+    <li><b>Iodoform (CHI₃):</b> Yellow crystalline solid with antiseptic properties due to slow liberation of free iodine.</li>
+    <li><b>Carbon Tetrachloride (CCl₄):</b> Fire extinguisher (Pyrene); causes liver cancer, major cause of stratospheric ozone depletion.</li>
+    <li><b>Freons (CFCs):</b> Freon-12 (CF₂Cl₂) refrigerant; radical chain catalyst for ozone layer destruction. DDT: Non-biodegradable persistent insecticide.</li>
+  </ul>
+</div>
+
 </body>
 </html>

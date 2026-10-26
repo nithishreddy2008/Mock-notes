@@ -1,63 +1,245 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
+<title>S_N1 vs S_N2 vs Elimination Comparison Board</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
-  .wrap { width: 1480px; position: relative; background: #fff; padding-bottom: 6px; }
-  .title { text-align: center; font-size: 24px; font-weight: 800; color: #071A4D; padding-top: 20px; }
-  .subtitle { text-align: center; font-size: 14px; color: #5A6478; margin-top: 4px; }
-  .cols { display: flex; gap: 24px; margin: 16px 30px 0; }
-  .col { flex: 1; background: #FCFDFF; border: 1.5px solid #D5DCEA; border-radius: 14px; padding: 14px 16px; }
-  .col h2 { font-size: 19px; font-weight: 800; text-align: center; padding: 7px; margin-bottom: 10px; border-radius: 8px; }
-  .sn2 h2 { color: #fff; background: #1F5EFF; }
-  .sn1 h2 { color: #fff; background: #071A4D; }
-  .row { display: flex; gap: 10px; margin: 8px 0; align-items: flex-start; }
-  .tag { min-width: 130px; max-width: 130px; font-size: 12.5px; font-weight: 800; color: #fff; border-radius: 6px; padding: 5px 8px; text-align: center; }
-  .sn2 .tag { background: #4A7BFF; }
-  .sn1 .tag { background: #23366F; }
-  .txt { font-size: 14px; color: #1B2333; line-height: 1.42; }
-  .txt b { color: #071A4D; }
-  .eq { font-size: 14px; background: #EEF1F8; border-radius: 7px; padding: 7px 10px; margin: 7px 0; color: #071A4D; font-weight: 600; }
-  .strip { display: flex; gap: 20px; margin: 16px 30px 4px; }
-  .sbox { flex: 1; background: #FFF3EC; border: 1.5px solid #D2481F; border-radius: 12px; padding: 10px 14px; }
-  .sbox h3 { font-size: 14.5px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
-  .sbox p { font-size: 13px; color: #7A2A12; line-height: 1.38; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: #0F172A;
+    padding: 24px 32px;
+    box-shadow: none !important;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 14px;
+    margin-bottom: 18px;
+  }
+  .header-left h1 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #071A4D;
+    letter-spacing: -0.02em;
+  }
+  .header-left p {
+    font-size: 13.5px;
+    color: #64748B;
+    margin-top: 3px;
+  }
+  .badge-tag {
+    background: #071A4D;
+    color: #B8FF34;
+    font-size: 11.5px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    padding: 6px 14px;
+    border-radius: 6px;
+    text-transform: uppercase;
+  }
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 16px;
+  }
+  .matrix-card {
+    background: #FFFFFF;
+    border: 1.5px solid #E2E8F0;
+    border-radius: 10px;
+    padding: 16px 20px;
+  }
+  .matrix-card.sn2 {
+    border-top: 4px solid #1F5EFF;
+  }
+  .matrix-card.sn1 {
+    border-top: 4px solid #059669;
+  }
+  .card-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  .card-head h2 {
+    font-size: 18px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .pill {
+    font-size: 11.5px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 5px;
+  }
+  .pill-sn2 { background: #EFF6FF; color: #1F5EFF; border: 1px solid #BFDBFE; }
+  .pill-sn1 { background: #ECFDF5; color: #059669; border: 1px solid #A7F3D0; }
+  .table-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .t-row {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    gap: 12px;
+    font-size: 12.5px;
+    line-height: 1.4;
+    padding: 6px 10px;
+    background: #F8FAFC;
+    border-radius: 6px;
+    border: 1px solid #F1F5F9;
+  }
+  .t-label {
+    font-weight: 700;
+    color: #475569;
+  }
+  .t-val {
+    color: #1E293B;
+  }
+  .highlight-blue {
+    color: #1F5EFF;
+    font-weight: 700;
+  }
+  .highlight-green {
+    color: #059669;
+    font-weight: 700;
+  }
+  .formula-box {
+    background: #071A4D;
+    color: #FFFFFF;
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 12px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    margin: 6px 0;
+  }
+  .bottom-strip {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 18px;
+  }
+  .rule-card {
+    background: #FFFFFF;
+    border: 1.5px solid #E2E8F0;
+    border-radius: 10px;
+    padding: 12px 16px;
+  }
+  .rule-card h3 {
+    font-size: 13.5px;
+    font-weight: 800;
+    color: #071A4D;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .rule-card p {
+    font-size: 12px;
+    color: #475569;
+    line-height: 1.45;
+  }
+  .rule-card strong {
+    color: #071A4D;
+  }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <div class="title">S<sub>N</sub>2 vs S<sub>N</sub>1 — THE TWO WAYS A NUCLEOPHILE KICKS OUT A HALIDE</div>
-  <div class="subtitle">Same ingredients (R&#8211;X + nucleophile), completely different choreography, rate laws and stereochemistry</div>
 
-  <div class="cols">
-    <div class="col sn2">
-      <h2>S<sub>N</sub>2 — ONE CONCERTED STEP (backside attack)</h2>
-      <div class="row"><span class="tag">Mechanism</span><span class="txt">Nucleophile attacks the carbon <b>from the side opposite to X</b> while C&#8211;X breaks &#8212; one single step through a <b>pentacoordinate transition state</b> (carbon briefly has 5 neighbours, half-bonds to Nu and X).</span></div>
-      <div class="eq">Nu&#8315; + &#8202;R&#8211;X &#8594; Nu&#8230;C&#8230;X&#8235;&#8225;&#8236; &#8594; Nu&#8211;R + X&#8315;</div>
-      <div class="row"><span class="tag">Rate law</span><span class="txt">Rate = k[R&#8211;X][Nu&#8315;] &#8212; <b>second order overall</b>: both reactants appear in the rate equation, because the slow step IS the only step.</span></div>
-      <div class="row"><span class="tag">Stereochemistry</span><span class="txt"><b>Complete INVERSION</b> of configuration &#8212; the umbrella flips inside out (Walden inversion). A chiral R&#8211;X gives the opposite enantiomer.</span></div>
-      <div class="row"><span class="tag">Reactivity order</span><span class="txt"><b>CH&#8323;X &gt; 1&#176; &gt; 2&#176; &gt;&gt; 3&#176;</b> &#8212; backside access decides; bulky groups block the attack path. Sterics rule.</span></div>
-      <div class="row"><span class="tag">Best conditions</span><span class="txt">Strong nucleophile, <b>polar APROTIC solvent</b> (acetone, DMF &#8212; solvents that do not hydrogen-bond-cage the nucleophile), unhindered substrate.</span></div>
+<div class="header">
+  <div class="header-left">
+    <h1>S<sub>N</sub>1 vs S<sub>N</sub>2 Substitution &amp; Elimination Master Decision Matrix</h1>
+    <p>Comprehensive comparative mechanism parameters, stereochemical choreography, kinetics &amp; competition rules</p>
+  </div>
+  <div class="badge-tag">CUET High-Yield Core</div>
+</div>
+
+<div class="grid-container">
+  <!-- SN2 Card -->
+  <div class="matrix-card sn2">
+    <div class="card-head">
+      <h2>S<sub>N</sub>2 — Bimolecular Nucleophilic Substitution</h2>
+      <span class="pill pill-sn2">Single Concerted Step</span>
     </div>
-
-    <div class="col sn1">
-      <h2>S<sub>N</sub>1 — TWO STEPS (carbocation first)</h2>
-      <div class="row"><span class="tag">Mechanism</span><span class="txt"><b>Step 1 (slow):</b> C&#8211;X breaks alone &#8594; planar sp&#178; <b>carbocation</b> + X&#8315;. <b>Step 2 (fast):</b> nucleophile grabs the cation from either face.</span></div>
-      <div class="eq">R&#8211;X &#8594; R&#8314; + X&#8315; &nbsp;&nbsp;(slow, rate-determining)&nbsp;&nbsp;; &nbsp;&nbsp;R&#8314; + Nu&#8315; &#8594; R&#8211;Nu</div>
-      <div class="row"><span class="tag">Rate law</span><span class="txt">Rate = k[R&#8211;X] &#8212; <b>first order</b>: the nucleophile is absent from the rate law because it arrives after the slow step.</span></div>
-      <div class="row"><span class="tag">Stereochemistry</span><span class="txt">Attack on the flat cation from both faces &#8594; <b>RACEMISATION</b> (mostly inversion + some retention, because the leaving X&#8315; partially shields one face).</span></div>
-      <div class="row"><span class="tag">Reactivity order</span><span class="txt"><b>3&#176; &gt; 2&#176; &gt; 1&#176; &gt; CH&#8323;X</b> &#8212; carbocation stability decides (hyperconjugation, +I). Benzyl and allyl halides race too.</span></div>
-      <div class="row"><span class="tag">Best conditions</span><span class="txt">Weaker nucleophile is fine, <b>polar PROTIC solvent</b> (water, ethanol &#8212; it stabilises the ions formed in step 1).</span></div>
+    <div class="table-rows">
+      <div class="t-row">
+        <div class="t-label">Reaction Coordinate</div>
+        <div class="t-val">Backside attack opposite to leaving group. Passes through a single <b>pentacoordinate transition state</b> [Nu···C···X]<sup>‡</sup>. No intermediate.</div>
+      </div>
+      <div class="formula-box">Rate = k [R-X] [Nu⁻] &nbsp;·&nbsp; Overall Order = 2 &nbsp;·&nbsp; Molecularity = 2</div>
+      <div class="t-row">
+        <div class="t-label">Substrate Reactivity</div>
+        <div class="t-val"><span class="highlight-blue">CH₃X &gt; 1° &gt; 2° &gt;&gt; 3°</span> (Steric crowding around α-carbon blocks backside approach. 3° halides are virtually inert).</div>
+      </div>
+      <div class="t-row">
+        <div class="t-label">Stereochemistry</div>
+        <div class="t-val"><span class="highlight-blue">100% Inversion of Configuration</span> (Walden Inversion, umbrella flipping inside out). Chiral carbon inverts from (R) to (S) or vice-versa.</div>
+      </div>
+      <div class="t-row">
+        <div class="t-label">Nucleophile &amp; Solvent</div>
+        <div class="t-val">Requires <b>strong, unhindered nucleophile</b> (OH⁻, CN⁻, I⁻, CH₃O⁻) and <b>polar aprotic solvent</b> (Acetone, DMSO, DMF, acetonitrile; do not solvate/cage the nucleophile).</div>
+      </div>
+      <div class="t-row">
+        <div class="t-label">Leaving Group Effect</div>
+        <div class="t-val">Reactivity order: <b>R-I &gt; R-Br &gt; R-Cl &gt;&gt; R-F</b> (Governed by C-X bond dissociation enthalpy and conjugate base stability: I⁻ &gt; Br⁻ &gt; Cl⁻).</div>
+      </div>
     </div>
   </div>
 
-  <div class="strip">
-    <div class="sbox"><h3>Choose the mechanism</h3><p>3&#176; substrate + weak nucleophile + protic solvent &#8594; S&#8317;1. &nbsp;Methyl/1&#176; substrate + strong nucleophile + aprotic solvent &#8594; S&#8317;2. 2&#176; can go either way.</p></div>
-    <div class="sbox"><h3>Elimination competes</h3><p>With a BASE (esp. hot, alcoholic KOH), elimination (E2, Saytzeff's more-substituted alkene) beats substitution &#8212; bulky bases tip it further.</p></div>
-    <div class="sbox"><h3>Ambidentate nucleophiles</h3><p>CN&#8315; attacks through C &#8594; R&#8211;CN (nitrile); through N &#8594; R&#8211;NC (isocyanide). NO&#8322;&#8315; gives nitro (R&#8211;NO&#8322;) via N, nitrite (R&#8211;O&#8211;N=O) via O.</p></div>
+  <!-- SN1 Card -->
+  <div class="matrix-card sn1">
+    <div class="card-head">
+      <h2>S<sub>N</sub>1 — Unimolecular Nucleophilic Substitution</h2>
+      <span class="pill pill-sn1">Two Distinct Steps</span>
+    </div>
+    <div class="table-rows">
+      <div class="t-row">
+        <div class="t-label">Reaction Coordinate</div>
+        <div class="t-val"><b>Step 1 (Slow/RDS):</b> Heterolytic C-X cleavage yields planar sp² <b>carbocation intermediate</b>. <b>Step 2 (Fast):</b> Nucleophile attacks from either face.</div>
+      </div>
+      <div class="formula-box">Rate = k [R-X] &nbsp;·&nbsp; Overall Order = 1 &nbsp;·&nbsp; Molecularity = 1</div>
+      <div class="t-row">
+        <div class="t-label">Substrate Reactivity</div>
+        <div class="t-val"><span class="highlight-green">3° &gt; 2° &gt; 1° &gt; CH₃X</span> (Stabilized by hyperconjugation and +I effects). Allylic and benzylic halides react rapidly due to resonance-stabilized carbocations.</div>
+      </div>
+      <div class="t-row">
+        <div class="t-label">Stereochemistry</div>
+        <div class="t-val"><span class="highlight-green">Racemisation</span> (Frontside + backside attack on planar carbocation). Often slight excess of inversion due to leaving-group intimate ion-pair shielding.</div>
+      </div>
+      <div class="t-row">
+        <div class="t-label">Nucleophile &amp; Solvent</div>
+        <div class="t-val">Weak, neutral nucleophile is sufficient (H₂O, ROH). Favored by <b>polar protic solvent</b> (Water, Methanol, Formic acid; solvates both carbocation and leaving halide ion).</div>
+      </div>
+      <div class="t-row">
+        <div class="t-label">Rearrangements</div>
+        <div class="t-val">Possible! Carbocation intermediate can undergo <b>1,2-hydride</b> or <b>1,2-methyl shifts</b> to form a more stable carbocation before nucleophilic attack.</div>
+      </div>
+    </div>
   </div>
 </div>
+
+<div class="bottom-strip">
+  <div class="rule-card">
+    <h3><span style="color:#1F5EFF;">●</span> Ambidentate Nucleophile Strategy</h3>
+    <p><b>Cyanide vs Isocyanide:</b> Ionic <strong>KCN</strong> attacks via carbon &rarr; <strong>R-CN</strong> (alkanenitrile). Covalent <strong>AgCN</strong> coordinates via nitrogen lone pair &rarr; <strong>R-NC</strong> (isocyanide).<br>
+    <b>Nitrite vs Nitro:</b> Ionic <strong>KNO₂</strong> gives <strong>R-ONO</strong> (alkyl nitrite) via oxygen. Covalent <strong>AgNO₂</strong> gives <strong>R-NO₂</strong> (nitroalkane) via nitrogen.</p>
+  </div>
+  <div class="rule-card">
+    <h3><span style="color:#D97706;">▲</span> Substitution vs Elimination (E2)</h3>
+    <p><b>Base vs Nucleophile:</b> Strong, unhindered base (OH⁻) in water favours <strong>S<sub>N</sub>2</strong>. Hot alcoholic KOH (C₂H₅O⁻/C₂H₅OH) acts as a strong base, extracting β-hydrogen &rarr; <strong>E2 dehydrohalogenation</strong>.<br>
+    <b>Substrate effect:</b> 3° halides with hot base undergo exclusive E2 elimination over substitution.</p>
+  </div>
+  <div class="rule-card">
+    <h3><span style="color:#059669;">■</span> Saytzeff (Zaitsev) Regiochemistry</h3>
+    <p><b>Saytzeff's Rule:</b> Dehydrohalogenation of unsymmetrical alkyl halides preferentially eliminates β-hydrogen from the adjacent carbon with fewer hydrogens, yielding the <strong>more substituted, more stable alkene</strong> (e.g. 2-bromobutane &rarr; <strong>but-2-ene (80%)</strong> major over but-1-ene (20%)).</p>
+  </div>
+</div>
+
 </body>
 </html>

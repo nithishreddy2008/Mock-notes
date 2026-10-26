@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Haloalkane and Haloarene Reactions and Synthetic Conversions</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: #0F172A;
+    padding: 24px 32px;
+    box-shadow: none !important;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 14px;
+    margin-bottom: 18px;
+  }
+  .header-left h1 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #071A4D;
+    letter-spacing: -0.02em;
+  }
+  .header-left p {
+    font-size: 13.5px;
+    color: #64748B;
+    margin-top: 3px;
+  }
+  .badge-tag {
+    background: #071A4D;
+    color: #B8FF34;
+    font-size: 11.5px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    padding: 6px 14px;
+    border-radius: 6px;
+    text-transform: uppercase;
+  }
+  .grid-top {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 16px;
+  }
+  .section-card {
+    background: #FFFFFF;
+    border: 1.5px solid #E2E8F0;
+    border-radius: 10px;
+    padding: 16px 20px;
+  }
+  .section-card.organo {
+    border-top: 4px solid #1F5EFF;
+  }
+  .section-card.aromatic {
+    border-top: 4px solid #D97706;
+  }
+  .card-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  .card-head h2 {
+    font-size: 17px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .pill {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 9px;
+    border-radius: 5px;
+  }
+  .pill-blue { background: #EFF6FF; color: #1F5EFF; border: 1px solid #BFDBFE; }
+  .pill-orange { background: #FEF3C7; color: #B45309; border: 1px solid #FDE68A; }
+  .rxn-item {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 7px;
+    padding: 9px 12px;
+    margin-bottom: 8px;
+  }
+  .rxn-item:last-child {
+    margin-bottom: 0;
+  }
+  .rxn-name {
+    font-size: 12.5px;
+    font-weight: 800;
+    color: #071A4D;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4px;
+  }
+  .rxn-eq {
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 12px;
+    color: #1E293B;
+    background: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    border-radius: 4px;
+    padding: 4px 8px;
+    margin: 3px 0;
+  }
+  .rxn-desc {
+    font-size: 11.5px;
+    color: #64748B;
+    line-height: 1.35;
+  }
+  .bottom-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .panel-card {
+    background: #FFFFFF;
+    border: 1.5px solid #E2E8F0;
+    border-radius: 10px;
+    padding: 14px 18px;
+  }
+  .panel-card h3 {
+    font-size: 15px;
+    font-weight: 800;
+    color: #071A4D;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .dow-steps {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 8px;
+    margin-top: 8px;
+  }
+  .step-box {
+    background: #F8FAFC;
+    border: 1px solid #CBD5E1;
+    border-radius: 6px;
+    padding: 8px;
+    text-align: center;
+    font-size: 11px;
+  }
+  .step-box strong {
+    display: block;
+    color: #071A4D;
+    margin-bottom: 3px;
+    font-size: 11.5px;
+  }
+  .step-box .temp {
+    color: #DC2626;
+    font-weight: 700;
+  }
+  .sub-rules {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 11.5px;
+    color: #334155;
+    line-height: 1.4;
+  }
+  .sub-rules li {
+    margin-left: 14px;
+  }
+  .highlight-dark {
+    color: #071A4D;
+    font-weight: 700;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <h1>Haloalkane &amp; Haloarene Organometallic &amp; Coupling Transformation Board</h1>
+    <p>Grignard mechanics, Wurtz-Fittig cross-couplings, S<sub>N</sub>Ar activating factors &amp; electrophilic orientation</p>
+  </div>
+  <div class="badge-tag">Synthetic Core</div>
+</div>
+
+<div class="grid-top">
+  <!-- Organometallic & Couplings -->
+  <div class="section-card organo">
+    <div class="card-head">
+      <h2>Organometallic Reagents &amp; Coupling Reactions</h2>
+      <span class="pill pill-blue">C-C Bond Construction</span>
+    </div>
+    
+    <div class="rxn-item">
+      <div class="rxn-name"><span>Grignard Reagent Formation &amp; Protonolysis</span><span style="color:#1F5EFF;">Active-H Trap</span></div>
+      <div class="rxn-eq">R-X + Mg &rarr;[dry ether] R-MgX &nbsp;&rarr;[H₂O / ROH / RNH₂] R-H + Mg(OH)X</div>
+      <div class="rxn-desc">Highly polarized carbon-metal bond (R<sup>δ-</sup>-Mg<sup>δ+</sup>X). Extremely reactive with any active hydrogen donor (even traces of moisture); must be prepared strictly in anhydrous dry ether.</div>
+    </div>
+
+    <div class="rxn-item">
+      <div class="rxn-name"><span>The Wurtz Reaction (Alkyl-Alkyl Coupling)</span><span style="color:#059669;">Even Alkanes Only</span></div>
+      <div class="rxn-eq">2 R-X + 2 Na &rarr;[dry ether] R-R + 2 NaX &nbsp;&nbsp;(e.g. 2 C₂H₅Br &rarr; n-Butane)</div>
+      <div class="rxn-desc">Ideal for synthesizing symmetrical alkanes with an even number of carbon atoms. Mixing two different alkyl halides (R-X + R'-X) produces an inseparable mixture of 3 alkanes (R-R, R'-R', R-R') with low yields.</div>
+    </div>
+
+    <div class="rxn-item">
+      <div class="rxn-name"><span>Wurtz-Fittig &amp; Fittig Reactions</span><span style="color:#D97706;">Aryl Coupling</span></div>
+      <div class="rxn-eq">Ar-X + R-X + 2 Na &rarr;[dry ether] Ar-R + 2 NaX &nbsp;&nbsp;[Wurtz-Fittig &rarr; Alkylarene]<br>2 Ar-X + 2 Na &rarr;[dry ether] Ar-Ar + 2 NaX &nbsp;&nbsp;[Fittig &rarr; Biphenyl / Diphenyl]</div>
+      <div class="rxn-desc">Wurtz-Fittig cross-couples haloarene with haloalkane (e.g. Bromobenzene + Bromomethane &rarr; Toluene). Fittig couples two haloarenes into symmetrical biaryls. Ullmann uses Cu powder at 200°C for Ar-I.</div>
+    </div>
+  </div>
+
+  <!-- Haloarene Nucleophilic Substitution -->
+  <div class="section-card aromatic">
+    <div class="card-head">
+      <h2>Nucleophilic Aromatic Substitution (S<sub>N</sub>Ar) in Haloarenes</h2>
+      <span class="pill pill-orange">Meisenheimer Stabilization</span>
+    </div>
+
+    <div class="rxn-item">
+      <div class="rxn-name"><span>Why Chlorobenzene is Inert to Simple Substitution</span><span style="color:#DC2626;">4 Core Factors</span></div>
+      <div class="rxn-desc">
+        1. <b>Resonance Effect:</b> Lone pairs of Cl delocalize over the ring, giving C-Cl <i>partial double bond character</i> (shorter, 1.69 &Aring; vs 1.78 &Aring; in alkyl chloride, and harder to break).<br>
+        2. <b>Hybridisation:</b> Ring carbon is sp² (33% s-character) &rarr; more electronegative, holds C-Cl tighter than sp³ (25% s).<br>
+        3. <b>Instability of Phenyl Cation:</b> S<sub>N</sub>1 is ruled out as phenyl cation cannot be stabilized by resonance.<br>
+        4. <b>Electronic Repulsion:</b> Approaching electron-rich nucleophile is repelled by ring's π-electron cloud.
+      </div>
+    </div>
+
+    <div class="rxn-item">
+      <div class="rxn-name"><span>Activating Effect of -NO₂ (o/p Regioselectivity)</span><span style="color:#059669;">Carbanion Delocalization</span></div>
+      <div class="rxn-desc">
+        Electron-withdrawing nitro group (-NO₂) activates the ring by pulling negative charge into the nitro oxygens during the Meisenheimer intermediate. <b>Crucial rule:</b> Negative charge appears <i>only</i> at ortho and para positions during resonance; hence, -NO₂ at meta positions exerts negligible activating effect on S<sub>N</sub>Ar!
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bottom-grid">
+  <!-- Dow Process Progression -->
+  <div class="panel-card">
+    <h3><span style="color:#DC2626;">●</span> Dow's Process &amp; Gradual Activation Progression</h3>
+    <div class="dow-steps">
+      <div class="step-box">
+        <strong>Chlorobenzene</strong>
+        NaOH, H⁺<br>
+        <span class="temp">623 K, 300 atm</span><br>
+        Drastic conditions
+      </div>
+      <div class="step-box">
+        <strong>4-Nitrochlorobenzene</strong>
+        15% NaOH, H⁺<br>
+        <span class="temp">443 K (170°C)</span><br>
+        1 -NO₂ group
+      </div>
+      <div class="step-box">
+        <strong>2,4-Dinitrochlorobenzene</strong>
+        aq. Na₂CO₃, H⁺<br>
+        <span class="temp">368 K (95°C)</span><br>
+        2 -NO₂ groups
+      </div>
+      <div class="step-box">
+        <strong>2,4,6-Trinitrochlorobenzene</strong>
+        Warm H₂O only<br>
+        <span class="temp">323 K (50°C)</span><br>
+        &rarr; <b>Picric Acid</b>
+      </div>
+    </div>
+  </div>
+
+  <!-- Electrophilic Substitution Overview -->
+  <div class="panel-card">
+    <h3><span style="color:#1F5EFF;">■</span> Electrophilic Substitution in Haloarenes</h3>
+    <ul class="sub-rules">
+      <li><b>Paradoxical Behaviour:</b> Halogen (-Cl, -Br) is <b>deactivating</b> overall due to strong electron-withdrawing inductive effect (-I &gt; +R), making haloarenes react slower than benzene.</li>
+      <li><b>Orientation:</b> However, the +R (resonance) effect delocalizes lone pairs and directs incoming electrophiles to <b>ortho and para positions</b> (negative charge concentrates at o/p).</li>
+      <li><b>Major Product:</b> <span class="highlight-dark">Para-isomer is always the major product</span> because steric hindrance is minimized and crystal packing is symmetrical (higher melting point).</li>
+      <li><b>Typical Reactions:</b> Halogenation (Cl₂/FeCl₃), Nitration (HNO₃/H₂SO₄), Sulphonation (conc. H₂SO₄/Δ), and Friedel-Crafts Alkylation &amp; Acylation (CH₃Cl or CH₃COCl with anhy. AlCl₃).</li>
+    </ul>
+  </div>
+</div>
+
+</body>
+</html>
