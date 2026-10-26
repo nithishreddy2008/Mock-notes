@@ -160,7 +160,7 @@ An electric dipole consists of equal and opposite charges ($+q, -q$) separated b
 $ vec(p) = q (2 vec(a)) quad ["SI unit: C"dot"m"] $
 
 #figure(
-  image("assets/physics_electrostatics_fields_gauss.png", width: 72%),
+  image("assets/physics_electrostatics_fields_gauss.png", width: 86%),
   caption: [Electrostatic Forces, Electric Fields and Gauss's Law Architecture Matrix],
 )
 
@@ -268,7 +268,7 @@ $ V(r, theta) = 1 / (4 pi epsilon_0) (p cos theta) / r^2 $
     $ V_("center") = 3 / 2 (1 / (4 pi epsilon_0) q / R) = 1.5 V_("surface") $
 
 #figure(
-  image("assets/physics_electrostatics_potential_capacitors.png", width: 72%),
+  image("assets/physics_electrostatics_potential_capacitors.png", width: 86%),
   caption: [Electric Potential, Dielectrics and Capacitance Architecture Matrix],
 )
 
@@ -328,7 +328,7 @@ The net field is reduced: $vec(E) = vec(E)_0 - vec(E)_p = vec(E)_0 / K$, where $
 - *Dielectric strength:* Maximum electric field a dielectric withstands without breakdown (dry air: $3 times 10^6" V/m"$).
 
 #figure(
-  image("assets/physics_electrostatics_mindmap.png", width: 72%),
+  image("assets/physics_electrostatics_mindmap.png", width: 86%),
   caption: [Unit 1: Electrostatics Master Synthesis Mindmap],
 )
 
@@ -347,14 +347,9 @@ Consider plates of area $A$ separated by distance $d$:
 
 == Spherical & Cylindrical Capacitor Geometries
 
-- *Spherical Capacitor:* Consists of two concentric conducting spheres of radii $a$ (inner) and $b$ (outer). When the outer sphere is grounded:
-  $ C = 4 pi epsilon_0 (a b) / (b - a) $
-  If the inner sphere is grounded and outer sphere is given charge, $C = 4 pi epsilon_0 b^2 / (b - a)$.
-- *Cylindrical Capacitor:* Consists of two coaxial cylindrical conductors of radii $a$ and $b$ ($b > a$) and length $L$:
-  $ C = (2 pi epsilon_0 L) / ln(b / a) $
-- *Composite / Mixed Dielectrics:*
-  - *Slabs in Parallel (split by area):* $C = (epsilon_0 / d) (K_1 A_1 + K_2 A_2)$.
-  - *Slabs in Series (split by thickness):* $1/C = 1 / (epsilon_0 A) [ d_1 / K_1 + d_2 / K_2 ]$.
+- *Spherical Capacitor:* Grounded outer: $C = 4 pi epsilon_0 (a b) / (b - a)$. Grounded inner: $C = 4 pi epsilon_0 b^2 / (b - a)$.
+- *Cylindrical Capacitor:* Coaxial cylinders ($b > a$, length $L$): $C = (2 pi epsilon_0 L) / ln(b / a)$.
+- *Mixed Dielectrics:* Slabs in parallel (area split): $C = (epsilon_0 / d) (K_1 A_1 + K_2 A_2)$. Slabs in series (thickness split): $1/C = 1 / (epsilon_0 A) [ d_1 / K_1 + d_2 / K_2 ]$.
 
 == Capacitor Combinations
 
@@ -392,12 +387,10 @@ Connecting two charged capacitors $C_1, C_2$ at potentials $V_1, V_2$ in paralle
   $ Delta U = U_i - U_f = 1 / 2 (C_1 C_2) / (C_1 + C_2) (V_1 - V_2)^2 >= 0 $
 
 #cheatsheet-box(title: "Master Electrostatics Revision Formula Cheatsheet")[
-  - *Quantization & Force:* $q = n e$ | $F = (k q_1 q_2)/r^2$ | $F_m = F_0 / K$
-  - *Dipole:* $p = 2 a q$ | $E_("ax") = (2 k p)/r^3$ | $E_("eq") = (k p)/r^3$ | $tau = p E sin theta$ | $U = -p E cos theta$
+  - *Quantization, Force & Dipole:* $q = n e$ | $F = (k q_1 q_2)/r^2$ | $F_m = F_0 / K$ | $p = 2 a q$ | $E_("ax") = (2 k p)/r^3$ | $E_("eq") = (k p)/r^3$ | $tau = p E sin theta$ | $U = -p E cos theta$
   - *Gauss's Law:* $Phi = q_("enc")/epsilon_0$ | Wire: $E = lambda / (2 pi epsilon_0 r)$ | Sheet: $E = sigma / (2 epsilon_0)$ | Shell: $E_("in") = 0$, $E_("out") = (k q)/r^2$
   - *Potential & Energy:* $V = (k q)/r$ | $vec(E) = -nabla V$ | $U = (k q_1 q_2)/r$ | Dipole $V = (k p cos theta)/r^2$
-  - *Capacitance:* $C_0 = (epsilon_0 A)/d$ | Slab $t$: $C = (epsilon_0 A) / (d - t(1 - 1/K))$ | $U = 1/2 C V^2$ | $u = 1/2 epsilon_0 E^2$
-  - *Redistribution:* $V_c = (C_1 V_1 + C_2 V_2)/(C_1 + C_2)$ | $Delta U = (C_1 C_2 (V_1 - V_2)^2)/(2(C_1 + C_2))$
+  - *Capacitance & Redistribution:* $C_0 = (epsilon_0 A)/d$ | Slab $t$: $C = (epsilon_0 A) / (d - t(1 - 1/K))$ | $U = 1/2 C V^2$ | $u = 1/2 epsilon_0 E^2$ | $V_c = (C_1 V_1 + C_2 V_2)/(C_1 + C_2)$ | $Delta U = (C_1 C_2 (V_1 - V_2)^2)/(2(C_1 + C_2))$
 ]
 
 #pagebreak()
