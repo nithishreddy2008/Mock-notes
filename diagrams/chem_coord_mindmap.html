@@ -1,117 +1,298 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
+<title>Coordination Compounds Master Synthesis Architecture</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
-  .wrap { width: 1480px; height: 1080px; position: relative; background: #fff; }
-  svg.wires { position: absolute; inset: 0; width: 1480px; height: 1080px; }
-  .center {
-    position: absolute; left: 520px; top: 470px; width: 440px; height: 104px;
-    background: #071A4D; border-radius: 16px; display: flex; flex-direction: column;
-    align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(7,26,77,.25);
-    border-bottom: 5px solid #B8FF34;
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: #F8FAFC;
+    color: #0F172A;
+    width: 1440px;
+    height: 880px;
+    overflow: hidden;
   }
-  .center .t { color: #fff; font-size: 21px; font-weight: 800; letter-spacing: .5px; text-align: center; }
-  .center .s { color: #B8FF34; font-size: 13.5px; font-weight: 700; letter-spacing: 2px; margin-top: 4px; }
+  .canvas {
+    width: 1440px;
+    height: 880px;
+    position: relative;
+    background: #F8FAFC;
+    padding: 24px 32px;
+    box-shadow: none !important;
+  }
+  .header-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 10px;
+    margin-bottom: 16px;
+  }
+  .title-group h1 {
+    font-size: 23px;
+    font-weight: 800;
+    color: #071A4D;
+    letter-spacing: -0.02em;
+  }
+  .title-group p {
+    font-size: 13px;
+    color: #64748B;
+    font-weight: 500;
+  }
+  .badge-tag {
+    background: #E0E7FF;
+    color: #1E1B4B;
+    border: 1px solid #C7D2FE;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 6px;
+    text-transform: uppercase;
+  }
+
+  /* SVG Orthogonal Bus Connectors */
+  svg.connectors {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1440px;
+    height: 880px;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* Central Master Hub */
+  .center-hub {
+    position: absolute;
+    left: 550px;
+    top: 380px;
+    width: 340px;
+    height: 120px;
+    background: #071A4D;
+    border: 2px solid #1E293B;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: none !important;
+    z-index: 10;
+  }
+  .center-hub .hub-pill {
+    background: #B8FF34;
+    color: #071A4D;
+    font-size: 10.5px;
+    font-weight: 800;
+    padding: 2px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 6px;
+  }
+  .center-hub h2 {
+    font-size: 18px;
+    font-weight: 800;
+    color: #FFFFFF;
+    letter-spacing: -0.01em;
+    text-align: center;
+  }
+  .center-hub p {
+    font-size: 11px;
+    color: #94A3B8;
+    margin-top: 4px;
+  }
+
+  /* 6 Thematic Cards */
   .card {
-    position: absolute; width: 465px; background: #FCFDFF; border: 1.5px solid #D5DCEA;
-    border-radius: 14px; padding: 13px 16px 12px;
+    position: absolute;
+    width: 390px;
+    background: #FFFFFF;
+    border: 1.5px solid #E2E8F0;
+    border-radius: 10px;
+    padding: 13px 16px;
+    box-shadow: none !important;
+    z-index: 5;
   }
-  .card h2 { font-size: 20px; color: #071A4D; font-weight: 800; margin-bottom: 7px;
-             padding-bottom: 5px; border-bottom: 3px solid; display: inline-block; }
-  .leaf { font-size: 14.5px; color: #1B2333; margin: 5px 0; padding-left: 16px; position: relative; line-height: 1.32; }
-  .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
-  .b .leaf::before { background: #1F5EFF; }
-  .l .leaf::before { background: #7FB800; }
-  .leaf b { color: #071A4D; }
-  .b h2 { border-color: #1F5EFF; }
-  .l h2 { border-color: #7FB800; }
-  .left { left: 30px; }
-  .right { left: 985px; }
-  .exc {
-    position: absolute; left: 470px; top: 905px; width: 540px; background: #FFF3EC;
-    border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px;
+
+  .card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    padding-bottom: 5px;
+    border-bottom: 1.5px solid #F1F5F9;
   }
-  .exc h2 { font-size: 17px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
-  .exc .leaf { font-size: 13px; margin: 3px 0; padding-left: 14px; color: #7A2A12; }
-  .exc .leaf::before { background: #D2481F; }
-  .exc b { color: #B4380F; }
+  .card-top h3 {
+    font-size: 14px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .card-pill {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+  .pill-blue { background: #EFF6FF; color: #1D4ED8; border: 1px solid #BFDBFE; }
+  .pill-teal { background: #F0FDFA; color: #0F766E; border: 1px solid #99F6E4; }
+  .pill-amber { background: #FFFBEB; color: #B45309; border: 1px solid #FDE68A; }
+  .pill-purple { background: #FAF5FF; color: #7E22CE; border: 1px solid #E9D5FF; }
+  .pill-emerald { background: #ECFDF5; color: #047857; border: 1px solid #A7F3D0; }
+  .pill-rose { background: #FFF1F2; color: #BE123C; border: 1px solid #FECDD3; }
+
+  .bullet-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .bullet-item {
+    font-size: 11.5px;
+    color: #334155;
+    line-height: 1.4;
+    padding-left: 12px;
+    position: relative;
+  }
+  .bullet-item::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 6px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #64748B;
+  }
+  .bullet-item b {
+    color: #0F172A;
+  }
+
+  /* Positioning of 6 Cards */
+  #card-1 { left: 32px; top: 85px; }
+  #card-2 { left: 32px; top: 345px; }
+  #card-3 { left: 32px; top: 605px; }
+  #card-4 { left: 1018px; top: 85px; }
+  #card-5 { left: 1018px; top: 345px; }
+  #card-6 { left: 1018px; top: 605px; }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <svg class="wires" viewBox="0 0 1480 1080">
-    <path d="M 520 505 C 470 505, 495 158, 500 155" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
-    <path d="M 520 520 C 480 520, 495 438, 500 438" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 520 535 C 470 535, 495 718, 500 718" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
-    <path d="M 960 505 C 1010 505, 985 158, 980 155" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 960 520 C 1000 520, 985 438, 980 438" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
-    <path d="M 960 535 C 1010 535, 985 718, 980 718" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 740 574 C 740 700, 740 830, 740 903" fill="none" stroke="#D2481F" stroke-width="2.5" stroke-dasharray="7 5" opacity=".6"/>
+<div class="canvas">
+  <div class="header-bar">
+    <div class="title-group">
+      <h1>Unit V: Coordination Compounds &mdash; Master Synthesis Map</h1>
+      <p>Systematic cognitive architecture connecting Werner's theory, nomenclature, bonding theories (VBT &amp; CFT), isomerism, and practical applications</p>
+    </div>
+    <span class="badge-tag">NCERT Chemistry UG</span>
+  </div>
+
+  <!-- Orthogonal Connectors -->
+  <svg class="connectors">
+    <!-- Center to Card 1 (Top Left) -->
+    <path d="M 550 420 H 460 V 180 H 422" fill="none" stroke="#CBD5E1" stroke-width="2"/>
+    <!-- Center to Card 2 (Mid Left) -->
+    <path d="M 550 440 H 422" fill="none" stroke="#CBD5E1" stroke-width="2"/>
+    <!-- Center to Card 3 (Bot Left) -->
+    <path d="M 550 460 H 460 V 700 H 422" fill="none" stroke="#CBD5E1" stroke-width="2"/>
+
+    <!-- Center to Card 4 (Top Right) -->
+    <path d="M 890 420 H 980 V 180 H 1018" fill="none" stroke="#CBD5E1" stroke-width="2"/>
+    <!-- Center to Card 5 (Mid Right) -->
+    <path d="M 890 440 H 1018" fill="none" stroke="#CBD5E1" stroke-width="2"/>
+    <!-- Center to Card 6 (Bot Right) -->
+    <path d="M 890 460 H 980 V 700 H 1018" fill="none" stroke="#CBD5E1" stroke-width="2"/>
   </svg>
 
-  <div class="center">
-    <div class="t">COORDINATION COMPOUNDS</div>
-    <div class="s">UNIT V &#183; COMPLETE CHAPTER MAP</div>
+  <!-- Central Master Hub -->
+  <div class="center-hub">
+    <span class="hub-pill">Core Concept Hub</span>
+    <h2>COORDINATION COMPOUNDS</h2>
+    <p>Ligand-to-Metal Dative Coordinate Bonding</p>
   </div>
 
-  <div class="card left b" style="top:58px">
-    <h2>Vocabulary That Runs the Unit</h2>
-    <div class="leaf"><b>Coordination entity:</b> central metal + ligands in brackets; counter ions sit outside</div>
-    <div class="leaf"><b>Ligands:</b> mono (NH&#8323;, Cl&#8315;), bidentate (en, oxalate), polydentate (EDTA&#8308;&#8315;); ambidentate (NO&#8322;&#8315;, SCN&#8315;) bite two ways</div>
-    <div class="leaf"><b>Coordination number:</b> ligand donor atoms bound &#8212; 4 or 6 in this course</div>
-    <div class="leaf"><b>Homoleptic vs heteroleptic:</b> one ligand kind vs mixed ([Co(NH&#8323;)&#8326;]&#179;&#8314; vs [Co(NH&#8323;)&#8324;Cl&#8322;]&#8314;)</div>
+  <!-- Card 1: Werner's Theory & Valency Foundations -->
+  <div class="card" id="card-1">
+    <div class="card-top">
+      <h3>1. Werner's Coordination Theory</h3>
+      <span class="card-pill pill-blue">Foundations</span>
+    </div>
+    <div class="bullet-list">
+      <div class="bullet-item"><b>Dual Valencies:</b> Metals exhibit <b>Primary</b> (ionisable, oxidation number, non-directional) and <b>Secondary</b> (non-ionisable, coordination number, directional).</div>
+      <div class="bullet-item"><b>Precipitation Logic:</b> Only counter-ions outside square brackets precipitate with AgNO&#8323;. E.g. [Co(NH&#8323;)&#8325;Cl]Cl&#8322; gives 2 mol AgCl; inner Cl&#8315; is bound.</div>
+      <div class="bullet-item"><b>Molar Conductivity:</b> Follows total ion count: [Co(NH&#8323;)&#8326;]Cl&#8323; (4 ions) &gt; [Co(NH&#8323;)&#8325;Cl]Cl&#8322; (3 ions) &gt; [Co(NH&#8323;)&#8324;Cl&#8322;]Cl (2 ions) &gt; [Co(NH&#8323;)&#8323;Cl&#8323;] (0).</div>
+      <div class="bullet-item"><b>Stereochemical Shapes:</b> Directional secondary bonds define fixed 3D shapes: Octahedral (CN=6), Tetrahedral or Square Planar (CN=4).</div>
+    </div>
   </div>
 
-  <div class="card left l" style="top:352px">
-    <h2>Naming &amp; Isomerism</h2>
-    <div class="leaf"><b>Name order:</b> ligands (alphabetical, di/tri/tetra prefixes) + metal + oxidation number in ( ) &#8212; cation first, anion last</div>
-    <div class="leaf"><b>Anionic metal endings:</b> ferrate, cuprate, zincate, argentate</div>
-    <div class="leaf"><b>Structural isomers:</b> ionisation, hydrate, linkage, coordination</div>
-    <div class="leaf"><b>Stereo:</b> cis/trans for Ma&#8324;b&#8322; octahedral + square planar Ma&#8322;b&#8322;; optical for [M(en)&#8323;]&#179;&#8314; and cis-Ma&#8322;b&#8322;(en)</div>
+  <!-- Card 2: IUPAC Nomenclature & Ligand Taxonomy -->
+  <div class="card" id="card-2">
+    <div class="card-top">
+      <h3>2. Nomenclature &amp; Ligands</h3>
+      <span class="card-pill pill-teal">IUPAC Rules</span>
+    </div>
+    <div class="bullet-list">
+      <div class="bullet-item"><b>Ligand Denticity:</b> Monodentate (Cl&#8315;, NH&#8323;), Bidentate (ox&#178;&#8315;, en), Polydentate (hexadentate edta&#8308;&#8315;). Chelating ligands form stable rings (chelate effect).</div>
+      <div class="bullet-item"><b>Ambidentate Ligands:</b> Can coordinate via two different donor atoms: NO&#8322;&#8315; (nitro) / ONO&#8315; (nitrito-O); SCN&#8315; (thiocyanato) / NCS&#8315; (isothiocyanato).</div>
+      <div class="bullet-item"><b>Naming Order:</b> Cation first, then anion. Inside entity: ligands alphabetically before metal. Anionic ligands end in <i>-o</i> (chlorido, cyanido).</div>
+      <div class="bullet-item"><b>Anionic Metal Suffix:</b> If complex sphere is negative, metal name ends in <b>-ate</b> (ferrate, cuprate, cobaltate) + Roman numeral oxidation state in parentheses.</div>
+    </div>
   </div>
 
-  <div class="card left b" style="top:648px">
-    <h2>Valence Bond Theory</h2>
-    <div class="leaf"><b>Inner orbital (d&#178;sp&#179;):</b> uses (n&#8722;1)d &#8212; strong-field ligands, low spin: [Co(NH&#8323;)&#8326;]&#179;&#8314;, [Fe(CN)&#8326;]&#179;&#8315;</div>
-    <div class="leaf"><b>Outer orbital (sp&#179;d&#178;):</b> uses n d &#8212; weak-field ligands, high spin: [CoF&#8326;]&#179;&#8315;</div>
-    <div class="leaf"><b>Test:</b> count unpaired electrons magnetically, then match the hybridisation</div>
-    <div class="leaf"><b>Limitations:</b> no colour explanation, no &#916;&#8320;, treats all ligands alike, clumsy for geometry prediction</div>
+  <!-- Card 3: Complete Isomerism Classification -->
+  <div class="card" id="card-3">
+    <div class="card-top">
+      <h3>3. Coordination Isomerism</h3>
+      <span class="card-pill pill-amber">Structural &amp; Stereo</span>
+    </div>
+    <div class="bullet-list">
+      <div class="bullet-item"><b>Structural:</b> Ionisation ([Co(NH&#8323;)&#8325;SO&#8324;]Br vs [Co(NH&#8323;)&#8325;Br]SO&#8324;), Hydrate ([Cr(H&#8322;O)&#8326;]Cl&#8323; vs [Cr(H&#8322;O)&#8325;Cl]Cl&#8322;&middot;H&#8322;O), Linkage, and Coordination isomers.</div>
+      <div class="bullet-item"><b>Geometrical (Cis/Trans):</b> Cis-platin (anti-cancer) vs trans-platin; octahedral [Ma&#8324;b&#8322;] cis (violet) vs trans (green).</div>
+      <div class="bullet-item"><b>Fac/Mer Isomerism:</b> Seen in [Ma&#8323;b&#8323;] octahedral complexes. Facial = 3 identical ligands on one face (all 90&deg;); Meridional = around a meridian plane.</div>
+      <div class="bullet-item"><b>Optical (Chirality):</b> Dextro/laevo enantiomers without plane of symmetry. [Co(en)&#8323;]&#179;&#8314; and <i>cis</i>-[PtCl&#8322;(en)&#8322;]&#178;&#8314; are chiral; <i>trans</i> is achiral (meso).</div>
+    </div>
   </div>
 
-  <div class="card right l" style="top:58px">
-    <h2>Crystal Field Theory</h2>
-    <div class="leaf"><b>Idea:</b> ligands are point charges; their field splits the d orbitals into low t&#8322;g and high e&#8322;g sets, gap = &#916;&#8320;</div>
-    <div class="leaf"><b>Strong field:</b> pair up first &#8212; low spin; weak field: spread out &#8212; high spin</div>
-    <div class="leaf"><b>Spectrochemical series:</b> I&#8315; &lt; Br&#8315; &lt; Cl&#8315; &lt; F&#8315; &lt; H&#8322;O &lt; NH&#8323; &lt; en &lt; CN&#8315; &#8776; CO</div>
-    <div class="leaf"><b>Colour:</b> absorbed light = &#916;&#8320;; ligand change shifts the colour of [Ti(H&#8322;O)&#8326;]&#179;&#8314;</div>
-    <div class="leaf"><b>Limitations:</b> ignores covalency, no explanation of ligand order fully, silent on &#960;-bonding</div>
+  <!-- Card 4: Valence Bond Theory (VBT) -->
+  <div class="card" id="card-4">
+    <div class="card-top">
+      <h3>4. Valence Bond Theory (VBT)</h3>
+      <span class="card-pill pill-purple">Hybridisation</span>
+    </div>
+    <div class="bullet-list">
+      <div class="bullet-item"><b>Hybridisation Types:</b> sp&#179; (Tetrahedral, [NiCl&#8324;]&#178;&#8315;), dsp&#178; (Square Planar, [Ni(CN)&#8324;]&#178;&#8315;), sp&#179;d&#178; (Outer Octahedral), d&#178;sp&#179; (Inner Octahedral).</div>
+      <div class="bullet-item"><b>Inner vs Outer Complex:</b> Strong ligands force electron pairing to free inner (n&minus;1)d orbitals &rarr; d&#178;sp&#179; (low spin). Weak ligands use nd orbitals &rarr; sp&#179;d&#178; (high spin).</div>
+      <div class="bullet-item"><b>Magnetic Moment:</b> &mu; = &radic;(n(n+2)) BM. Diamagnetic when all paired (e.g. [Fe(CN)&#8326;]&#8308;&#8315;); paramagnetic when unpaired (e.g. [Fe(H&#8322;O)&#8326;]&#178;&#8314;, &mu;=4.90 BM).</div>
+      <div class="bullet-item"><b>VBT Failures:</b> Cannot explain why splitting differs between ligands, cannot predict spectra/colours, treats bonding as purely covalent.</div>
+    </div>
   </div>
 
-  <div class="card right b" style="top:418px">
-    <h2>Metal Carbonyls</h2>
-    <div class="leaf"><b>Ni(CO)&#8324;:</b> tetrahedral, sp&#179;, diamagnetic &#8212; Ni(0) d&#185;&#8309;</div>
-    <div class="leaf"><b>Fe(CO)&#8325;:</b> trigonal bipyramidal, dsp&#179;, Fe(0)</div>
-    <div class="leaf"><b>Synergic bond:</b> CO gives &#963; (carbon lone pair &#8594; metal) AND takes &#960; back-donation (metal &#8594; CO &#960;*) &#8212; a two-way handshake that strengthens both</div>
-    <div class="leaf"><b>M&#8211;C bond is shorter/stronger</b> than a plain single bond because of that back-donation</div>
+  <!-- Card 5: Crystal Field Theory (CFT) -->
+  <div class="card" id="card-5">
+    <div class="card-top">
+      <h3>5. Crystal Field Theory (CFT)</h3>
+      <span class="card-pill pill-emerald">Orbital Physics</span>
+    </div>
+    <div class="bullet-list">
+      <div class="bullet-item"><b>Octahedral Splitting:</b> Axial ligands split 3d into lower t&#8322;g (&minus;0.4 &Delta;<sub>o</sub>) and higher e<sub>g</sub> (+0.6 &Delta;<sub>o</sub>). Gap is &Delta;<sub>o</sub> (10 Dq).</div>
+      <div class="bullet-item"><b>Tetrahedral Splitting:</b> Inverted: lower e (&minus;0.6 &Delta;<sub>t</sub>), upper t&#8322; (+0.4 &Delta;<sub>t</sub>). &Delta;<sub>t</sub> &approx; (4/9) &Delta;<sub>o</sub>. Because &Delta;<sub>t</sub> &lt; P, complexes are always high spin.</div>
+      <div class="bullet-item"><b>Spin Decision (&Delta;<sub>o</sub> vs P):</b> If &Delta;<sub>o</sub> &lt; P &rarr; High Spin (weak-field, Hund's rule). If &Delta;<sub>o</sub> &gt; P &rarr; Low Spin (strong-field, pairing favored).</div>
+      <div class="bullet-item"><b>Spectrochemical Series:</b> I&#8315; &lt; Br&#8315; &lt; Cl&#8315; &lt; F&#8315; &lt; OH&#8315; &lt; ox&#178;&#8315; &lt; H&#8322;O &lt; NCS&#8315; &lt; edta&#8308;&#8315; &lt; NH&#8323; &lt; en &lt; NO&#8322;&#8315; &lt; CN&#8315; &lt; CO.</div>
+    </div>
   </div>
 
-  <div class="card right l" style="top:700px">
-    <h2>Why Coordination Chemistry Matters</h2>
-    <div class="leaf"><b>Extraction:</b> Ag and Au dissolve in dilute cyanide (Mac-Arthur–Forrest), then displace with Zn</div>
-    <div class="leaf"><b>Medicine:</b> cis-platin fights cancer; EDTA treats lead poisoning (chelation therapy)</div>
-    <div class="leaf"><b>Life itself:</b> haemoglobin (Fe), chlorophyll (Mg), vitamin B&#8321;&#8322; (Co)</div>
-    <div class="leaf"><b>Analysis:</b> Ni&#178;&#8314; confirmed with DMG (bright red), Fe&#179;&#8314; with SCN&#8315; (blood red), water hardness by EDTA titration</div>
-  </div>
-
-  <div class="exc">
-    <h2>WATCH-OUTS THAT SET MCQ TRAPS</h2>
-    <div class="leaf"><b>Oxidation number vs coordination number:</b> charge of the metal vs count of donor atoms — not the same</div>
-    <div class="leaf"><b>Bidentate counts twice:</b> en or oxalate gives 2 each — [Co(en)&#8323;]&#179;&#8314; has CN = 6 with 3 ligands</div>
-    <div class="leaf"><b>Linkage isomerism needs ambidentate ligands</b> — NO&#8322;&#8315; (nitro/nitrito), SCN&#8315; (thiocyanato/isothiocyanato)</div>
-    <div class="leaf"><b>Ma&#8322;b&#8322; tetrahedral has NO cis/trans</b> — only square planar Ma&#8322;b&#8322; does; octahedral Ma&#8324;b&#8322; does</div>
+  <!-- Card 6: Stability, Colour & Applications -->
+  <div class="card" id="card-6">
+    <div class="card-top">
+      <h3>6. Stability &amp; Applications</h3>
+      <span class="card-pill pill-rose">Real-World Chemistry</span>
+    </div>
+    <div class="bullet-list">
+      <div class="bullet-item"><b>Colour Origin:</b> d&ndash;d transitions absorb light of frequency &nu; = &Delta;<sub>o</sub>/h; transmitted complementary colour is seen. d&#8304; (Sc&#179;&#8314;) and d&#185;&#8304; (Zn&#178;&#8314;) are colourless.</div>
+      <div class="bullet-item"><b>Complex Stability (&beta;):</b> Higher charge and smaller radius of central ion increase stability constant &beta;. Chelate effect strongly elevates stability.</div>
+      <div class="bullet-item"><b>Metallurgy &amp; Analysis:</b> Cyanide leaching of gold/silver ([Au(CN)&#8322;]&#8315;); Mond process for Ni ([Ni(CO)&#8324;]); EDTA titrations for water hardness (Ca&#178;&#8314;/Mg&#178;&#8314;).</div>
+      <div class="bullet-item"><b>Biological Catalysts:</b> Chlorophyll (Mg&#178;&#8314; porphyrin), Hemoglobin (Fe&#178;&#8314;), Vitamin B&#8321;&#8322; (Co&#179;&#8314; cyanocobalamin), Cis-platin (anti-cancer medicine).</div>
+    </div>
   </div>
 </div>
 </body>

@@ -1,90 +1,368 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
+<title>Crystal Field Theory: Octahedral &amp; Tetrahedral Splitting Dynamics</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
-  .wrap { width: 1480px; position: relative; background: #fff; padding-bottom: 4px; }
-  .title { text-align: center; font-size: 24px; font-weight: 800; color: #071A4D; padding-top: 20px; }
-  .subtitle { text-align: center; font-size: 14px; color: #5A6478; margin-top: 4px; }
-  .row { display: flex; gap: 26px; justify-content: center; margin-top: 16px; padding: 0 30px; }
-  .panel { width: 690px; background: #FCFDFF; border: 1.5px solid #D5DCEA; border-radius: 14px; padding: 13px 16px; }
-  .panel h2 { font-size: 18px; font-weight: 800; text-align: center; margin-bottom: 6px; padding-bottom: 5px; border-bottom: 3px solid; }
-  .weak h2 { color: #B4380F; border-color: #D2481F; }
-  .strong h2 { color: #4E7A00; border-color: #7FB800; }
-  .panel p { font-size: 13.5px; color: #1B2333; line-height: 1.42; margin: 5px 0; }
-  .panel p b { color: #071A4D; }
-  .series { margin: 16px 30px 14px; background: #FFFBEA; border: 1.5px solid #C9A20C; border-radius: 12px; padding: 11px 16px; }
-  .series h3 { font-size: 16px; color: #9A7B07; font-weight: 800; margin-bottom: 5px; }
-  .series p { font-size: 14.5px; color: #5B4A05; line-height: 1.5; font-weight: 600; }
-  .series p b { color: #9A7B07; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: #F8FAFC;
+    color: #0F172A;
+    width: 1440px;
+    height: 880px;
+    overflow: hidden;
+  }
+  .canvas {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    padding: 24px 32px;
+    box-shadow: none !important;
+  }
+  .header-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 12px;
+    margin-bottom: 16px;
+  }
+  .title-group h1 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #071A4D;
+    letter-spacing: -0.02em;
+  }
+  .title-group p {
+    font-size: 13px;
+    color: #64748B;
+    font-weight: 500;
+    margin-top: 2px;
+  }
+  .tag-group {
+    display: flex;
+    gap: 8px;
+  }
+  .badge {
+    padding: 4px 10px;
+    font-size: 11px;
+    font-weight: 700;
+    border-radius: 6px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .badge-navy { background: #E0E7FF; color: #1E1B4B; border: 1px solid #C7D2FE; }
+  .badge-emerald { background: #ECFDF5; color: #065F46; border: 1px solid #A7F3D0; }
+  .badge-amber { background: #FEF3C7; color: #92400E; border: 1px solid #FDE68A; }
+
+  /* 2 Main Columns: Left Octahedral Splitting & High/Low Spin (750px), Right Tetrahedral & Spectrochemical Series (610px) */
+  .main-grid {
+    display: grid;
+    grid-template-columns: 740px 1fr;
+    gap: 20px;
+    height: 775px;
+  }
+
+  .panel {
+    background: #FFFFFF;
+    border: 1.5px solid #E2E8F0;
+    border-radius: 10px;
+    padding: 16px 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: none !important;
+  }
+
+  .panel-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #071A4D;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+    border-bottom: 1.5px solid #F1F5F9;
+  }
+  .panel-title .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+  }
+
+  /* SVG Energy Container */
+  .svg-box {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin-bottom: 12px;
+  }
+
+  /* Spin comparison subgrid */
+  .spin-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .spin-card {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 10px 12px;
+  }
+  .spin-card h4 {
+    font-size: 12.5px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .tag-hs { color: #DC2626; font-size: 10.5px; background: #FEE2E2; padding: 2px 6px; border-radius: 4px; }
+  .tag-ls { color: #16A34A; font-size: 10.5px; background: #DCFCE7; padding: 2px 6px; border-radius: 4px; }
+  .spin-card p {
+    font-size: 11.5px;
+    color: #475569;
+    line-height: 1.4;
+  }
+
+  /* Spectrochemical Ribbon */
+  .spectro-ribbon {
+    background: #F8FAFC;
+    border: 1px solid #CBD5E1;
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin-top: 12px;
+  }
+  .spectro-ribbon h4 {
+    font-size: 12.5px;
+    font-weight: 800;
+    color: #071A4D;
+    margin-bottom: 6px;
+  }
+  .series-flow {
+    font-family: ui-monospace, monospace;
+    font-size: 11px;
+    font-weight: 700;
+    color: #1E293B;
+    line-height: 1.6;
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    padding: 8px 10px;
+  }
+  .series-flow span.w { color: #DC2626; }
+  .series-flow span.m { color: #D97706; }
+  .series-flow span.s { color: #16A34A; }
+
+  /* Bottom Takeaway */
+  .summary-pill {
+    background: #EFF6FF;
+    border: 1px solid #BFDBFE;
+    border-radius: 8px;
+    padding: 8px 12px;
+    margin-top: auto;
+  }
+  .summary-pill h5 {
+    font-size: 11.5px;
+    font-weight: 700;
+    color: #1E3A8A;
+    margin-bottom: 2px;
+  }
+  .summary-pill p {
+    font-size: 11px;
+    color: #2563EB;
+    line-height: 1.35;
+  }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <div class="title">CRYSTAL FIELD SPLITTING IN AN OCTAHEDRAL COMPLEX — THE d ORBITALS BREAK RANKS</div>
-  <div class="subtitle">Six ligands approach along the axes: orbitals pointing AT ligands (e&#8322;g) rise, orbitals between them (t&#8322;g) sink. The gap is &#916;&#8320;.</div>
-
-  <div class="row">
-    <div class="panel weak">
-      <h2>WEAK-FIELD LIGAND (e.g. F&#8315;) &#8594; HIGH SPIN</h2>
-      <svg width="650" height="270" viewBox="0 0 650 270">
-        <line x1="30" y1="60" x2="620" y2="60" stroke="#B4380F" stroke-width="2"/>
-        <text x="24" y="46" font-size="13" fill="#B4380F" font-weight="700">e&#8322;g</text>
-        <!-- two eg orbitals -->
-        <rect x="120" y="66" width="150" height="5" fill="#071A4D"/>
-        <rect x="360" y="66" width="150" height="5" fill="#071A4D"/>
-        <text x="130" y="92" font-size="20" fill="#071A4D">&#8593;&#8595;</text>
-        <text x="370" y="92" font-size="20" fill="#071A4D">&#8593;&#8595;</text>
-        <!-- gap arrow -->
-        <line x1="580" y1="66" x2="580" y2="180" stroke="#D2481F" stroke-width="2"/>
-        <polygon points="575,74 580,64 585,74" fill="#D2481F"/>
-        <polygon points="575,172 580,182 585,172" fill="#D2481F"/>
-        <text x="560" y="128" font-size="14" fill="#B4380F" font-weight="800" text-anchor="end">&#916;&#8320; small</text>
-        <!-- t2g -->
-        <line x1="30" y1="180" x2="620" y2="180" stroke="#B4380F" stroke-width="2"/>
-        <text x="24" y="166" font-size="13" fill="#B4380F" font-weight="700">t&#8322;g</text>
-        <rect x="120" y="186" width="150" height="5" fill="#071A4D"/>
-        <rect x="360" y="186" width="150" height="5" fill="#071A4D"/>
-        <rect x="490" y="244" width="0" height="0" fill="#071A4D"/>
-        <text x="130" y="212" font-size="20" fill="#071A4D">&#8593;</text>
-        <text x="370" y="212" font-size="20" fill="#071A4D">&#8593;</text>
-        <text x="590" y="212" font-size="20" fill="#071A4D">&#8593;</text>
-      </svg>
-      <p><b>Story:</b> the gap is too small to force pairing. Electrons obey Hund's rule first &#8212; <b>4 unpaired electrons in a d&#8309; case</b> &#8594; paramagnetic, weakly coloured.</p>
-      <p><b>Classic pairs:</b> [CoF&#8326;]&#179;&#8315;, [Fe(H&#8322;O)&#8326;]&#178;&#8314;, [MnF&#8326;]&#179;&#8315; &#8212; "outer orbital" sp&#179;d&#178; in VBT language.</p>
+<div class="canvas">
+  <div class="header-bar">
+    <div class="title-group">
+      <h1>Crystal Field Theory (CFT) &mdash; Orbital Splitting Dynamics</h1>
+      <p>Electrostatic ligand-field mechanics, octahedral vs tetrahedral splitting patterns, and the spectrochemical series</p>
     </div>
-
-    <div class="panel strong">
-      <h2>STRONG-FIELD LIGAND (e.g. CN&#8315;) &#8594; LOW SPIN</h2>
-      <svg width="650" height="270" viewBox="0 0 650 270">
-        <line x1="30" y1="60" x2="620" y2="60" stroke="#4E7A00" stroke-width="2"/>
-        <text x="24" y="46" font-size="13" fill="#4E7A00" font-weight="700">e&#8322;g</text>
-        <rect x="120" y="66" width="150" height="5" fill="#071A4D"/>
-        <rect x="360" y="66" width="150" height="5" fill="#071A4D"/>
-        <text x="130" y="92" font-size="20" fill="#071A4D">&#8593;&#8595;</text>
-        <text x="370" y="92" font-size="20" fill="#071A4D">&#8593;</text>
-        <line x1="580" y1="66" x2="580" y2="180" stroke="#4E7A00" stroke-width="2"/>
-        <polygon points="575,74 580,64 585,74" fill="#4E7A00"/>
-        <polygon points="575,172 580,182 585,172" fill="#4E7A00"/>
-        <text x="560" y="128" font-size="14" fill="#4E7A00" font-weight="800" text-anchor="end">&#916;&#8320; large</text>
-        <line x1="30" y1="180" x2="620" y2="180" stroke="#4E7A00" stroke-width="2"/>
-        <text x="24" y="166" font-size="13" fill="#4E7A00" font-weight="700">t&#8322;g</text>
-        <rect x="120" y="186" width="150" height="5" fill="#071A4D"/>
-        <rect x="360" y="186" width="150" height="5" fill="#071A4D"/>
-        <text x="130" y="212" font-size="20" fill="#071A4D">&#8593;&#8595;</text>
-        <text x="370" y="212" font-size="20" fill="#071A4D">&#8593;&#8595;</text>
-        <text x="590" y="212" font-size="20" fill="#071A4D">&#8593;&#8595;</text>
-      </svg>
-      <p><b>Story:</b> the gap beats the pairing cost. Electrons cram into t&#8322;g first &#8212; <b>1 unpaired electron in a d&#8309; case</b> &#8594; less paramagnetic, deeper colour, extra CFSE.</p>
-      <p><b>Classic pairs:</b> [Co(CN)&#8326;]&#179;&#8315;, [Fe(CN)&#8326;]&#179;&#8315;, [Co(NH&#8323;)&#8326;]&#179;&#8314; &#8212; "inner orbital" d&#178;sp&#179; in VBT language.</p>
+    <div class="tag-group">
+      <span class="badge badge-navy">Unit V Coordination</span>
+      <span class="badge badge-emerald">CFT Energy Levels</span>
+      <span class="badge badge-amber">&Delta;<sub>o</sub> vs P Criteria</span>
     </div>
   </div>
 
-  <div class="series">
-    <h3>THE SPECTROCHEMICAL SERIES — memorise the order, not the whole list</h3>
-    <p>I&#8315; &lt; Br&#8315; &lt; SCN&#8315; &lt; Cl&#8315; &lt; S&#178;&#8315; &lt; F&#8315; &lt; OH&#8315; &lt; C&#8322;O&#8324;&#178;&#8315; &lt; H&#8322;O &lt; NCS&#8315; &lt; <b>edta&#8308;&#8315;</b> &lt; <b>NH&#8323;</b> &lt; en &lt; <b>bipy</b> &lt; <b>phen</b> &lt; <b>NO&#8322;&#8315;</b> &lt; <b>CN&#8315; &#8776; CO</b> &nbsp;&#8212;&nbsp; left side = weak field (high spin) &#183; right side = strong field (low spin)</p>
+  <div class="main-grid">
+    <!-- LEFT COLUMN: OCTAHEDRAL SPLITTING -->
+    <div class="panel">
+      <div class="panel-title">
+        <span class="dot" style="background:#2563EB;"></span>
+        Octahedral Field Splitting (&Delta;<sub>o</sub>): d-Orbital Degeneracy Lift
+      </div>
+
+      <!-- SVG Octahedral Diagram -->
+      <div class="svg-box">
+        <svg viewBox="0 0 700 280" width="100%" height="260">
+          <defs>
+            <marker id="arr" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M 0 1 L 8 5 L 0 9 z" fill="#64748B"/>
+            </marker>
+          </defs>
+
+          <!-- Energy Axis -->
+          <line x1="40" y1="250" x2="40" y2="25" stroke="#64748B" stroke-width="2" marker-end="url(#arr)"/>
+          <text x="30" y="30" font-size="11" font-weight="800" fill="#475569" transform="rotate(-90 30,30)" text-anchor="end">Energy (E)</text>
+
+          <!-- 1. Free Ion (5 degenerate d orbitals) -->
+          <text x="120" y="240" font-size="11" font-weight="700" fill="#475569" text-anchor="middle">Free Metal Ion</text>
+          <g stroke="#0F172A" stroke-width="2.5">
+            <line x1="70" y1="180" x2="90" y2="180"/>
+            <line x1="95" y1="180" x2="115" y2="180"/>
+            <line x1="120" y1="180" x2="140" y2="180"/>
+            <line x1="145" y1="180" x2="165" y2="180"/>
+            <line x1="170" y1="180" x2="190" y2="180"/>
+          </g>
+          <text x="130" y="200" font-size="10" fill="#64748B" text-anchor="middle">Degenerate 3d</text>
+
+          <!-- Upward shift to average spherical field -->
+          <path d="M 195 180 Q 240 180 270 145" fill="none" stroke="#94A3B8" stroke-width="1.5" stroke-dasharray="3 3"/>
+          <text x="330" y="240" font-size="11" font-weight="700" fill="#475569" text-anchor="middle">Spherical Field</text>
+          <g stroke="#64748B" stroke-width="2.5">
+            <line x1="280" y1="145" x2="300" y2="145"/>
+            <line x1="305" y1="145" x2="325" y2="145"/>
+            <line x1="330" y1="145" x2="350" y2="145"/>
+            <line x1="355" y1="145" x2="375" y2="145"/>
+            <line x1="380" y1="145" x2="400" y2="145"/>
+          </g>
+          <text x="340" y="165" font-size="10" fill="#64748B" text-anchor="middle">Average Energy</text>
+
+          <!-- Barycentre Dashed Line -->
+          <line x1="400" y1="145" x2="680" y2="145" stroke="#94A3B8" stroke-width="1.5" stroke-dasharray="4 4"/>
+          <text x="670" y="140" font-size="10" font-weight="700" fill="#64748B" text-anchor="end">Barycentre (Reference)</text>
+
+          <!-- Splitting to Octahedral: eg up, t2g down -->
+          <path d="M 400 145 Q 460 145 490 85" fill="none" stroke="#EF4444" stroke-width="1.5" stroke-dasharray="3 3"/>
+          <path d="M 400 145 Q 460 145 490 185" fill="none" stroke="#059669" stroke-width="1.5" stroke-dasharray="3 3"/>
+
+          <!-- Upper eg Orbitals (2 levels: dz2, dx2-y2) -->
+          <text x="560" y="55" font-size="11" font-weight="800" fill="#B91C1C">e<sub>g</sub> (+0.6 &Delta;<sub>o</sub> or +6 Dq)</text>
+          <text x="560" y="70" font-size="10" fill="#64748B">d<sub>z<sup>2</sup></sub>, d<sub>x<sup>2</sup>-y<sup>2</sup></sub> (Axial lobes)</text>
+          <g stroke="#B91C1C" stroke-width="3">
+            <line x1="500" y1="85" x2="545" y2="85"/>
+            <line x1="560" y1="85" x2="605" y2="85"/>
+          </g>
+
+          <!-- Lower t2g Orbitals (3 levels: dxy, dyz, dxz) -->
+          <text x="560" y="215" font-size="11" font-weight="800" fill="#047857">t<sub>2g</sub> (&minus;0.4 &Delta;<sub>o</sub> or &minus;4 Dq)</text>
+          <text x="560" y="230" font-size="10" fill="#64748B">d<sub>xy</sub>, d<sub>yz</sub>, d<sub>xz</sub> (Inter-axial lobes)</text>
+          <g stroke="#047857" stroke-width="3">
+            <line x1="480" y1="185" x2="520" y2="185"/>
+            <line x1="530" y1="185" x2="570" y2="185"/>
+            <line x1="580" y1="185" x2="620" y2="185"/>
+          </g>
+
+          <!-- Total Delta_o Arrow -->
+          <line x1="645" y1="87" x2="645" y2="183" stroke="#2563EB" stroke-width="2" marker-start="url(#arr)" marker-end="url(#arr)"/>
+          <text x="655" y="138" font-size="12" font-weight="800" fill="#1D4ED8">&Delta;<sub>o</sub></text>
+        </svg>
+      </div>
+
+      <!-- High-Spin vs Low-Spin Mechanics -->
+      <div class="spin-grid">
+        <div class="spin-card">
+          <h4>
+            <span>Weak-Field Ligand (&Delta;<sub>o</sub> &lt; P)</span>
+            <span class="tag-hs">High-Spin</span>
+          </h4>
+          <p>
+            The crystal field splitting &Delta;<sub>o</sub> is smaller than the electron pairing energy (P). Electrons prefer to occupy higher e<sub>g</sub> orbitals rather than pair up in t<sub>2g</sub>. Maximum unpaired electrons (paramagnetic).<br>
+            <b>Example (d&#8308;):</b> t<sub>2g</sub>&#179; e<sub>g</sub>&#185; (e.g. [Cr(H&#8322;O)&#8326;]&#178;&#8314;, [CoF&#8326;]&#179;&#8315;).
+          </p>
+        </div>
+
+        <div class="spin-card">
+          <h4>
+            <span>Strong-Field Ligand (&Delta;<sub>o</sub> &gt; P)</span>
+            <span class="tag-ls">Low-Spin</span>
+          </h4>
+          <p>
+            The splitting &Delta;<sub>o</sub> exceeds the pairing energy P. Electrons are forced to overcome repulsion and pair up in lower t<sub>2g</sub> orbitals before occupying e<sub>g</sub>. Minimum unpaired electrons (often diamagnetic).<br>
+            <b>Example (d&#8310;):</b> t<sub>2g</sub>&#8310; e<sub>g</sub>&#8304; (e.g. [Co(NH&#8323;)&#8326;]&#179;&#8314;, [Fe(CN)&#8326;]&#8308;&#8315;).
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT COLUMN: TETRAHEDRAL SPLITTING & SPECTROCHEMICAL SERIES -->
+    <div class="panel">
+      <div class="panel-title">
+        <span class="dot" style="background:#D97706;"></span>
+        Tetrahedral Field Splitting (&Delta;<sub>t</sub>) &amp; Spectrochemical Series
+      </div>
+
+      <!-- Tetrahedral Inversion Plot -->
+      <div class="svg-box">
+        <svg viewBox="0 0 540 180" width="100%" height="165">
+          <!-- Barycentre -->
+          <line x1="30" y1="90" x2="510" y2="90" stroke="#94A3B8" stroke-width="1.5" stroke-dasharray="3 3"/>
+          <text x="40" y="85" font-size="10" fill="#64748B">Barycentre</text>
+
+          <!-- Upper t2 (3 orbitals) -->
+          <g stroke="#B91C1C" stroke-width="2.5">
+            <line x1="180" y1="55" x2="225" y2="55"/>
+            <line x1="235" y1="55" x2="280" y2="55"/>
+            <line x1="290" y1="55" x2="335" y2="55"/>
+          </g>
+          <text x="350" y="58" font-size="11" font-weight="800" fill="#B91C1C">t<sub>2</sub> (+0.4 &Delta;<sub>t</sub>)</text>
+          <text x="350" y="70" font-size="9.5" fill="#64748B">d<sub>xy</sub>, d<sub>yz</sub>, d<sub>xz</sub></text>
+
+          <!-- Lower e (2 orbitals) -->
+          <g stroke="#047857" stroke-width="2.5">
+            <line x1="205" y1="125" x2="255" y2="125"/>
+            <line x1="265" y1="125" x2="315" y2="125"/>
+          </g>
+          <text x="330" y="128" font-size="11" font-weight="800" fill="#047857">e (&minus;0.6 &Delta;<sub>t</sub>)</text>
+          <text x="330" y="140" font-size="9.5" fill="#64748B">d<sub>z<sup>2</sup></sub>, d<sub>x<sup>2</sup>-y<sup>2</sup></sub></text>
+
+          <!-- Delta_t Arrow -->
+          <line x1="145" y1="57" x2="145" y2="123" stroke="#D97706" stroke-width="2"/>
+          <text x="135" y="93" font-size="11" font-weight="800" fill="#B45309" text-anchor="end">&Delta;<sub>t</sub> = 4/9 &Delta;<sub>o</sub></text>
+
+          <!-- Callout Note on No 'g' subscript -->
+          <text x="480" y="160" font-size="9.5" font-weight="700" fill="#475569" text-anchor="end">*Note: No 'g' subscript (no inversion centre in T<sub>d</sub>)</text>
+        </svg>
+      </div>
+
+      <!-- Why Tetrahedral Complexes are Always High Spin -->
+      <div style="background:#F8FAFC; border:1px solid #E2E8F0; border-radius:8px; padding:10px 12px;">
+        <span style="font-size:12px; font-weight:700; color:#071A4D;">The Fundamental Tetrahedral Law</span>
+        <p style="font-size:11px; color:#334155; margin-top:3px; line-height:1.4;">
+          Because ligands point between orbitals rather than directly at them, and there are only 4 ligands (not 6), the splitting energy is very small: <b>&Delta;<sub>t</sub> &approx; (4/9) &Delta;<sub>o</sub></b>. As a result, &Delta;<sub>t</sub> is virtually never large enough to exceed the pairing energy P. Thus, <b>tetrahedral complexes are almost exclusively high-spin</b>.
+        </p>
+      </div>
+
+      <!-- Spectrochemical Series -->
+      <div class="spectro-ribbon">
+        <h4>The Spectrochemical Series (Order of Field Strength)</h4>
+        <div class="series-flow">
+          <span class="w">I&#8315; &lt; Br&#8315; &lt; S&#178;&#8315; &lt; SCN&#8315; &lt; Cl&#8315; &lt; N&#8323;&#8315; &lt; F&#8315;</span> &lt;
+          <span class="m">OH&#8315; &lt; C&#8322;O&#8324;&#178;&#8315; &lt; H&#8322;O &lt; NCS&#8315;</span> &lt;
+          <span class="s">edta&#8308;&#8315; &lt; NH&#8323; &lt; en &lt; NO&#8322;&#8315; &lt; PPh&#8323; &lt; CN&#8315; &lt; CO</span>
+        </div>
+        <div style="display:flex; justify-content:space-between; font-size:10px; font-weight:700; margin-top:4px; padding:0 2px;">
+          <span style="color:#DC2626;">&larr; Halide Donors (Weak-field)</span>
+          <span style="color:#D97706;">Oxygen Donors</span>
+          <span style="color:#16A34A;">Nitrogen &amp; Carbon Donors (Strong-field) &rarr;</span>
+        </div>
+      </div>
+
+      <div class="summary-pill">
+        <h5>Colour Origin in CFT</h5>
+        <p>
+          Absorption of visible light promotes a d-electron across the crystal field gap (&Delta;<sub>o</sub>): &Delta;E = h&nu; = hc/&lambda;. The perceived colour is the exact optical complement of the absorbed wavelength.
+        </p>
+      </div>
+    </div>
   </div>
 </div>
 </body>
