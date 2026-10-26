@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1440, height=880">
+  <title>Semiconductors: Energy Bands, Intrinsic Conduction & Doping</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 1440px;
+      height: 880px;
+      background-color: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0F172A;
+      padding: 30px 40px;
+      overflow: hidden;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #E2E8F0;
+      padding-bottom: 14px;
+    }
+    .title-group h1 {
+      font-size: 25px;
+      font-weight: 800;
+      color: #0F2C59;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+    .title-group p {
+      font-size: 13.5px;
+      color: #64748B;
+      font-weight: 500;
+    }
+    .badge {
+      background: #0066FF;
+      color: white;
+      font-size: 11.5px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1.15fr 1.35fr 1.1fr;
+      gap: 20px;
+      height: calc(100% - 95px);
+    }
+    .card {
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      border-radius: 12px;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+      position: relative;
+    }
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      border-radius: 12px 12px 0 0;
+    }
+    .card-bands::before { background: #0066FF; }
+    .card-doping::before { background: #059669; }
+    .card-conduct::before { background: #D97706; }
+
+    .card-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #0F2C59;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .card-title svg { width: 18px; height: 18px; }
+
+    .formula-box {
+      background: #F1F5F9;
+      border-left: 3px solid #0066FF;
+      border-radius: 6px;
+      padding: 9px 12px;
+      margin-bottom: 10px;
+    }
+    .formula-title {
+      font-size: 10.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #0066FF;
+      margin-bottom: 3px;
+    }
+    .formula-math {
+      font-family: "SF Pro Text", Consolas, "Courier New", monospace;
+      font-size: 13px;
+      font-weight: 700;
+      color: #0F2C59;
+    }
+
+    .key-points {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-size: 11.5px;
+      color: #334155;
+      line-height: 1.45;
+    }
+    .key-points li {
+      position: relative;
+      padding-left: 14px;
+    }
+    .key-points li::before {
+      content: "•";
+      position: absolute;
+      left: 2px;
+      color: #0066FF;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 1;
+    }
+
+    .table-container {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 11px;
+      margin-top: 6px;
+    }
+    .table-container th {
+      background: #E2E8F0;
+      color: #1E293B;
+      padding: 5px 8px;
+      text-align: left;
+      font-weight: 700;
+    }
+    .table-container td {
+      padding: 4px 8px;
+      border-bottom: 1px solid #E2E8F0;
+      color: #334155;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="title-group">
+      <h1>Physics · Unit 9: Semiconductors — Energy Bands, Intrinsic & Doped Media</h1>
+      <p>Band Gap Classification, n-Type vs p-Type Donor/Acceptor Levels, Mass Action Law & Conductivity Scaling</p>
+    </div>
+    <div class="badge">CUET UG Physics</div>
+  </div>
+
+  <div class="grid">
+    <!-- Card 1: Energy Bands in Solids -->
+    <div class="card card-bands">
+      <div class="card-title">
+        <svg fill="none" stroke="#0066FF" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        Energy Bands in Solids
+      </div>
+
+      <!-- Energy Band SVG -->
+      <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px; padding: 6px; margin-bottom: 8px; text-align: center;">
+        <svg width="340" height="150" viewBox="0 0 340 150">
+          <!-- 1. Conductor -->
+          <rect x="20" y="25" width="85" height="40" rx="3" fill="#BFDBFE" stroke="#2563EB" stroke-width="1.2"/>
+          <rect x="20" y="55" width="85" height="45" rx="3" fill="#FED7AA" stroke="#EA580C" stroke-width="1.2" opacity="0.8"/>
+          <text x="62" y="38" font-size="8.5" font-weight="700" fill="#1E40AF" text-anchor="middle">CB (Overlap)</text>
+          <text x="62" y="85" font-size="8.5" font-weight="700" fill="#9A3412" text-anchor="middle">VB (Filled)</text>
+          <text x="62" y="115" font-size="9" font-weight="800" fill="#0F172A" text-anchor="middle">1. Conductor</text>
+          <text x="62" y="128" font-size="7.5" fill="#64748B" text-anchor="middle">E_g = 0 eV</text>
+
+          <!-- 2. Semiconductor -->
+          <rect x="127" y="25" width="85" height="30" rx="3" fill="#DBEAFE" stroke="#2563EB" stroke-width="1.2"/>
+          <text x="170" y="44" font-size="8.5" font-weight="700" fill="#1E40AF" text-anchor="middle">CB (Empty at 0K)</text>
+          <!-- Gap Eg -->
+          <line x1="170" y1="58" x2="170" y2="72" stroke="#64748B" stroke-width="1" stroke-dasharray="2,2"/>
+          <text x="170" y="68" font-size="7.5" font-weight="700" fill="#DC2626" text-anchor="middle">E_g &lt; 3 eV</text>
+          <rect x="127" y="75" width="85" height="30" rx="3" fill="#FED7AA" stroke="#EA580C" stroke-width="1.2"/>
+          <text x="170" y="94" font-size="8.5" font-weight="700" fill="#9A3412" text-anchor="middle">VB (Full at 0K)</text>
+          <text x="170" y="118" font-size="9" font-weight="800" fill="#0F172A" text-anchor="middle">2. Semiconductor</text>
+          <text x="170" y="130" font-size="7.5" fill="#64748B" text-anchor="middle">Si: 1.1 eV | Ge: 0.7 eV</text>
+
+          <!-- 3. Insulator -->
+          <rect x="235" y="15" width="85" height="25" rx="3" fill="#DBEAFE" stroke="#2563EB" stroke-width="1.2"/>
+          <text x="277" y="31" font-size="8.5" font-weight="700" fill="#1E40AF" text-anchor="middle">CB (Empty)</text>
+          <!-- Wide gap -->
+          <line x1="277" y1="43" x2="277" y2="82" stroke="#DC2626" stroke-width="1.4"/>
+          <text x="277" y="65" font-size="8" font-weight="800" fill="#DC2626" text-anchor="middle">E_g &gt; 3 eV</text>
+          <rect x="235" y="85" width="85" height="25" rx="3" fill="#FED7AA" stroke="#EA580C" stroke-width="1.2"/>
+          <text x="277" y="101" font-size="8.5" font-weight="700" fill="#9A3412" text-anchor="middle">VB (Full)</text>
+          <text x="277" y="122" font-size="9" font-weight="800" fill="#0F172A" text-anchor="middle">3. Insulator</text>
+          <text x="277" y="134" font-size="7.5" fill="#64748B" text-anchor="middle">Diamond: 5.4 eV</text>
+        </svg>
+      </div>
+
+      <div class="formula-box">
+        <div class="formula-title">Band Gap Parameters (at 300 K)</div>
+        <div class="formula-math">Si: E_g = 1.1 eV &nbsp;|&nbsp; Ge: E_g = 0.7 eV &nbsp;|&nbsp; GaAs: 1.42 eV</div>
+        <div style="font-size: 10.5px; color: #475569; margin-top: 2px;">
+          At 0 K, semiconductors behave as <b>perfect insulators</b> (CB completely empty, VB completely full).
+        </div>
+      </div>
+
+      <ul class="key-points">
+        <li><b>Valence Band (VB):</b> Contains valence electrons responsible for interatomic covalent bonding.</li>
+        <li><b>Conduction Band (CB):</b> Band of free mobile states above VB. Electrons here drift under electric fields.</li>
+        <li><b>Forbidden Gap ($E_g$):</b> Energy difference between bottom of CB ($E_c$) and top of VB ($E_v$). No electron states allowed here!</li>
+      </ul>
+    </div>
+
+    <!-- Card 2: Intrinsic & Extrinsic Doping -->
+    <div class="card card-doping">
+      <div class="card-title">
+        <svg fill="none" stroke="#059669" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><circle cx="6" cy="6" r="2"/><circle cx="18" cy="18" r="2"/></svg>
+        Intrinsic vs Extrinsic Semiconductors
+      </div>
+
+      <table class="table-container">
+        <thead>
+          <tr>
+            <th>Parameter</th>
+            <th>n-Type Semiconductor</th>
+            <th>p-Type Semiconductor</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>Dopant Impurity</b></td>
+            <td><b>Pentavalent</b> (P, As, Sb, Bi) (Group 15)</td>
+            <td><b>Trivalent</b> (B, Al, Ga, In) (Group 13)</td>
+          </tr>
+          <tr>
+            <td><b>Impurity Nature</b></td>
+            <td><b>Donor</b> ($N_D$ positive fixed ions)</td>
+            <td><b>Acceptor</b> ($N_A$ negative fixed ions)</td>
+          </tr>
+          <tr>
+            <td><b>Energy Level</b></td>
+            <td>Donor level ($E_d$) lies <b>just below CB</b> (~ 0.05 eV in Si)</td>
+            <td>Acceptor level ($E_a$) lies <b>just above VB</b> (~ 0.05 eV in Si)</td>
+          </tr>
+          <tr style="background: #F0FDF4; font-weight: 700;">
+            <td><b>Majority Carriers</b></td>
+            <td>Electrons: $n_e \approx N_D \gg n_h$</td>
+            <td>Holes: $n_h \approx N_A \gg n_e$</td>
+          </tr>
+          <tr>
+            <td><b>Minority Carriers</b></td>
+            <td>Holes ($n_h = n_i^2 / N_D$)</td>
+            <td>Electrons ($n_e = n_i^2 / N_A$)</td>
+          </tr>
+          <tr>
+            <td><b>Net Electric Charge</b></td>
+            <td><b>Strictly Neutral!</b> ($q = 0$)</td>
+            <td><b>Strictly Neutral!</b> ($q = 0$)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="formula-box" style="margin-top: 10px; border-left-color: #059669;">
+        <div class="formula-title" style="color: #059669;">Mass Action Law (At Constant Temperature)</div>
+        <div class="formula-math">n_e · n_h = n_i²</div>
+        <div style="font-size: 10px; color: #475569; margin-top: 2px;">
+          Valid for both intrinsic ($n_e = n_h = n_i$) and extrinsic semiconductors in thermal equilibrium!
+        </div>
+      </div>
+
+      <div style="background: #FEF3C7; border-left: 3px solid #D97706; border-radius: 6px; padding: 6px 10px; font-size: 10.5px; color: #92400E;">
+        <b>Common CUET Confusion:</b> A doped semiconductor (n-type or p-type) carries <b>zero net electric charge</b>. Dopant atoms are neutral before substitution; after donation/acceptance, mobile charges balance fixed parent ions!
+      </div>
+    </div>
+
+    <!-- Card 3: Electrical Conductivity & Temperature Scaling -->
+    <div class="card card-conduct">
+      <div class="card-title">
+        <svg fill="none" stroke="#D97706" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        Conductivity & Temp Scaling
+      </div>
+
+      <div class="formula-box" style="border-left-color: #D97706;">
+        <div class="formula-title" style="color: #D97706;">Total Electric Current & Conductivity</div>
+        <div class="formula-math">I = I_e + I_h = e A (n_e v_e + n_h v_h)</div>
+        <div class="formula-math" style="margin-top: 3px; color: #9A3412;">σ = e (n_e μ_e + n_h μ_h) = 1 / ρ</div>
+        <div style="font-size: 10px; color: #475569; margin-top: 2px;">
+          $\mu_e, \mu_h$ are electron & hole mobilities. In Si/Ge, <b>$\mu_e > \mu_h$</b> always!
+        </div>
+      </div>
+
+      <table class="table-container">
+        <thead>
+          <tr>
+            <th>Property</th>
+            <th>Metals (Conductors)</th>
+            <th>Semiconductors</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Temp Coeff. ($\alpha$)</td>
+            <td><b>Positive</b> ($\alpha > 0$)</td>
+            <td><b>Negative</b> ($\alpha < 0$)</td>
+          </tr>
+          <tr>
+            <td>On Heating ($T \uparrow$)</td>
+            <td>Resistance $R \uparrow$</td>
+            <td>Resistance $R \downarrow$ (exp)</td>
+          </tr>
+          <tr>
+            <td>Physical Reason</td>
+            <td>Lattice scattering ($\tau \downarrow$)</td>
+            <td>Covalent bond break ($n_i \uparrow \uparrow$)</td>
+          </tr>
+          <tr>
+            <td>Carrier Density</td>
+            <td>Constant ($n \sim 10^{28}\text{ m}^{-3}$)</td>
+            <td>$n_i \propto T^{3/2} e^{-E_g / (2 k_B T)}$</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div style="margin-top: 10px; background: #ECFDF5; border-left: 3px solid #059669; border-radius: 6px; padding: 7px; font-size: 10.5px; color: #065F46;">
+        <b>Why Electrons are Faster than Holes:</b><br>
+        Electrons move in the empty conduction band freely, while holes move via step-by-step bound valence-electron transitions into adjacent vacancies. Thus $\mu_e \approx 2\text{ to }3 \times \mu_h$.
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

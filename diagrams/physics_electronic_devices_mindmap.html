@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1440, height=880">
+  <title>Electronic Devices: Master Concept Mindmap</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 1440px;
+      height: 880px;
+      background-color: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0F172A;
+      padding: 24px 36px;
+      overflow: hidden;
+      position: relative;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 16px;
+      border-bottom: 2px solid #E2E8F0;
+      padding-bottom: 12px;
+    }
+    .title-group h1 {
+      font-size: 24px;
+      font-weight: 800;
+      color: #0F2C59;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+    .title-group p {
+      font-size: 13px;
+      color: #64748B;
+      font-weight: 500;
+    }
+    .badge {
+      background: #0066FF;
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .mindmap-canvas {
+      width: 100%;
+      height: calc(100% - 90px);
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: stretch;
+    }
+
+    .svg-connectors {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Central Hub */
+    .central-hub {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 250px;
+      background: linear-gradient(135deg, #0F2C59 0%, #0066FF 100%);
+      color: white;
+      border-radius: 16px;
+      padding: 22px 18px;
+      text-align: center;
+      box-shadow: 0 10px 25px -5px rgba(15, 44, 89, 0.35);
+      border: 2px solid #93C5FD;
+      z-index: 10;
+    }
+    .central-hub .sub-label {
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      color: #93C5FD;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .central-hub .hub-title {
+      font-size: 17px;
+      font-weight: 800;
+      line-height: 1.25;
+      margin-bottom: 6px;
+    }
+    .central-hub .hub-desc {
+      font-size: 11px;
+      color: #E2E8F0;
+      line-height: 1.4;
+    }
+
+    /* Mindmap Column Containers */
+    .column-left, .column-right {
+      width: 410px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      z-index: 5;
+    }
+
+    .mm-card {
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      border-radius: 12px;
+      padding: 12px 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+      position: relative;
+    }
+    .mm-card::before {
+      content: "";
+      position: absolute;
+      top: 0; bottom: 0; left: 0;
+      width: 4px;
+      border-radius: 12px 0 0 12px;
+    }
+
+    .c1::before { background: #DC2626; }
+    .c2::before { background: #0066FF; }
+    .c3::before { background: #7C3AED; }
+    .c4::before { background: #0284C7; }
+    .c5::before { background: #059669; }
+    .c6::before { background: #D97706; }
+
+    .card-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+    .card-header-title {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #0F2C59;
+    }
+    .card-tag {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 10px;
+      text-transform: uppercase;
+    }
+    .tag-red { background: #FFF1F2; color: #BE123C; }
+    .tag-blue { background: #EFF6FF; color: #1D4ED8; }
+    .tag-purple { background: #F5F3FF; color: #6D28D9; }
+    .tag-cyan { background: #ECFEFF; color: #0E7490; }
+    .tag-green { background: #F0FDF4; color: #15803D; }
+    .tag-amber { background: #FFFBEB; color: #B45309; }
+
+    .formula-line {
+      font-family: "SF Pro Text", Consolas, "Courier New", monospace;
+      font-size: 12px;
+      font-weight: 700;
+      color: #0F172A;
+      background: #F8FAFC;
+      border-radius: 5px;
+      padding: 4px 8px;
+      margin: 4px 0 6px 0;
+      border: 1px solid #E2E8F0;
+    }
+
+    .bullet-list {
+      list-style: none;
+      font-size: 11px;
+      color: #334155;
+      display: flex;
+      flex-direction: column;
+      gap: 3.5px;
+      line-height: 1.35;
+    }
+    .bullet-list li {
+      position: relative;
+      padding-left: 13px;
+    }
+    .bullet-list li::before {
+      content: "▸";
+      position: absolute;
+      left: 1px;
+      color: #64748B;
+      font-size: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="title-group">
+      <h1>Electronic Devices: Master Synthesis Mindmap</h1>
+      <p>CUET UG Physics (Code 322) · 6 Core Branches: Energy Bands, Doping & Carriers, p-n Junction, Rectifiers, Zener Regulator & Optoelectronics</p>
+    </div>
+    <div class="badge">Unit 9 Mindmap</div>
+  </div>
+
+  <div class="mindmap-canvas">
+    <!-- SVG Connector Lines -->
+    <svg class="svg-connectors" viewBox="0 0 1368 730">
+      <!-- Left branches from center (684, 365) -->
+      <!-- Branch 1 (Top Left) -->
+      <path d="M 600 340 C 500 330, 480 120, 410 115" fill="none" stroke="#FCA5A5" stroke-width="2" stroke-dasharray="4,4"/>
+      <!-- Branch 2 (Mid Left) -->
+      <path d="M 580 365 C 500 365, 480 365, 410 365" fill="none" stroke="#93C5FD" stroke-width="2" stroke-dasharray="4,4"/>
+      <!-- Branch 3 (Bottom Left) -->
+      <path d="M 600 390 C 500 400, 480 610, 410 615" fill="none" stroke="#C4B5FD" stroke-width="2" stroke-dasharray="4,4"/>
+
+      <!-- Right branches from center (684, 365) -->
+      <!-- Branch 4 (Top Right) -->
+      <path d="M 768 340 C 868 330, 888 120, 958 115" fill="none" stroke="#7DD3FC" stroke-width="2" stroke-dasharray="4,4"/>
+      <!-- Branch 5 (Mid Right) -->
+      <path d="M 788 365 C 868 365, 888 365, 958 365" fill="none" stroke="#86EFAC" stroke-width="2" stroke-dasharray="4,4"/>
+      <!-- Branch 6 (Bottom Right) -->
+      <path d="M 768 390 C 868 400, 888 610, 958 615" fill="none" stroke="#FDE68A" stroke-width="2" stroke-dasharray="4,4"/>
+    </svg>
+
+    <!-- LEFT COLUMN: SOLID STATE & JUNCTION PHYSICS -->
+    <div class="column-left">
+      <!-- 1. Energy Bands in Solids -->
+      <div class="mm-card c1">
+        <div class="card-title-row">
+          <div class="card-header-title">1. Energy Bands & Classification</div>
+          <span class="card-tag tag-red">Band Theory</span>
+        </div>
+        <div class="formula-line">E_g &gt; 3 eV (Insulator) &nbsp;|&nbsp; 0 &lt; E_g &lt; 3 eV (Semiconductor) &nbsp;|&nbsp; E_g = 0 (Metal)</div>
+        <ul class="bullet-list">
+          <li><b>Band Formation:</b> Interatomic Coulomb interactions split isolated atomic levels into continuous energy bands (Valence Band &amp; Conduction Band).</li>
+          <li><b>Forbidden Gap:</b> No allowed electron states in $E_g$. For Diamond $E_g \approx 6\text{ eV}$; Silicon $E_g = 1.1\text{ eV}$; Germanium $E_g = 0.7\text{ eV}$.</li>
+          <li><b>Temperature Effect:</b> At $T = 0\text{ K}$, semiconductor acts as a perfect insulator (CB empty). As $T$ rises, electrons jump to CB, giving negative temp coefficient ($\alpha &lt; 0$).</li>
+        </ul>
+      </div>
+
+      <!-- 2. Doping & Extrinsic Semiconductors -->
+      <div class="mm-card c2">
+        <div class="card-title-row">
+          <div class="card-header-title">2. Intrinsic &amp; Extrinsic Doping</div>
+          <span class="card-tag tag-blue">Carrier Density</span>
+        </div>
+        <div class="formula-line">n_e · n_h = n_i² (Mass Action) &nbsp;|&nbsp; σ = e(n_e μ_e + n_h μ_h)</div>
+        <ul class="bullet-list">
+          <li><b>Intrinsic ($n_e = n_h = n_i$):</b> Thermal generation creates equal free electrons and valence holes. Conduction is poor at room temperature.</li>
+          <li><b>n-Type (Pentavalent Doping: P, As, Sb):</b> $N_D \approx n_e \gg n_h$. Donor level lies $\sim 0.05\text{ eV}$ just below CB. Electrons are majority carriers.</li>
+          <li><b>p-Type (Trivalent Doping: B, Al, In):</b> $N_A \approx n_h \gg n_e$. Acceptor level lies $\sim 0.05\text{ eV}$ just above VB. Holes are majority carriers. Both remain electrically neutral!</li>
+        </ul>
+      </div>
+
+      <!-- 3. p-n Junction & I-V Dynamics -->
+      <div class="mm-card c3">
+        <div class="card-title-row">
+          <div class="card-header-title">3. p-n Junction &amp; I-V Bias Dynamics</div>
+          <span class="card-tag tag-purple">Diode Barrier</span>
+        </div>
+        <div class="formula-line">V_barrier: 0.7 V (Si) | 0.3 V (Ge) &nbsp;|&nbsp; Dynamic R_d = ΔV / ΔI</div>
+        <ul class="bullet-list">
+          <li><b>Junction Formation:</b> Diffusion of majority carriers exposes immobile uncompensated ions ($N_D^+$ on n-side, $N_A^-$ on p-side), building internal field $E_i$ and depletion width $W$.</li>
+          <li><b>Forward Bias:</b> Positive to p, negative to n $\implies$ opposing external field lowers barrier to $(V_0 - V)$, narrows $W$; exponential mA current beyond knee voltage.</li>
+          <li><b>Reverse Bias:</b> Aiding external field widens barrier to $(V_0 + V)$, expands $W$; only minute minority drift saturation current $I_s \sim \mu\text{A}$ (Si: nA) flows.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- CENTRAL HUB -->
+    <div class="central-hub">
+      <div class="sub-label">CUET UG Physics · Unit 9</div>
+      <div class="hub-title">ELECTRONIC DEVICES</div>
+      <div class="hub-desc">Comprehensive synthesis of Solid State Physics, Semiconductor Diodes, Power Rectifiers, Zener Regulators &amp; Optoelectronic Transducers.</div>
+    </div>
+
+    <!-- RIGHT COLUMN: APPLICATIONS & OPTOELECTRONICS -->
+    <div class="column-right">
+      <!-- 4. Diode as Rectifier -->
+      <div class="mm-card c4">
+        <div class="card-title-row">
+          <div class="card-header-title">4. Diode Rectifiers (AC to DC)</div>
+          <span class="card-tag tag-cyan">Power Diode</span>
+        </div>
+        <div class="formula-line">f_out(HW) = f_in, η = 40.6% &nbsp;|&nbsp; f_out(FW) = 2f_in, η = 81.2%</div>
+        <ul class="bullet-list">
+          <li><b>Half-Wave Rectifier:</b> 1 diode conducts on positive AC half-cycles only; ripple factor $r = 1.21$; output frequency equals AC line frequency $f$.</li>
+          <li><b>Full-Wave Rectifier:</b> Center-tapped (2 diodes) or Bridge (4 diodes); conducts alternately on both half-cycles; ripple factor $r = 0.48$; output frequency is $2f$.</li>
+          <li><b>Capacitor Filter:</b> Shunt capacitor $C$ charges to peak voltage $V_m$ and discharges slowly through load $R_L$ ($R_L C \gg T$), drastically flattening ripple.</li>
+        </ul>
+      </div>
+
+      <!-- 5. Zener Diode & Voltage Regulation -->
+      <div class="mm-card c5">
+        <div class="card-title-row">
+          <div class="card-header-title">5. Zener Diode Voltage Regulator</div>
+          <span class="card-tag tag-green">Breakdown Diode</span>
+        </div>
+        <div class="formula-line">V_L = V_Z = const &nbsp;|&nbsp; I_S = I_Z + I_L &nbsp;|&nbsp; R_S = (V_in - V_Z) / I_S</div>
+        <ul class="bullet-list">
+          <li><b>Zener Breakdown:</b> Extremely heavy doping creates ultra-thin depletion region ($&lt; 1\,\mu\text{m}$); strong electric field ($&gt; 10^6\text{ V/m}$) ruptures covalent bonds.</li>
+          <li><b>Constant Voltage Shunt:</b> Operates strictly in reverse breakdown region. Voltage remains constant ($V_Z$) across wide swings in reverse current ($I_Z$).</li>
+          <li><b>Series Resistor $R_S$:</b> Drops fluctuating input voltage $\Delta V_{\text{in}}$ as $\Delta I_Z R_S$, safeguarding the diode from exceeding maximum power rating $P_{Z,\max}$.</li>
+        </ul>
+      </div>
+
+      <!-- 6. Special Optoelectronic Diodes -->
+      <div class="mm-card c6">
+        <div class="card-title-row">
+          <div class="card-header-title">6. Optoelectronic Junction Devices</div>
+          <span class="card-tag tag-amber">Photonic Diodes</span>
+        </div>
+        <div class="formula-line">LED: hν ≤ E_g (FB) &nbsp;|&nbsp; Photodiode: hν ≥ E_g (RB) &nbsp;|&nbsp; Solar Cell (0 Bias)</div>
+        <ul class="bullet-list">
+          <li><b>Photodiode:</b> Operated in <i>reverse bias</i>; incident photons ($h\nu &gt; E_g$) generate minority carrier pairs in depletion layer; fractional current change $\Delta I / I$ is high.</li>
+          <li><b>LED:</b> Operated in <i>forward bias</i>; spontaneous electron-hole recombination releases energy as photons ($GaAs$, $GaAsP$); requires bandgap in optical spectrum ($E_g &gt; 1.8\text{ eV}$).</li>
+          <li><b>Solar Cell:</b> Operates without external bias; photovoltage generated across open terminals ($V_{oc}$) and short-circuit current ($I_{sc}$) operates in the 4th quadrant of $I-V$.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
