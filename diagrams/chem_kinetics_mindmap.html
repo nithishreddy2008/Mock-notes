@@ -1,117 +1,323 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
+<title>Chemical Kinetics Master Mindmap</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
-  .wrap { width: 1480px; height: 1080px; position: relative; background: #fff; }
-  svg.wires { position: absolute; inset: 0; width: 1480px; height: 1080px; }
-  .center {
-    position: absolute; left: 520px; top: 470px; width: 440px; height: 104px;
-    background: #071A4D; border-radius: 16px; display: flex; flex-direction: column;
-    align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(7,26,77,.25);
-    border-bottom: 5px solid #B8FF34;
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: #F8FAFC;
+    color: #0F172A;
+    width: 1440px;
+    height: 880px;
+    overflow: hidden;
   }
-  .center .t { color: #fff; font-size: 22px; font-weight: 800; letter-spacing: .5px; text-align: center; }
-  .center .s { color: #B8FF34; font-size: 13.5px; font-weight: 700; letter-spacing: 2px; margin-top: 4px; }
+  .canvas {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    padding: 20px 28px;
+    position: relative;
+    box-shadow: none !important;
+  }
+  .header-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 10px;
+    margin-bottom: 14px;
+  }
+  .title-group h1 {
+    font-size: 22px;
+    font-weight: 800;
+    color: #071A4D;
+    letter-spacing: -0.02em;
+  }
+  .title-group p {
+    font-size: 12.5px;
+    color: #64748B;
+    font-weight: 500;
+    margin-top: 1px;
+  }
+  .tag-group {
+    display: flex;
+    gap: 8px;
+  }
+  .badge {
+    padding: 3px 9px;
+    font-size: 10.5px;
+    font-weight: 700;
+    border-radius: 5px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .badge-navy { background: #E0E7FF; color: #1E1B4B; border: 1px solid #C7D2FE; }
+  .badge-emerald { background: #ECFDF5; color: #065F46; border: 1px solid #A7F3D0; }
+
+  /* Diagram container with orthogonal lines */
+  .mindmap-container {
+    width: 1384px;
+    height: 780px;
+    position: relative;
+  }
+  svg.connectors {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+
+  /* Center Hub */
+  .center-hub {
+    position: absolute;
+    left: 512px;
+    top: 295px;
+    width: 360px;
+    height: 110px;
+    background: #071A4D;
+    border: 2px solid #1E293B;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: none !important;
+    z-index: 10;
+  }
+  .center-hub .main-title {
+    color: #FFFFFF;
+    font-size: 22px;
+    font-weight: 900;
+    letter-spacing: 0.05em;
+  }
+  .center-hub .sub-tag {
+    color: #B8FF34;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    margin-top: 5px;
+    text-transform: uppercase;
+  }
+
+  /* Cards */
   .card {
-    position: absolute; width: 465px; background: #FCFDFF; border: 1.5px solid #D5DCEA;
-    border-radius: 14px; padding: 13px 16px 12px;
+    position: absolute;
+    width: 420px;
+    background: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    border-radius: 10px;
+    padding: 12px 14px;
+    box-shadow: none !important;
+    z-index: 5;
   }
-  .card h2 { font-size: 20px; color: #071A4D; font-weight: 800; margin-bottom: 7px;
-             padding-bottom: 5px; border-bottom: 3px solid; display: inline-block; }
-  .leaf { font-size: 14.5px; color: #1B2333; margin: 5px 0; padding-left: 16px; position: relative; line-height: 1.32; }
-  .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
-  .b .leaf::before { background: #1F5EFF; }
-  .l .leaf::before { background: #7FB800; }
-  .leaf b { color: #071A4D; }
-  .b h2 { border-color: #1F5EFF; }
-  .l h2 { border-color: #7FB800; }
-  .left { left: 30px; }
-  .right { left: 985px; }
-  .exc {
-    position: absolute; left: 470px; top: 905px; width: 540px; background: #FFF3EC;
-    border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px;
+  .card h2 {
+    font-size: 14.5px;
+    font-weight: 800;
+    color: #071A4D;
+    margin-bottom: 7px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border-bottom: 1.5px solid #F1F5F9;
+    padding-bottom: 5px;
   }
-  .exc h2 { font-size: 17px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
-  .exc .leaf { font-size: 13px; margin: 3px 0; padding-left: 14px; color: #7A2A12; }
-  .exc .leaf::before { background: #D2481F; }
-  .exc b { color: #B4380F; }
+  .pill {
+    font-size: 9.5px;
+    font-weight: 800;
+    padding: 2px 6px;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+  .pill-blue { background: #EFF6FF; color: #1D4ED8; border: 1px solid #BFDBFE; }
+  .pill-green { background: #ECFDF5; color: #047857; border: 1px solid #A7F3D0; }
+  .pill-purple { background: #FAF5FF; color: #7E22CE; border: 1px solid #E9D5FF; }
+
+  .bullet-list {
+    list-style: none;
+    font-size: 11.5px;
+    color: #1E293B;
+    line-height: 1.42;
+  }
+  .bullet-list li {
+    position: relative;
+    padding-left: 14px;
+    margin-bottom: 4px;
+  }
+  .bullet-list li::before {
+    content: "▪";
+    position: absolute;
+    left: 0;
+    color: #1F5EFF;
+    font-size: 12px;
+  }
+  .bullet-list b {
+    color: #071A4D;
+  }
+  .formula-span {
+    font-family: monospace;
+    font-weight: 700;
+    background: #F1F5F9;
+    padding: 1px 4px;
+    border-radius: 3px;
+    color: #071A4D;
+  }
+
+  /* Card Positions */
+  .card-top-left { left: 40px; top: 15px; }
+  .card-mid-left { left: 40px; top: 250px; }
+  .card-bot-left { left: 40px; top: 485px; }
+
+  .card-top-right { right: 40px; top: 15px; }
+  .card-mid-right { right: 40px; top: 250px; }
+  .card-bot-right { right: 40px; top: 485px; }
+
+  /* Bottom Cheatsheet Alert */
+  .bottom-alert {
+    position: absolute;
+    left: 40px;
+    bottom: 10px;
+    width: 1304px;
+    background: #FFFBEB;
+    border: 1px solid #FDE68A;
+    border-radius: 8px;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: none !important;
+  }
+  .bottom-alert .alert-title {
+    font-size: 11.5px;
+    font-weight: 800;
+    color: #92400E;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    min-width: 160px;
+  }
+  .bottom-alert .alert-items {
+    font-size: 11.5px;
+    color: #78350F;
+    display: flex;
+    gap: 18px;
+  }
+  .bottom-alert .alert-items span b {
+    color: #B45309;
+  }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <svg class="wires" viewBox="0 0 1480 1080">
-    <path d="M 520 505 C 470 505, 495 158, 500 155" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
-    <path d="M 520 520 C 480 520, 495 438, 500 438" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 520 535 C 470 535, 495 718, 500 718" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
-    <path d="M 960 505 C 1010 505, 985 158, 980 155" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 960 520 C 1000 520, 985 438, 980 438" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
-    <path d="M 960 535 C 1010 535, 985 718, 980 718" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 740 574 C 740 700, 740 830, 740 903" fill="none" stroke="#D2481F" stroke-width="2.5" stroke-dasharray="7 5" opacity=".6"/>
-  </svg>
-
-  <div class="center">
-    <div class="t">CHEMICAL KINETICS</div>
-    <div class="s">UNIT III &#183; COMPLETE CHAPTER MAP</div>
+<div class="canvas">
+  <div class="header-bar">
+    <div class="title-group">
+      <h1>UNIT III: CHEMICAL KINETICS — MASTER ARCHITECTURAL MINDMAP</h1>
+      <p>Comprehensive Synthesis of Reaction Rates, Rate Laws, Integrated Dynamics, Half-Life &amp; Arrhenius Theory</p>
+    </div>
+    <div class="tag-group">
+      <span class="badge badge-navy">NTA CUET UG Syllabus</span>
+      <span class="badge badge-emerald">Master Synthesis</span>
+    </div>
   </div>
 
-  <div class="card left b" style="top:58px">
-    <h2>Rate of a Reaction</h2>
-    <div class="leaf"><b>Average rate:</b> change over a chosen interval &#8212; &#916;[R]/&#916;t</div>
-    <div class="leaf"><b>Instantaneous rate:</b> rate at one moment &#8212; slope of the tangent, &#8722;d[R]/dt</div>
-    <div class="leaf"><b>Stoichiometry matters:</b> divide by the coefficient &#8212; rate = &#8722;&#189;d[N&#8322;]/dt = +&#189;d[NH&#8323;]/dt</div>
-    <div class="leaf"><b>Units:</b> mol L⁻¹ s⁻¹ (always the same, whatever the order)</div>
-  </div>
+  <div class="mindmap-container">
+    <!-- SVG CONNECTING ORTHOGONAL LINES -->
+    <svg class="connectors" viewBox="0 0 1384 780">
+      <!-- Left Connections -->
+      <path d="M 512 325 L 486 325 Q 480 325 480 319 L 480 115 L 460 115" fill="none" stroke="#94A3B8" stroke-width="2"/>
+      <path d="M 512 350 L 460 350" fill="none" stroke="#94A3B8" stroke-width="2"/>
+      <path d="M 512 375 L 486 375 Q 480 375 480 381 L 480 580 L 460 580" fill="none" stroke="#94A3B8" stroke-width="2"/>
 
-  <div class="card left l" style="top:340px">
-    <h2>Rate Law, Order &amp; Molecularity</h2>
-    <div class="leaf"><b>Rate law:</b> Rate = k[A]<sup>x</sup>[B]<sup>y</sup> &#8212; exponents come from EXPERIMENT only</div>
-    <div class="leaf"><b>Order:</b> x + y &#8212; can be 0, fractional, even negative; found from data</div>
-    <div class="leaf"><b>k's units shift with order:</b> zero: mol L⁻¹ s⁻¹; first: s⁻¹; second: L mol⁻¹ s⁻¹</div>
-    <div class="leaf"><b>Molecularity:</b> molecules colliding in one elementary step &#8212; whole number 1-3, never zero</div>
-    <div class="leaf"><b>Order = experimental; molecularity = theoretical</b> &#8212; they need not match</div>
-  </div>
+      <!-- Right Connections -->
+      <path d="M 872 325 L 898 325 Q 904 325 904 319 L 904 115 L 924 115" fill="none" stroke="#94A3B8" stroke-width="2"/>
+      <path d="M 872 350 L 924 350" fill="none" stroke="#94A3B8" stroke-width="2"/>
+      <path d="M 872 375 L 898 375 Q 904 375 904 381 L 904 580 L 924 580" fill="none" stroke="#94A3B8" stroke-width="2"/>
+    </svg>
 
-  <div class="card left b" style="top:638px">
-    <h2>Integrated Laws &amp; Half-Life</h2>
-    <div class="leaf"><b>Zero order:</b> [A] = [A]&#8320; &#8722; kt; t&#189; = [A]&#8320;/2k &#8212; falls as reaction proceeds</div>
-    <div class="leaf"><b>First order:</b> k = (2.303/t) log([A]&#8320;/[A]); t&#189; = 0.693/k &#8212; constant, concentration-independent</div>
-    <div class="leaf"><b>First-order plots:</b> log[A] vs t is straight; [A] vs t curves down</div>
-    <div class="leaf"><b>75% done = two half-lives</b> &#8212; add t&#189;'s, don't double the rate</div>
-  </div>
+    <!-- CENTER HUB -->
+    <div class="center-hub">
+      <div class="main-title">CHEMICAL KINETICS</div>
+      <div class="sub-tag">NCERT CLASS 12 · CUET UG CORE</div>
+    </div>
 
-  <div class="card right l" style="top:58px">
-    <h2>Factors That Change the Rate</h2>
-    <div class="leaf"><b>Concentration:</b> more crowding, more collisions, faster (until order says otherwise)</div>
-    <div class="leaf"><b>Temperature:</b> rough rule &#8212; every 10&#176;C rise nearly doubles the rate (k climbs via Arrhenius)</div>
-    <div class="leaf"><b>Catalyst:</b> offers a lower-energy path; speeds up forward AND backward equally; never consumed</div>
-    <div class="leaf"><b>Surface area &amp; pressure:</b> powdered solids and compressed gases react faster</div>
-  </div>
+    <!-- 1. TOP-LEFT: RATE OF REACTION -->
+    <div class="card card-top-left">
+      <h2><span>1. Rate of Reaction</span> <span class="pill pill-blue">Average vs Instant</span></h2>
+      <ul class="bullet-list">
+        <li><b>Average Rate (rav):</b> <span class="formula-span">rav = −Δ[R]/Δt = +Δ[P]/Δt</span> over macroscopic time interval.</li>
+        <li><b>Instantaneous Rate (rinst):</b> <span class="formula-span">rinst = −d[R]/dt = +d[P]/dt</span> (tangent slope at time t).</li>
+        <li><b>Stoichiometric Equivalence:</b> For <span class="formula-span">a A + b B → c C + d D</span>:
+          <span class="formula-span">Rate = −(1/a)d[A]/dt = −(1/b)d[B]/dt = +(1/c)d[C]/dt = +(1/d)d[D]/dt</span>.</li>
+        <li><b>Rate Units:</b> Always <span class="formula-span">mol · L⁻¹ · s⁻¹</span> (or atm/s for gaseous reactions).</li>
+      </ul>
+    </div>
 
-  <div class="card right b" style="top:362px">
-    <h2>Pseudo First Order</h2>
-    <div class="leaf"><b>Trick:</b> a second-order reaction where one reactant (usually water) is in such huge excess that its concentration barely moves</div>
-    <div class="leaf"><b>Ester hydrolysis:</b> CH&#8323;COOC&#8322;H&#8325; + H&#8322;O &#8594; acid + alcohol &#8212; water stays ~55.5 M, so rate depends only on [ester]</div>
-    <div class="leaf"><b>Sugar inversion:</b> sucrose + water, acid-catalysed &#8212; again water's excess hides it</div>
-    <div class="leaf"><b>Test for it:</b> kinetics that behave first-order despite a two-molecule equation</div>
-  </div>
+    <!-- 2. MID-LEFT: RATE LAW & ORDER -->
+    <div class="card card-mid-left">
+      <h2><span>2. Rate Law, Order &amp; Molecularity</span> <span class="pill pill-blue">Experimental Law</span></h2>
+      <ul class="bullet-list">
+        <li><b>Rate Law:</b> <span class="formula-span">Rate = k [A]ˣ [B]ʸ</span> (powers x, y found strictly from experiment).</li>
+        <li><b>Overall Order:</b> <span class="formula-span">n = x + y</span> (can be zero, integer, fraction, or negative).</li>
+        <li><b>Units of Rate Constant (k):</b> <span class="formula-span">(mol L⁻¹)¹⁻ⁿ · s⁻¹</span>.
+          • Zero: <span class="formula-span">mol L⁻¹ s⁻¹</span> | First: <span class="formula-span">s⁻¹</span> | Second: <span class="formula-span">L mol⁻¹ s⁻¹</span>.</li>
+        <li><b>Molecularity:</b> Number of species colliding in an elementary step (1, 2, or 3 only; never zero or fractional).</li>
+      </ul>
+    </div>
 
-  <div class="card right l" style="top:660px">
-    <h2>Arrhenius &amp; Collision Theory</h2>
-    <div class="leaf"><b>Arrhenius:</b> k = A e<sup>&#8722;Ea/RT</sup>; log form: log k = log A &#8722; E<sub>a</sub>/2.303RT</div>
-    <div class="leaf"><b>Two-temperature shortcut:</b> log(k&#8322;/k&#8321;) = E<sub>a</sub>(T&#8322;&#8722;T&#8321;)/2.303RT&#8321;T&#8322;</div>
-    <div class="leaf"><b>Slope of log k vs 1/T</b> = &#8722;E<sub>a</sub>/2.303R &#8212; read E<sub>a</sub> straight off the graph</div>
-    <div class="leaf"><b>Collision theory:</b> rate = fraction of collisions with energy &#8805; threshold AND correct orientation; weak at explaining complex molecules (treats them as hard spheres)</div>
-  </div>
+    <!-- 3. BOT-LEFT: INTEGRATED LAWS & HALF-LIFE -->
+    <div class="card card-bot-left">
+      <h2><span>3. Integrated Laws &amp; Half-Life</span> <span class="pill pill-green">Mathematical Dynamics</span></h2>
+      <ul class="bullet-list">
+        <li><b>Zero Order:</b> <span class="formula-span">[R] = [R]₀ − kt</span> | <span class="formula-span">t₁/₂ = [R]₀ / (2k)</span> (proportional to [R]₀). Goes to 100% completion in <span class="formula-span">t₁₀₀% = 2 t₁/₂</span>.</li>
+        <li><b>First Order:</b> <span class="formula-span">k = (2.303/t) log([R]₀/[R])</span> | <span class="formula-span">t₁/₂ = 0.693 / k</span> (independent of [R]₀). Never completes (<span class="formula-span">t₁₀₀% = ∞</span>).</li>
+        <li><b>Progressions:</b> <span class="formula-span">t₇₅% = 2 × t₁/₂</span> | <span class="formula-span">t₈₇.₅% = 3 × t₁/₂</span> | <span class="formula-span">t₉₉.₉% ≈ 10 × t₁/₂</span>.</li>
+        <li><b>Radioactive Decay:</b> All natural/artificial nuclear decays follow 1st order.</li>
+      </ul>
+    </div>
 
-  <div class="exc">
-    <h2>WATCH-OUTS THAT SET MCQ TRAPS</h2>
-    <div class="leaf"><b>Order is experimental:</b> never read exponents off the balanced equation</div>
-    <div class="leaf"><b>k's units are a fingerprint:</b> they reveal the order when the question hides it</div>
-    <div class="leaf"><b>First-order t&#189; is constant:</b> independent of starting concentration (zero-order t&#189; is not)</div>
-    <div class="leaf"><b>Catalyst changes neither &#916;H nor K</b> — it lowers E<sub>a</sub> for both directions equally</div>
+    <!-- 4. TOP-RIGHT: PSEUDO-FIRST ORDER -->
+    <div class="card card-top-right">
+      <h2><span>4. Pseudo-First-Order Reactions</span> <span class="pill pill-green">Solvent Excess</span></h2>
+      <ul class="bullet-list">
+        <li><b>Concept:</b> Higher-order reaction behaving as first order because one reactant is present in huge stoichiometric excess ([B] ≈ const).</li>
+        <li><b>Effective Rate Constant:</b> <span class="formula-span">Rate = k' [A] [B] = k [A]</span>, where <span class="formula-span">k = k' [B]ₑₓ𝚌ₑₛₛ</span>.</li>
+        <li><b>Ester Hydrolysis:</b> <span class="formula-span">CH₃COOC₂H₅ + H₂O(excess) ⟶ CH₃COOH + C₂H₅OH</span>.</li>
+        <li><b>Cane Sugar Inversion:</b> <span class="formula-span">C₁₂H₂₂O₁₁ + H₂O(excess) ⟶ Glucose + Fructose</span>. Dextrorotatory sugar hydrolyses into a laevorotatory mixture.</li>
+      </ul>
+    </div>
+
+    <!-- 5. MID-RIGHT: ARRHENIUS EQUATION -->
+    <div class="card card-mid-right">
+      <h2><span>5. Arrhenius Theory &amp; Ea</span> <span class="pill pill-purple">Temperature Impact</span></h2>
+      <ul class="bullet-list">
+        <li><b>Exponential Formulation:</b> <span class="formula-span">k = A · e^(−Ea / RT)</span> (Boltzmann fraction: <span class="formula-span">e^(−Ea/RT)</span>).</li>
+        <li><b>Logarithmic Form:</b> <span class="formula-span">log k = log A − (Ea / 2.303 R T)</span> (slope of log k vs 1/T is <span class="formula-span">−Ea / 2.303 R</span>).</li>
+        <li><b>Two-Temperature Equation:</b> <span class="formula-span">log(k₂ / k₁) = (Ea / 2.303 R) · [(T₂ − T₁) / (T₁ T₂)]</span>.</li>
+        <li><b>Temperature Coefficient:</b> A 10°C rise doubles or triples k because the fraction of molecules with <span class="formula-span">E ≥ Ea</span> doubles.</li>
+      </ul>
+    </div>
+
+    <!-- 6. BOT-RIGHT: COLLISION THEORY & CATALYSIS -->
+    <div class="card card-bot-right">
+      <h2><span>6. Collision Theory &amp; Catalysis</span> <span class="pill pill-purple">Reaction Mechanics</span></h2>
+      <ul class="bullet-list">
+        <li><b>Rate Equation:</b> <span class="formula-span">Rate = P · Z_AB · e^(−Ea / RT)</span> (P = steric / orientation factor; Z_AB = collision frequency).</li>
+        <li><b>Requirements for Effective Collision:</b> (1) Energy Barrier (<span class="formula-span">E ≥ Threshold Energy ET</span>), (2) Proper steric orientation.</li>
+        <li><b>Role of Catalyst:</b> Provides an alternate mechanism with a lower activation energy (<span class="formula-span">Ea,cat &lt; Ea</span>). Speeds up forward and reverse rates equally.</li>
+        <li><b>Thermodynamic Invariance:</b> A catalyst does <b>not alter ΔH, ΔG, or equilibrium constant Kc</b>!</li>
+      </ul>
+    </div>
+
+    <!-- BOTTOM ALERT STRIP -->
+    <div class="bottom-alert">
+      <div class="alert-title">⚠ EXAM TRAP CLINIC:</div>
+      <div class="alert-items">
+        <span><b>Order vs Coefficients:</b> Exponents in rate law are strictly experimental; never equate them to balanced coefficients!</span>
+        <span><b>1st Order t₁/₂:</b> Constant and independent of [R]₀. Doubling [R]₀ has zero effect on t₁/₂.</span>
+        <span><b>Catalyst Impact:</b> Alters rate and Ea, but leaves ΔH and Kc completely unchanged!</span>
+      </div>
+    </div>
   </div>
 </div>
 </body>
