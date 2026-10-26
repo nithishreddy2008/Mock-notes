@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Natural Selection Types and Hardy-Weinberg Equilibrium</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* Header */
+  .header {
+    height: 72px;
+    background: #071A4D;
+    padding: 0 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 4px solid #10B981;
+  }
+  .header-left {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+  }
+  .header-title {
+    color: #FFFFFF;
+    font-size: 23px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+  }
+  .header-tag {
+    background: #1F5EFF;
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+  }
+  .header-right {
+    color: #A7F3D0;
+    font-size: 12.5px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+  }
+
+  /* Main Container */
+  .container {
+    width: 1440px;
+    height: 808px;
+    padding: 18px 28px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  /* Section Card */
+  .panel {
+    background: #FFFFFF;
+    border: 1.5px solid #E2E8F0;
+    border-radius: 10px;
+    padding: 16px 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: none !important;
+  }
+
+  .panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #F1F5F9;
+    margin-bottom: 14px;
+  }
+  .panel-title {
+    font-size: 16.5px;
+    font-weight: 800;
+    color: #071A4D;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .panel-badge {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 5px;
+  }
+  .badge-blue { background: #EFF6FF; color: #1F5EFF; border: 1px solid #BFDBFE; }
+  .badge-green { background: #ECFDF5; color: #059669; border: 1px solid #A7F3D0; }
+
+  /* Selection Curves Layout */
+  .selection-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+  .curve-card {
+    background: #F8FAFC;
+    border: 1.5px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 10px 10px 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .curve-title {
+    font-size: 13.5px;
+    font-weight: 800;
+    margin-bottom: 4px;
+    text-align: center;
+  }
+  .curve-subtitle {
+    font-size: 10.5px;
+    color: #64748B;
+    font-weight: 600;
+    margin-bottom: 6px;
+    text-align: center;
+  }
+  .curve-svg {
+    width: 180px;
+    height: 105px;
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    margin-bottom: 8px;
+  }
+  .curve-desc {
+    font-size: 11px;
+    color: #1E293B;
+    line-height: 1.35;
+    text-align: center;
+  }
+  .curve-desc b { color: #071A4D; }
+
+  /* Industrial Melanism Banner */
+  .case-banner {
+    background: #F0FDF4;
+    border: 1.5px solid #86EFAC;
+    border-radius: 8px;
+    padding: 12px 14px;
+    margin-top: auto;
+  }
+  .case-banner-title {
+    font-size: 13px;
+    font-weight: 800;
+    color: #166534;
+    margin-bottom: 6px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .case-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    font-size: 11.5px;
+    line-height: 1.35;
+  }
+  .case-box {
+    background: #FFFFFF;
+    border: 1px solid #DCFCE7;
+    border-radius: 6px;
+    padding: 6px 10px;
+  }
+  .case-box b { color: #0F172A; }
+
+  /* Hardy-Weinberg Math Box */
+  .math-box {
+    background: #EFF6FF;
+    border: 1.5px solid #BFDBFE;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 14px;
+  }
+  .math-formula {
+    font-size: 17px;
+    font-weight: 800;
+    color: #1E40AF;
+    text-align: center;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+  }
+  .math-legend {
+    display: flex;
+    justify-content: space-around;
+    font-size: 11.5px;
+    color: #1E3A8A;
+    font-weight: 600;
+    border-top: 1px dashed #93C5FD;
+    padding-top: 6px;
+  }
+
+  /* 5 Destabilizing Factors */
+  .factors-title {
+    font-size: 13px;
+    font-weight: 800;
+    color: #071A4D;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .factors-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .factor-item {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 12px;
+    background: #F8FAFC;
+    border: 1.5px solid #E2E8F0;
+    border-left-width: 4px;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 11.5px;
+    line-height: 1.35;
+    align-items: center;
+  }
+  .factor-name {
+    font-weight: 800;
+    color: #071A4D;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .factor-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+  }
+
+  /* Callout Warning */
+  .trap-alert {
+    background: #FEF3C7;
+    border: 1.5px solid #FCD34D;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 11.5px;
+    color: #78350F;
+    line-height: 1.35;
+    margin-top: auto;
+  }
+  .trap-alert b { color: #92400E; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <div class="header-title">NATURAL SELECTION TYPES &amp; HARDY-WEINBERG DYNAMICS</div>
+    <div class="header-tag">NCERT Chapter 7 · Unit VII</div>
+  </div>
+  <div class="header-right">POPULATION GENETICS &amp; MECHANISMS OF EVOLUTION</div>
+</div>
+
+<div class="container">
+  <!-- LEFT PANEL: Natural Selection Operation Modes -->
+  <div class="panel">
+    <div class="panel-header">
+      <div class="panel-title">
+        <span>Part 1: Three Operation Modes of Natural Selection</span>
+      </div>
+      <span class="panel-badge badge-blue">Phenotypic Distribution Shifts</span>
+    </div>
+
+    <div class="selection-grid">
+      <!-- 1. Stabilising -->
+      <div class="curve-card" style="border-top: 3px solid #10B981;">
+        <div class="curve-title" style="color: #059669;">Stabilising</div>
+        <div class="curve-subtitle">Peak gets higher &amp; narrower</div>
+        <svg class="curve-svg" viewBox="0 0 180 105">
+          <!-- baseline -->
+          <line x1="15" y1="90" x2="165" y2="90" stroke="#94A3B8" stroke-width="1.5"/>
+          <!-- original curve (dashed) -->
+          <path d="M 25 90 Q 90 25 155 90" fill="none" stroke="#CBD5E1" stroke-width="2" stroke-dasharray="4 3"/>
+          <!-- selected curve (taller, narrower) -->
+          <path d="M 45 90 Q 90 8 135 90" fill="rgba(16, 185, 129, 0.15)" stroke="#10B981" stroke-width="2.5"/>
+          <circle cx="90" cy="8" r="3" fill="#10B981"/>
+          <!-- text -->
+          <text x="90" y="78" text-anchor="middle" font-size="9" fill="#065F46" font-weight="700">Mean favoured</text>
+        </svg>
+        <div class="curve-desc">
+          More individuals acquire <b>mean character value</b>. Eliminates peripheral extremes.<br>
+          <i>E.g. Human birth weight (2.5–3.5 kg has highest survival).</i>
+        </div>
+      </div>
+
+      <!-- 2. Directional -->
+      <div class="curve-card" style="border-top: 3px solid #1F5EFF;">
+        <div class="curve-title" style="color: #1F5EFF;">Directional</div>
+        <div class="curve-subtitle">Peak shifts in one direction</div>
+        <svg class="curve-svg" viewBox="0 0 180 105">
+          <!-- baseline -->
+          <line x1="15" y1="90" x2="165" y2="90" stroke="#94A3B8" stroke-width="1.5"/>
+          <!-- original curve (dashed) -->
+          <path d="M 25 90 Q 75 30 135 90" fill="none" stroke="#CBD5E1" stroke-width="2" stroke-dasharray="4 3"/>
+          <!-- selected curve (shifted right) -->
+          <path d="M 60 90 Q 120 20 170 90" fill="rgba(31, 94, 255, 0.15)" stroke="#1F5EFF" stroke-width="2.5"/>
+          <!-- arrow showing shift -->
+          <line x1="80" y1="45" x2="115" y2="45" stroke="#1F5EFF" stroke-width="2" marker-end="url(#arr-b)"/>
+          <text x="120" y="78" text-anchor="middle" font-size="9" fill="#1E40AF" font-weight="700">One extreme</text>
+        </svg>
+        <div class="curve-desc">
+          More individuals acquire value <b>other than mean</b>. Directional replacement.<br>
+          <i>E.g. Industrial melanism (dark moths), DDT resistance in mosquitoes.</i>
+        </div>
+      </div>
+
+      <!-- 3. Disruptive -->
+      <div class="curve-card" style="border-top: 3px solid #F59E0B;">
+        <div class="curve-title" style="color: #D97706;">Disruptive</div>
+        <div class="curve-subtitle">Two distinct peaks form</div>
+        <svg class="curve-svg" viewBox="0 0 180 105">
+          <!-- baseline -->
+          <line x1="15" y1="90" x2="165" y2="90" stroke="#94A3B8" stroke-width="1.5"/>
+          <!-- original curve (dashed) -->
+          <path d="M 25 90 Q 90 25 155 90" fill="none" stroke="#CBD5E1" stroke-width="2" stroke-dasharray="4 3"/>
+          <!-- selected curve (two peaks) -->
+          <path d="M 30 90 Q 55 25 90 65 Q 125 25 150 90" fill="rgba(245, 158, 11, 0.15)" stroke="#D97706" stroke-width="2.5"/>
+          <circle cx="55" cy="25" r="3" fill="#D97706"/>
+          <circle cx="125" cy="25" r="3" fill="#D97706"/>
+          <text x="90" y="82" text-anchor="middle" font-size="9" fill="#92400E" font-weight="700">Both extremes</text>
+        </svg>
+        <div class="curve-desc">
+          More individuals acquire <b>peripheral character values</b> at both ends of distribution curve.<br>
+          <i>Can lead to polymorphism and sympatric speciation.</i>
+        </div>
+      </div>
+    </div>
+
+    <!-- Live Case: Industrial Melanism -->
+    <div class="case-banner">
+      <div class="case-banner-title">
+        <span>Classic Case Study: Industrial Melanism in <i>Biston betularia</i> (England)</span>
+        <span style="font-size: 11px; background: #DCFCE7; color: #15803D; padding: 2px 6px; border-radius: 4px;">Directional Selection</span>
+      </div>
+      <div class="case-grid">
+        <div class="case-box">
+          <b>Pre-Industrialisation (1850s):</b><br>
+          • Lichens grew thick on tree trunks (no smoke/pollution).<br>
+          • <b>White-winged moths</b> camouflaged against light bark.<br>
+          • Dark melanic moths (carbonaria) easily spotted &amp; eaten by predatory birds.
+        </div>
+        <div class="case-box">
+          <b>Post-Industrialisation (1920s):</b><br>
+          • Coal smoke &amp; soot covered tree trunks; lichens died off.<br>
+          • <b>Dark melanic moths</b> camouflaged on dark soot-covered bark.<br>
+          • White moths stood out and were predated → Dark moth population surged.
+        </div>
+      </div>
+      <div style="font-size: 10.5px; color: #166534; margin-top: 6px; font-weight: 600;">
+        Key NCERT Insight: No variant was completely wiped out. Selection is proportional, reversible, and acts on existing genetic variations!
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT PANEL: Hardy-Weinberg Principle & 5 Destabilizing Forces -->
+  <div class="panel">
+    <div class="panel-header">
+      <div class="panel-title">
+        <span>Part 2: Hardy-Weinberg Principle &amp; Evolutionary Forces</span>
+      </div>
+      <span class="panel-badge badge-green">Genetic Equilibrium</span>
+    </div>
+
+    <!-- Math Box -->
+    <div class="math-box">
+      <div class="math-formula">
+        p<sup>2</sup> (AA) + 2pq (Aa) + q<sup>2</sup> (aa) = 1 &nbsp;&nbsp;|&nbsp;&nbsp; p + q = 1
+      </div>
+      <div class="math-legend">
+        <span><b>p</b> = Frequency of Allele A</span>
+        <span><b>q</b> = Frequency of Allele a</span>
+        <span><b>2pq</b> = Heterozygotes (Aa)</span>
+        <span><b>p<sup>2</sup> + 2pq</b> = Dominant Phenotype</span>
+      </div>
+    </div>
+
+    <div class="factors-title">
+      <span>Five Factors Known to Affect Hardy-Weinberg Equilibrium</span>
+      <span style="font-size: 11px; color: #64748B; font-weight: 600;">Disturbance leads to Evolution</span>
+    </div>
+
+    <div class="factors-list">
+      <!-- Factor 1 -->
+      <div class="factor-item" style="border-left-color: #1F5EFF;">
+        <div class="factor-name">
+          <div class="factor-dot" style="background: #1F5EFF;"></div>
+          1. Gene Migration
+        </div>
+        <div>
+          When migration of a section of population happens to another place, gene frequencies change in both original and new populations. Repeated movement is <b>gene flow</b>.
+        </div>
+      </div>
+
+      <!-- Factor 2 -->
+      <div class="factor-item" style="border-left-color: #EF4444;">
+        <div class="factor-name">
+          <div class="factor-dot" style="background: #EF4444;"></div>
+          2. Genetic Drift
+        </div>
+        <div>
+          Change in allele frequency occurring purely <b>by chance</b> in <b>small populations</b>. Extreme form: original drifted individuals become founders → <b>Founder Effect</b>.
+        </div>
+      </div>
+
+      <!-- Factor 3 -->
+      <div class="factor-item" style="border-left-color: #8B5CF6;">
+        <div class="factor-name">
+          <div class="factor-dot" style="background: #8B5CF6;"></div>
+          3. Mutation
+        </div>
+        <div>
+          Advantageous mutations are rare, but critical for long-term raw material. Hugo de Vries proposed <b>Saltation</b> (single-step large mutation) drives sudden speciation.
+        </div>
+      </div>
+
+      <!-- Factor 4 -->
+      <div class="factor-item" style="border-left-color: #F59E0B;">
+        <div class="factor-name">
+          <div class="factor-dot" style="background: #F59E0B;"></div>
+          4. Recombination
+        </div>
+        <div>
+          Crossing over during pachytene of meiosis produces novel combinations of parental alleles without changing total gene pool frequencies.
+        </div>
+      </div>
+
+      <!-- Factor 5 -->
+      <div class="factor-item" style="border-left-color: #10B981;">
+        <div class="factor-name">
+          <div class="factor-dot" style="background: #10B981;"></div>
+          5. Natural Selection
+        </div>
+        <div>
+          Differential reproduction: heritable variations that enable better survival produce more progeny. Selection shifts gene pool toward higher adaptive fitness.
+        </div>
+      </div>
+    </div>
+
+    <!-- Trap Alert Box -->
+    <div class="trap-alert">
+      <b>CUET UG Exam Trap Alert:</b><br>
+      • If homozygous recessive (aa) frequency is given as 16% (0.16), then q = √0.16 = 0.4, p = 0.6.<br>
+      • Heterozygotes (Aa) = 2pq = 2(0.6)(0.4) = <b>0.48 (48%)</b>, NOT 0.24!<br>
+      • Total Dominant Phenotype = p<sup>2</sup> + 2pq = 0.36 + 0.48 = <b>0.84 (84%)</b>.
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

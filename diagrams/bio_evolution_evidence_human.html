@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Evidence for Evolution and Human Evolution Lineage</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* Header */
+  .header {
+    height: 72px;
+    background: #071A4D;
+    padding: 0 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 4px solid #1F5EFF;
+  }
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .header-title {
+    color: #FFFFFF;
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+  }
+  .header-tag {
+    background: #10B981;
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 9px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    white-space: nowrap;
+  }
+  .header-right {
+    color: #93C5FD;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    white-space: nowrap;
+  }
+
+  /* Container */
+  .container {
+    width: 1440px;
+    height: 808px;
+    padding: 16px 28px;
+    display: grid;
+    grid-template-columns: 1fr 1.08fr;
+    gap: 20px;
+  }
+
+  /* Section Card */
+  .panel {
+    background: #FFFFFF;
+    border: 1.5px solid #E2E8F0;
+    border-radius: 10px;
+    padding: 14px 18px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: none !important;
+  }
+
+  .panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #F1F5F9;
+    margin-bottom: 12px;
+  }
+  .panel-title {
+    font-size: 16px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .panel-badge {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 5px;
+  }
+  .badge-purple { background: #F5F3FF; color: #7C3AED; border: 1px solid #DDD6FE; }
+  .badge-amber { background: #FFFBEB; color: #D97706; border: 1px solid #FDE68A; }
+
+  /* Homology vs Analogy Comparison Grid */
+  .ha-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+  .ha-card {
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 11.5px;
+    line-height: 1.35;
+    display: flex;
+    flex-direction: column;
+  }
+  .ha-card.homology {
+    background: #EFF6FF;
+    border: 1.5px solid #BFDBFE;
+    border-top: 3px solid #1F5EFF;
+  }
+  .ha-card.analogy {
+    background: #ECFDF5;
+    border: 1.5px solid #A7F3D0;
+    border-top: 3px solid #059669;
+  }
+  .ha-title {
+    font-size: 13.5px;
+    font-weight: 800;
+    margin-bottom: 4px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .ha-card.homology .ha-title { color: #1E40AF; }
+  .ha-card.analogy .ha-title { color: #065F46; }
+  .ha-subtitle {
+    font-size: 11px;
+    font-weight: 700;
+    color: #475569;
+    margin-bottom: 6px;
+  }
+
+  .example-list {
+    margin-top: 6px;
+    padding-top: 6px;
+    border-top: 1px dashed rgba(0,0,0,0.1);
+    font-size: 11px;
+  }
+  .example-list b { color: #0F172A; }
+
+  /* Adaptive Radiation Banner */
+  .ar-banner {
+    background: #FAF5FF;
+    border: 1.5px solid #E9D5FF;
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin-bottom: 12px;
+    font-size: 11.5px;
+    line-height: 1.35;
+  }
+  .ar-title {
+    font-size: 12.5px;
+    font-weight: 800;
+    color: #6B21A8;
+    margin-bottom: 4px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .ar-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 6px;
+  }
+  .ar-item {
+    background: #FFFFFF;
+    border: 1px solid #F3E8FF;
+    border-radius: 6px;
+    padding: 6px 10px;
+  }
+  .ar-item b { color: #581C87; }
+
+  /* Embryological & Palaeontological Evidence */
+  .evidence-sub {
+    background: #F8FAFC;
+    border: 1.5px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 11.5px;
+    line-height: 1.35;
+    margin-top: auto;
+  }
+  .evidence-sub-title {
+    font-size: 12px;
+    font-weight: 800;
+    color: #071A4D;
+    margin-bottom: 4px;
+  }
+  .evidence-sub b { color: #1E293B; }
+
+  /* Human Evolution Ladder (RIGHT PANEL) */
+  .ladder-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+  .ladder-step {
+    display: grid;
+    grid-template-columns: 125px 95px 1fr;
+    gap: 10px;
+    background: #F8FAFC;
+    border: 1.5px solid #E2E8F0;
+    border-left-width: 4px;
+    border-radius: 6px;
+    padding: 7px 10px;
+    align-items: center;
+    font-size: 11px;
+    line-height: 1.3;
+  }
+  .ladder-step.habilis { border-left-color: #3B82F6; background: #EFF6FF; }
+  .ladder-step.erectus { border-left-color: #F59E0B; background: #FFFBEB; }
+  .ladder-step.neander { border-left-color: #8B5CF6; background: #F5F3FF; }
+  .ladder-step.sapiens { border-left-color: #10B981; background: #ECFDF5; }
+
+  .species-name {
+    font-weight: 800;
+    color: #071A4D;
+    font-size: 12px;
+  }
+  .species-age {
+    font-size: 10.5px;
+    font-weight: 700;
+    color: #64748B;
+  }
+  .species-brain {
+    font-size: 11px;
+    font-weight: 800;
+    padding: 2px 6px;
+    border-radius: 4px;
+    text-align: center;
+    display: inline-block;
+  }
+  .brain-blue { background: #DBEAFE; color: #1D4ED8; }
+  .brain-amber { background: #FEF3C7; color: #B45309; }
+  .brain-purple { background: #EDE9FE; color: #6D28D9; }
+  .brain-green { background: #D1FAE5; color: #047857; }
+
+  /* Summary Box */
+  .human-trap-box {
+    background: #FFF7ED;
+    border: 1.5px solid #FFEDD5;
+    border-left: 4px solid #EA580C;
+    border-radius: 6px;
+    padding: 9px 12px;
+    margin-top: auto;
+    font-size: 11px;
+    line-height: 1.35;
+    color: #7C2D12;
+  }
+  .human-trap-box b { color: #9A3412; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <div class="header-title">EVIDENCES FOR EVOLUTION &amp; HUMAN LINEAGE</div>
+    <div class="header-tag">NCERT Chapter 7 · Comparative Anatomy &amp; Hominid Evolution</div>
+  </div>
+  <div class="header-right">CLASS 12 BIOLOGY · HIGH-YIELD BLUEPRINT</div>
+</div>
+
+<div class="container">
+  <!-- LEFT PANEL: Comparative Anatomy & Adaptive Radiation -->
+  <div class="panel">
+    <div class="panel-header">
+      <div class="panel-title">Part 1: Morphological &amp; Anatomical Evidences</div>
+      <span class="panel-badge badge-purple">Divergent vs Convergent</span>
+    </div>
+
+    <!-- Homology vs Analogy -->
+    <div class="ha-grid">
+      <!-- Homology -->
+      <div class="ha-card homology">
+        <div class="ha-title">
+          <span>Homologous Organs</span>
+          <span style="font-size: 10px; background: #DBEAFE; padding: 2px 5px; border-radius: 4px;">DIVERGENT</span>
+        </div>
+        <div class="ha-subtitle">Same basic origin/structure · Different functions</div>
+        <div>
+          Indicates <b>common ancestry</b> with functional diversification into different ecological niches.
+        </div>
+        <div class="example-list">
+          <b>Key NCERT Examples:</b><br>
+          • <b>Vertebrate Forelimbs:</b> Whale flipper, bat wing, cheetah leg, human arm (same bones: humerus, radius, ulna, carpals, metacarpals, phalanges).<br>
+          • <b>Plants:</b> Thorns of <i>Bougainvillea</i> and Tendrils of <i>Cucurbita</i> (both axillary bud modifications).<br>
+          • Vertebrate heart and brain anatomy.
+        </div>
+      </div>
+
+      <!-- Analogy -->
+      <div class="ha-card analogy">
+        <div class="ha-title">
+          <span>Analogous Organs</span>
+          <span style="font-size: 10px; background: #D1FAE5; padding: 2px 5px; border-radius: 4px;">CONVERGENT</span>
+        </div>
+        <div class="ha-subtitle">Different origin/structure · Similar functions</div>
+        <div>
+          Indicates <b>unrelated ancestors</b> adapting to identical environmental demands or habitats.
+        </div>
+        <div class="example-list">
+          <b>Key NCERT Examples:</b><br>
+          • <b>Wings:</b> Butterfly (folds of chitinous exoskeleton) vs Bird (feathered forelimb with bones).<br>
+          • <b>Eyes:</b> Octopus eye (retina from skin) vs Mammal eye (retina from embryonic brain).<br>
+          • <b>Flippers:</b> Penguin (bird) vs Dolphin (aquatic mammal).<br>
+          • <b>Storage:</b> Sweet potato (root) vs Potato (underground stem).
+        </div>
+      </div>
+    </div>
+
+    <!-- Adaptive Radiation -->
+    <div class="ar-banner">
+      <div class="ar-title">
+        <span>Adaptive Radiation: One Ancestor → Diversified Radiating Lines</span>
+        <span style="font-size: 10.5px; background: #F3E8FF; color: #7E22CE; padding: 2px 6px; border-radius: 4px;">Geographical Niches</span>
+      </div>
+      <div>Evolution of different species starting from a point in a geographical area and radiating to other habitats:</div>
+      <div class="ar-grid">
+        <div class="ar-item">
+          <b>1. Darwin's Finches (Galapagos):</b><br>
+          Ancestral seed-eating ground finch radiated into vegetarian tree finches, insectivorous finches, and woodpecker finches with altered beak shapes.
+        </div>
+        <div class="ar-item">
+          <b>2. Australian Marsupials:</b><br>
+          A single ancestral marsupial gave rise to diverse forms (koala, wombat, kangaroo, banded anteater) isolated on island continent Australia.
+        </div>
+      </div>
+      <div style="font-size: 10px; color: #6B21A8; margin-top: 5px; font-weight: 600;">
+        Convergent Evolution parallel: Placental wolf mirrors Tasmanian wolf; Placental mole mirrors Marsupial mole.
+      </div>
+    </div>
+
+    <!-- Embryological & Biochemical -->
+    <div class="evidence-sub">
+      <div class="evidence-sub-title">Embryological &amp; Biochemical Support</div>
+      <div>
+        • <b>Embryological (Ernst Haeckel):</b> Proposed biogenetic law ("ontogeny recapitulates phylogeny"). <i>Disproved by Karl Ernst von Baer</i> who noted embryos never pass through adult stages of other animals.<br>
+        • <b>Biochemical Evidence:</b> Similarities in proteins (e.g., cytochrome c) and DNA sequences establish evolutionary kinship across taxa.
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT PANEL: Human Evolution Lineage -->
+  <div class="panel">
+    <div class="panel-header">
+      <div class="panel-title">Part 2: Origin &amp; Evolution of Man (Chronological Rungs)</div>
+      <span class="panel-badge badge-amber">Cranial Capacities &amp; Habits</span>
+    </div>
+
+    <div class="ladder-timeline">
+      <!-- 1. Dryopithecus & Ramapithecus -->
+      <div class="ladder-step" style="border-left-color: #64748B;">
+        <div>
+          <div class="species-name">Dryopithecus</div>
+          <div class="species-age">~15 mya (Miocene)</div>
+        </div>
+        <div><span class="species-brain" style="background:#F1F5F9; color:#475569;">Ape-like</span></div>
+        <div>Hairy, walked like gorillas and chimpanzees; arboreal knuckle-walker. Common ancestor stock.</div>
+      </div>
+
+      <div class="ladder-step" style="border-left-color: #64748B;">
+        <div>
+          <div class="species-name">Ramapithecus</div>
+          <div class="species-age">~15 mya (Shivalik hills)</div>
+        </div>
+        <div><span class="species-brain" style="background:#F1F5F9; color:#475569;">More man-like</span></div>
+        <div>More erect posture, human-like dental arcade with smaller canines. Walked more upright.</div>
+      </div>
+
+      <!-- 2. Australopithecus -->
+      <div class="ladder-step" style="border-left-color: #0EA5E9;">
+        <div>
+          <div class="species-name">Australopithecines</div>
+          <div class="species-age">~3–4 to 2 mya</div>
+        </div>
+        <div><span class="species-brain" style="background:#E0F2FE; color:#0369A1;">~450–500 cc</span></div>
+        <div>East African grasslands (Tanzania, Ethiopia, "Lucy"). Walked bipedally upright. Hunted with stone weapons; <b>essentially ate fruit</b>.</div>
+      </div>
+
+      <!-- 3. Homo habilis -->
+      <div class="ladder-step habilis">
+        <div>
+          <div class="species-name">Homo habilis</div>
+          <div class="species-age">~2.0 mya (Pleistocene)</div>
+        </div>
+        <div><span class="species-brain brain-blue">650–800 cc</span></div>
+        <div><b>First human-like being (the hominid)</b>. Known as "handy man" / tool maker. <b>Did not eat meat</b>.</div>
+      </div>
+
+      <!-- 4. Homo erectus -->
+      <div class="ladder-step erectus">
+        <div>
+          <div class="species-name">Homo erectus</div>
+          <div class="species-age">~1.5 mya (Java man 1891)</div>
+        </div>
+        <div><span class="species-brain brain-amber">900 cc</span></div>
+        <div>Large brain, upright bipedal posture. <b>Homo erectus probably ate meat</b>. Fire discovered &amp; utilised.</div>
+      </div>
+
+      <!-- 5. Neanderthal man -->
+      <div class="ladder-step neander">
+        <div>
+          <div class="species-name">Neanderthal Man</div>
+          <div class="species-age">100,000–40,000 ya</div>
+        </div>
+        <div><span class="species-brain brain-purple">1400 cc</span></div>
+        <div>Near East &amp; Central Asia. Used <b>animal hides</b> to protect bodies; <b>buried their dead</b> with rituals.</div>
+      </div>
+
+      <!-- 6. Homo sapiens -->
+      <div class="ladder-step sapiens">
+        <div>
+          <div class="species-name">Homo sapiens</div>
+          <div class="species-age">75,000–10,000 ya</div>
+        </div>
+        <div><span class="species-brain brain-green">1350–1450 cc</span></div>
+        <div>Arose in Africa, migrated across continents. Prehistoric cave art (~18,000 ya, Bhimbetka); agriculture (~10,000 ya). Modern man.</div>
+      </div>
+    </div>
+
+    <!-- Human Trap Alert Box -->
+    <div class="human-trap-box">
+      <b>CUET UG High-Yield Hominid Trap Checklist:</b><br>
+      • <b>Brain Capacity Match:</b> H. habilis (650–800 cc) | H. erectus (900 cc) | Neanderthal (1400 cc) | H. sapiens (1350–1450 cc).<br>
+      • <b>Dietary Distinction:</b> H. habilis did <i>NOT</i> eat meat; H. erectus <i>probably ate meat</i>.<br>
+      • <b>Cultural Markers:</b> Burying dead + hides = <i>Neanderthal</i>; Cave art (Bhimbetka, MP) + agriculture = <i>Homo sapiens</i>.
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

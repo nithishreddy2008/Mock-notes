@@ -1,115 +1,358 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
+<title>Evolution Comprehensive Concept Mindmap</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
-  .wrap { width: 1480px; height: 1060px; position: relative; background: #fff; }
-  svg.wires { position: absolute; inset: 0; width: 1480px; height: 1060px; }
-  .center {
-    position: absolute; left: 555px; top: 385px; width: 370px; height: 100px;
-    background: #071A4D; border-radius: 16px; display: flex; flex-direction: column;
-    align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(7,26,77,.25);
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* Header */
+  .header {
+    height: 68px;
+    background: #071A4D;
+    padding: 0 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 4px solid #B8FF34;
+  }
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .header-title {
+    color: #FFFFFF;
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+  }
+  .header-badge {
+    background: #1F5EFF;
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 9px;
+    border-radius: 6px;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+  }
+  .header-right {
+    color: #B8FF34;
+    font-size: 12.5px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+  }
+
+  /* Canvas Layout */
+  .mindmap-canvas {
+    width: 1440px;
+    height: 812px;
+    position: relative;
+    padding: 16px 24px;
+  }
+
+  /* SVG Wires */
+  svg.wires {
+    position: absolute;
+    inset: 0;
+    width: 1440px;
+    height: 812px;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* Center Hub */
+  .center-hub {
+    position: absolute;
+    left: 545px;
+    top: 295px;
+    width: 350px;
+    height: 94px;
+    background: #071A4D;
+    border-radius: 12px;
     border-bottom: 5px solid #B8FF34;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    box-shadow: none !important;
   }
-  .center .t { color: #fff; font-size: 26px; font-weight: 800; letter-spacing: .5px; }
-  .center .s { color: #B8FF34; font-size: 13.5px; font-weight: 700; letter-spacing: 2px; margin-top: 4px; }
+  .center-hub-title {
+    color: #FFFFFF;
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+  }
+  .center-hub-subtitle {
+    color: #B8FF34;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-top: 4px;
+  }
+
+  /* Module Cards */
   .card {
-    position: absolute; width: 470px; background: #FCFDFF; border: 1.5px solid #D5DCEA;
-    border-radius: 14px; padding: 13px 16px 12px;
+    position: absolute;
+    width: 410px;
+    background: #FFFFFF;
+    border: 1.5px solid #CBD5E1;
+    border-radius: 9px;
+    padding: 11px 14px 10px;
+    z-index: 5;
+    box-shadow: none !important;
   }
-  .card h2 { font-size: 20px; color: #071A4D; font-weight: 800; margin-bottom: 7px;
-             padding-bottom: 5px; border-bottom: 3px solid; display: inline-block; }
-  .leaf { font-size: 14.5px; color: #1B2333; margin: 5px 0; padding-left: 16px; position: relative; line-height: 1.32; }
-  .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
-  .b .leaf::before { background: #1F5EFF; }
-  .l .leaf::before { background: #7FB800; }
-  .leaf b { color: #071A4D; }
-  .b h2 { border-color: #1F5EFF; }
-  .l h2 { border-color: #7FB800; }
-  .left { left: 30px; }
-  .right { left: 980px; }
-  .exc {
-    position: absolute; left: 530px; top: 880px; width: 420px; background: #FFF3EC;
-    border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px;
+  .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 5px;
+    margin-bottom: 6px;
+    border-bottom: 2px solid #F1F5F9;
   }
-  .exc h2 { font-size: 17px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
-  .exc .leaf { font-size: 13px; margin: 3px 0; padding-left: 14px; color: #7A2A12; }
-  .exc .leaf::before { background: #D2481F; }
-  .exc b { color: #B4380F; }
+  .card-title {
+    font-size: 13.5px;
+    font-weight: 800;
+    color: #071A4D;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .card-badge {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+  .item-list {
+    font-size: 11.2px;
+    line-height: 1.34;
+    color: #1E293B;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .item-list b { color: #071A4D; }
+
+  /* Positions */
+  /* Top-Left: Origin of Life */
+  .c-origin {
+    left: 28px;
+    top: 24px;
+    border-top: 3px solid #1F5EFF;
+  }
+  /* Mid-Left: Theories & Evidences */
+  .c-theories {
+    left: 28px;
+    top: 248px;
+    border-top: 3px solid #8B5CF6;
+  }
+  /* Bottom-Left: Selection & Hardy-Weinberg */
+  .c-selection {
+    left: 28px;
+    top: 472px;
+    border-top: 3px solid #10B981;
+  }
+
+  /* Top-Right: Geological Time Scale */
+  .c-geology {
+    right: 28px;
+    top: 24px;
+    border-top: 3px solid #F59E0B;
+  }
+  /* Mid-Right: Morphological & Adaptive */
+  .c-morphology {
+    right: 28px;
+    top: 248px;
+    border-top: 3px solid #0EA5E9;
+  }
+  /* Bottom-Right: Origin & Evolution of Man */
+  .c-human {
+    right: 28px;
+    top: 472px;
+    border-top: 3px solid #EC4899;
+  }
+
+  /* Bottom Warning Bar */
+  .bottom-alert {
+    position: absolute;
+    left: 28px;
+    bottom: 14px;
+    width: 1384px;
+    height: 80px;
+    background: #FFFBEB;
+    border: 1.5px solid #FDE68A;
+    border-left: 5px solid #D97706;
+    border-radius: 8px;
+    padding: 8px 16px;
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 16px;
+    align-items: center;
+    z-index: 10;
+  }
+  .bottom-alert-title {
+    font-size: 13px;
+    font-weight: 800;
+    color: #92400E;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .bottom-alert-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+    font-size: 10.8px;
+    line-height: 1.3;
+    color: #78350F;
+  }
+  .bottom-alert-grid b { color: #92400E; }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <svg class="wires" viewBox="0 0 1480 1060">
-    <path d="M 555 420 C 505 420, 520 165, 502 160" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
-    <path d="M 555 435 C 515 435, 520 430, 502 430" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 555 450 C 505 450, 520 700, 502 705" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
-    <path d="M 925 420 C 975 420, 960 165, 978 160" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 925 435 C 965 435, 960 430, 978 430" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
-    <path d="M 925 450 C 975 450, 960 700, 978 705" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 740 485 C 740 640, 740 810, 740 878" fill="none" stroke="#D2481F" stroke-width="2.5" stroke-dasharray="7 5" opacity=".6"/>
+
+<div class="header">
+  <div class="header-left">
+    <div class="header-title">EVOLUTION: MASTER CONCEPT SYNTHESIS MINDMAP</div>
+    <div class="header-badge">NCERT Chapter 7 · Unit VII</div>
+  </div>
+  <div class="header-right">MOCK · PRACTICE · CRACK · 2027 CYCLE</div>
+</div>
+
+<div class="mindmap-canvas">
+  <!-- Orthogonal Connectors SVG -->
+  <svg class="wires" viewBox="0 0 1440 812">
+    <!-- Hub to Top-Left (Origin) -->
+    <path d="M 545 320 H 460 V 125 H 438" fill="none" stroke="#1F5EFF" stroke-width="2.5"/>
+    <!-- Hub to Mid-Left (Theories) -->
+    <path d="M 545 342 H 438" fill="none" stroke="#8B5CF6" stroke-width="2.5"/>
+    <!-- Hub to Bottom-Left (Selection & HW) -->
+    <path d="M 545 365 H 460 V 570 H 438" fill="none" stroke="#10B981" stroke-width="2.5"/>
+
+    <!-- Hub to Top-Right (Geology) -->
+    <path d="M 895 320 H 980 V 125 H 1002" fill="none" stroke="#F59E0B" stroke-width="2.5"/>
+    <!-- Hub to Mid-Right (Morphology) -->
+    <path d="M 895 342 H 1002" fill="none" stroke="#0EA5E9" stroke-width="2.5"/>
+    <!-- Hub to Bottom-Right (Human) -->
+    <path d="M 895 365 H 980 V 570 H 1002" fill="none" stroke="#EC4899" stroke-width="2.5"/>
   </svg>
 
-  <div class="center">
-    <div class="t">EVOLUTION</div>
-    <div class="s">UNIT VII &#183; COMPLETE CHAPTER MAP</div>
+  <!-- Center Hub -->
+  <div class="center-hub">
+    <div class="center-hub-title">EVOLUTION</div>
+    <div class="center-hub-subtitle">CLASS 12 BIOLOGY · UNIT VII MASTER MAP</div>
   </div>
 
-  <div class="card left b" style="top:52px">
-    <h2>Origin of Life (Miller)</h2>
-    <div class="leaf"><b>Miller&#8211;Urey 1953:</b> CH&#8324; + NH&#8323; + H&#8322; + H&#8322;O vapour + electric spark (~800&#176;C) &#8594; <b>amino acids</b> formed</div>
-    <div class="leaf"><b>Earth ~4.5 bya,</b> no O&#8322; early; life appeared ~4 bya; first cells ~3.8 bya</div>
-    <div class="leaf"><b>Oparin&#8211;Haldane:</b> chemical evolution — life rose step-by-step from non-living molecules</div>
-    <div class="leaf"><b>RNA</b> was the first genetic material (RNA world)</div>
+  <!-- 1. Origin of Life (Top-Left) -->
+  <div class="card c-origin">
+    <div class="card-header">
+      <div class="card-title">1. Origin of Life &amp; Early Earth</div>
+      <span class="card-badge" style="background: #EFF6FF; color: #1F5EFF;">Chemical Evolution</span>
+    </div>
+    <div class="item-list">
+      <div>• <b>Timeline:</b> Big Bang (~20 bya) → Earth forms (~4.5 bya) → Life appears (~4.0 bya) → Cellular life (~2.0 bya).</div>
+      <div>• <b>Early Reducing Atmosphere:</b> Water vapour, CH<sub>4</sub>, CO<sub>2</sub>, NH<sub>3</sub> — <b>no free O<sub>2</sub></b>.</div>
+      <div>• <b>Oparin-Haldane Hypothesis:</b> Inorganic gases → simple organics → macromolecules → coacervates.</div>
+      <div>• <b>Miller-Urey (1953):</b> Electric discharge (~800°C) with CH<sub>4</sub>:NH<sub>3</sub>:H<sub>2</sub> + H<sub>2</sub>O vapour produced <b>amino acids</b> (glycine, alanine, aspartic acid).</div>
+      <div>• <b>RNA World:</b> RNA was first genetic and biocatalytic material (ribozymes).</div>
+    </div>
   </div>
 
-  <div class="card left l" style="top:322px">
-    <h2>Darwin &amp; Natural Selection</h2>
-    <div class="leaf"><b>Beagle voyage 1831&#8211;36,</b> Gal&#225;pagos finch beaks noticed</div>
-    <div class="leaf"><b>Selection needs:</b> tiny heritable variations + struggle for existence + survival &amp; reproduction of the fittest + branching descent</div>
-    <div class="leaf"><b>Wallace</b> co-proposed selection (1858); <b>Origin of Species</b> 1859</div>
-    <div class="leaf"><b>Industrial melanism:</b> dark <i>Biston betularia</i> moths won after soot darkened trunks</div>
+  <!-- 2. Theories of Evolution (Mid-Left) -->
+  <div class="card c-theories">
+    <div class="card-header">
+      <div class="card-title">2. Theories of Evolution</div>
+      <span class="card-badge" style="background: #F5F3FF; color: #7C3AED;">Historical Foundations</span>
+    </div>
+    <div class="item-list">
+      <div>• <b>Lamarckism:</b> Use and disuse of organs; inheritance of acquired traits (disproved by Weismann germplasm).</div>
+      <div>• <b>Darwinism:</b> Charles Darwin (HMS Beagle, Galapagos) &amp; Alfred Wallace (Malay Archipelago) co-proposed natural selection. Key tenets: <i>branching descent</i> &amp; <i>natural selection</i>.</div>
+      <div>• <b>Mutation Theory (Hugo de Vries):</b> Worked on <i>Oenothera lamarckiana</i>. Evolution is jerky &amp; sudden via <b>Saltation</b> (single-step large mutation) — random and directionless (contrasting Darwin's slow gradualism).</div>
+    </div>
   </div>
 
-  <div class="card left b" style="top:610px">
-    <h2>Evidences — 4 Kinds</h2>
-    <div class="leaf"><b>Palaeontology:</b> fossils; deeper rock = older; <i>Archaeopteryx</i> = missing link</div>
-    <div class="leaf"><b>Embryology:</b> vertebrate embryos share gill pouches &amp; tail early</div>
-    <div class="leaf"><b>Comparative anatomy:</b> homologous (divergent) vs analogous (convergent)</div>
-    <div class="leaf"><b>Industrial melanism:</b> selection happening live, in ecology</div>
+  <!-- 3. Natural Selection & Hardy-Weinberg (Bottom-Left) -->
+  <div class="card c-selection">
+    <div class="card-header">
+      <div class="card-title">3. Selection Modes &amp; Population Genetics</div>
+      <span class="card-badge" style="background: #ECFDF5; color: #059669;">Mechanisms</span>
+    </div>
+    <div class="item-list">
+      <div>• <b>Three Modes:</b> <i>Stabilising</i> (favours mean, e.g. infant birth weight), <i>Directional</i> (shifts to one extreme, e.g. Industrial melanism, DDT resistance), <i>Disruptive</i> (favours both extremes, splits peak).</div>
+      <div>• <b>Hardy-Weinberg Law:</b> In large, randomly mating populations: <b>p<sup>2</sup> + 2pq + q<sup>2</sup> = 1</b> and <b>p + q = 1</b>.</div>
+      <div>• <b>Five Disturbing Factors:</b> 1. Gene migration/flow, 2. Genetic drift (Founder effect, bottleneck in small pools), 3. Mutation, 4. Genetic recombination, 5. Natural selection.</div>
+    </div>
   </div>
 
-  <div class="card right l" style="top:52px">
-    <h2>Adaptive Radiation</h2>
-    <div class="leaf"><b>Idea:</b> one ancestor &#8594; many forms, each fitted to a new niche</div>
-    <div class="leaf"><b>Darwin's finches:</b> seed-eater &#8594; insect-eater, vegetation-eater, woodpecker-like beaks</div>
-    <div class="leaf"><b>Australian marsupials</b> mirror placental look-alikes (mouse, mole, wolf) — parallel radiation</div>
+  <!-- 4. Geological Time Scale & Animal Evolution (Top-Right) -->
+  <div class="card c-geology">
+    <div class="card-header">
+      <div class="card-title">4. Geological Milestones &amp; History</div>
+      <span class="card-badge" style="background: #FFFBEB; color: #D97706;">Eras &amp; Epochs</span>
+    </div>
+    <div class="item-list">
+      <div>• <b>Major Milestones:</b> Invertebrates (500 mya) → Jawless fish (350 mya) → Seaweeds (320 mya) → First amphibians (350 mya).</div>
+      <div>• <b>Coelacanth (Lobefin):</b> Caught in S. Africa (1938); transitional living fossil between fish &amp; amphibians.</div>
+      <div>• <b>Reptiles &amp; Dinosaurs:</b> <i>Ichthyosaurs</i> returned to water (200 mya). <i>Tyrannosaurus rex</i> was largest carnivore (20 ft). Dinosaurs disappeared suddenly ~65 mya.</div>
+      <div>• <b>Mammals:</b> Shrew-like earliest mammals; took over after dinosaur extinction.</div>
+    </div>
   </div>
 
-  <div class="card right b" style="top:322px">
-    <h2>Hardy&#8211;Weinberg + 5 Factors</h2>
-    <div class="leaf"><b>p&#178; + 2pq + q&#178; = 1</b> and p + q = 1; p&#178; = AA &#183; 2pq = Aa &#183; q&#178; = aa</div>
-    <div class="leaf"><b>Equilibrium:</b> large population + random mating + no disturbing forces &#8594; frequencies constant</div>
-    <div class="leaf"><b>5 disturbing factors:</b> gene migration, genetic drift, mutation, recombination, natural selection</div>
-    <div class="leaf"><b>Evolution = change in allele frequency</b> between generations</div>
+  <!-- 5. Evidences: Morphological & Adaptive (Mid-Right) -->
+  <div class="card c-morphology">
+    <div class="card-header">
+      <div class="card-title">5. Comparative Anatomy &amp; Radiations</div>
+      <span class="card-badge" style="background: #F0F9FF; color: #0284C7;">Evidence Patterns</span>
+    </div>
+    <div class="item-list">
+      <div>• <b>Homologous (Divergent):</b> Common origin, differing jobs. Whale flipper, bat wing, human arm. <i>Bougainvillea</i> thorn &amp; <i>Cucurbita</i> tendril.</div>
+      <div>• <b>Analogous (Convergent):</b> Differing origins, identical jobs. Bird vs butterfly wings; octopus vs mammal eye; sweet potato (root) vs potato (stem).</div>
+      <div>• <b>Adaptive Radiation:</b> One ancestor radiates into different ecological niches. Darwin's finches (Galapagos); Australian marsupials vs Placental equivalents.</div>
+    </div>
   </div>
 
-  <div class="card right l" style="top:610px">
-    <h2>Human Evolution Ladder</h2>
-    <div class="leaf"><b>Dryopithecus &amp; Ramapithecus</b> ~15 mya — ape-like, first hominid hints</div>
-    <div class="leaf"><b>Australopithecus "Lucy"</b> ~3&#8211;4 mya, upright walker &#8594; <b>Homo habilis</b> ~2 mya (tools) &#8594; <b>H. erectus</b> ~1.5 mya (meat)</div>
-    <div class="leaf"><b>Neanderthal</b> 100,000&#8211;40,000 ya, buried dead &#8594; <b>Homo sapiens</b> ~75,000 ya; farming ~10,000 ya</div>
-    <div class="leaf">A <b>bush of relatives</b>, not a tidy ladder</div>
+  <!-- 6. Origin & Evolution of Man (Bottom-Right) -->
+  <div class="card c-human">
+    <div class="card-header">
+      <div class="card-title">6. Origin &amp; Evolution of Man</div>
+      <span class="card-badge" style="background: #FDF2F8; color: #DB2777;">Hominid Ladder</span>
+    </div>
+    <div class="item-list">
+      <div>• <b>Dryopithecus &amp; Ramapithecus (15 mya):</b> Dryopithecus ape-like; Ramapithecus more man-like.</div>
+      <div>• <b>Australopithecines (3–4 mya, Lucy):</b> Upright bipedal; stone tools; fruit-eaters.</div>
+      <div>• <b>Homo habilis (2 mya):</b> 650–800 cc brain; toolmaker; <i>did not eat meat</i>.</div>
+      <div>• <b>Homo erectus (1.5 mya, Java):</b> 900 cc brain; <i>probably ate meat</i>.</div>
+      <div>• <b>Neanderthal (100k–40k ya):</b> 1400 cc; used hides; buried their dead.</div>
+      <div>• <b>Homo sapiens (75k–10k ya):</b> 1350–1450 cc; cave art (18k ya); agriculture (10k ya).</div>
+    </div>
   </div>
 
-  <div class="exc">
-    <h2>COMMON ERRORS &amp; TRAPS</h2>
-    <div class="leaf"><b>Homology &#8800; analogy.</b> Test the structure, not the job: same plan = homologous</div>
-    <div class="leaf"><b>Convergent = analogous; divergent = homologous</b> — students flip the pair</div>
-    <div class="leaf"><b>2pq = heterozygotes.</b> Dominant phenotype = p&#178; + 2pq — a classic numeric trap</div>
+  <!-- Bottom Alert: High Yield Traps -->
+  <div class="bottom-alert">
+    <div class="bottom-alert-title">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      <span>CUET UG Top Traps</span>
+    </div>
+    <div class="bottom-alert-grid">
+      <div><b>Homology vs Analogy:</b> Divergent = Homology (common ancestor). Convergent = Analogy (different origins adapting to same need). Never flip these!</div>
+      <div><b>Genetic Drift:</b> Operates ONLY in small isolated populations purely by chance. Bottleneck and Founder effect are subtypes of drift.</div>
+      <div><b>Hominid Meat Diet:</b> <i>Homo habilis</i> did NOT eat meat. <i>Homo erectus</i> probably ate meat. Neanderthal buried dead with ceremony.</div>
+    </div>
   </div>
 </div>
+
 </body>
 </html>

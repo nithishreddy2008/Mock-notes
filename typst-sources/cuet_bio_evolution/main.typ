@@ -7,797 +7,545 @@
   subtitle: "Official Syllabus Unit VII · Class 12 · CUET UG 2027 Cycle Notes",
 )
 
-= Syllabus Alignment
+= Syllabus Alignment & Exam Blueprint
 
+#set table(inset: (x: 4pt, y: 2.2pt))
+#set text(size: 8.8pt)
 #table(
-  columns: (1.05fr, 1.9fr, 1.25fr),
-  table.header[*Sub-topic*][*Official syllabus pointer (NTA CUET(UG) Biology syllabus 2026, the current 2027 baseline, Unit VII)*][*Skills the questions test*],
-  [*Origin of life*], [
-    Origin of life – Miller's experiment.
+  columns: (1.1fr, 1.9fr, 1.2fr),
+  table.header[*Sub-Topic*][*Official NTA CUET UG Syllabus Scope*][*High-Yield Exam Focus*],
+  [*Origin of Life*], [
+    Origin of life; Miller's experiment; abiogenesis; Oparin-Haldane hypothesis; early atmosphere; RNA world.
   ], [
-    Spotting the Miller–Urey setup and its result; early-Earth conditions; the RNA-world idea and first-cell dates.
+    Miller-Urey gas proportions (CH#sub[4], NH#sub[3], H#sub[2], H#sub[2]O at 800°C), absence of free O#sub[2], amino acid synthesis.
   ],
-  [*Concepts of evolution*], [
-    Concepts of evolution (Darwin's contribution).
+  [*Concepts & Theories*], [
+    Concepts of evolution; Lamarckism; Darwin's contribution; Wallace; Hugo de Vries mutation theory.
   ], [
-    Stating what selection needs; branching descent; the peppered-moth story; the Origin of Species date.
+    Branching descent & natural selection; Saltation (single-step large mutation) vs Darwinian gradualism; Malthus.
   ],
-  [*Evidences for evolution*], [
-    Evidences for evolution (embryology, palaeontology, comparative anatomy, divergent and convergent evolution and industrial melanism).
+  [*Evidences for Evolution*], [
+    Paleontology, comparative anatomy, embryology, homologous vs analogous organs, divergent and convergent evolution.
   ], [
-    Sorting homologous from analogous organs and naming the evolution type each points to.
+    Divergent = Homology (forelimbs, Bougainvillea/Cucurbita); Convergent = Analogy (wings, eyes, flippers); Haeckel vs von Baer.
   ],
-  [*Adaptive radiation*], [
-    Adaptive radiation.
+  [*Adaptive Radiation*], [
+    Adaptive radiation; Darwin's finches; Australian marsupials vs placental mammals.
   ], [
-    Explaining one ancestor → many forms; matching the finch and marsupial examples.
+    Geographical radiating lines from common ancestor; parallel evolution of placental and marsupial ecological equivalents.
   ],
-  [*Biological evolution*], [
-    Biological evolution.
+  [*Biological Evolution & Selection*], [
+    Natural selection; operational modes (stabilising, directional, disruptive); industrial melanism; anthropogenic selection.
   ], [
-    Ordering the big events: invertebrates, jawless fish, ferns, dinosaurs, mammals.
+    *Biston betularia* soot shift; DDT and antibiotic resistance; phenotypic curve shifts (peak height, shift, two peaks).
   ],
-  [*Natural selection*], [
-    Natural selection.
+  [*Hardy-Weinberg Principle*], [
+    Mechanism of evolution; Hardy-Weinberg law and equilibrium; 5 disturbing factors affecting genetic equilibrium.
   ], [
-    Identifying stabilising, directional and disruptive selection from a description.
+    $p^2 + 2 p q + q^2 = 1$; calculation of allele and genotype frequencies; genetic drift (founder effect, bottleneck) in small pools.
   ],
-  [*Mechanism of evolution*], [
-    Mechanism of evolution – Hardy–Weinberg principle and affecting factors (gene migration, genetic drift, mutation, recombination and natural selection).
+  [*Geological Evolution & Man*], [
+    Evolution through geological eras; Coelacanth; dinosaur extinction; origin and chronological evolution of man.
   ], [
-    Computing $p^2$, $2 p q$ and $q^2$; naming which of the five factors disturbs equilibrium.
-  ],
-  [*Evolution through geological periods*], [
-    Evolution of plants and vertebrates through geological periods.
-  ], [
-    Matching dates to events; reading the timeline; fossil logic (deeper rock = older).
-  ],
-  [*Origin and evolution of man*], [
-    Origin and evolution of man.
-  ], [
-    Ordering the human ladder; matching each species to its trait and date.
+    Coelacanth (1938); 65 mya dinosaur demise; Hominid ladder & cranial capacities (habilis 650–800, erectus 900, Neanderthal 1400 cc).
   ],
 )
 
-#exam-pointer[
-  CUET UG pattern (NTA official information bulletin and syllabus, 2026 cycle — the
-  current 2027 baseline): each subject paper carries *50 compulsory questions* in
-  *60 minutes*, with $+5$ for every correct answer and $-1$ for every incorrect answer. The Biology paper maps strictly to NCERT
-  Class 12, and Unit VII pairs genetics with its big payoff: how the variety genes
-  create becomes the story of life's change over time.
+#v(4pt)
+#set text(size: 9pt)
+#exam-pointer(title: "CUET High-Yield Exam Architecture & Weightage Guide")[
+  *Evolution (Unit VII)* forms an essential conceptual pillar in CUET UG Biology, contributing *4 to 6 questions (16–24 marks)* per exam session. Questions feature heavy rotation on three high-probability archetypes: (1) sorting organ pairs into *Homologous (Divergent)* vs *Analogous (Convergent)*, (2) Hardy-Weinberg population genetics equations ($p^2 + 2 p q + q^2 = 1$) where students confuse allele frequencies ($p, q$) with genotype frequencies ($p^2, 2 p q, q^2$), and (3) matching chronological hominid rungs with their exact cranial capacities, diets (meat vs fruit), and cultural innovations.
 ]
 
-= Origin of Life: Chemistry Before Biology
+#pagebreak()
+#set text(size: 11pt)
 
-Here is a puzzle you can hold in your hand. An apple falls from a tree, rots on
-the ground, and no apple tree sprouts from the rot. In our world, life always
-comes from life. So how did the *first* living thing appear, on a planet that
-had nothing alive on it at all? Biology's honest answer: the early Earth was a
-giant chemistry set, and under its conditions the building blocks of life could
-assemble on their own. This section walks that story forward, one date at a
-time.
+= Module 1: Origin of Life: Chemistry Before Biology
 
-== From the Big Bang to a habitable Earth
+Life on Earth represents a continuous chain of descent, yet the emergence of the primordial living entity from inanimate chemical matter represents the foundational question of evolutionary biology.
 
-- *The universe is old:* almost *20 billion years* — its matter and energy were
-  squeezed into one point and exploded outward in the *Big Bang*, a single huge
-  explosion astronomers use to explain the origin of the universe itself.
-- *Gases came first:* as the explosion's heat dropped, hydrogen and helium
-  formed, clumped by gravity, and built the first stars and galaxies.
-- *Earth forms:* our planet condensed about *4.5 billion years ago* (4.5 bya),
-  still molten and bubbling.
-- *No oxygen at all:* the early air had *no oxygen gas* — instead, water vapour,
-  CH#sub[4] (methane), CO#sub[2] (carbon dioxide) and NH#sub[3] (ammonia) poured out of
-  the molten crust, and ultraviolet rays from the Sun beat down freely.
-- *Oceans boil over:* as Earth cooled, the water vapour condensed into clouds,
-  rained for ages, and filled the hollows — an ocean rich in dissolved gases.
+== Cosmic Evolution and Early Earth Atmosphere
+
+- *Age of the Universe:* Almost *20 billion years old* (20 bya). The universe originated via the *Big Bang*, a singular catastrophic thermonuclear explosion of unimaginable physical magnitude that expanded spatial dimensions and cooled matter.
+- *Origin of Solar System & Earth:* Gravitational condensation of interstellar hydrogen and helium gas clouds led to the formation of galaxies and stellar solar systems. Earth condensed approximately *4.5 billion years ago* (4.5 bya).
+- *Early Reducing Atmosphere:* Primordial Earth possessed *no free molecular oxygen ($O_2$)*. The atmosphere was intensely reducing, composed primarily of water vapour ($H_2 O$), methane ($C H_4$), ammonia ($N H_3$), and carbon dioxide ($C O_2$) discharged from molten volcanic eruptions.
+- *Cooling & Primordial Seas:* Solar ultraviolet (UV) radiation cleaved atmospheric water vapour into hydrogen and oxygen ($2 H_2 O arrow.r 2 H_2 + O_2$). Light hydrogen gas escaped into space. Free oxygen reacted with methane and ammonia to form water and carbon dioxide, while ozone ($O_3$) layer subsequently developed. As surface temperatures dropped, torrential condensation produced ancient oceans saturated with dissolved gases.
+
+== Oparin-Haldane Hypothesis & The Miller-Urey Experiment (1953)
+
+- *Abiogenesis / Chemical Evolution:* Proposed independently by *Alexander Oparin* (Russia) and *J.B.S. Haldane* (England). They postulated that the first living organisms originated spontaneously through step-by-step *chemical evolution* of complex organic molecules from simple inorganic precursors ($"Inorganic gases" arrow.r "Simple monomers" arrow.r "Macromolecules" arrow.r "Coacervates / Protobionts"$).
+- *Experimental Validation:* In 1953, *Stanley Miller* (working in Harold Urey's laboratory at the University of Chicago) created an experimental apparatus simulating primordial Earth conditions:
+  - *Gaseous Mixture:* Methane ($C H_4$), ammonia ($N H_3$), and hydrogen ($H_2$) in a sealed flask, connected to boiling water providing continuous water vapour.
+  - *Energy Source:* High-voltage electric discharge passed through tungsten electrodes at approximately *800°C* to simulate intense atmospheric lightning.
+  - *Biochemical Results:* After running the closed circulation system for one week, chemical analysis revealed the spontaneous synthesis of *amino acids* (predominantly glycine, alanine, and aspartic acid).
+  - *Corroborating Evidence:* Similar experiments conducted by other researchers yielded sugars, nitrogenous bases, purines, pyrimidines, and pigments. Analysis of *meteorite content* revealed identical organic compounds, confirming that chemical abiogenesis occurs naturally across extraterrestrial space.
 
 #table(
-  columns: (1.15fr, 1.35fr, 1.35fr),
-  table.header[*Condition*][*Early Earth (before life)*][*Earth today*],
-  [Atmosphere], [Water vapour, CH#sub[4], CO#sub[2], NH#sub[3] — no O#sub[2]], [78% nitrogen, 21% oxygen],
-  [Energy source], [Lightning, ultraviolet rays, volcanic heat], [Mostly sunlight, filtered by ozone],
-  [Surface water], [Hot, gas-saturated seas after long rains], [Cool, oxygenated oceans],
-  [Living things], [None — only chemistry], [Millions of species everywhere],
+  columns: (1.2fr, 1.4fr, 1.4fr),
+  table.header[*Parameter*][*Primordial Earth (Pre-Life)*][*Contemporary Earth*],
+  [Atmospheric Redox State], [Intensely *reducing* (no free molecular $O_2$)], [*Oxidising* (21% $O_2$, 78% $N_2$)],
+  [Primary Atmospheric Gases], [$H_2 O$ vapour, $C H_4$, $N H_3$, $C O_2$, $H_2$], [$N_2$, $O_2$, $C O_2$, Argon, trace moisture],
+  [Energy Influx], [Unshielded solar UV radiation, lightning, volcanic heat], [Attenuated solar radiation filtered by $O_3$ shield],
+  [Biological Status], [Abiotic chemical evolution only], [Rich biodiversity; biogenesis strictly reigns],
 )
 
-== The Oparin–Haldane idea: life rose from non-life
+== Emergence of Cellular Life & The RNA World
 
-- *Two thinkers, one idea:* in the 1920s, Russian chemist *Alexander Oparin* and
-  British scientist *J.B.S. Haldane* proposed *chemical evolution* — life did not
-  appear ready-made; it assembled *step by step* from non-living molecules.
-- *The steps:* simple gases → simple organic molecules (sugars, amino acids) →
-  bigger molecules (proteins, nucleic acids) → first cell-like packages.
-- *Energy did the work:* with no oxygen to break things down, lightning and UV
-  rays could drive chemistry that today's air would never allow.
-- *Why it sounds strange:* we never see this happen now, because today's oxygen
-  instantly attacks such molecules — the recipe only worked on the early planet.
+- *Timeline of Cellular Emergence:* First non-cellular macromolecules (RNA, proteins, polysaccharides) assembled around *3 billion years ago* (3 bya). The earliest cellular forms of life arose approximately *2,000 million years ago* (2.0 bya) in aquatic environments as anaerobic, chemoheterotrophic single cells.
+- *The RNA World Paradigm:* Ribonucleic acid (RNA) was the primordial genetic and catalytic material. RNA possesses the unique dual capacity to store hereditary nucleotide sequences and execute metabolic enzymatic catalysis (as *ribozymes*, e.g., 23S rRNA peptidyl transferase). DNA later evolved from RNA as a chemically more stable repository with repair mechanisms.
 
-#worked-example("Worked Example — Miller's 1953 Experiment, Step by Step")[
-  *Stanley Miller*, working in Harold *Urey's* laboratory, tested the
-  Oparin–Haldane idea directly in 1953.
+= Module 2: Evidences for Evolution & Comparative Anatomy
 
-  - *Step 1:* he sealed a glass flask containing CH#sub[4], H#sub[2], NH#sub[3] and water
-    vapour — the reconstructed early atmosphere, with *no oxygen*.
-  - *Step 2:* he kept the mixture at about *800°C* and passed an *electric spark*
-    through it — the spark stood in for lightning.
-  - *Step 3:* he let the mixture circulate, cool, and collect — as rain would
-    have washed products into early seas.
-  - *Observation:* *amino acids* (the building blocks of proteins) formed from the
-    gases — no cells, no enzymes, only chemistry and energy.
-  - *Conclusion:* the building blocks of life *can* assemble under early-Earth
-    conditions. Later experiments of the same kind produced sugars, nitrogen
-    bases, pigments and fats too.
+Evolutionary descent with modification is substantiated across independent biological disciplines: paleontology, comparative embryology, anatomy, and molecular biology.
 
-  The point students miss: Miller did *not* make life — he made life's *parts*,
-  and that alone is powerful evidence for chemical evolution.
+== Paleontological Evidence (Fossil Record)
+
+- *Fossils:* Preserved remains, petrified hard skeletal structures, or impressions of ancient organisms entrapped within sedimentary rock strata.
+- *Geological Stratification:* Deeper sedimentary rock layers contain older, structurally simpler organisms, whereas upper strata contain progressively complex, recently evolved taxa. Geological history directly parallels biological history.
+- *Transitional Links:* *Archaeopteryx lithographica* represents the classic fossil transition between reptiles and birds, possessing reptilian teeth and long bony tail alongside avian flight feathers and wishbone.
+
+== Embryological Evidence: Haeckel vs. Karl Ernst von Baer
+
+- *Ernst Haeckel's Biogenetic Law:* Proposed that *"Ontogeny recapitulates Phylogeny"* — that an individual organism's embryonic developmental stages retrace the adult evolutionary stages of its ancestral lineage (e.g., human embryos possessing pharyngeal gill slits and a post-anal tail).
+- *Disproof by Karl Ernst von Baer:* von Baer carefully scrutinized vertebrate embryogenesis and conclusively demonstrated that *embryos never pass through the adult stages of other animal species*. Pharyngeal arches are transient embryonic features shared across vertebrate phyla, not adult fish gill slits.
+
+== Morphological & Anatomical Evidence: Homology vs. Analogy
+
+Comparative morphology provides the most frequently tested evidence in entrance examinations, establishing ancestral relationships through structural plan analysis:
+
+- *Homologous Structures (Divergent Evolution):*
+  - *Definition:* Organs exhibiting the *same basic anatomical plan, embryonic origin, and skeletal architecture*, but adapted to perform *different physiological functions* in response to divergent ecological niches.
+  - *Evolutionary Mechanism:* *Divergent evolution* from a shared common ancestor.
+  - *Vertebrate Forelimbs:* The forelimbs of whales (swimming paddle), bats (flight wing), cheetahs (running limb), and humans (grasping hand) all share homologous skeletal elements: humerus, radius, ulna, carpals, metacarpals, and phalanges.
+  - *Plant Examples:* Thorns of *Bougainvillea* and tendrils of *Cucurbita* are homologous organs; both represent modified axillary buds adapted for defence and climbing respectively.
+  - *Internal Homology:* Vertebrate hearts and brains exhibit homologous architectural progression across fishes, amphibians, reptiles, birds, and mammals.
+
+- *Analogous Structures (Convergent Evolution):*
+  - *Definition:* Organs possessing *completely different anatomical structures and developmental origins*, but adapted to execute the *same biological function* due to identical environmental pressures.
+  - *Evolutionary Mechanism:* *Convergent evolution* in unrelated lineages.
+  - *Animal Examples:*
+    - Wings of butterfly (folds of chitinous ectodermal membrane without bones) vs. wings of bird (feathered, bony pentadactyl forelimbs).
+    - Eyes of octopus (retina develops from surface ectoderm invagination) vs. eyes of mammals (retina develops as an outpocketing of the embryonic diencephalon).
+    - Flippers of penguins (flightless birds) and dolphins (aquatic placental mammals).
+  - *Plant Examples:* Sweet potato (*Ipomoea batatas*, root modification for food storage) and common potato (*Solanum tuberosum*, underground stem tuber for food storage).
+
+#set table(inset: (x: 4pt, y: 2pt))
+#set text(size: 8.8pt)
+#table(
+  columns: (1.2fr, 1.2fr, 1.3fr, 1fr),
+  table.header[*Organ Pair*][*Anatomical Nature*][*Shared Feature / Divergence*][*Evolutionary Mode*],
+  [Whale flipper & Human arm], [Bony pentadactyl forelimbs], [Same skeletal bones, modified for swimming vs grasping], [Homologous (Divergent)],
+  [Bat wing & Cheetah leg], [Bony pentadactyl forelimbs], [Same skeletal plan, modified for flight vs running], [Homologous (Divergent)],
+  [Bougainvillea thorn & Cucurbita tendril], [Modified axillary buds], [Same developmental position, defence vs climbing], [Homologous (Divergent)],
+  [Butterfly wing & Bird wing], [Ectodermal fold vs feathered limb], [Different anatomy & origin, both adapted for flight], [Analogous (Convergent)],
+  [Octopus eye & Mammalian eye], [Skin invagination vs brain outpocketing], [Different retinal embryology, same visual focus], [Analogous (Convergent)],
+  [Penguin flipper & Dolphin flipper], [Avian wing vs mammalian forelimb], [Different vertebrate classes, both swim in sea], [Analogous (Convergent)],
+  [Sweet potato & Potato tuber], [Adventitious root vs stem tuber], [Different plant organs, both store starch], [Analogous (Convergent)],
+)
+#set text(size: 11pt)
+
+#v(2pt)
+#align(center)[
+  #figure(
+    image("assets/bio_evolution_evidence_human.png", width: 58%),
+    caption: [Figure 1: Comparative Anatomical Evidences (Homology vs Analogy, Adaptive Radiation) and Hominid Chronological Ladder],
+  )
 ]
+#v(2pt)
 
-== Other ideas people held
+== Adaptive Radiation: Speciation Across Ecological Niches
 
-- *Panspermia:* early Greek thinkers suggested units of life (spores) travelled
-  through space and seeded Earth — a possibility still discussed, but with no
-  proof that life started anywhere but chemistry.
-- *Spontaneous generation:* the old belief that life springs from rotting matter
-  — mud makes frogs, straw makes mice. *Louis Pasteur* demolished it with
-  swan-neck glassware: boiled broth stayed sterile unless dust (carrying
-  microbes) reached it. Life comes *only* from pre-existing life — today.
-- *Divine creation:* the belief that all life was created by a supernatural power
-  — held by faith, but it makes no scientific predictions and cannot be tested.
+- *Definition:* The evolutionary process wherein an ancestral species colonizes a new geographical area and rapidly radiates into diverse specialized morphological forms, each occupying a distinct ecological niche.
+- *Darwin's Finches:* On the isolated Galápagos archipelago, Charles Darwin observed that an original seed-eating ancestral finch species radiated into vegetarian tree finches, insectivorous finches, cactus-dwelling finches, and woodpecker finches, each evolving distinctive beak shapes and sizes tailored to specialized diets.
+- *Australian Marsupials:* In the isolated island continent of Australia, an ancestral marsupial underwent adaptive radiation to generate kangaroos, wombats, koalas, Tasmanian devils, and banded anteaters.
+- *Parallel Evolution (Convergent Radiation):* When multiple adaptive radiations occur concurrently in isolated geographical regions, placental mammals evolve phenotypic forms that strikingly mirror marsupial forms occupying equivalent ecological niches:
+  - Placental Mole $arrow.l.r$ Marsupial Mole
+  - Anteater $arrow.l.r$ Numbat (Banded Anteater)
+  - Mouse $arrow.l.r$ Marsupial Mouse
+  - Flying Squirrel $arrow.l.r$ Sugar Glider
+  - Bobcat $arrow.l.r$ Tasmanian Tiger Cat
+  - Wolf $arrow.l.r$ Tasmanian Wolf
 
-#analogy-box(title: "Analogy — The Untended Soup Pot")[
-  Leave a pot of the right gases simmering under a spark-thrower, and new
-  molecules keep forming in the broth — that was Miller's flask, and the early
-  ocean was the same pot at planetary size. The mapping is honest: gases =
-  ingredients, lightning and UV = the flame, the ocean = the pot, and the
-  amino acids that form = the first trace of cooking. But the pot never "wants"
-  anything — the recipe runs by chemistry alone, with nobody stirring.
-]
+= Module 3: Theories of Evolution: Lamarck, Darwin, & De Vries
 
-== The RNA world and the first cells
+The historical progression of evolutionary thought encompasses three major paradigms concerning the origin and inheritance of biological diversity.
 
-- *RNA came first:* the strongest evidence says *RNA* — a molecule that can both
-  store information and catalyse reactions — was the *first genetic material*;
-  essential processes such as metabolism and protein-making evolved around it.
-- *Non-cellular, then cellular:* the earliest life was probably giant RNA-style
-  molecules floating free; the *first cells* appeared around *3.8 billion years
-  ago*, and all of them were *single-celled prokaryotes*.
-- *Why RNA lost the job:* DNA is more stable than RNA, so DNA took over
-  information storage and RNA kept the working roles — the arrangement every
-  living cell still uses.
+== Lamarckism (Theory of Inheritance of Acquired Characters)
 
-= Darwin's Contribution: Natural Selection
+- Proposed by French naturalist *Jean-Baptiste de Lamarck* in his treatise *Philosophie Zoologique* (1809).
+- *Central Postulates:* Use and disuse of organs dictates morphological change. Continual elongation of the giraffe's neck occurred over generations as ancestors stretched to reach foliage on tall trees.
+- *Scientific Refutation:* August Weismann's germplasm theory conclusively disproved Lamarckism by cutting off the tails of mice for 22 consecutive generations; offspring were invariably born with normal tails. Somatic modifications cannot alter germ cell DNA.
 
-In 1831 a 22-year-old naturist named Charles Darwin boarded a survey ship, HMS
-*Beagle*, for a five-year trip around the world. He came back with notebooks
-full of fossils, birds and questions — and one of the most powerful ideas in
-science. Darwin saw that every population carries endless small differences,
-and that nature quietly keeps the differences that help their owners survive
-and reproduce. Twenty-odd years later, that thought became the theory of
-evolution by natural selection.
+== Darwinian Theory of Evolution (Natural Selection)
 
-== The voyage that changed biology
+- Proposed by *Charles Darwin* based on extensive observations during his voyage around the world on the survey ship *H.M.S. Beagle* (1831–1836), particularly on the Galápagos Islands.
+- *Independent Co-Discovery:* *Alfred Russel Wallace*, a naturalist working in the Malay Archipelago, independently arrived at identical conclusions regarding natural selection. Their joint paper was presented in 1858, followed by Darwin's seminal book *The Origin of Species* (1859).
+- *Malthusian Influence:* Darwin was profoundly influenced by *Thomas Malthus's Essay on Population*, which demonstrated that populations produce offspring geometrically, whereas natural food resources increase arithmetically, enforcing an inevitable struggle for survival.
+- *Two Key Concepts of Darwinism:*
+  1. *Branching Descent:* All living organisms are linked by descent from common ancestors through branched lineages.
+  2. *Natural Selection:* Individuals possessing minor heritable variations best suited to their physical and biotic environment survive and reproduce at higher rates (*differential reproduction*), leaving more progeny.
 
-- *HMS Beagle, 1831–1836:* Darwin sailed as the ship's naturalist, collecting
-  specimens and fossils on every coast he visited.
-- *The Galápagos finches:* on these volcanic islands he found many finch
-  species — *seed-eaters with big beaks, insect-eaters with slender beaks*,
-  even a woodpecker-like beak for probing — all clearly related.
-- *The puzzle:* why would closely related birds differ island by island, in ways
-  that exactly fit each island's food? His answer took decades of thinking.
-- *Heritable variation is the raw material:* members of any population differ in
-  tiny traits, and many of those traits pass from parent to offspring.
+== Mutation Theory of Hugo de Vries
 
-== The core idea: natural selection
-
-Darwin's mechanism needs four ingredients working together:
-
-- *Tiny heritable variations:* individuals differ slightly, and the differences
-  can be inherited by the next generation.
-- *Struggle for existence:* food, mates and space are limited, while more
-  offspring are produced than can possibly survive.
-- *Survival and reproduction of the fittest:* "fitness" means *reproductive*
-  fitness — leaving more surviving offspring — not being the strongest.
-- *Branching descent:* over generations, selected traits accumulate, populations
-  split, and all forms descend from shared ancestors — the tree of life branches.
-
-- *The book:* Darwin published *On the Origin of Species* in *1859*, laying out
-  the whole argument with evidence.
-- *He was not alone:* *Alfred Russel Wallace*, working in the Malay Archipelago,
-  reached the same conclusion and the two presented the idea together in *1858*
-  — Wallace deserves that line of credit.
-
-== Industrial melanism: selection caught in the act
-
-- *The moth:* *Biston betularia*, the peppered moth of England, flies at night
-  and rests on tree trunks by day, where birds hunt it by sight.
-- *Before industry:* trunks were pale, covered in lichen — the *white-winged*
-  form was camouflaged, and dark moths were eaten more often.
-- *After industry:* soot killed the lichen and darkened the trunks — now the
-  *dark-winged* form was hidden, and it became the common one.
-- *What it proves:* predators (the birds) *selected* the better-camouflaged
-  colour in each setting. The environment changed, the selection pressure
-  flipped, and the moth population's appearance followed — evolution in action.
+- In 1901, Dutch botanist *Hugo de Vries* proposed the *Mutation Theory of Evolution* based on experimental breeding of the evening primrose (*Oenothera lamarckiana*).
+- *Core Postulates:*
+  - Evolutionary speciation is caused by *mutations* — sudden, large, heritable phenotypic alterations.
+  - Mutations are *random and directionless*, in stark contrast to Darwinian minor, continuous variations which are directional.
+  - Speciation occurs discontinuously in a single step termed *Saltation* (single-step large mutation), whereas Darwin viewed evolution as an extraordinarily gradual, continuous process.
 
 #table(
-  columns: (1fr, 1.4fr, 1.4fr),
-  table.header[*Stage*][*Tree trunks*][*Moth form that survives*],
-  [Pre-industrial countryside], [Pale, lichen-covered bark], [White-winged moths — dark ones are spotted and eaten],
-  [Industrial, soot-covered city], [Dark, bare bark], [Dark-winged moths — white ones stand out],
+  columns: (1.2fr, 1.4fr, 1.4fr),
+  table.header[*Attribute*][*Darwinian Variations*][*De Vriesian Mutations (Saltation)*],
+  [Nature & Magnitude], [Small, continuous, minor variations], [Large, sudden, discontinuous alterations],
+  [Directionality], [Directional (favours adaptive survival)], [Random and directionless],
+  [Tempo of Speciation], [Gradual, slow divergence over ages], [Sudden, jerky, single-step speciation],
+  [Primary Driver], [Differential reproductive survival], [Novel germline genetic mutation],
 )
 
-== Selection you can watch today
+= Module 4: Natural Selection in Action & Anthropogenic Shifts
 
-- *Antibiotic-resistant bacteria:* a course of antibiotics kills the sensitive
-  cells; the few resistant cells survive, reproduce, and soon the whole
-  infection is resistant — selection inside a patient's body.
-- *Pesticide-resistant pests:* spraying kills the susceptible insects; resistant
-  ones multiply, so each new chemical fails faster than the last.
-- *Herbicide-resistant weeds:* the same story in farm fields — weeds that shrug
-  off a herbicide spread through every treated field.
-- *The pattern is identical:* a pressure kills the unprotected, survivors pass on
-  their protection, and the population's average shifts.
+Natural selection is not merely a theoretical historical deduction; its real-time operation is directly verified through ecological field studies and anthropogenic selection.
 
-== Three shapes of selection
+== Industrial Melanism: The Peppered Moth (*Biston betularia*)
 
+- *Pre-Industrialization Era (Before 1850 in England):*
+  - Tree trunks in countryside forests were heavily carpeted with thick white lichens and free from industrial soot.
+  - The *white-winged (melanic recessive)* peppered moths were exquisitely camouflaged against the pale lichen-covered bark.
+  - Dark-winged (melanic dominant, *carbonaria*) moths were conspicuous against the white background and were heavily predated by insectivorous birds. Consequently, white moths constituted over 95% of the population.
+- *Post-Industrialization Era (By 1920 in Industrial Areas):*
+  - Coal smoke, particulate emissions, and industrial soot blackened tree trunks; sensitive lichens perished completely due to sulfur dioxide pollution.
+  - Against the blackened, soot-covered bark, the *dark-winged melanic moths* enjoyed superior camouflage protection.
+  - White-winged moths became highly conspicuous and suffered intense bird predation.
+  - The population frequency of dark moths surged dramatically in industrial cities like Birmingham and Manchester.
+- *Key Evolutionary Deductions:*
+  - Natural selection operates on *pre-existing genetic variations*; soot did not generate the melanic allele, it simply altered the selective survival value of existing morphs.
+  - *No variant was completely eradicated.* In rural unpolluted regions, white moths remained dominant.
+  - In recent decades, clean-air legislation reduced coal combustion, causing lichen recovery and an observed decline in dark moth frequency. This proves that natural selection is dynamic and reversible.
+
+== Anthropogenic Selection: Resistance to Antibiotics & Pesticides
+
+- *Antibiotic Resistance in Bacteria:* Indiscriminate clinical administration of antibiotics destroys sensitive bacterial populations. Rare pre-existing mutant bacteria possessing antibiotic-resistance plasmids survive, proliferate uninhibitedly, and establish resistant strains within months.
+- *Pesticide Resistance:* Excessive spraying of DDT killed susceptible mosquitoes, but selected for rare mutant mosquitoes possessing enzymes capable of detoxifying DDT. Within a few seasons, DDT-resistant mosquito populations dominated.
+- *Evolution is Stochastic:* These examples prove that evolution is not a directed teleological process; it is a *stochastic process* governed by chance mutations and environmental selection pressures.
+
+#v(2pt)
+#align(center)[
+  #figure(
+    image("assets/bio_natural_selection_hardy_weinberg.png", width: 58%),
+    caption: [Figure 2: Three Modes of Natural Selection (Stabilising, Directional, Disruptive) and Hardy-Weinberg Dynamics],
+  )
+]
+#v(2pt)
+
+= Module 5: Hardy-Weinberg Principle & Population Genetics
+
+In 1908, British mathematician *G.H. Hardy* and German physician *Wilhelm Weinberg* independently formulated the foundational mathematical law governing population genetics.
+
+== The Hardy-Weinberg Principle & Algebraic Formulation
+
+- *The Principle:* In a large, randomly mating diploid population devoid of evolutionary disturbances, allele frequencies and genotype frequencies remain *constant and invariant from generation to generation* — a condition termed *genetic equilibrium* or *Hardy-Weinberg equilibrium*.
+- *The Algebraic Binomial Expansion:*
+  Consider a single gene locus with two alternative alleles: dominant allele $A$ and recessive allele $a$.
+  Let the gene frequency of allele $A = p$ and the frequency of allele $a = q$.
+  Since these are the only two alleles at this locus:
+  $ p + q = 1 $
+  The diploid genotype frequencies generated by random union of gametes follow the binomial expansion:
+  $ (p + q)^2 = p^2 + 2 p q + q^2 = 1 $
+  - $p^2$ = Frequency of homozygous dominant individuals ($A A$)
+  - $2 p q$ = Frequency of heterozygous individuals ($A a$)
+  - $q^2$ = Frequency of homozygous recessive individuals ($a a$)
+  - $p^2 + 2 p q$ = Total frequency of individuals displaying the dominant phenotype.
+- *Evolution Defined:* Any measured deviation of actual genotype frequencies from Hardy-Weinberg expectations indicates that evolutionary forces are actively driving population divergence.
+
+== Five Evolutionary Forces Disrupting Hardy-Weinberg Equilibrium
+
+1. *Gene Migration / Gene Flow:* Movement of a section of a population into another geographic region. When emigrants breed with the recipient population, new alleles are introduced into the new gene pool while being lost from the donor pool. Continuous, repeated migration is termed *gene flow*.
+2. *Genetic Drift:*
+   - *Definition:* Non-directional, random fluctuations in allele frequencies occurring purely *by chance* in *small, isolated populations*.
+   - Unlike natural selection, genetic drift operates regardless of whether an allele is beneficial, neutral, or harmful.
+   - *Founder Effect:* When a small group of individuals becomes geographically isolated from the parental population, their random allele frequencies establish the genetic foundation of the new colony. The isolated colonists are the "founders", and the resultant divergence is termed the *Founder Effect*.
+   - *Bottleneck Effect:* Severe ecological catastrophes (epidemics, floods, volcanic eruptions) drastically reduce population size to a small surviving fraction, randomly eliminating alleles.
+3. *Mutation:* Spontaneous alteration in DNA sequences introducing novel alleles into the gene pool. Advantageous mutations are rare, but provide fundamental raw material for long-term evolutionary divergence.
+4. *Genetic Recombination:* Crossing over between non-sister chromatids during pachytene of meiosis I, coupled with random assortment of homologous chromosomes, generates novel allelic combinations in gametes.
+5. *Natural Selection:* Differential reproductive success of phenotypes resulting in directional shifts in allele frequencies. Natural selection operates through three distinct phenotypic modes:
+   - *Stabilising Selection:* Favours individuals with intermediate (mean) phenotypes. The phenotypic distribution curve becomes narrower and taller. *Example:* Human infant birth weight — babies weighing between 2.5 and 3.5 kg exhibit the lowest perinatal mortality.
+   - *Directional Selection:* Favours individuals at one extreme of the phenotypic distribution. The entire distribution peak shifts toward that extreme. *Example:* Industrial melanism in *Biston betularia*; evolution of DDT-resistant mosquitoes.
+   - *Disruptive Selection:* Favours individuals at both peripheral extremes while penalizing intermediate phenotypes. The distribution curve splits into *two distinct phenotypic peaks*, fostering polymorphism and potential sympatric speciation.
+
+#worked-example("Worked Example — Step-by-Step Hardy-Weinberg Allele & Genotype Computation")[
+  *Problem Statement:* In a human population of 10,000 individuals adhering to Hardy-Weinberg equilibrium, 900 individuals exhibit an autosomal recessive trait (cystic fibrosis, genotype $a a$).
+  - *Step 1: Calculate recessive genotype frequency ($q^2$):*
+    $ q^2 = 900 / 10000 = 0.09 $
+  - *Step 2: Calculate recessive allele frequency ($q$):*
+    $ q = sqrt(0.09) = 0.3 $
+  - *Step 3: Calculate dominant allele frequency ($p$):*
+    Since $p + q = 1$, we have:
+    $ p = 1 - 0.3 = 0.7 $
+  - *Step 4: Calculate homozygous dominant genotype frequency ($p^2$):*
+    $ p^2 = (0.7)^2 = 0.49 quad arrow.r quad 49% quad (4,900 "individuals") $
+  - *Step 5: Calculate heterozygous carrier frequency ($2 p q$):*
+    $ 2 p q = 2 times 0.7 times 0.3 = 0.42 quad arrow.r quad 42% quad (4,200 "individuals") $
+  - *Step 6: Total dominant phenotype individuals ($p^2 + 2 p q$):*
+    $ 0.49 + 0.42 = 0.91 quad arrow.r quad 91% quad (9,100 "individuals") $
+  *Crucial Exam Rule:* Never calculate $p$ first by taking the square root of the dominant population fraction, because dominant individuals consist of both $p^2$ (homozygotes) and $2 p q$ (heterozygotes)! Always solve for $q$ from $q^2$ first!
+]
+
+= Module 6: Evolution Through Geological Eras & Major Milestones
+
+Earth's 4.5-billion-year chronological history is subdivided into *Eras* (Palaeozoic, Mesozoic, Cenozoic), which are subdivided into *Periods* and *Epochs*.
+
+== Chronological Evolutionary Milestones Across Geological Time
+
+- *2000 mya (Precambrian):* First cellular life forms emerged on Earth.
+- *500 mya (Palaeozoic - Cambrian/Ordovician):* Invertebrates formed and dominated marine ecosystems.
+- *350 mya (Silurian/Devonian):* Jawless fishes (*Agnatha*) evolved; early fishes dominated the waters. Early plants colonized terrestrial habitats.
+- *320 mya (Carboniferous):* Giant seaweeds and primitive terrestrial flora flourished. Vast coal deposits formed from giant ferns and lycopods.
+- *The Coelacanth Discovery (1938):* In 1938, a live fish caught in South Africa was identified as a *Coelacanth* (a *Lobefin*), thought to have been extinct for 65 million years. Lobefins possessed sturdy, fleshy, muscular fins that enabled them to crawl onto land and return to water — representing the transitional ancestors of the first terrestrial *Amphibians*.
+- *200 mya (Mesozoic - Triassic/Jurassic):* Some land reptiles retreated back into the aquatic environment to evolve into fish-like marine reptiles, exemplified by *Ichthyosaurs*. Giant terrestrial reptiles (*Dinosaurs*) dominated the planet. The most formidable carnivorous dinosaur was *Tyrannosaurus rex*, standing about *20 feet in height* and possessing ferocious dagger-like teeth.
+- *65 mya (Cretaceous-Tertiary Boundary):* Dinosaurs abruptly disappeared from the geological record, possibly due to massive bolide asteroid impact and subsequent global climatic collapse. Mammals, which were previously small, shrew-like nocturnal creatures, radiated rapidly into vacated ecological niches.
+
+#set table(inset: (x: 4pt, y: 2pt))
+#set text(size: 8.8pt)
 #table(
-  columns: (1.15fr, 1.5fr, 1.55fr),
-  table.header[*Mode*][*What selection favours*][*Classic example*],
-  [Stabilising], [The average; both extremes are removed], [Human birth weight — very small and very large babies are at greatest risk],
-  [Directional], [One extreme, so the average shifts that way], [A drought leaves only large hard seeds — finches with bigger beaks survive and the average beak grows],
-  [Disruptive], [Both extremes at once, against the middle], [A plant with only very large or very small seeds — birds ignore extremes but eat the mid-sized ones, so mid-sized beaks lose],
+  columns: (1fr, 1.3fr, 1.4fr),
+  table.header[*Geological Era*][*Period & Chronology*][*Major Evolutionary Radiations & Extinctions*],
+  [Palaeozoic\ (Ancient Life)], [Cambrian to Permian\ (540–250 mya)], [Invertebrates thrive (500 mya); jawless fish (350 mya); lobefin Coelacanth crawls ashore; first amphibians; coal forests of giant lycopods.],
+  [Mesozoic\ (Age of Reptiles)], [Triassic, Jurassic, Cretaceous\ (250–65 mya)], [Ichthyosaurs return to water (200 mya); dinosaurs and cycads dominate; Archaeopteryx evolves; abrupt dinosaur extinction at 65 mya.],
+  [Cenozoic\ (Age of Mammals)], [Tertiary & Quaternary\ (65 mya to Present)], [Adaptive radiation of placental mammals and birds; dominance of angiosperms; hominid evolution from Dryopithecus to modern Homo sapiens.],
 )
+#set text(size: 11pt)
 
-#analogy-box(title: "Analogy — The Gardener and the Weeds")[
-  A gardener pulls every plant that lacks the traits she wants and lets the rest
-  seed — that is *artificial selection*, humans choosing by design. Natural
-  selection is the same sieve with no gardener: the environment (drought, soot,
-  antibiotics, birds' eyes) removes whatever does less well, and the survivors
-  do the reproducing. The mapping to state honestly: the sieve = the struggle
-  for existence, the kept seeds = the fittest, and the next year's garden = the
-  next generation, already shifted toward what survived.
-]
+= Module 7: Origin and Evolution of Man (Hominid Phylogeny)
 
-#worked-example("Worked Example — Reading a Selection Mode from a Description")[
-  *Statement:* "A population of fish lives in a lake with predators that hunt in
-  both very shallow and very deep water. Over generations, fish are mostly small
-  (hiding near plants) or large (too big to swallow); medium-sized fish are the
-  rarest."
+Human evolution represents one of the most meticulously documented and heavily tested evolutionary sequences in the NCERT curriculum.
 
-  - *Clue 1:* *both* extremes survive best → not directional.
-  - *Clue 2:* the middle group is the one being removed → this is *disruptive*
-    selection.
-  - *Check:* one extreme? → directional. Only the average kept? → stabilising.
-    Both extremes kept, middle cut? → disruptive.
+== Chronological Hominid Ladder & Diagnostic Features
 
-  Three descriptions, three answers — train the reflex of asking *who is being
-  removed*, and the mode names itself.
-]
+1. *Dryopithecus & Ramapithecus (~15 mya - Miocene):*
+   - Hairy primates existing in Africa and Asia.
+   - *Dryopithecus:* More ape-like; possessed long arms; walked like chimpanzees and gorillas (knuckle-walkers).
+   - *Ramapithecus:* More man-like; possessed shorter canines and a more erect posture. Discovered in the Shivalik hills of India.
+2. *Australopithecines (~3–4 to 2 mya - Pliocene):*
+   - Fossils discovered in East African grasslands (Tanzania, Ethiopia; famous skeleton *"Lucy"*).
+   - Walked *fully erect and bipedal*.
+   - *Brain Capacity:* Approximately *400 to 500 cc*.
+   - *Habits:* Hunted with primitive stone weapons, but *essentially ate fruit* (herbivorous/frugivorous).
+3. *Homo habilis (~2.0 mya - Early Pleistocene):*
+   - The *first human-like being (the hominid)*. Known colloquially as the "handy man" or tool-maker.
+   - *Brain Capacity:* Diagnostic range of *650 to 800 cc*.
+   - *Dietary Trait:* Crucial NCERT distinction — *Homo habilis did NOT eat meat*.
+4. *Homo erectus (~1.5 mya - Middle Pleistocene):*
+   - Fossils discovered in Java, Indonesia in 1891 ("Java Man").
+   - *Brain Capacity:* Exactly *900 cc*.
+   - *Dietary Trait:* *Homo erectus probably ate meat* (carnivorous hunter). Mastered fire and crafted advanced Acheulean stone hand-axes.
+5. *Homo neanderthalensis (Neanderthal Man; 100,000–40,000 years ago):*
+   - Lived across the Near East and Central Asia.
+   - *Brain Capacity:* Exactly *1,400 cc* (comparable to or slightly larger than modern humans).
+   - *Cultural Traits:* Used *animal hides* to insulate and protect their bodies; performed ritualistic burial of their dead. Not a direct ancestor of modern humans, but an evolutionary cousin that coexisted and went extinct.
+6. *Homo sapiens (Modern Man; 75,000–10,000 years ago):*
+   - Arose in Africa during the last Ice Age (75,000–10,000 years ago) and migrated across continents, diverging into distinct geographical races.
+   - *Brain Capacity:* *1,350 to 1,450 cc*.
+   - *Cultural Milestones:* Prehistoric cave art developed approximately *18,000 years ago* (superb examples preserved at the Bhimbetka rock shelters in Raisen district, Madhya Pradesh); agriculture and human settlements commenced approximately *10,000 years ago*.
 
-= Evidences for Evolution
-
-If life evolves, the evidence should be lying around everywhere — in rocks, in
-eggs, in our own arms. It is. Scientists read evolution from four big sources:
-the fossil record, embryos, the anatomy of living things, and selection seen
-happening in front of us. Each source gives a different kind of clue, and
-questions love to make you sort examples into the right bin. Learn the bins
-first; the examples will then file themselves.
-
-== Palaeontology: the fossil record
-
-- *What a fossil is:* any preserved remains or impression of an organism —
-  bones, shells, leaf prints — trapped in rock layers (strata) of the earth.
-- *Deeper means older:* rock layers form one on top of another, so a fossil in
-  a deep layer lived earlier than a similar fossil near the surface.
-- *Missing links:* some fossils sit halfway between two big groups —
-  *Archaeopteryx* shows a reptile-like toothed jaw, long tail and claws *plus*
-  feathered wings, marking the step from reptiles toward birds.
-- *Ammonites and dinosaurs:* whole sequences of species appear, change and
-  vanish through the layers — life's history written in stone.
-- *How ages are fixed:* fossils' ages are estimated by *dating* the rocks around
-  them, which strengthens the deeper = older logic.
-
-== Embryology: shared beginnings
-
-- *The observation:* early embryos of fish, salamander, tortoise, chick, rabbit
-  and human look strikingly alike — all show *gill pouches* just behind the
-  head and a *tail*, whatever they will become.
-- *What it means:* gill pouches make perfect sense in a fish, but why would a
-  human embryo build them? Because vertebrates inherited the same developmental
-  plan from a common ancestor.
-- *Von Baer's correction:* Karl Ernst von Baer dismissed the old slogan
-  "ontogeny recapitulates phylogeny" (the idea that an embryo replays its
-  ancestors' adult stages) — embryos never pass through the *adult* stages of
-  other animals; they simply share early *embryonic* features.
-- *The safe sentence:* similar embryos point to common ancestry — they do not
-  "become" each other.
-
-== Comparative anatomy: same parts, different jobs
-
-- *Homologous structures:* organs in different animals that share the *same
-  basic structure and origin* but perform *different functions*.
-- *The forelimb family:* the flipper of a whale (swimming), the wing of a bat
-  (flying), the foreleg of a cheetah (running) and the arm of a human
-  (grasping) all run on the same bone plan — humerus, radius-ulna, carpals.
-- *A plant version:* the *thorn of Bougainvillea* and the *tendril of
-  Cucurbita* are both modified branches — same origin, different work
-  (defence versus climbing support).
-- *Divergent evolution:* this pattern — one ancestral structure, modified for
-  different needs — is called divergent evolution, and it is the signature of
-  *common ancestry*.
-
-== Same job, different parts
-
-- *Analogous structures:* organs with *completely different structures and
-  origins* that have been shaped to do the *same function*.
-- *Wings:* a butterfly's wing is a flat outgrowth of its body wall; a bird's
-  wing is a modified forelimb with bones — same job (flight), no shared plan.
-- *Eyes:* the eye of an octopus and the eye of a mammal look alike and both
-  focus images, yet they developed from entirely different embryonic tissues.
-- *Flippers:* penguin and dolphin flippers both drive swimming, but one is a
-  bird's wing and the other a mammal's forelimb.
-- *A plant pair:* sweet potato (a root) and potato (a stem) both store food —
-  different organs, same function.
-- *Convergent evolution:* this pattern — unrelated lines pressed by similar
-  needs into similar tools — is called convergent evolution; it is the
-  signature of *similar habitats*, not of close kinship.
-
+#set table(inset: (x: 4pt, y: 1.8pt))
+#set text(size: 8.5pt)
 #table(
-  columns: (1.15fr, 1.5fr, 1.5fr),
-  table.header[*Feature*][*Homologous organs*][*Analogous organs*],
-  [Basic structure and origin], [Same — inherited from a common ancestor], [Different — built from unrelated parts],
-  [Function], [Different (adapted to new needs)], [Same (solves the same problem)],
-  [Evolution type], [Divergent evolution], [Convergent evolution],
-  [Animal example], [Whale flipper, bat wing, cheetah leg, human arm], [Butterfly wing and bird wing; octopus eye and mammal eye; penguin and dolphin flippers],
-  [Plant example], [Thorn of Bougainvillea and tendril of Cucurbita], [Sweet potato (root) and potato (stem) — both store food],
+  columns: (1.1fr, 0.9fr, 0.9fr, 1.4fr),
+  table.header[*Hominid Species*][*Chronological Age*][*Cranial Capacity*][*Salient Traits, Diet, & Culture*],
+  [Dryopithecus], [~15 mya], [Ape-like (~400 cc)], [Arboreal, knuckle-walking, hairy; ancestral to both apes and humans.],
+  [Ramapithecus], [~15 mya], [More man-like], [Walked more erect; discovered in Shivalik hills; smaller canines.],
+  [Australopithecines], [~3–4 mya], [400–500 cc], [Bipedal upright walking in East Africa (Lucy); stone tools; fruit eaters.],
+  [Homo habilis], [~2.0 mya], [650–800 cc], [First hominid (toolmaker / "handy man"); strictly non-meat eater.],
+  [Homo erectus], [~1.5 mya], [900 cc], [Java man (1891); fully upright; ate meat; discovered and used fire.],
+  [Neanderthal Man], [100k–40k ya], [1,400 cc], [Near East & Central Asia; used animal hides for clothing; buried dead.],
+  [Homo sapiens], [75k–10k ya], [1,350–1,450 cc], [Modern humans; cave paintings (Bhimbetka, 18k ya); agriculture (10k ya).],
 )
+#set text(size: 11pt)
 
-== Industrial melanism, one more time
+#pagebreak()
 
-- *The recap:* the peppered-moth shift belongs in this list too — it is
-  *ecological evidence*, showing selection producing change within a human
-  lifetime, exactly as the fossil record shows it across millions of years.
+= Key Facts & Concept Cheatsheet
 
-#worked-example("Worked Example — Four Pairs, Four Verdicts")[
-  Classify each pair as homologous or analogous, and name the evolution type:
-
-  - *Whale flipper vs bat wing:* same forelimb bones, different jobs →
-    *homologous → divergent evolution*.
-  - *Butterfly wing vs bird wing:* unrelated structures, same job (flight) →
-    *analogous → convergent evolution*.
-  - *Thorn of Bougainvillea vs tendril of Cucurbita:* both modified branches →
-    *homologous → divergent evolution*.
-  - *Sweet potato vs potato:* root vs stem, both food stores → *analogous →
-    convergent evolution*.
-
-  The two-question test: *same plan?* → homology. *same job?* → analogy. Answer
-  the plan question before the job question and you cannot be trapped.
-]
-
-= Adaptive Radiation: One Ancestor, Many Forms
-
-Drop a few colonists on an empty island chain and something remarkable happens:
-their descendants split into many species, each shaped for a different way of
-life. This burst of branching from a single starting stock is *adaptive
-radiation* — the evolution of different species in one geographical area,
-starting from a point and literally radiating into other habitats and niches
-(a *niche* is a species' "job description": what it eats, where it lives, how
-it makes its living).
-
-== The idea in plain words
-
-- *One ancestor:* all the new forms descend from a single original population.
-- *Many openings:* the new area holds empty niches — no competitors yet.
-- *Fast branching:* variants that fit each niche survive and reproduce there,
-  so the population splits into specialised forms — a branching sprint of
-  evolution.
-
-== Darwin's finches: the textbook case
-
-- *The starting stock:* one seed-eating ground finch from South America reached
-  the Galápagos Islands long ago.
-- *The radiation:* its descendants evolved many beak shapes — stout beaks for
-  seeds, slender insect-eating beaks, and a woodpecker-like beak for probing
-  and picking insects out of bark.
-- *Why beaks?* The beak is the finch's food tool, so each food niche selected
-  the beak that worked best — the same logic as the moth, played out into
-  separate species.
-- *The lesson:* closely related birds on neighbouring islands differ *because*
-  they radiated, not by accident of creation.
-
-== Australian marsupials: the parallel radiation
-
-- *The setup:* Australia drifted away with only marsupials (pouched mammals) on
-  board; their descendants radiated into the same niches that placental mammals
-  — mammals whose young develop fully inside the mother — filled elsewhere.
-- *The result:* for almost every placental mammal on other continents, Australia
-  grew a marsupial look-alike that lives the same life.
-
-#table(
-  columns: (1fr, 1.25fr, 1.25fr),
-  table.header[*Niche*][*Australian marsupial*][*Placental counterpart elsewhere*],
-  [Small ground hunter], [Marsupial mouse], [Mouse],
-  [Burrowing digger], [Marsupial mole], [Mole],
-  [Large predator], [Marsupial wolf (thylacine)], [Wolf],
-)
-
-- *Reading the table:* the pairs are *not* close relatives — they are separate
-  radiations that converged on the same lifestyles, which is why marsupial and
-  placental look-alikes are a classic convergent-evolution pairing.
-- *Two patterns, one family tree:* radiation fills *new areas* from one stock
-  (finches); convergence reshapes *different stocks* in similar niches
-  (marsupials vs placentals). Both leave the same message: environments select.
-
-#analogy-box(title: "Analogy — One Training Batch, Many Departments")[
-  Imagine one training batch joining a brand-new company with every department
-  empty. One member ends up in sales, one in accounts, one in the workshop —
-  same starting skills, different jobs, and after years they barely resemble
-  each other. The batch is the common ancestor, the empty departments are the
-  unfilled niches, and the specialists they become are the radiated species.
-  The mapping stays honest because nothing in the story invents new skeletons —
-  it only redeploys what the family already had.
-]
-
-= The Mechanism: Hardy–Weinberg and the Five Factors
-
-So far you have seen *that* populations change. Now comes the part of Unit VII
-where biology meets arithmetic: a small equation that lets you *measure* whether
-a population is evolving. The whole game is built on one observation — a
-population is a *pool of alleles*, and you can count what fraction of the pool
-each version of a gene holds. If that fraction is not changing, the population
-is standing still; if it is changing, evolution is happening.
-
-== Allele frequencies: counting the pool
-
-- *Allele:* one version of a gene — say *A* (dominant form of a trait) or *a*
-  (its recessive partner).
-- *Frequency:* the *fraction* of all copies of that gene in the population that
-  are A or a — for example, if 70% of the copies are A, then $p = 0.7$.
-- *Genotype, not just allele:* individuals pair the alleles up — AA, Aa or aa —
-  and the frequencies of these three genotypes must add up to 1.
-
-#formula-box(title: "The Hardy–Weinberg Equation")[
-  $p^2 + 2 p q + q^2 = 1$
-
-  $p + q = 1$
-
-  - $p^2$ = frequency of *AA* (homozygous dominant)
-  - $2 p q$ = frequency of *Aa* (heterozygous)
-  - $q^2$ = frequency of *aa* (homozygous recessive)
-  - $p$ = frequency of allele A; $q$ = frequency of allele a
-]
-
-- *The principle, in words:* in a *large* population that mates *at random*,
-  with *no evolutionary forces* acting, these frequencies stay identical
-  generation after generation — a state called *genetic equilibrium*.
-- *The flip side:* *evolution is exactly a change in allele frequency* between
-  generations. Disturb the equilibrium and you are watching evolution happen.
-
-#worked-example("Worked Example — Forward: Frequencies from Alleles")[
-  In a population, the allele frequencies are $p = 0.7$ and $q = 0.3$. Find the
-  genotype mix.
-
-  - *Step 1 — homozygous dominant:* $p^2 = (0.7)^2 = 0.49$ → *49% are AA*.
-  - *Step 2 — heterozygous:* $2 p q = 2 times 0.7 times 0.3 = 0.42$ → *42% are Aa*.
-  - *Step 3 — homozygous recessive:* $q^2 = (0.3)^2 = 0.09$ → *9% are aa*.
-  - *Check:* 0.49 + 0.42 + 0.09 = 1.00, and 0.7 + 0.3 = 1.0 — the population's
-    gene pool is fully accounted for.
-]
-
-#worked-example("Worked Example — Reverse: Alleles from a Count")[
-  A survey finds that *16% of individuals* show a recessive trait (aa). Find the
-  heterozygote frequency.
-
-  - *Step 1:* $q^2 = 0.16$, so $q = sqrt(0.16) = 0.4$.
-  - *Step 2:* $p = 1 - q = 1 - 0.4 = 0.6$.
-  - *Step 3:* heterozygotes $= 2 p q = 2 times 0.6 times 0.4 = 0.48$ → *48% are Aa*.
-  - *Sanity note:* carriers (48%) are far more common than affected individuals
-    (16%) — recessive alleles mostly hide inside heterozygotes.
-]
-
-== The five factors that disturb equilibrium
-
-Hardy–Weinberg balance is a *null model* — it holds only when nothing is
-pushing. Five forces push, and each one is a named syllabus pointer:
-
-#table(
-  columns: (1.2fr, 1.6fr, 1.4fr),
-  table.header[*Factor*][*What it does to the pool*][*Classic situation*],
-  [Gene migration (gene flow)], [Individuals move in or out, carrying their alleles between populations], [Migrants from a neighbouring herd join and add new alleles],
-  [Genetic drift], [Chance — not fitness — changes frequencies, strongest in *small* populations], [A few founders start an island population; a crash leaves random survivors (bottleneck)],
-  [Mutation], [New alleles appear, or one allele turns into another], [A copying error creates a version no individual carried before],
-  [Recombination], [Crossing over shuffles existing alleles into new combinations each generation], [New trait combinations appear in offspring without new alleles],
-  [Natural selection], [Alleles that improve survival or reproduction become more common], [Soot-dark trees raise the dark-moth allele generation after generation],
-)
-
-- *Drift's two famous faces:* the *founder effect* (a new population started by
-  a few individuals carries an unrepresentative allele mix) and the *bottleneck*
-  (a population crash leaves survivors whose alleles were picked by luck).
-- *Why size matters so much:* in a small population, one random death or one
-  lucky mating swings the frequencies — chance has room to steer; in a large
-  population, chance events cancel out.
-- *The exam reflex:* a question that says "random change in a small population"
-  means *genetic drift*; "individuals entering a population" means *gene
-  migration*; "new allele appears" means *mutation*.
-
-= Life Through the Ages: Plants and Vertebrates
-
-Time is the hardest thing in biology to feel. Our whole recorded history is a
-few thousand years, yet evolution plays its game across *billions*. Squeeze all
-4.5 billion years into a single calendar year and you get the right shiver:
-dinosaurs vanish around 26 December, "Lucy" appears on the evening of 31
-December, and farming begins in the last minute before midnight. The walk
-below keeps the standard markers the syllabus and NCERT use — learn the order
-first, the dates second.
-
-#figure(image("assets/bio_evolution_timeline.png", width: 100%), numbering: none, supplement: none, caption: [Figure 1 — Life through the ages: twelve milestones from the formation of Earth to the spread of Homo sapiens, with dates as given in the standard geological story.])
-
-== The walk, marker by marker
-
-- *2000 million years ago (mya):* *invertebrates* — animals without
-  backbones — flourished in the seas, and cellular life (all of it
-  single-celled prokaryotes) was already established.
-- *500 mya:* *jawless fish* evolved — the first animals with a backbone.
-- *350 mya:* *giant ferns* (pteridophytes) formed swampy forests on land; some
-  lobe-finned fishes — fish with limb-like fins and lung-like organs — gave rise
-  to the first *amphibians*, which could live both in water and on land.
-- *The land conquest continues:* amphibians evolved into *reptiles*, which lay
-  thick-shelled eggs that do not dry out — so reptiles spread far inland, while
-  seed ferns gave way to *gymnosperms* (cone-bearing, naked-seed plants).
-- *230 mya:* the *dinosaurs* — reptiles — rose and dominated the land.
-- *65 mya:* dinosaurs vanished *suddenly* (the leading suspects are climate
-  change and an asteroid impact); the surviving *mammals* spread into every
-  empty niche and flourished.
-- *A living fossil:* in 1938 a *coelacanth* — a lobe-finned fish thought to have
-  been extinct for millions of years — was caught off South Africa, a live
-  reminder of the fish lineage that walked toward land.
-
-#table(
-  columns: (1fr, 1.5fr, 1.5fr),
-  table.header[*When*][*Animals*][*Plants and habitats*],
-  [2000 mya], [Invertebrates flourish in the seas], [Ocean-dwelling life; land still bare],
-  [500 mya], [Jawless fish — first backboned animals], [Seas rich in algae],
-  [350 mya], [Lobe-finned fish → first amphibians walk on land], [Giant ferns (pteridophytes) in swampy forests],
-  [230 mya], [Reptiles rule; dinosaurs dominate], [Gymnosperms (conifers) widespread],
-  [65 mya], [Dinosaurs disappear; mammals spread and diversify], [Flowering plants (angiosperms) rise toward dominance],
-)
-
-#worked-example("Worked Example — Reading the Timeline Backwards")[
-  *Question:* a rock layer holds a jawless-fish fossil, and a layer above it
-  holds a dinosaur bone. Which is older, and is the order consistent with the
-  timeline?
-
-  - *Step 1:* deeper layer = older, so the jawless fish lived earlier.
-  - *Step 2:* check the dates — jawless fish appeared about *500 mya*; dinosaurs
-    dominated from about *230 mya*. The order (fish below, dinosaur above) is
-    consistent.
-  - *Step 3:* a trick variant — "could the fish be *younger* than the
-    dinosaurs?" No: 500 mya comes *before* 230 mya in deep time. Bigger mya
-    number = older.
-
-  Train the reflex: convert every date to "years before present", and the
-  larger number is always the earlier event.
-]
-
-#analogy-box(title: "Analogy — Earth's History as a Calendar Year")[
-  Compress 4.5 billion years into one year of 365 days, so each day carries
-  about 12 million years. Earth forms on 1 January; the first cells appear in
-  late February; jawless fish arrive in mid-November; dinosaurs rule from about
-  mid-December; they vanish around 26 December; mammals have a quiet Boxing Day
-  start; "Lucy" walks at about 5 pm on 31 December; Homo sapiens appears about
-  9 minutes before midnight; and agriculture begins in the final minute. The
-  mapping is arithmetic, not decoration — divide each date by 12 million years
-  per day and place it on the calendar — and it teaches the honest lesson: our
-  kind is a newcomer.
-]
-
-= Origin and Evolution of Man
-
-Every family has an album, and ours spans millions of years. Two ideas must be
-nailed down before the names. First, humans and apes *share ancestors* — we did
-not descend from any ape alive today; both sides branched from common stock.
-Second, the story is *not a ladder of effort* with one species handing over to
-the next: several human-like species lived at the same time, so the family tree
-is a *bush of relatives*, some of whom were simply not our ancestors.
-
-== The ladder, rung by rung
-
-#table(
-  columns: (1.35fr, 1fr, 1.9fr),
-  table.header[*Species*][*When and where*][*What marks each rung*],
-  [Dryopithecus and Ramapithecus], [About 15 mya; Africa, Asia, Europe], [Ape-like, hairy, walked like gorillas and chimpanzees; Ramapithecus carries the first man-like hints],
-  [Australopithecus], [3–4 mya; East African grasslands], ["Lucy"; walked upright, about 2–4 feet tall; hunted with stone weapons but essentially ate fruit],
-  [Homo habilis], [About 2 mya; Africa], [Brain about 650–800 cc; the first tool-maker — "handy man"],
-  [Homo erectus], [About 1.5 mya], [Larger brain, about 900 cc; almost certainly ate meat],
-  [Neanderthal man], [100,000–40,000 years ago; Near East, Central Asia, Europe], [Brain about 1400 cc; used hides to protect the body; buried their dead],
-  [Homo sapiens], [Arose in Africa about 75,000–100,000 years ago], [Spread across the continents; cave art about 18,000 years ago; agriculture about 10,000 years ago; settlements and civilisations follow],
-)
-
-- *Dryopithecus and Ramapithecus:* the oldest pair in the syllabus ladder —
-  mostly ape-like, but Ramapithecus shows the first man-like features.
-- *Australopithecus:* the famous "Lucy" skeleton; upright walking came before
-  big brains — bipedalism was the first step of the human line.
-- *Homo habilis:* the name means "handy man"; stone tools are its signature.
-- *Homo erectus:* a bigger brain (about 900 cc) and a meat-eating diet.
-- *Neanderthal man:* a large brain (about 1400 cc), hides for clothing, and the
-  touching habit of *burying their dead*.
-- *Homo sapiens:* arose in Africa, moved across continents during the ice age,
-  painted caves about 18,000 years ago, began agriculture about 10,000 years
-  ago, and built settlements and civilisations from there.
-
-== Reading the ladder correctly
-
-- *Brain size grew in steps:* roughly 650–800 cc (habilis) → 900 cc (erectus) →
-  1400 cc (Neanderthal) → modern sapiens near that same range.
-- *Traits did not arrive together:* upright walking, tool-making, big brains and
-  farming each appeared at a different rung — no single jump made a human.
-- *Not a ladder of effort — a bush of relatives:* several species coexisted, and
-  in the NCERT ladder *Neanderthal man is a close relative branch, not a direct
-  ancestor* of Homo sapiens.
-- *Dates to carry:* 15 mya (ape-like pair) → 3–4 mya (Lucy) → 2 mya (tools) →
-  1.5 mya (erectus) → 100,000–40,000 years ago (Neanderthal) → 75,000–100,000
-  years ago (sapiens) → 10,000 years ago (agriculture).
-
-#analogy-box(title: "Analogy — A Family Photo Wall, Not a Relay Race")[
-  Picture the evolution of man as a photo wall rather than a relay race. The
-  relay picture (one runner passing a baton to the next, each better than the
-  last) is what students imagine — and it is wrong. The photo wall shows a big
-  extended family: cousins who lived at the same time, aunts and uncles whose
-  lines ended, and one thread that leads to us. Neanderthal is the tall cousin
-  in the corner — related, successful in his own time, not an ancestor standing
-  "before" us. That is what "a bush of relatives" means.
-]
-
-= Key Facts & Terms Cheatsheet
-
-#cheatsheet-box(title: "Key Facts & Terms Cheatsheet — Evolution")[
+#cheatsheet-box(title: "High-Yield Evolution Examination Cheatsheet")[
+  #set table(inset: (x: 4pt, y: 1.8pt))
+  #set text(size: 8.2pt)
   #table(
-    columns: (1.15fr, 1.75fr, 1.3fr),
-    table.header[*Term / fact*][*What it means*][*Example / number to carry*],
-    [Miller–Urey experiment (1953)], [Early-air gases + electric spark built life's building blocks], [CH#sub[4] + NH#sub[3] + H#sub[2] + water vapour at about 800°C → amino acids],
-    [Oparin–Haldane idea], [Chemical evolution — life assembled step by step from non-living molecules], [Gases → organic molecules → first cells],
-    [RNA world], [RNA was the first genetic material — it stores information and catalyses reactions], [First cells about 3.8 bya; all early cells prokaryotes],
-    [What selection needs], [Heritable variation + struggle for existence + survival and reproduction of the fittest + branching descent], [Fittest = most surviving offspring, not strongest],
-    [Homologous organs], [Same basic structure and origin, different functions → divergent evolution], [Whale flipper, bat wing, cheetah leg, human arm; Bougainvillea thorn vs Cucurbita tendril],
-    [Analogous organs], [Different structures and origins, same function → convergent evolution], [Butterfly and bird wings; octopus and mammal eyes; penguin and dolphin flippers],
-    [Adaptive radiation], [One ancestor radiates into many forms in new niches], [Darwin's finches (seed → insect → woodpecker-like beaks); Australian marsupials vs placental look-alikes],
-    [Hardy–Weinberg equation], [$p^2 + 2 p q + q^2 = 1$ and $p + q = 1$; $p^2$ = AA, $2 p q$ = Aa, $q^2$ = aa], [$p = 0.7$, $q = 0.3$ → AA 49%, Aa 42%, aa 9%],
-    [Five disturbing factors], [Gene migration, genetic drift, mutation, recombination, natural selection], [Drift is strongest in small populations (founder effect, bottleneck)],
-    [Three selection modes], [Stabilising keeps the average; directional shifts it; disruptive favours both extremes], [Birth weight / drought beaks / seed-size beaks],
-    [Industrial melanism], [Soot-darkened trunks flipped which moth form survived], [Biston betularia: white common before industry, dark after],
-    [Timeline anchors], [Earth 4.5 bya; first cells ~3.8 bya; invertebrates 2000 mya; jawless fish 500 mya; ferns and amphibians 350 mya; dinosaurs 230 → gone 65 mya], [Dinosaurs dominated for over 160 million years],
-    [Human ladder in order], [Dryopithecus/Ramapithecus → Australopithecus → Homo habilis → Homo erectus → Neanderthal → Homo sapiens], [15 mya → 3–4 mya → 2 mya → 1.5 mya → 100,000–40,000 ya → 75,000–100,000 ya],
+    columns: (1.1fr, 1.7fr, 1.2fr),
+    table.header[*Concept / Milestone*][*Biological Definition / Mechanism*][*NCERT Anchor Metric / Exam Rule*],
+    [Miller-Urey Setup (1953)], [Spark discharge simulating primitive reducing atmosphere], [CH#sub[4]:NH#sub[3]:H#sub[2] + H#sub[2]O at 800°C $arrow.r$ Amino acids],
+    [Homologous Organs], [Same embryonic origin, different functions; divergent evolution], [Whale/bat/cheetah/man forelimbs; Bougainvillea/Cucurbita],
+    [Analogous Organs], [Different origins, same function; convergent evolution], [Bird/butterfly wings; sweet potato (root) vs potato (stem)],
+    [Adaptive Radiation], [Single ancestral stock radiating into diverse ecological niches], [Darwin's finches; Australian marsupials vs placentals],
+    [Hardy-Weinberg Equation], [Genetic equilibrium: allele & genotype frequencies invariant], [$p^2 + 2 p q + q^2 = 1$; $p + q = 1$; 5 disturbing factors],
+    [Genetic Drift], [Random allele frequency fluctuations by chance in small pools], [Founder effect & bottleneck effect; non-adaptive],
+    [Natural Selection Modes], [Stabilising (mean), Directional (one extreme), Disruptive (both)], [Birth weight (stabilising); industrial melanism (directional)],
+    [De Vries Mutation Theory], [Evolution proceeds via sudden single-step large mutations], [*Saltation*; mutations are random & directionless],
+    [Living Fossil Lobefin], [Coelacanth caught in South Africa (1938); ancestral to amphibians], [Fleshy fins enabled crawling onto land 350 mya],
+    [Dinosaur Demise], [Dominant Mesozoic reptiles extinct at Cretaceous boundary], [Disappeared suddenly ~65 mya; T. rex was 20 ft tall],
+    [Hominid Brain Capacities], [H. habilis $arrow.r$ H. erectus $arrow.r$ Neanderthal $arrow.r$ H. sapiens], [650–800 cc $arrow.r$ 900 cc $arrow.r$ 1400 cc $arrow.r$ 1350–1450 cc],
+    [Hominid Diets & Culture], [Dietary and cultural markers distinguishing Homo species], [H. habilis: no meat; H. erectus: ate meat; Neanderthal: buried dead],
   )
 ]
 
-= Common Errors and Special Cases
-
-#exception-box(title: "Common Errors & Special Cases")[
-  #table(
-    columns: (1.35fr, 1.55fr, 1.3fr),
-    table.header[*The mistake students make*][*What is right*][*One-line why / the trap*],
-    [Sorting organs by *job* ("both fly, so same")],
-    [Test the *structure and origin* first: same plan = homologous even when jobs differ],
-    [Bird wing and butterfly wing both fly — yet they are analogous, not homologous],
-    [Pairing "convergent = homologous"],
-    [Convergent evolution produces *analogous* organs; divergent evolution produces *homologous* organs],
-    [The pair flips under pressure — rehearse it until it is automatic],
-    [Treating genetic drift as a form of selection],
-    [Drift is a *random* change in allele frequency, strongest in small populations],
-    [No allele is "better" — chance alone can raise, fix or erase one],
-    [Applying Hardy–Weinberg to any population blindly],
-    [It holds only with a large population, random mating, and *no* selection, mutation, migration or drift],
-    [When those forces act, frequencies shift — and that shift *is* evolution],
-    [Calling $2 p q$ the dominant phenotype],
-    [$2 p q$ is only the heterozygote frequency; the dominant phenotype is $p^2 + 2 p q$],
-    [In the $p = 0.7$ example: carriers 42%, but dominant look = 49% + 42% = 91%],
-    [Saying "humans descended from Neanderthals"],
-    [In the NCERT ladder Neanderthal is a close relative branch, not a direct ancestor],
-    [Several hominid species coexisted — the lineage is a bush, not a ladder],
-    ["Miller made life in a flask"],
-    [Miller made *amino acids* — the building blocks — not living cells],
-    [Cells also need membranes, metabolism and heredity, which no flask experiment produced],
+#v(4pt)
+#align(center)[
+  #figure(
+    image("assets/bio_evolution_mindmap.png", width: 62%),
+    caption: [Figure 3: Whole-Chapter Concept Synthesis Mindmap: Origin of Life, Theories, Evidences, Mechanisms, Geological Milestones, and Hominid Lineage],
   )
 ]
 
-== Three checking habits before you move on
+#pagebreak()
+#set text(size: 9.8pt)
+#set par(leading: 0.55em, spacing: 0.75em)
 
-- *The two-question habit:* for any organ pair, ask "same plan?" *before*
-  "same job?" — the plan answer decides homology, the job answer only confirms
-  the analogy case.
-- *The assumption habit:* before any Hardy–Weinberg computation, list what must
-  be absent — selection, mutation, migration, drift — and confirm mating is
-  random; if a factor is acting, frequencies are shifting and that shift is the
-  answer.
-- *The order habit:* for timeline and human-ladder questions, write the rungs
-  as a rough line first ("cells → fish → ferns → amphibians → dinosaurs →
-  mammals"; "Lucy → tools → erectus → Neanderthal → sapiens"), then attach the
-  dates — order questions break when dates are memorised without the line.
+= Practice Questions — Part 1 (Q1 to Q5)
 
-= The Whole Chapter on One Page
-
-#figure(image("assets/bio_evolution_mindmap.png", width: 100%), numbering: none, supplement: none, caption: [Figure 2 — Whole chapter on one page: origin of life, Darwin's mechanism, the four evidence kinds, adaptive radiation, Hardy–Weinberg with its five factors, and the human ladder, with the three traps that catch most students.])
-
-= Practice Questions
-
-#mcq(1, [In Miller's 1953 experiment, the electric spark was passed through a sealed flask containing:], (
-  [CO#sub[2], O#sub[2], N#sub[2] and water vapour], [CH#sub[4], NH#sub[3], H#sub[2] and water vapour], [CH#sub[4], O#sub[2], N#sub[2] and water vapour], [CO#sub[2], NH#sub[3], O#sub[2] and hydrogen gas],
+#mcq(1, [In his famous 1953 closed-flask simulation of primitive Earth conditions, Stanley Miller passed continuous electric spark discharges through a gaseous mixture maintained at approximately 800°C. Which of the following correctly identifies the gaseous components present inside the reaction vessel?], (
+  [Carbon dioxide ($C O_2$), molecular oxygen ($O_2$), nitrogen ($N_2$), and water vapour],
+  [Methane ($C H_4$), ammonia ($N H_3$), hydrogen ($H_2$), and water vapour],
+  [Methane ($C H_4$), molecular oxygen ($O_2$), ammonia ($N H_3$), and carbon monoxide],
+  [Carbon dioxide ($C O_2$), ammonia ($N H_3$), hydrogen ($H_2$), and sulfur dioxide],
 ))
+#solution(1, [Stanley Miller simulated the primordial reducing atmosphere of prebiotic Earth using methane ($C H_4$), ammonia ($N H_3$), molecular hydrogen ($H_2$), and circulating water vapour at 800°C. Crucially, molecular oxygen ($O_2$) was strictly absent. The reaction yielded amino acids (glycine, alanine, aspartic acid), confirming the Oparin-Haldane chemical evolution hypothesis.], answer: [B])
 
-#mcq(2, [During industrial melanism, dark-winged peppered moths became the common form in soot-covered areas because they:], (
-  [ate more of the soot-covered lichen], [laid more eggs than the white moths], [were better camouflaged on dark trunks, so predators caught fewer], [changed their wing colour to dark during their own lifetime],
+#mcq(2, [In England, field collections of the peppered moth (Biston betularia) demonstrated that before industrialization (1850s), white-winged moths were abundant, whereas after industrialization (1920s), dark-winged melanic moths dominated industrial areas. This evolutionary shift constitutes a classical demonstration of:], (
+  [Stabilising natural selection operating against both phenotypic extremes],
+  [Directional natural selection favouring an adaptive phenotypic extreme],
+  [Disruptive natural selection splitting the population into two discrete peaks],
+  [Lamarckian inheritance of acquired dark pigmentation induced by coal soot],
 ))
+#solution(2, [Industrial melanism is a textbook example of directional natural selection. Soot from coal combustion covered tree trunks and killed pale lichens in industrial regions. Dark melanic moths (*carbonaria*) were camouflaged against birds on soot-darkened trunks, while white moths were easily predated. The phenotypic distribution shifted directionally toward melanism. No variant was created de novo or completely eliminated.], answer: [B])
 
-#mcq(3, [Which of the following pairs shows *homologous* organs?], (
-  [Thorn of Bougainvillea and tendril of Cucurbita], [Wings of a butterfly and a bird], [Flippers of a penguin and a dolphin], [Eyes of an octopus and a mammal],
+#mcq(3, [Which of the following paired biological structures represents an authentic example of homologous organs resulting from divergent evolutionary descent?], (
+  [The wing of a butterfly and the wing of a bird],
+  [The eye of an octopus and the eye of a mammal],
+  [The thorn of Bougainvillea and the tendril of Cucurbita],
+  [The flipper of a penguin and the flipper of a dolphin],
 ))
+#solution(3, [Thorns of *Bougainvillea* and tendrils of *Cucurbita* are homologous organs: both are modified axillary buds sharing the same embryonic origin and anatomical position, but modified to perform different functions (defence vs climbing). In contrast, butterfly/bird wings, octopus/mammal eyes, and penguin/dolphin flippers are analogous organs resulting from convergent evolution.], answer: [C])
 
-#mcq(4, [Convergent evolution produces:], (
-  [analogous structures], [homologous structures], [vestigial organs], [missing links],
+#mcq(4, [Sweet potato (Ipomoea batatas) and common potato (Solanum tuberosum) both function as specialized storage organs for edible carbohydrates. From an evolutionary perspective, these organs are classified as:], (
+  [Homologous structures that have undergone divergent evolutionary radiation],
+  [Analogous structures that have evolved independently via convergent evolution],
+  [Vestigial structures inherited from a common ancestral angiosperm],
+  [Atavistic organs reflecting ancestral underground root morphology],
 ))
+#solution(4, [Sweet potato is an anatomically modified adventitious root, whereas common potato is an anatomically modified underground stem tuber (possessing nodes, internodes, and scale leaves). Because they share completely different morphological origins but perform the identical biological function of food storage, they are analogous structures developed through convergent evolution.], answer: [B])
 
-#mcq(5, [In a population at Hardy–Weinberg equilibrium, $p = 0.8$ and $q = 0.2$. The frequency of heterozygous individuals is:], (
-  [0.16], [0.32], [0.64], [0.04],
+#mcq(5, [The evolution of diverse forms of Australian marsupials (such as the marsupial mole, wombat, banded anteater, and kangaroo) from a single ancestral marsupial stock within the isolated Australian continent represents an outstanding example of:], (
+  [Adaptive radiation],
+  [Saltation and single-step macromutation],
+  [Stabilising natural selection],
+  [Anthropogenic selective breeding],
 ))
+#solution(5, [Adaptive radiation is the evolutionary diversification of a single ancestral species into multiple distinctly specialized forms that radiate into different ecological niches within a geographical territory. Darwin's finches on the Galápagos Islands and Australian marsupials on the island continent of Australia are the two premier examples described in NCERT Class 12.], answer: [A])
 
-#mcq(6, [In a population at Hardy–Weinberg equilibrium, 16% of the individuals show a recessive trait. The frequency of heterozygous carriers is:], (
-  [16%], [24%], [48%], [96%],
+#pagebreak()
+#set text(size: 9.8pt)
+#set par(leading: 0.55em, spacing: 0.75em)
+
+= Practice Questions — Part 2 (Q6 to Q10)
+
+#mcq(6, [In a large human population conforming strictly to Hardy-Weinberg equilibrium, the proportion of individuals afflicted with an autosomal recessive condition (albinism) is observed to be 16% (0.16). What is the expected frequency of heterozygous carrier individuals in this population?], (
+  [0.16 (16%)],
+  [0.24 (24%)],
+  [0.48 (48%)],
+  [0.84 (84%)],
 ))
+#solution(6, [In Hardy-Weinberg mathematics, homozygous recessive individuals ($a a$) have a frequency of $q^2$. Here, $q^2 = 0.16$, which yields $q = sqrt(0.16) = 0.4$. Since $p + q = 1$, the frequency of the dominant allele $A$ is $p = 1 - 0.4 = 0.6$. The frequency of heterozygous carriers ($A a$) is given by $2 p q = 2 times 0.6 times 0.4 = 0.48$ (or 48%). The common trap is mistaking carrier frequency for $2 q$ or forgetting the factor of 2.], answer: [C])
 
-#mcq(7, [A few individuals colonise a remote island, and the new population's allele mix differs from the mainland's purely by chance. This is an example of:], (
-  [gene migration], [mutation pressure], [disruptive selection], [genetic drift (founder effect)],
+#mcq(7, [A catastrophic volcanic eruption isolates a tiny cohort of 15 lizards on an offshore oceanic reef. Over subsequent generations, the allele frequencies of the newly established reef population diverge dramatically from the large mainland parental population due to purely stochastic sampling events. This phenomenon exemplifies:], (
+  [Gene flow resulting from continuous directional migration],
+  [Genetic drift exhibiting the Founder Effect in a small population],
+  [Disruptive selection favouring intermediate heterozygotes],
+  [Sympatric speciation driven by polyploidization],
 ))
+#solution(7, [Genetic drift refers to random, non-directional fluctuations in allele frequencies occurring purely by chance in small, isolated populations. When a minuscule group emigrates and colonizes an isolated territory, their random allelic sample forms the genetic basis of the new lineage — a specific manifestation of genetic drift termed the *Founder Effect*. The new population may become distinct enough to constitute a new species.], answer: [B])
 
-#mcq(8, [After a drought, only large hard seeds remain, and over many generations finches with larger beaks survive and reproduce more. This shift is:], (
-  [stabilising selection], [directional selection], [disruptive selection], [genetic drift],
+#mcq(8, [Which of the following operational modes of natural selection acts to penalize both extreme phenotypes while simultaneously increasing the proportion of individuals exhibiting the intermediate mean character state?], (
+  [Directional selection],
+  [Stabilising selection],
+  [Disruptive selection],
+  [Artificial selection],
 ))
+#solution(8, [Stabilising selection favours the intermediate (mean) character value and eliminates peripheral phenotypes at both extremes. As a consequence, the phenotypic distribution curve becomes narrower and taller over generations. A classic example is human birth weight: infants with birth weights between 2.5 and 3.5 kg have significantly higher survival rates than low-birth-weight (under 2 kg) or heavy (over 4.5 kg) infants.], answer: [B])
 
-#mcq(9, [Which option places these in the correct order of appearance?], (
-  [Homo habilis → Australopithecus → Homo erectus → Homo sapiens], [Homo erectus → Homo habilis → Australopithecus → Homo sapiens], [Australopithecus → Homo habilis → Homo erectus → Homo sapiens], [Australopithecus → Homo erectus → Homo habilis → Homo sapiens],
+#mcq(9, [Hugo de Vries formulated his Mutation Theory of evolution based on experimental hybridization of evening primrose (Oenothera lamarckiana). According to de Vries, evolutionary speciation differs fundamentally from Darwin's concept because mutations are:], (
+  [Minor, continuous, and directional variations],
+  [Single-step, large, random, and directionless alterations termed Saltation],
+  [Inherited epigenetic modifications induced by somatic usage of organs],
+  [Gradual microscopic changes accumulated exclusively over millions of generations],
 ))
+#solution(9, [Hugo de Vries postulated that speciation is caused by sudden, discrete, large-scale genetic alterations termed *Saltation* (single-step large mutation). He emphasized that mutations are *random and directionless*, sharply contrasting with Darwinian variations which are small, continuous, gradual, and directional.], answer: [B])
 
-#mcq(10, [Dinosaurs dominated the Earth from about one date and disappeared by another. The correct pair of dates (mya) is:], (
-  [500 and 200], [350 and 150], [150 and 65], [230 and 65],
+#mcq(10, [In 1938, a live specimen of Coelacanth (a Lobefin fish) was netted off the coast of South Africa. The biological significance of this discovery resides in the fact that lobefins:], (
+  [Are the direct ancestors of modern cartilaginous sharks],
+  [Represented transitional living fossils whose muscular fins evolved into the limbs of the first terrestrial amphibians],
+  [Proved that marine reptiles such as Ichthyosaurs never existed],
+  [Represented the earliest known jawless agnathan vertebrates],
 ))
+#solution(10, [The Coelacanth is a lobefin fish that was long presumed to be extinct for 65 million years. Lobefins possessed stout, fleshy, muscular fins containing internal bones, enabling them to crawl onto muddy terrestrial banks and return to water. They represent the direct evolutionary transition between fishes and the earliest terrestrial amphibians that emerged approximately 350 million years ago.], answer: [B])
 
-= Solutions
+#pagebreak()
+#set text(size: 9.6pt)
+#set par(leading: 0.52em, spacing: 0.65em)
 
-#solution(1, [Miller rebuilt the early atmosphere: CH#sub[4], NH#sub[3], H#sub[2] and water vapour — *no oxygen*, kept at about 800°C with an electric spark for lightning. The mix in option B is exactly his recipe; every other option slips in oxygen or drops a key gas.], answer: "B")
+= Practice Questions — Part 3 (Q11 to Q15)
 
-#solution(2, [The moths rest on trunks by day, where birds hunt by sight. Soot darkened the trunks, so dark wings were the better camouflage — predators caught fewer dark moths, which then left more offspring. Individual moths never change colour (option D is the classic trap).], answer: "C")
+#mcq(11, [Giant carnivorous reptiles, exemplified by Tyrannosaurus rex, dominated terrestrial ecosystems during the Mesozoic Era before undergoing sudden global extinction. According to the geological record, dinosaurs appeared and abruptly vanished approximately:], (
+  [500 million years ago and 200 million years ago respectively],
+  [350 million years ago and 150 million years ago respectively],
+  [230 million years ago and 65 million years ago respectively],
+  [65 million years ago and 10,000 years ago respectively],
+))
+#solution(11, [Dinosaurs emerged during the Triassic Period of the Mesozoic Era approximately 230 million years ago and dominated Earth for over 160 million years before disappearing abruptly at the Cretaceous-Tertiary (K-T) boundary approximately *65 million years ago* (65 mya). Following their extinction, small mammalian lineages radiated into terrestrial niches.], answer: [C])
 
-#solution(3, [Thorn and tendril are both *modified branches* — same plan and origin, different jobs — so they are homologous. Butterfly and bird wings, penguin and dolphin flippers, and octopus and mammal eyes all do the same job from unrelated starting parts: analogous.], answer: "A")
+#mcq(12, [Ernst Haeckel proposed the Biogenetic Law, stating that embryonic development recapitulates ancestral evolutionary history. Which eminent scientist decisively refuted this generalization by demonstrating that embryos never pass through the adult stages of other animals?], (
+  [Alexander Oparin],
+  [Karl Ernst von Baer],
+  [Thomas Malthus],
+  [Alfred Russel Wallace],
+))
+#solution(12, [Karl Ernst von Baer carefully analyzed vertebrate embryogenesis and explicitly refuted Haeckel's biogenetic law. von Baer demonstrated that during development, generalized embryonic features (such as pharyngeal arches and notochord) appear before specialized traits, and vertebrate embryos *never pass through the adult morphological stages of other animal species*.], answer: [B])
 
-#solution(4, [Convergent evolution presses *different* structures toward the *same* function — which is the definition of analogous structures. Homologous structures belong to divergent evolution, where the same plan takes different jobs.], answer: "A")
+#mcq(13, [Which of the following options arranges the evolutionary ancestors of modern humans in the strictly correct chronological sequence of their historical emergence on Earth?], (
+  [Homo habilis $arrow.r$ Australopithecus $arrow.r$ Homo erectus $arrow.r$ Homo neanderthalensis $arrow.r$ Homo sapiens],
+  [Australopithecus $arrow.r$ Homo habilis $arrow.r$ Homo erectus $arrow.r$ Homo neanderthalensis $arrow.r$ Homo sapiens],
+  [Australopithecus $arrow.r$ Homo erectus $arrow.r$ Homo habilis $arrow.r$ Homo neanderthalensis $arrow.r$ Homo sapiens],
+  [Ramapithecus $arrow.r$ Homo erectus $arrow.r$ Australopithecus $arrow.r$ Homo habilis $arrow.r$ Homo sapiens],
+))
+#solution(13, [The verified NCERT chronological sequence of hominid evolution is: Dryopithecus/Ramapithecus (~15 mya) $arrow.r$ Australopithecines (~3–4 mya, Lucy) $arrow.r$ Homo habilis (~2.0 mya, toolmaker) $arrow.r$ Homo erectus (~1.5 mya, Java man) $arrow.r$ Neanderthal man (100,000–40,000 ya) $arrow.r$ Homo sapiens (75,000–10,000 ya, modern humans). Homo habilis preceded Homo erectus.], answer: [B])
 
-#solution(5, [Heterozygotes are $2 p q$: 2 × 0.8 × 0.2 = *0.32*, that is 32%. Option A (0.16) is $p^2$ or $q^2$; option C (0.64) is $p^2$ alone — the trap is grabbing a single squared term instead of the cross term.], answer: "B")
+#mcq(14, [Match the hominid species listed in Column I with their corresponding cranial capacities detailed in Column II:\
+*Column I:*\
+(a) Homo habilis\
+(b) Homo erectus\
+(c) Neanderthal man\
+(d) Homo sapiens\
+*Column II:*\
+(i) 900 cc\
+(ii) 1,400 cc\
+(iii) 650–800 cc\
+(iv) 1,350–1,450 cc], (
+  [(a)-(iii), (b)-(i), (c)-(ii), (d)-(iv)],
+  [(a)-(i), (b)-(iii), (c)-(ii), (d)-(iv)],
+  [(a)-(iii), (b)-(ii), (c)-(i), (d)-(iv)],
+  [(a)-(iv), (b)-(i), (c)-(ii), (d)-(iii)],
+))
+#solution(14, [The precise cranial capacities established in NCERT Class 12 are: *Homo habilis* = 650–800 cc; *Homo erectus* = 900 cc; *Neanderthal man* = 1,400 cc; *Homo sapiens* = 1,350–1,450 cc. Matching gives: (a)-(iii), (b)-(i), (c)-(ii), (d)-(iv).], answer: [A])
 
-#solution(6, [Recessive individuals are $q^2$: $q^2 = 0.16$, so $q = sqrt(0.16) = 0.4$. Then $p = 1 - 0.4 = 0.6$. Heterozygotes: $2 p q = 2 times 0.6 times 0.4 = 0.48$ — *0.48*, that is 48% of individuals, carry the allele without showing the trait.], answer: "C")
+#mcq(15, [Which of the following hominid species is correctly paired with its documented dietary habit and cultural behavioral characteristics?], (
+  [Homo habilis — Exclusively carnivorous hunter that mastered controlled fire],
+  [Homo erectus — Herbivorous fruit-eater that buried dead with religious rituals],
+  [Homo neanderthalensis — Used animal hides to protect bodies and performed burial of dead],
+  [Australopithecus — Created prehistoric cave paintings at Bhimbetka 18,000 years ago],
+))
+#solution(15, [Neanderthal man lived in Europe and Central Asia 100,000–40,000 years ago, used animal hides for clothing, and buried their dead with ceremonial rites. In contrast, Homo habilis did *NOT* eat meat; Homo erectus *probably ate meat*; and cave paintings at Bhimbetka were created by *Homo sapiens* ~18,000 years ago during the late ice age.], answer: [C])
 
-#solution(7, [The colonists' alleles are a *random sample* of the mainland pool — chance, not fitness, set the new frequencies. That is the *founder effect*, a form of genetic drift. Gene migration means alleles moving between existing populations; mutation adds new alleles.], answer: "D")
-
-#solution(8, [Selection now favours *one extreme* (larger beaks), so the population average moves in that direction — directional selection. Stabilising would favour the average beak; disruptive would favour both extremes at once.], answer: "B")
-
-#solution(9, [The ladder runs Australopithecus (3–4 mya) → Homo habilis (~2 mya) → Homo erectus (~1.5 mya) → Homo sapiens. Options A, B and D all swap habilis and erectus or start with the wrong rung — the tool-maker came before erectus.], answer: "C")
-
-#solution(10, [Dinosaurs rose about *230 mya* and disappeared about *65 mya* — a run of over 160 million years, ended suddenly. The other pairs mix up jawless fish (500 mya), ferns (350 mya) and mammal spread (after 65 mya).], answer: "D")
-
-== 60-Second Recall Drill
-
-Cover the right column and say each answer aloud before checking it.
-
-#table(
-  columns: (0.85fr, 2fr),
-  table.header[*Cue*][*Say this*],
-  [Miller's four gases], [CH#sub[4], NH#sub[3], H#sub[2] + H#sub[2]O — spark, 1953, amino acids, no oxygen],
-  [Homologous →], [Same plan, different jobs (forelimbs of whale, bat, cheetah, human) — divergent],
-  [Analogous →], [Different plans, same job (butterfly and bird wings) — convergent],
-  [Adaptive radiation], [One ancestor, many forms — Darwin's finches; Australian marsupials],
-  [Hardy–Weinberg], [$p^2 + 2 p q + q^2 = 1$; $p^2$ = AA, $2 p q$ = Aa, $q^2$ = aa; $p + q = 1$],
-  [Five factors], [Gene migration, genetic drift, mutation, recombination, natural selection],
-  [Genetic drift], [Chance change in allele frequency; strongest in small populations],
-  [Three selection modes], [Stabilising = average; directional = one extreme; disruptive = both],
-  [Human ladder], [Australopithecus → Homo habilis → Homo erectus → Neanderthal → sapiens],
-)
-
-#align(center)[#text(fill: om-grey, size: 9pt)[© OurMocks · www.ourmocks.com · CUET UG Biology · Evolution · 2027 cycle]]
+#v(8pt)
+#align(center)[
+  #text(fill: om-grey, size: 8.5pt)[
+    © OurMocks · www.ourmocks.com · CUET UG Biology · Evolution · 2027 Cycle
+  ]
+]
