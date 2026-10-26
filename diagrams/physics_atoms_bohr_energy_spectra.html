@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1440, height=880">
+  <title>Atoms: Rutherford Scattering, Bohr Model & Hydrogen Spectra</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 1440px;
+      height: 880px;
+      background-color: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0F172A;
+      padding: 30px 40px;
+      overflow: hidden;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #E2E8F0;
+      padding-bottom: 14px;
+    }
+    .title-group h1 {
+      font-size: 25px;
+      font-weight: 800;
+      color: #0F2C59;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+    .title-group p {
+      font-size: 13.5px;
+      color: #64748B;
+      font-weight: 500;
+    }
+    .badge {
+      background: #0066FF;
+      color: white;
+      font-size: 11.5px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1.15fr 1.25fr 1.2fr;
+      gap: 20px;
+      height: calc(100% - 95px);
+    }
+    .card {
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      border-radius: 12px;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+      position: relative;
+    }
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      border-radius: 12px 12px 0 0;
+    }
+    .card-rutherford::before { background: #DC2626; }
+    .card-bohr::before { background: #0066FF; }
+    .card-spectra::before { background: #7C3AED; }
+
+    .card-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #0F2C59;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .card-title svg { width: 18px; height: 18px; }
+
+    .formula-box {
+      background: #F1F5F9;
+      border-left: 3px solid #0066FF;
+      border-radius: 6px;
+      padding: 9px 12px;
+      margin-bottom: 10px;
+    }
+    .formula-title {
+      font-size: 10.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #0066FF;
+      margin-bottom: 3px;
+    }
+    .formula-math {
+      font-family: "SF Pro Text", Consolas, "Courier New", monospace;
+      font-size: 13px;
+      font-weight: 700;
+      color: #0F2C59;
+    }
+
+    .key-points {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-size: 11.5px;
+      color: #334155;
+      line-height: 1.45;
+    }
+    .key-points li {
+      position: relative;
+      padding-left: 14px;
+    }
+    .key-points li::before {
+      content: "•";
+      position: absolute;
+      left: 2px;
+      color: #0066FF;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 1;
+    }
+
+    .table-container {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 11px;
+      margin-top: 6px;
+    }
+    .table-container th {
+      background: #E2E8F0;
+      color: #1E293B;
+      padding: 5px 8px;
+      text-align: left;
+      font-weight: 700;
+    }
+    .table-container td {
+      padding: 4px 8px;
+      border-bottom: 1px solid #E2E8F0;
+      color: #334155;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="title-group">
+      <h1>Physics · Unit 8: Atoms — Rutherford Model, Bohr Quantization & Spectra</h1>
+      <p>Geiger-Marsden Scattering, Distance of Closest Approach, Orbital Energy Scaling & Hydrogen Spectral Series</p>
+    </div>
+    <div class="badge">CUET UG Physics</div>
+  </div>
+
+  <div class="grid">
+    <!-- Card 1: Rutherford & Geiger-Marsden Scattering -->
+    <div class="card card-rutherford">
+      <div class="card-title">
+        <svg fill="none" stroke="#DC2626" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg>
+        Rutherford Alpha Scattering
+      </div>
+
+      <!-- Schematic Diagram SVG -->
+      <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px; padding: 6px; margin-bottom: 8px; text-align: center;">
+        <svg width="340" height="145" viewBox="0 0 340 145">
+          <!-- Heavy Nucleus (+Ze) -->
+          <circle cx="210" cy="72" r="12" fill="#FEE2E2" stroke="#DC2626" stroke-width="2"/>
+          <text x="210" y="76" font-size="9" font-weight="800" fill="#DC2626" text-anchor="middle">+Ze</text>
+          <text x="210" y="98" font-size="8" font-weight="700" fill="#991B1B" text-anchor="middle">Au Nucleus</text>
+
+          <!-- Trajectory 1: Large impact parameter b -> small deflection -->
+          <path d="M 20 25 L 180 25 Q 230 25 320 40" fill="none" stroke="#2563EB" stroke-width="1.6"/>
+          <text x="25" y="20" font-size="7.5" fill="#2563EB">Large b (θ ≈ 0°)</text>
+
+          <!-- Trajectory 2: Moderate impact parameter -> significant deflection -->
+          <path d="M 20 52 L 175 52 Q 200 52 280 15" fill="none" stroke="#D97706" stroke-width="1.8"/>
+          <text x="25" y="47" font-size="7.5" fill="#D97706">Moderate b (θ ~ 45°)</text>
+
+          <!-- Trajectory 3: Head-on collision (b = 0) -> rebound 180 deg -->
+          <path d="M 20 72 L 165 72" fill="none" stroke="#DC2626" stroke-width="2"/>
+          <path d="M 165 72 L 20 85" fill="none" stroke="#DC2626" stroke-width="1.8" stroke-dasharray="3,2"/>
+          <!-- Distance of closest approach r0 bracket -->
+          <line x1="165" y1="62" x2="165" y2="82" stroke="#475569" stroke-width="1"/>
+          <line x1="210" y1="62" x2="210" y2="82" stroke="#475569" stroke-width="1"/>
+          <line x1="165" y1="65" x2="210" y2="65" stroke="#475569" stroke-width="1"/>
+          <text x="187" y="60" font-size="8" font-weight="700" fill="#475569" text-anchor="middle">r₀</text>
+          <text x="75" y="96" font-size="7.5" font-weight="700" fill="#DC2626">Head-on: b = 0, θ = 180°</text>
+
+          <!-- Impact Parameter b visual -->
+          <line x1="20" y1="72" x2="180" y2="72" stroke="#94A3B8" stroke-width="1" stroke-dasharray="2,2"/>
+          <line x1="120" y1="25" x2="120" y2="72" stroke="#059669" stroke-width="1.2"/>
+          <text x="125" y="50" font-size="8" font-weight="700" fill="#059669">b</text>
+        </svg>
+      </div>
+
+      <div class="formula-box" style="border-left-color: #DC2626;">
+        <div class="formula-title" style="color: #DC2626;">Distance of Closest Approach (Head-On Collision, b = 0)</div>
+        <div class="formula-math">K_α = (1 / (4πε₀)) · (2 Z e² / r₀) ⟹ r₀ = (2 Z e²) / (4πε₀ K_α)</div>
+        <div style="font-size: 10.5px; color: #475569; margin-top: 3px;">
+          For 5.5 MeV α on Gold (Z = 79), <b>r₀ ≈ 4.13 × 10⁻¹⁴ m (~ 41.3 fm)</b>. Upper limit of nuclear size.
+        </div>
+      </div>
+
+      <ul class="key-points">
+        <li><b>Scattering Number Law:</b> Number of α-particles scattered at angle θ satisfies: <b>N(θ) ∝ 1 / sin⁴(θ/2)</b>.</li>
+        <li><b>Impact Parameter:</b> $b = \frac{Z e^2 \cot(\theta/2)}{4\pi\epsilon_0 K_\alpha}$. Large $b \implies \theta \approx 0^\circ$; $b = 0 \implies \theta = 180^\circ$.</li>
+        <li><b>Rutherford Model Failure:</b> Classical electrodynamics dictates accelerating electrons continuously radiate energy, spiraling into nucleus in $10^{-8}\text{ s}$. Cannot explain atomic stability or discrete line spectra!</li>
+      </ul>
+    </div>
+
+    <!-- Card 2: Bohr's Model & Orbital Formulas -->
+    <div class="card card-bohr">
+      <div class="card-title">
+        <svg fill="none" stroke="#0066FF" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="10"/></svg>
+        Bohr Postulates & Hydrogen Orbitals
+      </div>
+
+      <div class="formula-box">
+        <div class="formula-title">Bohr's 3 Foundational Postulates</div>
+        <div style="font-size: 11px; color: #1E293B; line-height: 1.4;">
+          1. <b>Stable Non-Radiating Orbits:</b> Centripetal force = Electrostatic pull: $m v^2 / r = (1/4\pi\epsilon_0) (Z e^2 / r^2)$.<br>
+          2. <b>Angular Momentum Quantization:</b> $L = m v r_n = \frac{n h}{2\pi} = n \hbar$ ($n = 1, 2, 3 \dots$).<br>
+          3. <b>Frequency Condition:</b> $E_2 - E_1 = h \nu = (h c) / \lambda$.
+        </div>
+      </div>
+
+      <div style="font-size: 11.5px; font-weight: 700; color: #0F2C59; margin-bottom: 2px;">
+        Core Orbital Quantities for Hydrogenic Atoms:
+      </div>
+
+      <table class="table-container">
+        <thead>
+          <tr>
+            <th>Parameter</th>
+            <th>Formula / Scaling</th>
+            <th>Ground State (H, Z=1, n=1)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>Radius ($r_n$)</b></td>
+            <td>$r_n = \frac{\epsilon_0 n^2 h^2}{\pi m Z e^2} = 0.529 \frac{n^2}{Z}\text{ \AA}$</td>
+            <td>$a_0 = 0.529\text{ \AA} = 0.0529\text{ nm}$</td>
+          </tr>
+          <tr>
+            <td><b>Speed ($v_n$)</b></td>
+            <td>$v_n = \frac{Z e^2}{2 \epsilon_0 n h} = 2.18 \times 10^6 \frac{Z}{n}\text{ m/s}$</td>
+            <td>$v_1 = c / 137 \approx 2.18 \times 10^6\text{ m/s}$</td>
+          </tr>
+          <tr>
+            <td><b>Kinetic ($K$)</b></td>
+            <td>$K_n = \frac{1}{2} m v_n^2 = +13.6 \frac{Z^2}{n^2}\text{ eV}$</td>
+            <td>$K_1 = +13.6\text{ eV}$</td>
+          </tr>
+          <tr>
+            <td><b>Potential ($U$)</b></td>
+            <td>$U_n = -\frac{Z e^2}{4\pi\epsilon_0 r_n} = -27.2 \frac{Z^2}{n^2}\text{ eV}$</td>
+            <td>$U_1 = -27.2\text{ eV}$</td>
+          </tr>
+          <tr style="background: #EFF6FF; font-weight: 700;">
+            <td><b>Total ($E_n$)</b></td>
+            <td>$E_n = K_n + U_n = -13.6 \frac{Z^2}{n^2}\text{ eV}$</td>
+            <td>$E_1 = -13.6\text{ eV}$</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div style="background: #F0FDF4; border-left: 3px solid #059669; border-radius: 6px; padding: 7px 10px; margin-top: 10px; font-size: 11px; color: #065F46;">
+        <b>Gold-Standard Energy Relation:</b><br>
+        $E_n = -K_n = U_n / 2 \iff U_n = -2 K_n = 2 E_n$<br>
+        (Negative total energy signifies that the electron is electrostatically bound to the nucleus!)
+      </div>
+    </div>
+
+    <!-- Card 3: Spectral Series & Rydberg Formula -->
+    <div class="card card-spectra">
+      <div class="card-title">
+        <svg fill="none" stroke="#7C3AED" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 10h16M4 14h16M4 18h16"/></svg>
+        Hydrogen Line Spectra & Rydberg Formula
+      </div>
+
+      <div class="formula-box" style="border-left-color: #7C3AED;">
+        <div class="formula-title" style="color: #7C3AED;">Rydberg Formula for Hydrogenic Systems</div>
+        <div class="formula-math">1/λ = R Z² (1/n₁² - 1/n₂²)</div>
+        <div style="font-size: 10.5px; color: #475569; margin-top: 2px;">
+          Rydberg constant: <b>R = 1.097 × 10⁷ m⁻¹</b>. (1/R ≈ 912 Å).
+        </div>
+      </div>
+
+      <table class="table-container">
+        <thead>
+          <tr>
+            <th>Series</th>
+            <th>n₁</th>
+            <th>n₂</th>
+            <th>Spectral Region</th>
+            <th>Shortest λ (Limit)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="background: #FAF5FF;">
+            <td><b>Lyman</b></td>
+            <td>1</td>
+            <td>2, 3, 4, ...</td>
+            <td>Ultraviolet (UV)</td>
+            <td>$R / 1 \implies 912\text{ \AA}$</td>
+          </tr>
+          <tr style="background: #EFF6FF;">
+            <td><b>Balmer</b></td>
+            <td>2</td>
+            <td>3, 4, 5, ...</td>
+            <td>Visible Light</td>
+            <td>$4 / R \implies 3646\text{ \AA}$</td>
+          </tr>
+          <tr>
+            <td><b>Paschen</b></td>
+            <td>3</td>
+            <td>4, 5, 6, ...</td>
+            <td>Near Infrared</td>
+            <td>$9 / R \implies 8208\text{ \AA}$</td>
+          </tr>
+          <tr>
+            <td><b>Brackett</b></td>
+            <td>4</td>
+            <td>5, 6, 7, ...</td>
+            <td>Infrared (IR)</td>
+            <td>$16 / R \implies 14592\text{ \AA}$</td>
+          </tr>
+          <tr>
+            <td><b>Pfund</b></td>
+            <td>5</td>
+            <td>6, 7, 8, ...</td>
+            <td>Far Infrared</td>
+            <td>$25 / R \implies 22800\text{ \AA}$</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div style="margin-top: 10px; font-size: 11px; color: #334155; line-height: 1.45;">
+        <b>CUET Speed Formula:</b>
+        <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 6px; padding: 6px; margin-top: 4px; font-family: monospace; font-size: 10.5px;">
+          Longest λ (first line, n₂ = n₁+1):<br>
+          $1/\lambda_\text{max} = R (1/n_1^2 - 1/(n_1+1)^2)$<br>
+          Shortest λ (series limit, n₂ = ∞):<br>
+          $1/\lambda_\text{min} = R / n_1^2 \implies \lambda_\text{min} = n_1^2 / R$
+        </div>
+      </div>
+
+      <div style="margin-top: 6px; background: #FEF3C7; border-left: 3px solid #D97706; border-radius: 4px; padding: 6px; font-size: 10.5px; color: #92400E;">
+        <b>Number of Spectral Lines:</b> When an electron de-excites from state $n$ to ground state ($n=1$), maximum emitted lines: <b>N = n(n - 1) / 2</b>.
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1440, height=880">
+  <title>Atoms & Nuclei: Master Concept Mindmap</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 1440px;
+      height: 880px;
+      background-color: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0F172A;
+      padding: 24px 36px;
+      overflow: hidden;
+      position: relative;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 16px;
+      border-bottom: 2px solid #E2E8F0;
+      padding-bottom: 12px;
+    }
+    .title-group h1 {
+      font-size: 24px;
+      font-weight: 800;
+      color: #0F2C59;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+    .title-group p {
+      font-size: 13px;
+      color: #64748B;
+      font-weight: 500;
+    }
+    .badge {
+      background: #0066FF;
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .mindmap-canvas {
+      width: 100%;
+      height: calc(100% - 90px);
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: stretch;
+    }
+
+    .svg-connectors {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Central Hub */
+    .central-hub {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 250px;
+      background: linear-gradient(135deg, #0F2C59 0%, #0066FF 100%);
+      color: white;
+      border-radius: 16px;
+      padding: 22px 18px;
+      text-align: center;
+      box-shadow: 0 10px 25px -5px rgba(15, 44, 89, 0.35);
+      border: 2px solid #93C5FD;
+      z-index: 10;
+    }
+    .central-hub .sub-label {
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      color: #93C5FD;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .central-hub .hub-title {
+      font-size: 17px;
+      font-weight: 800;
+      line-height: 1.25;
+      margin-bottom: 6px;
+    }
+    .central-hub .hub-desc {
+      font-size: 11px;
+      color: #E2E8F0;
+      line-height: 1.4;
+    }
+
+    /* Mindmap Column Containers */
+    .column-left, .column-right {
+      width: 410px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      z-index: 5;
+    }
+
+    .mm-card {
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      border-radius: 12px;
+      padding: 12px 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+      position: relative;
+    }
+    .mm-card::before {
+      content: "";
+      position: absolute;
+      top: 0; bottom: 0; left: 0;
+      width: 4px;
+      border-radius: 12px 0 0 12px;
+    }
+
+    .c1::before { background: #DC2626; }
+    .c2::before { background: #0066FF; }
+    .c3::before { background: #7C3AED; }
+    .c4::before { background: #0284C7; }
+    .c5::before { background: #059669; }
+    .c6::before { background: #D97706; }
+
+    .card-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+    .card-header-title {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #0F2C59;
+    }
+    .card-tag {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 10px;
+      text-transform: uppercase;
+    }
+    .tag-red { background: #FFF1F2; color: #BE123C; }
+    .tag-blue { background: #EFF6FF; color: #1D4ED8; }
+    .tag-purple { background: #F5F3FF; color: #6D28D9; }
+    .tag-cyan { background: #ECFEFF; color: #0E7490; }
+    .tag-green { background: #F0FDF4; color: #15803D; }
+    .tag-amber { background: #FFFBEB; color: #B45309; }
+
+    .formula-line {
+      font-family: "SF Pro Text", Consolas, "Courier New", monospace;
+      font-size: 12px;
+      font-weight: 700;
+      color: #0F172A;
+      background: #F8FAFC;
+      border-radius: 5px;
+      padding: 4px 8px;
+      margin: 4px 0 6px 0;
+      border: 1px solid #E2E8F0;
+    }
+
+    .bullet-list {
+      list-style: none;
+      font-size: 11px;
+      color: #334155;
+      display: flex;
+      flex-direction: column;
+      gap: 3.5px;
+      line-height: 1.35;
+    }
+    .bullet-list li {
+      position: relative;
+      padding-left: 13px;
+    }
+    .bullet-list li::before {
+      content: "▸";
+      position: absolute;
+      left: 1px;
+      color: #64748B;
+      font-size: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="title-group">
+      <h1>Atoms and Nuclei: Master Synthesis Mindmap</h1>
+      <p>CUET UG Physics (Code 322) · 6 Core Branches: Rutherford Model, Bohr Orbitals, Spectra, Nuclear Size, BE Curve & Reactions</p>
+    </div>
+    <div class="badge">Unit 8 Mindmap</div>
+  </div>
+
+  <div class="mindmap-canvas">
+    <!-- SVG Connector Lines -->
+    <svg class="svg-connectors" viewBox="0 0 1368 730">
+      <!-- Left branches from center (684, 365) -->
+      <!-- Branch 1 (Top Left) -->
+      <path d="M 600 340 C 500 330, 480 120, 410 115" fill="none" stroke="#FCA5A5" stroke-width="2" stroke-dasharray="4,4"/>
+      <!-- Branch 2 (Mid Left) -->
+      <path d="M 580 365 C 500 365, 480 365, 410 365" fill="none" stroke="#93C5FD" stroke-width="2" stroke-dasharray="4,4"/>
+      <!-- Branch 3 (Bottom Left) -->
+      <path d="M 600 390 C 500 400, 480 610, 410 615" fill="none" stroke="#C4B5FD" stroke-width="2" stroke-dasharray="4,4"/>
+
+      <!-- Right branches from center (684, 365) -->
+      <!-- Branch 4 (Top Right) -->
+      <path d="M 768 340 C 868 330, 888 120, 958 115" fill="none" stroke="#7DD3FC" stroke-width="2" stroke-dasharray="4,4"/>
+      <!-- Branch 5 (Mid Right) -->
+      <path d="M 788 365 C 868 365, 888 365, 958 365" fill="none" stroke="#86EFAC" stroke-width="2" stroke-dasharray="4,4"/>
+      <!-- Branch 6 (Bottom Right) -->
+      <path d="M 768 390 C 868 400, 888 610, 958 615" fill="none" stroke="#FDE68A" stroke-width="2" stroke-dasharray="4,4"/>
+    </svg>
+
+    <!-- LEFT COLUMN: ATOMS -->
+    <div class="column-left">
+      <!-- 1. Alpha Scattering & Rutherford Model -->
+      <div class="mm-card c1">
+        <div class="card-title-row">
+          <div class="card-header-title">1. Rutherford Alpha Scattering</div>
+          <span class="card-tag tag-red">Nuclear Atom</span>
+        </div>
+        <div class="formula-line">r₀ = (2 Z e²) / (4πε₀ K_α) &nbsp;|&nbsp; N(θ) ∝ 1 / sin⁴(θ/2)</div>
+        <ul class="bullet-list">
+          <li><b>Geiger-Marsden:</b> Most α-particles pass undeflected (atom mostly empty); only ~ 1 in 8000 deflected &gt; 90°.</li>
+          <li><b>Closest Approach:</b> Kinetic energy converts to electrostatic potential at b = 0. Upper limit r₀ ~ 10⁻¹⁴ m.</li>
+          <li><b>Failure:</b> Accelerating orbital electrons radiate energy and spiral into nucleus in ~ 10⁻⁸ s; cannot explain discrete lines.</li>
+        </ul>
+      </div>
+
+      <!-- 2. Bohr's Hydrogen Atom Model -->
+      <div class="mm-card c2">
+        <div class="card-title-row">
+          <div class="card-header-title">2. Bohr's Hydrogen Atom Model</div>
+          <span class="card-tag tag-blue">Quantization</span>
+        </div>
+        <div class="formula-line">r_n = 0.529 (n²/Z) Å &nbsp;|&nbsp; E_n = -13.6 (Z²/n²) eV</div>
+        <ul class="bullet-list">
+          <li><b>Postulates:</b> Non-radiating stationary orbits; Quantized angular momentum L = m v r = n h / (2π); ΔE = h ν.</li>
+          <li><b>Scaling:</b> Radius r_n ∝ n²/Z; Speed v_n ∝ Z/n; Kinetic K = -E_n; Potential U = 2E_n = -2K.</li>
+          <li><b>Negative Sign:</b> Indicates bound system; energy required to liberate electron to infinity is +13.6 eV.</li>
+        </ul>
+      </div>
+
+      <!-- 3. Hydrogen Spectral Series & Rydberg Formula -->
+      <div class="mm-card c3">
+        <div class="card-title-row">
+          <div class="card-header-title">3. Hydrogen Line Spectra</div>
+          <span class="card-tag tag-purple">Transitions</span>
+        </div>
+        <div class="formula-line">1/λ = R Z² (1/n₁² - 1/n₂²) &nbsp;|&nbsp; R ≈ 1.097 × 10⁷ m⁻¹</div>
+        <ul class="bullet-list">
+          <li><b>Lyman (n₁=1):</b> Ultraviolet region; Shortest λ = 1/R ≈ 912 Å, Longest λ = 4/(3R) ≈ 1216 Å.</li>
+          <li><b>Balmer (n₁=2):</b> Visible region; Only series in visible spectrum; Shortest λ = 4/R ≈ 3646 Å.</li>
+          <li><b>Paschen (n₁=3), Brackett (n₁=4), Pfund (n₁=5):</b> Infrared region. Total spectral lines: N = n(n - 1) / 2.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- CENTRAL HUB -->
+    <div class="central-hub">
+      <div class="sub-label">CUET UG Physics · Code 322</div>
+      <div class="hub-title">ATOMS & NUCLEI<br>SYNTHESIS</div>
+      <div class="hub-desc">
+        Atomic structure is governed by Coulomb force and Bohr's quantum orbital rules.<br><br>
+        Nuclear structure is governed by short-range nuclear strong force, mass defect, and binding energy curve.
+      </div>
+    </div>
+
+    <!-- RIGHT COLUMN: NUCLEI -->
+    <div class="column-right">
+      <!-- 4. Nuclear Structure, Size & Constant Density -->
+      <div class="mm-card c4">
+        <div class="card-title-row">
+          <div class="card-header-title">4. Nuclear Size & Nuclear Forces</div>
+          <span class="card-tag tag-cyan">Nuclear Core</span>
+        </div>
+        <div class="formula-line">R = R₀ A^(1/3) &nbsp;|&nbsp; ρ ≈ 2.3 × 10¹⁷ kg/m³ = const!</div>
+        <ul class="bullet-list">
+          <li><b>Radius Law:</b> R₀ ≈ 1.2 fm; Nuclear volume V ∝ A; Nuclear density ρ is identical for all nuclei!</li>
+          <li><b>Species:</b> Isotopes (same Z), Isobars (same A), Isotones (same N = A - Z).</li>
+          <li><b>Strong Force:</b> Short range (&lt; 2–3 fm), charge-independent, saturated, repulsive core at r &lt; 0.8 fm.</li>
+        </ul>
+      </div>
+
+      <!-- 5. Mass Defect & Binding Energy Curve -->
+      <div class="mm-card c5">
+        <div class="card-title-row">
+          <div class="card-header-title">5. Mass Defect & BE per Nucleon</div>
+          <span class="card-tag tag-green">Stability</span>
+        </div>
+        <div class="formula-line">Δm = [Z m_p + (A-Z)m_n] - M &nbsp;|&nbsp; E_b = Δm × 931.5 MeV</div>
+        <ul class="bullet-list">
+          <li><b>Curve Peak:</b> ⁵⁶Fe has maximum BE/nucleon = 8.75 MeV/nucleon (most stable nucleus).</li>
+          <li><b>Plateau:</b> Broad region A = 30 to 170 has nearly constant BE/nucleon ≈ 8.5 MeV/nucleon.</li>
+          <li><b>Local Spikes:</b> Alpha-like stable nuclei: ⁴He (7.1 MeV), ¹²C (7.7 MeV), ¹⁶O (8.0 MeV).</li>
+        </ul>
+      </div>
+
+      <!-- 6. Nuclear Fission, Fusion & Energetics -->
+      <div class="mm-card c6">
+        <div class="card-title-row">
+          <div class="card-header-title">6. Nuclear Fission & Fusion</div>
+          <span class="card-tag tag-amber">Energy Release</span>
+        </div>
+        <div class="formula-line">Q = [M_reactants - M_products] c² = ΔBE</div>
+        <ul class="bullet-list">
+          <li><b>Fission (A &gt; 200):</b> ²³⁵U splits into medium fragments, releasing ~ 200 MeV per event (~ 0.85 MeV/amu).</li>
+          <li><b>Fusion (A &lt; 20):</b> 4 ¹H ⟶ ⁴He + 2e⁺ + 2ν + 26.7 MeV, releasing ~ 6.7 MeV/amu (~ 8× higher than fission)!</li>
+          <li><b>Coulomb Barrier:</b> Fusion requires extreme temperatures (T ~ 10⁷–10⁸ K) to overcome nuclear repulsion.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
