@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Microsporogenesis vs Megasporogenesis Gametophyte Architecture</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; box-shadow: none !important; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    color: #0F172A;
+    overflow: hidden;
+    position: relative;
+    padding: 22px 28px;
+  }
+
+  /* Header */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #CBD5E1;
+    padding-bottom: 12px;
+    margin-bottom: 14px;
+  }
+  .title-group h1 {
+    font-size: 21px;
+    font-weight: 800;
+    color: #071A4D;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .title-group h1 span.badge {
+    background: #071A4D;
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 4px;
+  }
+  .title-group p {
+    font-size: 12.5px;
+    color: #64748B;
+    margin-top: 2px;
+    font-weight: 500;
+  }
+  .exam-tags {
+    display: flex;
+    gap: 8px;
+  }
+  .chip {
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+  }
+  .chip-navy { background: #EEF1F8; color: #071A4D; border: 1px solid #CBD5E1; }
+  .chip-blue { background: #EAF0FF; color: #1F5EFF; border: 1px solid #BFDBFE; }
+  .chip-green { background: #F0FDF4; color: #16A34A; border: 1px solid #BBF7D0; }
+
+  /* Main Split Grid */
+  .main-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    height: 640px;
+  }
+
+  /* Column Containers */
+  .col-card {
+    background: #FFFFFF;
+    border: 1.5px solid #CBD5E1;
+    border-radius: 10px;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    position: relative;
+  }
+  .col-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #E2E8F0;
+  }
+  .col-header h2 {
+    font-size: 16px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .male-title { color: #1E40AF; }
+  .female-title { color: #047857; }
+  .tag-pill {
+    font-size: 10.5px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 4px;
+  }
+  .tag-male { background: #EFF6FF; color: #1E40AF; border: 1px solid #BFDBFE; }
+  .tag-female { background: #ECFDF5; color: #047857; border: 1px solid #A7F3D0; }
+
+  /* Stage Blocks */
+  .stage-box {
+    border-radius: 8px;
+    padding: 10px 12px;
+    border: 1px solid #E2E8F0;
+    background: #F8FAFC;
+    position: relative;
+  }
+  .stage-box h3 {
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .stage-box p {
+    font-size: 11.5px;
+    line-height: 1.45;
+    color: #334155;
+  }
+  .stage-box b {
+    color: #0F172A;
+  }
+  .ploidy-tag {
+    font-size: 10px;
+    font-weight: 800;
+    padding: 1px 6px;
+    border-radius: 3px;
+  }
+  .ploidy-2n { background: #FEF3C7; color: #92400E; border: 1px solid #FCD34D; }
+  .ploidy-n { background: #DCFCE7; color: #166534; border: 1px solid #86EFAC; }
+  .ploidy-poly { background: #F3E8FF; color: #6B21A8; border: 1px solid #D8B4FE; }
+
+  /* Subgrid for Details */
+  .sub-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .sub-card {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    padding: 7px 9px;
+  }
+  .sub-card h4 {
+    font-size: 11.5px;
+    font-weight: 700;
+    margin-bottom: 3px;
+    color: #071A4D;
+  }
+  .sub-card p {
+    font-size: 10.8px;
+    line-height: 1.38;
+    color: #475569;
+  }
+
+  /* Microsporangium Wall Layers List */
+  .wall-layers {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1.2fr;
+    gap: 6px;
+    margin-top: 4px;
+  }
+  .wall-chip {
+    background: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    border-radius: 5px;
+    padding: 5px 6px;
+    font-size: 10.5px;
+  }
+  .wall-chip strong {
+    display: block;
+    color: #0F172A;
+    font-size: 11px;
+  }
+
+  /* Polygonum Embryo Sac Layout */
+  .embryo-sac-box {
+    background: #F0FDF4;
+    border: 1.5px solid #86EFAC;
+    border-radius: 8px;
+    padding: 10px 12px;
+  }
+  .embryo-sac-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr 1fr;
+    gap: 6px;
+    margin-top: 6px;
+  }
+  .sac-cell {
+    background: #FFFFFF;
+    border: 1px solid #BBF7D0;
+    border-radius: 6px;
+    padding: 6px 8px;
+  }
+  .sac-cell h5 {
+    font-size: 11px;
+    font-weight: 700;
+    color: #047857;
+    margin-bottom: 2px;
+  }
+  .sac-cell p {
+    font-size: 10.2px;
+    line-height: 1.35;
+    color: #334155;
+  }
+
+  /* Bottom Comparative Banner */
+  .bottom-summary {
+    position: absolute;
+    bottom: 20px;
+    left: 28px;
+    right: 28px;
+    background: #071A4D;
+    color: #FFFFFF;
+    border-radius: 8px;
+    padding: 10px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid #B8FF34;
+  }
+  .summary-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11.5px;
+  }
+  .summary-item strong {
+    color: #B8FF34;
+    font-size: 12px;
+  }
+  .summary-pill {
+    background: rgba(255,255,255,0.15);
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 10.5px;
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="title-group">
+      <h1>
+        Gametophyte Ontogeny: Microsporogenesis & Megasporogenesis
+        <span class="badge">FIGURE 1</span>
+      </h1>
+      <p>Comparative developmental architecture, wall stratigraphy, cell ploidy, and mature gametophyte organization in Angiosperms</p>
+    </div>
+    <div class="exam-tags">
+      <div class="chip chip-navy">CUET UG Biology</div>
+      <div class="chip chip-blue">Unit VI Reproduction</div>
+      <div class="chip chip-green">NCERT Class 12 Core</div>
+    </div>
+  </div>
+
+  <!-- Split Grid -->
+  <div class="main-grid">
+
+    <!-- Male Column -->
+    <div class="col-card">
+      <div class="col-header">
+        <h2 class="male-title">
+          <span>♂ Male Lineage: Microsporogenesis</span>
+        </h2>
+        <span class="tag-pill tag-male">Stamen → Anther → Pollen</span>
+      </div>
+
+      <!-- Anther Structure & Wall Layers -->
+      <div class="stage-box" style="background: #EFF6FF; border-color: #BFDBFE;">
+        <h3>
+          <span style="color: #1E40AF;">1. Anther Wall Stratigraphy</span>
+          <span class="ploidy-tag ploidy-2n">Somatic: 2n</span>
+        </h3>
+        <p>Bilobed, dithecous anther contains 4 microsporangia. Wall consists of 4 distinct concentric layers:</p>
+        <div class="wall-layers">
+          <div class="wall-chip">
+            <strong>Epidermis</strong>
+            Single protective outer layer.
+          </div>
+          <div class="wall-chip">
+            <strong>Endothecium</strong>
+            &alpha;-cellulosic fibrous bands; hygroscopic for dehiscence.
+          </div>
+          <div class="wall-chip">
+            <strong>Middle Layers</strong>
+            1–3 parenchymatous layers; crush at maturity.
+          </div>
+          <div class="wall-chip" style="background: #FEF3C7; border-color: #FCD34D;">
+            <strong style="color: #92400E;">Tapetum</strong>
+            Innermost; dense cytoplasm, multinucleate/polyploid; nourishes spores, callase & sporopollenin precursors.
+          </div>
+        </div>
+      </div>
+
+      <!-- Meiosis to Tetrad -->
+      <div class="stage-box">
+        <h3>
+          <span>2. Microsporogenesis & Meiotic Reduction</span>
+          <span class="ploidy-tag ploidy-n">1 MMC (2n) → 4 Spores (n)</span>
+        </h3>
+        <p>Each cell of central sporogenous tissue acts as a <b>Microspore Mother Cell (MMC / PMC, 2n)</b>. Undergoes meiosis to produce a <b>Microspore Tetrad (n)</b>. As anther dehydrates, spores dissociate into 4 distinct pollen grains.</p>
+      </div>
+
+      <!-- Mature Pollen Architecture -->
+      <div class="stage-box" style="flex: 1;">
+        <h3>
+          <span style="color: #1E40AF;">3. Mature Pollen Grain (Male Gametophyte)</span>
+          <span class="ploidy-tag ploidy-n">Haploid (n)</span>
+        </h3>
+        <div class="sub-grid-2" style="margin-top: 6px;">
+          <div class="sub-card">
+            <h4>Exine (Outer Wall)</h4>
+            <p>Made of <b>Sporopollenin</b> (most resistant organic material; resists high temp, strong acids, alkalis, enzymes). Contains <b>Germ Pores</b> where sporopollenin is absent.</p>
+          </div>
+          <div class="sub-card">
+            <h4>Intine (Inner Wall)</h4>
+            <p>Thin, continuous pectocellulosic layer (cellulose + pectin). Emerges as pollen tube during germination.</p>
+          </div>
+          <div class="sub-card" style="background: #FAF5FF; border-color: #E9D5FF;">
+            <h4 style="color: #6B21A8;">Vegetative Cell (Tube Cell)</h4>
+            <p>Larger cell with abundant food reserves and large, irregular nucleus. Directs pollen tube growth.</p>
+          </div>
+          <div class="sub-card" style="background: #FAF5FF; border-color: #E9D5FF;">
+            <h4 style="color: #6B21A8;">Generative Cell (Sperm Cell)</h4>
+            <p>Small, spindle-shaped with dense cytoplasm; floats in vegetative cell. Divides mitotically into <b>2 male gametes</b>.</p>
+          </div>
+        </div>
+        <p style="margin-top: 8px; font-size: 11px; color: #475569;">
+          <b>Shedding Stage:</b> Shed at <b>2-celled stage in >60%</b> angiosperms; in &lt;40%, generative cell divides first, shedding at <b>3-celled stage</b>.
+        </p>
+      </div>
+    </div>
+
+    <!-- Female Column -->
+    <div class="col-card">
+      <div class="col-header">
+        <h2 class="female-title">
+          <span>♀ Female Lineage: Megasporogenesis</span>
+        </h2>
+        <span class="tag-pill tag-female">Pistil → Ovule → Embryo Sac</span>
+      </div>
+
+      <!-- Ovule Anatomy -->
+      <div class="stage-box" style="background: #ECFDF5; border-color: #A7F3D0;">
+        <h3>
+          <span style="color: #047857;">1. Anatropous Ovule Anatomy</span>
+          <span class="ploidy-tag ploidy-2n">Maternal Tissue: 2n</span>
+        </h3>
+        <p>Inverted (anatropous) ovule attached to placenta via <b>Funicle</b>. Junction is <b>Hilum</b>. Main body features:</p>
+        <div class="wall-layers" style="grid-template-columns: 1fr 1fr 1fr 1.2fr;">
+          <div class="wall-chip">
+            <strong>Integuments</strong>
+            1–2 protective envelopes; enclose nucellus.
+          </div>
+          <div class="wall-chip">
+            <strong>Micropyle</strong>
+            Small pore at apex; site of pollen tube entry.
+          </div>
+          <div class="wall-chip">
+            <strong>Chalaza</strong>
+            Basal swollen region opposite micropyle.
+          </div>
+          <div class="wall-chip" style="background: #FEF3C7; border-color: #FCD34D;">
+            <strong style="color: #92400E;">Nucellus (2n)</strong>
+            Central nutritive tissue; 1 cell at micropylar pole differentiates into MMC.
+          </div>
+        </div>
+      </div>
+
+      <!-- Meiosis to Functional Megaspore -->
+      <div class="stage-box">
+        <h3>
+          <span>2. Megasporogenesis & Monosporic Selection</span>
+          <span class="ploidy-tag ploidy-n">1 MMC (2n) → 1 Functional (n)</span>
+        </h3>
+        <p>Single <b>MMC (2n)</b> undergoes meiosis to form a linear tetrad of 4 megaspores (n). <b>3 micropylar megaspores degenerate</b>; only <b>1 chalazal megaspore remains functional</b> (Monosporic development).</p>
+      </div>
+
+      <!-- Mature Embryo Sac -->
+      <div class="stage-box embryo-sac-box" style="flex: 1;">
+        <h3 style="color: #047857;">
+          <span>3. Polygonum-Type Mature Embryo Sac</span>
+          <span class="ploidy-tag ploidy-n">7-Celled, 8-Nucleate</span>
+        </h3>
+        <p style="font-size: 11px; color: #166534;">Functional megaspore nucleus undergoes <b>3 successive mitotic divisions without cytokinesis</b> (free-nuclear: 1 → 2 → 4 → 8 nuclei), followed by cellular reorganization:</p>
+        <div class="embryo-sac-grid">
+          <div class="sac-cell">
+            <h5>Chalazal End (3 Cells)</h5>
+            <p><b>3 Antipodal Cells (n)</b>. Vegetative nutritive cells; degenerate before or right after fertilization.</p>
+          </div>
+          <div class="sac-cell" style="background: #FFFBEB; border-color: #FDE68A;">
+            <h5 style="color: #B45309;">Central Cell (1 Cell, 2 Nuclei)</h5>
+            <p>Largest cell; houses <b>2 Polar Nuclei (n + n)</b>. Fuses with 2nd male gamete to form <b>PEN (3n)</b>.</p>
+          </div>
+          <div class="sac-cell">
+            <h5>Micropylar End (3 Cells)</h5>
+            <p><b>Egg Apparatus</b>: <b>1 Egg Cell (n)</b> (female gamete) + <b>2 Synergids (n)</b> with <b>Filiform Apparatus</b>.</p>
+          </div>
+        </div>
+        <p style="margin-top: 8px; font-size: 10.8px; color: #15803D;">
+          <b>Filiform Apparatus:</b> Special finger-like cellular thickenings in synergids; guide pollen tube entry into embryo sac chemotropically.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bottom Summary Banner -->
+  <div class="bottom-summary">
+    <div class="summary-item">
+      <strong>CUET YIELD RATIO:</strong>
+      <span>1 Microspore MMC yields <b>4 Functional Pollen Grains</b></span>
+      <span class="summary-pill">4:1 Ratio</span>
+    </div>
+    <div class="summary-item">
+      <strong>MEGASPORE SELECTION:</strong>
+      <span>1 Megaspore MMC yields <b>1 Functional Embryo Sac</b> (3 micropylar degenerate)</span>
+      <span class="summary-pill">1:1 Ratio</span>
+    </div>
+    <div class="summary-item">
+      <strong>EMBRYO SAC BLUEPRINT:</strong>
+      <span>8 Nuclei organized into <b>7 Distinct Cells</b> (Monosporic Polygonum Type)</span>
+      <span class="summary-pill">8 Nuclei / 7 Cells</span>
+    </div>
+  </div>
+
+</body>
+</html>

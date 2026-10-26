@@ -1,117 +1,375 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
+<title>Sexual Reproduction in Flowering Plants Master Synthesis Mindmap</title>
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
-  .wrap { width: 1480px; height: 1080px; position: relative; background: #fff; }
-  svg.wires { position: absolute; inset: 0; width: 1480px; height: 1080px; }
-  .center {
-    position: absolute; left: 540px; top: 385px; width: 400px; height: 104px;
-    background: #071A4D; border-radius: 16px; display: flex; flex-direction: column;
-    align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(7,26,77,.25);
-    border-bottom: 5px solid #B8FF34; padding: 0 14px; text-align: center;
+  * { margin: 0; padding: 0; box-sizing: border-box; box-shadow: none !important; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    color: #0F172A;
+    overflow: hidden;
+    position: relative;
+    padding: 22px 28px;
   }
-  .center .t { color: #fff; font-size: 20px; font-weight: 800; letter-spacing: .4px; line-height: 1.2; }
-  .center .s { color: #B8FF34; font-size: 13px; font-weight: 700; letter-spacing: 2px; margin-top: 5px; }
-  .card {
-    position: absolute; width: 470px; background: #FCFDFF; border: 1.5px solid #D5DCEA;
-    border-radius: 14px; padding: 13px 16px 12px;
+
+  /* Header */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #CBD5E1;
+    padding-bottom: 12px;
+    margin-bottom: 14px;
   }
-  .card h2 { font-size: 20px; color: #071A4D; font-weight: 800; margin-bottom: 7px;
-             padding-bottom: 5px; border-bottom: 3px solid; display: inline-block; }
-  .leaf { font-size: 14.5px; color: #1B2333; margin: 5px 0; padding-left: 16px; position: relative; line-height: 1.32; }
-  .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
-  .b .leaf::before { background: #1F5EFF; }
-  .l .leaf::before { background: #7FB800; }
-  .leaf b { color: #071A4D; }
-  .b h2 { border-color: #1F5EFF; }
-  .l h2 { border-color: #7FB800; }
-  .left { left: 30px; }
-  .right { left: 980px; }
-  .exc {
-    position: absolute; left: 460px; top: 880px; width: 560px; background: #FFF3EC;
-    border: 1.5px solid #D2481F; border-radius: 12px; padding: 10px 14px;
+  .title-group h1 {
+    font-size: 21px;
+    font-weight: 800;
+    color: #071A4D;
+    display: flex;
+    align-items: center;
+    gap: 10px;
   }
-  .exc h2 { font-size: 17px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
-  .exc .leaf { font-size: 13px; margin: 3px 0; padding-left: 14px; color: #7A2A12; }
-  .exc .leaf::before { background: #D2481F; }
-  .exc b { color: #B4380F; }
+  .title-group h1 span.badge {
+    background: #071A4D;
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 4px;
+  }
+  .title-group p {
+    font-size: 12.5px;
+    color: #64748B;
+    margin-top: 2px;
+    font-weight: 500;
+  }
+  .exam-tags {
+    display: flex;
+    gap: 8px;
+  }
+  .chip {
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+  }
+  .chip-navy { background: #EEF1F8; color: #071A4D; border: 1px solid #CBD5E1; }
+  .chip-blue { background: #EAF0FF; color: #1F5EFF; border: 1px solid #BFDBFE; }
+  .chip-lime { background: #F6FFDF; color: #4E7A00; border: 1px solid #D9F99D; }
+
+  /* 5-Branch Pedagogical Layout: 4 Quadrants around Central Synthesis Hub */
+  .mindmap-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 14px;
+    height: 615px;
+    position: relative;
+  }
+
+  .branch-card {
+    background: #FFFFFF;
+    border: 1.5px solid #CBD5E1;
+    border-radius: 10px;
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+  }
+  .branch-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 6px;
+    border-bottom: 2px solid #E2E8F0;
+    margin-bottom: 8px;
+  }
+  .branch-title {
+    font-size: 14.5px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .title-blue { color: #1E40AF; }
+  .title-green { color: #047857; }
+  .title-amber { color: #B45309; }
+  .title-purple { color: #6D28D9; }
+
+  .branch-badge {
+    font-size: 10.5px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 4px;
+  }
+  .badge-blue { background: #EFF6FF; color: #1E40AF; border: 1px solid #BFDBFE; }
+  .badge-green { background: #ECFDF5; color: #047857; border: 1px solid #A7F3D0; }
+  .badge-amber { background: #FFFBEB; color: #B45309; border: 1px solid #FDE68A; }
+  .badge-purple { background: #FAF5FF; color: #6D28D9; border: 1px solid #DDD6FE; }
+
+  /* Content Sub-Items */
+  .sub-items-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    flex: 1;
+  }
+  .sub-item {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    padding: 7px 9px;
+    font-size: 11px;
+    line-height: 1.4;
+  }
+  .sub-item strong {
+    display: block;
+    font-size: 11.5px;
+    color: #071A4D;
+    margin-bottom: 2px;
+  }
+  .sub-item b {
+    color: #0F172A;
+  }
+
+  /* Central Floating Hub Badge */
+  .center-hub {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #071A4D;
+    border: 2.5px solid #B8FF34;
+    border-radius: 12px;
+    padding: 10px 18px;
+    text-align: center;
+    z-index: 10;
+    width: 250px;
+  }
+  .center-hub h3 {
+    color: #FFFFFF;
+    font-size: 12.5px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    line-height: 1.3;
+  }
+  .center-hub span {
+    color: #B8FF34;
+    font-size: 10.5px;
+    font-weight: 700;
+    display: block;
+    margin-top: 3px;
+    letter-spacing: 1px;
+  }
+
+  /* Bottom Synthesis Footer */
+  .bottom-footer {
+    position: absolute;
+    bottom: 20px;
+    left: 28px;
+    right: 28px;
+    background: #071A4D;
+    color: #FFFFFF;
+    border-radius: 8px;
+    padding: 10px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid #B8FF34;
+  }
+  .footer-item {
+    font-size: 11.5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .footer-item strong {
+    color: #B8FF34;
+    font-size: 12px;
+  }
+  .footer-tag {
+    background: rgba(255,255,255,0.15);
+    padding: 2px 7px;
+    border-radius: 4px;
+    font-size: 10.5px;
+    font-weight: 600;
+  }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <svg class="wires" viewBox="0 0 1480 1080">
-    <path d="M 540 410 C 505 410, 520 165, 502 160" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
-    <path d="M 540 435 C 515 435, 520 430, 502 430" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 540 462 C 505 462, 520 700, 502 705" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
-    <path d="M 940 410 C 975 410, 960 165, 978 160" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 940 435 C 965 435, 960 430, 978 430" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
-    <path d="M 940 462 C 975 462, 960 700, 978 705" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 740 490 C 740 640, 740 815, 740 878" fill="none" stroke="#D2481F" stroke-width="2.5" stroke-dasharray="7 5" opacity=".6"/>
-  </svg>
 
-  <div class="center">
-    <div class="t">SEXUAL REPRODUCTION<br>IN FLOWERING PLANTS</div>
-    <div class="s">UNIT VI &#183; COMPLETE CHAPTER MAP</div>
+  <!-- Header -->
+  <div class="header">
+    <div class="title-group">
+      <h1>
+        Sexual Reproduction in Flowering Plants Master Mindmap
+        <span class="badge">FIGURE 3</span>
+      </h1>
+      <p>Complete Chapter Blueprint: Pre-Fertilization Ontogeny, Pollination Contrivances, Syngamy, Post-Fertilization Fate, and Apomixis</p>
+    </div>
+    <div class="exam-tags">
+      <div class="chip chip-navy">CUET UG Biology</div>
+      <div class="chip chip-blue">Complete Unit VI Synthesis</div>
+      <div class="chip chip-lime">High-Yield Revision</div>
+    </div>
   </div>
 
-  <div class="card left b" style="top:62px">
-    <h2>Stamen &amp; Pollen</h2>
-    <div class="leaf"><b>Stamen</b> = anther + filament; anther is bilobed with <b>4 microsporangia</b> (dithecous)</div>
-    <div class="leaf"><b>Wall layers:</b> epidermis &#8594; endothecium &#8594; middle layers &#8594; tapetum (feeds pollen)</div>
-    <div class="leaf"><b>Microsporogenesis:</b> pollen mother cell (2n) &#8212;meiosis&#8594; 4 microspores in a tetrad</div>
-    <div class="leaf"><b>Pollen:</b> tough exine (sporopollenin) + thin intine; at shedding 60% two-celled, 40% three-celled</div>
+  <!-- 4-Quadrant Mindmap Grid -->
+  <div class="mindmap-grid">
+
+    <!-- Center Hub -->
+    <div class="center-hub">
+      <h3>ANGIOSPERM SEXUAL REPRODUCTION</h3>
+      <span>NCERT CORE BLUEPRINT</span>
+    </div>
+
+    <!-- Quadrant 1: Pre-Fertilization & Gametophytes -->
+    <div class="branch-card" style="padding-right: 25px;">
+      <div class="branch-header">
+        <h2 class="branch-title title-blue">
+          <span>1. Gametophyte Genesis & Architecture</span>
+        </h2>
+        <span class="branch-badge badge-blue">Micro- & Megasporogenesis</span>
+      </div>
+      <div class="sub-items-grid">
+        <div class="sub-item">
+          <strong>Anther & Tapetum</strong>
+          4 wall layers: Epidermis, Endothecium (&alpha;-cellulose bands), Middle, <b>Tapetum</b> (multinucleate, polyploid, nourishes microspores, secretes callase & sporopollenin).
+        </div>
+        <div class="sub-item">
+          <strong>Pollen Grain (Male)</strong>
+          <b>Exine</b> (Sporopollenin + germ pores) + <b>Intine</b> (pectin-cellulose). Shed at <b>2-celled (60%)</b> or <b>3-celled (40%)</b> stage. Cryopreserved at -196&deg;C.
+        </div>
+        <div class="sub-item">
+          <strong>Ovule & Nucellus</strong>
+          Anatropous ovule: Funicle, Hilum, Integuments, Micropyle, Chalaza, Nucellus. <b>1 MMC (2n)</b> &rarr; Meiosis &rarr; 4 megaspores &rarr; <b>1 functional (chalazal)</b>.
+        </div>
+        <div class="sub-item">
+          <strong>Embryo Sac (Polygonum)</strong>
+          <b>7-celled, 8-nucleate:</b> 3 antipodals (chalaza), 1 central cell (2 polar nuclei, n+n), egg apparatus (2 synergids with <b>Filiform apparatus</b> + 1 egg, micropyle).
+        </div>
+      </div>
+    </div>
+
+    <!-- Quadrant 2: Pollination Biology & Outbreeding -->
+    <div class="branch-card" style="padding-left: 25px;">
+      <div class="branch-header">
+        <h2 class="branch-title title-green">
+          <span>2. Pollination Types & Outbreeding Devices</span>
+        </h2>
+        <span class="branch-badge badge-green">Transfer & Inbreeding Prevention</span>
+      </div>
+      <div class="sub-items-grid">
+        <div class="sub-item">
+          <strong>Types of Pollination</strong>
+          &bull; <b>Autogamy:</b> Same flower.<br>
+          &bull; <b>Geitonogamy:</b> Different flower, same plant (ecologically cross, genetically autogamous).<br>
+          &bull; <b>Xenogamy:</b> Genetically different flowers.
+        </div>
+        <div class="sub-item">
+          <strong>Cleistogamous Flowers</strong>
+          Closed flowers, never open; assured seed set without pollinators (<b>Viola, Oxalis, Commelina</b>). Chasmogamous: open flowers.
+        </div>
+        <div class="sub-item">
+          <strong>Abiotic Agents</strong>
+          &bull; <b>Wind (Anemophily):</b> Light, non-sticky pollen, feathery stigma, corn cob tassels.<br>
+          &bull; <b>Water (Hydrophily):</b> <i>Vallisneria, Zostera, Hydrilla</i>. (Water lily & hyacinth = insects!).
+        </div>
+        <div class="sub-item">
+          <strong>Outbreeding Devices</strong>
+          Dichogamy, Herkogamy, <b>Self-incompatibility</b> (genetic block). <b>Dioecy</b> (Papaya prevents autogamy & geitonogamy; Castor is monoecious).
+        </div>
+      </div>
+    </div>
+
+    <!-- Quadrant 3: Fertilization & Endosperm -->
+    <div class="branch-card" style="padding-right: 25px;">
+      <div class="branch-header">
+        <h2 class="branch-title title-amber">
+          <span>3. Double Fertilization & Endosperm Engine</span>
+        </h2>
+        <span class="branch-badge badge-amber">Nawaschin's Dual Event</span>
+      </div>
+      <div class="sub-items-grid">
+        <div class="sub-item">
+          <strong>Pollen Tube Guidance</strong>
+          Enters micropyle guided chemotropically by <b>Filiform apparatus</b>; penetrates one synergid; discharges 2 male gametes.
+        </div>
+        <div class="sub-item">
+          <strong>Syngamy & Triple Fusion</strong>
+          &bull; <b>Syngamy:</b> 1 sperm + egg &rarr; <b>Zygote (2n)</b>.<br>
+          &bull; <b>Triple Fusion:</b> 2nd sperm + 2 polar nuclei &rarr; <b>PEN (3n)</b>.<br>
+          Together = <b>Double Fertilization</b>.
+        </div>
+        <div class="sub-item">
+          <strong>Endosperm Ontogeny</strong>
+          Precedes embryo development. <b>Free-nuclear</b> (repeated mitoses without walls, e.g. coconut water) &rarr; <b>Cellular</b> (white coconut meat).
+        </div>
+        <div class="sub-item">
+          <strong>Albuminous vs Non-Albuminous</strong>
+          &bull; <b>Non-albuminous:</b> Endosperm consumed (Pea, Bean, Groundnut).<br>
+          &bull; <b>Albuminous:</b> Endosperm persists (Wheat, Maize, Barley, Castor).
+        </div>
+      </div>
+    </div>
+
+    <!-- Quadrant 4: Embryo, Seeds & Special Modes -->
+    <div class="branch-card" style="padding-left: 25px;">
+      <div class="branch-header">
+        <h2 class="branch-title title-purple">
+          <span>4. Embryogeny, Perisperm & Apomixis</span>
+        </h2>
+        <span class="branch-badge badge-purple">Post-Fertilization & Asexual Mimicry</span>
+      </div>
+      <div class="sub-items-grid">
+        <div class="sub-item">
+          <strong>Embryo Morphology</strong>
+          &bull; <b>Dicot:</b> 2 cotyledons, epicotyl &rarr; plumule, hypocotyl &rarr; radicle.<br>
+          &bull; <b>Monocot:</b> 1 cotyledon (<b>Scutellum</b>), <b>Coleoptile</b> (shoot cap), <b>Coleorhiza</b> (root cap).
+        </div>
+        <div class="sub-item">
+          <strong>Fruit Types & Perisperm</strong>
+          &bull; <b>True fruit:</b> Ovary alone.<br>
+          &bull; <b>False fruit:</b> Thalamus contributes (Apple, Strawberry, Cashew).<br>
+          &bull; <b>Perisperm:</b> Persistent nucellus (Black Pepper, Beet).
+        </div>
+        <div class="sub-item">
+          <strong>Parthenocarpy</strong>
+          Development of fruit without fertilization; seedless fruits (e.g. <b>Banana</b>); induced by application of auxins and gibberellins.
+        </div>
+        <div class="sub-item">
+          <strong>Apomixis & Polyembryony</strong>
+          &bull; <b>Apomixis:</b> Seed formation without fertilization (mimics sex; e.g. <i>Asteraceae</i>).<br>
+          &bull; <b>Polyembryony:</b> Multiple embryos from nucellar cell intrusion (<b>Citrus, Mango</b>).
+        </div>
+      </div>
+    </div>
+
   </div>
 
-  <div class="card left l" style="top:325px">
-    <h2>Pistil &amp; Embryo Sac</h2>
-    <div class="leaf"><b>Pistil</b> = stigma + style + ovary; ovule parts: funicle, hilum, integuments, micropyle, chalaza, nucellus</div>
-    <div class="leaf"><b>Megasporogenesis:</b> megaspore mother cell (2n) &#8594; 4 megaspores in a row &#8212; the chalazal one survives</div>
-    <div class="leaf"><b>Embryo sac:</b> egg + 2 synergids (micropylar end), 2 polar nuclei in the centre, 3 antipodals (chalazal end)</div>
-    <div class="leaf">Count it as <b>7 cells, 8 nuclei</b>; filiform apparatus of synergids guides the pollen tube</div>
+  <!-- Bottom Synthesis Footer -->
+  <div class="bottom-footer">
+    <div class="footer-item">
+      <strong>CRITICAL PLOIDY AUDIT:</strong>
+      <span>Aleurone = 3n | PEN = 3n | Zygote = 2n | Nucellus = 2n | Synergid = n | Antipodal = n</span>
+      <span class="footer-tag">CUET High-Yield</span>
+    </div>
+    <div class="footer-item">
+      <strong>CLEISTOGAMY GUARANTEE:</strong>
+      <span>Invariable autogamy without external pollinator requirement</span>
+      <span class="footer-tag">Viola / Oxalis / Commelina</span>
+    </div>
+    <div class="footer-item">
+      <strong>AGRONOMIC POTENTIAL:</strong>
+      <span>Apomictic hybrids prevent segregation of traits across farming generations</span>
+      <span class="footer-tag">Billion-Dollar Target</span>
+    </div>
   </div>
 
-  <div class="card left b" style="top:600px">
-    <h2>Endosperm &amp; Embryo</h2>
-    <div class="leaf"><b>Endosperm (3n):</b> free-nuclear divisions first, then cellular — coconut water vs coconut meat</div>
-    <div class="leaf"><b>Albuminous</b> seeds keep endosperm (castor, coconut); <b>non-albuminous</b> use it up (pea, bean, groundnut)</div>
-    <div class="leaf"><b>Dicot embryo:</b> 2 cotyledons, plumule up, radicle down; <b>monocot:</b> scutellum, coleoptile, coleorrhiza</div>
-    <div class="leaf">Seed coats: <b>testa</b> outside, <b>tegmen</b> inside; perisperm = leftover nucellus (castor)</div>
-  </div>
-
-  <div class="card right l" style="top:62px">
-    <h2>Pollination &amp; Agents</h2>
-    <div class="leaf"><b>Autogamy</b> (same flower; cleistogamy in Viola, Commelina) &#183; <b>geitonogamy</b> (same plant) &#183; <b>xenogamy</b> (different plant — the only true cross)</div>
-    <div class="leaf"><b>Wind:</b> light, dry, non-sticky pollen; feathery stigmas (grasses)</div>
-    <div class="leaf"><b>Water:</b> rare hydrophily — Vallisneria, Zostera; pollen shielded from wetting</div>
-    <div class="leaf"><b>Insects:</b> colour, scent, nectar; Yucca–moth obligate pair; pollen robbers take the reward, bring nothing</div>
-  </div>
-
-  <div class="card right b" style="top:325px">
-    <h2>Double Fertilisation</h2>
-    <div class="leaf"><b>Pollen tube</b> grows through the style and enters a synergid via the micropyle</div>
-    <div class="leaf"><b>Syngamy:</b> sperm + egg &#8594; zygote (2n), the first cell of the new plant</div>
-    <div class="leaf"><b>Triple fusion:</b> second sperm + 2 polar nuclei &#8594; primary endosperm nucleus (3n)</div>
-    <div class="leaf">Both together = <b>double fertilisation — only in angiosperms</b>; food is made only after fertilisation succeeds</div>
-  </div>
-
-  <div class="card right l" style="top:600px">
-    <h2>Apomixis &amp; Polyembryony</h2>
-    <div class="leaf"><b>Apomixis:</b> seeds without meiosis or fusion — a clone of the mother (diploid egg or nucellar cells)</div>
-    <div class="leaf"><b>Examples:</b> Citrus and Mango (nucellar embryony); apomictic hybrids keep their edge year after year</div>
-    <div class="leaf"><b>Polyembryony:</b> many embryos in one seed (Citrus, from nucellar cells)</div>
-    <div class="leaf"><b>Fruit</b> = mature ovary; <b>parthenocarpy</b> = seedless fruit without fertilisation (banana, seedless grapes)</div>
-  </div>
-
-  <div class="exc">
-    <h2>COMMON ERRORS &amp; TRAPS</h2>
-    <div class="leaf"><b>Endosperm is 3n, not 2n</b> — one sperm + two polar nuclei, all haploid</div>
-    <div class="leaf"><b>Syngamy uses one sperm, triple fusion the other</b> — the two fuse events together are "double" fertilisation</div>
-    <div class="leaf"><b>The chalazal megaspore survives</b> — the three micropylar ones degenerate</div>
-    <div class="leaf"><b>Coconut water = free-nuclear endosperm</b>; coconut meat = cellular endosperm — do not flip them</div>
-  </div>
-</div>
 </body>
 </html>

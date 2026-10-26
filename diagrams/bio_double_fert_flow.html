@@ -1,100 +1,365 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
+<title>Double Fertilization & Post-Fertilization Ontogeny Flow</title>
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
-  .wrap { width: 1480px; height: auto; background: #fff; padding: 26px 30px 24px; position: relative; }
-  .title { text-align: center; font-size: 32px; font-weight: 800; color: #071A4D; margin-bottom: 6px; }
-  .subtitle { text-align: center; font-size: 19px; color: #5A6478; margin-bottom: 26px; }
-  .row { display: flex; justify-content: center; align-items: stretch; gap: 0; }
-  .node {
-    width: 305px; background: #FCFDFF; border: 1.5px solid #D5DCEA; border-radius: 13px;
-    padding: 14px 16px 13px; position: relative; margin: 0 26px;
+  * { margin: 0; padding: 0; box-sizing: border-box; box-shadow: none !important; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    color: #0F172A;
+    overflow: hidden;
+    position: relative;
+    padding: 22px 28px;
   }
-  .node .num {
-    position: absolute; top: -17px; left: -17px; width: 40px; height: 40px; border-radius: 50%;
-    background: #071A4D; color: #B8FF34; font-weight: 800; font-size: 19px;
-    display: flex; align-items: center; justify-content: center; border: 2.5px solid #fff;
-    box-shadow: 0 3px 8px rgba(7,26,77,.28);
+
+  /* Header */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #CBD5E1;
+    padding-bottom: 12px;
+    margin-bottom: 16px;
   }
-  .node h3 { font-size: 21px; color: #071A4D; font-weight: 800; margin-bottom: 6px; padding-bottom: 5px;
-             border-bottom: 2.5px solid #1F5EFF; display: inline-block; }
-  .node p { font-size: 16.5px; color: #1B2333; line-height: 1.4; }
-  .node p b { color: #071A4D; }
-  .node.df h3 { border-color: #7FB800; }
-  .node.df { background: #FBFFF4; }
-  .arrow { align-self: center; width: 0; height: 0; border-top: 15px solid transparent;
-           border-bottom: 15px solid transparent; border-left: 22px solid #1F5EFF; margin: 0 -6px; }
-  .arrow.down { border-left: 15px solid transparent; border-right: 15px solid transparent;
-                border-top: 22px solid #1F5EFF; border-bottom: none; margin: 4px 0; }
-  .rowgap { height: 40px; display: flex; justify-content: center; }
-  .downwrap { display: flex; flex-direction: column; align-items: center; }
-  .strip {
-    margin: 30px auto 6px; width: 1180px; background: #071A4D; border-radius: 12px;
-    padding: 15px 22px; text-align: center; border-bottom: 4px solid #B8FF34;
+  .title-group h1 {
+    font-size: 21px;
+    font-weight: 800;
+    color: #071A4D;
+    display: flex;
+    align-items: center;
+    gap: 10px;
   }
-  .strip .a { color: #fff; font-size: 20px; font-weight: 700; }
-  .strip .a b { color: #B8FF34; font-weight: 800; letter-spacing: .5px; }
+  .title-group h1 span.badge {
+    background: #071A4D;
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 4px;
+  }
+  .title-group p {
+    font-size: 12.5px;
+    color: #64748B;
+    margin-top: 2px;
+    font-weight: 500;
+  }
+  .exam-tags {
+    display: flex;
+    gap: 8px;
+  }
+  .chip {
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+  }
+  .chip-navy { background: #EEF1F8; color: #071A4D; border: 1px solid #CBD5E1; }
+  .chip-blue { background: #EAF0FF; color: #1F5EFF; border: 1px solid #BFDBFE; }
+  .chip-lime { background: #F6FFDF; color: #4E7A00; border: 1px solid #D9F99D; }
+
+  /* 2x3 Grid of Sequential Process Steps */
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto;
+    gap: 14px;
+    height: 610px;
+  }
+
+  .step-card {
+    background: #FFFFFF;
+    border: 1.5px solid #CBD5E1;
+    border-radius: 10px;
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+  }
+  .step-card.active-fert {
+    background: #F0FDF4;
+    border-color: #86EFAC;
+  }
+  .step-card.active-pen {
+    background: #FFFBEB;
+    border-color: #FDE68A;
+  }
+
+  .step-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    padding-bottom: 6px;
+    border-bottom: 1.5px solid #E2E8F0;
+  }
+  .step-num {
+    font-size: 11px;
+    font-weight: 800;
+    color: #FFFFFF;
+    background: #071A4D;
+    padding: 2px 7px;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+  }
+  .step-tag {
+    font-size: 10.5px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 3px;
+  }
+  .tag-blue { background: #EFF6FF; color: #1D4ED8; border: 1px solid #BFDBFE; }
+  .tag-green { background: #DCFCE7; color: #15803D; border: 1px solid #86EFAC; }
+  .tag-amber { background: #FEF3C7; color: #B45309; border: 1px solid #FCD34D; }
+
+  .step-title {
+    font-size: 14px;
+    font-weight: 800;
+    color: #071A4D;
+    margin-bottom: 6px;
+  }
+  .step-desc {
+    font-size: 11.5px;
+    line-height: 1.45;
+    color: #334155;
+    flex: 1;
+  }
+  .step-desc b {
+    color: #0F172A;
+  }
+
+  /* Micro Callout within card */
+  .callout-box {
+    margin-top: 8px;
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    padding: 7px 9px;
+    font-size: 10.8px;
+    line-height: 1.38;
+  }
+  .callout-box strong {
+    color: #1E293B;
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  /* Fate Mapping Grid */
+  .fate-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+    margin-top: 6px;
+  }
+  .fate-pill {
+    background: #F1F5F9;
+    border: 1px solid #CBD5E1;
+    border-radius: 5px;
+    padding: 4px 6px;
+    font-size: 10.5px;
+  }
+  .fate-pill b {
+    color: #071A4D;
+  }
+
+  /* Bottom Summary Strip */
+  .bottom-strip {
+    position: absolute;
+    bottom: 20px;
+    left: 28px;
+    right: 28px;
+    background: #071A4D;
+    color: #FFFFFF;
+    border-radius: 8px;
+    padding: 10px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid #B8FF34;
+  }
+  .strip-item {
+    font-size: 11.5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .strip-item strong {
+    color: #B8FF34;
+    font-size: 12px;
+  }
+  .strip-badge {
+    background: rgba(255,255,255,0.14);
+    padding: 2px 7px;
+    border-radius: 4px;
+    font-size: 10.5px;
+    font-weight: 600;
+  }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <div class="title">From Pollen to Seed</div>
-  <div class="subtitle">The double fertilisation journey — seven steps from a landing pollen grain to a finished seed</div>
 
-  <div class="row">
-    <div class="node">
-      <div class="num">1</div>
-      <h3>Pollination</h3>
-      <p>Pollen lands on the <b>stigma</b>, the sticky landing pad at the top of the pistil.</p>
+  <!-- Header -->
+  <div class="header">
+    <div class="title-group">
+      <h1>
+        Double Fertilization & Post-Fertilization Ontogeny Flow
+        <span class="badge">FIGURE 2</span>
+      </h1>
+      <p>Six-phase sequential ontogenetic pathway from chemotropic tube guidance to syngamy, triple fusion, endosperm nutrition, and seed fate</p>
     </div>
-    <div class="arrow"></div>
-    <div class="node">
-      <div class="num">2</div>
-      <h3>Pollen tube grows</h3>
-      <p>A tube pushes down through the <b>style</b>, carrying the two <b>male gametes</b> at its tip.</p>
-    </div>
-    <div class="arrow"></div>
-    <div class="node">
-      <div class="num">3</div>
-      <h3>Through the gate</h3>
-      <p>The tube slips into a <b>synergid</b> through the <b>micropyle</b>, the ovule's tiny doorway.</p>
-    </div>
-    <div class="arrow"></div>
-    <div class="node df">
-      <div class="num">4</div>
-      <h3>SYNGAMY</h3>
-      <p>One sperm + the <b>egg</b> &#8594; <b>zygote (2n)</b>, the first cell of the new plant.</p>
+    <div class="exam-tags">
+      <div class="chip chip-navy">CUET UG Biology</div>
+      <div class="chip chip-blue">Angiosperm Landmark</div>
+      <div class="chip chip-lime">S.G. Nawaschin (1898)</div>
     </div>
   </div>
 
-  <div class="rowgap"><div class="downwrap"><div class="arrow down"></div></div></div>
+  <!-- 2x3 Steps Grid -->
+  <div class="steps-grid">
 
-  <div class="row">
-    <div class="node df">
-      <div class="num">5</div>
-      <h3>TRIPLE FUSION</h3>
-      <p>The <b>second</b> sperm + the <b>2 polar nuclei</b> &#8594; primary endosperm nucleus (<b>3n</b>).</p>
+    <!-- Step 1 -->
+    <div class="step-card">
+      <div>
+        <div class="step-top">
+          <span class="step-num">STEP 1</span>
+          <span class="step-tag tag-blue">Recognition & Chemotropism</span>
+        </div>
+        <div class="step-title">Pollen-Pistil Dialogue & Tube Growth</div>
+        <div class="step-desc">
+          Pistil recognizes compatible pollen via <b>continuous chemical dialogue</b> between pollen proteins and stigma receptors. 
+          Pollen hydrates; intine pushes through a <b>germ pore</b> forming a pollen tube. The tube grows down the style, carrying <b>2 male gametes</b> at its tip under chemotropic guidance.
+        </div>
+      </div>
+      <div class="callout-box">
+        <strong>Incompatibility Barrier:</strong>
+        Self-incompatible pollen is blocked either by inhibition of germination on stigma or inhibition of tube elongation in the style.
+      </div>
     </div>
-    <div class="arrow"></div>
-    <div class="node">
-      <div class="num">6</div>
-      <h3>Feeding the embryo</h3>
-      <p>Endosperm stores food while the zygote divides and builds the <b>embryo</b>.</p>
+
+    <!-- Step 2 -->
+    <div class="step-card">
+      <div>
+        <div class="step-top">
+          <span class="step-num">STEP 2</span>
+          <span class="step-tag tag-blue">Embryo Sac Entry</span>
+        </div>
+        <div class="step-title">Micropylar Entry & Synergid Penetration</div>
+        <div class="step-desc">
+          Pollen tube reaches ovule and enters strictly through the <b>Micropyle</b> (Porogamy). 
+          The <b>Filiform Apparatus</b> of synergids directs the tube into the cytoplasm of one degenerating synergid. The tube tip ruptures, releasing both non-motile male gametes.
+        </div>
+      </div>
+      <div class="callout-box">
+        <strong>Synergid Fate:</strong>
+        One synergid degenerates upon tube penetration; the second synergid degenerates soon after syngamy is initiated.
+      </div>
     </div>
-    <div class="arrow"></div>
-    <div class="node">
-      <div class="num">7</div>
-      <h3>Seed and fruit</h3>
-      <p>The <b>ovule matures into the seed</b>; the <b>ovary swells into the fruit</b>.</p>
+
+    <!-- Step 3 -->
+    <div class="step-card active-fert">
+      <div>
+        <div class="step-top">
+          <span class="step-num" style="background: #15803D;">STEP 3</span>
+          <span class="step-tag tag-green">Generative Fertilization</span>
+        </div>
+        <div class="step-title" style="color: #15803D;">Syngamy: Zygote (2n) Formation</div>
+        <div class="step-desc">
+          One male gamete ($n$) migrates toward the egg cell and fuses with its nucleus, completing <b>Syngamy</b>.
+          Results in a diploid single-celled <b>Zygote (2n)</b> at the micropylar pole. Zygote normally remains dormant until some endosperm is formed.
+        </div>
+      </div>
+      <div class="callout-box" style="background: #FFFFFF; border-color: #86EFAC;">
+        <strong style="color: #15803D;">Genetic Equation:</strong>
+        Male Gamete ($n$) + Egg Cell Nucleus ($n$) &rarr; Diploid Zygote ($2n$). Embryo progenitor.
+      </div>
+    </div>
+
+    <!-- Step 4 -->
+    <div class="step-card active-pen">
+      <div>
+        <div class="step-top">
+          <span class="step-num" style="background: #B45309;">STEP 4</span>
+          <span class="step-tag tag-amber">Vegetative Fertilization</span>
+        </div>
+        <div class="step-title" style="color: #B45309;">Triple Fusion: PEN (3n) Formation</div>
+        <div class="step-desc">
+          Second male gamete ($n$) moves to central cell and fuses with the <b>2 Polar Nuclei (n + n)</b>. 
+          Because three haploid nuclei fuse, it is called <b>Triple Fusion</b>. 
+          Forms the triploid <b>Primary Endosperm Nucleus (PEN, 3n)</b>, and central cell becomes <b>PEC</b>.
+        </div>
+      </div>
+      <div class="callout-box" style="background: #FFFFFF; border-color: #FDE68A;">
+        <strong style="color: #B45309;">Nawaschin's Landmark:</strong>
+        Syngamy + Triple Fusion = <b>Double Fertilization</b>, a universal signature unique to Angiosperms.
+      </div>
+    </div>
+
+    <!-- Step 5 -->
+    <div class="step-card">
+      <div>
+        <div class="step-top">
+          <span class="step-num">STEP 5</span>
+          <span class="step-tag tag-blue">Nutritive Engine</span>
+        </div>
+        <div class="step-title">Endosperm Ontogeny & Seed Types</div>
+        <div class="step-desc">
+          Endosperm development strictly precedes embryo development. 
+          PEN divides mitotically to form free nuclei (<b>Free-nuclear endosperm</b>, e.g. coconut water). 
+          Later, cytokinesis forms walls (<b>Cellular endosperm</b>, e.g. white coconut meat).
+        </div>
+      </div>
+      <div class="callout-box">
+        <strong>Seed Classification:</strong>
+        &bull; <b>Non-albuminous:</b> Endosperm fully consumed (Pea, Groundnut, Bean).<br>
+        &bull; <b>Albuminous:</b> Endosperm persists in seed (Castor, Wheat, Maize).
+      </div>
+    </div>
+
+    <!-- Step 6 -->
+    <div class="step-card">
+      <div>
+        <div class="step-top">
+          <span class="step-num">STEP 6</span>
+          <span class="step-tag tag-blue">Morphogenesis & Organ Fate</span>
+        </div>
+        <div class="step-title">Embryogeny & Floral Fate Map</div>
+        <div class="step-desc">
+          Zygote develops: <b>Proembryo &rarr; Globular &rarr; Heart-shaped &rarr; Mature Embryo</b>.
+          Surrounding floral organs undergo coordinated post-fertilization metamorphosis:
+        </div>
+      </div>
+      <div class="fate-grid">
+        <div class="fate-pill">Ovary &rarr; <b>Fruit (Pericarp)</b></div>
+        <div class="fate-pill">Ovule &rarr; <b>Seed</b></div>
+        <div class="fate-pill">Integuments &rarr; <b>Seed Coat (Testa/Tegmen)</b></div>
+        <div class="fate-pill">Nucellus &rarr; <b>Perisperm (e.g. Beet, Pepper)</b></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bottom Strip -->
+  <div class="bottom-strip">
+    <div class="strip-item">
+      <strong>DOUBLE FERTILIZATION FORMULA:</strong>
+      <span>Syngamy (1 sperm + 1 egg = 2n Zygote) + Triple Fusion (1 sperm + 2 polar nuclei = 3n PEN)</span>
+      <span class="strip-badge">2 Synergid Discharges</span>
+    </div>
+    <div class="strip-item">
+      <strong>CHRONOLOGICAL RULE:</strong>
+      <span>Endosperm develops <b>before</b> embryo to secure nutritional survival</span>
+      <span class="strip-badge">Essential Adaptation</span>
+    </div>
+    <div class="strip-item">
+      <strong>SEED COAT:</strong>
+      <span>Outer Integument &rarr; Testa; Inner &rarr; Tegmen; Micropyle remains as pore</span>
+      <span class="strip-badge">Protective Envelope</span>
     </div>
   </div>
 
-  <div class="strip">
-    <div class="a">Steps 4 and 5 together = <b>DOUBLE FERTILISATION</b> — found only in angiosperms</div>
-  </div>
-</div>
 </body>
 </html>

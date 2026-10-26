@@ -10,844 +10,502 @@
 = Syllabus Alignment
 
 #table(
-  columns: (1.05fr, 1.9fr, 1.25fr),
-  table.header[*Sub-topic*][*Official syllabus pointer (NTA CUET(UG) Biology syllabus 2026, the current 2027 baseline, Unit VI)*][*Skills the questions test*],
-  [*Pre-fertilisation: stamen, microsporangium and pollen grain*], [
-    Pre-fertilisation: structure and events — stamen, microsporangium and pollen grain.
+  columns: (1.1fr, 1.8fr, 1.3fr),
+  table.header[*Sub-topic*][*Official syllabus pointer (NTA CUET UG Biology 2026 / 2027 Baseline)*][*Exam Skills & Question Types*],
+  [*Pre-fertilisation: Stamen & Microsporangium*], [
+    Pre-fertilisation: structure and events — stamen, microsporangium and pollen grain; development of male gametophyte.
   ], [
-    Naming anther wall layers in order, tracing microsporogenesis, labelling pollen walls and germ pores.
+    4 wall layers in order; tapetum ploidy; sporopollenin properties; 2-celled vs 3-celled shedding stages.
   ],
-  [*Pre-fertilisation: pistil, megasporangium and embryo sac*], [
-    Pre-fertilisation: structure and events — pistil, megasporangium (ovule) and embryo sac.
+  [*Pre-fertilisation: Pistil & Megasporangium*], [
+    Pistil, megasporangium (ovule) and embryo sac; development of female gametophyte (megasporogenesis).
   ], [
-    Matching each ovule part to its job, locating egg apparatus and antipodals, counting cells and nuclei.
+    Anatropous ovule parts; monosporic development; 7-celled, 8-nucleate Polygonum embryo sac; filiform apparatus.
   ],
-  [*Development of male and female gametophytes*], [
-    Development of male (microsporogenesis) and female gametophyte (megasporogenesis).
+  [*Pollination Biology & Agents*], [
+    Pollination — types, agents and examples; contrivances and floral rewards.
   ], [
-    Sequencing the divisions, spotting which cell survives and which degenerate.
+    Autogamy, geitonogamy, xenogamy; anemophily adaptations; hydrophily (*Vallisneria*, *Zostera*); insect mutualism (*Yucca*).
   ],
-  [*Pollination — types, agents and examples*], [
-    Pollination — types, agents and examples.
+  [*Outbreeding Devices & Interaction*], [
+    Outbreeding devices; Pollen-pistil interaction; compatibility dialogue.
   ], [
-    Classifying a case as autogamy, geitonogamy or xenogamy; pairing agents with adaptations.
+    Dichogamy, herkogamy, self-incompatibility; monoecy vs dioecy barrier rules; chemotropic guidance.
   ],
-  [*Out-breeding devices and pollen-pistil interaction*], [
-    Out-breeding devices; Pollen-pistil interaction.
+  [*Double Fertilisation*], [
+    Double fertilisation: syngamy and triple fusion events.
   ], [
-    Naming the four devices, listing emasculation and bagging steps, explaining the accept-or-reject logic.
+    $2n$ zygote vs $3n$ PEN formation; Nawaschin landmark; nuclear arithmetic and ploidy matrices.
   ],
-  [*Double fertilisation*], [
-    Double fertilisation.
+  [*Post-fertilisation Ontogeny*], [
+    Development of endosperm and embryo; formation of seed and fruit; parthenocarpy.
   ], [
-    Separating syngamy from triple fusion, assigning ploidies (2n zygote, 3n endosperm).
+    Free-nuclear vs cellular endosperm; dicot vs monocot embryo (scutellum, coleoptile); false fruits; perisperm.
   ],
-  [*Post-fertilisation: endosperm and embryo development*], [
-    Post-fertilisation: structure and events — development of endosperm and embryo.
+  [*Apomixis & Polyembryony*], [
+    Significance of seed in angiosperms; Apomixis and polyembryony.
   ], [
-    Free-nuclear vs cellular endosperm, dicot vs monocot embryo parts.
-  ],
-  [*Seed and fruit formation, parthenocarpy*], [
-    Formation of seed and fruit and parthenocarpy.
-  ], [
-    True vs false fruits, seed coats, seedless-fruit cases.
-  ],
-  [*Significance of seed*], [
-    Significance of seed in angiosperms.
-  ], [
-    Listing the survival advantages packed into a seed.
-  ],
-  [*Apomixis and polyembryony*], [
-    Apomixis and polyembryony.
-  ], [
-    Defining clone seeds, citing Citrus and Mango, contrasting with normal sexual seed.
+    Asexual mimicry in *Asteraceae*; adventive polyembryony in *Citrus* and Mango; hybrid vigor preservation.
   ],
 )
 
 #exam-pointer[
-  CUET UG pattern (NTA official information bulletin and syllabus, 2026 cycle — the
-  current 2027 baseline): each subject paper carries *50 compulsory questions* in
-  *60 minutes*, with $+5$ for every correct answer and $-1$ for every incorrect answer. The Biology paper maps strictly to NCERT
-  Class 12, and Unit VI opens with the plant story: flowers, gametes, the double
-  fusion that only angiosperms do, and the seed that follows.
+  *Official CUET UG Biology Pattern (NTA 2026/2027 Baseline):* The Biology domain paper (Code 323) presents *50 compulsory multiple-choice questions* to be answered in *60 minutes*. The marking scheme is $+5$ for every correct response, $-1$ for incorrect responses, and $0$ for unattempted questions. Unit VI (Reproduction) carries a consistent 20--25% weighting in domain Biology, with Sexual Reproduction in Flowering Plants forming the fundamental cytological and genetic bedrock for inheritance and biotechnology units.
 ]
 
-= The Flower and Its Male Machinery
+= Module 1: Pre-Fertilisation Male Machinery & Microsporogenesis
 
-Hold any simple flower — a hibiscus, a mustard — and look closely. It is a shoot
-that stopped growing longer and turned itself into a seed factory. Every whorl of
-the flower is bent on one job: making and delivering gametes, the sex cells. We
-start with the male side, because that is where the story of every seed begins.
+Every angiosperm flower is an evolutionarily compressed, determinate reproductive shoot. Its floral organs are arranged in four distinct concentric whorls on the swollen receptacle (*thalamus*): the sterile protective calyx (sepals) and corolla (petals), and the fertile essential whorls---the male *androecium* and female *gynoecium*.
 
-- *A flower is a reproductive shoot.* Its leaves have changed into four whorls:
-  calyx, corolla, androecium and gynoecium — the last two make the gametes.
-- *Androecium = the male part,* a bundle of *stamens.* Each stamen has a *filament*
-  (its stalk) and an *anther* (the pollen factory) sitting on top.
-- *The anther is bilobed.* Each lobe holds two long chambers called *microsporangia*,
-  so one anther carries four in total — this design is called *dithecous* ("two-sacced").
-- *A microsporangium is a pollen chamber.* It matures into a pollen sac: a four-layered
-  wall outside, pollen-forming tissue inside.
+- *Stamen morphology:* The male reproductive organ (*microsporophyll*) consists of two parts:
+  - *Filament:* A slender, elongated sterile stalk whose proximal end attaches to the thalamus or petal (epipetalous condition).
+  - *Anther:* A fertile, terminal, swollen structure that is typically *bilobed* and *dithecous* (each lobe accommodates two thecae separated by a longitudinal groove).
+- *Tetrasporangiate layout:* A typical bilobed anther houses four elongated microsporangia located at the four corners. These microsporangia develop longitudinally into cylindrical *pollen sacs* packed with millions of pollen grains.
 
-== The Four Layers of the Anther Wall
+== Microsporangium Wall Stratigraphy
 
-The wall of each microsporangium is built like a sandwich — four layers, each with
-its own job. Learn them outside-in, in this exact order.
+In transverse section, a typical young microsporangium appears near-circular and is encircled by four distinct concentric wall layers whose developmental order and cytological roles are strictly tested in national examinations:
 
 #table(
-  columns: (1.1fr, 1.9fr),
-  table.header[*Layer (outside → inside)*][*What it does*],
-  [*1. Epidermis*], [The outermost single layer — a tough protective cover for the whole anther.],
-  [*2. Endothecium*], [The layer just below; its walls help the anther dry out and *split open* to shake pollen free.],
-  [*3. Middle layers*], [One to three thin layers of padding and stored food; they are gone by the time pollen matures.],
-  [*4. Tapetum*], [The innermost layer around the pollen; it *nourishes the developing pollen grains* and then breaks down.],
+  columns: (1fr, 0.8fr, 2.2fr),
+  table.header[*Layer (Outside $arrow.r$ Inside)*][*Ploidy*][*Cytological Structure & Exact Physiological Role*],
+  [*1. Epidermis*], [$2n$ (Maternal)], [Outermost single-celled continuous protective sheath; cells flatten tangential to circumference during anther expansion.],
+  [*2. Endothecium*], [$2n$ (Maternal)], [Sub-epidermal layer characterized by radial elongation and hygroscopic $alpha$-cellulosic fibrous band thickenings; dries and contracts differentially to rupture the stomium during dehiscence.],
+  [*3. Middle Layers*], [$2n$ (Maternal)], [1 to 3 ephemeral parenchymatous layers; mechanically crushed and digested during microspore maturation to yield transient nutrition.],
+  [*4. Tapetum*], [Polyploid / Multinucleate], [Innermost physiological layer directly encasing sporogenous tissue; features dense cytoplasm, prominent nuclei, and high enzymatic activity. Synthesizes *callase* (to dissolve callose tetrads), nourishment, and lipoidal/carotenoid *pollenkitt* and *sporopollenin precursors*.],
 )
 
-- *Why the tapetum matters most:* it feeds the young pollen and hands it wall
-  material, so a damaged tapetum can leave a plant almost sterile.
-- *Exam-friendly order to recite:* epidermis → endothecium → middle layers →
-  tapetum. Any question that shuffles these is testing only the order.
-
-== Microsporogenesis: How Pollen Grains Are Made
-
-*Microsporogenesis* simply means "making microspores" — the male spores. Watch the
-counting carefully; the numbers are a classic trap.
-
-- *Step 1 — the mother cell appears.* Inside each young microsporangium, some cells
-  grow big and dense; one is the *microspore mother cell* (pollen mother cell), diploid (2n).
-- *Step 2 — meiosis.* The mother cell divides by *meiosis*, the special division that
-  halves the chromosome number.
-- *Step 3 — a tetrad of four.* Meiosis gives four haploid (n) *microspores* still held
-  together in a packet called a *tetrad*.
-- *Step 4 — release.* As the anther matures, the packet falls apart, and each
-  microspore rounds off into a *pollen grain*.
-
-#worked-example("Worked Example — Counting From One Mother Cell to Sperm")[
-  One microspore mother cell (2n) does meiosis. Follow the arithmetic:
-
-  - 1 microspore mother cell → meiosis → *4 microspores* (a tetrad).
-  - Each microspore becomes 1 pollen grain, so 1 mother cell → *4 pollen grains*.
-  - The generative cell of each pollen divides once to give *2 male gametes*.
-  - So one mother cell can ultimately father 4 × 2 = *8 male gametes*.
-
-  The same one-in-four-survives logic does *not* apply here — all four microspores
-  live. It is the megaspores (next section) where three of four die.
+#exception-box(title: "Tapetal Cytology & Ploidy Anomaly")[
+  - *Multinucleate nature:* Cells of the tapetum undergo *endomitosis* (internal chromosome replication without nuclear division) or *free nuclear mitosis without cytokinesis*, causing tapetal cells to possess multiple nuclei and extreme polyploid states ($>2n$).
+  - *Dual functionality:* Tapetum produces enzymes (callase), hormones (auxins), and precursors for both the exine (sporopollenin globules/Ubisch bodies) and the sticky coat of insect-pollinated grains (*pollenkitt*).
 ]
 
-== Inside the Pollen Grain: Two Walls
+== Microsporogenesis to the Mature Pollen Grain
 
-A pollen grain is a tiny armoured capsule with two coats and two cells inside.
+- *Sporogenous tissue:* In a young, developing anther, compactly arranged, homogeneous diploid cells occupy the center of each microsporangium.
+- *Microspore Mother Cell (MMC / PMC):* As the anther expands, each sporogenous cell differentiates into a potential *Pollen Mother Cell ($2n$)*.
+- *Meiotic reduction:* Each MMC undergoes meiosis to form a cluster of four haploid cells arranged in a tetrahedral cluster---the *Microspore Tetrad ($n$)*. The walls of the tetrad are temporarily cemented together by callose.
+- *Dissociation:* Secretion of callase by the tapetum dissolves callose walls. As the anther matures and dehydrates, the four microspores dissociate from each other and expand into individual spherical *pollen grains*.
 
-#table(
-  columns: (1fr, 1.9fr),
-  table.header[*Part*][*What it is made of and why it matters*],
-  [*Exine (outer wall)*], [Made of *sporopollenin* — one of the toughest natural materials known; it shrugs off heat, strong acids and enzymes. It has thin gaps called *germ pores*, where the exine is missing and the pollen tube will later push out.],
-  [*Intine (inner wall)*], [Thin and delicate, made of cellulose and pectin — it lies just under the exine and bursts open with the tube.],
-  [*Vegetative cell*], [The bigger cell with abundant food; it builds the *pollen tube* that will crawl down the style.],
-  [*Generative cell*], [The smaller cell that floats inside the vegetative one; it divides to give the *two male gametes*.],
-)
-
-- *At shedding, two designs exist.* In over 60% of flowering plants the pollen is
-  *two-celled* (vegetative + generative); the generative cell divides later, inside the tube.
-- *In about 40% of plants* the pollen is already *three-celled* at shedding — the
-  generative cell has divided into two male gametes before the pollen even leaves.
-- *Viability varies wildly.* Pollen of rice and wheat stays alive for about 30
-  minutes, while pollen of some legumes remains usable for months.
-- *Pollen can be a nuisance:* *Parthenium* (carrot weed) pollen triggers allergies,
-  asthma and bronchitis in sensitive people.
-- *Pollen can be useful:* it is rich in nutrients, sold as *pollen tablets* (food
-  supplements), and *pollen culture* (growing pollen in the lab) helps plant breeders.
-
-#analogy-box(title: "Everyday Analogy — The Bakery Packaging")[
-  Think of the anther as a bakery. The tapetum is the kitchen staff who feed the
-  dough until it is ready; the sporopollenin exine is the sturdy packing box that
-  survives rough transport for years; the germ pores are the small holes punched in
-  the box — the one place where something (the pollen tube) can come out. The
-  mapping is exact in one way only: the pores are gaps in the packing, not doors the
-  pollen opens by itself.
+#formula-box(title: "Microsporogenesis Production Equation")[
+  $ 1 "Microspore Mother Cell (MMC)" (2n) arrow.r.long^("Meiosis") 4 "Haploid Microspores" (n) $
+  $ 1 "Microspore" (n) arrow.r.long^("Mitosis") 1 "Pollen Grain" (n) ==> 1 "MMC" ==> 4 "Functional Pollen Grains" $
 ]
 
-= The Pistil and the Embryo Sac
+== Architecture of the Mature Male Gametophyte
 
-Now cross to the female side of the flower. The *gynoecium* — the female part — is
-made of one or more *pistils*, and everything about it is designed to catch the
-right pollen and keep an egg waiting inside. The star of this section is a tiny
-seven-room building called the *embryo sac*, hidden deep inside the ovule.
+A pollen grain represents the highly reduced male gametophyte of angiosperms. Typically spherical, measuring 25 to 50 micrometers in diameter, its wall (*sporoderm*) consists of two prominent layers:
 
-- *Pistil = three parts.* The *stigma* (sticky landing pad for pollen), the *style*
-  (the long neck below it) and the *ovary* (the swollen base that holds the ovules).
-- *One or many pistils.* A flower may be *monocarpellary* (one pistil) or
-  *multicarpellary* (several pistils fused or free).
-- *An ovule is a megasporangium.* It is the small egg-shaped body inside the ovary,
-  and it is destined to become the seed.
-- *Inside the ovule sits the embryo sac* — the female gametophyte, the home of the
-  egg cell that fertilisation is all about.
+- *Exine (Outer Sculptured Wall):*
+  - Composed of *Sporopollenin*, a complex oxidative polymer of carotenoids and fatty acid esters.
+  - *Extreme resistance:* Sporopollenin is universally acknowledged as the most chemically inert and resistant biological substance known; it withstands extreme temperatures, strong inorganic acids, concentrated alkalis, and mechanical pressure.
+  - *Absence of degradative enzymes:* No known biological enzyme has been discovered that can digest or break down sporopollenin, enabling pollen grains to preserve immaculately in fossil strata.
+  - *Germ Pores:* Distinct circular apertures in the exine where sporopollenin deposition is completely absent, allowing the emergence of the pollen tube during germination.
+- *Intine (Inner Wall):*
+  - A thin, delicate, uniform, continuous layer located beneath the exine.
+  - Chemically composed of *pectocellulose* (pectin and cellulose).
+  - During germination, intine elongates through one of the germ pores to construct the wall of the growing pollen tube.
 
-== The Parts of an Ovule
-
-Learn the ovule by its map — every named part below is fair game for a one-mark check.
-
-#table(
-  columns: (1.1fr, 1.9fr),
-  table.header[*Part*][*What it is*],
-  [*Funicle*], [The stalk that attaches the ovule to the placenta (the ovary's inner wall).],
-  [*Hilum*], [The junction point where the funicle meets the body of the ovule — like a tag on a balloon.],
-  [*Integuments*], [One or two protective coats wrapped around the ovule; they harden into seed coats later.],
-  [*Micropyle*], [The tiny opening where the coats leave a gap at the tip — the doorway for the pollen tube.],
-  [*Chalaza*], [The region exactly opposite the micropyle, where the funicle's supply line enters.],
-  [*Nucellus*], [The mass of food-rich tissue inside the coats; it feeds the growing embryo sac.],
-  [*Embryo sac*], [The female gametophyte lying inside the nucellus — the room where fertilisation happens.],
-)
-
-== Megasporogenesis: One Cell Out of Four
-
-*Megasporogenesis* means "making megaspores" — the female spores. Here the counting
-is crueler than on the male side: three out of four cells are thrown away.
-
-- *Step 1 — the mother cell appears.* One cell of the nucellus, near the micropyle,
-  grows large and dense: the *megaspore mother cell* (MMC), diploid (2n).
-- *Step 2 — meiosis.* The MMC divides meiotically into a *linear row of four haploid
-  megaspores*.
-- *Step 3 — three die.* The three megaspores near the micropyle *degenerate* (dry up
-  and vanish); only the *chalazal* one — the deepest — survives.
-- *Step 4 — the survivor grows.* The functional megaspore (n) develops into the
-  *embryo sac*.
-
-#table(
-  columns: (1fr, 1.6fr, 1.6fr),
-  table.header[*Point of comparison*][*Male line: microspores*][*Female line: megaspores*],
-  [Mother cell], [Microspore mother cell, 2n, deep inside the anther.], [Megaspore mother cell, 2n, in the nucellus near the micropyle.],
-  [Division], [Meiosis → 4 microspores in a tetrad.], [Meiosis → 4 megaspores in a linear row.],
-  [Survivors], [*All four* live and become pollen grains.], [*Only the chalazal one* lives; three degenerate.],
-  [Product], [Pollen grain — the male gametophyte's start.], [Embryo sac — the female gametophyte itself.],
-)
-
-== Building the Embryo Sac: 7 Cells, 8 Nuclei
-
-The surviving megaspore does not divide meiotically again — it divides by *mitosis*
-(ordinary division) three times, and walls appear only at the end.
-
-- *Three mitotic rounds:* 1 nucleus → 2 → 4 → 8 nuclei, all free in one shared cytoplasm.
-- *Then walls form.* The 8 nuclei get sorted into 7 cells arranged in three zones.
-- *Egg apparatus (micropylar end):* one *egg cell* plus two *synergids* — helper cells
-  with *filiform apparatus*, finger-like thickenings that steer the incoming pollen tube.
-- *Central cell:* the big cell in the middle holding two *polar nuclei*.
-- *Antipodals (chalazal end):* three cells that multiply first and then quietly
-  degenerate before fertilisation.
-
-#formula-box(title: "The 7-Cells, 8-Nuclei Count")[
-  - *Egg apparatus* — 3 cells (egg + 2 synergids), 3 nuclei — at the micropylar end
-  - *Central cell* — 1 cell, 2 nuclei (the polar nuclei) — in the centre
-  - *Antipodals* — 3 cells, 3 nuclei — at the chalazal end
-  - *Total* — 7 cells, 8 nuclei (every nucleus is haploid, n)
+#analogy-box(title: "Everyday Analogy — The Armored Diplomatic Courier")[
+  Think of a pollen grain as an armored courier transporting vital genetic documents across hostile territory. The *exine* is the heavy titanium armor (sporopollenin) built to resist acids, ultraviolet radiation, and microbial attacks. The *germ pores* are escape hatches left unarmored. Inside the vehicle, the *vegetative cell* acts as the navigator and supply vehicle with abundant fuel, while the *generative cell* is the diplomat that divides into the two actual fertilizing agents.
 ]
 
-#analogy-box(title: "Everyday Analogy — A Seven-Room House")[
-  Picture the embryo sac as a seven-room house with eight residents. The egg is the
-  bride waiting in the micropylar room; the two synergids are gatekeepers holding
-  signboards (the filiform apparatus) that point the pollen tube to the door. The
-  central cell is the kitchen run by two managers (the polar nuclei) who will soon
-  run the food department. The three antipodals are rooms at the back that empty out
-  before the wedding. The house exists only for remembering positions — no part of a
-  real sac is a room with furniture.
+== 2-Celled vs 3-Celled Shedding Stages & Pollen Viability
+
+Inside the maturing pollen grain, the protoplast undergoes an asymmetric mitotic division generating two unequal cells:
+
+- *Vegetative Cell (Tube Cell):* The larger cell with abundant cytoplasmic food reserves and a large, irregularly shaped nucleus.
+- *Generative Cell:* A smaller, spindle-shaped cell with dense cytoplasm and a prominent nucleus that floats freely in the cytoplasm of the vegetative cell.
+- *Shedding Stage Distribution:*
+  - In over *60% of angiosperm species*, pollen grains are shed from the anther at this *2-celled stage* (vegetative cell + generative cell). The generative cell divides mitotically inside the pollen tube during its passage through the style.
+  - In the remaining *$<40\%$ of angiosperms*, the generative cell divides mitotically *prior to dehiscence*, meaning pollen grains are shed at the *3-celled stage* (1 vegetative cell + 2 male gametes).
+- *Pollen Viability Limits:*
+  - *Short-lived:* In cereals such as rice (*Oryza sativa*) and wheat (*Triticum aestivum*), pollen grains lose viability within *30 minutes* of release.
+  - *Long-lived:* In members of *Rosaceae*, *Leguminosae*, and *Solanaceae*, pollen grains maintain viability for *several months*.
+- *Cryopreservation & Pollen Banks:* Pollen grains can be stored viable for years in liquid nitrogen at $-196 degree "C"$ in specialized *pollen banks*, analogous to seed banks, for crop breeding programs.
+- *Allergic & Economic Significance:* Pollen of *Parthenium hysterophorus* (carrot grass, introduced as an imported wheat contaminant) causes severe broncho-respiratory disorders such as asthma and bronchitis. Pollen tablets and syrups are marketed commercially in western nations as nutrient supplements for athletes and racehorses.
+
+= Module 2: Pre-Fertilisation Female Machinery & Megasporogenesis
+
+The *gynoecium* represents the female reproductive organ of the flower. It may consist of a single carpel (*monocarpellary*), multiple free carpels (*multicarpellary apocarpous*, e.g., *Michelia*), or multiple fused carpels (*multicarpellary syncarpous*, e.g., *Papaver*).
+
+- *Carpel Anatomy:* Each individual pistil/carpel consists of three structural zones:
+  - *Stigma:* The receptive landing platform at the apex, engineered with papillae and sticky secretions to capture pollen.
+  - *Style:* The elongated, slender neck connecting stigma to ovary; may be hollow with glandular canal cells or solid with transmitting tissue.
+  - *Ovary:* The swollen basal chamber housing one or more unfertilized seeds (*ovules*) attached to an internal cushion called the *placenta*.
+
+== The Anatropous Ovule (Megasporangium)
+
+In over 80% of angiosperms, the ovule is *anatropous* (inverted through $180 degree$, bringing the micropyle close to the funicle base). The anatomical landmarks of an ovule are critical for CUET labeling questions:
+
+#table(
+  columns: (1.1fr, 0.8fr, 2.1fr),
+  table.header[*Ovule Component*][*Ploidy*][*Structural Anatomy & Morphological Significance*],
+  [*Funicle (Funiculus)*], [$2n$], [The slender stalk attaching the ovule body to the ovarian placenta, supplying vascular nutrients.],
+  [*Hilum*], [$2n$], [The scar or junction zone where the funicle fuses with the body of the ovule; marks point of detachment in seed.],
+  [*Integuments*], [$2n$], [One or two (bitegmic) protective parenchymatous envelopes enclosing the nucellus; mature into the seed coat.],
+  [*Micropyle*], [Aperture], [A tiny pore at the ovule apex left uncovered by integuments; serves as entry port for pollen tube and later imbibition pore for water during germination.],
+  [*Chalaza*], [$2n$], [The basal, swollen region opposite the micropyle, representing the origin point of integuments.],
+  [*Nucellus*], [$2n$], [Mass of central parenchymatous tissue rich in reserve food materials that nourishes the developing embryo sac.],
+)
+
+== Megasporogenesis & Monosporic Embryo Sac Ontogeny
+
+Megasporogenesis is the formation of haploid megaspores from the diploid Megaspore Mother Cell (MMC):
+
+- *Differentiation:* A single, prominent hypodermal cell of the nucellus at the *micropylar end* differentiates into the *Megaspore Mother Cell (MMC, $2n$)*, distinguished by its large size, dense cytoplasm, and prominent nucleus.
+- *Meiotic Division:* The MMC undergoes meiotic division (Meiosis I and II) to form a linear column of four haploid megaspores (*Linear Megaspore Tetrad, $n$*).
+- *Monosporic Selection:* In typical angiosperms (*Polygonum* type), the *three megaspores situated towards the micropylar pole degenerate* and dissolve. Only the *single chalazal megaspore remains functional*.
+- *Successive Mitotic Divisions:*
+  - The nucleus of the functional chalazal megaspore ($n$) undergoes *three successive rounds of free-nuclear mitosis* without immediate cytokinesis:
+  - First mitosis produces 2 nuclei, which migrate to opposite poles (1 micropylar, 1 chalazal).
+  - Second mitosis produces 4 nuclei (2 at each pole).
+  - Third mitosis produces 8 nuclei (4 at the micropylar pole, 4 at the chalazal pole).
+- *Cytokinesis & Cellular Organization:* Cell wall formation is laid down after the 8-nucleate stage, organizing 6 nuclei into individual cells, while the remaining 2 nuclei reside in a shared central chamber.
+
+#figure(
+  image("assets/bio_flowering_gametogenesis.png", width: 75%),
+  caption: [Comparative developmental architecture of microsporogenesis (anther wall stratigraphy and pollen ontogeny) versus megasporogenesis (ovule anatomy, monosporic selection, and mature 7-celled 8-nucleate Polygonum embryo sac).]
+)
+
+== Internal Blueprint of the Mature 7-Celled, 8-Nucleate Embryo Sac
+
+The mature female gametophyte of angiosperms exhibits a highly coordinated, asymmetric cellular architecture:
+
+- *1. Antipodal Cells (Chalazal Pole — 3 Cells, $n$):*
+  - Three distinct vegetative cells located at the chalazal end.
+  - Act as nutritive and metabolic conduits during gametophyte development; typically degenerate before or immediately following fertilization.
+- *2. Central Cell (Center — 1 Giant Cell, 2 Nuclei):*
+  - The largest cell of the female gametophyte, occupying the vast central vacuolated volume.
+  - Houses the *two Polar Nuclei ($n + n$)* situated just beneath the egg apparatus.
+  - Fuses with the second male gamete during triple fusion to establish the primary endosperm progenitor.
+- *3. Egg Apparatus (Micropylar Pole — 3 Cells, $n$):*
+  - *Egg Cell ($n$):* The single female gamete located centrally between the synergids; features a prominent nucleus towards the chalazal pole and a large vacuole towards the micropyle.
+  - *Synergids ($2$ Cells, $n$):* Flank the egg cell. Characterized by prominent, finger-like cytoplasmic and wall invaginations at their micropylar base called the *Filiform Apparatus*.
+  - *Role of Filiform Apparatus:* Secretes chemotropic attractants and physically guides the pollen tube into one of the synergids during entry.
+
+= Module 3: Pollination Biology, Contrivances & Outbreeding Devices
+
+Pollination is the physical transfer of pollen grains shed from the anther to the receptive stigma of a pistil. Because both male and female gametes in angiosperms are non-motile, this transfer is essential for fertilization.
+
+== Classification of Pollination by Genetic & Ecological Source
+
+#table(
+  columns: (1fr, 1fr, 2fr),
+  table.header[*Pollination Type*][*Ecological Mechanism*][*Genetic Outcome & Evolutionary Impact*],
+  [*1. Autogamy*], [Transfer within the *same identical flower*.], [Strict self-pollination; yields complete homozygosity; prevents introduction of new genetic variation.],
+  [*2. Geitonogamy*], [Transfer from anther of one flower to stigma of *another flower on the same plant*.], [Ecologically cross-pollination (requires an external pollinating agent), but *genetically strictly autogamous* because both flowers share identical parental genotype.],
+  [*3. Xenogamy (Allogamy)*], [Transfer between flowers of *two genetically distinct individual plants*.], [True cross-pollination; introduces novel genetic recombination, hybrid vigor, and raw material for natural selection.],
+)
+
+== Cleistogamous vs Chasmogamous Flowers
+
+Certain angiosperm genera---specifically *Viola* (common pansy), *Oxalis* (wood sorrel), and *Commelina*---produce two distinct morphological types of flowers on the same individual plant:
+
+- *Chasmogamous Flowers:* Conventional, open flowers with exposed anthers and stigmas that invite cross-pollinating agents.
+- *Cleistogamous Flowers:* Small, subterranean or basal flowers that *never open at all*.
+  - *Mechanism:* Anthers and stigmas lie in tight physical proximity inside sealed petals. When anthers dehisce, pollen grains automatically contact the stigma.
+  - *Evolutionary Advantage:* *Assured seed set* is guaranteed even in the complete absence of pollinators or unfavorable weather.
+  - *Evolutionary Cost:* Invariable autogamy enforces absolute inbreeding with zero genetic variation.
+
+== Abiotic Pollinating Agents: Wind & Water
+
+- *Anemophily (Wind Pollination):* The most common abiotic mechanism.
+  - *Pollen traits:* Pollen grains are produced in enormous quantities, are lightweight, dry, smooth, and non-sticky so they can be transported by air currents.
+  - *Floral traits:* Flowers are small, inconspicuous, lacking petals, color, nectar, and fragrance. Stamens possess long, well-exposed filaments.
+  - *Stigma & Ovary:* Stigma is large, feathery (*feathery stigma*) to effortlessly trap passing airborne grains. The ovary typically contains *only a single ovule* per ovary, and numerous flowers are packed into an inflorescence (classic example: *corn cob*, whose tassels are styles and stigmas hanging in the wind; grasses).
+- *Hydrophily (Water Pollination):* Extremely rare, restricted to roughly 30 genera, overwhelmingly monocotyledons.
+  - *Epihydrophily (*Vallisneria*):* Submerged dioecious freshwater plant. Female flower reaches the water surface by a long coiled stalk. Male flowers detach and float on water surface. Passive water currents carry pollen into contact with female stigmas.
+  - *Hypohydrophily (*Zostera* — marine seagrass):* Submerged marine plant. Female flowers remain submerged. Pollen grains are long, ribbon-like, needle-shaped, devoid of exine, and coated in protective *mucilaginous sheaths* to prevent wetting; they drift passively inside the water column at specific depths.
+  - *High-Yield Exam Trap:* Aquatic plants like *Eichhornia crassipes* (water hyacinth) and *Nymphaea* (water lily) emerge above water level and are pollinated by *insects or wind*, NOT by water!
+
+== Biotic Pollinating Agents (Zoophily & Entomophily)
+
+Over 80% of angiosperm pollination is mediated by animals, predominantly insects (*bees* are dominant):
+
+- *Entomophilous adaptations:* Flowers are large, showy, brightly colored, aromatic, and rich in *nectar*. Sticky *pollenkitt* coats the pollen grains, facilitating adherence to insect setae.
+- *Floral Rewards:* Plants compensate animal visitors with:
+  - *Nectar and edible pollen grains.*
+  - *Safe oviposition sites:* Providing safe chambers to lay eggs. In *Amorphophallus*, the flower itself is a gigantic 6-foot tall structure offering egg-laying shelter.
+  - *Obligate Mutualism (*Yucca* & *Pronuba* moth):* Neither partner can complete its life cycle without the other. The moth deposits eggs inside the ovarian locule while depositing pollen on the stigma; moth larvae hatch from eggs exactly when seeds begin maturing, consuming a fraction of seeds while the remainder disperse.
+
+== Outbreeding Devices: Nature's Defenses Against Inbreeding
+
+Continuous self-pollination leads to *inbreeding depression*, characterized by reduced fertility, loss of vigor, and accumulation of deleterious recessive alleles. Angiosperms have evolved five physiological and morphological contrivances (*outbreeding devices*) to prevent selfing:
+
+- *1. Dichogamy (Temporal Separation):* Pollen release and stigma receptivity are non-synchronized.
+  - *Protandry:* Anthers mature and dehisce before stigma becomes receptive (e.g., Sunflower, Salvia).
+  - *Protogyny:* Stigma becomes receptive before anthers dehisce (e.g., *Ficus*, *Aristolochia*).
+- *2. Herkogamy (Spatial Separation):* Anthers and stigma are positioned at different physical heights or orientations, preventing self-pollen from falling on the stigma.
+- *3. Heterostyly:* Flowers possess different lengths of styles and stamens (e.g., *Primula*).
+- *4. Self-Incompatibility (Genetic Barrier):* A genetically controlled self-recognition system that prevents self-pollen (from same flower or same plant) from fertilizing ovules by *inhibiting pollen germination on stigma* or *arresting pollen tube growth in style*.
+- *5. Unisexuality (Dicliny / Separation of Sexes):*
+  - *Monoecious species:* Male and female flowers reside on the *same individual plant* (e.g., Castor, Maize). Prevents *autogamy*, but *does NOT prevent geitonogamy*.
+  - *Dioecious species:* Male and female flowers reside on *completely different individual plants* (e.g., Papaya, Date palm). Prevents *BOTH autogamy and geitonogamy*.
+
+= Module 4: Pollen-Pistil Interaction & Double Fertilisation
+
+Pollen-pistil interaction encompasses all events from the moment pollen lands on the stigma until the pollen tube enters the ovule. It represents a dynamic, chemical dialogue between the pollen grain and the stigma:
+
+== The Compatibility Dialogue & Tube Growth
+
+- *Recognition:* The stigma evaluates pollen grains through mediated protein-protein interactions. If compatible, the stigma provides water and nutrients; if incompatible, germination is actively blocked.
+- *Tube Emergence:* The compatible pollen grain hydrates. The *intine* pushes outward through one *germ pore*, establishing the *pollen tube*.
+- *Chemotropic Elongation:* The vegetative nucleus and generative cell (or two male gametes) move into the tube tip. The tube digests its way through the intercellular spaces of style tissues via pectinases, guided chemotropically by calcium-boron gradients towards the ovary.
+
+== Entry into the Embryo Sac & Synergid Penetration
+
+- *Porogamy:* The pollen tube enters the ovule predominantly through the *micropyle*.
+- *Synergid Entry:* The finger-like *filiform apparatus* of the synergids guides the tube tip into the cytoplasm of *one of the two synergids*.
+- *Discharge:* The penetrating pollen tube tip bursts open, simultaneously destroying the receptive synergid and discharging its cytoplasmic contents along with the *two non-motile male gametes*.
+
+#figure(
+  image("assets/bio_double_fert_flow.png", width: 75%),
+  caption: [Sequential pathway of double fertilization in angiosperms: chemotropic tube guidance, micropylar entry via synergid, syngamy ($2n$ zygote), triple fusion ($3n$ PEN), and subsequent endosperm/embryo developmental fate mapping.]
+)
+
+== The Dual Fertilization Phenomenon (Nawaschin, 1898)
+
+Angiosperms are unique among all living organisms in performing two distinct nuclear fusions inside a single female gametophyte, discovered by *S.G. Nawaschin (1898)* in *Lilium* and *Fritillaria*:
+
+#table(
+  columns: (1fr, 1.4fr, 0.8fr, 1.8fr),
+  table.header[*Event*][*Fusing Partners*][*Resulting Ploidy*][*Ultimate Morphological Fate*],
+  [*1. Syngamy* \ (Generative Fusion)], [1st Male Gamete ($n$) \ $+$ \ Egg Cell Nucleus ($n$)], [$2n$ \ (Diploid)], [Forms the unicellular *Zygote ($2n$)*, which subsequently undergoes embryogenesis to produce the future diploid plant embryo.],
+  [*2. Triple Fusion* \ (Vegetative Fusion)], [2nd Male Gamete ($n$) \ $+$ \ 2 Polar Nuclei ($n + n$)], [$3n$ \ (Triploid)], [Forms the *Primary Endosperm Nucleus (PEN, $3n$)*; the large central cell is transformed into the *Primary Endosperm Cell (PEC)*.],
+)
+
+#formula-box(title: "Double Fertilisation Equation")[
+  $ "Double Fertilisation" = "Syngamy" space (n + n arrow.r 2n space "Zygote") + "Triple Fusion" space (n + n + n arrow.r 3n space "PEN") $
+  $ "Total Gametic Nuclei Participating" = 1 ("Egg") + 2 ("Polar") + 2 ("Sperms") = 5 "Nuclei Involved" $
 ]
 
-= Pollination: Types and Agents
+- *Energetic Significance of Triple Fusion:* Endosperm tissue is formed *only after* fertilization has successfully occurred. In gymnosperms, endosperm is haploid ($n$) and forms *before* fertilization, risking enormous wasted maternal energy if pollination fails. Angiosperms conserve metabolic reserves until syngamy is confirmed.
 
-Once pollen is packed and ready, it must travel. *Pollination* is the transfer of
-pollen from the anther to the stigma — and that single journey decides whether the
-next generation is a near-copy of the parent or a fresh mix. Biologists sort every
-pollination event into three types by asking one question: *where did the pollen land?*
+= Module 5: Post-Fertilisation Ontogeny: Endosperm, Embryo & Seed
 
-#table(
-  columns: (1.05fr, 1.2fr, 1.75fr),
-  table.header[*Type*][*Where pollen lands*][*What it means genetically*],
-  [*Autogamy*], [The stigma of the *same flower*.], [Offspring stay very close to the parent; needs anther and stigma packed close together.],
-  [*Geitonogamy*], [Another flower *on the same plant*.], [Functionally self-pollination — genetically no better than selfing, even though a pollinator is used.],
-  [*Xenogamy*], [A flower *on a different plant*.], [The only *true cross-pollination*; it brings new gene combinations and fitter offspring.],
-)
+Following double fertilization, the flower undergoes coordinated developmental metamorphosis: sepals, petals, stamens, style, and stigma wither and fall off, while ovary and ovules mature into fruit and seeds.
 
-- *Cleistogamy — selfing by force.* In *Viola* (pansy), *Commelina* and *Oxalis*,
-  some flowers never open; pollen falls on the stigma inside the closed bud, so
-  self-pollination is guaranteed with no agent at all.
-- *Chasmogamy is the opposite:* the ordinary open, showy flowers on the same plant,
-  which do need agents.
-- *Why plants still keep cleistogamous flowers:* they are insurance — even in a bad
-  season with no pollinators, the plant still sets some seed.
+== Endosperm Development Precedes Embryogenesis
 
-#table(
-  columns: (1fr, 1.55fr, 1.55fr),
-  table.header[*Point*][*Cleistogamous flowers*][*Chasmogamous flowers*],
-  [Petals], [Never open — bud stays shut.], [Open fully, often showy and scented.],
-  [Agent needed], [None — pollen falls inside the closed bud.], [Wind, water or an insect is needed.],
-  [Genetic result], [Pure self-pollination, every time.], [Selfing or crossing, depending on the visitor.],
-)
+A cardinal rule of angiosperm embryology: *endosperm development strictly precedes embryo development*. The zygote remains quiescent for a brief period, awaiting initial divisions of the primary endosperm cell to guarantee that a nutritive reservoir exists before embryo morphogenesis begins.
 
-== The Three Agents and Their Tools
+- *Free-Nuclear Endosperm (Most Common):*
+  - The triploid PEN undergoes repeated mitotic divisions *without immediate cytokinesis*.
+  - Yields hundreds to thousands of free, unpartitioned nuclei suspended in a central vacuolar fluid.
+  - *Classic Example:* The clear liquid water of tender coconut (*Cocos nucifera*) represents thousands of free nuclei floating in liquid endosperm.
+- *Cellular Endosperm:*
+  - In later stages, centrifugal cell wall formation (*cytokinesis*) initiates from the periphery inwards.
+  - *Classic Example:* The surrounding firm, white coconut kernel ("copra") represents multicellular cellular endosperm.
+- *Fate in Mature Seeds:*
+  - *Exalbuminous (Non-endospermic) Seeds:* Endosperm is completely consumed by the developing embryo prior to seed maturation (e.g., Pea, Groundnut, Gram, Bean). Food is stored in cotyledons.
+  - *Albuminous (Endospermic) Seeds:* Endosperm persists in the mature seed and sustains the seedling during germination (e.g., Castor, Maize, Wheat, Barley, Sunflower).
 
-#table(
-  columns: (0.85fr, 1.15fr, 2fr),
-  table.header[*Agent*][*Classic examples*][*Adaptations to quote in answers*],
-  [*Wind*], [Grasses, maize], [Pollen light, dry, non-sticky and made in huge amounts; stigmas *feathery* to comb pollen from the air; flowers small, dull, scentless.],
-  [*Water*], [*Vallisneria*, *Zostera* (water pollination is rare)], [Pollen coated with a sticky layer that protects it from wetting; in *Vallisneria* the female flower rises to the water surface to meet drifting pollen.],
-  [*Insects*], [Most showy flowers; *Yucca*], [Colour, scent and nectar as payment; pollen sticky or spiny to cling to bodies; *Amorphophallus* offers one giant bloom as a billboard.],
-)
+== Embryo Morphogenesis: Dicot vs Monocot
 
-- *The Yucca–moth pair is obligate.* The moth lays its eggs inside the ovary, and
-  the flower gets pollinated by that same moth — neither can finish its life cycle
-  without the other.
-- *Wind and water waste pollen on purpose:* millions of grains are shed so that a
-  few land right; insect flowers spend less pollen but pay nectar instead.
-- *Pollen robbers exist:* many insects sip the nectar or eat the pollen and fly off
-  without touching any stigma — they take the reward and contribute nothing.
-- *Pollen survives deep time.* Because sporopollenin shrugs off decay, pollen coats
-  last for millions of years in fossils — *palynology*, the study of pollen grains
-  (living and fossil), is built on that toughness.
-- *One grain can name a plant.* The sculpturing of the exine is species-specific, so
-  fossil pollen lets scientists reconstruct which plants grew where, ages ago.
-- *Autogamy has a geometry problem.* For pollen to fall on the own stigma, anther and
-  stigma must sit very close together — which is why self-pollinating flowers tend
-  to be compact and unscented.
-
-#analogy-box(title: "Everyday Analogy — A Courier With a Delivery Fee")[
-  Insect pollination works like a courier service. The flower pays a delivery fee
-  (nectar), the pollen is the parcel stuck to the courier's body, and the stigma is
-  the delivery address. A bee visiting two different plant species is a courier
-  carrying parcels for two unrelated companies — the stigma of one company often
-  refuses the other's parcel. The mapping holds because both sides exchange a
-  measurable reward for a measurable service.
-]
-
-= Out-Breeding Devices and Pollen-Pistil Interaction
-
-Why would a plant make selfing difficult? Because generation after generation of
-self-pollination causes *inbreeding depression* — offspring slowly lose vigour,
-fertility and the ability to handle stress. Flowering plants have evolved several
-*devices* (design features) that push pollen to travel between different plants.
-
-#table(
-  columns: (1.15fr, 1.95fr),
-  table.header[*Device*][*How it blocks self-pollination*],
-  [*Timing mismatch*], [Pollen release and stigma readiness happen at *different times* — the pollen is gone before the own stigma is receptive (or the reverse).],
-  [*Spatial separation*], [Anther and stigma sit at *different positions* in the flower, so own pollen cannot simply fall onto the own stigma (*herkogamy*).],
-  [*Self-incompatibility*], [A *genetic block*: pollen landing on the pistil of the same plant fails to germinate, or its tube dies inside the style.],
-  [*Unisexuality*], [Male and female flowers are separate — on the same plant (maize, coconut) or on different plants (papaya). Same-plant unisexuality blocks autogamy but still allows geitonogamy.],
-)
-
-- *Why selfing weakens a line.* Every generation of selfing keeps matching similar
-  genes together, so hidden harmful copies surface and stay — vigour, seed output and
-  stress tolerance all slide. That slide is *inbreeding depression*.
-- *Crossing resets the deck.* Xenogamy mixes two plants' genes, and harmful copies
-  get masked again by healthier versions from the other parent.
-- *The devices are not all-or-nothing.* A flower may carry one device or several —
-  a unisexual flower plus a timing mismatch, for example — and every layer pushes
-  pollen one step further from its own flower.
-
-== Artificial Hybridisation: Borrowing the Machinery
-
-Breeders force a cross by using the flower's own rules. The whole method is two
-moves — *emasculation* and *bagging* — done on the female parent's bud.
-
-- *Step 1 — pick a bud.* Choose the female parent's flower *before it opens*, while
-  its anthers are still immature. This works only in *bisexual* flowers.
-- *Step 2 — emasculation.* Remove the anthers with forceps so the flower cannot
-  self-pollinate at all.
-- *Step 3 — bagging.* Cover the emasculated flower with a butter-paper bag so no
-  stray pollen (from wind or insects) can reach the stigma.
-- *Step 4 — controlled dusting.* When the stigma turns receptive, shake the chosen
-  male parent's pollen onto it, *re-bag* the flower, and label the cross.
-- *Why bag at all:* without the cover, the first pollen to arrive — most often the
-  wrong one — would win the race to the ovule.
-
-#table(
-  columns: (1.15fr, 1.45fr, 1.45fr),
-  table.header[*Female parent's flower*][*Emasculation needed?*][*What the breeder does*],
-  [Bisexual (male + female parts together)], [*Yes* — anthers must be removed from the bud.], [Emasculate, bag, dust chosen pollen, re-bag, label.],
-  [Unisexual (female flowers only)], [*No* — there are no anthers to remove.], [Bag the flower to keep stray pollen out, then dust and re-bag.],
-)
-
-== Pollen-Pistil Interaction: Accept or Reject
-
-The journey from stigma to egg is a conversation between two living surfaces.
-
-- *Recognition is chemical.* The stigma reads the pollen's surface: the *right*
-  pollen is accepted, the *wrong* type is chemically rejected — it never germinates
-  or its tube is stopped.
-- *Acceptance sequence:* compatible pollen germinates on the stigma → the tube grows
-  down through the *style*, feeding on its sugary path → it carries the two male
-  gametes toward the ovule.
-- *The pistil is the referee.* Several grains may germinate together, but tube
-  growth rates differ — often the fastest, fittest tube reaches the ovule first.
-- *Hybridisation exploits this machinery on purpose:* the breeder emasculates,
-  bags, and then offers the stigma exactly one guest.
-
-#analogy-box(title: "Everyday Analogy — A Guard With a Guest List")[
-  Treat the stigma as a guard at a club door. Compatible pollen shows the matching
-  ID and walks in; self pollen of an incompatible flower is turned away even though
-  it looks identical to outsiders. Emasculation and bagging are the breeder's way of
-  hiring the whole hall privately — no uninvited guest can even reach the door. The
-  comparison is honest in one respect: the guard decides by matching chemical
-  markers, exactly as a list matches names.
-]
-
-= Double Fertilisation: Two Fusions at Once
-
-After the tube reaches the embryo sac, the signature event of flowering plants
-begins. Inside one tiny sac, *two fusions happen side by side* — this pairing is
-called *double fertilisation*, and it is found only in angiosperms. Every seed you
-have ever eaten began with these two fusions.
-
-#figure(image("assets/bio_double_fert_flow.png", width: 100%), caption: [Figure 1 — From pollen to seed: the seven-step journey of double fertilisation.])
-
-- *Entry through the door.* The pollen tube reaches the ovule, enters through the
-  *micropyle* and slips into a *synergid* — the filiform apparatus helps steer it in.
-- *Syngamy.* One male gamete fuses with the *egg* to form the *zygote (2n)* — the
-  first cell of the new plant.
-- *Triple fusion.* The *other* male gamete fuses with the *two polar nuclei* of the
-  central cell, forming the *primary endosperm nucleus (3n)* — three haploid sets in
-  one nucleus, hence "triple".
-- *Together = double fertilisation.* Both fusions happen in the same sac, almost at
-  the same time — a hallmark no other plant group shows.
-
-#table(
-  columns: (1fr, 0.9fr, 2fr),
-  table.header[*Participant in the sac*][*Ploidy*][*Role in the story*],
-  [Egg cell], [n], [The female gamete; fusion partner number one.],
-  [First sperm], [n], [Fuses with the egg — syngamy.],
-  [Second sperm], [n], [Fuses with the polar nuclei — triple fusion.],
-  [Two polar nuclei], [n + n], [Fusion partner number two; they sit in the central cell.],
-)
-
-#formula-box(title: "The Two Fusions — Learn the Ploidies")[
-  - *Syngamy* — male gamete (n) + egg (n) → zygote (2n) — becomes the *embryo*
-  - *Triple fusion* — male gamete (n) + 2 polar nuclei (n + n) → primary endosperm
-    nucleus (3n) — becomes the *endosperm*
-  - *Both together* — double fertilisation — found *only* in angiosperms
-]
-
-#worked-example("Worked Example — Counting Chromosomes Through the Two Fusions")[
-  Suppose a species has $2n = 24$ chromosomes in its body cells. Follow every
-  product of reproduction:
-
-  - *Gametes:* meiosis halves the number, so the egg and each sperm carry $n = 12$.
-  - *Zygote (syngamy):* egg 12 + sperm 12 = $2n = 24$ — the embryo's cells all carry 24.
-  - *Polar nuclei:* each carries 12, so the pair together holds 24.
-  - *Primary endosperm nucleus (triple fusion):* sperm 12 + polar nucleus 12 + polar
-    nucleus 12 = $3n = 36$ — the endosperm cells all carry 36.
-
-  One fertilisation event, two different chromosome counts: 24 in the baby plant,
-  36 in its pantry. If a question gives you a diploid number, every other number
-  follows from this chain.
-]
-
-- *Why this design is clever.* The endosperm — the seed's food store — begins
-  developing only *after* fertilisation is confirmed, so the plant never wastes food
-  on an unfertilised ovule.
-- *After the fusions, the helpers leave.* The antipodals and synergids degenerate;
-  their guiding work is done.
-- *The pantry moves first.* The primary endosperm nucleus starts dividing before the
-  zygote does — the food store is underway while the embryo is still tiny.
-- *Only then does the embryo build.* The zygote rests briefly, then divides into the
-  sequence you will meet in the next section.
-
-== Pre-Fertilisation and Post-Fertilisation Events at a Glance
-
-#table(
-  columns: (1fr, 2.1fr),
-  table.header[*Phase*][*Events in order*],
-  [*Pre-fertilisation*], [Pollination → pollen germinates on the stigma → pollen tube grows through the style → male gametes are carried into the ovule.],
-  [*Fertilisation*], [Syngamy (egg + sperm → zygote, 2n) and triple fusion (sperm + 2 polar nuclei → endosperm nucleus, 3n).],
-  [*Post-fertilisation*], [Endosperm and embryo develop → ovule matures into the seed → ovary grows into the fruit.],
-)
-
-= Endosperm and the Embryo
-
-The zygote is one cell carrying a whole plant's future — but no plant can grow on
-nothing. Before the embryo builds itself, the seed fills its pantry. This section
-follows the two post-fertilisation products: the food store (endosperm) and the
-baby plant (embryo), and then the finished seed that packs them together.
-
-== Endosperm: The Seed's Food Store
-
-- *Endosperm is the 3n food tissue.* It grows from the primary endosperm nucleus and
-  feeds the developing embryo — and often feeds us too.
-- *Free-nuclear first.* The primary endosperm nucleus divides repeatedly *without
-  forming walls*, giving many free nuclei floating in one big cell — the
-  *free-nuclear stage*.
-- *Cellular later.* Walls form around the nuclei, and the endosperm becomes a
-  *cellular* tissue packed with starch and oil.
-- *The coconut shows both stages at once.* The liquid you drink is the
-  *free-nuclear* endosperm (thousands of nuclei, still no walls); the white *meat*
-  you scrape is the *cellular* endosperm that formed later.
-
-#table(
-  columns: (1.05fr, 1.6fr, 1.15fr),
-  table.header[*Seed type*][*What happens to the endosperm*][*Examples*],
-  [*Albuminous (endospermic)*], [The endosperm *persists* in the mature seed and feeds the seedling at germination.], [Castor, coconut],
-  [*Non-albuminous*], [The embryo *consumes* the endosperm; the food moves into the cotyledons.], [Pea, beans, groundnut],
-)
-
-== Building the Embryo
-
-- *The zygote divides in a set sequence:* proembryo → globular → heart-shaped →
-  mature embryo (the heart shape belongs to dicots).
-
-#table(
-  columns: (1fr, 1.3fr, 1.9fr),
-  table.header[*Stage*][*Shape the embryo takes*][*What is happening inside*],
-  [Zygote], [A single cell.], [Rests briefly, then begins dividing.],
-  [Proembryo], [A short file of cells.], [The first partitions set up the future root–shoot line.],
-  [Globular], [A round ball of cells.], [Tissues start sorting into layers.],
-  [Heart-shaped], [Two lobes appear.], [The two lobes are the forming *cotyledons* — the dicot signature.],
-  [Mature embryo], [Miniature plant.], [Plumule, radicle and cotyledons all in place, waiting inside the seed.],
-)
-
-- *The embryonal axis is the baby stem-and-root line.* Above the cotyledons it is
-  the *epicotyl*, ending in the *plumule* (embryonic shoot tip); below them it is
-  the *hypocotyl*, ending in the *radicle* (embryonic root tip).
-- *Dicot embryo:* two *cotyledons* — fleshy seed leaves — hold the food reserve in
-  non-albuminous seeds such as pea and bean.
+Embryo development (*embryogeny*) follows an identical early pathway in both dicots and monocots up to the globular stage, after which morphological divergence occurs:
+$ "Zygote" space (2n) arrow.r "Proembryo" arrow.r "Globular Stage" arrow.r "Heart-shaped Stage" arrow.r "Torpedo Stage" arrow.r "Mature Embryo" $
 
 #table(
   columns: (1fr, 1.5fr, 1.5fr),
-  table.header[*Feature*][*Dicot embryo*][*Monocot embryo*],
-  [*Cotyledons*], [Two fleshy seed leaves.], [One shield-shaped cotyledon — the *scutellum*.],
-  [*Shoot tip*], [*Plumule*, sitting between the cotyledons.], [Plumule enclosed in the *coleoptile* sheath.],
-  [*Root tip*], [*Radicle* at the lower end.], [Radicle wrapped in the *coleorrhiza* sheath.],
-  [*Food store*], [Cotyledons (non-albuminous) or endosperm (albuminous).], [Endosperm lying beside the scutellum.],
+  table.header[*Embryo Region*][*Dicot Embryo Structure*][*Monocot Embryo (Grass) Structure*],
+  [*Cotyledons*], [Two fleshy lateral cotyledons that store food reserves (starch/proteins).], [Single, large, shield-shaped, lateral cotyledon called the *Scutellum*.],
+  [*Shoot Apex*], [Epicotyl terminates in the *plumule* (stem tip), flanked by cotyledons.], [Enclosed in an undifferentiated hollow foliar protective sheath called the *Coleoptile*.],
+  [*Root Apex*], [Hypocotyl terminates in the *radicle* (root tip), covered by a *root cap*.], [Radicle and root cap enclosed in an undifferentiated protective sheath called the *Coleorhiza*.],
+  [*Remnant Tissue*], [Absence of second cotyledon trace.], [A small tongue-like scale opposite the scutellum representing the reduced second cotyledon: the *Epiblast*.],
 )
 
-- *The two monocot sheaths have one job:* shield the delicate tips while the shoot
-  punches up through soil — coleoptile guards the plumule, coleorrhiza the radicle.
+== Seed, Fruit & Perisperm Morphological Fate Map
 
-== The Finished Seed
+#table(
+  columns: (1.2fr, 1.8fr, 1fr),
+  table.header[*Pre-Fertilisation Floral Structure*][*Post-Fertilisation Transformed Product*][*Ploidy*],
+  [*Ovary*], [*Fruit* (fleshy pericarp: epicarp, mesocarp, endocarp)], [$2n$ (Maternal)],
+  [*Ovule*], [*Seed* (dormant propagule with protective coats)], [$2n$ (Zygote) $+$ $3n$],
+  [*Outer Integument*], [*Testa* (thick, hard outer seed coat)], [$2n$ (Maternal)],
+  [*Inner Integument*], [*Tegmen* (thin, membranous inner seed coat)], [$2n$ (Maternal)],
+  [*Micropyle*], [*Seed Micropyle* (minute pore allowing $H_2 O$ and $O_2$ entry)], [Aperture],
+  [*Nucellus*], [Usually completely absorbed; if persistent: *Perisperm*], [$2n$ (Maternal)],
+  [*Egg Cell $+$ 1st Sperm*], [*Embryo* (future sporophyte)], [$2n$],
+  [*Central Cell $+$ 2nd Sperm*], [*Endosperm* (triploid nutritive tissue)], [$3n$],
+)
 
-- *A seed is the fertilised, matured ovule.* Its two coats come from the
-  integuments: *testa* (outer) and *tegmen* (inner).
-- *Two scars remain visible:* the *hilum* (where the seed was joined to its stalk)
-  and the tiny *micropyle* pore above it — the door water enters at germination.
-- *Perisperm is leftover nucellus.* In some seeds the nucellus is not used up and
-  persists as food — castor is the standard example.
-- *Dormancy is the wait-state.* A seed holds its embryo safely paused until moisture
-  and warmth arrive.
-- *Viability is measured in years.* Many seeds stay alive for decades, and a
-  date-palm seed from an ancient site sprouted after about 2,000 years.
-
-#analogy-box(title: "Everyday Analogy — A Lunchbox With a Baby Inside")[
-  A seed is a lunchbox built around a baby. The testa is the hard box lid; the
-  endosperm or cotyledons are the packed meal; the embryo is the passenger; dormancy
-  is the box staying shut until the weather is worth travelling in. Every part maps:
-  the box protects, the meal feeds, and the passenger grows the moment the lid
-  takes in water.
+#exception-box(title: "High-Yield Traps: Perisperm, False Fruits & Parthenocarpy")[
+  - *Perisperm:* Residual, persistent, nutritive nucellus remaining intact in mature seeds. Prime NCERT exam examples: *Black Pepper (*Piper nigrum*)* and *Beet (*Beta vulgaris*)*.
+  - *False Fruits (Pseudocarps):* Fruits where floral parts *other than the ovary* contribute to the edible flesh. In *Apple*, *Pear*, and *Strawberry*, the swollen, fleshy *thalamus* forms the edible fruit bulk. In *Cashew nut*, the fleshy stalk is the pedicel. True fruits develop *strictly from the ovary alone*.
+  - *Parthenocarpy:* Fruit formation *without prior fertilization*. Such fruits are naturally seedless (e.g., commercial edible *Banana*). Parthenocarpy can be commercially induced by spraying synthetic plant growth regulators (*auxins and gibberellins*).
 ]
 
-= Fruits, Parthenocarpy, Apomixis and Polyembryony
+= Module 6: Apomixis, Polyembryony & Seed Biology
 
-Fertilisation is finished — now the flower's last act begins. The ovary swells into
-a fruit, the ovules harden into seeds, and plants show three clever side-routes
-around ordinary sexual reproduction. Each of them matters to farmers, so each is
-worth one clean definition in your notes.
+*Apomixis* (Greek: *apo* = without; *mixis* = mixing) is a specialized genetic mechanism wherein *seeds are formed without fertilization*, acting as an *asexual mimicry of sexual reproduction*:
 
-== Fruit and Seed: The Normal Route
+- *Taxonomic Distribution:* Frequent in grasses and family *Asteraceae*.
+- *Diploid Egg Cell Pathway (Diplospory):* An unreduced diploid ($2n$) megaspore mother cell develops directly into an embryo sac without meiosis; the diploid egg cell then develops into an embryo parthenogenetically without fertilization.
+- *Adventive Embryony (Nucellar Polyembryony):* In *Citrus* and *Mangifera indica* (mango), maternal diploid cells of the *nucellus or integuments* surrounding the embryo sac divide mitotically, push into the embryo sac lumen, and differentiate into multiple clonal embryos. A single seed thus contains multiple embryos (*polyembryony*).
+- *Agricultural Breakthrough:* Commercial hybrid crop lines possess superior yield (*hybrid vigor*), but their progeny segregate traits during meiosis, forcing farmers to buy expensive hybrid seeds annually. Engineering apomixis into hybrid crops prevents meiotic segregation, preserving hybrid vigor indefinitely across generations.
 
-- *A fruit is the mature ovary.* Its wall becomes the *pericarp* — thick and fleshy
-  in mango (skin, pulp, stone = three pericarp layers) or dry and papery in others.
-- *True fruit:* built from the *ovary alone*.
-- *False fruit:* the *thalamus* — the flattened floral axis just under the flower —
-  also swells and joins in; apple, strawberry and cashew are the classic cases.
-- *Parthenocarpy:* a fruit forms *without fertilisation*, so it carries no seeds —
-  banana and seedless grapes; growth hormones can induce it in commercial orchards.
-- *Seedless does not mean sexless.* Parthenocarpy skips fertilisation but keeps the
-  normal flower; apomixis (coming up) skips meiosis too — two different shortcuts.
+= High-Yield Formula & Concept Cheatsheet
 
-#table(
-  columns: (1fr, 1.9fr),
-  table.header[*Pericarp layer*][*What it becomes in a fruit like mango or coconut*],
-  [*Epicarp*], [The thin outer skin — the part you peel.],
-  [*Mesocarp*], [The middle layer — thick and fleshy in mango, fibrous in coconut.],
-  [*Endocarp*], [The innermost layer — hard and stony around the seed.],
-)
-
-== Why Seeds Matter So Much
-
-- *Protection plus pantry:* the coats shield the embryo, and the endosperm or
-  cotyledons feed it the moment germination starts.
-- *Dispersal:* seeds travel to new ground, so new colonies start away from the
-  parent's shade and its competitors.
-- *Dormancy as timing:* the seed bridges bad seasons and sprouts only when
-  conditions suit the species.
-- *Civilisation runs on seeds:* cereals, pulses and oilseeds — the reserves we eat
-  are the same reserves embryos eat.
-- *Seeds are next-generation units:* each seed is a young sporophyte waiting to
-  restart the whole life cycle.
-- *The fruit helps the seed travel:* fleshy fruits pay animals to carry them; light
-  or winged fruits ride the wind; hooked ones hitchhike on fur.
-- *Fruit wall, seed wall — keep them straight:* the pericarp is old *ovary wall*;
-  the testa and tegmen are old *integuments*. Two different organs, two different
-  coats.
-
-== Apomixis: Seeds Without Sex
-
-- *Definition:* *apomixis* is seed formation *without meiosis and without
-  fertilisation* — the embryo arises asexually.
-- *Two known routes:* a *diploid egg* (formed without meiosis) begins the embryo;
-  or *nucellar cells* step in and become embryos — *nucellar embryony*.
-- *The result is a clone:* every apomictic seedling carries the mother plant's exact
-  gene set.
-- *Examples:* *Citrus* and *Mango*, the standard nucellar-embryony cases.
-- *Why farmers care:* hybrid varieties yield brilliantly but their sexual seeds do
-  not breed true; an *apomictic hybrid* repeats its own quality in every seed, so
-  the farmer buys seed once and keeps the edge for years.
-
-#table(
-  columns: (1fr, 1.7fr, 1.3fr),
-  table.header[*Apomictic route*][*How the embryo forms*][*Where you meet it*],
-  [Diploid egg], [The egg forms *without meiosis*, so it is already 2n; fertilisation is skipped and it still becomes an embryo.], [Several grasses and relatives.],
-  [Nucellar embryony], [A cell of the *nucellus* (the food tissue) grows straight into an embryo beside the egg's own.], [*Citrus*, *Mango*.],
-)
-
-== Polyembryony: Many Babies, One Seed
-
-- *Definition:* *polyembryony* means *more than one embryo inside a single seed*.
-- *Where the extra embryos come from:* often from *nucellar cells* alongside the
-  normal zygotic embryo — *Citrus* is the textbook example.
-- *Practical value:* nucellar seedlings are uniform clones, so citrus nurseries use
-  them for steady, dependable rootstocks.
-
-#table(
-  columns: (1fr, 1.35fr, 1.35fr, 1.3fr),
-  table.header[*Feature*][*Parthenocarpy*][*Apomixis*][*Polyembryony*],
-  [*What happens*], [Fruit sets with no fertilisation.], [Seed forms with no meiosis or fusion.], [Several embryos share one seed.],
-  [*End product*], [Seedless fruit.], [Clonal seeds.], [Multiple seedlings from one seed.],
-  [*Everyday example*], [Banana, seedless grapes.], [Citrus, Mango.], [Citrus seeds.],
-)
-
-= Key Facts & Terms Cheatsheet
-
-#cheatsheet-box(title: "Key Facts & Terms Cheatsheet — Sexual Reproduction in Flowering Plants")[
+#block(width: 100%)[
+  #set text(size: 8.8pt)
+  #set table(inset: (x: 4pt, y: 2.2pt))
   #table(
-    columns: (1.15fr, 1.9fr, 1.15fr),
-    table.header[*Term / fact*][*Meaning*][*Example / number*],
-    [Anther wall order], [Epidermis → endothecium → middle layers → tapetum, outside-in.], [Tapetum = feeder layer],
-    [Tapetum], [Innermost wall layer; nourishes the developing pollen.], [Often multinucleate],
-    [Sporopollenin], [Toughest known natural material; builds the exine.], [Survives acids; fossil pollen],
-    [Germ pores], [Thin gaps where the exine is missing.], [Exit doors for the pollen tube],
-    [Pollen at shedding], [Over 60% two-celled (vegetative + generative); about 40% three-celled.], [Generative cell → 2 male gametes],
-    [Ovule parts], [Funicle, hilum, integuments, micropyle, chalaza, nucellus.], [Micropyle = tube's doorway],
-    [Megaspore survival rule], [Of 4 megaspores, the chalazal one survives.], [3 micropylar ones degenerate],
-    [Embryo sac count], [7 cells, 8 nuclei — egg + 2 synergids + central cell + 3 antipodals.], [All nuclei haploid (n)],
-    [Cleistogamy], [Closed flowers force self-pollination inside the bud.], [*Viola*, *Commelina*, *Oxalis*],
-    [Pollination types], [Autogamy (same flower), geitonogamy (same plant), xenogamy (different plant).], [Xenogamy = only true cross],
-    [Agent examples], [Wind: grasses; water: *Vallisneria*, *Zostera*; insect: *Yucca*–moth.], [Feathery stigmas catch wind pollen],
-    [Out-breeding devices], [Timing mismatch, spatial separation, self-incompatibility, unisexuality.], [All push pollen to cross],
-    [Emasculation + bagging], [Anthers removed from the bud, flower covered, then dusted and re-bagged.], [Artificial hybridisation steps],
-    [Syngamy vs triple fusion], [Sperm + egg → zygote (2n); sperm + 2 polar nuclei → endosperm nucleus (3n).], [Together = double fertilisation],
-    [Endosperm], [3n food tissue; free-nuclear divisions first, then cellular.], [Coconut water vs coconut meat],
-    [Albuminous vs non-albuminous], [Keep endosperm: castor, coconut; use it up: pea, bean, groundnut.], [Used-up food moves to cotyledons],
-    [Dicot vs monocot embryo], [Dicot: 2 cotyledons, plumule, radicle; monocot: scutellum, coleoptile, coleorrhiza.], [Sheaths guard monocot tips],
-    [Seed coats and scars], [Testa outside, tegmen inside; hilum and micropyle visible.], [Micropyle admits water],
-    [True vs false fruit], [True: from the ovary only; false: the thalamus joins in.], [Apple, strawberry, cashew = false],
-    [Parthenocarpy], [Fruit without fertilisation → seedless.], [Banana, seedless grapes],
-    [Apomixis], [Seed without meiosis or fusion — a clone of the mother.], [*Citrus*, *Mango* (nucellar embryony)],
-    [Polyembryony], [Many embryos in one seed, often from nucellar cells.], [*Citrus*],
-  )
-
-  #v(4pt)
-  *Counting rules to carry everywhere:* one pollen mother cell → 4 pollen grains →
-  2 male gametes each; one megaspore mother cell → 4 megaspores → only the chalazal
-  one lives; one embryo sac → 7 cells, 8 nuclei; one double fertilisation → 2n
-  zygote + 3n endosperm.
-]
-
-= Common Errors and Special Cases
-
-#exception-box(title: "Common Errors & Special Cases")[
-  #table(
-    columns: (1.35fr, 1.55fr, 1.3fr),
-    table.header[*The mistake students make*][*The correct fact*][*One-line why / trap*],
-    [Calling endosperm 2n, or flipping coconut water and meat],
-    [Endosperm is *3n*; coconut *water* = free-nuclear stage, coconut *meat* = cellular stage.],
-    [3n = one sperm + two polar nuclei; walls appear late, so liquid comes first.],
-    [Thinking one sperm performs both fusions],
-    [Syngamy uses one sperm; triple fusion uses the *other* — both happen together.],
-    [That togetherness is exactly why the event is called *double*.],
-    [Saying the micropylar megaspore survives],
-    [The *chalazal* megaspore survives; the three micropylar ones degenerate.],
-    [Survival follows depth — the deepest cell wins.],
-    [Treating synergids as extra eggs],
-    [Synergids are *helpers*; their filiform apparatus guides the pollen tube.],
-    ["8 nuclei" never means 8 eggs — there is exactly one egg.],
-    [Calling geitonogamy true cross-pollination],
-    [It is *functionally self-pollination* — the pollen never leaves the plant.],
-    [A pollinator changes the route, not the genes.],
-    [Placing sporopollenin in the intine],
-    [Sporopollenin builds the *exine*; the intine is thin cellulose-pectin.],
-    [Germ pores are exine gaps — the tube's exit doors.],
-    [Calling apple a true fruit],
-    [Apple, strawberry and cashew are *false fruits* — the thalamus swells too.],
-    [Only the ovary builds a true fruit.],
+    columns: (1fr, 0.9fr, 2.1fr),
+    table.header[*Concept / Structure*][*Formula / Ratio*][*Essential Exam Memory Trigger*],
+    [*Pollen Output*], [1 MMC $arrow.r$ 4 Pollen], [100 pollen grains require 25 meiotic divisions of PMCs.],
+    [*Embryo Sac Output*], [1 MMC $arrow.r$ 1 Embryo Sac], [100 seeds require 100 meiotic divisions in megaspore mother cells.],
+    [*Total Meioses for N Seeds*], [$N + N/4 = 1.25 N$], [To produce 100 viable seeds: $100 + 25 = 125$ total meiotic divisions are required!],
+    [*Embryo Sac Blueprint*], [7 Cells, 8 Nuclei], [3 Antipodals ($n$) $+$ 1 Central Cell ($2$ polar nuclei) $+$ 3 Egg Apparatus ($n$).],
+    [*Double Fertilisation*], [5 Nuclei Involved], [Syngamy ($1+1=2$) $+$ Triple Fusion ($1+2=3$) $= 5$ participating nuclei.],
+    [*Ploidy Matrix*], [Tapetum: $>2n$ | Aleurone: $3n$], [Aleurone layer is outermost endosperm ($3n$); perisperm is nucellus ($2n$).],
+    [*Cleistogamous Trio*], [*Viola, Oxalis, Commelina*], [Flowers never open; absolute guaranteed autogamy; zero pollinator dependence.],
+    [*Water Pollination Trap*], [*Eichhornia* & *Nymphaea*], [Pollinated by insects or wind; *Vallisneria* & *Zostera* are true hydrophilous.],
   )
 ]
 
-== Sixty-Second Recall Drill
-
-Cover the answers, say each one aloud, then check yourself — all eight should take
-under a minute.
-
-+ Name the four anther wall layers in order. _(#underline[epidermis → endothecium → middle layers → tapetum])_
-+ Which anther layer feeds the developing pollen? _(#underline[the tapetum])_
-+ What makes the exine so tough? _(#underline[sporopollenin])_
-+ How many cells and nuclei has a mature embryo sac? _(#underline[7 cells, 8 nuclei])_
-+ Which megaspore survives, and what happens to the other three? _(#underline[the chalazal one; the three micropylar ones degenerate])_
-+ State the ploidy of the zygote and of the endosperm. _(#underline[2n and 3n])_
-+ Which coconut part is free-nuclear endosperm? _(#underline[the coconut water])_
-+ Name two false fruits. _(#underline[apple, strawberry, cashew])_
-
-= The Whole Chapter on One Page
-
-#figure(image("assets/bio_flowering_mindmap.png", width: 100%), caption: [Figure 2 — Whole chapter on one page: every Unit VI idea and the four traps that catch most students.])
-
-= Practice Questions
-
-#mcq(1, [The correct outside-to-inside order of the layers in an anther wall is:], (
-  [Epidermis → endothecium → middle layers → tapetum], [Epidermis → middle layers → endothecium → tapetum], [Endothecium → epidermis → middle layers → tapetum], [Tapetum → middle layers → endothecium → epidermis],
-))
-
-#mcq(2, [Which anther wall layer nourishes the developing pollen grains?], (
-  [Epidermis], [Endothecium], [Tapetum], [Middle layers],
-))
-
-#mcq(3, [At the time of shedding, over 60% of angiosperm pollen grains are:], (
-  [three-celled, already holding two male gametes], [two-celled, holding a vegetative and a generative cell], [still joined together as a tetrad], [single-nucleate microspores],
-))
-
-#mcq(4, [Of the four megaspores produced by a megaspore mother cell, the one that survives to form the embryo sac is the:], (
-  [micropylar one], [one nearest the funicle], [any one at random], [chalazal one],
-))
-
-#mcq(5, [A typical mature angiosperm embryo sac contains:], (
-  [8 cells and 7 nuclei], [6 cells and 8 nuclei], [8 cells and 8 nuclei], [7 cells and 8 nuclei],
-))
-
-#mcq(6, [In Viola and Commelina, self-pollination is guaranteed even without any pollinator because the flowers:], (
-  [have feathery stigmas], [never open, so pollen falls on the stigma inside the closed bud], [shed pollen before the stigma matures], [carry male and female flowers on different plants],
-))
-
-#mcq(7, [Geitonogamy is functionally like self-pollination because:], (
-  [it needs no pollinating agent], [the pollen comes from a different plant], [the pollen moves between flowers of the same plant, so the genes stay within one plant], [it occurs only in water-pollinated species],
-))
-
-#mcq(8, [The primary endosperm nucleus of an angiosperm is:], (
-  [diploid (2n)], [haploid (n)], [triploid (3n)], [tetraploid (4n)],
-))
-
-#mcq(9, [In the coconut, the free-nuclear endosperm is the part we drink as:], (
-  [coconut meat], [coconut water], [the husk], [the embryo],
-))
-
-#mcq(10, [Apple is called a false fruit because:], (
-  [the thalamus, and not the ovary alone, swells to form it], [it forms without fertilisation], [its seeds show polyembryony], [its pericarp has no layers],
-))
-
-= Solutions
-
-#solution(1, [The wall reads like a sandwich from outside in: *epidermis, endothecium,
-  middle layers, tapetum*. The tapetum must sit innermost because it touches and feeds
-  the developing pollen; any order that pushes it outward is wrong.], answer: "A")
-
-#solution(2, [The *tapetum* is the innermost layer, pressed against the pollen, and its
-  whole job is nourishing the grains before it breaks down. The epidermis and
-  endothecium are protective and mechanical layers; the middle layers are mostly padding.], answer: "C")
-
-#solution(3, [In over 60% of flowering plants the pollen is shed *two-celled* — a big
-  vegetative cell plus a smaller generative cell that divides later, inside the growing
-  tube. The three-celled state (generative already split into two male gametes) is the
-  minority at about 40%.], answer: "B")
-
-#solution(4, [Meiosis gives a linear row of four haploid megaspores. The three toward the
-  *micropyle degenerate*; the *chalazal* one — the deepest — is the functional megaspore
-  that grows into the whole embryo sac.], answer: "D")
-
-#solution(5, [Count by zones. Egg apparatus: 3 cells (egg + 2 synergids), 3 nuclei.
-  Central cell: 1 cell, 2 nuclei. Antipodals: 3 cells, 3 nuclei. Totals: 3 + 1 + 3 =
-  *7 cells* and 3 + 2 + 3 = *8 nuclei*.], answer: "D")
-
-#solution(6, [These plants produce *cleistogamous* flowers that never open at all, so the
-  anthers shed pollen directly onto the stigma inside the closed bud — guaranteed
-  selfing with no agent. Feathery stigmas belong to wind pollination, not to Viola.], answer: "B")
-
-#solution(7, [In geitonogamy the pollen does travel — but only between flowers *of the
-  same genetically identical plant*, so the offspring get no new genes. An agent is
-  needed, yet the genetic result matches self-pollination.], answer: "C")
-
-#solution(8, [Triple fusion joins one sperm (n) with the two polar nuclei (n + n):
-  n + n + n = *3n, triploid*. It is the zygote from syngamy that is diploid (2n) —
-  keep the two products apart.], answer: "C")
-
-#solution(9, [The liquid endosperm of the coconut is still in its *free-nuclear stage* —
-  thousands of nuclei floating without walls — and that liquid is the *coconut water*.
-  The solid white meat is the later, cellular endosperm.], answer: "B")
-
-#solution(10, [In apple (and strawberry, cashew) the *thalamus* — the floral axis just
-  under the flower — swells together with the ovary and forms most of the flesh. A fruit
-  built from the ovary alone is a true fruit.], answer: "A")
-
-#worked-example("Worked Example — Follow One Pollen Grain From Landing to Seedling")[
-  Trace a single grain the whole way, naming every structure it meets:
-
-  - *Landing:* it sticks to the *stigma* of a compatible flower; the stigma reads its
-    surface and accepts it.
-  - *Germination:* the vegetative cell pushes a *pollen tube* out through a *germ
-    pore*; inside the tube the generative cell divides into the *two male gametes*.
-  - *The journey:* the tube digests its way down the *style*, enters the ovary,
-    slips through the *micropyle* into a *synergid*, guided by the filiform apparatus.
-  - *Fusion 1:* one sperm + the *egg* → *zygote (2n)*.
-  - *Fusion 2:* the *other* sperm + the *2 polar nuclei* → *primary endosperm
-    nucleus (3n)*.
-  - *Post-fertilisation:* the endosperm fills up (free-nuclear first, then cellular);
-    the zygote builds the embryo — plumule, radicle, cotyledons.
-  - *The finish:* integuments harden into *testa + tegmen*; the ovule becomes the
-    *seed*; the ovary becomes the *fruit*; the seedling eats its stored food and
-    starts the next generation.
-
-  One grain, two fusions, one seed — that is the whole chapter in seven steps.
-]
-
-== Revise This Chapter in Three Passes
-
-- *Pass 1 — the mindmap.* Walk all six branches of Figure 2 once and say each leaf
-  fact aloud; the picture is the chapter.
-- *Pass 2 — the counting rules.* One pollen mother cell → 4 pollen grains → 8 male
-  gametes; one megaspore mother cell → 4 megaspores → 1 survivor; one embryo sac →
-  7 cells, 8 nuclei; one double fertilisation → 2n zygote + 3n endosperm.
-- *Pass 3 — the traps.* Read the Common Errors table and your drill answers once
-  more the night before the exam; these seven rows hold most of the lost marks.
-- *Finally, the syllabus rows.* Re-read the alignment table on page 2 — every row
-  there is a self-contained question topic, and none should feel new to you.
-
-== The Numbers That Run This Chapter
-
-#table(
-  columns: (0.8fr, 2.4fr),
-  table.header[*Number*][*What it counts*],
-  [4], [Microsporangia per anther (two per lobe) — and 4 megaspores per mother cell, of which only 1 survives.],
-  [60 / 40], [Percent of pollen two-celled vs three-celled at shedding.],
-  [7 / 8], [Cells and nuclei in a mature embryo sac.],
-  [2], [Fusions inside one embryo sac — syngamy and triple fusion.],
-  [2n / 3n], [Zygote and endosperm — the two products of those fusions.],
-  [30 min], [Pollen viability of rice and wheat — the shortest lifetimes you must quote.],
+#figure(
+  image("assets/bio_flowering_mindmap.png", width: 70%),
+  caption: [Master synthesis mindmap of Sexual Reproduction in Flowering Plants: coordinating pre-fertilization gametophyte development, pollination dynamics, double fertilization, post-fertilization ontogeny, and apomixis.]
 )
 
-#analogy-box(title: "Everyday Analogy — The Chapter in One Breeding Season")[
-  A flowering plant runs two production lines every season. The stamen prints
-  pollen-grain couriers in sporopollenin armour, each courier carrying two male
-  gametes. The pistil keeps one egg waiting in a seven-room embryo sac, with two
-  gatekeeper synergids at the door. When a courier is recognised, it grows a tube,
-  knocks at the micropyle, and delivers: one fertilisation makes the baby (2n
-  zygote), the other makes the baby's pantry (3n endosperm) — double fertilisation,
-  angiosperms only. The ovule then seals itself into a seed, the ovary swells into a
-  fruit, and — with apomixis — even an exact clone can travel as a seed.
-]
+#pagebreak()
+#set text(size: 9.8pt)
+#set par(leading: 0.55em, spacing: 0.75em)
+
+= Practice Questions — Part 1 (Q1 to Q5)
+
+#mcq(1, [In a typical mature anther of an angiosperm, which sequence represents the concentric wall layers correctly arranged from the periphery to the innermost interior?], (
+  [Epidermis $arrow.r$ Endothecium $arrow.r$ Middle layers $arrow.r$ Tapetum],
+  [Epidermis $arrow.r$ Middle layers $arrow.r$ Endothecium $arrow.r$ Tapetum],
+  [Tapetum $arrow.r$ Middle layers $arrow.r$ Endothecium $arrow.r$ Epidermis],
+  [Endothecium $arrow.r$ Epidermis $arrow.r$ Tapetum $arrow.r$ Middle layers],
+))
+#solution(1, [The anther wall comprises four distinct concentric layers organized from outside inward: Epidermis (outer protective sheet), Endothecium (sub-epidermal hygroscopic layer with $alpha$-cellulosic bands for dehiscence), Middle layers (1--3 ephemeral parenchymatous layers), and Tapetum (innermost physiological nourishing layer touching sporogenous cells).], answer: [A])
+
+#mcq(2, [In over 60% of angiosperm species, pollen grains are shed from the anther at which developmental stage?], (
+  [Single-celled microspore stage before mitosis],
+  [Two-celled stage comprising a vegetative cell and a generative cell],
+  [Three-celled stage comprising a vegetative cell and two male gametes],
+  [Four-celled stage with two vegetative and two generative cells],
+))
+#solution(2, [In $>60\%$ of angiosperms, pollen is shed at the 2-celled stage (large vegetative cell + small spindle-shaped generative cell). In the remaining $<40\%$ of species, the generative cell divides mitotically inside the pollen grain prior to shedding, releasing pollen at the 3-celled stage.], answer: [B])
+
+#mcq(3, [Sporopollenin, the primary constituent of pollen exine, exhibits extraordinary biological and chemical resistance because:], (
+  [It is composed of cross-linked cellulose and pectin that hydrate rapidly],
+  [It resists high temperatures, strong acids, concentrated alkalis, and no known biological enzyme degrades it],
+  [It contains thick callose plugs that dissolve exclusively upon exposure to stigmatic exudates],
+  [It forms a continuous, uninterrupted coat devoid of any apertures or pores],
+))
+#solution(3, [Sporopollenin is an oxidative polymer of carotenoids and fatty acid esters. It is the most resistant organic material known; it withstands extreme heat, strong inorganic acids, and alkalis, and no enzyme capable of degrading it has ever been identified. It features germ pores where deposition is absent.], answer: [B])
+
+#mcq(4, [During megasporogenesis in a typical angiosperm displaying monosporic development, which of the following events strictly occurs?], (
+  [All four megaspores of the linear tetrad remain functional and form four embryo sacs],
+  [The three chalazal megaspores degenerate, and the single micropylar megaspore forms the embryo sac],
+  [The three micropylar megaspores degenerate, and the single chalazal megaspore remains functional],
+  [The megaspore mother cell divides mitotically to produce eight functional gametophytic nuclei],
+))
+#solution(4, [In monosporic (*Polygonum* type) development, the diploid MMC undergoes meiosis forming a linear tetrad of four haploid megaspores. The three megaspores situated towards the micropylar end degenerate, while only the single megaspore at the chalazal pole remains functional to form the embryo sac.], answer: [C])
+
+#mcq(5, [The mature female gametophyte (embryo sac) of a typical angiosperm (*Polygonum* type) is characterized by which cellular and nuclear configuration?], (
+  [8-celled and 8-nucleate structure],
+  [7-celled and 7-nucleate structure],
+  [8-celled and 7-nucleate structure],
+  [7-celled and 8-nucleate structure],
+))
+#solution(5, [The mature *Polygonum* embryo sac contains 7 cells and 8 nuclei: 3 antipodal cells at the chalazal pole ($3$ nuclei), 1 large central cell with 2 polar nuclei ($2$ nuclei), and an egg apparatus at the micropylar pole containing 2 synergids and 1 egg cell ($3$ nuclei). Total: $3 + 1 + 3 = 7$ cells and $3 + 2 + 3 = 8$ nuclei.], answer: [D])
+
+#pagebreak()
+
+= Practice Questions — Part 2 (Q6 to Q10)
+
+#mcq(6, [What is the exact morphological nature and physiological function of the filiform apparatus in an angiosperm ovule?], (
+  [Cellular thickenings of the antipodal cells that absorb nutrients from the chalaza],
+  [Special finger-like cellular thickenings of the synergids at the micropylar tip that guide the entry of the pollen tube],
+  [Thickened cuticular outer projections of the funicle that anchor the ovule to the placenta],
+  [Pectocellulosic wall flanges of the egg cell that trigger immediate membrane depolarization],
+))
+#solution(6, [The filiform apparatus consists of prominent finger-like cytoplasmic and wall invaginations localized at the micropylar base of the two synergid cells. It synthesizes and secretes chemotropic signaling attractants and physically guides the pollen tube into the synergid cytoplasm.], answer: [B])
+
+#mcq(7, [Geitonogamy is ecologically classified as cross-pollination but genetically considered autogamy because:], (
+  [Pollen is transferred between two flowers of different species by wind currents],
+  [Pollen grains are transferred to a flower of another plant sharing identical hybrid vigor],
+  [It involves an external pollinating agent to move pollen between flowers, but both flowers belong to the same genetically identical individual plant],
+  [Fertilization occurs without the physical transfer of pollen grains across floral bracts],
+))
+#solution(7, [Geitonogamy involves the transfer of pollen from an anther of one flower to the stigma of another flower on the same plant. Because an external vector (wind, insect) is needed, it is ecologically cross-pollination; however, because all flowers on a single plant share an identical genotype, it is genetically equivalent to autogamy.], answer: [C])
+
+#mcq(8, [Which of the following plant species produce cleistogamous flowers that guarantee an assured seed set even in the complete absence of insect pollinators?], (
+  [*Viola* (common pansy), *Oxalis*, and *Commelina*],
+  [*Zostera*, *Vallisneria*, and *Hydrilla*],
+  [*Amorphophallus*, *Yucca*, and *Salvia*],
+  [*Papaver*, *Michelia*, and *Eichhornia*],
+))
+#solution(8, [*Viola* (common pansy), *Oxalis*, and *Commelina* produce both open (chasmogamous) and permanently sealed (cleistogamous) flowers. Cleistogamous flowers never open; anthers dehisce directly against the stigma inside the unopened floral bud, ensuring 100% autogamous seed set without pollinators.], answer: [A])
+
+#mcq(9, [Which of the following statements regarding pollination in aquatic plants represents an authentic biological fact?], (
+  [All aquatic plants undergo hydrophily mediated exclusively by submerged water currents],
+  [In *Vallisneria*, female flowers reach the water surface by long stalks to receive pollen drifting on surface currents],
+  [*Eichhornia crassipes* (water hyacinth) and *Nymphaea* (water lily) are pollinated underwater by marine currents],
+  [*Zostera* pollen grains are spherical and float upright on the surface using air bladders],
+))
+#solution(9, [In *Vallisneria*, female flowers possess long coiled stalks that uncoil to elevate the flower to the water surface. Detached male flowers float on the surface, where passive water currents bring them into contact with stigmas (epihydrophily). *Eichhornia* and *Nymphaea* emerge above water and are pollinated by insects/wind.], answer: [B])
+
+#mcq(10, [A botanical researcher observes a dioecious plant species such as papaya (*Carica papaya*). Which pollination modes are completely prevented in this plant?], (
+  [Prevents autogamy, but permits geitonogamy and xenogamy],
+  [Prevents both autogamy and geitonogamy, permitting only xenogamy],
+  [Prevents xenogamy, enforcing obligate geitonogamy],
+  [Prevents all forms of cross-pollination, enforcing cleistogamous autogamy],
+))
+#solution(10, [In dioecious plants like papaya, male (staminate) and female (pistillate) flowers are borne on completely separate individual plants. Because no individual plant possesses both sexes or multiple flowers of opposite sexes, both autogamy and geitonogamy are completely prevented; only xenogamy can occur.], answer: [B])
+
+#pagebreak()
+
+= Practice Questions — Part 3 (Q11 to Q15)
+
+#mcq(11, [In angiosperm double fertilization, what are the exact fusing nuclei and resulting ploidies of Syngamy and Triple Fusion?], (
+  [Syngamy: 1 male gamete ($n$) $+$ 2 polar nuclei ($2n$) $arrow.r$ $3n$; Triple fusion: 1 male gamete ($n$) $+$ egg ($n$) $arrow.r$ $2n$],
+  [Syngamy: 1 male gamete ($n$) $+$ egg cell ($n$) $arrow.r$ $2n$ Zygote; Triple fusion: 1 male gamete ($n$) $+$ 2 polar nuclei ($n+n$) $arrow.r$ $3n$ PEN],
+  [Syngamy: 2 male gametes ($2n$) $+$ egg ($n$) $arrow.r$ $3n$ Zygote; Triple fusion: polar nucleus ($n$) $+$ synergid ($n$) $arrow.r$ $2n$ PEN],
+  [Syngamy: 1 male gamete ($n$) $+$ vegetative cell ($n$) $arrow.r$ $2n$; Triple fusion: antipodal ($n$) $+$ central cell ($n$) $arrow.r$ $2n$],
+))
+#solution(11, [Double fertilization comprises: (1) Syngamy: 1st haploid male gamete ($n$) fuses with the haploid egg nucleus ($n$) to form the diploid Zygote ($2n$); (2) Triple Fusion: 2nd haploid male gamete ($n$) fuses with the two haploid polar nuclei ($n+n$) of the central cell to produce the triploid Primary Endosperm Nucleus (PEN, $3n$).], answer: [B])
+
+#mcq(12, [In a tender coconut (*Cocos nucifera*), the refreshing clear coconut water and the surrounding white fleshy kernel morphologically represent:], (
+  [Free-nuclear endosperm and cellular endosperm, respectively],
+  [Cellular endosperm and free-nuclear endosperm, respectively],
+  [Persistent liquid nucellus and fleshy diploid pericarp, respectively],
+  [Triploid proembryo and diploid suspensor tissue, respectively],
+))
+#solution(12, [The coconut water from tender coconut represents free-nuclear endosperm composed of thousands of free nuclei suspended in liquid vacuole. As development progresses, cytokinesis lays down cell walls from the periphery inward, forming the firm white kernel which is cellular endosperm.], answer: [A])
+
+#mcq(13, [In the embryo of a typical grass family plant (monocotyledon), the single cotyledon, the protective sheath of the plumule, and the sheath of the radicle are termed respectively:], (
+  [Epiblast, Coleorhiza, and Coleoptile],
+  [Scutellum, Coleoptile, and Coleorhiza],
+  [Scutellum, Coleorhiza, and Coleoptile],
+  [Epiblast, Scutellum, and Coleoptile],
+))
+#solution(13, [In monocot grass embryos, the single shield-shaped lateral cotyledon is the *Scutellum*. The epicotyl possessing the shoot apex/plumule is encased in a hollow foliar sheath called the *Coleoptile*, while the radicle and root cap at the basal hypocotyl are encased in an undifferentiated sheath called the *Coleorhiza*.], answer: [B])
+
+#mcq(14, [In certain mature seeds such as black pepper (*Piper nigrum*) and beet (*Beta vulgaris*), a portion of the maternal nutritive tissue persists permanently outside the embryo. This persistent tissue is called:], (
+  [Endosperm ($3n$)],
+  [Aleurone layer ($3n$)],
+  [Perisperm ($2n$)],
+  [Caruncle ($2n$)],
+))
+#solution(14, [In most seeds, the nucellus is completely consumed during embryo sac and endosperm development. However, in seeds of black pepper and beet, remnants of the maternal diploid nucellus persist as a functional nutritive layer called the *Perisperm ($2n$)*.], answer: [C])
+
+#mcq(15, [In citrus species (*Citrus*) and mango (*Mangifera indica*), adventive polyembryony arises primarily through which cellular mechanism?], (
+  [Multiple pollen tubes enter the micropyle and fertilize multiple synergids],
+  [The zygote cleaves spontaneously into dozens of independent multicellular blastomeres],
+  [Diploid maternal nucellar cells surrounding the embryo sac divide, protrude into the sac, and develop into embryos],
+  [Antipodal cells undergo spontaneous polyploidization and develop into triploid embryos],
+))
+#solution(15, [In *Citrus* and Mango, adventive polyembryony occurs when diploid somatic cells of the maternal *nucellus* (and occasionally integuments) surrounding the embryo sac begin dividing mitotically, push into the embryo sac lumen, and differentiate into multiple embryos. Consequently, a single seed contains multiple clonal embryos.], answer: [C])
 
 #v(10pt)
-#align(center)[#text(fill: om-grey, size: 9pt)[© OurMocks · www.ourmocks.com · CUET UG Biology · Sexual Reproduction in Flowering Plants · 2027 cycle]]
-
+#align(center)[
+  #text(fill: om-grey, size: 8.5pt)[
+    © OurMocks · www.ourmocks.com · CUET UG Biology · Sexual Reproduction in Flowering Plants · 2027 Cycle
+  ]
+]
