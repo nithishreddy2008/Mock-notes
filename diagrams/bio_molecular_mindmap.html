@@ -1,116 +1,318 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
+<title>Molecular Basis of Inheritance - Master Synthesis Mindmap</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
-  .wrap { width: 1480px; height: 1060px; position: relative; background: #fff; }
-  svg.wires { position: absolute; inset: 0; width: 1480px; height: 1060px; }
-  .center {
-    position: absolute; left: 545px; top: 385px; width: 390px; height: 100px;
-    background: #071A4D; border-radius: 16px; display: flex; flex-direction: column;
-    align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(7,26,77,.25);
-    border-bottom: 5px solid #B8FF34;
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 20px 24px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: none !important;
   }
-  .center .t { color: #fff; font-size: 23px; font-weight: 800; letter-spacing: .5px; }
-  .center .s { color: #B8FF34; font-size: 13.5px; font-weight: 700; letter-spacing: 2px; margin-top: 4px; }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+  }
+  .title-area h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #071A4D;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .title-area h1 span.tag {
+    background: #1F5EFF;
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 6px;
+    text-transform: uppercase;
+  }
+  .title-area p {
+    font-size: 12px;
+    color: #64748B;
+  }
+  .brand-badge {
+    font-size: 11px;
+    font-weight: 700;
+    color: #1F5EFF;
+    background: #EFF6FF;
+    border: 1px solid #BFDBFE;
+    padding: 4px 10px;
+    border-radius: 6px;
+  }
+
+  /* Center Hub */
+  .center-hub {
+    position: absolute;
+    left: 540px;
+    top: 360px;
+    width: 360px;
+    height: 110px;
+    background: #071A4D;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #1F5EFF;
+    z-index: 10;
+    box-shadow: none !important;
+  }
+  .center-hub h2 {
+    color: #FFFFFF;
+    font-size: 17px;
+    font-weight: 800;
+    text-align: center;
+    letter-spacing: 0.02em;
+  }
+  .center-hub p {
+    color: #93C5FD;
+    font-size: 11px;
+    font-weight: 600;
+    margin-top: 4px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  /* SVG Connectors */
+  svg.connectors {
+    position: absolute;
+    inset: 0;
+    width: 1440px;
+    height: 880px;
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  /* Cards Grid */
   .card {
-    position: absolute; width: 470px; background: #FCFDFF; border: 1.5px solid #D5DCEA;
-    border-radius: 14px; padding: 13px 16px 12px;
+    position: absolute;
+    width: 440px;
+    background: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    border-radius: 9px;
+    padding: 12px 14px;
+    z-index: 5;
+    box-shadow: none !important;
   }
-  .card h2 { font-size: 20px; color: #071A4D; font-weight: 800; margin-bottom: 7px;
-             padding-bottom: 5px; border-bottom: 3px solid; display: inline-block; }
-  .leaf { font-size: 14.5px; color: #1B2333; margin: 5px 0; padding-left: 16px; position: relative; line-height: 1.32; }
-  .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
-  .b .leaf::before { background: #1F5EFF; }
-  .l .leaf::before { background: #7FB800; }
-  .leaf b { color: #071A4D; }
-  .b h2 { border-color: #1F5EFF; }
-  .l h2 { border-color: #7FB800; }
-  .left { left: 30px; }
-  .right { left: 980px; }
-  .exc {
-    position: absolute; left: 505px; top: 872px; width: 470px; background: #FFF3EC;
-    border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px;
+  .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 6px;
+    border-bottom: 1.5px solid #F1F5F9;
+    padding-bottom: 4px;
   }
-  .exc h2 { font-size: 17px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
-  .exc .leaf { font-size: 13px; margin: 3px 0; padding-left: 14px; color: #7A2A12; }
-  .exc .leaf::before { background: #D2481F; }
-  .exc b { color: #B4380F; }
+  .card-header h3 {
+    font-size: 12.5px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .badge {
+    font-size: 9.5px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+  .badge-blue { background: #DBEAFE; color: #1E40AF; }
+  .badge-green { background: #D1FAE5; color: #065F46; }
+  .badge-amber { background: #FEF3C7; color: #92400E; }
+  .badge-purple { background: #EDE9FE; color: #5B21B6; }
+  .badge-pink { background: #FCE7F3; color: #9D174D; }
+  .badge-cyan { background: #CFFAFE; color: #155E75; }
+
+  .bullet-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .bullet-list li {
+    font-size: 11px;
+    color: #334155;
+    line-height: 1.35;
+    padding-left: 12px;
+    position: relative;
+  }
+  .bullet-list li::before {
+    content: "▪";
+    position: absolute;
+    left: 0;
+    color: #1F5EFF;
+    font-size: 12px;
+  }
+  .bullet-list li b {
+    color: #071A4D;
+  }
+
+  /* Node Coordinates: 3 on Left, 3 on Right */
+  .node-1 { left: 40px; top: 68px; border-top: 3.5px solid #1F5EFF; }
+  .node-2 { left: 40px; top: 325px; border-top: 3.5px solid #10B981; }
+  .node-3 { left: 40px; top: 580px; border-top: 3.5px solid #F59E0B; }
+
+  .node-4 { right: 40px; top: 68px; border-top: 3.5px solid #8B5CF6; }
+  .node-5 { right: 40px; top: 325px; border-top: 3.5px solid #EC4899; }
+  .node-6 { right: 40px; top: 580px; border-top: 3.5px solid #06B6D4; }
+
+  /* Bottom Exam Banner */
+  .bottom-banner {
+    position: absolute;
+    bottom: 12px;
+    left: 520px;
+    width: 400px;
+    background: #EFF6FF;
+    border: 1px solid #BFDBFE;
+    border-radius: 8px;
+    padding: 6px 12px;
+    text-align: center;
+    font-size: 10.5px;
+    color: #1E40AF;
+    font-weight: 600;
+    z-index: 10;
+  }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <svg class="wires" viewBox="0 0 1480 1060">
-    <path d="M 545 420 C 495 420, 520 165, 502 160" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
-    <path d="M 545 435 C 505 435, 520 430, 502 430" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 545 450 C 495 450, 520 700, 502 705" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
-    <path d="M 935 420 C 985 420, 960 165, 978 160" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 935 435 C 975 435, 960 430, 978 430" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
-    <path d="M 935 450 C 985 450, 960 700, 978 705" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 740 485 C 740 640, 740 800, 740 870" fill="none" stroke="#D2481F" stroke-width="2.5" stroke-dasharray="7 5" opacity=".6"/>
-  </svg>
 
-  <div class="center">
-    <div class="t">MOLECULAR BASIS OF INHERITANCE</div>
-    <div class="s">UNIT VII &#183; COMPLETE CHAPTER MAP</div>
+<div class="header">
+  <div class="title-area">
+    <h1>MOLECULAR BASIS OF INHERITANCE <span class="tag">Master Synthesis Mindmap</span></h1>
+    <p>Comprehensive conceptual coordination of DNA architecture, Central Dogma, genetic code, and genomic regulation</p>
   </div>
-
-  <div class="card left b" style="top:56px">
-    <h2>DNA Structure &amp; Packaging</h2>
-    <div class="leaf"><b>Double helix (Watson + Crick 1953):</b> 2 nm wide, one turn 3.4 nm with ~10 bp; strands antiparallel 5'&#8594;3' vs 3'&#8594;5'</div>
-    <div class="leaf"><b>Base pairing:</b> A=T (2 H-bonds), G&#8801;C (3 H-bonds); Chargaff: A = T and G = C</div>
-    <div class="leaf"><b>Nucleosome:</b> ~200 bp wound 1&#190; turns round a histone octamer (H2A, H2B, H3, H4 &#215;2) + linker H1</div>
-    <div class="leaf"><b>Prokaryotes:</b> supercoiled DNA in the nucleoid — basic proteins, no histones</div>
-  </div>
-
-  <div class="card left l" style="top:322px">
-    <h2>The Search for Genetic Material</h2>
-    <div class="leaf"><b>Griffith 1928:</b> heat-killed S + live R <em>Streptococcus</em> killed mice — a "transforming principle" moved across</div>
-    <div class="leaf"><b>Avery 1944:</b> protease + RNase did not stop transformation; DNase did &#8594; the transformer is DNA</div>
-    <div class="leaf"><b>Hershey-Chase 1952:</b> &#179;&#178;P (DNA) entered cells, &#179;&#8309;S (protein) stayed in the supernatant</div>
-    <div class="leaf"><b>Verdict:</b> DNA, not protein, carries heredity</div>
-  </div>
-
-  <div class="card left b" style="top:600px">
-    <h2>Replication</h2>
-    <div class="leaf"><b>Semi-conservative:</b> every daughter duplex = one old strand + one new strand</div>
-    <div class="leaf"><b>Meselson-Stahl 1958:</b> &#185;&#8309;N &#8594; &#185;&#8308;N; generation 1 all hybrid, generation 2 half light + half hybrid</div>
-    <div class="leaf"><b>Machinery:</b> origin starts it; DNA pol builds 5'&#8594;3'; lagging strand = Okazaki pieces; ligase seals</div>
-    <div class="leaf"><b>Taylor:</b> &#179;H-thymidine in <em>Vicia faba</em> roots — chromosomes replicate semi-conservatively too</div>
-  </div>
-
-  <div class="card right l" style="top:56px">
-    <h2>Transcription &amp; RNA Types</h2>
-    <div class="leaf"><b>Transcription unit:</b> promoter (start) + structural gene + terminator (stop)</div>
-    <div class="leaf"><b>Template strand</b> is read; the coding strand matches the RNA (with U in place of T)</div>
-    <div class="leaf"><b>Bacteria:</b> RNA pol + sigma factor (initiation) + rho (termination); <b>eukaryotes:</b> Pol I rRNA, Pol II mRNA, Pol III tRNA</div>
-    <div class="leaf"><b>hnRNA processing:</b> 5' cap + 3' poly-A tail + introns spliced out; mRNA message, tRNA adapter, rRNA scaffold</div>
-  </div>
-
-  <div class="card right b" style="top:322px">
-    <h2>Genetic Code &amp; Translation</h2>
-    <div class="leaf"><b>Code properties:</b> triplet, degenerate, unambiguous, universal, commaless, colinear</div>
-    <div class="leaf"><b>Counts:</b> 64 codons — 61 sense + 3 stop; AUG = start (Met); UAA/UAG/UGA stop</div>
-    <div class="leaf"><b>tRNA adapter:</b> anticodon at one end, amino-acid acceptor arm at the other; charged by aminoacyl-tRNA synthetase</div>
-    <div class="leaf"><b>Translation:</b> initiation &#8594; elongation &#8594; termination; polysome = many ribosomes on one mRNA</div>
-  </div>
-
-  <div class="card right l" style="top:600px">
-    <h2>Regulation, HGP &amp; Fingerprinting</h2>
-    <div class="leaf"><b>Lac operon:</b> no lactose &#8594; repressor on operator &#8594; OFF; lactose present &#8594; repressor lifts &#8594; ON</div>
-    <div class="leaf"><b>HGP 1990&#8211;2003:</b> ~3 billion bp sequenced, ~20,000 genes found, &lt;2% of genome codes for proteins</div>
-    <div class="leaf"><b>Fingerprinting:</b> satellite DNA + VNTR repeats give polymorphism — the basis of a unique profile</div>
-    <div class="leaf"><b>Steps:</b> isolate &#8594; digest/amplify &#8594; gel &#8594; Southern blot &#8594; labelled probe &#8594; autoradiogram</div>
-  </div>
-
-  <div class="exc">
-    <h2>COMMON ERRORS &amp; TRAPS</h2>
-    <div class="leaf"><b>&#179;&#178;P = DNA, &#179;&#8309;S = protein.</b> Students swap the labels — P sits in DNA, S sits in cysteine/methionine</div>
-    <div class="leaf"><b>Repressor binds the operator,</b> not the promoter; 61 codons code for amino acids, 3 do not</div>
-    <div class="leaf"><b>Splicing is eukaryote-only</b> in the NCERT story; a nucleosome wraps ~200 bp, never 2,000</div>
-  </div>
+  <div class="brand-badge">OurMocks CUET UG Biology · Unit VII</div>
 </div>
+
+<!-- SVG Connectors -->
+<svg class="connectors" viewBox="0 0 1440 880">
+  <!-- Center hub: left=540, right=900, top=360, bottom=470, center=(720, 415) -->
+  <!-- Wire to Node 1 (480, 185) -->
+  <path d="M 540 380 C 490 380, 500 185, 480 185" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity="0.6"/>
+  <!-- Wire to Node 2 (480, 415) -->
+  <path d="M 540 415 L 480 415" fill="none" stroke="#10B981" stroke-width="2.5" opacity="0.6"/>
+  <!-- Wire to Node 3 (480, 660) -->
+  <path d="M 540 450 C 490 450, 500 660, 480 660" fill="none" stroke="#F59E0B" stroke-width="2.5" opacity="0.6"/>
+
+  <!-- Wire to Node 4 (960, 185) -->
+  <path d="M 900 380 C 950 380, 940 185, 960 185" fill="none" stroke="#8B5CF6" stroke-width="2.5" opacity="0.6"/>
+  <!-- Wire to Node 5 (960, 415) -->
+  <path d="M 900 415 L 960 415" fill="none" stroke="#EC4899" stroke-width="2.5" opacity="0.6"/>
+  <!-- Wire to Node 6 (960, 660) -->
+  <path d="M 900 450 C 950 450, 940 660, 960 660" fill="none" stroke="#06B6D4" stroke-width="2.5" opacity="0.6"/>
+</svg>
+
+<!-- CENTER HUB -->
+<div class="center-hub">
+  <h2>MOLECULAR BASIS OF INHERITANCE</h2>
+  <p>NCERT Unit VII &bull; Master Synthesis</p>
+</div>
+
+<!-- LEFT NODES -->
+<!-- 1. DNA Structure & Packaging -->
+<div class="card node-1">
+  <div class="card-header">
+    <h3 style="color: #1F5EFF;">1. DNA Structure & Chromatin Packaging</h3>
+    <span class="badge badge-blue">Duplex & Nucleosome</span>
+  </div>
+  <ul class="bullet-list">
+    <li><b>Chargaff's Equimolar Rules:</b> In dsDNA, $[A]=[T]$ and $[G]=[C]$, hence $[A+G]=[T+C]$ (Purines = Pyrimidines). Base ratio $(A+T)/(G+C)$ is species-specific.</li>
+    <li><b>B-DNA Helix Dimensions:</b> Pitch = <b>3.4 nm (34 Å)</b>; 10 base pairs per turn; distance between adjacent base pairs = <b>0.34 nm (3.4 Å)</b>; right-handed helix.</li>
+    <li><b>Nucleosome Core:</b> Histone octamer of $(H2A, H2B, H3, H4)_2$ wrapped by <b>~200 bp</b> of negatively charged DNA; sealed by external linker histone <b>H1</b>.</li>
+    <li><b>Chromatin Architecture:</b> <i>Euchromatin</i> is loosely coiled, light-staining, and transcriptionally active. <i>Heterochromatin</i> is densely packed, dark-staining, and inactive.</li>
+  </ul>
+</div>
+
+<!-- 2. Search for Genetic Material -->
+<div class="card node-2">
+  <div class="card-header">
+    <h3 style="color: #10B981;">2. The Search for Genetic Material</h3>
+    <span class="badge badge-green">Classic Proofs</span>
+  </div>
+  <ul class="bullet-list">
+    <li><b>Griffith Transformation (1928):</b> Heat-killed virulent Smooth ($S$) <i>Streptococcus pneumoniae</i> transformed living non-virulent Rough ($R$) into virulent $S$-strain in mice.</li>
+    <li><b>Avery, MacLeod & McCarty (1944):</b> Biochemical characterization proved only <b>DNase</b> abolished transforming activity (Proteases and RNases had no inhibitory effect).</li>
+    <li><b>Hershey & Chase Blender Experiment (1952):</b> Unequivocal proof using bacteriophage T2 in <i>E. coli</i>: <b><sup>32</sup>P</b> labeled DNA entered bacterial pellet, whereas <b><sup>35</sup>S</b> labeled protein coats remained in supernatant.</li>
+    <li><b>RNA World Hypothesis:</b> RNA was the first genetic material and biocatalyst (ribozymes); DNA evolved chemically with 2'-deoxyribose and thymine for greater stability.</li>
+  </ul>
+</div>
+
+<!-- 3. DNA Replication & Enzymes -->
+<div class="card node-3">
+  <div class="card-header">
+    <h3 style="color: #F59E0B;">3. Semi-Conservative DNA Replication</h3>
+    <span class="badge badge-amber">Enzymatic Engine</span>
+  </div>
+  <ul class="bullet-list">
+    <li><b>Semi-Conservative Proof:</b> Meselson & Stahl (1958) using <b><sup>15</sup>N/<sup>14</sup>N</b> in <i>E. coli</i> via CsCl equilibrium density centrifugation; Taylor using <b><sup>3</sup>H-thymidine</b> in <i>Vicia faba</i>.</li>
+    <li><b>Replication Fork Geometry:</b> <i>Leading Strand</i> synthesized continuously 5'&rarr;3' toward fork. <i>Lagging Strand</i> synthesized discontinuously away from fork as <b>Okazaki fragments</b>.</li>
+    <li><b>Enzymatic Engine:</b> Helicase unwinds; Gyrase relaxes supercoils; Primase provides RNA primer; <b>DNA Pol III</b> polymerizes at ~2,000 bp/s; <b>DNA Pol I</b> removes primers; <b>Ligase</b> seals nicks.</li>
+    <li><b>Substrate Energetics:</b> Deoxyribonucleoside triphosphates (dNTPs) serve dual roles: active monomer substrates and ATP-equivalent pyrophosphate energy donors.</li>
+  </ul>
+</div>
+
+<!-- RIGHT NODES -->
+<!-- 4. Transcription & RNA Processing -->
+<div class="card node-4">
+  <div class="card-header">
+    <h3 style="color: #8B5CF6;">4. Transcription & Post-Transcriptional Processing</h3>
+    <span class="badge badge-purple">Central Dogma</span>
+  </div>
+  <ul class="bullet-list">
+    <li><b>Transcription Unit:</b> Defined by <i>Promoter</i> (RNA Pol binding), <i>Structural Gene</i> (template $3' \to 5'$, coding $5' \to 3'$), and <i>Terminator</i>. RNA Pol requires <b>&sigma; factor</b> for initiation, <b>&rho; factor</b> for termination.</li>
+    <li><b>Eukaryotic RNA Polymerases:</b> Pol I synthesizes 28S, 18S, 5.8S rRNAs; <b>Pol II</b> synthesizes heterogeneous nuclear RNA (hnRNA/mRNA precursor); Pol III synthesizes tRNA, 5S rRNA, snRNA.</li>
+    <li><b>Post-Transcriptional Processing of hnRNA:</b>
+      (1) <b>Capping:</b> Methyl guanosine triphosphate ($m^7G_{ppp}$) added to 5'-end.
+      (2) <b>Tailing:</b> Polyadenylation of 200–300 adenylate residues at 3'-end.
+      (3) <b>Splicing:</b> Spliceosomes excise non-coding <i>introns</i> and ligate coding <i>exons</i>.</li>
+  </ul>
+</div>
+
+<!-- 5. Genetic Code & Translation -->
+<div class="card node-5">
+  <div class="card-header">
+    <h3 style="color: #EC4899;">5. Genetic Code & Protein Biosynthesis</h3>
+    <span class="badge badge-pink">Triplet & Ribosome</span>
+  </div>
+  <ul class="bullet-list">
+    <li><b>Salient Features of Genetic Code:</b> Triplet (64 codons); 61 sense codons specify 20 amino acids; <b>Degenerate</b> (1 amino acid coded by multiple codons); <b>Unambiguous</b>; Universal.</li>
+    <li><b>Initiator & Terminators:</b> <b>AUG</b> has dual function (initiator codon & specifies Methionine). <b>UAA (ochre), UAG (amber), UGA (opal)</b> are non-sense stop codons.</li>
+    <li><b>tRNA (Adapter Molecule):</b> Secondary cloverleaf structure; tertiary compact <b>inverted L-shape</b>. Possesses anticodon loop complementary to mRNA codon and 3'-CCA amino acid acceptor end.</li>
+    <li><b>Translation Cascade:</b> Aminoacylation of tRNA &rarr; Initiation &rarr; Elongation (Peptidyl transferase 23S rRNA in bacteria ribozyme) &rarr; Termination via Release Factors.</li>
+  </ul>
+</div>
+
+<!-- 6. Regulation, HGP & DNA Fingerprinting -->
+<div class="card node-6">
+  <div class="card-header">
+    <h3 style="color: #06B6D4;">6. Gene Regulation, Genomics & DNA Fingerprinting</h3>
+    <span class="badge badge-cyan">Operon & HGP</span>
+  </div>
+  <ul class="bullet-list">
+    <li><b>Lac Operon (Jacob & Monod):</b> Negative inducible system. Active repressor binds Operator ($O$) &rarr; operon OFF. Inducer (<b>Allolactose</b>) inactivates repressor &rarr; operon ON, transcribing $z$ (&beta;-gal), $y$ (permease), $a$ (transacetylase).</li>
+    <li><b>Human Genome Project (1990–2003):</b> Genome contains <b>3,164.7 million bp</b>; ~30,000 genes; average gene has 3,000 bp (dystrophin largest at 2.4 million bp); Chromosome 1 has most genes (2,968), Y has fewest (231); &lt;2% codes for proteins.</li>
+    <li><b>DNA Fingerprinting (Alec Jeffreys):</b> Identifies individual genomic uniqueness utilizing <b>Variable Number Tandem Repeats (VNTRs)</b> / minisatellites via Southern blot hybridization.</li>
+  </ul>
+</div>
+
+<div class="bottom-banner">
+  Central Dogma: DNA &xrarr; (Transcription) &xrarr; RNA &xrarr; (Translation) &xrarr; Protein | Reverse Transcription: RNA &xrarr; DNA (Teminism)
+</div>
+
 </body>
 </html>

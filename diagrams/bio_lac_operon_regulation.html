@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Lac Operon Dual-State Regulatory Circuit</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px 32px;
+    box-shadow: none !important;
+  }
+  .header {
+    margin-bottom: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 10px;
+  }
+  .title-area h1 {
+    font-size: 23px;
+    font-weight: 800;
+    color: #071A4D;
+    letter-spacing: -0.02em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .title-area h1 span.tag {
+    background: #10B981;
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 6px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .title-area p {
+    font-size: 13px;
+    color: #64748B;
+    margin-top: 3px;
+  }
+  .brand-badge {
+    font-size: 12px;
+    font-weight: 700;
+    color: #1F5EFF;
+    background: #EFF6FF;
+    border: 1px solid #BFDBFE;
+    padding: 4px 10px;
+    border-radius: 6px;
+  }
+
+  .card {
+    background: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    border-radius: 10px;
+    padding: 14px 18px;
+    box-shadow: none !important;
+  }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #F1F5F9;
+    padding-bottom: 6px;
+  }
+  .card-header h2 {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #071A4D;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .badge {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+  .badge-red { background: #FEE2E2; color: #991B1B; }
+  .badge-green { background: #D1FAE5; color: #065F46; }
+  .badge-blue { background: #DBEAFE; color: #1E40AF; }
+  .badge-purple { background: #EDE9FE; color: #5B21B6; }
+
+  /* Operon Genetic Architecture Bar */
+  .gene-bar-container {
+    margin-bottom: 14px;
+    background: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    border-radius: 10px;
+    padding: 12px 18px;
+  }
+  .gene-bar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    height: 48px;
+    margin: 8px 0;
+  }
+  .gene-segment {
+    height: 100%;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    color: #FFFFFF;
+    font-size: 12px;
+    position: relative;
+    border: 1.5px solid transparent;
+  }
+  .gene-segment .role {
+    font-size: 9px;
+    font-weight: 600;
+    opacity: 0.9;
+  }
+  .gene-pi { width: 75px; background: #64748B; }
+  .gene-i { width: 140px; background: #EF4444; }
+  .gene-p { width: 110px; background: #3B82F6; }
+  .gene-o { width: 95px; background: #F59E0B; }
+  .gene-z { width: 280px; background: #10B981; }
+  .gene-y { width: 220px; background: #06B6D4; }
+  .gene-a { width: 220px; background: #8B5CF6; }
+
+  /* Split Dual-State Circuits */
+  .states-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 14px;
+  }
+  .state-card {
+    background: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    border-radius: 10px;
+    padding: 14px;
+    box-shadow: none !important;
+  }
+  .state-card.off {
+    border-top: 4px solid #EF4444;
+  }
+  .state-card.on {
+    border-top: 4px solid #10B981;
+  }
+
+  .flow-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    margin-top: 10px;
+  }
+  .step-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    padding: 8px 10px;
+  }
+  .step-num {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #071A4D;
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .step-content {
+    font-size: 11.5px;
+    color: #334155;
+    line-height: 1.35;
+  }
+  .step-content b {
+    color: #071A4D;
+  }
+
+  .state-outcome {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: 800;
+    font-size: 12px;
+  }
+  .outcome-off {
+    background: #FEF2F2;
+    border: 1px solid #FCA5A5;
+    color: #991B1B;
+  }
+  .outcome-on {
+    background: #ECFDF5;
+    border: 1px solid #6EE7B7;
+    color: #065F46;
+  }
+
+  /* Bottom High-Yield Grid */
+  .bottom-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+  .info-box {
+    background: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    border-radius: 8px;
+    padding: 10px 14px;
+  }
+  .info-box h3 {
+    font-size: 12px;
+    font-weight: 700;
+    color: #071A4D;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .info-box p {
+    font-size: 11px;
+    color: #475569;
+    line-height: 1.35;
+  }
+  .info-box b {
+    color: #071A4D;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="title-area">
+    <h1>LAC OPERON DUAL-STATE REGULATORY CIRCUIT <span class="tag">NCERT Class 12 · Unit VII</span></h1>
+    <p>Allosteric switching, polycistronic transcription, and coordinate enzymatic induction in <i>Escherichia coli</i> (Jacob & Monod, 1961)</p>
+  </div>
+  <div class="brand-badge">OurMocks CUET UG Biology</div>
+</div>
+
+<!-- TOP: OPERON GENETIC ARCHITECTURE -->
+<div class="gene-bar-container">
+  <div class="card-header" style="margin-bottom: 4px;">
+    <h2>Genetic Organization of the Lactose Operon in E. coli</h2>
+    <span class="badge badge-purple">Polycistronic Operon Structure</span>
+  </div>
+  <div class="gene-bar">
+    <div class="gene-segment gene-pi">P<sub>i</sub><span class="role">Reg Promoter</span></div>
+    <div class="gene-segment gene-i">gene <i>i</i><span class="role">Repressor (Constitutive)</span></div>
+    <div class="gene-segment gene-p">Promoter (P)<span class="role">RNA Pol Binding Site</span></div>
+    <div class="gene-segment gene-o">Operator (O)<span class="role">Repressor Binding</span></div>
+    <div class="gene-segment gene-z">gene <i>z</i> (3510 bp)<span class="role">&beta;-Galactosidase</span></div>
+    <div class="gene-segment gene-y">gene <i>y</i> (1251 bp)<span class="role">&beta;-Galactoside Permease</span></div>
+    <div class="gene-segment gene-a">gene <i>a</i> (800 bp)<span class="role">&beta;-Galactoside Transacetylase</span></div>
+  </div>
+  <p style="font-size: 11px; color: #64748B; margin-top: 4px;">
+    <b>Key Rule:</b> Gene <i>i</i> is <b>constitutively active</b> (transcribed continuously at low basal rate). Structural genes <i>z, y, a</i> are transcribed as a single continuous <b>polycistronic mRNA</b> transcript under coordinate control.
+  </p>
+</div>
+
+<!-- MIDDLE: STATE A (OFF) vs STATE B (ON) -->
+<div class="states-grid">
+  <!-- STATE A: IN ABSENCE OF INDUCER -->
+  <div class="state-card off">
+    <div class="card-header">
+      <h2>State A: Absence of Inducer (Lactose Absent)</h2>
+      <span class="badge badge-red">Operon Switched OFF</span>
+    </div>
+    <div class="flow-steps">
+      <div class="step-row">
+        <div class="step-num">1</div>
+        <div class="step-content"><b>Constitutive Transcription:</b> Gene <i>i</i> produces repressor mRNA &rarr; translated into an active <b>homotetrameric repressor protein</b>.</div>
+      </div>
+      <div class="step-row">
+        <div class="step-num">2</div>
+        <div class="step-content"><b>Operator Binding:</b> In the absence of inducer, active repressor binds with high affinity to the <b>Operator (O) region</b>.</div>
+      </div>
+      <div class="step-row">
+        <div class="step-num">3</div>
+        <div class="step-content"><b>Steric Hindrance:</b> Bound repressor physically blocks <b>RNA Polymerase</b> from moving downstream from promoter (P).</div>
+      </div>
+      <div class="step-row">
+        <div class="step-num">4</div>
+        <div class="step-content"><b>No Transcription:</b> Structural genes <i>z, y, a</i> cannot be transcribed into mRNA.</div>
+      </div>
+    </div>
+    <div class="state-outcome outcome-off">
+      OPERON OFF: No &beta;-Galactosidase, Permease, or Transacetylase Synthesized
+    </div>
+  </div>
+
+  <!-- STATE B: IN PRESENCE OF INDUCER -->
+  <div class="state-card on">
+    <div class="card-header">
+      <h2>State B: Presence of Inducer (Lactose / Allolactose)</h2>
+      <span class="badge badge-green">Operon Switched ON</span>
+    </div>
+    <div class="flow-steps">
+      <div class="step-row">
+        <div class="step-num">1</div>
+        <div class="step-content"><b>Lactose Entry & Isomerization:</b> Basal permease allows lactose entry &rarr; converted by basal &beta;-gal into <b>Allolactose</b> (real inducer).</div>
+      </div>
+      <div class="step-row">
+        <div class="step-num">2</div>
+        <div class="step-content"><b>Allosteric Inactivation:</b> Allolactose binds repressor tetramer &rarr; induces conformational change, releasing it from Operator.</div>
+      </div>
+      <div class="step-row">
+        <div class="step-num">3</div>
+        <div class="step-content"><b>Uninhibited Transcription:</b> RNA Polymerase freely transcribes structural genes into a single <b>polycistronic mRNA</b>.</div>
+      </div>
+      <div class="step-row">
+        <div class="step-num">4</div>
+        <div class="step-content"><b>Enzymatic Translation:</b> Translates 3 enzymes: <b>&beta;-gal (z)</b>, <b>Permease (y)</b>, and <b>Transacetylase (a)</b>.</div>
+      </div>
+    </div>
+    <div class="state-outcome outcome-on">
+      OPERON ON: Rapid Hydrolysis of Lactose into Glucose + Galactose
+    </div>
+  </div>
+</div>
+
+<!-- BOTTOM: 3 HIGH-YIELD CUET EXAM PILLARS -->
+<div class="bottom-grid">
+  <div class="info-box">
+    <h3>1. Tri-Enzyme Biochemical Roles</h3>
+    <p>
+      <b>gene z (&beta;-Galactosidase):</b> Hydrolyzes lactose into &beta;-D-galactose + D-glucose.<br>
+      <b>gene y (Permease):</b> Enhances membrane permeability to lactose.<br>
+      <b>gene a (Transacetylase):</b> Transacetylates non-metabolizable &beta;-galactosides using Acetyl-CoA.
+    </p>
+  </div>
+  <div class="info-box">
+    <h3>2. Negative vs Positive Control</h3>
+    <p>
+      <b>Negative Control (Default):</b> Repressor halts transcription until inducer arrives.<br>
+      <b>Positive Control (Catabolite Repression):</b> High glucose &rarr; low cAMP &rarr; CAP inactive &rarr; transcription low. Low glucose &rarr; high cAMP &rarr; CAP-cAMP binds promoter &rarr; maximal expression!
+    </p>
+  </div>
+  <div class="info-box">
+    <h3>3. Essential CUET Traps</h3>
+    <p>
+      <b>A very low (basal) level</b> of lac operon expression must ALWAYS be present in <i>E. coli</i>; otherwise lactose could never enter the cell initially!<br>
+      <b>IPTG:</b> Gratuitous inducer (binds repressor but is NOT degraded by &beta;-gal).
+    </p>
+  </div>
+</div>
+
+</body>
+</html>
