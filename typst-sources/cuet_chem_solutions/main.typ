@@ -11,492 +11,636 @@
 
 #table(
   columns: (1.1fr, 2fr, 1.15fr),
-  table.header[*Sub-topic*][*Official syllabus pointer (NTA CUET(UG) Chemistry syllabus 2026, the current 2027 baseline, Unit I)*][*Skills the questions test*],
-  [*Types of solutions and concentration terms*], [
-    Introduction to solution and its type, expressing concentration of solutions
+  table.header[*Sub-topic*][*Official syllabus pointer (NTA CUET UG Chemistry, Unit I)*][*Skills the questions test*],
+  [*Types of Solutions & Concentration*], [
+    Types of solutions, expression of concentration of solutions of solids in liquids.
   ], [
-    Naming solvent/solute, sorting solutions by the state of their components, and computing mass %, mole fraction, molarity, molality and ppm.
+    Interconverting Molarity, Molality, Mole Fraction, and Mass %; identifying temperature-independent units.
   ],
-  [*Solubility and Henry's law*], [
-    Solubility of a solid in liquid, solubility of a gas in a liquid, Henry's Law
+  [*Solubility & Henry's Law*], [
+    Solubility of gases in liquids, solid solutions, Henry's law.
   ], [
-    Predicting how temperature changes solubility, applying $p = K_H x$, and explaining soda bottles, scuba diving and altitude effects.
+    Applying $p = K_H x$; analyzing temperature scaling of $K_H$; explaining scuba bends, soda packaging, and anoxia.
   ],
-  [*Raoult's law, ideal and non-ideal solutions*], [
-    Vapour pressure of liquid-liquid solutions, Raoult's law, Vapour Pressure of Solutions of Solids in Liquids, Ideal & Non Ideal Solutions, Azeotropes (elementary idea only)
+  [*Raoult's Law & Deviations*], [
+    Raoult's law, ideal and non-ideal solutions, positive and negative deviations, azeotropes.
   ], [
-    Computing partial and total vapour pressures, classifying deviations with the right examples, and matching azeotrope types to mixtures.
+    Calculating partial and total vapour pressures; identifying intermolecular forces ($f_(A B)$ vs $f_(A A)$); classifying azeotropes.
   ],
-  [*Colligative properties and molar mass*], [
-    Colligative properties and Determination of Molar Mass: Relative Lowering of Vapour Pressure, Elevation of Boiling Point, Depression of Freezing point, Osmosis and Osmotic Pressure, Reverse Osmosis & Water Purification
+  [*Colligative Properties*], [
+    Relative lowering of vapour pressure, elevation of boiling point, depression of freezing point, osmotic pressure, reverse osmosis.
   ], [
-    Using the four colligative equations to find molar masses, deciding osmosis directions, and describing how reverse osmosis purifies water.
+    Applying colligative equations to compute solute molar masses ($M_2$); evaluating isotonicity and membrane transport.
   ],
-  [*Abnormal molar masses*], [
-    Abnormal Molar Masses, Van't Hoff factor
+  [*Abnormal Masses & Van 't Hoff*], [
+    Abnormal molecular mass, van 't Hoff factor ($i$), degree of association and dissociation.
   ], [
-    Predicting $i$ for dissociation and association cases and correcting every colligative formula with $i$.
+    Calculating $i$ from $alpha$ or $beta$; predicting ranking of colligative effects for electrolyte mixtures.
   ],
 )
 
 #exam-pointer[
-  CUET UG pattern (NTA official information bulletin and syllabus, 2026 cycle — the
-  current 2027 baseline): each subject paper carries *50 compulsory questions* in
-  *60 minutes*, with $+5$ for every correct answer and $-1$ for every incorrect answer. The Chemistry paper maps strictly to NCERT
-  Class 12, and Unit I opens it with the numeric backbone of physical chemistry —
-  concentration terms, Raoult's law and the four colligative properties.
+  *CUET UG Exam Pattern & Strategy:* The NTA CUET UG Chemistry paper contains *50 compulsory questions* to be solved in *60 minutes* (+5 for correct, -1 for incorrect). Physical chemistry opens with Unit I Solutions, delivering 4–5 numerical and conceptual questions focusing on concentration conversions, Henry's law, azeotropic deviations, and colligative equations corrected with the van 't Hoff factor $i$.
 ]
 
-= What a Solution Is, and Its Types
+= Concept Module 1: Types of Solutions & Concentration Metrics
 
-Stir a spoonful of sugar into tea and it disappears — but it is still there. You can taste it in every sip, and it raises the boiling point of the tea slightly. That everyday event is the whole chapter in miniature. A *solution* is a *homogeneous mixture* of two or more components: one substance spreads evenly through another, particle by particle, so no part of the mixture is different from any other part. The component present in the largest amount is the *solvent* — it sets the state of the solution. Every other component is a *solute* — the substance that gets dissolved. In sugar tea, water is the solvent and sugar is the solute.
+A *solution* is a homogeneous mixture of two or more chemically non-reacting substances whose composition can be varied within certain limits.
+- *Solvent:* The component present in the largest quantitative proportion, dictating the physical state of the solution.
+- *Solute:* The substance dissolved in the solvent (one or more components).
+- *Binary Solution:* A solution consisting of exactly two components (one solute and one solvent).
 
-- *Binary solution:* a solution with exactly *two* components — one solvent, one solute. Almost every question in this unit works with binary solutions.
-- *The solvent decides the phase:* if the solvent is water, the solution is liquid even if the solute was a solid, a gas, or another liquid.
-- *Homogeneous means uniform:* every drop of the sugar tea has the same sweetness. That single property separates a true solution from a suspension (muddy water), where particles settle out.
-- *Particle size is tiny:* solute particles in a solution are molecular or ionic in size — under 1 nanometre — which is why they never scatter light or settle.
-
-== Classifying solutions by the states involved
-
-Since both solvent and solute can be a solid, a liquid or a gas, there are *nine possible combinations*. You do not need all nine by heart — you need the pattern and the famous examples.
+== The Nine Types of Binary Solutions
 
 #table(
-  columns: (1fr, 1.35fr, 1.5fr),
-  table.header[*Solute state*][*In a gas solvent*][*In a liquid solvent*],
-  [Gas], [Oxygen + nitrogen gases (air)], [*Oxygen in water* — the classic case of this chapter],
-  [Liquid], [Water vapour in air (humidity)], [Ethanol mixed into water],
-  [Solid], [Campher vapour in nitrogen gas], [*Glucose or salt in water* — the exam's favourite],
+  columns: (0.9fr, 0.9fr, 1.3fr, 1.4fr),
+  table.header[*Solute*][*Solvent*][*Solution Type*][*Standard NCERT Benchmark Examples*],
+  [Gas], [Gas], [Gaseous Solution], [Air (mixture of $O_2$ and $N_2$ gases)],
+  [Liquid], [Gas], [Gaseous Solution], [Chloroform vapour mixed with nitrogen gas; humidity],
+  [Solid], [Gas], [Gaseous Solution], [Camphor vapours in nitrogen gas; smoke],
+  [Gas], [Liquid], [Liquid Solution], [Oxygen dissolved in water; carbonated soda drinks],
+  [Liquid], [Liquid], [Liquid Solution], [Ethanol dissolved in water; vinegar],
+  [Solid], [Liquid], [Liquid Solution], [Glucose, urea, or NaCl dissolved in water],
+  [Gas], [Solid], [Solid Solution], [Hydrogen gas adsorbed on Palladium surface ($H_2 / P d$)],
+  [Liquid], [Solid], [Solid Solution], [Amalgam of mercury with sodium ($H g - N a$)],
+  [Solid], [Solid], [Solid Solution], [Copper dissolved in gold; Brass (Copper + Zinc alloy)],
 )
 
-#table(
-  columns: (1fr, 1.5fr, 1.5fr),
-  table.header[*Solute state*][*In a solid solvent*][*Say it in one line*],
-  [Gas], [Hydrogen absorbed in palladium], [A gas hiding inside a metal],
-  [Liquid], [Mercury dissolved in sodium (amalgam)], [A liquid metal inside a solid metal],
-  [Solid], [*Brass: copper + zinc; bronze: copper + tin*], [Solid-in-solid alloys — the most-asked example],
-)
+== Quantitative Concentration Formulations
 
-- *Brass and bronze are solutions:* alloys are solid solutions, because one metal spreads evenly through another as atoms. This fact alone settles many one-mark questions.
-- *The exam's default setting:* unless told otherwise, picture the solute as a *solid in a liquid solvent* — that is where every law of this chapter was built.
+Concentration defines the quantity of solute dissolved in a specific amount of solvent or solution:
 
-== How much solute can dissolve? The saturation ladder
+1. *Mass Percentage ($% w/w$):* Mass of solute per 100 g of solution:
+$ % (w/w) = ("Mass of solute" (w_2)) / ("Total mass of solution" (w_1 + w_2)) times 100 $
 
-#analogy-box(title: "Analogy — The Packed Bus")[
-  Think of dissolving as passengers boarding a bus. The *solvent* is the bus; the *solute* is the crowd at the stop. On an *unsaturated* bus there are empty seats — it happily takes more passengers (more solute dissolves). A *saturated* bus is exactly full — at the fixed temperature, it has taken every passenger it can; extra people wait at the stop (undissolved solute sits at the bottom). A *supersaturated* bus has people squeezed into the aisle beyond the seat count — it holds *more solute than the normal limit*, but the moment you bump the bus (drop a seed crystal or scratch the glass), the extra passengers pile out as crystals. The mapping is honest: temperature sets the seat count, and every colligative property you will meet later counts only the passengers who actually boarded.
+2. *Volume Percentage ($% v/v$):* Volume of solute per 100 mL of solution:
+$ % (v/v) = ("Volume of solute") / ("Total volume of solution") times 100 $
+A $35% (v/v)$ solution of ethylene glycol in water is employed as an automotive coolant/antifreeze, depressing the freezing point of water to $255.4" K" (-17.6 degree"C")$.
+
+3. *Mass by Volume Percentage ($% w/v$):* Mass of solute in grams per 100 mL of solution:
+$ % (w/v) = ("Mass of solute in g") / ("Volume of solution in mL") times 100 $
+
+4. *Parts Per Million ($"ppm"$):* Employed for trace solute quantities (e.g. atmospheric pollution, water hardness):
+$ "ppm" = ("Number of parts of solute") / ("Total number of parts of all components") times 10^6 = (w_2) / (w_"solution") times 10^6 $
+
+5. *Mole Fraction ($x$):* Ratio of moles of a given component to total moles present:
+$ x_1 = n_1 / (n_1 + n_2), quad x_2 = n_2 / (n_1 + n_2) $
+For any solution containing $k$ components: $sum_(i=1)^k x_i = 1$. It is a dimensionless, temperature-independent quantity.
+
+6. *Molarity ($M$):* Number of moles of solute dissolved per litre ($1" dm"^3$) of solution:
+$ M = ("Moles of solute" (n_2)) / ("Volume of solution in Litres" (V_L)) = (w_2 times 1000) / (M_2 times V_"mL") quad ["units: mol/L" or "M"] $
+
+7. *Molality ($m$):* Number of moles of solute dissolved per kilogram ($1000" g"$) of solvent:
+$ m = ("Moles of solute" (n_2)) / ("Mass of solvent in kg" (W_1)) = (w_2 times 1000) / (M_2 times w_1 ("in g")) quad ["units: mol/kg" or "m"] $
+
+#formula-box(title: "Interconversion: Molality (m) and Molarity (M)")[
+  Given solution density $d$ in $"g/mL"$ (or $"g/cm"^3$), molarity $M$, and solute molar mass $M_2$:
+  $ m = (1000 times M) / (1000 times d - M times M_2) $
+  Conversely:
+  $ M = (1000 times d times m) / (1000 + m times M_2) $
 ]
 
-- *Unsaturated solution:* holds *less* solute than its limit at that temperature — you can still dissolve more.
-- *Saturated solution:* holds exactly the maximum the solvent can take *at that temperature* — extra solute stays undissolved at the bottom in equilibrium.
-- *Supersaturated solution:* forced to hold *more* than the saturation limit — unstable, and a single seed crystal makes the excess crash out.
-- *Temperature is the rulebook:* raise the temperature and the bus grows seats; lower it and seats vanish — which is exactly why hot water dissolves more sugar than cold.
-
-= Expressing Concentration: Five Units, One Skill
-
-"Concentration" answers one question: *how much solute sits inside how much solution?* Exams rarely ask you to define the five units directly. They give you numbers in one unit and ask for the same solution in another — so the real skill is switching between units without losing track of what is numerator and what is denominator. Meet the five units first.
-
-- *Mass percentage:* the mass of solute in every 100 units of solution mass.
-  $ "mass % of solute" = "mass of solute"/"mass of solution" times 100 $
-  A 10% glucose solution by mass has 10 g of glucose in every 100 g of solution.
-- *Mole fraction ($x$):* the fraction of total moles that belong to one component. For a binary solution with $n_1$ mol solvent and $n_2$ mol solute:
-  $ x_2 = n_2 / (n_1 + n_2), quad x_1 = n_1 / (n_1 + n_2), quad x_1 + x_2 = 1 $
-  It is a pure ratio, so it carries *no units* and never changes with temperature.
-- *Molarity ($M$):* moles of solute per *litre of solution*.
-  $ M = "moles of solute" / "volume of solution in litres" $
-  Because volumes expand on heating, molarity *falls* as temperature rises — remember this asymmetry, it is a favourite one-liner.
-- *Molality ($m$):* moles of solute per *kilogram of solvent*.
-  $ m = "moles of solute" / "mass of solvent in kg" $
-  Both moles and mass ignore temperature, so molality *never changes with temperature* — that is why chemists prefer it in colligative-property work.
-- *Parts per million (ppm):* for very dilute solutions, parts of solute per million parts of solution — the standard language for pollutants and trace impurities.
-  $ "ppm" = "mass of solute" / "mass of solution" times 10^6 $
-  "15 ppm of lead in water" means 15 g of lead per million grams (one tonne) of water.
-
-#table(
-  columns: (1.15fr, 1.5fr, 1.2fr, 1.15fr),
-  table.header[*Unit*][*Numerator / denominator*][*Symbol*][*Temperature effect*],
-  [Mass %], [mass of solute / mass of solution, $times$ 100], [% by mass], [No change],
-  [Mole fraction], [moles of component / total moles], [$x_1, x_2$], [No change],
-  [Molarity], [mol solute / litre of *solution*], [$M$], [*Decreases* on heating],
-  [Molality], [mol solute / kg of *solvent*], [$m$], [No change],
-  [ppm], [mass of solute / mass of solution, $times 10^6$], [ppm], [No change],
-)
-
-== Converting between units — the four-step drill
-
-Every unit conversion becomes easy with one fixed routine. Use it every single time and no conversion can surprise you.
-
-+ *Assume a basis:* take 1 L of solution if molarity is involved, or 100 g of solution if mass % is given.
-+ *Convert everything to masses:* use the density to turn solution volume into solution mass.
-+ *Convert masses to moles:* divide each mass by its molar mass.
-+ *Assemble the target unit:* place moles over the right denominator — kg of solvent for molality, litres of solution for molarity, total moles for mole fraction.
-
-#worked-example("Worked Example — Molarity to Molality, every step shown")[
-  A solution is 3 M NaCl with density 1.12 g mL#super[-1]. Find its molality (molar mass of NaCl = 58.5 g mol#super[-1]).
-
-  *Step 1 — basis.* Take exactly 1 L = 1000 mL of solution.
-
-  *Step 2 — moles of solute.* $ 3 times 1000 / 1000 = 3 "mol of NaCl" $ (since 3 M means 3 mol per litre).
-
-  *Step 3 — mass of solution.* $ 1000 "mL" times 1.12 "g mL"^-1 = 1120 "g" $
-
-  *Step 4 — mass of solvent.* $ 1120 - (3 times 58.5) = 1120 - 175.5 = 944.5 "g of water" = 0.9445 "kg" $
-
-  *Step 5 — molality.* $ m = 3 / 0.9445 approx 3.18 "mol kg"^-1 $
-
-  Notice the two different denominators doing their jobs: litres of *solution* gave molarity, kilograms of *solvent* gave molality. The density was the bridge between them.
+#exception-box(title: "Crucial CUET Distinction: Temperature Dependence")[
+  - *Temperature-Independent Units:* *Molality ($m$)*, *Mole Fraction ($x$)*, *Mass Percentage ($% w/w$)*, and *ppm* depend solely on mass. Since mass is invariant with temperature, these metrics remain constant when temperature changes.
+  - *Temperature-Dependent Units:* *Molarity ($M$)*, *Normality ($N$)*, and *Volume Percentage ($% v/v$)* depend directly on the volume of the solution. Because liquids expand upon heating, *Molarity decreases as temperature increases*!
 ]
 
-#worked-example("Worked Example — Mole fraction from masses")[
-  18 g of glucose ($"C"_6"H"_12"O"_6$, $M = 180$) is dissolved in 178.2 g of water ($M = 18$). Find the mole fraction of glucose.
+#worked-example("Concentration Unit Interconversion")[
+  *Problem:* An aqueous solution of glucose ($C_6 H_12 O_6$, $M_2 = 180" g/mol"$) is labeled as $10% (w/w)$. The density of the solution is $1.20" g/mL"$. Calculate: (a) Molality ($m$), (b) Mole fraction of glucose ($x_2$), (c) Molarity ($M$).
 
-  *Moles:* $ n_"glucose" = 18/180 = 0.1 "mol" quad quad n_"water" = 178.2/18 = 9.9 "mol" $
+  *Solution:*
+  Take $100" g"$ of solution: mass of glucose $w_2 = 10" g"$, mass of water $w_1 = 90" g" = 0.090" kg"$.
+  Moles of glucose $n_2 = 10 / 180 = 0.0556" mol"$. Moles of water $n_1 = 90 / 18 = 5.00" mol"$.
 
-  *Mole fraction:* $ x_"glucose" = 0.1/(0.1 + 9.9) = 0.1/10 = 0.01 $
+  (a) *Molality:* $m = n_2 / W_1 ("kg") = 0.0556 / 0.090 = 0.617" m"$.
 
-  *Check:* $ x_"water" = 9.9/10 = 0.99 $, and $ 0.01 + 0.99 = 1 $ — mole fractions always close the sum to 1, so use that as your instant self-check.
+  (b) *Mole Fraction:* $x_2 = n_2 / (n_1 + n_2) = 0.0556 / (5.00 + 0.0556) = 0.0556 / 5.0556 = 0.0110$.
+
+  (c) *Molarity:* Volume of $100" g"$ solution $V = "mass" / "density" = 100 / 1.20 = 83.33" mL" = 0.08333" L"$.
+  $M = n_2 / V_L = 0.0556 / 0.08333 = 0.667" M"$.
 ]
 
-#analogy-box(title: "Analogy — Class Strength on Photo Day")[
-  Molarity counts students per *classroom volume* — heat the room, the room stretches, and the count per room drops. Molality counts students per *kilogram of desks* — heating changes nobody's mass, so the ratio never moves. Mole fraction asks "what share of the total heads in the photo belong to girls?" — no units, always sums to 1. If you can say those three sentences from memory, the temperature question on molarity vs molality is free marks.
-]
+= Concept Module 2: Solubility & Henry's Law
 
-= Solubility: Solids In, Gases Out
+*Solubility* is the maximum amount of solute that can dissolve in a specified amount of solvent at a given temperature and pressure.
+- *Saturated Solution:* A solution in which no more solute can dissolve at that specific temperature. A dynamic equilibrium exists:
+$ "Solute" + "Solvent" arrow.r.l "Solution" $
+- *Unsaturated Solution:* A solution containing less than the saturation threshold of solute.
 
-*Solubility* is the maximum amount of solute that dissolves in a fixed amount of solvent at a stated temperature — the "seat count" of our bus. It is not a fixed number: temperature pushes it one way or another, and for gases, pressure joins the party. Two sub-cases matter, and they behave in opposite ways.
+== Solubility of a Solid in a Liquid
+- *Nature of Solute and Solvent:* Governed by the fundamental thermodynamic rule: *"Like dissolves like"*. Polar solutes (ionic salts like $N a C l, K N O_3$) dissolve readily in polar solvents ($H_2 O$), while non-polar solutes ($I_2$, naphthalene, anthracene) dissolve in non-polar organic solvents (benzene, $C C l_4$).
+- *Effect of Temperature:*
+  - If dissolution is *endothermic* ($Delta_("sol") H > 0$, e.g. $K N O_3, N a C l, K C l$): solubility *increases* with rising temperature according to Le Chatelier's principle.
+  - If dissolution is *exothermic* ($Delta_("sol") H < 0$, e.g. $C e_2 (S O_4)_3$, lithium salts): solubility *decreases* with rising temperature.
+- *Effect of Pressure:* Pressure exerts *no noticeable effect* on the solubility of solids in liquids because solids and liquids are practically incompressible.
 
-== A solid dissolving in a liquid
+== Solubility of a Gas in a Liquid: Henry's Law
 
-When a salt dissolves, its ions or molecules leave the crystal and get surrounded by solvent molecules. The energy story decides what temperature does next.
+The solubility of any gas in a liquid increases with increase in pressure. William Henry quantitatively formulated this relationship:
 
-- *If dissolving absorbs heat* (endothermic — most salts, like $ "KNO"_3 $): raising the temperature *increases* solubility. The extra heat feeds the dissolving process.
-- *If dissolving releases heat* (exothermic — a few, like $ "Ce"_2 ("SO"_4 )_3 $): raising the temperature *decreases* solubility. The process is already giving out heat, so adding more pushes it backwards.
-- *Sodium chloride is nearly flat:* its solubility barely changes between 0 °C and 100 °C — that near-zero slope is a common "which curve is NaCl" question.
-- *Dynamic equilibrium:* in a saturated solution, dissolving and crystallising happen at equal speeds, so the amount of dissolved solute stays constant even though both processes continue.
-
-== A gas dissolving in a liquid — the two rules
-
-Gases do the opposite of most solids when it comes to temperature, and they have a special pressure law named after William Henry.
-
-- *Temperature rule:* as temperature *rises*, gas solubility *falls*. Dissolving a gas releases heat, so heating pushes the gas out. That is why boiled water tastes flat — the dissolved air was driven off — and why warm fizzy drinks lose their sparkle faster.
-- *Pressure rule (Henry's law):* at constant temperature, the *partial pressure* of a gas above a liquid decides how much dissolves.
+#formula-box(title: "Henry's Law Formulations")[
+  *"The partial pressure of the gas in vapour phase ($p$) is directly proportional to the mole fraction of the gas ($x$) in the solution."*
   $ p = K_H times x $
-  Here $p$ is the partial pressure of the gas over the solution (unit: bar or kPa), $x$ is the mole fraction of the *gas* in the solution, and $K_H$ is the *Henry's law constant* — bigger $K_H$ means the gas is *less* soluble, because a larger pressure is needed to reach the same mole fraction.
-- *$K_H$ rises with temperature:* at the same pressure, a higher $K_H$ forces $x$ down — exactly matching the temperature rule above.
-- *Higher pressure, more gas in:* press the plunger of a soda syphon and more $ "CO"_2 $ dissolves; open the cap, pressure drops, and the gas fizzes out in bubbles.
-
-#worked-example("Worked Example — Reading Henry's Law")[
-  The Henry's law constant for $ "N"_2 $ in water at 298 K is about $8.68 times 10^4$ bar. What pressure of $ "N"_2 $ is needed to make its mole fraction in water 0.001?
-
-  *Apply the law:* $ p = K_H times x $
-
-  *Substitute:* $ p = 8.68 times 10^4 "bar" times 0.001 = 86.8 "bar" $
-
-  *Read it back:* you need roughly 87 bar of nitrogen pressure — about 86 times atmospheric pressure — to hold just 0.1% nitrogen (by mole count) in the water. That is how *insoluble* most gases are, and it is why aquatic life depends on the small dissolved oxygen budget water carries.
+  where $K_H$ is the *Henry's Law Constant*.
+  - A plot of partial pressure ($p$) against mole fraction ($x$) yields a straight line passing through the origin with slope equal to $K_H$.
 ]
 
-== Where Henry's law shows up in real life
-
-- *Soda bottles:* the bottle is sealed under high $ "CO"_2 $ pressure so more gas stays dissolved. Open it and the pressure falls — the extra gas leaves as fizz.
-- *Scuba diving (the bends):* deep underwater, a diver breathes air at high pressure, so extra nitrogen dissolves in the blood. Surfacing too fast drops the pressure and the nitrogen bubbles out inside joints and vessels — a painful, dangerous condition. The fix is slow ascent, or helium-based breathing mixes whose $K_H$ behaviour is kinder.
-- *High altitude:* at hills and heights the air pressure is lower, so less oxygen dissolves in the blood — the cause of altitude sickness. Climbers carry oxygen cylinders, which simply raise the oxygen partial pressure they breathe.
-- *Aquatic life in winter:* cold water holds more dissolved oxygen than warm water — one more face of "heat pushes gas out".
-
-= Vapour Pressure of Liquid-Liquid Solutions: Raoult's Law
-
-Before we can compare an ideal mixture with a real one, we need one clean idea: *vapour pressure*. In a closed flask, liquid molecules escape into vapour, and vapour molecules return; at balance, the escaping rate equals the returning rate, and the vapour pushes a steady pressure — that pressure is the liquid's *vapour pressure*. Dissolve something in the liquid and solute particles occupy surface seats, crowding out escaping solvent molecules — so the vapour pressure *falls*. Raoult's law makes that picture exact.
-
-- *Raoult's law, one line:* for a volatile liquid 1 in a solution, its partial pressure equals its mole fraction times its pure-liquid vapour pressure.
-  $ p_1 = x_1 p_1^° $
-  and equally for component 2: $ p_2 = x_2 p_2^° $. Here $p_1^°$ is the vapour pressure of *pure* liquid 1 at that temperature, and $x_1$ its mole fraction *in the liquid*.
-- *Total pressure of the mixture* (Dalton's law of partial pressures adds the two):
-  $ p_"total" = p_1 + p_2 = x_1 p_1^° + x_2 p_2^° $
-- *Plot it and you get straight lines:* against $x_1$, the total pressure runs from $p_2^°$ (at $x_1 = 0$) to $p_1^°$ (at $x_1 = 1$).
-- *Raoult's law as a special case of Henry's law:* Henry says $p = K_H x$ for the *gas* dissolving in liquid; Raoult says $p_1 = p_1^° x_1$ for the *liquid's* own vapour. Both are pressure = constant $times$ mole fraction. Raoult's law is simply Henry's law where the constant happens to be the pure vapour pressure $p_1^°$.
-- *Solid in a liquid — the non-volatile case:* if the solute is a non-volatile solid (sugar, salt, glucose), it contributes *no* vapour of its own ($p_2 approx 0$). Then the solution's vapour pressure is just the solvent's share: $ p_1 = x_1 p_1^° $, and because $x_1$ dropped below 1, the vapour pressure dropped below $p_1^°$. That single sentence is the whole engine of the colligative properties coming next.
-
-#formula-box(title: "Relative Lowering of Vapour Pressure — the first colligative property")[
-  *How much did the vapour pressure fall?* Take the fall, divide by the pure value:
-  $ (p_1^° - p_1)/p_1^° = x_2 = n_2/(n_1 + n_2) $
-  *For dilute solutions* ($n_2 << n_1$), this simplifies to:
-  $ (p_1^° - p_1)/p_1^° approx n_2/n_1 = (w_2 times M_1)/(M_2 times w_1) $
-  Letters: $w_2, M_2$ = mass and molar mass of the *solute*; $w_1, M_1$ = mass and molar mass of the *solvent*. Solve this last line for $M_2$ and you can *weigh* an unknown solute from a vapour-pressure drop — the classic molar-mass experiment.
+#exception-box(title: "High-Yield Henry's Law Principles & Exam Traps")[
+  1. *Inverse Solubility Scaling:* At a given pressure $p$, higher $K_H$ implies *lower solubility* of the gas in liquid:
+  $ x = p / K_H $
+  2. *Temperature Scaling of $K_H$:* For a given gas, $K_H$ *increases* as temperature rises. Consequently, the solubility of gases in liquids *decreases* with increasing temperature.
+  3. *Aquatic Life Adaptation:* Aquatic species (fish, amphibians) thrive far better in cold waters than in warm waters because dissolved oxygen concentration is significantly higher at lower temperatures.
+  4. *Order of $K_H$ values at $293" K"$ (Solubility Order):*
+  $ K_H: H e (144.97) > H_2 (69.16) > N_2 (76.48) > O_2 (34.86) > A r (40.3" kbar") $
+  Therefore, oxygen ($O_2$) is over twice as soluble in water as nitrogen ($N_2$).
 ]
 
-= Ideal and Non-Ideal Solutions (+ Azeotropes)
+== Practical Applications of Henry's Law
+1. *Carbonated Soda Beverages:* Soft drink bottles are sealed under high pressure to maximize the solubility of $C O_2$ gas. When opened, pressure drops to 1 atm, reducing solubility and producing rapid gas effervescence.
+2. *Deep-Sea Diving ("The Bends"):* As deep-sea scuba divers descend, high hydrostatic pressure forces atmospheric nitrogen ($N_2$) to dissolve heavily into blood and tissues. When ascending rapidly, pressure plummets, causing dissolved $N_2$ to release abruptly as bubbles in capillaries. These bubbles block circulation, producing painful and fatal decompression sickness known as *the bends*.
+   - *Medical Countermeasure:* Diver breathing tanks are diluted with *Helium* ($11.7% H e, 56.2% N_2, 32.1% O_2$) because Helium has an extremely high $K_H$ and very low solubility in blood.
+3. *High-Altitude Anoxia:* At high altitudes, atmospheric oxygen partial pressure is lower than at sea level. This leads to low oxygen concentrations in the blood and brains of climbers, impairing cognitive function and producing a clinical condition called *anoxia*.
 
-Now compare real liquid pairs. Two liquids mixed can either behave exactly as Raoult's law predicts, or drift above it, or sag below it. Which one happens depends on one question: *how strongly do A and B attract each other, compared with how A–A and B–B attract each other?*
+= Concept Module 3: Raoult's Law & Binary Vapour Pressures
 
-== The ideal benchmark
-
-- *Definition:* an *ideal solution* obeys Raoult's law over the whole mole-fraction range.
-- *The microscopic condition:* A–B attractions in the mixture equal A–A and B–B attractions in the pure liquids. Nobody gains or loses escape energy on mixing.
-- *The two zero signs:* enthalpy of mixing and volume of mixing are both exactly zero.
-  $ Delta H_"mix" = 0, quad quad Delta V_"mix" = 0 $
-- *Examples:* benzene + toluene, n-hexane + n-heptane, bromoethane + chloroethane — near-identical molecules that cannot tell each other apart.
-
-== Positive deviation: molecules escape too easily
-
-- *Cause:* A–B attraction is *weaker* than A–A and B–B. Mixing actually breaks some strong bonds (often hydrogen bonds in one pure liquid).
-- *Signs:* the vapour pressure curve rides *above* the Raoult line; $Delta H_"mix" > 0$ (slight cooling on mixing); $Delta V_"mix" > 0$ (volume expands slightly).
-- *Examples:* ethanol + acetone (acetone weakens ethanol's hydrogen bonds), carbon disulphide + acetone, water + ethanol.
-
-== Negative deviation: molecules cling too hard
-
-- *Cause:* A–B attraction is *stronger* than A–A and B–B — a *new* attraction (often a new hydrogen bond) appears on mixing.
-- *Signs:* the vapour pressure curve dips *below* the Raoult line; $Delta H_"mix" < 0$ (warmth on mixing); $Delta V_"mix" < 0$ (volume contracts slightly).
-- *Examples:* chloroform + acetone (chloroform's H bonds to acetone's O), phenol + aniline, nitric acid + water, HCl + water.
+Vapour pressure is the equilibrium pressure exerted by the vapour phase above a liquid surface at a constant temperature.
 
 #figure(
-  image("assets/chem_deviation_curves.png", width: 100%),
-  caption: [Raoult's law plots: the ideal straight-line case, the positive-deviation bulge and the negative-deviation dip, with each panel's cause, signs and classic example pairs.],
+  image("assets/chem_deviation_curves.png", width: 84%),
+  caption: [Raoult's Law on Vapour Pressure: Linear ideal behaviour vs positive deviation (minimum-boiling azeotrope) and negative deviation (maximum-boiling azeotrope).],
 )
 
-== Azeotropes: mixtures that refuse to separate
+== Raoult's Law for Liquid-Liquid Volatile Mixtures
 
-An *azeotrope* is a mixture that boils at a constant temperature and distils over *unchanged in composition* — the vapour has the same composition as the liquid, so ordinary fractional distillation cannot split it any further. The syllabus keeps this at "elementary idea only", and the exam idea is just the pairing below.
+For a binary solution of two volatile miscible liquids 1 and 2:
+*"For any volatile component in a solution, its partial vapour pressure is directly proportional to its mole fraction in the solution."*
+$ p_1 = p_1^0 times x_1, quad p_2 = p_2^0 times x_2 $
+where $p_1^0$ and $p_2^0$ represent the vapour pressures of pure components 1 and 2 at the same temperature.
 
-#table(
-  columns: (1.2fr, 1.3fr, 1.5fr),
-  table.header[*Azeotrope type*][*Behaviour*][*Standard example*],
-  [Minimum-boiling], [Positive deviation; boils *below* both pure liquids], [*95% ethanol + 5% water* — why distillation can never give absolute (100%) ethanol],
-  [Maximum-boiling], [Negative deviation; boils *above* both pure liquids], [*68% nitric acid + 32% water*],
-)
+Applying *Dalton's Law of Partial Pressures*, the total vapour pressure $P_"total"$ is:
+$ P_"total" = p_1 + p_2 = p_1^0 x_1 + p_2^0 x_2 = p_1^0 (1 - x_2) + p_2^0 x_2 $
+$ P_"total" = p_1^0 + (p_2^0 - p_1^0) times x_2 $
 
-#analogy-box(title: "Analogy — Two Friends at a Party")[
-  Picture molecules as people at a party. *Ideal pair:* two strangers with the same friend-circle strength as their own circles — they mix without noticing, and the "leave rate" (vapour pressure) follows the straight-line prediction. *Positive deviation:* the newcomers *break up* a few close friendships (ethanol's hydrogen bonds); freed people leave early, so the exit rate shoots above the line. *Negative deviation:* the newcomers *form a brand-new friendship* (chloroform to acetone); people who had planned to leave now stay, and the exit rate drops below the line. The mapping is exact: friendship strength = intermolecular attraction, leaving early = higher vapour pressure, and the azeotrope is the party where everyone's exit timing is identical — the whole room leaves as one group, so no amount of "distilling" separates them.
-]
+== Composition of Vapour Phase (Dalton's Gas Formulation)
+If $y_1$ and $y_2$ denote the mole fractions of components 1 and 2 in the *vapour phase*:
+$ p_1 = y_1 times P_"total" ==> y_1 = p_1 / P_"total" = (p_1^0 x_1) / P_"total" $
+$ p_2 = y_2 times P_"total" ==> y_2 = p_2 / P_"total" = (p_2^0 x_2) / P_"total" $
+*Konovalov's Rule:* The vapour phase is always richer in the component that is more volatile (possessing higher pure vapour pressure $p^0$).
 
-= Colligative Properties: Counting Particles
+= Concept Module 4: Ideal and Non-Ideal Binary Solutions
 
-Here is the punchline of the whole unit — the four properties in its name all flow from one idea. A non-volatile solute lowers the solvent's vapour pressure; that one change drags the boiling point up, the freezing point down, and (through a membrane) creates an osmotic push. Each effect depends *only on how many solute particles are present* — not on *what* they are. Properties that depend only on the number of solute particles are called *colligative properties* (from Latin: "bound together").
+Binary liquid mixtures are categorized according to their adherence to Raoult's law over the entire range of concentration:
 
-- *One number counts them all:* 1 mol of glucose, 1 mol of urea and 1 mol of sucrose — completely different molecules — produce identical colligative effects, because each contributes the same number of dissolved particles.
-- *The chain of logic:* solute present $arrow$ fewer solvent molecules at the surface $arrow$ vapour pressure falls $arrow$ (colligative property 1) $arrow$ needs a higher temperature to boil (property 2) and a lower temperature to freeze (property 3) $arrow$ and across a membrane, pure solvent pushes its way in (property 4).
+== 1. Ideal Solutions
+An ideal solution satisfies Raoult's law at all concentrations and temperatures:
+- *Thermodynamic Criteria:*
+  1. $p_1 = p_1^0 x_1$ and $p_2 = p_2^0 x_2$ (Obeys Raoult's law).
+  2. $Delta_("mix") H = 0$ (Zero heat absorbed or evolved upon mixing).
+  3. $Delta_("mix") V = 0$ (Total volume strictly equals the sum of component volumes).
+  4. $Delta_("mix") S > 0$ and $Delta_("mix") G < 0$ (Spontaneous mixing).
+- *Molecular Basis:* Intermolecular attractive forces between unlike molecules ($A - B$) are identical in strength to those between like molecules ($A - A$ and $B - B$):
+$ f_(A - B) = f_(A - A) = f_(B - B) $
+- *NCERT Benchmark Examples:*
+  - Benzene + Toluene
+  - $n$-Hexane + $n$-Heptane
+  - Bromoethane + Chloroethane
+  - Chlorobenzene + Bromobenzene
 
-== Property 1 — Relative lowering of vapour pressure
+== 2. Non-Ideal Solutions: Positive Deviation
+- *Observed Behaviour:* Measured vapour pressure is strictly *higher* than predicted by Raoult's law ($P_"total" > p_1^0 x_1 + p_2^0 x_2$).
+- *Molecular Basis:* The $A - B$ intermolecular attractive forces are *weaker* than pure $A - A$ and $B - B$ cohesive forces:
+$ f_(A - B) < f_(A - A), quad f_(A - B) < f_(B - B) $
+Molecules have a higher escaping tendency into the vapour phase.
+- *Thermodynamic Criteria:*
+  $ Delta_("mix") H > 0 quad ["Endothermic mixing: absorbs heat, solution cools"] $
+  $ Delta_("mix") V > 0 quad ["Volume expansion: total volume exceeds sum of components"] $
+- *NCERT Benchmark Pairs:*
+  - Ethanol + Acetone (Acetone molecules disrupt strong intermolecular H-bonding between ethanol molecules).
+  - Carbon Disulphide ($C S_2$) + Acetone (Dipole-dipole attractions of acetone are weakened).
+  - Ethanol + Water, Acetone + Benzene, Carbon tetrachloride ($C C l_4$) + Chloroform ($C H C l_3$).
 
-Already met above, and worth repeating because it is the *root* property:
-$ (p_1^° - p_1)/p_1^° = x_2 quad quad ("dilute:" approx n_2/n_1) $
-It measures the solute's mole fraction directly — a number-only fact, no chemistry of the solute involved.
+== 3. Non-Ideal Solutions: Negative Deviation
+- *Observed Behaviour:* Measured vapour pressure is strictly *lower* than predicted by Raoult's law ($P_"total" < p_1^0 x_1 + p_2^0 x_2$).
+- *Molecular Basis:* The $A - B$ intermolecular attractive forces are *stronger* than pure $A - A$ and $B - B$ cohesive forces:
+$ f_(A - B) > f_(A - A), quad f_(A - B) > f_(B - B) $
+Frequently, *new hydrogen bonds* form between unlike components that neither pure liquid possessed.
+- *Thermodynamic Criteria:*
+  $ Delta_("mix") H < 0 quad ["Exothermic mixing: releases heat, solution warms"] $
+  $ Delta_("mix") V < 0 quad ["Volume contraction: total volume is less than sum of components"] $
+- *NCERT Benchmark Pairs:*
+  - Chloroform ($C H C l_3$) + Acetone ($C H_3 C O C H_3$): A strong new hydrogen bond forms between the acidic proton of chloroform and the carbonyl oxygen of acetone:
+  $ C l_3 C - H dots.c O = C(C H_3)_2 $
+  - Phenol + Aniline: Hydrogen bonding between phenolic $-O H$ proton and aniline $-N H_2$ nitrogen.
+  - Nitric acid ($H N O_3$) + Water ($H_2 O$), Hydrochloric acid ($H C l$) + Water ($H_2 O$).
 
-== Property 2 — Elevation of boiling point
+== Azeotropic Mixtures (Constant Boiling Mixtures)
+An *azeotrope* is a binary liquid mixture having identical composition in both liquid and vapour phases and boiling at a constant temperature without fractional distillation separation.
 
-A solution's vapour pressure is lower than the pure solvent's, so it must be heated *higher* before its vapour pressure reaches atmospheric pressure and boils.
+1. *Minimum Boiling Azeotropes:* Formed by mixtures exhibiting *large positive deviations* from Raoult's law. The vapour pressure curve passes through a maximum, meaning the boiling point passes through a minimum.
+   - *NCERT Example:* Mixture of $95.4% (v/v)$ ethanol and $4.6% (v/v)$ water. It boils at $351.15" K"$, which is lower than pure ethanol ($351.5" K"$) and pure water ($373.15" K"$). Fractional distillation cannot yield absolute ($100%$) alcohol.
+2. *Maximum Boiling Azeotropes:* Formed by mixtures exhibiting *large negative deviations* from Raoult's law. The vapour pressure curve passes through a minimum, meaning the boiling point reaches a maximum.
+   - *NCERT Example:* Mixture of $68% (w/w) H N O_3$ and $32% (w/w) H_2 O$. It boils at $393.5" K"$, which is higher than pure nitric acid ($359" K"$) and pure water ($373.15" K"$).
 
-- *The equation:*
-  $ Delta T_b = T_b "solution" - T_b "pure" = K_b m $
-  *Letters:* $m$ = molality of the solution; $K_b$ = the *molal elevation constant* (ebullioscopic constant) of the *solvent* — for water, $K_b = 0.52$ K kg mol#super[-1]. Units of $K_b$: K kg mol#super[-1].
-- *Water's new boiling point:* 1 molal glucose water boils at $100 + 0.52 = 100.52$ °C. Small, but perfectly measurable.
-- *Only the solvent matters:* $K_b$ belongs to the solvent; the solute only supplies the molality.
+= Concept Module 5: The Four Colligative Properties
 
-== Property 3 — Depression of freezing point
-
-Freezing needs the solvent's vapour pressure to equal that of the solid. Since the solution's vapour pressure sits lower, you must cool *further* before the two curves meet — the freezing point falls.
-
-- *The equation:*
-  $ Delta T_f = T_f "pure" - T_f "solution" = K_f m $
-  *Letters:* $K_f$ = the *molal depression constant* (cryoscopic constant) of the solvent — for water, $K_f = 1.86$ K kg mol#super[-1].
-- *Everyday proof:* spreading salt on icy roads melts the ice because salt water freezes below 0 °C. Same trick in car radiators (ethylene glycol antifreeze) and in ice-cream churns (salt + ice baths reaching below 0 °C).
-- *The combined molar-mass formula* — memorise this one shape:
-  $ M_2 = (K_f times w_2 times 1000)/(Delta T_f times w_1) $
-  with $w_2, w_1$ in grams of solute and solvent. (Swap $K_f$ and $Delta T_f$ for $K_b$ and $Delta T_b$ and the same shape solves boiling-point problems.)
-
-#worked-example("Worked Example — Molar mass from freezing-point depression")[
-  18 g of an unknown non-electrolyte is dissolved in 200 g of water. The solution freezes at $-0.93$ °C. Find the molar mass. ($K_f$ of water = 1.86 K kg mol#super[-1].)
-
-  *Step 1 — the depression.* $ Delta T_f = 0 - (-0.93) = 0.93 "K" $
-
-  *Step 2 — apply the formula.* $ M_2 = (1.86 times 18 times 1000)/(0.93 times 200) $
-
-  *Step 3 — arithmetic, line by line.* Numerator: $ 1.86 times 18 = 33.48 $, then $ 33.48 times 1000 = 33480 $. Denominator: $ 0.93 times 200 = 186 $.
-
-  *Step 4 — divide.* $ M_2 = 33480/186 = 180 "g mol"^-1 $
-
-  *Step 5 — sanity check.* 180 g mol#super[-1] is glucose's molar mass — and glucose is a classic non-electrolyte, so the number is believable. In the exam, the reverse question ("what freezes at $-0.93$ °C?") uses the same five lines backwards.
-]
-
-== Property 4 — Osmosis and osmotic pressure
-
-*Osmosis* is the flow of *solvent* molecules through a *semipermeable membrane* (SPM) — a film with pores too small for solute particles but big enough for solvent — from the *dilute* side towards the *concentrated* side. The extra pressure the solution must receive to *stop* that flow is its *osmotic pressure*.
-
-- *The equation (best colligative formula in the book):*
-  $ Pi = C R T quad quad ("more exactly", Pi = i C R T) $
-  *Letters:* $C$ = molar concentration (mol L#super[-1]), $R$ = gas constant ($0.0821$ L atm K#super[-1] mol#super[-1]), $T$ = absolute temperature in kelvin. With $i$ = the van't Hoff factor (next section) correcting for particles that split or pair up.
-- *Why it is the exam favourite:* osmotic pressure is measured at *room temperature* using weak solutions — so no heating to break up fragile molecules like proteins or polymers. Molality-style methods need near-freezing or boiling conditions where such molecules decompose.
-- *Isotonic, hypotonic, hypertonic — the membrane vocabulary:*
-  - *Isotonic:* same osmotic pressure on both sides — no net flow. 0.9% saline matches blood, which is why IV fluids use it; red blood cells in it keep their shape.
-  - *Hypertonic (outside):* the outside is more concentrated, so water leaves the cell and it *shrinks* (crenation of red cells in salt water).
-  - *Hypotonic (outside):* the outside is more dilute, so water enters the cell and it *swells or bursts* (a raisin plumping in fresh water; burst cells in distilled water).
-- *Plant life runs on it:* root cells hold more concentrated sap than the soil water, so water pushes in — the cell swells against its wall (turgor) and the plant stands upright. Fertiliser over-dose makes soil water hypertonic, water flows *out* of roots, and the plant wilts — "burnt" by salt.
-
-== Reverse osmosis: pushing water backwards
-
-Apply a pressure *larger* than the osmotic pressure on the solution side, and the flow *reverses*: pure water is squeezed *out* of the solution through the membrane, leaving solutes behind. That is *reverse osmosis (RO)* — the physics inside every RO water purifier and shipboard desalination plant.
-
-- *Why RO beats ordinary filtration:* the membrane blocks dissolved ions and molecules, not just suspended dirt — so it strips salts, heavy metals and microbes in one pass.
-- *The pressure budget:* seawater (about 35 g of salts per litre) needs over 30 bar of applied pressure — the osmotic pressure of the sea itself — which is why RO units need pumps.
-- *Versus ordinary osmosis:* normal osmosis is spontaneous; RO is osmosis driven in reverse by paying a pressure bill larger than the osmotic push. Direction is the only difference; the membrane is the same idea.
-
-= Abnormal Molar Masses and the van't Hoff Factor
-
-Every colligative formula above assumed one quiet thing: solute particles neither split nor stick. Electrolytes break that promise the moment they dissolve — and some molecules break it in the opposite way. The measured molar mass then comes out *abnormal*, and one factor fixes all of it.
-
-== When the molar mass lies
-
-- *Dissociation (particles multiply):* $ "NaCl" -> "Na"^(+) + "Cl"^(-) $ doubles the particle count; $ "K"_2 "SO"_4 -> 2"K"^(+) + "SO"_4^(2-) $ triples it. More particles than the formula suggested $arrow$ the colligative effect is *stronger* than expected $arrow$ the computed molar mass comes out *lower* than the true value.
-- *Association (particles merge):* benzoic acid (and acetic acid) form *dimers* — two molecules hydrogen-bond into one particle — in benzene. Fewer particles than expected $arrow$ weaker effect $arrow$ computed molar mass comes out nearly *double* the true value.
-- *The pattern to burn in:* particles up $arrow$ molar mass down; particles down $arrow$ molar mass up. The colligative effect only ever counts particles.
-
-== The van't Hoff factor fixes everything
-
-The *van't Hoff factor $i$* measures how many particles one formula unit actually becomes:
-$ i = "normal molar mass"/"abnormal (observed) molar mass" = "observed colligative effect"/"calculated colligative effect" = "total moles of particles after association or dissociation"/"moles of formula units dissolved" $
-
-- *No change:* $i = 1$ — glucose, urea, sucrose (nothing splits, nothing pairs).
-- *Dissociation:* $i > 1$ — NaCl: $i = 2$; $ "K"_2 "SO"_4$: $i = 3$; $ "MgCl"_2$: $i = 3$; $ "FeCl"_3$: $i = 4$ (complete dissociation assumed).
-- *Association:* $i < 1$ — benzoic acid or acetic acid dimerising in benzene: $i approx 1/2$.
-- *Correct every formula at once:*
-  $ (p_1^° - p_1)/p_1^° = i x_2, quad Delta T_b = i K_b m, quad Delta T_f = i K_f m, quad Pi = i C R T $
-- *Degree of dissociation $alpha$, linked to $i$:* if one molecule can split into $n$ ions and $alpha$ is the fraction that actually splits, then $ i = 1 + (n - 1) alpha $. Invert it to read off $alpha$ from a measured $i$: $ alpha = (i - 1)/(n - 1) $.
-
-#worked-example("Worked Example — van't Hoff factor in action")[
-  0.1 mol of NaCl is dissolved in 1 kg of water. Predict the freezing point of the solution. ($K_f$ = 1.86 K kg mol#super[-1]; assume complete dissociation.)
-
-  *Step 1 — pretend it never split.* $ Delta T_f = K_f m = 1.86 times 0.1 = 0.186 "K" $
-
-  *Step 2 — count the particles.* NaCl $arrow$ Na⁺ + Cl⁻, so $n = 2$ and with full dissociation $i = 2$.
-
-  *Step 3 — correct the effect.* $ Delta T_f = i times 0.186 = 2 times 0.186 = 0.372 "K" $
-
-  *Step 4 — state the freezing point.* $ T_f = 0 - 0.372 = -0.372 $ °C.
-
-  *Read the lesson:* ignoring $i$ would have halved the effect. On the road, that difference is why rock salt still works on ice — the *ions*, not "NaCl units", are doing the job.
-]
-
-= Key Reactions & Rules: One-Stop Revision
-
-#cheatsheet-box(title: "Concentration, Laws and Colligative Equations")[
-  #table(
-    columns: (1.35fr, 1.9fr, 1.75fr),
-    table.header[*Rule / formula*][*Symbols in plain words*][*When to reach for it*],
-    [$"mass %" = (w_2/(w_1 + w_2)) times 100$], [$w_2$ = mass of solute; $w_1$ = mass of solution], [Given masses, asked "how concentrated"],
-    [$x_2 = n_2/(n_1 + n_2)$], [moles of solute over total moles; $x_1 + x_2 = 1$], [Vapour-pressure and Raoult problems],
-    [$M$ = mol solute / L solution], [falls as T rises], [From "3 M" style statements],
-    [$m$ = mol solute / kg solvent], [temperature-independent], [Colligative property inputs],
-    [$"ppm" = w_2/w_"solution" times 10^6$], [trace pollution language], [Water-quality statements],
-    [Henry: $p = K_H x$], [$K_H$ up $arrow.r.r$ solubility down], [Gas dissolving, soda, scuba, altitude],
-    [Raoult: $p_1 = x_1 p_1^°$], [partial = fraction $times$ pure pressure], [Liquid-liquid vapour pressures],
-    [$p_"total" = x_1 p_1^° + x_2 p_2^°$], [Dalton's add-on over Raoult], [Total pressure of binary mixture],
-    [RLVP: $(p_1^°-p_1)/p_1^° = x_2$], [$approx n_2/n_1$ when dilute], [Molar mass from vapour-pressure drop],
-    [$Delta T_b = K_b m$], [$K_b$ of water = 0.52 K kg mol#super[-1]], [Boiling-point questions],
-    [$Delta T_f = K_f m$], [$K_f$ of water = 1.86 K kg mol#super[-1]], [Freezing-point questions, antifreeze],
-    [$M_2 = (K_f w_2 1000)/(Delta T_f w_1)$], [$w$ in grams; swap $K_b$ and $Delta T_b$ for boiling], [The molar-mass workhorse],
-    [$Pi = C R T$; full form $Pi = i C R T$], [$R$ = 0.0821 L atm K#super[-1] mol#super[-1]; $T$ in kelvin], [Osmotic pressure at room temperature],
-    [$i = 1 + (n-1)alpha$], [$n$ = ions per formula; $alpha$ = dissociated fraction], [Linking $i$ to degree of dissociation],
-    [Ideal: $Delta H_"mix" = Delta V_"mix" = 0$], [positive dev: A–B pull weaker], [negative dev: A–B pull stronger], [Classifying mixtures and deviations],
-  )
-]
-
-= Exceptions & Traps
-
-#exception-box(title: "The Traps This Chapter Sets — Read Before the Mock")[
-  #table(
-    columns: (1.25fr, 1.35fr, 1.4fr),
-    table.header[*The rule you assume*][*The exception / twist*][*The trap in the question*],
-    [Molarity and molality are "the same sort of number"], [Molarity falls on heating (volume grows); molality never moves], [A "which one is temperature-independent" check — molality, mole fraction and ppm all survive; molarity does not],
-    [Higher $K_H$ = more soluble gas], [Reversed: bigger $K_H$ means *less* solubility], [$K_H$ values compared at two temperatures — the gas with larger $K_H$ has dissolved *less*],
-    ["Heating always helps dissolving"], [Gas solubility *falls* with heat; some salts too ($ "Ce"_2 ("SO"_4 )_3 $)], [A curve question where one salt's solubility drops as temperature climbs],
-    [Raoult's law and Henry's law are unrelated], [Raoult is Henry's law with the constant = pure vapour pressure], [A "state the relation between the two laws" question],
-    [Salt always raises boiling point "a lot"], [1 molal water boils just 0.52 K higher (glucose); NaCl doubles it to ~1.04 K, no more], [Numerical checks with the honest constants — the effect is small by design],
-    [Ideal solution = "any well-behaved mixture"], [Only near-identical liquids qualify (benzene + toluene)], [Ethanol + water is NOT ideal — it shows positive deviation and a min-boiling azeotrope],
-    [Association means i > 1], [Association *merges* particles, so $i < 1$; dissociation gives $i > 1$], [Benzoic acid in benzene — the molar mass reads *high*, and the question wants you to say why],
-    [Water flows towards "more water"], [Osmosis carries solvent from dilute to concentrated side], [Cell-in-solution pictures: hypertonic outside shrinks the cell, hypotonic outside bursts it],
-  )
-]
-
-= The Whole Chapter in One Picture
+*Colligative properties* are physical properties of dilute solutions that depend solely on the *number of solute particles* (molecules or ions) present in solution and are completely *independent of their chemical nature or identity*.
 
 #figure(
-  image("assets/chem_solutions_mindmap.png", width: 100%),
-  caption: [Chapter mindmap: types and concentration units, solubility and Henry's law, Raoult's law with deviations, the four colligative properties, and the van't Hoff corrections, with the traps that catch most students.],
+  image("assets/chem_colligative_properties.png", width: 84%),
+  caption: [The Four Colligative Properties & Van 't Hoff Factor Matrix: Mathematical equations, molar mass determinations, and dissociation/association equilibria.],
 )
 
-= Practice Questions (Exam Pattern)
+== 1. Relative Lowering of Vapour Pressure (RLVP)
+When an involatile, non-electrolyte solute is dissolved in a volatile solvent, solute particles block part of the surface, diminishing the escaping rate of solvent molecules.
+- Vapour pressure of solution $p_1 = p_1^0 x_1 = p_1^0 (1 - x_2)$.
+- Lowering of vapour pressure: $Delta p = p_1^0 - p_1 = p_1^0 x_2$.
+- *Relative Lowering of Vapour Pressure:*
+$ (Delta p) / p_1^0 = (p_1^0 - p_1) / p_1^0 = x_2 = n_2 / (n_1 + n_2) $
+For dilute solutions where $n_2 << n_1$:
+$ (p_1^0 - p_1) / p_1^0 approx n_2 / n_1 = (w_2 / M_2) / (w_1 / M_1) = (w_2 times M_1) / (M_2 times w_1) $
+$ M_2 = (w_2 times M_1) / (w_1 times ((p_1^0 - p_1) / p_1^0)) $
 
-Ten questions in the CUET UG style. Attempt all of them — the paper gives $+5$ for each correct answer and $-1$ for every incorrect answer.
+== 2. Elevation of Boiling Point (Ebullioscopy)
+The boiling point of a liquid is the temperature at which its vapour pressure becomes equal to the external atmospheric pressure ($1.013" bar" = 1" atm"$).
+Because an involatile solute depresses vapour pressure, the solution must be heated to a higher temperature to reach atmospheric pressure.
+- Boiling point elevation: $Delta T_b = T_b - T_b^0$.
+- For dilute solutions, $Delta T_b$ is directly proportional to molal concentration ($m$):
+$ Delta T_b = K_b times m = (1000 times K_b times w_2) / (M_2 times w_1) $
+where $K_b$ is the *Molal Elevation Constant* or *Ebullioscopic Constant*.
+- Units of $K_b$: $"K kg mol"^(-1)$ or $degree"C kg mol"^(-1)$ or $degree"C/m"$.
+- Thermodynamic formula for $K_b$:
+$ K_b = (R times M_1 times (T_b^0)^2) / (1000 times Delta_("vap") H) $
+For water ($H_2 O$): $K_b = 0.52" K kg mol"^(-1)$.
 
-#mcq(1, [Which of the following is a solid-in-solid solution?], (
-  [Sodium amalgam], [Brass (copper + zinc)], [Camphor in nitrogen gas], [Oxygen in water],
-))
+== 3. Depression of Freezing Point (Cryoscopy)
+The freezing point of a substance is the temperature at which the liquid phase and solid phase exert identical vapour pressures.
+Since solute lowers the solvent's vapour pressure, the solution's liquid curve intersects the solid solvent curve at a lower temperature.
+- Freezing point depression: $Delta T_f = T_f^0 - T_f$.
+$ Delta T_f = K_f times m = (1000 times K_f times w_2) / (M_2 times w_1) $
+where $K_f$ is the *Molal Depression Constant* or *Cryoscopic Constant*.
+- Units of $K_f$: $"K kg mol"^(-1)$.
+- Thermodynamic formula for $K_f$:
+$ K_f = (R times M_1 times (T_f^0)^2) / (1000 times Delta_("fus") H) $
+For water ($H_2 O$): $K_f = 1.86" K kg mol"^(-1)$.
 
-#mcq(2, [A solution is prepared by dissolving 4 g of NaOH (M = 40) in 250 g of water. Its molality is:], (
-  [0.4 m], [0.04 m], [4 m], [0.16 m],
-))
+== 4. Osmotic Pressure ($Pi$) & Reverse Osmosis
+- *Osmosis:* The spontaneous net movement of solvent molecules from a region of lower solute concentration (pure solvent or dilute solution) to a region of higher solute concentration through a *semi-permeable membrane (SPM)*.
+- *Semi-Permeable Membrane (SPM):* A continuous membrane containing sub-microscopic pores that allow small solvent molecules ($H_2 O$) to pass while blocking larger solute particles/hydrated ions (e.g. pig's bladder, parchment, synthetic *cellulose acetate*).
+- *Osmotic Pressure ($Pi$):* The exact excess hydrostatic pressure that must be applied to the solution side to prevent the inward flux of solvent through the SPM.
+- *Van 't Hoff Equation for Dilute Solutions:*
+$ Pi = C R T = (n_2 / V) R T = (w_2 R T) / (M_2 V) $
+$ M_2 = (w_2 R T) / (Pi V) $
+where $C$ is molar concentration ($"mol/L"$), $R = 0.0821" L atm K"^(-1)"mol"^(-1) = 8.314" J K"^(-1)"mol"^(-1)$, and $T$ is temperature in Kelvin.
 
-#mcq(3, [Which concentration unit does NOT change when the temperature rises?], (
-  [Molarity], [Normality], [Molality], [Volume percentage],
-))
+== Types of Solutions Based on Osmotic Pressure
+1. *Isotonic Solutions:* Two solutions having identical osmotic pressures at the same temperature ($Pi_1 = Pi_2 ==> C_1 = C_2$). No net osmosis occurs across an SPM.
+   - *Intravenous Injection Benchmark:* Normal saline solution is $0.9% (w/v) N a C l$ in water. It is strictly *isotonic* with human blood plasma.
+2. *Hypertonic Solution:* A solution having *higher* osmotic pressure than intracellular fluid. If red blood cells (RBCs) are placed in $>0.9% N a C l$ solution, water flows *out* of cells, causing them to shrink and shrivel (*crenation*).
+3. *Hypotonic Solution:* A solution having *lower* osmotic pressure than intracellular fluid. If RBCs are placed in $<0.9% N a C l$ (or pure distilled water), water rushes *into* cells, causing them to swell and burst (*haemolysis*).
 
-#mcq(4, [The Henry's law constant of a gas in water increases with temperature. This means that on heating:], (
-  [the gas becomes more soluble], [the gas becomes less soluble], [solubility is unaffected], [the gas reacts with water faster],
-))
+== Reverse Osmosis (RO) and Water Desalination
+If an external mechanical pressure *greater than the osmotic pressure* ($P > Pi$) is applied to the concentrated solution compartment, the natural osmotic flow is reversed!
+Solvent molecules are forced from the solution (e.g. seawater) through the SPM into the pure water reservoir.
+- *Membrane Material:* Modern RO desalination plants utilize porous films of *Cellulose Acetate* supported on an inert porous polyacrylonitrile matrix.
 
-#mcq(5, [For an ideal solution of two liquids:], (
-  [$Delta H_"mix" > 0$ and $Delta V_"mix" < 0$], [$Delta H_"mix" = 0$ and $Delta V_"mix" = 0$], [$Delta H_"mix" < 0$ and $Delta V_"mix" > 0$], [$Delta H_"mix" = 0$ but $Delta V_"mix" > 0$],
-))
-
-#mcq(6, [Chloroform and acetone mix with a vapour pressure *below* the Raoult's-law prediction because:], (
-  [they form a new hydrogen bond between them], [their hydrogen bonds break on mixing], [they are both non-volatile], [they form separate layers],
-))
-
-#mcq(7, [The azeotrope of ethanol (95%) and water is an example of:], (
-  [a maximum-boiling azeotrope from negative deviation], [a minimum-boiling azeotrope from positive deviation], [an ideal mixture], [a suspension that distils unchanged],
-))
-
-#mcq(8, [18 g of glucose is dissolved in 500 g of water ($K_f$ = 1.86 K kg mol#super[-1]). The depression of freezing point is about:], (
-  [0.186 K], [0.372 K], [1.86 K], [0.093 K],
-))
-
-#mcq(9, [Red blood cells placed in a 5% NaCl solution (much saltier than blood plasma) will:], (
-  [swell because water enters], [stay unchanged because the solution is isotonic], [shrink as water flows out into the saltier solution], [burst immediately],
-))
-
-#mcq(10, [The van't Hoff factor $i$ for $ "K"_2 "SO"_4 $ (assuming complete dissociation) is:], (
-  [1], [2], [3], [4],
-))
-
-= Detailed Solutions
-
-#solution(1, [Brass is copper with zinc dissolved evenly through it as atoms — the textbook *solid in solid* solution (an alloy). Sodium amalgam does not qualify: NCERT classifies an amalgam of mercury (liquid) with sodium (solid) as a *liquid in solid* solution. Camphor in nitrogen gas is solid-in-gas, and oxygen in water is gas-in-liquid.], answer: [B])
-
-#solution(2, [Moles of NaOH = 4/40 = 0.1 mol. Mass of solvent = 250 g = 0.25 kg. Molality = 0.1/0.25 = *0.4 m*. Quick check: 4 g in 250 g doubles to 8 g per 500 g, four times to 16 g per kg — and 16/40 = 0.4. Option B drops a factor of ten (it forgets to convert grams to kilograms), and option D silently uses 4/25 instead of 4/250.], answer: [A])
-
-#solution(3, [Molarity divides moles by *volume*, and volume expands on heating — so molarity drops. Molality divides moles by *mass* (unchanged), as do mole fraction and mass-based units. Among the options, only molality survives the heating test. Volume percentage and normality both lean on volume, so they sink with it too. Mole fraction would also survive — it counts moles, never volume — it simply is not offered here.], answer: [C])
-
-#solution(4, [Henry's law: $p = K_H x$. If $K_H$ grows, the same pressure now buys a *smaller* mole fraction $x$ — the gas dissolves less. That is exactly why warm soda goes flat faster and cold water holds more oxygen. Option A reverses the logic — remember the chain: bigger $K_H$, smaller $x$, less gas in.], answer: [B])
-
-#solution(5, [Ideal means mixing changes nothing: A–B attractions match A–A and B–B, so no heat is absorbed or released and the volume adds up exactly — $Delta H_"mix" = 0$ and $Delta V_"mix" = 0$. Benzene + toluene is the standard example. Every other option mixes a positive and a negative sign — impossible for an ideal solution, where both deviations are exactly zero.], answer: [B])
-
-#solution(6, [A *negative* deviation needs extra attraction. Chloroform's acidic H and acetone's lone-pair O form a new hydrogen bond that neither pure liquid had, so molecules cling harder and escape less — vapour pressure dips below the Raoult line. Option B describes the *positive* deviation of ethanol + acetone — the mirror-image case.], answer: [A])
-
-#solution(7, [Ethanol–water shows *positive* deviation (acetone-style breaking of hydrogen bonds), and positive-deviation mixtures end in a *minimum-boiling* azeotrope at 95% ethanol — the reason absolute ethanol cannot be made by simple distillation.], answer: [B])
-
-#solution(8, [Molality: 18 g glucose (M = 180) = 0.1 mol in 0.5 kg water $arrow$ m = 0.2. Then $Delta T_f = K_f m = 1.86 times 0.2 = 0.372$ K. Glucose is a non-electrolyte, so $i = 1$ and no correction applies. Option A belongs to a 0.1 molal solution.], answer: [B])
-
-#solution(9, [5% salt water is *hypertonic* to the cells. Osmosis always sends water from the dilute side (inside the cell) to the concentrated side (the salt solution), so the cells lose water and *shrink* — the process called crenation. This is also why IV drips use 0.9% saline, which *is* isotonic. Bursting (option D) needs a *hypotonic* outside — distilled water, not salt water.], answer: [C])
-
-#solution(10, [$"K"_2"SO"_4 arrow.r 2"K"^(+) + "SO"_4^(2-)$: one formula unit becomes 2 + 1 = 3 particles, so $i = 3$ with complete dissociation. Compare NaCl ($i = 2$) and $"FeCl"_3$ ($i = 4$) — count the ions, that is the whole trick.], answer: [C])
-
-== Wrong-Answer Clinic — the one-line corrections
-
-Dropped marks above? Find your slip here and rewrite the corrected rule in your own words.
-
-#table(
-  columns: (1.05fr, 1.5fr, 1.45fr),
-  table.header[*If you answered...*][*Your slip was...*][*The corrected rule, in one line*],
-  [Q8 option A], [Using the water mass raw, unconverted], [Molality needs *kg of solvent*: 500 g = 0.5 kg, so $Delta T_f = 1.86 times 0.2$],
-  [Q9 option D], [Reversing osmosis direction], [Water always travels dilute $arrow.r$ concentrated; a salty outside pulls water *out*, shrinking the cell],
-)
-
-#block(width: 100%, inset: (top: 4pt), above: 4pt)[
-  #align(center, text(fill: om-grey, size: 8pt)[© OurMocks · www.ourmocks.com · CUET UG Chemistry · Solutions · 2027 cycle])
+#formula-box(title: "Why Osmotic Pressure is Superior for Macromolecules")[
+  Osmotic pressure is overwhelmingly preferred over $Delta T_b$ or $Delta T_f$ for determining the molar masses of polymers, proteins, DNA, and biomolecules:
+  1. Osmotic pressure measurements are executed at *ambient room temperature* ($298" K"$), preventing thermal denaturation of sensitive biomolecules.
+  2. Molar concentration ($M$) is utilized instead of molality ($m$).
+  3. The magnitude of $Pi$ is very large and readily measurable (several millimeters of liquid column) even for extremely dilute polymer solutions where $Delta T_b$ and $Delta T_f$ are too miniscule ($approx 10^(-3)" K"$) to be measured accurately.
 ]
+
+= Concept Module 6: Abnormal Molar Masses & Van 't Hoff Factor ($i$)
+
+When a solute undergoes electrolytic dissociation or molecular association in solution, the actual number of particles differs from the number of dissolved formula units.
+Because colligative properties depend solely on total particle count, the experimentally measured colligative property deviates from the theoretical value, yielding an *abnormal molar mass*.
+
+Jacobus Henricus van 't Hoff introduced the *Van 't Hoff Factor ($i$)* to account for these deviations:
+
+#formula-box(title: "Definitions of Van 't Hoff Factor (i)")[
+  $ i = ("Experimental (Observed) Colligative Property") / ("Calculated (Theoretical) Colligative Property") $
+  $ i = ("Actual number of particles after association/dissociation") / ("Number of formula units initially dissolved") $
+  Since colligative property is inversely proportional to solute molar mass ($"C.P." prop 1 / M_2$):
+  $ i = ("Normal (Theoretical) Molar Mass") / ("Abnormal (Experimental) Molar Mass") = M_("normal") / M_("obs") $
+]
+
+== All Modified Colligative Equations
+1. Relative Lowering of Vapour Pressure: $(p_1^0 - p_1) / p_1^0 = i times x_2$
+2. Elevation of Boiling Point: $Delta T_b = i times K_b times m$
+3. Depression of Freezing Point: $Delta T_f = i times K_f times m$
+4. Osmotic Pressure: $Pi = i times C times R times T$
+
+== Degree of Dissociation ($alpha$)
+Consider an electrolyte $A_x B_y$ dissociating into $n$ ions ($n = x + y$):
+$ A_x B_y arrow.r.l x A^(y+) + y B^(x-) $
+- Initial moles at $t = 0$: $1$ mole of $A_x B_y$, $0$ ions.
+- Equilibrium moles: $(1 - alpha)$ moles of undissociated solute, $n alpha$ moles of ions.
+- Total particles at equilibrium: $(1 - alpha) + n alpha = 1 + (n - 1) alpha$.
+$ i = (1 + (n - 1) alpha) / 1 ==> alpha = (i - 1) / (n - 1) $
+- For non-electrolytes (glucose, urea): $i = 1, alpha = 0$.
+- For complete dissociation ($alpha = 1$): $i = n$.
+  - $N a C l arrow.r N a^+ + C l^- ==> n = 2, i = 2$.
+  - $K_2 S O_4 arrow.r 2 K^+ + S O_4^(2-) ==> n = 3, i = 3$.
+  - $A l_2 (S O_4)_3 arrow.r 2 A l^(3+) + 3 S O_4^(2-) ==> n = 5, i = 5$.
+  - $K_4 [F e (C N)_6] arrow.r 4 K^+ + [F e (C N)_6]^(4-) ==> n = 5, i = 5$.
+
+== Degree of Association ($beta$)
+Consider $n$ molecules of solute associating to form a polymer $(A)_n$:
+$ n A arrow.r.l A_n $
+- Initial moles: $1$ mole of $A$, $0$ associated polymer.
+- Equilibrium moles: $(1 - beta)$ moles of monomer, $beta / n$ moles of polymer.
+- Total particles: $(1 - beta) + beta / n = 1 - (1 - 1/n) beta$.
+$ i = 1 - (1 - 1/n) beta ==> beta = (1 - i) / (1 - 1/n) $
+- For complete dimerization ($n = 2, beta = 1$): $i = 1 - 1/2 = 0.5$.
+- *Classic Dimerization Example:* Benzoic acid ($C_6 H_5 C O O H$) or Acetic acid ($C H_3 C O O H$) dissolved in *benzene*. Carboxylic acids dimerise via intermolecular hydrogen bonding:
+$ 2 C_6 H_5 C O O H arrow.r.l (C_6 H_5 C O O H)_2 $
+Because particle count is halved, the observed molar mass is approximately double the normal molar mass:
+$ M_("normal") = 122" g/mol", quad M_("obs") approx 244" g/mol", quad i approx 0.5 $
+
+#figure(
+  image("assets/chem_solutions_mindmap.png", width: 84%),
+  caption: [Master Synthesis Mindmap: Comprehensive architectural summary of Unit 1 Solutions across all six concept modules.],
+)
+
+#cheatsheet-box(title: "Master Solutions Revision Cheatsheet")[
+  - *Concentration Interconversion:* $m = (1000 M) / (1000 d - M M_2)$ | Molality, mole fraction, mass % are temperature-independent; Molarity decreases with rising temperature ($d V / d T > 0$).
+  - *Henry's Law:* $p = K_H x$ | As $T$ increases, $K_H$ increases, solubility of gas decreases | Diver breathing mix: $11.7% H e + 56.2% N_2 + 32.1% O_2$.
+  - *Raoult's Law (Binary Volatiles):* $p_1 = p_1^0 x_1, p_2 = p_2^0 x_2$ | $P_"total" = p_1^0 + (p_2^0 - p_1^0) x_2$ | Vapour mole fraction: $y_1 = p_1 / P_"total"$.
+  - *Ideal Solution Criteria:* $f_(A B) = f_(A A) = f_(B B)$ | $Delta_("mix") H = 0$ | $Delta_("mix") V = 0$ | Examples: Benzene + Toluene, $n$-Hexane + $n$-Heptane.
+  - *Positive Deviation ($P_"exp" > P_"ideal"$):* $f_(A B) < f_(A A), f_(B B)$ | $Delta H > 0, Delta V > 0$ | Minimum boiling azeotrope (e.g. $95.4%$ ethanol $+ 4.6%$ water, b.p. $351.15" K"$).
+  - *Negative Deviation ($P_"exp" < P_"ideal"$):* $f_(A B) > f_(A A), f_(B B)$ | $Delta H < 0, Delta V < 0$ | Maximum boiling azeotrope (e.g. $68% H N O_3 + 32% H_2 O$, b.p. $393.5" K"$, Chloroform + Acetone).
+  - *Four Colligative Equations:* $(p_1^0 - p_1)/p_1^0 = i x_2$ | $Delta T_b = i K_b m$ | $Delta T_f = i K_f m$ | $Pi = i C R T$.
+  - *Water Constants:* $K_b(H_2 O) = 0.52" K kg mol"^(-1)$ | $K_f(H_2 O) = 1.86" K kg mol"^(-1)$ | Camphor $K_f = 39.7" K kg mol"^(-1)$.
+  - *Van 't Hoff Factor ($i$):* $i = M_("normal") / M_("obs")$ | Dissociation: $i = 1 + (n - 1) alpha$ ($i > 1$) | Association: $i = 1 - (1 - 1/n) beta$ ($i < 1$).
+  - *Colligative Magnitude Order ($0.1" M"$ aqueous):* $A l_2 (S O_4)_3 (i=5) > K_2 S O_4 (i=3) = B a C l_2 (i=3) > N a C l (i=2) > "Glucose" (i=1)$.
+]
+
+#pagebreak()
+
+= CUET UG Exam-Style Practice Questions (15 MCQs)
+
+#mcq(
+  1,
+  [Which of the following mixtures represents an example of a solid solution where a liquid is dissolved in a solid?],
+  (
+    [Brass alloy (copper dissolved in zinc)],
+    [Sodium amalgam (mercury dissolved in sodium)],
+    [Camphor in nitrogen gas],
+    [Hydrated copper sulphate crystals],
+  ),
+)
+#solution(
+  1,
+  [
+    In sodium amalgam, liquid mercury ($H g$) is dispersed homogeneously into solid sodium metal ($N a$). Thus, mercury is the liquid solute and sodium is the solid solvent, forming a liquid-in-solid solution. Brass is solid-in-solid, and camphor in nitrogen is solid-in-gas.
+  ],
+  answer: [B],
+)
+
+#mcq(
+  2,
+  [A solution is prepared by dissolving $4.0" g"$ of $N a O H$ (molar mass $= 40" g/mol"$) in $250" g"$ of pure water. The molality ($m$) of the resulting solution is:],
+  (
+    [$0.10" m"$],
+    [$0.40" m"$],
+    [$0.16" m"$],
+    [$0.04" m"$],
+  ),
+)
+#solution(
+  2,
+  [
+    Moles of solute $N a O H$: $n_2 = w_2 / M_2 = 4.0 / 40 = 0.10" mol"$.
+    Mass of solvent $w_1 = 250" g" = 0.250" kg"$.
+    Molality: $m = n_2 / W_1 ("kg") = 0.10 / 0.250 = 0.40" mol/kg" = 0.40" m"$.
+  ],
+  answer: [B],
+)
+
+#mcq(
+  3,
+  [Which of the following concentration units changes its numerical value when the ambient temperature changes?],
+  (
+    [Molality ($m$)],
+    [Mole fraction ($x$)],
+    [Molarity ($M$)],
+    [Mass percentage ($% w/w$)],
+  ),
+)
+#solution(
+  3,
+  [
+    Molarity ($M$) is defined per litre of solution volume ($V$). Because liquids expand with increasing temperature ($Delta V > 0$), the volume of the solution increases, causing Molarity to decrease with rising temperature. Molality, mole fraction, and mass % depend strictly on mass, which is temperature-invariant.
+  ],
+  answer: [C],
+)
+
+#mcq(
+  4,
+  [The Henry's law constants for gases $W, X, Y,$ and $Z$ in water at $298" K"$ are $0.5, 2.0, 35.0,$ and $76.0" kbar"$ respectively. The gas with the highest solubility in water at $298" K"$ and $1" bar"$ is:],
+  (
+    [Gas $Z$],
+    [Gas $Y$],
+    [Gas $X$],
+    [Gas $W$],
+  ),
+)
+#solution(
+  4,
+  [
+    From Henry's law: $p = K_H x ==> x = p / K_H$. At constant pressure $p$, solubility (mole fraction $x$) is inversely proportional to $K_H$. Gas $W$ possesses the lowest $K_H$ value ($0.5" kbar"$) and therefore exhibits the highest solubility in water.
+  ],
+  answer: [D],
+)
+
+#mcq(
+  5,
+  [For an ideal binary liquid solution formed by mixing volatile components $A$ and $B$, which set of thermodynamic parameters is strictly correct?],
+  (
+    [$Delta_("mix") H = 0, Delta_("mix") V = 0, Delta_("mix") S > 0$],
+    [$Delta_("mix") H > 0, Delta_("mix") V > 0, Delta_("mix") S = 0$],
+    [$Delta_("mix") H < 0, Delta_("mix") V < 0, Delta_("mix") S > 0$],
+    [$Delta_("mix") H = 0, Delta_("mix") V = 0, Delta_("mix") S = 0$],
+  ),
+)
+#solution(
+  5,
+  [
+    Ideal mixing exhibits identical forces ($f_(A B) = f_(A A) = f_(B B)$), so $Delta_("mix") H = 0$ and $Delta_("mix") V = 0$. Spontaneous mixing increases entropy, so $Delta_("mix") S > 0$ (and $Delta_("mix") G < 0$).
+  ],
+  answer: [A],
+)
+
+#pagebreak()
+
+#mcq(
+  6,
+  [When ethanol is mixed with acetone, the resulting solution exhibits a positive deviation from Raoult's law because:],
+  (
+    [Strong H-bonds form between ethanol and acetone],
+    [Acetone molecules break existing ethanol H-bonds],
+    [Both liquids become completely immiscible in each other],
+    [Dipole moment of acetone is neutralized by ethanol],
+  ),
+)
+#solution(
+  6,
+  [Acetone disrupts ethanol H-bonds, weakening net attraction ($f_(A B) < f_(A A)$) and increasing vapour pressure ($P_"exp" > P_"ideal"$).],
+  answer: [B],
+)
+
+#mcq(
+  7,
+  [A mixture of chloroform ($C H C l_3$) and acetone ($C H_3 C O C H_3$) exhibits negative deviation from Raoult's law. What thermal and volume changes occur during mixing?],
+  (
+    [$Delta H > 0$ and $Delta V > 0$ (endothermic, volume expansion)],
+    [$Delta H < 0$ and $Delta V < 0$ (exothermic, volume contraction)],
+    [$Delta H < 0$ and $Delta V > 0$ (exothermic, volume expansion)],
+    [$Delta H > 0$ and $Delta V < 0$ (endothermic, volume contraction)],
+  ),
+)
+#solution(
+  7,
+  [Forms strong new $C l_3 C - H dots.c O = C(C H_3)_2$ H-bonds, releasing heat ($Delta H < 0$) and contracting volume ($Delta V < 0$).],
+  answer: [B],
+)
+
+#mcq(
+  8,
+  [An azeotropic mixture of two liquids boils at a lower temperature than either pure component when:],
+  (
+    [The solution shows large negative deviation from Raoult's law],
+    [The solution behaves as an ideal solution at all concentrations],
+    [The solution shows large positive deviation from Raoult's law],
+    [The components undergo complete association in solution],
+  ),
+)
+#solution(
+  8,
+  [Maximum vapour pressure peak at a specific composition corresponds to a minimum boiling point (*minimum-boiling azeotrope*).],
+  answer: [C],
+)
+
+#mcq(
+  9,
+  [The freezing point depression constant ($K_f$) of water is $1.86" K kg mol"^(-1)$. When $18.0" g"$ of glucose ($M_2 = 180" g/mol"$) dissolves in $500" g"$ of water, the freezing point of the solution is:],
+  (
+    [$-0.372 degree"C"$],
+    [$-0.186 degree"C"$],
+    [$+0.372 degree"C"$],
+    [$-0.744 degree"C"$],
+  ),
+)
+#solution(
+  9,
+  [$m = (18 / 180) / 0.5 = 0.20" m"$. $Delta T_f = K_f m = 1.86 times 0.20 = 0.372" K"$. $T_f = 0 - 0.372 degree"C" = -0.372 degree"C"$.],
+  answer: [A],
+)
+
+#mcq(
+  10,
+  [Human red blood cells (RBCs) retain their normal structure in $0.9% (w/v) N a C l$ solution. If placed into a $0.2% (w/v) N a C l$ aqueous solution, the cells will:],
+  (
+    [Shrink and crenate due to exosmosis],
+    [Remain unchanged because both solutions are isotonic],
+    [Swell and burst (haemolysis) due to endosmosis],
+    [Dissolve completely into free lipid droplets],
+  ),
+)
+#solution(
+  10,
+  [$0.2% N a C l$ is *hypotonic* relative to RBC fluid ($0.9% N a C l$). Water enters cells via endosmosis, causing swelling and haemolysis.],
+  answer: [C],
+)
+
+#pagebreak()
+
+#mcq(
+  11,
+  [During the desalination of seawater via reverse osmosis, which condition must be maintained across the semi-permeable membrane?],
+  (
+    [Atmospheric pressure must be maintained on both sides of the membrane],
+    [A pressure lower than osmotic pressure must be applied to the seawater side],
+    [A pressure greater than osmotic pressure must be applied to the seawater compartment],
+    [The temperature must be raised above $100 degree"C"$ at 1 atm],
+  ),
+)
+#solution(
+  11,
+  [
+    Applying external pressure exceeding osmotic pressure ($P > Pi$) to the saline compartment forces pure water through the cellulose acetate SPM in reverse, purifying seawater into fresh water.
+  ],
+  answer: [C],
+)
+
+#mcq(
+  12,
+  [Assuming complete electrolytic dissociation, the van 't Hoff factor ($i$) for potassium sulphate ($K_2 S O_4$) and aluminium sulphate ($A l_2 (S O_4)_3$) are respectively:],
+  (
+    [2 and 3],
+    [3 and 5],
+    [3 and 4],
+    [2 and 5],
+  ),
+)
+#solution(
+  12,
+  [
+    $K_2 S O_4 arrow.r 2 K^+ + S O_4^(2-) ==> n = 3$ ions ($i = 3$). $A l_2 (S O_4)_3 arrow.r 2 A l^(3+) + 3 S O_4^(2-) ==> n = 5$ ions ($i = 5$).
+  ],
+  answer: [B],
+)
+
+#mcq(
+  13,
+  [A $0.01" M"$ aqueous solution of a monobasic weak acid $H A$ has a freezing point depression of $0.0205" K"$. If $K_f$ of water is $1.86" K kg mol"^(-1)$, the degree of dissociation ($alpha$) of the acid is approximately (assume $M approx m$):],
+  (
+    [$0.10$ ($10%$) ],
+    [$0.05$ ($5%$) ],
+    [$0.20$ ($20%$) ],
+    [$0.50$ ($50%$) ],
+  ),
+)
+#solution(
+  13,
+  [
+    Theoretical $Delta T_f^0 = 1.86 times 0.01 = 0.0186" K"$. Factor $i = 0.0205 / 0.0186 approx 1.10$. For $H A arrow.r.l H^+ + A^-$ ($n = 2$): $alpha = (i - 1)/(n - 1) = (1.10 - 1)/(2 - 1) = 0.10$ ($10%$).
+  ],
+  answer: [A],
+)
+
+#mcq(
+  14,
+  [When benzoic acid ($C_6 H_5 C O O H$, normal molar mass $= 122" g/mol"$) is dissolved in benzene, it dimerizes completely via intermolecular hydrogen bonding. The experimentally determined molar mass and van 't Hoff factor are:],
+  (
+    [$M_"obs" = 122" g/mol", i = 1.0$],
+    [$M_"obs" = 244" g/mol", i = 0.5$],
+    [$M_"obs" = 61" g/mol", i = 2.0$],
+    [$M_"obs" = 244" g/mol", i = 2.0$],
+  ),
+)
+#solution(
+  14,
+  [
+    Complete dimerization ($n = 2, beta = 1$) gives $i = 1 - (1 - 1/2)(1) = 0.50$. Since $i = M_("normal") / M_("obs")$, experimental molar mass doubles: $M_("obs") = 122 / 0.50 = 244" g/mol"$.
+  ],
+  answer: [B],
+)
+
+#mcq(
+  15,
+  [Which of the following $0.10" M"$ aqueous solutions will exhibit the largest elevation in boiling point ($Delta T_b$)?],
+  (
+    [$0.10" M Glucose" (C_6 H_12 O_6)$],
+    [$0.10" M Sodium Chloride" (N a C l)$],
+    [$0.10" M Barium Chloride" (B a C l_2)$],
+    [$0.10" M Aluminium Sulphate" (A l_2 (S O_4)_3)$],
+  ),
+)
+#solution(
+  15,
+  [
+    $Delta T_b prop i C$. Glucose ($i=1, i C=0.10$), $N a C l$ ($i=2, i C=0.20$), $B a C l_2$ ($i=3, i C=0.30$), $A l_2 (S O_4)_3$ ($i=5, i C=0.50$). Aluminium sulphate produces the largest effective particle count ($i=5$) and largest elevation.
+  ],
+  answer: [D],
+)

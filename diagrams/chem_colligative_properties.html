@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1440, height=880">
+  <title>Colligative Properties & Van 't Hoff Factor Matrix</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 1440px;
+      height: 880px;
+      background-color: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0F172A;
+      padding: 24px 32px;
+      overflow: hidden;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      border-bottom: 2px solid #E2E8F0;
+      padding-bottom: 12px;
+      margin-bottom: 18px;
+    }
+    .header-left h1 {
+      font-size: 24px;
+      font-weight: 800;
+      color: #071A4D;
+      letter-spacing: -0.02em;
+    }
+    .header-left p {
+      font-size: 13px;
+      color: #475569;
+      margin-top: 2px;
+      font-weight: 500;
+    }
+    .header-badge {
+      background: #EFF6FF;
+      color: #1E40AF;
+      border: 1px solid #BFDBFE;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 14px;
+      border-radius: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Top Grid: 4 Colligative Properties */
+    .top-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      height: 480px;
+      margin-bottom: 16px;
+    }
+
+    .prop-card {
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      box-shadow: none !important;
+    }
+
+    .card-head {
+      padding: 10px 14px;
+      border-bottom: 1px solid #E2E8F0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .card-head h2 {
+      font-size: 13.5px;
+      font-weight: 800;
+      color: #071A4D;
+    }
+    .tag {
+      font-size: 9.5px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+
+    .c-rlvp { border-top: 4px solid #2563EB; }
+    .c-rlvp .tag { background: #EFF6FF; color: #1E40AF; }
+
+    .c-ebp { border-top: 4px solid #D97706; }
+    .c-ebp .tag { background: #FEF3C7; color: #B45309; }
+
+    .c-dfp { border-top: 4px solid #0284C7; }
+    .c-dfp .tag { background: #E0F2FE; color: #0369A1; }
+
+    .c-osm { border-top: 4px solid #059669; }
+    .c-osm .tag { background: #ECFDF5; color: #047857; }
+
+    .card-body {
+      padding: 12px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex: 1;
+    }
+
+    .formula-pill {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 6px;
+      padding: 8px 10px;
+      font-family: "SF Mono", Consolas, Menlo, monospace;
+      font-size: 11px;
+      color: #0F172A;
+      line-height: 1.45;
+    }
+    .c-rlvp .formula-pill { border-left: 3px solid #2563EB; }
+    .c-ebp .formula-pill { border-left: 3px solid #D97706; }
+    .c-dfp .formula-pill { border-left: 3px solid #0284C7; }
+    .c-osm .formula-pill { border-left: 3px solid #059669; }
+
+    .bullet-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-size: 11.5px;
+      color: #334155;
+      line-height: 1.4;
+    }
+    .bullet-list li {
+      position: relative;
+      padding-left: 14px;
+    }
+    .bullet-list li::before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      font-weight: 800;
+      color: #2563EB;
+    }
+    .c-ebp .bullet-list li::before { color: #D97706; }
+    .c-dfp .bullet-list li::before { color: #0284C7; }
+    .c-osm .bullet-list li::before { color: #059669; }
+
+    .exam-note {
+      margin-top: auto;
+      background: #F1F5F9;
+      border-radius: 4px;
+      padding: 6px 10px;
+      font-size: 10.5px;
+      color: #475569;
+      line-height: 1.35;
+    }
+
+    /* Bottom Grid: Van 't Hoff Matrix */
+    .vanthoff-container {
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      border-radius: 8px;
+      padding: 14px 20px;
+      height: 240px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: none !important;
+      border-top: 4px solid #7C3AED;
+    }
+
+    .vh-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .vh-header h3 {
+      font-size: 15px;
+      font-weight: 800;
+      color: #071A4D;
+    }
+    .vh-def {
+      font-size: 11.5px;
+      color: #475569;
+      font-family: "SF Mono", Consolas, Menlo, monospace;
+    }
+
+    .vh-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      flex: 1;
+    }
+
+    .vh-box {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 6px;
+      padding: 10px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .vh-box h4 {
+      font-size: 12.5px;
+      font-weight: 800;
+      color: #071A4D;
+      display: flex;
+      justify-content: space-between;
+    }
+    .vh-badge {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+    .vh-normal .vh-badge { background: #EFF6FF; color: #1E40AF; }
+    .vh-dissoc .vh-badge { background: #FEF2F2; color: #B91C1C; }
+    .vh-assoc .vh-badge { background: #ECFDF5; color: #047857; }
+
+    .vh-formula {
+      font-family: "SF Mono", Consolas, Menlo, monospace;
+      font-size: 11.5px;
+      font-weight: 700;
+      color: #7C3AED;
+    }
+    .vh-desc {
+      font-size: 11px;
+      color: #475569;
+      line-height: 1.35;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-left">
+      <h1>The Four Colligative Properties & Van 't Hoff Factor (i) Matrix</h1>
+      <p>Particle-Number Dependence • Molar Mass Calculations • Electrolytic Dissociation & Molecular Association</p>
+    </div>
+    <div class="header-badge">CUET UG Chemistry · Unit 1 Solutions</div>
+  </header>
+
+  <!-- Top 4 Columns: Colligative Properties -->
+  <div class="top-grid">
+
+    <!-- Card 1: RLVP -->
+    <div class="prop-card c-rlvp">
+      <div class="card-head">
+        <h2>1. Relative Lowering of VP</h2>
+        <span class="tag">Raoult's Law</span>
+      </div>
+      <div class="card-body">
+        <div class="formula-pill">
+          (p₁° - p₁) / p₁° = i · x₂<br>
+          M₂ = [i · w₂ · M₁] / [w₁ · (Δp/p₁°)]
+        </div>
+        <ul class="bullet-list">
+          <li><strong>Surface Blockage:</strong> Involatile solute molecules occupy surface sites, reducing solvent vaporisation rate.</li>
+          <li><strong>Direct Mole Fraction:</strong> Relative lowering equals solute mole fraction (x₂), independent of temperature.</li>
+          <li><strong>Dilute Solutions:</strong> When n₂ &lt;&lt; n₁, x₂ ≈ n₂/n₁ = (w₂ M₁) / (M₂ w₁).</li>
+        </ul>
+        <div class="exam-note">
+          <strong>Key Distinction:</strong> Lowering of VP (Δp) depends on temperature; *Relative* lowering (Δp/p₁°) is temperature-invariant.
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2: Elevation of Boiling Point -->
+    <div class="prop-card c-ebp">
+      <div class="card-head">
+        <h2>2. Elevation of Boiling Point</h2>
+        <span class="tag">Ebullioscopy</span>
+      </div>
+      <div class="card-body">
+        <div class="formula-pill">
+          ΔT_b = T_b - T_b° = i · K_b · m<br>
+          M₂ = [1000 · i · K_b · w₂] / [ΔT_b · w₁]
+        </div>
+        <ul class="bullet-list">
+          <li><strong>Vapour Pressure Deficit:</strong> Solution boils when VP = 1 atm. Because VP is lowered, a higher temperature is required.</li>
+          <li><strong>Molal Constant (K_b):</strong> Ebullioscopic constant depends solely on solvent nature: K_b = (R · M₁ · T_b°²) / (1000 · Δ_vapH).</li>
+          <li><strong>Water Constant:</strong> K_b for H₂O = 0.52 K·kg·mol⁻¹ (units: K·kg·mol⁻¹ or °C/m).</li>
+        </ul>
+        <div class="exam-note">
+          <strong>Exam Trap:</strong> 1 molal NaCl elevates boiling point by 2 × 0.52 = 1.04 K, whereas 1 molal glucose elevates it by only 0.52 K.
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3: Depression of Freezing Point -->
+    <div class="prop-card c-dfp">
+      <div class="card-head">
+        <h2>3. Depression of Freezing Point</h2>
+        <span class="tag">Cryoscopy</span>
+      </div>
+      <div class="card-body">
+        <div class="formula-pill">
+          ΔT_f = T_f° - T_f = i · K_f · m<br>
+          M₂ = [1000 · i · K_f · w₂] / [ΔT_f · w₁]
+        </div>
+        <ul class="bullet-list">
+          <li><strong>Solid-Liquid Equilibrium:</strong> Solution freezes when liquid solvent VP equals pure solid solvent VP.</li>
+          <li><strong>Cryoscopic Constant (K_f):</strong> Depends solely on solvent properties: K_f = (R · M₁ · T_f°²) / (1000 · Δ_fusH).</li>
+          <li><strong>Water Constant:</strong> K_f for H₂O = 1.86 K·kg·mol⁻¹. Camphor has exceptionally high K_f (39.7) for Rast method.</li>
+        </ul>
+        <div class="exam-note">
+          <strong>Everyday Anti-Freeze:</strong> Ethylene glycol added to car radiators lowers freezing point in winter and elevates boiling point in summer.
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 4: Osmotic Pressure -->
+    <div class="prop-card c-osm">
+      <div class="card-head">
+        <h2>4. Osmotic Pressure & RO</h2>
+        <span class="tag">Macromolecules</span>
+      </div>
+      <div class="card-body">
+        <div class="formula-pill">
+          Π = i · C · R · T = i · (n₂ / V) · R · T<br>
+          M₂ = [i · w₂ · R · T] / [Π · V]
+        </div>
+        <ul class="bullet-list">
+          <li><strong>Semipermeable Membrane:</strong> Pure solvent flows spontaneously from dilute to concentrated solution through SPM.</li>
+          <li><strong>Pressure Definition:</strong> Hydrostatic excess pressure applied on solution to halt solvent ingress.</li>
+          <li><strong>Reverse Osmosis (RO):</strong> Applying external pressure P &gt; Π forces pure solvent from solution into pure water side (cellulose acetate SPM).</li>
+        </ul>
+        <div class="exam-note">
+          <strong>Best for Polymers:</strong> Preferred for proteins and polymers because Π is measurable at room temp and avoids thermal denaturation.
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bottom: Van 't Hoff Factor Matrix -->
+  <div class="vanthoff-container">
+    <div class="vh-header">
+      <h3>Van 't Hoff Factor (i) & Abnormal Molar Mass Determination</h3>
+      <div class="vh-def">i = Observed Colligative Property / Calculated Value = Normal Molar Mass / Experimental Molar Mass</div>
+    </div>
+    <div class="vh-grid">
+
+      <!-- Case 1: Non-Electrolyte -->
+      <div class="vh-box vh-normal">
+        <h4>Non-Electrolytes (Ideal) <span class="vh-badge">i = 1</span></h4>
+        <div class="vh-formula">i = 1 | M_exp = M_normal</div>
+        <div class="vh-desc">
+          No association or dissociation takes place in solution. Particle count equals dissolved formula unit count.<br>
+          <strong>Examples:</strong> Glucose (C₆H₁₂O₆), Urea (NH₂CONH₂), Sucrose (C₁₂H₂₂O₁₁).
+        </div>
+      </div>
+
+      <!-- Case 2: Dissociation -->
+      <div class="vh-box vh-dissoc">
+        <h4>Electrolytic Dissociation <span class="vh-badge">i &gt; 1</span></h4>
+        <div class="vh-formula">i = 1 + (n - 1)·α | M_exp &lt; M_normal</div>
+        <div class="vh-desc">
+          Solute splits into n ions. Colligative property increases proportionally, causing experimental molar mass to read artificially low.<br>
+          <strong>Examples:</strong> NaCl (n=2, i≈2), K₂SO₄ (n=3, i≈3), Al₂(SO₄)₃ (n=5, i≈5), BaCl₂ (n=3).
+        </div>
+      </div>
+
+      <!-- Case 3: Association -->
+      <div class="vh-box vh-assoc">
+        <h4>Molecular Association <span class="vh-badge">i &lt; 1</span></h4>
+        <div class="vh-formula">i = 1 + (1/n - 1)·β | M_exp &gt; M_normal</div>
+        <div class="vh-desc">
+          Solute molecules dimerise or polymerise via intermolecular H-bonding. Particle count drops, causing molar mass to read artificially high.<br>
+          <strong>Examples:</strong> Benzoic acid in benzene (n=2, i≈0.5, M_exp≈244 vs 122), Acetic acid in benzene.
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
