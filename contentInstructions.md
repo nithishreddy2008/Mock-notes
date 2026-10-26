@@ -167,6 +167,25 @@ Visual clarity is central to OurMocks notes. Every student should grasp the stru
        - Concept notes, diagrams, and the cheatsheet box must finish cleanly on Page 13 (for 16-page target) or Page 14 (for 17-page budget).
        - Cheatsheet boxes must never spill onto an isolated extra page; condense cheatsheet items into 4–6 compact multi-formula lines if necessary to preserve page boundary integrity.
 
+8. **STRICT CLAUDE DIAGRAM REFINEMENTS & ANTI-SLOP DISCIPLINE (v2.6 — Mandate for Upcoming Subjects: Chemistry & Beyond):**
+   - **Zero Box-Shadows ("Shadows are out. Borders are in."):**
+     - In all HTML/SVG diagram CSS, set `box-shadow: none !important;`.
+     - Visual depth and container separation must come purely from crisp hairline borders (`border: 1px solid #CBD5E1` or `#E2E8F0`) and subtle, elegant background tints (e.g. `#FFFFFF` cards on `#F8FAFC` canvas).
+     - Eliminates blurry drop-shadow artifacts and renders razor-sharp on high-DPI digital screens and physical print.
+   - **Strict Corner Radii (Max 8px–10px):**
+     - Avoid pill-shaped cards or bubbly rounded corners (`border-radius: 14px–16px` is banned).
+     - Standard container card radius is strictly **`8px` to `10px`** (`rx="8"` or `rx="10"` in SVG).
+     - Badges, pill tags, and metric indicators use compact **`4px` to `6px`** radii.
+   - **Connector Routing Discipline (Orthogonal Elbows vs Organic Paths):**
+     - Flowcharts, reaction pathways, electronic configurations, and multi-step processes must use **strictly orthogonal connections** (90-degree right-angle elbows with `r=8px` fillets). Diagonal slants are strictly banned.
+     - Smooth Bezier curves are reserved exclusively for radial mindmap branches radiating from a central topic hub or organic biological pathways.
+     - All connector labels must have an opaque masking background rectangle (`#FFFFFF` or `#F8FAFC`) so connector lines never cut through or bleed behind text.
+   - **Chemistry-Specific Diagram Directives (Next Subject Kickoff):**
+     - **Organic Chemistry:** Reaction mechanisms, name reactions, and synthetic conversion pathways must use clean orthogonal stage flows. Reaction conditions (reagents, temperature, catalyst, leaving groups) must be placed above/below arrows with opaque white masking rects.
+     - **Inorganic & Coordination Chemistry:** Crystal field splitting diagrams, coordination geometries (octahedral, tetrahedral, square planar), isomerism (cis/trans, optical), and metallurgy flowcharts must use clean vector strokes, crisp IUPAC labels, and zero neon glows.
+     - **Physical Chemistry:** Electrochemistry cells, Arrhenius plots, integrated rate law graphs, and thermodynamic cycle diagrams (Born-Haber cycle) must use crisp 2-axis grids with explicit units, labeled inflection points, and 1–2 focal accent callouts.
+     - **Mandatory 2 + 1 Rule:** Exactly two (2) specialized concept archetypes + one (1) full-topic synthesis mindmap per topic, embedded at **84%–86% width**.
+
 ---
 
 ## 5. LEGAL & ETHICAL RULES — THE CLAIMS POLICY (strict)
@@ -230,12 +249,14 @@ Visual clarity is central to OurMocks notes. Every student should grasp the stru
 - [ ] Every sub-topic has ≥ 2 full pages; no page has a large empty gap; no forced breaks inside content.
 - [ ] Body text is 11.5pt (v2.1); lists left-aligned; bullets bold-anchored; sentences short.
 - [ ] Zero paragraphs over ~4 sentences; no graduation-student tone anywhere; simple everyday words throughout (§1.1b).
-- [ ] Every box stacks content vertically (§4): no formula line pokes outside its box — check box pages at ~95 dpi.
 - [ ] Exactly three (3) diagrams per topic: 2 specialized conceptual archetypes + 1 mandatory full-topic summary mindmap (2 + 1 rule, §4.1).
+- [ ] Diagrams embedded at optimal 84%–88% width (minimum 75%; below 70% banned).
+- [ ] Diagram styling adheres to strict Claude anti-slop rules: zero box-shadows (`box-shadow: none !important;`), max 8–10px card corner radius, orthogonal connectors with masked labels, light background (`#F8FAFC`).
 - [ ] No diagram-type or archetype classification labels on the PNG (zero "Visual Archetype: ...", clean pedagogical headings only).
 - [ ] Zero text truncation: no clipped text at canvas edges/bottom, no sentences overflowing boxes/cards; layout verified.
 - [ ] No exam-claims language (search the source for: asks, loves, prefers, usually, engineered, every alternate year, favourite distractor, paper is built).
-- [ ] 10 MCQs match the target exam's pattern; every solution ends with `Answer: (X)`; no answer-key box.
+- [ ] Exactly 15 MCQs match the target exam's pattern across 3 dedicated pages (Q1–5, Q6–10, Q11–15); every solution ends with `answer: [X]`; no separate answer-key table.
+- [ ] Document adheres strictly to the 15–17 page budget (target 16 pages), with concept notes and cheatsheet finishing cleanly before practice MCQs.
 - [ ] Watermark on all content pages at 15% opacity; header/footer correct; footer page numbers.
 - [ ] www.ourmocks.com everywhere; no Telegram.
 - [ ] Typst compiles with zero errors/warnings; PDF opens; spot-read 3 random pages via page images.
