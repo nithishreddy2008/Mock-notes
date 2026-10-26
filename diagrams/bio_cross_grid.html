@@ -1,100 +1,256 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
+<title>Mendelian Genetics, Post-Mendelian Deviations & Pedigree Analysis</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
-  .wrap { width: 1480px; height: 668px; background: #fff; position: relative; }
-  .top {
-    height: 64px; background: #071A4D; display: flex; align-items: center;
-    justify-content: space-between; padding: 0 34px;
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px 30px;
+    overflow: hidden;
   }
-  .top .t { color: #fff; font-size: 23px; font-weight: 800; letter-spacing: .4px; }
-  .top .s { color: #B8FF34; font-size: 13px; font-weight: 700; letter-spacing: 2px; }
-  .panels { display: flex; gap: 24px; padding: 20px 30px 0; }
-  .panel { flex: 1; border: 1.5px solid #D5DCEA; border-radius: 14px; background: #FCFDFF; padding: 14px 16px; }
-  .panel h2 { font-size: 18.5px; color: #071A4D; font-weight: 800; margin-bottom: 2px; }
-  .panel .sub { font-size: 13.5px; color: #44506B; margin-bottom: 10px; }
-  .panel h2 span { color: #1F5EFF; }
-  table.pun { border-collapse: collapse; margin: 0 auto; }
-  table.pun td, table.pun th {
-    border: 1.5px solid #C6CFDF; width: 92px; height: 52px; text-align: center;
-    font-size: 16px; font-weight: 700; color: #1B2333;
+  .header {
+    background: #071A4D;
+    border-radius: 10px;
+    padding: 14px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 4px solid #B8FF34;
+    margin-bottom: 16px;
   }
-  table.pun th { background: #071A4D; color: #fff; font-size: 16px; width: 64px; }
-  table.pun th.corner { background: #1F5EFF; font-size: 11px; letter-spacing: .5px; line-height: 1.25; }
-  .tall  { background: #B8FF34; }
-  .het   { background: #DCFF8F; }
-  .dwarf { background: #EDF0F6; border-style: dashed !important; }
-  .ry  { background: #B8FF34; font-size: 14px; }
-  .rg  { background: #BFD5FF; font-size: 14px; }
-  .wy  { background: #E4E9F4; font-size: 14px; }
-  .wg  { background: #FFFFFF; font-size: 14px; border-style: dashed !important; }
-  .legend { display: flex; gap: 10px; justify-content: center; margin-top: 10px; flex-wrap: nowrap; }
-  .chip { font-size: 12.5px; font-weight: 700; color: #071A4D; border: 1.3px solid #C6CFDF;
-          border-radius: 20px; padding: 3px 11px; background: #fff; }
-  .chip i { display: inline-block; width: 11px; height: 11px; border-radius: 3px; margin-right: 5px;
-            vertical-align: -1px; border: 1px solid rgba(7,26,77,.25); }
-  .ratios { display: flex; gap: 12px; margin-top: 12px; }
-  .ratio { flex: 1; border-radius: 10px; padding: 8px 12px; font-size: 14.5px; font-weight: 700;
-           color: #071A4D; text-align: center; }
-  .ratio small { display: block; font-weight: 600; font-size: 12px; color: #44506B; margin-top: 2px; }
-  .r-gen { background: #E7EEFF; border: 1.3px solid #1F5EFF; }
-  .r-phe { background: #F2FFD4; border: 1.3px solid #7FB800; }
-  .r9 { background: #F2FFD4; border: 1.3px solid #7FB800; }
-  .note {
-    margin: 16px 30px 0; background: #071A4D; border-radius: 10px; padding: 9px 16px;
-    color: #fff; font-size: 14.5px; text-align: center;
+  .header h1 {
+    color: #FFFFFF;
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
   }
-  .note b { color: #B8FF34; }
+  .header .badge {
+    background: rgba(184, 255, 52, 0.15);
+    border: 1px solid #B8FF34;
+    color: #B8FF34;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 6px;
+    letter-spacing: 1px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1.15fr 1fr;
+    gap: 14px;
+    height: 660px;
+  }
+  .panel {
+    background: #FFFFFF;
+    border: 1.5px solid #CBD5E1;
+    border-radius: 10px;
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .panel-header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 6px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .panel-header h2 {
+    font-size: 15px;
+    font-weight: 800;
+    color: #071A4D;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .panel-tag {
+    font-size: 9.5px;
+    font-weight: 800;
+    padding: 2px 7px;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+  .tag-blue { background: #EBF2FF; color: #1F5EFF; }
+  .tag-green { background: #F1FCE8; color: #4E7A00; }
+  .tag-purple { background: #F3E8FF; color: #6B21A8; }
+
+  .content-block {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 8px 10px;
+    margin-bottom: 8px;
+    font-size: 11.5px;
+    line-height: 1.35;
+  }
+  .content-block b {
+    color: #071A4D;
+    display: block;
+    font-size: 11.5px;
+    margin-bottom: 2px;
+  }
+  .ratio-pill {
+    display: inline-block;
+    background: #071A4D;
+    color: #B8FF34;
+    font-weight: 800;
+    font-size: 10.5px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-top: 3px;
+    letter-spacing: 0.5px;
+  }
+  .footer-strip {
+    margin-top: 12px;
+    background: #071A4D;
+    border-radius: 8px;
+    padding: 10px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 5px solid #B8FF34;
+  }
+  .footer-strip .text {
+    color: #E2E8F0;
+    font-size: 11.5px;
+  }
+  .footer-strip .text b {
+    color: #B8FF34;
+  }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <div class="top">
-    <div class="t">TWO CROSSES EVERY GENETICS QUESTION STARTS FROM</div>
-    <div class="s">READING PUNNETT SQUARES</div>
+
+<div class="header">
+  <div>
+    <h1>MENDELIAN INHERITANCE, POST-MENDELIAN EXTENSIONS & PEDIGREE ANALYSIS</h1>
+    <div style="color: #94A3B8; font-size: 11.5px; margin-top: 2px;">NTA CUET UG Biology · Unit VII · Cross Mechanics, Allelic Interactions, Pleiotropy & Pedigree Logic</div>
   </div>
-
-  <div class="panels">
-    <div class="panel">
-      <h2>CROSS 1 <span>&#183;</span> MONOHYBRID — Tt &#215; Tt</h2>
-      <div class="sub">Tall (dominant T) &#215; Tall pea, both parents heterozygous — the F&#8321; self-cross</div>
-      <table class="pun">
-        <tr><th class="corner">F&#8321;<br>gametes</th><th>T</th><th>t</th></tr>
-        <tr><th>T</th><td class="tall">TT</td><td class="het">Tt</td></tr>
-        <tr><th>t</th><td class="het">Tt</td><td class="dwarf">tt</td></tr>
-      </table>
-      <div class="ratios">
-        <div class="ratio r-gen">Genotypes 1 TT : 2 Tt : 1 tt<small>all three genotypes are visible in the grid</small></div>
-        <div class="ratio r-phe">Phenotypes 3 Tall : 1 Dwarf<small>any T makes the plant tall — tt alone is dwarf</small></div>
-      </div>
-    </div>
-
-    <div class="panel">
-      <h2>CROSS 2 <span>&#183;</span> DIHYBRID — RrYy &#215; RrYy</h2>
-      <div class="sub">Seed shape R/r (round/wrinkled) &#215; seed colour Y/y (yellow/green) — 4 gamete types</div>
-      <table class="pun">
-        <tr><th class="corner">F&#8321;<br>gametes</th><th>RY</th><th>Ry</th><th>rY</th><th>ry</th></tr>
-        <tr><th>RY</th><td class="ry">RRYY</td><td class="ry">RRYy</td><td class="ry">RrYY</td><td class="ry">RrYy</td></tr>
-        <tr><th>Ry</th><td class="ry">RRYy</td><td class="rg">RRyy</td><td class="ry">RrYy</td><td class="rg">Rryy</td></tr>
-        <tr><th>rY</th><td class="ry">RrYY</td><td class="ry">RrYy</td><td class="wy">rrYY</td><td class="wy">rrYy</td></tr>
-        <tr><th>ry</th><td class="ry">RrYy</td><td class="rg">Rryy</td><td class="wy">rrYy</td><td class="wg">rryy</td></tr>
-      </table>
-      <div class="legend">
-        <span class="chip"><i style="background:#B8FF34"></i>Round-Yellow &#215;9</span>
-        <span class="chip"><i style="background:#BFD5FF"></i>Round-Green &#215;3</span>
-        <span class="chip"><i style="background:#E4E9F4"></i>Wrinkled-Yellow &#215;3</span>
-        <span class="chip"><i style="background:#fff"></i>Wrinkled-Green &#215;1</span>
-      </div>
-      <div class="ratios">
-        <div class="ratio r9">Phenotypes 9 : 3 : 3 : 1<small>count the 16 boxes group by group — colour makes the ratio visible</small></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="note">Read every Punnett square the same way: <b>list the gametes, fill the boxes, count each phenotype</b> — the ratio is simply the box count.</div>
+  <div class="badge">FIGURE 1 · CLASSICAL GENETICS</div>
 </div>
+
+<div class="grid">
+  <!-- Panel 1: Classical Mendelian Crosses -->
+  <div class="panel">
+    <div>
+      <div class="panel-header">
+        <h2>1. Classical Mendelian Crosses</h2>
+        <span class="panel-tag tag-blue">PUNNETT MATRICES</span>
+      </div>
+      <div class="content-block">
+        <b>Monohybrid Cross ($T t \times T t$)</b>
+        Cross studying a single gene locus (Plant height in <i>Pisum sativum</i>).<br>
+        • Phenotypic Ratio: <b>3 Tall : 1 Dwarf (3:1)</b><br>
+        • Genotypic Ratio: <b>1 TT : 2 Tt : 1 tt (1:2:1)</b><br>
+        <span class="ratio-pill">TEST CROSS: 1:1</span>
+      </div>
+      <div class="content-block">
+        <b>Dihybrid Cross ($R r Y y \times R r Y y$)</b>
+        Simultaneous segregation of two unlinked seed traits (Shape & Color).<br>
+        • Phenotypic: <b>9 Round Yellow : 3 Round Green : 3 Wrinkled Yellow : 1 Wrinkled Green</b><br>
+        • Dihybrid Genotypic: <b>1:2:1:2:4:2:1:2:1</b> (9 distinct genotypes)<br>
+        <span class="ratio-pill">DIHYBRID TEST CROSS: 1:1:1:1</span>
+      </div>
+      <div class="content-block">
+        <b>Mendelian Postulates</b>
+        1. <b>Law of Dominance:</b> Discrete factors occur in pairs; one dominates.<br>
+        2. <b>Law of Segregation:</b> Alleles separate cleanly in anaphase I (purity of gametes; universal with no exceptions).<br>
+        3. <b>Law of Independent Assortment:</b> Unlinked gene pairs assort independently.
+      </div>
+    </div>
+    <div class="content-block" style="background: #EBF2FF; border-color: #BFDBFE; margin-bottom: 0;">
+      <b style="color: #1F5EFF;">Test Cross Diagnostic:</b>
+      Unknown dominant phenotype ($T\_$) crossed with homozygous recessive ($t t$) to determine zygosity.
+    </div>
+  </div>
+
+  <!-- Panel 2: Post-Mendelian Allelic & Non-Allelic Deviations -->
+  <div class="panel">
+    <div>
+      <div class="panel-header">
+        <h2>2. Non-Mendelian Extensions</h2>
+        <span class="panel-tag tag-green">ALLELIC INTERACTIONS</span>
+      </div>
+      <div class="content-block">
+        <b>Incomplete Dominance (Snapdragon / Dog flower)</b>
+        In <i>Antirrhinum majus</i> & <i>Mirabilis jalapa</i>, red ($R R$) $\times$ white ($r r$) yields pink ($R r$). Neither allele completely dominates.<br>
+        <span class="ratio-pill">PHENOTYPIC = GENOTYPIC = 1:2:1</span>
+      </div>
+      <div class="content-block">
+        <b>Co-Dominance (ABO Blood Groups in Humans)</b>
+        Controlled by gene <i>I</i> with 3 alleles: $I^A, I^B, i$. Both $I^A$ and $I^B$ express distinct surface sugar antigens equally in heterozygote $I^A I^B$ (Blood Group AB).<br>
+        • Population has <b>6 genotypes</b> and <b>4 phenotypes</b> (A, B, AB, O).
+      </div>
+      <div class="content-block">
+        <b>Pleiotropy (Single Gene $\to$ Multiple Traits)</b>
+        A single mutated gene influences multiple unrelated phenotypic traits.<br>
+        • <b>Phenylketonuria (PKU):</b> Defective phenylalanine hydroxylase causes mental retardation, hair & skin hypopigmentation.<br>
+        • <b>Sickle-Cell Anemia:</b> $\beta$-globin point mutation causes RBC sickling, anemia, splenic fibrosis, and malaria resistance.
+      </div>
+      <div class="content-block">
+        <b>Polygenic Inheritance (Quantitative Genetics)</b>
+        Traits controlled by 3 or more additive genes (e.g., Human skin color: $A, B, C$). Phenotypic distribution shows a smooth bell-shaped Gaussian curve.
+      </div>
+    </div>
+    <div class="content-block" style="background: #F1FCE8; border-color: #D9F99D; margin-bottom: 0;">
+      <b style="color: #4E7A00;">Multiple Allelism Rule:</b>
+      Multiple alleles (e.g., ABO blood groups) can be observed <b>only in population studies</b>, not in an individual (who carries at most 2 alleles).
+    </div>
+  </div>
+
+  <!-- Panel 3: Pedigree Analysis Logic -->
+  <div class="panel">
+    <div>
+      <div class="panel-header">
+        <h2>3. Pedigree Analysis Blueprint</h2>
+        <span class="panel-tag tag-purple">CLINICAL INHERITANCE</span>
+      </div>
+      <div class="content-block">
+        <b>Standard Pedigree Notation</b>
+        • Square = Male; Circle = Female; Diamond = Sex unspecified.<br>
+        • Shaded / Solid = Affected; Open = Normal.<br>
+        • Horizontal bar = Mating; Double bar = Consanguineous mating.<br>
+        • Arrow pointing to symbol = Proband / Propositus.
+      </div>
+      <div class="content-block">
+        <b>Autosomal Dominant Pattern</b>
+        • Trait appears in <b>every generation</b> without skipping.<br>
+        • Affected child always has at least one affected parent.<br>
+        • Equal frequency in males and females.<br>
+        • <i>NCERT Benchmark Example:</i> <b>Myotonic Dystrophy</b>.
+      </div>
+      <div class="content-block">
+        <b>Autosomal Recessive Pattern</b>
+        • Trait often <b>skips generations</b>.<br>
+        • Unaffected carrier parents ($A a \times A a$) produce affected child ($a a$) with 25% probability.<br>
+        • Consanguinity increases incidence.<br>
+        • <i>NCERT Benchmark:</i> <b>Sickle-Cell Anemia</b>, <b>Thalassemia</b>.
+      </div>
+      <div class="content-block">
+        <b>X-Linked Recessive Pattern</b>
+        • <b>Criss-Cross Inheritance:</b> Carrier mother transmits to 50% of sons. Affected father never transmits directly to sons; passes mutated allele to 100% of daughters (carriers).<br>
+        • <i>NCERT Benchmark:</i> <b>Hemophilia</b>, <b>Red-Green Color Blindness</b>.
+      </div>
+    </div>
+    <div class="content-block" style="background: #F3E8FF; border-color: #E9D5FF; margin-bottom: 0;">
+      <b style="color: #6B21A8;">Pedigree Diagnostic Rule:</b>
+      If an unaffected mother and unaffected father have an affected daughter, the trait <b>must be autosomal recessive</b> (never X-linked recessive).
+    </div>
+  </div>
+</div>
+
+<div class="footer-strip">
+  <div class="text">
+    <b>NTA CUET Core Insight:</b> Mendel selected <i>Pisum sativum</i> due to 7 clear pairs of contrasting characters, bisexual self-pollinating flowers, short life cycle, and prolific seed output. Incomplete dominance does NOT support blending inheritance; parental alleles re-emerge in $F_2$.
+  </div>
+</div>
+
 </body>
 </html>

@@ -1,116 +1,292 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
+<title>Principles of Inheritance & Variation: Master Synthesis Mindmap</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
-  .wrap { width: 1480px; height: 1060px; position: relative; background: #fff; }
-  svg.wires { position: absolute; inset: 0; width: 1480px; height: 1060px; }
-  .center {
-    position: absolute; left: 555px; top: 380px; width: 370px; height: 116px;
-    background: #071A4D; border-radius: 16px; display: flex; flex-direction: column;
-    align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(7,26,77,.25);
-    border-bottom: 5px solid #B8FF34; text-align: center; padding: 0 12px;
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 20px 28px;
+    overflow: hidden;
+    position: relative;
   }
-  .center .t { color: #fff; font-size: 20px; font-weight: 800; letter-spacing: .4px; line-height: 1.18; }
-  .center .s { color: #B8FF34; font-size: 13px; font-weight: 700; letter-spacing: 2px; margin-top: 6px; }
+  .header {
+    background: #071A4D;
+    border-radius: 10px;
+    padding: 12px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 4px solid #B8FF34;
+    margin-bottom: 12px;
+  }
+  .header h1 {
+    color: #FFFFFF;
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+  }
+  .header .badge {
+    background: rgba(184, 255, 52, 0.15);
+    border: 1px solid #B8FF34;
+    color: #B8FF34;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 6px;
+    letter-spacing: 1px;
+  }
+  .map-container {
+    position: relative;
+    width: 1384px;
+    height: 770px;
+  }
+  svg.connectors {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+  }
+  .center-hub {
+    position: absolute;
+    left: 542px;
+    top: 290px;
+    width: 300px;
+    height: 160px;
+    background: #071A4D;
+    border: 2px solid #1F5EFF;
+    border-bottom: 5px solid #B8FF34;
+    border-radius: 12px;
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 10;
+  }
+  .center-hub h2 {
+    color: #FFFFFF;
+    font-size: 16.5px;
+    font-weight: 800;
+    letter-spacing: 0.6px;
+    line-height: 1.25;
+  }
+  .center-hub .sub {
+    color: #B8FF34;
+    font-size: 11px;
+    font-weight: 700;
+    margin: 4px 0 8px;
+  }
+  .center-hub .desc {
+    color: #CBD5E1;
+    font-size: 10.5px;
+    line-height: 1.35;
+  }
   .card {
-    position: absolute; width: 470px; background: #FCFDFF; border: 1.5px solid #D5DCEA;
-    border-radius: 14px; padding: 13px 16px 12px;
+    position: absolute;
+    width: 480px;
+    background: #FFFFFF;
+    border: 1.5px solid #CBD5E1;
+    border-radius: 10px;
+    padding: 14px 16px;
+    z-index: 5;
   }
-  .card h2 { font-size: 20px; color: #071A4D; font-weight: 800; margin-bottom: 7px;
-             padding-bottom: 5px; border-bottom: 3px solid; display: inline-block; }
-  .leaf { font-size: 14.5px; color: #1B2333; margin: 5px 0; padding-left: 16px; position: relative; line-height: 1.32; }
-  .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
-  .b .leaf::before { background: #1F5EFF; }
-  .l .leaf::before { background: #7FB800; }
-  .leaf b { color: #071A4D; }
-  .b h2 { border-color: #1F5EFF; }
-  .l h2 { border-color: #7FB800; }
-  .left { left: 30px; }
-  .right { left: 980px; }
-  .exc {
-    position: absolute; left: 530px; top: 852px; width: 420px; background: #FFF3EC;
-    border: 1.5px solid #D2481F; border-radius: 12px; padding: 10px 14px;
+  .card-tl { left: 20px; top: 10px; height: 350px; }
+  .card-bl { left: 20px; top: 380px; height: 380px; }
+  .card-tr { left: 884px; top: 10px; height: 350px; }
+  .card-br { left: 884px; top: 380px; height: 380px; }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid #E2E8F0;
   }
-  .exc h2 { font-size: 17px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
-  .exc .leaf { font-size: 12.8px; margin: 3px 0; padding-left: 14px; color: #7A2A12; }
-  .exc .leaf::before { background: #D2481F; }
-  .exc b { color: #B4380F; }
+  .card-header h3 {
+    font-size: 14px;
+    font-weight: 800;
+    color: #071A4D;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .card-badge {
+    font-size: 9.5px;
+    font-weight: 800;
+    padding: 2px 7px;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+  .badge-blue { background: #EBF2FF; color: #1F5EFF; }
+  .badge-green { background: #F1FCE8; color: #4E7A00; }
+  .badge-amber { background: #FEF3C7; color: #92400E; }
+  .badge-rose { background: #FFE4E6; color: #9F1239; }
+
+  .leaf-item {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    padding: 6px 9px;
+    margin-bottom: 6px;
+    font-size: 11px;
+    line-height: 1.35;
+  }
+  .leaf-item b {
+    color: #071A4D;
+    display: block;
+    font-size: 11px;
+    margin-bottom: 1px;
+  }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <svg class="wires" viewBox="0 0 1480 1060">
-    <path d="M 555 415 C 505 415, 520 165, 502 160" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
-    <path d="M 555 438 C 515 438, 520 430, 502 430" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 555 461 C 505 461, 520 700, 502 705" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
-    <path d="M 925 415 C 975 415, 960 165, 978 160" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 925 438 C 965 438, 960 430, 978 430" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
-    <path d="M 925 461 C 975 461, 960 700, 978 705" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 740 496 C 740 620, 740 790, 740 850" fill="none" stroke="#D2481F" stroke-width="2.5" stroke-dasharray="7 5" opacity=".6"/>
+
+<div class="header">
+  <div>
+    <h1>PRINCIPLES OF INHERITANCE & VARIATION: MASTER SYNTHESIS MINDMAP</h1>
+    <div style="color: #94A3B8; font-size: 11.5px; margin-top: 2px;">Comprehensive Curriculum Map · Mendelian Laws, Gene Interactions, Linkage, Sex Determination & Genetic Pathology (CUET UG 2027)</div>
+  </div>
+  <div class="badge">FIGURE 3 · MASTER SYNTHESIS</div>
+</div>
+
+<div class="map-container">
+  <!-- Connectors -->
+  <svg class="connectors" viewBox="0 0 1384 770">
+    <!-- Center to TL (Mendelian Genetics) -->
+    <path d="M 542 340 H 500 V 180 H 500" fill="none" stroke="#1F5EFF" stroke-width="2"/>
+    <rect x="445" y="245" width="110" height="18" rx="4" fill="#EBF2FF" stroke="#BFDBFE"/>
+    <text x="500" y="258" text-anchor="middle" font-size="9.5" font-weight="700" fill="#1F5EFF">MENDELIAN AXIS</text>
+
+    <!-- Center to BL (Non-Mendelian) -->
+    <path d="M 542 400 H 500 V 560 H 500" fill="none" stroke="#4E7A00" stroke-width="2"/>
+    <rect x="440" y="475" width="120" height="18" rx="4" fill="#F1FCE8" stroke="#D9F99D"/>
+    <text x="500" y="488" text-anchor="middle" font-size="9.5" font-weight="700" fill="#4E7A00">EXTENSIONS AXIS</text>
+
+    <!-- Center to TR (Chromosomal & Linkage) -->
+    <path d="M 842 340 H 884 V 180 H 884" fill="none" stroke="#92400E" stroke-width="2"/>
+    <rect x="830" y="245" width="110" height="18" rx="4" fill="#FEF3C7" stroke="#FDE68A"/>
+    <text x="885" y="258" text-anchor="middle" font-size="9.5" font-weight="700" fill="#92400E">CYTOGENETICS</text>
+
+    <!-- Center to BR (Human Genetic Pathology) -->
+    <path d="M 842 400 H 884 V 560 H 884" fill="none" stroke="#9F1239" stroke-width="2"/>
+    <rect x="835" y="475" width="100" height="18" rx="4" fill="#FFE4E6" stroke="#FECDD3"/>
+    <text x="885" y="488" text-anchor="middle" font-size="9.5" font-weight="700" fill="#9F1239">DISORDERS AXIS</text>
   </svg>
 
-  <div class="center">
-    <div class="t">PRINCIPLES OF INHERITANCE AND VARIATION</div>
-    <div class="s">UNIT VII &#183; COMPLETE CHAPTER MAP</div>
+  <!-- Central Hub -->
+  <div class="center-hub">
+    <h2>INHERITANCE & VARIATION</h2>
+    <div class="sub">GENETICS CONCEPT HUB</div>
+    <div class="desc">
+      Transmission of characters from parents to offspring (Heredity) and structural/functional differences exhibited by progeny (Variation).
+    </div>
   </div>
 
-  <div class="card left b" style="top:62px">
-    <h2>Mendel's Three Laws</h2>
-    <div class="leaf"><b>Law of dominance:</b> in a contrasting pair, one factor rules the F&#8321; — the other hides, unharmed</div>
-    <div class="leaf"><b>Law of segregation:</b> paired factors separate at gamete formation — every gamete carries one</div>
-    <div class="leaf"><b>Law of independent assortment:</b> one pair sorts freely of another pair — dihybrid 9:3:3:1</div>
-    <div class="leaf"><b>Monohybrid F&#8322;:</b> genotype 1 : 2 : 1 &#183; phenotype 3 : 1 (tall vs dwarf pea)</div>
+  <!-- Top-Left Card: Mendelian Genetics -->
+  <div class="card card-tl">
+    <div class="card-header">
+      <h3>1. Mendelian Genetics & Principles</h3>
+      <span class="card-badge badge-blue">CLASSICAL RULES</span>
+    </div>
+    <div class="leaf-item">
+      <b>Gregor Johann Mendel (1856–1863)</b>
+      Conducted hybridization experiments on garden pea (<i>Pisum sativum</i>) for 7 years; statistical analysis of large sample size.
+    </div>
+    <div class="leaf-item">
+      <b>Seven Contrasting Character Pairs</b>
+      Stem height, flower color, flower position, pod shape, pod color, seed shape, seed color.
+    </div>
+    <div class="leaf-item">
+      <b>Monohybrid Cross Ratios</b>
+      Phenotypic: <b>3 Tall : 1 Dwarf</b>; Genotypic: <b>1 TT : 2 Tt : 1 tt (1:2:1)</b>. Test cross: <b>1:1</b>.
+    </div>
+    <div class="leaf-item">
+      <b>Dihybrid Cross & Independent Assortment</b>
+      Phenotypic: <b>9:3:3:1</b>; Dihybrid Test Cross: <b>1:1:1:1</b>. Unlinked genes assort independently in meiosis.
+    </div>
   </div>
 
-  <div class="card right l" style="top:62px">
-    <h2>Deviations from Mendelism</h2>
-    <div class="leaf"><b>Incomplete dominance:</b> F&#8321; is a blend — red &#215; white snapdragon &#8594; pink; F&#8322; 1 : 2 : 1</div>
-    <div class="leaf"><b>Co-dominance:</b> both alleles show side by side — blood group AB expresses I<sup>A</sup> and I<sup>B</sup></div>
-    <div class="leaf"><b>Multiple alleles:</b> one gene, many forms in the population — ABO carries I<sup>A</sup>, I<sup>B</sup>, i</div>
-    <div class="leaf"><b>Still two per person:</b> any individual carries only 2 alleles — one from each parent</div>
+  <!-- Bottom-Left Card: Post-Mendelian Extensions -->
+  <div class="card card-bl">
+    <div class="card-header">
+      <h3>2. Post-Mendelian Gene Interactions</h3>
+      <span class="card-badge badge-green">NON-MENDELIAN</span>
+    </div>
+    <div class="leaf-item">
+      <b>Incomplete Dominance (1:2:1)</b>
+      <i>Antirrhinum majus</i> (snapdragon): Red ($R R$) $\times$ White ($r r$) $\to$ Pink ($R r$). Phenotypic and genotypic ratios coincide.
+    </div>
+    <div class="leaf-item">
+      <b>Co-Dominance & Multiple Alleles</b>
+      Human ABO blood groups (gene $I$ with $I^A, I^B, i$); both $I^A$ and $I^B$ co-dominant; 6 genotypes, 4 phenotypes.
+    </div>
+    <div class="leaf-item">
+      <b>Pleiotropy</b>
+      Single gene mutation triggers multiple phenotypic effects (Phenylketonuria, Sickle-cell anemia).
+    </div>
+    <div class="leaf-item">
+      <b>Polygenic Inheritance</b>
+      Continuous quantitative trait governed by 3+ cumulative additive genes (Human skin color $A A B B C C$ to $a a b b c c$).
+    </div>
   </div>
 
-  <div class="card left l" style="top:322px">
-    <h2>Test Cross &amp; Dihybrid Cross</h2>
-    <div class="leaf"><b>Test cross:</b> F&#8321; &#215; recessive parent — a 1 : 1 result proves the F&#8321; was heterozygous</div>
-    <div class="leaf"><b>Back cross:</b> offspring taken back to its own parent or a parent-like plant</div>
-    <div class="leaf"><b>Dihybrid cross:</b> RrYy &#215; RrYy — 16-box Punnett grid, 4 gamete types RY Ry rY ry</div>
-    <div class="leaf"><b>Dihybrid test cross:</b> F&#8321; &#215; double recessive — 1 : 1 : 1 : 1, four phenotypes equal</div>
+  <!-- Top-Right Card: Chromosomal Theory & Linkage -->
+  <div class="card card-tr">
+    <div class="card-header">
+      <h3>3. Chromosomal Theory & Linkage</h3>
+      <span class="card-badge badge-amber">T.H. MORGAN & MAPPING</span>
+    </div>
+    <div class="leaf-item">
+      <b>Sutton-Boveri Chromosome Theory (1902)</b>
+      Meiotic chromosome segregation parallels Mendelian factor segregation.
+    </div>
+    <div class="leaf-item">
+      <b>Morgan's Linkage in Drosophila</b>
+      Yellow-white (Cross A: 1.3% recomb, tight linkage) vs White-miniature (Cross B: 37.2% recomb, loose linkage).
+    </div>
+    <div class="leaf-item">
+      <b>Genetic Mapping (Sturtevant)</b>
+      Recombination frequency directly maps distance between genes (1% = 1 cM).
+    </div>
+    <div class="leaf-item">
+      <b>Sex Determination Systems</b>
+      $XX-XY$ (Human, Drosophila); $XX-XO$ (Grasshopper); $ZZ-ZW$ (Birds, female heterogamety); Haplodiploidy (Honeybee).
+    </div>
   </div>
 
-  <div class="card right b" style="top:322px">
-    <h2>Chromosomes Carry Genes</h2>
-    <div class="leaf"><b>Sutton &amp; Boveri (1902):</b> chromosomes are the physical carriers of Mendel's factors</div>
-    <div class="leaf"><b>Linkage:</b> genes on the same chromosome travel together — tight linkage, fewer recombinants</div>
-    <div class="leaf"><b>Recombination:</b> crossing over swaps chromosome pieces and splits linked genes</div>
-    <div class="leaf"><b>Morgan's fly work:</b> white eye in Drosophila sits on the X chromosome — X-linked</div>
-  </div>
-
-  <div class="card left b" style="top:600px">
-    <h2>Polygenic Inheritance</h2>
-    <div class="leaf"><b>Many genes + environment:</b> each gene adds a small dose — continuous variation, no clean ratios</div>
-    <div class="leaf"><b>Examples:</b> human skin colour, human height, wheat kernel colour (Nilsson-Ehle)</div>
-    <div class="leaf"><b>F&#8322; shape:</b> a bell-shaped range of shades instead of a 3 : 1 split</div>
-  </div>
-
-  <div class="card right l" style="top:600px">
-    <h2>Sex Determination &amp; Disorders</h2>
-    <div class="leaf"><b>Patterns:</b> humans XX-XY &#183; birds ZW (males ZZ) &#183; grasshopper XO &#183; honeybee haplo-diploid (16 &#183; 32)</div>
-    <div class="leaf"><b>Mendelian:</b> haemophilia, sickle-cell (GAG&#8594;GUG), thalassemia, PKU, colour blindness</div>
-    <div class="leaf"><b>Chromosomal:</b> Down's trisomy 21 (47) &#183; Klinefelter XXY (47) &#183; Turner XO (45)</div>
-    <div class="leaf"><b>Pedigree:</b> family tree of a trait — square = male, circle = female, shaded = affected</div>
-  </div>
-
-  <div class="exc">
-    <h2>COMMON ERRORS &amp; TRAPS</h2>
-    <div class="leaf"><b>Blend &#8800; both-show:</b> incomplete dominance mixes; co-dominance displays both alleles</div>
-    <div class="leaf"><b>1 : 2 : 1 shows as phenotype</b> only in incomplete dominance — that coincidence is the trap</div>
-    <div class="leaf"><b>AB &#215; O parents:</b> children can be A or B only — never AB, never O</div>
-    <div class="leaf"><b>Swap-proof the karyotypes:</b> Turner XO = female, 45 &#183; Klinefelter XXY = male, 47</div>
+  <!-- Bottom-Right Card: Genetic Disorders & Pedigree -->
+  <div class="card card-br">
+    <div class="card-header">
+      <h3>4. Human Genetic Pathology</h3>
+      <span class="card-badge badge-rose">MENDELIAN & ANEUPLOIDIES</span>
+    </div>
+    <div class="leaf-item">
+      <b>Mendelian Disorders (Point Mutations)</b>
+      • Hemophilia (X-linked recessive; clotting defect).<br>
+      • Sickle-Cell Anemia (Autosomal recessive; $\beta$-globin 6th codon GAG $\to$ GUG).<br>
+      • Thalassemia (Quantitative globin deficiency; $\alpha$ on chr 16, $\beta$ on chr 11).
+    </div>
+    <div class="leaf-item">
+      <b>Chromosomal Aneuploidies</b>
+      • Down Syndrome: Trisomy 21 ($47, +21$; simian crease, furrowed tongue).<br>
+      • Klinefelter Syndrome: Trisomy $47, \text{"XXY"}$ (masculine with gynaecomastia).<br>
+      • Turner Syndrome: Monosomy $45, \text{"XO"}$ (sterile female, webbed neck).
+    </div>
+    <div class="leaf-item">
+      <b>Pedigree Analysis</b>
+      Autosomal dominant (no skips; Myotonic dystrophy) vs Autosomal recessive (skips; Sickle cell).
+    </div>
   </div>
 </div>
+
 </body>
 </html>
