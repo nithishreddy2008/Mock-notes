@@ -1,95 +1,299 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
+<title>Assisted Reproductive Technologies (ART): Decision Tree & Protocols</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
-  .wrap { width: 1480px; background: #fff; padding: 26px 30px 28px; }
-  .title { background: #071A4D; border-radius: 14px; padding: 16px 24px 14px; margin-bottom: 20px;
-           border-bottom: 5px solid #B8FF34; display: flex; align-items: baseline; justify-content: space-between; }
-  .title .t { color: #fff; font-size: 27px; font-weight: 800; letter-spacing: .5px; }
-  .title .s { color: #B8FF34; font-size: 13.5px; font-weight: 700; letter-spacing: 1.6px; }
-  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-  .m { background: #FCFDFF; border: 1.5px solid #D5DCEA; border-radius: 14px; padding: 14px 16px 13px; }
-  .m h2 { color: #071A4D; font-size: 23px; font-weight: 800; letter-spacing: .5px; }
-  .m .full { color: #1F5EFF; font-size: 13px; font-weight: 700; margin: 2px 0 9px; }
-  .row { margin: 7px 0; font-size: 13.5px; color: #1B2333; line-height: 1.34; }
-  .row .k { display: inline-block; background: #EEF1F8; color: #071A4D; font-size: 11px; font-weight: 800;
-            letter-spacing: .8px; border-radius: 6px; padding: 2px 7px; margin-bottom: 3px; }
-  .route { display: inline-block; background: #F6FFDF; border: 1.5px solid #7FB800; color: #4A6B00;
-           font-size: 12.5px; font-weight: 800; border-radius: 7px; padding: 2px 8px; }
-  .m b { color: #071A4D; }
-  .m.check { background: #071A4D; border-color: #071A4D; }
-  .m.check h2 { color: #B8FF34; font-size: 19px; }
-  .m.check .row { color: #E6ECF8; }
-  .m.check .row .k { background: rgba(255,255,255,.12); color: #B8FF34; }
-  .m.check .route { background: rgba(184,255,52,.14); border-color: #B8FF34; color: #B8FF34; }
-  .m.check b { color: #fff; }
-  .strip { margin-top: 20px; background: #071A4D; border-radius: 14px; padding: 14px 24px;
-           border-left: 8px solid #B8FF34; color: #fff; font-size: 15.5px; font-weight: 600; line-height: 1.4; }
-  .strip b { color: #B8FF34; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px 30px;
+    overflow: hidden;
+  }
+  .header {
+    background: #071A4D;
+    border-radius: 10px;
+    padding: 14px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 4px solid #B8FF34;
+    margin-bottom: 16px;
+  }
+  .header h1 {
+    color: #FFFFFF;
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+  }
+  .header .badge {
+    background: rgba(184, 255, 52, 0.15);
+    border: 1px solid #B8FF34;
+    color: #B8FF34;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 6px;
+    letter-spacing: 1px;
+  }
+  .layout {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 16px;
+    height: 650px;
+  }
+  .sidebar {
+    background: #FFFFFF;
+    border: 1.5px solid #CBD5E1;
+    border-radius: 10px;
+    padding: 16px 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .sidebar h2 {
+    font-size: 14px;
+    font-weight: 800;
+    color: #071A4D;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #1F5EFF;
+    padding-bottom: 4px;
+  }
+  .side-box {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 8px 10px;
+    margin-bottom: 8px;
+    font-size: 11px;
+    line-height: 1.35;
+  }
+  .side-box b {
+    color: #071A4D;
+    display: block;
+    margin-bottom: 2px;
+    font-size: 11.5px;
+  }
+  .main-flow {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .art-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    flex-grow: 1;
+  }
+  .protocol-card {
+    background: #FFFFFF;
+    border: 1.5px solid #E2E8F0;
+    border-radius: 10px;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+  }
+  .card-pill {
+    align-self: flex-start;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 3px 8px;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+  }
+  .pill-blue { background: #EBF2FF; color: #1F5EFF; border: 1px solid #BFDBFE; }
+  .pill-green { background: #F1FCE8; color: #4E7A00; border: 1px solid #D9F99D; }
+  .pill-purple { background: #F3E8FF; color: #6B21A8; border: 1px solid #E9D5FF; }
+
+  .protocol-card h3 {
+    font-size: 17px;
+    font-weight: 800;
+    color: #071A4D;
+    margin-bottom: 4px;
+  }
+  .protocol-card .subtitle {
+    font-size: 11px;
+    font-weight: 600;
+    color: #64748B;
+    margin-bottom: 12px;
+  }
+  .step-node {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    padding: 8px 10px;
+    margin-bottom: 8px;
+    font-size: 11.5px;
+    line-height: 1.35;
+  }
+  .step-node b {
+    color: #071A4D;
+    font-weight: 700;
+  }
+  .transfer-target {
+    display: inline-block;
+    padding: 3px 7px;
+    border-radius: 5px;
+    font-weight: 800;
+    font-size: 10.5px;
+    margin-top: 4px;
+  }
+  .target-tube { background: #FEF3C7; color: #92400E; border: 1px solid #FDE68A; }
+  .target-uterus { background: #EEF2FF; color: #3730A3; border: 1px solid #C7D2FE; }
+
+  .bottom-regulatory {
+    background: #FFFFFF;
+    border: 1.5px solid #CBD5E1;
+    border-radius: 10px;
+    padding: 12px 18px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .reg-box {
+    font-size: 11.5px;
+    line-height: 1.35;
+  }
+  .reg-box b {
+    color: #071A4D;
+  }
+  .footer-strip {
+    margin-top: 12px;
+    background: #071A4D;
+    border-radius: 8px;
+    padding: 10px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 5px solid #B8FF34;
+  }
+  .footer-strip .text {
+    color: #E2E8F0;
+    font-size: 11.5px;
+  }
+  .footer-strip .text b {
+    color: #B8FF34;
+  }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <div class="title">
-    <div class="t">ASSISTED REPRODUCTIVE TECHNOLOGIES AT A GLANCE</div>
-    <div class="s">UNIT VI &#183; INFERTILITY SPECIALISTS' TOOLKIT</div>
+
+<div class="header">
+  <div>
+    <h1>ASSISTED REPRODUCTIVE TECHNOLOGIES (ART) & DIAGNOSTIC PATHWAYS</h1>
+    <div style="color: #94A3B8; font-size: 11.5px; margin-top: 2px;">NTA CUET UG Biology · Infertility Protocols, Gamete Handling & Embryo Transfer Guidelines</div>
   </div>
+  <div class="badge">FIGURE 2 · CLINICAL DECISION TREE</div>
+</div>
 
-  <div class="grid">
-    <div class="m">
-      <h2>IVF</h2>
-      <div class="full">In Vitro Fertilisation — &quot;in glass&quot;, outside the body</div>
-      <div class="row"><span class="k">TRANSFERRED</span><br><b>Embryo grown in glassware</b>, moved at 8 or more blastomeres.</div>
-      <div class="row"><span class="k">WHERE IT GOES</span><br><span class="route">INTO THE UTERUS</span></div>
-      <div class="row"><span class="k">BEST WHEN</span><br>Tubes are blocked or counts are very low — the famous <b>test-tube baby</b> method.</div>
+<div class="layout">
+  <!-- Sidebar: Infertility Clinical Baseline -->
+  <div class="sidebar">
+    <div>
+      <h2>Infertility Definition</h2>
+      <div class="side-box">
+        <b>Clinical Criterion:</b>
+        Inability to conceive or produce children despite <b>1 to 2 years of regular, unprotected coitus</b>.
+      </div>
+      <div class="side-box">
+        <b>Underlying Causes:</b>
+        Physical, congenital, hormonal, drug-induced, immunological, or psychological defects in either partner.
+      </div>
+      <div class="side-box">
+        <b>Primary Indian Bias:</b>
+        In India, the female is unfairly blamed, yet in more than 50% of couples, the defect lies in the male partner.
+      </div>
     </div>
-
-    <div class="m">
-      <h2>ZIFT</h2>
-      <div class="full">Zygote Intrafallopian Transfer</div>
-      <div class="row"><span class="k">TRANSFERRED</span><br><b>Zygote or early embryo with up to 8 blastomeres</b>.</div>
-      <div class="row"><span class="k">WHERE IT GOES</span><br><span class="route">INTO THE FALLOPIAN TUBE</span></div>
-      <div class="row"><span class="k">BEST WHEN</span><br>Tubes are healthy — the zygote then rides naturally down to the uterus.</div>
-    </div>
-
-    <div class="m">
-      <h2>GIFT</h2>
-      <div class="full">Gamete Intrafallopian Transfer</div>
-      <div class="row"><span class="k">TRANSFERRED</span><br><b>Unfertilised gametes — egg + sperm</b>; no lab fertilisation step.</div>
-      <div class="row"><span class="k">WHERE IT GOES</span><br><span class="route">INTO THE FALLOPIAN TUBE</span></div>
-      <div class="row"><span class="k">BEST WHEN</span><br>Fertilisation should happen <b>inside the body</b>, in the tube itself.</div>
-    </div>
-
-    <div class="m">
-      <h2>ICSI</h2>
-      <div class="full">Intra Cytoplasmic Sperm Injection</div>
-      <div class="row"><span class="k">TRANSFERRED</span><br><b>One sperm injected straight into the egg's cytoplasm</b> — a lab step added to IVF.</div>
-      <div class="row"><span class="k">WHERE IT GOES</span><br><span class="route">EMBRYO INTO THE UTERUS</span></div>
-      <div class="row"><span class="k">BEST WHEN</span><br>Sperm cannot enter the egg on its own.</div>
-    </div>
-
-    <div class="m">
-      <h2>IUI</h2>
-      <div class="full">Intra Uterine Insemination</div>
-      <div class="row"><span class="k">TRANSFERRED</span><br><b>Prepared semen</b> — washed and concentrated in the lab.</div>
-      <div class="row"><span class="k">WHERE IT GOES</span><br><span class="route">INTO THE UTERUS</span></div>
-      <div class="row"><span class="k">BEST WHEN</span><br>Low sperm count or poor sperm quality; a simpler first option.</div>
-    </div>
-
-    <div class="m check">
-      <h2>READ THE ROUTE IN 5 SECONDS</h2>
-      <div class="row"><span class="k">DESTINATION: UTERUS</span><br><span class="route">IVF &#183; ICSI &#183; IUI</span></div>
-      <div class="row"><span class="k">DESTINATION: TUBE</span><br><span class="route">ZIFT &#183; GIFT</span></div>
-      <div class="row"><span class="k">BLASTOMERE RULE</span><br><b>Up to 8 &#8594; tube</b> (ZIFT) &#183; <b>8 or more &#8594; uterus</b> (IVF)</div>
+    <div class="side-box" style="background: #F1FCE8; border-color: #D9F99D; margin-bottom: 0;">
+      <b style="color: #4E7A00;">Ultimate Solution:</b>
+      If ART is financially or biologically unfeasible, <b>legal child adoption</b> represents the most humane path forward.
     </div>
   </div>
 
-  <div class="strip">
-    <b>Surrogacy and adoption are real options too</b> — a surrogate mother carries the couple's baby, and adoption gives a child a family. Both are regulated by law in India (ART Act, 2021).
+  <!-- Main Flow: The 3 Major ART Protocols -->
+  <div class="main-flow">
+    <div class="art-grid">
+      <!-- Protocol 1: IVF + ET -->
+      <div class="protocol-card">
+        <span class="card-pill pill-blue">IN VITRO FERTILIZATION (IVF)</span>
+        <h3>IVF & Embryo Transfer</h3>
+        <div class="subtitle">"Test-Tube Baby" · Outside-Body Fertilization</div>
+        <div class="step-node">
+          <b>Step 1: Oocyte & Sperm Harvesting</b><br>
+          Ova from wife/donor + sperm from husband/donor induced to fuse under sterile lab conditions.
+        </div>
+        <div class="step-node">
+          <b>Step 2A: ZIFT Protocol</b><br>
+          Zygote or early embryo with <b>up to 8 blastomeres</b> transferred.<br>
+          <span class="transfer-target target-tube">TARGET: FALLOPIAN TUBE</span>
+        </div>
+        <div class="step-node">
+          <b>Step 2B: IUT Protocol</b><br>
+          Embryo with <b>more than 8 blastomeres</b> transferred.<br>
+          <span class="transfer-target target-uterus">TARGET: UTERINE CAVITY</span>
+        </div>
+      </div>
+
+      <!-- Protocol 2: GIFT (In Vivo) -->
+      <div class="protocol-card">
+        <span class="card-pill pill-green">IN VIVO FERTILIZATION (GIFT)</span>
+        <h3>GIFT Procedure</h3>
+        <div class="subtitle">Gamete Intra-Fallopian Transfer · Natural Fusion</div>
+        <div class="step-node">
+          <b>Clinical Indication:</b><br>
+          Female partner is <b>unable to produce an ovum</b> (anovulatory) but possesses healthy patent fallopian tubes and a normal receptive uterus.
+        </div>
+        <div class="step-node">
+          <b>Surgical Technique:</b><br>
+          Unfertilized ovum collected from a healthy donor female is transferred into the patient's <b>fallopian tube</b> alongside husband's sperms.
+        </div>
+        <div class="step-node">
+          <b>Physiological Key:</b><br>
+          Fertilization and early cleavage take place <b>in vivo (naturally inside the patient's fallopian tube)</b>.
+        </div>
+      </div>
+
+      <!-- Protocol 3: ICSI & Artificial Insemination -->
+      <div class="protocol-card">
+        <span class="card-pill pill-purple">MICROMANIPULATION & AI</span>
+        <h3>ICSI & IUI Modalities</h3>
+        <div class="subtitle">Male Factor Infertility & Structural Barriers</div>
+        <div class="step-node">
+          <b>ICSI (Intra-Cytoplasmic Sperm Injection):</b><br>
+          Specialized micromanipulation where a single sperm is <b>injected directly into ovum cytoplasm</b> under microscope. Used for severe oligospermia/motility defects.
+        </div>
+        <div class="step-node">
+          <b>AI / IUI (Artificial Insemination):</b><br>
+          Semen collected from husband or donor is artificially introduced into the vagina or uterus (<b>IUI</b>). Indicated for low sperm count or erectile dysfunction.
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom: Statutory Diagnostics & Law -->
+    <div class="bottom-regulatory">
+      <div class="reg-box">
+        <b>Amniocentesis & Statutory Ban:</b> Foetal cells and biochemicals in amniotic fluid sampled at 14–16 weeks. Legitimate purpose: diagnosing <b>chromosomal disorders (Down syndrome, Turner's, Klinefelter's, sickle-cell)</b>. Statutory ban enforced in India to curb female foeticide.
+      </div>
+      <div class="reg-box">
+        <b>MTP Act (1971 & 2017 Amendment):</b> Medical Termination of Pregnancy is legalized to avoid illegal quack abortions. Safest in <b>1st Trimester (up to 12 weeks)</b>. 1 RMP opinion required up to 12 weeks; 2 RMP opinions for 12–20 weeks (up to 24 weeks for rape survivors / minors).
+      </div>
+    </div>
   </div>
 </div>
+
+<div class="footer-strip">
+  <div class="text">
+    <b>NTA CUET Critical Threshold:</b> Remember the blastomere count rule for ET: <b>$\le 8$ blastomeres $\to$ ZIFT (Fallopian Tube)</b>; <b>$> 8$ blastomeres $\to$ IUT (Uterus)</b>. GIFT is strictly an <b>in vivo</b> fertilization technique.
+  </div>
+</div>
+
 </body>
 </html>

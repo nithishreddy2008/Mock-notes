@@ -1,117 +1,302 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
+<title>Reproductive Health: Master Synthesis Mindmap</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
-  .wrap { width: 1480px; height: 1060px; position: relative; background: #fff; }
-  svg.wires { position: absolute; inset: 0; width: 1480px; height: 1060px; }
-  .center {
-    position: absolute; left: 555px; top: 385px; width: 370px; height: 100px;
-    background: #071A4D; border-radius: 16px; display: flex; flex-direction: column;
-    align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(7,26,77,.25);
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 20px 28px;
+    overflow: hidden;
+    position: relative;
+  }
+  .header {
+    background: #071A4D;
+    border-radius: 10px;
+    padding: 12px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 4px solid #B8FF34;
+    margin-bottom: 12px;
+  }
+  .header h1 {
+    color: #FFFFFF;
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+  }
+  .header .badge {
+    background: rgba(184, 255, 52, 0.15);
+    border: 1px solid #B8FF34;
+    color: #B8FF34;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 6px;
+    letter-spacing: 1px;
+  }
+  .map-container {
+    position: relative;
+    width: 1384px;
+    height: 770px;
+  }
+  svg.connectors {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+  }
+  .center-hub {
+    position: absolute;
+    left: 542px;
+    top: 290px;
+    width: 300px;
+    height: 160px;
+    background: #071A4D;
+    border: 2px solid #1F5EFF;
     border-bottom: 5px solid #B8FF34;
+    border-radius: 12px;
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 10;
   }
-  .center .t { color: #fff; font-size: 24px; font-weight: 800; letter-spacing: .5px; }
-  .center .s { color: #B8FF34; font-size: 13.5px; font-weight: 700; letter-spacing: 2px; margin-top: 4px; }
+  .center-hub h2 {
+    color: #FFFFFF;
+    font-size: 17px;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+  }
+  .center-hub .sub {
+    color: #B8FF34;
+    font-size: 11px;
+    font-weight: 700;
+    margin: 4px 0 8px;
+  }
+  .center-hub .desc {
+    color: #CBD5E1;
+    font-size: 10.5px;
+    line-height: 1.35;
+  }
   .card {
-    position: absolute; width: 470px; background: #FCFDFF; border: 1.5px solid #D5DCEA;
-    border-radius: 14px; padding: 13px 16px 12px;
+    position: absolute;
+    width: 480px;
+    background: #FFFFFF;
+    border: 1.5px solid #CBD5E1;
+    border-radius: 10px;
+    padding: 14px 16px;
+    z-index: 5;
   }
-  .card h2 { font-size: 20px; color: #071A4D; font-weight: 800; margin-bottom: 7px;
-             padding-bottom: 5px; border-bottom: 3px solid; display: inline-block; }
-  .leaf { font-size: 14px; color: #1B2333; margin: 5px 0; padding-left: 16px; position: relative; line-height: 1.3; }
-  .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
-  .b .leaf::before { background: #1F5EFF; }
-  .l .leaf::before { background: #7FB800; }
-  .leaf b { color: #071A4D; }
-  .b h2 { border-color: #1F5EFF; }
-  .l h2 { border-color: #7FB800; }
-  .left { left: 30px; }
-  .right { left: 980px; }
-  .exc {
-    position: absolute; left: 490px; top: 872px; width: 500px; background: #FFF3EC;
-    border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px;
+  .card-tl { left: 20px; top: 10px; height: 350px; }
+  .card-bl { left: 20px; top: 380px; height: 380px; }
+  .card-tr { left: 884px; top: 10px; height: 350px; }
+  .card-br { left: 884px; top: 380px; height: 380px; }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid #E2E8F0;
   }
-  .exc h2 { font-size: 17px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
-  .exc .leaf { font-size: 12.5px; margin: 3px 0; padding-left: 14px; color: #7A2A12; }
-  .exc .leaf::before { background: #D2481F; }
-  .exc b { color: #B4380F; }
+  .card-header h3 {
+    font-size: 14px;
+    font-weight: 800;
+    color: #071A4D;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .card-badge {
+    font-size: 9.5px;
+    font-weight: 800;
+    padding: 2px 7px;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+  .badge-blue { background: #EBF2FF; color: #1F5EFF; }
+  .badge-green { background: #F1FCE8; color: #4E7A00; }
+  .badge-rose { background: #FFE4E6; color: #9F1239; }
+  .badge-amber { background: #FEF3C7; color: #92400E; }
+
+  .leaf-item {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    padding: 6px 9px;
+    margin-bottom: 6px;
+    font-size: 11px;
+    line-height: 1.35;
+  }
+  .leaf-item b {
+    color: #071A4D;
+    display: block;
+    font-size: 11px;
+    margin-bottom: 1px;
+  }
+  .leaf-item.alert {
+    background: #FFF1F2;
+    border-color: #FECDD3;
+  }
+  .leaf-item.alert b {
+    color: #9F1239;
+  }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <svg class="wires" viewBox="0 0 1480 1060">
-    <path d="M 555 420 C 505 420, 520 165, 502 160" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
-    <path d="M 555 435 C 515 435, 520 430, 502 430" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 555 450 C 505 450, 520 700, 502 705" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
-    <path d="M 925 420 C 975 420, 960 165, 978 160" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 925 435 C 965 435, 960 430, 978 430" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
-    <path d="M 925 450 C 975 450, 960 700, 978 705" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 740 485 C 740 640, 740 810, 740 870" fill="none" stroke="#D2481F" stroke-width="2.5" stroke-dasharray="7 5" opacity=".6"/>
+
+<div class="header">
+  <div>
+    <h1>REPRODUCTIVE HEALTH: MASTER SYNTHESIS MINDMAP</h1>
+    <div style="color: #94A3B8; font-size: 11.5px; margin-top: 2px;">Comprehensive Curriculum Map · Demographics, Contraception, STIs, MTP & ART (NTA CUET UG Biology 2027)</div>
+  </div>
+  <div class="badge">FIGURE 3 · MASTER SYNTHESIS</div>
+</div>
+
+<div class="map-container">
+  <!-- Orthogonal Connectors with Masked Text Pills -->
+  <svg class="connectors" viewBox="0 0 1384 770">
+    <!-- Center to TL (Demographics) -->
+    <path d="M 542 340 H 500 V 180 H 500" fill="none" stroke="#1F5EFF" stroke-width="2"/>
+    <rect x="445" y="245" width="110" height="18" rx="4" fill="#EBF2FF" stroke="#BFDBFE"/>
+    <text x="500" y="258" text-anchor="middle" font-size="9.5" font-weight="700" fill="#1F5EFF">POPULATION AXIS</text>
+
+    <!-- Center to BL (Contraception) -->
+    <path d="M 542 400 H 500 V 560 H 500" fill="none" stroke="#4E7A00" stroke-width="2"/>
+    <rect x="440" y="475" width="120" height="18" rx="4" fill="#F1FCE8" stroke="#D9F99D"/>
+    <text x="500" y="488" text-anchor="middle" font-size="9.5" font-weight="700" fill="#4E7A00">CONTRACEPTION AXIS</text>
+
+    <!-- Center to TR (STIs / RTIs) -->
+    <path d="M 842 340 H 884 V 180 H 884" fill="none" stroke="#9F1239" stroke-width="2"/>
+    <rect x="830" y="245" width="105" height="18" rx="4" fill="#FFE4E6" stroke="#FECDD3"/>
+    <text x="882.5" y="258" text-anchor="middle" font-size="9.5" font-weight="700" fill="#9F1239">DISEASE VECTOR</text>
+
+    <!-- Center to BR (MTP & ART) -->
+    <path d="M 842 400 H 884 V 560 H 884" fill="none" stroke="#92400E" stroke-width="2"/>
+    <rect x="835" y="475" width="100" height="18" rx="4" fill="#FEF3C7" stroke="#FDE68A"/>
+    <text x="885" y="488" text-anchor="middle" font-size="9.5" font-weight="700" fill="#92400E">CLINICAL THERAPY</text>
   </svg>
 
-  <div class="center">
-    <div class="t">REPRODUCTIVE HEALTH</div>
-    <div class="s">UNIT VI &#183; COMPLETE CHAPTER MAP</div>
+  <!-- Central Hub -->
+  <div class="center-hub">
+    <h2>REPRODUCTIVE HEALTH</h2>
+    <div class="sub">WHO GLOBAL DEFINITION</div>
+    <div class="desc">
+      A total state of physical, emotional, behavioral, and social well-being in all aspects of human reproduction, not merely the absence of disease.
+    </div>
   </div>
 
-  <div class="card left b" style="top:62px">
-    <h2>Reproductive Health: Meaning &amp; Why</h2>
-    <div class="leaf"><b>WHO:</b> total well-being — physical, emotional, behavioural, social — in everything about reproduction</div>
-    <div class="leaf"><b>Why society cares:</b> family planning &#183; safe motherhood &#183; STI control</div>
-    <div class="leaf"><b>India:</b> first family-planning programme 1951 &#8594; RCH programmes from 1997</div>
-    <div class="leaf"><b>Awareness:</b> sex education in schools, posters, audio-visual media, fertile-window knowledge</div>
+  <!-- Top-Left Card: Demographics & Public Health -->
+  <div class="card card-tl">
+    <div class="card-header">
+      <h3>1. Demographics & Public Health</h3>
+      <span class="card-badge badge-blue">RCH & STATUTORY LAWS</span>
+    </div>
+    <div class="leaf-item">
+      <b>National Family Planning (1951)</b>
+      India was the 1st country globally to launch nationwide reproductive action plans, expanded into Reproductive & Child Health Care (RCH) programs.
+    </div>
+    <div class="leaf-item">
+      <b>Demographic Growth Drivers</b>
+      Rapid population explosion fueled by sharp decline in Maternal Mortality Rate (MMR), Infant Mortality Rate (IMR), and overall death rate.
+    </div>
+    <div class="leaf-item alert">
+      <b>Amniocentesis Statutory Ban</b>
+      Prenatal foetal karyotyping from amniotic fluid; statutory ban enacted strictly to curb rampant female foeticide.
+    </div>
+    <div class="leaf-item">
+      <b>Legal Marriageable Age</b>
+      Statutory minimum age for marriage: 18 years for females, 21 years for males.
+    </div>
   </div>
 
-  <div class="card left l" style="top:322px">
-    <h2>Amniocentesis &amp; Population</h2>
-    <div class="leaf"><b>Amniocentesis:</b> test on amniotic fluid (fluid around the foetus) to read foetal chromosomes</div>
-    <div class="leaf"><b>Detects:</b> chromosomal disorders (Down's) + metabolic disorders via enzyme checks</div>
-    <div class="leaf"><b>Misuse:</b> sex determination &#8594; female foeticide &#8594; banned (PCPNDT Act, 1994)</div>
-    <div class="leaf"><b>Stabilise population:</b> incentives + education; a growing population strains food, homes, jobs</div>
+  <!-- Bottom-Left Card: Contraceptive Spectrum -->
+  <div class="card card-bl">
+    <div class="card-header">
+      <h3>2. Contraception Modalities</h3>
+      <span class="card-badge badge-green">FAMILY PLANNING ARSENAL</span>
+    </div>
+    <div class="leaf-item">
+      <b>Natural Methods:</b>
+      Periodic abstinence (Day 10–17 fertile window), coitus interruptus, and lactational amenorrhea (up to 6 months post-partum).
+    </div>
+    <div class="leaf-item">
+      <b>Barrier Devices:</b>
+      Male/female condoms (protect against STIs/AIDS); diaphragms, cervical caps, and vaults (cervical covers paired with spermicides).
+    </div>
+    <div class="leaf-item">
+      <b>IUDs (Most Widely Accepted):</b>
+      Non-medicated (Lippes loop), Copper-releasing (CuT, Cu7, Multiload 375), and Hormone-releasing (Progestasert, LNG-20).
+    </div>
+    <div class="leaf-item">
+      <b>Oral & Injectable Hormones:</b>
+      Combined daily pills (Mala-D); once-a-week non-steroidal pill (<i>Saheli</i> by CDRI Lucknow); subdermal implants (Norplant).
+    </div>
+    <div class="leaf-item">
+      <b>Permanent Sterilization:</b>
+      Vasectomy (vas deferens cut/tied) in males; Tubectomy (fallopian tubes cut/tied) in females; irreversible terminal methods.
+    </div>
   </div>
 
-  <div class="card left b" style="top:600px">
-    <h2>MTP — Medical Termination of Pregnancy</h2>
-    <div class="leaf"><b>What:</b> intentional/voluntary abortion — legal under the MTP Act, 1971 (amended 2017, 2021)</div>
-    <div class="leaf"><b>Windows:</b> up to 12 weeks safely &#183; 12–24 weeks with RMP opinion &#183; beyond 24 only special cases</div>
-    <div class="leaf"><b>Methods:</b> suction/vacuum aspiration, medicines</div>
-    <div class="leaf"><b>Caution:</b> risks rise after 12 weeks — qualified doctors only; unsafe abortions harm</div>
+  <!-- Top-Right Card: Sexually Transmitted Infections -->
+  <div class="card card-tr">
+    <div class="card-header">
+      <h3>3. Sexually Transmitted Infections</h3>
+      <span class="card-badge badge-rose">STIs / VDs / RTIs</span>
+    </div>
+    <div class="leaf-item">
+      <b>High Vulnerability Demographic</b>
+      Highest incidence reported among sexually active youth in the 15 to 24 years age bracket.
+    </div>
+    <div class="leaf-item">
+      <b>Bacterial & Protozoan STIs (Curable)</b>
+      Gonorrhoea (<i>Neisseria</i>), Syphilis (<i>Treponema pallidum</i>), Chlamydiasis, Trichomoniasis; curable with early antibiotics.
+    </div>
+    <div class="leaf-item alert">
+      <b>Incurable Viral STIs (High-Yield Trap)</b>
+      <b>Hepatitis B, Genital Herpes, and HIV/AIDS</b> cannot be cured completely; management is lifelong anti-retroviral therapy.
+    </div>
+    <div class="leaf-item">
+      <b>Chronic Complications</b>
+      Untreated STIs precipitate Pelvic Inflammatory Disease (PID), stillbirths, ectopic pregnancies, abortions, and tubal infertility.
+    </div>
   </div>
 
-  <div class="card right l" style="top:62px">
-    <h2>Contraception Families</h2>
-    <div class="leaf"><b>Natural:</b> periodic abstinence (days 10–17) &#183; withdrawal &#183; lactational amenorrhoea (~6 months)</div>
-    <div class="leaf"><b>Barrier:</b> condoms (also block STIs) &#183; diaphragms &#183; cervical caps + spermicides</div>
-    <div class="leaf"><b>IUDs:</b> Lippes loop &#183; Cu-T, Cu-7, Multiload 375 &#183; Progestasert, LNG-20</div>
-    <div class="leaf"><b>Pills &amp; surgery:</b> Norethindrone + ethinylestradiol, Saheli &#183; vasectomy vs tubectomy</div>
-  </div>
-
-  <div class="card right b" style="top:322px">
-    <h2>Sexually Transmitted Infections</h2>
-    <div class="leaf"><b>Bacterial (curable):</b> gonorrhoea &#183; syphilis &#183; chlamydiasis</div>
-    <div class="leaf"><b>Viral (treatable, not curable):</b> genital herpes &#183; genital warts (HPV) &#183; hepatitis-B &#183; HIV</div>
-    <div class="leaf"><b>Protozoan:</b> trichomoniasis (Trichomonas)</div>
-    <div class="leaf"><b>Often silent:</b> discharge, itching, sores, pain may never show; condoms + screened blood prevent</div>
-  </div>
-
-  <div class="card right l" style="top:600px">
-    <h2>Infertility &amp; ART</h2>
-    <div class="leaf"><b>Infertility:</b> no pregnancy after 1–2 years of trying — the cause can sit with either partner</div>
-    <div class="leaf"><b>IVF:</b> fertilisation outside; embryo at 8+ blastomeres into the uterus (test-tube baby)</div>
-    <div class="leaf"><b>ZIFT</b> zygote &#8804; 8 blastomeres into tube &#183; <b>GIFT</b> gametes into tube &#183; <b>ICSI</b> sperm into egg &#183; <b>IUI</b> semen into uterus</div>
-    <div class="leaf"><b>Complete answers:</b> counselling, surrogacy, adoption — ART Act 2021 keeps it regulated</div>
-  </div>
-
-  <div class="exc">
-    <h2>COMMON ERRORS &amp; TRAPS</h2>
-    <div class="leaf"><b>Condoms are the only family that also blocks STIs</b> — pills and IUDs do not</div>
-    <div class="leaf"><b>Cu-T is copper-releasing; LNG-20 is hormone-releasing</b> — do not mix the IUD families</div>
-    <div class="leaf"><b>Route rule:</b> ZIFT puts &#8804; 8 blastomeres in the TUBE; IVF puts 8+ blastomeres in the UTERUS</div>
-    <div class="leaf"><b>Viral STIs</b> (herpes, HIV) are treatable — antibiotics never cure them</div>
+  <!-- Bottom-Right Card: MTP & Infertility / ART -->
+  <div class="card card-br">
+    <div class="card-header">
+      <h3>4. MTP & Infertility Management</h3>
+      <span class="card-badge badge-amber">CLINICAL PROTOCOLS</span>
+    </div>
+    <div class="leaf-item">
+      <b>MTP Act (1971 & 2017 Amendments)</b>
+      Safest during 1st trimester (up to 12 weeks); 1 RMP needed up to 12 wks; 2 RMPs for 12–20 wks (up to 24 wks for vulnerable cases).
+    </div>
+    <div class="leaf-item">
+      <b>IVF-ET (In Vitro Fertilization)</b>
+      "Test-tube baby"; fertilization in glassware. <b>ZIFT:</b> $\le 8$ blastomeres $\to$ Fallopian Tube. <b>IUT:</b> $> 8$ blastomeres $\to$ Uterus.
+    </div>
+    <div class="leaf-item">
+      <b>GIFT (In Vivo Technique)</b>
+      Donor ovum transferred into fallopian tube of female who cannot produce gametes but can nurture pregnancy.
+    </div>
+    <div class="leaf-item">
+      <b>ICSI & Insemination (AI / IUI)</b>
+      Single sperm microinjected directly into ovum (ICSI). Semen introduced into uterus (IUI) for male factor oligospermia.
+    </div>
   </div>
 </div>
+
 </body>
 </html>
