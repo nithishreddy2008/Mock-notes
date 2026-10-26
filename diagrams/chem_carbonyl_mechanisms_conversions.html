@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Carbonyl Mechanisms & Hallmark Reactions</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px; height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #1E293B;
+    overflow: hidden;
+    position: relative;
+    padding: 24px 32px;
+  }
+  * { box-shadow: none !important; }
+
+  .header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .header-badge {
+    display: inline-block;
+    background: #071A4D;
+    color: #B8FF34;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .header h1 {
+    font-size: 25px;
+    font-weight: 800;
+    color: #071A4D;
+    letter-spacing: -0.02em;
+  }
+  .header p {
+    font-size: 13.5px;
+    color: #64748B;
+    margin-top: 3px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 350px 320px;
+    gap: 16px;
+  }
+
+  .card {
+    background: #FFFFFF;
+    border: 1.5px solid #E2E8F0;
+    border-radius: 10px;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+  }
+  .card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid;
+  }
+  .card-title {
+    font-size: 15.5px;
+    font-weight: 800;
+    color: #071A4D;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .badge {
+    font-size: 10px;
+    font-weight: 800;
+    padding: 3px 8px;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  /* Color themes */
+  .c-blue { border-color: #1F5EFF; }
+  .c-blue .card-top { border-color: #1F5EFF; }
+  .c-blue .badge { background: #EEF4FF; color: #1F5EFF; border: 1px solid #C7D9FE; }
+
+  .c-green { border-color: #5E8F13; }
+  .c-green .card-top { border-color: #5E8F13; }
+  .c-green .badge { background: #F4FBE8; color: #5E8F13; border: 1px solid #D2ECA6; }
+
+  .c-orange { border-color: #B4380F; }
+  .c-orange .card-top { border-color: #B4380F; }
+  .c-orange .badge { background: #FEF3F0; color: #B4380F; border: 1px solid #FCD3C7; }
+
+  .c-amber { border-color: #9A7B07; }
+  .c-amber .card-top { border-color: #9A7B07; }
+  .c-amber .badge { background: #FEF9E7; color: #9A7B07; border: 1px solid #F8E7A2; }
+
+  .item-list {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    flex: 1;
+  }
+  .item {
+    background: #F8FAFC;
+    border: 1px solid #EDF2F7;
+    border-radius: 6px;
+    padding: 7px 10px;
+    font-size: 12.5px;
+    line-height: 1.35;
+  }
+  .item-header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    color: #071A4D;
+    margin-bottom: 2px;
+  }
+  .chem-eq {
+    font-family: "SF Mono", Menlo, Consolas, monospace;
+    font-size: 11.5px;
+    color: #0F172A;
+    background: #F1F5F9;
+    padding: 3px 6px;
+    border-radius: 4px;
+    margin-top: 3px;
+    display: block;
+    word-break: break-all;
+  }
+  .chem-eq strong { color: #1F5EFF; }
+
+  .footer-bar {
+    margin-top: 14px;
+    background: #071A4D;
+    color: #FFFFFF;
+    border-radius: 8px;
+    padding: 9px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 12px;
+  }
+  .footer-tag {
+    background: #B8FF34;
+    color: #071A4D;
+    font-weight: 800;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-right: 8px;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-badge">CUET UG Chemistry · Core Concept Archetype 1</div>
+  <h1>CARBONYL NUCLEOPHILIC ADDITIONS &amp; HALLMARK NAME REACTIONS</h1>
+  <p>Mechanisms, Geometry Inversion, Nitrogen Derivatives, Aldol/Cannizzaro Divergence, and Deoxygenation</p>
+</div>
+
+<div class="grid">
+
+  <!-- CARD 1: Nucleophilic Addition Mechanism -->
+  <div class="card c-blue">
+    <div class="card-top">
+      <div class="card-title">1. Nucleophilic Addition Kinetics &amp; Geometry</div>
+      <span class="badge">Addition Pathways</span>
+    </div>
+    <div class="item-list">
+      <div class="item">
+        <div class="item-header"><span>Geometry Inversion: sp² Planar → sp³ Tetrahedral</span></div>
+        Nucleophile attacks electrophilic carbonyl carbon at <b>~107° (Bürgi-Dunitz angle)</b>. Planar carbonyl (120°) converts to tetrahedral alkoxide intermediate (109.5°), subsequently protonated.
+      </div>
+      <div class="item">
+        <div class="item-header"><span>Reactivity Order: Steric + Electronic Factors</span></div>
+        <b>HCHO &gt; RCHO &gt; R₂CO &gt; ArCHO</b>. Aldehydes are faster than ketones because alkyl groups: (1) donate electron density (+I) reducing Cδ+, and (2) crowd the transition state.
+      </div>
+      <div class="item">
+        <div class="item-header"><span>Key Reagents &amp; Synthetic Applications</span></div>
+        • <b>HCN:</b> Forms cyanohydrins (base catalyst OH⁻ generates strong Nu :CN⁻).<br>
+        • <b>NaHSO₃:</b> Forms bisulphite crystalline adduct (used for purification/separation).<br>
+        • <b>ROH / dry HCl:</b> Aldehyde + 1 ROH → Hemiacetal; + 2 ROH → Stable Acetal. Ketones yield cyclic ketals with ethylene glycol.
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 2: Nucleophilic Addition-Elimination -->
+  <div class="card c-amber">
+    <div class="card-top">
+      <div class="card-title">2. Ammonia Derivatives: C=O + H₂N-G → C=N-G</div>
+      <span class="badge">pH 3.5 - 4.5 Regulated</span>
+    </div>
+    <div class="item-list">
+      <div class="item">
+        <div class="item-header"><span>2,4-DNP (Brady's Reagent) — The Universal Test</span></div>
+        Reacts with <b>both aldehydes and ketones</b> to form yellow/orange/red crystalline 2,4-dinitrophenylhydrazones. Used to detect C=O group.
+        <span class="chem-eq">&gt;C=O + H₂N-NH-C₆H₃(NO₂)₂ → <strong>&gt;C=N-NH-C₆H₃(NO₂)₂</strong> + H₂O</span>
+      </div>
+      <div class="item">
+        <div class="item-header"><span>Hydroxylamine &amp; Hydrazine</span></div>
+        • <b>Hydroxylamine (NH₂OH):</b> Forms crystalline <b>Oximes</b> (&gt;C=N-OH).<br>
+        • <b>Hydrazine (NH₂NH₂):</b> Yields Hydrazones (&gt;C=N-NH₂); with excess yields azines.
+      </div>
+      <div class="item">
+        <div class="item-header"><span>Semicarbazide Monoreactivity Trap (CUET High-Yield)</span></div>
+        Semicarbazide is <b>H₂N-CO-NH-NH₂</b>. Only the terminal <b>-NH-NH₂</b> group acts as nucleophile! The amide NH₂ is delocalized into C=O by resonance and lacks nucleophilicity.
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 3: Aldol vs Cannizzaro -->
+  <div class="card c-green">
+    <div class="card-top">
+      <div class="card-title">3. Aldol Condensation vs Cannizzaro Redox</div>
+      <span class="badge">α-H Regulated Fate</span>
+    </div>
+    <div class="item-list">
+      <div class="item">
+        <div class="item-header"><span>Aldol Condensation (Requires ≥ 1 α-Hydrogen)</span></div>
+        Dilute NaOH abstracts acidic α-H to form resonance-stabilized <b>enolate ion</b>, which attacks another C=O molecule yielding β-hydroxyaldehyde (Aldol). Heating eliminates H₂O to give <b>α,β-unsaturated carbonyl</b>.
+        <span class="chem-eq">2 CH₃CHO + dil. NaOH → CH₃-CH(OH)-CH₂CHO → <strong>CH₃-CH=CH-CHO (Crotonaldehyde)</strong></span>
+      </div>
+      <div class="item">
+        <div class="item-header"><span>Cannizzaro Reaction (Absence of α-Hydrogen)</span></div>
+        50% conc. NaOH triggers self-oxidation-reduction (disproportionation). Hydride ion (:H⁻) shift is the <b>Rate-Determining Step</b>.
+        <span class="chem-eq">2 HCHO + 50% NaOH → <strong>CH₃OH (Methanol)</strong> + <strong>HCOONa (Sodium Formate)</strong></span>
+      </div>
+      <div class="item">
+        <div class="item-header"><span>Cross-Cannizzaro Rule: HCHO + ArCHO</span></div>
+        Formaldehyde is more reactive towards OH⁻ attack; therefore, <b>HCHO is always oxidized to HCOO⁻</b> and <b>ArCHO is reduced to ArCH₂OH</b>!
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 4: Deoxygenation & Carboxylic Acid HVZ -->
+  <div class="card c-orange">
+    <div class="card-top">
+      <div class="card-title">4. Deoxygenation Reductions &amp; HVZ Halogenation</div>
+      <span class="badge">C=O → CH₂ &amp; α-Halogenation</span>
+    </div>
+    <div class="item-list">
+      <div class="item">
+        <div class="item-header"><span>Clemmensen Reduction (Acid-Stable Carbonyls)</span></div>
+        <b>Reagent:</b> Amalgamated Zinc + concentrated HCl (<b>Zn-Hg / conc. HCl</b>). Reduces aldehydes/ketones to alkanes. Avoid if molecule contains acid-sensitive groups (-OH, -OR, C=C).
+        <span class="chem-eq">CH₃-CO-CH₃ + 4[H] + Zn-Hg/HCl → <strong>CH₃-CH₂-CH₃ (Propane)</strong> + H₂O</span>
+      </div>
+      <div class="item">
+        <div class="item-header"><span>Wolff-Kishner Reduction (Base-Stable Carbonyls)</span></div>
+        <b>Reagent:</b> Hydrazine + KOH in ethylene glycol, heated (<b>NH₂NH₂ / KOH, Δ</b>). Reduces C=O to CH₂ with evolution of N₂ gas. Avoid if substrate has base-sensitive groups (esters, halides).
+      </div>
+      <div class="item">
+        <div class="item-header"><span>Hell-Volhard-Zelinsky (HVZ) Reaction (Carboxylic Acids)</span></div>
+        Carboxylic acids having α-hydrogen react with <b>Cl₂ or Br₂ in presence of red Phosphorus</b> to yield <b>α-halocarboxylic acids</b>. Formic acid and benzoic acid FAIL (no α-H).
+        <span class="chem-eq">R-CH₂-COOH + X₂ / red P → <strong>R-CH(X)-COOH (α-halocarboxylic acid)</strong></span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer-bar">
+  <div><span class="footer-tag">CUET STRATEGY</span> <b>Aldol needs α-H; Cannizzaro forbids α-H. Clemmensen uses acidic Zn-Hg; Wolff-Kishner uses basic hydrazine. HVZ targets α-H of acids.</b></div>
+  <div>© OurMocks CUET Architecture</div>
+</div>
+
+</body>
+</html>

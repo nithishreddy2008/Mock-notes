@@ -1,116 +1,305 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
+<title>Aldehydes, Ketones & Carboxylic Acids Master Mindmap</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
-  .wrap { width: 1480px; height: 1080px; position: relative; background: #fff; }
-  svg.wires { position: absolute; inset: 0; width: 1480px; height: 1080px; }
-  .center {
-    position: absolute; left: 520px; top: 470px; width: 440px; height: 104px;
-    background: #071A4D; border-radius: 16px; display: flex; flex-direction: column;
-    align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(7,26,77,.25);
-    border-bottom: 5px solid #B8FF34;
+  body {
+    width: 1440px; height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #1E293B;
+    overflow: hidden;
+    position: relative;
+    padding: 20px 28px;
   }
-  .center .t { color: #fff; font-size: 20px; font-weight: 800; letter-spacing: .5px; text-align: center; }
-  .center .s { color: #B8FF34; font-size: 13.5px; font-weight: 700; letter-spacing: 2px; margin-top: 4px; }
+  * { box-shadow: none !important; }
+
+  .header {
+    text-align: center;
+    margin-bottom: 14px;
+  }
+  .header-badge {
+    display: inline-block;
+    background: #071A4D;
+    color: #B8FF34;
+    font-size: 10.5px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 4px;
+    margin-bottom: 4px;
+  }
+  .header h1 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #071A4D;
+    letter-spacing: -0.02em;
+  }
+  .header p {
+    font-size: 12.5px;
+    color: #64748B;
+  }
+
+  /* Center Hub */
+  .center-hub {
+    position: absolute;
+    left: 535px; top: 350px;
+    width: 370px; height: 120px;
+    background: #071A4D;
+    border-radius: 12px;
+    border: 2px solid #1F5EFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 18px;
+    z-index: 10;
+    text-align: center;
+  }
+  .hub-tag {
+    color: #B8FF34;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .hub-title {
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 1.25;
+  }
+  .hub-sub {
+    color: #94A3B8;
+    font-size: 11px;
+    margin-top: 4px;
+  }
+
+  /* SVG Wires */
+  svg.wires {
+    position: absolute;
+    inset: 0;
+    width: 1440px; height: 880px;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* Peripheral Cards */
   .card {
-    position: absolute; width: 465px; background: #FCFDFF; border: 1.5px solid #D5DCEA;
-    border-radius: 14px; padding: 13px 16px 12px;
+    position: absolute;
+    width: 440px;
+    background: #FFFFFF;
+    border: 1.5px solid #CBD5E1;
+    border-radius: 9px;
+    padding: 12px 14px;
+    z-index: 5;
+    font-size: 11.5px;
+    line-height: 1.35;
   }
-  .card h2 { font-size: 20px; color: #071A4D; font-weight: 800; margin-bottom: 7px;
-             padding-bottom: 5px; border-bottom: 3px solid; display: inline-block; }
-  .leaf { font-size: 14.5px; color: #1B2333; margin: 5px 0; padding-left: 16px; position: relative; line-height: 1.32; }
-  .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
-  .b .leaf::before { background: #1F5EFF; }
-  .l .leaf::before { background: #7FB800; }
-  .leaf b { color: #071A4D; }
-  .b h2 { border-color: #1F5EFF; }
-  .l h2 { border-color: #7FB800; }
-  .left { left: 30px; }
-  .right { left: 985px; }
-  .exc {
-    position: absolute; left: 470px; top: 905px; width: 540px; background: #FFF3EC;
-    border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px;
+  .card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 6px;
+    padding-bottom: 4px;
+    border-bottom: 2px solid;
   }
-  .exc h2 { font-size: 17px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
-  .exc .leaf { font-size: 13px; margin: 3px 0; padding-left: 14px; color: #7A2A12; }
-  .exc .leaf::before { background: #D2481F; }
-  .exc b { color: #B4380F; }
+  .card-title {
+    font-size: 13.5px;
+    font-weight: 800;
+    color: #071A4D;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .badge {
+    font-size: 9px;
+    font-weight: 800;
+    padding: 2px 6px;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+
+  /* Themes */
+  .c-blue { border-color: #1F5EFF; }
+  .c-blue .card-top { border-color: #1F5EFF; }
+  .c-blue .badge { background: #EEF4FF; color: #1F5EFF; }
+
+  .c-green { border-color: #5E8F13; }
+  .c-green .card-top { border-color: #5E8F13; }
+  .c-green .badge { background: #F4FBE8; color: #5E8F13; }
+
+  .c-amber { border-color: #9A7B07; }
+  .c-amber .card-top { border-color: #9A7B07; }
+  .c-amber .badge { background: #FEF9E7; color: #9A7B07; }
+
+  .c-orange { border-color: #B4380F; }
+  .c-orange .card-top { border-color: #B4380F; }
+  .c-orange .badge { background: #FEF3F0; color: #B4380F; }
+
+  .c-purple { border-color: #6366F1; }
+  .c-purple .card-top { border-color: #6366F1; }
+  .c-purple .badge { background: #EEF2FF; color: #6366F1; }
+
+  .c-teal { border-color: #0D9488; }
+  .c-teal .card-top { border-color: #0D9488; }
+  .c-teal .badge { background: #F0FDFA; color: #0D9488; }
+
+  .card-bullet {
+    margin-bottom: 5px;
+    padding-left: 10px;
+    position: relative;
+  }
+  .card-bullet::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #1F5EFF;
+    font-weight: 800;
+  }
+  .card-bullet strong { color: #071A4D; }
+
+  /* Positions */
+  .pos-tl { left: 45px; top: 92px; height: 185px; }
+  .pos-ml { left: 45px; top: 295px; height: 215px; }
+  .pos-bl { left: 45px; top: 528px; height: 205px; }
+
+  .pos-tr { right: 45px; top: 92px; height: 185px; }
+  .pos-mr { right: 45px; top: 295px; height: 215px; }
+  .pos-br { right: 45px; top: 528px; height: 205px; }
+
+  .bottom-bar {
+    position: absolute;
+    bottom: 20px; left: 45px; right: 45px;
+    background: #071A4D;
+    color: #FFFFFF;
+    border-radius: 8px;
+    padding: 9px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 11.5px;
+    z-index: 10;
+  }
+  .bottom-tag {
+    background: #B8FF34;
+    color: #071A4D;
+    font-weight: 800;
+    padding: 2px 7px;
+    border-radius: 4px;
+    margin-right: 8px;
+  }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <svg class="wires" viewBox="0 0 1480 1080">
-    <path d="M 520 505 C 470 505, 495 158, 500 155" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
-    <path d="M 520 520 C 480 520, 495 438, 500 438" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 520 535 C 470 535, 495 718, 500 718" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
-    <path d="M 960 505 C 1010 505, 985 158, 980 155" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 960 520 C 1000 520, 985 438, 980 438" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
-    <path d="M 960 535 C 1010 535, 985 718, 980 718" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 740 574 C 740 700, 740 830, 740 903" fill="none" stroke="#D2481F" stroke-width="2.5" stroke-dasharray="7 5" opacity=".6"/>
-  </svg>
 
-  <div class="center">
-    <div class="t">ALDEHYDES, KETONES &amp; CARBOXYLIC ACIDS</div>
-    <div class="s">UNIT VIII &#183; COMPLETE CHAPTER MAP</div>
-  </div>
-
-  <div class="card left b" style="top:58px">
-    <h2>The Carbonyl Family &amp; Names</h2>
-    <div class="leaf"><b>C=O:</b> sp&#178; carbon, ~122 pm, strongly polar &#8212; C is the electrophile, O the nucleophile</div>
-    <div class="leaf"><b>Names:</b> -al (ethanal), -one (propanone), -oic acid; the aldehyde C is always C-1</div>
-    <div class="leaf"><b>Aldehyde &lt; ketone in reactivity:</b> two alkyl groups crowd and feed the ketone C; aldehyde has only one (+H)</div>
-    <div class="leaf"><b>Acid family:</b> -COOH is resonance-stabilised; its OH is acidic, its OH carbon is NOT a carbonyl target</div>
-  </div>
-
-  <div class="card left l" style="top:352px">
-    <h2>Preparation Board</h2>
-    <div class="leaf"><b>Aldehydes:</b> 1&#176; alcohol oxidation (PCC stops at CHO); Rosenmund (acid chloride + H&#8322;/Pd-BaSO&#8324;); Etard (toluene + CrO&#8322;Cl&#8322;); Gattermann-Koch (CO + HCl/AlCl&#8323;)</div>
-    <div class="leaf"><b>Ketones:</b> 2&#176; alcohol oxidation; acid chloride + dialkylcadmium; from nitriles; ozonolysis; alkyne + water (HgSO&#8324;)</div>
-    <div class="leaf"><b>Acids:</b> oxidation of 1&#176; alcohols/aldehydes, nitrile hydrolysis, Grignard + CO&#8322;, HVZ halogenation, ester/amide hydrolysis</div>
-  </div>
-
-  <div class="card left b" style="top:648px">
-    <h2>Aldehyde &amp; Ketone Chemistry</h2>
-    <div class="leaf"><b>Additions:</b> HCN (cyanohydrin), NaHSO&#8323; (bisulphite adduct), Grignard, ROH &#8594; acetals; NH&#8323; derivatives (oxime, hydrazone, 2,4-DNP)</div>
-    <div class="leaf"><b>Reductions:</b> LiAlH&#8324;/NaBH&#8324; &#8594; alcohols; Clemmensen (Zn-Hg/HCl); Wolff-Kishner (N&#8322;H&#8324;/KOH)</div>
-    <div class="leaf"><b>Oxidation:</b> aldehydes easy (Tollen's, Fehling's); ketones resist</div>
-    <div class="leaf"><b>&#945;-chemistry:</b> haloform (methyl ketones), aldol (&#945;-H), cross-aldol, Cannizzaro (no &#945;-H)</div>
-  </div>
-
-  <div class="card right l" style="top:58px">
-    <h2>Physical &amp; the H-Bond Story</h2>
-    <div class="leaf"><b>Boiling:</b> alkane &lt; carbonyl (polar) &lt; alcohol (H-bonds to itself)</div>
-    <div class="leaf"><b>Solubility:</b> small carbonyls dissolve (O accepts water H-bonds); big chains sink; benzaldehyde barely mixes</div>
-    <div class="leaf"><b>Acids boil highest</b> of all &#8212; two-point H-bonding pairs molecules into dimers</div>
-    <div class="leaf"><b>Smell:</b> aldehydes sweet (vanillin, cinnamaldehyde); ketones solvents (acetone)</div>
-  </div>
-
-  <div class="card right b" style="top:392px">
-    <h2>Acid Chemistry</h2>
-    <div class="leaf"><b>Acidity:</b> stronger than phenol/alcohol; EWG groups push it up (ClCH&#8322;COOH &lt; Cl&#8322;CHCOOH &lt; Cl&#8323;CCOOH); alkyl groups pull it down; F &gt; Cl &gt; Br &gt; I</div>
-    <div class="leaf"><b>Neutralisations:</b> NaOH, NaHCO&#8323; (CO&#8322; fizz &#8212; the test), Na&#8322;CO&#8323;</div>
-    <div class="leaf"><b>Derivatives:</b> esterification (alcohol C&#8211;O intact), acid chloride (SOCl&#8322;), anhydride (P&#8322;O&#8325;), amide (NH&#8323;, heat)</div>
-    <div class="leaf"><b>Special:</b> HVZ &#945;-halogenation (needs red P), decarboxylation (soda lime), LiAlH&#8324; &#8594; 1&#176; alcohol</div>
-  </div>
-
-  <div class="card right l" style="top:712px">
-    <h2>Uses That Anchor Questions</h2>
-    <div class="leaf"><b>Formalin</b> (40% HCHO): disinfectant, preservative of biological specimens; bakelite via phenol + HCHO</div>
-    <div class="leaf"><b>Acetone:</b> nail-polish remover, solvent</div>
-    <div class="leaf"><b>Acetic acid:</b> vinegar (5-6%), cellulose acetate, aspirin synthesis</div>
-    <div class="leaf"><b>Benzaldehyde:</b> almond scent, perfumes, dyes</div>
-  </div>
-
-  <div class="exc">
-    <h2>WATCH-OUTS THAT SET MCQ TRAPS</h2>
-    <div class="leaf"><b>Rosenmund stops at CHO</b> — BaSO&#8324; poisons the catalyst; aldehyde cannot over-reduce. HCHO needs a different route</div>
-    <div class="leaf"><b>Fehling's says no to benzaldehyde</b> — aromatic aldehydes pass Tollen's but fail Fehling's</div>
-    <div class="leaf"><b>HCOOH is both an acid AND an aldehyde</b> — passes Tollen's and Fehling's</div>
-    <div class="leaf"><b>Aldol needs &#945;-H, Cannizzaro needs NO &#945;-H</b> — the two disproportionation routes are mutually exclusive</div>
-  </div>
+<div class="header">
+  <div class="header-badge">CUET UG Chemistry · Master Synthesis Architecture</div>
+  <h1>ALDEHYDES, KETONES &amp; CARBOXYLIC ACIDS ROADMAP</h1>
+  <p>Holistic Conceptual Blueprint: Syntheses, Carbonyl Reactivity, Name Reactions, and Acidity Framework</p>
 </div>
+
+<!-- SVG Orthogonal Connectors -->
+<svg class="wires">
+  <!-- Center to Top-Left -->
+  <path d="M 535 390 L 500 390 L 500 185 L 485 185" fill="none" stroke="#1F5EFF" stroke-width="2" stroke-dasharray="4 3"/>
+  <!-- Center to Mid-Left -->
+  <path d="M 535 410 L 485 410" fill="none" stroke="#5E8F13" stroke-width="2"/>
+  <!-- Center to Bottom-Left -->
+  <path d="M 535 430 L 500 430 L 500 630 L 485 630" fill="none" stroke="#9A7B07" stroke-width="2" stroke-dasharray="4 3"/>
+
+  <!-- Center to Top-Right -->
+  <path d="M 905 390 L 940 390 L 940 185 L 955 185" fill="none" stroke="#B4380F" stroke-width="2" stroke-dasharray="4 3"/>
+  <!-- Center to Mid-Right -->
+  <path d="M 905 410 L 955 410" fill="none" stroke="#6366F1" stroke-width="2"/>
+  <!-- Center to Bottom-Right -->
+  <path d="M 905 430 L 940 430 L 940 630 L 955 630" fill="none" stroke="#0D9488" stroke-width="2" stroke-dasharray="4 3"/>
+</svg>
+
+<!-- CENTER HUB -->
+<div class="center-hub">
+  <div class="hub-tag">UNIT VIII · NCERT / CUET CORE</div>
+  <div class="hub-title">ALDEHYDES, KETONES &amp;<br>CARBOXYLIC ACIDS</div>
+  <div class="hub-sub">Electrophilic C=O Carbon · Acidic α-Hydrogens · Carboxylate Resonance</div>
+</div>
+
+<!-- TOP-LEFT: Preparation of Aldehydes & Ketones -->
+<div class="card pos-tl c-blue">
+  <div class="card-top">
+    <div class="card-title">1. Aldehyde &amp; Ketone Syntheses</div>
+    <span class="badge">Selective Routes</span>
+  </div>
+  <div class="card-bullet"><strong>Rosenmund Reduction:</strong> R-COCl + H₂ over Pd/BaSO₄ (poisoned with S/quinoline) → RCHO. Prevents further reduction to alcohol.</div>
+  <div class="card-bullet"><strong>Stephen Reaction:</strong> R-CN + SnCl₂/HCl → R-CH=NH·HCl → (H₃O⁺) RCHO.</div>
+  <div class="card-bullet"><strong>Etard &amp; Gattermann-Koch:</strong> Toluene + CrO₂Cl₂/CS₂ → Benzaldehyde; Benzene + CO/HCl + anhy. AlCl₃/CuCl → Benzaldehyde.</div>
+</div>
+
+<!-- MID-LEFT: Nucleophilic Addition & Nitrogen Derivatives -->
+<div class="card pos-ml c-green">
+  <div class="card-top">
+    <div class="card-title">2. Nucleophilic Additions &amp; Derivatives</div>
+    <span class="badge">Reactivity Series</span>
+  </div>
+  <div class="card-bullet"><strong>Reactivity:</strong> HCHO &gt; CH₃CHO &gt; CH₃COCH₃ &gt; C₆H₅CHO (Steric crowding + +I alkyl electron donation reduce electrophilicity).</div>
+  <div class="card-bullet"><strong>Reversible Additions:</strong> HCN gives cyanohydrin; NaHSO₃ gives crystalline bisulphite adduct for aldehyde/methyl ketone purification.</div>
+  <div class="card-bullet"><strong>Acetals &amp; Ketals:</strong> 1 eq ROH gives hemiacetal; 2 eq ROH gives stable acetal. Ethylene glycol gives cyclic ketal (protecting group).</div>
+  <div class="card-bullet"><strong>Ammonia Derivatives (H₂N-G):</strong> Hydroxylamine → Oxime; Hydrazine → Hydrazone; 2,4-DNP → Brady's hydrazone (Yellow/Orange/Red ppt).</div>
+</div>
+
+<!-- BOTTOM-LEFT: Hallmark Name Reactions -->
+<div class="card pos-bl c-amber">
+  <div class="card-top">
+    <div class="card-title">3. Hallmark Name Reactions</div>
+    <span class="badge">Aldol / Cannizzaro / Reductions</span>
+  </div>
+  <div class="card-bullet"><strong>Aldol Condensation:</strong> Needs ≥ 1 α-H + dil. NaOH. Enolate attack gives β-hydroxyaldehyde; heating eliminates H₂O yielding α,β-unsaturated carbonyl.</div>
+  <div class="card-bullet"><strong>Cannizzaro Reaction:</strong> Lacks α-H (HCHO, PhCHO) + 50% NaOH. Disproportionates: 1 mol reduced to alcohol, 1 mol oxidized to carboxylate salt.</div>
+  <div class="card-bullet"><strong>Clemmensen vs Wolff-Kishner:</strong> Zn-Hg/conc. HCl (acidic) vs NH₂NH₂/KOH/glycol (basic). Both deoxygenate C=O directly to -CH₂-.</div>
+</div>
+
+<!-- TOP-RIGHT: Diagnostic Distinction Tests -->
+<div class="card pos-tr c-orange">
+  <div class="card-top">
+    <div class="card-title">4. Diagnostic Distinction Tests</div>
+    <span class="badge">CUET Fingerprints</span>
+  </div>
+  <div class="card-bullet"><strong>Tollens' Test:</strong> [Ag(NH₃)₂]⁺ OH⁻ reduces to shiny Silver Mirror (Ag↓). Positive for ALL aldehydes (aliphatic + aromatic) + HCOOH! Ketones fail.</div>
+  <div class="card-bullet"><strong>Fehling's Test:</strong> Alkaline Cu²⁺ tartrate reduces to red-brown Cu₂O↓. Positive for aliphatic aldehydes ONLY. Benzaldehyde fails!</div>
+  <div class="card-bullet"><strong>Iodoform Test:</strong> I₂ + NaOH gives yellow CHI₃↓ (antiseptic odour). Positive for CH₃C=O and CH₃CH(OH)- groups (Ethanal, methyl ketones, ethanol).</div>
+</div>
+
+<!-- MID-RIGHT: Carboxylic Acid Syntheses & Acidity -->
+<div class="card pos-mr c-purple">
+  <div class="card-top">
+    <div class="card-title">5. Carboxylic Acid Syntheses &amp; Acidity</div>
+    <span class="badge">pKa &amp; Resonance</span>
+  </div>
+  <div class="card-bullet"><strong>Synthesis:</strong> 1° Alcohol / Aldehyde oxidation (KMnO₄/acid); Nitrile hydrolysis (R-CN + 2H₂O/H⁺ → RCOOH + NH₄⁺); Grignard + CO₂ (dry ice).</div>
+  <div class="card-bullet"><strong>Carboxylate Resonance:</strong> RCOO⁻ has 2 strictly equivalent resonance structures with negative charge on electronegative oxygens (equal C-O lengths: 127 pm).</div>
+  <div class="card-bullet"><strong>Acidity Trends:</strong> -I groups increase acidity; +I alkyl groups decrease acidity:<br>
+  CF₃COOH &gt; CCl₃COOH &gt; CHCl₂COOH &gt; FCH₂COOH &gt; ClCH₂COOH &gt; HCOOH &gt; C₆H₅COOH &gt; CH₃COOH.</div>
+</div>
+
+<!-- BOTTOM-RIGHT: Carboxylic Acid Reactions & HVZ -->
+<div class="card pos-br c-teal">
+  <div class="card-top">
+    <div class="card-title">6. Acid Reactions &amp; Decarboxylation</div>
+    <span class="badge">HVZ &amp; Soda-Lime</span>
+  </div>
+  <div class="card-bullet"><strong>Derivative Formations:</strong> + PCl₅ / SOCl₂ → Acyl Chloride (RCOCl); + R'OH/H⁺ → Ester (Fischer); + Δ/P₂O₅ → Acid Anhydride.</div>
+  <div class="card-bullet"><strong>HVZ α-Halogenation:</strong> R-CH₂-COOH + X₂ / red P → R-CH(X)-COOH. Replaces α-H with halogen. Formic and benzoic acids fail (no α-H).</div>
+  <div class="card-bullet"><strong>Decarboxylation:</strong> R-COONa + Soda-lime (NaOH + CaO, 3:1), Δ → R-H + Na₂CO₃. Yields alkane with one fewer carbon atom. Kolbe electrolysis gives dimer alkane.</div>
+</div>
+
+<!-- BOTTOM STRIP -->
+<div class="bottom-bar">
+  <div><span class="bottom-tag">MASTER VERDICT</span> <b>Rosenmund makes aldehydes; Aldol requires α-H; Cannizzaro lacks α-H; Benzaldehyde fails Fehling's; Carboxylic acids release CO₂ from NaHCO₃.</b></div>
+  <div>© OurMocks CUET Architecture</div>
+</div>
+
 </body>
 </html>
