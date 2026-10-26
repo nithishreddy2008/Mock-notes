@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1440, height=880">
+  <title>Wave Optics: YDSE Interference, Single-Slit Diffraction & Polarization</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 1440px;
+      height: 880px;
+      background-color: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0F172A;
+      padding: 32px 40px;
+      overflow: hidden;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 24px;
+      border-bottom: 2px solid #E2E8F0;
+      padding-bottom: 16px;
+    }
+    .title-group h1 {
+      font-size: 26px;
+      font-weight: 800;
+      color: #0F2C59;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+    .title-group p {
+      font-size: 14px;
+      color: #64748B;
+      font-weight: 500;
+    }
+    .badge {
+      background: #0066FF;
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      height: calc(100% - 110px);
+    }
+    .card {
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      border-radius: 14px;
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+      position: relative;
+    }
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      border-radius: 14px 14px 0 0;
+    }
+    .card-1::before { background: #0066FF; }
+    .card-2::before { background: #0EA5E9; }
+    .card-3::before { background: #8B5CF6; }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+    .card-title {
+      font-size: 17px;
+      font-weight: 800;
+      color: #0F2C59;
+    }
+    .tag {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+      text-transform: uppercase;
+    }
+    .tag-blue { background: #EFF6FF; color: #0066FF; }
+    .tag-cyan { background: #F0F9FF; color: #0284C7; }
+    .tag-purple { background: #F5F3FF; color: #7C3AED; }
+
+    .svg-container {
+      width: 100%;
+      height: 240px;
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 10px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .formula-block {
+      background: #F1F5F9;
+      border-left: 3px solid #0066FF;
+      padding: 10px 14px;
+      border-radius: 0 6px 6px 0;
+      font-family: "SF Mono", Consolas, Menlo, monospace;
+      font-size: 12px;
+      color: #0F172A;
+      margin-bottom: 12px;
+      line-height: 1.5;
+    }
+    .formula-block.cyan { border-left-color: #0EA5E9; }
+    .formula-block.purple { border-left-color: #8B5CF6; }
+
+    .bullet-list {
+      list-style: none;
+      font-size: 12px;
+      color: #334155;
+      line-height: 1.55;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .bullet-list li {
+      position: relative;
+      padding-left: 16px;
+    }
+    .bullet-list li::before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      color: #0066FF;
+      font-weight: 800;
+    }
+    .card-2 .bullet-list li::before { color: #0EA5E9; }
+    .card-3 .bullet-list li::before { color: #8B5CF6; }
+
+    .highlight {
+      font-weight: 700;
+      color: #0F2C59;
+    }
+    .footer-bar {
+      margin-top: auto;
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: #94A3B8;
+      font-weight: 600;
+      padding-top: 10px;
+      border-top: 1px solid #F1F5F9;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="title-group">
+      <h1>Wave Optics: Interference, Diffraction & Transverse Polarization</h1>
+      <p>Young's Double Slit Geometry • Single Slit Fraunhofer Central Maxima • Malus's Law & Brewster's Angle</p>
+    </div>
+    <div class="badge">CUET UG Physics • Unit 6</div>
+  </div>
+
+  <div class="grid">
+    <!-- Card 1: Young's Double Slit Experiment (YDSE) -->
+    <div class="card card-1">
+      <div class="card-header">
+        <div class="card-title">1. Young's Double Slit (YDSE)</div>
+        <div class="tag tag-blue">Two-Source Interference</div>
+      </div>
+
+      <div class="svg-container">
+        <svg viewBox="0 0 380 230" width="380" height="230">
+          <!-- Slit Barrier -->
+          <line x1="60" y1="20" x2="60" y2="90" stroke="#0F2C59" stroke-width="4"/>
+          <line x1="60" y1="110" x2="60" y2="130" stroke="#0F2C59" stroke-width="4"/>
+          <line x1="60" y1="150" x2="60" y2="210" stroke="#0F2C59" stroke-width="4"/>
+
+          <!-- Slit markers S1 and S2 -->
+          <circle cx="60" cy="100" r="3" fill="#0066FF"/>
+          <text x="40" y="104" font-size="11" font-weight="800" fill="#0066FF">S₁</text>
+          <circle cx="60" cy="140" r="3" fill="#0066FF"/>
+          <text x="40" y="144" font-size="11" font-weight="800" fill="#0066FF">S₂</text>
+
+          <!-- Slit distance d -->
+          <line x1="75" y1="100" x2="75" y2="140" stroke="#64748B" stroke-width="1.5"/>
+          <text x="82" y="124" font-size="10" font-weight="800" fill="#64748B">d</text>
+
+          <!-- Screen -->
+          <line x1="330" y1="20" x2="330" y2="210" stroke="#0F2C59" stroke-width="3"/>
+          <text x="338" y="30" font-size="10" font-weight="800" fill="#0F2C59">Screen</text>
+
+          <!-- Central Axis -->
+          <line x1="60" y1="120" x2="330" y2="120" stroke="#94A3B8" stroke-width="1.5" stroke-dasharray="3,3"/>
+          <circle cx="330" cy="120" r="3" fill="#10B981"/>
+          <text x="338" y="124" font-size="10" font-weight="800" fill="#10B981">O (Central Bright)</text>
+
+          <!-- Observation point P on screen -->
+          <circle cx="330" cy="55" r="4" fill="#EF4444"/>
+          <text x="338" y="58" font-size="11" font-weight="800" fill="#EF4444">P(y)</text>
+
+          <!-- Rays S1P and S2P -->
+          <line x1="60" y1="100" x2="330" y2="55" stroke="#0066FF" stroke-width="1.8"/>
+          <line x1="60" y1="140" x2="330" y2="55" stroke="#0066FF" stroke-width="1.8"/>
+
+          <!-- Perpendicular drop for path difference -->
+          <line x1="60" y1="100" x2="95" y2="134" stroke="#EF4444" stroke-width="1.5" stroke-dasharray="2,2"/>
+          <text x="105" y="152" font-size="9" font-weight="800" fill="#EF4444">Δx = d·sin θ</text>
+
+          <!-- Screen Distance D -->
+          <line x1="60" y1="218" x2="330" y2="218" stroke="#64748B" stroke-width="1.5"/>
+          <text x="195" y="214" font-size="10" font-weight="800" fill="#0F2C59" text-anchor="middle">Distance D</text>
+
+          <!-- Fringe pattern representation on screen -->
+          <rect x="315" y="50" width="8" height="10" fill="#EF4444"/>
+          <rect x="315" y="80" width="8" height="10" fill="#0066FF"/>
+          <rect x="315" y="115" width="8" height="10" fill="#10B981"/>
+          <rect x="315" y="150" width="8" height="10" fill="#0066FF"/>
+          <rect x="315" y="180" width="8" height="10" fill="#EF4444"/>
+        </svg>
+      </div>
+
+      <div class="formula-block">
+        Path Diff: Δx = y·d / D | Fringe Width: β = λ·D / d<br>
+        Bright: y_n = n·λ·D / d | Dark: y_n' = (n - ½)·λ·D / d
+      </div>
+
+      <ul class="bullet-list">
+        <li><span class="highlight">Equal Fringe Width:</span> All interference fringes (bright and dark) possess strictly identical widths: $\beta = \lambda D / d$.</li>
+        <li><span class="highlight">Angular Fringe Width:</span> $\theta = \beta / D = \lambda / d$ is completely independent of screen distance $D$.</li>
+        <li><span class="highlight">Medium Effect:</span> In liquid of refractive index $\mu$, wavelength compresses ($\lambda' = \lambda / \mu$), so fringe width decreases: $\beta' = \beta / \mu$.</li>
+      </ul>
+
+      <div class="footer-bar">
+        <span>Coherent Slit Pair Geometry</span>
+        <span>Peak Intensity I_max = 4 I₀</span>
+      </div>
+    </div>
+
+    <!-- Card 2: Single-Slit Fraunhofer Diffraction -->
+    <div class="card card-2">
+      <div class="card-header">
+        <div class="card-title">2. Single Slit Diffraction</div>
+        <div class="tag tag-cyan">Central Maxima Width</div>
+      </div>
+
+      <div class="svg-container">
+        <svg viewBox="0 0 380 230" width="380" height="230">
+          <!-- Diffraction Intensity Distribution Curve -->
+          <line x1="30" y1="180" x2="350" y2="180" stroke="#94A3B8" stroke-width="1.5"/>
+          <line x1="190" y1="20" x2="190" y2="180" stroke="#94A3B8" stroke-width="1.5" stroke-dasharray="3,3"/>
+          <text x="190" y="196" font-size="10" font-weight="800" fill="#0F2C59" text-anchor="middle">Central Max (θ = 0)</text>
+
+          <!-- Central Maximum Peak (Broad & Tall) -->
+          <path d="M 120 180 C 145 175 165 40 190 35 C 215 40 235 175 260 180" fill="none" stroke="#0066FF" stroke-width="3"/>
+          <text x="190" y="28" font-size="11" font-weight="800" fill="#0066FF" text-anchor="middle">I₀ (Central)</text>
+
+          <!-- Secondary Maximum 1 (Left) -->
+          <path d="M 60 180 C 75 178 85 145 95 145 C 105 145 112 178 120 180" fill="none" stroke="#0EA5E9" stroke-width="2"/>
+          <text x="90" y="138" font-size="9" font-weight="800" fill="#0284C7">I₀/22</text>
+
+          <!-- Secondary Maximum 1 (Right) -->
+          <path d="M 260 180 C 268 178 275 145 285 145 C 295 145 305 178 320 180" fill="none" stroke="#0EA5E9" stroke-width="2"/>
+          <text x="290" y="138" font-size="9" font-weight="800" fill="#0284C7">I₀/22</text>
+
+          <!-- Minima Markers -->
+          <circle cx="120" cy="180" r="3.5" fill="#EF4444"/>
+          <text x="120" y="195" font-size="9" font-weight="800" fill="#EF4444" text-anchor="middle">-λ/a</text>
+          <circle cx="260" cy="180" r="3.5" fill="#EF4444"/>
+          <text x="260" y="195" font-size="9" font-weight="800" fill="#EF4444" text-anchor="middle">+λ/a</text>
+
+          <!-- Width bracket for Central Maxima -->
+          <line x1="120" y1="85" x2="260" y2="85" stroke="#10B981" stroke-width="2"/>
+          <line x1="120" y1="80" x2="120" y2="90" stroke="#10B981" stroke-width="2"/>
+          <line x1="260" y1="80" x2="260" y2="90" stroke="#10B981" stroke-width="2"/>
+          <text x="190" y="80" font-size="11" font-weight="800" fill="#10B981" text-anchor="middle">Linear Width: β₀ = 2λD / a</text>
+          <text x="190" y="100" font-size="10" font-weight="700" fill="#0F2C59" text-anchor="middle">Angular Width: 2θ₀ = 2λ / a</text>
+        </svg>
+      </div>
+
+      <div class="formula-block cyan">
+        Minima: a·sin θ = n·λ  |  Sec Max: a·sin θ = (n + ½)·λ<br>
+        Central Max Width: β₀ = 2λD / a = 2β  (Twice secondary!)
+      </div>
+
+      <ul class="bullet-list">
+        <li><span class="highlight">Central Maximum Width:</span> The central bright band is twice as wide as any secondary maximum: $\beta_0 = 2 \beta = 2 \lambda D / a$.</li>
+        <li><span class="highlight">Rapid Intensity Fall:</span> Unlike interference where all fringes have equal brightness, diffraction intensity plummets: $I_0 \to I_0 / 22 \to I_0 / 61$.</li>
+        <li><span class="highlight">Slit Narrowing Effect:</span> As slit width $a$ is reduced, the central maximum spreads out wider ($\beta_0 \propto 1/a$).</li>
+      </ul>
+
+      <div class="footer-bar">
+        <span>Fraunhofer Single Slit Diffraction</span>
+        <span>Non-Uniform Intensity Distribution</span>
+      </div>
+    </div>
+
+    <!-- Card 3: Polarization, Malus & Brewster -->
+    <div class="card card-3">
+      <div class="card-header">
+        <div class="card-title">3. Polarization & Brewster</div>
+        <div class="tag tag-purple">Transverse Nature Proof</div>
+      </div>
+
+      <div class="svg-container">
+        <svg viewBox="0 0 380 230" width="380" height="230">
+          <!-- Brewster's Angle Reflection Interface -->
+          <line x1="40" y1="120" x2="340" y2="120" stroke="#0F2C59" stroke-width="2.5"/>
+          <text x="45" y="112" font-size="10" font-weight="800" fill="#0066FF">Air (n = 1)</text>
+          <text x="45" y="136" font-size="10" font-weight="800" fill="#7C3AED">Glass / Medium (n = μ)</text>
+
+          <!-- Normal -->
+          <line x1="190" y1="30" x2="190" y2="210" stroke="#94A3B8" stroke-width="1.5" stroke-dasharray="3,3"/>
+
+          <!-- Incident Unpolarized Ray -->
+          <line x1="80" y1="35" x2="190" y2="120" stroke="#0F172A" stroke-width="2.5"/>
+          <text x="95" y="35" font-size="10" font-weight="800" fill="#0F172A">Unpolarized</text>
+          <!-- Dots and arrows on incident ray -->
+          <circle cx="130" cy="74" r="3" fill="#EF4444"/>
+          <line x1="125" y1="80" x2="135" y2="68" stroke="#EF4444" stroke-width="1.5"/>
+
+          <!-- Reflected Ray (100% Polarized with Dots ⊥ plane) -->
+          <line x1="190" y1="120" x2="300" y2="35" stroke="#10B981" stroke-width="2.5"/>
+          <circle cx="245" cy="77" r="3.5" fill="#10B981"/>
+          <circle cx="275" cy="54" r="3.5" fill="#10B981"/>
+          <text x="245" y="38" font-size="10" font-weight="800" fill="#10B981">100% Linearly Polarized</text>
+
+          <!-- Refracted Ray -->
+          <line x1="190" y1="120" x2="265" y2="205" stroke="#8B5CF6" stroke-width="2.5"/>
+          <text x="275" y="200" font-size="10" font-weight="800" fill="#8B5CF6">Partially Polarized</text>
+
+          <!-- 90 Degree Angle Arc between Reflected and Refracted -->
+          <path d="M 230 89 L 240 102 L 227 114" fill="none" stroke="#EF4444" stroke-width="2"/>
+          <text x="248" y="108" font-size="11" font-weight="800" fill="#EF4444">90°</text>
+
+          <!-- Angles ip and rp -->
+          <text x="175" y="80" font-size="11" font-weight="800" fill="#0066FF">ip</text>
+          <text x="195" y="165" font-size="11" font-weight="800" fill="#8B5CF6">rp</text>
+        </svg>
+      </div>
+
+      <div class="formula-block purple">
+        Malus's Law: I = I₀ · cos² θ<br>
+        Brewster's Law: tan i_p = μ  |  i_p + r_p = 90°
+      </div>
+
+      <ul class="bullet-list">
+        <li><span class="highlight">Transverse Proof:</span> Polarization can *only* occur in transverse waves; longitudinal sound waves cannot be polarized!</li>
+        <li><span class="highlight">Malus's Law:</span> When completely polarized light of intensity $I_0$ passes through an analyzer tilted at angle $\theta$, transmitted intensity is $I = I_0 \cos^2\theta$.</li>
+        <li><span class="highlight">Brewster's Angle:</span> At Brewster angle incidence $i_p$, reflected and refracted rays are mutually perpendicular ($i_p + r_p = 90^\circ$). The reflected beam is completely polarized with vibrations perpendicular to the plane of incidence.</li>
+      </ul>
+
+      <div class="footer-bar">
+        <span>Proof of Wave Transversality</span>
+        <span>Brewster Condition: tan i_p = μ</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

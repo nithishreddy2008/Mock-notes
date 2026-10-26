@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1440, height=880">
+  <title>Wave Optics: Huygens' Wavefronts, Reflection & Refraction</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 1440px;
+      height: 880px;
+      background-color: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0F172A;
+      padding: 32px 40px;
+      overflow: hidden;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 24px;
+      border-bottom: 2px solid #E2E8F0;
+      padding-bottom: 16px;
+    }
+    .title-group h1 {
+      font-size: 26px;
+      font-weight: 800;
+      color: #0F2C59;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+    .title-group p {
+      font-size: 14px;
+      color: #64748B;
+      font-weight: 500;
+    }
+    .badge {
+      background: #0066FF;
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      height: calc(100% - 110px);
+    }
+    .card {
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      border-radius: 14px;
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+      position: relative;
+    }
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      border-radius: 14px 14px 0 0;
+    }
+    .card-1::before { background: #0066FF; }
+    .card-2::before { background: #0EA5E9; }
+    .card-3::before { background: #8B5CF6; }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+    .card-title {
+      font-size: 17px;
+      font-weight: 800;
+      color: #0F2C59;
+    }
+    .tag {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+      text-transform: uppercase;
+    }
+    .tag-blue { background: #EFF6FF; color: #0066FF; }
+    .tag-cyan { background: #F0F9FF; color: #0284C7; }
+    .tag-purple { background: #F5F3FF; color: #7C3AED; }
+
+    .svg-container {
+      width: 100%;
+      height: 240px;
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 10px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .formula-block {
+      background: #F1F5F9;
+      border-left: 3px solid #0066FF;
+      padding: 10px 14px;
+      border-radius: 0 6px 6px 0;
+      font-family: "SF Mono", Consolas, Menlo, monospace;
+      font-size: 12px;
+      color: #0F172A;
+      margin-bottom: 12px;
+      line-height: 1.5;
+    }
+    .formula-block.cyan { border-left-color: #0EA5E9; }
+    .formula-block.purple { border-left-color: #8B5CF6; }
+
+    .bullet-list {
+      list-style: none;
+      font-size: 12px;
+      color: #334155;
+      line-height: 1.55;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .bullet-list li {
+      position: relative;
+      padding-left: 16px;
+    }
+    .bullet-list li::before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      color: #0066FF;
+      font-weight: 800;
+    }
+    .card-2 .bullet-list li::before { color: #0EA5E9; }
+    .card-3 .bullet-list li::before { color: #8B5CF6; }
+
+    .highlight {
+      font-weight: 700;
+      color: #0F2C59;
+    }
+    .footer-bar {
+      margin-top: auto;
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: #94A3B8;
+      font-weight: 600;
+      padding-top: 10px;
+      border-top: 1px solid #F1F5F9;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="title-group">
+      <h1>Wave Optics: Huygens' Principle & Wavefront Geometrical Proofs</h1>
+      <p>Wavefront Topologies • Rigorous Huygens' Reflection Proof (i = r) • Wave Refraction & Snell's Law</p>
+    </div>
+    <div class="badge">CUET UG Physics • Unit 6 (Wave Optics)</div>
+  </div>
+
+  <div class="grid">
+    <!-- Card 1: Wavefronts & Huygens' Construction -->
+    <div class="card card-1">
+      <div class="card-header">
+        <div class="card-title">1. Wavefronts & Huygens</div>
+        <div class="tag tag-blue">Secondary Wavelets</div>
+      </div>
+
+      <div class="svg-container">
+        <svg viewBox="0 0 380 230" width="380" height="230">
+          <!-- Point Source & Spherical Wavefronts -->
+          <circle cx="65" cy="80" r="4" fill="#0066FF"/>
+          <text x="65" y="65" font-size="10" font-weight="800" fill="#0066FF" text-anchor="middle">Point S</text>
+
+          <circle cx="65" cy="80" r="28" fill="none" stroke="#3B82F6" stroke-width="1.8"/>
+          <circle cx="65" cy="80" r="48" fill="none" stroke="#3B82F6" stroke-width="1.8" stroke-dasharray="3,2"/>
+          <text x="65" y="145" font-size="10" font-weight="700" fill="#3B82F6" text-anchor="middle">Spherical Wavefront</text>
+
+          <!-- Line Source & Cylindrical -->
+          <line x1="175" y1="45" x2="175" y2="120" stroke="#0EA5E9" stroke-width="3"/>
+          <rect x="155" y="45" width="40" height="75" rx="10" fill="none" stroke="#0EA5E9" stroke-width="1.8" stroke-dasharray="3,2"/>
+          <text x="175" y="145" font-size="10" font-weight="700" fill="#0284C7" text-anchor="middle">Cylindrical (Slit)</text>
+
+          <!-- Distant Source & Plane Wavefront -->
+          <line x1="275" y1="45" x2="275" y2="125" stroke="#10B981" stroke-width="2.5"/>
+          <line x1="305" y1="45" x2="305" y2="125" stroke="#10B981" stroke-width="2.5"/>
+          <line x1="335" y1="45" x2="335" y2="125" stroke="#10B981" stroke-width="2.5"/>
+          <!-- Ray Arrows perpendicular -->
+          <line x1="260" y1="65" x2="350" y2="65" stroke="#EF4444" stroke-width="1.5"/>
+          <polygon points="350,65 344,62 344,68" fill="#EF4444"/>
+          <line x1="260" y1="105" x2="350" y2="105" stroke="#EF4444" stroke-width="1.5"/>
+          <polygon points="350,105 344,102 344,108" fill="#EF4444"/>
+          <text x="305" y="145" font-size="10" font-weight="700" fill="#10B981" text-anchor="middle">Plane Wavefront</text>
+
+          <!-- Bottom: Secondary Wavelet Envelope -->
+          <rect x="25" y="165" width="330" height="50" rx="6" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1"/>
+          <text x="190" y="184" font-size="10.5" font-weight="800" fill="#0F2C59" text-anchor="middle">HUYGENS' PRINCIPLE</text>
+          <text x="190" y="202" font-size="9.5" font-weight="600" fill="#334155" text-anchor="middle">Every wavefront point acts as secondary spherical source of speed v</text>
+        </svg>
+      </div>
+
+      <div class="formula-block">
+        Wavefront: Locus of all points having identical phase<br>
+        Rays ⊥ Wavefronts | Forward Envelope = New Wavefront
+      </div>
+
+      <ul class="bullet-list">
+        <li><span class="highlight">Wavefront Topologies:</span> Point source produces spherical wavefronts ($I \propto 1/r^2$); line slit produces cylindrical wavefronts ($I \propto 1/r$); infinitely distant source produces plane wavefronts ($I = \text{const}$).</li>
+        <li><span class="highlight">Secondary Wavelets:</span> Each point on a primary wavefront emits secondary wavelets spreading out in all directions with wave velocity $v$.</li>
+        <li><span class="highlight">Forward Envelope:</span> The forward tangential envelope to these secondary wavelets defines the shape and position of the new wavefront at time $t + \Delta t$.</li>
+      </ul>
+
+      <div class="footer-bar">
+        <span>Geometric Locus of Constant Phase</span>
+        <span>Ray Vector k ⊥ Wavefront</span>
+      </div>
+    </div>
+
+    <!-- Card 2: Huygens' Reflection Proof -->
+    <div class="card card-2">
+      <div class="card-header">
+        <div class="card-title">2. Proof of Reflection</div>
+        <div class="tag tag-cyan">i = r Proof</div>
+      </div>
+
+      <div class="svg-container">
+        <svg viewBox="0 0 380 230" width="380" height="230">
+          <!-- Reflecting Surface XY -->
+          <line x1="30" y1="180" x2="350" y2="180" stroke="#0F2C59" stroke-width="3"/>
+          <line x1="30" y1="180" x2="20" y2="195" stroke="#94A3B8" stroke-width="1.5"/>
+          <line x1="70" y1="180" x2="60" y2="195" stroke="#94A3B8" stroke-width="1.5"/>
+          <line x1="110" y1="180" x2="100" y2="195" stroke="#94A3B8" stroke-width="1.5"/>
+          <line x1="150" y1="180" x2="140" y2="195" stroke="#94A3B8" stroke-width="1.5"/>
+          <line x1="190" y1="180" x2="180" y2="195" stroke="#94A3B8" stroke-width="1.5"/>
+          <line x1="230" y1="180" x2="220" y2="195" stroke="#94A3B8" stroke-width="1.5"/>
+          <line x1="270" y1="180" x2="260" y2="195" stroke="#94A3B8" stroke-width="1.5"/>
+          <line x1="310" y1="180" x2="300" y2="195" stroke="#94A3B8" stroke-width="1.5"/>
+          <text x="350" y="196" font-size="10" font-weight="800" fill="#0F2C59">Mirror</text>
+
+          <!-- Point A (incident left) and Point C (incident right) -->
+          <circle cx="90" cy="180" r="4" fill="#0066FF"/>
+          <text x="90" y="200" font-size="11" font-weight="800" fill="#0066FF">A</text>
+          <circle cx="260" cy="180" r="4" fill="#0066FF"/>
+          <text x="260" y="200" font-size="11" font-weight="800" fill="#0066FF">C</text>
+
+          <!-- Incident Rays -->
+          <line x1="30" y1="70" x2="90" y2="180" stroke="#0066FF" stroke-width="2"/>
+          <line x1="140" y1="10" x2="260" y2="180" stroke="#0066FF" stroke-width="2"/>
+
+          <!-- Incident Wavefront AB ⊥ incident ray -->
+          <line x1="90" y1="180" x2="175" y2="60" stroke="#EF4444" stroke-width="2.5"/>
+          <text x="182" y="60" font-size="11" font-weight="800" fill="#EF4444">B</text>
+
+          <!-- Normal at A -->
+          <line x1="90" y1="180" x2="90" y2="50" stroke="#64748B" stroke-width="1.5" stroke-dasharray="3,3"/>
+          <text x="75" y="45" font-size="10" font-weight="700" fill="#64748B">Normal</text>
+
+          <!-- Angles i -->
+          <text x="105" y="115" font-size="11" font-weight="800" fill="#0066FF">i</text>
+          <text x="140" y="172" font-size="11" font-weight="800" fill="#0066FF">i</text>
+
+          <!-- Secondary wavelet arc from A of radius vt = BC -->
+          <path d="M 120 75 A 120 120 0 0 1 180 78" fill="none" stroke="#8B5CF6" stroke-width="1.5" stroke-dasharray="3,2"/>
+
+          <!-- Reflected Wavefront CE tangential to arc at E -->
+          <line x1="260" y1="180" x2="160" y2="80" stroke="#10B981" stroke-width="2.5"/>
+          <circle cx="160" cy="80" r="4" fill="#10B981"/>
+          <text x="150" y="75" font-size="11" font-weight="800" fill="#10B981">E</text>
+
+          <!-- Reflected Ray from A through E -->
+          <line x1="90" y1="180" x2="200" y2="30" stroke="#10B981" stroke-width="2"/>
+          <polygon points="180,50 174,45 174,55" fill="#10B981"/>
+
+          <!-- Angle r -->
+          <text x="220" y="172" font-size="11" font-weight="800" fill="#10B981">r</text>
+          <text x="210" y="110" font-size="10" font-weight="700" fill="#64748B">BC = AE = v·t</text>
+        </svg>
+      </div>
+
+      <div class="formula-block cyan">
+        BC = AE = v·t  (Common hypotenuse AC)<br>
+        ΔABC ≅ ΔAEC (RHS Congruence)  ⟹  ∠i = ∠r
+      </div>
+
+      <ul class="bullet-list">
+        <li><span class="highlight">Geometric Construction:</span> Time taken for ray at $B$ to reach $C$ is $t = BC / v$. In same time $t$, secondary wavelet from $A$ spreads to radius $AE = v t$.</li>
+        <li><span class="highlight">RHS Congruence:</span> Right triangles $\triangle ABC$ and $\triangle AEC$ share hypotenuse $AC$ and side $BC = AE = v t$, proving $\triangle ABC \cong \triangle AEC$.</li>
+        <li><span class="highlight">Law of Reflection:</span> Corresponding angles are equal: $\angle BAC = \angle ECA \implies i = r$. Incident ray, normal, and reflected ray lie in same plane.</li>
+      </ul>
+
+      <div class="footer-bar">
+        <span>RHS Triangle Congruence Proof</span>
+        <span>Wavefront Normality Principle</span>
+      </div>
+    </div>
+
+    <!-- Card 3: Huygens' Refraction & Snell's Law -->
+    <div class="card card-3">
+      <div class="card-header">
+        <div class="card-title">3. Proof of Refraction</div>
+        <div class="tag tag-purple">Snell's Law Proof</div>
+      </div>
+
+      <div class="svg-container">
+        <svg viewBox="0 0 380 230" width="380" height="230">
+          <!-- Refracting Interface XY -->
+          <line x1="30" y1="110" x2="350" y2="110" stroke="#0F2C59" stroke-width="2.5"/>
+          <text x="32" y="100" font-size="10" font-weight="800" fill="#0066FF">Medium 1 (v₁, n₁, λ₁)</text>
+          <text x="32" y="130" font-size="10" font-weight="800" fill="#7C3AED">Medium 2 (v₂, n₂, λ₂)</text>
+
+          <!-- Incident Point A and Point C on Interface -->
+          <circle cx="110" cy="110" r="4" fill="#0066FF"/>
+          <text x="96" y="105" font-size="11" font-weight="800" fill="#0066FF">A</text>
+          <circle cx="270" cy="110" r="4" fill="#0066FF"/>
+          <text x="278" y="105" font-size="11" font-weight="800" fill="#0066FF">C</text>
+
+          <!-- Incident Wavefront AB -->
+          <line x1="110" y1="110" x2="190" y2="25" stroke="#EF4444" stroke-width="2.5"/>
+          <circle cx="190" cy="25" r="4" fill="#EF4444"/>
+          <text x="198" y="25" font-size="11" font-weight="800" fill="#EF4444">B</text>
+
+          <!-- Incident Rays -->
+          <line x1="50" y1="35" x2="110" y2="110" stroke="#0066FF" stroke-width="2"/>
+          <line x1="130" y1="0" x2="270" y2="110" stroke="#0066FF" stroke-width="2"/>
+
+          <!-- Distance BC in medium 1 -->
+          <text x="245" y="65" font-size="10" font-weight="700" fill="#0066FF">v₁·t</text>
+
+          <!-- Wavelet in Medium 2 from A of radius AD = v2 * t -->
+          <path d="M 170 180 A 85 85 0 0 1 185 140" fill="none" stroke="#8B5CF6" stroke-width="1.5" stroke-dasharray="3,2"/>
+
+          <!-- Refracted Wavefront CD tangential at D -->
+          <line x1="270" y1="110" x2="175" y2="165" stroke="#8B5CF6" stroke-width="2.5"/>
+          <circle cx="175" cy="165" r="4" fill="#8B5CF6"/>
+          <text x="160" y="180" font-size="11" font-weight="800" fill="#8B5CF6">D</text>
+
+          <!-- Refracted Ray from A through D -->
+          <line x1="110" y1="110" x2="210" y2="195" stroke="#8B5CF6" stroke-width="2"/>
+          <polygon points="190,178 184,172 184,182" fill="#8B5CF6"/>
+
+          <!-- Distance AD in medium 2 -->
+          <text x="110" y="155" font-size="10" font-weight="700" fill="#8B5CF6">v₂·t</text>
+
+          <!-- Angles -->
+          <text x="145" y="103" font-size="10" font-weight="800" fill="#0066FF">i</text>
+          <text x="235" y="125" font-size="10" font-weight="800" fill="#8B5CF6">r</text>
+        </svg>
+      </div>
+
+      <div class="formula-block purple">
+        sin i = BC / AC = v₁·t / AC | sin r = AD / AC = v₂·t / AC<br>
+        sin i / sin r = v₁ / v₂ = n₂ / n₁ = μ  [Snell's Law]
+      </div>
+
+      <ul class="bullet-list">
+        <li><span class="highlight">Wavelet Speed Ratio:</span> In time $t$, incident point $B$ travels $v_1 t$ to reach $C$, while wavelet from $A$ travels $v_2 t$ to reach $D$ in medium 2.</li>
+        <li><span class="highlight">Snell's Law:</span> $\sin i / \sin r = (v_1 t / AC) / (v_2 t / AC) = v_1 / v_2 = n_2 / n_1$.</li>
+        <li><span class="highlight">Wavelength Compression:</span> Frequency $\nu$ remains strictly unchanged ($E = h\nu$ constant); wavelength compresses: $\lambda_2 = \lambda_1 / n$.</li>
+      </ul>
+
+      <div class="footer-bar">
+        <span>Kinematic Wave Velocity Ratio</span>
+        <span>Frequency Invariance Across Boundary</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
