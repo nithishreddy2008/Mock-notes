@@ -95,7 +95,7 @@ $ E_g = E_c - E_v $
 = Concept Module 2: Intrinsic & Extrinsic Semiconductors
 
 #figure(
-  image("assets/physics_semiconductors_energy_bands_doping.png", width: 33%),
+  image("assets/physics_semiconductors_energy_bands_doping.png", width: 84%),
   caption: [Energy band structures in solids, intrinsic hole-electron pair generation, and donor/acceptor energy levels in extrinsic semiconductors.],
 )
 
@@ -204,7 +204,7 @@ $ r_d = (Delta V) / (Delta I) $
 = Concept Module 4: Diode as a Rectifier (AC to DC Conversion)
 
 #figure(
-  image("assets/physics_diode_rectifiers_zener.png", width: 33%),
+  image("assets/physics_diode_rectifiers_zener.png", width: 84%),
   caption: [p-n junction I-V curves, half-wave & full-wave rectifier topologies with smoothing filter, and Zener diode voltage regulator circuit.],
 )
 
@@ -301,7 +301,7 @@ $ V_"in" - V_Z = I_S R_S ==> R_S = (V_"in" - V_Z) / (I_Z + I_L) $
 = Concept Module 6: Problem-Solving Shortcuts, CUET Traps & Cheatsheet
 
 #figure(
-  image("assets/physics_electronic_devices_mindmap.png", width: 30%),
+  image("assets/physics_electronic_devices_mindmap.png", width: 84%),
   caption: [Electronic Devices Master Synthesis Mindmap covering solid-state physics, junction dynamics, rectifiers, and optoelectronics.],
 )
 

@@ -153,7 +153,19 @@ Visual clarity is central to OurMocks notes. Every student should grasp the stru
    - Source code in `diagrams/<name>.html` using HTML5/SVG + CSS (light canvas, clean contrast, crisp typography).
    - High-DPI rasterization via Playwright:
      `npx playwright screenshot --device "Desktop Chrome HiDPI" --channel chrome --viewport-size "<w>,<h>" "file://$(pwd)/diagrams/<name>.html" diagrams/png/<name>.png`
-   - Copy PNGs to `typst-sources/<topic>/assets/` and embed using `#figure(image("assets/<name>.png", width: 100%), caption: [...])`.
+   - Copy PNGs to `typst-sources/<topic>/assets/` and embed using `#figure(image("assets/<name>.png", width: 85%), caption: [...])`.
+
+7. **DIAGRAM EMBEDDING SIZING & PROPORTIONS IN TYPST (v2.5 — Readability standard for all subjects):**
+   - **Cross-Subject Mandate:** This sizing standard applies uniformly across all current and upcoming CUET UG subjects (Physics, Chemistry, Biology, Mathematics, and upcoming Humanities/Commerce subjects).
+   - **Optimal Diagram Width (84%–88%):**
+     - Diagram PNGs embedded in Typst notes must NEVER be rendered as small, shrunken thumbnails (e.g. 25%–55% widths make sub-labels, formulas, reaction mechanisms, and mindmap nodes unreadable without manual zooming).
+     - Standard embedding width is **`width: 84%` to `88%`** (spanning the full comfortable width of the content column for maximum readability, high visual clarity, and print quality).
+     - If an exceptionally dense page requires tight vertical budgeting, the absolute minimum allowed width is **`75%`**; embedding widths below 70% are strictly banned.
+     - **Layout Budgeting Strategy:** Accommodate enlarged diagrams by tightening vertical spacing, condensing surrounding text paragraphs, or using compact bullet points rather than reducing the diagram to an illegible size.
+     - **Strict Document Page Budget (15–17 pages, target 16 pages):**
+       - The 3-page MCQ structure is sacred: exactly 15 MCQs across 3 dedicated pages (Q1–5, Q6–10, Q11–15).
+       - Concept notes, diagrams, and the cheatsheet box must finish cleanly on Page 13 (for 16-page target) or Page 14 (for 17-page budget).
+       - Cheatsheet boxes must never spill onto an isolated extra page; condense cheatsheet items into 4–6 compact multi-formula lines if necessary to preserve page boundary integrity.
 
 ---
 

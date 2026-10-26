@@ -109,7 +109,7 @@ The apparatus consists of an evacuated quartz-glass envelope containing two elec
 Monochromatic light from an external source passes through a quartz window (which transmits UV light transparently) and falls on plate $C$. A variable DC voltage is applied between $C$ and $A$ using a commutator and potential divider, while a microammeter ($mu"A"$) measures the resulting photocurrent.
 
 #align(center)[
-  #image("assets/physics_dual_nature_photoelectric_einstein.png", width: 38%)
+  #image("assets/physics_dual_nature_photoelectric_einstein.png", width: 84%)
 ]
 
 == Variation of Photocurrent with Light Intensity
@@ -247,7 +247,7 @@ Substituting into the de Broglie equation:
 $ lambda = h / sqrt(2 m q V) $
 
 #align(center)[
-  #image("assets/physics_dual_nature_debroglie_matter_waves.png", width: 38%)
+  #image("assets/physics_dual_nature_debroglie_matter_waves.png", width: 84%)
 ]
 
 == Standard Particle Acceleration Formulas (V in Volts)
@@ -359,7 +359,7 @@ For an electromagnetic beam of power $P$ and wavelength $lambda$:
 )
 
 #align(center)[
-  #image("assets/physics_dual_nature_mindmap.png", width: 33%)
+  #image("assets/physics_dual_nature_mindmap.png", width: 84%)
 ]
 
 #worked-example("Radiation Force on a Reflecting Mirror")[

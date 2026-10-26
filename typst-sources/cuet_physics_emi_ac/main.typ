@@ -133,7 +133,7 @@ When a conductor moves across a magnetic field, the magnetic Lorentz force on fr
 )
 
 #figure(
-  image("assets/physics_emi_faraday_lenz_induction.png", width: 48%),
+  image("assets/physics_emi_faraday_lenz_induction.png", width: 84%),
   caption: [Electromagnetic Induction Dynamics: Faraday's flux change, Lenz's energy opposing reaction, and translational/rotational motional EMF.],
 )
 
@@ -319,7 +319,7 @@ In a series LCR circuit connected to an AC source $V = V_0 sin(omega t)$, the sa
 ]
 
 #figure(
-  image("assets/physics_ac_lcr_phasors_transformer.png", width: 48%),
+  image("assets/physics_ac_lcr_phasors_transformer.png", width: 84%),
   caption: [Alternating Current Analysis: Series LCR phasor triangle, frequency resonance response curve, and wattless power decomposition in transformers.],
 )
 
@@ -425,7 +425,7 @@ A transformer is a static electromagnetic device that steps AC voltage up or dow
 4. *Flux Leakage:* Incomplete linkage between primary and secondary flux; minimized by winding primary and secondary coils concentrically over one another.
 
 #figure(
-  image("assets/physics_emi_ac_mindmap.png", width: 50%),
+  image("assets/physics_emi_ac_mindmap.png", width: 84%),
   caption: [Master Synthesis Mindmap: Structural framework of Unit 4 Electromagnetic Induction and Alternating Currents.],
 )
 

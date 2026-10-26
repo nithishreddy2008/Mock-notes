@@ -168,7 +168,7 @@ Consider an electromagnetic wave propagating along the $+x$-direction. The elect
 ]
 
 #figure(
-  image("assets/physics_em_waves_displacement_propagation.png", width: 48%),
+  image("assets/physics_em_waves_displacement_propagation.png", width: 84%),
   caption: [Electromagnetic Wave Propagation: Displacement current in capacitor gaps, transverse orthogonal field vectors ($E bot B bot k$), and energy equipartition.],
 )
 
@@ -327,7 +327,7 @@ The electromagnetic spectrum comprises the entire continuous range of electromag
 )
 
 #figure(
-  image("assets/physics_em_spectrum_classification_applications.png", width: 48%),
+  image("assets/physics_em_spectrum_classification_applications.png", width: 84%),
   caption: [Electromagnetic Spectrum Architecture: Wavelength ladder, physical generation mechanisms, and essential CUET technological applications.],
 )
 
@@ -445,7 +445,7 @@ Electromagnetic waves propagate through the atmosphere via three distinct mechan
 = Master Mindmap & High-Yield Cheatsheet
 
 #figure(
-  image("assets/physics_em_waves_mindmap.png", width: 50%),
+  image("assets/physics_em_waves_mindmap.png", width: 84%),
   caption: [Master Synthesis Mindmap: Structural framework of Unit 5 Electromagnetic Waves.],
 )
 

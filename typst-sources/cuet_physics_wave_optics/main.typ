@@ -116,7 +116,7 @@ Consider a plane wavefront $A B$ incident at an angle $i$ on a plane reflecting 
 ]
 
 #figure(
-  image("assets/physics_wave_optics_huygens_reflection_refraction.png", width: 44%),
+  image("assets/physics_wave_optics_huygens_reflection_refraction.png", width: 84%),
   caption: [Huygens' Principle in Action: Wavefront topologies, RHS triangle congruence reflection proof, and Snell's refraction law derivation.],
 )
 
@@ -240,7 +240,7 @@ Thomas Young (1801) demonstrated the wave nature of light using two narrow paral
 ]
 
 #figure(
-  image("assets/physics_wave_optics_ydse_diffraction.png", width: 44%),
+  image("assets/physics_wave_optics_ydse_diffraction.png", width: 84%),
   caption: [Interference and Diffraction Architecture: YDSE geometry, Fraunhofer single-slit central maximum width ($2 beta$), and Brewster's polarization angle.],
 )
 
@@ -369,7 +369,7 @@ At Brewster's polarizing angle of incidence $i_p$, the reflected ray is $100\%$ 
 = Master Mindmap & High-Yield Cheatsheet
 
 #figure(
-  image("assets/physics_wave_optics_mindmap.png", width: 44%),
+  image("assets/physics_wave_optics_mindmap.png", width: 84%),
   caption: [Master Synthesis Mindmap: Structural framework of Unit 6 Wave Optics.],
 )
 

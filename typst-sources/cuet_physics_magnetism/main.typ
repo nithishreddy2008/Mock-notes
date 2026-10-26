@@ -87,7 +87,7 @@ Consider a circular loop of radius $R$ carrying a steady current $I$.
   where $M = N I A = N I (pi R^2)$ is the magnetic dipole moment of the circular loop.
 
 #figure(
-  image("assets/physics_magnetism_biot_ampere_lorentz.png", width: 50%),
+  image("assets/physics_magnetism_biot_ampere_lorentz.png", width: 84%),
   caption: [Electromagnetic Dynamics: Biot-Savart axial field, Ampere's circuital solenoid core, and Lorentz gyration.],
 )
 
@@ -277,7 +277,7 @@ where $C$ is the restoring torque per unit twist (torsional stiffness).
   $ V_s = theta / V = theta / (I G) = (N A B) / (C G) = I_s / G quad ["SI unit: div/V or rad/V"] $
 
 #figure(
-  image("assets/physics_magnetism_galvanometer_materials.png", width: 50%),
+  image("assets/physics_magnetism_galvanometer_materials.png", width: 84%),
   caption: [Moving Coil Galvanometer Architecture: Radial field torque, conversion to ammeter/voltmeter, and material hysteresis loop.],
 )
 
@@ -364,7 +364,7 @@ A bar magnet of length $2 l$ and pole strength $m$ has magnetic dipole moment $M
   - *Permanent Magnets (e.g., Steel, Alnico):* Require *high retentivity and high coercivity* to resist demagnetization from stray fields and mechanical shocks.
 
 #figure(
-  image("assets/physics_magnetism_mindmap.png", width: 50%),
+  image("assets/physics_magnetism_mindmap.png", width: 84%),
   caption: [Master Synthesis Mindmap: Complete structural architecture of Unit 3 Magnetic Effects of Current and Magnetism.],
 )
 

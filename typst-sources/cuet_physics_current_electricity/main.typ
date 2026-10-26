@@ -104,7 +104,7 @@ Consider a conductor of uniform cross-sectional area $A$ containing $n$ free con
 ]
 
 #figure(
-  image("assets/physics_current_microscopic_conduction.png", width: 38%),
+  image("assets/physics_current_microscopic_conduction.png", width: 84%),
   caption: [Microscopic Conduction Dynamics: Random thermal agitation, electric field induced drift velocity ($v_d = e E tau / m$), and current density relations.],
 )
 
@@ -349,7 +349,7 @@ $ sum Delta V = 0 quad ==> quad sum E = sum I R $
 ]
 
 #figure(
-  image("assets/physics_current_circuits_kirchhoff.png", width: 38%),
+  image("assets/physics_current_circuits_kirchhoff.png", width: 84%),
   caption: [Circuit Analysis Architecture: Kirchhoff's junction & loop laws, sign traversal rules, and Wheatstone bridge null deflection topology.],
 )
 
@@ -408,7 +408,7 @@ The meter bridge operates on the principle of the balanced Wheatstone bridge. It
 ]
 
 #figure(
-  image("assets/physics_current_electricity_mindmap.png", width: 38%),
+  image("assets/physics_current_electricity_mindmap.png", width: 84%),
   caption: [Master Synthesis Mindmap: Microscopic conduction, Ohm's law, Joule heating, cell grouping, and bridge analysis.],
 )
 

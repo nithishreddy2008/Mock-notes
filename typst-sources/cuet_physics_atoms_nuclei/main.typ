@@ -108,7 +108,7 @@ To overcome the limitations of Rutherford's model, Niels Bohr incorporated Planc
 3. *Postulate 3 (Frequency Condition):* Radiation is emitted/absorbed on quantum jumps: $E_2 - E_1 = h nu = (h c) / lambda$.
 
 #align(center)[
-  #image("assets/physics_atoms_bohr_energy_spectra.png", width: 34%)
+  #image("assets/physics_atoms_bohr_energy_spectra.png", width: 84%)
 ]
 
 == Derivation of Orbital Radius ($r_n$)
@@ -253,7 +253,7 @@ $ R = R_0 A^(1/3) $
 where $R_0 = (1.20 plus.minus 0.1) times 10^(-15)" m" approx 1.2" fm"$.
 
 #align(center)[
-  #image("assets/physics_nuclei_binding_energy_fission_fusion.png", width: 33%)
+  #image("assets/physics_nuclei_binding_energy_fission_fusion.png", width: 84%)
 ]
 
 == Proof that Nuclear Density is Independent of Mass Number
@@ -374,7 +374,7 @@ $ 4 ""^1_1"H" -> ""^4_2"He" + 2 e^+ + 2 nu_e + 2 gamma + 26.7" MeV" $
 Energy released per unit mass in fusion is $approx 6.7" MeV/amu"$, nearly 8 times higher than fission ($0.85" MeV/amu"$).
 
 #align(center)[
-  #image("assets/physics_atoms_nuclei_mindmap.png", width: 26%)
+  #image("assets/physics_atoms_nuclei_mindmap.png", width: 84%)
 ]
 
 #worked-example("Energy Released in Nuclear Fission")[
