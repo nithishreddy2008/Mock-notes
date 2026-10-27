@@ -1,116 +1,349 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
+<title>Microbes in Human Welfare Master Concept Mindmap</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
-  .wrap { width: 1480px; height: 1060px; position: relative; background: #fff; }
-  svg.wires { position: absolute; inset: 0; width: 1480px; height: 1060px; }
-  .center {
-    position: absolute; left: 545px; top: 385px; width: 390px; height: 100px;
-    background: #071A4D; border-radius: 16px; display: flex; flex-direction: column;
-    align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(7,26,77,.25);
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* Header */
+  .header {
+    height: 64px;
+    background: #071A4D;
+    padding: 0 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 4px solid #B8FF34;
+  }
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .header-title {
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+  }
+  .header-badge {
+    background: #1F5EFF;
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 9px;
+    border-radius: 6px;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+  }
+  .header-right {
+    color: #B8FF34;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+  }
+
+  /* Canvas Layout */
+  .mindmap-canvas {
+    width: 1440px;
+    height: 816px;
+    position: relative;
+    padding: 16px 24px;
+  }
+
+  /* SVG Wires */
+  svg.wires {
+    position: absolute;
+    inset: 0;
+    width: 1440px;
+    height: 816px;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* Center Hub */
+  .center-hub {
+    position: absolute;
+    left: 535px;
+    top: 295px;
+    width: 370px;
+    height: 94px;
+    background: #071A4D;
+    border-radius: 12px;
     border-bottom: 5px solid #B8FF34;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    box-shadow: none !important;
   }
-  .center .t { color: #fff; font-size: 23px; font-weight: 800; letter-spacing: .5px; text-align: center; }
-  .center .s { color: #B8FF34; font-size: 13.5px; font-weight: 700; letter-spacing: 2px; margin-top: 4px; }
+  .center-hub-title {
+    color: #FFFFFF;
+    font-size: 19px;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+  }
+  .center-hub-subtitle {
+    color: #B8FF34;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-top: 4px;
+  }
+
+  /* Module Cards */
   .card {
-    position: absolute; width: 470px; background: #FCFDFF; border: 1.5px solid #D5DCEA;
-    border-radius: 14px; padding: 13px 16px 12px;
+    position: absolute;
+    width: 410px;
+    background: #FFFFFF;
+    border: 1.5px solid #CBD5E1;
+    border-radius: 9px;
+    padding: 10px 14px 9px;
+    z-index: 5;
+    box-shadow: none !important;
   }
-  .card h2 { font-size: 20px; color: #071A4D; font-weight: 800; margin-bottom: 7px;
-             padding-bottom: 5px; border-bottom: 3px solid; display: inline-block; }
-  .leaf { font-size: 14px; color: #1B2333; margin: 5px 0; padding-left: 16px; position: relative; line-height: 1.3; }
-  .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
-  .b .leaf::before { background: #1F5EFF; }
-  .l .leaf::before { background: #7FB800; }
-  .leaf b { color: #071A4D; }
-  .b h2 { border-color: #1F5EFF; }
-  .l h2 { border-color: #7FB800; }
-  .left { left: 30px; }
-  .right { left: 980px; }
-  .exc {
-    position: absolute; left: 510px; top: 878px; width: 460px; background: #FFF3EC;
-    border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px;
+  .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    border-bottom: 2px solid #F1F5F9;
   }
-  .exc h2 { font-size: 17px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
-  .exc .leaf { font-size: 13px; margin: 3px 0; padding-left: 14px; color: #7A2A12; }
-  .exc .leaf::before { background: #D2481F; }
-  .exc b { color: #B4380F; }
+  .card-title {
+    font-size: 13px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .card-badge {
+    font-size: 9.5px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+  .item-list {
+    font-size: 11px;
+    line-height: 1.34;
+    color: #1E293B;
+    display: flex;
+    flex-direction: column;
+    gap: 3.5px;
+  }
+  .item-list b { color: #071A4D; }
+
+  /* Positions */
+  .c-household {
+    left: 28px;
+    top: 20px;
+    border-top: 3px solid #3B82F6;
+  }
+  .c-industry {
+    left: 28px;
+    top: 242px;
+    border-top: 3px solid #F59E0B;
+  }
+  .c-bioactive {
+    left: 28px;
+    top: 464px;
+    border-top: 3px solid #EC4899;
+  }
+
+  .c-stp {
+    right: 28px;
+    top: 20px;
+    border-top: 3px solid #06B6D4;
+  }
+  .c-biogas {
+    right: 28px;
+    top: 242px;
+    border-top: 3px solid #8B5CF6;
+  }
+  .c-biofertilizer {
+    right: 28px;
+    top: 464px;
+    border-top: 3px solid #10B981;
+  }
+
+  /* Bottom Warning Trap Box */
+  .c-traps {
+    position: absolute;
+    left: 450px;
+    top: 686px;
+    width: 540px;
+    background: #FFFBEB;
+    border: 1.5px solid #F59E0B;
+    border-radius: 8px;
+    padding: 8px 14px;
+    z-index: 5;
+    box-shadow: none !important;
+  }
+  .trap-title {
+    font-size: 11.5px;
+    font-weight: 800;
+    color: #B45309;
+    margin-bottom: 3px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .trap-text {
+    font-size: 10.2px;
+    line-height: 1.3;
+    color: #78350F;
+  }
+  .organism { font-style: italic; font-weight: 600; color: #071A4D; }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <svg class="wires" viewBox="0 0 1480 1060">
-    <path d="M 545 420 C 495 420, 520 165, 502 160" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
-    <path d="M 545 435 C 505 435, 520 430, 502 430" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 545 450 C 495 450, 520 700, 502 705" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
-    <path d="M 935 420 C 985 420, 960 165, 978 160" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 935 435 C 975 435, 960 430, 978 430" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
-    <path d="M 935 450 C 985 450, 960 700, 978 705" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 740 485 C 740 640, 740 808, 740 876" fill="none" stroke="#D2481F" stroke-width="2.5" stroke-dasharray="7 5" opacity=".6"/>
+
+<div class="header">
+  <div class="header-left">
+    <div class="header-title">Microbes in Human Welfare Master Concept Mindmap</div>
+    <div class="header-badge">CUET UG Biology</div>
+  </div>
+  <div class="header-right">MOCK · PRACTICE · CRACK · 2027 CYCLE</div>
+</div>
+
+<div class="mindmap-canvas">
+
+  <!-- SVG Orthogonal Connections -->
+  <svg class="wires">
+    <!-- Hub to Household (top-left) -->
+    <path d="M 535 320 H 460 V 110 H 438" fill="none" stroke="#3B82F6" stroke-width="2.2" stroke-linecap="round"/>
+    <!-- Hub to Industry (mid-left) -->
+    <path d="M 535 342 H 460 V 330 H 438" fill="none" stroke="#F59E0B" stroke-width="2.2" stroke-linecap="round"/>
+    <!-- Hub to Bioactive (bottom-left) -->
+    <path d="M 535 365 H 460 V 550 H 438" fill="none" stroke="#EC4899" stroke-width="2.2" stroke-linecap="round"/>
+
+    <!-- Hub to STP (top-right) -->
+    <path d="M 905 320 H 980 V 110 H 1002" fill="none" stroke="#06B6D4" stroke-width="2.2" stroke-linecap="round"/>
+    <!-- Hub to Biogas (mid-right) -->
+    <path d="M 905 342 H 980 V 330 H 1002" fill="none" stroke="#8B5CF6" stroke-width="2.2" stroke-linecap="round"/>
+    <!-- Hub to Biofertilizers (bottom-right) -->
+    <path d="M 905 365 H 980 V 550 H 1002" fill="none" stroke="#10B981" stroke-width="2.2" stroke-linecap="round"/>
+
+    <!-- Hub to Traps (bottom center) -->
+    <path d="M 720 389 V 686" fill="none" stroke="#F59E0B" stroke-width="2" stroke-dasharray="4 4"/>
   </svg>
 
-  <div class="center">
-    <div class="t">MICROBES IN HUMAN WELFARE</div>
-    <div class="s">UNIT VIII &#183; COMPLETE CHAPTER MAP</div>
+  <!-- Center Hub -->
+  <div class="center-hub">
+    <div class="center-hub-title">MICROBES IN HUMAN WELFARE</div>
+    <div class="center-hub-subtitle">UNIT VIII · NCERT COMPLETE BLUEPRINT</div>
   </div>
 
-  <div class="card left b" style="top:62px">
-    <h2>Household Products</h2>
-    <div class="leaf"><b>Curd:</b> Lactobacillus turns milk sugar into lactic acid; also adds vitamin B&#8321;&#8322;</div>
-    <div class="leaf"><b>Dosa &amp; idli:</b> bacteria + yeasts ferment the batter; CO&#8322; puffs it spongy</div>
-    <div class="leaf"><b>Bread:</b> baker's yeast <i>Saccharomyces cerevisiae</i> raises the dough</div>
-    <div class="leaf"><b>Cheese:</b> Swiss holes = CO&#8322; of <i>Propionibacterium</i>; Roquefort veins = fungi</div>
+  <!-- Top-Left: Household Products -->
+  <div class="card c-household">
+    <div class="card-header">
+      <span class="card-title">1. Household Food Processing</span>
+      <span class="card-badge" style="background:#DBEAFE; color:#1E40AF;">Dairy & Dough</span>
+    </div>
+    <div class="item-list">
+      <div>• <b>LAB (Lactic Acid Bacteria):</b> <span class="organism">Lactobacillus</span> converts milk to curd; boosts <b>Vitamin B<sub>12</sub></b>; checks gut pathogens.</div>
+      <div>• <b>Dough Fermentation:</b> Puffed appearance in dosa & idli is due to CO<sub>2</sub> production by fermenting bacteria.</div>
+      <div>• <b>Baker's Yeast:</b> <span class="organism">Saccharomyces cerevisiae</span> ferments bread dough, making it soft and porous.</div>
+      <div>• <b>Traditional Food & Toddy:</b> Toddy made by fermenting sap from palms; fermented soybean, bamboo shoots, and fish.</div>
+      <div>• <b>Swiss vs Roquefort Cheese:</b> Swiss cheese has large holes via CO<sub>2</sub> by <span class="organism">Propionibacterium sharmanii</span>; Roquefort ripened by fungus <span class="organism">Penicillium roqueforti</span>.</div>
+    </div>
   </div>
 
-  <div class="card left l" style="top:330px">
-    <h2>Industrial Products</h2>
-    <div class="leaf"><b>Beverages:</b> yeast ferments malted cereals + fruit juices into ethanol</div>
-    <div class="leaf"><b>Antibiotics:</b> penicillin from <i>Penicillium</i> — Fleming 1928; Chain &amp; Florey 1942</div>
-    <div class="leaf"><b>Enzymes:</b> lipases scrub clothes in detergents; pectinases clear bottled juice</div>
-    <div class="leaf"><b>Bioactive:</b> Cyclosporin A shields transplants; statins cut cholesterol</div>
+  <!-- Mid-Left: Industrial Chemicals & Enzymes -->
+  <div class="card c-industry">
+    <div class="card-header">
+      <span class="card-title">2. Fermented Beverages & Chemicals</span>
+      <span class="card-badge" style="background:#FEF3C7; color:#92400E;">Industrial</span>
+    </div>
+    <div class="item-list">
+      <div>• <b>Brewer's Yeast:</b> <span class="organism">S. cerevisiae</span> ferments malted cereals & fruit juices into ethanol.</div>
+      <div>• <b>Distillation Rule:</b> Wine and beer are <b>non-distilled</b> (low alcohol); Whisky, brandy, rum are <b>distilled</b> (high alcohol).</div>
+      <div>• <b>Organic Acids:</b> Citric acid (<span class="organism">Aspergillus niger</span>, fungus); Acetic acid (<span class="organism">Acetobacter aceti</span>, bacterium); Butyric acid (<span class="organism">Clostridium butylicum</span>); Lactic acid (<span class="organism">Lactobacillus</span>).</div>
+      <div>• <b>Lipases:</b> Added to laundry detergents to digest lipids and remove <b>oily stains</b>.</div>
+      <div>• <b>Fruit Juice Clarifiers:</b> Commercial bottled juices are cleared by <b>Pectinases</b> & <b>Proteases</b>.</div>
+    </div>
   </div>
 
-  <div class="card left b" style="top:610px">
-    <h2>Sewage Treatment</h2>
-    <div class="leaf"><b>Primary (physical):</b> screening &#8594; grit removal &#8594; sedimentation</div>
-    <div class="leaf"><b>Secondary (biological):</b> flocs grow in the aeration tank; BOD falls</div>
-    <div class="leaf">Settling tank sinks the flocs as <b>activated sludge</b> &#8594; anaerobic digester</div>
-    <div class="leaf">Effluent is released <b>only when BOD is low</b> enough</div>
+  <!-- Bottom-Left: Sacred Bioactive Molecules -->
+  <div class="card c-bioactive">
+    <div class="card-header">
+      <span class="card-title">3. Sacred Bioactive Drugs (NCERT Trinity)</span>
+      <span class="card-badge" style="background:#FCE7F3; color:#9D174D;">Medical</span>
+    </div>
+    <div class="item-list">
+      <div>• <b>Streptokinase (Clot Buster):</b> Bacterium <span class="organism">Streptococcus</span> (genetic engineering); dissolves clots in blood vessels of myocardial infarction patients.</div>
+      <div>• <b>Cyclosporin A (Immunosuppressant):</b> Soil fungus <span class="organism">Trichoderma polysporum</span>; inhibits graft rejection in <b>organ transplant</b> patients.</div>
+      <div>• <b>Statins (Cholesterol Lowering):</b> Yeast <span class="organism">Monascus purpureus</span>; competitively inhibits <b>HMG-CoA reductase</b> for cholesterol synthesis.</div>
+      <div>• <b>Penicillin (First Antibiotic):</b> Discovered by Alexander Fleming from <span class="organism">Penicillium notatum</span>; therapeutic potential proven by Chain & Florey (WWII).</div>
+    </div>
   </div>
 
-  <div class="card right l" style="top:62px">
-    <h2>Biogas</h2>
-    <div class="leaf"><b>Made by methanogens</b> — microbes that work without any oxygen</div>
-    <div class="leaf"><b>Mix:</b> methane 50&#8211;70% + CO&#8322; + traces of other gases</div>
-    <div class="leaf"><i>Methanobacterium</i> lives in cattle rumen &#8594; gobar gas from dung</div>
-    <div class="leaf">Burns <b>without smoke</b>; spent slurry is a good fertiliser</div>
+  <!-- Top-Right: Sewage Treatment Plants -->
+  <div class="card c-stp">
+    <div class="card-header">
+      <span class="card-title">4. Sewage Treatment Plant (STP)</span>
+      <span class="card-badge" style="background:#CFFAFE; color:#0E7490;">Purification</span>
+    </div>
+    <div class="item-list">
+      <div>• <b>Primary Treatment (Physical):</b> Sequential filtration (floating debris) + sedimentation (grit/sand); primary sludge settles, primary effluent passes.</div>
+      <div>• <b>Aeration Tank (Biological):</b> Constant air pumping; aerobic <b>flocs</b> (bacteria + fungal hyphae) consume organics, rapidly driving down <b>BOD</b>.</div>
+      <div>• <b>BOD Rule:</b> Higher BOD = more polluted water. Secondary treatment continues strictly until BOD is drastically reduced.</div>
+      <div>• <b>Activated Sludge:</b> Flocs settle in settling tank; a fraction is recycled as <b>inoculum</b>; major part goes to anaerobic digesters.</div>
+      <div>• <b>River Clean-up:</b> Ganga Action Plan & Yamuna Action Plan by Ministry of Environment.</div>
+    </div>
   </div>
 
-  <div class="card right b" style="top:330px">
-    <h2>Biocontrol Agents</h2>
-    <div class="leaf"><b>Bacillus thuringiensis:</b> spores kill caterpillars; its genes built Bt cotton</div>
-    <div class="leaf"><b>Baculovirus</b> (nucleopolyhedrovirus): species-specific, fits organic farming</div>
-    <div class="leaf"><b>Trichoderma</b> (a fungus) fights root pathogens</div>
-    <div class="leaf"><b>Ladybirds</b> eat aphids; dragonflies hunt mosquitoes</div>
+  <!-- Mid-Right: Biogas Generation -->
+  <div class="card c-biogas">
+    <div class="card-header">
+      <span class="card-title">5. Biogas & Methanogenic Digestion</span>
+      <span class="card-badge" style="background:#EDE9FE; color:#5B21B6;">Energy</span>
+    </div>
+    <div class="item-list">
+      <div>• <b>Methanogens:</b> Strictly anaerobic bacteria, notably <span class="organism">Methanobacterium</span>, growing on cellulosic matter.</div>
+      <div>• <b>Gas Mixture:</b> Produces combustible <b>Biogas</b> (50–70% CH<sub>4</sub> + 30–40% CO<sub>2</sub> + trace H<sub>2</sub>S/H<sub>2</sub>).</div>
+      <div>• <b>Cattle Rumen & Gobar:</b> Methanogens abundant in rumen to digest cellulose; cattle dung (gobar) feeds rural biogas digesters.</div>
+      <div>• <b>IARI & KVIC Plant:</b> 10–15 ft deep concrete tank, floating gas holder cover, slurry inlet, spent slurry outlet (used as fertilizer).</div>
+    </div>
   </div>
 
-  <div class="card right l" style="top:610px">
-    <h2>Biofertilisers</h2>
-    <div class="leaf"><b>Rhizobium:</b> lives in legume root nodules, fixes N&#8322; (symbiosis)</div>
-    <div class="leaf"><b>Azotobacter + Azospirillum:</b> free-living fixers in the soil</div>
-    <div class="leaf"><b>Mycorrhiza (Glomus):</b> better phosphorus + water uptake; drought shield</div>
-    <div class="leaf"><b>Cyanobacteria</b> (Anabaena, Nostoc): fix nitrogen in paddy fields</div>
+  <!-- Bottom-Right: Biocontrol & Biofertilisers -->
+  <div class="card c-biofertilizer">
+    <div class="card-header">
+      <span class="card-title">6. Biocontrol & Biofertilisers</span>
+      <span class="card-badge" style="background:#D1FAE5; color:#065F46;">Sustainable Agri</span>
+    </div>
+    <div class="item-list">
+      <div>• <b>Predatory Biocontrol:</b> <b>Ladybird beetle</b> controls aphids; <b>Dragonflies</b> eradicate mosquitoes.</div>
+      <div>• <b>Bt Spores:</b> <span class="organism">Bacillus thuringiensis</span> cry protein dissolves in alkaline caterpillar gut, punching fatal pores.</div>
+      <div>• <b>Baculoviruses (NPV):</b> Genus <span class="organism">Nucleopolyhedrovirus</span>; <b>species-specific, narrow spectrum</b>, zero non-target harm (IPM gold standard).</div>
+      <div>• <b>Fungal Mycorrhiza:</b> Genus <span class="organism">Glomus</span>; absorbs <b>phosphorus</b> from soil; confers drought/pathogen tolerance.</div>
+      <div>• <b>Biofertilisers:</b> Symbiotic <span class="organism">Rhizobium</span>; free-living <span class="organism">Azotobacter</span> & <span class="organism">Azospirillum</span>; Cyanobacteria (<span class="organism">Anabaena</span>, <span class="organism">Nostoc</span>) in paddy.</div>
+    </div>
   </div>
 
-  <div class="exc">
-    <h2>COMMON ERRORS &amp; TRAPS</h2>
-    <div class="leaf"><b>Swiss cheese holes</b> come from <i>Propionibacterium</i> CO&#8322; — not from yeasts</div>
-    <div class="leaf"><b>Flocs</b> are masses of bacteria <b>+ fungi</b> — not pure bacteria</div>
-    <div class="leaf"><b>BOD goes down</b> as treatment succeeds; methanogens work <b>without</b> oxygen</div>
+  <!-- Bottom Traps Box -->
+  <div class="c-traps">
+    <div class="trap-title">⚠️ High-Yield CUET Pitfalls & Traps to Avoid</div>
+    <div class="trap-text">
+      <b>1.</b> Statins inhibit <b>HMG-CoA reductase</b>, NOT lipases! Lipases are laundry enzymes.<br>
+      <b>2.</b> <i>Trichoderma polysporum</i> is a <b>fungus</b>, while <i>Streptococcus</i> is a <b>bacterium</b>.<br>
+      <b>3.</b> Primary treatment is purely <b>physical</b> (no microbes); Secondary treatment is <b>biological</b> (flocs & BOD reduction).<br>
+      <b>4.</b> Baculoviruses have <b>zero impact</b> on mammals, birds, or non-target insects.
+    </div>
   </div>
+
 </div>
+
 </body>
 </html>

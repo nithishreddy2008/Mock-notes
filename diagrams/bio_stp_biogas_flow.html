@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Sewage Treatment Plant & Biogas Dynamics</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px 32px;
+    overflow: hidden;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 14px;
+    margin-bottom: 18px;
+  }
+  .title-group h1 {
+    font-size: 21px;
+    font-weight: 800;
+    color: #071A4D;
+    letter-spacing: -0.02em;
+  }
+  .title-group p {
+    font-size: 13px;
+    color: #64748B;
+    margin-top: 2px;
+    font-weight: 500;
+  }
+  .badge {
+    background: #071A4D;
+    color: #B8FF34;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 6px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    height: calc(100% - 195px);
+  }
+  .col-card {
+    background: #FFFFFF;
+    border: 1.5px solid #CBD5E1;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .col-header {
+    padding: 10px 14px;
+    font-size: 13.5px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1.5px solid #CBD5E1;
+  }
+  .step-badge {
+    font-size: 10.5px;
+    font-weight: 800;
+    padding: 2px 7px;
+    border-radius: 4px;
+  }
+  .c-blue .col-header { background: #EEF4FF; color: #1E40AF; border-color: #BFDBFE; }
+  .c-blue .step-badge { background: #1E40AF; color: #FFFFFF; }
+  .c-blue { border-color: #BFDBFE; }
+
+  .c-teal .col-header { background: #F0FDFA; color: #0F766E; border-color: #99F6E4; }
+  .c-teal .step-badge { background: #0F766E; color: #FFFFFF; }
+  .c-teal { border-color: #99F6E4; }
+
+  .c-amber .col-header { background: #FFFBEB; color: #B45309; border-color: #FDE68A; }
+  .c-amber .step-badge { background: #B45309; color: #FFFFFF; }
+  .c-amber { border-color: #FDE68A; }
+
+  .c-purple .col-header { background: #FAF5FF; color: #6B21A8; border-color: #E9D5FF; }
+  .c-purple .step-badge { background: #6B21A8; color: #FFFFFF; }
+  .c-purple { border-color: #E9D5FF; }
+
+  .col-body {
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+    overflow-y: auto;
+  }
+  .item-box {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    padding: 8px 10px;
+  }
+  .item-box h4 {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: #0F172A;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .item-box p {
+    font-size: 11.5px;
+    color: #475569;
+    line-height: 1.45;
+  }
+  .highlight-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 1px 6px;
+    border-radius: 4px;
+    margin-top: 5px;
+  }
+  .ht-blue { background: #DBEAFE; color: #1E40AF; }
+  .ht-teal { background: #CCFBF1; color: #0F766E; }
+  .ht-amber { background: #FEF3C7; color: #92400E; }
+  .ht-purple { background: #F3E8FF; color: #6B21A8; }
+  .ht-red { background: #FEE2E2; color: #991B1B; }
+
+  .flow-arrow {
+    text-align: center;
+    font-size: 12px;
+    font-weight: 800;
+    color: #64748B;
+    margin: -2px 0;
+  }
+
+  .bottom-summary {
+    margin-top: 16px;
+    background: #FFFFFF;
+    border: 1.5px solid #CBD5E1;
+    border-radius: 10px;
+    padding: 12px 18px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    align-items: center;
+  }
+  .summary-col h3 {
+    font-size: 12.5px;
+    font-weight: 800;
+    color: #071A4D;
+    margin-bottom: 4px;
+  }
+  .summary-col p {
+    font-size: 11.5px;
+    color: #475569;
+    line-height: 1.45;
+  }
+  .key-pill {
+    background: #EEF2F6;
+    color: #071A4D;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 3px;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="title-group">
+    <h1>Sewage Treatment Plant (STP) & Biogas Architecture</h1>
+    <p>Sequential Physical & Biological Purification, Microbial Flocs, BOD Degradation, and Anaerobic Methanogenesis</p>
+  </div>
+  <div class="badge">CUET UG Biology · Unit VIII</div>
+</div>
+
+<div class="grid-container">
+
+  <!-- Column 1: Primary Treatment -->
+  <div class="col-card c-blue">
+    <div class="col-header">
+      <span>1. Primary (Physical)</span>
+      <span class="step-badge">Stage 1</span>
+    </div>
+    <div class="col-body">
+      <div class="item-box">
+        <h4>Sequential Filtration</h4>
+        <p>Raw municipal sewage passes through coarse mesh screens to physically intercept and remove large floating debris (plastic, paper, rags).</p>
+        <span class="highlight-tag ht-blue">Physical Separation</span>
+      </div>
+      <div class="flow-arrow">▼</div>
+      <div class="item-box">
+        <h4>Grit Chamber</h4>
+        <p>Sedimentation of small pebbles, coarse sand, and grit particles based on gravitational density settling.</p>
+        <span class="highlight-tag ht-blue">Gravity Settling</span>
+      </div>
+      <div class="flow-arrow">▼</div>
+      <div class="item-box">
+        <h4>Primary Settling Tank</h4>
+        <p>All solids that settle form the <b>Primary Sludge</b>. The supernatant liquid forms the <b>Primary Effluent</b>.</p>
+        <span class="highlight-tag ht-blue">Primary Sludge vs Effluent</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Column 2: Aeration Tank -->
+  <div class="col-card c-teal">
+    <div class="col-header">
+      <span>2. Secondary (Aeration)</span>
+      <span class="step-badge">Stage 2</span>
+    </div>
+    <div class="col-body">
+      <div class="item-box">
+        <h4>Massive Aeration Tank</h4>
+        <p>Primary effluent is pumped in. Constant mechanical agitation + continuous air pumping fuels aerobic metabolism.</p>
+        <span class="highlight-tag ht-teal">Aerobic Chamber</span>
+      </div>
+      <div class="flow-arrow">▼</div>
+      <div class="item-box">
+        <h4>Flocs Formation</h4>
+        <p>Masses of aerobic bacteria associated with fungal hyphae form mesh-like structures called <b>Flocs</b>.</p>
+        <span class="highlight-tag ht-teal">Flocs = Bacteria + Fungi</span>
+      </div>
+      <div class="flow-arrow">▼</div>
+      <div class="item-box">
+        <h4>BOD Reduction</h4>
+        <p>Flocs rapidly consume organic pollutants. Biochemical Oxygen Demand (BOD) drops dramatically, signaling clean water.</p>
+        <span class="highlight-tag ht-teal">Sharp BOD Decline</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Column 3: Settling & Activated Sludge -->
+  <div class="col-card c-amber">
+    <div class="col-header">
+      <span>3. Settling & Sludge</span>
+      <span class="step-badge">Stage 3</span>
+    </div>
+    <div class="col-body">
+      <div class="item-box">
+        <h4>Settling Tank</h4>
+        <p>Effluent enters settling tank where bacterial and fungal flocs naturally sediment to form <b>Activated Sludge</b>.</p>
+        <span class="highlight-tag ht-amber">Activated Sludge</span>
+      </div>
+      <div class="flow-arrow">▼</div>
+      <div class="item-box">
+        <h4>Inoculum Recirculation</h4>
+        <p>A small portion of activated sludge is pumped back into the aeration tank to act as the starting <b>inoculum</b>.</p>
+        <span class="highlight-tag ht-amber">Recycled Inoculum</span>
+      </div>
+      <div class="flow-arrow">▼</div>
+      <div class="item-box">
+        <h4>Clean Effluent Release</h4>
+        <p>Treated secondary effluent (low BOD) is safe for discharge into natural water bodies (rivers, lakes).</p>
+        <span class="highlight-tag ht-amber">River Release Safe</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Column 4: Anaerobic Digestion & Biogas -->
+  <div class="col-card c-purple">
+    <div class="col-header">
+      <span>4. Anaerobic Biogas</span>
+      <span class="step-badge">Stage 4</span>
+    </div>
+    <div class="col-body">
+      <div class="item-box">
+        <h4>Anaerobic Sludge Digester</h4>
+        <p>Major activated sludge is pumped into closed anaerobic digesters without oxygen.</p>
+        <span class="highlight-tag ht-purple">Anoxic Digestion</span>
+      </div>
+      <div class="flow-arrow">▼</div>
+      <div class="item-box">
+        <h4>Methanogen Digestion</h4>
+        <p>Anaerobic methanogens (<i>Methanobacterium</i>) break down bacterial/fungal mass and cellulose.</p>
+        <span class="highlight-tag ht-purple"><i>Methanobacterium</i></span>
+      </div>
+      <div class="flow-arrow">▼</div>
+      <div class="item-box">
+        <h4>Biogas Gas Mixture</h4>
+        <p>Produces combustible <b>Biogas</b>: CH<sub>4</sub> (50–70%), CO<sub>2</sub> (30–40%), and trace H<sub>2</sub>S/H<sub>2</sub>. Used as rural fuel.</p>
+        <span class="highlight-tag ht-purple">CH<sub>4</sub> + CO<sub>2</sub> + H<sub>2</sub>S</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="bottom-summary">
+  <div class="summary-col">
+    <h3>BOD (Biochemical Oxygen Demand) Rule</h3>
+    <p>BOD measures the amount of O<sub>2</sub> required by microbes to oxidize all organic matter in 1 L of water. <span class="key-pill">Higher BOD = Higher Polluting Potential</span>. Secondary treatment continues strictly until BOD is reduced.</p>
+  </div>
+  <div class="summary-col">
+    <h3>Cattle Rumen & Biogas Plant (Gobar Gas)</h3>
+    <p>Cattle dung (gobar) is rich in methanogens and cellulosic fiber. The Indian IARI & KVIC floating-dome biogas plant produces inflammable biogas used for cooking and lighting, leaving rich mineral manure.</p>
+  </div>
+  <div class="summary-col">
+    <h3>National River Conservation Plans</h3>
+    <p>Initiated by the Ministry of Environment and Forests: <span class="key-pill">Ganga Action Plan</span> and <span class="key-pill">Yamuna Action Plan</span> build large-scale municipal STPs to prevent untreated sewage from poisoning holy rivers.</p>
+  </div>
+</div>
+
+</body>
+</html>
