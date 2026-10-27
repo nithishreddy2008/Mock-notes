@@ -7,782 +7,553 @@
   subtitle: "Official Syllabus Unit VIII · Class 12 · CUET UG 2027 Cycle Notes",
 )
 
-= Syllabus Alignment
+= Syllabus Alignment & Exam Blueprint
 
+#set table(inset: (x: 4pt, y: 2.2pt))
+#set text(size: 8.8pt)
 #table(
-  columns: (1.05fr, 1.9fr, 1.25fr),
-  table.header[*Sub-topic*][*Official syllabus pointer (NTA CUET(UG) Biology syllabus 2026, the current 2027 baseline, Unit VIII)*][*Skills the questions test*],
-  [*Health and disease — introduction*], [
-    Introduction about health;
+  columns: (1.1fr, 1.9fr, 1.2fr),
+  table.header[*Sub-Topic*][*Official NTA CUET UG Syllabus Scope*][*High-Yield Exam Focus*],
+  [*Pathogens & Common Diseases*], [
+    Common diseases in humans: Typhoid, pneumonia, common cold, amoebiasis, ascariasis, filariasis, ringworm.
   ], [
-    Telling health from disease, and linking well-being to genes, germs and lifestyle.
+    Pathogen species, transmission vectors, target organs, diagnostic tests (Widal), symptoms, and life cycles.
   ],
-  [*Common diseases in humans*], [
-    Common diseases in humans (typhoid, pneumonia, common cold, malaria, amoebiasis, ascariasis, filariasis and ringworms);
+  [*Malarial Parasite Lifecycle*], [
+    Life cycle of _Plasmodium_ in human host and female _Anopheles_ mosquito; symptoms and recurrence.
   ], [
-    Matching each disease to its pathogen, vector and test; reading symptom lists.
+    Sporozoites, liver schizogony, erythrocyte rupture, toxic *haemozoin*, gametocytes, gut fertilisation.
   ],
-  [*Immunity — innate and acquired*], [
-    Immunity – innate and acquired immunity,
+  [*Innate Immunity*], [
+    Innate immunity: Physical, physiological, cellular, and cytokine barrier systems.
   ], [
-    Classifying defences as inborn or learned, and spotting the four barrier types.
+    Skin/mucus; stomach $H C l$/lysozyme; PMNL-neutrophils/macrophages; *interferons* against viral spread.
   ],
-  [*Active, passive, vaccination*], [
-    active and passive immunity, vaccination and immunisation,
+  [*Acquired Immunity & Vaccines*], [
+    Acquired immunity: Humoral and cell-mediated immunity; active and passive immunity; vaccination.
   ], [
-    Contrasting active with passive immunity; explaining how a vaccine builds memory.
+    B & T cells; antibody $H_2 L_2$ structure; IgG, IgA, IgM, IgE; graft rejection (CMI); colostrum & antivenom.
   ],
-  [*Allergies and auto-immunity*], [
-    allergies, auto-immunity and immune system in human
+  [*Allergy & Autoimmunity*], [
+    Allergies, auto-immunity, and human immune system; primary and secondary lymphoid organs.
   ], [
-    Explaining the IgE–histamine story, autoimmunity, and where immune cells mature.
+    IgE & mast cell histamine release; loss of self-tolerance (rheumatoid arthritis); bone marrow, thymus, spleen, MALT.
   ],
-  [*AIDS*], [
-    AIDS;
+  [*AIDS & Cancer*], [
+    AIDS (HIV structure, transmission, replication, prevention); Cancer (types, causes, detection, treatment).
   ], [
-    Tracing HIV's attack plan, its transmission rules and the tests that confirm it.
+    Reverse transcriptase, CD4+ T-helper depletion, ELISA; loss of contact inhibition, metastasis, carcinogens.
   ],
-  [*Cancer*], [
-    Cancer;
+  [*Drugs & Alcohol Abuse*], [
+    Drugs and alcohol abuse: Adolescence, addiction, dependence, effects, prevention, and control.
   ], [
-    Separating benign from malignant growths; naming causes, detection and treatment.
-  ],
-  [*Drugs and alcohol abuse*], [
-    Drugs and alcohol abuse - adolescence, addiction, effects of drug abuse, prevention and control
-  ], [
-    Grouping drugs by family and source plant; stating prevention and warning signs.
+    Opioids (poppy), cannabinoids (hemp), cocaine (coca); target receptors; tolerance; withdrawal syndrome.
   ],
 )
 
-#exam-pointer[
-  CUET UG pattern (NTA official information bulletin and syllabus, 2026 cycle — the
-  current 2027 baseline): each subject paper carries *50 compulsory questions* in
-  *60 minutes*, with $+5$ for every correct answer and $-1$ for every incorrect answer. The Biology paper maps strictly to NCERT
-  Class 12, and Unit VIII connects biology to daily life: pathogens, the immune
-  system that fights them, and the habits that keep both in check.
+#v(4pt)
+#set text(size: 9pt)
+#exam-pointer(title: "CUET High-Yield Exam Architecture & Weightage Guide")[
+  *Human Health and Disease* is one of the most consistently high-scoring units in CUET UG Biology, contributing *4 to 6 compulsory questions (16–24 marks)* per test session. Questions rigorously probe: (1) Match-the-following pairs connecting pathogens, vectors, and diagnostic tests; (2) The sequential stages of the _Plasmodium_ life cycle across hosts; (3) Barrier classifications of innate immunity; (4) Antibody heavy/light chain formulas and functional roles ($"IgG", "IgA", "IgE"$); (5) HIV retroviral replication mechanisms; (6) Distinctions between benign and metastatic malignant tumors; and (7) Source plants and physiological receptors of psychoactive drugs.
 ]
 
-= Health, Disease and Pathogens
+#pagebreak()
+#set text(size: 10pt)
+#set table(inset: 5pt)
 
-It is monsoon. The person beside you on the bus sneezes twice without covering the
-nose, and by Friday three classmates have a fever. Health and disease are not a
-far-away laboratory story — they are daily life, and this unit is about exactly
-that: the organisms that attack the body, and the defence system that fights back.
+= Common Human Diseases & Pathogen Profiles
 
-- *Health, the WHO way:* the World Health Organization defines health as a state
-  of *total well-being* — physical, mental and social — not simply "no illness".
-- *Disease, in plain words:* a *disease* is any condition in which the body or the
-  mind stops working normally. The word literally means "not at ease".
-- *Pathogens, the attackers:* a *pathogen* is a disease-causing organism — a
-  bacterium, virus, fungus, protozoan (single-celled organism) or worm — that
-  enters the body and multiplies in it.
-- *Where health slips:* health problems come from three broad directions —
-  *genetic faults* (inborn, e.g. haemophilia), *infections* (pathogens), and
-  *lifestyle* (junk food, no exercise, alcohol and drugs).
-- *Health is a habit:* balanced diet, regular exercise, safe water and hygiene
-  protect you as much as any medicine, because most pathogens enter by mouth,
-  nose or skin.
+A disease represents a physiological or psychological departure from complete health. Infectious diseases are caused by *pathogens*—taxonomically diverse organisms including bacteria, viruses, fungi, protozoans, and helminths—that invade the human body, adapt to host microenvironments, and disrupt normal cellular metabolism.
 
-== How diseases travel from one body to another
+== Bacterial Diseases
+
+- *Typhoid Fever:*
+  - *Causative Organism:* _Salmonella typhi_, a pathogenic Gram-negative bacterium.
+  - *Route of Transmission:* Enters the small intestine via contaminated food and water, migrating through blood to other organ systems.
+  - *Clinical Manifestations:* Sustained high fever ($39^circle "C"$ to $40^circle "C"$), generalized weakness, abdominal pain, constipation, headache, and loss of appetite. In advanced untreated cases, intestinal perforation and death may ensue.
+  - *Diagnostic Hallmark:* Confirmed serologically by the *Widal test* (detecting agglutinating antibodies against O and H antigens of _S. typhi_).
+  - *Classic Case:* Mary Mallon ("Typhoid Mary"), an asymptomatic cook who unknowingly transmitted typhoid to dozens of families through prepared meals.
+
+- *Pneumonia:*
+  - *Causative Organisms:* _Streptococcus pneumoniae_ (pneumococcus) and _Haemophilus influenzae_.
+  - *Infection Site:* Infects the pulmonary *alveoli* (air-filled sacs). The alveoli become engorged with exudate fluid and inflammatory debris, severely impeding respiratory gas exchange.
+  - *Transmission:* Inhaling respiratory droplets/aerosols expelled by infected individuals, or sharing utensils and glasses.
+  - *Clinical Features:* Fever, chills, productive cough, and headache. In severe, decompensated episodes, the lips and fingernails turn *gray to bluish/cyanotic* due to hypoxemia.
+
+== Viral Diseases
+
+- *Common Cold:*
+  - *Causative Agent:* *Rhinoviruses*, representing a diverse family of non-enveloped RNA viruses.
+  - *Anatomical Target:* Infects the mucosal lining of the *nose and upper respiratory passage*, but critically *does NOT infect the lungs* (contrasting fundamentally with pneumonia).
+  - *Transmission:* Inhaling infectious aerosols from coughs/sneezes, or indirect contact through contaminated fomites (pens, books, door handles, computer keyboards).
+  - *Symptoms & Duration:* Nasal congestion, profuse watery discharge, sore throat, hoarseness, cough, headache, and malaise. Self-limiting, resolving within *3 to 7 days*. Antibiotics have zero therapeutic efficacy against rhinoviruses.
+
+== Protozoan Diseases
+
+- *Amoebiasis (Amoebic Dysentery):*
+  - *Causative Organism:* _Entamoeba histolytica_, a microscopic protozoan parasite inhabiting the human *large intestine*.
+  - *Mechanical Vector:* The common *housefly* (_Musca domestica_) acts as a passive mechanical carrier, transferring cysts from human fecal deposits to unshielded food and water supplies.
+  - *Pathology & Symptoms:* Constipation alternating with loose stools, severe abdominal cramps, and stools containing *excess mucus and blood clots*. Ulceration of mucosal walls can occur.
+
+- *Malaria:*
+  - *Causative Agents:* Microscopic protozoans of the genus _Plasmodium_:
+    - _Plasmodium vivax_ (benign tertian malaria; 48-hour cycle).
+    - _Plasmodium malariae_ (quartan malaria; 72-hour cycle).
+    - _Plasmodium falciparum_ (malignant tertian malaria; most lethal, causing cerebral complications, severe anemia, and renal failure).
+
+== Helminthic & Fungal Diseases
+
+- *Ascariasis:*
+  - *Pathogen:* _Ascaris lumbricoides_, a common intestinal roundworm endoparasite.
+  - *Transmission:* Ingestion of embryonated eggs present in soil, water, and unwashed vegetables contaminated with human feces.
+  - *Symptoms:* Internal hemorrhage, muscular aches, fever, anemia, and physical obstruction of the intestinal lumen under heavy worm burdens.
+
+- *Filariasis (Elephantiasis):*
+  - *Pathogen:* Filarial nematodes, primarily _Wuchereria bancrofti_ and _Wuchereria malayi_.
+  - *Transmission Vector:* Bite of an infected *female Culex mosquito*.
+  - *Pathogenesis:* Adult worms reside inside the *lymphatic vessels* of the lower limbs and genital tract for years, triggering chronic inflammatory fibrosis, lymphatic obstruction, and gross enlargement of limbs and scrotum (*elephantiasis*).
+
+- *Ringworm:*
+  - *Causative Fungi:* Genera _Microsporum_, _Trichophyton_, and _Epidermophyton_.
+  - *Transmission:* Direct skin contact, or fomites such as shared towels, clothing, and combs.
+  - *Pathology:* Dry, scaly, erythematous, intensely pruritic (itchy) ring-like epidermal lesions. Fungal proliferation is strongly accelerated by warmth and perspiration in skin folds (groin, between toes).
+
+#figure(image("assets/bio_pathogens_malaria_cycle.png", width: 60%), caption: [Malaria life cycle & human pathogen matrix — tracing Plasmodium development across the human host and female Anopheles vector, alongside diagnostic signatures, vectors, and clinical hallmarks of 8 major human infectious diseases.])
+
+= The Malarial Parasite Life Cycle
+
+_Plasmodium_ requires *two hosts* to complete its biological life cycle (digenetic):
+1. *Human Host:* Primary site of asexual reproduction (schizogony).
+2. *Female Anopheles Mosquito Vector:* Definitive host where sexual reproduction (gametocyte fusion and sporogony) occurs.
+
+== Sequential Stages in the Human Host
+
+1. *Inoculation:* An infected female _Anopheles_ mosquito bites a human, injecting motile infectious *sporozoites* present in its salivary secretions into the bloodstream.
+2. *Hepatic Phase (Exo-erythrocytic Schizogony):* Sporozoites rapidly migrate to the liver within 30 minutes, penetrating parenchymal hepatocytes where they multiply asexually, ultimately rupturing the liver cells to liberate thousands of *merozoites*.
+3. *Erythrocytic Phase (Intra-erythrocytic Schizogony):* Merozoites penetrate red blood cells (erythrocytes), forming a feeding trophozoite (signet-ring stage), followed by an erythrocytic schizont.
+4. *Haemozoin Release & Paroxysm:* The RBC ruptures, releasing new merozoites alongside a toxic, crystalline, dark-brown pigment called *haemozoin* (derived from the metabolic breakdown of host hemoglobin). Haemozoin triggers the synchronous release of pyrogens, inducing the characteristic *chills and high recurring fever* every 3 to 4 days.
+5. *Gametocytogenesis:* Within circulating RBCs, some merozoites differentiate into sexual stages: male microgametocytes and female macrogametocytes.
+
+== Sequential Stages in the Mosquito Vector
+
+1. *Gametocyte Ingestion:* When a female _Anopheles_ mosquito takes a blood meal from an infected human, it ingests both micro- and macrogametocytes.
+2. *Fertilisation:* Within the mosquito's midgut lumen, the gametocytes emerge and undergo fertilisation, producing a diploid motile zygote called an *ookinete*.
+3. *Oocyst Formation:* The ookinete penetrates the peritrophic matrix and gut wall, encysting on the outer stomach wall as an *oocyst*.
+4. *Sporogony:* Inside the oocyst, repeated nuclear divisions generate thousands of slender, spindle-shaped *sporozoites*.
+5. *Salivary Migration:* The mature oocyst ruptures, releasing sporozoites into the mosquito's hemolymph, whence they migrate to and pool inside the *salivary glands*, ready to infect a new human host upon the next bite.
+
+= Innate Immunity — The Inborn Non-Specific Defences
+
+*Immunity* is the host's overall physiological capacity to resist and combat foreign pathogens. It is partitioned into two distinct arms: *innate (non-specific)* and *acquired (adaptive/specific)* immunity.
+
+Innate immunity is active from birth, confers immediate broad-spectrum protection, and does not possess immunological memory. It comprises four functional barrier systems:
 
 #table(
-  columns: (1fr, 2.1fr, 1.4fr),
-  table.header[*Route*][*How it works*][*Examples*],
-  [Through the air],
-  [The pathogen rides in tiny droplets sprayed out when an infected person coughs, sneezes or talks, and you breathe them in.],
-  [Common cold, pneumonia, tuberculosis],
-  [Through water and food],
-  [The pathogen is swallowed along with contaminated water, unwashed vegetables or food handled by dirty hands.],
-  [Typhoid, amoebiasis, ascariasis],
-  [Through a vector],
-  [A *vector* is an animal — most often an insect — that carries the pathogen from one person to the next without itself falling ill.],
-  [Malaria — _Anopheles_ mosquito; filariasis — _Culex_ mosquito],
-  [Through body fluids],
-  [The pathogen passes in blood, semen, breast milk or shared needles — direct contact with infected fluids.],
-  [AIDS, hepatitis B and C],
+  columns: (1fr, 1.4fr, 1.6fr),
+  table.header[*Barrier Category*][*Mode of Action*][*Physiological Anatomical Examples*],
+  [*Physical Barriers*],
+  [Impenetrable mechanical shields preventing microbial entry into body tissues.],
+  [Keratinized epidermis of the *skin*; *mucus coating* of the respiratory, gastrointestinal, and urogenital epithelial linings that traps microbes.],
+  [*Physiological Barriers*],
+  [Chemical microenvironments and secretions that inhibit microbial growth or destroy cell walls.],
+  [*Hydrochloric acid ($H C l$)* in gastric juice (pH 1.5–2.0); *lysozyme* (cleaves peptidoglycan) in saliva and tears; bile salts.],
+  [*Cellular Barriers*],
+  [Specialized phagocytic leukocytes that engulf, internalize, and enzymatically digest pathogens.],
+  [*PMNL-neutrophils* (polymorphonuclear leukocytes); circulating *monocytes*; tissue-resident *macrophages*; *Natural Killer (NK) cells* (cytolytic).],
+  [*Cytokine Barriers*],
+  [Soluble signaling glycoproteins secreted by infected cells to confer non-specific antiviral resistance.],
+  [*Interferons (IFN-$alpha$, IFN-$beta$)* secreted by virus-infected cells, stimulating uninfected neighbor cells to synthesize antiviral translation-inhibitory proteins.],
 )
 
-- *The one-line summary:* pathogens need a ride — dirty water, a sneeze, a
-  mosquito bite or a shared needle — and cutting off that ride cuts off the
-  disease.
-- *Watch the wording:* questions mix up these routes on purpose; a water-borne
-  disease is not the same as a vector-borne one.
+= Acquired Immunity, Antibodies & Vaccination
 
-== The body is not defenceless
+*Acquired (adaptive) immunity* is pathogen-specific, develops throughout an individual's lifetime following antigen exposure, and is characterized by *immunological memory*.
 
-- *Immunity, the idea:* *immunity* is the body's overall ability to fight
-  disease-causing organisms and everything else it calls "not self".
-- *Two big arms:* some defences are ready *from birth* (innate — Section 3) and
-  others are *learned against each specific enemy* (acquired — Section 4).
-- *Why it matters for exams:* nearly half of this unit's syllabus (immunity,
-  allergy, AIDS, cancer) is really about this one system, so learn its logic once
-  and reuse it everywhere.
+== Functional Architecture of Acquired Immunity
 
-#analogy-box(title: "Everyday Example — The City Defence Plan")[
-  Think of your body as a walled city. The *walls and gates* (skin, mucus) stop
-  most invaders at the entrance. The *guards on patrol* (white blood cells)
-  capture anyone who slips in. And the *wanted-poster register* (acquired
-  immunity) remembers every criminal's face, so a second visit ends faster. All
-  three layers appear again in the next sections — keep the city picture.
-]
+- *Antigen Specificity:* Capacity to discriminate among different microbial epitopes with high fidelity.
+- *Immunological Memory:*
+  - *Primary Response:* When the immune system encounters an antigen for the first time, response generation is slow and of low intensity. Memory cells are generated.
+  - *Secondary (Anamnestic) Response:* Subsequent re-exposure to the identical antigen elicits a rapid, heightened, high-affinity response because memory B and T cells immediately recognize the antigen.
 
-= The Eight Common Diseases
+== The Antibody Molecule ($H_2 L_2$)
 
-One cold monsoon week can hand you typhoid from water, a cold from a sneeze and
-malaria from a single mosquito. The syllabus names eight diseases, and for each
-one three things matter most: the *pathogen*, the *way it spreads*, and *one
-signature fact* (a test, a symptom or a vaccine). The quick-map below holds all
-three for every disease — revise from it.
+Antibodies (immunoglobulins, Ig) are complex glycoproteins synthesized by differentiated plasma cells:
+- *Chain Composition:* Each antibody monomer possesses *4 polypeptide chains*:
+  - *Two identical Heavy (H) chains* (~50 kDa each).
+  - *Two identical Light (L) chains* (~25 kDa each).
+  - The molecular formula is designated *$H_2 L_2$*.
+- *Disulfide Linkages:* Heavy and light chains are joined by covalent *interchain disulfide bonds* ($-S-S-$).
+- *Variable & Constant Regions:*
+  - *Fab region (Fragment antigen-binding):* Formed by the variable domains ($V_H$ and $V_L$), creating the hypervariable *antigen-binding site* (paratope) at the tips of the Y-fork. Each monomer has two identical antigen-binding sites (bivalent).
+  - *Fc region (Fragment crystallizable):* Formed by constant domains ($C_H$), mediating effector functions (macrophage binding, complement activation, placental transfer).
 
-#figure(image("assets/bio_disease_grid.png", width: 100%), caption: [Disease quick-map — the eight common human diseases, each with pathogen, route of spread and the one fact that identifies it.])
-
-== The full pathogen-to-prevention table
+== Classes of Immunoglobulins
 
 #table(
-  columns: (0.85fr, 1.25fr, 1.15fr, 1.5fr, 1.15fr),
-  table.header[*Disease*][*Pathogen*][*How it enters*][*Main symptoms*][*Prevention*],
-  [Typhoid],
-  [_Salmonella typhi_ (bacterium)],
-  [Contaminated food and water],
-  [Sustained high fever (39–40°C), weakness, stomach pain, constipation],
-  [Safe water, food hygiene, typhoid vaccine],
-  [Pneumonia],
-  [_Streptococcus pneumoniae_, _Haemophilus influenzae_ (bacteria)],
-  [Inhaling infected droplets],
-  [Fever, chills, cough, headache; lips turn blue in severe cases],
-  [Avoid close contact with patients, protect from cold],
-  [Common cold],
-  [Rhinoviruses (viruses)],
-  [Droplets from coughs and sneezes],
-  [Nasal congestion, sore throat, cough, hoarseness, tiredness],
-  [Hand washing, avoiding shared towels and glasses],
-  [Malaria],
-  [_Plasmodium vivax_, _P. falciparum_ (protozoan)],
-  [Bite of infected _female Anopheles_ mosquito],
-  [Recurring chill and high fever every 3–4 days, sweating],
-  [Vector control, nets and repellents, no stagnant water],
-  [Amoebiasis],
-  [_Entamoeba histolytica_ (protozoan)],
-  [Faecal contamination of food and water],
-  [Constipation, abdominal pain and cramps, mucus and blood in stools],
-  [Safe drinking water, washed vegetables, fly control],
-  [Ascariasis],
-  [_Ascaris lumbricoides_ (helminth worm)],
-  [Eggs swallowed in contaminated water or vegetables],
-  [Internal bleeding, muscular pain, fever, anaemia, gut blockage],
-  [Washing produce, deworming, sanitation],
-  [Filariasis],
-  [_Wuchereria bancrofti_ (helminth worm)],
-  [Bite of infected _female Culex_ mosquito],
-  [Chronic swelling of limbs — elephantiasis; genital organs may be affected],
-  [Mosquito control, nets, treating patients early],
-  [Ringworm],
-  [_Trichophyton rubrum_, _T. mentagrophytes_ (fungi)],
-  [Shared towels, clothes, combs; skin contact],
-  [Dry, scaly, intensely itchy lesions on skin, nails and scalp],
-  [Personal hygiene, no sharing of towels and clothes],
+  columns: (0.7fr, 1.4fr, 1.9fr),
+  table.header[*Class*][*Structural Form*][*High-Yield Physiological Role*],
+  [IgG], [Monomer (~80% serum Ig)], [Most abundant circulating antibody; uniquely crosses the human *placenta* to confer passive immunity to the developing fetus.],
+  [IgA], [Dimer with secretory piece], [Abundant in seromucous secretions (tears, saliva, colostrum); guards mucosal surfaces against microbial adherence.],
+  [IgM], [Pentamer with J-chain], [First class synthesized during primary immune response; potent agglutinator with 10 antigen-binding sites.],
+  [IgE], [Monomer], [Binds high-affinity Fc receptors on *mast cells and basophils*; triggers release of histamine in *allergic hypersensitivity* and fights helminthic parasites.],
+  [IgD], [Monomer], [Acts as an antigen receptor on mature naive B-lymphocyte surfaces; regulates B-cell activation.],
 )
 
-== One-line cards: the signature fact of each disease
+== Two Arms: Humoral vs Cell-Mediated Immunity (CMI)
 
-- *Typhoid — the fever with a test:* confirmed by the *Widal test*, a blood test
-  that spots typhoid antibodies; severe untreated cases can perforate the
-  intestine wall.
-- *Pneumonia — flooded air sacs:* the bacteria infect the *alveoli* — the tiny
-  balloon-like air sacs in the lungs — which fill with fluid, so oxygen exchange
-  struggles.
-- *Common cold — fast and self-clearing:* a group of *rhinoviruses* attacks the
-  nose lining; it simply clears in *3–7 days*, needing rest and fluids, not
-  antibiotics.
-- *Malaria — the 3–4 day clock:* the parasite multiplies inside red blood cells;
-  when they burst, the toxin *haemozoin* is released and brings the chill-fever
-  cycle. Quinine, from the bark of the *Cinchona* tree, was the first
-  anti-malarial drug.
-- *Amoebiasis — the gut invader:* the protozoan feeds on the intestine lining;
-  the *housefly* often acts as a mechanical carrier from faeces to food.
-- *Ascariasis — the intestinal worm:* swallowed eggs hatch into adult round
-  worms inside the intestine; a heavy load can physically *block the gut*.
-- *Filariasis — elephantiasis:* the worms live in *lymph vessels* (the channels
-  that drain tissue fluid), so fluid builds up and limbs swell slowly over years.
-- *Ringworm — the itchy ring:* heat and moisture help the fungus grow, which is
-  why sweaty clothes, skin folds and shared gym towels spread it.
+- *Humoral Immunity:* Mediated by antibodies produced by *B-lymphocytes* that circulate freely in extracellular fluids (blood plasma and lymph). Highly effective against extracellular bacteria, free viruses, and soluble toxins.
+- *Cell-Mediated Immunity (CMI):* Mediated directly by *T-lymphocytes* (Cytotoxic CD8+ T cells and Helper CD4+ T cells). It does not involve circulating antibodies. CMI is crucial for destroying intracellular pathogens (viruses inside host cells, _Mycobacterium tuberculosis_), eliminating cancer cells, and is primarily responsible for *graft rejection* during organ transplantation. Tissue typing and HLA matching are mandatory before transplants, and recipients require lifelong immunosuppressants (such as Cyclosporin A).
 
-== Match-the-pair drill: disease against pathogen
+== Active vs Passive Immunity
 
 #table(
-  columns: (1fr, 1.6fr),
-  table.header[*Disease*][*Correct partner (pathogen + type)*],
-  [Typhoid], [_Salmonella typhi_ — bacterium],
-  [Pneumonia], [_Streptococcus pneumoniae_ — bacterium],
-  [Common cold], [Rhinovirus — virus],
-  [Malaria], [_Plasmodium_ — protozoan],
-  [Amoebiasis], [_Entamoeba histolytica_ — protozoan],
-  [Ascariasis], [_Ascaris lumbricoides_ — helminth],
-  [Filariasis], [_Wuchereria bancrofti_ — helminth],
-  [Ringworm], [_Trichophyton_ — fungus],
+  columns: (1fr, 1.5fr, 1.5fr),
+  table.header[*Parameter*][*Active Immunity*][*Passive Immunity*],
+  [Mechanism], [Host's *own cells* actively produce antibodies upon antigen exposure.], [Pre-formed antibodies are *transferred ready-made* into the recipient.],
+  [Onset], [Slow onset; takes days to weeks to generate protective titers.], [Immediate, rapid protection.],
+  [Memory], [Generates long-lived memory B and T cells; protection lasts years/lifetime.], [Zero memory cells produced; protection wanes as foreign antibodies degrade.],
+  [Examples], [Natural infection; active vaccination with attenuated or killed microbes.], [*Colostrum* (rich in maternal IgA); transplacental IgG; anti-tetanus serum (ATS); anti-snake venom.],
 )
 
-= Immunity I — Innate: The Defence You Are Born With
+#figure(image("assets/bio_immunity_hiv_lifecycle.png", width: 60%), caption: [Immunity architecture & HIV replication cycle — structural mechanics of antibody molecules (H2L2), humoral vs cell-mediated pathways, and the retroviral lifecycle from CD4 receptor engagement to viral budding and immune depletion.])
 
-A newborn has never met a single germ, yet survives a world full of them. The
-reason is *innate immunity* — the defence system you are born with, which attacks
-*any* pathogen on sight, without caring which species it is. Because it is
-non-specific and has no memory, it is the body's first, fastest response layer.
+= Immune System Anatomy & Immunopathology
 
-- *Non-specific means:* the same defence fights *Salmonella*, rhinovirus and a
-  fungus alike — no name-taking, no special weapons for each enemy.
-- *From birth:* it does not need a prior meeting with the pathogen; it works on
-  day one of life.
-- *No memory:* repeat the same attack and the response is *not* faster or
-  stronger the second time — this single line decides many exam answers.
+== Lymphoid Organs: Primary vs Secondary
 
-== The four barrier types
+Lymphoid organs are anatomical sites where lymphocytes originate, differentiate, mature, and interact with foreign antigens.
+
+- *Primary Lymphoid Organs:*
+  - *Sites:* *Bone marrow* and *Thymus*.
+  - *Function:* Immature lymphocytes acquire antigen receptors and undergo maturation into antigen-sensitive cells without foreign antigen stimulation.
+  - *Bone Marrow:* Main lymphoid tissue where all blood cells (erythrocytes, leukocytes, platelets) and B/T progenitors originate. B-lymphocytes undergo complete maturation here.
+  - *Thymus:* Lobed organ situated near the heart, beneath the breastbone (sternum). It is large at birth but steadily atrophies and shrinks with advancing age. T-lymphocytes migrate from bone marrow to the thymus to undergo maturation and tolerance education.
+
+- *Secondary Lymphoid Organs:*
+  - *Sites:* *Spleen*, *lymph nodes*, *tonsils*, *Peyer's patches* of the small intestine, and the *appendix*.
+  - *Function:* Provide sites where mature immunocompetent lymphocytes encounter antigens, undergo clonal expansion, and differentiate into effector cells.
+  - *Spleen:* Large bean-shaped organ containing lymphocytes and phagocytes. Acts as a physiological blood filter trapping blood-borne microorganisms and worn-out erythrocytes (the *"graveyard of RBCs"* and reservoir of erythrocytes).
+  - *Lymph Nodes:* Small nodular structures located along lymphatic channels. They filter lymph fluid, trapping foreign particulate antigens that activate specific lymphocytes.
+  - *MALT (Mucosa-Associated Lymphoid Tissue):* Lymphoid tissue embedded within the mucosal lining of major physiological tracts (respiratory, digestive, urogenital). MALT accounts for *approximately 50%* of all lymphoid tissue in the human body.
+
+== Allergies (Hypersensitivity)
+
+- *Definition:* An exaggerated, inappropriate immune inflammatory response to normally innocuous environmental substances (allergens: pollen grains, dust mites, animal dander, fungal spores).
+- *Mechanism:* Mediated primarily by *IgE antibodies*. Upon initial exposure (sensitisation), IgE antibodies attach to high-affinity Fc receptors on the surface of *mast cells* and basophils.
+- *Degranulation:* Upon re-exposure, allergen cross-links surface-bound IgE, triggering rapid degranulation and explosive release of inflammatory mediators: *histamine* and *serotonin*.
+- *Clinical Features:* Sneezing, watery eyes, running nose, bronchoconstriction, and urticaria.
+- *Therapy:* Antihistamines, adrenaline, and corticosteroids rapidly alleviate acute allergic symptoms.
+
+== Autoimmunity
+
+Under normal physiological conditions, the adaptive immune system displays *self-tolerance*—the capacity to distinguish foreign non-self molecules from self-antigens. When this tolerance breaks down, the immune system mounts a humoral or cell-mediated attack against the host's own healthy cells and tissues, causing *auto-immune disease*.
+- *Archetype:* *Rheumatoid arthritis* (chronic progressive autoimmune inflammation of the synovial membranes of joints). Other examples include Hashimoto's thyroiditis and Myasthenia gravis.
+
+= AIDS — Acquired Immunodeficiency Syndrome
+
+AIDS represents the terminal clinical manifestation of chronic infection by the *Human Immunodeficiency Virus (HIV)*, characterized by profound immunosuppression and susceptibility to opportunistic infections.
+
+== Molecular Structure of HIV
+
+- *Classification:* HIV is an enveloped animal virus belonging to the *Retrovirus* family (genus _Lentivirus_).
+- *Genome:* Comprises *two identical molecules of single-stranded RNA* (ssRNA diploid genome).
+- *Enzymes:* Contains essential viral enzymes: *Reverse transcriptase*, *Integrase*, and *Protease*.
+- *Envelope:* Phospholipid bilayer derived from the host membrane, embedded with viral glycoprotein spikes (*gp120* docking glycoprotein and *gp41* transmembrane stalk).
+
+== Pathogenesis & Replication Cycle
+
+1. *Attachment & Fusion:* Viral gp120 binds specifically to the *CD4 receptor* present on the surface of helper T-lymphocytes ($T_H$ cells) and monocytes/macrophages, alongside chemokine coreceptors (CCR5/CXCR4). The viral envelope fuses with the host plasma membrane, injecting the viral capsid core into the cytoplasm.
+2. *Reverse Transcription:* Viral reverse transcriptase transcribes the viral ssRNA genome into complementary single-stranded DNA, and subsequently into double-stranded viral DNA ($"RNA" arrow.r "DNA"$).
+3. *Integration:* The viral dsDNA enters the host nucleus and is integrated into the host genome by the viral enzyme *integrase*, establishing a provirus state.
+4. *The "HIV Factory":* In infected *macrophages*, the virus continuously directs transcription of new viral RNAs and proteins without immediately killing the macrophage. Macrophages act as persistent reservoirs and manufacturing hubs (*"HIV factory"*).
+5. *CD4+ T-Helper Cell Depletion:* HIV attacks and replicates inside *helper T-lymphocytes ($T_H$ cells)*. Progeny virions bud from the membrane, lysing and progressively depleting the total CD4+ count.
+6. *Opportunistic Infections:* As CD4+ counts fall below critical thresholds (under 200 cells/$mu L$), the patient suffers from bouts of fever, diarrhea, and weight loss, becoming prey to lethal *opportunistic infections* caused by _Mycobacterium_, _Pneumocystis jirovecii_ (fungal pneumonia), cytomegalovirus, and _Toxoplasma_.
+
+== Modes of Transmission & Clinical Testing
+
+- *Transmission Routes:* Sexual contact with infected partners; transfusion of contaminated blood/blood products; sharing contaminated hypodermic needles (intravenous drug users); vertical transmission from infected mother to child through placenta or breast milk.
+- *Non-Transmission:* HIV is *NOT transmitted* through casual social contact (hugging, shaking hands, sharing utensils), respiratory droplets, saliva, tears, or mosquito/insect bites.
+- *Diagnosis:*
+  - *Screening Test:* *ELISA* (Enzyme-Linked Immunosorbent Assay).
+  - *Confirmatory Test:* *Western Blotting* (detects antibodies specific to viral proteins gp120, gp41, p24).
+  - *Quantitative Viral Load:* Reverse Transcriptase-Polymerase Chain Reaction (RT-PCR).
+- *Treatment:* Anti-Retroviral Therapy (ART)—using reverse transcriptase inhibitors and protease inhibitors—suppresses viral replication and prolongs survival, but cannot eradicate the provirus.
+
+= Cancer Biology & Carcinogenesis
+
+Cancer represents a breakdown of the regulatory mechanisms that govern normal cell growth, division, and spatial tissue architecture.
+
+== Cellular Properties of Cancer Cells
+
+- *Loss of Contact Inhibition:* Normal mammalian cells exhibit *contact inhibition*—a regulatory phenomenon wherein physical contact with neighboring cells inhibits further cell division. Cancer cells completely lose contact inhibition, continuing uncontrolled mitosis to form disorganized cellular masses termed *tumors (neoplasms)*.
+- *Immortality:* Activation of telomerase enzyme allows indefinite replication cycles without entering senescence.
+
+== Types of Tumors
 
 #table(
-  columns: (1fr, 1.55fr, 1.35fr),
-  table.header[*Barrier type*][*How it blocks pathogens*][*Examples from the body*],
-  [*Physical*],
-  [Sheets of cells that mechanically block entry — pathogens simply cannot cross the wall.],
-  [Skin covering the body; mucus coating the airway, gut and urogenital lining],
-  [*Physiological*],
-  [Body fluids with conditions or chemicals that kill or slow pathogens.],
-  [Acid (HCl) in the stomach; *lysozyme* (an enzyme that digests bacterial walls) in saliva and tears],
-  [*Cellular*],
-  [Special white blood cells that swallow and digest invaders — a process called *phagocytosis*.],
-  [*PMNL-neutrophils* (white blood cells with lobed nuclei) and *macrophages* (tissue scavenger cells)],
-  [*Cytokine*],
-  [Infected cells send out warning proteins called *cytokines* that protect neighbouring cells.],
-  [*Interferons* released by virus-infected cells make nearby cells virus-resistant],
+  columns: (1fr, 1.5fr, 1.5fr),
+  table.header[*Feature*][*Benign Tumor*][*Malignant Tumor (True Cancer)*],
+  [Growth & Boundary], [Remains strictly localized to its tissue of origin; encapsulated by fibrous connective tissue.], [Unencapsulated; invades and destroys surrounding healthy anatomical tissues.],
+  [Growth Rate], [Slow, controlled enlargement.], [Rapid proliferation, competing with normal cells for vital nutrients.],
+  [*Metastasis*], [*Completely absent.* Never spreads to distant anatomical sites.], [*Present.* Cells detach, enter blood/lymph, lodge in distant organs to form secondary tumors.],
+  [Clinical Danger], [Causes minimal damage unless physically pressing on vital structures.], [Extremely fatal without aggressive oncological intervention.],
 )
 
-- *The label trick:* match the noun to the type — a *wall* is physical, a
-  *chemical* is physiological, a *cell* is cellular, a *message* between cells is
-  a cytokine barrier.
-- *Interferons, one line deeper:* they "interfere" with virus spread — the
-  infected cell tells its neighbours how to lock their doors before the virus
-  arrives.
+- *Metastasis:* The detachment of malignant cells from the primary tumor and their dissemination via blood or lymphatic circulation to seed secondary metastatic colonies in distant organs. It is the *most dreaded diagnostic hallmark* of malignant neoplasms.
 
-#analogy-box(title: "Everyday Example — The Medieval Castle")[
-  A castle under siege maps one-to-one onto innate immunity: the *stone walls* are
-  the skin, the *boiling oil poured on climbers* is the stomach's acid and other
-  killing fluids, the *guards who throw attackers into the moat* are the
-  phagocytes (neutrophils and macrophages), and the *watchtower drum sent to warn
-  the next village* is an interferon. Notice the castle never learns the
-  attacker's name — that is exactly why innate immunity has no memory.
-]
+== Carcinogens & Oncogenic Transformation
 
-- *Where it ends:* innate immunity buys time but cannot finish a clever enemy —
-  for that, the body needs targeted, remembered defence: acquired immunity.
+Cancer-inducing agents are known as *carcinogens*:
+- *Physical Carcinogens:* Ionizing radiation (X-rays, gamma rays) and non-ionizing radiation (UV rays) induce DNA double-strand breaks, thymine dimers, and mutational cascades.
+- *Chemical Carcinogens:* Tobacco smoke (contains polycyclic aromatic hydrocarbons like benzopyrene, strongly linked to lung cancer), coal tar, arsenic, and aniline dyes.
+- *Biological Carcinogens:*
+  - *Oncogenic Viruses:* Viruses carrying viral oncogenes (_v-onc_) that integrate into host chromosomes.
+  - *Cellular Oncogenes:* Normal mammalian cells harbor genes called *proto-oncogenes (cellular oncogenes, _c-onc_)* that regulate normal growth. When mutated or inappropriately activated by carcinogens, they convert into active *oncogenes*, driving neoplastic transformation.
 
-= Immunity II — Acquired, Active and Passive, Vaccination
+== Diagnostic Modalities & Therapeutic Interventions
 
-The innate system treats every enemy the same. Sooner or later, though, the body
-needs a sniper rather than a wall — something aimed at *this particular* pathogen.
-That is *acquired immunity*: it develops after meeting a pathogen (or a vaccine),
-it is *pathogen-specific*, and it carries *memory*, so the second meeting ends
-much faster than the first.
+- *Diagnostic Methods:*
+  - *Biopsy & Histopathology:* A suspected tissue fragment is excised, sectioned, stained, and examined under a microscope for cellular atypia and mitotic abnormalities.
+  - *Imaging Techniques:* Radiography (X-rays), Computed Tomography (*CT*—provides 3D anatomical images using X-rays), and Magnetic Resonance Imaging (*MRI*—uses intense magnetic fields and non-ionizing radiation to safely detect pathological tissue changes).
+  - *Molecular & Immunological Tests:* Monoclonal antibodies against cancer-specific antigens; DNA probes detecting inherited susceptibility oncogenes (e.g., _BRCA1/2_ for breast cancer).
+- *Therapeutic Approaches:*
+  - *Surgical Excision:* Physical removal of localized tumors.
+  - *Radiation Therapy:* Tumor cells are targeted with lethal doses of ionizing radiation while shielding surrounding normal tissue.
+  - *Chemotherapy:* Administration of antineoplastic pharmacological agents (e.g., vincristine, vinblastine, cisplatin) that inhibit cellular division. Side effects include alopecia (hair loss) and anemia.
+  - *Immunotherapy:* Tumors frequently evade immune detection. Administering *biological response modifiers* such as *$alpha$-interferon* stimulates the patient's own cytotoxic immune system to destroy tumor cells.
 
-- *The specialised cells:* two families of *lymphocytes* (a type of white blood
-  cell) run this system — *B-lymphocytes* and *T-lymphocytes*.
-- *The weapons:* B cells produce *antibodies* — Y-shaped proteins that stick to
-  one specific antigen (*antigen* = any foreign molecule that the immune system
-  recognises as "not self").
-- *Millions of targets:* the body can make antibodies against *millions of
-  different antigen types*, which is why one system covers a lifetime of new
-  enemies.
+= Drugs, Tobacco and Alcohol Abuse
 
-== The antibody: a Y with five flavours
+== Adolescence, Addiction and Dependence
 
-- *Shape first:* every antibody is a *Y-shaped protein* — the two arms of the Y
-  grip the antigen; the stem does the rest of the work.
-- *Five classes, one role each:* IgA, IgM, IgG, IgE and IgD — the letters matter,
-  and each class has its own job:
+- *Adolescence:* The transitional developmental period between 12 and 18 years of age linking childhood with biological adulthood. High curiosity, vulnerability, peer pressure, and risk-taking behavior render adolescents prone to substance abuse.
+- *Addiction:* A psychological attachment to certain pleasurable sensations (euphoria, temporary well-being) associated with drug or alcohol consumption.
+- *Tolerance:* With chronic repeated usage, cell surface receptors tolerate the substance, necessitating progressively *higher doses* to achieve the desired psychological effect.
+- *Dependence & Withdrawal Syndrome:* The physical adaptation of the body to the substance. If drug or alcohol consumption is abruptly ceased, the patient exhibits a distressing *withdrawal syndrome* characterized by intense anxiety, tremors, sweating, nausea, and vomiting.
+
+== Classification of Commonly Abused Drugs
 
 #table(
-  columns: (0.55fr, 1.9fr, 1.45fr),
-  table.header[*Class*][*Its job in one line*][*Where you meet it*],
-  [IgG], [Crosses the placenta to protect the baby before birth.], [The most abundant antibody in blood],
-  [IgA], [Guards wet surfaces and passes to the newborn in milk.], [*Colostrum* — the yellowish first milk, days 2–3],
-  [IgM], [The *first responder* — first antibody made in a fresh infection.], [Early blood test of a new infection],
-  [IgE], [Drives *allergic reactions* — see Section 5.], [Allergy to pollen or dust],
-  [IgD], [Sits on B cells as their antigen sensor.], [Activates B-lymphocytes],
-)
-
-== Humoral vs cell-mediated: two arms of acquired immunity
-
-#table(
-  columns: (1fr, 1.6fr, 1.3fr),
-  table.header[*Arm*][*Who does the work*][*What it handles*],
-  [*Humoral*],
-  [*B-lymphocytes* make antibodies that float in blood and lymph (body fluids — hence "humoral").],
-  [Free bacteria, toxins, viruses outside cells],
-  [*Cell-mediated*],
-  [*T-lymphocytes* act directly — no antibodies. Helper T cells also boost B cells.],
-  [Virus-infected cells, fungi, and *graft rejection* — the body rejecting a transplanted organ],
-)
-
-- *The transplant line:* a donated kidney is rejected by *cell-mediated*
-  immunity — T cells recognise the graft's antigens as foreign. This is a classic
-  match-the-pair fact.
-
-== Primary vs secondary response: the reason vaccines work
-
-- *Primary response:* the *first* meeting with an antigen — antibodies rise slowly
-  and only to a modest level, while the pathogen does its damage.
-- *Memory cells:* some B and T cells stay behind after the fight, standing by
-  specifically for that antigen.
-- *Secondary response:* the *second* meeting — memory cells wake instantly, so
-  antibodies rise *faster* and *far higher*, often killing the pathogen before
-  you feel ill.
-- *The exam line:* a vaccine works because it manufactures this *memory without
-  the disease*.
-
-#worked-example("Worked Example — Reading a Response Curve in Words")[
-  A student receives an anti-tetanus vaccine in January and a booster in July.
-
-  - *January (primary):* the body meets the tetanus antigen for the first time —
-    antibody level climbs slowly over 1–2 weeks, peaks low, and fades.
-  - *July (secondary):* memory B cells recognise the same antigen at once —
-    antibody level rises *within days* to a much higher, longer-lasting peak.
-  - *Conclusion:* the booster is faster and stronger — not because the vaccine
-    changed, but because the *defence changed*: it now has memory.
-]
-
-== Active vs passive: who made the antibodies?
-
-#table(
-  columns: (1fr, 1.7fr, 1.2fr),
-  table.header[*Point*][*Active immunity*][*Passive immunity*],
-  [Who makes the antibodies], [Your *own body*, after meeting the antigen.], [Ready-made antibodies *given* from outside.],
-  [How it is gained], [Natural infection, or a *vaccination* (dead/weakened antigen).], [Colostrum IgA for the baby; *antivenom* after a snakebite.],
-  [Memory], [Present — protection lasts *years*.], [Absent — protection is *fast but short-lived*.],
-  [One-line check], [Slow to arrive, long to stay.], [Instant to arrive, quick to fade.],
-)
-
-- *Vaccination and immunisation, defined:* *vaccination* is giving a weakened or
-  dead antigen so the body builds memory; *immunisation* is the whole process —
-  the body ends up protected against that disease.
-- *Modern twist:* some vaccines (e.g. hepatitis B) are made by *recombinant DNA
-  technology* — the antigen protein is grown in yeast cells, so no live pathogen
-  is needed.
-
-= Allergies, Autoimmunity and the Immune System
-
-The immune system's whole job is telling *self* from *non-self*. When it over-reacts
-to something harmless, you get an *allergy*. When it mistakes self for enemy, you
-get *autoimmunity*. And when you ask "where do all these soldiers come from?", the
-answer is the *lymphoid organs* — the barracks and training grounds of immunity.
-
-== Allergy: a defence that over-fires
-
-- *Definition:* an *allergy* is an *exaggerated* immune response to a normally
-  harmless substance in the environment.
-- *Allergens, the triggers:* *allergen* is the name for such a substance — common
-  ones are *pollen grains* and *dust mites*; some people react to animal dander
-  (flakes of skin and fur).
-- *The chemistry chain:* the first exposure makes *IgE antibodies* against the
-  allergen; on the next exposure, these IgE antibodies make body cells release
-  *histamine and serotonin* — the chemicals that actually cause the symptoms.
-- *The symptoms:* sneezing, watery eyes, running nose, difficulty in breathing —
-  all in minutes, which is why allergy feels so sudden.
-- *The medicine logic:* *antihistamines* (plus adrenaline and steroids in strong
-  cases) reduce the symptoms by blocking the released chemicals — this is why an
-  anti-allergy tablet is called an antihistamine.
-
-== Autoimmunity: the army attacks its own city
-
-- *The normal rule:* higher vertebrates have the ability to tell *self-cells*
-  from foreign cells and leave the self alone.
-- *The breakdown:* sometimes, due to genetic and other unknown reasons, the body
-  *attacks its own cells* — this is *autoimmunity*.
-- *The named example:* *rheumatoid arthritis* — the immune system attacks the
-  joints, causing painful inflammation — is the standard auto-immune disease of
-  this chapter.
-- *The exam line:* autoimmunity is not weak immunity; it is *misdirected*
-  immunity — strong but aimed wrongly.
-
-== Lymphoid organs: where immune cells are made and used
-
-#table(
-  columns: (1.1fr, 0.95fr, 1.85fr),
-  table.header[*Organ*][*Class*][*Its role in one line*],
-  [Bone marrow], [*Primary*], [Birthplace — all blood cells, including lymphocytes, are produced here.],
-  [Thymus], [*Primary*], [Training school — T-lymphocytes *mature* here; it shrinks with age.],
-  [Spleen], [*Secondary*], [Blood filter — traps blood-borne germs; the *graveyard of RBCs* and a large reservoir of lymphocytes.],
-  [Lymph nodes], [*Secondary*], [Checkpoints along lymph vessels — trap germs and are sites where lymphocytes meet antigen.],
-  [Tonsils, Peyer's patches], [*Secondary*], [Guard posts at the entrances — tonsils in the throat, Peyer's patches in the small-intestine wall.],
-)
-
-- *Primary vs secondary, in one line:* *primary* organs *make and mature*
-  lymphocytes; *secondary* organs are the *battlefields* where mature lymphocytes
-  meet antigens and multiply.
-- *The spleen double-role:* it both filters worn-out red blood cells (hence
-  "graveyard of RBCs") and stores lymphocytes ready for blood-borne invaders.
-
-= AIDS
-
-AIDS is not one disease — it is the *stage* where the immune system itself has
-been disabled, so ordinary infections turn dangerous. Understanding one virus
-explains the whole story.
-
-== The virus and its attack plan
-
-- *The culprit:* AIDS (Acquired Immuno Deficiency Syndrome) is caused by *HIV* —
-  the Human Immuno-deficiency Virus.
-- *Retrovirus, explained:* HIV is a *retrovirus* — its genetic material is *RNA*,
-  and an enzyme called *reverse transcriptase* copies that RNA *into DNA*, which
-  then slips into the host cell's own genome.
-- *The target:* HIV selectively infects and destroys *helper T-lymphocytes* — the
-  very cells that coordinate the rest of the immune system.
-- *The result:* helper T cell count falls, immunity collapses, and the patient
-  cannot fight *opportunistic infections* — mild germs (certain bacteria, fungi,
-  parasites) that a healthy body would shrug off.
-
-== How HIV travels — and how it does not
-
-#table(
-  columns: (1fr, 1fr),
-  table.header[*HIV DOES spread by*][*HIV does NOT spread by*],
-  [Sexual contact with an infected person], [Handshakes, hugs or sitting beside the person],
-  [Transfusion of infected blood or blood products], [Sharing meals, water or utensils],
-  [Sharing infected needles (e.g. among drug users)], [Mosquito or insect bites],
-  [Infected mother to the baby through the placenta], [Sweat, tears, coughs and sneezes],
-)
-
-- *Why the left column works:* every real route carries *body fluids* — the virus
-  lives in blood, semen and breast milk, and dies quickly outside them.
-- *Why the right column fails to spread:* those contacts exchange no body fluids,
-  which is exactly what the common myths get wrong.
-
-== Tests, timeline and prevention
-
-- *Screening first:* *ELISA* (Enzyme-Linked Immuno-Sorbent Assay) is the widely
-  used *screening* test — cheap and quick for large numbers.
-- *Confirmation next:* a positive ELISA is confirmed by the *Western blot* test;
-  *PCR* (which detects viral genetic material) is the third tool.
-- *The timeline:* the gap between infection and AIDS symptoms varies from a few
-  months to many years — *often about 5–10 years* — because the virus works
-  slowly; the person may look and feel normal while carrying it.
-- *Prevention, the official list:* safe sexual practices, use of condoms, blood
-  tested before transfusion, disposable needles and syringes, and avoiding
-  drug abuse.
-- *The programmes:* in India, *NACO* (National AIDS Control Organisation) and
-  globally the *WHO* run awareness, testing and blood-safety programmes.
-
-#analogy-box(title: "Everyday Example — The Command Centre Sabotage")[
-  HIV does not fight the army — it *kills the generals*. Helper T cells are the
-  command centre that orders B cells and killer T cells into action. With the
-  generals gone, even a mild infection (a foot soldier's skirmish) can overrun the
-  city — that is what "opportunistic infection" means: the germ seizes the
-  *opportunity* left by a defenceless body.
-]
-
-= Cancer
-
-Your cells are polite: when they touch a neighbour, they stop dividing. This
-property — *contact inhibition* — keeps every tissue a tidy single layer. Cancer
-is what happens when cells lose their manners.
-
-== How a normal cell turns cancerous
-
-- *The rule:* *normal cells show contact inhibition* — they stop dividing as soon
-  as they touch neighbouring cells.
-- *The break:* *cancer cells lose contact inhibition*, so they keep dividing
-  without pause, piling on each other in a growing mass.
-- *The trigger:* under certain conditions, normal genes called *proto-oncogenes*
-  get activated into *oncogenes* (cancer-causing versions), pushing the cell into
-  uncontrolled division.
-
-== Benign vs malignant — and the word metastasis
-
-#table(
-  columns: (0.95fr, 1.35fr, 1.35fr),
-  table.header[*Point*][*Benign tumour*][*Malignant tumour (cancer)*],
-  [Growth speed], [Slow and contained.], [Rapid and aggressive.],
-  [Stays put?], [Yes — confined to its original location.], [No — invades neighbouring tissues.],
-  [Spreads to new sites?], [*Never* — this is the defining difference.], [*Yes* — this spread is called *metastasis*.],
-  [Danger level], [Lower; often removable.], [High; the spread is what kills.],
-)
-
-- *Metastasis, defined:* malignant cells travel through *blood and lymph* to new
-  organs and start fresh tumours there — this travel is *metastasis*.
-
-== Causes: the carcinogen families
-
-- *Physical agents:* radiation — X-rays, gamma rays, UV rays — damages the genes
-  that control division.
-- *Chemical agents:* *chemical carcinogens*, with *tobacco smoke* as the major
-  example (its link to lung cancer is the classic case).
-- *Biological agents:* *oncogenic viruses* — viruses carrying genes that can turn
-  a cell cancerous.
-
-== Detection and treatment
-
-#table(
-  columns: (1fr, 2fr),
-  table.header[*Detection method*][*What it does*],
-  [Biopsy + histopathology], [A piece of the suspected tissue is examined under the microscope — the *confirming* test.],
-  [Radiography / CT / MRI], [X-ray imaging and scan techniques locate tumours inside the body non-invasively.],
-  [Blood and bone-marrow tests], [Reveal blood-cell cancers such as leukaemias.],
-)
-
-#table(
-  columns: (1fr, 2fr),
-  table.header[*Treatment*][*How it attacks the tumour*],
-  [Surgery], [The tumour is physically removed — works when it is still localised.],
-  [Radiation therapy], [Focused rays kill the rapidly dividing cells in the tumour zone.],
-  [Chemotherapy], [Anti-cancer drugs circulate in blood and kill dividing cells (side effects: hair loss, anaemia).],
-  [Immunotherapy], [*Biological response modifiers* such as *α-interferon* activate the patient's own immune system against the tumour.],
-)
-
-- *The mole rule:* a mole that changes shape, size or colour, or starts bleeding,
-  needs a doctor's look — early detection is the single biggest survival factor.
-
-= Drugs and Alcohol Abuse
-
-Between 12 and 18 you are neither child nor adult — a bridge years long, with
-exams, new freedoms and a strong wish to fit in. *Adolescence* (those bridge
-years) is exactly when curiosity and peer pressure push many towards tobacco,
-alcohol and drugs. This section names the substances, the plants they come from,
-and the exits available.
-
-== Addiction and tolerance: how the trap closes
-
-- *Addiction, defined:* *addiction* is physical and psychological dependence —
-  the person keeps using the substance although it is damaging health, studies
-  and family.
-- *Tolerance, defined:* with repeated use, the body *tolerates* the old dose, so
-  the person needs a *higher and higher dose* to feel the same effect — a
-  self-reinforcing spiral.
-- *Withdrawal:* stopping suddenly brings anxiety, shakiness, nausea and sweating —
-  the body's protest, and the reason quitting alone is so hard.
-- *Why it starts:* curiosity, the wish to appear grown-up, stress and escape, and
-  above all *peer pressure* — the push to do what the group does.
-
-== The three drug families
-
-#table(
-  columns: (1fr, 1.45fr, 1.45fr),
-  table.header[*Family*][*Example and source plant*][*Action on the body*],
+  columns: (0.9fr, 1.4fr, 1.7fr),
+  table.header[*Drug Category*][*Plant Source & Active Principle*][*Pharmacological Mechanism & Effects*],
   [*Opioids*],
-  [*Heroin* ("smack") — extracted from the latex of the poppy plant _Papaver somniferum_.],
-  [*Depressant* — binds *opioid receptors* in the central nervous system and gut, slowing body functions],
-  [*Stimulants*],
-  [*Cocaine* ("coke" or "crack") — from the coca plant _Erythroxylum coca_.],
-  [*Stimulates* the CNS — euphoria and extra energy; interferes with dopamine transport; high doses cause hallucinations],
+  [Obtained from the latex of the opium poppy *_Papaver somniferum_*. Active principle: *Morphine*. Acetylation of morphine yields *Heroin* (diacetylmorphine, "smack").],
+  [Bind specific *opioid receptors* located in the Central Nervous System (CNS) and Gastrointestinal tract. Morphine is a potent clinical analgesic and sedative. Heroin is a powerful *depressant* that slows body functions.],
   [*Cannabinoids*],
-  [Marijuana, charas, ganja — from the hemp plant _Cannabis sativa_.],
-  [*Hallucinogen* — interacts with *cannabinoid receptors* in the brain, distorting perception; strains the heart],
+  [Derived from the inflorescences of the Indian hemp plant *_Cannabis sativa_*. Formulations include marijuana, hashish, charas, and ganja.],
+  [Interact with specific *cannabinoid receptors* predominantly located in the brain. They impair cognitive function and exert marked effects on the *cardiovascular system*. Highly abused by certain athletes.],
+  [*Cocaine (Coca alkaloid)*],
+  [Extracted from the leaves of the South American coca shrub *_Erythroxylum coca_*. Commonly called "coke" or "crack".],
+  [Interferes with the reuptake of the neurotransmitter *dopamine*. Acts as a potent *CNS stimulant*, producing euphoria and surges of energy. Excessive dosages precipitate auditory and visual *hallucinations*.],
+  [*Hallucinogens*],
+  [From plants like *_Atropa belladonna_* and *_Datura_*, as well as synthetic lysergic acid diethylamide (LSD).],
+  [Alter sensory perceptions, induce profound distortions of reality, time, and space, and precipitate severe psychological psychosis.],
 )
 
-- *The one-line key:* opioids *slow*, stimulants *rev*, cannabinoids *distort* —
-  three verbs that sort every question in this area.
-- *Tobacco, the quiet entry:* *nicotine* stimulates the adrenal glands, raising
-  blood pressure and heart rate, and is linked to lung cancer, bronchitis,
-  emphysema and coronary heart disease.
-- *Alcohol, the liver tax:* heavy drinking destroys liver cells (cirrhosis) and
-  damages the nerves and the family that lives with the drinker.
-
-== The cost beyond the body
-
-- *On the person:* falling marks, lost appetite and sleep, weak immunity,
-  accidents and violence.
-- *On the family:* money drains away, trust breaks, and the household lives
-  around one person's craving.
-- *On society:* drug-dependent youth mean lost careers, crime and pressure on
-  health services — which is why prevention is a national programme, not a
-  personal choice.
-
-== Prevention and the way out
-
-- *Avoid undue peer pressure:* it is fine to say no when the group pushes — the
-  confidence to refuse is itself a skill.
-- *Channel energy:* sports, music, hobbies and studies fill the same hours that
-  risk-taking tries to fill.
-- *Education and counselling:* knowing the exact damage (this section) plus
-  talking to counsellors catches problems early.
-- *De-addiction centres:* doctors and trained staff manage withdrawal safely and
-  support recovery — seeking help is treatment, not shame.
-- *Warning signs to act on:* sudden fall in grades, secrecy about friends and
-  money, red eyes, changed sleep and appetite, unexplained mood swings.
+- *Tobacco & Nicotine:* Tobacco contains the toxic alkaloid *nicotine*, which stimulates the adrenal medulla to release adrenaline and nor-adrenaline into the blood, acutely elevating arterial blood pressure and heart rate. Smoking causes carbon monoxide ($C O$) to bind hemoglobin, forming carboxyhemoglobin and reducing oxygen-carrying capacity. It dramatically elevates incidences of lung, bladder, and throat cancer, bronchitis, and emphysema.
+- *Alcohol:* Chronic ethanol ingestion induces peripheral neuropathy, cardiomyopathy, and extensive *liver cirrhosis* (fibrotic scarring replacing functional hepatocytes).
 
 = Key Facts & Terms Cheatsheet
 
-#cheatsheet-box(title: "Key Facts & Terms Cheatsheet — Human Health and Disease")[
+#cheatsheet-box(title: "Master Diagnostic & Conceptual Cheatsheet")[
   #table(
-    columns: (1.15fr, 1.75fr, 1.35fr),
-    table.header[*Term / fact*][*Meaning in one line*][*Example / number*],
-    [Health (WHO)], [Total well-being — physical, mental and social.], [Not merely "no disease"],
-    [Typhoid], [_Salmonella typhi_ via contaminated food and water.], [*Widal test*; fever 39–40°C],
-    [Pneumonia], [_Streptococcus pneumoniae_ or _H. influenzae_ via droplets.], [Alveoli fill with fluid],
-    [Common cold], [Rhinoviruses via droplets and shared objects.], [Self-clears in 3–7 days],
-    [Malaria], [_Plasmodium vivax_ / _P. falciparum_ protozoan.], [*Female Anopheles*; chill-fever every 3–4 days],
-    [Amoebiasis], [_Entamoeba histolytica_ via faecal contamination.], [Mucus and blood in stools],
-    [Ascariasis], [_Ascaris lumbricoides_ eggs in water/vegetables.], [Gut blockage, anaemia],
-    [Filariasis], [_Wuchereria bancrofti_ worms in lymph vessels.], [*Female Culex*; elephantiasis],
-    [Ringworm], [_Trichophyton_ fungi from shared towels/clothes.], [Dry, scaly, itchy lesions],
-    [Physical barrier], [Blocks entry mechanically.], [Skin, mucus lining],
-    [Physiological barrier], [Killing conditions in body fluids.], [Stomach HCl; lysozyme in saliva/tears],
-    [Cellular barrier], [Cells that swallow pathogens (phagocytosis).], [PMNL-neutrophils, macrophages],
-    [Cytokine barrier], [Warning proteins from infected cells.], [Interferons],
-    [IgG], [Antibody that crosses the placenta.], [Protects the foetus],
-    [IgA], [Guards wet surfaces; passes in first milk.], [Colostrum, days 2–3],
-    [IgM], [First antibody made in a new infection.], [The first responder],
-    [IgE], [The allergy antibody — triggers histamine.], [Pollen and dust allergy],
-    [Active immunity], [Own body makes antibodies; memory forms.], [Vaccination; lasts years],
-    [Passive immunity], [Ready-made antibodies given; no memory.], [Antivenom; colostrum IgA],
-    [Allergy chemistry], [IgE makes cells release histamine and serotonin.], [Antihistamine tablets],
-    [Autoimmunity], [Immune system attacks self-cells.], [Rheumatoid arthritis],
-    [Primary lymphoid organs], [Sites where lymphocytes are made and mature.], [Bone marrow, thymus],
-    [Secondary lymphoid organs], [Sites where lymphocytes meet antigen.], [Spleen, lymph nodes, tonsils, Peyer's patches],
-    [HIV attack plan], [RNA → DNA by reverse transcriptase; kills helper T cells.], [Immunity falls; opportunistic infections],
-    [HIV tests], [ELISA screens; Western blot confirms; PCR detects genome.], [Symptoms after ~5–10 years],
-    [Contact inhibition], [Normal cells stop dividing on touching neighbours.], [Cancer cells lose it],
-    [Metastasis], [Cancer cells travel by blood/lymph to new sites.], [Malignant only — never benign],
-    [Carcinogen types], [Physical, chemical and biological agents.], [X-rays; tobacco smoke; oncogenic viruses],
-    [Cancer treatments], [Four routes against the tumour.], [Surgery, radiation, chemotherapy, α-interferon],
-    [Opioids], [Depressants that bind opioid receptors.], [Heroin — _Papaver somniferum_],
-    [Stimulants], [Excite the central nervous system.], [Cocaine — _Erythroxylum coca_],
-    [Cannabinoids], [Hallucinogens acting on brain receptors.], [_Cannabis sativa_],
+    columns: (1.2fr, 1.7fr, 1.1fr),
+    table.header[*Key Subject Pointer*][*Core NCERT Mechanism / Definition*][*Exam Identifier*],
+    [Typhoid Diagnosis], [Serological agglutination detecting antibodies against _Salmonella typhi_.], [Widal Test],
+    [Pneumonia Pathology], [Fluid-filled alveoli hindering gas exchange; cyanotic blue lips/nails.], [_S. pneumoniae_],
+    [Common Cold], [Rhinoviruses infecting nose and upper airway; strictly spares the lungs.], [3–7 Days duration],
+    [Toxic Malarial Agent], [Insoluble crystalline pigment released when erythrocytes rupture.], [Haemozoin],
+    [Infectious Malarial Stage], [Spindle-shaped motile forms injected into human blood by mosquito.], [Sporozoites],
+    [Filariasis Pathology], [Nematodes residing in lower limb lymphatic vessels; elephantiasis.], [_Wuchereria bancrofti_],
+    [Cytokine Barrier], [Antiviral glycoproteins secreted by virus-infected cells.], [Interferons],
+    [Placental Antibody], [Smallest, most abundant immunoglobulin that traverses the placenta.], [IgG],
+    [Colostrum Antibody], [Secretory dimer in yellowish early breast milk conferring passive immunity.], [IgA],
+    [Allergic Antibody], [Binds mast cells, triggering explosive release of histamine and serotonin.], [IgE],
+    [Organ Graft Rejection], [Immune arm responsible for recognizing non-self MHC on foreign tissue.], [Cell-Mediated (CMI)],
+    [Primary Lymphoid Organs], [Sites where immature lymphocytes differentiate and mature.], [Bone marrow & Thymus],
+    [Mucosal Lymphoid Tissue], [Accounts for roughly 50 percent of all lymphoid tissue in humans.], [MALT],
+    [AIDS Virus], [Enveloped retrovirus with two single-stranded RNA molecules and reverse transcriptase.], [HIV (CD4+ target)],
+    [AIDS Diagnostic Sequence], [Enzyme-linked immunosorbent assay followed by Western blot confirmation.], [ELISA $arrow.r$ Western Blot],
+    [Cancer Spread], [Dissemination of malignant cells to distant sites via circulation.], [Metastasis],
+    [Biological Response Modifier], [Glycoprotein activating immune destruction of neoplastic cells.], [$alpha$-Interferon],
+    [Heroin Synthesis], [Diacetylmorphine produced by acetylation of natural morphine.], [_Papaver somniferum_],
+    [Cocaine Mechanism], [Interferes with synaptic dopamine reuptake, driving CNS stimulation.], [_Erythroxylum coca_],
   )
 ]
 
 = Common Errors and Special Cases
 
-#exception-box(title: "Common Errors & Special Cases")[
+#exception-box(title: "High-Yield CUET Pitfalls & Diagnostic Distinctions")[
   #table(
-    columns: (1.35fr, 1.3fr, 1.25fr),
-    table.header[*The mistake students make*][*What is actually right*][*Why / the trap*],
-    [Malaria is spread by the _Culex_ mosquito],
-    [_Female Anopheles_ carries _Plasmodium_.],
-    [_Culex_ belongs to *filariasis* — the classic vector swap.],
-    [Innate immunity remembers a pathogen],
-    [Only *acquired* immunity has memory.],
-    [Innate is non-specific and fixed from birth.],
-    [Passive immunity protects for years],
-    [It is *fast but short-lived*.],
-    [No memory cells are made — antivenom fades in weeks.],
-    [Colostrum gives the baby active immunity],
-    [It is *passive* — ready-made IgA.],
-    [The mother's antibodies enter, the baby makes none.],
-    [IgE is the antibody that fights viruses],
-    [IgE drives *allergy*; histamine causes the symptoms.],
-    [Interferons are the antiviral warning proteins.],
-    [HIV spreads by handshakes, meals or mosquitoes],
-    [Only *body fluids* carry HIV.],
-    [Sexual contact, infected blood, needles, mother-to-foetus — nothing else.],
-    [A benign tumour metastasises],
-    [Only *malignant* tumours metastasise.],
-    [Staying put is the *defining* property of benign.],
-    [Cannabinoids are stimulants],
-    [They are *hallucinogens*.],
-    [Cocaine is the stimulant; _Cannabis_ distorts perception.],
+    columns: (1.2fr, 1.4fr, 1.4fr),
+    table.header[*Common Mistake*][*Scientifically Verified Reality*][*The Exact Trap Mechanism*],
+    [Confusing Pneumonia with Common Cold],
+    [Pneumonia infects the *alveoli of the lungs*; the common cold affects *only the nose and respiratory passage*, strictly sparing the lungs.],
+    [NTA questions test whether fluid accumulation occurs in alveoli or purely in upper nasopharyngeal membranes.],
+    [Swapping Malaria and Filariasis Vectors],
+    [Malaria is transmitted by *female Anopheles*; Filariasis is transmitted by *female Culex*; Dengue/Chikungunya by *female Aedes*.],
+    [Exam questions frequently create vector-disease mismatch matrices; never confuse _Culex_ with _Anopheles_.],
+    [Classifying Colostrum as Active Immunity],
+    [Colostrum provides *passive immunity* because ready-made maternal IgA is received without host antigen challenge.],
+    [Any ready-made antibody transfer (colostrum, antivenom, ATS) is passive; memory cells are never formed.],
+    [Attributing Graft Rejection to Antibodies],
+    [Graft rejection is mediated strictly by *Cell-Mediated Immunity (CMI)* via T-lymphocytes, NOT humoral antibodies.],
+    [Organ transplant rejection questions test the direct role of cytotoxic T cells and tissue matching.],
+    [Believing Benign Tumors Metastasise],
+    [Only *malignant neoplasms* undergo metastasis; benign tumors remain localized and encapsulated.],
+    [Metastasis is the single defining biological property that separates malignant from benign growths.],
+    [Confusing Opioids with Cannabinoids],
+    [Opioids are *depressants* (slow body functions); Cannabinoids act on cardiovascular/brain receptors; Cocaine is a *stimulant*.],
+    [Remember the three operational verbs: opioids *depress*, cocaine *stimulates*, cannabinoids *distort*.],
   )
-]
-
-#worked-example("Worked Example — Three Ill Students, Three Complete Answers")[
-  Three hostelmates fall ill in the same week. A complete answer names
-  *pathogen + route + signature fact* for each.
-
-  - *Student A drank tank water at a fair, then ran a 39–40°C fever for days:*
-    typhoid — _Salmonella typhi_ — confirm with the *Widal test*.
-  - *Student B is back from a forest trip with chills and fever every 3–4 days:*
-    malaria — _Plasmodium_ through the *female Anopheles* — the fever recurs as
-    infected red blood cells burst and release haemozoin.
-  - *Student C shared a hostel towel and now has a dry, scaly, itchy ring:* 
-    ringworm — _Trichophyton_, a *fungus* — warm, moist skin helped it grow.
-  - *The method:* whenever a disease question appears, silently ask all three —
-    *which pathogen, how did it enter, what is the signature?* — and the answer
-    writes itself.
 ]
 
 = The Whole Chapter on One Page
 
-#figure(image("assets/bio_health_mindmap.png", width: 100%), caption: [Whole-chapter mindmap — the eight diseases, both arms of immunity, vaccination, allergy and autoimmunity, AIDS and cancer, drugs and alcohol, with the four traps that catch most students.])
+#figure(image("assets/bio_health_mindmap.png", width: 66%), caption: [Master synthesis mindmap — high-yield integrated architecture of Human Health & Disease covering pathogen profiles, immune defenses, AIDS, oncology, and pharmacology.])
 
-= Practice Questions
+#pagebreak()
+#set text(size: 9.6pt)
+#set par(leading: 0.52em, spacing: 0.60em)
 
-#mcq(1, [Which disease–pathogen pair is *correctly* matched?], (
-  [Typhoid — _Salmonella typhi_], [Malaria — _Culex_ mosquito], [Amoebiasis — _Wuchereria bancrofti_], [Ringworm — _Plasmodium_],
+= Practice Questions — Part 1 (Q1 to Q5)
+
+#mcq(1, [A patient presents with sustained high fever (39°C to 40°C), severe headache, weakness, stomach pain, and constipation. Laboratory evaluation confirms a positive Widal test. Which of the following statements regarding the causative pathogen is correct?], (
+  [It is a virus that infects the alveoli of the lungs causing fluid congestion],
+  [It is the Gram-negative bacterium _Salmonella typhi_ that enters through contaminated food and water],
+  [It is an amoebic protozoan that establishes residence exclusively in the lumen of the large intestine],
+  [It is a filarial nematode transmitted by the bite of an infected female _Culex_ mosquito],
 ))
+#solution(1, [Typhoid fever is caused by the pathogenic bacterium _Salmonella typhi_. It enters the human body via contaminated food and drinking water, reaches the small intestine, and migrates to other organs through the bloodstream. Classical symptoms include sustained fever ($39^circle "C" - 40^circle "C"$), weakness, abdominal pain, constipation, and anorexia; in severe cases, intestinal perforation occurs. The disease is definitively diagnosed by the *Widal agglutination test*.], answer: [B])
 
-#mcq(2, [The malarial parasite reaches the human body through the bite of:], (
-  [male _Anopheles_ mosquito], [female _Culex_ mosquito], [female _Aedes_ mosquito], [female _Anopheles_ mosquito],
+#mcq(2, [In the life cycle of the malarial parasite _Plasmodium_, the definitive events of sexual reproduction (formation and fusion of gametes) and formation of motile sporozoites occur within the:], (
+  [Hepatic parenchymal cells of the human host],
+  [Erythrocytes of the human host following trophozoite development],
+  [Gut lumen and salivary glands of the female _Anopheles_ mosquito],
+  [Blood plasma of the human host during high fever paroxysms],
 ))
+#solution(2, [_Plasmodium_ exhibits a digenetic life cycle. Asexual multiplication (schizogony) occurs in human liver cells and red blood cells. The sexual stages (gametocytes) initiate in human RBCs but are taken up by the *female Anopheles mosquito*, in whose gut lumen fertilization and zygote (ookinete) formation take place. Subsequent sporogony on the stomach wall produces mature infectious *sporozoites*, which migrate to the mosquito's salivary glands.], answer: [C])
 
-#mcq(3, [Interferons, the proteins released by virus-infected cells, are an example of which innate barrier?], (
-  [Physical barrier], [Physiological barrier], [Cytokine barrier], [Cellular barrier],
+#mcq(3, [Which of the following cellular and biochemical components of the human body are correctly matched with their designated category of innate immunity barrier?], (
+  [Lysozyme in tears and saliva — Physical barrier],
+  [Mucus coating of the respiratory tract — Physiological barrier],
+  [Polymorphonuclear leukocytes (PMNL) and monocytes — Cellular barrier],
+  [Interferons secreted by virus-infected cells — Physiological barrier],
 ))
+#solution(3, [Innate immunity barriers are precisely categorized as: (1) *Physical barriers:* Skin and mucus coating of the respiratory, gastrointestinal, and urogenital tracts; (2) *Physiological barriers:* Gastric acid ($H C l$), saliva, and lysozyme in tears; (3) *Cellular barriers:* PMNL-neutrophils, monocytes, macrophages, and Natural Killer cells; (4) *Cytokine barriers:* Interferons produced by virus-infected cells. Thus, PMNL and monocytes represent cellular barriers.], answer: [C])
 
-#mcq(4, [Which of the following is an example of *passive* immunity?], (
-  [IgA antibodies received through colostrum], [Antibodies made after vaccination], [Memory B cells formed after an infection], [Skin blocking the entry of bacteria],
+#mcq(4, [A woman delivers a newborn and breastfeeds the infant during the initial two to three days postpartum. The yellowish fluid secreted by the mammary glands is rich in colostrum. What specific biological protection does this impart to the infant?], (
+  [Active natural immunity mediated by memory T-lymphocytes],
+  [Passive natural immunity conferred by pre-formed dimeric IgA antibodies],
+  [Active artificial immunity induced by maternal antigen fragments],
+  [Cell-mediated immunity eliminating pathogens through graft rejection],
 ))
+#solution(4, [Colostrum, the yellowish fluid secreted by mammary glands during the initial days of lactation, contains high concentrations of pre-formed *IgA antibodies*. Because the infant receives ready-made protective immunoglobulins directly without the infant's own immune system undergoing antigenic challenge or generating memory cells, this constitutes a classic example of *natural passive immunity*.], answer: [B])
 
-#mcq(5, [HIV disables the immune system mainly by destroying which cells?], (
-  [Red blood cells], [Helper T-lymphocytes], [Blood platelets], [Neutrophils],
+#mcq(5, [Human Immunodeficiency Virus (HIV) selectively establishes infection, replicates, and progressively eliminates which vital immunological cell type, ultimately precipitating opportunistic infections?], (
+  [Cytotoxic CD8+ T-lymphocytes],
+  [CD4+ Helper T-lymphocytes ($T_H$ cells)],
+  [B-lymphocytes differentiating into plasma cells],
+  [Polymorphonuclear neutrophils in the peripheral blood],
 ))
+#solution(5, [HIV targets cells expressing the CD4 surface receptor, notably *CD4+ Helper T-lymphocytes ($T_H$ cells)* and macrophages. Following viral entry, reverse transcription, and replication, mature virions bud off and lyse the host helper T cells. The progressive decline in CD4+ T-cell count paralyzes both humoral and cell-mediated arms of adaptive immunity, leaving the patient vulnerable to opportunistic pathogens like _Mycobacterium_, _Pneumocystis_, and toxoplasma.], answer: [B])
 
-#mcq(6, [A snakebite victim is injected with antivenom — antibodies prepared in another animal's body. The immunity gained is:], (
-  [active and natural], [active and artificial], [passive and artificial], [innate],
+#pagebreak()
+#set text(size: 9.6pt)
+#set par(leading: 0.52em, spacing: 0.60em)
+
+= Practice Questions — Part 2 (Q6 to Q10)
+
+#mcq(6, [A farmer working in an agricultural field suffers a venomous pit viper snakebite. The attending physician immediately administers an intravenous injection of anti-snake venom. The physiological protection established by this treatment is categorized as:], (
+  [Natural active immunity],
+  [Artificial active immunity],
+  [Artificial passive immunity],
+  [Innate cellular immunity],
 ))
+#solution(6, [Anti-snake venom contains pre-formed, concentrated neutralizing antibodies raised in another animal (such as horses or sheep). When injected into a patient facing a life-threatening toxin, these ready-made antibodies provide immediate neutralization without waiting for the host's slow active immune response. Because the antibodies are prepared externally and administered therapeutically, it is classified as *artificial passive immunity*.], answer: [C])
 
-#mcq(7, [Which statement about cancer cells is correct?], (
-  [They show contact inhibition], [They lose contact inhibition and divide uncontrollably], [Every tumour spreads by metastasis], [Benign tumours invade new body sites],
+#mcq(7, [Which of the following biological characteristics fundamentally distinguishes malignant neoplasms (cancers) from benign tumors?], (
+  [Benign tumors exhibit rapid, invasive infiltration into adjacent muscular tissues],
+  [Cancer cells retain strict contact inhibition, growing only in organized monolayers],
+  [Malignant tumor cells display the property of metastasis, establishing secondary colonies],
+  [Benign tumors shed cells that travel through the bloodstream to lodge in distant vital organs],
 ))
+#solution(7, [Benign tumors remain strictly localized within a fibrous capsule at their site of origin and do not spread to other anatomical parts. In contrast, malignant neoplasms (cancers) are unencapsulated, grow invasively, and demonstrate *metastasis*—wherein neoplastic cells detach, travel through blood and lymphatic vessels, and colonize distant organs to initiate secondary metastatic tumors.], answer: [C])
 
-#mcq(8, [Cocaine belongs to which drug family, and from which plant is it obtained?], (
-  [Opioid — _Papaver somniferum_], [Cannabinoid — _Cannabis sativa_], [Stimulant — _Erythroxylum coca_], [Depressant — _Atropa belladonna_],
+#mcq(8, [Cocaine is an alkaloid that exerts intense central nervous system stimulation and euphoria. Which of the following statements regarding its botanical origin and neurochemical action is correct?], (
+  [It is extracted from _Papaver somniferum_ and binds cannabinoid receptors],
+  [It is obtained from _Erythroxylum coca_ and interferes with the transport of dopamine],
+  [It is derived from _Cannabis sativa_ and acts as a central nervous system depressant],
+  [It is extracted from _Atropa belladonna_ and binds peripheral opioid receptors],
 ))
+#solution(8, [Cocaine (commonly known as "coke" or "crack") is an alkaloid obtained from the leaves of the South American plant *_Erythroxylum coca_*. It acts as a powerful central nervous system stimulant by blocking the reuptake transporter of the neurotransmitter *dopamine* in the brain, resulting in elevated dopamine concentrations that produce euphoria and increased energy. In excessive doses, it triggers acute hallucinations.], answer: [B])
 
-#mcq(9, [The antibody class that crosses the placenta and protects the developing foetus is:], (
-  [IgG], [IgA], [IgM], [IgE],
+#mcq(9, [During human gestation, which immunoglobulin class uniquely traverses the placental barrier from the maternal circulation into fetal blood, providing essential humoral defense to the neonate?], (
+  [Immunoglobulin G (IgG)],
+  [Immunoglobulin A (IgA)],
+  [Immunoglobulin M (IgM)],
+  [Immunoglobulin E (IgE)],
 ))
+#solution(9, [*Immunoglobulin G (IgG)* is the most abundant circulating antibody class in human serum (~80%). Due to its monomeric structure and specialized Fc receptors (FcRn) expressed on trophoblastic cells of the placenta, IgG is the *only immunoglobulin class* capable of crossing the human placenta from mother to fetus, conferring vital passive immunity during late gestation and early infancy.], answer: [A])
 
-#mcq(10, [Which of the following is an *auto-immune* disease?], (
-  [Typhoid], [AIDS], [Filariasis], [Rheumatoid arthritis],
+#mcq(10, [Rheumatoid arthritis is a debilitating chronic systemic disease in which synovial joints become inflamed and damaged. In immunological terms, this pathology is classified as:], (
+  [An infectious protozoan disease transmitted by mosquito vectors],
+  [An immediate IgE-mediated allergic hypersensitivity reaction],
+  [An auto-immune disorder caused by loss of immunological self-tolerance],
+  [A severe combined primary immunodeficiency disease],
 ))
+#solution(10, [*Rheumatoid arthritis* is an *auto-immune disease*. Under normal physiological conditions, the immune system distinguishes self from non-self antigens. In autoimmune conditions, immunological self-tolerance breaks down, prompting the immune system to produce auto-antibodies (such as rheumatoid factor) that attack and destroy the host's own synovial membranes and cartilage lining the joints.], answer: [C])
 
-= Solutions
+#pagebreak()
+#set text(size: 9.6pt)
+#set par(leading: 0.52em, spacing: 0.60em)
 
-#solution(1, [Typhoid is caused by the bacterium _Salmonella typhi_ and confirmed by the Widal test. Malaria is caused by _Plasmodium_ carried by *female Anopheles* (not Culex); amoebiasis is caused by _Entamoeba histolytica_; ringworm is caused by fungi such as _Trichophyton_.], answer: "A")
+= Practice Questions — Part 3 (Q11 to Q15)
 
-#solution(2, [Only the *female Anopheles* bites and transmits _Plasmodium_ — male mosquitoes feed on plant juices and do not bite. _Culex_ transmits filariasis, and _Aedes_ spreads dengue and chikungunya, not malaria.], answer: "D")
+#mcq(11, [The infectious developmental stage of _Plasmodium_ that is inoculated into human peripheral circulation during the bite of an infected female _Anopheles_ mosquito is the:], (
+  [Trophozoite stage],
+  [Sporozoite stage],
+  [Merozoite stage],
+  [Gametocyte stage],
+))
+#solution(11, [The infectious stage of _Plasmodium_ for humans is the motile, spindle-shaped *sporozoite*. Sporozoites reside in large numbers inside the salivary glands of an infected female _Anopheles_ mosquito and are injected into human subcutaneous capillary vessels during a blood meal. They swiftly migrate to hepatocytes to initiate exo-erythrocytic schizogony.], answer: [B])
 
-#solution(3, [Interferons are *cytokines* — warning proteins sent by virus-infected cells to protect their neighbours. Skin is a physical barrier, stomach acid a physiological barrier, and neutrophils/macrophages form the cellular barrier.], answer: "C")
+#mcq(12, [Elephantiasis (lymphatic filariasis) is characterized by chronic, disfiguring inflammatory enlargement of the lower limbs and external genitalia. The causative helminth parasite and its biological vector are respectively:], (
+  [_Ascaris lumbricoides_ and the common housefly (_Musca domestica_)],
+  [_Wuchereria bancrofti_ and the female _Culex_ mosquito],
+  [_Entamoeba histolytica_ and the female _Anopheles_ mosquito],
+  [_Trichophyton rubrum_ and the female _Aedes_ mosquito],
+))
+#solution(12, [Lymphatic filariasis is caused by filarial nematodes, primarily *_Wuchereria bancrofti_* and _W. malayi_. The parasites are transmitted to humans through the bite of an infected *female Culex mosquito*. Adult filarial worms lodge inside the lymphatic vessels of the lower limbs and scrotum for years, causing progressive chronic inflammation, lymphatic obstruction, and massive swelling (*elephantiasis*).], answer: [B])
 
-#solution(4, [Colostrum, the yellowish first milk, carries *ready-made IgA antibodies* from the mother — the baby's body makes none of them, so this is passive immunity. Vaccination and infection create active immunity; the skin barrier is innate.], answer: "A")
+#mcq(13, [Heroin, chemically designated as diacetylmorphine (commonly known on the street as "smack"), is a crystalline depressant produced commercially by:], (
+  [Demethylation of cocaine extracted from _Erythroxylum coca_],
+  [Acetylation of morphine extracted from the latex of _Papaver somniferum_],
+  [Oxidation of natural cannabinoids extracted from _Cannabis sativa_],
+  [Fermentation of ergot fungus alkaloids growing on rye plants],
+))
+#solution(13, [Heroin (diacetylmorphine) is a white, odorless, bitter crystalline compound synthesized by the chemical *acetylation of morphine*. Morphine is a natural phenanthrene alkaloid extracted from the milky latex of the unripened capsules of the opium poppy *_Papaver somniferum_*. Heroin binds opioid receptors in the brain and gut, acting as a potent central nervous system depressant that slows physiological functions.], answer: [B])
 
-#solution(5, [HIV is a retrovirus whose RNA is copied into DNA by reverse transcriptase; the DNA inserts into the genome of *helper T-lymphocytes*, and the infected cells are destroyed. With the coordinators gone, immunity collapses.], answer: "B")
+#mcq(14, [In clinical oncology, transformed neoplastic cells often evade host immune surveillance. To counteract this, patients are frequently administered biological response modifiers that activate cytotoxic immunity. A primary clinical agent used for this purpose is:], (
+  [Morphine sulphate],
+  [$alpha$-Interferon ($alpha$-IFN)],
+  [Antihistamines],
+  [Cyclosporin A],
+))
+#solution(14, [Tumor cells frequently develop immunoevasion strategies, downregulating MHC molecules or concealing tumor antigens. In modern immunotherapy, patients are administered *biological response modifiers* such as *$alpha$-interferon*, which stimulates host cellular immunity (activating Natural Killer cells, macrophages, and cytotoxic T-lymphocytes) to recognize and destroy neoplastic cells.], answer: [B])
 
-#solution(6, [Antivenom gives *ready-made antibodies* produced in another body — protection is instant, carries no memory, and fades quickly, which is the definition of passive immunity. Because it is given as medical treatment rather than by natural transfer (like colostrum), it is *artificial* passive immunity.], answer: "C")
+#mcq(15, [Which of the following pairs of anatomical organs are strictly classified as Primary Lymphoid Organs in the human body?], (
+  [Spleen and Peyer's patches],
+  [Lymph nodes and Tonsils],
+  [Bone marrow and Thymus],
+  [Spleen and Mucosa-Associated Lymphoid Tissue (MALT)],
+))
+#solution(15, [*Primary lymphoid organs* are the anatomical tissues where immature lymphoid stem cells originate, differentiate, and mature into immunocompetent, antigen-sensitive lymphocytes. In humans, the primary lymphoid organs are strictly the *bone marrow* (where all lymphocytes originate and B-cells mature) and the *thymus* (where T-lymphocytes undergo maturation and education). Spleen, lymph nodes, tonsils, and MALT are secondary lymphoid organs.], answer: [C])
 
-#solution(7, [Losing *contact inhibition* — the stop signal that normal cells obey on touching neighbours — is what makes cells cancerous, so they divide without pause. Only *malignant* tumours metastasise; benign tumours stay confined to their original spot.], answer: "B")
-
-#solution(8, [Cocaine ("coke" or "crack") is a *CNS stimulant* extracted from the coca plant _Erythroxylum coca_ — it speeds up body functions and in high doses causes hallucinations. Heroin is the opioid from _Papaver somniferum_, and _Cannabis sativa_ gives the hallucinogenic cannabinoids.], answer: "C")
-
-#solution(9, [*IgG* is the antibody small enough to cross the placenta, giving the foetus borrowed protection. IgA guards wet surfaces and passes through colostrum; IgM is the first responder; IgE drives allergies.], answer: "A")
-
-#solution(10, [An auto-immune disease results when the body attacks *its own* cells — in rheumatoid arthritis the immune system attacks the joints. Typhoid, AIDS and filariasis are all infectious diseases caused by external pathogens, not by self-attack.], answer: "D")
-
-= 60-Second Recall Drill
-
-#table(
-  columns: (1.5fr, 1.9fr),
-  table.header[*Prompt*][*Answer*],
-  [Disease confirmed by the Widal test], [Typhoid — _Salmonella typhi_],
-  [Mosquito that carries malaria], [Female _Anopheles_],
-  [Mosquito that carries filariasis], [Female _Culex_ — causes elephantiasis],
-  [Antibody delivered in colostrum], [IgA — passive immunity, days 2–3],
-  [Antibody that crosses the placenta], [IgG],
-  [Barrier made of interferons], [Cytokine barrier],
-  [Phagocyte cells of innate immunity], [PMNL-neutrophils and macrophages],
-  [HIV test order], [ELISA screen → Western blot confirms (+ PCR)],
-  [Tumour that metastasises], [Malignant only — benign never spreads],
-  [Hallucinogen drug and plant], [Cannabinoids — _Cannabis sativa_],
-  [Depressant from the poppy plant], [Heroin — _Papaver somniferum_],
-  [Stimulant from the coca plant], [Cocaine — _Erythroxylum coca_],
-  ["Graveyard of RBCs"], [The spleen — filters blood, stores lymphocytes],
-)
-
-#v(10pt)
-#align(center)[#text(fill: om-grey, size: 9pt)[© OurMocks · www.ourmocks.com · CUET UG Biology · Human Health and Disease · 2027 cycle]]
+#v(8pt)
+#align(center)[
+  #text(fill: om-grey, size: 8.5pt)[
+    © OurMocks · www.ourmocks.com · CUET UG Biology · Human Health and Disease · 2027 Cycle
+  ]
+]

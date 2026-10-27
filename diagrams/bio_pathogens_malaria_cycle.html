@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Common Human Pathogens and Plasmodium Life Cycle</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* Header */
+  .header {
+    height: 72px;
+    background: #071A4D;
+    padding: 0 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 4px solid #EF4444;
+  }
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .header-title {
+    color: #FFFFFF;
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+  }
+  .header-tag {
+    background: #EF4444;
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 9px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    white-space: nowrap;
+  }
+  .header-right {
+    color: #FECACA;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    white-space: nowrap;
+  }
+
+  /* Main Container */
+  .container {
+    width: 1440px;
+    height: 808px;
+    padding: 16px 28px;
+    display: grid;
+    grid-template-columns: 1.15fr 0.95fr;
+    gap: 20px;
+  }
+
+  /* Section Card */
+  .panel {
+    background: #FFFFFF;
+    border: 1.5px solid #E2E8F0;
+    border-radius: 10px;
+    padding: 14px 18px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: none !important;
+  }
+
+  .panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #F1F5F9;
+    margin-bottom: 12px;
+  }
+  .panel-title {
+    font-size: 16px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .panel-badge {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 5px;
+  }
+  .badge-red { background: #FEF2F2; color: #DC2626; border: 1px solid #FECACA; }
+  .badge-blue { background: #EFF6FF; color: #1F5EFF; border: 1px solid #BFDBFE; }
+
+  /* Disease Grid (LEFT PANEL) */
+  .disease-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  .d-card {
+    background: #F8FAFC;
+    border: 1.5px solid #E2E8F0;
+    border-left-width: 4px;
+    border-radius: 6px;
+    padding: 8px 10px;
+    font-size: 11px;
+    line-height: 1.35;
+  }
+  .d-card.bact { border-left-color: #1F5EFF; }
+  .d-card.viral { border-left-color: #8B5CF6; }
+  .d-card.proto { border-left-color: #10B981; }
+  .d-card.helm { border-left-color: #F59E0B; }
+  .d-card.fung { border-left-color: #EC4899; }
+
+  .d-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 3px;
+  }
+  .d-name {
+    font-weight: 800;
+    color: #071A4D;
+    font-size: 12px;
+  }
+  .d-type {
+    font-size: 9.5px;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+  .d-card b { color: #0F172A; }
+
+  /* Malaria Life Cycle (RIGHT PANEL) */
+  .malaria-flow {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .cycle-phase {
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 11px;
+    line-height: 1.35;
+  }
+  .phase-human {
+    background: #EFF6FF;
+    border: 1.5px solid #BFDBFE;
+    border-left: 4px solid #1F5EFF;
+  }
+  .phase-mosquito {
+    background: #ECFDF5;
+    border: 1.5px solid #A7F3D0;
+    border-left: 4px solid #059669;
+  }
+  .phase-title {
+    font-size: 12px;
+    font-weight: 800;
+    margin-bottom: 4px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .phase-human .phase-title { color: #1E40AF; }
+  .phase-mosquito .phase-title { color: #065F46; }
+
+  .cycle-step {
+    display: flex;
+    gap: 8px;
+    margin-top: 4px;
+  }
+  .step-num {
+    background: #071A4D;
+    color: #FFFFFF;
+    font-size: 9.5px;
+    font-weight: 800;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .step-text b { color: #0F172A; }
+
+  /* Bottom Alerts */
+  .path-trap-box {
+    background: #FFFBEB;
+    border: 1.5px solid #FDE68A;
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin-top: auto;
+    font-size: 11px;
+    line-height: 1.35;
+    color: #78350F;
+  }
+  .path-trap-box b { color: #92400E; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <div class="header-title">COMMON HUMAN PATHOGENS &amp; PLASMODIUM LIFE CYCLE</div>
+    <div class="header-tag">NCERT Chapter 8 · Unit VIII</div>
+  </div>
+  <div class="header-right">INFECTIOUS DISEASES &amp; PARASITOLOGY BLUEPRINT</div>
+</div>
+
+<div class="container">
+  <!-- LEFT PANEL: Common Human Pathogenic Diseases Matrix -->
+  <div class="panel">
+    <div class="panel-header">
+      <div class="panel-title">Part 1: Diagnostic Matrix of Common Infectious Diseases</div>
+      <span class="panel-badge badge-red">Etiology &amp; Diagnosis</span>
+    </div>
+
+    <div class="disease-grid">
+      <!-- 1. Typhoid -->
+      <div class="d-card bact">
+        <div class="d-head">
+          <span class="d-name">Typhoid Fever</span>
+          <span class="d-type" style="background:#DBEAFE; color:#1D4ED8;">Bacterial</span>
+        </div>
+        <div>• <b>Pathogen:</b> <i>Salmonella typhi</i>.</div>
+        <div>• <b>Spread:</b> Contaminated food &amp; drinking water.</div>
+        <div>• <b>Site:</b> Small intestine; can cause intestinal perforation &amp; death.</div>
+        <div>• <b>Diagnostic Test:</b> Confirmed by <b>Widal test</b>. Sustained high fever (39°–40°C), stomach pain, constipation.</div>
+      </div>
+
+      <!-- 2. Pneumonia -->
+      <div class="d-card bact">
+        <div class="d-head">
+          <span class="d-name">Pneumonia</span>
+          <span class="d-type" style="background:#DBEAFE; color:#1D4ED8;">Bacterial</span>
+        </div>
+        <div>• <b>Pathogens:</b> <i>Streptococcus pneumoniae</i> &amp; <i>Haemophilus influenzae</i>.</div>
+        <div>• <b>Spread:</b> Inhaling droplets/aerosols; sharing utensils.</div>
+        <div>• <b>Site:</b> Alveoli fill with fluid → severe respiratory distress.</div>
+        <div>• <b>Severe Case:</b> Lips and fingernails turn grey to bluish colour.</div>
+      </div>
+
+      <!-- 3. Common Cold -->
+      <div class="d-card viral">
+        <div class="d-head">
+          <span class="d-name">Common Cold</span>
+          <span class="d-type" style="background:#EDE9FE; color:#6D28D9;">Viral</span>
+        </div>
+        <div>• <b>Pathogen:</b> <i>Rhino viruses</i> (one of most infectious groups).</div>
+        <div>• <b>Spread:</b> Inhaled droplets; contaminated objects (pens, cups).</div>
+        <div>• <b>Site:</b> <b>Infects nose and respiratory passage, but NOT lungs</b>.</div>
+        <div>• <b>Duration:</b> Nasal congestion, discharge, sore throat, cough (3–7 days).</div>
+      </div>
+
+      <!-- 4. Amoebiasis -->
+      <div class="d-card proto">
+        <div class="d-head">
+          <span class="d-name">Amoebiasis / Dysentery</span>
+          <span class="d-type" style="background:#D1FAE5; color:#047857;">Protozoan</span>
+        </div>
+        <div>• <b>Pathogen:</b> <i>Entamoeba histolytica</i> (large intestine).</div>
+        <div>• <b>Carrier Vector:</b> <b>Houseflies</b> serve as mechanical carriers.</div>
+        <div>• <b>Transmission:</b> Fecal contamination of food and drinking water.</div>
+        <div>• <b>Symptoms:</b> Stools with excess mucous and blood clots, abdominal cramps.</div>
+      </div>
+
+      <!-- 5. Ascariasis -->
+      <div class="d-card helm">
+        <div class="d-head">
+          <span class="d-name">Ascariasis</span>
+          <span class="d-type" style="background:#FEF3C7; color:#B45309;">Helminthic</span>
+        </div>
+        <div>• <b>Pathogen:</b> <i>Ascaris lumbricoides</i> (common roundworm).</div>
+        <div>• <b>Site:</b> Intestinal parasite.</div>
+        <div>• <b>Transmission:</b> Eggs excreted in stool contaminate soil, water, plants.</div>
+        <div>• <b>Symptoms:</b> Internal bleeding, muscular pain, blockage of intestinal passage.</div>
+      </div>
+
+      <!-- 6. Filariasis / Elephantiasis -->
+      <div class="d-card helm">
+        <div class="d-head">
+          <span class="d-name">Filariasis (Elephantiasis)</span>
+          <span class="d-type" style="background:#FEF3C7; color:#B45309;">Helminthic</span>
+        </div>
+        <div>• <b>Pathogens:</b> <i>Wuchereria bancrofti</i> &amp; <i>Wuchereria malayi</i>.</div>
+        <div>• <b>Vector:</b> Transmitted by female <b>Culex mosquito</b> bite.</div>
+        <div>• <b>Site:</b> Chronic inflammation of <b>lymphatic vessels of lower limbs</b> and genital organs leading to gross deformities.</div>
+      </div>
+
+      <!-- 7. Ringworms -->
+      <div class="d-card fung">
+        <div class="d-head">
+          <span class="d-name">Ringworms</span>
+          <span class="d-type" style="background:#FCE7F3; color:#BE185D;">Fungal</span>
+        </div>
+        <div>• <b>Pathogens:</b> Genera <i>Microsporum</i>, <i>Trichophyton</i>, <i>Epidermophyton</i>.</div>
+        <div>• <b>Transmission:</b> Acquired from soil or using towels/clothes of infected persons.</div>
+        <div>• <b>Symptoms:</b> Dry, scaly circular lesions on skin, nails, scalp with intense itching; thrive in heat &amp; moisture.</div>
+      </div>
+
+      <!-- 8. Malaria Overview -->
+      <div class="d-card proto">
+        <div class="d-head">
+          <span class="d-name">Malaria (Malignant Form)</span>
+          <span class="d-type" style="background:#D1FAE5; color:#047857;">Protozoan</span>
+        </div>
+        <div>• <b>Species:</b> <i>P. vivax</i>, <i>P. malariae</i>, <i>P. falciparum</i>.</div>
+        <div>• <b>Malignant Malaria:</b> Caused by <i>Plasmodium falciparum</i> (most fatal).</div>
+        <div>• <b>Chills &amp; High Fever:</b> Triggered by release of toxic <b>Haemozoin</b> upon RBC lysis every 3–4 days.</div>
+      </div>
+    </div>
+
+    <div class="path-trap-box">
+      <b>CUET High-Yield Diagnostic Traps:</b><br>
+      • <b>Pneumonia vs. Common Cold:</b> Pneumonia infects <i>alveoli</i> (lungs fill with fluid); Common Cold infects <i>upper respiratory passage</i>, NEVER the lungs!<br>
+      • <b>Typhoid Mary (Mary Mallon):</b> Classic historical asymptomatic carrier who spread typhoid for years through cooked meals.
+    </div>
+  </div>
+
+  <!-- RIGHT PANEL: Plasmodium Life Cycle across Hosts -->
+  <div class="panel">
+    <div class="panel-header">
+      <div class="panel-title">Part 2: Plasmodium Life Cycle Across Two Hosts</div>
+      <span class="panel-badge badge-blue">Digenetic Life Cycle</span>
+    </div>
+
+    <div class="malaria-flow">
+      <!-- Human Host Phase -->
+      <div class="cycle-phase phase-human">
+        <div class="phase-title">
+          <span>Phase A: Human Host (Asexual Schizogony Cycle)</span>
+          <span style="font-size: 10px; background: #DBEAFE; padding: 2px 5px; border-radius: 4px;">Intermediate Host</span>
+        </div>
+        <div class="cycle-step">
+          <div class="step-num">1</div>
+          <div class="step-text"><b>Infection:</b> Female <i>Anopheles</i> mosquito bites human, injecting infectious <b>sporozoites</b> with saliva into bloodstream.</div>
+        </div>
+        <div class="cycle-step">
+          <div class="step-num">2</div>
+          <div class="step-text"><b>Liver Schizogony:</b> Sporozoites reach liver parenchymal cells within 30 minutes, reproducing asexually to release thousands of merozoites.</div>
+        </div>
+        <div class="cycle-step">
+          <div class="step-num">3</div>
+          <div class="step-text"><b>Erythrocytic Cycle &amp; Haemozoin:</b> Parasites invade RBCs, reproduce asexually, and burst RBCs. Lysis releases toxic <b>haemozoin</b> granule pigment, inducing recurring chills and high fever every 3–4 days.</div>
+        </div>
+        <div class="cycle-step">
+          <div class="step-num">4</div>
+          <div class="step-text"><b>Gametocyte Formation:</b> Some merozoites differentiate in RBCs into male (micro) and female (macro) <b>gametocytes</b>.</div>
+        </div>
+      </div>
+
+      <!-- Mosquito Host Phase -->
+      <div class="cycle-phase phase-mosquito">
+        <div class="phase-title">
+          <span>Phase B: Mosquito Host (Sexual Sporogony Cycle)</span>
+          <span style="font-size: 10px; background: #D1FAE5; padding: 2px 5px; border-radius: 4px;">Definitive Host</span>
+        </div>
+        <div class="cycle-step">
+          <div class="step-num">5</div>
+          <div class="step-text"><b>Ingestion:</b> Female <i>Anopheles</i> feeds on infected human blood, ingesting mature gametocytes into its digestive tract.</div>
+        </div>
+        <div class="cycle-step">
+          <div class="step-num">6</div>
+          <div class="step-text"><b>Fertilization:</b> Fertilization and zygote formation occur in the <b>mosquito's stomach / gut</b>. Zygote becomes motile ookinete and forms oocyst on gut wall.</div>
+        </div>
+        <div class="cycle-step">
+          <div class="step-num">7</div>
+          <div class="step-text"><b>Sporogony:</b> Oocyst undergoes sporogony, releasing thousands of sporozoites which migrate and lodge in the mosquito's <b>salivary glands</b>, ready to infect a new human host.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="path-trap-box" style="background:#EFF6FF; border-color:#BFDBFE; color:#1E40AF;">
+      <b>CUET Exam Parasitology Checklist:</b><br>
+      • <b>Infectious Stage to Humans:</b> <i>Sporozoite</i> (injected with mosquito saliva).<br>
+      • <b>Infectious Stage to Mosquito:</b> <i>Gametocytes</i> (ingested with blood meal).<br>
+      • <b>Site of Fertilization:</b> Mosquito gut (stomach), NOT human body!
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

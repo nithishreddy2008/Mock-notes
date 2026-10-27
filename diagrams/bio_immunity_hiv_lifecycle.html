@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Immunity Architecture and HIV Replication Cycle</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* Header */
+  .header {
+    height: 72px;
+    background: #071A4D;
+    padding: 0 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 4px solid #1F5EFF;
+  }
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .header-title {
+    color: #FFFFFF;
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+  }
+  .header-tag {
+    background: #1F5EFF;
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 9px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    white-space: nowrap;
+  }
+  .header-right {
+    color: #93C5FD;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    white-space: nowrap;
+  }
+
+  /* Main Container */
+  .container {
+    width: 1440px;
+    height: 808px;
+    padding: 16px 28px;
+    display: grid;
+    grid-template-columns: 1.05fr 1.05fr;
+    gap: 20px;
+  }
+
+  /* Section Panel */
+  .panel {
+    background: #FFFFFF;
+    border: 1.5px solid #E2E8F0;
+    border-radius: 10px;
+    padding: 14px 18px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: none !important;
+  }
+
+  .panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #F1F5F9;
+    margin-bottom: 12px;
+  }
+  .panel-title {
+    font-size: 16px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .panel-badge {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 5px;
+  }
+  .badge-blue { background: #EFF6FF; color: #1F5EFF; border: 1px solid #BFDBFE; }
+  .badge-purple { background: #F5F3FF; color: #7C3AED; border: 1px solid #DDD6FE; }
+
+  /* Immunity Cards (LEFT PANEL) */
+  .imm-section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  .imm-card {
+    background: #F8FAFC;
+    border: 1.5px solid #E2E8F0;
+    border-left-width: 4px;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 11px;
+    line-height: 1.35;
+  }
+  .imm-card.innate { border-left-color: #10B981; }
+  .imm-card.humoral { border-left-color: #1F5EFF; }
+  .imm-card.cmi { border-left-color: #F59E0B; }
+  .imm-card.organs { border-left-color: #8B5CF6; }
+
+  .imm-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4px;
+  }
+  .imm-title {
+    font-weight: 800;
+    color: #071A4D;
+    font-size: 12px;
+  }
+  .imm-pill {
+    font-size: 9.5px;
+    font-weight: 700;
+    padding: 1px 6px;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+  .imm-card b { color: #0F172A; }
+
+  /* HIV Replication Steps (RIGHT PANEL) */
+  .hiv-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+  .hiv-step {
+    display: grid;
+    grid-template-columns: 24px 1fr;
+    gap: 10px;
+    background: #F8FAFC;
+    border: 1.5px solid #E2E8F0;
+    border-radius: 6px;
+    padding: 7px 10px;
+    font-size: 11px;
+    line-height: 1.32;
+    align-items: center;
+  }
+  .hiv-num {
+    background: #7C3AED;
+    color: #FFFFFF;
+    font-size: 10px;
+    font-weight: 800;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .hiv-step b { color: #071A4D; }
+
+  /* Bottom Warning Callouts */
+  .callout-box {
+    background: #FFFBEB;
+    border: 1.5px solid #FDE68A;
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin-top: auto;
+    font-size: 11px;
+    line-height: 1.35;
+    color: #78350F;
+  }
+  .callout-box b { color: #92400E; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <div class="header-title">IMMUNITY ARCHITECTURE &amp; HIV REPLICATION CYCLE</div>
+    <div class="header-tag">NCERT Chapter 8 · Unit VIII</div>
+  </div>
+  <div class="header-right">IMMUNOLOGY &amp; RETROVIRAL PATHOGENESIS BLUEPRINT</div>
+</div>
+
+<div class="container">
+  <!-- LEFT PANEL: Immunity Architecture & Lymphoid Organs -->
+  <div class="panel">
+    <div class="panel-header">
+      <div class="panel-title">Part 1: Human Immune System Architecture</div>
+      <span class="panel-badge badge-blue">Innate vs Acquired</span>
+    </div>
+
+    <div class="imm-section">
+      <!-- 1. Innate Immunity -->
+      <div class="imm-card innate">
+        <div class="imm-head">
+          <span class="imm-title">Innate Immunity (Non-Specific, Present from Birth)</span>
+          <span class="imm-pill" style="background:#DCFCE7; color:#15803D;">4 Barriers</span>
+        </div>
+        <div>
+          • <b>Physical Barriers:</b> Skin (keratinized stratum corneum blocks entry); Mucous coating of respiratory, gastrointestinal &amp; urogenital tracts traps microbes.<br>
+          • <b>Physiological Barriers:</b> Acid (HCl) in stomach, saliva in mouth, lysozyme in tears prevent microbial growth.<br>
+          • <b>Cellular Barriers:</b> Leukocytes such as PMNL-neutrophils, monocytes, Natural Killer (NK) lymphocytes, and tissue macrophages phagocytose pathogens.<br>
+          • <b>Cytokine Barriers:</b> <b>Interferons</b> (proteins secreted by virus-infected cells) protect non-infected neighboring cells from viral infection.
+        </div>
+      </div>
+
+      <!-- 2. Humoral Immunity -->
+      <div class="imm-card humoral">
+        <div class="imm-head">
+          <span class="imm-title">Acquired: Humoral Immunity (Antibody-Mediated / AMI)</span>
+          <span class="imm-pill" style="background:#DBEAFE; color:#1D4ED8;">B-Cells · H₂L₂</span>
+        </div>
+        <div>
+          • <b>B-Lymphocytes:</b> Produce an army of proteins called <b>antibodies</b> in response to antigens.<br>
+          • <b>Antibody Molecule Structure:</b> H<sub>2</sub>L<sub>2</sub> configuration — 2 identical Heavy chains + 2 identical Light chains connected by disulfide bonds. Tips contain antigen-binding sites (*paratopes*).<br>
+          • <b>Antibody Classes:</b> <b>IgG</b> (most abundant, crosses placenta); <b>IgA</b> (abundant in yellowish fluid <i>colostrum</i> secreted during early lactation, protects infant); <b>IgM</b> (pentamer, primary response); <b>IgE</b> (mediates allergic reactions by binding mast cells); <b>IgD</b>.
+        </div>
+      </div>
+
+      <!-- 3. Cell-Mediated Immunity -->
+      <div class="imm-card cmi">
+        <div class="imm-head">
+          <span class="imm-title">Acquired: Cell-Mediated Immunity (CMI)</span>
+          <span class="imm-pill" style="background:#FEF3C7; color:#B45309;">T-Cells · Graft Rejection</span>
+        </div>
+        <div>
+          • <b>T-Lymphocytes:</b> Do not secrete antibodies directly, but help B-cells produce them (T<sub>H</sub> helper cells) and directly lyse infected/tumor cells (T<sub>C</sub> cytotoxic cells).<br>
+          • <b>Organ Transplantation &amp; Graft Rejection:</b> CMI is <b>exclusively responsible for graft rejection</b>. Body differentiates "self" from "non-self". Tissue typing (HLA) and blood matching mandatory; patients require life-long immunosuppressants (Cyclosporin A).
+        </div>
+      </div>
+
+      <!-- 4. Lymphoid Organs -->
+      <div class="imm-card organs">
+        <div class="imm-head">
+          <span class="imm-title">Primary vs. Secondary Lymphoid Organs</span>
+          <span class="imm-pill" style="background:#EDE9FE; color:#6D28D9;">MALT = 50%</span>
+        </div>
+        <div>
+          • <b>Primary (Origin &amp; Maturation):</b> <b>Bone marrow</b> (all blood cells including B &amp; T-cells produce; B-cells mature) &amp; <b>Thymus</b> (lobular organ near heart, T-cells mature; shrinks with age).<br>
+          • <b>Secondary (Interaction with Antigens):</b> Spleen (large bean-shaped reservoir of erythrocytes &amp; phagocytes), lymph nodes, tonsils, Peyer's patches of small intestine.<br>
+          • <b>MALT (Mucosa-Associated Lymphoid Tissue):</b> Lines respiratory, digestive &amp; urogenital tracts; constitutes <b>about 50% of lymphoid tissue</b> in human body!
+        </div>
+      </div>
+    </div>
+
+    <div class="callout-box">
+      <b>CUET Top Immunology Traps:</b><br>
+      • <b>Graft Rejection:</b> Governed by <i>Cell-Mediated Immunity (CMI)</i>, NOT Humoral / B-cells!<br>
+      • <b>Colostrum:</b> Provides <i>Passive Immunity</i> via ready-made <b>IgA</b> antibodies.<br>
+      • <b>Auto-Immune Disorder:</b> Body's immune system attacks self-cells (e.g., <i>Rheumatoid arthritis</i>).
+    </div>
+  </div>
+
+  <!-- RIGHT PANEL: HIV Replication & AIDS Pathogenesis -->
+  <div class="panel">
+    <div class="panel-header">
+      <div class="panel-title">Part 2: Retrovirus (HIV) Replication &amp; AIDS Progression</div>
+      <span class="panel-badge badge-purple">Reverse Transcription</span>
+    </div>
+
+    <div class="hiv-steps">
+      <!-- Step 1 -->
+      <div class="hiv-step">
+        <div class="hiv-num">1</div>
+        <div><b>Viral Attachment:</b> Human Immunodeficiency Virus (HIV) binds via glycoprotein spikes (gp120) to CD4 receptor molecules on host <b>Macrophages</b> and <b>Helper T-lymphocytes (T<sub>H</sub>)</b>.</div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="hiv-step">
+        <div class="hiv-num">2</div>
+        <div><b>Viral Entry &amp; Uncoating:</b> Viral protein coat fuses with host cell membrane; viral single-stranded RNA (ssRNA) core and Reverse Transcriptase enzyme enter host cytoplasm.</div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="hiv-step">
+        <div class="hiv-num">3</div>
+        <div><b>Reverse Transcription:</b> Viral enzyme <b>Reverse Transcriptase</b> copies viral ssRNA into complementary viral double-stranded DNA (cDNA).</div>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="hiv-step">
+        <div class="hiv-num">4</div>
+        <div><b>Integration into Host Genome:</b> Viral DNA migrates into host cell nucleus and integrates into host chromosomal DNA, catalyzed by viral <b>Integrase</b>.</div>
+      </div>
+
+      <!-- Step 5 -->
+      <div class="hiv-step">
+        <div class="hiv-num">5</div>
+        <div><b>"HIV Factory" in Macrophages:</b> The infected macrophage transcribes viral DNA, producing viral RNA genomes and viral proteins. Macrophage continues to produce virus particles acting as an <b>HIV factory</b>.</div>
+      </div>
+
+      <!-- Step 6 -->
+      <div class="hiv-step">
+        <div class="hiv-num">6</div>
+        <div><b>Attack on Helper T-Cells (T<sub>H</sub>):</b> Progeny HIV particles enter bloodstream and specifically attack <b>T<sub>H</sub> lymphocytes</b>, replicate within them, burst the cells, and release progeny to infect new T<sub>H</sub> cells.</div>
+      </div>
+
+      <!-- Step 7 -->
+      <div class="hiv-step">
+        <div class="hiv-num">7</div>
+        <div><b>Immune Collapse &amp; Opportunistic Infections:</b> Progressive depletion of T<sub>H</sub> count impairs cell-mediated and humoral immunity. Patient develops bouts of fever, diarrhea, weight loss, and succumbs to infections caused by <i>Mycobacterium</i>, viruses, fungi, and <i>Toxoplasma</i>.</div>
+      </div>
+    </div>
+
+    <div class="callout-box" style="background:#FAF5FF; border-color:#E9D5FF; color:#581C87;">
+      <b>CUET AIDS Diagnostics &amp; Prevention Rules:</b><br>
+      • <b>Diagnostic Test:</b> Widely screened using <b>ELISA</b> (Enzyme-Linked Immunosorbent Assay); confirmatory test is <b>Western Blot</b>.<br>
+      • <b>Transmission Modes:</b> Sexual contact, contaminated blood transfusion, infected needles, infected mother to child via placenta.<br>
+      • <b>Treatment:</b> Anti-retroviral drugs (only partially effective; prolongs life but cannot prevent death). NACO (National AIDS Control Organisation) and NGOs lead public education.
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,120 +1,359 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
+<title>Human Health and Disease Master Concept Mindmap</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
-  .wrap { width: 1480px; height: 1060px; position: relative; background: #fff; }
-  svg.wires { position: absolute; inset: 0; width: 1480px; height: 1060px; }
-  .center {
-    position: absolute; left: 545px; top: 430px; width: 390px; height: 104px;
-    background: #071A4D; border-radius: 16px; display: flex; flex-direction: column;
-    align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(7,26,77,.25);
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* Header */
+  .header {
+    height: 68px;
+    background: #071A4D;
+    padding: 0 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 4px solid #B8FF34;
+  }
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .header-title {
+    color: #FFFFFF;
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+  }
+  .header-badge {
+    background: #1F5EFF;
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 9px;
+    border-radius: 6px;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+  }
+  .header-right {
+    color: #B8FF34;
+    font-size: 12.5px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+  }
+
+  /* Canvas Layout */
+  .mindmap-canvas {
+    width: 1440px;
+    height: 812px;
+    position: relative;
+    padding: 16px 24px;
+  }
+
+  /* SVG Wires */
+  svg.wires {
+    position: absolute;
+    inset: 0;
+    width: 1440px;
+    height: 812px;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* Center Hub */
+  .center-hub {
+    position: absolute;
+    left: 535px;
+    top: 295px;
+    width: 370px;
+    height: 94px;
+    background: #071A4D;
+    border-radius: 12px;
     border-bottom: 5px solid #B8FF34;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    box-shadow: none !important;
   }
-  .center .t { color: #fff; font-size: 23px; font-weight: 800; letter-spacing: .5px; text-align: center; }
-  .center .s { color: #B8FF34; font-size: 13px; font-weight: 700; letter-spacing: 2px; margin-top: 4px; }
+  .center-hub-title {
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+  }
+  .center-hub-subtitle {
+    color: #B8FF34;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-top: 4px;
+  }
+
+  /* Module Cards */
   .card {
-    position: absolute; width: 470px; background: #FCFDFF; border: 1.5px solid #D5DCEA;
-    border-radius: 14px; padding: 13px 16px 12px;
+    position: absolute;
+    width: 410px;
+    background: #FFFFFF;
+    border: 1.5px solid #CBD5E1;
+    border-radius: 9px;
+    padding: 11px 14px 10px;
+    z-index: 5;
+    box-shadow: none !important;
   }
-  .card h2 { font-size: 20px; color: #071A4D; font-weight: 800; margin-bottom: 7px;
-             padding-bottom: 5px; border-bottom: 3px solid; display: inline-block; }
-  .leaf { font-size: 14.5px; color: #1B2333; margin: 5px 0; padding-left: 16px; position: relative; line-height: 1.32; }
-  .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
-  .b .leaf::before { background: #1F5EFF; }
-  .l .leaf::before { background: #7FB800; }
-  .leaf b { color: #071A4D; }
-  .b h2 { border-color: #1F5EFF; }
-  .l h2 { border-color: #7FB800; }
-  .left { left: 30px; }
-  .right { left: 980px; }
-  .mini { display: grid; grid-template-columns: 1fr 1fr; gap: 5px 8px; margin-top: 6px; }
-  .mini span { font-size: 13px; font-weight: 700; color: #071A4D; background: #EEF3FF;
-               border: 1px solid #C9D6F5; border-radius: 7px; padding: 4px 7px; text-align: center; }
-  .exc {
-    position: absolute; left: 530px; top: 830px; width: 420px; background: #FFF3EC;
-    border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px;
+  .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 5px;
+    margin-bottom: 6px;
+    border-bottom: 2px solid #F1F5F9;
   }
-  .exc h2 { font-size: 17px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
-  .exc .leaf { font-size: 13px; margin: 3px 0; padding-left: 14px; color: #7A2A12; }
-  .exc .leaf::before { background: #D2481F; }
-  .exc b { color: #B4380F; }
+  .card-title {
+    font-size: 13.5px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .card-badge {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+  .item-list {
+    font-size: 11.2px;
+    line-height: 1.34;
+    color: #1E293B;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .item-list b { color: #071A4D; }
+
+  /* Positions */
+  /* Top-Left: Infectious Pathogens */
+  .c-pathogens {
+    left: 28px;
+    top: 24px;
+    border-top: 3px solid #EF4444;
+  }
+  /* Mid-Left: Immune System Architecture */
+  .c-immunity {
+    left: 28px;
+    top: 248px;
+    border-top: 3px solid #1F5EFF;
+  }
+  /* Bottom-Left: AIDS & Retrovirus */
+  .c-aids {
+    left: 28px;
+    top: 472px;
+    border-top: 3px solid #8B5CF6;
+  }
+
+  /* Top-Right: Cancer & Oncology */
+  .c-cancer {
+    right: 28px;
+    top: 24px;
+    border-top: 3px solid #F59E0B;
+  }
+  /* Mid-Right: Drugs & Alcohol Abuse */
+  .c-drugs {
+    right: 28px;
+    top: 248px;
+    border-top: 3px solid #10B981;
+  }
+  /* Bottom-Right: Prevention & Vaccination */
+  .c-prevention {
+    right: 28px;
+    top: 472px;
+    border-top: 3px solid #EC4899;
+  }
+
+  /* Bottom Warning Bar */
+  .bottom-alert {
+    position: absolute;
+    left: 28px;
+    bottom: 14px;
+    width: 1384px;
+    height: 80px;
+    background: #FFFBEB;
+    border: 1.5px solid #FDE68A;
+    border-left: 5px solid #D97706;
+    border-radius: 8px;
+    padding: 8px 16px;
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 16px;
+    align-items: center;
+    z-index: 10;
+  }
+  .bottom-alert-title {
+    font-size: 13px;
+    font-weight: 800;
+    color: #92400E;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .bottom-alert-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+    font-size: 10.8px;
+    line-height: 1.3;
+    color: #78350F;
+  }
+  .bottom-alert-grid b { color: #92400E; }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <svg class="wires" viewBox="0 0 1480 1060">
-    <path d="M 545 450 C 495 450, 510 200, 492 196" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
-    <path d="M 545 465 C 505 465, 510 460, 492 464" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 545 480 C 495 480, 510 688, 492 692" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
-    <path d="M 935 450 C 985 450, 970 196, 988 192" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 935 465 C 975 465, 970 435, 988 431" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
-    <path d="M 935 480 C 985 480, 970 677, 988 681" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 740 534 C 740 700, 740 780, 740 828" fill="none" stroke="#D2481F" stroke-width="2.5" stroke-dasharray="7 5" opacity=".6"/>
+
+<div class="header">
+  <div class="header-left">
+    <div class="header-title">HUMAN HEALTH &amp; DISEASE: MASTER CONCEPT SYNTHESIS MINDMAP</div>
+    <div class="header-badge">NCERT Chapter 8 · Unit VIII</div>
+  </div>
+  <div class="header-right">MOCK · PRACTICE · CRACK · 2027 CYCLE</div>
+</div>
+
+<div class="mindmap-canvas">
+  <!-- Orthogonal Connectors SVG -->
+  <svg class="wires" viewBox="0 0 1440 812">
+    <!-- Hub to Top-Left (Pathogens) -->
+    <path d="M 535 320 H 460 V 125 H 438" fill="none" stroke="#EF4444" stroke-width="2.5"/>
+    <!-- Hub to Mid-Left (Immunity) -->
+    <path d="M 535 342 H 438" fill="none" stroke="#1F5EFF" stroke-width="2.5"/>
+    <!-- Hub to Bottom-Left (AIDS) -->
+    <path d="M 535 365 H 460 V 570 H 438" fill="none" stroke="#8B5CF6" stroke-width="2.5"/>
+
+    <!-- Hub to Top-Right (Cancer) -->
+    <path d="M 905 320 H 980 V 125 H 1002" fill="none" stroke="#F59E0B" stroke-width="2.5"/>
+    <!-- Hub to Mid-Right (Drugs) -->
+    <path d="M 905 342 H 1002" fill="none" stroke="#10B981" stroke-width="2.5"/>
+    <!-- Hub to Bottom-Right (Prevention) -->
+    <path d="M 905 365 H 980 V 570 H 1002" fill="none" stroke="#EC4899" stroke-width="2.5"/>
   </svg>
 
-  <div class="center">
-    <div class="t">HUMAN HEALTH AND DISEASE</div>
-    <div class="s">UNIT VIII &#183; COMPLETE CHAPTER MAP</div>
+  <!-- Center Hub -->
+  <div class="center-hub">
+    <div class="center-hub-title">HUMAN HEALTH &amp; DISEASE</div>
+    <div class="center-hub-subtitle">CLASS 12 BIOLOGY · UNIT VIII MASTER MAP</div>
   </div>
 
-  <div class="card left b" style="top:62px">
-    <h2>The Eight Common Diseases</h2>
-    <div class="leaf"><b>Pathogen =</b> a disease-causing organism (bacteria, viruses, protozoa, fungi, worms)</div>
-    <div class="mini">
-      <span>Typhoid</span><span>Pneumonia</span><span>Common cold</span><span>Malaria</span>
-      <span>Amoebiasis</span><span>Ascariasis</span><span>Filariasis</span><span>Ringworm</span>
+  <!-- 1. Pathogens & Common Diseases (Top-Left) -->
+  <div class="card c-pathogens">
+    <div class="card-header">
+      <div class="card-title">1. Common Pathogens &amp; Diseases</div>
+      <span class="card-badge" style="background: #FEE2E2; color: #DC2626;">Infectious</span>
     </div>
-    <div class="leaf" style="margin-top:7px"><b>Spread by:</b> contaminated food &amp; water, infected droplets, insect vectors</div>
+    <div class="item-list">
+      <div>• <b>Typhoid:</b> <i>Salmonella typhi</i>, food/water, Widal test, intestinal perforation.</div>
+      <div>• <b>Pneumonia:</b> <i>Streptococcus pneumoniae</i> / <i>H. influenzae</i>, alveoli fluid, blue lips.</div>
+      <div>• <b>Common Cold:</b> <i>Rhino viruses</i>, infects nose/airway, <b>NOT lungs</b>.</div>
+      <div>• <b>Amoebiasis:</b> <i>Entamoeba histolytica</i>, housefly vector, stools with blood/mucus.</div>
+      <div>• <b>Malaria:</b> <i>Plasmodium</i>, female <i>Anopheles</i>, RBC rupture releases <b>haemozoin</b>.</div>
+      <div>• <b>Filariasis:</b> <i>Wuchereria bancrofti</i>, female <i>Culex</i>, elephantiasis of lower limbs.</div>
+      <div>• <b>Ringworm:</b> <i>Microsporum</i>, <i>Trichophyton</i>, <i>Epidermophyton</i>; dry scaly lesions.</div>
+    </div>
   </div>
 
-  <div class="card left l" style="top:352px">
-    <h2>Immunity — Innate vs Acquired</h2>
-    <div class="leaf"><b>Innate:</b> inborn, non-specific, attacks any pathogen — <b>no memory</b></div>
-    <div class="leaf"><b>4 barriers:</b> physical (skin) &#183; physiological (HCl, lysozyme) &#183; cellular (phagocytes) &#183; cytokines</div>
-    <div class="leaf"><b>Acquired:</b> pathogen-specific, has <b>memory</b> — remembers every attacker</div>
-    <div class="leaf"><b>Humoral</b> (B cells &#8594; antibodies) vs <b>cell-mediated</b> (T cells)</div>
+  <!-- 2. Immunity Architecture (Mid-Left) -->
+  <div class="card c-immunity">
+    <div class="card-header">
+      <div class="card-title">2. Immune System Architecture</div>
+      <span class="card-badge" style="background: #EFF6FF; color: #1F5EFF;">Defense Lines</span>
+    </div>
+    <div class="item-list">
+      <div>• <b>Innate Barriers:</b> Physical (skin, mucus), Physiological (stomach HCl, saliva, tears), Cellular (PMNL, macrophages, NK cells), Cytokine (<b>Interferons</b> protect uninfected cells).</div>
+      <div>• <b>Humoral (AMI):</b> B-cells produce antibodies (H<sub>2</sub>L<sub>2</sub>). IgG (crosses placenta), IgA (colostrum), IgM (first response), IgE (allergies via mast cell histamine).</div>
+      <div>• <b>Cell-Mediated (CMI):</b> T-cells; <b>exclusively mediates graft rejection</b>.</div>
+      <div>• <b>Lymphoid Organs:</b> Primary (Bone marrow, Thymus) vs Secondary (Spleen, Lymph nodes, Tonsils, Peyer's patches). <b>MALT = 50%</b> of lymphoid tissue.</div>
+    </div>
   </div>
 
-  <div class="card left b" style="top:592px">
-    <h2>Vaccination &amp; Immunisation</h2>
-    <div class="leaf"><b>Vaccine:</b> weakened/dead antigen &#8594; body makes antibodies <b>without the disease</b></div>
-    <div class="leaf"><b>Active:</b> own body makes antibodies (infection or vaccine) — slow, long-lasting</div>
-    <div class="leaf"><b>Passive:</b> ready-made antibodies given — instant, short-lived (colostrum IgA, antivenom)</div>
+  <!-- 3. AIDS & HIV Pathogenesis (Bottom-Left) -->
+  <div class="card c-aids">
+    <div class="card-header">
+      <div class="card-title">3. AIDS &amp; Retrovirus Life Cycle</div>
+      <span class="card-badge" style="background: #F5F3FF; color: #7C3AED;">Immunodeficiency</span>
+    </div>
+    <div class="item-list">
+      <div>• <b>Causative Agent:</b> Human Immunodeficiency Virus (Retrovirus, ssRNA with Reverse Transcriptase).</div>
+      <div>• <b>Replication:</b> Viral RNA reverse transcribed to cDNA → integrates into host DNA → <b>Macrophages act as HIV factory</b>.</div>
+      <div>• <b>Target:</b> Attacks &amp; destroys <b>Helper T-cells (T<sub>H</sub>)</b> → count plunges below 200/μL.</div>
+      <div>• <b>Opportunistic Infections:</b> <i>Mycobacterium</i>, <i>Toxoplasma</i>, fungi, viruses.</div>
+      <div>• <b>Diagnosis:</b> Screening by <b>ELISA</b>; confirmatory by Western Blot. NACO programs.</div>
+    </div>
   </div>
 
-  <div class="card right l" style="top:92px">
-    <h2>Allergy &amp; Autoimmunity</h2>
-    <div class="leaf"><b>Allergy:</b> exaggerated immune response to a harmless substance (pollen, dust mites)</div>
-    <div class="leaf"><b>Chemistry:</b> IgE antibodies trigger <b>histamine</b> — sneezing, watery eyes; treated with antihistamines</div>
-    <div class="leaf"><b>Autoimmunity:</b> body attacks its own cells — e.g. <b>rheumatoid arthritis</b></div>
+  <!-- 4. Cancer Biology & Oncology (Top-Right) -->
+  <div class="card c-cancer">
+    <div class="card-header">
+      <div class="card-title">4. Cancer (Oncology &amp; Malignancy)</div>
+      <span class="card-badge" style="background: #FEF3C7; color: #B45309;">Cell Proliferation</span>
+    </div>
+    <div class="item-list">
+      <div>• <b>Hallmark:</b> <b>Loss of contact inhibition</b>; uncontrolled clonal proliferation forming tumors.</div>
+      <div>• <b>Benign vs Malignant:</b> Benign remain confined. Malignant invade surrounding tissues; enter bloodstream and seed distant organs — <b>Metastasis</b> (most feared property).</div>
+      <div>• <b>Carcinogens:</b> Ionizing rays (X-rays, gamma), non-ionizing (UV); chemical (tobacco smoke); oncogenic viruses &amp; cellular proto-oncogenes.</div>
+      <div>• <b>Detection &amp; Therapy:</b> Biopsy, CT, MRI, antibodies. Treated via surgery, radiotherapy, chemotherapy, and biological response modifiers (<b>alpha-interferon</b>).</div>
+    </div>
   </div>
 
-  <div class="card right b" style="top:310px">
-    <h2>AIDS &amp; Cancer</h2>
-    <div class="leaf"><b>HIV:</b> retrovirus, attacks <b>helper T cells</b> — tests ELISA (screen) &#8594; Western blot (confirm)</div>
-    <div class="leaf"><b>Spread:</b> sexual contact, infected blood, shared needles, mother to child — <b>not</b> by handshakes or food</div>
-    <div class="leaf"><b>Cancer:</b> cells lose <b>contact inhibition</b>; malignant cells spread = <b>metastasis</b></div>
-    <div class="leaf"><b>Treatment:</b> surgery &#183; radiation &#183; chemotherapy &#183; immunotherapy (&#945;-interferon)</div>
+  <!-- 5. Drugs & Alcohol Abuse (Mid-Right) -->
+  <div class="card c-drugs">
+    <div class="card-header">
+      <div class="card-title">5. Drugs &amp; Substance Abuse</div>
+      <span class="card-badge" style="background: #ECFDF5; color: #059669;">Neuropharmacology</span>
+    </div>
+    <div class="item-list">
+      <div>• <b>Opioids:</b> Bind opioid receptors (CNS &amp; GI tract). <i>Morphine</i> (sedative/analgesic from poppy <i>Papaver somniferum</i>); <i>Heroin</i> (smack, diacetylmorphine, depressant).</div>
+      <div>• <b>Cannabinoids:</b> Receptors in brain; from <i>Cannabis sativa</i> (bhang, ganja, charas); affect cardiovascular system.</div>
+      <div>• <b>Coca Alkaloid:</b> <i>Cocaine</i> (coke/crack) from <i>Erythroxylum coca</i>; interferes with dopamine transport; CNS stimulant, euphoria; hallucinations in overdose.</div>
+      <div>• <b>Hallucinogens:</b> <i>Atropa belladonna</i>, <i>Datura</i>, LSD (lysergic acid diethylamide).</div>
+    </div>
   </div>
 
-  <div class="card right l" style="top:569px">
-    <h2>Drugs &amp; Alcohol Abuse</h2>
-    <div class="leaf"><b>Opioids:</b> heroin from <i>Papaver somniferum</i> — depressant (binds opioid receptors)</div>
-    <div class="leaf"><b>Stimulants:</b> cocaine from <i>Erythroxylum coca</i> — excites the CNS</div>
-    <div class="leaf"><b>Cannabinoids:</b> from <i>Cannabis sativa</i> — hallucinogen (perception distorts)</div>
-    <div class="leaf"><b>Help:</b> counselling, de-addiction centres, sports, refusing peer pressure</div>
+  <!-- 6. Vaccination, Allergy & Autoimmunity (Bottom-Right) -->
+  <div class="card c-prevention">
+    <div class="card-header">
+      <div class="card-title">6. Autoimmunity, Allergy &amp; Vaccines</div>
+      <span class="card-badge" style="background: #FDF2F8; color: #DB2777;">Clinical Immunology</span>
+    </div>
+    <div class="item-list">
+      <div>• <b>Active vs Passive:</b> Active (host produces antibodies, slow, long-lasting); Passive (ready-made antibodies injected, e.g. Tetanus antitoxin, snake antivenom, colostrum IgA).</div>
+      <div>• <b>Recombinant Vaccine:</b> Hepatitis B vaccine produced from transgenic <b>yeast</b>.</div>
+      <div>• <b>Allergies:</b> Exaggerated response to allergens (pollen, mites); mediated by <b>IgE</b>; mast cells release histamine and serotonin; treated with antihistamines.</div>
+      <div>• <b>Auto-Immunity:</b> Immune system attacks self-antigens (e.g., <b>Rheumatoid arthritis</b>).</div>
+    </div>
   </div>
 
-  <div class="exc">
-    <h2>COMMON ERRORS &amp; TRAPS</h2>
-    <div class="leaf"><b>Malaria</b> — <i>female Anopheles</i>; <b>filariasis</b> — <i>Culex</i>. Do not swap the mosquitoes</div>
-    <div class="leaf"><b>Innate immunity has no memory</b> — only acquired immunity remembers</div>
-    <div class="leaf"><b>Benign tumours do not metastasise</b> — only malignant (cancer) cells spread</div>
-    <div class="leaf"><b>HIV is not spread</b> by insect bites, hugs or sharing meals — body fluids only</div>
+  <!-- Bottom Alert: High Yield Traps -->
+  <div class="bottom-alert">
+    <div class="bottom-alert-title">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      <span>CUET UG Top Traps</span>
+    </div>
+    <div class="bottom-alert-grid">
+      <div><b>Graft Rejection:</b> Exclusively mediated by Cell-Mediated Immunity (CMI / T-cells). Tissue matching (HLA) and lifelong Cyclosporin A immunosuppression required.</div>
+      <div><b>HIV Dynamics:</b> Macrophages act as the continuous "HIV factory"; Helper T-cells (T<sub>H</sub>) are progressively destroyed until immune collapse occurs.</div>
+      <div><b>Drug Chemistry:</b> Heroin is chemically <i>diacetylmorphine</i> (extracted by acetylation of morphine). Morphine is prescribed as a potent post-operative analgesic.</div>
+    </div>
   </div>
 </div>
+
 </body>
 </html>
