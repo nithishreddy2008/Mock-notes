@@ -1,116 +1,353 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
+<title>Integration & Applications Master Mindmap</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
-  .wrap { width: 1480px; height: 1080px; position: relative; background: #fff; }
-  svg.wires { position: absolute; inset: 0; width: 1480px; height: 1080px; }
-  .center {
-    position: absolute; left: 520px; top: 470px; width: 440px; height: 104px;
-    background: #071A4D; border-radius: 16px; display: flex; flex-direction: column;
-    align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(7,26,77,.25);
-    border-bottom: 5px solid #B8FF34;
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px 32px;
+    position: relative;
+    overflow: hidden;
   }
-  .center .t { color: #fff; font-size: 19px; font-weight: 800; letter-spacing: .5px; text-align: center; }
-  .center .s { color: #B8FF34; font-size: 13px; font-weight: 700; letter-spacing: 2px; margin-top: 4px; }
+
+  /* Header */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 12px;
+    margin-bottom: 16px;
+  }
+  .title-group h1 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #071A4D;
+    letter-spacing: -0.02em;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .title-group h1 .badge {
+    background: #071A4D;
+    color: #B8FF34;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 3px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.05em;
+  }
+  .title-group p {
+    font-size: 13px;
+    color: #64748B;
+    margin-top: 2px;
+    font-weight: 500;
+  }
+  .exam-tag {
+    background: #1F5EFF;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: 800;
+    padding: 6px 14px;
+    border-radius: 8px;
+    letter-spacing: 0.06em;
+  }
+
+  /* SVG Connectors */
+  svg.wires {
+    position: absolute;
+    inset: 0;
+    width: 1440px;
+    height: 880px;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* Central Hub */
+  .hub {
+    position: absolute;
+    left: 540px;
+    top: 385px;
+    width: 360px;
+    height: 120px;
+    background: #071A4D;
+    border: 2px solid #1F5EFF;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    padding: 12px;
+    text-align: center;
+  }
+  .hub .hub-tag {
+    font-size: 10px;
+    font-weight: 800;
+    color: #B8FF34;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .hub .hub-title {
+    font-size: 20px;
+    font-weight: 800;
+    color: #FFFFFF;
+    letter-spacing: -0.01em;
+  }
+  .hub .hub-sub {
+    font-size: 11.5px;
+    color: #94A3B8;
+    margin-top: 4px;
+    font-weight: 500;
+  }
+
+  /* Cards */
   .card {
-    position: absolute; width: 465px; background: #FCFDFF; border: 1.5px solid #D5DCEA;
-    border-radius: 14px; padding: 13px 16px 12px;
+    position: absolute;
+    width: 480px;
+    background: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    border-radius: 10px;
+    padding: 14px 16px;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
   }
-  .card h2 { font-size: 19px; color: #071A4D; font-weight: 800; margin-bottom: 7px;
-             padding-bottom: 5px; border-bottom: 3px solid; display: inline-block; }
-  .leaf { font-size: 14px; color: #1B2333; margin: 5px 0; padding-left: 16px; position: relative; line-height: 1.32; }
-  .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
-  .b .leaf::before { background: #1F5EFF; }
-  .l .leaf::before { background: #7FB800; }
-  .leaf b { color: #071A4D; }
-  .b h2 { border-color: #1F5EFF; }
-  .l h2 { border-color: #7FB800; }
-  .left { left: 30px; }
-  .right { left: 985px; }
-  .exc {
-    position: absolute; left: 470px; top: 905px; width: 540px; background: #FFF3EC;
-    border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px;
+
+  .card-top-left { left: 32px; top: 88px; border-top: 4px solid #1F5EFF; }
+  .card-bottom-left { left: 32px; top: 480px; border-top: 4px solid #F59E0B; }
+  .card-top-right { right: 32px; top: 88px; border-top: 4px solid #10B981; }
+  .card-bottom-right { right: 32px; top: 480px; border-top: 4px solid #8B5CF6; }
+
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #F1F5F9;
+    padding-bottom: 6px;
   }
-  .exc h2 { font-size: 17px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
-  .exc .leaf { font-size: 13px; margin: 3px 0; padding-left: 14px; color: #7A2A12; }
-  .exc .leaf::before { background: #D2481F; }
-  .exc b { color: #B4380F; }
+  .card-title {
+    font-size: 14px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .card-badge {
+    font-size: 9.5px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+
+  .badge-blue { background: #EFF6FF; color: #1D4ED8; }
+  .badge-amber { background: #FFFBEB; color: #B45309; }
+  .badge-emerald { background: #ECFDF5; color: #047857; }
+  .badge-purple { background: #FAF5FF; color: #7E22CE; }
+
+  .branch-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .branch-item {
+    display: flex;
+    gap: 8px;
+    font-size: 11.5px;
+    line-height: 1.35;
+    color: #334155;
+  }
+  .branch-bullet {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    margin-top: 5px;
+    flex-shrink: 0;
+  }
+  .bullet-blue { background: #1F5EFF; }
+  .bullet-amber { background: #F59E0B; }
+  .bullet-emerald { background: #10B981; }
+  .bullet-purple { background: #8B5CF6; }
+
+  .branch-item strong {
+    color: #071A4D;
+  }
+
+  /* Footer Note */
+  .footer-note {
+    position: absolute;
+    bottom: 12px;
+    left: 32px;
+    right: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+    color: #94A3B8;
+    font-weight: 600;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 6px;
+  }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <svg class="wires" viewBox="0 0 1480 1080">
-    <path d="M 520 505 C 470 505, 495 158, 500 155" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
-    <path d="M 520 520 C 480 520, 495 438, 500 438" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 520 535 C 470 535, 495 718, 500 718" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
-    <path d="M 960 505 C 1010 505, 985 158, 980 155" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 960 520 C 1000 520, 985 438, 980 438" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
-    <path d="M 960 535 C 1010 535, 985 718, 980 718" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 740 574 C 740 700, 740 830, 740 903" fill="none" stroke="#D2481F" stroke-width="2.5" stroke-dasharray="7 5" opacity=".6"/>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="title-group">
+      <h1>
+        INTEGRATION & APPLICATIONS MASTER MINDMAP
+        <span class="badge">FIG 3 · ARCHITECTURAL OVERVIEW</span>
+      </h1>
+      <p>Complete Structural Synthesis of Indefinite Methods, Definite Integral Properties, and Area Bounded by Curves</p>
+    </div>
+    <div class="exam-tag">CUET UG · MATHEMATICS · UNIT 4</div>
+  </div>
+
+  <!-- SVG Connectors -->
+  <svg class="wires" viewBox="0 0 1440 880">
+    <!-- Top-Left Connector -->
+    <path d="M 540 425 H 480 V 260 H 512" fill="none" stroke="#1F5EFF" stroke-width="2" stroke-linecap="round"/>
+    <!-- Bottom-Left Connector -->
+    <path d="M 540 465 H 480 V 650 H 512" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round"/>
+    <!-- Top-Right Connector -->
+    <path d="M 900 425 H 960 V 260 H 928" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round"/>
+    <!-- Bottom-Right Connector -->
+    <path d="M 900 465 H 960 V 650 H 928" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round"/>
   </svg>
 
-  <div class="center">
-    <div class="t">INTEGRATION &amp; ITS APPLICATIONS</div>
-    <div class="s">CUET UG MATHEMATICS</div>
+  <!-- Central Hub -->
+  <div class="hub">
+    <div class="hub-tag">Core Mathematical Framework</div>
+    <div class="hub-title">INTEGRAL CALCULUS & AOI</div>
+    <div class="hub-sub">Indefinite · Definite Properties · Bounded Area</div>
   </div>
 
-  <div class="card left b" style="top:58px">
-    <h2>Antiderivatives (+C)</h2>
-    <div class="leaf"><b>Reverse differentiation:</b> ∫xⁿ = xⁿ⁺¹/(n+1), ∫dx/x = ln|x|</div>
-    <div class="leaf"><b>+C is not decoration</b> — a whole antiderivative family</div>
-    <div class="leaf"><b>Linearity:</b> sums split, constants come out</div>
-    <div class="leaf"><b>Verification:</b> differentiate your answer back</div>
+  <!-- Card 1: Top-Left (Indefinite Methods) -->
+  <div class="card card-top-left">
+    <div class="card-header">
+      <div class="card-title">1. Indefinite Integration Techniques</div>
+      <div class="card-badge badge-blue">Antiderivative Vault</div>
+    </div>
+    <div class="branch-list">
+      <div class="branch-item">
+        <div class="branch-bullet bullet-blue"></div>
+        <div><strong>Substitution Rule:</strong> ∫ f(g(x)) g'(x) dx = ∫ f(t) dt. Standard forms: ∫ f'/f = ln|f|; ∫ [f]ⁿ f' = [f]ⁿ⁺¹/(n+1).</div>
+      </div>
+      <div class="branch-item">
+        <div class="branch-bullet bullet-blue"></div>
+        <div><strong>By Parts (ILATE):</strong> ∫ u v dx = u ∫ v − ∫ [u' ∫ v]. Priority: Inverse Trig &gt; Log &gt; Algebraic &gt; Trig &gt; Exponential.</div>
+      </div>
+      <div class="branch-item">
+        <div class="branch-bullet bullet-blue"></div>
+        <div><strong>Exponential Shortcut:</strong> ∫ eˣ [f(x) + f'(x)] dx = eˣ f(x) + C. Instantly collapses nested products.</div>
+      </div>
+      <div class="branch-item">
+        <div class="branch-bullet bullet-blue"></div>
+        <div><strong>Partial Fractions:</strong> Factorable polynomials. Check deg(Num) &lt; deg(Den) before setting up linear/quadratic terms.</div>
+      </div>
+      <div class="branch-item">
+        <div class="branch-bullet bullet-blue"></div>
+        <div><strong>Special 9 Forms:</strong> Quadratic integrals without radicals (1/a tan⁻¹), radical denominators (sin⁻¹, ln), and product radicals.</div>
+      </div>
+    </div>
   </div>
 
-  <div class="card right b" style="top:58px">
-    <h2>The Four Methods (in order)</h2>
-    <div class="leaf"><b>1 · Standard form</b> — match the table, write, add C</div>
-    <div class="leaf"><b>2 · Substitution</b> — inner derivative visible outside</div>
-    <div class="leaf"><b>3 · Partial fractions</b> — factorable rational denominator</div>
-    <div class="leaf"><b>4 · By parts</b> — two different families multiplied; ILATE picks u</div>
+  <!-- Card 2: Top-Right (Definite Properties) -->
+  <div class="card card-top-right">
+    <div class="card-header">
+      <div class="card-title">2. Definite Integral Symmetries & Rules</div>
+      <div class="card-badge badge-emerald">Master Properties</div>
+    </div>
+    <div class="branch-list">
+      <div class="branch-item">
+        <div class="branch-bullet bullet-emerald"></div>
+        <div><strong>The King's Rule:</strong> ∫ₐᵇ f(x) dx = ∫ₐᵇ f(a + b − x) dx. Adding I + I = 2I collapses symmetric fractions to (b − a)/2.</div>
+      </div>
+      <div class="branch-item">
+        <div class="branch-bullet bullet-emerald"></div>
+        <div><strong>Queen's Property:</strong> ∫₀^(2a) f(x) dx = 2 ∫₀ᵃ f(x) dx if f(2a − x) = f(x); equals 0 if f(2a − x) = −f(x).</div>
+      </div>
+      <div class="branch-item">
+        <div class="branch-bullet bullet-emerald"></div>
+        <div><strong>Even/Odd Symmetry:</strong> ∫₋ₐᵃ f(x) dx = 2 ∫₀ᵃ f(x) dx (even) or 0 (odd). Immediate zero for odd integrands on [-a, a].</div>
+      </div>
+      <div class="branch-item">
+        <div class="branch-bullet bullet-emerald"></div>
+        <div><strong>Interval Splitting:</strong> ∫ₐᵇ f(x) dx = ∫ₐᶜ + ∫꜀ᵇ. Crucial for modulus |x − c| and greatest integer [x] functions.</div>
+      </div>
+      <div class="branch-item">
+        <div class="branch-bullet bullet-emerald"></div>
+        <div><strong>Leibniz Integral Rule:</strong> d/dx [∫_{u(x)}^{v(x)} f(t) dt] = f(v(x)) v'(x) − f(u(x)) u'(x). Used in L'Hôpital limit questions.</div>
+      </div>
+    </div>
   </div>
 
-  <div class="card left l" style="top:350px">
-    <h2>Special Standard Integrals</h2>
-    <div class="leaf"><b>Arctan family:</b> dx/(x²+a²) → (1/a)tan⁻¹(x/a)</div>
-    <div class="leaf"><b>Arcsin family:</b> dx/√(a²−x²) → sin⁻¹(x/a)</div>
-    <div class="leaf"><b>Log family:</b> dx/(x²−a²) → (1/2a)ln|(x−a)/(x+a)|</div>
-    <div class="leaf"><b>Square-root family:</b> √(a²−x²) → x/2·√ + a²/2·sin⁻¹(x/a)</div>
+  <!-- Card 3: Bottom-Left (Applications of Integrals) -->
+  <div class="card card-bottom-left">
+    <div class="card-header">
+      <div class="card-title">3. Applications of Integrals (AOI Engine)</div>
+      <div class="card-badge badge-amber">Bounded Geometry</div>
+    </div>
+    <div class="branch-list">
+      <div class="branch-item">
+        <div class="branch-bullet bullet-amber"></div>
+        <div><strong>Area Under Simple Curves:</strong> Area = ∫ₐᵇ |y| dx. If curve crosses x-axis at c, compute |∫ₐᶜ| + |∫꜀ᵇ|. Never allow net cancellation.</div>
+      </div>
+      <div class="branch-item">
+        <div class="branch-bullet bullet-amber"></div>
+        <div><strong>Area Between Two Curves:</strong> Area = ∫ₐᵇ [y_upper(x) − y_lower(x)] dx. Solve f(x) = g(x) to locate boundary x-limits.</div>
+      </div>
+      <div class="branch-item">
+        <div class="branch-bullet bullet-amber"></div>
+        <div><strong>Standard Conic Areas:</strong> Circle x² + y² = r² ⟹ π r²; Ellipse x²/a² + y²/b² = 1 ⟹ π a b.</div>
+      </div>
+      <div class="branch-item">
+        <div class="branch-bullet bullet-amber"></div>
+        <div><strong>Trigonometric Waves:</strong> Bounded area of 1 loop of sin x or cos x over interval of length π is exactly 2 sq units.</div>
+      </div>
+    </div>
   </div>
 
-  <div class="card right l" style="top:350px">
-    <h2>Definite Integrals &amp; FTC</h2>
-    <div class="leaf"><b>FTC:</b> ∫ₐᵇ f = F(b) − F(a) — upper minus lower</div>
-    <div class="leaf"><b>Properties:</b> reversal flips sign; additivity splits intervals</div>
-    <div class="leaf"><b>King's rule:</b> ∫₀ᵃ f(x) = ∫₀ᵃ f(a−x) — the reflect trick</div>
-    <div class="leaf"><b>Even–odd:</b> symmetric limits kill odd integrands, double even</div>
+  <!-- Card 4: Bottom-Right (CUET Traps & Speed Hacks) -->
+  <div class="card card-bottom-right">
+    <div class="card-header">
+      <div class="card-title">4. CUET High-Yield Speed Hacks & Traps</div>
+      <div class="card-badge badge-purple">Exam Execution</div>
+    </div>
+    <div class="branch-list">
+      <div class="branch-item">
+        <div class="branch-bullet bullet-purple"></div>
+        <div><strong>Parabola-Parabola Shortcut:</strong> Area between y² = 4ax and x² = 4by is exactly <strong>16ab / 3</strong> sq units.</div>
+      </div>
+      <div class="branch-item">
+        <div class="branch-bullet bullet-purple"></div>
+        <div><strong>Parabola-Line Shortcut:</strong> Area between y² = 4ax and y = mx is <strong>8a² / (3m³)</strong> sq units.</div>
+      </div>
+      <div class="branch-item">
+        <div class="branch-bullet bullet-purple"></div>
+        <div><strong>Parabola & Latus Rectum:</strong> Area between y² = 4ax and x = a is <strong>8a² / 3</strong> sq units.</div>
+      </div>
+      <div class="branch-item">
+        <div class="branch-bullet bullet-purple"></div>
+        <div><strong>Modulus Boundary Split:</strong> In ∫₋₁² |x| dx, split into ∫₋₁⁰ (-x) dx + ∫₀² x dx = 1/2 + 2 = 5/2. Avoid direct integration!</div>
+      </div>
+    </div>
   </div>
 
-  <div class="card left b" style="top:642px">
-    <h2>Area Under Curves</h2>
-    <div class="leaf"><b>Root–Split–Flip:</b> roots first, split, absolute values</div>
-    <div class="leaf"><b>Quarter circle:</b> ∫₀ᵃ√(a²−x²)dx = πa²/4 — know it cold</div>
-    <div class="leaf"><b>y = x² cut by y = 4:</b> area 32/3 between x = −2, 2</div>
-    <div class="leaf"><b>Geometric area is never negative</b> — the integral can be</div>
+  <!-- Footer Note -->
+  <div class="footer-note">
+    <span>• Zero arbitrary constants in definite integrals</span>
+    <span>• Always verify sign orientation before evaluating bounded areas</span>
+    <span>OURMOCKS SMART GRAPHICS · 2027 CYCLE</span>
   </div>
 
-  <div class="card right b" style="top:642px">
-    <h2>Choosing the Method (reflexes)</h2>
-    <div class="leaf"><b>See x·(x²+1)-shaped pair?</b> substitution</div>
-    <div class="leaf"><b>Rational + factorable bottom?</b> partial fractions</div>
-    <div class="leaf"><b>x, ln x, or inverse-trig factor?</b> by parts (ILATE)</div>
-    <div class="leaf"><b>Stuck after one by parts?</b> the integral can reappear — solve for it</div>
-  </div>
-
-  <div class="exc">
-    <h2>TOP TRAPS</h2>
-    <div class="leaf"><b>+C forgotten</b> on indefinite integrals — instant mark loss</div>
-    <div class="leaf"><b>∫sin x = −cos x</b> — the sign flip distractor</div>
-    <div class="leaf"><b>Area quoted from a raw negative integral</b> — flip it</div>
-  </div>
-</div>
 </body>
 </html>

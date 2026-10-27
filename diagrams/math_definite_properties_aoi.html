@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Definite Integral Properties & Area Bounded Engine</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 28px 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  /* Header */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 16px;
+  }
+  .title-group h1 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #071A4D;
+    letter-spacing: -0.02em;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .title-group h1 .badge {
+    background: #10B981;
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 3px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.05em;
+  }
+  .title-group p {
+    font-size: 13px;
+    color: #64748B;
+    margin-top: 3px;
+    font-weight: 500;
+  }
+  .exam-tag {
+    background: #071A4D;
+    color: #B8FF34;
+    font-size: 12px;
+    font-weight: 800;
+    padding: 6px 14px;
+    border-radius: 8px;
+    letter-spacing: 0.06em;
+  }
+
+  /* Main Grid */
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 16px;
+    height: 720px;
+  }
+
+  .card {
+    background: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    border-radius: 10px;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1.5px solid #F1F5F9;
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+  }
+  .card-title {
+    font-size: 15px;
+    font-weight: 800;
+    color: #071A4D;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .card-tag {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+
+  .tag-blue { background: #EFF6FF; color: #1D4ED8; border: 1px solid #BFDBFE; }
+  .tag-purple { background: #FAF5FF; color: #7E22CE; border: 1px solid #E9D5FF; }
+  .tag-amber { background: #FFFBEB; color: #B45309; border: 1px solid #FDE68A; }
+  .tag-emerald { background: #ECFDF5; color: #047857; border: 1px solid #A7F3D0; }
+
+  /* Content Elements */
+  .formula-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 12px;
+    color: #334155;
+  }
+  .formula-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #F8FAFC;
+    padding: 5px 10px;
+    border-radius: 6px;
+    border: 1px solid #E2E8F0;
+  }
+  .formula-math {
+    font-family: "Cambria Math", "Times New Roman", serif;
+    font-weight: 700;
+    color: #0F172A;
+    font-size: 12.5px;
+  }
+  .formula-note {
+    font-size: 11px;
+    color: #64748B;
+    font-weight: 600;
+  }
+
+  /* Method Steps */
+  .steps-flex {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .step-box {
+    background: #F8FAFC;
+    border-left: 3px solid #10B981;
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 11.5px;
+    color: #334155;
+    line-height: 1.35;
+  }
+  .step-box strong {
+    color: #071A4D;
+  }
+
+  /* Highlight Banner */
+  .highlight-banner {
+    background: #ECFDF5;
+    border: 1px dashed #10B981;
+    border-radius: 6px;
+    padding: 7px 10px;
+    font-size: 11.5px;
+    color: #065F46;
+    font-weight: 600;
+    margin-top: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Footer */
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 8px;
+    font-size: 11px;
+    color: #94A3B8;
+    font-weight: 600;
+  }
+  .footer-left { display: flex; gap: 16px; }
+  .footer-right { color: #071A4D; font-weight: 700; }
+</style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="title-group">
+      <h1>
+        DEFINITE INTEGRAL PROPERTIES & AREA BOUNDED ENGINE
+        <span class="badge">FIG 2 · DEFINITE & AOI</span>
+      </h1>
+      <p>King's & Queen's Properties, Even/Odd Symmetries, Leibniz Rule, and Curve Bounded Area Formulas</p>
+    </div>
+    <div class="exam-tag">CUET UG · MATHEMATICS · UNIT 4</div>
+  </div>
+
+  <!-- Main Grid -->
+  <div class="grid-container">
+
+    <!-- Card 1: Fundamental Properties & King's Rule -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">1. The King's Property & Interval Splitting</div>
+        <div class="card-tag tag-blue">Core Definite Rules</div>
+      </div>
+      <div class="formula-list">
+        <div class="formula-row">
+          <span class="formula-math">∫ₐᵇ f(x) dx = ∫ₐᶜ f(x) dx + ∫꜀ᵇ f(x) dx</span>
+          <span class="formula-note">P2: Modulus & Step Functions</span>
+        </div>
+        <div class="formula-row">
+          <span class="formula-math">∫ₐᵇ f(x) dx = ∫ₐᵇ f(a + b − x) dx</span>
+          <span class="formula-note">P3: General King's Rule</span>
+        </div>
+        <div class="formula-row">
+          <span class="formula-math">∫₀ᵃ f(x) dx = ∫₀ᵃ f(a − x) dx</span>
+          <span class="formula-note">P4: Standard King's Rule</span>
+        </div>
+        <div class="formula-row">
+          <span class="formula-math">I = ∫₀^(π/2) sinⁿx / (sinⁿx + cosⁿx) dx = π / 4</span>
+          <span class="formula-note">King's Rule Symmetry Shortcut</span>
+        </div>
+        <div class="formula-row">
+          <span class="formula-math">I = ∫₀^(π/2) ln(sin x) dx = −(π / 2) ln 2</span>
+          <span class="formula-note">Euler's Standard Constant</span>
+        </div>
+      </div>
+      <div class="highlight-banner" style="background: #EFF6FF; border-color: #3B82F6; color: #1E40AF;">
+        <span>King's Algorithm: Add I + I = ∫ [f(x) + f(a+b−x)] dx. Integrand collapses to constant 1!</span>
+        <span>2I = b − a</span>
+      </div>
+    </div>
+
+    <!-- Card 2: Symmetry, Periodic & Leibniz Rule -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">2. Queen's Property, Symmetries & Leibniz Rule</div>
+        <div class="card-tag tag-purple">Symmetry & Derivatives</div>
+      </div>
+      <div class="steps-flex">
+        <div class="step-box" style="border-left-color: #8B5CF6;">
+          <strong>Queen's Property (∫₀^(2a) f(x) dx):</strong><br>
+          • If f(2a − x) = f(x) ⟹ 2 ∫₀ᵃ f(x) dx.<br>
+          • If f(2a − x) = −f(x) ⟹ <strong>0</strong>. (Instant zero cancellation in CUET!)
+        </div>
+        <div class="step-box" style="border-left-color: #8B5CF6;">
+          <strong>Even vs Odd Function Symmetry (∫₋ₐᵃ f(x) dx):</strong><br>
+          • Even [f(−x) = f(x)]: 2 ∫₀ᵃ f(x) dx.<br>
+          • Odd [f(−x) = −f(x)]: <strong>0</strong>. (E.g. ∫₋₁¹ x³ √(1−x²) dx = 0 automatically).
+        </div>
+        <div class="step-box" style="border-left-color: #8B5CF6;">
+          <strong>Leibniz Differentiation Under Integral Sign:</strong><br>
+          <span class="formula-math" style="color: #6D28D9;">d/dx [∫_{u(x)}^{v(x)} f(t) dt] = f(v(x)) · v'(x) − f(u(x)) · u'(x)</span>
+        </div>
+      </div>
+      <div class="highlight-banner" style="background: #FAF5FF; border-color: #A855F7; color: #6B21A8;">
+        <span>Periodic Property: If f(x + T) = f(x), then ∫₀^(nT) f(x) dx = n ∫₀ᵀ f(x) dx.</span>
+        <span>Periodicity Trick</span>
+      </div>
+    </div>
+
+    <!-- Card 3: Area Under Curves (AOI Simple Geometry) -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">3. Area Under Curves & Standard Shapes</div>
+        <div class="card-tag tag-amber">Area Geometry</div>
+      </div>
+      <div class="formula-list">
+        <div class="formula-row">
+          <span class="formula-math">Area = ∫ₐᵇ |y| dx  (Vertical)  |  ∫꜀ᵈ |x| dy  (Horizontal)</span>
+          <span class="formula-note">Absolute Sign Protocol</span>
+        </div>
+        <div class="formula-row">
+          <span class="formula-math">Circle: x² + y² = r² ⟹ Total Area = π r²</span>
+          <span class="formula-note">Quadrant = (1/4) π r²</span>
+        </div>
+        <div class="formula-row">
+          <span class="formula-math">Ellipse: x²/a² + y²/b² = 1 ⟹ Total Area = π a b</span>
+          <span class="formula-note">Quadrant = (1/4) π a b</span>
+        </div>
+        <div class="formula-row">
+          <span class="formula-math">Sine/Cosine Arch: Area of 1 loop of sin x from 0 to π = 2 sq units</span>
+          <span class="formula-note">Single Arch = 2</span>
+        </div>
+      </div>
+      <div class="highlight-banner" style="background: #FFFBEB; border-color: #F59E0B; color: #92400E;">
+        <span>Crossing the Axis: When y changes sign at c, Area = ∫ₐᶜ y dx + |∫꜀ᵇ y dx|. Never cancel!</span>
+        <span>Sign Trap</span>
+      </div>
+    </div>
+
+    <!-- Card 4: Area Between Curves & High-Speed Shortcuts -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">4. Area Between Curves & CUET Shortcuts</div>
+        <div class="card-tag tag-emerald">Speed Shortcuts</div>
+      </div>
+      <div class="steps-flex">
+        <div class="step-box" style="border-left-color: #059669;">
+          <strong>General Formula:</strong> Area = ∫ₐᵇ [y_upper(x) − y_lower(x)] dx.<br>
+          <em>Step 1: Equate curves to find intersection limits x = a, b. Step 2: Integrate upper minus lower.</em>
+        </div>
+        <div class="step-box" style="border-left-color: #059669;">
+          <strong>Shortcut 1: Two Orthogonal Parabolas:</strong><br>
+          Area bounded between y² = 4ax and x² = 4by is: <strong style="color: #047857;">Area = 16 a b / 3</strong>.<br>
+          <em>(E.g., y² = 4x and x² = 4y has a=1, b=1 ⟹ Area = 16/3 sq units).</em>
+        </div>
+        <div class="step-box" style="border-left-color: #059669;">
+          <strong>Shortcut 2: Parabola and Secant Line:</strong><br>
+          Area bounded between y² = 4ax and y = mx is: <strong style="color: #047857;">Area = 8 a² / (3 m³)</strong>.<br>
+          Area bounded between y² = 4ax and its Latus Rectum (x = a) is: <strong style="color: #047857;">Area = 8 a² / 3</strong>.
+        </div>
+      </div>
+      <div class="highlight-banner">
+        <span>Parabola shortcut saves 2 full minutes of integration and limits evaluation in CUET!</span>
+        <span>16ab/3 Formula</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="footer-left">
+      <span>• King's Property handles 70% of definite integral questions</span>
+      <span>• Check odd/even symmetry before integrating</span>
+      <span>• Area is always strictly non-negative (sq units)</span>
+    </div>
+    <div class="footer-right">OURMOCKS SMART GRAPHICS · 2027 CYCLE</div>
+  </div>
+
+</body>
+</html>
