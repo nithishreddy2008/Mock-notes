@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Recombinant DNA Tools & pBR322 Vector Architecture</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px 32px;
+    overflow: hidden;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 14px;
+    margin-bottom: 18px;
+  }
+  .title-group h1 {
+    font-size: 21px;
+    font-weight: 800;
+    color: #071A4D;
+    letter-spacing: -0.02em;
+  }
+  .title-group p {
+    font-size: 13px;
+    color: #64748B;
+    margin-top: 2px;
+    font-weight: 500;
+  }
+  .badge {
+    background: #071A4D;
+    color: #B8FF34;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 6px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1.15fr 1.25fr 1.1fr;
+    gap: 16px;
+    height: calc(100% - 190px);
+  }
+  .col-card {
+    background: #FFFFFF;
+    border: 1.5px solid #CBD5E1;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .col-header {
+    padding: 10px 14px;
+    font-size: 13.5px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1.5px solid #CBD5E1;
+  }
+  .step-badge {
+    font-size: 10.5px;
+    font-weight: 800;
+    padding: 2px 7px;
+    border-radius: 4px;
+  }
+  .c-blue .col-header { background: #EEF4FF; color: #1E40AF; border-color: #BFDBFE; }
+  .c-blue .step-badge { background: #1E40AF; color: #FFFFFF; }
+  .c-blue { border-color: #BFDBFE; }
+
+  .c-purple .col-header { background: #FAF5FF; color: #6B21A8; border-color: #E9D5FF; }
+  .c-purple .step-badge { background: #6B21A8; color: #FFFFFF; }
+  .c-purple { border-color: #E9D5FF; }
+
+  .c-emerald .col-header { background: #ECFDF5; color: #047857; border-color: #A7F3D0; }
+  .c-emerald .step-badge { background: #047857; color: #FFFFFF; }
+  .c-emerald { border-color: #A7F3D0; }
+
+  .col-body {
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+    overflow-y: auto;
+  }
+  .item-box {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    padding: 8px 10px;
+  }
+  .item-box h4 {
+    font-size: 12px;
+    font-weight: 700;
+    color: #0F172A;
+    margin-bottom: 4px;
+  }
+  .item-box p {
+    font-size: 11px;
+    color: #475569;
+    line-height: 1.4;
+  }
+  .seq-box {
+    font-family: monospace;
+    font-size: 11.5px;
+    background: #0F172A;
+    color: #B8FF34;
+    padding: 6px 10px;
+    border-radius: 5px;
+    margin: 4px 0;
+    line-height: 1.35;
+  }
+  .tag {
+    display: inline-block;
+    font-size: 9.5px;
+    font-weight: 700;
+    padding: 1px 6px;
+    border-radius: 4px;
+    margin-top: 4px;
+  }
+  .tag-blue { background: #DBEAFE; color: #1E40AF; }
+  .tag-purple { background: #F3E8FF; color: #6B21A8; }
+  .tag-emerald { background: #D1FAE5; color: #047857; }
+  .tag-amber { background: #FEF3C7; color: #92400E; }
+  .tag-rose { background: #FFE4E6; color: #BE123C; }
+
+  .bottom-summary {
+    margin-top: 16px;
+    background: #FFFFFF;
+    border: 1.5px solid #CBD5E1;
+    border-radius: 10px;
+    padding: 12px 18px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.2fr;
+    gap: 16px;
+    align-items: center;
+  }
+  .summary-col h3 {
+    font-size: 12.5px;
+    font-weight: 800;
+    color: #071A4D;
+    margin-bottom: 4px;
+  }
+  .summary-col p {
+    font-size: 11.2px;
+    color: #475569;
+    line-height: 1.4;
+  }
+  .key-pill {
+    background: #EEF2F6;
+    color: #071A4D;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 3px;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="title-group">
+    <h1>Recombinant DNA Tools & pBR322 Vector Architecture</h1>
+    <p>Restriction Endonuclease Palindromes, Agarose Gel Electrophoresis, Plasmid Cloning Sites, and Selectable Markers</p>
+  </div>
+  <div class="badge">CUET UG Biology · Unit IX</div>
+</div>
+
+<div class="grid-container">
+
+  <!-- Column 1: Enzymes & Electrophoresis -->
+  <div class="col-card c-blue">
+    <div class="col-header">
+      <span>1. Restriction Enzymes & Gel</span>
+      <span class="step-badge">Tools</span>
+    </div>
+    <div class="col-body">
+      <div class="item-box">
+        <h4>Molecular Scissors (Endonucleases)</h4>
+        <p>First restriction enzyme: <b>Hind II</b> (cleaves at specific 6 bp recognition site). Cuts sugar-phosphate backbone at palindromic sequences.</p>
+        <span class="tag tag-blue">Hind II = First Enzyme</span>
+      </div>
+      <div class="item-box">
+        <h4>EcoRI Palindrome & Sticky Ends</h4>
+        <div class="seq-box">
+          5' - G ↓ A A T T C - 3'<br>
+          3' - C T T A A ↑ G - 5'
+        </div>
+        <p>Asymmetric cleavage between G and A leaves overhanging, single-stranded <b>Sticky Ends</b> that hydrogen-bond with complementary inserts.</p>
+        <span class="tag tag-blue">Cohesive / Sticky Ends</span>
+      </div>
+      <div class="item-box">
+        <h4>Agarose Gel Electrophoresis</h4>
+        <p>• DNA is <b>negatively charged</b> and migrates toward the positive <b>anode</b>.<br>
+        • <b>Sieving effect:</b> Smaller fragments migrate faster & farther.<br>
+        • Stained with <b>Ethidium Bromide (EtBr)</b>; emits bright <b>orange</b> under UV.<br>
+        • <b>Elution:</b> Extracting the excised DNA band from agarose gel.</p>
+        <span class="tag tag-blue">EtBr + UV = Orange Bands</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Column 2: pBR322 Cloning Vector -->
+  <div class="col-card c-purple">
+    <div class="col-header">
+      <span>2. Cloning Vector pBR322</span>
+      <span class="step-badge">Vector</span>
+    </div>
+    <div class="col-body">
+      <div class="item-box">
+        <h4>pBR322 Plasmid Anatomy</h4>
+        <p>Engineered <i>E. coli</i> plasmid containing essential regulatory and resistance loci:</p>
+        <p>• <b>ori (Origin of Replication):</b> Initiates replication; dictates vector copy number.<br>
+        • <b>rop:</b> Codes for proteins involved in plasmid replication control.</p>
+        <span class="tag tag-purple">ori Controls Copy Number</span>
+      </div>
+      <div class="item-box">
+        <h4>Antibiotic Resistance Markers</h4>
+        <p><b>1. ampr (Ampicillin Resistance):</b> Contains unique recognition sites for <b>Pst I</b> and <b>Pvu I</b>.<br>
+        <b>2. tetr (Tetracycline Resistance):</b> Contains unique recognition sites for <b>BamHI</b> and <b>Sal I</b>.<br>
+        • Other single sites: <b>EcoRI</b>, <b>Cla I</b>, and <b>Hind III</b>.</p>
+        <span class="tag tag-purple">ampr (PstI, PvuI) · tetr (BamHI, SalI)</span>
+      </div>
+      <div class="item-box">
+        <h4>Insertional Inactivation (tetr gene)</h4>
+        <p>Ligation of foreign gene into the <b>BamHI</b> site disrupts the <i>tetr</i> gene.<br>
+        • <b>Recombinant:</b> Resistant to ampicillin, but <b>sensitive to tetracycline</b>.<br>
+        • Selected via duplicate replica plating.</p>
+        <span class="tag tag-purple">Insertional Inactivation</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Column 3: Alternative Selection & Host Competence -->
+  <div class="col-card c-emerald">
+    <div class="col-header">
+      <span>3. Selection & Transformation</span>
+      <span class="step-badge">Methods</span>
+    </div>
+    <div class="col-body">
+      <div class="item-box">
+        <h4>Blue-White Screening (lacZ Selection)</h4>
+        <p>• Foreign gene ligated into the coding sequence of <b>β-galactosidase (lacZ)</b>.<br>
+        • <b>Non-Recombinants:</b> Intact enzyme converts X-gal into <b>blue colonies</b>.<br>
+        • <b>Recombinants:</b> Inactivated enzyme produces <b>white colonies</b> (single-step selection without duplicate plates).</p>
+        <span class="tag tag-emerald">White Colonies = Recombinants</span>
+      </div>
+      <div class="item-box">
+        <h4>Competent Host Uptake</h4>
+        <p>• <b>Chemical (Bacteria):</b> Divalent cation (Ca<sup>2+</sup>) treatment creates pores, followed by <b>heat shock (42°C)</b> and rapid ice chilling.<br>
+        • <b>Micro-injection:</b> Direct DNA injection into animal cell nucleus.<br>
+        • <b>Biolistics / Gene Gun:</b> Microscopic gold/tungsten particles coated with DNA fired into plant cells.</p>
+        <span class="tag tag-emerald">Heat Shock & Gene Gun</span>
+      </div>
+      <div class="item-box">
+        <h4>Vectors for Plants & Animals</h4>
+        <p>• <b>Plants:</b> Disarmed <i>Ti plasmid</i> of <i>Agrobacterium tumefaciens</i>.<br>
+        • <b>Animals:</b> Disarmed <b>retroviruses</b> deliver therapeutic genes.</p>
+        <span class="tag tag-emerald">Agrobacterium (Ti Plasmid)</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="bottom-summary">
+  <div class="summary-col">
+    <h3>DNA Isolation Enzymes</h3>
+    <p>Cell walls digested enzymatically: <span class="key-pill">Lysozyme</span> (bacteria), <span class="key-pill">Cellulase</span> (plants), <span class="key-pill">Chitinase</span> (fungi). Pure DNA precipitates upon adding <span class="key-pill">Chilled Ethanol</span> as fine spoolable threads.</p>
+  </div>
+  <div class="summary-col">
+    <h3>DNA Ligase Function</h3>
+    <p>Catalyzes the formation of covalent <span class="key-pill">phosphodiester bonds</span> between adjacent 3'-OH and 5'-phosphate ends of cohesive or blunt termini, sealing recombinant DNA molecules.</p>
+  </div>
+  <div class="summary-col">
+    <h3>EcoRI Nomenclature Breakdown</h3>
+    <p><b>E</b> = Genus <i>Escherichia</i>; <b>co</b> = Species <i>coli</i>; <b>R</b> = Strain RY13; <b>I</b> = First endonuclease isolated in Roman numeral chronological order.</p>
+  </div>
+</div>
+
+</body>
+</html>

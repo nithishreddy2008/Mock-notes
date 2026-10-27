@@ -1,116 +1,350 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
+<title>Biotechnology: Principles & Processes Master Concept Mindmap</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
-  .wrap { width: 1480px; height: 1080px; position: relative; background: #fff; }
-  svg.wires { position: absolute; inset: 0; width: 1480px; height: 1080px; }
-  .center {
-    position: absolute; left: 530px; top: 395px; width: 420px; height: 100px;
-    background: #071A4D; border-radius: 16px; display: flex; flex-direction: column;
-    align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(7,26,77,.25);
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* Header */
+  .header {
+    height: 64px;
+    background: #071A4D;
+    padding: 0 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 4px solid #B8FF34;
+  }
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .header-title {
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+  }
+  .header-badge {
+    background: #1F5EFF;
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 9px;
+    border-radius: 6px;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+  }
+  .header-right {
+    color: #B8FF34;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+  }
+
+  /* Canvas Layout */
+  .mindmap-canvas {
+    width: 1440px;
+    height: 816px;
+    position: relative;
+    padding: 16px 24px;
+  }
+
+  /* SVG Wires */
+  svg.wires {
+    position: absolute;
+    inset: 0;
+    width: 1440px;
+    height: 816px;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* Center Hub */
+  .center-hub {
+    position: absolute;
+    left: 530px;
+    top: 295px;
+    width: 380px;
+    height: 94px;
+    background: #071A4D;
+    border-radius: 12px;
     border-bottom: 5px solid #B8FF34;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    box-shadow: none !important;
   }
-  .center .t { color: #fff; font-size: 22px; font-weight: 800; letter-spacing: .5px; }
-  .center .s { color: #B8FF34; font-size: 13px; font-weight: 700; letter-spacing: 2px; margin-top: 4px; }
+  .center-hub-title {
+    color: #FFFFFF;
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+    text-align: center;
+  }
+  .center-hub-subtitle {
+    color: #B8FF34;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-top: 4px;
+  }
+
+  /* Module Cards */
   .card {
-    position: absolute; width: 470px; background: #FCFDFF; border: 1.5px solid #D5DCEA;
-    border-radius: 14px; padding: 13px 16px 12px;
+    position: absolute;
+    width: 410px;
+    background: #FFFFFF;
+    border: 1.5px solid #CBD5E1;
+    border-radius: 9px;
+    padding: 10px 14px 9px;
+    z-index: 5;
+    box-shadow: none !important;
   }
-  .card h2 { font-size: 20px; color: #071A4D; font-weight: 800; margin-bottom: 7px;
-             padding-bottom: 5px; border-bottom: 3px solid; display: inline-block; }
-  .leaf { font-size: 14.5px; color: #1B2333; margin: 5px 0; padding-left: 16px; position: relative; line-height: 1.32; }
-  .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
-  .b .leaf::before { background: #1F5EFF; }
-  .l .leaf::before { background: #7FB800; }
-  .leaf b { color: #071A4D; }
-  .b h2 { border-color: #1F5EFF; }
-  .l h2 { border-color: #7FB800; }
-  .left { left: 30px; }
-  .right { left: 980px; }
-  .exc {
-    position: absolute; left: 530px; top: 890px; width: 420px; background: #FFF3EC;
-    border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px;
+  .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    border-bottom: 2px solid #F1F5F9;
   }
-  .exc h2 { font-size: 17px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
-  .exc .leaf { font-size: 13px; margin: 3px 0; padding-left: 14px; color: #7A2A12; }
-  .exc .leaf::before { background: #D2481F; }
-  .exc b { color: #B4380F; }
+  .card-title {
+    font-size: 13px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .card-badge {
+    font-size: 9.5px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+  .item-list {
+    font-size: 11px;
+    line-height: 1.34;
+    color: #1E293B;
+    display: flex;
+    flex-direction: column;
+    gap: 3.5px;
+  }
+  .item-list b { color: #071A4D; }
+
+  /* Positions */
+  .c-enzymes {
+    left: 28px;
+    top: 20px;
+    border-top: 3px solid #3B82F6;
+  }
+  .c-vectors {
+    left: 28px;
+    top: 242px;
+    border-top: 3px solid #8B5CF6;
+  }
+  .c-competence {
+    left: 28px;
+    top: 464px;
+    border-top: 3px solid #10B981;
+  }
+
+  .c-isolation {
+    right: 28px;
+    top: 20px;
+    border-top: 3px solid #F59E0B;
+  }
+  .c-pcr {
+    right: 28px;
+    top: 242px;
+    border-top: 3px solid #EF4444;
+  }
+  .c-bioreactor {
+    right: 28px;
+    top: 464px;
+    border-top: 3px solid #06B6D4;
+  }
+
+  /* Bottom Warning Trap Box */
+  .c-traps {
+    position: absolute;
+    left: 450px;
+    top: 686px;
+    width: 540px;
+    background: #FFFBEB;
+    border: 1.5px solid #F59E0B;
+    border-radius: 8px;
+    padding: 8px 14px;
+    z-index: 5;
+    box-shadow: none !important;
+  }
+  .trap-title {
+    font-size: 11.5px;
+    font-weight: 800;
+    color: #B45309;
+    margin-bottom: 3px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .trap-text {
+    font-size: 10.2px;
+    line-height: 1.3;
+    color: #78350F;
+  }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <svg class="wires" viewBox="0 0 1480 1080">
-    <path d="M 530 420 C 480 420, 520 165, 502 160" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
-    <path d="M 530 435 C 520 435, 520 430, 502 430" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 530 455 C 480 455, 520 705, 502 710" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
-    <path d="M 950 420 C 1000 420, 960 165, 978 160" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 950 435 C 960 435, 960 430, 978 430" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
-    <path d="M 950 455 C 1000 455, 960 705, 978 710" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 740 495 C 740 640, 740 820, 740 888" fill="none" stroke="#D2481F" stroke-width="2.5" stroke-dasharray="7 5" opacity=".6"/>
+
+<div class="header">
+  <div class="header-left">
+    <div class="header-title">Biotechnology: Principles & Processes Master Concept Mindmap</div>
+    <div class="header-badge">CUET UG Biology</div>
+  </div>
+  <div class="header-right">MOCK · PRACTICE · CRACK · 2027 CYCLE</div>
+</div>
+
+<div class="mindmap-canvas">
+
+  <!-- SVG Orthogonal Connections -->
+  <svg class="wires">
+    <!-- Hub to Enzymes (top-left) -->
+    <path d="M 530 320 H 460 V 110 H 438" fill="none" stroke="#3B82F6" stroke-width="2.2" stroke-linecap="round"/>
+    <!-- Hub to Vectors (mid-left) -->
+    <path d="M 530 342 H 460 V 330 H 438" fill="none" stroke="#8B5CF6" stroke-width="2.2" stroke-linecap="round"/>
+    <!-- Hub to Competence (bottom-left) -->
+    <path d="M 530 365 H 460 V 550 H 438" fill="none" stroke="#10B981" stroke-width="2.2" stroke-linecap="round"/>
+
+    <!-- Hub to Isolation (top-right) -->
+    <path d="M 910 320 H 980 V 110 H 1002" fill="none" stroke="#F59E0B" stroke-width="2.2" stroke-linecap="round"/>
+    <!-- Hub to PCR (mid-right) -->
+    <path d="M 910 342 H 980 V 330 H 1002" fill="none" stroke="#EF4444" stroke-width="2.2" stroke-linecap="round"/>
+    <!-- Hub to Bioreactor (bottom-right) -->
+    <path d="M 910 365 H 980 V 550 H 1002" fill="none" stroke="#06B6D4" stroke-width="2.2" stroke-linecap="round"/>
+
+    <!-- Hub to Traps (bottom center) -->
+    <path d="M 720 389 V 686" fill="none" stroke="#F59E0B" stroke-width="2" stroke-dasharray="4 4"/>
   </svg>
 
-  <div class="center">
-    <div class="t">BIOTECHNOLOGY: PRINCIPLES &amp; PROCESSES</div>
-    <div class="s">UNIT IX &#183; COMPLETE CHAPTER MAP</div>
+  <!-- Center Hub -->
+  <div class="center-hub">
+    <div class="center-hub-title">BIOTECHNOLOGY: PRINCIPLES &amp; PROCESSES</div>
+    <div class="center-hub-subtitle">UNIT IX · COMPLETE NCERT ARCHITECTURE</div>
   </div>
 
-  <div class="card left b" style="top:62px">
-    <h2>Principles — the Two Arms</h2>
-    <div class="leaf"><b>EFB definition:</b> using live organisms or enzymes to make a useful product at scale</div>
-    <div class="leaf"><b>Arm 1 — genetic engineering:</b> change the DNA itself — cut, paste and transfer genes</div>
-    <div class="leaf"><b>Arm 2 — bioprocess engineering:</b> grow cells in bioreactors to make product in bulk</div>
-    <div class="leaf"><b>Why not breeding?</b> Breeding mixes whole genomes randomly; rDNA moves one known gene only</div>
+  <!-- Top-Left: Enzymes & Electrophoresis -->
+  <div class="card c-enzymes">
+    <div class="card-header">
+      <span class="card-title">1. Restriction Enzymes & Gel Analysis</span>
+      <span class="card-badge" style="background:#DBEAFE; color:#1E40AF;">Molecular Tools</span>
+    </div>
+    <div class="item-list">
+      <div>• <b>First Restriction Endonuclease:</b> <b>Hind II</b>; recognizes and cuts at a specific 6 bp palindromic sequence.</div>
+      <div>• <b>EcoRI Cleavage Site:</b> 5'-GAATTC-3' / 3'-CTTAAG-5'; cuts between G and A leaving cohesive <b>sticky ends</b>.</div>
+      <div>• <b>Nomenclature Rule:</b> E = <i>Escherichia</i>, co = <i>coli</i>, R = strain RY13, I = order of discovery.</div>
+      <div>• <b>Gel Electrophoresis:</b> Negatively charged DNA migrates to <b>anode (+)</b> through agarose; smaller bands travel farthest.</div>
+      <div>• <b>Staining & Elution:</b> Stained with <b>Ethidium Bromide (EtBr)</b>, glows bright <b>orange</b> under UV light. Excision = <b>Elution</b>.</div>
+    </div>
   </div>
 
-  <div class="card left l" style="top:330px">
-    <h2>Tools of rDNA Technology</h2>
-    <div class="leaf"><b>Restriction enzymes:</b> molecular scissors — EcoRI cuts GAATTC into sticky ends</div>
-    <div class="leaf"><b>Cloning vectors:</b> plasmids like pBR322 — need ori, selectable marker, cloning sites</div>
-    <div class="leaf"><b>Competent host:</b> CaCl&#8322; + cold shock makes cell walls let rDNA in</div>
-    <div class="leaf"><b>Other entry routes:</b> micro-injection, gene gun (biolistics), electroporation</div>
+  <!-- Mid-Left: Cloning Vectors & pBR322 -->
+  <div class="card c-vectors">
+    <div class="card-header">
+      <span class="card-title">2. Cloning Vectors & pBR322 Plasmid</span>
+      <span class="card-badge" style="background:#EDE9FE; color:#5B21B6;">Vehicles</span>
+    </div>
+    <div class="item-list">
+      <div>• <b>Essential Features:</b> <b>ori</b> (initiates replication & controls copy number); <b>rop</b> (replication of plasmid proteins).</div>
+      <div>• <b>Selectable Markers:</b> Differentiate transformants from non-transformants (<i>ampr</i> and <i>tetr</i>).</div>
+      <div>• <b>Cloning Sites on pBR322:</b> PstI and PvuI inside <i>ampr</i>; BamHI and SalI inside <i>tetr</i>; EcoRI, ClaI, HindIII elsewhere.</div>
+      <div>• <b>Insertional Inactivation (BamHI):</b> Inserting foreign DNA into BamHI disrupts <i>tetr</i>; cell stays ampicillin-resistant but becomes <b>tetracycline-sensitive</b>.</div>
+      <div>• <b>Blue-White Selection:</b> Inactivation of β-galactosidase (<i>lacZ</i>); <b>white colonies</b> = recombinants; blue = non-recombinant.</div>
+    </div>
   </div>
 
-  <div class="card left b" style="top:600px">
-    <h2>rDNA Process — End to End</h2>
-    <div class="leaf"><b>Isolate:</b> lysozyme + EDTA open cells; RNase + protease clean the DNA</div>
-    <div class="leaf"><b>Separate:</b> agarose gel — fragments run to the + electrode, smallest run fastest</div>
-    <div class="leaf"><b>Cut + ligate:</b> same enzyme for gene and vector; DNA ligase seals the paste</div>
-    <div class="leaf"><b>Transfer + select:</b> into host; antibiotic plates pick out the transformed cells</div>
+  <!-- Bottom-Left: Host Competence & Gene Transfer -->
+  <div class="card c-competence">
+    <div class="card-header">
+      <span class="card-title">3. Host Competence & Gene Delivery</span>
+      <span class="card-badge" style="background:#D1FAE5; color:#065F46;">Transformation</span>
+    </div>
+    <div class="item-list">
+      <div>• <b>Chemical Competence (Bacteria):</b> Divalent cation (Ca<sup>2+</sup>) treatment + <b>heat shock (42°C)</b> and rapid ice cooling.</div>
+      <div>• <b>Micro-injection:</b> Recombinant DNA directly injected into the nucleus of an animal cell using micro-pipettes.</div>
+      <div>• <b>Biolistics (Gene Gun):</b> High-velocity microscopic pellets of <b>gold or tungsten</b> coated with DNA fired into plant cells.</div>
+      <div>• <b>Plant Vector:</b> Disarmed <b>Ti plasmid</b> of <i>Agrobacterium tumefaciens</i> (natural genetic engineer of dicot plants).</div>
+      <div>• <b>Animal Vector:</b> Disarmed <b>retroviruses</b> used to introduce beneficial genes into mammalian host cells.</div>
+    </div>
   </div>
 
-  <div class="card right l" style="top:62px">
-    <h2>PCR — the DNA Photocopier</h2>
-    <div class="leaf"><b>Denaturation:</b> ~94–95&#176;C — the two DNA strands separate</div>
-    <div class="leaf"><b>Primer annealing:</b> ~50–60&#176;C — short primers sit on the strand ends</div>
-    <div class="leaf"><b>Extension:</b> 72&#176;C — Taq polymerase (from <i>Thermus aquaticus</i>) builds new DNA</div>
-    <div class="leaf"><b>Exponential:</b> 1 copy &#8594; 2 &#8594; 4 &#8594; 8 &#8594; 16 — each cycle doubles the count</div>
+  <!-- Top-Right: DNA Isolation & Purification -->
+  <div class="card c-isolation">
+    <div class="card-header">
+      <span class="card-title">4. Isolation & Purification of Genetic Material</span>
+      <span class="card-badge" style="background:#FEF3C7; color:#92400E;">Extraction</span>
+    </div>
+    <div class="item-list">
+      <div>• <b>Cell Wall Digestion:</b> <b>Lysozyme</b> for bacteria, <b>Cellulase</b> for plant cells, <b>Chitinase</b> for fungi.</div>
+      <div>• <b>Macromolecule Removal:</b> RNA digested by <b>Ribonuclease (RNase)</b>; proteins digested by <b>Proteases</b>.</div>
+      <div>• <b>Alcohol Precipitation:</b> Addition of <b>chilled ethanol</b> precipitates pure DNA as a collection of fine threads.</div>
+      <div>• <b>Spooling:</b> Physical extraction and spooling of purified DNA threads onto a glass rod.</div>
+    </div>
   </div>
 
-  <div class="card right b" style="top:330px">
-    <h2>Bioreactors</h2>
-    <div class="leaf"><b>Job:</b> grow engineered cells in bulk — a 100–1000 L stirred vessel, not a flask</div>
-    <div class="leaf"><b>Controls:</b> temperature &#183; pH &#183; oxygen &#183; agitator &#183; foam breaker</div>
-    <div class="leaf"><b>Simple stirred-tank:</b> paddles mix; <b>sparged</b> = air bubbled through from below</div>
-    <div class="leaf"><b>Raw material:</b> cheap sugars + salts + optimum conditions = more product</div>
+  <!-- Mid-Right: Polymerase Chain Reaction (PCR) -->
+  <div class="card c-pcr">
+    <div class="card-header">
+      <span class="card-title">5. Polymerase Chain Reaction (PCR)</span>
+      <span class="card-badge" style="background:#FEE2E2; color:#991B1B;">In Vitro Synthesis</span>
+    </div>
+    <div class="item-list">
+      <div>• <b>Inventor:</b> Developed by <b>Kary Mullis (1983)</b> for in vitro billion-fold gene amplification ($2^n$).</div>
+      <div>• <b>Step 1 (Denaturation, 94°C):</b> Thermal separation of double-stranded DNA into single template strands.</div>
+      <div>• <b>Step 2 (Annealing, 54°C):</b> Two sets of synthetic oligonucleotide <b>primers</b> anneal to 3' ends of templates.</div>
+      <div>• <b>Step 3 (Extension, 72°C):</b> Thermostable <b>Taq polymerase</b> synthesizes strands using dNTPs and Mg<sup>2+</sup>.</div>
+      <div>• <b>Taq Source:</b> Isolated from thermophilic bacterium <i>Thermus aquaticus</i>; withstands 95°C temperatures.</div>
+    </div>
   </div>
 
-  <div class="card right l" style="top:600px">
-    <h2>Downstream Processing (DSP)</h2>
-    <div class="leaf"><b>Separation:</b> pull the product out of the spent cells and broth</div>
-    <div class="leaf"><b>Purification:</b> strip out water, salts and leftover cell parts</div>
-    <div class="leaf"><b>Formulation:</b> add preservatives; shape it into tablets, syrup or injection</div>
-    <div class="leaf"><b>Quality control + trials:</b> clinical testing before the product reaches a shelf</div>
+  <!-- Bottom-Right: Bioreactors & Downstream -->
+  <div class="card c-bioreactor">
+    <div class="card-header">
+      <span class="card-title">6. Bioreactors & Downstream Processing</span>
+      <span class="card-badge" style="background:#CFFAFE; color:#0E7490;">Scaling Up</span>
+    </div>
+    <div class="item-list">
+      <div>• <b>Bioreactors (100–1000 L):</b> Provide optimal growth conditions (pH, temperature, oxygen, salts, substrate).</div>
+      <div>• <b>Simple vs Sparged Tank:</b> Simple stirred tank has curved base & flat agitator; sparged tank bubbles air to boost surface area.</div>
+      <div>• <b>Upstream Processing:</b> Inoculation, media preparation, fermentation, and recombinant protein synthesis.</div>
+      <div>• <b>Downstream Processing:</b> <b>Separation + Purification</b> of the target product, followed by addition of <b>preservatives</b>.</div>
+      <div>• <b>Quality Control (QC):</b> Stringent QC testing and clinical trials (for therapeutics) before commercial release.</div>
+    </div>
   </div>
 
-  <div class="exc">
-    <h2>COMMON ERRORS &amp; TRAPS</h2>
-    <div class="leaf"><b>EcoRI leaves sticky ends,</b> not blunt — the overhang is the whole point of pasting</div>
-    <div class="leaf"><b>Gel separates by size,</b> not charge — the charge (phosphate) is the same for every fragment</div>
-    <div class="leaf"><b>The selectable marker lives in the vector,</b> not in the host cell</div>
+  <!-- Bottom Traps Box -->
+  <div class="c-traps">
+    <div class="trap-title">⚠️ High-Yield CUET Pitfalls & Traps to Avoid</div>
+    <div class="trap-text">
+      <b>1.</b> EcoRI cuts specifically between <b>G and A</b> ($5'-"G ↓ AATTC"-3'$), NOT in the exact center!<br>
+      <b>2.</b> <i>Thermus aquaticus</i> is a <b>thermophilic bacterium</b>, NOT an archaebacterium.<br>
+      <b>3.</b> In Blue-White screening, <b>white colonies</b> are the recombinants (inactivated lacZ), blue are non-recombinants.<br>
+      <b>4.</b> Gene gun (biolistics) microprojectiles are made of <b>gold or tungsten</b>, used for plant cells.
+    </div>
   </div>
+
 </div>
+
 </body>
 </html>

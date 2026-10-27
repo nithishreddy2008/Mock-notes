@@ -7,802 +7,488 @@
   subtitle: "Official Syllabus Unit IX · Class 12 · CUET UG 2027 Cycle Notes",
 )
 
-= Syllabus Alignment
+= Syllabus Alignment & Exam Blueprint
 
+#set table(inset: (x: 4pt, y: 2.2pt))
+#set text(size: 8.8pt)
 #table(
-  columns: (1.05fr, 1.9fr, 1.25fr),
-  table.header[*Sub-topic*][*Official syllabus pointer (NTA CUET(UG) Biology syllabus 2026, the current 2027 baseline, Unit IX)*][*Skills the questions test*],
-  [*Principles of biotechnology*], [
-    Principles and Processes : Principles of biotechnology;
+  columns: (1.1fr, 1.9fr, 1.2fr),
+  table.header[*Sub-Topic*][*Official NTA CUET UG Syllabus Scope*][*High-Yield Exam Focus*],
+  [*Core Principles of Biotech*], [
+    Principles of biotechnology: Genetic engineering and bioprocess engineering; EFB definition.
   ], [
-    Stating the EFB definition, naming the two arms (genetic engineering + bioprocess engineering), arguing why direct gene transfer beats slow traditional breeding.
+    Traditional vs modern biotech; Cohen & Boyer (1972) first rDNA; aseptic bioprocess culture.
   ],
-  [*Tools of rDNA technology — restriction enzymes*], [
-    Principles and Processes : Tools of recombinant DNA technology – restriction enzymes, cloning vectors, competent host.
+  [*Restriction Endonucleases*], [
+    Tools of rDNA technology: Restriction enzymes, nomenclature, recognition sites, and cleavage.
   ], [
-    Decoding the EcoRI name, palindromic recognition sequences, sticky ends vs blunt ends, exonuclease vs endonuclease.
+    _Hind II_ (first enzyme); _EcoRI_ palindrome (5'-GAATTC-3'); sticky vs blunt ends; exonuclease vs endonuclease.
   ],
-  [*Tools — cloning vectors*], [
-    Principles and Processes : Tools of recombinant DNA technology – restriction enzymes, cloning vectors, competent host.
+  [*Gel Electrophoresis*], [
+    Separation and isolation of DNA fragments by agarose gel electrophoresis.
   ], [
-    Listing ori, selectable marker and cloning sites; pBR322 details; Ti plasmid and retroviruses as alternatives.
+    Negative charge (anode migration); sieving effect (size separation); EtBr staining + UV orange bands; Elution.
   ],
-  [*Tools — competent host*], [
-    Principles and Processes : Tools of recombinant DNA technology – restriction enzymes, cloning vectors, competent host.
+  [*Cloning Vectors & pBR322*], [
+    Cloning vectors: Origin of replication (_ori_), selectable markers, cloning sites, pBR322 anatomy.
   ], [
-    CaCl#sub[2] competency, micro-injection, gene gun (biolistics) and electroporation.
+    _ori_ copy number; _rop_; _amp#super[R]_ (PstI/PvuI) & _tet#super[R]_ (BamHI/SalI); insertional inactivation; blue-white selection.
   ],
-  [*Processes — isolation of DNA*], [
-    Processes of rDNA technology – isolation, amplification of gene (PCR), insertion of rDNA in host and bioreactors; Downstream processing.
+  [*Competent Host & Transfer*], [
+    Competent host for transformation: Chemical treatment, physical and biological gene transfer.
   ], [
-    Cell lysis (lysozyme, EDTA), RNase and protease clean-up, chilled ethanol precipitation.
+    Ca#super[2+] & heat shock (42°C); micro-injection (animals); gene gun/biolistics (gold/tungsten, plants); disarmed Ti plasmid.
   ],
-  [*Processes — amplification (PCR)*], [
-    Processes of rDNA technology – isolation, amplification of gene (PCR), insertion of rDNA in host and bioreactors; Downstream processing.
+  [*DNA Isolation & PCR*], [
+    Processes of rDNA technology: Isolation of DNA, amplification of gene of interest by PCR.
   ], [
-    The three temperature steps, Taq polymerase and its source, doubling copy numbers per cycle.
+    Lysozyme/cellulase/chitinase; chilled ethanol precipitation; PCR steps (Denaturation 94°C, Annealing 54°C, Taq Extension 72°C).
   ],
-  [*Processes — insertion of rDNA in host*], [
-    Processes of rDNA technology – isolation, amplification of gene (PCR), insertion of rDNA in host and bioreactors; Downstream processing.
+  [*Bioreactors & Downstream*], [
+    Bioreactors (stirred vs sparged); downstream processing, separation, purification, and quality control.
   ], [
-    Matching sticky ends, DNA ligase, transfer routes, selection of transformed cells.
-  ],
-  [*Processes — bioreactors*], [
-    Processes of rDNA technology – isolation, amplification of gene (PCR), insertion of rDNA in host and bioreactors; Downstream processing.
-  ], [
-    Vessel controls — temperature, pH, oxygen, foam, agitation; simple stirred-tank vs sparged.
-  ],
-  [*Downstream processing*], [
-    Processes of rDNA technology – isolation, amplification of gene (PCR), insertion of rDNA in host and bioreactors; Downstream processing.
-  ], [
-    Separation, purification, formulation, quality control and clinical trials.
+    Simple stirred vs sparged tank; oxygen delivery & foam breaking; downstream processing (separation + purification + formulation).
   ],
 )
 
-#exam-pointer[
-  CUET UG pattern (NTA official information bulletin and syllabus, 2026 cycle — the
-  current 2027 baseline): each subject paper carries *50 compulsory questions* in
-  *60 minutes*, with $+5$ for every correct answer and $-1$ for every incorrect answer. The Biology paper maps strictly to NCERT
-  Class 12, and Unit IX opens the modern-biology block: this topic supplies the
-  toolkit vocabulary every application question in the next topic rests on.
+#v(4pt)
+#set text(size: 9pt)
+#exam-pointer(title: "CUET High-Yield Exam Architecture & Weightage Guide")[
+  *Biotechnology: Principles and Processes* is one of the most core conceptually rigorous chapters in CUET UG Biology, contributing *4 to 6 compulsory questions (16–24 marks)* per examination session. Questions rigorously probe: (1) Decoding the precise 4-part nomenclature of restriction enzymes (_EcoRI_); (2) Palindromic sequence recognition and cleavage polarity; (3) The agarose gel electrophoresis matrix principles (anode migration, EtBr orange fluorescence under UV, elution); (4) Vector anatomy of pBR322 (_ori_, _rop_, insertional inactivation of _tet#super[R]_ via BamHI); (5) The three sequential temperature stages of PCR ($94^circle "C" arrow.r 54^circle "C" arrow.r 72^circle "C"$) and the source organism of thermostable _Taq_ polymerase (_Thermus aquaticus_); and (6) Distinguishing upstream microbial biosynthesis from downstream separation, purification, and clinical quality control.
 ]
+
+#pagebreak()
+#set text(size: 10pt)
+#set table(inset: 5pt)
 
 = What Biotechnology Actually Is
 
-In 1982 the world's insulin supply quietly changed source. Until then, diabetic
-patients received insulin extracted from the pancreases of slaughtered pigs and
-cattle — litres of pancreas for every small bottle. Then scientists pasted the
-*human* insulin gene into a bacterium, and ordinary bacterial cells began
-brewing real human insulin in tanks. That trick — borrowing a working recipe
-from one organism and pasting it into another — is the heart of this chapter.
-Before the tools, learn exactly what the subject claims to be.
+Biotechnology deals with techniques that utilize living organisms or biological enzymes from organisms to produce products and processes beneficial to humankind. In traditional terms, making curd, bread, wine, and beer relies on natural microbial processes. Modern biotechnology, however, refers specifically to processes that manipulate the genetic architecture of cells to synthesize novel biomolecules on a commercial scale.
 
-- *The official definition:* the European Federation of Biotechnology (EFB)
-  defines biotechnology as the integration of natural science and organisms,
-  cells, parts thereof, and molecular analogues — in plain words, *using living
-  things, their cells or their enzymes to make useful products and services*.
-- *Products and services:* a "product" can be a medicine such as insulin, a
-  food such as cheese, or a chemical; a "service" can be waste treatment or a
-  diagnostic test.
-- *Old vs new:* brewing, baking and curd-making used microbes for thousands of
-  years (classical biotechnology); what is new is *direct, deliberate editing
-  of DNA* (modern biotechnology) — the focus of this unit.
-- *One chapter, two halves:* this PDF covers the *principles and processes*
-  (the how-to toolkit); the next topic covers the *applications* (what the
-  toolkit has built).
+== The Two Core Principles of Modern Biotechnology
 
-== The two arms of modern biotechnology
+Modern biotechnology was birthed and enabled by two foundational engineering principles:
 
-Modern biotechnology stands on two legs, and every exam question in this unit
-sits under one of them. Learn them as a pair.
+1. *Genetic Engineering (Recombinant DNA Technology):*
+   - Techniques that chemically alter the nature of genetic material (DNA and RNA) in vitro.
+   - Introducing this foreign recombinant DNA into host organisms alters the phenotype of the host, enabling it to synthesize desirable proteins or metabolites that it could never naturally produce.
+   - Traditional sexual hybridization inevitably combines undesirable genes alongside desirable ones. Genetic engineering circumvents this limitation, permitting the isolation and precise transfer of *only the desirable gene of interest* without unwanted genetic baggage.
 
-- *Genetic engineering — changing the DNA:* techniques that cut a chosen gene
-  out of one organism's DNA and paste it into another organism's DNA, so the
-  second organism gains a new, working instruction.
-- *Bioprocess engineering — growing cells at scale:* maintaining a sterile
-  environment in large vessels (bioreactors) so the modified cells multiply
-  and pour out the product in kilograms, not milligrams.
-- *Neither works alone:* engineering without scaling gives you a test-tube
-  worth of product; scaling without engineering grows useless cells. Insulin
-  needed *both* — a human gene in a bacterium, then industrial vats of that
-  bacterium.
+2. *Bioprocess Engineering (Chemical Engineering / Aseptic Processing):*
+   - Maintenance of completely sterile, contamination-free ambient conditions in chemical engineering processes.
+   - Enables the growth of *only the desired microorganism or eukaryotic cell* in massive quantities for the large-scale industrial manufacture of biotechnological products: antibiotics, vaccines, therapeutic enzymes, monoclonal antibodies, and recombinant hormones (such as Humulin human insulin).
 
-#formula-box(title: "The Two Arms — One Line Each")[
-  + *Genetic engineering:* change the DNA itself — cut, paste and transfer genes.
-  + *Bioprocess engineering:* grow the changed cells in big vessels to make product in bulk.
+== The European Federation of Biotechnology (EFB) Definition
+
+To bridge the traditional historical view of biotechnology with modern molecular genetic techniques, the *European Federation of Biotechnology (EFB)* formulated an integrated definition:
+
+#quote(attribution: [European Federation of Biotechnology (EFB)])[
+  "The integration of natural science and organisms, cells, parts thereof, and molecular analogues for products and services."
 ]
 
-== Why breeding alone is not enough
-
-Farmers have improved plants and animals for 10,000 years by *breeding* —
-mating the best individuals and hoping the offspring combine the wanted traits.
-Breeding works, but slowly and blindly. Sexual reproduction mixes *whole
-genomes* — every gene of both parents — so good and bad traits travel together,
-and the desired combination may take many generations to appear. Worse,
-breeding mostly works within closely related species. Genetic engineering
-skips all of this: it moves *one known gene*, chosen in advance, even across
-species as distant as bacterium to plant.
-
-#table(
-  columns: (1.15fr, 1.3fr, 1.3fr),
-  table.header[*Point*][*Traditional breeding*][*Genetic engineering (rDNA)*],
-  [What is transferred], [Whole genomes, mixed at random], [One specific, known gene],
-  [Speed], [Many generations, years], [One lab procedure, weeks],
-  [Precision], [Hoped-for; good and bad traits arrive together], [Exact — only the wanted gene moves],
-  [Species barrier], [Mostly only closely related species cross], [Bacterium → plant is possible],
-  [Predictability], [Offspring must be screened and re-crossed], [Outcome known from the design stage],
-)
-
-#analogy-box(title: "Everyday Example — Borrowing a Recipe")[
-  Think of DNA as an organism's *recipe book*, and one gene as *one recipe* in
-  it — say, the recipe for making a protein. Traditional breeding is like
-  swapping entire recipe books between two cooks and hoping each keeps the
-  pages they like. Genetic engineering is *photocopying a single page* — the
-  insulin recipe — and stapling it into another cook's book, so that cook now
-  also makes that dish. The mapping: gene = one recipe; organism = cook; the
-  new protein = the new dish it can prepare.
-]
-
-- *The payoff line:* because a gene is a portable instruction, *any* organism
-  that reads DNA can read a pasted-in gene — which is why a bacterium can make
-  a human protein without complaint.
-
-= Tool 1 — Restriction Enzymes: Molecular Scissors
-
-To paste one page from one recipe book into another, you need scissors that cut
-exactly at a chosen word, and tape that seals the page in. In biotechnology the
-scissors are *restriction enzymes* — enzymes that cut DNA at specific short
-sequences — and the tape is another enzyme, *DNA ligase*, that joins DNA pieces.
-Restriction enzymes occur naturally in bacteria, where they act as a defence
-system: they chop up invading virus DNA before the virus can take over the cell.
-Bacteria protect their own DNA by chemically marking it (methylation), so the
-scissors attack only unmarked, foreign DNA. Scientists purified these enzymes
-and turned a bacterial immune system into biology's most precise cutting tool.
-
-- *Restriction enzyme (restriction endonuclease):* an enzyme that recognises a
-  specific short sequence of DNA (mostly 4–8 base pairs) and cuts the DNA at
-  or near that site.
-- *Recognition sequence:* the exact "password" the enzyme reads before cutting.
-  Hundreds of these enzymes are known, each with its own password.
-- *Why the name "restriction":* the enzyme *restricts* the growth of infecting
-  viruses by cutting their DNA.
-- *The star of the chapter:* *EcoRI*, the first restriction enzyme isolated
-  from *Escherichia coli*, is the named example every question in this area
-  uses.
-
-== Decoding the name EcoRI
-
-Enzyme names look like codes, but each letter is a label of *where the enzyme
-came from*. Read the name EcoRI piece by piece — this decoding is a classic
-one-mark check.
-
-#formula-box(title: "EcoRI — Name Decoded, One Piece per Line")[
-  - *E* — the *genus*: *Escherichia*
-  - *co* — the *species*: *coli*
-  - *R* — the *strain*: RY13
-  - *I* — the *order found*: first enzyme from that strain
-]
-
-- *Read it as an address:* "the first (I) restriction enzyme found in strain R
-  (RY13) of *Escherichia coli*".
-- *The pattern generalises:* *BamHI* comes from *Bacillus amyloliquefaciens* H
-  (Bam), enzyme I; *HindIII* from *Haemophilus influenzae* d (Hind), enzyme III.
-  The Roman number always shows the order of discovery in that organism.
-- *Watch the order of discovery:* III means the *third* enzyme found, not the
-  third part of the name — questions shuffle this.
-
-== Palindromic recognition sequences
-
-Every restriction enzyme cuts only where it finds its exact password, and these
-passwords are *palindromes*. In everyday English a palindrome reads the same
-forwards and backwards (madam). A DNA palindrome is a step subtler: the
-sequence reads *the same on both strands when each is read in the 5′ to 3′
-direction*. Remember that the two strands of DNA run in opposite directions,
-so you read one strand left to right and the other right to left.
-
-#worked-example("Worked Example — Checking that GAATTC is a Palindrome")[
-  Write the double-stranded EcoRI site, then read *each* strand in its own 5′
-  to 3′ direction:
-
-  #table(
-    columns: (1fr, 2.2fr),
-    table.header[*Strand*][*Sequence (with direction)*],
-    [Strand 1], [5′ — G A A T T C — 3′ (read left to right)],
-    [Strand 2], [3′ — C T T A A G — 5′ (read right to left)],
-  )
-
-  Read strand 2 from its own 5′ end: it gives *G A A T T C* — the same
-  password. Both strands spell GAATTC, so the site is a *palindromic*
-  recognition sequence. Every restriction-enzyme site works this way.
-]
-
-- *Why palindromes matter:* a palindrome guarantees that the enzyme finds the
-  same password on *both* strands, so the cut is clean and reproducible.
-
-== Sticky ends and blunt ends — and the same-enzyme rule
-
-EcoRI does not cut the two strands of its recognition site at the same level.
-It cuts them *staggered*, leaving each fragment with a single-stranded
-overhang. These overhangs are called *sticky ends* because they can base-pair
-with any complementary overhang — they are the "glue-ready edges" of the DNA
-world. Enzymes that cut both strands level leave *blunt ends*, which are much
-harder to join.
-
-#worked-example("Worked Example — The GAATTC Cut, Step by Step")[
-  EcoRI cuts between the G and the A on *each* strand — but the strands are
-  offset, so the cuts are staggered:
-
-  #table(
-    columns: (1fr, 2.2fr),
-    table.header[*Stage*][*What the DNA looks like*],
-    [Before the cut], [Top strand: 5′ ... G ↓ A A T T C ... 3′ — paired with — bottom strand: 3′ ... C T T A A ↑ G ... 5′],
-    [After the cut], [Top strand ends as ...G and AATTC; bottom strand ends as CTTAA and G... — each piece keeps a single-stranded overhang],
-  )
-
-  - *The overhang:* each fragment now carries a single-stranded tail — AATTC on
-    one fragment, CTTAA on its partner — the *sticky ends*.
-  - *Why they are sticky:* A pairs with T and G pairs with C, so an AATTC tail
-    immediately base-pairs with any CTTAA tail it meets.
-]
-
-#formula-box(title: "The Same-Enzyme Rule")[
-  - Cut the *gene of interest* and the *vector* with the *same restriction enzyme*.
-  - Same enzyme $arrow$ same recognition site $arrow$ *complementary sticky ends*.
-  - Complementary ends base-pair; *DNA ligase* seals the sugar-phosphate backbone.
-]
-
-- *Why the rule exists:* the gene's tail and the vector's tail must *fit* —
-  two pieces cut by different enzymes often leave mismatched tails that
-  cannot pair.
-- *Ligase's job:* base-pairing only lines the pieces up; *DNA ligase* is the
-  enzyme that chemically seals the backbone, making the paste permanent.
-- *Sticky vs blunt in one line:* sticky ends = staggered cut with overhangs
-  (easy to join); blunt ends = level cut with no overhang (join poorly).
-
-= Tool 2 — Cloning Vectors: the Delivery Vehicle
-
-A cut-out gene cannot survive on its own. It cannot copy itself, it cannot get
-into a cell, and no lab bench magically multiplies it. The gene needs a
-*vehicle* — and in rDNA technology that vehicle is called a *vector*: a small
-DNA piece (generally a plasmid) into which the gene is pasted and which the host
-cell will happily copy for you. A *plasmid* is a small, circular,
-self-replicating DNA molecule found naturally in bacteria, separate from the
-bacterium's main chromosome. The vector carries the gene like a delivery van
-carries a parcel — and a good delivery van needs three fixed fittings plus a
-compact body.
-
-- *Origin of replication (ori):* the specific sequence where DNA copying
-  *starts*. A vector without an ori is dead cargo — the host cannot copy it.
-- *Copy number:* the ori also decides *how many copies* of the vector the host
-  makes. Choosing an ori with a high copy number means more gene copies — and
-  more product — per cell.
-- *Selectable marker:* a gene (generally an antibiotic-resistance gene) that
-  lets the scientist *spot which cells took the vector up*. Cells without the
-  marker die on the antibiotic plate; cells with it live.
-- *Cloning sites:* a handful of restriction-enzyme recognition sites where the
-  gene can be pasted in. Good vectors keep these sites *unique* — one cut
-  point each, so the enzyme cuts the vector at exactly one place.
-- *Small size:* smaller vectors enter host cells more easily and are simpler
-  to handle in the lab.
-
-== pBR322 — the named example, decoded
-
-#table(
-  columns: (1.1fr, 1.9fr),
-  table.header[*Feature of pBR322*][*What it does for the cloning job*],
-  [Name decoding], [*p* = plasmid; *BR* = Bolivar and Rodriguez, its builders; *322* = their experiment number.],
-  [ori], [Lets the plasmid multiply inside *E. coli*; a high copy number gives many gene copies.],
-  [Selectable markers], [Two antibiotic-resistance genes — $"amp"^"R"$ (ampicillin resistance) and $"tet"^"R"$ (tetracycline resistance).],
-  [Cloning sites], [Single recognition sites for enzymes such as *BamHI* and *HindIII* — most sit *inside* one marker gene.],
-  [Size], [Small and circular — easy to cut, easy to transfer, easy to map.],
-)
-
-- *The marker trick — insertional inactivation:* when a gene is pasted into a
-  site *inside* a marker gene (say $"tet"^"R"$), the inserted gene *breaks* that
-  marker — the cell loses tetracycline resistance. Recombinant cells are then
-  ampicillin-resistant but tetracycline-*sensitive*, while empty-vector cells
-  resist both. One plate each, and the two colony types separate cleanly.
-- *Why scientists care:* without insertional inactivation you cannot easily
-  tell a cell carrying the *gene* from a cell carrying only the *empty vector*.
-
-#analogy-box(title: "Everyday Example — The Delivery Van Checklist")[
-  Map every vector part onto a courier van: the *ori* is the engine (without
-  it nothing moves — no copying); the *selectable marker* is the van's
-  number plate, visible to the security guard at the gate (cells without the
-  plate never enter the warehouse); *cloning sites* are the one loading bay
-  where the parcel fits; and the *small size* is why the van — not a truck —
-  slips through city traffic. State the mapping once and every vector
-  question becomes a checklist, not a memory test.
-]
-
-== Beyond plasmids: Ti plasmid and retroviruses
-
-Plasmids work beautifully in bacteria, but plant and animal cells need their
-own delivery vehicles. Both borrowed vehicles below are used in *disarmed*
-form — their disease-causing parts are removed, leaving only the delivery
-parts.
-
-#table(
-  columns: (1.05fr, 1.5fr, 1.2fr),
-  table.header[*Vector*][*Where it comes from*][*What it is used for*],
-  [Ti plasmid], [Naturally carried by the soil bacterium *Agrobacterium tumefaciens*; it normally causes tumours (crown galls) in plants.],
-  [Delivering genes into *plants* — the tumour genes are disabled first, so the plasmid inserts the wanted gene without disease.],
-  [Retroviruses], [Viruses that naturally insert their RNA-made DNA into an animal host's genome.],
-  [Delivering genes into *animal cells* — disarmed of disease genes, they still insert payload DNA.],
-)
-
-- *The common logic:* both are *natural DNA-inserters* — evolution already
-  built the delivery machine, so biotechnologists removed the harm and kept
-  the machinery.
-
-= Tool 3 — The Competent Host
-
-Picture the task from the cell's point of view. Its wall and membrane exist to
-keep large, unwanted molecules *out*; DNA is a huge, negatively charged,
-water-loving molecule — exactly the kind of guest the door refuses. So even
-with a perfect vector in the test tube, nothing happens until the host cell is
-persuaded to open up. A *competent host* is a cell treated so that it can take
-up foreign DNA (the rDNA). Making cells competent, and pushing DNA through
-once they are, is Tool 3 — the *uptake* step of the syllabus.
-
-== Making cells competent: the CaCl#sub[2] method
-
-- *Treat with divalent cations:* cells are incubated in a solution of calcium
-  chloride ($"CaCl"_2$). The divalent calcium ions shield the negative charges
-  on both the DNA and the membrane surface, so the two stop repelling each
-  other.
-- *Cold and heat shock:* the chilled cells receive the rDNA, then a brief
-  warm shock makes the membrane momentarily loose — the rDNA slips through the
-  temporary gaps.
-- *Result:* the cell is now *competent* — able to take up DNA from outside.
-  Plating the mixture on an antibiotic medium then selects only the cells
-  that actually received the vector.
-- *Why this matters:* uptake is the step where rDNA finally *meets* a living
-  cell. A competent host converts a lab-tube molecule into a growing,
-  product-making organism.
-
-== Direct methods — when chemistry is not enough
-
-Some cells (many plant cells, animal cells, some bacteria) ignore calcium
-treatment. Then the DNA is delivered by force or by fields:
-
-#table(
-  columns: (1.1fr, 1.5fr, 1.1fr),
-  table.header[*Method*][*How the DNA gets in*][*Typical use*],
-  [Micro-injection], [A fine glass needle injects DNA *directly into the cell or nucleus* — one cell at a time.],
-  [Animal cells; one-cell embryos],
-  [Gene gun (biolistics)], [Tiny gold or tungsten particles coated with DNA are *shot* into cells at high speed.],
-  [Plant cells — their tough walls are no obstacle to a bullet],
-  [Electroporation], [Short pulses of electricity open *temporary pores* in the membrane; DNA enters through them.],
-  [Bacteria and many cultured cells],
-)
-
-- *All three share one idea:* the barrier is physical, so the solution is
-  physical — puncture it, shoot through it, or prise it open electrically.
-- *One name to know:* the gene gun technique is also called *biolistics*
-  ("biological ballistics") — questions give either name.
-
-#analogy-box(title: "Everyday Example — The Doorman at a Club")[
-  The host membrane is a doorman who blocks big, unknown guests. The
-  $"CaCl"_2$ + shock treatment is *slipping the doorman a tip* so he looks
-  away for a second (the DNA slips in). Micro-injection is *carrying the guest
-  in yourself*, past the doorman. The gene gun is a *fast courier flinging the
-  parcel over the wall*. Electroporation is *cutting the power to the door
-  lock* for one second. Different tricks, one aim: get DNA past a barrier
-  built to keep it out.
-]
-
-== The three tools at a glance
-
-#table(
-  columns: (0.8fr, 1.4fr, 1.4fr),
-  table.header[*Tool*][*Job in the pipeline*][*Named example*],
-  [Restriction enzyme], [Cut the gene and the vector at matching sticky ends], [EcoRI (GAATTC site)],
-  [Cloning vector], [Carry the gene; replicate it inside the host], [pBR322 ($"amp"^"R"$, $"tet"^"R"$); Ti plasmid; retroviruses],
-  [Competent host], [Take up the rDNA, multiply, express the gene], [$"CaCl"_2$-treated *E. coli*],
-)
-
-- *Revision habit:* say each tool's *job* before its name. The exam tests
-  jobs — "which tool copies the gene inside the host?" — and the name follows
-  from the job.
-
-= PCR — the Photocopier for DNA
-
-You have cut a gene out and cleaned it up. You have a few nanograms of it —
-barely enough to see on a gel. But every step that follows needs *millions* of
-copies of that one gene. Waiting for bacteria to copy it would take a day;
-making probes, fingerprints and diagnostic tests needs copies *now*. The
-answer is PCR — the *polymerase chain reaction* — a machine-driven recipe that
-doubles a chosen DNA segment every few minutes, entirely inside a small tube.
-Think of it as a photocopier for DNA: put in one page, come back to a
-library.
-
-- *PCR (polymerase chain reaction):* a laboratory method that makes *many
-  copies of a chosen DNA segment* using cycles of heating and cooling, an
-  enzyme, and short starter strands.
-- *Primers — the starters:* a *primer* is a short, single-stranded piece of
-  DNA that sits at the start of the region to be copied. DNA polymerase cannot
-  start building from nothing — it can only *extend* an existing strand, so
-  the primer is the starting handle.
-- *Two primers per reaction:* one for each strand, flanking the target —
-  they bracket exactly the piece of DNA you want.
-- *The enzyme:* a DNA polymerase — the builder enzyme — that survives the
-  boiling step of each cycle. More on that below.
-
-== The three steps, one per temperature
-
-Each PCR *cycle* runs the same three steps, and the only thing that changes
-between steps is the temperature of the tube:
-
-#formula-box(title: "PCR Cycle — the Three Temperatures")[
-  - *Step 1 — Denaturation (~94–95 °C):* heat breaks the hydrogen bonds, so the
-    double helix opens into two single strands.
-  - *Step 2 — Primer annealing (~50–60 °C):* cool slightly; the primers sit down
-    (anneal) on the strand ends they match.
-  - *Step 3 — Extension (72 °C):* *Taq polymerase* starts at each primer and
-    builds the new complementary strand along the template.
-]
-
-- *One cycle, one doubling:* every cycle copies each template strand, so the
-  number of copies *doubles* — 1 becomes 2, 2 become 4, 4 become 8.
-- *Automatic repetition:* a PCR machine (a *thermocycler*) repeats the cycle
-  30–40 times overnight unattended; 30 cycles give roughly a *billion* copies
-  from one.
-
-== Taq polymerase — the enzyme that refuses to boil
-
-The heat of denaturation (about 95 °C) would destroy an ordinary enzyme in the
-first cycle — a normal polymerase from a human cell unfolds and dies at that
-temperature. PCR works because its polymerase comes from *Thermus aquaticus*,
-a bacterium that lives in hot springs. Its enzyme, nicknamed *Taq polymerase*,
-is *thermostable*: it keeps working at 72 °C and survives repeated ~95 °C
-heating without falling apart.
-
-- *Why the source matters:* a hot-spring bacterium's proteins are built to
-  work hot — so its polymerase is a natural fit for a reaction that boils and
-  cools in a loop.
-- *The exam-visible pair:* Taq polymerase $arrow$ from *Thermus aquaticus* $arrow$
-  used at *72 °C*. Do not mix this temperature with the other two.
-- *Before Taq, PCR was impractical:* fresh enzyme had to be added after every
-  single cycle. The thermostable enzyme made the whole reaction run on autopilot.
-
-#worked-example("Worked Example — Counting PCR Copies")[
-  A tube starts with *1 copy* of the target DNA. Each complete cycle doubles
-  the count. Fill the table:
-
-  #table(
-    columns: (1fr, 1fr, 1fr),
-    table.header[*Cycles done*][*Calculation*][*Copies in the tube*],
-    [0], [start], [1],
-    [1], [1 $times$ 2], [2],
-    [2], [2 $times$ 2], [4],
-    [3], [4 $times$ 2], [8],
-    [4], [8 $times$ 2], [*16*],
-  )
-
-  General rule: after $n$ cycles, copies $= 1 times 2^n$. So 4 cycles from one
-  copy give $2^4 = 16$ copies. If a question starts with 50 copies, multiply
-  the starting number by $2^n$: 50 $times$ 16 $=$ 800 copies after 4 cycles.
-]
-
-#analogy-box(title: "Everyday Example — The Office Photocopier")[
-  PCR behaves like a photocopier with one strange rule: *every round doubles
-  the stack*. The mapping: the *page* you place on the glass is the target DNA
-  segment; the *printer setting* is the temperature programme (open the book,
-  place the guide marks, print); the *guide marks* telling the printer where
-  to copy are the primers; the *toner-and-drum unit* that never burns out even
-  after thousands of hot rounds is Taq polymerase; and the *stack on the tray*
-  doubles every round — 1, 2, 4, 8, 16. The copier never gets tired and never
-  needs a new drum — that is exactly the role the hot-spring enzyme plays.
-]
-
-= The rDNA Process, End to End
-
-Now assemble every tool into the full journey the syllabus lists: isolation,
-cutting, gel separation, ligation, transfer, selection, and scale-up. Read
-this section as one continuous pipeline — each stop feeds the next, and the
-flow figure at the end is your revision map.
-
-== Stop 1 — Isolate the DNA (and clean it)
-
-Genomic DNA sits inside cells, mixed with proteins, RNA and membrane grease.
-Isolation is really a *cleaning* job: break the cell open, then remove
-everything that is not DNA.
-
-- *Break the cell open (lysis):* bacterial cells are treated with *lysozyme*
-  (an enzyme that digests bacterial cell walls), plant cells with *cellulase*
-  and fungal cells with *chitinase*; detergents dissolve the membranes, and
-  *EDTA* is added to destabilise what is left of the envelope.
-- *Remove the RNA:* treat with *RNase* — an enzyme that destroys RNA but
-  leaves DNA untouched.
-- *Remove the proteins:* treat with *protease* — an enzyme that digests
-  proteins (including the histones DNA is wrapped around).
-- *Purify with chilled ethanol:* DNA is much less soluble in cold alcohol.
-  Adding *chilled ethanol* makes the purified DNA precipitate out as a tangle
-  of long threads that can be *spooled out* on a glass rod.
-- *Then cut out the gene:* the purified DNA is cut with the chosen restriction
-  enzyme, releasing the gene of interest among other fragments.
-
-#table(
-  columns: (1.15fr, 1.85fr),
-  table.header[*Clean-up agent*][*Job during isolation*],
-  [Lysozyme], [Digests the bacterial cell wall so the cell contents spill out.],
-  [Cellulase / chitinase], [Open plant cell walls (cellulase) and fungal walls (chitinase).],
-  [Detergents], [Dissolve cell and organelle membranes once the wall is open.],
-  [EDTA], [Destabilises the cell envelope and inactivates enzymes that would chew the DNA.],
-  [RNase], [Destroys RNA — leaves pure DNA behind.],
-  [Protease], [Destroys proteins, including the histone proteins around which DNA is wrapped.],
-  [Chilled ethanol], [Precipitates (throws out of solution) the purified DNA for collection.],
-)
-
-== Stop 2 — Gel electrophoresis: sort the pieces by size
-
-Cutting gives you a mixture: the gene of interest plus hundreds of other
-fragments. *Agarose gel electrophoresis* sorts them by size. The DNA mixture
-is loaded into wells in a slab of agarose (a jelly-like mesh), an electric
-field is switched on, and the fragments crawl through the mesh.
-
-- *Why DNA moves:* the phosphate backbone gives every DNA fragment a *negative
-  charge* — so all fragments crawl toward the *positive electrode*.
-- *What separates them:* the agarose mesh fights big fragments more than small
-  ones. Charge is the same for all fragments, so *size decides speed*: the
-  smallest fragments travel fastest and furthest.
-- *Seeing the bands:* DNA is colourless, so the gel is stained with
-  *ethidium bromide (EtBr)*, which glows *orange under UV light* — each
-  fragment size shows as a separate band.
-- *Elution — cutting out the band:* the wanted band is sliced out of the gel
-  and the DNA is extracted (*eluted*) from the gel piece. The pure gene is
-  now ready for ligation.
-
-#table(
-  columns: (1.2fr, 1.8fr),
-  table.header[*Electrophoresis fact*][*What you must remember*],
-  [Medium], [Agarose gel — a mesh that acts like a sieve for molecules.],
-  [Direction], [DNA is negatively charged $arrow$ moves to the positive electrode (anode).],
-  [Separation logic], [Same charge on every fragment; smaller fragments move fastest.],
-  [Stain + view], [Ethidium bromide stain, orange bands under UV light.],
-  [Elution], [Cut the wanted band out of the gel and extract the DNA from it.],
-)
-
-== Stops 3 to 5 — cut, ligate, transfer, select
-
-- *Cut the vector with the same enzyme:* matching sticky ends on the gene and
-  the vector (Tool 1's same-enzyme rule).
-- *Ligate:* DNA ligase seals the gene into the vector — the *recombinant DNA*
-  (rDNA) molecule now exists.
-- *Transfer:* the rDNA is mixed with competent host cells (Tool 3 — CaCl#sub[2]
-  method, or micro-injection, gene gun, electroporation for stubborn cells).
-- *Select:* cells are plated on antibiotic medium. Only transformed cells —
-  the ones carrying the vector with its resistance marker — form colonies.
-  Insertional inactivation can then separate *gene-carrying* colonies from
-  empty-vector colonies.
-
-== Stop 6 — scale up in a bioreactor
-
-One transformed colony is one clone — a group of identical cells all carrying
-your gene. But a colony is measured in milligrams, and a medicine is measured
-in kilograms. The selected clone is moved into a *bioreactor* — a large
-vessel that grows cells under precisely controlled conditions (the subject of
-the next section).
-
-#figure(image("assets/bio_rdna_flow.png", width: 100%), caption: [Figure 1 — How a gene is cloned: the seven stops of the rDNA journey, with PCR as the tube-only shortcut for multiplying the gene.])
-
-= Bioreactors and Downstream Processing
-
-A transformed colony in a petri dish makes milligrams of protein. A patient
-needs grams, every batch identical, every batch safe. Between the lab dish and
-the medicine cabinet stand two disciplines: *bioprocess engineering* (growing
-the cells big) and *downstream processing* (turning the broth into a clean,
-approved product). This section closes the process half of the unit — it is
-where biology hands over to industry.
-
-== The bioreactor: a factory in a vessel
-
-A *bioreactor* is a large vessel (typically 100–1000 litres) in which cells are
-grown under precisely controlled conditions so that they produce the maximum
-amount of product. A laboratory flask holds maybe 1 litre and offers no
-control; a bioreactor is the flask rebuilt as a factory — with instruments
-watching every condition that affects growth.
-
-- *Raw materials go in:* a cheap carbon source (commonly glucose), a nitrogen
-  source, salts and water — the cells' food.
-- *The cells go in:* the selected, transformed clone, grown up first in
-  smaller seed cultures.
-- *Optimum conditions are held constant:* the controller keeps temperature,
-  pH and oxygen at the levels the organism likes best — because yield depends
-  on conditions staying in the sweet spot.
-- *Product comes out:* the cells multiply and either secrete the product into
-  the broth or hold it inside, ready for harvest.
-
-#table(
-  columns: (1.15fr, 1.85fr),
-  table.header[*Bioreactor control*][*What it does and why it matters*],
-  [Temperature], [Kept at the organism's growth optimum — too cold is slow, too hot kills the enzyme machinery.],
-  [pH], [Held near the organism's preferred value with acid or alkali dosing.],
-  [Oxygen supply], [Aerating the broth — aerobic cells cannot make product without dissolved oxygen.],
-  [Agitator (stirrer)], [Paddles keep the broth mixed, so nutrients, oxygen and cells meet everywhere.],
-  [Foam breaker], [Stirring makes foam; the foam breaker knocks it down before it blocks the system.],
-)
-
-== Simple stirred-tank vs sparged stirred-tank
-
-Both designs below are "stirred-tank" bioreactors — vessels with a motor-driven
-stirrer. They differ only in *how air gets in*.
-
-#table(
-  columns: (1.05fr, 1.45fr, 1.45fr),
-  table.header[*Feature*][*Simple stirred-tank*][*Sparged stirred-tank*],
-  [Mixing], [Paddles (impellers) on a rotating shaft], [Paddles — same as simple type],
-  [Air entry], [Air is supplied and mixed in by the stirring action], [*Sparging* — sterile air is bubbled in through holes at the base of the vessel],
-  [Bubble contact], [Air meets broth mainly at the surface], [Bubbles rise through the whole broth — better oxygen transfer],
-  [Shared fittings], [Both carry an agitator, foam breaker, temperature and pH probes], [Identical control set],
-)
-
-- *One line to remember:* "sparged" simply means *bubbled in from below* —
-  the air holes are at the bottom of the vessel.
-
-== Downstream processing: from broth to medicine
-
-The moment the bioreactor run ends, the product is somewhere in a warm soup of
-cells, leftover glucose, salts and cell debris. No patient could take it, and
-no regulator would allow it. *Downstream processing* (DSP) is the set of steps
-that converts this soup into a finished, safe, sellable product. It happens
-*after* the fermentation/bioreactor stage — never before.
-
-- *Separation:* the product is pulled away from the cells — filtration or
-  centrifugation splits "cells" from "liquid broth" (or the cells are broken
-  open if the product stays inside them).
-- *Purification:* a series of extraction and purification steps removes water,
-  salts, leftover cell proteins and every other impurity, until the wanted
-  product stands nearly alone.
-- *Formulation:* the purified product is put into its delivery form —
-  stabilisers and preservatives are added, and the product becomes tablets,
-  syrup, injection vials or a spray.
-- *Quality control and clinical trials:* every batch is tested for identity,
-  strength and purity; a new biotech drug must also pass clinical trials
-  before it is approved for the market.
-
-#table(
-  columns: (1.05fr, 1.85fr, 1.1fr),
-  table.header[*DSP stage*][*What happens*][*Everyday picture*],
-  [Separation], [Cells removed from broth (or product extracted from cells)], [Straining the tea leaves out],
-  [Purification], [Impurities stripped away step by step], [Filtering ground coffee],
-  [Formulation], [Preservatives added; product shaped into its final form], [Packing the cake into a box],
-  [QC + trials], [Batch tested; new drugs trialled before approval], [Tasting check before serving],
-)
-
-#analogy-box(title: "Everyday Example — Brewing Tea for a Guest")[
-  The bioreactor is your *kettle brewing a huge pot* of tea — cells steeping in
-  warm broth under a watched temperature. But no guest drinks the pot as it
-  stands: you *strain out the leaves* (separation), *clear the liquor*
-  (purification), *add sugar and lemon and pour into cups* (formulation with
-  preservatives), and finally *check one spoonful* before serving (quality
-  control). The tea was "made" the moment it brewed — yet nobody would call it
-  served. That is exactly why *product ≠ medicine without downstream
-  processing*.
-]
-
-- *Carry this sentence into the exam:* fermentation makes the *product*;
-  downstream processing makes the *medicine*.
+== The First Recombinant DNA Molecule
+
+- *Historical Milestone:* The construction of the very first artificial recombinant DNA molecule was achieved in *1972 by Stanley Cohen and Herbert Boyer*.
+- *Experimental Execution:* Cohen and Boyer isolated an antibiotic resistance gene by cutting a piece of DNA from a plasmid carrying antibiotic resistance in the bacterium _Salmonella typhimurium_. They linked this excised gene with a plasmid vector and successfully transferred it into _Escherichia coli_, where it replicated autonomously using host DNA polymerase, creating multiple copies of the antibiotic resistance gene (gene cloning).
+
+= Tools of Recombinant DNA Technology
+
+Creating a recombinant DNA (rDNA) molecule requires five primary molecular tools:
+1. *Restriction Enzymes* ("Molecular Scissors").
+2. *DNA Ligases* ("Molecular Glue").
+3. *Polymerase Enzymes*.
+4. *Cloning Vectors* ("Gene Delivery Vehicles").
+5. *Competent Host Organisms*.
+
+== Restriction Enzymes: The Molecular Scissors
+
+In 1963, scientists discovered two enzymes in _Escherichia coli_ responsible for restricting the replication of bacteriophage viruses. One added methyl groups to bacterial DNA (methylase, protecting host DNA from self-cleavage), while the second cut foreign bacteriophage DNA. The latter was termed a *restriction endonuclease*.
+
+- *Hind II — The First Restriction Endonuclease:*
+  - Isolated and characterized by Smith, Wilcox, and Kelley in 1968.
+  - _Hind II_ always cuts DNA molecules at a specific point by recognizing a distinct sequence of *six base pairs*, termed its *recognition sequence*.
+- *Current Repertoire:* Today, more than 900 restriction enzymes have been isolated from over 230 distinct bacterial strains, each recognizing a distinct palindromic sequence.
+
+== Restriction Enzyme Nomenclature
+
+Restriction endonucleases are named following a strict universal four-part convention:
+- *First Letter:* Denotes the *Genus* of the bacterium (capitalized and italicized).
+- *Second & Third Letters:* Denote the *Species* of the bacterium (lowercase and italicized).
+- *Fourth Letter:* Denotes the specific *Strain* of the bacterium from which it was isolated.
+- *Roman Numeral:* Indicates the chronological *order of discovery/isolation* from that particular bacterial strain.
+- *Example (_EcoRI_):*
+  - *E* = Genus _Escherichia_.
+  - *co* = Species _coli_.
+  - *R* = Strain _RY13_.
+  - *I* = First endonuclease isolated from strain RY13.
+
+== Palindromic Sequences & Sticky Ends
+
+Restriction endonucleases belong to a larger class of enzymes called *nucleases*:
+- *Exonucleases:* Remove nucleotides from the terminal ends (5' or 3' ends) of the DNA molecule.
+- *Endonucleases:* Make specific internal cuts within the DNA molecule.
+
+Each restriction endonuclease inspects the length of DNA and binds to a specific *palindromic nucleotide sequence*. In DNA, a palindrome is a sequence of base pairs that reads identical on both complementary strands when read in the *same polarity ($5' arrow.r 3'$ or $3' arrow.r 5'$)*.
+
+- *EcoRI Cleavage Architecture:*
+  #align(center)[
+    `5' - G ↓ A A T T C - 3'`\
+    `3' - C T T A A ↑ G - 5'`
+  ]
+  _EcoRI_ cuts the phosphodiester bonds on both strands *a little away from the center of the palindrome*, between the identical *G and A bases*.
+- *Generation of Sticky Ends:* This staggered, asymmetric cleavage leaves single-stranded, overhanging nucleotide projections at the termini called *Sticky (Cohesive) Ends*. These sticky ends readily form complementary hydrogen bonds with corresponding overhanging sequences generated on any other DNA fragment cut with the *same restriction enzyme*.
+- *Ligation:* The enzyme *DNA Ligase* catalyzes the formation of covalent *phosphodiester bonds* between the adjacent 3'-hydroxyl and 5'-phosphate termini, permanently sealing the foreign gene into the vector backbone.
+
+#figure(image("assets/bio_rdna_pbr322_flow.png", width: 62%), caption: [Recombinant DNA tools & pBR322 vector architecture — restriction endonuclease palindromes, agarose gel electrophoresis, plasmid cloning sites, and selectable markers.])
+
+== Separation & Isolation of DNA: Agarose Gel Electrophoresis
+
+Following restriction digestion, the resulting fragments of DNA must be separated and analyzed using *Agarose Gel Electrophoresis*:
+- *Principle of Separation:*
+  - DNA fragments are *negatively charged* molecules due to the repetitive phosphate groups forming their backbone ($P O_4^(3-)$).
+  - Under an applied electric field, DNA fragments migrate toward the *positive electrode (anode)* through a porous matrix composed of *agarose* (a natural linear polysaccharide extracted from seaweeds).
+- *Sieving Effect:* The agarose gel matrix acts as a molecular sieve. DNA fragments separate strictly according to their molecular *size (length in base pairs)*:
+  $ "Smaller DNA Fragments" <==> "Less Frictional Resistance" <==> "Migrate Faster & Farther" $
+  $ "Larger DNA Fragments" <==> "High Frictional Resistance" <==> "Remain Closer to Wells" $
+- *Visualization:* DNA fragments cannot be seen directly under natural light. The gel must be stained with *Ethidium Bromide (EtBr)* and subsequently illuminated with *ultraviolet (UV) light*. DNA bands fluoresce as intense, bright *orange-colored bands*.
+- *Elution:* The desired band of DNA is cut out from the agarose gel slab, and the DNA is chemically extracted from the gel piece. This recovery procedure is termed *Elution*.
+
+= Cloning Vectors & Host Transformation
+
+A *cloning vector* is a small DNA molecule (plasmid or bacteriophage) capable of autonomous replication that acts as a delivery vehicle to carry a foreign DNA fragment into a host cell for cloning and expression. *Plasmids* are extra-chromosomal, circular, double-stranded, autonomously replicating DNA molecules naturally found in bacteria. *Bacteriophages* (viruses infecting bacteria) make superior vectors because they naturally exhibit high copy numbers per cell.
+
+== Essential Features of a Cloning Vector
+
+To function effectively, an engineered vector must possess four indispensable features:
+
+1. *Origin of Replication (_ori_):*
+   - A specific sequence of DNA where replication initiates. Any foreign DNA linked to _ori_ replicates within the host cell.
+   - Crucially, _ori_ controls the *copy number* of the linked DNA per cell. Vectors engineered with an _ori_ supporting high copy numbers yield large quantities of recombinant product.
+
+2. *Selectable Markers:*
+   - Genes that enable researchers to selectively identify and isolate *transformants* (cells that have taken up the vector) while eliminating *non-transformants* (cells that failed to take up the vector).
+   - *Classic Markers:* Genes conferring resistance to antibiotics such as *ampicillin (_amp_#super[R])*, *tetracycline (_tet_#super[R])*, *kanamycin*, and *chloramphenicol*. Normal _E. coli_ cells are naturally sensitive to all these antibiotics.
+
+3. *Cloning (Recognition) Sites:*
+   - The vector must have a *single, unique recognition site* for commonly used restriction enzymes.
+   - If a vector carries multiple recognition sites for the same enzyme, restriction cleavage will generate multiple fragments, complicating gene ligation.
+
+4. *Small Size:* Facilitates easy cellular uptake and manipulation.
+
+== The pBR322 Plasmid Vector & Insertional Inactivation
+
+*pBR322* was one of the earliest multipurpose cloning vectors developed by Bolivar and Rodriguez:
+- *Structural Loci:*
+  - Contains an *_ori_* (origin of replication) and a *_rop_* gene (codes for the proteins involved in the replication of the plasmid).
+  - Contains two antibiotic resistance marker genes: *ampicillin resistance (_amp_#super[R])* and *tetracycline resistance (_tet_#super[R])*.
+  - Recognition sites: The _amp_#super[R] gene contains unique sites for *_Pst I_* and *_Pvu I_*. The _tet_#super[R] gene contains unique sites for *_BamHI_* and *_Sal I_*. Other unique sites include *_EcoRI_*, *_Cla I_*, and *_Hind III_*.
+
+== The Mechanism of Insertional Inactivation
+
+When foreign DNA is ligated into a restriction site situated *inside a selectable marker gene*, the coding sequence of that marker is disrupted and destroyed. This loss of gene function is termed *Insertional Inactivation*:
+- *Example (Insertion at _BamHI_ Site):*
+  - Foreign gene is ligated into the _BamHI_ site of the _tet_#super[R] gene.
+  - The recombinant plasmid retains an intact _amp_#super[R] gene, but *loses tetracycline resistance*.
+  - *Selection Process:*
+    1. Cells are grown on nutrient agar containing ampicillin. All transformants (both recombinant and non-recombinant) survive and form colonies.
+    2. Colonies are replica-plated onto agar containing tetracycline. Non-recombinants survive and grow; *recombinants fail to grow and die*. By comparing plates, recombinant colonies are picked.
+
+== Alternative Selection: Blue-White Screening
+
+Replica plating with two antibiotics is labor-intensive and slow. Modern vectors utilize *insertional inactivation of an enzymatic marker*, enabling single-plate visual screening:
+- *Principle:* Foreign DNA is ligated into the coding sequence of the enzyme *$beta$-galactosidase* (encoded by the *_lacZ_* gene).
+- *Non-Recombinant Plasmids:* The _lacZ_ gene remains intact and produces active $beta$-galactosidase. When grown on medium containing a chromogenic substrate (*X-gal*), the enzyme hydrolyzes X-gal to form *bright blue-colored colonies*.
+- *Recombinant Plasmids:* Insertion of foreign DNA disrupts the _lacZ_ gene, preventing $beta$-galactosidase synthesis. Recombinant colonies fail to produce pigment, appearing as *white colonies*.
+- *Diagnostic Rule:* *White colonies = Recombinants*; *Blue colonies = Non-recombinants*.
+
+== Vectors for Plants and Animals
+
+- *Agrobacterium tumefaciens (Nature's Genetic Engineer of Plants):*
+  - A soil bacterium that naturally infects broad-leaved dicot plants, inducing crown gall tumors.
+  - The bacterium harbors a large plasmid called the *Ti (tumor-inducing) plasmid*. During infection, it transfers a segment of DNA termed *T-DNA* into host plant chromosomes, transforming normal cells into tumors that produce opines to nourish the bacterium.
+  - *Disarmed Vector:* Genetic engineers disarmed the Ti plasmid by removing the tumor-inducing genes while retaining the T-DNA transfer mechanism. It now serves as a reliable vehicle to introduce beneficial agricultural genes into plants.
+- *Retroviruses in Animals:* Disarmed animal retroviruses are stripped of viral oncogenes and engineered to deliver therapeutic human genes into mammalian cells for gene therapy.
+
+== Methods of Introducing rDNA into Competent Hosts
+
+DNA is a hydrophilic, negatively charged macromolecule that cannot cross the hydrophobic lipid bilayer of cell membranes. Host cells must be rendered *competent* to take up foreign DNA:
+
+1. *Chemical Competency & Heat Shock (Bacteria):*
+   - Bacterial cells are incubated with a specific concentration of divalent cations, notably *calcium ions ($C a^(2+)$)* from $C a C l_2$, which increases membrane permeability by creating transient pores.
+   - rDNA is added, and cells are subjected to a *heat shock at 42°C* for 90 seconds, followed by immediate transfer to ice. This rapid thermal shock forces the plasmid through the membrane pores.
+
+2. *Micro-injection (Animal Cells):*
+   - Recombinant DNA is directly micro-injected into the *nucleus of an animal cell* or zygote under a microscope using an ultra-fine glass micropipette.
+
+3. *Biolistics / Gene Gun (Plant Cells):*
+   - Microscopic microprojectiles made of inert heavy metals—*gold or tungsten*—are coated with recombinant DNA.
+   - High-pressure helium gas propels these coated microprojectiles at extreme velocity, penetrating the tough plant cell walls to deliver DNA into the plant nucleus.
+
+4. *Disarmed Pathogen Vectors:*
+   - Host cells are simply exposed to disarmed viruses or bacteria, which naturally infect the cell and transfer recombinant DNA without causing pathology.
+
+= Processes of Recombinant DNA Technology
+
+== Step 1: Isolation & Extraction of Genetic Material (DNA)
+
+To obtain pure DNA, host cell walls and membranes must be enzymatically digested:
+- *Cell Wall Lysis:*
+  - Bacterial cells: Treated with *_Lysozyme_*.
+  - Plant cells: Treated with *_Cellulase_* (and pectinase).
+  - Fungal cells: Treated with *_Chitinase_*.
+- *Macromolecule Removal:*
+  - Cellular RNA is eliminated by treatment with *Ribonuclease (RNase)*.
+  - Cellular proteins and histones are digested by *Proteases*.
+- *Alcohol Precipitation:* Pure DNA is insoluble in cold alcohol. When *chilled ethanol* is added, pure DNA precipitates out of the aqueous solution as a collection of delicate, fine, translucent white threads.
+- *Spooling:* The precipitated DNA threads are physically gathered and extracted using a sterile glass rod, a process termed *Spooling*.
+
+== Step 2: Polymerase Chain Reaction (PCR)
+
+Invented by *Kary Mullis in 1983* (Nobel Prize 1993), the *Polymerase Chain Reaction (PCR)* is an in vitro enzymatic method used to amplify a single target segment of DNA into millions or billions of identical copies.
+
+#figure(image("assets/bio_pcr_bioreactor_flow.png", width: 62%), caption: [PCR thermocycling kinetics & bioreactor engineering — step-by-step DNA amplification (denaturation, annealing, Taq extension) alongside industrial stirred bioreactors and downstream processing.])
+
+=== The Three Sequential Steps of a PCR Cycle
+
+Each PCR cycle consists of three automated, temperature-regulated steps:
+
+1. *Denaturation (94°C–96°C):*
+   - The reaction mixture is heated to ~94°C. High thermal energy disrupts the hydrogen bonds between complementary nitrogenous bases, separating double-stranded target DNA into two separate single-stranded templates.
+
+2. *Primer Annealing (50°C–60°C, typical ~54°C):*
+   - The temperature is lowered. *Two sets of primers* (chemically synthesized oligonucleotides, ~15–30 bases long) bind to their complementary sequences at the *3' ends* of each single-stranded DNA template.
+
+3. *Primer Extension (72°C):*
+   - The reaction is warmed to 72°C, the optimal working temperature for the enzyme *Taq DNA Polymerase*.
+   - *Taq Polymerase Characteristics:* A specialized thermostable DNA-dependent DNA polymerase isolated from the thermophilic bacterium *_Thermus aquaticus_*, which thrives in boiling geothermal hot springs. Because it is thermostable, _Taq_ polymerase remains fully functional despite repeated exposure to 95°C denaturation temperatures, eliminating the need to add fresh enzyme at every cycle.
+   - The enzyme utilizes free deoxynucleoside triphosphates (*dNTPs*) and magnesium ions ($M g^(2+)$) to extend the primers along the template in the $5' arrow.r 3'$ direction.
+
+- *Amplification Formula:* With each cycle, the DNA quantity doubles ($2^n$). After $n = 30$ continuous cycles, a single DNA template is amplified into:
+  $ 1 times 2^(30) approx 10^9 "copies (approximately 1 billion-fold amplification)" $
+
+== Step 3: Bioreactors & Mass Production
+
+When recombinant cells expressing foreign proteins are cultivated on a commercial scale, small laboratory shake flasks (holding under 1 liter) cannot supply sufficient volumes. Large-scale cultivation requires *Bioreactors*—cylindrical vessels holding *100 to 1,000 liters* of culture:
+- *Optimal Conditions:* Bioreactors maintain optimal physical and chemical growth parameters: temperature, pH, substrate concentrations, salts, vitamins, and oxygen.
+- *Types of Bioreactors:*
+  - *Simple Stirred-Tank Bioreactor:* Cylindrical vessel with a *curved hemispherical base* to prevent dead stagnant corners. An electric motor drives a flat-bladed impeller to ensure thorough, uniform mixing of nutrients and cells throughout the vessel.
+  - *Sparged Stirred-Tank Bioreactor:* Sterile air or oxygen bubbles are continuously *sparged (pumped under pressure)* from the bottom of the vessel. The rising bubbles dramatically increase the gas-liquid surface contact area, accelerating oxygen transfer to aerobically respiring cells.
+- *Ancillary Systems:* Equipped with automated sensors: temperature regulation jacket, pH control system, sterile inoculation port, anti-foam system with mechanical foam breakers, and sterile sampling ports for periodically withdrawing small culture aliquots.
+
+== Step 4: Downstream Processing (DSP)
+
+Following the completion of the biosynthetic stage in the bioreactor, the crude fermentation broth cannot be sold directly. It must pass through a multi-step sequence known as *Downstream Processing (DSP)*:
+1. *Separation:* Microbial cells are separated from the liquid fermentation broth via continuous industrial centrifugation or microfiltration (or cells are mechanically disrupted if the protein is intracellular).
+2. *Purification:* A multi-stage chromatographic sequence (affinity, ion-exchange, size-exclusion) removes residual host proteins, nucleic acids, and metabolic byproducts to achieve pharmaceutical-grade purity.
+3. *Formulation:* The purified therapeutic molecule is formulated with suitable chemical *preservatives* and stabilizers into its commercial delivery format (tablets, vials, lyophilized powder).
+4. *Clinical Trials & Quality Control (QC):* Injectable therapeutic drugs must undergo exhaustive *clinical trials* to demonstrate biological efficacy and safety. Every single batch is subjected to strict *quality control testing* before commercial release. Downstream processing protocols vary strictly from product to product.
 
 = Key Facts & Terms Cheatsheet
 
-#cheatsheet-box(title: "Key Facts & Terms Cheatsheet — Unit IX (Principles and Processes)")[
+#cheatsheet-box(title: "Master Diagnostic & Conceptual Cheatsheet — Biotechnology: Principles and Processes")[
   #table(
-    columns: (1.15fr, 1.55fr, 1.15fr),
-    table.header[*Term / fact*][*What it means*][*Example / number*],
-    [EcoRI naming], [E = genus, co = species, R = strain, I = order of discovery], [*Escherichia coli*, strain RY13, enzyme I],
-    [Palindromic site], [Sequence reads the same on both strands in the 5′ to 3′ direction], [GAATTC (EcoRI cuts between G and A)],
-    [Sticky ends], [Staggered cut leaves single-stranded overhangs that base-pair], [AATTC and CTTAA tails],
-    [ori], [Sequence where DNA copying starts; sets the copy number], [High-copy ori = more product per cell],
-    [Selectable marker], [Gene that lets only vector-carrying cells survive selection], [$"amp"^"R"$ and $"tet"^"R"$ in pBR322],
-    [Cloning sites], [Unique restriction sites where the gene is inserted], [BamHI, HindIII in pBR322],
-    [Insertional inactivation], [Gene inserted inside a marker breaks that marker], [Insert in $"tet"^"R"$ $arrow$ lose tetracycline resistance],
-    [CaCl#sub[2] competency], [Divalent cations + cold shock make membranes admit DNA], [Followed by brief heat shock],
-    [Gene gun (biolistics)], [DNA-coated gold/tungsten particles shot into cells], [Mainly plant cells],
-    [PCR step temperatures], [Denaturation ~94–95 °C; annealing ~50–60 °C; extension 72 °C], [One cycle doubles the copies],
-    [Taq polymerase], [Thermostable DNA polymerase that survives the hot step], [From *Thermus aquaticus* (hot springs)],
-    [Agarose gel movement], [Negative phosphate backbone $arrow$ runs to the positive electrode], [Smallest fragments move fastest; EtBr + UV to see],
-    [Bioreactor controls], [Temperature, pH, oxygen, agitator, foam breaker], [Sparged = sterile air bubbled from the base],
-    [DSP 4 jobs], [Separation $arrow$ purification $arrow$ formulation $arrow$ QC and clinical trials], [Product ≠ medicine without DSP],
+    columns: (1.2fr, 1.7fr, 1.1fr),
+    table.header[*Key Subject Pointer*][*Core NCERT Mechanism / Definition*][*Exam Identifier*],
+    [First rDNA Construction], [Antibiotic resistance gene linked to plasmid in _E. coli_.], [Cohen & Boyer (1972)],
+    [First Endonuclease], [Cuts DNA by recognizing a specific sequence of 6 base pairs.], [_Hind II_],
+    [_EcoRI_ Cleavage Site], [Palindromic sequence cut asymmetrically between G and A.], [5'-GAATTC-3'],
+    [Gel Separation Matrix], [Negatively charged DNA migrates to anode; smaller bands travel farther.], [Agarose (Seaweed)],
+    [DNA Band Visualization], [Intercalating dye fluorescing bright orange under ultraviolet illumination.], [EtBr + UV Light],
+    [Gel DNA Recovery], [Physical cutting and chemical extraction of DNA bands from agarose.], [Elution],
+    [Plasmid Copy Controller], [Specific sequence initiating replication and dictating copy numbers.], [_ori_ (Origin)],
+    [pBR322 Resistance Genes], [Selectable markers enabling isolation of transformed bacterial cells.], [_amp#super[R]_ and _tet#super[R]_],
+    [Insertional Inactivation], [Ligation of foreign gene inside a marker disrupts its normal function.], [_BamHI_ inside _tet#super[R]_],
+    [Blue-White Screening], [Inactivation of $beta$-galactosidase (_lacZ_); recombinants form white colonies.], [White = Recombinant],
+    [Plant Transformation Vector], [Disarmed tumor-inducing plasmid of _Agrobacterium tumefaciens_.], [Ti Plasmid (T-DNA)],
+    [Animal Cell Gene Delivery], [Disarmed retroviral vectors transferring genes into mammalian cells.], [Retroviruses],
+    [Plant Gene Gun], [Microscopic pellets of gold or tungsten coated with DNA fired into cells.], [Biolistics],
+    [Bacterial Competence], [Incubation with divalent calcium ions followed by 42°C heat shock.], [Ca#super[2+] Heat Shock],
+    [Fungal Cell Wall Lysis], [Enzymatic digestion of fungal chitin cell walls during DNA extraction.], [Chitinase],
+    [DNA Precipitation], [Addition of chilled ethanol precipitates DNA as fine spoolable threads.], [Chilled Ethanol],
+    [PCR Thermostable Polymerase], [DNA polymerase isolated from hot-spring bacterium resisting 95°C.], [_Thermus aquaticus_],
+    [PCR Three Cycles], [Denaturation (94°C) $arrow.r$ Annealing (54°C) $arrow.r$ Extension (72°C).], [2#super[n] Amplification],
+    [Sparged Bioreactor], [Bubbling sterile air through vessel to maximize oxygen transfer surface.], [Oxygen Delivery],
+    [Downstream Processing], [Separation, purification, preservative formulation, and clinical trials.], [DSP (Post-Fermentation)],
   )
-
-  #v(4pt)
-  *Carry everywhere:* same enzyme for gene and vector $arrow$ complementary
-  sticky ends; DNA ligase seals; PCR gives $1 times 2^n$ copies after $n$ cycles
-  from one template.
 ]
+
+#pagebreak()
 
 = Common Errors and Special Cases
 
-#exception-box(title: "Common Errors & Special Cases")[
+#exception-box(title: "High-Yield CUET Pitfalls & Diagnostic Distinctions")[
   #table(
-    columns: (1.35fr, 1.35fr, 1.2fr),
-    table.header[*The mistake students make*][*What is right*][*The why / the trap*],
-    ["EcoRI leaves blunt ends"], [EcoRI cuts staggered and leaves *sticky ends* (overhangs)], [The overhang is the whole point — it is what lets the gene paste into the vector.],
-    ["DNA ligase cuts and restriction enzyme joins"], [Exactly reversed: *restriction enzyme cuts*, *ligase seals*], [Scissors vs tape — enzymes are named by what they do; swap them and every step of the pipeline inverts.],
-    ["Taq polymerase works at 37 °C"], [Taq's extension step runs at *72 °C*], [It comes from a hot-spring bacterium and must survive ~95 °C denaturation — a body-temperature enzyme would die in cycle 1.],
-    ["The host cell's own genes provide antibiotic resistance"], [The selectable marker is part of the *vector*], [Cells survive the antibiotic only because the *plasmid* brought the resistance gene in — that is how selection works.],
-    ["Gel electrophoresis separates fragments by charge"], [Separation is by *size*], [Every fragment has the same negative charge per base pair — charge is uniform, so size alone decides speed.],
-    ["The ori gives the cell antibiotic resistance"], [The ori controls *copy number*; resistance comes from the marker gene], [Two different fittings of the vector — ori = copying, marker = selection.],
-    ["Downstream processing happens before fermentation"], [DSP comes *after* the bioreactor run], [There is no product to purify until the cells have grown — DSP is the post-production stage.],
+    columns: (1.2fr, 1.4fr, 1.4fr),
+    table.header[*Common Student Mistake*][*Scientifically Verified Reality*][*The Exact Trap Mechanism*],
+    [Assuming _EcoRI_ Cuts in Exact Center],
+    [_EcoRI_ cuts *asymmetrically between G and A* ($5'-"G ↓ AATTC"-3'$), creating single-stranded sticky ends, NOT blunt ends.],
+    [Students mistake palindromic symmetry for center-cleavage; sticky ends require off-center cuts.],
+    [Calling _Thermus aquaticus_ an Archaebacterium],
+    [_Thermus aquaticus_ is a *thermophilic eubacterium*, NOT an archaebacterium.],
+    [NTA questions intentionally classify _Thermus aquaticus_ as an archaebacterium to trap students.],
+    [Confusing Blue vs White Recombinant Colonies],
+    [*White colonies are recombinants* (disrupted _lacZ_); blue colonies are non-recombinants (intact $beta$-galactosidase).],
+    [Students mistakenly assume colored colonies represent successful recombinant insertion.],
+    [Believing Gel Separates DNA by Net Charge],
+    [Separation is based strictly on *molecular size/length* due to the uniform charge-to-mass ratio of DNA.],
+    [Because all DNA has an identical negative charge density, agarose pores separate strictly by molecular sieve size.],
+    [Swapping DNA Ligase and Restriction Enzyme],
+    [*Restriction enzymes cut* phosphodiester bonds; *DNA ligase synthesizes* phosphodiester bonds.],
+    [Never confuse the molecular scissors (endonucleases) with the molecular glue (ligase).],
+    [Assigning Animal Transformation to Biolistics],
+    [Biolistics (gene gun) is utilized for *plant cells* (penetrating cell walls); animal cells use *micro-injection*.],
+    [Gene gun microprojectiles (gold/tungsten) are designed to pierce rigid cellulose plant walls without lysis.],
   )
 ]
 
-- *Spot the pattern:* most traps here are *swapped pairs* — cut vs join, size
-  vs charge, ori vs marker, before vs after. When revising, test yourself on
-  the pair, not the single fact.
-- *One special case:* a PCR question may hand you a starting count other than
-  1. The rule never changes — *multiply the starting number by $2^n$*, where
-  $n$ is the number of complete cycles.
+#pagebreak()
 
 = The Whole Chapter on One Page
 
-#figure(image("assets/bio_biotech_mindmap.png", width: 100%), caption: [Figure 2 — Whole chapter on one page: the two arms, the three tools, PCR, the pipeline, bioreactors and downstream processing, with the three traps that catch most students.])
+#figure(image("assets/bio_biotech_mindmap.png", width: 78%), caption: [Master synthesis mindmap — high-yield integrated architecture of Biotechnology: Principles and Processes covering tools, vectors, transformation, PCR, and industrial bioprocessing.])
 
-= Practice Questions
+#pagebreak()
+#set text(size: 9.6pt)
+#set par(leading: 0.52em, spacing: 0.60em)
 
-#mcq(1, [In the name of the restriction enzyme EcoRI, the letter "R" stands for:], (
-  [the genus of the bacterium], [the strain of the bacterium], [the order in which the enzyme was found], [the species of the bacterium],
+= Practice Questions — Part 1 (Q1 to Q5)
+
+#mcq(1, [In the standardized nomenclature of the restriction endonuclease _EcoRI_, the letter "R" and the Roman numeral "I" designate respectively:], (
+  [The resistance gene marker and the number of cleavage sites on the plasmid],
+  [The specific bacterial strain (RY13) and the chronological order of its isolation],
+  [The restriction capability and the first palindromic nucleotide sequence],
+  [The circular plasmid replicon and the single-stranded sticky end overhang],
 ))
+#solution(1, [Restriction enzymes are named following a strict universal convention: the first letter indicates the genus (_Escherichia_), the next two letters represent the species (_coli_), the fourth letter represents the specific *bacterial strain* (strain #strong[R]Y13), and the terminal Roman numeral represents the *chronological order of discovery/isolation* of the enzyme from that bacterial strain (isolated first = *I*).], answer: [B])
 
-#mcq(2, [Which one of the following DNA sequences is palindromic — that is, it reads the same on both strands when each is read in the 5′ to 3′ direction?], (
-  [GAATTC], [GATCAA], [GGTTCC], [AGGTCC],
+#mcq(2, [Which of the following DNA sequences represents a true palindromic nucleotide recognition sequence that reads identically on both complementary strands when read in the 5' to 3' direction?], (
+  [5' - G A A T T C - 3'],
+  [5' - G A T C A A - 3'],
+  [5' - G G T T C C - 3'],
+  [5' - A G G T C C - 3'],
 ))
+#solution(2, [A palindromic sequence in double-stranded DNA reads identically on both strands when read in the same 5' to 3' polarity. For sequence `5'-GAATTC-3'`, its complementary strand reads `3'-CTTAAG-5'`, which when read from its own 5' end is `5'-GAATTC-3'`. This is the exact recognition sequence for the restriction endonuclease _EcoRI_. The other options do not exhibit identical inverted complementarity.], answer: [A])
 
-#mcq(3, [In a cloning vector, the origin of replication (ori) mainly controls:], (
-  [which antibiotic kills the host cell], [where the restriction enzymes cut the vector], [how many copies of the rDNA the host makes], [the colour of the bacterial colonies],
+#mcq(3, [Within an engineered cloning vector, the origin of replication (_ori_) is a vital sequence primarily responsible for:], (
+  [Conferring selectable resistance against lethal aminoglycoside antibiotics],
+  [Providing a single unique cleavage site for multiple restriction endonucleases],
+  [Initiating DNA replication and regulating the intracellular copy number of linked foreign DNA],
+  [Synthesizing the enzyme beta-galactosidase to enable chromogenic colony screening],
 ))
+#solution(3, [The origin of replication (*_ori_*) is the specific DNA sequence where autonomous replication initiates within the host bacterium. In addition to initiating DNA copying, the genetic sequence of the _ori_ controls the *copy number* of the plasmid vector (and thus any linked foreign gene) maintained inside the host cell.], answer: [C])
 
-#mcq(4, [The two antibiotic-resistance genes that act as selectable markers in pBR322 are:], (
-  [$"kan"^"R"$ and $"neo"^"R"$], [$"lacZ"$ and $"amp"^"R"$], [$"tet"^"R"$ and ori], [$"amp"^"R"$ and $"tet"^"R"$],
+#mcq(4, [The widely utilized artificial cloning vector pBR322 harbors two antibiotic resistance genes that serve as selectable markers to identify transformants. These two genes are:], (
+  [Kanamycin resistance and Neomycin resistance genes],
+  [Ampicillin resistance (_amp_#super[R]) and Tetracycline resistance (_tet_#super[R]) genes],
+  [Tetracycline resistance gene and the _lacZ_ gene],
+  [Chloramphenicol resistance gene and the _rop_ locus],
 ))
+#solution(4, [Plasmid *pBR322* carries two distinct selectable antibiotic resistance marker genes: the *ampicillin resistance gene (_amp_#super[R])* (containing cleavage sites for _Pst I_ and _Pvu I_) and the *tetracycline resistance gene (_tet_#super[R])* (containing cleavage sites for _BamHI_ and _Sal I_). These genes permit researchers to identify and select transformants from non-transformants.], answer: [B])
 
-#mcq(5, [Bacterial cells are made competent to take up recombinant DNA by treating them with:], (
-  [divalent cations such as calcium ions, followed by cold and heat shock], [lysozyme and protease], [ethidium bromide and UV light], [Taq polymerase at 72 °C],
+#mcq(5, [Bacterial cells can be rendered chemically competent to take up hydrophilic foreign recombinant DNA molecules from their surroundings through treatment with:], (
+  [Monovalent sodium ions followed by continuous incubation at 100°C],
+  [Divalent calcium ions ($C a^(2+)$) followed by a brief 42°C heat shock and rapid ice chilling],
+  [A mixture of ethidium bromide and ultraviolet irradiation],
+  [Proteolytic enzymes that completely digest the peptidoglycan cell wall],
 ))
+#solution(5, [Because DNA is hydrophilic and negatively charged, it cannot cross hydrophobic cell membranes. Bacterial cells are made competent by incubating them with *divalent cations*, specifically *calcium ions ($C a^(2+)$)*, which neutralize charges and create transient membrane pores. Following DNA addition, cells are given a brief *heat shock at 42°C* and returned to ice, forcing recombinant DNA into the bacterium.], answer: [B])
 
-#mcq(6, [A PCR tube starts with exactly 1 copy of the target DNA. After 4 complete cycles of PCR, the number of copies present is:], (
-  [4], [16], [8], [32],
+#pagebreak()
+#set text(size: 9.6pt)
+#set par(leading: 0.52em, spacing: 0.60em)
+
+= Practice Questions — Part 2 (Q6 to Q10)
+
+#mcq(6, [A molecular biology technician initiates a Polymerase Chain Reaction (PCR) in a thermocycler with exactly 2 copies of a target double-stranded DNA template. After 5 complete cycles, the total number of DNA copies synthesized will be:], (
+  [32 copies],
+  [64 copies],
+  [128 copies],
+  [16 copies],
 ))
+#solution(6, [In the Polymerase Chain Reaction (PCR), the number of DNA copies amplifies geometrically according to the exponential formula: $"Total Copies" = N_0 times 2^n$, where $N_0$ is the initial template number and $n$ is the number of complete cycles. Here, $N_0 = 2$ and $n = 5$:
+$ "Total Copies" = 2 times 2^5 = 2 times 32 = 64 "copies." $], answer: [B])
 
-#mcq(7, [The thermostable DNA polymerase that makes modern PCR possible is obtained from:], (
-  [*Escherichia coli*], [*Agrobacterium tumefaciens*], [*Thermus aquaticus*], [*Bacillus subtilis*],
+#mcq(7, [The thermostable DNA polymerase (_Taq_ polymerase) that withstands repeated high-temperature denaturation stages during automated PCR is extracted from:], (
+  [_Escherichia coli_],
+  [_Agrobacterium tumefaciens_],
+  [_Thermus aquaticus_],
+  [_Methanobacterium_],
 ))
+#solution(7, [*_Taq_ DNA polymerase* is isolated from the thermophilic bacterium *_Thermus aquaticus_*, which naturally inhabits boiling hydrothermal hot springs. Because this bacterium has evolved enzymes that remain stable and enzymatically active at extreme temperatures, _Taq_ polymerase easily survives the 94°C–96°C thermal denaturation step of each PCR cycle without denaturing.], answer: [C])
 
-#mcq(8, [During agarose gel electrophoresis, DNA fragments:], (
-  [move toward the negative electrode], [move at a speed decided by their net charge], [stay trapped in the wells], [move toward the positive electrode, and the smallest fragments move fastest],
+#mcq(8, [During agarose gel electrophoresis, the physical movement and separation of digested DNA fragments is governed by which principles?], (
+  [DNA fragments are positively charged and migrate toward the cathode according to base composition],
+  [DNA fragments are negatively charged and migrate toward the anode, with smaller fragments traveling fastest],
+  [DNA fragments move strictly based on their molecular charge, while fragment length has no effect],
+  [DNA fragments remain stationary in the loading wells until ultraviolet light is applied],
 ))
+#solution(8, [DNA possesses a uniform negative charge along its sugar-phosphate backbone and therefore migrates toward the *positive electrode (anode)* under an electric field. The porous agarose gel acts as a molecular sieve: *smaller DNA fragments experience less frictional resistance and travel faster and farther*, while larger fragments remain closer to the origin wells.], answer: [B])
 
-#mcq(9, [In a sparged stirred-tank bioreactor, the oxygen supply reaches the broth by:], (
-  [sterile air bubbles sparged in through the base of the vessel], [air supplied only at the liquid surface], [the foam breaker unit], [the temperature and pH probes],
+#mcq(9, [In industrial fermentation, a sparged stirred-tank bioreactor provides superior cell cultivation compared to a simple stirred-tank vessel because it:], (
+  [Uses electromagnetic radiation to sterilize the liquid broth continuously],
+  [Sparges sterile air bubbles from the vessel bottom, dramatically increasing oxygen transfer surface area],
+  [Operates completely without mechanical impellers to eliminate cellular shear stress],
+  [Prevents the accumulation of foam without requiring chemical anti-foaming agents],
 ))
+#solution(9, [In a *sparged stirred-tank bioreactor*, sterile air or oxygen is bubbled (sparged) under pressure from the base of the vessel. The formation of thousands of rising air bubbles dramatically increases the gas-liquid surface contact area, vastly enhancing *oxygen transfer* into the liquid culture to support high-density aerobic microbial growth.], answer: [B])
 
-#mcq(10, [After a bioreactor run, a protein medicine must pass through which sequence before it reaches the market?], (
-  [clinical trials $arrow$ purification $arrow$ separation], [formulation $arrow$ separation $arrow$ purification], [separation $arrow$ purification $arrow$ formulation with preservatives $arrow$ quality control and clinical trials], [purification $arrow$ bioreactor $arrow$ packaging],
+#mcq(10, [Following the completion of the biosynthetic phase in a bioreactor, a recombinant therapeutic protein must undergo downstream processing. Which option details the correct chronological sequence of these downstream events?], (
+  [Formulation with preservatives $arrow.r$ Cell separation $arrow.r$ Clinical trials $arrow.r$ Protein purification],
+  [Cell separation $arrow.r$ Protein purification $arrow.r$ Formulation with preservatives $arrow.r$ Quality control & clinical trials],
+  [Clinical trials $arrow.r$ Quality control testing $arrow.r$ Bioreactor fermentation $arrow.r$ Product elution],
+  [Protein purification $arrow.r$ Upstream inoculation $arrow.r$ Spooling $arrow.r$ Preservative addition],
 ))
+#solution(10, [Downstream Processing (DSP) begins strictly after bioreactor biosynthesis. The correct verified sequence is: (1) *Cell separation* (filtration or centrifugation separating biomass from liquid broth); (2) *Purification* (isolation of the recombinant protein from impurities); (3) *Formulation* (blending with appropriate chemical preservatives and stabilizers); and (4) *Quality control testing and clinical trials* (for injectable human therapeutics).], answer: [B])
 
-= Solutions
+#pagebreak()
+#set text(size: 9.6pt)
+#set par(leading: 0.52em, spacing: 0.60em)
 
-#solution(1, [EcoRI reads as: E — genus *Escherichia*; co — species *coli*; R — the *strain* (RY13); I — the order in which the enzyme was found (first). Genus and species are covered by E and co, so the strain letter is R.], answer: "B")
+= Practice Questions — Part 3 (Q11 to Q15)
 
-#solution(2, [GAATTC on the second strand pairs as CTTAAG; reading that strand from its own 5′ end gives GAATTC again — the same sequence on both strands. Check the distractors: GATCAA, GGTTCC and AGGTCC each give a *different* sequence when the complementary strand is read 5′ to 3′.], answer: "A")
+#mcq(11, [In recombinant DNA technology, transformants can be differentiated from non-transformants using blue-white screening based on insertional inactivation of the _lacZ_ gene. Which observation confirms successful recombinant colonies?], (
+  [Formation of dark blue colonies on nutrient medium containing X-gal],
+  [Development of white colonies due to insertional inactivation of beta-galactosidase],
+  [Total absence of any bacterial colony growth on the selection plate],
+  [Formation of colonies that change from blue to yellow under UV exposure],
+))
+#solution(11, [In blue-white screening, foreign DNA is inserted into the coding sequence of the $beta$-galactosidase gene (*_lacZ_*). In non-recombinants, intact $beta$-galactosidase hydrolyzes the chromogenic substrate X-gal to form *blue colonies*. In recombinants, insertional inactivation destroys $beta$-galactosidase activity, so X-gal is not hydrolyzed and colonies appear *white*. Thus, *white colonies confirm successful recombinants*.], answer: [B])
 
-#solution(3, [The ori is the sequence where DNA replication *starts*, and its type decides the *copy number* — how many copies of the vector (and so of the pasted gene) the host maintains. Antibiotic survival comes from the marker, cutting sites from the cloning sites.], answer: "C")
+#mcq(12, [Which soil bacterium is widely celebrated as nature's genetic engineer due to the ability of its tumor-inducing (Ti) plasmid to transfer a segment of T-DNA into plant nuclear chromosomes?], (
+  [_Bacillus thuringiensis_],
+  [_Agrobacterium tumefaciens_],
+  [_Thermus aquaticus_],
+  [_Rhizobium leguminosarum_],
+))
+#solution(12, [*_Agrobacterium tumefaciens_* is a natural pathogen of several dicot plants that transfers a piece of plasmid DNA (*T-DNA*) into plant host genomes, causing crown gall tumors. By disarming the Ti plasmid (excising oncogenic sequences while retaining T-DNA border repeat regions), scientists utilize it as a premier vector to transfer foreign beneficial genes into crop plants.], answer: [B])
 
-#solution(4, [pBR322 carries exactly two resistance markers: $"amp"^"R"$ (ampicillin resistance) and $"tet"^"R"$ (tetracycline resistance). Kanamycin and neomycin resistance genes belong to other vectors, and ori is not a resistance gene at all.], answer: "D")
+#mcq(13, [In biolistics or the gene gun method of genetic transformation, recombinant DNA is coated onto microscopic high-velocity microprojectiles composed of which inert heavy metals?], (
+  [Iron or Copper],
+  [Gold or Tungsten],
+  [Silver or Platinum],
+  [Lead or Zinc],
+))
+#solution(13, [In the *biolistics (gene gun)* transformation method—designed primarily to introduce foreign DNA across rigid plant cell walls—microscopic microprojectiles composed of biologically inert, high-density metals, specifically *Gold or Tungsten*, are coated with recombinant DNA and accelerated at high velocity into target plant cells.], answer: [B])
 
-#solution(5, [Competency is created by treating cells with *divalent cations* (Ca#super[2+] from CaCl#sub[2]), which neutralise the repelling charges on DNA and membrane, then shocking them cold and warm so the membrane admits the rDNA. Lysozyme and protease are isolation clean-up enzymes; EtBr is a gel stain; Taq is a PCR enzyme.], answer: "A")
+#mcq(14, [During the extraction and isolation of pure DNA from eukaryotic plant tissue, cellular proteins, RNAs, and cell walls are enzymatically digested. The final precipitation of purified DNA as fine spoolable threads is achieved by adding:], (
+  [Chilled absolute ethanol],
+  [Boiling concentrated hydrochloric acid],
+  [Saturated sodium chloride solution],
+  [Concentrated chloroform at room temperature],
+))
+#solution(14, [Because DNA is highly soluble in aqueous cellular lysates but completely insoluble in cold organic alcohols, the addition of *chilled absolute ethanol* causes purified DNA to precipitate out of solution. The precipitated DNA appears as a mass of fine white threads that can be collected onto a glass rod by the process of *spooling*.], answer: [A])
 
-#solution(6, [Each complete cycle doubles the copy number: 1 $arrow$ 2 $arrow$ 4 $arrow$ 8 $arrow$ 16. Formally, copies = starting copies $times 2^n$, and $1 times 2^4 = 16$. (4 would be two cycles, 8 three cycles, 32 five cycles.)], answer: "B")
+#mcq(15, [The very first restriction endonuclease to be isolated and characterized, which cleaves DNA molecules at a specific recognition site containing six base pairs, was:], (
+  [_EcoRI_],
+  [_Hind II_],
+  [_BamHI_],
+  [_Sal I_],
+))
+#solution(15, [The very first restriction endonuclease discovered and characterized was *_Hind II_* (isolated from the bacterium _Haemophilus influenzae_ by Smith, Wilcox, and Kelley). Five years after its discovery, it was proven that _Hind II_ always cuts DNA molecules at a specific site by recognizing a distinct palindromic sequence of *six base pairs*.], answer: [B])
 
-#solution(7, [Taq polymerase is purified from *Thermus aquaticus*, a bacterium that lives in hot springs — hence an enzyme that keeps working at 72 °C and survives the ~95 °C denaturation step of every cycle. *E. coli* polymerase would denature in the first cycle.], answer: "C")
-
-#solution(8, [The phosphate backbone gives every fragment the *same negative charge*, so all fragments migrate to the *positive electrode*. Since charge is uniform, the agarose mesh separates by *size*: smallest fragments meet the least resistance and move fastest.], answer: "D")
-
-#solution(9, ["Sparged" means air is *bubbled directly through the broth from holes at the base* of the vessel, giving better oxygen transfer than surface aeration. The foam breaker and the probes are control fittings, not the air supply.], answer: "A")
-
-#solution(10, [DSP runs *after* the bioreactor: first *separation* (cells away from broth), then *purification* (impurities stripped out), then *formulation* (preservatives, final dose form), and only then quality control and clinical trials before approval. Any sequence that puts trials first or re-enters a bioreactor is impossible.], answer: "C")
-
-#v(10pt)
-#align(center)[#text(fill: om-grey, size: 9pt)[© OurMocks · www.ourmocks.com · CUET UG Biology · Biotechnology: Principles and Processes · 2027 cycle]]
+#v(8pt)
+#align(center)[
+  #text(fill: om-grey, size: 8.5pt)[
+    © OurMocks · www.ourmocks.com · CUET UG Biology · Biotechnology: Principles and Processes · 2027 Cycle
+  ]
+]

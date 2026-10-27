@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>PCR Thermocycling Kinetics & Bioreactor Engineering</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px 32px;
+    overflow: hidden;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 14px;
+    margin-bottom: 18px;
+  }
+  .title-group h1 {
+    font-size: 21px;
+    font-weight: 800;
+    color: #071A4D;
+    letter-spacing: -0.02em;
+  }
+  .title-group p {
+    font-size: 13px;
+    color: #64748B;
+    margin-top: 2px;
+    font-weight: 500;
+  }
+  .badge {
+    background: #071A4D;
+    color: #B8FF34;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 6px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .split-container {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: 18px;
+    height: calc(100% - 190px);
+  }
+  .panel-card {
+    background: #FFFFFF;
+    border: 1.5px solid #CBD5E1;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .panel-header {
+    padding: 10px 16px;
+    font-size: 14px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1.5px solid #CBD5E1;
+  }
+  .p-amber .panel-header { background: #FFFBEB; color: #B45309; border-color: #FDE68A; }
+  .p-amber { border-color: #FDE68A; }
+
+  .p-indigo .panel-header { background: #EEF2FF; color: #3730A3; border-color: #C7D2FE; }
+  .p-indigo { border-color: #C7D2FE; }
+
+  .panel-body {
+    padding: 12px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+    overflow-y: auto;
+  }
+  .step-row {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 10px 12px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .temp-badge {
+    background: #071A4D;
+    color: #B8FF34;
+    font-weight: 800;
+    font-size: 13px;
+    padding: 6px 10px;
+    border-radius: 6px;
+    min-width: 75px;
+    text-align: center;
+    line-height: 1.2;
+  }
+  .step-text h4 {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: #0F172A;
+    margin-bottom: 3px;
+  }
+  .step-text p {
+    font-size: 11px;
+    color: #475569;
+    line-height: 1.4;
+  }
+  .step-arrow {
+    text-align: center;
+    font-size: 12px;
+    font-weight: 800;
+    color: #B45309;
+    margin: -4px 0;
+  }
+
+  .bioreactor-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .bio-box {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    padding: 8px 10px;
+  }
+  .bio-box h4 {
+    font-size: 12px;
+    font-weight: 700;
+    color: #0F172A;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .bio-box p {
+    font-size: 11px;
+    color: #475569;
+    line-height: 1.38;
+  }
+  .tag {
+    font-size: 9.5px;
+    font-weight: 700;
+    padding: 1px 6px;
+    border-radius: 4px;
+    display: inline-block;
+  }
+  .tag-indigo { background: #E0E7FF; color: #3730A3; }
+  .tag-amber { background: #FEF3C7; color: #92400E; }
+  .tag-emerald { background: #D1FAE5; color: #047857; }
+  .tag-rose { background: #FFE4E6; color: #BE123C; }
+
+  .bottom-summary {
+    margin-top: 16px;
+    background: #FFFFFF;
+    border: 1.5px solid #CBD5E1;
+    border-radius: 10px;
+    padding: 12px 18px;
+    display: grid;
+    grid-template-columns: 1fr 1.1fr 1fr;
+    gap: 16px;
+    align-items: center;
+  }
+  .summary-col h3 {
+    font-size: 12.5px;
+    font-weight: 800;
+    color: #071A4D;
+    margin-bottom: 4px;
+  }
+  .summary-col p {
+    font-size: 11.2px;
+    color: #475569;
+    line-height: 1.4;
+  }
+  .key-pill {
+    background: #EEF2F6;
+    color: #071A4D;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 3px;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="title-group">
+    <h1>PCR Thermocycling Kinetics & Bioreactor Engineering</h1>
+    <p>In Vitro Gene Amplification (Denaturation, Annealing, Taq Extension) & Large-Scale Downstream Bioprocesses</p>
+  </div>
+  <div class="badge">CUET UG Biology · Unit IX</div>
+</div>
+
+<div class="split-container">
+
+  <!-- Left Panel: PCR Dynamics -->
+  <div class="panel-card p-amber">
+    <div class="panel-header">
+      <span>Polymerase Chain Reaction (PCR) Thermocycling</span>
+      <span class="tag tag-amber">Kary Mullis (1983)</span>
+    </div>
+    <div class="panel-body">
+      
+      <div class="step-row">
+        <div class="temp-badge">
+          94°C<br><span style="font-size:9.5px; color:#FFFFFF;">1 min</span>
+        </div>
+        <div class="step-text">
+          <h4>Step 1: Denaturation</h4>
+          <p>Thermal denaturation disrupts hydrogen bonds between complementary base pairs, melting double-stranded target DNA into two separate single-stranded templates.</p>
+          <span class="tag tag-amber">Thermal Strand Separation</span>
+        </div>
+      </div>
+
+      <div class="step-arrow">▼</div>
+
+      <div class="step-row">
+        <div class="temp-badge">
+          54°C<br><span style="font-size:9.5px; color:#FFFFFF;">45 sec</span>
+        </div>
+        <div class="step-text">
+          <h4>Step 2: Primer Annealing</h4>
+          <p>Reaction temperature is lowered. Two sets of short, chemically synthesized oligonucleotide primers anneal specifically to complementary sequences at the 3' ends of single strands.</p>
+          <span class="tag tag-amber">Two Sets of Primers</span>
+        </div>
+      </div>
+
+      <div class="step-arrow">▼</div>
+
+      <div class="step-row">
+        <div class="temp-badge">
+          72°C<br><span style="font-size:9.5px; color:#FFFFFF;">1–2 min</span>
+        </div>
+        <div class="step-text">
+          <h4>Step 3: Primer Extension (Taq Polymerase)</h4>
+          <p>Thermostable <b>Taq DNA polymerase</b> (isolated from bacterium <i>Thermus aquaticus</i>) synthesizes complementary DNA strands in the 5' → 3' direction using free dNTPs and Mg<sup>2+</sup>.</p>
+          <span class="tag tag-amber">Taq Withstands 95°C Heat</span>
+        </div>
+      </div>
+
+      <div class="step-row" style="background:#FFFDF5; border-color:#FDE68A;">
+        <div class="temp-badge" style="background:#B45309;">
+          30 Cycles<br><span style="font-size:9.5px; color:#FFFFFF;">2<sup>n</sup></span>
+        </div>
+        <div class="step-text">
+          <h4>Amplification Yield: ~1 Billion Copies</h4>
+          <p>Repeated cycles result in exponential geometric amplification ($2^n$). After 30 consecutive cycles, a single DNA molecule is amplified approximately <b>1 billion-fold (10<sup>9</sup> copies)</b>.</p>
+          <span class="tag tag-amber">10<sup>9</sup> Fold Amplification</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Right Panel: Bioreactors & Downstream -->
+  <div class="panel-card p-indigo">
+    <div class="panel-header">
+      <span>Industrial Bioreactors & Downstream Processing</span>
+      <span class="tag tag-indigo">Mass Production</span>
+    </div>
+    <div class="panel-body">
+      
+      <div class="bioreactor-grid">
+        <div class="bio-box">
+          <h4>Simple Stirred Tank <span class="tag tag-indigo">Type A</span></h4>
+          <p>• Curved base prevents dead zones.<br>
+          • Motor-driven flat-bladed agitator mixes nutrients uniformly.<br>
+          • Oxygen delivery via surface vortex.</p>
+        </div>
+        <div class="bio-box">
+          <h4>Sparged Tank <span class="tag tag-indigo">Type B</span></h4>
+          <p>• Sterile air bubbles sparged from below.<br>
+          • Dramatic increase in gas-liquid surface area.<br>
+          • Maximizes dissolved oxygen for high cell density.</p>
+        </div>
+      </div>
+
+      <div class="item-box" style="margin-top:2px;">
+        <h4 style="font-size:12px; font-weight:700; color:#0F172A; margin-bottom:4px;">Optimal Bioreactor Control Systems</h4>
+        <p style="font-size:11px; color:#475569; line-height:1.4;">
+        Vessels (100–1,000 L) equipped with automated control loops: temperature cooling jacket, pH monitoring probe, foam sensor & mechanical foam breaker, and sterile sampling ports for withdrawal of culture aliquots.
+        </p>
+      </div>
+
+      <div class="item-box" style="background:#F0FDF4; border-color:#BBF7D0;">
+        <h4 style="font-size:12px; font-weight:700; color:#047857; margin-bottom:4px;">Downstream Processing Workflow</h4>
+        <p style="font-size:11px; color:#166534; line-height:1.4;">
+        Following the biosynthetic stage, products undergo: (1) <b>Cell separation</b> via centrifugation/filtration; (2) <b>Purification</b> of the protein product; (3) Formulation with suitable <b>preservatives</b>; (4) Strict <b>clinical trials</b> (for drugs); and (5) Exhaustive <b>Quality Control (QC)</b> testing before commercial market release.
+        </p>
+        <span class="tag tag-emerald">Separation + Purification + Preservatives</span>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<div class="bottom-summary">
+  <div class="summary-col">
+    <h3>Taq Polymerase Source</h3>
+    <p>Isolated from the thermophilic bacterium <span class="key-pill">Thermus aquaticus</span> inhabiting hydrothermal geysers. Remains enzymatically active and stable during repeated 95°C denaturation stages.</p>
+  </div>
+  <div class="summary-col">
+    <h3>PCR Primer Requirements</h3>
+    <p>Requires <span class="key-pill">two sets of primers</span> (forward and reverse oligonucleotides) complementary to the 3' termini of both template strands, plus all four deoxynucleoside triphosphates (dATP, dCTP, dGTP, dTTP) and Mg<sup>2+</sup>.</p>
+  </div>
+  <div class="summary-col">
+    <h3>Upstream vs Downstream</h3>
+    <p><b>Upstream:</b> Strain selection, media optimization, fermentation in bioreactor.<br>
+    <b>Downstream:</b> Separation, purification, quality control, and formulation. Downstream varies strictly from product to product.</p>
+  </div>
+</div>
+
+</body>
+</html>
