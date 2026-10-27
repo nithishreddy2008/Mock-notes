@@ -3,799 +3,432 @@
 #show: om-doc.with(
   exam: "CUET UG",
   subject: "Biology",
-  topic-title: "Biotechnology and its Applications",
-  subtitle: "Official Syllabus Unit IX · Class 12 · CUET UG 2027 Cycle Notes",
+  topic-title: "Biotechnology & Its Applications",
+  subtitle: "Official Syllabus Unit IX · Class 12 · Comprehensive NCERT Theory, Diagrams & 15 Solved MCQs",
 )
 
-= Syllabus Alignment
+= Syllabus Alignment & Exam Blueprint
+
+#set table(inset: (x: 4pt, y: 2.2pt))
+#set text(size: 8.8pt)
 
 #table(
-  columns: (1.05fr, 1.9fr, 1.25fr),
-  table.header[*Sub-topic*][*Official syllabus pointer (NTA CUET(UG) Biology syllabus 2026, the current 2027 baseline, Unit IX)*][*Skills the questions test*],
-  [*Application in agriculture — tissue culture, GMOs, Bt cotton*], [
-    Application of biotechnology in agriculture – tissue culture, genetically modified organisms, Bt cotton, RNA interference.
-  ], [
-    Matching cry genes to pests, tracing the protoxin route, naming GM goals and the standard crop examples.
-  ],
-  [*Application in agriculture — RNA interference*], [
-    Application of biotechnology in agriculture – tissue culture, genetically modified organisms, Bt cotton, RNA interference.
-  ], [
-    Explaining dsRNA silencing and the Meloidogyne incognita sequence of steps in the right order.
-  ],
-  [*Biotechnology in medicine — insulin*], [
-    Biotechnology in medicine – insulin, gene therapy and molecular diagnosis.
-  ], [
-    Chain sizes, proinsulin and the C-peptide, the E. coli route and the product name humulin.
-  ],
-  [*Biotechnology in medicine — gene therapy*], [
-    Biotechnology in medicine – insulin, gene therapy and molecular diagnosis.
-  ], [
-    The ADA deficiency story: which cells, which vector, why the treatment has to be repeated.
-  ],
-  [*Biotechnology in medicine — molecular diagnosis*], [
-    Biotechnology in medicine – insulin, gene therapy and molecular diagnosis.
-  ], [
-    Choosing what PCR, ELISA and a radioactive probe each detect, and how early.
-  ],
-  [*Transgenic animals*], [
-    Transgenic animals.
-  ], [
-    The definition, the five standard uses, and the Rosie milk figures.
-  ],
-  [*Ethical issues*], [
-    Ethical issues.
-  ], [
-    GEAC's role, why GM organisms are regulated, judging ethical statements neutrally.
-  ],
-  [*Biopiracy and patents*], [
-    biopiracy and patents.
-  ], [
-    Defining biopiracy, matching each patent case (Basmati, turmeric, neem) to its outcome.
-  ],
+  columns: (1.1fr, 1.8fr, 1.1fr),
+  table.header[*Sub-Topic*][*Official Syllabus Core Coverage (NCERT Class 12 Unit IX)*][*Exam Focus & Question Types*],
+  [*Agricultural Applications*],
+  [Genetically Modified Organisms (GMOs); pest-resistant crops; _Bacillus thuringiensis_ and Bt cotton; cry genes (_cryIAc_, _cryIIAb_, _cryIAb_); protoxin activation by alkaline midgut pH; RNA interference (RNAi) gene silencing in tobacco against _Meloidogyne incognita_; tissue culture, totipotency, micropropagation, somaclones, virus-free meristems, somatic hybridization (pomato).],
+  [Matching cry genes to specific pests; mechanism of protoxin activation; 5-step RNAi cascade; explant and totipotency definitions.],
+  [*Medical Applications*],
+  [Genetically engineered human insulin (Humulin, Eli Lilly 1983); A, B, and C peptide chains; mature insulin structure and disulfide bonds; gene therapy for Adenosine Deaminase (ADA) deficiency causing SCID; 1990 retroviral lymphocyte trial; permanent cure conditions; molecular diagnosis via PCR, ELISA, and autoradiography probes.],
+  [Insulin chain sizes (21 aa, 30 aa) and C-peptide removal; retrovirus vector in ADA SCID; comparison of PCR vs ELISA vs tagged probe.],
+  [*Transgenic Animals*],
+  [Definition and production (>95% mice); 5 standard biological uses: normal physiology (IGF), human disease models (cancer, CF, Alzheimer's), biological products ($alpha$-1-antitrypsin for emphysema, transgenic cow Rosie yielding 2.4 g/L human $alpha$-lactalbumin), vaccine safety (polio), and chemical toxicity testing.],
+  [Rosie's milk yield and protein name; identification of disease models; replacement of monkeys in polio vaccine safety tests.],
+  [*Ethical Issues & Biopiracy*],
+  [Genetic Engineering Appraisal Committee (GEAC); statutory authority under MoEFCC; definition of biopiracy; unauthorized commercial exploitation of bio-resources and traditional knowledge; patent battles: US patent on Indian Basmati rice (1997, RiceTec), turmeric (wound healing, revoked 1997), neem (fungicidal, revoked 2000); Indian Patents Bill amendment.],
+  [GEAC statutory mandate; historical Basmati rice diversity (200,000 Indian varieties, 27 Basmati); legal grounds for patent revocations.],
 )
 
 #exam-pointer[
-  CUET UG pattern (NTA official information bulletin and syllabus, 2026 cycle — the
-  current 2027 baseline): each subject paper carries *50 compulsory questions* in
-  *60 minutes*, with $+5$ for every correct answer and $-1$ for every incorrect answer. The Biology paper maps strictly to NCERT Class 12, and Unit IX closes with the applications block — the named examples here (Bt cotton, insulin, ADA, Rosie, Basmati) are the raw material most questions in this unit are built from.
+  *CUET UG Scoring Blueprint:* Biotechnology and its Applications carries *3 to 5 questions (15 to 25 marks)* in the CUET UG Biology domain paper. NTA frequently tests *exact gene names* (_cryIAc_ vs _cryIAb_), *protoxin activation conditions* (alkaline pH and midgut epithelial receptors), *structural insulin facts* (absence of C-peptide in mature Humulin), *ADA therapy timelines*, and the *exact composition of Rosie's milk*.
 ]
 
-= Agriculture I — GM Crops and Bt Cotton
+#pagebreak()
+#set text(size: 10pt)
 
-Picture a cotton field where the main pest — the bollworm, a caterpillar that
-tunnels into the bolls — keeps winning despite heavy spraying. In 1996 farmers
-planted a new kind of cotton that kills that caterpillar by itself, and pesticide
-use dropped sharply. That cotton, *Bt cotton*, is the single most-used example in
-this whole unit, so we take it slowly: what a GM crop is, where the killing
-ability came from, and why the same poison that kills the caterpillar never
-harms us.
+= Agricultural Applications of Biotechnology
 
-== What "genetically modified" really means
+Plants, bacteria, fungi, and animals whose genes have been altered by deliberate genetic manipulation are termed *Genetically Modified Organisms (GMO)*. In agriculture, genetic engineering offers targeted improvements that surpass the limitations of conventional selective breeding:
+- *Tolerance to Abiotic Stresses:* Transgenic cultivars tolerate extreme cold, drought, salinity, and heat.
+- *Reduced Reliance on Chemical Pesticides:* Pest-resistant crop varieties synthesize their own internal biological defenses, drastically cutting pesticide applications.
+- *Diminished Post-Harvest Losses:* Delayed ripening and enhanced cell wall integrity reduce spoilage during storage and transportation (e.g., _Flavr Savr_ tomato).
+- *Enhanced Mineral Usage Efficiency:* Improved root architecture and nutrient transporter efficiency prevent premature exhaustion of soil fertility.
+- *Nutritional Fortification:* Biofortification enhances vitamin and mineral profiles. A prime example is *Golden Rice*, a genetically modified variety enriched with *provitamin A ($beta$-carotene)* to combat dietary blindness.
 
-- *Genetically modified organism (GMO):* a plant, animal or microbe carrying a
-  gene that humans deliberately added or altered — the gene is *foreign DNA* that
-  now works inside the new host.
-- *The gene does not care about species:* DNA works by the same code everywhere,
-  so a gene from a bacterium can be read by a plant cell and still make its protein.
-- *Making such an organism is "genetic modification":* the tools (plasmids,
-  vectors, rDNA technology) are the machinery of the *principles* unit; here we
-  look at what those tools *produced*.
-- *Three terms, one family:* GMO (the organism), *transgenic* (carrying a foreign
-  gene), and *rDNA technology* (the method) — questions mix them freely, so keep
-  all three anchored.
+== Bt Cotton & The Mechanism of Insecticidal Cry Proteins
 
-== Why plant breeders want GM crops
+*Bt Cotton* is the quintessential model of insect-resistant transgenic agriculture:
+- *Bacterial Origin:* _Bacillus thuringiensis_ (Bt) is a ubiquitous Gram-positive soil bacterium that synthesizes crystalline protein inclusions during its sporulation phase.
+- *The Inactive Protoxin:* These protein crystals contain *endotoxin protoxins* encoded by specific bacterial genes termed *_cry_ genes* (named for crystal). The protoxin is completely harmless to the bacterium itself because it remains in an *inactive, insoluble crystalline state*.
+- *The Alkaline Activation Trigger:* When a susceptible insect larva chews and ingests transgenic plant tissue:
+  1. The crystals dissolve only under the *alkaline pH (pH 9.0 to 10.5)* characteristic of the insect *midgut*.
+  2. Solubilized protoxin is enzymatically cleaved by midgut proteases into an active, toxic peptide fragment.
+  3. The activated toxin binds specifically to high-affinity receptors situated on the surface of *midgut epithelial cells*.
+  4. Toxin oligomerizes and inserts into the plasma membrane, creating permanent *transmembrane pores*.
+  5. Uncontrolled ion influx and water entry trigger *cellular swelling, osmotic lysis*, and midgut perforation.
+  6. The caterpillar ceases feeding (gut paralysis) and succumbs to death within 48 to 72 hours.
+- *Absolute Safety in Humans:* Bt crops present zero risk to humans and non-target mammals because:
+  - The mammalian stomach is strongly *acidic* (gastric pH 1.5 to 2.0), under which the crystals cannot dissolve.
+  - Mammalian gastrointestinal epithelial cells completely lack the specific cell-surface protein receptors required for toxin binding.
+- *Specific Cry Gene Target Profiles:* NTA tests the precise matching of _cry_ genes to their insect orders:
+  - *_cryIAc_* and *_cryIIAb_*: Engineered to control *cotton bollworms* (Lepidopterans: caterpillars).
+  - *_cryIAb_*: Engineered specifically to control *corn borer*.
 
-#table(
-  columns: (1.1fr, 1.55fr),
-  table.header[*Goal*][*How genetic modification helps*],
-  [More stress-tolerant plants], [Crops that survive cold, drought, salt or heat where ordinary varieties die.],
-  [Less chemical pesticide], [Pest-resistant crops kill the pest themselves — Bt cotton is the standard example.],
-  [Less post-harvest loss], [Fruit and grain that spoil more slowly on the shelf and in storage.],
-  [Better food value], [Higher nutrition — golden rice carries extra provitamin A; minerals can be raised too.],
-  [Medicine from plants], [Plants turned into sources of usable proteins and vaccines — the "edible vaccine" idea.],
-)
+#figure(image("assets/bio_bt_rnai_flow.png", width: 62%), caption: [Figure 1: Comprehensive dual pathways of agricultural biotechnology — the 5-step Bt toxin midgut activation cascade and the Dicer/RISC mediated RNA interference gene silencing pathway.])
 
-- *Read the table as a list of benefits:* each row is one classic statement-based
-  option pair — right benefit, wrong example, or right example, wrong benefit.
+== Pest Resistance via RNA Interference (RNAi)
 
-== The Bt cotton story, step by step
+A revolutionary post-transcriptional gene silencing strategy protects crops against parasitic nematodes:
+- *The Target Pathogen:* The root-knot nematode *_Meloidogyne incognita_* infects the roots of tobacco plants, inducing large root galls (knots) that sever nutrient and water uptake, drastically slashing crop yields.
+- *The Principle of RNA Interference (RNAi):* RNAi occurs naturally in *all eukaryotic organisms* as a universal mechanism of *cellular defense* against viral infections and mobile genetic elements (transposons or "jumping genes") that replicate via RNA intermediates.
+- *The Experimental Protocol:*
+  1. Scientists isolated nematode-specific vital survival genes and inserted them into tobacco plant cells utilizing the disarmed Ti-plasmid of *_Agrobacterium tumefaciens_* as a cloning vector.
+  2. The transgene construct was engineered downstream of bidirectional promoters, forcing the host plant cells to synthesize *both sense and anti-sense RNA* strands simultaneously.
+  3. Because the sense and anti-sense strands share exact base complementarity, they immediately anneal to form *double-stranded RNA (dsRNA)* within the host plant cytoplasm.
+  4. The host cellular endoribonuclease enzyme *Dicer* recognizes foreign dsRNA and cleaves it into short segments (21 to 23 base pairs) termed *small interfering RNAs (siRNAs)*.
+  5. These siRNAs are unwound and loaded into a multi-protein effector complex called *RISC* (RNA-Induced Silencing Complex).
+  6. When the feeding nematode ingests host sap containing dsRNA/siRNA, the activated RISC complex uses the single-stranded siRNA guide to locate, bind, and specifically *slice the complementary mRNA of the nematode*.
+  7. Deprived of its target mRNA, the nematode cannot translate essential physiological proteins, leading to developmental arrest and death. The transgenic plant becomes *fully immune* to nematode infestation without synthesizing any chemical toxin!
 
-- *The source bacterium:* _Bacillus thuringiensis_ (that is what "Bt" stands for)
-  is a common soil bacterium. During a certain stage it forms spores that carry
-  *protein crystals*.
-- *The crystals hold a poison for insects:* these *insecticidal proteins* are
-  named *cry proteins*, and the genes that code for them are *cry genes* (the
-  name comes from "crystal").
-- *Each cry gene has its own target:* *cryIAc* protects cotton against the
-  *cotton bollworms*; *cryIIAb* targets the *corn borer*. Gene-to-pest matching
-  is the most-checked pairing in this section.
-- *Scientists moved the gene into cotton:* the cry gene was inserted into the
-  cotton plant's genome, so the plant now makes the bacterial protein in its own
-  tissues.
-- *The poison is stored in a switched-off form:* inside the plant the protein
-  exists as *inactive protoxin crystals* — potent only after dissolving in an
-  insect gut.
+== Plant Tissue Culture, Micropropagation & Somatic Hybridization
 
-#formula-box(title: "The Bt Route in Five Lines")[
-  + Bt cotton carries the cry gene (cryIAc, cryIIAb).
-  + The plant makes *inactive protoxin* crystals.
-  + The insect eats the tissue; its *alkaline gut* dissolves the crystal.
-  + The freed protoxin is *activated* and binds the midgut lining.
-  + The gut wall develops pores, breaks down — the insect dies.
-]
+When traditional sexual hybridization cannot meet agricultural demand or bridge reproductive barriers, tissue culture offers cellular-level multiplication:
+- *Totipotency:* The intrinsic cellular capacity of any living, nucleated plant cell to divide, differentiate, and regenerate into a complete, fertile adult plant when provided appropriate nutritional and hormonal stimuli.
+- *Explant:* Any excised portion of a plant body (e.g., shoot apex, leaf disc, root tip, embryo) used to initiate an in vitro culture in a sterile test tube.
+- *Nutrient Culture Medium:* A chemically defined synthetic medium providing:
+  - Carbon/Energy Source: *Sucrose* (2% to 3%).
+  - Inorganic Macro- and Micro-Nutrient Salts.
+  - Organic Additives: Vitamins (thiamine, nicotinic acid) and amino acids (glycine).
+  - Phytohormones: Balanced ratios of *auxins* (inducing root formation) and *cytokinins* (inducing shoot morphogenesis).
+- *Callus Formation:* An unorganized, actively proliferating, undifferentiated mass of parenchymatous cells produced from the explant.
+- *Micropropagation:* The rapid in vitro clonal propagation of thousands of plantlets from minimal starting tissue within short timeframes. Every regenerated plantlet is a *somaclone*—genetically identical to the original parent plant.
+- *Virus-Free Plants via Meristem Culture:* Even when an entire plant is heavily infected with systemic viruses, the *apical and axillary meristems* remain completely virus-free because the rate of rapid meristematic cell division outpaces viral replication, and vascular bundles (xylem/phloem) are absent at the shoot tip. Culturing the apical shoot dome yields completely virus-free planting stocks (e.g., banana, sugarcane, potato).
+- *Somatic Hybridization (Protoplast Fusion):*
+  - Plant cells are treated with cell-wall-degrading enzymes (*cellulase* and *pectinase*) to digest cellulose and pectin, isolating naked, plasma-membrane-bound *protoplasts*.
+  - Protoplasts from two sexually incompatible plant varieties (or species) are induced to fuse using chemical fusogens like *Polyethylene Glycol (PEG)* or electric pulses (electrofusion).
+  - The fused hybrid protoplast regenerates a cellulose wall, divides, and forms a *somatic hybrid*.
+  - *Classic Example — Pomato:* Protoplasts of tomato and potato were fused to produce the somatic hybrid *Pomato*. Although scientifically successful, the pomato lacked the full commercial combination of desirable agronomic traits and was never released for commercial farming.
 
-#figure(image("assets/bio_bt_rnai_flow.png", width: 100%), caption: [How Bt cotton kills the bollworm — the five stops, plus the two side notes (human safety and RNAi) that finish the story.])
+#pagebreak()
 
-== Why the same toxin never hurts humans
+= Medical Applications of Biotechnology
 
-- *Our gut is acidic:* the crystal dissolves only in an *alkaline* (high-pH)
-  gut. A human stomach is strongly acidic, so the protoxin simply never activates.
-- *We have no receptor:* the activated toxin must first *bind* specific proteins
-  on the insect's midgut cells. Human gut cells do not carry that binding site,
-  so even activated toxin has nothing to attach to.
-- *Both locks must fail:* the pest dies because its gut is both *alkaline* and
-  *receptor-bearing*; we lack both. This "two-key" logic is the cleanest way to
-  answer any "why is Bt safe" statement.
-- *Specificity is the selling point:* a poison that kills one caterpillar family
-  and nothing else is exactly what pest control wanted — spraying broad
-  insecticides kills friend and foe alike.
+Recombinant DNA technology has revolutionized the pharmaceutical sector by enabling mass production of safe, pure, and biologically active human therapeutic proteins without relying on animal slaughter.
 
-#analogy-box(title: "Real-World Analogy — One Key, One Door")[
-  Bt protoxin is like a key that is *locked inside a sealed envelope* (the
-  crystal). Only the bollworm's alkaline gut is the right "opener" for the
-  envelope, and only its midgut cells carry the matching keyhole. Humans are
-  standing in front of a *different door with different weather* — acidic, and
-  with no keyhole at all. The mapping is exact: envelope = protoxin crystal,
-  opener = alkaline pH, keyhole = midgut receptor. Two conditions, both needed —
-  which is why "Bt toxin harms humans" is always a wrong statement.
-]
+== Genetically Engineered Human Insulin (Humulin)
 
-#worked-example("Worked Example — Which Gene for Which Pest?")[
-  Three fields, three complaints. Match each to its gene.
-  - *Field 1:* cotton bolls bored from inside by *bollworm* caterpillars → plant
-    cotton with *cryIAc* — bollworms are its target.
-  - *Field 2:* maize leaves chewed by the *corn borer* → the matching gene is
-    *cryIIAb*, not cryIAc.
-  - *Field 3:* tobacco roots knotted by the nematode _Meloidogyne incognita_ →
-    no cry gene helps; this is the *RNAi* case (next section).
-  Note the third case: Bt toxins kill *insects*; a nematode is a worm, so it
-  needs the different tool. Keeping "insect → Bt" and "nematode → RNAi" apart
-  settles a whole family of statement questions.
-]
+Diabetes mellitus requires lifelong administration of the peptide hormone insulin. Prior to recombinant technology, insulin was extracted from the pancreas of slaughtered cattle (bovine) and pigs (porcine). Although functional, animal insulin caused severe immunological allergies and inflammatory foreign-body reactions in sensitive patients due to minor amino acid sequence differences.
 
-= Agriculture II — RNA Interference and Tissue Culture
+- *Molecular Structure of Natural Insulin:*
+  - Synthesized by pancreatic $beta$-cells of the Islets of Langerhans as an inactive pro-hormone termed *Proinsulin*.
+  - Proinsulin consists of three distinct peptide chains:
+    - *Chain A:* 21 amino acids.
+    - *Chain B:* 30 amino acids.
+    - *C-Peptide (Connecting Peptide):* An extra stretch of 33 (to 35) amino acids linking Chain A and Chain B.
+  - During intracellular post-translational processing in human Golgi bodies, endopeptidases enzymatically excise the C-peptide.
+  - Mature active insulin comprises *51 amino acids* in two polypeptide chains (A and B) covalently bonded together by *disulfide bridges*:
+    - Two interchain disulfide bonds connect Chain A to Chain B (A7–B7 and A20–B19).
+    - One intrachain disulfide bond forms within Chain A (A6–A11).
+  - *Crucial Fact:* The *C-peptide is completely absent from mature, circulating human insulin*.
 
-The first half of this section is about *silencing* a gene instead of adding
-one — no new protein is made, an existing message is simply stopped. The second
-half is about growing *thousands of plants from one cell*. Both are syllabus
-words in one line: RNA interference and tissue culture. They are also the
-easiest marks in this unit if you can retell the one NCERT experiment and the
-one set of culture steps in order.
+- *The Eli Lilly Recombinant Breakthrough (1983):*
+  - The principal hurdle in producing insulin via bacteria was that *E. coli lacks the eukaryotic machinery to excise the C-peptide* from proinsulin.
+  - In 1983, the American pharmaceutical company *Eli Lilly* bypassed the C-peptide problem through an ingenious strategy:
+    1. Scientists chemically synthesized two separate artificial DNA oligonucleotides coding specifically for human *Chain A* (63 nucleotides) and *Chain B* (90 nucleotides).
+    2. These synthetic DNA sequences were inserted separately into plasmids of _Escherichia coli_ downstream of the $beta$-galactosidase (_lacZ_) promoter.
+    3. The transformed _E. coli_ strains were fermented independently in commercial bioreactors, expressing Chain A and Chain B as fusion proteins.
+    4. The polypeptide chains were cleaved from $beta$-galactosidase using cyanogen bromide, extracted, and purified.
+    5. Chains A and B were combined in a test tube in vitro and chemically oxidized to establish authentic *disulfide bonds*.
+  - The resulting product, named *Humulin*, is 100% identical to natural pancreatic insulin, completely free of foreign animal impurities, and provokes *zero allergic immune rejection*.
 
-== RNA interference: silencing one gene
+#figure(image("assets/bio_gene_therapy_insulin_flow.png", width: 62%), caption: [Figure 2: Medical biotechnology landmarks — the Eli Lilly chemical synthesis of Humulin chains A and B in E. coli, and the ex-vivo retroviral clinical gene therapy protocol for ADA-SCID.])
 
-- *What mRNA is:* every gene works by first making an *mRNA* — a working copy of
-  the recipe that the cell reads to build a protein. No mRNA read, no protein.
-- *What RNAi is:* *RNA interference (RNAi)* is the silencing of a *specific*
-  mRNA because a *complementary dsRNA* (double-stranded RNA) binds to it and
-  stops it from being translated. The gene itself is untouched.
-- *Where the dsRNA can come from:* naturally, from an infection by an RNA virus,
-  or from *transposons* (mobile genetic elements) that copy themselves through
-  an RNA intermediate. Biotechnologists simply *supply* the dsRNA on purpose.
-- *Why it is a weapon against pests:* choose a gene the *parasite* needs, make
-  dsRNA against it inside the host plant, and the parasite's own proteins stop
-  being produced.
+== Clinical Gene Therapy & The ADA Deficiency Protocol
 
-== The NCERT experiment: nematode vs tobacco
+*Gene Therapy* is a collection of therapeutic methods that correct genetic defects by introducing a normal, functional gene into an individual's cells and tissues to compensate for a non-functional or deleted mutant gene.
 
-- *The villain:* _Meloidogyne incognita_, the *root-knot nematode* — a tiny worm
-  that infects tobacco roots and slashes yields.
-- *The trick:* scientists introduced *nematode-specific genes* into the tobacco
-  plant using *Agrobacterium vectors* (the standard DNA-delivery vehicle for
-  plants).
-- *The design detail that matters:* the DNA was introduced so the host produced
-  *both sense and antisense RNA* — two RNA strands that are complementary to
-  each other.
-- *The two strands pair up:* sense + antisense RNA formed *dsRNA* inside the
-  tobacco cells — and that dsRNA initiated RNAi.
-- *The result:* the *specific mRNA of the nematode was silenced* by the dsRNA;
-  the parasite could not survive in the transgenic host.
+- *The Landmark Target — ADA Deficiency (SCID):*
+  - *Adenosine Deaminase (ADA)* is an essential enzyme of purine metabolism that deaminates toxic deoxyadenosine into harmless deoxyinosine.
+  - In the absence of functional ADA, toxic deoxyadenosine metabolites accumulate, selectively poisoning dividing T-lymphocytes and B-lymphocytes.
+  - This results in *Severe Combined Immunodeficiency (SCID)*, leaving the infant without a functional immune system ("bubble boy" syndrome).
+  - Inherited as an autosomal recessive disorder caused by the deletion of the ADA gene on chromosome 20.
+- *Traditional Palliative Treatments:*
+  - *Enzyme Replacement Therapy (ERT):* Periodic intravenous injections of bovine ADA conjugated with polyethylene glycol (PEG-ADA). Expensive and provides only transient enzyme activity without correcting the underlying defect.
+  - *Bone Marrow Transplantation:* Transplanting healthy, HLA-matched donor bone marrow. Limited by donor availability and risks of graft-versus-host disease (GVHD). Neither method provides a permanent cure.
+- *The First Clinical Gene Therapy Protocol (1990):*
+  - Performed in September 1990 by W. French Anderson and colleagues on a *4-year-old girl* suffering from ADA deficiency:
+    1. *Cell Harvesting:* T-lymphocytes were extracted from the patient's peripheral blood and cultured in vitro in laboratory vessels.
+    2. *Vector Construction:* A functional human ADA complementary DNA (cDNA) was cloned into a *disarmed retroviral vector*.
+    3. *Transduction:* The retroviral vector was introduced into the cultured patient lymphocytes, stably integrating the functional ADA gene into the host lymphocyte genome.
+    4. *Autologous Infusion:* Genetically corrected, ADA-producing lymphocytes were returned to the young patient's circulation via intravenous infusion.
+  - *Why Periodic Re-Infusion is Required:* Because mature peripheral T-lymphocytes are terminally differentiated, *mortal cells* with finite lifespans (months), they eventually die and are cleared. Therefore, the patient requires *periodic infusions* of genetically engineered lymphocytes throughout life.
+  - *The Permanent Cure:* If a functional ADA gene extracted from bone marrow stem cells is introduced into host cells at *early embryonic stages*, it permanently integrates into self-renewing pluripotential stem cell lineages, providing a *lifelong, permanent cure*.
 
-#table(
-  columns: (0.55fr, 1.5fr),
-  table.header[*Step*][*What happens*],
-  [1], [Nematode-specific genes are inserted into tobacco via *Agrobacterium* vectors.],
-  [2], [The host plant makes *sense RNA* and *antisense RNA* from the introduced DNA.],
-  [3], [The two complementary strands pair to form *dsRNA* in the host cells.],
-  [4], [dsRNA *initiates RNAi* and silences the matching nematode mRNA.],
-  [5], [Essential nematode proteins are no longer made — *the parasite dies*.],
-)
+== Molecular Diagnostic Techniques
 
-- *Retell it in one breath:* genes in via Agrobacterium → sense + antisense RNA
-  → dsRNA → mRNA silenced → nematode dead. Every statement-based question on
-  RNAi is checking one of those five links.
+Conventional diagnostic methods (serum biochemistry, urine analysis, sputum culture) can only detect pathogens once the infectious agent has multiplied to massive concentrations and produced clinical symptoms. By that stage, therapeutic intervention is difficult. Modern biotechnology provides ultra-sensitive molecular diagnostics capable of detecting minute quantities of pathogens at asymptomatic stages:
+- *Polymerase Chain Reaction (PCR):*
+  - Amplifies target DNA by over a billion-fold ($10^9$) within hours.
+  - *Applications:* Routine screening for *HIV* in suspected asymptomatic AIDS patients; detection of oncogenic point mutations in cancer-susceptibility genes; identification of tuberculosis bacteria in early extrapulmonary lesions.
+- *Enzyme-Linked Immunosorbent Assay (ELISA):*
+  - Built upon the fundamental principle of *antigen-antibody interaction*.
+  - An infection is detected either by:
+    - Identifying pathogen-specific *antigens* (proteins, glycoproteins, viral capsids) in patient serum using immobilized antibodies.
+    - Detecting specific *antibodies* synthesized by the patient's immune system against the invading pathogen.
+- *Recombinant DNA Probes & Autoradiography:*
+  - A single-stranded DNA or RNA molecule tagged with a *radioactive label* (e.g., #super[32]P) is termed a *probe*.
+  - The radioactive probe is allowed to hybridize to complementary single-stranded DNA in a cloned library of patient cells, followed by detection using *autoradiography* (exposure to photographic X-ray film).
+  - *Mutation Detection Logic:* If a patient's gene carries a mutation (nucleotide substitution, deletion), the probe will *not hybridize* due to lack of strict sequence complementarity. Consequently, the mutated gene clone *will not appear on the photographic film*. The absence of a hybridization signal confirms the presence of a mutant allele.
 
-== Tissue culture: one cell, many plants
-
-- *Totipotency:* the remarkable property of plants — *any* living cell can
-  regenerate a whole plant, because it still carries the complete genome.
-- *Explant:* the name for the piece you start with — *any part of a plant* (stem
-  bit, leaf disc, meristem tip) taken out and grown in a test tube.
-- *The nutrient medium:* the explant is grown on a sterile, special medium that
-  supplies a *carbon source (sucrose, for example)*, *inorganic salts*, *vitamins*,
-  *amino acids*, and *growth regulators* — auxins and cytokinins decide whether
-  roots or shoots form.
-- *Callus:* the soft, unorganised mass of cells that first grows out of the
-  explant — the raw material from which organised shoots and roots later arise.
-- *Micropropagation:* growing *thousands of plants* from one explant by tissue
-  culture in a short time; every plantlet is a *somaclone* — identical to the
-  original plant.
-- *Virus-free bonus:* meristems (the growing tips) are generally free of viruses,
-  so plants raised from *meristem culture* come out *virus-free* — the standard
-  example for that statement.
-
-#table(
-  columns: (0.55fr, 1.5fr),
-  table.header[*Step*][*What happens in micropropagation*],
-  [1], [Take an *explant* from a healthy plant and sterilise its surface.],
-  [2], [Place it on a sterile *nutrient medium* (sucrose, salts, vitamins, growth regulators).],
-  [3], [Cells divide into an unorganised *callus* mass.],
-  [4], [Change the regulator balance — *shoots*, then *roots*, form from the callus.],
-  [5], [Move plantlets to soil; thousands of *somaclones* (or virus-free lines) result.],
-)
-
-== Somatic hybrids: fusing two plants
-
-- *Protoplast:* a plant cell with its *cell wall removed* — a naked cell that can
-  be fused with another.
-- *Protoplast fusion:* two protoplasts (say, from two different varieties) are
-  made to fuse; the combined cell regrows a wall and divides — a *somatic
-  hybrid* plant develops.
-- *The named example:* protoplasts of *tomato* and *potato* were fused to give
-  the *pomato*. It is the classic illustration — and the classic trap, because
-  the pomato *did not* combine all the desired traits for commercial use.
-- *Why it matters:* somatic hybrids let breeders cross plants that sexual
-  breeding cannot cross — the genes mix without seeds.
-
-#analogy-box(title: "Real-World Analogy — Photocopier and Censor")[
-  *Tissue culture* is a photocopier for plants: feed one good page (the explant)
-  and set the machine (the medium) — out come a thousand identical copies
-  (somaclones). *RNAi* is a censor with one exact instruction: black out every
-  copy of one sentence (the target mRNA) and let all others pass. The censor
-  never enters the library (the DNA) — it works only on the circulating copies
-  (mRNA). Keep the two jobs separate: copying cells is culture; censoring
-  messages is RNAi.
-]
-
-#worked-example("Worked Example — Spot the Wrong Statement")[
-  Four statements; find the false one.
-  - *(a)* RNAi uses complementary dsRNA to block a specific mRNA. — *True*; that
-    is the definition.
-  - *(b)* The nematode experiment used Agrobacterium vectors to deliver the
-    genes. — *True*; that is the standard plant delivery vehicle.
-  - *(c)* The introduced DNA made only antisense RNA in the host. — *False* —
-    the plant made *both sense and antisense RNA*, and their pairing created the
-    dsRNA that starts RNAi.
-  - *(d)* A callus is an unorganised mass of cells grown from an explant. —
-    *True*; that is the standard definition.
-  The wrong statement hid a single word ("only") — statement questions in this
-  unit turn on such small hinges: *both* strands, *complementary*, *specific*.
-]
-
-= Medicine I — Human Insulin
-
-Before 1983, every diabetic patient who needed insulin injections was, in a
-sense, borrowing it from a slaughtered animal. Then recombinant DNA technology
-changed the supply forever: bacteria were made to produce human insulin in
-fermentation tanks. This section follows that story, because it is built from a
-short list of checkable facts — two chains, two sizes, one cut-out peptide, one
-product name — and every one of them is a potential question.
-
-== Why the old route was a problem
-
-- *The old source:* insulin was extracted from the *pancreas of slaughtered
-  cattle and pigs* — a limited, grim supply line.
-- *It worked, but not perfectly:* animal insulin is *almost* the same as human
-  insulin — a few amino acids differ — and *some patients developed allergies*
-  to the animal versions.
-- *Demand only grew:* diabetes is common and lifelong, so a cheaper, safer,
-  unlimited source was needed. The answer came from bacteria and plasmids.
-
-== What human insulin looks like
-
-- *Two short chains:* mature human insulin consists of *chain A* — *21 amino
-  acids* — and *chain B* — *30 amino acids*.
-- *The chains are joined:* by *disulphide bonds* — sulphur-to-sulphur bridges
-  between the chains. Both the count and the bond type are checkable facts.
-- *It is not made directly:* insulin is first produced as *proinsulin*, a longer
-  pro-hormone (like a prologue before a chapter). Proinsulin contains an extra
-  stretch called the *C-peptide* that is *not present in mature insulin*.
-- *Maturation cuts the C-peptide out:* enzymes remove the C-peptide, the chains
-  fold, the disulphide bonds form — and mature insulin results.
-
-#formula-box(title: "Insulin — the Numbers to Carry")[
-  + Chain A: 21 amino acids.
-  + Chain B: 30 amino acids.
-  + Joined by disulphide bonds.
-  + Proinsulin = A + C-peptide + B.
-  + C-peptide is cut out on maturation.
-]
-
-== The rDNA route, step by step
-
-- *Prepare the two recipes:* DNA sequences coding for the *A chain* and the
-  *B chain* were prepared separately in the laboratory.
-- *Load them into bacteria:* each sequence was inserted into the *plasmid DNA*
-  of _E. coli_ — the circular DNA vehicle that bacteria copy faithfully.
-- *Chains produced separately:* the modified bacteria multiplied and produced
-  the *A chains and B chains separately*.
-- *Extract and join:* the two chains were *extracted*, then *combined* by
-  creating *disulphide bonds* between them.
-- *The product:* the result is *human insulin* made by microbes — marketed as
-  *humulin*. This chain-by-chain route (Eli Lilly, 1983) was the first
-  medicine of the rDNA era.
-
-#table(
-  columns: (1.05fr, 1.15fr, 1.15fr),
-  table.header[*Point*][*Animal insulin (old route)*][*Humulin (rDNA route)*],
-  [Source], [Pancreas of slaughtered cattle/pigs], [_E. coli_ carrying the chain genes],
-  [Identity], [Slightly different from human insulin], [Same as human insulin],
-  [Side effects], [Allergy in some patients], [Largely avoided],
-  [Supply], [Limited by slaughterhouses], [Unlimited in fermentation tanks],
-)
-
-- *A diagram in words:* gene for chain A → plasmid → _E. coli_ → A chain;
-  gene for chain B → plasmid → _E. coli_ → B chain; A + B joined by disulphide
-  bonds → *humulin*.
-
-#analogy-box(title: "Real-World Analogy — Shirt with a Spare Panel")[
-  Proinsulin is a finished shirt still carrying a *spare fabric panel* (the
-  C-peptide) stitched between the sleeves. Before the shirt reaches the shop,
-  the panel is unpicked — the sleeves (chains A and B) are already held together
-  by their stitching (disulphide bonds). Two honest mappings to keep: the panel
-  is *present only before maturation*, and the stitching, not the panel, joins
-  the sleeves. So "insulin contains C-peptide" is wrong for *mature* insulin —
-  the panel has been removed.
-]
-
-#worked-example("Worked Example — Sorting True from False on Insulin")[
-  Judge each statement.
-  - *(a)* Mature insulin has chain A of 21 amino acids and chain B of 30. —
-    *True*; reversed sizes (30/21) are the standard wrong option.
-  - *(b)* Proinsulin is longer than mature insulin because of the C-peptide. —
-    *True*; the extra stretch is cut out during maturation.
-  - *(c)* The rDNA route joined two random bacterial genes to make insulin. —
-    *False*; specific *human* A-chain and B-chain sequences were used, produced
-    separately in _E. coli_ and then joined by disulphide bonds.
-  - *(d)* Humulin is insulin from human pancreases. — *False*; the name belongs
-    to *human insulin produced by rDNA technology*.
-  Count the traps: sizes reversed, C-peptide's place, "random genes", and the
-  source. That is the whole insulin section compressed into one card.
-]
-
-= Medicine II — Gene Therapy and Molecular Diagnosis
-
-Two different jobs share this section. *Gene therapy* tries to *fix* a broken
-gene by supplying a working copy. *Molecular diagnosis* tries to *find* a
-pathogen or mutation early, before symptoms speak. One is treatment, the other
-detection — and the exam's statement pairs love to swap their vocabulary, so we
-build both from their standard example.
-
-== Gene therapy: giving the working copy
-
-- *The idea:* gene therapy is a set of methods where *genes are inserted into a
-  person's cells and tissues* to treat a hereditary disease — a working copy is
-  added to do the job the faulty gene cannot.
-- *The standard example — ADA deficiency:* *adenosine deaminase (ADA)* is an
-  enzyme needed for the immune system to work. Deficiency arises when the *gene
-  for adenosine deaminase is deleted (faulty)*, and the result is a child with
-  almost no immune defence (a severe combined immunodeficiency).
-- *Existing half-measures:* in some children ADA deficiency can be helped by
-  *bone marrow transplantation*, or by *enzyme replacement therapy* — injecting
-  functional ADA. Both help, neither is the gene-level fix.
-
-== The 1990 therapy: the first of its kind
-
-- *The patient:* a *4-year-old girl* with ADA deficiency — the world's first
-  approved clinical gene therapy (1990).
-- *Step 1 — collect:* *lymphocytes* (a type of white blood cell) were taken from
-  the patient's blood and *grown in culture outside the body*.
-- *Step 2 — deliver:* a *functional ADA cDNA* was introduced into those
-  lymphocytes using a *retroviral vector* — a modified virus that carries the
-  gene into the cells' chromosomes.
-- *Step 3 — return:* the genetically corrected lymphocytes were *returned to the
-  patient's body*, where they produced functional ADA.
-- *The catch:* the therapy is *not a permanent cure* — lymphocytes do not live
-  forever, so *periodic infusion* of corrected cells is needed. The permanent
-  route would introduce the gene into cells that last a lifetime, such as *bone
-  marrow cells at an early age*.
-
-#table(
-  columns: (0.9fr, 1.5fr),
-  table.header[*Question*][*Answer to remember*],
-  [Which disease?], [ADA deficiency — adenosine deaminase enzyme missing, immunity fails],
-  [Which cells?], [Patient's own lymphocytes, grown outside the body],
-  [Which vector?], [Retroviral vector carrying functional ADA cDNA],
-  [When?], [1990 — the first clinical gene therapy],
-  [Why repeat?], [Lymphocytes die over time; the fix lives only as long as the cells do],
-)
-
-== Molecular diagnosis: catch it early
-
-- *The problem with old tests:* conventional diagnosis (serum and urine
-  analysis) only *detects disease once symptoms appear* — often late.
-- *PCR:* the *polymerase chain reaction* — *amplifies* a chosen piece of nucleic
-  acid into millions of copies. Even a *very low concentration* of bacterial or
-  viral DNA/RNA can be amplified and detected, long before symptoms.
-- *ELISA:* a test built on *antigen–antibody interaction* — the pathogen's
-  protein (antigen) is caught by a matching antibody, or the patient's
-  antibodies are caught with a known antigen. It detects *proteins*, not genes.
-- *Radioactive probe:* a *single-stranded DNA or RNA tagged with a radioactive
-  molecule*; it *hybridises* (base-pairs) only to its complementary sequence.
-  The sample is then exposed to an X-ray film — *autoradiography* — and the
-  matched spot shows up.
-- *The mutation check:* a mutated gene will *not appear* on the autoradiograph,
-  because the probe finds no perfect complementarity — absence of the signal is
-  itself the answer.
-
-#table(
-  columns: (0.75fr, 1.15fr, 1.35fr),
-  table.header[*Tool*][*What it detects*][*One-line logic*],
-  [PCR], [Nucleic acid of the pathogen or mutant gene], [Amplify the target a million-fold, then look],
-  [ELISA], [Antigen or antibody (protein level)], [Match the marker with an antibody],
-  [Probe + autoradiography], [A specific DNA sequence, mutation-scan], [Hybridise the tagged strand; read the film],
-)
-
-== Gene therapy vs molecular diagnosis, side by side
-
-#table(
-  columns: (0.85fr, 1.2fr, 1.2fr),
-  table.header[*Point*][*Gene therapy*][*Molecular diagnosis*],
-  [Purpose], [Treat a hereditary disease], [Detect a pathogen or mutation early],
-  [Acts on], [The patient's cells (adds a working gene)], [A sample from the patient (reads it)],
-  [Tools], [Retroviral vector, corrected cells], [PCR, ELISA, radioactive probes],
-  [Standard example], [ADA deficiency, 1990], [Early detection before symptoms],
-)
-
-#analogy-box(title: "Real-World Analogy — Repair and Smoke Alarm")[
-  Gene therapy is the *repair crew*: it carries a new part (the working ADA
-  gene) into the workshop (the lymphocytes) and puts the crew back to work. It
-  does not hunt down the broken blueprint — the old gene simply stays. Molecular
-  diagnosis is the *smoke alarm*: it looks for the earliest whiff of trouble (a
-  few copies of pathogen DNA, one matching protein) long before the fire
-  (symptoms) spreads. Repair changes you; the alarm only watches — and the
-  watch comes first.
-]
-
-#worked-example("Worked Example — Which Tool Would You Pick?")[
-  Three situations, one line each.
-  - *A newborn with repeated, severe infections* — suspect ADA deficiency:
-    confirm at the gene level (probe/PCR) and treat by *gene therapy* — cells,
-    vector, return.
-  - *A suspected viral infection with barely any virus in the blood* — use
-    *PCR*: amplification turns a trace into a readable signal.
-  - *A blood sample that must be screened for a viral protein* — use *ELISA*:
-    protein-level detection by antigen–antibody matching.
-  The pattern: *DNA → PCR/probe*, *protein → ELISA*, *fix the gene → therapy*.
-]
+#pagebreak()
 
 = Transgenic Animals
 
-A transgenic animal is not just an animal with unusual traits — it is an animal
-whose DNA has been *deliberately edited to carry and express a foreign gene*.
-The gene came from somewhere else, and the animal's cells read it like their
-own. Mice dominate this field, one cow made headlines, and the syllabus lists
-exactly five uses — all five appear below, each with its named example.
+Animals that have had their genome experimentally manipulated to possess and express a functional foreign gene (transgene) are defined as *Transgenic Animals*. Over *95% of all existing transgenic animals are mice*; other transgenic species include rats, rabbits, pigs, sheep, goats, cows, and fish.
 
-== What makes an animal transgenic
-
-- *The definition:* an animal that has had its *DNA manipulated* to *possess and
-  express an extra (foreign) gene* — the gene must be present *and* working.
-- *The majority are mice:* about *95% of all transgenic animals are mice* — they
-  breed fast, their genome is well mapped, and handling is standardised.
-- *Why the numbers matter:* "95% mice" and "possess and express" are the two
-  fact-checks this sub-topic hangs on — one number, one phrase.
-
-== The five uses of transgenic animals
+== The Five Principal Uses of Transgenic Animals
 
 #table(
-  columns: (1.05fr, 1.5fr),
-  table.header[*Use*][*Standard example to attach to it*],
-  [1. Study normal physiology and development], [Transgenic rats carrying genes for *insulin-like growth factor* reveal how genes regulate growth and development.],
-  [2. Study of diseases], [*Disease models*: transgenic animals made for *cancer*, *cystic fibrosis*, *rheumatoid arthritis*, *Alzheimer's* — human disease studied in a live body.],
-  [3. Producing useful biological products], [Human protein *α-1-antitrypsin* (used to treat emphysema) produced in transgenic animals; *Rosie's* enriched milk (below).],
-  [4. Vaccine safety testing], [*Polio vaccine* tested on *transgenic mice* — if approved by regulators, this could replace the use of monkeys.],
-  [5. Chemical safety testing], [*Toxicity testing*: transgenic animals are *more sensitive to toxins*, so results arrive faster than with ordinary test animals.],
+  columns: (1.2fr, 1.8fr),
+  table.header[*Standard Application*][*Detailed Biological Mechanism & NCERT Examples*],
+  [1. Normal Physiology and Development],
+  [Transgenes are specifically introduced to decipher how gene expression is regulated and how it influences bodily development. For example, introducing genes for *Insulin-like Growth Factor (IGF)* into transgenic mice reveals the biological factors involved in systemic growth and downstream organogenesis.],
+  [2. Study of Human Disease Models],
+  [Engineered as living pathological models to investigate how specific genes contribute to disease onset and to test novel gene therapies. Transgenic mouse models exist for *Cancer*, *Cystic Fibrosis*, *Rheumatoid Arthritis*, and *Alzheimer's Disease*.],
+  [3. Production of Biological Products],
+  [Human therapeutic proteins are often expensive and structurally complex to synthesize in bacterial cultures. Transgenic farm animals act as living "bioreactors" secreting pharmaceuticals into milk:
+  - Human protein *$alpha$-1-antitrypsin*: Synthesized in transgenic sheep/goats to treat hereditary *emphysema*. Similar initiatives exist for phenylketonuria (PKU) and cystic fibrosis.
+  - Transgenic Cow *Rosie (1997)*: The first transgenic cow, produced human-protein-enriched milk containing *2.4 grams per liter* of human *$alpha$-lactalbumin*. This milk was nutritionally far more balanced for human infants than natural bovine milk.],
+  [4. Vaccine Safety Testing],
+  [Transgenic mice harboring human cellular receptors are used to assess the batch-to-batch safety of vaccines before release to humans. Transgenic mice were developed to test the *Polio Vaccine*. If demonstrated reliable and reproducible, transgenic mice will replace the traditional sacrifice of monkeys in vaccine testing.],
+  [5. Chemical Safety & Toxicity Testing],
+  [Transgenic animals are engineered carrying sensitive target genes that render them far more susceptible to toxic chemicals than non-transgenic animals. Exposing them to suspected toxic agents provides rapid, highly sensitive toxicity and carcinogenicity readouts in shorter durations.],
 )
 
-- *Memory shape for the five:* *regulate* (genes), *sick* (disease models),
-  *produce* (biologicals), *vaccinate* (vaccine safety), *poison* (toxicity).
-  Five verbs, one row each — recite them in order and every list-type question
-  is covered.
+= Ethical Issues, GEAC, Biopiracy & Patent Controversies
 
-== Rosie: the cow whose milk carried a human protein
+Manipulating living organisms and transferring genes across taxonomic kingdoms raises grave biological and ethical concerns. Uncontrolled release of GMOs could trigger ecological disruption, weediness, and unpredictable biodiversity collapse.
 
-- *The animal:* *Rosie*, the first *transgenic cow*, produced in *1997*.
-- *The gene:* Rosie carried a *human gene* for *alpha-lactalbumin* — a protein
-  of human milk.
-- *The milk:* her milk contained the human protein at *2.4 grams per litre*.
-- *Why it was news:* human-alpha-lactalbumin-enriched milk is a *nutritionally
-  more balanced product for human babies* than ordinary natural cow milk.
-- *Anchor the trio:* *Rosie — alpha-lactalbumin — 2.4 g per litre, 1997*. Swap
-  any one of the three and the statement turns false — exactly how wrong
-  options are written.
+== Genetic Engineering Appraisal Committee (GEAC)
 
-#analogy-box(title: "Real-World Analogy — A Living Test Pilot and Factory")[
-  A transgenic animal does two jobs at once. As a *test pilot*, it flies the
-  human condition — a cystic-fibrosis mouse suffers the disease so treatments
-  can be tried safely. As a *factory*, it produces goods on demand — Rosie's
-  udder became a small dairy plant running on a human recipe. The mapping is
-  careful: the pilot works because the *same gene causes the same disease* in
-  mouse and human; the factory works because a *mammal gland already makes
-  milk proteins* — you only change the recipe.
-]
+To safeguard human health and environmental integrity, the Government of India established the *Genetic Engineering Appraisal Committee (GEAC)* as a statutory body under the Ministry of Environment, Forest and Climate Change (MoEFCC):
+- *Statutory Functions:*
+  1. Appraising and approving the scientific validity and safety of all genetic engineering research in India.
+  2. Adjudicating the safety and approving the commercial introduction of genetically modified organisms and products for public services.
 
-#worked-example("Worked Example — Match the Use to the Example")[
-  Four examples; name the use.
-  - *Polio vaccine given to transgenic mice* → use *4*, vaccine safety testing
-    (the monkeys-replacement line).
-  - *A mouse bred with the mutation behind cystic fibrosis* → use *2*, a
-    *disease model* — the illness is studied in a live body.
-  - *Rats carrying insulin-like-growth-factor genes* → use *1*, normal
-    physiology and development — how growth genes are regulated.
-  - *Rosie's milk at 2.4 g of human protein per litre* → use *3*, producing
-    useful biological products (alpha-lactalbumin enrichment).
-  Every example is straight from NCERT's list — if you can match all four in
-  under a minute, use-type questions are done.
-]
+== Biopiracy & Controversial Foreign Patents
 
-= Ethical Issues, Biopiracy and Patents
+*Biopiracy* is defined as the unauthorized commercial exploitation and patenting of bio-resources and traditional indigenous knowledge of developing nations by multinational corporations without obtaining prior informed consent and without providing equitable compensatory benefit-sharing.
 
-Biology now has the power to move genes between species — so who decides what
-may be released, and who pays for a seed, a leaf or a remedy that a community
-has known for centuries? The syllabus closes Unit IX with exactly these
-questions: a regulator (GEAC), a crime with a name (biopiracy), and three named
-patent cases. The facts are short, dated and easy to check — which is why they
-are worth perfect marks.
+- *The Global Asymmetry:* Highly industrialized developed nations are financially prosperous and technologically advanced, but critically poor in indigenous biodiversity. Conversely, developing nations are extraordinarily rich in biological diversity and traditional ethnobotanical knowledge.
+- *The Famous Patent Battles:*
+  - *Basmati Rice Controversy (1997):* India possesses an estimated *200,000 distinct varieties of rice*, making it one of the richest rice gene pools in the world. Of these, *27 documented varieties of Basmati* are renowned for unique aroma and long grains. In September 1997, the US patent office granted Patent No. 5,663,484 to Texas-based company *RiceTec Inc.* on "Basmati rice lines and grains". RiceTec had simply crossed an Indian Basmati line with semi-dwarf varieties and claimed to have invented a novel variety, attempting to sell it internationally under the name "Texmati". Following severe diplomatic challenge and documented evidence presented by the Indian Government, RiceTec was forced to withdraw its broad claims.
+  - *Turmeric Patent (1995):* Two US researchers were granted a patent for the use of *turmeric (curcumin)* in *wound healing*. The Council of Scientific and Industrial Research (CSIR), India, challenged the patent by citing documented ancient Sanskrit Ayurvedic medical texts proving that turmeric's wound-healing efficacy had been traditional Indian knowledge for millennia. The US Patent Office revoked the patent in *1997*.
+  - *Neem Patent (1995):* The European Patent Office granted a patent to the USDA and W.R. Grace company for the *antifungal and fungicidal properties* of neem oil (_Azadirachta indica_). Following an extensive legal challenge demonstrating prior public knowledge in Indian agriculture, the patent was completely revoked in *2000*.
+- *Indian Legislative Safeguards:* To protect national genetic sovereignty, the Indian Parliament enacted the *Biological Diversity Act (2002)* and amended the *Indian Patents Bill* to incorporate patent terms, research exemptions, and emergency benefit-sharing provisions.
 
-== GEAC: India's gatekeeper for GM organisms
-
-- *Who set it up:* the *Government of India* established the *Genetic
-  Engineering Appraisal Committee (GEAC)*.
-- *What it decides:* the *validity of GM research* and the *safety of
-  introducing GM organisms for public services* — nothing GM reaches the public
-  without this clearance.
-- *Why regulation exists at all:* a released GM organism can breed, spread and
-  out-compete wild relatives; the effects are hard to reverse. Oversight is
-  therefore built into the law *before* release, not after.
-- *Keep the label straight:* GEAC is an *Indian government committee* — not an
-  international body. Confusing it with a world organisation is a standard
-  wrong option.
-
-== Patents in plain words
-
-- *What a patent is:* a *state-granted right* that lets an *inventor* stop
-  others from making, using or selling the invention for a *fixed period* — in
-  exchange, the invention is published for all to learn from.
-- *The word doing the work is "inventor":* a patent rewards something *new*.
-  A plant variety, seed or remedy in *public use for centuries* is *not* an
-  invention — nobody can patent what was never theirs to invent.
-- *Where abuse enters:* companies from wealthy nations (rich in money, poor in
-  biodiversity) have patented products built on the *bio-resources and
-  traditional knowledge* of developing nations — *without authorisation and
-  without payment*. That abuse has a name.
-
-== Biopiracy: the definition and the three cases
-
-- *Biopiracy:* the *use of bio-resources by multinational companies and other
-  organisations without proper authorisation* from the countries and people
-  concerned, and *without compensatory payment*.
-- *The asymmetry behind it:* industrialised nations are *rich financially but
-  poor in biodiversity*; developing nations are *rich in biodiversity and
-  traditional knowledge* — so the flow of "free" raw knowledge has run one way.
-
-#table(
-  columns: (0.62fr, 1.3fr, 1.05fr),
-  table.header[*Case*][*What happened*][*How it ended*],
-  [Basmati rice], [*RiceTec Inc.* (a US company) was granted a patent (1997) on basmati rice lines and grains developed by crossing Indian basmati with semi-dwarf varieties, and even sold the "new" rice as Basmati.], [India filed objections; the *broad claims were withdrawn/cut down* (2001) — the original basmati stayed India's.],
-  [Turmeric], [A US patent (1995) claimed turmeric's *wound-healing* property.], [*CSIR* challenged it with *documented ancient texts*; the patent was *revoked in 1997*.],
-  [Neem], [A European patent claimed neem oil's *fungicidal* property.], [Challenged and *revoked (2000)* — traditional use again beat the patent.],
-)
-
-- *The pattern across all three:* each patent tried to own a *traditional use*
-  that was never new. Written records — ancient texts, documented practice —
-  were the evidence that broke the "novelty" claim.
-
-== India's defences and the ethics habit
-
-- *The Biological Diversity Act (2002):* India's law to *conserve biological
-  diversity* and control how its bio-resources and knowledge are accessed and
-  used — one line is all the syllabus needs here.
-- *Documenting traditional knowledge:* written, dated, public records are what
-  defeated the turmeric and neem patents — documentation is itself a defence.
-- *Benefit sharing:* the fair answer to biopiracy is *authorisation plus
-  compensation* — permission from, and payment to, the source community.
-- *How such questions appear:* as *statement checks*, not opinions — "which body
-  approves GM releases in India", "which patent was revoked and when", "what
-  does biopiracy mean". Learn the labels and dates neutrally; no side-taking is
-  ever required.
-
-#worked-example("Worked Example — Correct the Ethical Statement")[
-  Three statements; fix each false one.
-  - *(a)* GEAC is an international committee under the WHO. — *False*: GEAC is
-    set up by the *Government of India* to appraise GM research and releases.
-  - *(b)* The turmeric and neem patents are still valid. — *False*: turmeric
-    was revoked in *1997*, neem in *2000*, after India's documented-evidence
-    challenges.
-  - *(c)* A company may patent a community remedy if it improves it slightly. —
-    *Not without permission and payment*: the underlying knowledge belongs to
-    the community; unauthorised use is *biopiracy*, whatever the modification.
-  Notice how every fix is a *label, a body, a date* — this section rewards
-  precision, not essays.
-]
+#pagebreak()
 
 = Key Facts & Terms Cheatsheet
 
-#cheatsheet-box(title: "Key Facts & Terms Cheatsheet — Unit IX")[
+#cheatsheet-box(title: "Master Diagnostic & Conceptual Cheatsheet — Biotechnology and its Applications")[
   #table(
-    columns: (1.15fr, 1.5fr, 1.15fr),
-    table.header[*Term / fact*][*Meaning in one line*][*Example / number*],
-    [cryIAc / cryIIAb], [Bt cry genes; each kills a specific insect pest], [cryIAc: cotton bollworm; cryIIAb: corn borer],
-    [Protoxin activation], [Inactive crystal turns lethal only in the insect's alkaline gut], [Binds midgut cells → pores → insect dies],
-    [Human safety from Bt], [Acidic human gut + no receptor — toxin never activates or binds], ["Two-key" logic: pH and receptor both fail in us],
-    [RNAi], [Complementary dsRNA binds a specific mRNA and blocks its translation], [_Meloidogyne incognita_ silenced in tobacco],
-    [RNAi delivery], [Nematode-specific genes via *Agrobacterium* → sense + antisense RNA → dsRNA], [Parasite cannot survive in the host],
-    [Totipotency], [Any living plant cell can regenerate a whole plant], [Explant → callus → plantlets],
-    [Micropropagation], [Thousands of identical plants (somaclones) from one explant], [Meristem culture gives *virus-free* plants],
-    [Protoplast fusion], [Wall-less cells fused to make a somatic hybrid], [Tomato + potato = pomato (traits not all kept)],
-    [Insulin chains], [A = 21 amino acids, B = 30, joined by disulphide bonds], [51 residues in total, two chains],
-    [C-peptide], [Extra stretch in *proinsulin*, cut out on maturation], [Absent from mature insulin],
-    [Humulin], [Human insulin by rDNA: chains made separately in _E. coli_, then joined], [Eli Lilly, 1983 — first rDNA medicine],
-    [ADA deficiency], [Adenosine deaminase gene faulty → immunity fails], [1990: lymphocytes + ADA cDNA via retrovirus],
-    [PCR], [Amplifies trace nucleic acid for detection], [Finds pathogen DNA before symptoms],
-    [ELISA], [Antigen–antibody test at protein level], [Detects pathogen antigen or antibody],
-    [Radioactive probe], [Tagged ssDNA/RNA hybridises to its complement; read by autoradiography], [Mutated gene gives no film signal],
-    [Transgenic animals], [Carry and express an extra foreign gene], [About 95% are mice],
-    [Rosie], [Transgenic cow with human alpha-lactalbumin in milk], [2.4 g per litre, 1997],
-    [GEAC], [Genetic Engineering Appraisal Committee — Indian body], [Clears GM research and public releases],
-    [Biopiracy], [Using bio-resources/traditional knowledge without authorisation or payment], [Basmati (claims cut 2001); turmeric revoked 1997; neem revoked 2000],
+    columns: (1.2fr, 1.7fr, 1.1fr),
+    table.header[*Key Subject Pointer*][*Core NCERT Mechanism / Definition*][*Exam Identifier*],
+    [Provitamin A Rice], [Transgenic rice enriched with $beta$-carotene to alleviate blindness.], [Golden Rice],
+    [Bt Bacterium], [Gram-positive soil bacterium synthesizing crystal endotoxins.], [_Bacillus thuringiensis_],
+    [Cry Protein Form], [Synthesized as an inactive protoxin crystal; solubilized at alkaline pH.], [Alkaline Gut pH (9–10)],
+    [Cotton Bollworm Genes], [Specific _cry_ genes engineered into cotton to destroy caterpillars.], [_cryIAc_ and _cryIIAb_],
+    [Corn Borer Gene], [Distinct _cry_ gene conferring resistance specifically against corn borer.], [_cryIAb_ (Top NTA Trap)],
+    [RNAi Nematode], [Root-knot nematode parasite infesting tobacco plant roots.], [_Meloidogyne incognita_],
+    [RNAi Trigger Molecule], [Double-stranded RNA formed by annealing sense and anti-sense RNA.], [dsRNA],
+    [RNAi Cleavage Enzymes], [Dicer endonuclease cuts dsRNA; RISC complex slices target mRNA.], [Dicer and RISC],
+    [Cellular Totipotency], [Capacity of an isolated nucleated plant cell to regenerate a whole plant.], [Haberlandt (1902)],
+    [Clonal Plantlets], [Thousands of identical plants regenerated in vitro from an explant.], [Somaclones],
+    [Virus-Free Tissue], [Apical and axillary shoot meristems cultured to eliminate viruses.], [Meristem Culture],
+    [Protoplast Fusogen], [Polyethylene glycol promotes plasma membrane fusion of naked cells.], [PEG (Somatic Hybrid)],
+    [First Recombinant Medicine], [Separate synthesis of chains A and B in _E. coli_ joined by disulfide bonds.], [Humulin (Eli Lilly 1983)],
+    [Insulin Chain Sizes], [Chain A consists of 21 amino acids; Chain B consists of 30 amino acids.], [A = 21 aa, B = 30 aa],
+    [C-Peptide Status], [Present in inactive proinsulin (33 aa); completely absent in mature insulin.], [Absent in Mature Insulin],
+    [First Gene Therapy], [1990 retroviral cDNA transfer into lymphocytes of 4-year-old girl with SCID.], [ADA Deficiency (1990)],
+    [Permanent ADA Cure], [Introducing functional ADA cDNA into bone marrow stem cells at early embryo.], [Embryonic Stem Cells],
+    [Molecular Diagnosis (PCR)], [Billion-fold amplification detecting trace asymptomatic HIV/mutations.], [PCR ($10^9$ copies)],
+    [ELISA Principle], [Diagnostic screening built upon specific antigen-antibody binding.], [Antigen-Antibody],
+    [Radiosensitive Probe], [Single-stranded tagged probe fails to hybridize to mutant gene on X-ray.], [Autoradiography],
+    [Transgenic Mammals], [Over 95% of all experimentally produced transgenic animals are mice.], [95% Mice],
+    [Transgenic Cow Rosie], [Produced human-protein milk yielding 2.4 g/L of $alpha$-lactalbumin (1997).], [2.4 g/L $alpha$-lactalbumin],
+    [Emphysema Therapeutic], [Human biological protein synthesized in transgenic animals to treat lung disease.], [$alpha$-1-antitrypsin],
+    [Indian GM Regulator], [Statutory committee under MoEFCC clearing GM research and release.], [GEAC],
+    [Biopiracy Rice Case], [Texas firm patented Indian Basmati cross (1997); forced to narrow claims.], [RiceTec (1997)],
+    [Revoked Traditional Patents], [US turmeric patent revoked (1997); European neem patent revoked (2000).], [Turmeric & Neem],
   )
 ]
+
+#pagebreak()
 
 = Common Errors and Special Cases
 
-- *One habit before the table:* in this unit, most wrong statements fail on a
-  *single hinge word* — active, mRNA, mature, alpha-lactalbumin, Indian, revoked.
-  Read every statement with those hinges in mind.
-
-#exception-box(title: "Common Errors & Special Cases")[
+#exception-box(title: "High-Yield CUET Pitfalls & Diagnostic Distinctions")[
   #table(
-    columns: (1.25fr, 1.35fr, 1.1fr),
-    table.header[*The mistake students make*][*What is right*][*Why / the trap in one line*],
-    [Saying Bt toxin is active as soon as it is made],
-    [It is an *inactive protoxin* until the insect's alkaline gut dissolves it],
-    [The activation step *is* the pest-specificity trick — and our safety],
-    [Saying RNAi cuts or edits the pest's DNA],
-    [RNAi *silences the mRNA*; the DNA stays untouched],
-    [dsRNA pairs with the working copy, never with the gene itself],
-    [Treating insulin as two genes cut apart at random],
-    [Insulin is made as *proinsulin with C-peptide*, cleaved on maturation; the rDNA route builds chains A and B separately, then joins them],
-    [Wrong chain sizes (30/21) and "random genes" are the two planted traps],
-    [Saying gene therapy removes the faulty gene],
-    [It *adds a working copy* (functional ADA cDNA) — the faulty gene remains],
-    [That is why corrected lymphocytes must be infused repeatedly],
-    [Attributing Rosie's milk protein to insulin],
-    [Rosie produced *alpha-lactalbumin*, 2.4 g per litre],
-    [Insulin belongs to the diabetes story; Rosie belongs to milk nutrition],
-    [Calling GEAC an international body],
-    [GEAC is set up by the *Government of India*],
-    [It appraises GM research and public releases *in India* only],
-    [Leaving turmeric/neem patents marked "active"],
-    [Both were *revoked* — turmeric 1997, neem 2000],
-    [Ancient-texts evidence killed the "novelty"; only Basmati's claims were narrowed, not revoked outright],
+    columns: (1.2fr, 1.4fr, 1.4fr),
+    table.header[*Common Student Mistake*][*Scientifically Verified Reality*][*The Exact Trap Mechanism*],
+    [Swapping _cryIAb_ with _cryIIAb_],
+    [*_cryIAc_* and *_cryIIAb_* control *cotton bollworms*; *_cryIAb_* controls *corn borer*.],
+    [Students mix Roman numerals; memorize that "A plus b" alone (_cryIAb_) bores corn!],
+    [Claiming Bt Protoxin is Active in the Plant],
+    [Bt protein is synthesized as an *inactive, insoluble protoxin*; it activates *only* in alkaline insect midgut.],
+    [NTA presents statements asserting the plant makes active poison that harms insects on contact.],
+    [Assuming RNAi Operates in Bacteria],
+    [RNA interference takes place in *all eukaryotic organisms* as cellular defense; bacteria lack RNAi.],
+    [Questions falsely claim RNAi is a universal defense mechanism across all prokaryotes and eukaryotes.],
+    [Believing Mature Insulin Contains C-Peptide],
+    [*Mature functional insulin has zero C-peptide*. C-peptide is present only in proinsulin and is excised during maturation.],
+    [Diagram questions ask students to identify C-peptide in Humulin; commercial Humulin has no C-peptide.],
+    [Thinking Eli Lilly Cloned Proinsulin],
+    [Eli Lilly *did not clone proinsulin*; they synthesized *two separate DNA sequences* for Chain A and Chain B.],
+    [Because _E. coli_ cannot process C-peptide, Eli Lilly bypassed it entirely by expressing chains separately.],
+    [Calling ADA Gene Therapy a Permanent Cure],
+    [The 1990 lymphocyte therapy is *temporary* (requires periodic infusions). Permanent cure requires *embryonic stem cells*.],
+    [Unless bone marrow stem cells are transduced at the early embryonic stage, gene therapy is never permanent.],
+    [Confusing Rosie's Protein with Insulin],
+    [Rosie produced *human $alpha$-lactalbumin* (2.4 g/L); $alpha$-1-antitrypsin is used for emphysema, NOT milk nutrition.],
+    [Exam options deliberately state Rosie produced milk rich in human insulin or $alpha$-1-antitrypsin.],
+    [Assuming GEAC is an International Body],
+    [GEAC is an *Indian statutory committee* under the Ministry of Environment, Forest and Climate Change (MoEFCC).],
+    [NTA writes options claiming GEAC is a United Nations (UN) or WHO international regulatory panel.],
   )
 ]
 
-- *Three checking habits to close with:*
-  - *Pair every gene with its target:* cryIAc–bollworm, cryIIAb–corn borer,
-    nematode-specific genes–_Meloidogyne_. No pair, no answer.
-  - *Ask "which level":* DNA → probe/PCR; protein → ELISA; treatment → gene
-    therapy. Level first, tool second.
-  - *Date the ethics cases:* 1990 (ADA therapy), 1997 (Rosie, turmeric), 2000
-    (neem), 2001 (Basmati claims cut), 2002 (Biological Diversity Act).
+#pagebreak()
 
 = The Whole Chapter on One Page
 
-#figure(image("assets/bio_biotech_apps_mindmap.png", width: 100%), caption: [Whole chapter on one page — Unit IX as six branches, with the three traps that catch most students.])
+#figure(image("assets/bio_biotech_apps_mindmap.png", width: 78%), caption: [Master synthesis mindmap — high-yield integrated architecture of Biotechnology and its Applications covering agriculture, medicine, transgenic animals, ethics, GEAC, and biopiracy.])
 
-= Practice Questions
+#pagebreak()
+#set text(size: 9.6pt)
+#set par(leading: 0.52em, spacing: 0.60em)
 
-#mcq(1, [A cotton plant carrying the *cryIAc* gene is protected chiefly against:], (
-  [corn borer], [root-knot nematode], [cotton bollworm], [rice weevil],
+= Practice Questions — Part 1 (Q1 to Q5)
+
+#mcq(1, [In transgenic Bt crops, the crystalline protein synthesized by _Bacillus thuringiensis_ is an effective insecticide. The correct pairing of specific _cry_ genes with their target insect pests is:], (
+  [_cryIAc_ and _cryIAb_ control cotton bollworms, while _cryIIAb_ controls corn borer],
+  [_cryIAc_ and _cryIIAb_ control cotton bollworms, while _cryIAb_ controls corn borer],
+  [_cryIAb_ and _cryIIAb_ control cotton bollworms, while _cryIAc_ controls corn borer],
+  [_cryIIAb_ alone controls cotton bollworms, while _cryIAc_ and _cryIAb_ control corn borer],
 ))
+#solution(1, [According to the official NCERT Class 12 text, the insecticidal crystalline proteins encoded by the genes *_cryIAc_* and *_cryIIAb_* specifically control *cotton bollworms* (Lepidopterans), whereas the protein encoded by the gene *_cryIAb_* controls the *corn borer*. Swapping _cryIAb_ and _cryIIAb_ is NTA's most frequent trap in this unit.], answer: [B])
 
-#mcq(2, [Inside the cells of Bt cotton, the insecticidal protein is stored as:], (
-  [fully active toxin molecules], [inactive protoxin crystals], [double-stranded RNA], [antibody-like proteins],
+#mcq(2, [Why does the insecticidal Bt protein crystal synthesized by _Bacillus thuringiensis_ not kill the bacterium itself, but specifically kills susceptible insect larvae upon ingestion?], (
+  [The bacterium maintains an intensely acidic cytoplasm that continuously neutralizes the active toxin],
+  [The protoxin exists as an inactive crystalline protein that is solubilized and cleaved only by the alkaline pH of the insect midgut],
+  [The bacterial cell wall contains thick peptidoglycan layers that prevent intracellular binding of the active toxin],
+  [The bacterium synthesizes specific neutralizing antibodies that bind and inactivate the protoxin internally],
 ))
+#solution(2, [Bt toxin is produced by _Bacillus thuringiensis_ as an *inactive, insoluble protoxin crystal*. It does not kill the bacterium because it requires an *alkaline pH (pH 9.0 to 10.5)* to dissolve. When an insect ingests it, the alkaline environment of its midgut solubilizes the crystals, enabling midgut proteases to cleave the protoxin into an active toxic peptide that creates lethal epithelial pores.], answer: [B])
 
-#mcq(3, [The Bt protoxin becomes lethal for the bollworm only when:], (
-  [sunlight ripens the cotton boll], [it meets the acidic human stomach], [soil bacteria chew the leaf], [the insect's alkaline gut dissolves the crystal],
+#mcq(3, [During the induction of nematode resistance in tobacco plants through RNA interference (RNAi), which sequence of biological events correctly describes the silencing mechanism?], (
+  [Retroviral vector introduces sense RNA alone $arrow$ Dicer degrades host DNA $arrow$ translational arrest],
+  [Agrobacterium Ti vector delivers nematode genes $arrow$ host cells make sense and antisense RNA $arrow$ dsRNA forms $arrow$ Dicer and RISC slice nematode mRNA],
+  [Biolistic gene gun fires nematode cDNA $arrow$ antisense RNA binds host rRNA $arrow$ ribosomal subunit degradation],
+  [Bacterial plasmid delivers viral RNA $arrow$ host cells synthesize siRNA $arrow$ transcriptional blockage of host DNA],
 ))
+#solution(3, [In RNAi-mediated nematode resistance: (1) Nematode-specific genes are introduced into tobacco plants using *_Agrobacterium tumefaciens_* Ti plasmid vectors; (2) The construct is engineered such that host cells produce both *sense and anti-sense RNA*; (3) Complementary pairing forms *double-stranded RNA (dsRNA)*; (4) The host enzyme *Dicer* cleaves dsRNA into siRNAs; (5) Activated *RISC* uses the guide siRNA to bind and selectively *slice the matching mRNA of the nematode _Meloidogyne incognita_*, preventing translation of vital proteins.], answer: [B])
 
-#mcq(4, [In the tobacco plants modified by RNA interference, the parasite whose mRNA was silenced was:], (
-  [_Meloidogyne incognita_], [_Bacillus thuringiensis_], [_Agrobacterium tumefaciens_], [_Plasmodium falciparum_],
+#mcq(4, [Mature functional human insulin differs structurally from proinsulin in that mature insulin:], (
+  [Consists of three polypeptide chains (A, B, and C) joined by coordinate covalent bonds],
+  [Consists of Chain A (21 aa) and Chain B (30 aa) linked by disulfide bonds, completely lacking the C-peptide],
+  [Possesses Chain A (30 aa) and Chain B (21 aa) connected through phosphodiester linkages],
+  [Retains the 33-amino-acid C-peptide bridge along with an additional terminal signal sequence],
 ))
+#solution(4, [Proinsulin is an inactive pro-hormone containing Chain A (21 amino acids), Chain B (30 amino acids), and an extra intervening stretch called the *C-peptide* (33 amino acids). During maturation, the C-peptide is proteolytically cleaved and removed. *Mature active insulin consists solely of Chain A (21 aa) and Chain B (30 aa) linked by disulfide bonds, completely lacking the C-peptide*.], answer: [B])
 
-#mcq(5, [Mature human insulin consists of:], (
-  [chain A of 21 amino acids and chain B of 30, joined by disulphide bonds], [chain A of 30 and chain B of 21, joined by peptide bonds], [one single chain of 51 amino acids], [three chains with the C-peptide still inside],
+#mcq(5, [In 1983, the American pharmaceutical company Eli Lilly successfully produced recombinant human insulin (Humulin) by employing which technological approach?], (
+  [Extracting proinsulin from human cadaver pancreases and cleaving C-peptide using synthetic bacterial enzymes],
+  [Chemically synthesizing separate DNA sequences for chains A and B, expressing them separately in _E. coli_, and joining them in vitro via disulfide bonds],
+  [Cloning the entire intact human proinsulin gene into _E. coli_ and utilizing host bacterial proteases to excise the C-peptide],
+  [Culturing transgenic mammalian pancreatic cells in continuous industrial stirred-tank bioreactors],
 ))
+#solution(5, [Because bacteria like _E. coli_ lack the post-translational enzymes to excise the eukaryotic C-peptide, Eli Lilly chemically synthesized *two separate artificial DNA sequences* corresponding to *Chain A* and *Chain B*. These sequences were inserted into plasmids of _E. coli_ and expressed separately. The synthesized chains were extracted, purified, and combined in vitro by chemical oxidation to form authentic *disulfide bonds*.], answer: [B])
 
-#mcq(6, [During the maturation of proinsulin into insulin, the stretch that is removed is:], (
-  [chain A], [chain B], [the C-peptide], [a disulphide bridge],
+#pagebreak()
+#set text(size: 9.6pt)
+#set par(leading: 0.52em, spacing: 0.60em)
+
+= Practice Questions — Part 2 (Q6 to Q10)
+
+#mcq(6, [The world's first approved clinical gene therapy was administered in 1990 to a 4-year-old girl suffering from Severe Combined Immunodeficiency (SCID) caused by the deletion of the gene for:], (
+  [Phenylalanine hydroxylase],
+  [Adenosine deaminase (ADA)],
+  [$alpha$-1-antitrypsin],
+  [$beta$-galactosidase],
 ))
+#solution(6, [The very first clinical gene therapy was performed in September 1990 on a 4-year-old girl suffering from *Adenosine Deaminase (ADA) deficiency*. ADA is an indispensable purine-metabolic enzyme required for the survival and maturation of immune lymphocytes. Its deficiency leads to severe immunodeficiency (SCID).], answer: [B])
 
-#mcq(7, [In the 1990 gene therapy for ADA deficiency, the cells collected from the patient and grown in culture were:], (
-  [bone marrow stem cells], [lymphocytes], [skin fibroblasts], [red blood cells],
+#mcq(7, [Why did the patient who received retroviral gene therapy for ADA deficiency in 1990 require periodic subsequent infusions of genetically engineered lymphocytes?], (
+  [The retroviral vector spontaneously degraded within the human bloodstream within 24 hours of infusion],
+  [Mature peripheral lymphocytes are mortal differentiated cells with finite lifespans, requiring continuous replenishment],
+  [The patient's immune system synthesized neutralizing antibodies that eliminated the transduced retroviral plasmid],
+  [The functional ADA cDNA failed to integrate into host chromosomes and remained as an unstable episome],
 ))
+#solution(7, [Because mature circulating T-lymphocytes are *mortal cells* with limited biological lifespans (several months), the infused genetically corrected cells eventually die. Therefore, the patient requires *periodic infusions* of fresh genetically engineered lymphocytes. A *permanent cure* is possible only if functional ADA cDNA is integrated into *bone marrow stem cells at early embryonic stages*.], answer: [B])
 
-#mcq(8, [ELISA detects a pathogen by means of:], (
-  [amplifying its nucleic acid], [an antigen–antibody interaction], [autoradiography of a tagged probe], [protoplast fusion],
+#mcq(8, [Which molecular diagnostic technique exploits the principle that a single-stranded radioactive DNA probe will fail to hybridize to a target gene on an autoradiograph if the gene contains a point mutation?], (
+  [Enzyme-Linked Immunosorbent Assay (ELISA)],
+  [Agarose Gel Electrophoresis combined with Ethidium Bromide],
+  [DNA Probe Hybridization followed by Autoradiography],
+  [Western Blotting using Polyclonal Antibodies],
 ))
+#solution(8, [In molecular diagnosis via *radioactive probes and autoradiography*, a single-stranded DNA/RNA probe tagged with a radioactive isotope is allowed to hybridize with complementary DNA in a cloned library. If the patient's target gene carries a mutation, the probe cannot hybridize due to base mismatch. Consequently, the mutated clone *will not appear on the photographic X-ray film*, diagnostic of the mutation.], answer: [C])
 
-#mcq(9, [Rosie, the first transgenic cow (1997), produced milk containing:], (
-  [human insulin at 2.4 g per litre], [the ADA enzyme at 2.4 g per litre], [human alpha-lactalbumin at 2.4 g per litre], [cry protein at 2.4 g per litre],
+#mcq(9, [Produced in 1997, the famous transgenic cow Rosie represented a major breakthrough in animal biotechnology because her milk:], (
+  [Yielded high concentrations of human insulin suitable for oral diabetes therapy],
+  [Contained 2.4 grams per liter of human $alpha$-lactalbumin, making it nutritionally superior for human infants],
+  [Expressed high levels of the insecticidal Bt protein to prevent bovine tick infestations],
+  [Contained recombinant $alpha$-1-antitrypsin specifically engineered to treat childhood emphysema],
 ))
+#solution(9, [Transgenic cow *Rosie (1997)* carried a human gene for *$alpha$-lactalbumin*. Her milk contained *2.4 grams of human $alpha$-lactalbumin per liter*, providing a nutritionally richer and more balanced protein source for human infants than ordinary bovine milk. ($alpha$-1-antitrypsin is produced in transgenic animals to treat emphysema, not in Rosie's milk).], answer: [B])
 
-#mcq(10, [Which of these patents was revoked after India produced documented ancient-texts evidence of traditional use?], (
-  [the RiceTec Basmati patent], [the neem patent], [the Bt cotton patent], [the turmeric patent],
+#mcq(10, [Transgenic animal models have been engineered to study human disease pathophysiology and test experimental drugs. Dedicated transgenic mouse models currently exist for all the following human diseases EXCEPT:], (
+  [Cancer and Cystic Fibrosis],
+  [Rheumatoid Arthritis and Alzheimer's disease],
+  [Severe Combined Immunodeficiency (SCID)],
+  [Bovine Spongiform Encephalopathy (Mad Cow Disease) in wild sheep],
 ))
+#solution(10, [According to the official NCERT text, transgenic animal disease models have been specifically engineered for the study of *Cancer*, *Cystic Fibrosis*, *Rheumatoid Arthritis*, and *Alzheimer's Disease*. Option D is an animal prion disease, not one of the four human disease models explicitly highlighted in NCERT.], answer: [D])
 
-= Solutions
+#pagebreak()
+#set text(size: 9.6pt)
+#set par(leading: 0.52em, spacing: 0.60em)
 
-#solution(1, [Gene-to-pest matching: *cryIAc* protects cotton against *cotton bollworms*; *cryIIAb* is the corn-borer gene; a nematode is fought by *RNAi*, not by cry genes.], answer: "C")
+= Practice Questions — Part 3 (Q11 to Q15)
 
-#solution(2, [In the plant the protein sits as *inactive protoxin crystals* — harmless until an insect gut dissolves them. Double-stranded RNA belongs to the RNAi story, and "fully active" reverses the activation logic that makes Bt specific.], answer: "B")
+#mcq(11, [In India, which statutory government authority is legally empowered to evaluate the safety of genetic modification research and approve the commercial environmental release of genetically modified organisms?], (
+  [Indian Council of Agricultural Research (ICAR)],
+  [Genetic Engineering Appraisal Committee (GEAC)],
+  [Department of Biotechnology (DBT)],
+  [Council of Scientific and Industrial Research (CSIR)],
+))
+#solution(11, [The *Genetic Engineering Appraisal Committee (GEAC)* is the statutory regulatory body established by the Government of India under the Ministry of Environment, Forest and Climate Change (MoEFCC). It is responsible for appraising the safety of GM research and granting legal approvals for the commercial release of GMOs and their products into the public domain.], answer: [B])
 
-#solution(3, [Activation needs the *alkaline* gut of the insect: the crystal dissolves, the freed protoxin becomes active and binds the midgut lining. The human stomach is acidic, so option (B) describes exactly why Bt *never* harms humans.], answer: "D")
+#mcq(12, [The unauthorized commercial exploitation, patenting, and monopolization of bio-resources and traditional indigenous knowledge of developing nations without prior consent or benefit-sharing is termed:], (
+  [Bioprospecting],
+  [Bioremediation],
+  [Biopiracy],
+  [Biofortification],
+))
+#solution(12, [*Biopiracy* is the formal term used to designate the unauthorized commercial exploitation and patenting of bio-resources and traditional knowledge of developing nations by multinational companies or other organizations without obtaining prior informed authorization and without equitable compensatory payment.], answer: [C])
 
-#solution(4, [The root-knot nematode is *Meloidogyne incognita* — nematode-specific genes were put into tobacco via Agrobacterium vectors, so _Agrobacterium_ was the *delivery vehicle*, not the target; _Bacillus thuringiensis_ is the Bt source bacterium.], answer: "A")
+#mcq(13, [In 1997, a major international patent battle arose when a United States patent was granted on Indian Basmati rice. The American company involved in this controversy was:], (
+  [W.R. Grace & Co.],
+  [RiceTec Inc.],
+  [Eli Lilly & Co.],
+  [Monsanto Biotech],
+))
+#solution(13, [In September 1997, the US Patent and Trademark Office granted a controversial patent to Texas-based company *RiceTec Inc.* on "Basmati rice lines and grains". RiceTec had crossed Indian Basmati with semi-dwarf varieties and claimed invention. Following vigorous legal challenge and documentation presented by India, RiceTec was forced to withdraw its broad claims.], answer: [B])
 
-#solution(5, [Mature insulin: *chain A = 21 amino acids, chain B = 30*, joined by *disulphide bonds*. "One chain of 51" ignores the two-chain structure, and the C-peptide has already been removed from mature insulin.], answer: "A")
+#mcq(14, [In plant tissue culture, what is the term given to the cellular capacity of an isolated plant cell to divide and regenerate into an entire adult plant?], (
+  [Micropropagation],
+  [Somatic Embryogenesis],
+  [Totipotency],
+  [Differentiation],
+))
+#solution(14, [*Totipotency* is the inherent biological capacity of an individual living nucleated plant cell (explant) to regenerate into a complete, fertile adult organism when cultured on a suitable nutrient medium under sterile conditions. Micropropagation is the technical process of generating thousands of plantlets through tissue culture.], answer: [C])
 
-#solution(6, [Proinsulin is a longer pro-hormone: A chain + *C-peptide* + B chain. Maturation *cuts the C-peptide out*; chains A and B stay and hold the disulphide links.], answer: "C")
-
-#solution(7, [The 1990 therapy used the girl's own *lymphocytes*: collected, grown in culture, given a functional ADA cDNA via a retroviral vector, then returned. Bone marrow cells are the *permanent* route, not the one used in 1990.], answer: "B")
-
-#solution(8, [ELISA is built on *antigen–antibody interaction* — protein-level detection. Amplifying nucleic acid is PCR; a tagged probe read on film is autoradiography; protoplast fusion makes somatic hybrids.], answer: "B")
-
-#solution(9, [Rosie carried a *human* gene for *alpha-lactalbumin* and her milk contained it at *2.4 g per litre* — a nutritionally better milk for human babies. Insulin and ADA belong to medicine; cry protein belongs to Bt plants.], answer: "C")
-
-#solution(10, [The *turmeric* patent (US, 1995, wound-healing) was *revoked in 1997* after CSIR produced documented ancient texts. Neem was also revoked (2000) after a challenge; the Basmati claims were *withdrawn/narrowed* (2001) rather than revoked through ancient-texts evidence.], answer: "D")
-
-#v(6pt)
-#worked-example("Before You Close — the 60-Second Recall Drill")[
-  Cover the right column, say the answer aloud, then check. If any row takes
-  longer than three seconds, revisit its section.
-  #v(3pt)
-  #table(
-    columns: (1.35fr, 1.9fr),
-    table.header[*Cue*][*Instant answer*],
-    [cryIAc — which pest?], [Cotton bollworms (cryIIAb takes the corn borer)],
-    [Where is Bt protoxin activated?], [Only in the insect's alkaline gut — never in our acidic stomach],
-    [What does RNAi silence?], [One specific mRNA, via complementary dsRNA — DNA untouched],
-    [The RNAi parasite and its vector], [_Meloidogyne incognita_; genes delivered by _Agrobacterium_],
-    [Insulin chain sizes], [A = 21 amino acids, B = 30, disulphide-joined],
-    [What is cut from proinsulin?], [The C-peptide — absent from mature insulin],
-    [Humulin], [rDNA human insulin — A and B chains made in _E. coli_, then joined (Eli Lilly, 1983)],
-    [The 1990 first], [Gene therapy: ADA deficiency — lymphocytes + ADA cDNA via retrovirus],
-    [PCR / ELISA / probe — which level?], [DNA / protein / DNA-sequence respectively],
-    [The Rosie trio], [1997 · alpha-lactalbumin · 2.4 g per litre],
-    [Share of transgenic animals that are mice], [About 95%],
-    [GEAC], [Indian committee that appraises GM research and public releases],
-    [The patent endings], [Turmeric revoked 1997 · neem revoked 2000 · Basmati claims cut 2001 · BDA 2002],
-  )
-]
-
-#v(10pt)
-#align(center)[#text(fill: om-grey, size: 9pt)[© OurMocks · www.ourmocks.com · CUET UG Biology · Biotechnology and its Applications · 2027 cycle]]
+#mcq(15, [Somatic hybridization involves the enzymatic digestion of plant cell walls followed by the induced fusion of naked protoplasts. The classic experimental somatic hybrid "Pomato" was produced by fusing protoplasts of:], (
+  [Tomato and Tobacco using Polyethylene Glycol (PEG)],
+  [Tomato and Potato using Polyethylene Glycol (PEG)],
+  [Potato and Sweet Potato using Calcium Chloride],
+  [Tomato and Brinjal using Ultraviolet Irradiation],
+))
+#solution(15, [The somatic hybrid *Pomato* was produced by isolating naked protoplasts from *tomato* and *potato* cells (after digesting cell walls with cellulase and pectinase) and fusing them using the chemical fusogen *Polyethylene Glycol (PEG)*. Although the hybrid plant was successfully regenerated, it lacked the full commercial combination of desirable agronomic traits.], answer: [B])

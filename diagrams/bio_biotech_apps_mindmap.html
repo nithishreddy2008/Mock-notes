@@ -1,115 +1,229 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
+<title>Biotechnology and its Applications — Master Synthesis Mindmap</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
-  .wrap { width: 1480px; height: 1060px; position: relative; background: #fff; }
-  svg.wires { position: absolute; inset: 0; width: 1480px; height: 1060px; }
-  .center {
-    position: absolute; left: 545px; top: 378px; width: 390px; height: 112px;
-    background: #071A4D; border-radius: 16px; display: flex; flex-direction: column;
-    align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(7,26,77,.25);
-    border-bottom: 5px solid #B8FF34; padding: 0 12px;
+  body {
+    width: 1440px; height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px 32px;
   }
-  .center .t { color: #fff; font-size: 22px; font-weight: 800; letter-spacing: .4px; text-align: center; line-height: 1.15; }
-  .center .s { color: #B8FF34; font-size: 13px; font-weight: 700; letter-spacing: 2px; margin-top: 6px; }
-  .card {
-    position: absolute; width: 470px; background: #FCFDFF; border: 1.5px solid #D5DCEA;
-    border-radius: 14px; padding: 13px 16px 12px;
+  .header {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    padding-bottom: 14px; border-bottom: 2px solid #E2E8F0; margin-bottom: 16px;
   }
-  .card h2 { font-size: 20px; color: #071A4D; font-weight: 800; margin-bottom: 7px;
-             padding-bottom: 5px; border-bottom: 3px solid; display: inline-block; }
-  .leaf { font-size: 14.5px; color: #1B2333; margin: 5px 0; padding-left: 16px; position: relative; line-height: 1.32; }
-  .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
-  .b .leaf::before { background: #1F5EFF; }
-  .l .leaf::before { background: #7FB800; }
-  .leaf b { color: #071A4D; }
-  .b h2 { border-color: #1F5EFF; }
-  .l h2 { border-color: #7FB800; }
-  .left { left: 30px; }
-  .right { left: 980px; }
-  .exc {
-    position: absolute; left: 505px; top: 872px; width: 470px; background: #FFF3EC;
-    border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px;
+  .title-group h1 { font-size: 26px; font-weight: 800; color: #071A4D; letter-spacing: -0.02em; }
+  .title-group p { font-size: 13.5px; color: #64748B; margin-top: 3px; font-weight: 500; }
+  .brand-badge {
+    background: #071A4D; color: #B8FF34; font-size: 11px; font-weight: 800;
+    padding: 6px 14px; border-radius: 6px; letter-spacing: 0.08em; text-transform: uppercase;
   }
-  .exc h2 { font-size: 17px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
-  .exc .leaf { font-size: 13px; margin: 3px 0; padding-left: 14px; color: #7A2A12; }
-  .exc .leaf::before { background: #D2481F; }
-  .exc b { color: #B4380F; }
+
+  .mindmap-grid {
+    display: grid;
+    grid-template-columns: 1fr 340px 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 16px;
+    height: 755px;
+  }
+
+  /* Central Hub */
+  .center-hub {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    background: #071A4D;
+    border-radius: 12px;
+    border: 2px solid #1F5EFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 24px 18px;
+    color: #FFFFFF;
+  }
+  .hub-badge {
+    background: #B8FF34; color: #071A4D; font-size: 11px; font-weight: 800;
+    padding: 4px 12px; border-radius: 4px; text-transform: uppercase; margin-bottom: 12px;
+    letter-spacing: 0.05em;
+  }
+  .hub-title { font-size: 22px; font-weight: 800; line-height: 1.25; margin-bottom: 8px; }
+  .hub-sub { font-size: 12px; color: #94A3B8; line-height: 1.45; }
+  .hub-divider { width: 60px; height: 3px; background: #B8FF34; margin: 14px 0; border-radius: 2px; }
+  .hub-stats {
+    background: rgba(255,255,255,0.08); border-radius: 8px; padding: 10px 12px;
+    font-size: 11.5px; color: #CBD5E1; text-align: left; width: 100%;
+  }
+  .hub-stats li { margin: 4px 0 4px 14px; }
+
+  /* Modular Cards */
+  .mm-card {
+    background: #FFFFFF;
+    border: 1.5px solid #CBD5E1;
+    border-radius: 10px;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+  }
+  .card-top {
+    display: flex; justify-content: space-between; align-items: center;
+    padding-bottom: 8px; border-bottom: 1.5px solid #E2E8F0; margin-bottom: 10px;
+  }
+  .card-top h2 { font-size: 15.5px; font-weight: 800; color: #071A4D; }
+  .tag {
+    font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 4px; text-transform: uppercase;
+  }
+  .tag-agri { background: #F0FDF4; color: #166534; border: 1px solid #BBF7D0; }
+  .tag-med { background: #EFF6FF; color: #1D4ED8; border: 1px solid #BFDBFE; }
+  .tag-trans { background: #FAF5FF; color: #7E22CE; border: 1px solid #E9D5FF; }
+  .tag-ethic { background: #FFF7ED; color: #C2410C; border: 1px solid #FFEDD5; }
+
+  .point-list {
+    display: flex; flex-direction: column; gap: 8px; font-size: 11.8px; color: #334155; line-height: 1.42; flex: 1;
+  }
+  .point-item {
+    background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 6px; padding: 7px 10px;
+  }
+  .point-item b { color: #071A4D; font-weight: 700; }
+  .point-item .sub-meta { font-size: 10.5px; color: #64748B; margin-top: 2px; }
+
+  .warning-strip {
+    background: #FEF2F2; border-left: 3px solid #DC2626; border-radius: 4px;
+    padding: 6px 10px; font-size: 11px; color: #991B1B; margin-top: 8px; line-height: 1.35;
+  }
+  .warning-strip b { color: #7F1D1D; }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <svg class="wires" viewBox="0 0 1480 1060">
-    <path d="M 545 420 C 505 420, 520 165, 502 160" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
-    <path d="M 545 435 C 515 435, 520 430, 502 430" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 545 450 C 505 450, 520 700, 502 705" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
-    <path d="M 935 420 C 975 420, 960 165, 978 160" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 935 435 C 965 435, 960 430, 978 430" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
-    <path d="M 935 450 C 975 450, 960 700, 978 705" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 740 490 C 740 640, 740 810, 740 870" fill="none" stroke="#D2481F" stroke-width="2.5" stroke-dasharray="7 5" opacity=".6"/>
-  </svg>
 
-  <div class="center">
-    <div class="t">BIOTECHNOLOGY &amp; ITS APPLICATIONS</div>
-    <div class="s">UNIT IX &#183; COMPLETE CHAPTER MAP</div>
+<div class="header">
+  <div class="title-group">
+    <h1>Biotechnology and its Applications — Master Synthesis Mindmap</h1>
+    <p>NCERT Class 12 Biology · Unit IX · Full Chapter Architecture for High-Yield CUET UG Revision</p>
   </div>
-
-  <div class="card left b" style="top:62px">
-    <h2>Agriculture I — GM Crops &amp; Bt Cotton</h2>
-    <div class="leaf"><b>GMO:</b> an organism carrying a gene placed there by human effort — the gene works in its new host</div>
-    <div class="leaf"><b>Bt source:</b> <i>Bacillus thuringiensis</i>, a soil bacterium that makes cry-protein crystals</div>
-    <div class="leaf"><b>cryIAc</b> kills cotton bollworms &#183; <b>cryIIAb</b> kills corn borer</div>
-    <div class="leaf"><b>Protoxin</b> sits as inactive crystals until the insect's <b>alkaline gut</b> switches it on</div>
-  </div>
-
-  <div class="card left l" style="top:330px">
-    <h2>Agriculture II — RNAi &amp; Tissue Culture</h2>
-    <div class="leaf"><b>RNAi:</b> complementary dsRNA binds a specific mRNA and <b>silences</b> it — no protein is made</div>
-    <div class="leaf"><b>NCERT story:</b> <i>Meloidogyne incognita</i> in tobacco — nematode genes in via <b>Agrobacterium</b> &#8594; sense + antisense RNA &#8594; parasite dies</div>
-    <div class="leaf"><b>Totipotency:</b> one living cell rebuilds the whole plant — explant &#8594; callus &#8594; plantlets (micropropagation)</div>
-    <div class="leaf"><b>Extras:</b> virus-free plants from meristems &#183; somatic hybrids by protoplast fusion (pomato)</div>
-  </div>
-
-  <div class="card left b" style="top:616px">
-    <h2>Medicine I — Human Insulin</h2>
-    <div class="leaf"><b>Structure:</b> chain A (21 amino acids) + chain B (30), joined by <b>disulphide bonds</b></div>
-    <div class="leaf"><b>Made as proinsulin</b> first — the extra <b>C-peptide</b> is cut out during maturation</div>
-    <div class="leaf"><b>rDNA route:</b> A and B chains built separately in <i>E. coli</i>, then joined — product: <b>humulin</b></div>
-    <div class="leaf"><b>Old route:</b> pancreas of slaughtered cattle/pigs — costly, and caused allergies</div>
-  </div>
-
-  <div class="card right l" style="top:62px">
-    <h2>Medicine II — Gene Therapy &amp; Diagnosis</h2>
-    <div class="leaf"><b>ADA deficiency:</b> adenosine deaminase enzyme missing &#8594; immune system fails</div>
-    <div class="leaf"><b>1990, first gene therapy:</b> patient's lymphocytes + functional ADA gene (<b>retroviral vector</b>), grown outside, returned</div>
-    <div class="leaf"><b>Not permanent</b> — lymphocytes die; the marrow-cell route can cure for life</div>
-    <div class="leaf"><b>Early detection:</b> PCR (amplifies pathogen DNA) &#183; ELISA (antigen–antibody) &#183; tagged probe + autoradiography</div>
-  </div>
-
-  <div class="card right b" style="top:330px">
-    <h2>Transgenic Animals</h2>
-    <div class="leaf"><b>Definition:</b> DNA manipulated to carry and express a <b>foreign gene</b>; about <b>95% are mice</b></div>
-    <div class="leaf"><b>Uses:</b> gene regulation study &#183; disease models (cancer, cystic fibrosis) &#183; vaccine safety (polio) &#183; faster toxicity tests &#183; biologicals</div>
-    <div class="leaf"><b>Rosie (1997):</b> transgenic cow with human <b>alpha-lactalbumin</b> in milk — <b>2.4 g per litre</b></div>
-  </div>
-
-  <div class="card right l" style="top:616px">
-    <h2>Ethics, Biopiracy &amp; Patents</h2>
-    <div class="leaf"><b>GEAC</b> (Genetic Engineering Appraisal Committee): Indian body that clears GM research and GM releases</div>
-    <div class="leaf"><b>Biopiracy:</b> bio-resources or traditional knowledge used without authorisation or payment</div>
-    <div class="leaf"><b>Cases:</b> Basmati (RiceTec, 1997 — claims cut after India objected) &#183; turmeric patent revoked 1997 &#183; neem revoked 2000</div>
-    <div class="leaf"><b>India's shield:</b> Biological Diversity Act, 2002</div>
-  </div>
-
-  <div class="exc">
-    <h2>COMMON ERRORS &amp; TRAPS</h2>
-    <div class="leaf"><b>Bt toxin is NOT pre-activated</b> — it switches on only in the insect's alkaline gut; our acidic gut + no receptor keeps us safe</div>
-    <div class="leaf"><b>RNAi silences mRNA, never DNA</b> — and it needs a matching (complementary) dsRNA</div>
-    <div class="leaf"><b>Rosie's protein is alpha-lactalbumin,</b> not insulin — and GEAC is an Indian committee, not an international one</div>
-  </div>
+  <div class="brand-badge">OurMocks CUET UG</div>
 </div>
+
+<div class="mindmap-grid">
+
+  <!-- TOP LEFT: Agriculture -->
+  <div class="mm-card">
+    <div class="card-top">
+      <h2>1. Agricultural Biotechnology</h2>
+      <span class="tag tag-agri">Green Biotech</span>
+    </div>
+    <div class="point-list">
+      <div class="point-item">
+        <b>Transgenic Crops & GMO Goals:</b> Abiotic stress tolerance (cold, drought, salt), reduced chemical dependency, diminished post-harvest loss, enhanced mineral efficiency, nutritional fortification (<b>Golden Rice</b> enriched with provitamin A).
+      </div>
+      <div class="point-item">
+        <b>Bt Cotton (Cry Toxins):</b> Crystal protoxins of <i>Bacillus thuringiensis</i> activated in insect <b>alkaline midgut</b> (pH 9–10) $arrow$ pore formation & osmotic lysis.
+        <div class="sub-meta">• <b>cryIAc & cryIIAb:</b> Cotton bollworms | • <b>cryIAb:</b> Corn borer (Top NTA trap)</div>
+      </div>
+      <div class="point-item">
+        <b>RNA Interference (RNAi):</b> Nematode <i>Meloidogyne incognita</i> root resistance in tobacco. Sense + antisense RNA $arrow$ <b>dsRNA</b> $arrow$ Dicer $arrow$ siRNAs $arrow$ RISC $arrow$ mRNA cleavage & post-transcriptional gene silencing.
+      </div>
+    </div>
+    <div class="warning-strip"><b>Trap:</b> RNAi occurs in <i>all eukaryotic organisms</i> as cellular defense, NOT in prokaryotes!</div>
+  </div>
+
+  <!-- CENTER HUB: Chapter Core -->
+  <div class="center-hub">
+    <div class="hub-badge">Core Blueprint</div>
+    <div class="hub-title">Biotechnology &amp; Its Applications</div>
+    <div class="hub-sub">Unit IX · Class 12 NCERT Biology<br>Translating rDNA into Global Real-World Solutions</div>
+    <div class="hub-divider"></div>
+    <div class="hub-stats">
+      <b>CUET UG Exam Weightage:</b>
+      <ul>
+        <li><b>3 to 5 Questions</b> per exam session</li>
+        <li>Major focus on <i>cry genes</i> & <i>Eli Lilly</i></li>
+        <li>ADA Gene Therapy timing distinction</li>
+        <li>Rosie Cow & GEAC statutory powers</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- TOP RIGHT: Medicine -->
+  <div class="mm-card">
+    <div class="card-top">
+      <h2>2. Medical Applications</h2>
+      <span class="tag tag-med">Red Biotech</span>
+    </div>
+    <div class="point-list">
+      <div class="point-item">
+        <b>Recombinant Human Insulin (Humulin):</b> Synthesized by <b>Eli Lilly (1983)</b>. Two separate artificial DNA sequences for <b>Chain A (21 aa)</b> and <b>Chain B (30 aa)</b> expressed in <i>E. coli</i> plasmids; linked in vitro by disulfide bonds.
+        <div class="sub-meta">• Mature insulin has 51 aa; completely lacks the connecting <b>C-peptide (33 aa)</b>.</div>
+      </div>
+      <div class="point-item">
+        <b>Gene Therapy (ADA Deficiency):</b> 1990 clinical trial on 4-yr-old girl with SCID. Retroviral vector transduced functional ADA cDNA into patient lymphocytes.
+        <div class="sub-meta">• Periodic infusion needed (mortal cells) | Permanent cure: stem cells at early embryo.</div>
+      </div>
+      <div class="point-item">
+        <b>Molecular Diagnosis:</b>
+        <div class="sub-meta">• <b>PCR:</b> Amplifies trace viral/bacterial DNA (early HIV & cancer mutation screening).<br>
+        • <b>ELISA:</b> Antigen-antibody interaction detection.<br>
+        • <b>Autoradiography:</b> Radioactive ssDNA/ssRNA probe fails to hybridize to mutated genes.</div>
+      </div>
+    </div>
+    <div class="warning-strip"><b>Trap:</b> Bovine/porcine insulin caused immune allergies; Humulin causes zero immune rejection.</div>
+  </div>
+
+  <!-- BOTTOM LEFT: Transgenic Animals -->
+  <div class="mm-card">
+    <div class="card-top">
+      <h2>3. Transgenic Animals</h2>
+      <span class="tag tag-trans">In Vivo Models</span>
+    </div>
+    <div class="point-list">
+      <div class="point-item">
+        <b>Model Organisms:</b> Over <b>95% of all existing transgenic animals are mice</b>. Others include transgenic rats, rabbits, pigs, sheep, and cows.
+      </div>
+      <div class="point-item">
+        <b>Five Standard Biological Uses:</b>
+        <div class="sub-meta">
+          1. <i>Normal Physiology & Development:</i> Studying insulin-like growth factor (IGF).<br>
+          2. <i>Study of Human Diseases:</i> Transgenic animal models for cancer, cystic fibrosis, rheumatoid arthritis, and Alzheimer's disease.<br>
+          3. <i>Biological Products:</i> Human protein $alpha$-1-antitrypsin (treats emphysema); transgenic cow <b>Rosie (1997)</b> produced human protein-enriched milk (<b>2.4 g/L $alpha$-lactalbumin</b>).<br>
+          4. <i>Vaccine Safety:</i> Transgenic mice test batch safety of polio vaccine before monkeys.<br>
+          5. <i>Chemical Safety Testing:</i> Toxicity testing using animals engineered to be hypersensitive.
+        </div>
+      </div>
+    </div>
+    <div class="warning-strip"><b>Trap:</b> Rosie's milk contained <i>alpha-lactalbumin</i> (nutritionally balanced), NOT alpha-1-antitrypsin!</div>
+  </div>
+
+  <!-- BOTTOM RIGHT: Ethics & Biopiracy -->
+  <div class="mm-card">
+    <div class="card-top">
+      <h2>4. Ethical Issues, GEAC & Biopiracy</h2>
+      <span class="tag tag-ethic">Legal & Regulatory</span>
+    </div>
+    <div class="point-list">
+      <div class="point-item">
+        <b>GEAC (Genetic Engineering Appraisal Committee):</b> Statutory government body under MoEFCC responsible for:
+        <div class="sub-meta">1. Evaluating the safety and validity of GM research.<br>2. Approving the commercial release of GMOs into public environments.</div>
+      </div>
+      <div class="point-item">
+        <b>Biopiracy:</b> Use of bio-resources and traditional indigenous knowledge by multinational companies without proper authorization or compensatory benefit-sharing.
+      </div>
+      <div class="point-item">
+        <b>Famous Controversies & Patent Battles:</b>
+        <div class="sub-meta">
+          • <b>Basmati Rice:</b> US company (RiceTec, 1997) patented semi-dwarf Indian Basmati crossed with American varieties; revoked after legal contestation.<br>
+          • <b>Turmeric (curcumin wound healing) & Neem (fungicidal):</b> Traditional Indian uses successfully defended against foreign patent claims.<br>
+          • <b>Indian Patents Bill:</b> Amendment passed by Parliament including research emergency terms.
+        </div>
+      </div>
+    </div>
+    <div class="warning-strip"><b>Trap:</b> India alone has 200,000 varieties of rice; 27 documented distinct varieties of Basmati!</div>
+  </div>
+
+</div>
+
 </body>
 </html>

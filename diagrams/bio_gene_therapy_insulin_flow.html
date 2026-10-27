@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Medical Biotechnology — Recombinant Insulin & Gene Therapy</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px; height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px 32px;
+  }
+  .header {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    padding-bottom: 16px; border-bottom: 2px solid #E2E8F0; margin-bottom: 18px;
+  }
+  .title-group h1 { font-size: 26px; font-weight: 800; color: #071A4D; letter-spacing: -0.02em; }
+  .title-group p { font-size: 13.5px; color: #64748B; margin-top: 3px; font-weight: 500; }
+  .brand-badge {
+    background: #071A4D; color: #B8FF34; font-size: 11px; font-weight: 800;
+    padding: 6px 14px; border-radius: 6px; letter-spacing: 0.08em; text-transform: uppercase;
+  }
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+    height: 750px;
+  }
+  .panel {
+    background: #FFFFFF;
+    border: 1.5px solid #CBD5E1;
+    border-radius: 10px;
+    padding: 18px 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  .panel-header {
+    display: flex; justify-content: space-between; align-items: center;
+    padding-bottom: 10px; border-bottom: 1.5px solid #E2E8F0; margin-bottom: 14px;
+  }
+  .panel-header h2 { font-size: 17px; font-weight: 800; color: #071A4D; }
+  .panel-badge {
+    font-size: 10.5px; font-weight: 700; padding: 3px 10px; border-radius: 4px; text-transform: uppercase;
+  }
+  .badge-insulin { background: #EFF6FF; color: #2563EB; border: 1px solid #BFDBFE; }
+  .badge-gene { background: #FEF3C7; color: #B45309; border: 1px solid #FDE68A; }
+
+  /* Flow Steps */
+  .flow-col {
+    display: flex; flex-direction: column; gap: 10px; flex: 1; justify-content: space-between;
+  }
+  .flow-step {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 11px 13px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .step-num {
+    width: 26px; height: 26px; border-radius: 6px;
+    background: #1D4ED8; color: #FFFFFF; font-size: 12px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .step-num.amber { background: #B45309; color: #FEF3C7; }
+  .step-content { flex: 1; }
+  .step-title { font-size: 13.5px; font-weight: 800; color: #0F172A; margin-bottom: 3px; }
+  .step-desc { font-size: 12px; color: #475569; line-height: 1.45; }
+  .step-desc b { color: #071A4D; }
+
+  .connector {
+    display: flex; justify-content: center; align-items: center; height: 12px;
+  }
+  .connector svg { width: 14px; height: 14px; fill: #94A3B8; }
+
+  .highlight-card {
+    background: #F1F5F9; border-left: 3.5px solid #2563EB;
+    border-radius: 6px; padding: 9px 12px; margin-top: 10px;
+  }
+  .highlight-card.amber { border-left-color: #D97706; background: #FFFBEB; }
+  .highlight-title { font-size: 11.5px; font-weight: 800; color: #071A4D; margin-bottom: 3px; text-transform: uppercase; }
+  .highlight-desc { font-size: 11.5px; color: #334155; line-height: 1.4; }
+  .highlight-desc b { color: #0F172A; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="title-group">
+    <h1>Medical Biotechnology — Genetically Engineered Insulin & Gene Therapy</h1>
+    <p>NCERT Class 12 Biology · Unit IX · Humulin Synthesis in E. coli & ADA-SCID Retroviral Correction</p>
+  </div>
+  <div class="brand-badge">OurMocks CUET UG</div>
+</div>
+
+<div class="grid-container">
+
+  <!-- LEFT PANEL: Humulin Production -->
+  <div class="panel">
+    <div class="panel-header">
+      <h2>Pathway 1: Genetically Engineered Insulin (Eli Lilly, 1983)</h2>
+      <span class="panel-badge badge-insulin">Recombinant Therapeutic</span>
+    </div>
+
+    <div class="flow-col">
+      <div class="flow-step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <div class="step-title">Human Proinsulin Structure & The C-Peptide Problem</div>
+          <div class="step-desc">Natural proinsulin contains three chains: <b>Chain A (21 aa)</b>, <b>Chain B (30 aa)</b>, and an extra stretch called <b>C-peptide (33 aa)</b>. In mammalian cells, C-peptide is proteolytically excised to produce mature 51 aa insulin. Bacteria cannot excise C-peptide!</div>
+        </div>
+      </div>
+
+      <div class="connector"><svg viewBox="0 0 24 24"><path d="M12 16l-6-6h12z"/></svg></div>
+
+      <div class="flow-step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <div class="step-title">Separate Chemical DNA Synthesis (Chains A & B)</div>
+          <div class="step-desc">In 1983, American company <b>Eli Lilly</b> chemically synthesized two separate DNA sequences corresponding to <b>Chain A</b> and <b>Chain B</b> of human insulin, bypassing the C-peptide coding sequence entirely.</div>
+        </div>
+      </div>
+
+      <div class="connector"><svg viewBox="0 0 24 24"><path d="M12 16l-6-6h12z"/></svg></div>
+
+      <div class="flow-step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <div class="step-title">Independent Expression in Escherichia coli Vectors</div>
+          <div class="step-desc">The two synthetic DNA sequences were inserted into plasmids of <b>E. coli</b> downstream of the <i>lacZ</i> promoter. Chain A and Chain B were fermented and expressed independently in separate bacterial bioreactor cultures.</div>
+        </div>
+      </div>
+
+      <div class="connector"><svg viewBox="0 0 24 24"><path d="M12 16l-6-6h12z"/></svg></div>
+
+      <div class="flow-step">
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <div class="step-title">Isolation & In Vitro Disulfide Bond Linkage</div>
+          <div class="step-desc">Chains A and B were extracted, purified via downstream chromatography, and combined in vitro by chemical oxidation to establish <b>covalent disulfide bonds</b> (2 interchain bonds + 1 intrachain bond in Chain A).</div>
+        </div>
+      </div>
+
+      <div class="connector"><svg viewBox="0 0 24 24"><path d="M12 16l-6-6h12z"/></svg></div>
+
+      <div class="flow-step">
+        <div class="step-num">5</div>
+        <div class="step-content">
+          <div class="step-title">Active Human Insulin (Humulin) Formation</div>
+          <div class="step-desc">The reconstituted product, <b>Humulin</b>, is 100% structurally identical to natural pancreatic insulin. Unlike earlier bovine or porcine insulin, Humulin triggers <b>zero immunological rejection or allergic responses</b>.</div>
+        </div>
+      </div>
+
+      <div class="highlight-card">
+        <div class="highlight-title">NCERT Fact-Check: Insulin Structure</div>
+        <div class="highlight-desc">
+          • <b>Total Amino Acids:</b> 51 (Chain A = 21 aa, Chain B = 30 aa).<br>
+          • <b>Mature Insulin lacks C-peptide:</b> C-peptide is present ONLY in pro-insulin.<br>
+          • <b>Disulfide Bonds:</b> 3 total bonds (two between A and B, one internal within A).
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT PANEL: Gene Therapy for ADA -->
+  <div class="panel">
+    <div class="panel-header">
+      <h2>Pathway 2: Clinical Gene Therapy for ADA-SCID (1990)</h2>
+      <span class="panel-badge badge-gene">Ex-Vivo Retroviral Therapy</span>
+    </div>
+
+    <div class="flow-col">
+      <div class="flow-step">
+        <div class="step-num amber">1</div>
+        <div class="step-content">
+          <div class="step-title">ADA Gene Deletion & SCID Pathophysiology</div>
+          <div class="step-desc"><b>Adenosine Deaminase (ADA)</b> enzyme is crucial for purine breakdown and immune system function. Inherited deletion/mutation of the ADA gene causes <b>Severe Combined Immunodeficiency (SCID)</b>, disabling both T and B lymphocytes.</div>
+        </div>
+      </div>
+
+      <div class="connector"><svg viewBox="0 0 24 24"><path d="M12 16l-6-6h12z"/></svg></div>
+
+      <div class="flow-step">
+        <div class="step-num amber">2</div>
+        <div class="step-content">
+          <div class="step-title">Lymphocyte Extraction & In Vitro Culturing</div>
+          <div class="step-desc">In 1990, the first clinical gene therapy was administered to a 4-year-old girl. Blood <b>lymphocytes</b> were extracted from the patient's peripheral circulation and grown in laboratory culture vessels.</div>
+        </div>
+      </div>
+
+      <div class="connector"><svg viewBox="0 0 24 24"><path d="M12 16l-6-6h12z"/></svg></div>
+
+      <div class="flow-step">
+        <div class="step-num amber">3</div>
+        <div class="step-content">
+          <div class="step-title">Retroviral Transduction of Functional ADA cDNA</div>
+          <div class="step-desc">A functional human <b>ADA cDNA</b> construct was introduced into a <b>disarmed retroviral vector</b>. The retrovirus infected cultured lymphocytes, stably integrating the therapeutic gene into host chromosomes.</div>
+        </div>
+      </div>
+
+      <div class="connector"><svg viewBox="0 0 24 24"><path d="M12 16l-6-6h12z"/></svg></div>
+
+      <div class="flow-step">
+        <div class="step-num amber">4</div>
+        <div class="step-content">
+          <div class="step-title">Autologous Infusion of Corrected Cells</div>
+          <div class="step-desc">The genetically modified, ADA-expressing lymphocytes were washed and re-infused into the young patient's bloodstream, temporarily restoring functional cellular immunity.</div>
+        </div>
+      </div>
+
+      <div class="connector"><svg viewBox="0 0 24 24"><path d="M12 16l-6-6h12z"/></svg></div>
+
+      <div class="flow-step">
+        <div class="step-num amber">5</div>
+        <div class="step-content">
+          <div class="step-title">Periodic Infusion Need vs Permanent Cure</div>
+          <div class="step-desc">Because mature lymphocytes are <b>mortal cells</b> with finite lifespans, the patient requires <b>periodic re-infusion</b> of corrected cells. <br>
+          <i>Permanent Cure Strategy:</i> Introducing functional ADA cDNA into <b>bone marrow stem cells at early embryonic stages</b> cures the disease permanently.</div>
+        </div>
+      </div>
+
+      <div class="highlight-card amber">
+        <div class="highlight-title">Alternative SCID Therapies Compared</div>
+        <div class="highlight-desc">
+          • <b>Enzyme Replacement Therapy (ERT):</b> Injections of functional ADA enzyme (not permanent).<br>
+          • <b>Bone Marrow Transplantation:</b> Requires strict HLA matching; risk of graft-versus-host disease.<br>
+          • <b>Vector used:</b> Disarmed Retrovirus (infects dividing lymphocytes).
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

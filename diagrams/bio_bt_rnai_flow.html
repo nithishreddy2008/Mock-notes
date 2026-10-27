@@ -1,115 +1,238 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
+<title>Agricultural Biotechnology — Bt Toxin & RNAi Gene Silencing</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
-  .wrap { width: 1480px; height: auto; background: #fff; padding: 26px 30px 24px; position: relative; }
-  .title { text-align: center; font-size: 32px; font-weight: 800; color: #071A4D; margin-bottom: 6px; }
-  .subtitle { text-align: center; font-size: 19px; color: #5A6478; margin-bottom: 26px; }
-  .row { display: flex; justify-content: center; align-items: stretch; gap: 0; }
-  .node {
-    width: 305px; background: #FCFDFF; border: 1.5px solid #D5DCEA; border-radius: 13px;
-    padding: 14px 16px 13px; position: relative; margin: 0 26px;
+  body {
+    width: 1440px; height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px 32px;
   }
-  .node .num {
-    position: absolute; top: -17px; left: -17px; width: 40px; height: 40px; border-radius: 50%;
-    background: #071A4D; color: #B8FF34; font-weight: 800; font-size: 19px;
-    display: flex; align-items: center; justify-content: center; border: 2.5px solid #fff;
-    box-shadow: 0 3px 8px rgba(7,26,77,.28);
+  .header {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    padding-bottom: 16px; border-bottom: 2px solid #E2E8F0; margin-bottom: 18px;
   }
-  .node h3 { font-size: 21px; color: #071A4D; font-weight: 800; margin-bottom: 6px; padding-bottom: 5px;
-             border-bottom: 2.5px solid #1F5EFF; display: inline-block; }
-  .node p { font-size: 16.5px; color: #1B2333; line-height: 1.4; }
-  .node p b { color: #071A4D; }
-  .node.dr h3 { border-color: #D2481F; }
-  .node.dr { background: #FFF8F5; }
-  .node.cr h3 { border-color: #7FB800; }
-  .node.cr { background: #FBFFF4; }
-  .arrow { align-self: center; width: 0; height: 0; border-top: 15px solid transparent;
-           border-bottom: 15px solid transparent; border-left: 22px solid #1F5EFF; margin: 0 -6px; }
-  .arrow.down { border-left: 15px solid transparent; border-right: 15px solid transparent;
-                border-top: 22px solid #1F5EFF; border-bottom: none; margin: 4px 0; }
-  .spacer { width: 357px; }
-  .rowgap { height: 40px; display: flex; justify-content: center; }
-  .downwrap { display: flex; flex-direction: column; align-items: center; }
-  .sidenote {
-    width: 620px; border-radius: 13px; padding: 14px 18px 13px; margin: 0 20px;
+  .title-group h1 { font-size: 26px; font-weight: 800; color: #071A4D; letter-spacing: -0.02em; }
+  .title-group p { font-size: 13.5px; color: #64748B; margin-top: 3px; font-weight: 500; }
+  .brand-badge {
+    background: #071A4D; color: #B8FF34; font-size: 11px; font-weight: 800;
+    padding: 6px 14px; border-radius: 6px; letter-spacing: 0.08em; text-transform: uppercase;
   }
-  .sidenote .tag { display: inline-block; font-size: 12px; font-weight: 800; letter-spacing: 2px;
-                   padding: 3px 10px; border-radius: 5px; color: #fff; margin-bottom: 7px; }
-  .sidenote h3 { font-size: 20px; font-weight: 800; margin-bottom: 5px; }
-  .sidenote p { font-size: 15.5px; line-height: 1.42; color: #1B2333; }
-  .side-safe { background: #F6FFE8; border: 1.5px solid #7FB800; }
-  .side-safe .tag { background: #7FB800; }
-  .side-safe h3 { color: #4E7A00; }
-  .side-safe p b { color: #4E7A00; }
-  .side-rnai { background: #F3F7FF; border: 1.5px solid #1F5EFF; }
-  .side-rnai .tag { background: #1F5EFF; }
-  .side-rnai h3 { color: #071A4D; }
-  .side-rnai p b { color: #071A4D; }
-  .divider { height: 0; border-top: 1.5px dashed #C7CFDF; margin: 26px 60px 20px; position: relative; }
-  .divider span { position: absolute; left: 50%; top: -11px; transform: translateX(-50%);
-                  background: #fff; padding: 0 16px; font-size: 13px; font-weight: 800;
-                  letter-spacing: 2.5px; color: #5A6478; }
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+    height: 750px;
+  }
+  .panel {
+    background: #FFFFFF;
+    border: 1.5px solid #CBD5E1;
+    border-radius: 10px;
+    padding: 18px 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  .panel-header {
+    display: flex; justify-content: space-between; align-items: center;
+    padding-bottom: 10px; border-bottom: 1.5px solid #E2E8F0; margin-bottom: 14px;
+  }
+  .panel-header h2 { font-size: 17px; font-weight: 800; color: #071A4D; }
+  .panel-badge {
+    font-size: 10.5px; font-weight: 700; padding: 3px 10px; border-radius: 4px; text-transform: uppercase;
+  }
+  .badge-bt { background: #EEF2FF; color: #1F5EFF; border: 1px solid #C7D2FE; }
+  .badge-rnai { background: #F0FDF4; color: #166534; border: 1px solid #BBF7D0; }
+
+  /* Flow Steps */
+  .flow-col {
+    display: flex; flex-direction: column; gap: 10px; flex: 1; justify-content: space-between;
+  }
+  .flow-step {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 11px 13px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .step-num {
+    width: 26px; height: 26px; border-radius: 6px;
+    background: #071A4D; color: #FFFFFF; font-size: 12px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .step-num.green { background: #166534; color: #B8FF34; }
+  .step-content { flex: 1; }
+  .step-title { font-size: 13.5px; font-weight: 800; color: #0F172A; margin-bottom: 3px; }
+  .step-desc { font-size: 12px; color: #475569; line-height: 1.45; }
+  .step-desc b { color: #071A4D; }
+
+  .connector {
+    display: flex; justify-content: center; align-items: center; height: 12px;
+  }
+  .connector svg { width: 14px; height: 14px; fill: #94A3B8; }
+
+  .highlight-card {
+    background: #F1F5F9; border-left: 3.5px solid #1F5EFF;
+    border-radius: 6px; padding: 9px 12px; margin-top: 10px;
+  }
+  .highlight-card.green { border-left-color: #16A34A; background: #F0FDF4; }
+  .highlight-title { font-size: 11.5px; font-weight: 800; color: #071A4D; margin-bottom: 3px; text-transform: uppercase; }
+  .highlight-desc { font-size: 11.5px; color: #334155; line-height: 1.4; }
+  .highlight-desc b { color: #0F172A; }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <div class="title">How Bt Cotton Kills the Bollworm</div>
-  <div class="subtitle">Five stops of the cry-protein journey — plus two side notes that finish the story</div>
 
-  <div class="row">
-    <div class="node">
-      <div class="num">1</div>
-      <h3>Bt cotton carries cry genes</h3>
-      <p>The plant was given <b>cryIAc</b> (bollworm) and <b>cryIIAb</b> (corn borer) from <b><i>Bacillus thuringiensis</i></b>.</p>
-    </div>
-    <div class="arrow"></div>
-    <div class="node">
-      <div class="num">2</div>
-      <h3>Plant packs protoxin crystals</h3>
-      <p>Inside the plant the toxin is stored as <b>inactive protoxin crystals</b> — harmless until the right gut arrives.</p>
-    </div>
-    <div class="arrow"></div>
-    <div class="node dr">
-      <div class="num">3</div>
-      <h3>Insect eats — gut dissolves</h3>
-      <p>The bollworm chews the leaf. Its <b>alkaline gut</b> (high pH) dissolves the crystal.</p>
-    </div>
+<div class="header">
+  <div class="title-group">
+    <h1>Agricultural Biotechnology — Bt Toxin Mechanism & RNA Interference</h1>
+    <p>NCERT Class 12 Biology · Unit IX · Pest Resistance in Transgenic Crops (Bt Cotton & Tobacco)</p>
   </div>
-
-  <div class="rowgap"><div class="downwrap"><div class="arrow down"></div></div></div>
-
-  <div class="row">
-    <div class="node dr">
-      <div class="num">4</div>
-      <h3>Protoxin activated — binds</h3>
-      <p>The freed toxin becomes <b>active</b> and locks onto the <b>midgut lining cells</b>.</p>
-    </div>
-    <div class="arrow"></div>
-    <div class="node cr">
-      <div class="num">5</div>
-      <h3>Gut wall breaks — insect dies</h3>
-      <p><b>Pores</b> form, the cells swell and burst; the bollworm stops feeding and dies.</p>
-    </div>
-  </div>
-
-  <div class="divider"><span>SIDE NOTES</span></div>
-
-  <div class="row" style="align-items: flex-start;">
-    <div class="sidenote side-safe">
-      <span class="tag">SIDE NOTE 1</span>
-      <h3>Safe for humans</h3>
-      <p>Our gut is <b>acidic</b>, not alkaline — the crystal never dissolves — and human gut cells carry <b>no receptor</b> for the toxin. The code never fits our lock.</p>
-    </div>
-    <div class="sidenote side-rnai">
-      <span class="tag">SIDE NOTE 2</span>
-      <h3>RNAi kills differently</h3>
-      <p>No toxin at all: tobacco given nematode-specific genes makes <b>dsRNA</b> that <b>silences the pest's own mRNA</b> — <i>Meloidogyne incognita</i> cannot survive.</p>
-    </div>
-  </div>
+  <div class="brand-badge">OurMocks CUET UG</div>
 </div>
+
+<div class="grid-container">
+
+  <!-- LEFT PANEL: Bt Toxin Cascade -->
+  <div class="panel">
+    <div class="panel-header">
+      <h2>Pathway 1: Bt Cotton & Crystal Protoxin Lysis</h2>
+      <span class="panel-badge badge-bt">Insecticidal Protein</span>
+    </div>
+
+    <div class="flow-col">
+      <div class="flow-step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <div class="step-title">Inactive Crystal Protoxin Synthesis</div>
+          <div class="step-desc">Soil bacterium <b>Bacillus thuringiensis</b> forms protein crystal protoxins during sporulation. The protoxin does not harm bacteria because it remains in an <b>inactive crystalline form</b>.</div>
+        </div>
+      </div>
+
+      <div class="connector"><svg viewBox="0 0 24 24"><path d="M12 16l-6-6h12z"/></svg></div>
+
+      <div class="flow-step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <div class="step-title">Insect Ingestion of Transgenic Plant Tissue</div>
+          <div class="step-desc">Pest caterpillar (e.g., cotton bollworm) ingests leaves or bolls expressing the cloned bacterial <i>cry</i> gene. Inactive protoxin enters the insect gut tract.</div>
+        </div>
+      </div>
+
+      <div class="connector"><svg viewBox="0 0 24 24"><path d="M12 16l-6-6h12z"/></svg></div>
+
+      <div class="flow-step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <div class="step-title">Alkaline Midgut Solubilization & Activation</div>
+          <div class="step-desc">The <b>alkaline pH</b> of the insect midgut solubilizes the crystals. Midgut proteases cleave protoxin into its biologically <b>active toxic form</b>.</div>
+        </div>
+      </div>
+
+      <div class="connector"><svg viewBox="0 0 24 24"><path d="M12 16l-6-6h12z"/></svg></div>
+
+      <div class="flow-step">
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <div class="step-title">Epithelial Receptor Binding & Pore Formation</div>
+          <div class="step-desc">Activated toxin binds specifically to surface receptors of <b>midgut epithelial cells</b>, oligomerizes, and punches <b>transmembrane pores</b>.</div>
+        </div>
+      </div>
+
+      <div class="connector"><svg viewBox="0 0 24 24"><path d="M12 16l-6-6h12z"/></svg></div>
+
+      <div class="flow-step">
+        <div class="step-num">5</div>
+        <div class="step-content">
+          <div class="step-title">Osmotic Lysis, Cell Swelling & Insect Death</div>
+          <div class="step-desc">Pores cause influx of ions and water, triggering <b>cellular swelling and osmotic lysis</b> of midgut cells. The caterpillar ceases feeding and dies within 48–72 hours.</div>
+        </div>
+      </div>
+
+      <div class="highlight-card">
+        <div class="highlight-title">Crucial High-Yield Cry Gene Distinctions</div>
+        <div class="highlight-desc">
+          • <b>cryIAc & cryIIAb:</b> Control <b>cotton bollworms</b> (Lepidopterans).<br>
+          • <b>cryIAb:</b> Controls <b>corn borer</b> (NTA's #1 favorite trap pair).<br>
+          • Harmless to humans: Human stomach is acidic (pH ~1.5–2.0) and lacks midgut toxin receptors.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT PANEL: RNA Interference (RNAi) -->
+  <div class="panel">
+    <div class="panel-header">
+      <h2>Pathway 2: RNA Interference (RNAi) Gene Silencing</h2>
+      <span class="panel-badge badge-rnai">Post-Transcriptional Silencing</span>
+    </div>
+
+    <div class="flow-col">
+      <div class="flow-step">
+        <div class="step-num green">1</div>
+        <div class="step-content">
+          <div class="step-title">Agrobacterium Ti Vector Transformation</div>
+          <div class="step-desc">Nematode-specific genes from <b>Meloidogyne incognita</b> (root-knot nematode) are introduced into host tobacco plants using <b>Agrobacterium tumefaciens</b> Ti plasmid vectors.</div>
+        </div>
+      </div>
+
+      <div class="connector"><svg viewBox="0 0 24 24"><path d="M12 16l-6-6h12z"/></svg></div>
+
+      <div class="flow-step">
+        <div class="step-num green">2</div>
+        <div class="step-content">
+          <div class="step-title">Transcription of Sense & Anti-Sense RNA</div>
+          <div class="step-desc">The engineered DNA construct is driven such that host cells produce both <b>sense and anti-sense RNA</b> transcripts simultaneously.</div>
+        </div>
+      </div>
+
+      <div class="connector"><svg viewBox="0 0 24 24"><path d="M12 16l-6-6h12z"/></svg></div>
+
+      <div class="flow-step">
+        <div class="step-num green">3</div>
+        <div class="step-content">
+          <div class="step-title">dsRNA Formation & Dicer Endonuclease Cleavage</div>
+          <div class="step-desc">Sense and anti-sense strands anneal to form <b>double-stranded RNA (dsRNA)</b>. The host enzyme <b>Dicer</b> cleaves dsRNA into short interfering RNAs (siRNAs, 21–23 bp).</div>
+        </div>
+      </div>
+
+      <div class="connector"><svg viewBox="0 0 24 24"><path d="M12 16l-6-6h12z"/></svg></div>
+
+      <div class="flow-step">
+        <div class="step-num green">4</div>
+        <div class="step-content">
+          <div class="step-title">RISC Loading & Target mRNA Slicing</div>
+          <div class="step-desc">Single siRNA guide strand incorporates into <b>RISC</b> (RNA-Induced Silencing Complex). Activated RISC binds and selectively cleaves nematode mRNA.</div>
+        </div>
+      </div>
+
+      <div class="connector"><svg viewBox="0 0 24 24"><path d="M12 16l-6-6h12z"/></svg></div>
+
+      <div class="flow-step">
+        <div class="step-num green">5</div>
+        <div class="step-content">
+          <div class="step-title">Translation Arrest & Nematode Survival Failure</div>
+          <div class="step-desc">With target mRNA destroyed, the parasite cannot express vital survival proteins. The nematode fails to colonize roots, making transgenic tobacco <b>fully immune</b>.</div>
+        </div>
+      </div>
+
+      <div class="highlight-card green">
+        <div class="highlight-title">Fundamental RNAi Principles</div>
+        <div class="highlight-desc">
+          • Takes place in <b>all eukaryotic organisms</b> as a universal cellular defense mechanism.<br>
+          • Mobile genetic elements (transposons) or RNA viruses also trigger natural RNAi.<br>
+          • Key concept: <b>Post-transcriptional gene silencing (PTGS)</b> without altering genomic DNA.
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
 </body>
 </html>
