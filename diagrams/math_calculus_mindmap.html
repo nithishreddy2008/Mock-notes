@@ -1,115 +1,311 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
+<title>CUET UG Mathematics: Differential Calculus Mindmap</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
-  .wrap { width: 1480px; height: 1080px; position: relative; background: #fff; }
-  svg.wires { position: absolute; inset: 0; width: 1480px; height: 1080px; }
-  .center {
-    position: absolute; left: 520px; top: 470px; width: 440px; height: 104px;
-    background: #071A4D; border-radius: 16px; display: flex; flex-direction: column;
-    align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(7,26,77,.25);
-    border-bottom: 5px solid #B8FF34;
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
-  .center .t { color: #fff; font-size: 19px; font-weight: 800; letter-spacing: .5px; text-align: center; }
-  .center .s { color: #B8FF34; font-size: 13px; font-weight: 700; letter-spacing: 2px; margin-top: 4px; }
+  .header {
+    background: #071A4D;
+    border-radius: 10px;
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .badge {
+    background: #B8FF34;
+    color: #071A4D;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .header-title {
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+  }
+  .header-right {
+    color: #94A3B8;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .main-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    height: 690px;
+  }
   .card {
-    position: absolute; width: 465px; background: #FCFDFF; border: 1.5px solid #D5DCEA;
-    border-radius: 14px; padding: 13px 16px 12px;
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 10px;
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
-  .card h2 { font-size: 19px; color: #071A4D; font-weight: 800; margin-bottom: 7px;
-             padding-bottom: 5px; border-bottom: 3px solid; display: inline-block; }
-  .leaf { font-size: 14px; color: #1B2333; margin: 5px 0; padding-left: 16px; position: relative; line-height: 1.32; }
-  .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
-  .b .leaf::before { background: #1F5EFF; }
-  .l .leaf::before { background: #7FB800; }
-  .leaf b { color: #071A4D; }
-  .b h2 { border-color: #1F5EFF; }
-  .l h2 { border-color: #7FB800; }
-  .left { left: 30px; }
-  .right { left: 985px; }
-  .exc {
-    position: absolute; left: 470px; top: 905px; width: 540px; background: #FFF3EC;
-    border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px;
+  .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 8px;
+    border-bottom: 1.5px solid #F1F5F9;
   }
-  .exc h2 { font-size: 17px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
-  .exc .leaf { font-size: 13px; margin: 3px 0; padding-left: 14px; color: #7A2A12; }
-  .exc .leaf::before { background: #D2481F; }
-  .exc b { color: #B4380F; }
+  .card-title {
+    font-size: 14px;
+    font-weight: 800;
+    color: #071A4D;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .tag {
+    font-size: 9.5px;
+    font-weight: 700;
+    padding: 3px 6px;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+  .tag-blue { background: #EFF6FF; color: #1E40AF; }
+  .tag-green { background: #F0FDF4; color: #166534; }
+  .tag-purple { background: #FAF5FF; color: #6B21A8; }
+  .tag-amber { background: #FFFBEB; color: #92400E; }
+
+  .content-list {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin-top: 8px;
+  }
+  .node {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    padding: 7px 9px;
+    font-size: 11px;
+    line-height: 1.35;
+    color: #334155;
+  }
+  .node b {
+    color: #071A4D;
+  }
+  .node.highlight {
+    background: #F0FDF4;
+    border-color: #86EFAC;
+  }
+  .node.purple-hl {
+    background: #FAF5FF;
+    border-color: #D8B4FE;
+  }
+  .node.amber-hl {
+    background: #FFFBEB;
+    border-color: #FDE68A;
+  }
+  .code-badge {
+    font-family: monospace;
+    font-weight: 800;
+    font-size: 10.5px;
+    background: #E2E8F0;
+    color: #1E293B;
+    padding: 1px 4px;
+    border-radius: 3px;
+  }
+
+  .footer-note {
+    background: #F1F5F9;
+    border-radius: 6px;
+    padding: 5px 8px;
+    font-size: 10px;
+    color: #475569;
+    text-align: center;
+    font-weight: 600;
+  }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <svg class="wires" viewBox="0 0 1480 1080">
-    <path d="M 520 505 C 470 505, 495 158, 500 155" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
-    <path d="M 520 520 C 480 520, 495 438, 500 438" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 520 535 C 470 535, 495 718, 500 718" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
-    <path d="M 960 505 C 1010 505, 985 158, 980 155" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 960 520 C 1000 520, 985 438, 980 438" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
-    <path d="M 960 535 C 1010 535, 985 718, 980 718" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 740 574 C 740 700, 740 830, 740 903" fill="none" stroke="#D2481F" stroke-width="2.5" stroke-dasharray="7 5" opacity=".6"/>
-  </svg>
 
-  <div class="center">
-    <div class="t">CALCULUS — DERIVATIVES AT WORK</div>
-    <div class="s">CUET UG MATHEMATICS</div>
+<div class="header">
+  <div class="header-left">
+    <div class="badge">FIGURE 3 · CHAPTER SYNTHESIS</div>
+    <div class="header-title">Differential Calculus: Master Architectural Mindmap</div>
+  </div>
+  <div class="header-right">NTA CUET UG Section A &amp; B1 · Class 12 Mathematics · Unit III</div>
+</div>
+
+<div class="main-grid">
+  <!-- Pillar 1: Continuity & Differentiability -->
+  <div class="card">
+    <div>
+      <div class="card-header">
+        <div class="card-title">1. Continuity &amp; Diff</div>
+        <span class="tag tag-blue">Foundations</span>
+      </div>
+
+      <div class="content-list">
+        <div class="node">
+          <b>Continuity at x = c:</b>
+          <br>• <i>f(c)</i> is defined.
+          <br>• <span class="code-badge">lim<sub>x&rarr;c⁻</sub> f(x) = lim<sub>x&rarr;c⁺</sub> f(x) = f(c)</span>.
+          <br>Graph is unbroken without lifting pen.
+        </div>
+        <div class="node highlight">
+          <b>Differentiability at c:</b>
+          <br>Left derivative = Right derivative:
+          <br><span class="code-badge">Lf'(c) = Rf'(c)</span>.
+          <br>Smooth tangent; no sharp corner/kink.
+        </div>
+        <div class="node">
+          <b>Fundamental Theorem:</b>
+          <br><span class="code-badge">Diff &rArr; Continuous</span> (True!)
+          <br>Continuous does NOT imply differentiable (e.g. <i>|x|</i> at <i>0</i>).
+        </div>
+        <div class="node">
+          <b>Mean Value Theorems:</b>
+          <br>• <i>Rolle's:</i> <i>f(a)=f(b) &rArr; f'(c) = 0</i>
+          <br>• <i>LMVT:</i> <span class="code-badge">f'(c) = [f(b)-f(a)]/(b-a)</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-note">
+      Algebra: sum, product, quotient of continuous functions are continuous.
+    </div>
   </div>
 
-  <div class="card left b" style="top:58px">
-    <h2>Continuity &amp; Differentiability</h2>
-    <div class="leaf"><b>Continuous at c:</b> f(c) exists, the limit exists, and they are equal</div>
-    <div class="leaf"><b>Differentiable at c:</b> left derivative = right derivative — no corner</div>
-    <div class="leaf"><b>The arrow:</b> differentiable ⇒ continuous, never the reverse</div>
-    <div class="leaf"><b>Exhibit A:</b> |x| at 0 — continuous, undifferentiable, unforgettable</div>
+  <!-- Pillar 2: Differentiation Toolkit -->
+  <div class="card">
+    <div>
+      <div class="card-header">
+        <div class="card-title">2. Derivative Toolkit</div>
+        <span class="tag tag-green">Rules</span>
+      </div>
+
+      <div class="content-list">
+        <div class="node">
+          <b>Chain Rule:</b>
+          <br><span class="code-badge">dy/dx = (dy/du) &middot; (du/dx)</span>
+        </div>
+        <div class="node">
+          <b>Implicit Differentiation:</b>
+          <br>Differentiate term-by-term with respect to <i>x</i>, applying <span class="code-badge">d/dx[yⁿ] = n yⁿ⁻¹ (dy/dx)</span>.
+        </div>
+        <div class="node highlight">
+          <b>Logarithmic Differentiation:</b>
+          <br>For <i>y = u(x)<sup>v(x)</sup></i>:
+          <br>Take <span class="code-badge">ln y = v ln u</span>, then differentiate.
+        </div>
+        <div class="node highlight">
+          <b>Parametric &amp; 2nd Derivative Trap:</b>
+          <br>• <i>dy/dx = (dy/dt) / (dx/dt)</i>
+          <br>• <span class="code-badge">d²y/dx² = [d/dt(dy/dx)] / (dx/dt)</span>
+          <br>(Always multiply by <i>dt/dx</i>!).
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-note">
+      Inverse trig: d/dx[tan⁻¹ x] = 1/(1+x²); d/dx[sin⁻¹ x] = 1/√(1-x²).
+    </div>
   </div>
 
-  <div class="card right b" style="top:58px">
-    <h2>The Toolkit (six ways in)</h2>
-    <div class="leaf"><b>Chain rule:</b> peel outside-in, dy/dx = dy/du · du/dx</div>
-    <div class="leaf"><b>Inverse trig:</b> sin⁻¹x → 1/√(1−x²), tan⁻¹x → 1/(1+x²)</div>
-    <div class="leaf"><b>Implicit:</b> differentiate both sides, collect dy/dx</div>
-    <div class="leaf"><b>Exp / log:</b> eˣ → eˣ, ln x → 1/x, aˣ → aˣ ln a</div>
-    <div class="leaf"><b>Log diff:</b> ln both sides first — the xˣ move</div>
-    <div class="leaf"><b>Parametric:</b> dy/dx = (dy/dt) / (dx/dt)</div>
+  <!-- Pillar 3: Rates, Tangents & Normals -->
+  <div class="card">
+    <div>
+      <div class="card-header">
+        <div class="card-title">3. Rates &amp; Tangents</div>
+        <span class="tag tag-purple">Geometry</span>
+      </div>
+
+      <div class="content-list">
+        <div class="node purple-hl">
+          <b>Rate of Change:</b>
+          <br><span class="code-badge">dy/dt = (dy/dx) &middot; (dx/dt)</span>
+          <br>• Sphere: <i>dV/dt = 4&pi; r² (dr/dt)</i>
+          <br>• Circle: <i>dA/dt = 2&pi; r (dr/dt)</i>
+        </div>
+        <div class="node">
+          <b>Tangent Line at (x₀, y₀):</b>
+          <br>Slope: <span class="code-badge">m = [dy/dx]|₍ₓ₀,ᵧ₀₎</span>
+          <br>Equation: <span class="code-badge">y - y₀ = m (x - x₀)</span>
+          <br>• Horizontal: <i>dy/dx = 0</i>
+          <br>• Vertical: <i>dx/dy = 0</i>
+        </div>
+        <div class="node purple-hl">
+          <b>Normal Line at (x₀, y₀):</b>
+          <br>Slope: <span class="code-badge">m_N = -1 / m</span>
+          <br>Equation: <span class="code-badge">y - y₀ = (-1/m)(x - x₀)</span>
+        </div>
+        <div class="node">
+          <b>Orthogonal Curves:</b>
+          <br>Intersect at right angles &hArr; <span class="code-badge">m₁ &middot; m₂ = -1</span>.
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-note">
+      Parallel to x-axis &rArr; slope m = 0; parallel to y-axis &rArr; 1/m = 0.
+    </div>
   </div>
 
-  <div class="card left l" style="top:350px">
-    <h2>Second-Order Derivatives</h2>
-    <div class="leaf"><b>Notation:</b> d²y/dx² = f''(x) — differentiate the derivative again</div>
-    <div class="leaf"><b>Signature fact:</b> y = A sin x + B cos x always satisfies y'' + y = 0</div>
-    <div class="leaf"><b>Use:</b> concave up (f'' &gt; 0) vs concave down (f'' &lt; 0)</div>
-  </div>
+  <!-- Pillar 4: Monotonicity & Optimization -->
+  <div class="card">
+    <div>
+      <div class="card-header">
+        <div class="card-title">4. Monotonicity &amp; Max/Min</div>
+        <span class="tag tag-amber">Optimization</span>
+      </div>
 
-  <div class="card right l" style="top:350px">
-    <h2>Rate of Change</h2>
-    <div class="leaf"><b>Meaning:</b> dy/dx is how fast y answers to x</div>
-    <div class="leaf"><b>Time chain:</b> dA/dt = (dA/dr) · (dr/dt)</div>
-    <div class="leaf"><b>Balloon:</b> dA/dt = 2πr · dr/dt — r = 10, dr/dt = 2 gives 40π</div>
-  </div>
+      <div class="content-list">
+        <div class="node amber-hl">
+          <b>Strictly Increasing / Decreasing:</b>
+          <br>• <i>f'(x) &gt; 0</i> on <i>(a, b)</i> &rArr; <b>Strictly Increasing</b>
+          <br>• <i>f'(x) &lt; 0</i> on <i>(a, b)</i> &rArr; <b>Strictly Decreasing</b>
+          <br>Critical points: <i>f'(x) = 0</i> or undefined.
+        </div>
+        <div class="node">
+          <b>First Derivative Test:</b>
+          <br>• + to - &rArr; <b>Local Max</b>
+          <br>• - to + &rArr; <b>Local Min</b>
+          <br>• No sign change &rArr; <b>Point of Inflection</b>
+        </div>
+        <div class="node amber-hl">
+          <b>Second Derivative Test:</b>
+          <br>• <i>f'(c) = 0</i> &amp; <span class="code-badge">f''(c) &lt; 0</span> &rArr; <b>Local Max</b>
+          <br>• <i>f'(c) = 0</i> &amp; <span class="code-badge">f''(c) &gt; 0</span> &rArr; <b>Local Min</b>
+        </div>
+        <div class="node">
+          <b>Absolute Extrema on [a, b]:</b>
+          <br>Test critical points AND endpoints <i>a, b</i>.
+        </div>
+      </div>
+    </div>
 
-  <div class="card left b" style="top:642px">
-    <h2>Increasing &amp; Decreasing</h2>
-    <div class="leaf"><b>f' &gt; 0</b> climbing · <b>f' &lt; 0</b> descending on the interval</div>
-    <div class="leaf"><b>Routine:</b> domain → f' → critical points → sign chart</div>
-    <div class="leaf"><b>x³ − 12x:</b> up on (−∞,−2], down on [−2,2], up on [2,∞)</div>
-  </div>
-
-  <div class="card right b" style="top:642px">
-    <h2>Maxima &amp; Minima</h2>
-    <div class="leaf"><b>Candidates:</b> f'(x) = 0 or f' undefined — points of suspicion only</div>
-    <div class="leaf"><b>First-derivative test:</b> watch f' change sign across the point</div>
-    <div class="leaf"><b>Second-derivative test:</b> f'' &lt; 0 peak, f'' &gt; 0 valley, f'' = 0 undecided</div>
-    <div class="leaf"><b>Word problems:</b> turn the sentence into one function, then optimise</div>
-  </div>
-
-  <div class="exc">
-    <h2>TOP TRAPS</h2>
-    <div class="leaf"><b>f'(c) = 0</b> alone proves nothing — inflections pass the test too</div>
-    <div class="leaf"><b>Chain rule:</b> the inner derivative is the most-forgotten factor in the paper</div>
-    <div class="leaf"><b>cos⁻¹x flips the sign:</b> −1/√(1−x²)</div>
+    <div class="footer-note">
+      Word problems: express objective in ONE variable before differentiating!
+    </div>
   </div>
 </div>
+
 </body>
 </html>

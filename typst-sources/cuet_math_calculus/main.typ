@@ -3,292 +3,612 @@
 #show: om-doc.with(
   exam: "CUET UG",
   subject: "Mathematics",
-  topic-title: "Calculus",
-  subtitle: "Continuity, Derivatives and Their Applications · Section A 2 + B1 III + B2 III · CUET UG 2027 Cycle Notes",
+  topic-title: "Calculus: Continuity & AOD",
+  subtitle: "Continuity, Differentiability, Logarithmic/Parametric Derivatives & Applications of Derivatives · Section A Unit 2 & Section B1 Unit III",
 )
 
-= Syllabus Alignment
+#set text(size: 8.4pt)
+#set par(leading: 0.38em, spacing: 0.40em)
+#set table(inset: (x: 4pt, y: 1.6pt))
+
+= Syllabus Alignment & Exam Blueprint
 
 #table(
-  columns: (0.95fr, 1.9fr, 1.25fr),
-  table.header[*Sub-topic*][*Official syllabus pointer (NTA CUET(UG) 2026 syllabus — Mathematics/Applied Mathematics (319), the current 2027 baseline)*][*Skills the questions test*],
-  [*Continuity and differentiability*], [
-    "Continuity and differentiability, chain rule, derivatives of inverse trigonometric functions, like sin⁻¹x, cos⁻¹x and tan⁻¹x, derivative of implicit functions." (Section B1 Mathematics Unit III; the derivative core of Section B2 Applied Mathematics Unit III)
-  ], [
-    Judging smoothness at a point; choosing the right differentiation route on sight.
-  ],
-  [*Exponential, logarithmic and parametric derivatives*], [
-    "Concepts of exponential, logarithmic functions. Derivatives of logarithmic and exponential functions. Logarithmic differentiation, derivative of functions expressed in parametric forms. Second-order derivatives." (Section B1 Mathematics Unit III)
-  ], [
-    Differentiating $x^x$-style functions, parametric pairs, and differentiating twice cleanly.
-  ],
-  [*Higher-order derivatives and applications*], [
-    "Higher order derivatives (upto second order). Increasing and decreasing functions. Maxima and minima." (Section A Unit 2, compulsory)
-  ], [
-    Sign-chart reading, classifying critical points, quoting max/min values.
-  ],
-  [*Rate of change and optimisation problems*], [
-    "Rate of change of quantities, increasing/decreasing functions, maxima and minima (first derivative test motivated geometrically and second derivative test given as provable tool). Simple problems (that illustrate basic principles and understanding of the subject as well as real-life situations)." (Section B1 Mathematics Unit III)
-  ], [
-    Turning a sentence into one function and optimising it end to end with units intact.
-  ],
+  columns: (1.1fr, 1.8fr, 1.1fr),
+  table.header[*Sub-Topic / Domain*][*Official NTA CUET UG Syllabus Scope (Mathematics 319)*][*Exam Cognitive Focus*],
+  [*Continuity & Smoothness*],
+  [Continuity and differentiability; Derivative of composite functions, chain rule; Derivatives of inverse trigonometric functions (like $sin^(-1) x, cos^(-1) x, tan^(-1) x$); Derivative of implicit functions; Algebra of continuous functions; Relation between continuity and differentiability.],
+  [Determining piecewise continuity parameters ($k$); recognizing non-differentiable corner/cusp points ($|x-c|$); applying chain rule to nested inverse trigonometric functions; evaluating implicit $d y / d x$.],
+  [*Advanced Differentiation*],
+  [Concept of exponential and logarithmic functions; Derivatives of logarithmic and exponential functions; Logarithmic differentiation ($u(x)^(v(x))$); Derivative of functions in parametric form ($x=f(t), y=g(t)$); Second-order derivatives ($d^2 y / d x^2$); Mean Value Theorems (Rolle's & Lagrange's MVT).],
+  [Executing logarithmic differentiation on variable towers; solving parametric second derivatives without missing the $d t / d x$ multiplier; computing intermediate $c$ for Rolle's and LMVT.],
+  [*Rate of Change & Geometry*],
+  [Rate of change of quantities ($d y / d t$); Related rates (spheres, cones, sliding ladders); Tangents and normals to curves; Slopes ($m = d y / d x$) and equations of tangent and normal lines; Orthogonal intersection of curves ($m_1 m_2 = -1$); Horizontal and vertical tangents.],
+  [Formulating geometric rate-of-change models; calculating rates of volume and surface area growth; finding points on curves with specified tangent slopes; testing curve orthogonality.],
+  [*Monotonicity & Extrema*],
+  [Increasing and decreasing functions; Strictly increasing/decreasing intervals on open intervals $(a, b)$; Critical points ($f'(x) = 0$ or undefined); First derivative test (sign changes); Second derivative test ($f''(c) < 0$ for max, $f''(c) > 0$ for min); Inconclusive $f''(c) = 0$ cases.],
+  [Applying the Wavy Curve sign scheme to $f'(x)$; classifying critical points into local maxima, minima, or inflection points; quoting exact intervals of increase and decrease.],
+  [*Optimization & Approximations*],
+  [Maxima and minima in practical real-life word problems; Constructing single-variable objective functions; Absolute (global) extrema on closed intervals $[a, b]$; Checking boundary endpoints vs interior critical points; Linear approximations using differentials ($Delta y approx f'(x) Delta x$).],
+  [Setting up optimization word problems (box, inscribed cylinder/cone, wire cutting); testing boundary values $f(a), f(b)$ for absolute extrema; calculating percentage and relative errors.],
 )
 
 #exam-pointer[
-  CUET UG pattern (NTA official information bulletin, 2026 cycle — the current 2027
-  baseline): each subject paper carries *50 compulsory questions* in *60 minutes*,
-  with $+5$ for every correct answer and $-1$ for every incorrect answer. The 2026
-  syllabus places this unit as *Section A Unit 2 (compulsory for every candidate)*
-  and as the heart of *Section B1 Unit III* and *Section B2 Unit III* — calculus is
-  the single most repeated content family of the Mathematics paper, so the toolkit
-  on the next pages earns its keep in whichever section you sit.
+  *CUET UG Scoring Blueprint:* Calculus is the single largest thematic weight in the CUET UG Mathematics examination. It appears prominently as *Section A Unit 2 (compulsory for all candidates)* and constitutes the core of *Section B1 Unit III (Core Mathematics)* and *Section B2 Unit III (Applied Mathematics)*. Expect *8 to 12 questions (40 to 60 marks)* across the paper. Primary NTA traps include: *parametric second derivatives missing $d t / d x$*, *forgetting boundary endpoints in absolute extrema*, and *confusing non-differentiable corners with discontinuities*.
 ]
 
-= Continuity and Differentiability — the Two Gates
+#pagebreak()
+#set text(size: 9.2pt)
+#set par(leading: 0.48em, spacing: 0.52em)
+#set table(inset: (x: 4pt, y: 2.0pt))
 
-Every derivative question stands on two gates, and the exam checks the gates directly. *Gate 1, continuity at a point* $c$: the function value $f(c)$ must exist, the limit as $x -> c$ must exist (left-hand and right-hand limits agree), and the limit must *equal* $f(c)$. Miss any one and the function breaks at $c$ — a hole, a jump, or a runaway. *Gate 2, differentiability at* $c$: the slope approaching from the left must equal the slope approaching from the right. Geometrically: no corner, no vertical tangent, no break. You can draw the graph through $c$ without lifting your pen *and* without a sharp turn.
+= Continuity & Differentiability Foundations
 
-The two gates have a one-way relationship that MCQs recycle constantly: *differentiable implies continuous, but continuous does not imply differentiable*. The counterexample that settles every version of the question is $f(x) = abs(x)$ at $x = 0$: the left slope is $-1$, the right slope is $+1$, so the corner kills differentiability — yet the function is perfectly continuous there. Learn that one line and half of the true/false questions in this family answer themselves.
+== 1. Mathematical Definition of Continuity
+A function $f(x)$ is defined to be *continuous at a point $x = c$* in its domain if and only if the following three criteria are simultaneously satisfied:
+1. $f(c)$ is defined and finite (the point exists on the curve).
+2. The limit $lim_(x -> c) f(x)$ exists, meaning the left-hand limit equals the right-hand limit:
+   $ lim_(x -> c^-) f(x) = lim_(x -> c^+) f(x) = L $
+3. The limit value strictly equals the function value:
+   $ lim_(x -> c) f(x) = f(c) $
+Geometrically, a function is continuous on an interval if its graph can be drawn without lifting the pen from the paper.
 
+=== Continuity in Intervals
+- *Open Interval $(a, b)$:* $f$ is continuous on $(a, b)$ if it is continuous at every single point $c in (a, b)$.
+- *Closed Interval $[a, b]$:* $f$ is continuous on $[a, b]$ if:
+  1. $f$ is continuous on $(a, b)$.
+  2. $f$ is right-continuous at $a$: $lim_(x -> a^+) f(x) = f(a)$.
+  3. $f$ is left-continuous at $b$: $lim_(x -> b^-) f(x) = f(b)$.
+
+=== Algebra of Continuous Functions
+Let $f$ and $g$ be two real functions continuous at $x = c$. Then:
+1. $f + g$ and $f - g$ are continuous at $c$.
+2. $k f$ is continuous at $c$ for any scalar $k in RR$.
+3. $f dot g$ is continuous at $c$.
+4. $f / g$ is continuous at $c$, provided $g(c) != 0$.
+5. *Composite Function Continuity:* If $g$ is continuous at $c$ and $f$ is continuous at $g(c)$, then $(f compose g)(x) = f(g(x))$ is continuous at $c$.
+- *Universally Continuous Functions:* Polynomial functions, exponential functions ($a^x$), sine and cosine functions are continuous across the entire real line $RR$. Rational functions are continuous at all points where their denominators are non-zero.
+
+== 2. Differentiability at a Point
+Let $f$ be a real function and $c$ a point in its domain. The *derivative of $f$ at $c$* is defined by:
+$ f'(c) = lim_(h -> 0) frac(f(c + h) - f(c), h) $
+provided this limit exists and is finite.
+- *Left-Hand Derivative ($L f'(c)$):* $L f'(c) = lim_(h -> 0) frac(f(c - h) - f(c), -h)$.
+- *Right-Hand Derivative ($R f'(c)$):* $R f'(c) = lim_(h -> 0) frac(f(c + h) - f(c), h)$.
+$f$ is *differentiable at $x = c$* if and only if $L f'(c) = R f'(c)$.
+
+=== The Fundamental Implication Theorem
+#analogy-box(title: "The Golden Rule of Smoothness")[
+  *Theorem:* Every differentiable function is necessarily continuous:
+  $ "Differentiability" ==> "Continuity" $
+  *The Converse is Strictly FALSE:* A function can be perfectly continuous at a point while completely failing to be differentiable there!
+  - *Standard Counterexample:* $f(x) = |x|$ at $x = 0$.
+    $lim_(x -> 0) |x| = 0 = f(0)$ (Continuous).
+    $L f'(0) = lim_(h -> 0) frac(|0 - h| - 0, -h) = frac{h}{-h} = -1$; $R f'(0) = lim_(h -> 0) frac(|0 + h| - 0, h) = frac{h}{h} = +1$.
+    Since $L f'(0) != R f'(0)$, $f(x) = |x|$ has a *sharp corner (kink)* at the origin and is non-differentiable there!
+]
+
+#pagebreak()
+
+= Differentiation Techniques & Core Theorems
+
+== 1. The Differentiation Arsenal
+- *Chain Rule:* If $y = f(u)$ and $u = g(x)$, then $frac(d y, d x) = frac(d y, d u) dot frac(d u, d x)$.
+- *Implicit Differentiation:* When $F(x, y) = 0$ defines $y$ implicitly: differentiate each term with respect to $x$, applying the chain rule to $y$-terms ($frac(d, d x)[y^n] = n y^(n-1) frac(d y, d x)$), then algebraically isolate $frac(d y, d x)$.
+
+== 2. Derivatives of Inverse Trigonometric Functions
 #table(
-  columns: (1.25fr, 1.5fr, 1.35fr),
-  table.header[*Behaviour at $c$*][*What it means*][*Standard example*],
-  [Continuous, differentiable], [Smooth through $c$ — slopes match from both sides], [$x^2$ at $x = 0$],
-  [Continuous, NOT differentiable], [No break, but a corner or cusp], [$abs(x)$ at $x = 0$],
-  [Not continuous], [No differentiability conversation — Gate 2 needs Gate 1], [$f(x) = 1/x$ at $x = 0$; greatest-integer jumps],
-  [One-sided formula change], [Piecewise functions: match value, limit, then slopes], [Custom piecewise MCQs],
+  columns: (1fr, 1.4fr, 1.2fr),
+  table.header[*Function $y = f(x)$*][*Derivative $d y / d x$*][*Valid Domain*],
+  [$sin^(-1) x$], [$frac(1, sqrt(1 - x^2))$], [$x in (-1, 1)$],
+  [$cos^(-1) x$], [$-frac(1, sqrt(1 - x^2))$], [$x in (-1, 1)$],
+  [$tan^(-1) x$], [$frac(1, 1 + x^2)$], [$x in RR$],
+  [$cot^(-1) x$], [$-frac(1, 1 + x^2)$], [$x in RR$],
+  [$sec^(-1) x$], [$frac(1, |x| sqrt(x^2 - 1))$], [$|x| > 1$],
+  [$csc^(-1) x$], [$-frac(1, |x| sqrt(x^2 - 1))$], [$|x| > 1$],
 )
 
-#worked-example("Worked Example — Judging a Piecewise Function at the Joint")[
-  Is $f(x) = cases(x^2 & "for" x <= 1, 2x - 1 & "for" x > 1)$ continuous and differentiable at $x = 1$?
+== 3. Logarithmic & Parametric Differentiation
+- *Logarithmic Differentiation:* Used when functions have variable exponents $y = [u(x)]^(v(x))$ or multi-factor products:
+  1. Take natural logarithm: $ln y = v(x) ln u(x)$.
+  2. Differentiate implicitly: $frac(1, y) frac(d y, d x) = v'(x) ln u(x) + v(x) frac(u'(x), u(x))$.
+  3. Multiply by $y$: $frac(d y, d x) = [u(x)]^(v(x)) [v'(x) ln u(x) + frac(v(x) u'(x), u(x))]$.
 
-  #v(3pt)
-  *Solution.* *Value:* $f(1) = 1^2 = 1$. *Limit:* from the left $x^2 -> 1$; from the right
-  $2x - 1 -> 1$. Both match the value, so $f$ is *continuous*. *Slopes:* left derivative
-  is $2x$ at $1$, i.e. $2$; right derivative is the derivative of $2x - 1$, i.e. $2$.
-  They agree, so $f$ is *differentiable* too. If the right piece had been $3x - 2$,
-  the value and limit would still match (continuity survives) but the slopes would
-  clash ($2$ vs $3$) — a corner at $x = 1$. That contrast — *same check, two gates* —
-  is the whole skill.
+- *Parametric Differentiation:* If $x = f(t)$ and $y = g(t)$, then:
+  $ frac(d y, d x) = frac(d y / d t, d x / d t) = frac(g'(t), f'(t)) quad ("provided" f'(t) != 0) $
+
+=== The High-Yield Second-Order Parametric Trap
+To find $frac(d^2 y, d x^2)$ for parametric curves $x = f(t), y = g(t)$:
+$ frac(d^2 y, d x^2) = frac(d, d x) [frac(d y, d x)] = frac(d, d t) [frac(d y, d x)] dot underbracket(frac(d t, d x), "CRUCIAL FACTOR!") = frac(frac(d, d t) [frac(d y, d x)], frac(d x, d t)) $
+#exception-box(title: "Massive NTA Trap Warning")[
+  Never calculate $frac(d^2 y, d x^2)$ by simply dividing $frac(d^2 y / d t^2, d^2 x / d t^2)$! This produces a catastrophic error. You MUST differentiate $frac(d y, d x)$ with respect to $t$ and then multiply by $frac(d t, d x) = frac(1, d x / d t)$.
 ]
 
-= The Derivative Toolkit — Six Ways In
+== 4. Rolle's Theorem & Lagrange's Mean Value Theorem (LMVT)
+- *Rolle's Theorem:* If $f$ is:
+  1. Continuous on $[a, b]$,
+  2. Differentiable on $(a, b)$, and
+  3. $f(a) = f(b)$,
+  then there exists at least one $c in (a, b)$ such that $f'(c) = 0$ (horizontal tangent).
+- *Lagrange's Mean Value Theorem (LMVT):* If $f$ is continuous on $[a, b]$ and differentiable on $(a, b)$, then there exists at least one $c in (a, b)$ such that:
+  $ f'(c) = frac(f(b) - f(a), b - a) $
+  Geometrically, the tangent at $x = c$ is parallel to the secant line connecting $(a, f(a))$ and $(b, f(b))$.
 
-Almost every derivative MCQ is one of six moves in disguise. The trick is not raw algebra; it is *recognising the move in the first three seconds*. Here is the map, then each move with its working rules.
+#pagebreak()
 
-#formula-box(title: "The Toolkit at a Glance")[
-  $ "Chain rule:" quad (d y)/(d x) = (d y)/(d u) dot (d u)/(d x) $
-  $ (d)/(d x) sin^(-1) x = 1 / sqrt(1 - x^2), quad (d)/(d x) cos^(-1) x = -1 / sqrt(1 - x^2), quad (d)/(d x) tan^(-1) x = 1 / (1 + x^2) $
-  $ (d)/(d x) e^x = e^x, quad (d)/(d x) a^x = a^x ln a, quad (d)/(d x) ln x = 1/x, quad (d)/(d x) log_a x = 1 / (x ln a) $
+#figure(
+  image("assets/math_calculus_differentiation_rules.png", width: 100%),
+  caption: [Figure 1: Core differentiation engine — Three-fold continuity checklist, differentiability vs continuity implication, logarithmic protocols, and the parametric second-derivative chain multiplier.],
+)
+
+*Key Analytical Takeaways from Figure 1:*
+1. *Continuity vs Differentiability Hierarchy:* Differentiability is a strictly stronger condition than continuity. Continuous functions can possess sharp corners ($|x|$ at $0$), cusps ($x^(2/3)$ at $0$), or vertical tangents ($x^(1/3)$ at $0$) where derivatives fail to exist.
+2. *Logarithmic Differentiation Requirement:* Whenever a function has the algebraic structure $[u(x)]^(v(x))$ (variable base raised to variable power), direct power rules ($frac(d, d x)[x^n] = n x^(n-1)$) or exponential rules ($frac(d, d x)[a^x] = a^x ln a$) do NOT apply. Natural logarithms must be taken first.
+3. *Second-Order Parametric Execution:* When differentiating $frac(d y, d x)$ a second time, remember that the differentiation operator is with respect to $x$, while the expression is in terms of parameter $t$. The chain rule necessitates multiplying by $frac(d t, d x) = frac(1, f'(t))$.
+
+#pagebreak()
+
+= Rate of Change & Tangents/Normals
+
+== 1. Rate of Change of Quantities
+If a quantity $y$ depends on another quantity $x$ according to $y = f(x)$, then $frac(d y, d x)$ represents the *instantaneous rate of change of $y$ with respect to $x$*.
+When both quantities vary with time $t$:
+$ frac(d y, d t) = frac(d y, d x) dot frac(d x, d t) $
+- *Standard Geometric Models:*
+  1. *Spherical Balloon (Radius $r$):*
+     $ V = frac(4, 3) pi r^3 ==> frac(d V, d t) = 4 pi r^2 frac(d r, d t) $
+     $ S = 4 pi r^2 ==> frac(d S, d t) = 8 pi r frac(d r, d t) $
+  2. *Circular Wave / Ripple (Radius $r$):*
+     $ A = pi r^2 ==> frac(d A, d t) = 2 pi r frac(d r, d t) $
+  3. *Sliding Ladder (Length $L$ against wall):*
+     $ x^2 + y^2 = L^2 ==> 2 x frac(d x, d t) + 2 y frac(d y, d t) = 0 ==> frac(d y, d t) = -frac(x, y) frac(d x, d t) $
+     (The negative sign reflects that the height $y$ is decreasing while base $x$ is increasing).
+  4. *Inverted Cone (Semi-vertical angle $alpha$):*
+     Radius and height are linked by $r = h tan alpha$. Volume becomes $V = frac(1, 3) pi (h tan alpha)^2 h = frac(1, 3) pi tan^2 alpha dot h^3$, allowing single-variable rate differentiation.
+
+== 2. Slope & Equations of Tangents and Normals
+Let $y = f(x)$ be a continuous curve. The *slope of the tangent* to the curve at point $P(x_0, y_0)$ is:
+$ m = [frac(d y, d x)]_((x_0, y_0)) = f'(x_0) $
+- *Equation of Tangent Line:*
+  $ y - y_0 = m (x - x_0) $
+- *Equation of Normal Line:*
+  The normal line is perpendicular to the tangent line at $P(x_0, y_0)$. Its slope is $m_N = -frac(1, m)$ (for $m != 0$).
+  $ y - y_0 = -frac(1, m) (x - x_0) $
+
+=== Special Orientations of Tangents
+- *Parallel to $x$-axis (Horizontal Tangent):*
+  Angle $theta = 0 ==> m = tan 0 = 0 ==> frac(d y, d x) = 0$.
+  Equation of horizontal tangent: $y = y_0$.
+- *Perpendicular to $x$-axis (Vertical Tangent):*
+  Angle $theta = pi / 2 ==> m -> oo ==> frac(d x, d y) = 0$.
+  Equation of vertical tangent: $x = x_0$.
+- *Parallel to Line $y = m_0 x + c$:* Set $frac(d y, d x) = m_0$ to find tangency coordinates $(x_0, y_0)$.
+
+=== Angle of Intersection of Two Curves
+Let two curves $y = f_1(x)$ and $y = f_2(x)$ intersect at point $(x_0, y_0)$ with tangent slopes $m_1$ and $m_2$. The acute angle of intersection $theta$ is:
+$ tan theta = abs(frac(m_1 - m_2, 1 + m_1 m_2)) $
+- *Orthogonal Curves:* Two curves intersect orthogonally (at right angles) if and only if:
+  $ m_1 dot m_2 = -1 $
+
+#pagebreak()
+
+= Monotonicity: Increasing & Decreasing Functions
+
+== 1. Theoretical Definitions
+Let $f$ be a function defined on an interval $I$:
+- *Strictly Increasing on $I$:* For all $x_1, x_2 in I$,
+  $ x_1 < x_2 ==> f(x_1) < f(x_2) $
+- *Increasing (Non-decreasing) on $I$:* For all $x_1, x_2 in I$,
+  $ x_1 < x_2 ==> f(x_1) <= f(x_2) $
+- *Strictly Decreasing on $I$:* For all $x_1, x_2 in I$,
+  $ x_1 < x_2 ==> f(x_1) > f(x_2) $
+- *Decreasing (Non-increasing) on $I$:* For all $x_1, x_2 in I$,
+  $ x_1 < x_2 ==> f(x_1) >= f(x_2) $
+
+== 2. Derivative Criteria for Monotonicity
+Let $f$ be continuous on $[a, b]$ and differentiable on $(a, b)$:
+1. $f$ is *strictly increasing* on $[a, b]$ if $f'(x) > 0$ for all $x in (a, b)$.
+2. $f$ is *strictly decreasing* on $[a, b]$ if $f'(x) < 0$ for all $x in (a, b)$.
+3. $f$ is a *constant function* on $[a, b]$ if $f'(x) = 0$ for all $x in (a, b)$.
+
+=== The Discrete Zeroes Exception (Crucial Concept)
+Even if $f'(x) = 0$ at isolated discrete points in $(a, b)$, the function remains *strictly increasing* provided $f'(x) > 0$ everywhere else.
+- *Classic NCERT Example:* $f(x) = x^3$.
+  $f'(x) = 3 x^2 >= 0$. $f'(0) = 0$ only at the single isolated point $x = 0$.
+  For any $x_1 < x_2$, $x_1^3 < x_2^3$ strictly. Thus, $f(x) = x^3$ is *strictly increasing on $RR$*!
+
+== 3. Systematic Algorithm for Finding Monotonic Intervals
+To determine the intervals where a differentiable function $f(x)$ is increasing or decreasing:
+1. *Compute First Derivative:* Find $f'(x)$.
+2. *Find Critical / Stationary Points:* Set $f'(x) = 0$ and find all real roots. Also include any points where $f'(x)$ fails to exist.
+3. *Partition the Domain:* Plot these critical points on the real number line to divide the domain into disjoint sub-intervals.
+4. *Sign Scheme (Wavy Curve Method):* Test the algebraic sign of $f'(x)$ in each sub-interval:
+   - If $f'(x) > 0$ on $(c_i, c_(i+1)) ==>$ $f(x)$ is strictly increasing on $(c_i, c_(i+1))$.
+   - If $f'(x) < 0$ on $(c_i, c_(i+1)) ==>$ $f(x)$ is strictly decreasing on $(c_i, c_(i+1))$.
+
+#pagebreak()
+
+= Maxima, Minima & Optimization Engine
+
+== 1. Local Extrema & Critical Points
+Let $f$ be a real-valued function defined on domain $D$:
+- *Local Maximum:* $f$ has a local maximum at $x = c$ if there exists an open interval $(c - delta, c + delta)$ around $c$ such that $f(c) >= f(x)$ for all $x$ in that neighborhood.
+- *Local Minimum:* $f$ has a local minimum at $x = c$ if $f(c) <= f(x)$ for all $x$ in that neighborhood.
+- *Critical Point:* A point $c$ in the domain of $f$ where either:
+  $ f'(c) = 0 quad "or" quad f'(c) "fails to exist" $
+  Every local extremum of an interior point occurs at a critical point (*Fermat's Theorem*).
+
+== 2. The First Derivative Test
+Let $f$ be continuous at critical point $c$:
+1. *Local Maximum:* As $x$ increases through $c$, if $f'(x)$ changes sign from *positive to negative* ($+ -> -$), then $x = c$ is a point of local maximum.
+2. *Local Minimum:* As $x$ increases through $c$, if $f'(x)$ changes sign from *negative to positive* ($- -> +$), then $x = c$ is a point of local minimum.
+3. *Point of Inflection:* If $f'(x)$ *does not change sign* as $x$ increases through $c$, then $c$ is neither a local maximum nor a local minimum (e.g. $f(x) = x^3$ at $x = 0$).
+
+== 3. The Second Derivative Test
+Let $f$ be twice differentiable at $c$ such that $f'(c) = 0$:
+1. If $f''(c) < 0$, then $f$ has a *local maximum* at $c$ (concave downward).
+2. If $f''(c) > 0$, then $f$ has a *local minimum* at $c$ (concave upward).
+3. If $f''(c) = 0$, the second derivative test *fails (inconclusive)*! You must immediately revert to the First Derivative Test.
+
+== 4. Absolute (Global) Extrema on Closed Intervals $[a, b]$
+#analogy-box(title: "Absolute Extrema Algorithm")[
+  To find the absolute maximum and absolute minimum of a continuous function on $[a, b]$:
+  1. Find all critical points $c_1, c_2, dots in (a, b)$ where $f'(c) = 0$ or $f'$ does not exist.
+  2. Evaluate the function values at all critical points: $f(c_1), f(c_2), dots$
+  3. Evaluate the function values at the boundary endpoints: $f(a)$ and $f(b)$.
+  4. Compare all values:
+     $ "Absolute Maximum" = max {f(a), f(b), f(c_1), f(c_2), dots} $
+     $ "Absolute Minimum" = min {f(a), f(b), f(c_1), f(c_2), dots} $
+  *Warning:* Never omit the endpoints $a$ and $b$! The absolute extremum frequently occurs at a boundary where $f'(x) != 0$.
 ]
 
-- *Chain rule — peel from the outside in.* For $y = f(g(x))$, differentiate the outer function with $g(x)$ still inside it, then multiply by the derivative of the inner function. Example: $(d)/(d x) sin(x^2) = cos(x^2) dot 2x$. The forgotten *inner derivative* is the single most common slip in this chapter.
-- *Inverse trigonometric derivatives.* Three formulas carry most questions — note the sign flip for $cos^(-1)$, and that every formula is valid on $(-1, 1)$. With composites the chain rule wraps them: $(d)/(d x) tan^(-1)(2x) = 2 / (1 + 4 x^2)$.
-- *Implicit differentiation.* When $x$ and $y$ are tangled in one equation (a circle, say), differentiate both sides with respect to $x$, treating $y$ as a function of $x$ — every $y$-term pays a $(d y)/(d x)$ toll by the chain rule. Then collect the $(d y)/(d x)$ terms and solve — it is linear in $(d y)/(d x)$, so it always comes out.
-- *Exponential and logarithmic derivatives.* $e^x$ is its own derivative (unique in mathematics); $a^x$ brings a factor $ln a$; $ln x$ gives $1/x$. These feed growth-decay and marginal-cost questions later.
-- *Logarithmic differentiation.* For $y = x^x$ or messy products-with-powers, take $ln$ of both sides first, use log laws to pull exponents down, differentiate implicitly, then multiply back by $y$. One clean recipe for the ugliest-looking functions.
-- *Parametric forms.* When $x$ and $y$ are both functions of a parameter $t$: $(d y)/(d x) = ((d y)/(d t)) / ((d x)/(d t))$. Both derivatives are taken against $t$, then divided — *not* the other way up.
+#pagebreak()
 
-#worked-example("Worked Example — Three Toolkit Moves in One Screen")[
-  Move 1 (implicit): for $x^2 + y^2 = 25$, find $(d y)/(d x)$ at $(3, 4)$.
+#figure(
+  image("assets/math_calculus_aod_engine.png", width: 100%),
+  caption: [Figure 2: Applications of derivatives engine — Geometric rate measure equations, tangent/normal slope relationships, monotonicity intervals, and first/second derivative optimization tests.],
+)
 
-  #v(3pt)
-  *Solution.* Differentiate both sides: $2x + 2 y (d y)/(d x) = 0$, so $(d y)/(d x) = -x/y$. At $(3, 4)$: $-3/4$. The negative sign is the geometry talking — on the upper arc, moving right means moving down.
+*Key Analytical Takeaways from Figure 2:*
+1. *Rate Measure Chain Links:* Time derivatives of geometric quantities require linking through spatial derivatives. When solving balloon or ladder problems, always express the volume/area in a single variable before taking $frac(d, d t)$.
+2. *Tangent vs Normal Slopes:* Tangent slope is $m = f'(x_0)$, while normal slope is $m_N = -1 / f'(x_0)$. For vertical tangents ($m -> oo$), the normal is horizontal ($m_N = 0$).
+3. *Second Derivative Sign Rule:* A negative second derivative ($f'' < 0$) indicates local *maximum* (concave down), while a positive second derivative ($f'' > 0$) indicates local *minimum* (concave up). Many students mistakenly associate "negative" with minimum.
 
-  #v(6pt)
-  Move 2 (logarithmic): for $y = x^x$, $x > 0$, find $(d y)/(d x)$.
+#pagebreak()
 
-  #v(3pt)
-  *Solution.* Take $ln$: $ln y = x ln x$. Differentiate: $(1/y) (d y)/(d x) = ln x + 1$. Multiply back by $y$:
-  $ (d y)/(d x) = x^x (1 + ln x). $
+= Applied Optimization & Linear Approximations
 
-  #v(6pt)
-  Move 3 (parametric): $x = a t^2$, $y = 2 a t$ (a parabola). Find $(d y)/(d x)$.
+== 1. Master Applied Optimization Protocol
+Real-life optimization word problems follow a strict 4-step blueprint:
+1. *Identify Objective & Constraints:* Determine the quantity to be maximized or minimized ($Q$) and write down geometric/physical constraints.
+2. *Single-Variable Reduction:* Use constraint equations to eliminate extra variables so that $Q = f(x)$ depends on *strictly one independent variable*.
+3. *Critical Point Isolation:* Compute $f'(x)$, set $f'(x) = 0$, and solve for candidate $x$.
+4. *Extremum Verification:* Confirm with $f''(x)$ ($< 0$ for max, $> 0$ for min).
 
-  #v(3pt)
-  *Solution.* $(d y)/(d t) = 2 a$ and $(d x)/(d t) = 2 a t$, so $(d y)/(d x) = (2 a)/(2 a t) = 1/t$. No algebraic gymnastics — the parameter does the bookkeeping.
-]
+=== Standard NCERT Optimization Archetypes
+- *Open Rectangular Box:* Cutting squares of side $x$ from corners of a sheet of dimensions $a times b$ and folding up:
+  $ V(x) = x(a - 2x)(b - 2x) $
+  For a square sheet ($a = b$): $V(x) = x(a - 2x)^2 ==> x = a / 6$ yields maximum volume.
+- *Cylinder Inscribed in Sphere (Radius $R$):*
+  Let cylinder have radius $r$ and height $h$. Constraint: $r^2 + (h/2)^2 = R^2 ==> r^2 = R^2 - h^2 / 4$.
+  Volume $V = pi r^2 h = pi (R^2 h - h^3 / 4)$.
+  $frac(d V, d h) = pi (R^2 - 3 h^2 / 4) = 0 ==> h = frac(2 R, sqrt(3))$.
+  Cylinder of maximum volume has height $h = frac(2 R, sqrt(3))$ and radius $r = sqrt(frac(2, 3)) R$.
+- *Cone Inscribed in Sphere (Radius $R$):*
+  Maximum volume cone inscribed in a sphere of radius $R$ has altitude $h = frac(4, 3) R$, and its volume is $frac(8, 27)$ of the sphere's volume.
+- *Wire Cutting Problem (Circle & Square):*
+  A wire of length $L$ is cut into two pieces to form a square (perimeter $4s$) and a circle (circumference $2 pi r$).
+  The combined area $A = s^2 + pi r^2$ is *minimum* when:
+  $ 2 r = s quad ("Diameter of circle equals side of square!") $
 
-= Second-Order Derivatives
+== 2. Differentials & Linear Approximation
+Let $y = f(x)$. If $x$ changes by a small amount $Delta x = d x$, the corresponding change in $y$ is approximated by the differential $d y$:
+$ Delta y approx d y = f'(x) d x = f'(x) Delta x $
+- *Linear Approximation Formula:*
+  $ f(x + Delta x) approx f(x) + f'(x) Delta x $
+- *Error Measurements:*
+  - Absolute Error: $Delta x$
+  - Relative Error: $frac(Delta x, x)$
+  - Percentage Error: $frac(Delta x, x) times 100%$
 
-Differentiating a derivative gives the *second derivative*, written $(d^2 y)/(d x^2)$ or $f''(x)$ — the slope of the slope. Where $f'$ tells you direction, $f''$ tells you *bend*: $f'' > 0$ means the curve cups upward (valley behaviour), $f'' < 0$ means it domes downward (peak behaviour). Mechanically the process is nothing new — differentiate, then differentiate again, simplifying between passes.
+#pagebreak()
 
-#worked-example("Worked Example — The Signature Second-Derivative Fact")[
-  Show that $y = A sin x + B cos x$ always satisfies $(d^2 y)/(d x^2) + y = 0$.
+= Key Facts & Terms Cheatsheet
 
-  #v(3pt)
-  *Solution.* First pass: $(d y)/(d x) = A cos x - B sin x$. Second pass:
-  $(d^2 y)/(d x^2) = -A sin x - B cos x = -(A sin x + B cos x) = -y$.
-  So $(d^2 y)/(d x^2) + y = 0$ for *every* choice of $A$ and $B$. This identity is a
-  favourite MCQ stem, and the working — differentiate twice, watch the signs
-  alternate, recognise the original function — is worth memorising as a pattern.
-]
+#set table(inset: (x: 4pt, y: 2.1pt))
+#set text(size: 8.4pt)
 
-= Rate of Change — Derivatives With Units
-
-The derivative's oldest job is answering "how fast?". If $A = pi r^2$, then $(d A)/(d r) = 2 pi r$ is how the area answers to radius — and by the chain rule, area change per *second* is $(d A)/(d t) = (d A)/(d r) dot (d r)/(d t)$. Every rate problem is this one pattern: geometry gives $(d A)/(d r)$, the story gives $(d r)/(d t)$, the chain multiplies them. Keep units in the loop — they check the setup better than any teacher: $"cm"^2 "/" "cm"$ is dimensionless-slope, while $"cm"^2 "/" "s"$ is a genuine area-per-second.
-
-#worked-example("Worked Example — The Inflating Balloon")[
-  Air is pumped into a spherical balloon so its radius grows at $2 "cm/s"$. How fast is the *surface area* growing when $r = 10$? (Surface $S = 4 pi r^2$.)
-
-  #v(3pt)
-  *Solution.* Geometry: $(d S)/(d r) = 8 pi r$. Story: $(d r)/(d t) = 2$. Chain:
-  $ (d S)/(d t) = 8 pi r dot (d r)/(d t) = 8 pi (10) (2) = 160 pi "cm"^2"/s". $
-  Notice the question wants the rate *at* a moment — substitute $r = 10$ only
-  after differentiating. Substituting first is the classic ruin of this question.
-]
-
-= Increasing and Decreasing Functions
-
-A function climbs where $f'(x) > 0$ and falls where $f'(x) < 0$ — the derivative is the function's tiltmeter. The exam routine never varies, so run it the same way every time: *domain, then derivative, then critical points, then a sign chart*. Critical points ($f' = 0$ or undefined) are where the tilt can flip; the sign chart converts them into intervals of rise and fall.
-
-#worked-example("Worked Example — the Full Sign-Chart Routine")[
-  Find where $f(x) = x^3 - 12 x$ is increasing and decreasing.
-
-  #v(3pt)
-  *Solution.* Domain: all reals. Derivative: $f'(x) = 3 x^2 - 12 = 3 (x - 2)(x + 2)$.
-  Critical points: $x = -2, 2$. Sign chart, testing one point per band:
-  $ x < -2: f'(-3) = 15 > 0 "rising" quad -2 < x < 2: f'(0) = -12 < 0 "falling" quad x > 2: f'(3) = 15 > 0 "rising" $
-  So $f$ increases on $(-infinity, -2]$, decreases on $[-2, 2]$, increases on $[2, infinity)$.
-  The pattern — up, down, up around two critical points — is the cubic signature, and
-  it already whispers where the max and min live (next section).
-]
-
-#analogy-box(title: "Everyday Example — The Mountain Trail")[
-  Walk a trail and check two things: are you climbing (f' > 0) and is the trail
-  getting steeper or gentler (f''). The *first derivative* is your altimeter's
-  trend; the *second derivative* is how the steepness itself is changing — legs
-  aching harder means f'' > 0 (cups upward), the climb easing off means f'' < 0.
-  A summit is exactly where "climbing" flips to "descending" (first-derivative
-  test) or where climbing eases into a dome (f'' < 0). Every max-min question is a
-  trail report in disguise: find the suspicious points, then ask which way the
-  trail turns there.
-]
-
-= Maxima and Minima — Finding the Peak and the Valley
-
-Critical points are *candidates*, not verdicts — $f'(c) = 0$ also happens at smooth inflection points like $x^3$ at the origin, where the function simply pauses and keeps climbing. Two tests convert candidates into answers. *First-derivative test:* watch $f'$ change sign across $c$ — plus to minus gives a local maximum, minus to plus a local minimum, no change means no extremum. *Second-derivative test:* $f''(c) < 0$ says dome (maximum), $f''(c) > 0$ says valley (minimum), and $f''(c) = 0$ is *inconclusive* — fall back to the first test. The same machinery handles word problems: translate the sentence into one function of one variable, find the critical points, classify, and *answer the actual question asked* (a maximum area, not the value of $x$).
-
-#worked-example("Worked Example — Classify, Then Optimise")[
-  Part 1: find the local maximum and minimum values of $f(x) = x^3 - 12 x + 5$.
-
-  #v(3pt)
-  *Solution.* $f'(x) = 3 x^2 - 12$, zero at $x = plus.minus 2$. Second derivative:
-  $f''(x) = 6 x$. At $x = -2$: $f'' = -12 < 0$ — dome, local *maximum*, value
-  $f(-2) = -8 + 24 + 5 = 21$. At $x = 2$: $f'' = 12 > 0$ — valley, local *minimum*,
-  value $f(2) = 8 - 24 + 5 = -11$. Both the *location* and the *value* are
-  quotable answers — a question can target either one, so read which is wanted.
-
-  #v(6pt)
-  Part 2 (word problem): a farmer has 40 m of fence for a rectangular pen. What is the largest area?
-
-  #v(3pt)
-  *Solution.* Let one side be $x$; the other is $20 - x$ (perimeter splits the fence).
-  Area $A(x) = x (20 - x) = 20 x - x^2$ on $0 < x < 20$. Then $A'(x) = 20 - 2 x$,
-  zero at $x = 10$; $A''(x) = -2 < 0$, so it is a maximum. Sides $10 times 10$,
-  area $100 "m"^2$. The square wins — and the answer to the *question* is
-  $100 "m"^2$, not $x = 10$. Quote the number that was asked for.
-]
-
-#figure(image("assets/math_calculus_derivative_map.png", width: 100%), caption: [The whole unit as one map: two gates, six toolkit moves, three application families, and the traps under each.])
-
-= Formula Cheatsheet — the Whole Chapter on One Page
-
-#cheatsheet-box(title: "Formula Cheatsheet — Derivatives and Their Applications")[
+#cheatsheet-box(title: "Master Diagnostic & Conceptual Cheatsheet — Differential Calculus")[
   #table(
-    columns: (1.5fr, 1.35fr, 1.15fr),
-    table.header[*Formula / rule*][*Letters mean*][*Fire it when*],
-    [$(d y)/(d x) = (d y)/(d u) dot (d u)/(d x)$], [peel outside-in], [any composite function],
-    [$(d)/(d x) sin^(-1) x = 1/sqrt(1 - x^2)$], [valid on $(-1, 1)$], [inverse trig composites],
-    [$(d)/(d x) cos^(-1) x = -1/sqrt(1 - x^2)$], [the negative twin], [watch the sign],
-    [$(d)/(d x) tan^(-1) x = 1/(1 + x^2)$], [no root needed], [inverse trig composites],
-    [$(d)/(d x) e^x = e^x$], [its own derivative], [growth-decay models],
-    [$(d)/(d x) a^x = a^x ln a$], [extra $ln a$ factor], [general exponentials],
-    [$(d)/(d x) ln x = 1/x$], [natural log], [log-diff setup],
-    [Implicit: differentiate both sides, collect $(d y)/(d x)$], [$y$-terms pay a $(d y)/(d x)$ toll], [equations like $x^2 + y^2 = 25$],
-    [Log-diff: $ln$ both sides, pull exponents, differentiate, multiply back by $y$], [the $x^x$ move], [$f = x^x$ or product-power monsters],
-    [$(d y)/(d x) = ((d y)/(d t)) / ((d x)/(d t))$], [both derivatives against $t$], [parametric pairs],
-    [$(d A)/(d t) = (d A)/(d r) dot (d r)/(d t)$], [geometry $times$ story], [all rate problems],
-    [$f' > 0$ rising, $f' < 0$ falling], [tiltmeter], [increasing/decreasing intervals],
-    [Critical points: $f' = 0$ or undefined], [candidates only], [max-min hunting],
-    [First test: $f'$ sign change $+$ $->$ $-$ max, $-$ $->$ $+$ min], [across the point], [classification],
-    [Second test: $f'' < 0$ max, $f'' > 0$ min, $f'' = 0$ inconclusive], [fall back to first test], [classification],
+    columns: (1.2fr, 1.7fr, 1.1fr),
+    table.header[*Key Calculus Topic*][*Core NCERT Mechanism / Definition*][*Exam Identifier*],
+    [Continuity Test], [$lim_(x -> c^-) f(x) = lim_(x -> c^+) f(x) = f(c)$. Graph is unbroken.], [LHL = RHL = f(c)],
+    [Diff Implies Cont], [Differentiability $==>$ Continuity. Converse is strictly false ($|x|$ at $0$).], [Smooth $==>$ Continuous],
+    [Corner Point], [Point where $L f'(c) != R f'(c)$. Continuous, but not differentiable.], [Kink / Modulus],
+    [Chain Rule], [$d y / d x = (d y / d u) dot (d u / d x)$. Used for nested functions.], [Composite Functions],
+    [Implicit Diff], [Differentiate term-by-term; $frac(d, d x)[g(y)] = g'(y) (d y / d x)$. Solve for $y'$.], [F(x, y) = 0],
+    [Logarithmic Diff], [For $y = u(x)^(v(x))$, take $ln y = v ln u$ before differentiating.], [Tower of Functions],
+    [Parametric First Deriv], [$d y / d x = (d y / d t) / (d x / d t) = g'(t) / f'(t)$.], [Ratio of Rates],
+    [Parametric Second Deriv], [$d^2 y / d x^2 = [frac(d, d t) (d y / d x)] / (d x / d t)$. Never $y''(t) / x''(t)$!], [Multiply by dt/dx],
+    [Inverse Trig Deriv], [$frac(d, d x)[sin^(-1) x] = 1/sqrt(1-x^2)$; $frac(d, d x)[tan^(-1) x] = 1/(1+x^2)$.], [Inverse Trig Vault],
+    [Rate of Change], [$d y / d t = (d y / d x) dot (d x / d t)$. Geometric volume/surface rates.], [Time Derivative],
+    [Tangent Slope], [$m = [d y / d x]_((x_0, y_0))$. Equation: $y - y_0 = m(x - x_0)$.], [Tangent Slope],
+    [Normal Slope], [$m_N = -1 / m$. Equation: $y - y_0 = (-1/m)(x - x_0)$.], [Negative Reciprocal],
+    [Horizontal Tangent], [$m = 0 ==> d y / d x = 0$. Tangent is parallel to x-axis.], [dy/dx = 0],
+    [Vertical Tangent], [$m -> oo ==> d x / d y = 0$. Tangent is perpendicular to x-axis.], [dx/dy = 0],
+    [Orthogonal Curves], [Curves intersect at right angles $<==> m_1 dot m_2 = -1$.], [m₁ m₂ = -1],
+    [Strictly Increasing], [$f'(x) > 0$ on $(a, b)$. Function rises continuously from left to right.], [f'(x) > 0],
+    [Strictly Decreasing], [$f'(x) < 0$ on $(a, b)$. Function falls continuously from left to right.], [f'(x) < 0],
+    [Critical Point], [Point in domain where $f'(x) = 0$ or $f'(x)$ is undefined.], [Stationary / Cusp],
+    [First Deriv Test], [$+ -> -$ is Local Max; $- -> +$ is Local Min; no sign change is Inflection.], [Sign Change across c],
+    [Second Deriv Test], [$f'(c)=0$ and $f''(c) < 0 ==> "Local Max"$; $f''(c) > 0 ==> "Local Min"$.], [Concavity Test],
+    [Absolute Extrema], [Evaluate $f(x)$ at critical points AND endpoints $a, b$ on $[a, b]$.], [Include Boundaries!],
+    [Linear Approximation], [$f(x + Delta x) approx f(x) + f'(x) Delta x$. Relative error $Delta x / x$.], [Differentials],
   )
 ]
 
-= Common Errors and Special Cases
+#pagebreak()
 
-#exception-box(title: "Common Errors and Special Cases — Derivatives")[
+= Common Errors and High-Yield CUET Traps
+
+#set table(inset: (x: 4pt, y: 2.1pt))
+#set text(size: 8.5pt)
+
+#exception-box(title: "Common Student Mistakes & Diagnostic Traps — Differential Calculus")[
   #table(
-    columns: (1.35fr, 1.35fr, 1.3fr),
-    table.header[*The mistake*][*What is right*][*The trap it sets*],
-    [Dropping the inner derivative], [Chain rule multiplies by $(d u)/(d x)$ every time], ["Almost right" options that differ by one factor],
-    [Flipping the $cos^(-1)$ sign], [$(d)/(d x) cos^(-1) x$ is negative], [Positive-twin distractor sitting next to it],
-    [Implicit: forgetting the $(d y)/(d x)$ toll], [Every $y$-term pays it via the chain rule], [Options missing the $y$-factor entirely],
-    [Treating $x^x$ as a power function], [$x^x$ needs log-diff: $x^x (1 + ln x)$], [The $x dot x^(x - 1)$ reflex option],
-    [Parametric formula upside down], [$(d y)/(d x) = ((d y)/(d t)) / ((d x)/(d t))$], [The reciprocal option, looking plausible],
-    [Reading $f'(c) = 0$ as "extremum"], [Inflections pass too ($x^3$ at 0)], [Candidate-vs-verdict questions],
-    [Calling $f''(c) = 0$ a maximum], [It is inconclusive — use the first-derivative test], [Overconfident second-test options],
-    [Substituting the given moment *before* differentiating], [Differentiate in symbols, then substitute], [Rate answers off by the missing $r$ factor],
-    [Answering $x$ when the value was asked], [Read the final sentence of the question], [Max-area problems: area vs side length],
+    columns: (1.2fr, 1.4fr, 1.4fr),
+    table.header[*Common Student Mistake*][*Scientifically Verified Reality*][*The Exact Trap Mechanism*],
+    [Parametric Second Derivative Division],
+    [$d^2 y / d x^2 = [frac(d, d t)(d y / d x)] dot (d t / d x)$. It is NOT equal to $(d^2 y / d t^2) / (d^2 x / d t^2)$.],
+    [Students differentiate $y$ twice and $x$ twice and divide them, omitting the essential $(d t / d x)$ chain factor.],
+    [Neglecting Endpoints in Absolute Extrema],
+    [On a closed interval $[a, b]$, absolute extrema often occur at the boundaries $x=a$ or $x=b$, where $f'(x) != 0$.],
+    [Students find critical points where $f'(x) = 0$ and ignore $f(a)$ and $f(b)$, missing the true maximum value.],
+    [Assuming Continuous Implies Differentiable],
+    [Differentiability requires smoothness. Continuous functions can have sharp corners or vertical tangents where derivatives fail.],
+    [Questions ask if $|x-1|$ is differentiable at $x=1$; students see it is continuous and incorrectly select differentiable.],
+    [Inverting Second Derivative Test Signs],
+    [$f''(c) < 0$ corresponds to a *Local Maximum* (concave down), whereas $f''(c) > 0$ corresponds to a *Local Minimum* (concave up).],
+    [Students associate negative with "minimum" and positive with "maximum", reversing local extrema classifications.],
+    [Using Power Rule on $[u(x)]^(v(x))$],
+    [Functions with variable exponents require *logarithmic differentiation*. Direct power or exponential rules are invalid.],
+    [Students write $frac(d, d x)[x^x] = x dot x^(x-1) = x^x$, missing the complete term $x^x(1 + ln x)$.],
+    [Forgetting Inconclusive $f''(c) = 0$],
+    [If $f'(c) = 0$ and $f''(c) = 0$, the second derivative test yields *no conclusion*. Must use the First Derivative Test.],
+    [Students declare $f''(c) = 0$ as an automatic point of inflection without checking higher derivatives or sign changes.],
+    [Wrong Sign in Sliding Ladder Rate],
+    [Since $x^2 + y^2 = L^2$, $x (d x / d t) + y (d y / d t) = 0$. As $x$ increases, $y$ decreases, so $d y / d t$ must be negative.],
+    [Students report positive rates of descent for ladder tops, leading to sign errors in MCQ answer keys.],
+    [Applying Rolle's Theorem Without $f(a) = f(b)$],
+    [Rolle's Theorem requires THREE conditions: continuity on $[a, b]$, differentiability on $(a, b)$, AND $f(a) = f(b)$.],
+    [Students apply $f'(c) = 0$ to functions where $f(a) != f(b)$, where only Lagrange's MVT is valid.],
   )
 ]
 
-= Sixty-Second Self-Test
+#pagebreak()
 
-#table(
-  columns: (2.6fr, 1fr),
-  table.header[*Statement*][*Verdict*],
-  [$x^2$ is continuous but not differentiable at $x = 0$.], [False — it is smooth there; $abs(x)$ is the corner],
-  [The derivative of $cos^(-1) x$ is $1/sqrt(1 - x^2)$.], [False — the negative twin],
-  [Differentiability at a point implies continuity there.], [True — the one-way arrow],
-  [For parametric curves, $(d y)/(d x) = ((d x)/(d t)) / ((d y)/(d t))$.], [False — it is the other way up],
-  [$x^3$ has a local minimum at $x = 0$ because $f'(0) = 0$.], [False — it is an inflection; $f'$ never changes sign],
-  [A 40 m fence gives a largest pen area of $100 "m"^2$.], [True — the $10 times 10$ square],
+= The Whole Chapter on One Page
+
+#figure(
+  image("assets/math_calculus_mindmap.png", width: 100%),
+  caption: [Figure 3: Master synthesis mindmap — integrated architecture of Continuity, Differentiability, Advanced Derivative Toolkit, Tangents/Normals, and Optimization Engine.],
 )
 
-#figure(image("assets/math_calculus_mindmap.png", width: 100%), caption: [The chapter in one look: gates, toolkit, applications — and the three traps candidates fall into most.])
+#pagebreak()
+#set text(size: 8.5pt)
+#set par(leading: 0.38em, spacing: 0.42em)
 
-= Practice Questions — CUET UG Pattern (10 MCQs)
+= Practice Questions — Part 1 (Q1 to Q5)
 
-Ten questions in the CUET UG style. Each correct answer earns $+5$; each incorrect one costs $-1$, so work from the toolkit, not from vibes. Every question below has a sub-ninety-second route — if your line runs long, you have picked the hard path.
+#mcq(1, [If the function $f(x) = cases(frac(k cos x, pi - 2x) &"if" x != pi/2, 3 &"if" x = pi/2)$ is continuous at $x = pi / 2$, then the value of $k$ is:], (
+  [$3$],
+  [$6$],
+  [$12$],
+  [$3/2$],
+))
+#solution(1, [For continuity at $x = pi / 2$, we must have $lim_(x -> pi/2) f(x) = f(pi/2) = 3$.
+Evaluate the limit by substitution $x = pi / 2 + h$ as $h -> 0$:
+$ lim_(x -> pi/2) frac(k cos x, pi - 2x) = lim_(h -> 0) frac(k cos(pi/2 + h), pi - 2(pi/2 + h)) = lim_(h -> 0) frac(-k sin h, -2h) = frac(k, 2) lim_(h -> 0) frac(sin h, h) = frac(k, 2) $
+Equating limit value to $f(pi / 2)$:
+$ frac(k, 2) = 3 ==> k = 6 $], answer: [B])
 
-#mcq(1, [The function $f(x) = abs(x - 1)$ at $x = 1$ is:], ([continuous and differentiable], [continuous but not differentiable], [differentiable but not continuous], [neither continuous nor differentiable],))
-#mcq(2, [$(d)/(d x) tan^(-1) (2 x)$ equals:], ([$1/(1 + 4 x^2)$], [$2/(1 + x^2)$], [$1/(2 (1 + 4 x^2))$], [$2/(1 + 4 x^2)$],))
-#mcq(3, [For the circle $x^2 + y^2 = 25$, the value of $(d y)/(d x)$ at the point $(3, 4)$ is:], ([$3/4$], [$4/3$], [$-3/4$], [$-4/3$],))
-#mcq(4, [For $y = x^x$ with $x > 0$, the derivative $(d y)/(d x)$ equals:], ([$x^x (1 + ln x)$], [$x^x ln x$], [$x dot x^(x - 1)$], [$x^x (1 - ln x)$],))
-#mcq(5, [If $x = a t^2$ and $y = 2 a t$, then $(d y)/(d x)$ equals:], ([$t$], [$1/t$], [$2 a t$], [$t/(2 a)$],))
-#mcq(6, [The function $f(x) = x^3 - 12 x$ is decreasing on:], ([$(-infinity, -2)$], [$(-2, 2)$], [$(2, infinity)$], [all of $RR$],))
-#mcq(7, [A spherical balloon's radius grows at $2 "cm/s"$. The rate at which its surface area ($S = 4 pi r^2$) grows when $r = 10 "cm"$ is:], ([$40 pi$], [$80 pi$], [$120 pi$], [$160 pi$],))
-#mcq(8, [The local maximum value of $f(x) = x^3 - 12 x + 5$ is:], ([21], [-11], [5], [17],))
-#mcq(9, [If $y = A sin x + B cos x$ (with $A$, $B$ constants), then $y$ always satisfies:], ([$y'' - y = 0$], [$y'' + y' = 0$], [$y'' + y = 0$], [$y'' = y$],))
-#mcq(10, [At a critical point $c$ of $f$, suppose $f'(c) = 0$ and $f''(c) = 2$. Then $f$ has at $c$:], ([a local maximum], [no extremum — the test is silent], [a local minimum], [an inflection point],))
+#mcq(2, [Let $f(x) = |x - 2| + |x - 3|$ for all $x in RR$. The set of points where $f(x)$ is NOT differentiable is:], (
+  [${2}$],
+  [${3}$],
+  [${2, 3}$],
+  [$RR$ (not differentiable anywhere)],
+))
+#solution(2, [The modulus function $|x - c|$ is continuous everywhere on $RR$, but fails to be differentiable at the point where its argument vanishes ($x = c$) due to a sharp corner.
+Here, $f(x)$ is the sum of two modulus functions with corner points at $x = 2$ and $x = 3$.
+Evaluating left and right derivatives:
+- At $x = 2$: $L f'(2) = -2$, $R f'(2) = 0 ==> L f'(2) != R f'(2)$.
+- At $x = 3$: $L f'(3) = 0$, $R f'(3) = 2 ==> L f'(3) != R f'(3)$.
+Hence, $f$ is non-differentiable at exactly the two points ${2, 3}$.], answer: [C])
 
-= Detailed Solutions
+#mcq(3, [The derivative of $y = tan^(-1) (frac(3x - x^3, 1 - 3x^2))$ with respect to $x$ for $-frac(1, sqrt(3)) < x < frac(1, sqrt(3))$ is equal to:], (
+  [$frac(1, 1 + x^2)$],
+  [$frac(3, 1 + x^2)$],
+  [$frac(3, 1 + 9x^2)$],
+  [$frac(1, 1 + 9x^2)$],
+))
+#solution(3, [Substitute $x = tan theta ==> theta = tan^(-1) x$.
+For $-frac(1, sqrt(3)) < x < frac(1, sqrt(3))$, $-frac(pi, 6) < theta < frac(pi, 6) ==> -frac(pi, 2) < 3 theta < frac(pi, 2)$.
+The expression simplifies via the triple-angle identity:
+$ frac(3 tan theta - tan^3 theta, 1 - 3 tan^2 theta) = tan(3 theta) $
+Therefore, $y = tan^(-1)(tan(3 theta)) = 3 theta = 3 tan^(-1) x$.
+Differentiating with respect to $x$:
+$ frac(d y, d x) = 3 dot frac(d, d x)[tan^(-1) x] = frac(3, 1 + x^2) $], answer: [B])
 
-#solution(1, [Left slope at $x = 1$: the function is $1 - x$ coming in, slope $-1$. Right slope: $x - 1$ leaving, slope $+1$. The value $f(1) = 0$ exists and the limits agree, so it is continuous — but the corner kills differentiability. The $abs(x - 1)$ exhibit, verbatim.], answer: "B")
-#solution(2, [Inverse-trig formula wrapped in a composite: outer derivative $1/(1 + u^2)$ at $u = 2x$, times inner derivative $2$: $2/(1 + (2x)^2) = 2/(1 + 4 x^2)$. Options (A) and (C) are the forgotten-chain and half-chain lures.], answer: "D")
-#solution(3, [Differentiate: $2x + 2 y (d y)/(d x) = 0$, so $(d y)/(d x) = -x/y = -3/4$ at $(3, 4)$. Geometry check: on the upper arc, moving right from $x = 3$ means descending — a negative slope, which eliminates (A) and (B) instantly.], answer: "C")
-#solution(4, [Not a power function — an exponential-in-the-base-and-exponent. Take $ln$: $ln y = x ln x$. Differentiate: $(1/y) y' = ln x + 1$. Multiply back by $y = x^x$: $y' = x^x (1 + ln x)$. Options (B) and (C) are the two reflex answers the recipe exists to prevent.], answer: "A")
-#solution(5, [$(d y)/(d t) = 2 a$ and $(d x)/(d t) = 2 a t$. Division: $(d y)/(d x) = (2 a)/(2 a t) = 1/t$. The parameter cancels completely — no $a$ in the answer, which is itself a quick sanity check against options (C) and (D).], answer: "B")
-#solution(6, [$f'(x) = 3 (x - 2)(x + 2)$. Sign chart: positive for $x < -2$, negative between $-2$ and $2$, positive after. Decreasing needs $f' < 0$: the band $(-2, 2)$. One test point per band is enough — $f'(0) = -12$.], answer: "B")
-#solution(7, [Geometry first: $(d S)/(d r) = 8 pi r$. Then the chain: $(d S)/(d t) = 8 pi (10) (2) = 160 pi "cm"^2"/s"$. Option (A) is the forget-the-chain-rate answer ($2 pi r dot 2$), the classic slip of substituting before finishing the calculus.], answer: "D")
-#solution(8, [Critical points $x = plus.minus 2$ from $f'(x) = 3 x^2 - 12$. Second derivative $f''(x) = 6 x$: at $x = -2$ it is $-12 < 0$ — dome. Value: $f(-2) = -8 + 24 + 5 = 21$. Note the question wants the *value* (21), not the location ($-2$); option (C) is the question's own bait.], answer: "A")
-#solution(9, [Differentiate twice: $y' = A cos x - B sin x$, then $y'' = -A sin x - B cos x = -y$. So $y'' + y = 0$ identically, for every $A$ and $B$. The signs alternate on each pass — that alternation *is* the identity.], answer: "C")
-#solution(10, [$f'(c) = 0$ makes $c$ a candidate; $f''(c) = 2 > 0$ says the curve cups upward there — a valley. That is the second-derivative test doing exactly its job. Had $f''(c) = 0$, the test would be silent and the first-derivative test would take over.], answer: "C")
+#mcq(4, [If $x = a cos^3 theta$ and $y = a sin^3 theta$, then the value of $frac(d^2 y, d x^2)$ at $theta = pi / 4$ is:], (
+  [$frac(4 sqrt(2), 3 a)$],
+  [$-frac(4 sqrt(2), 3 a)$],
+  [$frac(1, 3 a)$],
+  [$frac(2 sqrt(2), a)$],
+))
+#solution(4, [Differentiating parametrically with respect to $theta$:
+$ frac(d x, d theta) = -3 a cos^2 theta sin theta, quad frac(d y, d theta) = 3 a sin^2 theta cos theta $
+$ frac(d y, d x) = frac(d y / d theta, d x / d theta) = frac(3 a sin^2 theta cos theta, -3 a cos^2 theta sin theta) = -tan theta $
+Now compute the second derivative using the parametric chain rule:
+$ frac(d^2 y, d x^2) = frac(d, d theta)[-tan theta] dot frac(d theta, d x) = (-sec^2 theta) dot frac(1, -3 a cos^2 theta sin theta) = frac(sec^4 theta, 3 a sin theta) $
+Substitute $theta = pi / 4$:
+$ sec(pi / 4) = sqrt(2) ==> sec^4(pi / 4) = 4; quad sin(pi / 4) = frac(1, sqrt(2)) $
+$ frac(d^2 y, d x^2) = frac(4, 3 a (1 / sqrt(2))) = frac(4 sqrt(2), 3 a) $], answer: [A])
 
-= Wrong-Answer Clinic
+#mcq(5, [If $y = x^x$, then the value of the derivative $frac(d y, d x)$ at $x = 1$ is equal to:], (
+  [$0$],
+  [$1$],
+  [$e$],
+  [$1 + ln 2$],
+))
+#solution(5, [Since the base and exponent both contain the variable $x$, we apply logarithmic differentiation:
+$ ln y = x ln x $
+Differentiating implicitly with respect to $x$:
+$ frac(1, y) frac(d y, d x) = 1 dot ln x + x dot frac(1, x) = ln x + 1 $
+$ frac(d y, d x) = y(1 + ln x) = x^x (1 + ln x) $
+At $x = 1$:
+$ frac(d y, d x) = 1^1 (1 + ln 1) = 1(1 + 0) = 1 $], answer: [B])
 
-#table(
-  columns: (1.35fr, 1.35fr, 1.3fr),
-  table.header[*If you picked this*][*The thinking slip*][*The lasting fix*],
-  [(A) in Q2], [Wrote the $tan^(-1)$ formula but skipped the chain], [Composite = outer formula $times$ inner derivative; the 2 comes from $2x$],
-  [(A) or (B) in Q3], [Reported the slope as positive], [Place the point: upper arc of a circle falls as $x$ grows — negative slope],
-  [(B) or (C) in Q4], [Reached for power-rule reflexes], [$x^x$ is log-diff territory: $ln$ first, always],
-  [(D) in Q6], [Assumed a cubic falls after its max only], [Sign chart between critical points; decreasing is an interval property],
-  [(A) in Q7], [Substituted $r = 10$ into $S$ before differentiating], [Symbols first, numbers last — the rate question tests the order],
-  [(B) in Q9], [Sign errors piling up across two derivatives], [Slow double pass: cos -> $-sin$ -> $-cos$; sin -> $cos$ -> $-sin$; then compare to $y$],
-)
+#pagebreak()
 
-#v(12pt)
-#align(center)[#text(fill: om-grey, size: 8.5pt)[© OurMocks · www.ourmocks.com · CUET UG Mathematics · Calculus · 2027 cycle]]
+= Practice Questions — Part 2 (Q6 to Q10)
+
+#mcq(6, [A spherical balloon is inflated so that its volume increases at the rate of $900 "cm"^3 \/ "sec"$. The rate of increase of its surface area when its radius is $15 "cm"$ is:], (
+  [$120 "cm"^2 \/ "sec"$],
+  [$240 "cm"^2 \/ "sec"$],
+  [$60 "cm"^2 \/ "sec"$],
+  [$180 "cm"^2 \/ "sec"$],
+))
+#solution(6, [Volume of sphere: $V = frac(4, 3) pi r^3 ==> frac(d V, d t) = 4 pi r^2 frac(d r, d t)$.
+Given $frac(d V, d t) = 900 "cm"^3 \/ "s"$ and $r = 15 "cm"$:
+$ 900 = 4 pi (15)^2 frac(d r, d t) = 900 pi frac(d r, d t) ==> frac(d r, d t) = frac(1, pi) "cm/s" $
+Surface area of sphere: $S = 4 pi r^2 ==> frac(d S, d t) = 8 pi r frac(d r, d t)$.
+Substituting $r = 15$ and $frac(d r, d t) = frac(1, pi)$:
+$ frac(d S, d t) = 8 pi (15) (frac(1, pi)) = 120 "cm"^2 \/ "sec" $], answer: [A])
+
+#mcq(7, [The point on the curve $y = x^3 - 11x + 5$ at which the tangent line is $y = x - 11$ is:], (
+  [$(2, -9)$],
+  [$(-2, 19)$],
+  [$(3, -1)$],
+  [$(2, 9)$],
+))
+#solution(7, [Slope of the given line $y = x - 11$ is $m = 1$.
+Slope of tangent to the curve is:
+$ frac(d y, d x) = 3 x^2 - 11 = 1 ==> 3 x^2 = 12 ==> x^2 = 4 ==> x = plus.minus 2 $
+Test both points on the curve:
+1. For $x = 2$: $y = (2)^3 - 11(2) + 5 = 8 - 22 + 5 = -9$. Point is $(2, -9)$.
+   Equation of tangent: $y - (-9) = 1(x - 2) ==> y + 9 = x - 2 ==> y = x - 11$. (Matches!).
+2. For $x = -2$: $y = (-2)^3 - 11(-2) + 5 = -8 + 22 + 5 = 19$. Point is $(-2, 19)$.
+   Equation of tangent: $y - 19 = 1(x + 2) ==> y = x + 21 != y = x - 11$.
+Thus, the unique tangency point is $(2, -9)$.], answer: [A])
+
+#mcq(8, [The curves $y^2 = 4x$ and $x^2 = 4y$ intersect at the point $(4, 4)$. The tangent of the angle between them at this point is:], (
+  [$3/4$],
+  [$4/3$],
+  [$1$],
+  [$1/2$],
+))
+#solution(8, [Find the slopes of both curves at $(4, 4)$:
+1. Curve 1: $y^2 = 4x ==> 2 y frac(d y, d x) = 4 ==> m_1 = frac(4, 2y) = frac(4, 2(4)) = frac(1, 2)$.
+2. Curve 2: $x^2 = 4y ==> 2x = 4 frac(d y, d x) ==> m_2 = frac(2x, 4) = frac(2(4), 4) = 2$.
+The angle $theta$ between the tangents is given by:
+$ tan theta = abs(frac(m_2 - m_1, 1 + m_1 m_2)) = abs(frac(2 - 1/2, 1 + (1/2)(2))) = frac{3/2}{2} = frac(3, 4) $], answer: [A])
+
+#mcq(9, [The function $f(x) = 2x^3 - 9x^2 + 12x + 15$ is strictly increasing in the interval:], (
+  [$(1, 2)$],
+  [$(-oo, 1) union (2, oo)$],
+  [$(-1, 2)$],
+  [$(-oo, -2) union (-1, oo)$],
+))
+#solution(9, [Differentiate $f(x)$ with respect to $x$:
+$ f'(x) = 6 x^2 - 18 x + 12 = 6(x^2 - 3x + 2) = 6(x - 1)(x - 2) $
+For strictly increasing behavior, $f'(x) > 0$:
+$ 6(x - 1)(x - 2) > 0 $
+Using the Wavy Curve Method, the roots are $x = 1$ and $x = 2$.
+$f'(x) > 0$ when $x < 1$ or $x > 2$.
+Hence, $f$ is strictly increasing in $(-oo, 1) union (2, oo)$.], answer: [B])
+
+#mcq(10, [The function $f(x) = frac(ln x, x)$ is strictly decreasing in the interval:], (
+  [$(0, 1)$],
+  [$(1, e)$],
+  [$(e, oo)$],
+  [$(0, e)$],
+))
+#solution(10, [Domain of $f(x)$ is $x in (0, oo)$. Differentiating via the quotient rule:
+$ f'(x) = frac{x dot (1/x) - (ln x) dot 1}{x^2} = frac(1 - ln x, x^2) $
+For $f$ to be strictly decreasing, $f'(x) < 0$:
+$ frac(1 - ln x, x^2) < 0 ==> 1 - ln x < 0 quad ("since" x^2 > 0 "for" x > 0) $
+$ ln x > 1 ==> x > e $
+Thus, $f(x)$ is strictly decreasing in $(e, oo)$.], answer: [C])
+
+#pagebreak()
+#set text(size: 8.0pt)
+#set par(leading: 0.32em, spacing: 0.34em)
+
+= Practice Questions — Part 3 (Q11 to Q15)
+
+#mcq(11, [The maximum value of the function $f(x) = (frac(1, x))^x$ for $x > 0$ is:], (
+  [$e$],
+  [$e^(1/e)$],
+  [$(1/e)^e$],
+  [$1$],
+))
+#solution(11, [Let $y = (1/x)^x = x^(-x)$. Taking natural logarithms: $ln y = -x ln x$.
+Differentiating with respect to $x$: $frac(1, y) frac(d y, d x) = -(1 dot ln x + x dot frac(1, x)) = -(ln x + 1)$.
+Setting $frac(d y, d x) = 0 ==> -(ln x + 1) = 0 ==> ln x = -1 ==> x = e^(-1) = frac(1, e)$.
+Testing concavity: $f''(1/e) < 0$, confirming a local maximum at $x = 1/e$.
+The maximum value is:
+$ f(1/e) = (frac(1, 1/e))^(1/e) = e^(1/e) $], answer: [B])
+
+#mcq(12, [The absolute maximum value of the function $f(x) = 2x^3 - 15x^2 + 36x + 1$ on the closed interval $[1, 5]$ is:], (
+  [$29$],
+  [$28$],
+  [$56$],
+  [$24$],
+))
+#solution(12, [Find critical points by setting $f'(x) = 0$:
+$ f'(x) = 6x^2 - 30x + 36 = 6(x^2 - 5x + 6) = 6(x - 2)(x - 3) = 0 ==> x = 2, 3 $
+Both critical points lie inside $(1, 5)$. Evaluate $f(x)$ at critical points and boundary endpoints $x = 1, 5$:
+- $f(1) = 2(1) - 15(1) + 36(1) + 1 = 24$; $quad f(2) = 2(8) - 15(4) + 36(2) + 1 = 29$
+- $f(3) = 2(27) - 15(9) + 36(3) + 1 = 28$; $quad f(5) = 2(125) - 15(25) + 36(5) + 1 = 56$
+Comparing all values, the absolute maximum value is $56$ (achieved at endpoint $x = 5$).], answer: [C])
+
+#mcq(13, [A wire of length $28 "m"$ is cut into two pieces. One piece forms a square (side $s$) and the other forms a circle (radius $r$). The combined area is minimum when:], (
+  [$s = r$],
+  [$s = 2r$],
+  [$s = pi r$],
+  [$s = 4r$],
+))
+#solution(13, [Perimeter constraint: $4s + 2pi r = 28 ==> 2s + pi r = 14 ==> s = frac(14 - pi r, 2)$.
+Combined area: $A(r) = s^2 + pi r^2 = frac((14 - pi r)^2, 4) + pi r^2$.
+Differentiating with respect to $r$: $frac(d A, d r) = -frac(pi(14 - pi r), 2) + 2 pi r = 0 ==> -(14 - pi r) + 4r = 0 ==> r = frac(14, pi + 4)$.
+Then side of square $s = frac(14 - pi r, 2) = frac(28, pi + 4)$.
+Comparing: $2r = 2(frac(14, pi + 4)) = frac(28, pi + 4) = s$.
+Thus, combined area is minimum when the side of the square equals the diameter of the circle ($s = 2r$).], answer: [B])
+
+#mcq(14, [The value of $c$ in Rolle's Theorem for $f(x) = x^3 - 4x$ on the interval $[-2, 2]$ is:], (
+  [$0$],
+  [$plus.minus frac(2, sqrt(3))$],
+  [$plus.minus frac(1, sqrt(3))$],
+  [$plus.minus 2$],
+))
+#solution(14, [Check the conditions of Rolle's Theorem:
+1. $f(x)$ is a polynomial, so continuous on $[-2, 2]$.
+2. $f(x)$ is differentiable on $(-2, 2)$.
+3. Boundary values: $f(-2) = (-2)^3 - 4(-2) = -8 + 8 = 0$; $f(2) = 2^3 - 4(2) = 8 - 8 = 0 ==> f(-2) = f(2)$.
+All conditions are met. By Rolle's Theorem, there exists $c in (-2, 2)$ such that $f'(c) = 0$:
+$ f'(c) = 3 c^2 - 4 = 0 ==> 3 c^2 = 4 ==> c^2 = frac(4, 3) ==> c = plus.minus frac(2, sqrt(3)) $
+Both values lie strictly inside $(-2, 2)$ since $2 / sqrt(3) approx 1.155 < 2$.], answer: [B])
+
+#mcq(15, [Using differentials, the approximate value of $sqrt(25.3)$ is equal to:], (
+  [$5.03$],
+  [$5.06$],
+  [$5.015$],
+  [$5.30$],
+))
+#solution(15, [Let $f(x) = sqrt(x)$. Choose $x = 25$ (nearest perfect square) and $Delta x = 0.3$.
+Derivative: $f'(x) = frac(1, 2 sqrt(x))$.
+At $x = 25$:
+$ f(25) = sqrt(25) = 5, quad f'(25) = frac(1, 2 sqrt(25)) = frac(1, 10) = 0.1 $
+Using the differential approximation formula:
+$ f(x + Delta x) approx f(x) + f'(x) Delta x $
+$ sqrt(25.3) approx 5 + (0.1)(0.3) = 5 + 0.03 = 5.03 $], answer: [A])

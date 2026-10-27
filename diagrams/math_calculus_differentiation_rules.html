@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CUET UG Mathematics: Continuity & Differentiation Engine</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    background: #071A4D;
+    border-radius: 10px;
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .badge {
+    background: #B8FF34;
+    color: #071A4D;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .header-title {
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+  }
+  .header-right {
+    color: #94A3B8;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .main-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.25fr 1fr;
+    gap: 16px;
+    height: 690px;
+  }
+  .card {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 10px;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 8px;
+    border-bottom: 1.5px solid #F1F5F9;
+  }
+  .card-title {
+    font-size: 14.5px;
+    font-weight: 800;
+    color: #071A4D;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .tag {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+  .tag-blue { background: #EFF6FF; color: #1E40AF; }
+  .tag-green { background: #F0FDF4; color: #166534; }
+  .tag-purple { background: #FAF5FF; color: #6B21A8; }
+
+  .rule-list {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin-top: 8px;
+  }
+  .rule-item {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    padding: 7px 10px;
+    font-size: 11px;
+    line-height: 1.35;
+    color: #334155;
+  }
+  .rule-item b {
+    color: #071A4D;
+  }
+  .rule-item.hl-green {
+    background: #F0FDF4;
+    border-color: #86EFAC;
+  }
+  .rule-item.hl-amber {
+    background: #FFFBEB;
+    border-color: #FDE68A;
+  }
+  .rule-item.hl-purple {
+    background: #FAF5FF;
+    border-color: #D8B4FE;
+  }
+
+  .math-badge {
+    background: #E0E7FF;
+    color: #3730A3;
+    font-weight: 800;
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 11px;
+  }
+
+  .footer-note {
+    background: #F1F5F9;
+    border-radius: 6px;
+    padding: 6px 10px;
+    font-size: 10px;
+    color: #475569;
+    text-align: center;
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <div class="badge">FIGURE 1 · CORE DIFFERENTIATION ENGINE</div>
+    <div class="header-title">Continuity, Differentiability &amp; Advanced Differentiation Protocols</div>
+  </div>
+  <div class="header-right">NTA CUET UG Section A &amp; B1 · Class 12 Mathematics · Unit III</div>
+</div>
+
+<div class="main-grid">
+  <!-- Card 1: Continuity & Differentiability -->
+  <div class="card">
+    <div>
+      <div class="card-header">
+        <div class="card-title">1. Continuity &amp; Differentiability</div>
+        <span class="tag tag-blue">Foundations</span>
+      </div>
+
+      <div class="rule-list">
+        <div class="rule-item">
+          <b>Continuity at x = c (Three-Fold Test):</b>
+          <br>1. <i>f(c)</i> is defined.
+          <br>2. <span class="math-badge">lim<sub>x&rarr;c⁻</sub> f(x) = lim<sub>x&rarr;c⁺</sub> f(x) = L</span> (Limit exists).
+          <br>3. <b>Limit value equals function value:</b> <i>L = f(c)</i>.
+        </div>
+        <div class="rule-item">
+          <b>Differentiability at x = c:</b>
+          <br>Left derivative equals right derivative:
+          <br><span class="math-badge">Lf'(c) = Rf'(c)</span>
+          <br>where <span class="math-badge">f'(c) = lim<sub>h&rarr;0</sub> [f(c+h) - f(c)] / h</span>.
+        </div>
+        <div class="rule-item hl-green">
+          <b>The Fundamental Implication:</b>
+          <br>• <span class="math-badge">Differentiability &rArr; Continuity</span> (Always true!).
+          <br>• <b>Converse is strictly FALSE:</b> A continuous function may fail to be differentiable at sharp corners/cusps (e.g. <i>f(x) = |x|</i> at <i>x = 0</i>).
+        </div>
+        <div class="rule-item hl-amber">
+          <b>Algebra of Continuous Functions:</b>
+          <br>If <i>f</i> and <i>g</i> are continuous at <i>c</i>, then <i>f &plusmn; g</i>, <i>f &middot; g</i>, and <i>f/g</i> (for <i>g(c) &ne; 0</i>) are continuous. Every polynomial is continuous on &reals;.
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-note">
+      Sharp corner/kink &rArr; continuous but not differentiable!
+    </div>
+  </div>
+
+  <!-- Card 2: Advanced Differentiation Engine -->
+  <div class="card">
+    <div>
+      <div class="card-header">
+        <div class="card-title">2. Advanced Differentiation Protocols</div>
+        <span class="tag tag-green">Techniques</span>
+      </div>
+
+      <div class="rule-list">
+        <div class="rule-item">
+          <b>Chain Rule (Function of Function):</b>
+          <br>If <i>y = f(u)</i> and <i>u = g(x)</i>:
+          <br><span class="math-badge">dy/dx = (dy/du) &middot; (du/dx)</span>
+        </div>
+        <div class="rule-item">
+          <b>Implicit Differentiation:</b>
+          <br>When <i>F(x, y) = 0</i> cannot be solved explicitly for <i>y</i>:
+          <br>Differentiate term-by-term with respect to <i>x</i>, applying <span class="math-badge">d/dx [g(y)] = g'(y) (dy/dx)</span>, then isolate <i>dy/dx</i>.
+        </div>
+        <div class="rule-item hl-purple">
+          <b>Logarithmic Differentiation (u(x)<sup>v(x)</sup>):</b>
+          <br>For variable base with variable exponent:
+          <br>1. Take natural logarithm: <span class="math-badge">ln y = v(x) ln u(x)</span>.
+          <br>2. Differentiate implicitly:
+          <br><span class="math-badge">dy/dx = y [v'(x) ln u(x) + v(x) u'(x) / u(x)]</span>.
+        </div>
+        <div class="rule-item hl-amber">
+          <b>Parametric Differentiation (x = f(t), y = g(t)):</b>
+          <br>• First derivative: <span class="math-badge">dy/dx = (dy/dt) / (dx/dt) = g'(t) / f'(t)</span>.
+          <br>• <b>Second Derivative Trap (CRITICAL CUET TRAP!):</b>
+          <br><span class="math-badge">d²y/dx² = [d/dt (dy/dx)] &middot; (dt/dx) = [d/dt (dy/dx)] / (dx/dt)</span>
+          <br>Never just divide <i>y''(t)</i> by <i>x''(t)</i>!
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-note">
+      Parametric second derivative ALWAYS multiplies by (dt/dx) = 1/(dx/dt)!
+    </div>
+  </div>
+
+  <!-- Card 3: Standard Derivatives Reference -->
+  <div class="card">
+    <div>
+      <div class="card-header">
+        <div class="card-title">3. Standard Derivative Vault</div>
+        <span class="tag tag-purple">Formulas</span>
+      </div>
+
+      <div class="rule-list">
+        <div class="rule-item">
+          <b>Inverse Trigonometric Derivatives:</b>
+          <br>• <span class="math-badge">d/dx [sin⁻¹ x] = 1 / &radic;(1 - x²)</span>, &nbsp; |x| &lt; 1
+          <br>• <span class="math-badge">d/dx [cos⁻¹ x] = -1 / &radic;(1 - x²)</span>, &nbsp; |x| &lt; 1
+          <br>• <span class="math-badge">d/dx [tan⁻¹ x] = 1 / (1 + x²)</span>, &nbsp; x &isin; &reals;
+          <br>• <span class="math-badge">d/dx [cot⁻¹ x] = -1 / (1 + x²)</span>, &nbsp; x &isin; &reals;
+          <br>• <span class="math-badge">d/dx [sec⁻¹ x] = 1 / (|x| &radic;(x² - 1))</span>
+        </div>
+        <div class="rule-item hl-green">
+          <b>Exponential &amp; Logarithmic:</b>
+          <br>• <span class="math-badge">d/dx [eˣ] = eˣ</span> &nbsp;|&nbsp; <span class="math-badge">d/dx [aˣ] = aˣ ln a</span>
+          <br>• <span class="math-badge">d/dx [ln x] = 1 / x</span> &nbsp;|&nbsp; <span class="math-badge">d/dx [logₐ x] = 1 / (x ln a)</span>
+        </div>
+        <div class="rule-item">
+          <b>Rolle's &amp; Mean Value Theorem (Lagrange MVT):</b>
+          <br>If <i>f</i> is continuous on <i>[a, b]</i> and differentiable on <i>(a, b)</i>:
+          <br>• <b>LMVT:</b> &exist; <i>c &isin; (a, b)</i> such that <span class="math-badge">f'(c) = [f(b) - f(a)] / (b - a)</span>.
+          <br>• <b>Rolle's Theorem:</b> If also <i>f(a) = f(b)</i> &rArr; &exist; <i>c &isin; (a, b)</i> with <span class="math-badge">f'(c) = 0</span>.
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-note">
+      Remember: "Co" functions (cos, cot, csc) always have a NEGATIVE derivative!
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

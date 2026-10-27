@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CUET UG Mathematics: Applications of Derivatives Engine</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    background: #071A4D;
+    border-radius: 10px;
+    padding: 14px 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .badge {
+    background: #B8FF34;
+    color: #071A4D;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .header-title {
+    color: #FFFFFF;
+    font-size: 15.5px;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+  }
+  .header-right {
+    color: #94A3B8;
+    font-size: 12.5px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .main-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr 1.15fr;
+    gap: 16px;
+    height: 690px;
+  }
+  .card {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 10px;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 8px;
+    border-bottom: 1.5px solid #F1F5F9;
+  }
+  .card-title {
+    font-size: 14.5px;
+    font-weight: 800;
+    color: #071A4D;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .tag {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+  .tag-blue { background: #EFF6FF; color: #1E40AF; }
+  .tag-green { background: #F0FDF4; color: #166534; }
+  .tag-amber { background: #FFFBEB; color: #92400E; }
+
+  .rule-list {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin-top: 8px;
+  }
+  .rule-item {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    padding: 7px 10px;
+    font-size: 11px;
+    line-height: 1.35;
+    color: #334155;
+  }
+  .rule-item b {
+    color: #071A4D;
+  }
+  .rule-item.hl-green {
+    background: #F0FDF4;
+    border-color: #86EFAC;
+  }
+  .rule-item.hl-amber {
+    background: #FFFBEB;
+    border-color: #FDE68A;
+  }
+  .rule-item.hl-rose {
+    background: #FFF1F2;
+    border-color: #FECDD3;
+  }
+
+  .badge-code {
+    font-family: monospace;
+    font-weight: 800;
+    background: #E0E7FF;
+    color: #3730A3;
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-size: 11px;
+  }
+
+  .footer-note {
+    background: #F1F5F9;
+    border-radius: 6px;
+    padding: 6px 10px;
+    font-size: 10px;
+    color: #475569;
+    text-align: center;
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <div class="badge">FIGURE 2 · APPLICATIONS OF DERIVATIVES</div>
+    <div class="header-title">Applications of Derivatives: Rates, Tangents/Normals &amp; Optimization Engine</div>
+  </div>
+  <div class="header-right">NTA CUET UG Section A &amp; B1 · Class 12 Mathematics · Unit III</div>
+</div>
+
+<div class="main-grid">
+  <!-- Card 1: Rate Measure, Tangents & Normals -->
+  <div class="card">
+    <div>
+      <div class="card-header">
+        <div class="card-title">1. Rates of Change, Tangents &amp; Normals</div>
+        <span class="tag tag-blue">Geometry</span>
+      </div>
+
+      <div class="rule-list">
+        <div class="rule-item">
+          <b>Rate of Change of Quantities:</b>
+          <br>• Rate with respect to time <i>t</i>: <span class="badge-code">dy/dt = (dy/dx) &middot; (dx/dt)</span>.
+          <br>• <i>Spherical Balloon:</i> <i>V = 4/3 &pi; r³</i> &rArr; <span class="badge-code">dV/dt = 4&pi; r² (dr/dt)</span>.
+          <br>• <i>Sliding Ladder:</i> <i>x² + y² = L²</i> &rArr; <span class="badge-code">x (dx/dt) + y (dy/dt) = 0</span>.
+        </div>
+        <div class="rule-item hl-green">
+          <b>Tangent Line Equation at (x₀, y₀):</b>
+          <br>Slope: <span class="badge-code">m = [dy/dx]|₍ₓ₀, ᵧ₀₎</span>.
+          <br>Equation: <span class="badge-code">y - y₀ = m (x - x₀)</span>.
+          <br>• <i>Horizontal Tangent:</i> <i>m = 0</i> &rArr; <span class="badge-code">dy/dx = 0</span>.
+          <br>• <i>Vertical Tangent:</i> <i>m &rarr; &infin;</i> &rArr; <span class="badge-code">dx/dy = 0</span>.
+        </div>
+        <div class="rule-item hl-amber">
+          <b>Normal Line Equation at (x₀, y₀):</b>
+          <br>Perpendicular to tangent: <span class="badge-code">m_N = -1 / m</span> (for <i>m &ne; 0</i>).
+          <br>Equation: <span class="badge-code">y - y₀ = -(1/m) (x - x₀)</span>.
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-note">
+      Two curves intersect orthogonally if their tangent slopes satisfy m₁ &middot; m₂ = -1.
+    </div>
+  </div>
+
+  <!-- Card 2: Monotonicity -->
+  <div class="card">
+    <div>
+      <div class="card-header">
+        <div class="card-title">2. Monotonicity Engine</div>
+        <span class="tag tag-green">Inc / Dec</span>
+      </div>
+
+      <div class="rule-list">
+        <div class="rule-item">
+          <b>Strictly Increasing Function:</b>
+          <br>For all <i>x &isin; (a, b)</i>:
+          <br><span class="badge-code">f'(x) &gt; 0</span>
+          <br>Graph strictly rises from left to right: <i>x₁ &lt; x₂ &rArr; f(x₁) &lt; f(x₂)</i>.
+        </div>
+        <div class="rule-item">
+          <b>Strictly Decreasing Function:</b>
+          <br>For all <i>x &isin; (a, b)</i>:
+          <br><span class="badge-code">f'(x) &lt; 0</span>
+          <br>Graph strictly falls from left to right: <i>x₁ &lt; x₂ &rArr; f(x₁) &gt; f(x₂)</i>.
+        </div>
+        <div class="rule-item hl-amber">
+          <b>Critical Points:</b>
+          <br>Points in the domain of <i>f</i> where:
+          <br><span class="badge-code">f'(x) = 0</span> &nbsp;OR&nbsp; <span class="badge-code">f'(x) is undefined</span>.
+          <br>These partition the domain into test intervals.
+        </div>
+        <div class="rule-item">
+          <b>Wavy Curve Method (Sign Scheme):</b>
+          <br>Factor <i>f'(x)</i> and determine the sign of <i>f'(x)</i> in each sub-interval to classify intervals of increase and decrease.
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-note">
+      If f'(x) = 0 at isolated points, the function remains strictly increasing (e.g. y = x³).
+    </div>
+  </div>
+
+  <!-- Card 3: Maxima & Minima Optimization -->
+  <div class="card">
+    <div>
+      <div class="card-header">
+        <div class="card-title">3. Maxima &amp; Minima Engine</div>
+        <span class="tag tag-amber">Optimization</span>
+      </div>
+
+      <div class="rule-list">
+        <div class="rule-item hl-green">
+          <b>First Derivative Test (Sign Across c):</b>
+          <br>• <b>+ to - :</b> <i>f'(x)</i> changes from positive to negative &rArr; <b>Local Maximum</b> at <i>c</i>.
+          <br>• <b>- to + :</b> <i>f'(x)</i> changes from negative to positive &rArr; <b>Local Minimum</b> at <i>c</i>.
+          <br>• <b>No Sign Change:</b> &rArr; <b>Point of Inflection</b> (e.g. <i>x³</i> at <i>0</i>).
+        </div>
+        <div class="rule-item hl-rose">
+          <b>Second Derivative Test (at f'(c) = 0):</b>
+          <br>• <span class="badge-code">f''(c) &lt; 0</span> &rArr; <b>Local Maximum</b> (Concave down &cap;).
+          <br>• <span class="badge-code">f''(c) &gt; 0</span> &rArr; <b>Local Minimum</b> (Concave up &cup;).
+          <br>• <span class="badge-code">f''(c) = 0</span> &rArr; Test fails! Revert to 1st derivative test.
+        </div>
+        <div class="rule-item">
+          <b>Absolute Extrema on Closed [a, b]:</b>
+          <br>1. Find all critical points in <i>(a, b)</i>.
+          <br>2. Evaluate <i>f(x)</i> at critical points AND at endpoints <i>a</i> and <i>b</i>.
+          <br>3. <span class="badge-code">Absolute Max = max {f(c), f(a), f(b)}</span>.
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-note">
+      Absolute extrema ALWAYS evaluate boundary values f(a) and f(b) in addition to critical points!
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
