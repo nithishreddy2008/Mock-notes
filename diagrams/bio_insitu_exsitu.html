@@ -1,76 +1,335 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
+<title>In-situ vs Ex-situ Conservation & The Evil Quartet</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
-  .wrap { width: 1480px; height: 940px; position: relative; background: #fff; padding: 26px 30px; display: flex; flex-direction: column; }
-  .head { background: #071A4D; border-radius: 14px; padding: 14px 22px; display: flex; align-items: baseline; justify-content: space-between; }
-  .head .t { color: #fff; font-size: 24px; font-weight: 800; letter-spacing: .5px; }
-  .head .s { color: #B8FF34; font-size: 13.5px; font-weight: 700; letter-spacing: 2px; }
-  .cols { display: flex; gap: 26px; margin-top: 20px; flex: 1; }
-  .col { flex: 1; border-radius: 14px; border: 1.5px solid #D5DCEA; overflow: hidden; background: #FCFDFF; display: flex; flex-direction: column; }
-  .col h2 { color: #fff; font-size: 19px; font-weight: 800; padding: 13px 18px 11px; }
-  .col h2 .sub { display: block; font-size: 12.5px; font-weight: 600; letter-spacing: 1.2px; opacity: .85; margin-top: 2px; }
-  .in h2 { background: #071A4D; }
-  .ex h2 { background: #1F5EFF; }
-  .row { padding: 11px 18px 12px; border-top: 1px solid #E4E9F2; }
-  .row .k { font-size: 11.5px; font-weight: 800; letter-spacing: 1.6px; color: #1F5EFF; }
-  .in .row .k { color: #1F5EFF; }
-  .ex .row .k { color: #0B3EDB; }
-  .row .v { font-size: 14.5px; color: #1B2333; line-height: 1.42; margin-top: 3px; }
-  .row .v b { color: #071A4D; }
-  .hot { margin-top: 20px; background: #071A4D; border-radius: 14px; padding: 14px 20px 16px; }
-  .hot h2 { color: #B8FF34; font-size: 16.5px; font-weight: 800; letter-spacing: 1px; margin-bottom: 10px; }
-  .hot h2 span { color: #fff; font-size: 12.5px; font-weight: 600; letter-spacing: .4px; margin-left: 12px; }
-  .chips { display: flex; gap: 14px; }
-  .chip { flex: 1; background: rgba(255,255,255,.07); border: 1px solid rgba(184,255,52,.45); border-radius: 10px; padding: 10px 14px 11px; }
-  .chip b { color: #B8FF34; display: block; font-size: 15px; font-weight: 800; margin-bottom: 3px; }
-  .chip span { font-size: 12.5px; color: rgba(255,255,255,.88); line-height: 1.35; display: block; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    background: #071A4D;
+    border-radius: 10px;
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .badge {
+    background: #B8FF34;
+    color: #071A4D;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .header-title {
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+  }
+  .header-right {
+    color: #94A3B8;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .top-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    height: 400px;
+  }
+  .card {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 10px;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    border-bottom: 1.5px solid #F1F5F9;
+  }
+  .card-title {
+    font-size: 15px;
+    font-weight: 800;
+    color: #071A4D;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .tag {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+  .tag-green { background: #F0FDF4; color: #166534; }
+  .tag-blue { background: #EFF6FF; color: #1E40AF; }
+  .tag-red { background: #FEF2F2; color: #991B1B; }
+
+  .item-list {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin-top: 8px;
+  }
+  .item-row {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    padding: 7px 10px;
+    font-size: 11.5px;
+    line-height: 1.35;
+    color: #334155;
+  }
+  .item-row b {
+    color: #071A4D;
+  }
+  .highlight-badge {
+    background: #E2E8F0;
+    color: #0F172A;
+    font-weight: 800;
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-size: 10.5px;
+  }
+
+  /* Bottom Section: Evil Quartet */
+  .bottom-box {
+    background: #FFFFFF;
+    border: 1.5px solid #E2E8F0;
+    border-radius: 10px;
+    padding: 14px 18px;
+    height: 275px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .bottom-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 8px;
+    border-bottom: 1.5px solid #F1F5F9;
+  }
+  .quartet-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-top: 10px;
+  }
+  .quartet-card {
+    border-radius: 8px;
+    padding: 10px 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 11px;
+    line-height: 1.35;
+  }
+  .qc-1 { background: #FEF2F2; border: 1px solid #FECACA; color: #7F1D1D; }
+  .qc-2 { background: #FFFBEB; border: 1px solid #FDE68A; color: #78350F; }
+  .qc-3 { background: #EFF6FF; border: 1px solid #BFDBFE; color: #1E3A8A; }
+  .qc-4 { background: #F5F3FF; border: 1px solid #DDD6FE; color: #4C1D95; }
+  .qc-title {
+    font-weight: 800;
+    font-size: 12px;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .qc-number {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 800;
+    color: #FFFFFF;
+  }
+  .qc-1 .qc-number { background: #DC2626; }
+  .qc-2 .qc-number { background: #D97706; }
+  .qc-3 .qc-number { background: #2563EB; }
+  .qc-4 .qc-number { background: #7C3AED; }
+
+  .footer-bar {
+    background: #F1F5F9;
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: 10.5px;
+    color: #475569;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+  }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <div class="head">
-    <div class="t">IN SITU v/s EX SITU — TWO WAYS TO SAVE A SPECIES</div>
-    <div class="s">UNIT X &#183; CONSERVATION METHODS</div>
+
+<div class="header">
+  <div class="header-left">
+    <div class="badge">FIGURE 2 · NCERT COMPARISON MATRIX</div>
+    <div class="header-title">In-situ vs Ex-situ Conservation & The Evil Quartet of Biodiversity Loss</div>
+  </div>
+  <div class="header-right">NCERT Class 12 Biology · Unit X · Chapter 15</div>
+</div>
+
+<div class="top-grid">
+  <!-- In-situ Conservation -->
+  <div class="card">
+    <div>
+      <div class="card-header">
+        <div class="card-title">
+          <span>In-situ Conservation (On-Site Protection)</span>
+        </div>
+        <span class="tag tag-green">First Priority · Natural Habitat</span>
+      </div>
+      <p style="font-size: 11.5px; color: #475569; margin-top: 6px;">
+        Conserving the entire ecosystem so that biodiversity at all levels is protected in its natural evolution.
+      </p>
+
+      <div class="item-list">
+        <div class="item-row">
+          <b>Biosphere Reserves (14 in India):</b> Large protected areas zoning into <i>Core</i> (strictly protected, no human entry), <i>Buffer</i> (research & education), and <i>Transition</i> (sustainable human settlements).
+        </div>
+        <div class="item-row">
+          <b>National Parks (90 in India):</b> Strictly reserved for wildlife betterment; <i>strictly zero private ownership, human exploitation, forestry, or grazing allowed</i>.
+        </div>
+        <div class="item-row">
+          <b>Wildlife Sanctuaries (448 in India):</b> Protection of wild fauna; regulated human activities (timber harvesting, collecting minor forest produce) permitted without hurting wildlife.
+        </div>
+        <div class="item-row">
+          <b>Biodiversity Hotspots (34 Globally):</b> Regions with exceptional species richness and high endemism. 3 cover India: <i>Western Ghats-Sri Lanka, Indo-Burma, Himalaya</i>. Cover &lt;2% land, cut extinction by ~30%.
+        </div>
+        <div class="item-row" style="background: #F0FDF4; border-color: #BBF7D0;">
+          <b>Sacred Groves (Tribal Refugia):</b> <i>Khasi & Jaintia Hills</i> (Meghalaya), <i>Aravalli Hills</i> (Rajasthan), <i>Western Ghats</i> (Karnataka/Maharashtra), <i>Chanda & Bastar</i> (MP/Chhattisgarh). Last refuges for rare endemics!
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div class="cols">
-    <div class="col in">
-      <h2>IN SITU<span>&#8220;IN THE ORIGINAL PLACE&#8221; — PROTECT IT AT HOME</span></h2>
-      <div class="row"><div class="k">DEFINITION</div>
-        <div class="v">The species is protected <b>inside its natural habitat</b> — the whole ecosystem is fenced, guarded and left alive.</div></div>
-      <div class="row"><div class="k">MAIN TOOLS (WITH EXAMPLES)</div>
-        <div class="v"><b>National parks</b> (strict protection) &#183; <b>wildlife sanctuaries</b> (animal-focused) &#183; <b>biosphere reserves</b> (whole ecosystems + research) &#183; <b>sacred groves</b> (Khasi &amp; Jaintia Hills, Meghalaya; Bishnoi villages, Rajasthan).</div></div>
-      <div class="row"><div class="k">WHEN IT IS USED</div>
-        <div class="v">The habitat can still support the species — this is <b>always the first choice</b>, the ideal method.</div></div>
-      <div class="row"><div class="k">ONE-LINE ADVANTAGE</div>
-        <div class="v"><b>Saves the entire ecosystem with all its species at once</b> — and is the cheaper, more natural route.</div></div>
-    </div>
+  <!-- Ex-situ Conservation -->
+  <div class="card">
+    <div>
+      <div class="card-header">
+        <div class="card-title">
+          <span>Ex-situ Conservation (Off-Site Protection)</span>
+        </div>
+        <span class="tag tag-blue">High Urgency · Specialized Care</span>
+      </div>
+      <p style="font-size: 11.5px; color: #475569; margin-top: 6px;">
+        Threatened animals and plants are taken out of their natural habitat and placed in special settings where they can be protected and given special care.
+      </p>
 
-    <div class="col ex">
-      <h2>EX SITU<span>&#8220;AWAY FROM THE ORIGINAL PLACE&#8221; — PROTECT IT IN HUMAN CARE</span></h2>
-      <div class="row"><div class="k">DEFINITION</div>
-        <div class="v">The threatened species (or its seeds, gametes, tissues) is protected <b>outside its natural habitat</b>, under human care.</div></div>
-      <div class="row"><div class="k">MAIN TOOLS (WITH EXAMPLES)</div>
-        <div class="v"><b>Zoological parks</b> with captive breeding &#183; <b>wildlife safari parks</b> &#183; <b>seed and pollen banks</b> &#183; <b>tissue culture</b> for plants &#183; <b>cryopreservation</b> of gametes at &#8722;196&#176;C in liquid nitrogen.</div></div>
-      <div class="row"><div class="k">WHEN IT IS USED</div>
-        <div class="v">The habitat is already gone, or the wild population is <b>too small to survive alone</b> — the backup plan.</div></div>
-      <div class="row"><div class="k">ONE-LINE ADVANTAGE</div>
-        <div class="v"><b>Works even when there is no wild home left to return to</b> — it banks life for a future release.</div></div>
-    </div>
-  </div>
-
-  <div class="hot">
-    <h2>INDIA'S BIODIVERSITY HOTSPOTS<span>CRITERIA: VERY HIGH ENDEMISM + VERY HIGH HABITAT LOSS</span></h2>
-    <div class="chips">
-      <div class="chip"><b>1 &#183; WESTERN GHATS&#8211;SRI LANKA</b><span>Evergreen mountain belt on India's west coast — enormous endemic plant and amphibian wealth under heavy pressure.</span></div>
-      <div class="chip"><b>2 &#183; HIMALAYA</b><span>The entire mountain arc in the north — endemic alpine species squeezed by shrinking habitat.</span></div>
-      <div class="chip"><b>3 &#183; INDO-BURMA</b><span>North-east India and neighbouring regions — species-rich forests being lost fast.</span></div>
+      <div class="item-list">
+        <div class="item-row">
+          <b>Zoological Parks & Safari Parks:</b> Captive management of threatened wild animals for assisted breeding, genetic health, and educational awareness.
+        </div>
+        <div class="item-row">
+          <b>Botanical Gardens:</b> Ex-situ cultivation and taxonomy of living rare plant collections (e.g., Royal Botanic Gardens Kew; Indian Botanical Garden, Howrah; NBRI, Lucknow).
+        </div>
+        <div class="item-row" style="background: #EFF6FF; border-color: #BFDBFE;">
+          <b>Cryopreservation (-196°C in Liquid Nitrogen):</b> Advanced preservation of gametes of threatened species in viable and fertile condition for indefinitely long periods.
+        </div>
+        <div class="item-row">
+          <b>Seed Banks & Pollen Banks:</b> Desiccation and cold storage of seeds of different genetic strains of commercially and ecologically important plants for decades.
+        </div>
+        <div class="item-row">
+          <b>In Vitro Tissue Culture:</b> Micropropagation of rare and endangered plant explants under sterile conditions to mass-produce clonal plantlets.
+        </div>
+      </div>
     </div>
   </div>
 </div>
+
+<!-- Bottom: The Evil Quartet -->
+<div class="bottom-box">
+  <div class="bottom-header">
+    <div style="font-size: 14px; font-weight: 800; color: #071A4D; display: flex; align-items: center; gap: 8px;">
+      <span>The "Evil Quartet" — The 4 Major Causes of Biodiversity Loss</span>
+      <span class="tag tag-red">NCERT Core Concept</span>
+    </div>
+    <div style="font-size: 11px; color: #64748B; font-weight: 600;">
+      IUCN Red List (2004): 784 species extinct in last 500 years (338 vertebrates, 359 invertebrates, 87 plants)
+    </div>
+  </div>
+
+  <div class="quartet-grid">
+    <!-- 1. Habitat Loss -->
+    <div class="quartet-card qc-1">
+      <div>
+        <div class="qc-title"><span class="qc-number">1</span> Habitat Loss & Fragmentation</div>
+        <p><b>The #1 most important cause.</b> Tropical rainforests reduced from <b>14% to 6%</b> of earth's surface.</p>
+        <p style="margin-top: 4px;">• Amazon rainforest ("lungs of the planet") being cleared for soybean cultivation and beef cattle grazing.</p>
+        <p style="margin-top: 4px;">• Habitat fragmentation severely hits mammals and birds needing large territories and migratory routes.</p>
+      </div>
+    </div>
+
+    <!-- 2. Over-exploitation -->
+    <div class="quartet-card qc-2">
+      <div>
+        <div class="qc-title"><span class="qc-number">2</span> Over-Exploitation</div>
+        <p><b>When human "need" turns into "greed".</b> Over-harvesting beyond population replacement rate.</p>
+        <p style="margin-top: 4px;">• <b>Steller's Sea Cow</b> (extinct due to over-hunting for meat and skin in cold Pacific waters).</p>
+        <p style="margin-top: 4px;">• <b>Passenger Pigeon</b> (billions extinct due to commercial hunting in North America).</p>
+        <p style="margin-top: 4px;">• Marine fish populations severely depleted globally.</p>
+      </div>
+    </div>
+
+    <!-- 3. Alien Invasions -->
+    <div class="quartet-card qc-3">
+      <div>
+        <div class="qc-title"><span class="qc-number">3</span> Alien Species Invasions</div>
+        <p><b>Exotic species turning invasive</b>, outcompeting and eliminating native endemic species.</p>
+        <p style="margin-top: 4px;">• <b>Nile perch</b> introduced into Lake Victoria caused extinction of >200 native cichlid fish species.</p>
+        <p style="margin-top: 4px;">• Invasive weeds: <i>Parthenium</i> (carrot grass), <i>Lantana</i>, and <i>Eichhornia</i> (water hyacinth / Terror of Bengal).</p>
+        <p style="margin-top: 4px;">• African catfish (<i>Clarias gariepinus</i>) illegally introduced threatens indigenous catfishes.</p>
+      </div>
+    </div>
+
+    <!-- 4. Co-extinctions -->
+    <div class="quartet-card qc-4">
+      <div>
+        <div class="qc-title"><span class="qc-number">4</span> Co-Extinctions</div>
+        <p><b>Obligate symbiotic dependency:</b> When one species becomes extinct, the associated species invariably perishes.</p>
+        <p style="margin-top: 4px;">• <b>Host fish extinction:</b> Host-specific monogenean/trematode parasites automatically face extinction.</p>
+        <p style="margin-top: 4px;">• <b>Coevolved plant-pollinator mutualism:</b> Extinction of fig wasp leads to extinction of obligate fig tree (<i>Ficus</i>).</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bar">
+    <span>International Treaties: Earth Summit (Rio de Janeiro, 1992) · World Summit on Sustainable Development (Johannesburg, 2002; 190 countries)</span>
+    <span>Recent Extinctions: Dodo (Mauritius), Quagga (Africa), Thylacine (Australia), 3 Tiger Subspecies (Bali, Javan, Caspian)</span>
+  </div>
+</div>
+
 </body>
 </html>

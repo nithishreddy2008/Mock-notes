@@ -1,117 +1,339 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
+<title>CUET UG Biology: Biodiversity and Conservation Master Mindmap</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
-  .wrap { width: 1480px; height: 1060px; position: relative; background: #fff; }
-  svg.wires { position: absolute; inset: 0; width: 1480px; height: 1060px; }
-  .center {
-    position: absolute; left: 545px; top: 385px; width: 390px; height: 100px;
-    background: #071A4D; border-radius: 16px; display: flex; flex-direction: column;
-    align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(7,26,77,.25);
-    border-bottom: 5px solid #B8FF34;
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 20px 24px;
+    position: relative;
+    overflow: hidden;
   }
-  .center .t { color: #fff; font-size: 22px; font-weight: 800; letter-spacing: .5px; text-align: center; }
-  .center .s { color: #B8FF34; font-size: 13.5px; font-weight: 700; letter-spacing: 2px; margin-top: 4px; }
-  .card {
-    position: absolute; width: 470px; background: #FCFDFF; border: 1.5px solid #D5DCEA;
-    border-radius: 14px; padding: 13px 16px 12px;
+  .header {
+    background: #071A4D;
+    border-radius: 10px;
+    padding: 14px 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 10;
   }
-  .card h2 { font-size: 20px; color: #071A4D; font-weight: 800; margin-bottom: 7px;
-             padding-bottom: 5px; border-bottom: 3px solid; display: inline-block; }
-  .leaf { font-size: 14.5px; color: #1B2333; margin: 5px 0; padding-left: 16px; position: relative; line-height: 1.32; }
-  .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
-  .b .leaf::before { background: #1F5EFF; }
-  .l .leaf::before { background: #7FB800; }
-  .leaf b { color: #071A4D; }
-  .b h2 { border-color: #1F5EFF; }
-  .l h2 { border-color: #7FB800; }
-  .left { left: 30px; }
-  .right { left: 980px; }
-  .exc {
-    position: absolute; left: 470px; top: 878px; width: 540px; background: #FFF3EC;
-    border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px;
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
   }
-  .exc h2 { font-size: 17px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
-  .exc .leaf { font-size: 13px; margin: 3px 0; padding-left: 14px; color: #7A2A12; }
-  .exc .leaf::before { background: #D2481F; }
-  .exc b { color: #B4380F; }
+  .badge {
+    background: #B8FF34;
+    color: #071A4D;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .header-title {
+    color: #FFFFFF;
+    font-size: 19px;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+  }
+  .header-right {
+    color: #94A3B8;
+    font-size: 12.5px;
+    font-weight: 600;
+  }
+
+  /* SVG Connectors */
+  svg.connectors {
+    position: absolute;
+    inset: 0;
+    width: 1440px;
+    height: 880px;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* Center Hub */
+  .center-hub {
+    position: absolute;
+    left: 560px;
+    top: 380px;
+    width: 320px;
+    height: 120px;
+    background: #071A4D;
+    border: 2px solid #B8FF34;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 16px;
+    text-align: center;
+    z-index: 5;
+  }
+  .hub-badge {
+    background: rgba(184, 255, 52, 0.15);
+    color: #B8FF34;
+    font-size: 9.5px;
+    font-weight: 800;
+    padding: 2px 8px;
+    border-radius: 4px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .hub-title {
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+  }
+  .hub-sub {
+    color: #94A3B8;
+    font-size: 11px;
+    margin-top: 4px;
+    line-height: 1.3;
+  }
+
+  /* Node Cards */
+  .node-card {
+    position: absolute;
+    width: 420px;
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 10px;
+    padding: 12px 14px;
+    z-index: 5;
+    font-size: 11.2px;
+    line-height: 1.32;
+  }
+  .card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 6px;
+    padding-bottom: 5px;
+    border-bottom: 1.5px solid #F1F5F9;
+  }
+  .card-h {
+    font-size: 13px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .node-pill {
+    font-size: 9px;
+    font-weight: 800;
+    padding: 2px 7px;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+  .pill-blue { background: #EFF6FF; color: #1E40AF; }
+  .pill-green { background: #F0FDF4; color: #166534; }
+  .pill-purple { background: #FAF5FF; color: #6B21A8; }
+  .pill-red { background: #FEF2F2; color: #991B1B; }
+  .pill-amber { background: #FFFBEB; color: #92400E; }
+  .pill-cyan { background: #ECFEFF; color: #0E7490; }
+
+  .bullet-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .bullet-item {
+    color: #334155;
+  }
+  .bullet-item b {
+    color: #071A4D;
+  }
+
+  /* Positions of 6 Satellite Cards */
+  /* Left Column */
+  .pos-tl { left: 40px; top: 88px; height: 232px; }
+  .pos-ml { left: 40px; top: 334px; height: 248px; }
+  .pos-bl { left: 40px; top: 596px; height: 258px; }
+
+  /* Right Column */
+  .pos-tr { left: 980px; top: 88px; height: 232px; }
+  .pos-mr { left: 980px; top: 334px; height: 248px; }
+  .pos-br { left: 980px; top: 596px; height: 258px; }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <svg class="wires" viewBox="0 0 1480 1060">
-    <path d="M 545 420 C 495 420, 520 165, 502 160" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
-    <path d="M 545 435 C 505 435, 520 430, 502 430" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 545 450 C 495 450, 520 700, 502 705" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
-    <path d="M 935 420 C 985 420, 960 165, 978 160" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 935 435 C 975 435, 960 430, 978 430" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
-    <path d="M 935 450 C 985 450, 960 700, 978 705" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 740 485 C 740 640, 740 810, 740 876" fill="none" stroke="#D2481F" stroke-width="2.5" stroke-dasharray="7 5" opacity=".6"/>
-  </svg>
 
-  <div class="center">
-    <div class="t">BIODIVERSITY &amp; CONSERVATION</div>
-    <div class="s">UNIT X &#183; COMPLETE CHAPTER MAP</div>
+<div class="header">
+  <div class="header-left">
+    <div class="badge">FIGURE 3 · MASTER SYNTHESIS ARCHITECTURE</div>
+    <div class="header-title">Biodiversity &amp; Conservation: Comprehensive High-Yield NCERT Mindmap</div>
   </div>
+  <div class="header-right">NCERT Class 12 Biology · Unit X · Chapter 15</div>
+</div>
 
-  <div class="card left b" style="top:62px">
-    <h2>Levels of Biodiversity</h2>
-    <div class="leaf"><b>Genetic:</b> variety within one species — 50,000+ rice strains, ~1,000 mango varieties in India</div>
-    <div class="leaf"><b>Species:</b> variety of species in a place — Western Ghats beat Eastern Ghats for amphibians</div>
-    <div class="leaf"><b>Ecological:</b> variety of ecosystems — India's deserts-to-coral-reefs range beats Norway</div>
-    <div class="leaf"><b>Counted so far:</b> ~1.7–1.8 million species described; Robert May estimates ~7 million exist</div>
+<!-- SVG Orthogonal Connectors -->
+<svg class="connectors">
+  <!-- Left Side Orthogonal Lines -->
+  <!-- Center Hub to Top Left (TL) -->
+  <path d="M 560 410 H 500 V 204 H 460" fill="none" stroke="#0284C7" stroke-width="2" stroke-linecap="round"/>
+  <!-- Center Hub to Mid Left (ML) -->
+  <path d="M 560 440 H 460" fill="none" stroke="#16A34A" stroke-width="2" stroke-linecap="round"/>
+  <!-- Center Hub to Bottom Left (BL) -->
+  <path d="M 560 470 H 500 V 725 H 460" fill="none" stroke="#9333EA" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Right Side Orthogonal Lines -->
+  <!-- Center Hub to Top Right (TR) -->
+  <path d="M 880 410 H 940 V 204 H 980" fill="none" stroke="#DC2626" stroke-width="2" stroke-linecap="round"/>
+  <!-- Center Hub to Mid Right (MR) -->
+  <path d="M 880 440 H 980" fill="none" stroke="#D97706" stroke-width="2" stroke-linecap="round"/>
+  <!-- Center Hub to Bottom Right (BR) -->
+  <path d="M 880 470 H 940 V 725 H 980" fill="none" stroke="#0891B2" stroke-width="2" stroke-linecap="round"/>
+</svg>
+
+<!-- Central Hub -->
+<div class="center-hub">
+  <div class="hub-badge">EDWARD WILSON (1992)</div>
+  <div class="hub-title">BIODIVERSITY &amp; CONSERVATION</div>
+  <div class="hub-sub">Combined diversity at all levels of biological organization: Genetic, Species &amp; Ecological</div>
+</div>
+
+<!-- 1. Top Left: 3 Levels of Biodiversity -->
+<div class="node-card pos-tl">
+  <div class="card-top">
+    <div class="card-h">1. Three Levels of Biodiversity</div>
+    <span class="node-pill pill-blue">Organization</span>
   </div>
-
-  <div class="card left l" style="top:322px">
-    <h2>Patterns of Richness</h2>
-    <div class="leaf"><b>Latitudinal gradient:</b> richness rises towards the tropics — Colombia ~1,400 birds vs Greenland 56</div>
-    <div class="leaf"><b>Why tropics win:</b> long evolutionary time &#183; constant climate &#183; more solar energy</div>
-    <div class="leaf"><b>Species–area:</b> S = C&#183;A<sup>z</sup> &#8212; log S = log C + z log A</div>
-    <div class="leaf"><b>Slope z:</b> 0.1–0.2 for small regions; 0.6–1.2 for whole continents</div>
-  </div>
-
-  <div class="card left b" style="top:600px">
-    <h2>Causes of Loss — the Evil Quartet</h2>
-    <div class="leaf"><b>Habitat loss &amp; fragmentation</b> (biggest): Amazon cut for soy and cattle; rain forest 14% &#8594; 6%</div>
-    <div class="leaf"><b>Over-exploitation:</b> Steller's sea cow and the passenger pigeon hunted to extinction</div>
-    <div class="leaf"><b>Alien invasions:</b> Nile perch killed 200+ cichlids; Lantana, water hyacinth, Parthenium in India</div>
-    <div class="leaf"><b>Co-extinction:</b> parasites and pollinators die with their partners</div>
-  </div>
-
-  <div class="card right l" style="top:62px">
-    <h2>Why It Matters — 3 Views</h2>
-    <div class="leaf"><b>Narrowly utilitarian:</b> food, fibre, firewood; ~25% of world drugs come from plants</div>
-    <div class="leaf"><b>Broadly utilitarian:</b> free ecosystem services — Amazon &#8776; 20% of atmospheric oxygen; services &#8776; US $33 trillion/yr</div>
-    <div class="leaf"><b>Ethical:</b> every species has intrinsic value; pass nature on intact</div>
-    <div class="leaf"><b>Bioprospecting:</b> searching biodiversity for useful products</div>
-  </div>
-
-  <div class="card right b" style="top:322px">
-    <h2>In Situ Conservation</h2>
-    <div class="leaf"><b>Idea:</b> protect species inside their natural home — the whole ecosystem stays alive</div>
-    <div class="leaf"><b>Tools:</b> national parks &#183; wildlife sanctuaries &#183; biosphere reserves &#183; sacred groves</div>
-    <div class="leaf"><b>Sacred groves:</b> Khasi &amp; Jaintia Hills (Meghalaya); Bishnoi villages (Rajasthan)</div>
-    <div class="leaf"><b>Hotspots:</b> very high endemism + very high habitat loss — India has 3 (see strip below)</div>
-  </div>
-
-  <div class="card right l" style="top:600px">
-    <h2>Ex Situ Conservation</h2>
-    <div class="leaf"><b>Idea:</b> protect the species away from its natural home, under human care</div>
-    <div class="leaf"><b>Tools:</b> zoos (captive breeding) &#183; wildlife safari parks &#183; seed &amp; pollen banks</div>
-    <div class="leaf"><b>Lab routes:</b> tissue culture &#183; in vitro fertilisation &#183; cryopreservation at &#8722;196&#176;C</div>
-    <div class="leaf"><b>Used when:</b> habitat is gone or wild numbers are too small to survive alone</div>
-  </div>
-
-  <div class="exc">
-    <h2>COMMON ERRORS &amp; TRAPS</h2>
-    <div class="leaf"><b>Hotspot needs BOTH:</b> high endemism AND high habitat loss — not just many species</div>
-    <div class="leaf"><b>Nile perch = alien invasion</b>, not over-exploitation</div>
-    <div class="leaf"><b>Sacred groves are in situ</b> — the forest is protected exactly where it stands</div>
-    <div class="leaf"><b>Endemic &#8800; extinct:</b> endemic means "found nowhere else", not "already gone"</div>
+  <div class="bullet-list">
+    <div class="bullet-item">
+      • <b>Genetic Diversity:</b> Diversity within a single species over its range. E.g., <i>Rauvolfia vomitoria</i> in Himalayas produces varying potency &amp; concentration of <b>reserpine</b>; India has <b>>50,000 genetically different rice strains</b> and <b>>1,000 mango varieties</b>.
+    </div>
+    <div class="bullet-item">
+      • <b>Species Diversity:</b> Richness of species in a given community. E.g., <b>Western Ghats harbor a greater amphibian species diversity</b> than the Eastern Ghats.
+    </div>
+    <div class="bullet-item">
+      • <b>Ecological Diversity:</b> Ecosystem richness. E.g., India has deserts, rainforests, mangroves, coral reefs, wetlands, and alpine meadows compared to Norway.
+    </div>
   </div>
 </div>
+
+<!-- 2. Mid Left: Global & Indian Patterns -->
+<div class="node-card pos-ml">
+  <div class="card-top">
+    <div class="card-h">2. Global &amp; Indian Species Patterns</div>
+    <span class="node-pill pill-green">Biogeography</span>
+  </div>
+  <div class="bullet-list">
+    <div class="bullet-item">
+      • <b>Robert May's Global Estimate:</b> Approximately <b>7 million species</b> exist globally; only <b>22%</b> have been scientifically recorded so far.
+    </div>
+    <div class="bullet-item">
+      • <b>Taxonomic Proportions:</b> >70% of recorded species are <b>animals</b>, while plants (including fungi, algae, bryos, gymnos, angios) comprise ~22%.
+    </div>
+    <div class="bullet-item">
+      • <b>Insect Dominance:</b> Insects make up >70% of all animal species (<b>7 out of every 10 animals on Earth are insects!</b>).
+    </div>
+    <div class="bullet-item">
+      • <b>Fungi Dominance:</b> The number of fungi species in the world is greater than the combined total of fishes, amphibians, reptiles, and mammals!
+    </div>
+    <div class="bullet-item">
+      • <b>India (Megadiverse):</b> 2.4% world land area, but holds <b>8.1% of global species diversity</b>; >45,000 plants and >90,000 animals documented.
+    </div>
+  </div>
+</div>
+
+<!-- 3. Bottom Left: Species-Area & Stability -->
+<div class="node-card pos-bl">
+  <div class="card-top">
+    <div class="card-h">3. Species-Area &amp; Ecosystem Stability</div>
+    <span class="node-pill pill-purple">Dynamics</span>
+  </div>
+  <div class="bullet-list">
+    <div class="bullet-item">
+      • <b>Humboldt's Species-Area Law:</b> <i>S = C · A<sup>Z</sup></i> (Rectangular hyperbola) &rarr; <i>log S = log C + Z log A</i> (Linear slope <i>Z</i>).
+    </div>
+    <div class="bullet-item">
+      • <b>Slope (Z) Values:</b> 0.1 to 0.2 for small regions regardless of taxonomic group; <b>0.6 to 1.2</b> for whole continents; <b>1.15</b> for frugivorous birds and mammals in tropical forests.
+    </div>
+    <div class="bullet-item">
+      • <b>David Tilman (Minnesota Plots):</b> Ecosystems with higher species richness showed <b>less year-to-year variation in total biomass</b> and <b>higher overall productivity</b>.
+    </div>
+    <div class="bullet-item">
+      • <b>Paul Ehrlich's Rivet Popper:</b> Airplane = ecosystem; rivets = species; popping rivets from wings = loss of <b>keystone species</b> causing catastrophic crash.
+    </div>
+  </div>
+</div>
+
+<!-- 4. Top Right: Biodiversity Loss & Extinctions -->
+<div class="node-card pos-tr">
+  <div class="card-top">
+    <div class="card-h">4. Biodiversity Loss &amp; Mass Extinction</div>
+    <span class="node-pill pill-red">Crisis</span>
+  </div>
+  <div class="bullet-list">
+    <div class="bullet-item">
+      • <b>IUCN Red List (2004):</b> Documents extinction of <b>784 species</b> in last 500 years (338 vertebrates, 359 invertebrates, and 87 plant species).
+    </div>
+    <div class="bullet-item">
+      • <b>Recent Famous Extinctions:</b> <i>Dodo</i> (Mauritius), <i>Quagga</i> (Africa), <i>Thylacine</i> (Australia), <i>Steller's sea cow</i> (Russia), and <b>3 tiger subspecies: Bali, Javan, Caspian</b>.
+    </div>
+    <div class="bullet-item">
+      • <b>Current 6th Mass Extinction:</b> Extinction rates estimated to be <b>100 to 1,000 times faster</b> than pre-human background rates, entirely anthropogenic!
+    </div>
+    <div class="bullet-item">
+      • <b>Threatened Taxa:</b> 12% bird, 23% mammal, 31% gymnosperm, and <b>32% amphibian species</b> (highest vulnerability!) face extinction.
+    </div>
+  </div>
+</div>
+
+<!-- 5. Mid Right: The Evil Quartet -->
+<div class="node-card pos-mr">
+  <div class="card-top">
+    <div class="card-h">5. The "Evil Quartet" (Causes of Loss)</div>
+    <span class="node-pill pill-amber">Extinction Drivers</span>
+  </div>
+  <div class="bullet-list">
+    <div class="bullet-item">
+      • <b>1. Habitat Loss &amp; Fragmentation (#1 Cause):</b> Amazon rainforest cleared for soy &amp; cattle; rainforests dropped from 14% to &lt;6% of land.
+    </div>
+    <div class="bullet-item">
+      • <b>2. Over-exploitation:</b> Human greed leading to over-harvesting; drove Steller's sea cow and Passenger pigeon to complete extinction.
+    </div>
+    <div class="bullet-item">
+      • <b>3. Alien Species Invasions:</b> Nile perch caused extinction of >200 cichlid fishes in Lake Victoria; invasive weeds: <i>Parthenium, Lantana, Eichhornia</i>; <i>Clarias gariepinus</i> catfish.
+    </div>
+    <div class="bullet-item">
+      • <b>4. Co-extinctions:</b> Obligate mutualisms: plant-pollinator mutualisms (fig and fig wasp); host-specific parasites perish when host dies out.
+    </div>
+  </div>
+</div>
+
+<!-- 6. Bottom Right: Why & How to Conserve -->
+<div class="node-card pos-br">
+  <div class="card-top">
+    <div class="card-h">6. Why &amp; How to Conserve Biodiversity</div>
+    <span class="node-pill pill-cyan">Conservation</span>
+  </div>
+  <div class="bullet-list">
+    <div class="bullet-item">
+      • <b>Why Conserve?</b> <i>Narrowly utilitarian:</i> Food, timber, >25% medicines from plants, bioprospecting; <i>Broadly utilitarian:</i> Amazon generates 20% of global O<sub>2</sub>, pollination, soil; <i>Ethical:</i> Intrinsic value &amp; stewardship.
+    </div>
+    <div class="bullet-item">
+      • <b>In-situ (On-Site):</b> 14 Biosphere Reserves, 90 National Parks, 448 Wildlife Sanctuaries, 34 Hotspots (Western Ghats, Indo-Burma, Himalaya), Sacred Groves.
+    </div>
+    <div class="bullet-item">
+      • <b>Ex-situ (Off-Site):</b> Zoological parks, Botanical gardens, Cryopreservation (-196°C in liquid N<sub>2</sub>), Seed/Pollen banks, In vitro tissue culture.
+    </div>
+    <div class="bullet-item">
+      • <b>Global Summits:</b> <b>Earth Summit</b> (Rio de Janeiro, 1992); <b>World Summit</b> (Johannesburg, South Africa, 2002; 190 countries pledged reduction).
+    </div>
+  </div>
+</div>
+
 </body>
 </html>

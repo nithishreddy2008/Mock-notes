@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CUET UG Biology: Species-Area Relationship & Latitudinal Gradients</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    background: #071A4D;
+    border-radius: 10px;
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .badge {
+    background: #B8FF34;
+    color: #071A4D;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .header-title {
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+  }
+  .header-right {
+    color: #94A3B8;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .main-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1.15fr 0.95fr;
+    gap: 16px;
+    height: 690px;
+  }
+  .card {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 10px;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 12px;
+    border-bottom: 1.5px solid #F1F5F9;
+  }
+  .card-title {
+    font-size: 15px;
+    font-weight: 800;
+    color: #071A4D;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .tag {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+  .tag-blue { background: #EFF6FF; color: #1E40AF; }
+  .tag-purple { background: #FAF5FF; color: #6B21A8; }
+  .tag-green { background: #F0FDF4; color: #166534; }
+  .tag-amber { background: #FEF3C7; color: #92400E; }
+
+  /* Panel 1: Species-Area */
+  .formula-box {
+    background: #0B192C;
+    border-radius: 8px;
+    padding: 12px 14px;
+    margin: 10px 0;
+    text-align: center;
+  }
+  .formula-math {
+    color: #B8FF34;
+    font-size: 18px;
+    font-weight: 800;
+    font-family: "Courier New", monospace;
+    letter-spacing: 0.05em;
+  }
+  .formula-sub {
+    color: #94A3B8;
+    font-size: 11px;
+    margin-top: 4px;
+  }
+  .z-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 8px;
+    font-size: 11.5px;
+  }
+  .z-table th {
+    background: #F8FAFC;
+    color: #475569;
+    font-weight: 700;
+    text-align: left;
+    padding: 6px 8px;
+    border-bottom: 1px solid #E2E8F0;
+  }
+  .z-table td {
+    padding: 7px 8px;
+    border-bottom: 1px solid #F1F5F9;
+    color: #1E293B;
+  }
+  .z-badge {
+    background: #E0E7FF;
+    color: #3730A3;
+    font-weight: 800;
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+
+  /* Panel 2: Latitudinal Gradients */
+  .gradient-strip {
+    background: linear-gradient(180deg, #DC2626 0%, #EA580C 30%, #F59E0B 60%, #0284C7 100%);
+    border-radius: 8px;
+    padding: 10px 14px;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 800;
+    margin-bottom: 10px;
+  }
+  .amazon-box {
+    background: #F0FDF4;
+    border: 1px solid #BBF7D0;
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin-bottom: 10px;
+  }
+  .amazon-title {
+    font-size: 12px;
+    font-weight: 800;
+    color: #166534;
+    margin-bottom: 6px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .amazon-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px 8px;
+    font-size: 11px;
+    color: #14532D;
+  }
+  .amazon-grid span b {
+    color: #052E16;
+  }
+  .hypothesis-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .hypo-item {
+    background: #F8FAFC;
+    border-left: 3px solid #071A4D;
+    padding: 6px 10px;
+    border-radius: 0 6px 6px 0;
+    font-size: 11px;
+    color: #334155;
+    line-height: 1.35;
+  }
+  .hypo-item b {
+    color: #071A4D;
+  }
+
+  /* Panel 3: Rivet Popper */
+  .rivet-box {
+    background: #FFFBEB;
+    border: 1px solid #FDE68A;
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin-bottom: 10px;
+  }
+  .analogy-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    padding: 8px 10px;
+    margin-bottom: 6px;
+    font-size: 11.5px;
+  }
+  .analogy-left {
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .analogy-arrow {
+    color: #94A3B8;
+    font-weight: 800;
+  }
+  .analogy-right {
+    font-weight: 700;
+    color: #166534;
+  }
+  .keystone-alert {
+    background: #FEF2F2;
+    border: 1.5px solid #FCA5A5;
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 11px;
+    color: #991B1B;
+    line-height: 1.35;
+  }
+  .keystone-alert b {
+    color: #7F1D1D;
+  }
+
+  .footer-note {
+    background: #F1F5F9;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 10.5px;
+    color: #475569;
+    text-align: center;
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <div class="badge">FIGURE 1 · NCERT DIAGNOSTIC</div>
+    <div class="header-title">Species-Area Relationship, Latitudinal Gradients & Ecosystem Stability</div>
+  </div>
+  <div class="header-right">NCERT Class 12 Biology · Unit X · Chapter 15</div>
+</div>
+
+<div class="main-grid">
+  <!-- Card 1: Humboldt's Species-Area Relationship -->
+  <div class="card">
+    <div>
+      <div class="card-header">
+        <div class="card-title">
+          <span>Alexander von Humboldt (1805)</span>
+        </div>
+        <span class="tag tag-blue">Species-Area Law</span>
+      </div>
+      <p style="font-size: 11.5px; color: #475569; margin-top: 8px; line-height: 1.4;">
+        German naturalist Alexander von Humboldt observed that within a region, <b>species richness increases with increasing explored area</b>, but only up to a limit.
+      </p>
+
+      <div class="formula-box">
+        <div class="formula-math">S = C · A<sup>Z</sup> &nbsp; | &nbsp; log S = log C + Z log A</div>
+        <div class="formula-sub">S = Species Richness &nbsp;·&nbsp; A = Area &nbsp;·&nbsp; C = Y-intercept &nbsp;·&nbsp; Z = Slope (Regression Coeff)</div>
+      </div>
+
+      <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 6px; padding: 8px; font-size: 11px; color: #334155;">
+        <b>Shape of Curve:</b> Rectangular hyperbola on linear scale; perfectly straight line on logarithmic scale.
+      </div>
+
+      <table class="z-table">
+        <thead>
+          <tr>
+            <th>Ecological Scale / Region</th>
+            <th>Z-Value Range</th>
+            <th>Significance</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Small regions (plants in Britain, birds in California, molluscs in NY)</td>
+            <td><span class="z-badge">0.1 to 0.2</span></td>
+            <td>Standard baseline slope</td>
+          </tr>
+          <tr>
+            <td>Entire continents (all taxa combined, continental scale)</td>
+            <td><span class="z-badge">0.6 to 1.2</span></td>
+            <td>Steeper slope with large area</td>
+          </tr>
+          <tr>
+            <td>Frugivorous birds & mammals in tropical forests (all continents)</td>
+            <td><span class="z-badge" style="background: #FEE2E2; color: #991B1B;">1.15</span></td>
+            <td>Extremely steep (High CUET Trap!)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="footer-note">
+      Key Takeaway: The larger and more diverse the area sampled, the steeper the slope of regression (higher Z).
+    </div>
+  </div>
+
+  <!-- Card 2: Latitudinal Diversity Gradient -->
+  <div class="card">
+    <div>
+      <div class="card-header">
+        <div class="card-title">
+          <span>Latitudinal Gradients & Amazon</span>
+        </div>
+        <span class="tag tag-green">Global Patterns</span>
+      </div>
+
+      <div class="gradient-strip" style="margin-top: 8px;">
+        <span>Equator (0°) · Maximum Diversity</span>
+        <span>→</span>
+        <span>Temperate (40°–60°)</span>
+        <span>→</span>
+        <span>Poles (90°) · Minimum Diversity</span>
+      </div>
+
+      <p style="font-size: 11.5px; color: #475569; margin-bottom: 8px; line-height: 1.35;">
+        <b>NCERT Case:</b> Colombia near equator has <b>1,400 bird species</b>; New York (41°N) has <b>105</b>; Greenland (71°N) has only <b>56</b>; India (tropical latitudes) harbors <b>>1,200 species</b>.
+      </p>
+
+      <div class="amazon-box">
+        <div class="amazon-title">
+          <span>Amazonian Rainforest (Lungs of the Planet)</span>
+          <span>Greatest Biodiversity on Earth</span>
+        </div>
+        <div class="amazon-grid">
+          <span>• Plants: <b>>40,000 species</b></span>
+          <span>• Fishes: <b>>3,000 species</b></span>
+          <span>• Birds: <b>1,300 species</b></span>
+          <span>• Mammals: <b>427 species</b></span>
+          <span>• Amphibians: <b>427 species</b></span>
+          <span>• Reptiles: <b>378 species</b></span>
+          <span style="grid-column: span 2;">• Invertebrates: <b>>125,000 species</b> (>2 million undescribed)</span>
+        </div>
+      </div>
+
+      <div class="hypothesis-list">
+        <div class="hypo-item">
+          <b>1. Speciation Time:</b> Tropics remained undisturbed by glaciations for millions of years, enabling long uninterrupted evolutionary diversification.
+        </div>
+        <div class="hypo-item">
+          <b>2. Predictable Environment:</b> Tropical climates are less seasonal, more constant and predictable, promoting niche specialization and higher richness.
+        </div>
+        <div class="hypo-item">
+          <b>3. Solar Energy:</b> Tropics receive higher radiant solar energy year-round, generating higher productivity that supports diverse trophic food webs.
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-note">
+      David Tilman (Minnesota plots): Plots with more species showed less year-to-year variation in total biomass.
+    </div>
+  </div>
+
+  <!-- Card 3: Rivet Popper Hypothesis -->
+  <div class="card">
+    <div>
+      <div class="card-header">
+        <div class="card-title">
+          <span>Paul Ehrlich: Rivet Popper</span>
+        </div>
+        <span class="tag tag-purple">Ecosystem Stability</span>
+      </div>
+
+      <div class="rivet-box" style="margin-top: 8px;">
+        <div style="font-size: 11.5px; font-weight: 800; color: #92400E; margin-bottom: 4px;">
+          Stanford Ecologist Paul Ehrlich's Airplane Analogy:
+        </div>
+        <p style="font-size: 11px; color: #78350F; line-height: 1.35;">
+          "Imagine an airplane (ecosystem) with all parts joined together using thousands of rivets (species). If passengers begin popping rivets to take home, flight safety is jeopardized."
+        </p>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 4px;">
+        <div class="analogy-row">
+          <span class="analogy-left">Airplane</span>
+          <span class="analogy-arrow">⇄</span>
+          <span class="analogy-right">Global Ecosystem</span>
+        </div>
+        <div class="analogy-row">
+          <span class="analogy-left">Rivets</span>
+          <span class="analogy-arrow">⇄</span>
+          <span class="analogy-right">Individual Species</span>
+        </div>
+        <div class="analogy-row">
+          <span class="analogy-left">Popping a rivet</span>
+          <span class="analogy-arrow">⇄</span>
+          <span class="analogy-right">Extinction of a species</span>
+        </div>
+        <div class="analogy-row">
+          <span class="analogy-left">Rivet on seat / window</span>
+          <span class="analogy-arrow">⇄</span>
+          <span class="analogy-right">Loss of minor species</span>
+        </div>
+        <div class="analogy-row" style="background: #FEF2F2; border-color: #FECACA;">
+          <span class="analogy-left" style="color: #991B1B;">Rivet on airplane wing</span>
+          <span class="analogy-arrow">⇄</span>
+          <span class="analogy-right" style="color: #991B1B;">Loss of KEYSTONE species</span>
+        </div>
+      </div>
+
+      <div class="keystone-alert" style="margin-top: 8px;">
+        <b>Critical CUET Distinction:</b> Popping a few rivets from seats causes minor discomfort, but popping a rivet from the <b>wings (loss of key ecosystem drivers/keystone species like pollinators or apex predators)</b> causes immediate, catastrophic flight failure.
+      </div>
+    </div>
+
+    <div class="footer-note">
+      Robert May's Global Estimate: ~7 million total species globally; only 22% documented till date!
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
