@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Population Interactions Master Matrix</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px; height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px 32px;
+  }
+  .header {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    padding-bottom: 14px; border-bottom: 2px solid #E2E8F0; margin-bottom: 16px;
+  }
+  .title-group h1 { font-size: 26px; font-weight: 800; color: #071A4D; letter-spacing: -0.02em; }
+  .title-group p { font-size: 13.5px; color: #64748B; margin-top: 3px; font-weight: 500; }
+  .brand-badge {
+    background: #071A4D; color: #B8FF34; font-size: 11px; font-weight: 800;
+    padding: 6px 14px; border-radius: 6px; letter-spacing: 0.08em; text-transform: uppercase;
+  }
+
+  .grid-matrix {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 1fr;
+    gap: 16px;
+    height: 755px;
+  }
+  .matrix-card {
+    background: #FFFFFF;
+    border: 1.5px solid #CBD5E1;
+    border-radius: 10px;
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+  }
+  .card-header {
+    display: flex; justify-content: space-between; align-items: center;
+    padding-bottom: 8px; border-bottom: 1.5px solid #E2E8F0; margin-bottom: 10px;
+  }
+  .card-header h2 { font-size: 15.5px; font-weight: 800; color: #071A4D; }
+  .sign-badge {
+    font-size: 11.5px; font-weight: 800; padding: 2px 10px; border-radius: 4px; font-family: monospace;
+  }
+  .sign-plus-plus { background: #DCFCE7; color: #166534; border: 1px solid #86EFAC; }
+  .sign-minus-minus { background: #FEE2E2; color: #991B1B; border: 1px solid #FCA5A5; }
+  .sign-plus-minus { background: #FEF3C7; color: #92400E; border: 1px solid #FCD34D; }
+  .sign-plus-zero { background: #E0E7FF; color: #3730A3; border: 1px solid #A5B4FC; }
+  .sign-minus-zero { background: #F1F5F9; color: #475569; border: 1px solid #CBD5E1; }
+
+  .card-body {
+    display: flex; flex-direction: column; gap: 7px; font-size: 11.8px; color: #334155; line-height: 1.42; flex: 1;
+  }
+  .section-box {
+    background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 6px; padding: 7px 9px;
+  }
+  .section-box b { color: #071A4D; font-weight: 700; }
+  .example-list { font-size: 11px; color: #475569; margin-top: 3px; }
+  .example-list b { color: #1E293B; }
+
+  .trap-alert {
+    background: #FFFBEB; border-left: 3px solid #D97706; border-radius: 4px;
+    padding: 5px 8px; font-size: 10.5px; color: #78350F; margin-top: 6px; line-height: 1.35;
+  }
+  .trap-alert b { color: #451A03; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="title-group">
+    <h1>Interspecific Population Interactions Master Matrix</h1>
+    <p>NCERT Class 12 Biology · Unit X · Organisms and Populations · Signs, Ecological Principles & Benchmark Case Studies</p>
+  </div>
+  <div class="brand-badge">OurMocks CUET UG</div>
+</div>
+
+<div class="grid-matrix">
+
+  <!-- 1. MUTUALISM -->
+  <div class="matrix-card">
+    <div class="card-header">
+      <h2>1. Mutualism</h2>
+      <span class="sign-badge sign-plus-plus">+ / + (Both Benefit)</span>
+    </div>
+    <div class="card-body">
+      <div class="section-box">
+        <b>Ecological Mechanism:</b> Obligate or facultative reciprocal interaction where both co-existing species derive substantial physiological or reproductive fitness benefits. Co-evolution is mandatory.
+      </div>
+      <div class="section-box">
+        <b>NCERT Benchmark Examples:</b>
+        <div class="example-list">
+          • <b>Lichens:</b> Alga (phycobiont: food) + Fungus (mycobiont: shelter/water).<br>
+          • <b>Mycorrhizae:</b> Fungi (_Glomus_) absorb phosphorus + plant roots supply sugar.<br>
+          • <b>Fig & Wasp:</b> Wasp oviposits in fig fruit & pollinates; developing larvae eat seeds.<br>
+          • <b>Ophrys Orchid (Sexual Deceit):</b> Petal mimics female bee (_Colletes_) in shape, color & odor. Male pseudocopulates and transfers pollen!
+        </div>
+      </div>
+      <div class="trap-alert"><b>Trap:</b> If female bee morphology changes during evolution, orchid pollination collapses unless orchid co-evolves!</div>
+    </div>
+  </div>
+
+  <!-- 2. COMPETITION -->
+  <div class="matrix-card">
+    <div class="card-header">
+      <h2>2. Competition</h2>
+      <span class="sign-badge sign-minus-minus">- / - (Both Suffer)</span>
+    </div>
+    <div class="card-body">
+      <div class="section-box">
+        <b>Ecological Mechanism:</b> Rivalry between individuals for common limiting resources (food, space, light). Fitness of both species ($r$) is significantly lower in each other's presence.
+      </div>
+      <div class="section-box">
+        <b>NCERT Benchmark Examples:</b>
+        <div class="example-list">
+          • <b>Abingdon Tortoise (Galapagos):</b> Became extinct within a decade after goats were introduced due to goats' superior browsing efficiency.<br>
+          • <b>Gause's Exclusion:</b> Two closely competing species for identical limiting resources cannot coexist indefinitely; inferior is eliminated.<br>
+          • <b>Connell's Barnacles:</b> Superior _Balanus_ excludes smaller _Chthamalus_.<br>
+          • <b>MacArthur's Warblers:</b> 5 species coexist via <b>resource partitioning</b>.
+        </div>
+      </div>
+      <div class="trap-alert"><b>Trap:</b> Competition does NOT always require limiting resources or related species (e.g., flamingos & fish for zooplankton).</div>
+    </div>
+  </div>
+
+  <!-- 3. PREDATION -->
+  <div class="matrix-card">
+    <div class="card-header">
+      <h2>3. Predation</h2>
+      <span class="sign-badge sign-plus-minus">+ / - (Predator / Prey)</span>
+    </div>
+    <div class="card-body">
+      <div class="section-box">
+        <b>Ecological Mechanism:</b> Predator captures, kills, and consumes prey. Acts as a vital conduit for energy transfer across trophic levels and keeps prey populations under control.
+      </div>
+      <div class="section-box">
+        <b>NCERT Benchmark Examples:</b>
+        <div class="example-list">
+          • <b>Prickly Pear Cactus (Australia 1920s):</b> Invasive weed covered millions of hectares; controlled by introducing natural moth predator (_Cactoblastis_).<br>
+          • <b>Pisaster Starfish (Pacific Coast):</b> Keystone predator. Removal caused extinction of >10 invertebrate species due to unchecked competition.<br>
+          • <b>Prey Defenses:</b> Monarch butterfly stores toxic cardiac glycoside; camouflage.
+        </div>
+      </div>
+      <div class="trap-alert"><b>Trap:</b> Predators in nature are "prudent"—they do NOT overexploit prey, or else both would face extinction.</div>
+    </div>
+  </div>
+
+  <!-- 4. PARASITISM -->
+  <div class="matrix-card">
+    <div class="card-header">
+      <h2>4. Parasitism</h2>
+      <span class="sign-badge sign-plus-minus">+ / - (Parasite / Host)</span>
+    </div>
+    <div class="card-body">
+      <div class="section-box">
+        <b>Ecological Mechanism:</b> Parasite derives free nutrition and shelter from living host, causing biological harm, reduced vigor, lower reproduction, or increased vulnerability to predators.
+      </div>
+      <div class="section-box">
+        <b>NCERT Benchmark Examples:</b>
+        <div class="example-list">
+          • <b>Ectoparasites:</b> Lice on humans, ticks on dogs, marine copepods on fish, _Cuscuta_ on hedge plants (lost chlorophyll and leaves).<br>
+          • <b>Endoparasites:</b> Human liver fluke (uses 2 intermediate hosts: snail & fish).<br>
+          • <b>Brood Parasitism:</b> Cuckoo (Koel) lays eggs in crow's nest; parasitic eggs evolved to mimic host eggs in size and color to avoid ejection.
+        </div>
+      </div>
+      <div class="trap-alert"><b>Trap:</b> Female mosquito is NOT a parasite—it needs human blood solely as a protein source for egg development, not shelter!</div>
+    </div>
+  </div>
+
+  <!-- 5. COMMENSALISM -->
+  <div class="matrix-card">
+    <div class="card-header">
+      <h2>5. Commensalism</h2>
+      <span class="sign-badge sign-plus-zero">+ / 0 (Beneficiary / Neutral)</span>
+    </div>
+    <div class="card-body">
+      <div class="section-box">
+        <b>Ecological Mechanism:</b> One species derives substantial physical, positional, or nutritional advantage, while the host species remains completely unaffected (neither harmed nor benefited).
+      </div>
+      <div class="section-box">
+        <b>NCERT Benchmark Examples:</b>
+        <div class="example-list">
+          • <b>Orchid on Mango:</b> Epiphytic orchid gains sunlight/space without taking water/sap from mango tree branch.<br>
+          • <b>Barnacles on Whale:</b> Barnacles gain mobile plankton-rich feeding substrate.<br>
+          • <b>Cattle Egret & Grazing Cattle:</b> Cattle stir up vegetation, flushing out insects that egrets forage effortlessly.<br>
+          • <b>Clownfish & Sea Anemone:</b> Clownfish gains shelter from stinging tentacles.
+        </div>
+      </div>
+      <div class="trap-alert"><b>Trap:</b> The mango tree, whale, cattle, and sea anemone receive strictly ZERO harm and ZERO benefit (Score: 0).</div>
+    </div>
+  </div>
+
+  <!-- 6. AMENSALISM -->
+  <div class="matrix-card">
+    <div class="card-header">
+      <h2>6. Amensalism</h2>
+      <span class="sign-badge sign-minus-zero">- / 0 (Inhibited / Neutral)</span>
+    </div>
+    <div class="card-body">
+      <div class="section-box">
+        <b>Ecological Mechanism:</b> One species is inhibited, poisoned, or severely harmed by the presence or chemical secretions of another, while the second organism derives zero benefit and experiences zero harm.
+      </div>
+      <div class="section-box">
+        <b>NCERT Benchmark Examples:</b>
+        <div class="example-list">
+          • <b>Antibiosis (_Penicillium_ vs Bacteria):</b> Mold _Penicillium notatum_ secretes penicillin antibiotic into substrate, killing neighboring bacteria; mold gains nothing directly.<br>
+          • <b>Allelopathy (Black Walnut Tree):</b> Roots of _Juglans nigra_ secrete toxic juglone into soil, inhibiting germination of nearby herbaceous seedlings.<br>
+          • <b>Algal Blooms:</b> Dense cyanobacteria poison fish via microcystins.
+        </div>
+      </div>
+      <div class="trap-alert"><b>Trap:</b> Antibiosis is amensalism (-/0), NOT predation (+/-) or competition (-/-), because the producer is unaffected!</div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

@@ -1,134 +1,203 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
+<title>Population Growth Models — Exponential vs Logistic</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
-  .wrap { width: 1480px; height: 980px; position: relative; background: #fff; }
-  .banner {
-    position: absolute; left: 30px; top: 28px; width: 1420px; height: 72px;
-    background: #071A4D; border-radius: 14px; display: flex; flex-direction: column;
-    align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(7,26,77,.22);
-    border-bottom: 5px solid #B8FF34;
+  body {
+    width: 1440px; height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px 32px;
   }
-  .banner .t { color: #fff; font-size: 27px; font-weight: 800; letter-spacing: 1px; }
-  .banner .s { color: #B8FF34; font-size: 13px; font-weight: 700; letter-spacing: 2.5px; margin-top: 3px; }
+  .header {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    padding-bottom: 14px; border-bottom: 2px solid #E2E8F0; margin-bottom: 16px;
+  }
+  .title-group h1 { font-size: 26px; font-weight: 800; color: #071A4D; letter-spacing: -0.02em; }
+  .title-group p { font-size: 13.5px; color: #64748B; margin-top: 3px; font-weight: 500; }
+  .brand-badge {
+    background: #071A4D; color: #B8FF34; font-size: 11px; font-weight: 800;
+    padding: 6px 14px; border-radius: 6px; letter-spacing: 0.08em; text-transform: uppercase;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+    height: 645px;
+  }
   .panel {
-    position: absolute; top: 122px; width: 700px; height: 700px;
-    background: #FCFDFF; border: 1.5px solid #D5DCEA; border-radius: 14px; padding: 16px 20px;
+    background: #FFFFFF;
+    border: 1.5px solid #CBD5E1;
+    border-radius: 10px;
+    padding: 16px 20px;
+    display: flex;
+    flex-direction: column;
   }
-  .panel.left { left: 30px; }
-  .panel.right { left: 750px; }
-  .panel h2 { font-size: 21px; color: #071A4D; font-weight: 800; }
-  .panel h2 .tag { display: inline-block; color: #fff; font-size: 13px; font-weight: 800;
-                   padding: 3px 10px; border-radius: 8px; margin-left: 10px; vertical-align: 3px; }
-  .panel.left h2 .tag { background: #1F5EFF; }
-  .panel.right h2 .tag { background: #7FB800; }
-  .panel .sub { font-size: 14px; color: #5A6478; margin: 3px 0 6px; }
-  .chart { display: block; }
-  .note {
-    margin-top: 8px; border-radius: 10px; padding: 10px 13px; font-size: 14.5px; line-height: 1.4;
-    border: 1.5px solid; background: #fff;
+  .panel-header {
+    display: flex; justify-content: space-between; align-items: center;
+    padding-bottom: 8px; border-bottom: 1.5px solid #E2E8F0; margin-bottom: 12px;
   }
-  .panel.left .note { border-color: #1F5EFF; color: #12306E; }
-  .panel.right .note { border-color: #7FB800; color: #3D5A12; }
-  .note b { color: #071A4D; }
-  .strip {
-    position: absolute; left: 30px; top: 856px; width: 1420px; height: 92px;
-    background: #F7FFDF; border: 1.5px solid #B8FF34; border-radius: 14px;
-    display: flex; align-items: center; justify-content: center; gap: 26px; padding: 0 24px;
+  .panel-header h2 { font-size: 17px; font-weight: 800; color: #071A4D; }
+  .badge {
+    font-size: 10.5px; font-weight: 700; padding: 3px 10px; border-radius: 4px; text-transform: uppercase;
   }
-  .strip .half { font-size: 17.5px; color: #071A4D; font-weight: 700; }
-  .strip .half b { color: #071A4D; }
-  .strip .dot { width: 10px; height: 10px; border-radius: 50%; background: #071A4D; flex: none; }
-  .strip .lbl { font-size: 12px; font-weight: 800; letter-spacing: 2px; color: #5A6478; }
-  .eq {
-    display: inline-block; background: #071A4D; color: #fff; border-radius: 8px;
-    padding: 5px 12px; font-size: 15.5px; font-weight: 700; letter-spacing: .5px;
+  .badge-exp { background: #EEF2FF; color: #1F5EFF; border: 1px solid #C7D2FE; }
+  .badge-log { background: #F0FDF4; color: #166534; border: 1px solid #BBF7D0; }
+
+  .chart-box {
+    background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px;
+    padding: 10px 14px; display: flex; justify-content: center; align-items: center;
+    margin-bottom: 12px;
   }
-  svg text { font-family: 'Segoe UI', Arial, sans-serif; }
+
+  .formula-banner {
+    background: #071A4D; color: #FFFFFF; border-radius: 6px; padding: 8px 14px;
+    display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;
+  }
+  .formula-banner .label { font-size: 11px; font-weight: 700; color: #B8FF34; text-transform: uppercase; }
+  .formula-banner .equation { font-size: 15px; font-weight: 800; font-family: "Courier New", monospace; }
+
+  .info-list {
+    display: flex; flex-direction: column; gap: 7px; font-size: 12px; color: #334155; line-height: 1.42; flex: 1;
+  }
+  .info-item {
+    background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 6px; padding: 7px 10px;
+  }
+  .info-item b { color: #071A4D; font-weight: 700; }
+
+  /* Bottom Bar */
+  .bottom-bar {
+    margin-top: 14px; height: 85px; background: #FFFFFF; border: 1.5px solid #CBD5E1;
+    border-radius: 10px; padding: 12px 20px; display: flex; align-items: center; justify-content: space-between;
+  }
+  .summary-col { display: flex; flex-direction: column; gap: 3px; }
+  .summary-title { font-size: 11.5px; font-weight: 800; color: #071A4D; text-transform: uppercase; letter-spacing: 0.05em; }
+  .summary-desc { font-size: 12px; color: #475569; }
+  .summary-desc b { color: #0F172A; }
+  .divider-v { width: 1.5px; height: 55px; background: #E2E8F0; }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <div class="banner">
-    <div class="t">TWO WAYS A POPULATION GROWS</div>
-    <div class="s">EXPONENTIAL J-CURVE &#183; LOGISTIC S-CURVE</div>
+
+<div class="header">
+  <div class="title-group">
+    <h1>Population Growth Models — Exponential (J-Curve) vs. Logistic (S-Curve)</h1>
+    <p>NCERT Class 12 Biology · Unit X · Organisms and Populations · Mathematical Derivations & Ecological Realism</p>
+  </div>
+  <div class="brand-badge">OurMocks CUET UG</div>
+</div>
+
+<div class="grid-container">
+
+  <!-- EXPONENTIAL PANEL -->
+  <div class="panel">
+    <div class="panel-header">
+      <h2>Model 1: Exponential / Geometric Growth</h2>
+      <span class="badge badge-exp">J-Shaped Curve</span>
+    </div>
+
+    <div class="chart-box">
+      <svg width="420" height="175" viewBox="0 0 420 175">
+        <!-- Axes -->
+        <line x1="45" y1="150" x2="390" y2="150" stroke="#64748B" stroke-width="2"/>
+        <line x1="45" y1="150" x2="45" y2="20" stroke="#64748B" stroke-width="2"/>
+        <!-- Labels -->
+        <text x="395" y="154" font-size="11" font-weight="700" fill="#64748B">Time (t)</text>
+        <text x="15" y="18" font-size="11" font-weight="700" fill="#64748B">Pop. (N)</text>
+        <!-- Exponential J-curve -->
+        <path d="M 45 145 Q 240 142, 350 25" fill="none" stroke="#1F5EFF" stroke-width="3.5"/>
+        <!-- Curve Label -->
+        <rect x="180" y="45" width="165" height="24" rx="4" fill="#EEF2FF" stroke="#C7D2FE" stroke-width="1"/>
+        <text x="188" y="61" font-size="11.5" font-weight="800" fill="#1F5EFF">dN / dt = rN  (J-shaped)</text>
+      </svg>
+    </div>
+
+    <div class="formula-banner">
+      <span class="label">Differential & Integral Forms</span>
+      <span class="equation">dN/dt = rN  |  N(t) = N(0) · e^(rt)</span>
+    </div>
+
+    <div class="info-list">
+      <div class="info-item">
+        <b>Underlying Condition:</b> Occurs when resources (food, space, mates) are completely <b>unlimited and non-exhaustible</b> in the habitat. Zero intraspecific competition.
+      </div>
+      <div class="info-item">
+        <b>Intrinsic Rate of Natural Increase (r):</b> Measure of inherent biotic potential ($r = b - d$).<br>
+        • Norway rat: $r = 0.015$ | • Flour beetle: $r = 0.12$ | • Human in India (1981): $r = 0.0205$.
+      </div>
+      <div class="info-item">
+        <b>Ecological Consequence:</b> Results in population explosion. In nature, unchecked exponential growth cannot continue indefinitely—abrupt population crash occurs when resources deplete.
+      </div>
+    </div>
   </div>
 
-  <div class="panel left">
-    <h2>Exponential growth <span class="tag">J-CURVE</span></h2>
-    <div class="sub">Food and space assumed unlimited &#8212; nothing holds the line back.</div>
-    <svg class="chart" width="656" height="470" viewBox="0 0 656 470">
-      <!-- axes -->
-      <line x1="60" y1="410" x2="620" y2="410" stroke="#9AA4B8" stroke-width="2"/>
-      <line x1="60" y1="410" x2="60" y2="30" stroke="#9AA4B8" stroke-width="2"/>
-      <polygon points="620,410 608,404 608,416" fill="#9AA4B8"/>
-      <polygon points="60,30 54,42 66,42" fill="#9AA4B8"/>
-      <text x="618" y="436" font-size="14" fill="#5A6478" text-anchor="end">time &#8594;</text>
-      <text x="26" y="60" font-size="14" fill="#5A6478">population</text>
-      <text x="26" y="78" font-size="14" fill="#5A6478">size N</text>
-      <!-- N0 dot -->
-      <circle cx="60" cy="402" r="6" fill="#071A4D"/>
-      <text x="76" y="398" font-size="14" fill="#071A4D" font-weight="700">N&#8320; starts here</text>
-      <!-- J curve -->
-      <path d="M 60 402 C 200 398, 330 382, 430 330 C 505 290, 560 190, 585 55"
-            fill="none" stroke="#1F5EFF" stroke-width="5" stroke-linecap="round"/>
-      <!-- crash continuation -->
-      <path d="M 585 55 C 592 38, 597 30, 601 22" fill="none" stroke="#D2481F"
-            stroke-width="4" stroke-dasharray="8 6" stroke-linecap="round"/>
-      <polygon points="604,14 593,24 605,29" fill="#D2481F"/>
-      <text x="470" y="70" font-size="14.5" fill="#D2481F" font-weight="700">no ceiling &#8212; then a crash</text>
-      <!-- equation badge -->
-      <rect x="80" y="90" rx="9" width="170" height="38" fill="#071A4D"/>
-      <text x="165" y="115" font-size="17" fill="#fff" text-anchor="middle" font-weight="700">dN/dt = rN</text>
-      <!-- r note -->
-      <text x="80" y="150" font-size="14" fill="#12306E">r = intrinsic rate of natural increase</text>
-      <text x="80" y="170" font-size="14" fill="#12306E">steeper J = bigger r</text>
-    </svg>
-    <div class="note"><b>No limits &#8212; crashes follow.</b> Every pair of parents adds more breeders, so the curve doubles faster and faster. Real habitats run out of food or space, and the overshoot ends in a population crash.</div>
+  <!-- LOGISTIC PANEL -->
+  <div class="panel">
+    <div class="panel-header">
+      <h2>Model 2: Logistic / Verhulst-Pearl Growth</h2>
+      <span class="badge badge-log">Sigmoid S-Curve</span>
+    </div>
+
+    <div class="chart-box">
+      <svg width="420" height="175" viewBox="0 0 420 175">
+        <!-- Axes -->
+        <line x1="45" y1="150" x2="390" y2="150" stroke="#64748B" stroke-width="2"/>
+        <line x1="45" y1="150" x2="45" y2="20" stroke="#64748B" stroke-width="2"/>
+        <!-- Carrying capacity K line -->
+        <line x1="45" y1="52" x2="385" y2="52" stroke="#DC2626" stroke-width="1.8" stroke-dasharray="5 4"/>
+        <text x="390" y="55" font-size="11" font-weight="800" fill="#DC2626">K</text>
+        <!-- Labels -->
+        <text x="395" y="154" font-size="11" font-weight="700" fill="#64748B">Time (t)</text>
+        <text x="15" y="18" font-size="11" font-weight="700" fill="#64748B">Pop. (N)</text>
+        <!-- Logistic S-curve -->
+        <path d="M 45 145 C 130 145, 170 120, 220 85 C 270 55, 310 52, 380 52" fill="none" stroke="#16A34A" stroke-width="3.5"/>
+        <!-- Curve Label -->
+        <rect x="180" y="105" width="195" height="24" rx="4" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1"/>
+        <text x="188" y="121" font-size="11.5" font-weight="800" fill="#166534">dN/dt = rN((K-N)/K)  (Sigmoid)</text>
+      </svg>
+    </div>
+
+    <div class="formula-banner">
+      <span class="label">Verhulst-Pearl Equation</span>
+      <span class="equation">dN/dt = rN · [(K - N) / K]</span>
+    </div>
+
+    <div class="info-list">
+      <div class="info-item">
+        <b>Carrying Capacity (K):</b> The maximum sustainable population density that a given habitat can support indefinitely with available finite resources without degradation.
+      </div>
+      <div class="info-item">
+        <b>Environmental Resistance [(K - N) / K]:</b> Quantifies the fractional carrying capacity still available. When $N = K$, term becomes $0$, and growth ceases completely ($d N / d t = 0$).
+      </div>
+      <div class="info-item">
+        <b>Four Successive Phases:</b> Lag phase $arrow$ Acceleration phase $arrow$ Deceleration phase $arrow$ Asymptote. Considered <b>biologically realistic</b> for all natural populations.
+      </div>
+    </div>
   </div>
 
-  <div class="panel right">
-    <h2>Logistic growth <span class="tag">S-CURVE</span></h2>
-    <div class="sub">Resources are finite &#8212; K, the carrying capacity, sets the ceiling.</div>
-    <svg class="chart" width="656" height="470" viewBox="0 0 656 470">
-      <!-- axes -->
-      <line x1="60" y1="410" x2="620" y2="410" stroke="#9AA4B8" stroke-width="2"/>
-      <line x1="60" y1="410" x2="60" y2="30" stroke="#9AA4B8" stroke-width="2"/>
-      <polygon points="620,410 608,404 608,416" fill="#9AA4B8"/>
-      <polygon points="60,30 54,42 66,42" fill="#9AA4B8"/>
-      <text x="618" y="436" font-size="14" fill="#5A6478" text-anchor="end">time &#8594;</text>
-      <text x="26" y="60" font-size="14" fill="#5A6478">population</text>
-      <text x="26" y="78" font-size="14" fill="#5A6478">size N</text>
-      <!-- K dashed line -->
-      <line x1="60" y1="110" x2="620" y2="110" stroke="#071A4D" stroke-width="3" stroke-dasharray="10 7"/>
-      <text x="612" y="98" font-size="15" fill="#071A4D" font-weight="800" text-anchor="end">K &#8212; carrying capacity</text>
-      <!-- S curve -->
-      <path d="M 60 402 C 150 399, 225 372, 295 322 C 365 272, 430 172, 495 130 C 525 111, 565 107, 605 107"
-            fill="none" stroke="#7FB800" stroke-width="5" stroke-linecap="round"/>
-      <!-- inflection dot at K/2 -->
-      <circle cx="300" cy="272" r="7" fill="#B4380F"/>
-      <text x="316" y="266" font-size="14.5" fill="#B4380F" font-weight="700">N = K/2 &#8212; fastest growth</text>
-      <!-- phase labels -->
-      <text x="120" y="380" font-size="13.5" fill="#5A6478">slow start</text>
-      <text x="255" y="180" font-size="13.5" fill="#5A6478">steep run</text>
-      <text x="470" y="70" font-size="13.5" fill="#5A6478">flattens at K</text>
-      <!-- equation badge -->
-      <rect x="80" y="90" rx="9" width="230" height="38" fill="#071A4D"/>
-      <text x="195" y="115" font-size="16" fill="#fff" text-anchor="middle" font-weight="700">dN/dt = rN(K &#8722; N)/K</text>
-    </svg>
-    <div class="note"><b>Growth slows near K, stops at K.</b> As N climbs, free resources (K &#8722; N)/K shrink, so the same r delivers less and less growth &#8212; the curve levels off exactly at the ceiling.</div>
-  </div>
+</div>
 
-  <div class="strip">
-    <span class="lbl">ONE CURVE, TWO LIFESTYLES</span>
-    <span class="dot"></span>
-    <span class="half"><b>r-strategists:</b> many offspring, no care &#8212; ride the J-curve</span>
-    <span class="dot"></span>
-    <span class="half"><b>K-strategists:</b> few offspring, heavy care &#8212; live near K</span>
+<!-- BOTTOM BAR -->
+<div class="bottom-bar">
+  <div class="summary-col">
+    <div class="summary-title">High-Yield NCERT Exam Distinction</div>
+    <div class="summary-desc"><b>Exponential:</b> Unrealistic; assumes infinite food/space; J-curve without asymptote ($N$ climbs without limit).</div>
+  </div>
+  <div class="divider-v"></div>
+  <div class="summary-col">
+    <div class="summary-title">Ecological Realism Rule</div>
+    <div class="summary-desc"><b>Logistic:</b> Realistic; accounts for intraspecific competition and environmental carrying capacity ($K$); Sigmoid S-curve.</div>
+  </div>
+  <div class="divider-v"></div>
+  <div class="summary-col">
+    <div class="summary-title">Population Density Formula</div>
+    <div class="summary-desc"><b>$N_{t+1} = N_t + [(B + I) - (D + E)]$:</b> Births ($B$) + Immigrations ($I$) increase $N$; Deaths ($D$) + Emigrations ($E$) decrease $N$.</div>
   </div>
 </div>
+
 </body>
 </html>
