@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CUET UG Mathematics: Relations and Functions Classification</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    background: #071A4D;
+    border-radius: 10px;
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .badge {
+    background: #B8FF34;
+    color: #071A4D;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .header-title {
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+  }
+  .header-right {
+    color: #94A3B8;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .main-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1.15fr 0.95fr;
+    gap: 16px;
+    height: 690px;
+  }
+  .card {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 10px;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    border-bottom: 1.5px solid #F1F5F9;
+  }
+  .card-title {
+    font-size: 15px;
+    font-weight: 800;
+    color: #071A4D;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .tag {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+  .tag-blue { background: #EFF6FF; color: #1E40AF; }
+  .tag-green { background: #F0FDF4; color: #166534; }
+  .tag-purple { background: #FAF5FF; color: #6B21A8; }
+  .tag-amber { background: #FFFBEB; color: #92400E; }
+
+  /* Check Rows */
+  .rule-list {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin-top: 10px;
+  }
+  .rule-item {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    padding: 7px 10px;
+    font-size: 11.5px;
+    line-height: 1.35;
+    color: #334155;
+  }
+  .rule-item b {
+    color: #071A4D;
+  }
+
+  /* Counting Box */
+  .count-box {
+    background: #F8FAFC;
+    border: 1.5px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 8px 10px;
+    margin-top: 6px;
+  }
+  .count-title {
+    font-size: 11px;
+    font-weight: 800;
+    color: #071A4D;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .count-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px 8px;
+    font-size: 11px;
+    color: #334155;
+  }
+  .count-badge {
+    background: #E0E7FF;
+    color: #3730A3;
+    font-weight: 800;
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-family: monospace;
+  }
+
+  .footer-note {
+    background: #F1F5F9;
+    border-radius: 6px;
+    padding: 6px 10px;
+    font-size: 10.5px;
+    color: #475569;
+    text-align: center;
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <div class="badge">FIGURE 1 · CORE FOUNDATIONS</div>
+    <div class="header-title">Relations &amp; Functions: Classification Engine, Equivalence &amp; Counting Theorems</div>
+  </div>
+  <div class="header-right">NTA CUET UG Section B1 · Class 12 Mathematics · Unit I</div>
+</div>
+
+<div class="main-grid">
+  <!-- Card 1: Relations & Equivalence -->
+  <div class="card">
+    <div>
+      <div class="card-header">
+        <div class="card-title">
+          <span>1. Relations &amp; Equivalence Classes</span>
+        </div>
+        <span class="tag tag-blue">Binary Relations</span>
+      </div>
+
+      <div class="rule-list">
+        <div class="rule-item">
+          <b>Reflexive:</b> (<i>a</i>, <i>a</i>) &isin; <i>R</i> for <b>every</b> <i>a</i> &isin; <i>A</i>. If even a single element lacks its self-loop (<i>a</i>, <i>a</i>), reflexivity fails completely.
+        </div>
+        <div class="rule-item">
+          <b>Symmetric:</b> (<i>a</i>, <i>b</i>) &isin; <i>R</i> &rArr; (<i>b</i>, <i>a</i>) &isin; <i>R</i>. Every forward directed pair must possess its exact mirror reverse.
+        </div>
+        <div class="rule-item">
+          <b>Transitive:</b> (<i>a</i>, <i>b</i>) &isin; <i>R</i> and (<i>b</i>, <i>c</i>) &isin; <i>R</i> &rArr; (<i>a</i>, <i>c</i>) &isin; <i>R</i>. Every 2-step connected path must close directly.
+        </div>
+        <div class="rule-item" style="background: #F0FDF4; border-color: #BBF7D0;">
+          <b>Equivalence Relation:</b> Satisfies Reflexive + Symmetric + Transitive simultaneously (e.g., equality, congruence, modular arithmetic).
+        </div>
+        <div class="rule-item">
+          <b>Equivalence Class [<i>a</i>]:</b> The set {<i>x</i> &isin; <i>A</i> : (<i>x</i>, <i>a</i>) &isin; <i>R</i>}. <b>Fundamental Theorem:</b> Equivalence classes form a mutually disjoint partition of set <i>A</i> whose union is <i>A</i>.
+        </div>
+      </div>
+
+      <div class="count-box">
+        <div class="count-title">Counting Formulas for Set <i>A</i> with <i>n</i> elements:</div>
+        <div class="count-grid">
+          <span>• Total Relations: <span class="count-badge">2<sup>n²</sup></span></span>
+          <span>• Reflexive Relations: <span class="count-badge">2<sup>n(n-1)</sup></span></span>
+          <span>• Symmetric: <span class="count-badge">2<sup>n(n+1)/2</sup></span></span>
+          <span>• Refl + Symm: <span class="count-badge">2<sup>n(n-1)/2</sup></span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-note">
+      Empty relation &#8709; on non-empty <i>A</i> is symmetric and transitive (vacuously true), but NOT reflexive.
+    </div>
+  </div>
+
+  <!-- Card 2: One-One & Onto Functions -->
+  <div class="card">
+    <div>
+      <div class="card-header">
+        <div class="card-title">
+          <span>2. Mapping Engine (Injective &amp; Surjective)</span>
+        </div>
+        <span class="tag tag-green">Mappings</span>
+      </div>
+
+      <div class="rule-list">
+        <div class="rule-item">
+          <b>Injective (One-One):</b> Distinct inputs produce distinct outputs. <i>f</i>(<i>x</i><sub>1</sub>) = <i>f</i>(<i>x</i><sub>2</sub>) &rArr; <i>x</i><sub>1</sub> = <i>x</i><sub>2</sub>.
+          <br>• <i>Calculus Test:</i> If <i>f'</i>(<i>x</i>) &gt; 0 strictly (or &lt; 0) on interval &rArr; strictly monotonic &rArr; one-one.
+          <br>• <i>Horizontal Line Test:</i> Every horizontal line cuts graph at most once.
+        </div>
+        <div class="rule-item">
+          <b>Surjective (Onto):</b> Every codomain element is mapped. Range(<i>f</i>) = Codomain(<i>B</i>).
+          <br>• Solve <i>y</i> = <i>f</i>(<i>x</i>) for <i>x</i> in terms of <i>y</i>; verify <i>x</i> &isin; Domain for every <i>y</i> &isin; Codomain.
+        </div>
+        <div class="rule-item" style="background: #EFF6FF; border-color: #BFDBFE;">
+          <b>Bijective (Invertible):</b> Both Injective + Surjective. A function possesses an inverse <i>f</i><sup>-1</sup> <i>if and only if</i> it is bijective.
+        </div>
+      </div>
+
+      <div class="count-box">
+        <div class="count-title">Counting Functions from <i>A</i> (|<i>A</i>|=<i>m</i>) to <i>B</i> (|<i>B</i>|=<i>n</i>):</div>
+        <div class="count-grid">
+          <span>• Total Functions: <span class="count-badge">n<sup>m</sup></span></span>
+          <span>• Bijections (<i>m</i>=<i>n</i>): <span class="count-badge">n!</span></span>
+          <span style="grid-column: span 2;">• One-One (<i>m</i> &le; <i>n</i>): <span class="count-badge"><sup>n</sup>P<sub>m</sub> = n! / (n-m)!</span> (Zero if <i>m</i> &gt; <i>n</i>)</span>
+          <span style="grid-column: span 2;">• Onto (<i>m</i> &ge; <i>n</i>): <span class="count-badge">&sum; (-1)<sup>n-r</sup> <sup>n</sup>C<sub>r</sub> r<sup>m</sup></span> (Zero if <i>m</i> &lt; <i>n</i>)</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-note">
+      For finite sets with |<i>A</i>| = |<i>B</i>|: <i>f</i> is one-one &hArr; <i>f</i> is onto &hArr; <i>f</i> is bijective!
+    </div>
+  </div>
+
+  <!-- Card 3: Composition & Inversion -->
+  <div class="card">
+    <div>
+      <div class="card-header">
+        <div class="card-title">
+          <span>3. Composition &amp; Inversion</span>
+        </div>
+        <span class="tag tag-purple">Algebra of Functions</span>
+      </div>
+
+      <div class="rule-list">
+        <div class="rule-item">
+          <b>Composition (<i>f</i> &compfn; <i>g</i>)(<i>x</i>) = <i>f</i>(<i>g</i>(<i>x</i>)):</b>
+          <br>Evaluated inside-out (<i>g</i> acts first, then <i>f</i>).
+          <br>• Non-commutative: <i>f</i> &compfn; <i>g</i> &ne; <i>g</i> &compfn; <i>f</i> in general.
+          <br>• Associative: (<i>f</i> &compfn; <i>g</i>) &compfn; <i>h</i> = <i>f</i> &compfn; (<i>g</i> &compfn; <i>h</i>).
+          <br>• If both <i>f</i> and <i>g</i> are one-one (or onto), then <i>f</i> &compfn; <i>g</i> is also one-one (or onto).
+        </div>
+        <div class="rule-item">
+          <b>Reversal Law of Inverses:</b>
+          <br><span style="font-family: monospace; font-weight: 800; color: #7C3AED;">(f &compfn; g)⁻¹ = g⁻¹ &compfn; f⁻¹</span>
+          <br>Notice the reversed order (analogous to the socks-and-shoes rule and transpose of matrices (<i>AB</i>)<sup>T</sup> = <i>B</i><sup>T</sup> <i>A</i><sup>T</sup>).
+        </div>
+        <div class="rule-item" style="background: #FFFBEB; border-color: #FDE68A;">
+          <b>Graphical Symmetry of Inverses:</b>
+          <br>The graph of <i>y</i> = <i>f</i><sup>-1</sup>(<i>x</i>) is the <b>exact reflection of <i>y</i> = <i>f</i>(<i>x</i>) across the identity line <i>y</i> = <i>x</i></b>.
+          <br>Intersection points of <i>y</i> = <i>f</i>(<i>x</i>) and <i>y</i> = <i>f</i><sup>-1</sup>(<i>x</i>) always lie along <i>y</i> = <i>x</i>.
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-note">
+      Common Trap: <i>f</i><sup>-1</sup>(<i>x</i>) &ne; 1 / <i>f</i>(<i>x</i>)! <i>f</i><sup>-1</sup> is the inverse operation, while 1/<i>f</i>(<i>x</i>) is the algebraic reciprocal.
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

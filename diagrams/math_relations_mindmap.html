@@ -1,117 +1,306 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
+<title>CUET UG Mathematics: Relations & Functions Mindmap</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
-  .wrap { width: 1480px; height: 1080px; position: relative; background: #fff; }
-  svg.wires { position: absolute; inset: 0; width: 1480px; height: 1080px; }
-  .center {
-    position: absolute; left: 520px; top: 470px; width: 440px; height: 104px;
-    background: #071A4D; border-radius: 16px; display: flex; flex-direction: column;
-    align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(7,26,77,.25);
-    border-bottom: 5px solid #B8FF34;
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
-  .center .t { color: #fff; font-size: 19px; font-weight: 800; letter-spacing: .5px; text-align: center; }
-  .center .s { color: #B8FF34; font-size: 13px; font-weight: 700; letter-spacing: 2px; margin-top: 4px; }
+  .header {
+    background: #071A4D;
+    border-radius: 10px;
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .badge {
+    background: #B8FF34;
+    color: #071A4D;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .header-title {
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+  }
+  .header-right {
+    color: #94A3B8;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .main-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    height: 690px;
+  }
   .card {
-    position: absolute; width: 465px; background: #FCFDFF; border: 1.5px solid #D5DCEA;
-    border-radius: 14px; padding: 13px 16px 12px;
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 10px;
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
-  .card h2 { font-size: 19px; color: #071A4D; font-weight: 800; margin-bottom: 7px;
-             padding-bottom: 5px; border-bottom: 3px solid; display: inline-block; }
-  .leaf { font-size: 14px; color: #1B2333; margin: 5px 0; padding-left: 16px; position: relative; line-height: 1.32; }
-  .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
-  .b .leaf::before { background: #1F5EFF; }
-  .l .leaf::before { background: #7FB800; }
-  .leaf b { color: #071A4D; }
-  .b h2 { border-color: #1F5EFF; }
-  .l h2 { border-color: #7FB800; }
-  .left { left: 30px; }
-  .right { left: 985px; }
-  .exc {
-    position: absolute; left: 470px; top: 905px; width: 540px; background: #FFF3EC;
-    border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px;
+  .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 8px;
+    border-bottom: 1.5px solid #F1F5F9;
   }
-  .exc h2 { font-size: 17px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
-  .exc .leaf { font-size: 13px; margin: 3px 0; padding-left: 14px; color: #7A2A12; }
-  .exc .leaf::before { background: #D2481F; }
-  .exc b { color: #B4380F; }
+  .card-title {
+    font-size: 14px;
+    font-weight: 800;
+    color: #071A4D;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .tag {
+    font-size: 9.5px;
+    font-weight: 700;
+    padding: 3px 6px;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+  .tag-blue { background: #EFF6FF; color: #1E40AF; }
+  .tag-green { background: #F0FDF4; color: #166534; }
+  .tag-purple { background: #FAF5FF; color: #6B21A8; }
+  .tag-amber { background: #FFFBEB; color: #92400E; }
+
+  .content-list {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin-top: 8px;
+  }
+  .node {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    padding: 7px 9px;
+    font-size: 11px;
+    line-height: 1.35;
+    color: #334155;
+  }
+  .node b {
+    color: #071A4D;
+  }
+  .node.highlight {
+    background: #F0FDF4;
+    border-color: #86EFAC;
+  }
+  .node.purple-hl {
+    background: #FAF5FF;
+    border-color: #D8B4FE;
+  }
+  .node.amber-hl {
+    background: #FFFBEB;
+    border-color: #FDE68A;
+  }
+  .code-badge {
+    font-family: monospace;
+    font-weight: 800;
+    font-size: 11px;
+    background: #E2E8F0;
+    color: #1E293B;
+    padding: 1px 4px;
+    border-radius: 3px;
+  }
+
+  .footer-note {
+    background: #F1F5F9;
+    border-radius: 6px;
+    padding: 5px 8px;
+    font-size: 10px;
+    color: #475569;
+    text-align: center;
+    font-weight: 600;
+  }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <svg class="wires" viewBox="0 0 1480 1080">
-    <path d="M 520 505 C 470 505, 495 158, 500 155" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
-    <path d="M 520 520 C 480 520, 495 438, 500 438" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 520 535 C 470 535, 495 718, 500 718" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
-    <path d="M 960 505 C 1010 505, 985 158, 980 155" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 960 520 C 1000 520, 985 438, 980 438" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 960 535 C 1010 535, 985 718, 980 718" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 740 574 C 740 700, 740 830, 740 903" fill="none" stroke="#D2481F" stroke-width="2.5" stroke-dasharray="7 5" opacity=".6"/>
-  </svg>
 
-  <div class="center">
-    <div class="t">RELATIONS &amp; FUNCTIONS</div>
-    <div class="s">CUET UG MATHEMATICS</div>
+<div class="header">
+  <div class="header-left">
+    <div class="badge">FIGURE 3 · CHAPTER SYNTHESIS</div>
+    <div class="header-title">Relations, Functions &amp; Inverse Trigonometry: Master Architecture Mindmap</div>
+  </div>
+  <div class="header-right">NTA CUET UG Section B1 · Class 12 Mathematics · Unit I</div>
+</div>
+
+<div class="main-grid">
+  <!-- Pillar 1: Relations Architecture -->
+  <div class="card">
+    <div>
+      <div class="card-header">
+        <div class="card-title">1. Relations Architecture</div>
+        <span class="tag tag-blue">Binary Sets</span>
+      </div>
+
+      <div class="content-list">
+        <div class="node">
+          <b>Subset of Cartesian Product:</b>
+          <br><i>R</i> &sube; <i>A</i> &times; <i>A</i>. Empty &empty; and Universal <i>A</i> &times; <i>A</i> are trivial relations.
+        </div>
+        <div class="node">
+          <b>The Three Fundamental Axioms:</b>
+          <br>• <i>Reflexive:</i> (<i>a</i>, <i>a</i>) &isin; <i>R</i> &forall; <i>a</i> &isin; <i>A</i>
+          <br>• <i>Symmetric:</i> (<i>a</i>, <i>b</i>) &isin; <i>R</i> &rArr; (<i>b</i>, <i>a</i>) &isin; <i>R</i>
+          <br>• <i>Transitive:</i> (<i>a</i>, <i>b</i>), (<i>b</i>, <i>c</i>) &isin; <i>R</i> &rArr; (<i>a</i>, <i>c</i>) &isin; <i>R</i>
+        </div>
+        <div class="node highlight">
+          <b>Equivalence Relation:</b>
+          <br>Reflexive + Symmetric + Transitive simultaneously. Partitions <i>A</i> into disjoint equivalence classes [<i>a</i>].
+        </div>
+        <div class="node">
+          <b>Combinatorial Counts (|A| = n):</b>
+          <br>• Total Relations: <span class="code-badge">2^(n²)</span>
+          <br>• Reflexive: <span class="code-badge">2^(n(n-1))</span>
+          <br>• Symmetric: <span class="code-badge">2^(n(n+1)/2)</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-note">
+      Identity relation &Delta; = {(a,a)} is always an equivalence relation.
+    </div>
   </div>
 
-  <div class="card left b" style="top:58px">
-    <h2>Relations &amp; Their Types</h2>
-    <div class="leaf"><b>Relation:</b> any set of ordered pairs from A × A</div>
-    <div class="leaf"><b>Reflexive:</b> every (a, a) present — no exceptions</div>
-    <div class="leaf"><b>Symmetric:</b> arrows come in mirror pairs</div>
-    <div class="leaf"><b>Transitive:</b> chains close: a→b→c forces a→c</div>
-    <div class="leaf"><b>Equivalence:</b> all three — sorts A into classes</div>
+  <!-- Pillar 2: Functions & Mappings -->
+  <div class="card">
+    <div>
+      <div class="card-header">
+        <div class="card-title">2. Function Mappings</div>
+        <span class="tag tag-green">Taxonomy</span>
+      </div>
+
+      <div class="content-list">
+        <div class="node">
+          <b>Function Definition:</b>
+          <br>Every element in domain <i>A</i> has exactly <b>one</b> unique image in codomain <i>B</i>.
+        </div>
+        <div class="node">
+          <b>Injective (One-One):</b>
+          <br><i>f</i>(<i>x</i><sub>1</sub>) = <i>f</i>(<i>x</i><sub>2</sub>) &rArr; <i>x</i><sub>1</sub> = <i>x</i><sub>2</sub>.
+          <br>Horizontal line test: &le; 1 cut. Calculus: strictly monotonic (<i>f'</i> &gt; 0 or <i>f'</i> &lt; 0).
+        </div>
+        <div class="node">
+          <b>Surjective (Onto):</b>
+          <br>Range(<i>f</i>) = Codomain(<i>B</i>). Every <i>y</i> has at least one pre-image <i>x</i>.
+        </div>
+        <div class="node highlight">
+          <b>Bijective (One-One &amp; Onto):</b>
+          <br>Necessary &amp; sufficient condition for invertibility. |<i>A</i>| = |<i>B</i>| &rArr; <i>n</i>! bijections.
+        </div>
+        <div class="node">
+          <b>Function Counts (A &rarr; B):</b>
+          <br>• Total: <span class="code-badge">nᵐ</span> &nbsp;|&nbsp; Injections: <span class="code-badge">ⁿPₘ</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-note">
+      On finite sets of equal size, one-one &hArr; onto &hArr; bijection.
+    </div>
   </div>
 
-  <div class="card right b" style="top:58px">
-    <h2>One-One, Onto, Bijective</h2>
-    <div class="leaf"><b>One-one:</b> no two inputs share an output</div>
-    <div class="leaf"><b>Onto:</b> range = codomain, nothing unused</div>
-    <div class="leaf"><b>Bijective:</b> both at once — perfect pairing</div>
-    <div class="leaf"><b>x² test:</b> not one-one on ℝ; 2x + 3 is bijective ℝ → ℝ</div>
+  <!-- Pillar 3: Composition & Inversion -->
+  <div class="card">
+    <div>
+      <div class="card-header">
+        <div class="card-title">3. Composition &amp; Inverses</div>
+        <span class="tag tag-purple">Operations</span>
+      </div>
+
+      <div class="content-list">
+        <div class="node">
+          <b>Composition (f &compfn; g)(x):</b>
+          <br>Defined as <i>f</i>(<i>g</i>(<i>x</i>)). Requires Range(<i>g</i>) &sube; Domain(<i>f</i>).
+          <br>• Associative: (<i>f</i> &compfn; <i>g</i>) &compfn; <i>h</i> = <i>f</i> &compfn; (<i>g</i> &compfn; <i>h</i>)
+          <br>• Non-commutative: <i>f</i> &compfn; <i>g</i> &ne; <i>g</i> &compfn; <i>f</i>
+        </div>
+        <div class="node purple-hl">
+          <b>Invertible Function f⁻¹:</b>
+          <br><i>f</i> &compfn; <i>f</i><sup>-1</sup> = <i>I</i><sub>B</sub> and <i>f</i><sup>-1</sup> &compfn; <i>f</i> = <i>I</i><sub>A</sub>.
+          <br>Exists <b>if and only if</b> <i>f</i> is bijective.
+        </div>
+        <div class="node">
+          <b>Reversal Law:</b>
+          <br><span class="code-badge">(f &compfn; g)⁻¹ = g⁻¹ &compfn; f⁻¹</span>
+        </div>
+        <div class="node">
+          <b>Geometric Reflection:</b>
+          <br>The curve <i>y</i> = <i>f</i><sup>-1</sup>(<i>x</i>) is the mirror image of <i>y</i> = <i>f</i>(<i>x</i>) about the line <b><i>y</i> = <i>x</i></b>.
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-note">
+      f⁻¹(x) undoes the operation; it is NEVER equal to 1 / f(x).
+    </div>
   </div>
 
-  <div class="card left l" style="top:350px">
-    <h2>Composition &amp; Inverse</h2>
-    <div class="leaf"><b>(f∘g)(x) = f(g(x))</b> — inside first, order matters</div>
-    <div class="leaf"><b>g's output must fit f's domain</b> — the range check</div>
-    <div class="leaf"><b>Inverse needs bijection</b> — swap and solve: y = 2x + 3 → f⁻¹(y) = (y−3)/2</div>
-    <div class="leaf"><b>f⁻¹ ≠ 1/f</b> — undo machine, not reciprocal</div>
-  </div>
+  <!-- Pillar 4: Inverse Trigonometry Engine -->
+  <div class="card">
+    <div>
+      <div class="card-header">
+        <div class="card-title">4. Inverse Trig Engine</div>
+        <span class="tag tag-amber">Principal Branches</span>
+      </div>
 
-  <div class="card right l" style="top:350px">
-    <h2>Why Principal Branches Exist</h2>
-    <div class="leaf"><b>sin, cos, tan repeat</b> — not one-one on their natural domains</div>
-    <div class="leaf"><b>Restrict to one clean branch</b> — then the inverse is a function</div>
-    <div class="leaf"><b>Principal values:</b> sin⁻¹ ∈ [−π/2, π/2], cos⁻¹ ∈ [0, π], tan⁻¹ ∈ (−π/2, π/2)</div>
-    <div class="leaf"><b>Sum rules:</b> sin⁻¹x + cos⁻¹x = π/2; tan⁻¹x + cot⁻¹x = π/2</div>
-  </div>
+      <div class="content-list">
+        <div class="node amber-hl">
+          <b>The Six Principal Value Branches:</b>
+          <br>• <b>sin⁻¹ x:</b> [-1, 1] &rarr; [-&pi;/2, &pi;/2]
+          <br>• <b>cos⁻¹ x:</b> [-1, 1] &rarr; [0, &pi;]
+          <br>• <b>tan⁻¹ x:</b> &reals; &rarr; (-&pi;/2, &pi;/2)
+          <br>• <b>cot⁻¹ x:</b> &reals; &rarr; (0, &pi;)
+          <br>• <b>sec⁻¹ x:</b> |<i>x</i>| &ge; 1 &rarr; [0, &pi;] \ {&pi;/2}
+          <br>• <b>cosec⁻¹ x:</b> |<i>x</i>| &ge; 1 &rarr; [-&pi;/2, &pi;/2] \ {0}
+        </div>
+        <div class="node">
+          <b>Negative Angle Rules:</b>
+          <br>• Odd: sin⁻¹(-<i>x</i>) = -sin⁻¹ <i>x</i>; tan⁻¹; cosec⁻¹
+          <br>• &pi; - Rule: cos⁻¹(-<i>x</i>) = &pi; - cos⁻¹ <i>x</i>; cot⁻¹; sec⁻¹
+        </div>
+        <div class="node">
+          <b>Sum Identities:</b>
+          <br>• sin⁻¹ <i>x</i> + cos⁻¹ <i>x</i> = &pi;/2
+          <br>• tan⁻¹ <i>x</i> + cot⁻¹ <i>x</i> = &pi;/2
+        </div>
+      </div>
+    </div>
 
-  <div class="card left b" style="top:642px">
-    <h2>Domain &amp; Range (inverse trig)</h2>
-    <div class="leaf"><b>sin⁻¹, cos⁻¹:</b> domain [−1, 1] — inputs are sine/cosine values</div>
-    <div class="leaf"><b>tan⁻¹, cot⁻¹:</b> domain ℝ — slopes/roots go anywhere</div>
-    <div class="leaf"><b>sec⁻¹, cosec⁻¹:</b> domain |x| ≥ 1</div>
-    <div class="leaf"><b>Brackets matter:</b> open vs closed ends are the MCQ</div>
-  </div>
-
-  <div class="card right b" style="top:642px">
-    <h2>Checking a Relation (workflow)</h2>
-    <div class="leaf"><b>Step 1:</b> list every (a, a) for reflexive — one miss = fail</div>
-    <div class="leaf"><b>Step 2:</b> mirror-scan every pair for symmetry</div>
-    <div class="leaf"><b>Step 3:</b> walk every 2-step chain for transitivity</div>
-    <div class="leaf"><b>Verdict:</b> 3/3 → equivalence; name the failing test otherwise</div>
-  </div>
-
-  <div class="exc">
-    <h2>TOP TRAPS</h2>
-    <div class="leaf"><b>One missing (a,a)</b> breaks reflexivity — scan, don't assume</div>
-    <div class="leaf"><b>f∘g computed as g(f(x))</b> — the order flip</div>
-    <div class="leaf"><b>tan⁻¹ range brackets</b> — (−π/2, π/2), never square</div>
+    <div class="footer-note">
+      Verify branch bounds: sin⁻¹(sin &theta;) = &theta; only inside [-&pi;/2, &pi;/2].
+    </div>
   </div>
 </div>
+
 </body>
 </html>

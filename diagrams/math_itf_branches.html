@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CUET UG Mathematics: Inverse Trigonometric Functions</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    background: #071A4D;
+    border-radius: 10px;
+    padding: 14px 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .badge {
+    background: #B8FF34;
+    color: #071A4D;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .header-title {
+    color: #FFFFFF;
+    font-size: 17.5px;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+  }
+  .header-right {
+    color: #94A3B8;
+    font-size: 12.5px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .main-grid {
+    display: grid;
+    grid-template-columns: 1.25fr 1fr;
+    gap: 16px;
+    height: 690px;
+  }
+  .card {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 10px;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 8px;
+    border-bottom: 1.5px solid #F1F5F9;
+  }
+  .card-title {
+    font-size: 15px;
+    font-weight: 800;
+    color: #071A4D;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .tag {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+  .tag-blue { background: #EFF6FF; color: #1E40AF; }
+  .tag-amber { background: #FFFBEB; color: #92400E; }
+
+  /* 6 Branches Table */
+  .branch-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 8px;
+    font-size: 11px;
+  }
+  .branch-table th {
+    background: #F1F5F9;
+    color: #071A4D;
+    font-weight: 800;
+    text-align: left;
+    padding: 6px 8px;
+    border: 1px solid #CBD5E1;
+  }
+  .branch-table td {
+    padding: 6px 8px;
+    border: 1px solid #E2E8F0;
+    color: #334155;
+    line-height: 1.25;
+  }
+  .branch-table tr:nth-child(even) {
+    background: #F8FAFC;
+  }
+  .fn-name {
+    font-weight: 800;
+    color: #071A4D;
+    font-family: monospace;
+    font-size: 12px;
+  }
+  .dom-val {
+    color: #0369A1;
+    font-weight: 700;
+    font-family: monospace;
+    white-space: nowrap;
+  }
+  .rng-val {
+    color: #15803D;
+    font-weight: 700;
+    font-family: monospace;
+    white-space: nowrap;
+  }
+
+  /* Identity Boxes */
+  .ident-group {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 9px 12px;
+    margin-top: 8px;
+  }
+  .ident-title {
+    font-size: 11px;
+    font-weight: 800;
+    color: #071A4D;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .ident-pill {
+    font-size: 9.5px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 4px;
+    background: #E2E8F0;
+    color: #475569;
+  }
+  .ident-code {
+    font-family: monospace;
+    font-size: 11px;
+    color: #0F172A;
+    line-height: 1.4;
+  }
+  .ident-code b {
+    color: #2563EB;
+  }
+  .formula-highlight {
+    background: #071A4D;
+    color: #B8FF34;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-family: monospace;
+    font-size: 11.5px;
+    font-weight: 800;
+    text-align: center;
+    margin-top: 8px;
+    line-height: 1.4;
+  }
+
+  .footer-note {
+    background: #F1F5F9;
+    border-radius: 6px;
+    padding: 6px 10px;
+    font-size: 10.5px;
+    color: #475569;
+    text-align: center;
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <div class="badge">FIGURE 2 · INVERSE TRIGONOMETRY</div>
+    <div class="header-title">Inverse Trigonometric Functions: Domains, Principal Value Branches &amp; Core Identities</div>
+  </div>
+  <div class="header-right">NTA CUET UG Section B1 · Class 12 Mathematics · Unit I</div>
+</div>
+
+<div class="main-grid">
+  <!-- Left Column: The 6 Branches -->
+  <div class="card">
+    <div>
+      <div class="card-header">
+        <div class="card-title">
+          <span>The Six Master Principal Value Branches</span>
+        </div>
+        <span class="tag tag-blue">Standard Branches</span>
+      </div>
+
+      <table class="branch-table">
+        <thead>
+          <tr>
+            <th>Function</th>
+            <th>Domain (<i>x</i>)</th>
+            <th>Principal Value Range (<i>y</i>)</th>
+            <th>Key Constraint / Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="fn-name">sin⁻¹ x</td>
+            <td class="dom-val">[-1, 1]</td>
+            <td class="rng-val">[-&pi;/2, &pi;/2]</td>
+            <td>Closed interval; strictly increasing; passes origin</td>
+          </tr>
+          <tr>
+            <td class="fn-name">cos⁻¹ x</td>
+            <td class="dom-val">[-1, 1]</td>
+            <td class="rng-val">[0, &pi;]</td>
+            <td>Closed interval; strictly decreasing; always &ge; 0</td>
+          </tr>
+          <tr>
+            <td class="fn-name">tan⁻¹ x</td>
+            <td class="dom-val">(-&infin;, &infin;) = &reals;</td>
+            <td class="rng-val">(-&pi;/2, &pi;/2)</td>
+            <td><b>Open interval</b>; horizontal asymptotes at &plusmn;&pi;/2</td>
+          </tr>
+          <tr>
+            <td class="fn-name">cot⁻¹ x</td>
+            <td class="dom-val">(-&infin;, &infin;) = &reals;</td>
+            <td class="rng-val">(0, &pi;)</td>
+            <td><b>Open interval</b>; strictly decreasing; range is strictly positive</td>
+          </tr>
+          <tr>
+            <td class="fn-name">sec⁻¹ x</td>
+            <td class="dom-val">(-&infin;, -1] &cup; [1, &infin;)</td>
+            <td class="rng-val">[0, &pi;] \ {&pi;/2}</td>
+            <td>Excludes &pi;/2 (cos &pi;/2 = 0); |<i>x</i>| &ge; 1</td>
+          </tr>
+          <tr>
+            <td class="fn-name">cosec⁻¹ x</td>
+            <td class="dom-val">(-&infin;, -1] &cup; [1, &infin;)</td>
+            <td class="rng-val">[-&pi;/2, &pi;/2] \ {0}</td>
+            <td>Excludes 0 (sin 0 = 0); |<i>x</i>| &ge; 1</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="ident-group" style="margin-top: 10px;">
+        <div class="ident-title">
+          <span>Complementary Co-Function Sum Identities:</span>
+          <span class="ident-pill">&pi;/2 Sums</span>
+        </div>
+        <div class="ident-code">
+          • <b>sin⁻¹ x + cos⁻¹ x = &pi;/2</b> &nbsp;&nbsp;(for all <i>x</i> &isin; [-1, 1])
+          <br>• <b>tan⁻¹ x + cot⁻¹ x = &pi;/2</b> &nbsp;&nbsp;(for all <i>x</i> &isin; &reals;)
+          <br>• <b>sec⁻¹ x + cosec⁻¹ x = &pi;/2</b> &nbsp;&nbsp;(for all |<i>x</i>| &ge; 1)
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-note">
+      Critical CUET Tip: sin⁻¹(sin &theta;) = &theta; ONLY when &theta; &isin; [-&pi;/2, &pi;/2]! If &theta; is outside, reduce using periodicity/quadrants.
+    </div>
+  </div>
+
+  <!-- Right Column: Negative Angle Identities & Addition Formulas -->
+  <div class="card">
+    <div>
+      <div class="card-header">
+        <div class="card-title">
+          <span>Negative-Angle Rules &amp; Addition Engine</span>
+        </div>
+        <span class="tag tag-amber">High-Yield Algebra</span>
+      </div>
+
+      <div class="ident-group">
+        <div class="ident-title">
+          <span>Group 1: Odd Symmetry (Minus Sign Factorizes Out)</span>
+          <span class="ident-pill">Range around 0</span>
+        </div>
+        <div class="ident-code">
+          • <b>sin⁻¹(-x) = -sin⁻¹ x</b> &nbsp;&nbsp;(for <i>x</i> &isin; [-1, 1])
+          <br>• <b>tan⁻¹(-x) = -tan⁻¹ x</b> &nbsp;&nbsp;(for <i>x</i> &isin; &reals;)
+          <br>• <b>cosec⁻¹(-x) = -cosec⁻¹ x</b> &nbsp;&nbsp;(for |<i>x</i>| &ge; 1)
+        </div>
+      </div>
+
+      <div class="ident-group">
+        <div class="ident-title">
+          <span>Group 2: The &pi; - Rule (Non-Negative Range Branches)</span>
+          <span class="ident-pill">Range [0, &pi;]</span>
+        </div>
+        <div class="ident-code">
+          • <b>cos⁻¹(-x) = &pi; - cos⁻¹ x</b> &nbsp;&nbsp;(for <i>x</i> &isin; [-1, 1])
+          <br>• <b>cot⁻¹(-x) = &pi; - cot⁻¹ x</b> &nbsp;&nbsp;(for <i>x</i> &isin; &reals;)
+          <br>• <b>sec⁻¹(-x) = &pi; - sec⁻¹ x</b> &nbsp;&nbsp;(for |<i>x</i>| &ge; 1)
+        </div>
+      </div>
+
+      <div class="ident-group">
+        <div class="ident-title">
+          <span>Addition &amp; Subtraction of tan⁻¹:</span>
+          <span class="ident-pill">Key Problem Solver</span>
+        </div>
+        <div class="ident-code">
+          • <b>tan⁻¹ x + tan⁻¹ y = tan⁻¹((x + y) / (1 - xy))</b> &nbsp;&nbsp;(if <i>xy</i> &lt; 1)
+          <br>• <b>tan⁻¹ x - tan⁻¹ y = tan⁻¹((x - y) / (1 + xy))</b> &nbsp;&nbsp;(if <i>xy</i> &gt; -1)
+        </div>
+      </div>
+
+      <div class="formula-highlight">
+        2 tan⁻¹ x = sin⁻¹(2x / (1 + x²)) = cos⁻¹((1 - x²) / (1 + x²)) = tan⁻¹(2x / (1 - x²))
+        <div style="font-size: 10px; color: #94A3B8; font-weight: normal; margin-top: 2px;">
+          (Triple conversion bridge connecting tangent to sine, cosine, and tangent double angles)
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-note">
+      Always verify <i>xy</i> &lt; 1 before applying the addition formula for tan⁻¹ <i>x</i> + tan⁻¹ <i>y</i>!
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
