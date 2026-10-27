@@ -1,116 +1,219 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
+<title>Differential Equations Architectural Mindmap</title>
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
-  .wrap { width: 1480px; height: 1080px; position: relative; background: #fff; }
-  svg.wires { position: absolute; inset: 0; width: 1480px; height: 1080px; }
-  .center {
-    position: absolute; left: 520px; top: 470px; width: 440px; height: 104px;
-    background: #071A4D; border-radius: 16px; display: flex; flex-direction: column;
-    align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(7,26,77,.25);
-    border-bottom: 5px solid #B8FF34;
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    color: #0F172A;
+    padding: 30px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
-  .center .t { color: #fff; font-size: 19px; font-weight: 800; letter-spacing: .5px; text-align: center; }
-  .center .s { color: #B8FF34; font-size: 13px; font-weight: 700; letter-spacing: 2px; margin-top: 4px; }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 14px;
+  }
+  .header-left { display: flex; align-items: center; gap: 16px; }
+  .badge {
+    background: #6366F1;
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    padding: 5px 12px;
+    border-radius: 6px;
+    text-transform: uppercase;
+  }
+  .title { font-size: 23px; font-weight: 800; color: #0F172A; }
+  .subtitle { font-size: 13px; color: #64748B; font-weight: 500; }
+  .main-container {
+    display: flex;
+    gap: 20px;
+    flex: 1;
+    margin: 18px 0;
+  }
+  .col {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    flex: 1;
+  }
+  .center-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 280px;
+  }
+  .hub {
+    background: #0F172A;
+    border: 2px solid #38BDF8;
+    border-radius: 14px;
+    padding: 24px 20px;
+    text-align: center;
+    width: 100%;
+  }
+  .hub-title { font-size: 18px; font-weight: 800; color: #FFFFFF; margin-bottom: 6px; }
+  .hub-sub { font-size: 11.5px; color: #38BDF8; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+  .hub-desc { font-size: 11px; color: #94A3B8; margin-top: 10px; line-height: 1.4; }
   .card {
-    position: absolute; width: 465px; background: #FCFDFF; border: 1.5px solid #D5DCEA;
-    border-radius: 14px; padding: 13px 16px 12px;
+    background: #FFFFFF;
+    border: 1.5px solid #E2E8F0;
+    border-radius: 12px;
+    padding: 16px 18px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
   }
-  .card h2 { font-size: 19px; color: #071A4D; font-weight: 800; margin-bottom: 7px;
-             padding-bottom: 5px; border-bottom: 3px solid; display: inline-block; }
-  .leaf { font-size: 14px; color: #1B2333; margin: 5px 0; padding-left: 16px; position: relative; line-height: 1.32; }
-  .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
-  .b .leaf::before { background: #1F5EFF; }
-  .l .leaf::before { background: #7FB800; }
-  .leaf b { color: #071A4D; }
-  .b h2 { border-color: #1F5EFF; }
-  .l h2 { border-color: #7FB800; }
-  .left { left: 30px; }
-  .right { left: 985px; }
-  .exc {
-    position: absolute; left: 470px; top: 905px; width: 540px; background: #FFF3EC;
-    border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px;
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1.5px solid #F1F5F9;
   }
-  .exc h2 { font-size: 17px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
-  .exc .leaf { font-size: 13px; margin: 3px 0; padding-left: 14px; color: #7A2A12; }
-  .exc .leaf::before { background: #D2481F; }
-  .exc b { color: #B4380F; }
+  .card-dot { width: 10px; height: 10px; border-radius: 50%; }
+  .card-title { font-size: 13.5px; font-weight: 800; color: #0F172A; }
+  .card-tag { font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 4px; margin-left: auto; }
+  .tag-blue { background: #E0F2FE; color: #0369A1; }
+  .tag-emerald { background: #D1FAE5; color: #047857; }
+  .tag-purple { background: #EDE9FE; color: #6D28D9; }
+  .tag-amber { background: #FEF3C7; color: #B45309; }
+  .item-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 11.5px;
+    color: #334155;
+    line-height: 1.4;
+  }
+  .item-list strong { color: #0F172A; font-weight: 700; }
+  .chip {
+    font-family: 'JetBrains Mono', monospace;
+    background: #F1F5F9;
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-size: 10.5px;
+    color: #0369A1;
+    font-weight: 600;
+  }
+  .footer-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #0F172A;
+    color: #FFFFFF;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 12px;
+  }
+  .footer-item { display: flex; align-items: center; gap: 8px; }
+  .footer-dot { width: 8px; height: 8px; border-radius: 50%; background: #818CF8; }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <svg class="wires" viewBox="0 0 1480 1080">
-    <path d="M 520 505 C 470 505, 495 158, 500 155" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
-    <path d="M 520 520 C 480 520, 495 438, 500 438" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 520 535 C 470 535, 495 718, 500 718" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
-    <path d="M 960 505 C 1010 505, 985 158, 980 155" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 960 520 C 1000 520, 985 438, 980 438" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
-    <path d="M 960 535 C 1010 535, 985 718, 980 718" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 740 574 C 740 700, 740 830, 740 903" fill="none" stroke="#D2481F" stroke-width="2.5" stroke-dasharray="7 5" opacity=".6"/>
-  </svg>
-
-  <div class="center">
-    <div class="t">DIFFERENTIAL EQUATIONS</div>
-    <div class="s">CUET UG MATHEMATICS</div>
+  <div class="header">
+    <div class="header-left">
+      <span class="badge">CUET UG Mathematics · Unit 5</span>
+      <div>
+        <div class="title">Differential Equations: Architectural Synthesis Mindmap</div>
+        <div class="subtitle">Complete Conceptual Blueprint · Classification, 3-Tier Solving Engine, Initial Value Problems & CUET Speed Traps</div>
+      </div>
+    </div>
+    <div style="font-size: 12px; font-weight: 700; color: #64748B;">OurMocks High-Yield Concept Series</div>
   </div>
 
-  <div class="card left b" style="top:58px">
-    <h2>Order &amp; Degree</h2>
-    <div class="leaf"><b>Order:</b> the highest derivative in the equation</div>
-    <div class="leaf"><b>Degree:</b> the power of that highest derivative — polynomial only</div>
-    <div class="leaf"><b>Not defined:</b> radicals or fractions of derivatives, like (1 + y'²)^(3/2)</div>
-    <div class="leaf"><b>Clear first:</b> simplify the equation before reading powers</div>
+  <div class="main-container">
+    <!-- Left Column: Classification & Separable -->
+    <div class="col">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-dot" style="background: #0284C7;"></div>
+          <div class="card-title">1. Taxonomy & Boundaries</div>
+          <span class="card-tag tag-blue">Foundations</span>
+        </div>
+        <div class="item-list">
+          <div><strong>Order:</strong> Highest derivative order n. Always defined.</div>
+          <div><strong>Degree:</strong> Power of highest derivative when polynomial in derivatives. Undefined for $e^{y'}, sin(y'), ln(y')$.</div>
+          <div><strong>Radicals:</strong> Must clear fractional powers before reading degree: $y'' = &radic;(1 + y'<sup>2</sup>) &rArr;$ Order 2, Degree 2.</div>
+          <div><strong>Formation:</strong> Differentiate $n$ times to eliminate $n$ arbitrary constants: $y = mx &rArr; xy' - y = 0$.</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-dot" style="background: #10B981;"></div>
+          <div class="card-title">2. Variable Separable Engine</div>
+          <span class="card-tag tag-emerald">Method 1</span>
+        </div>
+        <div class="item-list">
+          <div><strong>Standard Form:</strong> <span class="chip">h(y) dy = g(x) dx</span> &rArr; Integrate both sides.</div>
+          <div><strong>Constant Placement:</strong> Introduce $+ C$ on one side only (usually RHS) during integration.</div>
+          <div><strong>Reducible Form:</strong> <span class="chip">dy/dx = f(ax + by + c)</span>. Put u = ax + by + c, yielding separable DE in $u$ and $x$.</div>
+          <div><strong>Example:</strong> $dy/dx = (x+y)^2 &rArr; &int; \frac{du}{1 + u^2} = x + C &rArr; \tan^{-1}(x+y) = x + C$.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Center Column: Core Hub -->
+    <div class="center-col">
+      <div class="hub">
+        <div class="hub-title">DIFFERENTIAL<br>EQUATIONS</div>
+        <div class="hub-sub">CUET UG Calculus Engine</div>
+        <div class="hub-desc">
+          Section A (Compulsory Unit 4)<br>
+          Section B1 (Core Unit III)<br>
+          50 Questions / 60 Mins<br>
+          3 Canonical Solver Methods
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Column: Homogeneous & Linear -->
+    <div class="col">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-dot" style="background: #8B5CF6;"></div>
+          <div class="card-title">3. Homogeneous Equations</div>
+          <span class="card-tag tag-purple">Method 2</span>
+        </div>
+        <div class="item-list">
+          <div><strong>Condition:</strong> $f(&lambda; x, &lambda; y) = &lambda;^0 f(x, y)$, or $dy/dx = F(y/x)$.</div>
+          <div><strong>Type 1 Substitution:</strong> <span class="chip">y = v&middot;x</span> &rArr; $dy/dx = v + x(dv/dx)$. Separates into $\frac{dv}{F(v) - v} = \frac{dx}{x}$.</div>
+          <div><strong>Type 2 Inversion:</strong> For functions of $x/y$ (e.g. $e^{x/y}$), write $dx/dy = G(x/y)$ and put <span class="chip">x = v&middot;y</span>.</div>
+          <div><strong>Golden Shortcut:</strong> Homogeneous DE general solution curves are always self-similar radial rays from the origin.</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-dot" style="background: #F59E0B;"></div>
+          <div class="card-title">4. Linear DE & Integrating Factor</div>
+          <span class="card-tag tag-amber">Method 3</span>
+        </div>
+        <div class="item-list">
+          <div><strong>Leibniz Form:</strong> <span class="chip">dy/dx + P(x)y = Q(x)</span>. Divide leading coefficients to ensure $dy/dx$ coeff is $1$!</div>
+          <div><strong>Integrating Factor:</strong> <span class="chip">IF = e^(&int; P dx)</span>. Solution: $y &middot; \text{IF} = &int; (Q &middot; \text{IF}) dx + C$.</div>
+          <div><strong>Log Identity Reflex:</strong> $e^{-ln x} = 1/x$; $e^{2 ln x} = x^2$; $e^{ln(sec x)} = sec x$.</div>
+          <div><strong>Dual Type:</strong> $dx/dy + P(y)x = Q(y) &rArr; \text{IF} = e^{&int; P(y) dy} &rArr; x &middot; \text{IF} = &int; (Q &middot; \text{IF}) dy + C$.</div>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div class="card right b" style="top:58px">
-    <h2>General vs Particular</h2>
-    <div class="leaf"><b>General:</b> the whole curve family, constants A, B, C… alive</div>
-    <div class="leaf"><b>Particular:</b> one member — constants fixed by given conditions</div>
-    <div class="leaf"><b>Verify:</b> differentiate the candidate, substitute, expect an identity</div>
-    <div class="leaf"><b>Signature:</b> y = A eˣ + B e⁻ˣ always solves y'' − y = 0</div>
+  <div class="footer-bar">
+    <div class="footer-item"><div class="footer-dot"></div><span>General Solution has n constants; Particular Solution has 0 constants</span></div>
+    <div class="footer-item"><div class="footer-dot"></div><span>Always check for dy/dx coeff = 1 before computing IF</span></div>
+    <div class="footer-item"><div class="footer-dot"></div><span>Use y = vx for dy/dx = F(y/x); use x = vy for dx/dy = G(x/y)</span></div>
   </div>
-
-  <div class="card left l" style="top:350px">
-    <h2>Variable Separable</h2>
-    <div class="leaf"><b>Shape:</b> dy/dx = f(x) · g(y) — variables already split</div>
-    <div class="leaf"><b>Move:</b> all-y with dy, all-x with dx, integrate both sides</div>
-    <div class="leaf"><b>Example:</b> dy/dx = xy/(1+x²) → ln|y| = ½ ln(1+x²) + C</div>
-    <div class="leaf"><b>e^(x+y) case:</b> split the exponent, then separate</div>
-  </div>
-
-  <div class="card right l" style="top:350px">
-    <h2>Homogeneous (ratio-shaped)</h2>
-    <div class="leaf"><b>Shape:</b> dy/dx = F(y/x) — every term same total degree</div>
-    <div class="leaf"><b>Test:</b> F(λx, λy) = F(x, y)</div>
-    <div class="leaf"><b>Move:</b> y = vx makes dy/dx = v + x dv/dx — then separable</div>
-    <div class="leaf"><b>Finish:</b> integrate in v, x, then substitute back y = vx</div>
-  </div>
-
-  <div class="card left b" style="top:642px">
-    <h2>Linear Equations + IF</h2>
-    <div class="leaf"><b>Shape:</b> dy/dx + P y = Q (P, Q functions of x)</div>
-    <div class="leaf"><b>Engine:</b> IF = e^(∫P dx); then y · IF = ∫ Q · IF dx + C</div>
-    <div class="leaf"><b>Example:</b> dy/dx + y/x = x² → IF = x → y = x³/4 + C/x</div>
-    <div class="leaf"><b>Flipped form:</b> dx/dy + P x = Q — same engine in y</div>
-  </div>
-
-  <div class="card right b" style="top:642px">
-    <h2>Choosing the Rung (reflexes)</h2>
-    <div class="leaf"><b>Product of x-part and y-part?</b> separable</div>
-    <div class="leaf"><b>Ratio-shaped, same-degree terms?</b> homogeneous, y = vx</div>
-    <div class="leaf"><b>y to power 1 with a coefficient?</b> linear, build the IF</div>
-    <div class="leaf"><b>Stuck?</b> check the shape again — three rungs cover the syllabus</div>
-  </div>
-
-  <div class="exc">
-    <h2>TOP TRAPS</h2>
-    <div class="leaf"><b>Degree of √(dy/dx)</b> — not defined, not 1</div>
-    <div class="leaf"><b>IF forgotten</b> — the linear answer looks almost right without it</div>
-    <div class="leaf"><b>Answers left in v</b> — always substitute y = vx back</div>
-  </div>
-</div>
 </body>
 </html>
