@@ -1,107 +1,228 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
+<title>Ecological Pyramids — Number, Biomass, and Energy</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
-  .wrap { width: 1480px; background: #fff; padding: 26px 30px 28px; }
-  .strip {
-    background: #071A4D; border-radius: 14px; padding: 18px 26px 16px;
-    border-bottom: 5px solid #B8FF34; margin-bottom: 22px;
+  body {
+    width: 1440px; height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px 32px;
   }
-  .strip h1 { color: #fff; font-size: 27px; font-weight: 800; letter-spacing: .3px; }
-  .strip p { color: #B8FF34; font-size: 14px; font-weight: 700; letter-spacing: 1.6px; margin-top: 6px; }
-  .row { display: flex; gap: 22px; align-items: stretch; }
-  .card {
-    flex: 1; background: #FCFDFF; border: 1.5px solid #D5DCEA; border-radius: 14px;
-    padding: 16px 18px 15px; display: flex; flex-direction: column;
+  .header {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    padding-bottom: 14px; border-bottom: 2px solid #E2E8F0; margin-bottom: 16px;
   }
-  .card h2 { font-size: 21px; color: #071A4D; font-weight: 800; padding-bottom: 6px; margin-bottom: 4px;
-             border-bottom: 3px solid #1F5EFF; display: inline-block; align-self: flex-start; }
-  .sub { font-size: 13.5px; color: #5A6478; font-weight: 600; margin: 6px 0 14px; }
-  .pyr { display: flex; flex-direction: column; align-items: center; gap: 7px; margin-bottom: 16px; }
-  .tier { height: 46px; border-radius: 7px; display: flex; align-items: center; justify-content: center;
-          font-size: 14.5px; font-weight: 700; text-align: center; line-height: 1.15; }
-  .t4 { width: 30%; background: #B8FF34; color: #071A4D; }
-  .t3 { width: 52%; background: #6E97FF; color: #fff; }
-  .t2 { width: 74%; background: #1F5EFF; color: #fff; }
-  .t1 { width: 96%; background: #071A4D; color: #fff; }
-  .base-tag { font-size: 12.5px; color: #5A6478; font-weight: 700; margin-top: 2px; letter-spacing: .4px; }
-  .note { border-radius: 10px; padding: 11px 13px; font-size: 13.5px; line-height: 1.42; margin-top: auto; }
-  .note b { color: #071A4D; }
-  .warn { background: #FFF3EC; border: 1.5px solid #D2481F; color: #7A2A12; }
-  .warn b { color: #B4380F; }
-  .lime { background: #F6FFDF; border: 1.5px solid #7FB800; color: #2F4A08; }
-  .arrowline { display: flex; align-items: center; justify-content: center; gap: 10px;
-               margin: 4px 0 12px; font-size: 12.5px; font-weight: 700; color: #5A6478; letter-spacing: .6px; }
-  .footer {
-    margin-top: 22px; background: #EEF1F8; border: 1.5px solid #071A4D; border-radius: 12px;
-    padding: 12px 18px; font-size: 15px; color: #071A4D; text-align: center; font-weight: 600;
+  .title-group h1 { font-size: 26px; font-weight: 800; color: #071A4D; letter-spacing: -0.02em; }
+  .title-group p { font-size: 13.5px; color: #64748B; margin-top: 3px; font-weight: 500; }
+  .brand-badge {
+    background: #071A4D; color: #B8FF34; font-size: 11px; font-weight: 800;
+    padding: 6px 14px; border-radius: 6px; letter-spacing: 0.08em; text-transform: uppercase;
   }
-  .footer b { color: #071A4D; }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    height: 645px;
+  }
+  .panel {
+    background: #FFFFFF;
+    border: 1.5px solid #CBD5E1;
+    border-radius: 10px;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+  }
+  .panel-header {
+    display: flex; justify-content: space-between; align-items: center;
+    padding-bottom: 8px; border-bottom: 1.5px solid #E2E8F0; margin-bottom: 12px;
+  }
+  .panel-header h2 { font-size: 16px; font-weight: 800; color: #071A4D; }
+  .badge {
+    font-size: 10.5px; font-weight: 700; padding: 3px 8px; border-radius: 4px; text-transform: uppercase;
+  }
+  .badge-num { background: #EFF6FF; color: #1D4ED8; border: 1px solid #BFDBFE; }
+  .badge-bio { background: #FEF3C7; color: #B45309; border: 1px solid #FDE68A; }
+  .badge-ene { background: #DCFCE7; color: #166534; border: 1px solid #86EFAC; }
+
+  /* Diagram Graphic */
+  .pyr-container {
+    background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px;
+    padding: 12px 10px; display: flex; flex-direction: column; align-items: center;
+    gap: 6px; margin-bottom: 12px;
+  }
+  .tier {
+    height: 26px; border-radius: 4px; display: flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 700; text-align: center;
+  }
+  .tier-t4 { width: 34%; background: #071A4D; color: #FFFFFF; }
+  .tier-t3 { width: 54%; background: #1F5EFF; color: #FFFFFF; }
+  .tier-t2 { width: 76%; background: #60A5FA; color: #071A4D; }
+  .tier-t1 { width: 96%; background: #93C5FD; color: #071A4D; }
+
+  /* Inverted Pyramid Tiers */
+  .inv-t2 { width: 88%; background: #B45309; color: #FFFFFF; }
+  .inv-t1 { width: 38%; background: #FCD34D; color: #78350F; }
+
+  /* Energy Tiers */
+  .e-t4 { width: 28%; background: #166534; color: #FFFFFF; }
+  .e-t3 { width: 48%; background: #22C55E; color: #FFFFFF; }
+  .e-t2 { width: 72%; background: #86EFAC; color: #14532D; }
+  .e-t1 { width: 96%; background: #BBF7D0; color: #14532D; }
+
+  .info-list {
+    display: flex; flex-direction: column; gap: 7px; font-size: 11.8px; color: #334155; line-height: 1.42; flex: 1;
+  }
+  .info-item {
+    background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 6px; padding: 7px 10px;
+  }
+  .info-item b { color: #071A4D; font-weight: 700; }
+
+  .callout-box {
+    border-radius: 6px; padding: 8px 10px; font-size: 11px; line-height: 1.35; margin-top: auto;
+  }
+  .callout-blue { background: #EFF6FF; border-left: 3px solid #1F5EFF; color: #1E3A8A; }
+  .callout-amber { background: #FFFBEB; border-left: 3px solid #D97706; color: #78350F; }
+  .callout-green { background: #F0FDF4; border-left: 3px solid #16A34A; color: #14532D; }
+
+  /* Bottom Strip */
+  .bottom-strip {
+    margin-top: 14px; height: 85px; background: #FFFFFF; border: 1.5px solid #CBD5E1;
+    border-radius: 10px; padding: 12px 20px; display: flex; align-items: center; justify-content: space-between;
+  }
+  .strip-col { display: flex; flex-direction: column; gap: 3px; }
+  .strip-title { font-size: 11.5px; font-weight: 800; color: #071A4D; text-transform: uppercase; letter-spacing: 0.05em; }
+  .strip-desc { font-size: 11.8px; color: #475569; }
+  .strip-desc b { color: #0F172A; }
+  .divider-v { width: 1.5px; height: 55px; background: #E2E8F0; }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <div class="strip">
-    <h1>Ecological pyramids — three lenses on the same ecosystem</h1>
-    <p>COUNT THE ORGANISMS &#183; WEIGH THE BIOMASS &#183; TRACK THE ENERGY</p>
+
+<div class="header">
+  <div class="title-group">
+    <h1>Ecological Pyramids — Number, Biomass, and Energy</h1>
+    <p>NCERT Class 12 Biology · Unit X · Ecosystem · Trophic Levels, 10% Energy Transfer Law & Classic Inversions</p>
   </div>
+  <div class="brand-badge">OurMocks CUET UG</div>
+</div>
 
-  <div class="row">
-    <div class="card">
-      <h2>Pyramid of number</h2>
-      <div class="sub">What is counted: how many organisms sit at each trophic level.</div>
-      <div class="pyr">
-        <div class="tier t4">T4 &#183; top carnivores</div>
-        <div class="tier t3">T3 &#183; carnivores</div>
-        <div class="tier t2">T2 &#183; herbivores</div>
-        <div class="tier t1">T1 &#183; producers (grass plants)</div>
+<div class="grid-container">
+
+  <!-- 1. PYRAMID OF NUMBERS -->
+  <div class="panel">
+    <div class="panel-header">
+      <h2>1. Pyramid of Numbers</h2>
+      <span class="badge badge-num">Upright / Inverted</span>
+    </div>
+
+    <div class="pyr-container">
+      <div class="tier tier-t4">Tertiary Consumers (TC: 3)</div>
+      <div class="tier tier-t3">Secondary Consumers (SC: 354,000)</div>
+      <div class="tier tier-t2">Primary Consumers (PC: 708,000)</div>
+      <div class="tier tier-t1">Primary Producers (PP: 5,842,000)</div>
+    </div>
+
+    <div class="info-list">
+      <div class="info-item">
+        <b>What is Counted:</b> The total number of individual organisms present at each successive trophic level per unit area.
       </div>
-      <div class="base-tag">&#9650; WIDEST LAYER = MOST ORGANISMS (GRASSLAND)</div>
-      <div class="note warn" style="margin-top:14px">
-        <b>Upright in a grassland.</b> <b>INVERTED in a tree ecosystem</b> — one single tree (T1) supports
-        hundreds of fruit-eating insects and birds (T2), so the top layer outnumbers the base.
+      <div class="info-item">
+        <b>Grassland Ecosystem:</b> Strictly <b>Upright</b>. Millions of grass blades (producers) support herbivores, carnivores, and just a few apex predators.
+      </div>
+      <div class="info-item">
+        <b>Tree Ecosystem Exception:</b> Can be <b>Inverted or Spindle-Shaped</b>. A single oak tree (1 producer) supports thousands of herbivorous insects, which host hyper-parasites.
       </div>
     </div>
 
-    <div class="card">
-      <h2>Pyramid of biomass</h2>
-      <div class="sub">What is weighed: the dry living mass present at each level at a given time.</div>
-      <div class="pyr">
-        <div class="tier t4">T4 &#183; top carnivores</div>
-        <div class="tier t3">T3 &#183; carnivores</div>
-        <div class="tier t2">T2 &#183; herbivores</div>
-        <div class="tier t1">T1 &#183; producers</div>
-      </div>
-      <div class="base-tag">&#9650; WIDEST LAYER = MOST LIVING MASS (ON LAND)</div>
-      <div class="note warn" style="margin-top:14px">
-        <b>Upright on land.</b> <b>INVERTED in the ocean</b> — the standing crop of phytoplankton is small
-        at any instant, yet it keeps feeding a larger zooplankton mass because phytoplankton multiply fast.
-      </div>
-    </div>
-
-    <div class="card">
-      <h2>Pyramid of energy</h2>
-      <div class="sub">What is tracked: energy stored in new living matter at each level (kJ/m&#178;/yr).</div>
-      <div class="pyr">
-        <div class="tier t4">T4 &#183; 10 kJ</div>
-        <div class="tier t3">T3 &#183; 100 kJ</div>
-        <div class="tier t2">T2 &#183; 1,000 kJ</div>
-        <div class="tier t1">T1 &#183; 10,000 kJ</div>
-      </div>
-      <div class="base-tag">&#9650; EACH LAYER = 10% OF THE ONE BELOW</div>
-      <div class="note lime" style="margin-top:14px">
-        <b>ALWAYS upright — never inverted.</b> Why: at every transfer about 90% of the energy is lost
-        as heat (second law of thermodynamics), so no level above can ever hold more energy than the level below.
-      </div>
+    <div class="callout-box callout-blue">
+      <b>CUET Rule:</b> A single tree hosting hundreds of birds is spindle-shaped; if birds carry ticks/lice, it is completely <b>inverted</b>!
     </div>
   </div>
 
-  <div class="footer">
-    Whichever way the upper layers bend, <b>the producers always form the base</b> — and <b>energy always narrows on the way up</b>.
+  <!-- 2. PYRAMID OF BIOMASS -->
+  <div class="panel">
+    <div class="panel-header">
+      <h2>2. Pyramid of Biomass</h2>
+      <span class="badge badge-bio">Terrestrial vs Ocean</span>
+    </div>
+
+    <div class="pyr-container">
+      <div class="tier inv-t2">Fishes / Zooplankton (Biomass: 21 g/m²)</div>
+      <div class="tier inv-t1">Phytoplankton (Biomass: 4 g/m²)</div>
+    </div>
+
+    <div class="info-list">
+      <div class="info-item">
+        <b>What is Weighed:</b> Total dry weight (standing crop) of living organic matter at each trophic level ($g/m^2$ or $kg/ha$).
+      </div>
+      <div class="info-item">
+        <b>Terrestrial Ecosystems:</b> Generally <b>Upright</b>. Huge vegetative biomass in forests/grasslands exceeds herbivore and carnivore mass.
+      </div>
+      <div class="info-item">
+        <b>Aquatic / Ocean Exception:</b> Sharply <b>Inverted</b>! The standing crop biomass of microscopic phytoplankton is tiny compared to long-lived zooplankton and predatory fishes.
+      </div>
+    </div>
+
+    <div class="callout-box callout-amber">
+      <b>Why Inverted in Oceans:</b> Phytoplankton have microscopic size and rapid life cycles (high turnover rate) that sustain massive fish biomass!
+    </div>
+  </div>
+
+  <!-- 3. PYRAMID OF ENERGY -->
+  <div class="panel">
+    <div class="panel-header">
+      <h2>3. Pyramid of Energy</h2>
+      <span class="badge badge-ene">Always Upright</span>
+    </div>
+
+    <div class="pyr-container">
+      <div class="tier e-t4">Tertiary Consumers: 10 J</div>
+      <div class="tier e-t3">Secondary Consumers: 100 J</div>
+      <div class="tier e-t2">Primary Consumers: 1,000 J</div>
+      <div class="tier e-t1">Producers (Sunlight: 10⁶ J): 10,000 J</div>
+    </div>
+
+    <div class="info-list">
+      <div class="info-item">
+        <b>What is Measured:</b> The rate of energy flow through each trophic level over time ($J / m^2 / yr$ or $kcal / m^2 / yr$).
+      </div>
+      <div class="info-item">
+        <b>Lindeman's 10% Law:</b> Only about <b>10% of chemical energy</b> stored in biomass at one level is transferred and fixed into the next trophic level.
+      </div>
+      <div class="info-item">
+        <b>Universal Rule:</b> The pyramid of energy is <b>ALWAYS UPRIGHT, NEVER INVERTED</b> in any ecosystem, because energy is irreversibly lost as heat (Thermodynamics).
+      </div>
+    </div>
+
+    <div class="callout-box callout-green">
+      <b>Key Fact:</b> Only 1–5% of incident solar radiation (2–10% of PAR) is captured by producers via photosynthesis!
+    </div>
+  </div>
+
+</div>
+
+<!-- BOTTOM STRIP -->
+<div class="bottom-strip">
+  <div class="strip-col">
+    <div class="strip-title">Limitation 1: Food Web Ignored</div>
+    <div class="strip-desc">Assumes a simple linear food chain, which almost never exists naturally in complex real ecosystems.</div>
+  </div>
+  <div class="divider-v"></div>
+  <div class="strip-col">
+    <div class="strip-title">Limitation 2: Multi-Trophic Species</div>
+    <div class="strip-desc">Cannot accommodate species that belong to multiple trophic levels simultaneously (e.g., sparrow eating seeds & insects).</div>
+  </div>
+  <div class="divider-v"></div>
+  <div class="strip-col">
+    <div class="strip-title">Limitation 3: Saprophytes Excluded</div>
+    <div class="strip-desc">Completely ignores <b>saprophytes and decomposers</b>, despite their vital role in biogeochemical cycling!</div>
   </div>
 </div>
+
 </body>
 </html>
