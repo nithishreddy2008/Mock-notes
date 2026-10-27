@@ -1,100 +1,269 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
+<title>CUET UG Mathematics: Matrix & Determinant Architecture</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Segoe UI', Arial, sans-serif; background: #fff; width: 1480px; }
-  .wrap { width: 1480px; height: 880px; background: #fff; padding: 26px 30px; }
-  .head { display: flex; align-items: baseline; gap: 16px; margin-bottom: 18px; }
-  .head h1 { font-size: 30px; color: #071A4D; font-weight: 800; letter-spacing: .3px; }
-  .head .tag { font-size: 14px; color: #fff; background: #1F5EFF; border-radius: 999px; padding: 5px 14px; font-weight: 700; letter-spacing: 1px; }
-  .cols { display: grid; grid-template-columns: 640px 1fr; gap: 22px; }
-  .zone { background: #FCFDFF; border: 1.5px solid #D5DCEA; border-radius: 14px; padding: 14px 16px; }
-  .zone h2 { font-size: 20px; color: #071A4D; font-weight: 800; margin-bottom: 10px; padding-bottom: 6px; border-bottom: 3px solid #1F5EFF; display: inline-block; }
-  .zone.lime h2 { border-color: #7FB800; }
-  .mgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
-  .mcard { background: #fff; border: 1.5px solid #D5DCEA; border-radius: 10px; padding: 9px 10px 8px; }
-  .mcard .nm { font-size: 15px; font-weight: 800; color: #071A4D; margin-bottom: 5px; }
-  .mcard .fact { font-size: 12.5px; color: #33405C; line-height: 1.3; }
-  .mini { display: grid; gap: 2px; margin-bottom: 6px; }
-  .mini span { width: 15px; height: 15px; border-radius: 3px; background: #E7ECF7; border: 1px solid #B9C4DC; }
-  .mini span.on { background: #1F5EFF; border-color: #1F5EFF; }
-  .mini span.li { background: #B8FF34; border-color: #7FB800; }
-  .rowflex { display: flex; gap: 12px; align-items: flex-start; }
-  .op { display: flex; gap: 12px; margin-bottom: 11px; }
-  .op .k { flex: 0 0 150px; font-size: 14.5px; font-weight: 800; color: #071A4D; padding-top: 2px; }
-  .op .v { font-size: 13.5px; color: #33405C; line-height: 1.38; }
-  .op .v b { color: #071A4D; }
-  .flow { display: flex; flex-direction: column; gap: 8px; }
-  .step { display: flex; align-items: center; gap: 10px; background: #fff; border: 1.5px solid #D5DCEA; border-radius: 10px; padding: 8px 12px; }
-  .step .n { flex: 0 0 30px; height: 30px; border-radius: 50%; background: #071A4D; color: #B8FF34; font-weight: 800; font-size: 15px; display: flex; align-items: center; justify-content: center; }
-  .step .tx { font-size: 13.5px; color: #1B2333; line-height: 1.32; }
-  .step .tx b { color: #071A4D; }
-  .arrowline { text-align: center; color: #1F5EFF; font-size: 16px; font-weight: 800; line-height: 1; margin: -2px 0; }
-  .trap { grid-column: 1 / -1; background: #FFF3EC; border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 16px; margin-top: 4px; }
-  .trap h2 { font-size: 17px; color: #B4380F; font-weight: 800; margin-bottom: 5px; }
-  .traps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px 18px; }
-  .traps div { font-size: 13px; color: #7A2A12; padding-left: 14px; position: relative; line-height: 1.32; }
-  .traps div::before { content: ""; position: absolute; left: 0; top: 6px; width: 7px; height: 7px; border-radius: 50%; background: #D2481F; }
-  .traps b { color: #B4380F; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    background: #071A4D;
+    border-radius: 10px;
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .badge {
+    background: #B8FF34;
+    color: #071A4D;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .header-title {
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+  }
+  .header-right {
+    color: #94A3B8;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .main-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 1.1fr 1fr;
+    gap: 16px;
+    height: 690px;
+  }
+  .card {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 10px;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 8px;
+    border-bottom: 1.5px solid #F1F5F9;
+  }
+  .card-title {
+    font-size: 15px;
+    font-weight: 800;
+    color: #071A4D;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .tag {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+  .tag-blue { background: #EFF6FF; color: #1E40AF; }
+  .tag-green { background: #F0FDF4; color: #166534; }
+  .tag-purple { background: #FAF5FF; color: #6B21A8; }
+  .tag-amber { background: #FFFBEB; color: #92400E; }
+
+  .rule-list {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin-top: 8px;
+  }
+  .rule-item {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    padding: 7px 10px;
+    font-size: 11px;
+    line-height: 1.35;
+    color: #334155;
+  }
+  .rule-item b {
+    color: #071A4D;
+  }
+  .rule-item.hl-green {
+    background: #F0FDF4;
+    border-color: #86EFAC;
+  }
+  .rule-item.hl-purple {
+    background: #FAF5FF;
+    border-color: #D8B4FE;
+  }
+
+  .matrix-badge {
+    background: #E0E7FF;
+    color: #3730A3;
+    font-weight: 800;
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 11px;
+  }
+
+  .footer-note {
+    background: #F1F5F9;
+    border-radius: 6px;
+    padding: 6px 10px;
+    font-size: 10px;
+    color: #475569;
+    text-align: center;
+    font-weight: 600;
+  }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <div class="head">
-    <h1>THE MATRIX &amp; DETERMINANT TOOLKIT</h1>
-    <span class="tag">CUET UG · MATHEMATICS · ALGEBRA</span>
+
+<div class="header">
+  <div class="header-left">
+    <div class="badge">FIGURE 1 · CORE FOUNDATIONS</div>
+    <div class="header-title">Matrix Taxonomy, Algebraic Operations &amp; Determinant Multiplicative Laws</div>
   </div>
-  <div class="cols">
-    <div class="zone">
-      <h2>Know your matrices (order m × n, element aij)</h2>
-      <div class="mgrid">
-        <div class="mcard"><div class="nm">Row</div><div class="mini" style="grid-template-columns:repeat(3,15px)"><span class="on"></span><span class="on"></span><span class="on"></span></div><div class="fact">1 × n — one row</div></div>
-        <div class="mcard"><div class="nm">Column</div><div class="mini" style="grid-template-columns:15px"><span class="on"></span><span class="on"></span><span class="on"></span></div><div class="fact">n × 1 — one column</div></div>
-        <div class="mcard"><div class="nm">Square</div><div class="mini" style="grid-template-columns:repeat(2,15px)"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span></div><div class="fact">n × n — rows = columns; only these have determinants</div></div>
-        <div class="mcard"><div class="nm">Zero O</div><div class="mini" style="grid-template-columns:repeat(2,15px)"><span></span><span></span><span></span><span></span></div><div class="fact">every entry 0; add/subtract identity element</div></div>
-        <div class="mcard"><div class="nm">Diagonal</div><div class="mini" style="grid-template-columns:repeat(2,15px)"><span class="on"></span><span></span><span></span><span class="on"></span></div><div class="fact">non-zero only on the main diagonal</div></div>
-        <div class="mcard"><div class="nm">Scalar / Identity</div><div class="mini" style="grid-template-columns:repeat(2,15px)"><span class="li"></span><span></span><span></span><span class="li"></span></div><div class="fact">diagonal with equal entries k; k = 1 gives I — the multiplication identity</div></div>
-        <div class="mcard"><div class="nm">Symmetric</div><div class="mini" style="grid-template-columns:repeat(2,15px)"><span class="on"></span><span class="li"></span><span class="li"></span><span class="on"></span></div><div class="fact">A&#8242; = A — mirror across the main diagonal</div></div>
-        <div class="mcard"><div class="nm">Skew-symmetric</div><div class="mini" style="grid-template-columns:repeat(2,15px)"><span></span><span class="li"></span><span class="li"></span><span></span></div><div class="fact">A&#8242; = −A; diagonal must be 0; odd order ⇒ |A| = 0</div></div>
-        <div class="mcard"><div class="nm">Triangular</div><div class="mini" style="grid-template-columns:repeat(2,15px)"><span class="on"></span><span class="on"></span><span></span><span class="on"></span></div><div class="fact">upper: zeros below diagonal; lower: zeros above</div></div>
+  <div class="header-right">NTA CUET UG Section B1 · Class 12 Mathematics · Unit II</div>
+</div>
+
+<div class="main-grid">
+  <!-- Card 1: Matrix Taxonomy -->
+  <div class="card">
+    <div>
+      <div class="card-header">
+        <div class="card-title">1. Matrix Taxonomy &amp; Special Types</div>
+        <span class="tag tag-blue">Structures</span>
       </div>
-    </div>
-    <div style="display:flex;flex-direction:column;gap:16px;">
-      <div class="zone lime">
-        <h2>Operations — what obeys rules, what breaks them</h2>
-        <div class="op"><div class="k">Add / subtract</div><div class="v"><b>Same order only</b>; add element-wise. A + O = A, A + (−A) = O.</div></div>
-        <div class="op"><div class="k">Scalar multiply</div><div class="v">k hits <b>every</b> entry. k(A + B) = kA + kB.</div></div>
-        <div class="op"><div class="k">Multiply A·B</div><div class="v"><b>Row × column</b> dot products; shapes must chain: (m×n)(n×p) = m×p. <b>Not commutative:</b> AB ≠ BA in general. <b>AB = O is possible with A ≠ O, B ≠ O</b> (e.g. <b>A</b>=[1 1; 2 2], <b>B</b>=[1 1; −1 −1]). No cancelling: AB = AC ⇏ B = C.</div></div>
-        <div class="op"><div class="k">Transpose A&#8242;</div><div class="v">Rows become columns. (A&#8242;)&#8242; = A, (A + B)&#8242; = A&#8242; + B&#8242;, (kA)&#8242; = kA&#8242;, <b>(AB)&#8242; = B&#8242;A&#8242;</b> (order flips!).</div></div>
-        <div class="op"><div class="k">Split any square A</div><div class="v">A = P + Q with P = ½(A + A&#8242;) symmetric, Q = ½(A − A&#8242;) skew-symmetric.</div></div>
-      </div>
-      <div class="zone">
-        <h2>The determinant → inverse → solve pipeline</h2>
-        <div class="flow">
-          <div class="step"><div class="n">1</div><div class="tx"><b>Determinant |A|</b> — 2×2: ad − bc. 3×3: expand along a row with cofactors (−1)ⁱ⁺ʲ Mij.</div></div>
-          <div class="arrowline">▼</div>
-          <div class="step"><div class="n">2</div><div class="tx"><b>Adjoint</b> — replace entries by cofactors, then transpose. A·adj A = |A|·I and |adj A| = |A|&#8319;&#8315;&#185;.</div></div>
-          <div class="arrowline">▼</div>
-          <div class="step"><div class="n">3</div><div class="tx"><b>Inverse</b> — A&#8315;&#185; = adj A / |A|, exists only when |A| ≠ 0 (non-singular). Unique.</div></div>
-          <div class="arrowline">▼</div>
-          <div class="step"><div class="n">4</div><div class="tx"><b>Solve AX = B</b> — X = A&#8315;&#185;B, a unique solution. If |A| = 0: no solution (inconsistent) or infinitely many.</div></div>
+
+      <div class="rule-list">
+        <div class="rule-item">
+          <b>Square Matrix (n &times; n):</b> Number of rows equals number of columns. Only square matrices possess determinants, traces, and inverses.
+        </div>
+        <div class="rule-item">
+          <b>Diagonal Matrix:</b> <i>a<sub>ij</sub></i> = 0 for all <i>i</i> &ne; <i>j</i>. Non-zero entries exist exclusively on the main diagonal.
+        </div>
+        <div class="rule-item">
+          <b>Scalar &amp; Identity Matrix:</b> Diagonal entries equal constant <i>k</i>. If <i>k</i> = 1, it forms the Identity matrix <i>I<sub>n</sub></i> (multiplicative identity: <i>AI = IA = A</i>).
+        </div>
+        <div class="rule-item hl-green">
+          <b>Symmetric Matrix:</b> <i>A<sup>T</sup> = A</i> (i.e., <i>a<sub>ij</sub> = a<sub>ji</sub></i>). Mirror symmetry across main diagonal. Any square matrix <i>A</i> can be uniquely written as:
+          <br><span class="matrix-badge">A = &frac12;(A + Aᵀ) + &frac12;(A - Aᵀ)</span>
+        </div>
+        <div class="rule-item">
+          <b>Skew-Symmetric Matrix:</b> <i>A<sup>T</sup> = -A</i> (i.e., <i>a<sub>ij</sub> = -a<sub>ji</sub></i>).
+          <br>• Diagonal entries must be zero (<i>a<sub>ii</sub> = 0</i>).
+          <br>• <b>Key Theorem:</b> For an odd order skew-symmetric matrix, <span class="matrix-badge">det(A) = 0</span> identically!
         </div>
       </div>
     </div>
+
+    <div class="footer-note">
+      Trace of square matrix Tr(A) = &sum; a<sub>ii</sub> (sum of principal diagonal elements).
+    </div>
   </div>
-  <div class="trap">
-    <h2>TRAPS THE OPTIONS ARE BUILT AROUND</h2>
-    <div class="traps">
-      <div><b>|kA| = kⁿ|A|</b>, not k|A| — the power is the order</div>
-      <div><b>(A + B)² ≠ A² + 2AB + B²</b> — expand honestly: A² + AB + BA + B²</div>
-      <div><b>AB = O ⇏ A = O or B = O</b> — zero divisors exist</div>
-      <div><b>AB = AC ⇏ B = C</b> — no cancellation law for matrices</div>
-      <div><b>Symmetric + skew test:</b> diagonal of a skew matrix must be 0</div>
-      <div><b>|A&#8242;| = |A|</b> and <b>|AB| = |A||B|</b> — free marks, often forgotten</div>
+
+  <!-- Card 2: Operations Engine -->
+  <div class="card">
+    <div>
+      <div class="card-header">
+        <div class="card-title">2. Matrix Operations &amp; Inversion</div>
+        <span class="tag tag-green">Algebra</span>
+      </div>
+
+      <div class="rule-list">
+        <div class="rule-item">
+          <b>Addition &amp; Scalar Multiplication:</b>
+          <br>• Addition requires <b>identical dimensions</b> (<i>m &times; n</i>). Commutative &amp; associative.
+          <br>• Scalar <i>k</i> multiplies <b>every single element</b>: (<i>kA</i>)<sub><i>ij</i></sub> = <i>k a<sub>ij</sub></i>.
+        </div>
+        <div class="rule-item hl-purple">
+          <b>Matrix Multiplication (AB):</b>
+          <br>Inner dimensions must match: (<i>m &times; n</i>)(<i>n &times; p</i>) &rarr; (<i>m &times; p</i>).
+          <br>• <b>Non-Commutative:</b> In general, <span class="matrix-badge">AB &ne; BA</span>.
+          <br>• <b>Zero Divisors:</b> <i>AB = O</i> does <b>not</b> imply <i>A = O</i> or <i>B = O</i>. Two non-zero matrices can multiply to yield the zero matrix!
+        </div>
+        <div class="rule-item">
+          <b>Transpose Reversal Law:</b>
+          <br><span class="matrix-badge">(AB)ᵀ = Bᵀ Aᵀ</span> and <span class="matrix-badge">(ABC)ᵀ = Cᵀ Bᵀ Aᵀ</span>.
+        </div>
+        <div class="rule-item">
+          <b>Matrix Inversion Formula:</b>
+          <br>A square matrix <i>A</i> is invertible <i>if and only if</i> <span class="matrix-badge">det(A) &ne; 0</span> (non-singular):
+          <br><span class="matrix-badge">A⁻¹ = adj(A) / det(A)</span> &nbsp;|&nbsp; <span class="matrix-badge">(AB)⁻¹ = B⁻¹ A⁻¹</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-note">
+      Cancellation Trap: AB = AC does NOT imply B = C unless A is non-singular!
+    </div>
+  </div>
+
+  <!-- Card 3: Determinants & Power Laws -->
+  <div class="card">
+    <div>
+      <div class="card-header">
+        <div class="card-title">3. Determinant Multiplicative Laws</div>
+        <span class="tag tag-purple">High-Yield Rules</span>
+      </div>
+
+      <div class="rule-list">
+        <div class="rule-item">
+          <b>Product Rule:</b>
+          <br><span class="matrix-badge">|AB| = |A| &middot; |B|</span> (Holds for square matrices of equal order).
+        </div>
+        <div class="rule-item" style="background: #FFFBEB; border-color: #FDE68A;">
+          <b>Scalar Scaling Law (Order n):</b>
+          <br><span class="matrix-badge">|kA| = kⁿ |A|</span>
+          <br>Each of the <i>n</i> rows pulls out a factor of <i>k</i>. (Very common CUET trap!).
+        </div>
+        <div class="rule-item">
+          <b>Transpose &amp; Inverse Determinants:</b>
+          <br>• <span class="matrix-badge">|Aᵀ| = |A|</span> (Rows &amp; columns interchanged leaves det invariant).
+          <br>• <span class="matrix-badge">|A⁻¹| = 1 / |A|</span> = (|A|)⁻¹.
+        </div>
+        <div class="rule-item hl-green">
+          <b>Adjoint Determinant Power Laws (Order n):</b>
+          <br>• <span class="matrix-badge">|adj(A)| = |A|ⁿ⁻¹</span>
+          <br>• <span class="matrix-badge">|adj(adj(A))| = |A|⁽ⁿ⁻¹⁾²</span>
+          <br>• <span class="matrix-badge">adj(adj(A)) = |A|ⁿ⁻² A</span>
+        </div>
+        <div class="rule-item">
+          <b>Fundamental Adjoint Identity:</b>
+          <br><span class="matrix-badge">A &middot; adj(A) = adj(A) &middot; A = |A| Iₙ</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-note">
+      For 3&times;3 matrix with |A| = 4: |2A| = 2³(4) = 32; |adj(A)| = 4² = 16!
     </div>
   </div>
 </div>
+
 </body>
 </html>

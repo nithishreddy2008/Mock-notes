@@ -1,115 +1,307 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
+<title>CUET UG Mathematics: Matrices & Determinants Mindmap</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
-  .wrap { width: 1480px; height: 1080px; position: relative; background: #fff; }
-  svg.wires { position: absolute; inset: 0; width: 1480px; height: 1080px; }
-  .center {
-    position: absolute; left: 520px; top: 470px; width: 440px; height: 104px;
-    background: #071A4D; border-radius: 16px; display: flex; flex-direction: column;
-    align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(7,26,77,.25);
-    border-bottom: 5px solid #B8FF34;
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
-  .center .t { color: #fff; font-size: 19px; font-weight: 800; letter-spacing: .5px; text-align: center; }
-  .center .s { color: #B8FF34; font-size: 13px; font-weight: 700; letter-spacing: 2px; margin-top: 4px; }
+  .header {
+    background: #071A4D;
+    border-radius: 10px;
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .badge {
+    background: #B8FF34;
+    color: #071A4D;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .header-title {
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+  }
+  .header-right {
+    color: #94A3B8;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .main-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    height: 690px;
+  }
   .card {
-    position: absolute; width: 465px; background: #FCFDFF; border: 1.5px solid #D5DCEA;
-    border-radius: 14px; padding: 13px 16px 12px;
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 10px;
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
-  .card h2 { font-size: 19px; color: #071A4D; font-weight: 800; margin-bottom: 7px;
-             padding-bottom: 5px; border-bottom: 3px solid; display: inline-block; }
-  .leaf { font-size: 14px; color: #1B2333; margin: 5px 0; padding-left: 16px; position: relative; line-height: 1.32; }
-  .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
-  .b .leaf::before { background: #1F5EFF; }
-  .l .leaf::before { background: #7FB800; }
-  .leaf b { color: #071A4D; }
-  .b h2 { border-color: #1F5EFF; }
-  .l h2 { border-color: #7FB800; }
-  .left { left: 30px; }
-  .right { left: 985px; }
-  .exc {
-    position: absolute; left: 470px; top: 905px; width: 540px; background: #FFF3EC;
-    border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px;
+  .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 8px;
+    border-bottom: 1.5px solid #F1F5F9;
   }
-  .exc h2 { font-size: 17px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
-  .exc .leaf { font-size: 13px; margin: 3px 0; padding-left: 14px; color: #7A2A12; }
-  .exc .leaf::before { background: #D2481F; }
-  .exc b { color: #B4380F; }
+  .card-title {
+    font-size: 14px;
+    font-weight: 800;
+    color: #071A4D;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .tag {
+    font-size: 9.5px;
+    font-weight: 700;
+    padding: 3px 6px;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+  .tag-blue { background: #EFF6FF; color: #1E40AF; }
+  .tag-green { background: #F0FDF4; color: #166534; }
+  .tag-purple { background: #FAF5FF; color: #6B21A8; }
+  .tag-amber { background: #FFFBEB; color: #92400E; }
+
+  .content-list {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin-top: 8px;
+  }
+  .node {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    padding: 7px 9px;
+    font-size: 11px;
+    line-height: 1.35;
+    color: #334155;
+  }
+  .node b {
+    color: #071A4D;
+  }
+  .node.highlight {
+    background: #F0FDF4;
+    border-color: #86EFAC;
+  }
+  .node.purple-hl {
+    background: #FAF5FF;
+    border-color: #D8B4FE;
+  }
+  .node.amber-hl {
+    background: #FFFBEB;
+    border-color: #FDE68A;
+  }
+  .code-badge {
+    font-family: monospace;
+    font-weight: 800;
+    font-size: 10.5px;
+    background: #E2E8F0;
+    color: #1E293B;
+    padding: 1px 4px;
+    border-radius: 3px;
+  }
+
+  .footer-note {
+    background: #F1F5F9;
+    border-radius: 6px;
+    padding: 5px 8px;
+    font-size: 10px;
+    color: #475569;
+    text-align: center;
+    font-weight: 600;
+  }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <svg class="wires" viewBox="0 0 1480 1080">
-    <path d="M 520 505 C 470 505, 495 158, 500 155" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
-    <path d="M 520 520 C 480 520, 495 438, 500 438" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 520 535 C 470 535, 495 718, 500 718" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
-    <path d="M 960 505 C 1010 505, 985 158, 980 155" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 960 520 C 1000 520, 985 438, 980 438" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
-    <path d="M 960 535 C 1010 535, 985 718, 980 718" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 740 574 C 740 700, 740 830, 740 903" fill="none" stroke="#D2481F" stroke-width="2.5" stroke-dasharray="7 5" opacity=".6"/>
-  </svg>
 
-  <div class="center">
-    <div class="t">ALGEBRA — MATRICES &amp; DETERMINANTS</div>
-    <div class="s">CUET UG MATHEMATICS</div>
+<div class="header">
+  <div class="header-left">
+    <div class="badge">FIGURE 3 · CHAPTER SYNTHESIS</div>
+    <div class="header-title">Matrices, Determinants &amp; Linear Systems: Master Architecture Mindmap</div>
+  </div>
+  <div class="header-right">NTA CUET UG Section B1 · Class 12 Mathematics · Unit II</div>
+</div>
+
+<div class="main-grid">
+  <!-- Pillar 1: Matrix Foundations -->
+  <div class="card">
+    <div>
+      <div class="card-header">
+        <div class="card-title">1. Matrix Taxonomy</div>
+        <span class="tag tag-blue">Structures</span>
+      </div>
+
+      <div class="content-list">
+        <div class="node">
+          <b>Matrix Definition:</b>
+          <br>Rectangular array of <i>m &times; n</i> elements arranged in <i>m</i> rows and <i>n</i> columns.
+        </div>
+        <div class="node">
+          <b>Special Types:</b>
+          <br>• <i>Diagonal:</i> <i>a<sub>ij</sub> = 0</i> for all <i>i &ne; j</i>
+          <br>• <i>Scalar:</i> Diagonal entries equal <i>k</i>
+          <br>• <i>Identity (Iₙ):</i> <i>k = 1</i>; <i>AI = IA = A</i>
+        </div>
+        <div class="node highlight">
+          <b>Symmetric &amp; Skew-Symmetric:</b>
+          <br>• Symmetric: <span class="code-badge">Aᵀ = A</span>
+          <br>• Skew-symmetric: <span class="code-badge">Aᵀ = -A</span>
+          <br>• <i>a<sub>ii</sub> = 0</i> on diagonal; odd order has <span class="code-badge">|A| = 0</span>.
+        </div>
+        <div class="node">
+          <b>Decomposition Theorem:</b>
+          <br><span class="code-badge">A = &frac12;(A + Aᵀ) + &frac12;(A - Aᵀ)</span>
+          <br>(Unique sum of symmetric and skew-symmetric parts).
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-note">
+      Trace Tr(A) = sum of main diagonal entries.
+    </div>
   </div>
 
-  <div class="card left b" style="top:58px">
-    <h2>Matrix Basics</h2>
-    <div class="leaf"><b>Order:</b> m × n = m rows, n columns; element a<sub>ij</sub> sits in row i, column j</div>
-    <div class="leaf"><b>Equality:</b> same order + every entry equal — how you build "find x, y" questions</div>
-    <div class="leaf"><b>Types:</b> row, column, square, zero O, diagonal, scalar, identity I, triangular</div>
-    <div class="leaf"><b>Symmetric:</b> A&#8242; = A · <b>Skew:</b> A&#8242; = −A, so its diagonal is all 0</div>
+  <!-- Pillar 2: Matrix Algebra -->
+  <div class="card">
+    <div>
+      <div class="card-header">
+        <div class="card-title">2. Matrix Algebra</div>
+        <span class="tag tag-green">Operations</span>
+      </div>
+
+      <div class="content-list">
+        <div class="node">
+          <b>Matrix Multiplication (AB):</b>
+          <br>(<i>m &times; n</i>)(<i>n &times; p</i>) &rarr; (<i>m &times; p</i>).
+          <br>• Non-commutative: <span class="code-badge">AB &ne; BA</span>
+          <br>• Zero divisors: <i>AB = O</i> does NOT imply <i>A = O</i> or <i>B = O</i>!
+        </div>
+        <div class="node">
+          <b>Transpose Reversal Law:</b>
+          <br><span class="code-badge">(AB)ᵀ = Bᵀ Aᵀ</span>
+          <br><span class="code-badge">(ABC)ᵀ = Cᵀ Bᵀ Aᵀ</span>
+        </div>
+        <div class="node highlight">
+          <b>Matrix Inversion:</b>
+          <br>A square matrix is invertible &hArr; <span class="code-badge">|A| &ne; 0</span> (non-singular).
+          <br><span class="code-badge">A⁻¹ = adj(A) / |A|</span>
+          <br>Reversal Law: <span class="code-badge">(AB)⁻¹ = B⁻¹ A⁻¹</span>.
+        </div>
+        <div class="node">
+          <b>Orthogonal Matrix:</b>
+          <br><span class="code-badge">A Aᵀ = Aᵀ A = I</span> &rArr; <span class="code-badge">A⁻¹ = Aᵀ</span>.
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-note">
+      Cancellation rule: AB = AC &rArr; B = C only if |A| &ne; 0.
+    </div>
   </div>
 
-  <div class="card right b" style="top:58px">
-    <h2>Matrix Operations</h2>
-    <div class="leaf"><b>Add / subtract:</b> same order only, element-wise</div>
-    <div class="leaf"><b>Scalar k:</b> multiplies every entry</div>
-    <div class="leaf"><b>Product AB:</b> rows of A dot columns of B; (m×n)(n×p) = m×p</div>
-    <div class="leaf"><b>Breaks algebra:</b> AB ≠ BA; AB = O possible with A, B ≠ O; AB = AC ⇏ B = C</div>
+  <!-- Pillar 3: Determinant Properties -->
+  <div class="card">
+    <div>
+      <div class="card-header">
+        <div class="card-title">3. Determinant Rules</div>
+        <span class="tag tag-purple">Multiplicative Laws</span>
+      </div>
+
+      <div class="content-list">
+        <div class="node purple-hl">
+          <b>Core Multiplicative Laws:</b>
+          <br>• Product: <span class="code-badge">|AB| = |A| &middot; |B|</span>
+          <br>• Transpose: <span class="code-badge">|Aᵀ| = |A|</span>
+          <br>• Inverse: <span class="code-badge">|A⁻¹| = 1 / |A|</span>
+        </div>
+        <div class="node">
+          <b>Scalar Factor (Order n):</b>
+          <br><span class="code-badge">|kA| = kⁿ |A|</span>
+          <br>(Each of the <i>n</i> rows pulls out factor <i>k</i>).
+        </div>
+        <div class="node purple-hl">
+          <b>Adjoint Power Laws (Order n):</b>
+          <br>• <span class="code-badge">|adj(A)| = |A|ⁿ⁻¹</span>
+          <br>• <span class="code-badge">|adj(adj(A))| = |A|⁽ⁿ⁻¹⁾²</span>
+          <br>• <span class="code-badge">adj(adj(A)) = |A|ⁿ⁻² A</span>
+        </div>
+        <div class="node">
+          <b>Cofactor Expansion:</b>
+          <br>• Same row: &sum; <i>a<sub>ij</sub> A<sub>ij</sub> = |A|</i>
+          <br>• Other row: &sum; <i>a<sub>ij</sub> A<sub>kj</sub> = 0</i>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-note">
+      For n=3: |adj(A)| = |A|²; |adj(adj(A))| = |A|⁴.
+    </div>
   </div>
 
-  <div class="card left l" style="top:350px">
-    <h2>Transpose &amp; Symmetry</h2>
-    <div class="leaf"><b>Laws:</b> (A&#8242;)&#8242; = A, (A + B)&#8242; = A&#8242; + B&#8242;, (kA)&#8242; = kA&#8242;, (AB)&#8242; = B&#8242;A&#8242;</div>
-    <div class="leaf"><b>Split:</b> A = ½(A + A&#8242;) + ½(A − A&#8242;) = symmetric + skew</div>
-    <div class="leaf"><b>Build tests:</b> A + A&#8242; is always symmetric, A − A&#8242; always skew</div>
-  </div>
+  <!-- Pillar 4: Linear Systems -->
+  <div class="card">
+    <div>
+      <div class="card-header">
+        <div class="card-title">4. Linear Systems &amp; Solvers</div>
+        <span class="tag tag-amber">AX = B</span>
+      </div>
 
-  <div class="card right l" style="top:350px">
-    <h2>Determinants</h2>
-    <div class="leaf"><b>2×2:</b> |A| = ad − bc · <b>3×3:</b> expand along a row via cofactors</div>
-    <div class="leaf"><b>Properties:</b> row swap flips sign; two equal rows ⇒ 0; |A&#8242;| = |A|; |AB| = |A||B|</div>
-    <div class="leaf"><b>|kA| = kⁿ|A|</b> — the exponent is the matrix order</div>
-    <div class="leaf"><b>Area of triangle</b> = ½|det|; zero determinant ⇔ collinear points</div>
-  </div>
+      <div class="content-list">
+        <div class="node amber-hl">
+          <b>Consistency Classification:</b>
+          <br>• <b>|A| &ne; 0:</b> Consistent &amp; Unique solution <span class="code-badge">X = A⁻¹ B</span>.
+          <br>• <b>|A| = 0 &amp; (adj A)B &ne; O:</b> Inconsistent (No solution).
+          <br>• <b>|A| = 0 &amp; (adj A)B = O:</b> Infinitely many solutions.
+        </div>
+        <div class="node">
+          <b>Cramer's Rule:</b>
+          <br><span class="code-badge">x = Dₓ / D</span>, &nbsp; <span class="code-badge">y = Dᵧ / D</span>, &nbsp; <span class="code-badge">z = D_z / D</span>
+        </div>
+        <div class="node">
+          <b>Geometric Applications:</b>
+          <br>• Triangle Area: <span class="code-badge">&Delta; = &frac12; det([x y 1])</span>
+          <br>• Collinearity of 3 points &hArr; <span class="code-badge">&Delta; = 0</span>.
+          <br>• Line equation through 2 points via det = 0.
+        </div>
+      </div>
+    </div>
 
-  <div class="card left b" style="top:642px">
-    <h2>Adjoint &amp; Inverse</h2>
-    <div class="leaf"><b>adj A</b> = transpose of the cofactor matrix</div>
-    <div class="leaf"><b>A(adj A) = |A| I</b> — the identity that powers everything</div>
-    <div class="leaf"><b>A&#8315;&#185; = adj A / |A|</b> exists iff |A| ≠ 0 (non-singular), and is unique</div>
-    <div class="leaf"><b>2×2 shortcut:</b> swap diagonal, negate the other two, divide by |A|</div>
-  </div>
-
-  <div class="card right b" style="top:642px">
-    <h2>The Matrix Method (AX = B)</h2>
-    <div class="leaf"><b>Write</b> the system as AX = B with A = coefficients, X = variables, B = constants</div>
-    <div class="leaf"><b>|A| ≠ 0:</b> unique solution X = A&#8315;&#185;B — solve in one multiplication</div>
-    <div class="leaf"><b>|A| = 0:</b> either no solution (inconsistent) or infinitely many</div>
-    <div class="leaf"><b>Check:</b> substitute the answer pair into the original equations</div>
-  </div>
-
-  <div class="exc">
-    <h2>TOP TRAPS</h2>
-    <div class="leaf"><b>|kA|</b> is kⁿ|A|, never k|A|</div>
-    <div class="leaf"><b>(A + B)²</b> ≠ A² + 2AB + B² because AB ≠ BA</div>
-    <div class="leaf"><b>Odd-order skew-symmetric</b> ⇒ |A| = 0, so no inverse</div>
+    <div class="footer-note">
+      Homogeneous AX = O: non-trivial solutions &hArr; |A| = 0.
+    </div>
   </div>
 </div>
+
 </body>
 </html>

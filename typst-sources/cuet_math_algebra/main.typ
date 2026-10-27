@@ -3,300 +3,575 @@
 #show: om-doc.with(
   exam: "CUET UG",
   subject: "Mathematics",
-  topic-title: "Algebra",
-  subtitle: "Matrices, Determinants and the Matrix Method · Section A 1 + B1 II + B2 II · CUET UG 2027 Cycle Notes",
+  topic-title: "Algebra: Matrices & Determinants",
+  subtitle: "Matrix Taxonomy, Algebraic Operations, Inverses, Determinant Power Laws & Linear Systems · Section A Unit 1 & Section B1 Unit II",
 )
 
-= Syllabus Alignment
+#set text(size: 8.4pt)
+#set par(leading: 0.38em, spacing: 0.40em)
+#set table(inset: (x: 4pt, y: 1.6pt))
+
+= Syllabus Alignment & Exam Blueprint
 
 #table(
-  columns: (0.95fr, 1.9fr, 1.25fr),
-  table.header[*Sub-topic*][*Official syllabus pointer (NTA CUET(UG) 2026 syllabus — Mathematics/Applied Mathematics (319), the current 2027 baseline)*][*Skills the questions test*],
-  [*Matrices — concept, notation, types*], [
-    "Concept, notation, order, equality, types of matrices, zero matrix, transpose of a matrix, symmetric and skew symmetric matrices." (Section A Unit 1; Section B1 Mathematics Unit II)
-  ], [
-    Naming a matrix's type on sight; building matrices from conditions like $a_(i j) = i + j$; extracting unknowns from equality.
-  ],
-  [*Operations on matrices*], [
-    "Operations on matrices: Addition, multiplication and multiplication with a scalar. Simple properties of addition, multiplication and scalar multiplication. Non-commutativity of multiplication of matrices and existence of non-zero matrices whose product is the zero matrix (restrict to square matrices of order 2). Invertible matrices and proof of the uniqueness of inverse, if it exists." (Section B1 Mathematics Unit II)
-  ], [
-    Computing products fast and safely; spotting AB = BA or AB = O cases; using transpose laws without expanding.
-  ],
-  [*Determinants, adjoint and inverse*], [
-    "Determinant of a square matrix (up to 3 × 3 matrices), minors, cofactors and applications of determinants in finding the area of a triangle. Adjoint and inverse of a square matrix." (Section B1 Mathematics Unit II; Section B2 Applied Mathematics Unit II)
-  ], [
-    Evaluating 2 × 2 and 3 × 3 determinants; triangle-area and collinearity checks; two-step inverse construction.
-  ],
-  [*Solving linear systems by the matrix method*], [
-    "Consistency, inconsistency and number of solutions of system of linear equations by examples, solving system of linear equations in two or three variables (having unique solution) using inverse of a matrix." (Section B1 Mathematics Unit II)
-  ], [
-    Writing AX = B from a worded system; deciding unique / no / infinite solutions from $abs(A)$; finishing with $X = A^(-1) B$.
-  ],
+  columns: (1.1fr, 1.8fr, 1.1fr),
+  table.header[*Sub-Topic / Domain*][*Official NTA CUET UG Syllabus Scope (Mathematics 319)*][*Exam Cognitive Focus*],
+  [*Matrix Concept & Types*],
+  [Concept, notation, order $m times n$, equality of matrices; Types: Column, Row, Square, Diagonal, Scalar, Identity, Zero; Transpose of a matrix, Symmetric and Skew-symmetric matrices; Decomposition into symmetric and skew-symmetric parts.],
+  [Identifying matrix types on sight; extracting unknowns from matrix equality; applying skew-symmetric odd-order zero determinant rule; verifying $A = 1/2(A + A^T) + 1/2(A - A^T)$.],
+  [*Matrix Operations & Inverses*],
+  [Addition and scalar multiplication; Properties of addition and scalar multiplication; Matrix multiplication, non-commutativity ($A B != B A$), existence of zero divisors ($A B = O$ with $A, B != O$); Transpose reversal law $(A B)^T = B^T A^T$; Invertible matrices and uniqueness of inverse; Inversion reversal law $(A B)^(-1) = B^(-1) A^(-1)$.],
+  [Dimensional conformability for multiplication; calculating powers of matrices; distinguishing zero divisors from zero scalars; executing $2 times 2$ and $3 times 3$ matrix inverses.],
+  [*Determinants & Minors/Cofactors*],
+  [Determinant of a square matrix (up to $3 times 3$); Minors and Cofactors; Cofactor expansion theorem; Orthogonal expansion identity ($sum a_(i j) A_(k j) = 0$ for $i != k$); Multiplicative determinant laws: $|A B| = |A||B|$, $|k A| = k^n |A|$, $|A^T| = |A|$, $|A^(-1)| = 1 / |A|$.],
+  [Evaluating $3 times 3$ determinants rapidly; applying the scalar scaling power law $k^n$; identifying zero determinants from proportional rows; evaluating orthogonal cofactor sums.],
+  [*Adjoint & Invertibility Theorems*],
+  [Adjoint of a square matrix $"adj"(A) = [A_(i j)]^T$; Fundamental identity $A dot "adj"(A) = "adj"(A) dot A = |A| I_n$; Singular ($|A| = 0$) and Non-singular ($|A| != 0$) matrices; Adjoint power laws: $|"adj"(A)| = |A|^(n-1)$, $|"adj"("adj"(A))| = |A|^((n-1)^2)$, $"adj"("adj"(A)) = |A|^(n-2) A$.],
+  [Using $2 times 2$ lightning inverse shortcut; evaluating determinant power laws of nested adjoints without expanding elements.],
+  [*Linear Systems & Geometry*],
+  [Consistency, inconsistency, and number of solutions of systems of linear equations ($A X = B$); Solving systems with unique solutions via matrix inversion $X = A^(-1) B$; Cramer's rule; Applications in area of triangle and collinearity checks.],
+  [Classifying systems via $|A|$ and $("adj"(A)) B$; solving $2$ and $3$ variable systems; computing triangle areas and unknown vertex coordinates with $plus.minus$ area.],
 )
 
 #exam-pointer[
-  CUET UG pattern (NTA official information bulletin, 2026 cycle — the current 2027
-  baseline): each subject paper carries *50 compulsory questions* in *60 minutes*,
-  with $+5$ for every correct answer and $-1$ for every incorrect answer. The
-  official 2026 syllabus for Mathematics/Applied Mathematics publishes this unit as
-  *Section A Unit 1 (compulsory for every candidate)* and again as *Section B1 Unit
-  II* and *Section B2 Unit II* — whichever section you sit, matrices and
-  determinants are on the table, so this chapter pays everywhere.
+  *CUET UG Scoring Blueprint:* Algebra (Matrices and Determinants) is universally mandatory across both the Common Section A (Unit 1) and the Domain Section B1 (Unit II) / Section B2 (Unit II). Candidates will encounter *5 to 8 questions (25 to 40 marks)* from this unit alone. Core NTA focus areas include: *determinant scalar power laws ($|k A| = k^n |A|$)*, *adjoint determinant powers ($|A|^(n-1)$)*, *inconsistency testing when $|A| = 0$*, and *reverse-order transposition/inversion laws*.
 ]
 
-= What a Matrix Is — and the Types You Must Name
+#pagebreak()
+#set text(size: 9.2pt)
+#set par(leading: 0.48em, spacing: 0.52em)
+#set table(inset: (x: 4pt, y: 2.0pt))
 
-A matrix is just a *rectangular grid of numbers* — the mathematics version of a class seating chart: rows run across, columns run down. We write a matrix as $A = [a_(i j)]_(m times n)$, where the *order* $m times n$ says $m$ rows and $n$ columns, and the element $a_(i j)$ sits in row $i$, column $j$. Two matrices are *equal* only when they have the same order *and* every matching pair of entries is equal — which is exactly how "find $x$ and $y$" questions are built. Nothing about a matrix is scary: it is a table with rules.
+= Matrix Foundations, Classification & Special Types
 
-#table(
-  columns: (0.85fr, 1.6fr, 1.4fr),
-  table.header[*Type*][*Definition*][*Tiny example or test*],
-  [*Row matrix*], [Exactly one row, any number of columns.], [$[1 quad 4 quad 9]_{1 times 3}$],
-  [*Column matrix*], [Exactly one column.], [$[2; 5]_{2 times 1}$],
-  [*Square matrix*], [Rows = columns; only these have *determinants* and inverses.], [$2 times 2, 3 times 3$],
-  [*Zero matrix O*], [Every entry is 0; the additive identity.], [$A + O = A$],
-  [*Diagonal matrix*], [Square; non-zero entries only on the main diagonal.], [$[3, 0; 0, 7]$],
-  [*Scalar matrix*], [Diagonal with *equal* diagonal entries $k$.], [$[k, 0; 0, k]$],
-  [*Identity I*], [Scalar matrix with $k = 1$; the multiplication identity.], [$A I = I A = A$],
-  [*Symmetric*], [Square with $A' = A$ — mirror image across the diagonal.], [$a_(i j) = a_(j i)$ must hold],
-  [*Skew-symmetric*], [Square with $A' = -A$; forces *every diagonal entry to be 0*.], [$a_(i i) = 0$ for all $i$],
+== 1. Mathematical Definition & Order
+A *matrix* is an ordered rectangular array of numbers, symbols, or functions arranged in horizontal rows and vertical columns:
+$ A = [a_(i j)]_(m times n) = mat(
+  a_(11), a_(12), dots, a_(1n);
+  a_(21), a_(22), dots, a_(2n);
+  dots.v, dots.v, dots.down, dots.v;
+  a_(m 1), a_(m 2), dots, a_(m n)
+) $
+The matrix has $m$ rows and $n$ columns; its *order* (or dimension) is denoted by $m times n$, containing exactly $m n$ total elements.
+- *Equality of Matrices:* Two matrices $A = [a_(i j)]$ and $B = [b_(i j)]$ are *equal* ($A = B$) if and only if:
+  1. They have identical orders ($m_A = m_B$ and $n_A = n_B$).
+  2. Every corresponding entry is equal: $a_(i j) = b_(i j)$ for all $i, j$.
+
+== 2. Systematic Taxonomy of Matrix Types
+- *Row Matrix:* Contains exactly one row: order $1 times n$. (e.g., $[1 quad 4 quad 9]_{1 times 3}$).
+- *Column Matrix:* Contains exactly one column: order $m times 1$. (e.g., $[2; 5; 7]_{3 times 1}$).
+- *Square Matrix:* Number of rows equals number of columns ($m = n$). Only square matrices possess determinants, traces, and inverses. The elements $a_(11), a_(22), dots, a_(n n)$ form the *principal diagonal*.
+- *Diagonal Matrix:* A square matrix where all non-diagonal elements are zero: $a_(i j) = 0$ for all $i != j$.
+- *Scalar Matrix:* A diagonal matrix where all diagonal entries are equal to a constant $k$: $a_(i i) = k$ and $a_(i j) = 0$ ($i != j$).
+- *Identity Matrix ($I_n$):* A scalar matrix with $k = 1$: $a_(i i) = 1$ and $a_(i j) = 0$ ($i != j$). Satisfies $A I = I A = A$.
+- *Zero (Null) Matrix ($O$):* Every entry is zero: $a_(i j) = 0$. Serves as the additive identity: $A + O = A$.
+
+== 3. Transpose of a Matrix & Symmetry
+The *transpose* of an $m times n$ matrix $A$, denoted by $A^T$ or $A'$, is the $n times m$ matrix obtained by interchanging rows and columns: $(A^T)_(i j) = a_(j i)$.
+*Fundamental Properties of Transpose:*
+1. $(A^T)^T = A$
+2. $(A + B)^T = A^T + B^T$
+3. $(k A)^T = k A^T$ (for any scalar $k$)
+4. *Reversal Law:* $(A B)^T = B^T A^T$ and $(A B C)^T = C^T B^T A^T$
+
+=== Symmetric & Skew-Symmetric Matrices
+Let $A$ be a square matrix:
+- *Symmetric Matrix:* $A^T = A$, meaning $a_(i j) = a_(j i)$ for all $i, j$. Entries are symmetric across the principal diagonal.
+- *Skew-Symmetric Matrix:* $A^T = -A$, meaning $a_(i j) = -a_(j i)$ for all $i, j$.
+  - *Diagonal Property:* For $i = j$, $a_(i i) = -a_(i i) => 2 a_(i i) = 0 => a_(i i) = 0$. Every diagonal entry of a skew-symmetric matrix is strictly *zero*!
+  - *Determinant Theorem (Odd Order):* If $A$ is a skew-symmetric matrix of *odd order* ($n = 1, 3, 5, dots$), then $|A| = 0$ identically!
+    $ "Proof:" quad |A| = |A^T| = |-A| = (-1)^n |A| = -|A| => 2|A| = 0 => |A| = 0 $
+
+=== Fundamental Decomposition Theorem
+Any square matrix $A$ can be *uniquely expressed* as the sum of a symmetric matrix and a skew-symmetric matrix:
+$ A = underbracket(frac(1, 2)(A + A^T), "Symmetric" P) + underbracket(frac(1, 2)(A - A^T), "Skew-Symmetric" Q) $
+Where $P^T = frac(1, 2)(A^T + (A^T)^T) = frac(1, 2)(A^T + A) = P$, and $Q^T = frac(1, 2)(A^T - A) = -frac(1, 2)(A - A^T) = -Q$.
+
+#pagebreak()
+
+= Matrix Operations Engine & Inversion
+
+== 1. Matrix Addition & Scalar Multiplication
+- *Addition ($A + B$):* Defined if and only if $A$ and $B$ have the *exact same order* $m times n$. Elements are added component-wise: $(A + B)_(i j) = a_(i j) + b_(i j)$.
+  - Commutative: $A + B = B + A$ | Associative: $(A + B) + C = A + (B + C)$
+  - Additive Identity: $A + O = O + A = A$ | Additive Inverse: $A + (-A) = O$
+- *Scalar Multiplication ($k A$):* The scalar $k$ multiplies *every single element* of the matrix: $(k A)_(i j) = k a_(i j)$.
+  - $k(A + B) = k A + k B$ | $(k + l)A = k A + l A$ | $(k l)A = k(l A)$
+
+== 2. Matrix Multiplication ($A B$)
+Let $A$ be of order $m times n$ and $B$ be of order $n times p$. The product $A B$ is defined if and only if the *number of columns of $A$ equals the number of rows of $B$* (inner dimensions match):
+$ (m times n) dot (n times p) -> (m times p) $
+The entry $c_(i j)$ in row $i$ and column $j$ of product $C = A B$ is the dot product of row $i$ of $A$ and column $j$ of $B$:
+$ c_(i j) = sum_(k=1)^n a_(i k) b_(k j) = a_(i 1) b_(1 j) + a_(i 2) b_(2 j) + dots + a_(i n) b_(n j) $
+
+=== Critical Properties & High-Yield Pitfalls
+1. *Non-Commutative:* In general, $A B != B A$. Even if both $A B$ and $B A$ exist and have identical square orders, their entries usually differ completely.
+2. *Associativity & Distributivity:* $(A B)C = A(B C)$ and $A(B + C) = A B + A C$.
+3. *Multiplicative Identity:* For square matrix $A$ of order $n$, $A I_n = I_n A = A$.
+4. *Zero Divisors (Crucial CUET Trap):*
+   In ordinary scalar arithmetic, $a b = 0 => a = 0$ or $b = 0$. *In matrix algebra, this is completely false!*
+   Two non-zero matrices can multiply to yield the zero matrix ($A B = O$ with $A != O$ and $B != O$):
+   $ mat(0, 1; 0, 0) mat(1, 0; 0, 0) = mat(0, 0; 0, 0) = O $
+5. *No Direct Cancellation:* $A B = A C$ does *not* imply $B = C$ unless $A$ is non-singular ($|A| != 0$).
+
+== 3. Special Square Matrix Classes
+- *Idempotent Matrix:* $A^2 = A$. (Has eigenvalues $0$ or $1$; $det(A) = 0$ or $1$).
+- *Involutory Matrix:* $A^2 = I$. (Its own inverse: $A^(-1) = A$; $det(A) = plus.minus 1$).
+- *Nilpotent Matrix:* $A^k = O$ for some positive integer $k$. (Index $k$; $det(A) = 0$).
+- *Orthogonal Matrix:* $A A^T = A^T A = I$. Implies $A^(-1) = A^T$ and $|A| = plus.minus 1$.
+
+== 4. Invertible Matrices & The Reversal Law
+A square matrix $A$ of order $n$ is said to be *invertible* if there exists a square matrix $B$ of order $n$ such that:
+$ A B = B A = I_n $
+Then $B$ is uniquely determined and called the *inverse of $A$*, written as $B = A^(-1)$.
+- *Theorem of Uniqueness:* If a matrix inverse exists, it is strictly *unique*.
+- *Reversal Law for Inverses:* Let $A$ and $B$ be invertible matrices of the same order. Then $A B$ is invertible and:
+  $ (A B)^(-1) = B^(-1) A^(-1) quad "and" quad (A B C)^(-1) = C^(-1) B^(-1) A^(-1) $
+- *Transpose-Inverse Commutation:* $(A^T)^(-1) = (A^(-1))^T$.
+
+#pagebreak()
+
+#figure(
+  image("assets/math_algebra_matrix_board.png", width: 100%),
+  caption: [Figure 1: High-yield NCERT analytical framework — Matrix taxonomy, algebraic operations engine, zero divisors, transpose reversal laws, and determinant multiplicative rules.],
 )
 
-Three type-facts carry a surprising number of MCQs, so pin them down now. First, the *transpose* $A'$ is made by turning rows into columns — entry $a_(i j)$ moves to position $a_(j i)$. Second, a skew-symmetric matrix can never have a non-zero diagonal, because $a_(i i) = -a_(i i)$ forces $a_(i i) = 0$. Third, "diagonal" and "scalar" and "identity" form a nesting: every identity matrix is a scalar matrix, and every scalar matrix is a diagonal matrix, but none of it runs backwards.
+*Key Analytical Takeaways from Figure 1:*
+1. *Matrix vs Determinant Scalar Scaling:* In matrix multiplication, $k A$ multiplies *all $m n$ elements*. In determinants, multiplying a single row by $k$ multiplies the determinant by $k$. Therefore, for an $n times n$ matrix, $|k A| = k^n |A|$! Forgetting the exponent $n$ is the single most common student mistake in algebra.
+2. *Skew-Symmetric Determinants:* The principal diagonal elements of any skew-symmetric matrix must be zero ($a_(i i) = 0$). For any odd dimension ($3 times 3, 5 times 5$), its determinant is identically zero.
+3. *Adjoint Power Sequence:* For an $n times n$ matrix, $|"adj"(A)| = |A|^(n-1)$ and $|"adj"("adj"(A))| = |A|^((n-1)^2)$. For $n = 3$, these simplify neatly to $|A|^2$ and $|A|^4$.
 
-#analogy-box(title: "Everyday Example — The Exam Seating Chart")[
-  Think of the exam hall chart: rows are benches, columns are the window side to the
-  door side. The *order* "$4 times 5$" says 4 benches of 5 students. *Equality* means
-  two schools' charts match bench-for-bench, seat-for-seat — if even one student
-  sits elsewhere, the charts are different. The *transpose* is the same hall viewed
-  from the invigilator's podium, where columns become rows. And a *symmetric* chart
-  is a hall where swapping "bench $i$, seat $j$" with "bench $j$, seat $i$" changes
-  nothing — the picture is its own mirror image.
-]
+#pagebreak()
 
-#worked-example("Worked Example — Reading Off Unknowns from Equality")[
-  If $[x - y, 4; 2, x + y] = [3, 4; 2, 9]$, find $x$ and $y$.
+= Determinants: Definitions, Expansion & Properties
 
-  #v(3pt)
-  *Solution.* Equality matches entries position by position. Top-left:
-  $x - y = 3$. Bottom-right: $x + y = 9$. Adding the two equations kills $y$:
-  $2x = 12$, so $x = 6$; back-substituting, $y = 3$. Always use *adding or
-  subtracting the pair* — it is one line, while guessing wastes time. Check:
-  $x - y = 6 - 3 = 3$ and $x + y = 9$. Both match, so the pair $(6, 3)$ is the answer.
-]
+== 1. Determinant Concept & Minors/Cofactors
+To every square matrix $A = [a_(i j)]$ of order $n$, we associate a unique scalar number called the *determinant of $A$*, written as $|A|$ or $det(A)$.
+- *Order $1 times 1$:* For $A = [a]$, $|A| = a$.
+- *Order $2 times 2$:* For $A = mat(a, b; c, d)$, $|A| = a d - b c$.
+- *Order $3 times 3$:* Evaluated by expanding along any row or column:
+  $ |A| = mat(delim: "|",
+    a_(11), a_(12), a_(13);
+    a_(21), a_(22), a_(23);
+    a_(31), a_(32), a_(33)
+  ) = a_(11) mat(delim: "|", a_(22), a_(23); a_(32), a_(33)) - a_(12) mat(delim: "|", a_(21), a_(23); a_(31), a_(33)) + a_(13) mat(delim: "|", a_(21), a_(22); a_(31), a_(32)) $
 
-= Matrix Arithmetic — What Works, What Breaks
+=== Minors ($M_(i j)$) and Cofactors ($A_(i j)$)
+- *Minor ($M_(i j)$):* The determinant of the submatrix of order $(n-1) times (n-1)$ obtained by deleting row $i$ and column $j$ from matrix $A$.
+- *Cofactor ($A_(i j)$ or $C_(i j)$):* The signed minor defined by:
+  $ A_(i j) = (-1)^(i + j) M_(i j) $
+  The signs follow a checkerboard pattern: $mat(+, -, +; -, +, -; +, -, +)$.
 
-Matrix algebra looks like school algebra but *breaks in exactly three places*, and the exam tests those breaks, not the parts that behave. Addition and subtraction are harmless: they need the *same order* and run entry by entry, so $[1, 2; 3, 4] + [0, 5; 6, 1] = [1, 7; 9, 5]$. Multiplying a matrix by a scalar $k$ is equally tame — every entry gets multiplied, and $k(A + B) = k A + k B$ always. The moment you reach matrix × matrix, the rules you trust start snapping.
+=== Core Cofactor Expansion Theorems
+1. *Expansion Along Row $i$:* The sum of products of elements of any row with their corresponding cofactors equals the determinant:
+   $ |A| = sum_(j=1)^n a_(i j) A_(i j) = a_(i 1) A_(i 1) + a_(i 2) A_(i 2) + dots + a_(i n) A_(i n) $
+2. *Orthogonal Expansion Identity (Zero Sum Theorem):*
+   If elements of any row are multiplied with the cofactors of *any other row*, their sum is identically *zero*:
+   $ sum_(j=1)^n a_(i j) A_(k j) = a_(i 1) A_(k 1) + a_(i 2) A_(k 2) + dots + a_(i n) A_(k n) = 0 quad ("for" i != k) $
+   (Similarly holds for column multiplications).
 
-The product $A B$ is built from *row-by-column dot products*: entry $(i, j)$ of $A B$ is row $i$ of $A$ dotted into column $j$ of $B$. This is why the shapes must chain — $(m times n)(n times p) = m times p$ — and why $A B$ usually does not equal $B A$ for three separate reasons: the shapes may not even both exist, the dot products pair different rows with different columns, and the results can have different sizes. *Compute honestly*, never by pattern:
+== 2. Fundamental Properties of Determinants
+1. *Transpose Invariance:* Interchanging rows and columns leaves the determinant unchanged: $|A^T| = |A|$.
+2. *Row/Column Swap:* If any two rows (or columns) are interchanged, the sign of the determinant is reversed: $det(A') = -det(A)$.
+3. *Identical / Proportional Rows:* If any two rows or columns are identical or proportional, $|A| = 0$.
+4. *Scalar Factor Law:* If every element of a row or column is multiplied by $k$, the determinant is multiplied by $k$. For an $n times n$ matrix:
+   $ |k A| = k^n |A| $
+5. *Elementary Operations:* The operation $R_i -> R_i + k R_j$ (or $C_i -> C_i + k C_j$) leaves the value of the determinant *completely unchanged*.
+6. *Product Rule:* For square matrices of the same order:
+   $ |A B| = |A| dot |B| quad "and" quad |A^(-1)| = frac(1, |A|) $
+7. *Triangular Matrices:* If $A$ is upper triangular, lower triangular, or diagonal, its determinant equals the *product of its diagonal entries*: $|A| = a_(11) a_(22) dots a_(n n)$.
 
-#formula-box(title: "The 2 × 2 Product, Once and For All")[
-  $ mat(a, b; c, d) mat(e, f; g, h) = mat(a e + b g, a f + b h; c e + d g, c f + d h) $
-  $ "Row 1" dot "Column 1" -> "top-left entry," quad "Row i" dot "Column j" -> "entry (i, j)" $
-]
+#pagebreak()
 
-- *Multiplication is not commutative.* $A B = B A$ holds only in special cases (one factor scalar, or both diagonal); treat it as false until proven for the given matrices.
-- *Zero divisors exist.* You *can* have $A B = O$ with $A = O$ false and $B = O$ false: take $A = [1, 1; 2, 2]$, $B = [1, 1; -1, -1]$ — every dot product collapses to $1 - 1 = 0$.
-- *No cancelling.* $A B = A C$ does *not* let you cancel $A$; multiply $A^(-1)$ in front of both sides only when $A$ is invertible.
-- *Powers need square matrices.* $A^2 = A A$ only makes sense when rows match columns — one more reason "square" is special.
+= Adjoint, Inverses & Matrix Equation Solvers
 
-The transpose has its own law set, and one of them is famous for being *backwards*: $(A B)' = B' A'$. The order flips because transposing stacks rows into columns in reverse sequence. The full kit: $(A')' = A$, $(A + B)' = A' + B'$, $(k A)' = k A'$, $(A B)' = B' A'$, and $|A'| = |A|$. From symmetric and skew-symmetric pieces you can rebuild *any* square matrix: $A = P + Q$ where $P = 1/2 (A + A')$ is symmetric and $Q = 1/2 (A - A')$ is skew-symmetric — a clean decomposition the MCQs love to restate in disguise.
+== 1. Adjoint of a Matrix ($"adj"(A)$)
+The *adjoint* of a square matrix $A = [a_(i j)]$, denoted by $"adj"(A)$, is formally defined as the *transpose of the matrix of cofactors* of $A$:
+$ "adj"(A) = [A_(i j)]^T = mat(
+  A_(11), A_(21), dots, A_(n 1);
+  A_(12), A_(22), dots, A_(n 2);
+  dots.v, dots.v, dots.down, dots.v;
+  A_(1n), A_(2n), dots, A_(n n)
+) $
+*High-Yield Warning:* Note that $A_(12)$ sits in row 2, column 1 because the cofactor matrix has been transposed!
 
-#worked-example("Worked Example — Product, Transpose Law, and the Sym + Skew Split")[
-  Let $A = [2, 1; 0, 3]$ and $B = [1, 4; 2, 0]$. Find $A B$, verify $(A B)' = B' A'$, and split $A$ into symmetric + skew parts.
+=== The Fundamental Adjoint Identity
+For any square matrix $A$ of order $n$:
+$ A dot "adj"(A) = "adj"(A) dot A = |A| I_n $
+- *Singular vs Non-Singular:* Matrix $A$ is *singular* if $|A| = 0$; it is *non-singular* if $|A| != 0$.
+- *Formula for Matrix Inverse:* Dividing the fundamental identity by $|A|$ (when $|A| != 0$) yields:
+  $ A^(-1) = frac(1, |A|) "adj"(A) $
+  *Invertibility Criterion:* A square matrix $A$ possesses an inverse *if and only if it is non-singular ($|A| != 0$)*.
 
-  #v(3pt)
-  *Solution.* Dot products: top-left $2 dot 1 + 1 dot 2 = 4$; top-right $2 dot 4 + 1 dot 0 = 8$;
-  bottom-left $0 dot 1 + 3 dot 2 = 6$; bottom-right $0 dot 4 + 3 dot 0 = 0$. So
-  $ A B = [4, 8; 6, 0]. $
-  Now $(A B)' = [4, 6; 8, 0]$. Check the flip law: $B' = [1, 2; 4, 0]$,
-  $A' = [2, 0; 1, 3]$, and
-  $ B' A' = [1 dot 2 + 2 dot 1, 1 dot 0 + 2 dot 3; 4 dot 2 + 0 dot 1, 4 dot 0 + 0 dot 3] = [4, 6; 8, 0]. $
-  Identical — the reversed-order law holds. For the split:
-  $ P = 1/2 (A + A') = [2, 1/2; 1/2, 3] quad ("symmetric, since" P' = P), $
-  $ Q = 1/2 (A - A') = [0, 1/2; -1/2, 0] quad ("skew, since" Q' = -Q). $
-  And indeed $P + Q = [2, 1; 0, 3] = A$. Two minutes of honest arithmetic, three exam
-  facts confirmed in one go.
-]
+=== Master Adjoint Power Laws (Order $n$)
+- Determinant of Adjoint: $|"adj"(A)| = |A|^(n - 1)$
+- Determinant of Double Adjoint: $|"adj"("adj"(A))| = |A|^((n - 1)^2)$
+- Double Adjoint Matrix: $"adj"("adj"(A)) = |A|^(n - 2) A$
+- Product of Adjoints: $"adj"(A B) = "adj"(B) dot "adj"(A)$
+- Scalar with Adjoint: $"adj"(k A) = k^(n - 1) "adj"(A)$
 
-#figure(image("assets/math_algebra_matrix_board.png", width: 100%), caption: [The full toolkit on one board: matrix types, the operation rulebook, and the determinant-to-solution pipeline every question rides on.])
+=== The $2 times 2$ Lightning Inverse Shortcut
+For a $2 times 2$ matrix $A = mat(a, b; c, d)$ with $|A| = a d - b c != 0$:
+1. *Swap the main diagonal entries:* $a <-> d$.
+2. *Negate the anti-diagonal entries:* $b -> -b, quad c -> -c$.
+3. *Divide by determinant:*
+$ A^(-1) = frac(1, a d - b c) mat(d, -b; -c, a) $
 
-= Determinants — The Number Inside Every Square Matrix
+#pagebreak()
 
-Every *square* matrix carries a single number called its determinant, written $abs(A)$ or $Delta$ — think of it as the matrix's *fingerprint*: one value that decides whether the matrix can be inverted, whether a system of equations has a unique answer, and whether three points sit on one line. For a $2 times 2$ matrix the computation is one crossing multiply. For $3 times 3$ you expand along a row: each entry is multiplied by its *cofactor*, the minor $M_(i j)$ (the determinant left after deleting row $i$ and column $j$) carrying a sign $(-1)^(i + j)$. The checkerboard of signs $[+, -, +; -, +, -; +, -, +]$ never changes, so memorise it once and expand along whichever row or column has the most zeros.
+= Systems of Linear Equations & Consistency Criteria
 
-#formula-box(title: "Determinants — the Two Sizes You Need")[
-  $ 2 times 2: quad abs(mat(a, b; c, d)) = a d - b c $
-  $ 3 times 3: quad abs(A) = a_(1 1) C_(1 1) + a_(1 2) C_(1 2) + a_(1 3) C_(1 3), quad C_(i j) = (-1)^(i + j) M_(i j) $
-  $ "Area of a triangle" = 1/2 abs(x_1 (y_2 - y_3) + x_2 (y_3 - y_1) + x_3 (y_1 - y_2)) $
-]
+== 1. Matrix Representation of Linear Systems
+Consider a non-homogeneous system of three linear equations in three variables:
+$ a_1 x + b_1 y + c_1 z = d_1 $
+$ a_2 x + b_2 y + c_2 z = d_2 $
+$ a_3 x + b_3 y + c_3 z = d_3 $
+This system can be written compactly as the single matrix equation:
+$ A X = B $
+where:
+$ A = mat(a_1, b_1, c_1; a_2, b_2, c_2; a_3, b_3, c_3), quad X = mat(x; y; z), quad B = mat(d_1; d_2; d_3) $
+Here $A$ is the *coefficient matrix*, $X$ is the *variable vector*, and $B$ is the *constant vector*.
 
-- *Row swap flips the sign.* Two row swaps return the original — the foundation of many MCQs.
-- *Two identical rows (or columns) make the determinant 0.* A special case: a row of all zeros also gives 0.
-- *Multiplying one row by $k$ multiplies $abs(A)$ by $k$.* So multiplying *every* entry of an $n times n$ matrix — that is, the matrix $k A$ — multiplies the determinant $n$ times: $abs(k A) = k^n abs(A)$.
-- *Transpose leaves it alone:* $abs(A') = abs(A)$. *Product splits:* $abs(A B) = abs(A) abs(B)$.
-- *Triangular shortcut:* for upper or lower triangular matrices, $abs(A)$ is just the product of the diagonal entries.
+== 2. Consistency Analysis Algorithm (The Matrix Method)
+To determine the existence and uniqueness of solutions, evaluate the following decision tree:
 
-The triangle-area formula above is the determinant's most likeable application — and its sign behaviour is the testable part. The expression inside the absolute value is exactly the determinant of the matrix with rows $[x_1, y_1, 1]$, $[x_2, y_2, 1]$, $[x_3, y_3, 1]$, so when the three points are *collinear* that determinant is 0 and the "triangle" is a degenerate line with no area. Area takes the absolute value; collinearity is simply the zero test. Two question styles, one computation.
+#table(
+  columns: (1fr, 1.2fr, 1.3fr, 1.5fr),
+  table.header[*Condition 1*][*Condition 2*][*Consistency Classification*][*Nature of Solutions & Geometric Meaning*],
+  [$|A| != 0$],
+  [Any $B$],
+  [*Consistent & Independent*],
+  [Unique solution: $X = A^(-1) B$. Three planes intersect at a single unique point.],
+  [$|A| = 0$],
+  [$("adj"(A)) B != O$],
+  [*Inconsistent*],
+  [Zero solutions (No solution). Planes are parallel or intersect in pairs along disjoint lines.],
+  [$|A| = 0$],
+  [$("adj"(A)) B = O$],
+  [*Consistent & Dependent*],
+  [Infinitely many solutions (or inconsistent if planes are parallel). Planes coincide or share a line.],
+)
 
-#worked-example("Worked Example — a 3 × 3 Determinant, Then an Area and a Collinearity Check")[
-  Part 1: evaluate $abs(mat(1, 2, 3; 4, 5, 6; 7, 8, 10))$.
+== 3. Homogeneous Systems ($A X = O$)
+When the constant vector $B = O$, the system takes the form $A X = O$:
+$ a_1 x + b_1 y + c_1 z = 0, quad a_2 x + b_2 y + c_2 z = 0, quad a_3 x + b_3 y + c_3 z = 0 $
+- The *trivial solution* $x = 0, y = 0, z = 0$ ($X = O$) is always a solution. Hence, homogeneous systems are *always consistent*.
+- *Condition for Unique Solution:*
+  $ |A| != 0 <==> "Only the trivial solution" X = O "exists." $
+- *Condition for Non-Trivial Solutions:*
+  $ |A| = 0 <==> "Infinitely many non-trivial (non-zero) solutions exist." $
 
-  #v(3pt)
-  *Solution.* Expand along row 1:
-  $ = 1 abs(mat(5, 6; 8, 10)) - 2 abs(mat(4, 6; 7, 10)) + 3 abs(mat(4, 5; 7, 8)) $
-  $ = 1 (50 - 48) - 2 (40 - 42) + 3 (32 - 35) = 2 + 4 - 9 = -3. $
-  The determinant is $-3$, so this matrix is non-singular and invertible — we will need exactly this matrix again in the cheatsheet checks.
+#pagebreak()
 
-  #v(6pt)
-  Part 2: find the area of the triangle with vertices $(1, 2)$, $(3, -2)$, $(5, 4)$; then test $(0, 0)$, $(2, 4)$, $(4, 8)$ for collinearity.
+#figure(
+  image("assets/math_algebra_systems_cramer.png", width: 100%),
+  caption: [Figure 2: Systematic comparison matrix — Linear systems consistency flowchart ($A X = B$), adjoint shortcuts, $2 times 2$ lightning inverse, and geometric applications via determinants.],
+)
 
-  #v(3pt)
-  *Solution.* Area $= 1/2 abs(1(-2 - 4) + 3(4 - 2) + 5(2 - (-2))) = 1/2 abs(-6 + 6 + 20) = 10$ square units. For the collinearity test: $1/2 abs(0(4 - 8) + 2(8 - 0) + 4(0 - 4)) = 1/2 abs(16 - 16) = 0$ — the three points lie on one straight line, so no triangle exists.
-]
+*Key Analytical Takeaways from Figure 2:*
+1. *Consistency Branching:* When $|A| != 0$, the system is guaranteed to have a unique solution given by $X = A^(-1) B$. When $|A| = 0$, you *cannot declare no solution immediately* — you must compute the matrix product $("adj"(A)) B$. If $("adj"(A)) B = O$, infinitely many solutions exist!
+2. *Homogeneous Systems ($A X = O$):* Because the constant vector is $O$, the trivial solution $x = y = z = 0$ always exists. Non-trivial (non-zero) solutions exist *if and only if $|A| = 0$*.
+3. *Cramer's Rule Engine:* In systems where $|A| != 0$, each variable $x_i$ is computed independently by replacing column $i$ of the coefficient matrix with the constant vector $B$: $x = D_x / D, y = D_y / D, z = D_z / D$.
 
-= Adjoint, Inverse and the Matrix Method
+#pagebreak()
 
-A matrix's inverse plays the role that division plays for numbers — with one honest caveat: only *square, non-singular* matrices have one. The bridge is the adjoint: replace every entry by its cofactor, then transpose the result. Multiplying the two always lands on a very tidy identity, and everything else in this section is that identity worn in different clothes:
+= Advanced Matrix Applications & Geometric Toolkit
 
-#formula-box(title: "The Four Identities That Run This Chapter")[
-  $ A ("adj" A) = abs(A) I quad (n times n) $
-  $ abs("adj" A) = abs(A)^(n - 1) $
-  $ A^(-1) = ("adj" A) / abs(A) quad "exists only when" abs(A) != 0 $
-  $ (A B)^(-1) = B^(-1) A^(-1) quad ("order flips, like the transpose law") $
-]
+== 1. Cayley-Hamilton Theorem & Matrix Polynomials
+*Cayley-Hamilton Theorem:* Every square matrix $A$ satisfies its own characteristic equation:
+$ det(A - lambda I) = 0 $
+- For a $2 times 2$ matrix $A = mat(a, b; c, d)$, the characteristic equation is:
+  $ lambda^2 - "Tr"(A) lambda + |A| = 0 => A^2 - (a + d) A + (a d - b c) I = O $
+- *Computing Inverses via Matrix Polynomials:*
+  Multiplying $A^2 - "Tr"(A) A + |A| I = O$ by $A^(-1)$ yields:
+  $ A - "Tr"(A) I + |A| A^(-1) = O => A^(-1) = frac(1, |A|) ("Tr"(A) I - A) $
+  This provides an instantaneous algebraic route to find inverses and higher matrix powers ($A^3, A^4$) without manual matrix multiplication.
 
-- *Singularity is a gate.* If $abs(A) = 0$, the matrix is *singular*: no inverse, no division, no matrix-method solution. If $abs(A) != 0$, it is *invertible* (non-singular).
-- *The inverse is unique.* If $B$ and $C$ both work as inverses of $A$, then $B = B I = B (A C) = (B A) C = I C = C$. One line, and the syllabus explicitly names this proof — it is a gift.
-- *The 2 × 2 shortcut.* Swap the two diagonal entries, change the sign of the other two, divide every entry by $abs(A)$. Write it once and never expand a cofactor for a 2 × 2 again.
-- *Skew-symmetric matrices of odd order are always singular.* Since $A' = -A$, we get $abs(A) = abs(A') = abs(-A) = (-1)^n abs(A)$; when $n$ is odd this reads $abs(A) = -abs(A)$, forcing $abs(A) = 0$. No inverse — ever.
-- *Row operations build the inverse too.* Row-reduce $[A | I]$ to $[I | A^(-1)]$; the syllabus focuses on the adjoint route, but knowing this one saves you in a pinch.
+== 2. Geometric Applications: Area of Triangle & Collinearity
+- *Area of Triangle:* The area of a triangle with vertices $(x_1, y_1), (x_2, y_2), (x_3, y_3)$ is:
+  $ Delta = frac(1, 2) mat(delim: "|", x_1, y_1, 1; x_2, y_2, 1; x_3, y_3, 1) $
+  Because area is a positive physical quantity, always take the absolute value $|Delta|$. When solving for an unknown coordinate given a known area, remember that the determinant can equal $+ "Area"$ or $- "Area"$.
+- *Collinearity Condition:* Three points are collinear if and only if $Delta = 0$.
+- *Line Equation:* The equation of the line passing through $(x_1, y_1)$ and $(x_2, y_2)$ is:
+  $ mat(delim: "|", x, y, 1; x_1, y_1, 1; x_2, y_2, 1) = 0 $
 
-Now the payoff. A linear system $a_1 x + b_1 y = c_1$, $a_2 x + b_2 y = c_2$ is a matrix sentence: $A X = B$, with $A$ holding the coefficients, $X = [x; y]$, and $B$ the constants. If $abs(A) != 0$, multiply both sides on the left by $A^(-1)$: $A^(-1) A X = I X = X$, so $X = A^(-1) B$ — the *whole solution in one multiplication*. If $abs(A) = 0$, the method refuses politely: the system is either *inconsistent* (no solution, when $("adj" A) B != O$) or has *infinitely many* solutions (when $("adj" A) B = O$). That case-split, "unique / none / infinitely many", is precisely the "consistency, inconsistency and number of solutions" pointer.
+#pagebreak()
 
-#analogy-box(title: "Everyday Example — The Juicer That Un-Juices")[
-  A juicer turns fruit into juice, and no button turns juice back into fruit — but
-  some machines genuinely run backwards: a washing machine that spins water out can
-  be run to distribute it back, a lift goes up and then down. Multiplying by a
-  non-singular matrix $A$ is the reversible ride: it transforms $X$ into $B$, and
-  multiplying by $A^(-1)$ runs the ride backwards, handing back $X$ from $B$. A
-  *singular* matrix is the juicer — information is flattened (many different $X$
-  would give the same $B$), so there is no way back. The determinant is the ride's
-  safety certificate: $abs(A) != 0$ means reversible; $abs(A) = 0$ means one-way.
-]
+= Key Facts & Terms Cheatsheet
 
-#worked-example("Worked Example — Solving a System by the Matrix Method")[
-  Solve $3 x + y = 5$, $5 x + 2 y = 9$ using matrices.
+#set table(inset: (x: 4pt, y: 2.1pt))
+#set text(size: 8.4pt)
 
-  #v(3pt)
-  *Solution.* Step 1, write $A X = B$: $A = [3, 1; 5, 2]$, $X = [x; y]$, $B = [5; 9]$.
-  Step 2, check the gate: $abs(A) = 3 dot 2 - 1 dot 5 = 1 != 0$, so a unique solution exists.
-  Step 3, the 2 × 2 shortcut: $A^(-1) = 1/1 [2, -1; -5, 3] = [2, -1; -5, 3]$.
-  Step 4, one multiplication:
-  $ X = A^(-1) B = [2, -1; -5, 3] [5; 9] = [2 dot 5 + (-1) dot 9; -5 dot 5 + 3 dot 9] = [1; 2]. $
-  So $x = 1$, $y = 2$. Step 5, verify in the *original* equations: $3(1) + 2 = 5$ ✓
-  and $5(1) + 2(2) = 9$ ✓. Five steps, every one of them a mark.
-]
-
-= Formula Cheatsheet — the Whole Chapter on One Page
-
-#cheatsheet-box(title: "Formula Cheatsheet — Matrices and Determinants")[
+#cheatsheet-box(title: "Master Diagnostic & Conceptual Cheatsheet — Matrices & Determinants")[
   #table(
-    columns: (1.5fr, 1.35fr, 1.15fr),
-    table.header[*Formula*][*Letters mean*][*Fire it when*],
-    [$A = [a_(i j)]_(m times n)$], [$m$ rows, $n$ columns; $a_(i j)$ sits in row $i$, column $j$], [locating or building entries],
-    [Equality: same order, every entry equal], [position-by-position matching], ["find $x$, $y$" questions],
-    [$(m times n)(n times p) = m times p$], [inner shapes must match], [deciding if a product exists],
-    [Entry $(i, j)$ of $A B$ = row $i$ of $A$ $dot$ column $j$ of $B$], [dot product = sum of products], [computing products],
-    [$(A B)' = B' A'$], [order flips], [transpose simplifications],
-    [$A = 1/2 (A + A') + 1/2 (A - A')$], [first part symmetric, second skew], [sym + skew decomposition],
-    [$abs(mat(a, b; c, d)) = a d - b c$], [cross-multiply and subtract], [2 × 2 determinants],
-    [$C_(i j) = (-1)^(i + j) M_(i j)$], [checkerboard signs], [3 × 3 expansion],
-    [$abs(k A) = k^n abs(A)$], [$n$ = order of the matrix], [scalar-multiple determinants],
-    [$abs(A') = abs(A)$, $abs(A B) = abs(A) abs(B)$], [transpose and product laws], [determinant properties],
-    [Area $= 1/2 abs(x_1 (y_2 - y_3) + x_2 (y_3 - y_1) + x_3 (y_1 - y_2))$], [absolute value; result 0 = collinear], [triangle geometry],
-    [$A ("adj" A) = abs(A) I$, $abs("adj" A) = abs(A)^(n - 1)$], [the adjoint identities], [adjoint questions],
-    [$A^(-1) = ("adj" A) / abs(A)$, needs $abs(A) != 0$], [singular gate], [building inverses],
-    [$X = A^(-1) B$; if $abs(A) = 0$: none or infinitely many], [$A$ coefficients, $B$ constants], [matrix method],
+    columns: (1.2fr, 1.7fr, 1.1fr),
+    table.header[*Key Mathematical Topic*][*Core NCERT Mechanism / Definition*][*Exam Identifier*],
+    [Square Matrix], [$m = n$. Only square matrices have determinants, trace, and inverses.], [Rows = Columns],
+    [Diagonal Matrix], [$a_(i j) = 0$ for all $i != j$. Non-zero entries exist only on main diagonal.], [Off-Diagonal = 0],
+    [Identity Matrix $I_n$], [Diagonal entries all 1, off-diagonal 0. Multiplicative identity: $A I = I A = A$.], [Diagonal = 1],
+    [Symmetric Matrix], [$A^T = A$, meaning $a_(i j) = a_(j i)$ mirror symmetry across main diagonal.], [$A^T = A$],
+    [Skew-Symmetric Matrix], [$A^T = -A$; $a_(i i) = 0$ always. Odd order skew-symmetric has $|A| = 0$.], [$a_(i i) = 0, |A| = 0$],
+    [Matrix Decomposition], [Every square matrix is uniquely $A = 1/2(A + A^T) + 1/2(A - A^T)$.], [Symm + Skew-Symm],
+    [Matrix Product $A B$], [Conformable if columns of $A$ equal rows of $B$: $(m times n)(n times p) -> m times p$.], [Inner Match],
+    [Non-Commutativity], [In general, $A B != B A$. Matrix multiplication is strictly non-commutative.], [$A B != B A$],
+    [Zero Divisors], [$A B = O$ does NOT imply $A = O$ or $B = O$. Non-zero matrices have zero product.], [Zero Product],
+    [Transpose Reversal], [$(A B)^T = B^T A^T$ and $(A B C)^T = C^T B^T A^T$.], [Order Reverses],
+    [Inverse Reversal], [$(A B)^(-1) = B^(-1) A^(-1)$ (only for non-singular square matrices).], [Order Reverses],
+    [Determinant Product], [$|A B| = |A| dot |B|$ and $|A^k| = |A|^k$.], [$|A B| = |A||B|$],
+    [Scalar Scaling Law], [$|k A| = k^n |A|$ for an $n times n$ matrix (each row contributes $k$).], [Factor $k^n$],
+    [Transpose Determinant], [$|A^T| = |A|$ (rows and columns interchanged leaves det invariant).], [$|A^T| = |A|$],
+    [Inverse Determinant], [$|A^(-1)| = 1 / |A| = (|A|)^(-1)$.], [Reciprocal],
+    [Adjoint Identity], [$A dot "adj"(A) = "adj"(A) dot A = |A| I_n$.], [$|A| I_n$],
+    [Adjoint Determinant], [$|"adj"(A)| = |A|^(n - 1)$ for matrix of order $n$. For $n=3$, $|A|^2$.], [$|A|^(n-1)$],
+    [Double Adjoint Det], [$|"adj"("adj"(A))| = |A|^((n - 1)^2)$. For $n=3$, $|A|^4$.], [$|A|^((n-1)^2)$],
+    [$2 times 2$ Inverse Shortcut], [Swap diagonal entries, negate anti-diagonal, divide by $|A|$.], [Swap & Negate],
+    [Orthogonal Expansion], [$sum a_(i j) A_(k j) = 0$ when elements of row $i$ multiply cofactors of row $k != i$.], [Orthogonal = 0],
+    [Linear System $A X = B$], [Unique solution $X = A^(-1) B$ if $|A| != 0$. Inconsistent if $|A| = 0$ & $("adj" A)B != O$.], [Consistency Tree],
+    [Area of Triangle], [$Delta = 1/2 |[x_1 y_1 1; x_2 y_2 1; x_3 y_3 1]|$. Collinear if $Delta = 0$.], [Determinant Area],
   )
 ]
 
-= Common Errors and Special Cases
+#pagebreak()
 
-#exception-box(title: "Common Errors and Special Cases — Matrices and Determinants")[
+= Common Errors and High-Yield CUET Traps
+
+#set table(inset: (x: 4pt, y: 2.1pt))
+#set text(size: 8.5pt)
+
+#exception-box(title: "Common Student Mistakes & Diagnostic Traps — Matrices & Determinants")[
   #table(
-    columns: (1.35fr, 1.35fr, 1.3fr),
-    table.header[*The mistake*][*What is right*][*The trap it sets*],
-    [Multiplying without a shape check], [$(m times n)(n times p)$ needs the inner numbers equal], [Options list $B A$ for shapes where only $A B$ exists],
-    [Trusting $A B = B A$], [Order matters; commutativity is the rare exception], ["Which is always true?" questions with commutative-sounding lures],
-    [Cancelling $A$ from $A B = A C$], [Valid only if $A^(-1)$ exists], [Distractor "B = C" without the invertibility check],
-    [$abs(k A) = k abs(A)$], [$abs(k A) = k^n abs(A)$ with $n$ the order], [The single most repeated determinant MCQ],
-    [Expanding $(A + B)^2 = A^2 + 2 A B + B^2$], [Honest expansion: $A^2 + A B + B A + B^2$], [The fake "algebra-style" option sits right there],
-    [Skew-symmetric with a non-zero diagonal], [Every diagonal entry of a skew matrix is 0], [One-row type-identification questions],
-    [Writing $(A B)^(-1) = A^(-1) B^(-1)$], [$(A B)^(-1) = B^(-1) A^(-1)$ — order flips], [Mirror-image inverse options],
-    [Finding an inverse for $abs(A) = 0$], [Singular means no inverse exists], [Options include a computed "inverse" that cannot exist],
-    [Quoting a negative triangle area], [Area is the absolute value, always $>= 0$], [Negative-value distractors in area questions],
+    columns: (1.2fr, 1.4fr, 1.4fr),
+    table.header[*Common Student Mistake*][*Scientifically Verified Reality*][*The Exact Trap Mechanism*],
+    [Confusing $|k A|$ with $k |A|$],
+    [For an $n times n$ matrix, $|k A| = k^n |A|$ because $k$ is factored out of *every single row* of the determinant.],
+    [For a $3 times 3$ matrix with $|A| = 5$, students write $|2 A| = 2(5) = 10$ instead of $2^3(5) = 40$.],
+    [Assuming $A B = O => A = O$ or $B = O$],
+    [Matrix algebra contains zero divisors: two non-zero matrices can multiply to give the null matrix $O$.],
+    [Questions ask \"If $A B = O$, which must be true?\" Options include $A = O$ or $B = O$; students pick it mistakenly.],
+    [Forgetting Transpose on Adjoint],
+    [$"adj"(A)$ is the *transpose* of the cofactor matrix: $"adj"(A) = [A_(i j)]^T$. It is NOT just $[A_(i j)]$.],
+    [Students calculate minors and cofactors correctly but forget to transpose the matrix, swapping $A_(12)$ and $A_(21)$.],
+    [Failing to Check $|A| != 0$ Before Inverting],
+    [A matrix is invertible if and only if it is non-singular ($|A| != 0$). Singular matrices have no inverse.],
+    [Students algebraically compute $"adj"(A)$ for a singular matrix and forget that dividing by $|A| = 0$ is undefined.],
+    [Cancelling $A$ from $A B = A C$],
+    [$A B = A C$ implies $B = C$ *only if $A$ is non-singular ($|A| != 0$)*. If $A$ is singular, $B$ and $C$ need not be equal.],
+    [NTA provides $B = C$ as a distractor without stating whether $|A| != 0$.],
+    [Declaring No Solution Whenever $|A| = 0$],
+    [If $|A| = 0$, the system could be *inconsistent* (no solution) OR *consistent* (infinitely many solutions if $("adj" A)B = O$).],
+    [Students assume $|A| = 0$ automatically means zero solutions without calculating $("adj"(A)) B$.],
+    [Single Sign in Triangle Area Unknowns],
+    [When given area $= 35$, the determinant $|Delta|$ can equal $+70$ or $-70$, yielding *two distinct coordinates for $k$*.],
+    [Students set $Delta = +35$ only, finding only one value of $k$ and missing the second valid coordinate in options.],
+    [Evaluating $A B != B A$ as Always False],
+    [While multiplication is non-commutative in general, commuting pairs *do exist* (e.g. $A I = I A$, $A A^(-1) = A^(-1) A$, powers $A^p A^q$).],
+    [Questions ask if $A B = B A$ is possible; students declare it impossible everywhere, forgetting diagonal/identity cases.],
   )
 ]
 
-= Sixty-Second Self-Test
+#pagebreak()
 
-Judge each statement fast — say true or false out loud before checking the verdicts.
+= The Whole Chapter on One Page
 
-#table(
-  columns: (2.6fr, 1fr),
-  table.header[*Statement*][*Verdict*],
-  [A $2 times 3$ matrix has a determinant.], [False — determinants live only on square matrices.],
-  [Every diagonal matrix is symmetric.], [True — a diagonal matrix is its own transpose.],
-  [If $A B = O$, then $A = O$ or $B = O$.], [False — zero divisors exist for matrices.],
-  [For a $3 times 3$ matrix, $abs(A') = -abs(A)$.], [False — transposing never flips the sign.],
-  [If $abs(A) = 0$, the system $A X = B$ has no solution.], [False — it has either none or infinitely many.],
-  [$A + A'$ is symmetric for every square $A$.], [True — transpose it and watch it return.],
+#figure(
+  image("assets/math_algebra_mindmap.png", width: 100%),
+  caption: [Figure 3: Master synthesis mindmap — high-yield integrated architecture of Matrices, Determinants, Inverses, Adjoint power laws, and Linear Systems ($A X = B$).],
 )
 
-#figure(image("assets/math_algebra_mindmap.png", width: 100%), caption: [The whole chapter in one look: six branches from matrix basics to the matrix method, with the traps that sit underneath them.])
+#pagebreak()
+#set text(size: 8.5pt)
+#set par(leading: 0.38em, spacing: 0.42em)
 
-= Practice Questions — CUET UG Pattern (10 MCQs)
+= Practice Questions — Part 1 (Q1 to Q5)
 
-Ten questions in the CUET UG style. Each correct answer earns $+5$; each incorrect one costs $-1$, so attempt from understanding, not hope. Every question below is answerable in under ninety seconds with a technique from this chapter — if you are writing a page of algebra, the shortcut is hiding.
+#mcq(1, [If matrix $A$ has order $3 times 4$, matrix $B$ has order $4 times 2$, and matrix $C$ has order $2 times 3$, then the order of the transpose matrix $((A B) C)^T$ is:], (
+  [$3 times 3$],
+  [$4 times 4$],
+  [$2 times 3$],
+  [$3 times 2$],
+))
+#solution(1, [We check the dimension conformability step-by-step:
+1. Product $A B$: $(3 times 4) dot (4 times 2) -> (3 times 2)$.
+2. Product $(A B) C$: $(3 times 2) dot (2 times 3) -> (3 times 3)$.
+3. Transpose $((A B) C)^T$: The transpose of an $m times n$ matrix is $n times m$.
+For a $3 times 3$ matrix, the transpose has order $3 times 3$.], answer: [A])
 
-#mcq(1, [For $A = [2, -1; 3, 4]$, which statement is true?], ([A is symmetric], [A is skew-symmetric], [A is a scalar matrix], [A is neither symmetric nor skew-symmetric],))
-#mcq(2, [If $[x - y, 4; 2, x + y] = [3, 4; 2, 9]$, then $(x, y)$ equals:], ([$(6, 3)$], [$(3, 6)$], [$(9, 3)$], [$(6, -3)$],))
-#mcq(3, [For $A = [1, 2; 3, 4]$ and $B = [0, 1; 1, 0]$, the matrix $A B - B A$ equals:], ([ $[1, 3; -3, -1]$ ], [ $[-1, -3; 3, 1]$ ], [ $[2, 1; 4, 3]$ ], [ $[0, 0; 0, 0]$ ],))
-#mcq(4, [For $A = [1, 1; 2, 2]$ and $B = [1, 1; -1, -1]$, the product $A B = O$ even though neither matrix is $O$. This shows that:], ([multiplication of matrices is commutative], [$A B = O$ always forces $A = O$ or $B = O$], [matrices have no zero divisors], [$A B = O$ need not force $A = O$ or $B = O$],))
-#mcq(5, [If $A = [3, -2; 4, -2]$, then $abs(A)$ equals:], ([$-2$], [$-14$], [$2$], [$14$],))
-#mcq(6, [If $A$ is a $3 times 3$ matrix with $abs(A) = 4$, then $abs(2 A)$ equals:], ([8], [24], [32], [64],))
-#mcq(7, [The area of the triangle with vertices $(0, 0)$, $(4, 0)$, $(0, 3)$ is:], ([7 square units], [12 square units], [3.5 square units], [6 square units],))
-#mcq(8, [For $A = [2, 3; 1, 4]$, the matrix $A^(-1)$ is:], ([ $[4, 3; 1, 2]$ ], [ $[4/5, -3/5; -1/5, 2/5]$ ], [ $[4, -3; -1, 2]$ ], [ $[2/5, -1/5; -3/5, 4/5]$ ],))
-#mcq(9, [The system $x + 2 y = 3$, $2 x + 4 y = 7$ has:], ([a unique solution], [no solution], [infinitely many solutions], [exactly two solutions],))
-#mcq(10, [If $A$ is a skew-symmetric matrix of order 3, then $abs(A)$ equals:], ([0], [1], [$-1$], [depends on the entries of A],))
+#mcq(2, [If $A$ is any arbitrary square matrix, then the matrix $A - A^T$ is always:], (
+  [A symmetric matrix],
+  [A skew-symmetric matrix],
+  [An orthogonal matrix],
+  [A scalar matrix],
+))
+#solution(2, [Let $M = A - A^T$. We test for symmetry by taking the transpose of $M$:
+$ M^T = (A - A^T)^T = A^T - (A^T)^T = A^T - A = -(A - A^T) = -M $
+Since $M^T = -M$, the matrix $A - A^T$ is strictly a *skew-symmetric matrix* for any square matrix $A$.
+(Note: $A + A^T$ is always symmetric because $(A + A^T)^T = A^T + A = A + A^T$).], answer: [B])
 
-= Detailed Solutions
+#mcq(3, [Consider the matrices $A = mat(0, 2; 0, 0)$ and $B = mat(3, 0; 0, 0)$. Which of the following statements is correct regarding their product?], (
+  [$A B != O$ and $B A != O$],
+  [$A B = O$ and $B A = O$],
+  [$A B = O$ but $B A != O$],
+  [$A B != O$ but $B A = O$],
+))
+#solution(3, [We compute both products directly:
+1. $A B = mat(0, 2; 0, 0) mat(3, 0; 0, 0) = mat(0(3) + 2(0), 0(0) + 2(0); 0(3) + 0(0), 0(0) + 0(0)) = mat(0, 0; 0, 0) = O$.
+2. $B A = mat(3, 0; 0, 0) mat(0, 2; 0, 0) = mat(3(0) + 0(0), 3(2) + 0(0); 0(0) + 0(0), 0(2) + 0(0)) = mat(0, 6; 0, 0) != O$.
+Thus, $A B = O$ but $B A != O$. This demonstrates both the *existence of zero divisors* and the *non-commutativity of matrix multiplication*.], answer: [C])
 
-#solution(1, [$A' = [2, 3; -1, 4]$ by swapping rows and columns. Compare: $A' != A$ (not symmetric) and $A' != -A$ (skew would need $[2, 3; -1, 4] = [-2, 1; -3, -4]$). Quick dead-giveaway: a skew matrix must have zeros on its diagonal, but $a_(1 1) = 2$.], answer: "D")
-#solution(2, [Match entries: $x - y = 3$ and $x + y = 9$. Adding: $2 x = 12$, so $x = 6$; subtracting: $2 y = 6$, so $y = 3$. The middle entries (4 and 2) are already equal — they exist to confirm the matrices really can match.], answer: "A")
-#solution(3, [$A B = [1 dot 0 + 2 dot 1, 1 dot 1 + 2 dot 0; 3 dot 0 + 4 dot 1, 3 dot 1 + 4 dot 0] = [2, 1; 4, 3]$ and $B A = [3, 4; 1, 2]$. Subtracting entry-wise: $A B - B A = [-1, -3; 3, 1]$. This question *is* the non-commutativity lesson with numbers attached.], answer: "B")
-#solution(4, [Both matrices are non-zero, yet every dot product is $1 - 1 = 0$, so $A B = O$. Matrices therefore have *zero divisors* — the number property "product zero forces a factor zero" fails here. Nothing about commutativity is involved.], answer: "D")
-#solution(5, [Cross-multiply: $abs(A) = 3 dot (-2) - (-2) dot 4 = -6 + 8 = 2$. Watch the double negative — dropping the minus on $(-2)(4)$ is exactly how the $-14$ distractor is built.], answer: "C")
-#solution(6, [Every entry of $2 A$ is 2 times an entry of $A$. Each of the 3 rows contributes a factor of 2, so $abs(2 A) = 2^3 abs(A) = 8 dot 4 = 32$. The exponent is the order — here 3, not 2.], answer: "C")
-#solution(7, [Determinant route: $1/2 abs(0(0 - 3) + 4(3 - 0) + 0(0 - 0)) = 1/2 abs(12) = 6$. Or notice this is a right triangle with legs 4 and 3: $1/2 dot 4 dot 3 = 6$ — the determinant agrees with the geometry.], answer: "D")
-#solution(8, [Gate: $abs(A) = 2 dot 4 - 3 dot 1 = 5 != 0$. Shortcut — swap the diagonal, negate the other two, divide by 5: $A^(-1) = [4/5, -3/5; -1/5, 2/5]$. Option (C) is the adjoint without the division; option (D) has swapped-off-diagonal signs.], answer: "B")
-#solution(9, [Here $abs(A) = abs([1, 2; 2, 4]) = 4 - 4 = 0$, so the matrix method stalls at the gate — no unique solution. Check which side: $"adj" A = [4, -2; -2, 1]$, then $("adj" A) B = [4 dot 3 - 2 dot 7; -2 dot 3 + 1 dot 7] = [-2; 1] != O$ — inconsistent, no solution. The equations are the same line doubled up... almost: $x + 2 y = 3$ vs $x + 2 y = 3.5$ after dividing the second by 2. Parallel lines never meet.], answer: "B")
-#solution(10, [For skew-symmetric $A$: $A' = -A$, so $abs(A) = abs(A') = abs(-A) = (-1)^3 abs(A) = -abs(A)$, which forces $abs(A) = 0$ — for *every* 3 × 3 skew-symmetric matrix, no matter the entries.], answer: "A")
+#mcq(4, [If $A$ is a square matrix of order $3 times 3$ such that $|A| = 5$, then the value of $|2 A|$ is equal to:], (
+  [10],
+  [20],
+  [40],
+  [80],
+))
+#solution(4, [Recall the determinant scalar scaling theorem for an $n times n$ matrix:
+$ |k A| = k^n |A| $
+Here $k = 2$, order $n = 3$, and $|A| = 5$.
+Substituting these values:
+$ |2 A| = 2^3 dot |A| = 8 dot 5 = 40 $
+(Trap: Students who multiply $k$ by $|A|$ directly obtain $2 times 5 = 10$, which is Option A).], answer: [C])
 
-= Wrong-Answer Clinic
+#mcq(5, [If $A$ is a non-singular square matrix of order $3 times 3$ with $|A| = 4$, then the values of $|"adj"(A)|$ and $|"adj"("adj"(A))|$ are respectively:], (
+  [16 and 64],
+  [16 and 256],
+  [4 and 16],
+  [64 and 256],
+))
+#solution(5, [We apply the master adjoint power laws for order $n = 3$:
+1. $|"adj"(A)| = |A|^(n - 1) = |A|^(3 - 1) = |A|^2 = 4^2 = 16$.
+2. $|"adj"("adj"(A))| = |A|^((n - 1)^2) = |A|^((3 - 1)^2) = |A|^(2^2) = |A|^4 = 4^4 = 256$.
+Thus, the values are 16 and 256 respectively.], answer: [B])
 
-#table(
-  columns: (1.35fr, 1.35fr, 1.3fr),
-  table.header[*If you picked this*][*The thinking slip*][*The lasting fix*],
-  [(A) in Q1 — "symmetric"], [Checked $A' = A$ but never $A' = -A$], [Two-check ritual: test both, and use the diagonal-zero test for skew first],
-  [(C) in Q3 — "the product itself"], [Computed $A B$ and forgot the subtraction], [Read the expression aloud before computing: "$A B$ minus $B A$"],
-  [(B) in Q6 — "24"], [Treated $abs(2 A)$ as $2 dot abs(A)$ plus... nothing consistent], [$abs(k A) = k^n abs(A)$ — write the power before touching numbers],
-  [(C) in Q8 — "the adjoint"], [Built $"adj" A$ but skipped dividing by $abs(A)$], [Inverse is a two-step product: adjoint, then scale by $1 / abs(A)$],
-  [(A) in Q9 — "unique"], [Answered from the shape of the equations, not $abs(A)$], [Determinant first, conclusions second — always],
-  [(D) in Q10 — "depends"], [Tried to imagine a special non-singular skew matrix], [The $(-1)^n$ argument closes every odd-order skew case at once],
-)
+#pagebreak()
 
-#v(12pt)
-#align(center)[#text(fill: om-grey, size: 8.5pt)[© OurMocks · www.ourmocks.com · CUET UG Mathematics · Algebra · 2027 cycle]]
+= Practice Questions — Part 2 (Q6 to Q10)
+
+#mcq(6, [The inverse of the $2 times 2$ matrix $A = mat(2, 3; 1, 4)$ is equal to:], (
+  [$mat(4/5, -3/5; -1/5, 2/5)$],
+  [$mat(4/5, 3/5; 1/5, 2/5)$],
+  [$mat(-4/5, 3/5; 1/5, -2/5)$],
+  [$mat(2/5, -3/5; -1/5, 4/5)$],
+))
+#solution(6, [We use the $2 times 2$ lightning inverse shortcut:
+1. Determinant: $|A| = (2)(4) - (3)(1) = 8 - 3 = 5 != 0$.
+2. Form adjoint by swapping diagonal entries ($2 <-> 4$) and negating anti-diagonal entries ($3 -> -3, 1 -> -1$):
+   $ "adj"(A) = mat(4, -3; -1, 2) $
+3. Inverse $A^(-1) = frac(1, |A|) "adj"(A) = frac(1, 5) mat(4, -3; -1, 2) = mat(4/5, -3/5; -1/5, 2/5)$.], answer: [A])
+
+#mcq(7, [If $A = mat(3, 1; -1, 2)$, then the matrix product $A dot "adj"(A)$ is equal to:], (
+  [$mat(7, 0; 0, 7)$],
+  [$mat(5, 0; 0, 5)$],
+  [$mat(1, 0; 0, 1)$],
+  [$mat(7, 1; -1, 7)$],
+))
+#solution(7, [By the Fundamental Adjoint Identity:
+$ A dot "adj"(A) = |A| I_n $
+For $A = mat(3, 1; -1, 2)$, determinant $|A| = (3)(2) - (1)(-1) = 6 + 1 = 7$.
+Therefore:
+$ A dot "adj"(A) = 7 I_2 = 7 mat(1, 0; 0, 1) = mat(7, 0; 0, 7) $], answer: [A])
+
+#mcq(8, [Let $A = [a_(i j)]$ be a $3 times 3$ matrix and $A_(i j)$ denote the cofactor of element $a_(i j)$. The numerical value of the expression $a_(11) A_(21) + a_(12) A_(22) + a_(13) A_(23)$ is:], (
+  [$|A|$],
+  [$-|A|$],
+  [$0$],
+  [$|A|^2$],
+))
+#solution(8, [By the *Orthogonal Expansion Theorem*:
+- If elements of any row are multiplied with their *own corresponding cofactors*, the sum equals the determinant: $sum a_(1 j) A_(1 j) = |A|$.
+- If elements of any row are multiplied with the cofactors of *any other row*, the sum is identically zero: $sum a_(1 j) A_(2 j) = 0$.
+Here, the elements belong to Row 1, but the cofactors belong to Row 2 ($1 != 2$). Hence, the sum is strictly $0$.], answer: [C])
+
+#mcq(9, [If $A$ is a skew-symmetric matrix of order $5 times 5$, then the determinant $|A|$ is equal to:], (
+  [$5$],
+  [$-1$],
+  [$1$],
+  [$0$],
+))
+#solution(9, [By definition of skew-symmetric matrix, $A^T = -A$.
+Taking the determinant of both sides:
+$ |A^T| = |-A| $
+Since $|A^T| = |A|$ and for order $n = 5$, $|-A| = (-1)^5 |A| = -|A|$:
+$ |A| = -|A| => 2 |A| = 0 => |A| = 0 $
+Thus, the determinant of any skew-symmetric matrix of odd order is identically zero.], answer: [D])
+
+#mcq(10, [If the area of a triangle with vertices $(2, -6)$, $(5, 4)$, and $(k, 4)$ is $35 "sq units"$, then the possible values of $k$ are:], (
+  [$12$ only],
+  [$-2$ only],
+  [$12, -2$],
+  [$-12, 2$],
+))
+#solution(10, [The determinant formula for triangle area is:
+$ Delta = frac(1, 2) mat(delim: "|", 2, -6, 1; 5, 4, 1; k, 4, 1) = plus.minus 35 => mat(delim: "|", 2, -6, 1; 5, 4, 1; k, 4, 1) = plus.minus 70 $
+Expand along Row 1:
+$ 2(4 - 4) - (-6)(5 - k) + 1(20 - 4k) = 0 + 6(5 - k) + 20 - 4k = 30 - 6k + 20 - 4k = 50 - 10k $
+Now solve both cases:
+1. $50 - 10k = 70 => -10k = 20 => k = -2$
+2. $50 - 10k = -70 => -10k = -120 => k = 12$
+Thus, $k = 12$ or $-2$. (NTA trap: students who forget the $-35$ branch find only $k = -2$).], answer: [C])
+
+#pagebreak()
+#set text(size: 8.4pt)
+#set par(leading: 0.38em, spacing: 0.40em)
+
+= Practice Questions — Part 3 (Q11 to Q15)
+
+#mcq(11, [The values of $x$ for which the matrix $A = mat(x + 1, -2; 3, x - 4)$ is singular are:], (
+  [$1, 2$],
+  [$-1, 4$],
+  [$2, 3$],
+  [$-2, 1$],
+))
+#solution(11, [A square matrix is singular if and only if its determinant is zero ($|A| = 0$):
+$ |A| = (x + 1)(x - 4) - (-2)(3) = x^2 - 3x - 4 + 6 = x^2 - 3x + 2 = 0 $
+Factoring the quadratic equation:
+$ (x - 1)(x - 2) = 0 => x = 1 quad "or" quad x = 2 $], answer: [A])
+
+#mcq(12, [The system of linear equations $x + y + z = 6$, $x + 2y + 3z = 10$, $x + 2y + lambda z = mu$ has a unique solution if and only if:], (
+  [$lambda = 3, mu = 10$],
+  [$lambda != 3$, for any value of $mu$],
+  [$lambda = 3, mu != 10$],
+  [$lambda != 3, mu != 10$],
+))
+#solution(12, [By the Matrix Method, a system $A X = B$ has a unique solution if and only if the coefficient determinant $|A| != 0$:
+$ |A| = mat(delim: "|", 1, 1, 1; 1, 2, 3; 1, 2, lambda) = 1(2lambda - 6) - 1(lambda - 3) + 1(2 - 2) = 2lambda - 6 - lambda + 3 = lambda - 3 $
+For a unique solution:
+$ |A| != 0 => lambda - 3 != 0 => lambda != 3 $
+This condition depends solely on the coefficient matrix and holds for *any real value of $mu$*.], answer: [B])
+
+#mcq(13, [If $A$ and $B$ are invertible matrices such that $A^(-1) = mat(1, -2; 0, 3)$ and $B^(-1) = mat(-1, 1; 2, 0)$, then the inverse matrix $(A B)^(-1)$ is:], (
+  [$mat(-1, 5; 2, -4)$],
+  [$mat(-1, -2; 6, 0)$],
+  [$mat(1, -2; 0, 3)$],
+  [$mat(5, -1; -4, 2)$],
+))
+#solution(13, [We apply the Reversal Law of Matrix Inverses:
+$ (A B)^(-1) = B^(-1) A^(-1) $
+Substitute the given inverse matrices in exact reverse order:
+$ (A B)^(-1) = mat(-1, 1; 2, 0) mat(1, -2; 0, 3) = mat((-1)(1) + (1)(0), (-1)(-2) + (1)(3); (2)(1) + (0)(0), (2)(-2) + (0)(3)) = mat(-1, 5; 2, -4) $
+(Trap: Multiplying $A^(-1) B^(-1)$ produces Option B).], answer: [A])
+
+#mcq(14, [If matrix $A = mat(3, 1; -1, 2)$ satisfies the polynomial relation $A^2 - 5 A + 7 I = O$, then $A^(-1)$ expressed in terms of $A$ and $I$ is:], (
+  [$A^(-1) = frac(1, 7)(5 I - A)$],
+  [$A^(-1) = frac(1, 7)(A - 5 I)$],
+  [$A^(-1) = 5 I - A$],
+  [$A^(-1) = frac(1, 5)(7 I - A)$],
+))
+#solution(14, [Multiply the given polynomial equation by $A^(-1)$ from the left:
+$ A^(-1)(A^2 - 5 A + 7 I) = A^(-1) O => A - 5 I + 7 A^(-1) = O $
+Isolate $7 A^(-1)$:
+$ 7 A^(-1) = 5 I - A => A^(-1) = frac(1, 7)(5 I - A) $], answer: [A])
+
+#mcq(15, [Let $A$ be a $3 times 3$ square matrix with $|A| = 2$. The numerical value of the determinant $|3 dot "adj"(2 A)|$ is equal to:], (
+  [$6912$],
+  [$2304$],
+  [$768$],
+  [$576$],
+))
+#solution(15, [We break the expression down using determinant and adjoint power laws:
+1. For order $n = 3$, matrix $M = "adj"(2 A)$ is $3 times 3$. Therefore:
+   $ |3 M| = 3^3 |M| = 27 |"adj"(2 A)| $
+2. Using $|"adj"(B)| = |B|^(n - 1) = |B|^2$ for $B = 2 A$:
+   $ |"adj"(2 A)| = (|2 A|)^2 $
+3. Calculate $|2 A|$: $|2 A| = 2^3 |A| = 8(2) = 16$.
+4. Then $|"adj"(2 A)| = (16)^2 = 256$.
+5. Multiplying: $|3 dot "adj"(2 A)| = 27 dot 256 = 6912$.], answer: [A])

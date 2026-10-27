@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CUET UG Mathematics: Linear Systems & Adjoints</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    background: #071A4D;
+    border-radius: 10px;
+    padding: 14px 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .badge {
+    background: #B8FF34;
+    color: #071A4D;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .header-title {
+    color: #FFFFFF;
+    font-size: 16.5px;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+  }
+  .header-right {
+    color: #94A3B8;
+    font-size: 12.5px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .main-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 1.15fr 0.95fr;
+    gap: 16px;
+    height: 690px;
+  }
+  .card {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 10px;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 8px;
+    border-bottom: 1.5px solid #F1F5F9;
+  }
+  .card-title {
+    font-size: 14.5px;
+    font-weight: 800;
+    color: #071A4D;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .tag {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+  .tag-blue { background: #EFF6FF; color: #1E40AF; }
+  .tag-green { background: #F0FDF4; color: #166534; }
+  .tag-amber { background: #FFFBEB; color: #92400E; }
+
+  .rule-list {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin-top: 8px;
+  }
+  .rule-item {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    padding: 7px 10px;
+    font-size: 11px;
+    line-height: 1.35;
+    color: #334155;
+  }
+  .rule-item b {
+    color: #071A4D;
+  }
+  .rule-item.hl-green {
+    background: #F0FDF4;
+    border-color: #86EFAC;
+  }
+  .rule-item.hl-amber {
+    background: #FFFBEB;
+    border-color: #FDE68A;
+  }
+  .rule-item.hl-rose {
+    background: #FFF1F2;
+    border-color: #FECDD3;
+  }
+
+  .badge-code {
+    font-family: monospace;
+    font-weight: 800;
+    background: #E0E7FF;
+    color: #3730A3;
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-size: 11px;
+  }
+
+  .footer-note {
+    background: #F1F5F9;
+    border-radius: 6px;
+    padding: 6px 10px;
+    font-size: 10px;
+    color: #475569;
+    text-align: center;
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <div class="badge">FIGURE 2 · LINEAR SYSTEMS &amp; ADJOINTS</div>
+    <div class="header-title">System of Linear Equations: Invertibility Engine, Adjoint Shortcuts &amp; Cramer's Rule</div>
+  </div>
+  <div class="header-right">NTA CUET UG Section B1 · Class 12 Mathematics · Unit II</div>
+</div>
+
+<div class="main-grid">
+  <!-- Card 1: Linear Systems AX = B -->
+  <div class="card">
+    <div>
+      <div class="card-header">
+        <div class="card-title">1. Linear Systems Classification Engine</div>
+        <span class="tag tag-blue">AX = B</span>
+      </div>
+
+      <div class="rule-list">
+        <div class="rule-item">
+          <b>Matrix Form Representation:</b>
+          <br>A system of linear equations is written compactly as <span class="badge-code">AX = B</span>, where <i>A</i> is the coefficient matrix, <i>X</i> is the variable vector, and <i>B</i> is the constant vector.
+        </div>
+        <div class="rule-item hl-green">
+          <b>Case 1: |A| &ne; 0 (Non-Singular Matrix)</b>
+          <br>• The system is <b>Consistent and Independent</b>.
+          <br>• Possesses a <b>Unique Solution</b> given by:
+          <br><span class="badge-code">X = A⁻¹ B = (adj(A) &middot; B) / |A|</span>
+        </div>
+        <div class="rule-item hl-rose">
+          <b>Case 2A: |A| = 0 and (adj(A)) &middot; B &ne; O</b>
+          <br>• The system is <b>Inconsistent</b>.
+          <br>• Possesses <b>Zero Solutions</b> (No solution exists; planes are parallel or non-intersecting).
+        </div>
+        <div class="rule-item hl-amber">
+          <b>Case 2B: |A| = 0 and (adj(A)) &middot; B = O</b>
+          <br>• The system is <b>Consistent</b>.
+          <br>• Possesses <b>Infinitely Many Solutions</b> (Coincident planes / linearly dependent equations).
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-note">
+      Homogeneous System AX = O: If |A| &ne; 0 &rArr; only trivial solution X = O. If |A| = 0 &rArr; non-trivial solutions exist!
+    </div>
+  </div>
+
+  <!-- Card 2: Adjoint & Inversion Shortcuts -->
+  <div class="card">
+    <div>
+      <div class="card-header">
+        <div class="card-title">2. Adjoint &amp; Inversion Shortcuts</div>
+        <span class="tag tag-green">Fast Computation</span>
+      </div>
+
+      <div class="rule-list">
+        <div class="rule-item" style="background: #F0FDF4; border-color: #86EFAC;">
+          <b>2 &times; 2 Matrix Lightning Inverse Shortcut:</b>
+          <br>For <i>A = [[a, b], [c, d]]</i> with |<i>A</i>| = <i>ad - bc &ne; 0</i>:
+          <br>1. <b>Swap diagonal elements:</b> <i>a &harr; d</i>.
+          <br>2. <b>Negate anti-diagonal elements:</b> <i>b &rarr; -b, c &rarr; -c</i>.
+          <br><span class="badge-code">A⁻¹ = (1 / |A|) &middot; [[d, -b], [-c, a]]</span>
+        </div>
+        <div class="rule-item">
+          <b>3 &times; 3 Cofactor Matrix Definition:</b>
+          <br>• Minor <i>M<sub>ij</sub></i> = determinant formed by deleting row <i>i</i> and column <i>j</i>.
+          <br>• Cofactor <i>A<sub>ij</sub></i> = <span class="badge-code">(-1)ⁱ⁺ʲ M<sub>ij</sub></span>.
+          <br>• Adjoint: <span class="badge-code">adj(A) = [A<sub>ij</sub>]ᵀ</span> (Transpose of cofactor matrix!).
+        </div>
+        <div class="rule-item" style="background: #FFFBEB; border-color: #FDE68A;">
+          <b>Orthogonal Expansion Theorem:</b>
+          <br>• Same row expansion: <span class="badge-code">&sum; a<sub>ij</sub> A<sub>ij</sub> = |A|</span>.
+          <br>• Different row expansion: <span class="badge-code">&sum; a<sub>ij</sub> A<sub>kj</sub> = 0</span> (for <i>i &ne; k</i>).
+          <br>Elements of any row multiplied by cofactors of another row always sum to <b>ZERO</b>!
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-note">
+      Remember: adj(A) is the TRANSPOSE of cofactors. Missing the transpose is the #1 student error!
+    </div>
+  </div>
+
+  <!-- Card 3: Cramer's Rule & Geometry -->
+  <div class="card">
+    <div>
+      <div class="card-header">
+        <div class="card-title">3. Cramer's Rule &amp; Geometry</div>
+        <span class="tag tag-amber">Applications</span>
+      </div>
+
+      <div class="rule-list">
+        <div class="rule-item">
+          <b>Cramer's Rule:</b>
+          <br>For non-singular coefficient determinant <i>D = |A| &ne; 0</i>:
+          <br><span class="badge-code">x = D<sub>x</sub> / D</span>, &nbsp; <span class="badge-code">y = D<sub>y</sub> / D</span>, &nbsp; <span class="badge-code">z = D<sub>z</sub> / D</span>
+          <br>where <i>D<sub>x</sub></i> replaces column 1 with constant vector <i>B</i>.
+        </div>
+        <div class="rule-item hl-green">
+          <b>Area of Triangle via Determinant:</b>
+          <br>For vertices (<i>x</i><sub>1</sub>, <i>y</i><sub>1</sub>), (<i>x</i><sub>2</sub>, <i>y</i><sub>2</sub>), (<i>x</i><sub>3</sub>, <i>y</i><sub>3</sub>):
+          <br><span class="badge-code">&Delta; = &frac12; | [x₁ y₁ 1; x₂ y₂ 1; x₃ y₃ 1] |</span>
+          <br>Always take absolute value since area must be positive!
+        </div>
+        <div class="rule-item">
+          <b>Collinearity &amp; Line Equation:</b>
+          <br>• Three points are collinear &hArr; <span class="badge-code">&Delta; = 0</span>.
+          <br>• Equation of line through (<i>x</i><sub>1</sub>, <i>y</i><sub>1</sub>) and (<i>x</i><sub>2</sub>, <i>y</i><sub>2</sub>):
+          <br><span class="badge-code">det([x y 1; x₁ y₁ 1; x₂ y₂ 1]) = 0</span>.
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-note">
+      When solving for unknown vertex coordinate <i>k</i> given area, remember &Delta; can be &plusmn;Area!
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
