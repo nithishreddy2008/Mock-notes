@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Simple Applications of Tools of Demand and Supply: Price Ceiling & Price Floor</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px 28px;
+    overflow: hidden;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 12px;
+    margin-bottom: 16px;
+  }
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .brand-badge {
+    background: #071A4D;
+    color: #B8FF34;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .title-group h1 {
+    font-size: 22px;
+    font-weight: 800;
+    color: #071A4D;
+    letter-spacing: -0.02em;
+  }
+  .title-group p {
+    font-size: 12px;
+    color: #64748B;
+    margin-top: 2px;
+  }
+  .header-meta {
+    display: flex;
+    gap: 8px;
+  }
+  .pill {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 999px;
+    border: 1px solid #CBD5E1;
+    background: #FFFFFF;
+    color: #334155;
+  }
+  .pill.highlight {
+    background: #EFF6FF;
+    border-color: #93C5FD;
+    color: #1D4ED8;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-bottom: 16px;
+  }
+  .card {
+    background: #FFFFFF;
+    border: 1.5px solid #E2E8F0;
+    border-radius: 10px;
+    padding: 16px 20px;
+    display: flex;
+    flex-direction: column;
+    height: 570px;
+  }
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  .card-title {
+    font-size: 15px;
+    font-weight: 800;
+    color: #0F172A;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .badge {
+    font-size: 10px;
+    font-weight: 800;
+    padding: 2px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+  .badge-red { background: #FEE2E2; color: #991B1B; }
+  .badge-green { background: #D1FAE5; color: #065F46; }
+
+  .svg-wrap {
+    flex: 1;
+    position: relative;
+    width: 100%;
+    border-radius: 8px;
+    background: #FAFAFC;
+    border: 1px solid #F1F5F9;
+  }
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .bottom-bar {
+    display: grid;
+    grid-template-columns: 1.3fr 1.5fr 1.2fr;
+    gap: 16px;
+    background: #FFFFFF;
+    border: 1.5px solid #E2E8F0;
+    border-radius: 10px;
+    padding: 12px 18px;
+    height: 195px;
+  }
+  .summary-col h3 {
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #071A4D;
+    margin-bottom: 6px;
+  }
+  .rule-list {
+    list-style: none;
+    font-size: 11px;
+    line-height: 1.45;
+    color: #334155;
+  }
+  .rule-list li {
+    margin-bottom: 4px;
+    position: relative;
+    padding-left: 14px;
+  }
+  .rule-list li::before {
+    content: "•";
+    position: absolute;
+    left: 2px;
+    color: #2563EB;
+    font-weight: 900;
+  }
+  .trap-box {
+    background: #FFF1F2;
+    border: 1px solid #FECDD3;
+    border-radius: 8px;
+    padding: 8px 12px;
+  }
+  .trap-box h4 {
+    color: #BE123C;
+    font-size: 11.5px;
+    font-weight: 800;
+    margin-bottom: 4px;
+  }
+  .trap-box p {
+    font-size: 10.5px;
+    color: #881337;
+    line-height: 1.35;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <div class="brand-badge">OurMocks Core Engine</div>
+    <div class="title-group">
+      <h1>Simple Applications: Price Ceiling &amp; Price Floor</h1>
+      <p>Government Intervention Mechanics: Maximum Legal Price (Ceiling) vs. Minimum Support Price (Floor) &amp; Market Distortion</p>
+    </div>
+  </div>
+  <div class="header-meta">
+    <span class="pill highlight">Government Control</span>
+    <span class="pill">Ceiling &lt; P* (Shortage)</span>
+    <span class="pill">Floor &gt; P* (Surplus)</span>
+  </div>
+</div>
+
+<div class="grid">
+  <!-- Left Card: Price Ceiling -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">
+        <span>Price Ceiling (Maximum Price Legislation)</span>
+      </div>
+      <span class="badge badge-red">Imposed Below P*</span>
+    </div>
+    <div class="svg-wrap">
+      <svg viewBox="0 0 620 480" xmlns="http://www.w3.org/2000/svg">
+        <!-- Axes -->
+        <line x1="60" y1="420" x2="580" y2="420" stroke="#0F172A" stroke-width="2.5" marker-end="url(#arrow-dark)" />
+        <line x1="60" y1="420" x2="60" y2="40" stroke="#0F172A" stroke-width="2.5" marker-end="url(#arrow-dark)" />
+        <text x="575" y="445" font-size="12" font-weight="700" fill="#0F172A" text-anchor="end">Quantity (Q)</text>
+        <text x="45" y="40" font-size="12" font-weight="700" fill="#0F172A" text-anchor="end" transform="rotate(-90 45,40)">Price (P)</text>
+
+        <!-- Demand Curve -->
+        <line x1="100" y1="80" x2="520" y2="380" stroke="#2563EB" stroke-width="3" />
+        <text x="525" y="385" font-size="12" font-weight="800" fill="#2563EB">Demand (D)</text>
+
+        <!-- Supply Curve -->
+        <line x1="100" y1="380" x2="520" y2="80" stroke="#059669" stroke-width="3" />
+        <text x="525" y="85" font-size="12" font-weight="800" fill="#059669">Supply (S)</text>
+
+        <!-- Equilibrium Point E* at (310, 230) -->
+        <circle cx="310" cy="230" r="5" fill="#64748B" />
+        <text x="325" y="225" font-size="11" font-weight="700" fill="#64748B">Equilibrium E*</text>
+        <line x1="60" y1="230" x2="310" y2="230" stroke="#94A3B8" stroke-dasharray="3 3" stroke-width="1.2" />
+        <text x="48" y="234" font-size="10.5" font-weight="700" fill="#64748B" text-anchor="end">P*</text>
+        <line x1="310" y1="230" x2="310" y2="420" stroke="#94A3B8" stroke-dasharray="3 3" stroke-width="1.2" />
+        <text x="310" y="435" font-size="10.5" font-weight="700" fill="#64748B" text-anchor="middle">Q*</text>
+
+        <!-- Price Ceiling Line Pc = 310 (Imposed BELOW P*) -->
+        <line x1="60" y1="310" x2="550" y2="310" stroke="#DC2626" stroke-width="3" />
+        <text x="48" y="314" font-size="11.5" font-weight="800" fill="#DC2626" text-anchor="end">P_c</text>
+        <text x="555" y="314" font-size="11.5" font-weight="800" fill="#DC2626">Price Ceiling</text>
+
+        <!-- Intersections with S and D at Pc -->
+        <!-- Qs at x=198 -->
+        <circle cx="198" cy="310" r="5" fill="#059669" stroke="#FFFFFF" stroke-width="2" />
+        <line x1="198" y1="310" x2="198" y2="420" stroke="#059669" stroke-dasharray="2 2" stroke-width="1.2" />
+        <text x="198" y="435" font-size="10.5" font-weight="700" fill="#059669" text-anchor="middle">Q_S</text>
+
+        <!-- Qd at x=422 -->
+        <circle cx="422" cy="310" r="5" fill="#2563EB" stroke="#FFFFFF" stroke-width="2" />
+        <line x1="422" y1="310" x2="422" y2="420" stroke="#2563EB" stroke-dasharray="2 2" stroke-width="1.2" />
+        <text x="422" y="435" font-size="10.5" font-weight="700" fill="#2563EB" text-anchor="middle">Q_D</text>
+
+        <!-- Excess Demand Bracket -->
+        <rect x="198" y="315" width="224" height="25" fill="#FEE2E2" opacity="0.6" />
+        <text x="310" y="332" font-size="11" font-weight="800" fill="#991B1B" text-anchor="middle">EXCESS DEMAND (Shortage = Q_D - Q_S)</text>
+
+        <!-- Black Market Price Pb on Demand Curve at Qs -->
+        <circle cx="198" cy="150" r="5" fill="#7C3AED" stroke="#FFFFFF" stroke-width="2" />
+        <line x1="198" y1="310" x2="198" y2="150" stroke="#7C3AED" stroke-dasharray="3 3" stroke-width="1.5" />
+        <line x1="60" y1="150" x2="198" y2="150" stroke="#7C3AED" stroke-dasharray="3 3" stroke-width="1.5" />
+        <text x="48" y="154" font-size="11" font-weight="800" fill="#7C3AED" text-anchor="end">P_Black</text>
+        <text x="210" y="150" font-size="10.5" font-weight="800" fill="#7C3AED">Black Market Price (P_B &gt; P*)</text>
+
+        <!-- Annotation Tag -->
+        <rect x="80" y="360" width="460" height="42" rx="6" fill="#FFF1F2" stroke="#FECDD3" />
+        <text x="90" y="377" font-size="10.5" font-weight="800" fill="#BE123C">Ceiling Impact:</text>
+        <text x="90" y="392" font-size="10" fill="#881337">Fixing price below equilibrium creates shortage → triggers rationing (PDS), queues, and illegal black marketing.</text>
+
+        <defs>
+          <marker id="arrow-dark" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#0F172A"/>
+          </marker>
+        </defs>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Right Card: Price Floor -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">
+        <span>Price Floor / Minimum Support Price (MSP)</span>
+      </div>
+      <span class="badge badge-green">Imposed Above P*</span>
+    </div>
+    <div class="svg-wrap">
+      <svg viewBox="0 0 620 480" xmlns="http://www.w3.org/2000/svg">
+        <!-- Axes -->
+        <line x1="60" y1="420" x2="580" y2="420" stroke="#0F172A" stroke-width="2.5" marker-end="url(#arrow-dark2)" />
+        <line x1="60" y1="420" x2="60" y2="40" stroke="#0F172A" stroke-width="2.5" marker-end="url(#arrow-dark2)" />
+        <text x="575" y="445" font-size="12" font-weight="700" fill="#0F172A" text-anchor="end">Quantity (Q)</text>
+        <text x="45" y="40" font-size="12" font-weight="700" fill="#0F172A" text-anchor="end" transform="rotate(-90 45,40)">Price (P)</text>
+
+        <!-- Demand Curve -->
+        <line x1="100" y1="80" x2="520" y2="380" stroke="#2563EB" stroke-width="3" />
+        <text x="525" y="385" font-size="12" font-weight="800" fill="#2563EB">Demand (D)</text>
+
+        <!-- Supply Curve -->
+        <line x1="100" y1="380" x2="520" y2="80" stroke="#059669" stroke-width="3" />
+        <text x="525" y="85" font-size="12" font-weight="800" fill="#059669">Supply (S)</text>
+
+        <!-- Equilibrium Point E* at (310, 230) -->
+        <circle cx="310" cy="230" r="5" fill="#64748B" />
+        <text x="325" y="235" font-size="11" font-weight="700" fill="#64748B">Equilibrium E*</text>
+        <line x1="60" y1="230" x2="310" y2="230" stroke="#94A3B8" stroke-dasharray="3 3" stroke-width="1.2" />
+        <text x="48" y="234" font-size="10.5" font-weight="700" fill="#64748B" text-anchor="end">P*</text>
+        <line x1="310" y1="230" x2="310" y2="420" stroke="#94A3B8" stroke-dasharray="3 3" stroke-width="1.2" />
+        <text x="310" y="435" font-size="10.5" font-weight="700" fill="#64748B" text-anchor="middle">Q*</text>
+
+        <!-- Price Floor Line Pf = 150 (Imposed ABOVE P*) -->
+        <line x1="60" y1="150" x2="550" y2="150" stroke="#059669" stroke-width="3" />
+        <text x="48" y="154" font-size="11.5" font-weight="800" fill="#059669" text-anchor="end">P_f</text>
+        <text x="555" y="154" font-size="11.5" font-weight="800" fill="#059669">Price Floor (MSP)</text>
+
+        <!-- Intersections at Pf -->
+        <!-- Qd at x=198 -->
+        <circle cx="198" cy="150" r="5" fill="#2563EB" stroke="#FFFFFF" stroke-width="2" />
+        <line x1="198" y1="150" x2="198" y2="420" stroke="#2563EB" stroke-dasharray="2 2" stroke-width="1.2" />
+        <text x="198" y="435" font-size="10.5" font-weight="700" fill="#2563EB" text-anchor="middle">Q_D</text>
+
+        <!-- Qs at x=422 -->
+        <circle cx="422" cy="150" r="5" fill="#059669" stroke="#FFFFFF" stroke-width="2" />
+        <line x1="422" y1="150" x2="422" y2="420" stroke="#059669" stroke-dasharray="2 2" stroke-width="1.2" />
+        <text x="422" y="435" font-size="10.5" font-weight="700" fill="#059669" text-anchor="middle">Q_S</text>
+
+        <!-- Excess Supply Bracket -->
+        <rect x="198" y="115" width="224" height="25" fill="#D1FAE5" opacity="0.6" />
+        <text x="310" y="132" font-size="11" font-weight="800" fill="#065F46" text-anchor="middle">EXCESS SUPPLY (Surplus = Q_S - Q_D)</text>
+
+        <!-- Government Buffer Stock Arrow -->
+        <rect x="220" y="270" width="320" height="70" rx="6" fill="#F0FDF4" stroke="#A7F3D0" />
+        <text x="230" y="290" font-size="11" font-weight="800" fill="#065F46">Government Procurement Role:</text>
+        <text x="230" y="306" font-size="10" fill="#047857">• Government (FCI) must buy entire surplus (Q_S - Q_D)</text>
+        <text x="230" y="320" font-size="10" fill="#047857">• Build buffer stocks to stabilize farmer income</text>
+        <text x="230" y="334" font-size="10" font-weight="700" fill="#065F46">• In labor markets, minimum wage causes surplus labor (unemployment)</text>
+
+        <defs>
+          <marker id="arrow-dark2" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#0F172A"/>
+          </marker>
+        </defs>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<!-- Bottom Summary Bar -->
+<div class="bottom-bar">
+  <div class="summary-col">
+    <h3>Price Ceiling (Upper Legal Limit)</h3>
+    <ul class="rule-list">
+      <li><b>Target Beneficiary:</b> Protects low-income consumers against price gouging for essential goods (wheat, rice, medicines, urban house rent).</li>
+      <li><b>Operational Condition:</b> Must be set strictly <i>BELOW</i> equilibrium price ($P_c < P^*$) to be binding.</li>
+      <li><b>Direct Consequence:</b> $Q_D > Q_S \implies$ Shortage. Necessitates Rationing / Dual Pricing / PDS.</li>
+    </ul>
+  </div>
+
+  <div class="summary-col">
+    <h3>Price Floor / MSP (Lower Legal Limit)</h3>
+    <ul class="rule-list">
+      <li><b>Target Beneficiary:</b> Protects producers (farmers via Minimum Support Price) or workers (statutory Minimum Wage).</li>
+      <li><b>Operational Condition:</b> Must be set strictly <i>ABOVE</i> equilibrium price ($P_f > P^*$) to be binding.</li>
+      <li><b>Direct Consequence:</b> $Q_S > Q_D \implies$ Surplus. Government must purchase the entire unsold output to maintain the floor!</li>
+    </ul>
+  </div>
+
+  <div class="trap-box">
+    <h4>The Ineffective Intervention Trap</h4>
+    <p><b>Fatal CUET Trap:</b> If government imposes a Price Ceiling <i>ABOVE</i> equilibrium ($P_c > P^*$), it is <b>non-binding and ineffective</b>—market clears at $P^*$! Similarly, a Price Floor <i>BELOW</i> equilibrium ($P_f < P^*$) is completely <b>non-binding</b> and has zero market effect!</p>
+  </div>
+</div>
+
+</body>
+</html>

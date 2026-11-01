@@ -7,276 +7,442 @@
   subtitle: "Official Syllabus · Course I: Introductory Microeconomics · Class 12 · CUET UG 2027 Cycle Notes",
 )
 
-= Syllabus Alignment
+= Syllabus Alignment & Exam Blueprint
 
 #table(
-  columns: (1.1fr, 2fr, 1.15fr),
-  table.header[*Sub-topic*][*Official syllabus pointer (NTA CUET(UG) Economics syllabus 2026, the current 2027 baseline, Course I)*][*Skills the questions test*],
-  [*Market equilibrium and imbalances*], [
-    Market equilibrium, excess demand, excess supply
-  ], [
-    Explaining how D = S fixes the equilibrium price and how excess demand or supply pushes the price back.
-  ],
-  [*Simple applications*], [
-    Applications: price ceiling and price flooring
-  ], [
-    Judging when a ceiling or floor binds, and predicting the shortage or surplus (with the government's role) it creates.
-  ],
+  columns: (1.2fr, 2fr, 1.15fr),
+  table.header([*Sub-Topic*], [*Official NTA CUET UG Syllabus Scope*], [*Cognitive Level & Weightage*]),
+  [*Market Equilibrium Concept*], [Definition of market equilibrium; Market clearing price ($P^*$) and equilibrium quantity ($Q^*$); Excess demand (shortage) and excess supply (surplus); Self-adjusting price mechanism.], [Knowledge & Recall (2 Questions)],
+  [*Equilibrium with Fixed Firms*], [Equilibrium determination under competitive markets; Shifts in demand and supply; Simultaneous shifts in demand and supply; Extreme elasticity cases (perfectly elastic/inelastic supply and demand).], [Analytical & Graphical (3–4 Questions)],
+  [*Equilibrium with Free Entry & Exit*], [Long-run equilibrium condition ($P^* = min L A C$); Optimum output per firm ($q^*$); Equilibrium number of firms ($n^* = Q^* / q^*$); Impact of demand shifts on the number of firms.], [Conceptual Rigour (2–3 Questions)],
+  [*Price Ceiling Applications*], [Definition and purpose of maximum price control; Imposition below equilibrium; Excess demand, consumer rationing, queues, black marketing, and quality deterioration.], [High-Yield Applied (2–3 Questions)],
+  [*Price Floor / MSP Applications*], [Definition and purpose of minimum price legislation; Imposition above equilibrium; Agricultural Minimum Support Price (MSP) and buffer stocks; Minimum wage and labor market unemployment.], [High-Yield Applied (2–3 Questions)],
 )
 
 #exam-pointer[
-  CUET UG pattern (NTA official information bulletin and syllabus, 2026 cycle — the
-  current 2027 baseline): each subject paper carries *50 compulsory questions* in
-  *60 minutes*, with $+5$ for every correct answer and $-1$ for every incorrect answer. The Economics paper follows NCERT Class 12
-  Economics; this closing micro unit is small but exam-dense — the ceiling-binds-below /
-  floor-binds-above rule and the shortage-surplus chain questions are compact,
-  quick-scoring checks.
+  *CUET UG Exam Alert:* Market Equilibrium represents the culmination of Introductory Microeconomics. Questions in the exam consistently focus on:
+  1. The algebraic calculation of equilibrium price and quantity by setting $q_D(P) = q_S(P)$.
+  2. The exact price and quantity outcomes of simultaneous shifts under different magnitude assumptions ($Delta D > Delta S$, $Delta D = Delta S$, $Delta D < Delta S$).
+  3. The free entry/exit theorem: why an increase in demand alters the *number of firms* ($n^*$) rather than the long-run market price.
+  4. The non-binding trap: why a ceiling *above* equilibrium or a floor *below* equilibrium has zero economic effect!
 ]
 
-= Market Equilibrium: The Resting Point
+---
 
-Every market has one price where nobody complains. Buyers get exactly what they plan to buy; sellers sell exactly what they plan to sell; nobody has a reason to bid higher or undercut lower. That price — where the demand curve crosses the supply curve — is the *equilibrium price* P\*, with its *equilibrium quantity* Q\*.
+= 1. Market Equilibrium: Concepts & Self-Correcting Mechanics
 
-- *The definition in one line:* equilibrium is where *quantity demanded = quantity supplied* (D = S). There is no tendency to change — the market is at rest.
-- *Why the market rests there:* any other price creates frustration, and frustration has a direction:
-  - *Price too HIGH* → sellers offer more than buyers want → *excess supply* → unsold stock → sellers undercut → price falls.
-  - *Price too LOW* → buyers want more than sellers offer → *excess demand* → empty shelves → buyers bid up → price rises.
-- *The invisible hand, mechanically:* competition among SELLERS pushes price down from above; competition among BUYERS pushes price up from below. Both forces point home to P\* — the market is a self-correcting thermostat.
+== 1.1 Definition of Market Equilibrium
+Market equilibrium is a state of balance in a competitive market where the aggregate quantity of a commodity that buyers are willing and able to purchase exactly equals the aggregate quantity that sellers are willing and able to offer for sale at the prevailing market price:
 
-#worked-example("Equilibrium by Schedule — The Pen Market")[
-Daily demand and supply of ball pens in a town:
+$ q_D(P^*) = q_S(P^*) $
 
-#table(
-  columns: (1.1fr, 1.5fr, 1.5fr, 1.9fr),
-  table.header[*Price (₹/pen)*][*Demand (pens)*][*Supply (pens)*][*Pressure on price*],
-  [10], [1,200], [400], [Excess demand 800 — price rises],
-  [15], [1,000], [600], [Excess demand 400 — still rising],
-  [20], [800], [800], [D = S — EQUILIBRIUM],
-  [25], [600], [1,000], [Excess supply 400 — price falls],
-  [30], [400], [1,200], [Excess supply 800 — falling],
-)
+- *Equilibrium Price ($P^*$):* The unique market price at which market demand equals market supply. It is also termed the *market clearing price* because there are neither frustrated buyers unable to purchase nor frustrated sellers left with unwanted inventory.
+- *Equilibrium Quantity ($Q^*$):* The quantity bought and sold at the equilibrium price ($Q^* = q_D(P^*) = q_S(P^*)$).
 
-- *Equilibrium: ₹20 with 800 pens a day.* Check both sides: buyers plan 800, sellers plan 800 — nobody is frustrated.
-- *Any disturbance heals:* if demand later shifts right (exam season!), the whole negotiation reruns and a NEW equilibrium forms at a higher price and quantity.
+== 1.2 Disequilibrium and Self-Correcting Price Dynamics
+
+=== Case 1: Market Price Above Equilibrium ($P > P^*$) — Excess Supply (Surplus)
+- When the prevailing price is higher than the equilibrium price ($P_1 > P^*$), quantity supplied strictly exceeds quantity demanded:
+  $ q_S(P_1) > q_D(P_1) ==> "Excess Supply (Surplus)" = q_S(P_1) - q_D(P_1) > 0 $
+- *Market Pressure:* Producers find themselves with unsold inventories piling up in warehouses. To dispose of this excess stock, competitive sellers engage in downward price competition, undercutting one another.
+- *Adjustment:* As price falls toward $P^*$, quantity demanded expands along the demand curve, while quantity supplied contracts along the supply curve. This downward price movement continues until the surplus is completely eliminated at $P^*$.
+
+=== Case 2: Market Price Below Equilibrium ($P < P^*$) — Excess Demand (Shortage)
+- When the prevailing price is lower than the equilibrium price ($P_2 < P^*$), quantity demanded strictly exceeds quantity supplied:
+  $ q_D(P_2) > q_S(P_2) ==> "Excess Demand (Shortage)" = q_D(P_2) - q_S(P_2) > 0 $
+- *Market Pressure:* Consumers are unable to obtain the quantities they desire at the low price. Frustrated buyers actively bid up the price, competing for the limited supply.
+- *Adjustment:* As price rises toward $P^*$, quantity demanded contracts along the demand curve, while producers are incentivized to expand quantity supplied along the supply curve. This upward price movement continues until the shortage is eliminated at $P^*$.
+
+#definition-box(title: "Adam Smith's Invisible Hand Mechanism")[
+  In a free competitive market without government intervention, the price mechanism functions as an automatic, decentralized coordination device (the "Invisible Hand"). Any deviation from equilibrium generates immediate corrective pressures that push market price back to $P^*$.
 ]
 
-= Excess Demand and Excess Supply: The Adjustment Chains
+== 1.3 Economic Efficiency and Social Welfare at Equilibrium
+A cornerstone theorem in neoclassical welfare economics states that a free competitive market equilibrium maximizes *Total Social Economic Surplus ($W = C S + P S$)*:
+1. *Consumer Surplus ($C S$):*
+   - The economic difference between what consumers are willing and able to pay (the height of the demand curve) and what they actually pay (the market equilibrium price $P^*$):
+     $ C S = integral_0^(Q^*) [P_D(Q) - P^*] \, d Q = frac(1, 2) times (P_("choke") - P^*) times Q^* $
+   - Geometrically, $C S$ is the area below the market demand curve and above the horizontal market price line $P^*$.
+2. *Producer Surplus ($P S$):*
+   - The economic difference between the total revenue received by sellers and the minimum revenue they would have accepted to supply that output (the area under the marginal cost / supply curve):
+     $ P S = integral_0^(Q^*) [P^* - P_S(Q)] \, d Q = frac(1, 2) times (P^* - P_("floor")) times Q^* $
+   - Geometrically, $P S$ is the area above the market supply curve and below the horizontal market price line $P^*$.
+3. *Allocative Efficiency and Maximum Welfare:*
+   - Total Social Surplus ($W = C S + P S$) is maximized at the competitive market equilibrium output $Q^*$, where the marginal social benefit equals the marginal social cost ($M B = M C$).
+   - Any departure from $Q^*$ (underproduction or overproduction) creates an unrecovered net loss of social welfare termed *Deadweight Loss ($D W L$)*.
 
-The syllabus names these two imbalances explicitly, so learn them as chains — cause, pressure, correction. Each chain has three moving parts and one outcome.
+---
+
+= 2. Market Equilibrium with a Fixed Number of Firms
+
+In the short run, the number of firms in the industry is fixed at $macron(n)$. Output adjustments occur purely through existing firms varying their variable factor employment.
+
+== 2.1 Single Shifts in Demand or Supply
 
 #table(
-  columns: (1.15fr, 1.85fr, 1.85fr),
-  table.header[*Feature*][*Excess demand*][*Excess supply*],
-  [Meaning], [Qd > Qs at the ruling price], [Qs > Qd at the ruling price],
-  [Seen as], [Queues, empty shelves, waiting lists], [Unsold stock, godowns filling, discounts],
-  [Immediate pressure], [Buyers compete — some offer MORE], [Sellers compete — some accept LESS],
-  [Price movement], [Rises toward P\*], [Falls toward P\*],
-  [How the gap closes], [Qd shrinks (dearer) + Qs grows (pricier attracts production)], [Qs shrinks (cheaper goods, cutbacks) + Qd grows (bargain hunting)],
-  [Typical trigger], [Demand shifts right with supply fixed], [Supply shifts right with demand fixed],
+  columns: (1.2fr, 1.8fr, 1.8fr),
+  table.header([*Shift Event*], [*Equilibrium Price ($P^*$)*], [*Equilibrium Quantity ($Q^*$)*]),
+  [*Increase in Demand ($D$ shifts Right)*], [Price *Rises* ($P^* arrow.t$) due to temporary excess demand.], [Quantity *Expands* ($Q^* arrow.t$) as higher price induces supply expansion.],
+  [*Decrease in Demand ($D$ shifts Left)*], [Price *Falls* ($P^* arrow.b$) due to temporary excess supply.], [Quantity *Contracts* ($Q^* arrow.b$) as lower price reduces quantity supplied.],
+  [*Increase in Supply ($S$ shifts Right)*], [Price *Falls* ($P^* arrow.b$) due to downward seller competition.], [Quantity *Expands* ($Q^* arrow.t$) as lower price encourages more buying.],
+  [*Decrease in Supply ($S$ shifts Left)*], [Price *Rises* ($P^* arrow.t$) due to scarcity.], [Quantity *Contracts* ($Q^* arrow.b$) as higher price chokes off demand.],
 )
-
-- *Excess demand chain in words:* shortage → competition among buyers → price rises → demand contracts, supply extends → the gap narrows until it vanishes at P\*.
-- *Excess supply chain in words:* surplus → competition among sellers → price falls → supply contracts, demand extends → the gap narrows until it vanishes at P\*.
-- *Both chains teach the same lesson:* free prices are information. A price held away from P\* by law does not remove the frustration — it only freezes the correction.
 
 #figure(
-  image("assets/econ_ceiling_floor.png", width: 100%),
-  caption: [The two government interventions side by side: a ceiling below P\* freezes a shortage of 70 units (left); a floor above P\* creates a surplus of 40 units that the government procures (right).],
+  image("assets/econ_market_equilibrium_shifts.png", width: 95%),
+  caption: [Figure 1: Market Equilibrium Clearance showing Excess Demand/Supply Pressures (Left) and Simultaneous Shift Mechanics (Right)],
 )
 
-= Price Ceiling: The Government's Maximum
+== 2.2 Simultaneous Shifts in Demand and Supply
+When both market demand and market supply shift at the same time, the net impact depends on the *direction* and *relative magnitude* of the shifts:
 
-A *price ceiling* is the highest price the law allows. Governments cap prices of essentials — life-saving medicines, kerosene, emergency housing rents — so that the POOR can afford them. The intention is protection; the mechanics create a famous set of side-effects you must be able to list.
+=== Case A: Both Demand and Supply Shift in the SAME Direction
+1. *Both Demand and Supply Increase ($D arrow.t$ and $S arrow.t$):*
+   - *Quantity Outcome:* Unambiguously *Increases* ($Q^* arrow.t$). Both shifts work together to expand volume!
+   - *Price Outcome:* Depends on relative shift magnitudes:
+     - If $Delta D > Delta S ==> P^* arrow.t$ (Price rises).
+     - If $Delta D = Delta S ==> P^*$ remains strictly *Constant*!
+     - If $Delta S > Delta D ==> P^* arrow.b$ (Price falls).
+2. *Both Demand and Supply Decrease ($D arrow.b$ and $S arrow.b$):*
+   - *Quantity Outcome:* Unambiguously *Decreases* ($Q^* arrow.b$).
+   - *Price Outcome:* Depends on relative shift magnitudes:
+     - If $Delta D > Delta S ==> P^* arrow.b$ (Price falls).
+     - If $Delta D = Delta S ==> P^*$ remains strictly *Constant*!
+     - If $Delta S > Delta D ==> P^* arrow.t$ (Price rises).
 
-- *The binding condition (the most-tested line in this unit):* a ceiling **binds only when set BELOW the equilibrium price**. Cap a ₹60 medicine at ₹40 — binding. Cap it at ₹80 — the market shrugs and stays at ₹60; the law is dead letter.
-- *What happens at a binding ceiling:* at the capped price, buyers demand MORE (law of demand) while suppliers produce LESS — a permanent *shortage*: Qd > Qs.
-- *The shortage's four classic consequences:*
-  - *Long queues and waiting* — the good goes to whoever can spend TIME, not money.
-  - *Rationing* — the government distributes scarce supply fairly (ration shops, token systems).
-  - *Black marketing* — illegal sales ABOVE the cap; buyers who missed the queue pay a premium to jump it.
-  - *Quality fall* — sellers cut corners when they cannot charge what the good is worth.
-- *Everyday anchors:* caps on essential medicines during shortages; rent control in big cities (landlords withdraw flats from the market — a supply cut inside a shortage).
+=== Case B: Demand and Supply Shift in OPPOSITE Directions
+1. *Demand Increases and Supply Decreases ($D arrow.t$ and $S arrow.b$):*
+   - *Price Outcome:* Unambiguously *Rises* ($P^* arrow.t$). Higher demand and lower supply both push price upward!
+   - *Quantity Outcome:* Indeterminate (depends on magnitudes):
+     - If $Delta D > Delta S ==> Q^* arrow.t$; if $Delta D = Delta S ==> Q^*$ constant; if $Delta S > Delta D ==> Q^* arrow.b$.
+2. *Demand Decreases and Supply Increases ($D arrow.b$ and $S arrow.t$):*
+   - *Price Outcome:* Unambiguously *Falls* ($P^* arrow.b$). Lower demand and higher supply both push price downward!
+   - *Quantity Outcome:* Indeterminate (depends on relative shift sizes).
 
-#worked-example("Ceiling Arithmetic — The Capped Medicine")[
-Equilibrium: P\* = ₹60, Q\* = 100 units. The government caps the price at ₹40. At ₹40: buyers demand 140; producers offer 70.
+== 2.3 Special Cases: Extreme Elasticity of Supply or Demand
+1. *Perfect Elastic Supply ($e_s = oo$ — Horizontal Supply Curve):*
+   - A rightward shift in demand leads to an *increase in equilibrium quantity only*, while equilibrium price remains strictly *unchanged*!
+2. *Perfect Inelastic Supply ($e_s = 0$ — Vertical Supply Curve):*
+   - A rightward shift in demand leads to an *increase in equilibrium price only*, while equilibrium quantity remains strictly *unchanged*!
+3. *Perfect Elastic Demand ($e_d = oo$ — Horizontal Demand Curve):*
+   - A rightward shift in supply leads to an *increase in equilibrium quantity only*, while price remains strictly *unchanged*!
+4. *Perfect Inelastic Demand ($e_d = 0$ — Vertical Demand Curve):*
+   - A rightward shift in supply leads to a *decrease in equilibrium price only*, while quantity remains strictly *unchanged*!
 
-- Shortage = Qd − Qs = 140 − 70 = *70 units* — every week, 70 buyers go home empty.
-- *Black-market read:* those 70 want the good badly enough that some will pay above ₹60 illegally — the gap between willingness and the cap becomes black-market premium.
-- *If the cap were ₹80 instead:* buyers demand less than 100 and sellers offer more — the market simply clears at ₹60. A ceiling ABOVE P\* is decoration, not policy.
+---
+
+= 3. Market Equilibrium with Free Entry and Exit of Firms
+
+In the long run, capital is fully mobile. If existing firms make supernormal profits ($P > min L A C$), new firms enter; if firms incur losses ($P < min L A C$), existing firms exit.
+
+== 3.1 Long-Run Equilibrium Conditions
+Under free entry and exit, long-run equilibrium is defined by two simultaneous requirements:
+1. Market Demand equals Market Supply: $Q_D(P^*) = Q_S(P^*)$.
+2. Economic profit of every participating firm is strictly zero:
+  $ P^* = min L A C $
+
+#formula-box(title: "The Free Entry and Exit Price Invariance Theorem")[
+  In a perfectly competitive industry with free entry and exit, the long-run market equilibrium price is *completely determined by cost conditions* (the minimum point of the Long-Run Average Cost curve) and is *completely independent of market demand*!
+  
+  $ P^* = min L A C $
 ]
 
-= Price Floor: The Government's Minimum
+== 3.2 Determination of the Number of Firms ($n^*$)
+At the price $P^* = min L A C$:
+1. *Output of an Individual Firm ($q^*$):* Each individual firm produces the optimal output corresponding to the minimum point of its $L A C$ curve, where $L M C = min L A C$.
+2. *Aggregate Market Quantity ($Q^*$):* Total quantity demanded by all consumers in the market at price $P^*$ is:
+  $ Q^* = q_D(P^*) $
+3. *Equilibrium Number of Firms ($n^*$):* The total market output must be supplied by $n^*$ identical firms, each producing $q^*$:
+  $ Q^* = n^* times q^* ==> n^* = frac(Q^*, q^*) = frac(q_D(P^*), q^*) $
 
-A *price floor* is the lowest legal price — the mirror-image policy. Governments raise floors for SELLERS: the Minimum Support Price (MSP) for crops protects farm incomes; the minimum wage protects workers. The mechanics rhyme with the ceiling, but the frustration lands on the other side of the market.
+== 3.3 Impact of a Demand Shift with Free Entry and Exit
+Suppose consumer demand increases (the market demand curve shifts to the right from $D_1$ to $D_2$):
+- *Short-Run Reaction:* The fixed number of firms cannot adjust plant size immediately. Price temporarily rises above $min L A C$, yielding supernormal economic profits.
+- *Long-Run Adjustment:* Attracted by supernormal profits, new firms enter the industry freely. As new firms enter, the market supply curve shifts rightward, pulling the market price back down.
+- *Final Long-Run Outcome:*
+  - Market Price returns *exactly to $P^* = min L A C$*! Price is unchanged!
+  - Each individual surviving firm continues to produce the *exact same optimal output $q^*$*!
+  - Total market output expands to $Q_2^* = q_D(2)(P^*)$.
+  - The *number of firms in the industry expands*:
+    $ n_2^* = frac(Q_2^*, q^*) > n_1^* $
 
-- *The binding condition:* a floor **binds only when set ABOVE the equilibrium price**. Announce MSP ₹2,000 per quintal when the market would have paid ₹1,800 — binding. Announce ₹1,500 — meaningless, the market pays ₹1,800 anyway.
-- *What happens at a binding floor:* at the guaranteed price, producers supply MORE while buyers purchase LESS — a permanent *surplus*: Qs > Qd.
-- *The surplus's fate (learn the chain):*
-  - Unsold stock accumulates with sellers — the market alone would push the price back down.
-  - The *government procures* the surplus at the floor price — wheat and rice mount up as *buffer stocks*.
-  - Buffer stocks serve two later purposes: release during price spikes and welfare distribution (public distribution).
-  - Costs: storage and wastage expenses sit on the government's budget — the policy's price tag.
-- *Labour markets use the same floor:* a *minimum wage* above the equilibrium wage creates a surplus of labour — that surplus is called *unemployment*. Same diagram, different nouns.
-
-#worked-example("Floor Arithmetic — MSP for Grain")[
-Equilibrium: P\* = ₹1,800 per quintal, Q\* = 100 (lakh quintals). The government announces MSP ₹2,000. At ₹2,000: farmers supply 120; buyers take 80.
-
-- Surplus = Qs − Qd = 120 − 80 = *40 units* — grain with no private buyer.
-- *Government procurement:* the state buys the 40 units at ₹2,000 — farm incomes protected by design, buffer stocks built as a by-product.
-- *Budget read:* procurement is not free — ₹2,000 × 40 = ₹80,000 (in lakh-rupee terms) plus storage. Every floor has a fiscal invoice.
+#concept-box(title: "High-Yield CUET Theorem: Demand Shift with Free Entry")[
+  With free entry and exit, a rightward shift in market demand leaves equilibrium price and individual firm output *completely unchanged* in the long run! It results exclusively in an *increase in the number of active firms ($n^*$)* and an increase in total industry output!
 ]
 
-= Which Intervention Binds? The 2×2 That Decides Marks
+---
 
-#table(
-  columns: (1.2fr, 1.6fr, 1.6fr),
-  table.header[*Policy*][*Set on the binding side*][*Set on the dead-letter side*],
-  [Price CEILING (maximum)], [Below P\* → shortage, queues, rationing, black market], [Above P\* → market ignores it, equilibrium stands],
-  [Price FLOOR (minimum)], [Above P\* → surplus, procurement, buffer stock], [Below P\* → market ignores it, equilibrium stands],
-)
+= 4. Simple Applications: Government Price Controls
 
-- *One-line memory frame:* the ceiling pushes DOWN from above (must start below P\*); the floor pushes UP from below (must start above P\*). An intervention only bites when it fights the market's own direction.
-- *Predicting outcomes, fast:* identify P\* → locate the legal price relative to it → name the imbalance (shortage or surplus) → name its consequence chain. Four steps, full marks in application questions.
+When free market equilibrium prices are perceived as socially undesirable, governments intervene through statutory price regulations.
 
-= Key Formulas & Rules: One-Stop Revision
-
-#cheatsheet-box(title: "Market Equilibrium and Applications — Every Rule on One Page")[
-  #table(
-    columns: (1.45fr, 2.1fr, 1.75fr),
-    table.header[*Rule*][*Statement*][*When to use it*],
-    [Equilibrium], [D = S fixes P\* and Q\*; no tendency to change], [Define the resting point],
-    [Excess demand], [Qd > Qs → price rises toward P\*], [Queue-and-shortage scenarios],
-    [Excess supply], [Qs > Qd → price falls toward P\*], [Glut-and-discount scenarios],
-    [Adjustment agents], [Buyers bid up shortages; sellers undercut surpluses], [Name the competition force],
-    [Price ceiling], [Maximum legal price; binds only BELOW P\*], [Medicines, essentials, rent control],
-    [Ceiling effects], [Shortage → queues, rationing, black market, quality fall], [List the four consequences],
-    [Price floor], [Minimum legal price; binds only ABOVE P\*], [MSP, minimum wages],
-    [Floor effects], [Surplus → government procurement → buffer stocks], [Trace the surplus chain],
-    [Minimum wage], [Floor above equilibrium wage → labour surplus = unemployment], [Labour-market application],
-    [Dead-letter rule], [Ceiling above / floor below P\* does nothing], [The classic 2×2 MCQ],
-    [Fiscal cost], [Procurement = floor price × surplus quantity], [Quantify the policy's bill],
-  )
+== 4.1 Price Ceiling (Maximum Legal Price Legislation)
+#definition-box(title: "Definition of Price Ceiling")[
+  A *Price Ceiling* is the legal maximum price established by the government above which sellers are legally forbidden to sell a specified good or service.
 ]
 
-= Common Errors & Special Cases
+- *Social Objective:* To protect low-income and vulnerable consumers from price exploitation during inflationary periods or shortages of essential life-supporting commodities (e.g., wheat, rice, sugar, kerosene, life-saving medicines, urban residential rent control).
+- *Binding Condition:* A price ceiling is *economically binding (effective)* if and only if it is set *strictly BELOW the market equilibrium price*:
+  $ P_c < P^* $
+  If the government sets a ceiling *above* the equilibrium price ($P_c > P^*$), market forces naturally keep the price at $P^*$, rendering the ceiling completely *non-binding and ineffective*!
 
-#exception-box(title: "The Traps This Unit Sets — Read Before the Mock")[
-  #table(
-    columns: (1.25fr, 1.35fr, 1.4fr),
-    table.header[*The rule you assume*][*The twist*][*The trap in the question*],
-    ["Ceiling above P\* protects buyers more"], [A ceiling binds ONLY below P\*; above it nothing changes], [The dead-letter 2×2 question],
-    ["A shortage means demand fell"], [Demand is INTACT — buyers want 140; supply retreated to 70], [Shortage vs demand-fall vocabulary],
-    ["Floors help everyone"], [A floor taxes buyers and the budget: surplus, storage, procurement bills], [Floor-cost numericals],
-    ["Black market is random cheating"], [Its premium exists because the capped price leaves a Qd − Qs gap unserved], [Black-market logic MCQs],
-    ["Minimum wage creates jobs"], [Above equilibrium wage it creates UNEMPLOYMENT — a labour surplus], [Labour-market application],
-    ["Government sets ceiling, price falls to it"], [Only the BINDING side moves the market; the other side is ignored], [Which-price-prevails questions],
-    ["Surplus under MSP is wasted"], [Procurement converts it into buffer stocks — release and PDS uses], [Buffer-stock purpose checks],
-    ["Equilibrium never moves"], [Any D or S shift re-prices the market; equilibrium is a resting point, not a permanent one], [Comparative-statics chains],
-  )
-]
-
-= The 60-Second Self-Test
-
-Cover the answers, say each one aloud, then check. If any answer takes longer than ten seconds, revisit that section.
-
-- *Qd = 300, Qs = 180 at the current price.* Name the imbalance and the price move. → Excess demand of 120; price rises.
-- *Ceiling ₹50, equilibrium ₹65.* Binds? What appears? → Binds (below P\*) — shortage with queues and black-market premium.
-- *Floor ₹900, equilibrium ₹1,100.* Binds? → No — floor below P\* is dead letter; market stays at ₹1,100.
-- *MSP ₹2,200; Qs 150, Qd 110.* Government buys? → 40 units — buffer stock, costing 40 × 2,200.
-- *Minimum wage pushed well above equilibrium.* Labour market outcome? → Labour surplus — unemployment.
-- *Which force pushes price DOWN?* → Competition among sellers with unsold stock (excess supply).
-
-= The Whole Chapter in One Picture
+=== Economic Consequences and Market Distortions of a Binding Price Ceiling
+1. *Persistent Excess Demand (Shortage):*
+   - At the artificially low ceiling price $P_c$, consumers demand a larger quantity ($Q_D$), while producers reduce their quantity supplied ($Q_S$):
+     $ "Shortage" = Q_D(P_c) - Q_S(P_c) > 0 $
+   - Because price is legally prevented from rising to choke off excess demand, the shortage persists indefinitely.
+2. *Consumer Rationing & Queues:*
+   - Because the market mechanism cannot allocate available output, the government must introduce non-price rationing mechanisms, such as *Ration Cards*, maximum purchase quotas per family, and *Fair Price Shops (Public Distribution System - PDS)*.
+   - Consumers waste productive hours standing in long queues.
+3. *Emergence of Black Marketing (Dual Pricing):*
+   - A *Black Market* spontaneously develops where scarce goods are illegally sold at prices far above the legal ceiling.
+   - At the restricted available supply $Q_S$, consumers are willing to pay an exorbitant price $P_B$ (the vertical height of the demand curve at $Q_S$):
+     $ P_B > P^* > P_c $
+   - Unscrupulous traders divert rationed supplies into black market channels to reap illegal rents.
+4. *Quality Deterioration:*
+   - With massive excess demand, sellers have zero incentive to maintain product quality. Landlords neglect repairs in rent-controlled apartments; grocers blend impurities into rationed grains.
 
 #figure(
-  image("assets/econ_market_mindmap.png", width: 100%),
-  caption: [Chapter mindmap: the equilibrium resting point, the two adjustment chains, the ceiling's shortage machinery, the floor's surplus machinery, and the binding-side 2×2 — with the traps that catch most students.],
+  image("assets/econ_market_ceiling_floor_applications.png", width: 95%),
+  caption: [Figure 2: Government Intervention Applications showing Price Ceiling Shortage (Left) and Price Floor Surplus with Government Procurement (Right)],
 )
 
-= Practice Questions (Exam Pattern)
+== 4.2 Price Floor / Minimum Support Price (MSP)
+#definition-box(title: "Definition of Price Floor")[
+  A *Price Floor* (or Minimum Price Legislation) is the legal minimum price established by the government below which buyers are legally forbidden to purchase a specified commodity or factor service.
+]
 
-Ten questions in the CUET UG style. Attempt all of them — the paper gives $+5$ for each correct answer and $-1$ for every incorrect answer.
+- *Social Objective:* To protect the incomes of producers against catastrophic price collapses (e.g., Minimum Support Price - MSP for agricultural crops like wheat and paddy) or to protect low-skilled workers against wage exploitation (statutory Minimum Wage legislation).
+- *Binding Condition:* A price floor is *economically binding (effective)* if and only if it is set *strictly ABOVE the market equilibrium price*:
+  $ P_f > P^* $
+  If the government sets a floor *below* equilibrium ($P_f < P^*$), market forces naturally keep the price at $P^*$, rendering the floor completely *non-binding and ineffective*!
 
-#mcq(1, [Market equilibrium is a situation in which:], (
-  [supply exceeds demand], [demand exceeds supply], [quantity demanded equals quantity supplied], [prices are fixed by government],
-))
+=== Economic Consequences and Market Distortions of a Binding Price Floor
+1. *Persistent Excess Supply (Surplus):*
+   - At the high floor price $P_f$, producers expand their quantity supplied ($Q_S$), while consumers contract their quantity demanded ($Q_D$):
+     $ "Surplus" = Q_S(P_f) - Q_D(P_f) > 0 $
+   - Producers are unable to sell their entire output on the open commercial market.
+2. *Mandatory Government Procurement (Buffer Stocks):*
+   - If the government merely legislates $P_f$ without intervening further, desperate farmers would secretly sell below $P_f$, collapsing the floor.
+   - Therefore, to sustain the price floor, the government (through state agencies like the *Food Corporation of India - FCI*) MUST physically purchase the entire unsold surplus:
+     $ "Government Procurement" = Q_S(P_f) - Q_D(P_f) $
+   - These procured quantities are stockpiled as *Buffer Stocks* for food security, emergency relief, and PDS release.
+3. *Heavy Fiscal Burden on the Public Treasury:*
+   - The government must finance massive procurement costs ($P_f times "Surplus"$), plus expenses for grain silos, cold storage, pest control, and spoilage losses.
+4. *Unemployment in the Labor Market:*
+   - In labor markets, a statutory minimum wage set above the equilibrium wage causes the quantity of labor supplied by workers to exceed the quantity demanded by employers:
+     $ "Involuntary Unemployment" = L_S(w_f) - L_D(w_f) $
 
-#mcq(2, [At a price ABOVE the equilibrium price, there is:], (
-  [excess demand and price will rise], [excess supply and price will fall], [excess demand and price will fall], [no pressure on price],
-))
+== 4.3 Deadweight Loss & Welfare Cost of Price Controls
+Government price controls intentionally distort the free competitive equilibrium, creating an irrecoverable deadweight loss ($D W L$) to society:
+1. *Welfare Cost of Price Ceilings:*
+   - Under a binding ceiling ($P_c < P^*$), legal quantity supplied contracts from $Q^*$ to $Q_S$.
+   - Although consumers who successfully purchase the good gain from paying $P_c$ instead of $P^*$, producers suffer severe surplus destruction.
+   - Because transactions between $Q_S$ and $Q^*$ are legally prohibited, mutually beneficial gains from trade are destroyed, generating a triangular *Deadweight Loss ($D W L$)*.
+2. *Welfare Cost of Price Floors:*
+   - Under a binding floor ($P_f > P^*$), commercial consumption contracts from $Q^*$ to $Q_D$.
+   - Higher prices hurt consumers and reduce consumer surplus.
+   - Producers produce $Q_S > Q^*$, consuming societal resources on goods that consumers value less than their marginal cost of production.
+   - The public treasury incurs substantial financial outlays to buy and store surplus grain, representing a significant deadweight loss to taxpayers.
 
-#mcq(3, [A price ceiling is effective (binding) only when it is set:], (
-  [above the equilibrium price], [below the equilibrium price], [equal to the equilibrium price], [anywhere the government likes],
-))
+---
 
-#mcq(4, [A binding price ceiling typically leads to:], (
-  [a surplus and government procurement], [a shortage, queues and black marketing], [higher production and lower demand], [no change in the market],
-))
-
-#mcq(5, [The main purpose of a price floor such as MSP is to:], (
-  [make goods affordable for the poor], [protect producers' incomes], [reduce government stocks], [increase competition among sellers],
-))
-
-#mcq(6, [When the government procures the surplus created by a binding floor, the stock is called:], (
-  [black market stock], [buffer stock], [deadweight stock], [ration stock],
-))
-
-#mcq(7, [A price ceiling set ABOVE the equilibrium price will:], (
-  [create a shortage], [create a surplus], [have no effect on the market], [raise the equilibrium price],
-))
-
-#mcq(8, [A minimum wage set above the equilibrium wage results in:], (
-  [shortage of labour], [surplus of labour (unemployment)], [higher employment], [no change in employment],
-))
-
-#mcq(9, [Under a binding ceiling, rationing is used to:], (
-  [raise the black-market price], [distribute the scarce supply fairly], [increase production], [shift the demand curve],
-))
-
-#mcq(10, [Excess demand at the ruling price sets off which chain?], (
-  [sellers undercut → price falls], [buyers bid up → price rises], [government imports → price fixed], [supply curve shifts left automatically],
-))
-
-= Detailed Solutions
-
-Each solution shows the working, not just the verdict — cover the answer line, attempt the reasoning, then compare.
-
-#solution(1, [Equilibrium is precisely the price-quantity pair where the two plans agree: Qd = Qs. Neither side is frustrated, so no force pushes the price away — that is what "equilibrium" means.], answer: [C])
-
-#solution(2, [A high price makes sellers offer plenty and buyers step back — Qs > Qd, excess supply. Unsold stock makes sellers undercut each other, so the price FALLS toward equilibrium.], answer: [B])
-
-#solution(3, [The ceiling is a MAXIMUM. It only restrains the market when the legal max sits below where the market wants to be — below P\*. At or above P\*, the equilibrium price is already legal.], answer: [B])
-
-#solution(4, [Below P\*, buyers demand more than sellers offer: Qd > Qs. The gap shows up as queues, rationing and black-market premiums — the ceiling's signature shortage. Procurement belongs to floors.], answer: [B])
-
-#solution(5, [Floors guarantee sellers a minimum — MSP secures farm incomes, minimum wages secure workers. Making goods affordable is the CEILING's job; the purposes are mirror images.], answer: [B])
-
-#solution(6, [The government buys the floor-induced surplus at the guaranteed price; the accumulated stock is the buffer stock, released in lean years or channelled through welfare schemes.], answer: [B])
-
-#solution(7, [A ceiling above P\* allows the old equilibrium price — the market keeps trading at P\*, unmoved. Interventions bite only when they fight the market's direction.], answer: [C])
-
-#solution(8, [A higher legal wage makes firms hire fewer workers while more workers offer their labour — Qs > Qd in the labour market. The surplus of labour has a name: unemployment.], answer: [B])
-
-#solution(9, [With only 70 units available for 140 willing buyers, some fair-share rule must allocate the gap — ration shops and token systems. Rationing manages the shortage; it does not create supply.], answer: [B])
-
-#solution(10, [Too little supply at the ruling price means frustrated buyers — some offer to pay more. Their bidding pushes the price up, which simultaneously trims Qd and attracts Qs until the gap closes.], answer: [B])
-
-== Wrong-Answer Clinic — the one-line corrections
-
-Dropped marks above? Find your slip here and rewrite the corrected rule in your own words.
+= 5. Comparative Evaluation: Price Ceiling vs. Price Floor
 
 #table(
-  columns: (1.05fr, 1.5fr, 1.45fr),
-  table.header[*If you answered...*][*Your slip was...*][*The corrected rule, in one line*],
-  [Q2 option A], [Reversing the pressure], [Above P\* means TOO MUCH supply — price falls; below P\* means too much demand — price rises],
-  [Q3 option A], [Placing the ceiling on the wrong side], [Ceiling = maximum → it must sit BELOW P\* to bite; above it the law is decorative],
-  [Q4 option A], [Mixing ceiling with floor gear], [Procurement and surplus belong to FLOORS; ceilings manufacture shortages],
-  [Q5 option A], [Swapping the two purposes], [Ceiling protects buyers' pockets; floor protects sellers' incomes],
-  [Q7 option A], [Assuming every cap acts], [Only a binding intervention moves a market — wrong-side policies are dead letters],
-  [Q8 option A], [Reading wages like goods prices], [A floor on wages creates a labour SURPLUS — unemployment, not a labour shortage],
-  [Q10 option D], [Inventing automatic shifts], [Prices adjust through competition among buyers/sellers — curves shift only when determinants change],
+  columns: (1.1fr, 1.9fr, 1.9fr),
+  table.header([*Analytical Dimension*], [*Price Ceiling (Maximum Price)*], [*Price Floor (Minimum Price / MSP)*]),
+  [*Statutory Legal Mandate*], [Upper legal ceiling; price cannot legally exceed $P_c$.], [Lower legal floor; price cannot legally drop below $P_f$.],
+  [*Binding Operational Condition*], [Must be imposed strictly *BELOW* equilibrium ($P_c < P^*$).], [Must be imposed strictly *ABOVE* equilibrium ($P_f > P^*$).],
+  [*Target Beneficiary*], [Low-income consumers of essential necessities.], [Vulnerable producers (farmers) or low-wage workers.],
+  [*Primary Market Imbalance*], [*Excess Demand (Shortage)*: $Q_D > Q_S$.], [*Excess Supply (Surplus)*: $Q_S > Q_D$.],
+  [*Government Administrative Role*], [Enforce rationing quotas, issue ration cards, establish fair price shops, police illegal black markets.], [Procure entire unsold surplus, build and maintain storage silos, disburse procurement subsidies.],
+  [*Secondary Market Distortions*], [Black marketing at $P_B > P^*$; long consumer queues; product adulteration and quality degradation.], [Grain rotting in warehouses; illegal under-table discounts; labor unemployment in minimum wage markets.],
+  [*If Ineffective / Non-Binding*], [Imposed *above* equilibrium ($P_c > P^*$) $==>$ Zero market impact; price stays at $P^*$.], [Imposed *below* equilibrium ($P_f < P^*$) $==>$ Zero market impact; price stays at $P^*$.],
 )
 
-#block(width: 100%, inset: (top: 4pt), above: 4pt)[
-  #align(center, text(fill: om-grey, size: 8pt)[© OurMocks · www.ourmocks.com · CUET UG Economics · Market Equilibrium and Simple Applications · 2027 cycle])
+#figure(
+  image("assets/econ_market_equilibrium_mindmap.png", width: 95%),
+  caption: [Figure 3: Comprehensive Synthesis Mindmap of Market Equilibrium: Foundations, Simultaneous Shifts, Free Entry/Exit, and Policy Controls],
+)
+
+---
+
+= 6. Master Formula Cheatsheet & Diagnostic Traps
+
+#cheatsheet-box(title: "Master Formula Cheatsheet — Market Equilibrium & Applications")[
+  *Equilibrium Determination (Fixed Firms):*
+  - Equilibrium Clearance: $q_D(P^*) = q_S(P^*)$.
+  - Excess Demand Condition: $q_D(P) - q_S(P) > 0$ (occurs when $P < P^*$, exerts upward pressure on price).
+  - Excess Supply Condition: $q_S(P) - q_D(P) > 0$ (occurs when $P > P^*$, exerts downward pressure on price).
+
+  *Simultaneous Shift Directional Theorems:*
+  - Both Shift Right ($D arrow.t, S arrow.t$): $Q^*$ definitely rises; $P^*$ rises if $Delta D > Delta S$, constant if $Delta D = Delta S$, falls if $Delta S > Delta D$.
+  - Both Shift Left ($D arrow.b, S arrow.b$): $Q^*$ definitely falls; $P^*$ falls if $Delta D > Delta S$, constant if $Delta D = Delta S$, rises if $Delta S > Delta D$.
+  - Opposite Shifts ($D arrow.t, S arrow.b$): $P^*$ definitely rises; $Q^*$ change is indeterminate.
+  - Opposite Shifts ($D arrow.b, S arrow.t$): $P^*$ definitely falls; $Q^*$ change is indeterminate.
+
+  *Free Entry and Exit Industry Equilibrium:*
+  - Long-Run Price: $P^* = min L A C$ (Strictly constant, zero economic profit).
+  - Firm Output: $q^*$ (output at minimum point of $L A C$).
+  - Number of Active Firms: $n^* = frac(Q^*, q^*) = frac(q_D(P^*), q^*)$.
+  - Rightward Demand Shift: Leaves $P^*$ and $q^*$ unchanged; increases $Q^*$ and increases $n^*$!
+
+  *Government Price Interventions:*
+  - Price Ceiling ($P_c < P^*$): Creates Shortage $= Q_D(P_c) - Q_S(P_c)$. Black market price $P_B$ on demand curve at $Q_S$.
+  - Price Floor ($P_f > P^*$): Creates Surplus $= Q_S(P_f) - Q_D(P_f)$. Government must procure entire surplus.
 ]
+
+#exception-box(title: "The Seven Fatal CUET Exam Traps in Market Equilibrium")[
+  1. *The Non-Binding Intervention Trap:* Believing that any government price regulation distorts the market. If government legislates a Price Ceiling *ABOVE* equilibrium ($P_c > P^*$), it is non-binding and market price stays at $P^*$! Similarly, a Price Floor *BELOW* equilibrium ($P_f < P^*$) is non-binding and has zero effect!
+  2. *Free Entry Long-Run Price Fallacy:* Assuming that an increase in market demand raises the long-run market price under free entry. It does NOT! In the long run, entry of new firms shifts supply rightward until price returns strictly to $P^* = min L A C$. Only the *number of firms ($n^*$)* increases!
+  3. *Equal Shift Indeterminacy Confusion:* When demand and supply both increase by the exact same amount ($Delta D = Delta S$), students mistakenly guess price is unpredictable. Price is *strictly constant* ($Delta P = 0$), while quantity expands unambiguously!
+  4. *Black Market Price Direction Fallacy:* Assuming black market prices are lower than equilibrium. Because available supply is curtailed to $Q_S$, desperate consumers bid prices up to $P_B$, which is *strictly higher than the free market equilibrium price* ($P_B > P^*$!).
+  5. *Perfect Elastic Supply Shift Trap:* If supply is perfectly elastic (horizontal), a rightward shift in demand expands quantity but leaves market price *100% unchanged*!
+  6. *Price Floor Self-Sufficiency Myth:* Assuming a price floor maintains itself automatically. Without mandatory government buffer stock procurement, farmers would undercut each other, collapsing the floor back to equilibrium.
+  7. *Simultaneous Opposite Shifts Quantity Confusion:* When demand increases and supply decreases, students wrongly guess quantity rises. Quantity is *indeterminate*; only price is guaranteed to rise!
+]
+
+---
+
+#pagebreak()
+#set text(size: 8.5pt)
+#set par(leading: 0.40em, spacing: 0.42em)
+
+= Practice Questions — Part 1 (Q1 to Q5)
+
+#mcq(1, [In a competitive market, the market demand and market supply functions are given by $q_D = 1000 - 50 P$ and $q_S = 200 + 30 P$. The equilibrium price ($P^*$) and equilibrium quantity ($Q^*$) are:], (
+  [(A) $P^* = ₹10, Q^* = 500$ units],
+  [(B) $P^* = ₹12, Q^* = 600$ units],
+  [(C) $P^* = ₹15, Q^* = 250$ units],
+  [(D) $P^* = ₹8, Q^* = 440$ units],
+))
+#solution(1, [At market equilibrium, quantity demanded equals quantity supplied: $q_D = q_S ==> 1000 - 50 P = 200 + 30 P$. Rearranging terms: $1000 - 200 = 30 P + 50 P ==> 800 = 80 P ==> P^* = ₹10$. Substituting $P^* = 10$ into either function: $Q^* = 1000 - 50(10) = 1000 - 500 = 500$ units. Cross-check with supply: $q_S = 200 + 30(10) = 500$ units.], answer: "A")
+
+#mcq(2, [When the prevailing market price is strictly above the equilibrium price, the competitive market experiences:], (
+  [(A) Excess Demand, which exerts upward pressure on price],
+  [(B) Excess Supply, which induces sellers to bid price downward],
+  [(C) Zero transacted volume because buyers exit the market],
+  [(D) An automatic upward shift in the market demand curve],
+))
+#solution(2, [When market price is above equilibrium ($P > P^*$), producers are willing to supply more than consumers wish to purchase ($q_S > q_D$), resulting in an Excess Supply (Surplus). Faced with accumulating unsold inventories, competitive sellers undercut one another's prices to liquidate stock, exerting downward pressure on price until equilibrium is restored at $P^*$.], answer: "B")
+
+#mcq(3, [If the market demand curve is given by $q_D = 500 - 20 P$ and the current price is ₹15, while market supply is fixed at 100 units, the market exhibits an:], (
+  [(A) Excess Demand of 100 units],
+  [(B) Excess Supply of 100 units],
+  [(C) Excess Demand of 200 units],
+  [(D) Equilibrium with zero shortage],
+))
+#solution(3, [At price $P = 15$, quantity demanded is $q_D = 500 - 20(15) = 500 - 300 = 200$ units. Quantity supplied is fixed at $q_S = 100$ units. Since $q_D > q_S$, the market experiences Excess Demand equal to $q_D - q_S = 200 - 100 = 100$ units.], answer: "A")
+
+#mcq(4, [What happens to equilibrium price and quantity when market demand decreases while market supply remains unchanged?], (
+  [(A) Both equilibrium price and quantity increase],
+  [(B) Equilibrium price falls and equilibrium quantity decreases],
+  [(C) Equilibrium price rises while equilibrium quantity decreases],
+  [(D) Equilibrium price falls while equilibrium quantity increases],
+))
+#solution(4, [A decrease in demand shifts the demand curve to the left. At the initial equilibrium price, quantity supplied exceeds quantity demanded, creating a temporary surplus (excess supply). Competitive sellers lower prices to clear inventory. As price falls, quantity supplied contracts along the supply curve until a new equilibrium is reached with a lower price ($P^* arrow.b$) and a smaller quantity ($Q^* arrow.b$).], answer: "B")
+
+#mcq(5, [If the supply of a commodity decreases due to an increase in wages of workers while demand remains constant:], (
+  [(A) Equilibrium price falls and quantity expands],
+  [(B) Equilibrium price rises and quantity contracts],
+  [(C) Both equilibrium price and quantity rise],
+  [(D) Equilibrium price and quantity remain unaffected],
+))
+#solution(5, [An increase in wage rates raises marginal production costs, causing the market supply curve to shift upward and to the left. At the existing price, a shortage (excess demand) emerges. Frustrated buyers bid up the price. As price rises, quantity demanded contracts along the unchanged demand curve, establishing a higher equilibrium price ($P^* arrow.t$) and a smaller equilibrium quantity ($Q^* arrow.b$).], answer: "B")
+
+---
+
+#pagebreak()
+#set text(size: 8.5pt)
+#set par(leading: 0.40em, spacing: 0.42em)
+
+= Practice Questions — Part 2 (Q6 to Q10)
+
+#mcq(6, [If market demand and market supply both increase by the EXACT SAME proportionate magnitude ($Delta D = Delta S$):], (
+  [(A) Equilibrium price rises while quantity remains constant],
+  [(B) Equilibrium price falls while quantity expands],
+  [(C) Equilibrium quantity expands while price remains strictly constant],
+  [(D) Both equilibrium price and quantity remain completely unchanged],
+))
+#solution(6, [When demand and supply both shift to the right by equal amounts, the upward price pressure from increased demand is exactly canceled out by the downward price pressure from increased supply. Consequently, the equilibrium price remains completely unchanged ($Delta P^* = 0$). However, because both curves shifted to the right, equilibrium quantity expands unambiguously ($Q^* arrow.t$).], answer: "C")
+
+#mcq(7, [Under what condition will an increase in market demand cause an increase in equilibrium quantity with ZERO change in equilibrium price?], (
+  [(A) When supply is perfectly inelastic ($e_s = 0$)],
+  [(B) When supply is perfectly elastic ($e_s = oo$)],
+  [(C) When demand is unitary elastic ($e_d = 1$)],
+  [(D) When the number of firms in the industry is strictly fixed],
+))
+#solution(7, [A perfectly elastic supply curve is represented graphically as a horizontal straight line parallel to the quantity axis ($e_s = oo$). When market demand shifts to the right, it intersects the horizontal supply curve at a larger quantity, but at the exact same horizontal price level. Hence, quantity expands while price remains strictly constant.], answer: "B")
+
+#mcq(8, [If supply is perfectly inelastic (a vertical line) and market demand increases:], (
+  [(A) Equilibrium price rises while equilibrium quantity remains constant],
+  [(B) Equilibrium quantity expands while price remains constant],
+  [(C) Both equilibrium price and quantity increase],
+  [(D) Equilibrium price falls while quantity remains constant],
+))
+#solution(8, [A perfectly inelastic supply curve ($e_s = 0$) is a vertical line at a fixed physical quantity $macron(Q)$. When market demand shifts rightward, consumers compete for the unchanged stock of goods. Frustrated buyers bid up the price, causing equilibrium price to rise sharply ($P^* arrow.t$), while equilibrium quantity remains completely unchanged at $macron(Q)$.], answer: "A")
+
+#mcq(9, [Demand increases while supply simultaneously decreases. What can be unambiguously concluded regarding the new equilibrium?], (
+  [(A) Equilibrium quantity will definitely increase],
+  [(B) Equilibrium quantity will definitely decrease],
+  [(C) Equilibrium price will definitely rise],
+  [(D) Equilibrium price will definitely fall],
+))
+#solution(9, [An increase in demand pushes price upward; a decrease in supply also pushes price upward. Because both shift forces act in the same direction on price, equilibrium price will *definitely rise* ($P^* arrow.t$). However, higher demand tends to increase quantity while lower supply tends to reduce quantity; therefore, the net change in quantity is indeterminate without knowing the exact relative shift sizes.], answer: "C")
+
+#mcq(10, [In a competitive industry with FREE ENTRY AND EXIT, the market price in long-run equilibrium is determined by:], (
+  [(A) The intersection of market demand with the short-run supply curve],
+  [(B) The minimum point of the Long-Run Average Cost (LAC) curve],
+  [(C) The maximum point of the Marginal Revenue curve],
+  [(D) The total number of consumers in the market],
+))
+#solution(10, [Under free entry and exit, firms enter if economic profits exist ($P > min L A C$) and exit if losses occur ($P < min L A C$). Long-run industry equilibrium requires zero economic profit, forcing market price to settle precisely at the minimum point of Long-Run Average Cost ($P^* = min L A C$). At this price, every active firm earns its normal profit.], answer: "B")
+
+---
+
+#pagebreak()
+#set text(size: 8.5pt)
+#set par(leading: 0.40em, spacing: 0.42em)
+
+= Practice Questions — Part 3 (Q11 to Q15)
+
+#mcq(11, [In an industry with free entry and exit, $L A C$ is minimized at ₹20 where each firm produces 50 units. If market demand is $Q_D = 2000 - 40 P$, the equilibrium number of firms ($n^*$) in the industry is:], (
+  [(A) 24 firms],
+  [(B) 40 firms],
+  [(C) 50 firms],
+  [(D) 100 firms],
+))
+#solution(11, [Under free entry and exit, long-run price is fixed at $P^* = min L A C = ₹20$. Each individual firm produces $q^* = 50$ units. Total industry quantity demanded at this price is $Q_D = 2000 - 40(20) = 2000 - 800 = 1200$ units. Since total output is supplied equally by $n^*$ identical firms: $n^* = Q^* / q^* = 1200 / 50 = 24$ firms.], answer: "A")
+
+#mcq(12, [A Price Ceiling imposed by the government on an essential commodity will be economically binding (effective) ONLY if it is set:], (
+  [(A) Above the free market equilibrium price],
+  [(B) Below the free market equilibrium price],
+  [(C) Exactly equal to the Marginal Cost of production],
+  [(D) At the point of unitary price elasticity of demand],
+))
+#solution(12, [A Price Ceiling establishes a legal maximum price. If the ceiling is set above the market equilibrium price ($P_c > P^*$), market forces naturally clear at $P^*$, rendering the ceiling non-binding with zero effect. To be legally binding and force the price down to protect consumers, the ceiling must be imposed *strictly below* the free market equilibrium price ($P_c < P^*$).], answer: "B")
+
+#mcq(13, [Which of the following is an adverse economic consequence of an effective Price Ceiling?], (
+  [(A) Unsold surpluses accumulating in warehouses],
+  [(B) Emergency of a Black Market where goods are sold above the ceiling price],
+  [(C) Involuntary unemployment among low-skilled workers],
+  [(D) Government incurring massive storage costs for buffer stocks],
+))
+#solution(13, [An effective price ceiling ($P_c < P^*$) creates a chronic shortage (excess demand). Because available supply is curtailed to $Q_S$, frustrated consumers are willing to pay a much higher price to obtain the good. This creates lucrative incentives for illegal black markets where the good is traded at prices exceeding both the legal ceiling and the free market equilibrium ($P_B > P^* > P_c$). Options A, C, and D are consequences of Price Floors.], answer: "B")
+
+#mcq(14, [The government fixes a Minimum Support Price (MSP) for wheat above the market equilibrium price. To maintain this price floor, the government MUST:], (
+  [(A) Ration wheat among consumers using ration cards],
+  [(B) Purchase the entire surplus quantity of wheat from farmers],
+  [(C) Impose an excise tax on the production of wheat],
+  [(D) Subsidize consumers to reduce wheat demand],
+))
+#solution(14, [An effective Price Floor ($P_f > P^*$) creates an excess supply (surplus) because farmers supply more than consumers demand ($Q_S > Q_D$). If left alone, desperate farmers would secretly sell below $P_f$, causing the price floor to collapse. To sustain the legal minimum price, the government (through FCI) must actively purchase the entire unsold surplus ($Q_S - Q_D$) and store it as buffer stock.], answer: "B")
+
+#mcq(15, [If the free market equilibrium price of milk is ₹60 per liter and the government sets a legal Maximum Price of ₹75 per liter, the market price of milk will be:], (
+  [(A) ₹75 per liter with excess supply],
+  [(B) ₹60 per liter with neither shortage nor surplus],
+  [(C) ₹67.50 per liter as an average],
+  [(D) Zero because sellers will boycott the market],
+))
+#solution(15, [A legal maximum price of ₹75 is a Price Ceiling set *above* the equilibrium price of ₹60 ($P_c > P^*$). Because the ceiling only prohibits selling above ₹75, sellers and buyers are completely free to transact at the market clearing price of ₹60. The ceiling is *non-binding and ineffective*; the market clears naturally at ₹60 with zero excess demand or supply.], answer: "B")

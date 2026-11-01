@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Market Equilibrium & Shift Mechanics Engine</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px 28px;
+    overflow: hidden;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 12px;
+    margin-bottom: 16px;
+  }
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .brand-badge {
+    background: #071A4D;
+    color: #B8FF34;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .title-group h1 {
+    font-size: 22px;
+    font-weight: 800;
+    color: #071A4D;
+    letter-spacing: -0.02em;
+  }
+  .title-group p {
+    font-size: 12px;
+    color: #64748B;
+    margin-top: 2px;
+  }
+  .header-meta {
+    display: flex;
+    gap: 8px;
+  }
+  .pill {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 999px;
+    border: 1px solid #CBD5E1;
+    background: #FFFFFF;
+    color: #334155;
+  }
+  .pill.highlight {
+    background: #EFF6FF;
+    border-color: #93C5FD;
+    color: #1D4ED8;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-bottom: 16px;
+  }
+  .card {
+    background: #FFFFFF;
+    border: 1.5px solid #E2E8F0;
+    border-radius: 10px;
+    padding: 16px 20px;
+    display: flex;
+    flex-direction: column;
+    height: 570px;
+  }
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  .card-title {
+    font-size: 15px;
+    font-weight: 800;
+    color: #0F172A;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .badge {
+    font-size: 10px;
+    font-weight: 800;
+    padding: 2px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+  .badge-blue { background: #DBEAFE; color: #1E40AF; }
+  .badge-purple { background: #F3E8FF; color: #6B21A8; }
+
+  .svg-wrap {
+    flex: 1;
+    position: relative;
+    width: 100%;
+    border-radius: 8px;
+    background: #FAFAFC;
+    border: 1px solid #F1F5F9;
+  }
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .bottom-bar {
+    display: grid;
+    grid-template-columns: 1.3fr 1.5fr 1.2fr;
+    gap: 16px;
+    background: #FFFFFF;
+    border: 1.5px solid #E2E8F0;
+    border-radius: 10px;
+    padding: 12px 18px;
+    height: 195px;
+  }
+  .summary-col h3 {
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #071A4D;
+    margin-bottom: 6px;
+  }
+  .rule-list {
+    list-style: none;
+    font-size: 11px;
+    line-height: 1.45;
+    color: #334155;
+  }
+  .rule-list li {
+    margin-bottom: 4px;
+    position: relative;
+    padding-left: 14px;
+  }
+  .rule-list li::before {
+    content: "•";
+    position: absolute;
+    left: 2px;
+    color: #2563EB;
+    font-weight: 900;
+  }
+  .trap-box {
+    background: #FFF1F2;
+    border: 1px solid #FECDD3;
+    border-radius: 8px;
+    padding: 8px 12px;
+  }
+  .trap-box h4 {
+    color: #BE123C;
+    font-size: 11.5px;
+    font-weight: 800;
+    margin-bottom: 4px;
+  }
+  .trap-box p {
+    font-size: 10.5px;
+    color: #881337;
+    line-height: 1.35;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <div class="brand-badge">OurMocks Core Engine</div>
+    <div class="title-group">
+      <h1>Market Equilibrium &amp; Shift Dynamics Engine</h1>
+      <p>Determination of Equilibrium Price &amp; Output, Excess Demand/Supply Pressures, and Simultaneous Curve Shifts</p>
+    </div>
+  </div>
+  <div class="header-meta">
+    <span class="pill highlight">Market Equilibrium</span>
+    <span class="pill">D = S Clearance</span>
+    <span class="pill">Simultaneous Shifts</span>
+  </div>
+</div>
+
+<div class="grid">
+  <!-- Left Card: Market Clearing & Adjustment Dynamics -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">
+        <span>Market Clearing Price &amp; Self-Correcting Pressures</span>
+      </div>
+      <span class="badge badge-blue">Equilibrium Clearance</span>
+    </div>
+    <div class="svg-wrap">
+      <svg viewBox="0 0 620 480" xmlns="http://www.w3.org/2000/svg">
+        <!-- Axes -->
+        <line x1="60" y1="420" x2="580" y2="420" stroke="#0F172A" stroke-width="2.5" marker-end="url(#arrow-dark)" />
+        <line x1="60" y1="420" x2="60" y2="40" stroke="#0F172A" stroke-width="2.5" marker-end="url(#arrow-dark)" />
+        <text x="575" y="445" font-size="12" font-weight="700" fill="#0F172A" text-anchor="end">Quantity (Q)</text>
+        <text x="45" y="40" font-size="12" font-weight="700" fill="#0F172A" text-anchor="end" transform="rotate(-90 45,40)">Market Price (P)</text>
+
+        <!-- Demand Curve: Downward sloping from (100, 80) to (520, 380) -->
+        <line x1="100" y1="80" x2="520" y2="380" stroke="#2563EB" stroke-width="3.5" />
+        <text x="525" y="385" font-size="13" font-weight="800" fill="#2563EB">Demand (D)</text>
+
+        <!-- Supply Curve: Upward sloping from (100, 380) to (520, 80) -->
+        <line x1="100" y1="380" x2="520" y2="80" stroke="#059669" stroke-width="3.5" />
+        <text x="525" y="85" font-size="13" font-weight="800" fill="#059669">Supply (S)</text>
+
+        <!-- Equilibrium Point E at (310, 230) -->
+        <circle cx="310" cy="230" r="6" fill="#071A4D" stroke="#FFFFFF" stroke-width="2.5" />
+        <text x="325" y="225" font-size="12" font-weight="800" fill="#071A4D">Equilibrium (E*)</text>
+        <text x="325" y="240" font-size="10" font-weight="700" fill="#2563EB">q_D(P*) = q_S(P*)</text>
+
+        <line x1="60" y1="230" x2="310" y2="230" stroke="#071A4D" stroke-dasharray="3 3" stroke-width="1.5" />
+        <text x="48" y="234" font-size="11" font-weight="800" fill="#071A4D" text-anchor="end">P*</text>
+
+        <line x1="310" y1="230" x2="310" y2="420" stroke="#071A4D" stroke-dasharray="3 3" stroke-width="1.5" />
+        <text x="310" y="435" font-size="11" font-weight="800" fill="#071A4D" text-anchor="middle">Q*</text>
+
+        <!-- High Price P1 = 140 (Above Equilibrium -> Excess Supply) -->
+        <line x1="60" y1="140" x2="550" y2="140" stroke="#DC2626" stroke-dasharray="4 3" stroke-width="1.5" />
+        <text x="48" y="144" font-size="11" font-weight="800" fill="#DC2626" text-anchor="end">P₁</text>
+        <circle cx="184" cy="140" r="4.5" fill="#2563EB" />
+        <circle cx="436" cy="140" r="4.5" fill="#059669" />
+        <!-- Excess Supply Bracket -->
+        <line x1="184" y1="125" x2="436" y2="125" stroke="#DC2626" stroke-width="2" marker-start="url(#bracket-left)" marker-end="url(#bracket-right)" />
+        <text x="310" y="118" font-size="11" font-weight="800" fill="#DC2626" text-anchor="middle">EXCESS SUPPLY (Surplus)</text>
+        <text x="310" y="155" font-size="10" font-weight="700" fill="#991B1B" text-anchor="middle">Down competition among sellers → Price falls ↓ to P*</text>
+
+        <!-- Low Price P2 = 320 (Below Equilibrium -> Excess Demand) -->
+        <line x1="60" y1="320" x2="550" y2="320" stroke="#D97706" stroke-dasharray="4 3" stroke-width="1.5" />
+        <text x="48" y="324" font-size="11" font-weight="800" fill="#D97706" text-anchor="end">P₂</text>
+        <circle cx="184" cy="320" r="4.5" fill="#059669" />
+        <circle cx="436" cy="320" r="4.5" fill="#2563EB" />
+        <!-- Excess Demand Bracket -->
+        <line x1="184" y1="335" x2="436" y2="335" stroke="#D97706" stroke-width="2" marker-start="url(#bracket-left)" marker-end="url(#bracket-right)" />
+        <text x="310" y="352" font-size="11" font-weight="800" fill="#D97706" text-anchor="middle">EXCESS DEMAND (Shortage)</text>
+        <text x="310" y="367" font-size="10" font-weight="700" fill="#92400E" text-anchor="middle">Upward bid by buyers → Price rises ↑ to P*</text>
+
+        <defs>
+          <marker id="arrow-dark" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#0F172A"/>
+          </marker>
+        </defs>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Right Card: Simultaneous Shifts Matrix -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">
+        <span>Simultaneous Shifts in Demand &amp; Supply</span>
+      </div>
+      <span class="badge badge-purple">Shift Analytics</span>
+    </div>
+    <div class="svg-wrap">
+      <svg viewBox="0 0 620 480" xmlns="http://www.w3.org/2000/svg">
+        <!-- Axes -->
+        <line x1="60" y1="420" x2="580" y2="420" stroke="#0F172A" stroke-width="2.5" marker-end="url(#arrow-dark2)" />
+        <line x1="60" y1="420" x2="60" y2="40" stroke="#0F172A" stroke-width="2.5" marker-end="url(#arrow-dark2)" />
+        <text x="575" y="445" font-size="12" font-weight="700" fill="#0F172A" text-anchor="end">Quantity (Q)</text>
+        <text x="45" y="40" font-size="12" font-weight="700" fill="#0F172A" text-anchor="end" transform="rotate(-90 45,40)">Market Price (P)</text>
+
+        <!-- Initial D1 and S1 -->
+        <line x1="100" y1="120" x2="480" y2="380" stroke="#94A3B8" stroke-width="2" stroke-dasharray="4 3" />
+        <text x="485" y="385" font-size="11" font-weight="700" fill="#64748B">D₁</text>
+
+        <line x1="100" y1="360" x2="480" y2="100" stroke="#94A3B8" stroke-width="2" stroke-dasharray="4 3" />
+        <text x="485" y="105" font-size="11" font-weight="700" fill="#64748B">S₁</text>
+
+        <!-- Initial Equilibrium E1 at (280, 240) -->
+        <circle cx="280" cy="240" r="4.5" fill="#64748B" />
+        <text x="260" y="235" font-size="10.5" font-weight="700" fill="#64748B">E₁</text>
+        <line x1="60" y1="240" x2="280" y2="240" stroke="#94A3B8" stroke-dasharray="2 2" stroke-width="1" />
+        <text x="48" y="244" font-size="10.5" font-weight="700" fill="#64748B" text-anchor="end">P₁</text>
+        <line x1="280" y1="240" x2="280" y2="420" stroke="#94A3B8" stroke-dasharray="2 2" stroke-width="1" />
+        <text x="280" y="435" font-size="10.5" font-weight="700" fill="#64748B" text-anchor="middle">Q₁</text>
+
+        <!-- Shift Case: D shifts right to D2, S shifts right by EQUAL amount to S2 -->
+        <!-- New D2 -->
+        <line x1="180" y1="120" x2="560" y2="380" stroke="#2563EB" stroke-width="3" />
+        <text x="565" y="385" font-size="12" font-weight="800" fill="#2563EB">D₂</text>
+
+        <!-- New S2 -->
+        <line x1="180" y1="360" x2="560" y2="100" stroke="#059669" stroke-width="3" />
+        <text x="565" y="105" font-size="12" font-weight="800" fill="#059669">S₂</text>
+
+        <!-- New Equilibrium E2 at (360, 240) -> Price Unchanged, Quantity Increases! -->
+        <circle cx="370" cy="240" r="6" fill="#071A4D" stroke="#FFFFFF" stroke-width="2.5" />
+        <text x="380" y="230" font-size="11.5" font-weight="800" fill="#071A4D">E₂ (ΔD = ΔS)</text>
+        <line x1="370" y1="240" x2="370" y2="420" stroke="#071A4D" stroke-dasharray="3 3" stroke-width="1.5" />
+        <text x="370" y="435" font-size="11" font-weight="800" fill="#071A4D" text-anchor="middle">Q₂ &gt; Q₁</text>
+        <text x="380" y="250" font-size="10" font-weight="700" fill="#059669">Price P remains strictly CONSTANT!</text>
+
+        <!-- Explanatory Quadrant Summary Box -->
+        <rect x="75" y="60" width="300" height="120" rx="6" fill="#F8FAFC" stroke="#CBD5E1" />
+        <text x="85" y="80" font-size="11" font-weight="800" fill="#071A4D">Simultaneous Rightward Shift Matrix:</text>
+        <text x="85" y="100" font-size="10" fill="#334155">• <b>Quantity effect:</b> Q ALWAYS expands unambiguously (Q₂ &gt; Q₁).</text>
+        <text x="85" y="120" font-size="10" fill="#334155">• <b>If ΔD &gt; ΔS:</b> Price rises (P₂ &gt; P₁).</text>
+        <text x="85" y="140" font-size="10" fill="#334155">• <b>If ΔD = ΔS:</b> Price is CONSTANT (P₂ = P₁).</text>
+        <text x="85" y="160" font-size="10" fill="#334155">• <b>If ΔS &gt; ΔD:</b> Price falls (P₂ &lt; P₁).</text>
+
+        <defs>
+          <marker id="arrow-dark2" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#0F172A"/>
+          </marker>
+        </defs>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<!-- Bottom Summary Bar -->
+<div class="bottom-bar">
+  <div class="summary-col">
+    <h3>Equilibrium Foundation Theorems</h3>
+    <ul class="rule-list">
+      <li><b>Market Clearance:</b> Equilibrium is the unique price where quantity demanded equals quantity supplied ($q_D(P^*) = q_S(P^*)$). Zero unsold surplus, zero unmet shortage.</li>
+      <li><b>Walrasian Price Adjustment:</b> If $P > P^* \implies$ Excess supply induces price cuts; if $P < P^* \implies$ Excess demand bids price up.</li>
+    </ul>
+  </div>
+
+  <div class="summary-col">
+    <h3>The 4 Core Simultaneous Shift Theorems</h3>
+    <ul class="rule-list">
+      <li><b>Both Demand &amp; Supply Increase:</b> Quantity <i>definitely rises</i>; Price depends on which shift is larger.</li>
+      <li><b>Both Demand &amp; Supply Decrease:</b> Quantity <i>definitely falls</i>; Price depends on which shift is larger.</li>
+      <li><b>Demand Increases &amp; Supply Decreases:</b> Price <i>definitely rises</i>; Quantity change is indeterminate.</li>
+      <li><b>Demand Decreases &amp; Supply Increases:</b> Price <i>definitely falls</i>; Quantity change is indeterminate.</li>
+    </ul>
+  </div>
+
+  <div class="trap-box">
+    <h4>CUET Trap: Extreme Elasticity Shifts</h4>
+    <p><b>Fatal Trap:</b> Believing shifts always change both P and Q. <b>Reality:</b> If supply is <i>perfectly elastic</i> (horizontal), a demand shift changes <b>only quantity</b>; price is 100% fixed! If supply is <i>perfectly inelastic</i> (vertical), a demand shift changes <b>only price</b>; quantity is 100% fixed!</p>
+  </div>
+</div>
+
+</body>
+</html>
