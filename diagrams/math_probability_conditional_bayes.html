@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Conditional Probability & Bayes' Theorem Architecture</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px 28px;
+    overflow: hidden;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 12px;
+    margin-bottom: 16px;
+  }
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .brand-badge {
+    background: #071A4D;
+    color: #B8FF34;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .title-group h1 {
+    font-size: 22px;
+    font-weight: 800;
+    color: #071A4D;
+    letter-spacing: -0.02em;
+  }
+  .title-group p {
+    font-size: 12px;
+    color: #64748B;
+    margin-top: 2px;
+  }
+  .header-meta {
+    display: flex;
+    gap: 8px;
+  }
+  .pill {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 999px;
+    border: 1px solid #CBD5E1;
+    background: #FFFFFF;
+    color: #334155;
+  }
+  .pill.highlight {
+    background: #EEF2FF;
+    border-color: #C7D2FE;
+    color: #1F5EFF;
+  }
+
+  /* 3-Column Architecture */
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1.05fr 1.15fr;
+    gap: 16px;
+    margin-bottom: 14px;
+  }
+
+  .col-card {
+    background: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    border-radius: 10px;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .tag {
+    font-size: 10.5px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #1F5EFF;
+  }
+  .card-h2 {
+    font-size: 15px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+
+  .formula-card {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-left: 3.5px solid #1F5EFF;
+    border-radius: 4px 6px 6px 4px;
+    padding: 8px 10px;
+  }
+  .formula-card.green { border-left-color: #10B981; }
+  .formula-card.amber { border-left-color: #F59E0B; }
+  .formula-card.red { border-left-color: #EF4444; }
+
+  .formula-title {
+    font-size: 12px;
+    font-weight: 800;
+    color: #0F172A;
+    display: flex;
+    justify-content: space-between;
+  }
+  .formula-math {
+    font-family: "Courier New", monospace;
+    font-size: 11.5px;
+    font-weight: 700;
+    color: #1F5EFF;
+    background: #EEF2FF;
+    padding: 3px 6px;
+    border-radius: 4px;
+    margin: 4px 0;
+    display: inline-block;
+  }
+  .formula-desc {
+    font-size: 11px;
+    color: #475569;
+    line-height: 1.35;
+  }
+  .formula-desc b { color: #071A4D; }
+
+  /* Tree / Diagram Mockup */
+  .visual-tree {
+    background: #F1F5F9;
+    border: 1px dashed #94A3B8;
+    border-radius: 8px;
+    padding: 8px 10px;
+    height: 145px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .tree-branch {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 10.5px;
+    color: #334155;
+  }
+  .tree-node {
+    background: #071A4D;
+    color: #B8FF34;
+    font-weight: 800;
+    padding: 2px 7px;
+    border-radius: 4px;
+    font-size: 10.5px;
+  }
+  .tree-arrow {
+    color: #64748B;
+    font-weight: 700;
+  }
+  .tree-prob {
+    font-family: "Courier New", monospace;
+    font-weight: 700;
+    color: #1F5EFF;
+  }
+
+  /* Bottom Warning Matrix */
+  .bottom-strip {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+  }
+  .strip-box {
+    background: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    border-radius: 8px;
+    padding: 10px 12px;
+  }
+  .strip-title {
+    font-size: 11.5px;
+    font-weight: 800;
+    color: #071A4D;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 3px;
+  }
+  .strip-title .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+  }
+  .dot.blue { background: #1F5EFF; }
+  .dot.green { background: #10B981; }
+  .dot.red { background: #EF4444; }
+  .strip-text {
+    font-size: 11px;
+    color: #475569;
+    line-height: 1.35;
+  }
+  .strip-text b { color: #0F172A; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <div class="brand-badge">OurMocks Core System</div>
+    <div class="title-group">
+      <h1>Conditional Probability, Total Probability & Bayes' Rule</h1>
+      <p>NTA CUET UG Section B1 Unit VI · Sample Space Conditioning, Independence Axioms, Partitions & Inversion Engines</p>
+    </div>
+  </div>
+  <div class="header-meta">
+    <span class="pill highlight">Section B1 Unit VI</span>
+    <span class="pill">Sample Space Reduction</span>
+    <span class="pill">Posterior Inversion</span>
+  </div>
+</div>
+
+<div class="grid-container">
+  <!-- Col 1: Conditioning & Multiplication -->
+  <div class="col-card">
+    <div>
+      <div class="tag">Foundation</div>
+      <div class="card-h2">Conditional Probability</div>
+    </div>
+
+    <div class="formula-card">
+      <div class="formula-title">
+        <span>Sample Space Reduction</span>
+      </div>
+      <div class="formula-math">P(A|B) = P(A ∩ B) / P(B)</div>
+      <div class="formula-desc">
+        Occurs given that event $B$ has already transpired ($P(B) > 0$). Event $B$ replaces universe $S$ as the <b>new reduced sample space</b>.
+      </div>
+    </div>
+
+    <div class="formula-card green">
+      <div class="formula-title">
+        <span>Multiplication Theorem</span>
+      </div>
+      <div class="formula-math">P(A ∩ B) = P(A) · P(B|A) = P(B) · P(A|B)</div>
+      <div class="formula-desc">
+        Generalizes to 3 events: $P(E \cap F \cap G) = P(E) \cdot P(F|E) \cdot P(G|E \cap F)$. Fundamental rule for sequential multi-stage experiments.
+      </div>
+    </div>
+
+    <div class="formula-card amber">
+      <div class="formula-title">
+        <span>Core Conditional Invariants</span>
+      </div>
+      <div class="formula-desc">
+        • <b>Certain Event:</b> $P(S|B) = 1$ and $P(B|B) = 1$.<br>
+        • <b>Complement Rule:</b> $P(A'|B) = 1 - P(A|B)$.<br>
+        • <b>Additive Law:</b> $P((E \cup F)|B) = P(E|B) + P(F|B) - P((E \cap F)|B)$.
+      </div>
+    </div>
+  </div>
+
+  <!-- Col 2: Independent Events -->
+  <div class="col-card">
+    <div>
+      <div class="tag">Independence</div>
+      <div class="card-h2">Independence vs Mutually Exclusive</div>
+    </div>
+
+    <div class="formula-card">
+      <div class="formula-title">
+        <span>Definition of Independence</span>
+      </div>
+      <div class="formula-math">P(A ∩ B) = P(A) · P(B)</div>
+      <div class="formula-desc">
+        Occurrence of $B$ gives <b>zero information</b> about occurrence of $A$: $P(A|B) = P(A)$ and $P(B|A) = P(B)$.
+      </div>
+    </div>
+
+    <div class="formula-card green">
+      <div class="formula-title">
+        <span>Companion Independence Theorems</span>
+      </div>
+      <div class="formula-desc">
+        If $A$ and $B$ are independent, then each of the following pairs is also <b>strictly independent</b>:<br>
+        1. <b>A and B'</b>: $P(A \cap B') = P(A) \cdot P(B')$.<br>
+        2. <b>A' and B</b>: $P(A' \cap B) = P(A') \cdot P(B)$.<br>
+        3. <b>A' and B'</b>: $P(A' \cap B') = P(A') \cdot P(B')$.
+      </div>
+    </div>
+
+    <div class="formula-card red">
+      <div class="formula-title">
+        <span>Probability of At Least One</span>
+      </div>
+      <div class="formula-math">P(A ∪ B) = 1 - P(A') · P(B')</div>
+      <div class="formula-desc">
+        Supreme speed shortcut: For $n$ independent events, the probability that <b>at least one occurs</b> is $1 - \prod_{k=1}^n P(E_k')$.
+      </div>
+    </div>
+  </div>
+
+  <!-- Col 3: Total Probability & Bayes' Inversion -->
+  <div class="col-card">
+    <div>
+      <div class="tag">Inversion Engine</div>
+      <div class="card-h2">Total Probability & Bayes' Rule</div>
+    </div>
+
+    <div class="visual-tree">
+      <div class="tree-branch">
+        <span class="tree-node">E₁ (Prior)</span>
+        <span class="tree-arrow">── P(A|E₁) ──▸</span>
+        <span class="tree-prob">P(E₁) · P(A|E₁)</span>
+      </div>
+      <div class="tree-branch">
+        <span class="tree-node">E₂ (Prior)</span>
+        <span class="tree-arrow">── P(A|E₂) ──▸</span>
+        <span class="tree-prob">P(E₂) · P(A|E₂)</span>
+      </div>
+      <div class="tree-branch">
+        <span class="tree-node">E₃ (Prior)</span>
+        <span class="tree-arrow">── P(A|E₃) ──▸</span>
+        <span class="tree-prob">P(E₃) · P(A|E₃)</span>
+      </div>
+    </div>
+
+    <div class="formula-card">
+      <div class="formula-title">
+        <span>Theorem of Total Probability</span>
+      </div>
+      <div class="formula-math">P(A) = ∑ P(Eᵢ) · P(A|Eᵢ)</div>
+      <div class="formula-desc">
+        Computes total likelihood of event $A$ by summing over all mutually disjoint hypothesis pathways $E_1, E_2, \dots, E_n$.
+      </div>
+    </div>
+
+    <div class="formula-card green">
+      <div class="formula-title">
+        <span>Bayes' Posterior Rule</span>
+      </div>
+      <div class="formula-math">P(Eᵢ|A) = [P(Eᵢ)P(A|Eᵢ)] / ∑ [P(Eⱼ)P(A|Eⱼ)]</div>
+      <div class="formula-desc">
+        Calculates <b>reverse probability</b>: Given that outcome $A$ has occurred, what is the probability that it arose from hypothesis $E_i$?
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bottom-strip">
+  <div class="strip-box">
+    <div class="strip-title"><span class="dot red"></span> Mutually Exclusive vs Independent</div>
+    <div class="strip-text">
+      • <b>Mutually Exclusive:</b> $A \cap B = \emptyset \implies P(A \cap B) = 0$. They cannot occur together.<br>
+      • <b>Independent:</b> $P(A \cap B) = P(A)P(B) \ne 0$.<br>
+      • Two events with $P(A) > 0, P(B) > 0$ <b>can NEVER be both mutually exclusive and independent</b>!
+    </div>
+  </div>
+
+  <div class="strip-box">
+    <div class="strip-title"><span class="dot blue"></span> Partition of Sample Space</div>
+    <div class="strip-text">
+      • Events $E_1, E_2, \dots, E_n$ form a valid <b>partition of S</b> if:<br>
+      1. <b>Pairwise Disjoint:</b> $E_i \cap E_j = \emptyset$ for all $i \ne j$.<br>
+      2. <b>Exhaustive:</b> $\bigcup_{i=1}^n E_i = S$.<br>
+      3. <b>Non-Zero Likelihood:</b> $P(E_i) > 0$ for all $i$.
+    </div>
+  </div>
+
+  <div class="strip-box">
+    <div class="strip-title"><span class="dot green"></span> Bayes' Problem Identification</div>
+    <div class="strip-text">
+      • Look for: "Given that the patient tested positive...", "Knowing that the defective bolt was drawn...".<br>
+      • <b>Numerator:</b> Weight of the specific pathway asked for.<br>
+      • <b>Denominator:</b> Sum of weights of ALL plausible pathways producing $A$.
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

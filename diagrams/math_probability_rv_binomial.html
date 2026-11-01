@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Random Variables, Moments & Binomial Distribution</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px 28px;
+    overflow: hidden;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 12px;
+    margin-bottom: 16px;
+  }
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .brand-badge {
+    background: #071A4D;
+    color: #B8FF34;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .title-group h1 {
+    font-size: 22px;
+    font-weight: 800;
+    color: #071A4D;
+    letter-spacing: -0.02em;
+  }
+  .title-group p {
+    font-size: 12px;
+    color: #64748B;
+    margin-top: 2px;
+  }
+  .header-meta {
+    display: flex;
+    gap: 8px;
+  }
+  .pill {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 999px;
+    border: 1px solid #CBD5E1;
+    background: #FFFFFF;
+    color: #334155;
+  }
+  .pill.highlight {
+    background: #EEF2FF;
+    border-color: #C7D2FE;
+    color: #1F5EFF;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.15fr;
+    gap: 16px;
+    margin-bottom: 14px;
+  }
+
+  .col-card {
+    background: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    border-radius: 10px;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .tag {
+    font-size: 10.5px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #1F5EFF;
+  }
+  .card-h2 {
+    font-size: 15px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+
+  .formula-card {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-left: 3.5px solid #1F5EFF;
+    border-radius: 4px 6px 6px 4px;
+    padding: 8px 10px;
+  }
+  .formula-card.green { border-left-color: #10B981; }
+  .formula-card.amber { border-left-color: #F59E0B; }
+  .formula-card.red { border-left-color: #EF4444; }
+
+  .formula-title {
+    font-size: 12px;
+    font-weight: 800;
+    color: #0F172A;
+    display: flex;
+    justify-content: space-between;
+  }
+  .formula-math {
+    font-family: "Courier New", monospace;
+    font-size: 11.5px;
+    font-weight: 700;
+    color: #1F5EFF;
+    background: #EEF2FF;
+    padding: 3px 6px;
+    border-radius: 4px;
+    margin: 4px 0;
+    display: inline-block;
+  }
+  .formula-desc {
+    font-size: 11px;
+    color: #475569;
+    line-height: 1.35;
+  }
+  .formula-desc b { color: #071A4D; }
+
+  /* Table styling */
+  .prob-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 11px;
+    margin: 4px 0;
+  }
+  .prob-table th, .prob-table td {
+    border: 1px solid #CBD5E1;
+    padding: 5px 8px;
+    text-align: center;
+  }
+  .prob-table th {
+    background: #EEF2FF;
+    color: #071A4D;
+    font-weight: 800;
+  }
+
+  /* Bottom Warning Matrix */
+  .bottom-strip {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+  }
+  .strip-box {
+    background: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    border-radius: 8px;
+    padding: 10px 12px;
+  }
+  .strip-title {
+    font-size: 11.5px;
+    font-weight: 800;
+    color: #071A4D;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 3px;
+  }
+  .strip-title .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+  }
+  .dot.blue { background: #1F5EFF; }
+  .dot.green { background: #10B981; }
+  .dot.red { background: #EF4444; }
+  .strip-text {
+    font-size: 11px;
+    color: #475569;
+    line-height: 1.35;
+  }
+  .strip-text b { color: #0F172A; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <div class="brand-badge">OurMocks Core System</div>
+    <div class="title-group">
+      <h1>Random Variables, Statistical Moments & Binomial Model</h1>
+      <p>NTA CUET UG Section B1 Unit VI · Probability Mass Functions, Mathematical Expectation, Variance & Bernoulli Trials</p>
+    </div>
+  </div>
+  <div class="header-meta">
+    <span class="pill highlight">Discrete Distributions</span>
+    <span class="pill">Mean & Variance</span>
+    <span class="pill">Bernoulli B(n, p)</span>
+  </div>
+</div>
+
+<div class="grid-container">
+  <!-- Col 1: Random Variables & Probability Mass Function -->
+  <div class="col-card">
+    <div>
+      <div class="tag">Discrete Variables</div>
+      <div class="card-h2">Random Variable Mapping</div>
+    </div>
+
+    <div class="formula-card">
+      <div class="formula-title">
+        <span>Formal Definition</span>
+      </div>
+      <div class="formula-math">X: S → ℝ</div>
+      <div class="formula-desc">
+        A real-valued function whose domain is the sample space $S$ of a random experiment. Assigns a unique real numerical score to each elementary event.
+      </div>
+    </div>
+
+    <table class="prob-table">
+      <thead>
+        <tr>
+          <th>X = xᵢ</th>
+          <td>x₁</td>
+          <td>x₂</td>
+          <td>…</td>
+          <td>xₙ</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>P(X = xᵢ)</th>
+          <td>p₁</td>
+          <td>p₂</td>
+          <td>…</td>
+          <td>pₙ</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="formula-card green">
+      <div class="formula-title">
+        <span>Normalization Invariant</span>
+      </div>
+      <div class="formula-math">pᵢ ≥ 0  and  ∑ pᵢ = 1</div>
+      <div class="formula-desc">
+        Every probability must be non-negative, and the sum of all probabilities over the complete range must identically equal $1$. Used to solve for unknown parameter $k$.
+      </div>
+    </div>
+  </div>
+
+  <!-- Col 2: Mean & Variance -->
+  <div class="col-card">
+    <div>
+      <div class="tag">Statistical Moments</div>
+      <div class="card-h2">Expectation & Variance</div>
+    </div>
+
+    <div class="formula-card">
+      <div class="formula-title">
+        <span>Mean (Expectation)</span>
+      </div>
+      <div class="formula-math">μ = E(X) = ∑ xᵢ · pᵢ</div>
+      <div class="formula-desc">
+        Weighted average of the values that $X$ takes. Represents the long-run theoretical center of the distribution.
+      </div>
+    </div>
+
+    <div class="formula-card green">
+      <div class="formula-title">
+        <span>Variance of X</span>
+      </div>
+      <div class="formula-math">σ² = Var(X) = E(X²) - [E(X)]²</div>
+      <div class="formula-desc">
+        Measures dispersion around the mean: $\text{Var}(X) = \sum x_i^2 p_i - \mu^2$. Always strictly non-negative ($\text{Var}(X) \ge 0$).
+      </div>
+    </div>
+
+    <div class="formula-card amber">
+      <div class="formula-title">
+        <span>Standard Deviation & Linear Scaling</span>
+      </div>
+      <div class="formula-desc">
+        • <b>Standard Deviation:</b> $\sigma = \sqrt{\text{Var}(X)}$.<br>
+        • <b>Expectation Scaling:</b> $E(aX + b) = a E(X) + b$.<br>
+        • <b>Variance Scaling:</b> $\text{Var}(aX + b) = a^2 \text{Var}(X)$. (Constant $b$ has zero variance!).
+      </div>
+    </div>
+  </div>
+
+  <!-- Col 3: Bernoulli Trials & Binomial Distribution -->
+  <div class="col-card">
+    <div>
+      <div class="tag">Bernoulli Process</div>
+      <div class="card-h2">The Binomial Model B(n, p)</div>
+    </div>
+
+    <div class="formula-card">
+      <div class="formula-title">
+        <span>Bernoulli Trial Axioms</span>
+      </div>
+      <div class="formula-desc">
+        1. Number of trials $n$ is finite and fixed.<br>
+        2. Trials are mutually <b>independent</b>.<br>
+        3. Each trial has exactly two outcomes: Success ($p$) and Failure ($q = 1 - p$).<br>
+        4. Probability of success $p$ remains constant across all trials.
+      </div>
+    </div>
+
+    <div class="formula-card green">
+      <div class="formula-title">
+        <span>Binomial PMF</span>
+      </div>
+      <div class="formula-math">P(X = r) = ⁿCᵣ · pʳ · qⁿ⁻ʳ</div>
+      <div class="formula-desc">
+        Gives probability of obtaining exactly $r$ successes in $n$ independent trials ($r = 0, 1, 2, \dots, n$).
+      </div>
+    </div>
+
+    <div class="formula-card red">
+      <div class="formula-title">
+        <span>Binomial Parameters & Invariant</span>
+      </div>
+      <div class="formula-math">Mean = np,  Var = npq  (Var < Mean)</div>
+      <div class="formula-desc">
+        Since failure probability $q < 1$, the variance $npq$ of a Binomial distribution is <b>always strictly less than its mean $np$</b>.
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bottom-strip">
+  <div class="strip-box">
+    <div class="strip-title"><span class="dot blue"></span> Solving for Parameter k</div>
+    <div class="strip-text">
+      • Standard CUET question gives $P(X = x)$ in terms of $k$.<br>
+      • Use $\sum p_i = 1$ to form an algebraic equation and solve for $k$.<br>
+      • Discard any root that makes any individual $p_i < 0$ or $> 1$!
+    </div>
+  </div>
+
+  <div class="strip-box">
+    <div class="strip-title"><span class="dot green"></span> At Least vs At Most r Successes</div>
+    <div class="strip-text">
+      • <b>"At least 1 success":</b> $P(X \ge 1) = 1 - P(X = 0) = 1 - q^n$.<br>
+      • <b>"At most 1 success":</b> $P(X \le 1) = P(X = 0) + P(X = 1) = q^n + n p q^{n-1}$.<br>
+      • Always use the complement when calculating "at least one"!
+    </div>
+  </div>
+
+  <div class="strip-box">
+    <div class="strip-title"><span class="dot red"></span> Replacement vs Without Replacement</div>
+    <div class="strip-text">
+      • <b>With Replacement:</b> Trials are independent $\implies$ Follows <b>Binomial Distribution</b>.<br>
+      • <b>Without Replacement:</b> Probabilities change after each draw $\implies$ Trials are dependent! Use Hypergeometric / sequential multiplication.
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

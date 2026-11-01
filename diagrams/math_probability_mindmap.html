@@ -1,116 +1,310 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
+<title>Probability Theory & Distributions Master Synthesis Mindmap</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
-  .wrap { width: 1480px; height: 1080px; position: relative; background: #fff; }
-  svg.wires { position: absolute; inset: 0; width: 1480px; height: 1080px; }
-  .center {
-    position: absolute; left: 520px; top: 470px; width: 440px; height: 104px;
-    background: #071A4D; border-radius: 16px; display: flex; flex-direction: column;
-    align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(7,26,77,.25);
-    border-bottom: 5px solid #B8FF34;
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px 28px;
+    overflow: hidden;
   }
-  .center .t { color: #fff; font-size: 19px; font-weight: 800; letter-spacing: .5px; text-align: center; }
-  .center .s { color: #B8FF34; font-size: 13px; font-weight: 700; letter-spacing: 2px; margin-top: 4px; }
-  .card {
-    position: absolute; width: 465px; background: #FCFDFF; border: 1.5px solid #D5DCEA;
-    border-radius: 14px; padding: 13px 16px 12px;
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 12px;
+    margin-bottom: 16px;
   }
-  .card h2 { font-size: 19px; color: #071A4D; font-weight: 800; margin-bottom: 7px;
-             padding-bottom: 5px; border-bottom: 3px solid; display: inline-block; }
-  .leaf { font-size: 14px; color: #1B2333; margin: 5px 0; padding-left: 16px; position: relative; line-height: 1.32; }
-  .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
-  .b .leaf::before { background: #1F5EFF; }
-  .l .leaf::before { background: #7FB800; }
-  .leaf b { color: #071A4D; }
-  .b h2 { border-color: #1F5EFF; }
-  .l h2 { border-color: #7FB800; }
-  .left { left: 30px; }
-  .right { left: 985px; }
-  .exc {
-    position: absolute; left: 470px; top: 905px; width: 540px; background: #FFF3EC;
-    border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px;
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
   }
-  .exc h2 { font-size: 17px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
-  .exc .leaf { font-size: 13px; margin: 3px 0; padding-left: 14px; color: #7A2A12; }
-  .exc .leaf::before { background: #D2481F; }
-  .exc b { color: #B4380F; }
+  .brand-badge {
+    background: #071A4D;
+    color: #B8FF34;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .title-group h1 {
+    font-size: 22px;
+    font-weight: 800;
+    color: #071A4D;
+    letter-spacing: -0.02em;
+  }
+  .title-group p {
+    font-size: 12px;
+    color: #64748B;
+    margin-top: 2px;
+  }
+  .pill {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 999px;
+    border: 1px solid #CBD5E1;
+    background: #FFFFFF;
+    color: #334155;
+  }
+  .pill.highlight {
+    background: #EEF2FF;
+    border-color: #C7D2FE;
+    color: #1F5EFF;
+  }
+
+  /* Mindmap Layout */
+  .mindmap-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 280px 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 16px;
+    height: 760px;
+    position: relative;
+  }
+
+  /* Center Hub */
+  .center-hub {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    background: #071A4D;
+    border-radius: 14px;
+    padding: 24px 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 2px solid #B8FF34;
+    z-index: 10;
+  }
+  .hub-badge {
+    background: rgba(184, 255, 52, 0.15);
+    color: #B8FF34;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 4px 10px;
+    border-radius: 6px;
+    margin-bottom: 12px;
+    border: 1px solid rgba(184, 255, 52, 0.3);
+  }
+  .hub-title {
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 1.25;
+    margin-bottom: 10px;
+  }
+  .hub-math {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-family: "Courier New", monospace;
+    font-size: 11.5px;
+    color: #B8FF34;
+    margin-bottom: 14px;
+    line-height: 1.4;
+  }
+  .hub-sub {
+    font-size: 11.5px;
+    color: #CBD5E1;
+    line-height: 1.4;
+  }
+
+  /* Quadrant Cards */
+  .map-card {
+    background: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    border-radius: 12px;
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .map-card.top-left { border-top: 4px solid #1F5EFF; }
+  .map-card.top-right { border-top: 4px solid #10B981; }
+  .map-card.bot-left { border-top: 4px solid #F59E0B; }
+  .map-card.bot-right { border-top: 4px solid #EF4444; }
+
+  .card-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #F1F5F9;
+    padding-bottom: 6px;
+  }
+  .card-branch-title {
+    font-size: 14.5px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .card-branch-tag {
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+  .tag-blue { background: #EEF2FF; color: #1F5EFF; }
+  .tag-green { background: #ECFDF5; color: #059669; }
+  .tag-amber { background: #FFFBEB; color: #D97706; }
+  .tag-red { background: #FEF2F2; color: #DC2626; }
+
+  .sub-item {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    padding: 6px 10px;
+  }
+  .sub-title {
+    font-size: 11.5px;
+    font-weight: 800;
+    color: #0F172A;
+    margin-bottom: 2px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .sub-title span {
+    font-family: "Courier New", monospace;
+    font-size: 11px;
+    color: #1F5EFF;
+  }
+  .sub-desc {
+    font-size: 11px;
+    color: #475569;
+    line-height: 1.35;
+  }
+  .sub-desc b { color: #071A4D; }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <svg class="wires" viewBox="0 0 1480 1080">
-    <path d="M 520 505 C 470 505, 495 158, 500 155" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
-    <path d="M 520 520 C 480 520, 495 438, 500 438" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 520 535 C 470 535, 495 718, 500 718" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
-    <path d="M 960 505 C 1010 505, 985 158, 980 155" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 960 520 C 1000 520, 985 438, 980 438" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
-    <path d="M 960 535 C 1010 535, 985 718, 980 718" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 740 574 C 740 700, 740 830, 740 903" fill="none" stroke="#D2481F" stroke-width="2.5" stroke-dasharray="7 5" opacity=".6"/>
-  </svg>
 
-  <div class="center">
-    <div class="t">PROBABILITY — CONDITIONING &amp; BAYES</div>
-    <div class="s">CUET UG MATHEMATICS</div>
+<div class="header">
+  <div class="header-left">
+    <div class="brand-badge">OurMocks Master Synthesis</div>
+    <div class="title-group">
+      <h1>Probability Theory & Distribution Models — Master Mindmap</h1>
+      <p>NTA CUET UG Section B1 Unit VI · Complete Axiomatic Synthesis: Conditioning, Bayes', Random Variables & Bernoulli Models</p>
+    </div>
   </div>
-
-  <div class="card left b" style="top:58px">
-    <h2>Foundations (the A5 refresher)</h2>
-    <div class="leaf"><b>P(E)</b> = favourable / total, always in [0, 1]</div>
-    <div class="leaf"><b>Complement:</b> P(not E) = 1 − P(E) — the rescue move</div>
-    <div class="leaf"><b>Certain + impossible:</b> P = 1 and P = 0 are the boundary posts</div>
-    <div class="leaf"><b>Simple sets:</b> dice (36 ordered pairs), cards (52), coins (2ⁿ)</div>
-  </div>
-
-  <div class="card right b" style="top:58px">
-    <h2>Addition Rule</h2>
-    <div class="leaf"><b>P(A∪B) = P(A) + P(B) − P(A∩B)</b></div>
-    <div class="leaf"><b>Mutually exclusive:</b> overlap is 0, so just add</div>
-    <div class="leaf"><b>Exhaustive:</b> the parts together cover everything</div>
-    <div class="leaf"><b>Trap:</b> forgetting the subtracted overlap</div>
-  </div>
-
-  <div class="card left l" style="top:350px">
-    <h2>Conditional Probability</h2>
-    <div class="leaf"><b>P(A|B) = P(A∩B) / P(B)</b> — the universe shrinks to B</div>
-    <div class="leaf"><b>Card reflex:</b> given red, P(king) = 2/26 = 1/13</div>
-    <div class="leaf"><b>Arrow discipline:</b> P(A|B) and P(B|A) are different animals</div>
-    <div class="leaf"><b>Read the words:</b> "given that" names the new universe</div>
-  </div>
-
-  <div class="card right l" style="top:350px">
-    <h2>Multiplication &amp; Independence</h2>
-    <div class="leaf"><b>Chain:</b> P(A∩B) = P(B) · P(A|B) — and along the tree for 3+</div>
-    <div class="leaf"><b>Independent:</b> P(A∩B) = P(A) · P(B)</div>
-    <div class="leaf"><b>Not exclusive:</b> disjoint ≠ independent — the classic confusion</div>
-    <div class="leaf"><b>At least one:</b> 1 − P(none) — compute the back door</div>
-  </div>
-
-  <div class="card left b" style="top:642px">
-    <h2>Total Probability</h2>
-    <div class="leaf"><b>Doors E₁…Eₙ</b> partition the space; A arrives through one</div>
-    <div class="leaf"><b>P(A) = Σ P(Eᵢ)·P(A|Eᵢ)</b> — weighted door sum</div>
-    <div class="leaf"><b>Bulb story:</b> three machines, one defect rate each</div>
-    <div class="leaf"><b>Discipline:</b> the door weights must sum to 1</div>
-  </div>
-
-  <div class="card right b" style="top:642px">
-    <h2>Bayes' Theorem</h2>
-    <div class="leaf"><b>P(Eᵢ|A) = P(Eᵢ)·P(A|Eᵢ) / Σ P(Eⱼ)·P(A|Eⱼ)</b></div>
-    <div class="leaf"><b>One door on top</b>, all doors on the bottom</div>
-    <div class="leaf"><b>Tree habit:</b> draw branches, multiply along, add across, divide</div>
-    <div class="leaf"><b>NCERT classic:</b> defective bulb → 25/69 for machine A</div>
-  </div>
-
-  <div class="exc">
-    <h2>TOP TRAPS</h2>
-    <div class="leaf"><b>Flipped conditional</b> — P(A|B) answered as P(B|A)</div>
-    <div class="leaf"><b>Bayes denominator</b> — one door used instead of the full sum</div>
-    <div class="leaf"><b>Replacement ignored</b> — second-draw probabilities shift without it</div>
+  <div>
+    <span class="pill highlight">Complete 4-Quadrant Architecture</span>
   </div>
 </div>
+
+<div class="mindmap-wrapper">
+  <!-- Quadrant 1: Top-Left (Conditioning & Independence) -->
+  <div class="map-card top-left">
+    <div class="card-header-row">
+      <span class="card-branch-title">1. Conditioning & Independence</span>
+      <span class="card-branch-tag tag-blue">Foundations</span>
+    </div>
+
+    <div class="sub-item">
+      <div class="sub-title">Conditional Probability <span>P(A|B)</span></div>
+      <div class="sub-desc">$P(A|B) = P(A \cap B) / P(B)$. Sample space reduces from $S$ to $B$. $P(S|B) = 1$.</div>
+    </div>
+    <div class="sub-item">
+      <div class="sub-title">Multiplication Theorem <span>Joint Rule</span></div>
+      <div class="sub-desc">$P(A \cap B) = P(A) \cdot P(B|A)$. Product rule across sequential trial branches.</div>
+    </div>
+    <div class="sub-item">
+      <div class="sub-title">Independent Events <span>P(A ∩ B) = P(A)·P(B)</span></div>
+      <div class="sub-desc">Occurrence of $B$ gives zero info on $A$. If $A, B$ independent $\implies A', B'$ independent.</div>
+    </div>
+  </div>
+
+  <!-- Center Hub: Synthesis Core -->
+  <div class="center-hub">
+    <div class="hub-badge">Unit VI Core</div>
+    <div class="hub-title">Probability & Random Variables</div>
+    <div class="hub-math">
+      P(A|B) = P(A ∩ B) / P(B)<br>
+      E(X) = ∑ xᵢ pᵢ<br>
+      Var(X) = E(X²) - [E(X)]²<br>
+      P(X=r) = ⁿCᵣ pʳ qⁿ⁻ʳ
+    </div>
+    <div class="hub-sub">
+      Axiomatic Uncertainty Modeling, Inversion Inference, Statistical Moments & Binomial Experiments.
+    </div>
+  </div>
+
+  <!-- Quadrant 2: Top-Right (Total Probability & Bayes' Rule) -->
+  <div class="map-card top-right">
+    <div class="card-header-row">
+      <span class="card-branch-title">2. Partitions & Bayes' Inversion</span>
+      <span class="card-branch-tag tag-green">Inference</span>
+    </div>
+
+    <div class="sub-item">
+      <div class="sub-title">Sample Space Partition <span>{E₁, ..., Eₙ}</span></div>
+      <div class="sub-desc">Pairwise disjoint events whose union forms universe $S$ ($E_i \cap E_j = \emptyset, \bigcup E_i = S$).</div>
+    </div>
+    <div class="sub-item">
+      <div class="sub-title">Theorem of Total Probability <span>Law of Total P</span></div>
+      <div class="sub-desc">$P(A) = \sum_{i=1}^n P(E_i) \cdot P(A|E_i)$. Total probability via all causal paths.</div>
+    </div>
+    <div class="sub-item">
+      <div class="sub-title">Bayes' Posterior Rule <span>P(Eᵢ|A)</span></div>
+      <div class="sub-desc">Inverse probability calculation: $P(E_i|A) = [P(E_i)P(A|E_i)] / \sum [P(E_j)P(A|E_j)]$.</div>
+    </div>
+  </div>
+
+  <!-- Quadrant 3: Bottom-Left (Random Variables & Moments) -->
+  <div class="map-card bot-left">
+    <div class="card-header-row">
+      <span class="card-branch-title">3. Random Variables & Moments</span>
+      <span class="card-branch-tag tag-amber">Distributions</span>
+    </div>
+
+    <div class="sub-item">
+      <div class="sub-title">Discrete Random Variable <span>X: S → ℝ</span></div>
+      <div class="sub-desc">Maps sample space outcomes to real numbers. Normalization: $p_i \ge 0, \sum p_i = 1$.</div>
+    </div>
+    <div class="sub-item">
+      <div class="sub-title">Mean / Expectation <span>μ = E(X)</span></div>
+      <div class="sub-desc">$E(X) = \sum x_i p_i$. Scaling property: $E(aX + b) = a E(X) + b$. Center of mass.</div>
+    </div>
+    <div class="sub-item">
+      <div class="sub-title">Variance & Std Dev <span>σ² = Var(X)</span></div>
+      <div class="sub-desc">$\text{Var}(X) = E(X^2) - [E(X)]^2 \ge 0$. Scaling: $\text{Var}(aX + b) = a^2 \text{Var}(X)$.</div>
+    </div>
+  </div>
+
+  <!-- Quadrant 4: Bottom-Right (Binomial Distribution & Traps) -->
+  <div class="map-card bot-right">
+    <div class="card-header-row">
+      <span class="card-branch-title">4. Bernoulli Trials & Binomial Model</span>
+      <span class="card-branch-tag tag-red">Binomial</span>
+    </div>
+
+    <div class="sub-item">
+      <div class="sub-title">Bernoulli Trials <span>4 Axioms</span></div>
+      <div class="sub-desc">Finite $n$ trials, independent, only 2 outcomes ($p + q = 1$), constant success $p$.</div>
+    </div>
+    <div class="sub-item">
+      <div class="sub-title">Binomial PMF <span>B(n, p)</span></div>
+      <div class="sub-desc">$P(X = r) = \binom{n}{r} p^r q^{n-r}$. At least 1 success: $P(X \ge 1) = 1 - q^n$.</div>
+    </div>
+    <div class="sub-item">
+      <div class="sub-title">Binomial Parameters <span>Mean > Var</span></div>
+      <div class="sub-desc">$\text{Mean} = np$, $\text{Variance} = npq$. Since $q < 1$, $\mathbf{\text{Var} < \text{Mean}}$ universally!</div>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
