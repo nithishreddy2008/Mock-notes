@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Commercial Banking & The Credit Creation Engine</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #071A4D;
+    padding: 16px 24px;
+    border-radius: 8px;
+    color: #FFFFFF;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+  .header h1 span {
+    color: #B8FF34;
+  }
+  .header-badge {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #B8FF34;
+  }
+  .main-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1.35fr 1.05fr;
+    gap: 20px;
+    height: 640px;
+  }
+  .card {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 18px 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  .card-title {
+    font-size: 16px;
+    font-weight: 800;
+    color: #071A4D;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #F1F5F9;
+  }
+  .badge {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+  .badge-navy { background: #EEF2F6; color: #071A4D; }
+  .badge-blue { background: #E0EAFF; color: #1F5EFF; }
+  .badge-green { background: #DCFCE7; color: #15803D; }
+  .badge-amber { background: #FEF3C7; color: #B45309; }
+  
+  .formula-highlight {
+    background: #F0FDF4;
+    border: 1px solid #BBF7D0;
+    border-radius: 6px;
+    padding: 12px 14px;
+    margin-bottom: 12px;
+  }
+  .formula-title {
+    font-size: 12px;
+    font-weight: 800;
+    color: #15803D;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .formula-eq {
+    font-size: 18px;
+    font-weight: 800;
+    color: #071A4D;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  .formula-desc {
+    font-size: 12.5px;
+    color: #334155;
+    margin-top: 4px;
+    line-height: 1.4;
+  }
+
+  .ledger-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12.5px;
+    margin-top: 6px;
+  }
+  .ledger-table th {
+    background: #071A4D;
+    color: #FFFFFF;
+    padding: 8px 10px;
+    text-align: left;
+    font-weight: 700;
+  }
+  .ledger-table th:first-child { border-top-left-radius: 6px; }
+  .ledger-table th:last-child { border-top-right-radius: 6px; }
+  .ledger-table td {
+    padding: 8px 10px;
+    border-bottom: 1px solid #E2E8F0;
+    color: #1E293B;
+  }
+  .ledger-table tr:nth-child(even) td {
+    background: #F8FAFC;
+  }
+  .ledger-table tr.total-row td {
+    background: #FEF9C3;
+    font-weight: 800;
+    color: #071A4D;
+    border-top: 2px solid #CA8A04;
+    border-bottom: none;
+  }
+
+  .step-box {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    padding: 10px 12px;
+    margin-bottom: 10px;
+  }
+  .step-box h4 {
+    font-size: 13px;
+    font-weight: 800;
+    color: #071A4D;
+    margin-bottom: 4px;
+  }
+  .step-box p {
+    font-size: 12px;
+    color: #475569;
+    line-height: 1.4;
+  }
+
+  .bottom-strip {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .strip-card {
+    background: #FFFFFF;
+    border-left: 4px solid #1F5EFF;
+    border-top: 1px solid #E2E8F0;
+    border-right: 1px solid #E2E8F0;
+    border-bottom: 1px solid #E2E8F0;
+    border-radius: 6px;
+    padding: 10px 14px;
+  }
+  .strip-card.warning {
+    border-left-color: #EF4444;
+  }
+  .strip-card.success {
+    border-left-color: #10B981;
+  }
+  .strip-title {
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #071A4D;
+    margin-bottom: 3px;
+  }
+  .strip-text {
+    font-size: 11.5px;
+    color: #334155;
+    line-height: 1.35;
+  }
+</style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div class="header">
+    <h1>COMMERCIAL BANKING & <span>CREDIT CREATION ENGINE</span></h1>
+    <div class="header-badge">FIG 1: DEPOSIT MULTIPLICATION & LRR MECHANICS</div>
+  </div>
+
+  <!-- MAIN GRID -->
+  <div class="main-grid">
+
+    <!-- LEFT CARD: Mathematical Engine & Rules -->
+    <div class="card">
+      <div class="card-title">
+        <span class="badge badge-navy">CORE PRINCIPLE</span>
+        <span>The Fractional Reserve Engine</span>
+      </div>
+
+      <div class="formula-highlight">
+        <div class="formula-title">Money Multiplier Formula</div>
+        <div class="formula-eq">k = 1 / LRR = 1 / (CRR + SLR)</div>
+        <div class="formula-desc">LRR = Legal Reserve Ratio. High LRR = smaller credit creation; Low LRR = greater credit creation.</div>
+      </div>
+
+      <div class="formula-highlight" style="background:#EFF6FF; border-color:#BFDBFE;">
+        <div class="formula-title" style="color:#1D4ED8;">Total Deposit Creation Formula</div>
+        <div class="formula-eq" style="color:#1E3A8A;">Total Deposits = Primary Deposit × (1 / LRR)</div>
+        <div class="formula-desc">Total Credit Generated = Total Deposits − Primary Initial Deposit.</div>
+      </div>
+
+      <div class="step-box">
+        <h4>1. Primary vs Secondary Deposits</h4>
+        <p><strong>Primary Deposits:</strong> Cash deposited by the public in banks.<br>
+        <strong>Derivative (Secondary) Deposits:</strong> Deposits created by banks while sanctioning loans (loans are never paid in cash; accounts are credited).</p>
+      </div>
+
+      <div class="step-box" style="margin-bottom:0;">
+        <h4>2. Two Fundamental Assumptions</h4>
+        <p>• The entire commercial banking sector is treated as a <em>single unified unit</em> ("Banks").<br>
+        • All transactions are executed via <em>banking channels</em> (no cash withdrawals from the loop).</p>
+      </div>
+    </div>
+
+    <!-- MIDDLE CARD: Round-by-Round Ledger Table -->
+    <div class="card">
+      <div class="card-title">
+        <span class="badge badge-blue">LEDGER TRACE</span>
+        <span>Round-by-Round Expansion (Initial = ₹10,000, LRR = 10%)</span>
+      </div>
+
+      <table class="ledger-table">
+        <thead>
+          <tr>
+            <th>Round</th>
+            <th>Deposits Received (₹)</th>
+            <th>Required Reserves (10%)</th>
+            <th>Loans Advanced (90%)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Round 1 (Initial)</strong></td>
+            <td><strong>₹10,000</strong></td>
+            <td>₹1,000</td>
+            <td>₹9,000</td>
+          </tr>
+          <tr>
+            <td><strong>Round 2</strong></td>
+            <td>₹9,000</td>
+            <td>₹900</td>
+            <td>₹8,100</td>
+          </tr>
+          <tr>
+            <td><strong>Round 3</strong></td>
+            <td>₹8,100</td>
+            <td>₹810</td>
+            <td>₹7,290</td>
+          </tr>
+          <tr>
+            <td><strong>Round 4</strong></td>
+            <td>₹7,290</td>
+            <td>₹729</td>
+            <td>₹6,561</td>
+          </tr>
+          <tr>
+            <td><strong>Round 5</strong></td>
+            <td>₹6,561</td>
+            <td>₹656</td>
+            <td>₹5,905</td>
+          </tr>
+          <tr>
+            <td><strong>Subsequent Rounds</strong></td>
+            <td>... continuing ...</td>
+            <td>... continuing ...</td>
+            <td>... continuing ...</td>
+          </tr>
+          <tr class="total-row">
+            <td><strong>TOTAL EXPANSION</strong></td>
+            <td><strong>₹1,00,000</strong></td>
+            <td><strong>₹10,000</strong></td>
+            <td><strong>₹90,000</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div style="margin-top:14px; background:#F8FAFC; border:1px solid #E2E8F0; border-radius:6px; padding:10px 12px;">
+        <div style="font-size:12px; font-weight:800; color:#071A4D; margin-bottom:4px;">MATHEMATICAL PROOF VIA INFINITE GEOMETRIC PROGRESSION</div>
+        <div style="font-size:11.5px; color:#475569; font-family:ui-monospace, SFMono-Regular, Menlo, monospace;">
+          S = 10,000 [ 1 + (0.9) + (0.9)² + (0.9)³ + ... ]<br>
+          S = 10,000 × [ 1 / (1 − 0.9) ] = 10,000 × (1 / 0.10) = ₹1,00,000
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT CARD: Real-World Leakages & Bank Roles -->
+    <div class="card">
+      <div class="card-title">
+        <span class="badge badge-amber">LIMITATIONS</span>
+        <span>Real-World Leakages & Constraints</span>
+      </div>
+
+      <div class="step-box">
+        <h4 style="color:#B45309;">1. Currency Drain (Cash Leakage)</h4>
+        <p>When borrowers withdraw cash instead of executing payments via cheque, funds leak out of the banking system, reducing the actual multiplier below 1/LRR.</p>
+      </div>
+
+      <div class="step-box">
+        <h4 style="color:#B45309;">2. Excess Reserves Leakage</h4>
+        <p>If commercial banks choose to hold idle reserves above statutory LRR due to economic uncertainty or credit risk, loan creation halts prematurely.</p>
+      </div>
+
+      <div class="step-box">
+        <h4 style="color:#B45309;">3. Availability of Eligible Borrowers</h4>
+        <p>Credit expansion requires creditworthy borrowers willing to take loans at current interest rates. Lack of business demand restricts credit.</p>
+      </div>
+
+      <div class="step-box" style="margin-bottom:0;">
+        <h4 style="color:#15803D;">Single Bank vs Banking System</h4>
+        <p>An individual bank can lend <em>only its excess reserves</em> (Round 1: ₹9,000). Only the <strong>entire banking system</strong> together creates ₹90,000 credit.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- BOTTOM STRIP -->
+  <div class="bottom-strip">
+    <div class="strip-card success">
+      <div class="strip-title">Inverse Relationship Rule</div>
+      <div class="strip-text">Money multiplier <em>k</em> is inversely proportional to LRR. If LRR is doubled from 10% to 20%, <em>k</em> falls from 10 to 5, cutting credit creation in half.</div>
+    </div>
+    <div class="strip-card warning">
+      <div class="strip-title">Fatal Exam Trap: Vault Cash</div>
+      <div class="strip-text">Cash reserves kept by commercial banks in their vaults are <strong>excluded</strong> from money supply. Only currency held by the <strong>public</strong> counts.</div>
+    </div>
+    <div class="strip-card">
+      <div class="strip-title">LRR Split: CRR vs SLR</div>
+      <div class="strip-text">LRR consists of two components: <strong>CRR</strong> (cash held with the Central Bank) + <strong>SLR</strong> (liquid assets: cash, gold, unencumbered G-Secs held by the bank itself).</div>
+    </div>
+  </div>
+
+</body>
+</html>

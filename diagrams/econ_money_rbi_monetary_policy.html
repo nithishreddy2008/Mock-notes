@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>RBI Monetary Policy Architecture: Quantitative & Qualitative Tools</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #071A4D;
+    padding: 16px 24px;
+    border-radius: 8px;
+    color: #FFFFFF;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+  .header h1 span {
+    color: #B8FF34;
+  }
+  .header-badge {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #B8FF34;
+  }
+  .top-grid {
+    display: grid;
+    grid-template-columns: 1.25fr 1fr;
+    gap: 20px;
+    height: 480px;
+  }
+  .card {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+  }
+  .card-title {
+    font-size: 15px;
+    font-weight: 800;
+    color: #071A4D;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid #F1F5F9;
+  }
+  .badge {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+  .badge-navy { background: #EEF2F6; color: #071A4D; }
+  .badge-blue { background: #E0EAFF; color: #1F5EFF; }
+  .badge-green { background: #DCFCE7; color: #15803D; }
+  .badge-amber { background: #FEF3C7; color: #B45309; }
+
+  .tool-list {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    overflow-y: hidden;
+  }
+  .tool-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    padding: 8px 10px;
+  }
+  .tool-tag {
+    min-width: 90px;
+    font-size: 12px;
+    font-weight: 800;
+    color: #1F5EFF;
+    background: #EFF6FF;
+    border-radius: 4px;
+    padding: 3px 6px;
+    text-align: center;
+  }
+  .tool-desc {
+    font-size: 12px;
+    color: #334155;
+    line-height: 1.35;
+  }
+  .tool-desc strong {
+    color: #071A4D;
+  }
+
+  .matrix-section {
+    height: 190px;
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 12px 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .matrix-header {
+    font-size: 14px;
+    font-weight: 800;
+    color: #071A4D;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .matrix-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 6px;
+  }
+  .matrix-card {
+    border-radius: 6px;
+    padding: 10px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .matrix-card.inflation {
+    background: #FEF2F2;
+    border: 1px solid #FECACA;
+  }
+  .matrix-card.deflation {
+    background: #F0FDF4;
+    border: 1px solid #BBF7D0;
+  }
+  .matrix-title {
+    font-size: 13px;
+    font-weight: 800;
+  }
+  .matrix-title.inflation { color: #DC2626; }
+  .matrix-title.deflation { color: #16A34A; }
+  .matrix-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 3px;
+  }
+  .pill {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 4px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  .pill-red { background: #FEE2E2; color: #991B1B; border: 1px solid #FCA5A5; }
+  .pill-green { background: #DCFCE7; color: #166534; border: 1px solid #86EFAC; }
+  .matrix-effect {
+    font-size: 11.5px;
+    color: #334155;
+    margin-top: 2px;
+    line-height: 1.3;
+  }
+</style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div class="header">
+    <h1>RBI MONETARY POLICY ARCHITECTURE: <span>QUANTITATIVE & QUALITATIVE INSTRUMENTS</span></h1>
+    <div class="header-badge">FIG 2: CREDIT CONTROL TOOLS & TRANSMISSION MATRIX</div>
+  </div>
+
+  <!-- TOP GRID -->
+  <div class="top-grid">
+
+    <!-- LEFT CARD: Quantitative Instruments -->
+    <div class="card">
+      <div class="card-title">
+        <span class="badge badge-navy">QUANTITATIVE (GENERAL)</span>
+        <span>Regulates Overall Volume & Cost of Credit</span>
+      </div>
+
+      <div class="tool-list">
+        <div class="tool-item">
+          <div class="tool-tag">Repo Rate</div>
+          <div class="tool-desc">
+            Rate at which RBI <strong>lends short-term funds</strong> to commercial banks against government securities.<br>
+            <em>Mechanism:</em> Repo ↑ → Bank borrowing cost ↑ → Lending rates ↑ → Credit demand ↓.
+          </div>
+        </div>
+
+        <div class="tool-item">
+          <div class="tool-tag">Rev. Repo / SDF</div>
+          <div class="tool-desc">
+            Rate at which RBI <strong>absorbs surplus liquidity</strong> from banks. (SDF = collateral-free window).<br>
+            <em>Mechanism:</em> Reverse Repo ↑ → Banks park more funds with RBI → Market lending capacity ↓.
+          </div>
+        </div>
+
+        <div class="tool-item">
+          <div class="tool-tag">Bank Rate</div>
+          <div class="tool-desc">
+            Rate at which RBI <strong>rediscounts first-class bills</strong> & lends long-term without collateral.<br>
+            <em>Mechanism:</em> Bank Rate ↑ → Commercial banks raise base lending rates → Long-term borrowing ↓.
+          </div>
+        </div>
+
+        <div class="tool-item">
+          <div class="tool-tag">CRR</div>
+          <div class="tool-desc">
+            <strong>Cash Reserve Ratio:</strong> Percentage of Net Demand and Time Liabilities (NDTL) kept in <strong>cash with RBI</strong>.<br>
+            <em>Mechanism:</em> CRR ↑ → Commercial banks' lendable cash balances fall directly.
+          </div>
+        </div>
+
+        <div class="tool-item">
+          <div class="tool-tag">SLR</div>
+          <div class="tool-desc">
+            <strong>Statutory Liquidity Ratio:</strong> Percentage of NDTL maintained by banks in <strong>liquid assets</strong> (cash, gold, G-Secs).<br>
+            <em>Mechanism:</em> SLR ↑ → More funds locked in safe liquid assets → Commercial credit pool shrinks.
+          </div>
+        </div>
+
+        <div class="tool-item">
+          <div class="tool-tag">OMO</div>
+          <div class="tool-desc">
+            <strong>Open Market Operations:</strong> Outright purchase or sale of government securities in open market.<br>
+            <em>Mechanism:</em> RBI <strong>Sells G-Secs</strong> → Mopped up bank cash reserves ↓; RBI <strong>Buys G-Secs</strong> → Injects cash reserves ↑.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT CARD: Qualitative Instruments -->
+    <div class="card">
+      <div class="card-title">
+        <span class="badge badge-blue">QUALITATIVE (SELECTIVE)</span>
+        <span>Regulates Flow & Direction of Credit to Sectors</span>
+      </div>
+
+      <div class="tool-list">
+        <div class="tool-item">
+          <div class="tool-tag" style="color:#B45309; background:#FEF3C7;">Margin Req.</div>
+          <div class="tool-desc">
+            <strong>Margin Requirement:</strong> Difference between market value of security offered and loan sanctioned.<br>
+            <em>Example:</em> Collateral = ₹1,00,000; Margin = 20% → Loan = ₹80,000.<br>
+            <em>Mechanism:</em> Margin ↑ to 40% → Loan shrinks to ₹60,000 → Discourages speculative borrowing.
+          </div>
+        </div>
+
+        <div class="tool-item">
+          <div class="tool-tag" style="color:#B45309; background:#FEF3C7;">Credit Rationing</div>
+          <div class="tool-desc">
+            <strong>Rationing of Credit / Quotas:</strong> Fixing statutory credit ceilings for specific commercial sectors or limits on bill rediscounting.<br>
+            <em>Mechanism:</em> Directs funds towards priority sectors (agriculture, MSMEs) while curbing hoarding and speculation.
+          </div>
+        </div>
+
+        <div class="tool-item">
+          <div class="tool-tag" style="color:#B45309; background:#FEF3C7;">Moral Suasion</div>
+          <div class="tool-desc">
+            <strong>Persuasion, Appeals & Guidelines:</strong> RBI holds periodic meetings and issues advisories urging banks to conform to credit policies.<br>
+            <em>Mechanism:</em> Voluntary compliance without invoking statutory penal enforcement.
+          </div>
+        </div>
+
+        <div class="tool-item">
+          <div class="tool-tag" style="color:#B45309; background:#FEF3C7;">Direct Action</div>
+          <div class="tool-desc">
+            <strong>Penal Enforcement:</strong> Imposing statutory monetary penalties, refusing rediscounting facilities, or cancelling banking licences.<br>
+            <em>Mechanism:</em> Exercised strictly against errant commercial banks defying directives.
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- BOTTOM MATRIX: Transmission Mechanism -->
+  <div class="matrix-section">
+    <div class="matrix-header">
+      <span class="badge badge-navy">TRANSMISSION MATRIX</span>
+      <span>Monetary Policy Actions: Inflation (Excess Demand) vs Deflation (Deficient Demand)</span>
+    </div>
+
+    <div class="matrix-grid">
+      <!-- Inflation Card -->
+      <div class="matrix-card inflation">
+        <div class="matrix-title inflation">COMBATING INFLATION / EXCESS DEMAND (DEAR MONEY / CONTRACTIONARY POLICY)</div>
+        <div class="matrix-pills">
+          <span class="pill pill-red">Repo Rate: ↑ RAISE</span>
+          <span class="pill pill-red">Rev. Repo: ↑ RAISE</span>
+          <span class="pill pill-red">Bank Rate: ↑ RAISE</span>
+          <span class="pill pill-red">CRR & SLR: ↑ RAISE</span>
+          <span class="pill pill-red">OMO: SELL G-Secs</span>
+          <span class="pill pill-red">Margin: ↑ INCREASE</span>
+        </div>
+        <div class="matrix-effect">
+          <strong>Impact:</strong> Cost of credit increases + Lendable bank cash reserves drain out → Credit creation plummets → Money Supply (M1/M3) falls → Aggregate Demand (AD) contracts, arresting inflation.
+        </div>
+      </div>
+
+      <!-- Deflation Card -->
+      <div class="matrix-card deflation">
+        <div class="matrix-title deflation">COMBATING DEFLATION / DEFICIENT DEMAND (CHEAP MONEY / EXPANSIONARY POLICY)</div>
+        <div class="matrix-pills">
+          <span class="pill pill-green">Repo Rate: ↓ REDUCE</span>
+          <span class="pill pill-green">Rev. Repo: ↓ REDUCE</span>
+          <span class="pill pill-green">Bank Rate: ↓ REDUCE</span>
+          <span class="pill pill-green">CRR & SLR: ↓ REDUCE</span>
+          <span class="pill pill-green">OMO: BUY G-Secs</span>
+          <span class="pill pill-green">Margin: ↓ DECREASE</span>
+        </div>
+        <div class="matrix-effect">
+          <strong>Impact:</strong> Cost of credit falls + Lendable bank cash reserves surge → Commercial banks expand lending aggressively → Money Supply (M1/M3) rises → Aggregate Demand (AD) expands, reviving output.
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
