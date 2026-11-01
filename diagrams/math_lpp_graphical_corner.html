@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Graphical Method & Corner Point Theorem Optimization</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px 28px;
+    overflow: hidden;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 12px;
+    margin-bottom: 16px;
+  }
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .brand-badge {
+    background: #071A4D;
+    color: #B8FF34;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .title-group h1 {
+    font-size: 22px;
+    font-weight: 800;
+    color: #071A4D;
+    letter-spacing: -0.02em;
+  }
+  .title-group p {
+    font-size: 12px;
+    color: #64748B;
+    margin-top: 2px;
+  }
+  .header-meta {
+    display: flex;
+    gap: 8px;
+  }
+  .pill {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 999px;
+    border: 1px solid #CBD5E1;
+    background: #FFFFFF;
+    color: #334155;
+  }
+  .pill.highlight {
+    background: #EEF2FF;
+    border-color: #C7D2FE;
+    color: #1F5EFF;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: 320px 360px 1fr;
+    gap: 16px;
+    margin-bottom: 14px;
+  }
+
+  .col-card {
+    background: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    border-radius: 10px;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .tag {
+    font-size: 10.5px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #1F5EFF;
+  }
+  .card-h2 {
+    font-size: 15px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+
+  .feature-box {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-left: 3.5px solid #1F5EFF;
+    border-radius: 4px 6px 6px 4px;
+    padding: 8px 10px;
+  }
+  .feature-box.green { border-left-color: #10B981; }
+  .feature-box.amber { border-left-color: #F59E0B; }
+  .feature-box.red { border-left-color: #EF4444; }
+
+  .box-title {
+    font-size: 12px;
+    font-weight: 800;
+    color: #0F172A;
+    margin-bottom: 2px;
+  }
+  .box-desc {
+    font-size: 11px;
+    color: #475569;
+    line-height: 1.35;
+  }
+  .box-desc b { color: #071A4D; }
+
+  /* Visual Geometry Display */
+  .visual-board {
+    background: #F1F5F9;
+    border: 1px dashed #94A3B8;
+    border-radius: 8px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 160px;
+  }
+  .convex-polygon {
+    width: 140px;
+    height: 90px;
+    background: rgba(31, 94, 255, 0.15);
+    border: 2px solid #1F5EFF;
+    clip-path: polygon(20% 0%, 90% 15%, 100% 75%, 45% 100%, 0% 60%);
+    position: relative;
+  }
+  .vertex {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #071A4D;
+    border: 1.5px solid #B8FF34;
+  }
+  .v1 { top: -4px; left: 20%; }
+  .v2 { top: 10px; right: 5px; }
+  .v3 { bottom: 18px; right: -4px; }
+  .v4 { bottom: -4px; left: 45%; }
+  .v5 { top: 50%; left: -4px; }
+  .label-opt {
+    position: absolute;
+    bottom: 6px;
+    font-size: 10px;
+    font-weight: 700;
+    color: #071A4D;
+    background: #FFFFFF;
+    padding: 2px 6px;
+    border-radius: 4px;
+    border: 1px solid #CBD5E1;
+  }
+
+  /* Protocol Step List */
+  .step-list {
+    counter-reset: st-num;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .step-list li {
+    counter-increment: st-num;
+    position: relative;
+    padding-left: 28px;
+    font-size: 11px;
+    color: #334155;
+    line-height: 1.35;
+  }
+  .step-list li::before {
+    content: counter(st-num);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #071A4D;
+    color: #B8FF34;
+    font-size: 11px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .step-list b { color: #071A4D; }
+
+  /* Bottom Warning Matrix */
+  .bottom-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+  }
+  .warn-card {
+    background: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    border-radius: 8px;
+    padding: 10px 12px;
+  }
+  .warn-title {
+    font-size: 11.5px;
+    font-weight: 800;
+    color: #071A4D;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 3px;
+  }
+  .warn-title .status-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+  }
+  .status-dot.blue { background: #1F5EFF; }
+  .status-dot.green { background: #10B981; }
+  .status-dot.red { background: #EF4444; }
+  .warn-text {
+    font-size: 11px;
+    color: #475569;
+    line-height: 1.35;
+  }
+  .warn-text b { color: #0F172A; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <div class="brand-badge">OurMocks Core System</div>
+    <div class="title-group">
+      <h1>Graphical Solution & Corner Point Optimization Protocol</h1>
+      <p>NTA CUET UG Section B1 Unit V · Convex Feasible Regions, Fundamental Theorems & Unbounded Open Half-Plane Tests</p>
+    </div>
+  </div>
+  <div class="header-meta">
+    <span class="pill highlight">Corner Point Theorem</span>
+    <span class="pill">Fundamental Theorems 1 & 2</span>
+    <span class="pill">Iso-Profit Slicing</span>
+  </div>
+</div>
+
+<div class="grid-container">
+  <!-- Col 1: Feasible Region & Convexity -->
+  <div class="col-card">
+    <div>
+      <div class="tag">Geometric Foundations</div>
+      <div class="card-h2">Feasible Region & Convexity</div>
+    </div>
+
+    <div class="visual-board">
+      <div class="convex-polygon">
+        <div class="vertex v1"></div>
+        <div class="vertex v2"></div>
+        <div class="vertex v3"></div>
+        <div class="vertex v4"></div>
+        <div class="vertex v5"></div>
+      </div>
+      <div class="label-opt">Convex Polygon: All Corners Tested</div>
+    </div>
+
+    <div class="feature-box">
+      <div class="box-title">Convex Set Invariant</div>
+      <div class="box-desc">The feasible region of an LPP is <b>always a convex set</b>. The line segment connecting any two feasible points lies entirely inside the region.</div>
+    </div>
+
+    <div class="feature-box green">
+      <div class="box-title">Bounded Feasible Region</div>
+      <div class="box-desc">Enclosed completely inside a circle of finite radius. <b>Both Maximum and Minimum values ALWAYS exist</b> at corner vertices (Theorem 2).</div>
+    </div>
+
+    <div class="feature-box amber">
+      <div class="box-title">Unbounded Feasible Region</div>
+      <div class="box-desc">Extends infinitely into space in at least one direction. An optimal value <b>may or may not exist</b>; verification via the Open Half-Plane Test is mandatory!</div>
+    </div>
+  </div>
+
+  <!-- Col 2: The Corner Point Protocol -->
+  <div class="col-card">
+    <div>
+      <div class="tag">Algorithm Engine</div>
+      <div class="card-h2">Step-by-Step Solving Protocol</div>
+    </div>
+
+    <ul class="step-list">
+      <li>
+        <b>Convert to Equalities:</b> Replace inequality signs ($\le, \ge$) with straight line equations ($a x + b y = c$).
+      </li>
+      <li>
+        <b>Plot Boundary Lines:</b> Find intercept points $(c/a, 0)$ and $(0, c/b)$. Draw solid lines (since $\le, \ge$ include boundaries).
+      </li>
+      <li>
+        <b>Determine Feasible Half-Planes:</b> Test origin $(0, 0)$. If true, shade origin side; if false, shade opposite side. Restrict to Quadrant 1 ($x \ge 0, y \ge 0$).
+      </li>
+      <li>
+        <b>Locate All Corner Points (Vertices):</b> Solve pairs of simultaneous equations to find exact coordinates of all region vertices.
+      </li>
+      <li>
+        <b>Evaluate Objective Function:</b> Substitute every corner point $(x_k, y_k)$ into $Z = a x + b y$. Identify candidate $M = \max Z$ and $m = \min Z$.
+      </li>
+      <li>
+        <b>Unbounded Check (if applicable):</b> If region is unbounded, run Open Half-Plane Test before declaring candidate as final optimum.
+      </li>
+    </ul>
+  </div>
+
+  <!-- Col 3: Unbounded Test & Special Exam Phenomena -->
+  <div class="col-card">
+    <div>
+      <div class="tag">Critical Rigor</div>
+      <div class="card-h2">The Open Half-Plane Test & Special Cases</div>
+    </div>
+
+    <div class="feature-box green">
+      <div class="box-title">Test for Maximum in Unbounded Region</div>
+      <div class="box-desc">
+        Let candidate maximum be $M$. Draw dotted line $a x + b y = M$.<br>
+        • If the open half-plane <b>$a x + b y > M$ has NO common points</b> with the feasible region $\implies \mathbf{M}$ <b>is the true maximum</b>.<br>
+        • If it shares even one common point $\implies$ <b>No Maximum Exists!</b>
+      </div>
+    </div>
+
+    <div class="feature-box amber">
+      <div class="box-title">Test for Minimum in Unbounded Region</div>
+      <div class="box-desc">
+        Let candidate minimum be $m$. Draw dotted line $a x + b y = m$.<br>
+        • If the open half-plane <b>$a x + b y < m$ has NO common points</b> with the feasible region $\implies \mathbf{m}$ <b>is the true minimum</b>.<br>
+        • If it shares points with the feasible region $\implies$ <b>No Minimum Exists!</b>
+      </div>
+    </div>
+
+    <div class="feature-box red">
+      <div class="box-title">Multiple Optimal Solutions (Infinite Optima)</div>
+      <div class="box-desc">
+        If $Z$ achieves the exact same optimal value at <b>two adjacent vertices</b> $A$ and $B$, then <b>every point on the line segment $A B$</b> is also an optimal solution. Occurs when the slope of $Z$ equals the slope of a boundary constraint: $-a/b = -a_k/b_k$.
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bottom-grid">
+  <div class="warn-card">
+    <div class="warn-title"><span class="status-dot blue"></span> Fundamental Theorem 1</div>
+    <div class="warn-text">
+      Let $R$ be the feasible region and $Z = a x + b y$ be the objective function. If $R$ is bounded, the optimal value of $Z$ must occur at a <b>corner point (vertex)</b> of $R$.
+    </div>
+  </div>
+
+  <div class="warn-card">
+    <div class="warn-title"><span class="status-dot green"></span> Fundamental Theorem 2</div>
+    <div class="warn-text">
+      If the feasible region $R$ is <b>bounded</b>, then the objective function $Z$ has <b>both a maximum and a minimum</b> value on $R$, each occurring at a corner point.
+    </div>
+  </div>
+
+  <div class="warn-card">
+    <div class="warn-title"><span class="status-dot red"></span> Infeasible Problem (No Solution)</div>
+    <div class="warn-text">
+      Occurs when the system of constraints has <b>no common shaded region</b> (intersection is the empty set $\emptyset$). Example: $x + y \le 1$ and $x + y \ge 3$ simultaneously.
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>LPP Mathematical Architecture & Classical Archetypes</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px 28px;
+    overflow: hidden;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 12px;
+    margin-bottom: 16px;
+  }
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .brand-badge {
+    background: #071A4D;
+    color: #B8FF34;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .title-group h1 {
+    font-size: 22px;
+    font-weight: 800;
+    color: #071A4D;
+    letter-spacing: -0.02em;
+  }
+  .title-group p {
+    font-size: 12px;
+    color: #64748B;
+    margin-top: 2px;
+  }
+  .header-meta {
+    display: flex;
+    gap: 8px;
+  }
+  .pill {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 999px;
+    border: 1px solid #CBD5E1;
+    background: #FFFFFF;
+    color: #334155;
+  }
+  .pill.highlight {
+    background: #EEF2FF;
+    border-color: #C7D2FE;
+    color: #1F5EFF;
+  }
+
+  .main-grid {
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    gap: 16px;
+    margin-bottom: 14px;
+  }
+
+  /* Left Column: Anatomy */
+  .card-anatomy {
+    background: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    border-radius: 10px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .section-tag {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #1F5EFF;
+    margin-bottom: 2px;
+  }
+  .card-title {
+    font-size: 15px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+
+  .pillar-box {
+    background: #F8FAFC;
+    border-left: 3.5px solid #1F5EFF;
+    border-radius: 4px 6px 6px 4px;
+    padding: 8px 10px;
+    border-top: 1px solid #E2E8F0;
+    border-right: 1px solid #E2E8F0;
+    border-bottom: 1px solid #E2E8F0;
+  }
+  .pillar-box.lime { border-left-color: #84CC16; }
+  .pillar-box.amber { border-left-color: #F59E0B; }
+  .pillar-box.indigo { border-left-color: #6366F1; }
+
+  .pillar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3px;
+  }
+  .pillar-name {
+    font-size: 12px;
+    font-weight: 800;
+    color: #0F172A;
+  }
+  .pillar-math {
+    font-family: "Courier New", monospace;
+    font-size: 11px;
+    font-weight: 700;
+    color: #1F5EFF;
+  }
+  .pillar-desc {
+    font-size: 11px;
+    color: #475569;
+    line-height: 1.35;
+  }
+
+  /* Right Grid: 4 Archetypes */
+  .archetype-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 12px;
+  }
+  .arch-card {
+    background: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    border-radius: 10px;
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .arch-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 6px;
+  }
+  .arch-badge {
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    border-radius: 4px;
+  }
+  .badge-mfg { background: #E0E7FF; color: #3730A3; }
+  .badge-diet { background: #DCFCE7; color: #166534; }
+  .badge-trans { background: #FEF3C7; color: #92400E; }
+  .badge-alloc { background: #F3E8FF; color: #6B21A8; }
+
+  .arch-title {
+    font-size: 13.5px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .arch-obj {
+    background: #F1F5F9;
+    padding: 5px 8px;
+    border-radius: 5px;
+    font-size: 11px;
+    color: #0F172A;
+    margin: 4px 0 6px 0;
+    font-family: "Courier New", monospace;
+  }
+  .arch-points {
+    list-style: none;
+    font-size: 11px;
+    color: #475569;
+    line-height: 1.35;
+  }
+  .arch-points li {
+    position: relative;
+    padding-left: 14px;
+    margin-bottom: 3px;
+  }
+  .arch-points li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: #1F5EFF;
+    font-weight: 800;
+  }
+
+  /* Bottom Speed Bar */
+  .bottom-strip {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+  }
+  .strip-box {
+    background: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    border-radius: 8px;
+    padding: 10px 12px;
+  }
+  .strip-title {
+    font-size: 11.5px;
+    font-weight: 800;
+    color: #071A4D;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 4px;
+  }
+  .strip-title .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #1F5EFF;
+  }
+  .strip-title.alert .dot { background: #EF4444; }
+  .strip-text {
+    font-size: 11px;
+    color: #475569;
+    line-height: 1.35;
+  }
+  .strip-text b { color: #0F172A; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <div class="brand-badge">OurMocks Core System</div>
+    <div class="title-group">
+      <h1>Linear Programming Problem (LPP) — Mathematical Architecture</h1>
+      <p>NTA CUET UG Section B1 Unit V · Decision Variables, Objective Function, Constraints & Formulation Archetypes</p>
+    </div>
+  </div>
+  <div class="header-meta">
+    <span class="pill highlight">Section B1 Unit V</span>
+    <span class="pill">2 Decision Variables (x, y)</span>
+    <span class="pill">Standard Convex Models</span>
+  </div>
+</div>
+
+<div class="main-grid">
+  <!-- Left Column: The 4 Core Anatomy Pillars -->
+  <div class="card-anatomy">
+    <div>
+      <div class="section-tag">Mathematical Structure</div>
+      <div class="card-title">The 4 Pillars of Every LPP</div>
+    </div>
+
+    <div class="pillar-box">
+      <div class="pillar-header">
+        <span class="pillar-name">1. Decision Variables</span>
+        <span class="pillar-math">x, y</span>
+      </div>
+      <div class="pillar-desc">Quantities to be determined (e.g., units of product A and B). In CUET UG, strictly limited to two variables for 2D graphical solvability.</div>
+    </div>
+
+    <div class="pillar-box lime">
+      <div class="pillar-header">
+        <span class="pillar-name">2. Objective Function</span>
+        <span class="pillar-math">Z = a·x + b·y</span>
+      </div>
+      <div class="pillar-desc">Linear criterion function to be <b>Maximized</b> (profit, yield, efficiency) or <b>Minimized</b> (cost, time, distance, defect count). Linearity is mandatory.</div>
+    </div>
+
+    <div class="pillar-box amber">
+      <div class="pillar-header">
+        <span class="pillar-name">3. Structural Constraints</span>
+        <span class="pillar-math">aᵢx + bᵢy ≤/≥ cᵢ</span>
+      </div>
+      <div class="pillar-desc">Linear inequalities representing physical resource limitations (machine hours, raw material supplies, labor capacities, nutritional demands).</div>
+    </div>
+
+    <div class="pillar-box indigo">
+      <div class="pillar-header">
+        <span class="pillar-name">4. Non-Negativity Limits</span>
+        <span class="pillar-math">x ≥ 0,  y ≥ 0</span>
+      </div>
+      <div class="pillar-desc">Mandates that real physical goods cannot be negative. Restricts the entire feasible problem universe strictly to the <b>First Quadrant</b>.</div>
+    </div>
+  </div>
+
+  <!-- Right Grid: 4 Classic Formulation Archetypes -->
+  <div class="archetype-container">
+    <div class="arch-card">
+      <div class="arch-top">
+        <span class="arch-title">A. Manufacturing / Production</span>
+        <span class="arch-badge badge-mfg">Profit Max</span>
+      </div>
+      <div class="arch-obj">Maximize Z = p₁·x + p₂·y (Total Profit)</div>
+      <ul class="arch-points">
+        <li><b>Resource Ceiling:</b> Time on Machine 1 ≤ Available Hours ($m_{11}x + m_{12}y \le T_1$).</li>
+        <li><b>Raw Material Cap:</b> Units of wood/steel ≤ Storage/inventory supply.</li>
+        <li><b>Key Phrasing:</b> "At most", "not more than", "available limit" $\implies \le$.</li>
+      </ul>
+    </div>
+
+    <div class="arch-card">
+      <div class="arch-top">
+        <span class="arch-title">B. Diet & Nutrition Problem</span>
+        <span class="arch-badge badge-diet">Cost Min</span>
+      </div>
+      <div class="arch-obj">Minimize Z = c₁·x + c₂·y (Total Cost)</div>
+      <ul class="arch-points">
+        <li><b>Nutrient Floor:</b> Intake of Vitamin A $\ge$ Daily Recommended Intake.</li>
+        <li><b>Protein Requirement:</b> Total protein content $\ge$ Threshold ($p_1 x + p_2 y \ge P$).</li>
+        <li><b>Key Phrasing:</b> "At least", "minimum requirement", "no less than" $\implies \ge$.</li>
+      </ul>
+    </div>
+
+    <div class="arch-card">
+      <div class="arch-top">
+        <span class="arch-title">C. Storage & Allocation Problem</span>
+        <span class="arch-badge badge-trans">Dual Cap</span>
+      </div>
+      <div class="arch-obj">Maximize Z = Profit (Subject to Space & Capital)</div>
+      <ul class="arch-points">
+        <li><b>Capital Constraint:</b> Total purchase price $c_1 x + c_2 y \le \text{Total Capital}$.</li>
+        <li><b>Storage Capacity:</b> Physical floor units $x + y \le \text{Max Inventory Slots}$.</li>
+        <li><b>High-Yield Trap:</b> Both constraints are active; corner point intersection gives optimal batch size.</li>
+      </ul>
+    </div>
+
+    <div class="arch-card">
+      <div class="arch-top">
+        <span class="arch-title">D. Transportation & Routing</span>
+        <span class="arch-badge badge-alloc">Cost Min</span>
+      </div>
+      <div class="arch-obj">Minimize Z = ∑ Cost per km · Units Shipped</div>
+      <ul class="arch-points">
+        <li><b>Plant Supply Conservation:</b> Units dispatched $\le$ Total plant production.</li>
+        <li><b>Depot Demand Fulfillment:</b> Units received $\ge$ Target customer requirement.</li>
+        <li><b>Surplus Expression:</b> Residual supply to depot 3 expressed as $(S - x - y \ge 0)$.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="bottom-strip">
+  <div class="strip-box">
+    <div class="strip-title"><span class="dot"></span> CUET Inequality Decoders</div>
+    <div class="strip-text">
+      • <b>"At least c" / "Minimum c"</b> $\implies \mathbf{a x + b y \ge c}$.<br>
+      • <b>"At most c" / "Not exceeding c"</b> $\implies \mathbf{a x + b y \le c}$.<br>
+      • Always normalize time units: hours to minutes before setting up equations!
+    </div>
+  </div>
+
+  <div class="strip-box">
+    <div class="strip-title"><span class="dot"></span> Linear Objective Invariance</div>
+    <div class="strip-text">
+      • The objective function $Z = a x + b y$ must be <b>strictly linear</b>.<br>
+      • Terms like $x^2$, $x y$, or $\sqrt{x}$ invalidate the linear programming framework.<br>
+      • $a$ and $b$ represent constant marginal unit profits or costs.
+    </div>
+  </div>
+
+  <div class="strip-box">
+    <div class="strip-title alert"><span class="dot"></span> Redundant Constraint Trap</div>
+    <div class="strip-text">
+      • A constraint is <b>redundant</b> if removing it leaves the feasible region unchanged.<br>
+      • Example: If $x + y \le 4$ and $x + y \le 8$ are both given with $x, y \ge 0$, the constraint $x + y \le 8$ is completely redundant!
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

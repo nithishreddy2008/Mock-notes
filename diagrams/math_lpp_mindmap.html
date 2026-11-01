@@ -1,116 +1,309 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
+<title>Linear Programming Problem Master Synthesis Mindmap</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
-  .wrap { width: 1480px; height: 1080px; position: relative; background: #fff; }
-  svg.wires { position: absolute; inset: 0; width: 1480px; height: 1080px; }
-  .center {
-    position: absolute; left: 520px; top: 470px; width: 440px; height: 104px;
-    background: #071A4D; border-radius: 16px; display: flex; flex-direction: column;
-    align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(7,26,77,.25);
-    border-bottom: 5px solid #B8FF34;
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px 28px;
+    overflow: hidden;
   }
-  .center .t { color: #fff; font-size: 19px; font-weight: 800; letter-spacing: .5px; text-align: center; }
-  .center .s { color: #B8FF34; font-size: 13px; font-weight: 700; letter-spacing: 2px; margin-top: 4px; }
-  .card {
-    position: absolute; width: 465px; background: #FCFDFF; border: 1.5px solid #D5DCEA;
-    border-radius: 14px; padding: 13px 16px 12px;
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 12px;
+    margin-bottom: 16px;
   }
-  .card h2 { font-size: 19px; color: #071A4D; font-weight: 800; margin-bottom: 7px;
-             padding-bottom: 5px; border-bottom: 3px solid; display: inline-block; }
-  .leaf { font-size: 14px; color: #1B2333; margin: 5px 0; padding-left: 16px; position: relative; line-height: 1.32; }
-  .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
-  .b .leaf::before { background: #1F5EFF; }
-  .l .leaf::before { background: #7FB800; }
-  .leaf b { color: #071A4D; }
-  .b h2 { border-color: #1F5EFF; }
-  .l h2 { border-color: #7FB800; }
-  .left { left: 30px; }
-  .right { left: 985px; }
-  .exc {
-    position: absolute; left: 470px; top: 905px; width: 540px; background: #FFF3EC;
-    border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px;
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
   }
-  .exc h2 { font-size: 17px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
-  .exc .leaf { font-size: 13px; margin: 3px 0; padding-left: 14px; color: #7A2A12; }
-  .exc .leaf::before { background: #D2481F; }
-  .exc b { color: #B4380F; }
+  .brand-badge {
+    background: #071A4D;
+    color: #B8FF34;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .title-group h1 {
+    font-size: 22px;
+    font-weight: 800;
+    color: #071A4D;
+    letter-spacing: -0.02em;
+  }
+  .title-group p {
+    font-size: 12px;
+    color: #64748B;
+    margin-top: 2px;
+  }
+  .pill {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 999px;
+    border: 1px solid #CBD5E1;
+    background: #FFFFFF;
+    color: #334155;
+  }
+  .pill.highlight {
+    background: #EEF2FF;
+    border-color: #C7D2FE;
+    color: #1F5EFF;
+  }
+
+  /* Mindmap Layout */
+  .mindmap-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 280px 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 16px;
+    height: 760px;
+    position: relative;
+  }
+
+  /* Center Hub */
+  .center-hub {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    background: #071A4D;
+    border-radius: 14px;
+    padding: 24px 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 2px solid #B8FF34;
+    z-index: 10;
+  }
+  .hub-badge {
+    background: rgba(184, 255, 52, 0.15);
+    color: #B8FF34;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 4px 10px;
+    border-radius: 6px;
+    margin-bottom: 12px;
+    border: 1px solid rgba(184, 255, 52, 0.3);
+  }
+  .hub-title {
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 1.25;
+    margin-bottom: 10px;
+  }
+  .hub-math {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-family: "Courier New", monospace;
+    font-size: 12px;
+    color: #B8FF34;
+    margin-bottom: 14px;
+    line-height: 1.4;
+  }
+  .hub-sub {
+    font-size: 11.5px;
+    color: #CBD5E1;
+    line-height: 1.4;
+  }
+
+  /* Quadrant Cards */
+  .map-card {
+    background: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    border-radius: 12px;
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .map-card.top-left { border-top: 4px solid #1F5EFF; }
+  .map-card.top-right { border-top: 4px solid #10B981; }
+  .map-card.bot-left { border-top: 4px solid #F59E0B; }
+  .map-card.bot-right { border-top: 4px solid #EF4444; }
+
+  .card-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #F1F5F9;
+    padding-bottom: 6px;
+  }
+  .card-branch-title {
+    font-size: 14.5px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .card-branch-tag {
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+  .tag-blue { background: #EEF2FF; color: #1F5EFF; }
+  .tag-green { background: #ECFDF5; color: #059669; }
+  .tag-amber { background: #FFFBEB; color: #D97706; }
+  .tag-red { background: #FEF2F2; color: #DC2626; }
+
+  .sub-item {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    padding: 6px 10px;
+  }
+  .sub-title {
+    font-size: 11.5px;
+    font-weight: 800;
+    color: #0F172A;
+    margin-bottom: 2px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .sub-title span {
+    font-family: "Courier New", monospace;
+    font-size: 11px;
+    color: #1F5EFF;
+  }
+  .sub-desc {
+    font-size: 11px;
+    color: #475569;
+    line-height: 1.35;
+  }
+  .sub-desc b { color: #071A4D; }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <svg class="wires" viewBox="0 0 1480 1080">
-    <path d="M 520 505 C 470 505, 495 158, 500 155" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
-    <path d="M 520 520 C 480 520, 495 438, 500 438" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 520 535 C 470 535, 495 718, 500 718" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
-    <path d="M 960 505 C 1010 505, 985 158, 980 155" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 960 520 C 1000 520, 985 438, 980 438" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 960 535 C 1010 535, 985 718, 980 718" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 740 574 C 740 700, 740 830, 740 903" fill="none" stroke="#D2481F" stroke-width="2.5" stroke-dasharray="7 5" opacity=".6"/>
-  </svg>
 
-  <div class="center">
-    <div class="t">LINEAR PROGRAMMING</div>
-    <div class="s">CUET UG MATHEMATICS</div>
+<div class="header">
+  <div class="header-left">
+    <div class="brand-badge">OurMocks Master Synthesis</div>
+    <div class="title-group">
+      <h1>Linear Programming Problem (LPP) — Master Synthesis Mindmap</h1>
+      <p>NTA CUET UG Section B1 Unit V · Complete Theoretical Taxonomy, Theorems, Solution Protocols & Exam Pitfalls</p>
+    </div>
   </div>
-
-  <div class="card left b" style="top:58px">
-    <h2>Vocabulary (serves A + B1 + B2)</h2>
-    <div class="leaf"><b>Decision variables:</b> x, y — the things you control</div>
-    <div class="leaf"><b>Objective function:</b> Z = ax + by, maximise profit or minimise cost</div>
-    <div class="leaf"><b>Constraints + non-negativity:</b> inequalities from the story, x, y ≥ 0</div>
-    <div class="leaf"><b>Formulation</b> is itself a scored skill — name, then translate</div>
-  </div>
-
-  <div class="card right b" style="top:58px">
-    <h2>Half-Planes &amp; the Feasible Region</h2>
-    <div class="leaf"><b>Each inequality</b> shades a half-plane; test the origin for the side</div>
-    <div class="leaf"><b>Feasible region:</b> the common overlap of ALL half-planes</div>
-    <div class="leaf"><b>Feasible point</b> inside · <b>infeasible</b> outside</div>
-    <div class="leaf"><b>Bounded or unbounded</b> — read the region's shape first</div>
-  </div>
-
-  <div class="card left l" style="top:350px">
-    <h2>Corner Point Theorem</h2>
-    <div class="leaf"><b>The optimum of Z lives at a vertex</b> of the feasible region</div>
-    <div class="leaf"><b>List every corner</b> — origin, axis hits, line intersections</div>
-    <div class="leaf"><b>Evaluate Z at all of them</b>, pick the best</div>
-    <div class="leaf"><b>Ties:</b> an iso-profit line along an edge = every edge point optimal</div>
-  </div>
-
-  <div class="card right l" style="top:350px">
-    <h2>The Five-Step Pipeline</h2>
-    <div class="leaf"><b>1 Formulate</b> → <b>2 draw lines</b> → <b>3 shade agreement</b> → <b>4 corners</b> → <b>5 evaluate Z</b></div>
-    <div class="leaf"><b>Simultaneous equations</b> find the winning corner</div>
-    <div class="leaf"><b>Verify</b> the winner obeys every constraint</div>
-    <div class="leaf"><b>Answer the asked thing:</b> the point or the value of Z</div>
-  </div>
-
-  <div class="card left b" style="top:642px">
-    <h2>Region Moods</h2>
-    <div class="leaf"><b>Bounded:</b> max and min both exist at corners</div>
-    <div class="leaf"><b>Unbounded:</b> maximum needs proof — slide the iso-profit line</div>
-    <div class="leaf"><b>Empty region:</b> constraints contradict → infeasible LPP</div>
-    <div class="leaf"><b>Minimisation</b> often lives on unbounded regions</div>
-  </div>
-
-  <div class="card right b" style="top:642px">
-    <h2>The Classic (know it cold)</h2>
-    <div class="leaf"><b>Max Z = 3x + 2y</b>; x + 2y ≤ 10, 3x + y ≤ 15, x, y ≥ 0</div>
-    <div class="leaf"><b>Corners:</b> (0,0)→0, (5,0)→15, (4,3)→18, (0,5)→10</div>
-    <div class="leaf"><b>Max = 18 at (4,3)</b> — the two-line intersection</div>
-    <div class="leaf"><b>Same skeleton</b> under every cost/profit story</div>
-  </div>
-
-  <div class="exc">
-    <h2>TOP TRAPS</h2>
-    <div class="leaf"><b>Origin forgotten</b> as a corner candidate</div>
-    <div class="leaf"><b>Unbounded declared "no maximum"</b> without the iso-profit check</div>
-    <div class="leaf"><b>Point vs value</b> — the stem decides which one to quote</div>
+  <div>
+    <span class="pill highlight">Complete 4-Quadrant Architecture</span>
   </div>
 </div>
+
+<div class="mindmap-wrapper">
+  <!-- Quadrant 1: Top-Left (Definitions & Anatomy) -->
+  <div class="map-card top-left">
+    <div class="card-header-row">
+      <span class="card-branch-title">1. Anatomy & Mathematical Rigor</span>
+      <span class="card-branch-tag tag-blue">Pillars</span>
+    </div>
+
+    <div class="sub-item">
+      <div class="sub-title">Decision Variables <span>x, y ≥ 0</span></div>
+      <div class="sub-desc">Physical non-negative quantities. Restricts search domain strictly to Quadrant 1.</div>
+    </div>
+    <div class="sub-item">
+      <div class="sub-title">Objective Function <span>Z = ax + by</span></div>
+      <div class="sub-desc">Linear function to be maximized or minimized. Must NOT contain non-linear terms.</div>
+    </div>
+    <div class="sub-item">
+      <div class="sub-title">Convex Feasible Region <span>R ⊆ ℝ²</span></div>
+      <div class="sub-desc">Common intersection of all constraint half-planes. Always forms a <b>convex polygon/polyhedron</b>.</div>
+    </div>
+  </div>
+
+  <!-- Center Hub: Synthesis Core -->
+  <div class="center-hub">
+    <div class="hub-badge">Unit V Core</div>
+    <div class="hub-title">Linear Programming Optimization</div>
+    <div class="hub-math">
+      Opt Z = ax + by<br>
+      s.t. aᵢx + bᵢy ≤/≥ cᵢ<br>
+      x ≥ 0,  y ≥ 0
+    </div>
+    <div class="hub-sub">
+      2-Dimensional Convex Optimization via Corner Point Evaluation and Half-Plane Slicing.
+    </div>
+  </div>
+
+  <!-- Quadrant 2: Top-Right (Theorems & Solvers) -->
+  <div class="map-card top-right">
+    <div class="card-header-row">
+      <span class="card-branch-title">2. Fundamental Theorems & Solvers</span>
+      <span class="card-branch-tag tag-green">Theorems</span>
+    </div>
+
+    <div class="sub-item">
+      <div class="sub-title">Fundamental Theorem 1 <span>Corner Invariant</span></div>
+      <div class="sub-desc">Optimal solution of $Z$ <b>always occurs at a corner point (vertex)</b> of the feasible region.</div>
+    </div>
+    <div class="sub-item">
+      <div class="sub-title">Fundamental Theorem 2 <span>Bounded Existence</span></div>
+      <div class="sub-desc">If $R$ is bounded, <b>both Maximum and Minimum values GUARANTEED to exist</b> at vertices.</div>
+    </div>
+    <div class="sub-item">
+      <div class="sub-title">Corner Point Method <span>Table Protocol</span></div>
+      <div class="sub-desc">1. Solve line intersections $\implies$ 2. List all vertices $\implies$ 3. Compute $Z(x_k, y_k)$ $\implies$ 4. Pick $\max / \min$.</div>
+    </div>
+  </div>
+
+  <!-- Quadrant 3: Bottom-Left (Feasible Region Types) -->
+  <div class="map-card bot-left">
+    <div class="card-header-row">
+      <span class="card-branch-title">3. Feasible Region Classifications</span>
+      <span class="card-branch-tag tag-amber">Geometry</span>
+    </div>
+
+    <div class="sub-item">
+      <div class="sub-title">Bounded Feasible Set <span>Enclosed</span></div>
+      <div class="sub-desc">Contained within a finite boundary. Both global maximum and minimum exist at corner points.</div>
+    </div>
+    <div class="sub-item">
+      <div class="sub-title">Unbounded Region <span>Open Domain</span></div>
+      <div class="sub-desc">Extends to infinity. Requires Open Half-Plane Test ($ax + by > M$ / $ax + by < m$).</div>
+    </div>
+    <div class="sub-item">
+      <div class="sub-title">Redundant Constraints <span>Inactive</span></div>
+      <div class="sub-desc">A constraint whose removal does not alter the feasible region (e.g., $x + y \le 10$ when $x + y \le 5$).</div>
+    </div>
+  </div>
+
+  <!-- Quadrant 4: Bottom-Right (Exam Traps & Degeneracy) -->
+  <div class="map-card bot-right">
+    <div class="card-header-row">
+      <span class="card-branch-title">4. Special Cases & CUET Traps</span>
+      <span class="card-branch-tag tag-red">Traps</span>
+    </div>
+
+    <div class="sub-item">
+      <div class="sub-title">Multiple Optima (Infinite) <span>Parallel Slope</span></div>
+      <div class="sub-desc">Occurs when $Z$ is identical at two adjacent vertices $A$ and $B$. <b>All points on segment AB</b> are optimal!</div>
+    </div>
+    <div class="sub-item">
+      <div class="sub-title">Infeasible Problem <span>R = ∅</span></div>
+      <div class="sub-desc">No common shaded region exists among all constraints. <b>No feasible solution</b>.</div>
+    </div>
+    <div class="sub-item">
+      <div class="sub-title">Unbounded Solution <span>Z → ∞</span></div>
+      <div class="sub-desc">When open half-plane $ax + by > M$ intersects the feasible region, $Z$ has <b>NO maximum value</b>!</div>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
