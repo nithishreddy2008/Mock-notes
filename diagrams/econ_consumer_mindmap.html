@@ -1,113 +1,310 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
+<title>Consumer Behaviour & Demand Theory Master Synthesis Mindmap</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Segoe UI', Arial, sans-serif; background: #ffffff; width: 1480px; }
-  .wrap { width: 1480px; height: 1080px; position: relative; background: #fff; }
-  svg.wires { position: absolute; inset: 0; width: 1480px; height: 1080px; }
-  .center {
-    position: absolute; left: 520px; top: 470px; width: 440px; height: 104px;
-    background: #071A4D; border-radius: 16px; display: flex; flex-direction: column;
-    align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(7,26,77,.25);
-    border-bottom: 5px solid #B8FF34;
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px 28px;
+    overflow: hidden;
   }
-  .center .t { color: #fff; font-size: 21px; font-weight: 800; letter-spacing: .5px; text-align: center; }
-  .center .s { color: #B8FF34; font-size: 13px; font-weight: 700; letter-spacing: 2px; margin-top: 4px; }
-  .card {
-    position: absolute; width: 465px; background: #FCFDFF; border: 1.5px solid #D5DCEA;
-    border-radius: 14px; padding: 13px 16px 12px;
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 12px;
+    margin-bottom: 16px;
   }
-  .card h2 { font-size: 20px; color: #071A4D; font-weight: 800; margin-bottom: 7px;
-             padding-bottom: 5px; border-bottom: 3px solid; display: inline-block; }
-  .leaf { font-size: 14.5px; color: #1B2333; margin: 5px 0; padding-left: 16px; position: relative; line-height: 1.32; }
-  .leaf::before { content: ""; position: absolute; left: 0; top: 7px; width: 8px; height: 8px; border-radius: 50%; }
-  .b .leaf::before { background: #1F5EFF; }
-  .l .leaf::before { background: #7FB800; }
-  .leaf b { color: #071A4D; }
-  .b h2 { border-color: #1F5EFF; }
-  .l h2 { border-color: #7FB800; }
-  .left { left: 30px; }
-  .right { left: 985px; }
-  .exc {
-    position: absolute; left: 470px; top: 905px; width: 540px; background: #FFF3EC;
-    border: 1.5px solid #D2481F; border-radius: 12px; padding: 11px 14px;
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
   }
-  .exc h2 { font-size: 17px; color: #B4380F; font-weight: 800; margin-bottom: 4px; }
-  .exc .leaf { font-size: 13px; margin: 3px 0; padding-left: 14px; color: #7A2A12; }
-  .exc .leaf::before { background: #D2481F; }
-  .exc b { color: #B4380F; }
+  .brand-badge {
+    background: #071A4D;
+    color: #B8FF34;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .title-group h1 {
+    font-size: 22px;
+    font-weight: 800;
+    color: #071A4D;
+    letter-spacing: -0.02em;
+  }
+  .title-group p {
+    font-size: 12px;
+    color: #64748B;
+    margin-top: 2px;
+  }
+  .pill {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 999px;
+    border: 1px solid #CBD5E1;
+    background: #FFFFFF;
+    color: #334155;
+  }
+  .pill.highlight {
+    background: #EEF2FF;
+    border-color: #C7D2FE;
+    color: #1F5EFF;
+  }
+
+  /* Mindmap Layout */
+  .mindmap-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 280px 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 16px;
+    height: 760px;
+    position: relative;
+  }
+
+  /* Center Hub */
+  .center-hub {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    background: #071A4D;
+    border-radius: 14px;
+    padding: 24px 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 2px solid #B8FF34;
+    z-index: 10;
+  }
+  .hub-badge {
+    background: rgba(184, 255, 52, 0.15);
+    color: #B8FF34;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 4px 10px;
+    border-radius: 6px;
+    margin-bottom: 12px;
+    border: 1px solid rgba(184, 255, 52, 0.3);
+  }
+  .hub-title {
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 1.25;
+    margin-bottom: 10px;
+  }
+  .hub-math {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-family: "Courier New", monospace;
+    font-size: 11.5px;
+    color: #B8FF34;
+    margin-bottom: 14px;
+    line-height: 1.4;
+  }
+  .hub-sub {
+    font-size: 11.5px;
+    color: #CBD5E1;
+    line-height: 1.4;
+  }
+
+  /* Quadrant Cards */
+  .map-card {
+    background: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    border-radius: 12px;
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .map-card.top-left { border-top: 4px solid #1F5EFF; }
+  .map-card.top-right { border-top: 4px solid #10B981; }
+  .map-card.bot-left { border-top: 4px solid #F59E0B; }
+  .map-card.bot-right { border-top: 4px solid #EF4444; }
+
+  .card-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #F1F5F9;
+    padding-bottom: 6px;
+  }
+  .card-branch-title {
+    font-size: 14.5px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .card-branch-tag {
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+  .tag-blue { background: #EEF2FF; color: #1F5EFF; }
+  .tag-green { background: #ECFDF5; color: #059669; }
+  .tag-amber { background: #FFFBEB; color: #D97706; }
+  .tag-red { background: #FEF2F2; color: #DC2626; }
+
+  .sub-item {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    padding: 6px 10px;
+  }
+  .sub-title {
+    font-size: 11.5px;
+    font-weight: 800;
+    color: #0F172A;
+    margin-bottom: 2px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .sub-title span {
+    font-family: "Courier New", monospace;
+    font-size: 11px;
+    color: #1F5EFF;
+  }
+  .sub-desc {
+    font-size: 11px;
+    color: #475569;
+    line-height: 1.35;
+  }
+  .sub-desc b { color: #071A4D; }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <svg class="wires" viewBox="0 0 1480 1080">
-    <path d="M 520 505 C 470 505, 495 158, 500 155" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
-    <path d="M 520 520 C 480 520, 495 438, 500 438" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 520 535 C 470 535, 495 718, 500 718" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
-    <path d="M 960 505 C 1010 505, 985 158, 980 155" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 960 520 C 1000 520, 985 438, 980 438" fill="none" stroke="#1F5EFF" stroke-width="2.5" opacity=".55"/>
-    <path d="M 960 535 C 1010 535, 985 718, 980 718" fill="none" stroke="#7FB800" stroke-width="2.5" opacity=".55"/>
-    <path d="M 740 574 C 740 700, 740 830, 740 903" fill="none" stroke="#D2481F" stroke-width="2.5" stroke-dasharray="7 5" opacity=".6"/>
-  </svg>
 
-  <div class="center">
-    <div class="t">CONSUMER BEHAVIOUR</div>
-    <div class="s">COURSE I MICRO &#183; COMPLETE CHAPTER MAP</div>
+<div class="header">
+  <div class="header-left">
+    <div class="brand-badge">OurMocks Master Synthesis</div>
+    <div class="title-group">
+      <h1>Consumer Behaviour & Demand Theory — Master Mindmap</h1>
+      <p>NTA CUET UG Microeconomics Unit 1 & 2 · Central Problems, PPC, Cardinal Utility, Indifference Analysis & Elasticity Protocols</p>
+    </div>
   </div>
-
-  <div class="card left b" style="top:58px">
-    <h2>Micro &amp; Central Problems</h2>
-    <div class="leaf"><b>Micro</b> studies one buyer, one firm, one market; <b>macro</b> studies economy-wide totals</div>
-    <div class="leaf"><b>Scarcity</b> (limited resources, unlimited wants) forces every economy to answer <b>what / how / for whom</b></div>
-    <div class="leaf"><b>Opportunity cost</b> = the next best thing given up; PPF shows the max combos, bowed out because resources are not equally suited to both goods</div>
-  </div>
-
-  <div class="card left l" style="top:352px">
-    <h2>The Utility Engine</h2>
-    <div class="leaf"><b>MU = &#916;TU</b> (extra utility from one more unit); <b>TU = sum of MUs</b></div>
-    <div class="leaf"><b>Law of diminishing MU:</b> each extra unit gives less extra satisfaction &#8212; the 3rd ice cream never beats the 1st</div>
-    <div class="leaf"><b>MU in money:</b> divide utils by utils-per-rupee to compare with price in &#8377;</div>
-  </div>
-
-  <div class="card left b" style="top:648px">
-    <h2>Consumer's Equilibrium (Utility Approach)</h2>
-    <div class="leaf"><b>One good:</b> keep buying while MU<sub>x</sub> &gt; P<sub>x</sub> (in money terms); stop at <b>MU<sub>x</sub> = MU of money</b></div>
-    <div class="leaf"><b>Two goods:</b> shift spending until <b>MU<sub>x</sub>/P<sub>x</sub> = MU<sub>y</sub>/P<sub>y</sub> = MU of money</b>, with the budget exactly spent</div>
-    <div class="leaf"><b>Budget line:</b> P<sub>x</sub>X + P<sub>y</sub>Y = M; slope = P<sub>x</sub>/P<sub>y</sub>; income shifts it parallel, a price change pivots it</div>
-  </div>
-
-  <div class="card right l" style="top:58px">
-    <h2>Demand &amp; Its Behaviour</h2>
-    <div class="leaf"><b>Demand = desire + ability + willingness</b> to pay &#8212; miss one and it is only a wish</div>
-    <div class="leaf"><b>Law of demand:</b> own price &#8595; &#8594; quantity demanded &#8593; (other things equal)</div>
-    <div class="leaf"><b>Determinants:</b> income (normal vs inferior), prices of substitutes &amp; complements, tastes, expectations, population</div>
-    <div class="leaf"><b>Market demand</b> = horizontal sum of all individual demands</div>
-  </div>
-
-  <div class="card right b" style="top:352px">
-    <h2>Movement vs Shift</h2>
-    <div class="leaf"><b>Own price changes</b> &#8594; <b>movement along</b> the same curve (expansion &#8595;price, contraction &#8593;price)</div>
-    <div class="leaf"><b>Any non-price factor</b> &#8594; <b>whole curve shifts</b> right (increase) or left (decrease)</div>
-    <div class="leaf"><b>Words carry marks:</b> "change in quantity demanded" = movement; "change in demand" = shift</div>
-  </div>
-
-  <div class="card right l" style="top:648px">
-    <h2>Price Elasticity of Demand</h2>
-    <div class="leaf"><b>Percentage method:</b> e<sub>p</sub> = %&#916;Q &#247; %&#916;P (drop the minus sign)</div>
-    <div class="leaf"><b>Total expenditure method:</b> P &#8593; and TE same &#8594; e = 1; TE rises &#8594; e &gt; 1; TE falls &#8594; e &lt; 1</div>
-    <div class="leaf"><b>Degrees:</b> 0 (perfectly inelastic) &lt; e &lt; 1 (inelastic) &lt; e = 1 (unitary) &lt; e &gt; 1 (elastic) &#8594; &#8734;</div>
-    <div class="leaf"><b>More elastic when:</b> many substitutes, luxury, big budget share, many uses, longer time</div>
-  </div>
-
-  <div class="exc">
-    <h2>Traps that catch most students</h2>
-    <div class="leaf"><b>Own price never shifts</b> the demand curve &#8212; it only moves you along it</div>
-    <div class="leaf"><b>Demand &#8800; desire</b> &#8212; all three conditions (want + money + willingness) must hold</div>
-    <div class="leaf"><b>TE method only classifies</b> (&gt;1, =1, &lt;1) &#8212; it can never give the exact elasticity value</div>
-    <div class="leaf"><b>Inferior goods flip the income rule</b> &#8212; income rises, demand falls; Giffen goods even break the law of demand</div>
+  <div>
+    <span class="pill highlight">Complete 4-Quadrant Architecture</span>
   </div>
 </div>
+
+<div class="mindmap-wrapper">
+  <!-- Quadrant 1: Top-Left (Micro Intro & PPC) -->
+  <div class="map-card top-left">
+    <div class="card-header-row">
+      <span class="card-branch-title">1. Introduction & PPC Engine</span>
+      <span class="card-branch-tag tag-blue">Foundations</span>
+    </div>
+
+    <div class="sub-item">
+      <div class="sub-title">Scarcity & Central Problems <span>What/How/For Whom</span></div>
+      <div class="sub-desc">Unlimited human wants vs scarce resources with alternative uses. Allocative efficiency.</div>
+    </div>
+    <div class="sub-item">
+      <div class="sub-title">Production Possibility Curve <span>PPC / PPF</span></div>
+      <div class="sub-desc">Locus of output combinations with given resources. <b>Concave to origin</b> due to increasing MRT.</div>
+    </div>
+    <div class="sub-item">
+      <div class="sub-title">Marginal Opportunity Cost <span>MRT = ΔY / ΔX</span></div>
+      <div class="sub-desc">Amount of good $Y$ sacrificed to produce 1 extra unit of good $X$. Resources not equally efficient in all uses.</div>
+    </div>
+  </div>
+
+  <!-- Center Hub: Synthesis Core -->
+  <div class="center-hub">
+    <div class="hub-badge">Microeconomics Core</div>
+    <div class="hub-title">Theory of Consumer Behaviour</div>
+    <div class="hub-math">
+      MUₓ/Pₓ = MUᵧ/Pᵧ = MUₘ<br>
+      MRSₓᵧ = Pₓ/Pᵧ<br>
+      e_d = -(ΔQ/ΔP)·(P/Q)<br>
+      Total Outlay Protocol
+    </div>
+    <div class="hub-sub">
+      Axiomatic Utility Maximization, Indifference Curves, Budget Allocation & Market Demand Laws.
+    </div>
+  </div>
+
+  <!-- Quadrant 2: Top-Right (Cardinal Utility Approach) -->
+  <div class="map-card top-right">
+    <div class="card-header-row">
+      <span class="card-branch-title">2. Cardinal Utility Approach</span>
+      <span class="card-branch-tag tag-green">Marshall</span>
+    </div>
+
+    <div class="sub-item">
+      <div class="sub-title">Law of Diminishing MU <span>Gossen 1st Law</span></div>
+      <div class="sub-desc">As consumption increases continuously, $MU = \Delta TU / \Delta Q$ declines. TU reaches max when $MU = 0$.</div>
+    </div>
+    <div class="sub-item">
+      <div class="sub-title">Single Good Equilibrium <span>MUₓ = Pₓ · MUₘ</span></div>
+      <div class="sub-desc">Equilibrium where marginal benefit equals marginal cost ($MU_x / P_x = MU_m$).</div>
+    </div>
+    <div class="sub-item">
+      <div class="sub-title">Equi-Marginal Principle <span>Gossen 2nd Law</span></div>
+      <div class="sub-desc">$MU_x / P_x = MU_y / P_y = MU_m$. Rebalancing via Law of DMU restores parity if violated.</div>
+    </div>
+  </div>
+
+  <!-- Quadrant 3: Bottom-Left (Ordinal IC Analysis) -->
+  <div class="map-card bot-left">
+    <div class="card-header-row">
+      <span class="card-branch-title">3. Ordinal Indifference Analysis</span>
+      <span class="card-branch-tag tag-amber">Hicks-Allen</span>
+    </div>
+
+    <div class="sub-item">
+      <div class="sub-title">Diminishing MRS <span>Convexity Invariant</span></div>
+      <div class="sub-desc">$MRS_{xy} = - \Delta y / \Delta x = MU_x / MU_y$. Consumer willing to give up less $Y$ for each extra $X$.</div>
+    </div>
+    <div class="sub-item">
+      <div class="sub-title">Budget Line <span>Pₓ·x + Pᵧ·y = M</span></div>
+      <div class="sub-desc">Slope $= -P_x / P_y$. Income change produces parallel shift; price change produces rotational pivot.</div>
+    </div>
+    <div class="sub-item">
+      <div class="sub-title">Consumer Equilibrium <span>Tangency & Convexity</span></div>
+      <div class="sub-desc">Dual conditions: 1. $MRS_{xy} = P_x / P_y$, and 2. IC must be strictly convex to origin at tangency point.</div>
+    </div>
+  </div>
+
+  <!-- Quadrant 4: Bottom-Right (Demand & Elasticity) -->
+  <div class="map-card bot-right">
+    <div class="card-header-row">
+      <span class="card-branch-title">4. Demand & Price Elasticity</span>
+      <span class="card-branch-tag tag-red">Demand</span>
+    </div>
+
+    <div class="sub-item">
+      <div class="sub-title">Movement vs Shift <span>Own Price vs Others</span></div>
+      <div class="sub-desc">Change in $P_x \implies$ Expansion/Contraction (Movement). Change in Income/Related goods $\implies$ Shift.</div>
+    </div>
+    <div class="sub-item">
+      <div class="sub-title">Geometric Point Method <span>Lower / Upper</span></div>
+      <div class="sub-desc">Midpoint $e_d = 1$, upper $e_d > 1$, lower $e_d < 1$, vertical intercept $\infty$, horizontal intercept $0$.</div>
+    </div>
+    <div class="sub-item">
+      <div class="sub-title">Total Outlay Method <span>Expenditure Sign</span></div>
+      <div class="sub-desc">$e_d > 1 \iff P, TE$ opposite; $e_d = 1 \iff TE$ constant; $e_d < 1 \iff P, TE$ same direction.</div>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>

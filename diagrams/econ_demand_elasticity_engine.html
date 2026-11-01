@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Demand Theory & Elasticity Measurement Engine</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px 28px;
+    overflow: hidden;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 12px;
+    margin-bottom: 16px;
+  }
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .brand-badge {
+    background: #071A4D;
+    color: #B8FF34;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .title-group h1 {
+    font-size: 22px;
+    font-weight: 800;
+    color: #071A4D;
+    letter-spacing: -0.02em;
+  }
+  .title-group p {
+    font-size: 12px;
+    color: #64748B;
+    margin-top: 2px;
+  }
+  .header-meta {
+    display: flex;
+    gap: 8px;
+  }
+  .pill {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 999px;
+    border: 1px solid #CBD5E1;
+    background: #FFFFFF;
+    color: #334155;
+  }
+  .pill.highlight {
+    background: #EEF2FF;
+    border-color: #C7D2FE;
+    color: #1F5EFF;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.2fr;
+    gap: 16px;
+    margin-bottom: 14px;
+  }
+
+  .col-card {
+    background: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    border-radius: 10px;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .tag {
+    font-size: 10.5px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #1F5EFF;
+  }
+  .card-h2 {
+    font-size: 15px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+
+  .formula-card {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-left: 3.5px solid #1F5EFF;
+    border-radius: 4px 6px 6px 4px;
+    padding: 8px 10px;
+  }
+  .formula-card.green { border-left-color: #10B981; }
+  .formula-card.amber { border-left-color: #F59E0B; }
+  .formula-card.red { border-left-color: #EF4444; }
+
+  .formula-title {
+    font-size: 12px;
+    font-weight: 800;
+    color: #0F172A;
+    display: flex;
+    justify-content: space-between;
+  }
+  .formula-math {
+    font-family: "Courier New", monospace;
+    font-size: 11.5px;
+    font-weight: 700;
+    color: #1F5EFF;
+    background: #EEF2FF;
+    padding: 3px 6px;
+    border-radius: 4px;
+    margin: 4px 0;
+    display: inline-block;
+  }
+  .formula-desc {
+    font-size: 11px;
+    color: #475569;
+    line-height: 1.35;
+  }
+  .formula-desc b { color: #071A4D; }
+
+  /* Elasticity Table */
+  .el-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 10.5px;
+    margin: 4px 0;
+  }
+  .el-table th, .el-table td {
+    border: 1px solid #CBD5E1;
+    padding: 4px 6px;
+    text-align: left;
+  }
+  .el-table th {
+    background: #EEF2FF;
+    color: #071A4D;
+    font-weight: 800;
+  }
+
+  /* Bottom Warning Matrix */
+  .bottom-strip {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+  }
+  .strip-box {
+    background: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    border-radius: 8px;
+    padding: 10px 12px;
+  }
+  .strip-title {
+    font-size: 11.5px;
+    font-weight: 800;
+    color: #071A4D;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 3px;
+  }
+  .strip-title .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+  }
+  .dot.blue { background: #1F5EFF; }
+  .dot.green { background: #10B981; }
+  .dot.red { background: #EF4444; }
+  .strip-text {
+    font-size: 11px;
+    color: #475569;
+    line-height: 1.35;
+  }
+  .strip-text b { color: #0F172A; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <div class="brand-badge">OurMocks Core System</div>
+    <div class="title-group">
+      <h1>Demand Theory & Price Elasticity Measurement Engine</h1>
+      <p>NTA CUET UG Microeconomics Unit 2 · Determinants, Movement vs Shift, Percentage, Geometric & Outlay Protocols</p>
+    </div>
+  </div>
+  <div class="header-meta">
+    <span class="pill highlight">Unit 2 Microeconomics</span>
+    <span class="pill">Movement vs Shift</span>
+    <span class="pill">Elasticity Protocol</span>
+  </div>
+</div>
+
+<div class="grid-container">
+  <!-- Col 1: Law of Demand & Determinants -->
+  <div class="col-card">
+    <div>
+      <div class="tag">Demand Axioms</div>
+      <div class="card-h2">1. Law of Demand & Determinants</div>
+    </div>
+
+    <div class="formula-card">
+      <div class="formula-title">
+        <span>The Law of Demand</span>
+      </div>
+      <div class="formula-math">Pₓ ↑  ⟹  Qₓ ↓  (Ceteris Paribus)</div>
+      <div class="formula-desc">
+        Inverse relationship between own price and quantity demanded, assuming other factors (income, tastes, related goods prices) remain constant.
+      </div>
+    </div>
+
+    <div class="formula-card green">
+      <div class="formula-title">
+        <span>Why Demand Curve Slopes Downward</span>
+      </div>
+      <div class="formula-desc">
+        1. <b>Law of Diminishing MU:</b> Extra units valued less $\implies$ Bought only at lower prices.<br>
+        2. <b>Substitution Effect:</b> Good becomes relatively cheaper than substitutes.<br>
+        3. <b>Income Effect:</b> Real purchasing power increases as price falls.<br>
+        4. <b>New Buyers:</b> Consumers previously priced out enter the market.<br>
+        5. <b>Multiple Uses:</b> Put to less urgent uses as price falls.
+      </div>
+    </div>
+
+    <div class="formula-card red">
+      <div class="formula-title">
+        <span>Giffen Goods Exception</span>
+      </div>
+      <div class="formula-desc">
+        Highly inferior staple goods where negative Income Effect overwhelms positive Substitution Effect. <b>Demand curve slopes upward!</b> ($P \uparrow \implies Q \uparrow$).
+      </div>
+    </div>
+  </div>
+
+  <!-- Col 2: Movement vs Shift in Demand -->
+  <div class="col-card">
+    <div>
+      <div class="tag">Curve Dynamics</div>
+      <div class="card-h2">2. Movement along vs Shift of Demand</div>
+    </div>
+
+    <div class="formula-card">
+      <div class="formula-title">
+        <span>Movement (Change in Quantity Demanded)</span>
+      </div>
+      <div class="formula-desc">
+        Caused <b>strictly by change in OWN PRICE</b> of the good ($P_x$):<br>
+        • <b>Expansion of Demand:</b> Downward movement along same curve as $P_x$ falls.<br>
+        • <b>Contraction of Demand:</b> Upward movement along same curve as $P_x$ rises.
+      </div>
+    </div>
+
+    <div class="formula-card amber">
+      <div class="formula-title">
+        <span>Shift (Change in Demand)</span>
+      </div>
+      <div class="formula-desc">
+        Caused by <b>factors OTHER THAN own price</b> ($P_x$ constant):<br>
+        • <b>Rightward Shift (Increase in Demand):</b> Income rises (Normal good), Substitute price rises, Complement price falls, Favorable tastes.<br>
+        • <b>Leftward Shift (Decrease in Demand):</b> Income falls (Normal good), Income rises (Inferior good), Substitute price falls, Complement price rises.
+      </div>
+    </div>
+
+    <table class="el-table">
+      <thead>
+        <tr>
+          <th>Relationship</th>
+          <th>Substitute Goods</th>
+          <th>Complementary Goods</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Price change</td>
+          <td>Price of Tea ↑</td>
+          <td>Price of Petrol ↑</td>
+        </tr>
+        <tr>
+          <td>Demand effect</td>
+          <td>Demand of Coffee ↑ (Direct)</td>
+          <td>Demand of Car ↓ (Inverse)</td>
+        </tr>
+        <tr>
+          <td>Cross Elasticity</td>
+          <td><b>Positive ($e_{xy} > 0$)</b></td>
+          <td><b>Negative ($e_{xy} < 0$)</b></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Col 3: The 3 Elasticity Measurement Methods -->
+  <div class="col-card">
+    <div>
+      <div class="tag">Measurement</div>
+      <div class="card-h2">3. Three Price Elasticity Methods</div>
+    </div>
+
+    <div class="formula-card">
+      <div class="formula-title">
+        <span>1. Percentage / Proportionate Method</span>
+      </div>
+      <div class="formula-math">e_d = - (ΔQ / ΔP) · (P / Q)</div>
+      <div class="formula-desc">
+        Exact mathematical calculation. Minus sign reflects the inverse law of demand (elasticity is quoted in absolute value).
+      </div>
+    </div>
+
+    <div class="formula-card green">
+      <div class="formula-title">
+        <span>2. Point (Geometric) Method on Linear Curve</span>
+      </div>
+      <div class="formula-math">e_d = Lower Segment / Upper Segment</div>
+      <div class="formula-desc">
+        • Vertical intercept: $e_d = \infty$ (Perfect elastic).<br>
+        • Above midpoint: $e_d > 1$ (Elastic).<br>
+        • Exactly at midpoint: $e_d = 1$ (Unitary).<br>
+        • Below midpoint: $e_d < 1$ (Inelastic).<br>
+        • Horizontal intercept: $e_d = 0$ (Perfect inelastic).
+      </div>
+    </div>
+
+    <div class="formula-card amber">
+      <div class="formula-title">
+        <span>3. Total Outlay / Expenditure Method (Marshall)</span>
+      </div>
+      <div class="formula-desc">
+        • <b>e_d > 1 (Elastic):</b> Price & Total Outlay move in <b>OPPOSITE</b> directions ($P \uparrow \implies TE \downarrow$).<br>
+        • <b>e_d = 1 (Unitary):</b> Total Outlay remains <b>CONSTANT</b> when price changes.<br>
+        • <b>e_d < 1 (Inelastic):</b> Price & Total Outlay move in <b>SAME</b> direction ($P \uparrow \implies TE \uparrow$).
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bottom-strip">
+  <div class="strip-box">
+    <div class="strip-title"><span class="dot red"></span> Income Elasticity Classifications</div>
+    <div class="strip-text">
+      • <b>Normal Luxury Goods:</b> Income Elasticity $e_y > 1$.<br>
+      • <b>Normal Necessity Goods:</b> $0 < e_y \le 1$.<br>
+      • <b>Inferior Goods:</b> Income Elasticity is strictly negative ($e_y < 0$). Demand falls as income rises!
+    </div>
+  </div>
+
+  <div class="strip-box">
+    <div class="strip-title"><span class="dot blue"></span> Rectangular Hyperbola Demand Curve</div>
+    <div class="strip-text">
+      • Form: $P \cdot Q = \text{Constant}$.<br>
+      • At <b>every point</b> along this curve, the price elasticity of demand is strictly <b>unitary ($e_d = 1$)</b>.<br>
+      • Total expenditure ($P \cdot Q$) is identical at all price levels!
+    </div>
+  </div>
+
+  <div class="strip-box">
+    <div class="strip-title"><span class="dot green"></span> Slope vs Elasticity Distinction</div>
+    <div class="strip-text">
+      • Slope of demand curve $= \Delta P / \Delta Q$ (constant on linear curve).<br>
+      • Elasticity $= (\Delta Q / \Delta P) \cdot (P / Q) = (1 / \text{Slope}) \cdot (P / Q)$.<br>
+      • Flatter demand curve is <b>more elastic</b> at any given intersection point!
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

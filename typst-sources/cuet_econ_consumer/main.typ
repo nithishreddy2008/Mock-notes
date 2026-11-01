@@ -3,472 +3,560 @@
 #show: om-doc.with(
   exam: "CUET UG",
   subject: "Economics",
-  topic-title: "Introduction, Theory of Consumer Behaviour",
-  subtitle: "Official Syllabus · Course I: Introductory Microeconomics · Class 12 · CUET UG 2027 Cycle Notes",
+  topic-title: "Introduction to Microeconomics & Theory of Consumer Behaviour",
+  subtitle: "Central Problems, PPC, Cardinal Utility, Indifference Curve Analysis, Demand & Price Elasticity",
 )
 
-= Syllabus Alignment
+= Syllabus & Exam Weightage
+
+In the NTA CUET (UG) Economics examination, *Introduction to Microeconomics and the Theory of Consumer Behaviour* constitutes the cornerstone of the Microeconomics domain (Units 1 & 2). Typically contributing *6 to 8 questions* (30 to 40 marks out of 200), this foundational module evaluates a candidate's mastery over resource allocation trade-offs, axiomatic utility maximization models, disequilibrium adjustment protocols, and elasticity measurement techniques.
 
 #table(
-  columns: (1.1fr, 2fr, 1.15fr),
-  table.header[*Sub-topic*][*Official syllabus pointer (NTA CUET(UG) Economics syllabus 2026, the current 2027 baseline, Course I)*][*Skills the questions test*],
-  [*Microeconomics and the central problems*], [
-    What is microeconomics? Central problems of an economy
-  ], [
-    Telling micro from macro, explaining scarcity, listing what / how / for whom, and using opportunity cost with the production possibilities idea.
-  ],
-  [*Consumer's equilibrium (utility approach)*], [
-    Consumer's Equilibrium: meaning and attainment of equilibrium through Utility Approach: one and two commodity cases, consumer's budget and optimal choice of the consumer
-  ], [
-    Applying the MU = price stop rule, reallocating spending across two goods until the ratios match, and reading budget lines.
-  ],
-  [*Demand and its behaviour*], [
-    Demand: market demand, determinants of demand, demand schedule, demand curve, movement along and shifts in the demand curve
-  ], [
-    Building market demand from individual buyers, listing determinants, and sorting movements from shifts without slipping.
-  ],
-  [*Price elasticity of demand*], [
-    Price elasticity of demand; measurement of price elasticity of demand — percentage, total expenditure; factors determining price elasticity of demand for a good
-  ], [
-    Computing elasticity by the percentage method, classifying by the total expenditure method, and predicting elasticity from the nature of the good.
-  ],
+  columns: (1.2fr, 2.2fr, 1.4fr),
+  stroke: 0.5pt + om-navy.lighten(70%),
+  fill: (col, row) => if row == 0 { om-navy-soft } else if calc.odd(row) { om-blue-soft.lighten(60%) } else { white },
+  table.header[*Sub-Topic*][*Official NTA Syllabus Coverage*][*High-Yield CUET Focus*],
+  [*Introduction & Central Problems*], [What is Microeconomics? Central problems of an economy: What, How, and For Whom to produce; Opportunity cost and Production Possibility Frontier (PPF/PPC).], [MRT formula ($Delta Y / Delta X$), reasons for PPC concavity, shifts vs rotations of PPC, points inside vs on PPC.],
+  [*Cardinal Utility Approach*], [Meaning of utility, Total Utility (TU) and Marginal Utility (MU), Law of Diminishing Marginal Utility (LDMU), consumer equilibrium in single and two-commodity cases.], [Equi-marginal condition ($M U_x / P_x = M U_y / P_y = M U_m$), disequilibrium restoration adjustments, point of satiety.],
+  [*Ordinal Utility Approach*], [Indifference curve (IC) analysis, Marginal Rate of Substitution (MRS), properties of ICs, budget line, consumer equilibrium conditions.], [Tangency condition ($M R S_(x y) = P_x / P_y$), diminishing MRS convexity, budget line slope and pivots, monotonic preferences.],
+  [*Theory of Demand*], [Meaning of demand, demand schedule and curve, market demand, determinants of demand, Law of Demand, movement along vs shift of demand curve.], [Normal vs inferior vs Giffen goods, substitute vs complementary price effects, exceptions to the Law of Demand.],
+  [*Price Elasticity of Demand*], [Measurement of price elasticity of demand: Percentage method, Geometric/Point method on linear curve, Total Outlay/Expenditure method.], [Interpreting $e_d$ values, outlay direction rules ($e_d > 1, = 1, < 1$), rectangular hyperbola demand curve, point elasticity formula.],
 )
 
-#exam-pointer[
-  CUET UG pattern (NTA official information bulletin and syllabus, 2026 cycle — the
-  current 2027 baseline): each subject paper carries *50 compulsory questions* in
-  *60 minutes*, with $+5$ for every correct answer and $-1$ for every incorrect answer. The Economics paper follows NCERT Class 12
-  Economics (Microeconomics, Macroeconomics, Indian Economic Development), and this
-  first unit is the gateway — the equilibrium rules and elasticity tools built here
-  reappear in every later micro topic.
+#tip-box(title: "CUET Exam Strategy — Microeconomic Diagnostic Precision")[
+  CUET test designers frequently construct questions around *disequilibrium adjustment mechanisms*. When $M U_x / P_x > M U_y / P_y$ or $M R S_(x y) > P_x / P_y$, always trace the behavioral reaction: the consumer *increases consumption of Good X*, which causes its marginal utility to fall via the Law of Diminishing Marginal Utility, steadily driving the ratios back into equality.
 ]
 
-= What Microeconomics Is — and the Central Problems
+---
 
-Your pocket money runs out before your wishes do — every single month. Multiply that feeling by 140 crore people and you have the starting point of all economics: *wants are unlimited, resources are not*. Microeconomics studies how one small unit — one consumer, one firm, one market — makes its choices under this squeeze.
+= 1. Introduction to Microeconomics & The Economic Problem
 
-#table(
-  columns: (1fr, 1.5fr, 1.5fr),
-  table.header[*Question*][*Microeconomics answers*][*Macroeconomics answers*],
-  [Who is studied?], [One consumer, one firm, one market — the price of tea, one industry's wages], [The whole economy — GDP, inflation, unemployment, total output],
-  [Key variable], [Individual price and individual quantity], [National income and the general price level],
-  [Example question], [Why did onion prices rise this month?], [Why did prices across the whole country rise this year?],
-)
+== Microeconomics vs Macroeconomics
 
-- *Scarcity is the root:* land, labour, capital and time are limited, but wants keep multiplying. Scarcity forces *choice*, and every choice leaves something else unchosen.
-- *Central problem 1 — What to produce?* More food or more factories? Consumer goods satisfy today; capital goods produce more tomorrow. Every economy must split its scarce resources between competing uses.
-- *Central problem 2 — How to produce?* The same cloth can come from many handloom workers or from a few machines. Labour-intensive vs capital-intensive — this choice decides jobs, costs and technology.
-- *Central problem 3 — For whom to produce?* The cake is baked; how should it be sliced? Distribution of income decides who gets how much of the output.
-- *Opportunity cost:* the value of the *next best thing you gave up*. If ₹25,000 buys either a phone or a year of coaching, the coaching's true cost is the phone you did not buy.
+Economics is the social science that studies how individuals, firms, and societies allocate scarce productive resources among competing alternative uses to satisfy unlimited human wants.
 
-== The Production Possibility Frontier
-
-Stretch the same logic to a whole economy and you get the *PPF*: a curve showing the maximum combinations of two goods that can be made when ALL resources are used fully and efficiently. Take an economy that grows wheat and weaves cloth:
+- *Microeconomics:* Examines the economic behavior of *individual decision-making units*—such as an individual consumer, a single household, an individual firm, or a specific industry. Its core theoretical focus is *price determination* and resource allocation (often termed *Price Theory*).
+- *Macroeconomics:* Studies the economy as an *aggregate whole*—focusing on national aggregates such as Gross Domestic Product (GDP), aggregate employment, general price level (inflation), monetary policy, and the national balance of payments (often termed *Income and Employment Theory*).
 
 #table(
-  columns: (1fr, 1.4fr, 1.4fr, 1.9fr),
-  table.header[*Point*][*Wheat (lakh tonnes)*][*Cloth (lakh metres)*][*What it means*],
-  [A], [21], [0], [Everything in wheat; zero cloth],
-  [B], [19], [4], [A few resources shifted to cloth],
-  [C], [15], [8], [More shifted; each extra metre costs more wheat],
-  [D], [9], [11], [Almost everything in cloth],
-  [U], [12], [6], [INSIDE the curve — idle workers, wasted potential],
+  columns: (1fr, 1.8fr, 1.8fr),
+  stroke: 0.5pt + om-navy.lighten(70%),
+  fill: (col, row) => if calc.odd(row) { om-blue-soft.lighten(50%) } else { white },
+  table.header[*Parameter*][*Microeconomics*][*Macroeconomics*],
+  [*Unit of Study*], [Individual economic agents (a consumer, a firm).], [Economy as an aggregate whole (national aggregates).],
+  [*Core Objective*], [Optimal allocation of scarce resources among competing uses.], [Determination of national income, output, and full employment.],
+  [*Central Instrument*], [Price mechanism (Demand and Supply forces).], [Government fiscal policy, monetary policy, aggregate demand.],
+  [*Basic Assumptions*], [Assumes macroeconomic variables (e.g., national income) are constant.], [Assumes microeconomic variables (relative prices of goods) are given.],
 )
 
-- *On the curve (A to D):* full, efficient employment. More of one good is possible only by giving up some of the other — that giveaway IS the opportunity cost.
-- *Inside the curve (U):* resources are idle or misused. The economy could actually have more of BOTH goods — no sacrifice needed.
-- *Outside the curve:* unattainable with today's resources and technology; growth pushes the whole curve outward over the years.
-- *Why the curve bows outward:* resources are not equally suited to both jobs. The first shifts to cloth take poor wheat land — small loss. The last shifts pull away the best farmers — big loss for each extra metre. Increasing opportunity cost, baked into the shape.
+== Positive Economics vs Normative Economics
 
-#analogy-box(title: "The Hostel Mess Budget")[
-A hostel mess has ₹50,000 for the month and one kitchen. *What to cook* (menu), *how to cook* (hire more cooks or buy a dishwasher), *who gets served* (equal plates vs pay-per-plate) — the warden solves the exact three central problems every week. The mapping is honest: the budget is the scarce resources, the menu is "what", the equipment choice is "how", and the plate rule is "for whom".
+- *Positive Economics:* Deals with *what is*, objective facts, verifiable economic statements, and cause-and-effect relationships without value judgments. It can be scientifically tested and verified against empirical real-world data (e.g., "An increase in excise duty on petroleum leads to an increase in its market price").
+- *Normative Economics:* Deals with *what ought to be*, value judgments, ethical ideals, and policy opinions that cannot be verified or refuted by data (e.g., "The government should subsidize public transport to reduce urban pollution").
+
+== The Three Central Problems of an Economy
+
+Because human wants are virtually limitless while productive resources (Land, Labor, Capital, Enterprise) are inherently scarce and possess alternative uses, every economic system must resolve three fundamental allocation problems:
+
+1. *What to produce and in what quantities?* The economy must decide whether to allocate resources to consumer goods (wheat, cloth) or capital goods (tractors, machines), civil goods or defense equipment (guns vs butter). Producing more of one commodity inevitably mandates producing less of another.
+2. *How to produce?* The choice of production technique:
+   - *Labor-Intensive Technique (LIT):* Employs relatively more labor and less capital (favored in capital-scarce, labor-surplus developing economies to maximize employment).
+   - *Capital-Intensive Technique (CIT):* Employs relatively more machinery/capital and less labor (favored to maximize efficiency, scale, and productivity).
+3. *For whom to produce?* The problem of distribution of total national output among the individual members of society:
+   - *Personal Distribution:* Distribution of income across individual households.
+   - *Functional Distribution:* Distribution of total product among the factors of production as wages (labor), rent (land), interest (capital), and profit (entrepreneurship).
+
+---
+
+= 2. The Production Possibility Curve (PPC / PPF)
+
+== Definition & Core Assumptions
+
+The *Production Possibility Curve (PPC)*, also known as the *Production Possibility Frontier (PPF)* or *Transformation Curve*, represents the graphical locus of all possible output combinations of two goods that an economy can produce by fully and efficiently utilizing its given endowment of resources with available technology.
+
+#concept-box(title: "The Four Axiomatic Assumptions of PPC")[
+  1. *Fixed Resource Endowment:* The total quantum of productive resources available in the economy is given and remains strictly constant.
+  2. *Full and Efficient Resource Utilization:* All available resources are fully and most efficiently employed (zero unemployment and zero productive waste).
+  3. *Constant Technology:* The state of technological know-how is fixed throughout the analysis.
+  4. *Differential Factor Efficiency:* Resources are *not equally efficient in the production of all commodities*. When resources are transferred from the production of Good Y to Good X, less specialized factors must be employed, causing productivity to decline.
 ]
 
-= Utility: TU, MU and the Law of Diminishing Satisfaction
+== Marginal Opportunity Cost & The Marginal Rate of Transformation (MRT)
 
-Why do you stop at the second ice cream even when you could afford a third? Because every extra scoop delivers LESS joy than the one before. That falling joy — *marginal utility* — is the engine that silently decides every purchase you make, and the syllabus builds consumer equilibrium directly on it.
+- *Opportunity Cost:* The cost of availing one opportunity expressed in terms of the *value of the next best alternative foregone*.
+- *Marginal Opportunity Cost (MOC):* The amount of Good Y that must be sacrificed to produce one additional unit of Good X.
+- *Marginal Rate of Transformation (MRT):* The technical ratio measuring the slope of the PPC at any given point:
 
-- *Utility* = the want-satisfying power of a good. We measure it in imaginary units called *utils* — read "utils" as satisfaction points.
-- *Total Utility (TU)* = the satisfaction from ALL units consumed together.
-- *Marginal Utility (MU)* = the EXTRA satisfaction from ONE more unit: $"MU" = Delta "TU"$ — the change in total utility when consumption rises by one.
-- *The law of diminishing marginal utility:* as you consume successive units of the same good, one after another, each extra unit's MU keeps falling. First cone on a hot afternoon: 20 utils. The fourth: barely 4. The fifth can make you sick — MU turns negative and TU actually falls.
-
-#table(
-  columns: (1fr, 1.5fr, 1.5fr, 2fr),
-  table.header[*Cone*][*TU (utils)*][*MU (utils)*][*What you feel*],
-  [1st], [20], [20], [Heaven — hottest day of the year],
-  [2nd], [36], [16], [Very good, less thrilling],
-  [3rd], [46], [10], [Nice, but you are slowing down],
-  [4th], [50], [4], [Almost indifferent],
-  [5th], [48], [−2], [Regret — TU falls, MU is negative],
-)
-
-- *Reading the table:* MU is the gap between two TU numbers (36 − 20 = 16). TU rises while MU is positive, TU peaks exactly where MU hits zero, and TU falls once MU goes negative.
-- *The two measures run both ways:* $"MU"_n = "TU"_n - "TU"_(n - 1)$ and $"TU" = "MU"_1 + "MU"_2 + "MU"_3 + dots.c$
-- *Assumptions behind the law:* units are standard (equal-sized cones), consumption is continuous (no week-long gaps), and tastes stay fixed while you eat.
-- *Why this law matters:* it is WHY demand curves slope downward. Since every extra unit gives less satisfaction, you will buy more units only if the price falls to match that lower satisfaction. Hold that thought — it returns in the demand section.
-
-#formula-box(title: "The Two Utility Formulas")[
-  #v(2pt)
-  $"MU"_n = "TU"_n - "TU"_(n - 1) quad quad quad "TU" = "MU"_1 + "MU"_2 + "MU"_3 + dots.c$
-  #v(4pt)
-  *Letters:* TU = total utility (utils) · MU = marginal utility of the next unit (utils) · n = unit number.
-  #v(2pt)
-  *Peak rule:* TU is maximum exactly where MU = 0; beyond that point MU is negative and TU declines.
+#formula-box(title: "The Marginal Rate of Transformation (MRT)")[
+  $ "MRT"_(x y) = frac(Delta Y, Delta X) = frac("Amount of Good Y Sacrificed", "Amount of Good X Gained") $
 ]
 
-= Consumer's Equilibrium: The Utility Approach
+== Geometric Properties of the PPC
 
-"Equilibrium" sounds heavy, but it means something simple: the consumer has arranged purchases so that NO reshuffling can make them happier. Income is fixed, prices are given, and the bundle chosen is the best possible one. The syllabus splits this into two cases.
-
-== Case 1: One Commodity
-
-The rule: keep buying units as long as the extra satisfaction — converted into rupees — exceeds the price. Stop at the unit where the two become equal, because the next unit would cost more than the joy it brings.
-
-- *Convert MU into money:* divide MU (utils) by the marginal utility of money. If 1 rupee buys 2 utils of satisfaction, then MU of money = 2 utils per rupee, and MU in ₹ = MU (utils) ÷ 2.
-
-#worked-example("One-Commodity Equilibrium — Cone at ₹3")[
-Price of a cone: ₹3. Marginal utility of money: 2 utils per rupee. MU schedule (shrinking, as the law demands): 20, 16, 10, 6, 2 utils.
+1. *Downward Sloping from Left to Right:* Because productive resources are strictly scarce, producing an additional unit of Good X physically necessitates transferring resources away from Good Y, forcing output of Good Y to contract ($Delta Y < 0$).
+2. *Concave to the Origin:* The PPC is strictly *concave to the origin* because the *Marginal Rate of Transformation (MRT) is continuously increasing*. As more units of Good X are produced, increasingly less suitable and less specialized resources must be diverted from Good Y, requiring progressively larger sacrifices of Good Y for each successive unit of Good X.
 
 #table(
-  columns: (1fr, 1.35fr, 1.5fr, 0.9fr, 1.55fr),
-  table.header[*Cone*][*MU (utils)*][*MU in ₹ (MU ÷ 2)*][*Price*][*Decision*],
-  [1st], [20], [₹10], [₹3], [Buy — joy worth ₹10 for ₹3],
-  [2nd], [16], [₹8], [₹3], [Buy — still ahead],
-  [3rd], [10], [₹5], [₹3], [Buy — still ahead],
-  [4th], [6], [₹3], [₹3], [Buy — the boundary unit],
-  [5th], [2], [₹1], [₹3], [STOP — ₹3 for ₹1 of joy is a loss],
+  columns: (1.2fr, 1.4fr, 1.4fr, 1.8fr),
+  stroke: 0.5pt + om-navy.lighten(70%),
+  fill: (col, row) => if calc.odd(row) { om-blue-soft.lighten(50%) } else { white },
+  table.header[*PPC Shape*][*Behavior of MRT*][*Underlying Economic Cause*][*Practical Significance*],
+  [*Concave to Origin*], [Increasing MRT ($Delta Y / Delta X$ rises)], [Resources are specialized and not equally adaptable to all uses.], [Standard realistic economic model.],
+  [*Straight Line (Linear)*], [Constant MRT ($Delta Y / Delta X$ constant)], [Resources are assumed to be equally efficient in producing both goods.], [Theoretical abstraction (Ricardian trade models).],
+  [*Convex to Origin*], [Decreasing MRT ($Delta Y / Delta X$ falls)], [Increasing marginal returns / extreme scale economies.], [Rare and non-standard in foundational microeconomics.],
 )
 
-- Units 1 to 4: MU in ₹ is greater than or equal to the price — each purchase adds to (or preserves) total satisfaction.
-- Unit 5: MU in ₹ (₹1) is below the price (₹3) — buying it would cut total satisfaction.
-- *Equilibrium: 4 cones.* Exactly at the 4th unit, $"MU"_x = P_x$ (in money terms) — the textbook stop rule.
-]
+== Attainable vs Unattainable Points & Shifts of PPC
 
-- *The stop rule in one line:* buy while $"MU"_x > P_x$ (in money terms); equilibrium at $"MU"_x = P_x$; never buy when $"MU"_x < P_x$.
-- *Why not "just one more"?* Because of diminishing MU — the next unit always brings less joy than the last, so the surplus (MU − price) shrinks until it vanishes.
+- *Points ON the PPC:* Represent full and technically efficient utilization of existing resources (Production Efficiency).
+- *Points INSIDE the PPC:* Represent *underutilization, unemployment, or inefficient allocation* of resources. The economy can expand output of either good without sacrificing the other.
+- *Points OUTSIDE the PPC:* Represent *unattainable output combinations* given the current stock of resources and technology.
+- *Rightward Shift of PPC:* Caused by economic growth, discovery of new mineral resources, influx of skilled labor, or technological progress in both sectors.
+- *Leftward Shift of PPC:* Caused by destruction of productive capital (wars, natural disasters, epidemics) or depletion of natural resources.
+- *Rotational Pivot of PPC:* Caused by technological advancement or resource growth *restricted exclusively to one commodity* (e.g., green revolution improving wheat productivity while cloth technology remains unchanged).
 
-== Case 2: Two Commodities
+---
 
-With two goods, the money must be split so that the LAST rupee spent on each good gives the SAME satisfaction. If X pays more satisfaction per rupee than Y, shift the next rupee from Y to X — and keep shifting until the ratios equalize or the money runs out.
+= 3. The Cardinal Utility Approach (Marshallian Analysis)
 
-#formula-box(title: "Two-Commodity Equilibrium Condition")[
-  #v(2pt)
-  $("MU"_x) / P_x = ("MU"_y) / P_y = "MU" "of money"$
-  #v(4pt)
-  *Letters:* MU_x, MU_y = marginal utilities of goods X and Y · P_x, P_y = their prices · MU of money = satisfaction from the last rupee.
-  #v(2pt)
-  *The logic:* if $("MU"_x) / P_x > ("MU"_y) / P_y$, shift spending towards X; keep shifting until the two ratios are equal AND the whole budget is spent.
-]
+== Total Utility & Marginal Utility
 
-#worked-example("Two-Commodity Equilibrium — Canteen, ₹30")[
-Ravi has exactly ₹30 at the college canteen. Samosa: ₹10 each. Juice: ₹5 each. MU schedules (utils): samosa 50, 40, 30, 20, 10 · juice 25, 20, 15, 10. He buys in descending order of MU per rupee:
+The *Cardinal Utility Approach*, formulated by Alfred Marshall, posits that consumer satisfaction is measurable in definite quantitative cardinal units termed *utils* (e.g., 1 util, 5 utils, 10 utils).
+
+- *Total Utility ($T U$):* The sum total of satisfaction derived by a consumer from consuming a specific quantity of a commodity:
+  $ T U_n = sum_(i=1)^n M U_i = M U_1 + M U_2 + dots + M U_n $
+- *Marginal Utility ($M U$):* The addition to total utility resulting from the consumption of one additional unit of the commodity:
+  $ M U_n = T U_n - T U_(n-1) quad "or" quad M U = frac(Delta T U, Delta Q) $
+
+== The Fundamental Mathematical Relationship between TU and MU
 
 #table(
-  columns: (1.2fr, 1.3fr, 1.2fr, 1.55fr, 1.15fr),
-  table.header[*Purchase*][*MU (utils)*][*MU per ₹*][*What is bought*][*Money left*],
-  [Samosa 1], [50], [5], [1 samosa — ₹10], [₹20],
-  [Juice 1], [25], [5], [1 juice — ₹5], [₹15],
-  [Samosa 2], [40], [4], [1 samosa — ₹10], [₹5],
-  [Juice 2], [20], [4], [1 juice — ₹5], [₹0],
+  columns: (1.5fr, 1.5fr, 2.5fr),
+  stroke: 0.5pt + om-navy.lighten(70%),
+  fill: (col, row) => if calc.odd(row) { om-blue-soft.lighten(50%) } else { white },
+  table.header[*Behavior of Marginal Utility ($M U$)*][*Behavior of Total Utility ($T U$)*][*Economic Significance*],
+  [*$M U > 0$ (Positive & Diminishing)*], [$T U$ increases at a diminishing rate.], [Consumer derives additional satisfaction from each extra unit consumed.],
+  [*$M U = 0$ (Zero)*], [$T U$ reaches its *Global Maximum*.], [*Point of Satiety / Full Satisfaction.* Extra units yield zero gain.],
+  [*$M U < 0$ (Negative)*], [$T U$ begins to *Decline*.], [Overconsumption leads to disutility / dissatisfaction.],
 )
-
-#table(
-  columns: (1.5fr, 1.6fr),
-  table.header[*Equilibrium check*][*Value*],
-  [$("MU"_s) / P_s$], [40 ÷ 10 = 4 utils per rupee],
-  [$("MU"_j) / P_j$], [20 ÷ 5 = 4 utils per rupee],
-  [Budget], [2 × ₹10 + 2 × ₹5 = ₹30 = income ✓],
-)
-
-- Both ratios are equal (4 = 4) and the budget is exactly spent — Ravi is in equilibrium: *2 samosas + 2 juices*.
-- Any reshuffle loses: dropping juice 2 to save for samosa 3 buys only 3 utils per rupee instead of 4. That is the whole meaning of equilibrium — nothing better is reachable.
-]
-
-= The Budget Line: What You Can Actually Afford
-
-Equilibrium needs a shopping limit, and the syllabus calls it the *consumer's budget*. The budget line is the fence around every bundle you can afford — and its slope quietly carries one of the most-tested ideas in this unit.
-
-- *Budget set* = all combinations of X and Y the consumer CAN buy with income M — including cheap ones with money left over.
-- *Budget line* = the combinations that cost EXACTLY M — the frontier of the budget set: $P_x X + P_y Y = M$
-- *Slope of the budget line* = $P_x / P_y$ — the market's exchange rate: how many units of Y the market charges you for one more unit of X.
-
-#worked-example("Drawing the Budget Line")[
-Income M = ₹100. Ice cream (X): ₹20 per cone. Cold drink (Y): ₹10 per bottle.
-
-- All money on ice cream: $100 \/ 20 = 5$ cones — corner point (5, 0).
-- All money on cold drinks: $100 \/ 10 = 10$ bottles — corner point (0, 10).
-- Any point on the line between the corners costs exactly ₹100 — for example 2 cones + 6 bottles: 2 × ₹20 + 6 × ₹10 = ₹40 + ₹60 = ₹100 ✓
-- Slope: $P_x / P_y = 20 / 10 = 2$ — one more ice cream always costs 2 cold drinks.
-]
-
-#table(
-  columns: (1.3fr, 1.9fr, 2fr),
-  table.header[*Change*][*Effect on the line*][*Why*],
-  [Income M rises], [Shifts OUT, parallel], [More of both is affordable; the slope (price ratio) is untouched],
-  [Income M falls], [Shifts IN, parallel], [Same logic reversed],
-  [P_x falls], [Pivots — X-intercept moves out], [X-intercept = M / P_x grows; Y-intercept unchanged],
-  [P_x rises], [Pivots — X-intercept moves in], [X-intercept = M / P_x shrinks],
-  [P_y changes], [Pivots — Y-intercept moves], [Y-intercept = M / P_y],
-)
-
-- *Only relative prices change the slope.* Income moves the whole line; a price change twists it around one intercept.
-- *Points around the line:* on the line = budget fully spent; inside = affordable with savings; outside = unaffordable today.
-- *Optimal choice:* the consumer's equilibrium bundle (previous section) always sits ON the budget line — inside points waste money, outside points are unreachable.
-
-= Demand: The Full Picture
-
-Demand is not wanting. A student may want a sports bike — that is not demand. *Demand = desire + ability to pay + willingness to pay.* Miss any one of the three and it is only a wish. Every demand question in the paper assumes you know this three-part definition and where the curve sits.
-
-- *Market demand* = the total demand of ALL buyers at each price. Build it by adding quantities side by side at every price level (a horizontal sum).
-- *Determinants of demand* — the non-price forces that decide where the whole curve sits:
-  - *Income:* for *normal* goods, demand rises with income (branded shoes); for *inferior* goods it falls (coarse grain, generic pills).
-  - *Prices of related goods:* *substitutes* (coffee costlier → tea demand up) and *complements* (petrol costlier → car demand down).
-  - *Tastes and preferences:* a trend, an advertisement, a health scare — any of these moves demand.
-  - *Expectations:* expecting prices to rise tomorrow raises demand today.
-  - *Population and its distribution:* more people (and more equal incomes) means more buyers for most goods.
-- *Demand schedule and curve:* a table of price-quantity pairs; plotted with price on the vertical axis and quantity on the horizontal, it slopes downward — the *law of demand*: other things equal, when a good's own price falls, its quantity demanded rises, and vice versa.
-- *Why the curve slopes down:* diminishing marginal utility. Each extra unit gives less satisfaction, so you buy more only when the price falls to match. The demand curve is the MU curve wearing market clothes.
-
-#worked-example("Market Demand = Sum of Individuals")[
-Two buyers in the mango market, four prices:
-
-#table(
-  columns: (1.2fr, 1.4fr, 1.4fr, 1.4fr),
-  table.header[*Price (₹/kg)*][*Asha's demand (kg)*][*Varun's demand (kg)*][*Market demand (kg)*],
-  [10], [2], [3], [5],
-  [8], [4], [5], [9],
-  [6], [6], [7], [13],
-  [4], [8], [9], [17],
-)
-
-Add QUANTITIES at each price — never prices. At ₹8: 4 + 5 = 9 kg. The market curve is flatter than either individual curve because every price change now moves two buyers at once.
-]
-
-== Movement vs Shift: The #1 Trap
 
 #figure(
-  image("assets/econ_demand_shift.png", width: 100%),
-  caption: [The demand trap board: own-price changes slide you along the same curve (left); non-price determinants jump the whole curve (right).],
+  image("assets/econ_consumer_utility_indifference.png", width: 95%),
+  caption: [Figure 1: Cardinal Utility vs Ordinal Indifference Curve Analysis, Equi-Marginal Rule, and Tangency Equilibrium],
 )
+
+== The Law of Diminishing Marginal Utility (Gossen's First Law)
+
+Formulated by H.H. Gossen and popularized by Alfred Marshall, the *Law of Diminishing Marginal Utility (LDMU)* states that:
+*"As a consumer consumes more and more standard units of a commodity continuously, the marginal utility derived from each successive unit continuously declines."*
+
+*Axiomatic Assumptions of the Law:*
+1. *Continuous Consumption:* There is no significant time gap between the consumption of successive units.
+2. *Standard Units:* Consumption occurs in reasonable, standard quantities (a glass of water, not a spoonful).
+3. *Homogeneous Quality:* All units of the commodity are identical in size, taste, and quality.
+4. *Constant Marginal Utility of Money ($M U_m$):* The subjective value of money remains invariant as expenditure changes.
+5. *Rationality:* The consumer seeks to maximize total utility.
+
+== Consumer Equilibrium in Cardinal Utility
+
+=== 1. Single Commodity Case
+A rational consumer allocating expenditure on a single commodity $X$ with price $P_x$ maximizes net satisfaction when the marginal utility of the good expressed in monetary terms equals its market price:
+
+#formula-box(title: "Single Commodity Cardinal Equilibrium")[
+  $ frac(M U_x, P_x) = M U_m quad <==> quad M U_x = P_x dot M U_m $
+]
+If $M U_m = 1$ util per rupee, the equilibrium simplifies directly to:
+$ M U_x = P_x $
+
+*Disequilibrium Restoration Protocol:*
+- *If $M U_x > P_x$:* Marginal benefit exceeds marginal cost. The consumer increases consumption of $X$. By LDMU, $M U_x$ continuously falls until $M U_x = P_x$.
+- *If $M U_x < P_x$:* Marginal cost exceeds marginal benefit. The consumer cuts consumption of $X$. As consumption drops, $M U_x$ rises until $M U_x = P_x$.
+
+=== 2. Two-Commodity Case (Law of Equi-Marginal Utility / Gossen's Second Law)
+When a consumer spends a fixed budget $M$ on two commodities $X$ and $Y$ with prices $P_x$ and $P_y$, utility is maximized when the *marginal utility per rupee spent is equalized across both goods*:
+
+#formula-box(title: "Law of Equi-Marginal Utility Condition")[
+  $ frac(M U_x, P_x) = frac(M U_y, P_y) = M U_m $
+  *Subject to the Income Exhaustion Constraint:*
+  $ P_x dot x + P_y dot y = M $
+]
+
+*Disequilibrium Adjustment Engine:*
+- *If $M U_x / P_x > M U_y / P_y$:* The consumer receives higher utility per rupee from Good X than from Good Y. The rational consumer reallocates budget by purchasing *more of Good X and less of Good Y*. As $X$ increases, $M U_x$ decreases; as $Y$ decreases, $M U_y$ increases. This reallocation proceeds until parity $M U_x / P_x = M U_y / P_y$ is restored.
+
+---
+
+= 4. The Ordinal Utility Approach (Indifference Curve Analysis)
+
+Developed by J.R. Hicks and R.G.D. Allen, the *Ordinal Approach* eliminates the unrealistic assumption that utility can be measured cardinally in numbers. Instead, it assumes consumers can *rank and order* their preferences among different bundles of goods (e.g., Bundle A is preferred to Bundle B, or the consumer is indifferent between them).
+
+== The Indifference Curve & Indifference Map
+
+- *Indifference Curve (IC):* The graphical locus of all consumption bundles of two goods $(x, y)$ that provide the consumer with the exact same level of total satisfaction, leaving the consumer completely indifferent between any two points on the curve.
+- *Indifference Map:* A family of indifference curves plotted on a single graph, where curves situated higher and further to the right represent progressively higher levels of satisfaction.
+
+== Marginal Rate of Substitution (MRS) & Diminishing MRS
+
+The *Marginal Rate of Substitution of Good X for Good Y ($M R S_(x y)$)* measures the quantity of Good Y that the consumer is willing to give up to acquire one additional unit of Good X while keeping overall satisfaction strictly unchanged:
+
+#formula-box(title: "Marginal Rate of Substitution Formula")[
+  $ M R S_(x y) = -frac(Delta Y, Delta X) = frac(M U_x, M U_y) = "Absolute Slope of Indifference Curve" $
+]
+
+*The Law of Diminishing MRS:* As the consumer acquires more units of Good X, their subjective desire for additional units of $X$ decreases ($M U_x$ falls), while the scarcity of the sacrificed Good Y increases ($M U_y$ rises). Consequently, the consumer is willing to sacrifice progressively fewer units of Good Y for each successive unit of Good X. *This diminishing MRS is the sole mathematical cause of the convexity of indifference curves!*
+
+== The Four Golden Properties of Indifference Curves
+
+1. *Indifference Curves Slope Downward from Left to Right:* To maintain a constant level of satisfaction, an increase in the consumption of Good X must be accompanied by a reduction in Good Y (monotonic preferences). A horizontal, vertical, or upward-sloping curve would violate equal satisfaction.
+2. *Indifference Curves are Strictly Convex to the Origin:* This geometric curvature is a direct mathematical consequence of the *Law of Diminishing Marginal Rate of Substitution ($M R S_(x y)$)*.
+3. *Higher Indifference Curves Represent Higher Levels of Satisfaction:* By the assumption of *monotonic preferences*, a rational consumer always strictly prefers a bundle with more of at least one good and no less of the other. Higher curves contain bundles strictly superior to those on lower curves.
+4. *Two Indifference Curves Can Never Intersect:* If two curves $I C_1$ and $I C_2$ intersect at point $A$, and point $B$ lies on $I C_1$ while point $C$ lies on $I C_2$:
+   $ A tilde B quad "and" quad A tilde C quad ==> quad B tilde C quad "(by transitivity)" $
+   However, visually point $C$ contains strictly more goods than $B$, making indifference impossible. Hence, intersection violates the fundamental axiom of transitivity!
+
+---
+
+= 5. The Budget Line & Consumer Equilibrium
+
+== The Budget Constraint & Budget Line Equation
+
+A consumer's purchasing choices are bounded by their given money income $M$ and the market prices $P_x$ and $P_y$:
+- *Budget Set (Budget Constraint):* The set of all consumption bundles that the consumer can afford:
+  $ P_x dot x + P_y dot y <= M $
+- *Budget Line (Price Line):* The boundary line representing all combinations of Good X and Good Y that completely exhaust the consumer's total income:
+  $ P_x dot x + P_y dot y = M $
+
+*Intercepts and Slope:*
+- Horizontal ($x$-axis) intercept: $(M / P_x, 0)$ (maximum possible consumption of $X$).
+- Vertical ($y$-axis) intercept: $(0, M / P_y)$ (maximum possible consumption of $Y$).
+- *Slope of the Budget Line:*
+  $ "Slope" = -frac("Vertical Intercept", "Horizontal Intercept") = -frac(M / P_y, M / P_x) = -frac(P_x, P_y) $
+  The absolute slope $P_x / P_y$ represents the *Market Rate of Exchange (MRE)*.
+
+== Shifts and Rotations of the Budget Line
 
 #table(
-  columns: (1.45fr, 1.15fr, 1.65fr),
-  table.header[*What changes*][*Movement or shift?*][*Direction*],
-  [The good's OWN price], [Movement along D], [Price ↓: expansion (slide down); Price ↑: contraction (slide up)],
-  [Income — normal good], [Shift], [Income ↑: curve right; Income ↓: left],
-  [Income — inferior good], [Shift], [Income ↑: curve LEFT — the famous flip],
-  [Price of a substitute], [Shift], [Substitute's price ↑: curve right],
-  [Price of a complement], [Shift], [Complement's price ↑: curve left],
-  [Tastes turn in favour], [Shift], [Curve right],
+  columns: (1.4fr, 1.4fr, 2.2fr),
+  stroke: 0.5pt + om-navy.lighten(70%),
+  fill: (col, row) => if calc.odd(row) { om-blue-soft.lighten(50%) } else { white },
+  table.header[*Economic Event*][*Geometric Movement*][*Impact on Slope ($-P_x / P_y$)*],
+  [*Income ($M$) Increases*], [Parallel Shift Rightward / Outward], [Unchanged (Prices $P_x, P_y$ constant).],
+  [*Income ($M$) Decreases*], [Parallel Shift Leftward / Inward], [Unchanged (Prices $P_x, P_y$ constant).],
+  [*Price of X ($P_x$) Decreases*], [Rotates Outward along $x$-axis], [Flatter slope ($-P_x / P_y$ decreases in magnitude).],
+  [*Price of X ($P_x$) Increases*], [Rotates Inward along $x$-axis], [Steeper slope ($-P_x / P_y$ increases in magnitude).],
+  [*Price of Y ($P_y$) Decreases*], [Rotates Outward along $y$-axis], [Steeper slope (denominator $P_y$ falls).],
+  [*Equal % Change in $M, P_x, P_y$*], [Completely Unchanged!], [Absence of money illusion; budget line invariant.],
 )
 
-- *Vocabulary that carries marks:* "change in QUANTITY demanded" = movement along the curve; "change in DEMAND" = a shift of the whole curve. Read which phrase the question uses before you answer.
-- *Exceptions to the law of demand (boundary cases):* *Giffen goods* — an inferior staple where the income effect swamps the substitution effect, so a price rise raises quantity taken; *prestige goods* — costlier diamonds feel superior; *panic buying* — hoarding during emergencies when prices spike. Rare in real life, permanent in MCQ banks.
+== Consumer Equilibrium in the Ordinal Framework
 
-= Price Elasticity of Demand
+A consumer attains optimal satisfaction at the point where the highest attainable indifference curve is *tangent to the budget line*.
 
-The law of demand tells you the DIRECTION quantity moves. Elasticity answers the sharper question every seller actually cares about: *by how much?* A 10% price cut can triple sales or barely nudge them — and the difference decides whether revenue rises or collapses.
+#formula-box(title: "The Dual Equilibrium Conditions (Hicks-Allen)")[
+  *Condition 1 (Tangency Condition):* The slope of the Indifference Curve must equal the slope of the Budget Line:
+  $ M R S_(x y) = frac(P_x, P_y) quad <==> quad frac(M U_x, M U_y) = frac(P_x, P_y) $
+  *Condition 2 (Convexity Condition):* The Indifference Curve must be strictly *convex to the origin* at the point of tangency (i.e., $M R S_(x y)$ must be diminishing).
+]
 
-- *Definition:* price elasticity of demand measures how RESPONSIVE quantity demanded is to a change in the good's own price, other things equal.
-- *Percentage method:* $e_p = ("% change in quantity demanded") / ("% change in price")$ — always take the absolute value; the minus sign is understood from the law of demand.
+*Disequilibrium Adjustment Mechanisms:*
+- *If $M R S_(x y) > P_x / P_y$:* The consumer's subjective willingness to pay for an additional unit of $X$ exceeds the market price ratio. The consumer consumes more $X$ and less $Y$. Moving downward along the IC, $M R S_(x y)$ diminishes until $M R S_(x y) = P_x / P_y$.
+- *If $M R S_(x y) < P_x / P_y$:* The market price ratio exceeds the consumer's subjective valuation. The consumer reduces consumption of $X$ and buys more $Y$. Moving upward along the IC, $M R S_(x y)$ increases until equality is restored.
+
+---
+
+= 6. Theory of Demand
+
+== Definition & The Demand Function
+
+- *Demand:* The quantity of a commodity that a consumer is willing and able to purchase at a given price during a specific period of time. Mere desire without purchasing power is not demand; demand requires *effective purchasing power*.
+- *Demand Function:* Expresses the functional dependence of quantity demanded on its determinants:
+  $ Q_x = f(P_x, P_r, Y, T, E) $
+  where $P_x$ = own price, $P_r$ = prices of related goods, $Y$ = income, $T$ = tastes and preferences, $E$ = expectations.
+
+== The Law of Demand & Reasons for Downward Slope
+
+#formula-box(title: "The Law of Demand")[
+  Other things remaining equal (*ceteris paribus*), there exists an *inverse relationship* between the own price of a commodity and its quantity demanded:
+  $ P_x arrow.t ==> Q_x arrow.b quad "and" quad P_x arrow.b ==> Q_x arrow.t $
+]
+
+*Why Does the Demand Curve Slope Downward?*
+1. *Law of Diminishing Marginal Utility:* Since marginal utility declines as consumption expands, the consumer will only purchase additional units at a lower price.
+2. *Substitution Effect:* When the price of Good X falls while substitute prices remain unchanged, Good X becomes relatively cheaper, inducing consumers to substitute X for other commodities.
+3. *Income Effect:* A fall in price increases the consumer's *real income (purchasing power)*, enabling them to buy more goods with the same nominal budget.
+4. *New Buyers:* When price falls, consumers who previously could not afford the good now enter the market.
+5. *Multiple Uses:* Commodities with varied applications (e.g., electricity, milk) are allocated to less critical uses when their price declines.
+
+== Movement Along vs Shift of the Demand Curve
 
 #table(
-  columns: (1fr, 1.7fr, 2.1fr),
-  table.header[*Value*][*Name*][*What it looks like*],
-  [$e_p = 0$], [Perfectly inelastic], [Same quantity at every price — a life-saving drug at any price],
-  [$e_p < 1$], [Inelastic], [Quantity responds by a SMALLER percentage than price — necessities],
-  [$e_p = 1$], [Unitary elastic], [Both change by the same percentage; total expenditure stays constant],
-  [$e_p > 1$], [Elastic], [Quantity responds by a LARGER percentage than price — luxuries, many substitutes],
-  [$e_p = infinity$], [Perfectly elastic], [Buyers take anything at one price, nothing at a hair more — the competitive firm's demand (later units)],
+  columns: (1.3fr, 1.8fr, 1.8fr),
+  stroke: 0.5pt + om-navy.lighten(70%),
+  fill: (col, row) => if calc.odd(row) { om-blue-soft.lighten(50%) } else { white },
+  table.header[*Dimension*][*Movement Along Demand Curve*][*Shift of Demand Curve*],
+  [*Terminology*], [*Change in Quantity Demanded*], [*Change in Demand*],
+  [*Causal Factor*], [Change in *OWN PRICE* of commodity ($P_x$).], [Change in *factors other than own price* (Income, $P_r$, Tastes).],
+  [*Price Behavior*], [Own price changes ($P_x$ varies).], [Own price remains strictly *constant* ($P_x$ fixed).],
+  [*Expansion / Increase*], [Downward movement along same curve as $P_x$ falls.], [Entire demand curve shifts *Rightward/Outward*.],
+  [*Contraction / Decrease*], [Upward movement along same curve as $P_x$ rises.], [Entire demand curve shifts *Leftward/Inward*.],
 )
-
-#worked-example("Percentage Method — Full Steps")[
-Price of notebooks falls from ₹20 to ₹16; quantity demanded rises from 50 to 65 pieces. Find $e_p$.
-
-- Step 1 — % change in quantity: $(65 - 50) \/ 50 × 100 = 15 \/ 50 × 100 = 30%$
-- Step 2 — % change in price: $(16 - 20) \/ 20 × 100 = (-4) \/ 20 × 100 = -20%$
-- Step 3 — Take the ratio, absolute value: $e_p = 30% \/ 20% = 1.5$
-- Step 4 — Verdict: $e_p = 1.5 > 1$ — *elastic*. Quantity responded half as much again as the price change.
-]
-
-== The Total Expenditure Method
-
-Marshal's shortcut: no percentages, just multiplication. Watch what the buyer's TOTAL SPEND (price × quantity) does when the price moves — and read elasticity straight off it.
-
-#table(
-  columns: (1.5fr, 1.5fr, 1.6fr),
-  table.header[*When price FALLS*][*Total expenditure (P × Q)*][*Verdict*],
-  [TE stays SAME], [Price effect and quantity effect cancel], [$e_p = 1$ — unitary],
-  [TE RISES], [Quantity outran the price cut], [$e_p > 1$ — elastic],
-  [TE FALLS], [Quantity barely responded], [$e_p < 1$ — inelastic],
-  [When price RISES], [Reverse every arrow], [Same verdicts, mirrored],
-)
-
-#worked-example("Total Expenditure Method — 30 Seconds")[
-Price falls from ₹10 to ₹8; quantity rises from 100 to 120 units.
-
-- TE before: ₹10 × 100 = ₹1,000
-- TE after: ₹8 × 120 = ₹960
-- Price FELL and TE FELL → quantity responded weakly → $e_p < 1$: *inelastic*.
-- *Limits of this method:* it only CLASSIFIES (greater than 1, equal to 1, less than 1). It can never give the exact elasticity VALUE — that is the percentage method's job.
-]
-
-== What Makes Demand Elastic or Inelastic?
-
-- *Nature of the good:* necessities are inelastic (salt, insulin); luxuries are elastic (cruise holidays, designer bags).
-- *Availability of substitutes:* many close substitutes → elastic (Pepsi vs Coke); no substitute → inelastic (insulin again).
-- *Share in the budget:* big-ticket items are elastic (a car); trivial items are inelastic (a matchbox — who checks its price?).
-- *Number of uses:* multi-use goods are elastic (electricity: heating, cooking, charging); single-use goods are inelastic.
-- *Time period:* demand is more elastic over longer horizons — habits adjust and alternatives appear.
-- *Habits and addiction:* tobacco products stay inelastic — users pay whatever it costs.
-- *Postponability:* deferrable purchases are elastic (furniture can wait); urgent ones are inelastic (emergency medicine cannot).
-
-= Key Formulas & Rules: One-Stop Revision
-
-#cheatsheet-box(title: "Consumer Behaviour — Every Rule on One Page")[
-  #table(
-    columns: (1.5fr, 2fr, 1.8fr),
-    table.header[*Rule*][*Statement*][*When to use it*],
-    [Marginal utility], [$"MU"_n = "TU"_n - "TU"_(n - 1)$], [Extra satisfaction from the next unit],
-    [Total utility], [$"TU" = "MU"_1 + "MU"_2 + dots.c$], [Sum of all MUs; peaks where MU = 0],
-    [One-good equilibrium], [$"MU"_x = P_x$ (in money terms)], [Stop rule for a single good],
-    [Two-good equilibrium], [$"MU"_x \/ P_x = "MU"_y \/ P_y = "MU" "of money"$], [Split the budget; equal joy per last rupee],
-    [Budget line], [$P_x X + P_y Y = M$], [The affordable frontier],
-    [Budget line slope], [$P_x \/ P_y$], [Units of Y given up for one X],
-    [Intercepts], [$M \/ P_x$ on X-axis; $M \/ P_y$ on Y-axis], [Corner purchases],
-    [Law of demand], [P ↓ → Q ↑, other things equal], [Direction of quantity response],
-    [Elasticity], [$e_p = "% change in Q" \/ "% change in P"$], [Exact responsiveness, absolute value],
-    [TE method], [P ↓: TE same → $e_p = 1$; TE ↑ → $e_p > 1$; TE ↓ → $e_p < 1$], [Classification without percentages],
-    [Degrees ladder], [0 → less than 1 → 1 → more than 1 → infinity], [Perfectly inelastic → perfectly elastic],
-    [Movement vs shift], [Own price = movement; non-price factors = shift], [Sort every demand change correctly],
-    [Market demand], [Add individual quantities at each price], [Horizontal summation],
-  )
-]
-
-= The 60-Second Self-Test
-
-Cover the answers, say each one aloud, then check. If any answer takes longer than ten seconds, revisit that section.
-
-- *TU is 100 utils at 5 units and the 6th unit's MU is −4 utils.* What is TU at 6 units? → 96 utils — negative MU subtracts from the total.
-- *Ice cream costs 3 times a cold drink.* How many cold drinks per ice cream along the budget line? → slope = $P_x \/ P_y = 3$ — three cold drinks.
-- *Price doubles, quantity demanded halves.* Elasticity? → $e_p = 1$ — unitary, both moved by the same percentage.
-- *Tea's price rises 10% and coffee's demand jumps 18%.* What happened to coffee's curve? → It SHIFTED right — a non-price factor (substitute's price) moved it.
-- *The 4th unit gives MU worth ₹7 while the price is ₹9.* Buy it? → No — ₹7 of joy for ₹9 destroys satisfaction; stop at 3 units.
-- *Income rises 20% and the good is inferior.* Where does the demand curve go? → Shifts LEFT — the famous flip.
-
-= Common Errors & Special Cases
-
-#exception-box(title: "The Traps This Unit Sets — Read Before the Mock")[
-  #table(
-    columns: (1.25fr, 1.35fr, 1.4fr),
-    table.header[*The rule you assume*][*The twist*][*The trap in the question*],
-    [Price fell, so demand "shifted"], [Own price NEVER shifts the curve — it slides you along it], [Movement vs shift vocabulary checks],
-    [Demand = wanting something], [It needs desire + ability + willingness — all three], [The beggar-and-the-car style options],
-    [TU is max when MU is max], [TU peaks exactly when MU = 0; after that MU is negative], [Reading TU/MU tables],
-    [Income rises, demand rises], [Inferior goods flip it; Giffen goods even break the law of demand], [Normal vs inferior sorting],
-    [Elasticity is the slope], [Flat vs steep tells nothing without units; TE method only classifies], [Mixing method outputs],
-    [Keep the minus sign in $e_p$], [Drop it — absolute value; the inverse relation is understood], [$e_p = -1.5$ style options],
-    [Budget line slope uses quantities], [Slope = $P_x \/ P_y$ — a price ratio], [Budget line numericals],
-    ["More income always helps"], [Budget line shifts only if M changes; a price change PIVOTS it], [Income vs price change options],
-    ["Market demand adds prices"], [Add QUANTITIES at each price — prices never add], [Horizontal summation numericals],
-    ["Elasticity covers all changes"], [Only OWN-price changes are elasticity; income and related-goods changes are shifts], [Elasticity vs shift sorting],
-  )
-]
-
-= The Whole Chapter in One Picture
 
 #figure(
-  image("assets/econ_consumer_mindmap.png", width: 100%),
-  caption: [Chapter mindmap: micro and the central problems, the utility engine, equilibrium rules for one and two goods, the budget line, demand behaviour, and elasticity — with the traps that catch most students.],
+  image("assets/econ_demand_elasticity_engine.png", width: 95%),
+  caption: [Figure 2: Demand Theory, Determinants, Movement vs Shift, and the Three Measurement Protocols for Elasticity],
 )
 
-= Practice Questions (Exam Pattern)
+---
 
-Ten questions in the CUET UG style. Attempt all of them — the paper gives $+5$ for each correct answer and $-1$ for every incorrect answer.
+= 7. Price Elasticity of Demand ($e_d$)
 
-#mcq(1, [The central problems of an economy — what, how and for whom to produce — arise directly from:], (
-  [government planning], [scarcity of resources relative to wants], [high population], [modern technology],
-))
+== Definition & Degrees of Elasticity
 
-#mcq(2, [Ria quits a part-time job that paid ₹3,000 a month so she can attend evening coaching classes. The opportunity cost of attending coaching is:], (
-  [the ₹3,000 monthly salary she gave up], [the coaching fee itself], [both the fee and the salary added together], [zero, because education pays back later],
-))
-
-#mcq(3, [Total utility is MAXIMUM at the unit where marginal utility is:], (
-  [maximum], [rising], [zero], [negative],
-))
-
-#mcq(4, [A consumer buying a single good is in equilibrium when the price is ₹6 and the marginal utility of money is 3 utils per rupee. In equilibrium, MU of the good equals:], (
-  [6 utils], [9 utils], [18 utils], [3 utils],
-))
-
-#mcq(5, [The condition for consumer's equilibrium with TWO commodities is:], (
-  [$"MU"_x = "MU"_y$], [$"MU"_x \/ P_y = "MU"_y \/ P_x$], [$"MU"_x \/ P_x = "MU"_y \/ P_y = "MU" "of money"$], [$P_x X = P_y Y$],
-))
-
-#mcq(6, [Income is ₹100, an ice cream costs ₹20 and a cold drink ₹10. To get one more ice cream, the consumer must give up:], (
-  [1 cold drink], [2 cold drinks], [₹10 in cash], [5 cold drinks],
-))
-
-#mcq(7, [A fall in the good's OWN price leads to:], (
-  [a leftward shift of the demand curve], [a rightward shift of the demand curve], [a downward movement along the same demand curve], [an upward movement along the same demand curve],
-))
-
-#mcq(8, [Petrol prices jump sharply. The demand curve for cars — a complementary good — will:], (
-  [shift rightward], [shift leftward], [move along itself], [remain unchanged],
-))
-
-#mcq(9, [The price of a good falls by 20% and its quantity demanded rises by 30%. The price elasticity of demand is:], (
-  [0.67], [1.5], [1], [50],
-))
-
-#mcq(10, [Price falls from ₹10 to ₹8 and the total expenditure falls from ₹1,000 to ₹960. Demand is:], (
-  [elastic], [unitary elastic], [inelastic], [perfectly elastic],
-))
-
-= Detailed Solutions
-
-#solution(1, [Wants are unlimited but resources are limited, so every society must choose what to make, how to make it, and who gets it. Population or technology only change how sharp the problem feels — scarcity creates it.], answer: [B])
-
-#solution(2, [Opportunity cost = the NEXT BEST alternative given up. For quitting the job, that is the ₹3,000 salary. The fee is an out-of-pocket (explicit) cost of coaching, not what she sacrificed by choosing coaching over work.], answer: [A])
-
-#solution(3, [TU rises as long as MU is positive, peaks exactly where MU = 0, and falls once MU turns negative. "Maximum TU" and "maximum MU" are different moments — MU peaks much earlier in the consumption sequence.], answer: [C])
-
-#solution(4, [In money terms the stop rule is MU of the good = price × marginal utility of money: 6 × 3 = 18 utils. Check: 18 utils ÷ 3 utils per rupee = ₹6 = the price — the boundary unit.], answer: [C])
-
-#solution(5, [Equilibrium needs the last rupee on EACH good to give equal satisfaction — and the budget fully spent: MU_x / P_x = MU_y / P_y = MU of money. Option A ignores prices; option D invents a false equality of spending shares.], answer: [C])
-
-#solution(6, [The market's exchange rate is the price ratio: 20 ÷ 10 = 2. One more ice cream always costs two cold drinks along this budget line — that IS the slope.], answer: [B])
-
-#solution(7, [An own-price change never shifts the curve. Price falls → slide DOWN the same curve → quantity demanded rises: expansion of demand. Shifts belong to non-price factors only.], answer: [C])
-
-#solution(8, [A costlier complement makes using a car more expensive overall, so at EVERY car price buyers want fewer cars — the whole curve jumps left. Nothing about the car's own price moved.], answer: [B])
-
-#solution(9, [e_p = % change in Q ÷ % change in P = 30 ÷ 20 = 1.5 (absolute value). Quantity responded more than proportionally — elastic.], answer: [B])
-
-#solution(10, [Price fell and total expenditure ALSO fell, so quantity responded by a smaller percentage than the price did: e_p < 1 — inelastic. If TE had risen it would be elastic; unchanged would mean unitary.], answer: [C])
-
-== Wrong-Answer Clinic — the one-line corrections
-
-Dropped marks above? Find your slip here and rewrite the corrected rule in your own words.
+*Price Elasticity of Demand ($e_d$)* measures the degree of responsiveness or percentage change in the quantity demanded of a commodity resulting from a percentage change in its own price:
 
 #table(
-  columns: (1.05fr, 1.5fr, 1.45fr),
-  table.header[*If you answered...*][*Your slip was...*][*The corrected rule, in one line*],
-  [Q1 option C], [Blaming population], [Scarcity relative to unlimited wants creates the central problems; population only sharpens them],
-  [Q2 option C], [Adding fee to salary], [Opportunity cost counts the single NEXT BEST alternative given up — the salary, not the fee],
-  [Q3 option A], [Confusing peak TU with peak MU], [TU is maximum where MU = 0 — maximum MU happens much earlier],
-  [Q4 option A], [Skipping the utils-per-rupee conversion], [MU of the good = price × MU of money: 6 × 3 = 18 utils],
-  [Q5 option A], [Ignoring the prices], [Equal satisfaction needs MU_x/P_x = MU_y/P_y — raw MU equality ignores what each good costs],
-  [Q6 option C], [Mixing money with goods], [The slope is measured in GOODS: 2 cold drinks per 1 ice cream (20 ÷ 10)],
-  [Q6 option D], [Trading five drinks for one cone], [The slope is P_x/P_y = 20 ÷ 10 = 2 — two drinks per cone, never five],
-  [Q7 option B], [Shifting on an own-price change], [Only non-price factors shift the curve; own price slides you along it],
-  [Q8 option D], [Missing the complement link], [A costlier complement shifts this good's whole curve LEFT at every own price],
-  [Q9 option A], [Dividing upside down], [e_p = % change in Q ÷ % change in P = 30 ÷ 20 — and drop the minus sign],
-  [Q10 option A], [Equating "price fell" with elastic], [Watch total expenditure: it FELL, so quantity responded weakly — inelastic],
+  columns: (1fr, 1.2fr, 2.5fr, 1.5fr),
+  stroke: 0.5pt + om-navy.lighten(70%),
+  fill: (col, row) => if calc.odd(row) { om-blue-soft.lighten(50%) } else { white },
+  table.header[*Value*][*Degree*][*Geometric / Numerical Description*][*Example Goods*],
+  [*$e_d = 0$*], [Perfect Inelastic], [Vertical straight line parallel to price axis ($y$-axis).], [Life-saving insulin, salt.],
+  [*$e_d < 1$*], [Inelastic / Less Elastic], [Steeper demand curve; $\% Delta Q < % Delta P$.], [Staple foods, petrol, electricity.],
+  [*$e_d = 1$*], [Unitary Elastic], [Rectangular Hyperbola ($P times Q = "constant"$).], [Standard non-luxuries.],
+  [*$e_d > 1$*], [Elastic / Highly Elastic], [Flatter demand curve; $\% Delta Q > % Delta P$.], [Air conditioners, designer clothing.],
+  [*$e_d = oo$*], [Perfect Elastic], [Horizontal straight line parallel to quantity axis ($x$-axis).], [Perfect competition market demand.],
 )
 
-#block(width: 100%, inset: (top: 4pt), above: 4pt)[
-  #align(center, text(fill: om-grey, size: 8pt)[© OurMocks · www.ourmocks.com · CUET UG Economics · Introduction, Theory of Consumer Behaviour · 2027 cycle])
+== The Three Methods of Measuring Price Elasticity
+
+=== 1. Percentage / Proportionate Method (Flux Method)
+$ e_d = - frac(% "Change in Quantity Demanded", % "Change in Price") = - frac(Delta Q / Q times 100, Delta P / P times 100) = - frac(Delta Q, Delta P) times frac(P, Q) $
+*(Note: In CUET examinations, elasticity is reported as a positive absolute value $|e_d|$, ignoring the minus sign).*
+
+=== 2. Point (Geometric) Method on a Linear Demand Curve
+For a linear downward-sloping demand curve intersecting both axes:
+$ e_d = frac("Length of Lower Segment", "Length of Upper Segment") $
+
+- At vertical ($y$-axis) intercept: $e_d = "Lower" / 0 = oo$ (Perfect Elastic).
+- At any point above the midpoint: $"Lower" > "Upper" ==> e_d > 1$ (Elastic).
+- Exactly at the midpoint of the demand curve: $"Lower" = "Upper" ==> e_d = 1$ (Unitary).
+- At any point below the midpoint: $"Lower" < "Upper" ==> e_d < 1$ (Inelastic).
+- At horizontal ($x$-axis) intercept: $e_d = 0 / "Upper" = 0$ (Perfect Inelastic).
+
+=== 3. Total Outlay / Expenditure Method (Marshallian Approach)
+Measures elasticity by observing how Total Expenditure ($T E = P times Q$) behaves when price changes:
+
+#formula-box(title: "The Outlay Rule Matrix")[
+  - *Elastic ($e_d > 1$):* Price and Total Outlay move in *OPPOSITE directions* ($P arrow.t ==> T E arrow.b$ or $P arrow.b ==> T E arrow.t$).
+  - *Unitary ($e_d = 1$):* Total Outlay remains *COMPLETELY UNCHANGED* when price rises or falls ($Delta T E = 0$).
+  - *Inelastic ($e_d < 1$):* Price and Total Outlay move in the *SAME direction* ($P arrow.t ==> T E arrow.t$ or $P arrow.b ==> T E arrow.b$).
 ]
+
+#figure(
+  image("assets/econ_consumer_mindmap.png", width: 95%),
+  caption: [Figure 3: Microeconomics Master Synthesis Mindmap covering PPC, Cardinal Utility, Indifference Analysis, and Demand Elasticity],
+)
+
+---
+
+= 8. High-Yield Formula Cheatsheet & Diagnostic Traps
+
+#cheatsheet-box(title: "Master Formula Cheatsheet — Microeconomics & Consumer Theory")[
+  *Production Possibility Frontier (PPF):*
+  - Marginal Rate of Transformation: $"MRT"_(x y) = Delta Y / Delta X$ (increasing slope explains concavity).
+  - Opportunity Cost: Value of the next best alternative foregone.
+
+  *Cardinal Utility (Marshall):*
+  - Marginal Utility: $M U = Delta T U / Delta Q = T U_n - T U_(n-1)$.
+  - Single Good Equilibrium: $M U_x / P_x = M U_m$.
+  - Two Goods Equilibrium: $M U_x / P_x = M U_y / P_y = M U_m$ with $P_x x + P_y y = M$.
+
+  *Ordinal Indifference Analysis (Hicks-Allen):*
+  - Marginal Rate of Substitution: $M R S_(x y) = -Delta Y / Delta X = M U_x / M U_y$.
+  - Budget Line: $P_x x + P_y y = M$; Slope $= -P_x / P_y$ (Market Rate of Exchange).
+  - Consumer Equilibrium: $M R S_(x y) = P_x / P_y$ and IC is strictly convex to the origin.
+
+  *Demand & Elasticity:*
+  - Price Elasticity (% Method): $e_d = - (Delta Q / Delta P) times (P / Q)$.
+  - Geometric Point Method: $e_d = "Lower segment" / "Upper segment"$.
+  - Total Outlay Rules: Opposite direction $==> e_d > 1$; Constant $==> e_d = 1$; Same direction $==> e_d < 1$.
+  - Cross Elasticity: $e_(x y) > 0$ (Substitutes); $e_(x y) < 0$ (Complements).
+  - Income Elasticity: $e_y > 1$ (Luxury); $0 < e_y <= 1$ (Necessity); $e_y < 0$ (Inferior).
+]
+
+#exception-box(title: "The Seven Fatal CUET Exam Traps in Microeconomics")[
+  1. *PPC Concavity vs Shape:* Forgetting that PPC is concave *only because MRT is increasing*. If MRT is constant, PPC is a straight line! If MRT is decreasing, PPC is convex.
+  2. *Movement vs Shift Trigger:* Believing an increase in excise tax or cost of inputs causes a movement along demand. No! Taxes change supply, shifting the supply curve, whereas a change in *consumer's own valuation or related prices* shifts the demand curve.
+  3. *The Giffen Good Distinction:* All Giffen goods are inferior goods, but *NOT all inferior goods are Giffen goods*! A Giffen good is an extreme inferior good where the negative income effect strictly outweighs the positive substitution effect, violating the Law of Demand.
+  4. *Total Outlay Elasticity Fallacy:* Confusing total expenditure with quantity. If price falls and total expenditure rises, students wrongly assume $e_d < 1$. It is *elastic ($e_d > 1$)* because quantity increased by a larger percentage than the price drop!
+  5. *Slope vs Elasticity Confusion:* Slope of linear demand curve is constant ($Delta P / Delta Q$), but price elasticity *continuously varies from $oo$ to $0$* from top to bottom!
+  6. *Convexity Condition Omission:* Stating only $M R S_(x y) = P_x / P_y$ for consumer equilibrium. If the IC is concave at the tangency point, it represents a point of *minimum satisfaction*, not maximum! The second-order convexity condition is mandatory.
+  7. *Substitute Price Inversion:* If price of tea rises, demand for coffee *increases* (shifts rightward). If price of petrol rises, demand for cars *decreases* (shifts leftward).
+]
+
+---
+
+#pagebreak()
+
+#set text(size: 8.5pt)
+#set par(leading: 0.40em, spacing: 0.42em)
+
+= Practice Questions — Part 1 (Q1 to Q5)
+
+#mcq(1, [The Production Possibility Curve (PPC) is strictly concave to the origin because:], (
+  [The Marginal Rate of Transformation (MRT) is continuously decreasing.],
+  [The Marginal Rate of Transformation (MRT) is continuously increasing.],
+  [Resources are equally efficient in the production of all commodities.],
+  [The opportunity cost of producing both commodities remains constant.],
+))
+#solution(1, [The slope of the PPC is measured by the Marginal Rate of Transformation ($"MRT" = Delta Y / Delta X$). As more units of Good X are produced, resources that are increasingly less specialized and less efficient in producing X must be transferred from Good Y. This forces the economy to sacrifice progressively larger amounts of Good Y for each successive unit of Good X. An *increasing MRT* geometrically produces a curve that is strictly concave to the origin.], answer: [B])
+
+#mcq(2, [A consumer consumes only two goods, X and Y. If $M U_x / P_x > M U_y / P_y$, the rational consumer will restore equilibrium by:], (
+  [Buying more of Good Y and less of Good X],
+  [Buying more of Good X and less of Good Y],
+  [Increasing the price of Good X],
+  [Decreasing their total money income],
+))
+#solution(2, [When $M U_x / P_x > M U_y / P_y$, the consumer derives greater marginal satisfaction per rupee spent on Good X than on Good Y. To maximize overall utility, the consumer reallocates budget by purchasing *more of Good X and less of Good Y*. According to the Law of Diminishing Marginal Utility, as consumption of X increases, $M U_x$ declines; as consumption of Y decreases, $M U_y$ rises. This behavioral adjustment continues until $M U_x / P_x = M U_y / P_y$.], answer: [B])
+
+#mcq(3, [Which of the following properties of Indifference Curves (ICs) is direct mathematical evidence of the Law of Diminishing Marginal Rate of Substitution (MRS)?], (
+  [Indifference curves slope downwards from left to right.],
+  [Higher indifference curves represent higher levels of utility.],
+  [Indifference curves are strictly convex to the origin.],
+  [Two indifference curves never intersect each other.],
+))
+#solution(3, [The slope of an indifference curve is the Marginal Rate of Substitution ($M R S_(x y) = -Delta Y / Delta X$). The Law of Diminishing MRS states that as a consumer acquires more of Good X, their willingness to sacrifice Good Y declines continuously. When the slope of a downward-sloping curve becomes progressively flatter as we move from left to right, the resulting geometric curve is *strictly convex to the origin*.], answer: [C])
+
+#mcq(4, [If the price of Good X falls from ₹10 to ₹8 per unit, and as a result, total expenditure incurred by a consumer on Good X rises from ₹500 to ₹600, the price elasticity of demand ($e_d$) is:], (
+  [Less than 1 (Inelastic)],
+  [Equal to 1 (Unitary)],
+  [Greater than 1 (Elastic)],
+  [Equal to zero (Perfect Inelastic)],
+))
+#solution(4, [According to Marshall's Total Outlay (Expenditure) Method:
+- Initial state: Price $P_1 = ₹10$, Total Outlay $T E_1 = ₹500$.
+- Final state: Price $P_2 = ₹8$ (Price has fallen), Total Outlay $T E_2 = ₹600$ (Total expenditure has risen).
+When price and total expenditure move in *opposite directions* (Price falls while Total Outlay rises), the percentage change in quantity demanded exceeds the percentage change in price. Therefore, the demand is *elastic ($e_d > 1$)*.], answer: [C])
+
+#mcq(5, [If two commodities X and Y are perfect complements (such as left shoes and right shoes), the shape of the indifference curve is:], (
+  [A downward-sloping straight line],
+  [An L-shaped (right-angled) curve],
+  [A rectangular hyperbola],
+  [A circular arc concave to the origin],
+))
+#solution(5, [Complementary goods must be consumed together in fixed proportions. Having more of left shoes without extra right shoes yields zero additional utility. The consumer can neither substitute left shoes for right shoes nor vice versa ($M R S$ is infinite along the vertical arm and zero along the horizontal arm). This creates an *L-shaped (right-angled)* indifference curve with the corner point representing the fixed consumption ratio.], answer: [B])
+
+#pagebreak()
+
+= Practice Questions — Part 2 (Q6 to Q10)
+
+#mcq(6, [The slope of a linear budget line is defined mathematically by:], (
+  [$- P_y / P_x$],
+  [$- P_x / P_y$],
+  [$- M U_x / M U_y$],
+  [$- M / P_x$],
+))
+#solution(6, [The equation of the budget line is $P_x x + P_y y = M$. Expressing $y$ as a function of $x$:
+$ P_y y = M - P_x x ==> y = frac(M, P_y) - (frac(P_x, P_y)) x $
+In linear form $y = m x + c$, the slope $m$ is strictly given by *$- P_x / P_y$*. The absolute value $P_x / P_y$ represents the Market Rate of Exchange (MRE) between the two goods.], answer: [B])
+
+#mcq(7, [When the price of commodity X rises by $10%$, the demand for commodity Y decreases by $15%$. What is the relationship between commodities X and Y?], (
+  [They are substitute goods.],
+  [They are complementary goods.],
+  [They are inferior goods.],
+  [They are completely unrelated goods.],
+))
+#solution(7, [Cross elasticity of demand is given by:
+$ e_(x y) = frac(% Delta Q_y, % Delta P_x) = frac(-15%, +10%) = -1.5 $
+A *negative cross elasticity of demand* indicates that an increase in the price of one good causes a decline in the demand for the other good (inverse relationship). This is the hallmark of *complementary goods* (e.g., cars and petrol, tea and sugar).], answer: [B])
+
+#mcq(8, [At the midpoint of a linear downward-sloping demand curve that touches both coordinate axes, the price elasticity of demand ($e_d$) is:], (
+  [$0$],
+  [$0.5$],
+  [$1$],
+  [$oo$],
+))
+#solution(8, [By the Point (Geometric) Method, price elasticity on a linear demand curve is given by:
+$ e_d = frac("Length of Lower Segment", "Length of Upper Segment") $
+At the exact midpoint of the demand curve, the lower segment is equal in length to the upper segment ($"Lower" = "Upper"$).
+Therefore:
+$ e_d = frac("Lower Segment", "Upper Segment") = 1. $
+Thus, demand is strictly *unitary elastic* at the midpoint.], answer: [C])
+
+#mcq(9, [If a consumer's money income increases by $20%$ while the prices of both Good X and Good Y also increase simultaneously by $20%$, the budget line will:], (
+  [Shift parallel to the right],
+  [Shift parallel to the left],
+  [Remain completely unchanged in position],
+  [Rotate outward along the x-axis],
+))
+#solution(9, [Let initial budget line be $P_x x + P_y y = M$.
+When income and all prices increase by $20%$, the new parameters are $M' = 1.2M$, $P_x' = 1.2P_x$, and $P_y' = 1.2P_y$.
+The new budget equation is:
+$ (1.2 P_x) x + (1.2 P_y) y = 1.2 M $
+Dividing the entire equation by $1.2$ yields:
+$ P_x x + P_y y = M $
+Since the equation is mathematically identical, the budget line *remains completely unchanged*. (This reflects the absence of "money illusion").], answer: [C])
+
+#mcq(10, [An economic situation where a consumer's Total Utility (TU) is at its maximum corresponds to Marginal Utility (MU) being:], (
+  [Positive and rising],
+  [Strictly equal to zero],
+  [Negative],
+  [Equal to average utility],
+))
+#solution(10, [Marginal Utility is the mathematical first derivative of Total Utility with respect to quantity ($M U = d(T U) / d Q$).
+By calculus, a continuous function achieves its local maximum when its first derivative equals zero ($d(T U) / d Q = 0$).
+Therefore, when $T U$ reaches its peak (*Point of Satiety*), $M U$ is *strictly equal to zero*. Any consumption beyond this point results in negative $M U$ and falling $T U$.], answer: [B])
+
+#pagebreak()
+
+#set text(size: 8.5pt)
+#set par(leading: 0.40em, spacing: 0.42em)
+
+= Practice Questions — Part 3 (Q11 to Q15)
+
+#mcq(11, [A consumer buys 40 units of a good at a price of ₹4 per unit. When the price rises to ₹5 per unit, quantity demanded falls to 30 units. The price elasticity of demand using the percentage method is:], (
+  [$0.75$],
+  [$1.00$],
+  [$1.25$],
+  [$1.50$],
+))
+#solution(11, [Given: $P = 4$, $Q = 40$; New price $P_1 = 5$, New quantity $Q_1 = 30$.
+$ Delta P = 5 - 4 = 1 $
+$ Delta Q = 30 - 40 = -10 $
+Using the percentage elasticity formula:
+$ e_d = - frac(Delta Q, Delta P) times frac(P, Q) = - (frac(-10, 1)) times (frac(4, 40)) = 10 times frac(1, 10) = 1.00. $
+The price elasticity of demand is strictly *unitary ($1.00$)*.], answer: [B])
+
+#mcq(12, [Which of the following will cause a RIGHTWARD SHIFT in the demand curve for a normal good X?], (
+  [A fall in the price of Good X],
+  [A rise in the price of a complementary good Y],
+  [A rise in consumer's money income],
+  [An increase in the rate of sales tax on Good X],
+))
+#solution(12, [A change in the own price of Good X produces a movement along the demand curve, not a shift (eliminating A). A rise in the price of a complement reduces demand for X (shifts leftward, eliminating B). For a *normal good*, an increase in consumer's income increases purchasing power and willingness to buy at every price level, shifting the demand curve *parallel to the right* (Option C).], answer: [C])
+
+#mcq(13, [If the Marginal Rate of Substitution of Good X for Good Y is 3 ($M R S_(x y) = 3$), while the price ratio $P_x / P_y = 2$, how should a rational consumer adjust consumption in an ordinal framework?], (
+  [Increase consumption of Good Y and decrease consumption of Good X],
+  [Increase consumption of Good X and decrease consumption of Good Y],
+  [Maintain the existing consumption bundle as it is optimal],
+  [Stop consuming Good Y entirely],
+))
+#solution(13, [Here $M R S_(x y) = 3$ and $P_x / P_y = 2$.
+Since $M R S_(x y) > P_x / P_y$, the consumer's subjective valuation of Good X (willingness to sacrifice 3 units of Y for 1 unit of X) is greater than the market valuation (which requires sacrificing only 2 units of Y for 1 unit of X).
+The consumer gains net utility by purchasing *more of Good X and less of Good Y*. As consumption of X expands, $M R S_(x y)$ diminishes until it equalizes with the market price ratio 2.], answer: [B])
+
+#mcq(14, [A demand curve modeled by the mathematical equation $P dot Q = 100$ represents a:], (
+  [Perfect inelastic demand curve ($e_d = 0$)],
+  [Linear downward-sloping curve with variable elasticity],
+  [Rectangular hyperbola with unitary elasticity everywhere ($e_d = 1$)],
+  [Horizontal demand curve with infinite elasticity ($e_d = oo$)],
+))
+#solution(14, [The equation $P dot Q = 100$ implies that Total Expenditure ($T E = P dot Q$) is strictly constant at ₹100 across all price levels.
+According to Marshall's Total Outlay Method, when total expenditure remains completely unchanged despite changes in price, the price elasticity of demand is *strictly unitary ($e_d = 1$)* at every point. Geometrically, the locus $x y = c$ is a *rectangular hyperbola*.], answer: [C])
+
+#mcq(15, [An economy experiences a severe earthquake that destroys substantial physical capital, factories, and infrastructure. The immediate impact on the economy's Production Possibility Curve (PPC) is:], (
+  [A movement from a point on the PPC to a point inside the PPC],
+  [A parallel shift of the PPC to the left (inward)],
+  [A parallel shift of the PPC to the right (outward)],
+  [A rotation of the PPC along the horizontal axis only],
+))
+#solution(15, [A natural disaster or war that physically destroys factories, roads, and machinery reduces the total productive capacity and resource endowment of the nation. When the maximum potential output of both commodities contracts simultaneously, the Production Possibility Curve undergoes an *inward shift to the left* (Option B). (By contrast, mere underutilization without physical destruction would be a point inside the unchanged PPC).], answer: [B])

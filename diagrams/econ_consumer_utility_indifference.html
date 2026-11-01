@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Consumer Equilibrium: Cardinal Utility vs Ordinal Indifference Curve Analysis</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px 28px;
+    overflow: hidden;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 12px;
+    margin-bottom: 16px;
+  }
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .brand-badge {
+    background: #071A4D;
+    color: #B8FF34;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .title-group h1 {
+    font-size: 22px;
+    font-weight: 800;
+    color: #071A4D;
+    letter-spacing: -0.02em;
+  }
+  .title-group p {
+    font-size: 12px;
+    color: #64748B;
+    margin-top: 2px;
+  }
+  .header-meta {
+    display: flex;
+    gap: 8px;
+  }
+  .pill {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 999px;
+    border: 1px solid #CBD5E1;
+    background: #FFFFFF;
+    color: #334155;
+  }
+  .pill.highlight {
+    background: #EEF2FF;
+    border-color: #C7D2FE;
+    color: #1F5EFF;
+  }
+
+  /* 3-Column Architecture */
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1.05fr 1.15fr;
+    gap: 16px;
+    margin-bottom: 14px;
+  }
+
+  .col-card {
+    background: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    border-radius: 10px;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .tag {
+    font-size: 10.5px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #1F5EFF;
+  }
+  .card-h2 {
+    font-size: 15px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+
+  .formula-card {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-left: 3.5px solid #1F5EFF;
+    border-radius: 4px 6px 6px 4px;
+    padding: 8px 10px;
+  }
+  .formula-card.green { border-left-color: #10B981; }
+  .formula-card.amber { border-left-color: #F59E0B; }
+  .formula-card.red { border-left-color: #EF4444; }
+
+  .formula-title {
+    font-size: 12px;
+    font-weight: 800;
+    color: #0F172A;
+    display: flex;
+    justify-content: space-between;
+  }
+  .formula-math {
+    font-family: "Courier New", monospace;
+    font-size: 11.5px;
+    font-weight: 700;
+    color: #1F5EFF;
+    background: #EEF2FF;
+    padding: 3px 6px;
+    border-radius: 4px;
+    margin: 4px 0;
+    display: inline-block;
+  }
+  .formula-desc {
+    font-size: 11px;
+    color: #475569;
+    line-height: 1.35;
+  }
+  .formula-desc b { color: #071A4D; }
+
+  /* Bottom Warning Matrix */
+  .bottom-strip {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+  }
+  .strip-box {
+    background: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    border-radius: 8px;
+    padding: 10px 12px;
+  }
+  .strip-title {
+    font-size: 11.5px;
+    font-weight: 800;
+    color: #071A4D;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 3px;
+  }
+  .strip-title .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+  }
+  .dot.blue { background: #1F5EFF; }
+  .dot.green { background: #10B981; }
+  .dot.red { background: #EF4444; }
+  .strip-text {
+    font-size: 11px;
+    color: #475569;
+    line-height: 1.35;
+  }
+  .strip-text b { color: #0F172A; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <div class="brand-badge">OurMocks Core System</div>
+    <div class="title-group">
+      <h1>Consumer Equilibrium — Cardinal Utility & Ordinal Indifference Analysis</h1>
+      <p>NTA CUET UG Microeconomics Unit 1 & 2 · Cardinal Utility (Marshall), Equi-Marginal Rule, Indifference Curves & Tangency Equilibrium</p>
+    </div>
+  </div>
+  <div class="header-meta">
+    <span class="pill highlight">Microeconomics Core</span>
+    <span class="pill">Marshall vs Hicks-Allen</span>
+    <span class="pill">MRS = Px / Py</span>
+  </div>
+</div>
+
+<div class="grid-container">
+  <!-- Col 1: Cardinal Utility (Marshallian Approach) -->
+  <div class="col-card">
+    <div>
+      <div class="tag">Cardinal Approach</div>
+      <div class="card-h2">1. Marshallian Utility Analysis</div>
+    </div>
+
+    <div class="formula-card">
+      <div class="formula-title">
+        <span>Law of Diminishing Marginal Utility</span>
+      </div>
+      <div class="formula-math">MU = ΔTU / ΔQ  (MU falls as Q rises)</div>
+      <div class="formula-desc">
+        As more standard units of a commodity are consumed continuously, the marginal utility derived from each successive unit decreases.
+      </div>
+    </div>
+
+    <div class="formula-card green">
+      <div class="formula-title">
+        <span>Single Commodity Equilibrium</span>
+      </div>
+      <div class="formula-math">MUₓ / Pₓ = MUₘ  (or  MUₓ = Pₓ)</div>
+      <div class="formula-desc">
+        Consumer maximizes satisfaction when marginal utility per rupee spent on commodity $X$ equals marginal utility of money ($MU_m$).
+      </div>
+    </div>
+
+    <div class="formula-card amber">
+      <div class="formula-title">
+        <span>Two Commodity Equilibrium</span>
+      </div>
+      <div class="formula-math">MUₓ / Pₓ = MUᵧ / Pᵧ = MUₘ</div>
+      <div class="formula-desc">
+        • If $MU_x / P_x > MU_y / P_y \implies$ Consumer buys more $X$ and less $Y$. By LDUM, $MU_x$ falls and $MU_y$ rises until equality is restored.<br>
+        • If $MU_x / P_x < MU_y / P_y \implies$ Buys more $Y$ until equalized.
+      </div>
+    </div>
+  </div>
+
+  <!-- Col 2: Ordinal Utility (Hicks-Allen Indifference Curve) -->
+  <div class="col-card">
+    <div>
+      <div class="tag">Ordinal Approach</div>
+      <div class="card-h2">2. Indifference Curve (IC) Analysis</div>
+    </div>
+
+    <div class="formula-card">
+      <div class="formula-title">
+        <span>Marginal Rate of Substitution (MRS)</span>
+      </div>
+      <div class="formula-math">MRSₓᵧ = -Δy / Δx = MUₓ / MUᵧ</div>
+      <div class="formula-desc">
+        Rate at which a consumer is willing to sacrifice units of $Y$ to obtain one additional unit of $X$, keeping total utility constant.
+      </div>
+    </div>
+
+    <div class="formula-card green">
+      <div class="formula-title">
+        <span>The 4 Golden Properties of IC</span>
+      </div>
+      <div class="formula-desc">
+        1. <b>Downward Sloping:</b> Due to monotonic preferences (more of one good requires less of the other).<br>
+        2. <b>Convex to Origin:</b> Strictly caused by the <b>Law of Diminishing MRS</b>.<br>
+        3. <b>Higher IC = Higher Utility:</b> Monotonic preference (greater bundle preferred).<br>
+        4. <b>ICs Never Intersect:</b> Transitivity axiom prevents intersection.
+      </div>
+    </div>
+
+    <div class="formula-card red">
+      <div class="formula-title">
+        <span>Monotonic Preferences</span>
+      </div>
+      <div class="formula-desc">
+        A consumer always strictly prefers a bundle that contains <b>more of at least one good</b> and no less of the other good (e.g., $(3, 5)$ preferred over $(2, 5)$).
+      </div>
+    </div>
+  </div>
+
+  <!-- Col 3: Budget Line & Consumer Equilibrium -->
+  <div class="col-card">
+    <div>
+      <div class="tag">Optimization</div>
+      <div class="card-h2">3. Budget Line & Tangency Equilibrium</div>
+    </div>
+
+    <div class="formula-card">
+      <div class="formula-title">
+        <span>Budget Equation & Slope</span>
+      </div>
+      <div class="formula-math">Pₓ·x + Pᵧ·y = M  |  Slope = -Pₓ / Pᵧ</div>
+      <div class="formula-desc">
+        Locus of all combinations of goods $X$ and $Y$ that exhaust total money income $M$. Slope represents <b>Market Rate of Exchange (MRE)</b>.
+      </div>
+    </div>
+
+    <div class="formula-card green">
+      <div class="formula-title">
+        <span>Dual Conditions of Consumer Equilibrium</span>
+      </div>
+      <div class="formula-desc">
+        <b>Condition 1 (Tangency):</b> Slope of IC = Slope of Budget Line:<br>
+        <span class="formula-math">MRSₓᵧ = Pₓ / Pᵧ</span><br>
+        <b>Condition 2 (Convexity):</b> The IC must be strictly convex to the origin at the tangency point (MRS must be diminishing).
+      </div>
+    </div>
+
+    <div class="formula-card amber">
+      <div class="formula-title">
+        <span>Budget Line Dynamics</span>
+      </div>
+      <div class="formula-desc">
+        • <b>Income Shift:</b> Parallel shift outward (Income rises) or inward (falls).<br>
+        • <b>Price Pivot:</b> Change in $P_x$ rotates line along $x$-axis; change in $P_y$ rotates along $y$-axis.
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bottom-strip">
+  <div class="strip-box">
+    <div class="strip-title"><span class="dot red"></span> Disequilibrium Restoration in Ordinal Theory</div>
+    <div class="strip-text">
+      • If <b>$MRS_{xy} > P_x / P_y$</b>: Consumer values $X$ higher than market price $\implies$ Consumes more $X \implies MRS_{xy}$ falls until $MRS_{xy} = P_x / P_y$.<br>
+      • If <b>$MRS_{xy} < P_x / P_y$</b>: Consumes less $X$, more $Y \implies MRS_{xy}$ rises to equilibrium.
+    </div>
+  </div>
+
+  <div class="strip-box">
+    <div class="strip-title"><span class="dot blue"></span> Cardinal vs Ordinal Utility Assumptions</div>
+    <div class="strip-text">
+      • <b>Cardinal (Marshall):</b> Utility measurable in absolute numbers (*utils*); $MU$ of money is assumed constant.<br>
+      • <b>Ordinal (Hicks-Allen):</b> Utility can only be ranked/ordered; avoids unrealistic assumption of constant $MU$ of money.
+    </div>
+  </div>
+
+  <div class="strip-box">
+    <div class="strip-title"><span class="dot green"></span> Boundary & Extreme IC Shapes</div>
+    <div class="strip-text">
+      • <b>Perfect Substitutes:</b> Linear straight-line IC ($MRS$ constant) $\implies$ Corner solution.<br>
+      • <b>Perfect Complements:</b> L-shaped (Right-angled) IC ($MRS$ is $0$ or $\infty$) $\implies$ Equi-proportional consumption (e.g., left and right shoes).
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
