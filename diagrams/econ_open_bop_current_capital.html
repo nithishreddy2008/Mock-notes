@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Balance of Payments Architecture: Current & Capital Accounts</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #071A4D;
+    padding: 16px 24px;
+    border-radius: 8px;
+    color: #FFFFFF;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+  .header h1 span {
+    color: #B8FF34;
+  }
+  .header-badge {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #B8FF34;
+  }
+
+  .main-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 1.15fr 1.1fr;
+    gap: 16px;
+    height: 640px;
+  }
+  .col-card {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #F1F5F9;
+  }
+  .card-title {
+    font-size: 15px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .badge {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+  .badge-cur { background: #E0EAFF; color: #1F5EFF; }
+  .badge-cap { background: #DCFCE7; color: #15803D; }
+  .badge-aut { background: #FEF3C7; color: #B45309; }
+
+  .sub-card {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    padding: 10px 12px;
+  }
+  .sub-title {
+    font-size: 12.5px;
+    font-weight: 800;
+    color: #071A4D;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+  .sub-desc {
+    font-size: 11.5px;
+    color: #475569;
+    line-height: 1.45;
+  }
+  .sub-items {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+  .item-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    background: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    padding: 4px 8px;
+    border-radius: 4px;
+  }
+  .item-name { font-weight: 600; color: #1E293B; }
+  .item-sign { font-weight: 700; color: #0284C7; }
+
+  .highlight-box {
+    background: #EFF6FF;
+    border-left: 3px solid #1F5EFF;
+    padding: 8px 10px;
+    border-radius: 4px;
+    font-size: 11.5px;
+    line-height: 1.4;
+    color: #1E3A8A;
+  }
+  .highlight-green {
+    background: #F0FDF4;
+    border-left: 3px solid #16A34A;
+    padding: 8px 10px;
+    border-radius: 4px;
+    font-size: 11.5px;
+    line-height: 1.4;
+    color: #14532D;
+  }
+  .highlight-amber {
+    background: #FFFBEB;
+    border-left: 3px solid #D97706;
+    padding: 8px 10px;
+    border-radius: 4px;
+    font-size: 11.5px;
+    line-height: 1.4;
+    color: #78350F;
+  }
+
+  .footer-bar {
+    background: #071A4D;
+    padding: 12px 24px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12.5px;
+    color: #E2E8F0;
+  }
+  .footer-bar strong {
+    color: #B8FF34;
+  }
+  .footer-formula {
+    background: rgba(255, 255, 255, 0.12);
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 13px;
+    color: #FFFFFF;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div>
+    <h1>Balance of Payments (BoP) Architecture: <span>Current & Capital Accounts</span></h1>
+    <p style="font-size: 12.5px; color: #94A3B8; margin-top: 3px;">Comprehensive accounting of economic transactions between domestic residents and the rest of the world (Credit = Inflow / +, Debit = Outflow / -)</p>
+  </div>
+  <div class="header-badge">NCERT CLASS 12 · CUET UG 2027</div>
+</div>
+
+<div class="main-grid">
+  <!-- COLUMN 1: CURRENT ACCOUNT -->
+  <div class="col-card">
+    <div class="card-header">
+      <div class="card-title">1. Current Account (Flow of Goods & Services)</div>
+      <span class="badge badge-cur">No Asset/Liability Impact</span>
+    </div>
+
+    <div class="sub-card">
+      <div class="sub-title">
+        <span>A. Visible Trade (Merchandise)</span>
+        <span style="font-size: 10.5px; color: #64748B;">Balance of Trade (BoT)</span>
+      </div>
+      <div class="sub-desc">Physical goods cross customs frontier: exports of tea, software hardware, oil imports.</div>
+      <div class="sub-items">
+        <div class="item-row"><span class="item-name">Merchandise Exports (Inflow of Forex)</span><span class="item-sign">Credit (+)</span></div>
+        <div class="item-row"><span class="item-name">Merchandise Imports (Outflow of Forex)</span><span class="item-sign" style="color: #DC2626;">Debit (-)</span></div>
+      </div>
+    </div>
+
+    <div class="sub-card">
+      <div class="sub-title">
+        <span>B. Invisible Trade (Services & Factors)</span>
+        <span style="font-size: 10.5px; color: #64748B;">Net Invisibles</span>
+      </div>
+      <div class="sub-items">
+        <div class="item-row"><span class="item-name">1. Non-Factor Services (IT, BPO, shipping, tourism)</span><span class="item-sign">Credit / Debit</span></div>
+        <div class="item-row"><span class="item-name">2. Factor Income (Profits, dividends, interest)</span><span class="item-sign">Credit / Debit</span></div>
+        <div class="item-row"><span class="item-name">3. Unilateral Transfers (Gifts, NRI remittances, grants)</span><span class="item-sign">Credit / Debit</span></div>
+      </div>
+    </div>
+
+    <div class="highlight-box">
+      <strong>Core Diagnostic Distinction:</strong><br>
+      • <strong>Balance of Trade (BoT)</strong> = Merchandise Exports - Merchandise Imports (Visibles Only).<br>
+      • <strong>Current Account Balance (CAB)</strong> = BoT + Net Invisibles (Visibles + Invisibles). A BoT deficit can be cushioned by a surplus in services and remittances.
+    </div>
+  </div>
+
+  <!-- COLUMN 2: CAPITAL ACCOUNT -->
+  <div class="col-card">
+    <div class="card-header">
+      <div class="card-title">2. Capital Account (Assets & Liabilities)</div>
+      <span class="badge badge-cap">Changes Sovereign Ownership</span>
+    </div>
+
+    <div class="sub-card">
+      <div class="sub-title">
+        <span>A. Foreign Investments</span>
+        <span style="font-size: 10.5px; color: #16A34A;">Productive / Financial</span>
+      </div>
+      <div class="sub-items">
+        <div class="item-row"><span class="item-name">Foreign Direct Investment (FDI - Control/Factories)</span><span class="item-sign">Credit (+)</span></div>
+        <div class="item-row"><span class="item-name">Foreign Portfolio Investment (FPI / FII - Shares/Bonds)</span><span class="item-sign">Credit (+)</span></div>
+        <div class="item-row"><span class="item-name">Domestic Investment Abroad (Indian firms buying assets)</span><span class="item-sign" style="color: #DC2626;">Debit (-)</span></div>
+      </div>
+    </div>
+
+    <div class="sub-card">
+      <div class="sub-title">
+        <span>B. External Borrowings & Lending</span>
+        <span style="font-size: 10.5px; color: #16A34A;">Debt Inflows/Outflows</span>
+      </div>
+      <div class="sub-items">
+        <div class="item-row"><span class="item-name">Commercial Borrowings (ECBs at market rates)</span><span class="item-sign">Credit (+)</span></div>
+        <div class="item-row"><span class="item-name">External Assistance (Concessional soft loans: World Bank)</span><span class="item-sign">Credit (+)</span></div>
+        <div class="item-row"><span class="item-name">Repayment of Foreign Loans (Principal debt repayment)</span><span class="item-sign" style="color: #DC2626;">Debit (-)</span></div>
+      </div>
+    </div>
+
+    <div class="sub-card">
+      <div class="sub-title">
+        <span>C. Banking Capital & NRI Deposits</span>
+        <span style="font-size: 10.5px; color: #16A34A;">Liabilities to Foreigners</span>
+      </div>
+      <div class="sub-desc">Foreign currency non-resident bank balances and commercial banks' external holdings.</div>
+    </div>
+
+    <div class="highlight-green">
+      <strong>Capital Account Impact:</strong> Records all transactions that cause a change in the assets or liabilities of domestic residents or the government vis-a-vis the rest of the world.
+    </div>
+  </div>
+
+  <!-- COLUMN 3: AUTONOMOUS VS ACCOMMODATING & RESERVES -->
+  <div class="col-card">
+    <div class="card-header">
+      <div class="card-title">3. Autonomous vs Accommodating & BoP Deficit</div>
+      <span class="badge badge-aut">Settlement Mechanics</span>
+    </div>
+
+    <div class="sub-card">
+      <div class="sub-title">
+        <span>Autonomous Transactions ("Above the Line")</span>
+        <span style="font-size: 10px; background: #FEF3C7; color: #B45309; padding: 2px 6px; border-radius: 3px;">Independent</span>
+      </div>
+      <div class="sub-desc">
+        undertaken strictly for independent economic considerations (e.g. commercial profits, trade in goods, individual investment). Cause the BoP deficit or surplus.
+      </div>
+    </div>
+
+    <div class="sub-card">
+      <div class="sub-title">
+        <span>Accommodating Transactions ("Below the Line")</span>
+        <span style="font-size: 10px; background: #DBEAFE; color: #1E40AF; padding: 2px 6px; border-radius: 3px;">Compensatory</span>
+      </div>
+      <div class="sub-desc">
+        Undertaken by the Central Bank (RBI) specifically to bridge the autonomous gap and restore balance to zero. Includes Official Reserve Transactions (ORT).
+      </div>
+    </div>
+
+    <div class="highlight-amber">
+      <strong>BoP Deficit / Surplus Determination:</strong><br>
+      • <strong>BoP Deficit:</strong> Autonomous Receipts < Autonomous Payments.<br>
+      • Financed by Central Bank selling foreign exchange reserves (Decrease in Forex Reserves = Credit in ORT).<br>
+      • <strong>BoP Surplus:</strong> Autonomous Receipts > Autonomous Payments (Forex Reserves increase).
+    </div>
+
+    <div class="sub-card" style="background: #F1F5F9; border-left: 3px solid #071A4D;">
+      <div style="font-size: 11px; font-weight: 700; color: #071A4D;">Accounting BoP vs Operational BoP:</div>
+      <div style="font-size: 11px; color: #475569; margin-top: 3px;">
+        Accounting BoP <strong>always balances</strong> (Total Credits = Total Debits). Operational BoP deficit refers strictly to an <strong>autonomous net deficit</strong>.
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer-bar">
+  <div><strong>CUET Golden Rule:</strong> An autonomous deficit forces official reserve drawdowns: <span style="color: #38BDF8;">Decrease in Central Bank Reserves = Credit (+)</span> in BoP.</div>
+  <div class="footer-formula">BoP Identity: Current Account + Capital Account + Errors & Omissions = 0</div>
+</div>
+
+</body>
+</html>

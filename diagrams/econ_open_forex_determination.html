@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Foreign Exchange Rate Determination & Systems</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #071A4D;
+    padding: 16px 24px;
+    border-radius: 8px;
+    color: #FFFFFF;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+  .header h1 span {
+    color: #B8FF34;
+  }
+  .header-badge {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #B8FF34;
+  }
+
+  .main-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.15fr 1.15fr;
+    gap: 16px;
+    height: 640px;
+  }
+  .panel-card {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #F1F5F9;
+  }
+  .card-title {
+    font-size: 15px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .badge {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+  .badge-forces { background: #FEF3C7; color: #B45309; }
+  .badge-equil { background: #E0EAFF; color: #1F5EFF; }
+  .badge-regimes { background: #DCFCE7; color: #15803D; }
+
+  .sub-card {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    padding: 10px 12px;
+  }
+  .sub-title {
+    font-size: 12.5px;
+    font-weight: 800;
+    color: #071A4D;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4px;
+  }
+  .sub-desc {
+    font-size: 11.5px;
+    color: #475569;
+    line-height: 1.45;
+  }
+  .point-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    font-size: 11px;
+    color: #334155;
+    margin-top: 4px;
+  }
+  .point-bullet {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    margin-top: 5px;
+    flex-shrink: 0;
+  }
+  .bullet-blue { background: #1F5EFF; }
+  .bullet-green { background: #16A34A; }
+  .bullet-amber { background: #D97706; }
+  .bullet-purple { background: #7C3AED; }
+
+  .comparison-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 4px;
+  }
+  .comp-cell {
+    background: #F8FAFC;
+    border: 1px solid #CBD5E1;
+    border-radius: 6px;
+    padding: 8px 10px;
+    font-size: 11px;
+  }
+  .comp-head { font-weight: 800; font-size: 11.5px; margin-bottom: 4px; }
+
+  .highlight-banner {
+    background: #EFF6FF;
+    border-left: 3px solid #1F5EFF;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 11.5px;
+    line-height: 1.4;
+    color: #1E3A8A;
+  }
+
+  .footer-bar {
+    background: #071A4D;
+    padding: 12px 24px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12.5px;
+    color: #E2E8F0;
+  }
+  .footer-bar strong {
+    color: #B8FF34;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div>
+    <h1>Foreign Exchange Rate Determination <span>& Exchange Regimes</span></h1>
+    <p style="font-size: 12.5px; color: #94A3B8; margin-top: 3px;">Market Equilibrium, Currency Valuation Mechanics, and Fixed vs Flexible vs Managed Floating Systems</p>
+  </div>
+  <div class="header-badge">NCERT CLASS 12 · MACROECONOMICS</div>
+</div>
+
+<div class="main-grid">
+  <!-- COLUMN 1: DEMAND & SUPPLY OF FOREX -->
+  <div class="panel-card">
+    <div class="card-header">
+      <div class="card-title">1. Market Forces: Demand & Supply</div>
+      <span class="badge badge-forces">Price of Forex (₹/$)</span>
+    </div>
+
+    <div class="sub-card">
+      <div class="sub-title">
+        <span>Demand for Forex ($)</span>
+        <span style="font-size: 10px; color: #DC2626; font-weight: 800;">Downward Sloping Curve</span>
+      </div>
+      <div class="sub-desc">Demand rises when exchange rate falls (foreign goods become cheaper for Indians).</div>
+      <div class="point-item"><div class="point-bullet bullet-blue"></div><div><strong>Imports of Goods & Services:</strong> Buying machinery, crude oil, software licenses from abroad.</div></div>
+      <div class="point-item"><div class="point-bullet bullet-blue"></div><div><strong>Tourism & Education Abroad:</strong> Indian residents traveling or studying in the USA/Europe.</div></div>
+      <div class="point-item"><div class="point-bullet bullet-blue"></div><div><strong>Unilateral Outflows & Asset Purchases:</strong> Gifts abroad, buying foreign real estate or shares.</div></div>
+    </div>
+
+    <div class="sub-card">
+      <div class="sub-title">
+        <span>Supply of Forex ($)</span>
+        <span style="font-size: 10px; color: #16A34A; font-weight: 800;">Upward Sloping Curve</span>
+      </div>
+      <div class="sub-desc">Supply rises when exchange rate rises (1 USD fetches more Rupees, making Indian goods attractive).</div>
+      <div class="point-item"><div class="point-bullet bullet-green"></div><div><strong>Merchandise Exports:</strong> Foreign buyers paying USD for Indian textiles, pharmaceuticals.</div></div>
+      <div class="point-item"><div class="point-bullet bullet-green"></div><div><strong>Foreign Inflows (FDI & FPI):</strong> Global investors bringing USD into Indian capital markets.</div></div>
+      <div class="point-item"><div class="point-bullet bullet-green"></div><div><strong>Remittances from NRIs:</strong> Inward family transfers by Indian diaspora living abroad.</div></div>
+    </div>
+
+    <div class="highlight-banner">
+      <strong>Equilibrium Condition:</strong> The exchange rate settles where Quantity Demanded of Forex = Quantity Supplied of Forex.
+    </div>
+  </div>
+
+  <!-- COLUMN 2: DEPRECIATION VS APPRECIATION -->
+  <div class="panel-card">
+    <div class="card-header">
+      <div class="card-title">2. Valuation Shifts: Market Mechanics</div>
+      <span class="badge badge-equil">Floating System Changes</span>
+    </div>
+
+    <div class="comparison-box">
+      <div class="comp-cell" style="border-left: 3px solid #DC2626;">
+        <div class="comp-head" style="color: #DC2626;">Currency Depreciation</div>
+        <div style="font-weight: 700; color: #071A4D;">Exchange Rate Rises ($1 = ₹75 → $1 = ₹83)</div>
+        <div style="font-size: 10.5px; color: #475569; margin-top: 4px;">
+          Rupee loses value against the Dollar due to <strong>higher demand for $</strong> or <strong>lower supply of $</strong>.
+        </div>
+        <div style="margin-top: 6px; font-size: 10.5px; font-weight: 600; color: #15803D;">
+          + Stimulates Exports (Cheaper for foreigners)<br>
+          - Makes Imports Expensive (Imported inflation)
+        </div>
+      </div>
+
+      <div class="comp-cell" style="border-left: 3px solid #16A34A;">
+        <div class="comp-head" style="color: #16A34A;">Currency Appreciation</div>
+        <div style="font-weight: 700; color: #071A4D;">Exchange Rate Falls ($1 = ₹83 → $1 = ₹75)</div>
+        <div style="font-size: 10.5px; color: #475569; margin-top: 4px;">
+          Rupee gains value against the Dollar due to <strong>higher supply of $</strong> or <strong>lower demand for $</strong>.
+        </div>
+        <div style="margin-top: 6px; font-size: 10.5px; font-weight: 600; color: #DC2626;">
+          + Cheaper Imports (Lowers domestic costs)<br>
+          - Hurts Exporters (Indian goods become dearer)
+        </div>
+      </div>
+    </div>
+
+    <div class="sub-card">
+      <div class="sub-title">Critical Distinction: Market vs Official Action</div>
+      <div style="display: flex; flex-direction: column; gap: 5px; font-size: 11px;">
+        <div style="background: #FFFFFF; padding: 5px 8px; border-radius: 4px; border: 1px solid #CBD5E1;">
+          <strong>Depreciation / Appreciation:</strong> Caused purely by free <strong>market forces of demand & supply</strong> under a Flexible Exchange System.
+        </div>
+        <div style="background: #FFFFFF; padding: 5px 8px; border-radius: 4px; border: 1px solid #CBD5E1;">
+          <strong>Devaluation / Revaluation:</strong> Caused by deliberate <strong>official government decree</strong> under a Fixed Exchange Rate System.
+        </div>
+      </div>
+    </div>
+
+    <div class="highlight-banner" style="background: #FEF3C7; border-left-color: #D97706; color: #78350F;">
+      <strong>CUET Exam Trap:</strong> Do not confuse "exchange rate rises" with "domestic currency appreciates". When exchange rate $e$ (in ₹/$) goes up, the Rupee <strong>depreciates</strong> (takes more rupees to buy one dollar).
+    </div>
+  </div>
+
+  <!-- COLUMN 3: THREE EXCHANGE REGIMES -->
+  <div class="panel-card">
+    <div class="card-header">
+      <div class="card-title">3. The Three Exchange Regimes</div>
+      <span class="badge badge-regimes">Institutional Structure</span>
+    </div>
+
+    <div class="sub-card">
+      <div class="sub-title">
+        <span>A. Flexible / Floating Rate System</span>
+        <span style="font-size: 10px; background: #E0EAFF; color: #1F5EFF; padding: 1px 5px; border-radius: 3px;">Market Determined</span>
+      </div>
+      <div class="sub-desc">
+        • Exchange rate determined completely by demand & supply without central bank interference.<br>
+        • <strong>Merit:</strong> Zero need to maintain huge foreign exchange reserves; automatic BoP correction.<br>
+        • <strong>Demerit:</strong> Exchange rate volatility increases trade & foreign investment uncertainty.
+      </div>
+    </div>
+
+    <div class="sub-card">
+      <div class="sub-title">
+        <span>B. Fixed / Pegged Rate System</span>
+        <span style="font-size: 10px; background: #DCFCE7; color: #15803D; padding: 1px 5px; border-radius: 3px;">Gold / USD Peg</span>
+      </div>
+      <div class="sub-desc">
+        • Government fixes exchange rate to a specific parity value (historical Bretton Woods System).<br>
+        • <strong>Merit:</strong> Complete certainty in international contracts and planning.<br>
+        • <strong>Demerit:</strong> Central Bank must maintain massive forex reserves to defend the fixed peg.
+      </div>
+    </div>
+
+    <div class="sub-card" style="background: #EFF6FF; border: 1px solid #93C5FD;">
+      <div class="sub-title" style="color: #1E3A8A;">
+        <span>C. Managed Floating ("Dirty Floating")</span>
+        <span style="font-size: 10px; background: #1E40AF; color: #FFFFFF; padding: 1px 5px; border-radius: 3px;">India's System</span>
+      </div>
+      <div class="sub-desc" style="color: #1E3A8A;">
+        • Hybrid regime: Rate is market-determined, but the Central Bank (RBI) actively buys or sells USD in the open market to dampen excessive, speculative swings.<br>
+        • Prevents sharp shocks to importers and exporters while avoiding rigid pegs.
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer-bar">
+  <div><strong>Key Regimes Rule:</strong> Floating = Market Driven (Depreciation/Appreciation) · Fixed = Government Decreed (Devaluation/Revaluation) · Managed Floating = Hybrid with RBI Interventions.</div>
+  <div style="font-size: 11.5px; color: #94A3B8;">Target Parity · Market Bands · Official Reserve Neutralization</div>
+</div>
+
+</body>
+</html>
