@@ -7,355 +7,558 @@
   subtitle: "Official Syllabus · Course I: Introductory Microeconomics · Class 12 · CUET UG 2027 Cycle Notes",
 )
 
-= Syllabus Alignment
+= Syllabus Alignment & Exam Blueprint
 
 #table(
-  columns: (1.1fr, 2fr, 1.15fr),
-  table.header[*Sub-topic*][*Official syllabus pointer (NTA CUET(UG) Economics syllabus 2026, the current 2027 baseline, Course I)*][*Skills the questions test*],
-  [*The production function*], [
-    Production function: short run and long run production function; shapes of TP, MP and AP curves
-  ], [
-    Telling short run from long run by factor fixity, computing TP, MP and AP, and reading the three phases.
-  ],
-  [*Costs*], [
-    Concepts of costs; short-run cost curves (fixed and variable costs; total, average and marginal costs)
-  ], [
-    Splitting fixed from variable cost, building a full cost table, and reading the U-shapes with the MC crossings.
-  ],
-  [*Revenue*], [
-    Concepts of revenue — total, average and marginal revenue — and their relationship
-  ], [
-    Linking TR, AR and MR for a price-taking firm and recognising the horizontal price line.
-  ],
-  [*Producer's equilibrium*], [
-    Producer's equilibrium with the help of MC and MR
-  ], [
-    Applying MC = MR with the rising-MC condition and ruling out false equilibria.
-  ],
+  columns: (1.2fr, 2fr, 1.15fr),
+  table.header([*Sub-Topic*], [*Official NTA CUET UG Syllabus Scope*], [*Cognitive Level & Weightage*]),
+  [*Production Function*], [Short-run vs. Long-run time horizons; Fixed vs. Variable factors; TP, AP, and M P concepts and calculations; Shapes of product curves; Inflection point.], [Knowledge & Application (2–3 Questions)],
+  [*Law of Variable Proportions*], [Statement, assumptions, and three distinct stages of production; Economic rationale for operating exclusively in Stage II; Technical reasons for increasing, diminishing, and negative returns.], [Conceptual Rigour (2–3 Questions)],
+  [*Returns to Scale & Isoquants*], [Long-run production function; Constant, Increasing, and Decreasing Returns to Scale; Cobb-Douglas production function ($Q = A K^alpha L^beta$); MRTS and producer equilibrium.], [High-Yield Analytical (1–2 Questions)],
+  [*Concepts of Cost*], [Explicit vs. Implicit costs; Economic vs. Accounting profit; Opportunity cost; Sunk costs; Social vs. Private costs.], [Direct NCERT Recall (1–2 Questions)],
+  [*Short-Run Cost Curves*], [Total Fixed Cost (TFC), Total Variable Cost (TVC), Total Cost (TC); Average Fixed Cost (AFC as rectangular hyperbola), Average Variable Cost (AVC), Average Total Cost (ATC), Marginal Cost (MC); Mathematical relations and dual-cut geometry.], [High-Yield Core (3–4 Questions)],
+  [*Long-Run Costs & Revenue*], [Long-Run Average Cost (LAC) as "Envelope Curve" and "Planning Curve"; Internal and external economies/diseconomies of scale; Total, Average, and Marginal Revenue under perfect competition and monopoly; Producer equilibrium conditions ($M C = M R$, M C rising).], [Synthesis & Mastery (2–3 Questions)],
 )
 
 #exam-pointer[
-  CUET UG pattern (NTA official information bulletin and syllabus, 2026 cycle — the
-  current 2027 baseline): each subject paper carries *50 compulsory questions* in
-  *60 minutes*, with $+5$ for every correct answer and $-1$ for every incorrect answer. The Economics paper follows NCERT Class 12
-  Economics, and this unit feeds the next two — supply behaviour (firm under perfect
-  competition) and price determination (market equilibrium) both run on the cost and
-  revenue machinery built here.
+  *CUET UG Exam Alert:* Microeconomics accounts for nearly 50% of the Economics domain paper (Course I). Production and Costs forms the structural foundation for both Firm Supply (Unit 3) and Market Equilibrium (Unit 4). Questions frequently test exact geometric properties: the relationship between $A P$ and $M P$ at their crossing point, why $A F C$ never intersects the horizontal axis, why $M C$ cuts $A V C$ before $A T C$, and why a change in fixed cost has zero mathematical effect on marginal cost.
 ]
 
-= The Production Function: Two Time Horizons
+---
 
-A bakery cannot conjure a second oven overnight, but it CAN call two more workers tonight. That everyday gap — some things change slowly, others instantly — is exactly what economists mean by the short run and the long run. The *production function* is the rulebook: it tells you the MAXIMUM output each combination of inputs can produce with today's technology.
+= 1. The Production Function: Core Concepts & Time Horizons
+
+== 1.1 Technical Definition of Production
+Production is the physical and economic transformation of inputs (resources, raw materials, labor, capital) into outputs (finished goods or services) that possess utility for consumers.
+The *production function* expresses the purely technological relationship between the quantities of physical inputs employed and the maximum possible physical output produced per unit of time, given the state of technology:
+
+$ Q = f(X_1, X_2, X_3, dots, X_n) $
+
+Where $Q$ is the maximum rate of physical output, and $X_i$ represents the flow of input services. In standard pedagogical economic theory, inputs are aggregated into two primary categories: *Labour ($L$)* and *Capital ($K$)*:
+
+$ Q = f(L, K) $
+
+#concept-box(title: "Essential Properties of the Production Function")[
+  - *Engineering Boundary:* The production function defines only *technically efficient* combinations—it yields the maximum possible output from a given basket of inputs. Inefficient methods yielding less output are excluded.
+  - *State of Technology:* The production function is defined for a given, constant state of technological knowledge. Any technological progress shifts the production function upward.
+  - *Flow Measure:* Both inputs and outputs are measured per unit of time (flow concept, e.g., output per week or year).
+]
+
+== 1.2 The Economic Meaning of Time Horizons: Short Run vs. Long Run
+In economics, time horizons are determined entirely by *factor adjustability (fixity)*, never by chronological days, months, or calendar dates!
 
 #table(
-  columns: (1fr, 1.65fr, 1.65fr),
-  table.header[*Feature*][*Short run*][*Long run*],
-  [Which factors can change?], [At least ONE factor stays fixed — land, factory, machines], [ALL factors are variable — even the factory size],
-  [How output changes], [Add or remove workers on the SAME plant], [Change both workers AND the plant],
-  [Named law], [Law of variable proportions], [Returns to scale],
-  [What it is NOT], [Not a fixed number of days or months], [Not "many years" — it depends on the industry],
+  columns: (1.2fr, 1.8fr, 1.8fr),
+  table.header([*Dimension*], [*Short Run (SR)*], [*Long Run (LR)*]),
+  [*Factor Classification*], [Inputs are bifurcated into *Fixed Factors* (land, heavy machinery, building) and *Variable Factors* (raw materials, unskilled labour, electricity).], [ALL factors are *Variable*. No factor is fixed. Plant size, machinery, and factory capacity can all be expanded or contracted.],
+  [*Output Adjustment Method*], [Output can be altered ONLY by varying the quantity of variable factors applied to fixed plant capacity.], [Output can be altered by scaling all factors of production simultaneously or changing plant size.],
+  [*Governing Law*], [*Law of Variable Proportions* (Returns to a Variable Factor). Factor proportion ($K/L$) continuously changes.], [*Returns to Scale*. Factor proportions can remain constant while total scale of operation expands.],
+  [*Calendar Duration*], [Variable across industries: A local tea vendor's short run is 2 days; an oil refinery or nuclear plant's short run may span 5–8 years!], [The operational planning horizon where the entrepreneur chooses the optimum plant size for the future.],
 )
 
-- *The long run is not a calendar.* A tea stall's long run might be a week; an airline's might be a decade. The split is about *which factors are variable*, never about dates.
-- *The three product measures* (all about the variable factor, labour):
-  - *TP (Total Product)* — total output from all workers together.
-  - *MP (Marginal Product)* — the EXTRA output when ONE more worker joins: $"MP" = (Delta "TP") / (Delta L)$
-  - *AP (Average Product)* — output per worker: $"AP" = "TP" \/ L$
-- *Tiny example:* 3 workers make 36 cups of tea, a 4th worker lifts TP to 48. The 4th worker's MP is 12 cups; AP is now $48 \/ 4 = 12$ cups.
+---
 
-#formula-box(title: "The Three Product Formulas")[
-  #v(2pt)
-  $"MP" = (Delta "TP") / (Delta L) quad quad quad "AP" = ("TP") / L quad quad quad "TU of production: TP" = Sigma "MP"$
-  #v(4pt)
-  *Letters:* TP = total product · MP = marginal product of the next worker · AP = average product per worker · L = number of workers.
-  #v(2pt)
-  *Sum rule:* TP is the RUNNING TOTAL of MPs — the MP of the 4th worker is TP(4) − TP(3).
-]
+= 2. Short-Run Product Measures: TP, AP, and M P Dynamics
 
-#worked-example("Seven Workers on One Plot — The Full TP/MP/AP Table")[
-Fixed land, workers added one by one:
+When capital is fixed at $macron(K)$, output varies solely with the variable input labor ($L$): $Q = f(L, macron(K))$. Economists analyze production through three vital measures:
+
+== 2.1 Definitions and Mathematical Formulations
+1. *Total Product ($T P_L$ or $Q$):* The total physical output produced by a firm by employing a specific quantity of the variable input ($L$) combined with fixed inputs ($macron(K)$).
+2. *Average Product ($A P_L$):* Output per unit of the variable input employed:
+  $ A P_L = frac(T P_L, L) $
+  Geometrically, $A P_L$ at any point on the $T P$ curve is the *slope of the ray connecting the origin to that point*.
+3. *Marginal Product ($M P_L$):* The additional physical output generated by employing one additional unit of the variable input, holding all fixed factors constant:
+  - In discrete terms:
+    $ M P_n = T P_n - T P_(n-1) quad "or" quad M P_L = frac(Delta T P, Delta L) $
+  - In continuous terms (calculus):
+    $ M P_L = frac(d(T P), d L) $
+  Geometrically, $M P_L$ is the *slope of the tangent to the Total Product curve* at any given input level.
+4. *Summation Property:* Total Product is the cumulative sum of marginal products of all successive units of the variable factor employed:
+  $ T P_n = sum_(i=1)^n M P_i quad "or" quad T P(L) = integral_0^L M P_L \, d L $
+
+== 2.2 Tabular Schedule Demonstrating Variable Proportions
+Consider a firm with a fixed plant ($macron(K) = 1$ machine) hiring successive units of labor ($L$):
 
 #table(
-  columns: (0.9fr, 1.1fr, 1.1fr, 1.1fr, 1.6fr),
-  table.header[*Workers (L)*][*TP (kg)*][*MP (kg)*][*AP (kg)*][*What is happening*],
-  [1], [8], [8], [8], [First worker does everything],
-  [2], [20], [12], [10], [Specialisation kicks in — MP rises],
-  [3], [36], [16], [12], [MP peaks — best team size for speed],
-  [4], [48], [12], [12], [MP = AP exactly: AP at its MAXIMUM],
-  [5], [56], [8], [11.2], [MP falls below AP — AP starts sliding],
-  [6], [60], [4], [10], [Still adds output, but barely],
-  [7], [58], [−2], [8.3], [Overcrowded — TP actually FALLS],
+  columns: (0.7fr, 0.7fr, 0.8fr, 0.8fr, 0.8fr, 1.4fr),
+  table.header([*Units of $K$*], [*Units of $L$*], [*$T P$ (Units)*], [*$A P$ ($T P/L$)*], [*$M P$ ($Delta T P$)*], [*Operational Phase / Stage*]),
+  [1], [0], [0], [—], [—], [Initial Baseline],
+  [1], [1], [10], [10.0], [10], [Stage I: Increasing Returns ($M P > A P$)],
+  [1], [2], [24], [12.0], [14], [Stage I: $M P$ reaches peak at $L=2$ (Inflection Point)],
+  [1], [3], [39], [13.0], [15], [Stage I: $M P$ begins to fall but $M P > A P$],
+  [1], [4], [52], [13.0], [13], [Stage I Ends: $A P$ reaches peak at $L=4$ ($A P = M P = 13$)],
+  [1], [5], [61], [12.2], [9], [Stage II: Diminishing Returns ($M P < A P$, $M P > 0$)],
+  [1], [6], [67], [11.17], [6], [Stage II: Rational Operating Zone],
+  [1], [7], [70], [10.0], [3], [Stage II: Rational Operating Zone],
+  [1], [8], [70], [8.75], [0], [Stage II Ends: $T P$ reaches maximum ($M P = 0$)],
+  [1], [9], [66], [7.33], [-4], [Stage III: Negative Returns ($M P < 0$, $T P$ falling)],
+  [1], [10], [60], [6.0], [-6], [Stage III: Fixed factor overcrowded],
 )
-
-- *Check the sum rule:* TP at 4 workers = 8 + 12 + 16 + 12 = 48 ✓
-- *Check the crossing:* MP equals AP (12 = 12) exactly at AP's maximum — 4 workers. Before it, MP pulls AP up; after it, MP drags AP down.
-]
-
-= The Law of Variable Proportions
-
-Keep land fixed and add workers: output first surges, then crawls, then can actually shrink. This pattern — the *law of variable proportions* — is the short run's story, and it splits neatly into three phases you must be able to mark on a diagram.
-
-- *Phase I — increasing returns:* TP rises at an INCREASING rate. MP rises (more workers = better teamwork and specialisation), and AP keeps rising because MP sits above it.
-- *Phase II — diminishing returns:* TP rises at a DIMINISHING rate. MP falls but stays positive; AP now falls too (MP is below it). *Every rational producer operates here* — Phase I wastes fixed capacity, Phase III destroys output.
-- *Phase III — negative returns:* TP FALLS. MP goes negative: the 7th worker on one tiny plot knocks over more than he produces. Too many hands, too little land.
-- *Why diminishing returns happen:* the FIXED factor gets crowded. Each worker now shares the same land, same oven, same tools — extra workers contribute less and less. Factor proportions go unbalanced.
 
 #figure(
-  image("assets/econ_cost_curves.png", width: 100%),
-  caption: [The two mandatory diagram families: product curves with the three phases (left) and the short-run cost family with MC cutting AVC and AC at their minima (right).],
+  image("assets/econ_production_tp_ap_mp.png", width: 95%),
+  caption: [Figure 1: Law of Variable Proportions showing T P Curve (Top), A P and M P Curves (Bottom), and the Three Classical Stages of Production],
 )
 
-- *MP is the thermometer, AP follows it:* while MP > AP, AP rises; the moment MP < AP, AP falls; and MP crosses AP exactly at AP's peak. This single sentence answers most curve-diagram MCQs.
+---
 
-= Returns to Scale: The Long-Run Story
+= 3. The Law of Variable Proportions (Returns to a Factor)
 
-Change ALL inputs together — double workers, ovens, flour, everything — and watch output. The long-run pattern is called *returns to scale*, and it has three faces.
-
-#table(
-  columns: (1.2fr, 2.1fr, 2fr),
-  table.header[*Case*][*What happens*][*Everyday anchor*],
-  [Increasing returns to scale], [Output rises MORE than proportionally — inputs double, output triples], [A bigger kitchen: two cooks + one big oven make more than double the small-oven output],
-  [Constant returns to scale], [Output rises in the SAME proportion], [Franchises: copying a shop design exactly copies its sales capacity],
-  [Decreasing returns to scale], [Output rises LESS than proportionally], [A giant bureaucracy: ten times the staff, far less than ten times the files cleared],
-)
-
-- *Why increasing returns occur:* specialisation of labour, indivisible machines (one huge furnace beats ten small ones), and geometric advantages (a bigger tanker carries more than twice a small one).
-- *Why decreasing returns occur:* management and coordination stretch thin — more meetings, more layers, more delays.
-- *Do not mix the two laws:* variable proportions is SHORT RUN (one factor fixed); returns to scale is LONG RUN (all factors change together). The MCQ lives exactly in this distinction.
-
-= The Cost Family: Fixed, Variable, and the U-Shape
-
-Every producer pays two kinds of bills. Rent continues even when output is ZERO; flour bills vanish when you bake nothing. That split builds the entire short-run cost family — and the family's portrait (the U-shapes) is the most-drawn diagram of this unit.
-
-- *TFC (Total Fixed Cost):* independent of output — rent, insurance, permanent salaries. Same at 0 units and 6,000 units.
-- *TVC (Total Variable Cost):* moves with output — materials, casual labour, power. Zero at zero output.
-- *TC (Total Cost):* $"TC" = "TFC" + "TVC"$ — the TC curve sits exactly TFC above the TVC curve and runs parallel to it.
-- *The four per-unit cousins:*
-  - $"AFC" = "TFC" \/ Q$ — falls FOREVER, sliding toward (never touching) the x-axis: the same fixed cost spread over more units.
-  - $"AVC" = "TVC" \/ Q$ — U-shaped.
-  - $"AC" = "TC" \/ Q = "AFC" + "AVC"$ — U-shaped, always above AVC by exactly the AFC gap.
-  - $"MC" = (Delta "TC") / (Delta Q)$ — the extra cost of ONE more unit; the fastest-moving curve of the family.
-
-#worked-example("Build the Full Cost Table — TFC = ₹60")[
-One bakery, fixed cost ₹60 per day. TVC is given; compute everything else. Read each column's recipe from the formulas above.
-
-#table(
-  columns: (0.6fr, 0.95fr, 0.95fr, 0.95fr, 0.95fr, 0.95fr, 0.95fr, 0.95fr),
-  table.header[*Q*][*TFC*][*TVC*][*TC*][*AFC*][*AVC*][*AC*][*MC*],
-  [0], [60], [0], [60], [—], [—], [—], [—],
-  [1], [60], [20], [80], [60], [20], [80], [20],
-  [2], [60], [30], [90], [30], [15], [45], [10],
-  [3], [60], [45], [105], [20], [15], [35], [15],
-  [4], [60], [70], [130], [15], [17.5], [32.5], [25],
-  [5], [60], [105], [165], [12], [21], [33], [35],
-  [6], [60], [150], [210], [10], [25], [35], [45],
-)
-
-- *TC column check:* 60 + 20 = 80 ✓ · 60 + 30 = 90 ✓ — every TC is TFC + TVC.
-- *MC column check:* TC(2) − TC(1) = 90 − 80 = 10 ✓ — MC is the gap between two TCs.
-- *Watch the U appear:* AC falls 80 → 45 → 35 → 32.5, bottoms at the 4th unit, then climbs 33 → 35. And MC falls first (20 → 10 → 15), crosses AVC exactly at its minimum (15 = 15 at Q3), and crosses AC at its minimum (between Q4 and Q5, where 25 < 32.5 then 35 > 33).
+== 3.1 Statement of the Law
+#definition-box(title: "The Law of Variable Proportions (NCERT Core Formulation)")[
+  *Statement:* As the proportion of one factor (variable input) is increased while all other factors remain constant (fixed inputs), Total Product initially increases at an *increasing rate*, then increases at a *diminishing rate*, reaches a maximum, and ultimately *declines*.
+  
+  Equivalently, Marginal Product ($M P$) initially rises, reaches a maximum, then falls continuously, becomes zero when $T P$ is maximized, and finally turns negative.
 ]
 
-- *Why the U-shape:* at first, spreading AFC plus specialisation pulls AC down; beyond some output, diminishing returns push MC up hard, and rising MC drags AVC and then AC back up. MC bottoms out FIRST, then AVC, then AC.
-- *The two crossings to tattoo on your memory:* MC cuts AVC at AVC's minimum; MC cuts AC at AC's minimum. Not before, not after — every diagram question checks exactly this.
+== 3.2 Assumptions Underlying the Law
+1. *Constant State of Technology:* Technological knowledge is assumed to remain unchanged. If technology improves, product curves shift upward, delaying diminishing returns.
+2. *Short-Run Time Horizon:* At least one factor of production is strictly fixed in supply.
+3. *Homogeneous Variable Units:* Every unit of the variable input (e.g., each laborer) is identical in skill, productivity, and training.
+4. *Variable Factor Proportions:* The production technique allows inputs to be combined in variable physical ratios (not strictly fixed proportions like 1 worker per 1 shovel).
 
-= Revenue under Perfect Competition
+== 3.3 Detailed Analysis of the Three Stages of Production
 
-A wheat farmer can sell any quantity at today's market price — but not a rupee above it. One farmer among a lakh is a *price taker*. This single fact makes the revenue side of this chapter surprisingly simple.
+=== Stage I: Stage of Increasing Returns (From Origin to $A P$ Maximum)
+- *Behavior of Curves:* $T P$ increases at an increasing rate up to the *Point of Inflection* ($L_1$), where $M P$ reaches its absolute maximum. Beyond the inflection point, $T P$ continues to increase at a decreasing rate until $L_2$, where Average Product ($A P$) reaches its maximum. Throughout Stage I, $M P > A P$. Stage I officially terminates at the exact input level where $A P = M P$.
+- *Economic Causes of Increasing Returns:*
+  1. *Better Utilization of the Fixed Factor:* In the initial stages, the fixed factor (e.g., machinery or factory floor) is excessively large relative to the few workers employed. Adding more workers allows the fixed factor to be utilized closer to its designed capacity.
+  2. *Increased Division of Labor and Specialization:* Adding workers permits specialized tasks, reducing setup times and boosting labor dexterity.
+  3. *Indivisibility of Capital:* Certain capital equipment requires a minimum operating crew to function efficiently.
 
-- *TR (Total Revenue):* $"TR" = P times Q$ — price times quantity sold; a straight line rising from the origin.
-- *AR (Average Revenue):* $"AR" = "TR" \/ Q = P$ — revenue per unit IS the price; the AR curve is the firm's demand curve.
-- *MR (Marginal Revenue):* $"MR" = (Delta "TR") / (Delta Q)$ — the extra revenue from one more unit. Sell at a fixed price → every unit adds exactly P rupees: $"MR" = P$
-- *The magic collapse:* for a perfectly competitive firm, $"AR" = "MR" = P$ — one horizontal line at market price. The firm can sell 10 units or 10,000 at P, so no unit ever sells for less than the previous one.
+=== Stage II: Stage of Diminishing Returns (From $A P$ Maximum to $T P$ Maximum)
+- *Behavior of Curves:* $T P$ continues to increase, but strictly at a *diminishing rate*, reaching its absolute maximum at $L_3$. Marginal Product ($M P$) declines continuously, but remains strictly *positive* ($M P > 0$). Average Product ($A P$) also falls continuously. Throughout this stage, $M P < A P$. Stage II terminates where $M P = 0$ and $T P$ is maximized.
+- *Economic Causes of Diminishing Returns:*
+  1. *Fixity of Capital:* Fixed capital becomes increasingly scarce relative to the growing variable input. The variable-to-fixed factor ratio exceeds the technically optimal balance.
+  2. *Imperfect Factor Substitutability:* Capital and labor are imperfect substitutes. One cannot indefinitely substitute labor for machines without losing productivity.
 
-#table(
-  columns: (1fr, 1.7fr, 1.7fr),
-  table.header[*Measure*][*Formula*][*Behaviour for a price taker*],
-  [TR], [$P times Q$], [Straight line through the origin, slope = P],
-  [AR], [$"TR" \/ Q = P$], [Horizontal line at P — the firm's demand curve],
-  [MR], [$(Delta "TR") \/ (Delta Q)$], [Same horizontal line: MR = AR = P],
-)
+=== Stage III: Stage of Negative Returns (Beyond $T P$ Maximum)
+- *Behavior of Curves:* $T P$ slopes downward (declines). Marginal Product is strictly *negative* ($M P < 0$). Average Product continues to decline, but remains strictly positive ($A P > 0$ as long as $T P > 0$).
+- *Economic Causes of Negative Returns:*
+  1. *Overcrowding and Physical Friction:* Too many workers crowd around fixed machines, obstructing one another and causing physical bottlenecks.
+  2. *Administrative and Coordination Failure:* Managerial supervision deteriorates, leading to wasted raw materials, worker disputes, and organizational chaos.
 
-- *Contrast worth one line:* a monopoly or any price-maker faces a DOWNWARD-sloping AR and MR below it — because selling more forces the price down. The horizontal AR = MR pair is the signature of perfect competition; you will use it heavily in the next unit.
+== 3.4 Economic Rationality: Why Stage II is the ONLY Rational Operating Zone
+A rational, profit-seeking producer will NEVER choose to operate in Stage I or Stage III:
+- *Why Not Stage I?* In Stage I, the fixed factor is under-utilized, and adding more variable units increases average productivity ($A P$ is rising). The firm can increase its efficiency and lower average costs by simply hiring more workers. If the firm stopped in Stage I, it would be leaving profitable economies of scale on the table.
+- *Why Not Stage III?* In Stage III, Marginal Product is negative ($M P < 0$). By hiring an extra worker, the firm actually *reduces* total output while incurring extra wage costs! Even if labor were completely free (zero wage), a firm would still never operate in Stage III because firing workers would increase total output!
+- *Conclusion:* A rational producer operates strictly in *Stage II*, where both $M P$ and $A P$ are diminishing, but $M P > 0$. The exact equilibrium employment within Stage II depends on the price of output and factor wage rates.
 
-= Producer's Equilibrium: The MC = MR Rule
-
-Producers chase profit, and profit thinking is marginal thinking: make one more unit ONLY if it adds more to revenue than to cost. Equilibrium is where that logic says stop.
-
-#formula-box(title: "The Three Conditions of Producer's Equilibrium")[
-  #v(2pt)
-  *1.* $"MC" = "MR"$ — the last unit adds exactly as much cost as revenue.
-  #v(2pt)
-  *2.* $"MC"$ must be RISING at that point — beyond it MC > MR, before it MC < MR.
-  #v(2pt)
-  *3.* Price ≥ AVC (short-run shutdown guard) — if price cannot even cover variable cost, produce nothing.
+#formula-box(title: "Mathematical Rules Governing A P and MP")[
+  Let $T P = Q(L)$. By definition, $A P = frac(Q(L), L)$. Taking the derivative with respect to $L$:
+  $ frac(d(A P), d L) = frac(d, d L) [ frac(Q(L), L) ] = frac(L dot frac(d Q, d L) - Q(L) dot 1, L^2) = frac(L dot M P - Q, L^2) = frac(1, L) [ M P - A P ] $
+  
+  From this fundamental equation:
+  1. If $M P > A P ==> frac(d(A P), d L) > 0 ==> A P$ is *rising*.
+  2. If $M P = A P ==> frac(d(A P), d L) = 0 ==> A P$ is *at its maximum point*!
+  3. If $M P < A P ==> frac(d(A P), d L) < 0 ==> A P$ is *falling*.
+  4. $M P$ reaches its maximum *earlier* (at fewer units of $L$) than $A P$.
+  5. When $M P = 0$, $T P$ is at its absolute maximum ($frac(d(T P), d L) = 0$).
 ]
 
-- *Why condition 2 matters:* MC can equal MR at TWO outputs when MC is U-shaped. If MC is falling at the crossing, one more unit adds less cost than revenue — the producer should keep expanding. Only the crossing on the RISING branch is the true equilibrium.
-- *Why condition 3 matters:* fixed cost is sunk in the short run. If price cannot cover even the variable cost, every extra unit deepens the loss — shut down and lose only the TFC.
+---
 
-#worked-example("Find the Equilibrium Output — Price ₹25")[
-The firm sells at ₹25 (price taker, so MR = ₹25 at every output). MC schedule from its cost curves:
+= 4. Long-Run Production: Returns to Scale & Factor Optimization
 
-#table(
-  columns: (0.8fr, 1.3fr, 1.3fr, 2.4fr),
-  table.header[*Output*][*MR (₹)*][*MC (₹)*][*Marginal decision*],
-  [1], [25], [10], [Produce — 15 surplus over cost],
-  [2], [25], [8], [Produce — surplus grows],
-  [3], [25], [12], [Produce — still ahead],
-  [4], [25], [20], [Produce — last profitable step? not yet],
-  [5], [25], [25], [STOP — MC = MR = 25, and MC is rising (20 → 25 → 32)],
-  [6], [25], [32], [Never — adds ₹7 of loss],
-  [7], [25], [45], [Never — worse still],
-)
+In the long run, all inputs are variable. The firm can expand by scaling up all factors simultaneously or altering the scale of its entire plant.
 
-- *Equilibrium output: 5 units.* Condition 1: MC = MR = 25 ✓ · Condition 2: MC is rising at the 5th unit ✓ · Condition 3: price ₹25 covers AVC (the firm keeps producing in the short run) ✓
-- *Below 5 units the firm leaves money on the table; above 5, each unit eats profit. Five is the sweet spot.*
+== 4.1 Concepts of Returns to Scale
+Returns to Scale examines how output responds when *all inputs are increased simultaneously in the same proportion* (e.g., doubling both labor and capital):
+
+$ Q_1 = f(k L, k K) $
+
+Where $k > 1$ is the proportional scale factor.
+1. *Increasing Returns to Scale (IRS):* Output increases by a *greater proportion* than the increase in inputs. If inputs double ($k = 2$), output more than doubles:
+  $ % Delta Q > % Delta "Inputs" quad (Q_1 > k Q_0) $
+  *Causes:* Indivisibility of large-scale plant machinery, specialization of labor, dimensional advantages (e.g., doubling the surface area of a storage tank quadruples its cubic volume).
+2. *Constant Returns to Scale (CRS):* Output increases in *exact proportion* to the increase in inputs. If inputs double, output exactly doubles:
+  $ % Delta Q = % Delta "Inputs" quad (Q_1 = k Q_0) $
+  *Significance:* The production function is linear homogeneous (Degree 1). Often called the *Eulerian case*.
+3. *Decreasing Returns to Scale (DRS):* Output increases by a *smaller proportion* than the increase in inputs. If inputs double, output increases by less than double:
+  $ % Delta Q < % Delta "Inputs" quad (Q_1 < k Q_0) $
+  *Causes:* Managerial diseconomies, communication delays, loss of coordination, red tape in mammoth enterprises.
+
+== 4.2 The Cobb-Douglas Production Function
+The most celebrated empirical and analytical production function in economic science:
+
+$ Q = A dot K^alpha dot L^beta $
+
+Where $A$ is Total Factor Productivity (efficiency parameter), and $alpha, beta > 0$ represent the output elasticities of capital and labor, respectively:
+- *Returns to Scale Determination:*
+  - If $alpha + beta > 1 ==>$ *Increasing Returns to Scale (IRS)*.
+  - If $alpha + beta = 1 ==>$ *Constant Returns to Scale (CRS)*.
+  - If $alpha + beta < 1 ==>$ *Decreasing Returns to Scale (DRS)*.
+- *Marginal Product of Labor:* $M P_L = frac(partial Q, partial L) = beta dot frac(Q, L) = beta dot A P_L$.
+- *Marginal Product of Capital:* $M P_K = frac(partial Q, partial K) = alpha dot frac(Q, K) = alpha dot A P_K$.
+
+== 4.3 Isoquants and Isocost Lines: Producer Equilibrium
+- *Isoquant (Equal Product Curve):* A locus of all technically efficient combinations of two variable inputs ($L$ and $K$) that yield the exact same level of physical output.
+  - *Slope of Isoquant:* The *Marginal Rate of Technical Substitution ($M R T S_(L, K)$)*:
+    $ M R T S_(L, K) = - frac(Delta K, Delta L) = frac(M P_L, M P_K) $
+  - Properties of Isoquants: Downward sloping, convex to the origin (due to diminishing $M R T S$), non-intersecting, higher isoquants represent higher output.
+- *Isocost Line:* Shows all combinations of $L$ and $K$ that can be purchased for a given total expenditure outlay ($C$):
+  $ C = w L + r K ==> K = frac(C, r) - frac(w, r) L $
+  Where $w$ is the wage rate of labor, and $r$ is the rental price of capital. Slope of the isocost line is $- frac(w, r)$.
+- *Least-Cost Factor Combination (Producer Equilibrium):* Occurs at the point of tangency between an isoquant and an isocost line:
+  $ M R T S_(L, K) = frac(M P_L, M P_K) = frac(w, r) quad <==> quad frac(M P_L, w) = frac(M P_K, r) $
+  *Economic Intuition:* The marginal product per rupee spent must be equal across all inputs!
+
+---
+
+= 5. Theory of Costs: Concepts, Classifications, and Economic Profit
+
+== 5.1 Explicit Costs vs. Implicit Costs
+Costs in economic theory differ fundamentally from naive accounting concepts:
+1. *Explicit Costs (Accounting Costs / Out-of-Pocket Costs):* Cash payments made by the firm to external suppliers of inputs.
+   - *Examples:* Wages paid to hired workers, rent paid to a landlord for factory premises, electricity bills, cost of raw materials purchased, interest paid on bank loans.
+2. *Implicit Costs (Imputed Costs):* The estimated value (opportunity cost) of inputs *owned and supplied by the entrepreneur themselves*, for which no direct cash payment is made.
+   - *Examples:* Rent on the entrepreneur's own land, interest on the owner's self-invested capital, salary the entrepreneur forgives by not working as an executive for another firm.
+3. *Normal Profit:* The minimum payment necessary to keep the entrepreneur in their current line of business. In economics, *Normal Profit is classified as an Implicit Cost*!
+
+#formula-box(title: "The Master Economic Cost Identity")[
+  $ "Total Economic Cost" = "Explicit Costs" + "Implicit Costs (including Normal Profit)" $
+  
+  $ "Accounting Profit" = "Total Revenue (TR)" - "Explicit Costs" $
+  
+  $ "Economic Profit (Pure Profit)" = "Total Revenue (TR)" - "Economic Costs" = "TR" - ("Explicit" + "Implicit") $
+  
+  *Crucial Rule:* A firm earning *Zero Economic Profit* is actually earning positive Accounting Profit and covering its Normal Profit!
 ]
 
-= Key Formulas & Rules: One-Stop Revision
+== 5.2 Opportunity Cost and Sunk Costs
+- *Opportunity Cost:* The value of the next best alternative forgone when a choice is made. In production, the opportunity cost of using a resource is the revenue it could have earned in its best alternative employment.
+- *Sunk Cost:* A cost that has already been incurred and cannot be recovered by any future decision (e.g., specialized drilling equipment with zero scrap value). *Economic Rule:* Sunk costs are completely irrelevant for future rational economic choices!
 
-#cheatsheet-box(title: "Production and Costs — Every Rule on One Page")[
-  #table(
-    columns: (1.45fr, 2.1fr, 1.75fr),
-    table.header[*Rule*][*Statement*][*When to use it*],
-    [Marginal product], [$"MP" = (Delta "TP") \/ (Delta L)$], [Extra output from one more worker],
-    [Average product], [$"AP" = "TP" \/ L$], [Output per worker],
-    [TP as sum], [$"TP" = "MP"_1 + "MP"_2 + dots.c$], [Rebuild TP from the MP column],
-    [AP maximum], [$"MP" = "AP"$ exactly there], [Locate AP's peak in tables and diagrams],
-    [Total cost], [$"TC" = "TFC" + "TVC"$], [Split any cost bill],
-    [Average fixed cost], [$"AFC" = "TFC" \/ Q$], [Falls forever, never touches the axis],
-    [Average cost], [$"AC" = "TC" \/ Q = "AFC" + "AVC"$], [U-shaped; gap to AVC = AFC],
-    [Marginal cost], [$"MC" = (Delta "TC") \/ (Delta Q)$], [Cut-off rule for one more unit],
-    [MC crossings], [MC = AVC at AVC's min; MC = AC at AC's min], [Verify every cost diagram],
-    [Total revenue], [$"TR" = P times Q$], [Straight line from the origin],
-    [Price taker], [$"AR" = "MR" = P$], [Horizontal line — perfect competition's signature],
-    [Producer equilibrium], [$"MC" = "MR"$ + MC rising + P ≥ AVC], [All three, or the answer is bait],
-    [Phase II], [MP positive but falling; AP falling], [The rational producer's zone],
-    [Returns to scale], [All inputs × 2 → output > 2× = IRS], [Long-run law; never mix with variable proportions],
-  )
-]
+---
 
-= Common Errors & Special Cases
+= 6. Short-Run Total Costs: TC, TFC, and T V C Geometry
 
-#exception-box(title: "The Traps This Unit Sets — Read Before the Mock")[
-  #table(
-    columns: (1.25fr, 1.35fr, 1.4fr),
-    table.header[*The rule you assume*][*The twist*][*The trap in the question*],
-    ["Long run means years"], [It means ALL factors variable — duration is industry-specific], [SR/LR classification MCQs],
-    [TP is max when MP is max], [TP is max when MP = 0; TP falls once MP is negative], [Reading TP/MP tables],
-    [MC can cut AC anywhere], [MC cuts AC (and AVC) exactly at their MINIMA], [Diagram-checking questions],
-    [AFC hits zero at high Q], [AFC only approaches the axis — never touches it], [AFC shape questions],
-    [Fixed cost exists in the long run], [In the long run NOTHING is fixed — no TFC, no AFC], [SR vs LR cost curve MCQs],
-    [MC = MR is enough for equilibrium], [MC must also be RISING; price must cover AVC], [Two-crossing MC diagrams],
-    [Returns to scale is about one factor], [It is about ALL factors changing together], [Mixing variable proportions with scale],
-    [MR falls like AR for all firms], [For a price taker MR = AR = P — flat], [Perfect competition revenue rows],
-    [AVC = AC always], [AC = AVC + AFC; the gap (AFC) shrinks but never closes], [Which-curve-is-on-top questions],
-  )
-]
+In the short run, costs are split into fixed and variable components reflecting factor fixity:
 
-= The 60-Second Self-Test
+$ T C = T F C + T V C $
 
-Cover the answers, say each one aloud, then check. If any answer takes longer than ten seconds, revisit that section.
+== 6.1 Total Fixed Cost (TFC)
+- *Definition:* Costs incurred on fixed inputs (land, heavy machinery, permanent staff salaries, factory insurance).
+- *Properties:*
+  - Invariant to output level: $T F C$ remains constant whether output is $Q = 0$ or $Q = 10,000$.
+  - At zero output ($Q = 0$), $T F C > 0$. Even if the factory produces nothing, rent and insurance must still be paid!
+  - *Geometric Shape:* A horizontal straight line parallel to the output ($Q$) axis.
 
-- *TP at 9 workers is 120 kg; the 10th worker adds 9 kg.* MP and AP of 10 workers? → MP = 9; AP = 129 ÷ 10 = 12.9.
-- *TFC = ₹100 and Q = 4.* AFC? → 100 ÷ 4 = ₹25 — and at Q = 400 it would be ₹0.25, still not zero.
-- *AC = ₹40 and AFC = ₹12.* AVC? → 40 − 12 = ₹28 — the gap between AC and AVC is always AFC.
-- *At 6 units MC = 30 = MR and MC is falling.* Equilibrium? → NO — MC must be RISING; keep expanding past this false crossing.
-- *Price ₹18, AVC at best output ₹22.* Produce? → No — price below AVC: shut down, lose only TFC.
-- *All inputs double, output rises 2.6 times.* Which law, which run? → Increasing returns to scale — a LONG-RUN law.
+== 6.2 Total Variable Cost (TVC)
+- *Definition:* Costs incurred on variable inputs (raw materials, direct wages, power, fuel).
+- *Properties:*
+  - Varies directly with output: At zero output, $T V C = 0$.
+  - *Geometric Shape:* An *inverse S-shaped curve*.
+  - *Economic Rationale:* Initially, due to increasing returns to the variable factor, $T V C$ rises at a *diminishing rate* (curve is concave downward). Beyond the inflection point, due to diminishing returns, $T V C$ rises at an *increasing rate* (curve is convex upward).
 
-= The Whole Chapter in One Picture
+== 6.3 Total Cost (TC)
+- *Definition:* The aggregate sum of Total Fixed Cost and Total Variable Cost ($T C = T F C + T V C$).
+- *Properties:*
+  - At zero output ($Q = 0$), $T V C = 0 ==> T C = T F C$. The $T C$ curve starts on the vertical axis at the exact intercept of $T F C$, never from the origin!
+  - The $T C$ curve is vertically parallel to the $T V C$ curve.
+  - The vertical distance between $T C$ and $T V C$ is everywhere constant and equal to $T F C$:
+    $ T C(Q) - T V C(Q) = T F C quad ("Constant for all " Q) $
+  - The slope of the $T C$ curve at any output equals the slope of the $T V C$ curve:
+    $ frac(d(T C), d Q) = frac(d(T V C), d Q) = M C $
 
 #figure(
-  image("assets/econ_production_mindmap.png", width: 100%),
-  caption: [Chapter mindmap: the production function and its two runs, the law of variable proportions, returns to scale, the cost family, revenue under price-taking, and the three equilibrium conditions — with the traps that catch most students.],
+  image("assets/econ_cost_curves_shortrun.png", width: 95%),
+  caption: [Figure 2: Short-Run Cost Curves showing Total Cost Curves (Left) and Unit Cost Curves with Dual-Cut Geometry (Right)],
 )
 
-= Practice Questions (Exam Pattern)
+---
 
-Ten questions in the CUET UG style. Attempt all of them — the paper gives $+5$ for each correct answer and $-1$ for every incorrect answer.
+= 7. Short-Run Per-Unit Costs: AFC, AVC, ATC, and MC
 
-#mcq(1, [The short run in production theory is a period in which:], (
-  [all factors are variable], [at least one factor is fixed], [exactly one year passes], [output cannot change at all],
-))
+To make pricing, output, and shutdown decisions, firms analyze per-unit cost metrics:
 
-#mcq(2, [Total product rises from 120 units to 132 units when the 9th worker is hired. The marginal product of the 9th worker is:], (
-  [13.3 units], [12 units], [132 units], [9 units],
-))
+== 7.1 Average Fixed Cost (AFC)
+$ A F C = frac(T F C, Q) $
+- *Geometric Shape:* A *Rectangular Hyperbola*.
+- *Key Mathematical Properties:*
+  - As output $Q$ increases, $A F C$ continuously declines because a fixed numerator ($T F C$) is divided by an ever-larger output ($Q$).
+  - The area of any rectangle formed under the $A F C$ curve equals Total Fixed Cost:
+    $ A F C times Q = T F C = "Constant" $
+  - *Asymptotic Nature:* The $A F C$ curve gets infinitely close to both axes but *NEVER touches either axis*! It cannot touch the vertical axis because division by zero is undefined ($Q = 0 ==> A F C = oo$); it cannot touch the horizontal axis because $T F C > 0$, so $A F C$ can never equal zero!
 
-#mcq(3, [In Phase II of the law of variable proportions:], (
-  [TP rises at an increasing rate], [MP is negative], [TP rises at a diminishing rate while MP stays positive], [AP rises throughout],
-))
+== 7.2 Average Variable Cost (AVC)
+$ A V C = frac(T V C, Q) $
+- *Geometric Shape:* *U-shaped*.
+- *Economic Rationale:* Reflects the Law of Variable Proportions. Initially, as labor productivity rises ($A P_L$ rises), variable cost per unit falls ($A V C$ falls). When $A P_L$ reaches its maximum, $A V C$ reaches its minimum:
+  $ A V C = frac(w dot L, Q) = frac(w, frac(Q, L)) = frac(w, A P_L) $
+  Since $w$ is constant, $A V C$ is the exact reciprocal mirror image of $A P_L$! Beyond maximum $A P_L$, diminishing returns cause $A V C$ to rise.
 
-#mcq(4, [A rational producer chooses to operate in:], (
-  [Phase I], [Phase II], [Phase III], [any phase, depending on price],
-))
+== 7.3 Average Total Cost (ATC or AC)
+$ A T C = frac(T C, Q) = frac(T F C + T V C, Q) = A F C + A V C $
+- *Geometric Shape:* *U-shaped*.
+- *Relationship with AVC:*
+  - The $A T C$ curve lies strictly above the $A V C$ curve.
+  - The vertical gap between $A T C$ and $A V C$ is exactly equal to $A F C$ ($A T C - A V C = A F C$).
+  - As output expands, this vertical gap shrinks continuously because $A F C$ falls toward zero. However, *ATC and A V C NEVER intersect*, because $A F C$ is always strictly positive ($A F C > 0$).
+  - *Minimum Point Sequence:* The minimum point of $A T C$ lies to the *right* of the minimum point of $A V C$ ($Q_("min ATC") > Q_("min AVC")$). Why? Because at the minimum point of $A V C$, $A F C$ is still falling rapidly, which continues to pull $A T C$ downward for several additional units of output!
 
-#mcq(5, [A firm's total fixed cost is ₹60. At ZERO output, its total cost is:], (
-  [zero], [₹60], [depends on AVC], [cannot be known],
-))
+== 7.4 Marginal Cost (MC)
+- *Definition:* The change in Total Cost (or Total Variable Cost) resulting from the production of one additional unit of output:
+  $ M C_n = T C_n - T C_(n-1) = T V C_n - T V C_(n-1) quad "or" quad M C = frac(d(T C), d Q) = frac(d(T V C), d Q) $
+- *Independence from Fixed Cost:* Since $T F C$ is constant ($d(T F C)/d Q = 0$), *Marginal Cost is completely independent of fixed costs*! A rise in factory rent or machine tax changes $T F C$ and $A T C$, but leaves $M C$ totally unaffected!
+- *Inverse Relation with Marginal Product:*
+  $ M C = frac(d(T V C), d Q) = frac(d(w dot L), d Q) = w dot frac(d L, d Q) = frac(w, M P_L) $
+  $M C$ is the exact reciprocal mirror image of $M P_L$! When $M P_L$ rises, $M C$ falls; when $M P_L$ reaches its peak, $M C$ hits its absolute minimum; when $M P_L$ declines, $M C$ rises.
 
-#mcq(6, [At 8 units of output, AFC is ₹12 and AVC is ₹20. AC equals:], (
-  [₹32], [₹8], [₹160], [₹28],
-))
-
-#mcq(7, [Marginal cost cuts the average cost curve:], (
-  [at AC's maximum point], [at AC's minimum point], [where AC is still falling], [never — they run parallel],
-))
-
-#mcq(8, [For a perfectly competitive firm, the AR and MR curves are:], (
-  [downward sloping, MR below AR], [the same horizontal line at the market price], [upward sloping], [U-shaped],
-))
-
-#mcq(9, [A producer is in equilibrium only when MC = MR and:], (
-  [MC is falling], [MC is rising], [AC is at its minimum], [TR is at its maximum],
-))
-
-#mcq(10, [A firm doubles ALL its inputs and output rises 2.6 times. This is a case of:], (
-  [diminishing returns to a factor], [increasing returns to scale], [negative returns to a factor], [constant returns to scale],
-))
-
-= Detailed Solutions
-
-Each solution shows the working, not just the verdict — cover the answer line, attempt the reasoning, then compare.
-
-#solution(1, [The short run is defined by factor fixity, not by the clock: at least one input (land, plant, machines) cannot change, so output adjusts only through the variable factors. In the long run every factor is variable.], answer: [B])
-
-#solution(2, [MP = change in TP: 132 − 120 = 12 units. The 9th worker added exactly 12 units to the total — averages (13.3) have no role here.], answer: [B])
-
-#solution(3, [Phase II is the diminishing-returns zone: TP still rises (MP > 0) but by smaller steps each time, and AP falls after MP cuts it. MP turns negative only in Phase III.], answer: [C])
-
-#solution(4, [Phase I wastes the fixed factor's capacity (MP still rising); Phase III destroys output (MP < 0). Only Phase II — MP positive but falling — is the rational zone.], answer: [B])
-
-#solution(5, [Total cost = TFC + TVC. At zero output TVC is zero but TFC (₹60) is still owed — rent does not pause because you baked nothing. So TC = ₹60.], answer: [B])
-
-#solution(6, [AC = AFC + AVC = 12 + 20 = ₹32. Cross-check: TC = 8 × 32 = ₹256; TFC = 8 × 12 = ₹96; TVC = 8 × 20 = ₹160; 96 + 160 = 256 ✓], answer: [A])
-
-#solution(7, [MC is the fastest mover: below AC it pulls AC down, above AC it pushes AC up. So AC falls until MC meets it, and rises after — they must cross exactly at AC's minimum. Same logic pins MC to AVC's minimum.], answer: [B])
-
-#solution(8, [A price taker sells every unit at the same market price, so revenue per unit (AR) and extra revenue per unit (MR) both equal P — one horizontal line. Downward-sloping AR with MR below it belongs to price-makers like a monopolist.], answer: [B])
-
-#solution(9, [MC = MR has two crossings on a U-shaped MC. Only where MC is RISING does the next unit begin to cost more than it earns — the true stop point. A falling-MC crossing invites expansion, so it cannot be equilibrium.], answer: [B])
-
-#solution(10, [Returns to scale is the LONG-RUN law about ALL inputs changing together. Inputs doubled (×2), output rose ×2.6 — more than proportionally: increasing returns to scale. "Returns to a factor" needs one fixed factor — not this case.], answer: [B])
-
-== Wrong-Answer Clinic — the one-line corrections
-
-Dropped marks above? Find your slip here and rewrite the corrected rule in your own words.
-
-#table(
-  columns: (1.05fr, 1.5fr, 1.45fr),
-  table.header[*If you answered...*][*Your slip was...*][*The corrected rule, in one line*],
-  [Q1 option C], [Treating the run as time], [SR/LR is about factor fixity — a tea stall's long run is a week, an airline's is a decade],
-  [Q2 option A], [Computing AP instead of MP], [MP = ΔTP only: 132 − 120 = 12; 132 ÷ 9 would be AP],
-  [Q5 option A], [Forgetting the sunk rent], [TFC is owed even at zero output — TC(0) = TFC, never zero],
-  [Q6 option D], [Adding only AVC], [AC = AFC + AVC = 12 + 20 = 32 — never drop the fixed cousin],
-  [Q8 option A], [Importing monopoly shapes], [Perfect competition's AR = MR = P — one flat line at market price],
-  [Q9 option C], [Confusing AC-min with equilibrium], [Equilibrium compares MARGINAL cost with MARGINAL revenue — AC's minimum is a cost-curve event, not the stop rule],
-  [Q10 option A], [Mixing the two laws], [One fixed factor → variable proportions; ALL factors doubled → returns to scale (here: increasing)],
-)
-
-#block(width: 100%, inset: (top: 4pt), above: 4pt)[
-  #align(center, text(fill: om-grey, size: 8pt)[© OurMocks · www.ourmocks.com · CUET UG Economics · Production and Costs · 2027 cycle])
+== 7.5 The Dual-Cut Theorem (MC Crossing A V C and ATC)
+#concept-box(title: "The Golden Dual-Cut Theorem")[
+  *The Theorem:* The Marginal Cost ($M C$) curve cuts both the Average Variable Cost ($A V C$) curve and the Average Total Cost ($A T C$) curve from below at their *exact minimum points*!
+  
+  *Proof for ATC:*
+  $ frac(d(A T C), d Q) = frac(d, d Q) [ frac(T C, Q) ] = frac(Q dot frac(d(T C), d Q) - T C, Q^2) = frac(Q dot M C - T C, Q^2) = frac(1, Q) [ M C - A T C ] $
+  
+  1. When $M C < A T C ==> frac(d(A T C), d Q) < 0 ==> A T C$ is *falling*.
+  2. When $M C = A T C ==> frac(d(A T C), d Q) = 0 ==> A T C$ is *at its minimum*!
+  3. When $M C > A T C ==> frac(d(A T C), d Q) > 0 ==> A T C$ is *rising*.
+  
+  The exact identical proof applies to $A V C$: $frac(d(A V C), d Q) = frac(1, Q)[M C - A V C]$.
 ]
+
+== 7.6 The Area Under Marginal Cost
+#tip-box(title: "High-Yield CUET Theorem: Area Under M C Curve")[
+  The definite integral of the Marginal Cost curve between zero and output $Q$ equals *Total Variable Cost (TVC)*, NOT Total Cost!
+  
+  $ integral_0^Q M C \, d q = T V C(Q) $
+  
+  To find Total Cost ($T C$), one MUST add Total Fixed Cost:
+  $ T C(Q) = integral_0^Q M C \, d q + T F C $
+]
+
+---
+
+= 8. Long-Run Cost Curves: The Envelope & Planning Curve
+
+In the long run, there are no fixed costs ($T F C = 0$, so $T C = T V C$).
+
+== 8.1 Long-Run Average Cost (LAC) as the "Envelope Curve"
+The firm can choose among various plant sizes, each represented by a Short-Run Average Cost ($S A C$) curve. The *Long-Run Average Cost (LAC) curve* envelopes all possible $S A C$ curves, being tangent to each of them at some output level:
+- *Why L A C is Flatter U-shaped:* The $L A C$ curve is much broader and flatter than short-run $S A C$ curves because factor substitutability is greater in the long run.
+- *Tangency Rule:*
+  - On the falling portion of $L A C$ (Economies of Scale), $L A C$ is tangent to the *falling portion* of $S A C$ curves (to the left of their minimum points).
+  - On the rising portion of $L A C$ (Diseconomies of Scale), $L A C$ is tangent to the *rising portion* of $S A C$ curves (to the right of their minimum points).
+  - ONLY at the absolute minimum point of $L A C$ is it tangent to the *exact minimum point* of an $S A C$ curve! At this optimum point:
+    $ L A C = L M C = S A C = S M C $
+- *Planning Curve:* The $L A C$ is called the *Planning Curve* because an entrepreneur uses it to decide which plant size to build to produce a targeted future output at minimum cost.
+
+== 8.2 Internal vs. External Economies of Scale
+- *Economies of Scale:* Reductions in long-run average cost as output expands:
+  - *Internal Economies:* Accrue to an individual firm due to its own expansion (technical specialization, managerial division of labor, bulk-buying discounts, financial borrowing advantages).
+  - *External Economies:* Accrue to all firms in an industry when the entire industry expands (better transport infrastructure, availability of skilled labor pool, industry research).
+- *Diseconomies of Scale:* Rises in long-run average cost when the firm grows excessively large (managerial communication bottlenecks, bureaucracy, worker alienation).
+
+---
+
+= 9. Revenue Concepts & Producer's Equilibrium Foundations
+
+== 9.1 Revenue Concepts
+1. *Total Revenue ($T R$):* Total money receipts from the sale of a given quantity of output: $T R = P times Q$.
+2. *Average Revenue ($A R$):* Revenue earned per unit of output sold:
+  $ A R = frac(T R, Q) = frac(P times Q, Q) = P quad (A R "is identically equal to Price"!) $
+  Therefore, the firm's Average Revenue curve is identical to the *Demand Curve* facing the firm!
+3. *Marginal Revenue ($M R$):* Net addition to Total Revenue from selling one additional unit of output:
+  $ M R_n = T R_n - T R_(n-1) = frac(Delta T R, Delta Q) = frac(d(T R), d Q) $
+
+== 9.2 Revenue Behavior Under Market Structures
+- *Perfect Competition (Price Taker):* The firm can sell any quantity at the prevailing market price ($P$). Price is constant:
+  $ P = A R = M R = "Horizontal straight line" $
+  Total Revenue ($T R$) is a straight line emanating from the origin with constant slope equal to $P$.
+- *Imperfect Competition (Monopoly / Monopolistic Competition - Price Maker):* The firm can sell more output only by lowering price ($P$ falls as $Q$ rises):
+  - Both $A R$ and $M R$ slope downward.
+  - $M R$ lies *below* $A R$ ($M R < A R$).
+  - For a linear demand curve, $M R$ falls *twice as fast* as $A R$ (slope of $M R$ is twice the slope of $A R$).
+
+== 9.3 Producer's Equilibrium (Profit Maximization Rule)
+Profit is defined as $pi = T R - T C$. Maximizing profit requires two golden conditions:
+1. *First-Order Condition (Necessary Condition):* Marginal Revenue must equal Marginal Cost:
+  $ M R = M C $
+2. *Second-Order Condition (Sufficient Condition):* Marginal Cost must be *rising* at the point of intersection (or $M C$ must cut $M R$ from below):
+  $ frac(d(M C), d Q) > frac(d(M R), d Q) $
+
+#figure(
+  image("assets/econ_production_costs_mindmap.png", width: 95%),
+  caption: [Figure 3: Comprehensive Microeconomics Synthesis Mindmap: Production Functions, Short-Run vs. Long-Run Costs, and Scale Economies],
+)
+
+---
+
+= 10. Master Formula Cheatsheet & Diagnostic Traps
+
+#cheatsheet-box(title: "Master Formula Cheatsheet — Production & Costs")[
+  *Short-Run Production (Law of Variable Proportions):*
+  - Average Product: $A P_L = T P / L$ (Slope of ray from origin to $T P$).
+  - Marginal Product: $M P_L = Delta T P / Delta L = d(T P) / d L = T P_n - T P_(n-1)$ (Slope of $T P$ tangent).
+  - Total Product: $T P_n = sum M P_i = integral_0^L M P_L \, d L$.
+  - Turning Points: $M P$ max at *Inflection Point*; $A P$ max where $A P = M P$; $T P$ max where $M P = 0$.
+
+  *Long-Run Production & Returns to Scale:*
+  - Returns to Scale: $Q_1 = f(k L, k K)$. IRS if $\% Delta Q > \% Delta "Inputs"$; CRS if $\% Delta Q = \% Delta "Inputs"$; DRS if $\% Delta Q < \% Delta "Inputs"$.
+  - Cobb-Douglas: $Q = A K^alpha L^beta$. Returns to scale given by $alpha + beta$.
+  - Producer Optimum: $M R T S_(L, K) = M P_L / M P_K = w / r$.
+
+  *Short-Run Cost Geometry:*
+  - Total Costs: $T C = T F C + T V C$. At $Q = 0, T V C = 0 ==> T C = T F C > 0$.
+  - Average Costs: $A T C = T C / Q = A F C + A V C$.
+  - Average Fixed Cost: $A F C = T F C / Q$ (Rectangular Hyperbola, $A F C times Q = T F C$).
+  - Marginal Cost: $M C_n = T C_n - T C_(n-1) = T V C_n - T V C_(n-1) = d(T C) / d Q = d(T V C) / d Q$.
+  - Dual-Cut Theorem: $M C$ cuts both $A V C$ and $A T C$ from below at their minimum points; $Q_("min AVC") < Q_("min ATC")$.
+  - Area Under $M C$: $integral_0^Q M C \, d q = T V C(Q)$, so $T C(Q) = integral_0^Q M C \, d q + T F C$.
+]
+
+#exception-box(title: "The Seven Fatal CUET Exam Traps in Production and Costs")[
+  1. *Variable Proportions vs. Returns to Scale:* Variable proportions is strictly *short-run* (one factor fixed, factor proportion $K/L$ changes). Returns to scale is strictly *long-run* (all inputs change simultaneously, proportion remains constant).
+  2. *The Myth of Operating at Max TP or Max MP:* A rational producer NEVER operates in Stage I (wasting fixed capacity) or Stage III (negative MP). Rational operation occurs strictly in *Stage II* (diminishing positive returns).
+  3. *Fixed Costs and Marginal Cost:* Changes in fixed costs (rent, property taxes) have *zero mathematical effect* on Marginal Cost: $M C = d(T V C)/d Q$. $M C$ depends solely on variable costs!
+  4. *Area Under MC Curve Fallacy:* The definite integral of $M C$ equals *Total Variable Cost (TVC)*, NOT Total Cost! You must add $T F C$ to obtain $T C$.
+  5. *Min ATC vs. Min AVC Alignment:* The minimum of $A T C$ lies *to the right* of the minimum of $A V C$ ($Q_("min ATC") > Q_("min AVC")$) because falling $A F C$ continues pulling $A T C$ down even after $A V C$ begins rising.
+  6. *AFC Touching the Axes:* $A F C$ is an asymptotic rectangular hyperbola. It approaches zero as $Q -> oo$ but *never touches* either axis because $T F C > 0$ and $Q > 0$.
+  7. *LAC Tangency to Minimum SAC:* $L A C$ is tangent to the minimum of an $S A C$ curve *only at the single lowest point of the LAC curve itself*! On the falling phase, $L A C$ touches $S A C$ on its falling segment; on the rising phase, it touches $S A C$ on its rising segment.
+]
+
+---
+
+#pagebreak()
+#set text(size: 8.5pt)
+#set par(leading: 0.40em, spacing: 0.42em)
+
+= Practice Questions — Part 1 (Q1 to Q5)
+
+#mcq(1, [According to the Law of Variable Proportions, a rational producer will always operate in:], (
+  [(A) Stage I where Marginal Product is increasing],
+  [(B) Stage II where both A P and M P are falling but M P is positive],
+  [(C) Stage III where Total Product is maximized],
+  [(D) Either Stage I or Stage III depending on input prices],
+))
+#solution(1, [A rational producer will never produce in Stage I because the fixed factor is under-utilized, meaning expanding employment increases average productivity ($A P$ is rising). A producer will never produce in Stage III because Marginal Product is negative ($M P < 0$), meaning additional workers physically reduce total output. Therefore, the rational firm operates exclusively in Stage II (Diminishing Returns), where $M P > 0$ and $A P$ is declining.], answer: "B")
+
+#mcq(2, [At the Point of Inflection on the Total Product (TP) curve:], (
+  [(A) Total Product is at its absolute maximum],
+  [(B) Average Product is equal to Marginal Product],
+  [(C) Marginal Product reaches its maximum value],
+  [(D) Marginal Product is equal to zero],
+))
+#solution(2, [The point of inflection marks the transition point where the $T P$ curve ceases to be convex to the origin and becomes concave. Geometrically, this means the slope of the $T P$ curve ($d(T P)/d L = M P$) stops increasing and begins to decrease. Thus, at the point of inflection, Marginal Product ($M P$) achieves its absolute maximum peak value.], answer: "C")
+
+#mcq(3, [When Average Product ($A P$) is at its maximum point, the relationship between $A P$ and $M P$ is:], (
+  [(A) $M P > A P$],
+  [(B) $M P < A P$],
+  [(C) $M P = A P$],
+  [(D) $M P = 0$],
+))
+#solution(3, [Mathematically, $frac(d(A P), d L) = frac(1, L)(M P - A P)$. When $A P$ reaches its maximum, its first derivative with respect to labor equals zero ($frac(d(A P), d L) = 0$). This directly requires $M P - A P = 0 ==> M P = A P$. Thus, the Marginal Product curve cuts the Average Product curve from above at the exact peak of the $A P$ curve.], answer: "C")
+
+#mcq(4, [Total Product ($T P$) is maximized when:], (
+  [(A) Average Product ($A P$) is zero],
+  [(B) Marginal Product ($M P$) is zero],
+  [(C) Marginal Product ($M P$) is at its maximum],
+  [(D) Average Product ($A P$) equals Marginal Product ($M P$)],
+))
+#solution(4, [By basic differential calculus, a continuous function reaches its maximum when its first derivative equals zero. Since $M P = frac(d(T P), d L)$, Total Product reaches its peak (the boundary between Stage II and Stage III) precisely when $M P = 0$. Once $M P$ turns negative, $T P$ begins to decline.], answer: "B")
+
+#mcq(5, [If a firm doubles all its inputs simultaneously and output increases by 150%, the production function exhibits:], (
+  [(A) Constant Returns to Scale],
+  [(B) Diminishing Returns to a Variable Factor],
+  [(C) Increasing Returns to Scale],
+  [(D) Decreasing Returns to Scale],
+))
+#solution(5, [Doubling inputs represents a 100% increase in all factor inputs. The resulting increase in output is 150%. Because the percentage increase in output (150%) strictly exceeds the percentage increase in inputs (100%), the firm is experiencing Increasing Returns to Scale (IRS). Note: "Returns to a variable factor" applies only when one factor is fixed, whereas here ALL inputs were doubled.], answer: "C")
+
+---
+
+#pagebreak()
+#set text(size: 8.5pt)
+#set par(leading: 0.40em, spacing: 0.42em)
+
+= Practice Questions — Part 2 (Q6 to Q10)
+
+#mcq(6, [Which of the following cost curves is shaped as a rectangular hyperbola?], (
+  [(A) Total Fixed Cost (TFC)],
+  [(B) Average Variable Cost (AVC)],
+  [(C) Marginal Cost (MC)],
+  [(D) Average Fixed Cost (AFC)],
+))
+#solution(6, [Average Fixed Cost is defined as $A F C = frac(T F C, Q)$, which rearranges to $A F C times Q = T F C = "Constant"$. In coordinate geometry, any equation of the form $x times y = c$ represents an equilateral or rectangular hyperbola. The area under the curve is constant ($T F C$) at every output level, and the curve is asymptotic to both axes.], answer: "D")
+
+#mcq(7, [A firm produces 0 units of output. Its Total Variable Cost is ₹0 and its Total Cost is ₹150. If output increases to 10 units and Total Cost becomes ₹350, the Total Variable Cost at 10 units is:], (
+  [(A) ₹150],
+  [(B) ₹200],
+  [(C) ₹350],
+  [(D) ₹500],
+))
+#solution(7, [At zero output ($Q = 0$), $T C = T F C + T V C ==> 150 = T F C + 0 ==> T F C = ₹150$. Because fixed costs are constant regardless of output, $T F C$ remains ₹150 at 10 units of output. Therefore, $T V C(10) = T C(10) - T F C = 350 - 150 = ₹200$.], answer: "B")
+
+#mcq(8, [The vertical distance between the Total Cost (TC) curve and the Total Variable Cost (TVC) curve is always equal to:], (
+  [(A) Marginal Cost (MC)],
+  [(B) Average Fixed Cost (AFC)],
+  [(C) Total Fixed Cost (TFC)],
+  [(D) Zero as output increases],
+))
+#solution(8, [By definition, $T C = T F C + T V C$. Subtracting $T V C$ from both sides gives $T C - T V C = T F C$. Because Total Fixed Cost ($T F C$) is a constant positive amount at all output levels, the vertical distance between the two curves is strictly constant and equal to $T F C$ at every single point along the output axis.], answer: "C")
+
+#mcq(9, [The Marginal Cost (MC) curve intersects the Average Total Cost (ATC) curve and Average Variable Cost (AVC) curve:], (
+  [(A) At their respective minimum points],
+  [(B) At their respective maximum points],
+  [(C) While both curves are still falling],
+  [(D) At the point where A F C is zero],
+))
+#solution(9, [By the Dual-Cut Theorem, whenever Marginal Cost is below Average Cost ($M C < A C$), it pulls Average Cost down; whenever $M C > A C$, it pulls Average Cost up. Consequently, $M C$ must intersect both $A V C$ and $A T C$ from below at their exact lowest (minimum) points. Furthermore, the minimum of $A V C$ occurs at a lower output than the minimum of $A T C$.], answer: "A")
+
+#mcq(10, [If factory rent increases from ₹10,000 to ₹15,000 per month, how does this affect the firm's Marginal Cost (MC) curve?], (
+  [(A) The M C curve shifts upward],
+  [(B) The M C curve shifts downward],
+  [(C) The M C curve remains completely unchanged],
+  [(D) The M C curve rotates clockwise],
+))
+#solution(10, [Factory rent is a contractual fixed cost ($T F C$). Marginal cost is the change in variable cost or total cost from one additional unit: $M C_n = T V C_n - T V C_(n-1)$. Because $Delta T F C$ is independent of output, fixed costs cancel out completely in the derivative ($frac(d(T F C), d Q) = 0$). An increase in fixed costs shifts $T F C, T C$, and $A T C$ upward, but leaves $M C$ entirely unaffected.], answer: "C")
+
+---
+
+#pagebreak()
+#set text(size: 8.5pt)
+#set par(leading: 0.40em, spacing: 0.42em)
+
+= Practice Questions — Part 3 (Q11 to Q15)
+
+#mcq(11, [As output expands, the vertical distance between Average Total Cost (ATC) and Average Variable Cost (AVC):], (
+  [(A) Remains constant throughout],
+  [(B) Increases continuously],
+  [(C) Decreases continuously and they eventually intersect],
+  [(D) Decreases continuously but they never intersect],
+))
+#solution(11, [The vertical distance between $A T C$ and $A V C$ is $A T C - A V C = A F C$. As output $Q$ increases, $A F C = T F C / Q$ declines continuously toward zero, causing the curves to get closer and closer. However, since $T F C > 0$, $A F C$ is always strictly positive ($A F C > 0$), meaning $A T C$ and $A V C$ can never intersect or touch!], answer: "D")
+
+#mcq(12, [The total area enclosed under the Marginal Cost (MC) curve from $Q = 0$ to output $Q_1$ represents:], (
+  [(A) Total Fixed Cost (TFC)],
+  [(B) Total Cost (TC)],
+  [(C) Total Variable Cost (TVC)],
+  [(D) Average Total Cost (ATC)],
+))
+#solution(12, [Mathematically, the definite integral of Marginal Cost is $integral_0^(Q_1) M C \, d q = T C(Q_1) - T C(0)$. Since $T C(0) = T F C$, we have $integral_0^(Q_1) M C \, d q = (T F C + T V C(Q_1)) - T F C = T V C(Q_1)$. The area under the $M C$ curve is strictly equal to Total Variable Cost, NOT Total Cost!], answer: "C")
+
+#mcq(13, [In a Cobb-Douglas production function $Q = 5 K^(0.4) L^(0.8)$, the production function demonstrates:], (
+  [(A) Constant Returns to Scale],
+  [(B) Decreasing Returns to Scale],
+  [(C) Increasing Returns to Scale],
+  [(D) Negative Returns to Scale],
+))
+#solution(13, [For a Cobb-Douglas production function of the form $Q = A K^alpha L^beta$, returns to scale are determined by the sum of powers ($alpha + beta$). Here, $alpha = 0.4$ and $beta = 0.8$. Summing them: $0.4 + 0.8 = 1.2$. Since $1.2 > 1$, output expands more than proportionately when all inputs are scaled up, establishing Increasing Returns to Scale (IRS).], answer: "C")
+
+#mcq(14, [Why does the minimum point of the Average Total Cost (ATC) curve occur at a higher output level than the minimum point of the Average Variable Cost (AVC) curve?], (
+  [(A) Because M C cuts A T C before cutting AVC],
+  [(B) Because falling A F C continues to pull A T C down even after A V C has started rising],
+  [(C) Because T F C increases at higher output levels],
+  [(D) Because of diminishing returns to capital in the long run],
+))
+#solution(14, [$A T C = A V C + A F C$. At the output where $A V C$ reaches its minimum, $A F C$ is still falling steeply. Over the next few units of output, the drop in $A F C$ is larger than the slight rise in $A V C$, which keeps net $A T C$ falling. Only when the rise in $A V C$ outweighs the drop in $A F C$ does $A T C$ finally hit bottom and begin to rise. Hence, $Q_("min ATC") > Q_("min AVC")$.], answer: "B")
+
+#mcq(15, [The Long-Run Average Cost (LAC) curve is often called the "Envelope Curve" because:], (
+  [(A) It encloses all possible profit levels of the firm],
+  [(B) It is tangent to and envelopes a family of Short-Run Average Cost (SAC) curves],
+  [(C) It passes through the minimum points of all S A C curves],
+  [(D) It has a constant horizontal shape like an envelope flap],
+))
+#solution(15, [In the long run, a firm can select from an infinite variety of plant sizes, each represented by a short-run $S A C$ curve. The $L A C$ curve surrounds and supports all these individual curves, forming an envelope tangent to each $S A C$ curve at some output level. Note that $L A C$ is tangent to the minimum of an $S A C$ ONLY at the single lowest point of the $L A C$ curve itself (Option C is a classic false trap).], answer: "B")

@@ -29,7 +29,7 @@
 #let om-site = "www.ourmocks.com"
 
 // ---------------- Fonts ----------------
-#let om-display-font = "Carlito"          // cover + headings (modern sans)
+#let om-display-font = ("Helvetica Neue", "Arial") // cover + headings (modern sans)
 #let om-body-font = "New Computer Modern" // body + math
 
 // ---------------- Logo ----------------
@@ -210,6 +210,12 @@
   #body
 ]
 
+#let concept-box(body, title: "Key Concept") = formula-box(body, title: title)
+#let tip-box(body, title: "Exam Tip") = analogy-box(body, title: title)
+#let definition-box(body, title: "Definition") = formula-box(body, title: title)
+#let def(body, title: "Definition") = formula-box(body, title: title)
+#let note(body, title: "Note") = formula-box(body, title: title)
+
 // Exam-pattern pointer (navy) — marking scheme / pattern facts only
 #let exam-pointer(body, title: "Exam Pattern") = block(
   width: 100%,
@@ -241,24 +247,22 @@
 ]
 
 // MCQ block — exam pattern question
-// NOTE: option content must be fetched with .at(1); plain `.1` renders the
-// array dump (the bug seen in the v1 PDFs).
 #let mcq(number, question, options, marks-note: none) = block(
   width: 100%,
-  inset: (x: 11pt, y: 9pt),
-  radius: 6pt,
-  stroke: 0.7pt + om-navy.lighten(55%),
+  inset: (x: 6pt, y: 1.8pt),
+  radius: 4pt,
+  stroke: 0.6pt + om-navy.lighten(55%),
   breakable: false,
-  above: 7pt,
-  below: 7pt,
+  above: 1.5pt,
+  below: 1.5pt,
 )[
   #text(weight: 800, fill: om-navy)[Q#number.] #h(3pt) #question
   #if marks-note != none { text(fill: om-grey, size: 8pt)[ #marks-note] }
-  #v(5pt)
+  #v(2.5pt)
   #grid(
     columns: (1fr, 1fr),
-    column-gutter: 14pt,
-    row-gutter: 5pt,
+    column-gutter: 10pt,
+    row-gutter: 2.5pt,
     ..options.enumerate(start: 1).map(pair => {
       let letter = "ABCD".at(pair.first() - 1)
       [#text(fill: om-blue, weight: 800)[(#letter)] #h(3pt) #pair.at(1)]
@@ -269,18 +273,17 @@
 // Solution block — inline answer line (no separate answer key anywhere)
 #let solution(number, body, answer: none) = block(
   width: 100%,
-  inset: (x: 11pt, y: 9pt),
+  inset: (x: 6pt, y: 1.8pt),
   fill: rgb("#FAFBFD"),
-  radius: 6pt,
-  stroke: (left: 2.5pt + om-lime.darken(10%)),
-  breakable: true,
-  above: 6pt,
-  below: 6pt,
+  radius: 4pt,
+  stroke: (left: 2pt + om-lime.darken(10%)),
+  breakable: false,
+  above: 1.5pt,
+  below: 1.5pt,
 )[
-  #text(fill: om-navy, weight: 800)[Sol. Q#number.]  #body
+  #text(fill: om-navy, weight: 800)[Sol. Q#number.] #h(4pt) #body
   #if answer != none [
-    #v(2pt)
-    #text(fill: rgb("#4E7A00"), weight: 800)[Answer: ( #answer )]
+    #h(6pt) #text(fill: rgb("#4E7A00"), weight: 800)[Answer: (#answer)]
   ]
 ]
 
@@ -289,31 +292,31 @@
 #let om-doc(exam: "", subject: "", topic-title: "", subtitle: "", body) = {
   om-cover(exam, subject, topic-title, subtitle)
 
-  set text(font: om-body-font, lang: "en", size: 11.5pt, fill: om-ink)
+  set text(font: om-body-font, lang: "en", size: 11pt, fill: om-ink)
   set page(
     numbering: "1",
-    margin: (x: 1.85cm, top: 2.15cm, bottom: 1.95cm),
+    margin: (x: 1.80cm, top: 2.05cm, bottom: 1.85cm),
     header: om-header(exam),
     footer: om-footer(exam, subject),
     background: om-watermark,
   )
-  set par(leading: 0.70em, spacing: 1.08em, justify: true)
+  set par(leading: 0.68em, spacing: 0.98em, justify: true)
 
   // Section banner (flows continuously — no forced page breaks)
   show heading.where(level: 1): it => block(
-    width: 100%, above: 17pt, below: 12pt, breakable: false)[
-    #block(width: 100%, inset: (y: 9pt, x: 13pt), fill: om-navy, radius: 6pt)[
-      #text(fill: white, font: om-display-font, size: 16pt, weight: 800)[#it.body]
+    width: 100%, above: 14pt, below: 9pt, breakable: false)[
+    #block(width: 100%, inset: (y: 8pt, x: 12pt), fill: om-navy, radius: 5pt)[
+      #text(fill: white, font: om-display-font, size: 15pt, weight: 800)[#it.body]
     ]
   ]
   // Sub-headings: navy with a blue underline bar
-  show heading.where(level: 2): it => block(above: 11pt, below: 6pt)[
-    #text(fill: om-navy, font: om-display-font, size: 13.5pt, weight: 800)[#it.body]
+  show heading.where(level: 2): it => block(above: 9pt, below: 4pt)[
+    #text(fill: om-navy, font: om-display-font, size: 13pt, weight: 800)[#it.body]
     #v(-4pt)
-    #block(width: 100%, stroke: (bottom: 1.1pt + om-blue.lighten(45%)), inset: (bottom: 2pt))
+    #block(width: 100%, stroke: (bottom: 1pt + om-blue.lighten(45%)), inset: (bottom: 2pt))
   ]
-  show heading.where(level: 3): it => block(above: 9pt, below: 4pt)[
-    #text(fill: om-blue, font: om-display-font, size: 12pt, weight: 800)[#it.body]
+  show heading.where(level: 3): it => block(above: 7pt, below: 3pt)[
+    #text(fill: om-blue, font: om-display-font, size: 11.5pt, weight: 800)[#it.body]
   ]
 
   // Lists: left-aligned (never justified), dense, branded markers
@@ -322,7 +325,7 @@
   set list(indent: 10pt, body-indent: 7pt, spacing: 0.78em,
     marker: text(fill: om-blue, weight: 800)[▸])
   set enum(indent: 10pt, body-indent: 7pt, spacing: 0.78em, number-align: center)
-  set table(inset: 8pt, stroke: 0.7pt + om-navy.lighten(45%),
+  set table(inset: (x: 6pt, y: 4.5pt), stroke: 0.7pt + om-navy.lighten(45%),
     fill: (x, y) => if y == 0 { om-navy-soft })
   show figure.caption: set text(size: 9.5pt, fill: om-grey)
   show link: set text(fill: om-blue)

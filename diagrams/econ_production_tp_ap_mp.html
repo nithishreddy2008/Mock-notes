@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Theory of Production: TP, AP, MP Curves & The Three Stages of Returns</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px 28px;
+    overflow: hidden;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 12px;
+    margin-bottom: 16px;
+  }
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .brand-badge {
+    background: #071A4D;
+    color: #B8FF34;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .title-group h1 {
+    font-size: 22px;
+    font-weight: 800;
+    color: #071A4D;
+    letter-spacing: -0.02em;
+  }
+  .title-group p {
+    font-size: 12px;
+    color: #64748B;
+    margin-top: 2px;
+  }
+  .header-meta {
+    display: flex;
+    gap: 8px;
+  }
+  .pill {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 999px;
+    border: 1px solid #CBD5E1;
+    background: #FFFFFF;
+    color: #334155;
+  }
+  .pill.highlight {
+    background: #EFF6FF;
+    border-color: #93C5FD;
+    color: #1D4ED8;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-bottom: 16px;
+  }
+  .card {
+    background: #FFFFFF;
+    border: 1.5px solid #E2E8F0;
+    border-radius: 10px;
+    padding: 16px 20px;
+    display: flex;
+    flex-direction: column;
+    height: 570px;
+  }
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  .card-title {
+    font-size: 15px;
+    font-weight: 800;
+    color: #0F172A;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .badge {
+    font-size: 10px;
+    font-weight: 800;
+    padding: 2px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+  .badge-blue { background: #DBEAFE; color: #1E40AF; }
+  .badge-emerald { background: #D1FAE5; color: #065F46; }
+
+  .svg-wrap {
+    flex: 1;
+    position: relative;
+    width: 100%;
+    border-radius: 8px;
+    background: #FAFAFC;
+    border: 1px solid #F1F5F9;
+  }
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .bottom-bar {
+    display: grid;
+    grid-template-columns: 1.2fr 1.8fr 1fr;
+    gap: 16px;
+    background: #FFFFFF;
+    border: 1.5px solid #E2E8F0;
+    border-radius: 10px;
+    padding: 12px 18px;
+    height: 195px;
+  }
+  .summary-col h3 {
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #071A4D;
+    margin-bottom: 6px;
+  }
+  .rule-list {
+    list-style: none;
+    font-size: 11px;
+    line-height: 1.45;
+    color: #334155;
+  }
+  .rule-list li {
+    margin-bottom: 4px;
+    position: relative;
+    padding-left: 14px;
+  }
+  .rule-list li::before {
+    content: "•";
+    position: absolute;
+    left: 2px;
+    color: #2563EB;
+    font-weight: 900;
+  }
+  .trap-box {
+    background: #FFF1F2;
+    border: 1px solid #FECDD3;
+    border-radius: 8px;
+    padding: 8px 12px;
+  }
+  .trap-box h4 {
+    color: #BE123C;
+    font-size: 11.5px;
+    font-weight: 800;
+    margin-bottom: 4px;
+  }
+  .trap-box p {
+    font-size: 10.5px;
+    color: #881337;
+    line-height: 1.35;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <div class="brand-badge">OurMocks Core Engine</div>
+    <div class="title-group">
+      <h1>Law of Variable Proportions & Product Curves</h1>
+      <p>Short-Run Production Analysis: Total Product (TP), Marginal Product (MP), Average Product (AP) & The 3 Classical Stages</p>
+    </div>
+  </div>
+  <div class="header-meta">
+    <span class="pill highlight">Short-Run Production</span>
+    <span class="pill">Stage II = Rational Zone</span>
+    <span class="pill">MP = 0 at Max TP</span>
+  </div>
+</div>
+
+<div class="grid">
+  <!-- Left Card: TP Curve -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">
+        <span>Total Product (TP) & Three Stages of Returns</span>
+      </div>
+      <span class="badge badge-blue">Stage Breakdown</span>
+    </div>
+    <div class="svg-wrap">
+      <svg viewBox="0 0 620 480" xmlns="http://www.w3.org/2000/svg">
+        <!-- Axes -->
+        <line x1="60" y1="420" x2="580" y2="420" stroke="#0F172A" stroke-width="2.5" marker-end="url(#arrow-dark)" />
+        <line x1="60" y1="420" x2="60" y2="40" stroke="#0F172A" stroke-width="2.5" marker-end="url(#arrow-dark)" />
+        <text x="575" y="445" font-size="12" font-weight="700" fill="#0F172A" text-anchor="end">Variable Factor (Labour, L)</text>
+        <text x="45" y="40" font-size="12" font-weight="700" fill="#0F172A" text-anchor="end" transform="rotate(-90 45,40)">Total Output (TP)</text>
+
+        <!-- Stage Boundaries Vertical Dashed Lines -->
+        <!-- L1: Inflection Point ~ x=180 -->
+        <line x1="180" y1="40" x2="180" y2="420" stroke="#94A3B8" stroke-dasharray="4 4" stroke-width="1.5" />
+        <!-- L2: AP max / Stage I End ~ x=270 -->
+        <line x1="270" y1="40" x2="270" y2="420" stroke="#2563EB" stroke-dasharray="5 3" stroke-width="2" />
+        <!-- L3: TP max / Stage II End ~ x=460 -->
+        <line x1="460" y1="40" x2="460" y2="420" stroke="#DC2626" stroke-dasharray="5 3" stroke-width="2" />
+
+        <!-- Stage Shading / Background Labels -->
+        <rect x="60" y="45" width="210" height="375" fill="#EFF6FF" opacity="0.35" />
+        <rect x="270" y="45" width="190" height="375" fill="#ECFDF5" opacity="0.45" />
+        <rect x="460" y="45" width="115" height="375" fill="#FEF2F2" opacity="0.35" />
+
+        <text x="165" y="70" font-size="13" font-weight="800" fill="#1E40AF" text-anchor="middle">STAGE I</text>
+        <text x="165" y="86" font-size="10.5" font-weight="700" fill="#3B82F6" text-anchor="middle">Increasing Returns</text>
+
+        <text x="365" y="70" font-size="13" font-weight="800" fill="#065F46" text-anchor="middle">STAGE II (RATIONAL)</text>
+        <text x="365" y="86" font-size="10.5" font-weight="700" fill="#059669" text-anchor="middle">Diminishing Returns</text>
+
+        <text x="515" y="70" font-size="13" font-weight="800" fill="#991B1B" text-anchor="middle">STAGE III</text>
+        <text x="515" y="86" font-size="10.5" font-weight="700" fill="#DC2626" text-anchor="middle">Negative Returns</text>
+
+        <!-- TP Curve: S-shaped (starts origin, convex to inflection point x=180, concave to peak x=460, then drops) -->
+        <path d="M 60 420 C 110 410, 140 360, 180 300 C 230 220, 340 120, 460 115 C 500 115, 540 135, 570 170" 
+              fill="none" stroke="#2563EB" stroke-width="3.5" />
+        <text x="575" y="165" font-size="14" font-weight="800" fill="#2563EB">TP</text>
+
+        <!-- Key Points on TP -->
+        <!-- Point of Inflection -->
+        <circle cx="180" cy="300" r="5" fill="#D97706" stroke="#FFFFFF" stroke-width="2" />
+        <text x="190" y="295" font-size="11" font-weight="800" fill="#D97706">Point of Inflection (E)</text>
+        <text x="190" y="310" font-size="9.5" fill="#64748B">Curvature shifts Convex → Concave; MP at Peak</text>
+
+        <!-- Point where AP is Maximum (Tangency from Origin) -->
+        <line x1="60" y1="420" x2="330" y2="150" stroke="#059669" stroke-dasharray="3 3" stroke-width="1.2" />
+        <circle cx="270" cy="200" r="5" fill="#2563EB" stroke="#FFFFFF" stroke-width="2" />
+        <text x="210" y="190" font-size="11" font-weight="800" fill="#1E40AF">Ray Tangency (AP Max)</text>
+        <text x="210" y="205" font-size="9.5" fill="#64748B">Slope of ray = AP; Stage I ends</text>
+
+        <!-- Maximum TP Point -->
+        <circle cx="460" cy="115" r="5.5" fill="#DC2626" stroke="#FFFFFF" stroke-width="2" />
+        <text x="460" y="98" font-size="11.5" font-weight="800" fill="#DC2626" text-anchor="middle">TP Max (Slope = 0)</text>
+        <text x="460" y="132" font-size="9.5" font-weight="700" fill="#B91C1C" text-anchor="middle">MP = 0; Stage II Ends</text>
+
+        <!-- Axis Markers -->
+        <text x="180" y="435" font-size="10.5" font-weight="700" fill="#64748B" text-anchor="middle">L₁</text>
+        <text x="270" y="435" font-size="10.5" font-weight="700" fill="#2563EB" text-anchor="middle">L₂ (AP max)</text>
+        <text x="460" y="435" font-size="10.5" font-weight="700" fill="#DC2626" text-anchor="middle">L₃ (TP max)</text>
+
+        <!-- Arrow marker definition -->
+        <defs>
+          <marker id="arrow-dark" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#0F172A"/>
+          </marker>
+        </defs>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Right Card: AP & MP Curves -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">
+        <span>Average Product (AP) & Marginal Product (MP)</span>
+      </div>
+      <span class="badge badge-emerald">Relationship Rigour</span>
+    </div>
+    <div class="svg-wrap">
+      <svg viewBox="0 0 620 480" xmlns="http://www.w3.org/2000/svg">
+        <!-- Axes -->
+        <line x1="60" y1="360" x2="580" y2="360" stroke="#0F172A" stroke-width="2.5" marker-end="url(#arrow-dark2)" />
+        <line x1="60" y1="440" x2="60" y2="40" stroke="#0F172A" stroke-width="2.5" marker-end="url(#arrow-dark2)" />
+        <text x="575" y="385" font-size="12" font-weight="700" fill="#0F172A" text-anchor="end">Variable Factor (Labour, L)</text>
+        <text x="45" y="40" font-size="12" font-weight="700" fill="#0F172A" text-anchor="end" transform="rotate(-90 45,40)">Product (AP & MP)</text>
+
+        <!-- Vertical Boundary Lines aligned with left graph -->
+        <line x1="180" y1="40" x2="180" y2="440" stroke="#94A3B8" stroke-dasharray="4 4" stroke-width="1.5" />
+        <line x1="270" y1="40" x2="270" y2="440" stroke="#2563EB" stroke-dasharray="5 3" stroke-width="2" />
+        <line x1="460" y1="40" x2="460" y2="440" stroke="#DC2626" stroke-dasharray="5 3" stroke-width="2" />
+
+        <!-- Shading -->
+        <rect x="60" y="45" width="210" height="315" fill="#EFF6FF" opacity="0.35" />
+        <rect x="270" y="45" width="190" height="315" fill="#ECFDF5" opacity="0.45" />
+        <rect x="460" y="45" width="115" height="395" fill="#FEF2F2" opacity="0.35" />
+
+        <!-- Marginal Product (MP) Curve -->
+        <!-- Rises fast, peaks at x=180 (y=90), falls, cuts AP at x=270 (y=160), reaches 0 at x=460, goes negative -->
+        <path d="M 60 360 C 100 240, 140 90, 180 90 C 220 90, 250 140, 270 160 C 330 220, 390 310, 460 360 C 490 380, 530 420, 560 435"
+              fill="none" stroke="#D97706" stroke-width="3" />
+        <text x="565" y="440" font-size="13" font-weight="800" fill="#D97706">MP</text>
+
+        <!-- Average Product (AP) Curve -->
+        <!-- Inverted U, rises slower than MP, peaks at x=270 where it cuts MP, falls slowly, always positive -->
+        <path d="M 60 360 C 120 280, 200 170, 270 160 C 340 150, 420 185, 480 220 C 520 245, 550 270, 570 290"
+              fill="none" stroke="#059669" stroke-width="3" />
+        <text x="575" y="295" font-size="13" font-weight="800" fill="#059669">AP</text>
+
+        <!-- Peak of MP -->
+        <circle cx="180" cy="90" r="5" fill="#D97706" stroke="#FFFFFF" stroke-width="2" />
+        <text x="180" y="75" font-size="11" font-weight="800" fill="#B45309" text-anchor="middle">MP Peaks (Inflection Point)</text>
+
+        <!-- Intersection Point AP = MP (AP Max) -->
+        <circle cx="270" cy="160" r="5.5" fill="#2563EB" stroke="#FFFFFF" stroke-width="2" />
+        <text x="280" y="145" font-size="11" font-weight="800" fill="#1E40AF">AP Max (AP = MP)</text>
+        <text x="280" y="158" font-size="9.5" fill="#64748B">MP cuts AP from above; End of Stage I</text>
+
+        <!-- MP = 0 (Horizontal Intercept) -->
+        <circle cx="460" cy="360" r="5.5" fill="#DC2626" stroke="#FFFFFF" stroke-width="2" />
+        <text x="460" y="348" font-size="11.5" font-weight="800" fill="#DC2626" text-anchor="middle">MP = 0 (TP Max)</text>
+        <text x="460" y="390" font-size="9.5" font-weight="700" fill="#B91C1C" text-anchor="middle">End of Stage II; MP becomes Negative</text>
+
+        <!-- Labels in Stages -->
+        <text x="165" y="330" font-size="11" font-weight="700" fill="#1D4ED8" text-anchor="middle">MP &gt; AP (AP Rises)</text>
+        <text x="365" y="240" font-size="11" font-weight="700" fill="#047857" text-anchor="middle">MP &lt; AP (AP Falls)</text>
+        <text x="515" y="330" font-size="11" font-weight="700" fill="#B91C1C" text-anchor="middle">MP &lt; 0 (TP Falls)</text>
+
+        <defs>
+          <marker id="arrow-dark2" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#0F172A"/>
+          </marker>
+        </defs>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<!-- Bottom Summary Bar -->
+<div class="bottom-bar">
+  <div class="summary-col">
+    <h3>The Three Stages of Production</h3>
+    <ul class="rule-list">
+      <li><b>Stage I (Increasing Returns):</b> From origin to AP max ($L_2$). Both AP and TP rise. Fixed factor under-utilized.</li>
+      <li><b>Stage II (Diminishing Returns):</b> From AP max to TP max ($L_3$). Both AP and MP decline, but MP &gt; 0. <b>Rational zone of production!</b></li>
+      <li><b>Stage III (Negative Returns):</b> Beyond TP max ($L_3$). MP &lt; 0, TP falls. Excessive variable factor clogs fixed factor.</li>
+    </ul>
+  </div>
+
+  <div class="summary-col">
+    <h3>Core Mathematical &amp; Geometric Theorems</h3>
+    <ul class="rule-list">
+      <li><b>Derivative Relation:</b> $M P_L = d(T P) / d L$ (Slope of TP curve); $A P_L = T P / L$ (Slope of ray from origin to TP).</li>
+      <li><b>The AP-MP Intersection Rule:</b> When $M P > A P \implies A P$ rises; when $M P = A P \implies A P$ is at its maximum; when $M P < A P \implies A P$ falls.</li>
+      <li><b>Zero Marginal Product:</b> When $M P = 0 \implies T P$ reaches its mathematical absolute global maximum ($d(T P)/dL = 0$).</li>
+    </ul>
+  </div>
+
+  <div class="trap-box">
+    <h4>CUET Exam Trap Alert</h4>
+    <p><b>Trap:</b> Students mistakenly assume a rational firm operates where TP is highest or MP is highest. <b>Correction:</b> A rational producer NEVER operates in Stage I (wasting fixed factor) or Stage III (negative MP). A firm operates exclusively in <b>Stage II</b>, where exact output depends on factor prices!</p>
+  </div>
+</div>
+
+</body>
+</html>
