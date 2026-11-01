@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Macroeconomic Equilibrium: Dual Determination Model</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #071A4D;
+    padding: 16px 24px;
+    border-radius: 8px;
+    color: #FFFFFF;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+  .header h1 span {
+    color: #B8FF34;
+  }
+  .header-badge {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #B8FF34;
+  }
+
+  .main-grid {
+    display: grid;
+    grid-template-columns: 1.45fr 1fr;
+    gap: 20px;
+    height: 640px;
+  }
+  .card {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 18px 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  .card-title {
+    font-size: 15px;
+    font-weight: 800;
+    color: #071A4D;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #F1F5F9;
+  }
+  .badge {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+  .badge-navy { background: #EEF2F6; color: #071A4D; }
+  .badge-blue { background: #E0EAFF; color: #1F5EFF; }
+  .badge-green { background: #DCFCE7; color: #15803D; }
+  .badge-amber { background: #FEF3C7; color: #B45309; }
+
+  .diagram-container {
+    flex: 1;
+    background: #FAFBFD;
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .info-box {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    padding: 10px 12px;
+    margin-bottom: 10px;
+  }
+  .info-title {
+    font-size: 13px;
+    font-weight: 800;
+    color: #071A4D;
+    margin-bottom: 4px;
+  }
+  .info-desc {
+    font-size: 12px;
+    color: #334155;
+    line-height: 1.4;
+  }
+  .formula-pill {
+    background: #EFF6FF;
+    border: 1px solid #BFDBFE;
+    border-radius: 4px;
+    padding: 4px 8px;
+    font-size: 11.5px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-weight: 700;
+    color: #1E40AF;
+    margin-top: 4px;
+  }
+
+  .bottom-strip {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .strip-card {
+    background: #FFFFFF;
+    border-left: 4px solid #1F5EFF;
+    border-top: 1px solid #E2E8F0;
+    border-right: 1px solid #E2E8F0;
+    border-bottom: 1px solid #E2E8F0;
+    border-radius: 6px;
+    padding: 10px 14px;
+  }
+  .strip-card.warning { border-left-color: #EF4444; }
+  .strip-card.success { border-left-color: #10B981; }
+  .strip-title {
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #071A4D;
+    margin-bottom: 3px;
+  }
+  .strip-text {
+    font-size: 11.5px;
+    color: #334155;
+    line-height: 1.35;
+  }
+</style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div class="header">
+    <h1>MACROECONOMIC EQUILIBRIUM: <span>AD = AS AND S = I DUAL DETERMINATION</span></h1>
+    <div class="header-badge">FIG 1: KEYNESIAN TWO-SECTOR EQUILIBRIUM MODEL</div>
+  </div>
+
+  <!-- MAIN GRID -->
+  <div class="main-grid">
+
+    <!-- LEFT: Dual Graph SVG Container -->
+    <div class="card">
+      <div class="card-title">
+        <span class="badge badge-navy">GEOMETRIC DUALITY</span>
+        <span>Simultaneous Determination: AD=AS (Top) and S=I (Bottom)</span>
+      </div>
+
+      <div class="diagram-container">
+        <svg width="740" height="540" viewBox="0 0 740 540">
+          <!-- TOP PANEL: AD = AS -->
+          <!-- Axes -->
+          <line x1="70" y1="20" x2="70" y2="280" stroke="#071A4D" stroke-width="2.5"/>
+          <line x1="70" y1="280" x2="700" y2="280" stroke="#071A4D" stroke-width="2.5"/>
+          <text x="18" y="30" font-size="12" font-weight="800" fill="#071A4D">AD (C+I)</text>
+          <text x="630" y="300" font-size="12" font-weight="800" fill="#071A4D">Income / Output (Y)</text>
+
+          <!-- 45 Degree Line (AS = Y) -->
+          <line x1="70" y1="280" x2="680" y2="30" stroke="#64748B" stroke-width="2" stroke-dasharray="6 4"/>
+          <text x="610" y="45" font-size="12" font-weight="800" fill="#64748B">AS = Y (45° line)</text>
+
+          <!-- Consumption Line C = c_bar + bY -->
+          <line x1="70" y1="210" x2="680" y2="70" stroke="#10B981" stroke-width="2.5"/>
+          <text x="640" y="80" font-size="12" font-weight="800" fill="#10B981">C = c̄ + bY</text>
+          <text x="25" y="215" font-size="11.5" font-weight="800" fill="#10B981">c̄</text>
+
+          <!-- Breakeven Point B (C = Y) -->
+          <circle cx="280" cy="194" r="5" fill="#10B981"/>
+          <text x="255" y="185" font-size="11.5" font-weight="800" fill="#10B981">B (C=Y)</text>
+          <line x1="280" y1="194" x2="280" y2="280" stroke="#10B981" stroke-width="1.5" stroke-dasharray="4 3"/>
+          <text x="270" y="295" font-size="11.5" font-weight="800" fill="#10B981">Y_B</text>
+
+          <!-- Aggregate Demand Line AD = C + I -->
+          <line x1="70" y1="160" x2="680" y2="20" stroke="#1F5EFF" stroke-width="3"/>
+          <text x="600" y="18" font-size="13" font-weight="800" fill="#1F5EFF">AD = C + I (Planned)</text>
+          <text x="15" y="165" font-size="11.5" font-weight="800" fill="#1F5EFF">c̄ + Ī</text>
+
+          <!-- Equilibrium Point E (AD = AS) -->
+          <circle cx="450" cy="124" r="6" fill="#DC2626"/>
+          <text x="458" y="120" font-size="14" font-weight="900" fill="#DC2626">E (AD = AS)</text>
+          <line x1="450" y1="124" x2="450" y2="280" stroke="#DC2626" stroke-width="2" stroke-dasharray="5 4"/>
+          <text x="442" y="298" font-size="13" font-weight="900" fill="#DC2626">Y* (Equilibrium)</text>
+
+          <!-- Adjustment Zones Top -->
+          <rect x="180" y="130" width="110" height="24" rx="4" fill="#EFF6FF" stroke="#BFDBFE"/>
+          <text x="188" y="146" font-size="11" font-weight="700" fill="#1E40AF">AD > AS (Output ↑)</text>
+
+          <rect x="510" y="80" width="110" height="24" rx="4" fill="#FEF2F2" stroke="#FECACA"/>
+          <text x="518" y="96" font-size="11" font-weight="700" fill="#991B1B">AS > AD (Output ↓)</text>
+
+
+          <!-- BOTTOM PANEL: S = I -->
+          <!-- Axes -->
+          <line x1="70" y1="350" x2="70" y2="520" stroke="#071A4D" stroke-width="2.5"/>
+          <line x1="70" y1="440" x2="700" y2="440" stroke="#071A4D" stroke-width="2"/>
+          <text x="25" y="360" font-size="12" font-weight="800" fill="#071A4D">S, I</text>
+          <text x="640" y="460" font-size="11.5" font-weight="800" fill="#071A4D">Income (Y)</text>
+
+          <!-- Zero Axis marker -->
+          <text x="50" y="445" font-size="11" font-weight="700" fill="#64748B">0</text>
+
+          <!-- Autonomous Investment Line I = I_bar -->
+          <line x1="70" y1="390" x2="680" y2="390" stroke="#B45309" stroke-width="2.5"/>
+          <text x="645" y="385" font-size="12" font-weight="800" fill="#B45309">I = Ī</text>
+
+          <!-- Saving Curve S = -c_bar + (1-b)Y -->
+          <line x1="70" y1="490" x2="680" y2="330" stroke="#7C3AED" stroke-width="2.5"/>
+          <text x="625" y="340" font-size="12" font-weight="800" fill="#7C3AED">S = -c̄ + (1-b)Y</text>
+          <text x="25" y="495" font-size="11.5" font-weight="800" fill="#7C3AED">-c̄</text>
+
+          <!-- Breakeven point on S curve (S = 0 at Y_B) -->
+          <line x1="280" y1="280" x2="280" y2="440" stroke="#10B981" stroke-width="1.5" stroke-dasharray="3 3"/>
+          <circle cx="280" cy="440" r="5" fill="#10B981"/>
+          <text x="286" y="455" font-size="11" font-weight="800" fill="#10B981">S = 0 (Breakeven)</text>
+
+          <!-- Equilibrium Point E' (S = I) -->
+          <line x1="450" y1="280" x2="450" y2="440" stroke="#DC2626" stroke-width="1.5" stroke-dasharray="3 3"/>
+          <circle cx="450" cy="390" r="6" fill="#DC2626"/>
+          <text x="458" y="385" font-size="13" font-weight="900" fill="#DC2626">E' (S = I)</text>
+          <line x1="450" y1="390" x2="450" y2="440" stroke="#DC2626" stroke-width="2" stroke-dasharray="4 3"/>
+          <text x="442" y="460" font-size="12" font-weight="900" fill="#DC2626">Y*</text>
+        </svg>
+      </div>
+    </div>
+
+    <!-- RIGHT: Mechanics, Adjustments & Formulas -->
+    <div class="card">
+      <div class="card-title">
+        <span class="badge badge-blue">CORE MECHANISM</span>
+        <span>Equilibrium Conditions & Restoring Dynamics</span>
+      </div>
+
+      <div class="info-box">
+        <div class="info-title">1. The Two Equilibrium Conditions</div>
+        <div class="info-desc">
+          • <strong>AD = AS Approach:</strong> Aggregate demand (planned expenditure) matches aggregate output ($Y = C + I$).<br>
+          • <strong>S = I Approach:</strong> Planned leakage from income stream (saving) equals planned injection (investment).
+        </div>
+        <div class="formula-pill">Y* = (c̄ + Ī) / (1 − MPC) = (c̄ + Ī) / MPS</div>
+      </div>
+
+      <div class="info-box">
+        <div class="info-title">2. When AD > AS (Planned Spending > Output)</div>
+        <div class="info-desc">
+          • Buyers demand more goods than currently produced.<br>
+          • Unplanned inventories <strong>fall below desired levels</strong> (inventory depletion: $\Delta \text{Stock} < 0$).<br>
+          • Producers hire more labor and expand production until output reaches $Y^*$.
+        </div>
+      </div>
+
+      <div class="info-box">
+        <div class="info-title">3. When AS > AD (Output > Planned Spending)</div>
+        <div class="info-desc">
+          • Output exceeds total planned purchases.<br>
+          • Unsold goods pile up; <strong>unplanned inventories accumulate</strong> ($\Delta \text{Stock} > 0$).<br>
+          • Producers slash output and lay off workers until supply contracts back to $Y^*$.
+        </div>
+      </div>
+
+      <div class="info-box" style="margin-bottom:0;">
+        <div class="info-title">4. Effective Demand Principle</div>
+        <div class="info-desc">
+          • <em>Effective Demand</em> is the exact point on the AD curve where aggregate demand is supported by aggregate output ($AD = AS$).<br>
+          • Coined by J.M. Keynes: output and employment are determined by effective demand, not by potential supply alone.
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- BOTTOM STRIP -->
+  <div class="bottom-strip">
+    <div class="strip-card success">
+      <div class="strip-title">45-Degree Line Significance</div>
+      <div class="strip-text">The 45° line represents all points where aggregate expenditure equals national output ($AS = Y = C + S$). Every point on this line is a potential equilibrium locus.</div>
+    </div>
+    <div class="strip-card warning">
+      <div class="strip-title">Breakeven vs Macro Equilibrium</div>
+      <div class="strip-text">At <strong>Breakeven Point ($B$)</strong>, $C = Y$ and $S = 0$. At <strong>Macro Equilibrium ($E$)</strong>, $AD = AS$ ($C + I = Y$) and $S = I$. They coincide only if autonomous investment is zero.</div>
+    </div>
+    <div class="strip-card">
+      <div class="strip-title">Inventory Adjustment Mechanism</div>
+      <div class="strip-text">The macroeconomic restoring force is the <strong>unplanned change in inventories</strong>. When $AD \neq AS$, involuntary inventory shifts force firms to adjust production towards $Y^*$.</div>
+    </div>
+  </div>
+
+</body>
+</html>

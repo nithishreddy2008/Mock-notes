@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Macroeconomic Disequilibrium: Inflationary & Deflationary Gaps</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #071A4D;
+    padding: 16px 24px;
+    border-radius: 8px;
+    color: #FFFFFF;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+  .header h1 span {
+    color: #B8FF34;
+  }
+  .header-badge {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #B8FF34;
+  }
+
+  .top-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    height: 480px;
+  }
+  .card {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+  }
+  .card-title {
+    font-size: 15px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid #F1F5F9;
+  }
+  .card-title.inflation { color: #DC2626; }
+  .card-title.deflation { color: #1D4ED8; }
+
+  .badge {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+  .badge-red { background: #FEE2E2; color: #991B1B; }
+  .badge-blue { background: #DBEAFE; color: #1E40AF; }
+
+  .graph-box {
+    flex: 1;
+    background: #FAFBFD;
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .card-summary {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 12px;
+    color: #334155;
+    line-height: 1.4;
+  }
+
+  .bottom-matrix {
+    height: 195px;
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 12px 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .matrix-header {
+    font-size: 14px;
+    font-weight: 800;
+    color: #071A4D;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .matrix-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 6px;
+  }
+  .matrix-panel {
+    border-radius: 6px;
+    padding: 10px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .matrix-panel.red { background: #FEF2F2; border: 1px solid #FECACA; }
+  .matrix-panel.green { background: #F0FDF4; border: 1px solid #BBF7D0; }
+  .matrix-title {
+    font-size: 13px;
+    font-weight: 800;
+  }
+  .matrix-title.red { color: #DC2626; }
+  .matrix-title.green { color: #15803D; }
+
+  .policy-row {
+    font-size: 11.5px;
+    color: #1E293B;
+    line-height: 1.35;
+  }
+  .policy-row strong {
+    color: #071A4D;
+  }
+</style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div class="header">
+    <h1>MACROECONOMIC DISEQUILIBRIUM: <span>INFLATIONARY & DEFLATIONARY GAPS</span></h1>
+    <div class="header-badge">FIG 2: FULL-EMPLOYMENT BENCHMARK & POLICY REMEDIES</div>
+  </div>
+
+  <!-- TOP DUAL GRAPHS -->
+  <div class="top-grid">
+
+    <!-- GRAPH A: Inflationary Gap (Excess Demand) -->
+    <div class="card">
+      <div class="card-title inflation">
+        <span class="badge badge-red">EXCESS DEMAND</span>
+        <span>Inflationary Gap (Planned AD > Full Employment AS)</span>
+      </div>
+
+      <div class="graph-box">
+        <svg width="640" height="300" viewBox="0 0 640 300">
+          <!-- Axes -->
+          <line x1="60" y1="20" x2="60" y2="250" stroke="#071A4D" stroke-width="2.5"/>
+          <line x1="60" y1="250" x2="600" y2="250" stroke="#071A4D" stroke-width="2.5"/>
+          <text x="15" y="30" font-size="11.5" font-weight="800" fill="#071A4D">AD</text>
+          <text x="520" y="270" font-size="11.5" font-weight="800" fill="#071A4D">Output (Y)</text>
+
+          <!-- 45 Degree Line (AS = Y) -->
+          <line x1="60" y1="250" x2="550" y2="40" stroke="#64748B" stroke-width="2" stroke-dasharray="5 4"/>
+          <text x="490" y="48" font-size="11" font-weight="700" fill="#64748B">AS = Y (45°)</text>
+
+          <!-- Full Employment Line Y_F -->
+          <line x1="380" y1="20" x2="380" y2="250" stroke="#B45309" stroke-width="2" stroke-dasharray="4 3"/>
+          <text x="365" y="270" font-size="12" font-weight="800" fill="#B45309">Y_F (Full Emp.)</text>
+
+          <!-- Full Employment AD Curve (AD_F) -->
+          <line x1="60" y1="180" x2="550" y2="80" stroke="#10B981" stroke-width="2.5"/>
+          <text x="555" y="85" font-size="11" font-weight="700" fill="#10B981">AD_F (Required)</text>
+
+          <!-- Actual Excess AD Curve (AD_1) -->
+          <line x1="60" y1="135" x2="550" y2="35" stroke="#DC2626" stroke-width="3"/>
+          <text x="555" y="40" font-size="11" font-weight="800" fill="#DC2626">AD_1 (Excess AD)</text>
+
+          <!-- Equilibrium points at Y_F -->
+          <circle cx="380" cy="113" r="5" fill="#10B981"/>
+          <text x="390" y="125" font-size="12" font-weight="800" fill="#10B981">E_F</text>
+
+          <circle cx="380" cy="70" r="5" fill="#DC2626"/>
+          <text x="390" y="70" font-size="12" font-weight="800" fill="#DC2626">G</text>
+
+          <!-- Vertical Gap Indicator E_F to G -->
+          <line x1="380" y1="70" x2="380" y2="113" stroke="#DC2626" stroke-width="4"/>
+          <rect x="235" y="78" width="135" height="26" rx="4" fill="#FEF2F2" stroke="#FCA5A5"/>
+          <text x="242" y="95" font-size="11" font-weight="800" fill="#DC2626">Inflationary Gap = EG</text>
+        </svg>
+      </div>
+
+      <div class="card-summary">
+        <strong>Economic Diagnosis:</strong> At full employment $Y_F$, planned spending exceeds potential real capacity. Since physical resources are 100% utilized, output <em>cannot expand</em>; excess demand exhausts itself in pure <strong>demand-pull inflation</strong>.
+      </div>
+    </div>
+
+    <!-- GRAPH B: Deflationary Gap (Deficient Demand) -->
+    <div class="card">
+      <div class="card-title deflation">
+        <span class="badge badge-blue">DEFICIENT DEMAND</span>
+        <span>Deflationary Gap (Planned AD < Full Employment AS)</span>
+      </div>
+
+      <div class="graph-box">
+        <svg width="640" height="300" viewBox="0 0 640 300">
+          <!-- Axes -->
+          <line x1="60" y1="20" x2="60" y2="250" stroke="#071A4D" stroke-width="2.5"/>
+          <line x1="60" y1="250" x2="600" y2="250" stroke="#071A4D" stroke-width="2.5"/>
+          <text x="15" y="30" font-size="11.5" font-weight="800" fill="#071A4D">AD</text>
+          <text x="520" y="270" font-size="11.5" font-weight="800" fill="#071A4D">Output (Y)</text>
+
+          <!-- 45 Degree Line (AS = Y) -->
+          <line x1="60" y1="250" x2="550" y2="40" stroke="#64748B" stroke-width="2" stroke-dasharray="5 4"/>
+          <text x="490" y="48" font-size="11" font-weight="700" fill="#64748B">AS = Y (45°)</text>
+
+          <!-- Full Employment Line Y_F -->
+          <line x1="430" y1="20" x2="430" y2="250" stroke="#B45309" stroke-width="2" stroke-dasharray="4 3"/>
+          <text x="415" y="270" font-size="12" font-weight="800" fill="#B45309">Y_F (Full Emp.)</text>
+
+          <!-- Full Employment AD Curve (AD_F) -->
+          <line x1="60" y1="150" x2="550" y2="50" stroke="#10B981" stroke-width="2.5"/>
+          <text x="555" y="55" font-size="11" font-weight="700" fill="#10B981">AD_F (Required)</text>
+
+          <!-- Deficient Actual AD Curve (AD_2) -->
+          <line x1="60" y1="195" x2="550" y2="105" stroke="#1D4ED8" stroke-width="3"/>
+          <text x="555" y="110" font-size="11" font-weight="800" fill="#1D4ED8">AD_2 (Deficient AD)</text>
+
+          <!-- Underemployment Equilibrium E_1 -->
+          <circle cx="310" cy="143" r="5" fill="#7C3AED"/>
+          <text x="250" y="135" font-size="11.5" font-weight="800" fill="#7C3AED">E_U (Underemp.)</text>
+          <line x1="310" y1="143" x2="310" y2="250" stroke="#7C3AED" stroke-width="1.5" stroke-dasharray="4 3"/>
+          <text x="300" y="270" font-size="11.5" font-weight="800" fill="#7C3AED">Y_U</text>
+
+          <!-- Full Employment Point E_F and Deficient Point H at Y_F -->
+          <circle cx="430" cy="92" r="5" fill="#10B981"/>
+          <text x="440" y="90" font-size="12" font-weight="800" fill="#10B981">E_F</text>
+
+          <circle cx="430" cy="130" r="5" fill="#1D4ED8"/>
+          <text x="440" y="135" font-size="12" font-weight="800" fill="#1D4ED8">H</text>
+
+          <!-- Vertical Gap Indicator E_F to H -->
+          <line x1="430" y1="92" x2="430" y2="130" stroke="#1D4ED8" stroke-width="4"/>
+          <rect x="445" y="103" width="140" height="26" rx="4" fill="#EFF6FF" stroke="#BFDBFE"/>
+          <text x="452" y="120" font-size="11" font-weight="800" fill="#1D4ED8">Deflationary Gap = EH</text>
+        </svg>
+      </div>
+
+      <div class="card-summary">
+        <strong>Economic Diagnosis:</strong> At full employment $Y_F$, planned spending falls short of full capacity. Equilibrium establishes at $Y_U < Y_F$, resulting in <strong>involuntary unemployment, unsold stocks</strong>, and deflationary slump.
+      </div>
+    </div>
+
+  </div>
+
+  <!-- BOTTOM MATRIX -->
+  <div class="bottom-matrix">
+    <div class="matrix-header">
+      <span class="badge badge-navy">REMEDIAL POLICY TOOLKIT</span>
+      <span>Comprehensive Fiscal & Monetary Interventions</span>
+    </div>
+
+    <div class="matrix-cols">
+      <!-- Correcting Excess Demand -->
+      <div class="matrix-panel red">
+        <div class="matrix-title red">CORRECTING EXCESS DEMAND / INFLATIONARY GAP (CONTRACTIONARY)</div>
+        <div class="policy-row">
+          <strong>Fiscal Policy:</strong> Cut Government Spending ($G \downarrow$), Raise Taxes ($T \uparrow$), Squeeze Public Borrowings.
+        </div>
+        <div class="policy-row">
+          <strong>Monetary Policy (RBI):</strong> Raise Repo Rate ($\uparrow$), Raise CRR & SLR ($\uparrow$), Sell G-Secs (OMOs), Hike Margin Requirements ($\uparrow$).
+        </div>
+        <div class="policy-row" style="color:#7F1D1D;">
+          <em>Macro Outcome:</em> Drains excess purchasing power and credit $\implies AD$ shifts down to $AD_F \implies$ Price stability restored.
+        </div>
+      </div>
+
+      <!-- Correcting Deficient Demand -->
+      <div class="matrix-panel green">
+        <div class="matrix-title green">CORRECTING DEFICIENT DEMAND / DEFLATIONARY GAP (EXPANSIONARY)</div>
+        <div class="policy-row">
+          <strong>Fiscal Policy:</strong> Increase Public Expenditure ($G \uparrow$), Slash Taxes ($T \downarrow$), Borrow to finance deficits.
+        </div>
+        <div class="policy-row">
+          <strong>Monetary Policy (RBI):</strong> Lower Repo Rate ($\downarrow$), Lower CRR & SLR ($\downarrow$), Buy G-Secs (OMOs), Reduce Margin Requirements ($\downarrow$).
+        </div>
+        <div class="policy-row" style="color:#14532D;">
+          <em>Macro Outcome:</em> Pumps fresh liquidity and cheap credit $\implies AD$ shifts up to $AD_F \implies$ Full employment restored.
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Determination of Income, Employment & The Multiplier Mindmap</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #071A4D;
+    padding: 16px 24px;
+    border-radius: 8px;
+    color: #FFFFFF;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+  .header h1 span {
+    color: #B8FF34;
+  }
+  .header-badge {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #B8FF34;
+  }
+
+  .mindmap-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    height: 640px;
+  }
+  .pillar-card {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 16px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .pillar-header {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #F1F5F9;
+  }
+  .badge {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    width: fit-content;
+  }
+  .badge-p1 { background: #E0EAFF; color: #1F5EFF; }
+  .badge-p2 { background: #DCFCE7; color: #15803D; }
+  .badge-p3 { background: #FEF3C7; color: #B45309; }
+  .badge-p4 { background: #F3E8FF; color: #7E22CE; }
+  .pillar-title {
+    font-size: 15px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+
+  .concept-box {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    padding: 9px 10px;
+  }
+  .concept-title {
+    font-size: 12px;
+    font-weight: 800;
+    color: #071A4D;
+    margin-bottom: 3px;
+  }
+  .concept-desc {
+    font-size: 11.5px;
+    color: #334155;
+    line-height: 1.35;
+  }
+  .concept-desc strong {
+    color: #071A4D;
+  }
+  .formula-pill {
+    background: #EFF6FF;
+    border: 1px solid #BFDBFE;
+    border-radius: 4px;
+    padding: 4px 6px;
+    font-size: 11px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-weight: 700;
+    color: #1E40AF;
+    margin-top: 4px;
+  }
+
+  .bottom-strip {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .strip-card {
+    background: #FFFFFF;
+    border-left: 4px solid #1F5EFF;
+    border-top: 1px solid #E2E8F0;
+    border-right: 1px solid #E2E8F0;
+    border-bottom: 1px solid #E2E8F0;
+    border-radius: 6px;
+    padding: 10px 14px;
+  }
+  .strip-card.warning { border-left-color: #EF4444; }
+  .strip-card.success { border-left-color: #10B981; }
+  .strip-title {
+    font-size: 11.5px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #071A4D;
+    margin-bottom: 3px;
+  }
+  .strip-text {
+    font-size: 11px;
+    color: #334155;
+    line-height: 1.35;
+  }
+</style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div class="header">
+    <h1>MACROECONOMICS: <span>INCOME, EMPLOYMENT & THE MULTIPLIER</span></h1>
+    <div class="header-badge">FIG 3: MASTER SYNTHESIS MINDMAP</div>
+  </div>
+
+  <!-- 4-COLUMN MINDMAP GRID -->
+  <div class="mindmap-grid">
+
+    <!-- PILLAR 1: AD & AS Foundations -->
+    <div class="pillar-card">
+      <div class="pillar-header">
+        <span class="badge badge-p1">PILLAR 1</span>
+        <div class="pillar-title">AD, AS & Propensities</div>
+      </div>
+
+      <div class="concept-box">
+        <div class="concept-title">Components of AD & AS</div>
+        <div class="concept-desc">
+          • <strong>AD:</strong> $C + I$ (two-sector planned expenditure).<br>
+          • <strong>AS:</strong> $Y = C + S$ (45° line from origin).<br>
+          • <em>Investment:</em> Autonomous ($I = \bar{I}$), independent of income level.
+        </div>
+      </div>
+
+      <div class="concept-box">
+        <div class="concept-title">Consumption Function</div>
+        <div class="formula-pill">C = c̄ + bY (b = MPC)</div>
+        <div class="concept-desc" style="margin-top:4px;">
+          • <em>Autonomous $c̄$:</em> Survival spending at $Y=0$.<br>
+          • $APC = C/Y$ (falls as $Y$ rises; $>1$ before breakeven; $=1$ at breakeven).
+        </div>
+      </div>
+
+      <div class="concept-box">
+        <div class="concept-title">Saving Function & Rules</div>
+        <div class="formula-pill">S = -c̄ + (1 - b)Y</div>
+        <div class="concept-desc" style="margin-top:4px;">
+          • $MPC + MPS = 1$ (always).<br>
+          • $APC + APS = 1$ (always).
+        </div>
+      </div>
+    </div>
+
+    <!-- PILLAR 2: Equilibrium Determination -->
+    <div class="pillar-card">
+      <div class="pillar-header">
+        <span class="badge badge-p2">PILLAR 2</span>
+        <div class="pillar-title">Equilibrium Output</div>
+      </div>
+
+      <div class="concept-box">
+        <div class="concept-title">Two Theoretical Approaches</div>
+        <div class="formula-pill">Approach 1: AD = AS (C + I = Y)</div>
+        <div class="formula-pill">Approach 2: S = I (Leakage = Injection)</div>
+        <div class="concept-desc" style="margin-top:4px;">
+          Both approaches produce identical equilibrium income: $Y^* = (c̄ + \bar{I}) / MPS$.
+        </div>
+      </div>
+
+      <div class="concept-box">
+        <div class="concept-title">Dynamic Restoring Force</div>
+        <div class="concept-desc">
+          • <strong>AD > AS:</strong> Inventories deplete $\implies$ firms hire and expand output.<br>
+          • <strong>AS > AD:</strong> Inventories accumulate $\implies$ firms cut production until $AD = AS$.
+        </div>
+      </div>
+
+      <div class="concept-box">
+        <div class="concept-title">Effective Demand</div>
+        <div class="concept-desc">
+          The point where the AD curve intersects the 45° AS line. Output is determined by effective demand, not potential capacity.
+        </div>
+      </div>
+    </div>
+
+    <!-- PILLAR 3: The Investment Multiplier -->
+    <div class="pillar-card">
+      <div class="pillar-header">
+        <span class="badge badge-p3">PILLAR 3</span>
+        <div class="pillar-title">The Multiplier Engine</div>
+      </div>
+
+      <div class="concept-box">
+        <div class="concept-title">Multiplier Formula</div>
+        <div class="formula-pill">K = ΔY / ΔI = 1 / (1 - MPC) = 1 / MPS</div>
+        <div class="concept-desc" style="margin-top:4px;">
+          Direct relationship with $MPC$; inverse relationship with $MPS$.
+        </div>
+      </div>
+
+      <div class="concept-box">
+        <div class="concept-title">Limits & Operation</div>
+        <div class="concept-desc">
+          • <strong>Minimum:</strong> $K = 1$ (if $MPC = 0$).<br>
+          • <strong>Maximum:</strong> $K = \infty$ (if $MPC = 1$).<br>
+          • <em>Forward Multiplier:</em> $\Delta I \uparrow \implies \Delta Y \uparrow$.<br>
+          • <em>Backward Multiplier:</em> $\Delta I \downarrow \implies \Delta Y \downarrow$.
+        </div>
+      </div>
+
+      <div class="concept-box">
+        <div class="concept-title">Paradox of Thrift</div>
+        <div class="concept-desc">
+          If all citizens attempt to save a higher proportion of income ($MPS \uparrow$), aggregate demand collapses, leaving total realized national savings unchanged or lower!
+        </div>
+      </div>
+    </div>
+
+    <!-- PILLAR 4: Gaps & Policy Control -->
+    <div class="pillar-card">
+      <div class="pillar-header">
+        <span class="badge badge-p4">PILLAR 4</span>
+        <div class="pillar-title">Gaps & Policy Tools</div>
+      </div>
+
+      <div class="concept-box">
+        <div class="concept-title">Inflationary Gap (Excess AD)</div>
+        <div class="concept-desc">
+          • Planned $AD > Y_F$ (at full employment).<br>
+          • Causes pure <strong>demand-pull inflation</strong> (output pinned at $Y_F$).<br>
+          • <em>Remedy:</em> Contractionary fiscal ($G\downarrow, T\uparrow$) & Dear money policy.
+        </div>
+      </div>
+
+      <div class="concept-box">
+        <div class="concept-title">Deflationary Gap (Deficient AD)</div>
+        <div class="concept-desc">
+          • Planned $AD < Y_F$ (at full employment).<br>
+          • Leads to <strong>involuntary unemployment</strong>.<br>
+          • <em>Remedy:</em> Expansionary fiscal ($G\uparrow, T\downarrow$) & Cheap money policy.
+        </div>
+      </div>
+
+      <div class="concept-box">
+        <div class="concept-title">Underemployment Equilibrium</div>
+        <div class="concept-desc">
+          An economy can settle into a stable equilibrium ($AD = AS$) with persistent involuntary unemployment if aggregate demand is deficient.
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- BOTTOM STRIP: TOP 3 EXAM ALERTS -->
+  <div class="bottom-strip">
+    <div class="strip-card warning">
+      <div class="strip-title">Alert 1: Multiplier Bounds</div>
+      <div class="strip-text">The investment multiplier $K$ can <strong>never be less than 1</strong> and can <strong>never be negative</strong>. Its strict mathematical domain is $1 \le K \le \infty$.</div>
+    </div>
+    <div class="strip-card success">
+      <div class="strip-title">Alert 2: Output at Full Employment</div>
+      <div class="strip-text">Under Excess Demand, national real output <strong>cannot increase</strong> because all resources are already 100% utilized. Only nominal prices and wages rise.</div>
+    </div>
+    <div class="strip-card">
+      <div class="strip-title">Alert 3: APC vs MPC Distinction</div>
+      <div class="strip-text"><strong>APC</strong> ($C/Y$) compares aggregate levels and can exceed 1 (below breakeven). <strong>MPC</strong> ($\Delta C / \Delta Y$) measures marginal slope and is strictly bounded: $0 < MPC < 1$.</div>
+    </div>
+  </div>
+
+</body>
+</html>
