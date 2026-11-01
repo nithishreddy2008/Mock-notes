@@ -3,302 +3,581 @@
 #show: om-doc.with(
   exam: "CUET UG",
   subject: "Economics",
-  topic-title: "Development Policies and Experience (1947-90)",
+  topic-title: "Development Policies & Experience (1947-90) & 1991 Reforms",
   subtitle: "Official Syllabus · Course III: Indian Economic Development · Class 12 · CUET UG 2027 Cycle Notes",
 )
 
-= Syllabus Alignment
+= Syllabus Alignment & Exam Blueprint
 
 #table(
-  columns: (1.1fr, 2fr, 1.15fr),
-  table.header[*Sub-topic*][*Official syllabus pointer (NTA CUET(UG) Economics syllabus 2026, the current 2027 baseline, Course III)*][*Skills the questions test*],
-  [*Eve of independence and the planning system*], [
-    A brief introduction of the state of the Indian economy on the eve of independence; Indian economic system and common goals of Five Year Plans
+  columns: (1.1fr, 2.1fr, 1.2fr),
+  table.header[*Sub-Topic*][*Official NTA CUET UG Syllabus Pointer (NCERT Class 12 Course III)*][*Core Exam Weight & Skills*],
+  [*Eve of Independence (1947)*], [
+    State of the Indian economy on the eve of independence; Colonial exploitation in agriculture, industry, foreign trade; Demographic and occupational indicators.
   ], [
-    Recalling the inherited economy's condition, the mixed-economy choice, and the four goals of planning.
+    Recalling colonial institutional structures (Zamindari, Drain of wealth, 1921 Great Divide, national income estimators).
   ],
-  [*Sectoral policies 1950-90*], [
-    Main features, problems and policies of agriculture (institutional aspects and new agricultural strategy), industry (IPR 1956; SSI — role and importance) and foreign trade
+  [*Planning & 4 Common Goals*], [
+    Indian economic system (Mixed Economy); Five Year Plans; Four common goals of planning (Growth, Modernisation, Self-Reliance, Equity); Mahalanobis strategy.
   ], [
-    Explaining land reforms and the Green Revolution, IPR 1956 with small-scale industry, and import substitution with its costs.
+    Distinguishing the four planning goals; roles of public vs private sectors; Planning Commission to NITI Aayog.
   ],
-  [*Economic reforms since 1991*], [
-    Economic reforms since 1991 — features and appraisals of liberalisation, globalisation and privatisation (LPG policy)
+  [*Sectoral Policies (1950–1990)*], [
+    Agriculture: Land reforms (intermediaries abolition, land ceilings) and Green Revolution; Industry: IPR 1956 and SSI (Karve Committee); Foreign trade: Inward import substitution.
   ], [
-    Linking the 1991 crisis to the New Economic Policy, listing LPG features, and weighing the appraisal on both sides.
+    Analyzing institutional vs technological agricultural reforms; IPR 1956 three schedules; licensing and import substitution mechanics.
+  ],
+  [*1991 Crisis & LPG Policy*], [
+    Background of the 1991 BoP crisis; New Economic Policy (NEP); Features of Liberalisation, Privatisation, Globalisation; WTO framework.
+  ], [
+    Tracing crisis triggers; distinguishing stabilization vs structural reforms; identifying specific deregulatory policy moves.
+  ],
+  [*Critical Appraisal & Modern Policies*], [
+    Appraisal of LPG reforms (growth vs employment/agriculture); Demonetisation (2016) and Goods and Services Tax (GST 2017).
+  ], [
+    Evaluating "Jobless Growth" and agricultural deceleration; recalling key constitutional and operational features of GST and Demonetisation.
   ],
 )
 
 #exam-pointer[
-  CUET UG pattern (NTA official information bulletin and syllabus, 2026 cycle — the
-  current 2027 baseline): each subject paper carries *50 compulsory questions* in
-  *60 minutes*, with $+5$ for every correct answer and $-1$ for every incorrect answer. The Economics paper follows NCERT Class 12
-  Economics; Indian Economic Development questions are fact-and-date country —
-  plan decades, policy names and the 1991 sequence reward precise recall.
+  *CUET UG Exam Strategy (NTA 2026–2027 Baseline):* The Economics paper contains *50 compulsory questions* to be attempted in *60 minutes* ($+5$ marks for correct, $-1$ mark for wrong). In Indian Economic Development, *Unit 10* carries 5 to 7 high-scoring questions. NTA heavily tests chronological facts, policy committee names, constitutional provisions, and diagnostic classifications:
+  1. *Colonial Estimators & Benchmarks:* V.K.R.V. Rao's national income estimation; 1921 as the "Year of Great Divide"; Suez Canal opening (1869); first railway (1853).
+  2. *Planning Goals:* Matching examples to Growth, Modernisation, Self-Reliance, and Equity.
+  3. *IPR 1956 Schedules & Karve Committee (1955):* Exact industry distribution and SSI definitions.
+  4. *1991 NEP Reforms:* The 5-6 industries retaining licensing, Maharatna/Navratna PSU status, and WTO founding details (1 Jan 1995).
 ]
 
-= The Eve of Independence: What India Inherited
+---
 
-August 1947: the new government inherited an economy that two centuries of colonial rule had organised for Britain's benefit, not India's. Before building, the planners had to know what they stood on — and the ground was weak on almost every front.
+= Indian Economy on the Eve of Independence (1947)
 
-- *Agriculture — stagnant and exploitative:*
-  - *Zamindari system:* landlords collected rent without investing a rupee in the land — no incentive, no improvement.
-  - *Productivity among the world's lowest*; irrigation and technology nearly absent.
-  - *Partition made it worse:* the fertile irrigated west went to Pakistan while India kept the people — foodgrain scarcity began on day one.
-- *Industry — de-industrialised:*
-  - British machine-made goods had destroyed India's handicrafts; India exported raw material and bought finished goods — a colonial trade pattern.
-  - Only cotton and jute textiles were sizeable — and the jute belt went to Pakistan, leaving Indian mills without raw fibre.
-  - Public sector nearly empty; ownership concentrated in a few business houses.
-- *People — poor and unskilled:* literacy about 16%, life expectancy around 32 years, high birth and death rates; a small, thin industrial workforce.
-- *Infrastructure — partial and self-serving:* the one modern gift was the RAILWAY network — but it had been built to move raw materials to ports for Britain, not to knit India's markets together.
+When India attained independence on 15 August 1947, the new nation inherited an economy that had endured two centuries of systematic colonial exploitation under British rule. The sole objective of British colonial economic policy was to reduce India to a mere supplier of raw materials to feed Britain's rapidly expanding industrial base and a captive market for British manufactured consumer goods.
 
-= The System Chosen and the Goals of Planning
+== 1. National Income & Low Economic Growth
+The colonial administration never conducted an official census or survey to calculate India's national or per capita income. A few independent individual economists attempted estimates:
+- *Key Individual Estimators:* Dadabhai Naoroji (pioneered the "Drain of Wealth" theory), William Digby, Findlay Shirras, V.K.R.V. Rao, and R.C. Desai.
+- *Most Significant Estimates:* Economists unanimously consider the estimates produced by *Dr. V.K.R.V. Rao* to be the most statistically rigorous and significant.
+- *Colonial Growth Rates:* During the first half of the twentieth century (1900–1950), India's aggregate real GDP grew at *less than 2% per annum*, while per capita output grew at a dismal *less than 0.5% per annum*.
 
-Free India chose a MIXED ECONOMY: the state would command the "commanding heights" (heavy industry, infrastructure, banking) while the private sector coexisted in consumer goods and agriculture. The Planning Commission (1950) would steer everything through Five Year Plans.
+== 2. Agricultural Sector: Feudal Stagnation
+Over 85% of India's population lived in villages and derived their livelihood directly or indirectly from agriculture. Yet the sector suffered chronic stagnation:
+- *Land Settlement Systems:* The British introduced predatory revenue settlement systems, most notoriously the *Permanent Settlement (Zamindari System)* in the Bengal Presidency. The primary focus of the zamindars was solely collecting rent, regardless of crop failure or the economic distress of the tillers. No capital investment was made in irrigation, manuring, or soil improvement.
+- *Forced Commercialisation of Agriculture:* Indian farmers were coerced into cultivating commercial cash crops (such as indigo, jute, and cotton) required as raw materials by British textile mills, rather than subsistence foodgrains. This severely eroded domestic food security and precipitated recurrent, catastrophic famines (e.g., the Great Bengal Famine of 1943, which claimed over three million lives).
+- *Partition Shock (1947):* The partition of India dealt a severe blow to agriculture:
+  1. A substantial portion of the country's fertile, highly irrigated agricultural land in the Indus Basin went to West Pakistan.
+  2. The fertile jute-growing tracts went to East Pakistan (now Bangladesh), while all the jute processing mills remained in India around Kolkata, creating a crippling raw material shortage.
+
+== 3. Industrial Sector: Systematic De-industrialisation
+The colonial state orchestrated the deliberate decline of India's world-renowned traditional handicraft and handloom industries (a process termed *De-industrialisation*):
+- *Two-Fold British Motive:*
+  1. To reduce India to a net exporter of primary raw materials (raw cotton, jute, silk, wool).
+  2. To turn India into an open, duty-free market for finished industrial consumer goods manufactured in Britain.
+- *Absence of Capital Goods Industry:* The colonial rulers made zero effort to establish modern capital goods industries (machine tools, industrial machinery) capable of producing capital equipment for domestic industrial expansion.
+- *Tiny Modern Footprint:* Modern industry was restricted to cotton textile mills (predominantly Indian-owned in Gujarat and Maharashtra) and jute mills (predominantly British-owned in Bengal). The pioneering *Tata Iron and Steel Company (TISCO)* was incorporated only in 1907 in Jamshedpur.
+- *Confined Public Sector:* Public sector operations were strictly confined to areas that facilitated British commercial and military logistics: railways, ports, telegraphs, and power generation.
+
+== 4. Foreign Trade: Colonial Monopoly & The Drain of Wealth
+Britain maintained a strict monopoly over India's foreign trade:
+- *Suez Canal Opening (1869):* The opening of the Suez Canal drastically reduced transportation costs and travel time between Britain and India, intensifying British commercial dominance. Over half of India's foreign trade was officially restricted to Britain.
+- *Drain of Indian Wealth:* Although India generated a significant merchandise *export surplus* (exporting more raw materials than importing finished goods), this surplus brought zero gold or capital to India. Instead, the surplus was siphoned off to finance:
+  1. The administrative expenses of the colonial government in London (*"Home Charges"*).
+  2. Military expeditions fought by the British Empire outside India.
+  3. Payments for invisible administrative and shipping services procured from Britain.
+
+== 5. Demographic Condition & Occupational Structure
+- *Census Benchmarks:* The first official comprehensive population census was conducted in *1881*.
+- *1921 — The Year of the Great Divide:* Before 1921, India was in the first stage of demographic transition (characterized by high birth rates and high, fluctuating death rates, resulting in stagnant population growth). After 1921, India transitioned into the second stage of demographic transition, marked by steadily falling death rates and persistent high birth rates, resulting in *unbroken, accelerating population growth*.
+- *Key Demographic Indicators on Eve of Independence:*
+  - Overall Literacy Rate: *Less than 16%* (Female literacy was catastrophically low at *approximately 7%*).
+  - Infant Mortality Rate (IMR): An alarming *218 per 1,000 live births* (compared to under 28 today).
+  - Life Expectancy: A meager *32 to 44 years* (compared to over 70 years today).
+  - Public Health: Widespread water-borne and airborne epidemics; acute absence of modern clinical facilities.
+- *Occupational Structure:* Extreme occupational rigidity:
+  - Agriculture: *70% to 75%* of the total workforce.
+  - Manufacturing / Industry: Only *10%* of the workforce.
+  - Services / Commercial: *15% to 20%* of the workforce.
+  - Regional variations: Parts of the Madras Presidency, Bombay, and Bengal witnessed a slight shift of labour into industry and services, while states like Rajasthan, Orissa, and Punjab saw an increased dependence on agriculture.
+
+== 6. Infrastructure Development Under British Rule
+Basic infrastructure—railways, ports, water transport, posts, and telegraphs—was introduced by the British, but solely to serve colonial administrative, commercial, and military strategic interests, rather than public welfare:
+- *Railways (Introduced in 1850):* The first passenger train ran from *Bombay to Thane in 1853*. Railways broke geographical and cultural barriers and enabled commercial integration. However, railways also facilitated the rapid extraction and export of agricultural produce to ports, accelerating the destruction of self-sufficient village economies.
+- *Telegraph & Postal System:* The electric telegraph was introduced to maintain law, order, and military command, while postal services remained basic and inadequate.
+
+---
+
+= Planning Architecture & The Four Common Goals (1950–1990)
+
+Following independence, India chose a *Mixed Economic System*, combining the strengths of socialism (state planning and public ownership of core infrastructure) with capitalism (private enterprise and market incentives).
+
+== 1. Institutional Framework of Planning
+- *The Planning Commission:* Established in *March 1950* by an executive resolution of the Government of India, with Prime Minister Jawaharlal Nehru serving as its first Chairman. (Note: On *1 January 2015*, the Planning Commission was replaced by *NITI Aayog* — National Institution for Transforming India).
+- *P.C. Mahalanobis (The Architect of Indian Planning):* Professor Prasanta Chandra Mahalanobis founded the *Indian Statistical Institute (ISI)* in Kolkata and formulated the conceptual framework for the *Second Five Year Plan (1956–1961)*, which laid the foundation for heavy industrialization in India.
+
+== 2. The Four Common Goals of Five Year Plans
+While individual five-year plans emphasized specific priorities (e.g., agriculture in the First Plan, heavy industry in the Second Plan), all Five Year Plans shared four overarching developmental objectives:
 
 #table(
-  columns: (1.1fr, 2.2fr, 1.7fr),
-  table.header[*Goal of planning*][*What it meant*][*How plans pursued it*],
-  [Growth], [Raise the economy's capacity to produce goods and services over time], [Bigger public investment, savings mobilisation, five-year targets],
-  [Modernisation], [Shift technology and society forward — new machines, new sectors, new attitudes], [Heavy industry push, technical education, science institutes],
-  [Self-reliance], [Depend less on imports and foreign aid for essentials], [Import substitution, domestic capacity in machinery and food],
-  [Equity], [Spread the gains to the poorest, not just the averages], [Land reforms, small-industry protection, poverty programmes],
+  columns: (1fr, 1.4fr, 1.6fr),
+  table.header[*Planning Goal*][*Core Economic Meaning*][*Policy Mechanism & Indicators*],
+  [*1. Growth*], [
+    Sustained increase in the country's capacity to produce goods and services over time.
+  ], [
+    Measured by the sustained growth rate of *Gross Domestic Product (GDP)* and structural diversification across primary, secondary, and tertiary sectors.
+  ],
+  [*2. Modernisation*], [
+    Adoption of modern technology in production processes, alongside progressive social institutional transformation.
+  ], [
+    - Technological: Using advanced seed genetics, computerized production systems, and modern capital equipment.\
+    - Social: Recognition of women's rights, workplace gender equality, and dismantling caste barriers.
+  ],
+  [*3. Self-Reliance*], [
+    Promoting economic development using domestic resources while avoiding dependence on foreign imports and foreign sovereign aid.
+  ], [
+    Prioritizing domestic production of foodgrains (to end dependence on American PL-480 food imports) and building domestic capital goods capacity to insulate sovereignty.
+  ],
+  [*4. Equity*], [
+    Ensuring that the benefits of economic growth are distributed fairly across all strata of society.
+  ], [
+    Guaranteeing that basic necessities (food, housing, healthcare, education) are accessible to the poorest citizens, alongside progressive taxation to compress wealth inequalities.
+  ],
 )
 
-- *First Plan (1951-56):* agriculture first, built on the Harrod-Domar model of growth — a success; food output and incomes rose.
-- *Second Plan (1956-61):* the big TURN — the Mahalanobis model put HEAVY INDUSTRY at the centre (machines that make machines). Long-run capacity over quick consumer goods.
-- *The tension the plans lived with:* industry needs food and wages; agriculture needed attention the industry-first plans starved — the 1965-66 droughts exposed it brutally, forcing the Green Revolution.
-- *Plan holiday (1966-69):* annual plans between the Third and Fourth Plans — wars, droughts and crisis paused the five-year rhythm.
+#tip-box(title: "The Complementarity of Planning Goals")[
+  Growth alone does not guarantee development. An economy can record rapid GDP growth while the vast majority of its population remains impoverished. Therefore, Indian planners explicitly coupled *Growth with Equity* ("Growth with Social Justice") as the ultimate benchmark of plan success.
+]
 
-= Agriculture: Land Reforms, the Green Revolution and the Subsidy Debate
+---
 
-With food scarcity choking the economy, policy ran on two tracks: change WHO owns the land (institutional), and change HOW MUCH the land yields (technological).
+= Sectoral Policies (1950–1990): Agriculture, Industry & Trade
 
-- *Institutional reforms (the promise):*
-  - *Zamindari abolition:* end the rent-collecting intermediaries.
-  - *Land ceilings:* cap holdings, redistribute surplus to the landless.
-  - *Tenancy reforms:* security and fair rent for tenant farmers.
-- *The reality (the problem):* laws were watered down, loopholes flourished (evictions, benami transfers), implementation dragged — land reform delivered only PARTLY. Power remained with the rural elite.
-- *The new agricultural strategy — Green Revolution (from 1966):*
-  - *The package:* high-yielding variety (HYV) seeds + assured irrigation + chemical fertilisers + pesticides — all together or nothing.
-  - *The results:* wheat and rice output surged; India's food imports fell; the famine fear died.
-  - *The limits:* it worked FIRST and BEST in Punjab, Haryana and western UP on wheat and rice — dry regions and other crops waited; BIG farmers adopted first, widening gaps.
-- *The subsidy debate — both sides, always:*
-  - *For:* subsidies on fertiliser, power and irrigation pushed risk-averse farmers to adopt the new technology — equity and adoption.
-  - *Against:* benefits leak to big farmers and fertiliser makers, strain the budget, and overuse degrades soil and water tables.
-  - *The middle path (the topper's answer):* subsidies were needed to START the revolution; now they need rational, targeted redesign — neither removal nor blind expansion.
+Between 1950 and 1990, the Indian state adopted an inward-looking, state-directed development strategy across all three major sectors of the economy.
 
-= Industry: IPR 1956, Small-Scale Industry and the Licence Raj
+== 1. Agriculture: Institutional and Technological Reforms
+At the time of independence, agricultural productivity was extraordinarily low. The government introduced two major sets of reforms:
 
-Industry's charter came from the Industrial Policy Resolution (IPR) 1956 — the "Economic Constitution" of the mixed economy.
+=== A. Institutional Reforms (Land Reforms)
+1. *Abolition of Intermediaries:* The state enacted legislation abolishing zamindars, jagirdars, and other feudal revenue intermediaries. This reform brought nearly *200 lakh (20 million) tenants* into direct contact with the state, conferring ownership rights to the actual tillers of the soil.
+2. *Land Ceilings:* Legislation was enacted fixing the maximum legal size of agricultural land an individual farmer or agricultural family could own. Land owned in excess of the ceiling was to be confiscated and redistributed to landless agricultural labourers.
+3. *Implementation Hurdles:* Big landlords exploited legal loopholes, registered land under names of distant relatives (*benami transfers*), and challenged laws in court. Land reforms achieved dramatic success primarily in *Kerala* and *West Bengal* (under "Operation Barga"), where strong political will existed, while lagging in other states.
+
+=== B. Technological Reforms (The Green Revolution)
+By the mid-1960s, consecutive droughts and dependence on food imports under the American PL-480 program exposed India's agricultural vulnerability. In response, India launched the *Green Revolution (New Agricultural Strategy)*:
+- *Key Ingredients:*
+  1. *High Yielding Variety (HYV) Seeds:* Miracle semi-dwarf wheat and rice seeds developed by Nobel laureate Dr. Norman Borlaug and introduced in India under the leadership of agricultural scientist *Dr. M.S. Swaminathan*.
+  2. *Chemical Inputs:* Commercial chemical fertilizers and pesticides.
+  3. *Assured Irrigation:* Tubewells, canals, and steady water supply.
+- *Phases of the Green Revolution:*
+  - *Phase 1 (Mid-1960s to Mid-1970s):* Confined primarily to wheat-growing regions with assured irrigation: *Punjab, Haryana, and Western Uttar Pradesh*.
+  - *Phase 2 (Mid-1970s to Mid-1980s):* Expanded to include rice and other crops, spreading to wider geographic regions across Eastern and Southern India.
+- *Marketed Surplus:* The Green Revolution enabled farmers to produce agricultural output far exceeding their family subsistence consumption. The portion of agricultural produce sold in the market by farmers is termed *Marketed Surplus*.
+- *Buffer Stocks:* The Food Corporation of India (FCI) procured marketed surplus at Minimum Support Prices (MSP) to build massive national buffer stocks, ending India's chronic food deficits and achieving national food security.
+- *Debate Over Agricultural Subsidies:* Economists debate the role of fertilizer and power subsidies: proponents argue subsidies are essential to protect resource-poor small farmers from high input costs, while critics argue subsidies disproportionately enrich fertilizer corporations and wealthy farmers while ballooning the government's fiscal deficit.
+
+---
+
+#figure(
+  image("assets/econ_devpol_eve_and_planning_1950_90.png", width: 100%),
+  caption: [Figure 1: Colonial Inheritance & Planning Framework (1947–1990) — Eve of Independence stagnation, the Four Planning Goals, Land Reforms & Green Revolution, and IPR 1956 industrial strategy.],
+)
+
+---
+
+== 2. Industry: Industrial Policy Resolution 1956 & Small-Scale Industries
+
+In a developing economy with scarce private capital, the state assumed primary responsibility for industrial expansion, reserving the "commanding heights of the economy" for the public sector.
+
+=== A. Industrial Policy Resolution (IPR) 1956
+The Industrial Policy Resolution of 1956 formed the bedrock of the Second Five Year Plan (the Mahalanobis Model) and classified all domestic industries into three distinct schedules:
 
 #table(
-  columns: (1.15fr, 2.3fr, 1.55fr),
-  table.header[*IPR 1956 pillar*][*What it said*][*Instruments*],
-  [State at the command post], [The public sector must grow and lead — the state takes the "commanding heights" of the economy], [Schedule A (exclusive state: 17 industries — railways, steel, mining), Schedule B (state-led with private entry), Schedule C (private, licensed)],
-  [Industrial expansion], [Transform the economy from agricultural to industrial — machines to make machines], [Second Plan's Mahalanobis push, public investment in steel plants],
-  [Reduce concentration], [Stop private monopolies from swallowing the economy], [Licensing, small-sector reservation],
+  columns: (1fr, 1.4fr, 1.6fr),
+  table.header[*Classification*][*Scope & Ownership*][*Illustrative Sectors*],
+  [*Schedule A* (17 Industries)], [
+    Industries whose future development was the *exclusive monopoly of the State*. Private capital was completely barred.
+  ], [
+    Defense equipment, atomic energy, iron and steel, heavy electricals, coal, mineral oils, aircraft, and railways.
+  ],
+  [*Schedule B* (12 Industries)], [
+    Industries that were *progressively state-owned*. The State took the lead in establishing new enterprises, while private enterprise supplemented state efforts.
+  ], [
+    Aluminum, machine tools, basic chemicals, fertilizers, road transport, and synthetic rubber.
+  ],
+  [*Schedule C* (All Remaining)], [
+    Industries left open to the *private sector*, but strictly controlled and regulated through industrial licensing.
+  ], [
+    Consumer goods, textiles, bicycles, light engineering, household goods, and paper.
+  ],
 )
 
-- *Small-scale industry (SSI) — role and importance:*
-  - *Employment:* small units give more jobs per rupee of capital than giant plants — vital in a labour-rich country.
-  - *Decentralisation and equality:* industry spreads beyond metros; ownership widens.
-  - *Policy support:* products RESERVED for small units (protection from big-firm competition), cheap credit, reserved purchases.
-  - *The problem:* staying small means losing SCALE ECONOMIES — low output per unit, weak quality, weak exports. Protection had a price.
-- *Industrial licensing — the licence raj:*
-  - Every new factory, every expansion, every output increase needed a government LICENCE.
-  - *Why it existed:* to steer private capital into plan priorities and stop monopolies.
-  - *What it became:* queues and delays, inspector raj, corruption, licences hoarded as entry barriers, NO competition — inefficiency froze into the system. By the 1980s the licence raj had become the reform target.
+=== B. Industrial Licensing ("License-Permit Raj")
+Under IPR 1956, private industrial enterprise was strictly regulated through mandatory *Industrial Licensing*:
+- A license was legally required to set up a new factory, expand production capacity of an existing unit, or diversify into a new product line.
+- *Regional Equality:* The government used licensing as a tool to promote regional balance. Licenses were granted far more easily for factories located in economically backward regions, accompanied by tax concessions and subsidized electricity tariffs.
+- *Distortions:* Over time, industrial licensing fostered an onerous bureaucracy ("License-Permit-Quota Raj"). Large industrial houses cornered licenses not to build factories, but to prevent new competitors from entering the market.
 
-= Foreign Trade: The Inward-Looking Strategy
+=== C. Small-Scale Industries (SSI) & The Karve Committee (1955)
+In *1955*, the Village and Small-Scale Industries Committee (popularly known as the *Karve Committee*) highlighted the unique role of small-scale industries in economic development:
+- *Rationale:* Small-scale units are *labour-intensive* (generating maximum employment per unit of capital invested) and *capital-light*.
+- *Investment Ceilings:* In 1950, a small-scale industrial unit was defined as one having a maximum capital investment of *₹5 lakh* in plant and machinery (raised progressively over decades to ₹1 crore, and now categorized under the MSMED Act).
+- *Protection Measures:* The government *reserved* hundreds of products exclusively for small-scale manufacture and provided differential excise duty concessions and low-interest bank credit.
 
-Pre-1991 India did not chase world markets — it protected the home market. The strategy was IMPORT SUBSTITUTION: make at home what we would otherwise import.
+== 3. Foreign Trade: The Inward-Looking "Import Substitution" Strategy
+During the first seven Five Year Plans (1950–1990), India's foreign trade policy was governed by an *Inward-Looking Trade Strategy*, technically termed *Import Substitution*:
+- *Meaning:* Replacing imported foreign manufactured goods with domestically manufactured products (e.g., producing domestic automobiles, electrical equipment, and electronics instead of importing them).
+- *Policy Instruments:*
+  1. *Tariffs:* Imposing heavy customs duties on imported goods to make foreign products prohibitively expensive.
+  2. *Quotas:* Imposing quantitative ceilings specifying the maximum physical quantity of a commodity that could be imported.
+- *Rationale:* Protecting infant domestic industries from predatory foreign competition and conserving scarce foreign exchange reserves for critical capital machinery.
+- *Critical Shortcomings:*
+  - Sheltered domestic firms from global competition, breeding complacency, high production costs, and inferior product quality ("Ambassador car syndrome").
+  - Monopolistic market structures deprived Indian consumers of choice and access to modern technologies.
+  - Neglect of export promotion resulted in persistent foreign exchange shortages.
 
-- *The logic:* protect INFANT industries until they grow strong enough to compete; conserve scarce foreign exchange; make the economy self-reliant.
-- *The instruments:* TARIFFS (taxes making imports expensive) and QUOTAS (physical ceilings on how much may be imported).
-- *The outcome — the problems:*
-  - Protected firms faced NO competition → inefficiency, high costs, poor quality, technological lag.
-  - Indifference to exports: the home market was guaranteed, so world markets were the afterthought.
-  - Imports kept rising (machinery, oil) while exports stagnated → foreign exchange reserves stayed under permanent strain — the pressure that finally exploded in 1991.
-- *The reform lesson:* openness forces efficiency; decades of protection left Indian industry unprepared for world competition when 1991 arrived.
+---
 
-= 1991: The Crisis and the New Economic Policy
+= The 1991 Economic Crisis & Background to NEP
 
-By 1991 the inward-looking model ran out of road. A chain of shocks met an economy living beyond its means — and India flew its gold abroad as collateral to avoid default.
+By early 1991, India's inward-looking, debt-fueled state capitalist model encountered a catastrophic macroeconomic crisis:
 
-- *The crisis triggers:*
-  - *Gulf War (1990-91):* oil prices spiked; imports costlier.
-  - *Remittances fell:* Indian workers in the Gulf returned home as the war emptied the region.
-  - *Reserves nearly empty:* foreign exchange sank to roughly TWO WEEKS of imports — days from default.
-  - *Fiscal profligacy:* government deficits and imports had ballooned through the 1980s.
-- *The emergency measures:* gold airlifted to the Bank of England as loan collateral; an IMF loan carrying STRUCTURAL CONDITIONS — reform in exchange for rescue.
-- *The response: New Economic Policy (NEP) = stabilisation + structural adjustment:*
-  - *Stabilisation:* short-run measures to control inflation and the balance of payments (fiscal correction, devaluation of the rupee in 1991).
-  - *Structural adjustment:* long-run reforms changing how the economy works — the LPG package.
-- *LIBERALISATION — freeing the economy from state controls:*
-  - *Delicensing:* most industries freed from the licence raj (only a handful — defence, atomic energy and the like — stayed licensed).
-  - *Deregulation:* prices freed; the MRTP Act's capacity restrictions relaxed.
-  - *Trade liberalisation:* quantitative restrictions phased down, peak tariffs cut, imports opened.
-  - *Financial and forex reform:* market-determined interest rates moved in; the rupee devalued and made convertible for trade.
-- *PRIVATISATION — the private sector takes the wheel:*
-  - *Disinvestment:* government selling equity of public sector undertakings (PSUs) to the public and institutions.
-  - *Fewer reserved sectors:* industries once exclusive to the state opened to private entry.
-  - *PSU autonomy:* Memoranda of Understanding and Navratna-style status — autonomy granted so PSUs could compete rather than depend.
-- *GLOBALISATION — joining the world economy:*
-  - *Openness instruments:* steep tariff cuts, fewer import bans, rupee convertibility for trade.
-  - *Capital invited:* FDI caps raised across sectors; FII flows allowed into Indian markets.
-  - *Institutional lock-in:* WTO membership (1995) bound India into the open-trading rules.
-- *The appraisal — never one-sided:*
-  - *For:* growth accelerated, foreign reserves rebuilt, competition revived quality, consumers gained choice, services boomed.
-  - *Against:* growth arrived with too few jobs ("jobless growth" concerns), agriculture lagged the reform party, inequality widened, unprotected small industry faced new giants.
-  - *The balanced verdict:* reforms fixed efficiency and solvency; the critique demands they reach employment and farming too.
+== 1. Macroeconomic Triggers of the 1991 Crisis
+1. *Unsustainable Fiscal Deficits:* Throughout the 1980s, government non-developmental expenditure (defense, interest liabilities, subsidies) far outstripped revenue receipts. The Gross Fiscal Deficit climbed to an alarming *8.4% of GDP* in 1990–91.
+2. *Exogenous Shock: The Gulf War (1990–1991):* The outbreak of the Gulf War in the Middle East led to a dramatic spike in international crude oil prices, drastically swelling India's import bill. Simultaneously, hundreds of thousands of Indian expatriates were evacuated, causing a sudden cessation of inward foreign remittances.
+3. *Critical Drain of Foreign Exchange Reserves:* India's foreign exchange reserves plummeted from USD 3.1 billion in August 1990 to *under USD 1 billion in June 1991*—barely sufficient to finance *two weeks of essential imports* (crude oil, fertilizers, food).
+4. *Double-Digit Inflation:* Massive deficit monetization (printing currency) pushed the annual inflation rate above *12% to 14%*, eroding real incomes.
+5. *Loss of Sovereign Creditworthiness:* International credit rating agencies downgraded India's sovereign debt to junk status. Foreign commercial banks ceased lending, and non-resident Indians began withdrawing foreign currency bank deposits. Sovereign default on foreign loan repayment was imminent.
 
-= Key Formulas & Rules: One-Stop Revision
+== 2. The Emergency Bailout & Policy Pivot
+- *Pledging Gold Reserves:* To avoid defaulting on international debt obligations, the Government of India in May 1991 airlifted *47 tonnes of sovereign gold* to the vaults of the Bank of England and the Union Bank of Switzerland to raise USD 405 million in emergency bridge financing.
+- *IMF-World Bank Bailout:* The Indian government approached the International Monetary Fund (IMF) and the World Bank, negotiating a *USD 7 billion emergency structural adjustment loan*.
+- *Conditionality:* The bailout loan was contingent upon India fundamentally dismantling state controls, opening its economy to foreign trade and investment, and undertaking deep structural market reforms.
 
-#cheatsheet-box(title: "Development Policies and Reforms — Every Fact on One Page")[
+---
+
+= The New Economic Policy (NEP) — The Three LPG Pillars
+
+In *July 1991*, the new government led by Prime Minister P.V. Narasimha Rao, with renowned economist Dr. Manmohan Singh as Finance Minister, unveiled the *New Economic Policy (NEP)*.
+
+== Architecture of the NEP: Two-Pronged Strategy
+1. *Stabilisation Measures (Short-Term):* Immediate macroeconomic measures designed to contain runaway inflation, correct the acute balance of payments deficit, and restore foreign exchange reserves.
+2. *Structural Reform Measures (Long-Term):* Deep, market-oriented reforms designed to eliminate bureaucratic rigidities, promote competitive private enterprise, and enhance the global competitiveness of the Indian economy.
+
+---
+
+#figure(
+  image("assets/econ_devpol_1991_lpg_reforms.png", width: 100%),
+  caption: [Figure 2: The 1991 Economic Reforms (NEP) — Crisis triggers, the Three LPG Pillars (Liberalisation, Privatisation, Globalisation), WTO accession, and post-1991 structural evaluation.],
+)
+
+---
+
+== 1. Pillar 1: Liberalisation (Freeing the Market)
+Liberalisation aimed at putting an end to discretionary government restrictions, licenses, and permits across multiple key economic sectors:
+
+=== A. Industrial Sector Deregulation
+- *Abolition of Industrial Licensing:* Mandatory industrial licensing was completely abolished for all industries, *except for 5 to 6 strategic, health, or hazard-related sectors*:
+  1. Alcohol / distilled spirits.
+  2. Cigarettes and tobacco products.
+  3. Hazardous chemicals.
+  4. Industrial explosives.
+  5. Aerospace and defense equipment.
+  6. Electronic aerospace.
+- *De-reservation of Public Sector Monopolies:* The number of industries reserved exclusively for the public sector was slashed from 17 under IPR 1956 to just *two core strategic sectors today*: (1) Atomic Energy and (2) Railway Operations.
+- *De-reservation of Small Scale Industries:* Goods previously reserved exclusively for small-scale manufacture were opened up to large private corporations and global competitors.
+- *Abolition of MRTP Restrictions:* Under the Monopolies and Restrictive Trade Practices (MRTP) Act, large corporate houses no longer required prior government approval for investment, expansion, or mergers (later replaced by the Competition Act, 2002).
+
+=== B. Financial Sector Reforms
+The financial sector (commercial banks, investment banks, stock exchanges, and non-banking financial companies) was overhauled under the guidance of the *Narasimham Committee*:
+- *Transformation of RBI's Role:* The Reserve Bank of India's role was transformed from a rigid *"Regulator"* to an enabling *"Facilitator"*.
+- *Entry of Private and Foreign Banks:* Licenses were issued to establish new private commercial banks (e.g., HDFC Bank, ICICI Bank, Axis Bank) and international foreign banks, fostering intense competition in technology and customer service.
+- *FDI Limit in Banking:* Foreign investment in private banks was progressively raised up to *74%*.
+- *Expansion Autonomy:* Banks were granted freedom to open new branches and rationalize networks without prior RBI approval, subject to fulfilling minimum rural branch requirements.
+
+=== C. Fiscal & Tax Reforms (Chelliah Committee)
+- *Rationalisation of Direct Taxes:* Personal income tax and corporate profit tax slabs were dramatically simplified and lowered. Lower tax rates reduced incentives for tax evasion and dramatically improved tax compliance and collection.
+- *Simplification of Indirect Taxes:* Complex arrays of excise duties, sales taxes, and octroi were progressively harmonized, setting the stage for the historic rollout of the *Goods and Services Tax (GST)* on 1 July 2017.
+
+=== D. Foreign Exchange & Trade Policy Reforms
+- *Rupee Devaluation (1991):* In July 1991, India executed a two-step devaluation of the Rupee against major global currencies (by approximately 18–20%) to stimulate exports and curb speculative capital outflows.
+- *LERMS (1993):* In March 1993, India introduced the *Liberalised Exchange Rate Management System (LERMS)*, ending administrative exchange rate pegs and establishing a market-determined floating exchange rate regime.
+- *Dismantling of Quantitative Import Restrictions (Quotas):* All quantitative restrictions and import quotas on manufactured consumer goods and agricultural products were completely abolished by *April 2001*.
+- *Tariff Reduction:* Peak import tariff rates were slashed from over 300% in 1991 to below 15–20%, making raw materials and machinery globally competitive.
+
+---
+
+== 2. Pillar 2: Privatisation (Transfer of Ownership & Control)
+Privatisation involves shedding government ownership and managerial control of Public Sector Enterprises (PSEs) in favour of private enterprise:
+
+=== A. Disinvestment
+- *Meaning:* The sale of a portion of the equity share capital held by the government in Public Sector Undertakings (PSUs) to private corporate investors, financial institutions, and the general public.
+- *Objectives:* To mobilize non-debt capital receipts for the fiscal budget, inject private commercial discipline, enhance corporate governance, and modernize technology.
+- *Modes:* Minority stake sale via stock exchanges versus Strategic Sale (transferring 51% or more equity along with complete management control, as seen in Air India, Maruti Udyog, and VSNL).
+
+=== B. Managerial Autonomy: Maharatnas, Navratnas & Miniratnas
+To improve the operational efficiency and global competitiveness of high-performing public sector enterprises, the government conferred special autonomous status:
+- *Navratnas & Maharatnas:* Highly profitable central public sector enterprises (e.g., ONGC, IOCL, BHEL, SAIL, NTPC, Coal India) were granted extensive financial and managerial autonomy. Their boards were empowered to make major capital investment decisions (up to ₹5,000 crore for Maharatnas) without seeking bureaucratic ministry approvals.
+
+---
+
+== 3. Pillar 3: Globalisation & The WTO
+
+Globalisation is the process of integrating the domestic national economy with the global economy through cross-border flows of trade, capital, ideas, and technology.
+
+=== A. Outsourcing Boom
+One of the most profound outcomes of globalisation for India was the explosion of *Outsourcing*:
+- Multinational corporations began contracting out regular business activities (customer support, IT maintenance, payroll accounting, software coding, medical transcription, legal research) to Indian third-party service providers.
+- *Why India Became the World's Outsourcing Destination:*
+  1. A vast pool of educated, English-speaking engineering and managerial talent.
+  2. Substantially lower wage rates compared to developed nations.
+  3. Favourable 24/7 time-zone differences facilitating round-the-clock operations.
+
+=== B. The World Trade Organisation (WTO)
+- *Establishment:* The WTO was officially established on *1 January 1995*, succeeding the *General Agreement on Tariffs and Trade (GATT)*, which had operated since 1948.
+- *Headquarters:* Geneva, Switzerland.
+- *Mandate:* To establish a rule-based multilateral trading system, reduce tariff and non-tariff barriers, eliminate discriminatory trade practices, and cover trade in services (*GATS*) and intellectual property rights (*TRIPS*).
+- *India as a Founding Member:* India is a founding member of both GATT and the WTO. While WTO membership provided India access to global export markets, India has consistently defended the interests of developing countries regarding agricultural food security, public stockholding programs, and access to affordable generic medicines.
+
+---
+
+= Critical Appraisal of Economic Reforms & Modern Policy Evolution
+
+Three decades of economic reforms have profoundly reshaped the Indian economic landscape, generating spectacular successes alongside acute structural imbalances.
+
+== 1. Scorecard of Achievements
+- *Acceleration of GDP Growth:* India broke free from the sluggish 3.5% annual growth rate (pejoratively called the "Hindu Rate of Growth" of the pre-1990 era), achieving sustained GDP growth rates averaging 7% to 8% per annum, making India one of the fastest-growing major economies globally.
+- *Service Sector Boom:* The post-1991 growth engine was overwhelmingly driven by the tertiary (service) sector—particularly Information Technology (IT), telecommunications, financial services, aviation, and software exports.
+- *Surge in Foreign Exchange Reserves:* India's forex reserves transformed from a bankruptcy-level USD 1 billion in 1991 to over *USD 600 billion today*, providing robust insulation against global external shocks.
+- *Booming Foreign Investment:* Foreign Direct Investment (FDI) and Foreign Portfolio Investment (FPI) expanded from negligible flows in 1991 to over USD 70–80 billion annually.
+- *Consumer Sovereignty:* The dismantling of the License Raj and import barriers eliminated persistent shortages, delivering Indian consumers unprecedented choice, global quality, and competitive pricing in electronics, automobiles, telecommunications, and consumer durables.
+
+== 2. Critical Shortcomings & Structural Deficits
+- *Neglect of Agriculture:* Economic reforms bypassed the agricultural sector, which continues to employ over 40% of India's workforce:
+  1. *Plunging Public Capital Formation:* Government capital investment in rural infrastructure (canals, power, cold storage) declined sharply.
+  2. *Input Cost Inflation:* Phasing out input subsidies on fertilizers and power increased agricultural operational costs.
+  3. *Food Security Concerns:* Farmers shifted from subsistence foodgrains to export-oriented cash crops (cotton, vanilla), increasing vulnerability to global market price crashes.
+- *"Jobless Growth":* While GDP expanded rapidly, employment growth failed to keep pace. The expansion was driven by capital-intensive and skill-intensive service sectors rather than labour-intensive manufacturing. Consequently, formal manufacturing employment stagnated, pushing over 85% of workers into vulnerable, insecure informal sector jobs.
+- *Domestic Industrial Vulnerability:* Cheaper manufactured imports (especially from China) flooded the Indian domestic market, severely hurting domestic manufacturing in toys, textiles, and basic electronics.
+- *Disinvestment Underpricing:* Critics argue that prime public assets were undervalued and sold at distressed prices to private corporate buyers simply to plug annual government budget deficits.
+- *Widening Economic Inequalities:* Wealth and income concentration increased dramatically, with the fruits of growth heavily skewed towards urban corporate elites and skilled technical professionals, widening the rural-urban divide.
+
+---
+
+== 3. Modern Policy Milestones: Demonetisation, GST & NITI Aayog
+
+#table(
+  columns: (1fr, 1.3fr, 1.7fr),
+  table.header[*Policy Milestone*][*Key Facts & Dates*][*Economic Objective & Impact*],
+  [*1. NITI Aayog*], [
+    Established: *1 January 2015*\
+    Replaced the 65-year-old Planning Commission.
+  ], [
+    Operates as the apex policy "Think Tank" of the Government of India. Emphasizes *Cooperative Federalism* (empowering State Chief Ministers) and bottom-up planning, shifting away from top-down allocation of plan funds.
+  ],
+  [*2. Demonetisation*], [
+    Announced: *8 November 2016*\
+    Withdrew legal tender status of ₹500 and ₹1,000 denomination notes.
+  ], [
+    - Targeted *86% of total currency in circulation*.\
+    - *Objectives:* Curbing black money and tax evasion, eliminating counterfeit currency notes, crippling terror financing, and accelerating the transition to a formal, trackable digital payments economy (UPI).
+  ],
+  [*3. Goods & Services Tax (GST)*], [
+    Implemented: *1 July 2017*\
+    *101st Constitutional Amendment Act, 2016*.
+  ], [
+    - Replaced 17 central and state indirect taxes (excise duty, VAT, service tax, luxury tax) with a single unified indirect tax: *"One Nation, One Tax, One Market"*.\
+    - Dual GST Structure: CGST (Centre), SGST (State), and IGST (Inter-state).\
+    - 5 Tax Slabs: 0%, 5%, 12%, 18%, and 28%.\
+    - Mitigated cascading "tax on tax" effect via seamless Input Tax Credit (ITC).
+  ],
+)
+
+---
+
+#figure(
+  image("assets/econ_devpol_synthesis_mindmap.png", width: 100%),
+  caption: [Figure 3: Indian Economic Development (1947–Present) Master Synthesis Mindmap — Colonial baseline, 1950–1990 planning and sectoral strategies, 1991 LPG transformation, and modern structural milestones.],
+)
+
+---
+
+= Chronological Timeline & 7 Lethal CUET Traps
+
+#cheatsheet-box(title: "Chronological Milestones of Indian Economic Development")[
   #table(
-    columns: (1.45fr, 2.1fr, 1.75fr),
-    table.header[*Fact*][*Statement*][*Exam use*],
-    [Eve of independence], [Stagnant zamindari agriculture, de-industrialisation, 16% literacy, life expectancy ~32], [Inherited-economy MCQs],
-    [One modern gift], [Railways — but built for British trade], ["what did colonialism leave?" questions],
-    [System chosen], [Mixed economy; Planning Commission 1950; Five Year Plans], [Foundation facts],
-    [Four goals], [Growth, modernisation, self-reliance, equity], [List them in order-safe wording],
-    [First Plan 1951-56], [Agriculture, Harrod-Domar model — success], [Plan-priority matching],
-    [Second Plan 1956-61], [Heavy industry, Mahalanobis model], [The industry turn],
-    [Land reforms], [Zamindari abolition, ceilings, tenancy — only partly implemented], [Institutional-reform evaluation],
-    [Green Revolution], [From 1966: HYV + irrigation + fertilisers; wheat and rice; Punjab-Haryana-west UP first], [Strategy facts + limits],
-    [Subsidy debate], [Adoption and equity FOR · leakage, fiscal cost, degradation AGAINST], [Two-sided answers],
-    [IPR 1956], [Schedules A/B/C; state at the command post; licence raj begins], [Industry-policy questions],
-    [SSI], [Employment, decentralisation, reservation — but weak scale economies], [Role-and-problem answers],
-    [Trade strategy], [Import substitution via tariffs and quotas — inefficiency, stagnant exports], [Inward-looking evaluation],
-    [1991 crisis], [Gulf War + falling remittances + ~2 weeks of imports; gold collateral; IMF conditions], [Crisis-sequence questions],
-    [LPG], [Liberalisation (delicensing), privatisation (disinvestment), globalisation (tariffs, FDI, WTO)], [Feature lists],
+    columns: (1fr, 3fr),
+    table.header[*Year / Period*][*Historic Milestone & Policy Event*],
+    [*1850 / 1853*], [Introduction of Indian Railways (1850); First passenger train runs from Bombay to Thane (1853).],
+    [*1869*], [Opening of the Suez Canal, drastically intensifying British control over India's foreign trade.],
+    [*1881*], [First comprehensive official population census of British India conducted.],
+    [*1907*], [Tata Iron and Steel Company (TISCO) incorporated at Jamshedpur.],
+    [*1921*], [*"Year of the Great Divide"* — transition to unbroken demographic expansion (Stage 2).],
+    [*March 1950*], [Planning Commission established under the chairmanship of Prime Minister Jawaharlal Nehru.],
+    [*1951–1956*], [First Five Year Plan launched with primary emphasis on agricultural development.],
+    [*1955*], [Karve Committee (Village and Small-Scale Industries Committee) submits its historic report.],
+    [*1956*], [Industrial Policy Resolution (IPR 1956) adopted; Second Plan (Mahalanobis model) begins.],
+    [*Mid-1960s*], [Green Revolution (New Agricultural Strategy) launched with HYV seeds.],
+    [*July 1991*], [New Economic Policy (NEP) announced — historic shift to Liberalisation, Privatisation, Globalisation.],
+    [*March 1993*], [LERMS implemented, making the Indian Rupee exchange rate market-determined.],
+    [*1 Jan 1995*], [World Trade Organisation (WTO) established in Geneva; India joins as a founding member.],
+    [*1 Jan 2015*], [NITI Aayog officially replaces the Planning Commission.],
+    [*8 Nov 2016*], [Demonetisation of ₹500 and ₹1,000 currency notes announced.],
+    [*1 July 2017*], [Goods and Services Tax (GST) rolled out across India (101st Constitutional Amendment).],
   )
 ]
 
-= Common Errors & Special Cases
-
-#exception-box(title: "The Traps This Unit Sets — Read Before the Mock")[
+#exception-box(title: "The 7 Lethal CUET Traps — Read Before the Examination")[
   #table(
-    columns: (1.25fr, 1.35fr, 1.4fr),
-    table.header[*The rule you assume*][*The twist*][*The trap in the question*],
-    ["Eve of independence = no industry"], [Railways and cotton/jute mills existed — but backward and foreign-serving], [Inherited-economy MCQs],
-    ["Green Revolution belongs to the Second Plan"], [It began in 1966 — after the Third Plan, during the plan holiday], [Date-matching traps],
-    ["Mahalanobis built the First Plan"], [First Plan = Harrod-Domar (agriculture); Mahalanobis powers the SECOND], [Model-plan pairing],
-    ["Land reforms succeeded"], [They were only PARTLY implemented — loopholes and elite resistance won], [Evaluation questions],
-    ["Subsidies are simply bad"], [They drove adoption; the case is for REDESIGN, not abolition], [Two-sided answers],
-    ["Import substitution boosted exports"], [It did the opposite — home market comfort killed export hunger], [Trade-strategy evaluation],
-    ["Privatisation = only disinvestment"], [Disinvestment is the flagship TOOL; the strategy is wider (deregulation, autonomy, fewer reservations)], [LPG-feature precision],
-    ["Reforms pleased everyone"], [The critique is real: jobless growth, agriculture's neglect, rising inequality], [Appraisal answers],
+    columns: (1.1fr, 1.4fr, 1.5fr),
+    table.header[*The Trap Concept*][*The Common Student Slip*][*The Exact NCERT / NTA Rule*],
+    [*1. Year of Great Divide*], [Confusing 1921 with 1947 or 1951.], [1921 is the *Year of the Great Divide* marking the permanent shift to continuous population growth.],
+    [*2. Colonial Income Estimator*], [Thinking Dadabhai Naoroji's estimate was considered statistically most significant.], [Naoroji was first, but *V.K.R.V. Rao's* estimates are recognized by economists as statistically most significant.],
+    [*3. SSI Investment Limit*], [Assuming the 1950 SSI capital limit was ₹1 crore.], [In 1950, the capital limit was *₹5 lakh*. The ₹1 crore limit belongs to a much later period.],
+    [*4. Post-1991 Reserved Industries*], [Thinking private companies can build railways or atomic reactors freely.], [Only *Atomic Energy* and *Railway Operations* remain exclusively reserved for the public sector.],
+    [*5. GATT vs WTO Inception*], [Stating WTO was formed in 1948 or during the 1944 Bretton Woods conference.], [GATT was founded in 1948; *WTO replaced GATT on 1 January 1995*.],
+    [*6. Post-1991 Growth Engine*], [Assuming industrial manufacturing drove India's 7%+ GDP growth after 1991.], [India's post-1991 boom was overwhelmingly driven by the *Services (Tertiary) Sector*, not manufacturing.],
+    [*7. Demonetisation Volume*], [Believing demonetisation affected 50% of currency.], [Demonetisation withdrew ₹500 and ₹1,000 notes which constituted *86% of total currency in circulation*.],
   )
 ]
 
-= The 60-Second Self-Test
+---
 
-Cover the answers, say each one aloud, then check. If any answer takes longer than ten seconds, revisit that section.
+#pagebreak()
+#set text(size: 8.5pt)
+#set par(leading: 0.40em, spacing: 0.42em)
 
-- *Which sector led the First Plan and why?* → Agriculture — food scarcity was the binding constraint (Harrod-Domar growth).
-- *Name the IPR 1956 schedules.* → A: exclusive to state (17 industries); B: state-led; C: private, licensed.
-- *Two merits and one cost of the Green Revolution.* → Output surged, famine fear died; but regional and farmer inequality widened.
-- *Why did reserves sink to two weeks of imports?* → Gulf War oil + falling remittances + 1980s deficits and import surge.
-- *LPG stands for…?* → Liberalisation, Privatisation, Globalisation — the NEP's structural face.
-- *One criticism of 1991 reforms.* → Jobless growth / agriculture neglected / inequality widened — any one, well-worded.
+= Practice Questions — Part 1 (Q1 to Q5)
 
-= The Whole Chapter in One Picture
-
-#figure(
-  image("assets/econ_timeline_1947_91.png", width: 100%),
-  caption: [The 1947-91 timeline: from the inherited economy through planning, the Green Revolution and the licence raj to the 1991 crisis, with the LPG response and its appraisal.],
-)
-
-#figure(
-  image("assets/econ_devpol_mindmap.png", width: 100%),
-  caption: [Chapter mindmap: the eve of independence, planning goals, agriculture's three tracks, industry's IPR and licence raj, inward-looking trade, and the 1991 crisis-to-LPG arc — with the traps that catch most students.],
-)
-
-= Practice Questions (Exam Pattern)
-
-Ten questions in the CUET UG style. Attempt all of them — the paper gives $+5$ for each correct answer and $-1$ for every incorrect answer.
-
-#mcq(1, [On the eve of independence, India's most developed modern infrastructure was:], (
-  [electricity grids], [the railway network], [steel plants], [airlines],
+#mcq(1, [Whose estimates of national income and per capita income during the British colonial period in India were considered statistically most significant by modern economists?], (
+  [Dadabhai Naoroji],
+  [William Digby],
+  [Dr. V.K.R.V. Rao],
+  [R.C. Desai],
 ))
+#solution(1, [While Dadabhai Naoroji was the pioneer who first calculated national income in colonial India, economists and historians universally consider the estimates prepared by Dr. V.K.R.V. Rao to be the most rigorous and statistically significant.], answer: "C")
 
-#mcq(2, [The Second Five Year Plan (1956-61) focused on:], (
-  [agricultural development], [rapid industrialisation with heavy industry], [export promotion], [population control],
+#mcq(2, [Why is the year 1921 regarded as the "Year of the Great Divide" in India's demographic history?], (
+  [Because India conducted its very first population census in 1921],
+  [Because India transitioned from the first stage of demographic transition to the second stage of continuous, accelerating population growth],
+  [Because the death rate in India rose above the birth rate for the first time],
+  [Because the British government made family planning mandatory],
 ))
+#solution(2, [Prior to 1921, India was in the first stage of demographic transition where high birth rates were cancelled by high, erratic death rates (famines, epidemics), keeping population growth stagnant. After 1921, death rates began declining while birth rates remained high, leading to unbroken, continuous population growth.], answer: "B")
 
-#mcq(3, [The model underlying the Second Five Year Plan was associated with:], (
-  [Harrod-Domar], [Mahalanobis], [Keynes], [Amartya Sen],
+#mcq(3, [Which of the following was an immediate catastrophic consequence of the 1947 Partition of India on domestic industry?], (
+  [Complete shutdown of all cotton textile mills in Bombay],
+  [Acute raw material shortage for the jute mills of Bengal as raw jute fields went to East Pakistan while mills remained in India],
+  [A total ban on iron and steel production by TISCO],
+  [The loss of all coal mines to West Pakistan],
 ))
+#solution(3, [Before partition, India held a virtual global monopoly in jute. Partition allocated the fertile jute-producing agricultural tracts to East Pakistan (now Bangladesh), while all the processing jute mills remained clustered around Kolkata in India, precipitating an acute raw material crisis.], answer: "B")
 
-#mcq(4, [The Industrial Policy Resolution of 1956 classified industries into:], (
-  [two schedules], [three schedules by state role], [four priority zones], [five-year targets],
+#mcq(4, [Under the Industrial Policy Resolution (IPR) of 1956, industries in "Schedule A" were characterized by which of the following ownership rules?], (
+  [They were developed entirely by private enterprise with zero government regulation],
+  [They were reserved as an exclusive monopoly of the State, with private capital completely barred],
+  [They were jointly owned by Indian firms and foreign multinational corporations],
+  [They were exclusively reserved for small-scale cottage industries],
 ))
+#solution(4, [IPR 1956 categorized industries into three schedules. Schedule A comprised 17 heavy, basic, and strategic industries (defense, atomic energy, iron and steel, railways) whose future development was the exclusive preserve of the State.], answer: "B")
 
-#mcq(5, [The Green Revolution's high-yielding variety technology FIRST spread in:], (
-  [Kerala and coastal Andhra], [Punjab, Haryana and western Uttar Pradesh], [Bihar and eastern UP], [the entire country uniformly],
+#mcq(5, [The Village and Small-Scale Industries Committee, which recommended using small-scale industries to promote rural development and employment in 1955, is popularly known as the:], (
+  [Narasimham Committee],
+  [Karve Committee],
+  [Mahalanobis Committee],
+  [Chelliah Committee],
 ))
+#solution(5, [In 1955, the Planning Commission constituted the Village and Small-Scale Industries Committee, famously known as the Karve Committee, which advocated protecting and reserving goods for small-scale industries due to their high labour-intensity and capital-saving nature.], answer: "B")
 
-#mcq(6, [Products were RESERVED for the small-scale sector in order to:], (
-  [raise exports], [protect small producers from large-firm competition], [reduce employment], [encourage monopolies],
+---
+
+#pagebreak()
+#set text(size: 8.5pt)
+#set par(leading: 0.40em, spacing: 0.42em)
+
+= Practice Questions — Part 2 (Q6 to Q10)
+
+#mcq(6, [The term "Marketed Surplus" in the context of the Green Revolution refers to:], (
+  [The portion of agricultural production retained by farmers for family consumption],
+  [The portion of agricultural production sold in the market by farmers after meeting their own consumption needs],
+  [The agricultural buffer stock stored exclusively in foreign warehouses],
+  [The volume of chemical fertilizers sold by multinational agrochemical companies],
 ))
+#solution(6, [Marketed surplus is the excess of total agricultural produce over and above the farm household's subsistence consumption requirements ($"Marketed Surplus" = "Total Output" - "On-Farm Consumption"$). This surplus is marketed to feed the urban industrial population and build national buffer stocks.], answer: "B")
 
-#mcq(7, [The main instruments of India's import-substitution strategy were:], (
-  [export subsidies and devaluation], [tariffs and quotas on imports], [WTO membership], [disinvestment],
+#mcq(7, [Which of the following was NOT an immediate trigger of the 1991 Indian Balance of Payments crisis?], (
+  [Depletion of foreign exchange reserves to under USD 1 billion (barely two weeks of imports)],
+  [Sharp increase in international crude oil prices caused by the 1990–91 Gulf War],
+  [A runaway fiscal deficit reaching 8.4% of GDP],
+  [A sudden global ban on the export of Indian software services by the WTO],
 ))
+#solution(7, [The WTO was established only on 1 January 1995, so it did not exist in 1991. The crisis was triggered by fiscal profligacy, the Gulf War oil shock, depletion of forex reserves to under USD 1 billion, and loss of sovereign creditworthiness.], answer: "D")
 
-#mcq(8, [In 1991, India's foreign exchange reserves fell to a level barely enough for:], (
-  [two years of imports], [six months of imports], [about two weeks of imports], [one day of imports],
+#mcq(8, [Following the 1991 industrial sector deregulations, which of the following groups of industries still required compulsory industrial licensing?], (
+  [Cotton textiles, bicycles, and tea processing],
+  [Alcohol, cigarettes, hazardous chemicals, industrial explosives, and defense equipment],
+  [Automobile manufacturing and consumer electronics],
+  [Software development and retail supermarkets],
 ))
+#solution(8, [Under the July 1991 New Industrial Policy, licensing was abolished for almost all sectors, retaining compulsory licenses for only a handful of strategic, hazardous, or socially sensitive items: alcohol, tobacco/cigarettes, hazardous chemicals, industrial explosives, and defense equipment.], answer: "B")
 
-#mcq(9, [Disinvestment of PSU equity is a feature of:], (
-  [liberalisation], [globalisation], [privatisation], [nationalisation],
+#mcq(9, [Under the 1991 financial sector reforms guided by the Narasimham Committee, how did the role of the Reserve Bank of India fundamentally change?], (
+  [From a commercial lending bank to an agricultural cooperative],
+  [From a rigid "Regulator" dictating interest rates and branch openings to an enabling "Facilitator" fostering market competition],
+  [From an independent central bank to a subsidiary of the World Bank],
+  [From managing foreign exchange to printing unlimited paper currency],
 ))
+#solution(9, [The 1991 reforms transformed the RBI from a micro-managing regulator that fixed interest rates and approved every branch opening into a macro-prudential facilitator, granting commercial banks operational autonomy to set deposit/lending rates and open branches.], answer: "B")
 
-#mcq(10, [A criticism commonly made of the 1991 reforms is:], (
-  [growth became jobless in several sectors while agriculture lagged], [exports collapsed permanently], [the rupee appreciated too fast], [reserves fell after 1991],
+#mcq(10, [On which date was the World Trade Organisation (WTO) officially established, succeeding GATT 1948?], (
+  [15 August 1947],
+  [24 July 1991],
+  [1 January 1995],
+  [1 July 2017],
 ))
+#solution(10, [The WTO was established on 1 January 1995 as the permanent successor to the General Agreement on Tariffs and Trade (GATT) of 1948 following the Uruguay Round of multilateral trade negotiations. India was one of its founding members.], answer: "C")
 
-= Detailed Solutions
+---
 
-Each solution shows the working, not just the verdict — cover the answer line, attempt the reasoning, then compare.
+#pagebreak()
+#set text(size: 8.5pt)
+#set par(leading: 0.40em, spacing: 0.42em)
 
-#solution(1, [British rule left the railways as the one modern network — though built to evacuate raw materials to ports. Electricity, steel and aviation were embryonic.], answer: [B])
+= Practice Questions — Part 3 (Q11 to Q15)
 
-#solution(2, [The Mahalanobis strategy put HEAVY industry at the centre: machines to make machines, long-run capacity over quick consumption. Agriculture led the FIRST plan, not the second.], answer: [B])
+#mcq(11, [Why is India's post-1991 economic growth frequently criticized by development economists as "Jobless Growth"?], (
+  [Because total national employment declined to zero],
+  [Because GDP growth was driven by capital-intensive and service sectors without a proportional expansion in formal manufacturing employment],
+  [Because the government banned all private hiring in multinational corporations],
+  [Because all workers were replaced by artificial intelligence in the 1990s],
+))
+#solution(11, [While India achieved high GDP growth rates post-1991, the growth was heavily concentrated in skill-intensive tertiary sectors (IT, finance, telecom) rather than labour-intensive manufacturing. Formal factory jobs did not expand sufficiently to absorb the millions leaving agriculture, leading to widespread informalisation.], answer: "B")
 
-#solution(3, [PC Mahalanobis designed the Second Plan's two-sector model prioritising capital goods. Harrod-Domar guided the First Plan's growth arithmetic.], answer: [B])
+#mcq(12, [Which of the following was a major criticism regarding the agricultural sector under the post-1991 economic reforms?], (
+  [Over-investment of government capital in rural irrigation projects],
+  [Drastic reduction in public capital investment in rural infrastructure and rising input costs due to subsidy cuts],
+  [A total ban on the cultivation of cash crops for export],
+  [The forced nationalization of all private agricultural farmland],
+))
+#solution(12, [Reforms bypassed agriculture. Government public capital formation in irrigation, power, and rural roads fell sharply, while reduction in fertilizer and power subsidies pushed up input costs, plunging millions of small and marginal farmers into debt distress.], answer: "B")
 
-#solution(4, [IPR 1956 sorted industries into Schedule A (state monopoly, 17 industries), Schedule B (state-led with private supplement) and Schedule C (private under licence) — the mixed economy's industrial map.], answer: [B])
+#mcq(13, [On 8 November 2016, the Government of India demonetised currency notes of ₹500 and ₹1,000 denominations. What proportion of the total currency in circulation did these notes represent?], (
+  [Approximately 25%],
+  [Approximately 50%],
+  [Approximately 86%],
+  [100% of all currency],
+))
+#solution(13, [The demonetised ₹500 and ₹1,000 denomination notes accounted for approximately 86% of the total value of currency in circulation in the Indian economy at the time of the announcement on 8 November 2016.], answer: "C")
 
-#solution(5, [HYV technology needed assured irrigation — so it bloomed first in Punjab, Haryana and western UP, mainly on wheat and rice. Dry regions and other crops waited years.], answer: [B])
+#mcq(14, [The historic Goods and Services Tax (GST), rolled out across India on 1 July 2017, was enacted through which Constitutional Amendment Act?], (
+  [42nd Constitutional Amendment Act],
+  [44th Constitutional Amendment Act],
+  [101st Constitutional Amendment Act, 2016],
+  [122nd Constitutional Amendment Act],
+))
+#solution(14, [GST was introduced through the 101st Constitutional Amendment Act, 2016 (originating from the 122nd Constitutional Amendment Bill). It replaced multiple cascading central and state indirect taxes with a unified dual GST structure.], answer: "C")
 
-#solution(6, [Reservation shielded small units from deep-pocketed competition to protect their employment and decentralisation benefits — though it also froze scale economies.], answer: [B])
-
-#solution(7, [Import substitution worked through TARIFFS (price barrier) and QUOTAS (quantity barrier) — making imports costly or impossible so home industry could substitute them.], answer: [B])
-
-#solution(8, [By mid-1991 reserves covered roughly two weeks of imports — the cliff-edge figure that forced gold collateral, the IMF loan and the reforms.], answer: [C])
-
-#solution(9, [Disinvestment — the government selling PSU equity — is privatisation's flagship instrument. Liberalisation means decontrol; globalisation means opening to the world.], answer: [C])
-
-#solution(10, [The standard critique: growth accelerated without matching employment, agriculture missed the reform wave, and inequality widened — the balanced-appraisal answer.], answer: [A])
-
-== Wrong-Answer Clinic — the one-line corrections
-
-Dropped marks above? Find your slip here and rewrite the corrected rule in your own words.
-
-#table(
-  columns: (1.05fr, 1.5fr, 1.45fr),
-  table.header[*If you answered...*][*Your slip was...*][*The corrected rule, in one line*],
-  [Q1 option A], [Projecting today's grid backwards], [In 1947 the only modern network was the RAILWAYS — built for British trade, not India's],
-  [Q3 option A], [Swapping the two models], [Harrod-Domar → First Plan (agriculture); Mahalanobis → Second Plan (heavy industry)],
-  [Q5 option D], [Assuming uniform spread], [The HYV package needed irrigation — it spread unevenly, starting Punjab-Haryana-west UP],
-  [Q7 option A], [Mixing pre- and post-1991 tools], [Pre-1991 = tariffs and quotas (import substitution); devaluation and export pushes belong to the reform era],
-  [Q9 option A], [Blurring the LPG labels], [Disinvestment = privatisation's tool; delicensing = liberalisation; tariff cuts = globalisation],
-  [Q10 option B], [Overstating the critique], [Exports and reserves RECOVERED after 1991 — the critique is jobs, agriculture and inequality],
-)
-
-#block(width: 100%, inset: (top: 4pt), above: 4pt)[
-  #align(center, text(fill: om-grey, size: 8pt)[© OurMocks · www.ourmocks.com · CUET UG Economics · Development Policies and Experience (1947-90) · 2027 cycle])
-]
+#mcq(15, [On 1 January 2015, which premier policy think-tank was established by the Government of India to replace the 65-year-old Planning Commission?], (
+  [Finance Commission of India],
+  [NITI Aayog (National Institution for Transforming India)],
+  [National Development Council],
+  [Central Statistical Organisation],
+))
+#solution(15, [On 1 January 2015, the Planning Commission (which operated on centralized, top-down allocation of resources) was replaced by NITI Aayog (National Institution for Transforming India) to foster cooperative federalism and bottom-up strategic policy design.], answer: "B")
