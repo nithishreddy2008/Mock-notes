@@ -3,348 +3,504 @@
 #show: om-doc.with(
   exam: "CUET UG",
   subject: "Economics",
-  topic-title: "The Theory of the firms under perfect competition",
+  topic-title: "The Theory of the Firm Under Perfect Competition",
   subtitle: "Official Syllabus · Course I: Introductory Microeconomics · Class 12 · CUET UG 2027 Cycle Notes",
 )
 
-= Syllabus Alignment
+= Syllabus Alignment & Exam Blueprint
 
 #table(
-  columns: (1.1fr, 2fr, 1.15fr),
-  table.header[*Sub-topic*][*Official syllabus pointer (NTA CUET(UG) Economics syllabus 2026, the current 2027 baseline, Course I)*][*Skills the questions test*],
-  [*Features and profit maximisation*], [
-    Features of perfect competition; profit maximization
-  ], [
-    Recalling the price-taker setup and applying the three profit-maximising conditions (MC = MR, rising MC, price ≥ AVC).
-  ],
-  [*Supply*], [
-    Supply: market supply, determinants of supply, supply schedule, supply curve, movement along and shifts in supply curve, price elasticity of supply, measurement of price elasticity of supply
-  ], [
-    Building market supply from firms, sorting movements from shifts, and computing elasticity by the percentage method.
-  ],
-  [*Price determination*], [
-    Price determination under perfect competition — equilibrium price, effects of shifts in demand and supply
-  ], [
-    Explaining how equilibrium price emerges from D = S and predicting price-quantity outcomes after demand or supply shifts.
-  ],
+  columns: (1.2fr, 2fr, 1.15fr),
+  table.header([*Sub-Topic*], [*Official NTA CUET UG Syllabus Scope*], [*Cognitive Level & Weightage*]),
+  [*Features of Perfect Competition*], [Defining structural features; Price-taker vs. Price-maker; Perfectly elastic horizontal demand curve; Revenue identities ($P = A R = M R$); Shape of Total Revenue ($T R$).], [Knowledge & Direct Recall (2 Questions)],
+  [*Profit Maximization Conditions*], [The $M R = M C$ condition; The rising $M C$ condition (second-order condition); The shutdown condition ($P >= A V C_"min"$ in short run, $P >= A T C_"min"$ in long run); Tabular and algebraic optimization.], [Analytical Rigour (3 Questions)],
+  [*Supply Curve Derivation*], [Derivation of the firm's short-run supply curve from $S M C$; Derivation of long-run supply curve from $L M C$; Break-even point vs. Shutdown point; Loss minimization zone.], [Core Theoretical Focus (3 Questions)],
+  [*Determinants & Shifts of Supply*], [Movement along supply curve (expansion/contraction) vs. Shift in supply curve (increase/decrease); Impact of input factor prices, technology, per-unit excise taxes, and subsidies.], [Application & Graph Analysis (2–3 Questions)],
+  [*Market Supply Aggregation*], [Horizontal summation of individual firm supply curves; Algebraic and graphical aggregation; Why market supply is flatter than individual supply curves.], [Procedural & Numerical (1–2 Questions)],
+  [*Price Elasticity of Supply ($e_s$)*], [Percentage and proportionate methods; Geometric intercept method ($e_s = 1$, $e_s > 1$, $e_s < 1$); Determinants of supply elasticity; Time element (momentary, short run, long run).], [High-Yield Numerical (3 Questions)],
 )
 
 #exam-pointer[
-  CUET UG pattern (NTA official information bulletin and syllabus, 2026 cycle — the
-  current 2027 baseline): each subject paper carries *50 compulsory questions* in
-  *60 minutes*, with $+5$ for every correct answer and $-1$ for every incorrect answer. The Economics paper follows NCERT Class 12
-  Economics, and this unit is the supply twin of the demand unit you have already
-  finished — every rule you learned for demand (movement vs shift, elasticity,
-  horizontal summation) reappears here with the signs reversed.
+  *CUET UG Exam Strategy:* The Theory of the Firm under Perfect Competition is one of the most heavily tested microeconomic units. Questions frequently probe subtle distinctions: why a firm continues to produce at a loss in the short run if price covers $A V C$, why the short-run supply curve is NOT the entire $M C$ curve but only the segment on or above minimum $A V C$, and the geometric proof that ANY linear supply curve originating from the origin has unitary elasticity ($e_s = 1$) regardless of how steep or flat it appears!
 ]
 
-= Perfect Competition: The Model Market
+---
 
-Picture the vegetable mandi at 6 a.m. — hundreds of sellers with identical tomatoes, hundreds of buyers who know every quote. No single seller can charge a paisa more, because any buyer can walk two stalls down. That is the *structure* called perfect competition: not aggression, but complete powerlessness of each trader to influence price.
+= 1. Perfect Competition: Core Features & Revenue Architecture
+
+== 1.1 Structural Characteristics of a Perfectly Competitive Market
+A perfectly competitive market is an idealized benchmark market structure characterized by complete absence of direct rivalry among individual sellers and zero market power:
 
 #table(
-  columns: (1.25fr, 2.4fr),
-  table.header[*Feature*][*What it means for the firm*],
-  [Very many buyers and sellers], [Each one's share of the market is negligible — one farmer's entire crop cannot dent the market price],
-  [Homogeneous product], [Identical units (grade-A wheat is grade-A wheat) — no brand, no premium, no advertising],
-  [Free entry and exit], [Positive profits pull new firms in; persistent losses push firms out — this disciplines long-run outcomes],
-  [Perfect knowledge and factor mobility], [Everyone knows all prices; workers and machines move freely to their best use],
-  [Firm = price taker], [The INDUSTRY sets the price through demand and supply; the firm simply accepts it and chooses only its QUANTITY],
+  columns: (1.2fr, 1.8fr, 1.8fr),
+  table.header([*Structural Feature*], [*Economic Definition*], [*Implication for the Individual Firm*]),
+  [*Large Number of Buyers & Sellers*], [The number of sellers and buyers is so immense that each individual economic agent's output or purchase represents a microscopically negligible fraction of total market volume.], [No single firm or consumer can influence the market price by altering their individual output or purchases. The firm is a *Price Taker*, not a Price Maker.],
+  [*Homogeneous Products*], [All firms produce identical, standardized goods (e.g., Grade-A wheat). There are no brand names, patents, trademarks, or perceived quality differences.], [The elasticity of substitution between products of different firms is infinite. Cross-price elasticity of demand is infinite. Zero brand loyalty.],
+  [*Free Entry and Exit*], [There are zero legal, institutional, financial, or technological barriers preventing new firms from entering or existing firms from leaving the industry.], [Guarantees that firms earn strictly *Zero Economic Profit (Normal Profit)* in the long run. Supernormal profits attract entry; losses trigger exit.],
+  [*Perfect Knowledge*], [Buyers and sellers possess complete, instantaneous, and costless information regarding market price, quality, technology, and input costs.], [No seller can charge even one paisa above the market price, because all buyers would instantly purchase from other sellers.],
+  [*Perfect Factor Mobility*], [Factors of production (labor, capital) can move freely between different firms, industries, and geographic locations without legal restrictions or costs.], [Input prices and production techniques are equalized across all firms in the long run.],
+  [*Zero Transport Costs*], [Goods are assumed to be produced and traded without significant transport or marketing expenses.], [Eliminates geographic price differentials; a single uniform price ($P^*$) prevails across the entire market.],
 )
 
-- *The price-taker consequence:* the firm's demand curve is a HORIZONTAL line at the market price. Sell 10 units or 10,000 — the price is the same P.
-- *Revenue collapse:* because every extra unit sells at exactly P: $"AR" = "MR" = P$ — one horizontal line wearing three names.
-- *Contrast that examiners love:* a monopolist IS the industry — downward-sloping demand, MR below AR. Perfect competition's flat line is the exact mirror image.
+== 1.2 Price Taker vs. Price Maker: The Role of the Industry
+- *The Industry as Price Maker:* In a perfectly competitive market, the market price ($P^*$) is determined by the collective interaction of *Market Demand ($D$)* and *Market Supply ($S$)*:
+  $ D(P^*) = S(P^*) $
+- *The Firm as Price Taker:* An individual firm is an infinitesimal component of the market. It accepts the market price ($P^*$) determined by the industry as given (exogenous) and cannot alter it. It can sell as much output as it wishes at this prevailing price.
+- *Shape of the Demand Curve Facing the Firm:* Because the firm can sell unlimited quantities at price $P^*$, the demand curve facing an individual competitive firm is a *horizontal straight line parallel to the horizontal axis*. Geometrically, the price elasticity of demand facing an individual firm is *infinitely elastic ($e_d = oo$)*.
 
-= Profit Maximisation: The Three Conditions
-
-The firm does not chase maximum OUTPUT; it chases maximum PROFIT. Marginal thinking finds it: make every unit whose extra cost (MC) is below the extra revenue (MR), and stop the moment they equalise — on the way UP.
-
-#formula-box(title: "The Three Conditions of Firm Equilibrium")[
-  #v(2pt)
-  *1.* $"MC" = "MR"$ — the last unit adds exactly as much cost as revenue.
-  #v(2pt)
-  *2.* $"MC"$ must be RISING at that point — this kills the false crossing on MC's falling arm.
-  #v(2pt)
-  *3.* $P >= "AVC"$ in the short run — if price cannot cover average variable cost, produce NOTHING and lose only the fixed cost.
+#concept-box(title: "Crucial CUET Distinction: Firm Demand vs. Market Demand")[
+  - The demand curve facing an *individual competitive firm* is *horizontal* ($e_d = oo$) at the market price $P^*$.
+  - The *market demand curve* for the entire industry is *downward-sloping* ($e_d < oo$), obeying the standard Law of Demand!
 ]
 
-#worked-example("Profit Table — Price ₹12")[
-The firm takes the market price ₹12. Watch profit climb, peak and fall:
+== 1.3 Revenue Architecture of a Competitive Firm
+Let a competitive firm sell $Q$ units of output at the constant market price $P$:
+1. *Total Revenue ($T R$):*
+  $ T R = P times Q $
+  Because $P$ is constant, $T R$ is a straight line emanating from the origin with a constant positive slope equal to $P$. When $Q = 0, T R = 0$.
+2. *Average Revenue ($A R$):*
+  $ A R = frac(T R, Q) = frac(P times Q, Q) = P $
+  Average revenue is identically equal to the market price. The $A R$ curve coincides with the horizontal demand curve.
+3. *Marginal Revenue ($M R$):*
+  $ M R = frac(Delta T R, Delta Q) = frac(d(T R), d Q) = frac(d(P times Q), d Q) = P $
+  Every additional unit sold adds exactly price $P$ to total receipts.
 
-#table(
-  columns: (0.8fr, 1.1fr, 1.3fr, 1.3fr, 1.2fr, 1.1fr),
-  table.header[*Q*][*TR (₹)*][*TC (₹)*][*Profit (₹)*][*MC (₹)*][*Decision*],
-  [0], [0], [10], [−10], [—], [Fixed loss if idle],
-  [1], [12], [20], [−8], [10], [Produce — narrows the loss],
-  [2], [24], [26], [−2], [6], [Produce — almost even],
-  [3], [36], [30], [6], [4], [Produce — profit begins],
-  [4], [48], [42], [10], [12], [STOP — MC = MR = 12, MC rising],
-  [5], [60], [58], [2], [16], [No — costs overtake],
-  [6], [72], [78], [−6], [20], [No — deep loss],
-)
-
-- *Profit peaks at Q4 (₹10).* Exactly there MC = MR (12 = 12) and MC is rising (4 → 12 → 16) — both conditions met.
-- *Why not Q5?* The 5th unit costs ₹16 but earns ₹12 — it shaves ₹4 off profit. Marginal logic, not totals, stops the firm.
+#formula-box(title: "The Golden Revenue Identity of Perfect Competition")[
+  $ P = A R = M R = "Horizontal Demand Line" $
+  
+  In perfect competition, Price, Average Revenue, and Marginal Revenue are identically equal to one another and remain constant across all output levels.
 ]
 
-= Supply: The Firm's Other Face
+---
 
-Flip the profit rule and supply falls out: at any price, the firm produces every unit whose MC is below the price — so the firm's supply curve IS the rising arm of its MC curve (above AVC minimum). Supply has the same machinery you mastered for demand, with one twist: the price-quantity relation is DIRECT.
+= 2. Profit Maximization: The Golden Equilibrium Conditions
 
-- *Supply = willingness + ability to OFFER* a quantity at each price, per period of time. Desire alone (demand's trap) has a supply twin: capacity alone is not supply.
-- *Law of supply, other things equal:* own price rises → quantity supplied RISES. The supply curve slopes UPWARD — the exact opposite of demand's downward slope.
-- *Supply schedule and curve:* a price-quantity table; plotted with price on the vertical axis, it climbs left to right.
-- *Market supply = horizontal summation:* at each price, ADD every firm's quantity. At ₹20, if firm A offers 40 kg and firm B offers 60 kg, the market offers 100 kg.
+Profit ($pi$) is the economic difference between Total Revenue ($T R$) and Total Economic Cost ($T C$):
 
-#worked-example("Market Supply — Sum of Three Farms")[
-Wheat offered at three prices by three farms:
+$ pi(Q) = T R(Q) - T C(Q) = P times Q - T C(Q) $
 
-#table(
-  columns: (1.1fr, 1.35fr, 1.35fr, 1.35fr, 1.35fr),
-  table.header[*Price (₹/qtl)*][*Farm A (qtl)*][*Farm B (qtl)*][*Farm C (qtl)*][*Market supply (qtl)*],
-  [2,200], [30], [20], [10], [60],
-  [2,400], [40], [30], [15], [85],
-  [2,600], [50], [40], [20], [110],
-)
+A firm seeks to choose an output level $Q^*$ that maximizes $pi(Q)$. Economists analyze this optimization problem using calculus and geometry through three mandatory conditions.
 
-- At every row: market = A + B + C (e.g. 2,400: 40 + 30 + 15 = 85) — quantities add, prices never do.
-- Higher price → every farm extends production → market quantity climbs: the market curve slopes upward for the SAME reason each firm's MC curve does.
+== 2.1 Condition 1: Marginal Cost Equals Marginal Revenue (Necessary First-Order Condition)
+To find the stationary point of the profit function, take the first derivative with respect to output and set it to zero:
+
+$ frac(d pi, d Q) = frac(d(T R), d Q) - frac(d(T C), d Q) = 0 ==> M R - M C = 0 ==> M R = M C $
+
+Since $M R = P$ in perfect competition:
+
+$ P = M C $
+
+- *Economic Intuition:*
+  - If $P > M C$, producing an additional unit adds more to revenue than it adds to cost. The firm can increase its profit by expanding output ($Delta pi > 0$).
+  - If $P < M C$, the last unit produced cost more to manufacture than it brought in from sales. The firm is suffering marginal losses and can increase its profit by reducing output.
+  - Therefore, output is optimized only where the marginal revenue from the last unit exactly equals its marginal cost ($P = M C$).
+
+== 2.2 Condition 2: Marginal Cost Must Be Rising (Sufficient Second-Order Condition)
+Because the Short-Run Marginal Cost ($S M C$) curve is U-shaped, the horizontal price line $P$ intersects the $M C$ curve at *two distinct points*:
+1. One on the *falling* branch of $M C$.
+2. One on the *rising* branch of $M C$.
+
+To ensure that the stationary point represents a point of *maximum profit* rather than minimum profit, the second derivative of profit must be strictly negative:
+
+$ frac(d^2 pi, d Q^2) = frac(d(M R), d Q) - frac(d(M C), d Q) < 0 $
+
+Since $M R = P$ is a constant horizontal line, $frac(d(M R), d Q) = 0$. Therefore:
+
+$ 0 - frac(d(M C), d Q) < 0 ==> frac(d(M C), d Q) > 0 $
+
+- *Economic Meaning:* The slope of the Marginal Cost curve must be strictly positive at the point of intersection! In geometric terms: *Marginal Cost must cut the Marginal Revenue (Price) line from below*!
+- *Why Falling MC Cannot Be Equilibrium:* When $M C$ is falling, producing the next unit costs *less* than the previous unit. Since price is constant, profit per unit will widen on all subsequent units! Stopping where $M C$ is falling would be stopping at the point of *maximum loss*!
+
+== 2.3 Condition 3: The Price Coverage (Shutdown) Condition
+Even if $P = M C$ and $M C$ is rising, the firm must verify whether producing that output is better than shutting down operations completely ($Q = 0$):
+
+=== Short-Run Shutdown Rule
+In the short run, the firm has fixed costs ($T F C$) that must be paid whether it produces output or shuts down:
+- If the firm shuts down ($Q = 0$), its revenue is 0 and variable cost is 0. Its net loss is equal to Total Fixed Cost:
+  $ "Loss"_("Shutdown") = T F C $
+- If the firm produces output $Q^*$, its net loss is:
+  $ "Loss"_("Operating") = T C - T R = (T F C + T V C) - T R = T F C + (T V C - T R) $
+- *The Decision Criterion:* The firm should continue producing in the short run if and only if:
+  $ "Loss"_("Operating") <= "Loss"_("Shutdown") ==> T F C + (T V C - T R) <= T F C ==> T R >= T V C $
+  Dividing both sides by output $Q$:
+  $ frac(T R, Q) >= frac(T V C, Q) ==> P >= A V C $
+
+#formula-box(title: "The Short-Run Shutdown Rule")[
+  - *If $P > A V C_"min"$*: The firm operates and covers all variable costs, plus leaves a surplus to pay down fixed costs.
+  - *If $P = A V C_"min"$*: The *Shutdown Point*. The firm is indifferent; it loses exactly $T F C$ whether it operates or shuts down.
+  - *If $P < A V C_"min"$*: The firm *shuts down immediately* ($Q = 0$). Producing would generate operating losses in addition to $T F C$!
 ]
 
-- *Determinants of supply (the shift forces):*
-  - *Input prices:* costlier labour or fertiliser squeezes production → supply falls.
-  - *Technology:* improvement cuts costs per unit → supply rises (the biggest long-run lever).
-  - *Taxes and subsidies:* a per-unit tax adds cost (supply falls); a subsidy does the reverse.
-  - *Price expectations:* expecting higher prices tomorrow, sellers may HOLD BACK stock today.
-  - *Number of firms:* entry adds market supply; exit shrinks it.
-  - *Natural factors:* monsoon, pests, strikes — especially for agricultural goods.
-
-= Movement vs Shift: The Supply Version
+=== Long-Run Exit Rule
+In the long run, all costs are variable ($T F C = 0$). If a firm cannot cover its Total Cost, it exits the industry permanently:
+- The firm produces in the long run if and only if Total Revenue covers Total Cost:
+  $ T R >= T C ==> frac(T R, Q) >= frac(T C, Q) ==> P >= A T C quad ("or " P >= L A C) $
 
 #figure(
-  image("assets/econ_firm_supply.png", width: 100%),
-  caption: [The firm's equilibrium (left): the horizontal price line meets rising MC at E, with the AVC shutdown guard below. The market's equilibrium price (right): D = S fixes P\*, and any demand or supply shift re-prices the market.],
+  image("assets/econ_firm_equilibrium_supply.png", width: 95%),
+  caption: [Figure 1: Theory of the Firm Equilibrium showing Short-Run Supply Curve (Left) and Long-Run Competitive Equilibrium with Free Entry & Exit (Right)],
 )
+
+---
+
+= 3. Derivation of the Firm's Supply Curve
+
+A supply curve shows the quantity of output a profit-maximizing firm is willing and able to produce and sell at various alternative market prices.
+
+== 3.1 Derivation of the Short-Run Supply Curve
+Let market price take various hypothetical values:
+1. *Case 1: Price Above Minimum AVC ($P >= A V C_"min"$):*
+   - The firm applies its profit-maximizing rule $P = S M C$ on the rising portion of $S M C$.
+   - As price rises from $P_1$ to $P_2$, the horizontal price line moves up, intersecting the rising $S M C$ curve at progressively larger output quantities ($Q_1 < Q_2$).
+   - Therefore, for all prices at or above $A V C_"min"$, the firm's supply curve is *identical to the rising segment of its Short-Run Marginal Cost curve*!
+2. *Case 2: Price Below Minimum AVC ($P < A V C_"min"$):*
+   - Revenue fails to cover variable costs. Producing would mean losing variable cash on every unit.
+   - The firm chooses $Q = 0$.
+   - Along the vertical price axis from $P = 0$ up to $P = A V C_"min"$, the quantity supplied is strictly zero!
+
+#definition-box(title: "The Formal Definition of the Short-Run Supply Curve")[
+  *The Short-Run Supply Curve of a competitive firm consists of two distinct segments:*
+  1. The rising segment of the *Short-Run Marginal Cost ($S M C$)* curve on and above the minimum point of the Average Variable Cost ($A V C$) curve.
+  2. The vertical price axis from price zero up to the minimum $A V C$ point (where $Q = 0$).
+]
+
+== 3.2 Break-Even Point vs. Shutdown Point: Comparative Analysis
 
 #table(
-  columns: (1.45fr, 1.15fr, 1.65fr),
-  table.header[*What changes*][*Movement or shift?*][*Direction*],
-  [The good's OWN price], [Movement along S], [Price ↑: extension (slide up); Price ↓: contraction (slide down)],
-  [Input prices rise], [Shift], [Supply LEFT (costlier to produce)],
-  [Technology improves], [Shift], [Supply RIGHT],
-  [Per-unit tax / subsidy], [Shift], [Tax: left · Subsidy: right],
-  [Price expected to rise], [Shift], [Hold back today — supply LEFT now],
-  [Number of firms rises], [Shift], [Supply RIGHT],
+  columns: (1.2fr, 1.8fr, 1.8fr),
+  table.header([*Feature*], [*Break-Even Point*], [*Shutdown Point*]),
+  [*Defining Condition*], [Market price equals minimum Average Total Cost: $P = A T C_"min"$.], [Market price equals minimum Average Variable Cost: $P = A V C_"min"$.],
+  [*Total Relationship*], [Total Revenue equals Total Cost: $T R = T C$.], [Total Revenue equals Total Variable Cost: $T R = T V C$.],
+  [*Economic Profit Status*], [Economic profit is strictly *Zero* ($pi = 0$). The firm earns exactly its *Normal Profit*.], [The firm incurs an economic loss equal to Total Fixed Cost ($pi = -T F C$).],
+  [*Producer Action*], [Firm is fully viable and has no incentive to leave or expand; normal returns to entrepreneurial capital.], [Threshold boundary: Firm continues operating in short run, but shuts down instantly if price drops even one fraction of a rupee lower!],
+  [*Loss Minimizing Zone*], [If $P$ is between $A V C_"min"$ and $A T C_"min"$, the firm earns negative economic profit (losses), but stays open in the short run to minimize losses.], [Below this point ($P < A V C_"min"$), remaining open magnifies losses beyond $T F C$.],
 )
 
-- *Vocabulary, mirrored from demand:* "change in QUANTITY supplied" = movement along the curve (own price); "change in SUPPLY" = a shift (non-price factors). The supply trap is the same trap with an upward-sloping curve.
+== 3.3 Derivation of the Long-Run Supply Curve
+In the long run, there are no fixed costs. Capital and plant size can be freely varied.
+- If market price falls below minimum Long-Run Average Cost ($P < L A C_"min"$), the firm earns persistent economic losses and exits the industry entirely ($Q = 0$).
+- If market price is at or above minimum $L A C$ ($P >= L A C_"min"$), the firm equates $P = L M C$ on the rising portion of the $L M C$ curve.
 
-= Price Elasticity of Supply
-
-Same question as demand's elasticity, new curve: when price changes, how much does QUANTITY SUPPLIED respond?
-
-- *Definition:* $e_s = ("% change in quantity supplied") / ("% change in price")$ — absolute value; here both move together, so the sign is positive anyway.
-- *Percentage method is the syllabus tool* — exactly the four steps you practised for demand:
-
-#worked-example("PES — Full Steps")[
-Price of jaggery rises from ₹40 to ₹44 per kg; quantity supplied rises from 500 kg to 600 kg.
-
-- Step 1 — % change in quantity supplied: $(600 - 500) \/ 500 × 100 = 20%$
-- Step 2 — % change in price: $(44 - 40) \/ 40 × 100 = 10%$
-- Step 3 — Ratio: $e_s = 20% \/ 10% = 2$
-- Step 4 — Verdict: $e_s > 1$ — *elastic*: quantity supplied doubled the percentage response of price.
+#definition-box(title: "The Long-Run Supply Curve")[
+  *The Long-Run Supply Curve of a competitive firm is that portion of its Long-Run Marginal Cost ($L M C$) curve that lies on and above the minimum point of its Long-Run Average Cost ($L A C$) curve.*
 ]
 
-#table(
-  columns: (1fr, 1.7fr, 2.1fr),
-  table.header[*Value*][*Name*][*What it looks like*],
-  [$e_s = 0$], [Perfectly inelastic], [Fixed quantity however high the price — urban land, a dead artist's paintings],
-  [$e_s < 1$], [Inelastic], [Quantity responds by a SMALLER percentage — perishables, ready stock],
-  [$e_s = 1$], [Unitary], [Both change by the same percentage],
-  [$e_s > 1$], [Elastic], [Quantity responds MORE than proportionally — manufactures with spare capacity],
-  [$e_s = infinity$], [Perfectly elastic], [Unlimited quantity at one price — a single firm's view of demand in perfect competition],
-)
+---
 
-- *What makes supply elastic?*
-  - *Time period (the biggest lever):* momentary run — fixed supply, $e_s = 0$; short run — variable factors adjust, still inelastic; long run — everything adjusts, most elastic.
-  - *Stocks and storage:* large inventories can be released quickly → elastic; perishables → inelastic.
-  - *Spare capacity:* idle machines can ramp up fast → elastic.
-  - *Nature of the good:* manufactures elastic; agricultural goods inelastic in the short run (the crop is in the ground).
+= 4. Shifts in the Supply Curve: Determinants of Supply
 
-= Price Determination: Where the Price Actually Comes From
+A supply curve is graphed holding all non-price variables constant (*ceteris paribus*).
 
-Put the market's demand and supply on one diagram and they negotiate. The *equilibrium price* is the only price where the quantity buyers want EXACTLY equals the quantity sellers offer — D crosses S.
+== 4.1 Movement Along vs. Shift of the Supply Curve
+1. *Change in Quantity Supplied (Movement Along Supply Curve):*
+   - Caused *exclusively* by a change in the commodity's *own market price ($P$)*.
+   - An increase in price leads to an *Expansion of Supply* (upward movement along the same curve).
+   - A decrease in price leads to a *Contraction of Supply* (downward movement along the same curve).
+2. *Change in Supply (Shift of the Entire Supply Curve):*
+   - Caused by changes in *underlying non-price factors* (factor prices, technology, taxes).
+   - At every prevailing price, firms are now willing to produce a different quantity.
+   - A rightward shift represents an *Increase in Supply*; a leftward shift represents a *Decrease in Supply*.
 
-- *Above equilibrium:* quantity supplied beats quantity demanded — EXCESS SUPPLY. Unsold stock piles up; sellers undercut each other; price falls toward equilibrium.
-- *Below equilibrium:* quantity demanded beats quantity supplied — EXCESS DEMAND. Queues form; buyers bid up; price rises toward equilibrium.
-- *Restoring force:* competition among sellers (excess supply) and among buyers (excess demand) walks the price back to P\* every time — the market's self-correcting thermostat.
-
-#worked-example("Equilibrium Price — Schedule Proof")[
-Market demand and supply of eggs (in thousands):
-
-#table(
-  columns: (1.1fr, 1.6fr, 1.6fr, 1.9fr),
-  table.header[*Price (₹/dozen)*][*Demand*][*Supply*][*Pressure on price*],
-  [60], [70], [10], [Excess demand 60 — price pushed UP],
-  [72], [50], [30], [Excess demand 20 — still rising],
-  [78], [40], [40], [D = S — EQUILIBRIUM, no pressure],
-  [84], [30], [50], [Excess supply 20 — pushed DOWN],
-  [96], [10], [70], [Excess supply 60 — falling hard],
-)
-
-- *Equilibrium price: ₹78* — the only price where neither side is frustrated. At ₹60 buyers scramble (shortage); at ₹96 sellers groan (surplus); both mistakes self-correct toward ₹78.
-- *Read any row like an auction:* the pressure column IS the market's invisible hand, working row by row.
-]
-
-- *Effects of shifts (memorise the four arrows):*
-  - *Demand increases (D right):* P rises, Q rises — festival demand for sweets.
-  - *Demand decreases (D left):* P falls, Q falls — a health scare about a food.
-  - *Supply increases (S right):* P falls, Q rises — a record monsoon crop.
-  - *Supply decreases (S left):* P rises, Q falls — a strike at the factory.
-- *Simultaneous shifts:* both increase → Q definitely rises, price DEPENDS on which shift is bigger; both decrease → Q falls, price again ambiguous. When the two moves push price in opposite directions, say "depends on relative magnitude" — that IS the answer.
-- *Applications to name-drop:* price supports and price ceilings (next unit's simple applications) bend this same equilibrium — floors above P\* create surpluses; ceilings below P\* create shortages.
-
-= Key Formulas & Rules: One-Stop Revision
-
-#cheatsheet-box(title: "Perfect Competition and Supply — Every Rule on One Page")[
-  #table(
-    columns: (1.45fr, 2.1fr, 1.75fr),
-    table.header[*Rule*][*Statement*][*When to use it*],
-    [Price taker], [$"AR" = "MR" = P$ — horizontal line], [Identify the market structure],
-    [Firm equilibrium], [$"MC" = "MR"$ + MC rising + $P >= "AVC"$], [All three, or the answer is bait],
-    [Shutdown rule], [P below AVC's minimum → produce 0], [Short-run produce-or-not MCQs],
-    [Firm's supply curve], [Rising arm of MC above AVC min], [Where supply comes from],
-    [Law of supply], [Own P ↑ → quantity supplied ↑], [Upward-sloping S, direct relation],
-    [Market supply], [Add quantities at each price], [Horizontal summation],
-    [Supply shifters], [Input prices, technology, tax/subsidy, expectations, firm count], [Sort movements from shifts],
-    [Elasticity of supply], [$e_s = "% change in Q supplied" \/ "% change in P"$], [Percentage method, absolute value],
-    [Degrees of $e_s$], [0 → less than 1 → 1 → more than 1 → infinity], [Perfectly inelastic → perfectly elastic],
-    [Time lever], [Momentary 0; short run low; long run highest], [Rank elasticities by horizon],
-    [Equilibrium], [D = S; excess supply → P falls; excess demand → P rises], [Explain price adjustment],
-    [Shift arrows], [D right: P↑Q↑ · D left: P↓Q↓ · S right: P↓Q↑ · S left: P↑Q↓], [Predict market outcomes],
-  )
-]
-
-= Common Errors & Special Cases
-
-#exception-box(title: "The Traps This Unit Sets — Read Before the Mock")[
-  #table(
-    columns: (1.25fr, 1.35fr, 1.4fr),
-    table.header[*The rule you assume*][*The twist*][*The trap in the question*],
-    [Supply slopes down like demand], [Supply has a DIRECT relation — it slopes UP; MCQs flip the sign], [Curve-identification questions],
-    ["Price rose so supply shifted"], [Own price NEVER shifts S — it slides you along it], [Movement vs shift vocabulary],
-    [MC = MR anywhere is equilibrium], [Only the RISING-arm crossing counts; the falling crossing is a false stop], [Two-crossing MC diagrams],
-    [Equilibrium is enough to produce], [P below AVC's minimum → shut down even if MC = MR exists], [Shutdown-rule numericals],
-    [Technology raises price], [It cuts costs — supply shifts RIGHT and price FALLS], [S-shift direction questions],
-    [Tax raises supply], [A per-unit tax adds cost — supply shifts LEFT (subsidy: right)], [Fiscal lever sorting],
-    [PES can be negative], [Price and quantity supplied move TOGETHER — e_s is positive by nature], [Sign conventions],
-    [Both curves shifting gives one price answer], [When D and S move oppositely, price "depends on relative magnitude"], [Simultaneous-shift MCQs],
-  )
-]
-
-= The 60-Second Self-Test
-
-Cover the answers, say each one aloud, then check. If any answer takes longer than ten seconds, revisit that section.
-
-- *Price rises 15%, quantity supplied rises 9%.* Elasticity? → $e_s = 9 \/ 15 = 0.6$ — inelastic.
-- *Wages (input cost) jump 20%.* Supply curve moves which way? → LEFT — costlier production at every price.
-- *MC = MR at two outputs, MC falling at the first.* Equilibrium? → The SECOND crossing, where MC is rising.
-- *Price ₹30, AVC minimum ₹34.* Produce? → No — price cannot cover variable cost; shut down.
-- *Two farms offer 25 and 35 units at ₹50.* Market supply at ₹50? → 60 units — horizontal summation.
-- *Good harvests everywhere.* Price and quantity of grain? → S shifts right: P falls, Q rises.
-
-= The Whole Chapter in One Picture
+== 4.2 Major Supply Shift Determinants
+1. *Prices of Factors of Production (Input Costs):*
+   - If input prices (wages, raw materials, rental rates) *rise*, cost of production increases. The $S M C$ curve shifts upward/leftward. At the same market price $P$, $P = S M C$ occurs at a smaller output. The *supply curve shifts to the left*.
+   - If input prices *fall*, $S M C$ shifts downward, causing the *supply curve to shift to the right*.
+2. *Technological Progress:*
+   - Technological innovation allows the same inputs to yield more output, or reduces the inputs needed per unit.
+   - Marginal cost declines, shifting the $M C$ curve downward. The *supply curve shifts to the right*.
+3. *Unit Excise Tax ($t$):*
+   - If the government imposes a tax of $t$ rupees per unit sold, the marginal cost of producing each unit increases by exactly $t$:
+     $ S M C_"new"(Q) = S M C_"old"(Q) + t $
+   - The supply curve undergoes an *upward (leftward) vertical shift* by exactly the amount of the tax ($t$).
+4. *Unit Production Subsidy ($s$):*
+   - If the government grants a subsidy of $s$ rupees per unit produced, net marginal cost falls:
+     $ S M C_"new"(Q) = S M C_"old"(Q) - s $
+   - The supply curve undergoes a *downward (rightward) vertical shift* by the amount of the subsidy ($s$).
+5. *Prices of Alternative Goods in Production:*
+   - If the market price of an alternative good that uses similar inputs (e.g., soybean vs. corn) rises, producers reallocate resources toward the more profitable alternative. The supply of the original good *shifts leftward*.
 
 #figure(
-  image("assets/econ_firm_mindmap.png", width: 100%),
-  caption: [Chapter mindmap: the features of perfect competition, the three profit-maximising conditions, supply's schedule and determinants, movement vs shift, elasticity of supply, and price determination with shift effects — with the traps that catch most students.],
+  image("assets/econ_firm_elasticity_market_supply.png", width: 95%),
+  caption: [Figure 2: Price Elasticity of Supply showing Geometric Intercept Methods (Left) and Horizontal Summation of Industry Supply (Right)],
 )
 
-= Practice Questions (Exam Pattern)
+---
 
-Ten questions in the CUET UG style. Attempt all of them — the paper gives $+5$ for each correct answer and $-1$ for every incorrect answer.
+= 5. Market Supply Aggregation & Price Determination
 
-#mcq(1, [Which of the following is NOT a feature of perfect competition?], (
-  [homogeneous products], [free entry and exit of firms], [each firm is a price maker], [perfect knowledge among buyers],
-))
+== 5.1 Horizontal Summation of Individual Supply Curves
+Market Supply is the aggregate quantity of a commodity that *all firms in the industry* are willing to produce and sell at various price levels during a given time period:
+- *Mathematical Formulation:* If there are $n$ identical firms in the industry, each with individual supply function $q_i(P)$:
+  $ Q_M(P) = sum_(i=1)^n q_i(P) = n times q(P) $
+- *Geometric Rule:* Market supply is obtained by the *horizontal summation* of the supply curves of all individual firms. At each price level on the vertical axis, add the horizontal distances (quantities) of all individual curves.
+- *Flatter Elasticity Property:* Because quantities add up horizontally, the market supply curve is *broader and flatter* than any individual firm's supply curve, meaning market supply is generally more responsive in absolute volume.
 
-#mcq(2, [A firm under perfect competition is a price taker because:], (
-  [it sells a differentiated product], [its share of total output is negligible], [the government fixes prices], [it faces falling demand],
-))
+== 5.2 Industry Equilibrium: Price Determination
+While the individual firm is a price taker, the industry as an aggregate entity determines the equilibrium market price ($P^*$) through the intersection of the downward-sloping market demand curve ($D$) and upward-sloping market supply curve ($S$):
 
-#mcq(3, [A firm maximises profit where MC = MR and:], (
-  [MC is falling], [MC is rising], [AC is minimum], [TR is maximum],
-))
+$ D(P^*) = S(P^*) $
 
-#mcq(4, [In the short run, a firm should stop production if:], (
-  [price falls below AVC's minimum], [price falls below AC], [profit becomes zero], [MR starts falling],
-))
+At this price, the market clears ($Q_D = Q_S$). The firm takes this equilibrium price as a given datum and sets $P^* = S M C$ to determine its individual profit-maximizing output ($q^*$).
 
-#mcq(5, [Market supply is obtained by:], (
-  [adding firms' prices at each quantity], [adding firms' quantities at each price], [averaging the firms' quantities], [multiplying price by quantity],
-))
+---
 
-#mcq(6, [Which of the following would shift the supply curve of steel to the RIGHT?], (
-  [a rise in iron-ore prices], [a new cost-saving furnace technology], [a new per-unit tax on steel], [expected higher steel prices next month],
-))
+= 6. Price Elasticity of Supply ($e_s$): Measurement & Geometry
 
-#mcq(7, [A rise in the good's OWN price causes:], (
-  [a rightward shift of supply], [a leftward shift of supply], [an upward movement along the same supply curve], [a downward movement along the same supply curve],
-))
+Price Elasticity of Supply ($e_s$) measures the degree of responsiveness of the quantity supplied of a commodity to a change in its own price, ceteris paribus.
 
-#mcq(8, [Price rises by 10% and quantity supplied rises by 25%. The price elasticity of supply is:], (
-  [0.4], [2.5], [1], [35],
-))
+== 6.1 Percentage and Proportionate Method
+$ e_s = frac("% Change in Quantity Supplied", "% Change in Price") = frac(frac(Delta Q, Q) times 100, frac(Delta P, P) times 100) = frac(Delta Q, Delta P) times frac(P, Q) $
 
-#mcq(9, [Supply is MOST elastic for:], (
-  [urban land], [fresh fish caught today], [garments with idle machines and big stocks], [a monsoon-bound crop already sown],
-))
+- In terms of calculus derivatives:
+  $ e_s = frac(d Q, d P) times frac(P, Q) $
+  Where $frac(d Q, d P)$ is the reciprocal of the slope of the supply curve ($frac(1, "Slope")$).
+- *Positive Sign:* Because the supply curve is normally upward sloping (Law of Supply: $Delta P$ and $Delta Q$ move in the same direction), $e_s$ is always *positive* ($e_s >= 0$).
 
-#mcq(10, [A bumper monsoon raises the crop supply sharply. In the grain market, equilibrium price will ____ and quantity will ____:], (
-  [rise; rise], [fall; fall], [fall; rise], [rise; fall],
-))
+== 6.2 The Geometric Intercept Method (Crucial CUET Geometry)
+Consider a straight-line supply curve extended until it intersects the coordinate axes. The elasticity of supply at any point $A(Q_0, P_0)$ on a linear supply curve is determined entirely by the *axis intercept*:
 
-= Detailed Solutions
-
-Each solution shows the working, not just the verdict — cover the answer line, attempt the reasoning, then compare.
-
-#solution(1, [Perfect competition strips every firm of pricing power: identical products, tiny market shares, free entry, full information. "Each firm is a price maker" describes the opposite structure — a monopoly.], answer: [C])
-
-#solution(2, [One farmer out of a lakh cannot move the national wheat price — its output is a drop in the ocean. Negligible market share makes every firm accept the industry price and choose only quantity.], answer: [B])
-
-#solution(3, [MC = MR has two crossings on a U-shaped MC. Only the one on the RISING branch stops expansion correctly — before it, the next unit would still add more revenue than cost. AC-minimum and TR-maximum are different events.], answer: [B])
-
-#solution(4, [Fixed cost is sunk, but variable cost is avoidable. If price cannot cover even AVC's minimum, every unit produced deepens the loss — shut down and lose only TFC. Falling below AC triggers losses, not shutdown.], answer: [A])
-
-#solution(5, [Market supply sums what all firms OFFER at each price — horizontal summation of quantities, exactly parallel to market demand. Prices are never added.], answer: [B])
-
-#solution(6, [A cost-saving furnace cuts the cost per tonne, so more steel is profitable at every price — the whole curve shifts RIGHT. Iron-ore prices and taxes shift it left; expected future prices hold back today's stock (left).], answer: [B])
-
-#solution(7, [An own-price change never shifts the curve. Price rises → slide UP the same S curve → quantity supplied extends. Shifts belong to costs, technology, taxes and expectations.], answer: [C])
-
-#solution(8, [e_s = % change in quantity supplied ÷ % change in price = 25 ÷ 10 = 2.5 — elastic; quantity responded two-and-a-half times as hard as the price.], answer: [B])
-
-#solution(9, [Idle machines and large stocks let garment makers ramp up instantly — highly elastic. Land is perfectly inelastic; fresh fish and standing crops cannot wait for a better price.], answer: [C])
-
-#solution(10, [A supply increase shifts S right: at the old price there is excess supply, competition among sellers pushes the price DOWN, and the traded quantity RISES. The demand curve never moved.], answer: [C])
-
-== Wrong-Answer Clinic — the one-line corrections
-
-Dropped marks above? Find your slip here and rewrite the corrected rule in your own words.
-
-#table(
-  columns: (1.05fr, 1.5fr, 1.45fr),
-  table.header[*If you answered...*][*Your slip was...*][*The corrected rule, in one line*],
-  [Q1 option A], [Calling homogeneous products a monopoly trait], [Identical products REMOVE brand power — the heart of perfect competition],
-  [Q3 option C], [Confusing cost events with profit stops], [Equilibrium compares MARGINAL cost with MARGINAL revenue — AC's minimum is not the stop rule],
-  [Q4 option B], [Shutting down on any loss], [Produce while P ≥ AVC; losses below AC are survivable short run — only P < AVC forces shutdown],
-  [Q7 option A], [Shifting on an own-price change], [Own price slides you ALONG the S curve; only non-price factors shift it],
-  [Q8 option A], [Dividing upside down], [e_s = %ΔQ ÷ %ΔP = 25 ÷ 10 = 2.5 — quantity first, price second],
-  [Q9 option A], [Ranking land as elastic], [Land is the textbook perfectly inelastic supply — no amount of price adds acres],
-  [Q10 option B], [Moving both price and quantity down], [S right pushes price DOWN but quantity UP — the two always move opposite for supply shifts],
-)
-
-#block(width: 100%, inset: (top: 4pt), above: 4pt)[
-  #align(center, text(fill: om-grey, size: 8pt)[© OurMocks · www.ourmocks.com · CUET UG Economics · The Theory of the firms under perfect competition · 2027 cycle])
+#formula-box(title: "The Geometric Supply Elasticity Intercept Rules")[
+  Let a straight-line supply equation be $Q = -a + b P$ or $Q = a + b P$:
+  
+  1. *Unitary Elasticity ($e_s = 1.0$):*
+     - If the straight-line supply curve *passes directly through the origin* ($Q = b P$, intercept $= 0$), the elasticity of supply is *strictly equal to 1.0 at every single point on the curve*!
+     - *Remarkable Geometric Property:* This holds true *regardless of the angle of inclination*! A steep supply line through the origin ($theta = 80 deg$) and a flat supply line through the origin ($theta = 20 deg$) BOTH have $e_s = 1.0$ everywhere!
+  
+  2. *Elastic Supply ($e_s > 1.0$):*
+     - If the extended straight-line supply curve *intersects the vertical (price) axis* above the origin (negative quantity intercept, $Q = -a + b P$), then $e_s > 1.0$ at every point on the supply curve.
+  
+  3. *Inelastic Supply ($e_s < 1.0$):*
+     - If the straight-line supply curve *intersects the horizontal (quantity) axis* to the right of the origin (positive quantity intercept, $Q = a + b P$), then $e_s < 1.0$ at every point on the supply curve.
+  
+  4. *Perfect Inelasticity ($e_s = 0$):*
+     - A strictly *vertical supply curve* parallel to the price axis. Quantity supplied is completely fixed and does not respond to price changes at all (e.g., momentary supply of fish or fresh flowers).
+  
+  5. *Perfect Elasticity ($e_s = oo$):*
+     - A strictly *horizontal supply curve* parallel to the quantity axis. Infinite quantity is supplied at price $P$, while zero is supplied at any price below $P$.
 ]
+
+== 6.3 Determinants of Price Elasticity of Supply
+1. *Time Period (Marshallian Time Horizons):*
+   - *Momentary / Market Period:* Supply is completely fixed ($e_s = 0$). Production cannot adjust.
+   - *Short Run:* Variable inputs can adjust; plant size fixed ($0 < e_s < 1$).
+   - *Long Run:* All inputs and plant sizes are fully variable; new firms can enter ($e_s > 1$). *Supply is always most elastic in the long run!*
+2. *Nature of the Commodity:* Perishable goods (milk, vegetables) cannot be stored and have low elasticity; durable goods (steel, electronic chips) can be held in inventories, yielding high elasticity.
+3. *Factor Mobility & Availability of Inputs:* If inputs are readily available and mobile across industries, firms can quickly expand output when prices rise, making supply highly elastic.
+4. *Technological Complexity:* Commodities requiring intricate, specialized machinery have inelastic supply because expanding production requires long gestation lags.
+
+---
+
+= 7. Long-Run Competitive Equilibrium & The Zero-Profit Theorem
+
+== 7.1 The Dynamics of Free Entry and Exit
+In the long run, the presence of economic profits or losses triggers an automatic market adjustment:
+1. *If Existing Firms Earn Supernormal Profits ($P > L A C_"min"$):*
+   - Entrepreneurs observe positive economic profits ($pi > 0$).
+   - Attracted by these above-normal returns, new firms enter the industry freely.
+   - As the number of firms ($n$) increases, the market supply curve shifts to the *right*.
+   - Market supply expansion drives the equilibrium market price *downward*.
+   - Entry continues until the market price is forced down to the exact minimum point of Long-Run Average Cost ($P^* = L A C_"min"$). Supernormal profits are wiped out completely!
+2. *If Existing Firms Incur Economic Losses ($P < L A C_"min"$):*
+   - Firms fail to cover their full economic costs.
+   - Weaker firms exit the industry.
+   - The market supply curve shifts to the *left*.
+   - Contraction in industry supply pushes market price *upward*.
+   - Exit continues until price rises back to $P^* = L A C_"min"$. Losses are eliminated!
+
+== 7.2 The Long-Run Equilibrium Condition
+In long-run competitive equilibrium, every firm produces at the minimum point of its $L A C$ curve, simultaneously achieving technical and economic efficiency:
+
+#formula-box(title: "The Ultimate Long-Run Competitive Equilibrium Identity")[
+  $ P^* = L M C = min L A C = S M C = min S A C $
+  
+  - *Economic Profit:* $pi = 0$ (*Zero Economic Profit*).
+  - *Normal Profit:* Because normal profit is included in implicit cost, every competitive firm earns its *full Normal Profit*, which is sufficient to keep capital invested in the industry!
+  - *Optimal Plant Scale:* The firm operates at the minimum point of its short-run average cost curve corresponding to the optimum plant size.
+]
+
+#figure(
+  image("assets/econ_firm_perfect_competition_mindmap.png", width: 95%),
+  caption: [Figure 3: Comprehensive Synthesis Mindmap of Perfect Competition: Structural Features, Revenue Mechanics, Supply Geometry, and Elasticity],
+)
+
+---
+
+= 8. Master Formula Cheatsheet & Diagnostic Traps
+
+#cheatsheet-box(title: "Master Formula Cheatsheet — Theory of the Firm Under Perfect Competition")[
+  *Competitive Revenue Mechanics:*
+  - Price Identity: $P = A R = M R = "Constant horizontal demand line"$.
+  - Total Revenue: $T R = P times Q$ (Linear ray from origin, slope $= P$).
+  - Price Elasticity of Demand Facing Firm: $e_d = oo$ (Infinitely elastic).
+
+  *Profit Maximization Conditions:*
+  - Condition 1: $P = M R = M C$.
+  - Condition 2: $M C$ is rising at equilibrium ($frac(d(M C), d Q) > 0$).
+  - Condition 3 (Short Run): $P >= A V C_"min"$ (Shutdown threshold).
+  - Condition 3 (Long Run): $P >= A T C_"min"$ (Exit threshold).
+
+  *Supply Curve Specifications:*
+  - Short-Run Supply Curve: Rising segment of $S M C$ on or above $A V C_"min"$; $Q = 0$ for $P < A V C_"min"$.
+  - Long-Run Supply Curve: Rising segment of $L M C$ on or above $L A C_"min"$; $Q = 0$ for $P < L A C_"min"$.
+  - Break-Even Point: $P = A T C_"min" ==> T R = T C ==> pi = 0$ (Normal Profit).
+  - Shutdown Point: $P = A V C_"min" ==> T R = T V C ==> pi = -T F C$.
+
+  *Price Elasticity of Supply ($e_s$):*
+  - Percentage Formula: $e_s = frac(Delta Q, Delta P) times frac(P, Q) = frac(d Q, d P) times frac(P, Q)$.
+  - Intercept Rule: Passes through Origin $==> e_s = 1.0$; Cuts Price (Y) Axis $==> e_s > 1.0$; Cuts Quantity (X) Axis $==> e_s < 1.0$.
+  - Long-Run Competitive Equilibrium: $P = L M C = min L A C = S M C = min S A C ==> pi = 0$ (Zero Economic Profit).
+]
+
+#exception-box(title: "The Seven Fatal CUET Exam Traps in Theory of the Firm")[
+  1. *Zero Economic Profit vs. Zero Accounting Profit:* Students falsely assume zero economic profit means the firm earns nothing and will close down. Economic cost includes *Implicit Cost (Normal Profit)*! A firm with zero economic profit is earning positive accounting profit and fully paying its owner's capital and time.
+  2. *Operating at a Loss in the Short Run:* Believing a firm shuts down whenever price is below Average Total Cost ($P < A T C$). If $A V C < P < A T C$, the firm stays open because revenue covers ALL variable costs and pays off part of $T F C$. Shutting down would cause a larger loss equal to full $T F C$!
+  3. *The True Shutdown Point:* The shutdown point is $P = A V C_"min"$, NOT $P = A T C_"min"$! At $P = A V C_"min"$, the loss is identical whether the firm operates or shuts down ($"Loss" = T F C$).
+  4. *Supply Curve Origin Fallacy:* Believing the supply curve starts at the coordinate origin $(0, 0)$. In reality, the short-run supply curve starts at the minimum point of $A V C$. At any price below min $A V C$, supply jumps discontinuously to $Q = 0$!
+  5. *Slope vs. Elasticity of Supply:* Assuming a steeper straight-line supply curve is less elastic. If two supply curves both pass through the origin, BOTH have $e_s = 1.0$ at every single point, regardless of their slope! Elasticity depends on the axis intercept, not the steepness.
+  6. *Unit Tax Effect on Supply:* A unit tax $t$ shifts the Marginal Cost curve *vertically upward* by $t$, causing the supply curve to shift to the *left*, raising equilibrium market price and reducing market quantity.
+  7. *Firm Demand vs. Industry Demand:* The demand curve for an individual competitive firm is horizontal ($e_d = oo$), but the demand curve for the *entire industry* is downward sloping ($e_d < oo$). Never confuse the micro firm with the macro industry!
+]
+
+---
+
+#pagebreak()
+#set text(size: 8.5pt)
+#set par(leading: 0.40em, spacing: 0.42em)
+
+= Practice Questions — Part 1 (Q1 to Q5)
+
+#mcq(1, [For a perfectly competitive firm, which of the following relationships between Price (P), Average Revenue (AR), and Marginal Revenue (MR) is strictly true across all output levels?], (
+  [(A) $P = A R > M R$],
+  [(B) $P > A R = M R$],
+  [(C) $P = A R = M R$],
+  [(D) $P > A R > M R$],
+))
+#solution(1, [In perfect competition, the firm is a price taker and can sell any quantity at the constant market price $P$. Therefore, Average Revenue is $A R = T R / Q = (P times Q) / Q = P$. Marginal Revenue is $M R = Delta T R / Delta Q = P$. Hence, $P = A R = M R$ holds identically as a constant horizontal line parallel to the output axis.], answer: "C")
+
+#mcq(2, [A competitive firm maximizes its total profit by producing an output where Marginal Cost equals Marginal Revenue, provided that at this output level:], (
+  [(A) Marginal Cost is falling],
+  [(B) Marginal Cost is rising (cuts MR from below)],
+  [(C) Average Total Cost is at its absolute maximum],
+  [(D) Total Revenue is equal to Total Variable Cost],
+))
+#solution(2, [The first-order condition $M R = M C$ is necessary but not sufficient, because a U-shaped $M C$ cuts horizontal $M R$ at two points. At the first intersection where $M C$ is falling, producing further units costs less than the price received, meaning profit increases by expanding output. True profit maximization requires the second-order condition: $M C$ must be rising ($d(M C)/d Q > 0$), cutting $M R$ from below.], answer: "B")
+
+#mcq(3, [The demand curve facing an individual firm under perfect competition is:], (
+  [(A) Downward sloping with unitary elasticity],
+  [(B) Strictly vertical with zero price elasticity],
+  [(C) Strictly horizontal with infinite price elasticity],
+  [(D) U-shaped reflecting diminishing marginal returns],
+))
+#solution(3, [Because an individual firm supplies an infinitesimally small fraction of total market output and products are completely homogeneous, the firm can sell as much as it desires at the prevailing market price, but cannot sell a single unit at any price above it. This produces a perfectly horizontal demand curve with infinite price elasticity ($e_d = oo$).], answer: "C")
+
+#mcq(4, [Total Revenue (TR) for a perfectly competitive firm is graphically represented as:], (
+  [(A) An inverted U-shaped curve reaching a maximum],
+  [(B) A straight line passing through the origin with constant positive slope],
+  [(C) A horizontal straight line at the level of market price],
+  [(D) A rectangular hyperbola asymptotic to both axes],
+))
+#solution(4, [Total Revenue is given by $T R = P times Q$. Since the market price $P$ is constant for a competitive price-taker, every additional unit sold adds exactly $P$ to total receipts ($d(T R)/d Q = P$). Therefore, $T R$ is a straight ray originating from $(0, 0)$ with a constant positive slope equal to $P$.], answer: "B")
+
+#mcq(5, [If the market price in a competitive industry is ₹25, the Marginal Revenue of the firm from selling the 100th unit of output is:], (
+  [(A) ₹2,500],
+  [(B) ₹250],
+  [(C) ₹25],
+  [(D) ₹0],
+))
+#solution(5, [In perfect competition, $P = A R = M R = "Constant"$. Regardless of whether the firm sells the 1st unit, the 50th unit, or the 100th unit, each additional unit sold adds exactly the market price to total revenue. Since $P = ₹25$, $M R_(100) = ₹25$.], answer: "C")
+
+---
+
+#pagebreak()
+#set text(size: 8.5pt)
+#set par(leading: 0.40em, spacing: 0.42em)
+
+= Practice Questions — Part 2 (Q6 to Q10)
+
+#mcq(6, [The short-run supply curve of a perfectly competitive firm is defined by:], (
+  [(A) The entire rising portion of the Average Total Cost (ATC) curve],
+  [(B) The rising segment of the Short-Run Marginal Cost (SMC) curve on and above the minimum AVC],
+  [(C) The downward-sloping segment of the Short-Run Marginal Cost curve],
+  [(D) The horizontal line corresponding to the Break-Even price],
+))
+#solution(6, [A competitive firm maximizes profit where $P = S M C$ along the rising branch of $S M C$, provided price covers variable costs ($P >= A V C_"min"$). If price falls below minimum $A V C$, the firm shuts down and supplies zero. Therefore, the firm's short-run supply curve is strictly the rising segment of $S M C$ lying on or above the minimum point of the $A V C$ curve.], answer: "B")
+
+#mcq(7, [A firm continues to produce output in the short run despite incurring an economic loss when:], (
+  [(A) Price is less than minimum Average Variable Cost ($P < A V C_"min"$)],
+  [(B) Price is between minimum AVC and minimum ATC ($A V C_"min" <= P < A T C_"min"$)],
+  [(C) Total Revenue is less than Total Variable Cost ($T R < T V C$)],
+  [(D) Total Fixed Cost is equal to zero],
+))
+#solution(7, [When $A V C_"min" <= P < A T C_"min"$, the firm cannot cover its full costs ($T R < T C$), resulting in an economic loss. However, because $P >= A V C$, revenue covers all variable operating costs and leaves a residual surplus to offset a portion of fixed overheads ($T F C$). If the firm shut down, it would lose the entire $T F C$. Operating keeps losses smaller than $T F C$, making operation rational in the short run.], answer: "B")
+
+#mcq(8, [At the Break-Even Point of a competitive firm:], (
+  [(A) $P = A V C_"min"$ and economic profit is negative],
+  [(B) $P = A T C_"min"$ and economic profit is zero (earns normal profit)],
+  [(C) $T R = T V C$ and the firm shuts down immediately],
+  [(D) Marginal Cost is at its absolute minimum],
+))
+#solution(8, [The Break-Even Point occurs where market price equals the minimum point of Average Total Cost ($P = A T C_"min"$). At this output, Total Revenue equals Total Cost ($T R = T C$). Net economic profit is strictly zero ($pi = 0$). Since economic cost includes implicit costs (normal profit), the firm is fully covering all costs and earning its normal entrepreneurial return.], answer: "B")
+
+#mcq(9, [If the government imposes a specific per-unit sales tax of ₹5 on the production of a good, how does this affect the firm's short-run supply curve?], (
+  [(A) The supply curve shifts horizontally to the right by 5 units],
+  [(B) The supply curve shifts vertically upward (leftward) by ₹5],
+  [(C) The supply curve becomes perfectly inelastic],
+  [(D) The supply curve remains completely unaffected because tax is a fixed cost],
+))
+#solution(9, [A specific per-unit tax increases the variable cost of producing every single unit by ₹5. Consequently, the firm's Marginal Cost curve shifts vertically upward by ₹5 ($S M C_"new" = S M C_"old" + 5$). Since the firm's supply curve is the rising portion of $S M C$, the entire supply curve shifts vertically upward by ₹5, which corresponds to a leftward shift in supply at any given price.], answer: "B")
+
+#mcq(10, [At the Shutdown Point of a competitive firm in the short run, the firm's net economic loss is equal to:], (
+  [(A) Zero],
+  [(B) Total Variable Cost (TVC)],
+  [(C) Total Fixed Cost (TFC)],
+  [(D) Total Revenue (TR)],
+))
+#solution(10, [At the shutdown point, price equals minimum Average Variable Cost ($P = A V C_"min"$). Therefore, Total Revenue exactly covers Total Variable Cost ($T R = T V C$). Total profit is $pi = T R - T C = T V C - (T F C + T V C) = -T F C$. The firm incurs a loss exactly equal to its Total Fixed Cost whether it operates or shuts down.], answer: "C")
+
+---
+
+#pagebreak()
+#set text(size: 8.5pt)
+#set par(leading: 0.40em, spacing: 0.42em)
+
+= Practice Questions — Part 3 (Q11 to Q15)
+
+#mcq(11, [Any straight-line supply curve that passes directly through the origin has a price elasticity of supply ($e_s$) equal to:], (
+  [(A) Greater than 1 at all points],
+  [(B) Less than 1 at all points],
+  [(C) Strictly equal to 1 at all points regardless of its slope],
+  [(D) Zero at the origin and increasing as output rises],
+))
+#solution(11, [For any linear supply curve passing through the origin, the equation is $Q = b P$ (where $b = d Q / d P$). Applying the elasticity formula: $e_s = (d Q / d P) times (P / Q) = b times (P / (b P)) = 1.0$. This result is independent of the value of $b$ (the angle of inclination). Whether the supply line is steep or flat, if it passes through the origin, $e_s = 1.0$ at every single point!], answer: "C")
+
+#mcq(12, [A straight-line supply curve intercepts the positive vertical (price) axis. The price elasticity of supply at any point on this curve is:], (
+  [(A) Elastic ($e_s > 1$)],
+  [(B) Unitary ($e_s = 1$)],
+  [(C) Inelastic ($e_s < 1$)],
+  [(D) Infinite ($e_s = oo$)],
+))
+#solution(12, [A supply curve intercepting the positive price axis has the linear form $P = a + b Q$ (with $a > 0$), which rearranges to $Q = - frac(a, b) + frac(1, b) P$. By the geometric intercept method, any supply curve whose backward extension cuts the price axis above the origin yields a percentage change in quantity that exceeds the percentage change in price, establishing $e_s > 1.0$ (Elastic) at all points.], answer: "A")
+
+#mcq(13, [When the market price of a good rises from ₹20 to ₹25, the quantity supplied by a firm expands from 100 units to 150 units. The price elasticity of supply using the percentage method is:], (
+  [(A) 1.25],
+  [(B) 1.50],
+  [(C) 2.00],
+  [(D) 2.50],
+))
+#solution(13, [Given: Initial price $P = 20$, new price $P_1 = 25 ==> Delta P = 25 - 20 = 5$. Initial quantity $Q = 100$, new quantity $Q_1 = 150 ==> Delta Q = 150 - 100 = 50$. Using the elasticity formula: $e_s = (Delta Q / Delta P) times (P / Q) = (50 / 5) times (20 / 100) = 10 times 0.2 = 2.00$. The supply is price elastic ($e_s > 1$).], answer: "C")
+
+#mcq(14, [In the long-run equilibrium of a perfectly competitive industry with free entry and exit, every firm earns:], (
+  [(A) Supernormal economic profit because market demand is high],
+  [(B) Strictly Zero Economic Profit, while fully covering Normal Profit],
+  [(C) Negative economic profit subsidized by the government],
+  [(D) A profit equal to Total Fixed Cost],
+))
+#solution(14, [Free entry and exit ensures that supernormal profits and economic losses cannot persist in the long run. If firms earn supernormal profit ($P > L A C$), new firms enter, expanding market supply and lowering price. If firms suffer losses ($P < L A C$), firms exit, contracting supply and raising price. Long-run equilibrium forces $P = min L A C$, where economic profit is zero ($pi = 0$). Since normal profit is included in economic cost as an implicit cost, firms earn their normal profit.], answer: "B")
+
+#mcq(15, [Market supply curve is derived by:], (
+  [(A) Vertical summation of individual firms' marginal cost curves],
+  [(B) Horizontal summation of individual firms' supply curves at various prices],
+  [(C) Multiplying the individual supply curve by the price elasticity of demand],
+  [(D) Taking the average of the lowest and highest cost firms in the industry],
+))
+#solution(15, [Market supply represents the total aggregate quantity of a commodity that all participating producers in the market are willing to sell at each given price level. It is constructed through the process of *horizontal summation*: at each specific price on the vertical axis, the quantities supplied by each individual firm ($q_1 + q_2 + dots + q_n$) are added together to find total market quantity ($Q_M$).], answer: "B")

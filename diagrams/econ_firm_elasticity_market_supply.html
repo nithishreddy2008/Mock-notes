@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Price Elasticity of Supply & Market Supply Aggregation</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px 28px;
+    overflow: hidden;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 12px;
+    margin-bottom: 16px;
+  }
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .brand-badge {
+    background: #071A4D;
+    color: #B8FF34;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .title-group h1 {
+    font-size: 22px;
+    font-weight: 800;
+    color: #071A4D;
+    letter-spacing: -0.02em;
+  }
+  .title-group p {
+    font-size: 12px;
+    color: #64748B;
+    margin-top: 2px;
+  }
+  .header-meta {
+    display: flex;
+    gap: 8px;
+  }
+  .pill {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 999px;
+    border: 1px solid #CBD5E1;
+    background: #FFFFFF;
+    color: #334155;
+  }
+  .pill.highlight {
+    background: #EFF6FF;
+    border-color: #93C5FD;
+    color: #1D4ED8;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-bottom: 16px;
+  }
+  .card {
+    background: #FFFFFF;
+    border: 1.5px solid #E2E8F0;
+    border-radius: 10px;
+    padding: 16px 20px;
+    display: flex;
+    flex-direction: column;
+    height: 570px;
+  }
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  .card-title {
+    font-size: 15px;
+    font-weight: 800;
+    color: #0F172A;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .badge {
+    font-size: 10px;
+    font-weight: 800;
+    padding: 2px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+  .badge-purple { background: #F3E8FF; color: #6B21A8; }
+  .badge-amber { background: #FEF3C7; color: #92400E; }
+
+  .svg-wrap {
+    flex: 1;
+    position: relative;
+    width: 100%;
+    border-radius: 8px;
+    background: #FAFAFC;
+    border: 1px solid #F1F5F9;
+  }
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .bottom-bar {
+    display: grid;
+    grid-template-columns: 1.3fr 1.5fr 1.2fr;
+    gap: 16px;
+    background: #FFFFFF;
+    border: 1.5px solid #E2E8F0;
+    border-radius: 10px;
+    padding: 12px 18px;
+    height: 195px;
+  }
+  .summary-col h3 {
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #071A4D;
+    margin-bottom: 6px;
+  }
+  .rule-list {
+    list-style: none;
+    font-size: 11px;
+    line-height: 1.45;
+    color: #334155;
+  }
+  .rule-list li {
+    margin-bottom: 4px;
+    position: relative;
+    padding-left: 14px;
+  }
+  .rule-list li::before {
+    content: "•";
+    position: absolute;
+    left: 2px;
+    color: #2563EB;
+    font-weight: 900;
+  }
+  .trap-box {
+    background: #FFF1F2;
+    border: 1px solid #FECDD3;
+    border-radius: 8px;
+    padding: 8px 12px;
+  }
+  .trap-box h4 {
+    color: #BE123C;
+    font-size: 11.5px;
+    font-weight: 800;
+    margin-bottom: 4px;
+  }
+  .trap-box p {
+    font-size: 10.5px;
+    color: #881337;
+    line-height: 1.35;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <div class="brand-badge">OurMocks Core Engine</div>
+    <div class="title-group">
+      <h1>Elasticity of Supply &amp; Market Aggregation Engine</h1>
+      <p>Geometric Origin Methods, Point Elasticity, Horizontal Summation of Industry Supply &amp; Shift Drivers</p>
+    </div>
+  </div>
+  <div class="header-meta">
+    <span class="pill highlight">Elasticity of Supply (Es)</span>
+    <span class="pill">Intercept Rule</span>
+    <span class="pill">Horizontal Summation</span>
+  </div>
+</div>
+
+<div class="grid">
+  <!-- Left Card: Geometric Point Elasticity -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">
+        <span>Geometric Intercept Method for Price Elasticity of Supply</span>
+      </div>
+      <span class="badge badge-purple">Geometric Method</span>
+    </div>
+    <div class="svg-wrap">
+      <svg viewBox="0 0 620 480" xmlns="http://www.w3.org/2000/svg">
+        <!-- Axes -->
+        <line x1="60" y1="420" x2="580" y2="420" stroke="#0F172A" stroke-width="2.5" marker-end="url(#arrow-dark)" />
+        <line x1="60" y1="420" x2="60" y2="40" stroke="#0F172A" stroke-width="2.5" marker-end="url(#arrow-dark)" />
+        <text x="575" y="445" font-size="12" font-weight="700" fill="#0F172A" text-anchor="end">Quantity Supplied (Q)</text>
+        <text x="45" y="40" font-size="12" font-weight="700" fill="#0F172A" text-anchor="end" transform="rotate(-90 45,40)">Price (P)</text>
+
+        <!-- S1: Passes through Origin -> Es = 1 Everywhere! -->
+        <line x1="60" y1="420" x2="480" y2="100" stroke="#059669" stroke-width="3.5" />
+        <text x="485" y="105" font-size="13" font-weight="800" fill="#059669">S₁ (e_s = 1)</text>
+        <circle cx="270" cy="260" r="4.5" fill="#059669" />
+        <text x="280" y="275" font-size="10.5" font-weight="700" fill="#065F46">Passes Through Origin: e_s = 1</text>
+
+        <!-- S2: Cuts Y-axis (Price axis) -> Es > 1 (Elastic) -->
+        <!-- Intercept at (60, 260), slope gentler -->
+        <line x1="60" y1="260" x2="520" y2="90" stroke="#2563EB" stroke-width="3" />
+        <text x="525" y="95" font-size="13" font-weight="800" fill="#2563EB">S₂ (e_s &gt; 1)</text>
+        <circle cx="60" cy="260" r="5" fill="#2563EB" />
+        <text x="75" y="250" font-size="10.5" font-weight="800" fill="#1E40AF">Y-intercept: Elastic (e_s &gt; 1)</text>
+
+        <!-- S3: Cuts X-axis (Quantity axis) -> Es < 1 (Inelastic) -->
+        <!-- Intercept at (200, 420) -->
+        <line x1="200" y1="420" x2="520" y2="180" stroke="#D97706" stroke-width="3" />
+        <text x="525" y="185" font-size="13" font-weight="800" fill="#D97706">S₃ (e_s &lt; 1)</text>
+        <circle cx="200" cy="420" r="5" fill="#D97706" />
+        <text x="205" y="410" font-size="10.5" font-weight="800" fill="#92400E">X-intercept: Inelastic (e_s &lt; 1)</text>
+
+        <!-- S4: Perfectly Inelastic (Vertical) -->
+        <line x1="390" y1="420" x2="390" y2="60" stroke="#DC2626" stroke-width="2.5" stroke-dasharray="6 3" />
+        <text x="395" y="70" font-size="12" font-weight="800" fill="#DC2626">S₄ (e_s = 0)</text>
+        <text x="395" y="85" font-size="9.5" fill="#991B1B">Momentary Period</text>
+
+        <!-- S5: Perfectly Elastic (Horizontal) -->
+        <line x1="60" y1="180" x2="550" y2="180" stroke="#7C3AED" stroke-width="2.5" stroke-dasharray="6 3" />
+        <text x="555" y="185" font-size="12" font-weight="800" fill="#7C3AED">S₅ (e_s = ∞)</text>
+
+        <defs>
+          <marker id="arrow-dark" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#0F172A"/>
+          </marker>
+        </defs>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Right Card: Horizontal Summation into Market Supply -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">
+        <span>Horizontal Summation of Individual Supply Curves</span>
+      </div>
+      <span class="badge badge-amber">Market Aggregation</span>
+    </div>
+    <div class="svg-wrap">
+      <svg viewBox="0 0 620 480" xmlns="http://www.w3.org/2000/svg">
+        <!-- Axes -->
+        <line x1="60" y1="420" x2="580" y2="420" stroke="#0F172A" stroke-width="2.5" marker-end="url(#arrow-dark2)" />
+        <line x1="60" y1="420" x2="60" y2="40" stroke="#0F172A" stroke-width="2.5" marker-end="url(#arrow-dark2)" />
+        <text x="575" y="445" font-size="12" font-weight="700" fill="#0F172A" text-anchor="end">Quantity (Q)</text>
+        <text x="45" y="40" font-size="12" font-weight="700" fill="#0F172A" text-anchor="end" transform="rotate(-90 45,40)">Market Price (P)</text>
+
+        <!-- Firm A Supply (Steeper): Starts at (60, 320), reaches (220, 100) -->
+        <line x1="60" y1="320" x2="220" y2="100" stroke="#2563EB" stroke-width="2.5" />
+        <text x="225" y="105" font-size="12" font-weight="800" fill="#2563EB">S_A (Firm A)</text>
+
+        <!-- Firm B Supply (Moderate): Starts at (60, 260), reaches (350, 100) -->
+        <line x1="60" y1="260" x2="350" y2="100" stroke="#059669" stroke-width="2.5" />
+        <text x="355" y="105" font-size="12" font-weight="800" fill="#059669">S_B (Firm B)</text>
+
+        <!-- Market Supply S_M = S_A + S_B (Flatter): Reaches (520, 100) -->
+        <path d="M 60 260 L 105 260 L 520 100" fill="none" stroke="#071A4D" stroke-width="4" />
+        <text x="525" y="105" font-size="13" font-weight="800" fill="#071A4D">S_Market (Σq)</text>
+
+        <!-- Horizontal Price Test Line at P1 = 150 -->
+        <line x1="60" y1="180" x2="550" y2="180" stroke="#64748B" stroke-dasharray="4 3" stroke-width="1.5" />
+        <text x="48" y="184" font-size="11" font-weight="800" fill="#0F172A" text-anchor="end">P₁</text>
+
+        <!-- Quantities at P1 -->
+        <!-- Firm A at x=160 -->
+        <circle cx="160" cy="180" r="4.5" fill="#2563EB" />
+        <line x1="160" y1="180" x2="160" y2="420" stroke="#2563EB" stroke-dasharray="2 2" stroke-width="1.2" />
+        <text x="160" y="435" font-size="10" font-weight="700" fill="#2563EB" text-anchor="middle">q_A</text>
+
+        <!-- Firm B at x=235 -->
+        <circle cx="235" cy="180" r="4.5" fill="#059669" />
+        <line x1="235" y1="180" x2="235" y2="420" stroke="#059669" stroke-dasharray="2 2" stroke-width="1.2" />
+        <text x="235" y="435" font-size="10" font-weight="700" fill="#059669" text-anchor="middle">q_B</text>
+
+        <!-- Market Supply at x=395 (160 + 235 = 395) -->
+        <circle cx="395" cy="180" r="5.5" fill="#071A4D" stroke="#FFFFFF" stroke-width="2" />
+        <line x1="395" y1="180" x2="395" y2="420" stroke="#071A4D" stroke-dasharray="2 2" stroke-width="1.5" />
+        <text x="395" y="435" font-size="10.5" font-weight="800" fill="#071A4D" text-anchor="middle">Q_M = q_A + q_B</text>
+
+        <!-- Explanatory Box -->
+        <rect x="250" y="270" width="310" height="75" rx="6" fill="#F8FAFC" stroke="#CBD5E1" />
+        <text x="260" y="292" font-size="11" font-weight="800" fill="#071A4D">Market Supply Aggregation Rule:</text>
+        <text x="260" y="310" font-size="10" fill="#334155">• Market supply is obtained by HORIZONTAL summation</text>
+        <text x="260" y="324" font-size="10" fill="#334155">• At any given price, sum individual quantities supplied</text>
+        <text x="260" y="338" font-size="10" font-weight="700" fill="#2563EB">• Market supply is flatter than individual supply curves!</text>
+
+        <defs>
+          <marker id="arrow-dark2" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#0F172A"/>
+          </marker>
+        </defs>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<!-- Bottom Summary Bar -->
+<div class="bottom-bar">
+  <div class="summary-col">
+    <h3>Geometric Intercept Elasticity Rules</h3>
+    <ul class="rule-list">
+      <li><b>Origin Intercept ($e_s = 1$):</b> Any straight-line supply curve passing through the origin has unitary elasticity ($e_s = 1$) at EVERY point, regardless of its slope angle!</li>
+      <li><b>Price Axis Intercept ($e_s > 1$):</b> Any supply curve whose straight-line extension cuts the vertical (price) axis is <b>elastic</b> ($e_s > 1$).</li>
+      <li><b>Quantity Axis Intercept ($e_s < 1$):</b> Any supply curve cutting the horizontal (quantity) axis is <b>inelastic</b> ($e_s < 1$).</li>
+    </ul>
+  </div>
+
+  <div class="summary-col">
+    <h3>Movement Along vs. Shift in Supply</h3>
+    <ul class="rule-list">
+      <li><b>Change in Quantity Supplied (Movement Along):</b> Caused <i>strictly</i> by a change in the commodity's OWN price ($P$). Upward movement = Expansion; Downward = Contraction.</li>
+      <li><b>Change in Supply (Shift of Curve):</b> Caused by non-price parameters:
+        <br/>• <i>Rightward Shift (Increase in Supply):</i> Drop in input prices, technological progress, government subsidies, reduction in excise tax.
+        <br/>• <i>Leftward Shift (Decrease in Supply):</i> Rise in input wages, outdated tech, imposition of per-unit tax.</li>
+    </ul>
+  </div>
+
+  <div class="trap-box">
+    <h4>CUET Exam Trap: Slope vs. Elasticity</h4>
+    <p><b>Fatal Trap:</b> Believing a steeper supply curve is automatically less elastic. <b>Reality:</b> Two supply lines passing through the origin at 30° and 75° angles BOTH have identical elasticity $e_s = 1.0$ at every point! Elasticity is determined by the axis intercept, not the visual steepness!</p>
+  </div>
+</div>
+
+</body>
+</html>
