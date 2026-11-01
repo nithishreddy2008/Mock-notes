@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Government Budget Architecture: Complete Classification</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #071A4D;
+    padding: 16px 24px;
+    border-radius: 8px;
+    color: #FFFFFF;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+  .header h1 span {
+    color: #B8FF34;
+  }
+  .header-badge {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #B8FF34;
+  }
+
+  .main-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    height: 640px;
+  }
+  .budget-card {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 18px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #F1F5F9;
+  }
+  .card-title {
+    font-size: 16px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .badge {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+  .badge-rev { background: #E0EAFF; color: #1F5EFF; }
+  .badge-cap { background: #DCFCE7; color: #15803D; }
+
+  .sub-card {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    padding: 12px 14px;
+  }
+  .sub-title {
+    font-size: 13px;
+    font-weight: 800;
+    color: #071A4D;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+  }
+  .sub-desc {
+    font-size: 12px;
+    color: #475569;
+    line-height: 1.4;
+  }
+  .sub-desc strong {
+    color: #0F172A;
+  }
+  .item-list {
+    margin-top: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .item-row {
+    font-size: 11.5px;
+    color: #334155;
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 4px;
+    padding: 4px 8px;
+  }
+
+  .test-badge {
+    font-size: 10.5px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  .test-no { background: #FEF3C7; color: #92400E; }
+  .test-yes { background: #DCFCE7; color: #166534; }
+
+  .bottom-strip {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .strip-card {
+    background: #FFFFFF;
+    border-left: 4px solid #1F5EFF;
+    border-top: 1px solid #E2E8F0;
+    border-right: 1px solid #E2E8F0;
+    border-bottom: 1px solid #E2E8F0;
+    border-radius: 6px;
+    padding: 10px 14px;
+  }
+  .strip-card.warning { border-left-color: #EF4444; }
+  .strip-card.success { border-left-color: #10B981; }
+  .strip-title {
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #071A4D;
+    margin-bottom: 3px;
+  }
+  .strip-text {
+    font-size: 11.5px;
+    color: #334155;
+    line-height: 1.35;
+  }
+</style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div class="header">
+    <h1>GOVERNMENT BUDGET ARCHITECTURE: <span>RECEIPTS & EXPENDITURE CLASSIFICATION</span></h1>
+    <div class="header-badge">FIG 1: COMPLETE CLASSIFICATION & THE TWIN DIAGNOSTIC TESTS</div>
+  </div>
+
+  <!-- MAIN GRID -->
+  <div class="main-grid">
+
+    <!-- LEFT COLUMN: REVENUE BUDGET -->
+    <div class="budget-card">
+      <div class="card-header">
+        <div class="card-title">1. REVENUE BUDGET (Daily Running Accounts)</div>
+        <span class="badge badge-rev">REVENUE NATURE</span>
+      </div>
+
+      <!-- Revenue Receipts -->
+      <div class="sub-card">
+        <div class="sub-title">
+          <span>A. Revenue Receipts</span>
+          <span class="test-badge test-no">Liability: NO | Asset: NO</span>
+        </div>
+        <div class="sub-desc">
+          Receipts that <strong>neither create a liability nor cause any reduction in government assets</strong>. Regular, non-redeemable earnings.
+        </div>
+        <div class="item-list">
+          <div class="item-row">
+            <strong>Tax Revenue:</strong> Direct Taxes (Income Tax, Corporate Tax) + Indirect Taxes (GST, Customs Duties, Excise Duties).
+          </div>
+          <div class="item-row">
+            <strong>Non-Tax Revenue:</strong> Interest receipts on loans given, Dividends/Profits of PSUs, RBI dividend, Fees, Fines, Escheats, Grants-in-aid.
+          </div>
+        </div>
+      </div>
+
+      <!-- Revenue Expenditure -->
+      <div class="sub-card">
+        <div class="sub-title">
+          <span>B. Revenue Expenditure</span>
+          <span class="test-badge test-no">Asset: NO | Liability: NO</span>
+        </div>
+        <div class="sub-desc">
+          Expenditure that <strong>neither creates physical/financial assets nor reduces any liabilities</strong>. Routine administrative and operational costs.
+        </div>
+        <div class="item-list">
+          <div class="item-row">
+            <strong>General Public Services:</strong> Salaries of government employees, pensions, maintenance of law, order, and administration.
+          </div>
+          <div class="item-row">
+            <strong>Transfers & Subsidies:</strong> Food, fertilizer, and petroleum subsidies; old-age allowances; grants to State Governments.
+          </div>
+          <div class="item-row" style="background:#FEF2F2; border-color:#FECACA;">
+            <strong>Interest Payments:</strong> Servicing interest on accumulated past national debt (pure consumption cost).
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT COLUMN: CAPITAL BUDGET -->
+    <div class="budget-card">
+      <div class="card-header">
+        <div class="card-title">2. CAPITAL BUDGET (Assets & Liabilities Accounts)</div>
+        <span class="badge badge-cap">CAPITAL NATURE</span>
+      </div>
+
+      <!-- Capital Receipts -->
+      <div class="sub-card">
+        <div class="sub-title">
+          <span>A. Capital Receipts</span>
+          <span class="test-badge test-yes">Liability: YES | Asset: REDUCED</span>
+        </div>
+        <div class="sub-desc">
+          Receipts that <strong>create a liability OR lead to a reduction in the assets</strong> of the government.
+        </div>
+        <div class="item-list">
+          <div class="item-row">
+            <strong>Debt Capital Receipts (Create Liability):</strong> Borrowings from public (bonds, G-Secs), borrowings from RBI, external loans from World Bank/IMF.
+          </div>
+          <div class="item-row">
+            <strong>Non-Debt Capital Receipts (Reduce Assets):</strong> Recovery of loans advanced to State Governments, Disinvestment proceeds from sale of PSU equity, sale of government land.
+          </div>
+        </div>
+      </div>
+
+      <!-- Capital Expenditure -->
+      <div class="sub-card">
+        <div class="sub-title">
+          <span>B. Capital Expenditure</span>
+          <span class="test-badge test-yes">Asset: CREATED | Liability: REDUCED</span>
+        </div>
+        <div class="sub-desc">
+          Expenditure that <strong>either creates physical/financial assets OR causes a reduction in liabilities</strong>. Long-term capital accumulation.
+        </div>
+        <div class="item-list">
+          <div class="item-row">
+            <strong>Creation of Public Capital Assets:</strong> Construction of highways, railways, bridges, airports, dams, educational institutions, hospitals.
+          </div>
+          <div class="item-row">
+            <strong>Acquisition of Assets:</strong> Purchase of machinery, defense hardware (fighter jets, naval vessels), purchase of shares in companies.
+          </div>
+          <div class="item-row" style="background:#F0FDF4; border-color:#BBF7D0;">
+            <strong>Discharge of Liabilities:</strong> Repayment of borrowed loan principal (cancels sovereign liability); Loans disbursed to States.
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- BOTTOM STRIP: TOP 3 DIAGNOSTIC RULES -->
+  <div class="bottom-strip">
+    <div class="strip-card success">
+      <div class="strip-title">The Twin Tests of Classification</div>
+      <div class="strip-text">For any budget item, ask: (1) Does it alter government <strong>liabilities</strong>? (2) Does it alter government <strong>assets</strong>? If YES $\implies$ Capital. If NO to both $\implies$ Revenue.</div>
+    </div>
+    <div class="strip-card warning">
+      <div class="strip-title">Fatal Exam Trap: Interest vs Principal</div>
+      <div class="strip-text"><strong>Interest payment</strong> is REVENUE expenditure (services past debt; creates no asset). <strong>Repayment of loan principal</strong> is CAPITAL expenditure (reduces liability).</div>
+    </div>
+    <div class="strip-card">
+      <div class="strip-title">Recovery vs Disinvestment</div>
+      <div class="strip-text">Both <strong>Recovery of Loans</strong> and <strong>Disinvestment (PSU share sale)</strong> are Non-Debt Capital Receipts because they reduce government financial assets.</div>
+    </div>
+  </div>
+
+</body>
+</html>

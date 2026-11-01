@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The Three Government Deficits: Mechanics & Implications</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #071A4D;
+    padding: 16px 24px;
+    border-radius: 8px;
+    color: #FFFFFF;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+  .header h1 span {
+    color: #B8FF34;
+  }
+  .header-badge {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #B8FF34;
+  }
+
+  .main-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    height: 500px;
+  }
+  .deficit-card {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 18px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .card-top {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .card-title {
+    font-size: 16px;
+    font-weight: 800;
+    color: #071A4D;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #F1F5F9;
+  }
+  .badge {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+  .badge-blue { background: #E0EAFF; color: #1F5EFF; }
+  .badge-red { background: #FEE2E2; color: #DC2626; }
+  .badge-amber { background: #FEF3C7; color: #B45309; }
+
+  .formula-box {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    padding: 10px 12px;
+  }
+  .formula-title {
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #64748B;
+    margin-bottom: 4px;
+  }
+  .formula-eq {
+    font-size: 14px;
+    font-weight: 800;
+    color: #071A4D;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    line-height: 1.4;
+  }
+
+  .implications-box {
+    background: #FAFBFD;
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    padding: 10px 12px;
+  }
+  .implications-title {
+    font-size: 12px;
+    font-weight: 800;
+    color: #071A4D;
+    margin-bottom: 6px;
+  }
+  .implications-list {
+    font-size: 11.5px;
+    color: #334155;
+    line-height: 1.4;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .implications-list strong {
+    color: #0F172A;
+  }
+
+  .bottom-banner {
+    height: 175px;
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 14px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .banner-header {
+    font-size: 14px;
+    font-weight: 800;
+    color: #071A4D;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .banner-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 6px;
+  }
+  .banner-item {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    padding: 8px 12px;
+  }
+  .banner-item h4 {
+    font-size: 12px;
+    font-weight: 800;
+    color: #071A4D;
+    margin-bottom: 3px;
+  }
+  .banner-item p {
+    font-size: 11px;
+    color: #475569;
+    line-height: 1.35;
+  }
+</style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div class="header">
+    <h1>THE THREE GOVERNMENT DEFICITS: <span>REVENUE, FISCAL & PRIMARY</span></h1>
+    <div class="header-badge">FIG 2: FORMULAS, INTERRELATIONSHIPS & MACROECONOMIC IMPACT</div>
+  </div>
+
+  <!-- MAIN 3-COLUMN DEFICIT GRID -->
+  <div class="main-grid">
+
+    <!-- CARD 1: REVENUE DEFICIT -->
+    <div class="deficit-card">
+      <div class="card-top">
+        <div class="card-title">
+          <span>1. Revenue Deficit (RD)</span>
+          <span class="badge badge-blue">CONSUMPTION SHORTFALL</span>
+        </div>
+        <div class="formula-box">
+          <div class="formula-title">Mathematical Formula</div>
+          <div class="formula-eq">RD = Revenue Expenditure − Revenue Receipts</div>
+        </div>
+        <div class="implications-box">
+          <div class="implications-title">Economic Diagnosis & Meaning</div>
+          <div class="implications-list">
+            <div>• Measures government <strong>dissaving</strong> (routine revenue does not cover routine daily operating costs).</div>
+            <div>• Government borrows or disinvests assets simply to finance consumption (salaries, subsidies).</div>
+          </div>
+        </div>
+      </div>
+      <div class="implications-box" style="background:#EFF6FF; border-color:#BFDBFE;">
+        <div class="implications-title" style="color:#1D4ED8;">Primary Warning Signal</div>
+        <div class="implications-list" style="color:#1E3A8A;">
+          A high RD forces the government to cut capital expenditure (schools, highways), starving the economy of long-term productive assets.
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 2: FISCAL DEFICIT -->
+    <div class="deficit-card">
+      <div class="card-top">
+        <div class="card-title">
+          <span>2. Fiscal Deficit (FD)</span>
+          <span class="badge badge-red">BORROWING REQUIREMENT</span>
+        </div>
+        <div class="formula-box">
+          <div class="formula-title">Mathematical Formula</div>
+          <div class="formula-eq">FD = Total Expenditure − Total Receipts (excl. Borrowings)</div>
+        </div>
+        <div class="implications-box">
+          <div class="implications-title">The Fundamental Equivalence</div>
+          <div class="implications-list">
+            <div>• <strong>FD = Total Gross Borrowings of Government</strong>.</div>
+            <div>• Shows total financial liabilities the state must incur from market, RBI, and external sources.</div>
+          </div>
+        </div>
+      </div>
+      <div class="implications-box" style="background:#FEF2F2; border-color:#FECACA;">
+        <div class="implications-title" style="color:#DC2626;">Macroeconomic Consequences</div>
+        <div class="implications-list" style="color:#991B1B;">
+          <strong>Debt Trap:</strong> Borrowing to pay interest.<br>
+          <strong>Crowding Out:</strong> Mopping up private credit.<br>
+          <strong>Inflation:</strong> If monetized by RBI money creation.
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 3: PRIMARY DEFICIT -->
+    <div class="deficit-card">
+      <div class="card-top">
+        <div class="card-title">
+          <span>3. Primary Deficit (PD)</span>
+          <span class="badge badge-amber">CURRENT YEAR STANCE</span>
+        </div>
+        <div class="formula-box">
+          <div class="formula-title">Mathematical Formula</div>
+          <div class="formula-eq">PD = Fiscal Deficit − Interest Payments</div>
+        </div>
+        <div class="implications-box">
+          <div class="implications-title">Economic Diagnosis & Meaning</div>
+          <div class="implications-list">
+            <div>• Isolates the borrowing requirement generated <strong>solely by current year's fiscal actions</strong>.</div>
+            <div>• Strips away the historical legacy debt burden of past interest liabilities.</div>
+          </div>
+        </div>
+      </div>
+      <div class="implications-box" style="background:#FEF9C3; border-color:#FDE047;">
+        <div class="implications-title" style="color:#854D0E;">When Primary Deficit = ZERO</div>
+        <div class="implications-list" style="color:#713F12;">
+          <strong>FD = Interest Payments:</strong> The government borrows <em>only</em> to pay interest on past debt. Current revenue completely funds all non-interest expenditure!
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- BOTTOM BANNER -->
+  <div class="bottom-banner">
+    <div class="banner-header">
+      <span class="badge badge-blue">DEFICIT HIERARCHY & FINANCING</span>
+      <span>How Deficits Are Financed & Targeted under the FRBM Act</span>
+    </div>
+
+    <div class="banner-grid">
+      <div class="banner-item">
+        <h4>The Deficit Ladder Rule</h4>
+        <p>In standard budgets: <strong>Fiscal Deficit &ge; Primary Deficit &ge; 0</strong>. Fiscal deficit can equal primary deficit only if interest payments on past debt are zero.</p>
+      </div>
+      <div class="banner-item">
+        <h4>Two Deficit Financing Routes</h4>
+        <p>1. <strong>Market Borrowings:</strong> Issuing bonds/T-bills to public & banks (causes crowding out).<br>
+        2. <strong>Deficit Financing:</strong> Borrowing from RBI / printing currency (inflationary risk).</p>
+      </div>
+      <div class="banner-item">
+        <h4>FRBM Act 2003 Targets</h4>
+        <p>Enacted to instill fiscal discipline. Recommended targets (NK Singh Committee): <strong>3% Fiscal Deficit to GDP</strong> and <strong>60% General Government Debt to GDP</strong> (40% Centre, 20% States).</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

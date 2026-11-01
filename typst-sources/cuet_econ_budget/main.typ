@@ -7,273 +7,496 @@
   subtitle: "Official Syllabus · Course II: Introductory Macroeconomics · Class 12 · CUET UG 2027 Cycle Notes",
 )
 
-= Syllabus Alignment
+= Syllabus Alignment & Chapter Architecture
 
 #table(
-  columns: (1.1fr, 2fr, 1.15fr),
-  table.header[*Sub-topic*][*Official syllabus pointer (NTA CUET(UG) Economics syllabus 2026, the current 2027 baseline, Course II)*][*Skills the questions test*],
-  [*Budget, meaning and structure*], [
-    Government budget — meaning, objectives and components
+  columns: (1.1fr, 2fr, 1.2fr),
+  table.header[*Sub-Topic*][*Official NTA Syllabus Coverage (NCERT Class 12 Macroeconomics)*][*Core Exam Tested Competencies*],
+  [*Government Budget & Objectives*], [
+    Government budget — meaning, constitutional basis (Article 112: Annual Financial Statement); Objectives of the budget: reallocation of resources, reduction of inequalities, economic stability, management of public enterprises, economic growth, and employment generation.
   ], [
-    Defining the Annual Financial Statement, listing its objectives, and slotting every line into the revenue/capital buckets.
+    Defining the budget as an estimate, mapping policy examples to the six constitutional objectives, distinguishing budgetary tools.
   ],
-  [*Receipts and expenditure classification*], [
-    Classification of receipts — revenue receipts and capital receipts; classification of expenditure — revenue expenditure and capital expenditure
+  [*Classification of Receipts*], [
+    Classification of receipts: Revenue receipts (Tax revenue: Direct and Indirect taxes; Non-tax revenue: Commercial and Administrative) and Capital receipts (Debt capital receipts and Non-debt capital receipts: Recovery of loans and Disinvestment); The Twin Diagnostic Tests for receipts.
   ], [
-    Applying the two tests (liability born? asset changed?) to classify any receipt or spending item on sight.
+    Applying the two tests (Liability created? Asset reduced?) to sort any government earning into revenue or capital on sight.
   ],
-  [*Budget balance and deficits*], [
-    Balanced, surplus and deficit budget — measures of government deficit
+  [*Classification of Expenditure*], [
+    Classification of expenditure: Revenue expenditure (salaries, pensions, subsidies, interest payments) and Capital expenditure (infrastructure, asset creation, loan repayment); Historical classifications (Plan vs Non-plan, Development vs Non-development).
   ], [
-    Computing revenue, fiscal and primary deficits from a budget table and explaining each one's implications.
+    Distinguishing interest payments (revenue) from loan principal repayments (capital); identifying asset-creating vs routine expenses.
+  ],
+  [*Budget Balances & Measures of Deficit*], [
+    Types of budget: Balanced, Surplus, and Deficit budget; Measures of government deficit: Revenue Deficit ($R D$), Fiscal Deficit ($F D$), and Primary Deficit ($P D$); Gross Borrowing equivalence; Fiscal Responsibility and Budget Management (FRBM) Act, 2003.
+  ], [
+    Computing $R D, F D, P D$ from budget tables; explaining the debt trap and crowding-out effects; interpreting zero primary deficit.
   ],
 )
 
 #exam-pointer[
-  CUET UG pattern (NTA official information bulletin and syllabus, 2026 cycle — the
-  current 2027 baseline): each subject paper carries *50 compulsory questions* in
-  *60 minutes*, with $+5$ for every correct answer and $-1$ for every incorrect answer. The Economics paper follows NCERT Class 12
-  Economics; this unit is classification-and-formula country — the two tests and
-  the three deficit formulas answer most questions on sight.
+  *CUET UG Exam Dynamics:* Questions in this chapter test rapid, rigorous classification drills (e.g., sorting disinvestment, interest received vs interest paid, recovery of loans, and defense spending) and multi-step deficit numericals. A cardinal rule: *Fiscal Deficit is identically equal to the Gross Borrowing Requirement of the government*. Any question asking for the borrowing requirement requires finding the Fiscal Deficit.
 ]
 
-= The Government Budget: Meaning and Objectives
+= The Government Budget: Meaning, Constitutional Basis & Objectives
 
-Once a year, the finance minister stands in Parliament and tables a document that is essentially the country's household budget — with 140 crore members. The *government budget* is the statement of ESTIMATED receipts and EXPENDITURE of the government for the coming fiscal year (1 April to 31 March). Constitutionally, it is presented as the *Annual Financial Statement*.
+#definition-box(title: "Definition of Government Budget")[
+  A *Government Budget* is an *annual financial statement of estimated receipts and proposed expenditures of the government over the course of the upcoming fiscal year* (running from April 1 to March 31 in India).
+]
 
-- *It is estimates, not accounts:* the budget forecasts what the government expects to earn and plans to spend — actuals come later in audited accounts.
-- *Objectives — why the government budgets at all:*
-  - *Reallocation of resources:* steer the economy's choices — tax harmful goods (tobacco) heavily, subsidise desirable ones (clean energy, food grain).
-  - *Redistribution of income:* tax the rich progressively, spend on the poor — subsidies, free services, welfare schemes narrow the gap.
-  - *Economic stability:* expand spending in a slump, restrain it in a boom — the budget as the counter-cyclical steering wheel.
-  - *Management of public enterprises:* provisions for government-owned railways, power utilities and PSUs.
-  - *Economic growth:* capital spending on roads, power and education raises the economy's productive capacity.
-- *The two halves:* every line of the budget sits in either the *revenue budget* or the *capital budget* — and the next two sections give you the sorting tests.
+== Constitutional Basis: Article 112
+- In the Constitution of India, the word "Budget" does not appear anywhere. Instead, *Article 112* mandates that the President shall, in respect of every financial year, cause to be laid before both Houses of Parliament an *“Annual Financial Statement” (AFS)*.
+- *Estimates, Not Audited Actuals:* The budget is an ex-ante policy forecast. It presents three distinct sets of fiscal data:
+  1. *Budget Estimates (BE)* for the upcoming financial year.
+  2. *Revised Estimates (RE)* for the current ongoing financial year.
+  3. *Actual Accounts* for the preceding financial year.
 
-= Receipts: Revenue vs Capital
+== Six Cardinal Macroeconomic Objectives of the Budget
 
-The government's income arrives in two fundamentally different flavours. The sorting is done by TWO questions — memorise them as the twin tests.
+Modern democratic governments deploy the annual budget as their supreme fiscal steering wheel to achieve six coordinated socio-economic goals:
 
-#formula-box(title: "The Two Tests of a Receipt")[
+1. *Reallocation of Resources:*
+   The market mechanism (price system) allocates resources based on private purchasing power and profit margins, often under-producing public merit goods (primary education, rural healthcare, sanitation). The government influences resource allocation via two tools:
+   - *Tax Concessions & Subsidies:* Heavy punitive excise duties and GST are imposed on demerit goods (tobacco, alcohol, luxury cars) to discourage production, while tax holidays and production-linked subsidies are extended to socially vital industries (solar power, electric vehicles, khadi).
+   - *Direct Production of Goods and Services:* The government directly establishes and operates public utilities (railways, postal networks, defense production, municipal water supply) where massive capital outlays and long gestation periods deter private enterprise.
+
+2. *Reduction of Inequalities in Income and Wealth:*
+   Free market capitalism naturally concentrates wealth in the hands of the top decile. The government deploys a dual budgetary mechanism to achieve economic justice:
+   - *Progressive Taxation:* Direct income and corporate taxes impose higher percentage tax rates on the wealthy, directly compressing disposable income disparities.
+   - *Pro-Poor Public Expenditure:* Tax revenues collected from the affluent are re-channeled into welfare programs, subsidized food grain distribution (PDS / PMGKAY), free universal schooling, and rural employment guarantees (MGNREGA), expanding the real income of economically weaker sections.
+
+3. *Economic Stability (Counter-Cyclical Fiscal Policy):*
+   Market economies suffer from cyclical oscillations of business cycles (booms and recessions):
+   - *During Recession / Deflation (Deficient Demand):* Government executes an *Expansionary Deficit Budget* by boosting public expenditure on highways and cutting taxes, pumping fresh purchasing power into the economy.
+   - *During Boom / Inflation (Excess Demand):* Government executes a *Contractionary Surplus Budget* by slashing discretionary spending and raising tax rates to mop up excess purchasing power and arrest price spirals.
+
+4. *Management of Public Sector Undertakings (PSUs):*
+   The budget provides operational grants, equity infusions, and debt restructuring for state-owned enterprises (such as Indian Railways, BHEL, SAIL, and NTPC), ensuring they operate as natural monopolies in national interest rather than solely for commercial exploitation.
+
+5. *Stimulating Long-Term Economic Growth:*
+   Economic growth depends on expanding the nation's physical and human productive capacity. By prioritizing *Capital Expenditure (Capex)* on logistics, freight corridors, ports, renewable power grids, and technical universities, the budget raises overall economic productivity and crowds in private domestic and foreign investments.
+
+6. *Generation of Direct and Indirect Employment:*
+   The budget directly creates public jobs in administrative services, defense, healthcare, and education, while simultaneously generating vast multiplier employment in construction and allied industries through infrastructure mega-projects.
+
+= Classification of Government Receipts: The Twin Diagnostic Tests
+
+All monetary inflows into the government's Consolidated Fund of India bifurcate into *Revenue Receipts* and *Capital Receipts*.
+
+#formula-box(title: "The Twin Diagnostic Tests for Receipts")[
+  To classify any receipt into Revenue or Capital, ask two invariant diagnostic questions:
   #v(2pt)
-  *Test 1 — Does it CREATE a liability for the government?* Yes → *capital receipt* (borrowing must be repaid).
+  *Test 1 (Liability Test): Does the receipt CREATE a future repayment liability for the government?*
   #v(2pt)
-  *Test 2 — Does it REDUCE the government's assets?* Yes → *capital receipt* (selling an asset).
+  *Test 2 (Asset Test): Does the receipt cause a REDUCTION in the existing assets of the government?*
   #v(4pt)
-  *Neither test fires → REVENUE receipt.* These are the government's regular earnings, free of obligation.
+  • If the answer to *EITHER* Test 1 OR Test 2 is *YES* $==>$ *CAPITAL RECEIPT*.
+  #v(2pt)
+  • If the answer to *BOTH* Test 1 AND Test 2 is *NO* $==>$ *REVENUE RECEIPT*.
 ]
 
-#table(
-  columns: (1.25fr, 1.9fr, 1.7fr),
-  table.header[*Type*][*What it is*][*Examples*],
-  [Revenue receipts — tax], [Compulsory payments to government, nothing given in return directly], [Direct: income tax, corporate tax (burden cannot be shifted) · Indirect: GST, excise, customs (burden shifts to the buyer)],
-  [Revenue receipts — non-tax], [Earnings from government's property, services and enterprises], [Interest on loans given, fees and fines, profits of PSUs, dividends, grants-in-aid],
-  [Capital receipts — liability born], [Money taken that MUST be returned], [Borrowings from RBI/public/abroad, small savings (PPF, NSC)],
-  [Capital receipts — asset reduced], [Money from selling or recovering what the government owns], [Recovery of loans given to states, disinvestment of PSU shares],
-)
+== 1. Revenue Receipts
+Revenue receipts are regular, recurring financial earnings that *neither create a liability nor reduce any asset* of the government. The government is under zero legal obligation to return these funds to anyone.
 
-#worked-example("Classify These Eight — The Sorting Drill")[
-#table(
-  columns: (1.9fr, 1.3fr, 2.3fr),
-  table.header[*Item*][*Bucket*][*Which test fired*],
-  [GST collected], [Revenue receipt], [Neither liability nor asset — regular earning],
-  [Loan from the RBI], [Capital receipt], [Test 1 — repayment liability created],
-  [Sale of PSU shares (disinvestment)], [Capital receipt], [Test 2 — government asset reduced],
-  [Interest received on loans to states], [Revenue receipt], [Neither — regular earning],
-  [Recovery of loans to states], [Capital receipt], [Test 2 — asset (the loan) shrinks],
-  [Income tax], [Revenue receipt], [Neither — compulsory earning],
-  [Small savings (PPF deposits)], [Capital receipt], [Test 1 — must be repaid with interest],
-  [Fines and fees], [Revenue receipt], [Neither — regular earning],
-)
-- *The disqualification pattern:* if an item merely ENRICHES the government without owing anyone or selling anything, it is revenue. The moment debt or asset-sale appears, it is capital.
-]
+Revenue receipts subdivide into *Tax Revenue* and *Non-Tax Revenue*:
 
-= Expenditure: Revenue vs Capital
-
-The same twin tests, run on the spending side — with the answers flipped around.
+=== A. Tax Revenue
+A *tax* is a statutorily compulsory contribution levied by the government on citizens, households, and corporations under legal authority, without any direct personal quid pro quo (direct commercial benefit returned to the taxpayer).
 
 #table(
-  columns: (1.25fr, 2fr, 1.6fr),
-  table.header[*Type*][*Definition*][*Examples*],
-  [Revenue expenditure], [Neither creates an asset NOR reduces a liability — the cost of RUNNING the government], [Salaries and pensions, subsidies, interest payments, defence consumption, grants],
-  [Capital expenditure], [Creates an asset OR reduces a liability], [Schools, highways, machines (asset born) · repayment of borrowed principal (liability cleared)],
+  columns: (1.1fr, 1.8fr, 1.8fr),
+  table.header[*Classification Parameter*][*Direct Taxes*][*Indirect Taxes*],
+  [*Impact vs Incidence*], [
+    Both impact (legal liability to pay) and incidence (ultimate monetary burden) fall on the *exact same person/entity*.
+  ], [
+    Impact falls on the producer/seller, but the ultimate incidence is *shifted onto the final consumer*.
+  ],
+  [*Shiftability of Burden*], [
+    The tax burden *cannot be shifted* to any other party.
+  ], [
+    The tax burden *is easily shifted* through market prices.
+  ],
+  [*Equity / Nature*], [
+    *Progressive in nature:* Tax liability rises with income (e.g., higher tax slabs for higher earners).
+  ], [
+    *Regressive in nature:* Rich and poor pay the exact same tax on a commodity (e.g., GST on soap).
+  ],
+  [*Core Indian Examples*], [
+    Personal Income Tax, Corporate Income Tax, Securities Transaction Tax (STT).
+  ], [
+    Goods and Services Tax (GST), Customs Duty, Central Excise on Petroleum.
+  ],
 )
 
-- *Interest payment is REVENUE expenditure.* It neither builds anything nor repays the principal — it is the cost of servicing debt. (Repaying the principal IS capital expenditure.)
-- *The asset test rewards the future:* capital expenditure this year becomes productive capacity for decades — the budget's growth engine.
-- *The distinction matters beyond labels:* revenue deficit (next section) tells whether borrowed money is funding CONSUMPTION — the most-criticised form of government borrowing.
+=== Other Classifications of Taxes:
+- *Progressive Tax:* Rate of tax increases as income increases (e.g., Indian Income Tax slabs).
+- *Proportional Tax:* Constant percentage rate applied across all income levels.
+- *Regressive Tax:* Effective tax burden as a percentage of income decreases as income rises.
+- *Ad Valorem Tax:* Levied as a percentage of the assessed market value of the good (e.g., GST of 18% on electronics).
+- *Specific Tax:* Levied as a fixed physical amount per unit, length, or weight of the commodity (e.g., ₹10 excise per litre of fuel).
 
-= The Budget Balance: Balanced, Surplus, Deficit
+=== B. Non-Tax Revenue
+Non-tax revenue comprises all recurring earnings of the government originating from sources other than statutory taxes:
+1. *Commercial Revenue (Profits and Dividends):* Profits earned by government-owned commercial enterprises (Indian Railways, ONGC, IOCL) and annual dividend surpluses transferred by the Reserve Bank of India and state-owned commercial banks.
+2. *Interest Receipts:* Interest earned by the Central Government on loans extended to State Governments, Union Territories, public sector undertakings, and foreign nations. *(Note: Interest earned is Revenue; recovery of the loan principal is Capital!)*
+3. *Fees:* Compulsory charges paid by citizens for specific administrative services rendered directly by the state (court fees, passport fees, land registration fees, patent fees).
+4. *License Fees & Spectrum Charges:* Charges levied for granting legal permission to operate regulated commercial activities (telecom 5G spectrum auction fees, commercial mining licenses).
+5. *Fines and Penalties:* Penalties imposed on law-breakers for violating statutory regulations (traffic violations, environmental pollution fines).
+6. *Escheats:* Property and wealth forfeited to the state when an individual dies intestate without leaving any legal heirs or valid will.
+7. *Special Assessment:* A developmental levy imposed on real estate property owners whose land values surge due to state-funded infrastructure improvements (e.g., building a metro station or expressway).
+8. *Gifts and Foreign Grants-in-Aid:* Voluntary monetary donations and developmental grants received from foreign sovereign governments and international agencies (UN, World Bank) during natural disasters.
 
-Compare the two totals and the budget lands in one of three postures.
+== 2. Capital Receipts
+Capital receipts are non-recurring monetary inflows that *either create a liability OR cause a reduction in government assets*.
 
-- *Balanced budget:* estimated receipts = estimated expenditure. The textbook ideal — zero borrowing — but rare and sometimes unwise (no room for counter-cyclical policy).
-- *Surplus budget:* receipts EXCEED expenditure — the government drains purchasing power. Appropriate against inflation; contractionary by design.
-- *Deficit budget:* expenditure EXCEEDS receipts — the modern norm. The gap must be borrowed, and economists measure it three ways.
+They subdivide into *Debt Capital Receipts* and *Non-Debt Capital Receipts*:
 
-#formula-box(title: "The Three Deficit Formulas — The Heart of This Unit")[
+=== A. Debt Capital Receipts (Create a Repayment Liability)
+Funds that the government acquires through borrowing and must repay with interest in the future:
+1. *Market Borrowings:* Long-term sovereign bonds and Treasury Bills issued by the government to commercial banks, mutual funds, insurance companies, and the public.
+2. *Borrowings from the Central Bank (RBI):* Direct loans and Ways and Means Advances (WMA) extended by the RBI.
+3. *External Commercial Borrowings & Sovereign Loans:* Loans borrowed from foreign governments (bilateral debt) or international financial organizations like the World Bank, Asian Development Bank, and IMF.
+4. *Small Savings Deposits:* Net collections in public postal savings schemes, Public Provident Fund (PPF), National Savings Certificates (NSC), and Sukanya Samriddhi accounts. Because the government is the custodian of these public deposits and must repay them upon maturity, they represent sovereign liabilities.
+
+=== B. Non-Debt Capital Receipts (Reduce Government Assets)
+Funds received that do *not* create future debt liabilities, but *reduce the existing assets of the government*:
+1. *Recovery of Loans and Advances:* When State Governments repay the principal amount of loans previously extended to them by the Central Government, the Central Government's financial asset (its loan book) shrinks.
+2. *Disinvestment Proceeds:* Monetary proceeds realized from the strategic sale or public offering of government equity shares in Public Sector Undertakings (PSUs) to private investors (e.g., privatization of Air India, IPO of LIC). Selling shares reduces the government's physical/financial asset base.
+3. *Sale of Government Land or Capital Assets:* Liquidation of surplus government real estate.
+
+= Classification of Government Expenditure: The Twin Diagnostic Tests
+
+All public expenditures executed by the government divide into *Revenue Expenditure* and *Capital Expenditure*.
+
+#formula-box(title: "The Twin Diagnostic Tests for Expenditure")[
+  To classify any expenditure into Revenue or Capital, ask two invariant diagnostic questions:
   #v(2pt)
-  $"Revenue deficit" = "Revenue expenditure" - "Revenue receipts"$
+  *Test 1 (Asset Test): Does the expenditure CREATE a physical or financial asset for the government?*
   #v(2pt)
-  $"Fiscal deficit" = "Total expenditure" - "Total receipts (excluding borrowings)"$
-  #v(2pt)
-  $"Primary deficit" = "Fiscal deficit" - "Interest payments"$
+  *Test 2 (Liability Test): Does the expenditure cause a REDUCTION in the existing liabilities of the government?*
   #v(4pt)
-  *Fiscal deficit EQUALS the total borrowing requirement* — that is its meaning, not a coincidence.
+  • If the answer to *EITHER* Test 1 OR Test 2 is *YES* $==>$ *CAPITAL EXPENDITURE*.
+  #v(2pt)
+  • If the answer to *BOTH* Test 1 AND Test 2 is *NO* $==>$ *REVENUE EXPENDITURE*.
 ]
 
-#worked-example("One Budget, Three Deficits — Full Working")[
-Given (₹ crore): revenue receipts 1,400 · revenue expenditure 1,520 · capital receipts 600 (borrowings 560 + recovery of loans 25 + disinvestment 15) · capital expenditure 480 · interest payments 320.
+== 1. Revenue Expenditure
+Revenue expenditure represents the routine, non-asset-forming expenses incurred for the normal running of government administrative departments and standard public services. It *neither creates an asset nor reduces any liability*:
+- *Salaries and Wages:* Compensation paid to government civil servants, police forces, teachers, and administrative personnel.
+- *Pensions:* Non-contributory retirement pensions paid to retired state employees (classified as unilateral transfer payments).
+- *Subsidies:* Fiscal transfers for food (PDS), fertilizers, and LPG to cushion consumer prices.
+- *Interest Payments on Public Debt:* Annual interest paid on accumulated past domestic and external government debt. *(Fatal Exam Trap: Interest payment does not reduce the principal debt liability; it merely services the debt. Hence, interest payment is strictly Revenue Expenditure!)*
+- *Grants-in-Aid to State Governments:* Grants given to States and foreign governments, even if the recipient State utilizes the grant to build a hospital. (From the Central Government's accounting perspective, the asset belongs to the State Government, not the Centre. Hence, grants are classified as Central Revenue Expenditure).
+- *Defense Maintenance Expenditure:* Salaries of armed forces, purchase of food, uniforms, and maintenance of military bases.
 
-- *Step 1 — Revenue deficit:* 1,520 − 1,400 = *₹120 cr*. The government borrows just to meet its daily running costs — revenue consumption financed by debt.
-- *Step 2 — Fiscal deficit:* total expenditure = 1,520 + 480 = 2,000; total receipts EXCLUDING borrowings = 1,400 + 25 + 15 = 1,440; FD = 2,000 − 1,440 = *₹560 cr*. Cross-check: borrowings are exactly 560 ✓
-- *Step 3 — Primary deficit:* 560 − 320 = *₹240 cr*. Even after paying the interest inherited from PAST borrowing, this year's policy adds ₹240 cr of fresh debt.
-- *If primary deficit were ZERO:* the government borrows ONLY to pay interest on old loans — fiscally careful, but the debt still grows by the interest bill.
-]
+== 2. Capital Expenditure
+Capital expenditure represents long-term investments that *either create physical/financial assets OR reduce the financial liabilities* of the government:
+- *Creation of Public Infrastructure Assets:* Construction of expressways, high-speed rail tracks, ports, power stations, bridges, hospitals, and central universities.
+- *Acquisition of Heavy Capital Goods:* Purchase of advanced defense weapon systems (fighter aircraft, submarines), industrial machinery, and land.
+- *Investment in Corporate Equity:* Purchasing equity shares in domestic or foreign companies.
+- *Repayment of Borrowed Loan Principal:* When the government repays the principal amount of an outstanding market loan or World Bank debt, its sovereign liability is extinguished. *(Reduces liability $==>$ Capital Expenditure).*
+- *Loans and Advances Granted by the Centre:* Disbursing fresh development loans to State Governments, Union Territories, or public sector enterprises (creates a financial asset).
 
-- *Why fiscal deficit is watched most:* it measures the WHOLE borrowing need, drives up the government's future interest burden (a debt trap of interest on interest), can crowd out private borrowers from the credit market, and — if financed by printing money — turns inflationary.
-- *Why primary deficit reveals the stance:* it strips away history and asks "what is THIS year's government adding?" A shrinking PD means the fiscal position is genuinely improving.
-- *Why revenue deficit alarms economists:* it means borrowed funds are consumed on salaries and subsidies rather than building assets — future generations inherit the bill without the infrastructure.
+== Historical Classifications (Now Integrated)
+- *Plan vs Non-Plan Expenditure:* Formulated during the Five-Year Plan era. *Plan expenditure* related to schemes outlined in the Five-Year Plan; *Non-Plan expenditure* covered routine administration, defense, and debt servicing. *This distinction was officially abolished starting with the Union Budget 2017-18*, replacing it with the standard *Revenue vs Capital expenditure* bifurcation.
+- *Developmental vs Non-Developmental Expenditure:* *Developmental expenditure* directly promotes economic and social growth (agriculture, transport, education, industry); *Non-developmental expenditure* covers essential sovereign state machinery (internal defense, police, justice administration, tax collection).
 
-= Key Formulas & Rules: One-Stop Revision
-
-#cheatsheet-box(title: "Government Budget — Every Rule on One Page")[
-  #table(
-    columns: (1.45fr, 2.1fr, 1.75fr),
-    table.header[*Rule*][*Statement*][*When to use it*],
-    [Budget], [Estimated receipts + expenditure for the fiscal year (Annual Financial Statement)], [Definition],
-    [Revenue receipt], [No liability created, no asset reduced — tax + non-tax], [Classification],
-    [Direct vs indirect tax], [Burden cannot shift vs shifts to buyer], [Income tax vs GST sorting],
-    [Capital receipt], [Creates liability (borrowings) OR reduces assets (recovery, disinvestment)], [Classification],
-    [Revenue expenditure], [No asset born, no liability cleared — salaries, subsidies, interest], [Classification],
-    [Capital expenditure], [Creates asset (roads) OR reduces liability (principal repayment)], [Classification],
-    [Revenue deficit], [RD = RE − RR], [Revenue-budget shortfall],
-    [Fiscal deficit], [FD = total expenditure − total receipts excl. borrowings], [= total borrowing requirement],
-    [Primary deficit], [PD = FD − interest payments], [This year's own overspending],
-    [Deficit ladder], [FD ≥ PD ≥ 0; RD is the revenue-side cut], [Sanity-check numericals],
-    [Balance types], [Balanced (equal), surplus (receipts > spend), deficit (spend > receipts)], [Posture MCQs],
-    [FD implications], [Debt trap, crowding out, inflationary financing], [Consequence questions],
-  )
-]
-
-= Common Errors & Special Cases
-
-#exception-box(title: "The Traps This Unit Sets — Read Before the Mock")[
-  #table(
-    columns: (1.25fr, 1.35fr, 1.4fr),
-    table.header[*The rule you assume*][*The twist*][*The trap in the question*],
-    ["All government income is revenue"], [Borrowings and disinvestment are CAPITAL receipts], [Receipt-classification MCQs],
-    ["Repaying loans is revenue expenditure"], [Repaying PRINCIPAL reduces a liability — capital; only INTEREST is revenue], [Interest vs principal sorting],
-    ["Fiscal deficit is just a big number"], [FD = the borrowing requirement, by definition — always cross-check with the borrowings line], [Deficit numericals],
-    ["Primary deficit includes interest"], [PD EXCLUDES interest — it isolates this year's own overspending], [PD interpretation],
-    ["Revenue deficit means total overspending"], [RD is only the revenue budget's shortfall — fiscal deficit is the wide one], [RD vs FD distinction],
-    ["A balanced budget is always best"], [It removes the counter-cyclical steering wheel — deficits are policy tools in slumps], [Balanced-budget evaluation],
-    ["Tax burden always stays with the payer"], [Direct taxes stick (income tax); indirect taxes shift (GST to the buyer)], [Direct vs indirect MCQs],
-    ["Subsidies build assets"], [Subsidies are REVENUE expenditure — consumed support, not infrastructure], [Subsidy classification],
-  )
-]
-
-= The 60-Second Self-Test
-
-Cover the answers, say each one aloud, then check. If any answer takes longer than ten seconds, revisit that section.
-
-- *Government sells PSU shares.* Receipt type? → Capital — asset reduced (Test 2).
-- *Salaries of government teachers.* Expenditure type? → Revenue — no asset born, no liability cleared.
-- *RE = 900, RR = 780.* Revenue deficit? → ₹120 — borrowing for daily bills.
-- *FD = 800, interest payments = 250.* Primary deficit? → 550 — this year's own addition to debt.
-- *FD = 500 but borrowings line says 650.* What went wrong? → The subtraction — FD and borrowings must MATCH by definition.
-- *Which deficit shows the current year's stance alone?* → Primary deficit — interest history stripped out.
-
-= The Whole Chapter in One Picture
+= Figure 1: Complete Government Budget Architecture
 
 #figure(
-  image("assets/econ_budget_mindmap.png", width: 100%),
-  caption: [Chapter mindmap: the budget's meaning and objectives, the twin tests for receipts and expenditure, the three balance postures, the deficit family with formulas and implications — with the traps that catch most students.],
+  image("assets/econ_budget_complete_structure.png", width: 100%),
+  caption: [Figure 1: Government Budget Architecture. Illustrating the complete classification of Receipts (Revenue vs Capital) and Expenditure (Revenue vs Capital) governed by the Twin Diagnostic Tests (Liability and Asset impacts).],
 )
 
-= Practice Questions (Exam Pattern)
+= Budgetary Balances & The Three Measures of Government Deficit
 
-Ten questions in the CUET UG style. Attempt all of them — the paper gives $+5$ for each correct answer and $-1$ for every incorrect answer.
+The balance of a budget compares total estimated government receipts with total planned expenditures:
+1. *Balanced Budget:* Total Estimated Receipts $= "Total Proposed Expenditure"$.
+2. *Surplus Budget:* Total Estimated Receipts $> "Total Proposed Expenditure"$. (Appropriate during acute inflation to suck liquidity out of the economy).
+3. *Deficit Budget:* Total Proposed Expenditure $> "Total Estimated Receipts"$. (The standard operational norm in developing economies to finance capital expansion).
 
-#mcq(1, [The government budget is best described as:], (
-  [a record of last year's actual accounts], [a statement of estimated receipts and expenditure for the coming fiscal year], [the stock of national wealth], [a list of all government employees],
-))
+To measure the nature and macroeconomic severity of a budget deficit, economists compute three distinct measures:
+1. *Revenue Deficit ($R D$)*
+2. *Fiscal Deficit ($F D$)*
+3. *Primary Deficit ($P D$)*
 
-#mcq(2, [Which of the following is a CAPITAL receipt?], (
-  [GST collected], [borrowings from the public], [fees and fines], [profits of public sector undertakings],
-))
+== 1. Revenue Deficit ($R D$)
 
-#mcq(3, [Recovery of loans by the government is a capital receipt because it:], (
-  [creates a liability], [reduces the government's assets], [is a tax], [increases money supply],
-))
+#definition-box(title: "Revenue Deficit Formula")[
+  The *Revenue Deficit* measures the excess of the government's total revenue expenditure over its total revenue receipts:
+  $ R D = "Revenue Expenditure" (R E) - "Revenue Receipts" (R R) $
+]
 
-#mcq(4, [Interest payment by the government is classified as:], (
-  [capital expenditure], [revenue expenditure], [capital receipt], [revenue receipt],
-))
+=== Economic Significance and Serious Implications of Revenue Deficit:
+- *Government Dissaving:* Revenue receipts represent the government's current regular income, while revenue expenditure represents its routine consumption spending. A revenue deficit signifies that the *government is dissaving*—it is spending more on daily consumption than it earns.
+- *Borrowing for Consumption:* When $R D > 0$, the government must use capital receipts (market borrowings or selling PSU equity via disinvestment) to fund daily administrative overheads, salaries, and subsidies.
+- *Starvation of Capital Assets:* If borrowed funds are eaten up by routine consumption, less money remains for building highways, ports, and power plants, severely handicapping the nation's future economic growth potential.
+- *Vicious Debt Spiral:* Using debt to finance non-productive consumption yields zero future income returns, increasing the future interest bill and causing future revenue deficits to balloon.
 
-#mcq(5, [Construction of a national highway is:], (
-  [revenue expenditure — it is government spending], [capital expenditure — it creates an asset], [a capital receipt], [neither receipt nor expenditure],
-))
+== 2. Fiscal Deficit ($F D$)
 
-#mcq(6, [Revenue expenditure is ₹900 crore and revenue receipts are ₹750 crore. The revenue deficit is:], (
-  [₹1,650 crore], [₹150 crore], [₹750 crore], [−₹150 crore],
-))
+#definition-box(title: "Fiscal Deficit Formula")[
+  The *Fiscal Deficit* is defined as the *excess of total government expenditure (revenue + capital) over total government receipts (revenue + non-debt capital receipts)*:
+  $ F D = "Total Expenditure" - "Total Receipts excluding Borrowings" $
+  $ F D = (R E + C E) - (R R + "Non-Debt Capital Receipts") $
+  Where:
+  $ "Non-Debt Capital Receipts" = "Recovery of Loans" + "Disinvestment Proceeds" $
+]
 
-#mcq(7, [Fiscal deficit equals:], (
-  [total expenditure − total receipts including borrowings], [total expenditure − total receipts excluding borrowings], [revenue expenditure − revenue receipts], [fiscal deficit − interest payments],
-))
+=== The Fundamental Equivalence of Fiscal Deficit
+#align(center)[#box(stroke: 1.5pt + om-blue, inset: 8pt, radius: 4pt)[
+  *Fiscal Deficit $==$ Total Gross Borrowing Requirement of the Government*
+]]
+Every rupee of expenditure that is not covered by revenue receipts or non-debt capital receipts *must statutorily be borrowed*. Therefore, *Fiscal Deficit is identical to the government's total borrowing from all sources* (domestic public, commercial banks, RBI, and external creditors).
 
-#mcq(8, [Fiscal deficit is ₹600 crore and interest payments are ₹220 crore. Primary deficit is:], (
-  [₹820 crore], [₹600 crore], [₹380 crore], [₹220 crore],
-))
+=== Serious Macroeconomic Implications of a High Fiscal Deficit:
+1. *Debt Trap (Vicious Circle of Indebtedness):* High fiscal deficits lead to high government borrowing. Heavy borrowing leads to mounting annual interest payments. Rising interest payments inflate revenue expenditure, widening future fiscal deficits. Eventually, the state enters a *Debt Trap*, where it is compelled to take fresh loans simply to pay interest on old loans!
+2. *Crowding Out of Private Investment:* Commercial banks hold finite investible savings pools. When the government floats massive bond issues to fund its fiscal deficit, it soaks up domestic credit. Consequently, private corporate borrowers face a shortage of loanable funds and rising market interest rates, choking private capital formation (*Crowding-Out Effect*).
+3. *Inflationary Spiral (Deficit Financing):* If the government finances part of its fiscal deficit by borrowing directly from the RBI (which prints fresh high-powered money), the money supply expands without an immediate expansion in real physical goods, igniting rapid *demand-pull inflation*.
+4. *Erosion of Sovereign Credit Rating:* Persistent fiscal indiscipline triggers international rating agencies (Moody's, S&P, Fitch) to downgrade the country's sovereign debt rating, driving up international borrowing costs and triggering foreign institutional capital flight.
 
-#mcq(9, [A primary deficit of ZERO means the government is borrowing:], (
-  [nothing at all], [only to pay interest on past loans], [for new capital projects], [to fund subsidies],
-))
+== 3. Primary Deficit ($P D$)
 
-#mcq(10, [A persistent high fiscal deficit can harm the economy by:], (
-  [crowding out private borrowers and building a debt trap], [guaranteeing a surplus next year], [eliminating all taxes], [raising exports automatically],
-))
+#definition-box(title: "Primary Deficit Formula")[
+  The *Primary Deficit* is defined as the *Fiscal Deficit minus annual Interest Payments on accumulated past government debt*:
+  $ P D = "Fiscal Deficit" - "Interest Payments" $
+]
 
-= Detailed Solutions
+=== Economic Significance of Primary Deficit:
+- *Isolating Current-Year Fiscal Policy:* Fiscal deficit includes the crushing burden of interest payments inherited from debt piled up by *past governments over decades*. The Primary Deficit strips away historical legacy debt liabilities and reveals the borrowing requirement generated *purely by the current year's fiscal decisions*.
+- *The Crucial Meaning of ZERO Primary Deficit ($P D = 0$):*
+  $ P D = 0  ==>  "Fiscal Deficit" = "Interest Payments" $
+  A zero primary deficit signifies that *the government is borrowing money solely to pay interest on past accumulated loans*. Its current revenue completely covers all current operational and developmental expenditures (excluding past interest).
 
-Each solution shows the working, not just the verdict — cover the answer line, attempt the reasoning, then compare.
-
-#solution(1, [The budget is a FORECAST document — estimated receipts and planned expenditure for the fiscal year ahead, tabled as the Annual Financial Statement. Audited actuals come later.], answer: [B])
-
-#solution(2, [Borrowings must be repaid with interest — Test 1 fires (liability created), so they are capital receipts. GST, fees and PSU profits are regular earnings with no obligation: revenue receipts.], answer: [B])
-
-#solution(3, [When a state repays its loan, the government's asset (the loan book) SHRINKS — Test 2 fires. No new debt is created; an existing asset is converted into cash.], answer: [B])
-
-#solution(4, [Interest services EXISTING debt — it builds no asset and repays no principal. It is the cost of running the government's past borrowing: revenue expenditure.], answer: [B])
-
-#solution(5, [The highway is a lasting public asset — the capital expenditure test fires directly. "All government spending" is not automatically revenue; the asset question decides.], answer: [B])
-
-#solution(6, [RD = RE − RR = 900 − 750 = ₹150 crore — the revenue budget runs a shortfall that must be borrowed, financing daily consumption rather than assets.], answer: [B])
-
-#solution(7, [Fiscal deficit measures the borrowing need: the whole of spending minus all receipts OTHER than borrowings (which would cancel themselves out). Including borrowings would zero the deficit absurdly.], answer: [B])
-
-#solution(8, [PD = FD − interest = 600 − 220 = ₹380 crore. Option A added instead of subtracting; option C kept the interest inside.], answer: [C])
-
-#solution(9, [PD = FD − interest = 0 means FD equals exactly the interest bill — the government borrows only to service past debt, adding no fresh spending of its own.], answer: [B])
-
-#solution(10, [Heavy government borrowing soaks up the credit market — private firms face costlier funds (crowding out) — while interest-on-interest compounds the debt trap year after year.], answer: [A])
-
-== Wrong-Answer Clinic — the one-line corrections
-
-Dropped marks above? Find your slip here and rewrite the corrected rule in your own words.
+#worked-example("Master Deficit Numerical (Full Computation Drill)")[
+From the following budget data of the Government of India (in ₹ crore), calculate:
+(a) Revenue Deficit, (b) Fiscal Deficit, (c) Primary Deficit.
 
 #table(
-  columns: (1.05fr, 1.5fr, 1.45fr),
-  table.header[*If you answered...*][*Your slip was...*][*The corrected rule, in one line*],
-  [Q2 option C], [Reading fees as capital earnings], [Fees, fines and profits are regular, obligation-free — revenue receipts; only debt and asset-sales turn capital],
-  [Q4 option A], [Treating all debt-related money as capital], [Interest SERVICES the debt (revenue); repaying the PRINCIPAL is the capital leg],
-  [Q6 option D], [Reversing the subtraction], [RD = RE − RR = 150 — the bigger spending number comes first],
-  [Q7 option A], [Letting borrowings cancel the deficit], [Exclude borrowings from receipts, or the deficit measures nothing — FD is defined without them],
-  [Q8 option A], [Adding interest instead of subtracting], [PD = FD − interest = 380 — interest is history, not this year's choice],
-  [Q9 option C], [Equating zero PD with new projects], [Zero PD means borrowing = interest only — fresh projects would push PD positive],
+  columns: (3fr, 1.5fr),
+  table.header[*Budget Heads*][*Amount ($₹$ crore)*],
+  [1. Revenue Receipts (Tax = ₹1,200, Non-Tax = ₹300)], [1,500],
+  [2. Revenue Expenditure (including ₹400 crore interest)], [1,900],
+  [3. Capital Expenditure], [800],
+  [4. Recovery of Loans (Non-Debt Capital Receipt)], [50],
+  [5. Disinvestment Proceeds (Non-Debt Capital Receipt)], [150],
+  [6. Market Borrowings & Other Liabilities], [1,000],
+  [7. Interest Payments], [400],
 )
 
-#block(width: 100%, inset: (top: 4pt), above: 4pt)[
-  #align(center, text(fill: om-grey, size: 8pt)[© OurMocks · www.ourmocks.com · CUET UG Economics · Government Budget and the Economy · 2027 cycle])
+*Step 1: Calculate Revenue Deficit ($R D$):*
+$ R D = R E - R R = 1900 - 1500 = ₹400  " crore" $
+
+*Step 2: Calculate Fiscal Deficit ($F D$):*
+- Total Expenditure $= R E + C E = 1900 + 800 = ₹2,700  " crore"$.
+- Total Receipts excluding Borrowings $= R R + "Non-Debt Capital Receipts"$
+  $ = 1500 + 50 + 150 = ₹1,700  " crore" $.
+- $F D = "Total Expenditure" - "Total Receipts excl. Borrowings" = 2700 - 1700 = ₹1,000  " crore"$.
+- *Cross-Check Verification:* Note that Item 6 (*Market Borrowings & Other Liabilities*) is given as ₹1,000 crore. Since Fiscal Deficit $==$ Borrowings, $F D = ₹1,000$ crore confirms the answer!
+
+*Step 3: Calculate Primary Deficit ($P D$):*
+$ P D = F D - "Interest Payments" = 1000 - 400 = ₹600  " crore" $.
 ]
+
+= Figure 2: The Three Government Deficits Mechanics
+
+#figure(
+  image("assets/econ_budget_three_deficits_mechanics.png", width: 100%),
+  caption: [Figure 2: The Three Government Deficits. Contrasting Revenue Deficit (dissaving shortfall), Fiscal Deficit (total gross borrowing requirement), and Primary Deficit (current-year overspending excluding interest).],
+)
+
+= The Fiscal Responsibility and Budget Management (FRBM) Act, 2003
+
+To legally discipline chronic deficits, the Indian Parliament enacted the *FRBM Act, 2003*:
+- *Mandate:* Imposed statutory responsibility on the Central Government to ensure inter-generational equity in fiscal management, eliminate the Revenue Deficit, and contain the Fiscal Deficit to sustainable levels.
+- *N.K. Singh FRBM Review Committee Recommendations (2017):*
+  - Replaced single-point deficit targets with a holistic *Debt-to-GDP Ratio target of 60% by 2023* (40% for the Central Government and 20% for State Governments).
+  - Recommended maintaining a *Fiscal Deficit target of 3.0% of GDP*.
+  - Introduced statutory *Escape Clauses* allowing temporary deviations (up to 0.5% of GDP) during national emergencies, war, agricultural collapse, and structural reforms.
+
+= Figure 3: Master Budget Synthesis Mindmap
+
+#figure(
+  image("assets/econ_budget_synthesis_mindmap.png", width: 100%),
+  caption: [Figure 3: Master Synthesis Mindmap. Unifying the 4 pillars: Constitutional Basis & 6 Objectives, Revenue Budget (Receipts & Exp), Capital Budget (Receipts & Exp), and Deficits (RD, FD, PD) with FRBM Guidelines.],
+)
+
+= Key Formulas & The Seven Fatal CUET Exam Traps
+
+#cheatsheet-box(title: "Government Budget — Master Formula Reference")[
+  #table(
+    columns: (1.3fr, 2.2fr, 1.4fr),
+    table.header[*Metric Name*][*Mathematical Expression*][*Exam Application*],
+    [Revenue Deficit ($R D$)], [$R D = R E - R R$], [Shortfall in running account],
+    [Fiscal Deficit ($F D$)], [$F D = "Total Expenditure" - "Total Receipts excl. Borrowings"$], [Comprehensive budget gap],
+    [Borrowing Equivalence], [$F D == "Total Gross Borrowings of Government"$], [Instant cross-check rule],
+    [Primary Deficit ($P D$)], [$P D = F D - "Interest Payments"$], [Current fiscal stance],
+    [Zero Primary Deficit], [$P D = 0  ==>  F D = "Interest Payments"$], [Interpreting debt servicing],
+    [Total Expenditure], [$"Total Expenditure" = R E + C E$], [Aggregating spending],
+    [Non-Debt Capital Receipts], [$"NDCR" = "Recovery of Loans" + "Disinvestment Proceeds"$], [Asset-reducing receipts],
+    [Deficit Ladder Rule], [$F D >= P D >= 0   (F D = P D  " if Interest" = 0)$], [Order sanity check],
+  )
+]
+
+#exception-box(title: "The Seven Fatal CUET Exam Traps in Government Budget")[
+  1. *The Borrowing-Deficit Identity Trap:* If a question asks: *"The government borrows ₹85,000 crore from the public and RBI; calculate Fiscal Deficit"*, the answer is *₹85,000 crore immediately*. You do not need any expenditure figures because *Fiscal Deficit is identically equal to Total Borrowings*.
+  2. *Interest Payment vs Loan Principal Repayment Trap:* *Interest payment* on public debt is *Revenue Expenditure* (it creates no asset and does not reduce the loan liability; it is just the rental price of money). *Repayment of loan principal* is *Capital Expenditure* (it extinguishes the debt liability).
+  3. *Recovery of Loans vs Interest Received Trap:* *Interest received* on loans given to States is *Revenue Receipt* (routine non-tax earning). *Recovery of loan principal* from States is *Capital Receipt* (reduces the government's loan asset).
+  4. *Grants-in-Aid to States Trap:* Central grants given to State Governments for building capital assets (e.g., flyovers) are *Revenue Expenditure for the Centre*, because the resulting asset belongs to the State Government, not the Central Government.
+  5. *Direct vs Indirect Tax Shiftability Trap:* Direct taxes (Income Tax) *cannot be shifted*; impact and incidence fall on the same entity. Indirect taxes (GST) *are shifted* to the buyer; impact is on the seller, incidence is on the consumer.
+  6. *Disinvestment Classification Trap:* Disinvestment (selling PSU shares) is a *Capital Receipt* because it *reduces government assets*. It is a *Non-Debt Capital Receipt* because it creates no future debt liability.
+  7. *Zero Primary Deficit Meaning Trap:* $P D = 0$ does *not* mean the government is not borrowing. It means the government is *borrowing an amount equal to its interest liabilities on past loans*.
+]
+
+---
+
+#pagebreak()
+#set text(size: 8.5pt)
+#set par(leading: 0.40em, spacing: 0.42em)
+
+= Practice Questions — Part 1 (Q1 to Q5)
+
+#mcq(1, [Under which Article of the Constitution of India is the central government required to lay before Parliament an "Annual Financial Statement"?], (
+  [Article 110],
+  [Article 112],
+  [Article 280],
+  [Article 360],
+))
+#solution(1, [Article 112 of the Constitution of India mandates that the President shall cause to be laid before both Houses of Parliament an "Annual Financial Statement" for each financial year, which represents the official constitutional terminology for the Union Government Budget.], answer: "B")
+
+#mcq(2, [Which of the following budgetary measures is an example of the objective of "Reallocation of Resources"?], (
+  [Levying heavy punitive excise duties on cigarettes and alcohol while giving subsidies to solar energy],
+  [Imposing progressive income tax slabs to compress income gaps],
+  [Borrowing from the Reserve Bank of India to finance wartime defense],
+  [Giving old-age pensions to destitute senior citizens],
+))
+#solution(2, [The objective of *Reallocation of Resources* involves steering capital and production towards socially beneficial goods (subsidizing green energy) and away from harmful demerit goods (taxing alcohol and tobacco). Progressive income tax targets *Reduction of Inequalities*, while pensions target *Social Welfare*.], answer: "A")
+
+#mcq(3, [Which of the following receipts is classified as a REVENUE RECEIPT for the Central Government?], (
+  [Proceeds from the strategic disinvestment of shares in a Public Sector Undertaking],
+  [Recovery of agricultural development loans from State Governments],
+  [Dividend received from the Reserve Bank of India and public sector commercial banks],
+  [Funds raised by issuing sovereign long-term government bonds to the public],
+))
+#solution(3, [Dividends received from the RBI and PSUs represent *Non-Tax Revenue Receipts* because they neither create any future debt liability nor reduce government assets. Disinvestment and recovery of loans reduce assets (Non-debt Capital Receipts); bond issuance creates a liability (Debt Capital Receipt).], answer: "C")
+
+#mcq(4, [Why is the recovery of loans previously advanced to State Governments classified as a CAPITAL RECEIPT?], (
+  [Because it creates a sovereign financial liability for the Central Government],
+  [Because it causes a reduction in the financial assets of the Central Government],
+  [Because it is a compulsory payment without personal quid pro quo],
+  [Because it is an unrequited unilateral transfer receipt],
+))
+#solution(4, [When a State Government repays a loan to the Centre, the Central Government's financial asset (its loan book/debtors) is reduced. By the Twin Diagnostic Test, any receipt that reduces government assets is classified as a *Non-Debt Capital Receipt*.], answer: "B")
+
+#mcq(5, [Which of the following statements correctly distinguishes a DIRECT TAX from an INDIRECT TAX?], (
+  [Direct taxes can be easily shifted to buyers, whereas indirect taxes cannot be shifted],
+  [In direct taxes, impact and incidence fall on the same person; in indirect taxes, the burden is shifted onto final buyers],
+  [Direct taxes are strictly regressive, whereas indirect taxes are strictly progressive],
+  [Direct taxes are levied on commodities, whereas indirect taxes are levied on personal income],
+))
+#solution(5, [A direct tax (e.g., personal income tax) has its legal impact and ultimate monetary incidence on the exact same person; the burden cannot be shifted. An indirect tax (e.g., GST) is legally paid by the producer/seller but the ultimate monetary burden is shifted onto the final consumer via retail prices.], answer: "B")
+
+---
+
+#pagebreak()
+#set text(size: 8.5pt)
+#set par(leading: 0.40em, spacing: 0.42em)
+
+= Practice Questions — Part 2 (Q6 to Q10)
+
+#mcq(6, [Why is "Interest Payment on Public Debt" classified as REVENUE EXPENDITURE rather than Capital Expenditure?], (
+  [Because it creates a long-term physical asset for the nation],
+  [Because it reduces the principal debt liability of the government],
+  [Because it neither creates any asset nor reduces the sovereign debt liability],
+  [Because it is an optional commercial payment],
+))
+#solution(6, [Interest payment merely services the accumulated past debt of the government. It does not repay the principal loan amount (does not reduce liability) and creates no physical or financial asset. By the Twin Diagnostic Test, an expenditure that neither creates an asset nor reduces a liability is *Revenue Expenditure*.], answer: "C")
+
+#mcq(7, [If an economy's Revenue Expenditure is ₹1,800 crore and its Revenue Receipts are ₹1,350 crore, the Revenue Deficit is:], (
+  [₹3,150 crore],
+  [₹450 crore],
+  [₹1,350 crore],
+  [-₹450 crore],
+))
+#solution(7, [The Revenue Deficit formula is:
+$ R D = "Revenue Expenditure" (R E) - "Revenue Receipts" (R R) $
+$ R D = 1800 - 1350 = ₹450  " crore". $
+The government is dissaving ₹450 crore on its daily running operational account.], answer: "B")
+
+#mcq(8, [The Fiscal Deficit of a government is ALWAYS identically equal to which of the following budgetary figures?], (
+  [Total tax revenue collected during the fiscal year],
+  [Total gross borrowing requirement of the government from all sources],
+  [Total capital expenditure incurred on defense and infrastructure],
+  [The revenue deficit minus interest payments],
+))
+#solution(8, [By definition, Fiscal Deficit measures the exact gap between total government spending and total receipts (excluding borrowings). This entire remaining gap must be financed by borrowing. Hence, *Fiscal Deficit is identically equal to the Total Gross Borrowing Requirement of the government*.], answer: "B")
+
+#mcq(9, [In a budget, Fiscal Deficit is ₹85,000 crore and annual Interest Payments on past debt are ₹35,000 crore. The Primary Deficit is:], (
+  [₹1,20,000 crore],
+  [₹50,000 crore],
+  [₹85,000 crore],
+  [₹35,000 crore],
+))
+#solution(9, [The Primary Deficit formula is:
+$ P D = "Fiscal Deficit" - "Interest Payments" $
+$ P D = 85000 - 35000 = ₹50,000  " crore". $
+The government's current-year fiscal decisions account for ₹50,000 crore of fresh debt, while the remaining ₹35,000 crore is inherited interest servicing.], answer: "B")
+
+#mcq(10, [What is the precise macroeconomic implication when a government's PRIMARY DEFICIT is exactly ZERO?], (
+  [The government has zero public debt and zero liabilities],
+  [The government is borrowing money solely to pay interest on past accumulated loans],
+  [The government's revenue deficit is also exactly zero],
+  [The economy is experiencing severe demand-pull hyperinflation],
+))
+#solution(10, [Since $P D = F D - "Interest Payments"$, when $P D = 0$, it follows that $F D = "Interest Payments"$. This implies that the government's entire borrowing during the year is dedicated strictly to servicing the interest liabilities on past accumulated debts, with zero fresh borrowing for current non-interest expenses.], answer: "B")
+
+---
+
+#pagebreak()
+#set text(size: 8.5pt)
+#set par(leading: 0.40em, spacing: 0.42em)
+
+= Practice Questions — Part 3 (Q11 to Q15)
+
+#mcq(11, [From the following budget data: Total Expenditure = ₹3,000 crore, Revenue Receipts = ₹1,800 crore, Non-Debt Capital Receipts = ₹400 crore. The FISCAL DEFICIT is:], (
+  [₹800 crore],
+  [₹1,200 crore],
+  [₹1,400 crore],
+  [₹600 crore],
+))
+#solution(11, [Fiscal Deficit formula:
+$ F D = "Total Expenditure" - "Total Receipts excluding Borrowings" $
+Total Receipts excluding Borrowings $= "Revenue Receipts" + "Non-Debt Capital Receipts" = 1800 + 400 = ₹2,200  " crore"$.
+$ F D = 3000 - 2200 = ₹800  " crore". $], answer: "A")
+
+#mcq(12, [A persistent, runaway Fiscal Deficit can trigger which of the following dangerous macroeconomic consequences?], (
+  [Deflationary spiral and excessive accumulation of foreign exchange reserves],
+  [A vicious Debt Trap, inflation (if monetized), and crowding out of private corporate investment],
+  [An automatic surplus in the balance of payments],
+  [A total collapse in domestic tax collections],
+))
+#solution(12, [High fiscal deficits force heavy borrowing, driving up interest burdens and risking a *Debt Trap*. If financed through central bank money creation, it fuels *inflation*. Furthermore, government borrowing soaks up commercial credit, raising interest rates and *crowding out* private corporate investments.], answer: "B")
+
+#mcq(13, [Which of the following transactions is classified as CAPITAL EXPENDITURE for the Government of India?], (
+  [Payment of monthly salaries to public hospital doctors],
+  [Disbursement of annual food and fertilizer subsidies to farmers],
+  [Repayment of a USD 500 million development loan principal to the World Bank],
+  [Payment of interest to domestic commercial banks on treasury bills],
+))
+#solution(13, [Repaying the principal amount of an international loan extinguishes an existing sovereign debt liability. By the Twin Diagnostic Test, an expenditure that reduces government liabilities is a *Capital Expenditure*. Salaries, subsidies, and interest payments are routine Revenue Expenditures.], answer: "C")
+
+#mcq(14, [Why are financial grants-in-aid given by the Central Government to State Governments classified as REVENUE EXPENDITURE of the Centre, even when States use them to build bridges?], (
+  [Because bridges are not considered physical capital assets under national accounts],
+  [Because the physical asset created belongs to the State Government, not the Central Government],
+  [Because all grants are illegal under the Constitution of India],
+  [Because grants create an automatic financial liability for the Central Government],
+))
+#solution(14, [From the Central Government's accounting perspective, disbursing grants to States neither creates an asset owned by the Centre nor extinguishes any Central liability. The resulting capital asset (the bridge) enters the balance sheet of the State Government, making the grant a Central Revenue Expenditure.], answer: "B")
+
+#mcq(15, [Under the recommendations of the N.K. Singh Committee on the FRBM Act, what is the targeted General Government Debt-to-GDP ratio benchmark?], (
+  [60% of GDP (40% for the Central Government and 20% for State Governments)],
+  [30% of GDP (15% for the Central Government and 15% for State Governments)],
+  [100% of GDP],
+  [0% of GDP (complete debt elimination)],
+))
+#solution(15, [The N.K. Singh FRBM Review Committee (2017) recommended a General Government Debt-to-GDP ceiling of 60% of GDP, structured as 40% for the Central Government and 20% collectively for all State Governments, alongside a fiscal deficit benchmark of 3.0% of GDP.], answer: "A")
