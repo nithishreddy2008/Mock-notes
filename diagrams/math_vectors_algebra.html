@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Vector Algebra & Products</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 32px 40px;
+    overflow: hidden;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 24px;
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 16px;
+  }
+  .header-left .badge {
+    display: inline-block;
+    padding: 4px 12px;
+    background: #4338CA;
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-radius: 4px;
+    margin-bottom: 8px;
+  }
+  .header-left h1 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #0F172A;
+    letter-spacing: -0.02em;
+    margin-bottom: 4px;
+  }
+  .header-left p {
+    font-size: 13px;
+    color: #64748B;
+    font-weight: 500;
+  }
+  .header-right {
+    text-align: right;
+    font-size: 11px;
+    color: #64748B;
+    font-weight: 600;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    height: 640px;
+  }
+  .col-card {
+    background: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    border-radius: 8px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .col-header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 10px;
+    margin-bottom: 12px;
+  }
+  .badge-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .bg-blue { background: #EFF6FF; color: #1D4ED8; }
+  .bg-indigo { background: #EEF2FF; color: #4338CA; }
+  .bg-emerald { background: #ECFDF5; color: #047857; }
+  .bg-amber { background: #FFFBEB; color: #B45309; }
+
+  .col-title {
+    font-size: 15px;
+    font-weight: 800;
+    color: #0F172A;
+  }
+  .section-block {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  .section-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: #475569;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 4px;
+  }
+  .formula-box {
+    background: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    border-radius: 4px;
+    padding: 6px 8px;
+    font-family: "SF Mono", Consolas, Monaco, monospace;
+    font-size: 11.5px;
+    color: #0F172A;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .desc-text {
+    font-size: 11.5px;
+    color: #334155;
+    line-height: 1.45;
+  }
+  .highlight-rule {
+    background: #FEF3C7;
+    border-left: 3px solid #D97706;
+    padding: 6px 8px;
+    border-radius: 2px;
+    font-size: 11px;
+    color: #92400E;
+    font-weight: 600;
+    margin-top: 6px;
+  }
+  .critical-box {
+    background: #FEF2F2;
+    border-left: 3px solid #DC2626;
+    padding: 6px 8px;
+    border-radius: 2px;
+    font-size: 11px;
+    color: #991B1B;
+    font-weight: 600;
+    margin-top: 6px;
+  }
+
+  .footer-bar {
+    grid-column: span 4;
+    background: #0F172A;
+    border-radius: 6px;
+    padding: 10px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #FFFFFF;
+    font-size: 11.5px;
+    margin-top: 6px;
+  }
+  .footer-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .dot-indicator {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+  }
+  .dot-blue { background: #60A5FA; }
+  .dot-yellow { background: #FCD34D; }
+  .dot-green { background: #34D399; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <div class="badge">CUET UG MATHEMATICS · SECTION A & B1</div>
+    <h1>Vector Algebra & Products: Master Operations Architecture</h1>
+    <p>Complete Operational Framework: Dot Product, Cross Product, Scalar Triple Product & Projections</p>
+  </div>
+  <div class="header-right">
+    OurMocks High-Yield Concept Series<br>Vectors & 3D Geometry Core
+  </div>
+</div>
+
+<div class="grid-container">
+
+  <!-- Column 1: Fundamentals & Projections -->
+  <div class="col-card">
+    <div>
+      <div class="col-header">
+        <span class="badge-tag bg-blue">Module 1</span>
+        <div class="col-title">Vectors & Projections</div>
+      </div>
+
+      <div class="section-block">
+        <div class="section-label">Vector Representation</div>
+        <div class="formula-box">a = a1·i + a2·j + a3·k</div>
+        <div class="formula-box">|a| = √(a1² + a2² + a3²)</div>
+        <p class="desc-text">Unit vector: <b>â = a / |a|</b> with |â| = 1.</p>
+      </div>
+
+      <div class="section-block">
+        <div class="section-label">Collinearity Condition</div>
+        <div class="formula-box">a = λb  ⟺  a1/b1 = a2/b2 = a3/b3</div>
+        <p class="desc-text">Two non-zero vectors are collinear/parallel if their components are proportional.</p>
+      </div>
+
+      <div class="section-block">
+        <div class="section-label">Scalar Projection</div>
+        <div class="formula-box">Proj of a on b = (a · b) / |b| = a · b̂</div>
+        <p class="desc-text">Projection is a scalar quantity. Can be positive, zero, or negative.</p>
+      </div>
+
+      <div class="section-block">
+        <div class="section-label">Vector Projection</div>
+        <div class="formula-box">Vector Proj = [(a · b)/|b|²] · b</div>
+        <p class="desc-text">Multiply the scalar projection by the unit vector b̂.</p>
+      </div>
+    </div>
+
+    <div class="highlight-rule">
+      Projection Trap: Projection on b has |b| in denominator, NOT |a|!
+    </div>
+  </div>
+
+  <!-- Column 2: Dot Product -->
+  <div class="col-card">
+    <div>
+      <div class="col-header">
+        <span class="badge-tag bg-indigo">Module 2</span>
+        <div class="col-title">Dot (Scalar) Product</div>
+      </div>
+
+      <div class="section-block">
+        <div class="section-label">Definition & Angle</div>
+        <div class="formula-box">a · b = |a||b| cos θ</div>
+        <div class="formula-box">a · b = a1b1 + a2b2 + a3b3</div>
+        <div class="formula-box">cos θ = (a · b) / (|a||b|)</div>
+      </div>
+
+      <div class="section-block">
+        <div class="section-label">Orthogonality Condition</div>
+        <div class="formula-box">a ⊥ b  ⟺  a · b = 0</div>
+        <p class="desc-text">Non-zero vectors are perpendicular if and only if their scalar product is zero.</p>
+      </div>
+
+      <div class="section-block">
+        <div class="section-label">Core Algebraic Identities</div>
+        <div class="formula-box">|a + b|² = |a|² + |b|² + 2(a · b)</div>
+        <div class="formula-box">|a - b|² = |a|² + |b|² - 2(a · b)</div>
+        <div class="formula-box">|a + b|² + |a - b|² = 2(|a|² + |b|²)</div>
+      </div>
+
+      <div class="section-block">
+        <div class="section-label">Cauchy-Schwarz Inequality</div>
+        <div class="formula-box">|a · b| ≤ |a||b|</div>
+      </div>
+    </div>
+
+    <div class="critical-box">
+      If a + b + c = 0, take dot with (a+b+c) to evaluate 2(a·b + b·c + c·a) = -(|a|² + |b|² + |c|²).
+    </div>
+  </div>
+
+  <!-- Column 3: Cross Product -->
+  <div class="col-card">
+    <div>
+      <div class="col-header">
+        <span class="badge-tag bg-emerald">Module 3</span>
+        <div class="col-title">Cross (Vector) Product</div>
+      </div>
+
+      <div class="section-block">
+        <div class="section-label">Definition & Determinant</div>
+        <div class="formula-box">a × b = |a||b| sin θ · n̂</div>
+        <div class="formula-box">a × b = det[i, j, k; a1, a2, a3; b1, b2, b3]</div>
+        <p class="desc-text">Anti-commutative: <b>b × a = -(a × b)</b>.</p>
+      </div>
+
+      <div class="section-block">
+        <div class="section-label">Parallelism Condition</div>
+        <div class="formula-box">a ∥ b  ⟺  a × b = 0</div>
+        <p class="desc-text">Parallel non-zero vectors yield zero cross product.</p>
+      </div>
+
+      <div class="section-block">
+        <div class="section-label">Geometric Applications (Area)</div>
+        <div class="formula-box">Area(Δ ABC) = (1/2) |AB × AC|</div>
+        <div class="formula-box">Area(Parallelogram) = |a × b| (sides)</div>
+        <div class="formula-box">Area(Parallelogram) = (1/2)|d1 × d2| (diags)</div>
+      </div>
+
+      <div class="section-block">
+        <div class="section-label">Lagrange's Identity</div>
+        <div class="formula-box">|a × b|² = |a|²|b|² - (a · b)²</div>
+      </div>
+    </div>
+
+    <div class="highlight-rule">
+      Unit vector perpendicular to both a and b: ±(a × b) / |a × b|.
+    </div>
+  </div>
+
+  <!-- Column 4: Scalar Triple Product -->
+  <div class="col-card">
+    <div>
+      <div class="col-header">
+        <span class="badge-tag bg-amber">Module 4</span>
+        <div class="col-title">Scalar Triple Product</div>
+      </div>
+
+      <div class="section-block">
+        <div class="section-label">Box Product Formula</div>
+        <div class="formula-box">[a b c] = a · (b × c)</div>
+        <div class="formula-box">[a b c] = det[a1,a2,a3; b1,b2,b3; c1,c2,c3]</div>
+      </div>
+
+      <div class="section-block">
+        <div class="section-label">Cyclic Permutation</div>
+        <div class="formula-box">[a b c] = [b c a] = [c a b]</div>
+        <div class="formula-box">[b a c] = -[a b c]</div>
+        <p class="desc-text">If any two vectors are identical or parallel, [a a b] = 0.</p>
+      </div>
+
+      <div class="section-block">
+        <div class="section-label">Coplanarity Condition</div>
+        <div class="formula-box">a, b, c coplanar  ⟺  [a b c] = 0</div>
+        <p class="desc-text">Crucial for checking if 4 points or 3 vectors lie in one plane.</p>
+      </div>
+
+      <div class="section-block">
+        <div class="section-label">Volumes</div>
+        <div class="formula-box">Vol(Parallelepiped) = |[a b c]|</div>
+        <div class="formula-box">Vol(Tetrahedron) = (1/6) |[a b c]|</div>
+      </div>
+    </div>
+
+    <div class="critical-box">
+      Linear Combo Identity: [a+b, b+c, c+a] = 2 [a b c]. Constant CUET MCQ!
+    </div>
+  </div>
+
+  <!-- Footer Bar -->
+  <div class="footer-bar">
+    <div class="footer-item">
+      <span class="dot-indicator dot-blue"></span>
+      <span>Dot product measures directional alignment (scalar: work, angle, projection)</span>
+    </div>
+    <div class="footer-item">
+      <span class="dot-indicator dot-green"></span>
+      <span>Cross product constructs normal vector (vector: torque, area of plane)</span>
+    </div>
+    <div class="footer-item">
+      <span class="dot-indicator dot-yellow"></span>
+      <span>Scalar triple product determines 3D volume & coplanarity: [a b c] = 0</span>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

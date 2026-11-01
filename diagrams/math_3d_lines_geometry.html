@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>3D Geometry: Lines & Spatial Relations</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 32px 40px;
+    overflow: hidden;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 24px;
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 16px;
+  }
+  .header-left .badge {
+    display: inline-block;
+    padding: 4px 12px;
+    background: #0D9488;
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-radius: 4px;
+    margin-bottom: 8px;
+  }
+  .header-left h1 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #0F172A;
+    letter-spacing: -0.02em;
+    margin-bottom: 4px;
+  }
+  .header-left p {
+    font-size: 13px;
+    color: #64748B;
+    font-weight: 500;
+  }
+  .header-right {
+    text-align: right;
+    font-size: 11px;
+    color: #64748B;
+    font-weight: 600;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    height: 640px;
+  }
+  .col-card {
+    background: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    border-radius: 8px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .col-header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 10px;
+    margin-bottom: 12px;
+  }
+  .badge-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .bg-teal { background: #F0FDFA; color: #0D9488; }
+  .bg-blue { background: #EFF6FF; color: #1D4ED8; }
+  .bg-purple { background: #FAF5FF; color: #7E22CE; }
+  .bg-rose { background: #FFF1F2; color: #BE123C; }
+
+  .col-title {
+    font-size: 15px;
+    font-weight: 800;
+    color: #0F172A;
+  }
+  .section-block {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  .section-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: #475569;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 4px;
+  }
+  .formula-box {
+    background: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    border-radius: 4px;
+    padding: 6px 8px;
+    font-family: "SF Mono", Consolas, Monaco, monospace;
+    font-size: 11px;
+    color: #0F172A;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .desc-text {
+    font-size: 11px;
+    color: #334155;
+    line-height: 1.45;
+  }
+  .highlight-rule {
+    background: #FEF3C7;
+    border-left: 3px solid #D97706;
+    padding: 6px 8px;
+    border-radius: 2px;
+    font-size: 10.5px;
+    color: #92400E;
+    font-weight: 600;
+    margin-top: 6px;
+  }
+  .critical-box {
+    background: #FEF2F2;
+    border-left: 3px solid #DC2626;
+    padding: 6px 8px;
+    border-radius: 2px;
+    font-size: 10.5px;
+    color: #991B1B;
+    font-weight: 600;
+    margin-top: 6px;
+  }
+
+  .footer-bar {
+    grid-column: span 4;
+    background: #0F172A;
+    border-radius: 6px;
+    padding: 10px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #FFFFFF;
+    font-size: 11.5px;
+    margin-top: 6px;
+  }
+  .footer-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .dot-indicator {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+  }
+  .dot-teal { background: #2DD4BF; }
+  .dot-purple { background: #C084FC; }
+  .dot-rose { background: #FB7185; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <div class="badge">CUET UG MATHEMATICS · SECTION A & B1</div>
+    <h1>3D Geometry: Lines & Spatial Relations Architecture</h1>
+    <p>Direction Cosines, Symmetric Line Forms, Shortest Distance & Coplanarity Analysis</p>
+  </div>
+  <div class="header-right">
+    OurMocks High-Yield Concept Series<br>Analytical 3D Geometry Core
+  </div>
+</div>
+
+<div class="grid-container">
+
+  <!-- Column 1: DC & DR Fundamentals -->
+  <div class="col-card">
+    <div>
+      <div class="col-header">
+        <span class="badge-tag bg-teal">Module 1</span>
+        <div class="col-title">DC & DR System</div>
+      </div>
+
+      <div class="section-block">
+        <div class="section-label">Direction Cosines (l, m, n)</div>
+        <div class="formula-box">l = cos α,  m = cos β,  n = cos γ</div>
+        <div class="formula-box">l² + m² + n² = 1</div>
+        <div class="formula-box">sin² α + sin² β + sin² γ = 2</div>
+        <p class="desc-text">Angles α, β, γ made with positive x, y, z axes.</p>
+      </div>
+
+      <div class="section-block">
+        <div class="section-label">Direction Ratios (a, b, c)</div>
+        <div class="formula-box">l/a = m/b = n/c = 1 / √(a² + b² + c²)</div>
+        <div class="formula-box">l = ± a / √(a² + b² + c²)</div>
+        <p class="desc-text">DRs are proportional to DCs. Line joining P(x1,y1,z1) & Q(x2,y2,z2) has DRs (x2-x1, y2-y1, z2-z1).</p>
+      </div>
+    </div>
+
+    <div class="highlight-rule">
+      Proportionality: Any scalar multiple (ka, kb, kc) serves as DRs. DCs are strictly normalized to unit length!
+    </div>
+  </div>
+
+  <!-- Column 2: Line Equations -->
+  <div class="col-card">
+    <div>
+      <div class="col-header">
+        <span class="badge-tag bg-blue">Module 2</span>
+        <div class="col-title">Equations of Lines</div>
+      </div>
+
+      <div class="section-block">
+        <div class="section-label">Point & Parallel Vector</div>
+        <div class="formula-box">Vector: r = a + λ b</div>
+        <div class="formula-box">Cartesian: (x-x1)/a = (y-y1)/b = (z-z1)/c</div>
+        <p class="desc-text">Passes through point a(x1, y1, z1) parallel to vector b = a·i + b·j + c·k.</p>
+      </div>
+
+      <div class="section-block">
+        <div class="section-label">Line Through Two Points</div>
+        <div class="formula-box">r = a + λ (b - a)</div>
+        <div class="formula-box">(x-x1)/(x2-x1) = (y-y1)/(y2-y1) = (z-z1)/(z2-z1)</div>
+      </div>
+
+      <div class="section-block">
+        <div class="section-label">Angle Between Two Lines</div>
+        <div class="formula-box">cos θ = |b1 · b2| / (|b1||b2|)</div>
+        <div class="formula-box">cos θ = |a1a2 + b1b2 + c1c2| / (√(Σa1²)√(Σa2²))</div>
+        <p class="desc-text">Perpendicular: a1a2 + b1b2 + c1c2 = 0.<br>Parallel: a1/a2 = b1/b2 = c1/c2.</p>
+      </div>
+    </div>
+
+    <div class="critical-box">
+      Standard Form Trap: (1-x)/3 must be written as (x-1)/(-3). Coefficients of x, y, z in numerator must be +1!
+    </div>
+  </div>
+
+  <!-- Column 3: Shortest Distance -->
+  <div class="col-card">
+    <div>
+      <div class="col-header">
+        <span class="badge-tag bg-purple">Module 3</span>
+        <div class="col-title">Shortest Distance (SD)</div>
+      </div>
+
+      <div class="section-block">
+        <div class="section-label">Skew Lines (Non-coplanar)</div>
+        <div class="formula-box">r = a1 + λ b1  &  r = a2 + μ b2</div>
+        <div class="formula-box">d = |(b1 × b2) · (a2 - a1)| / |b1 × b2|</div>
+        <p class="desc-text">Lines that neither intersect nor are parallel in 3D space.</p>
+      </div>
+
+      <div class="section-block">
+        <div class="section-label">Cartesian Determinant SD</div>
+        <div class="formula-box">Num = det[x2-x1, y2-y1, z2-z1; a1,b1,c1; a2,b2,c2]</div>
+        <div class="formula-box">Denom = √[(b1c2-b2c1)² + (c1a2-c2a1)² + (a1b2-a2b1)²]</div>
+      </div>
+
+      <div class="section-block">
+        <div class="section-label">Parallel Lines</div>
+        <div class="formula-box">r = a1 + λ b  &  r = a2 + μ b</div>
+        <div class="formula-box">d = |b × (a2 - a1)| / |b|</div>
+      </div>
+    </div>
+
+    <div class="highlight-rule">
+      Notice: For parallel lines, use cross product b × (a2-a1), NOT scalar triple product!
+    </div>
+  </div>
+
+  <!-- Column 4: Intersecting & Coplanar Lines -->
+  <div class="col-card">
+    <div>
+      <div class="col-header">
+        <span class="badge-tag bg-rose">Module 4</span>
+        <div class="col-title">Coplanarity & Intersect</div>
+      </div>
+
+      <div class="section-block">
+        <div class="section-label">Condition for Intersection</div>
+        <div class="formula-box">Shortest Distance d = 0</div>
+        <div class="formula-box">(b1 × b2) · (a2 - a1) = 0</div>
+        <p class="desc-text">Two non-parallel lines intersect if and only if their scalar triple product vanishes.</p>
+      </div>
+
+      <div class="section-block">
+        <div class="section-label">Cartesian Coplanarity Test</div>
+        <div class="formula-box">det | x2-x1  y2-y1  z2-z1 |<br>&nbsp;&nbsp;&nbsp;&nbsp;| &nbsp;a1 &nbsp;&nbsp;&nbsp;&nbsp;b1 &nbsp;&nbsp;&nbsp;&nbsp;c1 &nbsp;&nbsp;|<br>&nbsp;&nbsp;&nbsp;&nbsp;| &nbsp;a2 &nbsp;&nbsp;&nbsp;&nbsp;b2 &nbsp;&nbsp;&nbsp;&nbsp;c2 &nbsp;&nbsp;| = 0</div>
+      </div>
+
+      <div class="section-block">
+        <div class="section-label">Point of Intersection Method</div>
+        <p class="desc-text">1. Express general points P(λ) and Q(μ).<br>2. Equate x, y, z coordinates.<br>3. Solve for λ, μ from two equations.<br>4. Verify in third equation to confirm intersection.</p>
+      </div>
+    </div>
+
+    <div class="critical-box">
+      If system for λ, μ has consistent solution satisfying all 3 coordinates, lines intersect at P(λ).
+    </div>
+  </div>
+
+  <!-- Footer Bar -->
+  <div class="footer-bar">
+    <div class="footer-item">
+      <span class="dot-indicator dot-teal"></span>
+      <span>Direction Cosines satisfy l² + m² + n² = 1; Direction Ratios are any proportional numbers</span>
+    </div>
+    <div class="footer-item">
+      <span class="dot-indicator dot-purple"></span>
+      <span>Shortest distance between skew lines = |(b1 × b2) · (a2 - a1)| / |b1 × b2|</span>
+    </div>
+    <div class="footer-item">
+      <span class="dot-indicator dot-rose"></span>
+      <span>Lines intersect ⟺ Shortest distance = 0 ⟺ Determinant of (a2-a1), b1, b2 equals 0</span>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
