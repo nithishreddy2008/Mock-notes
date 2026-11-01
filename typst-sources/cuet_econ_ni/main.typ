@@ -7,326 +7,514 @@
   subtitle: "Official Syllabus · Course II: Introductory Macroeconomics · Class 12 · CUET UG 2027 Cycle Notes",
 )
 
-= Syllabus Alignment
+= Syllabus Alignment & Exam Blueprint
 
 #table(
-  columns: (1.1fr, 2fr, 1.15fr),
-  table.header[*Sub-topic*][*Official syllabus pointer (NTA CUET(UG) Economics syllabus 2026, the current 2027 baseline, Course II)*][*Skills the questions test*],
-  [*Macroeconomics and basic concepts*], [
-    What is macroeconomics? Basic concepts: consumption goods, capital goods, final goods, intermediate goods; stocks and flows; gross investment and depreciation; circular flow of income
-  ], [
-    Classifying goods as final or intermediate, sorting stocks from flows, and explaining the circular flow loop.
-  ],
-  [*Methods and aggregates*], [
-    Methods of calculating National Income — value added or product method, income method, expenditure method; aggregates: GDP, GNP, NDP, NNP at market price and factor cost
-  ], [
-    Computing national income by any method with the right precautions, and converting between aggregates without slipping.
-  ],
-  [*Real vs nominal, GDP and welfare*], [
-    Real and Nominal GDP; GDP deflator; GDP and welfare
-  ], [
-    Deflating nominal GDP into real GDP, reading the deflator, and arguing where GDP misleads about welfare.
-  ],
+  columns: (1.2fr, 2fr, 1.15fr),
+  table.header([*Sub-Topic*], [*Official NTA CUET UG Syllabus Scope*], [*Cognitive Level & Weightage*]),
+  [*Macroeconomics & Core Concepts*], [Origins of macroeconomics (Keynesian revolution); Micro vs. Macro; Stock vs. Flow variables; Final vs. Intermediate goods; Consumer vs. Capital goods; Gross vs. Net investment; Consumption of fixed capital (Depreciation); Economic territory and normal residents.], [Knowledge & Distinction (2–3 Questions)],
+  [*Circular Flow of Income*], [Two-sector economy circular flow model; Real flows (factor services, goods) vs. Money flows (factor payments, consumption outlay); The 3 phases (production, distribution, disposition); Triple identity of national income.], [Conceptual Rigour (2 Questions)],
+  [*National Income Aggregates*], [The 3 Conversion Pillars (Gross/Net via Depreciation, Domestic/National via NFIA, MP/FC via NIT); Derivation and meaning of all 8 aggregates ($G D P_(M P), G D P_(F C), N D P_(M P), N D P_(F C), G N P_(M P), G N P_(F C), N N P_(M P), N N P_(F C)$); Identification of Domestic Income ($N D P_(F C)$) and National Income ($N N P_(F C)$).], [Core Mathematical (3–4 Questions)],
+  [*Methods of Calculating NI*], [Value Added (Product) Method, Income Method, and Expenditure Method; Component breakdowns, algebraic identities, and step-by-step numerical conversions; Problem of double counting and its solutions.], [High-Yield Numerical (3–4 Questions)],
+  [*Precautions & Treatment of Items*], [Mandatory inclusions and exclusions: Transfer payments, second-hand goods, financial securities, imputed rent, self-consumption production, black money, windfalls.], [Critical High-Yield (2 Questions)],
+  [*Real vs. Nominal GDP & Welfare*], [Nominal GDP, Real GDP, and GDP Deflator calculations; Why GDP is an incomplete indicator of economic welfare (externalities, income distribution, non-monetary transactions, composition of output).], [Analytical & Applied (2 Questions)],
 )
 
 #exam-pointer[
-  CUET UG pattern (NTA official information bulletin and syllabus, 2026 cycle — the
-  current 2027 baseline): each subject paper carries *50 compulsory questions* in
-  *60 minutes*, with $+5$ for every correct answer and $-1$ for every incorrect answer. The Economics paper follows NCERT Class 12
-  Economics; national income accounting is its numerical heart — conversion chains
-  (GDP to NDP to GNP to NNP, MP to FC) and inclusion-exclusion checks dominate the
-  questions from this unit.
+  *CUET UG Exam Strategy:* National Income Accounting is the mathematical backbone of Course II (Macroeconomics). CUET questions rigorously test the three bridge equations. Remember the golden identity: *Domestic Income is always $N D P_(F C)$* and *National Income is always $N N P_(F C)$*. In numericals, watch out for "Gross Fixed Capital Formation" vs "Gross Domestic Capital Formation" (the former requires adding Change in Stock, while the latter already includes it!).
 ]
 
-= Macroeconomics: The Economy-Wide View
+---
 
-Microeconomics watched one buyer and one seller; macroeconomics zooms out to the whole film. One farmer's harvest is micro — the country's total food grain output, the general price level, the number of unemployed people: that is macro's territory. The subject was born in crisis: the Great Depression of the 1930s forced John Maynard Keynes to study the economy as one interconnected machine.
+= 1. Foundations of Macroeconomics & Basic Concepts
+
+== 1.1 Emergence and Scope of Macroeconomics
+Macroeconomics is that branch of economics which studies economic activities and phenomena at the level of the economy as a whole (aggregates):
+- *Historical Origins:* Traditional classical economics believed in full employment through automatic self-adjusting market mechanisms (Say's Law: "Supply creates its own demand"). The catastrophic *Great Depression of 1929* (with 25% unemployment in the US and massive output collapse) shattered classical dogma.
+- *The Keynesian Revolution:* In 1936, British economist *John Maynard Keynes* published his seminal treatise, *"The General Theory of Employment, Interest and Money"*, giving birth to modern macroeconomics. Keynes proved that an economy can remain stuck in equilibrium with persistent involuntary unemployment, necessitating state intervention.
 
 #table(
-  columns: (1fr, 1.6fr, 1.6fr),
-  table.header[*Concept pair*][*The difference*][*Examples to anchor it*],
-  [Consumption vs capital goods], [Consumption goods satisfy wants directly; capital goods produce OTHER goods (they are used up slowly)], [Bread and shirts vs machines, factory sheds, roads],
-  [Final vs intermediate goods], [Final goods leave the production boundary — bought for use; intermediate goods are resold or used up within the year], [Bread = final; flour bought by the bakery = intermediate],
-  [Stock vs flow], [Stock is measured at a MOMENT; flow is measured over a PERIOD], [Wealth, capital, water in a tank vs income, investment, rainfall],
-  [Gross vs net investment], [Gross = total new capital added; Net = Gross − depreciation (wear and tear)], [New machines 100, wear-out 20 → net addition 80],
+  columns: (1.1fr, 1.9fr, 1.9fr),
+  table.header([*Dimension*], [*Microeconomics*], [*Macroeconomics*]),
+  [*Unit of Study*], [Individual economic agents (single consumer, firm, industry, market for a specific good).], [The entire economy in aggregate (National Income, General Price Level, Aggregate Demand, Total Employment).],
+  [*Central Problem*], [Optimal allocation of scarce resources and determination of relative commodity/factor prices.], [Determination of the level of national income, output, and overall employment.],
+  [*Core Analytical Tool*], [Demand and supply forces in individual product and factor markets.], [Aggregate Demand ($A D$) and Aggregate Supply ($A S$).],
+  [*Basic Assumptions*], [Assumes macroeconomic variables (full employment, national output) are given and constant.], [Assumes microeconomic factor allocation across individual sectors is given and constant.],
+  [*Paradox of Thrift*], [An individual saving more is prudent and increases personal wealth.], [If the *entire nation* attempts to save more, aggregate spending drops, national income falls, and total realized savings may stagnate or fall!],
 )
 
-- *The final-goods rule carries the whole chapter:* only final goods enter GDP. The flour inside the bakery's bread is already inside the bread's price — counting both would count the flour twice.
-- *The same physical good can be either:* sugar bought by a household is final; sugar bought by a sweet shop is intermediate. The USE decides, never the object.
-- *Stock-flow test for MCQs:* ask "could I measure it at 11 a.m. on 1st April?" — wealth: yes (stock). Income during April: needs the whole month (flow).
+== 1.2 Stock vs. Flow Variables
+In macroeconomic analysis, variables are strictly bifurcated based on the *element of time*:
 
-= The Circular Flow: Why Three Methods Must Agree
+#table(
+  columns: (1fr, 1.8fr, 1.8fr),
+  table.header([*Feature*], [*Stock Variable*], [*Flow Variable*]),
+  [*Time Dimension*], [Measured at a *specific point in time* (e.g., on 31st March 2026). It has *no time dimension* (it is static).], [Measured over a *specified period of time* (e.g., per hour, per month, per year). It has a *time dimension*.],
+  [*Dynamic Concept*], [Represents an accumulated quantity or store at a single calendar moment.], [Represents a rate of change or movement over an interval of time.],
+  [*Core Examples*], [National Wealth, Capital Stock of a nation, Money Supply ($M_1, M_3$), Balance in a bank savings account, Foreign exchange reserves, Inventory at end of year.], [National Income, Gross Domestic Product, Net Investment (Capital Formation), Depreciation, Consumption Expenditure, Government Deficit, Imports/Exports.],
+  [*Water Analogy*], [Water stored in a swimming pool or dam at 5:00 PM.], [Water flowing into the pool from a tap at 50 liters per minute.],
+)
 
-Follow ₹100 through the economy. A firm pays it to a worker (factor payment). The worker spends it on bread (consumption). The bakery receives it as revenue — and pays it out again as wages and rent. Money never sits still; it loops. That loop is the *circular flow of income*, and it carries a powerful secret: production, income and expenditure are three views of the SAME rupee.
+== 1.3 Classification of Goods: Final vs. Intermediate Goods
+The distinction between goods in national income accounting depends strictly on their *end-use*, NEVER on the physical nature of the good itself!
+1. *Final Goods:*
+   - Goods that have crossed the production boundary and are ready for use by their *final end-users*.
+   - Sub-divided into:
+     - *Consumer Goods:* Purchased by households to directly satisfy human wants (e.g., milk consumed by a family, bread, clothing, personal car).
+     - *Capital Goods:* Purchased by producers for use as fixed assets in production over many years, undergoing depreciation (e.g., tractors, industrial looms, commercial delivery trucks).
+   - *National Income Treatment:* Final goods are *included* in National Income.
+2. *Intermediate Goods:*
+   - Goods that remain *within the production boundary* and are:
+     - Used up as *raw materials* in the production of other goods during the current accounting year (e.g., flour purchased by a bakery, wood purchased by a carpenter).
+     - Resold for profit within the same accounting year (e.g., milk purchased by a dairy shop for retail resale).
+   - *National Income Treatment:* Intermediate goods are strictly *EXCLUDED* from National Income to avoid the fatal problem of *Double Counting*!
+
+#concept-box(title: "The Golden End-Use Rule for Classifying Goods")[
+  - *Milk* purchased by a household is a *Final Consumer Good*.
+  - *Milk* purchased by a sweet maker (restaurant) to produce sweets is an *Intermediate Good*.
+  - *A Car* purchased by a household is a *Final Consumer Durable Good*.
+  - *A Car* purchased by a taxi operator is a *Final Capital Good* (an investment).
+  - *A Car* purchased by an automobile dealer for resale in their showroom is an *Intermediate Good*!
+]
+
+== 1.4 Gross Investment, Depreciation, and Net Investment
+- *Investment (Capital Formation):* The net addition made to the physical capital stock of an economy during an accounting year:
+  $ "Gross Investment" = "Gross Business Fixed Investment" + "Residential Construction" + "Public Investment" + "Inventory Investment" $
+- *Depreciation (Consumption of Fixed Capital - CFC):*
+  - The loss of value of fixed capital assets in use due to *normal wear and tear*, passage of time, and *expected obsolescence* (routine technological progress).
+  - *Depreciation Reserve Fund:* Financial provisions set aside annually by firms to replace worn-out capital assets at the end of their productive lifespan.
+- *Crucial Distinction: Depreciation vs. Capital Loss:*
+  - *Depreciation* covers foreseen, routine depreciation and expected obsolescence. It is *included* in the calculation of Net National Product.
+  - *Capital Loss* refers to unforeseen, sudden destruction of fixed capital caused by *natural calamities* (earthquakes, floods) or *war, riots, and major industrial fires*. Capital loss is NOT part of depreciation and is excluded from national accounts!
+- *Net Investment Equation:*
+  $ "Net Investment" = "Gross Investment" - "Depreciation (CFC)" $
+  If Gross Investment equals Depreciation, Net Investment is zero, meaning the productive capacity of the economy is merely maintained without expanding.
+
+== 1.5 Economic Territory and Normal Residents
+1. *Domestic (Economic) Territory:*
+   - The geographic territory administered by a national government within which persons, goods, and capital circulate freely.
+   - *Included in Domestic Territory of India:*
+     - Political frontiers including territorial waters and airspace.
+     - Indian Embassies, Consulates, and Military bases located in foreign countries (e.g., Indian Embassy in Washington is part of the domestic territory of India, NOT the USA!).
+     - Ships and aircraft operated by Indian residents between two or more foreign countries (e.g., Air India passenger jet flying between London and Tokyo).
+     - Fishing vessels, oil and natural gas rigs operated by Indian residents in international waters where India holds exclusive exploitation rights.
+   - *Excluded from Domestic Territory of India:*
+     - Foreign Embassies, High Commissions, and Consulates located in New Delhi (e.g., US Embassy in Chanakyapuri is US territory!).
+     - Offices of international organizations (UN, WHO, IMF, World Bank) located inside India.
+2. *Normal Resident of a Country:*
+   - An individual or an institution who ordinarily resides in the economic territory of a country for a period of *one year or more*, and whose *center of economic interest* lies in that country (earns, spends, and accumulates wealth there).
+   - Normal residents include both citizens and non-citizens (foreign nationals residing &gt; 1 year with economic interest).
+   - Foreign tourists, seasonal medical patients, foreign diplomats, and daily border crossers are NOT normal residents.
+
+---
+
+= 2. The Circular Flow of Income & The Triple Equivalence
+
+== 2.1 The Two-Sector Circular Flow Model
+Consider a simplified closed economy consisting of only two economic sectors: *Households* and *Firms* (no government, no foreign trade, no financial savings):
+- *Real Flow:*
+  - Households provide factor services (Land, Labour, Capital, Enterprise) to firms.
+  - In return, firms supply finished physical Goods and Services to households.
+- *Money Flow:*
+  - Firms pay Factor Incomes (Rent, Wages, Interest, Profit) to households as remuneration for factor services.
+  - Households spend their entire factor income on Consumption Outlay to purchase goods from firms.
 
 #figure(
-  image("assets/econ_ni_flow.png", width: 100%),
-  caption: [The circular flow: real flows of factor services and goods (green) are matched by money flows of factor payments and consumption spending (red dashed). One loop, three measuring points.],
+  image("assets/econ_ni_circular_flow_aggregates.png", width: 95%),
+  caption: [Figure 1: Circular Flow of Income in a Two-Sector Economy (Left) and the 3 Conversion Pillars with 8 National Income Aggregates Bridge (Right)],
 )
 
-- *Production = income:* every rupee of value produced is paid out to factors as rent, wages, interest or profit. Nothing is left over.
-- *Income = expenditure:* every rupee earned is spent on final goods (in the simple two-sector model with no savings leak).
-- *Therefore:* National Product = National Income = National Expenditure. The three methods are not rivals — they are three checkpoints on one loop, and they must return the same number.
+== 2.2 The Three Phases of Circular Flow & The Triple Equivalence
+The circular flow never ends; it moves through three continuous operational phases:
+1. *Production Phase (Generation Phase):* Production units combine factor inputs with intermediate inputs to produce goods and services, generating *Gross Value Added*.
+2. *Distribution Phase (Income Phase):* The value added generated during production is distributed among the factor owners as factor payments: Wages, Rent, Interest, and Profits.
+3. *Disposition Phase (Expenditure Phase):* Factor income earners spend their income on purchasing final goods and services for consumption and investment.
 
-= Method 1 — Value Added (Product Method)
-
-Walk along the production chain and ask each firm: "how much NEW value did YOU create?" — output minus the intermediate inputs bought from others. Sum those additions and you have the economy's total, with no rupee counted twice.
-
-#formula-box(title: "The Value Added Identity")[
-  #v(2pt)
-  $"GVA" = "Value of output" - "Intermediate consumption"$
-  #v(4pt)
-  *Sum of GVA across all firms (plus adjustments for taxes-subsidies) = GDP at market price.* Counting total OUTPUTS instead of additions double-counts every stage.
+#formula-box(title: "The Triple Equivalence Identity of Macroeconomics")[
+  $ "Total Output (Value Added)" equiv "Total Factor Incomes Generated" equiv "Total Final Expenditure" $
+  
+  This fundamental identity proves that National Income can be measured with complete mathematical equivalence from three different angles: the *Product (Value Added) Method*, the *Income Method*, and the *Expenditure Method*!
 ]
 
-#worked-example("Wheat to Bread — Killing Double Counting")[
-Three stages: farmer grows wheat, miller grinds flour, baker bakes bread.
+---
+
+= 3. The 3 Conversion Pillars & The 8 National Income Aggregates
+
+Every national income aggregate is constructed from a three-tier binary nomenclature:
+- Tier 1: *Gross ($G$)* vs. *Net ($N$)*
+- Tier 2: *Domestic ($D$)* vs. *National ($N$)*
+- Tier 3: *Market Price ($M P$)* vs. *Factor Cost ($F C$)*
+
+== 3.1 The 3 Golden Conversion Pillars
+
+=== Pillar 1: Gross vs. Net (Depreciation / Consumption of Fixed Capital)
+- Gross includes the cost of replacing worn-out capital (depreciation), whereas Net excludes it:
+  $ "Net" = "Gross" - "Depreciation (CFC)" $
+  $ "Gross" = "Net" + "Depreciation (CFC)" $
+
+=== Pillar 2: Domestic vs. National (Net Factor Income from Abroad - NFIA)
+- Domestic refers to production generated *within the domestic territory* of a nation, regardless of whether it is produced by residents or non-residents.
+- National refers to income earned by *normal residents* of a nation, regardless of where in the world they operate:
+  $ "National" = "Domestic" + "NFIA" $
+  $ "Domestic" = "National" - "NFIA" $
+- *Components of NFIA:*
+  $ "NFIA" = "Factor Income from Abroad (FIFA)" - "Factor Income to Abroad (FITA)" $
+  NFIA consists of three sub-components:
+  1. *Net Compensation of Employees:* (Earnings of Indian resident workers temporarily abroad) minus (Earnings of foreign workers temporarily in India).
+  2. *Net Income from Property and Entrepreneurship:* (Rent, interest, and dividends earned by Indian residents on foreign assets) minus (Paid to foreign investors on assets located in India).
+  3. *Net Retained Earnings of Resident Companies Abroad:* Undistributed profits retained by Indian multi-nationals abroad minus retained earnings of foreign companies in India.
+
+=== Pillar 3: Market Price vs. Factor Cost (Net Indirect Taxes - NIT)
+- Factor Cost ($F C$) is the actual remuneration paid to factor owners by producers for their productive contribution.
+- Market Price ($M P$) is the price paid by final consumers in the market, which includes indirect commodity taxes imposed by the government and excludes production subsidies granted by the government:
+  $ "Market Price (MP)" = "Factor Cost (FC)" + "Indirect Taxes" - "Subsidies" = "FC" + "NIT" $
+  $ "Factor Cost (FC)" = "Market Price (MP)" - "Net Indirect Taxes (NIT)" $
+  Where:
+  $ "NIT" = "Indirect Taxes (GST, Excise, Customs)" - "Subsidies (Food, Fertilizer subsidies)" $
+
+== 3.2 The Master Matrix of 8 National Income Aggregates
 
 #table(
-  columns: (1.1fr, 1.4fr, 1.6fr, 1.4fr),
-  table.header[*Firm*][*Output sold (₹)*][*Inputs bought (₹)*][*Value added (₹)*],
-  [Farmer], [200], [0], [200],
-  [Miller], [320], [200 (wheat)], [120],
-  [Baker], [500], [320 (flour)], [180],
-  [Total], [—], [—], [500],
+  columns: (1fr, 1.3fr, 2fr),
+  table.header([*Aggregate*], [*Formal Full Name*], [*Technical National Accounting Definition*]),
+  [*$G D P_(M P)$*], [Gross Domestic Product at Market Price], [Gross market value of all final goods and services produced within the domestic territory of a country during an accounting year.],
+  [*$G D P_(F C)$*], [Gross Domestic Product at Factor Cost], [$G D P_(M P) - "NIT"$. Total gross factor earnings generated within the domestic territory.],
+  [*$N D P_(M P)$*], [Net Domestic Product at Market Price], [$G D P_(M P) - "Depreciation"$. Net market value of domestic output.],
+  [*$N D P_(F C)$*], [*Net Domestic Product at Factor Cost (DOMESTIC INCOME)*], [$G D P_(M P) - "Dep" - "NIT"$. The aggregate factor income generated strictly within the economic territory of the nation!],
+  [*$G N P_(M P)$*], [Gross National Product at Market Price], [$G D P_(M P) + "NFIA"$. Gross market value of all final goods produced by normal residents anywhere in the world.],
+  [*$G N P_(F C)$*], [Gross National Product at Factor Cost], [$G N P_(M P) - "NIT"$. Total gross factor income earned by normal residents.],
+  [*$N N P_(M P)$*], [Net National Product at Market Price], [$G N P_(M P) - "Depreciation"$. Net market value of goods attributable to normal residents.],
+  [*$N N P_(F C)$*], [*Net National Product at Factor Cost (NATIONAL INCOME)*], [$N D P_(F C) + "NFIA"$. The true macro definition of *National Income*! Sum of all factor incomes earned by normal residents of a country.],
 )
 
-- *Wrong route:* 200 + 320 + 500 = ₹1,020 — the wheat is counted three times, the flour twice. Double counting inflates GDP with phantom value.
-- *Right route:* 200 + 120 + 180 = ₹500 — exactly the price of the final bread. The value-added method reconstructs the final good piece by piece.
-- *Precautions of this method:* exclude intermediate goods; INCLUDE own-account production (a farmer's grain for his family) and the imputed rent of owner-occupied homes; exclude sale of second-hand goods (no new production) — only the dealer's commission counts.
-]
+---
 
-= Method 2 — Income Method
+= 4. The Three Methods of Measuring National Income
 
-Flip the coin: value added is PAID OUT to the factors that created it. Walk through firms' account books collecting factor payments, and the same national income appears as a list of incomes.
+== 4.1 Method 1: Value Added Method (Product / Output Method)
+Measures the net contribution of each producing enterprise in the domestic territory across primary, secondary, and tertiary sectors:
 
-- *Compensation of employees:* wages, salaries, employer contributions to social security — payment to LABOUR.
-- *Operating surplus:* rent (land) + interest (capital) + profit (entrepreneurship) — payments to the non-labour factors.
-- *Mixed income of self-employed:* the farmer-shopkeeper-doctor's income blends all four factors and cannot be split — counted as one line (huge in India).
-- *Sum:* $"NDP at FC" = "Compensation" + "Operating surplus" + "Mixed income"$ — then apply the ladder (next section) to reach any aggregate.
-- *Precautions — what is NOT an income of production:*
-  - *Transfer payments* — pensions, scholarships, unemployment dole, gifts: money moves with NO matching production.
-  - *Windfall gains* — lottery winnings, betting gains: luck, not production.
-  - *Sale of second-hand goods and financial assets* — shares, bonds, old cars: ownership changes, nothing new is produced (commissions DO count as income for the dealer's service).
+=== Step-by-Step Computational Architecture
+1. *Calculate Value of Output ($V O$):*
+  $ "Value of Output" = "Total Sales" + Delta "Stock" $
+  - If entire output is sold during the year: $"Value of Output" = "Sales"$.
+  - If output is partially unsold:
+    $ "Value of Output" = "Sales" + ("Closing Stock" - "Opening Stock") $
+  - *Sales Decomposition:* If a question provides both "Domestic Sales" and "Exports", total sales is:
+    $ "Total Sales" = "Domestic Sales" + "Exports" $
+    *(Trap alert: If the question directly provides "Sales", Exports are ALREADY included—do not add them again!)*
+2. *Deduct Intermediate Consumption ($I C$):*
+  $ G V A_(M P) = "Value of Output" - "Intermediate Consumption" $
+  - *Intermediate Purchases Decomposition:*
+    $ I C = "Domestic Purchases of Raw Materials" + "Imports of Raw Materials" $
+    *(Trap alert: If the question directly provides "Purchase of Raw Materials" or "Intermediate Consumption", Imports are ALREADY included!)*
+3. *Aggregate Across All Sectors:*
+  $ sum G V A_(M P) = G D P_(M P) $
+4. *Convert to National Income ($N N P_(F C)$):*
+  $ N N P_(F C) = G D P_(M P) - "Depreciation" + "NFIA" - "NIT" $
 
-= Method 3 — Expenditure Method
-
-The third window: every final good produced must be BOUGHT by someone. Collect all FINAL spending in the economy and you have bought the whole national product.
-
-#formula-box(title: "The Expenditure Identity")[
-  #v(2pt)
-  $"GDP at MP" = C + I + G + (X - M)$
-  #v(4pt)
-  *Letters:* C = household consumption · I = gross investment (new machines, buildings, INVENTORY change) · G = government purchases of goods and services · X − M = net exports. Final spending only — no intermediate purchases, no second-hand buys, no share-market deals.
-]
-
-- *Why inventory change counts:* unsold output IS produced this year — it enters investment as unplanned inventory accumulation.
-- *Precautions:* exclude expenditure on intermediate goods (already inside final prices); exclude second-hand purchases and pure financial transactions; include government's real purchases — but transfer payments (pensions) are again out.
-
-= The Aggregates Ladder: From GDP to National Income
-
-One production figure, many names. The ladder has two independent bridges: GROSS to NET (subtract depreciation) and MARKET PRICE to FACTOR COST (remove net indirect taxes). Cross both and you reach National Income.
-
-#formula-box(title: "The Four Bridges")[
-  #v(2pt)
-  $"NDP" = "GDP" - "Depreciation" quad quad quad "GNP" = "GDP" + "NFIA"$
-  #v(2pt)
-  $"NNP" = "GNP" - "Depreciation" quad quad quad "NNP at FC" = "NNP at MP" - "Net indirect taxes (NIT)"$
-  #v(4pt)
-  *And the headline:* NATIONAL INCOME ≡ NNP at FACTOR COST. *NFIA* = factor income earned from abroad − factor income paid to abroad. *NIT* = indirect taxes − subsidies.
-]
-
-#worked-example("The Full Conversion — One Table, Four Steps")[
-Given: GDP at MP = ₹5,000 crore · depreciation = ₹300 · NFIA = −₹50 (Indians abroad earn less than foreigners here) · indirect taxes = ₹600 · subsidies = ₹200.
-
-#table(
-  columns: (2.2fr, 1.4fr, 2.6fr),
-  table.header[*Step*][*Value (₹ cr)*][*Rule used*],
-  [GDP at MP], [5,000], [given],
-  [NDP at MP = GDP − depreciation], [4,700], [5,000 − 300],
-  [GNP at MP = GDP + NFIA], [4,950], [5,000 + (−50)],
-  [NNP at MP = GNP − depreciation], [4,650], [4,950 − 300],
-  [NATIONAL INCOME = NNP at FC], [4,250], [4,650 − (600 − 200)],
-)
-
-- *Check the direction of every subtraction:* depreciation always shrinks gross to net; NIT (taxes minus subsidies) always shrinks MP to FC — the factor-earners never see the tax portion.
-- *Why NFIA is negative for India:* foreign companies and workers in India send home more factor income than Indians earn abroad — so GNP sits below GDP.
-]
-
-= Real vs Nominal GDP — and the Deflator
-
-Prices change every year; a GDP compared across years mixes REAL growth with INFLATION. The fix: value every year's output at the SAME (base-year) prices.
-
-- *Nominal GDP:* current year's output × CURRENT prices — grows even if only prices grew.
-- *Real GDP:* current year's output × BASE-year prices — grows only when QUANTITIES grow. This is the honest measure.
-- *GDP deflator:* the price index hiding inside the gap between the two: $"Deflator" = ("Nominal GDP") / ("Real GDP") × 100$
-
-#worked-example("Real GDP and the Deflator — Two Goods")[
-An economy makes rice and cloth. Base year = Year 1.
-
-#table(
-  columns: (1.5fr, 1.5fr, 1.5fr, 1.4fr),
-  table.header[*Year*][*Output*][*Current prices (₹)*][*Base-year prices (₹)*],
-  [Year 1], [100 rice, 50 cloth], [rice 10, cloth 20], [rice 10, cloth 20],
-  [Year 2], [110 rice, 55 cloth], [rice 12, cloth 24], [rice 10, cloth 20],
-)
-
-- *Nominal GDP Year 2:* 110 × 12 + 55 × 24 = 1,320 + 1,320 = ₹2,640
-- *Real GDP Year 2:* 110 × 10 + 55 × 20 = 1,100 + 1,100 = ₹2,200
-- *Year 1 GDP (base):* both measures equal ₹2,000 — deflator = 100 by definition.
-- *Deflator Year 2:* $2,640 \/ 2,200 × 100 = 120$ — prices rose 20% since the base year; real growth is exactly 10% (2,000 → 2,200), the rest of nominal growth was inflation.
-]
-
-= GDP and Welfare: What the Number Hides
-
-GDP is the economy's scoreboard, not its report card. It counts what passes through markets — and stays silent about much that makes life good or bad.
-
-- *Distribution is invisible:* GDP can rise while ALL the gain lands with the top 1% — the average person's life does not improve.
-- *Non-market work is invisible:* a mother's cooking, cleaning and care never enter GDP; hiring a cook mysteriously "adds" to it. Same work, different ledger.
-- *Externalities are invisible:* the factory's output counts; its smoke on the city's lungs does not. Cleaning up pollution RAISES GDP while making life better — a double distortion.
-- *Leisure is invisible:* a 70-hour work week out-produces a 40-hour one — but is it welfare?
-- *Underground activity is missed:* unreported incomes escape the ledger entirely.
-- *The exam-safe conclusion:* real GDP per capita is a useful indicator of PRODUCTION, not a complete measure of WELFARE — public goods, equality, health and environment sit outside it.
-
-= Key Formulas & Rules: One-Stop Revision
-
-#cheatsheet-box(title: "National Income Accounting — Every Rule on One Page")[
-  #table(
-    columns: (1.45fr, 2.1fr, 1.75fr),
-    table.header[*Rule*][*Statement*][*When to use it*],
-    [Value added], [GVA = output − intermediate inputs], [Product method; kills double counting],
-    [Income method], [NDP at FC = compensation + operating surplus + mixed income], [Factor-payment route],
-    [Expenditure method], [GDP at MP = C + I + G + (X − M)], [Final-spending route; inventories count],
-    [Gross to net], [NDP = GDP − depreciation; NNP = GNP − depreciation], [First bridge],
-    [Domestic to national], [GNP = GDP + NFIA], [Second bridge; NFIA = earned abroad − paid abroad],
-    [MP to FC], [NNP at FC = NNP at MP − NIT; NIT = indirect taxes − subsidies], [Third bridge],
-    [National income], [NI ≡ NNP at factor cost], [The headline identity],
-    [Real GDP], [Current output × base-year prices], [Honest cross-year comparison],
-    [GDP deflator], [Nominal ÷ Real × 100], [Reads the price rise since base year],
-    [Never count], [Transfers, windfalls, second-hand sales, share deals, intermediate goods], [Every method's precautions],
-    [Always count], [Own-account production, imputed rent of owner homes, inventory change, dealer commissions], [Inclusion checks],
-  )
-]
-
-= Common Errors & Special Cases
-
-#exception-box(title: "The Traps This Unit Sets — Read Before the Mock")[
-  #table(
-    columns: (1.25fr, 1.35fr, 1.4fr),
-    table.header[*The rule you assume*][*The twist*][*The trap in the question*],
-    ["All money received is income"], [Transfers (pensions, gifts, scholarships) match NO production], [Income-method exclusions],
-    ["Selling an old car adds to GDP"], [Only the dealer's COMMISSION counts — the car's value was counted when new], [Second-hand sales],
-    ["GDP includes everything valuable"], [Home production, leisure, clean air and equality stay outside], [GDP-and-welfare arguments],
-    ["National = domestic"], [NFIA separates them: territory vs normal residents], [GNP vs GDP numericals],
-    ["Real GDP uses current prices"], [Real uses BASE-year prices; nominal uses current], [Deflator numericals],
-    ["Deflator above 100 means growth"], [It means PRICES rose since the base year — growth is real GDP's story], [Deflator interpretation],
-    ["Depreciation and NIT both shrink FC"], [Depreciation shrinks gross→net; NIT shrinks MP→FC — different bridges], [Conversion-chain numericals],
-    ["Shares bought are investment"], [Financial deals reshuffle ownership; I means NEW capital goods + inventory change], [Expenditure-method exclusions],
-  )
-]
-
-= The 60-Second Self-Test
-
-Cover the answers, say each one aloud, then check. If any answer takes longer than ten seconds, revisit that section.
-
-- *Wealth, salary, foreign reserves, exports.* Which are stocks? → Wealth and foreign reserves (measurable at a moment).
-- *GDP at MP 6,000; depreciation 500; NFIA −100; NIT 300.* National income? → NNP at FC = 6,000 − 500 − 100 − 300 = ₹5,100.
-- *A pension of ₹5,000 and a teacher's salary of ₹5,000.* Which enters NI? → Only the salary — the pension is a transfer.
-- *Nominal GDP 3,300; real GDP 3,000.* Deflator? → 110 — prices are 10% above the base year.
-- *Flour bought by a bakery vs by a household.* Which enters GDP? → Only the household's (final); the bakery's is intermediate — already in the bread's price.
-- *Indians abroad send home ₹80 cr; foreigners here send out ₹120 cr.* NFIA? → 80 − 120 = −₹40 cr; GNP below GDP.
-
-= The Whole Chapter in One Picture
+=== The Problem of Double Counting and Its Remedies
+- *The Problem:* Double counting occurs when the value of an intermediate input is counted multiple times as it passes through successive stages of production (e.g., counting the value of wheat, then the value of flour, then the value of bread). This artificially inflates national income figures.
+- *Two Recognized Remedies:*
+  1. *Final Output Method:* Count ONLY the final value of finished goods sold to final consumers (e.g., count only the final ₹50 bread, completely ignoring the ₹20 wheat and ₹35 flour).
+  2. *Value Added Method:* Sum only the *Value Added* ($"Value of Output" - "Intermediate Consumption"$) at each successive processing stage.
 
 #figure(
-  image("assets/econ_ni_mindmap.png", width: 100%),
-  caption: [Chapter mindmap: macro's vocabulary pairs, the circular flow, the three methods with their guards, the aggregates ladder, real vs nominal GDP, and what GDP hides about welfare — with the traps that catch most students.],
+  image("assets/econ_ni_three_measurement_methods.png", width: 95%),
+  caption: [Figure 2: The Three Methods of Estimating National Income: Step-by-Step Formulations, Flow Paths, and Precautionary Checklists],
 )
 
-= Practice Questions (Exam Pattern)
+== 4.2 Method 2: Income Method (Factor Payment Method)
+Measures national income from the perspective of factor income distribution among owners of factors of production within the domestic territory:
 
-Ten questions in the CUET UG style. Attempt all of them — the paper gives $+5$ for each correct answer and $-1$ for every incorrect answer.
+=== Step-by-Step Computational Architecture
+1. *1. Compensation of Employees ($C O E$):*
+   Total remuneration paid by employers to employees for labor services rendered:
+   - Wages and Salaries in Cash (basic pay, dearness allowance, bonuses, overtime).
+   - Wages and Salaries in Kind (free housing, free medical facilities, company car, free uniforms).
+   - *Employer's Contribution to Social Security Schemes* (provident fund, gratuity, employee insurance).
+   - *(Fatal Trap: Employee's own contribution to PF is paid out of their cash salary—it is ALREADY included in Wages in Cash! Do NOT add employee's contribution!)*
+2. *2. Operating Surplus ($O S$):*
+   Income earned from the ownership of property and entrepreneurship:
+   $ O S = "Rent" + "Royalty" + "Interest" + "Profit" $
+   - *Rent:* Contractual payments for land and buildings, plus *Imputed Rent of owner-occupied houses*.
+   - *Royalty:* Income received for granting mineral rights or copyrights.
+   - *Interest:* Net interest received on loans used for *commercial production* (Interest on loans taken for personal consumption or interest on national public debt is excluded!).
+   - *Profit:* Total entrepreneurial earnings, distributed across three components:
+     $ "Profit" = "Corporate Tax" + "Dividend (Distributed Profit)" + "Undistributed Profit (Retained Earnings)" $
+3. *3. Mixed Income of Self-Employed:*
+   Incomes of unincorporated own-account enterprises (farmers, doctors, lawyers, shopkeepers, chartered accountants) where labor and capital are supplied by the owner, making it impossible to separate wages from profit.
+4. *Aggregate Yields Domestic Income ($N D P_(F C)$):*
+  $ N D P_(F C) = C O E + "Operating Surplus" + "Mixed Income" $
+5. *Convert to National Income ($N N P_(F C)$):*
+  $ N N P_(F C) = N D P_(F C) + "NFIA" $
 
-#mcq(1, [Which of the following is a STOCK variable?], (
-  [national income], [investment], [wealth], [exports],
-))
+== 4.3 Method 3: Expenditure Method (Final Outlay Method)
+Measures national income at the point of final disposition—the total expenditure incurred on final goods and services produced within the domestic territory:
 
-#mcq(2, [Which of these IS included in national income?], (
-  [pension paid to retired workers], [imputed rent of an owner-occupied house], [sale of a second-hand car], [scholarship given by the government],
-))
+=== Step-by-Step Computational Architecture
+1. *Private Final Consumption Expenditure ($C$ or PFCE):*
+   Market value of final consumption goods and services purchased by households and private non-profit institutions serving households.
+2. *Government Final Consumption Expenditure ($G$ or GFCE):*
+   Expenditure incurred by the general government on providing administrative and social services (defense, judiciary, public education, healthcare).
+3. *Gross Domestic Capital Formation ($I$ or GDCF / Gross Investment):*
+   Total net additions to the domestic capital stock:
+   $ "GDCF" = "Gross Domestic Fixed Capital Formation (GFCF)" + Delta "Stock (Inventory Investment)" $
+   *(Critical Exam Trap: If question gives "Gross Fixed Capital Formation", you MUST add Change in Stock ($"Closing" - "Opening"$). But if question gives "Gross Domestic Capital Formation", Change in Stock is ALREADY included!)*
+4. *Net Exports ($X - M$):*
+   $ "Net Exports" = "Exports of Goods and Services (X)" - "Imports of Goods and Services (M)" $
+5. *Aggregate Yields $G D P_(M P)$:*
+  $ G D P_(M P) = C + G + I + (X - M) $
+6. *Convert to National Income ($N N P_(F C)$):*
+  $ N N P_(F C) = G D P_(M P) - "Depreciation" + "NFIA" - "NIT" $
 
-#mcq(3, [The problem of double counting is avoided by using:], (
-  [the income method], [the value added method], [the expenditure method], [the deflator],
-))
+---
 
-#mcq(4, [GDP at market price minus depreciation gives:], (
-  [NNP at factor cost], [GNP at market price], [NDP at market price], [national income],
-))
-
-#mcq(5, [National income is defined as:], (
-  [GDP at market price], [GNP at market price], [NNP at factor cost], [NDP at factor cost],
-))
-
-#mcq(6, [If NFIA is negative, then:], (
-  [GNP exceeds GDP], [GDP exceeds GNP], [GDP equals GNP], [national income is negative],
-))
-
-#mcq(7, [Under the expenditure method, GDP equals:], (
-  [C + I + G + (X − M)], [C + S + G], [rent + wages + interest + profit], [value of intermediate goods],
-))
-
-#mcq(8, [Transfer payments are excluded from national income because:], (
-  [they are too small], [no production corresponds to them], [they are taxed], [the government cannot track them],
-))
-
-#mcq(9, [Real GDP is measured at:], (
-  [current-year prices], [base-year prices], [average world prices], [factor cost only],
-))
-
-#mcq(10, [Nominal GDP is ₹2,200 crore and real GDP is ₹2,000 crore. The GDP deflator is:], (
-  [90.9], [110], [200], [1.1],
-))
-
-= Detailed Solutions
-
-Each solution shows the working, not just the verdict — cover the answer line, attempt the reasoning, then compare.
-
-#solution(1, [Wealth can be measured at one instant (say, midnight on 31 March) — the stock test. Income, investment and exports need a PERIOD to be meaningful — flows.], answer: [C])
-
-#solution(2, [Imputed rent counts because the owner-house PRODUCES housing services for its own family. Pensions and scholarships are transfers; the old car was counted when newly produced.], answer: [B])
-
-#solution(3, [Value added subtracts intermediate inputs at every stage, so each rupee of value is counted exactly once — the wheat-bread chain totals ₹500, not ₹1,020.], answer: [B])
-
-#solution(4, [Depreciation is the bridge from gross to net, and the goods stay at market price: GDP − depreciation = NDP at MP. Crossing to factor cost or national would need NIT or NFIA too.], answer: [C])
-
-#solution(5, [National income ≡ NNP at factor cost — gross minus depreciation, domestic plus NFIA, market price minus net indirect taxes. All three bridges crossed.], answer: [C])
-
-#solution(6, [NFIA = earned abroad − paid to abroad. Negative means foreigners earn more factor income here than Indians do abroad, so GNP = GDP + NFIA falls BELOW GDP — India's own case.], answer: [B])
-
-#solution(7, [The expenditure identity collects final spending: consumption + investment + government purchases + net exports. Rent + wages + interest + profit is the INCOME method; C + S + G omits exports and inventories.], answer: [A])
-
-#solution(8, [A pension buys no goods and services — no bakery produced anything for it. National income measures PRODUCTION, so money that moves without production must stay outside.], answer: [B])
-
-#solution(9, [Real GDP values current quantities at BASE-year prices, freezing prices so only output can move the number. Current prices give nominal GDP.], answer: [B])
-
-#solution(10, [Deflator = nominal ÷ real × 100 = 2,200 ÷ 2,000 × 100 = 110 — prices stand 10% above the base year. Option A inverted the division; option D forgot to multiply by 100.], answer: [B])
-
-== Wrong-Answer Clinic — the one-line corrections
-
-Dropped marks above? Find your slip here and rewrite the corrected rule in your own words.
+= 5. Inclusions and Exclusions: The Master Precautions Checklist
 
 #table(
-  columns: (1.05fr, 1.5fr, 1.45fr),
-  table.header[*If you answered...*][*Your slip was...*][*The corrected rule, in one line*],
-  [Q1 option A], [Confusing every big number with a stock], [Stock = measurable at a moment (wealth); income and exports need a period (flow)],
-  [Q2 option C], [Counting resale as production], [Second-hand sales transfer ownership — only the dealer's commission is new service],
-  [Q4 option D], [Skipping the two extra bridges], [GDP − dep = NDP at MP; national income needs NFIA and NIT as well],
-  [Q6 option A], [Reading the NFIA sign backwards], [Negative NFIA drags GNP BELOW GDP — exactly India's position],
-  [Q9 option A], [Letting inflation pose as growth], [Real GDP freezes prices at the base year — only quantities may move it],
-  [Q10 option D], [Dropping the ×100], [Deflator = nominal ÷ real × 100 = 110 — an index, not a ratio],
-  [Q10 option A], [Dividing upside down], [Numerator is nominal, denominator is real: 2,200 ÷ 2,000 — never the reverse],
+  columns: (1.3fr, 1fr, 2.2fr),
+  table.header([*Economic Transaction*], [*Treatment in NI*], [*Definitive NCERT / NTA Economic Reason*]),
+  [*Old-Age Pensions, Scholarships, Unemployment Doles*], [*EXCLUDED*], [These are *Transfer Payments (Unrequited Transfers)*. They represent unilateral income transfers without any corresponding productive flow of goods or services.],
+  [*Retirement Pensions of Government / Corporate Employees*], [*INCLUDED*], [A retirement pension is *deferred compensation for past labor services rendered*. It is part of Compensation of Employees (Factor Income), NOT a transfer payment!],
+  [*Imputed Rent of Owner-Occupied Houses*], [*INCLUDED*], [The owner-occupier enjoys housing services identical to a tenant. Capital generates real productive shelter services that must be accounted for.],
+  [*Services of Housewives / Unpaid Household Chores*], [*EXCLUDED*], [Excluded due to *non-availability of reliable market valuation data*. Rendered out of love and affection without commercial exchange.],
+  [*Sale of Second-Hand Goods (Old Car, Used Laptop)*], [*EXCLUDED*], [Their value was already accounted for in the GDP of the year in which they were originally produced. Counting them again is double counting.],
+  [*Brokerage / Commission on Sale of Second-Hand Goods*], [*INCLUDED*], [The broker rendered a *fresh, productive intermediary service* in the current year, generating factor income.],
+  [*Purchase of Financial Assets (Shares, Bonds, Debentures)*], [*EXCLUDED*], [These are *mere paper claims* representing ownership transfers of existing assets. No physical output is generated.],
+  [*Brokerage on Financial Securities*], [*INCLUDED*], [Commission paid to stockbrokers represents remuneration for current productive financial facilitation services.],
+  [*Production of Goods for Self-Consumption*], [*INCLUDED*], [Farmers consuming own wheat or builders living in own apartments add to physical economic output; imputed value is added.],
+  [*Illegal Incomes (Smuggling, Theft, Gambling)*], [*EXCLUDED*], [No legal production account; excluded on practical grounds and absence of official transaction records.],
+  [*Windfall Gains (Lottery Prizes, Horse Racing)*], [*EXCLUDED*], [Zero productive activity involved; pure transfers of existing purchasing power.],
 )
 
-#block(width: 100%, inset: (top: 4pt), above: 4pt)[
-  #align(center, text(fill: om-grey, size: 8pt)[© OurMocks · www.ourmocks.com · CUET UG Economics · Introduction and National Income Accounting · 2027 cycle])
+---
+
+= 6. Real vs. Nominal GDP, The GDP Deflator & Welfare Limitations
+
+== 6.1 Nominal GDP vs. Real GDP
+1. *Nominal GDP (GDP at Current Prices):*
+   The market value of final output produced in a year, evaluated using the *prices of that current year*:
+   $ "Nominal GDP"_t = sum (P_t times Q_t) $
+   Nominal GDP can increase purely because of price inflation ($P_t$ rises), even if the physical volume of output ($Q_t$) has actually contracted!
+2. *Real GDP (GDP at Constant / Base Year Prices):*
+   The market value of final output produced in a year, evaluated using the *fixed prices of a selected base year ($P_0$)*:
+   $ "Real GDP"_t = sum (P_0 times Q_t) $
+   Real GDP eliminates the distortionary impact of inflation. It rises *only and strictly when the physical quantity of goods and services expands*! It is the true indicator of real economic growth.
+
+== 6.2 The GDP Deflator (Implicit Price Deflator)
+The GDP Deflator measures the average price level of all final goods and services produced domestically within an economy relative to the base year:
+
+#formula-box(title: "The GDP Deflator Formulation")[
+  $ "GDP Deflator" = frac("Nominal GDP", "Real GDP") times 100 $
+  
+  $ "Real GDP" = frac("Nominal GDP", "GDP Deflator") times 100 $
 ]
+
+== 6.3 GDP and Economic Welfare: Why GDP is an Incomplete Yardstick
+While GDP is universally employed as an indicator of economic growth, it cannot be treated as a reliable index of overall *human well-being and social welfare* due to four major limitations:
+1. *Distribution of GDP (Inequality):*
+   - If GDP rises, but the entire incremental wealth is concentrated in the hands of the top 1% while the bottom 50% face declining real wages, mass social welfare deteriorates despite rising GDP figures.
+2. *Non-Monetary Exchanges (Demonetized Economy):*
+   - In developing nations like India, a significant portion of economic activity occurs outside the formal monetized banking system (barter exchanges in rural villages, kitchen gardening, unpaid domestic labor by homemakers).
+   - Because these non-monetized activities lack market prices, they are excluded from GDP, causing national accounts to *underestimate true economic output and welfare*.
+3. *Externalities (Positive and Negative):*
+   - *Externalities* are benefits or costs inflicted by economic agents on third parties for which no payment or compensation is made:
+     - *Negative Externalities:* An oil refinery produces fuel (raising GDP) but dumps chemical effluent into rivers and spews smoke into the air, causing respiratory illnesses. GDP registers the oil output, but *fails to subtract the environmental damage and healthcare costs*! Thus, GDP *overstates* true social welfare!
+     - *Positive Externalities:* A software firm builds a metro station or public botanical garden outside its campus. Society gains, but this welfare enhancement is omitted from GDP calculations.
+4. *Composition of Output:*
+   - If GDP growth is driven by the production of military weapons, defense warships, or intoxicating substances (alcohol, tobacco), statistical GDP increases, but the direct daily well-being of citizens does not improve compared to an equal rise in food, schools, or hospitals.
+5. *Green GDP:*
+   - *Green GDP* adjusts traditional GDP by explicitly deducting the monetary cost of natural resource depletion and environmental degradation:
+     $ "Green GDP" = "GDP" - "Net Depletion of Natural Capital" - "Environmental Pollution Damage" $
+
+#figure(
+  image("assets/econ_ni_macroeconomics_mindmap.png", width: 95%),
+  caption: [Figure 3: National Income Accounting Master Synthesis: Core Foundations, The 3 Pillars, Measurement Framework, and Welfare Indicators],
+)
+
+---
+
+= 7. Master Formula Cheatsheet & Diagnostic Traps
+
+#cheatsheet-box(title: "Master Formula Cheatsheet — National Income Accounting")[
+  *The 3 Core Conversion Identities:*
+  - Net = Gross - Depreciation (Consumption of Fixed Capital).
+  - National = Domestic + NFIA (where $"NFIA" = "FIFA" - "FITA"$).
+  - Factor Cost = Market Price - NIT (where $"NIT" = "Indirect Taxes" - "Subsidies"$).
+
+  *The 8 Macro Aggregates:*
+  - Domestic Income: $N D P_(F C)$.
+  - National Income: $N N P_(F C) = N D P_(F C) + "NFIA"$.
+  - GDP at Factor Cost: $G D P_(F C) = G D P_(M P) - "NIT"$.
+
+  *Value Added Method:*
+  - $V O = "Sales" + Delta "Stock"$ (where $"Sales" = "Domestic" + "Exports"$, $Delta "Stock" = "Closing" - "Opening"$).
+  - $G V A_(M P) = V O - I C$ (where $I C = "Domestic Purchases" + "Imports"$).
+  - $sum G V A_(M P) = G D P_(M P)$.
+
+  *Income Method:*
+  - $N D P_(F C) = C O E + O S + "Mixed Income"$.
+  - $C O E = "Wages in Cash" + "Kind" + "Employer's Social Contribution"$.
+  - $O S = "Rent" + "Royalty" + "Interest" + "Profit"$.
+  - $"Profit" = "Corporate Tax" + "Dividend" + "Undistributed Profit"$.
+
+  *Expenditure Method:*
+  - $G D P_(M P) = C + G + I + (X - M)$.
+  - $I = "GDCF" = "Gross Fixed Capital Formation" + Delta "Stock"$.
+  - $"GDP Deflator" = ("Nominal GDP" / "Real GDP") times 100$.
+]
+
+#exception-box(title: "The Seven Fatal CUET Exam Traps in National Income")[
+  1. *Domestic Income vs. National Income:* Confusing $G D P_(M P)$ with National Income. *Domestic Income is strictly $N D P_(F C)$*, and *National Income is strictly $N N P_(F C)$*. Never use a Gross or Market Price aggregate as final National Income!
+  2. *GDCF vs. GFCF Inventory Addition Trap:* If the exam question provides *Gross Domestic Fixed Capital Formation (GFCF)*, you MUST add Change in Stock to get total investment. BUT if the question directly provides *Gross Domestic Capital Formation (GDCF)*, Change in Stock is ALREADY included—adding it again is an instant error!
+  3. *Employee vs. Employer Social Security Contribution:* Only *Employer's contribution* to social security is added to Compensation of Employees. *Employee's contribution* is paid out of their own wages in cash; adding it double counts!
+  4. *Negative NFIA Inversion:* If Factor Income to Abroad exceeds Factor Income from Abroad, $N F I A$ is *negative* ($N F I A < 0$). In this case, Domestic Income will be *greater* than National Income ($N D P_(F C) > N N P_(F C)$)!
+  5. *Negative NIT Trap:* If subsidies exceed indirect taxes, Net Indirect Taxes is *negative* ($N I T < 0$). Then $F C = M P - (-N I T) = M P + |N I T|$, making Factor Cost *greater* than Market Price!
+  6. *Old-Age Pension vs. Retirement Pension:* An *Old-Age Pension* is an unrequited transfer payment (EXCLUDED). A *Retirement Pension* is deferred compensation for past employment (INCLUDED in $C O E$).
+  7. *Exports and Imports Double Addition:* If a question provides "Sales", do NOT add exports (exports are part of sales). If a question provides "Domestic Sales", you MUST add exports! Same rule applies to Intermediate Consumption vs. Domestic Purchases of Raw Materials.
+]
+
+---
+
+#pagebreak()
+#set text(size: 8.5pt)
+#set par(leading: 0.40em, spacing: 0.42em)
+
+= Practice Questions — Part 1 (Q1 to Q5)
+
+#mcq(1, [Which of the following is classified as a FLOW variable in macroeconomic analysis?], (
+  [(A) Capital stock of a country],
+  [(B) Quantity of money in circulation],
+  [(C) National Income generated during a fiscal year],
+  [(D) Foreign exchange reserves on 31st March],
+))
+#solution(1, [A flow variable is measured over a specified period of time (e.g., per month, per year), whereas a stock variable is measured at a specific point in time. National Income is generated continuously over an accounting year, making it a flow variable. In contrast, Capital stock, Money supply, and Foreign exchange reserves are static stores measured at a specific calendar date, making them stock variables.], answer: "C")
+
+#mcq(2, [A car purchased by a taxi operator is classified in national income accounting as a:], (
+  [(A) Single-use intermediate good],
+  [(B) Final capital good],
+  [(C) Final consumer durable good],
+  [(D) Non-durable producer good],
+))
+#solution(2, [The classification of a good depends strictly on its end-use. A taxi operator purchases a car not for personal domestic consumption, but as a fixed production asset used repeatedly over many years to generate transport services. It does not get merged or used up in a single production run. Therefore, it is a Final Capital Good (Gross Fixed Capital Formation).], answer: "B")
+
+#mcq(3, [Consumption of Fixed Capital (CFC) is another standard economic term for:], (
+  [(A) Net Indirect Taxes],
+  [(B) Capital Loss due to natural earthquakes],
+  [(C) Depreciation of fixed capital assets],
+  [(D) Intermediate consumption of raw materials],
+))
+#solution(3, [Consumption of Fixed Capital (CFC) is the official national accounting term for Depreciation. It represents the loss in value of fixed assets arising from normal wear and tear, passage of time, and expected obsolescence. Unforeseen destruction (earthquakes, war) is classified separately as Capital Loss, not CFC.], answer: "C")
+
+#mcq(4, [The fundamental relationship between Domestic Income and National Income is given by:], (
+  [(A) National Income = Domestic Income + Depreciation],
+  [(B) National Income = Domestic Income + Net Factor Income from Abroad (NFIA)],
+  [(C) National Income = Domestic Income - Net Indirect Taxes (NIT)],
+  [(D) National Income = Domestic Income + Intermediate Consumption],
+))
+#solution(4, [Domestic income ($N D P_(F C)$) measures factor earnings generated strictly within the domestic economic territory. National income ($N N P_(F C)$) measures factor earnings of all normal residents worldwide. To convert Domestic Income into National Income, one must add Net Factor Income from Abroad: $N N P_(F C) = N D P_(F C) + N F I A$.], answer: "B")
+
+#mcq(5, [If Factor Income received from abroad is ₹80 crore and Factor Income paid to abroad is ₹110 crore, then Net Factor Income from Abroad (NFIA) is:], (
+  [(A) ₹190 crore],
+  [(B) ₹30 crore],
+  [(C) -₹30 crore],
+  [(D) ₹80 crore],
+))
+#solution(5, [By definition, $N F I A = "Factor Income from Abroad (FIFA)" - "Factor Income to Abroad (FITA)"$. Given $F I F A = 80$ and $F I T A = 110$: $N F I A = 80 - 110 = -₹30$ crore. A negative NFIA indicates that factor payments to non-residents exceed factor receipts from abroad, making National Income smaller than Domestic Income.], answer: "C")
+
+---
+
+#pagebreak()
+#set text(size: 8.5pt)
+#set par(leading: 0.40em, spacing: 0.42em)
+
+= Practice Questions — Part 2 (Q6 to Q10)
+
+#mcq(6, [Given: $G D P_(M P) = ₹5,000$ crore, Depreciation $= ₹400$ crore, Indirect Taxes $= ₹600$ crore, Subsidies $= ₹100$ crore. The value of Net Domestic Product at Factor Cost ($N D P_(F C)$) is:], (
+  [(A) ₹4,100 crore],
+  [(B) ₹4,500 crore],
+  [(C) ₹3,900 crore],
+  [(D) ₹4,700 crore],
+))
+#solution(6, [To find Domestic Income ($N D P_(F C)$) from $G D P_(M P)$, apply the two conversion pillars: 1. Net = Gross - Depreciation: $N D P_(M P) = 5000 - 400 = ₹4,600$ crore. 2. Factor Cost = Market Price - Net Indirect Taxes ($N I T$). $N I T = "Indirect Taxes" - "Subsidies" = 600 - 100 = ₹500$ crore. Therefore, $N D P_(F C) = 4600 - 500 = ₹4,100$ crore.], answer: "A")
+
+#mcq(7, [A firm sells 200 units of a commodity at ₹10 per unit. Its opening stock was ₹300 and its closing stock is ₹500. If intermediate consumption is ₹800, the Gross Value Added at Market Price ($G V A_(M P)$) is:], (
+  [(A) ₹1,400],
+  [(B) ₹1,200],
+  [(C) ₹1,000],
+  [(D) ₹2,000],
+))
+#solution(7, [Step 1: Total Sales $= 200 times 10 = ₹2,000$. Step 2: Change in Stock $= "Closing Stock" - "Opening Stock" = 500 - 300 = ₹200$. Step 3: Value of Output $= "Sales" + Delta "Stock" = 2000 + 200 = ₹2,200$. Step 4: $G V A_(M P) = "Value of Output" - "Intermediate Consumption" = 2200 - 800 = ₹1,400$.], answer: "A")
+
+#mcq(8, [Which of the following items is strictly EXCLUDED while estimating National Income by the Income Method?], (
+  [(A) Employer's contribution to employee provident fund],
+  [(B) Imputed rent of self-occupied residential building],
+  [(C) Unemployment allowances received from the government],
+  [(D) Dividend payments received by equity shareholders],
+))
+#solution(8, [Unemployment allowances are unrequited transfer payments funded by the state. The recipient provides zero productive goods or services in exchange. Therefore, transfer payments are strictly excluded from national income. By contrast, employer's PF contribution is factor compensation, imputed rent is factor income from capital, and dividends are part of operating surplus (profit).], answer: "C")
+
+#mcq(9, [The problem of "Double Counting" in national income accounting arises when:], (
+  [(A) Imports are added to domestic production],
+  [(B) The value of intermediate goods is counted in addition to the value of final goods],
+  [(C) Depreciation is subtracted twice from Gross Domestic Product],
+  [(D) Both factor payments and transfer payments are taxed],
+))
+#solution(9, [Double counting occurs when the value of a commodity is included more than once as it progresses through different processing stages (e.g., adding the value of raw cotton, then cotton yarn, then cloth, and then final garments). This artificially exaggerates true national output. It is solved either by counting only final output or by summing value added at each stage.], answer: "B")
+
+#mcq(10, [Operating Surplus in the Income Method is composed of:], (
+  [(A) Wages and salaries in cash and kind],
+  [(B) Rent, Royalty, Interest, and Profits],
+  [(C) Net Indirect Taxes and Subsidies],
+  [(D) Mixed income of self-employed professionals],
+))
+#solution(10, [Operating Surplus is defined as the total income earned from property and entrepreneurship. It consists of four distinct factor payments: Rent (for land), Royalty (for sub-soil/copyright assets), Interest (for loanable production funds), and Profit (dividends, corporate tax, undistributed profits).], answer: "B")
+
+---
+
+#pagebreak()
+#set text(size: 8.5pt)
+#set par(leading: 0.40em, spacing: 0.42em)
+
+= Practice Questions — Part 3 (Q11 to Q15)
+
+#mcq(11, [In an economy: Private Final Consumption Expenditure $= ₹1,200$, Government Final Consumption Expenditure $= ₹400$, Gross Domestic Fixed Capital Formation $= ₹300$, Change in Stock $= ₹50$, Exports $= ₹100$, Imports $= ₹150$. Gross Domestic Product at Market Price ($G D P_(M P)$) is:], (
+  [(A) ₹1,900],
+  [(B) ₹1,950],
+  [(C) ₹1,850],
+  [(D) ₹2,050],
+))
+#solution(11, [Using the Expenditure Method: $G D P_(M P) = C + G + I + (X - M)$. 1. $C = 1200$, $G = 400$. 2. Gross Investment ($I$ / GDCF) $= "Gross Fixed Capital Formation" + Delta "Stock" = 300 + 50 = ₹350$. 3. Net Exports $= X - M = 100 - 150 = -₹50$. Summing components: $G D P_(M P) = 1200 + 400 + 350 + (-50) = ₹1,900$.], answer: "A")
+
+#mcq(12, [If Nominal GDP of an economy is ₹8,400 crore and the GDP Deflator is 140, the Real GDP is:], (
+  [(A) ₹11,760 crore],
+  [(B) ₹6,000 crore],
+  [(C) ₹7,000 crore],
+  [(D) ₹5,800 crore],
+))
+#solution(12, [By the GDP Deflator formula: $"GDP Deflator" = ("Nominal GDP" / "Real GDP") times 100$. Rearranging to solve for Real GDP: $"Real GDP" = ("Nominal GDP" / "GDP Deflator") times 100 = (8400 / 140) times 100 = 60 times 100 = ₹6,000$ crore. Real output was ₹6,000 crore; the remaining ₹2,400 crore in nominal value was purely due to price inflation.], answer: "B")
+
+#mcq(13, [Which of the following transactions will be INCLUDED in the estimation of National Income?], (
+  [(A) Money received by a son from his father as a pocket allowance],
+  [(B) Brokerage paid to an agent on the sale of a second-hand house],
+  [(C) Financial purchase of equity shares of Reliance Industries],
+  [(D) Profit earned by an underground smuggling syndicate],
+))
+#solution(13, [Brokerage paid on second-hand goods represents payment for a fresh, productive intermediary service rendered by the broker in the current accounting year. Therefore, it generates factor income and is included. Pocket money is a transfer payment (A), share purchases are financial transfers (C), and smuggling is illegal income without records (D).], answer: "B")
+
+#mcq(14, [Why is GDP an imperfect index of economic welfare when negative externalities exist?], (
+  [(A) Because negative externalities reduce the market prices of consumer goods],
+  [(B) Because GDP includes the value of output but fails to deduct the environmental pollution and health damage created],
+  [(C) Because negative externalities convert flow variables into stock variables],
+  [(D) Because negative externalities inflate the GDP Deflator],
+))
+#solution(14, [Negative externalities (such as industrial toxic waste in rivers, air smog, and noise pollution) impose uncompensated health and environmental costs on citizens. Traditional GDP accounts for the monetary value of industrial goods produced, but does not deduct the welfare damage caused by pollution. As a result, GDP overstates genuine social welfare.], answer: "B")
+
+#mcq(15, [If all producing firms in an economy are owned by foreign multi-nationals, but all workers are resident citizens, an increase in factory production will:], (
+  [(A) Increase Domestic Income more than National Income],
+  [(B) Increase National Income more than Domestic Income],
+  [(C) Cause Domestic Income to equal National Income],
+  [(D) Cause National Income to turn negative],
+))
+#solution(15, [Production within the geographical borders directly generates Gross Domestic Product and Domestic Income ($N D P_(F C)$). However, because profits of foreign multinationals are repatriated abroad (Factor Income to Abroad, $F I T A$), they are subtracted when calculating National Income ($N N P_(F C) = N D P_(F C) - F I T A$). Consequently, Domestic Income expands substantially, but National Income increases only by the domestic wages retained by local workers. Hence, Domestic Income rises more than National Income.], answer: "A")

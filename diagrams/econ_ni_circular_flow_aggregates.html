@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Circular Flow of Income & National Income Aggregates Conversion Bridge</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px 28px;
+    overflow: hidden;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 12px;
+    margin-bottom: 16px;
+  }
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .brand-badge {
+    background: #071A4D;
+    color: #B8FF34;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .title-group h1 {
+    font-size: 22px;
+    font-weight: 800;
+    color: #071A4D;
+    letter-spacing: -0.02em;
+  }
+  .title-group p {
+    font-size: 12px;
+    color: #64748B;
+    margin-top: 2px;
+  }
+  .header-meta {
+    display: flex;
+    gap: 8px;
+  }
+  .pill {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 999px;
+    border: 1px solid #CBD5E1;
+    background: #FFFFFF;
+    color: #334155;
+  }
+  .pill.highlight {
+    background: #EFF6FF;
+    border-color: #93C5FD;
+    color: #1D4ED8;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-bottom: 16px;
+  }
+  .card {
+    background: #FFFFFF;
+    border: 1.5px solid #E2E8F0;
+    border-radius: 10px;
+    padding: 16px 20px;
+    display: flex;
+    flex-direction: column;
+    height: 570px;
+  }
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  .card-title {
+    font-size: 15px;
+    font-weight: 800;
+    color: #0F172A;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .badge {
+    font-size: 10px;
+    font-weight: 800;
+    padding: 2px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+  .badge-blue { background: #DBEAFE; color: #1E40AF; }
+  .badge-purple { background: #F3E8FF; color: #6B21A8; }
+
+  .svg-wrap {
+    flex: 1;
+    position: relative;
+    width: 100%;
+    border-radius: 8px;
+    background: #FAFAFC;
+    border: 1px solid #F1F5F9;
+  }
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .bottom-bar {
+    display: grid;
+    grid-template-columns: 1.3fr 1.5fr 1.2fr;
+    gap: 16px;
+    background: #FFFFFF;
+    border: 1.5px solid #E2E8F0;
+    border-radius: 10px;
+    padding: 12px 18px;
+    height: 195px;
+  }
+  .summary-col h3 {
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #071A4D;
+    margin-bottom: 6px;
+  }
+  .rule-list {
+    list-style: none;
+    font-size: 11px;
+    line-height: 1.45;
+    color: #334155;
+  }
+  .rule-list li {
+    margin-bottom: 4px;
+    position: relative;
+    padding-left: 14px;
+  }
+  .rule-list li::before {
+    content: "•";
+    position: absolute;
+    left: 2px;
+    color: #2563EB;
+    font-weight: 900;
+  }
+  .trap-box {
+    background: #FFF1F2;
+    border: 1px solid #FECDD3;
+    border-radius: 8px;
+    padding: 8px 12px;
+  }
+  .trap-box h4 {
+    color: #BE123C;
+    font-size: 11.5px;
+    font-weight: 800;
+    margin-bottom: 4px;
+  }
+  .trap-box p {
+    font-size: 10.5px;
+    color: #881337;
+    line-height: 1.35;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <div class="brand-badge">OurMocks Core Engine</div>
+    <div class="title-group">
+      <h1>Circular Flow of Income &amp; Aggregates Conversion Bridge</h1>
+      <p>Real Flow vs Money Flow in Two-Sector Economy, The 3 Macro Conversion Pillars, and the 8 National Income Aggregates</p>
+    </div>
+  </div>
+  <div class="header-meta">
+    <span class="pill highlight">Macroeconomics Core</span>
+    <span class="pill">Real &amp; Money Flows</span>
+    <span class="pill">3 Conversion Rules</span>
+  </div>
+</div>
+
+<div class="grid">
+  <!-- Left Card: Circular Flow of Income -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">
+        <span>Circular Flow of Income (Two-Sector Economy)</span>
+      </div>
+      <span class="badge badge-blue">Flow Mechanics</span>
+    </div>
+    <div class="svg-wrap">
+      <svg viewBox="0 0 620 480" xmlns="http://www.w3.org/2000/svg">
+        <!-- Sector Boxes -->
+        <!-- Households Box -->
+        <rect x="50" y="180" width="160" height="120" rx="10" fill="#EFF6FF" stroke="#2563EB" stroke-width="2.5" />
+        <text x="130" y="215" font-size="15" font-weight="800" fill="#1E40AF" text-anchor="middle">HOUSEHOLDS</text>
+        <text x="130" y="235" font-size="10.5" font-weight="700" fill="#3B82F6" text-anchor="middle">• Owners of Factors</text>
+        <text x="130" y="250" font-size="10.5" fill="#1E40AF" text-anchor="middle">• Consumers of Output</text>
+        <text x="130" y="265" font-size="10" fill="#64748B" text-anchor="middle">Factor Income Recipients</text>
+
+        <!-- Firms Box -->
+        <rect x="410" y="180" width="160" height="120" rx="10" fill="#ECFDF5" stroke="#059669" stroke-width="2.5" />
+        <text x="490" y="215" font-size="15" font-weight="800" fill="#065F46" text-anchor="middle">FIRMS (PRODUCERS)</text>
+        <text x="490" y="235" font-size="10.5" font-weight="700" fill="#047857" text-anchor="middle">• Hirers of Factors</text>
+        <text x="490" y="250" font-size="10.5" fill="#065F46" text-anchor="middle">• Producers of Goods</text>
+        <text x="490" y="265" font-size="10" fill="#64748B" text-anchor="middle">Value Added Generators</text>
+
+        <!-- Top Arcs (Factor Services & Factor Payments) -->
+        <!-- Outer Top: Real Flow (Factor Services: Land, Labour, Capital, Enterprise) -->
+        <path d="M 130 180 C 130 90, 490 90, 490 180" fill="none" stroke="#2563EB" stroke-width="2.5" stroke-dasharray="6 3" marker-end="url(#arrow-blue)" />
+        <rect x="230" y="85" width="160" height="28" rx="4" fill="#FFFFFF" stroke="#93C5FD" />
+        <text x="310" y="103" font-size="11" font-weight="800" fill="#1D4ED8" text-anchor="middle">Real Flow: Factor Services</text>
+        <text x="310" y="125" font-size="9" fill="#64748B" text-anchor="middle">(Land, Labour, Capital, Enterprise)</text>
+
+        <!-- Inner Top: Money Flow (Factor Payments: Rent, Wages, Interest, Profit) -->
+        <path d="M 470 180 C 470 120, 150 120, 150 180" fill="none" stroke="#D97706" stroke-width="3" marker-end="url(#arrow-amber)" />
+        <rect x="230" y="135" width="160" height="26" rx="4" fill="#FFFFFF" stroke="#FDE68A" />
+        <text x="310" y="152" font-size="11" font-weight="800" fill="#92400E" text-anchor="middle">Money Flow: Factor Payments</text>
+        <text x="310" y="172" font-size="9" fill="#92400E" text-anchor="middle">(Rent, Wages, Interest, Profit)</text>
+
+        <!-- Bottom Arcs (Goods/Services & Consumption Expenditure) -->
+        <!-- Inner Bottom: Real Flow (Goods & Services from Firms to Households) -->
+        <path d="M 470 300 C 470 360, 150 360, 150 300" fill="none" stroke="#059669" stroke-width="2.5" stroke-dasharray="6 3" marker-end="url(#arrow-green)" />
+        <rect x="220" y="325" width="180" height="26" rx="4" fill="#FFFFFF" stroke="#A7F3D0" />
+        <text x="310" y="342" font-size="11" font-weight="800" fill="#065F46" text-anchor="middle">Real Flow: Goods &amp; Services</text>
+
+        <!-- Outer Bottom: Money Flow (Consumption Expenditure on Output) -->
+        <path d="M 130 300 C 130 395, 490 395, 490 300" fill="none" stroke="#7C3AED" stroke-width="3" marker-end="url(#arrow-purple)" />
+        <rect x="210" y="380" width="200" height="28" rx="4" fill="#FFFFFF" stroke="#DDD6FE" />
+        <text x="310" y="398" font-size="11" font-weight="800" fill="#6B21A8" text-anchor="middle">Money Flow: Consumption Outlay</text>
+
+        <!-- Center Identity Box -->
+        <rect x="200" y="210" width="220" height="60" rx="6" fill="#F8FAFC" stroke="#CBD5E1" />
+        <text x="310" y="232" font-size="11.5" font-weight="800" fill="#071A4D" text-anchor="middle">Triple Identity of Macroeconomics:</text>
+        <text x="310" y="252" font-size="11" font-weight="800" fill="#2563EB" text-anchor="middle">Production ≡ Income ≡ Expenditure</text>
+
+        <!-- Marker Definitions -->
+        <defs>
+          <marker id="arrow-blue" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#2563EB"/>
+          </marker>
+          <marker id="arrow-amber" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#D97706"/>
+          </marker>
+          <marker id="arrow-green" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#059669"/>
+          </marker>
+          <marker id="arrow-purple" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#7C3AED"/>
+          </marker>
+        </defs>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Right Card: The 3 Conversion Pillars & 8 Aggregates -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">
+        <span>The 3 Conversion Pillars &amp; 8 Aggregates Bridge</span>
+      </div>
+      <span class="badge badge-purple">Aggregates Bridge</span>
+    </div>
+    <div class="svg-wrap">
+      <svg viewBox="0 0 620 480" xmlns="http://www.w3.org/2000/svg">
+        <!-- 3 Golden Rules Bar across Top -->
+        <!-- Pillar 1: Gross <-> Net -->
+        <rect x="20" y="25" width="180" height="65" rx="6" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.5" />
+        <text x="110" y="45" font-size="11" font-weight="800" fill="#1E40AF" text-anchor="middle">PILLAR 1: GROSS ↔ NET</text>
+        <text x="110" y="62" font-size="10" font-weight="700" fill="#2563EB" text-anchor="middle">Gross - Dep = Net</text>
+        <text x="110" y="78" font-size="9" fill="#64748B" text-anchor="middle">(Dep = Consumption of Fixed Capital)</text>
+
+        <!-- Pillar 2: Domestic <-> National -->
+        <rect x="220" y="25" width="180" height="65" rx="6" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1.5" />
+        <text x="310" y="45" font-size="11" font-weight="800" fill="#065F46" text-anchor="middle">PILLAR 2: DOMESTIC ↔ NAT.</text>
+        <text x="310" y="62" font-size="10" font-weight="700" fill="#059669" text-anchor="middle">Domestic + NFIA = National</text>
+        <text x="310" y="78" font-size="9" fill="#64748B" text-anchor="middle">(NFIA = Factor Inc. from Abroad - To)</text>
+
+        <!-- Pillar 3: Market Price <-> Factor Cost -->
+        <rect x="420" y="25" width="180" height="65" rx="6" fill="#FFFBEB" stroke="#FDE68A" stroke-width="1.5" />
+        <text x="510" y="45" font-size="11" font-weight="800" fill="#92400E" text-anchor="middle">PILLAR 3: MP ↔ FC</text>
+        <text x="510" y="62" font-size="10" font-weight="700" fill="#D97706" text-anchor="middle">MP - NIT = Factor Cost</text>
+        <text x="510" y="78" font-size="9" fill="#64748B" text-anchor="middle">(NIT = Indirect Taxes - Subsidies)</text>
+
+        <!-- The 8 Aggregates Matrix Grid -->
+        <rect x="40" y="115" width="260" height="340" rx="8" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.5" />
+        <text x="170" y="140" font-size="13" font-weight="800" fill="#071A4D" text-anchor="middle">DOMESTIC AGGREGATES</text>
+        <text x="170" y="155" font-size="9.5" fill="#64748B" text-anchor="middle">(Production within Domestic Territory)</text>
+
+        <!-- Domestic Aggregates Items -->
+        <rect x="55" y="170" width="230" height="55" rx="6" fill="#FFFFFF" stroke="#E2E8F0" />
+        <text x="70" y="195" font-size="12" font-weight="800" fill="#2563EB">GDP_MP &amp; GDP_FC</text>
+        <text x="70" y="212" font-size="9.5" fill="#475569">GDP_FC = GDP_MP - Net Indirect Taxes (NIT)</text>
+
+        <rect x="55" y="240" width="230" height="55" rx="6" fill="#FFFFFF" stroke="#E2E8F0" />
+        <text x="70" y="265" font-size="12" font-weight="800" fill="#2563EB">NDP_MP &amp; NDP_FC</text>
+        <text x="70" y="282" font-size="9.5" font-weight="700" fill="#071A4D">NDP_FC ≡ DOMESTIC INCOME (DI)!</text>
+
+        <text x="170" y="325" font-size="10.5" font-weight="800" fill="#DC2626" text-anchor="middle">Key Rule: NDP_FC = Domestic Income</text>
+        <text x="170" y="342" font-size="9.5" fill="#475569" text-anchor="middle">Net value generated by factors in territory</text>
+
+        <!-- National Aggregates Box -->
+        <rect x="320" y="115" width="260" height="340" rx="8" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.5" />
+        <text x="450" y="140" font-size="13" font-weight="800" fill="#071A4D" text-anchor="middle">NATIONAL AGGREGATES</text>
+        <text x="450" y="155" font-size="9.5" fill="#64748B" text-anchor="middle">(Income earned by Normal Residents)</text>
+
+        <!-- National Aggregates Items -->
+        <rect x="335" y="170" width="230" height="55" rx="6" fill="#FFFFFF" stroke="#E2E8F0" />
+        <text x="350" y="195" font-size="12" font-weight="800" fill="#059669">GNP_MP &amp; GNP_FC</text>
+        <text x="350" y="212" font-size="9.5" fill="#475569">GNP = GDP + NFIA</text>
+
+        <rect x="335" y="240" width="230" height="55" rx="6" fill="#FFFFFF" stroke="#E2E8F0" />
+        <text x="350" y="265" font-size="12" font-weight="800" fill="#059669">NNP_MP &amp; NNP_FC</text>
+        <text x="350" y="282" font-size="9.5" font-weight="700" fill="#065F46">NNP_FC ≡ NATIONAL INCOME (NI)!</text>
+
+        <text x="450" y="325" font-size="10.5" font-weight="800" fill="#059669" text-anchor="middle">Key Rule: NNP_FC = National Income</text>
+        <text x="450" y="342" font-size="9.5" fill="#475569" text-anchor="middle">NNP_FC = NDP_FC + NFIA</text>
+
+        <!-- Connecting Arrows between Domestic and National -->
+        <line x1="285" y1="267" x2="335" y2="267" stroke="#7C3AED" stroke-width="3" marker-end="url(#arrow-purple)" />
+        <rect x="288" y="252" width="44" height="15" rx="3" fill="#FAF5FF" stroke="#C084FC" />
+        <text x="310" y="263" font-size="8.5" font-weight="800" fill="#7C3AED" text-anchor="middle">+NFIA</text>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<!-- Bottom Summary Bar -->
+<div class="bottom-bar">
+  <div class="summary-col">
+    <h3>The Circular Flow Theorems</h3>
+    <ul class="rule-list">
+      <li><b>Real Flow vs. Money Flow:</b> Real flow is physical exchange of factor services and goods. Money flow is counter-balancing monetary payments (wages, rent, prices).</li>
+      <li><b>Leakages &amp; Injections:</b> Leakages (Savings $S$, Taxes $T$, Imports $M$) pull money out. Injections (Investment $I$, Govt $G$, Exports $X$) inject money in. In equilibrium: $S + T + M = I + G + X$.</li>
+    </ul>
+  </div>
+
+  <div class="summary-col">
+    <h3>The 3 Golden Transformation Formulas</h3>
+    <ul class="rule-list">
+      <li><b>Gross to Net:</b> $\text{Net} = \text{Gross} - \text{Depreciation (Consumption of Fixed Capital)}$.</li>
+      <li><b>Domestic to National:</b> $\text{National} = \text{Domestic} + \text{NFIA}$ (Where $\text{NFIA} = \text{Factor Income from Abroad} - \text{To Abroad}$).</li>
+      <li><b>Market Price to Factor Cost:</b> $\text{Factor Cost (FC)} = \text{Market Price (MP)} - \text{Net Indirect Taxes (NIT)}$ (Where $\text{NIT} = \text{GST/Taxes} - \text{Subsidies}$).</li>
+    </ul>
+  </div>
+
+  <div class="trap-box">
+    <h4>CUET Trap: True National Income</h4>
+    <p><b>Fatal Trap:</b> Believing GDP is National Income. <b>Reality:</b> $G D P_{M P}$ is Gross Domestic Product at Market Price. True *Domestic Income* is strictly $N D P_{F C}$, and true *National Income* is strictly $N N P_{F C}$!</p>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CUET UG Economics: National Income Accounting Master Mindmap</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px 28px;
+    overflow: hidden;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 12px;
+    margin-bottom: 18px;
+  }
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .brand-badge {
+    background: #071A4D;
+    color: #B8FF34;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .title-group h1 {
+    font-size: 22px;
+    font-weight: 800;
+    color: #071A4D;
+    letter-spacing: -0.02em;
+  }
+  .title-group p {
+    font-size: 12px;
+    color: #64748B;
+    margin-top: 2px;
+  }
+  .header-meta {
+    display: flex;
+    gap: 8px;
+  }
+  .pill {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 999px;
+    border: 1px solid #CBD5E1;
+    background: #FFFFFF;
+    color: #334155;
+  }
+  .pill.highlight {
+    background: #EFF6FF;
+    border-color: #93C5FD;
+    color: #1D4ED8;
+  }
+
+  .canvas-wrap {
+    position: relative;
+    width: 1384px;
+    height: 770px;
+  }
+
+  /* Center Hub */
+  .center-hub {
+    position: absolute;
+    left: 482px;
+    top: 275px;
+    width: 420px;
+    height: 190px;
+    background: #071A4D;
+    border: 2px solid #1E3A8A;
+    border-radius: 12px;
+    padding: 20px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 10;
+  }
+  .center-hub .tag {
+    background: #B8FF34;
+    color: #071A4D;
+    font-size: 10.5px;
+    font-weight: 800;
+    padding: 3px 10px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 8px;
+  }
+  .center-hub h2 {
+    color: #FFFFFF;
+    font-size: 19px;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    line-height: 1.25;
+  }
+  .center-hub p {
+    color: #94A3B8;
+    font-size: 11.5px;
+    margin-top: 6px;
+    line-height: 1.4;
+  }
+
+  /* Connecting SVG lines */
+  svg.connectors {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1384px;
+    height: 770px;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  /* Mindmap Quadrant Cards */
+  .node-card {
+    position: absolute;
+    width: 430px;
+    background: #FFFFFF;
+    border: 1.5px solid #E2E8F0;
+    border-radius: 10px;
+    padding: 16px 20px;
+    z-index: 5;
+  }
+  .card-top-left { left: 10px; top: 15px; height: 345px; }
+  .card-bottom-left { left: 10px; top: 385px; height: 370px; }
+  .card-top-right { right: 10px; top: 15px; height: 345px; }
+  .card-bottom-right { right: 10px; top: 385px; height: 370px; }
+
+  .card-header-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1.5px solid #F1F5F9;
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+  }
+  .card-title {
+    font-size: 14.5px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .card-badge {
+    font-size: 9.5px;
+    font-weight: 800;
+    padding: 2px 7px;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+  .badge-blue { background: #DBEAFE; color: #1E40AF; }
+  .badge-emerald { background: #D1FAE5; color: #065F46; }
+  .badge-amber { background: #FEF3C7; color: #92400E; }
+  .badge-purple { background: #F3E8FF; color: #6B21A8; }
+
+  .leaf-list {
+    list-style: none;
+    font-size: 11px;
+    line-height: 1.45;
+    color: #334155;
+  }
+  .leaf-list li {
+    margin-bottom: 6px;
+    padding-left: 14px;
+    position: relative;
+  }
+  .leaf-list li::before {
+    content: "■";
+    position: absolute;
+    left: 1px;
+    font-size: 8px;
+    top: 2px;
+  }
+  .card-top-left .leaf-list li::before { color: #2563EB; }
+  .card-bottom-left .leaf-list li::before { color: #059669; }
+  .card-top-right .leaf-list li::before { color: #D97706; }
+  .card-bottom-right .leaf-list li::before { color: #7C3AED; }
+
+  .leaf-list b { color: #0F172A; }
+  .leaf-list code {
+    background: #F1F5F9;
+    padding: 1px 4px;
+    border-radius: 3px;
+    font-size: 10.5px;
+    font-weight: 700;
+    color: #071A4D;
+  }
+
+  .mini-box {
+    margin-top: 6px;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 10.5px;
+    line-height: 1.35;
+  }
+  .box-blue { background: #EFF6FF; border: 1px solid #BFDBFE; color: #1E40AF; }
+  .box-green { background: #ECFDF5; border: 1px solid #A7F3D0; color: #065F46; }
+  .box-amber { background: #FFFBEB; border: 1px solid #FDE68A; color: #92400E; }
+  .box-purple { background: #FAF5FF; border: 1px solid #E9D5FF; color: #6B21A8; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <div class="brand-badge">OurMocks Core Engine</div>
+    <div class="title-group">
+      <h1>National Income Accounting: Master Synthesis Mindmap</h1>
+      <p>Macroeconomic Foundations, Circular Flow, Conversion Machinery, Measurement Methods, and Welfare Metrics</p>
+    </div>
+  </div>
+  <div class="header-meta">
+    <span class="pill highlight">Unit 5 Architecture</span>
+    <span class="pill">8 Aggregates Bridge</span>
+    <span class="pill">GDP Deflator</span>
+    <span class="pill">3 Measurement Methods</span>
+  </div>
+</div>
+
+<div class="canvas-wrap">
+  <!-- Connectors SVG -->
+  <svg class="connectors" viewBox="0 0 1384 770">
+    <path d="M 482 320 L 440 320 L 440 180" fill="none" stroke="#CBD5E1" stroke-width="2" />
+    <path d="M 482 420 L 440 420 L 440 560" fill="none" stroke="#CBD5E1" stroke-width="2" />
+    <path d="M 902 320 L 944 320 L 944 180" fill="none" stroke="#CBD5E1" stroke-width="2" />
+    <path d="M 902 420 L 944 420 L 944 560" fill="none" stroke="#CBD5E1" stroke-width="2" />
+  </svg>
+
+  <!-- Center Hub -->
+  <div class="center-hub">
+    <span class="tag">CUET UG Economics</span>
+    <h2>NATIONAL INCOME<br/>MASTER ENGINE</h2>
+    <p>Comprehensive macro aggregates, the triple equivalence identity, factor payment distributions, and welfare limits.</p>
+  </div>
+
+  <!-- Quadrant 1: Top Left - Basic Concepts -->
+  <div class="node-card card-top-left">
+    <div class="card-header-bar">
+      <div class="card-title">1. Basic Macroeconomic Concepts</div>
+      <span class="card-badge badge-blue">Foundations</span>
+    </div>
+    <ul class="leaf-list">
+      <li><b>Stock vs. Flow:</b>
+        <br/>• <i>Stock:</i> Measured at a specific point in time (Capital, Wealth, Money Supply).
+        <br/>• <i>Flow:</i> Measured over a period of time (Income, Investment, GDP, Depreciation).
+      </li>
+      <li><b>Final vs. Intermediate Goods:</b>
+        <br/>• <i>Final Goods:</i> Out of production boundary for consumption or investment.
+        <br/>• <i>Intermediate Goods:</i> Used as raw materials or resold in same year. Excluded to avoid double counting!
+      </li>
+      <li><b>Gross vs. Net Investment:</b> <code>Net Investment = Gross Investment - Depreciation</code>.</li>
+      <li><b>Normal Residents:</b> Resides in economic territory for &ge; 1 year and center of economic interest lies there.</li>
+    </ul>
+    <div class="mini-box box-blue">
+      <b>End-Use Classification:</b> A good is intermediate or final based on its <i>end-use</i>, NOT its physical nature! Sugar used by bakery is intermediate; sugar used at home is final.
+    </div>
+  </div>
+
+  <!-- Quadrant 2: Bottom Left - Circular Flow & 3 Pillars -->
+  <div class="node-card card-bottom-left">
+    <div class="card-header-bar">
+      <div class="card-title">2. Circular Flow &amp; 3 Conversion Pillars</div>
+      <span class="card-badge badge-emerald">Conversion Machinery</span>
+    </div>
+    <ul class="leaf-list">
+      <li><b>Triple Equivalence:</b> Value of Production &equiv; Total Factor Incomes Generated &equiv; Total Final Expenditure.</li>
+      <li><b>Pillar 1 (Gross ↔ Net):</b> <code>Net = Gross - Depreciation</code> (Consumption of Fixed Capital).</li>
+      <li><b>Pillar 2 (Domestic ↔ National):</b> <code>National = Domestic + NFIA</code>
+        <br/>• $\text{NFIA} = \text{Factor Income from Abroad} - \text{Factor Income to Abroad}$.
+      </li>
+      <li><b>Pillar 3 (Market Price ↔ Factor Cost):</b> <code>Factor Cost = Market Price - NIT</code>
+        <br/>• $\text{NIT} = \text{Indirect Taxes (GST)} - \text{Subsidies}$.
+      </li>
+      <li><b>Core Identities:</b>
+        <br/>• <i>Domestic Income:</i> <code>NDP_FC</code>
+        <br/>• <i>National Income:</i> <code>NNP_FC = NDP_FC + NFIA</code>
+      </li>
+    </ul>
+    <div class="mini-box box-green">
+      <b>Depreciation Trap:</b> Normal wear/tear and expected obsolescence are Depreciation; sudden natural disasters or riots are <i>Capital Losses</i>, NOT depreciation!
+    </div>
+  </div>
+
+  <!-- Quadrant 3: Top Right - 3 Measurement Methods -->
+  <div class="node-card card-top-right">
+    <div class="card-header-bar">
+      <div class="card-title">3. The Three Measurement Methods</div>
+      <span class="card-badge badge-amber">Estimation Machinery</span>
+    </div>
+    <ul class="leaf-list">
+      <li><b>Value Added Method:</b> $GVA_{MP} = \text{Value of Output} - \text{Intermediate Consumption}$. Sum across primary, secondary, tertiary sectors $= GDP_{MP}$.</li>
+      <li><b>Income Method:</b> $NDP_{FC} = \text{Compensation of Employees} + \text{Operating Surplus} + \text{Mixed Income}$.
+        <br/>• $\text{Operating Surplus} = \text{Rent} + \text{Royalty} + \text{Interest} + \text{Profit}$.
+        <br/>• $\text{Profit} = \text{Corporate Tax} + \text{Dividend} + \text{Retained Earnings}$.
+      </li>
+      <li><b>Expenditure Method:</b> $GDP_{MP} = C + G + I + (X - M)$.
+        <br/>• $I = \text{Gross Domestic Capital Formation} = \text{GFCF} + \Delta\text{Stock}$.
+      </li>
+    </ul>
+    <div class="mini-box box-amber">
+      <b>Exclusion Rule:</b> Transfer payments (pensions, scholarships), sale of second-hand goods, and financial securities are strictly EXCLUDED from all 3 methods!
+    </div>
+  </div>
+
+  <!-- Quadrant 4: Bottom Right - Real vs Nominal GDP & Welfare -->
+  <div class="node-card card-bottom-right">
+    <div class="card-header-bar">
+      <div class="card-title">4. Real vs. Nominal GDP &amp; Welfare Limits</div>
+      <span class="card-badge badge-purple">GDP Deflator &amp; Welfare</span>
+    </div>
+    <ul class="leaf-list">
+      <li><b>Nominal GDP:</b> Output valued at <i>current year market prices</i> ($Q_t \times P_t$). Can rise purely due to inflation!</li>
+      <li><b>Real GDP:</b> Output valued at <i>constant base year prices</i> ($Q_t \times P_0$). True indicator of physical output growth!</li>
+      <li><b>GDP Deflator (Price Index):</b> <code>GDP Deflator = (Nominal GDP / Real GDP) × 100</code>. Comprehensive measure of economy-wide inflation.</li>
+      <li><b>Why GDP is an Incomplete Index of Welfare:</b>
+        <br/>• <i>Distribution of GDP:</i> High GDP with rich-poor inequality does not mean mass welfare.
+        <br/>• <i>Non-Monetary Exchanges:</i> Barter, household unpaid labor (housewives) excluded.
+        <br/>• <i>Externalities:</i> Pollution, ecological degradation are negative externalities not deducted from GDP!
+      </li>
+    </ul>
+    <div class="mini-box box-purple">
+      <b>Green GDP:</b> Measures economic growth adjusted for environmental degradation and depletion of natural resource capital.
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
