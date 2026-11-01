@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Demographic & Sectoral Structural Matrix: India, China & Pakistan</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #071A4D;
+    padding: 16px 24px;
+    border-radius: 8px;
+    color: #FFFFFF;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+  .header h1 span {
+    color: #B8FF34;
+  }
+  .header-badge {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #B8FF34;
+  }
+
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    height: 640px;
+  }
+
+  /* TOP SECTION: DEMOGRAPHIC COMPARISON */
+  .section-card {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 14px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 6px;
+    border-bottom: 2px solid #F1F5F9;
+  }
+  .card-title {
+    font-size: 14.5px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .badge {
+    display: inline-block;
+    padding: 2px 7px;
+    border-radius: 4px;
+    font-size: 10.5px;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+  .badge-demo { background: #E0EAFF; color: #1F5EFF; }
+  .badge-sec { background: #DCFCE7; color: #15803D; }
+
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 11.5px;
+  }
+  .data-table th, .data-table td {
+    padding: 7px 10px;
+    text-align: left;
+    border: 1px solid #E2E8F0;
+  }
+  .data-table th {
+    background: #F1F5F9;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .row-ind { background: #FFFDF5; }
+  .row-chn { background: #FEF7F7; }
+  .row-pak { background: #F6FCF7; }
+  .bold-val { font-weight: 800; color: #071A4D; }
+
+  /* BOTTOM SECTION: SECTORAL DYNAMICS */
+  .sector-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 14px;
+    height: 290px;
+  }
+  .sector-card {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .sec-head {
+    font-size: 13px;
+    font-weight: 800;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #CBD5E1;
+  }
+  .sec-body {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 11px;
+    margin-top: 6px;
+  }
+  .stat-row {
+    display: flex;
+    justify-content: space-between;
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    padding: 4px 8px;
+    border-radius: 4px;
+  }
+  .stat-label { color: #475569; font-weight: 600; }
+  .stat-num { font-weight: 800; color: #071A4D; }
+
+  .sec-summary {
+    font-size: 11px;
+    line-height: 1.4;
+    color: #334155;
+    background: #FFFFFF;
+    padding: 6px 8px;
+    border-radius: 4px;
+    border-left: 3px solid #071A4D;
+    margin-top: 4px;
+  }
+
+  .footer-bar {
+    background: #071A4D;
+    padding: 12px 24px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12.5px;
+    color: #E2E8F0;
+  }
+  .footer-bar strong {
+    color: #B8FF34;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div>
+    <h1>Demographic & Sectoral Transformation: <span>India, China & Pakistan</span></h1>
+    <p style="font-size: 12.5px; color: #94A3B8; margin-top: 3px;">Comparative Matrix: Population Dynamics, Growth Rates, Sex Ratios, and Sectoral Contributions to GDP & Employment</p>
+  </div>
+  <div class="header-badge">CLASS 12 · INDIAN ECONOMIC DEVELOPMENT</div>
+</div>
+
+<div class="main-container">
+  <!-- TOP: DEMOGRAPHIC PROFILE TABLE -->
+  <div class="section-card">
+    <div class="card-top">
+      <div class="card-title">1. Demographic Profile Comparison (NCERT Baseline)</div>
+      <span class="badge badge-demo">Key Comparative Metrics</span>
+    </div>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Country</th>
+          <th>Estimated Population</th>
+          <th>Annual Population Growth Rate</th>
+          <th>Population Density (per sq km)</th>
+          <th>Sex Ratio (Females per 1,000 Males)</th>
+          <th>Total Fertility Rate</th>
+          <th>Urbanisation Rate (%)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="row-ind">
+          <td><strong style="color: #B45309;">India</strong></td>
+          <td class="bold-val">~1,410 Million</td>
+          <td>1.03% (Moderate)</td>
+          <td class="bold-val" style="color: #B91C1C;">435 (High Pressure)</td>
+          <td>938 (Unfavourable)</td>
+          <td>2.0 (Replacement)</td>
+          <td>35% (Gradual)</td>
+        </tr>
+        <tr class="row-chn">
+          <td><strong style="color: #B91C1C;">China</strong></td>
+          <td class="bold-val">~1,425 Million</td>
+          <td class="bold-val" style="color: #15803D;">0.46% (Arrested)</td>
+          <td class="bold-val" style="color: #15803D;">150 (Vast Area)</td>
+          <td>926 (Severe Skew)</td>
+          <td class="bold-val" style="color: #15803D;">1.28 (Low)</td>
+          <td class="bold-val" style="color: #15803D;">65% (Rapid Industrial)</td>
+        </tr>
+        <tr class="row-pak">
+          <td><strong style="color: #15803D;">Pakistan</strong></td>
+          <td>~231 Million</td>
+          <td class="bold-val" style="color: #B91C1C;">1.98% (Highest)</td>
+          <td>290 (Medium)</td>
+          <td>943 (Unfavourable)</td>
+          <td class="bold-val" style="color: #B91C1C;">3.56 (High)</td>
+          <td>37% (Moderate)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- BOTTOM: SECTORAL DYNAMICS (3 COLUMNS) -->
+  <div class="section-card" style="height: 330px; justify-content: space-between;">
+    <div class="card-top">
+      <div class="card-title">2. Sectoral Structural Trajectories (GDP Contribution vs Employment Absorption)</div>
+      <span class="badge badge-sec">Factory of the World vs Service Leapfrog</span>
+    </div>
+
+    <div class="sector-grid">
+      <!-- INDIA -->
+      <div class="sector-card">
+        <div class="sec-head" style="color: #B45309;">
+          <span>India (Service-Led Leapfrog)</span>
+          <span style="font-size: 10px; background: #FEF3C7; padding: 2px 6px; border-radius: 3px;">Tertiary Boom</span>
+        </div>
+        <div class="sec-body">
+          <div class="stat-row"><span class="stat-label">Agriculture Share:</span><span class="stat-num">16% GDP | 43% Jobs</span></div>
+          <div class="stat-row"><span class="stat-label">Industry Share:</span><span class="stat-num">28% GDP | 25% Jobs</span></div>
+          <div class="stat-row"><span class="stat-label">Services Share:</span><span class="stat-num">56% GDP | 32% Jobs</span></div>
+        </div>
+        <div class="sec-summary">
+          <strong>Key Trajectory:</strong> Bypassed manufacturing-led growth. Direct shift from agriculture into services (IT, software, finance). Severe disguised unemployment persists in agriculture.
+        </div>
+      </div>
+
+      <!-- CHINA -->
+      <div class="sector-card">
+        <div class="sec-head" style="color: #B91C1C;">
+          <span>China (Manufacturing Powerhouse)</span>
+          <span style="font-size: 10px; background: #FEE2E2; padding: 2px 6px; border-radius: 3px;">Classical Path</span>
+        </div>
+        <div class="sec-body">
+          <div class="stat-row"><span class="stat-label">Agriculture Share:</span><span class="stat-num">7% GDP | 25% Jobs</span></div>
+          <div class="stat-row"><span class="stat-label">Industry Share:</span><span class="stat-num">38% GDP | 28% Jobs</span></div>
+          <div class="stat-row"><span class="stat-label">Services Share:</span><span class="stat-num">55% GDP | 47% Jobs</span></div>
+        </div>
+        <div class="sec-summary">
+          <strong>Key Trajectory:</strong> Followed textbook historical structural transition: Agriculture → Heavy Industrial Manufacturing ("Factory of the World") → Services.
+        </div>
+      </div>
+
+      <!-- PAKISTAN -->
+      <div class="sector-card">
+        <div class="sec-head" style="color: #15803D;">
+          <span>Pakistan (Agricultural & Services)</span>
+          <span style="font-size: 10px; background: #DCFCE7; padding: 2px 6px; border-radius: 3px;">Premature Transition</span>
+        </div>
+        <div class="sec-body">
+          <div class="stat-row"><span class="stat-label">Agriculture Share:</span><span class="stat-num">24% GDP | 37% Jobs</span></div>
+          <div class="stat-row"><span class="stat-label">Industry Share:</span><span class="stat-num">19% GDP | 24% Jobs</span></div>
+          <div class="stat-row"><span class="stat-label">Services Share:</span><span class="stat-num">57% GDP | 39% Jobs</span></div>
+        </div>
+        <div class="sec-summary">
+          <strong>Key Trajectory:</strong> High agricultural GDP dependence (24%) with weak domestic manufacturing. Heavy reliance on services, informal activities, and Gulf worker remittances.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer-bar">
+  <div><strong>CUET Core Takeaway:</strong> China leads in urbanisation (65%) and industry share (38% of GDP). India leads in services growth. Pakistan records highest population growth (1.98%).</div>
+  <div style="font-size: 11.5px; color: #B8FF34;">OurMocks Exam Blueprint</div>
+</div>
+
+</body>
+</html>
