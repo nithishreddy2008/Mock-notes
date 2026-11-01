@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Employment, Labour Force & Informalisation Dynamics</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #071A4D;
+    padding: 16px 24px;
+    border-radius: 8px;
+    color: #FFFFFF;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+  .header h1 span {
+    color: #B8FF34;
+  }
+  .header-badge {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #B8FF34;
+  }
+
+  .main-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.15fr 1.15fr;
+    gap: 16px;
+    height: 640px;
+  }
+  .panel-card {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #F1F5F9;
+  }
+  .card-title {
+    font-size: 15px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .badge {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+  .badge-typ { background: #E0EAFF; color: #1F5EFF; }
+  .badge-unemp { background: #FEE2E2; color: #B91C1C; }
+  .badge-inf { background: #FEF3C7; color: #B45309; }
+
+  .sub-card {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    padding: 9px 12px;
+  }
+  .sub-title {
+    font-size: 12.5px;
+    font-weight: 800;
+    color: #071A4D;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3px;
+  }
+  .sub-desc {
+    font-size: 11.5px;
+    color: #475569;
+    line-height: 1.45;
+  }
+  .bullet-row {
+    display: flex;
+    gap: 6px;
+    align-items: flex-start;
+    font-size: 11px;
+    color: #334155;
+    margin-top: 3px;
+  }
+  .bullet-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    margin-top: 5px;
+    flex-shrink: 0;
+  }
+  .dot-blue { background: #2563EB; }
+  .dot-red { background: #EF4444; }
+  .dot-amber { background: #D97706; }
+
+  .highlight-banner {
+    background: #EFF6FF;
+    border-left: 3px solid #1F5EFF;
+    padding: 8px 10px;
+    border-radius: 4px;
+    font-size: 11px;
+    line-height: 1.4;
+    color: #1E3A8A;
+  }
+
+  .footer-bar {
+    background: #071A4D;
+    padding: 12px 24px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12.5px;
+    color: #E2E8F0;
+  }
+  .footer-bar strong {
+    color: #B8FF34;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div>
+    <h1>Employment, Labour Force <span>& Informalisation Dynamics</span></h1>
+    <p style="font-size: 12.5px; color: #94A3B8; margin-top: 3px;">Workforce Participation, Types of Workers, Unemployment Dimensions, and the Formal vs Informal Sector Divide</p>
+  </div>
+  <div class="header-badge">CLASS 12 · INDIAN ECONOMIC DEVELOPMENT</div>
+</div>
+
+<div class="main-grid">
+  <!-- COLUMN 1: WORKER TYPOLOGY -->
+  <div class="panel-card">
+    <div class="card-header">
+      <div class="card-title">1. Labour Metrics & Worker Categories</div>
+      <span class="badge badge-typ">Employment Structure</span>
+    </div>
+
+    <div class="sub-card">
+      <div class="sub-title">Worker-Population Ratio (WPR)</div>
+      <div class="sub-desc">
+        $WPR = (\text{Total Workers} / \text{Total Population}) \times 100$.<br>
+        • Rural WPR is higher than Urban WPR (necessity to work; lower schooling years).<br>
+        • Male WPR is significantly higher than Female WPR due to uncounted domestic labour.
+      </div>
+    </div>
+
+    <div class="sub-card">
+      <div class="sub-title">Three Employment Categories</div>
+      <div class="bullet-row"><div class="bullet-dot dot-blue"></div><div><strong>1. Self-Employed (~52%):</strong> Farmers, shopkeepers, own-account business owners who own and operate their enterprises.</div></div>
+      <div class="bullet-row"><div class="bullet-dot dot-blue"></div><div><strong>2. Regular Salaried (~24%):</strong> Fixed monthly salaries, written employment contracts, leave & social security.</div></div>
+      <div class="bullet-row"><div class="bullet-dot dot-blue"></div><div><strong>3. Casual Wage Labourers (~24%):</strong> Daily or piece-rate wages with zero job security, medical, or pension benefits.</div></div>
+    </div>
+
+    <div class="highlight-banner">
+      <strong>Casualisation Trend:</strong> Progressive migration of workers away from self-employment towards daily-wage casual contract labour.
+    </div>
+  </div>
+
+  <!-- COLUMN 2: UNEMPLOYMENT & JOBLESS GROWTH -->
+  <div class="panel-card">
+    <div class="card-header">
+      <div class="card-title">2. Unemployment & "Jobless Growth"</div>
+      <span class="badge badge-unemp">Structural Inefficiencies</span>
+    </div>
+
+    <div class="sub-card">
+      <div class="sub-title">Disguised Unemployment</div>
+      <div class="sub-desc">
+        Situation where more workers are engaged in an activity than actually required. The <strong>Marginal Product of Labour ($MP_L = 0$)</strong>. If surplus workers are withdrawn, total output remains completely unchanged. Heavily prevalent in Indian family farming.
+      </div>
+    </div>
+
+    <div class="sub-card">
+      <div class="sub-title">Other Forms of Unemployment</div>
+      <div class="bullet-row"><div class="bullet-dot dot-red"></div><div><strong>Seasonal:</strong> Agricultural workers idle between planting & harvesting seasons.</div></div>
+      <div class="bullet-row"><div class="bullet-dot dot-red"></div><div><strong>Open:</strong> Able and willing individuals actively seeking work at current wages but finding zero employment.</div></div>
+      <div class="bullet-row"><div class="bullet-dot dot-red"></div><div><strong>Educated:</strong> Degree holders lacking market-relevant technical skills.</div></div>
+    </div>
+
+    <div class="sub-card">
+      <div class="sub-title">The "Jobless Growth" Paradox</div>
+      <div class="sub-desc">
+        A trajectory where real GDP expands steadily via capital-intensive technology and skill-heavy tertiary sectors without generating a proportional expansion in formal factory jobs.
+      </div>
+    </div>
+  </div>
+
+  <!-- COLUMN 3: FORMAL VS INFORMAL DIVIDE -->
+  <div class="panel-card">
+    <div class="card-header">
+      <div class="card-title">3. Formal vs Informal Sector Divide</div>
+      <span class="badge badge-inf">10-Worker Legal Threshold</span>
+    </div>
+
+    <div class="sub-card">
+      <div class="sub-title">Formal / Organised Sector (&lt; 10% Workers)</div>
+      <div class="bullet-row"><div class="bullet-dot dot-blue"></div><div><strong>Criteria:</strong> All public sector enterprises + private establishments hiring <strong>10 or more hired workers</strong>.</div></div>
+      <div class="bullet-row"><div class="bullet-dot dot-blue"></div><div><strong>Protections:</strong> Guaranteed social security (Provident Fund, gratuity, pensions, maternity leave) & trade union collective bargaining rights.</div></div>
+    </div>
+
+    <div class="sub-card">
+      <div class="sub-title">Informal / Unorganised Sector (&gt; 90% Workers)</div>
+      <div class="bullet-row"><div class="bullet-dot dot-amber"></div><div><strong>Criteria:</strong> All agricultural labourers + private enterprises hiring <strong>fewer than 10 workers</strong> (small workshops, street vendors, domestic help).</div></div>
+      <div class="bullet-row"><div class="bullet-dot dot-amber"></div><div><strong>Realities:</strong> Zero social security, hire-and-fire vulnerability, low wages, hazardous working conditions.</div></div>
+    </div>
+
+    <div class="highlight-banner" style="background: #FFFBEB; border-left-color: #D97706; color: #78350F;">
+      <strong>Informalisation Phenomenon:</strong> Even within formal corporate enterprises, permanent regular jobs are increasingly outsourced to informal contract labour to evade pension and social security liabilities!
+    </div>
+  </div>
+</div>
+
+<div class="footer-bar">
+  <div><strong>CUET Legal Benchmark:</strong> Formal Sector = 10 or more hired workers (with social security) · Informal Sector = &lt; 10 workers (over 90% of Indian workforce).</div>
+  <div style="font-size: 11.5px; color: #B8FF34;">OurMocks Exam Blueprint</div>
+</div>
+
+</body>
+</html>
