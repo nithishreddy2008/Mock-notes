@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1440, height=880">
+  <title>Company Accounts: Share Capital Architecture & Issue Mechanics</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 1440px;
+      height: 880px;
+      background-color: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0F172A;
+      padding: 30px 40px;
+      overflow: hidden;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #E2E8F0;
+      padding-bottom: 12px;
+    }
+    .title-group h1 {
+      font-size: 24px;
+      font-weight: 800;
+      color: #0F2C59;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+    .title-group p {
+      font-size: 13px;
+      color: #64748B;
+      font-weight: 500;
+    }
+    .badge {
+      background: #0066FF;
+      color: white;
+      font-size: 11.5px;
+      font-weight: 700;
+      padding: 5px 14px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+    }
+    .main-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 18px;
+      height: calc(100% - 70px);
+    }
+    .card {
+      background: white;
+      border: 1px solid #CBD5E1;
+      border-radius: 12px;
+      padding: 16px 20px;
+      display: flex;
+      flex-direction: column;
+    }
+    .card-title {
+      font-size: 14px;
+      font-weight: 800;
+      color: #0F2C59;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .pill {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 6px;
+      text-transform: uppercase;
+    }
+    .pill-blue { background: #E0F2FE; color: #0369A1; }
+    .pill-green { background: #DCFCE7; color: #15803D; }
+    .pill-amber { background: #FEF3C7; color: #B45309; }
+    .pill-purple { background: #F3E8FF; color: #7E22CE; }
+
+    /* Hierarchy Tree */
+    .tree-step {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 7px 12px;
+      border-radius: 8px;
+      background: #F8FAFC;
+      border-left: 4px solid #0066FF;
+      margin-bottom: 6px;
+    }
+    .tree-step.level-2 { margin-left: 18px; border-left-color: #0284C7; }
+    .tree-step.level-3 { margin-left: 36px; border-left-color: #10B981; }
+    .tree-step-name { font-size: 12px; font-weight: 700; color: #1E293B; width: 140px; }
+    .tree-step-desc { font-size: 11.5px; color: #475569; flex: 1; }
+
+    /* Sec 52(2) Box */
+    .sec52-item {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      padding: 6px 10px;
+      border-radius: 6px;
+      margin-bottom: 5px;
+      background: #F8FAFC;
+    }
+    .num-bullet {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #0284C7;
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .sec52-text { font-size: 11.5px; color: #334155; line-height: 1.35; }
+    .sec52-text strong { color: #0F172A; }
+
+    /* Table F Box */
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 4px;
+    }
+    .comp-col {
+      padding: 10px 12px;
+      border-radius: 8px;
+      border: 1px solid #E2E8F0;
+    }
+    .comp-col.arrears { background: #FFFBEB; border-color: #FDE68A; }
+    .comp-col.advance { background: #F0FDF4; border-color: #BBF7D0; }
+    .comp-header { font-size: 12px; font-weight: 800; margin-bottom: 6px; }
+    .arrears .comp-header { color: #B45309; }
+    .advance .comp-header { color: #15803D; }
+    .comp-point { font-size: 11px; color: #334155; margin-bottom: 4px; line-height: 1.3; }
+
+    /* Pro-rata Workflow */
+    .flow-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      margin-top: 6px;
+    }
+    .flow-box {
+      background: #F8FAFC;
+      border: 1px solid #CBD5E1;
+      border-radius: 8px;
+      padding: 8px 10px;
+      text-align: center;
+    }
+    .flow-step-num { font-size: 10px; font-weight: 800; color: #0066FF; text-transform: uppercase; margin-bottom: 2px; }
+    .flow-step-title { font-size: 11px; font-weight: 700; color: #0F2C59; margin-bottom: 4px; }
+    .flow-step-body { font-size: 10px; color: #64748B; line-height: 1.25; }
+    
+    .alert-bar {
+      margin-top: auto;
+      padding: 8px 12px;
+      border-radius: 6px;
+      background: #FEF2F2;
+      border-left: 3px solid #EF4444;
+      font-size: 11px;
+      color: #991B1B;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="title-group">
+      <h1>Share Capital Architecture & Issue Mechanics</h1>
+      <p>Classification hierarchy, Section 52(2) securities premium applications, Table F rules, and pro-rata workflows</p>
+    </div>
+    <div class="badge">UNIT IV · SHARES & DEBENTURES</div>
+  </div>
+
+  <div class="main-grid">
+    <!-- PANEL 1: SHARE CAPITAL HIERARCHY -->
+    <div class="card">
+      <div class="card-title">
+        <span>Share Capital Classification Hierarchy (Schedule III)</span>
+        <span class="pill pill-blue">Statutory Structure</span>
+      </div>
+      <div class="tree-step">
+        <span class="tree-step-name">1. Authorised Capital</span>
+        <span class="tree-step-desc">Max nominal capital stated in Memorandum of Association (MOA Cl. V).</span>
+      </div>
+      <div class="tree-step level-2">
+        <span class="tree-step-name">2. Issued Capital</span>
+        <span class="tree-step-desc">Portion of authorised capital offered to public for subscription.</span>
+      </div>
+      <div class="tree-step level-3">
+        <span class="tree-step-name">3. Subscribed Capital</span>
+        <span class="tree-step-desc">Shares applied for and allotted by the company.</span>
+      </div>
+      <div class="tree-step level-3" style="margin-left: 54px; border-left-color: #059669;">
+        <span class="tree-step-name" style="width: 150px;">A. Subscribed & Fully Paid</span>
+        <span class="tree-step-desc">Entire face value called up AND received in cash/consideration.</span>
+      </div>
+      <div class="tree-step level-3" style="margin-left: 54px; border-left-color: #D97706;">
+        <span class="tree-step-name" style="width: 150px;">B. Subscribed Not Fully Paid</span>
+        <span class="tree-step-desc">Company hasn't called full face value OR calls-in-arrears exist.</span>
+      </div>
+      <div class="alert-bar" style="margin-top: 8px;">
+        <strong>CUET Trap:</strong> Reserve Capital (Sec 99) can ONLY be called up upon winding up; it is NEVER shown in the Balance Sheet!
+      </div>
+    </div>
+
+    <!-- PANEL 2: SEC 52(2) SECURITIES PREMIUM -->
+    <div class="card">
+      <div class="card-title">
+        <span>Section 52(2) Permissible Uses of Securities Premium</span>
+        <span class="pill pill-purple">Strict Statutory List</span>
+      </div>
+      <div class="sec52-item">
+        <div class="num-bullet">1</div>
+        <div class="sec52-text"><strong>Issue Fully Paid Bonus Shares:</strong> Capitalised to provide free bonus shares to existing equity shareholders.</div>
+      </div>
+      <div class="sec52-item">
+        <div class="num-bullet">2</div>
+        <div class="sec52-text"><strong>Write off Preliminary Expenses:</strong> Formation and promotional expenses incurred before incorporation.</div>
+      </div>
+      <div class="sec52-item">
+        <div class="num-bullet">3</div>
+        <div class="sec52-text"><strong>Write off Issue Expenses / Discount:</strong> Underwriting commission, brokerage, discount on issue of debentures.</div>
+      </div>
+      <div class="sec52-item">
+        <div class="num-bullet">4</div>
+        <div class="sec52-text"><strong>Premium on Redemption:</strong> Provide for premium payable on redemption of redeemable preference shares or debentures.</div>
+      </div>
+      <div class="sec52-item">
+        <div class="num-bullet">5</div>
+        <div class="sec52-text"><strong>Buyback of Own Shares (Sec 68):</strong> Utilised for purchase of own shares or specified securities.</div>
+      </div>
+      <div class="alert-bar" style="background: #FFF7ED; border-color: #F97316; color: #9A3412;">
+        <strong>Zero Dividends:</strong> Securities Premium CANNOT be distributed as cash dividend under ANY circumstances!
+      </div>
+    </div>
+
+    <!-- PANEL 3: TABLE F PROVISIONS -->
+    <div class="card">
+      <div class="card-title">
+        <span>Table F Statutory Provisions: Arrears vs Advance</span>
+        <span class="pill pill-amber">Companies Act 2013</span>
+      </div>
+      <div class="comparison-grid">
+        <div class="comp-col arrears">
+          <div class="comp-header">Calls-in-Arrears (Unpaid Dues)</div>
+          <div class="comp-point">• <strong>Table F Max Interest:</strong> Up to <strong>10% p.a.</strong> from due date to actual payment date.</div>
+          <div class="comp-point">• <strong>Accounting:</strong> Kept in separate account; shown as <em>deduction</em> from Subscribed Capital.</div>
+          <div class="comp-point">• <strong>Dividend Effect:</strong> Shareholder loses dividend on unpaid portion unless Articles permit.</div>
+          <div class="comp-point">• <strong>Board Discretion:</strong> Directors have right to waive interest on calls-in-arrears.</div>
+        </div>
+        <div class="comp-col advance">
+          <div class="comp-header">Calls-in-Advance (Prepaid Dues)</div>
+          <div class="comp-point">• <strong>Table F Max Interest:</strong> Up to <strong>12% p.a.</strong> from deposit date to call due date.</div>
+          <div class="comp-point">• <strong>Accounting:</strong> Shown under <em>Other Current Liabilities</em> in Balance Sheet.</div>
+          <div class="comp-point">• <strong>No Voting Rights:</strong> No voting rights on advance money until call becomes due.</div>
+          <div class="comp-point">• <strong>Winding Up Priority:</strong> Repaid prior to share capital, but after external debt.</div>
+        </div>
+      </div>
+      <div class="alert-bar" style="margin-top: 8px; background: #ECFDF5; border-color: #10B981; color: #065F46;">
+        <strong>Rule:</strong> Interest on Calls-in-Advance is a <em>charge against profits</em> — payable even if company earns no profit!
+      </div>
+    </div>
+
+    <!-- PANEL 4: PRO-RATA ALLOTMENT WORKFLOW -->
+    <div class="card">
+      <div class="card-title">
+        <span>Pro-Rata Over-Subscription Settlement Protocol</span>
+        <span class="pill pill-green">Allotment Flow</span>
+      </div>
+      <div class="flow-steps">
+        <div class="flow-box">
+          <div class="flow-step-num">Step 1</div>
+          <div class="flow-step-title">Application Pool</div>
+          <div class="flow-step-body">Total apps received × App money per share = Total Bank Dr.</div>
+        </div>
+        <div class="flow-box">
+          <div class="flow-step-num">Step 2</div>
+          <div class="flow-step-title">Share Capital Cr.</div>
+          <div class="flow-step-body">Shares allotted × App money per share transferred to capital.</div>
+        </div>
+        <div class="flow-box">
+          <div class="flow-step-num">Step 3</div>
+          <div class="flow-step-title">Allotment Offset</div>
+          <div class="flow-step-body">Surplus app money adjusted against Allotment Due on pro-rata shares.</div>
+        </div>
+        <div class="flow-box">
+          <div class="flow-step-num">Step 4</div>
+          <div class="flow-step-title">Call Advance / Refund</div>
+          <div class="flow-step-body">Remaining surplus credited to Calls-in-Advance (if permitted) or Refunded.</div>
+        </div>
+      </div>
+      <div style="margin-top: 10px; background: #F1F5F9; border-radius: 8px; padding: 8px 12px; font-size: 11px; color: #334155;">
+        <strong>Default Rule:</strong> Unless stated otherwise in the question, surplus application money is adjusted <em>only up to Allotment</em>. Any remaining balance is promptly refunded via Bank!
+      </div>
+      <div class="alert-bar" style="margin-top: 6px;">
+        <strong>Section 39 Minimum Subscription:</strong> 90% of issued capital must be subscribed within 30 days, else entire sum refunded in 15 days!
+      </div>
+    </div>
+  </div>
+</body>
+</html>

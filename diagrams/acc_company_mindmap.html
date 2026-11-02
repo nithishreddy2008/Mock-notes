@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1440, height=880">
+  <title>Company Accounts: Master Synthesis Mindmap</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 1440px;
+      height: 880px;
+      background-color: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0F172A;
+      padding: 26px 36px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 16px;
+      border-bottom: 2px solid #E2E8F0;
+      padding-bottom: 10px;
+    }
+    .title-group h1 {
+      font-size: 23px;
+      font-weight: 800;
+      color: #0F2C59;
+      letter-spacing: -0.02em;
+    }
+    .title-group p {
+      font-size: 12.5px;
+      color: #64748B;
+      font-weight: 500;
+    }
+    .badge {
+      background: #0066FF;
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 5px 14px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+    }
+    .mindmap-container {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1fr 1.35fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 14px;
+      position: relative;
+    }
+
+    /* Central Hub */
+    .center-card {
+      grid-column: 2;
+      grid-row: 1 / span 2;
+      background: white;
+      border: 2px solid #0066FF;
+      border-radius: 14px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+    }
+    .hub-title {
+      font-size: 17px;
+      font-weight: 800;
+      color: #0F2C59;
+      margin-bottom: 6px;
+    }
+    .hub-subtitle {
+      font-size: 11.5px;
+      color: #64748B;
+      margin-bottom: 12px;
+      max-width: 320px;
+      line-height: 1.35;
+    }
+    .hub-pillars {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      width: 100%;
+    }
+    .hub-pill-box {
+      background: #F1F5F9;
+      border: 1px solid #CBD5E1;
+      border-radius: 8px;
+      padding: 8px 10px;
+      text-align: left;
+    }
+    .hub-pill-tag {
+      font-size: 9.5px;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: #0066FF;
+      margin-bottom: 2px;
+    }
+    .hub-pill-name {
+      font-size: 11px;
+      font-weight: 700;
+      color: #0F172A;
+    }
+    .hub-pill-desc {
+      font-size: 9.5px;
+      color: #64748B;
+      line-height: 1.25;
+    }
+
+    /* Outer Cards */
+    .map-card {
+      background: white;
+      border: 1px solid #CBD5E1;
+      border-radius: 12px;
+      padding: 12px 14px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid #F1F5F9;
+    }
+    .card-heading {
+      font-size: 12.5px;
+      font-weight: 800;
+      color: #0F2C59;
+    }
+    .card-badge {
+      font-size: 9.5px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 5px;
+      text-transform: uppercase;
+    }
+    .cb-blue { background: #E0F2FE; color: #0369A1; }
+    .cb-green { background: #DCFCE7; color: #15803D; }
+    .cb-amber { background: #FEF3C7; color: #B45309; }
+    .cb-purple { background: #F3E8FF; color: #7E22CE; }
+    .cb-red { background: #FEE2E2; color: #B91C1C; }
+
+    .bullet-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .bullet-item {
+      display: flex;
+      gap: 6px;
+      font-size: 10.5px;
+      color: #334155;
+      line-height: 1.35;
+    }
+    .bullet-icon {
+      color: #0066FF;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+    .bullet-item strong {
+      color: #0F172A;
+    }
+
+    .mini-alert {
+      margin-top: auto;
+      padding: 4px 8px;
+      border-radius: 5px;
+      font-size: 9.5px;
+      background: #F8FAFC;
+      border-left: 3px solid #CBD5E1;
+      color: #475569;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="title-group">
+      <h1>Unit IV: Company Accounts Master Synthesis Mindmap</h1>
+      <p>Holistic structural blueprint connecting shares, debentures, forfeiture mechanics, and Schedule III reporting</p>
+    </div>
+    <div class="badge">MASTER SYNTHESIS MINDMAP</div>
+  </div>
+
+  <div class="mindmap-container">
+    <!-- TOP-LEFT: SHARE CAPITAL CLASSIFICATION -->
+    <div class="map-card" style="border-top: 3px solid #0066FF;">
+      <div class="card-top">
+        <span class="card-heading">1. Capital Structure (Sch. III)</span>
+        <span class="card-badge cb-blue">Balance Sheet</span>
+      </div>
+      <ul class="bullet-list">
+        <li class="bullet-item"><span class="bullet-icon">▸</span><span><strong>Authorised Capital:</strong> Max nominal capital stated in MOA. Shown as footnote total.</span></li>
+        <li class="bullet-item"><span class="bullet-icon">▸</span><span><strong>Issued Capital:</strong> Offered to public. Par value × issued shares.</span></li>
+        <li class="bullet-item"><span class="bullet-icon">▸</span><span><strong>Subscribed & Fully Paid:</strong> 100% face value called AND received.</span></li>
+        <li class="bullet-item"><span class="bullet-icon">▸</span><span><strong>Subscribed Not Fully Paid:</strong> Uncalled face value OR calls-in-arrears deducted.</span></li>
+        <li class="bullet-item"><span class="bullet-icon">▸</span><span><strong>Reserve Capital:</strong> Sec 99 uncalled capital only available on winding up.</span></li>
+      </ul>
+      <div class="mini-alert" style="border-left-color: #0066FF;">
+        Balance Sheet Total includes ONLY Subscribed Capital + Forfeited Shares A/c!
+      </div>
+    </div>
+
+    <!-- BOTTOM-LEFT: ISSUE MECHANICS & PRO-RATA -->
+    <div class="map-card" style="border-top: 3px solid #10B981;">
+      <div class="card-top">
+        <span class="card-heading">2. Issue & Pro-Rata Allotment</span>
+        <span class="card-badge cb-green">Issue Dynamics</span>
+      </div>
+      <ul class="bullet-list">
+        <li class="bullet-item"><span class="bullet-icon">▸</span><span><strong>Par vs Premium:</strong> Premium to Sec 52(2) Securities Premium (Reserves & Surplus).</span></li>
+        <li class="bullet-item"><span class="bullet-icon">▸</span><span><strong>Table F Interest:</strong> Calls-in-Arrears up to <strong>10% p.a.</strong>; Advance up to <strong>12% p.a.</strong></span></li>
+        <li class="bullet-item"><span class="bullet-icon">▸</span><span><strong>Sec 39 Minimum:</strong> 90% subscription mandatory within 30 days of prospectus.</span></li>
+        <li class="bullet-item"><span class="bullet-icon">▸</span><span><strong>Pro-rata Surplus:</strong> Adjusted 1st against Allotment, then Calls/Refund.</span></li>
+        <li class="bullet-item"><span class="bullet-icon">▸</span><span><strong>Vendor Issue:</strong> Shares issued for assets. Asset − Liab = Net Assets.</span></li>
+      </ul>
+      <div class="mini-alert" style="border-left-color: #10B981;">
+        Purchase Consideration > Net Assets = Goodwill; Consideration < Net Assets = Capital Reserve!
+      </div>
+    </div>
+
+    <!-- CENTER HUB -->
+    <div class="center-card">
+      <div class="hub-title">Company Accounts: Unit IV</div>
+      <div class="hub-subtitle">Accounting for Share Capital & Debentures under the Companies Act 2013 and Schedule III</div>
+      
+      <div class="hub-pillars">
+        <div class="hub-pill-box">
+          <div class="hub-pill-tag">Core Domain 1</div>
+          <div class="hub-pill-name">Share Capital</div>
+          <div class="hub-pill-desc">Equity & preference share issue, calls, oversubscription, and forfeiture.</div>
+        </div>
+        <div class="hub-pill-box">
+          <div class="hub-pill-tag">Core Domain 2</div>
+          <div class="hub-pill-name">Debentures</div>
+          <div class="hub-pill-desc">Secured borrowing, terms of redemption, collateral, and loss write-off.</div>
+        </div>
+        <div class="hub-pill-box">
+          <div class="hub-pill-tag">Core Domain 3</div>
+          <div class="hub-pill-name">Statutory Limits</div>
+          <div class="hub-pill-desc">Sec 52(2) uses, Sec 53 discount ban, Table F interest rates.</div>
+        </div>
+        <div class="hub-pill-box">
+          <div class="hub-pill-tag">Core Domain 4</div>
+          <div class="hub-pill-name">Financial Reporting</div>
+          <div class="hub-pill-desc">Schedule III Part I Presentation of Shareholders' Funds & Borrowings.</div>
+        </div>
+      </div>
+
+      <div style="margin-top: 14px; background: #EFF6FF; border: 1px solid #BFDBFE; border-radius: 8px; padding: 6px 12px; font-size: 10px; color: #1E40AF; text-align: center; width: 100%;">
+        <strong>Master Equation:</strong> Capital Reserve = [(Forfeited Amt / Total Shares) × Reissued Shares] − Reissue Discount
+      </div>
+    </div>
+
+    <!-- TOP-RIGHT: FORFEITURE & REISSUE -->
+    <div class="map-card" style="border-top: 3px solid #EF4444;">
+      <div class="card-top">
+        <span class="card-heading">3. Forfeiture & Reissue Rules</span>
+        <span class="card-badge cb-red">Forfeiture Logic</span>
+      </div>
+      <ul class="bullet-list">
+        <li class="bullet-item"><span class="bullet-icon">▸</span><span><strong>Share Capital Debit:</strong> Debited with <em>Called-up amount</em>, NEVER nominal face value!</span></li>
+        <li class="bullet-item"><span class="bullet-icon">▸</span><span><strong>Securities Premium:</strong> Debited ONLY if unreceived. Once received, do NOT touch!</span></li>
+        <li class="bullet-item"><span class="bullet-icon">▸</span><span><strong>Forfeited Shares Cr.:</strong> Holds face value actually received from shareholder.</span></li>
+        <li class="bullet-item"><span class="bullet-icon">▸</span><span><strong>Max Reissue Discount:</strong> Capped at amount forfeited per share.</span></li>
+        <li class="bullet-item"><span class="bullet-icon">▸</span><span><strong>Capital Reserve:</strong> Net gain on reissued shares transferred to Capital Reserve.</span></li>
+      </ul>
+      <div class="mini-alert" style="border-left-color: #EF4444;">
+        Unreissued shares balance stays in Share Forfeiture A/c until future reissue!
+      </div>
+    </div>
+
+    <!-- BOTTOM-RIGHT: DEBENTURES & REDEMPTION -->
+    <div class="map-card" style="border-top: 3px solid #8B5CF6;">
+      <div class="card-top">
+        <span class="card-heading">4. Debentures & Redemption</span>
+        <span class="card-badge cb-purple">Debt Instruments</span>
+      </div>
+      <ul class="bullet-list">
+        <li class="bullet-item"><span class="bullet-icon">▸</span><span><strong>Types:</strong> Naked/Secured, Registered/Bearer, Convertible/Non-convertible.</span></li>
+        <li class="bullet-item"><span class="bullet-icon">▸</span><span><strong>6 Redemption Cases:</strong> Premium on redemption recognized at issue as <em>Loss on Issue</em>.</span></li>
+        <li class="bullet-item"><span class="bullet-icon">▸</span><span><strong>Write-Off Hierarchy:</strong> 1st Securities Premium, 2nd Statement of Profit & Loss.</span></li>
+        <li class="bullet-item"><span class="bullet-icon">▸</span><span><strong>Collateral Security:</strong> Method 1 (Footnote) vs Method 2 (Debenture Suspense).</span></li>
+        <li class="bullet-item"><span class="bullet-icon">▸</span><span><strong>Debenture Interest:</strong> Fixed charge against profits, subject to TDS.</span></li>
+      </ul>
+      <div class="mini-alert" style="border-left-color: #8B5CF6;">
+        Premium on Redemption is a liability under Other Long-Term Liabilities!
+      </div>
+    </div>
+  </div>
+</body>
+</html>

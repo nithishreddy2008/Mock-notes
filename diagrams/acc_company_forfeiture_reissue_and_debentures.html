@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1440, height=880">
+  <title>Company Accounts: Forfeiture, Reissue & Debentures Architecture</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 1440px;
+      height: 880px;
+      background-color: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0F172A;
+      padding: 30px 40px;
+      overflow: hidden;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #E2E8F0;
+      padding-bottom: 12px;
+    }
+    .title-group h1 {
+      font-size: 24px;
+      font-weight: 800;
+      color: #0F2C59;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+    .title-group p {
+      font-size: 13px;
+      color: #64748B;
+      font-weight: 500;
+    }
+    .badge {
+      background: #0F2C59;
+      color: white;
+      font-size: 11.5px;
+      font-weight: 700;
+      padding: 5px 14px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+    }
+    .main-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 18px;
+      height: calc(100% - 70px);
+    }
+    .card {
+      background: white;
+      border: 1px solid #CBD5E1;
+      border-radius: 12px;
+      padding: 16px 20px;
+      display: flex;
+      flex-direction: column;
+    }
+    .card-title {
+      font-size: 14px;
+      font-weight: 800;
+      color: #0F2C59;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .pill {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 6px;
+      text-transform: uppercase;
+    }
+    .pill-red { background: #FEE2E2; color: #B91C1C; }
+    .pill-green { background: #DCFCE7; color: #15803D; }
+    .pill-blue { background: #E0F2FE; color: #0369A1; }
+    .pill-purple { background: #F3E8FF; color: #7E22CE; }
+
+    /* Entry Anatomy */
+    .entry-box {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 8px;
+      padding: 10px 12px;
+      font-family: "SF Mono", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+      font-size: 11px;
+      line-height: 1.45;
+      color: #1E293B;
+      margin-bottom: 8px;
+    }
+    .dr { color: #B91C1C; font-weight: 700; }
+    .cr { color: #15803D; font-weight: 700; }
+    .annotation { color: #64748B; font-family: -apple-system, sans-serif; font-size: 10.5px; }
+
+    /* Rules Grid */
+    .rule-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-top: 4px;
+    }
+    .rule-card {
+      padding: 8px 10px;
+      border-radius: 6px;
+      border: 1px solid #E2E8F0;
+      background: #F8FAFC;
+    }
+    .rule-card.ok { background: #F0FDF4; border-color: #BBF7D0; }
+    .rule-card.bad { background: #FEF2F2; border-color: #FECACA; }
+    .rule-title { font-size: 11px; font-weight: 800; margin-bottom: 3px; }
+    .ok .rule-title { color: #15803D; }
+    .bad .rule-title { color: #B91C1C; }
+    .rule-desc { font-size: 10.5px; color: #334155; line-height: 1.3; }
+
+    /* Formula Banner */
+    .formula-banner {
+      background: #EFF6FF;
+      border: 1px solid #BFDBFE;
+      border-radius: 8px;
+      padding: 8px 12px;
+      font-size: 11.5px;
+      color: #1E40AF;
+      font-weight: 600;
+      margin: 6px 0;
+      text-align: center;
+    }
+
+    /* Debentures 6 Cases Table */
+    .cases-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 10px;
+      margin-top: 4px;
+    }
+    .cases-table th {
+      background: #F1F5F9;
+      color: #0F2C59;
+      padding: 5px 8px;
+      text-align: left;
+      font-weight: 700;
+      border: 1px solid #CBD5E1;
+    }
+    .cases-table td {
+      padding: 4px 8px;
+      border: 1px solid #E2E8F0;
+      color: #334155;
+    }
+    .cases-table tr:nth-child(even) { background: #F8FAFC; }
+
+    /* Collateral Methods */
+    .collateral-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 6px;
+    }
+    .method-box {
+      border: 1px solid #CBD5E1;
+      border-radius: 8px;
+      padding: 8px 12px;
+      background: #F8FAFC;
+    }
+    .method-title { font-size: 11px; font-weight: 800; color: #0F2C59; margin-bottom: 4px; }
+    .method-desc { font-size: 10.5px; color: #475569; line-height: 1.3; }
+
+    .alert-bar {
+      margin-top: auto;
+      padding: 6px 10px;
+      border-radius: 6px;
+      background: #FEF2F2;
+      border-left: 3px solid #EF4444;
+      font-size: 10.5px;
+      color: #991B1B;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="title-group">
+      <h1>Forfeiture, Reissue & Debentures Architecture</h1>
+      <p>Called-up capital debits, securities premium handling, capital reserve mechanics, and redemption accounting</p>
+    </div>
+    <div class="badge">UNIT IV · SHARES & DEBENTURES</div>
+  </div>
+
+  <div class="main-grid">
+    <!-- PANEL 1: FORFEITURE MECHANICS -->
+    <div class="card">
+      <div class="card-title">
+        <span>Share Forfeiture Entry Anatomy & Premium Rules</span>
+        <span class="pill pill-red">Capital Cancellation</span>
+      </div>
+      <div class="entry-box">
+        <div><span class="dr">Share Capital A/c (No. of shares × Called-up value)</span> <span class="dr">Dr.</span></div>
+        <div><span class="dr">Securities Premium A/c (If NOT received)</span> <span class="dr">Dr.</span></div>
+        <div>&nbsp;&nbsp;<span class="cr">To Calls-in-Arrears A/c (Total unpaid call dues)</span></div>
+        <div>&nbsp;&nbsp;<span class="cr">To Share Forfeiture A/c (Actual face value paid)</span></div>
+      </div>
+      <div class="rule-split">
+        <div class="rule-card ok">
+          <div class="rule-title">Case 1: Premium Already Received</div>
+          <div class="rule-desc">NEVER debit Securities Premium. Sec 52(2) protects it. Do NOT include premium inside Share Forfeiture!</div>
+        </div>
+        <div class="rule-card bad">
+          <div class="rule-title">Case 2: Premium Unreceived</div>
+          <div class="rule-desc">MUST debit Securities Premium A/c to reverse the uncollected charge created on allotment!</div>
+        </div>
+      </div>
+      <div class="alert-bar">
+        <strong>CUET Golden Rule:</strong> Share Capital is ALWAYS debited with CALLED-UP value, never full Face Value (unless fully called)!
+      </div>
+    </div>
+
+    <!-- PANEL 2: REISSUE & CAPITAL RESERVE -->
+    <div class="card">
+      <div class="card-title">
+        <span>Reissue Economics & Capital Reserve Formula</span>
+        <span class="pill pill-green">Capital Gain Transfer</span>
+      </div>
+      <div style="font-size: 11px; color: #334155; line-height: 1.35; margin-bottom: 6px;">
+        • <strong>Max Permissible Discount:</strong> Exactly equal to the amount forfeited per share.<br>
+        • <strong>Min Reissue Price:</strong> Face Value minus Forfeited Amount per share.<br>
+        • <strong>Reissue at Premium:</strong> Reissue price > Paid-up value; excess is credited to Securities Premium A/c.
+      </div>
+      <div class="formula-banner">
+        Capital Reserve = [ (Total Forfeited Amt / Total Shares) × Reissued Shares ] − Reissue Discount
+      </div>
+      <div style="font-size: 10.5px; color: #475569; background: #F8FAFC; padding: 6px 10px; border-radius: 6px; border: 1px solid #E2E8F0;">
+        <strong>Partial Reissue Rule:</strong> If 1,000 shares forfeited and only 600 reissued, the capital reserve is calculated strictly on the 600 reissued shares. The forfeiture balance on the remaining 400 shares stays in <em>Share Forfeiture Account</em>!
+      </div>
+      <div class="alert-bar" style="background: #F0FDF4; border-color: #10B981; color: #065F46;">
+        <strong>Balance Sheet Disclosure:</strong> Unreissued Share Forfeiture is added to <em>Subscribed Capital</em> in Note 1.
+      </div>
+    </div>
+
+    <!-- PANEL 3: 6 CASES OF DEBENTURE ISSUE -->
+    <div class="card">
+      <div class="card-title">
+        <span>6 Statutory Combinations: Issue vs Terms of Redemption</span>
+        <span class="pill pill-blue">Redemption Accounting</span>
+      </div>
+      <table class="cases-table">
+        <thead>
+          <tr>
+            <th>Case</th>
+            <th>Issue Price</th>
+            <th>Redemption Term</th>
+            <th>Special Account Debited</th>
+            <th>Special Account Credited</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>1</strong></td>
+            <td>At Par</td>
+            <td>At Par</td>
+            <td>—</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td><strong>2</strong></td>
+            <td>At Discount</td>
+            <td>At Par</td>
+            <td>Discount on Issue A/c</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td><strong>3</strong></td>
+            <td>At Premium</td>
+            <td>At Par</td>
+            <td>—</td>
+            <td>Securities Premium A/c</td>
+          </tr>
+          <tr>
+            <td><strong>4</strong></td>
+            <td>At Par</td>
+            <td>At Premium</td>
+            <td>Loss on Issue A/c (Prem)</td>
+            <td>Prem. on Redemption A/c</td>
+          </tr>
+          <tr>
+            <td><strong>5</strong></td>
+            <td>At Discount</td>
+            <td>At Premium</td>
+            <td>Loss on Issue A/c (Disc + Prem)</td>
+            <td>Prem. on Redemption A/c</td>
+          </tr>
+          <tr>
+            <td><strong>6</strong></td>
+            <td>At Premium</td>
+            <td>At Premium</td>
+            <td>Loss on Issue A/c (Prem only)</td>
+            <td>Sec. Prem Cr. & Prem on Red. Cr.</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="alert-bar" style="background: #FFFBEB; border-color: #F59E0B; color: #92400E;">
+        <strong>Write-off Order:</strong> Loss on Issue must be written off in the year of issue: 1st Securities Premium, 2nd P&L!
+      </div>
+    </div>
+
+    <!-- PANEL 4: COLLATERAL SECURITY & INTEREST -->
+    <div class="card">
+      <div class="card-title">
+        <span>Debentures as Collateral Security & Interest Mechanics</span>
+        <span class="pill pill-purple">Secondary Pledge</span>
+      </div>
+      <div class="collateral-grid">
+        <div class="method-box">
+          <div class="method-title">First Method (No Journal Entry)</div>
+          <div class="method-desc">No accounting entry is recorded in the books. Only a parenthetical note / footnote is added below the primary bank loan in Note to Accounts.</div>
+        </div>
+        <div class="method-box">
+          <div class="method-title">Second Method (With Journal Entry)</div>
+          <div class="method-desc">Record: <code>Debenture Suspense A/c Dr.</code> to <code>...% Debentures A/c Cr.</code> Deduct Debenture Suspense from Debentures under Non-Current Liabilities.</div>
+        </div>
+      </div>
+      <div style="margin-top: 8px; font-size: 10.5px; color: #334155; line-height: 1.35;">
+        • <strong>No Interest on Collateral:</strong> No interest is payable on debentures issued as collateral security until the company defaults on the primary debt!<br>
+        • <strong>Debenture Interest:</strong> Charge against profit (paid semi-annually or annually) irrespective of profit or loss.
+      </div>
+      <div class="alert-bar">
+        <strong>Disclosure:</strong> Premium on Redemption is shown under <em>Other Long-Term Liabilities</em> (Non-Current Liabilities).
+      </div>
+    </div>
+  </div>
+</body>
+</html>
