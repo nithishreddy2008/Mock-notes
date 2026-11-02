@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1440, height=880">
+  <title>Ray Optics & Optical Instruments Master Synthesis Mindmap</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 1440px;
+      height: 880px;
+      background-color: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0F172A;
+      padding: 24px 36px;
+      overflow: hidden;
+      position: relative;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 16px;
+      border-bottom: 2px solid #E2E8F0;
+      padding-bottom: 12px;
+    }
+    .title-group h1 {
+      font-size: 24px;
+      font-weight: 800;
+      color: #0F2C59;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+    .title-group p {
+      font-size: 13px;
+      color: #64748B;
+      font-weight: 500;
+    }
+    .badge {
+      background: #0066FF;
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .mindmap-canvas {
+      width: 100%;
+      height: calc(100% - 90px);
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: stretch;
+    }
+
+    .svg-connectors {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Central Hub */
+    .central-hub {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 250px;
+      background: linear-gradient(135deg, #0F2C59 0%, #0066FF 100%);
+      color: white;
+      border-radius: 16px;
+      padding: 22px 18px;
+      text-align: center;
+      box-shadow: 0 10px 25px -5px rgba(15, 44, 89, 0.35);
+      border: 2px solid #93C5FD;
+      z-index: 10;
+    }
+    .central-hub .sub-label {
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      color: #93C5FD;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .central-hub .hub-title {
+      font-size: 17px;
+      font-weight: 800;
+      line-height: 1.25;
+      margin-bottom: 6px;
+    }
+    .central-hub .hub-desc {
+      font-size: 11px;
+      color: #E2E8F0;
+      line-height: 1.4;
+    }
+
+    /* Column Containers */
+    .column-left, .column-right {
+      width: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      z-index: 5;
+    }
+
+    .mm-card {
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      border-radius: 12px;
+      padding: 12px 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+      position: relative;
+    }
+    .mm-card::before {
+      content: "";
+      position: absolute;
+      top: 0; bottom: 0; left: 0;
+      width: 4px;
+      border-radius: 12px 0 0 12px;
+    }
+
+    .c1::before { background: #0066FF; }
+    .c2::before { background: #0EA5E9; }
+    .c3::before { background: #D97706; }
+    .c4::before { background: #8B5CF6; }
+    .c5::before { background: #16A34A; }
+    .c6::before { background: #E11D48; }
+
+    .card-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+    .mm-title {
+      font-size: 13.5px;
+      font-weight: 800;
+      color: #0F2C59;
+    }
+    .mm-badge {
+      font-size: 9.5px;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+    .b-blue { background: #EFF6FF; color: #0066FF; }
+    .b-cyan { background: #F0F9FF; color: #0284C7; }
+    .b-amber { background: #FFFBEB; color: #D97706; }
+    .b-purple { background: #F5F3FF; color: #7C3AED; }
+    .b-green { background: #F0FDF4; color: #16A34A; }
+    .b-rose { background: #FFF1F2; color: #E11D48; }
+
+    .formula-pill {
+      background: #F1F5F9;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-family: "SF Mono", Consolas, monospace;
+      font-size: 10.5px;
+      font-weight: 600;
+      color: #0F172A;
+      margin-bottom: 6px;
+      display: inline-block;
+      width: 100%;
+    }
+
+    .key-points {
+      list-style: none;
+      font-size: 11px;
+      color: #334155;
+      line-height: 1.45;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .key-points li {
+      position: relative;
+      padding-left: 12px;
+    }
+    .key-points li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      font-weight: 800;
+      color: #64748B;
+    }
+    .c1 .key-points li::before { color: #0066FF; }
+    .c2 .key-points li::before { color: #0EA5E9; }
+    .c3 .key-points li::before { color: #D97706; }
+    .c4 .key-points li::before { color: #8B5CF6; }
+    .c5 .key-points li::before { color: #16A34A; }
+    .c6 .key-points li::before { color: #E11D48; }
+
+    strong {
+      color: #0F2C59;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="title-group">
+      <h1>Ray Optics & Optical Instruments Master Synthesis Mindmap</h1>
+      <p>Mirror & Lens Formulas • Total Internal Reflection • Prism Dynamics • High Magnification Systems</p>
+    </div>
+    <div class="badge">Physics Master Mindmap • Unit 6 (Ray Optics)</div>
+  </div>
+
+  <div class="mindmap-canvas">
+    <!-- SVG Connection Curves -->
+    <svg class="svg-connectors" viewBox="0 0 1368 730">
+      <!-- Left branches from center (684, 365) to (400, y) -->
+      <!-- Branch 1 (Top Left) -->
+      <path d="M 559 340 C 470 330 450 115 400 115" fill="none" stroke="#0066FF" stroke-width="2.5" stroke-dasharray="4,4"/>
+      <!-- Branch 2 (Mid Left) -->
+      <path d="M 559 365 C 470 365 460 365 400 365" fill="none" stroke="#0EA5E9" stroke-width="2.5"/>
+      <!-- Branch 3 (Bottom Left) -->
+      <path d="M 559 390 C 470 400 450 615 400 615" fill="none" stroke="#D97706" stroke-width="2.5" stroke-dasharray="4,4"/>
+
+      <!-- Right branches from center (684, 365) to (968, y) -->
+      <!-- Branch 4 (Top Right) -->
+      <path d="M 809 340 C 900 330 920 115 968 115" fill="none" stroke="#8B5CF6" stroke-width="2.5" stroke-dasharray="4,4"/>
+      <!-- Branch 5 (Mid Right) -->
+      <path d="M 809 365 C 900 365 910 365 968 365" fill="none" stroke="#16A34A" stroke-width="2.5"/>
+      <!-- Branch 6 (Bottom Right) -->
+      <path d="M 809 390 C 900 400 920 615 968 615" fill="none" stroke="#E11D48" stroke-width="2.5" stroke-dasharray="4,4"/>
+    </svg>
+
+    <!-- Column Left -->
+    <div class="column-left">
+      <!-- Card 1: Spherical Mirrors -->
+      <div class="mm-card c1">
+        <div class="card-title-row">
+          <span class="mm-title">Spherical Mirrors & Reflection</span>
+          <span class="mm-badge b-blue">Mirror Formula</span>
+        </div>
+        <div class="formula-pill">1/v + 1/u = 1/f = 2/R &nbsp;|&nbsp; m = -v/u = f/(f - u)</div>
+        <ul class="key-points">
+          <li><strong>Cartesian Convention:</strong> Pole is origin; distances opposite to incident ray are negative ($u &lt; 0$).</li>
+          <li><strong>Concave Mirror:</strong> $f &lt; 0$; forms real inverted images; virtual &amp; enlarged only if object $u &lt; |f|$.</li>
+          <li><strong>Convex Mirror:</strong> $f &gt; 0$; always forms virtual, erect, diminished image between $P$ and $F$ ($|v| &lt; f$).</li>
+        </ul>
+      </div>
+
+      <!-- Card 2: Refraction & Snell's Law -->
+      <div class="mm-card c2">
+        <div class="card-title-row">
+          <span class="mm-title">Refraction & Apparent Depth</span>
+          <span class="mm-badge b-cyan">Snell's Law</span>
+        </div>
+        <div class="formula-pill">n₁ sin i = n₂ sin r &nbsp;|&nbsp; d' = d/μ &nbsp;|&nbsp; Δt = d(1 - 1/μ)</div>
+        <ul class="key-points">
+          <li><strong>Frequency Invariant:</strong> Frequency $\nu$ unchanged across interfaces; $v = c/\mu$ and $\lambda' = \lambda/\mu$.</li>
+          <li><strong>Apparent Depth:</strong> Object in denser medium appears raised; normal shift $\Delta t$ depends strictly on slab thickness $d$.</li>
+          <li><strong>Lateral Displacement:</strong> Parallel glass slab displaces ray sideways without changing propagation angle.</li>
+        </ul>
+      </div>
+
+      <!-- Card 3: Total Internal Reflection -->
+      <div class="mm-card c3">
+        <div class="card-title-row">
+          <span class="mm-title">Total Internal Reflection (TIR)</span>
+          <span class="mm-badge b-amber">Critical Angle</span>
+        </div>
+        <div class="formula-pill">sin θ_c = 1/μ &nbsp;|&nbsp; NA = √(μ₁² - μ₂²) &nbsp;|&nbsp; i &gt; θ_c</div>
+        <ul class="key-points">
+          <li><strong>Dual Conditions:</strong> Ray must travel denser $\to$ rarer, and incidence angle $i &gt; \theta_c$.</li>
+          <li><strong>Optical Fibres:</strong> High-index core ($\mu_1$) with low-index cladding ($\mu_2$); 100% reflectance without loss.</li>
+          <li><strong>Prism Reflection:</strong> 45°-90°-45° crown glass prisms bend rays by 90° or invert by 180° through TIR ($i = 45^\circ &gt; 42^\circ$).</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Central Hub -->
+    <div class="central-hub">
+      <div class="sub-label">CUET UG Physics • Unit 6</div>
+      <div class="hub-title">Ray Optics &amp; Optical Systems</div>
+      <div class="hub-desc">Geometric optics, reflection, refraction, thin lens physics, prism dispersion, and two-stage optical instruments.</div>
+    </div>
+
+    <!-- Column Right -->
+    <div class="column-right">
+      <!-- Card 4: Thin Lenses -->
+      <div class="mm-card c4">
+        <div class="card-title-row">
+          <span class="mm-title">Thin Lenses & Lensmaker</span>
+          <span class="mm-badge b-purple">Curvature</span>
+        </div>
+        <div class="formula-pill">1/f = (μ - 1)(1/R₁ - 1/R₂) &nbsp;|&nbsp; P = P₁ + P₂ &nbsp;|&nbsp; m = v/u</div>
+        <ul class="key-points">
+          <li><strong>Medium Immersion:</strong> $f_{\text{med}} = f_{\text{air}} \frac{\mu_g - 1}{\mu_g/\mu_m - 1}$; in medium with $\mu_m &gt; \mu_g$, convex lens diverges!</li>
+          <li><strong>Lens Cutting:</strong> Along principal axis $\to f' = f$ (intensity halved); perpendicular to axis $\to f' = 2f$ (power halved).</li>
+          <li><strong>Power in Contact:</strong> Thin lenses in contact add algebraically: $P = P_1 + P_2 \implies 1/F = 1/f_1 + 1/f_2$.</li>
+        </ul>
+      </div>
+
+      <!-- Card 5: Prism Refraction -->
+      <div class="mm-card c5">
+        <div class="card-title-row">
+          <span class="mm-title">Prism Deviation & Dispersion</span>
+          <span class="mm-badge b-green">Minimum Deviation</span>
+        </div>
+        <div class="formula-pill">μ = sin((A + δ_m)/2) / sin(A/2) &nbsp;|&nbsp; δ ≈ (μ - 1)A</div>
+        <ul class="key-points">
+          <li><strong>Symmetry at $\delta_m$:</strong> Angle of incidence equals emergence ($i = e$); ray travels parallel to base.</li>
+          <li><strong>Dispersion (Cauchy):</strong> Shorter wavelengths refract more ($\mu_{\text{violet}} &gt; \mu_{\text{red}}$); violet deviates most.</li>
+          <li><strong>Dispersive Power:</strong> $\omega = (\mu_v - \mu_r)/(\mu_y - 1)$ depends only on material, not prism geometry.</li>
+        </ul>
+      </div>
+
+      <!-- Card 6: Optical Instruments -->
+      <div class="mm-card c6">
+        <div class="card-title-row">
+          <span class="mm-title">Optical Instruments</span>
+          <span class="mm-badge b-rose">Magnification</span>
+        </div>
+        <div class="formula-pill">Micro: M ≈ -(L/f_o)(D/f_e) &nbsp;|&nbsp; Tele: M = -f_o/f_e, L = f_o + f_e</div>
+        <ul class="key-points">
+          <li><strong>Microscope Design:</strong> Small $f_o$ and tiny aperture maximize $m_o$; eyepiece magnifies intermediate image.</li>
+          <li><strong>Telescope Design:</strong> Large $f_o$ and wide aperture maximize light grasp and angular resolution ($f_o \gg f_e$).</li>
+          <li><strong>Reflecting Advantage:</strong> Eliminates chromatic aberration; parabolic primary mirror eliminates spherical aberration.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

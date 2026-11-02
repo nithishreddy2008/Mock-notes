@@ -13,596 +13,636 @@
   columns: (0.95fr, 1.75fr, 1.15fr),
   table.header[*Sub-topic*][*Official syllabus pointer (NTA Physics-322, Unit 6)*][*Skills the questions test*],
   [*Reflection of light*], [
-    Spherical mirrors, mirror formula, sign convention (Cartesian),
-    magnification $m = -v/u$.
+    Spherical mirrors, mirror formula $1/v + 1/u = 1/f$, Cartesian sign convention,
+    magnification $m = -v/u = h'/h$.
   ], [
-    Sign discipline, image-position recall, magnification sign reading.
+    Sign discipline, image-position recall, magnification sign reading ($m < 0$ real, $m > 0$ virtual).
   ],
   [*Refraction of light*], [
-    Refraction through a glass slab, Snell's laws, total internal reflection and its
-    critical angle, applications to optical fibres and prisms.
+    Refraction through planar boundaries, Snell's laws, apparent depth, normal shift,
+    total internal reflection (TIR) and its critical angle, optical fibres, and totally reflecting prisms.
   ], [
-    Applying $n_1 sin θ_1 = n_2 sin θ_2$, apparent-depth reasoning, TIR conditions.
+    Applying $n_1 sin theta_1 = n_2 sin theta_2$, apparent-depth calculations, circle of illuminance, TIR dual criteria.
   ],
   [*Refraction at spherical surfaces & lenses*], [
-    Thin lens formula, lensmaker's formula, power $P = 1/f$ (dioptre), combination of
-    thin lenses in contact, magnification.
+    Refraction at spherical surface $(mu_2/v - mu_1/u = (mu_2 - mu_1)/R)$, thin lens formula,
+    lensmaker's formula, power $P = 1/f$ (dioptre), combination of thin lenses in contact, medium immersion.
   ], [
-    Sign-flip awareness versus mirrors, dioptre arithmetic, medium-change effects.
+    Curvature signs ($R_1, R_2$), dioptre arithmetic ($P = P_1 + P_2$), lens immersion flips, lens cutting rules.
   ],
   [*Prisms*], [
-    Refraction and dispersion through a prism, angle of minimum deviation
-    $n = sin((A + δ_m)/2)/sin(A/2)$, thin-prism relation $δ ≈ (n-1)A$.
+    Refraction and dispersion through a triangular prism, angle of minimum deviation
+    $mu = sin((A + delta_m)/2)/sin(A/2)$, thin-prism relation $delta approx (mu-1)A$, Cauchy's dispersion law, dispersive power.
   ], [
-    Index from $δ_m$, thin-prism shortcut, VIBGYOR ordering by $n$.
+    Index from $delta_m$, thin-prism shortcuts, rainbow mechanisms, VIBGYOR dispersion ordering.
   ],
   [*Optical instruments*], [
-    Simple microscope (magnifying glass), compound microscope, astronomical telescope:
-    magnifying powers and tube lengths at normal adjustment.
+    Simple microscope (magnifying glass), compound microscope, astronomical refracting telescope,
+    reflecting telescopes (Cassegrain): magnifying powers and tube lengths at normal and near-point adjustments.
   ], [
-    Formula recall for $M$ and $L$, objective-versus-eyepiece role questions.
+    Formula recall for $M$ and $L$, objective-versus-eyepiece roles, resolving power, chromatic aberration elimination.
   ],
 )
 
 #exam-pointer[
-  CUET UG pattern (2026 bulletin, the current 2027 baseline): each subject paper has
-  50 compulsory MCQs in 60 minutes, $+5$ for every correct answer and $-1$ for every incorrect answer. Unit 6 (Ray Optics) is tested
-  through single-correct MCQs at NCERT level — every technique below is paired with
-  its fastest exam-ready version.
+  *CUET UG Pattern (NTA 2026–2027 Baseline):* The Physics paper contains 50 compulsory MCQs in 60 minutes ($+5$ marks for correct, $-1$ mark for incorrect). Unit 6 (Ray Optics & Optical Instruments) typically yields 4 to 6 questions spanning mirror/lens sign conventions, TIR critical angle conditions, minimum deviation of prisms, and telescope/microscope tube lengths.
 ]
 
 = Reflection at Spherical Mirrors
 
-A spherical mirror is a small slice cut from a hollow glass sphere, polished on one
-side. When the *inner* (caved-in) surface does the reflecting, the mirror is
-*concave* and it brings parallel rays together — it *converges* light. When the
-*outer* (bulging) surface reflects, the mirror is *convex* and it spreads rays apart
-— it *diverges* light. Before any formula, get comfortable with the six location
-words that every mirror question is built on; each one is just a named point on the
-axis of the mirror.
+A spherical mirror is a small slice cut from a hollow glass sphere, silvered on one side. When the *inner* (concave) surface reflects, the mirror converges parallel incident rays towards a real focal point. When the *outer* (convex) surface reflects, the mirror diverges rays outward, causing them to appear to diverge from a virtual focal point behind the mirror.
 
-- *Pole (P):* the exact centre of the mirror surface. All distances in problems are measured from here.
-- *Centre of curvature (C):* the centre of the original sphere from which the mirror was cut. For a concave mirror it sits in front of the mirror; for a convex mirror, behind it.
-- *Radius of curvature (R):* the distance P to C. A gently curved mirror has a large R; a strongly curved one has a small R.
-- *Focus (F):* rays arriving parallel to the axis reflect through (concave) or appear to come from (convex) this point. It always sits exactly midway between P and C.
-- *Focal length (f):* the distance P to F, so $f = R/2$ always. This one line converts "curvature" language into formula language.
-- *Aperture:* the actual width of the mirror. For all school-level work the mirror is assumed thin (small aperture), which is what makes $f = R/2$ exact.
+== Fundamental Geometric Points & Sign Conventions
+All analytical problems in geometric optics require strict adherence to the *New Cartesian Sign Convention*:
+- *Pole ($P$):* The geometric centre of the reflecting surface, taken as the coordinate origin $(0, 0)$.
+- *Principal Axis:* The straight line passing through the pole $P$ and centre of curvature $C$.
+- *Direction of Light:* Light is assumed to travel from *left to right*. Distances measured in the direction of incident light are *positive*; distances measured *against* incident light are *negative*.
+- *Heights:* Heights measured perpendicular to and *above* the principal axis are *positive* ($+y$); heights *below* are *negative* ($-y$).
+- *Focal Length ($f$):* For a concave mirror, $C$ and $F$ lie in front (to the left), so *$f < 0$* and *$R < 0$*. For a convex mirror, $C$ and $F$ lie behind (to the right), so *$f > 0$* and *$R > 0$*.
+- *Paraxial Ray Relation:* For mirrors of small aperture, the focal length is exactly half the radius of curvature:
+  $ f = R / 2 $
 
-The mirror sits on a *principal axis* — the straight line through P and C. Distances
-are measured from P using the *Cartesian sign convention*: take the incoming light as
-travelling left to right, call distances measured *against* it negative and distances
-*behind* the mirror positive, and call heights above the axis positive. Fix this
-convention once and every mirror problem becomes careful bookkeeping instead of
-guesswork; a single sign slip is what flips a final answer from real to virtual.
-
-#image("assets/ray_optics_concave.png", width: 100%)
-#align(center)[#text(size: 8.5pt, fill: om-grey)[Figure 1 — The three standard rays used to construct any concave-mirror image.]]
-
-Any image location can be found by drawing just two of these three rays, and the
-third is a free cross-check:
-
-- *Parallel ray:* a ray parallel to the axis reflects through the focus F.
-- *C-ray:* a ray aimed at the centre of curvature C hits the surface head-on (along the normal), so it reflects straight back along its own path.
-- *Pole ray:* a ray striking the pole P reflects at the same angle on the other side of the axis, like a ball bouncing off a flat wall.
-
-#formula-box[
-  $ "Mirror formula:" quad 1/v + 1/u = 1/f $
-  $ "Radius relation:" quad f = R/2 $
-  $ "Magnification:" quad m = -v/u = h'/h $
+== Mirror Formula & Linear Magnification
+From geometry of similar right triangles formed by paraxial rays:
+#formula-box(title: "Master Spherical Mirror Equations")[
+  $ 1 / v + 1 / u = 1 / f = 2 / R $
+  $ m = (h') / h = - v / u = f / (f - u) = (f - v) / f $
 ]
 
-Read the signs as physics, not arithmetic. A *negative* image distance $v$ means the
-image is on the object's side of the mirror — a *real* image that can be caught on a
-screen. A *positive* $v$ means the image is behind the mirror — *virtual*, visible to
-the eye but not projectable. The magnification sign carries the orientation: negative
-$m$ means inverted (and therefore real for a mirror), positive $m$ means erect
-(virtual). For a concave mirror $f$ is negative in this convention; a convex mirror
-always has $f$ positive and therefore can only ever produce virtual, diminished,
-erect images — a one-line fact worth memorising.
+*Physical Interpretation of Signs:*
+1. Object distance $u$ is virtually always *negative* for real objects ($u < 0$).
+2. Real images are formed by actual intersection of reflected rays in front of the mirror ($v < 0$); hence magnification $m = -v/u = -(-v)/(-u) < 0$ is *negative* (real images are always *inverted*).
+3. Virtual images are formed behind the mirror ($v > 0$); hence magnification $m = -(+v)/(-u) > 0$ is *positive* (virtual images are always *erect*).
+4. Convex mirrors always produce $|v| < f$ with $v > 0$, yielding *virtual, erect, and diminished* images ($0 < m < 1$) regardless of object position!
 
-== Where the image forms: the concave-mirror map
+#worked-example("Worked Example — Concave Mirror Image Tracing")[
+  An object of height $2.5" cm"$ is placed at a distance of $30.0" cm"$ in front of a concave mirror of radius of curvature $40.0" cm"$. Find the position, nature, and height of the image.
 
-#table(
-  columns: (1.15fr, 1.15fr, 1.5fr),
-  table.header[*Object position*][*Image position*][*Image nature and everyday use*],
-  [At infinity], [At the focus F], [Point-sized, real, inverted — solar furnace collects this],
-  [Beyond C], [Between F and C], [Real, inverted, diminished — torch and headlight reflectors],
-  [At C], [At C itself], [Real, inverted, same size — classic "image at the centre" question],
-  [Between F and C], [Beyond C], [Real, inverted, enlarged — projector arrangement],
-  [At F], [At infinity], [Reflected rays leave parallel — searchlight geometry],
-  [Between P and F], [Behind the mirror], [Virtual, erect, enlarged — shaving and make-up mirror],
+  #v(3pt)
+  *Solution:*
+  Focal length $f = R/2 = (-40.0)/2 = -20.0" cm"$. Object distance $u = -30.0" cm"$.
+  $ 1 / v = 1 / f - 1 / u = 1 / (-20) - 1 / (-30) = - 1 / 20 + 1 / 30 = (-3 + 2) / 60 = - 1 / 60 ==> v = -60.0" cm" $
+  Since $v = -60.0" cm" < 0$, the image is *real* and formed $60.0" cm"$ in front of the mirror.
+  Magnification:
+  $ m = - v / u = - (-60.0) / (-30.0) = - 2.0 $
+  Image height $h' = m times h = (-2.0) times (2.5" cm") = -5.0" cm"$ (*inverted*, twice object size).
+]
+
+= Refraction of Light & Snell's Law
+
+Refraction is the change in the direction of propagation of a light wave as it passes obliquely across the boundary between two transparent media with differing optical densities.
+
+== Physical Cause & Invariant Parameters
+Light travels at speed $c approx 3.00 times 10^8" m/s"$ in vacuum, but slows down when entering a material medium. The *absolute refractive index* $mu$ (or $n$) of a medium is defined as:
+$ mu = c / v $
+Where $v$ is the phase speed of light in that medium.
+
+#note[
+  *The Invariance of Frequency:* When a light wave crosses an interface between two media, its *frequency $nu$ remains strictly invariant* because frequency is determined solely by the source oscillations ($E = h nu = "const"$). Consequently, because $v = nu lambda$, the wavelength *compresses* inside the medium:
+  $ lambda' = lambda / mu $
+]
+
+== Snell's Law of Refraction
+For a light ray incident at angle $i$ in medium 1 ($mu_1$) and refracting at angle $r$ in medium 2 ($mu_2$):
+#formula-box(title: "Snell's Law of Refraction")[
+  $ mu_1 sin i = mu_2 sin r ==> (sin i) / (sin r) = mu_2 / mu_1 = ""^1 mu_2 = v_1 / v_2 = lambda_1 / lambda_2 $
+]
+- *Rarer to Denser ($mu_2 > mu_1$):* Ray bends *towards* the normal ($r < i$). Speed and wavelength decrease.
+- *Denser to Rarer ($mu_2 < mu_1$):* Ray bends *away from* the normal ($r > i$). Speed and wavelength increase.
+- *Normal Incidence ($i = 0 degree$):* $r = 0 degree$. The ray passes undeviated, though its speed and wavelength change.
+
+== Real and Apparent Depth & Normal Shift
+When an object placed in an optically denser medium ($mu$) is viewed from an optically rarer medium (air, $mu_1 = 1$), refracted rays bend away from the normal. When extrapolated backwards, they intersect at a virtual image point $I$ located higher than object $O$:
+$ "Apparent depth " d' = d / mu $
+The *normal shift* $Delta t$ by which the object appears raised is:
+#formula-box(title: "Normal Shift Formula")[
+  $ Delta t = d - d' = d (1 - 1 / mu) $
+]
+*Crucial Property:* The normal shift $Delta t$ depends *only on slab thickness $d$ and refractive index $mu$*; it is completely independent of where the object is located beneath the slab! For multiple composite layers of immiscible liquids:
+$ Delta t_("total") = sum_i d_i (1 - 1 / mu_i) $
+
+== Lateral Displacement Through a Parallel Glass Slab
+A light ray entering a parallel-sided transparent slab refracts at the top interface and again at the bottom interface. Because the two refracting faces are parallel, the emergent ray is *parallel to the incident ray* (net angular deviation $delta = 0 degree$), but shifted laterally by distance $x$:
+$ x = (t sin(i - r)) / (cos r) $
+Where $t$ is the thickness of the slab.
+
+#figure(
+  image("assets/physics_ray_optics_refraction_tir_prism.png", width: 84%),
+  caption: [Refraction, Total Internal Reflection & Prism Dynamics: Snell's law geometry, apparent depth shift, critical angle conditions in optical fibres, and minimum deviation symmetry in triangular prisms.],
 )
 
-Each row of this map is worth memorising: cover the right two columns, read the
-object position, and recall the image position and nature from memory. The convex
-mirror column is much
-shorter for a reason — no matter where the object is, a convex mirror always forms
-a virtual, erect, diminished image between P and F. That exact behaviour is why it is
-chosen for vehicle rear-view mirrors and shop security domes: a wider field of view
-fits into a small, always-upright image.
+= Total Internal Reflection (TIR) & Critical Angle
 
-#analogy-box(title: "Everyday Example — The Soup Spoon")[
-  Turn a shiny spoon towards you with its *inner* (bowl) side: your reflection is
-  upside-down and shrunken or blown-up depending on how far you hold it — that bowl
-  is a concave mirror. Flip it to the *outer* back side: your reflection is small,
-  upright and slightly distorted — a convex mirror. One object, both mirrors, and
-  the full sign convention in your kitchen drawer.
+When a light ray travels from an optically denser medium to an optically rarer medium, the angle of refraction $r$ exceeds the angle of incidence $i$. As $i$ increases, $r$ eventually reaches $90 degree$. The angle of incidence in the denser medium for which the angle of refraction in the rarer medium equals $90 degree$ is called the *critical angle* $theta_c$.
+
+== Dual Mandatory Conditions for TIR
+Total internal reflection occurs if and only if *both* conditions are met simultaneously:
+1. *Direction Criterion:* Light must attempt to travel from an *optically denser medium to an optically rarer medium* ($mu_1 > mu_2$).
+2. *Angle Criterion:* The angle of incidence must strictly exceed the critical angle: *$i > theta_c$*.
+
+From Snell's law at $i = theta_c$ and $r = 90 degree$:
+$ mu_1 sin theta_c = mu_2 sin 90 degree ==> sin theta_c = mu_2 / mu_1 $
+For a medium-to-air interface ($mu_2 = 1, mu_1 = mu$):
+#formula-box(title: "Critical Angle Formula")[
+  $ sin theta_c = 1 / mu ==> theta_c = arcsin(1 / mu) $
 ]
+*Standard Benchmark Critical Angles:*
+- Crown glass ($mu = 1.50$): $theta_c = arcsin(1/1.50) approx 41.8 degree approx 42 degree$
+- Water ($mu = 1.33 = 4/3$): $theta_c = arcsin(3/4) approx 48.6 degree$
+- Diamond ($mu = 2.42$): $theta_c = arcsin(1/2.42) approx 24.4 degree$ (extreme sparkle due to multiple internal bounces!)
 
-#worked-example("Worked Example — Mirror Formula")[
-  An object stands $30 "cm"$ in front of a concave mirror of focal length $20 "cm"$.
-  Locate the image and find its magnification.
+== Circle of Illuminance (Fish-Eye Horizon)
+A point source of light $S$ submerged at depth $h$ inside water emits rays in all directions. Only rays incident at the water-air interface with $i <= theta_c$ can escape into the air. Rays with $i > theta_c$ undergo TIR back into the water.
+Consequently, light emerges only through a circular patch on the surface of radius $r$:
+$ tan theta_c = r / h ==> r = h tan theta_c = h (sin theta_c) / (cos theta_c) = h (1/mu) / sqrt(1 - 1/mu^2) = h / sqrt(mu^2 - 1) $
+The area of the luminous circular window is:
+$ A = pi r^2 = (pi h^2) / (mu^2 - 1) $
+
+== High-Yield Technological Applications of TIR
+1. *Optical Fibres:* Consist of a high refractive index dielectric *core* ($mu_1 approx 1.52$) surrounded by a lower index *cladding* ($mu_2 approx 1.48$). Light entering at angle within the acceptance cone undergoes repeated TIR with virtually *zero transmission loss*.
+   - *Numerical Aperture ($N A$):* Measure of light-gathering capacity:
+     $ N A = sin theta_a = sqrt(mu_1^2 - mu_2^2) $
+2. *Totally Reflecting Prisms:* Right-angled isosceles crown glass prisms ($45 degree - 90 degree - 45 degree$). Since $theta_c approx 42 degree$, a ray incident normally on one face hits the hypotenuse at $i = 45 degree > 42 degree$, undergoing complete TIR:
+   - *Deviating by $90 degree$:* Used in periscopes.
+   - *Deviating by $180 degree$:* Inverts images without changing size (Porro prisms in binoculars).
+   - *Advantage over Silvered Mirrors:* 100% reflection, no ghost reflections, no degradation or tarnishing of reflective coating.
+3. *Mirage:* Optical illusion in hot deserts where the air near the heated ground expands and becomes optically rarer than cooler air above ($mu$ decreases towards ground). Rays from tree tops bend away from the normal until $i > theta_c$, undergoing TIR and entering the eye from below, creating the inverted virtual image of an apparent water pool.
+
+#worked-example("Worked Example — Circle of Illuminance")[
+  A point source of light is placed at the bottom of a water tank of depth $sqrt(7)" m"$. If the refractive index of water is $4/3$, find the diameter of the circular area on the water surface through which light can emerge.
 
   #v(3pt)
-  *Solution.* Apply the convention: $u = -30 "cm"$, $f = -20 "cm"$.
-  $ 1/v = 1/f - 1/u = 1/(-20) - 1/(-30) = -1/60 quad ==> quad v = -60 "cm" $
-  The negative $v$ places the image $60 "cm"$ in front of the mirror — real, and
-  beyond C (which sits at $2f = 40 "cm"$). That matches the map: the object is
-  between F and C, so the image lands beyond C, enlarged. Magnification:
-  $m = -v/u = -(-60)/(-30) = -2$ — inverted and twice the object height. The signs
-  did all the conceptual work.
+  *Solution:*
+  Radius of circular patch:
+  $ r = h / sqrt(mu^2 - 1) = sqrt(7) / sqrt((4/3)^2 - 1) = sqrt(7) / sqrt(16/9 - 1) = sqrt(7) / sqrt(7/9) = sqrt(7) / (sqrt(7)/3) = 3.0" m" $
+  Therefore, the diameter is $D = 2 r = 2 times 3.0 = 6.0" m"$.
 ]
 
-#worked-example("Worked Example — Convex Rear-View Mirror")[
-  A convex mirror has focal length $15 "cm"$. An object is $30 "cm"$ away. Where is
-  the image, and what is the magnification?
+= Refraction at Spherical Surfaces & Thin Lenses
 
-  #v(3pt)
-  *Solution.* $u = -30 "cm"$, $f = +15 "cm"$:
-  $ 1/v = 1/f - 1/u = 1/15 + 1/30 = 1/10 quad ==> quad v = +10 "cm", quad m = -v/u = +1/3 $
-  Positive $v$ — the image is behind the mirror, virtual and erect; $m = +1/3$ —
-  three times smaller. The driver sees a wide, upright, reduced view, which is
-  exactly why the mirror carries the warning "objects are closer than they appear".
+When light refracts across a curved interface separating two media of indices $mu_1$ and $mu_2$, the curved geometry alters wavefront vergence.
+
+== Refraction at a Single Spherical Surface
+For paraxial rays incident from medium 1 ($mu_1$) onto a spherical surface of radius $R$ bounding medium 2 ($mu_2$):
+#formula-box(title: "Single Spherical Surface Refraction Equation")[
+  $ mu_2 / v - mu_1 / u = (mu_2 - mu_1) / R $
 ]
+*Sign Discipline:* Apply Cartesian conventions to $u$, $v$, and $R$. If the surface is convex towards the rarer medium, $R > 0$; if concave towards the rarer medium, $R < 0$.
 
-= Refraction: Why Light Bends at a Boundary
-
-Drop a pencil into a glass of water and look from the side: the pencil appears bent
-at the waterline even though it is straight. The pencil did not bend — the light
-coming from the underwater part *changed direction* at the surface. That direction
-change is *refraction*, and its single cause is a *change in the speed of light*
-when it crosses from one transparent medium into another. Light travels at $c
-approx 3 times 10^8 "m/s"$ in vacuum and slower inside matter: about $2.25 times
-10^8 "m/s"$ in water and $2 times 10^8 "m/s"$ in glass. The medium's *refractive
-index* $n$ is simply the slowdown factor:
-
-#formula-box(title: "Refractive Index and Snell's Law")[
-  $ n = c/v $
-  $ "Snell's law:" quad n_1 sin θ_1 = n_2 sin θ_2 $
-  $ "Apparent depth:" quad n = "real depth"/"apparent depth" $
-]
-
-Three facts follow directly from the speed picture, and each is a common one-mark
-check:
-
-- *Frequency never changes.* The source sets how many wave crests arrive per second; crossing a boundary cannot change that count.
-- *Wavelength shrinks inside the denser medium* to $lambda/n$, since $v = f lambda$ and $f$ is fixed while $v$ drops.
-- *Bending direction follows the speed change.* Entering a denser (slower) medium, the ray bends *towards* the normal; entering a rarer (faster) one, it bends *away*.
-- *The path is reversible.* If a ray is reversed at the end of its journey, it retraces the same bends in reverse — this symmetry lets you swap $n_1$ and $n_2$ freely when checking an answer.
-- *No boundary, no bend.* A ray striking the surface along the normal ($θ_1 = 0°$) changes speed but does not change direction — bending needs an oblique angle.
-
-Memorise a few anchor values of $n$ and most ranking questions answer themselves:
-
-#table(
-  columns: (1.4fr, 1fr, 1.6fr),
-  table.header[*Medium*][*Refractive index n*][*Speed of light inside (approx.)*],
-  [Vacuum], [1 (exactly)], [$3 times 10^8 "m/s"$],
-  [Air], [1.0003 (treated as 1)], [essentially $c$],
-  [Water], [1.33], [$2.25 times 10^8 "m/s"$],
-  [Crown glass], [1.5], [$2 times 10^8 "m/s"$],
-  [Diamond], [2.42], [$1.24 times 10^8 "m/s"$ — the slowest common medium],
-)
-
-The larger the index, the slower light travels and the more a ray bends on entry.
-Diamond tops this list among everyday materials, which is why it both sparkles
-(large bending, strong trapping) and ranks highest in every "arrange by bending"
-question. Optical density is a statement about light speed, not about mass density —
-petrol floats on water but has a slightly higher refractive index than water, a
-classic trap pairing.
-
-#analogy-box[
-  A marching band walks from smooth pavement onto a sandy patch *at an angle*. The
-  marchers who reach the sand first slow down while their row-mates on pavement keep
-  pace, so the entire row pivots — the band's line of march kinks at the boundary.
-  Each marcher is a wavefront point; the pavement-to-sand slowdown is the
-  vacuum-to-glass slowdown, and the kinked path is exactly Snell's law.
-]
-
-== Snell's law at work: pools, coins and glass slabs
-
-The *apparent depth* relation explains why a swimming pool looks shallower than it
-really is: light from the floor bends away from the normal as it leaves the water,
-so the brain projects the rays along straight lines and places the floor higher than
-it is. Water with $n = 4/3$ makes a $3 "m"$ deep pool appear only $3 / (4/3) = 2.25
-"m"$ deep. The same geometry means a coin at the bottom of a bucket appears closer
-to the rim — and a spear-fisher must aim *below* the seen fish to catch it.
-
-A parallel-sided glass slab refracts twice — once on entry, once on exit. The two
-bends exactly cancel for direction, so the emergent ray is *parallel* to the incident
-ray; but it is laterally shifted by a few millimetres. Direction preserved, position
-shifted: that is why text seen through a thick glass pane looks in place but slightly
-displaced sideways when you move your eye. There is *no net deviation* in a slab,
-while a prism (next sections) deviates permanently — a contrast questions directly
-test.
-
-#worked-example("Worked Example — Snell's Law Calculation")[
-  Light passes from air ($n_1 = 1.0$) into glass ($n_2 = 1.5$) hitting the surface at
-  $40°$ to the normal. Find the refraction angle and the speed of light inside the
-  glass.
-
-  #v(3pt)
-  *Solution.* Snell's law: $sin θ_2 = (1.0 dot sin 40°)/1.5 = 0.643/1.5 = 0.4285$, so
-  $ θ_2 = sin^(-1)(0.4285) approx 25.4° $
-  The angle shrinks from $40°$ to $25.4°$ — bent *towards* the normal, as expected
-  on entering a slower medium. Inside the glass the speed is $v = c/n = (3 times
-  10^8)/1.5 = 2 times 10^8 "m/s"$.
-]
-
-= Total Internal Reflection: When Light Cannot Escape
-
-Stand underwater on a bright day and look up: you see the whole sky compressed into
-a bright circle overhead, and outside that circle the surface looks like a mirror
-showing the pool floor. That mirror is not a coating — it is *total internal
-reflection (TIR)*, and it happens because light travelling from a *denser* to a
-*rarer* medium bends *away* from the normal. Push the incidence angle far enough and
-the refracted ray lies flat along the surface at the *critical angle* $θ_c$; beyond
-it, refraction has nowhere to go and the light is reflected back *completely* —
-100% of it, no partial reflections involved.
-
-Two conditions must hold *simultaneously*, and both matter equally:
-
-- *Right direction:* light must travel from the denser medium towards the rarer one (glass to air, water to air) — never the reverse.
-- *Beyond the critical angle:* the incidence angle must exceed $θ_c$, where $sin θ_c = n_2 / n_1$ (for a medium-to-air boundary, $sin θ_c = 1/n$).
-
-#formula-box(title: "Critical Angle")[
-  $ sin θ_c = n_2/n_1 $
-  $ "Medium to air:" quad sin θ_c = 1/n $
-  $ "Glass-air (n = 1.5):" quad θ_c = sin^(-1)(1/1.5) approx 41.8° $
-  $ "Water-air:" quad θ_c approx 48.75° $
-]
-
-#worked-example("Worked Example — Finding the Critical Angle")[
-  A transparent liquid has refractive index $1.33$. Find its critical angle with air,
-  and state what happens to a ray hitting the surface at $50°$ from inside.
-
-  #v(3pt)
-  *Solution.* $sin θ_c = 1/1.33 = 0.752$, so $θ_c = sin^(-1)(0.752) approx 48.75°$.
-  The ray arrives at $50°$, which is *beyond* $θ_c$, and it is travelling denser to
-  rarer — both TIR conditions hold, so the ray is totally internally reflected back
-  into the liquid. Had the angle been $45°$, partial refraction with a bent
-  refracted ray would occur instead.
-
-  #v(2pt)
-  *Watch the pattern:* one wrong option in such MCQs violates the direction
-  condition, another violates the angle condition. Check both before answering.
-]
-
-TIR is not a curiosity — it moves the world's information. Every optical fibre works
-by keeping light trapped: light entering the thin glass core hits the core-cladding
-boundary at angles beyond the critical angle and bounces along in a zig-zag with
-essentially zero loss, which is how undersea cables carry internet traffic across
-oceans as pulses of light. An endoscope uses the same trick to pipe light into and
-images out of the human body. Diamonds owe their sparkle to TIR: with the unusually
-high $n = 2.42$, the critical angle is only $sin^(-1)(1/2.42) approx 24.4°$, so light
-entering a cut stone bounces many times inside before escaping through the top —
-engineered facets make the trapping as long as possible. Mirages work in reverse:
-hot road air (rarer, near the ground) refracts and finally totally reflects the
-downward ray from the sky back up into your eye, painting a false "wet" pool of sky
-on the road.
-
-The fibre works only because its *core* has a slightly higher refractive index than
-its *cladding* — TIR needs denser-to-rarer, so the boundary must face the right way.
-This direction rule also powers a family of glass prisms: a $45°-90°-45°$ prism
-receives light on one face at exactly $45°$, which exceeds the $41.8°$ critical angle
-of glass, and turns the beam by $90°$ with zero silvering and zero loss. Two such
-prisms in a binocular fold a long light path into a compact body *and* re-erect the
-inverted image; a single one in a periscope lets a soldier see over a wall. Prism
-"mirrors" outperform metal mirrors because no metal coating exists to scratch,
-tarnish or absorb — the reflection is built into geometry itself.
-
-- *Higher $n$ means smaller $θ_c$:* diamond ($n = 2.42$) traps light far more aggressively than glass ($n = 1.5$) or water ($n = 1.33$) — ranking questions on $θ_c$ reduce to ranking $n$ in reverse.
-- *TIR is total:* ordinary mirror reflections leave a few percent of light behind at every bounce; TIR returns essentially everything, which is why fibre optics can survive thousands of bounces per kilometre.
-- *Frequency and colour are unchanged by TIR* — only direction changes, so trapped light keeps its message intact.
-
-#analogy-box(title: "Everyday Example — The Pond-Skater's Window")[
-  From *under* water, look up at a shallow angle: the water surface, which behaved
-  like a clear window when viewed straight up, suddenly behaves like a perfect
-  silver mirror. A swimmer sees the whole world above compressed into a $97°$ cone
-  ($2 times 48.75°$), and beyond that cone — the pond bottom reflected. TIR flips a
-  window into a mirror purely because of viewing angle, no coating required.
-]
-
-= Thin Lenses and the Lensmaker's Formula
-
-A *lens* is a transparent piece of glass or plastic bounded by two curved surfaces
-(or one curved and one flat). A *convex* (converging) lens is fat in the middle: it
-bends parallel rays inward to a real focus, the way a magnifying glass concentrates
-sunlight into a bright, hot point. A *concave* (diverging) lens is thin in the
-middle and spreads rays outward so they appear to come from a point *behind* the
-lens — a virtual focus. Because a lens refracts at *two* surfaces, its sign story
-differs from a mirror's in exactly one place, and that one place decides marks:
-
-#table(
-  columns: (1.1fr, 1.2fr, 1.2fr),
-  table.header[*Quantity*][*Spherical mirror*][*Thin lens*],
-  [Master formula], [$1/v + 1/u = 1/f$ ("plus")], [$1/v - 1/u = 1/f$ ("minus")],
-  [Real image distance], [Negative ($v < 0$, same side as object)], [Positive ($v > 0$, opposite side of object)],
-  [Converging element], [Concave mirror, $f < 0$], [Convex lens, $f > 0$],
-  [Diverging element], [Convex mirror, $f > 0$], [Concave lens, $f < 0$],
-)
-
-A reliable way to hold this table: for mirrors, "real is on the object side" (so $v$
-negative); for lenses, real images form on the *transmission* side (so $v$ positive).
-The formula difference — plus for mirrors, minus for lenses — is not arbitrary; it
-is the algebraic shadow of exactly this geometric difference.
-
-#formula-box(title: "Power of a Lens")[
-  $ P = 1/f "(f in metres)" $
-  $ "Dioptre:" quad 1 "D" = 1 "m"^(-1) $
-  $ "Lenses in contact:" quad P = P_1 + P_2 + dots $
-  $ "Equivalent focal length:" quad 1/F = 1/f_1 + 1/f_2 + dots $
-]
-
-*Power* is the practical language of optometry. An optician's prescription reading
-$-1.5 "D"$ means a diverging (concave) lens of focal length $-1/1.5 approx -67 "cm"$
-for a myopic (short-sighted) eye; $+2.0 "D"$ means a converging lens of focal length
-$+50 "cm"$ for a hypermetropic (long-sighted) reader. Powers of stacked thin lenses
-simply *add*, so an optometrist can correct a combination of defects by summing
-dioptres — the arithmetic a phoropter dial performs while the patient reads letters.
-
+== Lensmaker's Formula & Thin Lens Equation
+Applying the single-surface equation across two consecutive curved surfaces of radii $R_1$ and $R_2$ bounding a lens of material index $mu_2 = mu_g$ surrounded by medium $mu_1 = mu_m$:
 #formula-box(title: "Lensmaker's Formula")[
-  $ 1/f = (n - 1)(1/R_1 - 1/R_2) $
-  $ n = "lens material index", quad R_1, R_2 = "radii of the two surfaces" $
+  $ 1 / f = (mu_g / mu_m - 1) (1 / R_1 - 1 / R_2) $
+]
+For a lens in air ($mu_m = 1, mu_g = mu$):
+$ 1 / f = (mu - 1) (1 / R_1 - 1 / R_2) $
+Combining with the object-image relation yields the *Gaussian Thin Lens Equation*:
+#formula-box(title: "Gaussian Thin Lens Formula & Magnification")[
+  $ 1 / v - 1 / u = 1 / f $
+  $ m = (h') / h = v / u = f / (f + u) = (f - v) / f $
+]
+- *Convex (Converging) Lens:* Thicker at centre; $f > 0$; forms real inverted images for $u > f$ and virtual erect magnified images for $u < f$.
+- *Concave (Diverging) Lens:* Thinner at centre; $f < 0$; always forms virtual, erect, and diminished images between optical centre and focus ($0 < m < 1$).
+
+== Power of a Lens & Combination in Contact
+The *power $P$* of a lens measures its ability to converge or diverge incident light:
+$ P = 1 / (f " (in metres)") = 100 / (f " (in cm)") $
+SI Unit of power is the *Dioptre (D)*, where $1" D" = 1" m"^(-1)$.
+- Converging lens: $f > 0 ==> P > 0$ (positive power).
+- Diverging lens: $f < 0 ==> P < 0$ (negative power).
+
+When two or more thin lenses of focal lengths $f_1, f_2, dots$ and powers $P_1, P_2, dots$ are placed in *coaxial contact*:
+#formula-box(title: "Lenses in Contact")[
+  $ P_("eq") = P_1 + P_2 + P_3 + dots $
+  $ 1 / F = 1 / f_1 + 1 / f_2 + 1 / f_3 + dots $
+  $ m_("eq") = m_1 times m_2 times m_3 times dots $
 ]
 
-The lensmaker's formula tells you $f$ is decided by two independent choices: the
-*material* (bigger $n - 1$ gives a shorter, stronger focus — flint glass bends more
-than crown glass) and the *shape* (smaller radii, i.e. more curved surfaces, shorten
-$f$). It also predicts what happens when the *surrounding medium* changes. An air
-bubble inside water acts as a *diverging* lens even though its glass-free shape looks
-converging: here the "lens material" is air ($n = 1.0$) and the surroundings are
-water ($n = 1.33$), so the effective $(n - 1)$ is negative. In the same spirit, a
-converging glass lens immersed in carbon disulphide ($n = 1.63 > 1.5$) flips character
-and starts diverging. Any MCQ of the form "a lens behaves differently inside a
-liquid" is this one paragraph.
+== Liquid Immersion & Lens Inversion
+When a glass lens ($mu_g$) of focal length $f_("air")$ in air is immersed in a liquid of refractive index $mu_l$:
+$ (1/f_("liq")) / (1/f_("air")) = ((mu_g / mu_l - 1)) / (mu_g - 1) ==> f_("liq") = f_("air") ((mu_g - 1)) / (mu_g / mu_l - 1) $
+*Three Dramatic Immersion Cases Tested by CUET:*
+1. *Immersion in Water ($mu_l < mu_g$):* For glass ($mu_g = 1.5$) in water ($mu_l = 4/3$):
+   $ f_("water") = f_("air") (1.5 - 1) / (1.5 / (4/3) - 1) = 0.5 / (9/8 - 1) f_("air") = 0.5 / (1/8) f_("air") = 4 f_("air") $
+   The focal length increases by a factor of 4; power drops to $1/4$th of its air value.
+2. *Immersion in Matching Medium ($mu_l = mu_g$):* $1/f_("liq") = 0 ==> f_("liq") -> oo$. The lens behaves as a plain glass sheet and becomes completely *invisible*!
+3. *Immersion in Denser Liquid ($mu_l > mu_g$):* For glass ($mu_g = 1.5$) in carbon disulphide ($mu_l = 1.63$):
+   $(mu_g / mu_l - 1) < 0$. The sign of focal length *flips*! A convex lens becomes *diverging*, and a concave lens becomes *converging*!
 
-#worked-example("Worked Example — Two Lenses in Contact")[
-  Two thin lenses of focal lengths $+15 "cm"$ and $-10 "cm"$ are placed in contact.
-  Find the focal length and power of the combination, and state its behaviour.
+== Lens Cutting Dynamics
+- *Cut Along Principal Axis (Longitudinal):* Radii $R_1, R_2$ and $(mu - 1)$ are unaltered. Focal length of each half remains *$f' = f$*, power remains *$P' = P$*, but aperture area is halved, so image *intensity is halved* ($I' = I / 2$).
+- *Cut Perpendicular to Principal Axis (Transverse):* An equiconvex lens ($R_1 = R, R_2 = -R$) has $1/f = (mu-1)(2/R)$. Each resulting plano-convex half has surfaces $R$ and $oo$, so $1/f' = (mu-1)(1/R) = 1/(2f)$. The focal length *doubles* ($f' = 2f$) and power is *halved* ($P' = P / 2$).
 
-  #v(3pt)
-  *Solution.* $1/F = 1/15 + 1/(-10) = 2/30 - 3/30 = -1/30$, so $F = -30 "cm"$ and
-  $P = 1/(-0.30 "m") = -3.33 "D"$. The pair behaves as a single diverging lens of
-  focal length $30 "cm"$. The same arithmetic nets a contact-lens prescription to a
-  target power: choose components whose dioptres sum to the required value.
-]
-
-#worked-example("Worked Example — Image by a Converging Lens")[
-  An object is placed $36 "cm"$ from a convex lens of focal length $12 "cm"$. Find
-  the image position and magnification.
-
-  #v(3pt)
-  *Solution.* $u = -36 "cm"$, $f = +12 "cm"$:
-  $ 1/v = 1/f + 1/u = 1/12 - 1/36 = (3 - 1)/36 = 1/18 quad ==> quad v = +18 "cm" $
-  Positive $v$ — a real image on the far side, $18 "cm"$ from the lens. The signed
-  magnification is $m = v/u = 18/(-36) = -1/2$: inverted and half-size (for a single
-  thin lens, every real image is inverted — the negative sign is not optional
-  bookkeeping, it is the physics). When an object sits beyond $2f$, a
-  converging lens always delivers a real, inverted, diminished image between $f$
-  and $2f$ — the operating regime of a camera.
-
-  #v(2pt)
-  *The camera connection:* your phone camera's "zoom" is partly this formula at
-  work — changing the effective $f$ moves where the sharpest real image lands on
-  the sensor.
-]
-
-#analogy-box(title: "Everyday Example — The Reading Stone")[
-  A magnifying glass starts a fire because it maps the huge, nearly parallel disc of
-  sunlight onto one tiny bright spot — all the energy passing through the whole lens
-  lands in a millimetre-sized real image of the sun. That spot *is* the focal point
-  doing its job: a converging lens forming a real image at its focus. The same
-  physics, used gently, magnifies a page instead.
-]
-
-= Prisms, Dispersion and Minimum Deviation
-
-A prism is a wedge of transparent material with two flat refracting faces meeting at
-the *angle of the prism* $A$. A ray entering it is bent twice — towards the normal on
-entry, away from it on exit — and the two bends do *not* cancel because the faces are
-not parallel. The total turn between the incoming and outgoing ray is the *angle of
-deviation* $δ = i + e - A$, where $i$ and $e$ are the external incidence and emergence
-angles. As you slowly rotate the prism (equivalently, vary $i$), $δ$ first decreases,
-reaches a single minimum value $δ_m$, then rises again. At that special setting the
-ray inside the prism travels *parallel to the base* and the entry and exit angles
-match ($i = e$) — a beautiful symmetry forced by the geometry.
-
-#formula-box(title: "Prism Relations")[
-  $ δ = i + e - A quad quad A = r_1 + r_2 $
-  $ "At minimum deviation:" quad n = sin((A + δ_m)/2) / sin(A/2) $
-  $ "Thin prism:" quad δ approx (n - 1) A $
-]
-
-The minimum-deviation formula is the workhorse: measure $A$ and $δ_m$ in a lab and
-you have measured the refractive index without knowing any radii. The thin-prism
-shortcut handles the small-angle limit used in spectrometers: deviation grows
-linearly with both $n$ and prism angle, no sines required. Keep the validity border
-in mind — $δ approx (n-1)A$ is for small $A$ only; at $A = 60°$ you must use the full
-sine form.
-
-== Dispersion: why prisms paint rainbows
-
-Send white light through a prism and a *spectrum* fans out — violet through red.
-This splitting is *dispersion*, and its cause is that $n$ is not one number but a
-*function of wavelength*: violet light slows more in glass than red light does, so
-$n_"violet" > n_"red"$, so violet bends more. The two ends of the visible spectrum
-part ways inside the prism and leave it spread by the *angular dispersion*
-$(n_"violet" - n_"red") A$ for a thin prism. Order from top (least deviated) to
-bottom (most deviated) of a spectrum on a screen: *red, orange, yellow, green, blue,
-indigo, violet* — red bends least, violet most.
-
-#table(
-  columns: (1.2fr, 1.5fr, 1.5fr),
-  table.header[*Setup*][*Direction of ray*][*Dispersion and deviation*],
-  [Parallel glass slab], [Emerges parallel to incident ray], [Splits colours inside but they recombine on exit: dispersion *without* net deviation],
-  [Thin prism], [Net bend of $(n-1)A$], [Permanent deviation *and* permanent angular spread of colours],
-  [Prism at minimum deviation], [Symmetric passage, ray parallel to base], [Cleanest single-deviation setting; the $n$-measurement condition],
+#figure(
+  image("assets/physics_ray_optics_lenses_instruments.png", width: 84%),
+  caption: [Lensmaker's Formula & Optical Instruments: Biconvex lens curvature and focal convergence, compound microscope two-stage magnification relay, and astronomical vs Cassegrain reflecting telescopes.],
 )
 
-This table answers a classic conceptual pair: "does a glass slab disperse?" (yes,
-but the colours recombine — no lasting spectrum) and "why does a prism not?" (non-parallel
-faces lock the spread in). A *rainbow* is dispersion plus TIR on a grand scale:
-sunlight enters a raindrop, refracts, reflects once off the back surface, refracts
-again on exit, and each wavelength exits at its own angle near $42°$ (red) to $40°$
-(violet) from the antisolar point — millions of drops each painting one pixel of the
-arc you see.
+= Prisms, Minimum Deviation & Dispersion
 
-If you plot measured deviation $δ$ against incidence angle $i$ for a fixed prism, the
-curve falls steeply, flattens near $δ_m$, and rises again asymmetrically — the flat
-minimum is why lab measurements taken near $δ_m$ are forgiving of small aim errors.
-Three factors move $δ_m$ up or down, and each is a one-line question: a *larger prism
-angle* $A$ increases deviation; a *higher refractive index* increases deviation (flint
-glass, $n approx 1.62$, deviates more than crown glass, $n approx 1.5$, for the same
-geometry); and a *shorter wavelength* increases deviation because $n$ itself is larger
-for violet than for red. Dark-line spectra from atoms, measured with precisely this
-apparatus, are how astronomers read the composition of stars — the prism is the
-oldest and still one of the most productive scientific instruments in existence.
+A prism is a homogeneous, transparent optical solid bounded by two non-parallel plane refracting surfaces inclined at the *angle of the prism* $A$ (or refracting angle).
 
-#worked-example("Worked Example — Index from Minimum Deviation")[
-  A equilateral prism ($A = 60°$) shows minimum deviation $δ_m = 30°$. Find its
-  refractive index.
-
-  #v(3pt)
-  *Solution.* Substitute directly:
-  $ n = sin((60° + 30°)/2)/sin(30°) = sin 45°/sin 30° = (1/sqrt(2))/(1/2) = sqrt(2) approx 1.414 $
-  Numbers are chosen so the half-angles land on standard sines — if your $δ_m$
-  produces an unfamiliar half-angle, re-check your arithmetic before panicking.
+== Geometry of Prism Deviation
+A monochromatic ray incident at angle $i$ on the first face refracts at angle $r_1$, travels through the prism, strikes the second face at angle $r_2$, and emerges at angle $e$.
+From cyclic quadrilateral and exterior triangle geometry:
+#formula-box(title: "Master Prism Relations")[
+  $ A = r_1 + r_2 $
+  $ delta = i + e - A $
 ]
 
-#worked-example("Worked Example — Thin Prism")[
-  A thin prism of angle $5°$ is made of glass with $n = 1.5$. Find the deviation,
-  and the deviation for violet light with $n_"violet" = 1.52$.
+== Angle of Minimum Deviation ($delta_m$)
+As the angle of incidence $i$ is gradually increased, the deviation $delta$ decreases, passes through a distinct minimum $delta_m$, and then increases.
+At the condition of *minimum deviation*:
+1. The ray passes symmetrically through the prism: *$i = e$*.
+2. The internal refraction angles are equal: *$r_1 = r_2 = r = A / 2$*.
+3. For an equilateral or isosceles prism, the refracted ray inside travels strictly *parallel to the base*.
 
-  #v(3pt)
-  *Solution.* $δ approx (n - 1)A = 0.5 times 5° = 2.5°$. For violet:
-  $δ_v approx (1.52 - 1) times 5° = 2.6°$. The angular spread between violet and mean
-  is $0.1°$ — small, but multiplied across a spectrometer's scale it is easily
-  measured, and across a rain-shower sky it becomes a rainbow.
+Substituting into the prism equations:
+$ A = r + r = 2 r ==> r = A / 2 $
+$ delta_m = i + i - A = 2 i - A ==> i = (A + delta_m) / 2 $
+Applying Snell's law at the first refracting face gives the famous *Prism Formula*:
+#formula-box(title: "Prism Formula for Refractive Index")[
+  $ mu = (sin((A + delta_m) / 2)) / (sin(A / 2)) $
 ]
 
-= Optical Instruments: Microscopes and Telescopes
+== Thin Prism Approximation & Dispersion
+For a thin prism with small refracting angle ($A < 10 degree$), using $sin theta approx theta$:
+$ delta approx (mu - 1) A $
+*Dispersion of White Light:*
+Because refractive index varies with wavelength according to *Cauchy's Empirical Formula*:
+$ mu(lambda) approx A_0 + B_0 / lambda^2 $
+Since $lambda_("violet") < lambda_("red")$, the refractive index is highest for violet and lowest for red:
+$ mu_("violet") > mu_("yellow") > mu_("red") $
+Consequently, violet deviates the most and red deviates the least ($delta_v > delta_r$).
+- *Angular Dispersion ($theta$):* The angular separation between extreme rays (violet and red):
+  $ theta = delta_v - delta_r = (mu_v - mu_r) A $
+- *Mean Deviation ($delta_y$):* Deviation experienced by mean yellow light:
+  $ delta_y = (mu_y - 1) A $
+- *Dispersive Power ($omega$):* Ratio of angular dispersion to mean deviation:
+  #formula-box(title: "Dispersive Power")[
+    $ omega = theta / delta_y = (mu_v - mu_r) / (mu_y - 1) $
+  ]
+  *Key Exam Fact:* Dispersive power $omega$ depends *strictly on the material* of the prism, and is completely independent of the prism angle $A$!
 
-Every optical instrument is a controlled arrangement of two jobs: one element
-*gathers and forms* an image, the second *magnifies* it for the eye. Keep the roles
-separate and the formulas organise themselves. The *magnifying power* $M$ of any
-instrument is the ratio of the angle subtended by the final image at the eye to the
-angle the object would subtend viewed nakedly at the *least distance of distinct
-vision*, $D = 25 "cm"$ — the closest distance a normal eye focuses comfortably.
+= Optical Instruments: Microscopes & Telescopes
 
-- *Simple microscope (magnifying glass):* a single convex lens held so the object sits inside its focal length. The image is virtual, erect and enlarged at or beyond $25 "cm"$. Magnifying power $M = 1 + D/f$ with the image at the near point, and simply $M = D/f$ with the final image relaxed at infinity. A watchmaker's loupe of $f = 5 "cm"$ gives $M = 1 + 25/5 = 6$.
-- *Compound microscope:* two short-focus convex lenses in a tube. The *objective* ($f_o$, very small) forms a real, inverted, magnified intermediate image just inside the eyepiece's focus; the *eyepiece* ($f_e$, small) magnifies that intermediate image again like a magnifying glass. Magnifying powers *multiply*: $M = (L/f_o)(D/f_e)$ at normal adjustment, where $L$ is the tube length (distance between the lenses' back focal points). A biology lab microscope achieving $M = 500$ is really two modest magnifications, roughly $25 times 20$, multiplied.
-- *Astronomical telescope:* the roles flip by scale. The *objective* has a *long* focal length and gathers starlight into a real image at its focus; the eyepiece (short focus) magnifies that image. At *normal adjustment* the final image sits at infinity and the tube length equals $L = f_o + f_e$, while $M = f_o/f_e$ in magnitude (negative sign records the inversion). A telescope with $f_o = 100 "cm"$ and $f_e = 5 "cm"$ gives $M = 20$ and a $105 "cm"$ tube.
+Optical instruments are multi-element systems designed to increase the *visual angle* subtended by tiny or distant objects at the human eye.
 
-#formula-box(title: "Magnifying Powers (Standard Settings)")[
-  $ "Simple magnifier:" quad M = 1 + D/f $
-  $ "Compound microscope:" quad M = (L/f_o)(D/f_e) $
-  $ "Telescope:" quad M = -f_o/f_e, quad L = f_o + f_e $
+== The Human Eye & Visual Angle
+The perceived size of an object is determined solely by the angle subtended by it at the eye (visual angle). The closest distance at which a normal eye can focus clearly without strain is the *least distance of distinct vision*, $D = 25" cm"$ (near point). At infinity, the eye muscles are completely relaxed (normal adjustment).
+
+== Simple Microscope (Magnifying Glass)
+A single converging lens of short focal length $f$. The object is placed within the focal length ($u < f$), forming an erect, virtual, and magnified image on the same side.
+- *Image at Near Point ($v = -D = -25" cm"$):*
+  $ M = 1 + D / f $
+- *Image at Infinity (Normal Adjustment / Relaxed Eye):*
+  $ M = D / f $
+
+== Compound Microscope
+Employs two coaxial convex lenses to achieve magnifications beyond the aberrations of a single lens:
+1. *Objective Lens:* Very small focal length ($f_o$) and tiny aperture. The object is placed just beyond $F_o$ ($u_o > f_o$), forming a *real, inverted, and magnified intermediate image* $A'B'$.
+2. *Eyepiece (Ocular):* Moderate focal length ($f_e > f_o$) and larger aperture. Positioned such that $A'B'$ falls within its focal length, acting as a simple magnifier to form a *final virtual, inverted (relative to original object), and highly magnified image* $A''B''$.
+
+#formula-box(title: "Compound Microscope Magnifying Power")[
+  $ M = m_o times m_e = - (v_o / u_o) times (D / u_e) $
+  $ "At Near Point (" v_e = -D "):" quad M = - (v_o / u_o) (1 + D / f_e) approx - (L / f_o) (1 + D / f_e) $
+  $ "At Normal Adjustment (" v_e = oo "):" quad M = - (L / f_o) (D / f_e) $
+  $ "Tube Length (" v_e = oo "):" quad L approx v_o + f_e $
+]
+Where $L$ is the distance between the second focal point of the objective and the first focal point of the eyepiece.
+
+== Astronomical Refracting Telescope
+Designed to view distant astronomical objects ($u approx oo$):
+1. *Objective Lens:* Large focal length ($f_o$) and very large aperture to maximize light collection and diffraction resolution. Forms a *real, inverted, diminished intermediate image* at its focal plane $F_o$.
+2. *Eyepiece:* Short focal length ($f_e < f_o$) and small aperture. Magnifies the intermediate image.
+
+#formula-box(title: "Astronomical Telescope Formulas")[
+  $ "At Normal Adjustment (" v_e = oo "):" quad M = - f_o / f_e quad "and" quad L = f_o + f_e $
+  $ "At Near Point (" v_e = -D "):" quad M = - f_o / f_e (1 + f_e / D) quad "and" quad L = f_o + u_e $
 ]
 
-#table(
-  columns: (1.15fr, 1.35fr, 1.35fr),
-  table.header[*Feature*][*Compound microscope*][*Astronomical telescope*],
-  [Objective focal length], [Very small ($f_o$ a few mm)], [Very large ($f_o$ tens of cm to metres)],
-  [Object], [Tiny, placed just beyond $f_o$], [Effectively at infinity],
-  [Intermediate image], [Real, inverted, enlarged], [Real, inverted, diminished],
-  [Final image], [Virtual, enlarged, at $D$ or $infinity$], [Virtual, at $infinity$ (normal adjustment)],
-  [Tube length], [about $L$ (small)], [$L = f_o + f_e$],
-  [Everyday example], [School biology lab microscope], [Observatory refractor, binoculars (with prisms to re-erect the image)],
+== Reflecting Telescopes (Cassegrain Design)
+Modern astronomical observatories exclusively utilize reflecting telescopes with large parabolic concave primary mirrors and convex secondary mirrors.
+*Four Decisive Advantages over Refracting Telescopes:*
+1. *Zero Chromatic Aberration:* Reflection obeys the law of reflection ($i = r$) identically for all wavelengths, eliminating chromatic aberration entirely.
+2. *Elimination of Spherical Aberration:* Parabolic mirror geometry focuses all parallel rays to an identical mathematical point.
+3. *Mechanical Rigidity:* Heavy mirrors can be supported mechanically across their entire rear back, whereas massive refracting lenses can only be supported along their rims, causing gravitational sagging.
+4. *Giant Light-Gathering Power:* High-diameter apertures ($D_a > 10" m"$) gather vast amounts of light ($I prop D_a^2$) and provide razor-sharp angular resolution:
+   $ theta = (1.22 lambda) / D_a $
+
+#figure(
+  image("assets/physics_ray_optics_mindmap.png", width: 84%),
+  caption: [Master Synthesis Mindmap: Structural framework of Unit 6 Ray Optics and Optical Instruments.],
 )
 
-The microscope-versus-telescope contrast compresses to one line: the microscope's
-objective has a *tiny* focal length because its object is centimetres away; the
-telescope's objective has a *huge* focal length because its object is light-years
-away. Both eyepieces behave identically — as magnifying glasses examining the
-intermediate image.
-
-Magnification is only half of an instrument's story; *light gathering* is the other
-half. The amount of light an objective collects grows with its *area*, so a 10 cm
-aperture telescope gathers roughly $(10/0.5)^2 = 400$ times more light than the
-pupil of your eye — that, not magnification alone, is why faint galaxies become
-visible. This also explains the feature everyone notices first about binoculars:
-the specification "$8 times 40$" means magnification 8 with a 40 mm objective, and
-the big front lens matters as much as the zoom. Modern prism binoculars fit two
-telescopes into a hand by using the $45°$ TIR prisms of the previous section to
-fold the optical path twice; the same reflections flip the inverted image upright,
-which is why binoculars show a correctly oriented world while a plain astronomical
-telescope shows an upside-down one.
-
-- *Why the final image can be at infinity:* at normal adjustment the intermediate image forms exactly at the eyepiece's focus, so the rays leaving the eyepiece are parallel — the relaxed eye views them with zero strain. The "image at near point" setting ($M$ larger by the $1 + D/f$ factor) trades comfort for a little extra magnification.
-- *Why the objective comes first optically:* it decides both resolution and brightness; the eyepiece only enlarges what the objective captured, which is why swapping eyepieces changes zoom but not detail.
-
-#worked-example("Worked Example — Compound Microscope")[
-  A compound microscope has $f_o = 1 "cm"$, $f_e = 5 "cm"$ and tube length $L = 20
-  "cm"$. Find the magnifying power at normal adjustment.
-
-  #v(3pt)
-  *Solution.* $M = (L/f_o)(D/f_e) = (20/1) times (25/5) = 20 times 5 = 100$. The
-  objective magnifies 20 times, the eyepiece 5 times, and the product is the answer.
-  If asked instead for the image at the near point, the eyepiece factor becomes
-  $1 + D/f_e = 6$ and $M = 120$ — always confirm *where* the final image is meant
-  to be before computing.
+#cheatsheet-box(title: "Master Ray Optics & Optical Instruments Revision Cheatsheet")[
+  - *Mirror Equation:* $1/v + 1/u = 1/f = 2/R$ | Magnification: $m = -v/u = f/(f-u)$.
+  - *Snell's Law:* $mu_1 sin i = mu_2 sin r$ | Apparent depth: $d' = d/mu$ | Normal shift: $Delta t = d(1 - 1/mu)$.
+  - *Critical Angle:* $sin theta_c = mu_2 / mu_1 = 1/mu$ | Circle of illuminance: $r = h / sqrt(mu^2 - 1)$ | Area: $A = (pi h^2)/(mu^2 - 1)$.
+  - *Single Surface Refraction:* $mu_2 / v - mu_1 / u = (mu_2 - mu_1) / R$.
+  - *Lensmaker's Formula:* $1/f = (mu_g / mu_m - 1)(1/R_1 - 1/R_2)$ | Lens in air: $1/f = (mu - 1)(1/R_1 - 1/R_2)$.
+  - *Thin Lens Equation:* $1/v - 1/u = 1/f$ | Power: $P = 1/f " (m)" = 100/f " (cm)"$ | Contact: $P = P_1 + P_2$.
+  - *Liquid Immersion:* Glass ($mu = 1.5$) in water ($mu = 4/3$): $f_w = 4 f_a$. In matching liquid ($mu_l = mu_g$): $f -> oo$ (invisible). In denser liquid ($mu_l > mu_g$): lens character reverses!
+  - *Lens Cutting:* Longitudinally: $f' = f, P' = P, I' = I/2$. Transversely: $f' = 2f, P' = P/2$.
+  - *Prism Refraction:* $A = r_1 + r_2$ | $delta = i + e - A$ | Min deviation: $mu = (sin((A + delta_m)/2)) / (sin(A/2))$.
+  - *Thin Prism:* $delta approx (mu - 1)A$ | Dispersion: $theta = (mu_v - mu_r)A$ | Dispersive power: $omega = (mu_v - mu_r)/(mu_y - 1)$.
+  - *Compound Microscope:* $M_oo = -(L / f_o)(D / f_e)$ | $L = v_o + f_e$ | Near point: $M_D = -(v_o / u_o)(1 + D / f_e)$.
+  - *Astronomical Telescope:* $M_oo = -f_o / f_e$ | $L = f_o + f_e$ | Near point: $M_D = -(f_o / f_e)(1 + f_e / D)$.
 ]
 
-#worked-example("Worked Example — Astronomical Telescope")[
-  A telescope has an objective of focal length $100 "cm"$ and an eyepiece of focal
-  length $5 "cm"$. Find the magnifying power and tube length at normal adjustment,
-  and state what change increases $M$.
-
-  #v(3pt)
-  *Solution.* $M = -f_o/f_e = -100/5 = -20$: magnitude 20, inverted final image.
-  $L = f_o + f_e = 105 "cm"$. From $M = f_o/f_e$, magnification rises with a *longer*
-  objective or a *shorter* eyepiece — the reasoning behind the long barrels of
-  refracting telescopes.
+#exception-box(title: "Top 7 High-Frequency CUET Traps in Ray Optics")[
+  1. *The Mirror vs Lens Sign Trap:* Mirror formula is $1/v + 1/u = 1/f$ with $m = -v/u$; Lens formula is $1/v - 1/u = 1/f$ with $m = +v/u$. Mixing signs is the single most common source of $-1$ marks!
+  2. *The Normal Shift Independence Trap:* Normal shift $Delta t = d(1 - 1/mu)$ depends *strictly on slab thickness $d$ and index $mu$*. It does *not* depend on the distance of the object from the slab!
+  3. *TIR Direction Criterion Trap:* Total internal reflection can *never* occur when light enters from air to glass or water to glass. The ray *must* travel from denser to rarer medium with $i > theta_c$.
+  4. *The Liquid Immersion Inversion Trap:* Immersing a convex glass lens ($mu = 1.5$) into carbon disulphide ($mu = 1.63$) does not merely change focal length—it turns the lens into a *diverging* lens!
+  5. *Lens Cutting Trap:* Cutting an equiconvex lens along its principal axis preserves $f$ ($f' = f$); cutting perpendicular to its principal axis doubles $f$ ($f' = 2f$) and halves power!
+  6. *Prism Minimum Deviation Base-Parallel Trap:* The ray inside a prism travels parallel to the base *only* when the prism is equilateral or isosceles *and* operating at minimum deviation ($i = e$).
+  7. *Telescope vs Microscope Objective Trap:* A telescope requires a *large* $f_o$ and large aperture for high $M$ and resolution; a microscope requires a *very small* $f_o$ to maximize linear magnification $m_o approx L/f_o$!
 ]
 
-#analogy-box(title: "Everyday Example — Passing the Baton")[
-  Think of both compound instruments as a two-stage relay. In a microscope, stage
-  one (objective) photographs a tiny object into a bigger intermediate picture;
-  stage two (eyepiece) holds a magnifying glass over that photograph. In a
-  telescope, stage one compresses a huge, distant scene onto a small but *sharp*
-  intermediate picture, and stage two blows it up for your eye. Neither stage is
-  magical alone — the multiplication of the two is the instrument.
-]
+#pagebreak()
 
-= Practice Questions — CUET UG Pattern (10 MCQs)
+= CUET UG Exam-Style Practice Questions
 
-Attempt these under exam timing: about 60 seconds per question. Fully worked
-solutions follow in the next section, so commit to an answer before reading on.
-Every question maps to one of the six sub-topics covered above.
+#mcq(
+  1,
+  [An object is placed at a distance of $30.0" cm"$ in front of a concave mirror of focal length $20.0" cm"$. The image formed is:],
+  (
+    [Virtual, erect, at $60.0" cm"$ behind mirror],
+    [Real, inverted, at $60.0" cm"$ in front of mirror],
+    [Real, inverted, at $12.0" cm"$ in front of mirror],
+    [Virtual, erect, at $12.0" cm"$ behind mirror],
+  ),
+)
+#solution(
+  1,
+  [
+    $1/v = 1/f - 1/u = 1/(-20) - 1/(-30) = -1/60 ==> v = -60.0" cm"$.
+    $m = -v/u = -(-60)/(-30) = -2.0$. Real, inverted, magnified image at $60.0" cm"$ in front.
+  ],
+  answer: [B],
+)
 
-#mcq(1, [An object is placed at the centre of curvature of a concave mirror. The image formed is:], ([at $F$], [at $C$, same size, inverted], [beyond $C$], [at infinity],))
-#mcq(2, [A convex mirror of focal length $f$ forms an image of an object at distance $v$ from the mirror. Which statement is always true?], ([$lr(|v|) < f$], [$lr(|v|) = f$], [$lr(|v|) > f$], [$lr(|v|)$ can exceed $2f$],))
-#mcq(3, [Light travels from water ($n = 1.33$) into glass ($n = 1.5$). Which statement is correct?], ([TIR is possible at this boundary], [It bends away from the normal], [It bends towards the normal and speeds up], [It bends towards the normal and slows down],))
-#mcq(4, [The critical angle for a medium–air interface is $45°$. The refractive index of the medium is:], ([1.5], [1.33], [$sqrt(2)$], [$1/sqrt(2)$],))
-#mcq(5, [A concave lens of focal length $20 "cm"$ forms a virtual image at $15 "cm"$ from the lens. The object distance is:], ([$60 "cm"$], [$30 "cm"$], [$12 "cm"$], [$7.5 "cm"$],))
-#mcq(6, [Two thin lenses of powers $+4 "D"$ and $-2 "D"$ are placed in contact. The focal length of the combination is:], ([$+50 "cm"$], [$-50 "cm"$], [$+25 "cm"$], [$-25 "cm"$],))
-#mcq(7, [A prism of angle $60°$ produces minimum deviation of $30°$. Its refractive index is closest to:], ([1.41], [1.5], [1.33], [1.62],))
-#mcq(8, [Which colour of white light deviates the *most* while passing through a glass prism?], ([Red], [Green], [Violet], [All equally],))
-#mcq(9, [In an astronomical telescope in normal adjustment, $f_o = 100 "cm"$ and $f_e = 5 "cm"$. The magnifying power and tube length are respectively:], ([$20$ and $105 "cm"$], [$20$ and $95 "cm"$], [$500$ and $105 "cm"$], [$95$ and $20 "cm"$],))
-#mcq(10, [A thin prism of angle $5°$ made of glass with $n = 1.5$ deviates light by approximately:], ([$2.5°$], [$5°$], [$7.5°$], [$0.5°$],))
+#mcq(
+  2,
+  [A convex mirror of focal length $f$ forms an image of a real object placed at distance $u$. Which statement is always true?],
+  (
+    [Image is real and formed beyond $2f$],
+    [Image is virtual, erect, and $|v| < f$],
+    [Image is virtual and magnified if $u < f$],
+    [Image is inverted and at $C$ when $u = 2f$],
+  ),
+)
+#solution(
+  2,
+  [
+    For a convex mirror ($f > 0$), $1/v = 1/f + 1/|u| > 1/f ==> 0 < v < f$ for all real object distances $u < 0$. The image is always virtual, erect, and diminished.
+  ],
+  answer: [B],
+)
 
-= Detailed Solutions
+#mcq(
+  3,
+  [Monochromatic light of wavelength $600" nm"$ in vacuum enters a glass plate of refractive index $1.50$. Its frequency and wavelength inside the glass are:],
+  (
+    [$5.0 times 10^(14)" Hz" " and " 600" nm"$],
+    [$3.33 times 10^(14)" Hz" " and " 400" nm"$],
+    [$5.0 times 10^(14)" Hz" " and " 400" nm"$],
+    [$7.5 times 10^(14)" Hz" " and " 900" nm"$],
+  ),
+)
+#solution(
+  3,
+  [
+    Frequency is invariant: $nu = c / lambda = (3.0 times 10^8)/(600 times 10^(-9)) = 5.0 times 10^(14)" Hz"$.
+    Wavelength in glass: $lambda' = lambda / mu = 600 / 1.50 = 400" nm"$.
+  ],
+  answer: [C],
+)
 
-#solution(1, [The object is at $C$, so $u = -2f = -R$. The mirror formula gives $1/v = 1/f - 1/u = 1/(-f) + 1/(2f) = -1/(2f)$, hence $v = -2f$: the image forms at $C$ itself, real and inverted, same size. Magnification $m = -v/u = -(2f)/(2f) = -1$.], answer: "B")
-#solution(2, [A convex mirror always forms a virtual, erect, diminished image between P and F, no matter where the object is. Since F lies $f$ behind the mirror, the image distance magnitude is always less than $f$.], answer: "A")
-#solution(3, [Water to glass is rarer to denser: the ray bends *towards* the normal and slows down because $v = c/n$ decreases. TIR needs the denser-to-rarer direction, so it is impossible at this boundary.], answer: "D")
-#solution(4, [$n = 1/sin θ_c = 1/sin 45° = 1/(1/sqrt(2)) = sqrt(2) approx 1.414$. Options A and B are the familiar glass and water values that do not match $45°$.], answer: "C")
-#solution(5, [Concave lens: $f = -20 "cm"$; a virtual image sits behind the lens, so $v = -15 "cm"$. Then $1/u = 1/v - 1/f = -1/15 + 1/20 = (-4 + 3)/60 = -1/60$, giving $u = -60 "cm"$: the object is $60 "cm"$ from the lens.], answer: "A")
-#solution(6, [Powers add: $P = 4 - 2 = +2 "D"$. Convert to metres before inverting: $F = 1/P = 0.5 "m" = +50 "cm"$. The classic slip is dividing 100 by P without converting dioptres to metres.], answer: "A")
-#solution(7, [At minimum deviation, $n = sin((A + δ_m)/2)/sin(A/2) = sin 45°/sin 30° = (1/sqrt(2))/(1/2) = sqrt(2) approx 1.41$.], answer: "A")
-#solution(8, [Violet has the highest refractive index in glass, so it bends the most and lands at the bottom of the spectrum. The full order is VIBGYOR from most to least deviated: red deviates least.], answer: "C")
-#solution(9, [Magnitude $M = f_o/f_e = 100/5 = 20$ (the image is inverted; many papers drop the sign), and $L = f_o + f_e = 105 "cm"$. Check both numbers — one distractor pair always gets $L$ wrong by subtracting.], answer: "A")
-#solution(10, [Thin-prism relation: $δ approx (n - 1)A = 0.5 times 5° = 2.5°$. The shortcut is valid only for small prism angles; for $A = 60°$ use the full minimum-deviation sine formula.], answer: "A")
+#mcq(
+  4,
+  [A glass plate ($mu = 1.50$) of thickness $6.0" cm"$ is placed over a stamp. By what distance does the stamp appear raised when viewed normally?],
+  (
+    [$4.0" cm"$],
+    [$2.0" cm"$],
+    [$1.5" cm"$],
+    [$3.0" cm"$],
+  ),
+)
+#solution(
+  4,
+  [
+    Normal shift $Delta t = d (1 - 1/mu) = 6.0 (1 - 1/1.50) = 6.0 (1/3) = 2.0" cm"$.
+  ],
+  answer: [B],
+)
 
-#v(12pt)
-#align(center)[#text(fill: om-grey, size: 8.5pt)[© OurMocks · www.ourmocks.com · CUET UG Physics (322) · Unit 6: Ray Optics & Optical Instruments · 2027 cycle]]
+#mcq(
+  5,
+  [A point source of light is at the bottom of a water tank ($mu = 4/3$) of depth $sqrt(7)" m"$. The area of the surface through which light emerges is:],
+  (
+    [$9 pi " m"^2$],
+    [$7 pi " m"^2$],
+    [$16 pi " m"^2$],
+    [$4 pi " m"^2$],
+  ),
+)
+#solution(
+  5,
+  [
+    Radius of circle: $r = h / sqrt(mu^2 - 1) = sqrt(7) / sqrt(16/9 - 1) = 3.0" m"$.
+    Area $A = pi r^2 = pi (3)^2 = 9 pi " m"^2$.
+  ],
+  answer: [A],
+)
+
+#pagebreak()
+
+#mcq(
+  6,
+  [In an optical fibre, light is guided along the core by total internal reflection. If the core has refractive index $mu_1 = 1.50$ and cladding has $mu_2 = 1.414 = sqrt(2)$, the critical angle at the core-cladding interface is:],
+  (
+    [$30 degree$],
+    [$45 degree$],
+    [$arcsin(sqrt(2)/1.50) approx 70.5 degree$],
+    [$60 degree$],
+  ),
+)
+#solution(
+  6,
+  [
+    Condition for TIR at core-cladding boundary: $sin theta_c = mu_2 / mu_1 = sqrt(2) / 1.50 = 1.414 / 1.50 approx 0.9428 ==> theta_c = arcsin(sqrt(2)/1.50) approx 70.5 degree$.
+  ],
+  answer: [C],
+)
+
+#mcq(
+  7,
+  [A biconvex lens of glass ($mu = 1.50$) has radii of curvature $R_1 = 20.0" cm"$ and $R_2 = -30.0" cm"$. Its focal length in air is:],
+  (
+    [$+12.0" cm"$],
+    [$+24.0" cm"$],
+    [$+50.0" cm"$],
+    [$+15.0" cm"$],
+  ),
+)
+#solution(
+  7,
+  [
+    Lensmaker's formula: $1/f = (mu - 1)(1/R_1 - 1/R_2) = (1.5 - 1)(1/20 - (-1/30)) = 0.5 times (3 + 2)/60 = 0.5 times 5/60 = 5/120 = 1/24 ==> f = +24.0" cm"$.
+  ],
+  answer: [B],
+)
+
+#mcq(
+  8,
+  [A convex lens of focal length $20" cm"$ in air ($mu_g = 1.50$) is completely submerged in water ($mu_w = 4/3$). Its new focal length in water is:],
+  (
+    [$20" cm"$],
+    [$40" cm"$],
+    [$80" cm"$],
+    [$5" cm"$],
+  ),
+)
+#solution(
+  8,
+  [
+    $f_w = f_a times ((mu_g - 1)) / (mu_g / mu_w - 1) = 20 times (1.5 - 1) / (1.5 / (4/3) - 1) = 20 times 0.5 / (9/8 - 1) = 20 times 0.5 / (1/8) = 20 times 4 = 80" cm"$.
+  ],
+  answer: [C],
+)
+
+#mcq(
+  9,
+  [Two thin lenses of powers $+5.0" D"$ and $-3.0" D"$ are placed in coaxial contact. The focal length of the combination is:],
+  (
+    [$+50.0" cm"$],
+    [$-50.0" cm"$],
+    [$+20.0" cm"$],
+    [$+25.0" cm"$],
+  ),
+)
+#solution(
+  9,
+  [
+    Net power $P = P_1 + P_2 = +5.0 - 3.0 = +2.0" D"$.
+    Equivalent focal length $F = 1 / P = 1 / 2.0 = 0.50" m" = +50.0" cm"$.
+  ],
+  answer: [A],
+)
+
+#mcq(
+  10,
+  [An equiconvex lens of focal length $f$ and power $P$ is cut into two identical plano-convex halves along a plane perpendicular to its principal axis. The focal length and power of each half are:],
+  (
+    [$f' = f, P' = P$],
+    [$f' = 2f, P' = P/2$],
+    [$f' = f/2, P' = 2P$],
+    [$f' = 4f, P' = P/4$],
+  ),
+)
+#solution(
+  10,
+  [
+    For equiconvex lens: $1/f = (mu - 1)(2/R)$. For each plano-convex half: $1/f' = (mu - 1)(1/R) = 1/(2f)$.
+    Hence focal length doubles: $f' = 2f$, and power is halved: $P' = P / 2$.
+  ],
+  answer: [B],
+)
+
+#pagebreak()
+
+#mcq(
+  11,
+  [An equilateral triangular glass prism ($A = 60 degree$) produces an angle of minimum deviation $delta_m = 30 degree$. The refractive index of the prism material is:],
+  (
+    [$1.50$],
+    [$sqrt(2) approx 1.414$],
+    [$sqrt(3) approx 1.732$],
+    [$1.33$],
+  ),
+)
+#solution(
+  11,
+  [
+    Prism formula: $mu = (sin((A + delta_m)/2)) / (sin(A/2)) = (sin((60 degree + 30 degree)/2)) / (sin(60 degree / 2)) = (sin 45 degree) / (sin 30 degree) = (1/sqrt(2)) / (1/2) = 2 / sqrt(2) = sqrt(2) approx 1.414$.
+  ],
+  answer: [B],
+)
+
+#mcq(
+  12,
+  [A thin prism of refracting angle $A = 6.0 degree$ has refractive indices $mu_v = 1.53$ and $mu_r = 1.51$ for violet and red light. The angular dispersion produced is:],
+  (
+    [$0.12 degree$],
+    [$0.02 degree$],
+    [$3.12 degree$],
+    [$0.06 degree$],
+  ),
+)
+#solution(
+  12,
+  [
+    Angular dispersion $theta = delta_v - delta_r = (mu_v - mu_r) A = (1.53 - 1.51) times 6.0 degree = 0.02 times 6.0 degree = 0.12 degree$.
+  ],
+  answer: [A],
+)
+
+#mcq(
+  13,
+  [In an astronomical telescope in normal adjustment, the focal lengths of objective and eyepiece are $100" cm"$ and $5.0" cm"$ respectively. The magnifying power and tube length are:],
+  (
+    [$M = -20 " and " L = 95" cm"$],
+    [$M = -20 " and " L = 105" cm"$],
+    [$M = -500 " and " L = 105" cm"$],
+    [$M = -25 " and " L = 100" cm"$],
+  ),
+)
+#solution(
+  13,
+  [
+    At normal adjustment: Magnifying power $M = -f_o / f_e = -100 / 5.0 = -20$.
+    Tube length $L = f_o + f_e = 100 + 5.0 = 105" cm"$.
+  ],
+  answer: [B],
+)
+
+#mcq(
+  14,
+  [A compound microscope has an objective of focal length $1.0" cm"$ and eyepiece of focal length $5.0" cm"$. An object is placed at $1.1" cm"$ from the objective. If the final image is formed at the least distance of distinct vision ($D = 25" cm"$), the magnifying power is:],
+  (
+    [$-60$],
+    [$-50$],
+    [$-30$],
+    [$-120$],
+  ),
+)
+#solution(
+  14,
+  [
+    For objective: $1/v_o = 1/f_o + 1/u_o = 1/1.0 + 1/(-1.1) = 1 - 10/11 = 1/11 ==> v_o = +11" cm"$.
+    Linear magnification $m_o = v_o / u_o = 11 / (-1.1) = -10$.
+    Eyepiece magnification: $m_e = 1 + D / f_e = 1 + 25 / 5.0 = 1 + 5 = 6$.
+    Total magnifying power $M = m_o times m_e = (-10) times 6 = -60$.
+  ],
+  answer: [A],
+)
+
+#mcq(
+  15,
+  [Which of the following is the primary advantage of a Cassegrain reflecting telescope over a refracting telescope of identical aperture?],
+  (
+    [Reflecting telescopes have higher chromatic aberration but lower cost],
+    [Reflecting telescopes completely eliminate chromatic aberration and parabolic primary mirrors remove spherical aberration],
+    [Reflecting telescopes produce upright images without needing an eyepiece],
+    [Reflecting telescopes do not require mechanical tube structures],
+  ),
+)
+#solution(
+  15,
+  [
+    Reflection obeys the law of reflection identically for all wavelengths, completely eliminating chromatic aberration. Furthermore, parabolic mirrors eliminate spherical aberration, and large mirrors can be supported over their entire back.
+  ],
+  answer: [B],
+)

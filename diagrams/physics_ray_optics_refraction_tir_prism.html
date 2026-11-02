@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1440, height=880">
+  <title>Ray Optics: Refraction, Total Internal Reflection & Prism Dynamics</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 1440px;
+      height: 880px;
+      background-color: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0F172A;
+      padding: 32px 40px;
+      overflow: hidden;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 24px;
+      border-bottom: 2px solid #E2E8F0;
+      padding-bottom: 16px;
+    }
+    .title-group h1 {
+      font-size: 26px;
+      font-weight: 800;
+      color: #0F2C59;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+    .title-group p {
+      font-size: 14px;
+      color: #64748B;
+      font-weight: 500;
+    }
+    .badge {
+      background: #0066FF;
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      height: calc(100% - 110px);
+    }
+    .card {
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      border-radius: 14px;
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+      position: relative;
+    }
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      border-radius: 14px 14px 0 0;
+    }
+    .card-1::before { background: #0066FF; }
+    .card-2::before { background: #0EA5E9; }
+    .card-3::before { background: #8B5CF6; }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+    .card-title {
+      font-size: 17px;
+      font-weight: 800;
+      color: #0F2C59;
+    }
+    .tag {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+      text-transform: uppercase;
+    }
+    .tag-blue { background: #EFF6FF; color: #0066FF; }
+    .tag-cyan { background: #F0F9FF; color: #0284C7; }
+    .tag-purple { background: #F5F3FF; color: #7C3AED; }
+
+    .svg-container {
+      width: 100%;
+      height: 240px;
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 10px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .formula-block {
+      background: #F1F5F9;
+      border-left: 3px solid #0066FF;
+      padding: 10px 14px;
+      border-radius: 0 6px 6px 0;
+      font-family: "SF Mono", Consolas, Menlo, monospace;
+      font-size: 12px;
+      color: #0F172A;
+      margin-bottom: 12px;
+      line-height: 1.5;
+    }
+    .formula-block.cyan { border-left-color: #0EA5E9; }
+    .formula-block.purple { border-left-color: #8B5CF6; }
+
+    .bullet-list {
+      list-style: none;
+      font-size: 12px;
+      color: #334155;
+      line-height: 1.55;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .bullet-list li {
+      position: relative;
+      padding-left: 16px;
+    }
+    .bullet-list li::before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      color: #0066FF;
+      font-weight: 800;
+    }
+    .card-2 .bullet-list li::before { color: #0EA5E9; }
+    .card-3 .bullet-list li::before { color: #8B5CF6; }
+
+    .highlight {
+      font-weight: 700;
+      color: #0F2C59;
+    }
+    .footer-bar {
+      margin-top: auto;
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: #94A3B8;
+      font-weight: 600;
+      padding-top: 10px;
+      border-top: 1px solid #F1F5F9;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="title-group">
+      <h1>Ray Optics: Refraction, Total Internal Reflection & Prism Dynamics</h1>
+      <p>Snell's Law & Apparent Depth • Critical Angle & Fiber Optics • Minimum Deviation & Spectral Dispersion</p>
+    </div>
+    <div class="badge">CUET UG Physics • Unit 6</div>
+  </div>
+
+  <div class="grid">
+    <!-- Card 1: Snell's Law & Apparent Depth -->
+    <div class="card card-1">
+      <div class="card-header">
+        <span class="card-title">Snell's Law & Apparent Depth</span>
+        <span class="tag tag-blue">Refraction</span>
+      </div>
+
+      <div class="svg-container">
+        <svg width="400" height="230" viewBox="0 0 400 230">
+          <defs>
+            <marker id="arrow-blue" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M 0 1 L 10 5 L 0 9 z" fill="#0066FF"/>
+            </marker>
+            <marker id="arrow-navy" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M 0 1 L 10 5 L 0 9 z" fill="#0F2C59"/>
+            </marker>
+          </defs>
+
+          <!-- Water Region -->
+          <rect x="20" y="100" width="360" height="115" fill="#E0F2FE" rx="4"/>
+          <!-- Interface Line -->
+          <line x1="20" y1="100" x2="380" y2="100" stroke="#0284C7" stroke-width="2.5"/>
+          <text x="30" y="90" font-size="11" font-weight="700" fill="#64748B">Rarer Medium (Air, n₁ = 1)</text>
+          <text x="30" y="120" font-size="11" font-weight="700" fill="#0369A1">Denser Medium (Water, n₂ = μ)</text>
+
+          <!-- Normal Line -->
+          <line x1="200" y1="25" x2="200" y2="215" stroke="#94A3B8" stroke-dasharray="4 3" stroke-width="1.5"/>
+          <text x="205" y="40" font-size="10" font-weight="600" fill="#64748B">Normal</text>
+
+          <!-- Object O -->
+          <circle cx="160" cy="195" r="5" fill="#0F2C59"/>
+          <text x="135" y="200" font-size="11" font-weight="800" fill="#0F2C59">O</text>
+
+          <!-- Virtual Image I -->
+          <circle cx="160" cy="150" r="4.5" fill="#EF4444"/>
+          <text x="140" y="154" font-size="11" font-weight="800" fill="#EF4444">I</text>
+
+          <!-- Normal Shift Dimension -->
+          <line x1="120" y1="195" x2="120" y2="150" stroke="#EF4444" stroke-width="1.2"/>
+          <text x="65" y="176" font-size="10" font-weight="700" fill="#EF4444">Shift Δt</text>
+
+          <!-- Depth Dimension Lines -->
+          <line x1="365" y1="100" x2="365" y2="195" stroke="#0F2C59" stroke-width="1.2"/>
+          <text x="335" y="152" font-size="10" font-weight="700" fill="#0F2C59">Real d</text>
+
+          <!-- Rays from Object -->
+          <!-- Normal ray upward -->
+          <line x1="160" y1="195" x2="160" y2="40" stroke="#0066FF" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
+          
+          <!-- Oblique ray to surface -->
+          <line x1="160" y1="195" x2="200" y2="100" stroke="#0066FF" stroke-width="1.8" marker-mid="url(#arrow-blue)"/>
+          <!-- Refracted ray bending away from normal into air -->
+          <line x1="200" y1="100" x2="260" y2="40" stroke="#0066FF" stroke-width="2" marker-end="url(#arrow-blue)"/>
+          
+          <!-- Virtual ray traced back to Image I -->
+          <line x1="200" y1="100" x2="160" y2="150" stroke="#EF4444" stroke-dasharray="3 3" stroke-width="1.5"/>
+
+          <!-- Angles -->
+          <path d="M 200,130 A 30,30 0 0,0 185,135" fill="none" stroke="#0F2C59" stroke-width="1.2"/>
+          <text x="188" y="145" font-size="10" font-weight="700" fill="#0F2C59">r</text>
+
+          <path d="M 200,75 A 25,25 0 0,1 222,70" fill="none" stroke="#0066FF" stroke-width="1.2"/>
+          <text x="215" y="65" font-size="10" font-weight="700" fill="#0066FF">i</text>
+        </svg>
+      </div>
+
+      <div class="formula-block">
+        <strong>Snell's Law:</strong> n₁ sin i = n₂ sin r<br>
+        <strong>Apparent Depth:</strong> d' = d / μ (where μ = n₂/n₁ &gt; 1)<br>
+        <strong>Normal Shift:</strong> Δt = d - d' = d · (1 - 1/μ)
+      </div>
+
+      <ul class="bullet-list">
+        <li><span class="highlight">Bending Rule:</span> Ray bends <em>towards</em> normal when slowing down (rarer → denser); bends <em>away</em> when speeding up (denser → rarer).</li>
+        <li><span class="highlight">Frequency Invariance:</span> Frequency ν remains invariant ($E = hν = \text{const}$); speed and wavelength compress by factor μ.</li>
+        <li><span class="highlight">Shift Independence:</span> Normal shift Δt is independent of the object's depth below the slab; it depends strictly on slab thickness d.</li>
+      </ul>
+
+      <div class="footer-bar">
+        <span>Medium Speed: v = c / μ</span>
+        <span>Wavelength: λ' = λ / μ</span>
+      </div>
+    </div>
+
+    <!-- Card 2: Total Internal Reflection & Critical Angle -->
+    <div class="card card-2">
+      <div class="card-header">
+        <span class="card-title">TIR & Optical Waveguides</span>
+        <span class="tag tag-cyan">Critical Angle</span>
+      </div>
+
+      <div class="svg-container">
+        <svg width="400" height="230" viewBox="0 0 400 230">
+          <defs>
+            <marker id="arrow-cyan" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M 0 1 L 10 5 L 0 9 z" fill="#0284C7"/>
+            </marker>
+            <marker id="arrow-green" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M 0 1 L 10 5 L 0 9 z" fill="#10B981"/>
+            </marker>
+          </defs>
+
+          <!-- Top Section: Boundary & 3 Ray Scenarios -->
+          <rect x="20" y="60" width="360" height="70" fill="#E0F2FE" rx="4"/>
+          <line x1="20" y1="60" x2="380" y2="60" stroke="#0284C7" stroke-width="2"/>
+          <text x="25" y="52" font-size="10" font-weight="700" fill="#64748B">Air (n₁ = 1)</text>
+          <text x="25" y="75" font-size="10" font-weight="700" fill="#0369A1">Glass (n₂ = μ)</text>
+
+          <!-- Source S -->
+          <circle cx="70" cy="115" r="4" fill="#0F2C59"/>
+          <text x="55" y="120" font-size="10" font-weight="800" fill="#0F2C59">S</text>
+
+          <!-- Case 1: i < θc -->
+          <line x1="70" y1="115" x2="110" y2="60" stroke="#0284C7" stroke-width="1.5"/>
+          <line x1="110" y1="60" x2="135" y2="20" stroke="#0284C7" stroke-width="1.5" marker-end="url(#arrow-cyan)"/>
+          <text x="95" y="40" font-size="9" font-weight="700" fill="#0284C7">i &lt; θ_c</text>
+
+          <!-- Case 2: i = θc (grazing) -->
+          <line x1="70" y1="115" x2="180" y2="60" stroke="#10B981" stroke-width="1.8"/>
+          <line x1="180" y1="60" x2="250" y2="60" stroke="#10B981" stroke-width="2" marker-end="url(#arrow-green)"/>
+          <text x="185" y="45" font-size="9" font-weight="800" fill="#10B981">i = θ_c (r=90°)</text>
+
+          <!-- Case 3: i > θc (TIR) -->
+          <line x1="70" y1="115" x2="270" y2="60" stroke="#EF4444" stroke-width="2"/>
+          <line x1="270" y1="60" x2="330" y2="115" stroke="#EF4444" stroke-width="2"/>
+          <text x="280" y="45" font-size="9" font-weight="800" fill="#EF4444">i &gt; θ_c (TIR)</text>
+
+          <!-- Bottom Section: Optical Fiber -->
+          <rect x="30" y="150" width="340" height="65" fill="#F8FAFC" stroke="#94A3B8" stroke-width="1.2" rx="6"/>
+          <!-- Cladding Top -->
+          <rect x="30" y="150" width="340" height="15" fill="#E2E8F0"/>
+          <text x="40" y="162" font-size="9" font-weight="700" fill="#64748B">Cladding (μ₂ = 1.48)</text>
+          <!-- Core Middle -->
+          <rect x="30" y="165" width="340" height="35" fill="#EFF6FF"/>
+          <text x="40" y="186" font-size="10" font-weight="800" fill="#0066FF">Core (μ₁ = 1.52, μ₁ &gt; μ₂)</text>
+          <!-- Cladding Bottom -->
+          <rect x="30" y="200" width="340" height="15" fill="#E2E8F0"/>
+
+          <!-- Light zigzag inside fiber -->
+          <path d="M 30,182 L 80,165 L 160,200 L 240,165 L 320,200 L 370,182" fill="none" stroke="#EF4444" stroke-width="2.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+
+      <div class="formula-block cyan">
+        <strong>Critical Angle:</strong> sin θ_c = n_rarer / n_denser = 1 / μ<br>
+        <strong>Glass-Air:</strong> μ ≈ 1.50 ⟹ θ_c ≈ 41.8° ≈ 42°<br>
+        <strong>Acceptance Angle:</strong> sin θ_a = √(μ₁² - μ₂²) (Numerical Aperture)
+      </div>
+
+      <ul class="bullet-list">
+        <li><span class="highlight">Dual Mandatory Conditions:</span> Light must travel from <em>denser to rarer</em> medium, and incident angle must exceed critical angle ($i > θ_c$).</li>
+        <li><span class="highlight">Zero Loss Propagation:</span> TIR reflects 100% of incident radiant power with zero absorption, unlike metallic mirrors.</li>
+        <li><span class="highlight">Prism Periscopes:</span> 45°-90°-45° right-angle isosceles crown glass prisms bend light by 90° or invert by 180° via TIR ($i = 45° > 42°$).</li>
+      </ul>
+
+      <div class="footer-bar">
+        <span>Diamond θ_c ≈ 24.4° (High Sparkle)</span>
+        <span>Water θ_c ≈ 48.6°</span>
+      </div>
+    </div>
+
+    <!-- Card 3: Prism Refraction, Deviation & Dispersion -->
+    <div class="card card-3">
+      <div class="card-header">
+        <span class="card-title">Prism Deviation & Dispersion</span>
+        <span class="tag tag-purple">Spectral Dispersion</span>
+      </div>
+
+      <div class="svg-container">
+        <svg width="400" height="230" viewBox="0 0 400 230">
+          <defs>
+            <marker id="arrow-purple" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M 0 1 L 10 5 L 0 9 z" fill="#8B5CF6"/>
+            </marker>
+          </defs>
+
+          <!-- Triangular Prism -->
+          <polygon points="200,30 70,205 330,205" fill="#F5F3FF" stroke="#8B5CF6" stroke-width="2.5"/>
+          <text x="195" y="55" font-size="12" font-weight="800" fill="#7C3AED">A</text>
+
+          <!-- Incident Ray -->
+          <line x1="20" y1="165" x2="120" y2="135" stroke="#0F2C59" stroke-width="2" marker-mid="url(#arrow-purple)"/>
+          <line x1="120" y1="135" x2="270" y2="135" stroke="#0066FF" stroke-width="2"/>
+          <line x1="270" y1="135" x2="380" y2="185" stroke="#EF4444" stroke-width="2"/>
+
+          <!-- Symmetrical ray at min dev: parallel to base -->
+          <text x="160" y="130" font-size="9" font-weight="700" fill="#0066FF">Ray || Base (at δ_m)</text>
+
+          <!-- Normal Lines at interfaces -->
+          <line x1="85" y1="100" x2="160" y2="165" stroke="#94A3B8" stroke-dasharray="3 3" stroke-width="1.2"/>
+          <line x1="230" y1="165" x2="305" y2="100" stroke="#94A3B8" stroke-dasharray="3 3" stroke-width="1.2"/>
+
+          <!-- Angles: i, r1, r2, e -->
+          <text x="75" y="140" font-size="10" font-weight="700" fill="#0F2C59">i</text>
+          <text x="135" y="145" font-size="9" font-weight="700" fill="#0066FF">r₁</text>
+          <text x="250" y="145" font-size="9" font-weight="700" fill="#0066FF">r₂</text>
+          <text x="315" y="140" font-size="10" font-weight="700" fill="#EF4444">e</text>
+
+          <!-- Undeviated dotted path and deviation delta -->
+          <line x1="120" y1="135" x2="290" y2="85" stroke="#94A3B8" stroke-dasharray="3 3" stroke-width="1.2"/>
+          <line x1="220" y1="110" x2="270" y2="135" stroke="#94A3B8" stroke-dasharray="3 3" stroke-width="1.2"/>
+          <text x="310" y="95" font-size="11" font-weight="800" fill="#DC2626">Deviation δ</text>
+
+          <!-- Dispersion Fan on the right -->
+          <text x="315" y="218" font-size="9" font-weight="800" fill="#DC2626">Red (Least δ)</text>
+          <text x="240" y="218" font-size="9" font-weight="800" fill="#7C3AED">Violet (Most δ)</text>
+        </svg>
+      </div>
+
+      <div class="formula-block purple">
+        <strong>Prism Angles:</strong> A = r₁ + r₂  &amp;  δ = i + e - A<br>
+        <strong>Min Deviation:</strong> μ = sin((A + δ_m)/2) / sin(A/2)<br>
+        <strong>Thin Prism (A &lt; 10°):</strong> δ ≈ (μ - 1) · A<br>
+        <strong>Dispersive Power:</strong> ω = (μ_v - μ_r) / (μ_y - 1)
+      </div>
+
+      <ul class="bullet-list">
+        <li><span class="highlight">Minimum Deviation Symmetry:</span> Occurs strictly when $i = e$ and $r_1 = r_2 = A/2$; the refracted ray travels parallel to the prism base.</li>
+        <li><span class="highlight">Cauchy's Dispersion Law:</span> $\mu(\lambda) \approx A_0 + B_0/\lambda^2$; since $\lambda_{\text{red}} > \lambda_{\text{violet}}$, $\mu_{\text{violet}} > \mu_{\text{red}}$, hence violet deviates most.</li>
+        <li><span class="highlight">Slab vs Prism:</span> Parallel glass slab causes lateral displacement without net angular dispersion; non-parallel prism faces produce permanent angular dispersion.</li>
+      </ul>
+
+      <div class="footer-bar">
+        <span>Flint Glass: High ω (Dispersion)</span>
+        <span>Crown Glass: Low ω</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
