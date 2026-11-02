@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1440, height=880">
+  <title>Partnership Accounting: Legal Defaults, Capital Systems & Charges vs Appropriations</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 1440px;
+      height: 880px;
+      background-color: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0F172A;
+      padding: 32px 40px;
+      overflow: hidden;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 24px;
+      border-bottom: 2px solid #E2E8F0;
+      padding-bottom: 16px;
+    }
+    .title-group h1 {
+      font-size: 26px;
+      font-weight: 800;
+      color: #0F2C59;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+    .title-group p {
+      font-size: 14px;
+      color: #64748B;
+      font-weight: 500;
+    }
+    .badge {
+      background: #0066FF;
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      height: calc(100% - 110px);
+    }
+    .card {
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      border-radius: 14px;
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+      position: relative;
+    }
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      border-radius: 14px 14px 0 0;
+    }
+    .card-1::before { background: #0066FF; }
+    .card-2::before { background: #0EA5E9; }
+    .card-3::before { background: #8B5CF6; }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+    .card-title {
+      font-size: 17px;
+      font-weight: 800;
+      color: #0F2C59;
+    }
+    .tag {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+      text-transform: uppercase;
+    }
+    .tag-blue { background: #EFF6FF; color: #0066FF; }
+    .tag-cyan { background: #F0F9FF; color: #0284C7; }
+    .tag-purple { background: #F5F3FF; color: #7C3AED; }
+
+    .svg-container {
+      width: 100%;
+      height: 240px;
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 10px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .formula-block {
+      background: #F1F5F9;
+      border-left: 3px solid #0066FF;
+      padding: 10px 14px;
+      border-radius: 0 6px 6px 0;
+      font-family: "SF Mono", Consolas, Menlo, monospace;
+      font-size: 12px;
+      color: #0F172A;
+      margin-bottom: 12px;
+      line-height: 1.5;
+    }
+    .formula-block.cyan { border-left-color: #0EA5E9; }
+    .formula-block.purple { border-left-color: #8B5CF6; }
+
+    .bullet-list {
+      list-style: none;
+      font-size: 12px;
+      color: #334155;
+      line-height: 1.55;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .bullet-list li {
+      position: relative;
+      padding-left: 16px;
+    }
+    .bullet-list li::before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      color: #0066FF;
+      font-weight: 800;
+    }
+    .card-2 .bullet-list li::before { color: #0EA5E9; }
+    .card-3 .bullet-list li::before { color: #8B5CF6; }
+
+    .highlight {
+      font-weight: 700;
+      color: #0F2C59;
+    }
+    .footer-bar {
+      margin-top: auto;
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: #94A3B8;
+      font-weight: 600;
+      padding-top: 10px;
+      border-top: 1px solid #F1F5F9;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="title-group">
+      <h1>Partnership Fundamentals: Statutory Defaults, Capital Architectures & Accounting Duality</h1>
+      <p>Indian Partnership Act 1932 Rules • Fixed vs Fluctuating Ledger Systems • Charges vs Appropriations of Profit</p>
+    </div>
+    <div class="badge">CUET UG Accountancy • Unit I</div>
+  </div>
+
+  <div class="grid">
+    <!-- Card 1: Statutory Defaults When Deed is Silent -->
+    <div class="card card-1">
+      <div class="card-header">
+        <span class="card-title">Indian Partnership Act 1932</span>
+        <span class="tag tag-blue">Deed Silence</span>
+      </div>
+
+      <div class="svg-container">
+        <svg width="400" height="230" viewBox="0 0 400 230">
+          <!-- Central Scale / Shield -->
+          <rect x="25" y="15" width="350" height="35" rx="6" fill="#EFF6FF" stroke="#0066FF" stroke-width="1.5"/>
+          <text x="200" y="38" text-anchor="middle" font-size="12" font-weight="800" fill="#0066FF">Statutory Invariants When Deed is Silent</text>
+
+          <!-- 6 Rule Tiles (2 columns x 3 rows) -->
+          <!-- Row 1 -->
+          <rect x="25" y="60" width="170" height="45" rx="6" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.2"/>
+          <text x="35" y="78" font-size="11" font-weight="800" fill="#0F2C59">Profit Sharing</text>
+          <text x="35" y="94" font-size="10" font-weight="600" fill="#0066FF">Equal (1 : 1 : ... : 1)</text>
+
+          <rect x="205" y="60" width="170" height="45" rx="6" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.2"/>
+          <text x="215" y="78" font-size="11" font-weight="800" fill="#0F2C59">Interest on Capital</text>
+          <text x="215" y="94" font-size="10" font-weight="700" fill="#EF4444">NOT Allowed (0%)</text>
+
+          <!-- Row 2 -->
+          <rect x="25" y="115" width="170" height="45" rx="6" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.2"/>
+          <text x="35" y="133" font-size="11" font-weight="800" fill="#0F2C59">Interest on Drawings</text>
+          <text x="35" y="149" font-size="10" font-weight="700" fill="#EF4444">NOT Charged (0%)</text>
+
+          <rect x="205" y="115" width="170" height="45" rx="6" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.2"/>
+          <text x="215" y="133" font-size="11" font-weight="800" fill="#0F2C59">Partner Salary / Comm.</text>
+          <text x="215" y="149" font-size="10" font-weight="700" fill="#EF4444">NOT Payable (₹0)</text>
+
+          <!-- Row 3: Sole affirmative right -->
+          <rect x="25" y="170" width="350" height="48" rx="6" fill="#FEF2F2" stroke="#EF4444" stroke-width="1.5"/>
+          <text x="35" y="189" font-size="11" font-weight="800" fill="#DC2626">Interest on Partner's Loan to Firm (Mandatory Charge)</text>
+          <text x="35" y="206" font-size="10" font-weight="700" fill="#7F1D1D">Allowed strictly at 6% p.a. — Even in case of Net Loss!</text>
+        </svg>
+      </div>
+
+      <div class="formula-block">
+        <strong>PSR Default:</strong> Shared Equally (regardless of capital)<br>
+        <strong>Partner's Loan Interest:</strong> Strictly 6% p.a. (Charge)<br>
+        <strong>IOC / IOD / Salary:</strong> Strictly NIL
+      </div>
+
+      <ul class="bullet-list">
+        <li><span class="highlight">Capital Irrelevance:</span> Profits are divided equally even if Partner A invested ₹10 Lakhs and Partner B invested ₹10,000.</li>
+        <li><span class="highlight">The 6% Misattribution Trap:</span> The 6% default rate applies <em>only</em> to partner loans; it never applies to partner capital balances.</li>
+        <li><span class="highlight">Inspection Rights:</span> Every partner has an absolute right to access, inspect, and copy all books of account of the firm.</li>
+      </ul>
+
+      <div class="footer-bar">
+        <span>Min Partners: 2</span>
+        <span>Max Partners: 50 (Companies Act)</span>
+      </div>
+    </div>
+
+    <!-- Card 2: Fixed vs Fluctuating Capital Systems -->
+    <div class="card card-2">
+      <div class="card-header">
+        <span class="card-title">Capital Account Systems</span>
+        <span class="tag tag-cyan">Ledger Architecture</span>
+      </div>
+
+      <div class="svg-container">
+        <svg width="400" height="230" viewBox="0 0 400 230">
+          <!-- Fixed System Left Box -->
+          <rect x="20" y="20" width="170" height="195" rx="8" fill="#F0F9FF" stroke="#0284C7" stroke-width="1.5"/>
+          <text x="105" y="42" text-anchor="middle" font-size="12" font-weight="800" fill="#0284C7">Fixed Capital System</text>
+          <text x="105" y="58" text-anchor="middle" font-size="9" font-weight="700" fill="#64748B">TWO Accounts Per Partner</text>
+
+          <rect x="30" y="70" width="150" height="60" rx="5" fill="#FFFFFF" stroke="#BAE6FD" stroke-width="1.2"/>
+          <text x="38" y="88" font-size="10" font-weight="800" fill="#0F2C59">1. Capital Account</text>
+          <text x="38" y="103" font-size="8.5" font-weight="600" fill="#334155">• Permanent capital intro</text>
+          <text x="38" y="117" font-size="8.5" font-weight="600" fill="#334155">• Permanent withdrawal only</text>
+          <text x="38" y="127" font-size="8.5" font-weight="700" fill="#0284C7">Always Credit Balance</text>
+
+          <rect x="30" y="140" width="150" height="65" rx="5" fill="#FFFFFF" stroke="#BAE6FD" stroke-width="1.2"/>
+          <text x="38" y="157" font-size="10" font-weight="800" fill="#0F2C59">2. Current Account</text>
+          <text x="38" y="172" font-size="8.5" font-weight="600" fill="#334155">• IOC, Salary, Commission</text>
+          <text x="38" y="186" font-size="8.5" font-weight="600" fill="#334155">• Drawings, IOD, Profit/Loss</text>
+          <text x="38" y="198" font-size="8.5" font-weight="700" fill="#D97706">Can be Dr or Cr Balance</text>
+
+          <!-- Fluctuating System Right Box -->
+          <rect x="210" y="20" width="170" height="195" rx="8" fill="#FAF5FF" stroke="#8B5CF6" stroke-width="1.5"/>
+          <text x="295" y="42" text-anchor="middle" font-size="12" font-weight="800" fill="#7C3AED">Fluctuating Capital</text>
+          <text x="295" y="58" text-anchor="middle" font-size="9" font-weight="700" fill="#64748B">SINGLE Account Per Partner</text>
+
+          <rect x="220" y="70" width="150" height="135" rx="5" fill="#FFFFFF" stroke="#DDD6FE" stroke-width="1.2"/>
+          <text x="228" y="90" font-size="10" font-weight="800" fill="#0F2C59">Capital Account Only</text>
+          <text x="228" y="110" font-size="8.5" font-weight="600" fill="#334155">• Initial &amp; added capital</text>
+          <text x="228" y="126" font-size="8.5" font-weight="600" fill="#334155">• + IOC, Salary, Profit</text>
+          <text x="228" y="142" font-size="8.5" font-weight="600" fill="#334155">• - Drawings, IOD, Losses</text>
+          <text x="228" y="165" font-size="8.5" font-weight="700" fill="#7C3AED">Balance fluctuates yearly</text>
+          <text x="228" y="180" font-size="8.5" font-weight="600" fill="#64748B">Default when deed is silent</text>
+        </svg>
+      </div>
+
+      <div class="formula-block cyan">
+        <strong>Fixed:</strong> Capital A/c (Fixed) + Current A/c (Variable)<br>
+        <strong>Fluctuating:</strong> Combined Capital A/c for all adjustments<br>
+        <strong>Default System:</strong> Fluctuating Capital (unless specified)
+      </div>
+
+      <ul class="bullet-list">
+        <li><span class="highlight">Fixed Integrity:</span> Partner's Capital A/c never changes unless fresh capital is introduced or capital is permanently withdrawn against capital.</li>
+        <li><span class="highlight">Balance Signs:</span> Under fixed system, Current Account can show a Debit balance (if drawings &amp; losses exceed entitlements).</li>
+        <li><span class="highlight">Balance Sheet Placement:</span> Debit balance of Partner's Current A/c is shown on the <em>Asset side</em> of the firm's Balance Sheet.</li>
+      </ul>
+
+      <div class="footer-bar">
+        <span>Drawings: Out of Capital vs Profit</span>
+        <span>IOC on Opening Capital</span>
+      </div>
+    </div>
+
+    <!-- Card 3: Charge Against Profit vs Appropriation -->
+    <div class="card card-3">
+      <div class="card-header">
+        <span class="card-title">Charge vs Appropriation</span>
+        <span class="tag tag-purple">Accounting Duality</span>
+      </div>
+
+      <div class="svg-container">
+        <svg width="400" height="230" viewBox="0 0 400 230">
+          <!-- Top Row: Charge -->
+          <rect x="25" y="15" width="350" height="95" rx="8" fill="#FFF1F2" stroke="#E11D48" stroke-width="1.5"/>
+          <text x="35" y="35" font-size="12" font-weight="800" fill="#BE123C">Charges Against Profit (Debited to P&amp;L A/c)</text>
+          <text x="35" y="52" font-size="9.5" font-weight="700" fill="#475569">Mandatory deductions before arriving at Net Profit; payable even in Loss!</text>
+
+          <rect x="35" y="60" width="105" height="40" rx="4" fill="#FFFFFF" stroke="#FECDD3"/>
+          <text x="40" y="76" font-size="8.5" font-weight="800" fill="#0F2C59">Interest on Loan</text>
+          <text x="40" y="90" font-size="8" font-weight="600" fill="#E11D48">To partner (6% min)</text>
+
+          <rect x="147" y="60" width="105" height="40" rx="4" fill="#FFFFFF" stroke="#FECDD3"/>
+          <text x="152" y="76" font-size="8.5" font-weight="800" fill="#0F2C59">Rent to Partner</text>
+          <text x="152" y="90" font-size="8" font-weight="600" fill="#E11D48">For premises used</text>
+
+          <rect x="260" y="60" width="105" height="40" rx="4" fill="#FFFFFF" stroke="#FECDD3"/>
+          <text x="265" y="76" font-size="8.5" font-weight="800" fill="#0F2C59">Manager Comm.</text>
+          <text x="265" y="90" font-size="8" font-weight="600" fill="#E11D48">Before/after profit</text>
+
+          <!-- Bottom Row: Appropriation -->
+          <rect x="25" y="120" width="350" height="95" rx="8" fill="#F0FDF4" stroke="#16A34A" stroke-width="1.5"/>
+          <text x="35" y="140" font-size="12" font-weight="800" fill="#15803D">Appropriations of Profit (Debited to P&amp;L Approp. A/c)</text>
+          <text x="35" y="157" font-size="9.5" font-weight="700" fill="#475569">Distribution of Net Profit; payable ONLY to the extent of profits available!</text>
+
+          <rect x="35" y="165" width="105" height="40" rx="4" fill="#FFFFFF" stroke="#BBF7D0"/>
+          <text x="40" y="181" font-size="8.5" font-weight="800" fill="#0F2C59">Interest on Capital</text>
+          <text x="40" y="195" font-size="8" font-weight="600" fill="#16A34A">On opening capital</text>
+
+          <rect x="147" y="165" width="105" height="40" rx="4" fill="#FFFFFF" stroke="#BBF7D0"/>
+          <text x="152" y="181" font-size="8.5" font-weight="800" fill="#0F2C59">Partner Salary</text>
+          <text x="152" y="195" font-size="8" font-weight="600" fill="#16A34A">Remuneration</text>
+
+          <rect x="260" y="165" width="105" height="40" rx="4" fill="#FFFFFF" stroke="#BBF7D0"/>
+          <text x="265" y="181" font-size="8.5" font-weight="800" fill="#0F2C59">General Reserve</text>
+          <text x="265" y="195" font-size="8" font-weight="600" fill="#16A34A">Retained profits</text>
+        </svg>
+      </div>
+
+      <div class="formula-block purple">
+        <strong>P&amp;L Account:</strong> Houses all Charges (Net Profit outcome)<br>
+        <strong>P&amp;L Approp. Account:</strong> Houses all Appropriations<br>
+        <strong>Insufficient Profit:</strong> Distribute in ratio of appropriations!
+      </div>
+
+      <ul class="bullet-list">
+        <li><span class="highlight">Charge Primacy:</span> Net Profit transferred to P&amp;L Appropriation must be calculated <em>after deducting all charges</em> (Loan Interest, Rent, Manager Commission).</li>
+        <li><span class="highlight">Inadequate Profit Rule:</span> If net profit is less than total appropriations, profit is distributed among partners in the <em>ratio of their respective appropriations</em>!</li>
+        <li><span class="highlight">Net Loss Scenario:</span> In case of net loss, NO appropriations (IOC, Salary) are provided unless deed explicitly makes them a charge.</li>
+      </ul>
+
+      <div class="footer-bar">
+        <span>Rent paid to partner = Charge</span>
+        <span>Interest on Partner Loan = Charge</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1440, height=880">
+  <title>Partnership Accounting: Appropriation Account, Interest on Drawings & Guarantee Mechanics</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 1440px;
+      height: 880px;
+      background-color: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0F172A;
+      padding: 32px 40px;
+      overflow: hidden;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 24px;
+      border-bottom: 2px solid #E2E8F0;
+      padding-bottom: 16px;
+    }
+    .title-group h1 {
+      font-size: 26px;
+      font-weight: 800;
+      color: #0F2C59;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+    .title-group p {
+      font-size: 14px;
+      color: #64748B;
+      font-weight: 500;
+    }
+    .badge {
+      background: #0066FF;
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      height: calc(100% - 110px);
+    }
+    .card {
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      border-radius: 14px;
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+      position: relative;
+    }
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      border-radius: 14px 14px 0 0;
+    }
+    .card-1::before { background: #0066FF; }
+    .card-2::before { background: #0EA5E9; }
+    .card-3::before { background: #8B5CF6; }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+    .card-title {
+      font-size: 17px;
+      font-weight: 800;
+      color: #0F2C59;
+    }
+    .tag {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+      text-transform: uppercase;
+    }
+    .tag-blue { background: #EFF6FF; color: #0066FF; }
+    .tag-cyan { background: #F0F9FF; color: #0284C7; }
+    .tag-purple { background: #F5F3FF; color: #7C3AED; }
+
+    .svg-container {
+      width: 100%;
+      height: 240px;
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 10px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .formula-block {
+      background: #F1F5F9;
+      border-left: 3px solid #0066FF;
+      padding: 10px 14px;
+      border-radius: 0 6px 6px 0;
+      font-family: "SF Mono", Consolas, Menlo, monospace;
+      font-size: 12px;
+      color: #0F172A;
+      margin-bottom: 12px;
+      line-height: 1.5;
+    }
+    .formula-block.cyan { border-left-color: #0EA5E9; }
+    .formula-block.purple { border-left-color: #8B5CF6; }
+
+    .bullet-list {
+      list-style: none;
+      font-size: 12px;
+      color: #334155;
+      line-height: 1.55;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .bullet-list li {
+      position: relative;
+      padding-left: 16px;
+    }
+    .bullet-list li::before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      color: #0066FF;
+      font-weight: 800;
+    }
+    .card-2 .bullet-list li::before { color: #0EA5E9; }
+    .card-3 .bullet-list li::before { color: #8B5CF6; }
+
+    .highlight {
+      font-weight: 700;
+      color: #0F2C59;
+    }
+    .footer-bar {
+      margin-top: auto;
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: #94A3B8;
+      font-weight: 600;
+      padding-top: 10px;
+      border-top: 1px solid #F1F5F9;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="title-group">
+      <h1>Appropriation Architecture, Drawings Valuation & Profit Guarantees</h1>
+      <p>P&amp;L Appropriation T-Account • Average-Period Interest on Drawings • Guarantee &amp; Adjustment Protocols</p>
+    </div>
+    <div class="badge">CUET UG Accountancy • Unit I</div>
+  </div>
+
+  <div class="grid">
+    <!-- Card 1: P&L Appropriation Account T-Format -->
+    <div class="card card-1">
+      <div class="card-header">
+        <span class="card-title">P&amp;L Appropriation Account</span>
+        <span class="tag tag-blue">Ledger Schema</span>
+      </div>
+
+      <div class="svg-container">
+        <svg width="400" height="230" viewBox="0 0 400 230">
+          <!-- T-Account Frame -->
+          <rect x="15" y="15" width="370" height="200" rx="6" fill="#FFFFFF" stroke="#0066FF" stroke-width="1.5"/>
+          <!-- Header Bar -->
+          <rect x="15" y="15" width="370" height="28" fill="#EFF6FF" rx="6 6 0 0"/>
+          <text x="30" y="34" font-size="11" font-weight="800" fill="#0066FF">Dr.</text>
+          <text x="200" y="34" text-anchor="middle" font-size="11" font-weight="800" fill="#0F2C59">Profit &amp; Loss Appropriation A/c</text>
+          <text x="370" y="34" text-anchor="end" font-size="11" font-weight="800" fill="#0066FF">Cr.</text>
+
+          <!-- Vertical Divider -->
+          <line x1="200" y1="43" x2="200" y2="215" stroke="#CBD5E1" stroke-width="1.2"/>
+
+          <!-- Debit Side Items -->
+          <text x="22" y="60" font-size="9" font-weight="700" fill="#0F2C59">To Interest on Capital:</text>
+          <text x="30" y="74" font-size="8.5" font-weight="600" fill="#64748B">• A's Capital/Current A/c</text>
+          <text x="30" y="87" font-size="8.5" font-weight="600" fill="#64748B">• B's Capital/Current A/c</text>
+
+          <text x="22" y="105" font-size="9" font-weight="700" fill="#0F2C59">To Partner's Salary / Comm.</text>
+          <text x="22" y="122" font-size="9" font-weight="700" fill="#0F2C59">To General Reserve A/c</text>
+
+          <text x="22" y="145" font-size="9.5" font-weight="800" fill="#16A34A">To Divisible Profit Transferred:</text>
+          <text x="30" y="160" font-size="8.5" font-weight="600" fill="#16A34A">• A's Capital/Current (PSR)</text>
+          <text x="30" y="173" font-size="8.5" font-weight="600" fill="#16A34A">• B's Capital/Current (PSR)</text>
+
+          <!-- Credit Side Items -->
+          <text x="210" y="60" font-size="9" font-weight="700" fill="#0F2C59">By Profit &amp; Loss A/c:</text>
+          <text x="218" y="75" font-size="8.5" font-weight="600" fill="#0066FF">• Net Profit (After all Charges!)</text>
+
+          <text x="210" y="102" font-size="9" font-weight="700" fill="#0F2C59">By Interest on Drawings:</text>
+          <text x="218" y="117" font-size="8.5" font-weight="600" fill="#64748B">• A's Capital/Current A/c</text>
+          <text x="218" y="130" font-size="8.5" font-weight="600" fill="#64748B">• B's Capital/Current A/c</text>
+
+          <text x="210" y="155" font-size="8.5" font-weight="700" fill="#EF4444">By Net Loss (if appropriations &gt; profit)</text>
+
+          <!-- Footer balance line -->
+          <line x1="15" y1="185" x2="385" y2="185" stroke="#CBD5E1" stroke-width="1"/>
+          <text x="105" y="202" text-anchor="middle" font-size="10" font-weight="800" fill="#0F2C59">Total Balanced [Dr]</text>
+          <text x="295" y="202" text-anchor="middle" font-size="10" font-weight="800" fill="#0F2C59">Total Balanced [Cr]</text>
+        </svg>
+      </div>
+
+      <div class="formula-block">
+        <strong>Divisible Profit:</strong> Net Profit (Cr) + IOD (Cr) - Appropriations (Dr)<br>
+        <strong>Commission After Charging:</strong> Profit · R / (100 + R)<br>
+        <strong>Commission Before Charging:</strong> Profit · R / 100
+      </div>
+
+      <ul class="bullet-list">
+        <li><span class="highlight">Nominal Nature:</span> P&amp;L Appropriation is a nominal extension of P&amp;L A/c; debited with expenses to partners, credited with firm earnings from partners.</li>
+        <li><span class="highlight">Net Profit Hygiene:</span> If Net Profit includes partner rent or loan interest, deduct them <em>before</em> posting to the Credit side of Appropriation.</li>
+        <li><span class="highlight">Loss Inadmissibility:</span> If the firm operates at a Net Loss, P&amp;L Appropriation A/c is <em>not prepared</em> (unless IOD exceeds loss or deed allows IOC during loss).</li>
+      </ul>
+
+      <div class="footer-bar">
+        <span>Cr: Net Profit + IOD</span>
+        <span>Dr: IOC + Salary + Comm + Reserve</span>
+      </div>
+    </div>
+
+    <!-- Card 2: Interest on Drawings Mechanics -->
+    <div class="card card-2">
+      <div class="card-header">
+        <span class="card-title">Interest on Drawings (IOD)</span>
+        <span class="tag tag-cyan">Time-Weighted</span>
+      </div>
+
+      <div class="svg-container">
+        <svg width="400" height="230" viewBox="0 0 400 230">
+          <!-- Average Period Formula Box -->
+          <rect x="15" y="15" width="370" height="42" rx="6" fill="#F0F9FF" stroke="#0284C7" stroke-width="1.2"/>
+          <text x="200" y="32" text-anchor="middle" font-size="10" font-weight="800" fill="#0284C7">T_avg = (Months left after 1st drawing + Months left after last) / 2</text>
+          <text x="200" y="47" text-anchor="middle" font-size="9" font-weight="600" fill="#64748B">IOD = Total Drawings × (Rate / 100) × (T_avg / 12)</text>
+
+          <!-- Table of Shortcut Periods -->
+          <rect x="15" y="68" width="370" height="142" rx="6" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
+          
+          <!-- Headers -->
+          <rect x="15" y="68" width="370" height="25" fill="#F8FAFC" rx="6 6 0 0"/>
+          <text x="80" y="84" text-anchor="middle" font-size="9.5" font-weight="800" fill="#0F2C59">Frequency</text>
+          <text x="175" y="84" text-anchor="middle" font-size="9.5" font-weight="800" fill="#0066FF">Beginning</text>
+          <text x="265" y="84" text-anchor="middle" font-size="9.5" font-weight="800" fill="#0284C7">Middle</text>
+          <text x="345" y="84" text-anchor="middle" font-size="9.5" font-weight="800" fill="#7C3AED">End</text>
+          <line x1="15" y1="93" x2="385" y2="93" stroke="#CBD5E1"/>
+
+          <!-- Monthly -->
+          <text x="30" y="112" font-size="9.5" font-weight="700" fill="#0F2C59">Monthly (12)</text>
+          <text x="175" y="112" text-anchor="middle" font-size="10" font-weight="800" fill="#0066FF">6.5 mos</text>
+          <text x="265" y="112" text-anchor="middle" font-size="10" font-weight="800" fill="#0284C7">6.0 mos</text>
+          <text x="345" y="112" text-anchor="middle" font-size="10" font-weight="800" fill="#7C3AED">5.5 mos</text>
+          <line x1="15" y1="122" x2="385" y2="122" stroke="#E2E8F0"/>
+
+          <!-- Quarterly -->
+          <text x="30" y="141" font-size="9.5" font-weight="700" fill="#0F2C59">Quarterly (4)</text>
+          <text x="175" y="141" text-anchor="middle" font-size="10" font-weight="800" fill="#0066FF">7.5 mos</text>
+          <text x="265" y="141" text-anchor="middle" font-size="10" font-weight="800" fill="#0284C7">6.0 mos</text>
+          <text x="345" y="141" text-anchor="middle" font-size="10" font-weight="800" fill="#7C3AED">4.5 mos</text>
+          <line x1="15" y1="151" x2="385" y2="151" stroke="#E2E8F0"/>
+
+          <!-- Half-Yearly (for 6 mos) -->
+          <text x="30" y="170" font-size="9.5" font-weight="700" fill="#0F2C59">For 6 Mos (Monthly)</text>
+          <text x="175" y="170" text-anchor="middle" font-size="10" font-weight="800" fill="#0066FF">3.5 mos</text>
+          <text x="265" y="170" text-anchor="middle" font-size="10" font-weight="800" fill="#0284C7">3.0 mos</text>
+          <text x="345" y="170" text-anchor="middle" font-size="10" font-weight="800" fill="#7C3AED">2.5 mos</text>
+          <line x1="15" y1="180" x2="385" y2="180" stroke="#E2E8F0"/>
+
+          <!-- Date Silent Rule -->
+          <text x="30" y="198" font-size="9" font-weight="800" fill="#EF4444">Date of Drawing Silent?</text>
+          <text x="260" y="198" text-anchor="middle" font-size="9.5" font-weight="800" fill="#DC2626">Charge Flat 6 Months Average! (Rate p.a.)</text>
+        </svg>
+      </div>
+
+      <div class="formula-block cyan">
+        <strong>Product Method:</strong> Total Products × (Rate / 100) × (1 / 12)<br>
+        <strong>Rate "p.a." absent:</strong> Calculate WITHOUT time factor!<br>
+        <strong>Flat 6 Months:</strong> Applied whenever withdrawal date is omitted
+      </div>
+
+      <ul class="bullet-list">
+        <li><span class="highlight">The "per annum" Trap:</span> If rate is given as "10%" (without "p.a."), time factor is completely ignored: $\text{IOD} = \text{Total} \times 10/100$.</li>
+        <li><span class="highlight">Product Method Applicability:</span> Use product method when drawings are made at irregular intervals or with unequal amounts.</li>
+        <li><span class="highlight">Capital vs Profit Drawings:</span> Drawings against capital are debited to Capital A/c (no IOD); drawings against profit attract IOD!</li>
+      </ul>
+
+      <div class="footer-bar">
+        <span>Beginning: +0.5 mo</span>
+        <span>End: -0.5 mo</span>
+      </div>
+    </div>
+
+    <!-- Card 3: Guarantee of Profit & Past Adjustments -->
+    <div class="card card-3">
+      <div class="card-header">
+        <span class="card-title">Guarantees &amp; Past Adjustments</span>
+        <span class="tag tag-purple">Correction Protocol</span>
+      </div>
+
+      <div class="svg-container">
+        <svg width="400" height="230" viewBox="0 0 400 230">
+          <!-- Top Half: Guarantee Hierarchy -->
+          <rect x="15" y="15" width="370" height="95" rx="6" fill="#F5F3FF" stroke="#8B5CF6" stroke-width="1.2"/>
+          <text x="30" y="34" font-size="11" font-weight="800" fill="#7C3AED">Guarantee of Minimum Profit Hierarchy</text>
+
+          <rect x="25" y="44" width="105" height="55" rx="4" fill="#FFFFFF" stroke="#DDD6FE"/>
+          <text x="32" y="60" font-size="9" font-weight="800" fill="#0F2C59">1. By Firm</text>
+          <text x="32" y="74" font-size="8" font-weight="600" fill="#475569">Deficiency borne</text>
+          <text x="32" y="86" font-size="8" font-weight="600" fill="#475569">by all remaining</text>
+          <text x="32" y="96" font-size="8" font-weight="700" fill="#7C3AED">in their PSR</text>
+
+          <rect x="145" y="44" width="110" height="55" rx="4" fill="#FFFFFF" stroke="#DDD6FE"/>
+          <text x="152" y="60" font-size="9" font-weight="800" fill="#0F2C59">2. By Partner</text>
+          <text x="152" y="74" font-size="8" font-weight="600" fill="#475569">Deficiency deducted</text>
+          <text x="152" y="86" font-size="8" font-weight="600" fill="#475569">strictly from</text>
+          <text x="152" y="96" font-size="8" font-weight="700" fill="#0284C7">guarantor partner</text>
+
+          <rect x="270" y="44" width="105" height="55" rx="4" fill="#FFFFFF" stroke="#DDD6FE"/>
+          <text x="277" y="60" font-size="9" font-weight="800" fill="#0F2C59">3. To Firm</text>
+          <text x="277" y="74" font-size="8" font-weight="600" fill="#475569">Partner guarantees</text>
+          <text x="277" y="86" font-size="8" font-weight="600" fill="#475569">minimum fee;</text>
+          <text x="277" y="96" font-size="8" font-weight="700" fill="#16A34A">shortfall credited</text>
+
+          <!-- Bottom Half: Past Adjustments Matrix -->
+          <rect x="15" y="120" width="370" height="95" rx="6" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.2"/>
+          <text x="30" y="138" font-size="11" font-weight="800" fill="#0F2C59">Past Adjustment: Statement Showing Adjustments</text>
+          
+          <rect x="25" y="148" width="165" height="58" rx="4" fill="#FEF2F2" stroke="#FECDD3"/>
+          <text x="32" y="164" font-size="8.5" font-weight="800" fill="#991B1B">What Was Wrongly Given?</text>
+          <text x="32" y="178" font-size="8" font-weight="600" fill="#B91C1C">Take back: DEBIT partners</text>
+          <text x="32" y="192" font-size="8" font-weight="700" fill="#B91C1C">Credit to firm's divisible pool</text>
+
+          <rect x="205" y="148" width="170" height="58" rx="4" fill="#F0FDF4" stroke="#BBF7D0"/>
+          <text x="212" y="164" font-size="8.5" font-weight="800" fill="#166534">What Should Have Been Given?</text>
+          <text x="212" y="178" font-size="8" font-weight="600" fill="#15803D">Give correctly: CREDIT partners</text>
+          <text x="212" y="192" font-size="8" font-weight="700" fill="#15803D">Single Rectification Entry!</text>
+        </svg>
+      </div>
+
+      <div class="formula-block purple">
+        <strong>Guarantee Deficiency:</strong> Guaranteed Profit - Actual Share<br>
+        <strong>Single Rectification Entry:</strong> Gaining Partner A/c (Dr.) to Sacrificing Partner A/c (Cr.)
+      </div>
+
+      <ul class="bullet-list">
+        <li><span class="highlight">Higher Share Rule:</span> If guaranteed partner's actual share exceeds guaranteed minimum, they receive the <em>actual higher share</em>!</li>
+        <li><span class="highlight">Two-Way Guarantee Order:</span> First adjust partner's guarantee to firm (firm income rises), then distribute profits and meet guarantee to partner.</li>
+        <li><span class="highlight">Single Entry Principle:</span> Never reopen closed ledger accounts for past errors; pass one composite entry through Capital (or Current) A/cs.</li>
+      </ul>
+
+      <div class="footer-bar">
+        <span>Deficiency = Guaranteed - Actual</span>
+        <span>Current A/c in Fixed System</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

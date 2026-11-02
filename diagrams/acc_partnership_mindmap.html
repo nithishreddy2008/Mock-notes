@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1440, height=880">
+  <title>Accounting for Partnership: Basic Concepts Master Synthesis Mindmap</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 1440px;
+      height: 880px;
+      background-color: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0F172A;
+      padding: 24px 36px;
+      overflow: hidden;
+      position: relative;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 16px;
+      border-bottom: 2px solid #E2E8F0;
+      padding-bottom: 12px;
+    }
+    .title-group h1 {
+      font-size: 24px;
+      font-weight: 800;
+      color: #0F2C59;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+    .title-group p {
+      font-size: 13px;
+      color: #64748B;
+      font-weight: 500;
+    }
+    .badge {
+      background: #0066FF;
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .mindmap-canvas {
+      width: 100%;
+      height: calc(100% - 90px);
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: stretch;
+    }
+
+    .svg-connectors {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Central Hub */
+    .central-hub {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 250px;
+      background: linear-gradient(135deg, #0F2C59 0%, #0066FF 100%);
+      color: white;
+      border-radius: 16px;
+      padding: 22px 18px;
+      text-align: center;
+      box-shadow: 0 10px 25px -5px rgba(15, 44, 89, 0.35);
+      border: 2px solid #93C5FD;
+      z-index: 10;
+    }
+    .central-hub .sub-label {
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      color: #93C5FD;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .central-hub .hub-title {
+      font-size: 17px;
+      font-weight: 800;
+      line-height: 1.25;
+      margin-bottom: 6px;
+    }
+    .central-hub .hub-desc {
+      font-size: 11px;
+      color: #E2E8F0;
+      line-height: 1.4;
+    }
+
+    /* Column Containers */
+    .column-left, .column-right {
+      width: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      z-index: 5;
+    }
+
+    .mm-card {
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      border-radius: 12px;
+      padding: 12px 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+      position: relative;
+    }
+    .mm-card::before {
+      content: "";
+      position: absolute;
+      top: 0; bottom: 0; left: 0;
+      width: 4px;
+      border-radius: 12px 0 0 12px;
+    }
+
+    .c1::before { background: #0066FF; }
+    .c2::before { background: #0EA5E9; }
+    .c3::before { background: #D97706; }
+    .c4::before { background: #8B5CF6; }
+    .c5::before { background: #16A34A; }
+    .c6::before { background: #E11D48; }
+
+    .card-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+    .mm-title {
+      font-size: 13.5px;
+      font-weight: 800;
+      color: #0F2C59;
+    }
+    .mm-badge {
+      font-size: 9.5px;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+    .b-blue { background: #EFF6FF; color: #0066FF; }
+    .b-cyan { background: #F0F9FF; color: #0284C7; }
+    .b-amber { background: #FFFBEB; color: #D97706; }
+    .b-purple { background: #F5F3FF; color: #7C3AED; }
+    .b-green { background: #F0FDF4; color: #16A34A; }
+    .b-rose { background: #FFF1F2; color: #E11D48; }
+
+    .formula-pill {
+      background: #F1F5F9;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-family: "SF Mono", Consolas, monospace;
+      font-size: 10.5px;
+      font-weight: 600;
+      color: #0F172A;
+      margin-bottom: 6px;
+      display: inline-block;
+      width: 100%;
+    }
+
+    .key-points {
+      list-style: none;
+      font-size: 11px;
+      color: #334155;
+      line-height: 1.45;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .key-points li {
+      position: relative;
+      padding-left: 12px;
+    }
+    .key-points li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      font-weight: 800;
+      color: #64748B;
+    }
+    .c1 .key-points li::before { color: #0066FF; }
+    .c2 .key-points li::before { color: #0EA5E9; }
+    .c3 .key-points li::before { color: #D97706; }
+    .c4 .key-points li::before { color: #8B5CF6; }
+    .c5 .key-points li::before { color: #16A34A; }
+    .c6 .key-points li::before { color: #E11D48; }
+
+    strong {
+      color: #0F2C59;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="title-group">
+      <h1>Partnership Fundamentals: Master Synthesis Mindmap</h1>
+      <p>Statutory Provisions • Capital Systems • P&amp;L Appropriation • Drawings Rules • Guarantees &amp; Adjustments</p>
+    </div>
+    <div class="badge">CUET UG Accountancy • Unit I</div>
+  </div>
+
+  <div class="mindmap-canvas">
+    <!-- SVG Connection Curves -->
+    <svg class="svg-connectors" viewBox="0 0 1368 730">
+      <!-- Left branches from center (684, 365) to (400, y) -->
+      <!-- Branch 1 (Top Left) -->
+      <path d="M 559 340 C 470 330 450 115 400 115" fill="none" stroke="#0066FF" stroke-width="2.5" stroke-dasharray="4,4"/>
+      <!-- Branch 2 (Mid Left) -->
+      <path d="M 559 365 C 470 365 460 365 400 365" fill="none" stroke="#0EA5E9" stroke-width="2.5"/>
+      <!-- Branch 3 (Bottom Left) -->
+      <path d="M 559 390 C 470 400 450 615 400 615" fill="none" stroke="#D97706" stroke-width="2.5" stroke-dasharray="4,4"/>
+
+      <!-- Right branches from center (684, 365) to (968, y) -->
+      <!-- Branch 4 (Top Right) -->
+      <path d="M 809 340 C 900 330 920 115 968 115" fill="none" stroke="#8B5CF6" stroke-width="2.5" stroke-dasharray="4,4"/>
+      <!-- Branch 5 (Mid Right) -->
+      <path d="M 809 365 C 900 365 910 365 968 365" fill="none" stroke="#16A34A" stroke-width="2.5"/>
+      <!-- Branch 6 (Bottom Right) -->
+      <path d="M 809 390 C 900 400 920 615 968 615" fill="none" stroke="#E11D48" stroke-width="2.5" stroke-dasharray="4,4"/>
+    </svg>
+
+    <!-- Column Left -->
+    <div class="column-left">
+      <!-- Card 1: Statutory Defaults -->
+      <div class="mm-card c1">
+        <div class="card-title-row">
+          <span class="mm-title">Partnership Act 1932 Defaults</span>
+          <span class="mm-badge b-blue">Statutory Rules</span>
+        </div>
+        <div class="formula-pill">PSR: Equal (1:1) &nbsp;|&nbsp; Loan Interest: 6% p.a. (Charge) &nbsp;|&nbsp; IOC/IOD: NIL</div>
+        <ul class="key-points">
+          <li><strong>Equal Profit:</strong> Capital ratio is ignored; profits/losses split equally when deed is silent.</li>
+          <li><strong>Loan Interest 6%:</strong> Compulsory charge on P&amp;L A/c, payable even during net business losses.</li>
+          <li><strong>No Remuneration:</strong> No partner is entitled to salary, commission, or bonus without deed clause.</li>
+        </ul>
+      </div>
+
+      <!-- Card 2: Fixed vs Fluctuating -->
+      <div class="mm-card c2">
+        <div class="card-title-row">
+          <span class="mm-title">Capital Account Architectures</span>
+          <span class="mm-badge b-cyan">Ledger Dualism</span>
+        </div>
+        <div class="formula-pill">Fixed: Capital + Current &nbsp;|&nbsp; Fluctuating: Single Capital A/c</div>
+        <ul class="key-points">
+          <li><strong>Fixed System:</strong> Capital A/c stays intact; all operational items pass through Current A/c.</li>
+          <li><strong>Debit Current Balance:</strong> Current A/c can show Dr balance; displayed on Asset side of B/S.</li>
+          <li><strong>Default Mode:</strong> In absence of specification, Fluctuating Capital is always presumed.</li>
+        </ul>
+      </div>
+
+      <!-- Card 3: Charges vs Appropriations -->
+      <div class="mm-card c3">
+        <div class="card-title-row">
+          <span class="mm-title">Charges vs Appropriations</span>
+          <span class="mm-badge b-amber">Profit Duality</span>
+        </div>
+        <div class="formula-pill">Charge ➔ P&amp;L A/c &nbsp;|&nbsp; Appropriation ➔ P&amp;L Appropriation A/c</div>
+        <ul class="key-points">
+          <li><strong>Charges:</strong> Partner Loan Interest, Partner Rent, Manager Commission (Must be paid).</li>
+          <li><strong>Appropriations:</strong> IOC, Partner Salary, General Reserve (Paid only out of profit).</li>
+          <li><strong>Inadequate Profit:</strong> Distribute available profit in the ratio of respective appropriations!</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Central Hub -->
+    <div class="central-hub">
+      <div class="sub-label">CUET UG Accountancy • Unit I</div>
+      <div class="hub-title">Accounting for Partnership</div>
+      <div class="hub-desc">Statutory framework, capital accounting architectures, profit appropriation, drawings valuation, and past error rectifications.</div>
+    </div>
+
+    <!-- Column Right -->
+    <div class="column-right">
+      <!-- Card 4: Interest on Capital & Drawings -->
+      <div class="mm-card c4">
+        <div class="card-title-row">
+          <span class="mm-title">IOC &amp; Drawings Mechanics</span>
+          <span class="mm-badge b-purple">Time-Weighted</span>
+        </div>
+        <div class="formula-pill">Monthly: 6.5 / 6.0 / 5.5 &nbsp;|&nbsp; Quarterly: 7.5 / 6.0 / 4.5 &nbsp;|&nbsp; Date silent: 6 mos</div>
+        <ul class="key-points">
+          <li><strong>IOC Base:</strong> Calculated strictly on <em>Opening Capital</em> + time-weighted additions.</li>
+          <li><strong>Average Period Rule:</strong> $T_{\text{avg}} = (\text{months left after 1st} + \text{after last})/2$.</li>
+          <li><strong>"p.a." Importance:</strong> If "p.a." is omitted in rate, calculate flat without time weight!</li>
+        </ul>
+      </div>
+
+      <!-- Card 5: Guarantee of Profit -->
+      <div class="mm-card c5">
+        <div class="card-title-row">
+          <span class="mm-title">Guarantee of Minimum Profit</span>
+          <span class="mm-badge b-green">Deficiency Sharing</span>
+        </div>
+        <div class="formula-pill">Deficiency = Guaranteed Profit - Actual Share &nbsp;|&nbsp; Borne in agreed ratio</div>
+        <ul class="key-points">
+          <li><strong>By Firm:</strong> Deficiency borne by remaining partners in their mutual PSR.</li>
+          <li><strong>By Partner:</strong> Deficiency recovered exclusively from the specific guarantor partner.</li>
+          <li><strong>Higher Share Rule:</strong> If actual profit exceeds guarantee, partner keeps the higher share.</li>
+        </ul>
+      </div>
+
+      <!-- Card 6: Past Adjustments -->
+      <div class="mm-card c6">
+        <div class="card-title-row">
+          <span class="mm-title">Past Adjustments &amp; Rectification</span>
+          <span class="mm-badge b-rose">Single Entry</span>
+        </div>
+        <div class="formula-pill">Analytical Table ➔ Net Effect ➔ Gaining Partner (Dr) to Sacrificing (Cr)</div>
+        <ul class="key-points">
+          <li><strong>Analytical Table:</strong> Debit partners for excess received; Credit for omitted entitlements.</li>
+          <li><strong>Single Entry:</strong> Passed through Capital/Current A/cs; closed final accounts are never reopened.</li>
+          <li><strong>Fixed Distinction:</strong> In fixed capital system, adjustment entry must debit/credit Current A/cs!</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -2,620 +2,693 @@
 
 #show: om-doc.with(
   exam: "CUET UG",
-  subject: "Accountancy",
-  topic-title: "Accounting for Partnership",
-  subtitle: "Official Syllabus Unit I · Class 12 · CUET UG 2027 Cycle Notes",
+  subject: "Accountancy (301)",
+  topic-title: "Accounting for Partnership: Basic Concepts",
+  subtitle: "Official Syllabus Unit I · Class 12 NCERT · CUET UG 2027 Cycle Notes",
 )
 
 = Syllabus Alignment
 
 #table(
   columns: (1.05fr, 1.9fr, 1.25fr),
-  table.header[*Sub-topic*][*Official syllabus pointer (NTA CUET(UG) Accountancy syllabus 2026, the current 2027 baseline, Unit I)*][*Skills the questions test*],
+  table.header[*Sub-topic*][*Official syllabus pointer (NTA CUET UG Accountancy, Unit I)*][*Skills the questions test*],
   [*Nature of Partnership Firm*], [
-    Nature of Partnership Firm: Partnership deed (meaning, importance).
+    Nature of Partnership Firm: Partnership deed (meaning, clauses, importance), Indian Partnership Act 1932 defaults.
   ], [
-    Spotting deed clauses, applying the Act's defaults when the deed is silent.
+    Spotting deed clauses, applying the Act's default rules when deed is silent.
   ],
-  [*Fixed v/s Fluctuating capital*], [
-    Accounts of Partnership: Fixed v/s Fluctuating capital.
+  [*Fixed vs Fluctuating Capital*], [
+    Accounts of Partnership: Fixed vs Fluctuating capital systems, ledger postings, debit balances.
   ], [
-    Choosing the right account system, posting adjustments, reading closing balances.
+    Selecting ledger architecture, Capital vs Current Account postings, Balance Sheet presentation.
   ],
-  [*Division of profit among partners*], [
-    Accounts of Partnership: Division of profit among partners.
+  [*Division of Profit & Appropriations*], [
+    Profit and Loss Appropriation account, interest on capital, interest on drawings, partner salary & commission.
   ], [
-    Interest on capital (time-weighted), interest on drawings (product and average-period methods), salary, commission.
+    Separating charges from appropriations, time-weighted interest calculations, average-period shortcuts.
   ],
-  [*Profit and Loss Appropriation account*], [
-    Accounts of Partnership: Profit and Loss Appropriation account.
+  [*Guarantee of Profit to a Partner*], [
+    Guarantee of profit: by firm, by particular partner, partner to firm, calculation of deficiency.
   ], [
-    Preparing the account, separating charges from appropriations, finding divisible profit.
+    Calculating shortfall, sharing deficiency in agreed or mutual PSR, two-way guarantee ordering.
   ],
-  [*Guarantee of profit to a partner*], [
-    Accounts of Partnership: Guarantee of profit to a partner.
+  [*Past Adjustments*], [
+    Past adjustments: errors and omissions in interest, salary, or profit-sharing ratios after closing books.
   ], [
-    Computing the deficiency and sharing it among guarantors in the correct ratio.
-  ],
-  [*Past adjustments*], [
-    Accounts of Partnership: Past adjustments.
-  ], [
-    Passing one combined adjustment entry through current accounts after the books close.
+    Statement showing adjustments, net analytical matrix, single composite rectification entry.
   ],
 )
 
 #exam-pointer[
-  CUET UG pattern (NTA official information bulletin and syllabus, 2026 cycle — the
-  current 2027 baseline): each subject paper carries *50 compulsory questions* in
-  *60 minutes*, with $+5$ for every correct answer and $-1$ for every incorrect answer. The Accountancy paper (subject code 301)
-  maps strictly to NCERT Class 12, and Unit I supplies the base that every later
-  partnership unit (reconstitution, dissolution) builds on.
+  *CUET UG Pattern (NTA 2026–2027 Baseline):* The Accountancy paper (Code 301) carries 50 compulsory MCQs in 60 minutes ($+5$ marks for correct, $-1$ mark for incorrect). Unit I (Partnership Fundamentals) serves as the conceptual bedrock for all reconstitution and company accounting units, typically contributing 6 to 8 direct computation and concept MCQs.
 ]
 
-= The Partnership Firm and Its Rulebook
+= The Partnership Firm & Statutory Rules
 
-Two friends run a cafe together. One brings more money, the other works longer
-hours, and at the end of the year a question appears on the whiteboard: who gets
-how much of the profit? Partnership accounting exists to answer that question
-fairly, every single year, without an argument. The firm's first protection is a
-written *partnership deed* — the rulebook both friends sign on day one. This
-section covers what a deed is, why it matters, and what happens when it says
-nothing.
+Two entrepreneurs establish a commercial venture together. One contributes greater capital, while the other devotes full-time managerial labor. At the close of the financial year, a decisive question emerges: how should the net surplus be allocated fairly and transparently? Partnership accounting exists to resolve that allocation without ambiguity. The firm's first legal safeguard is a written *Partnership Deed*—the foundational contract executed by all partners.
 
-- *The legal definition:* partnership is the relation between persons who have
-  agreed to share the profits of a business carried on by all, or by any of them
-  acting for all (*Indian Partnership Act, 1932*, Section 4).
-- *Two or more persons:* the minimum is 2 partners; the maximum is capped at 50
-  under the rules made for the Companies Act, 2013.
-- *Agreement, not registration:* the partnership is born from an agreement — oral
-  or written. A written deed is simply the version that can be proved in a dispute.
-- *Profit sharing is essential:* sharing of profits is the strongest evidence of
-  partnership, but mutual agency — every partner can bind the firm by acting for
-  it — is what legally separates a partnership from a group of co-owners.
+== Statutory Definition & Essential Features
+Under *Section 4 of the Indian Partnership Act, 1932*:
+#def(title: "Statutory Definition of Partnership")[
+  "Partnership is the relation between persons who have agreed to share the profits of a business carried on by all or any of them acting for all."
+]
 
-== What the Partnership Deed settles
+The five essential legal characteristics tested by CUET are:
+1. *Two or More Persons:* Minimum number of partners is *2* (Section 4). The maximum number of partners in a partnership firm is legally capped at *50* under Rule 10 of the Companies (Miscellaneous) Rules, 2014 (framed under Section 464 of the Companies Act, 2013).
+2. *Agreement:* Partnership originates from a mutual contract (express or implied, oral or written), not from status (distinguishing it from a Hindu Undivided Family).
+3. *Lawful Business:* Must exist to carry on a legal trade, occupation, or profession with the objective of generating profit.
+4. *Sharing of Profits:* Sharing of profits is prima facie evidence of partnership. An agreement to share profits also implies an agreement to share losses, although a partner may be admitted for profits only (e.g., a minor under Section 30).
+5. *Mutual Agency (The Cardinal Principle):* Business is carried on by all or any of them acting for all. Every partner is simultaneously a *principal* (bound by the acts of others) and an *agent* (capable of binding all other partners by his acts in the ordinary course of business). Mutual agency is the *conclusive test* of partnership.
+
+== What the Partnership Deed Settles
+The *Partnership Deed* is the written document containing the mutually agreed terms, rights, duties, and obligations of the partners. While registration of a partnership is not compulsory under the 1932 Act, a written deed is highly advisable to avoid future litigation.
 
 #table(
   columns: (1fr, 2fr),
-  table.header[*Clause*][*What it settles before the first transaction*],
-  [Names and address], [Firm name, place of business, nature of the business, duration if fixed.],
-  [Capital], [How much each partner contributes, and whether capital must stay fixed.],
-  [Profit-sharing ratio], [The exact ratio in which profits (and losses) are divided.],
-  [Salaries and commission], [Any monthly salary or commission a partner earns from the firm.],
-  [Interest on capital], [The rate the firm pays partners on the money they keep invested.],
-  [Interest on drawings], [The rate the firm charges when partners withdraw money early.],
-  [Drawings limits], [How much a partner may withdraw, and how often.],
-  [Loans and disputes], [Interest on a partner's loan to the firm, and how disputes are settled.],
+  table.header[*Clause*][*What it settles before transactions commence*],
+  [Names and address], [Firm name, principal place of business, nature of trade, duration if specified.],
+  [Capital contribution], [Amount contributed by each partner, and whether capital remains fixed or fluctuating.],
+  [Profit-sharing ratio], [Exact mathematical proportion in which profits and losses are shared.],
+  [Salaries and commission], [Specific remuneration or percentage commission payable to working partners.],
+  [Interest on capital], [Rate at which the firm compensates partners for their invested capital.],
+  [Interest on drawings], [Rate charged to discourage premature or excessive withdrawals by partners.],
+  [Drawings limits], [Ceiling on drawings allowed per month/quarter and procedure for withdrawal.],
+  [Loans and disputes], [Rate of interest on partner advances, and arbitration mechanism for disputes.],
 )
 
-- *Why the deed matters:* it is written proof of every agreed term, so nobody can
-  quietly change the ratio, deny a salary, or inflate an interest claim later.
-- *It prevents disputes:* interest rates, salaries and ratios are the three most
-  common causes of partner conflicts — the deed fixes all three in advance.
-- *It keeps accounts smooth:* the accountant knows exactly which items to
-  appropriate and at which rates, without guessing the partners' intentions.
+- *Why the deed matters:* It constitutes conclusive documentary evidence, preventing partners from arbitrarily altering profit ratios or demanding unagreed salaries.
+- *Dispute prevention:* Disagreements regarding profit splits, salaries, and interest rates represent the most common commercial conflicts; a deed resolves them ex-ante.
 
-== When the deed is silent: the Act steps in
-
-A deed is optional; the law is not. Wherever the deed says nothing, the *Indian
-Partnership Act, 1932* supplies the default rule — and these defaults are a
-favourite source of one-mark checks because students memorise them wrong.
+== Statutory Default Provisions (When the Deed is Silent)
+When a firm has no written deed, or where the deed is completely silent on a specific matter, the *Indian Partnership Act, 1932* imposes six strict statutory defaults:
 
 #table(
-  columns: (1.4fr, 1fr),
-  table.header[*Point the deed skipped*][*Default rule that applies*],
-  [Profit-sharing ratio], [Profits and losses are shared *equally*, whatever each partner contributed.],
-  [Interest on capital], [*Not allowed.* No partner earns interest on capital.],
-  [Salary or commission], [*Not allowed.* Partners work without remuneration.],
-  [Interest on drawings], [*Not charged.* Withdrawals cost the partner nothing extra.],
-  [Interest on a partner's loan], [*Allowed at 6% per annum* — it is a *charge*, paid even in a loss year.],
+  columns: (1.3fr, 1.2fr, 1.5fr),
+  table.header[*Accounting Item*][*Statutory Default Rule*][*Exam Application & Legal Basis*],
+  [Profit & Loss Sharing], [Equally ($1 : 1 : dots$)], [Section 13(b): Capital contribution ratio is completely ignored.],
+  [Interest on Capital], [NOT Allowed ($0\%$)], [Section 13(c): No partner can claim interest on capital as a right.],
+  [Interest on Drawings], [NOT Charged ($0\%$)], [Firm cannot levy interest on money withdrawn by partners.],
+  [Partner Remuneration], [NOT Payable (₹0)], [Section 13(a): No salary, commission, or bonus for participating in business.],
+  [Interest on Partner's Loan], [Strictly *6% p.a.*], [Section 13(d): Mandatory *charge* against profit, payable even in net loss!],
+  [Books Inspection], [Absolute Right], [Section 12(d): Every partner has a right to inspect and copy any firm account.],
 )
 
-#analogy-box(title: "Everyday Example — The Match Rulebook")[
-  Before a friendly cricket match, both teams agree: 8 overs, one bouncer per
-  over, ties shared. Nobody argues in the 5th over, because the rules were signed
-  before the first ball. The *partnership deed* is that pre-match rulebook — and
-  where the rulebook has no clause, the umpire (the Partnership Act) applies the
-  standard rule, not whatever a player demands mid-game.
+#analogy-box(title: "Everyday Example — The Pre-Match Rulebook")[
+  Before a tournament match, both teams execute ground rules: 20 overs, two bouncers per over, super-over for ties. Neither captain can dispute decisions midway because terms were signed beforehand. The *Partnership Deed* is that rulebook—and where a rule was omitted, the umpire (the Indian Partnership Act, 1932) applies standard statutory defaults, not whatever a partner invents mid-season.
 ]
 
 #worked-example("Worked Example — Loan Interest vs Capital Interest")[
-  A and B are partners with capitals of ₹1,00,000 each. The deed is silent on
-  interest, and A has also lent ₹50,000 to the firm as a loan.
+  A and B are partners contributing capitals of ₹2,00,000 and ₹50,000 respectively. The deed is silent on interest. A has additionally advanced ₹1,00,000 as a temporary business loan to the firm. At year-end, A claims:
+  1. 6% interest on his ₹2,00,000 capital balance.
+  2. 6% interest on his ₹1,00,000 loan.
 
-  - *A claims 6% interest on capital:* ₹1,00,000 × 6% = ₹6,000 — *denied.* The deed
-    is silent, so the Act gives no interest on capital.
-  - *A's loan earns interest automatically:* ₹50,000 × 6/100 × 12/12 = *₹3,000*, a
-    *charge* against profit — it is paid even if the firm makes a loss.
-
-  Keep the two "6%" ideas apart: capital interest exists *only if the deed
-  provides it*; loan interest exists *by default*.
+  #v(2pt)
+  *Evaluation under Partnership Act, 1932:*
+  - *Claim 1 is REJECTED:* The deed is silent, so Section 13(c) strictly disallows Interest on Capital. A receives ₹0.
+  - *Claim 2 is ACCEPTED:* Section 13(d) automatically grants 6% p.a. on partner loans:
+    $ 1,00,000 times 6% = "₹6,000" $
+    This ₹6,000 is a *charge against profit*, payable even if the firm suffers a net loss!
 ]
 
-= Capital Accounts: Fixed vs Fluctuating
+= Capital Account Systems: Fixed vs Fluctuating
 
-Every rupee a partner keeps in the firm needs a home, and accountancy offers two
-floor plans. In the *fixed* system the partner's capital account never moves from
-the agreed figure, and a second account — the *current account* — absorbs all the
-yearly ups and downs. In the *fluctuating* system one single account does every
-job, rising and falling year after year. Both systems reach identical answers;
-they simply file the same entries in different drawers.
+The financial transactions between a partner and the firm (capital contribution, withdrawals, interest, salary, and profit shares) are recorded under one of two standardized ledger architectures:
 
-- *Fixed system — two accounts:* a *Capital Account* stays constant at the agreed
-  amount; a *Current Account* collects interest, salary, drawings and profit share.
-- *Fluctuating system — one account:* the Capital Account itself carries every
-  adjustment, so its balance changes every year (this is the default system when
-  nothing is specified).
-- *Fixed capital rarely moves:* it changes only when a partner *permanently* adds
-  or withdraws capital — never for drawings or yearly appropriations.
-- *A current account may go negative:* it can show a *debit balance* (the partner
-  owes the firm). A fixed Capital Account cannot — except on dissolution.
+== 1. Fixed Capital System
+Under this system, the original capital contributed by partners remains constant over time. To maintain capital integrity, *two accounts* are maintained for each partner:
+- *Partner's Capital Account:* Records only two exceptional events:
+  1. Permanent introduction of fresh / additional capital (Credit side).
+  2. Permanent withdrawal of capital against capital (Debit side).
+  - *Balance Characteristic:* The Capital Account *always shows a Credit balance*.
+- *Partner's Current Account:* Records all routine yearly transactions:
+  - *Credit Side:* Interest on Capital, Partner's Salary, Partner's Commission, Share of Divisible Profit.
+  - *Debit Side:* Drawings against profit, Interest on Drawings, Share of Divisible Loss.
+  - *Balance Characteristic:* Can show either a *Credit balance* (shown on Liability side of B/S) or a *Debit balance* (shown on Asset side of B/S when drawings/losses exceed entitlements).
 
-== The two systems, side by side
+== 2. Fluctuating Capital System
+Under this system, only *one single account*—the *Partner's Capital Account*—is maintained for each partner. All transactions (initial capital, additions, withdrawals, interest, salary, commission, and profit/loss shares) are funneled through this single account.
+- *Balance Characteristic:* The balance changes (fluctuates) continuously with every transaction.
+- *Default Assumption:* In the absence of any instruction in the question, *the Fluctuating Capital System is always presumed*.
 
-#table(
-  columns: (1.15fr, 1fr, 1fr),
-  table.header[*Point*][*Fixed capital*][*Fluctuating capital*],
-  [Number of accounts], [Two — Capital + Current], [One — Capital only],
-  [Capital balance], [Stays constant year after year], [Changes every year],
-  [Where adjustments go], [All in the Current Account], [All in the Capital Account],
-  [Debit balance], [Capital: never; Current: allowed], [Allowed in the Capital Account],
-  [Which is more common], [Chosen for clarity and control], [The default in practice],
-)
-
-== Reading the account formats
-
-*Fixed Capital Account* (only permanent capital moves appear):
+== The Two Systems Side by Side
 
 #table(
-  columns: (1.6fr, 0.8fr, 1.6fr, 0.8fr),
-  table.header[*Dr. Particulars*][*₹*][*Cr. Particulars*][*₹*],
-  [To Cash A/c — capital withdrawn permanently], [—], [By Balance b/d], [—],
-  [To Balance c/d], [—], [By Cash A/c — fresh capital added], [—],
-  [], [], [By Balance c/d], [—],
+  columns: (1.15fr, 1.4fr, 1.4fr),
+  table.header[*Comparison Point*][*Fixed Capital System*][*Fluctuating Capital System*],
+  [Number of Accounts], [Two per partner (Capital A/c + Current A/c)], [One per partner (Capital A/c only)],
+  [Capital Stability], [Remains unchanged except on permanent capital events], [Fluctuates continuously year after year],
+  [Operational Postings], [Passed strictly through Partner's Current A/c], [Passed directly into Partner's Capital A/c],
+  [Possibility of Debit Balance], [Capital A/c never; Current A/c can show Debit balance], [Capital A/c can show Debit balance (rare, during losses)],
+  [Balance Sheet Placement], [Capital on Liabilities; Current Dr on Assets / Cr on Liab.], [Capital balance on Liabilities (or Assets if Dr)],
 )
 
-*Current Account* (everything yearly lands here):
+== Standard Ledger Formats Under Fixed System
 
+*Partner's Capital Account (Fixed):*
 #table(
   columns: (1.6fr, 0.8fr, 1.6fr, 0.8fr),
   table.header[*Dr. Particulars*][*₹*][*Cr. Particulars*][*₹*],
-  [To Drawings], [—], [By Balance b/d (if credit)], [—],
-  [To Interest on Drawings], [—], [By Interest on Capital], [—],
-  [To Balance c/d (debit balance, if any)], [—], [By Salary / Commission], [—],
-  [], [], [By Profit share (appropriation)], [—],
-  [], [], [By Balance c/d (credit balance)], [—],
+  [To Cash / Bank A/c (Capital withdrawn permanently)], [—], [By Balance b/d (Opening balance)], [—],
+  [To Balance c/d (Closing balance)], [—], [By Cash / Bank A/c (Fresh capital added)], [—],
+  [*Total*], [—], [*Total*], [—],
 )
 
-== The six yearly journal entries
+*Partner's Current Account:*
+#table(
+  columns: (1.6fr, 0.8fr, 1.6fr, 0.8fr),
+  table.header[*Dr. Particulars*][*₹*][*Cr. Particulars*][*₹*],
+  [To Balance b/d (if opening debit balance)], [—], [By Balance b/d (if opening credit balance)], [—],
+  [To Drawings A/c (against profits)], [—], [By Interest on Capital A/c], [—],
+  [To Interest on Drawings A/c], [—], [By Partner's Salary / Commission A/c], [—],
+  [To P&L Appropriation A/c (Share of loss)], [—], [By P&L Appropriation A/c (Share of profit)], [—],
+  [To Balance c/d (Closing credit balance)], [—], [By Balance c/d (Closing debit balance)], [—],
+)
 
+== The Six Primary Journal Entries
 #table(
   columns: (1.5fr, 1.25fr, 1.25fr),
-  table.header[*Yearly item*][*Debit*][*Credit*],
-  [Interest on capital], [P&L Appropriation A/c], [Partner's Capital/Current A/c],
-  [Interest on drawings], [Partner's Capital/Current A/c], [P&L Appropriation A/c],
-  [Partner's salary / commission], [P&L Appropriation A/c], [Partner's Capital/Current A/c],
-  [Transfer to general reserve], [P&L Appropriation A/c], [General Reserve A/c],
-  [Share of divisible profit], [P&L Appropriation A/c], [Partner's Capital/Current A/c],
-  [Partner's loan interest (a charge)], [Interest on Loan A/c → P&L A/c], [Partner's Loan A/c],
+  table.header[*Transaction*][*Debit*][*Credit*],
+  [Transfer Net Profit to Appropriation], [Profit & Loss A/c], [P&L Appropriation A/c],
+  [Allow Interest on Capital], [P&L Appropriation A/c], [Partner's Capital/Current A/c],
+  [Charge Interest on Drawings], [Partner's Capital/Current A/c], [P&L Appropriation A/c],
+  [Allow Partner's Salary / Commission], [P&L Appropriation A/c], [Partner's Capital/Current A/c],
+  [Transfer to General Reserve], [P&L Appropriation A/c], [General Reserve A/c],
+  [Distribute Divisible Profit], [P&L Appropriation A/c], [Partner's Capital/Current A/c],
 )
 
-Notice the mirror pattern: items the firm *gives* partners are debited to
-Appropriation; items partners *give back* the firm (interest on their drawings)
-are credited to Appropriation. That single sentence drives the whole account in
-the next section.
+#worked-example("Worked Example — Comparative Ledger Systems")[
+  Partner X has an opening capital of ₹2,00,000 on 1 April 2026. During the year:
+  - Interest on Capital: ₹12,000
+  - Annual Salary: ₹24,000
+  - Drawings against profits: ₹30,000
+  - Interest on Drawings: ₹1,500
+  - Share of Divisible Profit: ₹45,000
 
-#worked-example("Worked Example — Same Facts, Both Systems")[
-  A's capital is ₹1,00,000. During the year: interest on capital ₹6,000, salary
-  ₹10,000, drawings ₹20,000, interest on drawings ₹600, share of profit ₹30,000.
-
-  - *Fixed system:* the Capital Account still reads *₹1,00,000*. The Current
-    Account closes at: 6,000 + 10,000 + 30,000 − 20,000 − 600 = *₹25,400 credit*.
-  - *Fluctuating system:* the single Capital Account closes at:
-    1,00,000 + 6,000 + 10,000 + 30,000 − 20,000 − 600 = *₹1,25,400 credit*.
-
-  Same entries, different drawers — and ₹25,400 + ₹1,00,000 = ₹1,25,400, which is
-  exactly why both systems are called equivalent.
+  #v(2pt)
+  *Accounting Outcomes:*
+  - *Fixed Capital System:*
+    - Capital Account closing balance remains unchanged at *₹2,00,000 (Cr.)*.
+    - Current Account closing balance $= 12,000 + 24,000 + 45,000 - 30,000 - 1,500 = bold("₹49,500 (Cr.)")$.
+  - *Fluctuating Capital System:*
+    - Single Capital Account closing balance $= 2,00,000 + 12,000 + 24,000 + 45,000 - 30,000 - 1,500 = bold("₹2,49,500 (Cr.)")$.
+  Note that ₹2,00,000 + ₹49,500 equals exactly ₹2,49,500!
 ]
 
-= Profit and Loss Appropriation Account
-
-The Profit and Loss Account tells you *how much* profit the firm earned. It stops
-there. What happens next — paying partners their interest and salaries, topping
-up the reserve, and splitting the rest — happens in a second, smaller account:
-the *Profit and Loss Appropriation Account*. Think of it as the firm's dividend
-day: the earned profit walks in on the credit side and walks out distributed
-among the partners and reserves.
-
-- *It is an extension of the P&L Account:* appropriation means "setting aside for
-  a purpose", so this account only *distributes* profit — it never earns one.
-- *Credit side — money coming in:* net profit brought down from the P&L Account,
-  plus interest charged on partners' drawings.
-- *Debit side — money being set aside:* interest on capital, partners' salaries
-  and commission, and transfers to general reserve.
-- *The balancing figure is the prize:* whatever remains after the debit items is
-  the *divisible profit*, shared in the agreed ratio.
-
-== Charge vs appropriation: the one distinction everything rests on
-
-#table(
-  columns: (1.15fr, 1fr, 1fr),
-  table.header[*Point*][*Charge against profit*][*Appropriation of profit*],
-  [When paid], [Compulsory — even in a loss year], [Only when there is profit to share],
-  [Which account], [P&L Account (before profit is found)], [P&L Appropriation (after profit is found)],
-  [Everyday examples], [Interest on a partner's *loan*; rent to a partner], [Interest on *capital*, salary, commission, reserve],
-  [Effect], [Reduces net profit itself], [Divides the net profit already found],
+#figure(
+  image("assets/acc_partnership_provisions_and_accounts.png", width: 84%),
+  caption: [Partnership Fundamentals: Statutory default provisions under the Indian Partnership Act 1932, Capital Ledger Architectures, and Charges vs Appropriations.],
 )
 
-== The official format
+= Profit & Loss Appropriation Account
+
+The *Profit and Loss Appropriation Account* is a nominal account prepared as a special extension of the general Profit and Loss Account. While the P&L Account determines the *Net Profit earned by the firm*, the P&L Appropriation Account determines *how that Net Profit is distributed* among the partners in accordance with the deed.
+
+== Charges Against Profit vs Appropriations of Profit
+This distinction is the single most tested conceptual boundary in Unit I:
 
 #table(
-  columns: (1.5fr, 0.75fr, 1.5fr, 0.75fr),
+  columns: (1.1fr, 1.45fr, 1.45fr),
+  table.header[*Feature*][*Charge Against Profit*][*Appropriation of Profit*],
+  [Nature & Obligation], [Compulsory business expense; payable irrespective of profit or loss], [Distribution of profit; payable *only out of available profits*],
+  [Ledger Destination], [Debited to *Profit and Loss Account*], [Debited to *Profit & Loss Appropriation Account*],
+  [Standard Examples], [1. Interest on Partner's Loan (6% min)\ 2. Rent payable to a partner for premises\ 3. Manager's Commission], [1. Interest on Partner's Capital\ 2. Partner's Salary / Commission\ 3. Transfer to General Reserve],
+  [Financial Effect], [Reduces Net Profit before appropriation], [Apportions the Net Profit already determined],
+)
+
+== Standard Format of P&L Appropriation Account
+
+#table(
+  columns: (1.55fr, 0.75fr, 1.55fr, 0.75fr),
   table.header[*Dr. Particulars*][*₹*][*Cr. Particulars*][*₹*],
-  [To Interest on Capital], [—], [By Net Profit b/d (from P&L)], [—],
-  [To Partner's Salary], [—], [By Interest on Drawings], [—],
-  [To Partner's Commission], [—], [], [],
-  [To General Reserve], [—], [], [],
-  [To Divisible profit: Partner's Capital/Current A/cs], [—], [], [],
+  [To Profit & Loss A/c (if Net Loss b/d)], [—], [By Profit & Loss A/c (Net Profit b/d)], [—],
+  [To Interest on Capital A/c], [—], [By Interest on Drawings A/c:], [],
+  [To Partner's Salary A/c], [—], [  Partner A], [—],
+  [To Partner's Commission A/c], [—], [  Partner B], [—],
+  [To General Reserve A/c], [—], [], [],
+  [To Divisible Profit transferred to:], [], [By Loss transferred to Capital/Current A/cs:], [],
+  [  Partner's Capital / Current A/cs], [—], [  (if appropriations exceed credit side)], [—],
+  [*Total*], [—], [*Total*], [—],
 )
 
-#figure(image("assets/appropriation_flow.png", width: 100%), caption: [The six-stop journey of the year's profit — from the P&L Account into the partners' accounts.])
+== The Rule of Inadequate Profits
+When net profit exists but is *insufficient* to satisfy all appropriations (e.g., available profit is ₹24,000, while total Interest on Capital due is ₹30,000):
+#note[
+  *Appropriation Ratio Rule:* No partner receives their full claim, nor does the firm incur an artificial net loss. Instead, the available profit is distributed among the partners in the *ratio of their respective individual claims / appropriations*!
+]
 
-== The journal entries behind the account
+#worked-example("Worked Example — Inadequate Profit Allocation")[
+  A and B have capitals of ₹2,00,000 and ₹1,00,000. The deed allows Interest on Capital @ 6% p.a. Profit sharing ratio is 3:2. The net profit for the year before interest is only ₹12,000. Compute the interest allowed to each partner.
+
+  #v(3pt)
+  *Solution:*
+  1. Full Interest on Capital: A $= 2,00,000 times 6% = "₹12,000"$; B $= 1,00,000 times 6% = "₹6,000"$. Total required $= "₹18,000"$.
+  2. Since available profit (₹12,000) < required appropriations (₹18,000), profit is distributed in the ratio of claims:
+     $ "Ratio of claims" = 12,000 : 6,000 = 2 : 1 $
+  3. Interest actually credited:
+     - A's share $= 12,000 times 2/3 = bold("₹8,000")$
+     - B's share $= 12,000 times 1/3 = bold("₹4,000")$
+  (Divisible profit after interest is Nil; Capital ratio is ignored).
+]
+
+= Computation of Operational Adjusters
+
+== 1. Interest on Capital (IOC)
+- *Base Amount:* Always calculated on the *Opening Capital* ($"Capital as on 1 April"$).
+- *If Closing Capital is Given (Fluctuating System):*
+  $ "Opening Capital" = "Closing Capital" + "Drawings" + "Interest on Drawings" - "Additional Capital" - "Share of Profit" $
+- *If Closing Capital is Given (Fixed System):*
+  $ "Opening Capital" = "Closing Capital" + "Permanent Capital Withdrawal" - "Additional Capital Introduced" $
+  (Routine drawings and profits affect the Current Account only, leaving Capital Account unaffected!).
+- *Time-Weighted Additions:* Additional capital introduced during the year earns interest pro-rata for the remaining unexpired months:
+  $ "IOC" = "Opening Capital" times "Rate" / 100 + "Addition" times "Rate" / 100 times "Months" / 12 $
+
+== 2. Interest on Drawings (IOD)
+Drawings represent amounts withdrawn by partners for personal household use. Interest on drawings is charged by the firm only if expressly authorized by the partnership deed.
+
+- *Direct / Product Method:* Used when unequal amounts are withdrawn at irregular intervals:
+  $ "IOD" = sum ("Amount" times "Period in Months") times "Rate" / 100 times 1 / 12 $
+- *Average Period Method:* Used when equal amounts are withdrawn at regular, uniform intervals:
+  #formula-box(title: "Average Period Method")[
+    $ "Average Period " (T_("avg")) = ("Months left after 1st drawing" + "Months left after last drawing") / 2 $
+    $ "IOD" = "Total Annual Drawings" times "Rate" / 100 times T_("avg") / 12 $
+  ]
 
 #table(
-  columns: (1.5fr, 1.25fr, 1.25fr),
-  table.header[*Event*][*Debit*][*Credit*],
-  [Profit for the year arrives], [Profit & Loss A/c], [P&L Appropriation A/c],
-  [Interest on capital provided], [P&L Appropriation A/c], [Partner's Capital/Current A/c],
-  [Interest on drawings charged], [Partner's Capital/Current A/c], [P&L Appropriation A/c],
-  [Salary or commission allowed], [P&L Appropriation A/c], [Partner's Capital/Current A/c],
-  [Reserve strengthened], [P&L Appropriation A/c], [General Reserve A/c],
-  [Divisible profit shared], [P&L Appropriation A/c], [Partner's Capital/Current A/c],
+  columns: (1.3fr, 1.1fr, 1.1fr, 1.1fr),
+  table.header[*Withdrawal Schedule*][*Beginning of Period*][*Middle of Period*][*End of Period*],
+  [Monthly (12 drawings)], [*6.5 months* $(frac(12+1, 2))$], [*6.0 months* $(frac(11.5+0.5, 2))$], [*5.5 months* $(frac(11+0, 2))$],
+  [Quarterly (4 drawings)], [*7.5 months* $(frac(12+3, 2))$], [*6.0 months* $(frac(10.5+1.5, 2))$], [*4.5 months* $(frac(9+0, 2))$],
+  [Monthly for 6 Months], [*3.5 months* $(frac(6+1, 2))$], [*3.0 months* $(frac(5.5+0.5, 2))$], [*2.5 months* $(frac(5+0, 2))$],
+  [Date of Drawing Silent], [—], [*Flat 6.0 months*], [—],
 )
 
-#formula-box(title: "Commission to a Partner or Manager — Both Versions")[
-  $ "Before charging commission:" quad C = "Rate" times "Net profit" / 100 $
-  $ "After charging commission:" quad C = "Rate" / (100 + "Rate") times "Net profit" $
+== 3. Partner's Commission
+- *Commission as a percentage of Net Profit BEFORE charging such commission:*
+  $ "Commission" = "Net Profit" times "Rate" / 100 $
+- *Commission as a percentage of Net Profit AFTER charging such commission:*
+  $ "Commission" = "Net Profit" times "Rate" / (100 + "Rate") $
 
-  Check the difference on a profit of ₹1,10,000 at 10%: *before* charge —
-  10/100 × 1,10,000 = ₹11,000; *after* charge — 10/110 × 1,10,000 = *₹10,000*.
-  "After charging" always gives the smaller figure, because the commission is
-  imagined as already sitting inside the profit.
+#worked-example("Worked Example — Comprehensive P&L Appropriation")[
+  A and B share profits in 3:2. Capital balances on 1 April 2026: A ₹2,00,000; B ₹1,00,000.
+  - Interest on Capital: 6% p.a.
+  - Monthly Salary to B: ₹1,000 per month.
+  - Drawings: A ₹30,000; B ₹20,000 (dates not mentioned). Rate of IOD: 6% p.a.
+  - Firm Net Profit before appropriations: ₹1,05,500.
+
+  #v(2pt)
+  *Step-by-Step Ledger Construction:*
+  1. *Interest on Capital:* A $= 2,00,000 times 6% = "₹12,000"$; B $= 1,00,000 times 6% = "₹6,000"$. Total $= "₹18,000"$.
+  2. *Salary to B:* $1,000 times 12 = "₹12,000"$.
+  3. *Interest on Drawings (6 months average):*
+     - A: $30,000 times 6% times 6/12 = "₹900"$
+     - B: $20,000 times 6% times 6/12 = "₹600"$
+     - Total IOD $= "₹1,500"$.
+  4. *Credit side total:* $1,05,500 + 1,500 = "₹1,07,000"$.
+  5. *Debit appropriations:* $18,000 + 12,000 = "₹30,000"$.
+  6. *Divisible Profit:* $1,07,000 - 30,000 = bold("₹77,000")$.
+     - A's share $= 77,000 times 3/5 = bold("₹46,200")$
+     - B's share $= 77,000 times 2/5 = bold("₹30,800")$
 ]
 
-#worked-example("Worked Example 1 — A Clean Appropriation Account")[
-  A and B share profits 3:2. Capitals: A ₹1,50,000, B ₹1,00,000. The deed allows
-  interest on capital at 6% p.a. Profit for the year: ₹65,000. No other items apply.
-
-  - *Interest on capital:* A — 1,50,000 × 6/100 = ₹9,000; B — 1,00,000 × 6/100 = ₹6,000.
-  - *Total appropriations:* 9,000 + 6,000 = ₹15,000.
-  - *Divisible profit:* 65,000 − 15,000 = *₹50,000*.
-  - *Shared 3:2:* A — 50,000 × 3/5 = *₹30,000*; B — 50,000 × 2/5 = *₹20,000*.
-]
-
-#worked-example("Worked Example 2 — Every Item at Once")[
-  A and B share profits 3:2. Capitals: A ₹2,00,000, B ₹1,00,000. Deed terms:
-  interest on capital 6% p.a.; B a salary of ₹500 per month; interest on drawings
-  6% p.a. Drawings: A ₹20,000, B ₹20,000 (dates not given). Profit for the
-  year: ₹92,800.
-
-  + *Interest on capital:* A — 2,00,000 × 6/100 = ₹12,000; B — 1,00,000 × 6/100 = ₹6,000.
-  + *Salary to B:* 500 × 12 = ₹6,000.
-  + *Interest on drawings* (dates not given → average 6 months):
-    A — 20,000 × 6/100 × 6/12 = ₹600; B — ₹600. Total ₹1,200.
-  + *Credit side total:* 92,800 + 1,200 = ₹94,000.
-  + *Debit side total:* 12,000 + 6,000 + 6,000 = ₹24,000.
-  + *Divisible profit:* 94,000 − 24,000 = *₹70,000* → A gets 70,000 × 3/5 = *₹42,000*,
-    B gets 70,000 × 2/5 = *₹28,000*.
-]
-
-#table(
-  columns: (1.55fr, 0.7fr, 1.55fr, 0.7fr),
-  table.header[*Dr. Particulars*][*₹*][*Cr. Particulars*][*₹*],
-  [To Interest on Capital — A 12,000; B 6,000], [18,000], [By Net Profit b/d], [92,800],
-  [To Salary to B], [6,000], [By Interest on Drawings — A 600; B 600], [1,200],
-  [To Divisible profit — A 42,000; B 28,000], [70,000], [], [],
-  [], [94,000], [], [94,000],
+#figure(
+  image("assets/acc_partnership_appropriation_and_drawings.png", width: 84%),
+  caption: [Appropriation Architecture & Drawings Valuation: P&L Appropriation T-Account layout, Average-Period interest matrix, and Guarantee hierarchy.],
 )
 
-= Dividing Profits: the Four Adjusters
+= Guarantee of Profit & Past Adjustments
 
-Before the divisible profit is split, the deed usually lets three private
-arrangements play out first: partners *earn* interest on the capital they leave
-in the firm, *pay* interest on the money they take out, and may *draw* a salary
-or commission. Each one shifts part of the final share from one partner to
-another, so every rate and every day-count matters. This section works through
-each adjuster with the exact technique used in computations.
+== Guarantee of Minimum Profit
+A guarantee is an assurance given to a partner that their share of firm profit will not fall below a predetermined minimum amount.
+- *Case 1: Guarantee by the Firm (All Partners):*
+  1. Distribute normal divisible profit according to agreed PSR.
+  2. If the guaranteed partner's share is less than guaranteed amount, calculate *Deficiency*:
+     $ "Deficiency" = "Guaranteed Minimum" - "Actual Profit Share" $
+  3. The deficiency is deducted from the remaining partners in their mutual *Profit Sharing Ratio* (unless a specific sharing ratio is stipulated).
+- *Case 2: Guarantee by a Single Partner:*
+  The entire deficiency is deducted exclusively from that particular guarantor partner's share.
+- *Case 3: Guarantee by Partner to Firm:*
+  A partner guarantees that the firm will earn a minimum gross fee/income. If actual earnings fall short, the deficit is debited to that partner's Capital A/c and credited to P&L Appropriation A/c before normal distribution.
 
-== Interest on capital: pay for leaving money in
+#worked-example("Worked Example — Dual Guarantee Scenario")[
+  P, Q, and R enter into partnership sharing profits in 4:2:1. Firm profit for the year is ₹70,000. Terms of guarantee:
+  1. R is guaranteed a minimum profit of ₹15,000 by the firm.
+  2. Q personally guarantees that firm gross fees earned through his clients will not be less than ₹25,000. Actual fees earned by Q are only ₹16,000.
 
-- *Base amount:* interest is computed on the *opening capital* — the balance as
-  on 1 April — unless the question states otherwise.
-- *Time-weighted additions:* capital added during the year earns interest only
-  from the date it arrived (use months/12).
-- *It is an appropriation:* interest on capital appears on the debit side of the
-  P&L Appropriation Account, and is paid only when profit exists.
-
-#worked-example("Worked Example — Capital Added Mid-Year")[
-  D's opening capital is ₹2,00,000. On 1 October he introduces a further
-  ₹50,000. The deed allows interest on capital at 6% p.a.
-
-  - On opening capital: 2,00,000 × 6/100 = *₹12,000* (full year).
-  - On the addition: 50,000 × 6/100 × 6/12 = *₹1,500* (October to March only).
-  - *Total interest on capital: 12,000 + 1,500 = ₹13,500.*
+  #v(2pt)
+  *Step-by-Step Resolution:*
+  - *Step 1 (Enforce Q's Guarantee to Firm):* Shortfall $= 25,000 - 16,000 = "₹9,000"$. This is recovered from Q's Capital A/c and credited to P&L Appropriation. Divisible pool becomes:
+    $ 70,000 + 9,000 = "₹79,000" $
+  - *Step 2 (Normal Distribution 4:2:1):*
+    - P: $79,000 times 4/7 = "₹45,143"$
+    - Q: $79,000 times 2/7 = "₹22,571"$
+    - R: $79,000 times 1/7 = "₹11,286"$
+  - *Step 3 (Enforce Firm's Guarantee to R):*
+    - R's Deficiency $= 15,000 - 11,286 = "₹3,714"$.
+    - Borne by P and Q in their mutual ratio $4:2$ ($2:1$):
+      - P bears: $3,714 times 4/6 = "₹2,476"$
+      - Q bears: $3,714 times 2/6 = "₹1,238"$
+  - *Final Distributed Shares:*
+    - P: $45,143 - 2,476 = bold("₹42,667")$
+    - Q: $22,571 - 1,238 - 9,000" (fee)" = bold("₹12,333")$
+    - R: $11,286 + 3,714 = bold("₹15,000")$
 ]
 
-== Interest on drawings: charge for taking money out
+== Past Adjustments (Rectification After Closing Books)
+When errors or omissions (e.g., omitted Interest on Capital, omitted Interest on Drawings, or profits distributed in wrong ratio) are discovered *after* the final accounts and balance sheet have been finalized and signed, the books are *not reopened*.
+Instead, a single composite adjustment entry is passed at the beginning of the next accounting period through the partners' *Capital Accounts* (or *Current Accounts* under fixed system).
 
-- *Direction:* the partner is debited; the P&L Appropriation Account is credited.
-- *Fixed amounts at equal gaps:* use the *average period* shortcut — no date list
-  needed.
-- *Irregular amounts and dates:* use the *product method* instead.
+*Four-Step Analytical Matrix:*
+1. Calculate the amounts that *ought to have been credited* (IOC, Salary, correct profit).
+2. Calculate the amounts that were *actually credited wrongly*.
+3. Find the net difference for each partner:
+   - If Correct $>$ Wrong: Partner has received less $==>$ *Credit Partner*.
+   - If Wrong $>$ Correct: Partner has received excess $==>$ *Debit Partner*.
+4. Pass the single rectifying journal entry:
+   $ "Gaining Partner's Capital/Current A/c" quad quad "Dr." \
+     quad "To Sacrificing Partner's Capital/Current A/c" $
 
-#table(
-  columns: (1.2fr, 1fr, 1fr, 1fr),
-  table.header[*Drawing pattern*][*Beginning*][*Middle*][*End*],
-  [Monthly (12 drawings)], [6.5 months], [6 months], [5.5 months],
-  [Quarterly (4 drawings)], [10.5 months], [7.5 months], [4.5 months],
-)
+#worked-example("Worked Example — Past Adjustment Statement")[
+  A, B, and C share profits equally. After closing books for 2026, it was discovered that Interest on Capital @ 5% p.a. was omitted. Fixed capital balances were: A ₹1,00,000; B ₹80,000; C ₹60,000.
 
-#formula-box(title: "Interest on Drawings — Both Methods")[
-  $ "Average-period method:" quad "IoD" = "Total drawings" times "Rate"/100 times "Average period"/12 $
-  $ "Product method:" quad "IoD" = Sigma ("Drawing" times "months left in the year") times "Rate"/100 times 1/12 $
-
-  Both give the same answer when drawings are equal and evenly spaced — the
-  product method simply shows its working month by month.
-]
-
-#worked-example("Worked Example — One Drawing, Two Routes")[
-  C draws ₹5,000 on the last day of every quarter. Interest on drawings is 6% p.a.
-
-  - *Product route:* drawings made at the end of March, June, September and
-    December stay un-used for 9, 6, 3 and 0 months. Products: 5,000 × (9 + 6 + 3 + 0)
-    = 5,000 × 18 = 90,000. Interest = 90,000 × 6/100 × 1/12 = *₹450*.
-  - *Shortcut route:* end-of-quarter drawings → average period 4.5 months.
-    Interest = 5,000 × 4 × 6/100 × 4.5/12 = 20,000 × 6/100 × 4.5/12 = *₹450*.
-
-  Same ₹450 from both routes — in the exam, pick the shortcut unless the dates
-  are irregular.
-]
-
-== Salary and commission
-
-- *Salary to a partner:* a fixed monthly amount credited to the partner from the
-  Appropriation Account — ₹500 per month means ₹6,000 a year, never ₹500.
-- *Commission:* use the two-formula rule from the blue box above; read the deed's
-  words "before" or "after" charging carefully.
-- *Both are appropriations:* they are paid only out of profit, and never reduce
-  the profit figure shown by the P&L Account.
-
-= Guarantee of Profit to a Partner
-
-A new partner joins a running firm and is nervous: what if the year turns bad and
-my share collapses? So the others *guarantee* a floor — "whatever happens, you
-will get at least ₹21,000." That promise is a *guarantee of profit*, and it
-reshapes the distribution table whenever the ordinary share falls below the
-promised figure. The arithmetic is small; the ratio logic is where marks are won
-and lost.
-
-- *Who can give it:* the firm as a whole (all partners), *some* of the partners,
-  or even an outside party such as a retiring partner.
-- *Deficiency:* the gap between the guaranteed amount and the partner's actual
-  share — deficiency = guaranteed amount − actual share.
-- *Who bears it:* the guarantors, in *their own agreed ratio* — or, when the
-  question says so, in the *sacrificing ratio* (the share they gave up for the
-  guaranteed partner).
-- *The total never changes:* the guarantee only moves money between partners; the
-  divisible profit distributed stays the same.
-
-#table(
-  columns: (1.1fr, 1.2fr, 1.2fr),
-  table.header[*Guarantee given by*][*Who bears the deficiency*][*Where it shows up*],
-  [The firm (all partners)], [All partners in their agreed ratio], [Every non-guaranteed partner's share falls],
-  [Some partners only], [Only those partners, in their ratio], [Outsiders and non-guarantors are untouched],
-  [A third party], [That party directly], [Partners' shares stay unchanged],
-)
-
-Solve every guarantee question with the same four steps:
-
-+ *Distribute* the divisible profit in the normal ratio — ignore the guarantee.
-+ *Compare* the guaranteed partner's share with the promised amount.
-+ *Find the deficiency* — guaranteed amount minus the actual share.
-+ *Debit the guarantors* in the stated ratio and *credit* the guaranteed partner.
-
-#worked-example("Worked Example — The Firm Guarantees A")[
-  A, B and C share profits equally (1:1:1). Profit for the year: ₹45,000. The firm
-  guarantees A a minimum of ₹21,000.
-
-  - *Normal division:* 45,000 ÷ 3 = ₹15,000 each.
-  - *A's shortfall:* 21,000 − 15,000 = *deficiency ₹6,000*, borne by B and C equally
-    (their own ratio is 1:1) — ₹3,000 each.
-  - *Final shares:* A — 15,000 + 6,000 = *₹21,000*; B — 15,000 − 3,000 = *₹12,000*;
-    C — *₹12,000*.
-
-  Journal: B's Current A/c Dr ₹3,000; C's Current A/c Dr ₹3,000 — to A's Current
-  A/c ₹6,000. Check: 21,000 + 12,000 + 12,000 = ₹45,000 ✓
-]
-
-- *Variant — one guarantor:* if only B had guaranteed A, the whole ₹6,000
-  deficiency would come out of B alone, leaving B with ₹9,000 and C untouched
-  at ₹15,000.
-- *Variant — guarantee plus interest:* interest on capital and other entitlements
-  are appropriated *first*; the guarantee applies to the partner's *final* total
-  share (including such interest) unless the deed states otherwise.
-
-= Past Adjustments: Fixing the Closed Year
-
-The accounts are closed, profits are shared, everyone has signed — and then,
-while revising, someone spots it: *interest on capital was never provided*, or a
-salary was skipped, or the profits were divided in the wrong ratio. Reopening
-every account for one forgotten entry would be chaos. Accountancy's answer is
-elegant: work out each partner's *net* gain or loss from the correction and pass
-*one combined journal entry* through the partners' current accounts. Nothing else
-in the books moves.
-
-- *When it applies:* an omission or error is discovered *after* the final
-  accounts are prepared and profits are already distributed.
-- *Nothing is reopened:* no P&L, no appropriation account — only the partners'
-  *current accounts* (or capital accounts, in the fluctuating system) are touched.
-- *One partner's loss is another's gain:* the total correction is zero; the entry
-  only moves the amount from the over-credited partner to the under-credited one.
-
-== The four-step routine
-
-+ *Write what was actually done* — the distribution as recorded in the books.
-+ *Write what should have been done* — recompute the correct distribution with
-  the omitted or mis-stated item included.
-+ *Compare partner by partner* — a partner who received *more* than the correct
-  figure is debited; one who received *less* is credited.
-+ *Pass a single journal entry:* debit the gainers, credit the losers, through
-  current accounts.
-
-#worked-example("Worked Example — The Forgotten Interest on Capital")[
-  A and B share profits 3:2, capitals ₹1,00,000 and ₹80,000. Profit of ₹50,800
-  was credited to them in the 3:2 ratio. Later, it is found that interest on
-  capital at 6% p.a. was omitted. Fix it.
-
-  - *As recorded:* A — 50,800 × 3/5 = ₹30,480; B — 50,800 × 2/5 = ₹20,320.
-  - *What was missed:* interest on capital — A: 1,00,000 × 6/100 = ₹6,000;
-    B: 80,000 × 6/100 = ₹4,800.
-  - *Correct picture:* divisible profit = 50,800 − 10,800 = ₹40,000, shared 3:2 —
-    A ₹24,000, B ₹16,000. Totals: A — 6,000 + 24,000 = ₹30,000; B — 4,800 + 16,000
-    = ₹20,800.
-  - *Net effect:* A received ₹480 *too much* (30,480 − 30,000); B received ₹480
-    *too little* (20,800 − 20,320).
-
+  #v(2pt)
+  *Analytical Adjustment Statement:*
   #table(
-    columns: (1.1fr, 1fr, 1fr, 1fr),
-    table.header[*Partner*][*As recorded ₹*][*Correct ₹*][*Effect*],
-    [A], [30,480], [30,000], [Debit ₹480],
-    [B], [20,320], [20,800], [Credit ₹480],
+    columns: (1.5fr, 0.9fr, 0.9fr, 0.9fr, 1fr),
+    table.header[*Particulars*][*A (₹)*][*B (₹)*][*C (₹)*][*Firm (₹)*],
+    [Interest on Capital omitted (To be credited)], [+5,000 (Cr.)], [+4,000 (Cr.)], [+3,000 (Cr.)], [-12,000 (Dr.)],
+    [Division of ₹12,000 firm loss in 1:1:1 (To be debited)], [-4,000 (Dr.)], [-4,000 (Dr.)], [-4,000 (Dr.)], [+12,000 (Cr.)],
+    [*Net Analytical Effect*], [*+1,000 (Cr.)*], [*Nil*], [*-1,000 (Dr.)*], [*Nil*],
   )
-
-  *Single adjustment entry:* A's Current A/c Dr ₹480 — to B's Current A/c ₹480.
+  *Single Rectifying Journal Entry (under Fixed System):*
+  $ "C's Current Account" quad quad "Dr." quad "₹1,000" \
+    quad "To A's Current Account" quad quad quad quad "₹1,000" $
+  (Being omission of interest on capital adjusted through partners' current accounts).
 ]
 
-- *Same routine, any omission:* interest on drawings omitted, salary skipped,
-  commission mis-computed, or a wrong ratio used — always the same four steps and
-  one closing entry.
-- *Two common openings for the trap:* the question may instead say "interest on
-  capital was provided *at a wrong rate*" or "profits were shared in the wrong
-  ratio" — recompute both sides exactly as in the example and the table falls out.
+#figure(
+  image("assets/acc_partnership_mindmap.png", width: 84%),
+  caption: [Master Synthesis Mindmap: Structural framework of Unit I Accounting for Partnership: Basic Concepts.],
+)
 
-= Journal Entry Cheatsheet: the Whole Unit in One Table
-
-#cheatsheet-box(title: "Journal Entry Cheatsheet — Unit I")[
-  #table(
-    columns: (1.35fr, 1.25fr, 1.25fr),
-    table.header[*Item*][*Debit*][*Credit*],
-    [Profit for the year arrives], [Profit & Loss A/c], [P&L Appropriation A/c],
-    [Interest on capital (6% deed rate)], [P&L Appropriation A/c], [Partner's Capital/Current A/c],
-    [Interest on drawings (charge partner)], [Partner's Capital/Current A/c], [P&L Appropriation A/c],
-    [Partner's salary / commission], [P&L Appropriation A/c], [Partner's Capital/Current A/c],
-    [Transfer to general reserve], [P&L Appropriation A/c], [General Reserve A/c],
-    [Divisible profit shared], [P&L Appropriation A/c], [Partner's Capital/Current A/c],
-    [Interest on partner's *loan* (charge, 6% default)], [Interest on Loan A/c, then P&L A/c], [Partner's Loan A/c],
-    [Past-adjustment correction], [Gainer partner's Current A/c], [Loser partner's Current A/c],
-  )
-
-  #v(4pt)
-  *Ratio rules to carry everywhere:* deed silent → equal shares, no interest on
-  capital, no salary, no interest on drawings; drawings average periods — monthly
-  6.5 / 6 / 5.5, quarterly 10.5 / 7.5 / 4.5 (beginning / middle / end); commission
-  after charge = Rate/(100 + Rate) × profit.
+#cheatsheet-box(title: "Master Partnership Fundamentals Revision Cheatsheet")[
+  - *Indian Partnership Act 1932 Defaults:* PSR equal ($1:1$) | IOC = 0% | IOD = 0% | Salary = ₹0 | Loan Interest = 6% p.a. (Charge).
+  - *Fixed Capital System:* Capital A/c (strictly permanent moves, always Credit) + Current A/c (all operational adjustments, can be Dr or Cr).
+  - *Charges vs Appropriations:* Charges (Loan interest, Rent, Manager commission) debited to P&L A/c | Appropriations (IOC, Salary, Reserve) debited to P&L Appropriation A/c.
+  - *Inadequate Profits:* Distribute available profit in the ratio of respective claims/appropriations (no loss created).
+  - *Interest on Drawings:* Monthly (Beginning 6.5, Middle 6.0, End 5.5) | Quarterly (Beginning 7.5, Middle 6.0, End 4.5) | Date silent: flat 6.0 months.
+  - *Rate Without "p.a.":* Calculate flat percentage without time factor ($"Drawings" times "Rate"/100$).
+  - *Opening Capital Equation:* $"Opening" = "Closing" + "Drawings" - "Additions" - "Profit"$.
+  - *Commission After Charging:* $"Commission" = "Net Profit" times "Rate" / (100 + "Rate")$.
+  - *Guarantee Deficiency:* Borne by guarantors in mutual PSR | If actual share exceeds guarantee, partner receives actual higher share.
+  - *Past Adjustment Entry:* Gaining Partner's Capital/Current A/c Dr. to Sacrificing Partner's Capital/Current A/c Cr.
 ]
 
-= Common Errors and Special Cases
-
-#exception-box(title: "Common Errors & Special Cases")[
-  #table(
-    columns: (1.45fr, 1.55fr),
-    table.header[*The mistake students make*][*The correct treatment*],
-    [Giving 6% interest on capital when the deed is silent],
-    [Not allowed. The 6% p.a. default belongs *only to a partner's loan* to the firm.],
-    [Computing interest on capital on the closing balance],
-    [Use *opening capital*; add mid-year capital only for the months it stayed in.],
-    [Treating a partner's salary as a charge against profit],
-    [It is an *appropriation* — it appears in the P&L Appropriation Account and needs profit.],
-    [Computing commission "after charging" as Rate × profit / 100],
-    [Use Rate/(100 + Rate) × profit — the commission must be inside the base.],
-    [Spreading a guarantee deficiency equally among all partners],
-    [Only *guarantors* bear it, in *their own ratio* (or the sacrificing ratio if stated).],
-    [Reopening the whole ledger for a past adjustment],
-    [One combined entry through *current accounts* — gains debited, losses credited.],
-    [Posting yearly adjustments into a fixed Capital Account],
-    [In the fixed system those entries live in the *Current Account*; capital stays constant.],
-  )
+#exception-box(title: "Top 7 High-Frequency CUET Traps in Partnership Accounting")[
+  1. *The 6% Interest Misapplication Trap:* 6% p.a. applies strictly to partner loans when deed is silent. It *never* applies to partner capital or drawings!
+  2. *The "p.a." Omission Trap:* If the rate of interest on drawings is stated as "10%" rather than "10% p.a.", time weighting is prohibited—charge 10% on the full amount!
+  3. *Rent to Partner Trap:* Rent paid to a partner is a *charge against profit* debited to P&L A/c, not an appropriation. It never appears in P&L Appropriation A/c!
+  4. *Inadequate Profit Ratio Trap:* When net profit is insufficient for full IOC, students wrongly split profit in capital ratio or PSR. The law requires splitting in the *ratio of individual appropriations*!
+  5. *Fixed Capital System Ledger Trap:* In a fixed capital system, passing past adjustment entries or salary through the "Capital Account" earns $-1$. All operational entries *must pass through Current Accounts*!
+  6. *Date-Silent Drawings Trap:* If a partner withdrew ₹60,000 during the year without dates, interest must be calculated for an average period of *6 months flat*!
+  7. *Guarantee Upside Trap:* If guaranteed partner C is promised ₹20,000 and his actual profit share comes to ₹26,000, C receives *₹26,000*! The guarantee only provides a floor, never a ceiling.
 ]
 
-= The Whole Chapter on One Page
+#pagebreak()
 
-#figure(image("assets/partnership_mindmap.png", width: 100%), caption: [Chapter mindmap — every Unit I idea and the three traps that catch most students.])
+= CUET UG Exam-Style Practice Questions
 
-= Practice Questions
+#mcq(
+  1,
+  [Under Section 4 of the Indian Partnership Act, 1932 and Rule 10 of Companies Rules, 2014, the minimum and maximum number of partners in a firm are:],
+  (
+    [2 and 50],
+    [7 and 50],
+    [2 and 100],
+    [2 and 20],
+  ),
+)
+#solution(
+  1,
+  [
+    Minimum number of partners is 2 (Section 4, Partnership Act 1932). Maximum number is capped at 50 under Rule 10 of Companies (Miscellaneous) Rules, 2014.
+  ],
+  answer: [A],
+)
 
-#mcq(1, [The minimum number of persons required to form a partnership firm is:], (
-  [7], [2], [10], [50],
-))
+#mcq(
+  2,
+  [The partnership deed is silent regarding interest on partner advances. If a partner provides a loan of ₹50,000 to the firm, interest payable for the full year is:],
+  (
+    [Nil, as deed is silent],
+    [₹3,000 as an appropriation of profit],
+    [₹3,000 as a charge against profit],
+    [₹6,000 as a charge against profit],
+  ),
+)
+#solution(
+  2,
+  [
+    Under Section 13(d) of Partnership Act 1932, interest on a partner's loan is allowed at 6% p.a. as a mandatory charge on profit: $50,000 times 6% = "₹3,000"$.
+  ],
+  answer: [C],
+)
 
-#mcq(2, [The partnership deed is silent on everything, but a partner has lent ₹50,000 to the firm as a loan. The interest payable on this loan for one full year is:], (
-  [Nil], [₹1,500], [₹3,000], [₹6,000],
-))
+#mcq(
+  3,
+  [Under the fixed capital system, where is a partner's annual salary entitlement recorded in the accounting records?],
+  (
+    [Credit side of Partner's Capital Account],
+    [Credit side of Partner's Current Account],
+    [Debit side of Partner's Current Account],
+    [Debit side of Profit & Loss Account],
+  ),
+)
+#solution(
+  3,
+  [
+    In the fixed capital system, the Capital Account records only permanent capital changes. All operational entitlements (salary, IOC, profit) are credited to Current Account.
+  ],
+  answer: [B],
+)
 
-#mcq(3, [Under the fixed capital system, a partner's salary for the year is credited to:], (
-  [Partner's Capital Account], [Partner's Current Account], [Partner's Loan Account], [General Reserve],
-))
+#mcq(
+  4,
+  [Which of the following items represents a charge against profit rather than an appropriation of profit?],
+  (
+    [Interest on Partner's Capital],
+    [Partner's Annual Salary],
+    [Rent payable to a partner for business premises],
+    [Transfer to General Reserve],
+  ),
+)
+#solution(
+  4,
+  [
+    Rent payable to a partner is an external business expense (charge against profit), debited to P&L A/c before arriving at Net Profit.
+  ],
+  answer: [C],
+)
 
-#mcq(4, [Which of the following is a *charge* against profit rather than an appropriation?], (
-  [Interest on capital], [Partner's salary], [Interest on a partner's loan], [Transfer to general reserve],
-))
+#mcq(
+  5,
+  [A partner draws ₹2,000 on the first day of every month throughout the year. If interest on drawings is charged @ 6% p.a., the total interest is:],
+  (
+    [₹720],
+    [₹780],
+    [₹840],
+    [₹1,440],
+  ),
+)
+#solution(
+  5,
+  [
+    Total drawings $= 2,000 times 12 = "₹24,000"$. Beginning of month: $T_("avg") = (12 + 1)/2 = 6.5" mos"$.
+    $"IOD" = 24,000 times 6/100 times 6.5/12 = "₹780"$.
+  ],
+  answer: [B],
+)
 
-#mcq(5, [Z draws ₹2,000 on the first day of every month. If interest on drawings is charged at 6% p.a., the total interest for the year is:], (
-  [₹720], [₹780], [₹840], [₹1,440],
-))
+#pagebreak()
 
-#mcq(6, [A manager is entitled to a commission of 10% *after charging* such commission, on a net profit of ₹1,10,000. The commission is:], (
-  [₹10,000], [₹11,000], [₹1,000], [₹10,990],
-))
+#mcq(
+  6,
+  [A manager is entitled to a commission of 10% on net profits after charging such commission. If net profit before commission is ₹1,10,000, the commission is:],
+  (
+    [₹10,000],
+    [₹11,000],
+    [₹1,000],
+    [₹12,100],
+  ),
+)
+#solution(
+  6,
+  [
+    Commission after charging: $"Commission" = "Net Profit" times "Rate" / (100 + "Rate") = 1,10,000 times 10/110 = "₹10,000"$.
+  ],
+  answer: [A],
+)
 
-#mcq(7, [A, B and C share profits equally. Profit for the year is ₹36,000 and the firm guarantees C a minimum of ₹15,000. B's final share of profit is:], (
-  [₹12,000], [₹10,500], [₹13,500], [₹9,000],
-))
+#mcq(
+  7,
+  [A, B and C share profits equally. Firm profit is ₹36,000. C is guaranteed a minimum profit of ₹15,000 by the firm. B's final share of profit is:],
+  (
+    [₹12,000],
+    [₹10,500],
+    [₹13,500],
+    [₹15,000],
+  ),
+)
+#solution(
+  7,
+  [
+    Normal share $= 36,000 / 3 = "₹12,000"$ each. Deficiency for C $= 15,000 - 12,000 = "₹3,000"$, borne equally by A and B (₹1,500 each). B's final $= 12,000 - 1,500 = "₹10,500"$.
+  ],
+  answer: [B],
+)
 
-#mcq(8, [A past adjustment entry is being passed because interest on capital was omitted. The entry will *credit*], (
-  [the P&L Appropriation Account], [the partner or partners whose total share rises], [all partners' current accounts equally], [the Cash Account],
-))
+#mcq(
+  8,
+  [When an omission of interest on capital is corrected through a single past adjustment entry, the journal entry requires:],
+  (
+    [Debiting P&L Appropriation Account],
+    [Debiting Gaining Partner and Crediting Sacrificing Partner],
+    [Debiting Cash Account],
+    [Crediting General Reserve Account],
+  ),
+)
+#solution(
+  8,
+  [
+    Single adjustment entries correct inter-partner imbalances without reopening closed books: Gaining Partner's Capital/Current A/c Dr. to Sacrificing Partner's Capital/Current A/c Cr.
+  ],
+  answer: [B],
+)
 
-#mcq(9, [Which item appears on the *credit* side of the Profit and Loss Appropriation Account?], (
-  [Interest on capital], [Interest on drawings], [Partner's salary], [Transfer to general reserve],
-))
+#mcq(
+  9,
+  [Which of the following items appears on the credit side of the Profit and Loss Appropriation Account?],
+  (
+    [Interest on Partner's Capital],
+    [Interest on Partner's Drawings],
+    [Partner's Salary],
+    [Transfer to General Reserve],
+  ),
+)
+#solution(
+  9,
+  [
+    Interest on drawings is paid by partners to the firm, increasing divisible profit; hence it is credited to P&L Appropriation Account.
+  ],
+  answer: [B],
+)
 
-#mcq(10, [A and B share profits 3:2 with capitals of ₹2,00,000 and ₹1,00,000. The deed allows interest on capital at 6% p.a. Profit for the year is ₹76,000. A's share of the divisible profit is:], (
-  [₹34,800], [₹45,600], [₹30,000], [₹29,000],
-))
+#mcq(
+  10,
+  [A and B have capitals of ₹2,00,000 and ₹1,00,000 with IOC @ 6% p.a. PSR is 3:2. If net profit is ₹24,000 and total IOC claim is ₹30,000, profit is distributed:],
+  (
+    [In profit-sharing ratio 3:2],
+    [In capital ratio 2:1],
+    [In ratio of respective appropriations 2:1],
+    [Equally between partners],
+  ),
+)
+#solution(
+  10,
+  [
+    Total IOC claim $= "₹30,000"$ (A: 20,000, B: 10,000). When profit (₹24,000) is inadequate, it is distributed in the ratio of claims ($20,000 : 10,000 = 2 : 1$). A gets ₹16,000, B gets ₹8,000.
+  ],
+  answer: [C],
+)
 
-= Solutions
+#pagebreak()
 
-#solution(1, [A partnership needs at least *two* persons (Indian Partnership Act, 1932). Seven and ten are company-board style numbers; 50 is the *maximum* allowed under the rules framed for the Companies Act, 2013.], answer: "B")
+#mcq(
+  11,
+  [A partner withdraws ₹5,000 on the last day of each quarter. If interest on drawings is charged @ 6% p.a., the total interest on drawings for the year is:],
+  (
+    [₹900],
+    [₹720],
+    [₹600],
+    [₹450],
+  ),
+)
+#solution(
+  11,
+  [
+    Total drawings $= 5,000 times 4 = "₹20,000"$. End of each quarter: $T_("avg") = (9 + 0)/2 = 4.5" mos"$.
+    $"IOD" = 20,000 times 6/100 times 4.5/12 = "₹450"$.
+  ],
+  answer: [D],
+)
 
-#solution(2, [Interest on a partner's loan is a *charge* and applies by default at 6% p.a. when the deed is silent: 50,000 × 6/100 × 12/12 = *₹3,000*.], answer: "C")
+#mcq(
+  12,
+  [Under the fluctuating capital system, a partner's closing capital is ₹2,00,000. Drawings were ₹40,000, additional capital ₹10,000, and profit share ₹20,000. Opening capital was:],
+  (
+    [₹1,80,000],
+    [₹2,30,000],
+    [₹2,10,000],
+    [₹2,50,000],
+  ),
+)
+#solution(
+  12,
+  [
+    $"Opening Capital" = 2,00,000 + 40,000 - 10,000 - 20,000 = "₹2,10,000"$. (Closing + Drawings - Additions - Profit).
+  ],
+  answer: [C],
+)
 
-#solution(3, [In the fixed system the Capital Account only holds permanent capital changes. Salary is a yearly entitlement, so it is credited to the *Current Account*.], answer: "B")
+#mcq(
+  13,
+  [A partner withdrew ₹40,000 during the year for personal use. If the deed provides for interest on drawings @ 10% p.a. and dates are not given, the interest charged is:],
+  (
+    [₹4,000],
+    [₹2,000],
+    [Nil],
+    [₹1,000],
+  ),
+)
+#solution(
+  13,
+  [
+    When the date of withdrawal is not specified, interest on drawings is charged for an average period of 6 months: $40,000 times 10/100 times 6/12 = "₹2,000"$.
+  ],
+  answer: [B],
+)
 
-#solution(4, [A loan from a partner must be rewarded even in a loss year — interest on it is a *charge*, shown in the P&L Account. Salary, interest on capital and reserve transfers are appropriations paid only out of profit.], answer: "C")
+#mcq(
+  14,
+  [X, Y and Z share profits in 3:2:1. Z is guaranteed a minimum profit of ₹30,000 personally by X. Firm profit is ₹1,20,000. X's final share of profit is:],
+  (
+    [₹60,000],
+    [₹50,000],
+    [₹40,000],
+    [₹45,000],
+  ),
+)
+#solution(
+  14,
+  [
+    Z's share $= 1/6 times 1,20,000 = "₹20,000"$. Deficiency $= 30,000 - 20,000 = "₹10,000"$, borne entirely by X. X's final share $= 3/6 times 1,20,000 - 10,000 = 60,000 - 10,000 = "₹50,000"$.
+  ],
+  answer: [B],
+)
 
-#solution(5, [Total drawings = 2,000 × 12 = ₹24,000. First-of-month drawings → average period 6.5 months: 24,000 × 6/100 × 6.5/12 = *₹780*.], answer: "B")
-
-#solution(6, [After charging: commission = Rate/(100 + Rate) × profit = 10/110 × 1,10,000 = *₹10,000*. (Before charging would have been 11,000.)], answer: "A")
-
-#solution(7, [Normal share: 36,000 ÷ 3 = ₹12,000 each. C's deficiency = 15,000 − 12,000 = ₹3,000, borne by A and B equally (1:1) — ₹1,500 each. B: 12,000 − 1,500 = *₹10,500*; C ends with 15,000.], answer: "B")
-
-#solution(8, [The single adjustment entry credits the partner(s) who *should have received more* than they did — their current account rises. The appropriation account stays closed; no cash moves.], answer: "B")
-
-#solution(9, [Interest on drawings is money the partners pay *to* the firm, so it is credited to the Appropriation Account. The other three options are all debit-side items.], answer: "B")
-
-#solution(10, [Interest on capital: A — 2,00,000 × 6/100 = ₹12,000; B — 1,00,000 × 6/100 = ₹6,000. Divisible profit = 76,000 − 12,000 − 6,000 = ₹58,000. A's share = 58,000 × 3/5 = *₹34,800* (A's total with interest would be ₹46,800).], answer: "A")
-
-#v(10pt)
-#align(center)[#text(fill: om-grey, size: 9pt)[© OurMocks · www.ourmocks.com · CUET UG Accountancy · Unit I: Accounting for Partnership · 2027 cycle]]
+#mcq(
+  15,
+  [In a partnership firm maintaining fixed capital accounts, where is a debit balance in a Partner's Current Account presented in the Balance Sheet?],
+  (
+    [Under Non-Current Liabilities on the Equity & Liabilities side],
+    [On the Asset side of the firm's Balance Sheet],
+    [Deducted from Partner's Capital Account on Liabilities side],
+    [Debited to Profit & Loss Appropriation Account],
+  ),
+)
+#solution(
+  15,
+  [
+    A debit balance in a Partner's Current Account indicates that drawings/losses exceed entitlements, representing an amount receivable by the firm (shown on the Asset side).
+  ],
+  answer: [B],
+)
