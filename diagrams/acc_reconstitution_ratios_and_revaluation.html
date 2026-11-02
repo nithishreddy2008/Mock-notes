@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1440, height=880">
+  <title>Reconstitution of Partnership: Ratios, Revaluation & Accumulated Reserves</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 1440px;
+      height: 880px;
+      background-color: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0F172A;
+      padding: 32px 40px;
+      overflow: hidden;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 24px;
+      border-bottom: 2px solid #E2E8F0;
+      padding-bottom: 16px;
+    }
+    .title-group h1 {
+      font-size: 26px;
+      font-weight: 800;
+      color: #0F2C59;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+    .title-group p {
+      font-size: 14px;
+      color: #64748B;
+      font-weight: 500;
+    }
+    .badge {
+      background: #0066FF;
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      height: calc(100% - 110px);
+    }
+    .card {
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      border-radius: 14px;
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+      position: relative;
+    }
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      border-radius: 14px 14px 0 0;
+    }
+    .card-1::before { background: #0066FF; }
+    .card-2::before { background: #0EA5E9; }
+    .card-3::before { background: #8B5CF6; }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+    .card-title {
+      font-size: 17px;
+      font-weight: 800;
+      color: #0F2C59;
+    }
+    .tag {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+      text-transform: uppercase;
+    }
+    .tag-blue { background: #EFF6FF; color: #0066FF; }
+    .tag-cyan { background: #F0F9FF; color: #0284C7; }
+    .tag-purple { background: #F5F3FF; color: #7C3AED; }
+
+    .svg-container {
+      width: 100%;
+      height: 240px;
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 10px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .formula-block {
+      background: #F1F5F9;
+      border-left: 3px solid #0066FF;
+      padding: 10px 14px;
+      border-radius: 0 6px 6px 0;
+      font-family: "SF Mono", Consolas, Menlo, monospace;
+      font-size: 12px;
+      color: #0F172A;
+      margin-bottom: 12px;
+      line-height: 1.5;
+    }
+    .formula-block.cyan { border-left-color: #0EA5E9; }
+    .formula-block.purple { border-left-color: #8B5CF6; }
+
+    .bullet-list {
+      list-style: none;
+      font-size: 12px;
+      color: #334155;
+      line-height: 1.55;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .bullet-list li {
+      position: relative;
+      padding-left: 16px;
+    }
+    .bullet-list li::before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      color: #0066FF;
+      font-weight: 800;
+    }
+    .card-2 .bullet-list li::before { color: #0EA5E9; }
+    .card-3 .bullet-list li::before { color: #8B5CF6; }
+
+    .highlight {
+      font-weight: 700;
+      color: #0F2C59;
+    }
+    .footer-bar {
+      margin-top: auto;
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: #94A3B8;
+      font-weight: 600;
+      padding-top: 10px;
+      border-top: 1px solid #F1F5F9;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="title-group">
+      <h1>Reconstitution of Partnership: Ratio Mechanics, Revaluation &amp; Reserve Allocation</h1>
+      <p>Sacrificing &amp; Gaining Ratios • Revaluation Account (P&amp;L Adjustment) • Workmen Compensation &amp; IFR Protocols</p>
+    </div>
+    <div class="badge">CUET UG Accountancy • Unit II</div>
+  </div>
+
+  <div class="grid">
+    <!-- Card 1: Ratio Dynamics -->
+    <div class="card card-1">
+      <div class="card-header">
+        <span class="card-title">Ratio Mechanics</span>
+        <span class="tag tag-blue">Sacrifice vs Gain</span>
+      </div>
+
+      <div class="svg-container">
+        <svg width="400" height="230" viewBox="0 0 400 230">
+          <!-- Top Half: Admission Scenario (Sacrificing) -->
+          <rect x="15" y="15" width="370" height="95" rx="6" fill="#EFF6FF" stroke="#0066FF" stroke-width="1.2"/>
+          <text x="30" y="34" font-size="11" font-weight="800" fill="#0066FF">Admission: Sacrificing Ratio</text>
+          <text x="30" y="50" font-size="9" font-weight="600" fill="#64748B">Existing partners surrender a fraction of their share for the incoming partner.</text>
+
+          <rect x="25" y="60" width="350" height="38" rx="4" fill="#FFFFFF" stroke="#BFDBFE"/>
+          <text x="200" y="83" text-anchor="middle" font-size="11.5" font-weight="800" fill="#0F2C59">Sacrifice = Old Share - New Share</text>
+
+          <!-- Bottom Half: Retirement Scenario (Gaining) -->
+          <rect x="15" y="120" width="370" height="95" rx="6" fill="#F0FDF4" stroke="#16A34A" stroke-width="1.2"/>
+          <text x="30" y="140" font-size="11" font-weight="800" fill="#15803D">Retirement / Death: Gaining Ratio</text>
+          <text x="30" y="156" font-size="9" font-weight="600" fill="#64748B">Continuing partners acquire the departing partner's surrendered profit share.</text>
+
+          <rect x="25" y="165" width="350" height="38" rx="4" fill="#FFFFFF" stroke="#BBF7D0"/>
+          <text x="200" y="188" text-anchor="middle" font-size="11.5" font-weight="800" fill="#0F2C59">Gain = New Share - Old Share</text>
+        </svg>
+      </div>
+
+      <div class="formula-block">
+        <strong>Sacrificing Ratio:</strong> Old Share - New Share<br>
+        <strong>Gaining Ratio:</strong> New Share - Old Share<br>
+        <strong>New Share:</strong> Old Share - Sacrifice  OR  Old Share + Gain
+      </div>
+
+      <ul class="bullet-list">
+        <li><span class="highlight">Negative Result Sign:</span> A negative sacrifice ($Old < New$) indicates a *gain*; a negative gain ($New < Old$) indicates a *sacrifice*!</li>
+        <li><span class="highlight">Admission Default:</span> If new partner acquires $1/k$ share and question is silent, old partners sacrifice in their *Old Profit-Sharing Ratio*.</li>
+        <li><span class="highlight">Retirement Default:</span> If partner retires and question is silent, continuing partners gain in their *Old Mutual Ratio*.</li>
+      </ul>
+
+      <div class="footer-bar">
+        <span>Admission: Sacrificing Ratio</span>
+        <span>Retirement: Gaining Ratio</span>
+      </div>
+    </div>
+
+    <!-- Card 2: Revaluation Account -->
+    <div class="card card-2">
+      <div class="card-header">
+        <span class="card-title">Revaluation Account</span>
+        <span class="tag tag-cyan">P&amp;L Adjustment</span>
+      </div>
+
+      <div class="svg-container">
+        <svg width="400" height="230" viewBox="0 0 400 230">
+          <!-- T-Account Frame -->
+          <rect x="15" y="15" width="370" height="200" rx="6" fill="#FFFFFF" stroke="#0284C7" stroke-width="1.5"/>
+          <rect x="15" y="15" width="370" height="26" fill="#F0F9FF" rx="6 6 0 0"/>
+          <text x="28" y="32" font-size="10" font-weight="800" fill="#0284C7">Dr. (Losses / Decreases)</text>
+          <text x="200" y="32" text-anchor="middle" font-size="10.5" font-weight="800" fill="#0F2C59">Revaluation Account</text>
+          <text x="372" y="32" text-anchor="end" font-size="10" font-weight="800" fill="#0284C7">Cr. (Gains / Increases)</text>
+
+          <line x1="200" y1="41" x2="200" y2="215" stroke="#CBD5E1" stroke-width="1.2"/>
+
+          <!-- Dr Items -->
+          <text x="22" y="58" font-size="8.5" font-weight="700" fill="#EF4444">To Decrease in Asset value</text>
+          <text x="22" y="75" font-size="8.5" font-weight="700" fill="#EF4444">To Increase in Liability value</text>
+          <text x="22" y="92" font-size="8.5" font-weight="700" fill="#EF4444">To Unrecorded Liabilities</text>
+          <text x="22" y="110" font-size="8.5" font-weight="700" fill="#EF4444">To Provision for Doubtful Debts</text>
+
+          <text x="22" y="145" font-size="9" font-weight="800" fill="#16A34A">To Profit on Revaluation:</text>
+          <text x="30" y="160" font-size="8.5" font-weight="700" fill="#0F2C59">• Transferred to OLD partners</text>
+          <text x="30" y="174" font-size="8.5" font-weight="800" fill="#0066FF">• Strictly in OLD PSR!</text>
+
+          <!-- Cr Items -->
+          <text x="210" y="58" font-size="8.5" font-weight="700" fill="#16A34A">By Increase in Asset value</text>
+          <text x="210" y="75" font-size="8.5" font-weight="700" fill="#16A34A">By Decrease in Liability value</text>
+          <text x="210" y="92" font-size="8.5" font-weight="700" fill="#16A34A">By Unrecorded Assets</text>
+
+          <text x="210" y="145" font-size="9" font-weight="800" fill="#EF4444">By Loss on Revaluation:</text>
+          <text x="218" y="160" font-size="8.5" font-weight="700" fill="#0F2C59">• Transferred to OLD partners</text>
+          <text x="218" y="174" font-size="8.5" font-weight="800" fill="#0066FF">• Strictly in OLD PSR!</text>
+
+          <line x1="15" y1="188" x2="385" y2="188" stroke="#CBD5E1"/>
+          <text x="200" y="204" text-anchor="middle" font-size="9.5" font-weight="700" fill="#64748B">Nominal Account: Gains Credited, Losses Debited</text>
+        </svg>
+      </div>
+
+      <div class="formula-block cyan">
+        <strong>Profit on Reval:</strong> Cr Side &gt; Dr Side ➔ Credit Old Partners (Old PSR)<br>
+        <strong>Loss on Reval:</strong> Dr Side &gt; Cr Side ➔ Debit Old Partners (Old PSR)<br>
+        <strong>New Partner Share:</strong> Strictly NIL (No share in past revaluation)
+      </div>
+
+      <ul class="bullet-list">
+        <li><span class="highlight">Nominal Principle:</span> Revaluation Account is a nominal account recording unearned past value changes prior to reconstitution.</li>
+        <li><span class="highlight">Old Ratio Invariance:</span> Both profit and loss on revaluation are transferred <em>strictly to Old Partners in their Old PSR</em>.</li>
+        <li><span class="highlight">Retirement/Death Scope:</span> On retirement/death, *all partners* (including the retiring/deceased partner) share revaluation profit/loss in old PSR.</li>
+      </ul>
+
+      <div class="footer-bar">
+        <span>Old Assets ➔ Old Partners</span>
+        <span>Old Ratio Mandatory</span>
+      </div>
+    </div>
+
+    <!-- Card 3: Reserves, WCR & IFR -->
+    <div class="card card-3">
+      <div class="card-header">
+        <span class="card-title">Reserves &amp; Specific Funds</span>
+        <span class="tag tag-purple">Balance Sheet Purge</span>
+      </div>
+
+      <div class="svg-container">
+        <svg width="400" height="230" viewBox="0 0 400 230">
+          <!-- Top: Free Reserves -->
+          <rect x="15" y="15" width="370" height="65" rx="6" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.2"/>
+          <text x="25" y="33" font-size="10.5" font-weight="800" fill="#0F2C59">Free Reserves (General Reserve, P&amp;L Cr Balance)</text>
+          <text x="25" y="50" font-size="9" font-weight="600" fill="#334155">Transfer completely to Old Partners' Capital/Current A/cs in Old PSR.</text>
+          <text x="25" y="65" font-size="9" font-weight="700" fill="#0066FF">Entry: General Reserve A/c Dr. To Old Partners' Capital A/cs</text>
+
+          <!-- Bottom: Workmen Compensation Reserve Matrix -->
+          <rect x="15" y="90" width="370" height="125" rx="6" fill="#FAF5FF" stroke="#8B5CF6" stroke-width="1.2"/>
+          <text x="25" y="108" font-size="10.5" font-weight="800" fill="#7C3AED">Workmen Compensation Reserve (WCR) Cases</text>
+
+          <rect x="25" y="118" width="165" height="42" rx="4" fill="#FFFFFF" stroke="#DDD6FE"/>
+          <text x="32" y="133" font-size="8.5" font-weight="800" fill="#0F2C59">Case 1: No Claim</text>
+          <text x="32" y="148" font-size="8" font-weight="600" fill="#16A34A">Entire WCR to Old Partners (Old PSR)</text>
+
+          <rect x="205" y="118" width="170" height="42" rx="4" fill="#FFFFFF" stroke="#DDD6FE"/>
+          <text x="212" y="133" font-size="8.5" font-weight="800" fill="#0F2C59">Case 2: Claim &lt; Reserve</text>
+          <text x="212" y="148" font-size="8" font-weight="600" fill="#0284C7">Excess WCR to Old Partners (Old PSR)</text>
+
+          <rect x="25" y="166" width="165" height="42" rx="4" fill="#FFFFFF" stroke="#DDD6FE"/>
+          <text x="32" y="181" font-size="8.5" font-weight="800" fill="#0F2C59">Case 3: Claim = Reserve</text>
+          <text x="32" y="196" font-size="8" font-weight="600" fill="#64748B">Transferred to Provision for Claim</text>
+
+          <rect x="205" y="166" width="170" height="42" rx="4" fill="#FFFFFF" stroke="#DDD6FE"/>
+          <text x="212" y="181" font-size="8.5" font-weight="800" fill="#EF4444">Case 4: Claim &gt; Reserve</text>
+          <text x="212" y="196" font-size="8" font-weight="700" fill="#DC2626">Shortfall Debited to Revaluation A/c!</text>
+        </svg>
+      </div>
+
+      <div class="formula-block purple">
+        <strong>Accumulated Losses (P&amp;L Dr):</strong> Debit Old Partners in Old PSR<br>
+        <strong>IFR Fall in Value:</strong> Deducted from IFR; excess to partners; shortfall to Reval<br>
+        <strong>Advertisement Suspense:</strong> Fictitious asset written off to Old Partners
+      </div>
+
+      <ul class="bullet-list">
+        <li><span class="highlight">Past Earnings Purity:</span> Accumulated reserves belong to past efforts; they must be cleared before admitting new partners.</li>
+        <li><span class="highlight">WCR Claim Priority:</span> Always fulfill the actual liability for compensation first; only the uncommitted surplus is shared.</li>
+        <li><span class="highlight">Fictitious Asset Write-off:</span> Deferred revenue expenditure (Ad Suspense) appearing on Asset side must be debited to Old Partners in Old PSR.</li>
+      </ul>
+
+      <div class="footer-bar">
+        <span>WCR Claim &gt; Reserve ➔ Revaluation Dr.</span>
+        <span>IFR = Book Value - Market Value</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

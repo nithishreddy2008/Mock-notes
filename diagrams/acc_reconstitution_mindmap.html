@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1440, height=880">
+  <title>Reconstitution of a Partnership Firm Master Synthesis Mindmap</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 1440px;
+      height: 880px;
+      background-color: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0F172A;
+      padding: 24px 36px;
+      overflow: hidden;
+      position: relative;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 16px;
+      border-bottom: 2px solid #E2E8F0;
+      padding-bottom: 12px;
+    }
+    .title-group h1 {
+      font-size: 24px;
+      font-weight: 800;
+      color: #0F2C59;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+    .title-group p {
+      font-size: 13px;
+      color: #64748B;
+      font-weight: 500;
+    }
+    .badge {
+      background: #0066FF;
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .mindmap-canvas {
+      width: 100%;
+      height: calc(100% - 90px);
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: stretch;
+    }
+
+    .svg-connectors {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Central Hub */
+    .central-hub {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 250px;
+      background: linear-gradient(135deg, #0F2C59 0%, #0066FF 100%);
+      color: white;
+      border-radius: 16px;
+      padding: 22px 18px;
+      text-align: center;
+      box-shadow: 0 10px 25px -5px rgba(15, 44, 89, 0.35);
+      border: 2px solid #93C5FD;
+      z-index: 10;
+    }
+    .central-hub .sub-label {
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      color: #93C5FD;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .central-hub .hub-title {
+      font-size: 17px;
+      font-weight: 800;
+      line-height: 1.25;
+      margin-bottom: 6px;
+    }
+    .central-hub .hub-desc {
+      font-size: 11px;
+      color: #E2E8F0;
+      line-height: 1.4;
+    }
+
+    /* Column Containers */
+    .column-left, .column-right {
+      width: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      z-index: 5;
+    }
+
+    .mm-card {
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      border-radius: 12px;
+      padding: 12px 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+      position: relative;
+    }
+    .mm-card::before {
+      content: "";
+      position: absolute;
+      top: 0; bottom: 0; left: 0;
+      width: 4px;
+      border-radius: 12px 0 0 12px;
+    }
+
+    .c1::before { background: #0066FF; }
+    .c2::before { background: #0EA5E9; }
+    .c3::before { background: #D97706; }
+    .c4::before { background: #8B5CF6; }
+    .c5::before { background: #16A34A; }
+    .c6::before { background: #E11D48; }
+
+    .card-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+    .mm-title {
+      font-size: 13.5px;
+      font-weight: 800;
+      color: #0F2C59;
+    }
+    .mm-badge {
+      font-size: 9.5px;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+    .b-blue { background: #EFF6FF; color: #0066FF; }
+    .b-cyan { background: #F0F9FF; color: #0284C7; }
+    .b-amber { background: #FFFBEB; color: #D97706; }
+    .b-purple { background: #F5F3FF; color: #7C3AED; }
+    .b-green { background: #F0FDF4; color: #16A34A; }
+    .b-rose { background: #FFF1F2; color: #E11D48; }
+
+    .formula-pill {
+      background: #F1F5F9;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-family: "SF Mono", Consolas, monospace;
+      font-size: 10.5px;
+      font-weight: 600;
+      color: #0F172A;
+      margin-bottom: 6px;
+      display: inline-block;
+      width: 100%;
+    }
+
+    .key-points {
+      list-style: none;
+      font-size: 11px;
+      color: #334155;
+      line-height: 1.45;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .key-points li {
+      position: relative;
+      padding-left: 12px;
+    }
+    .key-points li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      font-weight: 800;
+      color: #64748B;
+    }
+    .c1 .key-points li::before { color: #0066FF; }
+    .c2 .key-points li::before { color: #0EA5E9; }
+    .c3 .key-points li::before { color: #D97706; }
+    .c4 .key-points li::before { color: #8B5CF6; }
+    .c5 .key-points li::before { color: #16A34A; }
+    .c6 .key-points li::before { color: #E11D48; }
+
+    strong {
+      color: #0F2C59;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="title-group">
+      <h1>Reconstitution of a Partnership Firm Master Synthesis Mindmap</h1>
+      <p>Ratio Dynamics • Revaluation Architecture • Goodwill Valuation • Admission &amp; Exit Protocols</p>
+    </div>
+    <div class="badge">CUET UG Accountancy • Unit II</div>
+  </div>
+
+  <div class="mindmap-canvas">
+    <!-- SVG Connection Curves -->
+    <svg class="svg-connectors" viewBox="0 0 1368 730">
+      <!-- Left branches from center (684, 365) to (400, y) -->
+      <!-- Branch 1 (Top Left) -->
+      <path d="M 559 340 C 470 330 450 115 400 115" fill="none" stroke="#0066FF" stroke-width="2.5" stroke-dasharray="4,4"/>
+      <!-- Branch 2 (Mid Left) -->
+      <path d="M 559 365 C 470 365 460 365 400 365" fill="none" stroke="#0EA5E9" stroke-width="2.5"/>
+      <!-- Branch 3 (Bottom Left) -->
+      <path d="M 559 390 C 470 400 450 615 400 615" fill="none" stroke="#D97706" stroke-width="2.5" stroke-dasharray="4,4"/>
+
+      <!-- Right branches from center (684, 365) to (968, y) -->
+      <!-- Branch 4 (Top Right) -->
+      <path d="M 809 340 C 900 330 920 115 968 115" fill="none" stroke="#8B5CF6" stroke-width="2.5" stroke-dasharray="4,4"/>
+      <!-- Branch 5 (Mid Right) -->
+      <path d="M 809 365 C 900 365 910 365 968 365" fill="none" stroke="#16A34A" stroke-width="2.5"/>
+      <!-- Branch 6 (Bottom Right) -->
+      <path d="M 809 390 C 900 400 920 615 968 615" fill="none" stroke="#E11D48" stroke-width="2.5" stroke-dasharray="4,4"/>
+    </svg>
+
+    <!-- Column Left -->
+    <div class="column-left">
+      <!-- Card 1: Ratio Mechanics -->
+      <div class="mm-card c1">
+        <div class="card-title-row">
+          <span class="mm-title">Ratio Dynamics</span>
+          <span class="mm-badge b-blue">Sacrifice &amp; Gain</span>
+        </div>
+        <div class="formula-pill">Sacrifice = Old - New &nbsp;|&nbsp; Gain = New - Old &nbsp;|&nbsp; New = Old - Sac.</div>
+        <ul class="key-points">
+          <li><strong>Admission Default:</strong> If new share is $1/k$, old partners sacrifice in their old mutual PSR.</li>
+          <li><strong>Retirement Default:</strong> Remaining partners gain in their old ratio unless a new ratio is stated.</li>
+          <li><strong>Negative Sacrifice:</strong> If Old - New &lt; 0, the existing partner *gains* and must pay for goodwill!</li>
+        </ul>
+      </div>
+
+      <!-- Card 2: Revaluation Account -->
+      <div class="mm-card c2">
+        <div class="card-title-row">
+          <span class="mm-title">Revaluation Account</span>
+          <span class="mm-badge b-cyan">Nominal Account</span>
+        </div>
+        <div class="formula-pill">Dr: Assets ↓, Liab ↑, Unrec Liab &nbsp;|&nbsp; Cr: Assets ↑, Liab ↓, Unrec Asset</div>
+        <ul class="key-points">
+          <li><strong>Old Ratio Rule:</strong> Net Revaluation Profit/Loss is transferred *strictly to Old Partners in Old PSR*.</li>
+          <li><strong>New Partner Exclusion:</strong> Incoming partner receives zero share in revaluation balance.</li>
+          <li><strong>Retirement Scope:</strong> In retirement/death, *all partners* (including exiting partner) share in old PSR.</li>
+        </ul>
+      </div>
+
+      <!-- Card 3: Reserves & Accumulated Profits -->
+      <div class="mm-card c3">
+        <div class="card-title-row">
+          <span class="mm-title">Reserves &amp; Specific Funds</span>
+          <span class="mm-badge b-amber">Balance Sheet Purge</span>
+        </div>
+        <div class="formula-pill">General Reserve ➔ Old PSR &nbsp;|&nbsp; WCR Surplus ➔ Old PSR &nbsp;|&nbsp; Ad Suspense ➔ Dr.</div>
+        <ul class="key-points">
+          <li><strong>Free Reserves:</strong> Transferred to Old Partners' Capital A/cs in Old PSR before reconstitution.</li>
+          <li><strong>WCR Claim Rule:</strong> Fulfill actual liability first; only uncommitted excess is credited to partners.</li>
+          <li><strong>Fictitious Assets:</strong> Deferred revenue expenditure (Ad Suspense) must be debited to Old Partners.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Central Hub -->
+    <div class="central-hub">
+      <div class="sub-label">CUET UG Accountancy • Unit II</div>
+      <div class="hub-title">Reconstitution of Partnership</div>
+      <div class="hub-desc">Ratio restructuring, asset-liability revaluations, reserve distributions, goodwill mechanics, admission, retirement, and death.</div>
+    </div>
+
+    <!-- Column Right -->
+    <div class="column-right">
+      <!-- Card 4: Goodwill Valuation -->
+      <div class="mm-card c4">
+        <div class="card-title-row">
+          <span class="mm-title">Goodwill Valuation Methods</span>
+          <span class="mm-badge b-purple">Valuation Triad</span>
+        </div>
+        <div class="formula-pill">Super Profit = Actual - Normal &nbsp;|&nbsp; Normal = Cap. Emp × NRR / 100</div>
+        <ul class="key-points">
+          <li><strong>Abnormal Items:</strong> Deduct abnormal gains (gain on sale of asset); add back abnormal losses.</li>
+          <li><strong>Capitalisation Identity:</strong> Capitalisation of Average Profit equals Capitalisation of Super Profit!</li>
+          <li><strong>AS-26 Compliance:</strong> Internally generated goodwill cannot be recorded; only purchased goodwill.</li>
+        </ul>
+      </div>
+
+      <!-- Card 5: Admission & Premium -->
+      <div class="mm-card c5">
+        <div class="card-title-row">
+          <span class="mm-title">Admission of a Partner</span>
+          <span class="mm-badge b-green">Goodwill Protocol</span>
+        </div>
+        <div class="formula-pill">Premium for Goodwill (Dr) ➔ Sacrificing Partners' Capital (Cr) [In SR!]</div>
+        <ul class="key-points">
+          <li><strong>Sacrificing Ratio Sole Purpose:</strong> Premium for goodwill is shared *strictly in Sacrificing Ratio*.</li>
+          <li><strong>Not Brought in Cash:</strong> Debit New Partner's *Current Account* (preserves agreed capital).</li>
+          <li><strong>Hidden Goodwill:</strong> Total Capital based on incoming partner - Total Adjusted Net Worth.</li>
+        </ul>
+      </div>
+
+      <!-- Card 6: Retirement & Death -->
+      <div class="mm-card c6">
+        <div class="card-title-row">
+          <span class="mm-title">Retirement &amp; Death Protocols</span>
+          <span class="mm-badge b-rose">Exit Settlement</span>
+        </div>
+        <div class="formula-pill">Gaining Partners (Dr) ➔ Retiring Partner (Cr) [GR!] &nbsp;|&nbsp; Section 37: 6%</div>
+        <ul class="key-points">
+          <li><strong>Retirement Goodwill:</strong> Retiring partner's goodwill is funded by Gaining Partners in Gaining Ratio.</li>
+          <li><strong>Section 37 Dues:</strong> Retiring partner's unpaid loan attracts 6% p.a. interest or share of profit.</li>
+          <li><strong>Death of Partner:</strong> Interim profit debited to P&amp;L Suspense A/c; final dues transferred to Executor.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

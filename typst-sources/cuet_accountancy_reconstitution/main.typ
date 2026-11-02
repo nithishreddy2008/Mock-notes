@@ -11,770 +11,701 @@
 
 #table(
   columns: (1.05fr, 1.9fr, 1.25fr),
-  table.header[*Sub-topic*][*Official syllabus pointer (NTA CUET(UG) Accountancy syllabus 2026, the current 2027 baseline, Unit II)*][*Skills the questions test*],
+  table.header[*Sub-topic*][*Official syllabus pointer (NTA CUET(UG) Accountancy 301, Unit II)*][*Skills the questions test*],
   [*Changes in profit-sharing ratio*], [
-    Changes in profit sharing ratio among the existing partners – Sacrificing ratio and Gaining ratio
+    Changes in profit sharing ratio among existing partners – Sacrificing ratio and Gaining ratio
   ], [
-    Computing both ratios partner-by-partner and spotting exactly who gains and who gives up.
+    Computing sacrifice and gain partner-by-partner; passing net adjustment entries.
   ],
   [*Revaluation & reserves*], [
-    Accounting for Revaluation of Assets and reassessment of Liabilities and Distribution of reserves and accumulated profits
+    Accounting for Revaluation of Assets and reassessment of Liabilities; Distribution of reserves and accumulated profits
   ], [
-    Preparing the Revaluation Account, passing its entries, distributing reserves in the old ratio.
+    Preparing Revaluation A/c; handling WCR and IFR under various claim and market value scenarios.
   ],
-  [*Goodwill*], [
+  [*Goodwill Valuation*], [
     Goodwill: Nature, Factors affecting and Methods of valuation: Average profit, Super profit and Capitalisation methods
   ], [
-    Choosing the right valuation method and computing goodwill with clean, verified arithmetic.
+    Applying AS-26 rules; computing goodwill via Simple/Weighted Average, Super Profit, and Capitalisation.
   ],
   [*Admission of a Partner*], [
-    Admission of a Partner: Effect of admission of partner, Change in profit sharing ratio, Accounting treatment for goodwill, Revaluation of assets and reassessment of liabilities, Reserves adjustment/distribution of (accumulated profits) and adjustment of capitals
+    Effect of admission, New ratio & sacrificing ratio, Accounting for goodwill (premium in cash/not in cash), Revaluation, Reserves, Adjustment of capitals
   ], [
-    Passing the full admission entry set: premium, revaluation, reserves and proportionate capitals.
+    Passing the full admission entry sequence; solving hidden goodwill and proportionate capital.
   ],
-  [*Retirement / Death*], [
-    Retirement/Death of a Partner: Change in profit sharing ratio, Accounting treatment of goodwill, Revaluation of assets and reassessment of liabilities, Adjustment of Accumulated profits (Reserves) , Preparation of deceased partner's capital account and his executor's account, Preparation of Loan Account
+  [*Retirement & Death*], [
+    Retirement/Death: Gaining ratio, Goodwill treatment, Revaluation, Reserves, Deceased partner's capital & executor's account, Interim profit, Section 37 interest
   ], [
-    Building the retiring partner's claim, the executor's account and the loan account with interest.
+    Building the outgoing partner's claim; computing interim profit (time & sales basis); preparing Executor's Loan A/c.
   ],
 )
 
 #exam-pointer[
-  CUET UG pattern (NTA official information bulletin and syllabus, 2026 cycle — the
-  current 2027 baseline): each subject paper carries *50 compulsory questions* in
-  *60 minutes*, with $+5$ for every correct answer and $-1$ for every incorrect answer. The Accountancy paper (subject code 301)
-  maps strictly to NCERT Class 12, and Unit II builds directly on Unit I
-  (Accounting for Partnership) — the capital accounts, current accounts and
-  appropriation habits you learned there return here as the machinery of every
-  reconstitution entry.
+  *CUET UG Exam Blueprint:* The Accountancy paper (Code 301) presents *50 compulsory questions* in *60 minutes* (+5 for correct, -1 for incorrect). Reconstitution forms the largest single thematic block in partnership accounting, contributing 8–10 questions. NTA heavily tests ratio transitions, AS-26 goodwill restrictions, Workmen Compensation Reserve claim brackets, hidden goodwill on admission, and Section 37 executor settlements.
 ]
 
-= Changes in the Profit-Sharing Ratio
+= 1. Changes in the Profit-Sharing Ratio
 
-Three friends share a firm's profit in a fixed ratio. One day they re-cut the
-ratio — nobody joins, nobody leaves, the firm itself continues exactly as before.
-That single change is a *reconstitution*: the firm's agreement is rewritten while
-the firm survives. The old ratio dies, a new ratio is born, and between the two
-sits one question that drives every entry in this chapter: *who gave up what, and
-to whom?*
+A change in the profit-sharing ratio (PSR) among existing partners constitutes a *reconstitution* of the firm. The existing partnership agreement ends, and a new agreement comes into existence without dissolving the business entity itself.
 
-- *Reconstitution keeps the firm alive:* only the *terms* change. In dissolution
-  the firm closes; in reconstitution it simply runs on fresh terms.
-- *Every reconstitution touches the ratio:* admission, retirement, death, or a
-  plain change in profit-sharing ratio among existing partners.
-- *Old partners compare old with new:* the share a partner *gives up* is his
-  *sacrifice*; the share he *picks up* is his *gain*.
-- *Sacrificers receive, gainers pay:* goodwill compensation always flows from the
-  gaining partner to the sacrificing partner — never the other way round.
+- *Legal Continuity:* The firm's legal identity and ongoing business operations continue uninterrupted; only the internal rights and obligations of partners are restructured.
+- *Mutual Sacrifice and Gain:* A change in profit-sharing ratio implies that one or more partners surrender a fraction of their future earnings (sacrificing partners) in favour of other partners who acquire an increased share (gaining partners).
+- *Equitable Principle:* The gaining partners must compensate the sacrificing partners in proportion to their sacrifice, calculated on the basis of the firm's total goodwill at the date of change.
 
-== Sacrificing ratio and gaining ratio
+== Sacrificing Ratio and Gaining Ratio
 
-#formula-box(title: "The Two Ratios of Reconstitution")[
-  $ "Sacrificing share" = "Old share" - "New share" $
-  $ "Gaining share" = "New share" - "Old share" $
-  $ "Sacrificing ratio" = "Ratio of the sacrifices, partner by partner" $
-  $ "Gaining ratio" = "Ratio of the gains, partner by partner" $
+#formula-box(title: "Sacrificing & Gaining Equations")[
+  $ "Sacrificing Share" = "Old Share" - "New Share" quad ("if positive, partner sacrifices") $
+  $ "Gaining Share" = "New Share" - "Old Share" quad ("if positive, partner gains") $
+  $ sum "Sacrifices" = sum "Gains" quad ("fundamental mathematical check") $
 
-  Compute *each partner separately*. A positive difference means sacrifice; a
-  negative difference means gain. The sacrifices must exactly equal the gains —
-  that equality is your free checking tool in the exam.
+  - *Sacrificing Ratio:* The ratio in which sacrificing partners surrender their shares in favour of gaining partners.
+  - *Gaining Ratio:* The ratio in which gaining partners acquire shares from sacrificing partners.
 ]
 
-#worked-example("Worked Example — Reading the Shift, Partner by Partner")[
-  A, B and C share profits 5 : 3 : 2. They change to 3 : 2 : 1. Who moved?
+#worked-example("Worked Example — Partner-by-Partner Ratio Analysis")[
+  A, B and C share profits in the ratio of $5:3:2$. With effect from 1st April, they agree to share future profits in the ratio of $3:2:1$. Firm's goodwill is valued at ₹90,000. Determine the sacrifice or gain of each partner and pass the adjustment entry.
 
   #table(
-    columns: (0.85fr, 1fr, 1fr, 1.15fr),
-    table.header[*Partner*][*Old share*][*New share*][*Sacrifice / Gain*],
-    [A], [5\/10 = 1\/2], [3\/6 = 1\/2], [*Nil* — exactly even],
-    [B], [3\/10], [2\/6 = 1\/3], [1\/3 − 3\/10 = *+1\/30 gain*],
-    [C], [2\/10 = 1\/5], [1\/6], [1\/5 − 1\/6 = *1\/30 sacrifice*],
+    columns: (0.8fr, 1.1fr, 1.1fr, 1.4fr),
+    table.header[*Partner*][*Old Share*][*New Share*][*Difference (Old − New)*],
+    [A], [$5/10 = 1/2$], [$3/6 = 1/2$], [$1/2 - 1/2 = 0$ (*Nil*)],
+    [B], [$3/10$], [$2/6 = 1/3$], [$3/10 - 1/3 = -1/30$ (*Gain of 1/30*)],
+    [C], [$2/10 = 1/5$], [$1/6$], [$1/5 - 1/6 = +1/30$ (*Sacrifice of 1/30*)],
   )
 
-  - *Check the balance:* B's gain (1/30) = C's sacrifice (1/30). ✓
-  - *Money follows the ratio:* if the firm's goodwill is valued at ₹90,000, the
-    gaining partner B compensates the sacrificing partner C:
-    90,000 × 1/30 = *₹3,000*, passed through their capital accounts.
-  - *Notice A:* his share did not move, so he neither pays nor receives — a
-    partner can sit completely still inside a ratio change.
+  - *Verification Check:* Total Sacrifice ($1/30$) = Total Gain ($1/30$). Partner A's share is completely unchanged.
+  - *Goodwill Compensation:* B gains $1/30$ and must compensate C who sacrificed $1/30$:
+    $ "Compensation" = "₹90,000" times 1/30 = "₹3,000" $
+  - *Journal Entry:*
+    #table(
+      columns: (2.2fr, 0.8fr, 0.8fr),
+      table.header[*Particulars*][*Dr (₹)*][*Cr (₹)*],
+      [B's Capital A/c ... Dr. \ #h(1.2em)To C's Capital A/c \ _(Adjustment of goodwill on change in PSR)_], [3,000], [\ 3,000],
+    )
 ]
 
-- *Sacrifice, not the new ratio, sets the payment:* goodwill compensation is
-  credited to old partners in the *sacrificing ratio* — computing it in the old
-  or the new ratio is the classic error.
-- *Where gaining ratio returns:* at retirement and death, the *continuing*
-  partners step into the outgoing partner's shoes — the gaining ratio is how the
-  cost of those shoes is split.
+== Net Adjustment Entry without Altering Book Values
 
-#analogy-box(title: "Everyday Example — The cinema seats")[
-  Ten friends-booked seats are held 5, 3 and 2 by A, B and C. The trio re-cuts
-  the booking to 3, 2 and 1. A hands over 2 seats, B hands over 1, and C keeps
-  his 1 — so the 3 freed seats go to C alone. Nobody paid for a seat; what
-  changed is *who holds which seat*. The profit-sharing ratio works the same
-  way: the total share stays 1, only the holding pattern moves, and the partner
-  who picks up the freed share is the one who must compensate the partners who
-  freed it.
+When partners decide *not to alter the book values* of assets, liabilities, or accumulated reserves upon change in PSR, the net balance (Goodwill + Reserves + Revaluation Profit − Revaluation Loss − Fictitious Assets) is adjusted through a single capital entry:
+
+#formula-box(title: "Single Capital Adjustment Protocol")[
+  - *If Net Effect is Positive (Net Profit/Gain):*
+    $ "Gaining Partners' Capital/Current A/cs" quad "Dr." quad [ "in Gaining Ratio" ] $
+    $ quad quad "To Sacrificing Partners' Capital/Current A/cs" quad "Cr." quad [ "in Sacrificing Ratio" ] $
+  - *If Net Effect is Negative (Net Loss):*
+    $ "Sacrificing Partners' Capital/Current A/cs" quad "Dr." quad [ "in Sacrificing Ratio" ] $
+    $ quad quad "To Gaining Partners' Capital/Current A/cs" quad "Cr." quad [ "in Gaining Ratio" ] $
 ]
 
-= Revaluation of Assets and Reassessment of Liabilities
+#worked-example("Worked Example — Single Adjustment Entry for Reserves & Assets")[
+  X, Y and Z share profits in $3:2:1$. They decide to share future profits equally ($1:1:1$) without altering the book values of the following items: General Reserve ₹60,000; Profit & Loss (Cr.) ₹30,000; Advertisement Suspense ₹18,000; Revaluation Profit ₹48,000.
 
-A firm's books record assets at their *book values* — the figures they were
-brought in at, minus depreciation. Nobody updates them every week. But the moment
-the partnership is reconstituted, "roughly right" is no longer good enough: the
-firm's property must show *true values on reconstitution day*, so that the
-partner leaving or joining is neither gifted value nor short-changed. That
-updating exercise is the *Revaluation Account* — also called *Profit and Loss
-Adjustment Account*.
+  - *Net Effect:* $"₹60,000" + "₹30,000" + "₹48,000" - "₹18,000" = "₹1,20,000"$.
+  - *Sacrifice / Gain:*
+    - X: $3/6 - 1/3 = 3/6 - 2/6 = +1/6$ *(Sacrifice)*.
+    - Y: $2/6 - 1/3 = 2/6 - 2/6 = 0$ *(Nil)*.
+    - Z: $1/6 - 1/3 = 1/6 - 2/6 = -1/6$ *(Gain)*.
+  - *Adjustment Amount:* $1,20,000 times 1/6 = "₹20,000"$.
+  - *Single Journal Entry:*
+    `Z's Capital A/c Dr. ₹20,000` to `X's Capital A/c Cr. ₹20,000`.
+]
 
-- *Why it exists:* to bring assets and liabilities to their current values
-  *before* the new agreement begins, so that all future profit or loss on them
-  belongs to the new arrangement, not the old.
-- *It is a nominal account:* opened on reconstitution day, loaded with
-  increases and decreases, and *closed the same day* — no balance is carried
-  down.
-- *Its profit or loss is old partners' money:* every rise and fall adjusted here
-  built up while *only the old partners* were running the firm, so it is shared
-  in the *old ratio*. The incoming partner gets nothing from it.
-- *No cash moves:* revaluation only corrects the books; money enters or leaves
-  the firm only through the capital and premium entries.
+= 2. Revaluation of Assets and Reassessment of Liabilities
 
-== The Revaluation Account format
+Assets and liabilities are recorded in the books at historical cost or unadjusted book values. Upon reconstitution, they must be reassessed so that unearned gains or losses accrued up to the date of reconstitution are settled among old partners and do not distort future earnings.
 
-#table(
-  columns: (1.55fr, 0.7fr, 1.55fr, 0.7fr),
-  table.header[*Dr. Particulars*][*₹*][*Cr. Particulars*][*₹*],
-  [To Decrease in value of an asset], [—], [By Increase in value of an asset], [—],
-  [To Increase in a liability], [—], [By Decrease in a liability], [—],
-  [To Unrecorded liability now brought in], [—], [By Unrecorded asset now brought in], [—],
-  [To Profit transferred to old partners' capitals (old ratio)], [—], [By Loss transferred to old partners' capitals (old ratio)], [—],
+- *Nature of Account:* Revaluation Account (also called *Profit and Loss Adjustment Account*) is a *Nominal Account*.
+- *Debit Side (Losses):* Decreases in asset values, increases in liabilities, and unrecorded liabilities.
+- *Credit Side (Gains):* Increases in asset values, decreases in liabilities, and unrecorded assets.
+- *Closure:* The balance (net profit or loss on revaluation) is strictly transferred to the *Old Partners' Capital/Current Accounts in their OLD profit-sharing ratio*. It is never carried forward.
+
+#figure(
+  image("assets/acc_reconstitution_ratios_and_revaluation.png", width: 88%),
+  caption: [Reconstitution Mechanics: Sacrificing & Gaining Ratios, Revaluation Account rules, and Net Adjustment Entries.],
 )
 
-Read the two sides as one sentence: *whatever makes the firm poorer sits on the
-debit side, whatever makes it richer sits on the credit side.* If the credit
-side is bigger, the firm has grown richer — a revaluation *profit*. If the debit
-side is bigger, a revaluation *loss*.
-
-== The journal entries behind the account
+== Comprehensive Revaluation Rules & Journal Entries
 
 #table(
-  columns: (1.35fr, 1.25fr, 1.25fr),
-  table.header[*Event*][*Debit*][*Credit*],
-  [Value of an asset rises], [Asset A/c], [Revaluation A/c],
-  [Value of an asset falls], [Revaluation A/c], [Asset A/c],
-  [A liability increases], [Revaluation A/c], [Liability A/c],
-  [A liability decreases], [Liability A/c], [Revaluation A/c],
-  [An unrecorded asset is found], [Asset A/c], [Revaluation A/c],
-  [An unrecorded liability is found], [Revaluation A/c], [Liability A/c],
-  [Revaluation profit closes], [Revaluation A/c], [Old partners' Capital A/cs (old ratio)],
-  [Revaluation loss closes], [Old partners' Capital A/cs (old ratio)], [Revaluation A/c],
+  columns: (1.2fr, 1.3fr, 1.3fr),
+  table.header[*Transaction Event*][*Account Debited*][*Account Credited*],
+  [Increase in value of asset], [Asset A/c], [Revaluation A/c],
+  [Decrease in value of asset], [Revaluation A/c], [Asset A/c],
+  [Increase in value of liability], [Revaluation A/c], [Liability A/c],
+  [Decrease in value of liability], [Liability A/c], [Revaluation A/c],
+  [Unrecorded asset brought in], [Unrecorded Asset A/c], [Revaluation A/c],
+  [Unrecorded liability recognised], [Revaluation A/c], [Unrecorded Liability A/c],
+  [Provision for Doubtful Debts created], [Revaluation A/c], [Provision for Doubtful Debts A/c],
+  [Revaluation Profit (Cr > Dr)], [Revaluation A/c], [Old Partners' Capital/Current A/cs *(Old PSR)*],
+  [Revaluation Loss (Dr > Cr)], [Old Partners' Capital/Current A/cs *(Old PSR)*], [Revaluation A/c],
 )
 
-#worked-example("Worked Example — One Full Revaluation Account")[
-  A and B share profits 3 : 2. On the date of C's admission the following
-  corrections are agreed:
-
-  - *Land & Building:* book value ₹2,00,000, revalued at ₹2,50,000 — *rise ₹50,000*.
-  - *Machinery:* book value ₹80,000, revalued at ₹72,000 — *fall ₹8,000*.
-  - *Creditors:* book figure ₹40,000, but a creditor of ₹5,000 is no longer to be
-    paid — *liability falls ₹5,000*.
-  - *Outstanding rent of ₹2,000 was never recorded* — *liability rises ₹2,000*.
+#worked-example("Worked Example — Preparation of Revaluation Account")[
+  A and B share profits in the ratio of $3:2$. On 31st March, C is admitted. The following revaluations are agreed:
+  1. Land & Building (Book Value ₹2,00,000) is appreciated by 25% (₹50,000).
+  2. Plant & Machinery (Book Value ₹80,000) is revalued at ₹72,000 (decrease of ₹8,000).
+  3. Creditors include ₹5,00,000 not likely to be claimed (written off).
+  4. An unrecorded bill for repairs of ₹2,000 is to be accounted for.
+  5. Provision for Doubtful Debts is to be created @ 5% on Debtors of ₹40,000 (₹2,000).
 
   *Revaluation Account*
-
   #table(
     columns: (1.55fr, 0.7fr, 1.55fr, 0.7fr),
     table.header[*Dr. Particulars*][*₹*][*Cr. Particulars*][*₹*],
-    [To Machinery A/c], [8,000], [By Land & Building A/c], [50,000],
-    [To Outstanding Rent A/c], [2,000], [By Creditors A/c], [5,000],
-    [To Profit transferred — A 27,000; B 18,000], [45,000], [], [],
-    [], [55,000], [], [55,000],
+    [To Plant & Machinery A/c], [8,000], [By Land & Building A/c], [50,000],
+    [To Outstanding Repairs A/c], [2,000], [By Creditors A/c], [5,000],
+    [To Provision for Doubtful Debts], [2,000], [], [],
+    [To Revaluation Profit transferred to:], [], [], [],
+    [#h(1em) A's Capital A/c (3/5)], [25,800], [], [],
+    [#h(1em) B's Capital A/c (2/5)], [17,200], [], [],
+    [*Total*], [*55,000*], [*Total*], [*55,000*],
   )
 
-  - *Profit:* credit side 50,000 + 5,000 = 55,000; debit side 8,000 + 2,000 = 10,000;
-    profit = 55,000 − 10,000 = *₹45,000*.
-  - *Old ratio 3 : 2:* A gets 45,000 × 3/5 = *₹27,000*; B gets 45,000 × 2/5 = *₹18,000*.
-  - *Closing entry:* Revaluation A/c Dr ₹45,000 — To A's Capital A/c ₹27,000,
-    To B's Capital A/c ₹18,000. The account is then empty and finished.
+  - *Net Profit:* Total Credits ($50,000 + 5,000 = 55,000$) minus Total Debits ($8,000 + 2,000 + 2,000 = 12,000$) = *₹43,000*.
+  - *Distribution (3:2):* A receives $43,000 times 3/5 = "₹25,800"$; B receives $43,000 times 2/5 = "₹17,200"$.
 ]
 
-- *Provision for doubtful debts falls too:* creating or raising a provision
-  reduces the realisable value of debtors, so it is *debited* to Revaluation;
-  releasing an excess provision is *credited*.
-- *Do not touch every asset:* only assets and liabilities that actually *change
-  value* appear here. Cash at bank cannot "revalue" — it already shows its true
-  self.
+= 3. Treatment of Reserves, Accumulated Profits and Losses
 
-= Reserves and Accumulated Profits
+Undistributed profits and reserves appearing in the balance sheet on the date of reconstitution were accumulated from earnings of past periods. Consequently, they belong entirely to the *old partners* and must be distributed or adjusted in the *OLD profit-sharing ratio*.
 
-The firm has been saving money quietly for years: a General Reserve here, an
-undistributed profit balance there. All of it was earned while *only the old
-partners* worked in the firm. So the moment the partnership is reconstituted,
-these piles must be *handed to their rightful owners* — the old partners, in the
-*old ratio* — before the new arrangement starts sharing anything.
+== Classification and Standard Treatment
 
-- *Reserves are old partners' money:* General Reserve, credit balance of P&L and
-  similar accumulated profits belong to the partners who *earned* them.
-- *Accumulated losses work in reverse:* a debit balance of P&L is an old
-  partners' burden — it is *debited* to them in the old ratio.
-- *Distribution, not transfer:* these amounts are *distributed* (closed out of
-  the books) through the partners' capital or current accounts.
-- *Timing:* this distribution happens at *every* reconstitution — admission,
-  retirement, death, or a change in ratio — always in the *old* ratio.
+1. *Free Reserves & Accumulated Profits:* General Reserve, Reserve Fund, Contingency Reserve, and Credit Balance of Profit & Loss Account:
+   - *Entry:* Debit Reserves / P&L A/c and Credit Old Partners' Capital/Current A/cs in *Old PSR*.
+2. *Accumulated Losses & Deferred Revenue Expenditure:* Debit Balance of Profit & Loss A/c, Advertisement Suspense Account, Deferred Revenue Expenditure:
+   - *Entry:* Debit Old Partners' Capital/Current A/cs in *Old PSR* and Credit P&L A/c / Advertisement Suspense A/c.
 
-== Which item goes where
+== Deep Dive: Workmen Compensation Reserve (WCR)
+
+Workmen Compensation Reserve is created out of firm profits to meet contingent worker injury claims. Its accounting treatment depends strictly on the magnitude of the admitted claim:
 
 #table(
-  columns: (1.15fr, 1.15fr, 1.7fr),
-  table.header[*Item*][*Who owns it*][*How it is adjusted*],
-  [General Reserve], [Old partners], [Distribute among old partners in the old ratio.],
-  [P&L Account credit balance], [Old partners], [Distribute exactly like General Reserve.],
-  [P&L Account debit balance (accumulated loss)], [Old partners bear it], [Debit the old partners in the old ratio.],
-  [Workmen Compensation Fund], [Old partners, after any claim], [Settle the claim first; only the excess is distributed.],
-  [Investment Fluctuation Fund], [Old partners, after any fall], [Meet the fall in investment value first; distribute the excess.],
+  columns: (1.1fr, 1.2fr, 1.7fr),
+  table.header[*Scenario*][*Claim Status*][*Accounting Treatment & Journal Entry*],
+  [*Case 1: No Claim*], [Admitted Claim = ₹0], [
+    Entire WCR distributed to old partners in old PSR: \
+    `WCR A/c Dr.` to `Old Partners' Capital A/cs Cr.`
+  ],
+  [*Case 2: Claim < Reserve*], [Claim is less than WCR balance], [
+    Amount equal to claim transferred to Provision; surplus distributed in old PSR: \
+    `WCR A/c Dr.` to `Provision for WC Claim A/c` (claim) + `Old Partners' Cap A/cs` (excess).
+  ],
+  [*Case 3: Claim = Reserve*], [Claim exactly equals WCR balance], [
+    Entire WCR transferred to Provision; old partners receive nothing: \
+    `WCR A/c Dr.` to `Provision for WC Claim A/c`.
+  ],
+  [*Case 4: Claim > Reserve*], [Claim exceeds WCR balance], [
+    Entire WCR absorbed; shortfall debited to Revaluation A/c (loss): \
+    `WCR A/c Dr.` (reserve) + `Revaluation A/c Dr.` (excess) to `Provision for WC Claim A/c` (total).
+  ],
 )
 
-== The two special funds
+== Deep Dive: Investment Fluctuation Reserve (IFR)
 
-- *Workmen Compensation Fund:* money set aside for possible compensation claims.
-  - *Claim equals the fund:* the whole fund goes to the claim; nothing is
-    distributed.
-  - *Claim is smaller:* claim is provided, the *excess* (fund − claim) is
-    distributed to old partners in the old ratio.
-  - *Claim is bigger:* the whole fund absorbs the claim and the *extra* amount is
-    *debited to the Revaluation Account* — it is a fresh loss on reconstitution
-    day.
-- *Investment Fluctuation Fund:* a cushion for a *fall* in the market value of
-  investments.
-  - *No fall, or fall smaller than the fund:* the fund (or the leftover part) is
-    distributed to old partners.
-  - *Fall equals the fund:* the fund is fully used against the investments;
-    nothing is distributed.
-  - *Fall bigger than the fund:* the fund is used up and the *extra fall* is
-    *debited to the Revaluation Account*.
+Investment Fluctuation Reserve is established to cushion against falls in the market value of investments compared to their historical book value:
+
+- *Case 1 (Market Value = Book Value):* Entire IFR credited to Old Partners' Capital A/cs in Old PSR.
+- *Case 2 (Fall in Value < IFR):* Fall credited to Investments A/c; remaining surplus IFR credited to Old Partners' Capital A/cs in Old PSR.
+- *Case 3 (Fall in Value = IFR):* Entire IFR credited to Investments A/c (`IFR A/c Dr.` to `Investments A/c Cr.`); nothing to partners.
+- *Case 4 (Fall in Value > IFR):* Entire IFR absorbed; excess decline debited to Revaluation A/c:
+  $ "IFR A/c" quad "Dr." quad [ "existing reserve" ] $
+  $ "Revaluation A/c" quad "Dr." quad [ "excess fall" ] $
+  $ quad quad "To Investments A/c" quad "Cr." quad [ "total drop in market value" ] $
+
+#worked-example("Worked Example — Comprehensive Reserve Allocation")[
+  P and Q share profits in $3:1$. On admission of R, the balance sheet shows: General Reserve ₹40,000; P&L (Cr.) ₹16,000; Workmen Compensation Reserve ₹30,000 (claim admitted is ₹22,000); Investment Fluctuation Reserve ₹12,000 (Investments book value ₹60,000, market value ₹45,000).
+
+  - *General Reserve:* P gets $40,000 times 3/4 = "₹30,000"$; Q gets $40,000 times 1/4 = "₹10,000"$.
+  - *Profit & Loss:* P gets $16,000 times 3/4 = "₹12,000"$; Q gets $16,000 times 1/4 = "₹4,000"$.
+  - *WCR:* Claim of ₹22,000 moved to Provision. Surplus ₹8,000 distributed: P gets ₹6,000; Q gets ₹2,000.
+  - *IFR:* Fall in market value $= 60,000 - 45,000 = "₹15,000"$. Entire IFR of ₹12,000 is absorbed; excess fall of ₹3,000 is debited to Revaluation Account (loss borne by P ₹2,250 and Q ₹750).
+]
+
+= 4. Valuation and Accounting Treatment of Goodwill
+
+Goodwill is an intangible asset representing the present monetary value of a firm's expected future super earnings arising from brand reputation, customer loyalty, prime location, and operational excellence.
+
+== Regulatory Framework: Mandatory Compliance with AS-26
+
+Under *Accounting Standard 26 (AS-26: Intangible Assets)* issued by ICAI:
+1. *Self-Generated (Inherent) Goodwill:* Internally generated goodwill *CANNOT* be recognized as an asset in the balance sheet because no monetary consideration was paid for its acquisition.
+2. *Purchased Goodwill:* Only purchased goodwill (where consideration in money or money's worth has been paid) can appear on the balance sheet.
+3. *Adjustment on Reconstitution:* Goodwill on reconstitution must be adjusted strictly through the *Capital / Current Accounts* of the partners. Goodwill account must *not* be opened or raised in the books.
+4. *Existing Goodwill in Balance Sheet:* Any goodwill already appearing in the balance sheet must be immediately written off by debiting Old Partners' Capital A/cs in their *Old PSR* (`Old Partners' Cap A/cs Dr.` to `Goodwill A/c Cr.`).
+
+== Valuation Methods
+
+=== 1. Average Profit Method
+- *Simple Average:*
+  $ "Goodwill" = "Adjusted Average Profit" times "Number of Years' Purchase" $
+  $ "Adjusted Average Profit" = (sum "Past Normal Profits") / "Number of Past Years" $
+  *Normal Profit Adjustments:* Deduct abnormal gains, non-operating income (e.g. rent, dividend, interest on non-trade investments), and speculative profits. Add back abnormal losses (theft, fire, voluntary retirement payments) and non-recurring expenses.
+- *Weighted Average Profit Method:* Applied when past profits exhibit a steady upward or downward trend:
+  $ "Weighted Average Profit" = (sum (P_i times W_i)) / (sum W_i) $
+
+=== 2. Super Profit Method
+Super profit represents the surplus of actual maintainable profits over the normal profits that an ordinary competitor in the industry would earn on equivalent capital employed:
+#formula-box(title: "Super Profit Valuation Equations")[
+  $ "Capital Employed" = "Total Tangible Assets" - "Outside Liabilities" $
+  $ "Normal Profit" = "Capital Employed" times "Normal Rate of Return (NRR)" / 100 $
+  $ "Super Profit" = "Actual Maintainable Average Profit" - "Normal Profit" $
+  $ "Goodwill" = "Super Profit" times "Number of Years' Purchase" $
+]
+
+=== 3. Capitalisation Methods
+- *Capitalisation of Average Profit:*
+  $ "Capitalised Value of Firm" = ("Actual Maintainable Average Profit" / "NRR") times 100 $
+  $ "Net Tangible Assets" = "Total Tangible Assets" - "Outside Liabilities" $
+  $ "Goodwill" = "Capitalised Value of Firm" - "Net Tangible Assets" $
+- *Capitalisation of Super Profit:*
+  $ "Goodwill" = ("Super Profit" / "NRR") times 100 $
+  > [!NOTE]
+  > Both capitalisation methods yield mathematically identical results for any given firm data.
+
+#worked-example("Worked Example — Comparative Goodwill Valuation")[
+  A firm's tangible assets are ₹8,00,000 and outside liabilities are ₹1,50,000. Normal rate of return is 10%. Past 3 years' profits: ₹80,000; ₹90,000; ₹1,00,000. Calculate goodwill: (a) at 3 years' purchase of Super Profit, (b) by Capitalisation of Average Profit.
+
+  - *Average Profit:* $(80,000 + 90,000 + 1,00,000) / 3 = "₹90,000"$.
+  - *Capital Employed:* $8,00,000 - 1,50,000 = "₹6,50,000"$.
+  - *Normal Profit:* $6,50,000 times 10% = "₹65,000"$.
+  - *Super Profit:* $90,000 - 65,000 = "₹25,000"$.
+  - *(a) Super Profit Method:* $"Goodwill" = 25,000 times 3 = "₹75,000"$.
+  - *(b) Capitalisation Method:* $"Capitalised Value" = 90,000 times 100 / 10 = "₹9,00,000"$.
+    $"Goodwill" = 9,00,000 - 6,50,000 = "₹2,50,000"$.
+    (Check: $25,000 times 100 / 10 = "₹2,50,000"$).
+]
+
+= 5. Admission of a Partner
+
+Under Section 31 of the Indian Partnership Act, 1932, a new partner can be admitted into an existing firm only with the *unanimous consent of all existing partners*, unless otherwise agreed in the partnership deed.
+
+== Determination of New Profit-Sharing Ratio & Sacrificing Ratio
+
+- *Case 1: When share of new partner is given without details of sacrifice:*
+  Let Total Profit = $1$. Remaining Share = $1 - "New Partner's Share"$. Old partners share the remainder in their old ratio.
+  $ "Sacrificing Ratio" = "Old Ratio" $
+- *Case 2: When new partner acquires share equally or in specific ratio:*
+  Deduct the acquired fraction directly from each old partner's share.
+- *Case 3: When old partners surrender a fraction "OF" their respective shares:*
+  Calculate actual sacrifice: $"Sacrifice" = "Old Share" times "Fraction Surrendered"$.
+  $"New Share" = "Old Share" - "Sacrifice"$.
+
+#figure(
+  image("assets/acc_reconstitution_goodwill_admission_retirement.png", width: 88%),
+  caption: [Admission, Retirement & Goodwill Protocols: Valuation equations, Premium pathways, and Section 37 dues.],
+)
+
+== Accounting for Goodwill on Admission (AS-26 Protocols)
 
 #table(
-  columns: (1.5fr, 1.4fr, 1.1fr),
-  table.header[*Event*][*Debit*][*Credit*],
-  [General Reserve distributed], [General Reserve A/c], [Old partners' Capital A/cs (old ratio)],
-  [P&L credit balance distributed], [Profit & Loss A/c], [Old partners' Capital A/cs (old ratio)],
-  [Accumulated loss adjusted], [Old partners' Capital A/cs (old ratio)], [Profit & Loss A/c],
-  [WCF: claim arises up to the fund], [Workmen Comp. Fund A/c], [Claim for Compensation A/c],
-  [WCF: fund exceeds claim], [Workmen Comp. Fund A/c], [Claim A/c + Old partners' Capital A/cs (excess, old ratio)],
-  [WCF: claim exceeds fund], [Workmen Comp. Fund A/c + Revaluation A/c], [Claim for Compensation A/c],
-  [IFF: fall covered by the fund], [Investment Fluctuation Fund A/c], [Investments A/c],
-  [IFF: fall exceeds the fund], [IFF A/c + Revaluation A/c], [Investments A/c],
-  [IFF: fund exceeds fall], [Investment Fluctuation Fund A/c], [Investments A/c + Old partners' Capital A/cs],
+  columns: (1.1fr, 1.3fr, 1.6fr),
+  table.header[*Circumstance*][*Cash Inflow*][*Mandatory Journal Entry Sequence*],
+  [*Paid Privately*], [None in firm], [No entry in the books of the firm.],
+  [*Brought in Cash & Retained*], [Cash / Bank rises], [
+    1. `Bank A/c Dr.` to `Premium for Goodwill A/c` \
+    2. `Premium for Goodwill A/c Dr.` to `Sacrificing Partners' Capital A/cs` *(in Sacrificing Ratio)*
+  ],
+  [*Brought in Cash & Withdrawn*], [Cash / Bank rises then falls], [
+    Pass the two entries above, followed by: \
+    `Sacrificing Partners' Capital A/cs Dr.` to `Bank A/c Cr.`
+  ],
+  [*Not Brought in Cash*], [No cash inflow], [
+    `New Partner's Current A/c Dr.` to `Sacrificing Partners' Capital A/cs Cr.` *(in Sacrificing Ratio)*
+  ],
+  [*Partly Brought in Cash*], [Partial cash inflow], [
+    `Bank A/c Dr.` (cash brought) + `New Partner's Current A/c Dr.` (unpaid) to `Sacrificing Partners' Capital A/cs Cr.`
+  ],
 )
 
-#worked-example("Worked Example — Four Piles, One Old Ratio")[
-  A and B share profits 3 : 2. On C's admission the books show: General Reserve
-  ₹40,000; P&L credit balance ₹20,000; Workmen Compensation Fund ₹25,000 with a
-  settled claim of ₹19,000; Investment Fluctuation Fund ₹10,000 with investments
-  down ₹14,000 in market value.
+== Hidden (Inferred) Goodwill
 
-  - *General Reserve:* A — 40,000 × 3/5 = *₹24,000*; B — 40,000 × 2/5 = *₹16,000*.
-  - *P&L balance:* A — 20,000 × 3/5 = *₹12,000*; B — 20,000 × 2/5 = *₹8,000*.
-  - *WCF:* claim ₹19,000 is provided first; excess = 25,000 − 19,000 = ₹6,000 →
-    A ₹3,600, B ₹2,400.
-  - *IFF:* fall ₹14,000; fund ₹10,000 covers the first ₹10,000; the extra ₹4,000
-    is *debited to Revaluation A/c* (A −₹2,400, B −₹1,600 in the old ratio).
-
-  Every rupee went to A and B alone — C, the incoming partner, receives *nothing*
-  from the firm's past.
+When the partnership agreement specifies the incoming partner's capital and profit share but does not explicitly disclose the firm's goodwill value:
+#formula-box(title: "Hidden Goodwill Computation")[
+  $ "Total Implied Capital of Firm" = "Incoming Partner's Capital" times 1 / ("Incoming Partner's Share") $
+  $ "Actual Combined Net Worth" = sum "Adjusted Capitals of All Partners (including incoming partner)" $
+  $ "Hidden Goodwill of Firm" = "Total Implied Capital" - "Actual Combined Net Worth" $
+  $ "Incoming Partner's Goodwill Share" = "Hidden Goodwill of Firm" times "Incoming Partner's Share" $
 ]
 
-= Goodwill: Nature, Factors and Valuation
+== Adjustment of Capitals on Admission
 
-Two chai stalls stand on the same crossing, with the same kettle, the same cups
-and the same price. One has a queue; the other has an empty bench. The difference
-is *reputation* — and reputation, in accounts, has a money value. That value is
-*goodwill*: the benefit a business earns because customers trust it, beyond what
-its bare assets could earn.
+1. *Adjustment on Basis of Incoming Partner's Capital:*
+   - Total Firm Capital $= "Incoming Partner's Capital" times 1 / ("New Share")$.
+   - Apportion total capital among all partners in New PSR.
+   - Compare new proportionate capital with adjusted old capitals; balance brought in or withdrawn in cash (or transferred to Current A/cs).
+2. *Calculating Incoming Partner's Capital on Basis of Old Partners' Adjusted Capitals:*
+   - Let Total Capital = $1$. Combined Share of Old Partners $= 1 - "New Partner's Share"$.
+   - $"Total Capital of New Firm" = ("Combined Adjusted Capitals of Old Partners") / (1 - "New Partner's Share")$.
+   - $"Incoming Partner's Capital" = "Total Capital of New Firm" times "New Partner's Share"$.
 
-- *Plain-words meaning:* goodwill is the value of a firm's reputation and
-  connections — its power to earn *more than normal profit*.
-- *It is an intangible asset:* you cannot touch it, but you can *value* it and
-  record it when it changes hands between partners.
-- *Why reconstitution wakes it up:* a new partner buys into the firm's earning
-  power, and a retiring partner sells his slice of it. Both need a number —
-  hence valuation.
-- *Goodwill in the books already?* If goodwill appears at an old value, it is
-  *first written off* among all partners in the old ratio, then the fresh
-  valuation takes over.
+#worked-example("Worked Example — Comprehensive Admission Adjustment")[
+  A and B share profits in $3:2$ with capitals of ₹1,50,000 and ₹1,00,000. C is admitted for 1/6 share, bringing his share of premium for goodwill in cash. Firm goodwill is valued at ₹90,000. Revaluation profit is ₹18,000 and General Reserve is ₹30,000. C brings proportionate capital.
 
-#analogy-box(title: "Everyday Example — The inherited tiffin service")[
-  A tiffin service run for 15 years sells 200 lunches a day with no advertising —
-  mothers recommend it to other mothers. A newcomer buying the business is not
-  just buying tiffin boxes and a bike; he is buying *the queue*. The extra money
-  he pays over the value of boxes, bike and stock is exactly what accountants
-  call goodwill: the price of standing in the queue without waiting 15 years.
+  - *Goodwill Premium:* C's share $= 90,000 times 1/6 = "₹15,000"$. Credited to A (₹9,000) and B (₹6,000) in sacrificing ratio ($3:2$).
+  - *Revaluation Profit:* A receives $18,000 times 3/5 = "₹10,800"$; B receives $18,000 times 2/5 = "₹7,200"$.
+  - *General Reserve:* A receives $30,000 times 3/5 = "₹18,000"$; B receives $30,000 times 2/5 = "₹12,000"$.
+  - *Adjusted Capitals:*
+    - A: $1,50,000 + 9,000 + 10,800 + 18,000 = "₹1,87,800"$.
+    - B: $1,00,000 + 6,00,000$ (wait: $1,00,000 + 6,000 + 7,200 + 12,000 = "₹1,25,200"$).
+    - Combined Adjusted Capitals $= 1,87,800 + 1,25,200 = "₹3,13,000"$.
+  - *C's Proportionate Capital:* Old partners represent $1 - 1/6 = 5/6$ share.
+    $"Total Capital" = 3,13,000 times 6/5 = "₹3,75,600"$.
+    $"C's Capital Contribution" = 3,75,600 times 1/6 = "₹62,600"$.
 ]
 
-== What pushes goodwill up or down
+= 6. Retirement and Death of a Partner
 
-- *Location:* a shop at a busy crossing beats the same shop down a quiet lane.
-- *Time in business:* longer track record builds trust that a newcomer cannot copy.
-- *Quality and regularity of profit:* steady profits raise goodwill; jumpy ones lower it.
-- *Risk and competition:* a protected, low-risk business carries higher goodwill.
-- *Management and contacts:* able partners, loyal staff and exclusive supply deals all add value.
-- *Capital needed:* a business earning the same profit with less capital is more valuable.
+Under Section 32 of the Indian Partnership Act, 1932, a partner may retire with the consent of all partners, in accordance with an express agreement, or by giving written notice in a partnership at will. Death dissolves the partnership as between the partners, but the surviving partners may reconstitute the firm.
 
-== Method 1: Average profit method
+== Gaining Ratio & Goodwill Settlement
 
-#formula-box(title: "Average Profit Method")[
-  $ "Goodwill" = "Average profit" times "Number of years' purchase" $
-  $ "Average profit" = "Total profits of past years" / "Number of years" $
-  $ "Weighted average" = (P_1 W_1 + P_2 W_2 + P_3 W_3)/(W_1 + W_2 + W_3) $
+- *Gaining Ratio:* $"Gain" = "New Share" - "Old Share"$.
+- *Goodwill Adjustment:* As per AS-26, no goodwill account is raised. The retiring/deceased partner is credited with his share of goodwill, compensated by the continuing partners in their *Gaining Ratio*:
+  $ "Continuing Partners' Capital/Current A/cs" quad "Dr." quad [ "in Gaining Ratio" ] $
+  $ quad quad "To Retiring / Deceased Partner's Capital A/c" quad "Cr." quad [ "his share of goodwill" ] $
 
-  *Letters:* P = each year's profit; W = the weight given to that year
-  (recent years get bigger weights). Use the weighted version when profits show
-  a clear rising or falling trend.
+== Determination of Amount Due to Deceased Partner & Executor's Account
+
+The balance in the deceased partner's Capital Account is transferred to the *Executor's Account*:
+1. Credit balance of Capital & Current Accounts.
+2. Share of Revaluation Profit and Reserves/Accumulated Profits.
+3. Share of Goodwill.
+4. Interest on Capital and Salary accrued up to the date of death.
+5. *Share of Interim Profit up to date of death:*
+   - *If continuing partners' PSR does not change:*
+     `Profit & Loss Suspense A/c Dr.` to `Deceased Partner's Capital A/c Cr.`
+   - *If continuing partners' PSR changes:*
+     `Gaining Partners' Capital A/cs Dr. (Gaining Ratio)` to `Deceased Partner's Capital A/c Cr.`
+   - *Time Basis:* $"Interim Profit" = "Previous Profit" times "Months" / 12 times "Share"$.
+   - *Turnover Basis:* $"Interim Profit" = ("Previous Profit" / "Previous Sales") times "Interim Sales" times "Share"$.
+6. *Deductions:* Drawings, Interest on Drawings, Share of Accumulated Losses, Share of Revaluation Loss.
+
+== Section 37 of Indian Partnership Act, 1932 & Executor's Settlement
+
+#formula-box(title: "Section 37 Default Settlement Protocol")[
+  If the amount due to an outgoing partner or deceased partner's executor is not settled immediately and the remaining partners continue the business with firm property without settlement:
+  The outgoing partner or executor has the legal option to claim:
+  1. *Interest @ 6% per annum* on the unpaid balance from date of retirement/death to date of payment; *OR*
+  2. Such share of subsequent profits earned as is *attributable to the use of his capital/property*.
 ]
 
-#worked-example("Worked Example — Simple and Weighted")[
-  Profits of four years: ₹40,000; ₹50,000; ₹60,000; ₹70,000. Goodwill at
-  3 years' purchase.
-
-  - *Simple average:* (40,000 + 50,000 + 60,000 + 70,000) ÷ 4 = 2,20,000 ÷ 4 =
-    ₹55,000. Goodwill = 55,000 × 3 = *₹1,65,000*.
-  - *Weighted average (weights 1, 2, 3, 4):* products = 40,000 + 1,00,000 +
-    1,80,000 + 2,80,000 = ₹6,00,000; weights = 10. Weighted average =
-    6,00,000 ÷ 10 = ₹60,000. Goodwill = 60,000 × 3 = *₹1,80,000*.
-  - *Why the weighted figure is higher:* recent, bigger profits count for more —
-    the trend is upward, and the weighted method respects that.
+#worked-example("Worked Example — Settlement of Executor via Instalments with Interest")[
+  M died on 31st March 2026. The total amount due to his executor after all adjustments is ₹1,00,000. The firm agrees to settle the liability in two equal annual instalments with interest @ 6% per annum on the outstanding balance.
+  - *Year 1 (31st March 2027):*
+    - Interest due: $1,00,000 times 6% = "₹6,000"$.
+    - Total payment made: Principal ₹50,000 + Interest ₹6,000 = *₹56,000*.
+    - Outstanding principal balance: $1,00,000 - 50,000 = "₹50,000"$.
+  - *Year 2 (31st March 2028):*
+    - Interest due: $50,000 times 6% = "₹3,000"$.
+    - Total payment made: Principal ₹50,000 + Interest ₹3,000 = *₹53,000*.
+  - *Total Payment over Two Years:* ₹1,09,000 (Principal ₹1,00,000 + Total Interest ₹9,000).
 ]
 
-- *Adjust the profits first:* strip out non-operating income (rent received,
-  interest on investments) and one-off windfalls — only normal trading profits
-  belong in the average.
-- *Choice of years' purchase:* the multiplier is agreed between the partners;
-  a longer purchase period means a bigger goodwill figure.
-- *When the trend matters:* profits rising or falling steadily? Switch to the
-  weighted average, where recent years count for more.
-
-== Method 2: Super profit method
-
-#formula-box(title: "Super Profit Method")[
-  $ "Normal profit" = "Capital employed" times "NRR" / 100 $
-  $ "Super profit" = "Average actual profit" - "Normal profit" $
-  $ "Goodwill" = "Super profit" times "Number of years' purchase" $
-
-  *Letters:* NRR = normal rate of return, the return a typical business of this
-  kind earns. Super profit is the *extra* earning power — goodwill prices the
-  extra, not the whole profit.
-]
-
-#worked-example("Worked Example — Pricing the Extra")[
-  Capital employed ₹4,00,000. Normal rate of return 10%. Average actual profit
-  ₹52,000. Goodwill at 3 years' purchase of super profit.
-
-  - *Normal profit:* 4,00,000 × 10/100 = ₹40,000.
-  - *Super profit:* 52,000 − 40,000 = ₹12,000.
-  - *Goodwill:* 12,000 × 3 = *₹36,000*.
-
-  If the actual profit had been exactly ₹40,000, super profit would be zero —
-  and goodwill would be *nil*. No extra earning, no goodwill.
-]
-
-== Method 3: Capitalisation methods
-
-#formula-box(title: "Capitalisation of Average Profit")[
-  $ "Capitalised value" = "Average profit" times 100 / "NRR" $
-  $ "Goodwill" = "Capitalised value" - "Net assets" $
-  $ "Net assets" = "All assets" - "Outside liabilities" $
-
-  Exclude goodwill itself, fictitious assets and non-trading investments from
-  the asset side. Goodwill here is the *gap* between what the firm is worth by
-  its profits and what it actually owns.
-]
-
-#formula-box(title: "Capitalisation of Super Profit")[
-  $ "Goodwill" = "Super profit" times 100 / "NRR" $
-
-  Same idea, one step shorter: instead of comparing values, capitalise the
-  *extra* profit directly at the normal rate.
-]
-
-- *Read the question's wording:* "capitalise the average profit" sends you to
-  the first box; "capitalise the super profit" sends you to the second.
-- *Both routes must agree:* for the same firm, the two capitalisation methods
-  land on the same goodwill — a built-in self-check for your own arithmetic.
-
-#worked-example("Worked Example — Both Routes, One Answer")[
-  Average profit ₹60,000; normal rate of return 10%; net assets ₹5,50,000.
-
-  - *Capitalisation of average profit:* capitalised value = 60,000 × 100/10 =
-    ₹6,00,000. Goodwill = 6,00,000 − 5,50,000 = *₹50,000*.
-  - *Capitalisation of super profit:* normal profit = 5,50,000 × 10/100 =
-    ₹55,000. Super profit = 60,000 − 55,000 = ₹5,000. Goodwill = 5,000 × 100/10
-    = *₹50,000*.
-  - *Check:* both routes must agree — and they do. If they ever disagree in your
-    working, one line of arithmetic has slipped.
-]
-
-#table(
-  columns: (0.95fr, 1.5fr, 1.55fr),
-  table.header[*Method*][*Core formula*][*Best when*],
-  [Average profit], [Average profit × years' purchase], [Profits are steady and the past is a fair guide.],
-  [Super profit], [(Actual − normal profit) × years' purchase], [The firm clearly earns above the normal rate.],
-  [Capitalisation], [Capitalised value − net assets], [You want the whole-business view of value.],
+#figure(
+  image("assets/acc_reconstitution_mindmap.png", width: 84%),
+  caption: [Master Synthesis Mindmap: Structural framework of Unit II Reconstitution of a Partnership Firm.],
 )
 
-= Admission of a Partner
-
-A growing firm needs money and talent, and a newcomer has both. The moment he
-walks in, every old rule of sharing is renegotiated — *all existing partners must
-consent*, the old agreement ends, and a new agreement takes over. Admission is
-the busiest reconstitution event because it triggers *every* adjustment this
-chapter has taught: a new ratio, a goodwill premium, a fresh revaluation, reserve
-distribution and recut capitals.
-
-#figure(image("assets/reconstitution_flow.png", width: 100%), caption: [The admission journey — six stops from consent to the new profit-sharing ratio.])
-
-- *Two questions decide everything:* *how much share* the new partner gets, and
-  *what he pays* for it.
-- *Old partners sacrifice:* whatever share C now holds came out of A's and B's
-  pockets — the sacrificing ratio measures those pockets.
-- *Past profits stay past:* revaluation profit, reserves and accumulated profits
-  belong to the old partners in the *old ratio*.
-- *Future profit is shared fresh:* from the admission date, the *new ratio*
-  rules.
-
-== New ratio and sacrificing ratio
-
-#worked-example("Worked Example — The New Ratio Falls Out of the Sacrifices")[
-  A and B share 3 : 2. C is admitted for 1/6 of the profit. A gives up 1/10 of
-  his old share-pattern and B gives up 1/15.
-
-  - *A's new share:* 3/5 − 1/10 = 6/10 − 1/10 = *1/2*.
-  - *B's new share:* 2/5 − 1/15 = 6/15 − 1/15 = *1/3*.
-  - *C's share:* *1/6*.
-  - *New ratio:* 1/2 : 1/3 : 1/6 = *3 : 2 : 1*.
-  - *Sacrificing ratio:* 1/10 : 1/15 = *3 : 2* — the ratio in which every
-    goodwill rupee is split between A and B.
-
-  Notice the shortcut hiding here: when old partners sacrifice *in their old
-  ratio*, the new ratio keeps the old one intact and simply appends the new
-  partner's share.
+#cheatsheet-box(title: "Master Reconstitution of Partnership Revision Cheatsheet")[
+  - *Ratios:* Sacrificing Share = $"Old" - "New"$ | Gaining Share = $"New" - "Old"$ | $sum "Sacrifices" = sum "Gains"$.
+  - *Revaluation A/c:* Nominal A/c | Dr: Asset fall, Liab rise, Unrec Liab | Cr: Asset rise, Liab fall, Unrec Asset | Balance to Old Partners in Old PSR.
+  - *AS-26 Rule:* Internally generated goodwill never capitalised; adjusted via Capital/Current A/cs. Existing goodwill written off in Old PSR.
+  - *Reserves:* Free reserves distributed in Old PSR. WCR/IFR claims & falls absorbed; excess to Old PSR; shortfalls debited to Revaluation A/c.
+  - *Goodwill:* Super Profit = Actual − Normal Profit | Cap of Avg Profit = (Avg Profit / NRR × 100) − Net Assets.
+  - *Hidden Goodwill:* [Incoming Partner's Capital × (1 / Share)] − [Combined Adjusted Capitals of All Partners].
+  - *Admission Goodwill:* Cash: `Premium to Sacrificing Partners (SR)` | No Cash: `New Partner Current Dr. to Sacrificing Partners Cap Cr.`
+  - *Interim Profit on Death:* `P&L Suspense Dr.` to `Deceased Partner Cap Cr.` (or via Gaining Ratio if continuing PSR changes).
+  - *Section 37:* 6% p.a. default interest on unpaid executor dues OR attributable share of subsequent profits.
 ]
 
-== Premium for goodwill: the four treatments
+#exception-box(title: "Top 7 High-Frequency CUET Traps in Reconstitution Accounting")[
+  1. *Sacrificing vs Old Ratio:* Admission premium is credited strictly in *Sacrificing Ratio*. Zero sacrifice = zero premium!
+  2. *AS-26 Ban:* Opening a "Goodwill Account" for self-generated goodwill is illegal. Adjust strictly via Capital/Current Accounts.
+  3. *New Partner Revaluation Error:* Revaluation profit/loss belongs strictly to *old partners in old PSR*. Incoming partners never share!
+  4. *Capital Depletion Error:* When incoming partner brings no cash for goodwill, debit his *Current A/c* to keep capital intact.
+  5. *WCR Claim Overflow:* When claim exceeds reserve, excess is a fresh loss *debited to Revaluation A/c*, not capital directly.
+  6. *Interim Profit Shift:* If continuing partners alter PSR on death, interim profit *must be debited to Gaining Partners in Gaining Ratio*.
+  7. *Section 37 Charge:* Section 37 interest (6% p.a.) is a *mandatory charge against profit*, payable even in loss years!
+]
 
-#table(
-  columns: (1.05fr, 1.25fr, 1.7fr),
-  table.header[*Case*][*Cash position*][*Treatment in the books*],
-  [Premium paid privately], [Money never enters the firm], [No entry in the firm's books — the new partner pays the old partners directly.],
-  [Premium brought in cash and retained], [Bank balance rises], [Bank A/c Dr → Premium for Goodwill Cr; then Premium for Goodwill A/c Dr → Old partners' Capital A/cs (sacrificing ratio).],
-  [Premium brought in, then withdrawn], [Bank rises, then falls], [Same two entries as above; then Old partners' Capital A/cs Dr → Bank Cr (withdrawal).],
-  [Premium not brought in cash], [Nothing reaches the bank], [New partner's Current A/c Dr → Old partners' Capital A/cs Cr (sacrificing ratio) — his goodwill debt sits in his current account.],
+#pagebreak()
+
+= CUET UG Exam-Style Practice Questions
+
+#mcq(
+  1,
+  [Which of the following events reconstitutes a partnership firm without dissolving it?],
+  (
+    [Admission of a new partner],
+    [Court order closing the business],
+    [Dissolution of the firm],
+    [Compulsory winding up of business],
+  ),
+)
+#solution(
+  1,
+  [
+    Admission of a partner reconstitutes the partnership agreement while the firm's business continues. Dissolution of the firm terminates the business entity completely.
+  ],
+  answer: [A],
 )
 
-The premium always ends up *credited to the old partners in the sacrificing
-ratio* — the only question is which route it took through the books.
-
-== Revaluation, reserves and capitals at admission
-
-- *Revaluation runs as usual:* the Revaluation Account is prepared exactly as
-  earlier in this chapter, and its profit or loss goes to the *old partners in
-  the old ratio* — the new partner receives nothing and bears nothing.
-- *Reserves move the same way:* General Reserve, P&L balance, Workmen
-  Compensation Fund and Investment Fluctuation Fund are adjusted among *old
-  partners in the old ratio*, exactly as the reserve section showed.
-- *Capitals are then recut:* the partners fix the new capital structure — either
-  each partner's capital is made *proportionate* to his share, or the new
-  partner simply brings the agreed amount.
-
-#formula-box(title: "Proportionate Capital of the New Partner")[
-  $ "Total capital of the new firm" = "Combined adjusted capitals of old partners" times 6/5 $
-  $ "New partner's capital" = "Total capital" times "his share" $
-
-  The 6/5 appears because when the new partner takes 1/6, the old partners
-  together hold 5/6 — their combined adjusted capital *represents* 5/6 of the
-  new total.
-]
-
-== One complete worked example
-
-#worked-example("Worked Example — Admission from First Entry to Final Capital")[
-  A and B share profits 3 : 2, capitals ₹1,50,000 and ₹1,00,000. Books show
-  General Reserve ₹25,000 and P&L credit balance ₹10,000. C is admitted for
-  1/6 share; the new ratio is 3 : 2 : 1 (sacrifices 1/10 by A, 1/15 by B).
-  Firm goodwill is valued at ₹1,80,000. Revaluation: Land & Building up
-  ₹20,000; Machinery down ₹5,000; creditors now payable ₹2,000 less. C is to
-  bring his proportionate capital and his premium in cash.
-
-  - *Premium:* 1/6 × 1,80,000 = ₹30,000 → A gets 30,000 × 3/5 = *₹18,000*;
-    B gets *₹12,000*.
-  - *Revaluation profit:* 20,000 − 5,000 + 2,000 = *₹17,000* → A ₹10,200,
-    B ₹6,800.
-  - *Reserves:* GR 25,000 → A ₹15,000, B ₹10,000; P&L 10,000 → A ₹6,000,
-    B ₹4,000.
-  - *Adjusted capitals:* A = 1,50,000 + 18,000 + 15,000 + 6,000 + 10,200 =
-    *₹1,99,200*; B = 1,00,000 + 12,000 + 10,000 + 4,000 + 6,800 = *₹1,32,800*.
-  - *Total capital of the new firm:* (1,99,200 + 1,32,800) × 6/5 = 3,32,000 ×
-    6/5 = *₹3,98,400*; C's capital = 3,98,400 × 1/6 = *₹66,400*.
-  - *C pays in:* 66,400 (capital) + 30,000 (premium) = *₹96,400*.
-
-  #table(
-    columns: (1.9fr, 0.8fr, 0.8fr),
-    table.header[*Journal entry*][*Dr (₹)*][*Cr (₹)*],
-    [Bank A/c ... Dr.], [96,400], [],
-    [#h(1.2em)To C's Capital A/c], [], [66,400],
-    [#h(1.2em)To Premium for Goodwill A/c], [], [30,000],
-    [Premium for Goodwill A/c ... Dr.], [30,000], [],
-    [#h(1.2em)To A's Capital A/c], [], [18,000],
-    [#h(1.2em)To B's Capital A/c], [], [12,000],
-    [General Reserve A/c ... Dr.], [25,000], [],
-    [#h(1.2em)To A's Capital A/c], [], [15,000],
-    [#h(1.2em)To B's Capital A/c], [], [10,000],
-    [Profit & Loss A/c ... Dr.], [10,000], [],
-    [#h(1.2em)To A's Capital A/c], [], [6,000],
-    [#h(1.2em)To B's Capital A/c], [], [4,000],
-    [Land & Building A/c ... Dr.], [20,000], [],
-    [#h(1.2em)To Revaluation A/c], [], [20,000],
-    [Revaluation A/c ... Dr.], [7,000], [],
-    [#h(1.2em)To Machinery A/c], [], [5,000],
-    [#h(1.2em)To Creditors A/c], [], [2,000],
-    [Revaluation A/c ... Dr.], [17,000], [],
-    [#h(1.2em)To A's Capital A/c], [], [10,200],
-    [#h(1.2em)To B's Capital A/c], [], [6,800],
-  )
-
-  Every debit equals its credits: 96,400; 30,000; 25,000; 10,000; 20,000;
-  7,000; 17,000. The books now carry three capitals — ₹1,99,200, ₹1,32,800 and
-  ₹66,400 — and the new 3 : 2 : 1 ratio takes over.
-]
-
-= Retirement and Death of a Partner
-
-A partner retires, or death takes him away. Either way the firm does not close —
-the remaining partners carry on, and the outgoing partner (or his family) must be
-*paid out fully and fairly*. Retirement and death run on the same machinery as
-admission, with one big flip: instead of *sacrificing*, the continuing partners
-are now *gaining* — and they pay for what they gain.
-
-- *Gaining ratio replaces sacrificing ratio:* at retirement, gain = new share −
-  old share, for each continuing partner.
-- *The outgoing partner's claim is built in parts:* capital, goodwill, revaluation
-  profit, reserves — less anything he owes the firm.
-- *Goodwill is paid by the gainers:* the continuing partners compensate the
-  outgoing partner *in the gaining ratio*.
-- *On death, the claim passes to the executor:* the legal representative receives
-  the balance through an *Executor's Account*, often paid as a loan in
-  instalments.
-
-Two ideas run this section, and both are mirrors of ideas you already own from
-admission. The first is the *gaining ratio* — admission made old partners give
-share up, retirement makes the continuing partners pick share up. The second is
-the *outgoing partner's claim* — a tidy list of additions and deductions that
-ends in one number, and on death walks into the executor's hands.
-
-- *Nothing is estimated:* every rupee of the claim is traced to a book figure —
-  capital, goodwill share, revaluation profit, reserves, minus drawings.
-
-== Gaining ratio and the goodwill payment
-
-#worked-example("Worked Example — Who Pays the Outgoing Partner")[
-  A, B and C share 5 : 3 : 2. B retires; A and C will share future profits
-  3 : 2. Firm's goodwill is valued at ₹1,50,000.
-
-  - *New shares:* A — 3/5; C — 2/5. *Old shares:* A — 1/2; C — 1/5.
-  - *A gains:* 3/5 − 1/2 = 1/10. *C gains:* 2/5 − 1/5 = 1/5.
-  - *Gaining ratio:* 1/10 : 1/5 = *1 : 2*.
-  - *B's goodwill share:* 3/10 × 1,50,000 = *₹45,000*.
-  - *Split in the gaining ratio:* A pays 45,000 × 1/3 = *₹15,000*; C pays
-    45,000 × 2/3 = *₹30,000*.
-  - *Entry:* A's Capital A/c Dr ₹15,000; C's Capital A/c Dr ₹30,000 — To B's
-    Capital A/c ₹45,000.
-]
-
-== Building the retiring partner's claim
-
-#table(
-  columns: (1fr, 1fr),
-  table.header[*Added to the claim*][*Deducted from the claim*],
-  [Credit balance of Capital (and Current) A/c], [Drawings and interest on drawings],
-  [Interest on capital and salary due], [Share of accumulated losses (debit P&L balance)],
-  [Share of goodwill (in the gaining ratio of gainers)], [Any loan the partner owes the firm],
-  [Share of revaluation profit and reserves], [],
+#mcq(
+  2,
+  [A and B share profits in 3 : 2. C is admitted for a 1/5 share, and the new ratio is 5 : 3 : 2. If firm's goodwill is ₹1,00,000, A's share of premium is:],
+  (
+    [₹10,000],
+    [₹12,000],
+    [₹8,000],
+    [₹20,000],
+  ),
+)
+#solution(
+  2,
+  [
+    Sacrifices: A = 3/5 − 5/10 = 1/10; B = 2/5 − 3/10 = 1/10 (ratio 1 : 1). C's premium = 1/5 × ₹1,00,000 = ₹20,000. A gets 1/2 × ₹20,000 = ₹10,000.
+  ],
+  answer: [A],
 )
 
-== Death of a partner: the executor's chain
+#mcq(
+  3,
+  [A, B and C share profits in 3 : 2 : 1. A retires, and B and C agree to share future profits in 3 : 2. The gaining ratio of B and C is:],
+  (
+    [3 : 2],
+    [1 : 1],
+    [8 : 7],
+    [7 : 8],
+  ),
+)
+#solution(
+  3,
+  [
+    Gains: B = 3/5 − 2/6 = 8/30; C = 2/5 − 1/6 = 7/30. The gaining ratio of B and C is 8 : 7.
+  ],
+  answer: [C],
+)
 
-- *Executor's Account:* on death, the deceased partner's Capital Account is
-  closed and its balance is transferred to the *Executor's Account* — the legal
-  representative's claim.
-- *The balance usually becomes a loan:* unless paid at once, the executor's
-  balance is moved to the *Executor's Loan Account*, which earns *interest*.
-- *Interest at 6% p.a. by default:* when the deed is silent, the loan to the
-  executor carries 6% per annum until it is repaid.
-- *Instalment repayment:* the loan is often cleared in equal yearly instalments,
-  with interest charged on the *balance still outstanding* — so the interest
-  bill shrinks every year.
+#mcq(
+  4,
+  [On reconstitution of a firm, the value of Land & Building increases by ₹50,000. In the accounting books, this increase is:],
+  (
+    [Debited to Revaluation A/c],
+    [Credited to Realisation A/c],
+    [Credited to Revaluation A/c],
+    [Debited to Partners' Capital A/cs],
+  ),
+)
+#solution(
+  4,
+  [
+    Revaluation Account is a nominal account. Any increase in asset value represents a gain and is credited to Revaluation A/c.
+  ],
+  answer: [C],
+)
 
-#worked-example("Worked Example — Executor Paid in Two Instalments with Interest")[
-  R dies on 31 March. His claim is built as: capital ₹80,000 + share of goodwill
-  ₹25,000 + share of revaluation profit ₹9,000 + share of reserves ₹6,000 =
-  *₹1,20,000*, due to his executor. The firm pays in two equal annual
-  instalments with interest at 6% p.a. on the outstanding balance.
+#mcq(
+  5,
+  [A firm has a Workmen Compensation Reserve of ₹80,000. At reconstitution, an admitted compensation claim is ₹92,000. The excess ₹12,000 is:],
+  (
+    [Credited to Revaluation A/c],
+    [Debited to Revaluation A/c],
+    [Distributed among old partners],
+    [Borne by the incoming partner],
+  ),
+)
+#solution(
+  5,
+  [
+    The initial ₹80,000 is absorbed by the reserve. The excess claim of ₹12,000 is a reconstitution loss debited to Revaluation Account.
+  ],
+  answer: [B],
+)
 
-  - *Year 1 interest:* 1,20,000 × 6/100 = *₹7,200*. Payment = 60,000 + 7,200 =
-    *₹67,200*. Balance left: 1,20,000 − 60,000 = ₹60,000.
-  - *Year 2 interest:* 60,000 × 6/100 = *₹3,600*. Payment = 60,000 + 3,600 =
-    *₹63,600*. Loan fully cleared.
-  - *Total paid:* 67,200 + 63,600 = *₹1,30,800* — principal ₹1,20,000 plus
-    interest ₹10,800.
+#pagebreak()
 
-  *Executor's Loan Account*
+#mcq(
+  6,
+  [Investments appear at ₹1,00,000 with an Investment Fluctuation Reserve of ₹15,000. If market value is ₹88,000, the surplus reserve of ₹3,000 is:],
+  (
+    [Debited to Revaluation A/c],
+    [Credited to Old Partners' Capitals in old PSR],
+    [Credited to Investments A/c],
+    [Retained in the new Balance Sheet],
+  ),
+)
+#solution(
+  6,
+  [
+    The fall of ₹12,000 is covered by IFR. The remaining surplus of ₹3,000 (₹15,000 − ₹12,000) is credited to old partners in their old PSR.
+  ],
+  answer: [B],
+)
 
-  #table(
-    columns: (1.55fr, 0.7fr, 1.55fr, 0.7fr),
-    table.header[*Dr. Particulars*][*₹*][*Cr. Particulars*][*₹*],
-    [To Bank — 1st instalment + interest], [67,200], [By R's Capital A/c], [1,20,000],
-    [To Bank — 2nd instalment + interest], [63,600], [By Interest on loan — year 1], [7,200],
-    [], [], [By Interest on loan — year 2], [3,600],
-    [], [1,30,800], [], [1,30,800],
-  )
+#mcq(
+  7,
+  [Capital employed is ₹5,00,000, NRR is 10%, and average maintainable profit is ₹62,000. Goodwill at 2 years' purchase of super profit is:],
+  (
+    [₹12,000],
+    [₹24,000],
+    [₹50,000],
+    [₹62,000],
+  ),
+)
+#solution(
+  7,
+  [
+    Normal profit = ₹5,00,000 × 10% = ₹50,000. Super profit = ₹62,000 − ₹50,000 = ₹12,000. Goodwill = ₹12,000 × 2 = ₹24,000.
+  ],
+  answer: [B],
+)
 
-  - *Opening entry:* R's Capital A/c Dr ₹1,20,000 — To Executor's A/c ₹1,20,000.
-  - *Yearly interest entries:* Interest A/c Dr — To Executor's Loan A/c
-    (₹7,200, then ₹3,600). Interest is a *charge* against the firm's profit,
-    like any other loan interest.
-]
+#mcq(
+  8,
+  [Average profit is ₹60,000, NRR is 10%, and net tangible assets are ₹5,50,000. The value of goodwill by Capitalisation of Average Profit is:],
+  (
+    [₹50,000],
+    [₹60,000],
+    [₹55,000],
+    [₹1,10,000],
+  ),
+)
+#solution(
+  8,
+  [
+    Capitalised value = ₹60,000 × 100/10 = ₹6,00,000. Goodwill = Capitalised value − Net assets = ₹6,00,000 − ₹5,50,000 = ₹50,000.
+  ],
+  answer: [A],
+)
 
-= Journal Entry Cheatsheet: the Whole Unit in One Table
+#mcq(
+  9,
+  [Adjusted capitals of A and B are ₹1,20,000 and ₹80,000. C is admitted for a 1/4 share with ₹1,00,000 capital. Hidden goodwill of the firm is:],
+  (
+    [₹50,000],
+    [₹1,00,000],
+    [₹25,000],
+    [₹75,000],
+  ),
+)
+#solution(
+  9,
+  [
+    Total implied capital = ₹1,00,000 × 4 = ₹4,00,000. Actual combined capitals = ₹1,20,000 + ₹80,000 + ₹1,00,000 = ₹3,00,000. Hidden goodwill = ₹1,00,000.
+  ],
+  answer: [B],
+)
 
-#cheatsheet-box(title: "Journal Entry Cheatsheet — Unit II")[
-  #table(
-    columns: (1.35fr, 1.25fr, 1.25fr),
-    table.header[*Item*][*Debit*][*Credit*],
-    [Premium for goodwill brought in cash], [Bank A/c], [Premium for Goodwill A/c],
-    [Premium given to old partners], [Premium for Goodwill A/c], [Old partners' Capital A/cs (sacrificing ratio)],
-    [Premium not brought in cash], [New partner's Current A/c], [Old partners' Capital A/cs (sacrificing ratio)],
-    [Asset value rises], [Asset A/c], [Revaluation A/c],
-    [Asset value falls], [Revaluation A/c], [Asset A/c],
-    [Liability increases], [Revaluation A/c], [Liability A/c],
-    [Liability decreases], [Liability A/c], [Revaluation A/c],
-    [Revaluation profit closed], [Revaluation A/c], [Old partners' Capital A/cs (old ratio)],
-    [Revaluation loss closed], [Old partners' Capital A/cs (old ratio)], [Revaluation A/c],
-    [General Reserve distributed], [General Reserve A/c], [Old partners' Capital A/cs (old ratio)],
-    [P&L credit balance distributed], [Profit & Loss A/c], [Old partners' Capital A/cs (old ratio)],
-    [Accumulated loss adjusted], [Old partners' Capital A/cs (old ratio)], [Profit & Loss A/c],
-    [WCF claim exceeds the fund], [Revaluation A/c], [Claim for Compensation A/c],
-    [IFF fall exceeds the fund], [Revaluation A/c], [Investments A/c],
-    [Goodwill paid at retirement / death], [Continuing partners' Capital A/cs (gaining ratio)], [Outgoing partner's Capital A/c],
-    [Existing goodwill in books written off], [All partners' Capital A/cs (old ratio)], [Goodwill A/c],
-    [Capital balance on death transferred], [Deceased Partner's Capital A/c], [Executor's A/c],
-    [Interest on executor's loan], [Interest A/c], [Executor's Loan A/c],
-  )
+#mcq(
+  10,
+  [Under AS-26, when an incoming partner cannot bring his share of goodwill premium in cash, the debit is made to:],
+  (
+    [Incoming Partner's Current A/c],
+    [Goodwill Account],
+    [Sacrificing Partners' Capital A/cs],
+    [Profit and Loss Adjustment A/c],
+  ),
+)
+#solution(
+  10,
+  [
+    Under AS-26, self-generated goodwill cannot be raised. The new partner's Current A/c is debited to preserve his agreed capital contribution.
+  ],
+  answer: [A],
+)
 
-  #v(4pt)
-  *Ratio rules to carry everywhere:* sacrificing ratio = old − new; gaining
-  ratio = new − old; revaluation profit and reserves always travel in the *old*
-  ratio; goodwill compensation travels in the *sacrificing* ratio at admission
-  and the *gaining* ratio at retirement; executor's loan earns 6% p.a. when the
-  deed is silent.
-]
+#pagebreak()
 
-= Common Errors and Special Cases
+#mcq(
+  11,
+  [Adjusted capitals of A and B (sharing 3 : 2) are ₹1,80,000 and ₹1,20,000. C is admitted for 1/5 share. C's proportionate capital contribution is:],
+  (
+    [₹60,000],
+    [₹80,000],
+    [₹75,000],
+    [₹1,00,000],
+  ),
+)
+#solution(
+  11,
+  [
+    Combined capital = ₹3,00,000 representing 4/5 share. Total capital = ₹3,00,000 × 5/4 = ₹3,75,000. C's capital = ₹3,75,000 × 1/5 = ₹75,000.
+  ],
+  answer: [C],
+)
 
-#exception-box(title: "Common Errors & Special Cases")[
-  #table(
-    columns: (1.45fr, 1.55fr),
-    table.header[*The mistake students make*][*The correct treatment*],
-    [Sharing revaluation profit with the incoming partner],
-    [Never. Revaluation profit/loss goes to the *old partners only*, in the *old ratio*.],
-    [Using the new ratio as the sacrificing ratio],
-    [Sacrifice = *old share − new share*, computed partner by partner; the new ratio alone tells you nothing.],
-    [Distributing reserves in the new ratio],
-    [Reserves and accumulated profits are always distributed in the *old ratio*.],
-    [Distributing the whole Workmen Compensation Fund when a claim exists],
-    [Provide the claim first; distribute only *fund − claim*. If the claim is bigger, the excess is debited to Revaluation A/c.],
-    [Crediting all partners to write off goodwill already in the books],
-    [Existing goodwill is *debited* to all partners (old ratio) and closed — it is removed, not created.],
-    [Charging retirement goodwill to all continuing partners equally],
-    [Only the *gaining* partners pay, in the *gaining* ratio (new − old).],
-    [Forgetting interest on the executor's loan],
-    [When the deed is silent, the loan earns *6% p.a.* from the date of death until each instalment is paid.],
-  )
-]
+#mcq(
+  12,
+  [On retirement of X from XYZ firm, total goodwill is ₹90,000. X had a 1/3 share. Continuing partners Y and Z gain equally. The compensating entry is:],
+  (
+    [Debit Goodwill A/c ₹90,000],
+    [Debit Y and Z Cap A/cs ₹15,000 each; Credit X ₹30,000],
+    [Debit X Cap A/c ₹30,000; Credit Y and Z ₹15,000 each],
+    [Debit Bank A/c ₹30,000; Credit X Cap A/c ₹30,000],
+  ),
+)
+#solution(
+  12,
+  [
+    X's goodwill share = ₹90,000 × 1/3 = ₹30,000. Y and Z compensate X in their gaining ratio (1 : 1), paying ₹15,000 each from their capital accounts.
+  ],
+  answer: [B],
+)
 
-Three habits keep reconstitution sums safe, and all three are *checking* habits:
+#mcq(
+  13,
+  [P, Q and R share in 2 : 2 : 1. R dies on 30th June. Past year sales were ₹10,00,000 with profit ₹1,00,000. Sales till death are ₹3,00,000. R's interim profit is:],
+  (
+    [₹6,000],
+    [₹30,000],
+    [₹15,000],
+    [₹10,000],
+  ),
+)
+#solution(
+  13,
+  [
+    Profit rate on sales = 10%. Interim firm profit = ₹3,00,000 × 10% = ₹30,000. R's share (1/5) = ₹30,000 × 1/5 = ₹6,00,000 (₹6,000).
+  ],
+  answer: [A],
+)
 
-- *Recompute every ratio before using it* — old share, new share, sacrifice,
-  gain — and confirm that the sacrifices exactly equal the gains.
-- *Say who owns each pile of money* before passing an entry: old partners only,
-  or all partners? The answer decides the ratio you distribute in.
-- *Close what you open:* the Revaluation Account, Premium for Goodwill, WCF and
-  IFF are all temporary accounts — none of them may carry a balance forward.
+#mcq(
+  14,
+  [Under Section 37 of Indian Partnership Act 1932, an executor of a deceased partner is entitled to interest on unpaid dues at:],
+  (
+    [5% per annum],
+    [12% per annum],
+    [6% per annum (or profit share)],
+    [Bank lending rate],
+  ),
+)
+#solution(
+  14,
+  [
+    Section 37 entitles the outgoing partner or executor to interest @ 6% p.a. on the unsettled amount or share of profit earned with that capital.
+  ],
+  answer: [C],
+)
 
-= The Whole Chapter on One Page
-
-#figure(image("assets/reconstitution_mindmap.png", width: 100%), caption: [Chapter mindmap — the six territories of Unit II and the three traps that catch most students.])
-
-= Practice Questions
-
-#mcq(1, [Which of the following events does *not* reconstitute a partnership firm?], (
-  [Admission of a new partner], [Retirement of a partner], [Dissolution of the firm], [Change in the profit-sharing ratio],
-))
-
-#mcq(2, [A and B share profits 3 : 2. C is admitted and the new ratio is 5 : 3 : 2. The firm's goodwill is ₹1,00,000 and C brings his premium in cash. A's share of the premium is:], (
-  [₹10,000], [₹8,000], [₹12,000], [₹20,000],
-))
-
-#mcq(3, [A, B and C share profits 3 : 2 : 1. A retires and B and C agree to share future profits 3 : 2. The gaining ratio of B and C is:], (
-  [3 : 2], [4 : 7], [8 : 7], [1 : 1],
-))
-
-#mcq(4, [On reconstitution, the value of Land & Building rises by ₹50,000. In the books, this increase is:], (
-  [Debited to the Revaluation Account], [Debited to the old partners' Capital Accounts], [Ignored completely], [Credited to the Revaluation Account],
-))
-
-#mcq(5, [Profits for three years were ₹45,000, ₹52,000 and ₹53,000. Goodwill is valued at 3 years' purchase of the average profit. The goodwill is:], (
-  [₹1,35,000], [₹1,65,000], [₹50,000], [₹1,50,000],
-))
-
-#mcq(6, [Capital employed is ₹5,00,000, the normal rate of return is 10%, and the average actual profit is ₹62,000. Goodwill at 2 years' purchase of super profit is:], (
-  [₹12,000], [₹24,000], [₹50,000], [₹62,000],
-))
-
-#mcq(7, [A firm has a Workmen Compensation Fund of ₹80,000. At the time of admission, a claim of ₹92,000 is admitted. The extra ₹12,000 is:], (
-  [Credited to the Revaluation Account], [Distributed among the old partners], [Debited to the Revaluation Account], [Borne by the new partner alone],
-))
-
-#mcq(8, [C is admitted for a 1/4 share but cannot bring the premium for goodwill in cash. His share of goodwill is:], (
-  [Debited to his Current A/c, with the old partners' capitals credited in the sacrificing ratio], [Ignored, because no cash has entered the firm], [Debited to the old partners' Capital Accounts], [Shown in the Balance Sheet as the firm's goodwill],
-))
-
-#mcq(9, [A deceased partner's executor is paid ₹1,00,000 in two equal annual instalments with 6% p.a. interest on the outstanding balance. The total interest paid over the two years is:], (
-  [₹6,000], [₹9,000], [₹12,000], [₹3,000],
-))
-
-#mcq(10, [After all admission adjustments, the capitals of A and B (sharing 3 : 2) stand at ₹1,80,000 and ₹1,20,000. C is admitted for a 1/5 share and must bring his proportionate capital. C's capital is:], (
-  [₹60,000], [₹80,000], [₹75,000], [₹1,00,000],
-))
-
-= Solutions
-
-#solution(1, [Dissolution *closes* the firm; reconstitution keeps it running on new terms. Admission, retirement and a change in ratio all rewrite the agreement while the firm survives.], answer: "C")
-
-#solution(2, [Old shares: A 3/5, B 2/5. New shares: A 5/10 = 1/2, B 3/10, C 1/5. Sacrifices: A — 3/5 − 1/2 = 1/10; B — 2/5 − 3/10 = 1/10 → sacrificing ratio 1 : 1. Premium = 1/5 × 1,00,000 = ₹20,000, split equally: A gets *₹10,000*.], answer: "A")
-
-#solution(3, [Old shares: B 1/3, C 1/6. New shares: B 3/5, C 2/5. Gains: B — 3/5 − 1/3 = 4/15 = 8/30; C — 2/5 − 1/6 = 7/30. Gaining ratio = 8/30 : 7/30 = *8 : 7*.], answer: "C")
-
-#solution(4, [A rise in an asset's value makes the firm richer, so it sits on the *credit* side: Land & Building A/c Dr — To Revaluation A/c. The increase is credited to the Revaluation Account.], answer: "D")
-
-#solution(5, [Average profit = (45,000 + 52,000 + 53,000) ÷ 3 = 1,50,000 ÷ 3 = ₹50,000. Goodwill = 50,000 × 3 = *₹1,50,000*.], answer: "D")
-
-#solution(6, [Normal profit = 5,00,000 × 10/100 = ₹50,000. Super profit = 62,000 − 50,000 = ₹12,000. Goodwill = 12,000 × 2 = *₹24,000*.], answer: "B")
-
-#solution(7, [The fund absorbs the first ₹80,000 of the claim. The excess ₹12,000 is a fresh reconstitution-day loss, so it is *debited to the Revaluation Account* (old partners bear it in the old ratio).], answer: "C")
-
-#solution(8, [When the premium is not brought in cash, the new partner's Current A/c is *debited* (his goodwill debt) and the old partners' capitals are *credited* in the sacrificing ratio. No cash moves.], answer: "A")
-
-#solution(9, [Year 1: interest on ₹1,00,000 = 1,00,000 × 6/100 = ₹6,000; instalment ₹50,000 leaves ₹50,000. Year 2: interest = 50,000 × 6/100 = ₹3,000. Total interest = 6,000 + 3,000 = *₹9,000*.], answer: "B")
-
-#solution(10, [Old partners' combined adjusted capital = 1,80,000 + 1,20,000 = ₹3,00,000, which represents 4/5 of the new total. Total capital = 3,00,000 × 5/4 = ₹3,75,000. C's capital = 3,75,000 × 1/5 = *₹75,000*.], answer: "C")
+#mcq(
+  15,
+  [A deceased partner's executor is due ₹1,00,000, payable in two equal annual instalments with interest @ 6% p.a. Total interest paid over the two years is:],
+  (
+    [₹6,000],
+    [₹9,000],
+    [₹12,000],
+    [₹3,000],
+  ),
+)
+#solution(
+  15,
+  [
+    Year 1 interest = ₹1,00,000 × 6% = ₹6,000. Year 2 interest on remaining ₹50,000 = ₹50,000 × 6% = ₹3,00,000 (wait: ₹3,000). Total interest = ₹6,000 + ₹3,000 = ₹9,000.
+  ],
+  answer: [B],
+)
 
 #v(10pt)
 #align(center)[#text(fill: om-grey, size: 9pt)[© OurMocks · www.ourmocks.com · CUET UG Accountancy · Unit II: Reconstitution of a Partnership Firm · 2027 cycle]]
