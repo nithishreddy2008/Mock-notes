@@ -3,7 +3,7 @@
 #show: om-doc.with(
   exam: "CUET UG",
   subject: "Accountancy",
-  topic-title: "Dissolution of Partnership Firm",
+  topic-title: "Dissolution of a Partnership Firm",
   subtitle: "Official Syllabus Unit III · Class 12 · CUET UG 2027 Cycle Notes",
 )
 
@@ -11,553 +11,682 @@
 
 #table(
   columns: (1.05fr, 1.9fr, 1.25fr),
-  table.header[*Sub-topic*][*Official syllabus pointer (NTA CUET(UG) Accountancy syllabus 2026, the current 2027 baseline, Unit III)*][*Skills the questions test*],
-  [*Dissolution — the meaning*], [
-    "Meaning, Settlement of accounts: Preparation of Realisation Account and related Accounts (excluding piecemeal distribution, sale to a company and insolvency of a Partner)".
+  table.header[*Sub-topic*][*Official syllabus pointer (NTA CUET(UG) Accountancy 301, Unit III)*][*Skills the questions test*],
+  [*Meaning & Modes*], [
+    Meaning of dissolution of partnership and partnership firm, types of dissolution of a firm
   ], [
-    Telling the dissolution of a firm apart from a mere reconstitution, and knowing exactly where the syllabus stops.
+    Distinguishing dissolution of partnership from firm; identifying grounds under Sections 40–44.
   ],
-  [*Settlement of accounts*], [
-    "Meaning, Settlement of accounts: Preparation of Realisation Account and related Accounts (excluding piecemeal distribution, sale to a company and insolvency of a Partner)".
+  [*Settlement of Accounts*], [
+    Settlement of accounts – Section 48 and Section 49 rules
   ], [
-    Applying the Section 48 order to assets and to losses — two different sequences, never mixed up.
+    Applying Section 48 loss priority & asset order; applying Section 49 firm vs private debt rules.
   ],
-  [*Realisation Account and related accounts*], [
-    "Meaning, Settlement of accounts: Preparation of Realisation Account and related Accounts (excluding piecemeal distribution, sale to a company and insolvency of a Partner)".
+  [*Realisation Account*], [
+    Preparation of Realisation Account, and other related accounts: Capital Accounts of Partners, Loan Account of Partner and Cash/Bank A/c
   ], [
-    Building the Realisation Account, the partners' capital and loan accounts and the closing Bank Account, with every debit and credit in its right place.
+    Transferring assets/liabilities; recording asset sales, partner takeovers, and liability discharge.
   ],
-  [*What Unit III leaves out*], [
-    The pointer ends: "…(excluding piecemeal distribution, sale to a company and insolvency of a Partner)".
+  [*Asset-Liability Swaps*], [
+    Accounting treatment of assets transferred to creditors in full or partial satisfaction
   ], [
-    Skipping the three excluded extensions, so revision time goes only where the syllabus points.
+    Mastering the "No-Entry Rule" for creditor swaps and recording only net cash settlements.
+  ],
+  [*Realisation Expenses*], [
+    Accounting treatment of realisation expenses (firm bears/pays, partner bears/pays, remuneration)
+  ], [
+    Distinguishing bearing responsibility from paying agency; handling partner commission.
   ],
 )
 
 #exam-pointer[
-  CUET UG pattern (NTA official information bulletin and syllabus, 2026 cycle — the
-  current 2027 baseline): each subject paper carries *50 compulsory questions* in
-  *60 minutes*, with $+5$ for every correct answer and $-1$ for every incorrect answer. The Accountancy paper (subject code 301)
-  maps strictly to NCERT Class 12, and Unit III completes the partnership arc —
-  it tests how every account is closed when the firm itself stops existing.
+  *CUET UG Exam Blueprint:* Dissolution of Partnership Firm (Code 301, Unit III) contributes 5–7 questions in the 50-question paper. NTA specifically targets the priority order of settlement under Section 48, the distinction between a partner's loan and a partner's relative loan, the "No-Entry Rule" when creditors accept firm assets, and the 5 distinct permutations of realisation expenses.
 ]
 
-= Dissolution: When the Firm Shuts Down for Good
+= 1. Meaning and Modes of Dissolution
 
-A cricket team that loses one player keeps playing with a substitute — but when
-the club itself is shut down, the jerseys are sold, the debts are cleared and
-the trophy case is emptied. A partnership works the same way. Admission,
-retirement and death only *change the team*; dissolution of the *firm* closes
-the club for good. This section fixes the exact meaning of that difference and
-then lists every legal way a firm can come to an end.
+Dissolution marks the legal and operational conclusion of a partnership business. The Indian Partnership Act, 1932 draws a fundamental distinction between the *dissolution of a partnership* and the *dissolution of a partnership firm*.
 
-- *Dissolution of the firm:* the business stops completely. Assets are sold,
-  outsiders are paid, whatever remains goes back to the partners — and every
-  account of the firm is closed.
-- *Dissolution of the partnership:* only the *relationship* ends or changes.
-  The business itself may carry on with the remaining partners or under a new
-  agreement.
-- *Reconstitution is different again:* in admission, retirement or death the
-  books simply continue with a new ratio. On dissolution the books are *shut
-  forever* — that is the line to remember.
+- *Dissolution of Partnership (Reconstitution):* Only the existing contractual relationship among partners terminates; the reconstituted firm continues its commercial operations under a modified agreement (e.g. change in PSR, admission, retirement, or death). The firm does not cease to exist.
+- *Dissolution of Partnership Firm (Complete Closure):* The legal entity dissolves completely. All commercial operations cease, all assets are sold or realised, all external liabilities are discharged, and the remaining balances are distributed among partners, closing all books of account.
 
-== Dissolution of partnership vs dissolution of the firm
+== Comparative Legal Distinction
 
 #table(
-  columns: (1.1fr, 1.25fr, 1.25fr),
-  table.header[*Point*][*Dissolution of partnership*][*Dissolution of the firm*],
-  [What ends], [The old agreement between partners ends], [The whole business comes to an end],
-  [The business], [May continue with the remaining partners], [Stops completely — assets are sold off],
-  [The books], [Adjusted and carried forward], [Closed for good through a Realisation Account],
-  [When it happens], [Admission, retirement, death, change in ratio], [The firm itself is wound up],
-  [Relationship], [Every dissolution of the firm dissolves the partnership], [But a partnership can dissolve without the firm ending],
+  columns: (1fr, 1.4fr, 1.5fr),
+  table.header[*Basis of Distinction*][*Dissolution of Partnership*][*Dissolution of Partnership Firm*],
+  [*Continuation of Business*], [Business continues under a fresh agreement.], [Business is completely terminated; operations cease.],
+  [*Closure of Books*], [Books remain open; revaluation entries passed.], [Books of accounts are permanently closed.],
+  [*Settlement of Assets/Liabilities*], [Assets & liabilities are revalued in books.], [Assets are realised & liabilities discharged.],
+  [*Economic Relationship*], [Relationship changes among remaining partners.], [All economic relationships terminate completely.],
+  [*Court Intervention*], [Voluntary; court never orders reconstitution.], [Court may order dissolution under Section 44.],
+  [*Mutual Scope*], [Does not require dissolution of the firm.], [Necessarily involves dissolution of partnership!],
+  [*Final Accounts*], [Revaluation Account & Balance Sheet prepared.], [Realisation Account & Cash/Bank A/c prepared.],
+  [*Realisation of Cash*], [Assets and liabilities not realised in cash.], [Assets sold for cash; cash used to clear debts.],
 )
 
-That last row is the classic twist: firm-dissolution always ends the
-partnership, but partnership-dissolution does not always end the firm.
+== Statutory Modes of Dissolution (Sections 40–44)
 
-== The five ways a firm can dissolve
+The Indian Partnership Act, 1932 specifies five distinct legal modes through which a partnership firm is dissolved:
 
-#table(
-  columns: (1fr, 2fr, 0.75fr),
-  table.header[*Mode*][*What triggers it*][*Law*],
-  [By agreement], [All partners consent to end the firm — the cleanest and most common route.], [Sec 40],
-  [Compulsory], [All partners, or all but one, are declared insolvent; or the business itself becomes unlawful.], [Sec 41],
-  [On a contingency], [A fixed term expires; a specific venture completes; or a partner dies or becomes insolvent.], [Sec 42],
-  [By notice], [A partnership at will — any partner can end it by giving written notice to the others.], [Sec 43],
-  [By the court], [A partner becomes of unsound mind or permanently incapable, commits misconduct or persistent breach, the business runs only at a loss, or any other just and equitable ground.], [Sec 44],
-)
+1. *Dissolution by Agreement (Section 40):* A firm may be dissolved with the *unanimous consent of all partners* or in accordance with an express contract between the partners.
+2. *Compulsory Dissolution (Section 41):* A firm is compulsorily dissolved by operation of law:
+   - When all partners, or all partners except one, are adjudicated *insolvent*; or
+   - When an event occurs which renders the business of the firm *unlawful* to carry on (e.g. legislation banning manufacture/trade of the product).
+3. *Dissolution on the Happening of Certain Contingencies (Section 42):* Subject to contract between the partners, a firm dissolves upon:
+   - The expiry of the fixed term for which the partnership was constituted;
+   - The completion of the specific venture or adventure;
+   - The *death of a partner*; or
+   - The *adjudication of a partner as an insolvent*.
+4. *Dissolution by Notice in Partnership at Will (Section 43):* Where the partnership is at will, any partner may dissolve the firm by giving *notice in writing* of his intention to dissolve to all other partners. The firm dissolves from the date mentioned in the notice, or from the date of communication if no date is stated.
+5. *Dissolution by Court (Section 44):* At the suit of a partner, the court may order dissolution of the firm on any of the following grounds:
+   - A partner becomes of *unsound mind*;
+   - A partner becomes *permanently incapable* of performing partner duties;
+   - A partner is guilty of *misconduct* prejudicial to the business;
+   - A partner wilfully or persistently commits *breach of partnership agreement*;
+   - A partner transfers the *whole of his interest* to a third party;
+   - The business of the firm can only be carried on at a *perpetual loss*; or
+   - Any other ground rendering it *just and equitable* that the firm be dissolved (e.g. deadlock in management, destruction of mutual trust).
 
-#analogy-box(title: "Everyday Example — Closing the Food Stall")[
-  Two friends run a weekend food stall and decide to shut it. First they *sell
-  the grill and the trolley* (assets realised), then they *pay the flour
-  supplier in full* (outside creditors first), then they *return the ₹5,000 one
-  had lent the stall* (partner's loan), and only then do they *split what is
-  left* (capitals and surplus). Every step — and its exact order — is what
-  Section 48 of the Partnership Act forces on every closing firm.
+#analogy-box(title: "Everyday Example — The Shared Pop-Up Stall")[
+  Two chefs run a weekend food truck. If one chef leaves and another steps in to keep the kitchen open, that is *reconstitution* (dissolution of partnership). But if the municipal council cancels the commercial permit, the truck is parked, kitchen equipment sold off, creditors paid, and remaining money divided—that is *dissolution of the firm*. No business survives.
 ]
 
-= Section 48: The Order of Settlement
+= 2. Settlement of Accounts upon Dissolution (Sections 48 & 49)
 
-Here is where dissolution marks are won or lost. When a firm shuts, money comes
-in from selling assets — but it never leaves in a random order. *Section 48 of
-the Indian Partnership Act, 1932* fixes two separate queues: one queue for
-*applying the assets* (who gets paid first) and one queue for *bearing the
-losses* (who absorbs a shortfall first). Students who memorise only one queue
-lose the other half of every question, so learn them as two clean lists.
+Upon dissolution, the proceeds realised from the sale of assets, together with any contributions by partners to meet capital deficiencies, must be applied strictly in accordance with statutory priorities.
 
-- *First queue — applying assets:* pay outsiders, then partners' loans, then
-  partners' capitals, then share any surplus in the old profit-sharing ratio.
-- *Second queue — applying losses:* use available profits, then reduce the
-  capitals, and only then ask partners to bear the rest in their old
-  profit-sharing ratio.
-- *Old ratio everywhere:* the result of realisation — profit or loss — always
-  travels to the partners in the ratio that was in force *before* dissolution.
-- *Why the loan sits above capital:* a loan is money the partner *lent* to the
-  firm, like an outsider's deposit — so it is repaid in full before any capital
-  is touched.
+== Treatment of Losses (Section 48(a))
 
-== Queue one: how the assets are applied
+Losses, including deficiencies of capital, must be paid in the following mandatory statutory order:
+1. First, out of the *undistributed profits* of the firm;
+2. Second, out of the *partners' capital balances*; and
+3. Lastly, if necessary, by the partners individually in their *profit-sharing ratio*.
 
-#table(
-  columns: (0.6fr, 1.6fr, 1.4fr),
-  table.header[*Rank*][*Who is paid*][*One-line rule*],
-  [1], [Outside liabilities — creditors, bills payable, bank loans], [Paid in full, ahead of every partner],
-  [2], [Partners' loans], [Repaid in full after outside liabilities; shared proportionately if money runs short],
-  [3], [Partners' capitals], [Returned after loans; shared proportionately if money runs short],
-  [4], [The surplus], [Divided among partners in their old profit-sharing ratio],
+== Application of Assets (Section 48(b))
+
+The assets of the firm, including any sums contributed by partners to make up deficiencies of capital, must be applied in the following water-tight priority order:
+1. *First Priority: Payment of Outside Debts:* Discharging debts of the firm owed to third parties (Sundry Creditors, Bills Payable, Bank Overdraft, and *loans from partners' relatives* such as spouse or sibling).
+2. *Second Priority: Payment of Partner Advances:* Paying to each partner rateably (*pro-rata*) what is due to him from the firm for advances/loans distinguished from capital.
+3. *Third Priority: Repayment of Partner Capital:* Paying to each partner rateably what is due to him on account of capital.
+4. *Fourth Priority: Distribution of Surplus:* The ultimate surplus (residual balance), if any, is divided among the partners strictly in their *profit-sharing ratio* (never their capital ratio!).
+
+#figure(
+  image("assets/acc_dissolution_modes_and_settlement.png", width: 88%),
+  caption: [Dissolution Framework: Modes of Dissolution, Section 48 Settlement Order, and Section 49 Debt Rules.],
 )
 
-== Queue two: how the losses are applied
+== Section 49: Firm Debts vs Private Debts
 
-#table(
-  columns: (0.6fr, 1.6fr, 1.4fr),
-  table.header[*Rank*][*Loss is first taken from*][*One-line rule*],
-  [1], [Profits of the business], [Any profits still available absorb the loss first],
-  [2], [Partners' capitals], [Capitals are reduced next, to the extent needed],
-  [3], [The partners themselves], [Anything still left is borne by partners in their old PSR],
-)
-
-#figure(image("assets/dissolution_flow.png", width: 100%), caption: [The two Section 48 queues — the payment order for assets on top, the loss-absorption order below.])
-
-Notice the symmetry in reverse: the *last* thing a solvent firm pays out is the
-partners' surplus, and the *last* place a loss can land is the partners'
-themselves. If you can run both queues in your head, the entire settlement
-chapter is just bookkeeping on top of them.
-
-= The Realisation Account
-
-When the firm stops, its machines and stock stop being "assets in use" and
-become "things to sell". The *Realisation Account* is the account that records
-this sell-off: it collects every asset at book value on one side, every sale
-proceed and payment on the other, and ends by announcing a single number — the
-*profit or loss on realisation*. That number then goes straight to the partners
-in the old ratio, and the account closes forever.
-
-- *It is a nominal account:* it measures a *gain or loss*, exactly like the P&L
-  Account does for a going concern — but for a closing one.
-- *Debit side — what goes out:* every asset (except cash) at its book value,
-  payments made to settle liabilities, and realisation expenses paid by the firm.
-- *Credit side — what comes in:* outside liabilities transferred, sale proceeds
-  of every asset, and any unrecorded asset that turns up.
-- *Cash is never transferred:* the Cash/Bank balance is already money — there is
-  nothing to "realise". It simply waits in the Bank Account to make payments.
-- *A partner's loan is never transferred:* it is not a liability of the
-  realisation process; it is repaid directly through the Loan Account.
-
-#worked-example("Quick Drill — Book Value vs Sale Value")[
-  A machine's book value is ₹40,000. During dissolution it is sold for ₹36,500.
-
-  - *In the Realisation Account:* ₹40,000 sits on the debit side (book value);
-    ₹36,500 lands on the credit side (sale proceeds).
-  - *The gap* — ₹3,500 — is never written down separately. It simply widens the
-    overall loss (or shrinks the profit) that finally reaches the partners.
-
-  Every asset behaves the same way: book value in on one side, actual cash out
-  on the other, and the difference is absorbed by the single result line.
+Where both firm debts and private debts of partners co-exist:
+#formula-box(title: "Section 49 Priority Rules")[
+  - *Firm Property:* Applied *first* in payment of the debts of the firm. If any surplus remains, the share of each partner is applied in payment of his separate private debts.
+  - *Private Property:* Applied *first* in payment of the separate private debts of that partner. The surplus, if any, is applied in payment of the debts of the firm if firm liabilities exceed firm assets.
 ]
 
-== What goes in, what stays out
+#worked-example("Worked Example — Section 48 & 49 Priority Application")[
+  On dissolution of a firm, assets realise ₹1,80,000. Liabilities include: Creditors ₹1,00,000; Loan from Partner A ₹40,000; Loan from A's wife ₹30,000; Partner Capitals: A ₹50,000, B ₹30,000. How are proceeds applied?
 
-#table(
-  columns: (1.5fr, 1fr, 1fr),
-  table.header[*Item*][*To Realisation A/c?*][*Where it goes instead*],
-  [Machinery, stock, debtors, patents], [Yes — at book value], [—],
-  [Creditors and bills payable], [Yes], [—],
-  [Cash / Bank balance], [No], [Stays in the Bank Account till the end],
-  [Partner's loan], [No], [Separate Loan A/c, repaid in cash],
-  [General reserve, credit balance of P&L], [No], [Partners' capitals in the old PSR],
-  [Partner's capital balance], [No], [Closed last, through the Bank Account],
-)
-
-== The official format
-
-#table(
-  columns: (1.5fr, 0.75fr, 1.5fr, 0.75fr),
-  table.header[*Dr. Particulars*][*₹*][*Cr. Particulars*][*₹*],
-  [To Sundry Assets transferred (at book values)], [—], [By Sundry Liabilities transferred], [—],
-  [To Bank — liabilities paid off], [—], [By Bank — assets sold / realised], [—],
-  [To Bank — realisation expenses], [—], [By Partner's Capital A/c — unrecorded asset taken over], [—],
-  [To Partner's Capital A/c — expenses borne and paid by the partner], [—], [By Bank — unrecorded asset realised], [—],
-  [To Partners' Capital A/cs — profit on realisation (old PSR)], [—], [By Partners' Capital A/cs — loss on realisation (old PSR)], [—],
-)
-
-#formula-box(title: "The Result on Realisation — One Line")[
-  $ "Profit or Loss" = "Total of the credit side" - "Total of the debit side" $
-
-  Credits bigger → *profit* on realisation. Debits bigger → *loss* on
-  realisation. Either way, the figure is transferred to the partners' capital
-  accounts in the *old profit-sharing ratio* — never the new one, because the
-  firm is closing on the old terms.
+  - *Step 1 (Outside Debts):* Creditors (₹1,00,000) + A's Wife Loan (₹30,000) = ₹1,30,000 paid first.
+    Remaining Cash $= 1,80,000 - 1,30,000 = "₹50,000"$.
+  - *Step 2 (Partner's Loan):* Partner A's Loan of ₹40,000 paid next.
+    Remaining Cash $= 50,000 - 40,000 = "₹10,000"$.
+  - *Step 3 (Partner Capitals):* Total capitals due are ₹80,000, but only ₹10,000 cash remains.
+    The ₹10,000 is distributed rateably between A and B in their capital ratio ($5:3$):
+    A receives $10,000 times 5/8 = "₹6,250"$; B receives $10,000 times 3/8 = "₹3,750"$.
+  - *Capital Deficiency:* The unpaid balance ($"₹70,000"$) represents a dissolution loss borne by A and B in their profit-sharing ratio.
 ]
 
-#analogy-box(title: "Everyday Example — Auction Day at the Family House")[
-  When a family shifts cities, it holds an auction day: the sofa, the fridge and
-  the old cycle carry one value *in the books* but fetch whatever buyers actually
-  pay *on the day*. The Realisation Account is that auction ledger — every item
-  goes out at book value and comes back as cash at market value, and the gap
-  between the two is the day's profit or loss. The family members — the partners
-  — then split that gap exactly as they agreed years earlier.
-]
+= 3. Accounting Treatment: The Realisation Account
 
-== The journal entries behind the account
+To close the books of a dissolving firm, a temporary ledger account called the *Realisation Account* is opened.
+
+- *Nature of Account:* Realisation Account is a *Nominal Account*. Its ultimate purpose is to determine the net profit or loss arising from the realization of assets and discharge of liabilities.
+- *Closing the Ledger:* Once all assets are disposed of and outside liabilities paid, the profit or loss on realization is transferred to *Partners' Capital Accounts in their Profit-Sharing Ratio*.
+
+== Step 1: Transfer of Balance Sheet Items (At Book Values)
 
 #table(
-  columns: (1.5fr, 1.3fr, 1.3fr),
-  table.header[*Event*][*Debit*][*Credit*],
-  [Assets (except cash) transferred], [Realisation A/c], [Individual asset A/cs],
-  [Outside liabilities transferred], [Individual liability A/cs], [Realisation A/c],
-  [Assets sold for cash], [Bank A/c], [Realisation A/c],
-  [Outside liabilities paid off], [Realisation A/c], [Bank A/c],
-  [Realisation expenses — paid by the firm], [Realisation A/c], [Bank A/c],
-  [Expenses borne by a partner, paid by the firm], [Partner's Capital A/c], [Bank A/c],
-  [Expenses borne and paid by a partner personally], [Realisation A/c], [Partner's Capital A/c],
-  [Unrecorded asset discovered and sold], [Bank A/c], [Realisation A/c],
-  [Unrecorded asset taken over by a partner], [Partner's Capital A/c], [Realisation A/c],
-  [Profit on realisation (credits bigger)], [Realisation A/c], [Partners' Capital A/cs — old PSR],
-  [Loss on realisation (debits bigger)], [Partners' Capital A/cs — old PSR], [Realisation A/c],
-  [Accumulated reserves distributed], [Reserve / P&L A/c], [Partners' Capital A/cs — old PSR],
+  columns: (1.1fr, 1.4fr, 1.5fr),
+  table.header[*Ledger Side*][*Accounts Transferred*][*Accounts Strictly EXCLUDED*],
+  [*Debit of Realisation A/c* \ `Realisation A/c Dr.` \ `To Assets A/c (BV)`], [
+    All tangible and intangible assets at book value:
+    - Debtors (*Gross Book Value*)
+    - Stock, Furniture, Plant, Land
+    - Goodwill, Patents, Trademarks
+    - Prepaid Expenses
+  ], [
+    - Cash in Hand & Cash at Bank
+    - Fictitious Assets (P&L Dr., Advertisement Suspense)
+    - Partner's Loan to Firm (Debit balance)
+    - Partner Capital / Current A/c (Debit balance)
+  ],
+  [*Credit of Realisation A/c* \ `Liabilities A/c (BV) Dr.` \ `To Realisation A/c`], [
+    All outside third-party liabilities:
+    - Sundry Creditors & Bills Payable
+    - Bank Overdraft & Bank Loan
+    - Partner's Relative Loan (*e.g. Wife Loan*)
+    - Outstanding Expenses
+    - *Provision for Doubtful Debts*
+    - *Investment Fluctuation Reserve*
+  ], [
+    - Partner's Capital & Current Accounts
+    - Undistributed Reserves (General Reserve, P&L Cr.)
+    - *Partner's Loan to the Firm* (settled directly via Bank)
+    - Workmen Compensation Reserve (*except claim portion*)
+  ],
 )
 
-Two expense rows trip up almost everyone, so read them slowly. If the *firm*
-pays an expense that a partner had agreed to *bear*, the firm has paid on the
-partner's behalf — so the *partner's capital* is debited, not Realisation. If
-the partner pays it *personally*, the firm owes that partner the amount, so the
-partner's capital is *credited* and the expense still finds its way to
-Realisation.
+== Step 2: Disposal of Assets
 
-= The Accounts That Finish the Job
+1. *When an asset is sold for cash:*
+   $ "Bank / Cash A/c" quad "Dr." quad [ "actual amount realised" ] $
+   $ quad quad "To Realisation A/c" quad "Cr." $
+2. *When an asset is taken over by a partner:*
+   $ "Partner's Capital A/c" quad "Dr." quad [ "agreed takeover value" ] $
+   $ quad quad "To Realisation A/c" quad "Cr." $
+3. *When an unrecorded asset realises cash or is taken over:*
+   - Realised in cash: `Bank A/c Dr.` to `Realisation A/c Cr.`
+   - Taken over by partner: `Partner's Capital A/c Dr.` to `Realisation A/c Cr.`
+   *(No asset account is opened in the ledger!)*
 
-The Realisation Account does the heavy lifting, but three supporting accounts
-close the story: the partners' *capital accounts*, the partner's *loan account*
-(if one exists), and the *Bank Account*. Watch how they connect — capitals
-absorb the realisation result, the loan is paid off untouched, and the Bank
-Account must end at exactly zero. When the Bank Account closes at nil, the
-books are mathematically complete.
+== Step 3: Discharge of Liabilities
 
-- *Partners' Capital Accounts:* open at their old balances, absorb the
-  realisation result and the reserve share, and close with one final payment.
-- *Partner's Loan Account:* a stranger-like claim inside the firm. It is
-  *repaid in full* — losses never reduce it — and any interest due on it is a
-  *charge*, credited to the loan account itself.
-- *Cash/Bank Account:* receives the old balance plus every realisation rupee,
-  and pays every claim in the Section 48 order. Its closing balance must be
-  *nil* — that is the final proof that the dissolution was worked correctly.
+1. *When an outside liability is paid in cash:*
+   $ "Realisation A/c" quad "Dr." quad [ "actual amount paid" ] $
+   $ quad quad "To Bank / Cash A/c" quad "Cr." $
+   > [!IMPORTANT]
+   > Even if an outside liability is silent regarding payment, it *must be paid in full* at book value!
+2. *When a liability is assumed/taken over by a partner:*
+   $ "Realisation A/c" quad "Dr." quad [ "agreed value" ] $
+   $ quad quad "To Partner's Capital A/c" quad "Cr." $
+3. *When an unrecorded liability is discharged:*
+   `Realisation A/c Dr.` to `Bank A/c Cr.` (paid directly through Realisation A/c).
 
-== Partners' Capital Accounts (fluctuating system)
+#figure(
+  image("assets/acc_dissolution_realisation_and_entries.png", width: 88%),
+  caption: [Realisation Protocols: Transfer Rules, Asset-Liability Swaps, and Expense Accounting Matrix.],
+)
+
+= 4. Special Transactions & Asset-Liability Swaps
+
+== The "No-Entry Rule" for Asset-Liability Swaps
+
+When a creditor or any external liability accepts a firm's asset in part or full satisfaction of their claim:
+- *Full Settlement:* If a creditor of ₹50,000 accepts machinery of book value ₹60,000 (or ₹40,000) in *full settlement*:
+  $ bold("NO JOURNAL ENTRY IS PASSED IN THE BOOKS OF THE FIRM!") $
+  *Reason:* Both the asset and the liability were already transferred to Realisation Account in Step 1. Passing an entry would cause double counting!
+- *Partial Settlement with Cash Paid to Creditor:* If a creditor of ₹50,000 accepts machinery valued at ₹35,000 and the remaining ₹15,000 in cash:
+  Record *only the cash paid*: `Realisation A/c Dr. ₹15,000` to `Bank A/c Cr. ₹15,000`.
+- *Partial Settlement with Cash Received from Creditor:* If a creditor of ₹30,000 accepts equipment valued at ₹42,000 and refunds ₹12,000 cash to the firm:
+  Record *only the cash received*: `Bank A/c Dr. ₹12,000` to `Realisation A/c Cr. ₹12,000`.
+
+== Treatment of Specific Reserves upon Dissolution
+
+1. *Workmen Compensation Reserve (WCR):*
+   - *Case A (No Claim):* Entire WCR credited to Partners' Capital A/cs in PSR (`WCR A/c Dr.` to `Partners' Capital A/cs Cr.`).
+   - *Case B (Claim < Reserve):* Amount equal to claim transferred to Realisation A/c (`WCR A/c Dr.` to `Realisation A/c Cr.`); remaining surplus credited to Partners' Capital A/cs in PSR.
+   - *Case C (Claim = Reserve):* Entire WCR transferred to Realisation A/c (`WCR A/c Dr.` to `Realisation A/c Cr.`).
+   - *Case D (Claim > Reserve):* Entire WCR transferred to Realisation A/c. Actual claim paid debited to Realisation A/c (`Realisation A/c Dr.` to `Bank A/c Cr.`).
+2. *Investment Fluctuation Reserve (IFR):*
+   - Transferred to the *Credit of Realisation Account* if Investments appear on the asset side.
+   - If no investments exist on the asset side, IFR is distributed directly among partners in PSR.
+
+== Treatment of Goodwill upon Dissolution
+
+Unlike reconstitution (where AS-26 prohibits raising goodwill), on dissolution:
+1. *Goodwill in Balance Sheet:* Transferred to the *Debit of Realisation Account* at book value along with other commercial assets. It is *not* written off to capital accounts!
+2. *Goodwill Realised:* If realised for cash, `Bank A/c Dr.` to `Realisation A/c Cr.` If taken by partner, `Partner's Capital A/c Dr.` to `Realisation A/c Cr.`
+3. *Goodwill Silent:* If the problem is silent regarding the realisation value of goodwill, its realisable value is taken as *NIL* (zero).
+
+== Accounting for Partner's Loan
+
+A partner's advance/loan to the firm carries a higher repayment priority than partner capital under Section 48:
+1. *Partner's Loan to Firm (Credit Balance):*
+   - It is *never transferred to Realisation Account*.
+   - A separate *Partner's Loan Account* is prepared and settled directly:
+     $ "Partner's Loan A/c" quad "Dr." quad [ "book value" ] $
+     $ quad quad "To Bank A/c" quad "Cr." $
+   - *If settled at discount:* `Partner's Loan A/c Dr.` to `Bank A/c Cr.` (amount paid) + `Realisation A/c Cr.` (discount/gain).
+2. *Partner's Loan from Firm (Debit Balance / Asset):*
+   - Owed by the partner to the firm. It is *transferred directly to the Debit of Partner's Capital Account*:
+     `Partner's Capital A/c Dr.` to `Loan to Partner A/c Cr.`
+
+= 5. Realisation Expenses Deep Dive
+
+Accounting for dissolution expenses depends on two distinct factors: *who bears the expense* and *who pays the expense*.
 
 #table(
-  columns: (1.5fr, 0.75fr, 1.5fr, 0.75fr),
-  table.header[*Dr. Particulars*][*₹*][*Cr. Particulars*][*₹*],
-  [To Realisation A/c — loss (old PSR)], [—], [By Balance b/d], [—],
-  [To Realisation A/c — asset taken over], [—], [By Realisation A/c — profit (old PSR)], [—],
-  [To Realisation A/c — expenses borne by partner, paid by firm], [—], [By Reserve / P&L — share (old PSR)], [—],
-  [To Bank — final payment (balancing figure)], [—], [By Bank — deficit brought in cash, if any], [—],
+  columns: (1.2fr, 1.2fr, 1.6fr),
+  table.header[*Who Bears?*][*Who Pays?*][*Mandatory Journal Entry in Firm Books*],
+  [*Firm Bears*], [*Firm Pays*], [`Realisation A/c Dr.` to `Bank A/c Cr.`],
+  [*Firm Bears*], [*Partner Pays*], [`Realisation A/c Dr.` to `Partner's Capital A/c Cr.`],
+  [*Partner Bears*], [*Partner Pays*], [bold("NO ENTRY") _(personal transaction of partner)_],
+  [*Partner Bears*], [*Firm Pays on behalf*], [`Partner's Capital A/c Dr.` to `Bank A/c Cr.`],
+  [*Partner Remuneration*], [*Partner Bears All*], [
+    1. For remuneration: `Realisation A/c Dr.` to `Partner's Capital A/c Cr.` \
+    2. If firm pays actual expenses: `Partner's Capital A/c Dr.` to `Bank A/c Cr.`
+  ],
 )
 
-The final payment is always the *balancing figure*: whatever makes both sides
-equal. If the debit side is bigger (a debit capital balance), the partner must
-*bring in cash* instead of receiving any.
+= 6. Comprehensive Master Worked Problems
 
-== A Partner's Loan Account
+#worked-example("Master Problem 1 — Comprehensive Dissolution Sequence")[
+  A and B share profits equally. On 31st March, they decide to dissolve the firm. Their balance sheet is as follows:
 
-#table(
-  columns: (1.5fr, 0.75fr, 1.5fr, 0.75fr),
-  table.header[*Dr. Particulars*][*₹*][*Cr. Particulars*][*₹*],
-  [To Bank — loan repaid in full], [—], [By Balance b/d], [—],
-  [], [], [By Interest on loan due (a charge)], [—],
-)
-
-Small, tidy, untouched by losses — that is exactly how a loan account should
-look at dissolution.
-
-== The Cash/Bank Account — the final proof
-
-#table(
-  columns: (1.5fr, 0.75fr, 1.5fr, 0.75fr),
-  table.header[*Dr. Receipts*][*₹*][*Cr. Payments*][*₹*],
-  [To Balance b/d — old cash balance], [—], [By Realisation A/c — liabilities paid], [—],
-  [To Realisation A/c — assets sold], [—], [By Realisation A/c — expenses paid], [—],
-  [To Partner's Capital A/c — deficit brought in], [—], [By Partner's Loan A/c — loan repaid], [—],
-  [], [], [By Partners' Capital A/cs — final payments], [—],
-)
-
-- *Every rupee passes through it:* all realisations come in here; all payments
-  go out from here. If an entry bypasses the Bank Account, something is wrong.
-- *It must close at nil:* receipts minus payments = zero. A leftover balance
-  means a claim was missed or an amount was posted on the wrong side.
-- *It mirrors Section 48:* read the payments from top to bottom and you will
-  see the exact payment queue — outsiders, loans, capitals.
-
-= One Complete Dissolution, Start to Finish
-
-Now put every piece together in one balanced problem. A and B are equal
-partners. On 31 March the firm's position is:
-
-#table(
-  columns: (1.6fr, 1fr),
-  table.header[*Liabilities*][*₹*],
-  [Creditors], [20,000],
-  [A's Loan], [10,000],
-  [Capitals: A 50,000 + B 40,000], [90,000],
-  [Total], [1,20,000],
-)
-
-#table(
-  columns: (1.6fr, 1fr),
-  table.header[*Assets*][*₹*],
-  [Machinery], [60,000],
-  [Stock], [30,000],
-  [Debtors (of which ₹2,000 proved bad)], [25,000],
-  [Cash at Bank], [5,000],
-  [Total], [1,20,000],
-)
-
-Check the sheet first — liabilities ₹1,20,000 equal assets ₹1,20,000. The firm
-dissolves on that date. Machinery fetched ₹55,000, stock fetched ₹32,000, and
-the debtors (after ₹2,000 proved bad) settled at ₹22,000. Realisation expenses
-came to ₹3,000, paid by the firm.
-
-+ *Realise the assets:* 55,000 + 32,000 + 22,000 = *₹1,09,000 received*.
-+ *Book values transferred:* 60,000 + 30,000 + 25,000 = ₹1,15,000 (the ₹2,000
-  bad debt and ₹1,000 allowed as discount are simply absorbed in the result).
-+ *Result on realisation:* credits — 20,000 (creditors) + 1,09,000 = ₹1,29,000;
-  debits — 1,15,000 + 20,000 (creditors paid) + 3,000 (expenses) = ₹1,38,000.
-+ *Loss on realisation:* 1,38,000 − 1,29,000 = *₹9,000* — shared equally:
-  ₹4,500 each.
-
-== The Realisation Account
-
-#table(
-  columns: (1.7fr, 0.65fr, 1.7fr, 0.65fr),
-  table.header[*Dr. Particulars*][*₹*][*Cr. Particulars*][*₹*],
-  [To Machinery], [60,000], [By Creditors (transferred)], [20,000],
-  [To Stock], [30,000], [By Bank — Machinery], [55,000],
-  [To Debtors], [25,000], [By Bank — Stock], [32,000],
-  [To Bank — Creditors paid], [20,000], [By Bank — Debtors], [22,000],
-  [To Bank — Realisation expenses], [3,000], [], [],
-  [], [], [By Loss transferred — Capital A/cs: A 4,500; B 4,500], [9,000],
-  [], [1,38,000], [], [1,38,000],
-)
-
-The debit side is bigger by ₹9,000 — so that difference *is* the loss on
-realisation. It is credited to the Realisation Account as "By Partners'
-Capital A/cs" and debited to each partner in the old ratio, which closes the
-account on both sides at ₹1,38,000. Now the remaining accounts:
-
-== Partners' Capital Accounts
-
-#table(
-  columns: (1.45fr, 0.65fr, 0.65fr, 1.45fr, 0.65fr, 0.65fr),
-  table.header[*Dr. Particulars*][*A (₹)*][*B (₹)*][*Cr. Particulars*][*A (₹)*][*B (₹)*],
-  [To Realisation A/c — loss], [4,500], [4,500], [By Balance b/d], [50,000], [40,000],
-  [To Bank — final payment], [45,500], [35,500], [], [], [],
-  [], [50,000], [40,000], [], [50,000], [40,000],
-)
-
-Each partner's final payment is the balancing figure: A — 50,000 − 4,500 =
-₹45,500; B — 40,000 − 4,500 = ₹35,500.
-
-== A's Loan Account
-
-#table(
-  columns: (1.7fr, 0.65fr, 1.7fr, 0.65fr),
-  table.header[*Dr. Particulars*][*₹*][*Cr. Particulars*][*₹*],
-  [To Bank — loan repaid in full], [10,000], [By Balance b/d], [10,000],
-)
-
-No loss touches this account — the loan is a claim above capital.
-
-== Bank Account
-
-#table(
-  columns: (1.7fr, 0.65fr, 1.7fr, 0.65fr),
-  table.header[*Dr. Receipts*][*₹*][*Cr. Payments*][*₹*],
-  [To Balance b/d], [5,000], [By Realisation A/c — creditors], [20,000],
-  [To Realisation A/c — assets realised], [1,09,000], [By Realisation A/c — expenses], [3,000],
-  [], [], [By A's Loan A/c], [10,000],
-  [], [], [By A's Capital A/c], [45,500],
-  [], [], [By B's Capital A/c], [35,500],
-  [], [1,14,000], [], [1,14,000],
-)
-
-Read the payment column from top to bottom: creditors, then expenses, then the
-loan, then the capitals — the exact Section 48 queue. Receipts ₹1,14,000 =
-payments ₹1,14,000, and the Bank Account closes at *nil*. Every account is shut,
-every rupee is traced, nothing is left open. That is a complete dissolution.
-
-= Journal Entry Cheatsheet
-
-#cheatsheet-box(title: "Journal Entry Cheatsheet — Dissolution (Unit III)")[
   #table(
-    columns: (1.35fr, 1.25fr, 1.25fr),
-    table.header[*Item*][*Debit*][*Credit*],
-    [Assets (except cash) transferred at book value], [Realisation A/c], [Asset A/cs individually],
-    [Outside liabilities transferred], [Liability A/cs individually], [Realisation A/c],
-    [Assets sold / realised], [Bank A/c], [Realisation A/c],
-    [Outside liabilities paid], [Realisation A/c], [Bank A/c],
-    [Realisation expenses — paid by the firm], [Realisation A/c], [Bank A/c],
-    [Expenses borne by partner but paid by firm], [Partner's Capital A/c], [Bank A/c],
-    [Expenses borne and paid by partner personally], [Realisation A/c], [Partner's Capital A/c],
-    [Unrecorded asset realised / taken over], [Bank A/c / Partner's Capital A/c], [Realisation A/c],
-    [Profit on realisation], [Realisation A/c], [Partners' Capital A/cs — old PSR],
-    [Loss on realisation], [Partners' Capital A/cs — old PSR], [Realisation A/c],
-    [Accumulated reserves distributed], [Reserve / P&L A/c], [Partners' Capital A/cs — old PSR],
-    [Interest due on partner's loan (deed silent: 6% p.a.)], [Realisation A/c], [Partner's Loan A/c],
-    [Partner's loan repaid], [Partner's Loan A/c], [Bank A/c],
-    [Final payment of capital], [Partner's Capital A/c], [Bank A/c],
+    columns: (1.5fr, 0.8fr, 1.5fr, 0.8fr),
+    table.header[*Liabilities*][*₹*][*Assets*][*₹*],
+    [Sundry Creditors], [20,000], [Cash at Bank], [5,000],
+    [A's Loan Account], [10,000], [Sundry Debtors], [25,000],
+    [A's Capital Account], [50,000], [Stock in Trade], [30,000],
+    [B's Capital Account], [40,000], [Plant & Machinery], [60,000],
+    [*Total*], [*1,20,000*], [*Total*], [*1,20,000*],
   )
 
-  #v(4pt)
-  *Two queues to carry everywhere:* assets — outsiders, loans, capitals, surplus
-  in PSR; losses — profits, capitals, partners in PSR. The Realisation Account
-  result always travels in the *old* PSR, and the Bank Account must close at nil.
-]
+  *Dissolution Terms:*
+  1. Plant & Machinery realised ₹55,000; Stock realised ₹32,000; Debtors realised ₹22,000.
+  2. Sundry Creditors were paid in full. Realisation expenses of ₹3,000 paid by the firm.
 
-= Common Errors and Special Cases
-
-- *Read the table below as a checklist:* every row is one classic slip and the
-  fix that earns the mark straight back.
-- *Most slips share one root:* carrying the *going-concern* habits — revaluation
-  thinking, new ratios — into a firm that is *closing down*.
-- *The Bank test catches everything:* if the Bank Account refuses to close at
-  nil, one of the rows below is hiding somewhere in your working.
-
-#exception-box(title: "Common Errors & Special Cases")[
+  *Realisation Account*
   #table(
-    columns: (1.45fr, 1.55fr),
-    table.header[*The mistake students make*][*The correct treatment*],
-    [Preparing realisation like revaluation],
-    [Realisation uses *sale values on a shutdown*; revaluation values a *going* business. Dissolution never opens a Revaluation Account.],
-    [Sending accumulated reserves to the Realisation Account],
-    [General reserve and the credit balance of P&L belong to the partners — transfer straight to *capitals in the old PSR*.],
-    [Treating a partner's loan like capital],
-    [A loan ranks *above capital*: repaid in full after outside liabilities, and its interest is a *charge* even in a loss year.],
-    [Booking firm-paid expenses of a partner into Realisation],
-    [If the expense was to be *borne* by the partner but the *firm paid*, debit the *partner's capital* — Realisation is untouched.],
-    [Ignoring an unrecorded asset],
-    [It is still the firm's property: realising it *credits* Realisation; a partner taking it over debits that partner's capital and credits Realisation.],
-    [Transferring the cash balance to Realisation],
-    [Cash is already money — it never enters the Realisation Account.],
-    [Using the new or changed ratio for the realisation result],
-    [The result always goes to the *old* profit-sharing ratio in force on the closing date.],
-    [Leaving a balance in the Bank Account],
-    [A correct dissolution ends with the Bank Account at *nil*. A leftover means a missing or misplaced entry.],
+    columns: (1.55fr, 0.7fr, 1.55fr, 0.7fr),
+    table.header[*Dr. Particulars*][*₹*][*Cr. Particulars*][*₹*],
+    [To Plant & Machinery], [60,000], [By Sundry Creditors], [20,000],
+    [To Stock in Trade], [30,000], [By Bank A/c (Assets Realised):], [],
+    [To Sundry Debtors], [25,000], [#h(1em) Machinery: 55,000], [],
+    [To Bank A/c (Creditors paid)], [20,000], [#h(1em) Stock: 32,000], [],
+    [To Bank A/c (Expenses)], [3,000], [#h(1em) Debtors: 22,000], [1,09,000],
+    [], [], [By Realisation Loss transferred to:], [],
+    [], [], [#h(1em) A's Capital A/c (1/2)], [4,500],
+    [], [], [#h(1em) B's Capital A/c (1/2)], [4,500],
+    [*Total*], [*1,38,000*], [*Total*], [*1,38,000*],
   )
 
-  #v(4pt)
-  *Three checking habits before you finalise any dissolution answer:*
-  - *Add both queues aloud* — payments: outsiders → loans → capitals → surplus; losses: profits → capitals → partners in PSR.
-  - *Match the two sides of every account* — capitals, loan and bank must each total exactly.
-  - *Prove the end state* — Bank closes at nil, Realisation closes at nil, and no partner keeps an open balance.
+  *Partners' Capital Accounts*
+  #table(
+    columns: (1.4fr, 0.65fr, 0.65fr, 1.4fr, 0.65fr, 0.65fr),
+    table.header[*Dr. Particulars*][*A (₹)*][*B (₹)*][*Cr. Particulars*][*A (₹)*][*B (₹)*],
+    [To Realisation Loss], [4,500], [4,500], [By Balance b/d], [50,000], [40,000],
+    [To Bank A/c (Final settlement)], [45,500], [35,500], [], [], [],
+    [*Total*], [*50,000*], [*40,000*], [*Total*], [*50,000*], [*40,000*],
+  )
+
+  *Bank Account*
+  #table(
+    columns: (1.55fr, 0.7fr, 1.55fr, 0.7fr),
+    table.header[*Bank Receipts*][*₹*][*Bank Payments*][*₹*],
+    [To Balance b/d], [5,000], [By Realisation (Creditors)], [20,000],
+    [To Realisation (Assets)], [1,09,000], [By Realisation (Expenses)], [3,000],
+    [], [], [By A's Loan A/c], [10,000],
+    [], [], [By A's Capital A/c], [45,500],
+    [], [], [By B's Capital A/c], [35,500],
+    [*Total*], [*1,14,000*], [*Total*], [*1,14,000*],
+  )
 ]
 
-= The Whole Chapter on One Page
+#worked-example("Master Problem 2 — Complex Settlements, Creditor Swaps & Capital Deficiency")[
+  X and Y share profits in $3:2$. On dissolution, the balance sheet shows: Sundry Creditors ₹30,000; Loan from Mrs. X ₹20,000; Capitals: X ₹40,000, Y (Dr. balance) ₹10,000. Assets include: Furniture ₹25,000; Stock ₹35,000; Bank ₹5,000.
+  - Creditors accept Furniture of ₹25,000 at ₹22,000 and the remaining ₹8,000 in cash.
+  - Mrs. X's loan is settled with interest of ₹1,000 (total ₹21,000).
+  - Stock realises ₹28,000. Realisation expenses are ₹2,000 paid by firm.
+  - Partner Y is solvent and brings in necessary cash to settle his capital deficiency.
 
-#figure(image("assets/dissolution_mindmap.png", width: 100%), caption: [Chapter mindmap — the six ideas of Unit III and the traps that catch most students.])
+  *Realisation Account*
+  #table(
+    columns: (1.55fr, 0.7fr, 1.55fr, 0.7fr),
+    table.header[*Dr. Particulars*][*₹*][*Cr. Particulars*][*₹*],
+    [To Furniture A/c], [25,000], [By Sundry Creditors], [30,000],
+    [To Stock in Trade], [35,000], [By Loan from Mrs. X], [20,000],
+    [To Bank (Creditors cash)], [8,000], [By Bank (Stock realised)], [28,000],
+    [To Bank (Mrs. X loan settled)], [21,000], [By Realisation Loss: X (3/5)], [7,800],
+    [To Bank (Expenses)], [2,000], [#h(1em) Y (2/5)], [5,200],
+    [*Total*], [*91,000*], [*Total*], [*91,000*],
+  )
 
-= Practice Questions
+  *Partners' Capital Accounts*
+  #table(
+    columns: (1.4fr, 0.65fr, 0.65fr, 1.4fr, 0.65fr, 0.65fr),
+    table.header[*Dr. Particulars*][*X (₹)*][*Y (₹)*][*Cr. Particulars*][*X (₹)*][*Y (₹)*],
+    [To Balance b/d], [—], [10,000], [By Balance b/d], [40,000], [—],
+    [To Realisation Loss], [7,800], [5,200], [By Bank (Cash brought)], [—], [15,200],
+    [To Bank (Final payment)], [32,200], [—], [], [], [],
+    [*Total*], [*40,000*], [*15,200*], [*Total*], [*40,000*], [*15,200*],
+  )
 
-#mcq(1, [On dissolution of a firm, the *first* claim on whatever the firm owns belongs to:], (
-  [Partners' loans], [Outside creditors], [Partners' capitals], [Partners in their profit-sharing ratio],
-))
+  *Bank Account*
+  #table(
+    columns: (1.55fr, 0.7fr, 1.55fr, 0.7fr),
+    table.header[*Bank Receipts*][*₹*][*Bank Payments*][*₹*],
+    [To Balance b/d], [5,000], [By Realisation (Creditors)], [8,000],
+    [To Realisation (Stock)], [28,000], [By Realisation (Mrs. X loan)], [21,000],
+    [To Y's Capital A/c (Deficit)], [15,200], [By Realisation (Expenses)], [2,000],
+    [], [], [By X's Capital A/c], [32,200],
+    [*Total*], [*48,200*], [*Total*], [*48,200*],
+  )
 
-#mcq(2, [The Realisation Account prepared at dissolution is best described as:], (
-  [a real account], [a personal account], [a nominal account], [a suspense account],
-))
+  *Key Analytical Takeaways:*
+  1. *Creditor Asset Swap:* Furniture accepted at ₹22,000 settles ₹22,000 debt without journal entry. Only remaining ₹8,000 cash paid is recorded.
+  2. *Deficit Settlement:* Y brings in ₹15,200 cash, exactly providing funds for X's ₹32,200 final payout.
+]
 
-#mcq(3, [Which of the following is *not* transferred to the Realisation Account?], (
-  [Debtors], [Closing stock], [Machinery], [Cash at bank],
-))
+#pagebreak()
 
-#mcq(4, [A firm holds a loan of ₹20,000 from partner A. The deed is silent on interest, and the firm dissolves exactly 6 months after the last interest date. The interest payable to A is:], (
-  [Nil], [₹600], [₹1,200], [₹2,400],
-))
+= 7. Synthesis & Strategic Revision Framework
 
-#mcq(5, [Assets other than cash of ₹4,00,000 are transferred to the Realisation Account. They realise ₹3,85,000, and the firm pays realisation expenses of ₹5,000. The loss on realisation is:], (
-  [₹15,000], [₹10,000], [₹20,000], [₹25,000],
-))
+The complete dissolution workflow operates across a strict sequence of ledger closures:
+1. *Step 1 (Realisation A/c):* Asset sales and liability discharges close the operating entity and reveal net profit or loss.
+2. *Step 2 (Partner's Loan A/c):* Internal loans are cleared directly through Bank after outside creditors.
+3. *Step 3 (Partners' Capital A/cs):* Reserves, realisation profit/loss, and drawings are absorbed to determine final claims or deficiencies.
+4. *Step 4 (Bank/Cash A/c):* Final cash receipts and payments automatically clear all balances to zero, leaving no open accounts.
 
-#mcq(6, [At dissolution, an unrecorded asset worth ₹9,000 is taken over by one of the partners at that value. The account *credited* is:], (
-  [the partner's Capital A/c], [Revaluation A/c], [Bank A/c], [Realisation A/c],
-))
+#figure(
+  image("assets/acc_dissolution_mindmap.png", width: 78%),
+  caption: [Master Synthesis Mindmap: Structural framework of Unit III Dissolution of Partnership Firm.],
+)
 
-#mcq(7, [A firm was formed to carry out one construction project. The project is now complete and no agreement extends the firm's life. The firm stands dissolved:], (
-  [by contingency], [by agreement], [compulsorily], [by court order],
-))
+#pagebreak()
 
-#mcq(8, [In the settlement of accounts, immediately *after* the outside liabilities are paid, the next claim on the firm's assets is:], (
-  [partners' capitals], [partners' loans], [partners in their profit-sharing ratio], [realisation expenses],
-))
+#cheatsheet-box(title: "Master Dissolution of Partnership Revision Cheatsheet")[
+  - *Sec 48 Loss Order:* 1st out of profits -> 2nd out of capital -> 3rd by partners in PSR.
+  - *Sec 48 Asset Order:* 1st Outside Debts -> 2nd Partner Loans -> 3rd Partner Capitals -> 4th Surplus in PSR.
+  - *Sec 49 Debt Priority:* Firm property pays Firm debts first; Private property pays Private debts first.
+  - *Realisation Transfer Debit:* All assets at Gross Book Value (Debtors gross, Goodwill, Plant). Excludes Cash, Bank, Fictitious Assets, Partner Loans.
+  - *Realisation Transfer Credit:* Outside debts + Provision for Debtors + IFR. Excludes Partner Capitals, Reserves, Partner Loans.
+  - *Creditor Asset Swap:* No entry when creditor accepts asset in full settlement. Cash differences debited/credited to Realisation A/c.
+  - *Partner's Wife Loan:* Outside debt transferred to Realisation A/c. Partner's own loan is settled directly through Bank A/c!
+  - *Goodwill on Dissolution:* Transferred to Realisation A/c Debit. If silent on realisation, realisable value is NIL.
+  - *Realisation Expenses:* Firm bears/Firm pays: `Realisation Dr. Bank Cr.` | Partner bears/Firm pays: `Partner Cap Dr. Bank Cr.`
+  - *Ledger Closure:* Bank/Cash Account balance must automatically equal net Partner Capital balances to close the books!
+]
 
-#mcq(9, [Realisation expenses of ₹4,000 were to be *borne by partner B*, but the firm paid them on her behalf. After debiting B's Capital A/c, the credit goes to:], (
-  [Bank A/c], [Realisation A/c], [Creditors A/c], [B's Loan A/c],
-))
+#exception-box(title: "Top 7 High-Frequency CUET Traps in Dissolution Accounting")[
+  1. *Creditor-Asset Swap Trap:* When an asset settles a liability, *zero entry* is passed! Do not debit Creditors or credit Realisation again.
+  2. *Partner Loan vs Relative Loan:* Wife/relative loans are *outside liabilities* transferred to Realisation A/c; partner's own loan is settled directly through Bank!
+  3. *Gross vs Net Debtors:* Transfer Debtors to Realisation debit at *Gross Book Value*. Credit Provision for Doubtful Debts separately on credit side!
+  4. *Dissolution Goodwill:* Goodwill is debited to Realisation A/c like any tangible asset; if silent on realisation, its realised value is *NIL*.
+  5. *Silent Liability Rule:* If an outside liability has no mention of realisation, it *must be paid in full at book value*!
+  6. *Realisation Expense Commission:* If a partner is paid a fixed fee to bear expenses, debit Realisation A/c with the *agreed fee only*.
+  7. *Surplus Distribution Ratio:* Residual surplus under Section 48(b)(iv) is divided strictly in *Profit-Sharing Ratio*, never capital ratio!
+]
 
-#mcq(10, [A and B share profits 3:2. The firm dissolves and the loss on realisation is ₹25,000. B's share of this loss is:], (
-  [₹12,500], [₹15,000], [₹10,000], [₹5,000],
-))
+#pagebreak()
 
-= Solutions
+= CUET UG Exam-Style Practice Questions
 
-#solution(1, [Section 48 fixes the payment queue: outside liabilities first, then
-partners' loans, then capitals, and only then a surplus shared in the old PSR.
-Loans and capitals come *after* the strangers' claims.], answer: "B")
+#mcq(
+  1,
+  [Which of the following statements correctly distinguishes dissolution of a partnership from dissolution of a partnership firm?],
+  (
+    [Firm dissolution terminates the partnership firm completely],
+    [Court can compulsorily order reconstitution],
+    [Books of accounts are closed on reconstitution],
+    [Business always continues on firm dissolution],
+  ),
+)
+#solution(
+  1,
+  [
+    Dissolution of the firm closes the business entity completely and terminates the partnership. Reconstitution merely changes internal relations while business continues.
+  ],
+  answer: [A],
+)
 
-#solution(2, [The Realisation Account measures a *gain or loss* — the profit or loss
-on selling assets and settling liabilities — so it is a *nominal* account, just
-like the P&L Account of a going concern.], answer: "C")
+#mcq(
+  2,
+  [Under Section 41 of the Indian Partnership Act, 1932, a partnership firm is compulsorily dissolved when:],
+  (
+    [A partner gives 14 days' written notice],
+    [All or all but one partner become insolvent],
+    [A partner transfers interest to a third party],
+    [The firm incurs continuous operating losses],
+  ),
+)
+#solution(
+  2,
+  [
+    Section 41 mandates compulsory dissolution if all partners (or all except one) are adjudicated insolvent, or if the firm's business becomes unlawful.
+  ],
+  answer: [B],
+)
 
-#solution(3, [The cash/bank balance is already money — there is nothing left to
-"realise" in it. Only *non-cash* assets are transferred to the Realisation
-Account; the cash simply waits in the Bank Account to make payments.], answer: "D")
+#mcq(
+  3,
+  [In a partnership at will, the firm may be dissolved by any partner by giving notice in writing of his intention to dissolve to:],
+  (
+    [The Registrar of Firms],
+    [The senior partner only],
+    [All other partners],
+    [The civil court],
+  ),
+)
+#solution(
+  3,
+  [
+    Under Section 43, in a partnership at will, any partner can dissolve the firm by giving written notice of dissolution to all other partners.
+  ],
+  answer: [C],
+)
 
-#solution(4, [Interest on a partner's loan applies by default at 6% p.a. when the
-deed is silent, and it is a charge: 20,000 × 6/100 × 6/12 = *₹600*.], answer: "B")
+#mcq(
+  4,
+  [Under Section 48(a) of the Indian Partnership Act, 1932, losses including deficiencies of capital must be paid first out of:],
+  (
+    [Profits of the firm],
+    [Capital contributions of partners],
+    [Private assets of partners in PSR],
+    [Advances provided by partners],
+  ),
+)
+#solution(
+  4,
+  [
+    Section 48(a) lays down that losses and deficiencies of capital are paid first out of profits, next out of capital, and lastly by partners individually in their PSR.
+  ],
+  answer: [A],
+)
 
-#solution(5, [Loss = book value transferred − proceeds + expenses = 4,00,000 −
-3,85,000 + 5,000 = *₹20,000*. Both the shortfall on sale and the expenses
-widen the loss.], answer: "C")
+#mcq(
+  5,
+  [Under Section 48(b), what is the correct statutory priority order for applying firm assets on dissolution?],
+  (
+    [Capitals, Loans, Outside debts, Surplus],
+    [Loans, Outside debts, Capitals, Surplus],
+    [Outside debts, Partner loans, Capitals, Surplus],
+    [Outside debts, Capitals, Loans, Surplus],
+  ),
+)
+#solution(
+  5,
+  [
+    Section 48(b) mandates: 1. Third-party outside debts, 2. Partner advances/loans rateably, 3. Partner capital balances rateably, 4. Surplus divided in PSR.
+  ],
+  answer: [C],
+)
 
-#solution(6, [A partner taking over an unrecorded asset is charged with its value:
-*Partner's Capital A/c Dr* — *To Realisation A/c*. The credit therefore lands in
-the Realisation Account, keeping the realisation result complete.], answer: "D")
+#pagebreak()
 
-#solution(7, [A firm formed for a single venture dissolves *on the completion of
-that venture* — this is dissolution on the happening of a contingency (Sec 42).
-No consent and no court order are needed.], answer: "A")
+#mcq(
+  6,
+  [A firm holds a loan of ₹40,000 from partner A and a loan of ₹30,000 from A's wife. On dissolution of the firm:],
+  (
+    [Both loans are transferred to Realisation A/c],
+    [Wife's loan to Realisation; A's loan paid via Bank],
+    [Both loans paid directly via Bank],
+    [Partner A's loan is paid before Wife's loan],
+  ),
+)
+#solution(
+  6,
+  [
+    A loan from a partner's wife is an outside third-party debt transferred to Realisation A/c. A partner's own loan is an internal advance paid directly via Bank after outside debts.
+  ],
+  answer: [B],
+)
 
-#solution(8, [The Section 48 queue runs: outside liabilities → partners' loans →
-partners' capitals → surplus in PSR. A partner's loan is treated like borrowed
-money, so it is repaid right after the outsiders and before any capital returns.], answer: "B")
+#mcq(
+  7,
+  [Sundry Debtors stand at ₹80,000 with a Provision of ₹6,000 in the balance sheet. How are these transferred to Realisation A/c?],
+  (
+    [Debit Realisation ₹80,000; Credit Realisation ₹6,000],
+    [Debit Realisation with Net Debtors ₹74,000],
+    [Debit Realisation ₹80,000; Credit Debtors ₹74,000],
+    [Credit Realisation ₹80,000; Debit Provision ₹6,000],
+  ),
+)
+#solution(
+  7,
+  [
+    Debtors are debited to Realisation A/c at Gross Book Value (₹80,000), while Provision for Doubtful Debts is credited to Realisation A/c (₹6,000).
+  ],
+  answer: [A],
+)
 
-#solution(9, [The firm paid an expense that B had agreed to bear — the firm has
-simply paid *on her behalf*. So B's Capital A/c is debited ₹4,000 and the
-*Bank A/c* is credited for the amount that left the firm. Realisation is not
-debited, because the expense was never the firm's burden.], answer: "A")
+#mcq(
+  8,
+  [Goodwill appears in the balance sheet at ₹50,000 on the date of dissolution. In the accounting books, this goodwill is:],
+  (
+    [Debited to Capital Accounts in old PSR],
+    [Debited to Realisation A/c at book value],
+    [Ignored because goodwill has zero value],
+    [Credited to Realisation A/c at book value],
+  ),
+)
+#solution(
+  8,
+  [
+    On dissolution, goodwill appearing in the balance sheet is transferred to the Debit of Realisation Account at book value like any other commercial asset.
+  ],
+  answer: [B],
+)
 
-#solution(10, [Losses at dissolution are borne in the *old* profit-sharing ratio.
-B's share = 25,000 × 2/5 = *₹10,000* (A bears the other ₹15,000).], answer: "C")
+#mcq(
+  9,
+  [A creditor of ₹60,000 accepts machinery of book value ₹75,000 in full settlement of his claim. The journal entry passed is:],
+  (
+    [Debit Realisation ₹60,000; Credit Machinery ₹60,000],
+    [Debit Creditors ₹60,000; Credit Realisation ₹60,000],
+    [Debit Realisation ₹15,000; Credit Gain ₹15,000],
+    [No journal entry is passed],
+  ),
+)
+#solution(
+  9,
+  [
+    When an asset is accepted by a creditor in full satisfaction of their claim, no journal entry is passed because both items were already transferred to Realisation Account.
+  ],
+  answer: [D],
+)
+
+#mcq(
+  10,
+  [A creditor of ₹50,000 accepts furniture of ₹40,000 at ₹35,000 and the balance in cash. The journal entry for cash paid is:],
+  (
+    [Debit Furniture ₹35,000; Credit Bank ₹35,000],
+    [Debit Realisation ₹15,000; Credit Bank ₹15,000],
+    [Debit Creditors ₹15,000; Credit Bank ₹15,000],
+    [Debit Realisation ₹50,000; Credit Bank ₹15,000],
+  ),
+)
+#solution(
+  10,
+  [
+    Furniture takeover requires no entry. Cash balance paid is 50,000 − 35,000 = ₹15,000, recorded as Realisation A/c Dr. ₹15,000 to Bank A/c Cr. ₹15,000.
+  ],
+  answer: [B],
+)
+
+#pagebreak()
+
+#mcq(
+  11,
+  [Realisation expenses of ₹8,000 were to be borne by partner X, but were paid by the firm on his behalf. The journal entry is:],
+  (
+    [Debit Realisation ₹8,000; Credit Bank ₹8,000],
+    [Debit Realisation ₹8,000; Credit X Cap ₹8,000],
+    [Debit X's Capital ₹8,000; Credit Bank ₹8,000],
+    [No entry is passed in the firm's books],
+  ),
+)
+#solution(
+  11,
+  [
+    When a partner bears expenses but the firm pays cash on his behalf, the firm recovers the payment from the partner: X's Capital A/c Dr. ₹8,000 to Bank A/c Cr. ₹8,000.
+  ],
+  answer: [C],
+)
+
+#mcq(
+  12,
+  [Partner Y is appointed for dissolution at remuneration ₹10,000 and bears all expenses. Y pays ₹6,000 actual expenses. What entry is passed?],
+  (
+    [Debit Realisation ₹10,000; Credit Y Cap ₹10,000],
+    [Debit Realisation ₹16,000; Credit Bank ₹16,000],
+    [Debit Realisation ₹6,000; Credit Y Cap ₹6,000],
+    [Debit Realisation ₹4,000; Credit Y Cap ₹4,000],
+  ),
+)
+#solution(
+  12,
+  [
+    The firm only accounts for the agreed remuneration: Realisation A/c Dr. ₹10,000 to Y's Capital A/c Cr. ₹10,000. Y's personal payment requires no entry in firm books.
+  ],
+  answer: [A],
+)
+
+#mcq(
+  13,
+  [Assets transferred: ₹3,00,000; Liabilities transferred: ₹1,20,000; Assets realised ₹2,70,000; Liabilities paid ₹1,10,000; Expenses ₹5,000. Realisation result is:],
+  (
+    [Profit of ₹25,000],
+    [Loss of ₹25,000],
+    [Loss of ₹35,000],
+    [Profit of ₹15,000],
+  ),
+)
+#solution(
+  13,
+  [
+    Debits = 3,00,000 + 1,10,000 + 5,000 = ₹4,15,000. Credits = 1,20,000 + 2,70,000 = ₹3,90,000. Net Loss on Realisation = 4,15,000 − 3,90,000 = ₹25,000.
+  ],
+  answer: [B],
+)
+
+#mcq(
+  14,
+  [Under Section 49 of the Indian Partnership Act, 1932, the separate private property of any partner must be applied:],
+  (
+    [First to firm debts, surplus to private debts],
+    [First to private debts, surplus to firm debts],
+    [Equally between private and firm debts],
+    [Exclusively for capital contribution],
+  ),
+)
+#solution(
+  14,
+  [
+    Section 49 states that separate private property of a partner is applied first to discharge his separate private debts, and any surplus is applied to firm debts.
+  ],
+  answer: [B],
+)
+
+#mcq(
+  15,
+  [After all adjustments, solvent partner P's capital account exhibits a debit balance of ₹15,000. In final settlement, P will:],
+  (
+    [Bring in ₹15,000 cash to settle deficiency],
+    [Receive ₹15,000 cash from the firm],
+    [Have ₹15,000 written off to Realisation A/c],
+    [Transfer ₹15,000 to Partner's Loan A/c],
+  ),
+)
+#solution(
+  15,
+  [
+    A debit balance in a solvent partner's capital account represents a deficiency owed to the firm. P must bring in ₹15,000 cash (Bank A/c Dr. to P's Capital A/c).
+  ],
+  answer: [A],
+)
 
 #v(10pt)
-#align(center)[#text(fill: om-grey, size: 9pt)[© OurMocks · www.ourmocks.com · CUET UG Accountancy · Unit III: Dissolution of Partnership Firm · 2027 cycle]]
+#align(center)[#text(fill: om-grey, size: 9pt)[© OurMocks · www.ourmocks.com · CUET UG Accountancy · Unit III: Dissolution of a Partnership Firm · 2027 cycle]]

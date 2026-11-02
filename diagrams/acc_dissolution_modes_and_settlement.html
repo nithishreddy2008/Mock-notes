@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1440, height=880">
+  <title>Dissolution of Partnership Firm: Modes, Legal Framework & Settlement Priority</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 1440px;
+      height: 880px;
+      background-color: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0F172A;
+      padding: 32px 40px;
+      overflow: hidden;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 22px;
+      border-bottom: 2px solid #E2E8F0;
+      padding-bottom: 14px;
+    }
+    .title-group h1 {
+      font-size: 25px;
+      font-weight: 800;
+      color: #0F2C59;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+    .title-group p {
+      font-size: 13.5px;
+      color: #64748B;
+      font-weight: 500;
+    }
+    .badge {
+      background: #0066FF;
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      height: calc(100% - 105px);
+    }
+    .card {
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      border-radius: 12px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: none !important;
+    }
+    .card-title {
+      font-size: 16px;
+      font-weight: 800;
+      color: #0F2C59;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1.5px solid #F1F5F9;
+    }
+    .card-title svg {
+      width: 22px;
+      height: 22px;
+      fill: #0066FF;
+    }
+    .content-block {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .comp-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+    }
+    .comp-table th {
+      background: #F1F5F9;
+      color: #334155;
+      font-weight: 700;
+      text-align: left;
+      padding: 6px 8px;
+      border-bottom: 1.5px solid #CBD5E1;
+    }
+    .comp-table td {
+      padding: 6px 8px;
+      border-bottom: 1px solid #E2E8F0;
+      color: #1E293B;
+      line-height: 1.35;
+    }
+    .comp-table tr:last-child td {
+      border-bottom: none;
+    }
+    .tag {
+      display: inline-block;
+      font-size: 10.5px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 4px;
+      margin-right: 4px;
+    }
+    .tag-blue { background: #E0E7FF; color: #1E40AF; }
+    .tag-red { background: #FEE2E2; color: #991B1B; }
+    .tag-green { background: #DCFCE7; color: #166534; }
+    .tag-amber { background: #FEF3C7; color: #92400E; }
+    .mode-item {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-left: 3.5px solid #0066FF;
+      border-radius: 6px;
+      padding: 8px 10px;
+      font-size: 12px;
+    }
+    .mode-item h4 {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #0F2C59;
+      margin-bottom: 2px;
+    }
+    .mode-item p {
+      color: #475569;
+      line-height: 1.35;
+    }
+    .step-box {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 6px;
+      padding: 9px 11px;
+      font-size: 12px;
+      position: relative;
+    }
+    .step-num {
+      position: absolute;
+      right: 10px;
+      top: 8px;
+      font-size: 11px;
+      font-weight: 800;
+      color: #94A3B8;
+    }
+    .step-box h4 {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #0F2C59;
+      margin-bottom: 3px;
+    }
+    .step-box p {
+      color: #475569;
+      line-height: 1.35;
+    }
+    .highlight-banner {
+      background: #EFF6FF;
+      border: 1px dashed #3B82F6;
+      border-radius: 6px;
+      padding: 8px 10px;
+      font-size: 11.5px;
+      color: #1E3A8A;
+      line-height: 1.35;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="title-group">
+      <h1>Dissolution of Partnership Firm: Modes, Framework & Settlement Priority</h1>
+      <p>NTA CUET(UG) Accountancy 301 · Unit III Architecture · Sections 39, 40–44, 48 & 49 Defaults</p>
+    </div>
+    <div class="badge">Legal Framework</div>
+  </div>
+
+  <div class="grid">
+
+    <!-- Card 1: Dissolution of Partnership vs Firm -->
+    <div class="card">
+      <div class="card-title">
+        <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+        <span>Dissolution: Partnership vs Firm</span>
+      </div>
+      <div class="content-block">
+        <table class="comp-table">
+          <thead>
+            <tr>
+              <th>Basis</th>
+              <th>Dissolution of Partnership</th>
+              <th>Dissolution of Firm</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Business</strong></td>
+              <td>Firm continues; only internal relations change.</td>
+              <td>Business comes to a complete end; operations cease.</td>
+            </tr>
+            <tr>
+              <td><strong>Books</strong></td>
+              <td>Books stay open; revaluation entries passed.</td>
+              <td>Books are completely closed via Realisation A/c.</td>
+            </tr>
+            <tr>
+              <td><strong>Court Role</strong></td>
+              <td>Voluntary only; court never orders reconstitution.</td>
+              <td>Court can order dissolution under Section 44.</td>
+            </tr>
+            <tr>
+              <td><strong>Assets & Liab</strong></td>
+              <td>Assets revalued & liabilities reassessed.</td>
+              <td>Assets sold off & outside liabilities paid off.</td>
+            </tr>
+            <tr>
+              <td><strong>Scope</strong></td>
+              <td>Does NOT require dissolution of the firm.</td>
+              <td>Necessarily involves dissolution of partnership!</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="highlight-banner">
+          <strong>Key CUET Principle:</strong> Dissolution of the firm terminates all legal and economic ties among all partners. Reconstitution merely rewrites the agreement while the firm survives.
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2: Modes of Dissolution (Sec 40-44) -->
+    <div class="card">
+      <div class="card-title">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+        <span>Modes of Dissolution (Sec 40–44)</span>
+      </div>
+      <div class="content-block">
+        <div class="mode-item" style="border-left-color: #10B981;">
+          <h4>1. By Agreement (Section 40)</h4>
+          <p>With unanimous consent of all partners or in accordance with contract between them.</p>
+        </div>
+
+        <div class="mode-item" style="border-left-color: #EF4444;">
+          <h4>2. Compulsory Dissolution (Section 41)</h4>
+          <p>When all partners (or all except one) become insolvent, or firm's business becomes unlawful.</p>
+        </div>
+
+        <div class="mode-item" style="border-left-color: #F59E0B;">
+          <h4>3. On Contingencies (Section 42)</h4>
+          <p>Subject to contract: expiry of term, completion of venture, death or insolvency of a partner.</p>
+        </div>
+
+        <div class="mode-item" style="border-left-color: #6366F1;">
+          <h4>4. By Notice in Will (Section 43)</h4>
+          <p>In partnership at will: any partner giving written notice of dissolution to all other partners.</p>
+        </div>
+
+        <div class="mode-item" style="border-left-color: #8B5CF6;">
+          <h4>5. Dissolution by Court (Section 44)</h4>
+          <p>Insanity, permanent incapacity, misconduct, persistent breach of contract, continuous loss, or just & equitable.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3: Settlement Priority (Sec 48 & 49) -->
+    <div class="card">
+      <div class="card-title">
+        <svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg>
+        <span>Settlement Priority (Sec 48 & 49)</span>
+      </div>
+      <div class="content-block">
+        <div class="step-box" style="border-left: 3.5px solid #EF4444;">
+          <span class="step-num">STEP 1</span>
+          <h4>Outside Debts (Third Parties)</h4>
+          <p>Creditors, Bills Payable, Bank Overdraft, and <strong>Partner's Wife Loan</strong> paid first.</p>
+        </div>
+
+        <div class="step-box" style="border-left: 3.5px solid #F59E0B;">
+          <span class="step-num">STEP 2</span>
+          <h4>Partner's Loan to Firm</h4>
+          <p>Advances by partners paid pro-rata if assets are insufficient; prior to capital.</p>
+        </div>
+
+        <div class="step-box" style="border-left: 3.5px solid #10B981;">
+          <span class="step-num">STEP 3</span>
+          <h4>Partner Capital Balances</h4>
+          <p>Return of capital to partners rateably according to their adjusted credit balances.</p>
+        </div>
+
+        <div class="step-box" style="border-left: 3.5px solid #0066FF;">
+          <span class="step-num">STEP 4</span>
+          <h4>Surplus Distribution (PSR)</h4>
+          <p>Remaining cash distributed strictly in profit-sharing ratio (never capital ratio!).</p>
+        </div>
+
+        <div class="highlight-banner" style="background: #FEF3C7; border-color: #F59E0B; color: #78350F;">
+          <strong>Section 49 Rule:</strong> Firm property pays Firm debts first (surplus to private debts). Private property pays Private debts first (surplus to firm debts).
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

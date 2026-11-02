@@ -106,7 +106,7 @@
             #text(fill: om-navy, font: om-display-font, size: 13.5pt, weight: 800)[#exam]
           ],
           box(stroke: 1pt + white.transparentize(55%), radius: 5pt, inset: (x: 11pt, y: 6pt))[
-            #text(fill: white, font: om-display-font, size: 11pt, weight: 700)[#subject]
+            #text(fill: white, font: om-display-font, size: 11.5pt, weight: 700)[#subject]
           ],
         )
         #v(26pt)
@@ -114,7 +114,7 @@
         #v(12pt)
         #block(width: 24%, height: 3.5pt, fill: om-lime, radius: 2pt)
         #v(13pt)
-        #text(fill: white.transparentize(28%), font: om-display-font, size: 11pt)[#subtitle]
+        #text(fill: white.transparentize(28%), font: om-display-font, size: 11.5pt)[#subtitle]
         #v(30pt)
         #grid(columns: (auto, auto, auto), column-gutter: 9pt,
           box(fill: white.transparentize(93%), stroke: (bottom: 2pt + om-lime), radius: 4pt, inset: (x: 11pt, y: 8pt))[
@@ -139,7 +139,7 @@
           text(fill: white.transparentize(40%), font: om-display-font, size: 8.5pt)[
             Aligned to the latest official syllabus · Concept-first explanations
           ],
-          text(fill: om-lime, font: om-display-font, size: 11pt, weight: 800)[#om-site],
+          text(fill: om-lime, font: om-display-font, size: 11.5pt, weight: 800)[#om-site],
         )
       ],
     )
@@ -210,6 +210,86 @@
   #body
 ]
 
+// Standard callout boxes for humanities and general subjects
+#let note-box(body, title: "Note") = block(
+  width: 100%,
+  inset: 12pt,
+  fill: rgb("#F0F9FF"),
+  radius: 6pt,
+  stroke: (left: 2.5pt + rgb("#0284C7")),
+  breakable: true,
+)[
+  #text(fill: rgb("#0369A1"), weight: 800, size: 9.5pt, tracking: 0.08em, font: om-display-font)[#upper(title)]
+  #v(4pt)
+  #body
+]
+
+#let tip-box(body, title: "High-Yield Tip") = block(
+  width: 100%,
+  inset: 12pt,
+  fill: rgb("#F0FDF4"),
+  radius: 6pt,
+  stroke: (left: 2.5pt + rgb("#16A34A")),
+  breakable: true,
+)[
+  #text(fill: rgb("#15803D"), weight: 800, size: 9.5pt, tracking: 0.08em, font: om-display-font)[#upper(title)]
+  #v(4pt)
+  #body
+]
+
+#let caution-box(body, title: "Caution / Warning") = block(
+  width: 100%,
+  inset: 12pt,
+  fill: rgb("#FEF2F2"),
+  radius: 6pt,
+  stroke: (left: 2.5pt + rgb("#DC2626")),
+  breakable: true,
+)[
+  #text(fill: rgb("#B91C1C"), weight: 800, size: 9.5pt, tracking: 0.08em, font: om-display-font)[#upper(title)]
+  #v(4pt)
+  #body
+]
+
+#let important-box(body, title: "Important Concept") = block(
+  width: 100%,
+  inset: 12pt,
+  fill: rgb("#FFFBEB"),
+  radius: 6pt,
+  stroke: (left: 2.5pt + rgb("#D97706")),
+  breakable: true,
+)[
+  #text(fill: rgb("#B45309"), weight: 800, size: 9.5pt, tracking: 0.08em, font: om-display-font)[#upper(title)]
+  #v(4pt)
+  #body
+]
+
+#let definition-box(body, title: "Definition") = block(
+  width: 100%,
+  inset: 12pt,
+  fill: rgb("#F8FAFC"),
+  radius: 6pt,
+  stroke: (left: 2.5pt + rgb("#475569")),
+  breakable: true,
+)[
+  #text(fill: rgb("#334155"), weight: 800, size: 9.5pt, tracking: 0.08em, font: om-display-font)[#upper(title)]
+  #v(4pt)
+  #body
+]
+
+#let table-box(body, title: "") = block(
+  width: 100%,
+  breakable: true,
+)[
+  #if title != "" [
+    #text(fill: om-navy, weight: 800, size: 10.5pt, font: om-display-font)[#title]
+    #v(3pt)
+  ]
+  #body
+  #v(6pt)
+]
+
+// Real-world analogy / everyday example (lime) — replaces memory hook
+
 // Exam-pattern pointer (navy) — marking scheme / pattern facts only
 #let exam-pointer(body, title: "Exam Pattern") = block(
   width: 100%,
@@ -245,20 +325,20 @@
 // array dump (the bug seen in the v1 PDFs).
 #let mcq(number, question, options, marks-note: none) = block(
   width: 100%,
-  inset: (x: 11pt, y: 9pt),
-  radius: 6pt,
+  inset: (x: 8.5pt, y: 3.5pt),
+  radius: 5pt,
   stroke: 0.7pt + om-navy.lighten(55%),
   breakable: false,
-  above: 7pt,
-  below: 7pt,
+  above: 2pt,
+  below: 2pt,
 )[
   #text(weight: 800, fill: om-navy)[Q#number.] #h(3pt) #question
   #if marks-note != none { text(fill: om-grey, size: 8pt)[ #marks-note] }
-  #v(5pt)
+  #v(2pt)
   #grid(
     columns: (1fr, 1fr),
-    column-gutter: 14pt,
-    row-gutter: 5pt,
+    column-gutter: 10pt,
+    row-gutter: 2.5pt,
     ..options.enumerate(start: 1).map(pair => {
       let letter = "ABCD".at(pair.first() - 1)
       [#text(fill: om-blue, weight: 800)[(#letter)] #h(3pt) #pair.at(1)]
@@ -269,17 +349,17 @@
 // Solution block — inline answer line (no separate answer key anywhere)
 #let solution(number, body, answer: none) = block(
   width: 100%,
-  inset: (x: 11pt, y: 9pt),
+  inset: (x: 8.5pt, y: 3.5pt),
   fill: rgb("#FAFBFD"),
-  radius: 6pt,
+  radius: 5pt,
   stroke: (left: 2.5pt + om-lime.darken(10%)),
   breakable: true,
-  above: 6pt,
-  below: 6pt,
+  above: 2pt,
+  below: 2pt,
 )[
   #text(fill: om-navy, weight: 800)[Sol. Q#number.]  #body
   #if answer != none [
-    #v(2pt)
+    #v(1.2pt)
     #text(fill: rgb("#4E7A00"), weight: 800)[Answer: ( #answer )]
   ]
 ]
@@ -297,7 +377,7 @@
     footer: om-footer(exam, subject),
     background: om-watermark,
   )
-  set par(leading: 0.70em, spacing: 1.08em, justify: true)
+  set par(leading: 0.68em, spacing: 0.94em, justify: true)
 
   // Section banner (flows continuously — no forced page breaks)
   show heading.where(level: 1): it => block(
@@ -322,7 +402,7 @@
   set list(indent: 10pt, body-indent: 7pt, spacing: 0.78em,
     marker: text(fill: om-blue, weight: 800)[▸])
   set enum(indent: 10pt, body-indent: 7pt, spacing: 0.78em, number-align: center)
-  set table(inset: 8pt, stroke: 0.7pt + om-navy.lighten(45%),
+  set table(inset: 6pt, stroke: 0.7pt + om-navy.lighten(45%),
     fill: (x, y) => if y == 0 { om-navy-soft })
   show figure.caption: set text(size: 9.5pt, fill: om-grey)
   show link: set text(fill: om-blue)
