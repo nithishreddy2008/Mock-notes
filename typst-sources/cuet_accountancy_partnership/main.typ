@@ -390,6 +390,8 @@ Instead, a single composite adjustment entry is passed at the beginning of the n
   caption: [Master Synthesis Mindmap: Structural framework of Unit I Accounting for Partnership: Basic Concepts.],
 )
 
+#pagebreak()
+
 #cheatsheet-box(title: "Master Partnership Fundamentals Revision Cheatsheet")[
   - *Indian Partnership Act 1932 Defaults:* PSR equal ($1:1$) | IOC = 0% | IOD = 0% | Salary = ₹0 | Loan Interest = 6% p.a. (Charge).
   - *Fixed Capital System:* Capital A/c (strictly permanent moves, always Credit) + Current A/c (all operational adjustments, can be Dr or Cr).
