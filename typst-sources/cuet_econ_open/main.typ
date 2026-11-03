@@ -54,6 +54,8 @@
 
 ---
 
+#set text(size: 10.5pt)
+#set par(leading: 0.46em, spacing: 0.50em)
 = The Open Economy Framework: Meaning & The Three Linkages
 
 An *Open Economy* is an economy that conducts economic and financial transactions with the rest of the world. In contrast to a closed economy (which operates in self-contained autarky without international trade or capital flows), an open economy establishes three distinct channels of cross-border interaction:
@@ -162,7 +164,7 @@ A classic CUET UG testing point is the structural distinction between the *Balan
 ---
 
 #figure(
-  image("assets/econ_open_bop_current_capital.png", width: 100%),
+  image("assets/econ_open_bop_current_capital.png", width: 82%),
   caption: [Figure 1: Complete Balance of Payments Architecture — Current Account (Goods, Services, Income, Transfers) vs Capital Account (Investments, Borrowings, Banking Capital), and Autonomous vs Accommodating settlement mechanics.],
 )
 
@@ -297,7 +299,7 @@ $ D_"forex" = S_"forex" $
 ---
 
 #figure(
-  image("assets/econ_open_forex_determination.png", width: 100%),
+  image("assets/econ_open_forex_determination.png", width: 82%),
   caption: [Figure 2: Foreign Exchange Rate Determination and Systems — Market demand & supply forces, Currency Depreciation vs Appreciation, and comparative analysis of Fixed, Flexible, and Managed Floating regimes.],
 )
 
@@ -461,13 +463,26 @@ $ Y = frac(bar(A), 1 - c + m) $
 
 ---
 
+#pagebreak()
 #figure(
-  image("assets/econ_open_macroeconomics_mindmap.png", width: 100%),
+  image("assets/econ_open_macroeconomics_mindmap.png", width: 82%),
   caption: [Figure 3: Open Economy Macroeconomics Master Synthesis Mindmap — The three international market linkages, BoP identity and deficit mechanics, RER and PPP parities, and the Open Economy Multiplier with import leakage.],
 )
 
+#v(4pt)
+#exam-pointer(title: "Open Economy Macroeconomics Architecture")[
+  The synthesis mindmap above encapsulates the three interconnected pillars of Unit VI:
+  - *The Three International Linkages:* Output market (exports and imports), financial market (cross-border capital and portfolio flows), and factor market (labor migration and multinational corporate location decisions).
+  - *Balance of Payments Duality:* The distinction between autonomous ("above the line") transactions undertaken for independent economic motives and accommodating ("below the line") transactions undertaken by central authorities to bridge the autonomous gap. The accounting BoP always balances ($C A B + K A B + E O = 0$), but the economic BoP can exhibit autonomous surplus or deficit.
+  - *Official Reserve Accounting:* Central bank sales of foreign exchange to finance a deficit inject foreign currency into domestic markets and are recorded as a *Credit (+)* in Official Reserve Transactions, while purchases of forex are recorded as a *Debit (-)*.
+  - *The Open Economy Multiplier:* Because marginal propensity to import ($m > 0$) acts as an expenditure leakage abroad, the open multiplier $k_("open") = 1 / (s + m)$ is strictly smaller than the closed multiplier $1 / s$.
+]
+
 ---
 
+#pagebreak()
+#set text(size: 7.2pt)
+#set par(leading: 0.38em, spacing: 0.40em)
 = Formula Cheatsheet & 7 Common CUET Traps
 
 #cheatsheet-box(title: "Open Economy Macroeconomics — Master Formula Revision")[
