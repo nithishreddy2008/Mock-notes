@@ -9,7 +9,9 @@
 
 = Syllabus Alignment
 
-#table(
+#align(top)[
+#set text(size: 8.5pt)
+#table(inset: 3pt, 
   columns: (1.1fr, 2fr, 1.15fr),
   table.header[*Sub-topic*][*Official syllabus pointer (NTA CUET(UG) Chemistry syllabus, the current 2027 baseline, Unit VII)*][*Skills the questions test*],
   [*Classification & Structures*], [
@@ -44,9 +46,15 @@
   ],
 )
 
+]
+
+#v(-2pt)
 #exam-pointer[
   *CUET UG Paper Pattern & Weightage:* The Chemistry paper carries *50 compulsory questions* in *60 minutes* ($+5$ marks for correct, $-1$ mark for incorrect). Unit VII (Alcohols, Phenols and Ethers) contributes 4 to 6 questions focusing on Lucas & Victor Meyer distinctions, Williamson synthesis with $3^circle$ halides, Kolbe and Reimer-Tiemann mechanisms, ether cleavage with $"HI"$, and phenol substituent acidity trends.
 ]
+
+#pagebreak()
+
 
 = Module 1: Classification, Nomenclature & Structural Geometry
 
@@ -104,6 +112,16 @@ In alcohols, phenols, and ethers, the oxygen atom is $s p^3$-hybridised with two
    - *Ketones ($R'_2 "C=O"$):* Yields *Tertiary ($3^circle$) Alcohols*:
      $ R'_2 "C=O" + R-"MgX" arrow.r R'_2 C("OMgX")-R arrow.r^("H"_2 "O") R'_2 C("OH")-R $
 
+   - *Oxymercuration-Demercuration (Markovnikov Hydration without Rearrangement):*
+     When alkenes react with mercuric acetate $[ "Hg"("OAc")_2 ]$ in aqueous THF followed by reduction with sodium borohydride ($"NaBH"_4$ in basic medium), an alcohol is produced:
+     $ "CH"_3 - "CH" = "CH"_2 + "Hg"("OAc")_2 + "H"_2 "O" arrow.r "CH"_3 - "CH"("OH") - "CH"_2 - "HgOAc" arrow.r^("NaBH"_4 \/ "OH"^-) "CH"_3 - "CH"("OH") - "CH"_3 $
+     *CUET Comparison Insight:* Unlike acid-catalysed hydration, oxymercuration proceeds via a bridged cyclic mercurinium ion intermediate. Because free carbocations are never formed, *zero carbocation rearrangement* occurs, delivering pure Markovnikov addition.
+   - *Grignard Addition to Oxirane (Ethylene Oxide) — Chain Lengthening by Two Carbons:*
+     Reaction of Grignard reagents ($R-"MgX"$) with cyclic ethylene oxide (oxirane) followed by acidic hydrolysis produces *primary ($1^circle$) alcohols lengthened by exactly two carbon atoms*:
+     $ R-"MgX" + underbrace("H"_2 C - "CH"_2, "Oxirane") \/ O arrow.r R-"CH"_2 "CH"_2 - "OMgX" arrow.r^("H"_2 "O") R-"CH"_2 "CH"_2 - "OH" + "Mg"("OH")X $
+     *Exam Strategy:* If asked to prepare propan-1-ol from methyl bromide, use methylmagnesium bromide with oxirane!
+
+
 == 2. Industrial & Laboratory Synthesis of Phenols
 1. *From Cumene (Isopropylbenzene — Dominant Commercial Route):*
    Over $90%$ of global synthetic phenol is manufactured via this single elegant process:
@@ -148,7 +166,21 @@ Alcohols act as versatile amphoteric compounds (both weak Brønsted acids and Le
    Reaction of alcohols with carboxylic acids in the presence of concentrated $"H"_2 "SO"_4$:
    $ R-"COOH" + R'-"OH" arrow.r.l^("H"^+) R-"COOR'" + "H"_2 "O" $
    - *Steric Factor Dictates Rate:* Reactivity of alcohols follows: $"CH"_3 "OH" > 1^circle > 2^circle > 3^circle$. Bulkier tertiary alcohols esterify sluggishly.
-   - *Mechanism Fact:* The $C-O$ bond of the acid breaks, and the $O-H$ bond of the alcohol breaks (proven by $attach("O", tl: 18)$ isotopic labelling).
+
+4. *Mechanism of Acid-Catalysed Dehydration of Alcohols ($E_1$ Pathway):*
+   Dehydration of alcohols to form alkenes proceeds via an $E_1$ elimination mechanism:
+   - *Step 1 (Fast Protonation):* Formation of protonated alcohol (alkyloxonium ion):
+     $ "C"_2 "H"_5 "OH" + "H"^+ arrow.r.l "C"_2 "H"_5 "OH"_2^+ $
+   - *Step 2 (Slow & Rate-Determining):* Cleavage of $C-O$ bond and loss of water to generate a planar carbocation:
+     $ "C"_2 "H"_5 "OH"_2^+ arrow.r^("slow") "CH"_3 - "CH"_2^+ + "H"_2 "O" $
+     *Ease of Dehydration:* Follows carbocation stability: $3^circle "alcohol" > 2^circle "alcohol" > 1^circle "alcohol"$. Tertiary alcohols dehydrate under mild conditions ($20% "H"_3 "PO"_4$ at $358 "K"$), whereas primary alcohols require concentrated $"H"_2 "SO"_4$ at $443 "K"$.
+   - *Step 3 (Fast Deprotonation):* Elimination of a $beta$-hydrogen proton to form the double bond:
+     $ "CH"_3 - "CH"_2^+ arrow.r "CH"_2 = "CH"_2 + "H"^+ $
+     *Saytzeff's Rule:* When multiple alkenes can form, the more highly substituted, thermodynamically stable alkene predominates (e.g., butan-2-ol yields but-2-ene as 80% major product).
+5. *Mechanism of Fischer Esterification & Isotopic Evidence:*
+   When an alcohol is refluxed with a carboxylic acid in the presence of concentrated $"H"_2 "SO"_4$, esterification proceeds through protonation of the carboxyl carbonyl oxygen, nucleophilic addition of the alcohol oxygen, proton transfer, elimination of water, and loss of proton.
+   *Isotopic Tracer Proof:* By conducting esterification with O-18 labelled methanol ($"CH"_3 - attach("O", tl: 18) - "H"$), the heavy isotope is found exclusively in the *ester*, proving that the $C-"OH"$ bond of the *acid* breaks, while the $O-H$ bond of the *alcohol* cleaves!
+
 
 == 3. Diagnostic Chemical Distinction Tests
 1. *The Lucas Test (Distinction via $C-O$ Cleavage Kinetics):*
@@ -256,6 +288,22 @@ Ethers are relatively unreactive compounds, but their etherial $C-O$ linkage is 
    $ "C"_6 "H"_5 - O - "CH"_3 + "HI" arrow.r "C"_6 "H"_5 "OH" + "CH"_3 I $
    *Mechanism Justification:* Oxygen lone pair resonance delocalises into the aromatic ring, giving the $"Ar"-O$ bond partial double-bond character. The $"Ar"-O$ bond is extraordinarily strong and cannot be cleaved; nucleophilic attack occurs strictly at the $s p^3$ methyl carbon. Iodobenzene is never formed.
 
+
+== 3. Electrophilic Aromatic Substitution of Alkyl Aryl Ethers (Anisole)
+The methoxy group ($-"OCH"_3$) in anisole is activating and ortho/para-directing due to $+R$ resonance delocalisation of the oxygen lone pair into the aromatic ring. Due to steric hindrance of the bulky methoxy group, the *para isomer is overwhelmingly the major product*:
+1. *Halogenation:* Anisole undergoes bromination with bromine in glacial ethanoic acid, *without requiring any Lewis acid catalyst* ($"FeBr"_3$):
+   $ "C"_6 "H"_5 - "OCH"_3 + "Br"_2 arrow.r^("CH"_3 "COOH") "p-bromoanisole (90% major)" + "o-bromoanisole (10% minor)" $
+2. *Nitration:* Reaction with a mixture of concentrated sulphuric and nitric acids yields a mixture of ortho- and para-nitroanisole:
+   $ "C"_6 "H"_5 - "OCH"_3 + "HNO"_3 arrow.r^("conc. H"_2 "SO"_4) "4-nitroanisole (major)" + "2-nitroanisole (minor)" $
+3. *Friedel-Crafts Alkylation & Acylation:*
+   - *Alkylation:* Anisole $+ "CH"_3 "Cl" arrow.r^("anhyd. AlCl"_3) "4-methoxytoluene (major)" + "2-methoxytoluene (minor)"$
+   - *Acylation:* Anisole $+ "CH"_3 "COCl" arrow.r^("anhyd. AlCl"_3) "4-methoxyacetophenone (major)" + "2-methoxyacetophenone (minor)"$
+
+== 4. Ether Storage Hazards & Peroxide Formation
+- *Spontaneous Autoxidation:* On prolonged contact with atmospheric oxygen in the presence of sunlight, diethyl ether absorbs oxygen to form unstable, highly explosive *diethyl ether hydroperoxide*:
+  $ "C"_2 "H"_5 - O - "CH"_2 "CH"_3 + "O"_2 arrow.r^(h nu) "C"_2 "H"_5 - O - "CH"("OOH") - "CH"_3 $
+- *Peroxide Detection & Prevention:* Peroxides in ether can be detected by shaking with acidified ferrous sulphate ($"FeSO"_4$) and potassium thiocyanate ($"KCNS"$), developing a deep blood-red colour of ferric thiocyanate $[ "Fe"("CNS")_3 ]$. Distillation of old, ether containing peroxides can cause violent explosions. To inhibit peroxide formation, ether is stored in dark amber bottles over clean *metallic copper wire* or ferrous salts.
+
 = Module 6: Commercially Important Industrial Alcohols
 
 1. *Methanol (Methyl Alcohol / Wood Spirit, $"CH"_3 "OH"$):*
@@ -264,44 +312,70 @@ Ethers are relatively unreactive compounds, but their etherial $C-O$ linkage is 
      $ "CO" + 2 "H"_2 arrow.r^("ZnO" - "Cr"_2 "O"_3, 573-673 "K", 200-300 "atm") "CH"_3 "OH" $
    - *Physical Properties & Uses:* Colourless liquid ($b.p. = 337 "K"$). Used as an industrial solvent for paints and varnishes, and in the manufacture of formaldehyde ($"HCHO"$).
    - *Severe Toxicology:* Ingestion of even $10 "mL"$ causes permanent retinal blindness; $30 "mL"$ causes death. In the body, alcohol dehydrogenase oxidizes methanol to formaldehyde ($"HCHO"$) and formic acid ($"HCOOH"$), which coagulates cellular protoplasm and induces acute metabolic acidosis.
+
+   - *Antidote & Clinical Toxicology:* The toxicity of methanol is mediated by formaldehyde ($"HCHO"$) and formic acid ($"HCOOH"$) generated by the hepatic enzyme *alcohol dehydrogenase*. Clinically, acute methanol poisoning is treated by intravenous infusion of *ethanol*. Ethanol has a dramatically higher substrate affinity for alcohol dehydrogenase (approx. 10-fold higher $K_m$ preference), competitively displacing methanol from the active site and allowing intact methanol to be safely excreted through kidneys and breath without generating lethal metabolites.
+
 2. *Ethanol (Ethyl Alcohol / Grain Alcohol, $"C"_2 "H"_5 "OH"$):*
    - *Manufacture by Fermentation:* Prepared from sugary molasses or starchy grains using yeast enzymes:
-     - Invertase converts sucrose into glucose and fructose:
-       $ "C"_(12) "H"_(22) "O"_(11) + "H"_2 "O" arrow.r^("Invertase") "C"_6 "H"_(12) "O"_6 + "C"_6 "H"_(12) "O"_6 $
-     - Zymase ferments glucose/fructose into ethanol and carbon dioxide:
-       $ "C"_6 "H"_(12) "O"_6 arrow.r^("Zymase") 2 "C"_2 "H"_5 "OH" + 2 "CO"_2 arrow.t $
+     - Invertase converts sucrose to glucose and fructose: $"C"_(12) "H"_(22) "O"_(11) + "H"_2 "O" arrow.r^("Invertase") "C"_6 "H"_(12) "O"_6 + "C"_6 "H"_(12) "O"_6$.
+     - Zymase ferments glucose/fructose into ethanol and carbon dioxide: $"C"_6 "H"_(12) "O"_6 arrow.r^("Zymase") 2 "C"_2 "H"_5 "OH" + 2 "CO"_2 arrow.t$.
      Fermentation terminates naturally when ethanol concentration reaches $14%$, because higher concentrations poison the yeast enzyme.
    - *Denatured Alcohol (Methylated Spirit):* Commercial ethanol is rendered unfit for drinking by adding $5%$ toxic methanol, copper sulphate (imparting a warning blue colour), and pyridine (a foul-smelling liquid) to curb industrial tax evasion.
 
 #pagebreak()
 
 #figure(
-  image("assets/chem_alcohol_mindmap.png", width: 78%),
+  image("assets/chem_alcohol_mindmap.png", width: 88%),
   caption: [Master Synthesis Architecture: Complete Unit VII cognitive roadmap integrating alcohol distinctions, phenoxide resonance, hallmark name reactions, Williamson ether rules, and $"HI"$ cleavage mechanisms.],
 )
 
-#v(-4pt)
+#v(2pt)
+
+#exam-pointer(title: "Master Synthesis Map & Strategic Reaction Pathways Breakdown")[
+  The cognitive architecture diagram above synthesises the core reactive transformations across Unit VII:
+  - *Electrophilic Attack vs Nucleophilic Substitution:* Note the stark contrast between alcohols (where $-"OH"$ acts as a nucleophile or is eliminated via protonation to $-"OH"_2^+$) and phenols (where ring activation directs electrophiles to ortho/para positions while the strong $s p^2$ $"Ar"-O$ bond remains inviolable).
+  - *Halogenation Regiochemistry:* Notice how water versus non-polar solvents entirely flips the bromination outcome in phenols—polar water enables phenoxide formation leading to symmetrical $2,4,6$-tribromination, whereas non-polar $"CS"_2$ preserves molecular phenol yielding predominantly $p$-bromophenol.
+  - *Dual Cleavage Pathways of Ethers:* Trace the branched logic for unsymmetrical ether cleavage with $"HI"$: sterically unhindered primary/secondary ethers proceed via bimolecular displacement ($S_N 2$) at the smaller alkyl group, whereas tertiary ethers immediately dissociate into stable carbocations via unimolecular cleavage ($S_N 1$).
+  - *Williamson Synthesis Constraints:* Always check the alkyl halide substrate first—primary halides ($1^circle$) undergo productive $S_N 2$ etherification, whereas tertiary halides ($3^circle$) undergo $100%$ elimination to form alkenes due to the basicity of alkoxide ions.
+]
+
+
+#pagebreak()
 
 #cheatsheet-box(title: "Unit VII Master Formula & High-Yield Cheatsheet")[
-  #set text(size: 8.5pt)
+  #set text(size: 7.5pt)
   #table(
     columns: (1.2fr, 1.8fr, 2fr),
-    inset: 3.5pt,
+    inset: 2.2pt,
     table.header[*Core Concept / Law*][*Expression / Formulation*][*Application & CUET Problem Strategy*],
     [Ether Bond Angle], [$C-O-C = 111.7^circle.small > 109.5^circle.small$ (Tetrahedral)], [Steric repulsion between two bulky alkyl groups widens the bond angle.],
-    [Hydroboration-Oxidation], [Alkene $plus "B"_2 "H"_6 arrow.r^("H"_2 "O"_2 \/ "OH"^-)$ Alcohol], [Overall anti-Markovnikov syn addition of water. Zero rearrangements.],
-    [Lucas Test Distinction], [Conc. $"HCl" + "anhy. ZnCl"_2$ turbidity], [$3^circle$: Instant turbidity; $2^circle$: 5 minutes; $1^circle$: Turbidity only on heating.],
-    [Victor Meyer (R-B-C)], [Sequence: $P/I_2 arrow.r "AgNO"_2 arrow.r "HNO"_2 arrow.r "NaOH"$], [$1^circle = "Blood Red"$; $2^circle = "Deep Blue"$; $3^circle = "Colourless"$ (no reaction).],
+    [Hydroboration-Oxidation], [Alkene $plus "B"_2 "H"_6 arrow.r^("H"_2 "O"_2 \/ "OH"^-)$ Alcohol], [Overall anti-Markovnikov syn addition of water. Zero carbocation rearrangements.],
+    [Lucas Test Distinction], [Conc. $"HCl" + "anhy. ZnCl"_2$ turbidity kinetics], [$3^circle$: Instant turbidity; $2^circle$: 5 mins; $1^circle$: Turbidity only on heating ($S_N 1$).],
+    [Victor Meyer (R-B-C)], [Sequence: $P/I_2 arrow.r "AgNO"_2 arrow.r "HNO"_2 arrow.r "NaOH"$], [$1^circle = "Blood Red"$ (nitrolic acid); $2^circle = "Deep Blue"$; $3^circle = "Colourless"$ (no $alpha$-H).],
     [Dehydrogenation ($"Cu"/573 "K"$)], [$1^circle arrow.r$ Aldehyde; $2^circle arrow.r$ Ketone; $3^circle arrow.r$ Alkene], [Tertiary alcohol dehydrates to alkene; does not dehydrogenate!],
-    [Phenol Acidity], [Phenol ($p K_a approx 10$) is $10^6$ times more acidic than alcohols], [Phenoxide ion is resonance-stabilized. Picric acid ($p K_a = 0.71$) releases $"CO"_2$ from $"NaHCO"_3$.],
-    [Kolbe's Reaction], [Sodium phenoxide $plus "CO"_2 arrow.r^(400 "K", 4-7 "atm") arrow.r^("H"^+)$ Salicylic acid], [Synthesis of o-hydroxybenzoic acid; precursor to Aspirin.],
-    [Reimer-Tiemann Reaction], [Phenol $plus "CHCl"_3 + "NaOH" arrow.r^("H"^+)$ Salicylaldehyde], [Electrophile is neutral dichlorocarbene ($:C "Cl"_2$) from chloroform.],
-    [Phenol Tests], [Neutral $"FeCl"_3 arrow.r$ Violet complex; $"Br"_2/"H"_2 "O" arrow.r$ White ppt], [Neutral $"FeCl"_3$ test $[ "Fe"("OC"_6 "H"_5)_6 ]^(3-)$; 2,4,6-tribromophenol white precipitate.],
-    [Steam Distillation], [o-nitrophenol (steam volatile) vs p-nitrophenol (non-volatile)], [Ortho has intramolecular H-bonding; Para has intermolecular H-bonding.],
-    [Williamson Synthesis], [$R-O^- "Na"^+ + R'-X arrow.r R-O-R' + "NaX"$], [$R'-X$ must be $1^circle$! Reaction with $3^circle$ halide gives 100% alkene elimination.],
-    [HI Ether Cleavage], [Simple: $I^-$ attacks less hindered carbon; $3^circle$: forms $3^circle$ iodide], [Anisole ($"C"_6 "H"_5 - O - "CH"_3$) gives Phenol $+ "CH"_3 I$ (Ar-O never cleaves).],
+    [Phenol Acidity], [Phenol ($p K_a approx 10$) is $10^6 times$ more acidic than alcohols], [Phenoxide resonance-stabilized. Picric acid ($p K_a = 0.71$) gives $"CO"_2$ with $"NaHCO"_3$.],
+    [Kolbe's Reaction], [Sodium phenoxide $plus "CO"_2 arrow.r^(400 "K", 4-7 "atm") arrow.r^("H"^+)$ Salicylic acid], [Synthesis of o-hydroxybenzoic acid; chelation directs ortho; precursor to Aspirin.],
+    [Reimer-Tiemann Reaction], [Phenol $plus "CHCl"_3 + "NaOH" arrow.r^("H"^+)$ Salicylaldehyde], [Electrophile is neutral dichlorocarbene ($:C "Cl"_2$) formed via $alpha$-elimination.],
+    [Phenol Distinction Tests], [$"FeCl"_3 arrow.r$ Violet complex; $"Br"_2/"H"_2 "O" arrow.r$ White ppt], [Neutral $"FeCl"_3$ gives $[ "Fe"("OC"_6 "H"_5)_6 ]^(3-)$; aqueous bromine gives 2,4,6-tribromophenol.],
+    [Steam Distillation], [o-nitrophenol (volatile) vs p-nitrophenol (non-volatile)], [Ortho has intramolecular H-bonding; Para has intermolecular H-bonding.],
+    [Williamson Synthesis], [$R-O^- "Na"^+ + R'-X arrow.r R-O-R' + "NaX"$], [$R'-X$ must be $1^circle$! Reaction with $3^circle$ halide gives 100% alkene ($E_2$ elimination).],
+    [HI Ether Cleavage], [Simple: $I^-$ attacks less hindered C; $3^circle$: forms $3^circle$ iodide], [Anisole ($"C"_6 "H"_5 - O - "CH"_3$) gives Phenol $+ "CH"_3 I$ ($s p^2$ $"Ar"-O$ never cleaves).],
   )
 ]
+
+#v(2pt)
+
+#exception-box(title: "Top 7 High-Frequency CUET Traps & Pitfalls")[
+  #set text(size: 7.5pt)
+  1. *Dehydrogenation of Tertiary Alcohols over Heated Copper:* Primary and secondary alcohols undergo dehydrogenation to aldehydes and ketones respectively over $"Cu"/573 "K"$. Tertiary alcohols have no $alpha$-hydrogen and *cannot dehydrogenate*; they undergo catalytic *dehydration to an alkene* ($("CH"_3)_3 C-"OH" arrow.r ("CH"_3)_2 C = "CH"_2 + "H"_2 "O"$).
+  2. *Lucas Test with Allylic and Benzylic Alcohols:* While ordinary primary aliphatic alcohols do not form turbidity at room temperature, *allylic* and *benzylic* alcohols yield instantaneous turbidity because their carbocations are powerfully stabilized by resonance!
+  3. *Acidity Comparison Between Methanol and Water:* Water ($p K_a = 15.7$) is more acidic than almost all aliphatic alcohols ($p K_a = 16-18$), *except Methanol ($p K_a = 15.5$)*. Methanol is slightly *more acidic than water*, making alkoxide ions stronger bases than hydroxide ion, except methoxide.
+  4. *Williamson Synthesis with Tertiary Alkyl Halides:* Reacting sodium alkoxide with a $3^circle$ alkyl halide ($("CH"_3)_3 C-"Br" + "CH"_3 O^- "Na"^+$) produces *100% alkene (2-methylpropene)* via $E_2$ elimination, NOT an ether! To prepare tert-butyl methyl ether, use *sodium tert-butoxide and methyl bromide*.
+  5. *Cleavage of Anisole (Alkyl Aryl Ethers) with HI:* Heating anisole with concentrated $"HI"$ yields *Phenol and Methyl Iodide*, NEVER Iodobenzene and Methanol! The $s p^2$ hybridized $"Ar"-O$ bond has partial double-bond character due to resonance and cannot undergo nucleophilic cleavage.
+  6. *HI Cleavage of Ethers with a Tertiary Alkyl Group:* Unsymmetrical ethers containing primary/secondary alkyl groups cleave via $S_N 2$ where $I^-$ attacks the less hindered carbon. If one alkyl group is tertiary ($3^circle$), cleavage proceeds via $S_N 1$, forming the *tertiary iodide* and *primary alcohol*.
+  7. *Solvent Control in Phenol Bromination:* Phenol with aqueous bromine ($"Br"_2/"H"_2 "O"$) gives a *white precipitate of 2,4,6-tribromophenol*, because water ionizes phenol to phenoxide which hyperactivates the ring. In non-polar $"CS"_2$ at $273 "K"$, phenol remains unionized and yields *p-bromophenol* as major product.
+]
+
 
 #pagebreak()
 
