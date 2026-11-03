@@ -363,8 +363,9 @@ India's environment faces a unique dual challenge: *Poverty-induced environmenta
   5. *Traditional Knowledge & Practices:* Reviving traditional building materials, Ayurvedic healthcare, and local natural remedies that work in harmony with nature.
   6. *Biopesticides & Biofertilizers:* Replacing chemical poisons with neem-based pesticides, compost, and introducing biological predator insects to manage agricultural pests sustainably.
 
----
-
+#pagebreak()
+#set text(size: 7.0pt)
+#set par(leading: 0.38em, spacing: 0.40em)
 = Master Revision Cheatsheet & 7 Lethal CUET Traps
 
 #cheatsheet-box(title: "Current Challenges Facing the Indian Economy — High-Yield Revision Matrix")[
