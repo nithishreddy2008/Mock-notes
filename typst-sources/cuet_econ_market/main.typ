@@ -29,6 +29,9 @@
 
 ---
 
+#pagebreak()
+
+
 = 1. Market Equilibrium: Concepts & Self-Correcting Mechanics
 
 == 1.1 Definition of Market Equilibrium
@@ -72,6 +75,23 @@ A cornerstone theorem in neoclassical welfare economics states that a free compe
    - Any departure from $Q^*$ (underproduction or overproduction) creates an unrecovered net loss of social welfare termed *Deadweight Loss ($D W L$)*.
 
 ---
+
+
+== 1.4 Algebraic Formulation of Competitive Market Equilibrium
+Consider linear aggregate market demand and supply equations:
+$ q_D(P) = a - b P quad (a > 0, b > 0) $
+$ q_S(P) = c + d P quad (c >= 0, d > 0) $
+At equilibrium, the market-clearing condition $q_D(P^*) = q_S(P^*)$ requires:
+$ a - b P^* = c + d P^* ==> a - c = (b + d) P^* ==> P^* = (a - c) / (b + d) $
+Substituting $P^*$ into either the demand or supply function gives equilibrium quantity:
+$ Q^* = a - b [ (a - c) / (b + d) ] = (a(b + d) - b(a - c)) / (b + d) = (a d + b c) / (b + d) $
+*Mathematical Feasibility Constraint:* For a strictly positive equilibrium price ($P^* > 0$), we must have $a > c$, meaning the maximum choke price on the demand curve must exceed the minimum reservation price on the supply curve.
+
+== 1.5 Walrasian versus Marshallian Market Stability
+- *Walrasian Price Adjustment (Quantity-Driven Feedback):*
+  Léon Walras modelled adjustment through price changes driven by quantity imbalances: if $q_D(P) > q_S(P)$ (excess demand), buyers bid prices upward; if $q_S(P) > q_D(P)$ (excess supply), competitive sellers bid prices downward until $P = P^*$.
+- *Marshallian Quantity Adjustment (Price-Driven Feedback):*
+  Alfred Marshall modelled adjustment through output changes driven by price discrepancies: if demand price $P_D(q)$ exceeds supply price $P_S(q)$ at a given volume $q$, producers earn excess margins and expand production; if $P_S(q) > P_D(q)$, producers suffer losses and contract output until $P_D(q) = P_S(q)$.
 
 = 2. Market Equilibrium with a Fixed Number of Firms
 
@@ -131,6 +151,15 @@ When both market demand and market supply shift at the same time, the net impact
 
 ---
 
+
+== 2.4 Wage Determination in a Competitive Labour Market
+The tools of supply and demand apply directly to factor markets, including the determination of equilibrium wages in a competitive labour market:
+- *Demand for Labour (Derived Demand):* Profit-maximizing firms demand labour up to the point where the *Value of Marginal Product of Labour ($V M P_L$)* equals the nominal wage rate ($W$):
+  $ V M P_L = P times M P_L = W $
+  Because the marginal product of labour ($M P_L$) diminishes as employment expands (Law of Variable Proportions), the labour demand curve slopes downward.
+- *Supply of Labour:* Individual households supply labour by trading off leisure against wage income. The aggregate labour supply curve slopes upward with respect to the wage rate.
+- *Equilibrium Wage ($W^*$):* Intersection of labour demand and labour supply determines the equilibrium wage $W^*$ and full-employment volume $L^*$. An increase in product demand raises product price $P$, shifting labour demand rightward and raising both equilibrium wages and employment.
+
 = 3. Market Equilibrium with Free Entry and Exit of Firms
 
 In the long run, capital is fully mobile. If existing firms make supernormal profits ($P > min L A C$), new firms enter; if firms incur losses ($P < min L A C$), existing firms exit.
@@ -171,6 +200,16 @@ Suppose consumer demand increases (the market demand curve shifts to the right f
 ]
 
 ---
+
+
+== 3.4 Impact of a Per-Unit Commodity Tax under Free Entry and Exit
+What happens if the government levies a per-unit tax ($t$) on each unit produced in a competitive market with free entry and exit?
+- *Shift in Average Cost:* The tax raises each firm's cost structure vertically by $t$:
+  $ L A C_("new") = L A C_("old") + t ==> min L A C_("new") = min L A C_("old") + t $
+- *100% Tax Shifting to Consumers:*
+  In the long run, because firms must earn zero economic profit to survive, the equilibrium price paid by consumers must rise by the *exact full amount of the tax*:
+  $ P^*_("new") = P^*_("old") + t $
+  *CUET Golden Rule:* Under free entry and exit, the long-run market supply curve is perfectly elastic (horizontal). Consequently, *consumers bear 100% of the tax burden*, while suppliers bear 0%! Total industry output contracts to $Q_("new") = q_D(P^* + t)$, and the active number of firms falls ($n^*_("new") < n^*_("old")$).
 
 = 4. Simple Applications: Government Price Controls
 
@@ -247,6 +286,16 @@ Government price controls intentionally distort the free competitive equilibrium
 
 ---
 
+
+== 4.4 Quantitative Welfare Loss: Deadweight Loss Triangles
+When price controls prevent the market from reaching equilibrium, mutually beneficial gains from trade are destroyed:
+- *Deadweight Loss under Price Ceiling:*
+  With price capped at $P_c$, output supplied is restricted to $Q_S$. Desperate consumers value the marginal unit at black market demand price $P_B = (a - Q_S)/b$. The lost economic surplus is represented by the deadweight loss triangle:
+  $ D W L_("ceiling") = 1 / 2 times (P_B - P_c) times (Q^* - Q_S) $
+- *Deadweight Loss under Price Floor:*
+  With price supported at $P_f$, commercial demand contracts to $Q_D$. Producers produce $Q_S$, incurring production costs exceeding consumer valuation. The total societal burden includes both lost surplus and the fiscal procurement outlay:
+  $ "Fiscal Cost of Surplus Procurement" = P_f times (Q_S - Q_D) $
+
 = 5. Comparative Evaluation: Price Ceiling vs. Price Floor
 
 #table(
@@ -261,15 +310,27 @@ Government price controls intentionally distort the free competitive equilibrium
   [*If Ineffective / Non-Binding*], [Imposed *above* equilibrium ($P_c > P^*$) $==>$ Zero market impact; price stays at $P^*$.], [Imposed *below* equilibrium ($P_f < P^*$) $==>$ Zero market impact; price stays at $P^*$.],
 )
 
+#pagebreak()
+
 #figure(
   image("assets/econ_market_equilibrium_mindmap.png", width: 95%),
   caption: [Figure 3: Comprehensive Synthesis Mindmap of Market Equilibrium: Foundations, Simultaneous Shifts, Free Entry/Exit, and Policy Controls],
 )
 
----
+#v(2pt)
 
-= 6. Master Formula Cheatsheet & Diagnostic Traps
+#exam-pointer(title: "Master Synthesis Mindmap & Market Clearance Architecture")[
+  The cognitive map above organizes the foundational theorems of market equilibrium into an actionable roadmap:
+  - *Self-Correcting Mechanics:* Trace how price acts as an automatic signalling and rationing mechanism: excess demand ($q_D > q_S$) forces price upwards; excess supply ($q_S > q_D$) exerts downward price pressure until $q_D(P^*) = q_S(P^*)$.
+  - *Shift Logic:* Memorize the 4 quadrant simultaneous shift outcomes: when both curves shift in the same direction, quantity is unambiguous while price depends on relative shift magnitudes; when curves shift in opposite directions, price is unambiguous while quantity is indeterminate.
+  - *Free Entry Long-Run Invariance:* Under free entry and exit, long-run price is tethered strictly to $P^* = min L A C$. Shifts in demand alter industry output $Q^*$ and firm count $n^*$, but leave long-run price and individual firm size $q^*$ completely unchanged.
+  - *Intervention Distortions:* Price ceilings must be below equilibrium ($P_c < P^*$) to bind, generating shortages, queues, and black markets; price floors must be above equilibrium ($P_f > P^*$) to bind, necessitating government buffer stock procurement.
+]
 
+
+#pagebreak()
+
+#set text(size: 7.5pt)
 #cheatsheet-box(title: "Master Formula Cheatsheet — Market Equilibrium & Applications")[
   *Equilibrium Determination (Fixed Firms):*
   - Equilibrium Clearance: $q_D(P^*) = q_S(P^*)$.
@@ -305,11 +366,13 @@ Government price controls intentionally distort the free competitive equilibrium
 
 ---
 
-#pagebreak()
-#set text(size: 8.5pt)
-#set par(leading: 0.40em, spacing: 0.42em)
 
-= Practice Questions — Part 1 (Q1 to Q5)
+#pagebreak()
+
+#block(width: 100%, inset: (y: 4pt, x: 8pt), fill: om-navy, radius: 3pt)[
+  #text(fill: white, font: om-display-font, size: 12pt, weight: 800)[Practice Questions (Exam Pattern) — Part 1 (Q1 to Q5)]
+]
+#set text(size: 8.5pt)
 
 #mcq(1, [In a competitive market, the market demand and market supply functions are given by $q_D = 1000 - 50 P$ and $q_S = 200 + 30 P$. The equilibrium price ($P^*$) and equilibrium quantity ($Q^*$) are:], (
   [(A) $P^* = ₹10, Q^* = 500$ units],
@@ -353,11 +416,18 @@ Government price controls intentionally distort the free competitive equilibrium
 
 ---
 
-#pagebreak()
+
 #set text(size: 8.5pt)
 #set par(leading: 0.40em, spacing: 0.42em)
 
 = Practice Questions — Part 2 (Q6 to Q10)
+
+#pagebreak()
+
+#block(width: 100%, inset: (y: 4pt, x: 8pt), fill: om-navy, radius: 3pt)[
+  #text(fill: white, font: om-display-font, size: 12pt, weight: 800)[Practice Questions (Exam Pattern) — Part 2 (Q6 to Q10)]
+]
+#set text(size: 8.5pt)
 
 #mcq(6, [If market demand and market supply both increase by the EXACT SAME proportionate magnitude ($Delta D = Delta S$):], (
   [(A) Equilibrium price rises while quantity remains constant],
@@ -401,11 +471,18 @@ Government price controls intentionally distort the free competitive equilibrium
 
 ---
 
-#pagebreak()
+
 #set text(size: 8.5pt)
 #set par(leading: 0.40em, spacing: 0.42em)
 
 = Practice Questions — Part 3 (Q11 to Q15)
+
+#pagebreak()
+
+#block(width: 100%, inset: (y: 4pt, x: 8pt), fill: om-navy, radius: 3pt)[
+  #text(fill: white, font: om-display-font, size: 12pt, weight: 800)[Practice Questions (Exam Pattern) — Part 3 (Q11 to Q15)]
+]
+#set text(size: 8.5pt)
 
 #mcq(11, [In an industry with free entry and exit, $L A C$ is minimized at ₹20 where each firm produces 50 units. If market demand is $Q_D = 2000 - 40 P$, the equilibrium number of firms ($n^*$) in the industry is:], (
   [(A) 24 firms],
