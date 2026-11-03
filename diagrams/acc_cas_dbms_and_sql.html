@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1440, height=880">
+  <title>DBMS Architecture & SQL Query Models</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 1440px;
+      height: 880px;
+      background-color: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0F172A;
+      padding: 30px 40px;
+      overflow: hidden;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #E2E8F0;
+      padding-bottom: 12px;
+    }
+    .title-group h1 {
+      font-size: 24px;
+      font-weight: 800;
+      color: #0F2C59;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+    .title-group p {
+      font-size: 13px;
+      color: #64748B;
+      font-weight: 500;
+    }
+    .badge {
+      background: #0066FF;
+      color: white;
+      font-size: 11.5px;
+      font-weight: 700;
+      padding: 5px 14px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+    }
+    .main-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 18px;
+      height: calc(100% - 70px);
+    }
+    .card {
+      background: white;
+      border: 1px solid #CBD5E1;
+      border-radius: 12px;
+      padding: 16px 20px;
+      display: flex;
+      flex-direction: column;
+    }
+    .card-title {
+      font-size: 14px;
+      font-weight: 800;
+      color: #0F2C59;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .pill {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 6px;
+      text-transform: uppercase;
+    }
+    .pill-blue { background: #E0F2FE; color: #0369A1; }
+    .pill-green { background: #DCFCE7; color: #15803D; }
+    .pill-amber { background: #FEF3C7; color: #B45309; }
+    .pill-purple { background: #F3E8FF; color: #7E22CE; }
+
+    /* Data Ladder */
+    .ladder-step {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 6px 12px;
+      border-radius: 6px;
+      background: #F8FAFC;
+      border-left: 4px solid #0066FF;
+      margin-bottom: 5px;
+    }
+    .ladder-title { font-size: 11.5px; font-weight: 700; color: #1E293B; width: 140px; }
+    .ladder-desc { font-size: 10.5px; color: #475569; flex: 1; }
+
+    /* Keys Grid */
+    .key-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-top: 4px;
+    }
+    .key-card {
+      padding: 8px 10px;
+      border-radius: 6px;
+      border: 1px solid #E2E8F0;
+      background: #F8FAFC;
+    }
+    .key-name { font-size: 11px; font-weight: 800; color: #0F2C59; margin-bottom: 2px; }
+    .key-desc { font-size: 10px; color: #475569; line-height: 1.3; }
+
+    /* SQL Code Box */
+    .sql-box {
+      background: #0F172A;
+      color: #F8FAFC;
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-family: "SF Mono", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+      font-size: 11px;
+      line-height: 1.45;
+      margin-top: 6px;
+    }
+    .kw { color: #38BDF8; font-weight: 700; }
+    .fn { color: #FBBF24; }
+    .str { color: #4ADE80; }
+
+    .alert-bar {
+      margin-top: auto;
+      padding: 6px 10px;
+      border-radius: 6px;
+      background: #FEF2F2;
+      border-left: 3px solid #EF4444;
+      font-size: 10.5px;
+      color: #991B1B;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="title-group">
+      <h1>DBMS Architecture & SQL Query Models in Accounting</h1>
+      <p>Data hierarchy, relational database keys, SQL command categories, and accounting query logic</p>
+    </div>
+    <div class="badge">UNIT VI · DATABASE & SQL</div>
+  </div>
+
+  <div class="main-grid">
+    <!-- PANEL 1: DATA HIERARCHY -->
+    <div class="card">
+      <div class="card-title">
+        <span>Accounting Data Hierarchy in RDBMS</span>
+        <span class="pill pill-blue">Data Ladder</span>
+      </div>
+      <div class="ladder-step">
+        <span class="ladder-title">1. Bit / Byte</span>
+        <span class="ladder-desc">0 or 1; Byte represents single alphanumeric character (e.g. 'A').</span>
+      </div>
+      <div class="ladder-step" style="border-left-color: #0284C7;">
+        <span class="ladder-title">2. Field / Attribute</span>
+        <span class="ladder-desc">Smallest named unit of data: Voucher_No, Acc_Name, Amount.</span>
+      </div>
+      <div class="ladder-step" style="border-left-color: #10B981;">
+        <span class="ladder-title">3. Record / Tuple</span>
+        <span class="ladder-desc">Collection of related fields for one transaction row (Voucher entry).</span>
+      </div>
+      <div class="ladder-step" style="border-left-color: #F59E0B;">
+        <span class="ladder-title">4. Table / Entity / File</span>
+        <span class="ladder-desc">Set of records sharing identical structure: Accounts_Master, Journal.</span>
+      </div>
+      <div class="ladder-step" style="border-left-color: #8B5CF6;">
+        <span class="ladder-title">5. Database</span>
+        <span class="ladder-desc">Integrated collection of logically related accounting tables.</span>
+      </div>
+      <div class="alert-bar" style="margin-top: 8px;">
+        <strong>Relational Principle:</strong> In an RDBMS, rows are called <em>Tuples</em> and columns are called <em>Attributes</em>!
+      </div>
+    </div>
+
+    <!-- PANEL 2: KEYS ARCHITECTURE -->
+    <div class="card">
+      <div class="card-title">
+        <span>Relational Database Key Architecture</span>
+        <span class="pill pill-green">Integrity Constraints</span>
+      </div>
+      <div class="key-grid">
+        <div class="key-card">
+          <div class="key-name">Primary Key</div>
+          <div class="key-desc">Attribute uniquely identifying each row in a table. MUST be Unique and CANNOT contain NULL values (e.g., Voucher_ID).</div>
+        </div>
+        <div class="key-card">
+          <div class="key-name">Foreign Key</div>
+          <div class="key-desc">Field referencing the Primary Key of another table, enforcing <em>Referential Integrity</em> between Ledgers and Vouchers.</div>
+        </div>
+        <div class="key-card">
+          <div class="key-name">Candidate Key</div>
+          <div class="key-desc">Any attribute or minimal set of attributes that qualifies to become a Primary Key (e.g., Account_Code, PAN_Number).</div>
+        </div>
+        <div class="key-card">
+          <div class="key-name">Alternate Key</div>
+          <div class="key-desc">Candidate keys not selected as the primary key. Serves as secondary unique identifier.</div>
+        </div>
+      </div>
+      <div class="alert-bar" style="background: #F0FDF4; border-color: #10B981; color: #065F46;">
+        <strong>Entity Integrity Rule:</strong> Primary Key can NEVER accept a NULL value under any circumstance!
+      </div>
+    </div>
+
+    <!-- PANEL 3: SQL COMMAND CATEGORIES -->
+    <div class="card">
+      <div class="card-title">
+        <span>SQL Classification: DDL vs DML in Accounting</span>
+        <span class="pill pill-purple">Command Taxonomy</span>
+      </div>
+      <div style="font-size: 11px; color: #334155; line-height: 1.4;">
+        • <strong>DDL (Data Definition Language):</strong> Defines and modifies the structural schema of accounting tables.<br>
+        &nbsp;&nbsp;&nbsp;▸ <code>CREATE TABLE Ledgers (...)</code>, <code>ALTER TABLE Vouchers ADD (...)</code>, <code>DROP TABLE Temp_Audit</code>.<br>
+        • <strong>DML (Data Manipulation Language):</strong> Queries, inserts, updates, and deletes transaction data rows.<br>
+        &nbsp;&nbsp;&nbsp;▸ <code>SELECT</code> (retrieves balances), <code>INSERT INTO</code> (posts new vouchers), <code>UPDATE</code> (edits narration), <code>DELETE</code> (removes unapproved draft entries).
+      </div>
+      <div class="alert-bar" style="margin-top: 8px; background: #FFFBEB; border-color: #F59E0B; color: #92400E;">
+        <strong>CUET Question:</strong> Is <code>SELECT</code> a DDL or DML command? It is strictly <strong>DML (Data Manipulation Language)</strong>!
+      </div>
+    </div>
+
+    <!-- PANEL 4: PRACTICAL ACCOUNTING SQL -->
+    <div class="card">
+      <div class="card-title">
+        <span>Practical SQL Query Model: Trail Extraction</span>
+        <span class="pill pill-amber">Query Execution</span>
+      </div>
+      <div style="font-size: 10.5px; color: #334155; line-height: 1.35;">
+        Extract all accounts with total debit vouchers exceeding ₹50,000 for FY 2024-25, sorted descending:
+      </div>
+      <div class="sql-box">
+        <span class="kw">SELECT</span> Account_Head, <span class="fn">SUM</span>(Debit_Amount) <span class="kw">AS</span> Total_Debit<br>
+        <span class="kw">FROM</span> Voucher_Transactions<br>
+        <span class="kw">WHERE</span> Transaction_Date >= <span class="str">'2024-04-01'</span><br>
+        <span class="kw">GROUP BY</span> Account_Head<br>
+        <span class="kw">HAVING</span> <span class="fn">SUM</span>(Debit_Amount) > 50000<br>
+        <span class="kw">ORDER BY</span> Total_Debit <span class="kw">DESC</span>;
+      </div>
+      <div class="alert-bar">
+        <strong>WHERE vs HAVING:</strong> <code>WHERE</code> filters individual raw rows; <code>HAVING</code> filters grouped aggregate values!
+      </div>
+    </div>
+  </div>
+</body>
+</html>

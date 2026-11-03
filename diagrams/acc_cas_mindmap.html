@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1440, height=880">
+  <title>Computerised Accounting System Master Synthesis Mindmap</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 1440px;
+      height: 880px;
+      background-color: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0F172A;
+      padding: 26px 36px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 16px;
+      border-bottom: 2px solid #E2E8F0;
+      padding-bottom: 10px;
+    }
+    .title-group h1 {
+      font-size: 23px;
+      font-weight: 800;
+      color: #0F2C59;
+      letter-spacing: -0.02em;
+    }
+    .title-group p {
+      font-size: 12.5px;
+      color: #64748B;
+      font-weight: 500;
+    }
+    .badge {
+      background: #0066FF;
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 5px 14px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+    }
+    .mindmap-container {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1fr 1.35fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 14px;
+      position: relative;
+    }
+
+    /* Central Hub */
+    .center-card {
+      grid-column: 2;
+      grid-row: 1 / span 2;
+      background: white;
+      border: 2px solid #0066FF;
+      border-radius: 14px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+    }
+    .hub-title {
+      font-size: 17px;
+      font-weight: 800;
+      color: #0F2C59;
+      margin-bottom: 6px;
+    }
+    .hub-subtitle {
+      font-size: 11.5px;
+      color: #64748B;
+      margin-bottom: 12px;
+      max-width: 320px;
+      line-height: 1.35;
+    }
+    .hub-pillars {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      width: 100%;
+    }
+    .hub-pill-box {
+      background: #F1F5F9;
+      border: 1px solid #CBD5E1;
+      border-radius: 8px;
+      padding: 8px 10px;
+      text-align: left;
+    }
+    .hub-pill-tag {
+      font-size: 9.5px;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: #0066FF;
+      margin-bottom: 2px;
+    }
+    .hub-pill-name {
+      font-size: 11px;
+      font-weight: 700;
+      color: #0F172A;
+    }
+    .hub-pill-desc {
+      font-size: 9.5px;
+      color: #64748B;
+      line-height: 1.25;
+    }
+
+    /* Outer Cards */
+    .map-card {
+      background: white;
+      border: 1px solid #CBD5E1;
+      border-radius: 12px;
+      padding: 12px 14px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid #F1F5F9;
+    }
+    .card-heading {
+      font-size: 12.5px;
+      font-weight: 800;
+      color: #0F2C59;
+    }
+    .card-badge {
+      font-size: 9.5px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 5px;
+      text-transform: uppercase;
+    }
+    .cb-blue { background: #E0F2FE; color: #0369A1; }
+    .cb-green { background: #DCFCE7; color: #15803D; }
+    .cb-amber { background: #FEF3C7; color: #B45309; }
+    .cb-purple { background: #F3E8FF; color: #7E22CE; }
+
+    .bullet-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .bullet-item {
+      display: flex;
+      gap: 6px;
+      font-size: 10.5px;
+      color: #334155;
+      line-height: 1.35;
+    }
+    .bullet-icon {
+      color: #0066FF;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+    .bullet-item strong {
+      color: #0F172A;
+    }
+
+    .mini-alert {
+      margin-top: auto;
+      padding: 4px 8px;
+      border-radius: 5px;
+      font-size: 9.5px;
+      background: #F8FAFC;
+      border-left: 3px solid #CBD5E1;
+      color: #475569;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="title-group">
+      <h1>Unit VI: Computerised Accounting System Master Mindmap</h1>
+      <p>Holistic structural blueprint connecting spreadsheets, payroll, database architecture, and audit security</p>
+    </div>
+    <div class="badge">UNIT VI · CAS MASTER MINDMAP</div>
+  </div>
+
+  <div class="mindmap-container">
+    <!-- TOP-LEFT: SPREADSHEETS -->
+    <div class="map-card" style="border-top: 3px solid #0066FF;">
+      <div class="card-top">
+        <span class="card-heading">1. Electronic Spreadsheets</span>
+        <span class="card-badge cb-blue">Spreadsheet Engine</span>
+      </div>
+      <ul class="bullet-list">
+        <li class="bullet-item"><span class="bullet-icon">▸</span><span><strong>Cell Referencing:</strong> Relative (A1), Absolute ($A$1), Mixed ($A1 or A$1).</span></li>
+        <li class="bullet-item"><span class="bullet-icon">▸</span><span><strong>Financial Functions:</strong> PMT(rate, nper, pv), PV, FV, RATE, NPER.</span></li>
+        <li class="bullet-item"><span class="bullet-icon">▸</span><span><strong>Depreciation Functions:</strong> SLN(cost, salvage, life); DB(cost, salvage, life, period).</span></li>
+        <li class="bullet-item"><span class="bullet-icon">▸</span><span><strong>Logic & Lookups:</strong> IF(cond, val_true, val_false), VLOOKUP, HLOOKUP.</span></li>
+      </ul>
+      <div class="mini-alert" style="border-left-color: #0066FF;">
+        Monthly Loan Rate = Annual Rate ÷ 12; Total Periods = Years × 12!
+      </div>
+    </div>
+
+    <!-- BOTTOM-LEFT: PAYROLL ACCOUNTING -->
+    <div class="map-card" style="border-top: 3px solid #10B981;">
+      <div class="card-top">
+        <span class="card-heading">2. Payroll & Amortisation</span>
+        <span class="card-badge cb-green">Financial Modeling</span>
+      </div>
+      <ul class="bullet-list">
+        <li class="bullet-item"><span class="bullet-icon">▸</span><span><strong>Gross Earnings:</strong> Basic Pay + DA + HRA + Transport + Special Allowances.</span></li>
+        <li class="bullet-item"><span class="bullet-icon">▸</span><span><strong>Statutory Deductions:</strong> PF (12% of Basic + DA) + ESI + Professional Tax + TDS.</span></li>
+        <li class="bullet-item"><span class="bullet-icon">▸</span><span><strong>Net Salary:</strong> Gross Salary − Total Deductions. Paid via Bank Transfer.</span></li>
+        <li class="bullet-item"><span class="bullet-icon">▸</span><span><strong>Loan EMI:</strong> Fixed PMT = Interest Component (IPMT) + Principal (PPMT).</span></li>
+      </ul>
+      <div class="mini-alert" style="border-left-color: #10B981;">
+        In loan amortisation, interest decreases while principal repayment increases each month!
+      </div>
+    </div>
+
+    <!-- CENTER HUB -->
+    <div class="center-card">
+      <div class="hub-title">Computerised Accounting System</div>
+      <div class="hub-subtitle">Integration of Accounting Principles, Database Technology, and Electronic Spreadsheets</div>
+      
+      <div class="hub-pillars">
+        <div class="hub-pill-box">
+          <div class="hub-pill-tag">Domain 1</div>
+          <div class="hub-pill-name">Software Sourcing</div>
+          <div class="hub-pill-desc">Ready-made, Customised, and Tailor-made accounting applications.</div>
+        </div>
+        <div class="hub-pill-box">
+          <div class="hub-pill-tag">Domain 2</div>
+          <div class="hub-pill-name">Spreadsheet Logic</div>
+          <div class="hub-pill-desc">Financial modeling, PMT, SLN, VLOOKUP, and error handling.</div>
+        </div>
+        <div class="hub-pill-box">
+          <div class="hub-pill-tag">Domain 3</div>
+          <div class="hub-pill-name">DBMS & SQL</div>
+          <div class="hub-pill-desc">Relational tables, primary keys, referential integrity, and SQL queries.</div>
+        </div>
+        <div class="hub-pill-box">
+          <div class="hub-pill-tag">Domain 4</div>
+          <div class="hub-pill-name">Audit & Security</div>
+          <div class="hub-pill-desc">Access hierarchies, data encryption, audit trails, and automated backups.</div>
+        </div>
+      </div>
+
+      <div style="margin-top: 14px; background: #EFF6FF; border: 1px solid #BFDBFE; border-radius: 8px; padding: 6px 12px; font-size: 10px; color: #1E40AF; text-align: center; width: 100%;">
+        <strong>Core Principle:</strong> Record Once via Digital Voucher -> Real-Time Automated Reporting Everywhere!
+      </div>
+    </div>
+
+    <!-- TOP-RIGHT: DBMS & SQL -->
+    <div class="map-card" style="border-top: 3px solid #8B5CF6;">
+      <div class="card-top">
+        <span class="card-heading">3. DBMS & SQL Accounting</span>
+        <span class="card-badge cb-purple">Relational Engine</span>
+      </div>
+      <ul class="bullet-list">
+        <li class="bullet-item"><span class="bullet-icon">▸</span><span><strong>Tables & Tuples:</strong> Tables (Entities), Rows (Tuples/Records), Columns (Fields/Attributes).</span></li>
+        <li class="bullet-item"><span class="bullet-icon">▸</span><span><strong>Key Constraints:</strong> Primary Key (Unique, Not Null); Foreign Key (Referential integrity).</span></li>
+        <li class="bullet-item"><span class="bullet-icon">▸</span><span><strong>DDL Commands:</strong> CREATE TABLE, ALTER TABLE, DROP TABLE (Structure).</span></li>
+        <li class="bullet-item"><span class="bullet-icon">▸</span><span><strong>DML Commands:</strong> SELECT, INSERT, UPDATE, DELETE (Data rows).</span></li>
+      </ul>
+      <div class="mini-alert" style="border-left-color: #8B5CF6;">
+        WHERE filters individual records; HAVING filters aggregated groups!
+      </div>
+    </div>
+
+    <!-- BOTTOM-RIGHT: SECURITY & AUDIT -->
+    <div class="map-card" style="border-top: 3px solid #F59E0B;">
+      <div class="card-top">
+        <span class="card-heading">4. Security & Audit Trail</span>
+        <span class="card-badge cb-amber">Internal Controls</span>
+      </div>
+      <ul class="bullet-list">
+        <li class="bullet-item"><span class="bullet-icon">▸</span><span><strong>Access Controls:</strong> Segregation of duties: Data Entry Clerk vs Supervisor vs Auditor.</span></li>
+        <li class="bullet-item"><span class="bullet-icon">▸</span><span><strong>Audit Trail:</strong> Immutable log tracking who created, approved, or edited each voucher.</span></li>
+        <li class="bullet-item"><span class="bullet-icon">▸</span><span><strong>Data Vault & Encryption:</strong> Passwords and sensitive ledger balances stored encrypted.</span></li>
+        <li class="bullet-item"><span class="bullet-icon">▸</span><span><strong>Backups & Disaster Recovery:</strong> Offsite cloud storage to guard against hardware crashes.</span></li>
+      </ul>
+      <div class="mini-alert" style="border-left-color: #F59E0B;">
+        Companies Act mandates an unalterable audit trail feature in accounting software!
+      </div>
+    </div>
+  </div>
+</body>
+</html>

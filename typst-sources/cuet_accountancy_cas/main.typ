@@ -4,635 +4,694 @@
   exam: "CUET UG",
   subject: "Accountancy",
   topic-title: "Computerised Accounting System",
-  subtitle: "Official Syllabus Unit V · Class 12 · CUET UG 2027 Cycle Notes",
+  subtitle: "Official Syllabus Unit VI · Class 12 · CUET UG 2027 Cycle Notes",
 )
 
-= Syllabus Alignment
+// PAGE 2: SYLLABUS ALIGNMENT & EXAM BLUEPRINT
+= Syllabus Alignment & Exam Blueprint
 
 #table(
   columns: (1.05fr, 1.9fr, 1.25fr),
-  table.header[*Sub-topic*][*Official syllabus pointer (NTA CUET(UG) Accountancy syllabus 2026, the current 2027 baseline, Unit V)*][*Skills the questions test*],
-  [*Concept and types of CAS*], [
-    Overview of Concept and Types of Computerised Accounting System (CAS).
+  table.header[*Sub-topic*][*Official syllabus pointer (NTA CUET(UG) Accountancy 301, Unit VI)*][*Skills the questions test*],
+  [*Overview of CAS*], [
+    Concept and types of computerised accounting system (CAS); Features of a CAS; Structure of a CAS; Software packages: Generic, Specific, Tailored
   ], [
-    Defining CAS in plain words, matching a firm's needs to ready-made, tailor-made, customised, integrated or standalone packages.
+    Classifying Ready-to-use, Customised, and Tailor-made software; identifying five AIS components.
   ],
-  [*Features, advantages, limitations*], [
-    Features of a Computerised Accounting System, Advantages, limitations.
+  [*Accounting & DBMS*], [
+    Concept of entity and relationship: Designing database for accounting; Data hierarchy: character, field, record, file, database; Key concepts: Primary key, Foreign key
   ], [
-    Listing the headline features and weighing each advantage against a real limitation.
+    Applying relational data models; distinguishing Primary Keys and Foreign Keys; referential integrity.
   ],
-  [*Structure of a CAS*], [
-    Structure of a Computerised Accounting System: chart of accounts, Codification and Hierarchy of account heads.
+  [*Basic SQL for Accounting*], [
+    Basic SQL queries to retrieve accounting data: SELECT, FROM, WHERE, GROUP BY, HAVING, ORDER BY
   ], [
-    Reading a chart of accounts, naming the codification method from a code, tracing group → sub-group → ledger.
+    Distinguishing DDL from DML; filtering with WHERE vs HAVING; computing aggregate totals.
   ],
-  [*Accounting information system*], [
-    Accounting information system (AIS).
+  [*Electronic Spreadsheets*], [
+    Concept of electronic spreadsheet; Features offered by electronic spreadsheet; Cell referencing; Basic financial and accounting functions
   ], [
-    Naming the six AIS components and judging the qualities of useful accounting information.
+    Applying Relative, Absolute, and Mixed cell references; resolving spreadsheet error codes (\#REF!, \#DIV/0!).
   ],
-  [*Electronic spreadsheets*], [
-    Accounting Applications of Electronic Spreadsheet.
+  [*Spreadsheet Applications*], [
+    Applications of electronic spreadsheets in generating accounting information: Payroll accounting, Loan repayment schedule, Depreciation schedule
   ], [
-    Connecting spreadsheet tools — formulas, functions, charts — to accounting jobs.
-  ],
-  [*Spreadsheet applications*], [
-    Features offered by Electronic Spreadsheet. Applications of Electronic Spreadsheet in generating accounting information, preparing reports using pivot Table, common errors in spreadsheet, depreciation schedule, loan repayment schedule, payroll accounting.
-  ], [
-    Building pivot tables, spotting spreadsheet error messages, preparing depreciation, loan and payroll schedules.
-  ],
-  [*Graphs and charts*], [
-    Graphs and Charts in electronic spreadsheet for Business Data.
-  ], [
-    Picking the right chart for a business question — comparison, trend, share or ranking.
+    Calculating PMT, SLN, DB, and VLOOKUP; computing Net Salary from gross earnings and statutory deductions.
   ],
 )
 
 #exam-pointer[
-  CUET UG pattern (NTA official information bulletin and syllabus, 2026 cycle — the
-  current 2027 baseline): each subject paper carries *50 compulsory questions* in
-  *60 minutes*, with $+5$ for every correct answer and $-1$ for every incorrect answer. The Accountancy paper (subject code 301)
-  maps strictly to NCERT Class 12, and Unit V closes the syllabus with the
-  computerised layer that runs the same Class 12 bookkeeping on software.
+  *CUET UG Exam Blueprint:* Unit VI contributes 4–6 questions (20–30 marks) in the 50-question paper. NTA frequently tests: (1) Sourcing criteria between Ready-to-Use, Customised, and Tailor-Made software, (2) Distinction between Primary Key and Foreign Key constraints, (3) Syntax and execution order of SQL queries (WHERE vs HAVING), (4) Difference between Absolute (`$A$1`) and Mixed (`$A1` or `A$1`) cell references, and (5) Financial function arguments in Excel (`PMT`, `SLN`, `DB`, `VLOOKUP`).
 ]
 
-= Concept and Types of CAS
+#pagebreak()
 
-Write one sales entry by hand and you copy it three times — once in the sales
-book, once in the customer's ledger, once more while totalling the trial balance.
-A *Computerised Accounting System* (CAS) writes it *once*. The moment the voucher
-is saved, the software carries the amount to every ledger, every summary and
-every report that needs it. That single idea — record once, reuse everywhere — is
-the whole chapter in one line.
+// PAGE 3: OVERVIEW OF CAS & AIS COMPONENTS
+= 1. Overview of Computerised Accounting System (CAS)
 
-- *What it is:* a CAS is accounting done on a computer. Vouchers are entered on
-  screen, and the software records, classifies and summarises them into ledgers
-  and reports automatically.
-- *One database:* every account head lives in one store. An entry touches every
-  place it is needed the second it is saved.
-- *No unbalanced books:* the software refuses a voucher whose debit and credit
-  totals differ, so ledgers always agree with each other.
-- *Reports on demand:* trial balance, P&L, Balance Sheet — any date range — are
-  generated in seconds from the same stored data.
+A Computerised Accounting System (CAS) is an accounting information system that processes financial transactions and events according to Generally Accepted Accounting Principles (GAAP) to generate reports as per user requirements.
 
-== Manual vs computerised, side by side
+== Core Operating Cycle of CAS
+1. *Input:* Source documents (cash memos, invoices, vouchers) are digitized and keyed in through customized data entry screens.
+2. *Processing:* The software processes transaction data against pre-defined accounting rules, automatically posting debits and credits into respective relational ledger tables.
+3. *Output:* Real-time, instant generation of financial reports (Day Books, Ledgers, Trial Balance, Profit & Loss Account, Balance Sheet).
 
+== The Five Structural Components of an AIS
+An Accounting Information System operates across five interrelated pillars:
 #table(
-  columns: (0.95fr, 1.2fr, 1.2fr),
-  table.header[*Point*][*Manual system*][*Computerised system*],
-  [Recording], [Written by hand in journals and ledgers], [Entered once as a voucher on screen],
-  [Speed], [Slow — every posting is repeated by hand], [Fast — one entry updates everything],
-  [Accuracy], [Prone to clerical slips — wrong totals, missed lines], [Arithmetic is always correct; only entry mistakes remain possible],
-  [Balancing], [Ledgers totalled and agreed at period end], [Balances current after every single voucher],
-  [Reports], [Prepared from scratch each time], [Generated instantly from stored data],
-  [Storage], [Registers, files and cupboards], [One compact database, easy to back up],
+  inset: 4.5pt,
+  columns: (1fr, 1.4fr, 1.6fr),
+  table.header[*Component*][*Technical Description*][*Accounting Application / Example*],
+  [*1. Hardware*], [Physical computing equipment and peripherals.], [Desktop PCs, local servers, barcode scanners, laser printers for invoices.],
+  [*2. Software*], [System software (OS) and application programs.], [Operating system, RDBMS engine (SQL/Oracle), accounting packages (Tally, SAP).],
+  [*3. People*], [Human users interacting with the system.], [Data entry operators, accountants, internal auditors, Chief Financial Officer.],
+  [*4. Procedures*], [Documented operational guidelines and rules.], [Internal control manuals, chart of accounts guidelines, data backup policies.],
+  [*5. Data*], [Raw facts and recorded transactions.], [Voucher numbers, customer ledgers, account balances, inventory stock items.],
 )
 
-#figure(image("assets/cas_flow.png", width: 100%), caption: [How a transaction travels through a CAS — from the source document to the final reports.])
+== Fundamental Features of CAS
+- *Single-Point Data Entry:* Transaction data is keyed in only once via a digital voucher; all corresponding ledgers, trial balances, and financial statements update simultaneously in real time.
+- *Speed and Accuracy:* Eliminates manual arithmetic errors, transposition errors, and tedious ledger balancing.
+- *Online Real-Time Reporting:* Management can generate an instant balance sheet or cash position at any moment without waiting for year-end book closing.
+- *Scalability and Storage:* Capable of handling massive transaction volumes across multi-branch and multi-currency operations.
 
-#analogy-box(title: "Everyday Example — Bucket vs Pipeline")[
-  Carrying water by hand is manual accounting: for every room (ledger) you walk
-  to the well (source document) again. A CAS is a pipeline — you fill it once at
-  the source, and every tap (ledger, trial balance, report) draws from the same
-  pipe. The mapping matters: *one filled source* = one saved voucher, and *every
-  tap* = every report the software builds from that voucher. Fill the pipe with
-  dirty water — a wrong entry — and every tap serves it: garbage in, garbage out.
+#pagebreak()
+
+// PAGE 4: MANUAL VS CAS & ACCOUNT CODIFICATION
+= 2. Manual Accounting vs CAS & Codification Architecture
+
+While both manual and computerised accounting systems adhere to fundamental double-entry principles, their execution mechanisms diverge sharply:
+
+== Comparative Matrix: Manual vs Computerised Accounting
+#table(
+  inset: 3.5pt,
+  columns: (1fr, 1.5fr, 1.5fr),
+  table.header[*Basis*][*Manual Accounting System*][*Computerised Accounting System (CAS)*],
+  [*Recording*], [Transactions recorded by hand in physical Journal Books.], [Recorded digitally through electronic voucher entry screens.],
+  [*Posting*], [Manual hand-posting from journals into ledger accounts.], [Automatic, instantaneous posting executed by software.],
+  [*Trial Balance*], [Prepared manually by extracting and totaling ledger balances.], [Generated instantly on-demand; mathematically balanced.],
+  [*Financial Reports*], [Prepared periodically (annually) after manual adjustments.], [Available on-demand in real-time, reflecting live data.],
+  [*Error Detection*], [Errors of casting, posting, and balancing are frequent.], [Mathematical casting errors are eliminated by software validation.],
+)
+
+== Account Codification Schemes in CAS
+In a CAS, account titles are assigned alphanumeric codes to expedite data entry and eliminate nomenclature ambiguity:
+#table(
+  inset: 3.5pt,
+  columns: (1.1fr, 1.3fr, 1.6fr),
+  table.header[*Coding Scheme*][*Design Principle*][*Concrete Accounting Example*],
+  [*Sequential Code*], [Consecutive numbers in unbroken sequence.], [`001`, `002`, `003` (simple, but cannot insert new accounts).],
+  [*Block Code*], [Dedicated numerical ranges for major heads.], [`1000–1999` Assets, `2000–2999` Liabilities, `3000–3999` Capital.],
+  [*Mnemonic Code*], [Alphabetic abbreviations aiding quick recall.], [`FUR` (Furniture), `DEP` (Depreciation), `CHQ` (Cheque).],
+  [*Hierarchical Code*], [Multi-tiered decimal parent-child hierarchy.], [`1000` Current Assets $->$ `1100` Bank $->$ `1110` SBI Current A/c.],
+)
+
+#tip-box(title: "CUET Codification Rule")[
+  *CUET Codification Rule:* Block coding allows future expansion without disrupting existing numbers. Hierarchical coding provides infinite scalability for multi-branch corporate balance sheets.
 ]
 
-== Types of CAS: how much customisation?
+#pagebreak()
 
-Software is not one-size-fits-all. The syllabus splits CAS packages by *how much
-they are shaped to one firm*.
-
-#table(
-  columns: (0.85fr, 1.3fr, 1fr, 1fr),
-  table.header[*Type*][*What it is*][*Strength*][*Weakness*],
-  [Ready-made], [Standard software sold off the shelf to any buyer], [Cheap, quick to install, well-tested], [May not fit special needs; carries unused extras],
-  [Tailor-made], [Built from scratch for one particular firm], [Fits the firm's exact working perfectly], [Costly to build; needs experts to maintain],
-  [Customised], [Ready-made core modified with firm-specific changes], [Middle path — cheaper than tailor-made, better fit than ready-made], [Changes must be tested carefully],
-  [Integrated], [Purchase, sales, payroll and banking modules share one database], [One entry flows into all reports; no re-typing], [Costlier and needs more training than standalone],
-  [Standalone], [One programme does one job — say, payroll only], [Simple, cheap, easy to learn], [Data must be re-entered elsewhere; no cross-reports],
+// PAGE 5: FIGURE 1 & SOURCING OF SOFTWARE
+#figure(
+  image("assets/acc_cas_architecture_and_software.png", width: 78%),
+  caption: [CAS Architecture: Five AIS pillars, manual vs computerized workflows, software sourcing matrix, and codification.],
 )
 
-- *Reading the table as a buyer:* a small shop with ordinary needs survives on a
-  ready-made package; a bank with unique rules will go tailor-made; most firms
-  settle on a customised middle path.
-- *Integrated vs standalone is a different axis:* it is about *scope* (how many
-  jobs one system covers), not about how much the code was bent to fit one firm.
+= 3. Sourcing & Selection of Accounting Software Packages
 
-= Features, Advantages and Limitations
-
-The software market sells speed, but the syllabus names four headline *features*
-of a CAS — speed, accuracy, reliability and versatility — and it is your job to
-separate the *advantages* those features create from the *limitations* that come
-bundled with them. Learn the four features first; the rest of the section hangs
-off them.
-
-== The four headline features (plus two bonus ones)
-
+== Sourcing Matrix: Ready-to-Use vs Customised vs Tailor-Made
 #table(
-  columns: (1fr, 2.1fr),
-  table.header[*Feature*][*What it means in practice*],
-  [Speed], [Vouchers post in seconds; a report that took a clerk two days appears instantly],
-  [Accuracy], [No totalling or posting errors — the software's arithmetic never slips],
-  [Reliability], [The system performs the same way every time — month-end rush or a slow Tuesday],
-  [Versatility], [The same stored data produces ledgers, statements, summaries and charts],
-  [Scalability], [500 more customers or two more branches add no manual workload],
-  [Instant reporting], [Any report, any date range, on screen or printed, on demand],
+  inset: 3pt,
+  columns: (1fr, 1.05fr, 1fr, 1fr),
+  table.header[*Criterion*][*Ready-to-Use (Off-the-shelf)*][*Customised Software*][*Tailor-Made (Bespoke)*],
+  [*Target Users*], [Small retail shops, standard businesses.], [Medium-scale enterprises.], [Large corporations, banks, telecom.],
+  [*Initial Cost*], [Very low; affordable off-the-shelf.], [Moderate development cost.], [Very high development & test cost.],
+  [*Deployment Time*], [Immediate plug-and-play installation.], [Requires moderate modification.], [Long build, test, and release cycle.],
+  [*Flexibility*], [Rigid; cannot modify core code.], [Moderate; tailored add-ons.], [100% custom-built to unique needs.],
+  [*Data Security*], [Standard commercial security.], [Enhanced access control.], [Highest; proprietary encrypted code.],
+  [*Staff Training*], [Minimal training required.], [Moderate user training needed.], [Specialised extensive training required.],
 )
 
-== Advantages you can defend in a line
+== Critical Factors Governing Accounting Software Selection
+1. *Size and Scale of Business:* Small concerns thrive on off-the-shelf software; large multi-branch corporations mandate bespoke ERP suites.
+2. *Cost of Installation & Maintenance:* Total ownership cost includes licensing, hardware upgrades, and recurring Annual Maintenance Contracts (AMC).
+3. *Level of Secrecy & Data Security:* Highly sensitive financial records (banking, fintech) rule out generic packages in favour of tailor-made encrypted databases.
+4. *Ease of Adaptation & Vendor Support:* Intuitive UI minimizes operator errors; reliable vendor support ensures timely statutory updates (e.g., GST changes).
 
-- *Fewer clerical errors:* posting, casting (totalling) and balancing are automatic.
-- *Faster information:* year-end statements can be previewed mid-year — no waiting
-  for the closing season.
-- *Less paperwork and storage:* one database replaces shelves of registers.
-- *Better control:* passwords and access levels decide who may enter or change data.
-- *Built-in checks:* an unbalanced voucher is simply not accepted.
+#pagebreak()
 
-== Limitations you must not skip
+// PAGE 6: ACCOUNTING & DBMS
+= 4. Accounting and Database Management Systems (DBMS)
 
-- *Cost:* hardware, software licences, upgrades and trained staff all cost money.
-- *Training:* staff must learn the system, and a trained operator becomes a single
-  point of dependence.
-- *Dependence on the operator:* the machine follows instructions — a wrong entry
-  still produces beautiful, wrong reports.
-- *System failure:* power cuts, viruses and disk crashes can stop work or destroy
-  data, so regular backups are compulsory.
-- *Data security:* unauthorised access, theft or tampering of electronic data is a
-  standing risk.
+A Database Management System (DBMS) is software that enables structured storage, retrieval, and modification of financial data across linked relational tables.
 
-#worked-example("Quick Drill — Feature or Limitation?")[
-  Sort these five statements before moving on:
+== Hierarchy of Accounting Data
+Accounting data within an RDBMS is structured hierarchically from atomic bits to full databases:
+- *Bit & Byte:* A bit is the basic binary unit (0 or 1); 8 bits form a *Byte/Character* (e.g., 'A', '₹').
+- *Field / Attribute (Column):* A distinct accounting property (e.g., `Voucher_No`, `Acc_Name`, `Amount`).
+- *Record / Tuple (Row):* A complete collection of fields representing one transaction instance.
+- *Table / Relation (File):* A collection of logically related records sharing identical attributes.
+- *Database:* The master integrated repository comprising all interrelated accounting tables.
 
-  - "Reports appear in seconds" — *advantage* (built on the speed feature).
-  - "The ledger total is never a casting mistake" — *advantage* (accuracy).
-  - "A virus wiped yesterday's entries" — *limitation* (system failure + security).
-  - "Only Ramesh knows how to run the payroll module" — *limitation*
-    (dependence on a trained operator).
-  - "The firm added two branches with no extra accounting staff" — *advantage*
-    (scalability).
+== Relational Database Keys Architecture
+Relational databases enforce key constraints to guarantee entity integrity and eliminate orphan records:
+#table(
+  inset: 3.2pt,
+  columns: (1.1fr, 1.35fr, 1.55fr),
+  table.header[*Key Type*][*Technical Definition*][*Accounting Application / Example*],
+  [*Primary Key*], [Uniquely identifies every record in a table. Must be unique and *cannot contain NULL values*.], [`Voucher_ID` in Voucher Table; `Acc_Code` in Accounts Master Table.],
+  [*Foreign Key*], [Attribute referencing the Primary Key of another table, linking parent and child entities.], [`Acc_Code` inside Voucher Table, referencing `Acc_Code` in Accounts Master.],
+  [*Candidate Key*], [Any minimal set of attributes capable of uniquely identifying table records.], [`PAN_Number` or `Bank_Account_No` in Vendor or Employee Master.],
+  [*Alternate Key*], [A Candidate Key not chosen as the Primary Key.], [If `Acc_Code` is Primary Key, unique `Acc_Name` is an Alternate Key.],
+)
+
+#important-box(title: "Referential Integrity Constraint")[
+  *Referential Integrity* mandates that a Foreign Key in a child table (e.g., Voucher Table) MUST match an existing Primary Key in the parent master table (e.g., Accounts Master). A user *cannot post a voucher* to an account code that does not exist in the master table!
 ]
 
-= Structure: Chart of Accounts, Codification, Hierarchy
+#pagebreak()
 
-A library with 10,000 books and no catalogue is useless — you can never find the
-book you need. A CAS faces the same problem with accounts. Its catalogue is the
-*chart of accounts*, and the way numbers are handed out is *codification*. Get
-these two right and the software files every entry in its exact place, forever.
+// PAGE 7: BASIC SQL FOR ACCOUNTING
+= 5. Basic SQL Queries for Accounting
 
-- *Chart of accounts:* the complete, numbered list of every account head the firm
-  uses — assets, liabilities, capital, income and expenses — arranged in a fixed
-  order.
-- *Codification:* giving each account head a short code, so the software can find,
-  group and total it at speed.
-- *Hierarchy:* heads are arranged from broad groups down to individual ledgers,
-  like folders inside folders.
+Structured Query Language (SQL) is the standard language used to define, manipulate, and query data in a relational database.
 
-== Codification: four ways to hand out codes
+== Classification of SQL Commands
+- *DDL (Data Definition Language):* Used to build, alter, and delete database structures:
+  - `CREATE TABLE`: Defines table schema, column data types, and primary key constraints.
+  - `ALTER TABLE`: Modifies an existing table (e.g., adds a new GST column).
+  - `DROP TABLE`: Permanently deletes an entire table and its schema from the database.
+- *DML (Data Manipulation Language):* Used to query, insert, update, and manage table records:
+  - `SELECT`: Retrieves data from tables based on specified query criteria.
+  - `INSERT INTO`: Adds new transaction rows into an accounting table.
+  - `UPDATE`: Modifies existing field values (e.g., updates vendor credit limit).
+  - `DELETE`: Removes specific transaction records from a table.
+
+== Anatomy of an Accounting SQL SELECT Query
+```sql
+SELECT Column_1, Aggregate_Function(Column_2)
+FROM Table_Name
+WHERE Row_Condition
+GROUP BY Grouping_Column
+HAVING Group_Condition
+ORDER BY Sorting_Column ASC|DESC;
+```
 
 #table(
-  columns: (0.9fr, 1.5fr, 1.3fr, 1fr),
-  table.header[*Method*][*How it works*][*Example*][*Watch out*],
-  [Sequential], [Every new head gets the next number in line], [1 Cash, 2 Bank, 3 Capital], [A new head in the middle disturbs the whole order],
-  [Block (and decimal)], [A fixed range is reserved for each category; decimals open sub-blocks], [1000–1999 assets, 2000–2999 liabilities, 3000–3999 capital, 4000–4999 income, 5000–5999 expenses; 1100 current assets, 1110 cash], [Ranges must be planned before the first entry],
-  [Mnemonic (letter)], [Letters recall the account name], [FUR furniture, DEP depreciation, SUN sundry debtors], [Letter-only codes get clumsy as accounts multiply],
-  [Combination], [Letters and digits together], [FUR-01 first furniture account, DEP-02 depreciation provision], [Best of both; needs a written code manual],
+  inset: 4.5pt,
+  columns: (1fr, 1.5fr, 1.5fr),
+  table.header[*Clause*][*Function in Accounting Query*][*Concrete Accounting Example*],
+  [*SELECT*], [Specifies attributes to retrieve or aggregate.], [`SELECT Acc_Name, SUM(Debit_Amount)`],
+  [*FROM*], [Specifies source database table.], [`FROM Daily_Vouchers`],
+  [*WHERE*], [Filters individual raw rows before grouping.], [`WHERE Voucher_Date >= '2024-04-01'`],
+  [*GROUP BY*], [Collapses rows sharing identical values into groups.], [`GROUP BY Acc_Name`],
+  [*HAVING*], [Filters aggregated groups after `GROUP BY`.], [`HAVING SUM(Debit_Amount) > 100000`],
+  [*ORDER BY*], [Sorts final output ascending (ASC) or descending.], [`ORDER BY SUM(Debit_Amount) DESC`],
 )
 
-#analogy-box(title: "Everyday Example — The Postal PIN Code")[
-  A PIN code does not describe the whole address; it tells the sorting machine
-  instantly which state, district and post office owns the letter. Account codes
-  work the same way: the code *1005* tells the software "asset, current,
-  cash-like" before anyone reads the full name. The mapping is honest — *state =
-  group*, *district = sub-group*, *post office = ledger* — which is exactly the
-  hierarchy the next sub-section builds.
+#caution-box(title: "CUET High-Frequency SQL Trap: WHERE vs HAVING")[
+  - `WHERE` clause filters *individual records* before aggregation and CANNOT contain aggregate functions like `SUM()` or `COUNT()`.
+  - `HAVING` clause filters *aggregated groups* and is used exclusively after `GROUP BY`.
 ]
 
-== The hierarchy of account heads
+#pagebreak()
 
+// PAGE 8: ELECTRONIC SPREADSHEETS IN ACCOUNTING
+= 6. Electronic Spreadsheets in Accounting
+
+An electronic spreadsheet (e.g., Microsoft Excel, Google Sheets) is an interactive grid of rows and columns used to manipulate, calculate, and model financial data.
+
+== Cell Referencing Archetypes
+Cell referencing defines how cell addresses behave when formulas are copied across rows or columns:
+1. *Relative Referencing (`A1`):*
+  - The cell address shifts dynamically relative to the direction of copying.
+  - *Example:* If `=A1+B1` in cell `C1` is copied down to cell `C2`, it automatically shifts to `=A2+B2`.
+2. *Absolute Referencing (`$A$1`):*
+  - Both column and row are locked with dollar signs (`$`). The reference remains completely fixed regardless of where the formula is copied.
+  - *Example:* If `=A1*$D$1` is copied from `B1` to `B2`, it becomes `=A2*$D$1` (the tax rate in `$D$1` stays locked).
+3. *Mixed Referencing (`$A1` or `A$1`):*
+  - Either the column is locked (`$A1`) while the row remains free, or the row is locked (`A$1`) while the column remains free.
+  - *Example:* In a two-way multiplication table, `=$A2*B$1` locks column A for rates and row 1 for quantities.
+
+== Common Spreadsheet Error Values in Accounting
 #table(
-  columns: (1.1fr, 1.2fr),
-  table.header[*Level*][*Example*],
-  [Group (primary head)], [Assets],
-  [Sub-group], [Current Assets],
-  [Sub-group], [Sundry Debtors],
-  [Ledger (actual account)], [Sharma & Co.],
+  inset: 4.5pt,
+  columns: (1fr, 1.4fr, 1.6fr),
+  table.header[*Error Code*][*Underlying Cause*][*Practical Accounting Remedy*],
+  [*`\#DIV/0!`*], [Formula attempts division by zero or an empty cell.], [Ensure denominator cell contains non-zero value or wrap in `IF()` check.],
+  [*`\#N/A`*], [Lookup value is not available in lookup table.], [Check `VLOOKUP` search key; verify table array range covers search key.],
+  [*`\#VALUE!`*], [Incorrect data type passed to function (e.g., text in math).], [Ensure cells referenced in arithmetic contain numeric currency data.],
+  [*`\#REF!`*], [Cell reference is invalid (referenced cell was deleted).], [Re-enter formula; avoid deleting source rows/columns used in calculations.],
+  [*`\#NAME?`*], [Unrecognized function name or misspelled formula.], [Correct formula spelling (e.g., `SUMM` corrected to `SUM`).],
+  [*`\#\#\#\#\#`*], [Column width is too narrow to display full numeric value.], [Double-click column header boundary to auto-expand cell width.],
 )
 
-- *Only the lowest level carries transactions:* Sharma & Co. receives actual
-  voucher postings; the groups above simply hold the totals of whatever sits
-  below them.
-- *Why it matters:* the Balance Sheet is printed from the *group* level, while
-  day-to-day entries are made at the *ledger* level — one structure serves both.
+#pagebreak()
 
-= The Accounting Information System (AIS)
+// PAGE 9: SPREADSHEET FUNCTIONS FOR ACCOUNTING
+= 7. Financial, Logical & Lookup Functions
 
-Software alone is not an accounting system. A restaurant is not just its kitchen:
-it needs staff, house rules, the order slips, the billing machine — and someone
-checking the cash drawer at night. An *Accounting Information System (AIS)* is
-the full restaurant: the complete setup of people, rules, data, software,
-hardware and controls that turns raw transactions into reports a manager can
-trust and act on. The CAS you studied above is the *software heart* sitting
-inside this larger body.
+Modern spreadsheets provide specialized built-in functions for financial modeling, depreciation calculation, and data retrieval.
 
-== The six components of an AIS
+== Key Financial Functions
+1. *`PMT(rate, nper, pv, [fv], [type])`:*
+  - Computes the fixed periodic payment (EMI) for a loan based on constant payments and constant interest rate.
+  - *Rate:* Interest rate per period. (For monthly EMI at 12% p.a., Rate = $12% / 12 = 1%$ or $0.01$).
+  - *Nper:* Total number of payment periods. (For a 5-year loan paid monthly, Nper = $5 times 12 = 60$).
+  - *Pv:* Present value or principal loan amount borrowed.
+2. *`PV(rate, nper, pmt, [fv], [type])`:* Calculates the present lump-sum value of a series of future cash flows.
+3. *`FV(rate, nper, pmt, [pv], [type])`:* Calculates the future compounded value of an investment.
+4. *`RATE(nper, pmt, pv, [fv])`:* Calculates the periodic interest rate of an annuity or loan.
+5. *`NPER(rate, pmt, pv, [fv])`:* Calculates the total number of payment periods required to clear a loan.
 
-#table(
-  columns: (1fr, 2.1fr),
-  table.header[*Component*][*What it covers*],
-  [People], [Operators, accountants, managers, auditors — everyone who enters, checks or uses the data],
-  [Procedures], [The written rules: how vouchers are approved, entered, checked and backed up],
-  [Data], [The transactions themselves — sales, purchases, receipts, payments],
-  [Software], [The CAS programmes that record, classify and report],
-  [Hardware], [Computers, servers, printers, network and power backup],
-  [Internal controls], [Passwords, access levels, checks and backups that protect accuracy and secrecy],
+== Depreciation Functions
+- *`SLN(cost, salvage, life)` — Straight-Line Method:*
+  $ "Annual Depreciation" = ("Cost" - "Salvage Value") / "Useful Life" $
+  - Computes equal, constant depreciation for each period.
+- *`DB(cost, salvage, life, period, [month])` — Declining Balance Method:*
+  - Computes depreciation at a fixed declining percentage rate (Written Down Value method) for a specific individual period.
+
+== Logical and Lookup Functions
+- *`IF(logical_test, value_if_true, value_if_false)`:*
+  - Evaluates a condition and returns one value if TRUE and another if FALSE.
+  - *Accounting Example:* `=IF(E2>=50000, E2*10%, E2*5%)` (calculates sales bonus).
+- *`VLOOKUP(lookup_value, table_array, col_index_num, [range_lookup])`:*
+  - Searches vertically down the leftmost column of `table_array` for `lookup_value` and returns a value from `col_index_num`.
+  - Set `range_lookup = FALSE` (or `0`) for an *exact match* (mandatory for account codes and employee IDs!).
+
+#pagebreak()
+
+// PAGE 10: FIGURE 2 & PAYROLL ACCOUNTING
+#figure(
+  image("assets/acc_cas_dbms_and_sql.png", width: 84%),
+  caption: [DBMS Architecture & SQL: Data hierarchy, relational keys, DDL vs DML commands, and accounting SQL models.],
 )
 
-- *People matter most:* the finest software produces nonsense if the operator
-  picks the wrong account head — which is why training is a component, not a
-  luxury.
-- *Internal controls are the night watchman:* they run silently, and you notice
-  them only when something goes wrong.
+= 8. Payroll Accounting & Financial Modeling in Spreadsheets
 
-== Qualities of useful accounting information
+Payroll accounting computes gross earnings, statutory deductions, and net take-home pay for employees across pay periods.
 
-An AIS produces reports all day. Only *useful* ones deserve attention — and the
-syllabus names five qualities that make information useful.
+== Mathematical Structure of Payroll
+1. *Gross Salary (Total Earnings):*
+  $ "Gross Salary" = "Basic Pay" + "Dearness Allowance (DA)" + "House Rent Allowance (HRA)" + "Transport Allowance" + "Special Allowances" $
+  - *DA:* Computed as a fixed percentage of Basic Pay (e.g., $40%$ of Basic).
+  - *HRA:* Computed as a percentage of Basic Pay (e.g., $20%$ in metro cities, $10%$ in non-metros).
+2. *Total Statutory Deductions:*
+  $ "Total Deductions" = "Provident Fund (PF)" + "Employee State Insurance (ESI)" + "Professional Tax (PT)" + "Tax Deducted at Source (TDS)" $
+  - *Provident Fund (PF):* Statutorily fixed at *12% of (Basic Pay + DA)*.
+3. *Net Salary (Take-Home Pay):*
+  $ "Net Salary" = "Gross Salary" - "Total Deductions" $
 
+#pagebreak()
+
+// PAGE 11: SECURITY, CONTROLS & AUDIT TRAIL
+= 9. Security, Internal Controls & Audit Trail in CAS
+
+A computerised accounting environment introduces unique technological vulnerabilities, necessitating comprehensive administrative and digital safeguards.
+
+== Security Threats in CAS
+- *Internal Threats:* Unauthorized data modification by disgruntled employees, accidental deletion of vouchers, fraudulent creation of phantom vendors.
+- *External Threats:* Malware, ransomware infections, hacking, phishing, and denial-of-service attacks.
+- *Physical / Hardware Threats:* Hard disk crashes, server room fires, floods, and power surges.
+
+== Internal Control Architecture in Modern CAS
 #table(
-  columns: (1fr, 2.1fr),
-  table.header[*Quality*][*The question it answers*],
-  [Relevance], [Does this figure affect the decision at hand?],
-  [Reliability], [Can it be trusted — free of error and bias?],
-  [Comparability], [Can it be lined up against last year, or against another firm?],
-  [Understandability], [Can a normal reader grasp it without help?],
-  [Timeliness], [Is it available in time to be useful?],
+  inset: 4.5pt,
+  columns: (1fr, 1.4fr, 1.6fr),
+  table.header[*Control Layer*][*Technical Safeguard*][*Operational Function in Accounting*],
+  [*1. Access Controls*], [User ID & Role-Based Permissions.], [Segregation of duties: Data Entry Clerk can enter vouchers but *cannot approve* or view general ledgers.],
+  [*2. Password Controls*], [Complex passwords & Multi-Factor Auth.], [Mandatory 90-day password expiry, biometric logins, automatic session lockouts.],
+  [*3. Data Vault*], [Encrypted data storage.], [Financial database is stored in an encrypted vault, preventing direct unauthorized file copying.],
+  [*4. Audit Trail*], [Immutable, write-once event log.], [Mandatory log capturing every edit, deletion, user ID, and timestamp. Cannot be disabled!],
+  [*5. Backup & Recovery*], [Automated off-site cloud replication.], [Daily incremental backups and weekly full backups to ensure business continuity.],
 )
 
-- *The five qualities pull against each other:* a perfectly reliable report that
-  arrives three weeks late fails *timeliness*; a fast but unaudited figure fails
-  *reliability*. Good AIS design balances all five.
-- *One-line memory aid:* useful information is *RR-CUT* — Relevant, Reliable,
-  Comparable, Understandable, Timely.
-
-= Accounting Applications of Electronic Spreadsheets
-
-Before dedicated accounting packages, accountants discovered something almost as
-powerful: the *electronic spreadsheet* — a giant grid of rows and columns that
-does arithmetic on command. Change one cell and every formula built on it
-recalculates by itself. That single behaviour — *change once, update everywhere* —
-is the spreadsheet version of "record once, reuse everywhere", and it is why the
-syllabus devotes so much of Unit V to this one tool.
-
-== The spreadsheet's toolkit
-
-- *Rows, columns, cells:* every box is a *cell*, named by column letter + row
-  number — A1, B3, D12. Formulas reach other cells through these *references*.
-- *Formulas:* begin with an `=` sign. `=B2+B3` adds two cells. Edit B2 and
-  every formula that uses it updates on the spot.
-- *Functions:* ready-made formulas with names — SUM, AVERAGE, IF, SLN, DB, PMT —
-  each examined in the cheatsheet section of this PDF.
-- *Formatting:* currency symbols, bold totals, borders and date styles make the
-  sheet presentable without touching a single number.
-- *Charts:* select a data range, pick a chart type, and the picture appears —
-  covered in the next section.
-
-== Application 1 — generating accounting reports
-
-- *Linked sheets:* build Ledgers, Trial Balance, P&L and Balance Sheet on
-  separate sheets and *link* them — `=Sales!B12` pulls one figure straight
-  from the Sales sheet.
-- *Enter once, update everywhere:* record a sale on the entry sheet and the
-  ledger, trial balance and P&L totals all move together.
-- *Templates:* a monthly payroll or cash book sheet is designed once, then reused
-  every month with fresh numbers.
-- *What-if analysis:* change the growth rate cell from 10% to 12% and watch
-  projected profit move — accountants test plans this way before committing.
-
-== Application 2 — pivot tables: the instant summary
-
-A *pivot table* re-groups and summarises a long list *without formulas*. You
-drag fields into place and the table reshapes — hence "pivot". Build one in
-three steps:
-
-+ *Select the data* — here, four sales rows with columns Region, Month, Sales.
-+ *Insert a pivot table*; drag *Region* to rows, *Month* to columns, *Sales* to
-  values (sum).
-+ *Read the summary* — or drag a field out and in; the table reshapes instantly.
-
-#table(
-  columns: (1.2fr, 1fr, 1fr, 1fr),
-  table.header[*Region*][*Jan (₹)*][*Feb (₹)*][*Total (₹)*],
-  [North], [40,000], [50,000], [90,000],
-  [South], [30,000], [20,000], [50,000],
-  [Grand total], [70,000], [70,000], [1,40,000],
-)
-
-- *What the pivot did:* eight raw numbers became a 2 × 2 summary with totals —
-  no SUM typed by hand, and the same pivot works on 8,000 rows.
-- *The live-data trap:* a pivot table does *not* edit itself. Change the source
-  data and the pivot keeps old totals until you *refresh* it — a classic
-  wrong-report moment.
-
-== Application 3 — common spreadsheet errors
-
-#table(
-  columns: (0.85fr, 1.5fr, 1.3fr),
-  table.header[*Error*][*What causes it*][*What to do*],
-  [Wrong cell reference], [Typing B2:B19 when the data ends at B10 — totals silently absorb junk], [Check the highlighted range before pressing Enter],
-  [Relative vs absolute mix-up], [Copying `=B2*E1` down a column — E1 slides to E2, E3...], [Lock the rate cell with dollar signs: `=B2*$E$1`],
-  [\#REF!], [The cell a formula pointed to was deleted], [Rebuild the reference; undo before closing the file],
-  [\#DIV/0!], [A division's bottom cell is empty or zero], [Guard it: show a blank when the cell is zero],
-  [\#NAME?], [Function name misspelled — SUMM instead of SUM], [Fix the spelling; pick functions from the menu],
-)
-
-- *Relative references move when copied*; *absolute references* (`$E$1`) stay
-  pinned. Almost every wrong-schedule disaster in a spreadsheet begins with
-  confusing the two.
-
-== Application 4 — depreciation schedules
-
-The same asset, cost *₹1,00,000*, life *5 years*, salvage nil — scheduled two
-ways. *Straight Line Method (SLM)* charges an equal amount every year:
-(1,00,000 − 0) ÷ 5 = ₹20,000 per year. *Written Down Value (WDV)* charges a
-fixed percentage — here 40% — on the *reduced* balance each year.
-
-*SLM schedule (equal ₹20,000 every year):*
-
-#table(
-  columns: (0.7fr, 1.2fr, 1.3fr, 1.2fr),
-  table.header[*Year*][*Opening balance (₹)*][*Depreciation (₹)*][*Closing balance (₹)*],
-  [1], [1,00,000], [20,000], [80,000],
-  [2], [80,000], [20,000], [60,000],
-  [3], [60,000], [20,000], [40,000],
-  [4], [40,000], [20,000], [20,000],
-  [5], [20,000], [20,000], [0],
-)
-
-*WDV schedule (40% on the opening balance):*
-
-#table(
-  columns: (0.7fr, 1.2fr, 1.3fr, 1.2fr),
-  table.header[*Year*][*Opening balance (₹)*][*Depreciation (₹)*][*Closing balance (₹)*],
-  [1], [1,00,000], [40,000], [60,000],
-  [2], [60,000], [24,000], [36,000],
-  [3], [36,000], [14,400], [21,600],
-  [4], [21,600], [8,640], [12,960],
-  [5], [12,960], [5,184], [7,776],
-)
-
-- *The headline difference:* SLM lands exactly on zero; WDV at 40% still shows
-  ₹7,776 after year 5 — a fixed-rate cut always leaves a remainder.
-- *Spreadsheet shortcuts:* `=SLN(100000, 0, 5)` returns 20,000 per year, and
-  `=DB(100000, 7776, 5, 1)` returns 40,000 for year 1 — the DB function picks
-  the fixed rate that would land the asset on the salvage value you name.
-
-== Application 5 — loan repayment schedule
-
-A loan taken today is repaid in *EMIs* — *Equated Monthly Instalments*, the same
-amount every month until the loan ends. Each EMI is a mix: *interest for that
-month* plus *some principal*. Interest is charged on the *outstanding balance*,
-so it is largest in month 1 and shrinks every month, while the principal slice
-grows.
-
-#formula-box(title: "The EMI Formula — One Line, Three Letters")[
-  $ "EMI" = (P times r times (1+r)^n) / ((1+r)^n - 1) $
-
-  - "P" = the principal — the loan amount today.
-  - "r" = the *monthly* interest rate — annual rate ÷ 12.
-  - "n" = the number of monthly instalments.
+#important-box(title: "Statutory Mandate: The Audit Trail Rule")[
+  Under the Companies (Accounts) Rules (Ministry of Corporate Affairs, India), every company using accounting software *must use software that has an unalterable audit trail feature* recording an edit log of every transaction modification with exact timestamps!
 ]
 
-#worked-example("Worked Example — ₹1,20,000 Loan, 12% p.a., 12 Months")[
-  - *Monthly rate:* "r" = 12% ÷ 12 = 1% = 0.01 per month; "n" = 12 months.
-  - *Compound factor:* $(1.01)^12 = 1.126825$ (12 months of 1% growth).
-  - *EMI:* (1,20,000 × 0.01 × 1.126825) ÷ (1.126825 − 1)
-    = 1,352.19 ÷ 0.126825 = *₹10,662* (rounded to the rupee).
-  - *Spreadsheet check:* `=PMT(1%, 12, 120000)` returns −10,661.85 — the minus
-    sign is the software's way of saying *cash out*.
-]
+#pagebreak()
 
-The first three months of its amortisation schedule:
+// PAGE 12: MASTER WORKED PROBLEMS — PAYROLL & AMORTISATION
+= 10. Comprehensive Master Worked Problems
 
-#table(
-  columns: (0.65fr, 1.25fr, 1.15fr, 0.9fr, 1.25fr, 1.25fr),
-  table.header[*Month*][*Opening balance (₹)*][*Interest at 1% (₹)*][*EMI (₹)*][*Principal repaid (₹)*][*Closing balance (₹)*],
-  [1], [1,20,000.00], [1,200.00], [10,662], [9,462.00], [1,10,538.00],
-  [2], [1,10,538.00], [1,105.38], [10,662], [9,556.62], [1,00,981.38],
-  [3], [1,00,981.38], [1,009.81], [10,662], [9,652.19], [91,329.19],
-)
+#worked-example("Master Problem 1 — Automated Payroll Accounting Schedule")[
+  *Fact Pattern:* Excel Enterprises employs 3 executives whose compensation structure is given below. Basic Pay: Amit ₹60,000; Priya ₹50,000; Rohit ₹40,000.
+  - *Rules:* DA = 40% of Basic Pay; HRA = 20% of Basic Pay; Conveyance = ₹3,000 fixed for all.
+  - *Deductions:* PF = 12% of (Basic + DA); Professional Tax = ₹200 fixed; TDS = 10% of Gross Salary.
+  Construct the payroll sheet and determine Net Salary for each employee.
 
-- *Read the pattern:* interest 1,200.00 → 1,105.38 → 1,009.81 (falling); principal
-  9,462.00 → 9,556.62 → 9,652.19 (rising). The EMI column never moves.
-- *Rounding note:* because the EMI is rounded up to ₹10,662, the *final*
-  instalment absorbs a few paise of adjustment — a one-line note in real
-  schedules.
+  *Step-by-Step Calculations for Amit:*
+  1. *Earnings:*
+    - Basic = ₹60,000; DA = 40% × ₹60,000 = ₹24,000.
+    - HRA = 20% × ₹60,000 = ₹12,000; Conveyance = ₹3,000.
+    - Gross Salary = ₹60,000 + ₹24,000 + ₹12,000 + ₹3,000 = *₹99,000*.
+  2. *Deductions:*
+    - PF = 12% × (₹60,000 + ₹24,000) = 12% × ₹84,000 = ₹10,080.
+    - Professional Tax = ₹200; TDS = 10% × ₹99,000 = ₹9,900.
+    - Total Deductions = ₹10,080 + ₹200 + ₹9,900 = *₹20,180*.
+  3. *Net Salary:* Net Salary = ₹99,000 − ₹20,180 = *₹78,820*.
 
-== Application 6 — payroll accounting
-
-*Payroll* is the monthly routine of computing what each employee takes home. It
-has three moving parts:
-
-- *Earnings:* basic pay plus allowances — HRA (house rent allowance), DA (dearness
-  allowance) and similar add-ons.
-- *Deductions:* PF (provident fund — compulsory savings carved out of salary),
-  professional tax and similar cuts.
-- *Net pay:* gross earnings minus total deductions — the amount that finally
-  reaches the employee's bank account.
-
-#worked-example("Worked Example — One Employee's Salary Sheet")[
-  Basic pay ₹30,000; HRA at 10% of basic; DA at 5% of basic; PF at 12% of basic;
-  professional tax ₹200.
-
+  *Consolidated Payroll Table:*
   #table(
-    columns: (1.6fr, 1.2fr, 1.2fr),
-    table.header[*Component*][*Earnings (₹)*][*Deduction (₹)*],
-    [Basic pay], [30,000], [—],
-    [HRA — 10% of basic], [3,000], [—],
-    [DA — 5% of basic], [1,500], [—],
-    [PF — 12% of basic], [—], [3,600],
-    [Professional tax], [—], [200],
-    [*Totals*], [*34,500*], [*3,800*],
-  )
-
-  - *Gross earnings:* 30,000 + 3,000 + 1,500 = *₹34,500*.
-  - *Total deductions:* 3,600 + 200 = *₹3,800*.
-  - *Net pay:* 34,500 − 3,800 = *₹30,700* — the number the employee actually cares
-    about.
-]
-
-= Graphs and Charts for Business Data
-
-A spreadsheet full of numbers hides its own story; one good picture tells it in
-two seconds. Spreadsheets draw charts from any selected range — and because the
-chart is linked to the cells, editing one number redraws the picture instantly.
-The only real skill is *picking the right chart for the question you are asking
-the data* — which is what this section trains.
-
-== The chart picker
-
-#table(
-  columns: (0.8fr, 0.9fr, 1.6fr, 1.4fr),
-  table.header[*Chart*][*Looks like*][*Use it for*][*Example*],
-  [Column], [Vertical bars], [Comparing values across a few categories], [Branch-wise sales in October],
-  [Line], [Points joined by a line], [Trend over time], [Monthly sales, January to December],
-  [Pie], [A circle split into slices], [One period's share of a whole], [Split of total expenses: salaries, rent, power, others],
-  [Bar (horizontal)], [Horizontal bars], [Rankings], [Top five debtors by balance],
-)
-
-- *Match the chart to the question:* comparison → column; trend over time →
-  line; share of a whole → pie; ranking → bar. Asking "what question does this
-  chart answer?" settles the choice every time.
-- *Keep pies small:* beyond about six slices, comparison collapses — group the
-  small ones into an "Others" slice or switch to a bar chart.
-- *Label everything:* axis names, the unit (₹) and a title. A chart without
-  labels is a decoration, not information.
-- *Time runs left to right:* in a line chart, months or years belong on the
-  horizontal axis, in order.
-- *Charts are live:* they redraw when the data changes — re-check the picture
-  after every edit before you share it.
-
-== One tiny dataset, two different questions
-
-A shop's four branches sold these amounts in October: Delhi ₹60,000, Mumbai
-₹45,000, Chennai ₹30,000, Kolkata ₹25,000 — a total of ₹1,60,000.
-
-- *As a column chart:* four vertical bars, tallest to shortest — Delhi, Mumbai,
-  Chennai, Kolkata. The question answered: *which branch sold more?*
-- *As a pie chart:* Delhi's slice is 60,000 ÷ 1,60,000 = *37.5%* of the circle,
-  Mumbai 28.125%, Chennai 18.75%, Kolkata 15.625%. The question answered: *how is
-  the whole split?* The same data, two different stories — which is exactly why
-  chart choice is a syllabus point of its own.
-
-= Key Terms & Spreadsheet Cheatsheet
-
-#cheatsheet-box(title: "Spreadsheet Function Cheatsheet — Unit V")[
-  #table(
-    columns: (1.5fr, 1.35fr, 1.35fr),
-    table.header[*Function*][*Arguments (in order)*][*One-line purpose*],
-    [`=SUM(range)`], [the cells to add], [Adds all the numbers in a range],
-    [`=AVERAGE(range)`], [the cells to average], [Mean of the numbers in a range],
-    [`=IF(test, value_if_true, value_if_false)`], [a condition and two results], [Picks between two results based on a test],
-    [`=SLN(cost, salvage, life)`], [cost, scrap value, useful life], [Straight-line depreciation for one period],
-    [`=DB(cost, salvage, life, period)`], [cost, scrap value, life, period number], [Declining-balance (WDV) depreciation for a period],
-    [`=PMT(rate, nper, pv)`], [rate per period, number of periods, loan amount], [The equal instalment (EMI) of a loan],
-  )
-
-  #v(4pt)
-  *Remember the six from this chapter:* `=SLN(100000, 0, 5)` #h(4pt) → #h(4pt) ₹20,000;
-  `=DB(100000, 7776, 5, 1)` #h(4pt) → #h(4pt) ₹40,000; `=PMT(1%, 12, 120000)`
-  #h(4pt) → #h(4pt) ₹10,661.85.
-]
-
-== Key terms in one glance
-
-#table(
-  columns: (1fr, 2.4fr),
-  table.header[*Term*][*Plain-words meaning*],
-  [Chart of accounts], [The numbered master list of every account head a firm uses],
-  [Codification], [Giving each account head a short code so the software can group and total it fast],
-  [AIS], [Accounting Information System — people, procedures, data, software, hardware and internal controls working as one],
-  [Pivot table], [A drag-and-drop summary that re-groups long data instantly — and must be refreshed when the source changes],
-  [EMI], [Equated Monthly Instalment — a fixed monthly payment, part interest and part principal],
-)
-
-- *Numbers worth revising from this PDF:* SLM on our sample asset — ₹20,000 a
-  year, ending exactly at zero; WDV at 40% — ₹7,776 left after year 5; the sample
-  loan's EMI — ₹10,662; the sample employee's net pay — ₹30,700; Delhi's pie
-  slice — 37.5% of branch sales.
-
-= Common Errors and Special Cases
-
-#exception-box(title: "Common Errors & Special Cases")[
-  #table(
-    columns: (1.35fr, 1.65fr),
-    table.header[*The mistake students make*][*The correct treatment*],
-    [Mixing up relative and absolute references],
-    [Copying `=B2*E1` down slides the rate cell to E2, E3... Lock fixed cells with dollar signs — `=B2*$E$1` — before copying.],
-    [Expecting a WDV schedule to reach zero],
-    [A fixed-rate cut always leaves a remainder — our 40% schedule still shows ₹7,776 after year 5. Only SLM lands exactly on the salvage value.],
-    [Reversing the EMI interest-principal split],
-    [The interest slice is *largest in month 1* and shrinks every month; the principal slice grows. The EMI itself never changes.],
-    [Treating a computerised system as error-proof],
-    [The software adds correctly but cannot judge. A wrong account or amount still produces wrong reports — garbage in, garbage out.],
-    [Forgetting internal controls when naming AIS components],
-    [AIS is not only software — passwords, access rights, the audit trail and backups are components too.],
-    [Editing source data but not refreshing the pivot table],
-    [A pivot keeps showing old totals until refreshed — always refresh after any source-data change.],
-    [Drawing pie charts with too many slices],
-    [Beyond about six slices, comparison fails — group small items as "Others" or switch to a bar chart.],
+    inset: 4pt,
+    columns: (1fr, 0.9fr, 0.8fr, 0.8fr, 0.9fr, 0.9fr, 0.9fr),
+    table.header[*Employee*][*Basic (₹)*][*DA (₹)*][*HRA (₹)*][*Gross (₹)*][*Deductions (₹)*][*Net Salary (₹)*],
+    [Amit], [60,000], [24,000], [12,000], [99,000], [20,180], [*78,820*],
+    [Priya], [50,000], [20,000], [10,000], [83,000], [16,900], [*66,100*],
+    [Rohit], [40,000], [16,000], [8,000], [67,000], [13,620], [*53,380*],
+    [*Total*], [*1,50,000*], [*60,000*], [*30,000*], [*2,49,000*], [*50,700*], [*1,98,300*],
   )
 ]
 
-= The Whole Chapter on One Page
+#worked-example("Master Problem 2 — Loan Amortisation & Depreciation Modeling")[
+  1. *Loan EMI Computation:* A company takes a bank loan of ₹6,00,000 at 12% p.a. for 3 years repayable in monthly instalments.
+    - Monthly Rate = 12% / 12 = 1% = 0.01; Nper = 3 × 12 = 36 months; Pv = ₹6,00,000.
+    - Spreadsheet formula: `=PMT(0.01, 36, -600000)` yields *₹19,929* per month.
+  2. *Straight-Line Depreciation:* Plant purchased for ₹5,00,000; Salvage value ₹50,000; Useful life 5 years.
+    - Spreadsheet formula: `=SLN(500000, 50000, 5)` yields (₹5,00,000 − ₹50,000) / 5 = *₹90,000* per year.
+]
 
-#figure(image("assets/cas_mindmap.png", width: 100%), caption: [Chapter mindmap — every Unit V idea, and the three traps that catch most students.])
+#pagebreak()
 
-= Practice Questions
+// PAGE 13: MASTER MINDMAP & SYNTHESIS
+#figure(
+  image("assets/acc_cas_mindmap.png", width: 78%),
+  caption: [Master Synthesis Mindmap: Structural framework of Unit VI Computerised Accounting System.],
+)
 
-#mcq(1, [A firm bought a standard accounting package and then changed its invoice format and added two report fields of its own. The package is now best described as:], (
-  [Ready-made], [Tailor-made], [Customised], [Integrated],
-))
+= 11. Strategic Examination Synthesis
 
-#mcq(2, [Under a common block-coding plan, the range 1000–1999 is reserved for:], (
-  [Liabilities], [Assets], [Income], [Expenses],
-))
+The complete computerised accounting architecture connects four foundational domains:
+1. *System Sourcing Decision:* Balancing business scale, customization needs, and data security between Ready-to-Use, Customised, and Tailor-Made software.
+2. *RDBMS Backbone:* Managing transaction records across tables linked by Primary Key and Foreign Key constraints, enforced through referential integrity.
+3. *Spreadsheet Engine:* Leveraging financial (`PMT`, `PV`), depreciation (`SLN`, `DB`), and lookup (`VLOOKUP`) formulas to automate payroll, amortisation, and analytical reporting.
+4. *Internal Controls & Audit:* Protecting corporate accounting data through access segregation, encrypted vaults, and immutable digital audit trails.
 
-#mcq(3, [Writing FUR for Furniture and DEP for Depreciation is an example of:], (
-  [Mnemonic codes], [Sequential codes], [Block codes], [Combination codes],
-))
+#pagebreak()
 
-#mcq(4, [A machine costs ₹1,00,000, has a salvage value of ₹20,000 and a life of 4 years. Its annual depreciation under the Straight Line Method is:], (
-  [₹25,000], [₹20,000], [₹40,000], [₹16,000],
-))
+// PAGE 14: CHEATSHEET & TOP 7 TRAPS
+#cheatsheet-box(title: "Master Computerised Accounting Revision Cheatsheet")[
+  - *AIS Five Pillars:* Hardware, Software, People, Procedures, Data. Transaction entered once via digital voucher!
+  - *Software Sourcing:* Ready-to-use (Low cost, rigid) | Customised (Moderate cost) | Tailor-made (High cost, bespoke).
+  - *Data Hierarchy:* Bit -> Byte -> Field (Attribute/Column) -> Record (Tuple/Row) -> Table -> Database.
+  - *Key Constraints:* Primary Key (Unique, Non-Null) | Foreign Key (Referential Integrity to parent table).
+  - *SQL Taxonomy:* DDL: `CREATE`, `ALTER`, `DROP` | DML: `SELECT`, `INSERT`, `UPDATE`, `DELETE`.
+  - *WHERE vs HAVING:* `WHERE` filters individual records; `HAVING` filters aggregated groups after `GROUP BY`.
+  - *Cell Referencing:* Relative (`A1`), Absolute (`$A$1`), Mixed (`$A1` or `A$1`).
+  - *Financial Formulas:* `PMT(rate, nper, pv)` | Rate = Annual Rate / 12 | Nper = Years × 12.
+  - *Depreciation Functions:* `SLN(cost, salvage, life)` = Straight-Line | `DB(cost, salvage, life, period)` = WDV.
+  - *Payroll Equations:* Gross = Basic + DA + HRA + Allowances | PF = 12% of (Basic + DA) | Net = Gross − Deductions.
+]
 
-#mcq(5, [An asset of ₹1,00,000 is depreciated at 40% on the written down value. The depreciation charge for the third year is:], (
-  [₹14,400], [₹24,000], [₹8,640], [₹40,000],
-))
+#exception-box(title: "Top 7 High-Frequency CUET Traps in Computerised Accounting")[
+  1. *SELECT Command Classification:* `SELECT` is strictly a *DML (Data Manipulation Language)* command, NOT DDL!
+  2. *Primary Key NULL Trap:* A Primary Key can NEVER contain a NULL value under any circumstances.
+  3. *Monthly Rate & Period Trap in PMT:* Never enter annual rate directly in `PMT` for monthly EMI; divide by 12 and multiply years by 12!
+  4. *WHERE vs HAVING Aggregate Trap:* You cannot use `SUM()` or `COUNT()` inside a `WHERE` clause; use `HAVING`!
+  5. *VLOOKUP Exact Match Flag:* Always specify `FALSE` (or `0`) as the 4th argument in `VLOOKUP` to prevent erroneous approximate matches!
+  6. *Provident Fund Base Trap:* PF is calculated on *(Basic Pay + DA)*, NOT on Gross Salary!
+  7. *Audit Trail Feature Mandate:* Companies Act mandates an unalterable audit trail feature; software without it is legally non-compliant.
+]
 
-#mcq(6, [Which quality of accounting information lets a reader line up this year's figures with last year's?], (
-  [Relevance], [Reliability], [Comparability], [Timeliness],
-))
+#pagebreak()
 
-#mcq(7, [An employee earns a basic salary of ₹30,000. Deductions are PF at 12% of basic and professional tax of ₹200. The total deductions are:], (
-  [₹3,600], [₹3,800], [₹400], [₹30,700],
-))
+// PAGE 15: PRACTICE MCQS (Q1 - Q5)
+= CUET UG Exam-Style Practice Questions
 
-#mcq(8, [A loan of ₹1,00,000 carries interest at 12% p.a. and is repaid at ₹9,000 per month. The principal repaid in the first month is:], (
-  [₹8,000], [₹9,000], [₹1,000], [₹92,000],
-))
+#mcq(
+  1,
+  [Which of the following is NOT a component of an Accounting Information System (AIS)?],
+  (
+    [Hardware],
+    [Procedures and Instructions],
+    [Data and People],
+    [Physical Cash Inventory],
+  ),
+)
+#solution(
+  1,
+  answer: [D],
+  [
+    An AIS consists of five structural components: Hardware, Software, People, Procedures, and Data. Physical cash is a current asset, not an architectural component of the information system.
+  ],
+)
 
-#mcq(9, [A spreadsheet cell shows \#DIV/0!. The most likely cause is that:], (
-  [a formula divides by a cell that is empty or zero], [a cell reference was deleted], [a function name is misspelled], [the pivot table was not refreshed],
-))
+#mcq(
+  2,
+  [A large nationalized bank requiring unique, confidential, and multi-branch transaction software should ideally opt for which type of software?],
+  (
+    [Ready-to-Use Software],
+    [Tailor-Made (Bespoke) Software],
+    [Generic Spreadsheet Software],
+    [Off-the-shelf Free Software],
+  ),
+)
+#solution(
+  2,
+  answer: [B],
+  [
+    Large corporations and banks with specialized, high-volume, and confidential transactions require tailor-made (bespoke) software developed specifically to match their unique operational and security needs.
+  ],
+)
 
-#mcq(10, [To show the trend of monthly sales from January to December, the most suitable chart is a:], (
-  [Pie chart], [Column chart], [Line chart], [Scatter diagram],
-))
+#mcq(
+  3,
+  [In a Relational Database Management System (RDBMS), the rows and columns of a table are formally termed as:],
+  (
+    [Fields and Records],
+    [Tuples and Attributes],
+    [Keys and Domains],
+    [Entities and Schemas],
+  ),
+)
+#solution(
+  3,
+  answer: [B],
+  [
+    In formal relational database theory, rows representing individual records are called *Tuples*, and columns representing specific data characteristics are called *Attributes*.
+  ],
+)
 
-= Solutions
+#mcq(
+  4,
+  [Which of the following constraints guarantees that an attribute in a child table must match an existing primary key value in a parent master table?],
+  (
+    [Domain Integrity],
+    [Entity Integrity],
+    [Referential Integrity],
+    [Unique Key Integrity],
+  ),
+)
+#solution(
+  4,
+  answer: [C],
+  [
+    Referential integrity is enforced through Foreign Keys, ensuring that relationships between tables remain consistent and preventing orphan records in transaction tables.
+  ],
+)
 
-#solution(1, [A ready-made core with firm-specific changes is *customised*. Tailor-made means built from scratch; *integrated* describes modules sharing one database, not how much the code was changed.], answer: "C")
+#mcq(
+  5,
+  [Which of the following SQL commands belongs to the category of Data Definition Language (DDL)?],
+  (
+    [SELECT],
+    [INSERT],
+    [CREATE],
+    [UPDATE],
+  ),
+)
+#solution(
+  5,
+  answer: [C],
+  [
+    `CREATE`, `ALTER`, and `DROP` are DDL commands because they define or modify database schemas. `SELECT`, `INSERT`, `UPDATE`, and `DELETE` are DML commands.
+  ],
+)
 
-#solution(2, [The block plan reserves ranges: 1000–1999 *assets*, 2000–2999 liabilities, 3000–3999 capital, 4000–4999 income, 5000–5999 expenses.], answer: "B")
+#pagebreak()
 
-#solution(3, [Letters that recall the account name are *mnemonic* codes. Sequential and block codes are numeric; a combination code mixes letters with digits, like FUR-01.], answer: "A")
+// PAGE 16: PRACTICE MCQS (Q6 - Q10)
+#mcq(
+  6,
+  [In an SQL query, which clause is used to filter records AFTER an aggregate function has been applied?],
+  (
+    [WHERE],
+    [HAVING],
+    [ORDER BY],
+    [GROUP BY],
+  ),
+)
+#solution(
+  6,
+  answer: [B],
+  [
+    The `HAVING` clause is used to filter aggregated group results created by `GROUP BY`. In contrast, the `WHERE` clause filters individual records before any grouping or aggregation takes place.
+  ],
+)
 
-#solution(4, [SLM spreads the depreciable cost evenly: (1,00,000 − 20,000) ÷ 4 = *₹20,000* a year, landing exactly on the salvage value after year 4.], answer: "B")
+#mcq(
+  7,
+  [If the formula `=$A$1*B1` located in cell `C1` is copied and pasted into cell `C2`, what formula will appear in cell `C2`?],
+  (
+    [`=$A$2*B2`],
+    [`=$A$1*B2`],
+    [`=A1*B2`],
+    [`=$A$1*$B$1`],
+  ),
+)
+#solution(
+  7,
+  answer: [B],
+  [
+    `$A$1` is an absolute reference and remains fixed. `B1` is a relative reference and shifts down one row to `B2`. Thus, the copied formula becomes `=$A$1*B2`.
+  ],
+)
 
-#solution(5, [Year 1: depreciation 40,000, closing 60,000. Year 2: depreciation 24,000, closing 36,000. Year 3: 36,000 × 40% = *₹14,400*.], answer: "A")
+#mcq(
+  8,
+  [Which spreadsheet error code indicates that a cell reference in a formula is invalid because the referenced cell was deleted?],
+  (
+    [`\#DIV/0!`],
+    [`\#VALUE!`],
+    [`\#REF!`],
+    [`\#NAME?`],
+  ),
+)
+#solution(
+  8,
+  answer: [C],
+  [
+    The `\#REF!` error occurs when a formula refers to a cell that is not valid, commonly caused when referenced cells, rows, or columns are deleted or overwritten.
+  ],
+)
 
-#solution(6, [*Comparability* is the quality that makes figures usable across years and across firms.], answer: "C")
+#mcq(
+  9,
+  [A machine is purchased for ₹2,00,000 with an estimated salvage value of ₹20,000 and a useful life of 5 years. What is the annual depreciation returned by the spreadsheet formula `=SLN(200000, 20000, 5)`?],
+  (
+    [₹40,000],
+    [₹36,000],
+    [₹44,000],
+    [₹30,000],
+  ),
+)
+#solution(
+  9,
+  answer: [B],
+  [
+    `SLN` computes Straight-Line Depreciation: (Cost − Salvage) / Life = (₹2,00,000 − ₹20,000) / 5 = ₹1,80,000 / 5 = *₹36,000*.
+  ],
+)
 
-#solution(7, [PF: 30,000 × 12/100 = ₹3,600. Total deductions = 3,600 + 200 = *₹3,800*. (₹30,700 would be the *net pay*, not the deduction.)], answer: "B")
+#mcq(
+  10,
+  [When using the `VLOOKUP` function to retrieve an exact ledger balance matching an account code, what value should be passed as the fourth argument (`[range_lookup]`)?],
+  (
+    [`TRUE` or `1`],
+    [`FALSE` or `0`],
+    [`"APPROX"`],
+    [`OMITTED`],
+  ),
+)
+#solution(
+  10,
+  answer: [B],
+  [
+    Setting the fourth argument to `FALSE` (or `0`) forces `VLOOKUP` to find an exact match for the lookup key, preventing erroneous approximate data retrieval.
+  ],
+)
 
-#solution(8, [Month-1 interest = 1,00,000 × 12/100 × 1/12 = ₹1,000. Principal repaid = 9,000 − 1,000 = *₹8,000*, leaving a balance of ₹92,000.], answer: "C")
+#pagebreak()
 
-#solution(9, [\#DIV/0! means a division's bottom cell is empty or zero. Deleted references produce \#REF!, and misspelled function names produce \#NAME?.], answer: "A")
+// PAGE 17: PRACTICE MCQS (Q11 - Q15)
+#mcq(
+  11,
+  [An employee has a Basic Pay of ₹40,000 and Dearness Allowance (DA) of ₹16,000. Statutory Provident Fund (PF) deduction @ 12% amounts to:],
+  (
+    [₹4,800],
+    [₹6,720],
+    [₹1,920],
+    [₹5,600],
+  ),
+)
+#solution(
+  11,
+  answer: [B],
+  [
+    Under statutory payroll rules, Provident Fund is calculated at 12% on (Basic Pay + DA): 12% × (₹40,000 + ₹16,000) = 12% × ₹56,000 = *₹6,720*.
+  ],
+)
 
-#solution(10, [A *line chart* shows a trend over time — months on the horizontal axis, sales on the vertical. Pie shows shares; column compares one period's categories.], answer: "C")
+#mcq(
+  12,
+  [A company takes a 5-year loan of ₹10,00,000 at 12% per annum, repayable in monthly instalments. In the formula `=PMT(rate, nper, pv)`, what values should be passed for `rate` and `nper`?],
+  (
+    [12% and 5],
+    [1% and 60],
+    [12% and 60],
+    [1% and 5],
+  ),
+)
+#solution(
+  12,
+  answer: [B],
+  [
+    For monthly payments: Rate = 12% / 12 = 1% (or 0.01), and Nper = 5 × 12 = 60 monthly periods.
+  ],
+)
 
-#v(10pt)
-#align(center)[#text(fill: om-grey, size: 9pt)[© OurMocks · www.ourmocks.com · CUET UG Accountancy · Unit V: Computerised Accounting System · 2027 cycle]]
+#mcq(
+  13,
+  [In an account codification scheme, reserving the range 1000–1999 for Assets and 2000–2999 for Liabilities is an example of:],
+  (
+    [Sequential Code],
+    [Block Code],
+    [Mnemonic Code],
+    [Alphabetical Code],
+  ),
+)
+#solution(
+  13,
+  answer: [B],
+  [
+    A Block Code assigns a distinct block or range of numbers to specific classifications or account families, allowing convenient grouping and room for future additions.
+  ],
+)
+
+#mcq(
+  14,
+  [Which of the following internal control features is MANDATED by corporate law in accounting software used by registered companies in India?],
+  (
+    [Automatic cloud file sharing],
+    [Unalterable audit trail recording an edit log of all changes],
+    [Direct integration with social media platforms],
+    [Voice recognition voucher entry],
+  ),
+)
+#solution(
+  14,
+  answer: [B],
+  [
+    The Ministry of Corporate Affairs mandates that companies must use accounting software equipped with an unalterable audit trail feature to record every transaction change with date and user timestamps.
+  ],
+)
+
+#mcq(
+  15,
+  [Which of the following describes the principle of 'GIGO' in computerised accounting?],
+  (
+    [General Ledger In, General Ledger Out],
+    [Garbage In, Garbage Out],
+    [Good Input, Guaranteed Output],
+    [Graphic Interface Graphical Output],
+  ),
+)
+#solution(
+  15,
+  answer: [B],
+  [
+    'Garbage In, Garbage Out' (GIGO) states that the accuracy of computerised accounting reports is entirely dependent on the quality of input data; erroneous input vouchers inevitably yield erroneous financial statements.
+  ],
+)
