@@ -9,7 +9,9 @@
 
 = Syllabus Alignment
 
-#table(
+#align(top)[
+#set text(size: 8.5pt)
+#table(inset: 3pt, 
   columns: (1.1fr, 2fr, 1.15fr),
   table.header[*Sub-topic*][*Official Syllabus Pointer (NTA CUET UG Baseline)*][*Skills & Competencies Tested*],
   [*Rate of Reaction & Rate Law*], [
@@ -29,9 +31,15 @@
   ],
 )
 
+]
+
+#v(-2pt)
 #exam-pointer[
   *CUET UG Exam Strategy:* Unit III Chemical Kinetics regularly yields 4 to 5 questions in the CUET UG paper (+5, -1 mark scheme). The highest-yield concepts tested include: (1) reading reaction order from the physical units of $k$ ($s^(-1)$ for 1st order, $"mol L"^(-1)" s"^(-1)$ for zero order, $"L mol"^(-1)" s"^(-1)$ for 2nd order), (2) the independence of 1st order half-life on initial concentration ($t_(1/2) = 0.693/k$), (3) multi-step relations like $t_(75%) = 2 times t_(50%)$ and $t_(99.9%) approx 10 times t_(50%)$, and (4) the fact that a catalyst lowers $E_a$ but leaves $Delta H$ and equilibrium constant $K_c$ completely unchanged.
 ]
+
+#pagebreak()
+
 
 = Concept Module 1: Rate of Chemical Reaction
 
@@ -66,6 +74,14 @@ $ "Rate" = - 1 / a (d [A]) / (d t) = - 1 / b (d [B]) / (d t) = + 1 / c (d [C]) /
   $ "Rate of reaction" = + 1 / 4 (d [N O_2]) / (d t) = 1 / 4 times 0.0072 = 0.0018" mol L"^(-1)" s"^(-1) $
   $ "Rate of disappearance of " N_2 O_5 = - (d [N_2 O_5]) / (d t) = 2 times "Rate" = 2 times 0.0018 = 0.0036" mol L"^(-1)" s"^(-1) $
 ]
+
+
+== Factors Influencing Rates of Chemical Reactions
+1. *Reactant Concentration:* Elevates collision frequency per unit volume, directly scaling rate according to the differential rate law.
+2. *Surface Area in Heterogeneous Systems:* Subdividing solid reactants into fine powders exposes more active surface sites, dramatically accelerating reaction velocity.
+3. *Temperature:* A $10^circle "C"$ rise typically doubles or triples reaction rates by exponentially increasing the molecular fraction exceeding activation energy $E_a$.
+4. *Catalyst Action:* Provides an alternate mechanism with lowered $E_a$, accelerating both forward and reverse rates without affecting equilibrium position.
+5. *Photochemical Activation:* Light photons ($h nu$) supply activation energy in specific reactions (e.g., $"H"_2 + "Cl"_2 arrow.r^(h nu) 2 "HCl"$).
 
 = Concept Module 2: Rate Law, Order & Molecularity
 
@@ -128,6 +144,14 @@ The *Molecularity* is the number of reacting species (atoms, ions, or molecules)
   [*Dependence*], [Can change with experimental temperature or pressure.], [Invariant; fixed solely by the reaction mechanism.],
 )
 
+
+== Complex Multi-Step Reactions & The Rate Determining Step (RDS)
+Most chemical transformations occur via consecutive elementary steps (*reaction mechanism*):
+- *The Rate Determining Step (RDS):* The slowest elementary step acts as the kinetic bottleneck, dictating the overall reaction velocity.
+- *Thermal Decomposition of $N_2 O_5$ ($2 "N"_2 "O"_5 arrow.r 4 "N O"_2 + "O"_2$):*
+  Proceeds via: (1) $"N"_2 "O"_5 arrow.r.l "N O"_2 + "N O"_3$ (fast equilibrium); (2) $"N O"_2 + "N O"_3 arrow.r "N O" + "N O"_2 + "O"_2$ (slow, RDS); (3) $"N O" + "N O"_3 arrow.r 2 "N O"_2$ (fast). Substituting the equilibrium concentration of intermediate gives the experimental first-order rate law: $"Rate" = k ["N"_2 "O"_5]$.
+- *Anomalous Negative Temperature Coefficient:* Oxidation of nitric oxide ($2 "N O" + "O"_2 arrow.r 2 "N O"_2$) slows down upon heating because a rapid exothermic pre-equilibrium ($2 "N O" arrow.r.l "N"_2 "O"_2, Delta H < 0$) shifts backward at higher temperatures faster than the rate constant increases.
+
 = Concept Module 3: Integrated Rate Equations & Half-Life
 
 == 1. Zero Order Reactions
@@ -184,6 +208,20 @@ $ t_(1/2) = 0.693 / k $
   3. Comparing the two times:
      $ t_(99.9%) / t_(50%) = (6.909 / k) / (0.693 / k) = 9.97 approx 10 ==> t_(99.9%) approx 10 times t_(1/2) $
 ]
+
+
+== Comprehensive Kinetics Comparison Across Reaction Orders
+#table(
+  columns: (1.1fr, 1.3fr, 1.3fr, 1.3fr),
+  inset: 2.8pt,
+  table.header[*Kinetic Feature*][*Zero Order ($n=0$)*][*First Order ($n=1$)*][*Second Order ($n=2$)*],
+  [Differential Rate], [$- d[R]/d t = k$], [$- d[R]/d t = k [R]$], [$- d[R]/d t = k [R]^2$],
+  [Integrated Form], [$[R] = [R]_0 - k t$], [$ln([R]_0/[R]) = k t$], [$1/[R] - 1/[R]_0 = k t$],
+  [Linear Plot], [$[R]$ vs $t$ (Slope $= -k$)], [$log[R]$ vs $t$ (Slope $= -k/2.303$)], [$1/[R]$ vs $t$ (Slope $= +k$)],
+  [Half-Life ($t_(1/2)$)], [$t_(1/2) = [R]_0 / (2 k)$ ($prop [R]_0$)], [$t_(1/2) = 0.693 / k$ ($prop [R]_0^0$)], [$t_(1/2) = 1 / (k [R]_0)$ ($prop 1/[R]_0$)],
+  [100% Completion], [$t_(100%) = [R]_0 / k = 2 t_(1/2)$], [$t_(100%) = oo$ (Infinite time)], [$t_(100%) = oo$ (Infinite time)],
+  [Units of $k$], [$"mol L"^(-1)" s"^(-1)$], [$"s"^(-1)$], [$"L mol"^(-1)" s"^(-1)$],
+)
 
 = Concept Module 4: Gaseous Kinetics & Pseudo-First-Order
 
@@ -266,6 +304,15 @@ If rate constants are $k_1$ and $k_2$ at absolute temperatures $T_1$ and $T_2$:
   $ E_a = 52897" J mol"^(-1) = 52.9" kJ mol"^(-1) $
 ]
 
+
+== Maxwell-Boltzmann Energy Distribution & The 10 K Rate Doubling Rule
+At temperature $T$, molecules possess a distribution of kinetic energies with peak at the most probable kinetic energy ($E_("mp")$).
+When temperature rises to $T + 10$:
+1. The curve flattens and broadens, shifting toward higher energies.
+2. The fraction of molecules possessing energy $E >= E_a$ (the shaded area beyond $E_a$) doubles or triples:
+   $ x = N_E / N_T = e^(-E_a / (R T)) $
+Taking logarithms: $log x = - E_a / (2.303 R T)$, confirming the exponential sensitivity of reaction rate to temperature.
+
 = Concept Module 6: Collision Theory & Mechanism of Catalysis
 
 == Collision Theory of Chemical Reactions
@@ -294,26 +341,65 @@ A *catalyst* is a substance that alters the rate of a chemical reaction without 
 #pagebreak()
 
 #figure(
-  image("assets/chem_kinetics_mindmap.png", width: 84%),
-  caption: [Unit III Chemical Kinetics Master Mindmap: Comprehensive synthesis of rates, order vs molecularity, integrated laws, half-life, Arrhenius theory, and catalysis.],
+  image("assets/chem_kinetics_mindmap.png", width: 88%),
+  caption: [Unit III Chemical Kinetics Master Mindmap: Comprehensive synthesis of rates, order vs molecularity, integrated rate laws, temperature scaling, Arrhenius kinetics, and collision theory.],
 )
 
-#cheatsheet-box(title: "Master Chemical Kinetics Revision Cheatsheet")[
-  - *Stoichiometric Rates:* For $a A + b B arrow.r c C$: $"Rate" = -1/a (d[A])/(d t) = -1/b (d[B])/(d t) = +1/c (d[C])/(d t)$.
-  - *Rate Constant ($k$) Units:* $("mol L"^(-1))^(1-n) "s"^(-1)$ | Zero order: $"mol L"^(-1)" s"^(-1)$ | 1st order: $"s"^(-1)$ | 2nd order: $"L mol"^(-1)" s"^(-1)$.
-  - *Zero Order:* $[R] = [R]_0 - k t$ | $t_(1/2) = [R]_0 / (2 k)$ | $t_(100%) = [R]_0 / k = 2 t_(1/2)$ | Graph $[R]$ vs $t$: slope $=-k$.
-  - *First Order:* $k = (2.303 / t) log([R]_0 / [R])$ | $t_(1/2) = 0.693 / k$ (independent of $[R]_0$).
-  - *First Order Multipliers:* $t_(75%) = 2 t_(50%)$ | $t_(87.5%) = 3 t_(50%)$ | $t_(99.9%) approx 10 t_(50%)$.
-  - *Pseudo-First-Order:* Bimolecular reaction made 1st order via large excess of one reactant ($k = k' [H_2 O]$). Examples: Ester hydrolysis, sugar inversion.
-  - *Arrhenius Equation:* $k = A e^(-E_a / R T)$ | $log k = log A - E_a / (2.303 R T)$ (slope of $log k$ vs $1/T$ is $-E_a / 2.303 R$).
-  - *Two Temperatures:* $log(k_2 / k_1) = (E_a / 2.303 R) [(T_2 - T_1) / (T_1 T_2)]$ | 10°C rise doubles or triples $k$.
-  - *Collision Theory:* $"Rate" = P Z_(A B) e^(-E_a / R T)$ | Effective collision requires energy $\ge E_T$ and proper orientation.
-  - *Catalyst Rules:* Lowers $E_a$ equally in both directions; does NOT change $Delta H, Delta G,$ or $K_c$.
+#v(2pt)
+
+#exam-pointer(title: "Master Kinetics Architecture & Reaction Dynamics Breakdown")[
+  The cognitive map above consolidates the mathematical foundations and core concepts across Unit III:
+  - *Rate Law Formulation:* Always differentiate between rate units ($"mol L"^(-1)" s"^(-1)$ universally) and rate constant units ($("mol L"^(-1))^(1-n)" s"^(-1)$). Order $n$ can be fractional or zero; molecularity is strictly a positive integer ($1, 2, 3$).
+  - *Integrated Kinetics & Half-Life Multipliers:* For zero order, $t_(1/2) prop [R]_0$ and $t_(100%) = 2 times t_(1/2)$. For first order, $t_(1/2)$ is concentration-independent ($0.693/k$), yielding fixed milestones: $t_(75%) = 2 t_(50%), t_(87.5%) = 3 t_(50%),$ and $t_(99.9%) approx 10 t_(50%)$.
+  - *Gaseous Reactions Pressure Kinetics:* In gas-phase decompositions $A(g) arrow.r B(g) + C(g)$, remember that partial pressure $p_A = 2 p_i - p_t$. Never substitute raw total pressure directly into the logarithmic ratio!
+  - *Arrhenius Energetics:* On the $log k$ vs $1/T$ plot, the slope is strictly $-E_a / (2.303 R)$. Catalysts lower the activation energy equally for both forward and reverse reactions, increasing rate constants without altering $Delta H, Delta G,$ or equilibrium constant $K_("eq")$.
 ]
+
 
 #pagebreak()
 
-= CUET UG Exam-Style Practice Questions (15 MCQs)
+#cheatsheet-box(title: "Unit III Master Kinetics Formula & High-Yield Cheatsheet")[
+  #set text(size: 7.5pt)
+  #table(
+    columns: (1.2fr, 1.8fr, 2fr),
+    inset: 2.2pt,
+    table.header[*Core Concept / Law*][*Mathematical Expression*][*Application & CUET Problem Strategy*],
+    [Stoichiometric Rate], [$"Rate" = - 1/a (d[A])/(d t) = + 1/c (d[C])/(d t)$], [Divide appearance/disappearance rates by stoichiometric coefficients.],
+    [Rate Constant Units], [$k = ("mol L"^(-1))^(1-n) "s"^(-1)$], [Zero order: $"mol L"^(-1)" s"^(-1)$; 1st: $"s"^(-1)$; 2nd: $"L mol"^(-1)" s"^(-1)$.],
+    [Zero Order Integrated], [$[R] = [R]_0 - k t$ | $t_(1/2) = [R]_0 / (2 k)$], [Linear $[R]$ vs $t$ plot with slope $-k$. Half-life is proportional to $[R]_0$.],
+    [First Order Integrated], [$k = (2.303/t) log([R]_0 / [R])$], [Linear $log[R]$ vs $t$ with slope $-k/2.303$. Concentration-independent $t_(1/2)$.],
+    [First Order Milestones], [$t_(75%) = 2 t_(50%)$ | $t_(99.9%) approx 10 t_(50%)$], [Every additional half-life halves the remaining reactant quantity.],
+    [Gaseous Decomposition], [$k = (2.303/t) log(p_i / (2 p_i - p_t))$], [Applies to $A(g) arrow.r B(g) + C(g)$ where partial pressure $p_A = 2 p_i - p_t$.],
+    [Pseudo-First-Order], [$"Rate" = k' [A][H_2 O] = k [A]$], [Ester hydrolysis and cane sugar inversion ($k = (2.303/t) log((r_0 - r_oo)/(r_t - r_oo))$).],
+    [Arrhenius Equation], [$k = A e^(-E_a / (R T))$], [Fraction of molecules with $E >= E_a$ is $e^(-E_a / (R T))$.],
+    [Arrhenius Linear Form], [$log k = log A - E_a / (2.303 R T)$], [Plot $log k$ vs $1/T$: $y$-intercept $= log A$; $"Slope" = -E_a / (2.303 R)$.],
+    [Two-Temperature Ratio], [$log(k_2/k_1) = (E_a / (2.303 R)) [(T_2 - T_1)/(T_1 T_2)]$], [Rate doubles every 10 K rise if $E_a approx 53 "kJ mol"^(-1)$.],
+    [Collision Theory], [$"Rate" = P Z_(A B) e^(-E_a / (R T))$], [Requires both threshold kinetic energy and proper steric orientation $P$.],
+    [Catalyst Action], [Lowers $E_a$ to $E_a'$ equally for fwd/rev], [Accelerates rate; does not change $Delta H, Delta G,$ or equilibrium constant $K_("eq")$.],
+  )
+]
+
+#v(2pt)
+
+#exception-box(title: "Top 7 High-Frequency CUET Traps & Pitfalls")[
+  #set text(size: 7.5pt)
+  1. *Rate vs Rate Constant Units:* The units of reaction rate are ALWAYS $"mol L"^(-1)" s"^(-1)$ regardless of order. The units of rate constant $k$ vary with order: $("mol L"^(-1))^(1-n)" s"^(-1)$. For a first order reaction, $k$ is expressed in $"s"^(-1)$ and is completely independent of concentration units.
+  2. *Order vs Molecularity:* Order can be zero, fractional, negative, or an integer and is strictly experimentally determined. Molecularity can ONLY be a positive integer ($1, 2, 3$) and applies strictly to elementary reactions; complex reactions have NO overall molecularity.
+  3. *Half-Life Concentration Dependence:* For a first order reaction, $t_(1/2) = 0.693/k$ is independent of initial concentration $[R]_0$. For a zero order reaction, $t_(1/2) = [R]_0 / (2 k)$ is *directly proportional* to $[R]_0$. If doubling $[R]_0$ doubles the half-life, the reaction order is ZERO, not first!
+  4. *First Order Multipliers vs 100% Completion:* For first order reactions: $t_(75%) = 2 times t_(50%)$, $t_(87.5%) = 3 times t_(50%)$, and $t_(99.9%) approx 10 times t_(50%)$. A first order reaction theoretically requires infinite time for $100%$ completion, whereas a zero order reaction completes fully at $t_(100%) = 2 times t_(1/2)$.
+  5. *Gas-Phase Pressure Kinetics ($A(g) arrow.r B(g) + C(g)$):* At time $t$, partial pressure $p_A = 2 p_i - p_t$ (NOT $p_i - p_t$). The integrated rate law is $k = (2.303/t) log(p_i / (2 p_i - p_t))$. Always derive $p_A$ from stoichiometry!
+  6. *Catalyst Thermodynamics:* A catalyst increases the rates of forward and reverse reactions equally by providing an alternate pathway of lower $E_a$. It has ZERO effect on thermodynamic parameters: $Delta H$, $Delta G$, and equilibrium constant $K_("eq")$ remain completely unchanged.
+  7. *Arrhenius Plot Slope:* For a plot of $log k$ versus $1/T$, the slope is $-E_a / (2.303 R)$. For a plot of $ln k$ versus $1/T$, the slope is $-E_a / R$. Forgetting the factor $2.303$ in base-10 logarithmic problems is the most common numerical error in CUET!
+]
+
+
+
+#pagebreak()
+
+#block(width: 100%, inset: (y: 4pt, x: 8pt), fill: om-navy, radius: 3pt)[
+  #text(fill: white, font: om-display-font, size: 12pt, weight: 800)[Practice Questions (Exam Pattern) — Part 1 (Q1 to Q5)]
+]
+#set text(size: 8.5pt)
 
 #mcq(
   1,
@@ -397,6 +483,11 @@ A *catalyst* is a substance that alters the rate of a chemical reaction without 
 
 #pagebreak()
 
+#block(width: 100%, inset: (y: 4pt, x: 8pt), fill: om-navy, radius: 3pt)[
+  #text(fill: white, font: om-display-font, size: 12pt, weight: 800)[Practice Questions (Exam Pattern) — Part 2 (Q6 to Q10)]
+]
+#set text(size: 8.5pt)
+
 #mcq(
   6,
   [The half-life of a first order reaction is $69.3" minutes"$. The value of its rate constant ($k$) is:],
@@ -478,6 +569,11 @@ A *catalyst* is a substance that alters the rate of a chemical reaction without 
 )
 
 #pagebreak()
+
+#block(width: 100%, inset: (y: 4pt, x: 8pt), fill: om-navy, radius: 3pt)[
+  #text(fill: white, font: om-display-font, size: 12pt, weight: 800)[Practice Questions (Exam Pattern) — Part 3 (Q11 to Q15)]
+]
+#set text(size: 8.5pt)
 
 #mcq(
   11,
