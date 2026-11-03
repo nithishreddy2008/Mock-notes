@@ -9,7 +9,9 @@
 
 = Syllabus Alignment
 
-#table(
+#align(top)[
+#set text(size: 8.5pt)
+#table(inset: 3pt, 
   columns: (1.1fr, 2fr, 1.15fr),
   table.header[*Sub-topic*][*Official Syllabus Pointer (NTA CUET UG Baseline)*][*Skills & Competencies Tested*],
   [*Galvanic Cells & EMF*], [
@@ -39,9 +41,15 @@
   ],
 )
 
+]
+
+#v(-2pt)
 #exam-pointer[
   *CUET UG Exam Strategy:* Unit II contributes 4 to 6 questions in the compulsory 50-question chemistry paper (+5, -1 mark scheme). The most frequently tested traps involve: (1) sign of electrodes (anode is negative in galvanic cells, but positive in electrolytic cells), (2) subtracting reduction potentials rather than adding them, (3) opposite dilution trends of $kappa$ (falls) and $Lambda_m$ (rises), and (4) overpotential dictating $C l_2$ discharge over $O_2$ at the anode during brine electrolysis.
 ]
+
+#pagebreak()
+
 
 = Concept Module 1: Electrochemical Cells & The Daniell Cell
 
@@ -86,6 +94,13 @@ $ Z n(s) | Z n^(2+) (1.0" M") || C u^(2+) (1.0" M") | C u(s) $
 2. *When $E_"ext" = 1.10" V"$:* Chemical equilibrium is reached. Net current drops to *zero*. No reaction occurs.
 3. *When $E_"ext" > 1.10" V"$:* The process is *reversed*! The cell operates as an *electrolytic cell*. Electrons flow from $C u$ to $Z n$; current flows from $Z n$ to $C u$. Zinc deposits on the zinc rod and copper dissolves from the copper rod.
 
+
+== The Salt Bridge: Construction, Mechanics & Functions
+A salt bridge contains an agar-agar gel impregnated with an inert electrolyte ($"KCl", "KNO"_3, "NH"_4 "NO"_3$):
+- *Equal Ionic Mobility:* Cations and anions must possess virtually identical transport numbers ($u_(K^+) approx u_("Cl"^-)$).
+- *Elimination of Liquid-Junction Potential:* Equalises diffusion rates across the liquid boundary, eliminating interfacial voltage.
+- *Electrical Neutrality:* Anions ($"Cl"^-$) diffuse to the anode to neutralize accumulating $"Zn"^(2+)$, while cations ($K^+$) migrate to the cathode to balance excess $"SO"_4^(2-)$.
+
 = Concept Module 2: Standard Electrode Potential & EMF
 
 The potential difference between the electrode and its surrounding electrolyte solution is the *electrode potential*. When all species are at unit activity ($1.0" M"$ concentration, $1" bar"$ gas pressure, $298" K"$), it is termed the *Standard Electrode Potential ($E^0$)*.
@@ -113,6 +128,12 @@ Arranging redox couples in order of increasing reduction potentials yields the *
 - *Strongest Oxidising Agents (Highest/Most Positive $E^0$):* Copper ($+0.34" V"$), Silver ($+0.80" V"$), Chlorine ($+1.36" V"$), Fluorine ($+2.87" V"$). Readily gain electrons (undergo reduction).
 - *Displacement Rule:* A metal with lower $E^0$ (more negative) can displace a metal with higher $E^0$ from its aqueous salt solution:
   $ Z n (E^0 = -0.76" V") + C u^(2+) (E^0 = +0.34" V") arrow.r Z n^(2+) + C u quad (E^0_"cell" = +1.10" V" > 0) $
+
+
+== Strategic Applications of the Electrochemical Series
+1. *Oxidising vs Reducing Strength:* Elements with the most negative standard potentials ($"Li"^+ / "Li" = -3.05 "V"$) are the *strongest reducing agents*. Elements with the most positive potentials ($"F"_2 / "F"^- = +2.87 "V"$) are the *strongest oxidising agents*.
+2. *Spontaneity Criterion:* A redox reaction is spontaneous under standard conditions if $E_("cell")^0 = E_("cathode")^0 - E_("anode")^0 > 0$ ($Delta G^0 < 0$).
+3. *Hydrogen Displacement:* Metals with negative reduction potentials ($"Zn", "Fe", "Mg"$) displace $"H"_2$ from dilute non-oxidising acids; metals with positive potentials ($"Cu", "Ag"$) cannot.
 
 = Concept Module 3: Nernst Equation & Thermodynamics
 
@@ -149,6 +170,12 @@ $ Delta_r G = -n F E_"cell" quad "and" quad Delta_r G^0 = -n F E^0_"cell" $
   - If $E^0_"cell" > 0 ==> Delta_r G^0 < 0$ (Reaction is spontaneous).
   - If $E^0_"cell" < 0 ==> Delta_r G^0 > 0$ (Reaction is non-spontaneous).
   - Also: $Delta_r G^0 = -R T ln K_c = -2.303 R T log K_c$.
+
+
+== Concentration Cells & Temperature Coefficient of EMF
+1. *Electrolyte Concentration Cells:* Identical electrodes dipped in solutions of different concentrations ($C_1 < C_2$):
+   $ E_("cell")^0 = 0 ==> E_("cell") = (0.0591 / n) log (C_2 / C_1) quad (C_2 > C_1) $
+2. *Temperature Coefficient of EMF:* $(partial E / partial T)_p = (Delta S) / (n F)$ and $Delta H = n F [ T (partial E / partial T)_p - E ]$.
 
 = Concept Module 4: Electrolytic Conductance & Dilution Dynamics
 
@@ -230,6 +257,12 @@ When multiple ions are present in solution, preferential discharge depends on el
   - In aqueous $N a C l$: Oxidation of water to $O_2$ has $E^0 = +1.23" V"$, while oxidation of $C l^-$ to $C l_2$ has $E^0 = +1.36" V"$.
   - Thermodynamically, water oxidation is favoured. However, the release of $O_2$ involves breaking multiple bonds and is kinetically slow, requiring a significant extra potential (*overpotential*). Consequently, *chlorine gas ($C l_2$) discharges preferentially at the anode*!
 
+
+== Applications of Kohlrausch's Law & Products of Electrolysis
+1. *Weak Electrolyte Ionization:* Degree of dissociation $alpha = Lambda_m / Lambda_m^0$ and $K_a = (c alpha^2) / (1 - alpha)$.
+2. *Sparingly Soluble Salts:* Solubility $S = (kappa times 1000) / Lambda_m^0$ ($"mol L"^(-1)$) and $K_("sp") = S^2$ for $1:1$ binary salts ($"AgCl"$).
+3. *Electrolysis Products (Overpotential):* In aqueous brine ($"NaCl"$), $"H"_2$ gas evolves at cathode ($E^0(H^+) > E^0("Na"^+)$) and $"Cl"_2$ gas evolves at anode (overpotential of oxygen makes $"Cl"_2$ discharge kinetically faster).
+
 = Concept Module 6: Commercial Cells & Corrosion
 
 Commercial batteries are compact, portable galvanic cells connected in series.
@@ -286,25 +319,65 @@ An electrochemical phenomenon where metal surfaces undergo oxidation:
 #pagebreak()
 
 #figure(
-  image("assets/chem_electrochem_mindmap.png", width: 84%),
-  caption: [Unit II Electrochemistry Master Architectural Mindmap: Integrated overview of galvanic cells, thermodynamics, conductance, electrolysis, and commercial batteries.],
+  image("assets/chem_electrochem_mindmap.png", width: 88%),
+  caption: [Unit II Electrochemistry Master Architectural Mindmap: Integrated overview of galvanic cells, thermodynamic equations, electrolytic conductance dynamics, Kohlrausch's law, Faraday's electrolysis laws, and commercial batteries.],
 )
 
-#cheatsheet-box(title: "Master Electrochemistry Revision Cheatsheet")[
-  - *EMF Calculation:* $E^0_"cell" = E^0_("cathode") - E^0_("anode")$ (reduction potentials). Galvanic: $Delta G^0 = -n F E^0 < 0, E^0 > 0$.
-  - *Nernst Equation (298 K):* $E_"cell" = E^0_"cell" - (0.0591 / n) log Q$ | At equilibrium: $log K_c = (n E^0_"cell") / 0.0591$.
-  - *Conductivity vs Molar Conductivity:* $kappa = G times (l / A)$ | $Lambda_m = (1000 kappa) / C$. On dilution, $kappa$ decreases (fewer ions/$"cm"^3$), while $Lambda_m$ increases.
-  - *Debye-Hückel-Onsager:* $Lambda_m = Lambda_m^0 - A sqrt(C)$ (Strong electrolytes) | Kohlrausch: $Lambda_m^0 = nu_+ lambda_+^0 + nu_- lambda_-^0$.
-  - *Weak Electrolytes:* $alpha = Lambda_m / Lambda_m^0$ | $K_a = (C alpha^2) / (1 - alpha)$.
-  - *Faraday's Laws:* $w = (M I t) / (n F)$ | $1" Faraday" = 96,500" C/mol e"^(-)$ | Series cells: $w_1 / w_2 = E_1 / E_2$.
-  - *Electrolysis of Brine ($"aq." N a C l$):* Cathode $= H_2(g)$ (water reduces); Anode $= C l_2(g)$ ($O_2$ overpotential).
-  - *Mercury Battery:* Delivers constant $1.35" V"$ throughout life (no ions in overall reaction: $Z n(H g) + H g O arrow.r Z n O + H g$).
-  - *Lead-Acid Discharging:* $P b + P b O_2 + 2 H_2 S O_4 arrow.r 2 P b S O_4 + 2 H_2 O$. Both plates become $P b S O_4$; density of acid drops.
+#v(2pt)
+
+#exam-pointer(title: "Master Electrochemical Architecture & Cell Dynamics Breakdown")[
+  The cognitive map above unifies the mathematical foundations and core principles across Unit II:
+  - *Galvanic vs Electrolytic Regimes:* Trace the behavior of the Daniell cell under external voltage: when $E_("ext") < 1.10 "V"$, the cell operates spontaneously (galvanic); when $E_("ext") = 1.10 "V"$, net current is zero; when $E_("ext") > 1.10 "V"$, electron flow reverses and the cell is driven as an electrolytic cell.
+  - *Nernst Equation Scaling:* Remember that cell potential is an intensive property ($E^0$ is independent of stoichiometric multiplication), while $Delta G^0 = -n F E^0$ is extensive. Always confirm the number of transferred electrons $n$ and write the reaction quotient $Q$ with correct stoichiometric exponents.
+  - *Conductance on Dilution Paradox:* Always distinguish between conductivity ($kappa$) and molar conductivity ($Lambda_m$). Upon dilution, $kappa$ drops universally due to fewer charge carriers per unit volume, while $Lambda_m$ rises for both strong and weak electrolytes.
+  - *Commercial Battery Architectures:* Note why mercury cells deliver an unwavering $1.35 "V"$ potential—their overall cell reaction involves zero aqueous ions whose concentrations could vary during discharge.
 ]
+
 
 #pagebreak()
 
-= CUET UG Exam-Style Practice Questions (15 MCQs)
+#cheatsheet-box(title: "Unit II Master Electrochemistry Formula & High-Yield Cheatsheet")[
+  #set text(size: 7.5pt)
+  #table(
+    columns: (1.2fr, 1.8fr, 2fr),
+    inset: 2.2pt,
+    table.header[*Core Concept / Law*][*Mathematical Expression*][*Application & CUET Problem Strategy*],
+    [Standard Cell EMF], [$E_("cell")^0 = E_("cathode")^0 - E_("anode")^0$], [Use standard reduction potentials strictly. Positive $E^0$ denotes spontaneity.],
+    [Nernst Equation (298 K)], [$E_("cell") = E_("cell")^0 - (0.0591 / n) log Q$], [Pure solids and liquids have activity $= 1$. $n$ is total moles of electrons transferred.],
+    [Equilibrium Constant], [$log K_c = (n E_("cell")^0) / 0.0591$], [At equilibrium, $E_("cell") = 0$ and $Q = K_c$. Relates electrochemistry to equilibrium.],
+    [Gibbs Free Energy], [$Delta G^0 = - n F E_("cell")^0 = - 2.303 R T log K_c$], [For spontaneous process, $Delta G^0 < 0$ when $E^0 > 0$. $F = 96487 approx 96500 "C mol"^(-1)$.],
+    [Conductivity ($kappa$)], [$kappa = G times G^* = (1 / R) times (l / A)$], [$G^*$ is cell constant ($"cm"^(-1)$), determined using standard $0.1 "M KCl"$ solutions.],
+    [Molar Conductivity], [$Lambda_m = (kappa times 1000) / M$], [Units: $"S cm"^2" mol"^(-1)$. Increases with dilution for all electrolytes.],
+    [Debye-Hückel-Onsager], [$Lambda_m = Lambda_m^0 - A sqrt(c)$], [Applies to strong electrolytes at low concentration. Interionic attractions weaken on dilution.],
+    [Kohlrausch's Law], [$Lambda_m^0 = nu_+ lambda_+^0 + nu_- lambda_-^0$], [Enables calculation of $Lambda_m^0$ for weak electrolytes via additivity of ionic conductances.],
+    [Degree of Dissociation], [$alpha = Lambda_m / Lambda_m^0$ | $K_a = (c alpha^2) / (1 - alpha)$], [Direct determination of weak electrolyte ionization and acid dissociation constant.],
+    [Faraday's First Law], [$w = z times I times t = (M / (n F)) times I times t$], [$z = M / (n F)$ is electrochemical equivalent. Charge $Q = I times t$ Coulombs.],
+    [Faraday's Second Law], [$w_1 / E_1 = w_2 / E_2 = Q / F$], [Same quantity of electricity produces masses in direct ratio of their equivalent weights.],
+    [Mercury Cell Potential], [$E_("cell") = 1.35 "V"$ (Constant throughout)], [Overall reaction $"Zn"("Hg") + "HgO"(s) arrow.r "ZnO"(s) + "Hg"(l)$ involves no solution ions.],
+  )
+]
+
+#v(2pt)
+
+#exception-box(title: "Top 7 High-Frequency CUET Traps & Pitfalls")[
+  #set text(size: 7.5pt)
+  1. *External Voltage Regimes on Daniell Cell:* When $E_("ext") < 1.10 "V"$, electrons flow $"Zn" arrow.r "Cu"$ (galvanic). When $E_("ext") = 1.10 "V"$, zero current flows (equilibrium). When $E_("ext") > 1.10 "V"$, polarity reverses! Electrons flow $"Cu" arrow.r "Zn"$, $"Zn"$ deposits, and the device functions as an *electrolytic cell*.
+  2. *Reduction Potential Sign Convention:* All IUPAC standard potentials are reduction potentials. A more negative $E^0$ indicates a *stronger reducing agent* ($"Li"^+ / "Li" = -3.05 "V"$ is strongest reducing agent). A more positive $E^0$ indicates a stronger oxidising agent ($"F"_2 / "F"^- = +2.87 "V"$).
+  3. *Nernst Equation Stoichiometry:* In $E = E^0 - (0.0591/n) log Q$, concentrations of pure solids ($"Zn"(s), "Cu"(s)$) and pure liquids ($"H"_2 "O"$) are strictly taken as unity ($1$). Never insert solid concentrations into $Q$! Always balance the redox reaction to find $n$.
+  4. *Thermodynamic Properties (Intensive vs Extensive):* $E_("cell")^0$ is an *intensive property*—multiplying a half-reaction by 2 does NOT change $E^0$. However, Gibbs free energy $Delta G^0 = -n F E^0$ is an *extensive property*—doubling the stoichiometric equation doubles $Delta G^0$!
+  5. *Conductivity ($kappa$) vs Molar Conductivity ($Lambda_m$) on Dilution:* Upon dilution, conductivity ($kappa$) *decreases* because the number of current-carrying ions per unit volume ($1 "cm"^3$) decreases. However, molar conductivity ($Lambda_m$) *increases* on dilution for both strong and weak electrolytes!
+  6. *Faraday's Electricity & Electrolysis Products:* Discharge of 1 mole of an $n$-valent ion requires $n F$ ($n times 96500 "C"$). In electrolysis of brine (aqueous $"NaCl"$), $"H"_2$ gas evolves at the cathode (since $E^0(H^+) > E^0("Na"^+)$) and $"Cl"_2$ gas evolves at the anode (due to the overpotential of oxygen).
+  7. *Mercury Cell vs Lead Storage Accumulator:* Mercury cells maintain an unvarying potential of $1.35 "V"$ throughout their life because their overall cell reaction involves *no ions in solution* whose concentration can change. In lead storage batteries, sulphuric acid is consumed during discharge ($"density falls from " 1.30 " to " < 1.20 " g cm"^(-3)$).
+]
+
+
+
+#pagebreak()
+
+#block(width: 100%, inset: (y: 4pt, x: 8pt), fill: om-navy, radius: 3pt)[
+  #text(fill: white, font: om-display-font, size: 12pt, weight: 800)[Practice Questions (Exam Pattern) — Part 1 (Q1 to Q5)]
+]
+#set text(size: 8.5pt)
 
 #mcq(
   1,
@@ -388,6 +461,11 @@ An electrochemical phenomenon where metal surfaces undergo oxidation:
 
 #pagebreak()
 
+#block(width: 100%, inset: (y: 4pt, x: 8pt), fill: om-navy, radius: 3pt)[
+  #text(fill: white, font: om-display-font, size: 12pt, weight: 800)[Practice Questions (Exam Pattern) — Part 2 (Q6 to Q10)]
+]
+#set text(size: 8.5pt)
+
 #mcq(
   6,
   [How do the conductivity ($kappa$) and molar conductivity ($Lambda_m$) of an electrolytic solution vary upon dilution?],
@@ -469,6 +547,11 @@ An electrochemical phenomenon where metal surfaces undergo oxidation:
 )
 
 #pagebreak()
+
+#block(width: 100%, inset: (y: 4pt, x: 8pt), fill: om-navy, radius: 3pt)[
+  #text(fill: white, font: om-display-font, size: 12pt, weight: 800)[Practice Questions (Exam Pattern) — Part 3 (Q11 to Q15)]
+]
+#set text(size: 8.5pt)
 
 #mcq(
   11,
