@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1440, height=880">
+  <title>Financial Statement Architecture & Analysis Tools</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 1440px;
+      height: 880px;
+      background-color: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0F172A;
+      padding: 30px 40px;
+      overflow: hidden;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #E2E8F0;
+      padding-bottom: 12px;
+    }
+    .title-group h1 {
+      font-size: 24px;
+      font-weight: 800;
+      color: #0F2C59;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+    .title-group p {
+      font-size: 13px;
+      color: #64748B;
+      font-weight: 500;
+    }
+    .badge {
+      background: #0066FF;
+      color: white;
+      font-size: 11.5px;
+      font-weight: 700;
+      padding: 5px 14px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+    }
+    .main-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 18px;
+      height: calc(100% - 70px);
+    }
+    .card {
+      background: white;
+      border: 1px solid #CBD5E1;
+      border-radius: 12px;
+      padding: 16px 20px;
+      display: flex;
+      flex-direction: column;
+    }
+    .card-title {
+      font-size: 14px;
+      font-weight: 800;
+      color: #0F2C59;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .pill {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 6px;
+      text-transform: uppercase;
+    }
+    .pill-blue { background: #E0F2FE; color: #0369A1; }
+    .pill-green { background: #DCFCE7; color: #15803D; }
+    .pill-amber { background: #FEF3C7; color: #B45309; }
+    .pill-purple { background: #F3E8FF; color: #7E22CE; }
+
+    /* Architecture Tree */
+    .arch-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 4px;
+    }
+    .arch-box {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 8px;
+      padding: 8px 12px;
+    }
+    .arch-box-title { font-size: 11.5px; font-weight: 800; color: #0F2C59; margin-bottom: 5px; }
+    .arch-item { font-size: 10.5px; color: #334155; line-height: 1.35; margin-bottom: 3px; }
+
+    /* Formula Banner */
+    .formula-row {
+      display: flex;
+      gap: 10px;
+      margin-top: 6px;
+    }
+    .formula-card {
+      flex: 1;
+      background: #F1F5F9;
+      border: 1px solid #CBD5E1;
+      border-radius: 8px;
+      padding: 8px 10px;
+      text-align: center;
+    }
+    .formula-tag { font-size: 9.5px; font-weight: 800; text-transform: uppercase; color: #0066FF; margin-bottom: 2px; }
+    .formula-math { font-size: 11px; font-weight: 700; color: #0F172A; }
+
+    /* Limitations */
+    .limit-item {
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+      margin-bottom: 5px;
+      font-size: 11px;
+      color: #334155;
+      line-height: 1.35;
+    }
+    .limit-num {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: #B45309;
+      color: white;
+      font-size: 10px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .alert-bar {
+      margin-top: auto;
+      padding: 6px 10px;
+      border-radius: 6px;
+      background: #FEF2F2;
+      border-left: 3px solid #EF4444;
+      font-size: 10.5px;
+      color: #991B1B;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="title-group">
+      <h1>Financial Statement Architecture & Analysis Tools</h1>
+      <p>Schedule III reporting framework, comparative horizontal analysis, common-size vertical models, and analytical limitations</p>
+    </div>
+    <div class="badge">UNIT V · FINANCIAL STATEMENTS</div>
+  </div>
+
+  <div class="main-grid">
+    <!-- PANEL 1: SCHEDULE III STRUCTURE -->
+    <div class="card">
+      <div class="card-title">
+        <span>Schedule III Part I & II Reporting Framework</span>
+        <span class="pill pill-blue">Statutory Structure</span>
+      </div>
+      <div class="arch-grid">
+        <div class="arch-box">
+          <div class="arch-box-title">Balance Sheet (Part I)</div>
+          <div class="arch-item"><strong>1. Equity & Liabilities:</strong> Shareholders' Funds, Share App Pending Allotment, Non-Current Liab, Current Liab.</div>
+          <div class="arch-item"><strong>2. Assets:</strong> Non-Current Assets (Property, Plant, Equip, Intangibles, Non-Current Inv), Current Assets (Inv, TR, Cash).</div>
+        </div>
+        <div class="arch-box">
+          <div class="arch-box-title">Statement of P&L (Part II)</div>
+          <div class="arch-item"><strong>Revenue:</strong> Revenue from Operations + Other Income = Total Revenue.</div>
+          <div class="arch-item"><strong>Expenses:</strong> Materials, Stock purchases, Change in inventory, Employee benefits, Finance costs, Depr/Amort, Other exp.</div>
+        </div>
+      </div>
+      <div class="alert-bar" style="margin-top: 8px;">
+        <strong>CUET Trap:</strong> Loose Tools and Stores/Spares are part of Inventory in Balance Sheet, but are EXCLUDED while computing Quick Ratio!
+      </div>
+    </div>
+
+    <!-- PANEL 2: COMPARATIVE STATEMENTS -->
+    <div class="card">
+      <div class="card-title">
+        <span>Comparative Statements: Horizontal (Dynamic) Analysis</span>
+        <span class="pill pill-green">Time-Series Trend</span>
+      </div>
+      <div style="font-size: 11px; color: #334155; line-height: 1.35; margin-bottom: 6px;">
+        Comparative statements examine two or more successive years to reveal directions, magnitudes, and rates of operational and financial growth.
+      </div>
+      <div class="formula-row">
+        <div class="formula-card">
+          <div class="formula-tag">Column C</div>
+          <div class="formula-math">Absolute Change = Current Year (B) − Previous Year (A)</div>
+        </div>
+        <div class="formula-card">
+          <div class="formula-tag">Column D</div>
+          <div class="formula-math">% Change = [ Absolute Change (C) / Base Year (A) ] × 100</div>
+        </div>
+      </div>
+      <div style="margin-top: 8px; font-size: 10.5px; color: #475569; background: #F8FAFC; padding: 6px 10px; border-radius: 6px; border: 1px solid #E2E8F0;">
+        <strong>Zero/Negative Base Rule:</strong> If the previous year (Base Year A) figure is Zero or Negative, the percentage change <em>cannot be calculated</em> (mathematically undefined)!
+      </div>
+      <div class="alert-bar" style="background: #F0FDF4; border-color: #10B981; color: #065F46;">
+        <strong>Dynamic Nature:</strong> Shows movement over time across successive balance sheets or income statements.
+      </div>
+    </div>
+
+    <!-- PANEL 3: COMMON-SIZE STATEMENTS -->
+    <div class="card">
+      <div class="card-title">
+        <span>Common-Size Statements: Vertical (Static) Analysis</span>
+        <span class="pill pill-purple">Component % Ratio</span>
+      </div>
+      <div style="font-size: 11px; color: #334155; line-height: 1.35; margin-bottom: 6px;">
+        Common-size statements convert each individual line item into a percentage of a common base, enabling cross-sectional and intra-firm sizing.
+      </div>
+      <div class="formula-row">
+        <div class="formula-card">
+          <div class="formula-tag">Balance Sheet Base = 100%</div>
+          <div class="formula-math">% = [ Individual Asset or Liab / Total of Balance Sheet ] × 100</div>
+        </div>
+        <div class="formula-card">
+          <div class="formula-tag">Income Statement Base = 100%</div>
+          <div class="formula-math">% = [ Individual Expense or Tax / Revenue from Operations ] × 100</div>
+        </div>
+      </div>
+      <div class="alert-bar" style="margin-top: 8px; background: #FFFBEB; border-color: #F59E0B; color: #92400E;">
+        <strong>Base Trap:</strong> In Common-Size Income Statement, the base is ALWAYS <em>Revenue from Operations (Net Sales)</em>, NEVER Total Revenue!
+      </div>
+    </div>
+
+    <!-- PANEL 4: LIMITATIONS OF ANALYSIS -->
+    <div class="card">
+      <div class="card-title">
+        <span>Limitations of Financial Statement Analysis</span>
+        <span class="pill pill-amber">Analytical Constraints</span>
+      </div>
+      <div class="limit-item">
+        <div class="limit-num">1</div>
+        <div><strong>Historical Cost Bias:</strong> Financial statements reflect historical money values; they ignore the impact of price level changes and inflation.</div>
+      </div>
+      <div class="limit-item">
+        <div class="limit-num">2</div>
+        <div><strong>Ignores Qualitative Elements:</strong> Fails to measure human resource caliber, management competency, employee morale, and labor relations.</div>
+      </div>
+      <div class="limit-item">
+        <div class="limit-num">3</div>
+        <div><strong>Window Dressing Vulnerability:</strong> Figures can be manipulated to project an artificially favorable liquidity or solvency standing at year-end.</div>
+      </div>
+      <div class="limit-item">
+        <div class="limit-num">4</div>
+        <div><strong>Accounting Policy Divergence:</strong> Varying methods of depreciation (SLM vs WDV) or inventory valuation (FIFO vs Weighted Avg) hinder comparability.</div>
+      </div>
+      <div class="alert-bar">
+        <strong>CUET Exam Note:</strong> Financial analysis is merely a <em>diagnostic tool</em> — it does not provide definitive management decisions on its own.
+      </div>
+    </div>
+  </div>
+</body>
+</html>

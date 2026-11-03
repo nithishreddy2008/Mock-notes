@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1440, height=880">
+  <title>Master Accounting Ratios Matrix</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 1440px;
+      height: 880px;
+      background-color: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0F172A;
+      padding: 30px 40px;
+      overflow: hidden;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #E2E8F0;
+      padding-bottom: 12px;
+    }
+    .title-group h1 {
+      font-size: 24px;
+      font-weight: 800;
+      color: #0F2C59;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+    .title-group p {
+      font-size: 13px;
+      color: #64748B;
+      font-weight: 500;
+    }
+    .badge {
+      background: #0066FF;
+      color: white;
+      font-size: 11.5px;
+      font-weight: 700;
+      padding: 5px 14px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+    }
+    .main-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 18px;
+      height: calc(100% - 70px);
+    }
+    .card {
+      background: white;
+      border: 1px solid #CBD5E1;
+      border-radius: 12px;
+      padding: 16px 20px;
+      display: flex;
+      flex-direction: column;
+    }
+    .card-title {
+      font-size: 14px;
+      font-weight: 800;
+      color: #0F2C59;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .pill {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 6px;
+      text-transform: uppercase;
+    }
+    .pill-blue { background: #E0F2FE; color: #0369A1; }
+    .pill-green { background: #DCFCE7; color: #15803D; }
+    .pill-amber { background: #FEF3C7; color: #B45309; }
+    .pill-purple { background: #F3E8FF; color: #7E22CE; }
+
+    /* Ratio Table */
+    .ratio-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .ratio-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 6px 10px;
+      border-radius: 6px;
+      background: #F8FAFC;
+      border-left: 3px solid #CBD5E1;
+    }
+    .ratio-name { font-size: 11px; font-weight: 700; color: #1E293B; width: 150px; }
+    .ratio-formula { font-size: 10.5px; color: #475569; flex: 1; }
+    .ratio-benchmark { font-size: 10px; font-weight: 800; color: #0066FF; padding: 2px 6px; background: white; border-radius: 4px; border: 1px solid #E2E8F0; }
+
+    .alert-bar {
+      margin-top: auto;
+      padding: 6px 10px;
+      border-radius: 6px;
+      background: #FEF2F2;
+      border-left: 3px solid #EF4444;
+      font-size: 10.5px;
+      color: #991B1B;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="title-group">
+      <h1>Master Accounting Ratios Matrix</h1>
+      <p>Comprehensive mathematical formulas, benchmarks, and interpretation across the four standard ratio families</p>
+    </div>
+    <div class="badge">UNIT V · FINANCIAL RATIOS</div>
+  </div>
+
+  <div class="main-grid">
+    <!-- PANEL 1: LIQUIDITY RATIOS -->
+    <div class="card" style="border-top: 3px solid #0284C7;">
+      <div class="card-title">
+        <span>1. Liquidity Ratios (Short-Term Solvency)</span>
+        <span class="pill pill-blue">Short-Term Debt Service</span>
+      </div>
+      <div class="ratio-list">
+        <div class="ratio-row" style="border-left-color: #0284C7;">
+          <span class="ratio-name">Current Ratio</span>
+          <span class="ratio-formula">Current Assets ÷ Current Liabilities</span>
+          <span class="ratio-benchmark">Ideal 2 : 1</span>
+        </div>
+        <div class="ratio-row" style="border-left-color: #0284C7;">
+          <span class="ratio-name">Quick / Liquid Ratio</span>
+          <span class="ratio-formula">Quick Assets ÷ Current Liabilities</span>
+          <span class="ratio-benchmark">Ideal 1 : 1</span>
+        </div>
+      </div>
+      <div style="margin-top: 8px; font-size: 10.5px; color: #334155; line-height: 1.35; background: #F8FAFC; padding: 6px 10px; border-radius: 6px; border: 1px solid #E2E8F0;">
+        • <strong>Quick Assets:</strong> Current Assets − Inventory − Prepaid Expenses.<br>
+        • <strong>Loose Tools Rule:</strong> Loose Tools, Stores & Spares are excluded from Current Assets while calculating Current and Quick Ratios!
+      </div>
+      <div class="alert-bar">
+        <strong>CUET Effect Rule:</strong> Paying a current liability improves Current Ratio if original CR > 1; decreases CR if original CR < 1!
+      </div>
+    </div>
+
+    <!-- PANEL 2: SOLVENCY RATIOS -->
+    <div class="card" style="border-top: 3px solid #10B981;">
+      <div class="card-title">
+        <span>2. Solvency Ratios (Long-Term Solvency)</span>
+        <span class="pill pill-green">Capital Leverage & Safety</span>
+      </div>
+      <div class="ratio-list">
+        <div class="ratio-row" style="border-left-color: #10B981;">
+          <span class="ratio-name">Debt-Equity Ratio</span>
+          <span class="ratio-formula">Long-Term Debt ÷ Shareholders' Funds</span>
+          <span class="ratio-benchmark">Ideal 2 : 1</span>
+        </div>
+        <div class="ratio-row" style="border-left-color: #10B981;">
+          <span class="ratio-name">Total Assets to Debt</span>
+          <span class="ratio-formula">Total Assets ÷ Long-Term Debt</span>
+          <span class="ratio-benchmark">Higher is Safer</span>
+        </div>
+        <div class="ratio-row" style="border-left-color: #10B981;">
+          <span class="ratio-name">Proprietary Ratio</span>
+          <span class="ratio-formula">Shareholders' Funds ÷ Total Assets</span>
+          <span class="ratio-benchmark">Equity Cushion</span>
+        </div>
+        <div class="ratio-row" style="border-left-color: #10B981;">
+          <span class="ratio-name">Interest Coverage</span>
+          <span class="ratio-formula">Profit before Interest & Tax ÷ Interest Charges</span>
+          <span class="ratio-benchmark">In Times (e.g. 6x)</span>
+        </div>
+      </div>
+      <div class="alert-bar" style="background: #F0FDF4; border-color: #10B981; color: #065F46;">
+        <strong>Debt Composition:</strong> Long-Term Debt includes Debentures, Mortgages, and Long-Term Bank Loans. Excludes Current Liabilities!
+      </div>
+    </div>
+
+    <!-- PANEL 3: ACTIVITY / TURNOVER RATIOS -->
+    <div class="card" style="border-top: 3px solid #F59E0B;">
+      <div class="card-title">
+        <span>3. Activity / Turnover Ratios (Asset Efficiency)</span>
+        <span class="pill pill-amber">Velocity of Assets</span>
+      </div>
+      <div class="ratio-list">
+        <div class="ratio-row" style="border-left-color: #F59E0B;">
+          <span class="ratio-name">Inventory Turnover</span>
+          <span class="ratio-formula">Cost of Revenue from Ops (COGS) ÷ Average Inventory</span>
+          <span class="ratio-benchmark">In Times (Speed)</span>
+        </div>
+        <div class="ratio-row" style="border-left-color: #F59E0B;">
+          <span class="ratio-name">Trade Receivables T/O</span>
+          <span class="ratio-formula">Net Credit Revenue from Ops ÷ Avg Trade Receivables</span>
+          <span class="ratio-benchmark">Debt Collection</span>
+        </div>
+        <div class="ratio-row" style="border-left-color: #F59E0B;">
+          <span class="ratio-name">Trade Payables T/O</span>
+          <span class="ratio-formula">Net Credit Purchases ÷ Avg Trade Payables</span>
+          <span class="ratio-benchmark">Creditor Payment</span>
+        </div>
+        <div class="ratio-row" style="border-left-color: #F59E0B;">
+          <span class="ratio-name">Working Capital T/O</span>
+          <span class="ratio-formula">Revenue from Operations ÷ Working Capital (CA − CL)</span>
+          <span class="ratio-benchmark">Working Cap Turn</span>
+        </div>
+      </div>
+      <div class="alert-bar" style="background: #FFFBEB; border-color: #F59E0B; color: #92400E;">
+        <strong>Average Rule:</strong> When opening and closing figures are both given, Average = (Opening + Closing) ÷ 2.
+      </div>
+    </div>
+
+    <!-- PANEL 4: PROFITABILITY RATIOS -->
+    <div class="card" style="border-top: 3px solid #8B5CF6;">
+      <div class="card-title">
+        <span>4. Profitability Ratios (Earning Capacity)</span>
+        <span class="pill pill-purple">Margin & Return Metrics</span>
+      </div>
+      <div class="ratio-list">
+        <div class="ratio-row" style="border-left-color: #8B5CF6;">
+          <span class="ratio-name">Gross Profit Ratio</span>
+          <span class="ratio-formula">[ Gross Profit ÷ Net Revenue from Operations ] × 100</span>
+          <span class="ratio-benchmark">Core Margin %</span>
+        </div>
+        <div class="ratio-row" style="border-left-color: #8B5CF6;">
+          <span class="ratio-name">Operating Ratio</span>
+          <span class="ratio-formula">[ (COGS + Operating Expenses) ÷ Net Revenue ] × 100</span>
+          <span class="ratio-benchmark">Cost Ratio %</span>
+        </div>
+        <div class="ratio-row" style="border-left-color: #8B5CF6;">
+          <span class="ratio-name">Operating Profit Ratio</span>
+          <span class="ratio-formula">[ Operating Profit ÷ Net Revenue from Operations ] × 100</span>
+          <span class="ratio-benchmark">EBIT Margin %</span>
+        </div>
+        <div class="ratio-row" style="border-left-color: #8B5CF6;">
+          <span class="ratio-name">Return on Investment</span>
+          <span class="ratio-formula">[ Net Profit before Interest & Tax ÷ Capital Employed ] × 100</span>
+          <span class="ratio-benchmark">ROCE %</span>
+        </div>
+      </div>
+      <div class="alert-bar" style="background: #F5F3FF; border-color: #8B5CF6; color: #5B21B6;">
+        <strong>Master Identity:</strong> Operating Ratio + Operating Profit Ratio = 100%! (If Operating Ratio is 78%, Operating Profit is exactly 22%).
+      </div>
+    </div>
+  </div>
+</body>
+</html>

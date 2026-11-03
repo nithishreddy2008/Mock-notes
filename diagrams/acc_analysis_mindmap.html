@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1440, height=880">
+  <title>Cash Flow Statement Master Synthesis Mindmap</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 1440px;
+      height: 880px;
+      background-color: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0F172A;
+      padding: 26px 36px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 16px;
+      border-bottom: 2px solid #E2E8F0;
+      padding-bottom: 10px;
+    }
+    .title-group h1 {
+      font-size: 23px;
+      font-weight: 800;
+      color: #0F2C59;
+      letter-spacing: -0.02em;
+    }
+    .title-group p {
+      font-size: 12.5px;
+      color: #64748B;
+      font-weight: 500;
+    }
+    .badge {
+      background: #0066FF;
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 5px 14px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+    }
+    .mindmap-container {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1fr 1.35fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 14px;
+      position: relative;
+    }
+
+    /* Central Hub */
+    .center-card {
+      grid-column: 2;
+      grid-row: 1 / span 2;
+      background: white;
+      border: 2px solid #0066FF;
+      border-radius: 14px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+    }
+    .hub-title {
+      font-size: 17px;
+      font-weight: 800;
+      color: #0F2C59;
+      margin-bottom: 6px;
+    }
+    .hub-subtitle {
+      font-size: 11.5px;
+      color: #64748B;
+      margin-bottom: 12px;
+      max-width: 320px;
+      line-height: 1.35;
+    }
+    .hub-pillars {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      width: 100%;
+    }
+    .hub-pill-box {
+      background: #F1F5F9;
+      border: 1px solid #CBD5E1;
+      border-radius: 8px;
+      padding: 8px 10px;
+      text-align: left;
+    }
+    .hub-pill-tag {
+      font-size: 9.5px;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: #0066FF;
+      margin-bottom: 2px;
+    }
+    .hub-pill-name {
+      font-size: 11px;
+      font-weight: 700;
+      color: #0F172A;
+    }
+    .hub-pill-desc {
+      font-size: 9.5px;
+      color: #64748B;
+      line-height: 1.25;
+    }
+
+    /* Outer Cards */
+    .map-card {
+      background: white;
+      border: 1px solid #CBD5E1;
+      border-radius: 12px;
+      padding: 12px 14px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid #F1F5F9;
+    }
+    .card-heading {
+      font-size: 12.5px;
+      font-weight: 800;
+      color: #0F2C59;
+    }
+    .card-badge {
+      font-size: 9.5px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 5px;
+      text-transform: uppercase;
+    }
+    .cb-blue { background: #E0F2FE; color: #0369A1; }
+    .cb-green { background: #DCFCE7; color: #15803D; }
+    .cb-amber { background: #FEF3C7; color: #B45309; }
+    .cb-purple { background: #F3E8FF; color: #7E22CE; }
+
+    .bullet-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .bullet-item {
+      display: flex;
+      gap: 6px;
+      font-size: 10.5px;
+      color: #334155;
+      line-height: 1.35;
+    }
+    .bullet-icon {
+      color: #0066FF;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+    .bullet-item strong {
+      color: #0F172A;
+    }
+
+    .mini-alert {
+      margin-top: auto;
+      padding: 4px 8px;
+      border-radius: 5px;
+      font-size: 9.5px;
+      background: #F8FAFC;
+      border-left: 3px solid #CBD5E1;
+      color: #475569;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="title-group">
+      <h1>Unit V: Cash Flow Statement (AS-3 Revised) Master Synthesis Mindmap</h1>
+      <p>Three-activity classification, non-cash adjustments, working capital mechanics, and cash equivalents</p>
+    </div>
+    <div class="badge">AS-3 (REVISED) MINDMAP</div>
+  </div>
+
+  <div class="mindmap-container">
+    <!-- TOP-LEFT: OPERATING ACTIVITIES -->
+    <div class="map-card" style="border-top: 3px solid #0066FF;">
+      <div class="card-top">
+        <span class="card-heading">1. Operating Activities</span>
+        <span class="card-badge cb-blue">Core Operations</span>
+      </div>
+      <ul class="bullet-list">
+        <li class="bullet-item"><span class="bullet-icon">▸</span><span><strong>Net Profit before Tax:</strong> Closing Surplus − Opening Surplus + Proposed Dividend + Prov for Tax.</span></li>
+        <li class="bullet-item"><span class="bullet-icon">▸</span><span><strong>Non-Cash Additions:</strong> Depreciation, Amortisation of Goodwill/Patents, Loss on Sale of Assets.</span></li>
+        <li class="bullet-item"><span class="bullet-icon">▸</span><span><strong>Non-Operating Incomes:</strong> Deduct Interest/Dividend Received, Gain on Sale of Fixed Assets.</span></li>
+        <li class="bullet-item"><span class="bullet-icon">▸</span><span><strong>Working Capital Shifts:</strong> Add Decrease in CA & Increase in CL; Less Increase in CA & Decrease in CL.</span></li>
+      </ul>
+      <div class="mini-alert" style="border-left-color: #0066FF;">
+        Subtract actual Income Tax Paid (net of tax refund) to find Net Cash from Operations!
+      </div>
+    </div>
+
+    <!-- BOTTOM-LEFT: INVESTING ACTIVITIES -->
+    <div class="map-card" style="border-top: 3px solid #10B981;">
+      <div class="card-top">
+        <span class="card-heading">2. Investing Activities</span>
+        <span class="card-badge cb-green">Capital Deployment</span>
+      </div>
+      <ul class="bullet-list">
+        <li class="bullet-item"><span class="bullet-icon">▸</span><span><strong>Cash Inflows:</strong> Proceeds from sale of Land, Building, Plant, Machinery, Intangible assets.</span></li>
+        <li class="bullet-item"><span class="bullet-icon">▸</span><span><strong>Investment Sales:</strong> Sale of Non-Current (long-term) Investments.</span></li>
+        <li class="bullet-item"><span class="bullet-icon">▸</span><span><strong>Returns Received:</strong> Interest Received and Dividend Received (for non-financial firms).</span></li>
+        <li class="bullet-item"><span class="bullet-icon">▸</span><span><strong>Cash Outflows:</strong> Purchase of Fixed Assets and Non-Current Investments.</span></li>
+      </ul>
+      <div class="mini-alert" style="border-left-color: #10B981;">
+        For financial companies (banks/NBFCs), interest and dividend received are OPERATING!
+      </div>
+    </div>
+
+    <!-- CENTER HUB -->
+    <div class="center-card">
+      <div class="hub-title">Cash Flow Statement</div>
+      <div class="hub-subtitle">Accounting Standard 3 (Revised) Indirect Method Framework for Class 12 & CUET UG</div>
+      
+      <div class="hub-pillars">
+        <div class="hub-pill-box">
+          <div class="hub-pill-tag">Section A</div>
+          <div class="hub-pill-name">Operating Cash</div>
+          <div class="hub-pill-desc">Core revenue operations, trading receipts, tax payments, and working capital.</div>
+        </div>
+        <div class="hub-pill-box">
+          <div class="hub-pill-tag">Section B</div>
+          <div class="hub-pill-name">Investing Cash</div>
+          <div class="hub-pill-desc">Acquisition and disposal of long-term assets and investments.</div>
+        </div>
+        <div class="hub-pill-box">
+          <div class="hub-pill-tag">Section C</div>
+          <div class="hub-pill-name">Financing Cash</div>
+          <div class="hub-pill-desc">Capital structure alterations: equity, debentures, loans, and dividends.</div>
+        </div>
+        <div class="hub-pill-box">
+          <div class="hub-pill-tag">Reconciliation</div>
+          <div class="hub-pill-name">Net Change</div>
+          <div class="hub-pill-desc">A + B + C + Opening Cash Equivalents = Closing Cash Equivalents.</div>
+        </div>
+      </div>
+
+      <div style="margin-top: 14px; background: #EFF6FF; border: 1px solid #BFDBFE; border-radius: 8px; padding: 6px 12px; font-size: 10px; color: #1E40AF; text-align: center; width: 100%;">
+        <strong>Reconciliation Master Check:</strong> Net Cash Inflow/Outflow (A + B + C) + Opening Cash = Closing Cash!
+      </div>
+    </div>
+
+    <!-- TOP-RIGHT: FINANCING ACTIVITIES -->
+    <div class="map-card" style="border-top: 3px solid #8B5CF6;">
+      <div class="card-top">
+        <span class="card-heading">3. Financing Activities</span>
+        <span class="card-badge cb-purple">Capital Structure</span>
+      </div>
+      <ul class="bullet-list">
+        <li class="bullet-item"><span class="bullet-icon">▸</span><span><strong>Issue Proceeds:</strong> Cash received from issue of Equity/Preference shares and Debentures.</span></li>
+        <li class="bullet-item"><span class="bullet-icon">▸</span><span><strong>Borrowings:</strong> Proceeds from Long-Term / Short-Term Loans, Bank Overdraft & Cash Credit.</span></li>
+        <li class="bullet-item"><span class="bullet-icon">▸</span><span><strong>Redemption / Buyback:</strong> Redemption of Debentures/Preference shares, Buyback of shares.</span></li>
+        <li class="bullet-item"><span class="bullet-icon">▸</span><span><strong>Dividends & Interest:</strong> Interim & Final Dividend Paid, Interest Paid on all borrowings.</span></li>
+      </ul>
+      <div class="mini-alert" style="border-left-color: #8B5CF6;">
+        Dividend Paid is ALWAYS Financing for ALL companies (financial & non-financial)!
+      </div>
+    </div>
+
+    <!-- BOTTOM-RIGHT: CASH EQUIVALENTS & TRAPS -->
+    <div class="map-card" style="border-top: 3px solid #F59E0B;">
+      <div class="card-top">
+        <span class="card-heading">4. Cash Equivalents & Traps</span>
+        <span class="card-badge cb-amber">High-Yield Traps</span>
+      </div>
+      <ul class="bullet-list">
+        <li class="bullet-item"><span class="bullet-icon">▸</span><span><strong>Cash Equivalents:</strong> Highly liquid short-term investments with maturity ≤ 3 months (Treasury bills, Commercial paper).</span></li>
+        <li class="bullet-item"><span class="bullet-icon">▸</span><span><strong>Bank Overdraft Rule:</strong> Bank OD / Cash Credit is a FINANCING activity, NOT a cash equivalent!</span></li>
+        <li class="bullet-item"><span class="bullet-icon">▸</span><span><strong>Non-Cash Transactions:</strong> Conversion of debentures to shares or bonus shares are EXCLUDED from CFS!</span></li>
+        <li class="bullet-item"><span class="bullet-icon">▸</span><span><strong>Proposed Dividend:</strong> Previous year's dividend paid in current year (Financing outflow + Operating addback).</span></li>
+      </ul>
+      <div class="mini-alert" style="border-left-color: #F59E0B;">
+        Current year's Proposed Dividend is an unrecorded contingent liability under AS-4!
+      </div>
+    </div>
+  </div>
+</body>
+</html>

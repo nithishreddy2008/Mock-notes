@@ -7,793 +7,694 @@
   subtitle: "Official Syllabus Unit V · Class 12 · CUET UG 2027 Cycle Notes",
 )
 
-= Syllabus Alignment
+// PAGE 2: SYLLABUS ALIGNMENT & EXAM BLUEPRINT
+= Syllabus Alignment & Exam Blueprint
 
 #table(
   columns: (1.05fr, 1.9fr, 1.25fr),
-  table.header[*Sub-topic*][*Official syllabus pointer (NTA CUET(UG) Accountancy syllabus 2026, the current 2027 baseline, Unit V)*][*Skills the questions test*],
-  [*Financial statements of a company*], [
-    Financial Statements of a Company: Preparation of simple financial statements of a company in the prescribed form with major headings and sub headings.
+  table.header[*Sub-topic*][*Official syllabus pointer (NTA CUET(UG) Accountancy 301, Unit V)*][*Skills the questions test*],
+  [*Financial Statements Structure*], [
+    Financial statements of a company: Balance sheet and Statement of Profit and Loss in the prescribed form with headings and sub-headings (as per Schedule III to the Companies Act, 2013)
   ], [
-    Placing items under the correct Schedule III heading and reading the vertical format on sight.
+    Identifying major heads and sub-heads of items under Schedule III Part I and Part II.
   ],
-  [*Financial analysis*], [
-    Financial Analysis: Meaning, Significance, Purpose and Limitations.
+  [*Financial Statement Analysis*], [
+    Financial statement analysis: Objectives, importance, limitations; Tools for financial statement analysis
   ], [
-    Saying what analysis can and cannot reveal, and matching each user with the question they ask.
+    Distinguishing horizontal and vertical analysis; evaluating qualitative limitations.
   ],
-  [*Tools of financial analysis*], [
-    Tools for Financial Analysis: Comparative statements, Common size statements.
+  [*Comparative & Common-Size*], [
+    Comparative statements, common-size statements
   ], [
-    Building both statements, computing absolute and % changes, reading percentages against the right base.
+    Computing absolute and percentage changes; identifying correct bases for common-size statements.
   ],
-  [*Accounting ratios*], [
-    Accounting Ratios: Meaning and Objectives and types: Liquidity Ratio, Solvency Ratio, Activity Ratio, Profitability Ratio.
+  [*Accounting Ratios*], [
+    Accounting Ratios: Meaning, objectives, classification and computation: Liquidity Ratios, Solvency Ratios, Activity Ratios, Profitability Ratios
   ], [
-    Computing each ratio from given figures, naming its family, interpreting the result.
+    Calculating ratios; analyzing the impact of transactions on ratios; applying ideal benchmarks.
   ],
-  [*Cash Flow Statement* *(listed in the syllabus)*], [
-    Cash Flow Statement: Meaning and Objectives, Preparation, Adjustments related to depreciation, amortization, dividend and tax, purchase and profit or loss on sale of non-current assets (as per revised standard issued by ICAI).
+  [*Cash Flow Statement*], [
+    Cash Flow Statement: Meaning, objectives and preparation as per AS 3 (Revised) (Indirect Method only)
   ], [
-    Classifying flows into the three activities and preparing the statement by the indirect method with adjustments.
+    Classifying cash flows into Operating, Investing, and Financing; computing NPBT; handling tax & dividends.
   ],
 )
 
 #exam-pointer[
-  CUET UG pattern (NTA official information bulletin and syllabus, 2026 cycle — the
-  current 2027 baseline): each subject paper carries *50 compulsory questions* in
-  *60 minutes*, with $+5$ for every correct answer and $-1$ for every incorrect answer. The Accountancy paper (subject code 301)
-  maps strictly to NCERT Class 12, and Unit V closes the syllabus by turning the
-  statements you learned to build into tools that judge a company's health.
+  *CUET UG Exam Blueprint:* Unit V carries 8–12 questions (40–60 marks) in the CUET UG Accountancy exam. High-yield focal points include: (1) Schedule III heads and sub-heads (e.g., Loose Tools, Calls-in-Advance, Premium on Redemption), (2) Master identity: Operating Ratio + Operating Profit Ratio = 100%, (3) Effect of transactions on Current Ratio and Debt-Equity Ratio, (4) Treatment of Proposed Dividend and Provision for Tax in Cash Flow Statements, and (5) Classification of Bank Overdraft / Cash Credit as a Financing Activity under AS-3.
 ]
 
-= Financial Statements of a Company: The Report Card
+#pagebreak()
 
-A company's financial statements are its yearly report card. One document — the
-Balance Sheet — shows the position *on a given date*: what the company owns and
-what it owes. The other — the Statement of Profit and Loss — shows the
-*performance of the year*: what the company earned and what it spent. And the
-Companies Act prescribes the shape of both, so that every analyst reads every
-company in the same language.
+// PAGE 3: FINANCIAL STATEMENTS UNDER SCHEDULE III
+= 1. Financial Statements of a Company: Schedule III Architecture
 
-- *Prescribed form:* *Schedule III* of the Companies Act, 2013 fixes the major
-  headings and sub-headings of both statements, in a *vertical* layout.
-- *Why a fixed form matters:* every company files under the same headings, so
-  comparison — the heart of this unit — becomes possible at all.
-- *Two statements, two jobs:* the Balance Sheet answers "where do things stand?",
-  the Statement of P&L answers "how did the year go?".
-- *Notes to accounts:* the fine print under each heading; the statements often
-  simply say "see Note 7".
+Under Section 129(1) of the Companies Act, 2013, financial statements must give a true and fair view of the state of affairs and comply with Accounting Standards and Schedule III.
 
-== The vertical Balance Sheet: major headings
+== Structure of the Balance Sheet (Schedule III Part I)
+The Balance Sheet follows a strict vertical format with two principal divisions:
+1. *Division I: Equity and Liabilities:*
+  - *Shareholders' Funds:* (a) Share Capital (Authorised, Issued, Subscribed), (b) Reserves and Surplus (Capital Reserve, Securities Premium, General Reserve, Surplus i.e., Balance in Statement of P&L), (c) Money received against share warrants.
+  - *Share Application Money Pending Allotment:* Shown as a separate major head.
+  - *Non-Current Liabilities:* (a) Long-term borrowings (Debentures, Bonds, Term Loans), (b) Deferred tax liabilities (Net), (c) Other long-term liabilities (Premium on redemption of debentures/preference shares), (d) Long-term provisions (Gratuity, Leave encashment).
+  - *Current Liabilities:* (a) Short-term borrowings (Bank Overdraft, Cash Credit, Short-term loans), (b) Trade payables (Sundry Creditors, Bills Payable), (c) Other current liabilities (Current maturities of long-term debt, Interest accrued, Unpaid dividend, Calls-in-Advance), (d) Short-term provisions (Provision for Tax).
+2. *Division II: Assets:*
+  - *Non-Current Assets:* (a) Property, Plant & Equipment and Intangible Assets (Plant, Land, Goodwill, Patents, Software), (b) Non-current investments, (c) Deferred tax assets (Net), (d) Long-term loans and advances.
+  - *Current Assets:* (a) Current investments (Marketable securities), (b) Inventories (Raw materials, WIP, Finished goods, Stock-in-trade, Loose tools, Stores & spares), (c) Trade receivables (Debtors, Bills Receivable), (d) Cash and cash equivalents (Cash in hand, Bank balance, Cheques/drafts on hand), (e) Short-term loans and advances, (f) Other current assets (Prepaid expenses, Accrued income).
 
-- *Equity and Liabilities:* (1) *Shareholders' funds* — share capital, reserves
-  and surplus; (2) *Non-current liabilities* — long-term borrowings, long-term
-  provisions; (3) *Current liabilities* — trade payables, other current
-  liabilities, short-term provisions.
-- *Assets:* (1) *Non-current assets* — property, plant and equipment,
-  intangible assets, non-current investments, long-term loans; (2) *Current
-  assets* — inventories, trade receivables, cash and cash equivalents.
-- *Non-current means lasting:* assets to be held, and liabilities to be
-  settled, beyond *twelve months* from the reporting date.
-- *Current means turning:* items that convert to cash, or fall due, *within*
-  twelve months — the liquidity zone this unit keeps returning to.
+== Structure of the Statement of Profit and Loss (Schedule III Part II)
+```text
+I.   Revenue from Operations (Gross Sales less Returns/Excise)
+II.  Other Income (Interest/Dividend received, Gain on sale of assets)
+III. Total Revenue (I + II)
+IV.  Expenses:
+     - Cost of Materials Consumed | Purchases of Stock-in-Trade
+     - Changes in Inventories of Finished Goods, WIP and Stock-in-Trade
+     - Employee Benefit Expenses (Salaries, Wages, PF contribution)
+     - Finance Costs (Interest on borrowings, Bank charges)
+     - Depreciation and Amortisation Expenses | Other Expenses
+V.   Profit Before Tax (III - IV)
+VI.  Tax Expense (Current Tax + Deferred Tax)
+VII. Profit After Tax (V - VI)
+```
 
-== A small company example, in the prescribed form
+#pagebreak()
 
+// PAGE 4: TOOLS OF FINANCIAL ANALYSIS
+= 2. Tools of Financial Statement Analysis
+
+Financial statement analysis is the critical evaluation of financial statements to assess the operating performance, profitability, solvency, and growth potential of an enterprise.
+
+== Comparative Statements (Horizontal / Dynamic Analysis)
+Comparative statements review two or more successive accounting periods side by side, measuring absolute and relative changes across individual line items.
 #table(
-  columns: (2fr, 1fr),
-  table.header[*Particulars (Nirvaan Ltd, as at 31 March 2025)*][*₹*],
-  [I. Equity and Liabilities], [],
-  [*1. Shareholders' funds*], [*10,00,000*],
-  [(a) Share capital], [8,00,000],
-  [(b) Reserves and surplus], [2,00,000],
-  [*2. Non-current liabilities*], [*3,50,000*],
-  [(a) Long-term borrowings], [3,00,000],
-  [(b) Long-term provisions], [50,000],
-  [*3. Current liabilities*], [*2,30,000*],
-  [(a) Trade payables], [1,60,000],
-  [(b) Other current liabilities], [40,000],
-  [(c) Short-term provisions], [30,000],
-  [*Total equity and liabilities*], [*15,80,000*],
-  [II. Assets], [],
-  [*1. Non-current assets*], [*9,00,000*],
-  [(a) Property, plant and equipment (tangible)], [7,00,000],
-  [(b) Other intangible assets], [50,000],
-  [(c) Non-current investments], [1,50,000],
-  [*2. Current assets*], [*6,80,000*],
-  [(a) Inventories], [2,80,000],
-  [(b) Trade receivables], [2,20,000],
-  [(c) Cash and cash equivalents], [1,30,000],
-  [(d) Short-term loans and advances], [50,000],
-  [*Total assets*], [*15,80,000*],
+  inset: 4.5pt,
+  columns: (1.5fr, 0.9fr, 0.9fr, 1.1fr, 1.1fr),
+  table.header[*Particulars*][*Previous Year (A)*][*Current Year (B)*][*Absolute Change (C = B − A)*][*% Change (D = C/A × 100)*],
+  [Revenue from Operations], [10,00,000], [12,50,000], [+2,50,000], [+25.00%],
+  [Cost of Materials Consumed], [5,00,000], [6,00,000], [+1,00,000], [+20.00%],
+  [Other Expenses], [1,00,000], [1,50,000], [+50,000], [+50.00%],
+  [Total Expenses], [6,00,000], [7,50,000], [+1,50,000], [+25.00%],
+  [Profit Before Tax (PBT)], [4,00,000], [5,00,000], [+1,00,000], [+25.00%],
+  [Tax Expense @ 30%], [1,20,000], [1,50,000], [+30,000], [+25.00%],
+  [Profit After Tax (PAT)], [2,80,000], [3,50,000], [+70,000], [+25.00%],
 )
 
-Check the two totals: 10,00,000 + 3,50,000 + 2,30,000 = 15,80,000, and
-9,00,000 + 6,80,000 = 15,80,000 — the two sides always agree, because they are
-two views of the same money.
+== Common-Size Statements (Vertical / Static Analysis)
+Common-size statements convert each individual figure into a percentage of a common base, enabling direct cross-firm and intra-firm comparisons.
+- *Common-Size Balance Sheet:* The base (100%) is strictly *Total Assets* (or *Total Equity & Liabilities*). Each asset is expressed as $ ("Asset Value" / "Total Assets") times 100 $.
+- *Common-Size Income Statement:* The base (100%) is strictly *Revenue from Operations* (Net Sales). Each revenue and expense line is expressed as $ ("Item Amount" / "Revenue from Operations") times 100 $.
 
-== The Statement of Profit and Loss: major headings
-
-#table(
-  columns: (2fr, 1fr),
-  table.header[*Particulars (Nirvaan Ltd, year ended 31 March 2025)*][*₹*],
-  [I. Revenue from operations], [7,50,000],
-  [II. Other income], [60,000],
-  [III. Total income (I + II)], [8,10,000],
-  [IV. Expenses:], [],
-  [(a) Cost of materials consumed], [3,00,000],
-  [(b) Employee benefit expenses], [1,50,000],
-  [(c) Finance costs], [20,000],
-  [(d) Depreciation and amortisation], [66,000],
-  [(e) Other expenses], [84,000],
-  [Total expenses (IV)], [6,20,000],
-  [V. Profit before tax (III − IV)], [1,90,000],
-  [VI. Tax expense], [57,000],
-  [VII. Profit for the year (V − VI)], [1,33,000],
-)
-
-- *Depreciation and amortisation:* the year's writing-down of tangible assets
-  (depreciation) and of intangible assets such as patents (amortisation).
-- *Finance costs:* interest and similar charges on borrowings — they sit here,
-  inside expenses, before profit is found.
-- *Profit before tax → tax → profit for the year:* the three-line finish that
-  every question in this unit builds on.
-
-= Financial Analysis: Reading Between the Lines
-
-Two students score 80. One rose from 60, the other slipped from 95. The same
-number tells opposite stories. Statements behave the same way: ₹1,33,000 profit
-means little until you ask — compared to what? *Financial analysis* is the
-discipline of reading the figures *with their context* so that they start
-giving judgements, not just amounts.
-
-- *Meaning:* financial analysis means systematically examining the figures in
-  the financial statements to judge profitability, efficiency and solvency.
-- *It turns data into judgements:* a statement *reports*; analysis *concludes*.
-- *It is comparison, always:* against past years, other firms, or a benchmark.
-
-== Why it matters: significance and purpose
-
-- *Profitability picture:* shows whether the business earns enough on its sales
-  and on the money employed in it.
-- *Short-term solvency:* can the firm pay the dues arriving in the next twelve
-  months — suppliers, taxes, bills?
-- *Long-term solvency:* can it carry its loans and their interest for years
-  without strain?
-- *Operating efficiency:* how hard the assets work — how fast stock sells,
-  how quickly customers pay.
-- *Makes comparison possible:* percentage tools even allow firms of *different
-  sizes* to be compared fairly.
-- *Simplifies figures:* one well-chosen ratio can summarise pages of numbers.
-
-*The purpose*, in one line: to give every user the specific answer they need
-for a *decision*. Analysis also *diagnoses* — it locates the weak spots: rising
-costs, slow collections, heavy debt — and helps *forecast*, because past
-trends are the raw material for sensible estimates.
-
-#table(
-  columns: (1fr, 1.7fr),
-  table.header[*User of the statements*][*The question analysis answers for them*],
-  [Management], [Where are we weak — costs, collections, debt? What must change next year?],
-  [Investors], [Is the profit healthy, and the firm safe enough to buy into?],
-  [Banks and lenders], [Can the firm repay on time and carry its interest bill?],
-  [Employees], [Is the firm stable enough for wages, bonuses and careers?],
-  [Government], [Is the firm paying its dues and following the rules?],
-)
-
-== What analysis cannot do: the limitations
-
-#table(
-  columns: (1.2fr, 2fr),
-  table.header[*Limitation*][*Why it matters*],
-  [Based on past data], [Statements describe last year. They cannot promise anything about next year.],
-  [Window dressing], [Books can be dressed up before closing day, so figures may look better than reality.],
-  [Ignores price changes], [₹1,00,000 in two different years is not the same purchasing power, but the statements treat it as one.],
-  [Ignores qualitative facts], [Staff quality, brand image and management skill never appear in the numbers.],
-  [One year misleads], [A single year's figures, without comparison, support almost no judgement at all.],
-  [Different policies], [Two firms may value stock differently — their ratios then differ without any real difference in business.],
-)
-
-#analogy-box(title: "Everyday Example — The Medical Check-up")[
-  A blood test report is a page of numbers; the *doctor* turns it into a
-  diagnosis by reading the readings *together* and *against past reports*.
-  Financial analysis is that doctor: the statements are the test reports, ratios
-  are the readings (blood pressure, sugar level), and no single reading means
-  much alone. And exactly like a check-up, the report describes *today* — it is
-  evidence, not a guarantee about the future.
+#caution-box(title: "CUET High-Frequency Base Trap")[
+  In a Common-Size Income Statement, *Other Income* and *Total Revenue* are NEVER used as the base! The base is ALWAYS *Revenue from Operations (Net Sales)*.
 ]
 
-= Comparative Statements: This Year vs Last Year
+#pagebreak()
 
-A scorecard that shows only this over's runs tells you very little. You want
-last over's total next to it, and the difference. A *comparative statement*
-gives the financial statements exactly that treatment: two years are placed
-side by side, the rupee change is computed, and — the important step — the
-change is also expressed as a *percentage* of the earlier year. Rupee changes
-ignore size; percentage changes make years truly comparable.
-
-- *Two standard forms:* the *comparative income statement* (how the profit
-  trend moved) and the *comparative balance sheet* (how the position moved).
-- *Four columns, always:* previous-year figure, current-year figure, absolute
-  change, % change.
-- *The base is sacred:* every % is computed on the *previous year's* figure —
-  never on the current year, never on the bigger number.
-
-#formula-box(title: "The Two Computations of Every Row")[
-  $ "Absolute change" = "Current-year figure" - "Previous-year figure" $
-  $ "% change" = "Absolute change" / "Previous-year figure" times 100 $
-]
-
-== The format
-
-#table(
-  columns: (2.1fr, 1fr, 1fr, 1.15fr, 1fr),
-  table.header[*Particulars*][*2024 (₹)*][*2025 (₹)*][*Absolute change (₹)*][*% change*],
-  [I. Revenue from operations], [x], [x], [x], [x],
-  [II. Other income], [x], [x], [x], [x],
-  [III. Total income (I + II)], [x], [x], [x], [x],
-  [IV. Expenses:], [], [], [], [],
-  [— individual expense lines], [x], [x], [x], [x],
-  [Total expenses], [x], [x], [x], [x],
-  [V. Profit before tax (III − IV)], [x], [x], [x], [x],
-  [VI. Tax expense], [x], [x], [x], [x],
-  [VII. Profit after tax (V − VI)], [x], [x], [x], [x],
+// PAGE 5: FIGURE 1 & LIMITATIONS
+#figure(
+  image("assets/acc_analysis_tools_and_comparative.png", width: 84%),
+  caption: [Financial Statement Architecture: Schedule III structure, comparative analysis, and common-size vertical models.],
 )
 
-== Worked example — Nirvaan Ltd, fully computed
+= 3. Significance & Limitations of Financial Statement Analysis
 
-Take the 2025 Statement of P&L from the format section and put 2024 beside it.
-Every change and every percentage below is computed row by row — check any one
-of them: % change = absolute change ÷ *2024* figure × 100.
+While financial statement analysis serves shareholders, creditors, debenture-holders, and management in evaluating solvency and performance, it is subject to severe inherent constraints:
+1. *Historical Cost Limitation:* Financial statements reflect past historical transactions. They completely ignore the effects of price-level changes, inflation, and purchasing power erosion.
+2. *Exclusion of Qualitative Elements:* Financial statements capture only events measurable in monetary units. Crucial non-monetary assets—such as management competence, employee technical skills, labor harmony, and brand reputation—are omitted.
+3. *Vulnerability to Window Dressing:* Management may disguise true financial standing through aggressive year-end maneuvers (e.g., holding books open, postponing repairs, recording premature credit sales) to artificially flatter Current or Solvency Ratios.
+4. *Subjectivity and Divergent Accounting Policies:* Different depreciation methods (Straight-Line vs Written Down Value) and inventory valuation methods (FIFO vs Weighted Average) impair inter-firm comparability.
+5. *Static Nature of Year-End Figures:* A balance sheet represents a snapshot of a single date, which may not reflect typical operating conditions during the year.
 
-#table(
-  columns: (2.1fr, 0.95fr, 0.95fr, 1.1fr, 0.95fr),
-  table.header[*Particulars*][*2024 (₹)*][*2025 (₹)*][*Absolute change (₹)*][*% change*],
-  [I. Revenue from operations], [6,00,000], [7,50,000], [+1,50,000], [+25.00],
-  [II. Other income], [40,000], [60,000], [+20,000], [+50.00],
-  [III. Total income (I + II)], [6,40,000], [8,10,000], [+1,70,000], [+26.56],
-  [IV. Expenses:], [], [], [], [],
-  [(a) Cost of materials consumed], [2,40,000], [3,00,000], [+60,000], [+25.00],
-  [(b) Employee benefit expenses], [1,20,000], [1,50,000], [+30,000], [+25.00],
-  [(c) Finance costs], [15,000], [20,000], [+5,000], [+33.33],
-  [(d) Depreciation and amortisation], [60,000], [66,000], [+6,000], [+10.00],
-  [(e) Other expenses], [65,000], [84,000], [+19,000], [+29.23],
-  [Total expenses], [5,00,000], [6,20,000], [+1,20,000], [+24.00],
-  [V. Profit before tax (III − IV)], [1,40,000], [1,90,000], [+50,000], [+35.71],
-  [VI. Tax expense], [42,000], [57,000], [+15,000], [+35.71],
-  [VII. Profit after tax (V − VI)], [98,000], [1,33,000], [+35,000], [+35.71],
+#pagebreak()
+
+// PAGE 6: ACCOUNTING RATIOS I — LIQUIDITY & SOLVENCY
+= 4. Accounting Ratios I: Liquidity & Solvency Ratios
+
+An accounting ratio is a mathematical expression of the relationship between two interrelated accounting figures taken from the financial statements.
+
+== Liquidity Ratios (Short-Term Solvency)
+Liquidity ratios measure the enterprise's ability to satisfy its immediate short-term obligations as they fall due.
+1. *Current Ratio (Working Capital Ratio):*
+  $ "Current Ratio" = "Current Assets" / "Current Liabilities" quad quad ["Ideal Benchmark: " 2 : 1] $
+  - *Current Assets (CA):* Current Investments + Inventories (excluding Loose Tools and Stores & Spares) + Trade Receivables (less Provision for Doubtful Debts) + Cash & Cash Equivalents + Short-Term Loans & Advances + Other Current Assets.
+  - *Current Liabilities (CL):* Short-Term Borrowings + Trade Payables + Other Current Liabilities + Short-Term Provisions.
+2. *Quick Ratio (Acid-Test / Liquid Ratio):*
+  $ "Quick Ratio" = "Quick Assets" / "Current Liabilities" quad quad ["Ideal Benchmark: " 1 : 1] $
+  $ "Quick Assets" = "Current Assets" - "Inventories" - "Prepaid Expenses" $
+
+== Solvency Ratios (Long-Term Solvency & Leverage)
+Solvency ratios assess the firm's ability to service long-term debt and repay principal on maturity.
+1. *Debt-Equity Ratio:*
+  $ "Debt-Equity Ratio" = "Long-Term Debt" / "Shareholders' Funds" quad quad ["Ideal Benchmark: " 2 : 1] $
+  - *Long-Term Debt:* Long-Term Borrowings + Long-Term Provisions (excludes Current Liabilities).
+  - *Shareholders' Funds:* Equity Share Capital + Preference Share Capital + Reserves & Surplus − Fictitious Assets.
+2. *Total Assets to Debt Ratio:*
+  $ "Total Assets to Debt Ratio" = "Total Assets" / "Long-Term Debt" $
+3. *Proprietary Ratio:*
+  $ "Proprietary Ratio" = "Shareholders' Funds" / "Total Assets" quad quad ["Indicates proportion of assets funded by owners"] $
+4. *Interest Coverage Ratio (Times):*
+  $ "Interest Coverage Ratio" = "Net Profit Before Interest and Tax (EBIT)" / "Fixed Interest Charges" $
+
+#pagebreak()
+
+// PAGE 7: ACCOUNTING RATIOS II — ACTIVITY / TURNOVER
+= 5. Accounting Ratios II: Activity / Turnover Ratios
+
+Activity ratios measure the operational velocity and efficiency with which an enterprise employs its assets to generate revenue.
+
+== Key Activity / Turnover Ratios & Formulas
+1. *Inventory Turnover Ratio (ITR):*
+  $ "Inventory Turnover Ratio" = "Cost of Revenue from Operations (COGS)" / "Average Inventory" quad ["Expressed in Times"] $
+  $ "Cost of Revenue from Operations" = "Revenue from Operations" - "Gross Profit" $
+  $ "COGS" = "Opening Inventory" + "Net Purchases" + "Direct Expenses" - "Closing Inventory" $
+  $ "Average Inventory" = ("Opening Inventory" + "Closing Inventory") / 2 $
+  $ "Average Age of Inventory" = (365 " days" " or " 12 " months") / "Inventory Turnover Ratio" $
+
+2. *Trade Receivables Turnover Ratio (TRTR):*
+  $ "Trade Receivables Turnover Ratio" = "Net Credit Revenue from Operations" / "Average Trade Receivables" $
+  $ "Average Trade Receivables" = ("Opening Debtors & B/R" + "Closing Debtors & B/R") / 2 quad ["Before deducting Provision"] $
+  $ "Debt Collection Period" = (365 " days" " or " 12 " months") / "Trade Receivables Turnover Ratio" $
+
+3. *Trade Payables Turnover Ratio (TPTR):*
+  $ "Trade Payables Turnover Ratio" = "Net Credit Purchases" / "Average Trade Payables (Creditors & B/P)" $
+  $ "Average Payment Period" = (365 " days" " or " 12 " months") / "Trade Payables Turnover Ratio" $
+
+4. *Working Capital Turnover Ratio:*
+  $ "Working Capital Turnover Ratio" = "Revenue from Operations" / "Working Capital (Current Assets - Current Liabilities)" $
+
+#worked-example("Turnover & Collection Period Computation")[
+  *Data:* Credit Revenue from Operations: ₹12,00,000; Cash Revenue: ₹3,00,000; Closing Debtors: ₹1,60,000; Excess of Closing Debtors over Opening Debtors: ₹40,000; Provision for Doubtful Debts: ₹10,000.
+  - *Opening Debtors:* $₹1,60,000 - ₹40,000 = ₹1,20,000$.
+  - *Average Debtors:* $(₹1,20,000 + ₹1,60,000) / 2 = bold("₹1,40,000")$ (Provision is ignored!).
+  - *Trade Receivables Turnover:* $₹12,00,000 / ₹1,40,000 = bold("8.57 times")$.
+  - *Collection Period:* $365 / 8.57 = bold("42.59 days")$.
+]
+
+#pagebreak()
+
+// PAGE 8: ACCOUNTING RATIOS III — PROFITABILITY & RETURNS
+= 6. Accounting Ratios III: Profitability Ratios & Returns
+
+Profitability ratios measure the operational efficiency and overall earning power of the business relative to revenue and capital employed.
+
+== Margin and Return Ratios
+1. *Gross Profit Ratio:* $ ("Gross Profit" / "Net Revenue from Operations") times 100 $
+2. *Operating Ratio (Cost Ratio):* $ [ ("Cost of Revenue from Operations" + "Operating Expenses") / "Net Revenue from Operations" ] times 100 $
+  - *Operating Expenses:* Employee benefits + Depreciation/Amortisation + Admin & Selling expenses (excludes Finance costs and Tax).
+3. *Operating Profit Ratio:* $ ("Operating Profit" / "Net Revenue from Operations") times 100 $
+  $ "Operating Profit" = "Net Revenue from Operations" - "Operating Cost (COGS + Operating Expenses)" $
+
+#important-box(title: "The Golden Accounting Identity: Operating Ratio vs Operating Profit Ratio")[
+  Because Total Revenue comprises Operating Cost and Operating Profit:
+  $ bold("Operating Ratio" + "Operating Profit Ratio" = 100%) $ (e.g., Operating Ratio 76% implies Operating Profit Ratio 24%).
+]
+
+4. *Net Profit Ratio:* $ ("Net Profit After Tax" / "Net Revenue from Operations") times 100 $
+5. *Return on Investment (ROI) / Return on Capital Employed (ROCE):*
+  $ "ROI" = ("Net Profit Before Interest, Tax and Dividends (EBIT)" / "Capital Employed") times 100 $
+  - *Capital Employed:* Shareholders' Funds + Long-Term Debt (or Non-Current Assets + Working Capital).
+
+== Impact of Common Transactions on Ratios
+- *Current Ratio (Base 2 : 1):* Paying Creditors in cash *improves* CR; Credit purchase of goods *decreases* CR; Cash from Debtors causes *no change*.
+- *Debt-Equity Ratio (Base 2 : 1):* Issue of Equity Shares *decreases* D/E; Issue of Debentures *increases* D/E; Debenture conversion to equity *decreases* D/E.
+
+#pagebreak()
+
+// PAGE 9: FIGURE 2 & CASH FLOW FUNDAMENTALS
+#figure(
+  image("assets/acc_analysis_ratios_matrix.png", width: 84%),
+  caption: [Master Accounting Ratios Matrix: Formulas, benchmarks, and interpretation across the four ratio families.],
 )
 
-Reading the statement like an analyst:
+= 7. Cash Flow Statement (AS-3 Revised): Core Concepts
 
-- *Sales rose 25%,* but profit rose 35.71% — because total expenses grew only
-  24%. Growth with falling relative cost is a healthy signature.
-- *Finance costs grew fastest* (+33.33%): a small head, but its trend deserves
-  attention — it is the price of carrying debt.
-- *Total income grew 26.56%,* slower than other income's 50% — one head can
-  move sharply without moving the total much.
-- *One warning before you compute:* the current-year figure never sits in the
-  denominator, and a *negative base* (a profit turning into a loss) makes the
-  % meaningless — state that reversal in words instead of computing it.
+A Cash Flow Statement reports historical changes in cash and cash equivalents of an enterprise during a specified financial period, classified into Operating, Investing, and Financing activities.
 
-= Common-Size Statements: Everything as a Slice
+== Definition of Cash and Cash Equivalents
+- *Cash:* Comprises cash in hand and demand deposits with banks.
+- *Cash Equivalents:* Short-term, highly liquid investments that are readily convertible to known amounts of cash and subject to an insignificant risk of changes in value (maturity period of *three months (90 days) or less* from the date of acquisition, e.g., Treasury Bills, Commercial Papers).
 
-How do you compare a food cart with a restaurant chain? Their rupee columns are
-in different leagues — but *slices* work for both. Say "rent ate 8% of sales"
-and suddenly the cart and the chain are on one page. A *common-size statement*
-restates every item as a percentage of a common base: *revenue from operations*
-for the income statement, and the *total of the balance sheet* for the balance
-sheet. Each column totals 100, and size stops mattering.
-
-- *One base per statement:* revenue from operations (income statement) or the
-  balance-sheet total (balance sheet) — every other item is divided by it.
-- *Read vertically:* which head eats the biggest slice of sales? Which slice
-  shrank?
-- *Best tool for cross-firm comparison:* two firms of very different sizes can
-  be laid over each other once both are in percentages.
-
-#formula-box(title: "One Division, Repeated Down the Column")[
-  $ "Each item (%)" = "Item amount" / "Base figure" times 100 $
-  $ "Base (income statement)" = "Revenue from operations" $
-  $ "Base (balance sheet)" = "Total of the balance sheet" $
+#caution-box(title: "CUET Traps: Items EXCLUDED from Cash Equivalents")[
+  1. *Bank Overdraft and Cash Credit:* Under AS-3, bank overdrafts and cash credit facilities are repayable on demand and form an integral part of *Financing Activities* (NOT cash equivalents!).
+  2. *Marketable Securities with Maturity > 3 Months:* Treated as Current Investments, not cash equivalents.
+  3. *Movements between Cash & Cash Equivalents:* Cash deposited into bank, cash withdrawn from bank, or purchase of Treasury bills represent *management of cash*, NOT cash flows!
 ]
 
-== The format
+#pagebreak()
 
-#table(
-  columns: (2.1fr, 1fr, 1.3fr),
-  table.header[*Particulars*][*Absolute (₹)*][*% of revenue from operations*],
-  [I. Revenue from operations], [x], [100.00],
-  [II. Other income], [x], [x],
-  [III. Total income (I + II)], [x], [x],
-  [IV. Expenses (each line + total)], [x], [x],
-  [V. Profit before tax (III − IV)], [x], [x],
-  [VI. Tax expense], [x], [x],
-  [VII. Profit after tax (V − VI)], [x], [x],
-)
+// PAGE 10: INDIRECT METHOD MECHANICS
+= 8. Cash Flow Statement: Indirect Method Mechanics
 
-== Worked example — Nirvaan Ltd, 2025, fully computed
+Under AS-3 (Revised), the Indirect Method reconciles Net Profit/Loss to Net Cash from Operating Activities by adjusting for non-cash and non-operating transactions.
 
-Divide each 2025 figure by revenue from operations of ₹7,50,000 and multiply
-by 100. Note how the slices add up: the expense slices total 82.67%, and
-108.00 − 82.67 = 25.33, the profit-before-tax slice.
+== Step 1: Net Profit Before Tax and Extraordinary Items (NPBT)
+```text
+  Closing Balance of Surplus (Balance in Statement of P&L)
+Less: Opening Balance of Surplus
+Add:  Transfer to General Reserve / Other Reserves during the year
+Add:  Proposed Dividend for the PREVIOUS YEAR (declared & paid in current year)
+Add:  Interim Dividend paid during the current year
+Add:  Provision for Tax made during the current year
+Less: Extraordinary Incomes (e.g., Insurance claims credited to P&L)
+Less: Refund of Income Tax received
+= Net Profit Before Tax and Extraordinary Items
+```
 
-#table(
-  columns: (2.1fr, 1fr, 1.3fr),
-  table.header[*Particulars*][*2025 (₹)*][*% of revenue from operations*],
-  [I. Revenue from operations], [7,50,000], [100.00],
-  [II. Other income], [60,000], [8.00],
-  [III. Total income (I + II)], [8,10,000], [108.00],
-  [(a) Cost of materials consumed], [3,00,000], [40.00],
-  [(b) Employee benefit expenses], [1,50,000], [20.00],
-  [(c) Finance costs], [20,000], [2.67],
-  [(d) Depreciation and amortisation], [66,000], [8.80],
-  [(e) Other expenses], [84,000], [11.20],
-  [Total expenses], [6,20,000], [82.67],
-  [V. Profit before tax (III − IV)], [1,90,000], [25.33],
-  [VI. Tax expense], [57,000], [7.60],
-  [VII. Profit after tax (V − VI)], [1,33,000], [17.73],
-)
+== Step 2: Operating Activities Adjustments
+- *Add Non-Cash / Non-Operating Expenses:* Depreciation on Fixed Assets, Amortisation of Goodwill/Patents, Loss on Sale of Fixed Assets/Investments, Interest on Borrowings/Debentures.
+- *Less Non-Operating Incomes:* Interest Income, Dividend Income, Rental Income, Profit on Sale of Fixed Assets.
+- *= Operating Profit Before Working Capital Changes.*
+- *Working Capital Adjustments:*
+  - Add: Decrease in Current Assets (except Cash & Cash Eq) & Increase in Current Liabilities (except Bank OD/Short-term loans).
+  - Less: Increase in Current Assets & Decrease in Current Liabilities.
+- *= Cash Generated from Operations.*
+- *Less: Income Tax Paid (Net of refund).*
+- *= Net Cash Flow from Operating Activities (A).*
 
-Spot the story in the slices: materials take 40 paise of every rupee of sales,
-people take 20 paise, and 17.73 paise survive as profit after tax. If next
-year's materials slice creeps to 43%, the statement flags it instantly — no
-rupee column needed.
+== Step 3: Investing and Financing Activities
+- *Investing Activities (B):*
+  - Inflows: Sale of Fixed Assets, Sale of Non-Current Investments, Interest & Dividend Received (for non-financial enterprises).
+  - Outflows: Purchase of Fixed Assets (Tangible/Intangible), Purchase of Non-Current Investments.
+- *Financing Activities (C):*
+  - Inflows: Proceeds from issue of shares/debentures, Long-Term/Short-Term Borrowings taken, Increase in Bank Overdraft/Cash Credit.
+  - Outflows: Redemption of Debentures/Preference Shares, Repayment of Loans, Decrease in Bank Overdraft, Payment of Interim/Final Dividend, Payment of Interest on Borrowings.
 
-== The whole point: two firms, one table
+#pagebreak()
 
-Lay a small firm beside a large one — Micro Ltd, revenue ₹2,00,000 with total
-expenses of ₹1,60,000 (80%) and profit after tax of ₹28,000 (14%); Mega Ltd,
-revenue ₹20,00,000 with total expenses of ₹17,00,000 (85%) and profit after tax
-of ₹2,10,000 (10.5%). Mega is *ten times bigger* in rupees, yet Micro keeps the
-fatter slice: 14 paise of profit per rupee of sales against Mega's 10.5. Rupee
-columns would bury that comparison; percentages surface it in one line.
+// PAGE 11: MASTER WORKED PROBLEM 1 — CASH FLOW STATEMENT
+= 9. Comprehensive Master Worked Problems
 
-= Accounting Ratios: One Number, One Story
+#worked-example("Master Problem 1 — Comprehensive Cash Flow Statement (AS-3 Revised)")[
+  From the following Balance Sheets of Sunrise Ltd, prepare a Cash Flow Statement:
 
-A run rate turns 42 runs in 48 balls into one number anyone can judge. An
-accounting ratio does the same for financial statements: it divides one figure
-by another so the pair collapses into a single, judgeable number. Ratios are
-the workhorses of financial analysis — each one answers one small question, and
-together they form the health check this unit has been building towards.
-
-- *Meaning:* a ratio is a mathematical relation between two figures — a part
-  over a whole, or a year's flow over the balance that carried it.
-- *Objectives:* simplify pages of data, judge profitability and solvency,
-  compare across years and firms, and locate trends worth investigating.
-- *Four families:* *Liquidity* (can we pay the near dues?), *Solvency* (can we
-  carry the long-term debt?), *Activity* (how fast do assets turn into sales?),
-  *Profitability* (is each rupee of sales profitable?).
-
-== The figures every ratio below reuses
-
-To keep the arithmetic clean, one small company — *Steady Ltd* — supplies every
-number in this section. Its figures are chosen so that each division lands on a
-tidy answer.
-
-#table(
-  columns: (2.5fr, 1.1fr),
-  table.header[*Steady Ltd, 31 March 2025 — figures every ratio reuses*][*₹*],
-  [Current assets — inventory 1,40,000 + trade receivables 1,00,000 + cash 40,000 + prepaid expenses 20,000], [3,00,000],
-  [Current liabilities], [1,00,000],
-  [Shareholders' funds · long-term borrowings · total assets], [6,00,000 · 3,00,000 · 10,00,000],
-  [Revenue from operations (net credit portion 4,50,000) · cost of revenue], [8,00,000 · 6,00,000],
-  [Operating expenses · finance costs (interest on borrowings)], [80,000 · 20,000],
-  [Net profit before tax · tax @ 30% · net profit after tax], [1,00,000 · 30,000 · 70,000],
-  [Inventory: opening → closing], [1,00,000 → 1,40,000],
-  [Trade receivables: opening → closing], [80,000 → 1,00,000],
-  [Trade payables: opening → closing], [40,000 → 60,000],
-  [Net credit purchases], [3,00,000],
-)
-
-== Liquidity ratios: can we pay this year's dues?
-
-- *The question:* are current assets enough to cover current liabilities?
-- *Two ratios answer it:* the *current ratio* counts everything; the *quick
-  ratio* removes the slow-moving parts.
-- *Quick assets:* current assets − inventory − prepaid expenses. Inventory must
-  first be *sold*, and prepayments cannot be cashed in — both are excluded.
-- *Benchmarks:* 2:1 and 1:1 are the commonly quoted ideals — read them with the
-  trend, not as pass-fail marks.
-
-#formula-box(title: "Liquidity Ratios")[
-  $ "Current ratio" = "Current assets" / "Current liabilities" $
-  $ "Quick assets" = "Current assets" - "Inventory" - "Prepaid expenses" $
-  $ "Quick ratio" = "Quick assets" / "Current liabilities" $
-]
-
-#worked-example("Worked Example — Steady Ltd's Two Liquidity Ratios")[
-  - *Current ratio:* 3,00,000 ÷ 1,00,000 = *3:1* — well above the 2:1 benchmark.
-  - *Quick assets:* 3,00,000 − 1,40,000 − 20,000 = ₹1,40,000.
-  - *Quick ratio:* 1,40,000 ÷ 1,00,000 = *1.4:1* — above the 1:1 benchmark.
-
-  The reading: even without selling a single item of stock or waiting for a
-  single prepayment, Steady can cover its current dues 1.4 times over.
-]
-
-== Solvency ratios: can we carry the long-term debt?
-
-- *The question:* is the debt load safe for *years*, not months?
-- *Owners vs lenders:* these ratios weigh shareholders' funds against
-  long-term borrowings — who really finances the assets?
-- *Interest coverage adds income:* profit before interest and tax, divided by
-  the interest bill, shows how many times over the profit can pay it.
-
-#formula-box(title: "Solvency Ratios")[
-  $ "Debt-Equity ratio" = "Long-term borrowings" / "Shareholders' funds" $
-  $ "Proprietary ratio" = "Shareholders' funds" / "Total assets" $
-  $ "Total assets to debt ratio" = "Total assets" / "Long-term borrowings" $
-  $ "Interest coverage ratio" = "Profit before interest and tax" / "Interest on long-term borrowings" $
-]
-
-#worked-example("Worked Example — Steady Ltd's Four Solvency Ratios")[
-  - *Debt-Equity:* 3,00,000 ÷ 6,00,000 = *0.5:1* — borrowings are half the
-    owners' stake.
-  - *Proprietary ratio:* 6,00,000 ÷ 10,00,000 = *0.6:1* — owners' funds finance
-    60% of the assets.
-  - *Total assets to debt:* 10,00,000 ÷ 3,00,000 = *3.33:1* — assets stand more
-    than three times behind the long-term debt.
-  - *Interest coverage:* profit before interest and tax = 1,00,000 + 20,000 =
-    ₹1,20,000; ratio = 1,20,000 ÷ 20,000 = *6 times* — profit could pay the
-    interest bill six times over.
-]
-
-== Activity (turnover) ratios: how fast do assets become sales?
-
-- *The question:* are stock, receivables and payables *moving* — or sleeping?
-- *Shape of every turnover ratio:* a year's *flow* (cost of revenue, credit
-  sales, credit purchases) over the *balance* that carried it.
-- *Average, not closing:* when opening and closing figures are both given, use
-  their average — the year's flow passed over the balance *all year long*.
-
-#formula-box(title: "Activity Ratios")[
-  $ "Average" = ("Opening" + "Closing") / 2 $
-  $ "Inventory turnover" = "Cost of revenue from operations" / "Average inventory" $
-  $ "Receivables turnover" = "Net credit revenue from operations" / "Average trade receivables" $
-  $ "Receivable days" = 365 / "Receivables turnover" $
-  $ "Payables turnover" = "Net credit purchases" / "Average trade payables" $
-  $ "Working capital turnover" = "Revenue from operations" / "Working capital" $
-]
-
-#worked-example("Worked Example — Steady Ltd Turns Its Assets Over")[
-  - *Inventory turnover:* average inventory = (1,00,000 + 1,40,000) ÷ 2 =
-    ₹1,20,000; ratio = 6,00,000 ÷ 1,20,000 = *5 times* — stock clears in
-    365 ÷ 5 = *73 days*.
-  - *Receivables turnover:* average receivables = (80,000 + 1,00,000) ÷ 2 =
-    ₹90,000; ratio = 4,50,000 ÷ 90,000 = *5 times* — customers pay, on average,
-    in *73 days*.
-  - *Payables turnover:* average payables = (40,000 + 60,000) ÷ 2 = ₹50,000;
-    ratio = 3,00,000 ÷ 50,000 = *6 times*.
-  - *Working capital turnover:* working capital = 3,00,000 − 1,00,000 =
-    ₹2,00,000; ratio = 8,00,000 ÷ 2,00,000 = *4 times* — every rupee of working
-    capital carries ₹4 of annual sales.
-]
-
-== Profitability ratios: is each rupee of sales profitable?
-
-- *Margins, layer by layer:* *gross profit* (after direct cost), *operating
-  profit* (after operating expenses), *net profit* (after everything).
-- *The companion pair:* operating ratio measures the *cost* slice, operating
-  profit ratio the *profit* slice — the two must always add to 100%.
-- *State your profit:* where tax is given, most answers use net profit *after*
-  tax for the NP ratio; say which one you used.
-
-#formula-box(title: "Profitability Ratios")[
-  $ "GP ratio" = "Gross profit" / "Revenue from operations" times 100 $
-  $ "NP ratio" = "Net profit" / "Revenue from operations" times 100 $
-  $ "Operating ratio" = ("Cost of revenue" + "Operating expenses") / "Revenue from operations" times 100 $
-  $ "Operating profit ratio" = "Operating profit" / "Revenue from operations" times 100 $
-]
-
-#worked-example("Worked Example — Steady Ltd's Margins")[
-  - *Gross profit:* 8,00,000 − 6,00,000 = ₹2,00,000 → GP ratio =
-    2,00,000 ÷ 8,00,000 × 100 = *25%*.
-  - *Operating profit:* 2,00,000 − 80,000 = ₹1,20,000 → operating profit ratio
-    = 1,20,000 ÷ 8,00,000 × 100 = *15%*.
-  - *Operating ratio:* (6,00,000 + 80,000) ÷ 8,00,000 × 100 = *85%* — and
-    85% + 15% = 100%, the built-in cross-check.
-  - *NP ratio:* 70,000 ÷ 8,00,000 × 100 = *8.75%* (profit after tax) — the
-    final margin after every cost, tax included.
-]
-
-#figure(image("assets/ratio_map.png", width: 92%), caption: [The ratio family map — four families, every Class 12 ratio and its one-line job.])
-
-= Cash Flow Statement: Where the Cash Actually Went
-
-A firm can report a handsome profit and still fail to pay its electricity bill.
-Profit is measured on paper; cash is counted in the bank — and the two part
-ways the moment depreciation enters, customers buy on credit, or suppliers
-wait to be paid. The *cash flow statement* follows the actual money: it takes
-the opening cash balance, traces every movement of the year, and lands exactly
-on the closing balance shown in the balance sheet.
-
-- *Meaning:* a statement showing the actual inflows and outflows of cash during
-  the year, grouped into three activities.
-- *Objectives:* show the cash story behind the profit, test the firm's ability
-  to generate cash, and reconcile opening cash to closing cash.
-- *The built-in check:* opening cash + net change = closing cash — the balance
-  sheet must agree with the statement, to the rupee.
-
-== The three activities: the whole classification
-
-#table(
-  columns: (0.9fr, 1.5fr, 1.6fr),
-  table.header[*Activity*][*What it covers*][*Examples*],
-  [Operating], [The main revenue-producing activities, plus working-capital changes and tax paid.], [Cash from customers; payments to suppliers and employees; income tax paid.],
-  [Investing], [Buying and selling long-term assets and investments.], [Purchase or sale of machinery, land, investments; interest and dividend *received*.],
-  [Financing], [Changes in owners' capital and in borrowings.], [Shares or debentures issued; loans raised or repaid; interest paid; dividend paid.],
-)
-
-- *One convention, kept simple (revised AS-3, ICAI, as taught at Class 12):*
-  interest and dividend *paid* are *financing* outflows; interest and dividend
-  *received* are *investing* inflows (for a non-financial company).
-- *Tax paid is operating.* It follows the profit the business produced.
-- *Non-cash transactions never appear:* shares issued to buy machinery, bonus
-  shares, conversion of debentures into shares — no cash moved, so no line.
-- *Amortisation travels with depreciation:* both are non-cash write-offs, and
-  both are added back.
-
-== The indirect method, step by step
-
-+ *Start from net profit:* net profit before tax = profit after tax + tax.
-+ *Add back non-cash and non-operating items:* depreciation, amortisation, loss
-  on sale of assets, interest (finance cost).
-+ *Adjust working-capital changes:* an increase in a current asset, or a
-  decrease in a current liability, *uses* cash — subtract it. The reverse adds.
-+ *Deduct income tax paid* → this completes *net cash from operating activities*.
-+ *List the investing and financing flows:* asset sales, share issues and loans
-  add cash; asset purchases, redemptions, interest and dividends subtract it.
-+ *Total the three nets* — the sum must equal closing cash − opening cash. If
-  it does not, hunt for the missed adjustment.
-
-#formula-box(title: "The Two Lines That Close Every Question")[
-  $ "Net change in cash" = "Operating" + "Investing" + "Financing" $
-  $ "Net change in cash" = "Closing cash" - "Opening cash" $
-]
-
-== Worked example — Sarthak Ltd, every line verified
-
-#table(
-  columns: (2.2fr, 1fr, 1fr),
-  table.header[*Particulars*][*31.3.2024 (₹)*][*31.3.2025 (₹)*],
-  [I. Equity and Liabilities], [], [],
-  [*1. Shareholders' funds*], [*6,70,000*], [*8,60,000*],
-  [(a) Share capital], [5,00,000], [6,00,000],
-  [(b) Reserves and surplus], [1,70,000], [2,60,000],
-  [*2. Long-term borrowings*], [*2,00,000*], [*3,00,000*],
-  [*3. Current liabilities*], [*1,30,000*], [*1,20,000*],
-  [(a) Trade payables], [1,10,000], [90,000],
-  [(b) Other current liabilities], [20,000], [30,000],
-  [*Total equity and liabilities*], [*10,00,000*], [*12,80,000*],
-  [II. Assets], [], [],
-  [*1. Non-current assets*], [*7,00,000*], [*8,40,000*],
-  [(a) Machinery], [6,00,000], [7,40,000],
-  [(b) Non-current investments], [1,00,000], [1,00,000],
-  [*2. Current assets*], [*3,00,000*], [*4,40,000*],
-  [(a) Inventories], [1,30,000], [1,60,000],
-  [(b) Trade receivables], [1,20,000], [1,50,000],
-  [(c) Cash and cash equivalents], [50,000], [1,30,000],
-  [*Total assets*], [*10,00,000*], [*12,80,000*],
-)
-
-*Additional information:*
-
-- *Depreciation on machinery* for the year: ₹60,000.
-- *Machinery sold:* costing ₹80,000, written-down value on the date of sale
-  ₹50,000, sold for ₹40,000 — a *loss on sale of ₹10,000*.
-- *Profit for the year:* ₹1,30,000, after tax of ₹50,000, all paid in cash.
-- *Dividend paid* ₹40,000; *interest on borrowings paid* ₹20,000 (the extra
-  ₹1,00,000 was borrowed on 31 March 2025). *Fresh shares issued for cash:*
-  ₹1,00,000.
-- *Reserve check:* 1,70,000 + 1,30,000 − 40,000 = ₹2,60,000 — the reserves and
-  surplus movement ties out with profit minus dividend.
-
-*Old machinery → new machinery:* the purchase figure hides inside the Machinery
-Account. Total the side you know; the balancing figure is the purchase.
-
-#table(
-  columns: (1.6fr, 0.8fr, 1.6fr, 0.8fr),
-  table.header[*Dr. Machinery A/c (at cost)*][*₹*][*Cr. Particulars*][*₹*],
-  [To Balance b/d], [6,00,000], [By Depreciation], [60,000],
-  [To Bank — purchases (balancing figure)], [2,50,000], [By Bank — sale proceeds], [40,000],
-  [], [], [By Statement of P&L — loss on sale], [10,000],
-  [], [], [By Balance c/d], [7,40,000],
-  [], [*8,50,000*], [], [*8,50,000*],
-)
-
-The credit side totals ₹8,50,000, so the debit side must too — and since the
-opening balance is ₹6,00,000, purchases = 8,50,000 − 6,00,000 = *₹2,50,000*.
-
-Now the statement itself:
-
-#table(
-  columns: (2.6fr, 0.9fr, 0.9fr),
-  table.header[*Cash Flow Statement for the year ended 31 March 2025*][*₹*][*₹*],
-  [A. Cash flow from operating activities], [], [],
-  [Net profit before tax (1,30,000 + 50,000)], [], [1,80,000],
-  [Add: Depreciation], [60,000], [],
-  [Add: Loss on sale of machinery], [10,000], [],
-  [Add: Interest on borrowings (finance cost)], [20,000], [],
-  [—], [90,000], [],
-  [Operating profit before working-capital changes], [], [2,70,000],
-  [Less: Increase in inventories], [(30,000)], [],
-  [Less: Increase in trade receivables], [(30,000)], [],
-  [Less: Decrease in trade payables], [(20,000)], [],
-  [Add: Increase in other current liabilities], [10,000], [],
-  [—], [(70,000)], [],
-  [Cash generated from operations], [], [2,00,000],
-  [Less: Income tax paid], [], [(50,000)],
-  [Net cash from operating activities], [], [1,50,000],
-  [B. Cash flow from investing activities], [], [],
-  [Sale of machinery], [40,000], [],
-  [Purchase of machinery], [(2,50,000)], [],
-  [Net cash used in investing activities], [], [(2,10,000)],
-  [C. Cash flow from financing activities], [], [],
-  [Issue of share capital], [1,00,000], [],
-  [Loan raised], [1,00,000], [],
-  [Interest paid], [(20,000)], [],
-  [Dividend paid], [(40,000)], [],
-  [Net cash from financing activities], [], [1,40,000],
-  [Net increase in cash (A + B + C)], [], [80,000],
-  [Add: Cash and cash equivalents — opening], [], [50,000],
-  [Cash and cash equivalents — closing], [], [1,30,000],
-)
-
-Verify the closing line against the balance sheet: 1,50,000 − 2,10,000 +
-1,40,000 = ₹80,000 net change, and 50,000 + 80,000 = *₹1,30,000* — exactly the
-cash figure in the 31 March 2025 balance sheet. Every line holds.
-
-= Ratio & Formula Cheatsheet
-
-#cheatsheet-box(title: "Ratio & Formula Cheatsheet — Unit V")[
   #table(
-    columns: (1.1fr, 1.7fr, 1.35fr),
-    table.header[*Ratio*][*Formula*][*What it tells*],
-    [Current ratio], [Current assets ÷ Current liabilities], [Can the firm pay its dues within a year? (ideal 2:1)],
-    [Quick ratio], [(CA − Inventory − Prepaid) ÷ Current liabilities], [The same test without slow-moving stock (ideal 1:1)],
-    [Debt-Equity ratio], [Long-term borrowings ÷ Shareholders' funds], [How heavily the firm borrows; lower is safer],
-    [Proprietary ratio], [Shareholders' funds ÷ Total assets], [The owners' slice of the assets],
-    [Total assets to debt], [Total assets ÷ Long-term debt], [The asset cushion standing behind the debt],
-    [Interest coverage], [Profit before interest & tax ÷ Interest on long-term debt], [How many times profit can pay the interest bill],
-    [Inventory turnover], [Cost of revenue ÷ Average inventory], [How fast stock sells; days = 365 ÷ ratio],
-    [Receivables turnover], [Net credit revenue ÷ Average trade receivables], [Collection speed; days = 365 ÷ ratio],
-    [Payables turnover], [Net credit purchases ÷ Average trade payables], [How fast the firm pays its suppliers],
-    [Working capital turnover], [Revenue from operations ÷ Working capital], [Sales squeezed from each ₹ of working capital],
-    [GP ratio · NP ratio], [Gross profit ÷ Revenue × 100 · Net profit ÷ Revenue × 100], [The margin before operating costs · the final margin after everything],
-    [Operating · Operating profit ratio], [(Cost of revenue + Op. expenses) ÷ Revenue × 100 · Operating profit ÷ Revenue × 100], [The cost slice · the profit slice — together always 100%],
+    inset: 4pt,
+    columns: (2.2fr, 0.9fr, 0.9fr),
+    table.header[*Particulars*][*31.3.2025 (₹)*][*31.3.2024 (₹)*],
+    [*I. Equity and Liabilities:*], [], [],
+    [1. Shareholders' Funds: Equity Share Capital], [7,00,000], [5,00,000],
+    [#h(1em) Reserves & Surplus (Balance in Statement of P&L)], [3,50,000], [2,00,000],
+    [2. Non-Current Liabilities: 10% Debentures], [2,00,000], [3,00,000],
+    [3. Current Liabilities: Trade Payables], [1,20,000], [80,000],
+    [#h(1em) Provision for Tax], [50,000], [40,000],
+    [*Total*], [*14,20,000*], [*11,20,000*],
+    [*II. Assets:*], [], [],
+    [1. Non-Current Assets: Plant & Machinery], [8,00,000], [5,00,000],
+    [#h(1em) Accumulated Depreciation], [(1,60,000)], [(1,00,000)],
+    [#h(1em) Non-Current Investments], [1,50,000], [1,00,000],
+    [2. Current Assets: Inventories], [3,20,000], [2,80,000],
+    [#h(1em) Trade Receivables], [2,10,000], [2,60,000],
+    [#h(1em) Cash and Cash Equivalents], [1,00,000], [80,000],
+    [*Total*], [*14,20,000*], [*11,20,000*],
   )
 
-  #v(6pt)
-  *Average rule:* when opening and closing figures are both given, average =
-  (opening + closing) ÷ 2. *Comparative % change:* absolute change ÷
-  *previous-year* figure × 100. *Common-size:* every item ÷ its base
-  (revenue from operations, or the balance-sheet total) × 100.
+  *Additional Information:*
+  1. During the year, machinery costing ₹1,00,000 (accumulated depreciation ₹40,000) was sold for ₹50,000.
+  2. Tax paid during the year amounted to ₹35,000. Debentures were redeemed on 31st March 2025.
+  3. Proposed dividend for the year ended 31st March 2024 was ₹50,000; for 31st March 2025 was ₹70,000.
 
-  #v(6pt)
-  #table(
-    columns: (0.9fr, 1.6fr, 1.6fr),
-    table.header[*Cash flow: activity*][*Typical inflows*][*Typical outflows*],
-    [Operating], [Cash from customers; other operating receipts], [Payments to suppliers and employees; income tax paid],
-    [Investing], [Sale of machinery and investments; interest and dividend received], [Purchase of machinery, land, investments],
-    [Financing], [Shares, debentures or loans raised], [Redemption of borrowings; interest paid; dividend paid],
-  )
+  *Working Notes & Ledger Accounts:*
+  - *Plant & Machinery Account:* Opening ₹5,00,000 + Purchases (balancing figure: *₹4,00,000*) = Sold ₹1,00,000 + Closing ₹8,00,000.
+  - *Accumulated Depreciation Account:* Opening ₹1,00,000 + Depreciation for the year (balancing figure: *₹1,00,000*) = Sold ₹40,000 + Closing ₹1,60,000.
+  - *Loss on Sale of Machinery:* Book Value = ₹1,00,000 − ₹40,000 = ₹60,000. Sold for ₹50,000. Loss = *₹10,000*.
+  - *Provision for Tax Account:* Opening ₹40,000 + Provision made (balancing figure: *₹45,000*) = Tax Paid ₹35,000 + Closing ₹50,000.
+  - *Net Profit Before Tax (NPBT):* Difference in Surplus (₹3,50,000 − ₹2,00,000 = ₹1,50,000) + Previous Year Dividend ₹50,000 + Tax Provision Made ₹45,000 = bold("₹2,45,000").
 ]
 
-= Common Errors and Special Cases
+#pagebreak()
 
-#exception-box(title: "Common Errors & Special Cases")[
-  #table(
-    columns: (1.45fr, 1.55fr),
-    table.header[*The mistake students make*][*The correct treatment*],
-    [Using closing inventory in a turnover ratio when opening and closing are both given],
-    [Use the *average*: (opening + closing) ÷ 2. The year's flow passed over the balance all year.],
-    [Counting inventory or prepaid expenses in quick assets],
-    [Quick assets = current assets − inventory − prepaid expenses; both must first become cash.],
-    [Treating interest coverage as a liquidity ratio],
-    [It is a *solvency* ratio — profit against long-term interest, not current dues against current assets.],
-    [Computing % change on a negative base],
-    [Meaningless. State the reversal in words: "profit of ₹1,00,000 turned into a loss of ₹50,000".],
-    [Classifying interest or dividend *paid* as an investing outflow],
-    [Under the Class 12 convention (revised AS-3, ICAI) both are *financing* outflows; interest and dividend *received* are investing inflows.],
-    [Dropping bank overdraft from current liabilities in the current ratio],
-    [Bank overdraft *is* a current liability — it stays in the current ratio's denominator.],
-    [Forgetting to add back non-cash items in operating cash flow],
-    [Depreciation, amortisation and loss on sale never touched cash — add them back before the working-capital changes.],
-  )
+// PAGE 12: MASTER PROBLEM 1 SOLUTION & MASTER PROBLEM 2
+#worked-example("Master Problem 1 Solution (Cash Flow Statement)")[
+  *Cash Flow Statement of Sunrise Ltd for the year ended 31st March 2025:*
+  ```text
+  A. Cash Flows from Operating Activities:
+     Net Profit Before Tax and Extraordinary Items                   ₹2,45,000
+     Add: Non-Cash & Non-Operating Charges:
+          - Depreciation on Plant & Machinery                        ₹1,00,000
+          - Loss on Sale of Machinery                                  ₹10,000
+          - Interest on 10% Debentures (10% on ₹3,00,000)              ₹30,000
+     Operating Profit Before Working Capital Changes                 ₹3,85,000
+     Add: Decrease in Trade Receivables (2,60,000 - 2,10,000)          ₹50,000
+     Add: Increase in Trade Payables (1,20,000 - 80,000)               ₹40,000
+     Less: Increase in Inventories (3,20,000 - 2,80,000)              (₹40,000)
+     Cash Generated from Operations                                  ₹4,35,000
+     Less: Income Tax Paid                                            (₹35,000)
+     Net Cash Flow from Operating Activities (A)                    bold(₹4,00,000)
+
+  B. Cash Flows from Investing Activities:
+     Proceeds from Sale of Machinery                                   ₹50,000
+     Purchase of Plant & Machinery                                   (₹4,00,000)
+     Purchase of Non-Current Investments (1,50,000 - 1,00,000)        (₹50,000)
+     Net Cash Used in Investing Activities (B)                      bold((₹4,00,000))
+
+  C. Cash Flows from Financing Activities:
+     Proceeds from Issue of Equity Share Capital (7,00,000 - 5,00,000)₹2,00,000
+     Redemption of 10% Debentures (3,00,000 - 2,00,000)              (₹1,00,000)
+     Payment of Previous Year Proposed Dividend                       (₹50,000)
+     Payment of Interest on Debentures                                (₹30,000)
+     Net Cash Flow from Financing Activities (C)                     bold(₹20,000)
+
+  Net Increase in Cash & Cash Equivalents (A + B + C)                  bold(₹20,000)
+  Add: Opening Cash & Cash Equivalents (1.4.2024)                      ₹80,000
+  Closing Cash & Cash Equivalents (31.3.2025)                         bold(₹1,00,000)
+  ```
 ]
 
-- *Base check:* every % change divides by the *earlier* year — scan the column
-  once before moving on.
-- *Slice check:* in a common-size column the expense slices plus the profit
-  slice come to 100; operating ratio + operating profit ratio = 100.
-- *Cash check:* net change in cash must equal closing cash − opening cash,
-  straight from the two balance sheets.
-
-#worked-example("Worked Example — The 60-Second Checking Routine")[
-  A question gives: current assets ₹4,00,000 (inventory ₹1,50,000, prepaid
-  expenses ₹10,000); current liabilities ₹2,50,000, including bank overdraft of
-  ₹50,000; revenue ₹8,00,000; cost of revenue ₹6,00,000; opening inventory
-  ₹50,000. Run the three checks:
-
-  - *Current ratio:* 4,00,000 ÷ 2,50,000 = *1.6:1* — the bank overdraft stayed
-    inside current liabilities, where it belongs.
-  - *Quick ratio:* (4,00,000 − 1,50,000 − 10,000) ÷ 2,50,000 = 2,40,000 ÷
-    2,50,000 = *0.96:1* — inventory and prepaid expenses left out.
-  - *Inventory turnover:* average = (50,000 + 1,50,000) ÷ 2 = ₹1,00,000 →
-    6,00,000 ÷ 1,00,000 = *6 times* — the average, never the closing figure.
-
-  Three checks, fifteen seconds each — this is the routine the traps table
-  above describes.
+#worked-example("Master Problem 2 — Balance Sheet Reconstruction via Accounting Ratios")[
+  *Data:* Working Capital: ₹1,50,000; Current Ratio: 2.5; Quick Ratio: 1.5; Proprietary Ratio: 0.6; Total Debt: ₹4,00,000 (Non-Current Debt ₹3,00,000). Compute Balance Sheet components:
+  1. *Current Assets & Current Liabilities:*
+    Working Capital = 2.5 − 1 = 1.5 units = ₹1,50,000.
+    Current Liabilities = ₹1,50,000 / 1.5 = *₹1,00,000*.
+    Current Assets = 2.5 × ₹1,00,000 = *₹2,50,000*.
+  2. *Inventory:*
+    Quick Assets = 1.5 × ₹1,00,000 = ₹1,50,000.
+    Inventory = Current Assets − Quick Assets = ₹2,50,000 − ₹1,50,000 = *₹1,00,000*.
+  3. *Total Assets & Shareholders' Funds:*
+    Total Debt = Non-Current Debt (₹3,00,000) + Current Liabilities (₹1,00,000) = ₹4,00,000.
+    Since Proprietary Ratio = 0.6, Total Debt represents 40% of Total Assets.
+    Total Assets = ₹4,00,000 / 0.4 = *₹10,00,000*.
+    Shareholders' Funds = 0.6 × ₹10,00,000 = *₹6,00,000*.
 ]
 
-= The Whole Chapter on One Page
+#pagebreak()
 
-#figure(image("assets/analysis_mindmap.png", width: 92%), caption: [Chapter mindmap — the whole of Unit V, and the three traps that catch most students.])
+// PAGE 13: MASTER MINDMAP & SYNTHESIS
+#figure(
+  image("assets/acc_analysis_mindmap.png", width: 78%),
+  caption: [Master Synthesis Mindmap: Structural framework of Unit V Analysis of Financial Statements.],
+)
 
-= Practice Questions
+= 10. Strategic Examination Synthesis
 
-#mcq(1, [The tool that restates every item of a statement as a percentage of one common base is the:], (
-  [Comparative statement], [Cash flow statement], [Common-size statement], [Ledger account],
-))
+The complete financial statement analysis toolkit links corporate reporting to analytical diagnosis:
+1. *Schedule III Compliance:* Correct classification into Major Heads and Sub-Heads is the foundation for all ratio and cash flow computations.
+2. *Ratios as Diagnostic Signals:* Liquidity ratios assess imminent solvency (2 : 1 and 1 : 1 benchmarks); Solvency ratios evaluate capital structure leverage (2 : 1 benchmark); Activity ratios track asset turnover velocity; Profitability ratios measure return on investment (ROCE) and operational efficiency.
+3. *Cash Flow Reality Check:* While the Income Statement reports accrual-based profitability, the Cash Flow Statement reveals true liquidity generated across Operating, Investing, and Financing activities.
 
-#mcq(2, [Revenue from operations was ₹4,00,000 in 2024 and ₹5,20,000 in 2025. The % change is:], (
-  [25%], [32%], [130%], [30%],
-))
+#pagebreak()
 
-#mcq(3, [Current assets of ₹3,60,000 include inventory of ₹1,20,000 and prepaid expenses of ₹20,000; current liabilities are ₹2,00,000. The quick ratio is:], (
-  [1.1:1], [1.8:1], [2:1], [0.9:1],
-))
+// PAGE 14: CHEATSHEET & TOP 7 TRAPS
+#cheatsheet-box(title: "Master Financial Analysis Revision Cheatsheet")[
+  - *Schedule III Major Heads:* Equity: Shareholders' Funds, Non-Current Liab, Current Liab | Assets: Non-Current Assets, Current Assets.
+  - *Common-Size Bases:* Balance Sheet = *Total Assets (100%)* | Income Statement = *Revenue from Operations (100%)*.
+  - *Liquidity Benchmarks:* Current Ratio = CA ÷ CL (Ideal 2 : 1) | Quick Ratio = Quick Assets ÷ CL (Ideal 1 : 1).
+  - *Quick Assets:* Current Assets − Inventory − Prepaid Expenses. Exclude Loose Tools from both CA and QA!
+  - *Solvency Benchmarks:* Debt-Equity = Debt ÷ Equity (Ideal 2 : 1) | Proprietary Ratio = Equity ÷ Total Assets.
+  - *Golden Identity:* `Operating Ratio + Operating Profit Ratio = 100%`.
+  - *ROCE / ROI:* `(EBIT ÷ Capital Employed) × 100` | Capital Employed = Shareholders' Funds + Long-Term Debt.
+  - *AS-3 Cash Equivalents:* Highly liquid investments maturing in $<= 3$ months. Excludes Bank Overdraft!
+  - *Bank Overdraft / Cash Credit:* Classified strictly as a *Financing Activity* under AS-3.
+  - *Proposed Dividend:* Previous year's dividend paid in current year (Financing Outflow + Operating Addback).
+]
 
-#mcq(4, [Cost of revenue from operations is ₹6,00,000; opening inventory ₹1,50,000; closing inventory ₹90,000. The inventory turnover ratio is:], (
-  [4 times], [5 times], [6.67 times], [73 times],
-))
+#exception-box(title: "Top 7 High-Frequency CUET Traps in Financial Statement Analysis")[
+  1. *Common-Size Income Base:* Base is strictly *Revenue from Operations (Net Sales)*, never Total Revenue!
+  2. *Loose Tools Trap:* Loose tools belong to Balance Sheet Inventory, but are EXCLUDED from CA in ratio analysis.
+  3. *Operating vs Operating Profit:* Operating Ratio is a cost ratio; Operating Ratio + Operating Profit Ratio = 100%!
+  4. *Bank Overdraft Classification:* Bank Overdraft & Cash Credit are *Financing Activities*, never cash equivalents!
+  5. *Proposed Dividend AS-4 Rule:* Current year proposed dividend is an unrecorded contingent liability; ignore it!
+  6. *Trade Receivables Provision:* Compute Debtors Turnover using *Gross Debtors* before deducting Provision.
+  7. *Debenture Interest Flow:* Interest is added back to Net Profit in Operating AND deducted as a Financing outflow!
+]
 
-#mcq(5, [Profit before interest and tax is ₹1,20,000 and interest on long-term borrowings is ₹40,000. The interest coverage ratio is:], (
-  [2 times], [4 times], [3 times], [0.33 times],
-))
+#pagebreak()
 
-#mcq(6, [Under the Class 12 convention (revised AS-3, ICAI), dividend *paid* by a non-financial company is classified in the cash flow statement as:], (
-  [An operating activity], [An investing activity], [Cash and cash equivalents], [A financing activity],
-))
+// PAGE 15: PRACTICE MCQS (Q1 - Q5)
+= CUET UG Exam-Style Practice Questions
 
-#mcq(7, [Cash paid to purchase machinery appears in the cash flow statement under:], (
-  [Investing activities], [Financing activities], [Operating activities], [It is never shown],
-))
+#mcq(
+  1,
+  [Under Schedule III Part I of the Companies Act, 2013, 'Calls-in-Advance' is disclosed under which of the following heads?],
+  (
+    [Share Capital],
+    [Other Current Liabilities],
+    [Current Provisions],
+    [Other Long-Term Liabilities],
+  ),
+)
+#solution(
+  1,
+  answer: [B],
+  [
+    Calls-in-Advance represents money received before a formal call is made and is classified under *Current Liabilities* under the sub-head *Other Current Liabilities*.
+  ],
+)
 
-#mcq(8, [In a common-size balance sheet, inventory of ₹1,20,000 against a balance-sheet total of ₹8,00,000 is shown as:], (
-  [12%], [15%], [20%], [66.7%],
-))
+#mcq(
+  2,
+  [Which of the following items is EXCLUDED from Current Assets while computing the Quick Ratio of a company?],
+  (
+    [Trade Receivables],
+    [Cash and Cash Equivalents],
+    [Inventories and Prepaid Expenses],
+    [Short-Term Marketable Investments],
+  ),
+)
+#solution(
+  2,
+  answer: [C],
+  [
+    Quick Assets = Current Assets − Inventories − Prepaid Expenses. Inventories cannot be instantly converted to cash without price concessions, and prepaid expenses cannot be converted to cash.
+  ],
+)
 
-#mcq(9, [Revenue from operations ₹10,00,000; gross profit ₹2,50,000; operating expenses ₹1,00,000. The operating ratio is:], (
-  [75%], [25%], [85%], [15%],
-))
+#mcq(
+  3,
+  [If a company's Operating Ratio is 78%, what is its Operating Profit Ratio?],
+  (
+    [22%],
+    [78%],
+    [12%],
+    [Cannot be determined],
+  ),
+)
+#solution(
+  3,
+  answer: [A],
+  [
+    By the fundamental identity of financial statement analysis: $"Operating Ratio" + "Operating Profit Ratio" = 100%$. Therefore, $"Operating Profit Ratio" = 100% - 78% = bold("22%")$.
+  ],
+)
 
-#mcq(10, [A company's cash generated from operations is ₹2,00,000. It paid tax of ₹40,000, bought machinery for ₹90,000, sold investments for ₹30,000, paid a dividend of ₹25,000 and issued shares for ₹1,00,000. The net change in cash is:], (
-  [₹1,75,000], [₹1,95,000], [₹1,35,000], [₹2,00,000],
-))
+#mcq(
+  4,
+  [The Current Ratio of a enterprise is 2.5 : 1. Which of the following transactions will IMPROVE the Current Ratio?],
+  (
+    [Purchasing goods of ₹20,000 on credit],
+    [Paying a trade creditor ₹30,000 in cash],
+    [Selling goods costing ₹10,000 for ₹10,000 cash],
+    [Purchasing machinery of ₹50,000 for cash],
+  ),
+)
+#solution(
+  4,
+  answer: [B],
+  [
+    When original CR > 1, an equal decrease in both numerator (CA) and denominator (CL) increases the ratio. For example: $(2,50,000 - 30,000) / (1,00,000 - 30,000) = 2,20,000 / 70,000 = bold("3.14 : 1")$.
+  ],
+)
 
-= Solutions
+#mcq(
+  5,
+  [In a Common-Size Statement of Profit and Loss, what is taken as the common base (100%)?],
+  (
+    [Total Revenue],
+    [Gross Profit],
+    [Revenue from Operations (Net Sales)],
+    [Profit Before Tax],
+  ),
+)
+#solution(
+  5,
+  answer: [C],
+  [
+    In vertical common-size income statement analysis, each item of expense, other income, and profit is expressed as a percentage of *Revenue from Operations (Net Sales)*.
+  ],
+)
 
-#solution(1, [A common-size statement expresses every item as a percentage of one base — revenue from operations for the income statement, the balance-sheet total for the balance sheet. A comparative statement shows *rupee and % changes between years*; the cash flow statement tracks cash movements.], answer: "C")
+#pagebreak()
 
-#solution(2, [% change = absolute change ÷ *previous-year* figure × 100 = 1,20,000 ÷ 4,00,000 × 100 = *30%*. Dividing by 5,20,000 (which gives ≈23.08%) is the classic wrong-base error.], answer: "D")
+// PAGE 16: PRACTICE MCQS (Q6 - Q10)
+#mcq(
+  6,
+  [Cost of Revenue from Operations is ₹6,00,000; Opening Inventory is ₹1,40,000; Closing Inventory is ₹1,00,000. What is the Inventory Turnover Ratio?],
+  (
+    [4 times],
+    [5 times],
+    [6 times],
+    [4.5 times],
+  ),
+)
+#solution(
+  6,
+  answer: [B],
+  [
+    Average Inventory = $(1,40,000 + 1,00,000) / 2 = ₹1,20,000$. $"ITR" = "COGS" / "Avg Inventory" = 6,00,000 / 1,20,000 = bold("5 times")$.
+  ],
+)
 
-#solution(3, [Quick assets = 3,60,000 − 1,20,000 (inventory) − 20,000 (prepaid) = ₹2,20,000. Quick ratio = 2,20,000 ÷ 2,00,000 = *1.1:1*. (The current ratio would be 3,60,000 ÷ 2,00,000 = 1.8:1 — option B.)], answer: "A")
+#mcq(
+  7,
+  [A company has a Debt-Equity Ratio of 2 : 1. Which of the following transactions will DECREASE the Debt-Equity Ratio?],
+  (
+    [Issue of 10% Debentures of ₹1,00,000 for cash],
+    [Issue of Equity Shares of ₹2,00,000 for cash],
+    [Purchasing goods on credit of ₹50,000],
+    [Redemption of preference shares at par],
+  ),
+)
+#solution(
+  7,
+  answer: [B],
+  [
+    Issuing equity shares increases Shareholders' Funds (the denominator) without changing Long-Term Debt, thereby reducing the Debt-Equity Ratio.
+  ],
+)
 
-#solution(4, [Average inventory = (1,50,000 + 90,000) ÷ 2 = ₹1,20,000. Turnover = 6,00,000 ÷ 1,20,000 = *5 times*. (6.67 times is the error of using closing inventory; 73 is the *days* figure — 365 ÷ 5.)], answer: "B")
+#mcq(
+  8,
+  [Under AS-3 (Revised), how is an increase in 'Bank Overdraft' classified in the Cash Flow Statement?],
+  (
+    [Cash and Cash Equivalent Inflow],
+    [Cash Inflow from Operating Activities],
+    [Cash Inflow from Financing Activities],
+    [Cash Inflow from Investing Activities],
+  ),
+)
+#solution(
+  8,
+  answer: [C],
+  [
+    Bank Overdraft and Cash Credit are short-term borrowings that provide debt financing. Under AS-3, their proceeds and repayments are classified strictly as *Financing Activities*.
+  ],
+)
 
-#solution(5, [Interest coverage = profit before interest and tax ÷ interest on long-term borrowings = 1,20,000 ÷ 40,000 = *3 times*.], answer: "C")
+#mcq(
+  9,
+  [Net Profit Before Tax of a company is ₹3,00,000. Depreciation is ₹40,000; Loss on sale of plant is ₹10,000; Trade Receivables increased by ₹30,000; Trade Payables increased by ₹20,000. Cash from operations before tax is:],
+  (
+    [₹3,40,000],
+    [₹3,20,000],
+    [₹3,60,000],
+    [₹3,00,000],
+  ),
+)
+#solution(
+  9,
+  answer: [A],
+  [
+    Operating Profit before WC = $3,00,000 + 40,000 + 10,000 = ₹3,50,000$. Working capital changes: Increase in TR (−₹30,000) + Increase in TP (+₹20,000) = −₹10,000. Cash from operations = $3,50,000 - 10,000 = bold("₹3,40,000")$.
+  ],
+)
 
-#solution(6, [Under the revised AS-3 convention taught at Class 12, dividends *paid* are a *financing* outflow — a cost of raising and keeping owners' funds. Interest and dividend *received* are investing inflows.], answer: "D")
+#mcq(
+  10,
+  [Which of the following is a NON-CASH transaction that is EXCLUDED from the Cash Flow Statement?],
+  (
+    [Purchase of machinery by issuing equity shares],
+    [Sale of investments for cash],
+    [Redemption of debentures for cash],
+    [Payment of interim dividend to shareholders],
+  ),
+)
+#solution(
+  10,
+  answer: [A],
+  [
+    Purchasing machinery by issuing shares involves no movement of cash or cash equivalents. Under AS-3, non-cash investing and financing transactions are excluded from the Cash Flow Statement.
+  ],
+)
 
-#solution(7, [Buying machinery is acquiring a long-term asset, so the cash goes out under *investing activities*. Only non-cash purchases (say, shares issued to buy machinery) stay off the statement entirely.], answer: "A")
+#pagebreak()
 
-#solution(8, [Common-size % = item ÷ balance-sheet total × 100 = 1,20,000 ÷ 8,00,000 × 100 = *15%*. (20% would come from dividing by revenue — the wrong base for a balance-sheet item.)], answer: "B")
+// PAGE 17: PRACTICE MCQS (Q11 - Q15)
+#mcq(
+  11,
+  [Total Sales of a firm are ₹8,00,000 (including cash sales of ₹1,60,000). Sales returns are ₹40,000. Trade Receivables stand at ₹1,00,000. What is the Trade Receivables Turnover Ratio?],
+  (
+    [6 times],
+    [7.6 times],
+    [8 times],
+    [6.4 times],
+  ),
+)
+#solution(
+  11,
+  answer: [A],
+  [
+    Net Credit Sales = Total Sales (₹8,00,000) − Cash Sales (₹1,60,000) − Returns (₹40,000) = ₹6,00,000. $"TRTR" = 6,00,000 / 1,00,000 = bold("6 times")$.
+  ],
+)
 
-#solution(9, [Cost of revenue = 10,00,000 − 2,50,000 = ₹7,50,000. Operating cost = 7,50,000 + 1,00,000 = ₹8,50,000. Operating ratio = 8,50,000 ÷ 10,00,000 × 100 = *85%*. The operating profit ratio is 15% — the two must total 100%.], answer: "C")
+#mcq(
+  12,
+  [Under Schedule III, where is 'Premium on Redemption of Debentures' disclosed in the Balance Sheet?],
+  (
+    [Reserves and Surplus],
+    [Other Long-Term Liabilities],
+    [Other Current Liabilities],
+    [Long-Term Provisions],
+  ),
+)
+#solution(
+  12,
+  answer: [B],
+  [
+    Premium payable on redemption of debentures is a contractual non-current liability payable on maturity and is disclosed under *Non-Current Liabilities* as *Other Long-Term Liabilities*.
+  ],
+)
 
-#solution(10, [Operating: 2,00,000 − 40,000 (tax) = ₹1,60,000. Investing: 30,000 − 90,000 = −₹60,000. Financing: 1,00,000 − 25,000 = ₹75,000. Net change = 1,60,000 − 60,000 + 75,000 = *₹1,75,000*.], answer: "A")
+#mcq(
+  13,
+  [A company has Capital Employed of ₹10,00,000. Its Net Profit After Tax (@ 40%) is ₹1,20,000. 12% Debentures amount to ₹2,00,000. What is the Return on Capital Employed (ROCE)?],
+  (
+    [22.4%],
+    [20.0%],
+    [14.4%],
+    [24.0%],
+  ),
+)
+#solution(
+  13,
+  answer: [A],
+  [
+    PBT = 1,20,000 / (1 − 0.40) = ₹2,00,000. Interest = 12% × ₹2,00,000 = ₹24,000. EBIT = ₹2,00,000 + ₹24,000 = ₹2,24,000. ROCE = (2,24,000 / 10,00,000) × 100 = *22.4%*.
+  ],
+)
 
-#v(10pt)
-#align(center)[#text(fill: om-grey, size: 9pt)[© OurMocks · www.ourmocks.com · CUET UG Accountancy · Unit V: Analysis of Financial Statements · 2027 cycle]]
+#mcq(
+  14,
+  [How is 'Dividend Paid' by a financial enterprise (e.g., a banking company or NBFC) classified under AS-3?],
+  (
+    [Operating Activity],
+    [Investing Activity],
+    [Financing Activity],
+    [Cash Equivalent],
+  ),
+)
+#solution(
+  14,
+  answer: [C],
+  [
+    Dividend paid is ALWAYS a *Financing Activity* for ALL enterprises, whether financial or non-financial, because it is a distribution of return on capital supplied by equity shareholders.
+  ],
+)
+
+#mcq(
+  15,
+  [Which of the following is considered an inherent LIMITATION of financial statement analysis?],
+  (
+    [It measures past performance accurately],
+    [It ignores qualitative elements and price level changes],
+    [It helps banks evaluate debt service capability],
+    [It assists management in preparing operational budgets],
+  ),
+)
+#solution(
+  15,
+  answer: [B],
+  [
+    Financial statement analysis relies on historical costs and ignores price-level changes (inflation) and crucial qualitative factors like employee skills and brand value.
+  ],
+)
