@@ -7,6 +7,7 @@
   subtitle: "Official Syllabus · Course III: Indian Economic Development · Class 12 · CUET UG 2027 Cycle Notes",
 )
 
+#set text(size: 8.5pt)
 = Syllabus Alignment & Exam Blueprint
 
 #table(
@@ -44,11 +45,15 @@
   1. *Colonial Estimators & Benchmarks:* V.K.R.V. Rao's national income estimation; 1921 as the "Year of Great Divide"; Suez Canal opening (1869); first railway (1853).
   2. *Planning Goals:* Matching examples to Growth, Modernisation, Self-Reliance, and Equity.
   3. *IPR 1956 Schedules & Karve Committee (1955):* Exact industry distribution and SSI definitions.
-  4. *1991 NEP Reforms:* The 5-6 industries retaining licensing, Maharatna/Navratna PSU status, and WTO founding details (1 Jan 1995).
+  4. *1991 NEP Reforms:* The 5-6 industries retaining licensing, Maharatna/Navratna status, and WTO founding (1 Jan 1995).
 ]
+
+#pagebreak()
 
 ---
 
+#set text(size: 9.6pt)
+#set par(leading: 0.40em, spacing: 0.42em)
 = Indian Economy on the Eve of Independence (1947)
 
 When India attained independence on 15 August 1947, the new nation inherited an economy that had endured two centuries of systematic colonial exploitation under British rule. The sole objective of British colonial economic policy was to reduce India to a mere supplier of raw materials to feed Britain's rapidly expanding industrial base and a captive market for British manufactured consumer goods.
@@ -176,7 +181,7 @@ By the mid-1960s, consecutive droughts and dependence on food imports under the 
 ---
 
 #figure(
-  image("assets/econ_devpol_eve_and_planning_1950_90.png", width: 100%),
+  image("assets/econ_devpol_eve_and_planning_1950_90.png", width: 75%),
   caption: [Figure 1: Colonial Inheritance & Planning Framework (1947–1990) — Eve of Independence stagnation, the Four Planning Goals, Land Reforms & Green Revolution, and IPR 1956 industrial strategy.],
 )
 
@@ -264,7 +269,7 @@ In *July 1991*, the new government led by Prime Minister P.V. Narasimha Rao, wit
 ---
 
 #figure(
-  image("assets/econ_devpol_1991_lpg_reforms.png", width: 100%),
+  image("assets/econ_devpol_1991_lpg_reforms.png", width: 75%),
   caption: [Figure 2: The 1991 Economic Reforms (NEP) — Crisis triggers, the Three LPG Pillars (Liberalisation, Privatisation, Globalisation), WTO accession, and post-1991 structural evaluation.],
 )
 
@@ -392,13 +397,26 @@ Three decades of economic reforms have profoundly reshaped the Indian economic l
 
 ---
 
+#pagebreak()
 #figure(
-  image("assets/econ_devpol_synthesis_mindmap.png", width: 100%),
+  image("assets/econ_devpol_synthesis_mindmap.png", width: 78%),
   caption: [Figure 3: Indian Economic Development (1947–Present) Master Synthesis Mindmap — Colonial baseline, 1950–1990 planning and sectoral strategies, 1991 LPG transformation, and modern structural milestones.],
 )
 
+#v(2pt)
+#exam-pointer(title: "Master Economic Development Synthesis Architecture")[
+  The synthesis architecture above consolidates the historic trajectory of Indian economic policy:
+  - *Colonial Baseline (1757–1947):* De-industrialisation of indigenous handicrafts, zamindari land exploitation, export of primary raw materials, import of British manufactures, and 1921 as the pivotal Year of the Great Divide into Stage 2 demographic transition.
+  - *The Planning Era (1950–1990):* The socialist-inspired mixed economy framework prioritizing public sector commanding heights (IPR 1956 Schedule A), import substitution (tariffs and quotas), Karve Committee promotion of small-scale industries (SSIs), and the two phases of the Green Revolution.
+  - *The 1991 LPG Paradigm Shift:* Overcoming the balance of payments crisis via the New Economic Policy—abolition of industrial licensing (except 5–6 hazardous industries), financial and tax reforms, disinvestment, devaluation followed by LERMS (market-determined exchange rate), and membership in the WTO.
+  - *Contemporary Reforms:* Replacement of the Planning Commission by NITI Aayog (2015), GST implementation (2017), and Demonetisation (2016).
+]
+
 ---
 
+#pagebreak()
+#set text(size: 6.5pt)
+#set par(leading: 0.32em, spacing: 0.34em)
 = Chronological Timeline & 7 Lethal CUET Traps
 
 #cheatsheet-box(title: "Chronological Milestones of Indian Economic Development")[
