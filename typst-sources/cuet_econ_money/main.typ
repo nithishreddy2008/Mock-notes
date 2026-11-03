@@ -38,6 +38,9 @@
   *CUET UG Exam Dynamics:* The Economics paper carries *50 compulsory questions* to be attempted in *60 minutes* ($+5$ marks for correct, $-1$ mark for incorrect answers). Money and Banking represents a high-yield macroeconomic scoring unit. Questions rigorously test the direction of monetary policy tools (e.g., repo vs reverse repo, open market purchases vs sales), numerical calculations of the credit multiplier ($k = 1 / L R R$), and the exact legal nuances of money supply measures ($M_1$ through $M_4$).
 ]
 
+#pagebreak()
+#set text(size: 9.1pt)
+#set par(leading: 0.36em, spacing: 0.38em)
 = The Barter System and the Genesis of Money
 
 #concept-box(title: "The C-C Economy (Commodity-for-Commodity)")[
@@ -209,7 +212,7 @@ $M_4 = M_3 +$ Total deposits with Post Office Savings Organisations.
 = Figure 1: Commercial Banking & The Credit Creation Engine
 
 #figure(
-  image("assets/econ_money_creation_credit_multiplier.png", width: 100%),
+  image("assets/econ_money_creation_credit_multiplier.png", width: 70%),
   caption: [Figure 1: The Commercial Banking Fractional Reserve Engine. Tracing the round-by-round expansion of an initial primary deposit of ₹10,000 into ₹1,00,000 of total deposits under an LRR of 10% (1/LRR multiplier). Real-world leakages like currency drain and excess reserves attenuate the theoretical multiplier.],
 )
 
@@ -355,7 +358,7 @@ The most crucial macroeconomic function of the RBI is controlling the total volu
 = Figure 2: RBI Monetary Policy Architecture
 
 #figure(
-  image("assets/econ_money_rbi_monetary_policy.png", width: 100%),
+  image("assets/econ_money_rbi_monetary_policy.png", width: 70%),
   caption: [Figure 2: RBI Monetary Policy Architecture. Comparing Quantitative tools (affecting overall credit volume: Repo, Reverse Repo, Bank Rate, CRR, SLR, OMOs) and Qualitative tools (steering sectoral credit direction: Margin, Rationing, Moral Suasion). The bottom matrix maps transmission under Inflation vs Deflation.],
 )
 
@@ -451,13 +454,24 @@ At the time of the announcement, ₹500 and ₹1,000 notes accounted for *86.4% 
 - *Widening of the Tax Base:* Electronic bank trails enabled tax authorities to cross-reference large cash deposits with historical tax filings, adding millions of new income tax filers.
 - *Short-Term Real Sector Shock:* Due to acute initial cash shortages while new ₹500 and ₹2,000 notes were printed and ATMs recalibrated, cash-reliant unorganized sectors (agriculture, construction, small unorganized retail) experienced temporary disruptions in output and employment.
 
-= Figure 3: Master Money & Banking Mindmap
-
+#pagebreak()
 #figure(
-  image("assets/econ_money_banking_mindmap.png", width: 100%),
+  image("assets/econ_money_banking_mindmap.png", width: 80%),
   caption: [Figure 3: Master Synthesis Mindmap. Unifying the 4 pillars of the chapter: Money & Money Supply ($M_1-M_4, H$), Commercial Banking & Credit Multiplier, Central Bank Functions (RBI), and Monetary Policy Tools & Demonetisation.],
 )
 
+#v(4pt)
+#exam-pointer(title: "Master Money and Banking Architecture")[
+  The synthesis architecture above consolidates the four structural pillars of monetary economics:
+  - *Evolution and Functions of Money:* From the barter system (and its dual coincidence of wants bottleneck) to fiat money; distinguishing primary functions (medium of exchange, measure of value) from secondary functions (deferred payments, store of value).
+  - *Measures of Money Supply:* Tracking the monetary aggregates from most liquid ($M_1 = C + D D + O D$) to broadest ($M_3 = M_1 + "Net Time Deposits"$), while excluding vault cash and inter-bank deposits to avoid double-counting.
+  - *Credit Multiplier & Commercial Banking:* Understanding that while an individual bank lends only its excess reserves, the banking system collectively multiplies primary cash deposits into derivative credit via the deposit multiplier $k = 1 / L R R$.
+  - *Monetary Policy Toolkit:* Deploying quantitative instruments (Repo, Reverse Repo, Bank Rate, CRR, SLR, OMOs) and qualitative credit controls (margins, selective credit, moral suasion) to regulate aggregate demand and stabilize macro prices.
+]
+
+#pagebreak()
+#set text(size: 7.2pt)
+#set par(leading: 0.38em, spacing: 0.40em)
 = Key Formulas & The Seven Fatal CUET Exam Traps
 
 #cheatsheet-box(title: "Money and Banking — Comprehensive Formula Reference")[
