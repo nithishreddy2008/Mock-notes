@@ -26,6 +26,11 @@
 
 ---
 
+#pagebreak()
+
+
+#set text(size: 10.0pt)
+#set par(leading: 0.46em, spacing: 0.48em)
 = 1. The Production Function: Core Concepts & Time Horizons
 
 == 1.1 Technical Definition of Production
@@ -96,7 +101,7 @@ Consider a firm with a fixed plant ($macron(K) = 1$ machine) hiring successive u
 )
 
 #figure(
-  image("assets/econ_production_tp_ap_mp.png", width: 95%),
+  image("assets/econ_production_tp_ap_mp.png", width: 75%),
   caption: [Figure 1: Law of Variable Proportions showing T P Curve (Top), A P and M P Curves (Bottom), and the Three Classical Stages of Production],
 )
 
@@ -262,7 +267,7 @@ $ T C = T F C + T V C $
     $ frac(d(T C), d Q) = frac(d(T V C), d Q) = M C $
 
 #figure(
-  image("assets/econ_cost_curves_shortrun.png", width: 95%),
+  image("assets/econ_cost_curves_shortrun.png", width: 75%),
   caption: [Figure 2: Short-Run Cost Curves showing Total Cost Curves (Left) and Unit Cost Curves with Dual-Cut Geometry (Right)],
 )
 
@@ -379,13 +384,27 @@ Profit is defined as $pi = T R - T C$. Maximizing profit requires two golden con
 2. *Second-Order Condition (Sufficient Condition):* Marginal Cost must be *rising* at the point of intersection (or $M C$ must cut $M R$ from below):
   $ frac(d(M C), d Q) > frac(d(M R), d Q) $
 
+#pagebreak()
+
 #figure(
-  image("assets/econ_production_costs_mindmap.png", width: 95%),
-  caption: [Figure 3: Comprehensive Microeconomics Synthesis Mindmap: Production Functions, Short-Run vs. Long-Run Costs, and Scale Economies],
+  image("assets/econ_production_costs_mindmap.png", width: 88%),
+  caption: [Figure 3: Comprehensive Synthesis Mindmap of Production & Cost Theory: Short-Run Laws, Long-Run Optimization, Cost Dualities, and Revenue Structures],
 )
 
----
+#v(2pt)
 
+#exam-pointer(title: "Master Production & Cost Synthesis Architecture")[
+  The cognitive map above consolidates the dual production-cost relationships across Unit II:
+  - *Short-Run Production Stages:* Track the 3 stages under variable proportions: Stage I terminates at $A P$ maximum ($A P = M P$); Stage II ends at $T P$ maximum ($M P = 0$). Only Stage II is economically rational because neither fixed nor variable factors are wasted.
+  - *Dual Relationships ($A P$ vs $A V C$, $M P$ vs $M C$):* Marginal cost is the exact inverse reflection of marginal product ($M C = w / M P_L$), while average variable cost mirrors average product ($A V C = w / A P_L$). When productivity peaks, costs reach their absolute minimum!
+  - *The Dual-Cut Theorem:* $M C$ cuts both $A V C$ and $A T C$ strictly from below at their minimum points. Because $A F C$ falls continuously, the minimum of $A T C$ lies strictly to the right of the minimum of $A V C$.
+  - *Fixed Cost Independence:* Marginal cost reflects changes in total variable costs only ($M C = d(T V C)/d Q$). A change in fixed overhead costs (rent, property tax) shifts $T F C, T C, A F C,$ and $A T C$, but has ZERO impact on $M C$ and $A V C$!
+]
+
+
+#pagebreak()
+
+#set text(size: 7.2pt)
 = 10. Master Formula Cheatsheet & Diagnostic Traps
 
 #cheatsheet-box(title: "Master Formula Cheatsheet — Production & Costs")[
@@ -425,7 +444,10 @@ Profit is defined as $pi = T R - T C$. Maximizing profit requires two golden con
 #set text(size: 8.5pt)
 #set par(leading: 0.40em, spacing: 0.42em)
 
-= Practice Questions — Part 1 (Q1 to Q5)
+#block(width: 100%, inset: (y: 4pt, x: 8pt), fill: om-navy, radius: 3pt)[
+  #text(fill: white, font: om-display-font, size: 12pt, weight: 800)[Practice Questions (Exam Pattern) — Part 1 (Q1 to Q5)]
+]
+#set text(size: 8.5pt)
 
 #mcq(1, [According to the Law of Variable Proportions, a rational producer will always operate in:], (
   [(A) Stage I where Marginal Product is increasing],
@@ -469,11 +491,18 @@ Profit is defined as $pi = T R - T C$. Maximizing profit requires two golden con
 
 ---
 
-#pagebreak()
+
 #set text(size: 8.5pt)
 #set par(leading: 0.40em, spacing: 0.42em)
 
 = Practice Questions — Part 2 (Q6 to Q10)
+
+#pagebreak()
+
+#block(width: 100%, inset: (y: 4pt, x: 8pt), fill: om-navy, radius: 3pt)[
+  #text(fill: white, font: om-display-font, size: 12pt, weight: 800)[Practice Questions (Exam Pattern) — Part 2 (Q6 to Q10)]
+]
+#set text(size: 8.5pt)
 
 #mcq(6, [Which of the following cost curves is shaped as a rectangular hyperbola?], (
   [(A) Total Fixed Cost (TFC)],
@@ -517,11 +546,18 @@ Profit is defined as $pi = T R - T C$. Maximizing profit requires two golden con
 
 ---
 
-#pagebreak()
+
 #set text(size: 8.5pt)
 #set par(leading: 0.40em, spacing: 0.42em)
 
 = Practice Questions — Part 3 (Q11 to Q15)
+
+#pagebreak()
+
+#block(width: 100%, inset: (y: 4pt, x: 8pt), fill: om-navy, radius: 3pt)[
+  #text(fill: white, font: om-display-font, size: 12pt, weight: 800)[Practice Questions (Exam Pattern) — Part 3 (Q11 to Q15)]
+]
+#set text(size: 8.5pt)
 
 #mcq(11, [As output expands, the vertical distance between Average Total Cost (ATC) and Average Variable Cost (AVC):], (
   [(A) Remains constant throughout],
