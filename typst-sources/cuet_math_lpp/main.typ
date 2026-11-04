@@ -275,6 +275,25 @@ Then *every single point on the line segment $A B$ connecting them is also an op
      $ m_Z = -frac(a, b) = -frac(a_k, b_k) = m_k $
 ]
 
+#worked-example("Detecting Infinite Optimal Solutions via Boundary Slope Alignment", [
+  *Problem:* Find the maximum value of $Z = 3x + 2y$ subject to $3x + 2y <= 18$, $x + y >= 1$, $x <= 4$, $y <= 6$, and $x, y >= 0$.
+  
+  *Step 1 (Analyze Slopes):*
+  - The objective function is $Z = 3x + 2y$, with slope $m_Z = -3/2$.
+  - Notice the first constraint boundary is $3x + 2y = 18$, which has the identical slope $m_1 = -3/2$!
+  
+  *Step 2 (Determine Intersecting Feasible Vertices):*
+  - The line $3x + 2y = 18$ intersects $y = 6$ at point $A$: $3x + 2(6) = 18 ==> 3x = 6 ==> x = 2$. Thus, vertex $A$ is $(2, 6)$.
+  - The line $3x + 2y = 18$ intersects $x = 4$ at point $B$: $3(4) + 2y = 18 ==> 2y = 6 ==> y = 3$. Thus, vertex $B$ is $(4, 3)$.
+  - Both points $A(2, 6)$ and $B(4, 3)$ satisfy all other constraints ($x + y >= 1$, $x >= 0, y >= 0$).
+  
+  *Step 3 (Evaluate $Z$ at Adjacent Vertices):*
+  - At $A(2, 6)$: $Z = 3(2) + 2(6) = 6 + 12 = 18$.
+  - At $B(4, 3)$: $Z = 3(4) + 2(3) = 12 + 6 = 18$.
+  
+  *Conclusion:* Since the maximum value $Z^* = 18$ occurs at two adjacent vertices $A$ and $B$, *every point on the line segment joining $(2, 6)$ and $(4, 3)$ is also an optimal solution*. The problem possesses an *infinite number of optimal solutions*.
+])
+
 == 2. Infeasible Problem (No Feasible Solution)
 
 When there is no single point that simultaneously satisfies all given constraints along with $x >= 0, y >= 0$, the feasible region is the *empty set* ($R = emptyset$):
@@ -317,14 +336,26 @@ A common higher-order thinking skill tested in CUET is determining the *range of
   $ m_1 <= -frac(a, b) <= m_2 $
 - If $-a/b$ equals $m_1$, the solution degenerates into infinite optimal solutions along boundary $L_1$. If $-a/b < m_1$, the optimal solution jumps to an adjacent corner point!
 
+#pagebreak()
 #figure(
-  image("assets/math_lpp_mindmap.png", width: 95%),
+  image("assets/math_lpp_mindmap.png", width: 85%),
   caption: [Figure 3: Master Synthesis Mindmap of Linear Programming Taxonomy, Theorems, and Traps],
 )
 
----
+#v(4pt)
+#exam-pointer(title: "Master Linear Programming Architecture")[
+  The cognitive taxonomy above unifies the mathematical foundations of Unit VI:
+  - *Convexity and Fundamental Theorems:* The feasible region $R$ of any system of linear inequalities is always a convex polygonal set. By the Fundamental Extreme Value Theorem, optimal values of the linear objective function $Z = a x + b y$ occur strictly at corner points (vertices) of $R$.
+  - *Bounded vs. Unbounded Regimes:* When $R$ is bounded, both maximum and minimum are guaranteed to exist. When $R$ is unbounded, candidate extreme values $M$ or $m$ at vertices are only tentative: $M$ is the true maximum if and only if the open half-plane $a x + b y > M$ shares *no common points* with $R$.
+  - *Multiple Optimal Solutions:* If two adjacent corner points yield the identical maximum value $Z^*$, the objective line is parallel to the boundary edge, and every point along the line segment between them is also an optimal solution.
+  - *CUET Optimization Protocol:* Always confirm non-negativity $x, y >= 0$, check for redundant constraints, and evaluate all vertices before drawing conclusions on unbounded spaces.
+]
 
-= 7. High-Yield Formula Cheatsheet & Diagnostic Traps
+#pagebreak()
+#set text(size: 7.2pt)
+#set par(leading: 0.36em, spacing: 0.38em)
+
+= 7. High-Yield Formula Cheatsheet & The Seven Fatal CUET Traps
 
 #cheatsheet-box(title: "Master Formula & Concept Cheatsheet — Linear Programming")[
   *Core Equations & Invariants:*
@@ -345,18 +376,19 @@ A common higher-order thinking skill tested in CUET is determining the *range of
   - "Ratio of $x$ to $y$ is at least $r$" $==> x / y >= r ==> x - r y >= 0$
 ]
 
-#exception-box(title: "Five Fatal CUET Exam Traps in LPP")[
+#v(2pt)
+
+#exception-box(title: "The Seven Fatal CUET Exam Traps in Linear Programming")[
   1. *The Origin Boundary Trap:* If a constraint is $y <= 2x$, the boundary line $y = 2x$ passes through $(0, 0)$. Testing $(0, 0)$ gives $0 <= 0$ (uninformative identity). You must test $(1, 0)$ (gives $0 <= 2$, true $==>$ shade towards positive $x$-axis).
   2. *The Non-Negativity Blindspot:* Candidates frequently forget that $x >= 0, y >= 0$ chops off all quadrants except the First Quadrant! Never include negative coordinate vertices.
   3. *The Parallel Slope Shortcut:* If $Z = 4x + 6y$ and one of the boundary lines is $2x + 3y = 12$, notice that $Z = 2(2x + 3y) = 2(12) = 24$ along the entire edge! The problem automatically has *infinite optimal solutions*.
   4. *Declaring Unbounded Maximum Without Testing:* In an unbounded region, finding candidate $M = 150$ at a corner point does NOT mean 150 is the maximum. Almost always, an unbounded maximization problem has *NO maximum* ($Z -> oo$).
   5. *Integer Rounding Trap:* If an LPP asks for optimal items, and the vertex is $(3.4, 2.8)$, do NOT merely round to $(3, 3)$ without checking whether $(3, 3)$ lies inside the feasible region!
+  6. *Feasible Region Emptiness vs Open Half-Plane Disjointness:* Do not confuse $R = emptyset$ (infeasible problem with contradictory constraints) with the unbounded half-plane test (where the open half-plane $a x + b y > M$ having no common points with $R$ proves that $M$ is a valid maximum).
+  7. *Non-Linear Objective Function Fallacy:* The Fundamental Corner Point Theorem applies *strictly* to linear objective functions and linear constraints. If the objective function contains quadratic terms ($x^2 + y^2$), corner point optimization fails completely!
 ]
 
----
-
 #pagebreak()
-
 #set text(size: 8.5pt)
 #set par(leading: 0.40em, spacing: 0.42em)
 
