@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CUET GAT: Scientific Literacy & General Mental Ability Matrix</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 20px 24px;
+    overflow: hidden;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 10px;
+    margin-bottom: 14px;
+  }
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .brand-badge {
+    background: #071A4D;
+    color: #B8FF34;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .title-group h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .title-group p {
+    font-size: 12px;
+    color: #64748B;
+    margin-top: 1px;
+  }
+  .header-tag {
+    background: #EAF0FF;
+    color: #1F5EFF;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+    border: 1px solid #C7D9FE;
+  }
+
+  .grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    height: 705px;
+  }
+
+  .col-card {
+    background: #FFFFFF;
+    border: 1.5px solid #CBD5E1;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .col-header {
+    padding: 10px 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid #E2E8F0;
+  }
+  .col-1 .col-header { background: #EEF4FF; border-top: 4px solid #1F5EFF; }
+  .col-2 .col-header { background: #F0FDF4; border-top: 4px solid #0E7A4A; }
+  .col-3 .col-header { background: #FFF7ED; border-top: 4px solid #C2410C; }
+  .col-4 .col-header { background: #FAF5FF; border-top: 4px solid #7E22CE; }
+
+  .col-header h2 {
+    font-size: 14px;
+    font-weight: 800;
+  }
+  .col-1 .col-header h2 { color: #1F5EFF; }
+  .col-2 .col-header h2 { color: #0E7A4A; }
+  .col-3 .col-header h2 { color: #C2410C; }
+  .col-4 .col-header h2 { color: #7E22CE; }
+
+  .col-badge {
+    margin-left: auto;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+  .col-1 .col-badge { background: #DBEAFE; color: #1E40AF; }
+  .col-2 .col-badge { background: #DCFCE7; color: #166534; }
+  .col-3 .col-badge { background: #FFEDD5; color: #9A3412; }
+  .col-4 .col-badge { background: #F3E8FF; color: #6B21A8; }
+
+  .col-body {
+    padding: 10px 11px;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    flex: 1;
+    overflow: hidden;
+  }
+
+  .item-box {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 8px 10px;
+  }
+  .item-box h3 {
+    font-size: 12px;
+    font-weight: 700;
+    color: #0F172A;
+    margin-bottom: 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .item-box .content {
+    font-size: 11px;
+    background: #F1F5F9;
+    padding: 4px 6px;
+    border-radius: 4px;
+    color: #0F172A;
+    font-weight: 600;
+    margin: 3px 0;
+    border: 1px solid #E2E8F0;
+    line-height: 1.35;
+  }
+  .item-box p {
+    font-size: 10.5px;
+    color: #475569;
+    line-height: 1.35;
+    margin-top: 2px;
+  }
+  .item-box .tag {
+    font-size: 9px;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 3px;
+    background: #E2E8F0;
+    color: #334155;
+  }
+
+  .highlight-rule {
+    background: #FEF3C7;
+    border: 1px solid #F59E0B;
+    border-radius: 6px;
+    padding: 6px 8px;
+    font-size: 10.5px;
+    color: #92400E;
+    line-height: 1.35;
+  }
+  .highlight-rule b {
+    color: #78350F;
+  }
+
+  .footer-bar {
+    grid-column: span 4;
+    background: #071A4D;
+    color: #FFFFFF;
+    border-radius: 8px;
+    padding: 8px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 11.5px;
+  }
+  .footer-bar b {
+    color: #B8FF34;
+  }
+  .footer-pills {
+    display: flex;
+    gap: 8px;
+  }
+  .footer-pill {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 600;
+    color: #E2E8F0;
+  }
+</style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-left">
+      <div class="brand-badge">OurMocks CUET UG</div>
+      <div class="title-group">
+        <h1>Scientific Literacy & General Mental Ability: Integrated Conceptual Matrix</h1>
+        <p>Everyday Physical Laws, Chemical Materials, Bioscience Systems, and Analytical Cognitive Patterns</p>
+      </div>
+    </div>
+    <div class="header-tag">Section III · 100% Exam-Aligned</div>
+  </div>
+
+  <!-- Grid of 4 Pillars -->
+  <div class="grid-4">
+
+    <!-- Pillar 1: Everyday Physics -->
+    <div class="col-card col-1">
+      <div class="col-header">
+        <h2>1. Everyday Physics</h2>
+        <span class="col-badge">Physical Laws</span>
+      </div>
+      <div class="col-body">
+        <div class="item-box">
+          <h3>Optics & Wave Phenomena <span class="tag">Light</span></h3>
+          <div class="content">TIR: Mirage, Optical Fibres, Diamonds<br>Scattering ∝ 1/λ⁴: Blue sky, Red sunset</div>
+          <p>Total Internal Reflection occurs when light travels from denser to rarer medium beyond critical angle.</p>
+        </div>
+
+        <div class="item-box">
+          <h3>Mechanics, Force & Motion <span class="tag">Dynamics</span></h3>
+          <div class="content">Newton I (Inertia), II (F = dp/dt), III (Action-Reaction)<br>Friction: Static > Sliding > Rolling</div>
+          <p>Seatbelts counteract inertia of motion. Recoil of gun illustrates momentum conservation.</p>
+        </div>
+
+        <div class="item-box">
+          <h3>Thermodynamics & Heat <span class="tag">Energy</span></h3>
+          <div class="content">Latent Heat: 0°C ice cools faster than 0°C water<br>Evaporation causes cooling (sweating, earthen pots)</div>
+          <p>Heat transfers: Conduction (solids), Convection (fluids), Radiation (vacuum/electromagnetic).</p>
+        </div>
+
+        <div class="item-box">
+          <h3>Electricity & Domestic Circuits <span class="tag">Circuits</span></h3>
+          <div class="content">Household Wiring: Parallel connection (220V, 50Hz)<br>Fuse Wire: High resistance, Low melting point</div>
+          <p>Earthing wire (green) drains leakage currents to ground safely, preventing lethal electrical shocks.</p>
+        </div>
+
+        <div class="highlight-rule">
+          <b>CUET Trap:</b> Centrifugal force is a pseudo-force observed only in rotating (non-inertial) reference frames.
+        </div>
+      </div>
+    </div>
+
+    <!-- Pillar 2: Everyday Chemistry -->
+    <div class="col-card col-2">
+      <div class="col-header">
+        <h2>2. Everyday Chemistry</h2>
+        <span class="col-badge">Matter & Tech</span>
+      </div>
+      <div class="col-body">
+        <div class="item-box">
+          <h3>Acids, Bases & Daily pH <span class="tag">pH Scale</span></h3>
+          <div class="content">pH < 7 Acidic | pH = 7 Neutral | pH > 7 Basic<br>Blood: 7.35–7.45 | Stomach: 1.5–2.0 (HCl)</div>
+          <p>Tooth decay starts when mouth pH falls below 5.5. Antacids (Mg(OH)₂, baking soda) neutralize excess acid.</p>
+        </div>
+
+        <div class="item-box">
+          <h3>Household Chemical Salts <span class="tag">Salts</span></h3>
+          <div class="content">Baking Soda: NaHCO₃ | Washing Soda: Na₂CO₃·10H₂O<br>Plaster of Paris: CaSO₄·½H₂O | Bleach: CaOCl₂</div>
+          <p>Heating Gypsum (CaSO₄·2H₂O) at 373 K loses water of crystallisation to form Plaster of Paris.</p>
+        </div>
+
+        <div class="item-box">
+          <h3>Metals, Alloys & Corrosion <span class="tag">Metallurgy</span></h3>
+          <div class="content">Brass: Cu + Zn | Bronze: Cu + Sn | Solder: Pb + Sn<br>Stainless Steel: Fe + Cr + Ni + C (Rust resistant)</div>
+          <p>Galvanisation coats iron with a thin layer of Zinc (sacrificial protection against air and moisture).</p>
+        </div>
+
+        <div class="item-box">
+          <h3>Polymers & Green Environment <span class="tag">Materials</span></h3>
+          <div class="content">Teflon: Non-stick cookware | Bakelite: Switches<br>Greenhouse Gases: CO₂, CH₄, N₂O, Water vapour</div>
+          <p>CFCs deplete stratospheric ozone (O₃) via chlorine free radical chain reactions over polar regions.</p>
+        </div>
+
+        <div class="highlight-rule">
+          <b>Chemical Rule:</b> Adding water to concentrated acid is dangerously exothermic; always add acid to water slowly!
+        </div>
+      </div>
+    </div>
+
+    <!-- Pillar 3: Health & Bioscience -->
+    <div class="col-card col-3">
+      <div class="col-header">
+        <h2>3. Life Science & Health</h2>
+        <span class="col-badge">Biosystems</span>
+      </div>
+      <div class="col-body">
+        <div class="item-box">
+          <h3>Circulation & Blood Types <span class="tag">Physiology</span></h3>
+          <div class="content">Universal Donor: O negative (No A/B/Rh antigens)<br>Universal Recipient: AB positive (No antibodies)</div>
+          <p>Arteries carry oxygenated blood away from heart (except Pulmonary Artery). Veins have valves.</p>
+        </div>
+
+        <div class="item-box">
+          <h3>Vitamins & Deficiency Diseases <span class="tag">Nutrition</span></h3>
+          <div class="content">Vit A (Night Blindness) | Vit B1 (Beriberi)<br>Vit C (Scurvy) | Vit D (Rickets) | Vit K (Clotting)</div>
+          <p>Water-soluble: Vitamins B & C (excreted in urine). Fat-soluble: Vitamins A, D, E, K (stored in liver).</p>
+        </div>
+
+        <div class="item-box">
+          <h3>Infectious Diseases & Pathogens <span class="tag">Pathology</span></h3>
+          <div class="content">Viral: COVID-19, Polio, Dengue, Rabies, Measles<br>Bacterial: Tuberculosis, Cholera, Typhoid, Tetanus</div>
+          <p>Antibiotics kill bacteria by targeting cell walls/ribosomes; they are completely ineffective against viruses.</p>
+        </div>
+
+        <div class="item-box">
+          <h3>Genetics, Hormones & Biotech <span class="tag">Biotech</span></h3>
+          <div class="content">Insulin: Pancreas beta-cells (regulates glucose)<br>DNA: Double helix (A=T, G≡C) | Master Gland: Pituitary</div>
+          <p>CRISPR-Cas9 acts as molecular scissors for targeted genome editing; mRNA vaccines teach spike synthesis.</p>
+        </div>
+
+        <div class="highlight-rule">
+          <b>Biological Fact:</b> Mitochondria possess their own circular DNA and 70S ribosomes (endosymbiosis).
+        </div>
+      </div>
+    </div>
+
+    <!-- Pillar 4: Mental Ability -->
+    <div class="col-card col-4">
+      <div class="col-header">
+        <h2>4. Mental Ability Logic</h2>
+        <span class="col-badge">Cognitive Patterns</span>
+      </div>
+      <div class="col-body">
+        <div class="item-box">
+          <h3>Scientific Method & Controls <span class="tag">Reasoning</span></h3>
+          <div class="content">Correlation ≠ Causation | Double-Blind Trials<br>Control Group isolates single independent variable</div>
+          <p>Anecdotal evidence cannot disprove controlled clinical studies. Confounding variables must be held constant.</p>
+        </div>
+
+        <div class="item-box">
+          <h3>Visual & Non-Verbal Logic <span class="tag">Spatial</span></h3>
+          <div class="content">Mirror Images: Left-Right inversion, Top stays Top<br>Water Images: Top-Bottom inversion, Left stays Left</div>
+          <p>Paper folding and punching follows reverse chronological symmetry unfolding from crease lines.</p>
+        </div>
+
+        <div class="item-box">
+          <h3>Fermi Estimation & Units <span class="tag">Estimation</span></h3>
+          <div class="content">Dimensional Analysis: [Force] = MLT⁻²<br>Order of magnitude estimation filters absurd options</div>
+          <p>Check units immediately. Speed cannot equal metres; work cannot equal Newtons. Dimension test eliminates options.</p>
+        </div>
+
+        <div class="item-box">
+          <h3>Scientific Instruments <span class="tag">Measurement</span></h3>
+          <div class="content">Barometer: Pressure | Hygrometer: Humidity<br>Ammeter: Current (Series) | Voltmeter: Potential (Parallel)</div>
+          <p>Sphygmomanometer measures blood pressure; Galvanometer detects small electric currents.</p>
+        </div>
+
+        <div class="highlight-rule">
+          <b>Logic Rule:</b> An extraordinary claim requires extraordinary reproducible empirical evidence.
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Strategy Banner -->
+    <div class="footer-bar">
+      <div><b>CUET UG SCIENTIFIC LITERACY PROTOCOL:</b> Ground every inference in verified empirical laws. Reject post-hoc fallacies, recognize unit dimensional consistency, and prioritize controlled experimental data!</div>
+      <div class="footer-pills">
+        <span class="footer-pill">TIR & Refraction</span>
+        <span class="footer-pill">pH Equilibrium</span>
+        <span class="footer-pill">Universal Blood Rules</span>
+        <span class="footer-pill">Controlled Trials</span>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
