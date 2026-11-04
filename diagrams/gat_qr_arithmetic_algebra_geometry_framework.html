@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CUET GAT: Quantitative Reasoning Architecture & Formula Matrix</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 20px 24px;
+    overflow: hidden;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 10px;
+    margin-bottom: 14px;
+  }
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .brand-badge {
+    background: #071A4D;
+    color: #B8FF34;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .title-group h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .title-group p {
+    font-size: 12px;
+    color: #64748B;
+    margin-top: 1px;
+  }
+  .header-tag {
+    background: #EAF0FF;
+    color: #1F5EFF;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+    border: 1px solid #C7D9FE;
+  }
+
+  .grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    height: 705px;
+  }
+
+  .col-card {
+    background: #FFFFFF;
+    border: 1.5px solid #CBD5E1;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .col-header {
+    padding: 10px 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid #E2E8F0;
+  }
+  .col-1 .col-header { background: #EEF4FF; border-top: 4px solid #1F5EFF; }
+  .col-2 .col-header { background: #F0FDF4; border-top: 4px solid #0E7A4A; }
+  .col-3 .col-header { background: #FFF7ED; border-top: 4px solid #C2410C; }
+  .col-4 .col-header { background: #FAF5FF; border-top: 4px solid #7E22CE; }
+
+  .col-header h2 {
+    font-size: 14px;
+    font-weight: 800;
+  }
+  .col-1 .col-header h2 { color: #1F5EFF; }
+  .col-2 .col-header h2 { color: #0E7A4A; }
+  .col-3 .col-header h2 { color: #C2410C; }
+  .col-4 .col-header h2 { color: #7E22CE; }
+
+  .col-badge {
+    margin-left: auto;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+  .col-1 .col-badge { background: #DBEAFE; color: #1E40AF; }
+  .col-2 .col-badge { background: #DCFCE7; color: #166534; }
+  .col-3 .col-badge { background: #FFEDD5; color: #9A3412; }
+  .col-4 .col-badge { background: #F3E8FF; color: #6B21A8; }
+
+  .col-body {
+    padding: 10px 11px;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    flex: 1;
+    overflow: hidden;
+  }
+
+  .item-box {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 8px 10px;
+  }
+  .item-box h3 {
+    font-size: 12px;
+    font-weight: 700;
+    color: #0F172A;
+    margin-bottom: 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .item-box .formula {
+    font-family: "SF Mono", Menlo, Consolas, Monaco, monospace;
+    font-size: 11px;
+    background: #F1F5F9;
+    padding: 3px 6px;
+    border-radius: 4px;
+    color: #0F172A;
+    font-weight: 600;
+    margin: 3px 0;
+    border: 1px solid #E2E8F0;
+    line-height: 1.35;
+  }
+  .item-box p {
+    font-size: 10.5px;
+    color: #475569;
+    line-height: 1.35;
+    margin-top: 2px;
+  }
+  .item-box .tag {
+    font-size: 9px;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 3px;
+    background: #E2E8F0;
+    color: #334155;
+  }
+
+  .highlight-rule {
+    background: #FEF3C7;
+    border: 1px solid #F59E0B;
+    border-radius: 6px;
+    padding: 6px 8px;
+    font-size: 10.5px;
+    color: #92400E;
+    line-height: 1.35;
+  }
+  .highlight-rule b {
+    color: #78350F;
+  }
+
+  .footer-bar {
+    grid-column: span 4;
+    background: #071A4D;
+    color: #FFFFFF;
+    border-radius: 8px;
+    padding: 8px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 11.5px;
+  }
+  .footer-bar b {
+    color: #B8FF34;
+  }
+  .footer-pills {
+    display: flex;
+    gap: 8px;
+  }
+  .footer-pill {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 600;
+    color: #E2E8F0;
+  }
+</style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-left">
+      <div class="brand-badge">OurMocks CUET UG</div>
+      <div class="title-group">
+        <h1>Quantitative Reasoning: Master Computational Architecture & Formula Matrix</h1>
+        <p>Core Arithmetic, Commercial Mathematics, Algebra, Numbers, and Spatial Geometry Blueprints</p>
+      </div>
+    </div>
+    <div class="header-tag">Section III · 100% Exam-Aligned</div>
+  </div>
+
+  <!-- Grid of 4 Pillars -->
+  <div class="grid-4">
+
+    <!-- Pillar 1: Arithmetic & Commercial -->
+    <div class="col-card col-1">
+      <div class="col-header">
+        <h2>1. Commercial Arithmetic</h2>
+        <span class="col-badge">Core 35%</span>
+      </div>
+      <div class="col-body">
+        <div class="item-box">
+          <h3>Percentages & Net Change <span class="tag">Rule</span></h3>
+          <div class="formula">Net% = a + b + (ab / 100)%</div>
+          <p>Two successive changes of a% and b%. If equal increase/decrease of x%: always loss = -(x/10)&#178;%.</p>
+        </div>
+
+        <div class="item-box">
+          <h3>Profit, Loss & Mark-up <span class="tag">Trading</span></h3>
+          <div class="formula">P% = (SP - CP)/CP × 100<br>SP = MP × (1 - D1/100)(1 - D2/100)</div>
+          <p>Dishonest dealer selling at CP using weight w instead of W: Gain% = (Error / True Value - Error) × 100.</p>
+        </div>
+
+        <div class="item-box">
+          <h3>Simple & Compound Interest <span class="tag">Finance</span></h3>
+          <div class="formula">SI = (P·R·T)/100 | A = P(1 + R/100)ⁿ<br>Diff (2 Yrs) = P(R / 100)&#178;</div>
+          <p>Diff for 3 Yrs: P(R/100)&#178; × (3 + R/100). Rule of 72: Doubling time ≈ 72 / R years.</p>
+        </div>
+
+        <div class="item-box">
+          <h3>Partnership & Profit Share <span class="tag">Ratio</span></h3>
+          <div class="formula">Profit Ratio = (C₁ × T₁) : (C₂ × T₂)</div>
+          <p>Working partner commission is deducted before net profit is distributed by capital-time weights.</p>
+        </div>
+
+        <div class="highlight-rule">
+          <b>CUET Pro-Tip:</b> Multiplying factors save 40s. A 15% hike = ×1.15; 20% discount = ×0.80.
+        </div>
+      </div>
+    </div>
+
+    <!-- Pillar 2: Rates & Kinematics -->
+    <div class="col-card col-2">
+      <div class="col-header">
+        <h2>2. Rates & Movement</h2>
+        <span class="col-badge">High Yield</span>
+      </div>
+      <div class="col-body">
+        <div class="item-box">
+          <h3>Time & Work Dynamics <span class="tag">LCM Model</span></h3>
+          <div class="formula">Total Work = LCM(days)<br>Efficiency = Work / Days</div>
+          <p>If A takes x days and B takes y days: Combined = (xy) / (x + y) days. MDH: (M₁·D₁·H₁)/W₁ = (M₂·D₂·H₂)/W₂.</p>
+        </div>
+
+        <div class="item-box">
+          <h3>Pipes & Cisterns <span class="tag">Inflow/Drain</span></h3>
+          <div class="formula">Net Rate = Σ(Inlets) - Σ(Outlets)</div>
+          <p>If leak empties full tank in L hrs while pipe fills in F hrs: Net time = (F·L) / (L - F) hrs.</p>
+        </div>
+
+        <div class="item-box">
+          <h3>Speed, Time & Distance <span class="tag">Motion</span></h3>
+          <div class="formula">1 km/h = 5/18 m/s | 1 m/s = 18/5 km/h<br>Avg Speed = (2·u·v) / (u + v)</div>
+          <p>Harmonic mean applies strictly when distance is equal. If time is equal, Avg Speed = (u + v)/2.</p>
+        </div>
+
+        <div class="item-box">
+          <h3>Trains & Relative Velocity <span class="tag">Linear</span></h3>
+          <div class="formula">Same Dir: |u - v| | Opp Dir: (u + v)<br>Time = (L₁ + L₂) / Relative Speed</div>
+          <p>Crossing pole/man: Distance = L_train. Crossing platform/bridge: Distance = L_train + L_platform.</p>
+        </div>
+
+        <div class="item-box">
+          <h3>Boats & Streams <span class="tag">Currents</span></h3>
+          <div class="formula">Down = u + v | Up = u - v<br>Boat (u) = (D + U)/2 | Stream = (D - U)/2</div>
+          <p>Current always accelerates downstream and decelerates upstream equally.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pillar 3: Numbers & Algebra -->
+    <div class="col-card col-3">
+      <div class="col-header">
+        <h2>3. Numbers & Algebra</h2>
+        <span class="col-badge">Foundation</span>
+      </div>
+      <div class="col-body">
+        <div class="item-box">
+          <h3>HCF, LCM & Divisibility <span class="tag">Number Law</span></h3>
+          <div class="formula">HCF(a, b) × LCM(a, b) = a × b<br>HCF(Fractions) = HCF(Num) / LCM(Den)</div>
+          <p>Divisibility by 7, 11, 13: Group digits in 3s from right, alternating sum difference divisible.</p>
+        </div>
+
+        <div class="item-box">
+          <h3>Unit Digit & Cyclicity <span class="tag">Power</span></h3>
+          <div class="formula">Cyclicity 4: (2, 3, 7, 8) | Cyclicity 2: (4, 9)<br>Power mod 4 gives position (0 ➔ 4)</div>
+          <p>Any integer ending in 0, 1, 5, 6 maintains identical unit digit across all natural exponents.</p>
+        </div>
+
+        <div class="item-box">
+          <h3>Algebraic Identities <span class="tag">Algebra</span></h3>
+          <div class="formula">If x + 1/x = k ➔ x² + 1/x² = k² - 2<br>x³ + 1/x³ = k³ - 3k</div>
+          <p>a³ + b³ + c³ - 3abc = (a+b+c)(a²+b²+c² - ab - bc - ca). If a+b+c = 0, a³+b³+c³ = 3abc.</p>
+        </div>
+
+        <div class="item-box">
+          <h3>Progressions: AP & GP <span class="tag">Sequences</span></h3>
+          <div class="formula">AP: Tₙ = a + (n-1)d | Sₙ = (n/2)[2a + (n-1)d]<br>GP: Tₙ = a·rⁿ⁻¹ | S_∞ = a / (1 - r)</div>
+          <p>Arithmetic Mean = (a+b)/2. Geometric Mean = √(ab). AM ≥ GM strictly holds for positive reals.</p>
+        </div>
+
+        <div class="highlight-rule">
+          <b>Alligation Cross:</b> (Q₁ / Q₂) = (Cheaper diff) / (Dearer diff) to find mixture ratios in 10s.
+        </div>
+      </div>
+    </div>
+
+    <!-- Pillar 4: Mensuration & Geometry -->
+    <div class="col-card col-4">
+      <div class="col-header">
+        <h2>4. Mensuration & Geometry</h2>
+        <span class="col-badge">Formula-Heavy</span>
+      </div>
+      <div class="col-body">
+        <div class="item-box">
+          <h3>2D Plane Figures <span class="tag">Perimeter & Area</span></h3>
+          <div class="formula">Equilateral △ = (√3 / 4)a² | Circle = πr²<br>Trapezium = 1/2(a + b)h | Rhombus = 1/2·d₁d₂</div>
+          <p>Heron's Formula: √[s(s-a)(s-b)(s-c)] where s = (a+b+c)/2. Scalene triangle area.</p>
+        </div>
+
+        <div class="item-box">
+          <h3>3D Solids: Surface Area & Volume <span class="tag">Spatial</span></h3>
+          <div class="formula">Cylinder: V = πr²h | TSA = 2πr(r + h)<br>Cone: V = 1/3·πr²h | CSA = πrℓ<br>Sphere: V = 4/3·πr³ | Surface = 4πr²</div>
+          <p>Hemisphere: CSA = 2πr², TSA = 3πr², Volume = (2/3)πr³. Slant height ℓ = √(r² + h²).</p>
+        </div>
+
+        <div class="item-box">
+          <h3>Geometric Theorems & Angles <span class="tag">Geometry</span></h3>
+          <div class="formula">Sum Int Angles = (n - 2) × 180°<br>Angle at center = 2 × Angle at circumference</div>
+          <p>Pythagorean Triplets: (3, 4, 5), (5, 12, 13), (7, 24, 25), (8, 15, 17), (9, 40, 41), (20, 21, 29).</p>
+        </div>
+
+        <div class="item-box">
+          <h3>Coordinate Geometry <span class="tag">Cartesian</span></h3>
+          <div class="formula">d = √[(x₂ - x₁)² + (y₂ - y₁)²]<br>Midpoint = ((x₁+x₂)/2, (y₁+y₂)/2) | Slope = Δy/Δx</div>
+          <p>Two lines are perpendicular iff m₁ × m₂ = -1; parallel iff slopes are equal (m₁ = m₂).</p>
+        </div>
+
+        <div class="highlight-rule">
+          <b>Dimensional Scaling:</b> If linear dimension scales by k, Area scales by k², Volume scales by k³.
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Strategy Banner -->
+    <div class="footer-bar">
+      <div><b>CUET UG EXAM PROTOCOL:</b> Always test extreme values (0, 1), check options for unit digit match, and never compute large multiplications directly—factor first!</div>
+      <div class="footer-pills">
+        <span class="footer-pill">LCM Work Model</span>
+        <span class="footer-pill">Alligation Cross</span>
+        <span class="footer-pill">Relative Speed</span>
+        <span class="footer-pill">Slant Height Rule</span>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
