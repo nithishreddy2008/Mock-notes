@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CUET GAT: General Knowledge & Current Affairs Matrix</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 20px 26px;
+    overflow: hidden;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 10px;
+    margin-bottom: 14px;
+  }
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .brand-badge {
+    background: #071A4D;
+    color: #B8FF34;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .title-group h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .title-group p {
+    font-size: 12px;
+    color: #64748B;
+    margin-top: 1px;
+  }
+  .header-tag {
+    background: #EAF0FF;
+    color: #1F5EFF;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+    border: 1px solid #C7D9FE;
+  }
+
+  .grid-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 12px;
+  }
+
+  .card {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 10px;
+    padding: 13px 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+  }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1.5px solid #F1F5F9;
+    padding-bottom: 7px;
+  }
+
+  .card-title {
+    font-size: 14px;
+    font-weight: 800;
+    color: #071A4D;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+
+  .pill {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+  .pill-blue { background: #EAF0FF; color: #1F5EFF; }
+  .pill-green { background: #F0FDF4; color: #16A34A; }
+  .pill-purple { background: #FAF5FF; color: #9333EA; }
+
+  .rule-item {
+    background: #F8FAFC;
+    border-left: 3px solid #1F5EFF;
+    border-radius: 0 6px 6px 0;
+    padding: 7px 10px;
+  }
+  .rule-item.purple { border-left-color: #9333EA; }
+  .rule-item.green { border-left-color: #16A34A; }
+
+  .rule-name {
+    font-size: 11.5px;
+    font-weight: 800;
+    color: #0F172A;
+    display: flex;
+    justify-content: space-between;
+  }
+  .rule-desc {
+    font-size: 10.5px;
+    color: #475569;
+    line-height: 1.35;
+    margin-top: 2px;
+  }
+  .rule-highlight {
+    font-size: 10px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    color: #0369A1;
+    background: #E0F2FE;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-top: 3px;
+    display: inline-block;
+  }
+
+  .bottom-banner {
+    background: #071A4D;
+    border-radius: 10px;
+    padding: 12px 18px;
+    color: #FFFFFF;
+    display: grid;
+    grid-template-columns: 210px 1fr;
+    gap: 16px;
+    align-items: center;
+  }
+
+  .banner-badge-box {
+    border-right: 1.5px solid rgba(255,255,255,0.15);
+    padding-right: 14px;
+  }
+  .banner-badge-box h3 {
+    font-size: 13px;
+    font-weight: 800;
+    color: #B8FF34;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .banner-badge-box p {
+    font-size: 10px;
+    color: #94A3B8;
+    margin-top: 2px;
+  }
+
+  .steps-flex {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+  .step-box {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 6px;
+    padding: 7px 10px;
+  }
+  .step-num {
+    font-size: 10px;
+    font-weight: 800;
+    color: #B8FF34;
+  }
+  .step-title {
+    font-size: 11px;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-top: 1px;
+  }
+  .step-sub {
+    font-size: 9.5px;
+    color: #CBD5E1;
+    margin-top: 2px;
+    line-height: 1.25;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <div class="brand-badge">OURMOCKS · CUET UG GAT (501)</div>
+    <div class="title-group">
+      <h1>General Knowledge, Current Affairs & Static GK Matrix</h1>
+      <p>Constitutional Pillars, Global Institutions, and Cultural-Geographical Memory Pegs</p>
+    </div>
+  </div>
+  <div class="header-tag">Static & Dynamic Syllabus</div>
+</div>
+
+<div class="grid-3">
+
+  <!-- Column 1: Indian Polity & Constitutional Anchors -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">1. Constitutional Pillars</div>
+      <div class="pill pill-blue">Polity Core</div>
+    </div>
+
+    <div class="rule-item">
+      <div class="rule-name">Fundamental Rights (Part III)</div>
+      <div class="rule-desc">Articles 14–32. Article 21 (Right to Life & Liberty); Article 32 (Constitutional Remedies — "Heart & Soul").</div>
+      <div><span class="rule-highlight">5 Writs: Habeas Corpus, Mandamus, Quo Warranto, Certiorari, Prohibition</span></div>
+    </div>
+
+    <div class="rule-item">
+      <div class="rule-name">DPSP & Duties (Parts IV, IVA)</div>
+      <div class="rule-desc">DPSP (Articles 36–51, Non-justiciable); Fundamental Duties (Article 51A, 42nd Amendment 1976, Swaran Singh Committee).</div>
+      <div><span class="rule-highlight">11 Fundamental Duties (86th Amd added 11th)</span></div>
+    </div>
+
+    <div class="rule-item">
+      <div class="rule-name">Constitutional vs Statutory Bodies</div>
+      <div class="rule-desc">Constitutional: EC (Art 324), UPSC (Art 315), CAG (Art 148), Finance Comm (Art 280). Statutory: NHRC, NITI Aayog (Executive).</div>
+      <div><span class="rule-highlight">CAG: Guardian of Public Purse (Art 148)</span></div>
+    </div>
+
+    <div class="rule-item">
+      <div class="rule-name">Emergency Provisions (Part XVIII)</div>
+      <div class="rule-desc">National (Art 352), President's Rule (Art 356), Financial (Art 360 — never invoked in India).</div>
+      <div><span class="rule-highlight">Art 20 & 21 cannot be suspended under Art 352</span></div>
+    </div>
+  </div>
+
+  <!-- Column 2: International Organizations & Multilateral Pacts -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">2. Global Institutions</div>
+      <div class="pill pill-purple">Multilateral Orgs</div>
+    </div>
+
+    <div class="rule-item purple">
+      <div class="rule-name">United Nations System</div>
+      <div class="rule-desc">Headquarters: New York. 6 Organs. ICJ located in The Hague (Netherlands). 5 Permanent Security Council members (P5).</div>
+      <div><span class="rule-highlight">UN Day: October 24 (Founded 1945)</span></div>
+    </div>
+
+    <div class="rule-item purple">
+      <div class="rule-name">Bretton Woods Twins</div>
+      <div class="rule-desc">IMF (Balance of payments stability) & World Bank (IBRD + IDA, developmental loans). Both HQ: Washington, D.C.</div>
+      <div><span class="rule-highlight">WTO HQ: Geneva (Replaced GATT 1995)</span></div>
+    </div>
+
+    <div class="rule-item purple">
+      <div class="rule-name">Regional & Strategic Blocs</div>
+      <div class="rule-desc">BRICS (Expanded 2024); G20 (India Presidency 2023, African Union added); ASEAN (Jakarta); SAARC (Kathmandu); SCO (Beijing).</div>
+      <div><span class="rule-highlight">BRICS Bank: New Development Bank (Shanghai)</span></div>
+    </div>
+
+    <div class="rule-item purple">
+      <div class="rule-name">Environmental Treaties</div>
+      <div class="rule-desc">UNFCCC Paris Agreement (2015, limit warming to 1.5°C); Ramsar Convention (Wetlands); Montreal Protocol (Ozone layer).</div>
+      <div><span class="rule-highlight">Montreal Protocol (1987) = Most successful treaty</span></div>
+    </div>
+  </div>
+
+  <!-- Column 3: Static GK & Cultural Heritage -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">3. Cultural & Physical GK</div>
+      <div class="pill pill-green">Static Anchors</div>
+    </div>
+
+    <div class="rule-item green">
+      <div class="rule-name">8 Classical Dances of India</div>
+      <div class="rule-desc">Sangeet Natak Akademi: Bharatanatyam (TN), Kathak (UP/North), Kathakali & Mohiniyattam (KL), Odissi (OD), Kuchipudi (AP), Manipuri (MN), Sattriya (AS).</div>
+      <div><span class="rule-highlight">Sattriya introduced by Srimanta Sankardev</span></div>
+    </div>
+
+    <div class="rule-item green">
+      <div class="rule-name">High-Yield National Parks</div>
+      <div class="rule-desc">Kaziranga (Assam — 1-horned rhino); Jim Corbett (Uttarakhand — 1st park, 1936); Gir (Gujarat — Asiatic lion); Keibul Lamjao (Manipur — floating park).</div>
+      <div><span class="rule-highlight">Keibul Lamjao: Loktak Lake (Sangai deer)</span></div>
+    </div>
+
+    <div class="rule-item green">
+      <div class="rule-name">Major Indian Awards & Honours</div>
+      <div class="rule-desc">Bharat Ratna (Highest civilian, instituted 1954); Param Vir Chakra (Highest military gallantry); Jnanpith (Highest literary); Dadasaheb Phalke (Cinema).</div>
+      <div><span class="rule-highlight">First Bharat Ratna: Rajagopalachari, Radhakrishnan, Raman</span></div>
+    </div>
+
+    <div class="rule-item green">
+      <div class="rule-name">Space & Defense Milestones</div>
+      <div class="rule-desc">ISRO (HQ Bengaluru, 1969); Chandrayaan-3 (South pole landing, Shiv Shakti Point); Aditya-L1 (Solar Lagrange point L1).</div>
+      <div><span class="rule-highlight">National Space Day: August 23</span></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Bottom Strip: 4-Step Operational Solving Protocol -->
+<div class="bottom-banner">
+  <div class="banner-badge-box">
+    <h3>GK Answering Protocol</h3>
+    <p>Operational 4-Step Decision Filter for Exam-Day Accuracy</p>
+  </div>
+  <div class="steps-flex">
+    <div class="step-box">
+      <div class="step-num">STEP 01</div>
+      <div class="step-title">Key Term Isolation</div>
+      <div class="step-sub">Circle the operative subject, date, article, or institutional acronym in the stem.</div>
+    </div>
+    <div class="step-box">
+      <div class="step-num">STEP 02</div>
+      <div class="step-title">Anachronism Strike</div>
+      <div class="step-sub">Disqualify options that belong to wrong historical centuries, geographic zones, or ministries.</div>
+    </div>
+    <div class="step-box">
+      <div class="step-num">STEP 03</div>
+      <div class="step-title">Binary Cross-Check</div>
+      <div class="step-sub">Between the final 2 choices, match constitutional article number or official headquarters.</div>
+    </div>
+    <div class="step-box">
+      <div class="step-num">STEP 04</div>
+      <div class="step-title">Negative Shield</div>
+      <div class="step-sub">Skip unanchored pure guesses where 4 options are blind; attempt when 2 options are struck.</div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
