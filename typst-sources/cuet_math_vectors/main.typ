@@ -59,6 +59,29 @@ Let $O(0, 0, 0)$ be the fixed origin of reference in three-dimensional space. Th
 $ vec(r) = arrow(O P) = x hat(i) + y hat(j) + z hat(k) $
 For two distinct points $A$ and $B$ with position vectors $vec(a)$ and $vec(b)$ respectively:
 
+#worked-example("Computing Shortest Distance Between Two Skew Lines in 3D Space", [
+  *Problem:* Find the shortest distance between the spatial skew lines:
+  $ L_1: vec(r) = (hat(i) + 2 hat(j) + hat(k)) + lambda (hat(i) - hat(j) + hat(k)) $
+  $ L_2: vec(r) = (2 hat(i) - hat(j) - hat(k)) + mu (2 hat(i) + hat(j) + 2 hat(k)) $
+  
+  *Step 1 (Extract Base Points and Direction Vectors):*
+  - $vec(a)_1 = hat(i) + 2 hat(j) + hat(k)$, $vec(b)_1 = hat(i) - hat(j) + hat(k)$.
+  - $vec(a)_2 = 2 hat(i) - hat(j) - hat(k)$, $vec(b)_2 = 2 hat(i) + hat(j) + 2 hat(k)$.
+  - Displacement vector: $vec(a)_2 - vec(a)_1 = (2 - 1)hat(i) + (-1 - 2)hat(j) + (-1 - 1)hat(k) = hat(i) - 3 hat(j) - 2 hat(k)$.
+  
+  *Step 2 (Compute Cross Product $vec(b)_1 times vec(b)_2$):*
+  $ vec(b)_1 times vec(b)_2 = mat(delim: "|", hat(i), hat(j), hat(k); 1, -1, 1; 2, 1, 2) = hat(i)(-2 - 1) - hat(j)(2 - 2) + hat(k)(1 - (-2)) = -3 hat(i) + 0 hat(j) + 3 hat(k) $
+  - Magnitude: $|vec(b)_1 times vec(b)_2| = sqrt((-3)^2 + 0^2 + 3^2) = sqrt(9 + 9) = sqrt(18) = 3 sqrt(2)$.
+  
+  *Step 3 (Compute Scalar Dot Product):*
+  $ (vec(a)_2 - vec(a)_1) dot (vec(b)_1 times vec(b)_2) = (1)(-3) + (-3)(0) + (-2)(3) = -3 + 0 - 6 = -9 $
+  
+  *Step 4 (Evaluate Shortest Distance):*
+  $ d = frac(|(vec(a)_2 - vec(a)_1) dot (vec(b)_1 times vec(b)_2)|, |vec(b)_1 times vec(b)_2|) = frac(|-9|, 3 sqrt(2)) = frac(9, 3 sqrt(2)) = frac(3, sqrt(2)) = frac(3 sqrt(2), 2) "units" $
+  
+  *Conclusion:* The shortest distance between the two skew lines is strictly *$frac(3 sqrt(2), 2)$* (or $frac(3, sqrt(2))$) units.
+])
+
 #table(
   columns: (1.2fr, 2.8fr),
   stroke: 0.5pt + om-navy.lighten(70%),
@@ -213,6 +236,29 @@ $ [vec(a) space vec(b) space vec(c)] = mat(delim: "|", a_1, a_2, a_3; b_1, b_2, 
 
 Let a directed line $L$ in 3D space make angles $alpha, beta, gamma$ with the positive directions of the $x, y, z$ axes respectively ($0 <= alpha, beta, gamma <= pi$). These angles are called *direction angles*.
 
+#worked-example("Computing Shortest Distance Between Two Skew Lines in 3D Space", [
+  *Problem:* Find the shortest distance between the spatial skew lines:
+  $ L_1: vec(r) = (hat(i) + 2 hat(j) + hat(k)) + lambda (hat(i) - hat(j) + hat(k)) $
+  $ L_2: vec(r) = (2 hat(i) - hat(j) - hat(k)) + mu (2 hat(i) + hat(j) + 2 hat(k)) $
+  
+  *Step 1 (Extract Base Points and Direction Vectors):*
+  - $vec(a)_1 = hat(i) + 2 hat(j) + hat(k)$, $vec(b)_1 = hat(i) - hat(j) + hat(k)$.
+  - $vec(a)_2 = 2 hat(i) - hat(j) - hat(k)$, $vec(b)_2 = 2 hat(i) + hat(j) + 2 hat(k)$.
+  - Displacement vector: $vec(a)_2 - vec(a)_1 = (2 - 1)hat(i) + (-1 - 2)hat(j) + (-1 - 1)hat(k) = hat(i) - 3 hat(j) - 2 hat(k)$.
+  
+  *Step 2 (Compute Cross Product $vec(b)_1 times vec(b)_2$):*
+  $ vec(b)_1 times vec(b)_2 = mat(delim: "|", hat(i), hat(j), hat(k); 1, -1, 1; 2, 1, 2) = hat(i)(-2 - 1) - hat(j)(2 - 2) + hat(k)(1 - (-2)) = -3 hat(i) + 0 hat(j) + 3 hat(k) $
+  - Magnitude: $|vec(b)_1 times vec(b)_2| = sqrt((-3)^2 + 0^2 + 3^2) = sqrt(9 + 9) = sqrt(18) = 3 sqrt(2)$.
+  
+  *Step 3 (Compute Scalar Dot Product):*
+  $ (vec(a)_2 - vec(a)_1) dot (vec(b)_1 times vec(b)_2) = (1)(-3) + (-3)(0) + (-2)(3) = -3 + 0 - 6 = -9 $
+  
+  *Step 4 (Evaluate Shortest Distance):*
+  $ d = frac(|(vec(a)_2 - vec(a)_1) dot (vec(b)_1 times vec(b)_2)|, |vec(b)_1 times vec(b)_2|) = frac(|-9|, 3 sqrt(2)) = frac(9, 3 sqrt(2)) = frac(3, sqrt(2)) = frac(3 sqrt(2), 2) "units" $
+  
+  *Conclusion:* The shortest distance between the two skew lines is strictly *$frac(3 sqrt(2), 2)$* (or $frac(3, sqrt(2))$) units.
+])
+
 #table(
   columns: (1.2fr, 2.8fr),
   stroke: 0.5pt + om-navy.lighten(70%),
@@ -338,61 +384,57 @@ Although planes have received varied emphasis in revised boards, CUET retains co
   [*Parallelism & Perpendicularity*], [Line is parallel to plane if $vec(b) dot vec(n) = 0$. Line is perpendicular to plane if $vec(b) parallel vec(n)$ ($frac(a, A) = frac(b, B) = frac(c, C)$).],
 )
 
+#pagebreak()
 #figure(
-  image("assets/math_vectors_3d_mindmap.png", width: 95%),
+  image("assets/math_vectors_3d_mindmap.png", width: 85%),
   caption: [Figure 3: Vectors and 3D Geometry Complete Structural Synthesis Mindmap],
 )
 
----
+#v(4pt)
+#exam-pointer(title: "Master Vectors and 3D Geometry Architecture")[
+  The synthesis architecture above consolidates the geometric and vector structures of Unit IV:
+  - *Vector Products & Dualities:* Dot product measures collinear projection ($vec(a) dot vec(b) = 0 <==> vec(a) perp vec(b)$); Cross product generates an orthogonal vector ($vec(a) times vec(b) = vec(0) <==> vec(a) parallel vec(b)$). Lagrange's identity connects their magnitudes: $|vec(a) times vec(b)|^2 + (vec(a) dot vec(b))^2 = |vec(a)|^2 |vec(b)|^2$.
+  - *Scalar Triple Product & Coplanarity:* The box product $[vec(a) space vec(b) space vec(c)]$ represents the signed volume of the parallelepiped spanned by the vectors. Coplanarity of three vectors is equivalent to $[vec(a) space vec(b) space vec(c)] = 0$.
+  - *Direction Cosines & Direction Ratios:* Normalized direction cosines satisfy $l^2 + m^2 + n^2 = 1$ and $sin^2 alpha + sin^2 beta + sin^2 gamma = 2$. Direction ratios $(a, b, c)$ must be extracted with strictly positive unit coefficients in numerators ($x - x_1$, $y - y_1$, $z - z_1$).
+  - *Lines and Distance Invariants:* Skew lines are non-parallel non-intersecting spatial lines. Their shortest distance $d = |(vec(a)_2 - vec(a)_1) dot (vec(b)_1 times vec(b)_2)| / |vec(b)_1 times vec(b)_2|$ collapses to zero if and only if the lines intersect (coplanar).
+]
 
-= Common Student Mistakes & Exam Pitfalls
+#pagebreak()
+#set text(size: 7.0pt)
+#set par(leading: 0.36em, spacing: 0.38em)
 
-#table(
-  columns: (1fr, 1.4fr, 1.6fr),
-  stroke: 0.5pt + om-navy.lighten(70%),
-  fill: (col, row) => if row == 0 { om-navy-soft } else if calc.odd(row) { om-blue-soft.lighten(60%) } else { white },
-  table.header[*Pitfall Area*][*Incorrect Student Practice*][*Correct Mathematical Rule*],
-  [*Direction Ratios Extraction*], [Assuming denominator numbers are DRs without verifying numerator coefficients: $frac(1 - x, 2) ==> a = 2$.], [Rewrite $frac(-(x - 1), 2) = frac(x - 1, -2)$, making $a = -2$. Numerator variables must have coefficient $+1$.],
-  [*Angle Between Line & Plane*], [Using $cos theta = frac(vec(b) dot vec(n), |vec(b)| |vec(n)|)$ as if finding angle between two lines.], [Use $sin theta = frac(|vec(b) dot vec(n)|, |vec(b)| |vec(n)|)$ because $vec(n)$ is perpendicular to the plane.],
-  [*Parallelogram Area*], [Multiplying diagonal cross product directly: $|vec(d)_1 times vec(d)_2|$.], [Area from diagonals is $frac(1, 2) |vec(d)_1 times vec(d)_2|$. Half factor is mandatory!],
-  [*Collinearity vs Coplanarity*], [Using cross product for 3 vectors: $vec(a) times vec(b) times vec(c) = 0$.], [Collinearity of 2 vectors: $vec(a) times vec(b) = vec(0)$. Coplanarity of 3 vectors: $[vec(a) space vec(b) space vec(c)] = 0$.],
-  [*Shortest Distance Denominator*], [Evaluating $vec(b)_1 times vec(b)_2$ but forgetting to take its magnitude in denominator.], [The denominator is the Euclidean scalar norm $|vec(b)_1 times vec(b)_2| = sqrt(x^2 + y^2 + z^2)$.],
-  [*Direction Cosines Squares*], [Equating $a^2 + b^2 + c^2 = 1$ for arbitrary direction ratios.], [Only normalized direction cosines satisfy $l^2 + m^2 + n^2 = 1$. DRs satisfy $a^2 + b^2 + c^2 = lambda^2$.],
-)
-
----
-
-= High-Yield Formula Cheatsheet
+= High-Yield Formula Cheatsheet & The Seven Fatal Traps
 
 #cheatsheet-box(title: "Master Formula Cheatsheet — Vectors & 3D Geometry")[
   *Vector Algebra:*
-  - Unit vector: $hat(a) = frac(vec(a), |vec(a)|)$
-  - Internal section: $vec(r) = frac(m vec(b) + n vec(a), m + n)$; External: $vec(r) = frac(m vec(b) - n vec(a), m - n)$
-  - Scalar product: $vec(a) dot vec(b) = |vec(a)| |vec(b)| cos theta = a_1 b_1 + a_2 b_2 + a_3 b_3$
-  - Scalar projection: $p_s = frac(vec(a) dot vec(b), |vec(b)|)$; Vector projection: $vec(p)_v = (frac(vec(a) dot vec(b), |vec(b)|^2)) vec(b)$
-  - Vector product: $vec(a) times vec(b) = mat(delim: "|", hat(i), hat(j), hat(k); a_1, a_2, a_3; b_1, b_2, b_3)$
-  - Lagrange's identity: $|vec(a) times vec(b)|^2 + (vec(a) dot vec(b))^2 = |vec(a)|^2 |vec(b)|^2$
-  - Parallelogram area: $|vec(a) times vec(b)|$ (sides), $frac(1, 2) |vec(d)_1 times vec(d)_2|$ (diagonals)
-  - Triangle area: $frac(1, 2) |vec(a) times vec(b)| = frac(1, 2) |arrow(A B) times arrow(A C)|$
-  - Scalar triple product: $[vec(a) space vec(b) space vec(c)] = mat(delim: "|", a_1, a_2, a_3; b_1, b_2, b_3; c_1, c_2, c_3)$
-  - Parallelepiped volume: $|[vec(a) space vec(b) space vec(c)]|$; Tetrahedron volume: $frac(1, 6) |[vec(a) space vec(b) space vec(c)]|$
-  - Coplanarity: $[vec(a) space vec(b) space vec(c)] = 0$
+  - Unit vector: $hat(a) = frac(vec(a), |vec(a)|)$; Section formula: $vec(r) = frac(m vec(b) plus.minus n vec(a), m plus.minus n)$
+  - Scalar product: $vec(a) dot vec(b) = |vec(a)| |vec(b)| cos theta = a_1 b_1 + a_2 b_2 + a_3 b_3$; Projection: $p_s = frac(vec(a) dot vec(b), |vec(b)|)$
+  - Vector product: $vec(a) times vec(b) = mat(delim: "|", hat(i), hat(j), hat(k); a_1, a_2, a_3; b_1, b_2, b_3)$; Lagrange: $|vec(a) times vec(b)|^2 + (vec(a) dot vec(b))^2 = |vec(a)|^2 |vec(b)|^2$
+  - Parallelogram area: $|vec(a) times vec(b)|$ (sides), $frac(1, 2) |vec(d)_1 times vec(d)_2|$ (diagonals); Triangle: $frac(1, 2) |vec(a) times vec(b)|$
+  - Scalar triple product: $[vec(a) space vec(b) space vec(c)] = mat(delim: "|", a_1, a_2, a_3; b_1, b_2, b_3; c_1, c_2, c_3)$; Volume: $|[vec(a) space vec(b) space vec(c)]|$; Coplanarity: $[vec(a) space vec(b) space vec(c)] = 0$
 
   *Three-Dimensional Geometry:*
-  - DCs & DRs: $l^2 + m^2 + n^2 = 1$, $sin^2 alpha + sin^2 beta + sin^2 gamma = 2$
-  - Line through $A(vec(a))$ parallel to $vec(b)$: $vec(r) = vec(a) + lambda vec(b) quad <==> quad frac(x - x_1, a) = frac(y - y_1, b) = frac(z - z_1, c)$
+  - DCs & DRs: $l^2 + m^2 + n^2 = 1$, $sin^2 alpha + sin^2 beta + sin^2 gamma = 2$; Conversion: $l = frac(a, sqrt(a^2 + b^2 + c^2))$
+  - Line equation: $vec(r) = vec(a) + lambda vec(b) <==> frac(x - x_1, a) = frac(y - y_1, b) = frac(z - z_1, c)$
   - Line through two points: $frac(x - x_1, x_2 - x_1) = frac(y - y_1, y_2 - y_1) = frac(z - z_1, z_2 - z_1)$
   - Angle between lines: $cos theta = frac(|a_1 a_2 + b_1 b_2 + c_1 c_2|, sqrt(sum a_1^2) sqrt(sum a_2^2))$; Perpendicular: $sum a_1 a_2 = 0$
-  - Skew lines shortest distance: $d = frac(|(vec(a)_2 - vec(a)_1) dot (vec(b)_1 times vec(b)_2)|, |vec(b)_1 times vec(b)_2|)$
-  - Parallel lines shortest distance: $d = frac(|(vec(a)_2 - vec(a)_1) times vec(b)|, |vec(b)|)$
-  - Distance of point from plane: $d = frac(|A x_1 + B y_1 + C z_1 + D|, sqrt(A^2 + B^2 + C^2))$
-  - Angle between line & plane: $sin theta = frac(|vec(b) dot vec(n)|, |vec(b)| |vec(n)|)$
+  - Skew lines shortest distance: $d = frac(|(vec(a)_2 - vec(a)_1) dot (vec(b)_1 times vec(b)_2)|, |vec(b)_1 times vec(b)_2|)$; Parallel lines: $d = frac(|(vec(a)_2 - vec(a)_1) times vec(b)|, |vec(b)|)$
+  - Point distance from plane: $d = frac(|A x_1 + B y_1 + C z_1 + D|, sqrt(A^2 + B^2 + C^2))$; Line-Plane angle: $sin theta = frac(|vec(b) dot vec(n)|, |vec(b)| |vec(n)|)$
 ]
 
----
+#v(2pt)
+
+#exception-box(title: "The Seven Fatal CUET Traps in Vectors & 3D Geometry")[
+  1. *Direction Ratios Extraction Trap:* Assuming denominators are DRs without verifying numerator coefficients: $frac(1 - x, 2) ==> a = 2$ is FALSE. Rewrite as $frac(x - 1, -2)$, making $a = -2$. Numerators must strictly have $+1$ coefficient!
+  2. *Angle Between Line & Plane Inversion:* Using $cos theta$ instead of $sin theta$. Since the plane's normal vector $vec(n)$ is perpendicular to the plane surface, the angle $theta$ between line $vec(b)$ and the plane satisfies $sin theta = frac(|vec(b) dot vec(n)|, |vec(b)| |vec(n)|)$!
+  3. *Parallelogram Area from Diagonals:* Multiplying diagonal cross product directly: $|vec(d)_1 times vec(d)_2|$. Area from diagonals requires a factor of one-half: $"Area" = frac(1, 2) |vec(d)_1 times vec(d)_2|$!
+  4. *Collinearity vs Coplanarity Tool Mismatch:* Using cross product for 3 vectors. Collinearity of 2 vectors is $vec(a) times vec(b) = vec(0)$. Coplanarity of 3 vectors is $[vec(a) space vec(b) space vec(c)] = 0$ (Scalar Triple Product)!
+  5. *Shortest Distance Denominator Omission:* Evaluating $(vec(a)_2 - vec(a)_1) dot (vec(b)_1 times vec(b)_2)$ but omitting the denominator magnitude $|vec(b)_1 times vec(b)_2|$. Distance must be a scalar length!
+  6. *Direction Cosines Squares Invariant:* Claiming $a^2 + b^2 + c^2 = 1$ for arbitrary direction ratios. Only normalized direction cosines satisfy $l^2 + m^2 + n^2 = 1$. DRs satisfy $a^2 + b^2 + c^2 = lambda^2 != 1$ in general.
+  7. *Expanding Modulus Sums Trap:* Writing $|vec(a) + vec(b)|^2 = |vec(a)|^2 + |vec(b)|^2$. The correct vector identity includes the dot product cross-term: $|vec(a) + vec(b)|^2 = |vec(a)|^2 + |vec(b)|^2 + 2(vec(a) dot vec(b))$!
+]
 
 #pagebreak()
-
 #set text(size: 8.5pt)
 #set par(leading: 0.40em, spacing: 0.42em)
 
