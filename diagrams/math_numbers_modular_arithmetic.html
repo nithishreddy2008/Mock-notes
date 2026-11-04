@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Modular Arithmetic, Allegation & Kinematic Applications</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 22px 28px;
+    overflow: hidden;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 10px;
+    margin-bottom: 14px;
+  }
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .brand-badge {
+    background: #071A4D;
+    color: #B8FF34;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .title-group h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .title-group p {
+    font-size: 12px;
+    color: #64748B;
+    margin-top: 1px;
+  }
+  .header-tag {
+    background: #EFF6FF;
+    color: #1F5EFF;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 6px;
+    border: 1px solid #BFDBFE;
+  }
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    height: 750px;
+  }
+  .panel {
+    background: #FFFFFF;
+    border-radius: 12px;
+    border: 1px solid #E2E8F0;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .panel-title {
+    font-size: 15px;
+    font-weight: 800;
+    color: #071A4D;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 2px solid #F1F5F9;
+    padding-bottom: 8px;
+  }
+  .dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+  }
+  .dot-blue { background: #1F5EFF; }
+  .dot-green { background: #16A34A; }
+  .formula-card {
+    background: #071A4D;
+    border-radius: 10px;
+    padding: 12px 14px;
+    color: #FFFFFF;
+  }
+  .formula-card .f-title {
+    font-size: 11.5px;
+    font-weight: 700;
+    color: #B8FF34;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .formula-card .f-math {
+    font-family: "Cambria Math", Georgia, serif;
+    font-size: 15px;
+    color: #FFFFFF;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(184,255,52,0.3);
+    border-radius: 6px;
+    padding: 7px 10px;
+    margin-bottom: 6px;
+  }
+  .formula-card .f-math b {
+    color: #B8FF34;
+  }
+  .formula-card .f-desc {
+    font-size: 11px;
+    color: #C9D4EE;
+    line-height: 1.35;
+  }
+  .content-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 11.5px;
+  }
+  .content-table th {
+    background: #F1F5F9;
+    color: #071A4D;
+    font-weight: 700;
+    text-align: left;
+    padding: 6px 8px;
+    border-bottom: 1.5px solid #CBD5E1;
+  }
+  .content-table td {
+    padding: 6px 8px;
+    border-bottom: 1px solid #E2E8F0;
+    color: #334155;
+    line-height: 1.3;
+  }
+  .content-table tr:nth-child(even) {
+    background: #F8FAFC;
+  }
+  .box-note {
+    background: #F8FAFC;
+    border-left: 3.5px solid #1F5EFF;
+    border-radius: 0 8px 8px 0;
+    padding: 8px 12px;
+    font-size: 11.5px;
+    color: #1E293B;
+    line-height: 1.35;
+  }
+  .box-note b { color: #071A4D; }
+  .trap-card {
+    background: #FFF1F2;
+    border: 1px solid #FECDD3;
+    border-left: 3.5px solid #E11D48;
+    border-radius: 0 8px 8px 0;
+    padding: 8px 12px;
+    font-size: 11px;
+    color: #9F1239;
+    line-height: 1.35;
+  }
+  .trap-card b { color: #881337; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <div class="brand-badge">OurMocks Core System</div>
+    <div class="title-group">
+      <h1>Modular Arithmetic, Allegation & Kinematic Applications</h1>
+      <p>NTA CUET (UG) Section B2 · Unit I Numbers, Quantification & Numerical Applications</p>
+    </div>
+  </div>
+  <div class="header-tag">Section B2 Applied Math</div>
+</div>
+
+<div class="grid-2">
+  <!-- Left Panel: Modular Arithmetic & Congruences -->
+  <div class="panel">
+    <div class="panel-title">
+      <span class="dot dot-blue"></span>
+      1. Modular Congruences, Remainders & Fermat's Little Theorem
+    </div>
+
+    <div class="formula-card">
+      <div class="f-title">Modular Congruence Axiom & Power Reductions</div>
+      <div class="f-math">
+        a ≡ b (mod m) ⟺ m | (a - b) ⟺ a = k·m + b
+      </div>
+      <div class="f-math">
+        Fermat's Little Theorem: aᵖ⁻¹ ≡ 1 (mod p) for prime p, gcd(a, p) = 1
+      </div>
+      <div class="f-desc">
+        <b>Linear Invariance:</b> If a ≡ b (mod m) and c ≡ d (mod m), then <b>a + c ≡ b + d</b>, <b>a·c ≡ b·d</b>, and <b>aⁿ ≡ bⁿ (mod m)</b>.
+      </div>
+    </div>
+
+    <table class="content-table">
+      <thead>
+        <tr>
+          <th>Application</th>
+          <th>Modulus Used</th>
+          <th>Mathematical Technique</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>Units Digit (Last Digit)</b></td>
+          <td>mod 10</td>
+          <td>Cyclicity of powers: 2, 3, 7, 8 have cycle 4; 4, 9 have cycle 2</td>
+        </tr>
+        <tr>
+          <td><b>Last Two Digits</b></td>
+          <td>mod 100</td>
+          <td>Binomial expansion / Euler's Totient φ(100) = 40</td>
+        </tr>
+        <tr>
+          <td><b>Day of the Week Calculation</b></td>
+          <td>mod 7</td>
+          <td>Odd days accumulation: Mon=1, Tue=2, ..., Sun=0</td>
+        </tr>
+        <tr>
+          <td><b>Large Power Remainder</b></td>
+          <td>mod m</td>
+          <td>Fermat's Theorem aᵖ⁻¹ ≡ 1 (mod p) or Wilson's (p - 1)! ≡ -1 (mod p)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="box-note">
+      <b>Negative Modulo Property:</b> If a dividend leaves remainder -r, its canonical positive residue is $(m - r) \pmod m$. For example, $23 \equiv -2 \equiv 3 \pmod 5$. Working with small negative residues simplifies power exponentiation drastically.
+    </div>
+
+    <div class="trap-card">
+      <b>CUET Trap Alert (Modular Division Prohibition):</b> You CANNOT arbitrarily divide both sides of a congruence: $a c \equiv b c \pmod m \implies a \equiv b \pmod{m / \gcd(c, m)}$. Division is valid without altering the modulus ONLY if $\gcd(c, m) = 1$.
+    </div>
+  </div>
+
+  <!-- Right Panel: Allegation & Kinematics -->
+  <div class="panel">
+    <div class="panel-title">
+      <span class="dot dot-green"></span>
+      2. Allegation Matrix, Repeated Dilution & Kinematic Models
+    </div>
+
+    <div class="formula-card">
+      <div class="f-title">Allegation & Repeated Dilution Master Formulas</div>
+      <div class="f-math">
+        Allegation Ratio: (Quantity Cheaper) / (Quantity Dearer) = (d - m) / (m - c)
+      </div>
+      <div class="f-math">
+        Repeated Dilution: Q_liquid = a · (1 - b / a)ⁿ
+      </div>
+      <div class="f-desc">
+        Where <b>a</b> is initial pure liquid volume, <b>b</b> is volume withdrawn and replaced by water in each cycle, and <b>n</b> is total successive dilution cycles.
+      </div>
+    </div>
+
+    <table class="content-table">
+      <thead>
+        <tr>
+          <th>Domain</th>
+          <th>Physical Variables</th>
+          <th>Governing Equation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>Boats & Streams</b></td>
+          <td>Boat $u$, Stream $v$</td>
+          <td>$u = (v_{\text{down}} + v_{\text{up}})/2$, $v = (v_{\text{down}} - v_{\text{up}})/2$</td>
+        </tr>
+        <tr>
+          <td><b>Pipes & Cisterns</b></td>
+          <td>Fill $T_1$, Empty $T_2$</td>
+          <td>Net work rate $= 1/T_1 - 1/T_2$; Net time $= (T_1 T_2) / (T_2 - T_1)$</td>
+        </tr>
+        <tr>
+          <td><b>Races (Distance Start)</b></td>
+          <td>Course $D$, Start $x$</td>
+          <td>A covers distance $D$ while B covers $(D - x)$</td>
+        </tr>
+        <tr>
+          <td><b>Races (Time Start)</b></td>
+          <td>Time $t$, Speed $s_B$</td>
+          <td>If A beats B by $x$ meters or $t$ seconds, Speed of B $= x / t$</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="box-note">
+      <b>Stream Round-Trip Principle:</b> Total round-trip time upstream and downstream over distance $d$ is: $T = \frac{d}{u+v} + \frac{d}{u-v} = \frac{2 d u}{u^2 - v^2}$. Notice that average speed for the round-trip $\frac{u^2 - v^2}{u} < u$; a current ALWAYS increases total round-trip travel time compared to still water!
+    </div>
+
+    <div class="trap-card">
+      <b>CUET Trap Alert (Game of 100 Points):</b> "A gives B 20 points in a 100-point game" means when A scores 100, B starts with 20 (or needs only 80). If A can give C 30 points, when A scores 100, C scores 70. Do NOT simply subtract points to find B vs C; multiply scoring ratios: $(C/B) = (70/80) \implies$ in 80 points, B gives C 10 points!
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
