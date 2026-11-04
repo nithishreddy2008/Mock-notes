@@ -364,9 +364,72 @@ UNDP classifies countries into four distinct human development tiers based on co
   [Sex Ratio (UN / World)], [$( "Number of Males" / "Number of Females" ) times 1000$], [$"Males per 1,000 females"$],
 )
 
----
+#pagebreak()
+#set text(size: 8.0pt)
+#set par(leading: 0.38em, spacing: 0.42em)
 
-= Module 7: CUET UG Practice MCQs (Exam-Standard with Detailed Rationales)
+= Module 7: Master Revision Cheatsheet & Demographic Metrics
+
+#cheatsheet-box(title: "Master Revision Matrix — Population Dynamics & Human Development")[
+  #table(
+    columns: (1fr, 1.4fr, 1.6fr),
+    fill: (x, y) => if y == 0 { om-navy } else if calc.even(y) { rgb("#F8FAFC") } else { white },
+    stroke: (x, y) => if y == 0 { none } else { 0.5pt + rgb("#CBD5E1") },
+    table.header(text(fill: white, weight: 800)[Concept / Metric], text(fill: white, weight: 800)[Exact Formula / Definition], text(fill: white, weight: 800)[Key Demographic Significance]),
+    [*Arithmetic Density*], [$"Total Population" / "Total Land Area"$], [Physical man-land pressure ($"persons"/"km"^2$). World avg $approx 54$; Monaco, Bangladesh top.],
+    [*Crude Birth Rate (CBR)*], [$("Bi" / P) times 1000$], [Number of live births per 1,000 mid-year population in an area.],
+    [*Crude Death Rate (CDR)*], [$(D / P) times 1000$], [Number of deaths per 1,000 mid-year population in an area.],
+    [*Natural Growth Rate*], [$"Births" - "Deaths"$], [Excludes international and inter-regional migration flows.],
+    [*Actual Growth Rate*], [$(B - D) + ("In-migration" - "Out-migration")$], [Complete demographic balance equation incorporating net spatial mobility.],
+    [*Sex Ratio (India)*], [$("Number of Females" / "Number of Males") times 1000$], [Females per 1,000 males. Unfavorable in societies with female foeticide/neglect.],
+    [*Sex Ratio (UN / World)*], [$("Number of Males" / "Number of Females") times 1000$], [Males per 1,000 females (or per 100 females in standard demographic publications).],
+    [*Demographic Transition*], [Stage 1 (High CBR/CDR) $->$ Stage 2 (High CBR, Falling CDR) $->$ Stage 3 (Low CBR/CDR)], [Transition from primitive agrarian autarky to literate, urban industrial society.],
+    [*The 4 Pillars of HD*], [Equity, Sustainability, Productivity, Empowerment], [Conceived by Dr. Mahbub ul Haq & Amartya Sen (UNDP 1990).],
+    [*The 4 Approaches to HD*], [Income, Welfare, Basic Needs (ILO), Capability (Sen)], [Evolution of human development methodology from pure money to capabilities.],
+    [*HDI Dimensions (1/3 each)*], [Long & Healthy Life (Life exp 85/20); Knowledge (Mean/Expected schooling); Decent Standard ($"GNI per capita PPP \$$"$)], [Geometric mean of the 3 normalized dimensional sub-indices (score 0 to 1).],
+    [*Gross National Happiness*], [Bhutan is the only country in the world officially measuring GNH], [Prioritizes spiritual, environmental, and cultural well-being over GDP.],
+  )
+]
+
+#v(4pt)
+#important-box(title: "The Demographic Balance Equation & Doubling Time Law")[
+  - *Demographic Doubling Time:* At a 1% annual growth rate, a population doubles in approximately 70 years ($"Doubling Time" approx 70 / r$). Rapidly developing nations growing at 2% double every 35 years!
+  - *Malthusian Natural Checks:* Thomas Malthus (1798) posited that population grows geometrically ($1, 2, 4, 8$) while food supply grows arithmetically ($1, 2, 3, 4$), resulting in catastrophic famine, disease, and war (*positive checks*) unless controlled by moral restraint.
+]
+
+#pagebreak()
+#set text(size: 8.0pt)
+#set par(leading: 0.38em, spacing: 0.42em)
+
+= Module 8: The Seven Fatal CUET Traps & Diagnostic Rules
+
+#exception-box(title: "The Seven Fatal CUET Exam Traps in Population & Human Development")[
+  #table(
+    columns: (1fr, 1.4fr, 1.6fr),
+    fill: (x, y) => if y == 0 { om-navy } else if calc.even(y) { rgb("#F8FAFC") } else { white },
+    stroke: (x, y) => if y == 0 { none } else { 0.5pt + rgb("#CBD5E1") },
+    table.header(text(fill: white, weight: 800)[The Trap Concept], text(fill: white, weight: 800)[The Common Student Slip], text(fill: white, weight: 800)[The Exact NCERT / NTA Rule]),
+    [*1. Sex Ratio Formula Inversion*], [Applying the Indian formula when a question asks for the "UN World standard".], [India = *Females / Males $times 1000$*. UN / World practice = *Males / Females $times 1000$* (or per 100 females)!],
+    [*2. Natural vs Actual Growth*], [Including migration flows in calculating "Natural Growth".], [Natural Growth is *strictly Births minus Deaths*. Actual Growth *adds net migration* ($(B - D) + (I - E)$).],
+    [*3. Push vs Pull Factors*], [Classifying "better healthcare/jobs" as Push factors because people are "pushed" to leave.], [Push factors = *negative local distress* (war, poverty, droughts). Pull factors = *attractive destination perks* (jobs, security).],
+    [*4. Four Pillars vs Four Approaches*], [Treating Pillars and Approaches as interchangeable lists.], [Pillars = *Equity, Sustainability, Productivity, Empowerment*. Approaches = *Income, Welfare, Basic Needs, Capability*.],
+    [*5. HDI vs HPI Orientation*], [Assuming Human Poverty Index (HPI) measures monetary income poverty.], [HPI is a *non-income measure* evaluating shortfalls in health, adult illiteracy, lack of clean water, and underweight children!],
+    [*6. Country Size vs HDI Rank*], [Assuming large, wealthy global economies always rank highest in HDI.], [NCERT explicitly notes the *Size-Paradox*: small nations (Sri Lanka, Kerala in India) often outrank giant economic neighbors!],
+    [*7. Malthusian Timeline & Premise*], [Stating Thomas Malthus wrote in 1898 or praised modern birth control.], [Malthus wrote his *Essay on the Principle of Population in 1798*, predicting food arithmetic growth ($1,2,3$) vs population geometric growth ($1,2,4,8$).],
+  )
+]
+
+#v(4pt)
+#exam-pointer(title: "High-Frequency CUET UG Testing Patterns in Demography")[
+  - *Age-Sex Pyramids Classification:* Expanding = triangular with broad base (Nigeria, Bangladesh); Constant = bell-shaped with tapered top (Australia); Declining = narrow base and tapered top showing low birth/death rates (Japan).
+  - *HDI Score Ranges:* Very High ($>= 0.800$); High ($0.700 - 0.799$); Medium ($0.550 - 0.699$); Low ($< 0.550$). India consistently falls in the Medium Human Development category.
+]
+
+#pagebreak()
+#set text(size: 8.5pt)
+#set par(leading: 0.38em, spacing: 0.40em)
+
+= Module 9: CUET UG Practice Questions — Part 1 (Q1 to Q5)
 
 #mcq(
   1,
@@ -453,6 +516,12 @@ UNDP classifies countries into four distinct human development tiers based on co
   answer: [C]
 )
 
+#pagebreak()
+#set text(size: 8.5pt)
+#set par(leading: 0.38em, spacing: 0.40em)
+
+= Practice Questions — Part 2 (Q6 to Q10)
+
 #mcq(
   6,
   [In his 1798 work *An Essay on the Principle of Population*, Thomas Robert Malthus stated that:],
@@ -537,6 +606,12 @@ UNDP classifies countries into four distinct human development tiers based on co
   [Latvia has the world's highest female ratio (roughly 85 males per 100 females / 1,187 females per 1,000 males), attributed to wartime male mortality and higher adult male mortality from health factors.],
   answer: [C]
 )
+
+#pagebreak()
+#set text(size: 8.5pt)
+#set par(leading: 0.38em, spacing: 0.40em)
+
+= Practice Questions — Part 3 (Q11 to Q15)
 
 #mcq(
   11,
