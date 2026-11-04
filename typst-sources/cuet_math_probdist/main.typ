@@ -2,267 +2,586 @@
 
 #show: om-doc.with(
   exam: "CUET UG",
-  subject: "Mathematics",
+  subject: "Applied Mathematics",
   topic-title: "Probability Distributions",
-  subtitle: "Expectation, Variance, Binomial, Poisson and Normal · Section B2 IV · CUET UG 2027 Cycle Notes",
+  subtitle: "Discrete & Continuous Variables, Expectation, Variance, Binomial, Poisson & Normal Models · Section B2 Unit V",
 )
 
-= Syllabus Alignment
+= Syllabus Alignment & Exam Blueprint
+
+In the NTA CUET (UG) Applied Mathematics examination, *Probability Distributions* (Unit V of Section B2) contributes *6 to 8 questions* (30 to 40 marks). The unit evaluates a student's proficiency in analyzing random processes: probability mass functions, mathematical expectations, and the three canonical distribution archetypes (Binomial, Poisson, and Normal).
 
 #table(
-  columns: (0.95fr, 1.9fr, 1.25fr),
-  table.header[*Sub-topic*][*Official syllabus pointer (NTA CUET(UG) 2026 syllabus — Mathematics/Applied Mathematics (319), the current 2027 baseline)*][*Skills the questions test*],
-  [*Probability distributions of discrete random variables*], [
-    "Understand the concept of Random Variables and its Probability Distributions. Find probability distribution of discrete random variable." (Section B2 Applied Mathematics Unit IV)
-  ], [
-    Turning a story into a distribution table; policing the sum-to-one rule.
-  ],
-  [*Mathematical expectation*], [
-    "Apply arithmetic mean of frequency distribution to find the expected value of a random variable." (Section B2 Applied Mathematics Unit IV)
-  ], [
-    Computing $E(X) = Sigma x_i p_i$ and reading it as a long-run average or fair price.
-  ],
-  [*Variance and standard deviation*], [
-    "Calculate the Variance and S.D. of a random variable." (Section B2 Applied Mathematics Unit IV)
-  ], [
-    Two-term variance recipes without the $mu^2$ slip.
-  ],
-  [*Binomial distribution*], [
-    "Identify the Bernoulli Trials and apply Binomial Distribution. Evaluate Mean, Variance and S.D. of a Binomial Distribution." (Section B2 Applied Mathematics Unit IV)
-  ], [
-    Verifying the four trial conditions; computing exact and "at least" binomial probabilities.
-  ],
-  [*Poisson distribution*], [
-    "Understand the conditions of Poisson Distribution. Evaluate the Mean and Variance of Poisson distribution." (Section B2 Applied Mathematics Unit IV)
-  ], [
-    Recognising rare-event setups; using mean $=$ variance $= lambda$ as the identifier.
-  ],
-  [*Normal distribution*], [
-    "Understand normal distribution is a continuous distribution. Evaluate value of Standard normal variate. Area relationship between Mean and Standard Deviation." (Section B2 Applied Mathematics Unit IV)
-  ], [
-    Converting $x -> z$, reading 68/95/99.7 areas, using symmetry.
-  ],
+  columns: (1.2fr, 2fr, 1.4fr),
+  stroke: 0.5pt + om-navy.lighten(70%),
+  fill: (col, row) => if row == 0 { om-navy-soft } else if calc.odd(row) { om-blue-soft.lighten(60%) } else { white },
+  table.header[*Sub-Topic*][*Official NTA Syllabus Coverage*][*High-Yield CUET Focus*],
+  [*Random Variables & PMF*], [Discrete and continuous random variables; probability mass function (PMF); probability density function (PDF); mathematical expectation ($E(X)$) and variance ($"Var"(X)$).], [Solving for normalization constant $k$ from $sum p_i = 1$; evaluating $E(X) = sum x_i p_i$; variance identity $"Var"(X) = E(X^2) - [E(X)]^2$.],
+  [*Linear Transformations*], [Expectation and variance of linear combinations; $E(a X + b) = a E(X) + b$; $"Var"(a X + b) = a^2 "Var"(X)$.], [Scaling and shift invariant properties; constant shift does NOT alter variance ($"Var"(X + c) = "Var"(X)$).],
+  [*Binomial Distribution*], [Bernoulli trials; conditions for binomial model; PMF $P(X = r) = binom(n, r) p^r q^(n-r)$; mean $n p$; variance $n p q$; finding parameters from moments.], [Mean strictly exceeds variance ($n p > n p q$); unimodal vs bimodal conditions $(n+1)p$; success/failure complement $p + q = 1$.],
+  [*Poisson Distribution*], [Poisson distribution as a limiting form of binomial distribution; rare events; PMF $P(X = r) = e^(-lambda) lambda^r / r!$; mean and variance equality.], [Defining signature: $"Mean" = "Variance" = lambda$; zero event probability $P(0) = e^(-lambda)$; recurrence relation $P(r+1) = lambda / (r+1) P(r)$.],
+  [*Normal Distribution*], [Continuous Gaussian distribution; PDF; properties of normal curve; standard normal transformation $Z = (X - mu) / sigma$; empirical 68-95-99.7% rule.], [Bell curve symmetry about $mu$; mean $=$ median $=$ mode; points of inflection $mu plus.minus sigma$; area calculations using standard normal $Z$-table.],
 )
 
-#exam-pointer[
-  CUET UG pattern (NTA official information bulletin, 2026 cycle — the current 2027
-  baseline): each subject paper carries *50 compulsory questions* in *60 minutes*,
-  with $+5$ for every correct answer and $-1$ for every incorrect answer. The 2026
-  syllabus houses this unit as *Section B2 Applied Mathematics Unit IV* — the
-  applied-statistics heart of the paper, where every formula below is attached to a
-  one-line "when does it fire" test that makes the choice of distribution instant.
+#exam-pointer(title: "CUET Exam Scoring Strategy — Probability Distributions")[
+  Distribution questions in CUET can be identified and solved rapidly by inspecting variance-to-mean ratios:
+  1. *Binomial:* $"Variance" < "Mean"$ (since $n p q < n p$).
+  2. *Poisson:* $"Variance" = "Mean" = lambda$.
+  3. *Normal:* Continuous distribution; exact point probability is ALWAYS zero ($P(X = c) = 0$).
+  Master these three signatures to immediately eliminate distractor options.
 ]
 
-= Discrete Random Variables — From Story to Table
+---
 
-A random variable $X$ turns experiment outcomes into numbers, and its *probability distribution* is simply the full price list: every value $X$ can take, with its probability. Two rules police every table: each probability lies in $[0, 1]$, and the column sums to *exactly 1*. Those checks come before any computation — several MCQ options are tables that quietly fail them. Building the table from a story is a two-step habit: list the values $X$ can take, then count the outcomes giving each value.
+= 1. Random Variables, Expectation & Variance
 
-#worked-example("Worked Example — Sixes in Two Throws")[
-  A fair die is thrown twice; $X$ = number of sixes. Build the distribution.
+== Discrete vs Continuous Random Variables
 
-  #v(3pt)
-  *Solution.* Values: $X = 0, 1, 2$. Each throw: $P("six") = 1/6$, $P("not") = 5/6$.
-  $ P(X = 0) = 5/6 dot 5/6 = 25/36, quad P(X = 1) = 2 dot 1/6 dot 5/6 = 10/36, quad P(X = 2) = 1/6 dot 1/6 = 1/36. $
-  Police check: $25 + 10 + 1 = 36$ — the column sums to 1 ✓. The "×2" in the middle
-  line is the *two orders* the single six can arrive in; forgetting it is the most
-  common table error in this family.
+A *random variable ($X$)* is a real-valued mathematical function defined on the sample space $S$ of a random experiment, assigning a numerical value to each experimental outcome:
+1. *Discrete Random Variable:* Takes isolated, countable values (e.g., number of defective bulbs in a carton: $X in {0, 1, 2, dots, n}$).
+   - Governed by a *Probability Mass Function (PMF)*: $P(X = x_i) = p_i$.
+   - *Axioms:* $p_i >= 0$ for all $i$, and $sum_(i) p_i = 1$.
+2. *Continuous Random Variable:* Takes any real value in an unbroken numerical interval $[a, b] subset.eq bb(R)$ (e.g., battery lifespan, human height, reaction time).
+   - Governed by a *Probability Density Function (PDF)*: $f(x)$.
+   - *Axioms:* $f(x) >= 0$ for all $x$, and $integral_(-oo)^oo f(x) d x = 1$.
+   - Probability of an interval: $P(a <= X <= b) = integral_a^b f(x) d x$.
+   - For any single isolated point: $P(X = c) = integral_c^c f(x) d x = 0$.
+
+== Mathematical Expectation (Mean) and Variance
+
+#formula-box(title: "Expectation & Variance Formulas (Discrete Case)")[
+  1. *Mean / Expected Value ($mu$ or $E(X)$):*
+     $ E(X) = mu = sum_(i) x_i p_i $
+  2. *Expectation of a Function $g(X)$:*
+     $ E[g(X)] = sum_(i) g(x_i) p_i $
+  3. *Second Moment about Origin:*
+     $ E(X^2) = sum_(i) x_i^2 p_i $
+  4. *Variance ($sigma^2$ or $"Var"(X)$):*
+     $ "Var"(X) = sigma^2 = E[(X - mu)^2] = E(X^2) - [E(X)]^2 = sum_(i) x_i^2 p_i - mu^2 $
+  5. *Standard Deviation ($sigma$):*
+     $ sigma = sqrt("Var"(X)) $
 ]
 
-= Mathematical Expectation — the Long-Run Average
+== Linear Transformation Theorems
 
-The expectation $E(X) = Sigma x_i p_i$ is a weighted average: each value weighted by how often it shows up. Read it as *the average per trial over a very long run* — a fair price in games, a budgeted cost per item in quality control. The arithmetic-mean bridge in the syllabus is exactly this: for a frequency distribution, the mean is $Sigma x_i f_i / Sigma f_i$; with frequencies replaced by probabilities, the same machine computes $E(X)$.
+For any constants $a$ and $b$:
+1. $E(a X + b) = a E(X) + b$
+2. $E(a X) = a E(X)$ and $E(b) = b$
+3. $"Var"(a X + b) = a^2 "Var"(X)$
+4. $"Var"(a X) = a^2 "Var"(X)$
+5. $"Var"(X + b) = "Var"(X)$ (Shifting data by constant $b$ does NOT alter dispersion)
+6. $"Var"(b) = 0$ (The variance of a constant is strictly zero)
 
-#worked-example("Worked Example — Is the Game Fair?")[
-  You pay ₹5 to roll one die. You win ₹12 if it shows six, ₹4 otherwise (your ₹4 returned). Find your expected gain per game.
+#worked-example("Worked Example 1 — Normalization Constant and Expectation")[
+  A discrete random variable $X$ has the following probability distribution:
+  #align(center)[
+    #table(
+      columns: 5,
+      stroke: 0.5pt + om-navy.lighten(70%),
+      [$x_i$], [$0$], [$1$], [$2$], [$3$],
+      [$P(X = x_i)$], [$k$], [$3k$], [$5k$], [$7k$],
+    )
+  ]
+  Find (1) the value of $k$, (2) $E(X)$, and (3) $"Var"(X)$.
 
-  #v(3pt)
-  *Solution.* Gain $X$: $+7$ with probability $1/6$ (win 12, paid 5), $-1$ with
-  probability $5/6$ (get back 4, paid 5). Then
-  $ E(X) = 7 dot 1/6 + (-1) dot 5/6 = 7/6 - 5/6 = 2/6 = 1/3. $
-  You gain one-third of a rupee per game on average — the game favours you slightly.
-  The trick is always the same: define the *net gain* including the fee, list its
-  distribution, then weight.
+  *Solution:*
+  1. Normalization axiom: $sum p_i = 1$.
+     $ k + 3k + 5k + 7k = 16k = 1 ==> k = 1/16. $
+  2. Mathematical Expectation $E(X)$:
+     $ E(X) = sum x_i p_i = (0)(k) + (1)(3k) + (2)(5k) + (3)(7k) = (3 + 10 + 21)k = 34k = 34 / 16 = 17 / 8 = 2.125. $
+  3. Second Moment $E(X^2)$:
+     $ E(X^2) = sum x_i^2 p_i = (0^2)(k) + (1^2)(3k) + (2^2)(5k) + (3^2)(7k) = (3 + 20 + 63)k = 86k = 86 / 16 = 43 / 8 = 5.375. $
+  4. Variance:
+     $ "Var"(X) = E(X^2) - [E(X)]^2 = 43/8 - (17/8)^2 = 43/8 - 289/64 = (344 - 289) / 64 = 55 / 64 approx 0.8594. $
 ]
 
-= Variance and Standard Deviation — the Spread Dial
+---
 
-The mean says where a distribution centres; the *variance* says how widely it scatters around that centre: $"Var"(X) = Sigma x_i^2 p_i - [E(X)]^2$, with the standard deviation its square root. The recipe is strictly two-term — sum the squares weighted, *then* subtract the squared mean. Skipping the subtraction is the most-repeated variance error in every exam season; the inflated answers sit in the options waiting for it.
 
-#worked-example("Worked Example — Two Coins, Fully Worked")[
-  $X$ = heads in two fair tosses: distribution $0, 1, 2$ with $1/4, 1/2, 1/4$. Find variance and SD.
+== Cumulative Distribution Function (CDF)
 
-  #v(3pt)
-  *Solution.* Mean: $mu = 0 dot 1/4 + 1 dot 1/2 + 2 dot 1/4 = 1$. Weighted squares:
-  $Sigma x_i^2 p_i = 0 + 1 dot 1/2 + 4 dot 1/4 = 3/2$. Variance:
-  $ sigma^2 = 3/2 - 1^2 = 1/2, quad sigma = 1/sqrt(2) approx 0.71. $
-  Three lines, each checkable — and identical machinery works for every discrete
-  table in the chapter.
+For any random variable $X$ (discrete or continuous), the *Cumulative Distribution Function (CDF)*, denoted $F(x)$, expresses the probability that $X$ takes a value less than or equal to a specified threshold $x$:
+$ F(x) = P(X <= x) = cases(
+  sum_(x_i <= x) p_i & quad text("for discrete random variable"),
+  integral_(-oo)^x f(t) d t & quad text("for continuous random variable")
+) $
+
+*Fundamental Properties of the CDF:*
+1. $0 <= F(x) <= 1$ for all real $x$.
+2. Monotonically Non-Decreasing: If $x_1 < x_2$, then $F(x_1) <= F(x_2)$.
+3. Boundary Limits: $lim_(x -> -oo) F(x) = 0$ and $lim_(x -> +oo) F(x) = 1$.
+4. Interval Probability: $P(a < X <= b) = F(b) - F(a)$.
+5. Relationship to PDF: For a continuous random variable, $f(x) = d / (d x) [F(x)]$.
+
+#worked-example("Worked Example — Continuous Density & Expectation")[
+  A continuous random variable $X$ has the probability density function:
+  $ f(x) = cases(k x (2 - x) & quad 0 <= x <= 2, 0 & quad text("otherwise")) $
+  Determine: (1) the constant $k$, (2) the CDF $F(x)$ on $[0, 2]$, (3) $E(X)$, and (4) $P(X > 1)$.
+
+  *Solution:*
+  1. Total area normalization: $integral_0^2 f(x) d x = 1$.
+     $ k integral_0^2 (2x - x^2) d x = k [x^2 - x^3 / 3]_0^2 = k [4 - 8/3] = k (4/3) = 1 ==> k = 3 / 4. $
+  2. Cumulative Distribution Function for $0 <= x <= 2$:
+     $ F(x) = integral_0^x 3/4 (2t - t^2) d t = 3/4 [t^2 - t^3 / 3]_0^x = 3/4 (x^2 - x^3 / 3) = (3 x^2 - x^3) / 4. $
+  3. Mathematical Expectation:
+     $ E(X) = integral_0^2 x f(x) d x = 3/4 integral_0^2 (2 x^2 - x^3) d x = 3/4 [2/3 x^3 - x^4 / 4]_0^2 = 3/4 [16/3 - 16/4] = 3/4 [16/3 - 4] = 3/4 (4/3) = 1.0. $
+     (Notice that $E(X) = 1.0$ matches the center of symmetry of the parabolic density).
+  4. $P(X > 1) = 1 - F(1) = 1 - (3(1)^2 - 1^3) / 4 = 1 - 2/4 = 1 - 0.5 = 0.5$.
 ]
 
-= Bernoulli Trials and the Binomial Distribution
+---
 
-A *Bernoulli trial* is one yes/no experiment: two outcomes, a constant success probability $p$ across trials, and independent trials. Stack $n$ of them and count successes: $X$ follows the *binomial distribution*
-$ P(X = r) = mat(n; r) p^r q^(n - r), quad q = 1 - p, quad r = 0, 1, dots, n $
-with mean $n p$, variance $n p q$, and standard deviation $sqrt(n p q)$. Before any binomial computation, verify the four conditions — a fixed $n$, exactly two outcomes, constant $p$, independence — because "draw *without* replacement from a small bag" breaks the constant-$p$ condition and the formula quietly stops being valid.
+= 2. The Binomial Distribution
 
-- *Exact counts:* "exactly 2 heads in 5 tosses" is $mat(5; 2) (1/2)^5 = 5/16$ — choose the positions, multiply the probabilities.
-- *"At least one" is the complement again:* $P(X >= 1) = 1 - q^n$. For 5 tosses: $1 - (1/2)^5 = 31/32$ — one line instead of five cases.
-- *The mean/variance pair is an identifier:* mean $n p$ and variance $n p q$ (with $q != p$ in general, so they are *unequal*) — never $lambda$, that is the next distribution's signature.
+== Bernoulli Trials and Derivation
 
-#worked-example("Worked Example — At Least Two Sixes in Three Throws")[
-  A die is thrown 3 times. Find the probability of at least two sixes.
+A sequence of trials is termed *Bernoulli trials* if:
+1. The number of trials $n$ is finite and fixed in advance.
+2. Each trial has exactly two mutually exclusive outcomes: *Success ($S$)* or *Failure ($F$)*.
+3. The probability of success $P(S) = p$ remains constant from trial to trial ($0 < p < 1$), and $P(F) = q = 1 - p$.
+4. Successive trials are statistically independent.
 
-  #v(3pt)
-  *Solution.* Binomial with $n = 3$, $p = 1/6$, $q = 5/6$. "At least two" = exactly two
-  + exactly three:
-  $ P(X = 2) = mat(3; 2) (1/6)^2 (5/6) = 3 dot 5/216 = 15/216, quad P(X = 3) = (1/6)^3 = 1/216. $
-  Total: $16/216 = 2/27$. Complement flavour: "at least one six" would be
-  $1 - (5/6)^3 = 91/216$ — shorter, but it answers a *different* question. Read which
-  one is asked.
+#formula-box(title: "Binomial Distribution PMF & Parameters")[
+  Let $X$ denote the number of successes in $n$ independent Bernoulli trials. Then $X$ follows a Binomial distribution, denoted $X ~ B(n, p)$:
+  $ P(X = r) = binom(n, r) p^r q^(n - r) quad (r = 0, 1, 2, dots, n) $
+  - *Mean:* $E(X) = n p$
+  - *Variance:* $"Var"(X) = n p q$
+  - *Standard Deviation:* $sigma = sqrt(n p q)$
+  - *Mean vs Variance Relationship:*
+    $ "Var"(X) = (n p) dot q < n p = E(X) quad ("since " q = 1 - p < 1) $
+    *In any binomial distribution, the mean is strictly greater than the variance!*
 ]
 
-= Poisson Distribution — Rare Events, One Dial
+== Mode of the Binomial Distribution
 
-When $n$ is huge, $p$ tiny, and only the *rate* $lambda = n p$ is quoted (calls per hour, accidents per week, typos per page), the binomial compresses into the *Poisson distribution*:
-$ P(X = r) = (e^(-lambda) lambda^r)/(r!), quad "with mean" = "variance" = lambda. $
-The equal mean-and-variance pair is its fingerprint — the fastest multiple-choice identifier in the chapter. One dial ($lambda$) sets the whole shape: $e^(-lambda)$ is the probability of a *quiet* window (zero events), and the factorial $r!$ fades fast, so probabilities concentrate near $lambda$.
+The mode is the value of $r$ that maximizes $P(X = r)$. It depends on the value of $(n + 1)p$:
+1. If $(n + 1)p$ is an integer $m$: The distribution is *bimodal* with modes at $r = m - 1$ and $r = m$.
+2. If $(n + 1)p$ is NOT an integer: The distribution is *unimodal* with unique mode at $r = floor((n + 1)p)$ (the greatest integer less than or equal to $(n + 1)p$).
 
-#worked-example("Worked Example — Two Calls an Hour")[
-  A helpline receives on average 2 calls per minute. Find the probability of exactly 3 calls in a minute, and of no calls.
+#worked-example("Worked Example 2 — Parameter Recovery from Moments")[
+  For a binomial distribution, the mean is $4$ and the variance is $3$. Determine: (1) the parameters $n$ and $p$, (2) $P(X = 0)$, and (3) $P(X >= 1)$.
 
-  #v(3pt)
-  *Solution.* Poisson with $lambda = 2$. Exactly 3:
-  $ P(X = 3) = (e^(-2) 2^3)/(3!) = (8 e^(-2))/6 = 4/3 e^(-2) approx 0.180. $
-  None: $P(X = 0) = e^(-2) approx 0.135$ — one in seven minutes goes silent. Note how
-  the single rate number $lambda$ answered both questions; that economy is why the
-  Poisson model is everywhere in operations.
+  *Solution:*
+  Given $E(X) = n p = 4$ and $"Var"(X) = n p q = 3$.
+  Divide variance by mean:
+  $ q = (n p q) / (n p) = 3 / 4 = 0.75. $
+  $ p = 1 - q = 1 - 3/4 = 1/4 = 0.25. $
+  Find $n$:
+  $ n p = 4 ==> n (1/4) = 4 ==> n = 16. $
+  1. Parameters are $n = 16$ and $p = 1/4$.
+  2. $P(X = 0) = binom(16, 0) (1/4)^0 (3/4)^16 = (3/4)^16$.
+  3. $P(X >= 1) = 1 - P(X = 0) = 1 - (3/4)^16$.
 ]
 
-= The Normal Distribution — the Bell With Two Dials
+---
 
-The *normal distribution* is the continuous bell that heights, marks and measurement errors love to follow. Two dials set it: the mean $mu$ (centre) and the standard deviation $sigma$ (spread). Three facts do all the exam work. First, it is *continuous*: $P(X = a) = 0$ exactly — only *intervals* carry area, so "probability at 170 cm" is always a trick. Second, symmetry: the bell halves around $mu$. Third, the *area rule*: within $plus.minus 1 sigma$ lies about 68%, within $plus.minus 2 sigma$ about 95%, within $plus.minus 3 sigma$ about 99.7% of the data.
 
-The *standard normal variate* converts any bell to the universal scale:
-$ z = (x - mu)/sigma $
-— a pure number counting "how many standard deviations from the mean". Once converted, standard tables (and the area rule) answer everything; a below-average $x$ produces a negative $z$, which is information, not an error.
+#worked-example("Worked Example — Determining the Mode of a Binomial Model")[
+  A student takes a multiple-choice quiz of $n = 15$ questions, guessing randomly among $4$ options per question ($p = 1/4$). Find the most probable number of correct answers (the mode).
 
-#worked-example("Worked Example — Marks to z, and Back")[
-  Marks follow a normal distribution with $mu = 60$, $sigma = 10$. Find the z-score of 70, the z-score of 45, and the approximate share of students scoring between 50 and 70.
-
-  #v(3pt)
-  *Solution.* $z = (70 - 60)/10 = 1$ — one standard deviation above. $z = (45 - 60)/10 =
-  -1.5$ — one and a half below, negative because 45 sits under the mean. The band
-  $50 -> 70$ is $mu plus.minus 1 sigma$: the area rule says about *68%* of students.
-  Two conversions and one memorised band — the entire normal-distribution question
-  family in miniature.
+  *Solution:*
+  Evaluate $(n + 1)p$:
+  $ (n + 1)p = (15 + 1)(1/4) = 16 times 1/4 = 4. $
+  Since $(n + 1)p = 4$ is an integer $m$, the distribution is *bimodal* with modes occurring at:
+  $ r = m - 1 = 3 quad "and" quad r = m = 4. $
+  The student is equally most likely to guess exactly 3 or 4 answers correctly:
+  $ P(X = 3) = binom(15, 3) (1/4)^3 (3/4)^12 = 455 dot (3^12 / 4^15) approx 0.2252 $
+  $ P(X = 4) = binom(15, 4) (1/4)^4 (3/4)^11 = 1365 dot (3^11 / 4^15) = 455 dot (3^12 / 4^15) approx 0.2252. $
 ]
 
-#analogy-box(title: "Everyday Example — Three Kinds of Queue")[
-  Binomial is a *bowling* question: a fixed number of throws, each strike-or-miss
-  with the same chance, count the strikes. Poisson is a *rain-leak* question: you
-  cannot count the "trials" of every water molecule, but drips arrive at a steady
-  rate — count drips per hour, $lambda$. Normal is a *crowd height* question:
-  individuals differ, but the crowd stacks into a bell around the average with a
-  predictable spread. Identify which queue you are standing in, and the correct
-  formula walks up to meet you.
+---
+
+#figure(
+  image("assets/math_probdist_families.png", width: 88%),
+  caption: [Figure 1: The Three Distribution Families Compared — Structural Parameters, Moments & Decision Trees.],
+)
+
+---
+
+= 3. The Poisson Distribution
+
+== The Poisson Limit of the Binomial Distribution
+
+The *Poisson distribution* was introduced by Siméon Denis Poisson (1837) as a limiting case of the Binomial distribution under the following conditions:
+1. The number of trials $n$ is indefinitely large ($n -> oo$).
+2. The probability of success $p$ in each individual trial is extremely small ($p -> 0$, rare events).
+3. The average number of successes remains a constant finite quantity:
+   $ lambda = n p > 0 $
+
+#formula-box(title: "Poisson Distribution PMF & Moments")[
+  If $X$ represents the count of occurrences of a rare event, $X ~ "Poisson"(lambda)$:
+  $ P(X = r) = (e^(-lambda) dot lambda^r) / r! quad (r = 0, 1, 2, 3, dots) $
+  where $lambda$ is the mean arrival/occurrence rate and $e approx 2.71828$.
+  - *Mean:* $E(X) = lambda$
+  - *Variance:* $"Var"(X) = lambda$
+  - *Crucial Defining Property:*
+    $ "Mean" = "Variance" = lambda $
+    Whenever an exam problem notes that variance equals mean, the variable is Poisson!
 ]
 
-#figure(image("assets/math_probdist_families.png", width: 100%), caption: [The three distributions side by side: trigger conditions, formulas, mean/variance signatures — and the traps each one plants.])
+== Key Mathematical Properties of Poisson Distributions
 
-= Formula Cheatsheet — the Whole Chapter on One Page
+1. *Recurrence Relation for Fast Computation:*
+   $ P(r + 1) = lambda / (r + 1) dot P(r) $
+2. *Zero Probability Signature:*
+   $ P(X = 0) = (e^(-lambda) dot lambda^0) / 0! = e^(-lambda) $
+   $ P(X >= 1) = 1 - P(X = 0) = 1 - e^(-lambda) $
+3. *Additive Property:*
+   If $X_1 ~ "Poisson"(lambda_1)$ and $X_2 ~ "Poisson"(lambda_2)$ are independent, then:
+   $ X_1 + X_2 ~ "Poisson"(lambda_1 + lambda_2) $
 
-#cheatsheet-box(title: "Formula Cheatsheet — Probability Distributions")[
-  #table(
-    columns: (1.5fr, 1.35fr, 1.15fr),
-    table.header[*Formula / rule*][*Letters mean*][*Fire it when*],
-    [Table police: $0 <= p_i <= 1$, column sums to 1], [before any computing], [every distribution table],
-    [$E(X) = Sigma x_i p_i$], [weighted average], [expectation / fair price],
-    [$"Var"(X) = Sigma x_i^2 p_i - mu^2$], [two terms, always both], [spread questions],
-    [Binomial check: fixed $n$, two outcomes, constant $p$, independent], [four conditions], [before binomial use],
-    [$P(X = r) = mat(n; r) p^r q^(n - r)$], [$q = 1 - p$], [exactly-$r$ successes],
-    [Binomial mean $n p$, variance $n p q$], [SD $= sqrt(n p q)$], [binomial summaries],
-    ["At least one" $= 1 - q^n$], [complement shortcut], [repeated trials],
-    [Poisson: $P(X = r) = (e^(-lambda) lambda^r)/(r!)$], [rare events, rate $lambda$], [huge $n$, tiny $p$],
-    [Poisson mean = "variance" = $lambda$], [the fingerprint], [identifying the model],
-    [Normal: two dials $mu$, $sigma$; bell symmetric], [continuous], [measurement data],
-    [Area rule: $plus.minus 1 sigma -> 68%$, $plus.minus 2 sigma -> 95%$, $plus.minus 3 sigma -> 99.7%$], [bell bands], [interval shares],
-    [$z = (x - mu) / sigma$], [how many SDs from centre], [standardising any $x$],
-    [$P(X = a) = 0$ for continuous $X$], [only intervals carry area], [point-probability tricks],
-  )
+#worked-example("Worked Example 3 — Customer Service Desk Modeling")[
+  A call center receives incoming assistance calls at an average rate of $lambda = 3$ calls per minute according to a Poisson process. Calculate: (1) the probability of receiving no calls in a minute, (2) the probability of receiving exactly 2 calls, and (3) the probability of at least one call. (Given: $e^(-3) approx 0.0498$).
+
+  *Solution:*
+  $X ~ "Poisson"(3)$ with $lambda = 3$.
+  1. $P(X = 0) = e^(-3) approx 0.0498$ (or $4.98%$).
+  2. $P(X = 2) = (e^(-3) dot 3^2) / 2! = (0.0498 times 9) / 2 = 0.4482 / 2 = 0.2241$ (or $22.41%$).
+  3. $P(X >= 1) = 1 - P(X = 0) = 1 - 0.0498 = 0.9502$ (or $95.02%$).
 ]
 
-= Common Errors and Special Cases
+---
 
-#exception-box(title: "Common Errors and Special Cases — Distributions")[
-  #table(
-    columns: (1.35fr, 1.35fr, 1.3fr),
-    table.header[*The mistake*][*What is right*][*The trap it sets*],
-    [Using a table that does not sum to 1], [Police the column first], [Broken tables as "given data"],
-    [Variance without the $mu^2$ subtraction], [$Sigma x_i^2 p_i - mu^2$, both terms], [Inflated numeric options],
-    [Binomial applied without replacement], [Constant $p$ needs with-replacement or large populations], [Small-bag draws dressed as binomial],
-    [Binomial mean as $n(1 - p)$], [$n p$ uses the success probability], [Swapped mean options],
-    ["Mean = variance" claimed for binomial], [Only Poisson carries that signature], [The fastest identifier, misassigned],
-    [Dropping $e^(-lambda)$ in Poisson], [Every term keeps it], [Lambda-only distractor],
-    [Point probabilities on a normal bell], [$P(X = a) = 0$; intervals only], ["P(X = 170) = ?" trick stems],
-    [z-score with flipped subtraction], [$z = (x - mu) / sigma$, sign is information], [Negative-z declared "impossible"],
-  )
-]
+= 4. The Gaussian Normal Distribution
 
-= Sixty-Second Self-Test
+== The Continuous Bell Curve Architecture
+
+The *Normal (or Gaussian) Distribution* is the most important continuous distribution in applied mathematics. A continuous random variable $X$ defined on $(-oo, oo)$ follows a Normal distribution with parameters $mu$ (mean) and $sigma^2$ (variance), denoted $X ~ N(mu, sigma^2)$, if its PDF is:
+$ f(x) = 1 / (sigma sqrt(2 pi)) dot e^( - (x - mu)^2 / (2 sigma^2) ) quad (-oo < x < oo) $
 
 #table(
-  columns: (2.6fr, 1fr),
-  table.header[*Statement*][*Verdict*],
-  [A distribution table may sum to 0.95.], [False — exactly 1, always],
-  [The binomial mean of $n = 10$, $p = 0.3$ is 3.], [True — $n p$],
-  [For Poisson, mean and variance both equal $lambda$.], [True — the fingerprint],
-  [$P(X = 2)$ for a normal $X$ is a small positive number.], [False — exactly 0, continuous],
-  [$x = 65$ with $mu = 50$, $sigma = 5$ gives $z = 3$.], [True — three SDs above],
-  [Without replacement from a small bag is binomial.], [False — $p$ changes each draw],
+  columns: (1.2fr, 2.8fr),
+  stroke: 0.5pt + om-navy.lighten(70%),
+  fill: (col, row) => if row == 0 { om-navy-soft } else if calc.odd(row) { om-blue-soft.lighten(60%) } else { white },
+  table.header[*Geometric Property*][*Mathematical Statement & Examination Significance*],
+  [*Symmetry & Center*], [The curve is completely symmetrical and bell-shaped about the vertical ordinate $x = mu$. Consequently:
+  $ "Mean" = "Median" = "Mode" = mu $],
+  [*Total Area & Half-Planes*], [Total area under the PDF curve is exactly $1.0$:
+  $ integral_(-oo)^oo f(x) d x = 1.0, quad P(X <= mu) = P(X >= mu) = 0.50 $],
+  [*Points of Inflection*], [The points where curvature changes from concave downward to concave upward occur at:
+  $ x = mu - sigma quad "and" quad x = mu + sigma $],
+  [*Maximum Ordinate*], [The maximum peak of $f(x)$ occurs at $x = mu$, where height is $y_"max" = 1 / (sigma sqrt(2 pi))$.],
+  [*Asymptotic Tails*], [The tails extend indefinitely to $-oo$ and $+oo$, asymptotically approaching the horizontal axis without ever touching it.],
 )
 
-#figure(image("assets/math_probdist_mindmap.png", width: 100%), caption: [The chapter in one look: tables, expectation, variance, three distributions — and the traps each carries.])
+== Standard Normal Distribution ($Z$)
 
-= Practice Questions — CUET UG Pattern (10 MCQs)
+Any general normal variable $X ~ N(mu, sigma^2)$ can be transformed to the *Standard Normal Variable ($Z$)* via the standard score transformation:
+$ Z = (X - mu) / sigma $
+The variable $Z$ has mean $E(Z) = 0$ and standard deviation $sigma_Z = 1$, denoted $Z ~ N(0, 1)$. Its PDF is:
+$ phi(z) = 1 / sqrt(2 pi) dot e^(-z^2 / 2) $
 
-Ten questions in the CUET UG style. Each correct answer earns $+5$; each incorrect one costs $-1$. Name the distribution first — the formula follows the name.
+== The Empirical Rule (68-95-99.7% Rule)
 
-#mcq(1, [A fair coin is tossed 5 times. The probability of exactly 2 heads is:], ([$3/8$], [$1/2$], [$5/16$], [$5/8$],))
-#mcq(2, [For a binomial distribution with $n = 10$ and $p = 0.3$, the mean and variance are respectively:], ([3 and 2.1], [3 and 3], [2.1 and 3], [0.3 and 0.21],))
-#mcq(3, [The distribution for which the mean and variance are equal is:], ([binomial], [normal], [any symmetric distribution], [Poisson],))
-#mcq(4, [Calls arrive at a rate of 2 per minute (Poisson). The probability of no calls in a minute is:], ([$2 e^(-2)$], [$e^(-2)$], [$e^2$], [$1/2$],))
-#mcq(5, [A fair coin is tossed 5 times. The probability of at least one head is:], ([$1/2$], [$5/32$], [$31/32$], [$4/5$],))
-#mcq(6, [Marks are normal with $mu = 50$, $sigma = 5$. The z-score of a student scoring 65 is:], ([1.5], [3], [5], [15],))
-#mcq(7, [For a normal distribution, the approximate share of data within $mu plus.minus 2 sigma$ is:], ([95%], [68%], [99.7%], [50%],))
-#mcq(8, [A die is thrown twice and $X$ = number of sixes. Then $P(X = 1)$ equals:], ([$1/36$], [$25/36$], [$1/6$], [$5/18$],))
-#mcq(9, [A random variable has $E(X) = 2$ and $Sigma x_i^2 p_i = 6$. Its variance is:], ([8], [2], [4], [6],))
-#mcq(10, [A fair die is rolled once and $X$ is the number shown. $E(X)$ equals:], ([3], [3.25], [3.5], [4],))
+For any normal distribution, the probability of an observation falling within specified standard deviations of the mean is:
+1. $P(mu - sigma <= X <= mu + sigma) = P(-1 <= Z <= 1) approx 0.6827$ (68.27% of all data)
+2. $P(mu - 2sigma <= X <= mu + 2sigma) = P(-2 <= Z <= 2) approx 0.9545$ (95.45% of all data)
+3. $P(mu - 3sigma <= X <= mu + 3sigma) = P(-3 <= Z <= 3) approx 0.9973$ (99.73% of all data)
 
-= Detailed Solutions
+#formula-box(title: "Quartiles & Dispersion Metrics of Normal Distribution")[
+  - *First Quartile ($Q_1$):* $Q_1 = mu - 0.6745 sigma$
+  - *Third Quartile ($Q_3$):* $Q_3 = mu + 0.6745 sigma$
+  - *Quartile Deviation ($"QD"$):* $"QD" = (Q_3 - Q_1) / 2 = 0.6745 sigma approx 2 / 3 sigma$
+  - *Mean Deviation ($"MD"$):* $"MD" = sqrt(2/pi) sigma approx 0.7979 sigma approx 4 / 5 sigma$
+  - *Ratio Rule:* $"QD" : "MD" : sigma = 10 : 12 : 15$ (since $2/3 : 4/5 : 1 = 10 : 12 : 15$).
+]
 
-#solution(1, [Binomial: $P(X = 2) = mat(5; 2) (1/2)^2 (1/2)^3 = 10 dot 1/32 = 10/32 = 5/16$. Choose the two head-positions ($mat(5; 2) = 10$), then the probability of any fixed pattern is $1/32$.], answer: "C")
-#solution(2, [Binomial summary pair: mean $= n p = 10 dot 0.3 = 3$; variance $= n p q = 10 dot 0.3 dot 0.7 = 2.1$. The unequal pair is itself the identifier — equal mean and variance would mean Poisson.], answer: "A")
-#solution(3, [The mean-equals-variance signature belongs to the Poisson distribution alone. Binomial variance carries the extra $q$; the normal has two independent dials.], answer: "D")
-#solution(4, [Poisson with $lambda = 2$: $P(X = 0) = (e^(-2) 2^0)/0! = e^(-2)$ — the "quiet window" probability. Options with $e^2$ or $2 e^(-2)$ broke the formula's $e^(-lambda)$ or the exponent of $lambda$.], answer: "B")
-#solution(5, [Complement route: $P("at least one") = 1 - P("none") = 1 - (1/2)^5 = 31/32$. Option (B) is $P("exactly one")$ — the usual neighbour in the option list.], answer: "C")
-#solution(6, [Convert: $z = (65 - 50)/5 = 15/5 = 3$ — three standard deviations above the mean, deep into the tail. The raw gap 15 is not the z-score; dividing by $sigma$ is the whole step.], answer: "B")
-#solution(7, [The area rule: $plus.minus 1 sigma -> 68%$, $plus.minus 2 sigma -> 95%$, $plus.minus 3 sigma -> 99.7%$. Two bands out — 95%. These three numbers answer a dozen question shapes; keep them together.], answer: "A")
-#solution(8, [Distribution: $P(X = 0) = 25/36$, $P(X = 1) = 2 dot 1/6 dot 5/6 = 10/36 = 5/18$, $P(X = 2) = 1/36$. The middle line carries the $times 2$ for the two orders the six can arrive in.], answer: "D")
-#solution(9, [Two-term recipe: $"Var"(X) = Sigma x_i^2 p_i - (E(X))^2 = 6 - 4 = 2$. Option (D) reported the weighted-square sum alone — the classic missing subtraction.], answer: "B")
-#solution(10, [Expectation of a fair die: $(1 + 2 + 3 + 4 + 5 + 6)/6 = 21/6 = 3.5$. Symmetry puts the mean at the midpoint of the values — the sanity check that catches every arithmetic slip.], answer: "C")
+#worked-example("Worked Example 4 — Standard Normal Probability")[
+  The test scores in an entrance examination are normally distributed with mean $mu = 500$ and standard deviation $sigma = 100$. Find the percentage of candidates scoring above $650$. (Given: For $Z = 1.5$, area from $0$ to $1.5$ is $0.4332$).
 
-= Wrong-Answer Clinic
+  *Solution:*
+  Convert raw score $X = 650$ to standard normal $Z$:
+  $ Z = (X - mu) / sigma = (650 - 500) / 100 = 150 / 100 = 1.5. $
+  We need $P(X > 650) = P(Z > 1.5)$.
+  Using symmetry:
+  $ P(Z > 1.5) = P(Z > 0) - P(0 < Z < 1.5) = 0.5000 - 0.4332 = 0.0668 text(" (or 6.68%)"). $
+]
 
-#table(
-  columns: (1.35fr, 1.35fr, 1.3fr),
-  table.header[*If you picked this*][*The thinking slip*][*The lasting fix*],
-  [(A) in Q2], [Assumed mean = variance for every model], [Equal pair = Poisson only; binomial carries the $q$],
-  [(C) in Q4], [Kept $lambda$ but dropped $e^(-lambda)$], [Write the full Poisson term before substituting],
-  [(B) in Q5], [Computed "exactly one" instead], [Underline "at least" — it triggers the complement reflex],
-  [(C) in Q6], [Reported the raw gap as the score], [z divides by $sigma$ — it counts deviations, not marks],
-  [(D) in Q9], [Skipped the $mu^2$ subtraction], [Variance is a two-term recipe; say both terms aloud],
-  [(A) in Q10], [Averaged badly or forgot the midpoint check], [Symmetric values: mean sits at the centre — 3.5 for a die],
+---
+
+
+== Parameter Recovery from Normal Percentiles (Inverse Normal Problem)
+
+In competitive CUET examinations, candidates are frequently given observed percentage thresholds and required to determine the underlying distribution parameters $mu$ and $sigma$.
+
+#worked-example("Worked Example — Simultaneous Parameter Recovery")[
+  In an aptitude examination, 10% of candidates scored above 75 marks, while 20% scored below 40 marks. Assuming scores are normally distributed, determine the mean $mu$ and standard deviation $sigma$. (Given: For upper tail area $0.10$, $Z = 1.28$; for lower tail area $0.20$, $Z = -0.84$).
+
+  *Solution:*
+  1. Upper 10% threshold ($X_1 = 75$):
+     $ P(X > 75) = 0.10 ==> Z_1 = (75 - mu) / sigma = +1.28 ==> 75 - mu = 1.28 sigma quad --- (1) $
+  2. Lower 20% threshold ($X_2 = 40$):
+     $ P(X < 40) = 0.20 ==> Z_2 = (40 - mu) / sigma = -0.84 ==> 40 - mu = -0.84 sigma quad --- (2) $
+  3. Subtract equation (2) from equation (1):
+     $ (75 - mu) - (40 - mu) = 1.28 sigma - (-0.84 sigma) $
+     $ 35 = 2.12 sigma ==> sigma = 35 / 2.12 approx 16.51 text(" marks"). $
+  4. Substitute $sigma = 16.51$ back into equation (1):
+     $ mu = 75 - 1.28(16.51) = 75 - 21.13 approx 53.87 text(" marks"). $
+]
+
+== The Normal Approximation to the Binomial Distribution
+
+When the number of Bernoulli trials $n$ is large and the probability of success $p$ is moderately balanced (neither $p$ nor $q$ close to zero):
+$ n p >= 5 quad "and" quad n q >= 5 $
+the discrete binomial distribution $B(n, p)$ can be closely approximated by a continuous normal distribution:
+$ X_"approx" \sim N(mu = n p, sigma^2 = n p q) $
+
+*Continuity Correction:*
+Because a continuous distribution replaces a discrete variable, an integer count $X = r$ spans the continuous interval $[r - 0.5, r + 0.5]$:
+- $P(X = r) approx P(r - 0.5 <= X_"norm" <= r + 0.5)$
+- $P(X >= r) approx P(X_"norm" >= r - 0.5)$
+- $P(X <= r) approx P(X_"norm" <= r + 0.5)$
+
+---
+
+#figure(
+  image("assets/math_probdist_poisson_normal.png", width: 88%),
+  caption: [Figure 2: Poisson Process Modeling, Gaussian Bell Curve Geometry & The Standard Normal Z-Score Transformation.],
 )
 
-#v(12pt)
-#align(center)[#text(fill: om-grey, size: 8.5pt)[© OurMocks · www.ourmocks.com · CUET UG Mathematics · Probability Distributions · 2027 cycle]]
+---
+
+#pagebreak()
+
+#figure(
+  image("assets/math_probdist_mindmap.png", width: 88%),
+  caption: [Figure 3: Comprehensive Probability Distributions Mindmap — Interconnecting Discrete PMF & Continuous PDF Architectures.],
+)
+
+#exam-pointer(title: "High-Yield Memory Hooks for CUET 2027")[
+  Keep these fundamental distribution signatures primed:
+  - *Discrete Normalization:* $sum p_i = 1$; Expectation $E(X) = sum x_i p_i$.
+  - *Variance Identity:* $"Var"(X) = E(X^2) - [E(X)]^2$.
+  - *Scaling:* $"Var"(a X + b) = a^2 "Var"(X)$. Constant shifts never change variance!
+  - *Binomial Signature:* $"Mean" = n p > "Variance" = n p q$.
+  - *Poisson Signature:* $"Mean" = "Variance" = lambda$.
+  - *Zero Poisson:* $P(X = 0) = e^(-lambda) ==> P(X >= 1) = 1 - e^(-lambda)$.
+  - *Normal Geometry:* Bell curve is symmetric about $mu$; $P(X = c) = 0$ for single points.
+  - *Empirical Bands:* $68.27%$ in $plus.minus 1 sigma$, $95.45%$ in $plus.minus 2 sigma$, $99.73%$ in $plus.minus 3 sigma$.
+]
+
+---
+
+#pagebreak()
+
+#cheatsheet-box(title: "Master Formula & Decision Cheatsheet — Probability Distributions")[
+  *1. Moments & Linear Transformations:*
+  $ E(X) = sum x_i p_i, quad quad "Var"(X) = sum x_i^2 p_i - mu^2 $
+  $ E(a X + b) = a E(X) + b, quad quad "Var"(a X + b) = a^2 "Var"(X) $
+
+  *2. Binomial Model $B(n, p)$:*
+  $ P(X = r) = binom(n, r) p^r q^(n-r), quad quad mu = n p, quad quad sigma^2 = n p q < n p $
+
+  *3. Poisson Model $"Poisson"(lambda)$:*
+  $ P(X = r) = (e^(-lambda) lambda^r) / r!, quad quad mu = lambda, quad quad sigma^2 = lambda = mu $
+  $ P(r+1) = lambda / (r+1) P(r), quad quad P(X >= 1) = 1 - e^(-lambda) $
+
+  *4. Gaussian Normal Model $N(mu, sigma^2)$:*
+  $ Z = (X - mu) / sigma ~ N(0, 1), quad quad P(mu - sigma <= X <= mu + sigma) = 68.27% $
+  $ "QD" approx 2/3 sigma, quad quad "MD" approx 4/5 sigma, quad quad "QD" : "MD" : sigma = 10 : 12 : 15 $
+]
+
+#exception-box(title: "The Seven Fatal CUET Traps in Probability Distributions")[
+  1. *The Variance Constant Shift Blindspot:* Calculating $"Var"(3X + 5) = 9 "Var"(X) + 5$ or $9 "Var"(X) + 25$. Remember: shifting data by $+5$ leaves spread unchanged! $"Var"(a X + b) = a^2 "Var"(X)$.
+  2. *Negative Variance Disaster:* Forgetting that $"Var"(X) = E(X^2) - [E(X)]^2$ must strictly be non-negative ($>= 0$). If your result is negative, you subtracted in the wrong order!
+  3. *Binomial Variance Exceeding Mean Fallacy:* Choosing a binomial model when variance exceeds mean ($sigma^2 > mu$). That is physically impossible because $q = 1 - p < 1$.
+  4. *Poisson Mean-Variance Inconsistency:* Searching for two separate parameters for a Poisson distribution. The single parameter $lambda$ serves simultaneously as *both* mean and variance!
+  5. *Normal Exact Point Probability Fallacy:* Calculating $P(X = 50)$ for a continuous normal variable. In any continuous distribution, the probability at any isolated single point is strictly zero ($P(X = c) = 0$).
+  6. *Empirical Rule Half-Plane Confusion:* When asked for $P(X > mu + sigma)$, candidates often write $68.27%$. The correct answer is $(100% - 68.27%) / 2 = 15.865%$!
+  7. *Poisson "At Least One" Exponent Slip:* Calculating $P(X >= 1)$ as $e^(-lambda)$. Remember: $e^(-lambda) = P(X = 0)$; therefore $P(X >= 1) = 1 - e^(-lambda)$!
+]
+
+---
+
+#pagebreak()
+#set text(size: 8.0pt)
+#set par(leading: 0.35em, spacing: 0.35em)
+
+= Practice Questions — Part 1 (Q1 to Q5)
+
+#mcq(1, [A discrete random variable $X$ has the probability distribution: $P(X = -1) = 0.2$, $P(X = 0) = 0.5$, $P(X = 1) = 0.3$. The mathematical expectation $E(X)$ is:], (
+  [$0.1$],
+  [$0.0$],
+  [$0.5$],
+  [$0.3$],
+))
+#solution(1, [The expectation of a discrete random variable is given by:
+$ E(X) = sum x_i p_i $
+Substitute the given values:
+$ E(X) = (-1)(0.2) + (0)(0.5) + (1)(0.3) = -0.2 + 0 + 0.3 = +0.1. $
+Matches Option A.], answer: [A])
+
+#mcq(2, [If $X$ is a random variable with mean $E(X) = 5$ and variance $"Var"(X) = 4$, then $E(2X + 3)$ and $"Var"(2X + 3)$ are respectively:], (
+  [$13$ and $11$],
+  [$13$ and $16$],
+  [$10$ and $16$],
+  [$13$ and $19$],
+))
+#solution(2, [By the linear transformation theorems of expectation and variance:
+1. $E(2X + 3) = 2 E(X) + 3 = 2(5) + 3 = 10 + 3 = 13$.
+2. $"Var"(2X + 3) = 2^2 dot "Var"(X) = 4 dot 4 = 16$.
+(Notice that adding the constant 3 does not alter variance: $"Var"(a X + b) = a^2 "Var"(X)$).
+Matches Option B.], answer: [B])
+
+#mcq(3, [For a certain binomial distribution, the mean is $6$ and the variance is $2$. The total number of trials $n$ is:], (
+  [$9$],
+  [$12$],
+  [$8$],
+  [$18$],
+))
+#solution(3, [For a Binomial distribution $B(n, p)$:
+- Mean $mu = n p = 6$.
+- Variance $sigma^2 = n p q = 2$.
+Divide variance by mean:
+$ q = (n p q) / (n p) = 2 / 6 = 1 / 3. $
+Therefore, success probability $p = 1 - q = 1 - 1/3 = 2/3$.
+Now substitute $p = 2/3$ into the mean equation:
+$ n p = 6 ==> n (2/3) = 6 ==> n = 6 times 3 / 2 = 9. $
+Matches Option A.], answer: [A])
+
+#mcq(4, [Which of the following conditions is an absolute requirement for a random variable $X$ to follow a Poisson distribution?], (
+  [The variance must strictly exceed the mean],
+  [The variance must be strictly equal to the mean],
+  [The number of trials must be small ($n < 30$)],
+  [The probability of success must be greater than $0.5$],
+))
+#solution(4, [The hallmark theoretical property of the Poisson distribution is that its variance is strictly identical to its mean: $"Var"(X) = E(X) = lambda$. In a Binomial distribution, variance is strictly less than mean ($n p q < n p$), while in a Negative Binomial distribution, variance exceeds mean.], answer: [B])
+
+#mcq(5, [If $X$ follows a Poisson distribution such that $P(X = 1) = P(X = 2)$, the parameter $lambda$ of the distribution is:], (
+  [$1$],
+  [$2$],
+  [$0.5$],
+  [$4$],
+))
+#solution(5, [The Poisson PMF is $P(X = r) = (e^(-lambda) lambda^r) / r!$.
+Given $P(X = 1) = P(X = 2)$:
+$ (e^(-lambda) lambda^1) / 1! = (e^(-lambda) lambda^2) / 2! $
+Divide both sides by $e^(-lambda) lambda$ (since $lambda > 0$):
+$ 1 / 1 = lambda / 2 ==> lambda = 2. $
+Matches Option B.], answer: [B])
+
+#pagebreak()
+
+= Practice Questions — Part 2 (Q6 to Q10)
+
+#mcq(6, [For a continuous random variable $X$ following a normal distribution $N(mu, sigma^2)$, the probability that $X$ takes the exact single point value $X = mu$ is:], (
+  [$0.5$],
+  [$1.0$],
+  [$0$],
+  [$1 / (sigma sqrt(2 pi))$],
+))
+#solution(6, [For any continuous random variable governed by a continuous probability density function $f(x)$, probability represents the geometric area under the curve. Because a single point has zero width ($d x = 0$), the integral evaluated at an isolated point is strictly zero: $P(X = mu) = integral_mu^mu f(x) d x = 0$. (Option D is the height of the density ordinate, NOT probability).], answer: [C])
+
+#mcq(7, [The heights of soldiers in a regiment are normally distributed with mean $mu = 175$ cm and standard deviation $sigma = 5$ cm. What percentage of soldiers have heights between $165$ cm and $185$ cm?], (
+  [$68.27%$],
+  [$95.45%$],
+  [$99.73%$],
+  [$50.00%$],
+))
+#solution(7, [Transform the boundary values to standard normal $Z$-scores:
+- For $X = 165$: $Z_1 = (165 - 175) / 5 = -10 / 5 = -2.0$.
+- For $X = 185$: $Z_2 = (185 - 175) / 5 = +10 / 5 = +2.0$.
+The interval $[165, 185]$ corresponds to $mu plus.minus 2 sigma$ (from $Z = -2$ to $Z = +2$).
+By the Empirical Rule of the normal distribution, the area enclosed within $plus.minus 2 sigma$ is precisely $95.45%$.], answer: [B])
+
+#mcq(8, [If a random variable $X$ has $E(X) = 3$ and $E(X^2) = 13$, the standard deviation of $X$ is:], (
+  [$10$],
+  [$4$],
+  [$2$],
+  [$sqrt(10)$],
+))
+#solution(8, [The variance is given by:
+$ "Var"(X) = E(X^2) - [E(X)]^2 = 13 - (3)^2 = 13 - 9 = 4. $
+The standard deviation is the positive square root of variance:
+$ sigma = sqrt("Var"(X)) = sqrt(4) = 2. $
+Matches Option C.], answer: [C])
+
+#mcq(9, [In a family with 4 children, assuming boys and girls are equally likely ($p = 0.5$), the probability that the family has at least one boy is:], (
+  [$15 / 16$],
+  [$1 / 16$],
+  [$7 / 8$],
+  [$3 / 4$],
+))
+#solution(9, [Here $n = 4$ independent trials with $p = P("Boy") = 0.5$ and $q = P("Girl") = 0.5$.
+$P("At least one boy") = 1 - P("No boys") = 1 - P(X = 0)$.
+$ P(X = 0) = binom(4, 0) (1/2)^0 (1/2)^4 = 1 / 16. $
+$ P(X >= 1) = 1 - 1 / 16 = 15 / 16. $
+Matches Option A.], answer: [A])
+
+#mcq(10, [If $X$ is a Poisson random variable with parameter $lambda = 4$, the mode of the distribution is:], (
+  [$4$ only],
+  [$3$ only],
+  [Both $3$ and $4$],
+  [$2$],
+))
+#solution(10, [For a Poisson distribution, if the parameter $lambda$ is a positive integer, the distribution is *bimodal* with modes occurring at two consecutive integers:
+$ r = lambda - 1 quad "and" quad r = lambda. $
+Here $lambda = 4$ is an integer. Thus, the modes are $4 - 1 = 3$ and $4$.
+(Check: $P(3) = (e^(-4) 4^3) / 6 = (64/6) e^(-4) = 10.67 e^(-4)$; and $P(4) = (e^(-4) 4^4) / 24 = (256/24) e^(-4) = 10.67 e^(-4)$).], answer: [C])
+
+#pagebreak()
+
+= Practice Questions — Part 3 (Q11 to Q15)
+
+#mcq(11, [For a normal distribution with mean $mu = 50$ and variance $sigma^2 = 25$, the two points of inflection of the curve occur at:], (
+  [$45$ and $55$],
+  [$40$ and $60$],
+  [$47.5$ and $52.5$],
+  [$25$ and $75$],
+))
+#solution(11, [Given $mu = 50$ and $sigma^2 = 25 ==> sigma = sqrt(25) = 5$.
+In a normal distribution, the points of inflection (where the second derivative $f''(x) = 0$ and the curve transitions from concave downward to concave upward) occur at exactly one standard deviation from the mean:
+$ x = mu - sigma = 50 - 5 = 45 $
+$ x = mu + sigma = 50 + 5 = 55 $
+The points of inflection are at $45$ and $55$. Matches Option A.], answer: [A])
+
+#mcq(12, [A factory produces light bulbs with a defect rate of $1%$. In a random sample of $200$ bulbs, using the Poisson approximation to the Binomial distribution, the average number of defective bulbs $lambda$ is:], (
+  [$1$],
+  [$2$],
+  [$0.02$],
+  [$4$],
+))
+#solution(12, [When sample size $n$ is large and success probability $p$ is small, the Poisson distribution approximates the Binomial distribution with parameter:
+$ lambda = n p $
+Given $n = 200$ and $p = 1% = 0.01$:
+$ lambda = 200 times 0.01 = 2. $
+Matches Option B.], answer: [B])
+
+#mcq(13, [If the Quartile Deviation of a normally distributed random variable is $10$, the estimated standard deviation $sigma$ of the distribution is approximately:], (
+  [$15$],
+  [$20$],
+  [$6.67$],
+  [$12$],
+))
+#solution(13, [For a normal distribution, the relationship between Quartile Deviation ($"QD"$) and standard deviation ($sigma$) is:
+$ "QD" approx 2 / 3 sigma $
+Given $"QD" = 10$:
+$ 10 = 2 / 3 sigma ==> sigma = 10 times 3 / 2 = 15. $
+Matches Option A.], answer: [A])
+
+#mcq(14, [Two independent random variables $X$ and $Y$ follow Poisson distributions with parameters $lambda_1 = 2$ and $lambda_2 = 3$ respectively. The distribution of the sum $W = X + Y$ is:], (
+  [$"Poisson"(6)$],
+  [$"Poisson"(5)$],
+  [$"Binomial"(5, 0.5)$],
+  [$N(5, 5)$],
+))
+#solution(14, [By the additive (reproductive) property of the Poisson distribution:
+If $X ~ "Poisson"(lambda_1)$ and $Y ~ "Poisson"(lambda_2)$ are independent random variables, their sum $X + Y$ also follows a Poisson distribution whose parameter is the sum of the individual parameters:
+$ X + Y ~ "Poisson"(lambda_1 + lambda_2) = "Poisson"(2 + 3) = "Poisson"(5). $
+Matches Option B.], answer: [B])
+
+#mcq(15, [In an eight-trial binomial experiment $B(8, p)$, if the probability of 3 successes equals the probability of 5 successes ($P(X = 3) = P(X = 5)$), the probability of success $p$ is:], (
+  [$0.5$],
+  [$0.375$],
+  [$0.625$],
+  [$0.25$],
+))
+#solution(15, [The Binomial PMF is $P(X = r) = binom(n, r) p^r q^(n - r)$.
+Given $n = 8$ and $P(X = 3) = P(X = 5)$:
+$ binom(8, 3) p^3 q^(8 - 3) = binom(8, 5) p^5 q^(8 - 5) $
+Since $binom(8, 3) = binom(8, 5) = 56$:
+$ 56 p^3 q^5 = 56 p^5 q^3 $
+Divide both sides by $56 p^3 q^3$ (assuming $0 < p, q < 1$):
+$ q^2 = p^2 ==> q = p $
+Since $p + q = 1$, we have $p + p = 1 ==> 2p = 1 ==> p = 0.5$.
+Matches Option A.], answer: [A])

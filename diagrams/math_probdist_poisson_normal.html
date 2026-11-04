@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Poisson & Normal Probability Distribution Architectures</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 22px 28px;
+    overflow: hidden;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 10px;
+    margin-bottom: 14px;
+  }
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .brand-badge {
+    background: #071A4D;
+    color: #B8FF34;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .title-group h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .title-group p {
+    font-size: 12px;
+    color: #64748B;
+    margin-top: 1px;
+  }
+  .header-tag {
+    background: #EFF6FF;
+    color: #1F5EFF;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 6px;
+    border: 1px solid #BFDBFE;
+  }
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    height: 750px;
+  }
+  .panel {
+    background: #FFFFFF;
+    border-radius: 12px;
+    border: 1px solid #E2E8F0;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .panel-title {
+    font-size: 15px;
+    font-weight: 800;
+    color: #071A4D;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 2px solid #F1F5F9;
+    padding-bottom: 8px;
+  }
+  .dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+  }
+  .dot-blue { background: #1F5EFF; }
+  .dot-green { background: #16A34A; }
+  .formula-card {
+    background: #071A4D;
+    border-radius: 10px;
+    padding: 12px 14px;
+    color: #FFFFFF;
+  }
+  .formula-card .f-title {
+    font-size: 11.5px;
+    font-weight: 700;
+    color: #B8FF34;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .formula-card .f-math {
+    font-family: "Cambria Math", Georgia, serif;
+    font-size: 15px;
+    color: #FFFFFF;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(184,255,52,0.3);
+    border-radius: 6px;
+    padding: 7px 10px;
+    margin-bottom: 6px;
+  }
+  .formula-card .f-math b {
+    color: #B8FF34;
+  }
+  .formula-card .f-desc {
+    font-size: 11px;
+    color: #C9D4EE;
+    line-height: 1.35;
+  }
+  .content-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 11.5px;
+  }
+  .content-table th {
+    background: #F1F5F9;
+    color: #071A4D;
+    font-weight: 700;
+    text-align: left;
+    padding: 6px 8px;
+    border-bottom: 1.5px solid #CBD5E1;
+  }
+  .content-table td {
+    padding: 6px 8px;
+    border-bottom: 1px solid #E2E8F0;
+    color: #334155;
+    line-height: 1.3;
+  }
+  .content-table tr:nth-child(even) {
+    background: #F8FAFC;
+  }
+  .box-note {
+    background: #F8FAFC;
+    border-left: 3.5px solid #1F5EFF;
+    border-radius: 0 8px 8px 0;
+    padding: 8px 12px;
+    font-size: 11.5px;
+    color: #1E293B;
+    line-height: 1.35;
+  }
+  .box-note b { color: #071A4D; }
+  .trap-card {
+    background: #FFF1F2;
+    border: 1px solid #FECDD3;
+    border-left: 3.5px solid #E11D48;
+    border-radius: 0 8px 8px 0;
+    padding: 8px 12px;
+    font-size: 11px;
+    color: #9F1239;
+    line-height: 1.35;
+  }
+  .trap-card b { color: #881337; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <div class="brand-badge">OurMocks Core System</div>
+    <div class="title-group">
+      <h1>Poisson & Normal Probability Distribution Architectures</h1>
+      <p>NTA CUET (UG) Section B2 · Unit V Probability Distributions Analytical Framework</p>
+    </div>
+  </div>
+  <div class="header-tag">Section B2 Applied Math</div>
+</div>
+
+<div class="grid-2">
+  <!-- Left Panel: Poisson Distribution -->
+  <div class="panel">
+    <div class="panel-title">
+      <span class="dot dot-blue"></span>
+      1. Poisson Distribution — Rare Events & Count Processes
+    </div>
+
+    <div class="formula-card">
+      <div class="f-title">Poisson Probability Mass Function & Equality Identity</div>
+      <div class="f-math">
+        P(X = r) = (e⁻ᵝ · λʳ) / r! quad (r = 0, 1, 2, ...)
+      </div>
+      <div class="f-math">
+        Mean = E(X) = λ, quad Variance = Var(X) = λ ⟹ <b>Mean = Variance</b>
+      </div>
+      <div class="f-desc">
+        Derived as the limiting form of Binomial distribution when <b>n → ∞</b> and <b>p → 0</b> with constant product <b>λ = np</b>.
+      </div>
+    </div>
+
+    <table class="content-table">
+      <thead>
+        <tr>
+          <th>Property</th>
+          <th>Mathematical Expression</th>
+          <th>Practical Utility in CUET</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>Recurrence Relation</b></td>
+          <td>P(r + 1) = [ λ / (r + 1) ] · P(r)</td>
+          <td>Enables fast computation without evaluating factorials</td>
+        </tr>
+        <tr>
+          <td><b>Zero Count Probability</b></td>
+          <td>P(X = 0) = e⁻ᵝ</td>
+          <td>Given P(0), λ = -ln(P(0)); instantaneous parameter discovery</td>
+        </tr>
+        <tr>
+          <td><b>Additive Property</b></td>
+          <td>X + Y ~ Poisson(λ₁ + λ₂)</td>
+          <td>Sum of independent Poisson variables is always Poisson</td>
+        </tr>
+        <tr>
+          <td><b>Mode of Distribution</b></td>
+          <td>If λ is integer: λ - 1 and λ; if fraction: ⌊λ⌋</td>
+          <td>Identifies highest probability outcome</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="box-note">
+      <b>The Defining Poisson Signature:</b> Whenever a problem states "the variance of a discrete distribution equals its mean", it is unambiguously a Poisson distribution. For Binomial, Mean &gt; Variance ($np > npq$).
+    </div>
+
+    <div class="trap-card">
+      <b>CUET Trap Alert (At Least One Event):</b> "Probability of at least one occurrence" is calculated as $P(X \ge 1) = 1 - P(X = 0) = 1 - e^{-\lambda}$. Never compute $\sum_{r=1}^\infty P(r)$ manually; use the complement rule!
+    </div>
+  </div>
+
+  <!-- Right Panel: Normal Distribution -->
+  <div class="panel">
+    <div class="panel-title">
+      <span class="dot dot-green"></span>
+      2. The Gaussian Normal Distribution & Standard Normal Z-Score
+    </div>
+
+    <div class="formula-card">
+      <div class="f-title">Normal Probability Density Function & Z-Score</div>
+      <div class="f-math">
+        f(x) = (1 / (σ√(2π))) · e^[ - (x - μ)² / (2σ²) ]
+      </div>
+      <div class="f-math">
+        Standard Normal: Z = (X - μ) / σ ~ N(0, 1)
+      </div>
+      <div class="f-desc">
+        Symmetrical bell-shaped density curve centered at mean <b>μ</b> with scale determined by standard deviation <b>σ</b>. Total area under curve equals <b>1</b>.
+      </div>
+    </div>
+
+    <table class="content-table">
+      <thead>
+        <tr>
+          <th>Symmetry / Empirical Band</th>
+          <th>Range on Z-Scale</th>
+          <th>Enclosed Area / Probability</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>Central 1-Sigma Band</b></td>
+          <td>-1.0 &le; Z &le; +1.0 (μ &plusmn; σ)</td>
+          <td><b>68.27%</b> of total distribution area</td>
+        </tr>
+        <tr>
+          <td><b>Central 2-Sigma Band</b></td>
+          <td>-2.0 &le; Z &le; +2.0 (μ &plusmn; 2σ)</td>
+          <td><b>95.45%</b> of total distribution area</td>
+        </tr>
+        <tr>
+          <td><b>Central 3-Sigma Band</b></td>
+          <td>-3.0 &le; Z &le; +3.0 (μ &plusmn; 3σ)</td>
+          <td><b>99.73%</b> (virtually entire population)</td>
+        </tr>
+        <tr>
+          <td><b>Symmetry Half-Plane</b></td>
+          <td>Z &ge; 0 or Z &le; 0</td>
+          <td><b>50.00%</b> (P(Z &gt; 0) = P(Z &lt; 0) = 0.50)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="box-note">
+      <b>Points of Inflection & Quartiles:</b> Inflection points (where curvature changes from concave to convex) occur at $x = \mu \pm \sigma$. First quartile $Q_1 = \mu - 0.6745\sigma$, third quartile $Q_3 = \mu + 0.6745\sigma$. Quartile Deviation $QD \approx \frac{2}{3}\sigma$.
+    </div>
+
+    <div class="trap-card">
+      <b>CUET Trap Alert (Continuous Exact Point Probability):</b> For any continuous random variable governed by a normal distribution, the probability of taking an exact individual point value is ALWAYS zero: $P(X = c) = 0$. Probabilities exist strictly over intervals $[a, b]$ as areas under the curve.
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
