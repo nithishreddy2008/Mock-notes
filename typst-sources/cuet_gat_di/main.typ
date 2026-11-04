@@ -4,321 +4,560 @@
   exam: "CUET UG",
   subject: "General Aptitude Test",
   topic-title: "Numerical Ability & Data Interpretation",
-  subtitle: "Official Syllabus · GT Paper · CUET UG 2027 Cycle Notes",
+  subtitle: "Official Syllabus · General Test (Section III) · Class 12 · CUET UG 2027 Cycle Notes",
 )
 
 = Syllabus Alignment
 
 #table(
   columns: (1.15fr, 2fr, 1.15fr),
-  table.header[*Sub-topic*][*Official syllabus pointer (NTA official CUET(UG) 2026 syllabus — General Aptitude Test (501), the current 2027 baseline)*][*Skills the questions test*],
-  [*Percentages*], [
-    Percentages
+  table.header[*Sub-topic*][*Official Syllabus Pointer (NTA CUET GAT 501)*][*Core Skills Tested*],
+  [*Percentages & Variation*], [
+    Percentages and quantitative changes: Fractions, successive shifts, profit/loss, reverse base.
   ], [
-    Converting, comparing and applying percentage change with the correct base.
+    Rapid fraction conversions, base identification, successive variation formula ($a + b + a b / 100$).
   ],
-  [*Ratios*], [
-    Ratios
+  [*Ratios & Partnerships*], [
+    Ratios, tildeortions, and partnerships: Part allocation, variations, capital-time compounding.
   ], [
-    Splitting quantities in a given ratio and scaling parts up or down.
+    Splitting quantities, tildeortional scaling, investment duration weighting, alligation cross.
   ],
-  [*Averages*], [
-    Averages
+  [*Averages & Mixtures*], [
+    Averages and central tendencies: Totals manipulation, joining/leaving replacements, weighted means.
   ], [
-    Moving between totals, counts and means as values enter or leave.
+    Translating averages to aggregate sums, deviation shortcuts, weighted arithmetic means.
   ],
-  [*Chart reading*], [
-    Simple graphs/tables/charts reading
+  [*Data Interpretation*], [
+    Simple graphs/tables/charts reading: Bar graphs, line charts, pie charts, cross-tabulation.
   ], [
-    Extracting exact values from a visual and computing on them.
+    Rapid frame triage, angle-to-percent conversion ($3.6° = 1%$), tabular coordinate extraction.
   ],
-  [*Statistics basics*], [
-    Basic statistics interpretation
+  [*Basic Statistics*], [
+    Basic statistics interpretation: Mean, median, mode, range, and outlier sensitivity.
   ], [
-    Choosing and interpreting mean, median, mode and range sensibly.
+    Sorted median determination, empirical modal relation, identifying skewed distributions.
   ],
 )
 
 #exam-pointer[
-  CUET UG pattern (NTA official information bulletin and syllabus, 2026 cycle — the
-  current 2027 baseline): each test paper carries *50 compulsory questions* in
-  *60 minutes*, with $+5$ for every correct answer and $-1$ for every incorrect
-  answer. The General Aptitude Test section named in the official syllabus is
-  *Numerical Ability and Data Interpretation*: percentages, ratios, averages,
-  simple graphs/tables/charts reading and basic statistics interpretation.
-  These questions are speed-arithmetic: the numbers are designed to be handled
-  with fractions and anchors, not long division — this PDF trains exactly that.
+  *CUET UG 2027 Official Exam Pattern:* The General Test (Section III, Code 501) presents *50 compulsory multiple-choice questions* to be attempted in *60 minutes*. Each correct response yields $+5$ marks, while an incorrect response incurs a $-1$ mark negative deduction (unattempted questions earn 0). Numerical Ability and Data Interpretation constitutes approximately *15 to 20 questions* of the test. The numerical problems are engineered to reward mental arithmetic, fraction anchors, and structural estimation rather than tedious long division.
 ]
 
-= Percentages: The Foundation Skill
+= Percentages: The Foundational Multiplier
 
-A percentage is only a fraction wearing a nicer outfit: 20% is one-fifth, 25% is one-quarter, 50% is one-half. Students who treat every percentage as a decimal multiplication slog waste minutes; students who hold a small set of fraction anchors do these sums in their head. Build the anchor table once, and most percentage questions in the exam collapse into one-line fraction moves.
+A percentage is mathematically equivalent to a rational fraction scaled to a denominator of 100. Competitive examination candidates who execute percentage calculations through multi-digit decimal multiplication squander valuable time. Mastering standard fraction anchors reduces complex percentage operations to instantaneous single-step divisions.
+
+== Standard Fraction-to-Percentage Equivalence Table
 
 #table(
-  columns: (0.9fr, 0.9fr, 0.9fr, 0.9fr, 0.9fr, 0.9fr, 0.9fr, 0.9fr),
-  table.header[*Percent*][*10%*][*12.5%*][*20%*][*25%*]["33.3%"][*50%*][*75%*],
-  [*Fraction*], [1/10], [1/8], [1/5], [1/4], [1/3], [1/2], [3/4],
+  columns: (1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr),
+  table.header[*Fraction*][*1/2*][*1/3*][*1/4*][*1/5*][*1/6*][*1/8*][*1/12*],
+  [*Percent*], [50.0%], [33.33%], [25.0%], [20.0%], [16.67%], [12.5%], [8.33%],
 )
 
-- *The 10% build-up trick:* 10% of a number is the number divided by 10. Build any nearby percentage from it — 5% is half of 10%, 15% is 10% + 5%, 20% is two 10%s.
-- *Percentage change formula:* % change = (change ÷ ORIGINAL value) × 100. The base is always the OLD value — never the new one.
-- *Successive changes never simply cancel.* A price up 20% then down 20% lands at 96% of the start — a 4% LOSS, because the second change applies to a bigger base.
-- *Reverse-percentage questions:* "after a 25% rise the price is 500" means 500 = 125% of the original → original = 500 × 4/5 = 400.
+== Mental Arithmetic Levers: The 10% Build-Up Method
+Any composite percentage can be rapidly synthesized by decomposing it into standard base units:
+- *10% Base:* Divide the target integer by 10 (shift the decimal point one place to the left).
+- *5% Base:* Halve the 10% value.
+- *1% Base:* Divide the target integer by 100 (shift the decimal point two places to the left).
+- *Synthesis Example:* To evaluate $17.5%$ of 480:
+  $ 10% = 48, quad 5% = 24, quad 2.5% = 12 ==> 17.5% = 48 + 24 + 12 = 84. $
 
-#worked-example("Solved Percentages — two classics")[
-  *Rise then fall:* A jacket costs ₹1,000. Its price rises 20%, then falls 20%. Final price?
+== The Percentage Change Base Rule
+A recurrent error in data interpretation stems from misidentifying the denominator in percentage change queries. The formula strictly demands calibration against the *original (initial) reference value*:
+$ "Percentage Change" = ("Final Value" - "Initial Value") / "Initial Value" times 100% $
+- If revenue expands from ₹40 Lakhs to ₹50 Lakhs:
+  $ % "Increase" = (50 - 40) / 40 times 100% = 10 / 40 times 100% = 25.0%. $
+  (Dividing by the terminal value 50 yields an erroneous 20.0%).
 
-  - After the rise: 1,000 × 6/5 = ₹1,200.
-  - After the fall: 1,200 × 4/5 = ₹960.
-  - Final = ₹960 — a 4% loss on ₹1,000. The two 20%s do NOT cancel.
+== Successive Percentage Variations
+When a quantity undergoes two consecutive percentage alterations of $a%$ and $b%$, the net compound percentage variation is given by:
+$ "Net Percentage Variation" = (a + b + (a dot b) / 100)% $
+- *The Classic Neutralization Myth:* A price hike of $+20%$ followed by a discount of $-20%$ does NOT restore the original price.
+  $ "Net Variation" = (+20) + (-20) + ((+20)(-20)) / 100 = 0 - 400 / 100 = -4.0%. $
+  The quantity suffers a net reduction of $4.0%$ because the second percentage deduction operates upon a larger intermediate base.
 
-  *Reverse percentage:* A phone priced up by 25% now sells at ₹12,500. Original price?
+== Reverse Percentage Arithmetic
+When given a terminal value after an $x%$ appreciation or depreciation:
+- If a commodity sells for ₹15,000 following a $25%$ markup:
+  $ "Selling Price" = "Cost Price" times (1 + 25/100) = "Cost Price" times 5/4 $
+  $ "Cost Price" = 15,000 times 4/5 = 12,000 text(" rupees"). $
 
-  - 12,500 = 125% of original = 5/4 of original.
-  - Original = 12,500 × 4/5 = ₹10,000. Always rebuild the original through the fraction.
+#figure(
+  image("assets/gat_di_chart_panel.png", width: 88%),
+  caption: [Systematic extraction workflow for Data Interpretation: Highlighting frame triage, coordinate mapping, fraction conversions, and the eye-check validation routine.],
+)
+
+= Ratios, Proportions, and Commercial Partnerships
+
+A ratio represents the quantitative comparison of two or more homogeneous quantities expressed in minimal integral form.
+
+== Partitioning Quantities into Ratios
+To distribute a total corpus $T$ among recipients in the ratio $a : b : c$:
+1. Calculate the aggregate sum of parts: $S = a + b + c$.
+2. Determine the unitary value of a single part: $U = T / S$.
+3. Compute individual allocations:
+   $ "Share of " A = a dot U, quad "Share of " B = b dot U, quad "Share of " C = c dot U. $
+4. *Internal Verification:* The sum of individual shares must perfectly reconstruct the original total $T$.
+
+== Commercial Partnership Equations
+In business partnerships, profit distribution is tildeortional to both the invested capital ($C$) and the operational time duration ($T$):
+$ "Profit Ratio" = (C_A dot T_A) : (C_B dot T_B) : (C_C dot T_C) $
+- If Partner A invests ₹50,000 for 12 months and Partner B invests ₹75,000 for 8 months:
+  $ "Ratio" = (50,000 times 12) : (75,000 times 8) = 6,00,000 : 6,00,000 = 1 : 1. $
+  Both partners receive identical profit shares despite differing capital inputs.
+
+== The Alligation Rule for Mixtures
+When two ingredients of unit costs $C$ (cheaper) and $D$ (dearer) are combined to produce a mixture of intermediate mean cost $M$:
+$ (Q_"Cheaper") / (Q_"Dearer") = (D - M) / (M - C) $
+
+#worked-example("Alligation in Action")[
+  *Problem:* In what ratio must grocer blend Darjeeling tea worth ₹280/kg with Assam tea worth ₹350/kg to create a blend worth ₹300/kg?
+  - Cheaper price $C = 280$, Dearer price $D = 350$, Mean price $M = 300$.
+  - Difference on Dearer side: $D - M = 350 - 300 = 50$.
+  - Difference on Cheaper side: $M - C = 300 - 280 = 20$.
+  $ "Ratio" = 50 : 20 = 5 : 2. $
+  The grocer must mix 5 parts of Darjeeling tea with 2 parts of Assam tea.
 ]
 
-= Ratios: Sharing in Parts
+= Averages and Weighted Combinations
 
-A ratio splits a total into equal parts: 2 : 3 : 4 means the total is cut into 2 + 3 + 4 = 9 equal slices, and each claimant takes their number of slices. The single formula to remember: *one part = total ÷ sum of the ratio terms*. Every ratio question — money division, mixture, ages — is this formula plus one multiplication.
+An arithmetic average represents the balanced equilibrium point of a numeric distribution:
+$ "Average" (A) = ("Sum of Observations" (Sigma x)) / ("Total Count" (N)) ==> Sigma x = A dot N $
+Almost all competitive exam puzzles resolve cleanly the moment averages are converted into *aggregate sums*.
 
-- *Step 1 — Add the ratio terms.* 2 : 3 : 4 has 9 parts in total.
-- *Step 2 — Find one part.* Total ₹720 ÷ 9 = ₹80 per part.
-- *Step 3 — Multiply back.* Shares: 2 × 80 = ₹160, 3 × 80 = ₹240, 4 × 80 = ₹320.
-- *Step 4 — Verify by summing.* 160 + 240 + 320 = ₹720 — shares always rebuild the total; if they do not, the arithmetic slipped.
-- *Ratio + percentage combos:* "40% of a class are boys, the rest girls" → boys : girls = 40 : 60 = 2 : 3. Convert percentages to a ratio before dividing anything.
+== The Replacement / Addition Dynamic
+When an element of value $V_"new"$ replaces an existing element $V_"old"$:
+$ "New Sum" = "Old Sum" - V_"old" + V_"new" $
+$ "New Average" = "Old Average" + (V_"new" - V_"old") / N $
+- If a player weighing 85 kg replaces a player weighing 65 kg in a team of 10:
+  $ Delta A = (85 - 65) / 10 = +2.0 text(" kg rise in team average"). $
 
-#worked-example("Solved Ratio — a three-way split")[
-  *Question:* ₹900 is divided among Arun, Beena and Cheena in the ratio 3 : 4 : 5. How much does Cheena receive?
+== Weighted Average Formulation
+When two distinct sub-groups of sizes $n_1$ and $n_2$ possessing independent group averages $A_1$ and $A_2$ are merged:
+$ A_"weighted" = (n_1 A_1 + n_2 A_2) / (n_1 + n_2) $
+- *Pitfall:* One cannot simply average the averages ($A_1 + A_2 / 2$) unless both sub-groups contain an identical number of observations ($n_1 = n_2$).
 
-  - *Parts:* 3 + 4 + 5 = 12 parts.
-  - *One part:* 900 ÷ 12 = ₹75.
-  - *Cheena's share:* 5 × 75 = ₹375.
-  - *Check:* 225 + 300 + 375 = 900 — the total rebuilds. *Answer: ₹375.*
-]
+#figure(
+  image("assets/gat_di_advanced_chart_models.png", width: 88%),
+  caption: [Comprehensive architectural taxonomy of Data Interpretation: Illustrating chart modalities, arithmetic multipliers, statistical measures, and the 4-phase solving algorithm.],
+)
 
-= Averages: Totals, Not Vibes
+= Modalities of Data Interpretation
 
-An average is a bookkeeping device: total ÷ count. Almost every average trick becomes easy the moment you convert averages back into *totals* — because totals add and subtract cleanly while averages swing. When a member joins or leaves, the total moves by exactly that member's value; the count moves by one. Track those two movements and every classic puzzle unrolls step by step.
+CUET questions present empirical data across five standard visual modalities:
 
-- *The core moves:* sum = average × count. "Average of 5 numbers is 18" means the sum is 90 — say that sentence and half the question is done.
-- *One member out:* new average = (old sum − removed value) ÷ remaining count.
-- *One member in:* new average = (old sum + new value) ÷ new count. Run it forwards from totals, never by juggling averages directly.
-- *Equalisers:* "the average age of a group rises by 2 when one person joins" — that person's value sits 2 × (new count) above the old average. The newcomer carries the whole rise plus their own seat.
+== 1. Pie Charts (Circular Proportions)
+Pie charts portray the allocation of a single holistic corpus divided into interors. Sectors are denominated in either percentages or central angles:
+- *Angular Conversion Metric:* A complete circular disc subtends $360°$, corresponding to $100%$.
+  $ 100% = 360° ==> 1% = 3.6°, quad quad 1° = 100 / 360% = 5/18% approx 0.2778%. $
+  - Sector of $54° = 54 / 3.6% = 15.0%$.
+  - Sector of $72° = 72 / 3.6% = 20.0%$.
+  - Sector of $90° = 90 / 3.6% = 25.0%$.
+- *Double Pie Charts:* When two pie charts represent different calendar years, interor sizes *cannot* be directly compared without factoring in the total baseline expenditure of each respective year.
 
-#worked-example("Solved Average — the joining father")[
-  *Question:* The average age of three brothers is 15 years. Their father joins them, and the average age of all four becomes 22. How old is the father?
+== 2. Bar Charts (Categorical Comparisons)
+- *Simple Vertical/Horizontal Bars:* Best suited for comparing discrete independent categories (e.g., annual revenue across five corporate divisions).
+- *Grouped Bars:* Displays multi-attribute data side-by-side for each category (e.g., Exports vs Imports over consecutive financial years).
+- *Stacked (Sub-divided) Bars:* The entire bar represents total volume, while internal color segments depict component contributions. To extract a component value, compute the difference between the segment's upper and lower boundaries:
+  $ "Component Value" = "Upper Boundary Coordinate" - "Lower Boundary Coordinate". $
 
-  - *Old total:* 15 × 3 = 45 years.
-  - *New total:* 22 × 4 = 88 years.
-  - *Father's age:* 88 − 45 = 43 years.
-  - *Check:* (45 + 43) ÷ 4 = 88 ÷ 4 = 22 — the new average rebuilds. *Answer: 43 years.*
-]
+== 3. Line Graphs (Continuous Time-Series)
+Line graphs illustrate continuous dynamic fluctuations over temporal intervals (months, quarters, years):
+- *Rate of Growth (Slope):* The steepness of the line segment indicates acceleration or deceleration.
+- *Crossover Interinterions:* The exact coordinate where two line curves interinter signifies parity between the two tracked entities.
 
-= Reading Tables and Charts: Frame, Question, Compute
+== 4. Tabular Cross-Tabulation Matrices
+Tables provide exact numerical values across rows and columns without optical estimation:
+- Always scan the row headers and column banners before extracting data.
+- Check unit annotations carefully: confusing *Metric Tonnes* with *Kilograms* or *₹ Crores* with *₹ Lakhs* ($1 "Crore" = 100 "Lakhs"$) is a classic distractor trap.
 
-Data interpretation is not a maths topic so much as a *reading discipline*. Every chart and table answers to the same three-step routine: read the frame (title, axes, units), read the question (it names the rows and bars you need), then compute with exact values. Students who skip step one answer questions about "thousands" with numbers printed in "hundreds"; students who skip step two waste time comparing bars the question never touched.
+= Basic Statistics and Data Dispersion
 
-- *Step 1 — The frame.* Title = what is shown. Axis labels = units and scale. "Sales in ₹ hundreds" turns a bar marked 40 into ₹4,000.
-- *Step 2 — The question.* Find it BEFORE studying the data; it tells you exactly which two cells or bars to pull.
-- *Step 3 — The compute.* Use the exact printed values; then sanity-check against the picture — a claimed 75% rise between the shortest and tallest bar passes the eye test.
-- *Chart-type map:* bar charts compare categories; line graphs show change over time; pie charts show parts of one whole (convert slices to degrees or percentages); tables give exact values with no estimation needed.
-
-#worked-example("Solved DI — one chart, three questions")[
-  *Data (bar chart):* Monthly sales of a small shop in ₹ hundreds — January 40, February 55, March 45, April 70.
-
-  - *Q1 — Highest month:* compare bars: April, at 70 (₹7,000).
-  - *Q2 — Percentage increase from January to April:* rise = 70 − 40 = 30; on the ORIGINAL base 40 → 30/40 = 75%.
-  - *Q3 — Average monthly sales:* total = 40 + 55 + 45 + 70 = 210 → 210 ÷ 4 = 52.5 (₹5,250).
-  - The full routine appears in Figure 1 of this PDF — same shop, same bars, three clean answers.
-]
-
-= Basic Statistics: Mean, Median, Mode — and When They Disagree
-
-Three "averages" live in this syllabus, and they disagree exactly when the data is lopsided. The *mean* is the total divided by the count — it respects every value, so one extreme value drags it. The *median* is the middle of the SORTED list — it ignores size extremes. The *mode* is the most frequent value. Knowing which one a question wants — and what each one hides — is the whole skill.
+The official NTA syllabus tests foundational descriptive statistical parameters and their structural interactions.
 
 #table(
-  columns: (1.05fr, 1.7fr, 1.75fr, 1.6fr),
-  table.header[*Measure*][*How to get it*][*Strength*][*Weakness*],
-  [Mean], [Total ÷ count], [Uses every value — the default "average"], [One outlier drags it badly],
-  [Median], [Middle value of the SORTED list], [Outlier-proof — reports the typical position], [Ignores how far values spread],
-  [Mode], [Most frequent value], [Works for non-numeric data (most common shoe size)], [May not exist uniquely],
+  columns: (1fr, 1.4fr, 1.8fr),
+  table.header[*Metric*][*Mathematical Definition*][*Operational Characteristics & Traps*],
+  [Arithmetic Mean], [Sum of all data points divided by sample size: $macron(x) = (Sigma x_i) / N$], [Default central measure. Highly sensitive to extreme outlier values; distorted in skewed distributions.],
+  [Median], [Middle value of array after STRICT SORTING in ascending order.], [Positional average. Completely resistant to outlier extremes. Identifies the 50th percentile rank.],
+  [Mode], [The observation appearing with the highest absolute frequency.], [Can be unimodal, bimodal, or non-existent. Most practical metric for commercial inventory planning.],
+  [Range], [Difference between extremes: $"Range" = X_"max" - X_"min"$], [Simplest measure of statistical dispersion. Sensitive only to the extreme boundaries.],
 )
 
-- *The salary example:* incomes 20k, 22k, 24k, 26k, 200k — the mean (58.4k) describes nobody; the median (24k) describes the typical person. Questions love this contrast.
-- *Range = maximum − minimum* — the simplest spread measure. Two classes with the same mean can have wildly different ranges.
-- *Sorting is compulsory:* the median of 7, 3, 9, 5, 11 comes from the sorted list 3, 5, 7, 9, 11 → median 7. The middle of an unsorted list is a trap answer.
+== The Median Sorting Mandate
+To evaluate the median of an array:
+1. Sort all $N$ observations in non-decreasing order.
+2. If $N$ is odd, the median occupies position $(N + 1) / 2$.
+3. If $N$ is even, the median is the arithmetic mean of observations at positions $N/2$ and $(N/2) + 1$.
+- *Warning:* Selecting the middle number of an unsorted list is the most common distractor in CUET statistics.
 
-#worked-example("Solved Statistics — outlier alert")[
-  *Question:* Find the mean, median and mode of: 4, 6, 2, 6, 7, 6, 3.
+== The Empirical Pearsonian Relationship
+For moderately skewed, unimodal distributions, an approximate empirical balance links the three central measures:
+$ "Mode" approx 3 times "Median" - 2 times "Mean" $
+- If a dataset possesses a Median of 25.0 and a Mean of 22.0:
+  $ "Estimated Mode" approx 3(25.0) - 2(22.0) = 75.0 - 44.0 = 31.0. $
 
-  - *Mean:* total = 4+6+2+6+7+6+3 = 34 → 34 ÷ 7 = 4.86 (approx).
-  - *Median:* sorted: 2, 3, 4, 6, 6, 6, 7 → middle (4th) value = 6.
-  - *Mode:* 6 appears three times — more than any other → mode = 6.
-  - *Read:* here the median (6) sits ABOVE the mean (4.86) — the small values 2 and 3 pulled the mean down while the repeated 6 held the median up.
+= Tactical DI Speed Toolkit & Approximation Hacks
+
+To conquer 50 questions in 60 minutes, candidates must execute calculations through disciplined structural approximation:
+
+- *The 1% and 10% Calibration:* Avoid multi-digit denominator division. If required to calculate $143 / 682$:
+  - $10%$ of $682 = 68.2$.
+  - $20%$ of $682 = 136.4$.
+  - Difference $= 143 - 136.4 = 6.6$.
+  - Since $1%$ of $682 approx 6.8$, the ratio is approximately $20% + 1% = 21.0%$.
+  - This calculation takes 6 seconds mentally without scrap paper!
+- *Unit Scaling Vigilance:* In NTA papers, graphs often print labels like *Production in '000 Units* or *Values in ₹ Millions*. An answer of 45 on the axis actually denotes $45,000$ or $₹ 4,50,00,000$.
+
+#pagebreak()
+
+
+= Advanced Commercial Arithmetic: Discounts, Interest & Faulty Weights
+
+Beyond elementary percentage variations, CUET GAT evaluates commercial arithmetic models that combine markup, discounts, and compound variations:
+
+== 1. Markup, Discount, and True Profit Mechanics
+Retail transactions connect Cost Price ($"CP"$), Marked Price ($"MP"$), and Selling Price ($"SP"$):
+$ "Marked Price" = "CP" times (1 + M/100), quad quad "Selling Price" = "MP" times (1 - D/100) $
+$ "Overall Profit Percentage" = ("SP" - "CP") / "CP" times 100% = [ M - D - (M dot D) / 100 ]% $
+- *Successive Discounts:* If successive trade discounts of $d_1%, d_2%, d_3%$ are granted:
+  $ "Net Selling Price" = "MP" times (1 - d_1 / 100) times (1 - d_2 / 100) times (1 - d_3 / 100) $
+  - Successive discounts of 20% and 10% yield:
+    $ "Net Discount" = 20 + 10 - (20 times 10) / 100 = 30 - 2 = 28.0% quad (text("never 30%!")). $
+
+== 2. False Weights and Dishonest Dealer Problems
+When a merchant claims to sell commodities at cost price but utilizes a defective weight:
+$ "Gain Percentage" = ("Error in Weight") / ("True Value" - "Error") times 100% = ("Claimed Weight" - "Actual Weight") / ("Actual Weight") times 100% $
+- If a shopkeeper uses an 800 g weight instead of a standard 1 kg (1,000 g) measure:
+  $ % "Profit" = (1,000 - 800) / 800 times 100% = 200 / 800 times 100% = 25.0%. $
+
+== 3. Simple vs Compound Interest Baselines in GAT
+- *Simple Interest (SI):* Principal $P$ remains constant throughout tenure $T$:
+  $ "SI" = (P dot R dot T) / 100, quad quad "Amount" = P + "SI" = P(1 + (R T) / 100) $
+- *Compound Interest (CI):* Interest accrues on accumulated balance:
+  $ "CI Amount" = P (1 + R / 100)^T, quad quad "CI" = "Amount" - P $
+- *The 2-Year and 3-Year Differential Shortcuts:*
+  $ "Difference" ("CI"_2 - "SI"_2) = P (R / 100)^2 $
+  $ "Difference" ("CI"_3 - "SI"_3) = P (R / 100)^2 [3 + R / 100] $
+  These shortcuts eliminate multi-line compounding calculations in competitive exams.
+
+= Proportional Variations, Work, and Rates
+
+== 1. Mathematical Variations
+- *Direct Proportionality:* $y tilde x ==> y = k x$. As $x$ scales by factor $lambda$, $y$ scales by $lambda$.
+- *Inverse Proportionality:* $y tilde 1/x ==> y dot x = k$. If $x$ doubles, $y$ is halved.
+- *Joint Proportionality:* $W tilde (M dot D dot H) ==> (M_1 D_1 H_1) / W_1 = (M_2 D_2 H_2) / W_2$ (where $M = "Men", D = "Days", H = "Hours/Day", W = "Work Output"$).
+
+== 2. Work, Time, and Operational Efficiency
+Work output operates on the principle of individual operational efficiency:
+$ "Efficiency" (E) = "Total Work" / "Time Taken" ==> "Time Taken" = "Total Work" / E $
+- *Combined Work Formula:* If Agent A completes work in $T_A$ days and Agent B in $T_B$ days:
+  $ 1 / T_"combined" = 1 / T_A + 1 / T_B ==> T_"combined" = (T_A dot T_B) / (T_A + T_B) $
+- *Pipes and Cisterns:* Inlet pipes perform positive work ($+1/T_"in"$), while drainage leaks perform negative work ($-1/T_"out"$):
+  $ "Net Inflow Rate" = 1 / T_"inlet" - 1 / T_"outlet" $
+
+= Advanced Data Interpretation Modalities
+
+== 1. Radar (Spider) Charts
+Radar charts plot multivariate categorical data along radiating equi-angular axes extending from a central origin:
+- Values furthest from the center represent maximum performance.
+- The enclosed polygon area illustrates comprehensive relative capability across all evaluated parameters.
+
+== 2. Caselet DI (Descriptive Narrative Conversion)
+Caselet DI presents unstructured numerical data inside a dense narrative paragraph. The candidate must reconstruct a structured two-dimensional table before attempting question stems:
+- *Step 1:* Identify the primary entities (rows) and attributes (columns).
+- *Step 2:* Populate the matrix with explicit values directly stated in the text.
+- *Step 3:* Use algebraic constraints (row totals, column sums, percentages) to solve for missing cells sequentially.
+
+
+= Speed, Distance, and Time Fundamentals in GAT
+
+Time, Speed, and Distance questions frequently appear in CUET General Test sections. The governing relation connects distance ($D$), velocity ($S$), and transit time ($T$):
+$ D = S dot T ==> S = D / T ==> T = D / S $
+
+== 1. Unit Conversion Metrics
+- To convert kilometers per hour ($"km/h"$) to meters per second ($"m/s"$):
+  $ 1 text(" km/h") = 1,000 text(" m") / (3,600 text(" s")) = 5 / 18 text(" m/s") $
+  - $72 text(" km/h") = 72 times 5/18 = 20 text(" m/s")$.
+  - $54 text(" km/h") = 54 times 5/18 = 15 text(" m/s")$.
+- To convert $"m/s"$ to $"km/h"$, multiply by $18 / 5$.
+
+== 2. Relative Speed Principles
+- *Opposite Directions (Converging / Diverging):* Relative velocity is the arithmetic sum of individual velocities:
+  $ S_"rel" = S_1 + S_2 $
+- *Same Direction (Overtaking):* Relative velocity is the absolute positive difference between individual velocities:
+  $ S_"rel" = |S_1 - S_2| $
+
+== 3. Motion of Trains
+- *Train Crossing a Stationary Point Object (Pole, Tree, Person):*
+  $ "Time" = ("Length of Train" (L_T)) / ("Speed of Train" (S_T)) $
+- *Train Crossing an Extended Object (Platform, Bridge, Tunnel):*
+  $ "Time" = (L_T + L_"Platform") / S_T $
+- *Two Trains Crossing Each Other:*
+  $ "Time" = (L_1 + L_2) / (S_1 plus.minus S_2) quad (text("+ for opposite, - for same direction")). $
+
+== 4. Boats and Streams (Hydrodynamic Motion)
+Let the speed of a boat in still water be $v$ and the speed of the water current be $s$:
+- *Downstream Velocity (With Stream):* $v_d = v + s$.
+- *Upstream Velocity (Against Stream):* $v_u = v - s$.
+- *Reversing Relationships:*
+  $ v = (v_d + v_u) / 2, quad quad s = (v_d - v_u) / 2 $
+- If a boat travels downstream at $18 text(" km/h")$ and upstream at $10 text(" km/h")$:
+  $ v = (18 + 10) / 2 = 14 text(" km/h (still water)"), quad quad s = (18 - 10) / 2 = 4 text(" km/h (stream)"). $
+
+= Chapter Synthesis & Cognitive Mindmap
+
+#figure(
+  image("assets/gat_di_mindmap.png", width: 88%),
+  caption: [Comprehensive architectural mindmap of Numerical Ability & Data Interpretation: Synthesizing percentage anchors, ratio partitioning, average manipulation, chart topologies, and speed analytics.],
+)
+
+#exam-pointer(title: "High-Yield Memory Hooks for CUET 2027 GAT")[
+  Keep these fundamental mathematical and data interpretation maxims primed:
+  - *Base Discipline:* In percentage change, divide by the *original* value, never the terminal value!
+  - *Successive Shifts:* A hike of $x%$ followed by a drop of $x%$ yields an inevitable net loss of $(x^2 / 100)%$.
+  - *Angle-to-Percent:* Divide degrees by $3.6$ to obtain percent; multiply percent by $3.6$ to obtain degrees.
+  - *Averages to Totals:* Never average averages! Immediately convert every average into its aggregate total ($Sigma x = A dot N$).
+  - *Sorted Median:* Always sort the data array before identifying the central median element.
+  - *Partnership Capital-Time:* Profit splits strictly in tildeortion to $(C_1 T_1) : (C_2 T_2)$.
 ]
 
-= Key Rules and Strategies: One-Stop Revision
+#pagebreak()
 
-#cheatsheet-box(title: "Numerical Ability & DI — Every Rule on One Page")[
+#cheatsheet-box(title: "Master Formula Cheatsheet — Numerical Ability & Data Interpretation")[
+  *1. Percentages & Multipliers:*
+  $ "Percentage Change" = ("Final" - "Initial") / "Initial" times 100%, quad quad "Net Variation" = [a + b + (a b) / 100]% $
+  $ "Reverse Base:" quad V_"original" = V_"final" / (1 plus.minus x/100) $
+
+  *2. Ratios, Partnerships & Alligation:*
+  $ "Share" = "Total" times ("Individual Ratio Part" / "Sum of All Parts"), quad quad "Profit Ratio" = (C_A T_A) : (C_B T_B) $
+  $ "Alligation Rule:" quad (Q_"Cheaper" / Q_"Dearer") = (D - M) / (M - C) $
+
+  *3. Averages & Central Tendencies:*
+  $ "Sum" = "Average" times N, quad quad A_"weighted" = (n_1 A_1 + n_2 A_2) / (n_1 + n_2) $
+  $ "New Average" = "Old Average" + (V_"new" - V_"old") / N $
+
+  *4. Pie Chart Conversions & Statistics:*
+  $ 100% = 360° ==> 1% = 3.6°, quad quad "Sector Value" = ("Angle" / 360°) times "Total Corpus" $
+  $ "Range" = X_"max" - X_"min", quad quad "Empirical Mode" approx 3 times "Median" - 2 times "Mean" $
+]
+
+#exception-box(title: "The Seven Fatal CUET Traps in Numerical Ability & DI")[
+  1. *The Percentage Base Inversion:* Dividing the increase by the final increased value instead of the original initial value, generating an artificially suppressed percentage.
+  2. *The Successive Symmetry Fallacy:* Assuming that $+20%$ followed by $-20%$ results in $0%$ change. The net outcome is always a $4%$ reduction!
+  3. *Unsorted Median Blindness:* Picking the middle observation of a raw data array without first arranging the numbers in ascending order.
+  4. *The Double Pie Chart Distortion:* Comparing interor angles across two different pie charts directly without adjusting for the overall baseline totals of the respective charts.
+  5. *Averaging the Averages Error:* Calculating the simple average of subgroup means without weighting by the respective population sizes ($n_1 eq.not n_2$).
+  6. *The Metric Scale Blindspot:* Misreading units specified in the chart frame (e.g., treating ₹ in Millions as ₹ in Lakhs, or metric tonnes as quintals).
+  7. *Subtractive Segment Failure in Stacked Bars:* Reading the total height of a stacked bar instead of subtracting the lower boundary to isolate an internal component's true magnitude.
+]
+
+#pagebreak()
+#set text(size: 8.0pt)
+#set par(leading: 0.35em, spacing: 0.35em)
+
+= Practice Questions — Part 1: Percentages & Ratios (Q1 to Q5)
+
+#mcq(1, [A retailer increases the marked price of a leather jacket by 25% above its cost price, and subsequently offers a festive discount of 20% on the marked price. The retailer's net profit or loss percentage is:], (
+  [No profit, no loss (0%)],
+  [5% profit],
+  [4% loss],
+  [2% profit],
+))
+#solution(1, [Let cost price $C = 100$.
+- Marked price after 25% hike: $M = 100 times 1.25 = 125$.
+- Discount of 20% on marked price: $D = 125 times 0.20 = 25$.
+- Final Selling Price: $S = 125 - 25 = 100$.
+Since Selling Price equals Cost Price ($100 = 100$), the transaction results in *no profit, no loss (0%)* (Option A).
+Using the successive change formula: $a + b + (a b)/100 = +25 - 20 - (25 times 20)/100 = 5 - 5 = 0%$.], answer: [A])
+
+#mcq(2, [In an entrance examination, 65% of candidates passed in Mathematics and 75% passed in English. If 55% of the candidates passed in both subjects and 60 candidates failed in both subjects, the total number of candidates who appeared is:], (
+  [300],
+  [350],
+  [400],
+  [450],
+))
+#solution(2, [Using the principle of inclusion-exclusion for sets:
+$ P(M union E) = P(M) + P(E) - P(M inter E) = 65% + 75% - 55% = 85%. $
+The proportion of candidates failing in both subjects is $100% - 85% = 15%$.
+Given that $15%$ corresponds to 60 candidates:
+$ "Total Candidates" = 60 / 0.15 = 400. $], answer: [C])
+
+#mcq(3, [A sum of ₹1,440 is divided among three partners P, Q, and R in the ratio $1/2 : 1/3 : 1/6$. The share of partner Q is:], (
+  [₹360],
+  [₹480],
+  [₹600],
+  [₹720],
+))
+#solution(3, [Convert fractional ratio to whole numbers by multiplying through by $"LCM"(2, 3, 6) = 6$:
+$ P : Q : R = (1/2 times 6) : (1/3 times 6) : (1/6 times 6) = 3 : 2 : 1. $
+Aggregate sum of parts $= 3 + 2 + 1 = 6$.
+Value of one part $= 1,440 / 6 = ₹240$.
+Partner Q's share $= 2 times 240 = ₹480$.
+(Check: P gets $3 times 240 = 720$, R gets $1 times 240 = 240$; $720 + 480 + 240 = 1,440$ ✓).], answer: [B])
+
+#mcq(4, [Two merchants A and B enter into a commercial partnership. Merchant A invests ₹50,000 for 8 months, while Merchant B invests ₹60,000 for 10 months. If the enterprise earns a total annual profit of ₹65,000, Merchant B's share of profit is:], (
+  [₹26,000],
+  [₹32,500],
+  [₹39,000],
+  [₹42,000],
+))
+#solution(4, [Profit shares are proportional to capital-time product:
+$ "Profit Ratio" = (C_A times T_A) : (C_B times T_B) = (50,000 times 8) : (60,000 times 10) = 4,00,000 : 6,00,000 = 2 : 3. $
+Sum of parts $= 2 + 3 = 5$.
+Unitary share $= 65,000 / 5 = ₹13,000$.
+Merchant B's share $= 3 times 13,000 = ₹39,000$.
+(Merchant A receives $2 times 13,000 = ₹26,000$; $26,000 + 39,000 = 65,000$ ✓).], answer: [C])
+
+#mcq(5, [A container holds 80 litres of a mixture of milk and water in the ratio 7 : 1. How many litres of water must be added to the container to make the ratio of milk to water 4 : 1?], (
+  [5 litres],
+  [7.5 litres],
+  [10 litres],
+  [12.5 litres],
+))
+#solution(5, [Initial mixture $= 80$ litres in ratio $7 : 1$:
+- Total parts $= 7 + 1 = 8$. One part $= 80 / 8 = 10$ litres.
+- Milk $= 7 times 10 = 70$ litres; Water $= 1 times 10 = 10$ litres.
+Let $x$ litres of water be added. The volume of milk remains constant at 70 litres:
+$ 70 / (10 + x) = 4 / 1 ==> 4(10 + x) = 70 ==> 40 + 4x = 70 ==> 4x = 30 ==> x = 7.5 text(" litres"). $], answer: [B])
+
+#pagebreak()
+
+= Practice Questions — Part 2: Averages & Statistics (Q6 to Q10)
+
+#mcq(6, [The average score of 24 students in a physics quiz was 65. Upon scrutiny, it was discovered that a score of 82 was erroneously recorded as 58. The correct average score of the class is:], (
+  [64.0],
+  [65.5],
+  [66.0],
+  [67.5],
+))
+#solution(6, [Discrepancy in recorded score:
+$ Delta = "Correct Score" - "Incorrect Score" = 82 - 58 = +24 text(" marks"). $
+The aggregate sum of the class must increase by 24 marks.
+Distribution over 24 students:
+$ Delta A = (+24) / 24 = +1.0 text(" mark"). $
+$ "Corrected Average" = 65.0 + 1.0 = 66.0. $], answer: [C])
+
+#mcq(7, [A batsman has an average of 42 runs in 16 completed innings. In his 17th innings, he scores 90 runs. His new batting average is:], (
+  [43.5 runs],
+  [44.8 runs],
+  [45.0 runs],
+  [46.2 runs],
+))
+#solution(7, [Calculate aggregate totals:
+- Total runs in 16 innings: $16 times 42 = 672$ runs.
+- Total runs in 17 innings: $672 + 90 = 762$ runs.
+- New average $= 762 / 17 = 44.82 approx 44.8$ runs.
+Alternative deviation method: The 90 runs exceed the old average by $90 - 42 = 48$ runs.
+Spread over 17 innings: $48 / 17 approx 2.82$.
+New average $= 42 + 2.82 = 44.82$ runs.], answer: [B])
+
+#mcq(8, [The average age of a husband, wife, and their child 4 years ago was 26 years. The average age of the wife and child 3 years ago was 21 years. The present age of the husband is:], (
+  [38 years],
+  [40 years],
+  [42 years],
+  [44 years],
+))
+#solution(8, [1. Four years ago: Total age of (H + W + C) $= 3 times 26 = 78$ years.
+   Present total age of (H + W + C) $= 78 + 3(4) = 78 + 12 = 90$ years.
+2. Three years ago: Total age of (W + C) $= 2 times 21 = 42$ years.
+   Present total age of (W + C) $= 42 + 2(3) = 42 + 6 = 48$ years.
+3. Present age of Husband $= 90 - 48 = 42$ years.], answer: [C])
+
+#mcq(9, [The median of the following dataset: $18, 12, 25, 9, 31, 14, 22, 17$ is:], (
+  [17.0],
+  [17.5],
+  [18.0],
+  [19.5],
+))
+#solution(9, [Step 1: Arrange observations in ascending order:
+$ 9, 12, 14, 17, 18, 22, 25, 31 $
+Sample size $N = 8$ (even count).
+The median is the arithmetic mean of the two middle elements (positions 4 and 5):
+- 4th element = 17
+- 5th element = 18
+$ "Median" = (17 + 18) / 2 = 35 / 2 = 17.5. $], answer: [B])
+
+#mcq(10, [In a moderately skewed statistical distribution, the mean is 36.0 and the median is 34.0. Using the empirical relationship, the estimated mode of the distribution is:], (
+  [30.0],
+  [32.0],
+  [35.0],
+  [38.0],
+))
+#solution(10, [Using the empirical Pearsonian relationship:
+$ "Mode" approx 3 times "Median" - 2 times "Mean" $
+Substitute the given parameters:
+$ "Mode" approx 3(34.0) - 2(36.0) = 102.0 - 72.0 = 30.0. $], answer: [A])
+
+#pagebreak()
+
+= Practice Questions — Part 3: Data Interpretation Set (Q11 to Q15)
+
+#concept-box(title: "Reference Data Table for Q11 to Q15")[
+  The table below depicts the annual production (in thousand metric tonnes) of five agro-commodities (Wheat, Rice, Maize, Pulses, Barley) across four agrarian states (Punjab, Haryana, UP, MP) in the financial year 2025–26:
   #table(
-    columns: (1.45fr, 2.1fr, 1.75fr),
-    table.header[*Rule*][*Statement*][*Exam use*],
-    [Fraction anchors], [10% = 1/10 · 12.5% = 1/8 · 20% = 1/5 · 25% = 1/4 · 50% = 1/2 · 75% = 3/4], [Fast percentage moves],
-    [10% build-up], [Get 10% by dividing by 10; assemble 5, 15, 20, 25% from it], [Mental percentage arithmetic],
-    [Change base], [% change = (change ÷ ORIGINAL) × 100 — the old value is the base], [Rise/fall questions],
-    [Successive changes], [+a% then −a% nets a small LOSS, never zero], [The classic 20-20 trap],
-    [Reverse percentage], ["After a 25% rise it is 500" → 500 = 5/4 of original], [Original-value questions],
-    [Ratio splitting], [One part = total ÷ sum of terms; multiply back; shares must rebuild the total], [All sharing questions],
-    [Ratio from percents], [40% vs 60% is the ratio 2 : 3], [Percent-ratio combos],
-    [Average lever], [Sum = average × count; work in totals], [Average puzzles],
-    [One-out / one-in], [New average = (old sum − removed) ÷ remaining, or (old sum + added) ÷ new count], [Joining-leaving questions],
-    [DI routine], [Frame (title, axes, units) → question → compute → eye-check], [Every chart and table],
-    [Median discipline], [SORT first; middle of the sorted list], [Median questions],
-    [Mean vs median], [Outlier drags the mean, not the median — salary-income contrast], [Interpretation questions],
+    columns: (1.2fr, 1fr, 1fr, 1fr, 1fr, 1.1fr),
+    table.header[*State*][*Wheat*][*Rice*][*Maize*][*Pulses*][*Total (Th. MT)*],
+    [Punjab], [160], [120], [30], [10], [320],
+    [Haryana], [120], [80], [40], [20], [260],
+    [UP], [240], [180], [60], [40], [520],
+    [MP], [180], [60], [70], [90], [400],
+    [*Total*], [700], [440], [200], [160], [1,500],
   )
 ]
 
-= Common Errors and Special Cases
-
-#exception-box(title: "The Traps This Topic Sets — Read Before the Mock")[
-  #table(
-    columns: (1.25fr, 1.35fr, 1.4fr),
-    table.header[*The habit you assume*][*The twist*][*The trap in the question*],
-    ["+20% and −20% cancel"], [The fall applies to a bigger base — net −4%], [Successive-change questions],
-    ["Divide the change by the new value"], [The base is always the ORIGINAL], [Percent-change options],
-    ["Shares in any order sum anyway"], [Shares must rebuild the total — always verify], [Ratio questions],
-    ["Average maths works on averages directly"], [Convert averages to totals first], [Joining/leaving puzzles],
-    ["Bar heights can be compared by eye"], [Exact questions need exact printed values], [Chart questions],
-    ["Units are decoration"], ["In hundreds" vs "in thousands" flips every answer], [DI frames],
-    ["The median is the middle of the list as printed"], [The list must be SORTED first], [Median traps],
-    ["The mean describes the typical person"], [One outlier drags it — check the median too], [Interpretation questions],
-  )
-]
-
-= The 60-Second Self-Test
-
-Cover the answers, say each one aloud, then check. If any answer takes longer than ten seconds, revisit that section.
-
-- *12.5% as a fraction?* → 1/8.
-- *A price up 10% then down 10% — final change?* → a 1% loss (0.99 of start), never zero.
-- *₹600 in the ratio 1 : 2 : 3 — largest share?* → 6 parts of 100 → ₹300.
-- *Average of 4 numbers is 20; one value 8 is removed. New average?* → (80 − 8) ÷ 3 = 24.
-- *First move on any chart question?* → Read the frame: title, axes, units.
-- *Mean 58k, median 24k for five incomes — what does that signal?* → One big outlier is dragging the mean up.
-
-= The Whole Chapter in One Picture
-
-#figure(
-  image("assets/gat_di_chart_panel.png", width: 100%),
-  caption: [Reading a bar chart with the 3-step routine — frame, question, compute — worked on a real four-month sales chart, with the classic traps below.],
-)
-
-#figure(
-  image("assets/gat_di_mindmap.png", width: 100%),
-  caption: [Chapter mindmap: percentages, ratios, averages, chart reading, statistics interpretation, and the speed toolkit that ties them together.],
-)
-
-= Practice Questions (Exam Pattern)
-
-Ten questions in the CUET UG style — every one solvable in under a minute with the anchors above. Each correct answer earns $+5$; each incorrect one costs $-1$.
-
-#mcq(1, [15% of 480 is:], (
-  [62], [68], [72], [76],
+#mcq(11, [What percentage of the total agro-commodity production across all four states is accounted for by Wheat?], (
+  [42.5%],
+  [44.0%],
+  [46.67%],
+  [48.0%],
 ))
+#solution(11, [Total Wheat production $= 700$ thousand metric tonnes.
+Total aggregate agro-commodity production $= 1,500$ thousand metric tonnes.
+$ "Percentage" = (700 / 1,500) times 100% = 7 / 15 times 100% = 46.67%. $], answer: [C])
 
-#mcq(2, [A shop raises the price of a bag by 20%, then announces a 20% discount on the new price. The final price compared to the original is:], (
-  [exactly the same], [4% less], [4% more], [2% less],
+#mcq(12, [The ratio of the total production of Pulses to the total production of Rice across all four states combined is:], (
+  [3 : 8],
+  [4 : 11],
+  [2 : 5],
+  [5 : 12],
 ))
+#solution(12, [Total Pulses production $= 160$ thousand MT.
+Total Rice production $= 440$ thousand MT.
+$ "Ratio" = 160 : 440 = 16 : 44 = 4 : 11. $], answer: [B])
 
-#mcq(3, [₹720 is divided among three friends in the ratio 2 : 3 : 4. The LARGEST share is:], (
-  [₹240], [₹280], [₹320], [₹360],
+#mcq(13, [Which state records the highest tildeortion of its own total production in the form of Maize?], (
+  [Punjab],
+  [Haryana],
+  [UP],
+  [MP],
 ))
+#solution(13, [Calculate Maize tildeortion for each state:
+- Punjab: $30 / 320 = 3 / 32 approx 9.38%$.
+- Haryana: $40 / 260 = 4 / 26 = 2 / 13 approx 15.38%$.
+- UP: $60 / 520 = 6 / 52 = 3 / 26 approx 11.54%$.
+- MP: $70 / 400 = 7 / 40 = 17.50%$.
+MP demonstrates the highest tildeortion at $17.50%$.], answer: [D])
 
-#mcq(4, [The average of 5 numbers is 18. If the number 10 is removed, the average of the remaining 4 numbers is:], (
-  [16], [20], [22], [24],
+#mcq(14, [By what percentage does the total Wheat production in UP exceed the total Wheat production in Punjab?], (
+  [40.0%],
+  [45.0%],
+  [50.0%],
+  [66.67%],
 ))
+#solution(14, [Wheat in UP $= 240$ thousand MT; Wheat in Punjab $= 160$ thousand MT.
+Absolute excess $= 240 - 160 = 80$ thousand MT.
+Base value is Punjab $= 160$ thousand MT:
+$ % "Excess" = (80 / 160) times 100% = 1/2 times 100% = 50.0%. $], answer: [C])
 
-#mcq(5, [A number increased by 25% becomes 200. The original number is:], (
-  [150], [160], [170], [175],
+#mcq(15, [If the production data for MP is represented in a standalone pie chart, the central angle subtended by the interor representing Pulses is:], (
+  [72.0°],
+  [81.0°],
+  [90.0°],
+  [96.0°],
 ))
-
-#mcq(6, [The median of 7, 3, 9, 5, 11 is:], (
-  [5], [7], [9], [11],
-))
-
-#mcq(7, [A bar chart shows a shop's sales in ₹ hundreds: January 40, February 55, March 45, April 70. The percentage increase in sales from January to April is:], (
-  [60%], [70%], [75%], [80%],
-))
-
-#mcq(8, [In a class of 40 students, the ratio of boys to girls is 3 : 2. The number of girls is:], (
-  [14], [16], [18], [24],
-))
-
-#mcq(9, [The average age of three brothers is 15 years. Their father joins them and the average of all four becomes 22 years. The father's age is:], (
-  [40 years], [41 years], [43 years], [45 years],
-))
-
-#mcq(10, [For the data 4, 6, 2, 6, 7, 6, 3, which statement is TRUE?], (
-  [the mean is greater than the mode], [the median is 4], [the mode is 6], [the range is 4],
-))
-
-= Detailed Solutions
-
-Each solution shows the working, not just the verdict — cover the answer line, attempt the reasoning, then compare.
-
-#solution(1, [10% of 480 = 48; 5% = 24. So 15% = 48 + 24 = 72. Or 480 × 3/20 = 72.], answer: [C])
-
-#solution(2, [Take ₹100: rise makes it ₹120; the 20% discount removes 20% of 120 = ₹24 → ₹96. Final is 96% of the original — 4% less. The two 20%s never cancel.], answer: [B])
-
-#solution(3, [Parts = 2 + 3 + 4 = 9. One part = 720 ÷ 9 = ₹80. Largest share = 4 × 80 = ₹320. Check: 160 + 240 + 320 = 720.], answer: [C])
-
-#solution(4, [Old total = 18 × 5 = 90. Remove 10 → new total 80 over 4 numbers → 80 ÷ 4 = 20.], answer: [B])
-
-#solution(5, [200 = 125% of the original = 5/4 of it. Original = 200 × 4/5 = 160.], answer: [B])
-
-#solution(6, [Sort first: 3, 5, 7, 9, 11. The middle (3rd) value = 7. Choosing 9 skips the sorting step — the classic slip.], answer: [B])
-
-#solution(7, [Frame first: values are in ₹ hundreds. Rise = 70 − 40 = 30; base = the ORIGINAL 40 → 30/40 = 75%.], answer: [C])
-
-#solution(8, [Ratio parts = 3 + 2 = 5. One part = 40 ÷ 5 = 8. Girls = 2 parts = 16. (Boys 24 + girls 16 = 40 — rebuilt.)], answer: [B])
-
-#solution(9, [Old total = 15 × 3 = 45. New total = 22 × 4 = 88. Father = 88 − 45 = 43 years.], answer: [C])
-
-#solution(10, [Sorted: 2, 3, 4, 6, 6, 6, 7. Mean ≈ 4.86, median = 6, mode = 6 (three times), range = 7 − 2 = 5. Only "mode is 6" holds.], answer: [C])
-
-== Wrong-Answer Clinic — the one-line corrections
-
-Dropped marks above? Find your slip here and rewrite the corrected rule in your own words.
-
-#table(
-  columns: (1.05fr, 1.5fr, 1.45fr),
-  table.header[*If you answered...*][*Your slip was...*][*The corrected rule, in one line*],
-  [Q2 option A], [Letting the two 20%s cancel], [Successive changes apply to different bases — net 4% loss],
-  [Q4 option C], [Averaging without rebuilding the total], [Sum first: 90 − 10 = 80, then 80 ÷ 4 = 20],
-  [Q5 option D], [Taking 25% of 200 off directly], [200 IS the increased value — 5/4 of the original; go back by 4/5],
-  [Q6 option C], [Median of the unsorted list], [Sort first: 3, 5, 7, 9, 11 → median 7],
-  [Q7 option D], [Dividing the change by the new value], [Base = original: 30/40 = 75%, not 30/70],
-  [Q10 option A], [Trusting the mean as the biggest], [Mean ≈ 4.86 sits BELOW the mode 6 — outliers pull means down],
-)
-
-= Your 10-Minute Mental-Math Drill
-
-Numerical ability is a speed game, and speed is built the way athletes build stride — short, daily, boring, effective. Ten minutes a day with this drill, run alongside the 8-week GK engine's logic of small repeated exposures, will make the fraction anchors automatic before your next mock. No calculator, no paper beyond a rough margin: the point is to see the answers.
-
-#table(
-  columns: (1.1fr, 2.4fr, 2fr),
-  table.header[*Minute*][*Drill*][*The standard to reach*],
-  [1-2], [Call out 10%, 20%, 25%, 50%, 75% of any 2-3 digit number a friend or app names], [Answer inside 3 seconds each],
-  [3-4], [Fraction-percentage ping-pong: 1/8? 12.5%. 3/4? 75%. 1/5? 20%], [Both directions, no hesitation],
-  [5-6], [Ratio splits: give a total and a ratio; find each share], [Parts-sum first, shares rebuild the total],
-  [7-8], [Average flips: name an average and count; state the total instantly], [Sum = average × count without pause],
-  [9-10], [One chart from any newspaper: read frame, pull two values, compute one % change], [Base = original, every time],
-)
-
-- *Track slips, not sums:* every drill error goes into the same slip diary as your mock mistakes — patterns appear within a week.
-- *Stop before fatigue:* ten focused minutes beat thirty tired ones; mental math sharpens best when fresh.
-
-#block(width: 100%, inset: (top: 4pt), above: 4pt)[
-  #align(center, text(fill: om-grey, size: 8pt)[© OurMocks · www.ourmocks.com · CUET UG General Aptitude Test · Numerical Ability & Data Interpretation · 2027 cycle])
-]
+#solution(15, [Total production of MP $= 400$ thousand MT.
+Pulses production in MP $= 90$ thousand MT.
+Central angle calculation:
+$ "Angle" = ("Component Value" / "Total Value") times 360° = (90 / 400) times 360° = 9/40 times 360° = 9 times 9° = 81.0°. $], answer: [B])

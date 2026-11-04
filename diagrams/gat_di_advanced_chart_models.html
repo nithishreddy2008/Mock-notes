@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CUET GAT: Data Interpretation & Numerical Framework</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 20px 26px;
+    overflow: hidden;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 10px;
+    margin-bottom: 14px;
+  }
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .brand-badge {
+    background: #071A4D;
+    color: #B8FF34;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .title-group h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .title-group p {
+    font-size: 12px;
+    color: #64748B;
+    margin-top: 1px;
+  }
+  .header-tag {
+    background: #EAF0FF;
+    color: #1F5EFF;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+    border: 1px solid #C7D9FE;
+  }
+
+  .grid-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 12px;
+  }
+
+  .card {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 10px;
+    padding: 13px 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+  }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1.5px solid #F1F5F9;
+    padding-bottom: 7px;
+  }
+
+  .card-title {
+    font-size: 14px;
+    font-weight: 800;
+    color: #071A4D;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+
+  .pill {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+  .pill-blue { background: #EAF0FF; color: #1F5EFF; }
+  .pill-green { background: #F0FDF4; color: #16A34A; }
+  .pill-purple { background: #FAF5FF; color: #9333EA; }
+
+  .rule-item {
+    background: #F8FAFC;
+    border-left: 3px solid #1F5EFF;
+    border-radius: 0 6px 6px 0;
+    padding: 7px 10px;
+  }
+  .rule-item.purple { border-left-color: #9333EA; }
+  .rule-item.green { border-left-color: #16A34A; }
+
+  .rule-name {
+    font-size: 11.5px;
+    font-weight: 800;
+    color: #0F172A;
+    display: flex;
+    justify-content: space-between;
+  }
+  .rule-desc {
+    font-size: 10.5px;
+    color: #475569;
+    line-height: 1.35;
+    margin-top: 2px;
+  }
+  .rule-formula {
+    font-size: 10px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    color: #0369A1;
+    background: #E0F2FE;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-top: 3px;
+    display: inline-block;
+  }
+
+  .bottom-banner {
+    background: #071A4D;
+    border-radius: 10px;
+    padding: 12px 18px;
+    color: #FFFFFF;
+    display: grid;
+    grid-template-columns: 210px 1fr;
+    gap: 16px;
+    align-items: center;
+  }
+
+  .banner-badge-box {
+    border-right: 1.5px solid rgba(255,255,255,0.15);
+    padding-right: 14px;
+  }
+  .banner-badge-box h3 {
+    font-size: 13px;
+    font-weight: 800;
+    color: #B8FF34;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .banner-badge-box p {
+    font-size: 10px;
+    color: #94A3B8;
+    margin-top: 2px;
+  }
+
+  .steps-flex {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+  .step-box {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 6px;
+    padding: 7px 10px;
+  }
+  .step-num {
+    font-size: 10px;
+    font-weight: 800;
+    color: #B8FF34;
+  }
+  .step-title {
+    font-size: 11px;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-top: 1px;
+  }
+  .step-sub {
+    font-size: 9.5px;
+    color: #CBD5E1;
+    margin-top: 2px;
+    line-height: 1.25;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <div class="brand-badge">OURMOCKS · CUET UG GAT (501)</div>
+    <div class="title-group">
+      <h1>Data Interpretation & Numerical Analytics Architecture</h1>
+      <p>Visual Modalities, Arithmetic Foundations, and Rapid Extraction Workflows</p>
+    </div>
+  </div>
+  <div class="header-tag">Quantitative Core Syllabus</div>
+</div>
+
+<div class="grid-3">
+
+  <!-- Column 1: Core DI Visual Modalities -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">1. Visual Modalities</div>
+      <div class="pill pill-blue">Chart Topology</div>
+    </div>
+
+    <div class="rule-item">
+      <div class="rule-name">Pie Charts & Angles</div>
+      <div class="rule-desc">Total circle = 360° = 100%. Convert angle to percentage: <code>% = (Angle / 360°) × 100</code>. 1% = 3.6°.</div>
+      <div><span class="rule-formula">Value = (Angle / 360°) × Total Corpus</span></div>
+    </div>
+
+    <div class="rule-item">
+      <div class="rule-name">Stacked & Grouped Bars</div>
+      <div class="rule-desc">Segment length reflects independent component; bar height reflects aggregated cumulative sum.</div>
+      <div><span class="rule-formula">Component = Top Boundary - Bottom Boundary</span></div>
+    </div>
+
+    <div class="rule-item">
+      <div class="rule-name">Multi-Line Trend Graphs</div>
+      <div class="rule-desc">Slopes indicate instantaneous growth velocity; intersection points represent parity between two series.</div>
+      <div><span class="rule-formula">Growth Rate = (ΔY / ΔX)</span></div>
+    </div>
+
+    <div class="rule-item">
+      <div class="rule-name">Tabular Matrices</div>
+      <div class="rule-desc">Precise row/column intersections. Locate unit scales (₹ Lakhs vs Millions) before executing arithmetic.</div>
+      <div><span class="rule-formula">Watch Units: Millions = 10 Lakhs</span></div>
+    </div>
+  </div>
+
+  <!-- Column 2: Arithmetic Multipliers & Shortcuts -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">2. Arithmetic Levers</div>
+      <div class="pill pill-purple">Speed Calculations</div>
+    </div>
+
+    <div class="rule-item purple">
+      <div class="rule-name">Percentage Change Base</div>
+      <div class="rule-desc">Percentage increase or decrease is always calibrated against the INITIAL/ORIGINAL base quantity.</div>
+      <div><span class="rule-formula">% Change = [(New - Old) / Old] × 100%</span></div>
+    </div>
+
+    <div class="rule-item purple">
+      <div class="rule-name">Successive Changes Formula</div>
+      <div class="rule-desc">Net percentage impact of two sequential variations <em>a%</em> and <em>b%</em> on a single base.</div>
+      <div><span class="rule-formula">Net % = a + b + (ab / 100)%</span></div>
+    </div>
+
+    <div class="rule-item purple">
+      <div class="rule-name">Weighted Average Lever</div>
+      <div class="rule-desc">Combined average of subgroups with distinct counts <em>n₁</em>, <em>n₂</em> and means <em>A₁</em>, <em>A₂</em>.</div>
+      <div><span class="rule-formula">A_avg = (n₁A₁ + n₂A₂) / (n₁ + n₂)</span></div>
+    </div>
+
+    <div class="rule-item purple">
+      <div class="rule-name">Alligation Cross Rule</div>
+      <div class="rule-desc">Determines ratio of ingredients mixed at price <em>c</em> (cheap) and <em>d</em> (dear) to yield mean price <em>m</em>.</div>
+      <div><span class="rule-formula">Ratio (Q_c / Q_d) = (d - m) / (m - c)</span></div>
+    </div>
+  </div>
+
+  <!-- Column 3: Statistical Measures & Outliers -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">3. Statistical Measures</div>
+      <div class="pill pill-green">Descriptive Analytics</div>
+    </div>
+
+    <div class="rule-item green">
+      <div class="rule-name">Arithmetic Mean</div>
+      <div class="rule-desc">Strict sum of all observations divided by count. Highly sensitive to extreme outliers and asymmetric tails.</div>
+      <div><span class="rule-formula">Mean (x̄) = (Σ x_i) / N</span></div>
+    </div>
+
+    <div class="rule-item green">
+      <div class="rule-name">Median (Positional Average)</div>
+      <div class="rule-desc">Central observation of SORTED array. Robust against severe outliers; indicates 50th percentile.</div>
+      <div><span class="rule-formula">Sorted Middle: Pos = (N + 1) / 2</span></div>
+    </div>
+
+    <div class="rule-item green">
+      <div class="rule-name">Mode & Empirical Link</div>
+      <div class="rule-desc">Most frequently occurring score. Connects with Mean and Median in moderately skewed distributions.</div>
+      <div><span class="rule-formula">Empirical: Mode ≈ 3×Median - 2×Mean</span></div>
+    </div>
+
+    <div class="rule-item green">
+      <div class="rule-name">Range & Dispersion</div>
+      <div class="rule-desc">Measure of data spread. Two datasets with identical means can display completely different dispersions.</div>
+      <div><span class="rule-formula">Range = Maximum Value - Minimum Value</span></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Bottom Strip: 4-Step Operational Solving Protocol -->
+<div class="bottom-banner">
+  <div class="banner-badge-box">
+    <h3>DI Solving Algorithm</h3>
+    <p>4-Phase Protocol for Sub-Minute Data Mastery</p>
+  </div>
+  <div class="steps-flex">
+    <div class="step-box">
+      <div class="step-num">PHASE 01</div>
+      <div class="step-title">Frame Triage (10s)</div>
+      <div class="step-sub">Check graph title, axis labels, and metric units (e.g. ₹ Crores vs Lakhs) before looking at bars.</div>
+    </div>
+    <div class="step-box">
+      <div class="step-num">PHASE 02</div>
+      <div class="step-title">Stem Targeting (15s)</div>
+      <div class="step-sub">Isolate the specific years and categories demanded. Pull only the exact two coordinates required.</div>
+    </div>
+    <div class="step-box">
+      <div class="step-num">PHASE 03</div>
+      <div class="step-title">Fraction Arithmetic (20s)</div>
+      <div class="step-sub">Use fraction anchors (1/8 = 12.5%, 1/6 ≈ 16.67%) instead of lengthy decimal division.</div>
+    </div>
+    <div class="step-box">
+      <div class="step-num">PHASE 04</div>
+      <div class="step-title">Sanity Eye-Check (5s)</div>
+      <div class="step-sub">Verify that the calculated mathematical trend visually matches the physical proportions of the chart.</div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
