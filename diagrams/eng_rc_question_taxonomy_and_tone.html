@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>RC Question Taxonomy & Tone Architecture</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 22px 28px;
+    overflow: hidden;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 10px;
+    margin-bottom: 14px;
+  }
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .brand-badge {
+    background: #071A4D;
+    color: #B8FF34;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .title-group h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .title-group p {
+    font-size: 12px;
+    color: #64748B;
+    margin-top: 1px;
+  }
+  .header-tag {
+    background: #EFF6FF;
+    color: #1F5EFF;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 6px;
+    border: 1px solid #BFDBFE;
+  }
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    height: 750px;
+  }
+  .panel {
+    background: #FFFFFF;
+    border-radius: 12px;
+    border: 1px solid #E2E8F0;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .panel-title {
+    font-size: 15px;
+    font-weight: 800;
+    color: #071A4D;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 2px solid #F1F5F9;
+    padding-bottom: 8px;
+  }
+  .dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+  }
+  .dot-blue { background: #1F5EFF; }
+  .dot-green { background: #16A34A; }
+  .formula-card {
+    background: #071A4D;
+    border-radius: 10px;
+    padding: 12px 14px;
+    color: #FFFFFF;
+  }
+  .formula-card .f-title {
+    font-size: 11.5px;
+    font-weight: 700;
+    color: #B8FF34;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .formula-card .f-math {
+    font-family: Georgia, serif;
+    font-size: 14.5px;
+    color: #FFFFFF;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(184,255,52,0.3);
+    border-radius: 6px;
+    padding: 7px 10px;
+    margin-bottom: 6px;
+  }
+  .formula-card .f-math b {
+    color: #B8FF34;
+  }
+  .formula-card .f-desc {
+    font-size: 11px;
+    color: #C9D4EE;
+    line-height: 1.35;
+  }
+  .content-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 11.5px;
+  }
+  .content-table th {
+    background: #F1F5F9;
+    color: #071A4D;
+    font-weight: 700;
+    text-align: left;
+    padding: 6px 8px;
+    border-bottom: 1.5px solid #CBD5E1;
+  }
+  .content-table td {
+    padding: 6px 8px;
+    border-bottom: 1px solid #E2E8F0;
+    color: #334155;
+    line-height: 1.3;
+  }
+  .content-table tr:nth-child(even) {
+    background: #F8FAFC;
+  }
+  .box-note {
+    background: #F8FAFC;
+    border-left: 3.5px solid #1F5EFF;
+    border-radius: 0 8px 8px 0;
+    padding: 8px 12px;
+    font-size: 11.5px;
+    color: #1E293B;
+    line-height: 1.35;
+  }
+  .box-note b { color: #071A4D; }
+  .trap-card {
+    background: #FFF1F2;
+    border: 1px solid #FECDD3;
+    border-left: 3.5px solid #E11D48;
+    border-radius: 0 8px 8px 0;
+    padding: 8px 12px;
+    font-size: 11px;
+    color: #9F1239;
+    line-height: 1.35;
+  }
+  .trap-card b { color: #881337; }
+  .badge-tone {
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 10.5px;
+  }
+  .b-pos { background: #DCFCE7; color: #166534; }
+  .b-neu { background: #E0E7FF; color: #3730A3; }
+  .b-neg { background: #FEE2E2; color: #991B1B; }
+  .b-sat { background: #FEF3C7; color: #92400E; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <div class="brand-badge">OurMocks Core System</div>
+    <div class="title-group">
+      <h1>Reading Comprehension — Question Taxonomy & Tone Spectrum</h1>
+      <p>NTA CUET (UG) Section IA · English (101) Language Reading Comprehension Framework</p>
+    </div>
+  </div>
+  <div class="header-tag">English 101 Language Test</div>
+</div>
+
+<div class="grid-2">
+  <!-- Left Panel: The 6 Question Archetypes -->
+  <div class="panel">
+    <div class="panel-title">
+      <span class="dot dot-blue"></span>
+      1. The 6 Canonical RC Question Archetypes & Solving Protocols
+    </div>
+
+    <div class="formula-card">
+      <div class="f-title">The Four-Step Golden RC Algorithm</div>
+      <div class="f-math">
+        Skim Questions (15s) ➔ Read Passage Actively (90s) ➔ Locate Anchors ➔ Eliminate Distractors
+      </div>
+      <div class="f-desc">
+        Never answer from memory. Always verify the answer by matching the <b>exact line anchor</b> in the passage before committing to an option.
+      </div>
+    </div>
+
+    <table class="content-table">
+      <thead>
+        <tr>
+          <th>Question Archetype</th>
+          <th>Trigger Stem in CUET</th>
+          <th>Execution Protocol</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>Central Idea / Theme</b></td>
+          <td>"The passage primarily discusses..."</td>
+          <td>Look at Paragraph 1 (thesis) & Final paragraph (synthesis). Avoid narrow details.</td>
+        </tr>
+        <tr>
+          <td><b>Direct Factual Recall</b></td>
+          <td>"According to the passage, why..."</td>
+          <td>Scan for keyword anchors; verify noun-verb relationships. Beware swapped facts.</td>
+        </tr>
+        <tr>
+          <td><b>Inference & Implication</b></td>
+          <td>"It can be inferred that..."</td>
+          <td>Find what MUST be logically true based on stated lines. Do NOT extrapolate.</td>
+        </tr>
+        <tr>
+          <td><b>Vocabulary in Context</b></td>
+          <td>"The word 'X' most nearly means..."</td>
+          <td>Substitute candidate options into original sentence; choose best syntactic fit.</td>
+        </tr>
+        <tr>
+          <td><b>Title Selection</b></td>
+          <td>"The most suitable title is..."</td>
+          <td>Must cover full passage scope; neither too narrow (single para) nor too broad.</td>
+        </tr>
+        <tr>
+          <td><b>Author's Tone & Attitude</b></td>
+          <td>"The author's tone can be described as..."</td>
+          <td>Examine adjectives, adverbs, and transition markers (however, unfortunately, remarkably).</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="box-note">
+      <b>The Line-Anchor Rule:</b> In CUET UG, 100% of factual and inference questions have an identifiable parent sentence in the text. If an option sounds brilliant and universally true in reality but lacks direct textual warrant, it is an engineered distractor!
+    </div>
+
+    <div class="trap-card">
+      <b>CUET Trap Alert (The "Too Extreme" Option):</b> Options containing unconditional universal qualifiers such as <i>always, never, completely, all, impossible, solely</i> are almost universally wrong. Real passages express nuanced, qualified arguments.
+    </div>
+  </div>
+
+  <!-- Right Panel: The Tone & Mood Matrix -->
+  <div class="panel">
+    <div class="panel-title">
+      <span class="dot dot-green"></span>
+      2. The Master Author Tone & Mood Matrix
+    </div>
+
+    <table class="content-table">
+      <thead>
+        <tr>
+          <th>Tone Category</th>
+          <th>Defining Vocabulary & Linguistic Markers</th>
+          <th>Authorial Intent</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="badge-tone b-neu">Objective / Analytical</span></td>
+          <td>Data, evidence, facts, neutral verbs (states, shows, reports). No emotional bias.</td>
+          <td>Present impartial facts, empirical findings, or scientific descriptions.</td>
+        </tr>
+        <tr>
+          <td><span class="badge-tone b-pos">Laudatory / Admiring</span></td>
+          <td>Remarkable, heroic, profound, admirable, visionary, masterclass, exemplary.</td>
+          <td>Praise, celebrate, or highlight positive attributes of a subject.</td>
+        </tr>
+        <tr>
+          <td><span class="badge-tone b-neg">Critical / Censorious</span></td>
+          <td>Flawed, negligent, short-sighted, detrimental, catastrophic, reckless.</td>
+          <td>Expose deficiencies, condemn policies, or highlight negative repercussions.</td>
+        </tr>
+        <tr>
+          <td><span class="badge-tone b-sat">Satirical / Ironical</span></td>
+          <td>Mocking, tongue-in-cheek, paradoxical exaggeration, sarcastic rhetorical questions.</td>
+          <td>Ridicule folly, hypocrisy, or absurd societal practices through humor.</td>
+        </tr>
+        <tr>
+          <td><span class="badge-tone b-neu">Didactic / Pedagogical</span></td>
+          <td>Should, must, ought to, vital lesson, one must realize, imperatives.</td>
+          <td>Teach, instruct, advise, or impart a moral/ethical perspective.</td>
+        </tr>
+        <tr>
+          <td><span class="badge-tone b-neg">Nostalgic / Melancholic</span></td>
+          <td>Yearning, bygone days, wistful, golden era, mourn, departed, vanished.</td>
+          <td>Reflect fondly or sorrowfully on the past and what has been lost.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="formula-card">
+      <div class="f-title">Tone Decryption Diagnostic Steps</div>
+      <div class="f-math">
+        Identify Value-Judgments ➔ Is Attitude Positive, Negative, or Neutral? ➔ Eliminate Mismatches
+      </div>
+      <div class="f-desc">
+        If the author uses words like "regrettably", "alas", or "tragic", eliminate all positive/neutral tones immediately. Match the emotional valence first!
+      </div>
+    </div>
+
+    <div class="box-note">
+      <b>Tone vs Mood Distinction:</b>
+      - <b>Tone:</b> The *author's* attitude toward the subject matter or audience.
+      - <b>Mood:</b> The *emotional atmosphere* created for the reader (e.g. suspenseful, somber, tranquil).
+    </div>
+
+    <div class="trap-card">
+      <b>CUET Trap Alert (Confusing Tone with Topic):</b> A passage about war is not automatically "violent" or "angry" in tone; if the author lists casualties and treaty dates dispassionately, the tone is strictly <b>Objective / Informative</b>.
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
