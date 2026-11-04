@@ -4,316 +4,506 @@
   exam: "CUET UG",
   subject: "English",
   topic-title: "Verbal Ability",
-  subtitle: "Official Syllabus · Language Test · Class 12 · CUET UG 2027 Cycle Notes",
+  subtitle: "Official Syllabus · Language Test (101) · Class 12 · CUET UG 2027 Cycle Notes",
 )
 
 = Syllabus Alignment
 
 #table(
   columns: (1.1fr, 2fr, 1.15fr),
-  table.header[*Sub-topic*][*Official syllabus pointer (NTA official CUET(UG) 2026 syllabus — English (101), the current 2027 baseline)*][*Skills the questions test*],
-  [*Rearranging the parts*], [
-    Rearranging the parts
+  table.header[*Sub-topic*][*Official Syllabus Pointer (NTA CUET UG 101)*][*Core Skills Tested*],
+  [*Rearranging Parts*], [
+    Rearranging the parts: Scrambled sentences and paragraph reconstruction (Para Jumbles).
   ], [
-    Rebuilding a scrambled paragraph — spotting openers, pronoun links and connectors.
+    Identifying opening sentences, tracking pronoun-antecedent links, spotting discourse connectors.
   ],
-  [*Match the following*], [
-    Match the following
+  [*Match the Following*], [
+    Match the following: Two-column matrix pairings across vocabulary, idioms, and phrases.
   ], [
-    Pairing items across two columns and verifying every pair before marking.
+    Anchor-pairing, process of elimination, full matrix verification under time constraints.
   ],
-  [*Choosing the correct word*], [
-    Choosing the correct word
+  [*Choosing Correct Word*], [
+    Choosing the correct word: Cloze tests, sentence completion, and homophone discrimination.
   ], [
-    Fitting the right word into a blank by sense, grammar and usual partners.
+    Three-tier validation: contextual semantic sense, grammatical part of speech, collocation.
   ],
-  [*Synonyms and antonyms*], [
-    Synonyms and Antonyms
+  [*Synonyms & Antonyms*], [
+    Synonyms and Antonyms: Contextual word meaning, semantic nuance, and antonym flipping.
   ], [
-    Judging word meaning in context — the closest match and the true opposite.
+    Word sentiment charge ($+, 0, -$), contextual substitution, eliminating synonym traps.
   ],
 )
 
 #exam-pointer[
-  CUET UG pattern (NTA official information bulletin and syllabus, 2026 cycle — the
-  current 2027 baseline): each test paper carries *50 compulsory questions* in
-  *60 minutes*, with $+5$ for every correct answer and $-1$ for every incorrect
-  answer. The English syllabus names four verbal-ability families — rearranging
-  the parts, match the following, choosing the correct word, synonyms and
-  antonyms — all of them speed skills: each question rewards a fixed method over
-  a long think.
+  *CUET UG 2027 Official Exam Pattern:* The English Language section (Code 101) presents *50 compulsory multiple-choice questions* to be attempted in *60 minutes*. Each correct response yields $+5$ marks, while an incorrect response incurs a $-1$ mark negative deduction (unattempted questions earn 0). Verbal Ability comprises approximately *30 to 35 questions* (over 60% of the entire paper), spanning grammar, sentence rearrangement, vocabulary in context, idioms, and phrase substitutions. Because questions are discrete, a disciplined, rule-based solving method yields rapid and error-free marks.
 ]
 
-= What Verbal Ability Rewards
+= The Cognitive Foundations of Verbal Ability
 
-Vocabulary questions look like memory tests. They are not — not entirely. What actually decides your score is a *small set of methods* applied with discipline: find the opener in a jumble, anchor the pairs you know in a match, run three checks on every blank, and predict your own word before reading the options for a synonym. A student with a decent-but-not-giant vocabulary and sharp methods beats a word-hoard with no method, every single time.
+Verbal Ability in competitive examinations is frequently misconstrued as a test of rote dictionary memorization or intuitive "gut feelings." In reality, the National Testing Agency (NTA) constructs questions to evaluate four distinct cognitive pillars:
 
-- *Four families, four fixed methods.* Rearranging parts, match the following, choosing the correct word, synonyms and antonyms — each has a routine you can rehearse.
-- *Speed comes from method, not rushing.* A 30-second method beats a 3-minute stare. Practise the routine until it runs itself.
-- *Context is the referee.* Every word question lives inside a sentence; the sentence, not the dictionary, picks the winner.
-- *Your ears will lie to you.* Sound-alike pairs (advice/advise) and pleasant-sounding options exist to catch by-ear answering. Checks, not vibes.
-- *Word power still matters* — but it grows daily in small doses (a roots table and a word diary, both in this PDF), not overnight.
+- *Structural Parsing:* Deconstructing complex sentences to evaluate subject-verb concord, pronoun antecedents, modifier placements, and parallel syntax.
+- *Discourse Logic:* Organizing disjointed ideas into a coherent rhetorical narrative based on thematic progression, chronological flow, and logical causality.
+- *Lexical Precision:* Discriminating between nuanced synonyms, identifying correct prepositions in phrasal verbs, and resolving homophones.
+- *Evaluative Judgment:* Striking out distractor options engineered around sound-alike traps, partial-match illusions, and polarity reversals.
 
-#analogy-box(title: "Real-World Analogy")[
-  Verbal ability is like *sorting a box of mixed Lego bricks*. The jumble is the picture on the box lid — you find the corner pieces first (the opener), then click obvious neighbours together. Matching is pairing left bricks with right bricks — the sure pairs click first. Blanks are a missing brick — the shape around it (sense + grammar) announces which piece fits. No guessing needed; the bricks declare their places.
+#analogy-box(title: "The Lego Brick Analogy")[
+  Approaching Verbal Ability is like *assembling a model from mixed Lego bricks*. A scrambled paragraph is the picture on the box: you locate the flat corner foundation first (the opening noun sentence), connect obvious adjacent bricks (pronoun-antecedent pairs), and snap the closing roof in place. Sentence completion is finding the single brick whose physical contours (grammatical part of speech) and color (contextual tone) match the gap. Guessing by ear is trying to hammer a round peg into a square hole—it damages your score.
 ]
 
-= Rearranging the Parts: The Jumble Method
+= Rearranging the Parts: The Para Jumble Engine
 
-A scrambled paragraph is a small mystery, and the clues are grammar words. Sentences in English hang together with *pronouns* (he, she, it, this, these, they) that point BACKWARD to something already mentioned, and *connectors* (but, then, so, finally, however) that announce the order. Read the four sentences once, mark every pronoun and connector, and the paragraph almost assembles itself.
+A scrambled sentence or paragraph is an exercise in structural logic. Sentences in standard academic English are bound together by an intricate web of *grammatical signposts*. Identifying these signposts transforms a seemingly random puzzle into an inevitable sequence.
 
-- *Step 1 — Hunt the opener.* The opening sentence introduces a person, place or idea by NAME. It has no dangling "he/it/they" pointing at nothing.
-- *Step 2 — Follow the pronouns.* "Meena planted a seed. *It* sprouted within weeks." — "It" must follow the sentence that names the seed.
-- *Step 3 — Respect the connectors.* "But" signals a twist after a setup; "Finally" closes a list; "By midnight" pushes time forward.
-- *Step 4 — Snap the pairs.* Two sentences that share a noun-pronoun chain stick together as one block.
-- *Step 5 — Read the full order once.* It should sound like one smooth paragraph. If any joint creaks, swap and re-check.
+== The Five Master Signpost Categories
 
-#worked-example("Solved Jumble — the camping storm")[
-  P. The sky had been grey since morning, and a drizzle began while we set up the tent.
-  Q. By midnight the storm had bent the poles and soaked our sleeping bags.
-  R. We finally hiked to the forest rest house, laughing at our luck.
-  S. Nobody expected what the sky did next.
+1. *Noun-Pronoun Antecedent Chains:* A personal or demonstrative pronoun (*he, she, it, they, this, that, these, those*) cannot precede the specific noun it references. The sentence establishing the entity by name must always precede the sentence utilizing the pronoun.
+2. *Proper Noun to Acronym Hierarchy:* Full names and expanded institutional designations invariably precede abbreviations (e.g., *The Indian Space Research Organisation (ISRO)* must precede subsequent references to *ISRO* or *the space agency*).
+3. *Chronological & Historical Flow:* Time markers establish natural temporal sequences (*in the early twentieth century $arrow$ subsequently $arrow$ by 1947 $arrow$ modern day*). Historical progression rarely moves backward without overt flashback markers.
+4. *Cause-and-Effect Connectors:* Connective adverbs (*consequently, therefore, as a corollary, hence, thus*) introduce outcomes and must directly succeed the sentences establishing the causal premise.
+5. *General Statement to Specific Illustration:* Academic prose typically establishes a broad theoretical assertion or universal observation before introducing concrete case studies, historical anecdotes, or statistical proof.
 
-  - *Opener hunt:* P introduces the scene (sky, tent) with no dangling pronoun — S talks about "what the sky did next", which needs the drizzle established first. Start with P.
-  - *Connector logic:* S builds suspense → Q delivers the storm "by midnight" (time moves forward) → R closes with "finally".
-  - *Correct order: P → S → Q → R.* Read it once — smooth from drizzle to storm to rescue.
+== The 5-Step Operational Solving Protocol
+
+- *Step 1 — Eliminate False Openers:* Inspect the four given options to identify the proposed starting sentences. Instantly disqualify any sentence opening with a backward-pointing pronoun (*he, they, this*), an adversative conjunction (*however, but, nevertheless*), or an additive marker (*moreover, furthermore*).
+- *Step 2 — Discover the Mandatory Pair:* Scan the sentences for two statements that are inseparable (e.g., a question followed immediately by its answer, or a hypothesis followed by its empirical test). If you establish that Sentence B must directly follow Sentence A (forming pair *AB*), eliminate every option that lacks the contiguous block *AB*.
+- *Step 3 — Locate the Concluding Seal:* Identify which sentence delivers a terminal judgment, future outlook, or final summary.
+- *Step 4 — Verify the Complete Sequence:* Re-read the reconstructed sequence end-to-end to verify that the narrative flows smoothly without jarring conceptual leaps.
+
+#worked-example("Para Jumble Deconstruction in 30 Seconds")[
+  *Sentences:*
+  - *P:* Subsequently, these localized disturbances coalesced into a severe cyclonic storm.
+  - *Q:* The meteorological department first recorded anomalous atmospheric depression over the Bay of Bengal on Monday morning.
+  - *R:* Coastal settlements were consequently evacuated within forty-eight hours to minimize casualties.
+  - *S:* Meteorologists observed that the depression was fueled by unusually warm surface waters.
+
+  *Solving Path:*
+  1. *Opener Hunt:* P begins with "Subsequently" (cannot open). R begins with "Coastal settlements were consequently..." (cannot open). Q introduces the phenomenon by full name ("meteorological department first recorded anomalous depression..."). *Sentence Q is the indisputable opener.*
+  2. *Mandatory Pair:* Q states a depression appeared $arrow$ S explains what fueled that depression ("the depression was fueled by..."). Hence, *QS* is a mandatory pair.
+  3. *Progression:* After being fueled (S), it coalesced into a cyclonic storm (P) $arrow$ leading to evacuations (R).
+  *Resulting Sequence: Q $arrow$ S $arrow$ P $arrow$ R.*
 ]
-
-= Match the Following: Pair, Strike, Verify
-
-Two columns, four pairs, one mark — but also four chances to slip, because one wrong pair sinks the whole answer. The method that protects you is *anchoring*: lock the pairs you are certain about first, strike them out, and match the leftovers from a much shorter list. Confidence first, doubt later.
-
-- *Step 1 — Scan for sure pairs.* If you know "flock — birds" instantly, lock it and mentally strike both items.
-- *Step 2 — Narrow the field.* After two strikes, each remaining column has only two candidates — a 50/50 becomes two 50/50s handled separately, not one confusing fog of eight items.
-- *Step 3 — Never trust a single pair.* Check all four before marking; options are built so that a partially correct match appears as a full option.
-- *Step 4 — Watch the reuse trick.* Options may reuse a column-I item in two different mappings ("1-c" and "1-d") — your locked pairs decide instantly.
-
-#worked-example("Solved Match — collective nouns")[
-  Match the group names with the animals: (1) flock · (2) school · (3) pride · (4) swarm — against (a) bees (b) fish (c) birds (d) lions.
-
-  - *Sure pairs first:* flock—birds (c) and pride—lions (d) — lock both, strike them out.
-  - *Leftovers:* school and swarm remain against bees and fish. "A school of fish" is the classic phrase — school—fish (a) — leaving swarm—bees (b).
-  - *Full check:* 1-c, 2-a, 3-d, 4-b — all four verified, then mark.
-]
-
-= Choosing the Correct Word: The Three Checks
-
-A blank is a shape, and the words around it are the mould. Every fill-in-the-blank question answers to three quick checks, always in the same order: *sense* (does the meaning fit?), *grammar* (is it the right part of speech?), and *partners* (does this word usually travel with these neighbours?). Words that sound alike but never swap roles — the confusables — are the most recycled traps in this family, and the table below is your permanent defence.
-
-#table(
-  columns: (1.15fr, 1.85fr, 1.85fr),
-  table.header[*Confusable pair*][*Word 1 — role and example*][*Word 2 — role and example*],
-  [affect / effect], [*affect* — verb, to change: "The rain affected the match"], [*effect* — noun, the result: "The effect was immediate"],
-  [advice / advise], [*advice* — noun, what you give: "Her advice helped"], [*advise* — verb, the act: "She advised patience"],
-  [principal / principle], [*principal* — chief or head: "the principal reason"], [*principle* — a rule you believe: "a matter of principle"],
-  [stationary / stationery], [*stationary* — not moving: "a stationary bus"], [*stationery* — paper and pens: "a stationery shop"],
-  [lose / loose], [*lose* — misplace: "lose your keys"], [*loose* — not tight: "a loose button"],
-  [compliment / complement], [*compliment* — praise: "a kind compliment"], [*complement* — completes: "the scarf complements the dress"],
-  [its / it's], [*its* — belonging to it: "its cover"], [*it's* — short for "it is": "it's late"],
-  [than / then], [*than* — comparison: "taller than me"], [*then* — time: "and then we left"],
-)
-
-#worked-example("Solved Blanks — one pair, two checks")[
-  *"The medicine had an immediate \_\_\_ on the fever, but it did not \_\_\_ the infection."*
-
-  - *First blank:* "an immediate \_\_\_" needs a NOUN after an article — *effect* (the result). Sense check: "immediate effect on the fever" — natural partners.
-  - *Second blank:* "did not \_\_\_" needs a VERB — *affect* (to change). Sense check: "did not affect the infection" — fits.
-  - *Answer: effect, affect.* Grammar decided the shape, sense confirmed the fit — the pair never swaps.
-]
-
-= Synonyms and Antonyms: Predict, Then Match
-
-Here lives the most famous trap in verbal ability: in an antonym question, a *perfect synonym* waits inside the options, dressed attractively. The defence is a fixed ritual. Read the sentence with the word in it. Say your OWN replacement word aloud — before you look at the options. If the question asks for a synonym, match your prediction. If it asks for an antonym, *flip* your prediction first, then match. The sentence decides which meaning of the word is even alive: "run" in "a run of good luck" has nothing to do with jogging.
-
-- *Step 1 — Read the sentence, not just the word.* Which meaning of the word is the sentence using?
-- *Step 2 — Predict your own word.* Cover the options; say a replacement aloud.
-- *Step 3 — Synonym: match the prediction.* Antonym: flip the prediction FIRST — "abundant" → plentiful → opposite: *scarce*.
-- *Step 4 — Use word charge.* Tag words + or −: hostile is −, candid is +. Antonyms flip the charge; synonyms keep it.
-- *Step 5 — Re-read with your choice inside.* The sentence's meaning must survive untouched.
-
-#table(
-  columns: (1.1fr, 1.45fr, 1.45fr, 1.55fr),
-  table.header[*Word*][*Closest meaning (synonym)*][*True opposite (antonym)*][*One-line sense*],
-  [candid], [frank, honest], [secretive, guarded], [says the truth plainly, even when awkward],
-  [valiant], [brave, courageous], [cowardly, timid], [faces danger despite fear],
-  [abundant], [plentiful, ample], [scarce, sparse], [more than enough of something],
-  [hostile], [unfriendly, aggressive], [welcoming, cordial], [acting like an enemy],
-  [cautious], [careful, wary], [reckless, rash], [moves only after checking],
-)
-
-= Building Word Power That Sticks
-
-You cannot memorise a dictionary in a term — and you do not need to. Two small habits, run daily, quietly multiply your vocabulary: *word roots* (one root unlocks a family of words) and a *word diary* (one word a day, used in your own sentence). Five minutes a day for a month beats a five-hour cram the night before — vocabulary settles with repetition, the same way music practice does.
-
-#table(
-  columns: (0.9fr, 1.35fr, 2.4fr),
-  table.header[*Root*][*Meaning*][*Words it unlocks*],
-  [bene-], [good, well], [benefit, benevolent (kind), beneficial, benefactor (helper)],
-  [mal-], [bad, wrong], [malice, malfunction, malnutrition, malevolent (wishing harm)],
-  [chron-], [time], [chronology, chronicle, chronic (lasting long), synchronise],
-  [spect-], [look, see], [inspect, spectator, spectacle, perspective, respect (look back at)],
-  [port-], [carry], [transport, portable, export, import, porter (one who carries)],
-  [bio-], [life], [biology, biography, antibiotic, biodiversity],
-)
-
-- *The word-diary ritual:* one new word a day — write its meaning in five words of your own, one sentence about YOUR life, and one partner word it often travels with.
-- *Charge-tag every new word:* + or −. A week of tags later, synonym and antonym questions start answering themselves.
-- *Revise the diary weekly*, ten words at a time — old words are worth more than new ones.
-
-= Key Rules and Strategies: One-Stop Revision
-
-#cheatsheet-box(title: "Verbal Ability — Every Method on One Page")[
-  #table(
-    columns: (1.45fr, 2.1fr, 1.75fr),
-    table.header[*Rule*][*Statement*][*Exam use*],
-    [Opener rule], [First sentence introduces by name; no dangling he/it/they], [Jumble first sentence],
-    [Pronoun compass], [Pronouns point backward to a named thing], [Jumble ordering],
-    [Connector clock], [But = twist, then = time, finally = close], [Jumble ordering],
-    [Snap pairs], [Noun-pronoun chains form blocks that move together], [Longer jumbles],
-    [Anchor pairs], [Lock sure matches first, strike, then match leftovers], [Match the following],
-    [Verify all four], [One wrong pair sinks the whole option], [Match the following],
-    [Three checks], [Sense, grammar, usual partners — in that order], [Every blank],
-    [Confusables], [affect/effect, advice/advise, its/it's, lose/loose — fixed roles], [Blank and error questions],
-    [Predict first], [Say your own word before reading options], [Synonyms, blanks],
-    [Antonym flip], [Flip your prediction before matching], [Antonym questions],
-    [Charge tags], [Positive/negative labels settle synonym-antonym fast], [Word questions],
-    [Roots], [bene-, mal-, chron-, spect-, port-, bio- unlock word families], [Unseen words],
-  )
-]
-
-= Common Errors and Special Cases
-
-#exception-box(title: "The Traps This Topic Sets — Read Before the Mock")[
-  #table(
-    columns: (1.25fr, 1.35fr, 1.4fr),
-    table.header[*The habit you assume*][*The twist*][*The trap in the question*],
-    ["The first option that sounds nice"], [By-ear answering is exactly what traps test], [All four families],
-    ["Jumbles start anywhere"], [A pronoun sentence cannot open — it points backward], [Rearranging the parts],
-    ["Two matches right = done"], [All four pairs must verify before marking], [Match the following],
-    ["Affect and effect swap freely"], [affect = verb (to change), effect = noun (result)], [Choosing the correct word],
-    ["Synonym questions and antonym questions feel the same"], [The synonym sits in antonym options as bait], [Synonyms and antonyms],
-    ["Hard words need grand replacements"], [Context wants the plain, fitting word], [Vocabulary in context],
-    ["A big vocabulary is built in one night"], [Roots and a daily diary do the real work], [Preparation planning],
-    ["Every word has one fixed meaning"], [Run, kind, mean — the sentence picks the meaning], [All word questions],
-  )
-]
-
-= The 60-Second Self-Test
-
-Cover the answers, say each one aloud, then check. If any answer takes longer than ten seconds, revisit that section.
-
-- *What kind of sentence can never open a jumble?* → One starting with a dangling pronoun (He / It / They...).
-- *Name the three checks for every blank, in order.* → Sense, grammar, usual partners.
-- *In "match the following", what do you lock FIRST?* → The pairs you are sure of — then strike and narrow.
-- *What is the first move in an antonym question?* → Predict your word, then FLIP it before matching.
-- *affect or effect: "The medicine had an immediate \_\_\_"?* → effect — a noun after an article.
-- *What does the root chron- mean, and name two of its words?* → Time — chronology, chronic, synchronise.
-
-= The Whole Chapter in One Picture
 
 #figure(
-  image("assets/eng_va_question_families.png", width: 100%),
-  caption: [The four verbal-ability families side by side — what each looks like, the fixed method for each, and the trap hiding inside — with the universal three-check ritual below.],
+  image("assets/eng_va_question_families.png", width: 88%),
+  caption: [Systematic taxonomy of the four CUET Verbal Ability question families, outlining their operational solving routines, cognitive verification checks, and high-frequency traps.],
 )
+
+= Master Grammar & Syntactic Architecture
+
+CUET error detection and sentence improvement questions rigorously test five core grammatical domains. Mastering these precise rules protects against the fatal habit of answering based on colloquial "sound."
+
+== 1. Subject-Verb Agreement (Concord)
+The fundamental rule mandates that a singular subject takes a singular verb, while a plural subject takes a plural verb. However, examiners introduce syntactic complexities to obscure the true subject:
+
+- *Intervening Parenthetical Expressions:* Phrases introduced by *as well as, along with, together with, in addition to, accompanied by, including,* and *no less than* do NOT alter the number of the grammatical subject.
+  - *Incorrect:* _The Prime Minister, along with his senior cabinet colleagues, have arrived._
+  - *Correct:* _The Prime Minister, along with his senior cabinet colleagues, *has* arrived._
+- *Correlative Conjunctions:* With *either...or, neither...nor,* and *not only...but also*, the finite verb agrees strictly with the *closer subject* (Rule of Proximity).
+  - *Correct:* _Neither the principal nor the teachers *were* informed._
+  - *Correct:* _Neither the teachers nor the principal *was* informed._
+- *Indefinite Pronouns:* Pronouns such as *each, everyone, someone, anybody, either, neither,* and *one* are grammatically singular and require singular verbs and pronouns.
+  - *Correct:* _Each of the participating universities *has* submitted *its* compliance report._
+- *Collective Nouns:* Nouns such as *committee, jury, council, faculty,* and *team* take a singular verb when operating as a single unified entity, but a plural verb when members act individually.
+  - *Unified:* _The jury *has* reached its unanimous verdict._
+  - *Divided:* _The jury *were* divided in their opinions._
+
+== 2. Modifiers: Misplaced and Dangling Participles
+A modifying participial phrase must be placed immediately adjacent to the noun or pronoun it logically describes:
+- *Dangling Modifier:* Occurs when the intended subject of the participial phrase is absent from the main clause.
+  - *Incorrect:* _Walking briskly through the campus, the clock tower struck midnight._ (Did the clock tower walk?)
+  - *Correct:* _Walking briskly through the campus, *Rohit heard* the clock tower strike midnight._
+- *Misplaced Adverbs:* Words such as *only, merely, almost, just,* and *nearly* must stand directly before the word they modify. Notice how meaning alters:
+  - _She *only* told me her secret._ (She did nothing else except tell me.)
+  - _She told me *only* her secret._ (She revealed no other information.)
+
+== 3. Parallelism in Series and Comparisons
+Elements performing identical grammatical functions in a sentence must share identical grammatical form:
+- *Coordinated Lists:* If a series begins with gerunds, every element must remain a gerund.
+  - *Incorrect:* _Ravi enjoys swimming, to play tennis, and reading historical novels._
+  - *Correct:* _Ravi enjoys *swimming, playing* tennis, and *reading* historical novels._
+- *Comparative Structures:* Comparisons introduced by *than* or *as* must compare grammatically equivalent entities.
+  - *Incorrect:* _The climate of Bengaluru is much more pleasant than Delhi._ (Compares climate to a city!)
+  - *Correct:* _The climate of Bengaluru is much more pleasant than *that of* Delhi._
+
+== 4. Tenses and Sequence of Time
+- *Past Perfect vs Simple Past:* When two actions occurred in the past, the earlier completed action requires the Past Perfect (*had + V3*), while the subsequent action requires the Simple Past (*V2*).
+  - *Correct:* _The patient *had died* before the physician *arrived*._
+- *Conditional Sentences:*
+  - *Type 1 (Probable):* _If it rains, we *will cancel* the match._ (Present Simple $arrow$ Future Simple)
+  - *Type 2 (Hypothetical):* _If I were the captain, I *would select* three spinners._ (Past Subjunctive $arrow$ Would + V1)
+  - *Type 3 (Counterfactual Past):* _If they *had alerted* the authorities, the disaster *would have been* averted._ (Past Perfect $arrow$ Would have + V3)
 
 #figure(
-  image("assets/eng_va_mindmap.png", width: 100%),
-  caption: [Chapter mindmap: the four families, the word-power habits, the scoring rituals, and the traps that catch most students.],
+  image("assets/eng_va_grammar_and_vocabulary.png", width: 88%),
+  caption: [Comprehensive architecture of CUET Verbal Ability: Detailing core syntactic rules, sentence rearrangement signposts, lexical acquisition models, and the 4-step solving protocol.],
 )
 
-= Practice Questions (Exam Pattern)
+= Lexical Precision: The Three-Tier Blank Solving Protocol
 
-Ten questions in the CUET UG style — two per family pattern, exactly the mix you just revised. Each correct answer earns $+5$; each incorrect one costs $-1$, so run the checks before marking.
+When tackling fill-in-the-blank questions (Cloze tests or sentence completions), candidates must apply three successive filters before selecting an option:
 
-#mcq(1, [
-  #text(size: 10pt)[
-    P: It slowly filled the whole sky, blocking the afternoon sun. · Q: A strange grey cloud appeared over the fields just after lunch. · R: Soon the rain arrived, washing the dusty roads. · S: By evening, the village had never looked so clean and cool.
-  ]
-  #v(4pt)
-  The correct order is:], (
-  [Q R P S], [P Q R S], [Q P R S], [P R Q S],
-))
+1. *The Semantic Sense Check:* Determine the necessary meaning of the missing word based on the overall sentence thesis. Identify whether the blank requires a positive, neutral, or negative term.
+2. *The Grammatical Form Check:* Determine the exact part of speech required by syntactic position (e.g., does the blank follow an article requiring a noun, an auxiliary requiring a participle, or a verb requiring an adverb?).
+3. *The Collocation & Partner Check:* Verify whether the word naturally pairs with surrounding prepositions and nouns in standard English idiom (e.g., one *submits* to authority, *adheres* to principles, *abstains* from vice).
 
-#mcq(2, [
-  #text(size: 10pt)[
-    P: Her first loaf came out hard as a brick. · Q: Still, she kept baking every Sunday that year. · R: Today her bread wins prizes at the district fair. · S: Grandmother learned to bake from a library book.
-  ]
-  #v(4pt)
-  The correct order is:], (
-  [S P Q R], [P S Q R], [S Q P R], [P Q S R],
-))
+= The High-Frequency Confusables Reference Table
 
-#mcq(3, [Match the words with their meanings: (1) candid (2) furious (3) ancient (4) vacant — with (a) very angry (b) very old (c) empty (d) completely honest:], (
-  [1-d, 2-a, 3-b, 4-c], [1-a, 2-d, 3-c, 4-b], [1-c, 2-b, 3-d, 4-a], [1-d, 2-b, 3-a, 4-c],
-))
-
-#mcq(4, [The new coach's training had an immediate \_\_\_ on the team's fitness. Choose the correct word:], (
-  [affect], [effect], [affective], [effectively],
-))
-
-#mcq(5, [The lawyer gave sound \_\_\_ before the hearing began. Choose the correct word:], (
-  [advise], [advices], [advice], [advising],
-))
-
-#mcq(6, [Please keep the trolley \_\_\_ while the train is moving — it should not roll. Choose the correct word:], (
-  [stationery], [stationary], [stationaire], [stationer],
-))
-
-#mcq(7, [The garden was abundant with mangoes this summer. The word "abundant" most nearly means:], (
-  [empty], [plentiful], [expensive], [famous],
-))
-
-#mcq(8, [The valiant firefighter carried two children out of the smoke. The word "valiant" most nearly means:], (
-  [careless], [wealthy], [brave], [exhausted],
-))
-
-#mcq(9, [Choose the word MOST NEARLY OPPOSITE to "hostile":], (
-  [angry], [unfriendly], [cordial], [aggressive],
-))
-
-#mcq(10, [Choose the word MOST NEARLY OPPOSITE to "transparent":], (
-  [clear], [opaque], [fragile], [colourful],
-))
-
-= Detailed Solutions
-
-Each solution shows the working, not just the verdict — cover the answer line, attempt the reasoning, then compare.
-
-#solution(1, [Opener: Q names the scene (a grey cloud, after lunch) — P opens with "It", which needs the cloud named first. Chain: P's "It" = the cloud → R's "soon the rain arrived" → S's "by evening" closes the day. Order Q-P-R-S.], answer: [C])
-
-#solution(2, [Opener: S introduces Grandmother and the library book. P's "Her first loaf" needs her named; Q's "Still" twists after the failure; R's "Today" closes years later. Order S-P-Q-R.], answer: [A])
-
-#solution(3, [Anchor pairs: candid—honest (1-d) and furious—angry (2-a) lock first. Leftovers: ancient—old (3-b), vacant—empty (4-c). All four verified: 1-d, 2-a, 3-b, 4-c.], answer: [A])
-
-#solution(4, [After an article ("an immediate \_\_\_") the blank needs a NOUN — effect. Affect is the verb; the other two options are the wrong word family entirely.], answer: [B])
-
-#solution(5, ["Gave sound \_\_\_" needs a NOUN (the thing given) — advice. Advise is the verb ("she advised"), and "advices" is not an English plural.], answer: [C])
-
-#solution(6, [Not moving = stationary. Stationery means paper and pens — the classic shop-sign mix-up; options C and D are not real English words in this sense.], answer: [B])
-
-#solution(7, [Predict before looking: "abundant with mangoes" — something like full or overflowing. Plentiful matches; empty flips the sense; expensive and famous drift off it.], answer: [B])
-
-#solution(8, [Carrying children out of smoke is a brave act, and "valiant" carries that + charge. Careless and exhausted are neutral-to-negative; wealthy is off the sense entirely.], answer: [C])
-
-#solution(9, [Predict, then FLIP: hostile = unfriendly (negative) → opposite = friendly and warm. Cordial means warmly friendly — the flip. The other three are all synonyms or near-synonyms of hostile.], answer: [C])
-
-#solution(10, [Predict, then FLIP: transparent = clear, see-through → opposite = blocks sight. Opaque is exactly that. Option A is the synonym bait — the classic antonym trap this chapter warned about.], answer: [B])
-
-== Wrong-Answer Clinic — the one-line corrections
-
-Dropped marks above? Find your slip here and rewrite the corrected rule in your own words.
+Examiners exploit pairs of words that share acoustic similarities but possess completely distinct grammatical roles and semantic definitions:
 
 #table(
-  columns: (1.05fr, 1.5fr, 1.45fr),
-  table.header[*If you answered...*][*Your slip was...*][*The corrected rule, in one line*],
-  [Q1 option B], [Opening with a pronoun sentence], ["It" needs a named thing behind it — open with Q, the namer],
-  [Q3 option B or D], [Marking after two matches], [Verify all four pairs — leftovers settle once anchors are struck],
-  [Q4 option A], [Swapping the affect/effect roles], [affect = verb (to change); effect = the noun result],
-  [Q7 option A], [Reading abundant as its opposite], [Abundant = plentiful (positive charge); empty flips the charge],
-  [Q9 option B], [Choosing a synonym for an antonym], [Flip first: hostile is negative, so hunt the warm word — cordial],
-  [Q10 option A], [Falling for the synonym bait], [In antonym questions the near-synonym is always waiting — skip it],
+  columns: (1fr, 1.4fr, 1.6fr),
+  table.header[*Confusable Pair*][*Word 1 (Role & Definition)*][*Word 2 (Role & Definition)*],
+  [Affect / Effect], [*Affect* (Verb): To influence or alter; *"Taxes affect spending."*], [*Effect* (Noun): The result or consequence; *"The effect was immediate."*],
+  [Advice / Advise], [*Advice* (Noun): An opinion or counsel given; *"He gave sound advice."*], [*Advise* (Verb): The act of offering counsel; *"I advise extreme caution."*],
+  [Principal / Principle], [*Principal* (Noun/Adj): Chief, head of school, capital sum.], [*Principle* (Noun): A fundamental moral rule or scientific law.],
+  [Stationary / Stationery], [*Stationary* (Adj): Fixed in position, immobile.], [*Stationery* (Noun): Writing paper, envelopes, pens, and office supplies.],
+  [Complement / Compliment], [*Complement* (Verb/Noun): To complete or balance perfectly.], [*Compliment* (Verb/Noun): An expression of praise, admiration, or respect.],
+  [Discrete / Discreet], [*Discrete* (Adj): Individually separate, distinct, disconnected.], [*Discreet* (Adj): Prudent, circumspect, careful to avoid embarrassment.],
+  [Elicit / Illicit], [*Elicit* (Verb): To draw forth or evoke a response or truth.], [*Illicit* (Adj): Forbidden by law, rules, or societal custom; illegal.],
+  [Imminent / Eminent], [*Imminent* (Adj): About to occur immediately; impending.], [*Eminent* (Adj): High-ranking, distinguished, renowned, prominent.],
+  [Prescribe / Proscribe], [*Prescribe* (Verb): To recommend, order, or direct authoritatively.], [*Proscribe* (Verb): To ban, prohibit, forbid, or outlaw officially.],
+  [Council / Counsel], [*Council* (Noun): An administrative or advisory assembly.], [*Counsel* (Noun/Verb): Legal advice, guidance, or an attorney.],
 )
 
-#block(width: 100%, inset: (top: 4pt), above: 4pt)[
-  #align(center, text(fill: om-grey, size: 8pt)[© OurMocks · www.ourmocks.com · CUET UG English · Verbal Ability · 2027 cycle])
+= Etymological Word Power: Greek and Latin Roots
+
+Memorizing individual words in isolation is inefficient. Mastering etymological roots allows candidates to infer the meanings of dozens of unfamiliar academic terms instantaneously:
+
+#table(
+  columns: (0.9fr, 1.2fr, 2.3fr),
+  table.header[*Root*][*Primary Meaning*][*Derivative Academic Words in CUET*],
+  [*Bene-*], [Good, well, kind], [Beneficial, benevolent (charitable), benefactor (patron), benediction (blessing).],
+  [*Mal-*], [Bad, evil, harsh], [Malicious (spiteful), malevolent (harmful), malady (illness), malignant (deadly).],
+  [*Chron-*], [Time, temporal], [Chronological (ordered in time), chronicle, chronic (long-lasting), synchronize.],
+  [*Anthrop-*], [Human, mankind], [Philanthropy (love of mankind), anthropology (study of humanity), misanthrope.],
+  [*Loq- / Loc-*], [Speak, talk, discourse], [Eloquent (fluent), loquacious (talkative), circumlocution (indirect speech), soliloquy.],
+  [*Path-*], [Feeling, disease, suffering], [Empathy (shared feeling), antipathy (strong hatred), apathy (indifference), pathology.],
+  [*Cred-*], [Believe, trust, faith], [Credible (believable), credulous (gullible), incredible, creed (statement of belief).],
+  [*Spect-*], [Look, examine, observe], [Introspection (self-examination), circumspect (cautious), conspicuous (noticeable).],
+  [*Vert- / Vers-*], [Turn, change direction], [Avert (turn away), adversary (opponent), versatile (adaptable), inadvertent.],
+)
+
+= High-Yield Idioms, Phrasal Verbs & Foreign Phrases
+
+CUET questions consistently evaluate idiomatic precision and common Latin loan expressions:
+
+== Critical Phrasal Verbs with Preposition Shifts
+- *Give:* _Give in_ (surrender) $eq.not$ _Give up_ (abandon effort) $eq.not$ _Give out_ (distribute or fail) $eq.not$ _Give off_ (emit fumes).
+- *Break:* _Break down_ (mechanical failure or emotional collapse) $eq.not$ _Break out_ (escape or sudden start of war) $eq.not$ _Break off_ (terminate negotiations).
+- *Look:* _Look into_ (investigate officially) $eq.not$ _Look after_ (care for) $eq.not$ _Look down upon_ (regard with contempt).
+- *Call:* _Call off_ (cancel completely) $eq.not$ _Call on_ (visit someone) $eq.not$ _Call for_ (demand or require).
+
+== Latin and Foreign Phrases in Standard Usage
+- *De facto:* In reality or practice, whether officially sanctioned or not (contrasted with _de jure_, by law).
+- *Bona fide:* In good faith; genuine, authentic, sincere (*"a bona fide offer"*).
+- *Status quo:* The existing state of affairs or political/social conditions.
+- *Prima facie:* Based on initial impression; accepted as correct until proven otherwise.
+- *Per se:* In and of itself; intrinsically (*"The policy is not objectionable per se, but its execution is flawed"*).
+- *Modus operandi (M.O.):* Particular manner or method of working, especially a criminal's operating procedure.
+- *Ad hoc:* Created or formed for a particular purpose only; non-permanent (*"an ad hoc parliamentary committee"*).
+
+= Match the Following & Matrix Pairing Strategy
+
+When approaching two-column matching questions (e.g., matching words to antonyms, idioms to meanings, or figures of speech to examples), follow the *Anchor and Strike Routine*:
+
+1. *Identify the Absolute Certainty:* Scan Column I and Column II for the single pair you recognize with complete confidence.
+2. *Eliminate Option Bundles:* Check the four multiple-choice options immediately. Discard every option that fails to reflect your confirmed anchor pair. This single step frequently eliminates two to three distractors.
+3. *Pair the Residue:* Match the remaining two items from the severely reduced list of options.
+4. *Verify the Complete Quad:* Before finalizing your answer, verify that all four pairs form valid correspondences.
+
+= One Word Substitution: The High-Yield CUET Catalog
+
+One Word Substitution evaluates a student's ability to replace verbose, meandering clauses with precise lexical terminology. CUET items frequently draw from three thematic clusters:
+
+#table(
+  columns: (1.2fr, 1.4fr, 1.8fr),
+  table.header[*Thematic Category*][*Target Concept / Phrase*][*Exact One-Word Substitution*],
+  [Personality & Behavior], [One who selflessly works for the welfare of others], [*Altruist* (Philanthropist)],
+  [Personality & Behavior], [One who doubts the sincerity and goodness of human motives], [*Cynic*],
+  [Personality & Behavior], [One who remains indifferent to both pleasure and pain], [*Stoic*],
+  [Personality & Behavior], [A person who speaks many languages fluently], [*Polyglot* (Multilingual)],
+  [Personality & Behavior], [A person displaying extraordinary skill in fine arts/music], [*Virtuoso*],
+  [Governance & State], [A government ruled by the wealthiest aristocratic class], [*Plutocracy*],
+  [Governance & State], [A state governed by religious authorities or divine guidance], [*Theocracy*],
+  [Governance & State], [Rule by a small, privileged, self-serving clique], [*Oligarchy*],
+  [Governance & State], [The complete absence of government or legal order; chaos], [*Anarchy*],
+  [Literary & Memorial], [An inscription written on a tombstone in memory of the dead], [*Epitaph*],
+  [Literary & Memorial], [A mournful poem or song lamenting the deceased], [*Elegy*],
+  [Literary & Memorial], [Occurring, awarded, or published after a person's death], [*Posthumous*],
+  [Specialized Science], [The scientific study of the origin and history of words], [*Etymology*],
+  [Specialized Science], [The scientific study and observation of birds], [*Ornithology*],
+)
+
+= Verbal Analogies: Architectural Taxonomy
+
+Analogies test the candidate's capacity to recognize relational logic between word pairs and identify identical structural parallels across answer options.
+
+```
+                  [ A : B  ::  C : D ]
+        (As A is related to B, so C is related to D)
+```
+
+== High-Frequency Analogy Relationships in CUET
+- *Worker and Instrument:* The practitioner and their specialized tool.
+  - _Surgeon : Scalpel :: Sculptor : Chisel_ (A scalpel is the definitive tool of a surgeon; a chisel of a sculptor).
+- *Degree of Intensity:* An escalation from moderate to extreme intensity.
+  - _Warm : Scalding :: Pleased : Ecstatic_ (Scalding is intensely warm; ecstatic is intensely pleased).
+- *Part to Whole (Meronymy):* A structural component and its integrated entity.
+  - _Spoke : Wheel :: Chapter : Novel_ (A spoke is a vital part of a wheel; a chapter of a novel).
+- *Cause and Corollary:* A physical stimulus and its natural consequence.
+  - _Friction : Heat :: Sedentary Lifestyle : Obesity_ (Friction generates heat; inactivity generates obesity).
+- *Definitional Quality / Characteristic:* An inherent, non-negotiable trait.
+  - _Fox : Cunning :: Lead : Malleable_ (A fox is characteristically cunning; lead is characteristically malleable).
+
+= Advanced Syntax: Inversion, Redundancy, and the Subjunctive
+
+Beyond basic subject-verb agreement, CUET tests advanced syntactic constraints that frequently trip students answering by colloquial ear.
+
+== 1. Negative Adverbial Inversion
+When a negative or restrictive adverbial expression introduces a clause, standard subject-verb order is *inverted* (Auxiliary Verb precedes Subject):
+- *Negative Restrictors:* *Hardly, Scarcely, Barely, No sooner, Seldom, Little, Never before, Under no circumstances*.
+  - *Incorrect:* _Hardly I had stepped out when it started pouring._
+  - *Correct:* _Hardly *had I* stepped out *when* it started pouring._
+  - *Incorrect:* _No sooner she received the letter when she wept._
+  - *Correct:* _No sooner *did she receive* the letter *than* she wept._ (Note: *No sooner* pairs strictly with *than*, never *when*).
+
+== 2. Tautology and Redundancy Traps
+Examiners frequently introduce unnecessary repetitious words that violate stylistic conciseness:
+- *Revert back* $arrow$ Use simply *revert* (revert already signifies returning).
+- *Repeat again* $arrow$ Use simply *repeat*.
+- *Equally as good as* $arrow$ Use *equally good* or *as good as*.
+- *Mutual agreement* $arrow$ Use *agreement* (agreements are inherently mutual).
+- *Sufficient enough* $arrow$ Use *sufficient* or *enough*.
+
+== 3. The Mandative Subjunctive Mood
+Verbs expressing formal demands, recommendations, or requirements (*insist, recommend, propose, demand, mandate, decree*) take a subordinate clause with the base form of the verb (infinitive without *to*), regardless of the subject's grammatical number:
+- *Incorrect:* _The committee recommended that the candidate *submits* her dossier._
+- *Correct:* _The committee recommended that the candidate *submit* her dossier._
+- *Incorrect:* _The magistrate ordered that the prisoner *is* remanded._
+- *Correct:* _The magistrate ordered that the prisoner *be* remanded._
+
+= Tactical Speed & Error Audit Protocol
+
+The Verbal Ability section rewards algorithmic pacing. Candidates must complete discrete grammar and vocabulary questions in *35 to 45 seconds*, reserving saved time for reading comprehension passages:
+
+#table(
+  columns: (1.2fr, 1fr, 2.3fr),
+  table.header[*Question Family*][*Time Target*][*Tactical Execution Routine*],
+  [Vocabulary & Confusables], [25–35 sec], [Predict replacement word; check charge ($+, 0, -$); eliminate sound-alikes.],
+  [Sentence Rearrangement], [45–55 sec], [Find false openers; lock mandatory pairs; match option choices; test full flow.],
+  [Grammar & Error Detection], [30–40 sec], [Deconstruct subject-verb concord; check modifiers; inspect parallelism.],
+  [Match the Following], [30–40 sec], [Anchor absolute certainty pair; eliminate mismatched option bundles; verify quad.],
+)
+
+#pagebreak()
+
+= Chapter Synthesis & Cognitive Mindmap
+
+#figure(
+  image("assets/eng_va_mindmap.png", width: 88%),
+  caption: [Comprehensive architectural mindmap of CUET Verbal Ability: Synthesizing the four question families, core syntactic rules, sentence rearrangement signposts, word power habits, and exam-day pacing.],
+)
+
+#exam-pointer(title: "High-Yield Memory Hooks for CUET 2027 Verbal Ability")[
+  Keep these fundamental grammatical and operational maxims primed:
+  - *Intervening Phrases:* "As well as", "along with", "together with" do NOT change subject number. Ignore them when picking the verb!
+  - *Rule of Proximity:* With "either...or" and "neither...nor", the verb agrees strictly with the *closer subject*.
+  - *Dangling Modifiers:* The introductory participle must logically modify the immediate next noun. Watch out for rolling water bottles and walking clocks!
+  - *The Jumble Opener:* A sentence with a dangling pronoun ("He", "It", "They", "This") can NEVER open a paragraph.
+  - *Antonym Flip:* Always predict your own replacement word and *flip it* before looking at the options to dodge the synonym bait.
+  - *Confusables Concord:* Affect = Verb (influence); Effect = Noun (result). Advise = Verb; Advice = Noun. Principle = Rule; Principal = Chief/Head.
 ]
+
+#pagebreak()
+
+#cheatsheet-box(title: "Master Strategy Cheatsheet — Verbal Ability")[
+  *1. Core Grammar Rules:*
+  $ "Subject" + ["as well as" / "along with" + "Object"] + "VERB (agrees with Subject 1)" $
+  $ "Either" S_1 "or" S_2 "VERB" (S_2 "governs concord"), quad quad "Neither" S_1 "nor" S_2 "VERB" (S_2 "governs concord") $
+  $ "Negative Inversion:" quad "Hardly" / "Scarcely" / "Barely" + "had" + S + V_3 + "when" $
+  $ "No sooner" + "did" / "had" + S + V_1 / V_3 + "than" $
+
+  *2. Sentence Rearrangement (Para Jumble) Sequence:*
+  $ "Opener Hunt (Noun, not pronoun)" arrow "Mandatory Pair Lock" arrow "Option Elimination" arrow "Full Narrative Verification" $
+
+  *3. Three-Tier Blank Checking Routine:*
+  - *Sense:* Contextual polarity ($+, 0, -$) and logical semantic meaning.
+  - *Grammar:* Syntactic role (Noun, Verb, Adjective, Adverb, Participle).
+  - *Collocation:* Natural prepositional partnership (*adhere to, abstain from, comply with*).
+
+  *4. Two-Column Matching Technique:*
+  $ "Anchor Single Known Pair" arrow "Eliminate Non-conforming Options" arrow "Verify Remaining Residual Quad" $
+]
+
+#exception-box(title: "The Seven Fatal CUET Traps in Verbal Ability")[
+  1. *The Colloquial Ear Trap:* Choosing an option because it "sounds natural" in casual speech. Colloquial English is riddled with grammatical violations (e.g., "Between you and I" instead of "Between you and me").
+  2. *The Attractive Synonym Bait in Antonym Questions:* Selecting a synonym because it matches the word's meaning. Always circle the stem word "OPPOSITE" and perform the mental flip!
+  3. *The Pronoun Jumble Opener Trap:* Falling for an option that opens with a pronoun sentence ("It slowly darkened..."). A true opener establishes the subject by name.
+  4. *The Intervening Phrase Concord Confusion:* Treating "along with his friends" as pluralizing the subject. Only the word before the comma governs the verb.
+  5. *The Confusable Acoustic Illusion:* Swapping *affect* and *effect*, *stationary* and *stationery*, or *principal* and *principle* based on identical pronunciation.
+  6. *The No Sooner 'When' Error:* Pairing *No sooner* with *when* instead of *than*. *Hardly/Scarcely* take *when*; *No sooner* takes *than*.
+  7. *The Partial Match Mirage in Two-Column Matching:* Marking an option after verifying only two pairs. Examiners craft options where two pairs are correct but the other two are swapped!
+]
+
+#pagebreak()
+#set text(size: 8.0pt)
+#set par(leading: 0.35em, spacing: 0.35em)
+
+= Practice Questions — Part 1: Vocabulary & Word Power (Q1 to Q5)
+
+#mcq(1, [In the sentence "The finance minister offered a candid appraisal of the fiscal deficit, admitting that previous forecasts were overly optimistic," the word "candid" most nearly means:], (
+  [secretive, guarded, and evasive],
+  [highly flattering and polite],
+  [frank, truthful, and straightforward],
+  [complex and difficult to grasp],
+))
+#solution(1, [Contextual substitution: The minister was admitting past overly optimistic forecasts, indicating unvarnished honesty. Replacing "candid" with "frank, truthful, and straightforward" preserves semantic meaning perfectly. Option A is an antonym; Option B is opposite in tone; Option D misidentifies the concept.], answer: [C])
+
+#mcq(2, [Choose the word that is MOST NEARLY OPPOSITE in meaning to the underlined word:
+"Fame on modern social media platforms is notoriously _ephemeral_, often fading before the season ends."], (
+  [transient and short-lived],
+  [enduring, permanent, and lasting],
+  [chaotic and disorganized],
+  [celebrated and prestigious],
+))
+#solution(2, [Antonym flip routine: "Ephemeral" means lasting for a very short time (transient). Its direct opposite is "enduring, permanent, and lasting" (Option B). Option A is the classic synonym trap waiting to catch candidates who fail to flip their prediction; Options C and D are irrelevant.], answer: [B])
+
+#mcq(3, [Fill in the blanks with the appropriate pair of words:
+"The senior advocate offered sound \_\_\_ regarding the property dispute, and she agreed to \_\_\_ her client to accept the out-of-court settlement."], (
+  [advise; advice],
+  [advice; advise],
+  [advices; advising],
+  [advise; advise],
+))
+#solution(3, [Grammatical form check: The first blank follows an adjective ("sound \_\_\_") requiring a NOUN—*advice*. The second blank follows an infinitive marker ("agreed to \_\_\_") requiring a VERB—*advise*. Hence, the correct sequence is *advice; advise* (Option B). "Advices" is non-standard in English.], answer: [B])
+
+#mcq(4, [Identify the sentence that uses the underlined phrasal verb INCORRECTLY:], (
+  [Due to torrential monsoon rain, the tournament committee decided to _call off_ the championship.],
+  [The government constituted an independent panel to _look into_ allegations of administrative fraud.],
+  [After weeks of intense siege, the isolated garrison finally _gave off_ to the advancing army.],
+  [The unprecedented public health crisis _called for_ immediate and decisive fiscal intervention.],
+))
+#solution(4, [Idiomatic precision: To surrender or yield to an opponent is to *give in* (or *give up*). The phrasal verb *give off* signifies emitting gas, heat, or fumes (e.g., "The burning wood gave off toxic smoke"). Therefore, sentence C uses the phrasal verb incorrectly.], answer: [C])
+
+#mcq(5, [Match the idioms in Column I with their correct meanings in Column II:
+#table(
+  columns: (1fr, 1.4fr),
+  table.header[*Column I (Idiom)*][*Column II (Meaning)*],
+  [1. Burn the midnight oil], [(a) Face an inevitable, painful situation with fortitude],
+  [2. Bite the bullet], [(b) Deliberately ignore an unethical or unlawful act],
+  [3. Turn a blind eye], [(c) Work or study diligently late into the night],
+  [4. At the eleventh hour], [(d) At the very last possible moment before a deadline],
+)], (
+  [1-c, 2-a, 3-b, 4-d],
+  [1-a, 2-c, 3-d, 4-b],
+  [1-c, 2-d, 3-a, 4-b],
+  [1-b, 2-a, 3-c, 4-d],
+))
+#solution(5, [Anchor-and-strike routine: Lock known pairs: "Burn the midnight oil" = study late (1-c) and "At the eleventh hour" = at the last moment (4-d). Looking at the options, only Option A pairs 1-c and 4-d. Verifying the rest: "Bite the bullet" = face hardship bravely (2-a); "Turn a blind eye" = deliberately ignore (3-b). All four verified ✓.], answer: [A])
+
+#pagebreak()
+
+= Practice Questions — Part 2: Grammar & Error Detection (Q6 to Q10)
+
+#mcq(6, [Identify the grammatically correct sentence among the following:], (
+  [The chief architect, along with his entire structural design team, have received the national award.],
+  [The chief architect, along with his entire structural design team, has received the national award.],
+  [The chief architect, along with his entire structural design team, are receiving the national award.],
+  [The chief architect, along with his entire structural design team, were honoured at the convention.],
+))
+#solution(6, [Subject-verb concord: The true grammatical subject is singular ("The chief architect"). Parenthetical phrases introduced by "along with", "as well as", or "together with" do not alter the subject's number. Therefore, the verb must be singular (*has received*). Options A, C, and D commit plural verb errors.], answer: [B])
+
+#mcq(7, [Fill in the blank with the grammatically correct verb form:
+"Neither the laboratory director nor the apprentice technicians \_\_\_ aware of the hazardous chemical leakage."], (
+  [was],
+  [is],
+  [were],
+  [has been],
+))
+#solution(7, [Rule of Proximity: In compound subjects connected by *neither...nor* or *either...or*, the finite verb agrees strictly with the closer subject. The closer subject is plural ("apprentice technicians"). Therefore, the plural past verb *were* is required (Option C). Options A, B, and D use singular verb forms.], answer: [C])
+
+#mcq(8, [Which of the following sentences contains an error of a DANGLING MODIFIER?], (
+  [While hiking up the steep mountain trail, my water bottle slipped and rolled down the cliff.],
+  [Walking briskly along the coastal promenade, Rohit watched the fishing trawlers return.],
+  [Having completed the forensic accounting review, the auditor submitted his final report.],
+  [After waiting on the platform for three hours, the commuters finally boarded the delayed train.],
+))
+#solution(8, [Dangling modifier analysis: In sentence A, the introductory participial phrase "While hiking up the steep mountain trail" is immediately followed by "my water bottle". This illogically asserts that the water bottle was hiking up the mountain! The correct sentence requires a human subject: "While hiking up the steep mountain trail, *I dropped* my water bottle...".], answer: [A])
+
+#mcq(9, [Select the option that best improves the underlined portion:
+"The elite business school curriculum emphasizes developing analytical thinking, fostering civic leadership, and _to cultivate ethical decision-making_."], (
+  [to cultivate ethical decision-making],
+  [cultivation of ethical decision-making],
+  [having cultivated ethical decision-making],
+  [cultivating ethical decision-making],
+))
+#solution(9, [Parallelism in series: Elements in a coordinate list must maintain identical grammatical forms. The series establishes gerunds: *developing* analytical thinking, *fostering* civic leadership, and therefore requires *cultivating* ethical decision-making (Option D). Infinitives or nouns violate parallel structure.], answer: [D])
+
+#mcq(10, [Select the grammatically correct completion for the counterfactual conditional sentence:
+"If the disaster management authority \_\_\_ timely flood warnings, the rescue teams \_\_\_ the submerged villages."], (
+  [issued; would evacuate],
+  [would have issued; would evacuate],
+  [had issued; would have evacuated],
+  [has issued; had evacuated],
+))
+#solution(10, [Conditional Type 3 (Counterfactual Past): Refers to an unreal past condition and its probable past result. The *if-clause* requires the Past Perfect (*had + V3*), while the main clause requires *would have + V3*. Therefore, "had issued; would have evacuated" (Option C) is the sole grammatically valid structure.], answer: [C])
+
+#pagebreak()
+
+= Practice Questions — Part 3: Para Jumbles, Analogies & One Word (Q11 to Q15)
+
+#mcq(11, [Rearrange the sentences (P, Q, R, S) into a coherent, logical paragraph:
+#text(size: 7.8pt)[
+  *P:* It possesses the remarkable capability to camouflage itself by altering its skin pigmentation and texture in milliseconds.
+  *Q:* Marine biologists consider the common octopus to be one of the most intellectually sophisticated invertebrates on Earth.
+  *R:* This instantaneous physiological adaptation allows it to evade apex predators such as sharks and moray eels.
+  *S:* In controlled laboratory trials, it has demonstrated complex spatial navigation, problem-solving, and tool usage.
+]
+The correct order is:], (
+  [Q S P R],
+  [P R Q S],
+  [Q P S R],
+  [S Q P R],
+))
+#solution(11, [Structural sequencing: Sentence Q introduces the subject by name ("Marine biologists consider the common octopus..."). Sentence S expands on its intellectual sophistication (problem-solving, tool usage). Sentence P introduces its physiological camouflage ability ("It possesses the remarkable capability..."). Sentence R connects directly to P via demonstrative reference ("This instantaneous physiological adaptation..."). Hence, *PR* is a mandatory pair. Sequence: *Q $arrow$ S $arrow$ P $arrow$ R* (Option A).], answer: [A])
+
+#mcq(12, [Rearrange the sentences (P, Q, R, S) into a meaningful chronological paragraph:
+#text(size: 7.8pt)[
+  *P:* In 1969, this pioneering research body was formally reorganized as the Indian Space Research Organisation (ISRO).
+  *Q:* Over subsequent decades, ISRO achieved international acclaim by executing lunar and interplanetary missions with unprecedented efficiency.
+  *R:* India's modern space endeavors commenced in 1962 with the founding of the Indian National Committee for Space Research (INCOSPAR).
+  *S:* Its founding chairman, Dr. Vikram Sarabhai, insisted that space science must address tangible societal challenges rather than mere geopolitical prestige.
+]
+The correct order is:], (
+  [P Q R S],
+  [R S P Q],
+  [S R P Q],
+  [R P S Q],
+))
+#solution(12, [Chronological & acronym hierarchy: Sentence R sets the historical origin (1962, INCOSPAR). Sentence S follows R immediately, detailing its founder Dr. Sarabhai's vision. Sentence P documents the 1969 evolution into ISRO ("this pioneering research body was formally reorganized as ISRO"). Sentence Q describes subsequent modern achievements. Order: *R $arrow$ S $arrow$ P $arrow$ Q* (Option B).], answer: [B])
+
+#mcq(13, [Complete the verbal analogy by selecting the option with identical relational logic:
+*SCALPEL : SURGEON :: \_\_\_ : \_\_\_*], (
+  [stethoscope : patient],
+  [canvas : painter],
+  [courtroom : attorney],
+  [chisel : sculptor],
+))
+#solution(13, [Analogy relationship: Worker and Primary Precision Cutting Tool. A surgeon uses a scalpel to execute their craft; similarly, a sculptor uses a chisel to carve their sculpture (Option D). A patient does not use a stethoscope; a canvas is the recipient surface, not the painter's tool; a courtroom is the lawyer's workplace, not an instrument.], answer: [D])
+
+#mcq(14, [A person who remains entirely indifferent to both pleasure and pain, enduring hardships and adversity without complaint or display of emotion, is designated as a:], (
+  [Hedonist],
+  [Altruist],
+  [Stoic],
+  [Polyglot],
+))
+#solution(14, [One Word Substitution: A *Stoic* is one who practices stoicism—enduring suffering without demonstrating grief or passion. A *Hedonist* believes pleasure is the supreme good (opposite); an *Altruist* lives for the welfare of others; a *Polyglot* speaks multiple languages.], answer: [C])
+
+#mcq(15, [Select the sentence that uses the Latin legal phrase "_bona fide_" correctly in standard English:], (
+  [The Supreme Court issued a _bona fide_ writ compelling the state legislature to dissolve immediately.],
+  [The board meeting dissolved into complete _bona fide_ after the directors failed to achieve consensus.],
+  [The construction contract was terminated _bona fide_ because the firm violated essential workplace safety codes.],
+  [Before approving the commercial loan, the credit officer verified that the entrepreneur was a _bona fide_ trader with authentic business documentation.],
+))
+#solution(15, [Contextual usage: *Bona fide* is a Latin phrase signifying "in good faith; genuine, authentic, sincere, without fraud." Describing a "bona fide trader with authentic business documentation" (Option D) is the precise standard legal and commercial usage. In Options A, B, and C, it is inappropriately substituted for mandamus, chaos, and punitive termination.], answer: [D])

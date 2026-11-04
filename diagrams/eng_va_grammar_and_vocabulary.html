@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CUET Verbal Ability: Grammar, Syntax & Vocabulary Architecture</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 20px 26px;
+    overflow: hidden;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 10px;
+    margin-bottom: 14px;
+  }
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .brand-badge {
+    background: #071A4D;
+    color: #B8FF34;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .title-group h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .title-group p {
+    font-size: 12px;
+    color: #64748B;
+    margin-top: 1px;
+  }
+  .header-tag {
+    background: #EAF0FF;
+    color: #1F5EFF;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+    border: 1px solid #C7D9FE;
+  }
+
+  .grid-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 12px;
+  }
+
+  .card {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 10px;
+    padding: 13px 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+  }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1.5px solid #F1F5F9;
+    padding-bottom: 7px;
+  }
+
+  .card-title {
+    font-size: 14px;
+    font-weight: 800;
+    color: #071A4D;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+
+  .pill {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+  .pill-blue { background: #EAF0FF; color: #1F5EFF; }
+  .pill-green { background: #F0FDF4; color: #16A34A; }
+  .pill-purple { background: #FAF5FF; color: #9333EA; }
+  .pill-amber { background: #FFFBEB; color: #D97706; }
+
+  .rule-item {
+    background: #F8FAFC;
+    border-left: 3px solid #1F5EFF;
+    border-radius: 0 6px 6px 0;
+    padding: 7px 10px;
+  }
+  .rule-item.purple { border-left-color: #9333EA; }
+  .rule-item.green { border-left-color: #16A34A; }
+  .rule-item.amber { border-left-color: #D97706; }
+
+  .rule-name {
+    font-size: 11.5px;
+    font-weight: 800;
+    color: #0F172A;
+    display: flex;
+    justify-content: space-between;
+  }
+  .rule-desc {
+    font-size: 10.5px;
+    color: #475569;
+    line-height: 1.35;
+    margin-top: 2px;
+  }
+  .rule-eg {
+    font-size: 10px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    color: #0369A1;
+    background: #E0F2FE;
+    padding: 2px 5px;
+    border-radius: 4px;
+    margin-top: 3px;
+    display: inline-block;
+  }
+  .rule-wrong {
+    color: #DC2626;
+    background: #FEE2E2;
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    margin-top: 3px;
+    display: inline-block;
+  }
+
+  .bottom-banner {
+    background: #071A4D;
+    border-radius: 10px;
+    padding: 12px 18px;
+    color: #FFFFFF;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 16px;
+    align-items: center;
+  }
+
+  .banner-badge-box {
+    border-right: 1.5px solid rgba(255,255,255,0.15);
+    padding-right: 14px;
+  }
+  .banner-badge-box h3 {
+    font-size: 13px;
+    font-weight: 800;
+    color: #B8FF34;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .banner-badge-box p {
+    font-size: 10px;
+    color: #94A3B8;
+    margin-top: 2px;
+  }
+
+  .steps-flex {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+  .step-box {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 6px;
+    padding: 7px 10px;
+  }
+  .step-num {
+    font-size: 10px;
+    font-weight: 800;
+    color: #B8FF34;
+  }
+  .step-title {
+    font-size: 11px;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-top: 1px;
+  }
+  .step-sub {
+    font-size: 9.5px;
+    color: #CBD5E1;
+    margin-top: 2px;
+    line-height: 1.25;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <div class="brand-badge">OURMOCKS · CUET UG ENGLISH (101)</div>
+    <div class="title-group">
+      <h1>Verbal Ability: Grammar, Syntax & Vocabulary Architecture</h1>
+      <p>Systematic Breakdown of Subject-Verb Rules, Para Jumble Pairing, and Vocabulary in Context</p>
+    </div>
+  </div>
+  <div class="header-tag">Core Syllabus Framework</div>
+</div>
+
+<div class="grid-3">
+
+  <!-- Column 1: Core Grammar & Syntax Rules -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">1. High-Yield Syntax Rules</div>
+      <div class="pill pill-blue">Grammar Engine</div>
+    </div>
+
+    <div class="rule-item">
+      <div class="rule-name">Subject-Verb Interveners</div>
+      <div class="rule-desc">Parenthetical phrases (<em>along with, as well as, together with, in addition to</em>) do not alter the subject's number.</div>
+      <div><span class="rule-eg">✓ The captain, as well as the players, is ready.</span></div>
+    </div>
+
+    <div class="rule-item">
+      <div class="rule-name">Correlative Conjunctions</div>
+      <div class="rule-desc">With <em>either...or, neither...nor, not only...but also</em>, the verb agrees strictly with the <strong>closer subject</strong>.</div>
+      <div><span class="rule-eg">✓ Neither the teacher nor the students were aware.</span></div>
+    </div>
+
+    <div class="rule-item">
+      <div class="rule-name">Dangling & Misplaced Modifiers</div>
+      <div class="rule-desc">An introductory participial phrase must modify the immediate following noun/pronoun, not an unrelated object.</div>
+      <div><span class="rule-wrong">✗ Walking home, the storm struck me.</span></div>
+    </div>
+
+    <div class="rule-item">
+      <div class="rule-name">Parallelism in Series</div>
+      <div class="rule-desc">Items in a list or compared elements must share identical grammatical structures (infinitives with infinitives, gerunds with gerunds).</div>
+      <div><span class="rule-eg">✓ She loves reading, writing, and painting.</span></div>
+    </div>
+  </div>
+
+  <!-- Column 2: Sentence Rearrangement (Para Jumbles) -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">2. Para Jumble Signposts</div>
+      <div class="pill pill-purple">Rearrangement</div>
+    </div>
+
+    <div class="rule-item purple">
+      <div class="rule-name">Mandatory Pair Discovery</div>
+      <div class="rule-desc">Identify unbreakable 2-sentence pairs using cause-and-effect, question-and-answer, or problem-and-solution structures.</div>
+      <div><span class="rule-eg">Pair [B-D]: B states hypothesis; D tests it.</span></div>
+    </div>
+
+    <div class="rule-item purple">
+      <div class="rule-name">Noun-Pronoun Antecedents</div>
+      <div class="rule-desc">A pronoun (<em>he, she, they, this, these</em>) cannot introduce a sequence; the explicit noun must precede it.</div>
+      <div><span class="rule-eg">Order: [Dr. Kalam] → [He inspired youth].</span></div>
+    </div>
+
+    <div class="rule-item purple">
+      <div class="rule-name">Acronym & Name Hierarchy</div>
+      <div class="rule-desc">Full personal names and expanded institutional acronyms invariably precede abbreviations.</div>
+      <div><span class="rule-eg">Order: [Reserve Bank of India] → [RBI].</span></div>
+    </div>
+
+    <div class="rule-item purple">
+      <div class="rule-name">Chronological & Time Markers</div>
+      <div class="rule-desc">Order events historically (<em>initially, subsequently, thereafter, finally</em>). Past anchors lead to modern corollaries.</div>
+      <div><span class="rule-eg">Sequence: In 1947 → By 1970 → Today.</span></div>
+    </div>
+  </div>
+
+  <!-- Column 3: Vocabulary & Word Mastery -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">3. Word Mastery & Context</div>
+      <div class="pill pill-green">Lexical Skills</div>
+    </div>
+
+    <div class="rule-item green">
+      <div class="rule-name">Contextual Substitution</div>
+      <div class="rule-desc">Test whether the synonym preserves sentence polarity, register, and grammatical function when swapped in.</div>
+      <div><span class="rule-eg">Rule: Match tone (+/0/-) before nuance.</span></div>
+    </div>
+
+    <div class="rule-item green">
+      <div class="rule-name">Root Words & Etymology</div>
+      <div class="rule-desc">Deconstruct unfamiliar academic words via Latin/Greek roots (<em>bene, mal, chron, path, cred, loq, vor</em>).</div>
+      <div><span class="rule-eg">Magnanimous = magn (great) + animus (mind).</span></div>
+    </div>
+
+    <div class="rule-item green">
+      <div class="rule-name">Idioms & Phrasal Traps</div>
+      <div class="rule-desc">Prepositional shifts completely alter phrasal verb meaning (<em>give in vs give up vs give off vs give away</em>).</div>
+      <div><span class="rule-eg">Look after (care) ≠ Look into (investigate).</span></div>
+    </div>
+
+    <div class="rule-item green">
+      <div class="rule-name">High-Frequency Foreign Phrases</div>
+      <div class="rule-desc">CUET frequently tests Latin/French loan phrases common in academic discourse.</div>
+      <div><span class="rule-eg">De facto (in reality), Bona fide (genuine).</span></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Bottom Strip: 4-Step Operational Solving Protocol -->
+<div class="bottom-banner">
+  <div class="banner-badge-box">
+    <h3>Verbal Ability Protocol</h3>
+    <p>Operational 4-Step Solving Cycle for Maximum Accuracy</p>
+  </div>
+  <div class="steps-flex">
+    <div class="step-box">
+      <div class="step-num">STEP 01</div>
+      <div class="step-title">Question Stem Triage</div>
+      <div class="step-sub">Classify item into Grammar, Vocabulary, Para Jumble, or Idiom within 5 seconds.</div>
+    </div>
+    <div class="step-box">
+      <div class="step-num">STEP 02</div>
+      <div class="step-title">Anchor Rule Retrieval</div>
+      <div class="step-sub">Isolate the governing grammatical rule or mandatory pair before scanning choices.</div>
+    </div>
+    <div class="step-box">
+      <div class="step-num">STEP 03</div>
+      <div class="step-title">Binary Elimination</div>
+      <div class="step-sub">Strike 2 options with overt violations (modifier errors, broken pronoun links).</div>
+    </div>
+    <div class="step-box">
+      <div class="step-num">STEP 04</div>
+      <div class="step-title">Substitution & Lock</div>
+      <div class="step-sub">Re-read sentence with chosen option; verify cadence, number, and tense alignment.</div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
