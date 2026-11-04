@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Hypothesis Testing Architecture & The One-Sample t-Test</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 22px 28px;
+    overflow: hidden;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 10px;
+    margin-bottom: 14px;
+  }
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .brand-badge {
+    background: #071A4D;
+    color: #B8FF34;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .title-group h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .title-group p {
+    font-size: 12px;
+    color: #64748B;
+    margin-top: 1px;
+  }
+  .header-tag {
+    background: #EFF6FF;
+    color: #1F5EFF;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 6px;
+    border: 1px solid #BFDBFE;
+  }
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    height: 750px;
+  }
+  .panel {
+    background: #FFFFFF;
+    border-radius: 12px;
+    border: 1px solid #E2E8F0;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .panel-title {
+    font-size: 15px;
+    font-weight: 800;
+    color: #071A4D;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 2px solid #F1F5F9;
+    padding-bottom: 8px;
+  }
+  .dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+  }
+  .dot-blue { background: #1F5EFF; }
+  .dot-green { background: #16A34A; }
+  .formula-card {
+    background: #071A4D;
+    border-radius: 10px;
+    padding: 12px 14px;
+    color: #FFFFFF;
+  }
+  .formula-card .f-title {
+    font-size: 11.5px;
+    font-weight: 700;
+    color: #B8FF34;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .formula-card .f-math {
+    font-family: "Cambria Math", Georgia, serif;
+    font-size: 15px;
+    color: #FFFFFF;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(184,255,52,0.3);
+    border-radius: 6px;
+    padding: 7px 10px;
+    margin-bottom: 6px;
+  }
+  .formula-card .f-math b {
+    color: #B8FF34;
+  }
+  .formula-card .f-desc {
+    font-size: 11px;
+    color: #C9D4EE;
+    line-height: 1.35;
+  }
+  .content-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 11.5px;
+  }
+  .content-table th {
+    background: #F1F5F9;
+    color: #071A4D;
+    font-weight: 700;
+    text-align: left;
+    padding: 6px 8px;
+    border-bottom: 1.5px solid #CBD5E1;
+  }
+  .content-table td {
+    padding: 6px 8px;
+    border-bottom: 1px solid #E2E8F0;
+    color: #334155;
+    line-height: 1.3;
+  }
+  .content-table tr:nth-child(even) {
+    background: #F8FAFC;
+  }
+  .box-note {
+    background: #F8FAFC;
+    border-left: 3.5px solid #1F5EFF;
+    border-radius: 0 8px 8px 0;
+    padding: 8px 12px;
+    font-size: 11.5px;
+    color: #1E293B;
+    line-height: 1.35;
+  }
+  .box-note b { color: #071A4D; }
+  .trap-card {
+    background: #FFF1F2;
+    border: 1px solid #FECDD3;
+    border-left: 3.5px solid #E11D48;
+    border-radius: 0 8px 8px 0;
+    padding: 8px 12px;
+    font-size: 11px;
+    color: #9F1239;
+    line-height: 1.35;
+  }
+  .trap-card b { color: #881337; }
+  .steps-list {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+  .step-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 11.5px;
+    color: #334155;
+    line-height: 1.35;
+  }
+  .step-num {
+    background: #071A4D;
+    color: #B8FF34;
+    font-weight: 800;
+    font-size: 10.5px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .badge-err1 { background: #FEE2E2; color: #991B1B; font-weight: 700; padding: 2px 6px; border-radius: 4px; }
+  .badge-err2 { background: #FEF3C7; color: #92400E; font-weight: 700; padding: 2px 6px; border-radius: 4px; }
+  .badge-ok { background: #DCFCE7; color: #166534; font-weight: 700; padding: 2px 6px; border-radius: 4px; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <div class="brand-badge">OurMocks Core System</div>
+    <div class="title-group">
+      <h1>Hypothesis Testing Architecture & The One-Sample t-Test</h1>
+      <p>NTA CUET (UG) Section B2 · Unit VI Inferential Statistics Analytical Framework</p>
+    </div>
+  </div>
+  <div class="header-tag">Section B2 Applied Math</div>
+</div>
+
+<div class="grid-2">
+  <!-- Left Panel: 5-Step Protocol & Decision Matrix -->
+  <div class="panel">
+    <div class="panel-title">
+      <span class="dot dot-blue"></span>
+      1. The 5-Step Hypothesis Testing Protocol & Error Matrix
+    </div>
+
+    <div class="steps-list">
+      <div class="step-item">
+        <div class="step-num">1</div>
+        <div><b>State Hypotheses:</b> Null H₀: μ = μ₀ (status quo / no effect) vs Alternative H₁: μ ≠ μ₀ (two-tailed) or μ &gt; μ₀ / μ &lt; μ₀ (one-tailed).</div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">2</div>
+        <div><b>Set Significance Level (α):</b> Choose probability of Type I error (typically α = 0.05 or 0.01).</div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">3</div>
+        <div><b>Calculate Test Statistic:</b> Compute standard score: t_calc = (x̄ - μ₀) / (s / √n).</div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">4</div>
+        <div><b>Determine Critical Value & Rejection Region:</b> Identify t_crit at df = n - 1. Two-tailed reject if |t_calc| &gt; t_crit.</div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">5</div>
+        <div><b>State Statistical Inference:</b> If t_calc falls in critical region, reject H₀ at α level; else fail to reject H₀.</div>
+      </div>
+    </div>
+
+    <div class="panel-title" style="margin-top: 4px;">
+      <span class="dot dot-blue"></span>
+      Decision Outcomes: Truth vs Statistical Verdict
+    </div>
+
+    <table class="content-table">
+      <thead>
+        <tr>
+          <th>Reality \ Decision</th>
+          <th>Fail to Reject H₀ (Accept Status Quo)</th>
+          <th>Reject H₀ (Declare Significant Effect)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>H₀ is Actually TRUE</b></td>
+          <td><span class="badge-ok">Correct Decision</span> (Prob = 1 - α)</td>
+          <td><span class="badge-err1">Type I Error (α)</span> — False Positive</td>
+        </tr>
+        <tr>
+          <td><b>H₀ is Actually FALSE</b></td>
+          <td><span class="badge-err2">Type II Error (β)</span> — False Negative</td>
+          <td><span class="badge-ok">Correct Decision: Power</span> (1 - β)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="trap-card">
+      <b>CUET Trap Alert (Never "Accept" H₀):</b> When |t_calc| &le; t_crit, we say "we fail to reject H₀" or "insufficient evidence to reject H₀". We never claim H₀ is proven true; we merely observe that the sample does not contradict it.
+    </div>
+  </div>
+
+  <!-- Right Panel: Student's t-Distribution & CLT Mechanics -->
+  <div class="panel">
+    <div class="panel-title">
+      <span class="dot dot-green"></span>
+      2. Student's t-Statistic, Degrees of Freedom & Central Limit Theorem
+    </div>
+
+    <div class="formula-card">
+      <div class="f-title">One-Sample t-Statistic & Sample Variance</div>
+      <div class="f-math">
+        t = (x̄ - μ₀) / (s / √n) = (x̄ - μ₀) / SE(x̄)
+      </div>
+      <div class="f-math">
+        s² = Σ (xᵢ - x̄)² / (n - 1), quad df = n - 1
+      </div>
+      <div class="f-desc">
+        Where <b>x̄</b> is sample mean, <b>μ₀</b> is hypothesized population mean, <b>s</b> is sample standard deviation (Bessel's corrected denominator n - 1), <b>n</b> is sample size (&lt; 30), and <b>df = n - 1</b> is degrees of freedom.
+      </div>
+    </div>
+
+    <table class="content-table">
+      <thead>
+        <tr>
+          <th>Attribute</th>
+          <th>Small Sample t-Test</th>
+          <th>Large Sample Z-Test (CLT)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>Sample Size Condition</b></td>
+          <td>Small sample: n &lt; 30</td>
+          <td>Large sample: n &ge; 30</td>
+        </tr>
+        <tr>
+          <td><b>Population Variance (σ²)</b></td>
+          <td>Unknown (estimated by sample s)</td>
+          <td>Known or unknown (CLT applies)</td>
+        </tr>
+        <tr>
+          <td><b>Distribution Curve Shape</b></td>
+          <td>Heavier tails, lower peak; depends on df</td>
+          <td>Standard normal bell curve Z ~ N(0, 1)</td>
+        </tr>
+        <tr>
+          <td><b>Asymptotic Behavior</b></td>
+          <td>As df = n - 1 &rarr; ∞, t-curve approaches Z-curve</td>
+          <td>Standard normal z = (x̄ - μ) / (σ / √n)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="box-note">
+      <b>Central Limit Theorem (CLT) Axiom:</b> For any arbitrary parent population with mean μ and variance σ², the distribution of the sample mean x̄ tends asymptotically toward a normal distribution N(μ, σ²/n) as sample size n grows (n &ge; 30), regardless of the shape of the population!
+    </div>
+
+    <div class="trap-card">
+      <b>CUET Trap Alert (Bessel's Correction n vs n-1):</b> Dividing by n gives the biased sample variance; to obtain the unbiased estimator s² for the t-test, the denominator must strictly be n - 1. Degrees of freedom for one group is always df = n - 1.
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
