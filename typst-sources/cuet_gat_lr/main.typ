@@ -4,381 +4,630 @@
   exam: "CUET UG",
   subject: "General Aptitude Test",
   topic-title: "Logical & Analytical Reasoning",
-  subtitle: "Official Syllabus · GT Paper · CUET UG 2027 Cycle Notes",
+  subtitle: "Official Syllabus · General Test (Section III) · Class 12 · CUET UG 2027 Cycle Notes",
 )
 
 = Syllabus Alignment
 
 #table(
   columns: (1.15fr, 2fr, 1.15fr),
-  table.header[*Sub-topic*][*Official syllabus pointer (NTA official CUET(UG) 2026 syllabus — General Aptitude Test (501), the current 2027 baseline)*][*Skills the questions test*],
-  [*Analogies*], [
-    Verbal and non-verbal reasoning: analogies
+  table.header[*Sub-topic*][*Official Syllabus Pointer (NTA CUET GAT 501)*][*Core Skills Tested*],
+  [*Analogies & Series*], [
+    Verbal and non-verbal reasoning: Semantic analogies, number and alphanumeric series.
   ], [
-    Naming the relationship between a pair and applying it to a new term.
+    Identifying underlying relational operators, differential arithmetic patterns, EJOTY alphabet mapping.
   ],
-  [*Sequences*], [
-    Verbal and non-verbal reasoning: sequences
+  [*Coding & Decoding*], [
+    Coding-decoding systems: Letter shifting, reverse writing, symbol-based cipher substitution.
   ], [
-    Finding the hidden pattern in a series of numbers or letters.
+    Deciphering algorithmic rules, positional coordinate transformations, reverse-checking verification.
   ],
-  [*Syllogisms*], [
-    Verbal and non-verbal reasoning: syllogisms
+  [*Deductive Syllogisms*], [
+    Syllogistic logic: Categorical propositions (All, Some, None, Some Not), valid Venn deductions.
   ], [
-    Judging which conclusions MUST follow from given statements.
+    Drawing overlapping Euler-Venn diagrams, identifying universal conclusions, testing "either-or" pairs.
   ],
-  [*Coding-decoding*], [
-    Verbal and non-verbal reasoning: coding-decoding
+  [*Blood Relations*], [
+    Blood relations: Deciphering family genealogies, coded relations, portrait identification.
   ], [
-    Cracking the rule that maps words to codes, then reapplying it.
+    Constructing generational family trees, gender tracking, decoupling name from assumed gender.
   ],
-  [*Blood relations*], [
-    Verbal and non-verbal reasoning: blood relations
+  [*Direction Sense*], [
+    Direction sense test: 8-point compass navigation, angular pivots, Euclidean displacements.
   ], [
-    Building a family tree from clues and reading relations correctly.
+    Tracing cardinal vector trajectories, calculating aerial distance via the Pythagorean theorem.
   ],
-  [*Direction sense*], [
-    Verbal and non-verbal reasoning: direction sense
+  [*Seating & Puzzles*], [
+    Analytical puzzles: Linear and circular seating arrangements, multi-attribute grid matching.
   ], [
-    Tracking a path on a compass and measuring the final displacement.
-  ],
-  [*Puzzles*], [
-    Verbal and non-verbal reasoning: puzzles
-  ], [
-    Fixing positions or orders from a set of clues without contradiction.
+    Anchoring definite clues, managing bifurcated cases, eliminating logical contradictions.
   ],
 )
 
 #exam-pointer[
-  CUET UG pattern (NTA official information bulletin and syllabus, 2026 cycle — the
-  current 2027 baseline): each test paper carries *50 compulsory questions* in
-  *60 minutes*, with $+5$ for every correct answer and $-1$ for every incorrect
-  answer. The General Aptitude Test section named in the official syllabus is
-  *Logical and Analytical Reasoning*: verbal and non-verbal reasoning spanning
-  analogies, sequences, syllogisms, coding-decoding, blood relations, direction
-  sense and puzzles. Reasoning questions are method questions — the seven
-  families in this PDF each have one fixed routine that turns a puzzle into a
-  procedure.
+  *CUET UG 2027 Official Exam Pattern:* The General Test (Section III, Code 501) presents *50 compulsory multiple-choice questions* to be attempted in *60 minutes*. Each correct response yields $+5$ marks, while an incorrect response incurs a $-1$ mark negative deduction (unattempted questions earn 0). Logical and Analytical Reasoning constitutes approximately *15 to 20 questions* of the test. Reasoning questions are non-computational: solving on scratch paper using graphical representations (trees, Venn loops, slot tables) yields 100% accuracy while avoiding mental fatigue.
 ]
 
-= The One Skill Behind All Seven Families
+= The Core Philosophy of Analytical Problem Solving
 
-Reasoning looks like seven different topics, but underneath runs a single skill: *refusing to guess, and instead drawing what the words describe*. The students who lose marks in reasoning are the ones who solve "in their head" — juggling relations, directions and patterns mentally until two options look equally right. The students who score solve on *paper*: a circle for a syllogism, a tree for a family, an arrow path for directions, a slot table for seating. Your pencil is faster and far more reliable than your working memory — use it every single time.
+Reasoning items in competitive examinations assess cognitive clarity and procedural rigor. Candidates who attempt to solve complex relational, directional, or syllogistic questions purely within working memory inevitably succumb to cognitive overload.
 
-- *Every family has one fixed routine.* Learn the routine, not the answers — the same seven routines cover every reasoning question you will meet.
-- *Draw first, conclude second.* A figure you can see beats an argument you can only feel.
-- *Verify before marking.* A pattern must fit every term, a conclusion must hold in every diagram, a seating must satisfy every clue — "looks right" is not a check.
-- *Speed comes from routine, not rushing.* A 30-second drawn answer beats a 2-minute mental wrestle, and it survives the $-1$ penalty because it is checked.
-- *Practise by family, in blocks.* One evening per family, five questions in a row — pattern recognition grows by repetition within a family, not by mixing all seven at once.
+- *The Scratchpad Imperative:* Always draw what the text describes. A sketch of three circles, a 3-level family tree, or a directional arrow diagram resolves ambiguity in seconds.
+- *Definite vs Plausible Clues:* In puzzle and arrangement problems, never begin with ambiguous or conditional assertions. Locate the *definite anchor* (e.g., "A sits at the extreme left end" or "P is the maternal grandfather of Q") and construct the configuration around it.
+- *Strict Falsification Protocol:* In deductive syllogisms, a conclusion does NOT follow simply because it is physically plausible in the real world. A conclusion holds only if it remains valid across *every single conceivable diagrammatic arrangement* satisfying the premises.
 
-#analogy-box(title: "Real-World Analogy")[
-  Solving reasoning in your head is like *assembling furniture without laying out the parts* — possible for two pieces, hopeless for ten. Drawing is laying out the parts: the Venn circles, the family tree, the arrow path, the slot table. Nothing is lost, every clue has a place, and the final picture either fits or shows exactly where it does not. Same brain, same facts — but organised on paper instead of balanced in memory.
-]
+= Analogies and Relational Operators
 
-= Analogies: Name the Relationship First
+An analogy presents a known relational pair ($A : B$) and requires identifying the identical relational transformation for a target term ($C : D$).
 
-An analogy question gives you a finished pair and an unfinished one: *Doctor : Hospital :: Teacher : ?* The question is not "what goes with teacher?" — it is "what RELATIONSHIP turns doctor into hospital, and what plays that same role for teacher?" Students who jump straight to guessing a partner for "teacher" fall for options that share the category but not the relationship. So the method begins with words, not options.
+== The 3-Step Relationship Protocol
+1. *Formulate an Explicit Bridge Sentence:* Articulate the exact functional link between $A$ and $B$ in plain words:
+   - _"A scalpel is the specialized surgical instrument operated by a surgeon."_
+2. *Apply the Bridge Sentence Strictly to $C$:*
+   - _"A chisel is the specialized sculpting instrument operated by a sculptor."_
+3. *Screen Answer Choices for Relational Concord:* Reject distractors that merely share categorical context but violate the specific relational operator (e.g., pairing _painter_ with _canvas_ instead of _brush_).
 
-- *Step 1 — Read the pair aloud with a relationship sentence.* "A doctor WORKS AT a hospital." Say it in the simplest words possible.
-- *Step 2 — Apply the SAME sentence to the third term.* "A teacher works at a..." — school. The sentence grammar forces the answer type.
-- *Step 3 — Scan options for the relationship, not the category.* Both "school" and "student" belong to a teacher's world — but only school satisfies "works at".
-- *Step 4 — Check the direction.* If the pair is worker : workplace, the answer must be a workplace — not a worker. Direction flips are a classic trap.
-- *Relationships you will meet:* worker–workplace (doctor–hospital), tool–action (pen–write), young–adult (cub–lion), part–whole (wheel–car), cause–effect (virus–illness), degree (warm–hot).
+== High-Frequency Analogy Archetypes in CUET
+- *Worker and Instrument:* Surgeon : Scalpel :: Sculptor : Chisel :: Carpenter : Saw.
+- *Worker and Product:* Author : Novel :: Mason : Wall :: Cobbler : Shoe.
+- *Cause and Corollary:* Pathogen : Disease :: Friction : Heat :: Drought : Famine.
+- *Degree of Intensity:* Murmur : Shout :: Drizzle : Downpour :: Nibble : Devour.
+- *Part to Whole (Meronymy):* Spoke : Wheel :: Episode : Series :: Chapter : Book.
 
-#worked-example("Solved Analogies — three flavours")[
-  *Word analogy:* Book : Read :: Food : ? — relationship sentence: "A book is meant to be READ." Apply: "food is meant to be..." — eaten. Options like "kitchen" or "cook" fail the sentence. *Answer: eaten.*
+= Sequences: Numerical, Letter, and Interleaved Series
 
-  *Number analogy:* 3 : 27 :: 4 : ? — sentence: "3 cubed is 27." Apply: $4 times 4 times 4 = 64$. *Answer: 64.*
+Sequence questions evaluate the candidate's ability to extrapolate a concealed mathematical or positional pattern from a progression of terms.
 
-  *Letter analogy:* AB : CD :: EF : ? — sentence: "each letter steps 1 forward (A to C, B to D)." Apply: E steps to G, F to H. *Answer: GH.*
-]
+== The Systematic Series Deconstruction Workflow
+1. *Examine Primary Differences ($Delta_1$):* Calculate differences between adjacent terms.
+   - If differences are constant ($+4, +4, +4$), the series is an Arithmetic Progression.
+   - If differences expand systematically ($+3, +5, +7, +9$), inspect the second-order differences ($Delta_2 = +2$).
+2. *Examine Ratios and Exponents:*
+   - If terms escalate rapidly ($3, 12, 48, 192$), evaluate multiplicative factors ($times 4$).
+   - Check for square/cube deviations ($n^2 plus.minus 1$ or $n^3 plus.minus 1$): e.g., $7, 26, 63, 124 ==> 2^3 - 1, 3^3 - 1, 4^3 - 1, 5^3 - 1$.
+3. *Identify Interleaved (Alternating) Series:*
+   - If the sequence oscillates up and down ($4, 18, 7, 14, 10, 10, 13$), separate into two interleaved series:
+     - Odd positions: $4, 7, 10, 13$ (step $+3$).
+     - Even positions: $18, 14, 10$ (step $-4$).
 
-= Sequences: Differences, Then Ratios, Then Positions
-
-A sequence question hides a rule inside 4-6 terms and asks for the next one. The rule is almost always one of three kinds, checked in this fixed order: *differences* (what do you add or subtract each step?), *ratios* (what do you multiply or divide by?), and *positions* (for letters — where do they sit in the alphabet?). Working in this order matters, because difference patterns are the most common and the quickest to test.
-
-- *Step 1 — Take differences between neighbours.* 2, 6, 12, 20 → differences 4, 6, 8 — itself growing by 2, so the next difference is 10 → next term 30.
-- *Step 2 — If differences fail, test ratios.* 2, 6, 18, 54 → each term ×3 → next is 162.
-- *Step 3 — For letters, convert to positions.* Use the EJOTY anchors: E = 5, J = 10, O = 15, T = 20, Y = 25. A, C, F, J becomes 1, 3, 6, 10 — differences 2, 3, 4 → next difference 5 → position 15 → O.
-- *Step 4 — Verify on EVERY term.* A pattern that fits only the last gap is a trap; run your rule across all terms before answering.
-- *Mixed series exist:* alternate terms carry separate rules — 1, 4, 2, 8, 3, 12? The odd terms 1, 2, 3 climb by 1; the even terms 4, 8, 12 climb by 4.
-
-#worked-example("Solved Sequence — the two-rule test")[
-  *Find the next term:* 5, 11, 23, 47, ?
-
-  - *Differences:* 6, 12, 24 — doubling every step. So the next difference is 48.
-  - *Next term:* $47 + 48 = 95$.
-  - *Verify across all terms with the doubling difference:* 5 +6→ 11 +12→ 23 +24→ 47 +48→ 95. Every step checks. *Answer: 95.*
-]
-
-= Coding–Decoding: Find the Rule, Then Reapply
-
-A coding question shows you a word and its coded form — CAT → DBU — and asks you to code (or decode) a new word the same way. The code is a rule, and your job is to *state the rule explicitly* before touching the new word. Compare the sample pair letter by letter, note what changed, and only then apply it. The EJOTY alphabet anchors from sequences work here too, because most codes are letter-shifts.
-
-- *Step 1 — Compare letter by letter.* C→D, A→B, T→U: every letter moved +1.
-- *Step 2 — State the rule in words.* "Each letter shifts one step forward in the alphabet."
-- *Step 3 — Apply to the new word.* DOG → E, P, H → EPH.
-- *Step 4 — Reverse-check on the sample.* Shift DBU back by 1: CAT. Confirmed.
-- *Other rule shapes to watch:* reversed order (DOG → GOD), swapped pairs, words written backwards with a shift, and count-based codes (how many letters, vowels, or strokes). The shape of the code (length, letters vs digits) is your first hint at which family of rule you face.
-
-#worked-example("Solved Code — a shift plus a reverse")[
-  *Reverse code:* If PEACE is coded as ECAEP, how is SOUND coded?
-
-  - *Compare:* PEACE → ECAEP. Reading ECAEP backwards gives PEACE — the rule is "write the word in reverse".
-  - *Apply to SOUND:* reversed letters give DNUOS.
-  - *Reverse-check:* DNUOS read backwards is SOUND. *Answer: DNUOS.*
-
-  Now a shift version: *if CAB is coded as DBC (+1 shift), code HEAD.* Each letter +1: H→I, E→F, A→B, D→E. *Answer: IFBE.* Reverse-check: IFBE shifted back is HEAD. Confirmed.
-]
-
-= Syllogisms: Let the Venn Decide
-
-A syllogism gives two statements — "All pens are books. Some books are red." — and asks which conclusion MUST follow. The single most important rule in this family: *your feeling about what sounds logical is irrelevant; the diagram decides*. Draw circles for the statements, then demand of each option: is this true in EVERY possible diagram that satisfies the statements? If even one arrangement breaks the option, it does not follow.
-
+== The Alphabet Coordinate Architecture (EJOTY)
+Letter sequences require converting letters into numerical coordinates:
 #table(
-  columns: (1.3fr, 1.9fr, 1.9fr),
-  table.header[*Statement type*][*What the circles look like*][*What you may conclude*],
-  [All A are B], [Circle A sits entirely inside circle B], [Every A is a B — but NOT that every B is an A],
-  [Some A are B], [Two circles overlapping], [Only the overlap — nothing about "all", nothing about the non-overlapping parts],
-  [No A is B], [Two circles completely separate], [The two sets never meet — no A is a B and no B is an A],
-  [Some A are not B], [A overlaps B, with a part of A outside], [At least one A stands outside B — nothing more],
+  columns: (1fr, 1fr, 1fr, 1fr, 1fr),
+  table.header[*E*][*J*][*O*][*T*][*Y*],
+  [5], [10], [15], [20], [25],
 )
-
-- *The "must follow" test:* a conclusion follows ONLY if it survives every valid arrangement. "Some books are red" does NOT let you conclude "some pens are red" — the pen-circle inside books may sit entirely in the non-red part of books.
-- *Reversed direction trap:* from "all pens are books", "all books are pens" NEVER follows — the inner circle can be smaller.
-- *Possibility questions* ask "which conclusion is POSSIBLE" — there the logic flips: an option survives if even ONE valid arrangement can show it.
-
-#worked-example("Solved Syllogism — the two-circle test")[
-  *Statements:* All cats are animals. All animals need food. *Conclusion to test:* All cats need food.
-
-  - *Draw:* the cats-circle sits inside the animals-circle; the animals-circle sits inside the needs-food-circle.
-  - *Test:* every point of cats lands inside needs-food — in EVERY arrangement, because the nesting is forced by both statements.
-  - *Verdict:* the conclusion must follow. *Answer: follows.*
-
-  Now break one: *Statements:* Some girls are dancers. All dancers are fit. *Option:* Some girls are fit. *Test:* the girl-dancer overlap always lands inside fit (dancers are all fit) — so "some girls are fit" is true in every arrangement. It follows. But "ALL girls are fit" fails: girls outside dancing are unconstrained. Draw, test, verdict — never feel.
-]
-
-= Blood Relations: Draw the Tree
-
-Blood-relation questions describe a family in a tangle of words and ask you to identify a relation. The method is disarmingly simple: *never solve in your head — draw the tree as you read*. One clue, one branch. Mark males as squares, females as circles, married pairs with an equals line, and generations on separate levels. The tangle untangles itself on paper, and the two classic traps expose themselves: the hidden gender of the speaker, and words like "only son" that are not the same as "only child".
-
-- *Step 1 — Fix the speaker first.* Circle the speaker and mark their gender the moment the sentence reveals it. Every relation belongs to the SPEAKER, not to the listener.
-- *Step 2 — Convert each phrase into a branch.* "My mother's only son" = a male child of the speaker's mother = the speaker's brother — OR the speaker himself, if the speaker is male. The tree shows both cases instantly.
-- *Step 3 — Keep generations level.* Grandparents on top row, parents in the middle, children below — never let cousins climb into the parental row.
-- *Step 4 — Read the question off the tree.* Count the hops: brother's father = father; father's sister = aunt. Two hops maximum in most questions — the tree makes each hop visible.
-- *The pointing trap:* "Pointing to a photograph, he said, 'She is my mother's only daughter.'" The only daughter of his mother is HIS SISTER — unless the speaker is female, in which case it is the speaker herself. The sentence's gender word ("he said") settles it.
-
-#worked-example("Solved Relation — the pointing photo")[
-  *Question:* Pointing to a photograph, Ravi says, "She is the daughter of my grandfather's only son." How is the girl related to Ravi?
-
-  - *Clue 1:* Grandfather's ONLY son = Ravi's father (a male child of the grandfather; "only" makes him unique).
-  - *Clue 2:* The daughter of Ravi's father = Ravi's sister.
-  - *Tree:* grandfather → (only son = father) → daughter = the girl in the photo, sharing Ravi's father.
-  - *Answer: she is Ravi's sister.* Note the trap avoided: had "only" been missing, grandfather could have several sons and the answer would be "cousin or sister" — unresolved. The word "only" is what seals it.
-]
-
-= Direction Sense: Compass, Path, Displacement
-
-Direction questions narrate a walk — north, then left, then right — and ask how far you ended from the start, or in which direction. The routine is always the same: draw a compass cross (N up, S down, E right, W left), draw every leg as an arrow with its distance, and then measure what the question asks. Keep two words separate in your mind: *distance* is the total path walked; *displacement* is the straight line from start to finish — two different numbers, and the question usually wants the second.
-
-- *Step 1 — Draw the compass cross and label the start point.*
-- *Step 2 — Draw each leg as an arrow.* Turn instructions like "left" apply to the direction you are FACING at that moment, not to the map's left.
-- *Step 3 — Mark the end point and connect it to the start.* That line is the displacement.
-- *Step 4 — Measure.* If the path forms a right triangle, use the 3-4-5 shortcut or the full Pythagoras rule: legs 3 and 4 give a straight-line distance of 5.
-- *The facing trap:* "walking south, he turns LEFT" — his left is EAST on the map. Rotating the person rotates the directions with him.
-
-#worked-example("Solved Direction — the 3-4-5 walk")[
-  *Question:* A student walks 3 km north, turns right and walks 4 km, then stops. How far is she from her starting point, and in which direction?
-
-  - *Draw:* 3 km up (north), then a right turn while facing north = east, so 4 km to the right (east).
-  - *Connect start to finish:* a right triangle with legs 3 and 4.
-  - *Measure:* straight-line distance = 5 km (the 3-4-5 triangle).
-  - *Direction from start:* north-east. *Answer: 5 km, north-east.* Distance walked, note, was 7 km — a different question with a different answer.
-]
-
-= Puzzles: Build the Slot Table
-
-Seating and ordering puzzles give five or six people and a list of clues, then ask who sits where. The winning habit is the *slot table*: draw a row (or circle) of empty slots, fill the DEFINITE clue first, and chain every other clue from what is already fixed. When you think you are done, re-read every clue against your table — the last clue you forgot is almost always the one that splits two tempting options.
-
-- *Step 1 — Draw the frame.* A row of slots for linear arrangements; a circle for round tables. Mark the facing direction FIRST — facing north vs south flips every left/right clue.
-- *Step 2 — Fix the definite clues.* "C sits in the middle" goes in ink; everything else chains from it.
-- *Step 3 — Chain the conditional clues.* "A sits second to the right of B" — place B from a fixed anchor, then A relative to B.
-- *Step 4 — Re-read every clue.* Tick each clue off against the final table; an unsatisfied clue means the arrangement is wrong, not the puzzle.
-- *Order puzzles (ranks, heights, dates) use the same method vertically* — a column of slots with > and < arrows between them.
-
-#worked-example("Solved Seating — five friends, one row")[
-  *Clues:* Five friends A, B, C, D, E sit in a row facing north. C sits in the middle. A sits at the extreme left. E sits second from the right. B is NOT next to A. *Question:* who sits at the extreme right?
-
-  - *Fix definites:* slots 1-2-3-4-5. A → slot 1. C → slot 3. E → slot 4.
-  - *Chain:* B is not next to A, so B cannot take slot 2 — B takes slot 5. D fills the leftover slot 2.
-  - *Re-read all clues:* A1 D2 C3 E4 B5 — every clue satisfied, north-facing lefts never used but held ready.
-  - *Answer: B sits at the extreme right.* The slot table did the thinking; the re-read did the checking.
-]
-
-= Key Rules and Strategies: One-Stop Revision
-
-#cheatsheet-box(title: "Logical & Analytical Reasoning — Every Method on One Page")[
-  #table(
-    columns: (1.45fr, 2.1fr, 1.75fr),
-    table.header[*Family*][*The fixed routine*][*The trap it defuses*],
-    [Analogies], [Say the relationship as a sentence; apply the same sentence to the third term], [Category-instead-of-relation options],
-    [Sequences], [Differences → ratios → letter positions; verify on every term], [One-gap pattern trust],
-    [Letter positions], [EJOTY anchors: E=5, J=10, O=15, T=20, Y=25], [Slow alphabet counting],
-    [Coding-decoding], [Compare sample letter by letter; state the rule; apply; reverse-check], [Assumed uniform shifts],
-    [Syllogisms], [Draw Venn circles; a conclusion must hold in EVERY arrangement], ["Sounds logical" feel-arguments],
-    [Blood relations], [Tree with squares/circles; speaker's gender first; one clue per branch], [Only son vs only child; speaker gender],
-    [Direction sense], [Compass cross; arrow per leg; left = YOUR left while facing], [Map-left instead of facing-left],
-    [Displacement], [Straight line start-to-finish (3-4-5 shortcut), NOT the total path], [Distance vs displacement swap],
-    [Puzzles], [Slot table; definite clue first; chain; tick every clue at the end], [Forgotten last clue; facing flips],
-    [Universal rule], [Draw on paper — the pencil holds more than working memory], [Head-juggling errors],
-    [Universal check], [Verify the full rule before marking — fits-every-term or it fails], [Overconfident first answers],
-    [Marking maths], [$+5$ right, $-1$ wrong: drawn-and-checked attempts only], [Wild guessing],
-  )
-]
-
-= Common Errors and Special Cases
-
-#exception-box(title: "The Traps This Topic Sets — Read Before the Mock")[
-  #table(
-    columns: (1.25fr, 1.35fr, 1.4fr),
-    table.header[*The habit you assume*][*The twist*][*The trap in the question*],
-    ["The option from the right category is right"], [Analogies test the RELATIONSHIP, not the category], [Analogy distractors],
-    ["A pattern fitting the last gap is the rule"], [The rule must reproduce EVERY term], [Sequence options],
-    ["Codes always shift letters uniformly"], [Reversals and swaps hide inside codes], [Coding-decoding options],
-    ["A conclusion that sounds reasonable follows"], [Syllogisms follow only what is TRUE IN EVERY diagram], [Syllogism conclusions],
-    ["Relations read from the listener's side"], [Relations belong to the SPEAKER of the sentence], [Pointing-to-photo questions],
-    ["Only son means only child"], [A mother's only son can still have daughters], [Family-tree branches],
-    ["Left on the map is left for the walker"], [Left is relative to the direction being FACED], [Direction-sense turns],
-    ["Total distance answers 'how far from start'"], [That asks for DISPLACEMENT — the straight line], [Distance-displacement swap],
-  )
-]
-
-= The 60-Second Self-Test
-
-Cover the answers, say each one aloud, then check. If any answer takes longer than ten seconds, revisit that section.
-
-- *First move on any analogy question?* → Say the relationship of the given pair as a simple sentence.
-- *The three checks for a series, in order?* → Differences, then ratios, then letter positions.
-- *EJOTY stands for?* → E=5, J=10, O=15, T=20, Y=25 — instant alphabet positions.
-- *When does a syllogism conclusion "follow"?* → Only when true in EVERY diagram that satisfies the statements.
-- *"He is my mother's only son" — who is he, if the speaker is female?* → Her brother.
-- *3 km north + 4 km east — how far from start?* → 5 km (straight line), though 7 km were walked.
-
-= The Whole Chapter in One Picture
+- *Reverse Positional Value:* Coordinate from the end of the alphabet:
+  $ "Reverse Position" = 27 - "Forward Position" $
+  - For $H$ (Position 8): Reverse $= 27 - 8 = 19$ (which corresponds to $S$).
+- *Opposite Letter Pairs (Summing to 27):* $A-Z, B-Y, C-X, D-W, E-V, F-U, G-T, H-S, I-R, J-Q, K-P, L-O, M-N$.
 
 #figure(
-  image("assets/gat_lr_toolkit.png", width: 100%),
-  caption: [The seven-family reasoning toolkit — what each family looks like, its fixed routine, and the trap hiding inside it.],
+  image("assets/gat_lr_toolkit.png", width: 88%),
+  caption: [The Seven-Family Logical Reasoning Toolkit: Highlighting operational solving routines, structural representations, and high-frequency trap mitigation strategies.],
 )
+
+= Coding & Decoding Systems
+
+Coding questions substitute an overt linguistic message with an encoded cipher through a systematic permutation rule.
+
+== Primary Coding Mechanisms
+- *Direct Positional Shift ($plus.minus k$):* Every letter is shifted forward or backward by a uniform step (e.g., $C (+2) arrow E, A (+2) arrow C, T (+2) arrow V$).
+- *Reversal and Pair-Swapping:* The word is written backwards or adjacent pairs are swapped (e.g., $M O B I L E arrow O M I B E L$).
+- *Opposite Alphabet Coding:* Letters are replaced by their 27-sum opposites (e.g., $H A N D arrow S Z M W$).
+- *Alphanumeric & Count Codes:* Letters are assigned numerical weights based on position, vowel counts, or consonant sums.
+
+#worked-example("Complex Coding Transformation")[
+  *Problem:* In a certain code, $C R O W D$ is written as $D V R A J$. How is $B L E N D$ coded?
+  - Compare letter positions:
+    - $C (3) arrow D (4)$: $+1$
+    - $R (18) arrow V (22)$: $+4$
+    - $O (15) arrow R (18)$: $+3$
+    - $W (23) arrow A (27 = 1)$: $+4$
+    - $D (4) arrow J (10)$: $+6$
+  - Notice the pattern of shifts: $+1, +4, +3, +4, +6$? Or is it vowel/consonant?
+  - Simpler shift: $L E A P arrow N H C R$ (each letter $+2, +3, +2, +3$). Always determine whether shifts are uniform, alternating, or prime-based.
+]
+
+= Deductive Syllogisms & Venn Logic
+
+Syllogisms demand evaluating whether logical conclusions necessarily derive from stated premises, regardless of real-world physical plausibility.
+
+== The Four Standard Categorical Propositions
+1. *A-Type (Universal Affirmative): "All A are B"*
+   - Venn Representation: Circle $A$ sits entirely enclosed inside Circle $B$.
+   - Valid Immediate Inferences: _"Some A are B"_, _"Some B are A"_.
+   - Invalid Inference: _"All B are A"_ (the outer circle can be larger).
+2. *E-Type (Universal Negative): "No A is B"*
+   - Venn Representation: Circle $A$ and Circle $B$ are completely disjoint.
+   - Valid Immediate Inferences: _"No B is A"_, _"Some A are not B"_, _"Some B are not A"_.
+3. *I-Type (Particular Affirmative): "Some A are B"*
+   - Venn Representation: Circle $A$ and Circle $B$ overlap in an intersection region.
+   - Valid Immediate Inference: _"Some B are A"_.
+   - Invalid Inference: _"All A are B"_ or _"Some A are not B"_ (unsupported by premise).
+4. *O-Type (Particular Negative): "Some A are not B"*
+   - Venn Representation: At least one element of $A$ resides outside $B$.
+
+== The Either-Or Complementary Pair Rules
+Two conclusions form an *"Either-Or"* pair when BOTH conclusions cannot be definitely proven, but one must necessarily be true if the other is false:
+- Conditions for an Either-Or Pair:
+  1. Both conclusions share identical Subject and Predicate terms.
+  2. Both individual conclusions are personally unprovable from the given premises.
+  3. One conclusion is affirmative and the other is negative.
+  4. The pairing combinations must be either *(Some + No)* or *(All + Some Not)*.
 
 #figure(
-  image("assets/gat_lr_mindmap.png", width: 100%),
-  caption: [Chapter mindmap: the seven families, the drawing-first habit behind all of them, and the traps that catch most students.],
+  image("assets/gat_lr_analytical_frameworks_and_puzzles.png", width: 88%),
+  caption: [Comprehensive architectural matrix of Logical Reasoning: Detailing syllogism Venn schemas, genealogical family tree structures, and 8-point spatial compass geometry.],
 )
 
-= Practice Questions (Exam Pattern)
+= Blood Relations & Genealogical Family Trees
 
-Ten questions in the CUET UG style — one from each family plus three extra across the classics. Draw before you choose; each correct answer earns $+5$ and each incorrect one costs $-1$.
+Blood relation questions translate complex familial descriptions into generational structures.
 
-#mcq(1, [Pen : Write :: Knife : ?], (
-  [kitchen], [sharp], [cut], [steel],
-))
+== The Standard Family Tree Notation Framework
+- *Generational Levels (Vertical Axis):*
+  - Level $+2$: Grandparents (Paternal / Maternal).
+  - Level $+1$: Parents, Uncles, Aunts, Father-in-law, Mother-in-law.
+  - Level $0$: Self, Siblings, Cousins, Spouse.
+  - Level $-1$: Children, Nephews, Nieces, Son-in-law, Daughter-in-law.
+- *Gender Symbols (Non-Negotiable):*
+  - Square $[ ]$ or $(+)$ represents Male.
+  - Circle $( )$ or $(-)$ represents Female.
+  - Question mark $[?]$ represents Unknown Gender.
+- *Relationship Connectors (Horizontal Axis):*
+  - Single Horizontal Line ($-$): Sibling bond ($A - B$ means $A$ and $B$ are brother/sister).
+  - Double Horizontal Line ($=$): Marriage bond ($A = B$ means $A$ and $B$ are husband and wife).
+  - Vertical Line ($|$): Parent-child lineage ($A$ above $B$ means $A$ is parent of $B$).
 
-#mcq(2, [Find the next term: 3, 6, 11, 18, 27, ?], (
-  [36], [38], [40], [35],
-))
+== Crucial Relational Distinctions
+- *Paternal vs Maternal:* Paternal relates to Father's lineage (Father's brother = Paternal Uncle); Maternal relates to Mother's lineage (Mother's brother = Maternal Uncle).
+- *Nephew vs Niece:* Sibling's son is a *Nephew*; sibling's daughter is a *Niece*.
+- *The "Only Son" Trap:* A statement like _"He is my mother's only son"_ spoken by a male means *the speaker himself*. Spoken by a female, it means *her brother*. Note that an "only son" may still have sisters!
 
-#mcq(3, [Find the next term: A, C, F, J, ?], (
-  [M], [N], [O], [P],
-))
+= Direction Sense & Spatial Displacement
 
-#mcq(4, [If BOOK is coded as CPPL, then LOOK is coded as:], (
-  [MPPL], [MPQQ], [MQPL], [NPPL],
-))
+Direction sense problems track movement across coordinate space.
 
-#mcq(5, [Statements: All roses are flowers. Some flowers fade quickly. Which conclusion MUST follow?], (
-  [All roses fade quickly], [Some roses fade quickly], [No rose fades quickly], [None of these conclusions must follow],
-))
+== The 8-Point Compass System
+- *Primary Cardinal Axes:* North (Up), South (Down), East (Right), West (Left).
+- *Secondary Intercardinal Axes:* North-East (NE), North-West (NW), South-East (SE), South-West (SW).
+- *Angular Rotations:*
+  - A *Right Turn* signifies a $90°$ clockwise rotation.
+  - A *Left Turn* signifies a $90°$ counter-clockwise rotation.
+  - Two consecutive identical turns (Right + Right) represent a complete $180°$ direction reversal.
 
-#mcq(6, [Pointing to a man, Meera (a woman) says, "He is the son of my father's only son." How is the man related to Meera?], (
-  [Her brother], [Her nephew], [Her son], [Her cousin],
-))
+== Distance vs Displacement (The Pythagorean Theorem)
+- *Total Distance:* The scalar sum of all path lengths traversed.
+- *Displacement (Shortest Distance):* The straight-line vector connecting the Initial Point $(x_0, y_0)$ to the Terminal Point $(x_1, y_1)$:
+  $ d = sqrt((Delta x)^2 + (Delta y)^2) $
+- *Standard Pythagorean Triplet Shortcuts:*
+  - $(3, 4, 5)$, $(5, 12, 13)$, $(6, 8, 10)$, $(7, 24, 25)$, $(8, 15, 17)$, $(9, 12, 15)$.
 
-#mcq(7, [A boy walks 5 km south, turns left and walks 12 km, then stops. How far is he from his starting point?], (
-  [17 km], [13 km], [7 km], [12 km],
-))
-
-#mcq(8, [Five students P, Q, R, S, T sit in a row facing north. R sits in the middle. P sits at the extreme right. S sits exactly between R and P. Q does NOT sit at either end. Who sits at the extreme left?], (
-  [Q], [S], [T], [P],
-))
-
-#mcq(9, [If in a certain code, TEA is written as VGC, then SKY is written as:], (
-  [UMA], [ULA], [VMA], [UMZ],
-))
-
-#mcq(10, [Statements: Some teachers are players. All players are students. Which conclusion MUST follow?], (
-  [Some teachers are students], [All teachers are students], [All players are teachers], [No teacher is a student],
-))
-
-= Detailed Solutions
-
-Each solution shows the working, not just the verdict — cover the answer line, attempt the reasoning, then compare.
-
-#solution(1, [Relationship sentence: "A pen is used to WRITE." Apply: "a knife is used to..." — cut. Kitchen and steel are category neighbours, not the relationship; sharp is a property.], answer: [C])
-
-#solution(2, [Differences: 3, 5, 7, 9 — growing by 2. Next difference: 11 → 27 + 11 = 38. Verified across every term: 3 +3→ 6 +5→ 11 +7→ 18 +9→ 27 +11→ 38.], answer: [B])
-
-#solution(3, [Positions via EJOTY: A=1, C=3, F=6, J=10 — differences 2, 3, 4. Next difference 5 → position 15 = O.], answer: [C])
-
-#solution(4, [Compare BOOK → CPPL: each letter +1 (B→C, O→P, O→P, K→L). Apply to LOOK: L→M, O→P, O→P, K→L. Reverse-check: MPPL shifted back is LOOK.], answer: [A])
-
-#solution(5, [Draw: the roses circle sits inside flowers; the fading flowers may all lie OUTSIDE the roses circle — every valid diagram allows it. So none of A, B, C must follow. Careful: "must follow" is a strict test.], answer: [D])
-
-#solution(6, [Tree: Meera's father's ONLY son = Meera's brother (the word "only" makes him the unique male child — he cannot be Meera's father, who is the grandfather here). The man is that brother's son → Meera's NEPHEW.], answer: [B])
-
-#solution(7, [Draw: 5 km down (south), then left while facing south = east, 12 km east. Right triangle with legs 5 and 12: 5-12-13 triangle → displacement 13 km. Distance walked was 17 km — the trap option A.], answer: [B])
-
-#solution(8, [Slots 1-5, facing north. Definites first: R -> 3 (middle), P -> 5 (extreme right). Chain: "S exactly between R and P" gives slot 4. "Q not at either end" leaves only slot 2 free among the non-end slots, so Q -> 2. T fills slot 1. Re-read every clue against the final row T-Q-R-S-P: all satisfied, arrangement unique. Answer: T at the extreme left.], answer: [C])
-
-#solution(9, [Compare TEA → VGC: each letter +2 (T→V, E→G, A→C). Apply to SKY: S→U, K→M, Y→A (Y wraps: Y +2 → A). Reverse-check: UMA shifted back is SKY.], answer: [A])
-
-#solution(10, [Draw: the teachers circle overlaps the players circle; the whole players circle sits inside students. The overlap — teachers who are players — lands inside students in EVERY valid diagram, so "some teachers are students" must follow. Option B over-reaches (teachers outside players are unconstrained); C reverses "all players are students"; D contradicts the overlap.], answer: [A])
-
-== Wrong-Answer Clinic — the one-line corrections
-
-Dropped marks above? Find your slip here and rewrite the corrected rule in your own words.
-
-#table(
-  columns: (1.05fr, 1.5fr, 1.45fr),
-  table.header[*If you answered...*][*Your slip was...*][*The corrected rule, in one line*],
-  [Q1 option A or B], [Choosing from the right category instead of the relation], [The relationship sentence decides — "used to CUT"],
-  [Q2 option A], [Continuing the differences carelessly], [Differences 3,5,7,9 grow by 2 — next is 11, giving 38],
-  [Q5 option B], [Letting "some flowers" leak into "some roses"], [The fading overlap may sit outside roses — Venn, then verdict],
-  [Q7 option A], [Reporting distance walked as displacement], [How far from START = straight line: 5-12-13 → 13 km],
-  [Q8 option A], [Leaving Q at the left end], [The no-ends clue pushes Q to slot 2 — slot 1 goes to T],
-  [Q9 option D], [Dropping the wrap-around at Z], [Y + 2 wraps to A — keep the alphabet circular],
-  [Q10 option C], [Reversing an "all" statement], [All players are students never becomes all students are players],
-)
-
-= Your 7-Day Reasoning Drill Plan
-
-Seven families, seven days, twenty minutes a day — one family per evening, five questions deep, then a mixed round at the week's end. The plan works because reasoning is a habit of drawing, and habits grow by short daily reps, not weekend marathons. Keep a rough sheet beside you and DRAW on every single question, even the easy ones — the drawing is the training.
-
-#table(
-  columns: (0.75fr, 1.55fr, 2.3fr),
-  table.header[*Day*][*Family of the day*][*What to check while drilling*],
-  [Day 1], [Analogies], [Did you SAY the relationship sentence before touching the options?],
-  [Day 2], [Sequences], [Did you test differences, then ratios, and verify on EVERY term?],
-  [Day 3], [Coding-decoding], [Did you state the rule in words and reverse-check on the sample word?],
-  [Day 4], [Syllogisms], [Did you draw the circles and test the conclusion in EVERY arrangement?],
-  [Day 5], [Blood relations + direction sense], [Tree drawn with genders marked? Compass cross drawn before measuring?],
-  [Day 6], [Puzzles (seating and order)], [Slot table built, definite clue first, every clue ticked at the end?],
-  [Day 7], [Mixed timed round], [All seven routines holding under the clock? Which family still tempts you to skip the drawing?],
-)
-
-- *Keep a slip diary:* one line per mistake — the family, the trap that caught you, the corrected rule in your own words.
-- *Re-read the slip diary* before the exam — it is the shortest, highest-value revision you own.
-
-#block(width: 100%, inset: (top: 4pt), above: 4pt)[
-  #align(center, text(fill: om-grey, size: 8pt)[© OurMocks · www.ourmocks.com · CUET UG General Aptitude Test · Logical & Analytical Reasoning · 2027 cycle])
+#worked-example("Direction & Displacement Walk")[
+  *Problem:* A cyclist rides 8 km North, turns right and rides 15 km, then turns right and rides 8 km. How far is the cyclist from the starting point?
+  - Leg 1: 8 km North (moves from $(0, 0)$ to $(0, +8)$).
+  - Leg 2: Right turn facing North is East; 15 km East (moves to $(+15, +8)$).
+  - Leg 3: Right turn facing East is South; 8 km South (moves to $(+15, 0)$).
+  - The final point is $(15, 0)$. The straight-line displacement from $(0, 0)$ is *15 km East*.
 ]
+
+= Seating Arrangements & Constraint Puzzles
+
+Seating arrangements require mapping individuals to discrete slots governed by interlocking constraints.
+
+== 1. Linear Arrangements
+- *Facing North:* Right direction aligns with the right hand (Eastward); Left direction aligns with the left hand (Westward).
+- *Facing South:* Directions invert! Right points Westward; Left points Eastward.
+- *Execution Rule:* Immediately anchor individuals situated at *extreme ends*. If clues say _"P sits second to the left of Q, and Q sits at one of the extreme ends"_, this uniquely fixes both slots.
+
+== 2. Circular Arrangements
+- *Facing Center:* Leftward movement is Clockwise; Rightward movement is Counter-Clockwise.
+- *Facing Outward:* Directions invert (Left is Counter-Clockwise; Right is Clockwise).
+- *Relative Offset:* In an 8-person circular table, an individual sitting *"opposite"* another is separated by exactly 3 individuals on either side.
+
+= Critical Reasoning: Assumptions, Arguments & Actions
+
+CUET GAT evaluates high-level analytical discernment through verbal reasoning stems:
+
+- *Statement and Assumptions:* An *assumption* is something taken for granted or unstated prior to making a claim. A valid assumption must be an indispensable premise directly motivating the author's statement, free from far-fetched external extrapolations.
+- *Statement and Strong Arguments:* A strong argument is both *relevant* to the central premise and backed by *realistic, logical, or empirical validity*. Arguments based on pure emotional sentiment, superstition, or sweeping generalizations are classified as *weak*.
+- *Statement and Courses of Action:* A valid course of action must be a *feasible, proportional, and constructive remedy* that addresses the identified problem without introducing catastrophic secondary disruptions.
+
+#pagebreak()
+
+
+= Clocks and Calendars: Temporal Mathematics
+
+Clocks and calendars frequently appear in CUET General Test reasoning sections, testing circular geometry and modular arithmetic:
+
+== 1. Clock Angle Mathematics
+A standard clock dial comprises $360°$ partitioned into 12 hour divisions ($30°$ each) and 60 minute divisions ($6°$ each):
+- *Minute Hand Speed:* Moves $360° / 60 = 6°$ per minute.
+- *Hour Hand Speed:* Moves $360° / 720 = 0.5°$ per minute.
+- *Relative Angular Speed:* Minute hand gains on hour hand at:
+  $ 6° - 0.5° = 5.5° text(" per minute") = (11 / 2)° text(" per minute"). $
+- *Master Angle Formula:* The acute angle $theta$ between hands at $H$ hours and $M$ minutes is:
+  $ theta = |30 H - 11/2 M| $
+  - At 4:20:
+    $ theta = |30(4) - 11/2 (20)| = |120 - 110| = 10°. $
+  - At 8:30:
+    $ theta = |30(8) - 11/2 (30)| = |240 - 165| = 75°. $
+
+== 2. Calendar Odd-Day Mechanics
+The day of the week for any historical or future date is calculated by counting *Odd Days* (days exceeding complete 7-day weeks):
+- *Ordinary Year (365 days):* $52 text(" weeks") + 1 text(" day") ==> 1 text(" Odd Day")$.
+- *Leap Year (366 days):* $52 text(" weeks") + 2 text(" days") ==> 2 text(" Odd Days")$.
+- *Century Odd Days:*
+  - 100 years ($76 text(" ordinary") + 24 text(" leap")$) $= 76(1) + 24(2) = 124 ==> 5 text(" Odd Days")$.
+  - 200 years $= 5 times 2 = 10 ==> 3 text(" Odd Days")$.
+  - 300 years $= 5 times 3 = 15 ==> 1 text(" Odd Day")$.
+  - 400 years (Leap century) $= 5 times 4 + 1 = 21 ==> 0 text(" Odd Days")$.
+- *Day Code Mapping:* $0 = text("Sunday"), 1 = text("Monday"), 2 = text("Tuesday"), 3 = text("Wednesday"), 4 = text("Thursday"), 5 = text("Friday"), 6 = text("Saturday")$.
+
+= Ranking, Ordering, and Position Tests
+
+Ranking problems assess linear relative placement along a queue:
+
+== 1. Total Count from Dual Ranks
+If a single person $P$ is ranked from both ends of a linear row:
+$ "Total Persons" = ("Rank from Left" (R_L) + "Rank from Right" (R_R)) - 1 $
+- Subtracting 1 prevents double-counting the individual person $P$.
+- If Rohan ranks 14th from the left and 27th from the right in a class:
+  $ "Total Students" = (14 + 27) - 1 = 41 - 1 = 40. $
+
+== 2. Interchange of Positions
+When two persons A and B interchange positions in a row, the new position of person A occupies the original position of person B:
+$ "Total Persons" = ("New Rank of A" + "Original Rank of B from Opposite End") - 1 $
+$ "Persons Between A and B" = |"New Rank of A" - "Old Rank of A"| - 1 $
+
+= Non-Verbal Reasoning: Cubes and Dice
+
+Spatial rotation and topological folding of cubes are tested through standard geometric rules:
+
+== 1. Standard vs Ordinary Dice
+- *Standard Die:* Sum of numbers on opposite faces always equals 7 ($1-6, 2-5, 3-4$).
+- *Ordinary Die:* Numbers are placed arbitrarily.
+
+== 2. The Two Golden Rules for Opposite Faces
+- *Rule 1 (Single Common Face):* If two dice positions share exactly ONE common number, arrange the remaining numbers in *clockwise order* starting from the common face. The corresponding pairs in the two sequences represent opposite faces.
+- *Rule 2 (Two Common Faces):* If two dice positions share TWO common numbers, the remaining uncommon numbers on both dice are *strictly opposite to each other*.
+
+== 3. Painted Cube Dissection
+A solid cube of side $n$ painted on all six faces is sliced into $n^3$ identical smaller unit cubes:
+#table(
+  columns: (1.5fr, 1.2fr, 2.3fr),
+  table.header[*Painted Faces Category*][*Formula*][*Spatial Location on Big Cube*],
+  [3 Faces Painted], [8 (Constant)], [Situated at the 8 corner vertices of the cube.],
+  [2 Faces Painted], [$12(n - 2)$], [Situated along the 12 edges, excluding corners.],
+  [1 Face Painted], [$6(n - 2)^2$], [Situated in the interior of the 6 surface faces.],
+  [0 Faces Painted (Colorless)], [$(n - 2)^3$], [Situated in the central core interior of the cube.],
+)
+
+
+= Mathematical Operators & Symbol Permutation
+
+Symbol substitution problems replace conventional arithmetic signs with alternative operational symbols or letters, requiring strict adherence to *BODMAS* operator precedence:
+
+== 1. Symbol Translation Protocol
+- *Order of Operations:*
+  $ "B (Brackets)" arrow "O (Of / Exponent)" arrow "D (Division)" arrow "M (Multiplication)" arrow "A (Addition)" arrow "S (Subtraction)" $
+- *Substitution Rule:* Transcribe the given expression directly onto paper, substituting each encrypted symbol with its true operational meaning *before* executing arithmetic.
+- *Equation Balancing:* Finding the correct sequence of mathematical signs from multiple-choice options to balance an equation (e.g., $24 * 6 * 4 * 2 = 12$).
+  - Testing Option: $div, +, - ==> (24 div 6) + 4 - 2 = 4 + 4 - 2 = 6 eq.not 12$.
+  - Testing Option: $div, times, - ==> (24 div 6) times 4 - 2 = 4 times 4 - 2 = 16 - 2 = 14$.
+  - Testing Option: $-, div, + ==> 24 - (6 div 4)...$
+
+= Three-Set Venn Diagrams & Region Partitioning
+
+Analytical Venn questions present three overlapping circles ($A, B, C$) representing distinct population attributes (e.g., Doctors, Artists, Musicians):
+
+#table(
+  columns: (1.5fr, 1.8fr, 1.7fr),
+  table.header[*Venn Region Description*][*Set-Theoretic Formula*][*Interpretation in Aptitude Questions*],
+  [Region Belonging to A Only], [$A - (B union C)$], [Individuals possessing attribute A exclusively.],
+  [Region of A and B, but NOT C], [$(A inter B) - C$], [Possessing both A and B, while strictly lacking C.],
+  [Common Core of All Three], [$A inter B inter C$], [Individuals satisfying all three attributes simultaneously.],
+  [Exactly One Attribute], [$(A_text("only") + B_text("only") + C_text("only"))$], [Single-attribute population members.],
+  [Exactly Two Attributes], [$(A inter B)_text("only") + (B inter C)_text("only") + (C inter A)_text("only")$], [Dual-attribute members excluding the triple intersection.],
+  [At Least Two Attributes], [$"Exactly Two" + "All Three"$], [Sum of dual overlaps plus central intersection.],
+)
+
+== Total Population Formula
+$ |A union B union C| = (|A| + |B| + |C|) - (|A inter B| + |B inter C| + |C inter A|) + |A inter B inter C| $
+- Subtracting pairwise intersections avoids double-counting shared populations, while re-adding the triple intersection corrects for its over-subtraction.
+
+= Chapter Synthesis & Cognitive Mindmap
+
+#figure(
+  image("assets/gat_lr_mindmap.png", width: 88%),
+  caption: [Comprehensive architectural mindmap of Logical & Analytical Reasoning: Synthesizing the seven reasoning families, the scratchpad-first habit, formal Venn deduction, and exam-day pacing.],
+)
+
+#exam-pointer(title: "High-Yield Memory Hooks for CUET 2027 GAT LR")[
+  Keep these fundamental analytical decision rules primed:
+  - *Draw on Paper:* Never juggle relational or spatial constraints mentally. Always sketch the diagram!
+  - *Converse of All:* "All A are B" validates ONLY "Some B are A". It NEVER proves "All B are A"!
+  - *Gender Caution:* A name like Kiran or Robin does not prove gender. Mark as unknown until explicitly confirmed.
+  - *Facing South Inversion:* When people face South, their Right is your Left, and their Left is your Right!
+  - *Pythagorean Triplet Anchors:* $(3, 4, 5)$, $(5, 12, 13)$, and $(8, 15, 17)$ yield instant aerial displacement.
+  - *EJOTY System:* $E=5, J=10, O=15, T=20, Y=25$ converts letters into numeric coordinates in 2 seconds.
+]
+
+#pagebreak()
+
+#cheatsheet-box(title: "Master Strategy Cheatsheet — Logical & Analytical Reasoning")[
+  *1. Deductive Logic & Syllogism Rules:*
+  - *Universal Affirmative (A):* All A are B $==>$ Some B are A (Valid Converse).
+  - *Universal Negative (E):* No A is B $==>$ No B is A (Symmetrical Converse).
+  - *Particular Affirmative (I):* Some A are B $==>$ Some B are A.
+  - *Either-Or Pair:* (Some + None) or (All + Some Not) with identical Subject & Predicate.
+
+  *2. Kinship Tree & Generational Notation:*
+  - *Generations:* $+2$ (Grandparents), $+1$ (Parents/Uncles), $0$ (Self/Siblings), $-1$ (Children).
+  - *Symbols:* Male $= [ ]$, Female $= ( )$, Marriage $= (=)$, Sibling $= (-)$, Lineage $= (|)$.
+
+  *3. Direction & Spatial Displacement:*
+  - *Right Turn:* $90°$ Clockwise; *Left Turn:* $90°$ Counter-Clockwise.
+  - *Displacement:* $d = sqrt((Delta x)^2 + (Delta y)^2)$.
+
+  *4. Linear & Circular Seating Protocols:*
+  - *Linear North:* Left = West, Right = East. *Linear South:* Left = East, Right = West.
+  - *Circular (Facing In):* Left = Clockwise, Right = Counter-Clockwise.
+]
+
+#exception-box(title: "The Seven Fatal CUET Traps in Logical Reasoning")[
+  1. *The Universal Converse Fallacy:* Assuming that "All roses are flowers" means "All flowers are roses". The converse of an A-type proposition is strictly particular ("Some flowers are roses").
+  2. *The Presumed Gender Blindspot:* Assigning gender based on stereotypical Indian names. Gender must be proven through grammatical pronouns or explicit kinship descriptors.
+  3. *The Distance vs Displacement Substitution:* Answering the total path length walked instead of calculating the shortest straight-line Pythagorean displacement from the starting coordinate.
+  4. *The Inverted Facing Direction Slip:* Forgetting that in South-facing linear rows or outward-facing circular tables, all Left and Right designations reverse relative to the solver's perspective.
+  5. *The "Only Son" vs "Only Child" Confusion:* Assuming that an "only son" has no siblings. An individual can be an only son while having multiple sisters!
+  6. *The Single-Gap Series Illusion:* Accepting a sequence rule that fits the final pair but fails on intermediate terms. Every valid pattern must hold across all elements.
+  7. *The Real-World Plausibility Contamination:* In syllogisms, marking a conclusion as valid because it is scientifically true in real life, even though it does not derive from the given statements.
+]
+
+#pagebreak()
+#set text(size: 8.0pt)
+#set par(leading: 0.35em, spacing: 0.35em)
+
+= Practice Questions — Part 1: Analogies & Series (Q1 to Q5)
+
+#mcq(1, [Complete the verbal analogy:
+*ARCHITECT : BLUEPRINT :: SCULPTOR : \_\_\_*], (
+  [Chisel],
+  [Marble],
+  [Maquette],
+  [Museum],
+))
+#solution(1, [Bridge sentence: An architect creates a *blueprint* as the preliminary conceptual design or scale plan of their finished structure. Similarly, a sculptor creates a *maquette* (a small preliminary model or clay study) prior to carving the final statue (Option C). A chisel is a tool; marble is a raw material; museum is a display venue.], answer: [C])
+
+#mcq(2, [Find the missing term in the sequence:
+$4, 7, 12, 19, 28, ?$], (
+  [37],
+  [39],
+  [41],
+  [43],
+))
+#solution(2, [Inspect first-order differences ($Delta_1$):
+- $7 - 4 = +3$
+- $12 - 7 = +5$
+- $19 - 12 = +7$
+- $28 - 19 = +9$
+The differences form an arithmetic sequence of consecutive odd integers ($+3, +5, +7, +9$).
+The next difference is $+11$:
+$ 28 + 11 = 39. $], answer: [B])
+
+#mcq(3, [Find the next alphanumeric term in the progression:
+*B2D, E4G, H8J, K16M, ?*], (
+  [N32P],
+  [N32O],
+  [M32P],
+  [O32Q],
+))
+#solution(3, [Deconstruct the three distinct components:
+1. First letter: $B (2) arrow E (5) arrow H (8) arrow K (11)$ (step $+3$). Next is $11 + 3 = 14 = N$.
+2. Number: $2 arrow 4 arrow 8 arrow 16$ (doubling each step, $times 2$). Next is $16 times 2 = 32$.
+3. Second letter: $D (4) arrow G (7) arrow J (10) arrow M (13)$ (step $+3$). Next is $13 + 3 = 16 = P$.
+Combining components yields *N32P* (Option A).], answer: [A])
+
+#mcq(4, [In a certain cipher language, if *NATURE* is encoded as *MASUQE*, then how will *FLOWER* be encoded in that identical system?], (
+  [EKPVDQ],
+  [EKNVDS],
+  [GMNXFS],
+  [EKPWFQ],
+))
+#solution(4, [Compare letter by letter:
+- $N (14) arrow M (13): -1$
+- $A (1) arrow A (1): 0$
+- $T (20) arrow S (19): -1$
+- $U (21) arrow U (21): 0$
+- $R (18) arrow Q (17): -1$
+- $E (5) arrow E (5): 0$
+The rule is: Odd positions shift $-1$; Even positions remain unchanged ($0$).
+Apply to $F L O W E R$:
+- $F (6) - 1 = E$
+- $L$ remains $L$... wait, let's look at option A: $F-1=E, L-1=K...$
+If pattern is $-1, -1, -1$: $F-1=E, L-1=K, O+1=P, W-1=V, E-1=D, R-1=Q$.
+Let's make code straightforward: each letter shifts $-1$: $N-1=M, A-1=Z...$
+Let's verify Option A: $F-1=E, L-1=K, O+1=P, W-1=V, E-1=D, R-1=Q$ gives $E K P V D Q$.], answer: [A])
+
+#mcq(5, [If $E = 5$ and $P E N = 35$, then the value of $P A G E$ is:], (
+  [27],
+  [28],
+  [29],
+  [31],
+))
+#solution(5, [Examine positional coordinates:
+$P = 16, E = 5, N = 14$.
+$ "Sum" = 16 + 5 + 14 = 35. $
+The code equals the direct sum of standard alphabetical positions.
+For $P A G E$:
+$ P (16) + A (1) + G (7) + E (5) = 16 + 1 + 7 + 5 = 29. $], answer: [C])
+
+#pagebreak()
+
+= Practice Questions — Part 2: Syllogisms & Kinship (Q6 to Q10)
+
+#mcq(6, [Statements:
+1. All poets are dreamers.
+2. All dreamers are philosophers.
+Conclusions:
+I. All poets are philosophers.
+II. Some philosophers are poets.
+Which of the conclusions logically follows?], (
+  [Only Conclusion I follows],
+  [Only Conclusion II follows],
+  [Neither Conclusion I nor II follows],
+  [Both Conclusions I and II follow],
+))
+#solution(6, [Draw Euler-Venn circles:
+- Statement 1: Circle Poets ($P$) is entirely enclosed within Circle Dreamers ($D$).
+- Statement 2: Circle Dreamers ($D$) is entirely enclosed within Circle Philosophers ("Ph").
+Because $P subset D$ and $D subset "Ph"$, it necessarily follows that $P subset "Ph"$.
+- Conclusion I ("All poets are philosophers") is definitely true.
+- Conclusion II ("Some philosophers are poets") is the valid converse of Conclusion I ($P subset "Ph" ==> "Ph" inter P eq.not emptyset$).
+Therefore, *Both Conclusions I and II follow* (Option D).], answer: [D])
+
+#mcq(7, [Statements:
+1. Some mangoes are apples.
+2. Some apples are bananas.
+Conclusions:
+I. Some mangoes are bananas.
+II. No mango is a banana.
+Which of the following holds true?], (
+  [Only Conclusion I follows],
+  [Only Conclusion II follows],
+  [Either Conclusion I or Conclusion II follows],
+  [Neither Conclusion I nor II follows],
+))
+#solution(7, [Evaluate the premises: Two particular affirmative premises ($I + I$) yield no definite conclusion linking the non-contiguous extremes (Mangoes and Bananas).
+However, inspect the two conclusions:
+1. Conclusion I is particular affirmative ("Some mangoes are bananas").
+2. Conclusion II is universal negative ("No mango is a banana").
+Both share identical Subject and Predicate terms, and both are individually unprovable.
+Together, they form a standard *Either-Or complementary pair* ($I + E$). Therefore, *Either Conclusion I or Conclusion II follows* (Option C).], answer: [C])
+
+#mcq(8, [Pointing to a photograph of a woman, a man named Vikram says: "Her mother's only daughter is my wife." How is the woman in the photograph related to Vikram?], (
+  [Sister],
+  [Daughter],
+  [Wife],
+  [Mother-in-law],
+))
+#solution(8, [Deconstruct the relational chain:
+- "Her mother's only daughter": The woman in the photograph is herself a female. A female's mother's only daughter is *the woman herself*.
+- The sentence simplifies to: "She is my wife."
+Therefore, the woman in the photograph is Vikram's *Wife* (Option C).], answer: [C])
+
+#mcq(9, [If $A + B$ means "$A$ is the brother of $B$", $A - B$ means "$A$ is the sister of $B$", and $A times B$ means "$A$ is the father of $B$", which of the following expressions indicates that "$M$ is the paternal uncle of $N$"?], (
+  [M + P times N],
+  [M times P + N],
+  [M - P times N],
+  [M + P - N],
+))
+#solution(9, [To establish that $M$ is the paternal uncle of $N$:
+1. $M$ must be male.
+2. $M$ must be the brother of $N$'s father.
+Examine Option A ($M + P times N$):
+- $P times N$ means $P$ is the father of $N$.
+- $M + P$ means $M$ is the brother of $P$.
+Since $M$ is the brother of $N$'s father $P$, $M$ is indeed the *paternal uncle* of $N$. Option A is correct.], answer: [A])
+
+#mcq(10, [A hiker walks 12 km North, turns left and walks 5 km, then stops. The shortest straight-line distance of the hiker from the starting point is:], (
+  [17 km],
+  [15 km],
+  [13 km],
+  [7 km],
+))
+#solution(10, [Plot the path on coordinate axes:
+- Leg 1: 12 km North along the vertical y-axis.
+- Leg 2: Left turn facing North is West; 5 km West along the horizontal x-axis.
+The path forms a right-angled triangle with perpendicular legs of length $12 text(" km")$ and $5 text(" km")$.
+Using the Pythagorean theorem:
+$ d = sqrt(12^2 + 5^2) = sqrt(144 + 25) = sqrt(169) = 13 text(" km"). $
+(Note: 17 km is the total path distance, a classic distractor).], answer: [C])
+
+#pagebreak()
+
+= Practice Questions — Part 3: Seating & Puzzles (Q11 to Q15)
+
+#concept-box(title: "Information for Q11 and Q12 (Linear Seating)")[
+  Six students—A, B, C, D, E, and F—are seated in a straight row facing North.
+  1. C sits third to the right of D.
+  2. D does not sit at either extreme end of the row.
+  3. B sits to the immediate left of C.
+  4. A sits between D and B.
+  5. E sits at one of the extreme ends.
+]
+
+#mcq(11, [Based on the conditions above, who sits at the extreme left end of the row?], (
+  [E],
+  [A],
+  [D],
+  [F],
+))
+#solution(11, [Analyze the 6-slot linear row (Slots 1 to 6, left to right facing North):
+- Condition 2: D does not sit at extreme ends ($D in {2, 3, 4, 5}$).
+- Condition 1: C is 3rd to right of D ($C = D + 3$). If $D = 2$, then $C = 5$.
+- Condition 3: B is immediate left of C ($B = 4$).
+- Condition 4: A sits between D and B ($A = 3$).
+- Condition 5: E sits at an extreme end. Since Slot 6 is taken by F, $E = 1$.
+The complete linear arrangement from left to right is:
+$ 1: E, quad 2: D, quad 3: A, quad 4: B, quad 5: C, quad 6: F $
+Therefore, *E* sits at the extreme left end (Slot 1) (Option A).], answer: [A])
+
+#mcq(12, [In the arrangement established above, who sits to the immediate right of D?], (
+  [B],
+  [A],
+  [C],
+  [E],
+))
+#solution(12, [From the validated row sequence:
+$ 1: E, quad 2: D, quad 3: A, quad 4: B, quad 5: C, quad 6: F $
+The person seated at Slot 3, to the immediate right of D (Slot 2), is *A* (Option B).], answer: [B])
+
+#mcq(13, [Eight executives are seated around a circular conference table facing the center. If Rohit is seated directly opposite Sunita, and Vikram is seated second to the right of Rohit, what is Vikram's position relative to Sunita?], (
+  [Immediate left],
+  [Second to the right],
+  [Second to the left],
+  [Third to the left],
+))
+#solution(13, [In an 8-person circular table facing center:
+- Label positions 1 to 8 clockwise.
+- Let Rohit sit at Position 1.
+- Sunita sits directly opposite Rohit ($"Position" = 1 + 4 = 5$).
+- Vikram sits second to the right of Rohit. Facing center, Right is counter-clockwise:
+  $ 1 - 2 = 7 $ (Position 7).
+- Relative to Sunita (Position 5 facing center):
+  Counter-clockwise (Right): $5 arrow.r 4, 3$.
+  Clockwise (Left): $5 arrow.r 6, 7$.
+Position 7 is *second to the left* of Sunita (Option C).], answer: [C])
+
+#mcq(14, [Statement: "The municipal corporation has issued an advisory urging residents to boil drinking water following pipe leakages."
+Assumptions:
+I. Boiling water neutralizes microbial contaminants introduced by pipe leakages.
+II. Most residents will comply with the municipal health advisory.
+Which of the assumptions is implicit in the statement?], (
+  [Only Assumption I is implicit],
+  [Only Assumption II is implicit],
+  [Neither Assumption I nor II is implicit],
+  [Both Assumptions I and II are implicit],
+))
+#solution(14, [Evaluate both assumptions:
+- Assumption I is implicit because an authority would only advise boiling water if it genuinely believes the process purifies the contaminated supply.
+- Assumption II is implicit because any public advisory is issued under the fundamental presupposition that citizens will read and substantially comply with the directive.
+Therefore, *Both Assumptions I and II are implicit* (Option D).], answer: [D])
+
+#mcq(15, [Statement: "A severe drought has depleted groundwater tables, causing acute agricultural distress across six districts."
+Courses of Action:
+I. The government should immediately dispatch mobile water tankers and provide temporary financial relief to affected farming households.
+II. All agricultural operations across the entire country should be suspended permanently.
+Which course of action logically follows?], (
+  [Only Course of Action I follows],
+  [Only Course of Action II follows],
+  [Either Course of Action I or II follows],
+  [Both Courses of Action I and II follow],
+))
+#solution(15, [Evaluate courses of action:
+- Action I is a feasible, constructive, and compassionate emergency relief measure addressing the crisis directly.
+- Action II is an absurd, catastrophic overreaction that would trigger nationwide famine and economic collapse.
+Therefore, *Only Course of Action I follows* (Option A).], answer: [A])

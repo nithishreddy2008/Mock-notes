@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CUET GAT: Logical & Analytical Reasoning Framework</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 20px 26px;
+    overflow: hidden;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 10px;
+    margin-bottom: 14px;
+  }
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .brand-badge {
+    background: #071A4D;
+    color: #B8FF34;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .title-group h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .title-group p {
+    font-size: 12px;
+    color: #64748B;
+    margin-top: 1px;
+  }
+  .header-tag {
+    background: #EAF0FF;
+    color: #1F5EFF;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+    border: 1px solid #C7D9FE;
+  }
+
+  .grid-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 12px;
+  }
+
+  .card {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 10px;
+    padding: 13px 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+  }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1.5px solid #F1F5F9;
+    padding-bottom: 7px;
+  }
+
+  .card-title {
+    font-size: 14px;
+    font-weight: 800;
+    color: #071A4D;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+
+  .pill {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+  .pill-blue { background: #EAF0FF; color: #1F5EFF; }
+  .pill-green { background: #F0FDF4; color: #16A34A; }
+  .pill-purple { background: #FAF5FF; color: #9333EA; }
+
+  .rule-item {
+    background: #F8FAFC;
+    border-left: 3px solid #1F5EFF;
+    border-radius: 0 6px 6px 0;
+    padding: 7px 10px;
+  }
+  .rule-item.purple { border-left-color: #9333EA; }
+  .rule-item.green { border-left-color: #16A34A; }
+
+  .rule-name {
+    font-size: 11.5px;
+    font-weight: 800;
+    color: #0F172A;
+    display: flex;
+    justify-content: space-between;
+  }
+  .rule-desc {
+    font-size: 10.5px;
+    color: #475569;
+    line-height: 1.35;
+    margin-top: 2px;
+  }
+  .rule-formula {
+    font-size: 10px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    color: #0369A1;
+    background: #E0F2FE;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-top: 3px;
+    display: inline-block;
+  }
+
+  .bottom-banner {
+    background: #071A4D;
+    border-radius: 10px;
+    padding: 12px 18px;
+    color: #FFFFFF;
+    display: grid;
+    grid-template-columns: 210px 1fr;
+    gap: 16px;
+    align-items: center;
+  }
+
+  .banner-badge-box {
+    border-right: 1.5px solid rgba(255,255,255,0.15);
+    padding-right: 14px;
+  }
+  .banner-badge-box h3 {
+    font-size: 13px;
+    font-weight: 800;
+    color: #B8FF34;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .banner-badge-box p {
+    font-size: 10px;
+    color: #94A3B8;
+    margin-top: 2px;
+  }
+
+  .steps-flex {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+  .step-box {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 6px;
+    padding: 7px 10px;
+  }
+  .step-num {
+    font-size: 10px;
+    font-weight: 800;
+    color: #B8FF34;
+  }
+  .step-title {
+    font-size: 11px;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-top: 1px;
+  }
+  .step-sub {
+    font-size: 9.5px;
+    color: #CBD5E1;
+    margin-top: 2px;
+    line-height: 1.25;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <div class="brand-badge">OURMOCKS · CUET UG GAT (501)</div>
+    <div class="title-group">
+      <h1>Logical & Analytical Reasoning Architecture</h1>
+      <p>Formal Deductive Frameworks, Seating Geometry, and Coded Relational Trees</p>
+    </div>
+  </div>
+  <div class="header-tag">Reasoning Core Syllabus</div>
+</div>
+
+<div class="grid-3">
+
+  <!-- Column 1: Syllogisms & Formal Deduction -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">1. Deductive Syllogisms</div>
+      <div class="pill pill-blue">Venn Logic</div>
+    </div>
+
+    <div class="rule-item">
+      <div class="rule-name">A-Type: All A are B</div>
+      <div class="rule-desc">Universal Affirmative. Circle A is completely subsumed within Circle B. Does NOT imply "All B are A".</div>
+      <div><span class="rule-formula">Valid Converse: Some B are A</span></div>
+    </div>
+
+    <div class="rule-item">
+      <div class="rule-name">E-Type: No A is B</div>
+      <div class="rule-desc">Universal Negative. Complete disjoint separation between sets A and B. Fully symmetrical.</div>
+      <div><span class="rule-formula">Valid Converse: No B is A</span></div>
+    </div>
+
+    <div class="rule-item">
+      <div class="rule-name">I-Type: Some A are B</div>
+      <div class="rule-desc">Particular Affirmative. Overlapping intersection. Does NOT guarantee "Some A are not B".</div>
+      <div><span class="rule-formula">Valid Converse: Some B are A</span></div>
+    </div>
+
+    <div class="rule-item">
+      <div class="rule-name">Either-Or Complementary Pairs</div>
+      <div class="rule-desc">Two individually unprovable conclusions share identical Subject-Predicate: (All + Some Not) or (Some + None).</div>
+      <div><span class="rule-formula">Either Concl I or Concl II follows</span></div>
+    </div>
+  </div>
+
+  <!-- Column 2: Blood Relations & Coded Logic -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">2. Relational Hierarchies</div>
+      <div class="pill pill-purple">Family Trees</div>
+    </div>
+
+    <div class="rule-item purple">
+      <div class="rule-name">Generation Level Mapping</div>
+      <div class="rule-desc">Grandparents (+2) → Parents/Uncles (+1) → Self/Siblings (0) → Children (-1) → Grandchildren (-2).</div>
+      <div><span class="rule-formula">Vertical = Gen; Horizontal = Siblings</span></div>
+    </div>
+
+    <div class="rule-item purple">
+      <div class="rule-name">Gender Neutrality Rule</div>
+      <div class="rule-desc">Never deduce gender from proper names (e.g. Kiran, Robin). Mark [+] for male, [-] for female, [?] until proven.</div>
+      <div><span class="rule-formula">Spouses: [A] = [B] (Double Bond)</span></div>
+    </div>
+
+    <div class="rule-item purple">
+      <div class="rule-name">Paternal vs Maternal Roots</div>
+      <div class="rule-desc">Father's side: Paternal Uncle/Aunt. Mother's side: Maternal Uncle/Aunt. Uncle's child = Cousin (never nephew).</div>
+      <div><span class="rule-formula">Nephew/Niece = Sibling's child</span></div>
+    </div>
+
+    <div class="rule-item purple">
+      <div class="rule-name">Coded Blood Chains</div>
+      <div class="rule-desc">Decode symbols right-to-left or step-by-step: <code>P + Q × R ÷ S</code>. Map generation shifts algebraically.</div>
+      <div><span class="rule-formula">A + B = Father (+1); A × B = Brother (0)</span></div>
+    </div>
+  </div>
+
+  <!-- Column 3: Seating & Directional Geometry -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">3. Spatial & Directional</div>
+      <div class="pill pill-green">Positional Geometry</div>
+    </div>
+
+    <div class="rule-item green">
+      <div class="rule-name">Circular Seating Concord</div>
+      <div class="rule-desc">Facing Center: Left = Clockwise, Right = Counter-Clockwise. Facing Outward: Directions invert exactly.</div>
+      <div><span class="rule-formula">Facing Center: Left = CW; Right = CCW</span></div>
+    </div>
+
+    <div class="rule-item green">
+      <div class="rule-name">Linear Row Constraints</div>
+      <div class="rule-desc">Facing North: Left = West, Right = East. Facing South: Left = East, Right = West. Anchor definite end-seats first.</div>
+      <div><span class="rule-formula">Extreme Ends = Non-Negotiable Anchors</span></div>
+    </div>
+
+    <div class="rule-item green">
+      <div class="rule-name">8-Point Cardinal Compass</div>
+      <div class="rule-desc">N, S, E, W + NE, NW, SE, SW. Right turn = 90° clockwise; Left turn = 90° counter-clockwise.</div>
+      <div><span class="rule-formula">Two Consecutive Turns (R+R) = 180° Flip</span></div>
+    </div>
+
+    <div class="rule-item green">
+      <div class="rule-name">Pythagorean Displacement</div>
+      <div class="rule-desc">Shortest aerial distance from starting point to destination using right-angled triangle vectors.</div>
+      <div><span class="rule-formula">Displacement d = √(Δx² + Δy²)</span></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Bottom Strip: 4-Step Operational Solving Protocol -->
+<div class="bottom-banner">
+  <div class="banner-badge-box">
+    <h3>Reasoning Protocol</h3>
+    <p>Algorithmic 4-Step Workflow for Logical Precision</p>
+  </div>
+  <div class="steps-flex">
+    <div class="step-box">
+      <div class="step-num">STAGE 01</div>
+      <div class="step-title">Diagram Before Eyeing</div>
+      <div class="step-sub">Sketch physical Venn circles, tree nodes, or compass axes before reading options.</div>
+    </div>
+    <div class="step-box">
+      <div class="step-num">STAGE 02</div>
+      <div class="step-title">Anchor Certainty First</div>
+      <div class="step-sub">Lock clues that provide absolute positions (e.g., "A sits 2nd from right end").</div>
+    </div>
+    <div class="step-box">
+      <div class="step-num">STAGE 03</div>
+      <div class="step-title">Case Branching</div>
+      <div class="step-sub">If ambiguous, run parallel Case 1 and Case 2; one branch will rapidly invalidate.</div>
+    </div>
+    <div class="step-box">
+      <div class="step-num">STAGE 04</div>
+      <div class="step-title">Definite Deduction</div>
+      <div class="step-sub">Ensure the conclusion holds across all valid Venn diagrams without speculation.</div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
