@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Bond Valuation & Loan Amortization Mechanics</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 22px 28px;
+    overflow: hidden;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 10px;
+    margin-bottom: 14px;
+  }
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .brand-badge {
+    background: #071A4D;
+    color: #B8FF34;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .title-group h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .title-group p {
+    font-size: 12px;
+    color: #64748B;
+    margin-top: 1px;
+  }
+  .header-tag {
+    background: #EFF6FF;
+    color: #1F5EFF;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 6px;
+    border: 1px solid #BFDBFE;
+  }
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    height: 750px;
+  }
+  .panel {
+    background: #FFFFFF;
+    border-radius: 12px;
+    border: 1px solid #E2E8F0;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .panel-title {
+    font-size: 15px;
+    font-weight: 800;
+    color: #071A4D;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 2px solid #F1F5F9;
+    padding-bottom: 8px;
+  }
+  .dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+  }
+  .dot-blue { background: #1F5EFF; }
+  .dot-green { background: #16A34A; }
+  .formula-card {
+    background: #071A4D;
+    border-radius: 10px;
+    padding: 12px 14px;
+    color: #FFFFFF;
+  }
+  .formula-card .f-title {
+    font-size: 11.5px;
+    font-weight: 700;
+    color: #B8FF34;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .formula-card .f-math {
+    font-family: "Cambria Math", Georgia, serif;
+    font-size: 15px;
+    color: #FFFFFF;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(184,255,52,0.3);
+    border-radius: 6px;
+    padding: 7px 10px;
+    margin-bottom: 6px;
+  }
+  .formula-card .f-math b {
+    color: #B8FF34;
+  }
+  .formula-card .f-desc {
+    font-size: 11px;
+    color: #C9D4EE;
+    line-height: 1.35;
+  }
+  .content-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 11.5px;
+  }
+  .content-table th {
+    background: #F1F5F9;
+    color: #071A4D;
+    font-weight: 700;
+    text-align: left;
+    padding: 6px 8px;
+    border-bottom: 1.5px solid #CBD5E1;
+  }
+  .content-table td {
+    padding: 6px 8px;
+    border-bottom: 1px solid #E2E8F0;
+    color: #334155;
+    line-height: 1.3;
+  }
+  .content-table tr:nth-child(even) {
+    background: #F8FAFC;
+  }
+  .badge-par { background: #E0E7FF; color: #3730A3; font-weight: 700; padding: 2px 6px; border-radius: 4px; font-size: 10.5px; }
+  .badge-prem { background: #DCFCE7; color: #15803D; font-weight: 700; padding: 2px 6px; border-radius: 4px; font-size: 10.5px; }
+  .badge-disc { background: #FEE2E2; color: #B91C1C; font-weight: 700; padding: 2px 6px; border-radius: 4px; font-size: 10.5px; }
+  .box-note {
+    background: #F8FAFC;
+    border-left: 3.5px solid #1F5EFF;
+    border-radius: 0 8px 8px 0;
+    padding: 8px 12px;
+    font-size: 11.5px;
+    color: #1E293B;
+    line-height: 1.35;
+  }
+  .box-note b { color: #071A4D; }
+  .trap-card {
+    background: #FFF1F2;
+    border: 1px solid #FECDD3;
+    border-left: 3.5px solid #E11D48;
+    border-radius: 0 8px 8px 0;
+    padding: 8px 12px;
+    font-size: 11px;
+    color: #9F1239;
+    line-height: 1.35;
+  }
+  .trap-card b { color: #881337; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <div class="brand-badge">OurMocks Core System</div>
+    <div class="title-group">
+      <h1>Bond Valuation & Loan Amortization Architecture</h1>
+      <p>NTA CUET (UG) Section B2 · Unit VII Financial Mathematics Analytical Framework</p>
+    </div>
+  </div>
+  <div class="header-tag">Section B2 Applied Math</div>
+</div>
+
+<div class="grid-2">
+  <!-- Left Panel: Bond Valuation & YTM Dynamics -->
+  <div class="panel">
+    <div class="panel-title">
+      <span class="dot dot-blue"></span>
+      1. Bond Pricing, Yield to Maturity (YTM) & Pricing Relationships
+    </div>
+
+    <div class="formula-card">
+      <div class="f-title">Intrinsic Bond Valuation Formula (PV Model)</div>
+      <div class="f-math">
+        V₀ = C · [ (1 - (1 + r)⁻ⁿ) / r ] + F / (1 + r)ⁿ
+      </div>
+      <div class="f-desc">
+        Where <b>C</b> = Periodic coupon payment (Coupon Rate × F), <b>F</b> = Face/Par value, <b>r</b> = Market yield (YTM per period), and <b>n</b> = Total coupon periods to maturity.
+      </div>
+    </div>
+
+    <table class="content-table">
+      <thead>
+        <tr>
+          <th>Relationship</th>
+          <th>Bond Market Price (V₀)</th>
+          <th>Valuation Status</th>
+          <th>Capital Gain / Loss</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>Coupon Rate = YTM</b></td>
+          <td><b>V₀ = Face Value (F)</b></td>
+          <td><span class="badge-par">At Par</span></td>
+          <td>Zero capital gain; return equals coupon</td>
+        </tr>
+        <tr>
+          <td><b>Coupon Rate &gt; YTM</b></td>
+          <td><b>V₀ &gt; Face Value (F)</b></td>
+          <td><span class="badge-prem">At Premium</span></td>
+          <td>Capital loss over life amortized by high coupons</td>
+        </tr>
+        <tr>
+          <td><b>Coupon Rate &lt; YTM</b></td>
+          <td><b>V₀ &lt; Face Value (F)</b></td>
+          <td><span class="badge-disc">At Discount</span></td>
+          <td>Capital appreciation offsets lower coupon payouts</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="box-note">
+      <b>Inverse Price-Yield Relationship:</b> Bond prices vary inversely with market interest rates. When market yield (YTM) rises, bond price falls ($dV/dr < 0$). For zero-coupon bonds, $C = 0 \implies V_0 = F / (1 + r)^n$.
+    </div>
+
+    <div class="trap-card">
+      <b>CUET Trap Alert (Semi-Annual Coupon Frequency):</b> If coupons are paid semi-annually: (1) Periodic coupon $C = (c \cdot F) / 2$, (2) Periodic yield $r = \text{YTM} / 2$, and (3) Number of periods doubles to $2n$. Never forget to halve the rate and double the tenure!
+    </div>
+  </div>
+
+  <!-- Right Panel: Sinking Fund vs Amortization -->
+  <div class="panel">
+    <div class="panel-title">
+      <span class="dot dot-green"></span>
+      2. Sinking Fund Accumulation vs Loan Amortization Schedule
+    </div>
+
+    <div class="formula-card">
+      <div class="f-title">Sinking Fund vs EMI Mathematical Equations</div>
+      <div class="f-math">
+        Sinking Fund Deposit: R = A · [ i / ((1 + i)ⁿ - 1) ]
+      </div>
+      <div class="f-math">
+        EMI (Reducing Balance): E = P · [ i(1 + i)ⁿ / ((1 + i)ⁿ - 1) ]
+      </div>
+      <div class="f-desc">
+        <b>Sinking Fund:</b> Generates future corpus A by end-of-period deposits. <b>EMI:</b> Extinguishes loan principal P today through uniform installments containing both interest and principal repayment.
+      </div>
+    </div>
+
+    <table class="content-table">
+      <thead>
+        <tr>
+          <th>Dimension</th>
+          <th>Sinking Fund Schedule</th>
+          <th>Loan Amortization (EMI)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>Fundamental Objective</b></td>
+          <td>Accumulating future corpus to retire debt/replace asset</td>
+          <td>Systematic liquidation of an existing debt liability</td>
+        </tr>
+        <tr>
+          <td><b>Cash Flow Timing</b></td>
+          <td>Annuity ordinary (deposits grow via compound interest)</td>
+          <td>Equal periodic payments covering interest + principal</td>
+        </tr>
+        <tr>
+          <td><b>Interest Component</b></td>
+          <td>Interest earned increases progressively each period</td>
+          <td>Interest paid decreases progressively as principal drops</td>
+        </tr>
+        <tr>
+          <td><b>Principal Component</b></td>
+          <td>Uniform periodic deposit ($R$) added each period</td>
+          <td>Principal repayment increases each period ($P_t > P_{t-1}$)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="box-note">
+      <b>Amortization Breakdown Property:</b> In any installment $t$, $\text{EMI} = \text{Interest}_t + \text{Principal Repaid}_t$. Since outstanding balance decreases each month, the interest slice shrinks while the equity/principal slice expands exponentially.
+    </div>
+
+    <div class="trap-card">
+      <b>CUET Trap Alert (Flat Rate vs Reducing Balance):</b> Flat interest computes interest on the original loan $P$ for the entire term: $\text{EMI}_{\text{flat}} = (P + P \cdot r \cdot t) / n$. Reducing balance computes interest strictly on the remaining principal balance, resulting in a substantially lower effective cost.
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

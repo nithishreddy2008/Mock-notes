@@ -2,279 +2,617 @@
 
 #show: om-doc.with(
   exam: "CUET UG",
-  subject: "Mathematics",
+  subject: "Applied Mathematics",
   topic-title: "Financial Mathematics",
-  subtitle: "Perpetuity, Sinking Funds, EMI, Returns, CAGR, Depreciation and Bonds · Section B2 VII · CUET UG 2027 Cycle Notes",
+  subtitle: "Perpetuity, Sinking Funds, EMI, CAGR, Depreciation & Bond Valuation · Section B2 Unit VII",
 )
 
-= Syllabus Alignment
+= Syllabus Alignment & Exam Blueprint
+
+In the NTA CUET (UG) Applied Mathematics examination, *Financial Mathematics* (Unit VII of Section B2) forms a heavily weighted, high-scoring section comprising *6 to 8 questions* (30 to 40 marks). Every problem evaluates practical computational fluency, precise conversion of interest periods, and sharp conceptual mastery of time-value-of-money mathematics.
 
 #table(
-  columns: (0.95fr, 1.9fr, 1.25fr),
-  table.header[*Sub-topic*][*Official syllabus pointer (NTA CUET(UG) 2026 syllabus — Mathematics/Applied Mathematics (319), the current 2027 baseline)*][*Skills the questions test*],
-  [*Perpetuity and sinking funds*], [
-    "Perpetuity, Sinking Funds: Explain the concept of perpetuity and sinking fund. Calculate perpetuity. Differentiate between sinking fund and saving account." (Section B2 Applied Mathematics Unit VII)
-  ], [
-    Pricing an endless income; sizing deposits for a future liability.
-  ],
-  [*EMI*], [
-    "Calculation of EMI: Explain the concept of EMI. Calculate EMI using various methods." (Section B2 Applied Mathematics Unit VII)
-  ], [
-    Period-rate conversion; reducing-balance EMI computation.
-  ],
-  [*Returns and CAGR*], [
-    "Calculation of Returns, Nominal Rate of Return: Explain the concept of rate of return and nominal rate of return. Calculate rate of return and nominal rate of return. Compound Annual Growth Rate: Understand the concept of Compound Annual Growth Rate. Differentiate between Compound Annual Growth rate and Annual Growth Rate. Calculate Compound Annual Growth Rate." (Section B2 Applied Mathematics Unit VII)
-  ], [
-    Return percentages including dividends; CAGR vs AGR distinction.
-  ],
-  [*Linear depreciation*], [
-    "Linear method of Depreciation: Concept of linear method of Depreciation. Interpret cost, residual value and useful life of an asset from the given information." (Section B2 Applied Mathematics Unit VII)
-  ], [
-    Equal-slice depreciation schedules; book value year by year.
-  ],
-  [*Bond valuation*], [
-    "Valuation of Bonds: Concept of bond and related terms. Value of bond using present value approach." (Section B2 Applied Mathematics Unit VII)
-  ], [
-    Discounting coupons and face value at the market rate.
-  ],
+  columns: (1.2fr, 2fr, 1.4fr),
+  stroke: 0.5pt + om-navy.lighten(70%),
+  fill: (col, row) => if row == 0 { om-navy-soft } else if calc.odd(row) { om-blue-soft.lighten(60%) } else { white },
+  table.header[*Sub-Topic*][*Official NTA Syllabus Coverage*][*High-Yield CUET Focus*],
+  [*Perpetuity & Sinking Funds*], [Concept of perpetuity and sinking fund; calculating ordinary and growing perpetuity; difference between sinking fund and savings account; sizing periodic sinking fund deposits.], [Infinite series summation $A/i$; sinking fund factor $i/((1+i)^n - 1)$; earmarked legal reserve vs general savings.],
+  [*EMI Computations*], [Equated Monthly Installments; reducing-balance method vs flat-rate method; amortization schedule; splitting installment into interest and principal components.], [Converting annual rate to monthly period rate ($i = r/12$); loan balance recurrence; effective vs flat interest rate.],
+  [*Returns, Nominal Rate & CAGR*], [Calculation of rate of return; nominal rate of return vs effective annual rate; Compound Annual Growth Rate (CAGR); CAGR vs Annual Growth Rate (AGR).], [Capital gains plus dividend yield; geometric mean growth $(V_n / V_0)^(1/n) - 1$; volatility drag in multi-year returns.],
+  [*Linear Depreciation*], [Linear (straight-line) depreciation method; cost, residual (scrap) value, and useful life; depreciation rate; book value schedule over asset life.], [Depreciable base $(C - S)$; linear annual deduction $(C - S)/n$; book value after $t$ years $C - t D$.],
+  [*Bond Valuation*], [Bond terminology: Face value, coupon rate, coupon payment, maturity, Yield to Maturity (YTM); present value model of coupon bonds and zero-coupon bonds.], [Bond pricing formula $V_0 = C["PVIFA"] + F["PVIF"]$; par vs premium vs discount conditions; inverse yield-price relation.],
 )
 
-#exam-pointer[
-  CUET UG pattern (NTA official information bulletin, 2026 cycle — the current 2027
-  baseline): each subject paper carries *50 compulsory questions* in *60 minutes*,
-  with $+5$ for every correct answer and $-1$ for every incorrect answer. The 2026
-  syllabus closes *Section B2 Applied Mathematics* with this unit — six money
-  formulas, each with a one-line "when does it fire" trigger, and every numeric
-  answer rounding to clean two-decimal rupee figures.
+#exam-pointer(title: "CUET Exam Scoring Strategy — Applied Financial Mathematics")[
+  Applied Financial Mathematics questions in CUET reward formula discipline. Over 75% of calculation mistakes arise from two pitfalls: (1) using an annual percentage rate $r$ directly in an EMI or semi-annual bond formula without dividing by compounding frequency ($m=12$ or $m=2$), and (2) applying percentages to the wrong base (e.g., computing depreciation on initial cost without subtracting salvage value). Master the period-conversion rules first.
 ]
 
-= Perpetuity — the Price of an Endless Income
+---
 
-A *perpetuity* is an annuity that never ends: the same payment $A$, forever, at interest rate $i$ per period. Endless sounds priceless, but the formula is disarmingly small:
+= 1. Perpetuity — Valuing Infinite Cash Flows
+
+== Definition and Mathematical Formulation
+
+A *perpetuity* is an annuity in which periodic cash flows continue indefinitely ($n -> oo$). Since the cash flow stream has no terminal date, it has no finite future value; however, because of discounting, it possesses a finite, well-defined *Present Value ($"PV"$)*.
+
+Let an ordinary perpetuity provide a periodic payment $A$ at the end of each period, with discount rate $i$ per compounding period. The present value is the sum of an infinite geometric progression:
+$ "PV" = A/(1+i) + A/(1+i)^2 + A/(1+i)^3 + dots = sum_(k=1)^oo A/(1+i)^k $
+Since $1/(1+i) < 1$ for any positive interest rate $i > 0$, the sum of this infinite series converges to:
+$ "PV" = (A/(1+i)) / (1 - 1/(1+i)) = (A/(1+i)) / (i/(1+i)) = A/i $
+
+#formula-box(title: "Perpetuity Valuation Formulas")[
+  1. *Ordinary Perpetuity (Payments at end of each period):*
+     $ "PV" = A / i $
+  2. *Perpetuity Due (Payments at beginning of each period):*
+     $ "PV"_"due" = A + A/i = A (1 + 1/i) = A ((1 + i)/i) $
+  3. *Growing Perpetuity (Cash flows grow at constant rate $g < i$ per period):*
+     $ "PV"_"growing" = A_1 / (i - g) $
+     where $A_1$ is the cash flow received at the end of Period 1.
+]
+
+#worked-example("Worked Example 1 — University Chair Endowment")[
+  A philanthropist wishes to establish a perpetual scholarship providing ₹75,000 annually to meritorious students. If the endowment fund earns a steady annual return of 6%, determine:
+  1. The lump sum required if the first grant is awarded one year from today.
+  2. The lump sum required if the first grant is awarded immediately today.
+
+  *Solution:*
+  1. For an ordinary perpetuity:
+     $ "PV" = A/i = 75000 / 0.06 = 12,50,000 text("rupees"). $
+  2. For a perpetuity due (immediate first payout):
+     $ "PV"_"due" = A + A/i = 75,000 + 12,50,000 = 13,25,000 text("rupees"). $
+]
+
+== Deferred Perpetuity
+
+If an ordinary perpetuity is deferred by $m$ periods (meaning the first payment occurs at the end of period $m+1$), its present value evaluated today ($t=0$) is obtained by discounting the value of the perpetuity at time $t=m$:
+$ "PV"_"deferred" = (A/i) dot 1 / (1 + i)^m = A / (i (1 + i)^m) $
+
+#worked-example("Worked Example 2 — Deferred Research Grant")[
+  A research foundation commits to an endless annual grant of ₹1,20,000, with the first installment payable 4 years from today (i.e. deferred for 3 full years). At an interest rate of 8% compounded annually:
+  $ "PV" = 120000 / 0.08 dot 1 / (1.08)^3 = 15,00,000 dot 1 / 1.259712 approx 11,90,748.83 text("rupees"). $
+]
+
+---
+
+= 2. Sinking Funds — Systematic Corpus Accumulation
+
+== Concept and Core Mechanics
+
+A *sinking fund* is a special-purpose reserve fund created by setting aside periodic, equal payments ($R$) at compound interest ($i$) so that the accumulated future value equals a predetermined targeted liability ($A$) at maturity ($n$ periods).
+
+Sinking funds are mandatory financial instruments in corporate and municipal finance for:
+- Redemption of long-term debentures or bonds at maturity.
+- Replacement of depreciable fixed capital assets (plant, heavy machinery) at end of useful life.
+- Creation of emergency contingency or environmental restoration reserves.
+
+== Sinking Fund Mathematical Derivation
+
+Since periodic deposits $R$ represent an ordinary annuity whose future value accumulates to target $A$:
+$ A = R dot ((1 + i)^n - 1) / i $
+Solving for the periodic installment $R$:
+$ R = A dot i / ((1 + i)^n - 1) $
+The factor $i / ((1 + i)^n - 1)$ is termed the *Sinking Fund Factor*.
+
+#table(
+  columns: (1fr, 1.2fr, 1.2fr),
+  stroke: 0.5pt + om-navy.lighten(70%),
+  fill: (col, row) => if row == 0 { om-navy-soft } else if calc.odd(row) { om-blue-soft.lighten(60%) } else { white },
+  table.header[*Comparison Feature*][*Sinking Fund*][*Savings Account*],
+  [*Primary Objective*], [Earmarked contractually for a specific future financial obligation.], [General-purpose liquidity, personal savings, or wealth accumulation.],
+  [*Withdrawal Flexibility*], [Strictly locked; premature liquidation penalized or legally restricted.], [Unrestricted withdrawals permitted at depositor's discretion.],
+  [*Deposit Schedule*], [Mathematically computed fixed equal installments targeted at maturity value $A$.], [Arbitrary deposit amounts and frequencies chosen by account holder.],
+  [*Tax & Accounting Treatment*], [Often treated as an appropriation of profits / balance sheet reserve.], [Personal asset earning taxable interest income.],
+)
+
+#worked-example("Worked Example 3 — Debenture Redemption Sinking Fund")[
+  InfraCorp Ltd. issues ₹20,00,000 worth of debentures repayable in full after 5 years. A sinking fund earning 10% interest per annum compounded annually is established. Calculate the annual deposit required. (Given: $(1.10)^5 = 1.61051$).
+
+  *Solution:*
+  Target corpus $A = 20,00,000$, $i = 0.10$, $n = 5$.
+  $ R = 20,00,000 dot 0.10 / ((1.10)^5 - 1) = 2,00,000 / (1.61051 - 1) = 2,00,000 / 0.61051 approx 3,27,594.96 text("rupees"). $
+]
+
+---
+
+= 3. Equated Monthly Installments (EMI)
+
+== Overview and Computational Approaches
+
+An *Equated Monthly Installment (EMI)* is a fixed payment amount made by a borrower to a lender on a specified calendar date each month. EMIs are structured to liquidate both outstanding principal and accrued interest over a specified loan tenure.
+
+There are two primary methods used in financial mathematics to determine EMI:
+1. *Flat Rate Method:* Interest is calculated on the initial principal for the full loan term.
+2. *Reducing Balance (Amortization) Method:* Interest is computed only on the outstanding principal balance at the beginning of each monthly payment cycle.
+
+== The Reducing Balance EMI Formula
+
+Under the reducing balance method, the present value of all monthly installments $E$ must equal the loan principal $P$:
+$ P = E dot (1 - (1 + i)^(-n)) / i = E dot ((1 + i)^n - 1) / (i (1 + i)^n) $
+Solving explicitly for the monthly installment $E$:
+$ E = P dot i dot (1 + i)^n / ((1 + i)^n - 1) $
+where:
+- $P$ = Loan principal borrowed.
+- $r$ = Annual interest rate; $i = r / (12 dot 100)$ is the *monthly interest rate*.
+- $t$ = Loan tenure in years; $n = 12 t$ is the *total number of monthly installments*.
+
+#formula-box(title: "Flat Rate vs Reducing Balance EMI Comparison")[
+  - *Flat Rate EMI:*
+    $ I = P dot r dot t / 100, quad E_"flat" = (P + I) / n = (P (1 + r t / 100)) / (12 t) $
+  - *Reducing Balance EMI:*
+    $ E_"reducing" = P dot i dot (1 + i)^n / ((1 + i)^n - 1) $
+  *Critical CUET Insight:* Flat rate loans conceal the true cost of credit. Because the borrower repays principal monthly, the average principal outstanding over the tenure is roughly $P/2$. Consequently, an $8%$ flat rate corresponds to an effective reducing rate of approximately $14% - 15%$.
+]
+
+#worked-example("Worked Example 4 — Vehicle Loan EMI")[
+  A consumer purchases an electric car by taking a bank loan of ₹6,00,000 at 12% per annum on a reducing balance basis for a tenure of 2 years (24 months). Compute the EMI. (Given: $(1.01)^24 = 1.26973$).
+
+  *Solution:*
+  Principal $P = 6,00,000$.
+  Monthly interest rate $i = 12% / 12 = 1% = 0.01$.
+  Number of months $n = 24$.
+  $ E = 6,00,000 dot 0.01 dot 1.26973 / (1.26973 - 1) = 6000 dot 1.26973 / 0.26973 = 7618.38 / 0.26973 approx 28,244.47 text("rupees"). $
+]
+
+== Loan Amortization Schedule Mechanics
+
+In each installment $t$, the payment $E$ is partitioned into two distinct components:
+1. *Interest Component ($I_t$):* Paid on outstanding opening balance $B_(t-1)$:
+   $ I_t = B_(t-1) dot i $
+2. *Principal Repayment Component ($P_t$):* Directly reduces loan principal:
+   $ P_t = E - I_t $
+3. *Closing Balance ($B_t$):*
+   $ B_t = B_(t-1) - P_t $
+As the loan progresses, $B_(t-1)$ decreases monotonically; hence $I_t$ falls steadily, and $P_t$ increases exponentially.
+
+#table(
+  columns: (0.8fr, 1.2fr, 1.2fr, 1.2fr, 1.2fr),
+  stroke: 0.5pt + om-navy.lighten(70%),
+  fill: (col, row) => if row == 0 { om-navy-soft } else if calc.odd(row) { om-blue-soft.lighten(60%) } else { white },
+  table.header[*Month ($t$)*][*Opening Balance ($B_(t-1)$)*][*EMI ($E$)*][*Interest ($I_t = B_(t-1) i$)*][*Principal ($P_t = E - I_t$)*],
+  [1], [₹1,00,000.00], [₹17,254.80], [₹1,000.00], [₹16,254.80],
+  [2], [₹83,745.20], [₹17,254.80], [₹837.45], [₹16,417.35],
+  [3], [₹67,327.85], [₹17,254.80], [₹673.28], [₹16,581.52],
+  [4], [₹50,746.33], [₹17,254.80], [₹507.46], [₹16,747.34],
+  [5], [₹33,998.99], [₹17,254.80], [₹339.99], [₹16,914.81],
+  [6], [₹17,084.18], [₹17,254.80], [₹170.84], [₹17,083.96],
+)
+
+---
+
+#figure(
+  image("assets/math_finmath_value_engine.png", width: 88%),
+  caption: [Figure 1: The Financial Mathematics Computational Framework — Perpetuity, Sinking Fund, EMI, Returns, CAGR & Depreciation.],
+)
+
+---
+
+= 4. Returns, Nominal vs Effective Rates & CAGR
+
+== Rate of Return (RoR)
+
+The *Rate of Return (RoR)* measures the percentage financial gain or loss generated on an investment relative to its initial cost. For any asset holding period:
+$ "Rate of Return" = ("Final Value" - "Initial Cost" + "Dividends / Cash Income") / "Initial Cost" times 100 $
+
+#worked-example("Worked Example 5 — Stock Investment Return")[
+  An investor buys 100 shares of a company at ₹450 per share. Over a 1-year holding period, she receives a total dividend payout of ₹1,800. At the end of the year, she sells all shares at ₹510 per share. Determine her total rate of return.
+
+  *Solution:*
+  - Initial Investment $= 100 times 450 = 45,000$ rupees.
+  - Final Value $= 100 times 510 = 51,000$ rupees.
+  - Capital Gain $= 51,000 - 45,000 = 6,000$ rupees.
+  - Dividend Income $= 1,800$ rupees.
+  - Total Return $= (6,000 + 1,800) / 45,000 times 100 = 7,800 / 45,000 times 100 = 17.33%$.
+]
+
+== Nominal Rate vs Effective Annual Rate (EAR)
+
+When compounding occurs more frequently than once a year (semi-annually, quarterly, monthly), the quoted annual rate is the *nominal rate ($r$)*. The actual annualized rate earned due to compounding is the *Effective Annual Rate ($"EAR"$)*:
+$ "EAR" = (1 + r / m)^m - 1 $
+where $r$ is the nominal annual rate expressed as a decimal, and $m$ is compounding intervals per year.
+
+#table(
+  columns: (1.2fr, 1.1fr, 1.3fr, 1.4fr),
+  stroke: 0.5pt + om-navy.lighten(70%),
+  fill: (col, row) => if row == 0 { om-navy-soft } else if calc.odd(row) { om-blue-soft.lighten(60%) } else { white },
+  table.header[*Compounding Frequency*][*Periods ($m$)*][*Formula for $1 + "EAR"$*][*EAR for Nominal $r = 12%$*],
+  [Annual], [1], [$(1 + 0.12)^1$], [$12.000%$],
+  [Semi-Annual], [2], [$(1 + 0.06)^2$], [$12.360%$],
+  [Quarterly], [4], [$(1 + 0.03)^4$], [$12.551%$],
+  [Monthly], [12], [$(1 + 0.01)^12$], [$12.683%$],
+  [Continuous], [$oo$], [$e^(0.12)$], [$12.750%$],
+)
+
+== Compound Annual Growth Rate (CAGR)
+
+The *Compound Annual Growth Rate (CAGR)* provides the constant smoothed annualized geometric growth rate required for an investment to grow from its initial value to its terminal value over $n$ years:
+$ "Ending Value" = "Beginning Value" dot (1 + "CAGR")^n $
+$ "CAGR" = ("Ending Value" / "Beginning Value")^(1/n) - 1 $
+
+#concept-box(title: "CAGR vs Annual Growth Rate (AGR) — Volatility Drag")[
+  The *Annual Growth Rate (AGR)* represents the arithmetic mean of individual annual percentage returns:
+  $ "AGR" = (R_1 + R_2 + dots + R_n) / n $
+  Because arithmetic averaging ignores compounding, *AGR will always be strictly greater than or equal to CAGR* ($"AGR" >= "CAGR"$). The divergence between AGR and CAGR increases with annual return volatility.
+  - *Example:* If an investment of ₹1,00,000 gains $+50%$ in Year 1 (to ₹1,50,000) and loses $-50%$ in Year 2 (to ₹75,000):
+    $ "AGR" = (+50% - 50%) / 2 = 0% $
+    $ "CAGR" = (75,000 / 1,00,000)^(1/2) - 1 = sqrt(0.75) - 1 = 0.8660 - 1 = -13.40% $
+  The investor suffered an actual loss of ₹25,000; CAGR accurately reflects the negative reality, while AGR provides a misleading zero-change illusion.
+]
+
+#worked-example("Worked Example 6 — Mutual Fund CAGR Calculation")[
+  A portfolio valued at ₹2,50,000 on 1st April 2021 grows to ₹5,18,400 on 1st April 2024 (a period of 3 years). Determine the CAGR.
+
+  *Solution:*
+  $ "Beginning Value" = 2,50,000, quad "Ending Value" = 5,18,400, quad n = 3. $
+  $ "Ratio" = 5,18,400 / 2,50,000 = 5184 / 2500 = 2.0736. $
+  $ "CAGR" = (2.0736)^(1/3) - 1 = (1.2754) - 1 = 27.54% text("per annum"). $
+]
+
+---
+
+= 5. Linear Method of Depreciation
+
+== Concepts and Terminology
+
+*Depreciation* is the systematic allocation of the depreciable cost of a tangible fixed asset over its estimated useful economic life. In Applied Mathematics, the primary technique examined is the *Linear (Straight Line) Method*.
+
+Core parameters:
+- *Cost of Asset ($C$):* Purchase price plus all direct capitalized acquisition costs (freight, installation, import duties, site preparation).
+- *Residual / Scrap / Salvage Value ($S$):* Estimated net realizable value of the asset at the conclusion of its useful life.
+- *Useful Life ($n$):* Estimated operational period (in years) during which the asset remains economically productive.
+- *Depreciable Cost / Base:*
+  $ "Depreciable Base" = C - S $
+
+== Depreciation Formulas
+
+#formula-box(title: "Linear Depreciation Formula Set")[
+  1. *Annual Depreciation Amount ($D$):*
+     $ D = (C - S) / n $
+  2. *Depreciation Rate ($R_D$):*
+     $ R_D = D / C times 100 = (C - S) / (n dot C) times 100% $
+  3. *Accumulated Depreciation after $t$ years ($"AccD"_t$):*
+     $ "AccD"_t = t dot D = t dot ((C - S) / n) $
+  4. *Book Value after $t$ years ($"BV"_t$):*
+     $ "BV"_t = C - "AccD"_t = C - t dot D $
+     At the end of useful life ($t = n$): $"BV"_n = C - n ((C - S)/n) = S$.
+]
+
+#worked-example("Worked Example 7 — Factory Machinery Depreciation")[
+  A manufacturing unit imports industrial packaging equipment for ₹12,00,000, paying ₹80,000 in transit insurance and ₹1,20,000 for plant commissioning. The equipment has an estimated life of 8 years, after which its scrap value is projected at ₹2,00,000. Calculate:
+  1. Total capitalized acquisition cost $C$.
+  2. Annual depreciation under straight line method.
+  3. The book value of the machinery at the end of the 5th year.
+
+  *Solution:*
+  1. $C = 12,00,000 + 80,000 + 1,20,000 = 14,00,000$ rupees.
+  2. Depreciable Base $= C - S = 14,00,000 - 2,00,000 = 12,00,000$ rupees.
+     $ D = (12,00,000) / 8 = 1,50,000 text("rupees per annum"). $
+  3. Accumulated Depreciation after 5 years $= 5 times 1,50,000 = 7,50,000$ rupees.
+     $ "BV"_5 = C - "AccD"_5 = 14,00,000 - 7,50,000 = 6,50,000 text("rupees"). $
+]
+
+---
+
+= 6. Valuation of Bonds
+
+== Bond Terminology & Mechanics
+
+A *bond* is a long-term debt instrument issued by corporations, municipalities, or sovereign governments to raise capital from investors. A standard coupon bond binds the issuer to pay periodic interest (coupons) and redeem the face value at maturity.
+
+Fundamental Parameters:
+- *Face Value ($F$):* Par value stated on the certificate (typically ₹100 or ₹1,000 in Indian bond markets), repaid at maturity.
+- *Coupon Rate ($c$):* Contractual annual nominal interest rate printed on the bond certificate.
+- *Coupon Payment ($C$):* Cash paid per coupon period: $C = c dot F$ (or $(c dot F)/2$ for semi-annual payments).
+- *Maturity ($n$):* Number of periods remaining until principal redemption.
+- *Yield to Maturity ($"YTM"$, $r$):* Required market discount rate or internal rate of return demanded by investors for bonds of comparable risk.
+
+== Intrinsic Bond Valuation Formula (Present Value Approach)
+
+The intrinsic economic value ($V_0$) of a bond equals the present value of all expected future cash flows discounted at the market yield ($r$):
+$ V_0 = sum_(t=1)^n C / (1 + r)^t + F / (1 + r)^n $
+Applying the annuity present value factor ($"PVIFA"_(r, n)$) and lump sum factor ($"PVIF"_(r, n)$):
+$ V_0 = C dot [ (1 - (1 + r)^(-n)) / r ] + F / (1 + r)^n $
+
+#worked-example("Worked Example 8 — Bond Valuation with Annual Coupon")[
+  A 5-year government bond with a face value of ₹1,000 carries an 8% annual coupon. If the current market yield (YTM) for similar securities is 10%, calculate the intrinsic value of the bond. (Given: $(1.10)^(-5) = 0.62092$).
+
+  *Solution:*
+  - Coupon payment $C = 8% times 1000 = 80$ rupees.
+  - Face value $F = 1,000$ rupees.
+  - Discount rate $r = 10% = 0.10$, $n = 5$.
+  - Present value of coupons:
+    $ "PV"_"coupons" = 80 dot [ (1 - 0.62092) / 0.10 ] = 80 dot [ 0.37908 / 0.10 ] = 80 times 3.7908 = 303.264 text("rupees"). $
+  - Present value of face value:
+    $ "PV"_"face" = 1000 dot (1.10)^(-5) = 1000 times 0.62092 = 620.92 text("rupees"). $
+  - Intrinsic Bond Value:
+    $ V_0 = 303.26 + 620.92 = 924.18 text("rupees"). $
+  Because the market yield ($10%$) exceeds the coupon rate ($8%$), the bond trades *at a discount* ($V_0 < 1000$).
+]
+
+---
+
+#figure(
+  image("assets/math_finmath_bonds_amortization.png", width: 88%),
+  caption: [Figure 2: Bond Valuation Dynamics, Price-Yield Relationships & Sinking Fund vs Loan Amortization Schedules.],
+)
+
+---
+
+== Special Bond Classes
+
+1. *Zero-Coupon Bonds (Deep Discount Bonds):*
+   No interim coupon payments ($C = 0$). Sold at a substantial discount to par value and redeemed at par $F$:
+   $ V_0 = F / (1 + r)^n $
+2. *Perpetual Bonds (Consols):*
+   No maturity date ($n -> oo$). The issuer promises an indefinite stream of coupon payments:
+   $ V_0 = C / r $
+
+== Bond Pricing Theorems (The Three Rules of Fixed Income)
+
+#table(
+  columns: (1.2fr, 1.4fr, 1.4fr),
+  stroke: 0.5pt + om-navy.lighten(70%),
+  fill: (col, row) => if row == 0 { om-navy-soft } else if calc.odd(row) { om-blue-soft.lighten(60%) } else { white },
+  table.header[*Relationship Condition*][*Bond Market Price ($V_0$)*][*Trading Status & Capital Return*],
+  [*Coupon Rate = Market YTM* ($c = r$)], [$V_0 = "Face Value" (F)$], [*Trades at Par:* Investor's entire return derives from coupon income; zero capital gain or loss.],
+  [*Coupon Rate > Market YTM* ($c > r$)], [$V_0 > "Face Value" (F)$], [*Trades at Premium:* Bond price exceeds par. The investor receives above-market coupons, offset by a capital loss at maturity.],
+  [*Coupon Rate < Market YTM* ($c < r$)], [$V_0 < "Face Value" (F)$], [*Trades at Discount:* Bond price is below par. Below-market coupons are compensated by capital appreciation up to par at maturity.],
+)
+
+#tip-box(title: "Inverse Relationship Rule")[
+  Bond prices and interest rates share an *inverse relationship*: as market interest rates (YTM) rise, bond prices fall; when market rates decline, bond prices surge ($d V_0 / d r < 0$). Furthermore, long-maturity bonds experience significantly greater percentage price volatility in response to yield shifts than short-maturity bonds.
+]
+
+---
+
+#figure(
+  image("assets/math_finmath_mindmap.png", width: 88%),
+  caption: [Figure 3: Comprehensive Applied Financial Mathematics Mindmap — Interconnecting All Six Quantitative Pillars.],
+)
+
+#exam-pointer(title: "High-Yield Memory Hooks for CUET 2027")[
+  Keep these fundamental mathematical triggers primed:
+  - *Perpetuity:* Endless stream $==>$ Divide payment by period rate: $"PV" = A/i$.
+  - *Sinking Fund:* Future lump sum $==>$ Multiply target by $i / ((1+i)^n - 1)$.
+  - *EMI:* Present loan liquidation $==>$ Multiply principal by $i(1+i)^n / ((1+i)^n - 1)$.
+  - *CAGR:* Multi-year growth $==>$ Take $n$-th root of terminal-to-initial ratio minus 1.
+  - *SLM Depreciation:* Straight line $==>$ Depreciate net base $(C - S)$ equally over $n$ years.
+  - *Bonds:* $V_0 = "PV of Coupons" + "PV of Par"$. If yield exceeds coupon, bond trades at discount.
+]
+
+---
+
+#cheatsheet-box(title: "Master Formula & Decision Cheatsheet — Financial Mathematics")[
+  *1. Perpetuity Equations:*
+  $ "Ordinary Perpetuity:" quad "PV" = A / i, quad quad "Perpetuity Due:" quad "PV"_"due" = A + A / i = A ((1 + i) / i) $
+  $ "Growing Perpetuity:" quad "PV" = A_1 / (i - g) quad (i > g), quad quad "Deferred Perpetuity:" quad "PV" = A / (i (1 + i)^m) $
+
+  *2. Sinking Fund Annuity:*
+  $ R = A dot i / ((1 + i)^n - 1) quad quad (R = text("Periodic Deposit"), A = text("Target Future Corpus")) $
+
+  *3. Loan Amortization & EMI:*
+  $ E_"reducing" = P dot i dot (1 + i)^n / ((1 + i)^n - 1), quad quad E_"flat" = (P (1 + r t / 100)) / (12 t) $
+  $ text("Interest in Month ") t: I_t = B_(t-1) dot i, quad quad text("Principal Repaid in Month ") t: P_t = E - I_t $
+
+  *4. Return & Growth Metrics:*
+  $ "RoR" = ("Ending Value" - "Cost" + "Dividends") / "Cost" times 100% $
+  $ "EAR" = (1 + r / m)^m - 1, quad quad "CAGR" = ("Ending Value" / "Beginning Value")^(1/n) - 1 $
+
+  *5. Straight Line Depreciation:*
+  $ D = (C - S) / n, quad quad R_D = D / C times 100%, quad quad "BV"_t = C - t dot D $
+
+  *6. Bond Valuation Model:*
+  $ V_0 = C dot [ (1 - (1 + r)^(-n)) / r ] + F / (1 + r)^n, quad quad V_0^"zero" = F / (1 + r)^n, quad quad V_0^"perpetual" = C / r $
+]
+
+#exception-box(title: "The Seven Fatal CUET Traps in Financial Mathematics")[
+  1. *The Compounding Rate Frequency Blindness:* Quoting an annual rate (e.g. 12%) in an EMI calculation without dividing by 12 ($i = 0.01$) or in a semi-annual bond without dividing by 2 ($r = 0.06$).
+  2. *Salvage Value Omission in Depreciation:* Computing annual depreciation as $C / n$ rather than $(C - S) / n$. Remember: scrap value is never depreciated!
+  3. *Depreciation Rate Denominator Confusion:* Calculating depreciation rate as $D / (C - S)$ instead of $D / C$. The official statutory rate is always expressed as a percentage of initial acquisition cost $C$.
+  4. *Flat Rate vs Reducing Balance Deception:* Assuming a flat 10% loan is cheaper than a 14% reducing loan. Because principal is paid down monthly, a 10% flat rate has an effective reducing APR near 18%!
+  5. *AGR vs CAGR Substitution Error:* Arithmetic averaging of volatile percentage returns (e.g., $+20%$ and $-20%$) gives $0%$, whereas the compounding CAGR is $sqrt(1.2 times 0.8) - 1 = sqrt(0.96) - 1 = -2.02%$.
+  6. *Bond Par vs Coupon vs Yield Disconnect:* Forgetting that coupon rate is fixed on face value $F$, while market price fluctuates based on market yield. When $r > c$, $V_0 < F$ (Discount); when $r < c$, $V_0 > F$ (Premium).
+  7. *Sinking Fund vs Savings Account Purpose:* Confusing general cash reserves with sinking funds. A sinking fund is contractually designated to retire a specific future debt and cannot be used for operational expenses.
+]
+
+---
+
+#pagebreak()
+#set text(size: 8.0pt)
+#set par(leading: 0.35em, spacing: 0.35em)
+
+= Practice Questions — Part 1 (Q1 to Q5)
+
+#mcq(1, [A philanthropic trust intends to institute an annual prize of ₹18,000 in perpetuity to the topper of an engineering college. If the corpus fund is invested in government securities yielding an annual return of 7.5%, the minimum lump sum donation required today is:], (
+  [₹2,25,000],
+  [₹2,40,000],
+  [₹1,35,000],
+  [₹2,50,000],
+))
+#solution(1, [For an ordinary perpetuity, the present value of endless periodic payouts $A$ discounted at annual rate $i$ is:
 $ "PV" = A / i $
-Intuition: park a lump sum $"PV"$ in the bank; the interest it earns each period *is* the payment, while the principal survives untouched. At 8%, a fund of ₹62,500 generates ₹5,000 every year forever. Dividing — never multiplying — is the operation; the "price of forever" is the payment scaled by how hard money works.
+Here, $A = 18,000$ and $i = 7.5% = 0.075 = 75/1000 = 3/40$.
+$ "PV" = 18000 / (3/40) = 18000 times 40 / 3 = 6000 times 40 = 2,40,000 text("rupees"). $
+Hence, a lump sum endowment of ₹2,40,000 invested at 7.5% generates exactly ₹18,000 each year forever while preserving the corpus intact.], answer: [B])
 
-#worked-example("Worked Example — Pricing a Scholarship Forever")[
-  A college wants to award a ₹40,000 scholarship every year, indefinitely. The endowment earns 5% per year. How large must the fund be?
+#mcq(2, [A company needs to replace a transport fleet in 4 years at an estimated cost of ₹15,00,000. It establishes a sinking fund earning 8% interest per annum compounded annually. The equal annual deposit required at the end of each year is: (Given: $(1.08)^4 = 1.3605$)], (
+  [₹3,75,000.00],
+  [₹3,32,871.01],
+  [₹4,08,150.00],
+  [₹3,00,000.00],
+))
+#solution(2, [Target future corpus $A = 15,00,000$, interest rate $i = 0.08$, tenure $n = 4$ years.
+The periodic sinking fund deposit $R$ is given by:
+$ R = A dot i / ((1 + i)^n - 1) $
+Substituting the given value $(1.08)^4 = 1.3605$:
+$ R = 15,00,000 dot 0.08 / (1.3605 - 1) = 1,20,000 / 0.3605 approx 3,32,871.01 text("rupees"). $
+(Note: Option A incorrectly divides ₹15,00,000 simply by 4 without taking interest accumulation into account).], answer: [B])
 
-  #v(3pt)
-  *Solution.* Perpetuity pricing: $"PV" = A/i = 40000/0.05 = 8,00,000$ rupees. The college
-  deposits ₹8,00,000; each year the 5% interest — exactly ₹40,000 — funds the
-  scholarship, and the corpus rides on untouched, ready to pay again next year. If
-  the rate rose to 8%, the same scholarship would cost only $40000/0.08 = 5,00,000$ —
-  richer money buys cheaper forever.
-]
+#mcq(3, [A housing finance company offers a home improvement loan of ₹3,00,000 repayable in 36 equated monthly installments at 12% per annum on a reducing balance basis. The monthly interest rate ($i$) and the number of periods ($n$) to be utilized in the EMI formula are:], (
+  [$i = 0.12, quad n = 3$],
+  [$i = 0.01, quad n = 36$],
+  [$i = 0.06, quad n = 6$],
+  [$i = 0.001, quad n = 36$],
+))
+#solution(3, [In monthly installment loan calculations:
+- The annual nominal interest rate $r = 12%$ must be converted to a monthly periodic rate:
+  $ i = r / (12 dot 100) = 12 / 1200 = 0.01 text(" (or 1% per month)"). $
+- The total number of periods $n = text("Tenure in years") times 12 = 3 times 12 = 36 text(" months"). $
+Matches Option B precisely. Using $i = 0.12$ directly is a classic trap.], answer: [B])
 
-= Sinking Fund — Saving Up on Purpose
+#mcq(4, [The primary legal and structural difference between a sinking fund and an ordinary savings bank account is that a sinking fund:], (
+  [Pays no interest on accumulated balances],
+  [Is legally earmarked for the systematic liquidation of a specific predetermined future obligation],
+  [Allows unlimited daily debit withdrawals via automated teller machines],
+  [Is exclusively available to non-profit charitable societies],
+))
+#solution(4, [A sinking fund is a specialized financial device whose sole objective is accumulating capital to retire a specific designated liability (e.g., bond redemption or plant replacement) at a fixed maturity date. Unlike general savings accounts, sinking fund withdrawals are strictly restricted to that designated purpose.], answer: [B])
 
-A *sinking fund* flips the annuity: instead of receiving payments, you *deposit* equal amounts so the fund grows to a fixed target exactly when a liability arrives — a debt maturing, machinery due for replacement, a bond issue to retire. With target $A$, rate $i$, and $n$ deposits of size $P$:
-$ A = P dot ((1 + i)^n - 1)/i quad => quad P = A dot i/((1 + i)^n - 1) $
-The syllabus's definitional line — *sinking fund vs savings account* — is a purpose distinction: a savings account holds general money you may spend anytime; a sinking fund is *earmarked*, contractually pointed at one future obligation, with the deposit schedule designed to land exactly on the target.
+#mcq(5, [Under the reducing balance method of loan amortization, which of the following statements correctly characterizes the behavior of the interest and principal components across the loan tenure?], (
+  [Both interest and principal components remain strictly constant in every installment.],
+  [The interest component increases progressively while the principal component decreases.],
+  [The interest component decreases progressively while the principal component increases.],
+  [The total installment amount ($E$) fluctuates depending on monthly bank base rate revisions.],
+))
+#solution(5, [In an amortization schedule with fixed EMI $E$:
+$ E = I_t + P_t $
+Because each payment partially pays down the outstanding principal balance, the opening balance $B_(t-1)$ drops each month. Consequently, the interest component $I_t = B_(t-1) dot i$ decreases monotonically. To keep the total EMI $E$ constant, the principal repayment component $P_t = E - I_t$ must progressively increase.], answer: [C])
 
-#worked-example("Worked Example — Sizing the Annual Deposit")[
-  A firm must repay ₹10,00,000 of debentures in 10 years. It sets up a sinking fund earning 8% per year. Find the equal annual deposit.
+#pagebreak()
 
-  #v(3pt)
-  *Solution.* $(1.08)^10 = 2.1589$ (four-decimal table habit). So
-  $ P = 10,00,000 dot 0.08/((1.08)^10 - 1) = 80,000/1.1589 approx 69,031 "rupees per year". $
-  Ten deposits of about ₹69,031, each earning 8% along the way, land the fund exactly
-  on ₹10,00,000 — the debenture dies on schedule, no scramble at the end.
-]
+= Practice Questions — Part 2 (Q6 to Q10)
 
-= EMI — One Payment, Two Jobs
+#mcq(6, [An individual purchased 200 shares of a pharmaceutical firm at ₹350 per share. Over the course of 12 months, she received a dividend of ₹15 per share. At the end of the year, she liquidated her holding at ₹406 per share. Her total rate of return is:], (
+  [$16.0%$],
+  [$20.3%$],
+  [$11.7%$],
+  [$24.5%$],
+))
+#solution(6, [Total Initial Cost $= 200 times 350 = 70,000$ rupees.
+Sale Proceeds $= 200 times 406 = 81,200$ rupees.
+Capital Gain $= 81,200 - 70,000 = 11,200$ rupees.
+Total Dividend Income $= 200 times 15 = 3,000$ rupees.
+Total Gain $= 11,200 + 3,000 = 14,200$ rupees.
+$ "Rate of Return" = ("Total Gain" / "Total Initial Cost") times 100 = (14,200 / 70,000) times 100 = 20.2857% approx 20.3%. $], answer: [B])
 
-An *equated monthly instalment* is the flat monthly payment that repays a loan's principal *and* interest by the end. Under the reducing-balance method (the standard), interest each month charges only on what remains of the loan. With principal $P$, *period* rate $i$, and $n$ instalments:
-$ "EMI" = P dot i dot (1 + i)^n / ((1 + i)^n - 1) $
-Two disciplines make every EMI question workable. First, *convert the rate to the period*: a 12% annual rate is 1% per month — the formula never sees the annual figure raw. Second, know the amortisation story: early EMIs are mostly interest (the outstanding loan is largest), late EMIs are mostly principal — a favourite conceptual MCQ.
+#mcq(7, [A venture capital investment in an enterprise grew from an initial valuation of ₹4,00,000 to ₹13,50,000 over a period of 3 years. The Compound Annual Growth Rate (CAGR) of this venture is: (Given: $(3.375)^(1/3) = 1.50$)], (
+  [$79.2%$],
+  [$50.0%$],
+  [$42.5%$],
+  [$33.3%$],
+))
+#solution(7, [Initial value $V_0 = 4,00,000$, final value $V_3 = 13,50,000$, tenure $n = 3$ years.
+$ "CAGR" = (V_3 / V_0)^(1/n) - 1 = (13,50,000 / 4,00,000)^(1/3) - 1 = (135 / 40)^(1/3) - 1 = (3.375)^(1/3) - 1 $
+Using the given cube root:
+$ "CAGR" = 1.50 - 1 = 0.50 = 50.0%. $
+Check: $4,00,000 times (1.5)^3 = 4,00,000 times 3.375 = 13,50,000$ ✓.], answer: [B])
 
-#worked-example("Worked Example — EMI End to End")[
-  A loan of ₹1,20,000 at 12% per year, compounded monthly, is repaid in 12 equal monthly instalments. Find the EMI.
+#mcq(8, [An equity portfolio gained $+40%$ during its first year of operation and lost $-30%$ during its second year. The Annual Growth Rate (AGR) and Compound Annual Growth Rate (CAGR) are respectively:], (
+  [$"AGR" = 5.0%, quad "CAGR" approx -1.0%$],
+  [$"AGR" = 10.0%, quad "CAGR" = 5.0%$],
+  [$"AGR" = 5.0%, quad "CAGR" = 5.0%$],
+  [$"AGR" = -1.0%, quad "CAGR" = 5.0%$],
+))
+#solution(8, [1. Annual Growth Rate (Arithmetic Mean):
+   $ "AGR" = (R_1 + R_2) / 2 = (+40% - 30%) / 2 = 10% / 2 = 5.0%. $
+2. Compound Annual Growth Rate:
+   Starting with $V_0 = 100$:
+   - After Year 1: $100 times 1.40 = 140$.
+   - After Year 2: $140 times (1 - 0.30) = 140 times 0.70 = 98$.
+   $ "CAGR" = (98 / 100)^(1/2) - 1 = sqrt(0.98) - 1 approx 0.98995 - 1 = -0.01005 approx -1.0%. $
+The portfolio suffered an actual net loss of 2%, which CAGR faithfully reports as a $-1.0%$ annual drop, while AGR falsely shows a $+5.0%$ profit.], answer: [A])
 
-  #v(3pt)
-  *Solution.* Period rate: $i = 12%/12 = 1% = 0.01$ per month; $n = 12$.
-  $(1.01)^12 = 1.1268$. Then
-  $ "EMI" = 1,20,000 dot 0.01 dot 1.1268/(1.1268 - 1) = 1,352.16/0.1268 approx 10,663 "rupees". $
-  Twelve payments of ₹10,663 total about ₹1,27,956 — roughly ₹7,956 of interest for
-  the year's borrowing. Twelve instalments, one formula, and the monthly-rate
-  conversion doing the quiet heavy lifting.
-]
+#mcq(9, [A high-precision CNC machine was procured for ₹10,00,000. Its estimated useful economic life is 6 years, with an anticipated scrap value of ₹1,00,000. Under the linear (straight line) method, the annual depreciation and the book value at the end of the 4th year are:], (
+  [Annual Depreciation = ₹1,50,000; Book Value = ₹4,00,000],
+  [Annual Depreciation = ₹1,66,667; Book Value = ₹3,33,333],
+  [Annual Depreciation = ₹1,50,000; Book Value = ₹4,50,000],
+  [Annual Depreciation = ₹1,80,000; Book Value = ₹2,80,000],
+))
+#solution(9, [Acquisition cost $C = 10,00,000$, Scrap value $S = 1,00,000$, Useful life $n = 6$ years.
+1. Depreciable Base $= C - S = 10,00,000 - 1,00,000 = 9,00,000$ rupees.
+2. Annual Depreciation:
+   $ D = (C - S) / n = 9,00,000 / 6 = 1,50,000 text("rupees per year"). $
+3. Accumulated Depreciation after 4 years:
+   $ "AccD"_4 = 4 times D = 4 times 1,50,000 = 6,00,000 text("rupees"). $
+4. Book Value at end of Year 4:
+   $ "BV"_4 = C - "AccD"_4 = 10,00,000 - 6,00,000 = 4,00,000 text("rupees"). $], answer: [A])
 
-= Rate of Return and the Nominal Rate
+#mcq(10, [A 10-year corporate debenture with a face value of ₹1,000 offers a fixed coupon rate of 9% payable annually. If the required market yield (YTM) for similar instruments is currently 7.5%, the bond will trade in the secondary debt market:], (
+  [At par (equal to ₹1,000)],
+  [At a premium (strictly greater than ₹1,000)],
+  [At a discount (strictly less than ₹1,000)],
+  [At zero value due to interest rate risk],
+))
+#solution(10, [When the contractual coupon rate of a bond ($c = 9%$) is strictly greater than the current market required yield ($r = 7.5%$), the bond pays higher annual cash flow than freshly issued securities of identical risk. Investors willingly bid up its market price above face value ($V_0 > F$). Therefore, the bond trades *at a premium*.], answer: [B])
 
-The *rate of return* measures how hard money worked, as a percentage of what you put in:
-$ "Rate of return" = ("total gain")/("cost") times 100 $
-where total gain = selling price − purchase price + every dividend received along the way. Omitting dividends is the classic undercount. The *nominal rate of return* is the *stated* headline rate — before adjusting for inflation or compounding effects; it answers "what did the slip of paper say", not "what did my purchasing power do". Comparing two investments honestly means same period, same basis — the syllabus's point in naming it.
+#pagebreak()
 
-#worked-example("Worked Example — Return With the Dividend Counted")[
-  You buy shares for ₹50,000, receive ₹2,000 in dividends, and sell a year later for ₹55,000. Find the rate of return.
+= Practice Questions — Part 3 (Q11 to Q15)
 
-  #v(3pt)
-  *Solution.* Total gain: $(55,000 - 50,000) + 2,000 = 7,000$. Rate:
-  $ 7000/50000 times 100 = 14% "per year". $
-  Capital gain 10%, dividend yield 4% — the sum is the honest 14%. An answer of 10%
-  forgot the dividend; an answer computed on the selling price forgot the base.
-]
+#mcq(11, [A zero-coupon bond has a face value of ₹10,000 and matures after 3 years. If the prevailing market interest rate is 8% compounded annually, the fair present market value of the bond is: (Given: $(1.08)^(-3) = 0.79383$)], (
+  [₹7,938.30],
+  [₹8,000.00],
+  [₹9,200.00],
+  [₹6,830.13],
+))
+#solution(11, [For a zero-coupon bond, there are no interim coupon payments ($C = 0$). The valuation formula reduces to the present value of the face value discounted from maturity:
+$ V_0 = F / (1 + r)^n = F dot (1 + r)^(-n) $
+Given $F = 10,000$, $r = 0.08$, $n = 3$, and $(1.08)^(-3) = 0.79383$:
+$ V_0 = 10,000 times 0.79383 = 7,938.30 text("rupees"). $], answer: [A])
 
-= Compound Annual Growth Rate — One Rate That Tells the Truth
+#mcq(12, [A perpetual consol bond pays an annual coupon of ₹600. If the market interest rate rises from 5% to 6%, the percentage change in the market price of the consol is:], (
+  [Increases by $20.0%$],
+  [Decreases by $16.67%$],
+  [Decreases by $20.0%$],
+  [Remains unchanged],
+))
+#solution(12, [The price of a perpetual bond is given by:
+$ V_0 = C / r $
+- When $r_1 = 5% = 0.05$:
+  $ V_1 = 600 / 0.05 = 12,000 text("rupees"). $
+- When $r_2 = 6% = 0.06$:
+  $ V_2 = 600 / 0.06 = 10,000 text("rupees"). $
+- Change in price $= V_2 - V_1 = 10,000 - 12,000 = -2,000$ rupees.
+- Percentage Change $= (-2,000 / 12,000) times 100 = -1/6 times 100 = -16.67%$.
+Thus, the market price *decreases by 16.67%*, illustrating the inverse relationship between interest rates and bond valuations.], answer: [B])
 
-Growth rarely lands evenly. The *Compound Annual Growth Rate* compresses a start value, an end value, and $n$ years of growth into the single steady rate that would have produced the same ending:
-$ "CAGR" = (("End value")/("Start value"))^(1/n) - 1 $
-with $n$ counting *years of growth* between the endpoints. The syllabus's contrast — *CAGR vs Annual Growth Rate (AGR)* — is about volatility: AGR is the plain average of yearly percentage changes; CAGR compounds. They disagree whenever the path zig-zags, and the classic demonstration is: +50% then −50% has AGR $0%$ but CAGR $sqrt(1.5 dot 0.5) - 1 = sqrt(0.75) - 1 approx -29.3%$ — the money genuinely shrank, and only CAGR says so.
+#mcq(13, [A machine costing ₹5,00,000 is depreciated at 10% per annum using the straight-line method. If the scrap value at the end of its useful life is ₹50,000, the estimated useful life of the machine is:], (
+  [9 years],
+  [10 years],
+  [8 years],
+  [12 years],
+))
+#solution(13, [In financial accounting and linear depreciation, the annual rate of depreciation $R_D = 10%$ applies to the original asset cost $C = 5,00,000$:
+$ D = C times R_D / 100 = 5,00,000 times 0.10 = 50,000 text("rupees per annum"). $
+The total depreciable amount over the machine's life is:
+$ C - S = 5,00,000 - 50,000 = 4,50,000 text("rupees"). $
+Since $D = (C - S) / n$:
+$ n = (C - S) / D = 4,50,000 / 50,000 = 9 text("years"). $], answer: [A])
 
-#worked-example("Worked Example — CAGR From Two Endpoints")[
-  A business grows from ₹1,00,000 to ₹1,44,000 in 2 years. Find the CAGR.
+#mcq(14, [An investor considers two savings instruments: Scheme X offers 12% per annum compounded quarterly, while Scheme Y offers 12% per annum compounded monthly. Which scheme provides the higher Effective Annual Rate (EAR)?], (
+  [Scheme X, because quarterly compounding provides larger individual interest increments.],
+  [Scheme Y, because more frequent compounding yields higher compound interest accumulation.],
+  [Both schemes provide identical effective annual rates since nominal rates are both 12%.],
+  [The EAR cannot be evaluated without knowing the absolute investment principal.],
+))
+#solution(14, [The Effective Annual Rate formula is:
+$ "EAR" = (1 + r/m)^m - 1 $
+As compounding frequency $m$ increases, the effective rate strictly increases:
+- For Scheme X ($m = 4$):
+  $ "EAR"_X = (1 + 0.12/4)^4 - 1 = (1.03)^4 - 1 = 1.12551 - 1 = 12.551%. $
+- For Scheme Y ($m = 12$):
+  $ "EAR"_Y = (1 + 0.12/12)^12 - 1 = (1.01)^12 - 1 = 1.12683 - 1 = 12.683%. $
+Scheme Y yields $12.683% > 12.551%$. Hence, Scheme Y provides the higher EAR.], answer: [B])
 
-  #v(3pt)
-  *Solution.* $n = 2$ years of growth:
-  $ "CAGR" = (144000/100000)^(1/2) - 1 = sqrt(1.44) - 1 = 1.2 - 1 = 0.2 = 20% "per year". $
-  Whatever the year-by-year wobble, the business earned like a steady 20% compounder.
-  Check: $1,00,000 dot 1.2 dot 1.2 = 1,44,000$ ✓ — the definition's own verification.
-]
-
-= Linear Method of Depreciation — the Straight-Line Slice
-
-Assets wear out. The *linear (straight-line) method* charges the same depreciation every year:
-$ D = ("Cost" - "Residual value")/"Useful life" $
-— the asset's *cost*, minus whatever it will still be worth at the end (*residual* or scrap value), spread evenly across its *useful life*. The *book value* after $k$ years is Cost $- k D$, a straight line falling to the residual — never below it. The reading skill the syllabus names: identify cost, residual and life from a worded paragraph, then schedule.
-
-#worked-example("Worked Example — A Five-Year Schedule")[
-  A machine costs ₹5,00,000, will be worth ₹50,000 after 5 years. Find the annual depreciation and the book value after 3 years.
-
-  #v(3pt)
-  *Solution.* $D = (5,00,000 - 50,000)/5 = 4,50,000/5 = 90,000$ per year. After 3
-  years: book value $= 5,00,000 - 3 dot 90,000 = 2,30,000$. The schedule reads like a
-  ladder: 4,10,000 → 3,20,000 → 2,30,000 → 1,40,000 → 50,000 — equal steps of
-  ₹90,000, landing exactly on the residual. Depreciating below ₹50,000 would be a
-  conceptual error, not just arithmetic.
-]
-
-= Bond Valuation — the Present-Value Approach
-
-A *bond* is a loan you hold: it promises a *face value* $F$ at *maturity* and fixed *coupons* $C$ (the coupon rate times the face value) until then. Its fair price is the *present value* of everything it will pay, discounted at the *market rate* $i$ — not the coupon rate:
-$ V = C dot (1 - (1 + i)^(-n))/i + F/(1 + i)^n $
-— an annuity of coupons plus the discounted face value. The moving part is the market rate: coupons are fixed, so when market rates rise above the coupon, the bond's price must fall *below* face (a *discount*) to stay competitive; below the coupon, it trades *above* face (a *premium*).
-
-#worked-example("Worked Example — Pricing a Bond Under a Rising Market")[
-  A bond has face value ₹1,000, an 8% annual coupon, and 3 years to maturity. The market rate is 10%. Value the bond.
-
-  #v(3pt)
-  *Solution.* Coupon: $C = 0.08 dot 1000 = 80$ per year. Discount factors at 10%:
-  $(1.10)^3 = 1.331$, so $(1.10)^(-3) = 0.7513$.
-  $ V = 80 dot (1 - 0.7513)/0.10 + 1000 dot 0.7513 = 80 dot 2.487 + 751.3 = 198.96 + 751.3 approx 950.26 "rupees". $
-  The bond sells at ₹950 — a *discount* to face. Read the logic: why pay ₹1,000 for
-  ₹80 a year when fresh money pays ₹100? The price dips until the bond's yield
-  matches the market. (Market rate 6% would flip it to a premium — try it as practice.)
-]
-
-#analogy-box(title: "Everyday Example — The Water Tank City")[
-  Think of money as water and rates as tap speeds. A *perpetuity* is a tank so large
-  that opening the tap (interest) pours exactly your daily need forever — the tank
-  size is the daily need divided by the tap speed. A *sinking fund* is filling a
-  tank drop by drop to a marked line before a fixed day. An *EMI* is a drain that
-  empties a loan-tank at one steady rate while interest quietly refills a little of
-  it each month — early on, the refill is fat. *Depreciation* is a leak losing the
-  same depth every year down to the silt line (residual). And a *bond* is buying
-  someone's incoming drip system at today's water prices: if the city now sells
-  water cheaper (market rates up), their drip system is worth less than its label.
-]
-
-#figure(image("assets/math_finmath_value_engine.png", width: 100%), caption: [The six money tools on one board: perpetuity, sinking fund, EMI, return, CAGR, depreciation — plus the bond's present-value engine and the rate dictionary.])
-
-= Formula Cheatsheet — the Whole Chapter on One Page
-
-#cheatsheet-box(title: "Formula Cheatsheet — Financial Mathematics")[
-  #table(
-    columns: (1.5fr, 1.35fr, 1.15fr),
-    table.header[*Formula / rule*][*Letters mean*][*Fire it when*],
-    [Perpetuity: $"PV" = A / i$], [endless payment $A$, rate $i$], [forever-income pricing],
-    [Sinking fund deposit: $P = A dot i / ((1 + i)^n - 1)$], [target $A$ in $n$ deposits], [future liability],
-    [Sinking fund vs savings account: purpose-locked vs general], [definition], [contrast MCQs],
-    [Period rate: annual $div$ 12 for monthly], [EMI's $i$], [all EMI sums],
-    [$"EMI" = P dot i dot (1 + i)^n / ((1 + i)^n - 1)$], [reducing balance], [loan instalments],
-    [Early EMIs: mostly interest], [amortisation fact], [concept MCQs],
-    [Rate of return = $("total gain")/("cost") times 100$], [gain includes dividends], [return questions],
-    [Nominal rate: stated, before inflation], [headline rate], [definition MCQs],
-    [$"CAGR" = ("End"/"Start")^(1/n) - 1$], [one smoothed yearly rate], [two-endpoint growth],
-    [AGR = plain average of yearly % changes], [volatile paths disagree with CAGR], [contrast stems],
-    [Linear depreciation: $D = ("Cost" - "Residual")/"Life"$], [equal slices], [schedules],
-    [Book value after $k$ years: Cost $- k D$], [never below residual], [year-by-year],
-    [Bond: $V = C dot (1 - (1 + i)^(-n))/i + F/(1 + i)^n$], [coupons + face, at MARKET rate], [valuation],
-    [Market rate $>$ coupon $->$ discount; $<$ $->$ premium], [fixed coupons, moving market], [price direction],
-  )
-]
-
-= Common Errors and Special Cases
-
-#exception-box(title: "Common Errors and Special Cases — Financial Mathematics")[
-  #table(
-    columns: (1.35fr, 1.35fr, 1.3fr),
-    table.header[*The mistake*][*What is right*][*The trap it sets*],
-    [Perpetuity priced as $A dot i$], [$"PV" = A / i$ — divide], [Multiplied-perpetuity options],
-    [Sinking fund treated as ordinary saving], [Earmarked for one liability], [Definition-swap options],
-    [Annual rate used raw in EMI], [Convert to the monthly period rate first], [Inflated EMI numerics],
-    [Dividends omitted from returns], [Total gain includes every payout], [Understated return percentages],
-    [CAGR with $n$ = number of values], [$n$ counts years of GROWTH], [Off-by-one exponents],
-    [AGR quoted as CAGR], [Volatile paths separate the two], [$0%$-for-$-29.3%$ lures],
-    [Depreciation on full cost], [Cost minus RESIDUAL, then slice], [Oversized depreciation rows],
-    [Bond discounted at the coupon rate], [The MARKET rate drives present value], [Face-value-priced options],
-  )
-]
-
-= Sixty-Second Self-Test
-
-#table(
-  columns: (2.6fr, 1fr),
-  table.header[*Statement*][*Verdict*],
-  [A perpetuity's price falls when interest rates rise.], [True — $A / i$ shrinks as $i$ grows],
-  [A sinking fund is just a savings account with a nicer name.], [False — purpose-locked to a liability],
-  [A 12% annual loan enters EMI maths as 1% monthly.], [True — period conversion first],
-  [CAGR of +50% then −50% is 0%.], [False — that is AGR; CAGR is about −29.3%],
-  [Depreciation uses cost minus residual value.], [True — the residual is protected],
-  [A bond trades above face when market rates exceed its coupon.], [False — that is a discount situation],
-)
-
-#figure(image("assets/math_finmath_mindmap.png", width: 100%), caption: [The chapter in one look: six money tools, the rate dictionary, and the traps each one plants.])
-
-= Practice Questions — CUET UG Pattern (10 MCQs)
-
-Ten questions in the CUET UG style. Each correct answer earns $+5$; each incorrect one costs $-1$. Name the tool first — perpetuity, fund, EMI, return, CAGR, depreciation or bond — then compute as little as possible.
-
-#mcq(1, [A trust wants to give ₹6,000 every year forever from a fund earning 6% per year. The required fund size is:], ([₹1,00,000], [₹36,000], [₹1,06,000], [₹60,000],))
-#mcq(2, [A sinking fund differs from a savings account because it:], ([earns no interest], [is earmarked for one specific future liability], [cannot be withdrawn], [pays tax monthly],))
-#mcq(3, [A loan charges 9% per year, compounded monthly. The monthly rate used in EMI calculations is:], ([9%], [0.75%], [1%], [0.09%],))
-#mcq(4, [For principal $P$, period rate $i$ and $n$ instalments, the reducing-balance EMI equals:], ([$P dot i dot (1 + i)^n / (1 + i)^n$], [$P dot (1 + i)^n / i$], [$P dot i dot (1 + i)^n / ((1 + i)^n - 1)$], [$P / n + P dot i$],))
-#mcq(5, [Shares bought for ₹20,000 are sold for ₹21,600 with no dividends. The rate of return is:], ([6%], [8%], [10%], [16%],))
-#mcq(6, [A business grows from ₹2,00,000 to ₹2,88,000 in 2 years. Its CAGR is:], ([44%], [12%], [20%], [24%],))
-#mcq(7, [An investment rises 50% one year and falls 50% the next. Its CAGR is about:], ([$-29.3%$], [$0%$], [$25%$], [$-50%$],))
-#mcq(8, [A machine costs ₹8,00,000 with residual value ₹80,000 and a 4-year life. Annual linear depreciation is:], ([₹2,00,000], [₹80,000], [₹1,60,000], [₹1,80,000],))
-#mcq(9, [For the same machine, its book value after 2 years is:], ([₹5,60,000], [₹6,20,000], [₹4,40,000], [₹4,00,000],))
-#mcq(10, [A bond's coupon rate is 7% while the market rate is 9%. The bond trades:], ([above face value], [at face value], [below face value], [at the coupon price],))
-
-= Detailed Solutions
-
-#solution(1, [Perpetuity pricing: $"PV" = A/i = 6000/0.06 = 1,00,000$ rupees. At 6%, one lakh of principal throws off exactly ₹6,000 forever. Option (B) multiplied instead of dividing.], answer: "A")
-#solution(2, [By definition, a sinking fund is earmarked for one named future liability — a debenture repayment, a machine replacement — with deposits designed to land on the target. Interest, withdrawals and tax are side issues, not the distinction.], answer: "D")
-#solution(3, [Period conversion: $9% div 12 = 0.75%$ per month. Option (C) reflex-divided by 9; option (A) used the annual rate raw — the two standard EMI-ruining slips.], answer: "B")
-#solution(4, [The reducing-balance EMI formula: $P dot i dot (1 + i)^n / ((1 + i)^n - 1)$. Option (A) lost the "$- 1$" — without it, no loan ever finishes paying.], answer: "C")
-#solution(5, [Gain: $21600 - 20000 = 1600$. Rate: $1600/20000 times 100 = 8%$. No dividend to add — the clean capital-gain-only case.], answer: "B")
-#solution(6, [$"CAGR" = (288000/200000)^(1/2) - 1 = sqrt(1.44) - 1 = 0.2 = 20%$ per year. Check: $2,00,000 dot 1.2 dot 1.2 = 2,88,000$ ✓. Option (A) read the total growth as the yearly rate.], answer: "C")
-#solution(7, [End/start $= 1.5 dot 0.5 = 0.75$, so $"CAGR" = sqrt(0.75) - 1 approx -0.293 = -29.3%$. The $0%$ option is the AGR answer — the average of $+50$ and $-50$ — and it hides a real loss.], answer: "A")
-#solution(8, [Depreciable base: $800000 - 80000 = 7,20,000$. Annual slice: $720000/4 = 1,80,000$ rupees. Option (A) forgot the residual — the most repeated depreciation slip.], answer: "D")
-#solution(9, [Book value after 2 years: $800000 - 2 dot 180000 = 800000 - 360000 = 4,40,000$ rupees. The ladder falls by exactly one slice per year, never below the residual.], answer: "C")
-#solution(10, [Market rate 9% beats the coupon 7%: fresh money pays more, so this bond's price dips below face until its yield matches — a discount. Above-face pricing happens only when the coupon wins.], answer: "B")
-
-= Wrong-Answer Clinic
-
-#table(
-  columns: (1.35fr, 1.35fr, 1.3fr),
-  table.header[*If you picked this*][*The thinking slip*][*The lasting fix*],
-  [(B) in Q1], [Computed the interest on a guessed fund], [Perpetuity divides: $A/i$ — say the operation aloud],
-  [(A) in Q3], [Divided by 9 instead of 12], [Months, not instalment myths — annual ÷ 12],
-  [(A) in Q6], [Quoted total growth as yearly], [Two years of growth means the square root, not the total],
-  [(B) in Q7], [Reached for AGR reflexes], [Averages of % changes lie on volatile paths — compound it],
-  [(A) in Q8], [Depreciated the full cost], [Residual value is protected — subtract it first],
-  [(A) in Q10], ["Fixed coupon = fixed price"], [Coupons are fixed; the MARKET rate prices the bond],
-)
-
-#v(12pt)
-#align(center)[#text(fill: om-grey, size: 8.5pt)[© OurMocks · www.ourmocks.com · CUET UG Mathematics · Financial Mathematics · 2027 cycle]]
+#mcq(15, [A borrower repays a personal loan of ₹1,00,000 taken at 12% p.a. (reducing balance) in 12 monthly installments with an EMI of ₹8,884.88. The interest component paid in the very first monthly installment is:], (
+  [₹1,200.00],
+  [₹1,000.00],
+  [₹7,884.88],
+  [₹888.49],
+))
+#solution(15, [In the first monthly installment:
+- Opening loan balance $B_0 = 1,00,000$ rupees.
+- Monthly interest rate $i = 12% / 12 = 1% = 0.01$.
+- Interest component $I_1$ in Month 1 is:
+  $ I_1 = B_0 dot i = 1,00,000 times 0.01 = 1,000 text("rupees"). $
+(The remaining $P_1 = 8,884.88 - 1,000 = 7,884.88$ goes toward reducing loan principal).
+Option A incorrectly applies the full annual rate ($12%$) to the single month.], answer: [B])
