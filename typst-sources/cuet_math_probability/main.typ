@@ -332,21 +332,60 @@ The value of $r$ that maximizes the binomial probability $P(X = r) = binom(n, r)
 
 *Symmetry Property:* When $p = 1/2$, the Binomial distribution is perfectly symmetric around its mean $mu = n/2$. For $p < 1/2$, it is skewed to the right (positive skew); for $p > 1/2$, it is skewed to the left (negative skew).
 
+#worked-example("Binomial Distribution: Mean, Variance & Determination of Most Likely Successes (Mode)", [
+  *Problem:* A fair die is thrown independently 10 times. A score of 5 or 6 is considered a "success". 
+  Find: (i) The probability distribution parameters, (ii) Mean and variance, and (iii) The most probable number of successes.
+  
+  *Step 1 (Parameters of the Binomial Model):*
+  - Number of trials: $n = 10$.
+  - Probability of success (rolling 5 or 6): $p = 2/6 = 1/3$.
+  - Probability of failure: $q = 1 - p = 1 - 1/3 = 2/3$.
+  - Since trials are independent with constant $p$, $X tilde.op B(10, 1/3)$.
+  
+  *Step 2 (Expectation and Dispersion):*
+  - Mean: $mu = E(X) = n p = 10 times 1/3 = 10/3 approx 3.33$.
+  - Variance: $"Var"(X) = n p q = 10 times (1/3) times (2/3) = 20/9 approx 2.22$.
+  - Notice the universal invariant holds: $"Var"(X) = 20/9 < 10/3 = E(X)$.
+  - Standard Deviation: $sigma = sqrt(20/9) = (2 sqrt(5)) / 3 approx 1.49$.
+  
+  *Step 3 (Finding the Mode — The Most Probable Number of Successes):*
+  - Evaluate the mode indicator: $(n + 1)p = (10 + 1) times 1/3 = 11/3 = 3.67$.
+  - Since $11/3$ is NOT an integer, the distribution is strictly unimodal.
+  - Mode is the integer floor: $m = floor(11/3) = 3$.
+  - *Verification:* $P(X = 3) = binom(10, 3) (1/3)^3 (2/3)^7 = 120 times 1/27 times 128/2187 = 15360 / 59049 approx 0.260$.
+    Comparing with $P(X = 4) = binom(10, 4) (1/3)^4 (2/3)^6 = 210 times 1/81 times 64/729 = 13440 / 59049 approx 0.228$.
+    $P(X = 3)$ is strictly greater than all other probabilities!
+  
+  *Conclusion:* The mean is $10/3$, the variance is $20/9$, and the most likely number of successes is exactly *$3$*.
+])
+
 #figure(
-  image("assets/math_probability_rv_binomial.png", width: 95%),
+  image("assets/math_probability_rv_binomial.png", width: 85%),
   caption: [Figure 2: Discrete Random Variables, Mathematical Expectation, Variance Scaling, and the Binomial Distribution Model],
 )
 
 ---
 
+#pagebreak()
 = 6. Master Synthesis Mindmap & High-Yield Summary
 
 #figure(
-  image("assets/math_probability_mindmap.png", width: 95%),
+  image("assets/math_probability_mindmap.png", width: 85%),
   caption: [Figure 3: Probability Theory, Conditioning, Bayes' Inference, and Distribution Models Master Mindmap],
 )
 
----
+#v(4pt)
+#exam-pointer(title: "Master Probability & Distributions Architecture")[
+  The cognitive taxonomy above unifies the mathematical foundations of Unit V:
+  - *Conditioning & Independence:* In conditional probability $P(A|B) = P(A inter B) / P(B)$, the sample space is restricted to $B$. Two events are independent if and only if $P(A inter B) = P(A) dot P(B)$. Mutual exclusivity ($A inter B = emptyset$) does *not* imply independence!
+  - *Total Probability & Bayes' Inversion:* The Law of Total Probability decomposes an arbitrary event $A$ across a mutually exhaustive partition ${E_1, E_2, dots, E_n}$. Bayes' Theorem computes the posterior probability $P(E_i|A)$, inverting the causality from outcome to antecedent cause.
+  - *Random Variables & Moments:* A discrete random variable $X$ has expected value $mu = E(X) = sum x_i p_i$ and variance $"Var"(X) = E(X^2) - [E(X)]^2$. Shifting by a constant $b$ leaves variance invariant: $"Var"(a X + b) = a^2 "Var"(X)$.
+  - *The Binomial Invariant:* In a Bernoulli process $B(n, p)$, the variance is strictly less than the mean ($n p q < n p$ since $q = 1 - p < 1$). The mode occurs at $floor((n + 1)p)$ if non-integer, or at two consecutive integers $(n+1)p - 1$ and $(n+1)p$ if integer.
+]
+
+#pagebreak()
+#set text(size: 7.2pt)
+#set par(leading: 0.36em, spacing: 0.38em)
 
 = 7. High-Yield Formula Cheatsheet & The Seven Fatal Traps
 
@@ -359,27 +398,27 @@ The value of $r$ that maximizes the binomial probability $P(X = r) = binom(n, r)
   - Total Probability: $P(A) = sum_(i=1)^n P(E_i) P(A|E_i)$.
   - Bayes' Theorem: $P(E_i|A) = frac(P(E_i) P(A|E_i), sum_(j=1)^n P(E_j) P(A|E_j))$.
 
-  *Random Variables & Binomial Model:*
-  - Normalization: $sum p_i = 1$; Mean: $E(X) = sum x_i p_i$.
+  *Random Variables & Discrete Distributions:*
+  - Expectation: $E(X) = sum x_i p_i$; Linear: $E(a X + b) = a E(X) + b$.
   - Variance: $"Var"(X) = E(X^2) - [E(X)]^2$; Scaling: $"Var"(a X + b) = a^2 "Var"(X)$.
-  - Binomial PMF: $P(X = r) = binom(n, r) p^r q^(n - r)$; Mean $= n p$; Variance $= n p q < n p$.
-  - "At least 1 success": $P(X >= 1) = 1 - P(X = 0) = 1 - q^n$.
+  - Binomial PMF: $P(X = r) = binom(n, r) p^r q^(n - r) quad (q = 1 - p)$.
+  - Binomial Moments: $E(X) = n p$; $"Var"(X) = n p q$; Universal Invariant: $"Var"(X) < E(X)$.
+  - Binomial Mode: $m = floor((n + 1)p)$ if $(n+1)p$ non-integer; bimodal at $(n+1)p - 1$ and $(n+1)p$ if integer.
 ]
+
+#v(2pt)
 
 #exception-box(title: "The Seven Fatal CUET Exam Traps in Probability")[
-  1. *The Mutually Exclusive vs Independent Delusion:* Writing $P(A inter B) = 0$ for independent events. Mutually exclusive means disjoint sets; independent means product rule holds!
-  2. *The Complement Conditioning Trap:* Assuming $P(A|B') = 1 - P(A|B)$. This is completely false! Only $P(A'|B) = 1 - P(A|B)$ is valid.
-  3. *Discarding Negative k in PMF:* When solving $sum p_i = 1$ leads to a quadratic in $k$, always discard any root that produces a negative probability ($p_i < 0$) or makes $p_i > 1$.
-  4. *With vs Without Replacement:* Drawing balls *with replacement* forms independent Bernoulli trials (Binomial). Drawing *without replacement* makes trials dependent (probabilities change after every draw)!
-  5. *Bayes' Denominator Omission:* Omitting prior probabilities in the denominator of Bayes' formula. Every term in the denominator must be weighted by its prior $P(E_j)$.
-  6. *Variance Scaling Trap:* Writing $"Var"(2X + 3) = 2 "Var"(X) + 3$. The correct transformation is $"Var"(2X + 3) = 2^2 "Var"(X) = 4 "Var"(X)$!
-  7. *The Binomial Variance Impossible Trap:* If a question claims a Binomial distribution has Mean $= 4$ and Variance $= 5$, recognize immediately that such a distribution *cannot exist* because $"Var" = n p q < n p = "Mean"$!
+  1. *The Mutually Exclusive vs Independent Delusion:* Writing $P(A inter B) = 0$ for independent events! For non-empty independent events, $P(A inter B) = P(A) P(B) > 0$. Mutually exclusive events with positive probabilities can *NEVER* be independent!
+  2. *The Conditional Complement Fallacy:* Believing $P(A'|B') = 1 - P(A|B)$. The valid complement identity is $P(A'|B) = 1 - P(A|B)$. Changing the conditioning event changes the sample space completely!
+  3. *Pairwise vs Mutual Independence Trap (Bernstein's Fallacy):* Three events can be pairwise independent ($P(A inter B) = P(A)P(B)$, etc.) without being mutually independent ($P(A inter B inter C) != P(A)P(B)P(C)$). Always verify both pairwise and three-way conditions!
+  4. *The Bayes' Denominator Omission:* Omitting one of the partition terms in the denominator of Bayes' Theorem. The sum $sum P(E_j) P(A|E_j)$ must cover all possible ways event $A$ can occur across the complete partition!
+  5. *Linear Transformation of Variance Fallacy:* Computing $"Var"(3X - 5) = 3"Var"(X) - 5$. The correct calculation is $"Var"(3X - 5) = 3^2 "Var"(X) = 9"Var"(X)$! Adding or subtracting a constant has zero effect on spread.
+  6. *The Binomial Variance Equality Myth:* Believing that a Binomial distribution can have $"Mean" = 4$ and $"Variance" = 5$. Since $q = 1 - p < 1$, the variance $n p q$ is *strictly less than* the mean $n p$. If a problem asks which distribution is impossible, check if $"Var" >= "Mean"$!
+  7. *The "At Least Once" Complement Shortcut:* Calculating $P(X >= 1)$ by laboriously summing $P(X=1) + P(X=2) + dots$. Always use the complement: $P(X >= 1) = 1 - P(X = 0) = 1 - q^n$!
 ]
 
----
-
 #pagebreak()
-
 #set text(size: 8.5pt)
 #set par(leading: 0.40em, spacing: 0.42em)
 
