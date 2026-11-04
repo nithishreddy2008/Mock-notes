@@ -325,9 +325,72 @@ Human Geography maintains close, interdisciplinary links with sister social scie
   [David Harvey (UK/USA)], [*Social Justice and the City* (1973)], [Pioneered the Marxian Radical School in Human Geography.],
 )
 
----
+#pagebreak()
+#set text(size: 8.0pt)
+#set par(leading: 0.40em, spacing: 0.44em)
 
-= Module 7: CUET UG Practice MCQs (Exam-Standard with Detailed Rationales)
+= Module 7: Master Revision Cheatsheet & Epistemological Synthesis
+
+#cheatsheet-box(title: "Master Revision Matrix — Human Geography: Paradigms, Thinkers & Corridors of Time")[
+  #table(
+    columns: (1.1fr, 1.3fr, 1.6fr),
+    fill: (x, y) => if y == 0 { om-navy } else if calc.even(y) { rgb("#F8FAFC") } else { white },
+    stroke: (x, y) => if y == 0 { none } else { 0.5pt + rgb("#CBD5E1") },
+    table.header(text(fill: white, weight: 800)[Epoch / Approach], text(fill: white, weight: 800)[Core Defining Thinkers], text(fill: white, weight: 800)[Key Geographical Concepts & Axioms]),
+    [*Early Colonial Period*], [Imperial Explorers & Cartographers], [Exploration and Description: Mapping newly discovered coasts and encyclopedic inventories of tradeable commodities.],
+    [*Later Colonial Period*], [Colonial Surveyors & Naturalists], [Regional Analysis: Holistic study of a region as an integrated part of the global organism; elaborate descriptions.],
+    [*1930s (Inter-War Period)*], [Richard Hartshorne, Alfred Hettner], [Areal Differentiation: Identifying what makes each geographic region unique and different from other areas.],
+    [*Late 1950s – Late 1960s*], [Quantitative Spatial Scientists], [Spatial Organisation (Quantitative Revolution): Application of universal physics laws, geometry, and statistical models; treating humans as rational *Homo economicus*.],
+    [*1970s Radical School*], [David Harvey (*Social Justice and the City*)], [Marxian theory applied to spatial inequality: Poverty, deprivation, and urban slums are direct structural outcomes of capitalism.],
+    [*1970s Welfare / Humanistic*], [David M. Smith (*Where the Grass is Greener*)], [Welfare Geography: Focus on social well-being, healthcare, education, housing, and *"Who gets what, where, and how?"*.],
+    [*1970s Behavioural School*], [Julian Wolpert, Yi-Fu Tuan], [Cognitive perception, mental maps, and human lived experience; spatial behavior is governed by subjective perception, not geometric optimization.],
+    [*1990s Post-Modernism*], [Post-modern social theorists], [Rejection of universal meta-narratives; questioning global theories; local context, pluralistic voices, and historic specificity.],
+    [*Environmental Determinism*], [Friedrich Ratzel (*Anthropogeographie*), E.C. Semple], [*Naturalisation of Humans*: Primitive technology forces absolute subservience to nature; *"State of Necessity"*; Benda of Abujh Maad case.],
+    [*Possibilism*], [Paul Vidal de la Blache, Lucian Febvre], [*Humanisation of Nature*: Technology transforms constraints into latent opportunities; *"State of Freedom"*; Kari of Trondheim case.],
+    [*Neo-Determinism*], [Griffith Taylor (*Stop-and-Go Determinism*)], [Pragmatic middle path: Nature sets traffic-light boundaries; humans accelerate/pause but cannot subvert ecological laws.],
+  )
+]
+
+#v(4pt)
+#important-box(title: "The Organic & Anatomical Toponymy of Geography")[
+  - *Metaphorical Body of the Earth:* Geographers anthropomorphize nature by identifying the *face of the earth*, *eye of the storm*, *mouth of the river*, *snout of a glacier*, *neck of the isthmus*, and *profile of soil*.
+  - *Organic Concept of the State:* Friedrich Ratzel famously described the sovereign nation-state as a *living physical organism*, whose territory represents its bodily frame and borders represent its living skin requiring expansion (*Lebensraum*).
+  - *Transport Arteries:* Networks of railways, roadways, waterways, and optical-fiber conduits are universally conceptualized as *arteries and veins of circulation* sustaining the economic organism.
+]
+
+#pagebreak()
+#set text(size: 7.8pt)
+#set par(leading: 0.38em, spacing: 0.40em)
+
+= Module 8: The Seven Fatal CUET Traps & Diagnostic Rules
+
+#exception-box(title: "The Seven Fatal CUET Exam Traps in Human Geography")[
+  #table(
+    columns: (1fr, 1.4fr, 1.6fr),
+    fill: (x, y) => if y == 0 { om-navy } else if calc.even(y) { rgb("#F8FAFC") } else { white },
+    stroke: (x, y) => if y == 0 { none } else { 0.5pt + rgb("#CBD5E1") },
+    table.header(text(fill: white, weight: 800)[The Trap Concept], text(fill: white, weight: 800)[The Common Student Slip], text(fill: white, weight: 800)[The Exact NCERT / NTA Rule]),
+    [*1. Ratzel vs Semple Definition*], [Confusing Ratzel's and Semple's definitions of Human Geography.], [Ratzel's keyword is *synthetic study* (*Anthropogeographie*). Semple's keyword is *changing relationship between unresting man and unstable earth*.],
+    [*2. Coining vs Championing Possibilism*], [Crediting Vidal de la Blache with coining the term Possibilism.], [Historian *Lucian Febvre* coined the word "Possibilism" (*"There are no necessities..."*). Vidal de la Blache was its primary geographic champion.],
+    [*3. Red Light vs Green Light Meaning*], [Assuming red light means "permanent prohibition" of human development.], [Taylor's red light means *stop/pause and obey natural limits* (do not destroy ecology). Green light means *go ahead within carrying capacity*.],
+    [*4. 1970s Triad Distinctions*], [Mixing up the philosophical drivers of the 1970s triad of schools.], [Radical = *Marxian structural critique of capitalism*; Welfare = *Social well-being & distribution*; Behavioural = *Cognitive perception & mental maps*.],
+    [*5. Spatial Organisation Era*], [Assigning the Quantitative Revolution to the 1970s or 1990s.], [Spatial Organisation (computer models, statistical laws) strictly peaked during the *Late 1950s to Late 1960s*!],
+    [*6. Dualism & Dichotomy Nature*], [Believing physical geography and human geography are irreconcilably separate.], [NCERT emphasizes that nature and human beings are *inseparable elements* and must be studied holistically as an organic whole.],
+    [*7. Natural Law Prerequisite*], [Assuming technology can be developed without understanding natural physical laws.], [Friction and heat laws led to *fire*; DNA/genetics led to *curing disease*; aerodynamics laws led to *faster aircraft*! Technology requires prior natural law mastery.],
+  )
+]
+
+#v(4pt)
+#exam-pointer(title: "High-Frequency CUET UG Testing Patterns")[
+  - *Chronological Match-the-Following:* Always memorize NCERT Table 1.1 in chronological order: Exploration (Early Colonial) $->$ Regional Analysis (Later Colonial) $->$ Areal Differentiation (1930s Inter-War) $->$ Spatial Organisation (Late 1950s–1960s) $->$ Radical, Behavioural, Welfare Triad (1970s) $->$ Post-Modernism (1990s).
+  - *Philosophical Paradigm Pairings:* Match environmental determinism with "state of necessity" (Benda), possibilism with "state of freedom" (Kari), and neo-determinism with "stop-and-go" (Taylor).
+]
+
+#pagebreak()
+#set text(size: 8.5pt)
+#set par(leading: 0.38em, spacing: 0.40em)
+
+= Module 9: CUET UG Practice Questions — Part 1 (Q1 to Q5)
 
 #mcq(
   1,
@@ -413,6 +476,12 @@ Human Geography maintains close, interdisciplinary links with sister social scie
   [French historian *Lucian Febvre* coined this famous phrase in *A Geographical Introduction to History* (1925), formally introducing the term *Possibilism*.],
   answer: [C]
 )
+
+#pagebreak()
+#set text(size: 8.5pt)
+#set par(leading: 0.38em, spacing: 0.40em)
+
+= Practice Questions — Part 2 (Q6 to Q10)
 
 #mcq(
   6,
@@ -502,6 +571,12 @@ Human Geography maintains close, interdisciplinary links with sister social scie
   [According to NCERT Table 1.1: Early Colonial = Exploration & Description (ii); 1930s Inter-War = Areal Differentiation (iii); Late 1950s–1960s = Spatial Organisation (i); 1990s to Present = Post-Modernism (iv).],
   answer: [A]
 )
+
+#pagebreak()
+#set text(size: 8.5pt)
+#set par(leading: 0.38em, spacing: 0.40em)
+
+= Practice Questions — Part 3 (Q11 to Q15)
 
 #mcq(
   11,
