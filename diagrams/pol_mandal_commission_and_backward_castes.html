@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px 32px;
+    overflow: hidden;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #071A4D;
+    padding: 16px 28px;
+    border-radius: 12px;
+    border-bottom: 4px solid #1F5EFF;
+    margin-bottom: 16px;
+  }
+  .header-left h1 {
+    color: #FFFFFF;
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+  }
+  .header-left p {
+    color: #94A3B8;
+    font-size: 13px;
+    font-weight: 500;
+    margin-top: 3px;
+  }
+  .badge {
+    background: #1F5EFF;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+  }
+  .main-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    height: 740px;
+  }
+  .card {
+    background: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    border-radius: 12px;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+  }
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #E2E8F0;
+    margin-bottom: 12px;
+  }
+  .card-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: #EFF6FF;
+    color: #1F5EFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 15px;
+  }
+  .card-title {
+    font-size: 15px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .card-subtitle {
+    font-size: 11px;
+    color: #64748B;
+  }
+  .sub-box {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin-bottom: 10px;
+  }
+  .sub-title {
+    font-size: 12.5px;
+    font-weight: 800;
+    color: #1E293B;
+    margin-bottom: 4px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .sub-title span {
+    font-size: 11px;
+    color: #1F5EFF;
+    font-weight: 700;
+  }
+  .detail-list {
+    font-size: 11px;
+    line-height: 1.45;
+    color: #334155;
+  }
+  .detail-list li {
+    margin-left: 14px;
+    margin-bottom: 2px;
+  }
+  .tag {
+    display: inline-block;
+    background: #E2E8F0;
+    color: #334155;
+    font-size: 9.5px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-right: 4px;
+    margin-top: 4px;
+  }
+  .tag-blue { background: #DBEAFE; color: #1E40AF; }
+  .tag-green { background: #DCFCE7; color: #166534; }
+  .tag-amber { background: #FEF3C7; color: #92400E; }
+  .tag-red { background: #FEE2E2; color: #991B1B; }
+  .highlight-strip {
+    background: #F1F5F9;
+    border-left: 3px solid #1F5EFF;
+    padding: 6px 10px;
+    font-size: 10.5px;
+    color: #0F172A;
+    border-radius: 0 6px 6px 0;
+    margin-top: auto;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <h1>MANDAL COMMISSION, OBC ASSERTION & THE COALITION ERA</h1>
+    <p>Constitutional Mandate · 27% Reservation · Indra Sawhney Benchmark · Four Eras of Coalitions (1989–2024)</p>
+  </div>
+  <div class="badge">POLITICAL SCIENCE UNIT 15 · CONCEPT MATRIX</div>
+</div>
+
+<div class="main-grid">
+
+  <!-- Column 1 -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon">1</div>
+      <div>
+        <div class="card-title">Mandal Commission & Mobilisation</div>
+        <div class="card-subtitle">Social Justice, 11 Indicators & 27% Quota</div>
+      </div>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">Commissions on Backward Classes <span>Article 340</span></div>
+      <ul class="detail-list">
+        <li><strong>First Commission (1953):</strong> Chaired by Kaka Kalelkar; submitted report in 1955; shelved due to lack of quantifiable criteria.</li>
+        <li><strong>Second Commission (1978):</strong> Appointed by Morarji Desai Janata govt under B.P. Mandal; submitted report in Dec 1980.</li>
+        <li><strong>11 Indicators:</strong> Used social, educational, and economic metrics; identified 3,743 castes comprising 52% of India's population.</li>
+        <li><strong>27% Reservation:</strong> Recommended 27% quota in Union civil jobs and public sector to adhere to Supreme Court's 50% ceiling.</li>
+      </ul>
+      <span class="tag tag-blue">Kalelkar (1953)</span>
+      <span class="tag tag-amber">B.P. Mandal (1978)</span>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">Implementation & Stir (1990) <span>V.P. Singh</span></div>
+      <ul class="detail-list">
+        <li><strong>7 August 1990:</strong> PM V.P. Singh announced implementation of Mandal recommendations in Parliament.</li>
+        <li><strong>Widespread Agitations:</strong> Violent protests, student bandhs, and self-immolations across northern Indian university towns.</li>
+        <li><strong>Political Realignment:</strong> Transformed Indian democracy from upper-caste hegemony to OBC/backward caste political dominance.</li>
+      </ul>
+      <span class="tag tag-green">7 Aug 1990 Decision</span>
+      <span class="tag tag-red">Anti-Mandal Stir</span>
+    </div>
+
+    <div class="highlight-strip">
+      <strong>Core Fact:</strong> Mandal estimated OBCs at 52% of population, recommending 27% quota to stay strictly within the 50% constitutional ceiling.
+    </div>
+  </div>
+
+  <!-- Column 2 -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon">2</div>
+      <div>
+        <div class="card-title">Indra Sawhney & Bahujan Assertion</div>
+        <div class="card-subtitle">Constitutional Jurisprudence & Subaltern Rise</div>
+      </div>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">Indra Sawhney Case (1992) <span>Landmark Bench</span></div>
+      <ul class="detail-list">
+        <li><strong>9-Judge Bench:</strong> Upheld 27% OBC reservation in Central civil services as constitutionally valid.</li>
+        <li><strong>The 50% Ceiling:</strong> Capped total affirmative action quotas at 50% across regular recruitments.</li>
+        <li><strong>Creamy Layer Exclusion:</strong> Advanced/affluent members among OBCs must be excluded from quota benefits.</li>
+        <li><strong>No Quotas in Promotion:</strong> Ruled reservation confined strictly to initial appointments, not promotions.</li>
+      </ul>
+      <span class="tag tag-green">27% Upheld</span>
+      <span class="tag tag-amber">Creamy Layer Excluded</span>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">Bahujan Resurgence & Regional Parties <span>Kanshi Ram</span></div>
+      <ul class="detail-list">
+        <li><strong>BAMCEF (1978) & DS-4 (1981):</strong> Non-political employees and agitation forums created by Kanshi Ram.</li>
+        <li><strong>Bahujan Samaj Party (1984):</strong> Formed to empower Bahujans (SC, ST, OBC, religious minorities); Mayawati became UP CM in 1995.</li>
+        <li><strong>Agrarian OBC Parties:</strong> SP (Mulayam Singh), RJD (Lalu Prasad), and JD(U) (Nitish Kumar) displaced Congress in Hindi heartland.</li>
+      </ul>
+      <span class="tag tag-blue">BAMCEF 1978</span>
+      <span class="tag tag-green">BSP (Kanshi Ram)</span>
+    </div>
+
+    <div class="highlight-strip">
+      <strong>CUET Distinction:</strong> The 1992 Indra Sawhney ruling upheld 27% OBC quota but mandated exclusion of the *creamy layer*.
+    </div>
+  </div>
+
+  <!-- Column 3 -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon">3</div>
+      <div>
+        <div class="card-title">Four Coalition Regimes (1989–2024)</div>
+        <div class="card-subtitle">From Instability to Dominant Coalitions</div>
+      </div>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">National Front & United Front <span>1989–1998</span></div>
+      <ul class="detail-list">
+        <li><strong>National Front (1989–90):</strong> V.P. Singh; outside support from BJP & Left; Chandra Shekhar interim (1990–91).</li>
+        <li><strong>United Front (1996–98):</strong> 13 regional parties; PMs Deve Gowda & I.K. Gujral backed from outside by Congress; Gujral Doctrine.</li>
+      </ul>
+      <span class="tag tag-blue">National Front (1989)</span>
+      <span class="tag tag-amber">United Front (1996)</span>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">NDA & UPA Coalitions <span>1998–2024</span></div>
+      <ul class="detail-list">
+        <li><strong>NDA (1998–2004):</strong> Atal Bihari Vajpayee; Pokhran-II (1998); first non-Congress coalition to complete full 5-year term.</li>
+        <li><strong>UPA (2004–2014):</strong> Dr. Manmohan Singh; rights architecture: RTI (2005), MGNREGA (2005), RTE (2009), Food Security (2013).</li>
+        <li><strong>NDA III & IV (2014–2024):</strong> Narendra Modi; single-party majority (282 in 2014, 303 in 2019) leading coalition; 3rd Democratic Upsurge.</li>
+      </ul>
+      <span class="tag tag-green">NDA (1999–2004)</span>
+      <span class="tag tag-blue">UPA (2004–2014)</span>
+    </div>
+
+    <div class="highlight-strip">
+      <strong>Theoretical Anchor:</strong> Yogendra Yadav's Three Upsurges: 1st (Adult Suffrage), 2nd (Mandal/OBC), 3rd (Aspirational/Governance).
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
