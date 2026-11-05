@@ -7,6 +7,9 @@
   subtitle: "Fundamentals of Human Geography: Distribution, Density, Growth, Composition, Demographic Transition, and Human Development",
 )
 
+#set text(size: 10.3pt)
+#set par(leading: 0.64em, spacing: 0.88em)
+
 = Module 1: World Population Distribution, Density & Growth
 
 == 1.1 Patterns of World Population Distribution
@@ -435,8 +438,8 @@ UNDP classifies countries into four distinct human development tiers based on co
   1,
   [According to American geographer George B. Cressey's famous observation on Asian demography:],
   (
-    [Asia has fertile plains everywhere supporting identical population concentrations.],
     [Asia has many places where people are few and few places where people are very many.],
+    [Asia has fertile plains everywhere supporting identical population concentrations.],
     [Asia's population growth is governed purely by industrial development.],
     [Asia has zero regional disparities in arithmetic population density.],
   )
@@ -445,16 +448,16 @@ UNDP classifies countries into four distinct human development tiers based on co
 #solution(
   1,
   [George B. Cressey famously observed that "Asia has many places where people are few and few places where people are very many," highlighting extreme spatial clustering in fertile river plains alongside vast uninhabited highlands and deserts.],
-  answer: [B]
+  answer: [A]
 )
 
 #mcq(
   2,
   [Roughly what percentage of the total world population is concentrated in the top ten most populous countries?],
   (
-    [25%],
-    [40%],
     [60%],
+    [40%],
+    [25%],
     [85%],
   )
 )
@@ -462,15 +465,15 @@ UNDP classifies countries into four distinct human development tiers based on co
 #solution(
   2,
   [The world's ten most populous countries account for approximately 60% of the world's population. Six of these ten countries (China, India, Indonesia, Pakistan, Bangladesh, Russia) are in Asia.],
-  answer: [C]
+  answer: [A]
 )
 
 #mcq(
   3,
   [If a region covers an area of $500 "km"^2$ and has a total population of $250,000$ persons, what is its Arithmetic Population Density?],
   (
-    [200 persons/$"km"^2$],
     [500 persons/$"km"^2$],
+    [200 persons/$"km"^2$],
     [1,000 persons/$"km"^2$],
     [50 persons/$"km"^2$],
   )
@@ -479,7 +482,7 @@ UNDP classifies countries into four distinct human development tiers based on co
 #solution(
   3,
   [Arithmetic Population Density $= "Total Population" / "Total Area" = 250,000 / 500 = 500 "persons"/"km"^2$.],
-  answer: [B]
+  answer: [A]
 )
 
 #mcq(
@@ -487,25 +490,25 @@ UNDP classifies countries into four distinct human development tiers based on co
   [Which of the following is cited in NCERT as a classic example of an industrial region that attracts dense population concentrations due to manufacturing and tertiary employment?],
   (
     [Katanga-Zambia copper belt],
-    [Kobe-Osaka region of Japan],
-    [Atacama Desert of Chile],
     [Amazon basin of South America],
+    [Atacama Desert of Chile],
+    [Kobe-Osaka region of Japan],
   )
 )
 
 #solution(
   4,
   [The Kobe-Osaka region of Japan is a densely populated industrial cluster that attracted millions due to manufacturing, shipping, trade, and commercial employment opportunities.],
-  answer: [B]
+  answer: [D]
 )
 
 #mcq(
   5,
   [Which of the following migration drivers is classified strictly as a *Push Factor* operating at the place of origin?],
   (
-    [Pleasant sub-tropical climate],
-    [High real wages and lucrative career options],
     [Agrarian distress and severe unemployment],
+    [High real wages and lucrative career options],
+    [Pleasant sub-tropical climate],
     [Access to modern medical amenities],
   )
 )
@@ -513,7 +516,7 @@ UNDP classifies countries into four distinct human development tiers based on co
 #solution(
   5,
   [Push factors are negative circumstances that compel people to leave their native place of origin. Severe unemployment, agrarian distress, drought, and lack of basic infrastructure are push factors.],
-  answer: [C]
+  answer: [A]
 )
 
 #pagebreak()
@@ -562,15 +565,15 @@ UNDP classifies countries into four distinct human development tiers based on co
   (
     [Declining birth rates and an aging population],
     [Equal birth and death rates leading to zero growth],
-    [High birth rates and an expanding, youthful population],
     [Severe female deficit due to labor immigration],
+    [High birth rates and an expanding, youthful population],
   )
 )
 
 #solution(
   8,
   [A triangular pyramid with a wide base reflects high birth rates and a large child cohort typical of developing countries like Nigeria, Bangladesh, and Mexico.],
-  answer: [C]
+  answer: [D]
 )
 
 #mcq(
