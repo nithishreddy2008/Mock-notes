@@ -55,6 +55,8 @@
 
 #pagebreak()
 
+#set text(size: 10.2pt)
+#set par(leading: 0.62em, spacing: 0.85em)
 
 = Module 1: Classification, Nomenclature & Structural Geometry
 
@@ -139,7 +141,7 @@ In alcohols, phenols, and ethers, the oxygen atom is $s p^3$-hybridised with two
    Benzene is sulphonated with oleum; sodium benzenesulphonate is fused with solid sodium hydroxide at $573 "K"$, yielding sodium phenoxide which on acidification gives phenol.
 
 #figure(
-  image("assets/chem_alcohol_map.png", width: 82%),
+  image("assets/chem_alcohol_map.png", width: 76%),
   caption: [Alcohol classification, diagnostic distinction tests (Lucas turbidity kinetics & Victor Meyer colorimetry), Cu/573 K catalytic divergence, and relative acidities.],
 )
 
@@ -203,7 +205,7 @@ Alcohols act as versatile amphoteric compounds (both weak Brønsted acids and Le
      $ ("CH"_3)_3 C-"OH" arrow.r^("Cu" / 573 "K") ("CH"_3)_2 C = "CH"_2 + "H"_2 "O" quad ("2-methylpropene") $
 
 #figure(
-  image("assets/chem_alcohol_phenol_tests.png", width: 82%),
+  image("assets/chem_alcohol_phenol_tests.png", width: 76%),
   caption: [Phenols acidity mechanisms, phenoxide resonance stabilization, hallmark name reactions (Kolbe, Reimer-Tiemann), Williamson ether synthesis constraints, and $"HI"$ cleavage regiochemistry.],
 )
 
@@ -325,11 +327,11 @@ The methoxy group ($-"OCH"_3$) in anisole is activating and ortho/para-directing
 #pagebreak()
 
 #figure(
-  image("assets/chem_alcohol_mindmap.png", width: 88%),
+  image("assets/chem_alcohol_mindmap.png", width: 70%),
   caption: [Master Synthesis Architecture: Complete Unit VII cognitive roadmap integrating alcohol distinctions, phenoxide resonance, hallmark name reactions, Williamson ether rules, and $"HI"$ cleavage mechanisms.],
 )
 
-#v(2pt)
+
 
 #exam-pointer(title: "Master Synthesis Map & Strategic Reaction Pathways Breakdown")[
   The cognitive architecture diagram above synthesises the core reactive transformations across Unit VII:
@@ -338,7 +340,6 @@ The methoxy group ($-"OCH"_3$) in anisole is activating and ortho/para-directing
   - *Dual Cleavage Pathways of Ethers:* Trace the branched logic for unsymmetrical ether cleavage with $"HI"$: sterically unhindered primary/secondary ethers proceed via bimolecular displacement ($S_N 2$) at the smaller alkyl group, whereas tertiary ethers immediately dissociate into stable carbocations via unimolecular cleavage ($S_N 1$).
   - *Williamson Synthesis Constraints:* Always check the alkyl halide substrate first—primary halides ($1^circle$) undergo productive $S_N 2$ etherification, whereas tertiary halides ($3^circle$) undergo $100%$ elimination to form alkenes due to the basicity of alkoxide ions.
 ]
-
 
 #pagebreak()
 
@@ -363,7 +364,7 @@ The methoxy group ($-"OCH"_3$) in anisole is activating and ortho/para-directing
   )
 ]
 
-#v(2pt)
+
 
 #exception-box(title: "Top 7 High-Frequency CUET Traps & Pitfalls")[
   #set text(size: 7.5pt)
@@ -376,145 +377,147 @@ The methoxy group ($-"OCH"_3$) in anisole is activating and ortho/para-directing
   7. *Solvent Control in Phenol Bromination:* Phenol with aqueous bromine ($"Br"_2/"H"_2 "O"$) gives a *white precipitate of 2,4,6-tribromophenol*, because water ionizes phenol to phenoxide which hyperactivates the ring. In non-polar $"CS"_2$ at $273 "K"$, phenol remains unionized and yields *p-bromophenol* as major product.
 ]
 
-
 #pagebreak()
+#set text(size: 9.6pt)
+#set par(leading: 0.52em, spacing: 0.60em)
 
 #block(width: 100%, inset: (y: 6pt, x: 10pt), fill: om-navy, radius: 4pt)[
   #text(fill: white, font: om-display-font, size: 13pt, weight: 800)[Practice Questions (Exam Pattern) — Part 1 (Q1 to Q5)]
 ]
 
-#mcq(1, [An unknown alcohol reacts with Lucas reagent (concentrated $"HCl"$ and anhydrous $"ZnCl"_2$) to produce instantaneous cloudiness / turbidity at room temperature. The alcohol is most likely:], (
+#mcq(1, [An unknown alcohol reacts with Lucas reagent (concentrated $"HCl"$ and anhydrous $"ZnCl"_2$) at room temperature to produce immediate turbidity. Which of the following compounds is the unknown alcohol?], (
   [Butan-1-ol],
-  [Butan-2-ol],
-  [2-Methylpropan-2-ol (tert-butyl alcohol)],
-  [2-Methylpropan-1-ol (isobutyl alcohol)],
+  [Propan-2-ol],
+  [2-Methylpropan-2-ol],
+  [Ethanol],
 ))
 #solution(1, [Lucas reagent reacts via an $S_N 1$ mechanism wherein the rate is governed by carbocation stability. Tertiary alcohols form exceptionally stable $3^circle$ carbocations, undergoing immediate conversion into insoluble alkyl chlorides and producing instant turbidity at room temperature: $3^circle$ (instant) $> 2^circle$ (5 mins) $> 1^circle$ (heat only). 2-Methylpropan-2-ol is a $3^circle$ alcohol.], answer: [C])
 
-#mcq(2, [In the Victor Meyer test for distinguishing alcohols, the colours produced by primary, secondary, and tertiary alcohols after treatment with alkali ($"NaOH"$) are respectively:], (
-  [Blue, Red, and Colourless],
+#mcq(2, [In the Victor Meyer test for distinguishing alcohols, the colours produced after reaction with nitrous acid followed by alkalisation with sodium hydroxide for primary, secondary, and tertiary alcohols are respectively:], (
   [Blood Red, Deep Blue, and Colourless],
-  [Colourless, Blood Red, and Deep Blue],
+  [Deep Blue, Blood Red, and Colourless],
+  [Colourless, Deep Blue, and Blood Red],
   [Blood Red, Colourless, and Deep Blue],
 ))
-#solution(2, [In the Victor Meyer test, primary alcohols form nitrolic acid which dissolves in alkali giving a characteristic Blood Red colour. Secondary alcohols form pseudonitrol which is alkali-insoluble and appears Deep Blue. Tertiary alcohols lack an $alpha$-hydrogen, failing to react with nitrous acid and remaining Colourless (*R-B-C Rule*).], answer: [B])
+#solution(2, [In the Victor Meyer test, primary alcohols form nitrolic acid which dissolves in alkali giving a characteristic Blood Red colour. Secondary alcohols form pseudonitrol which is alkali-insoluble and appears Deep Blue. Tertiary alcohols lack an $alpha$-hydrogen, failing to react with nitrous acid and remaining Colourless (*R-B-C Rule*).], answer: [A])
 
-#mcq(3, [When vapours of 2-methylpropan-2-ol (tert-butyl alcohol) are passed over heated copper metal at $573 "K"$ ($300^circle.small "C"$), the organic product formed is:], (
+#mcq(3, [When vapours of 2-methylpropan-2-ol (tert-butyl alcohol) are passed over heated copper catalyst at $573 "K"$, the major organic product obtained is:], (
   [2-Methylpropanal],
-  [2-Methylpropanoic acid],
-  [2-Methylpropene],
   [Butan-2-one],
+  [2-Methylpropene],
+  [Propan-2-one],
 ))
-#solution(3, [Primary and secondary alcohols undergo catalytic dehydrogenation over heated copper at $573 "K"$ to yield aldehydes and ketones respectively. However, tertiary alcohols lack an $alpha$-hydrogen atom on the hydroxyl-bearing carbon and cannot undergo dehydrogenation; instead, they undergo catalytic *dehydration* to eliminate water and form an alkene: $("CH"_3)_3 C-"OH" arrow.r^("Cu"/573 "K") ("CH"_3)_2 C = "CH"_2 + "H"_2 "O"$.], answer: [C])
+#solution(3, [Primary and secondary alcohols undergo catalytic dehydrogenation over heated copper at $573 "K"$ to yield aldehydes and ketones respectively. However, tertiary alcohols lack an $alpha$-hydrogen atom on the hydroxyl-bearing carbon atom and cannot dehydrogenate. Instead, they undergo catalytic *dehydration* across adjacent $C-C$ bonds to produce alkenes. 2-Methylpropan-2-ol yields *2-methylpropene (isobutylene)* and water.], answer: [C])
 
-#mcq(4, [Propene is subjected to hydroboration-oxidation by treatment with diborane ($B_2 H_6$) followed by alkaline hydrogen peroxide ($"H"_2 "O"_2 / "OH"^-$). The major alcohol obtained is:], (
-  [Propan-2-ol],
-  [Propan-1-ol],
-  [Propane-1,2-diol],
-  [A 50:50 mixture of propan-1-ol and propan-2-ol],
+#mcq(4, [The correct decreasing order of acid strength among the following substituted phenols and water is:], (
+  [Picric acid $> p$-Nitrophenol $> o$-Nitrophenol $>$ Phenol $>$ Water],
+  [Water $>$ Phenol $> o$-Nitrophenol $> p$-Nitrophenol $>$ Picric acid],
+  [Phenol $> p$-Nitrophenol $> o$-Nitrophenol $>$ Picric acid $>$ Water],
+  [$p$-Nitrophenol $>$ Picric acid $> o$-Nitrophenol $>$ Phenol $>$ Water],
 ))
-#solution(4, [Hydroboration-oxidation involves concerted syn-addition of borane ($"BH"_3$) across the double bond, followed by oxidative cleavage with alkaline $"H"_2 "O"_2$. The net transformation corresponds to the stereospecific *anti-Markovnikov addition of water* without any carbocation formation or skeletal rearrangement, yielding pure propan-1-ol as the exclusive product.], answer: [B])
+#solution(4, [Electron-withdrawing nitro groups ($-"NO"_2$) stabilize the phenoxide ion through $-I$ and $-M$ resonance effects. Picric acid (2,4,6-trinitrophenol) has three $-"NO"_2$ groups and is strongly acidic ($p K_a = 0.71$), stronger than carboxylic acids. $p$-Nitrophenol ($p K_a = 7.15$) is slightly more acidic than $o$-nitrophenol ($p K_a = 7.23$) due to absence of intramolecular H-bonding. Phenol ($p K_a approx 10$) is $10^6$ times more acidic than water ($p K_a = 15.7$). Thus, Picric acid $> p$-Nitrophenol $> o$-Nitrophenol $>$ Phenol $>$ Water.], answer: [A])
 
-#mcq(5, [Which of the following compounds exhibits the HIGHEST acidic strength in aqueous solution?], (
-  [Phenol],
-  [p-Nitrophenol],
-  [p-Cresol],
-  [2,4,6-Trinitrophenol (Picric acid)],
+#mcq(5, [In the Reimer-Tiemann reaction of phenol with chloroform in aqueous sodium hydroxide, the electrophilic reactive intermediate that attacks the benzene ring is:], (
+  [Dichloromethyl cation ($"CHCl"_2^+$)],
+  [Trichloromethyl anion ($"CCl"_3^-  $)],
+  [Chlorocarbene ($: "CH"-"Cl"$)],
+  [Dichlorocarbene ($: "CCl"_2$)],
 ))
-#solution(5, [Picric acid contains three strongly electron-withdrawing nitro groups ($-"NO"_2$) at the two ortho and one para positions. Through powerful $-I$ and $-R$ effects, they delocalise and stabilize the conjugate phenoxide anion to an extraordinary extent ($p K_a = 0.71$). It is more acidic than acetic acid and easily decomposes aqueous sodium bicarbonate ($"NaHCO"_3$), releasing effervescence of $"CO"_2$.], answer: [D])
+#solution(5, [In the Reimer-Tiemann reaction, chloroform undergoes $alpha$-elimination by hydroxide base to form the neutral, electron-deficient sextet intermediate *dichlorocarbene ($: "CCl"_2$)*, which acts as the active electrophile attacking the hyperactivated phenoxide ring at the ortho position to yield salicylaldehyde.], answer: [D])
 
 #pagebreak()
-
 #block(width: 100%, inset: (y: 6pt, x: 10pt), fill: om-navy, radius: 4pt)[
   #text(fill: white, font: om-display-font, size: 13pt, weight: 800)[Practice Questions (Exam Pattern) — Part 2 (Q6 to Q10)]
 ]
 
-#mcq(6, [The reactive intermediate electrophile responsible for formylation in the Reimer-Tiemann reaction of phenol with chloroform in aqueous sodium hydroxide is:], (
-  [Formyl cation ($"H-C"^+ = O$)],
-  [Dichlorocarbene ($:C "Cl"_2$)],
-  [Trichloromethyl carbanion ($:C "Cl"_3^-$)],
-  [Chloromethyl radical ($dot("C")"H"_2 "Cl"$)],
+#mcq(6, [When phenol is heated with carbon dioxide ($"CO"_2$) at $400 "K"$ under $4-7 "atm"$ pressure in the presence of sodium hydroxide, followed by acidification, the major product formed is:], (
+  [Salicylaldehyde],
+  [Benzoic acid],
+  [Phthalic acid],
+  [Salicylic acid],
 ))
-#solution(6, [In the Reimer-Tiemann reaction, hydroxide ion abstracts the acidic proton from chloroform ($"CHCl"_3$), followed by loss of a chloride ion ($alpha$-elimination) to generate the neutral, electron-deficient *dichlorocarbene ($:C "Cl"_2$)* intermediate with an unfilled sextet of electrons. This carbene acts as the active electrophile attacking the phenoxide ring.], answer: [B])
+#solution(6, [This is Kolbe's Reaction. Sodium phenoxide undergoes electrophilic aromatic substitution with the weak electrophile carbon dioxide ($"CO"_2$) at $400 "K"$ and $4-7 "atm"$. Intramolecular sodium chelation directs carboxylation almost exclusively to the ortho position. Subsequent mineral acidification yields *Salicylic acid (2-hydroxybenzoic acid)*, the fundamental precursor for aspirin.], answer: [D])
 
-#mcq(7, [A mixture of ortho-nitrophenol and para-nitrophenol obtained from the nitration of phenol with dilute nitric acid can be cleanly separated by steam distillation because:], (
-  [o-Nitrophenol possesses intramolecular hydrogen bonding and is steam volatile],
-  [p-Nitrophenol possesses intramolecular hydrogen bonding and is steam volatile],
-  [o-Nitrophenol has a higher boiling point due to extensive intermolecular association],
-  [p-Nitrophenol is completely insoluble in boiling water],
+#mcq(7, [A mixture of ortho-nitrophenol and para-nitrophenol can be cleanly separated by steam distillation because:], (
+  [ortho-Nitrophenol possesses intramolecular hydrogen bonding and is steam-volatile],
+  [para-Nitrophenol possesses intramolecular hydrogen bonding and has lower boiling point],
+  [ortho-Nitrophenol forms intermolecular hydrogen bonds with water molecules],
+  [para-Nitrophenol has a lower molecular mass than ortho-nitrophenol],
 ))
-#solution(7, [o-Nitrophenol forms a stable 6-membered ring via *intramolecular hydrogen bonding* between its hydroxyl and adjacent nitro groups (chelation). This prevents association with neighboring molecules, resulting in lower boiling point and high steam volatility. In contrast, p-nitrophenol forms *intermolecular hydrogen bonds* linking molecules into polymeric chains, conferring a high boiling point and non-steam volatility.], answer: [A])
+#solution(7, [ortho-Nitrophenol undergoes *intramolecular hydrogen bonding* (chelation) between $-"OH"$ and adjacent $-"NO"_2$, preventing association with other molecules, lowering its boiling point, and making it steam-volatile. Conversely, para-nitrophenol forms extensive *intermolecular hydrogen bonding* leading to molecular association, higher boiling point, and non-volatility in steam.], answer: [A])
 
-#mcq(8, [Salicylic acid is converted into the globally utilized analgesic and anti-inflammatory drug Aspirin (acetylsalicylic acid) by treatment with:], (
-  [Methanol in the presence of concentrated sulphuric acid],
-  [Acetic anhydride in the presence of an acid catalyst],
-  [Phenol in the presence of phosphorus oxychloride],
-  [Sodium hydroxide followed by carbon dioxide at 400 K],
+#mcq(8, [Which of the following reaction sequences is the MOST suitable for preparing tert-butyl ethyl ether via Williamson ether synthesis?], (
+  [Sodium tert-butoxide $+$ Ethyl bromide],
+  [Sodium ethoxide $+$ tert-Butyl bromide],
+  [tert-Butyl alcohol $+$ Ethanol with conc. $"H"_2 "SO"_4$ at $413 "K"$],
+  [Potassium ethoxide $+$ tert-Butyl chloride at $450 "K"$],
 ))
-#solution(8, [Aspirin is manufactured by acetylating the phenolic hydroxyl group of salicylic acid using acetic anhydride in the presence of catalytic concentrated sulphuric acid or phosphoric acid: $"o-HO-C"_6 "H"_4 -"COOH" + ("CH"_3 "CO")_2 "O" arrow.r^("H"^+) "o-CH"_3 "COO-C"_6 "H"_4 -"COOH" + "CH"_3 "COOH"$.], answer: [B])
+#solution(8, [Williamson ether synthesis involves nucleophilic substitution ($S_N 2$) by an alkoxide ion on an alkyl halide. Alkoxide ions are powerful Brønsted bases. If a tertiary alkyl halide (such as tert-butyl bromide) is used, elimination ($E_2$) predominates 100%, yielding 2-methylpropene instead of ether. To synthesize tert-butyl ethyl ether, the substrate must be a primary alkyl halide: *Sodium tert-butoxide ($("CH"_3)_3 C-O^- "Na"^+$) $+$ Ethyl bromide ($"C"_2 "H"_5 "Br"$)*.], answer: [A])
 
-#mcq(9, [In Williamson ether synthesis, treating sodium methoxide ($"CH"_3 "O"^- "Na"^+$) with 2-bromo-2-methylpropane (tert-butyl bromide) results in the formation of:], (
-  [tert-Butyl methyl ether],
-  [2-Methylpropene (Isobutylene)],
-  [Dimethyl ether],
-  [Di-tert-butyl ether],
-))
-#solution(9, [Williamson ether synthesis is an $S_N 2$ displacement. Alkoxide ions are both strong nucleophiles and powerful Brønsted bases. When confronted with a sterically hindered tertiary alkyl halide, the alkoxide behaves exclusively as a base, abstracting a $beta$-hydrogen in an $"E2"$ elimination to yield *2-methylpropene (100%)* rather than the substitution ether product.], answer: [B])
-
-#mcq(10, [When anisole (methoxybenzene, $"C"_6 "H"_5 - O - "CH"_3$) is heated with an equimolar amount of concentrated hydroiodic acid ($"HI"$), the products formed are:], (
+#mcq(9, [When anisole (methoxybenzene) is cleaved by heating with concentrated hydriodic acid ($"HI"$), the final organic products obtained are:], (
   [Iodobenzene and Methanol],
-  [Phenol and Methyl Iodide],
-  [Phenol and Methanol],
-  [Iodobenzene and Methyl Iodide],
+  [Benzene and Methyl iodide],
+  [Phenol and Iodomethane],
+  [Phenol and Methyl iodide],
 ))
-#solution(10, [In anisole, the oxygen lone pair is delocalised into the aromatic ring ($+R$ resonance effect), imparting significant partial double-bond character to the $"Ar"-O$ bond ($136 "pm"$). The $"Ar"-O$ bond is exceptionally strong and cannot be cleaved. The iodide ion ($I^-$) attacks the weaker $s p^3$ methyl carbon via $S_N 2$, yielding *Phenol and Methyl Iodide*. Iodobenzene is never formed.], answer: [B])
+#solution(9, [In anisole ($"C"_6 "H"_5 - O - "CH"_3$), the oxygen lone pair is delocalised into the aromatic ring (+R effect), imparting partial double-bond character to the $s p^2$ $"C"_("aryl") - O$ bond ($136 "pm"$). The $s p^3$ $"C"_("alkyl") - O$ bond ($142 "pm"$) is longer and weaker. Protonation forms the phenyloxonium ion; iodide ion attacks the less sterically hindered methyl carbon via $S_N 2$ displacement, yielding *Phenol* and *Methyl iodide ($"CH"_3 "I"$)*.], answer: [D])
+
+#mcq(10, [An organic compound (A) with molecular formula $"C"_4 "H"_(10) "O"$ does not react with sodium metal, does not decolorize bromine water, and on heating with excess $"HI"$ yields only one alkyl halide (B). Compound (A) is:], (
+  [Butan-1-ol],
+  [Diethyl ether],
+  [1-Methoxypropane],
+  [2-Methoxypropane],
+))
+#solution(10, [Absence of reaction with sodium metal confirms the absence of an active hydroxyl group (not an alcohol), indicating an ether. Since it yields only ONE type of alkyl halide upon heating with excess $"HI"$, the ether must be symmetrical. Diethyl ether ($"C"_2 "H"_5 - O - "C"_2 "H"_5$, $"C"_4 "H"_(10) "O"$) undergoes cleavage to produce two equivalents of *ethyl iodide ($"C"_2 "H"_5 "I"$)*.], answer: [B])
 
 #pagebreak()
-
 #block(width: 100%, inset: (y: 6pt, x: 10pt), fill: om-navy, radius: 4pt)[
   #text(fill: white, font: om-display-font, size: 13pt, weight: 800)[Practice Questions (Exam Pattern) — Part 3 (Q11 to Q15)]
 ]
 
-#mcq(11, [Cleavage of 2-methoxy-2-methylpropane ($("CH"_3)_3 C - O - "CH"_3$) with one equivalent of concentrated hydroiodic acid ($"HI"$) produces:], (
+#mcq(11, [Cleavage of tert-butyl methyl ether with one equivalent of concentrated hydriodic acid ($"HI"$) at room temperature produces:], (
   [tert-Butyl alcohol and Methyl iodide],
   [tert-Butyl iodide and Methanol],
   [2-Methylpropene and Methanol],
-  [Equal molar amounts of iodomethane and iodoethane],
+  [tert-Butyl iodide and Methyl iodide],
 ))
-#solution(11, [Unlike primary and secondary ethers which cleave via $S_N 2$, ethers containing a tertiary alkyl group undergo cleavage via an $S_N 1$ mechanism. Protonation of the ether oxygen is followed by heterolytic cleavage to generate the extraordinarily stable tertiary carbocation ($("CH"_3)_3 C^+$). Attack by iodide ion on this carbocation yields *tert-butyl iodide ($("CH"_3)_3 C-I$)* and *methanol ($"CH"_3 "OH"$)*.], answer: [B])
+#solution(11, [Unlike primary and secondary ethers which cleave via $S_N 2$, ethers containing a tertiary alkyl group undergo cleavage via an $S_N 1$ mechanism. Protonation of the ether oxygen is followed by heterolytic cleavage to generate the exceptionally stable tertiary carbocation ($("CH"_3)_3 C^+$). Attack by iodide ion on this carbocation yields *tert-butyl iodide ($("CH"_3)_3 C-I$)* and *methanol ($"CH"_3 "OH"$)*.], answer: [B])
 
-#mcq(12, [The experimental $C-O-C$ bond angle in dimethyl ether ($111.7^circle.small$) is noticeably larger than the normal tetrahedral angle ($109.5^circle.small$). This widening is primarily caused by:], (
-  [Resonance between carbon and oxygen orbitals],
-  [Steric repulsion between the two bulky methyl groups],
-  [Strong hydrogen bonding between adjacent ether molecules],
-  [Attraction between the lone pairs of oxygen and methyl hydrogens],
+#mcq(12, [The experimental $C-O-C$ bond angle in dimethyl ether ($111.7^circle.small$) is significantly greater than the standard tetrahedral angle ($109.5^circle.small$). This observed widening is due to:], (
+  [$s p^2$ hybridisation of the central ethereal oxygen atom],
+  [Back-bonding between oxygen lone pairs and empty carbon d-orbitals],
+  [Steric repulsion between the two bulky alkyl (methyl) groups],
+  [Intramolecular hydrogen bonding between adjacent hydrogen atoms],
 ))
-#solution(12, [Although the oxygen atom in ethers is $s p^3$-hybridised with two non-bonding lone pairs, the steric hindrance and electrostatic electron-cloud repulsion between the two bulky alkyl groups attached to oxygen push them apart, expanding the $C-O-C$ bond angle from the tetrahedral value of $109.5^circle.small$ to $111.7^circle.small$.], answer: [B])
+#solution(12, [Although the oxygen atom in ethers is $s p^3$-hybridised with two non-bonding lone pairs, the steric hindrance and electrostatic electron-cloud repulsion between the two bulky alkyl groups attached to oxygen push them apart, expanding the $C-O-C$ bond angle from the tetrahedral value of $109.5^circle.small$ to $111.7^circle.small$.], answer: [C])
 
 #mcq(13, [Phenol reacts with aqueous bromine water ($"Br"_2 / "H"_2 "O"$) and with bromine in carbon disulphide ($"Br"_2 / "CS"_2$) at $273 "K"$ to give respectively:], (
-  [p-Bromophenol and 2,4,6-tribromophenol],
+  [o-Bromophenol and 2,4,6-tribromophenol],
   [2,4,6-Tribromophenol (white ppt) and p-bromophenol (major)],
-  [o-Bromophenol and m-bromophenol],
-  [2,4,6-Tribromophenol and bromobenzene],
+  [m-Bromophenol and o-bromophenol],
+  [p-Bromophenol and 2,4,6-tribromophenol],
 ))
 #solution(13, [In aqueous medium, water facilitates extensive ionisation of phenol into phenoxide ion ($"C"_6 "H"_5 "O"^-$), which hyperactivates the benzene ring to undergo polybromination, precipitating 2,4,6-tribromophenol as a white solid. In non-polar $"CS"_2$, phenol does not ionise; its ring is less activated, undergoing monobromination to yield p-bromophenol as the major product.], answer: [B])
 
-#mcq(14, [In the commercial manufacturing process of Phenol from Cumene (isopropylbenzene), the valuable organic byproduct obtained in equimolar yield is:], (
+#mcq(14, [In the commercial manufacturing process of Phenol from Cumene (isopropylbenzene), the valuable industrial co-product formed in equimolar amounts alongside phenol is:], (
   [Acetaldehyde],
-  [Benzaldehyde],
+  [Benzoic acid],
   [Acetone (Propan-2-one)],
-  [Formic acid],
+  [Ethyl methyl ketone],
 ))
 #solution(14, [In the cumene process, cumene is air-oxidized to cumene hydroperoxide, which undergoes acid-catalysed rearrangement with dilute sulphuric acid to cleave into equimolar amounts of *Phenol* and *Acetone (propan-2-one)*: $"C"_6 "H"_5 - C("CH"_3)_2 - "OOH" arrow.r^("H"^+) "C"_6 "H"_5 "OH" + "CH"_3 "COCH"_3$. The simultaneous recovery of acetone makes this the world's primary industrial process.], answer: [C])
 
-#mcq(15, [Commercial ethanol is intentionally converted into 'Denatured Alcohol' (Methylated Spirit) before sale by adding small quantities of:], (
-  [Water and sugar],
-  [Copper sulphate, pyridine, and methanol],
-  [Acetic acid and sodium chloride],
-  [Chloroform and diethyl ether],
+#mcq(15, [Commercial ethanol is intentionally converted into 'Denatured Alcohol' (Methylated Spirit) before industrial sale by adding:], (
+  [Pure glucose and sodium bicarbonate to induce crystallization],
+  [Methanol (5%), pyridine (foul odour), and copper sulphate (blue colour)],
+  [Dilute sulphuric acid and potassium permanganate indicator],
+  [Phenolphthalein indicator and concentrated ammonia solution],
 ))
 #solution(15, [To prevent the illicit diversion and consumption of duty-free industrial alcohol, commercial ethanol is 'denatured' (rendered poisonous and foul-tasting) by blending it with toxic methanol (approx. 5%), pyridine (imparting an intolerable noxious odour), and copper sulphate (giving a warning blue colouration).], answer: [B])
 
-#block(width: 100%, inset: (top: 4pt), above: 4pt)[
-  #align(center, text(fill: om-grey, size: 8pt)[© OurMocks · www.ourmocks.com · CUET UG Chemistry · Unit VII: Alcohols, Phenols and Ethers · 2027 Examination Baseline])
+#v(8pt)
+#align(center)[
+  #text(fill: om-grey, size: 8.5pt)[
+    © OurMocks · www.ourmocks.com · CUET UG Chemistry · Alcohols, Phenols and Ethers · 2027 Cycle
+  ]
 ]
