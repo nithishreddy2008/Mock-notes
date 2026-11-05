@@ -112,7 +112,7 @@ The assets of the firm, including any sums contributed by partners to make up de
 4. *Fourth Priority: Distribution of Surplus:* The ultimate surplus (residual balance), if any, is divided among the partners strictly in their *profit-sharing ratio* (never their capital ratio!).
 
 #figure(
-  image("assets/acc_dissolution_modes_and_settlement.png", width: 88%),
+  image("assets/acc_dissolution_modes_and_settlement.png", width: 78%),
   caption: [Dissolution Framework: Modes of Dissolution, Section 48 Settlement Order, and Section 49 Debt Rules.],
 )
 
@@ -204,7 +204,7 @@ To close the books of a dissolving firm, a temporary ledger account called the *
    `Realisation A/c Dr.` to `Bank A/c Cr.` (paid directly through Realisation A/c).
 
 #figure(
-  image("assets/acc_dissolution_realisation_and_entries.png", width: 88%),
+  image("assets/acc_dissolution_realisation_and_entries.png", width: 78%),
   caption: [Realisation Protocols: Transfer Rules, Asset-Liability Swaps, and Expense Accounting Matrix.],
 )
 
@@ -381,7 +381,7 @@ The complete dissolution workflow operates across a strict sequence of ledger cl
 4. *Step 4 (Bank/Cash A/c):* Final cash receipts and payments automatically clear all balances to zero, leaving no open accounts.
 
 #figure(
-  image("assets/acc_dissolution_mindmap.png", width: 78%),
+  image("assets/acc_dissolution_mindmap.png", width: 70%),
   caption: [Master Synthesis Mindmap: Structural framework of Unit III Dissolution of Partnership Firm.],
 )
 
@@ -437,9 +437,9 @@ The complete dissolution workflow operates across a strict sequence of ledger cl
   [Under Section 41 of the Indian Partnership Act, 1932, a partnership firm is compulsorily dissolved when:],
   (
     [A partner gives 14 days' written notice],
-    [All or all but one partner become insolvent],
-    [A partner transfers interest to a third party],
     [The firm incurs continuous operating losses],
+    [A partner transfers interest to a third party],
+    [All or all but one partner become insolvent],
   ),
 )
 #solution(
@@ -447,7 +447,7 @@ The complete dissolution workflow operates across a strict sequence of ledger cl
   [
     Section 41 mandates compulsory dissolution if all partners (or all except one) are adjudicated insolvent, or if the firm's business becomes unlawful.
   ],
-  answer: [B],
+  answer: [D],
 )
 
 #mcq(
@@ -511,9 +511,9 @@ The complete dissolution workflow operates across a strict sequence of ledger cl
   [A firm holds a loan of ₹40,000 from partner A and a loan of ₹30,000 from A's wife. On dissolution of the firm:],
   (
     [Both loans are transferred to Realisation A/c],
-    [Wife's loan to Realisation; A's loan paid via Bank],
-    [Both loans paid directly via Bank],
     [Partner A's loan is paid before Wife's loan],
+    [Both loans paid directly via Bank],
+    [Wife's loan to Realisation; A's loan paid via Bank],
   ),
 )
 #solution(
@@ -521,16 +521,16 @@ The complete dissolution workflow operates across a strict sequence of ledger cl
   [
     A loan from a partner's wife is an outside third-party debt transferred to Realisation A/c. A partner's own loan is an internal advance paid directly via Bank after outside debts.
   ],
-  answer: [B],
+  answer: [D],
 )
 
 #mcq(
   7,
   [Sundry Debtors stand at ₹80,000 with a Provision of ₹6,000 in the balance sheet. How are these transferred to Realisation A/c?],
   (
-    [Debit Realisation ₹80,000; Credit Realisation ₹6,000],
-    [Debit Realisation with Net Debtors ₹74,000],
     [Debit Realisation ₹80,000; Credit Debtors ₹74,000],
+    [Debit Realisation with Net Debtors ₹74,000],
+    [Debit Realisation ₹80,000; Credit Realisation ₹6,000],
     [Credit Realisation ₹80,000; Debit Provision ₹6,000],
   ),
 )
@@ -539,7 +539,7 @@ The complete dissolution workflow operates across a strict sequence of ledger cl
   [
     Debtors are debited to Realisation A/c at Gross Book Value (₹80,000), while Provision for Doubtful Debts is credited to Realisation A/c (₹6,000).
   ],
-  answer: [A],
+  answer: [C],
 )
 
 #mcq(
