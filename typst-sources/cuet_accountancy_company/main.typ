@@ -119,7 +119,7 @@ Under SEBI regulations and Section 39 of the Companies Act, 2013, a public issue
 
 // PAGE 5: FIGURE 1 & PRO-RATA OVER-SUBSCRIPTION WORKFLOW
 #figure(
-  image("assets/acc_company_share_capital_and_issue.png", width: 84%),
+  image("assets/acc_company_share_capital_and_issue.png", width: 78%),
   caption: [Share Capital Architecture: Hierarchy, Section 52(2) applications, Table F provisions, and pro-rata workflow.],
 )
 
@@ -286,7 +286,7 @@ $ "Capital Reserve" = [ ("Total Amount Forfeited" / "Total Shares Forfeited") ti
 
 // PAGE 10: FIGURE 2 & ACCOUNTING FOR DEBENTURES
 #figure(
-  image("assets/acc_company_forfeiture_reissue_and_debentures.png", width: 84%),
+  image("assets/acc_company_forfeiture_reissue_and_debentures.png", width: 78%),
   caption: [Forfeiture, Reissue & Debentures Architecture: Reissue formulas, 6 redemption cases, and collateral security.],
 )
 
@@ -343,55 +343,10 @@ Collateral security represents subsidiary or secondary security pledged to a len
 
 #pagebreak()
 
-// PAGE 12: MASTER WORKED PROBLEM 1
-= 10. Comprehensive Master Worked Problems
+// PAGE 12: MASTER WORKED PROBLEM & MASTER MINDMAP
+= 10. Strategic Examination Synthesis
 
-#worked-example("Master Problem 1 — Pro-rata Allotment, Default, Forfeiture & Partial Reissue")[
-  *Problem Statement:* Bharat Steel Ltd invited applications for 1,00,000 equity shares of ₹10 each at a premium of ₹2 per share, payable: Application ₹3, Allotment ₹5 (including ₹2 premium), First & Final Call ₹4.
-  Applications were received for 1,50,000 shares. Allotment was made on a pro-rata basis to applicants of 1,20,000 shares; remaining applications were rejected and refunded.
-  Mukesh, who applied for 1,200 shares, failed to pay allotment and call money. His shares were forfeited.
-  Subsequently, 600 of Mukesh's forfeited shares were reissued to Suresh at ₹9 per share as fully paid up. Pass journal entries.
-
-  *Analytical Workings:*
-  1. *Pro-rata Ratio:* $1,00,000 / 1,20,000 = 5/6$.
-  2. *Shares Allotted to Mukesh:* $1,200 times (5/6) = 1,000 " shares"$.
-  3. *Application Money Received from Mukesh:* $1,200 times "₹3" = "₹3,600"$.
-  4. *Application Money Required on Allotted Shares:* $1,000 times "₹3" = "₹3,000"$.
-  5. *Excess Application Adjusted to Allotment:* $"₹3,600" - "₹3,000" = "₹600"$.
-  6. *Allotment Due from Mukesh:* $1,000 times "₹5" = "₹5,000"$ (Capital ₹3,000 + Premium ₹2,000).
-  7. *Net Arrears on Allotment:* $"₹5,000" - "₹600" = bold("₹4,400")$.
-     (Capital unpaid: $"₹3,000" - "₹600" = "₹2,400"$; Entire Premium unpaid: *₹2,000*).
-  8. *Call Arrears:* $1,000 times "₹4" = bold("₹4,000")$.
-  9. *Total Calls-in-Arrears:* $"₹4,400" + "₹4,000" = bold("₹8,400")$.
-
-  *Journal Entries:*
-  1. *Forfeiture of 1,000 Shares:*
-    ```text
-    Equity Share Capital A/c (1,000 × ₹10)            Dr.  ₹10,000
-    Securities Premium A/c (1,000 × ₹2 unpaid)        Dr.   ₹2,000
-        To Calls-in-Arrears A/c                             ₹8,400
-        To Share Forfeiture A/c (Actual paid on face val)   ₹3,600
-    ```
-  2. *Reissue of 600 Shares @ ₹9 Fully Paid:*
-    ```text
-    Bank A/c (600 × ₹9)                              Dr.   ₹5,400
-    Share Forfeiture A/c (Discount: 600 × ₹1)         Dr.     ₹600
-        To Equity Share Capital A/c (600 × ₹10)             ₹6,000
-    ```
-  3. *Transfer to Capital Reserve:*
-    $ "Forfeited amount on 600 shares" = 600 times ("₹3,600" / 1,000) = "₹2,160" $
-    $ "Less: Reissue discount allowed" = "₹600" $
-    $ "Net Capital Gain" = "₹2,160" - "₹600" = bold("₹1,560") $
-    ```text
-    Share Forfeiture A/c                             Dr.   ₹1,560
-        To Capital Reserve A/c                              ₹1,560
-    ```
-]
-
-#pagebreak()
-
-// PAGE 13: MASTER PROBLEM 2 & MASTER MINDMAP
-#worked-example("Master Problem 2 — Debentures with Premium Redemption & Loss Write-off")[
+#worked-example("Master Problem — Debentures with Premium Redemption & Loss Write-off")[
   *Problem Statement:* Surya Ltd issued 5,000, 9% Debentures of ₹100 each at a discount of 4% on 1st April, redeemable at a premium of 5% after 5 years. The company had a balance of ₹35,000 in Securities Premium Account. Pass entries for issue and write-off.
 
   *Workings & Calculations:*
@@ -413,13 +368,13 @@ Collateral security represents subsidiary or secondary security pledged to a len
 ]
 
 #figure(
-  image("assets/acc_company_mindmap.png", width: 78%),
+  image("assets/acc_company_mindmap.png", width: 70%),
   caption: [Master Synthesis Mindmap: Structural framework of Unit IV Company Accounts.],
 )
 
 #pagebreak()
 
-// PAGE 14: CHEATSHEET & TOP 7 TRAPS
+// PAGE 13: CHEATSHEET & TOP 7 TRAPS
 #cheatsheet-box(title: "Master Company Accounts Revision Cheatsheet")[
   - *Section 52(2) Uses:* 1. Bonus Shares, 2. Preliminary Expenses, 3. Issue Discount/Brokerage, 4. Redemption Premium (Pref/Deb), 5. Buyback (Sec 68). NEVER cash dividend!
   - *Section 53 Ban:* Direct discount on share issue is void; only Sweat Equity (Sec 54) permitted.
@@ -445,7 +400,7 @@ Collateral security represents subsidiary or secondary security pledged to a len
 
 #pagebreak()
 
-// PAGE 15: PRACTICE MCQS (Q1 - Q5)
+// PAGE 14: PRACTICE MCQS (Q1 - Q5)
 = CUET UG Exam-Style Practice Questions
 
 #mcq(
@@ -488,15 +443,15 @@ Collateral security represents subsidiary or secondary security pledged to a len
   3,
   [A company issued 40,000 shares of ₹10 each. Applications were received for 60,000 shares. Allotment was made pro-rata to all applicants. If Mohan was allotted 800 shares, how many shares did he apply for?],
   (
-    [1,000 shares],
     [1,200 shares],
+    [1,000 shares],
     [1,500 shares],
     [960 shares],
   ),
 )
 #solution(
   3,
-  answer: [B],
+  answer: [A],
   [
     Shares Applied = Shares Allotted × (60,000 / 40,000) = 800 × 1.5 = 1,200 shares.
   ],
@@ -506,15 +461,15 @@ Collateral security represents subsidiary or secondary security pledged to a len
   4,
   [Under Section 39 of the Companies Act, 2013, what is the statutory minimum subscription percentage required for a public issue to proceed with allotment?],
   (
-    [80% of issued capital],
     [90% of issued capital],
+    [80% of issued capital],
     [95% of issued capital],
     [75% of issued capital],
   ),
 )
 #solution(
   4,
-  answer: [B],
+  answer: [A],
   [
     Under SEBI regulations and Section 39 of the Companies Act, 2013, minimum subscription is strictly 90% of the issued capital, received within 30 days of prospectus issue.
   ],
@@ -540,20 +495,20 @@ Collateral security represents subsidiary or secondary security pledged to a len
 
 #pagebreak()
 
-// PAGE 16: PRACTICE MCQS (Q6 - Q10)
+// PAGE 15: PRACTICE MCQS (Q6 - Q10)
 #mcq(
   6,
   [Star Ltd forfeited 300 shares of ₹10 each, ₹8 called up, for non-payment of first call of ₹2 per share. At what amount should Share Capital Account be debited at the time of forfeiture?],
   (
-    [₹3,000],
     [₹2,400],
+    [₹3,000],
     [₹1,800],
     [₹600],
   ),
 )
 #solution(
   6,
-  answer: [B],
+  answer: [A],
   [
     Share Capital Account is debited with the called-up value of forfeited shares: 300 × ₹8 = ₹2,400. Nominal face value is never debited unless fully called.
   ],
@@ -582,14 +537,14 @@ Collateral security represents subsidiary or secondary security pledged to a len
   [What is the maximum discount that a company can legally allow on the reissue of forfeited shares?],
   (
     [10% of the nominal face value],
-    [Total amount previously forfeited on those shares],
     [Face value minus calls-in-arrears],
+    [Total amount previously forfeited on those shares],
     [Any amount decided by the Board],
   ),
 )
 #solution(
   8,
-  answer: [B],
+  answer: [C],
   [
     Under corporate law, the reissue discount cannot exceed the amount already collected and standing to the credit of Share Forfeiture Account on those specific shares.
   ],
@@ -600,14 +555,14 @@ Collateral security represents subsidiary or secondary security pledged to a len
   [A company forfeited 500 shares of ₹10 each on which ₹6 per share was paid. 300 of these shares were reissued as fully paid up for ₹8 per share. What amount will be transferred to Capital Reserve Account?],
   (
     [₹1,800],
-    [₹1,200],
-    [₹2,400],
     [₹600],
+    [₹2,400],
+    [₹1,200],
   ),
 )
 #solution(
   9,
-  answer: [B],
+  answer: [D],
   [
     Forfeited amount on 300 shares = 300 × ₹6 = ₹1,800. Reissue discount = 300 × (₹10 − ₹8) = ₹600. Capital Reserve = 1,800 − 600 = ₹1,200.
   ],
@@ -633,20 +588,20 @@ Collateral security represents subsidiary or secondary security pledged to a len
 
 #pagebreak()
 
-// PAGE 17: PRACTICE MCQS (Q11 - Q15)
+// PAGE 16: PRACTICE MCQS (Q11 - Q15)
 #mcq(
   11,
   [A company issued 1,000, 10% Debentures of ₹100 each at a discount of 5%, redeemable at a premium of 5%. What is the total amount debited to 'Loss on Issue of Debentures Account'?],
   (
     [₹5,000],
-    [₹10,000],
-    [₹15,000],
     [Nil],
+    [₹15,000],
+    [₹10,000],
   ),
 )
 #solution(
   11,
-  answer: [B],
+  answer: [D],
   [
     Loss on Issue = Discount on Issue + Premium on Redemption = (1,000 × ₹5) + (1,000 × ₹5) = 5,000 + 5,000 = ₹10,000.
   ],
