@@ -29,6 +29,9 @@ In the NTA CUET (UG) Economics examination, *Introduction to Microeconomics and 
 
 ---
 
+#set text(size: 10.2pt)
+#set par(leading: 0.40em, spacing: 0.42em)
+
 = 1. Introduction to Microeconomics & The Economic Problem
 
 == Microeconomics vs Macroeconomics
@@ -141,7 +144,7 @@ The *Cardinal Utility Approach*, formulated by Alfred Marshall, posits that cons
 )
 
 #figure(
-  image("assets/econ_consumer_utility_indifference.png", width: 95%),
+  image("assets/econ_consumer_utility_indifference.png", width: 78%),
   caption: [Figure 1: Cardinal Utility vs Ordinal Indifference Curve Analysis, Equi-Marginal Rule, and Tangency Equilibrium],
 )
 
@@ -302,7 +305,7 @@ A consumer attains optimal satisfaction at the point where the highest attainabl
 )
 
 #figure(
-  image("assets/econ_demand_elasticity_engine.png", width: 95%),
+  image("assets/econ_demand_elasticity_engine.png", width: 78%),
   caption: [Figure 2: Demand Theory, Determinants, Movement vs Shift, and the Three Measurement Protocols for Elasticity],
 )
 
@@ -351,14 +354,24 @@ Measures elasticity by observing how Total Expenditure ($T E = P times Q$) behav
   - *Inelastic ($e_d < 1$):* Price and Total Outlay move in the *SAME direction* ($P arrow.t ==> T E arrow.t$ or $P arrow.b ==> T E arrow.b$).
 ]
 
+#pagebreak()
+
+= 8. Conceptual Synthesis & Mindmap
+
 #figure(
-  image("assets/econ_consumer_mindmap.png", width: 95%),
+  image("assets/econ_consumer_mindmap.png", width: 70%),
   caption: [Figure 3: Microeconomics Master Synthesis Mindmap covering PPC, Cardinal Utility, Indifference Analysis, and Demand Elasticity],
 )
 
----
+#v(1fr)
 
-= 8. High-Yield Formula Cheatsheet & Diagnostic Traps
+
+#pagebreak()
+
+#set text(size: 7.5pt)
+#set par(leading: 0.36em, spacing: 0.38em)
+
+= 9. High-Yield Formula Cheatsheet & Diagnostic Traps
 
 #cheatsheet-box(title: "Master Formula Cheatsheet — Microeconomics & Consumer Theory")[
   *Production Possibility Frontier (PPF):*
@@ -393,8 +406,6 @@ Measures elasticity by observing how Total Expenditure ($T E = P times Q$) behav
   7. *Substitute Price Inversion:* If price of tea rises, demand for coffee *increases* (shifts rightward). If price of petrol rises, demand for cars *decreases* (shifts leftward).
 ]
 
----
-
 #pagebreak()
 
 #set text(size: 8.5pt)
@@ -403,12 +414,12 @@ Measures elasticity by observing how Total Expenditure ($T E = P times Q$) behav
 = Practice Questions — Part 1 (Q1 to Q5)
 
 #mcq(1, [The Production Possibility Curve (PPC) is strictly concave to the origin because:], (
-  [The Marginal Rate of Transformation (MRT) is continuously decreasing.],
   [The Marginal Rate of Transformation (MRT) is continuously increasing.],
+  [The Marginal Rate of Transformation (MRT) is continuously decreasing.],
   [Resources are equally efficient in the production of all commodities.],
   [The opportunity cost of producing both commodities remains constant.],
 ))
-#solution(1, [The slope of the PPC is measured by the Marginal Rate of Transformation ($"MRT" = Delta Y / Delta X$). As more units of Good X are produced, resources that are increasingly less specialized and less efficient in producing X must be transferred from Good Y. This forces the economy to sacrifice progressively larger amounts of Good Y for each successive unit of Good X. An *increasing MRT* geometrically produces a curve that is strictly concave to the origin.], answer: [B])
+#solution(1, [The slope of the PPC is measured by the Marginal Rate of Transformation ($"MRT" = Delta Y / Delta X$). As more units of Good X are produced, resources that are increasingly less specialized and less efficient in producing X must be transferred from Good Y. This forces the economy to sacrifice progressively larger amounts of Good Y for each successive unit of Good X. An *increasing MRT* geometrically produces a curve that is strictly concave to the origin.], answer: [A])
 
 #mcq(2, [A consumer consumes only two goods, X and Y. If $M U_x / P_x > M U_y / P_y$, the rational consumer will restore equilibrium by:], (
   [Buying more of Good Y and less of Good X],
@@ -429,21 +440,21 @@ Measures elasticity by observing how Total Expenditure ($T E = P times Q$) behav
 #mcq(4, [If the price of Good X falls from ₹10 to ₹8 per unit, and as a result, total expenditure incurred by a consumer on Good X rises from ₹500 to ₹600, the price elasticity of demand ($e_d$) is:], (
   [Less than 1 (Inelastic)],
   [Equal to 1 (Unitary)],
-  [Greater than 1 (Elastic)],
   [Equal to zero (Perfect Inelastic)],
+  [Greater than 1 (Elastic)],
 ))
 #solution(4, [According to Marshall's Total Outlay (Expenditure) Method:
 - Initial state: Price $P_1 = ₹10$, Total Outlay $T E_1 = ₹500$.
 - Final state: Price $P_2 = ₹8$ (Price has fallen), Total Outlay $T E_2 = ₹600$ (Total expenditure has risen).
-When price and total expenditure move in *opposite directions* (Price falls while Total Outlay rises), the percentage change in quantity demanded exceeds the percentage change in price. Therefore, the demand is *elastic ($e_d > 1$)*.], answer: [C])
+When price and total expenditure move in *opposite directions* (Price falls while Total Outlay rises), the percentage change in quantity demanded exceeds the percentage change in price. Therefore, the demand is *elastic ($e_d > 1$)*.], answer: [D])
 
 #mcq(5, [If two commodities X and Y are perfect complements (such as left shoes and right shoes), the shape of the indifference curve is:], (
-  [A downward-sloping straight line],
   [An L-shaped (right-angled) curve],
+  [A downward-sloping straight line],
   [A rectangular hyperbola],
   [A circular arc concave to the origin],
 ))
-#solution(5, [Complementary goods must be consumed together in fixed proportions. Having more of left shoes without extra right shoes yields zero additional utility. The consumer can neither substitute left shoes for right shoes nor vice versa ($M R S$ is infinite along the vertical arm and zero along the horizontal arm). This creates an *L-shaped (right-angled)* indifference curve with the corner point representing the fixed consumption ratio.], answer: [B])
+#solution(5, [Complementary goods must be consumed together in fixed proportions. Having more of left shoes without extra right shoes yields zero additional utility. The consumer can neither substitute left shoes for right shoes nor vice versa ($M R S$ is infinite along the vertical arm and zero along the horizontal arm). This creates an *L-shaped (right-angled)* indifference curve with the corner point representing the fixed consumption ratio.], answer: [A])
 
 #pagebreak()
 
@@ -461,31 +472,31 @@ In linear form $y = m x + c$, the slope $m$ is strictly given by *$- P_x / P_y$*
 
 #mcq(7, [When the price of commodity X rises by $10%$, the demand for commodity Y decreases by $15%$. What is the relationship between commodities X and Y?], (
   [They are substitute goods.],
-  [They are complementary goods.],
   [They are inferior goods.],
+  [They are complementary goods.],
   [They are completely unrelated goods.],
 ))
 #solution(7, [Cross elasticity of demand is given by:
 $ e_(x y) = frac(% Delta Q_y, % Delta P_x) = frac(-15%, +10%) = -1.5 $
-A *negative cross elasticity of demand* indicates that an increase in the price of one good causes a decline in the demand for the other good (inverse relationship). This is the hallmark of *complementary goods* (e.g., cars and petrol, tea and sugar).], answer: [B])
+A *negative cross elasticity of demand* indicates that an increase in the price of one good causes a decline in the demand for the other good (inverse relationship). This is the hallmark of *complementary goods* (e.g., cars and petrol, tea and sugar).], answer: [C])
 
 #mcq(8, [At the midpoint of a linear downward-sloping demand curve that touches both coordinate axes, the price elasticity of demand ($e_d$) is:], (
   [$0$],
   [$0.5$],
-  [$1$],
   [$oo$],
+  [$1$],
 ))
 #solution(8, [By the Point (Geometric) Method, price elasticity on a linear demand curve is given by:
 $ e_d = frac("Length of Lower Segment", "Length of Upper Segment") $
 At the exact midpoint of the demand curve, the lower segment is equal in length to the upper segment ($"Lower" = "Upper"$).
 Therefore:
 $ e_d = frac("Lower Segment", "Upper Segment") = 1. $
-Thus, demand is strictly *unitary elastic* at the midpoint.], answer: [C])
+Thus, demand is strictly *unitary elastic* at the midpoint.], answer: [D])
 
 #mcq(9, [If a consumer's money income increases by $20%$ while the prices of both Good X and Good Y also increase simultaneously by $20%$, the budget line will:], (
-  [Shift parallel to the right],
-  [Shift parallel to the left],
   [Remain completely unchanged in position],
+  [Shift parallel to the left],
+  [Shift parallel to the right],
   [Rotate outward along the x-axis],
 ))
 #solution(9, [Let initial budget line be $P_x x + P_y y = M$.
@@ -494,7 +505,7 @@ The new budget equation is:
 $ (1.2 P_x) x + (1.2 P_y) y = 1.2 M $
 Dividing the entire equation by $1.2$ yields:
 $ P_x x + P_y y = M $
-Since the equation is mathematically identical, the budget line *remains completely unchanged*. (This reflects the absence of "money illusion").], answer: [C])
+Since the equation is mathematically identical, the budget line *remains completely unchanged*. (This reflects the absence of "money illusion").], answer: [A])
 
 #mcq(10, [An economic situation where a consumer's Total Utility (TU) is at its maximum corresponds to Marginal Utility (MU) being:], (
   [Positive and rising],
@@ -535,14 +546,14 @@ The price elasticity of demand is strictly *unitary ($1.00$)*.], answer: [B])
 #solution(12, [A change in the own price of Good X produces a movement along the demand curve, not a shift (eliminating A). A rise in the price of a complement reduces demand for X (shifts leftward, eliminating B). For a *normal good*, an increase in consumer's income increases purchasing power and willingness to buy at every price level, shifting the demand curve *parallel to the right* (Option C).], answer: [C])
 
 #mcq(13, [If the Marginal Rate of Substitution of Good X for Good Y is 3 ($M R S_(x y) = 3$), while the price ratio $P_x / P_y = 2$, how should a rational consumer adjust consumption in an ordinal framework?], (
-  [Increase consumption of Good Y and decrease consumption of Good X],
   [Increase consumption of Good X and decrease consumption of Good Y],
+  [Increase consumption of Good Y and decrease consumption of Good X],
   [Maintain the existing consumption bundle as it is optimal],
   [Stop consuming Good Y entirely],
 ))
 #solution(13, [Here $M R S_(x y) = 3$ and $P_x / P_y = 2$.
 Since $M R S_(x y) > P_x / P_y$, the consumer's subjective valuation of Good X (willingness to sacrifice 3 units of Y for 1 unit of X) is greater than the market valuation (which requires sacrificing only 2 units of Y for 1 unit of X).
-The consumer gains net utility by purchasing *more of Good X and less of Good Y*. As consumption of X expands, $M R S_(x y)$ diminishes until it equalizes with the market price ratio 2.], answer: [B])
+The consumer gains net utility by purchasing *more of Good X and less of Good Y*. As consumption of X expands, $M R S_(x y)$ diminishes until it equalizes with the market price ratio 2.], answer: [A])
 
 #mcq(14, [A demand curve modeled by the mathematical equation $P dot Q = 100$ represents a:], (
   [Perfect inelastic demand curve ($e_d = 0$)],
@@ -555,8 +566,8 @@ According to Marshall's Total Outlay Method, when total expenditure remains comp
 
 #mcq(15, [An economy experiences a severe earthquake that destroys substantial physical capital, factories, and infrastructure. The immediate impact on the economy's Production Possibility Curve (PPC) is:], (
   [A movement from a point on the PPC to a point inside the PPC],
-  [A parallel shift of the PPC to the left (inward)],
-  [A parallel shift of the PPC to the right (outward)],
   [A rotation of the PPC along the horizontal axis only],
+  [A parallel shift of the PPC to the right (outward)],
+  [A parallel shift of the PPC to the left (inward)],
 ))
-#solution(15, [A natural disaster or war that physically destroys factories, roads, and machinery reduces the total productive capacity and resource endowment of the nation. When the maximum potential output of both commodities contracts simultaneously, the Production Possibility Curve undergoes an *inward shift to the left* (Option B). (By contrast, mere underutilization without physical destruction would be a point inside the unchanged PPC).], answer: [B])
+#solution(15, [A natural disaster or war that physically destroys factories, roads, and machinery reduces the total productive capacity and resource endowment of the nation. When the maximum potential output of both commodities contracts simultaneously, the Production Possibility Curve undergoes an *inward shift to the left* (Option D). (By contrast, mere underutilization without physical destruction would be a point inside the unchanged PPC).], answer: [D])
