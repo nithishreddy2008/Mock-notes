@@ -4,310 +4,446 @@
   exam: "CUET UG",
   subject: "Political Science",
   topic-title: "Politics of Planned Development",
-  subtitle: "Official Syllabus · Politics in India Since Independence · Class 12 · CUET UG 2027 Cycle Notes",
+  subtitle: "Unit X · Bombay Plan, First vs Second FYP, Agrarian Debates, Green Revolution & Operation Flood · CUET UG 2027 Mastery",
 )
 
-= Syllabus Alignment
+= Syllabus Alignment & Chapter Architecture
 
 #table(
-  columns: (1.1fr, 2fr, 1.15fr),
-  table.header[*Sub-topic*][*Official syllabus pointer (NTA CUET(UG) Political Science syllabus 2026, the current 2027 baseline — Politics in India Since Independence)*][*Skills the questions test*],
-  [*Five year plans*], [
-    Five year plans — the planning machinery, the First and Second Plans, and the models behind them
-  ], [
-    Pairing plans with their priorities and models; recalling the Commission's design.
-  ],
-  [*Expansion of state sector*], [
-    Expansion of state sector — IPR 1956, public-sector undertakings, nationalisations
-  ], [
-    Explaining how and why the state became the economy's engine — and what it cost.
-  ],
-  [*Rise of new economic interests*], [
-    Rise of new economic interests — industry, farmers and workers organised around the plan state
-  ], [
-    Identifying which groups grew with planning and how each pressed its claims.
-  ],
+  columns: (1.1fr, 2.3fr, 1.4fr),
+  stroke: 0.5pt + rgb("#CBD5E1"),
+  fill: (col, row) => if row == 0 { rgb("#071A4D") } else if calc.even(row) { rgb("#F8FAFC") } else { none },
+  table.header(
+    [*Sub-Topic Domain*],
+    [*Official NTA CUET UG Unit X Syllabus Scope*],
+    [*High-Frequency Cognitive Skills Tested*],
+  ),
+  [*Ideas of Development*],
+  [Political contestation on development; capitalist vs socialist models; Left vs Right economic orientations; Bombay Plan (1944); Planning Commission (March 1950, extra-constitutional body, PM as ex-officio chairman); replacement by NITI Aayog (1 Jan 2015).],
+  [Distinguishing developmental models; analyzing consensus on state planning; contrasting Planning Commission with NITI Aayog.],
+  [*The Early Five-Year Plans*],
+  [First Five-Year Plan (1951–56): K.N. Raj, agriculture, irrigation, Bhakra Nangal Dam, "hasten slowly", national savings; Second Five-Year Plan (1956–61): P.C. Mahalanobis, heavy industrialization, steel plants (Bhilai, Rourkela, Durgapur), capital goods, import tariffs.],
+  [Contrasting First vs Second Plan strategies; evaluating Mahalanobis model; analyzing capital allocation priorities.],
+  [*Major Controversies in Planning*],
+  [Agriculture vs Industry debate; J.C. Kumarappa's 'Economy of Permanence' (Gandhian rural decentralization); Chaudhary Charan Singh (agrarian focus vs urban industrial bias); Public vs Private sector (Mixed economy, commanding heights vs License-Permit Raj).],
+  [Evaluating rural-urban developmental trade-offs; analyzing Gandhian ecological critique; assessing mixed-economy outcomes.],
+  [*Land Reforms & Structural Limits*],
+  [Abolition of Zamindari system (successful); tenancy security legislation; land ceiling acts and benami land transfers; fragmentation of agricultural holdings; political dominance of rural landed gentry.],
+  [Deconstructing land reform successes vs failures; assessing structural obstacles to redistributive social justice.],
+  [*Food Crisis & The Green Revolution*],
+  [1960s drought and food shortages; Bihar famine (1965–67); US PL-480 food import dependence ("ship-to-mouth"); Plan Holidays (1966–69); Green Revolution: M.S. Swaminathan, Norman Borlaug, HYV seeds, fertilizers, tubewells, MSP; concentration in Punjab, Haryana, Western UP; rise of 'kulak' middle peasantry.],
+  [Tracing food crisis geopolitics; evaluating Green Revolution socio-economic impacts; diagnosing regional and class disparities.],
+  [*The White Revolution (Operation Flood)*],
+  [Dr. Verghese Kurien ("Milkman of India"); National Dairy Development Board (NDDB, 1970); Amul cooperative dairy model in Anand, Gujarat; rural empowerment and poverty alleviation.],
+  [Analyzing cooperative dairy architecture; evaluating rural empowerment mechanisms; assessing cooperative vs corporate agribusiness.]
 )
 
-#exam-pointer[
-  CUET UG pattern (NTA official information bulletin and syllabus, 2026 cycle — the
-  current 2027 baseline): each subject paper carries *50 compulsory questions* in
-  *60 minutes*, with $+5$ for every correct answer and $-1$ for every incorrect answer. This unit rewards
-  pairing questions — plan with model, schedule with content, plant with
-  collaborator country — so learn each item WITH its partner, never alone.
+#tip-box(title: "CUET High-Scoring Insight & Key Cognitive Traps")[
+  Theme 10 requires exact recall of plan architects, key dates, controversies, and agricultural revolutions:
+  1. *Planning Commission vs NITI Aayog:*
+    - *Planning Commission:* Established in *March 1950* via Cabinet Resolution (extra-constitutional, non-statutory body).
+    - *NITI Aayog:* Established on *1 January 2015* under Prime Minister Narendra Modi.
+  2. *First vs Second Five-Year Plan Comparison:*
+    - *First Plan (1951–1956):* Architect: *K.N. Raj*; Priority: *Agriculture & Irrigation* (Bhakra Nangal); Mantra: *"Hasten slowly"*.
+    - *Second Plan (1956–1961):* Architect: *P.C. Mahalanobis*; Priority: *Heavy Industry & Steel* (Bhilai, Rourkela, Durgapur); High tariffs.
+    - *Plan Holidays:* *1966–1969* (three annual plans) following wars and severe droughts.
+  3. *Key Developmental Thinkers:*
+    - *Bombay Plan (1944):* Signed by big industrialists demanding state capital investments in heavy industry.
+    - *J.C. Kumarappa:* Gandhian economist; authored *Economy of Permanence*; proposed rural cottage industrialization.
+    - *Chaudhary Charan Singh:* Advocated agriculture and rural peasantry over urban industrial planning.
+  4. *Green vs White Revolution Architects:*
+    - *Green Revolution:* *Dr. M.S. Swaminathan* (Mexican dwarf wheat, HYV seeds, Punjab/Haryana/Western UP).
+    - *White Revolution (Operation Flood, 1970):* *Dr. Verghese Kurien* (Amul, Anand, Gujarat, NDDB).
 ]
 
-= What "Development" Meant: The Battle of Ideas
+= 1. Ideas of Development and Political Contestation
 
-Planning was not just an economic technique — it was India's answer to the question "what did freedom come FOR?" The 1940s and 1950s hosted a full-choir argument over that answer, and the syllabus's "five year plans" only make sense once you know the argument's lines.
+At the dawn of independence, the defining political debate in India revolved around the fundamental meaning, trajectory, and ideological model of "development":
 
-- *The Left's case — Nehru's vision:*
-  - Poverty could not be cured by small, slow steps — India needed *heavy industry fast*: steel, machinery, power — "machines that make machines".
-  - Only the STATE could mobilise that much capital in a poor country where private wealth was thin and timid.
-  - *The destination:* a "socialistic pattern of society" — growth WITH equality, the public sector holding the commanding heights.
+== The Clash of Competing Developmental Visions
+In the post-World War II global order, modernization and development were synonymous with the Western experience of industrialization, urban growth, and modern science:
+- *The Capitalist / Western Model:* Advocated free-market capitalism, private corporate ownership of industrial assets, minimal state regulation, and integration with the global capitalist economy (the model championed by the United States and Western Europe).
+- *The Socialist / Soviet Model:* Advocated state ownership of industrial enterprises, elimination of private landlordism, collectivization or state control of agriculture, and comprehensive centralized economic planning (the model of the Soviet Union).
+- *The Gandhian Alternative:* Advocated a decentralized, rural-centered economy focusing on village self-sufficiency, Khadi cottage industries, moral restraint against consumerism, and ecological harmony, articulated forcefully by thinkers like *J.C. Kumarappa*.
 
-- *The Right's caution — Rajaji and later the Swatantra Party:*
-  - A state that owns the economy becomes a state that *permits* everything — permits breed queues, queues breed inspectors, inspectors breed corruption.
-  - Free farmers and free businesses would grow faster if the state built roads and schools and then stepped aside.
-  - (This voice organised politically as the *Swatantra Party in 1959* — the previous chapter's right-of-centre opposition.)
+== The Left vs Right Political Cleavages
+- *The Left:* Refers to those political forces (Socialists, Communists) that favor the poor and downtrodden sections, advocating government redistributive policies, nationalization of industries, and aggressive land reforms.
+- *The Right:* Refers to those political forces (Swatantra Party, conservative business lobbies) that believe free competition and market mechanisms drive economic efficiency, opposing heavy state taxation and planning.
 
-- *The Gandhian middle:*
-  - Villages FIRST: revive *handicrafts, khadi and village industries*, keep capital small and employment local — steel mills can wait; starvation cannot.
-  - The plans absorbed this partially — *community development programmes* (1952) carried the village-improvement spirit, but the money flowed to dams and plants.
+== The Historic Consensus: The Bombay Plan (1944)
+A prevalent historical myth assumes that private capitalists always oppose state-led economic planning. In India, big business championed state intervention:
+- In *1944*, a prominent group of India's foremost industrial tycoons—including *J.R.D. Tata, G.D. Birla, Sir Purshotamdas Thakurdas, Kasturbhai Lalbhai*, and *John Mathai*—assembled in Bombay to draft a joint proposal titled *A Brief Memorandum Outlining a Plan of Economic Development for India*, popularly known as the *Bombay Plan*.
+- The industrialists recognized that private capital lacked the colossal resources required to build heavy capital-goods industries, ports, railways, and electrical power grids. They explicitly demanded that the state make massive public investments in heavy industrial infrastructure.
 
-- *The surprise — the Bombay Plan (1944-45):*
-  - India's biggest INDUSTRIALISTS (the Tata-Birla circle and allies) themselves demanded *state-led heavy industry*, protection from imports and public investment in infrastructure.
-  - *Why it matters:* the planning consensus was never "state versus business" — big business ASKED for the state's muscle, confident it could live profitably inside it. This one fact reverses most students' assumptions.
-
-#analogy-box(title: "The Family Car Decision")[
-  A poor joint family debates: buy a scooter now (quick mobility, Gandhian), save for a truck (income machine, Nehruvian), or wait and see (Rajaji's caution)? The family buys the TRUCK — one big purchase, everyone agrees it will pay later. The mapping: truck = heavy industry; family savings = state capital; the eldest brother who drives and decides = the Planning Commission; the uncle grumbling "who will fill the fuel?" = the Swatantra critique. The truck DID raise income — but the fuel bills (foreign exchange for machinery and food) arrived sooner than the income did.
-]
-
-= The Machinery: Planning Commission, NDC and the Plan Cycle
-
-- *The Planning Commission (March 1950):*
-  - Created by a *Cabinet resolution* — NOT by a law of Parliament, NOT by the Constitution. It is *extra-constitutional and advisory*: it plans, others execute.
-  - *The Prime Minister is its chairman by design* — Nehru chaired it himself, making planning a prime-ministerial instrument, not a ministry's chore.
-  - *Why an outside body?* Nehru wanted economists and scientists (the Mahalanobis circle) free from departmental turf wars — a "brain trust" above the ministries.
-
-- *The National Development Council (1952):*
-  - The *federal counterweight*: PM + all Chief Ministers (plus Commission members) — the table where state governments agree to (or soften) plan targets.
-  - *The logic:* plans succeed only with state cooperation (land, agriculture, education are state subjects) — so the states had to be INSIDE the process, not ordered by it.
-
-- *The plan cycle:*
-  - *Five-year plans* with annual reviews; targets set for growth, savings, employment and imports.
-  - *The First Plan (1951-56):* agriculture and irrigation first — the *Harrod-Domar* growth arithmetic; food was the binding constraint after Partition.
-  - *Its verdict:* a clear SUCCESS — the target of about *2.1% growth was beaten (~3.6%)*, helped by good monsoons and modest ambitions. Food output rose, inflation cooled, the young state banked credibility.
-
-- *The Second Plan (1956-61) — the turn:*
-  - *P.C. Mahalanobis's two-sector model:* invest in capital goods (machines) first; consumer comforts can wait. Rapid industrialisation = rapid long-run growth.
-  - *Its verdict:* industrial base genuinely built — but *machinery imports + food imports collided in a foreign-exchange crisis by 1957-58*; growth targets were nearly met while the balance of payments bled.
-
-= Expanding the State Sector: The Public Economy Rises
-
-The Second Plan needed a policy engine — and the state built itself one. Between 1955 and 1957 the Congress gave planning an official ideology, industry got its rulebook, and the public sector became the economy's spine. This is the syllabus's "expansion of state sector" — learn it as four moves.
-
-- *Move 1 — the ideology (Avadi, January 1955):*
-  - The Congress session at *Avadi* adopted a *"socialistic pattern of society"* as the party's official goal — planning was no longer just economics; it was the national faith.
-  - *What it meant in practice:* not Soviet-style nationalisation of everything — but public ownership of the strategic heights with private enterprise tolerated below them.
-
-- *Move 2 — the rulebook (Industrial Policy Resolution, 1956):*
-  - *Schedule A — 17 industries EXCLUSIVE to the state:* railways, steel, mining, atomic energy, aircraft, shipbuilding... the state's reserved kingdom.
-  - *Schedule B — state-LED industries with private entry allowed:* the state sets up new units and gradually acquires a monopoly position.
-  - *Schedule C — the rest for private hands, but under LICENCE:* capacity, location and output all needed the government's yes — the *licence raj* is born here.
-  - *The contrast students miss:* IPR 1956 socialised the FUTURE (new heavy units would be public) — it did not confiscate the existing private economy.
-
-- *Move 3 — the landmarks on the ground:*
-  - *Steel plants with many flags:* *Bhilai with the USSR (1959), Rourkela with West Germany, Durgapur with the UK* — foreign collaboration from BOTH Cold War blocs, non-alignment poured into concrete.
-  - *Financial takeovers:* *Imperial Bank became the State Bank of India (1955)*; *life insurance was nationalised — LIC (1956)* — household savings now flowed through public channels into the plan.
-  - *The wider public sector:* multipurpose river-valley dams (Bhakra-Nangal), power stations, research laboratories — the state as builder, banker and employer at once.
-
-- *Move 4 — the control apparatus:*
-  - *Licences, permits, import controls, price controls* — every private entry into industry or imports passed a government desk.
-  - *The intended purpose:* steer scarce capital into plan priorities and prevent monopoly concentration.
-  - *The actual result:* queues and delays, "licence-quota-permit raj", inspectors with pricing power, and licences hoarded as entry barriers — inefficiency froze into the system (the critique 1991 finally dismantled).
-
-= The Food Chain: From Plan Crisis to Green Revolution
-
-- *The crisis (1957-58):*
-  - The Second Plan's machinery imports met a food shortfall — foreign exchange sank toward emergency levels within two years of the industrial turn.
-  - *The rescues:* food imports under *America's PL-480* (wheat against rupee payments) + tight import controls — the republic stayed fed, but dependent.
-
-- *The agricultural politics underneath:*
-  - *"Grow More Food" campaigns, irrigation projects and fertiliser pushes* ran through the 1950s and early 1960s — with patchy results.
-  - *Land reforms stalled:* zamindari abolition moved, but ceilings and tenancy security died in state assemblies — the same Congress that ruled the Centre also housed the landlords' interests in the states. The plan wanted reform; the states delayed it.
-  - *The war years' shocks (1962, 1965) and droughts (1965-66)* pushed agriculture to emergency priority.
-
-- *The Green Revolution (from 1966) — the exit from the crisis:*
-  - The package: *high-yielding variety seeds + assured irrigation + chemical fertilisers + pesticides* — applied together, mainly on *wheat and rice*.
-  - *Where it worked first:* *Punjab, Haryana and western Uttar Pradesh* — regions with canals and big farmers. Foodgrain output surged; the famine fear died; PL-480 dependence wound down.
-  - *The political aftershock (the syllabus's key line):* prosperous farmers became a *new economic interest* — organised, vocal, and powerful enough in state politics to demand (and get) fertiliser, power and price support. Subsidies became permanent politics.
-
-= The Rise of New Economic Interests
-
-Every rupee the plan state spent created a constituency watching the next rupee. Planning did not just move resources — it *created groups organised around those resources*. Three matter for this chapter.
-
-- *Big industry — the insiders-turned-critics:*
-  - *Inside the plan:* licences, protection from imports, and guaranteed public orders made industrial houses wealthy.
-  - *The turn:* by the 1960s the same class complained about permits and inspectors — its free-market frustration found a party home in *Swatantra* (1959). Interest politics: demanding the state when it pays, cursing it when it gates.
-
-- *Rich farmers — the new rural power:*
-  - *Who they became:* canal-region, HYV-adopting cultivators with surpluses — a class created partly BY plan investments.
-  - *What they organised for:* fertiliser and electricity subsidies, procurement (minimum) prices, credit — and against land ceilings.
-  - *Where they acted:* through state politics — ministers, movements and later dedicated agrarian parties. *The effect on planning:* successive plans had to buy rural peace with input subsidies, crowding out other priorities.
-
-- *Organised workers:*
-  - *The base:* public-sector expansion multiplied secure industrial jobs — railways, steel plants, banks, insurance — each with unions.
-  - *The instrument:* strikes and collective bargaining became normal — the state was now the country's biggest employer, so wage disputes became political events.
-  - *The pattern to quote:* *the state's growth multiplied interest groups; each group then constrained what the state could do next* — the core political economy lesson of the chapter.
-
-#formula-box(title: "The Chapter's Cause-and-Effect Spine")[
-  - *Bombay Plan consensus* → state-led heavy industry chosen.
-
-  - *First Plan (agriculture) succeeds* → confidence rises.
-
-  - *Avadi 1955 + Mahalanobis* → Second Plan turns industrial.
-
-  - *IPR 1956 + licences + takeovers* → state sector expands.
-
-  - *Imports outpace exports* → 1957-58 crisis → PL-480.
-
-  - *Crisis + stalled reforms* → Green Revolution 1966.
-
-  - *Plan investments create winners* → industry, farmers, workers organise → interest politics.
-]
+== Setting Up the Planning Commission (March 1950)
+- In *March 1950*, the Government of India established the *Planning Commission* via an executive cabinet resolution.
+- It was an *extra-constitutional, non-statutory advisory body*, with the *Prime Minister serving as its ex-officio Chairman*.
+- On *1 January 2015*, Prime Minister Narendra Modi's administration dissolved the 65-year-old Planning Commission, replacing it with the *NITI Aayog* (National Institution for Transforming India) to foster "cooperative federalism."
 
 #figure(
-  image("assets/pol_planned_dev_engine.png", width: 100%),
-  caption: [Planned development's engine: the machinery, the two plans compared, the state-sector moves, the food chain from crisis to Green Revolution, and the interests that organised around the plan state.],
+  image("assets/pol_first_vs_second_fyps.png", width: 84%),
+  caption: [Figure 1 — Planned Development Architectural Matrix: Bombay Plan, First vs Second Five-Year Plans comparison, key developmental debates, and agricultural revolutions.],
 )
 
-= Key Facts & Terms: One-Stop Revision
+= 2. The Early Five-Year Plans: Agrarian Caution vs Heavy Industry
 
-#cheatsheet-box(title: "Politics of Planned Development — Every Fact on One Page")[
-  #table(
-    columns: (1.35fr, 2.15fr, 1.65fr),
-    table.header[*Term / fact*][*Meaning / statement*][*Exam use*],
-    [Development debate], [Left: state-led heavy industry; Right: free economy; Gandhians: village-first], ["whose view" questions],
-    [Bombay Plan 1944-45], [Big industrialists (Tata-Birla circle) demanded state-led industry], [Assumption-reversal questions],
-    [Planning Commission], [March 1950; executive resolution; advisory; PM chairs — Nehru first], [Body-and-year questions],
-    [NDC 1952], [PM + Chief Ministers approve plans — the federal seal], [Body-matching questions],
-    [First Plan 1951-56], [Agriculture + irrigation; Harrod-Domar; ~2.1% target, ~3.6% achieved], [Model-plan pairing],
-    [Second Plan 1956-61], [Heavy industry; Mahalanobis two-sector model], [Model-plan pairing],
-    [Avadi 1955], [Congress adopts "socialistic pattern of society"], [Ideology questions],
-    [IPR 1956 Schedule A], [17 industries exclusive to the state], [Schedule-matching],
-    [IPR 1956 Schedules B-C], [B: state-led with private entry; C: private under licence], [Schedule-matching],
-    [Steel plants], [Bhilai-USSR, Rourkela-West Germany, Durgapur-UK], [Country-plant pairing],
-    [SBI 1955 / LIC 1956], [Imperial Bank taken over; life insurance nationalised], [Takeover-year questions],
-    [Licence raj], [Licences, permits, import-price controls — intended steering, actual queues], [Critique questions],
-    [1957-58 crisis], [Machinery + food imports collide; foreign exchange sinks], [Sequence questions],
-    [PL-480], [US law: wheat against rupees — the food-import lifeline], [Full-form-and-purpose questions],
-    [Land reforms stall], [Ceilings and tenancy die in state assemblies — rural elites block], ["why stalled" questions],
-    [Green Revolution], [From 1966: HYV + irrigation + fertiliser; Punjab-Haryana-west UP first], [Package questions],
-    [New economic interests], [Big industry, rich farmers, organised workers — each born of the plan state], [Syllabus-line questions],
-    [Swatantra 1959], [Industrialists' free-market critique gets a party], [Link-the-era questions],
-  )
-]
+Independent India adopted the Soviet-inspired mechanism of Five-Year Plans (FYPs) to guide economic growth and resource allocation:
 
-= Common Errors & Special Cases
+== The First Five-Year Plan (1951–1956): "Hasten Slowly"
+- *The Intellectual Architect:* Drafted under the leadership of a brilliant young economist, *K.N. Raj*, who argued that India must *"hasten slowly"* during its first two decades to avoid catastrophic inflation.
+- *Core Priority: Agriculture & Irrigation:* Focused primarily on the agrarian sector to overcome the severe food shortages and cotton/jute raw material crises caused by the partition of the subcontinent.
+- *Monumental Investments:* Poured colossal state resources into massive multipurpose river valley projects, most notably the *Bhakra Nangal Dam* in Punjab and the *Hirakud Dam* on the Mahanadi in Odisha.
+- *Raising National Savings:* The plan emphasized that poverty could be dismantled only if the rate of national domestic savings rose steadily. Between 1951 and 1956, domestic savings rose significantly, laying the financial foundation for future industrialization.
 
-#exception-box(title: "The Traps This Unit Sets — Read Before the Mock")[
-  #table(
-    columns: (1.25fr, 1.35fr, 1.4fr),
-    table.header[*The rule you assume*][*The twist*][*The trap in the question*],
-    ["The Planning Commission is constitutional"], [It is an advisory body born of a 1950 executive resolution — extra-constitutional], [Body-nature questions],
-    ["Business opposed planning"], [The Bombay Plan shows big business ASKING for state-led industry], [Assumption-reversal traps],
-    ["Harrod-Domar powered the Second Plan"], [Harrod-Domar: First Plan; Mahalanobis: Second — never swap], [Model-plan pairing],
-    ["IPR 1956 nationalised everything"], [Only the FUTURE of 17 industries was reserved; existing private firms stayed], [Scope questions],
-    ["Schedule B was fully private"], [Schedule B was state-LED with private entry — Schedule C was the licensed private zone], [Schedule precision],
-    ["Bhilai was built with the West"], [Bhilai-USSR; Rourkela-West Germany; Durgapur-UK], [Country-plant pairing],
-    ["The Green Revolution fixed farming everywhere"], [It lifted irrigated wheat-rice belts first — Punjab, Haryana, west UP], [Region-precision traps],
-    ["Interest groups opposed the plan state"], [They GREW OUT of it and then constrained it — insiders, not enemies], ["rise of interests" questions],
-  )
-]
-
-= The 60-Second Self-Test
-
-Cover the answers, say each one aloud, then check. If any answer takes longer than ten seconds, revisit that section.
-
-- *Who chaired the Planning Commission, and why does that matter?* → The Prime Minister — Nehru himself — making planning a PM-led instrument.
-- *First Plan: priority, model, verdict?* → Agriculture + irrigation; Harrod-Domar; success (~2.1% target, ~3.6% achieved).
-- *Second Plan: model and consequence?* → Mahalanobis heavy industry; built the base but triggered the 1957-58 foreign-exchange crisis.
-- *The IPR 1956 schedules in one line each?* → A: 17 industries state-exclusive; B: state-led with private entry; C: private under licence.
-- *Match the steel plants.* → Bhilai-USSR, Rourkela-West Germany, Durgapur-UK.
-- *What were PL-480 and LIC?* → PL-480: US food imports against rupees; LIC: the 1956 life-insurance nationalisation.
-- *Name the three new economic interests.* → Big industry, rich farmers, organised workers — all organised around the plan state.
-
-= The Whole Chapter in One Picture
+== The Second Five-Year Plan (1956–1961): The Industrial Big Push
+- *The Intellectual Architect:* Authored by the legendary statistician *Prof. Prasanta Chandra Mahalanobis*, founder of the *Indian Statistical Institute (ISI)* in Kolkata.
+- *The 1955 Avadi Congress Resolution:* At its Avadi session in 1955, the Indian National Congress formally declared its commitment to establishing a *"socialistic pattern of society"*.
+- *The Mahalanobis Heavy Industrialization Strategy:*
+  - Argued that long-term economic independence required producing "machines to make machines" (capital goods), rather than importing foreign technology.
+  - Poured public capital into heavy engineering, mining, chemicals, locomotives, and electrical generation.
+  - Built three massive public-sector steel plants with foreign collaboration: *Bhilai* (with Soviet assistance in MP/Chhattisgarh), *Rourkela* (with West German assistance in Odisha), and *Durgapur* (with British assistance in West Bengal).
+  - *Protectionist Tariff Walls:* Imposed prohibitive import tariffs and quotas on manufactured consumer goods to protect infant domestic private and public industries from foreign competition.
+- *The Third Plan & Plan Holidays:* The Third Plan (1961–1966) attempted to balance agriculture and heavy industry, but was severely disrupted by the 1962 Sino-Indian War, the 1965 Indo-Pakistani War, and consecutive catastrophic monsoon failures. This triggered acute foreign exchange exhaustion, forcing the government to declare three annual *"Plan Holidays" (1966–1969)* before resuming the Fourth Plan in 1969.
 
 #figure(
-  image("assets/pol_planned_mindmap.png", width: 100%),
-  caption: [Chapter mindmap: the development debate, machinery, industrial turn, state-sector expansion, food politics and new interests — with the traps that catch most students.],
+  image("assets/pol_planned_dev_engine.png", width: 84%),
+  caption: [Figure 2 — Thematic Chronology & Planning Engine Architecture: GDP trajectories, public vs private sectoral shares, food grain production trends, and the Green Revolution arc.],
 )
 
-= Practice Questions (Exam Pattern)
+= 3. Major Controversies: Ideological and Structural Cleavages
 
-Ten questions in the CUET UG style. Attempt all of them — the paper gives $+5$ for each correct answer and $-1$ for every incorrect answer.
+The trajectory of state planning ignited intense ideological debates that reshaped Indian politics:
 
-#mcq(1, [The Planning Commission was set up in:], (
-  [1947], [1950], [1952], [1956],
-))
+== Agriculture vs Industry: Rural vs Urban Bias
+- *Chaudhary Charan Singh's Critique:*
+  - Peasant leader and former Congress minister Chaudhary Charan Singh argued that the Mahalanobis strategy exhibited a profound urban-industrial bias, siphoning scarce public resources into heavy industries while starving agriculture and village craftspeople.
+  - He argued that industrial planning caused rural impoverishment, demanding that planning place agriculture, small-scale rural credit, and peasant welfare at the absolute center of national development.
+- *J.C. Kumarappa and the 'Economy of Permanence':*
+  - Gandhian economist *J.C. Kumarappa* (author of *Economy of Permanence*) presented an alternative developmental blueprint.
+  - He warned that Western-style industrialization exploited nature, displaced labor, and concentrated wealth in urban monopolies, advocating instead for rural decentralization, natural organic farming, and village cottage industries.
 
-#mcq(2, [The Planning Commission is best described as:], (
-  [a constitutional body], [a statutory body created by Parliament], [an advisory extra-constitutional body chaired by the Prime Minister], [a judicial tribunal for plan disputes],
-))
+== Public vs Private Sector: The "Mixed Economy" Consensus
+India opted for a *Mixed Economy*, combining elements of state capitalism and private enterprise:
+- *Critique from the Left:* Socialists argued that the state did not do enough: it invested public money into unprofitable, high-risk infrastructure (steel, dams, transport) merely to create a subsidized playground for private corporate tycoons, while failing to nationalize private consumer industries or provide universal healthcare and education.
+- *Critique from the Right:* The *Swatantra Party* and private business lobbies argued that the state did too much: it created an oppressive, corrupt, bureaucratic *"License-Permit-Quota Raj"* that strangled private entrepreneurial initiative, banned foreign investment, and bred inefficiency in loss-making public enterprises.
 
-#mcq(3, [The First Five Year Plan (1951-56) gave top priority to:], (
-  [heavy industry], [exports], [defence], [agriculture and irrigation],
-))
+= 4. Land Reforms: Achievements and Structural Failures
 
-#mcq(4, [The model that shaped the Second Five Year Plan's industrial strategy was associated with:], (
-  [Harrod and Domar], [P.C. Mahalanobis], [John Maynard Keynes], [Amartya Sen],
-))
+In the agrarian domain, the independent Indian state initiated legislative land reforms to dismantle centuries of feudal exploitation:
 
-#mcq(5, [The Indian National Congress adopted the goal of a "socialistic pattern of society" at its:], (
-  [Avadi session, 1955], [Nagpur session, 1959], [Bhubaneswar session, 1964], [Karachi session, 1931],
-))
+== The Abolition of the Zamindari System
+- *The Unprecedented Triumph:* The most significant and universally successful land reform measure was the legal *abolition of the colonial Zamindari system*.
+- *Impact:* Stripped hereditary absentee landlords of vast feudal estates, releasing millions of tenant cultivators from direct feudal subjugation and transferring land ownership to actual cultivators. It brought peasants into direct contact with the state and deprived feudal princes and zamindars of their traditional rural political dominance.
 
-#mcq(6, [Under the Industrial Policy Resolution of 1956, Schedule A listed:], (
-  [17 industries reserved exclusively for the state], [12 industries for private enterprise], [industries open to foreign companies only], [village and handicraft industries],
-))
+== Tenancy Reforms, Land Ceilings and Structural Evasion
+In stark contrast, redistributive land reforms proved an abject structural failure:
+- *Tenancy Security Laws:* Enacted to provide legal security of tenure and regulate exorbitant crop-share rents; however, rural landlords routinely evicted tenants through coercion, falsely registering them as day-laborers.
+- *Land Ceiling Acts:* Laws were passed imposing legal ceilings on the maximum acreage of agricultural land an individual or family could own, with surplus land to be redistributed to landless Dalits and tribals.
+- *Subversion Through Loopholes:* Wealthy landlords exploited legal loopholes, registering surplus lands under fictitious names of relatives, domestic servants, and even pet animals (*benami transfers*), or divorcing spouses on paper to retain vast plantations. Consequently, genuine land redistribution remained negligible across most states (with the prominent exceptions of *Jammu & Kashmir* and later *Kerala* and *West Bengal* under communist rule).
 
-#mcq(7, [The Bhilai steel plant was set up with the collaboration of:], (
-  [the United Kingdom], [West Germany], [the Soviet Union], [the United States],
-))
+= 5. The Food Crisis of the 1960s & The Green Revolution
 
-#mcq(8, [Life insurance was nationalised in 1956, creating:], (
-  [the Reserve Bank of India], [the State Bank of India], [the Life Insurance Corporation (LIC)], [the Industrial Development Bank],
-))
+In the mid-1960s, agricultural stagnation, two consecutive severe droughts, and the financial toll of two wars pushed India to the brink of mass famine:
 
-#mcq(9, [The Bombay Plan (1944-45) was drafted by:], (
-  [socialist party leaders], [big industrialists such as the Tata-Birla circle], [Gandhian village economists], [communist party economists],
-))
+== The Bihar Famine and PL-480 Humiliation
+- *The Crisis (1965–1967):* Food grain production plummeted from 89 million tonnes in 1964–65 to 72 million tonnes in 1965–66. Severe famine gripped the state of *Bihar*, where malnutrition, food riots, and starvation deaths were rampant.
+- *Zoning Policies:* State governments erected trade barriers ("zoning"), prohibiting the interstate movement of food grains, worsening regional shortages.
+- *The PL-480 "Ship-to-Mouth" Existence:* India became desperately dependent on emergency food aid from the United States under *Public Law 480 (PL-480)*. US President Lyndon B. Johnson used food shipments as political leverage, releasing grain on a month-to-month basis ("ship-to-mouth existence") to force India to alter its agricultural policies and soften its criticism of the US war in Vietnam.
 
-#mcq(10, [PL-480, which supplied India with imported wheat, was:], (
-  [a five-year plan document], [an Industrial Policy Resolution schedule], [a licensing category for imports], [an American law under which food was sold against rupee payments],
-))
+== The Green Revolution: Strategy and Scientific Breakthrough
+Determined to achieve food sovereignty and escape foreign geopolitical blackmail, the Indian government under Prime Minister Indira Gandhi and Agriculture Minister C. Subramaniam revolutionized agricultural policy:
+- *The Paradigm Shift:* Abandoned the earlier policy of supporting impoverished, rain-fed agricultural regions. Instead, the government decided to channel massive state subsidies, technology, and fertilizers into *already prosperous, irrigated regions* possessing enterprising farmers (*"betting on the strong"*).
+- *Scientific Pioneers:* Led by agricultural scientist *Dr. M.S. Swaminathan*, who adapted Nobel laureate *Norman Borlaug's* high-yielding semi-dwarf Mexican wheat strains for Indian soil conditions.
+- *Core Technology Package:* Provided farmers with High Yielding Variety (HYV) seeds, subsidized chemical fertilizers, pesticides, tubewell irrigation credit, and guaranteed price insurance through *Minimum Support Prices (MSP)* announced by the newly established *Agricultural Prices Commission (1965)* and grain procurement by the *Food Corporation of India (FCI, 1965)*.
+- *The Production Miracle:* Between 1967 and 1971, wheat production doubled, transforming India from a chronic food-deficit importer into a self-sufficient nation maintaining massive national buffer food stocks.
 
-= Detailed Solutions
+== Socio-Political Consequences of the Green Revolution
+While the Green Revolution solved national food security, it generated profound social and regional cleavages:
+- *Regional Disparities:* The benefits were heavily concentrated in *Punjab, Haryana, and Western Uttar Pradesh*, leaving eastern India, central drylands, and the south largely bypassed.
+- *Class Polarization:* Wealthy, large landowners who possessed access to tubewell irrigation, capital, and tractors reaped astronomical profits. In contrast, marginal peasants and landless laborers were displaced by mechanization.
+- *The Rise of the "Kulak" Peasantry:* Created a wealthy, politically powerful class of commercial middle-caste peasant farmers (such as Jats in Haryana and UP, and Jat Sikhs in Punjab). This agrarian capitalist class organized powerful regional farmers' unions (such as the *Bharatiya Kisan Union / BKU*) and reshaped northern Indian politics through peasant parties.
 
-Each solution shows the reasoning, not just the verdict — cover the answer line, attempt the question, then compare.
+= 6. The White Revolution: Operation Flood & The Amul Cooperative Model
 
-#solution(1, [March 1950 — by a Cabinet resolution, two and a half years after independence. 1952 belongs to the NDC; 1956 to the Second Plan era.], answer: [B])
+Parallel to the Green Revolution in crops, India engineered a historic transformation in dairy farming known as the *White Revolution*:
 
-#solution(2, [It is extra-constitutional (executive resolution) and advisory (it plans; ministries execute), with the Prime Minister as its chairman — Nehru was the first. No statute and no constitutional article created it.], answer: [C])
+== Genesis in Anand, Gujarat: Tribhuvandas Patel & Amul
+- In the 1940s, dairy farmers in the Kaira (Kheda) district of Gujarat were exploited by monopoly milk contractors (Polson Dairy).
+- Under the guidance of Sardar Vallabhbhai Patel, local leader *Tribhuvandas Patel* organized smallholder farmers into a cooperative, founding the *Kaira District Co-operative Milk Producers' Union* in Anand in 1946, marketing milk under the iconic brand name *Amul* (Anand Milk Union Limited).
 
-#solution(3, [Food was the binding constraint after Partition, so the First Plan poured investment into agriculture and irrigation — under the Harrod-Domar growth arithmetic — and beat its ~2.1% growth target with ~3.6%.], answer: [D])
+== Operation Flood (1970) & Dr. Verghese Kurien
+- *The "Milkman of India":* In 1965, Prime Minister Lal Bahadur Shastri established the *National Dairy Development Board (NDDB)* at Anand, appointing visionary engineer *Dr. Verghese Kurien* as its Chairman.
+- *Operation Flood:* Launched in *1970*, Operation Flood was the world's largest integrated rural dairy development program:
+  - Linked millions of smallholder village milk producers directly to urban consumers through a three-tier cooperative structure (village dairy societies, district unions, and state federations).
+  - Eliminated middlemen, provided cattle feed, veterinary services, and artificial insemination, and utilized innovative indigenous technology (invented by H.M. Dalaya) to manufacture skimmed milk powder and condensed milk from buffalo milk.
+  - Transformed India from a milk-importing country into the *world's largest milk producer*, generating steady daily cash incomes for millions of landless rural families and women.
 
-#solution(4, [P.C. Mahalanobis — the statistician who designed the Second Plan's two-sector model prioritising capital goods. Harrod-Domar belongs to the First Plan.], answer: [B])
 
-#solution(5, [Avadi, January 1955 — the session that made a "socialistic pattern of society" the party's official goal, one year before the IPR 1956 gave it an industrial rulebook.], answer: [A])
+= 7. Federal Planning Architecture: The National Development Council (NDC)
 
-#solution(6, [Schedule A reserved 17 heavy and strategic industries (railways, steel, mining, atomic energy...) exclusively for the state. Schedule B was state-led with private entry; Schedule C was licensed private territory.], answer: [A])
+To prevent centralized planning from degenerating into bureaucratic centralization, the government created an intergovernmental coordinating mechanism:
+- *Establishment of the NDC (August 1952):* Set up by an executive cabinet resolution to associate state governments directly with the formulation and approval of Five-Year Plans.
+- *Composition:* Chaired by the *Prime Minister*, comprising all *Union Cabinet Ministers*, the *Chief Ministers of all States and Union Territories*, and the *Members of the Planning Commission*.
+- *Federal Tensions in Resource Allocation:*
+  - While the Finance Commission allocated constitutional revenue shares, the Planning Commission and NDC controlled discretionary capital grants for plan projects under Article 282.
+  - State governments frequently accused the central Planning Commission of acting like a "Super-Cabinet", dictating uniform, top-down development schemes that ignored regional ecological and cultural realities.
 
-#solution(7, [Bhilai grew with Soviet collaboration — the USSR. Rourkela paired with West Germany and Durgapur with the UK: non-alignment's footprint in steel.], answer: [C])
+= 8. The 1966 Rupee Devaluation & Foreign Aid Pressures
 
-#solution(8, [Life insurance nationalised in 1956 became the LIC — household savings now channelled into public hands. The State Bank of India (1955) was the Imperial Bank's takeover; the RBI dates to 1935.], answer: [C])
+The intersection of economic planning with external geopolitical pressures produced dramatic crises in the mid-1960s:
+- *The Macroeconomic Shock:* Two wars (1962 and 1965), defense budget increases, and consecutive drought-induced food shortages depleted India's foreign exchange reserves.
+- *The Devaluation (June 1966):*
+  - Under intense pressure from the World Bank and the United States (which tied emergency food aid and balance-of-payments loans to economic liberalization), Prime Minister Indira Gandhi announced a dramatic *36.5% devaluation of the Indian rupee* on 6 June 1966.
+  - The exchange rate rose abruptly from *Rs 4.76 to Rs 7.50 per US dollar*.
+- *Political Repercussions:* The devaluation triggered runaway domestic inflation, price surges for imported kerosene and fertilizers, and fierce political outrage. Opposition parties condemned the devaluation as a humiliating surrender of Indian economic sovereignty to Western financial imperialism, pushing Indira Gandhi to adopt a radical, left-wing populist economic posture.
 
-#solution(9, [The Bombay Plan came from leading industrialists — the Tata-Birla circle — asking for state-led heavy industry and protection: business itself requested the plan state.], answer: [B])
+= 9. The Bank Nationalisation of 1969 & Social Control of Capital
 
-#solution(10, [PL-480 was the United States' Public Law 480 — wheat supplied against rupee payments that kept India fed through the late-1950s and 1960s food gap.], answer: [D])
+Frustrated by the reluctance of private commercial banks to finance small farmers and cottage industries, Indira Gandhi executed the most radical structural economic reform of the post-independence era:
+- *The Predicament of Private Banking:* By the late 1960s, private commercial banks concentrated credit exclusively in the hands of large urban industrial houses and corporate dynasties, completely neglecting agricultural credit, rural electrification, and small enterprises.
+- *The Historic Ordinance (19 July 1969):* Prime Minister Indira Gandhi promulgated the Banking Companies (Acquisition and Transfer of Undertakings) Ordinance, nationalizing *14 major private commercial banks* that held over 85% of total bank deposits in the country (including Punjab National Bank, Bank of Baroda, and Central Bank of India).
+- *Strategic Objectives:* Reoriented credit toward "priority sectors" (agriculture, smallholder artisans, rural self-help credit), opened tens of thousands of rural bank branches across backward villages, and mobilized domestic savings for national plan investments.
+- *Radical Extensions:* Bank nationalization was followed by the nationalization of general insurance in 1972 and the wholesale nationalization of coking coal mines in 1973.
 
-== Wrong-Answer Clinic — the one-line corrections
+= 10. The NITI Aayog Paradigm Shift: From Planning to Catalytic Policy
 
-Dropped marks above? Find your slip here and rewrite the corrected rule in your own words.
+On *1 January 2015*, the Government of India formally dissolved the Planning Commission, inaugurating the *NITI Aayog* (National Institution for Transforming India) to reflect the contemporary realities of a globalized, market-oriented economy:
+- *Core Philosophical Departure:*
+  - *Planning Commission:* Represented a centralized, command-economy model where a central body allocated financial plan funds to state governments in a top-down, "one-size-fits-all" manner.
+  - *NITI Aayog:* Operates as a strategic policy think-tank and catalyst, embodying the principle of *Cooperative Federalism* (treating states as equal national partners) and *Competitive Federalism* (benchmarking state governance through transparent indices).
+- *Institutional Structure:*
+  - The Prime Minister serves as the *Chairperson*.
+  - *The Governing Council:* Comprises the Prime Minister, Chief Ministers of all States, and Lieutenant Governors of Union Territories.
+  - Daily operations are spearheaded by a distinguished *Vice Chairperson* and a *Chief Executive Officer (CEO)*.
+- *Key Functions:* Focuses on formulating long-term strategic frameworks (15-year Vision, 7-year Strategy, and 3-year Action Agenda), fostering innovation, and tracking performance indices (such as the SDG India Index, Multidimensional Poverty Index, and State Health Index). NITI Aayog does not possess the power to allocate central financial funds to states; that fiscal power was entirely transferred to the statutory *Finance Commission*.
 
-#table(
-  columns: (1.05fr, 1.5fr, 1.45fr),
-  table.header[*If you answered...*][*Your slip was...*][*The corrected rule, in one line*],
-  [Q1 option C], [Pairing the NDC's year with the Commission's], [Commission: 1950 (resolution); NDC: 1952 (federal approval table)],
-  [Q2 option A], [Assuming every big body is constitutional], [Extra-constitutional + advisory + PM-chaired — the Finance Commission is the constitutional one],
-  [Q3 option A], [Letting the Second Plan's face cover the First], [First = agriculture (Harrod-Domar); Second = heavy industry (Mahalanobis)],
-  [Q6 option B], [Trusting a half-remembered schedule list], [Schedule A = 17 industries, state-exclusive — the reserved kingdom],
-  [Q7 option B], [Mixing the German and Soviet plants], [Bhilai-USSR; Rourkela-West Germany; Durgapur-UK — assign by name],
-  [Q10 option B], [Confusing trade law with policy schedule], [PL-480 = US food law; IPR schedules classify industries, not food deals],
+= 11. The Industrial Policy Resolutions: 1948 & 1956
+
+The legal architecture governing the division of economic spheres between the public and private sectors was codified in two landmark policy declarations:
+- *Industrial Policy Resolution of 1948:* First post-independence policy statement, delineating a fourfold division of industry and establishing state monopolies in atomic energy, defense armaments, and railways.
+- *Industrial Policy Resolution of 1956 (The Economic Constitution):*
+  - Adopted following the 1955 Avadi socialist consensus, providing the comprehensive regulatory framework for the Second Five-Year Plan.
+  - Divided all industries into three rigid categories:
+    - *Schedule A (17 Industries):* Exclusively reserved for state ownership (arms, atomic energy, iron and steel, heavy electricals, coal, mineral oils, aircraft, railways).
+    - *Schedule B (12 Industries):* Progressively state-owned, with private enterprise acting as a supplementary junior partner (aluminum, machine tools, basic chemicals, road transport).
+    - *Schedule C:* Left open to private sector enterprise, but subject to stringent state industrial licensing, price controls, and import permits.
+
+= 12. "Temples of Modern India": Nehru's Secular Industrial Modernity
+
+Prime Minister Jawaharlal Nehru famously referred to massive hydroelectric dams, power stations, and public steel plants as the *"Temples of Modern India"*:
+- *Symbolism of National Rebirth:* Nehru believed that large engineering works—such as the Bhakra Nangal Dam, the Trombay atomic reactor, and the Bhilai steel complex—embodied the secular, scientific triumph of human reason and national unity over medieval religious superstition.
+- *The Public Sector Undertakings (PSUs):* Enterprises such as the Steel Authority of India (SAIL), Bharat Heavy Electricals Limited (BHEL), and Oil and Natural Gas Corporation (ONGC) were conceived not merely as commercial corporations, but as engines of regional development, employment creation, and strategic self-reliance.
+#pagebreak()
+
+= Chapter Synthesis & Cognitive Mindmap
+
+#figure(
+  image("assets/pol_planned_mindmap.png", width: 80%),
+  caption: [Figure 3 — Politics of Planned Development Summary Mindmap: Complete structural map of the Bombay Plan, First vs Second FYP, public vs private debates, land reforms, Green Revolution, and Operation Flood.],
 )
 
-#block(width: 100%, inset: (top: 4pt), above: 4pt)[
-  #align(center, text(fill: om-grey, size: 8pt)[© OurMocks · www.ourmocks.com · CUET UG Political Science · Politics of Planned Development · 2027 cycle])
+#exam-pointer(title: "HIGH-YIELD MEMORY HOOKS & HISTORIOGRAPHICAL POINTERS")[
+  - *Bombay Plan (1944):* Signed by industrial tycoons demanding state investment in heavy industrial infrastructure.
+  - *Planning Commission:* Formed *March 1950* via Cabinet Resolution; replaced *1 January 2015* by *NITI Aayog*.
+  - *First FYP (1951–56):* Architect: *K.N. Raj*; prioritized *Agriculture & Dams* (Bhakra Nangal); *"Hasten slowly"*.
+  - *Second FYP (1956–61):* Architect: *P.C. Mahalanobis*; prioritized *Heavy Industry* (Bhilai, Rourkela, Durgapur steel plants).
+  - *Plan Holidays (1966–1969):* Three annual plans following the 1962/1965 wars and severe droughts.
+  - *J.C. Kumarappa:* Gandhian economist; authored *Economy of Permanence*; championed village cottage industries.
+  - *Chaudhary Charan Singh:* Championed agrarian peasantry against urban heavy industrial planning bias.
+  - *PL-480:* US food aid program utilized during the 1965–67 Bihar famine ("ship-to-mouth existence").
+  - *Green Revolution Architect:* *Dr. M.S. Swaminathan*; Norman Borlaug's dwarf wheat; Punjab, Haryana, Western UP.
+  - *White Revolution (Operation Flood, 1970):* *Dr. Verghese Kurien*; NDDB; Amul cooperative dairy model in Anand, Gujarat.
 ]
+
+#pagebreak()
+
+#cheatsheet-box(title: "MASTER STRATEGY CHEATSHEET — POLITICS OF PLANNED DEVELOPMENT")[
+  ▸*Planning Evolution:* Bombay Plan (1944) $arrow.r$ Planning Commission (March 1950, extra-constitutional) $arrow.r$ NITI Aayog (1 Jan 2015).
+  ▸*First vs Second FYP:*
+    - First (1951–56): K.N. Raj $arrow.r$ Agriculture & Irrigation (Bhakra Nangal) $arrow.r$ "Hasten slowly".
+    - Second (1956–61): P.C. Mahalanobis $arrow.r$ Heavy Industry (Bhilai, Rourkela, Durgapur steel) $arrow.r$ High tariffs.
+    - Plan Holidays: 1966–1969 (3 annual plans).
+  ▸*Major Developmental Controversies:*
+    - *Agri vs Industry:* Charan Singh (peasant advocacy) vs Mahalanobis; J.C. Kumarappa (Economy of Permanence, Gandhian cottage industry).
+    - *Public vs Private:* Mixed economy; Left critiqued corporate subsidies; Right (Swatantra) critiqued License-Permit Raj.
+  ▸*Land Reforms Fate:* Zamindari Abolition = Successful $arrow.r$ Land Ceilings & Tenancy Security = Subverted by benami transfers.
+  ▸*Agricultural Revolutions:*
+    - *Green Revolution:* 1960s Bihar famine & PL-480 $arrow.r$ M.S. Swaminathan $arrow.r$ HYV seeds, fertilizers, tubewells, MSP $arrow.r$ Concentrated in Punjab, Haryana, Western UP $arrow.r$ Created 'kulak' middle-peasant lobby.
+    - *White Revolution (1970):* Operation Flood $arrow.r$ Dr. Verghese Kurien $arrow.r$ NDDB $arrow.r$ Amul cooperative model in Anand.
+]
+
+#exception-box(title: "THE SEVEN FATAL CUET TRAPS")[
+  1. *Trap 1 (Bombay Plan Signatories):* The Bombay Plan was NOT a socialist manifesto; it was drafted by *leading private industrialists* in 1944.
+  2. *Trap 2 (First vs Second Plan Architects):* First Plan was drafted by *K.N. Raj*; Second Plan was drafted by *P.C. Mahalanobis*. Do not swap them!
+  3. *Trap 3 (Planning Commission Legal Status):* The Planning Commission was NOT established by Parliament or the Constitution; it was created by an *executive cabinet resolution* in March 1950.
+  4. *Trap 4 (Economy of Permanence Author):* 'Economy of Permanence' was authored by Gandhian economist *J.C. Kumarappa*, NOT Mahatma Gandhi or E.M.S. Namboodiripad.
+  5. *Trap 5 (Land Reform Success vs Failure):* Zamindari abolition was *largely successful*; land ceiling and tenancy redistribution laws were *largely subverted and failed*.
+  6. *Trap 6 (Green Revolution Geographical Focus):* Green Revolution was NOT nationwide; it was heavily concentrated in *Punjab, Haryana, and Western Uttar Pradesh*.
+  7. *Trap 7 (Operation Flood Commodity):* Operation Flood is the code name for the *White Revolution (Dairy/Milk)*, NOT water irrigation or flood management!
+]
+
+#pagebreak()
+#set text(size: 7.6pt)
+#set par(leading: 0.32em, spacing: 0.32em)
+
+= Exam-Style Practice Questions & Detailed Solutions
+
+== Part 1: Bombay Plan, Planning Commission & Plan Architects (Q1 to Q5)
+
+#mcq(1, [In 1944, a prominent group of leading Indian industrialists gathered in Bombay to draft a joint proposal for economic development, famously known as the:], (
+  [The People's Plan],
+  [The Bombay Plan],
+  [The Gandhian Plan],
+  [The National Development Charter],
+))
+#solution(1, [The Bombay Plan (1944):
+- In *1944*, prominent industrialists (including J.R.D. Tata and G.D. Birla) drafted the *Bombay Plan*, demanding that the state make large public capital investments in heavy industry.
+Therefore, Option B is the correct answer.], answer: [B])
+
+#mcq(2, [The Planning Commission of India was established in March 1950 through which institutional mechanism?], (
+  [A constitutional amendment passed under Article 368],
+  [An Act of Parliament passed in the provisional legislature],
+  [An executive resolution passed by the Union Cabinet],
+  [A presidential ordinance under Article 123],
+))
+#solution(2, [Establishment of the Planning Commission:
+- The Planning Commission was an extra-constitutional, non-statutory advisory body established in *March 1950* via an *executive resolution of the Union Cabinet*.
+Therefore, Option C is the correct answer.], answer: [C])
+
+#mcq(3, [On 1 January 2015, which newly constituted think tank officially replaced the 65-year-old Planning Commission of India?], (
+  [NITI Aayog],
+  [National Development Council],
+  [Economic Advisory Council to the PM],
+  [National Statistical Commission],
+))
+#solution(3, [Creation of NITI Aayog:
+- On *1 January 2015*, the Government of India replaced the Planning Commission with *NITI Aayog* (National Institution for Transforming India) to promote cooperative federalism.
+Therefore, Option A is the correct answer.], answer: [A])
+
+#mcq(4, [The First Five-Year Plan (1951–1956), which prioritized agriculture, irrigation, and power projects, was drafted under the intellectual leadership of young economist:], (
+  [P.C. Mahalanobis],
+  [Sukhamoy Chakravarty],
+  [Amartya Sen],
+  [K.N. Raj],
+))
+#solution(4, [Architect of the First Five-Year Plan:
+- Young economist *K.N. Raj* played the leading intellectual role in drafting the First Five-Year Plan, urging that India must "hasten slowly" and prioritize agrarian investment.
+Therefore, Option D is the correct answer.], answer: [D])
+
+#mcq(5, [The Second Five-Year Plan (1956–1961), which shifted national priority toward rapid heavy industrialization and capital goods, was authored by:], (
+  [J.C. Kumarappa],
+  [P.C. Mahalanobis],
+  [K.N. Raj],
+  [Chaudhary Charan Singh],
+))
+#solution(5, [Architect of the Second Five-Year Plan:
+- *Prof. P.C. Mahalanobis*, founder of the Indian Statistical Institute, authored the Second Five-Year Plan, championing heavy industrialization and domestic capital-goods production.
+Therefore, Option B is the correct answer.], answer: [B])
+
+#pagebreak()
+
+== Part 2: Gandhian Economics, Agrarian Debates & Food Crisis (Q6 to Q10)
+
+#mcq(6, [Which economist proposed an alternative Gandhian framework of rural decentralization titled 'Economy of Permanence', emphasizing village cottage industries?], (
+  [J.C. Kumarappa],
+  [D.R. Gadgil],
+  [V.K.R.V. Rao],
+  [P.C. Joshi],
+))
+#solution(6, [Economy of Permanence:
+- Gandhian economist *J.C. Kumarappa* authored *Economy of Permanence*, presenting an alternative developmental vision centered on village self-reliance and cottage industries.
+Therefore, Option A is the correct answer.], answer: [A])
+
+#mcq(7, [Which veteran political leader resigned from the Congress to champion peasant agricultural interests against heavy industrial urban bias, later founding the Bharatiya Kranti Dal (BKD)?], (
+  [Morarji Desai],
+  [Chaudhary Charan Singh],
+  [Jagjivan Ram],
+  [Devraj Urs],
+))
+#solution(7, [Chaudhary Charan Singh's Agrarian Stand:
+- *Chaudhary Charan Singh* forcefully argued that planning had an urban-industrial bias, advocating that agriculture and peasant welfare receive primary national investment.
+Therefore, Option B is the correct answer.], answer: [B])
+
+#mcq(8, [During the acute food crisis of the mid-1960s, India was forced to rely heavily on subsidized wheat imports from the United States under which legislation?], (
+  [The Marshall Plan],
+  [The Lend-Lease Act],
+  [Public Law 480 (PL-480)],
+  [The Food for Freedom Charter],
+))
+#solution(8, [US PL-480 Food Imports:
+- During the mid-1960s food shortages and Bihar famine, India survived through emergency imports of American wheat under *Public Law 480 (PL-480)*.
+Therefore, Option C is the correct answer.], answer: [C])
+
+#mcq(9, [The Green Revolution in India, which introduced High Yielding Varieties (HYV) of wheat and rice along with chemical fertilizers, was primarily spearheaded by:], (
+  [Dr. M.S. Swaminathan],
+  [Dr. Verghese Kurien],
+  [Dr. Homi J. Bhabha],
+  [Dr. Norman Borlaug],
+))
+#solution(9, [Pioneers of the Green Revolution:
+- Agricultural scientist *Dr. M.S. Swaminathan* spearheaded the Green Revolution in India, adapting Norman Borlaug's dwarf wheat strains to achieve national food self-sufficiency.
+Therefore, Option A is the correct answer.], answer: [A])
+
+#mcq(10, [Which three Indian states benefited most dramatically from the initial phase of the Green Revolution due to established irrigation infrastructure?], (
+  [Bihar, Odisha, and West Bengal],
+  [Punjab, Haryana, and Western Uttar Pradesh],
+  [Maharashtra, Gujarat, and Rajasthan],
+  [Tamil Nadu, Kerala, and Karnataka],
+))
+#solution(10, [Geographical Core of the Green Revolution:
+- The Green Revolution was heavily concentrated in *Punjab, Haryana, and Western Uttar Pradesh*, where tube-well irrigation and fertile canal networks were readily available.
+Therefore, Option B is the correct answer.], answer: [B])
+
+#pagebreak()
+
+== Part 3: Operation Flood, Bhakra Dam, Plan Holidays & Kulaks (Q11 to Q15)
+
+#mcq(11, [The 'White Revolution' in India, also known as 'Operation Flood', was launched in 1970 under the leadership of which renowned visionary?], (
+  [Dr. M.S. Swaminathan],
+  [Chandi Prasad Bhatt],
+  [Dr. Verghese Kurien],
+  [Sunderlal Bahuguna],
+))
+#solution(11, [Architect of Operation Flood:
+- *Dr. Verghese Kurien* ("Milkman of India") led Operation Flood from Anand, Gujarat, organizing dairy farmers into cooperatives under the NDDB and creating Amul.
+Therefore, Option C is the correct answer.], answer: [C])
+
+#mcq(12, [In the institutional architecture of India's planned development, the First Five-Year Plan famously allocated enormous state capital to which monumental multipurpose dam project?], (
+  [The Tehri Dam],
+  [The Sardar Sarovar Dam],
+  [The Nagarjuna Sagar Dam],
+  [The Bhakra Nangal Dam],
+))
+#solution(12, [Bhakra Nangal Dam in First Plan:
+- The First Five-Year Plan allocated massive public investment to large multipurpose irrigation and hydro projects, most notably the *Bhakra Nangal Dam* across the Sutlej River.
+Therefore, Option D is the correct answer.], answer: [D])
+
+#mcq(13, [Following the economic strains of the 1962 China War, 1965 Pakistan War, and severe droughts, the Government of India declared three annual:], (
+  [Plan Holidays (1966–1969)],
+  [National Fiscal Emergencies],
+  [Moratoriums on Agricultural Credit],
+  [Industrial Freeze Periods],
+))
+#solution(13, [The Plan Holidays (1966–1969):
+- Severe droughts, food shortages, currency devaluation, and two wars forced the government to suspend Five-Year Plans, implementing three annual plans known as *Plan Holidays (1966–1969)*.
+Therefore, Option A is the correct answer.], answer: [A])
+
+#mcq(14, [Among the various land reform measures initiated in independent India, which policy proved to be the most successfully implemented nationwide?], (
+  [Imposition of agricultural land ceilings],
+  [Consolidation of fragmented land holdings],
+  [Abolition of the colonial Zamindari system],
+  [Redistribution of surplus land to landless agricultural labor],
+))
+#solution(14, [Success of Zamindari Abolition:
+- The legal *abolition of the Zamindari system* was the most successful land reform, dismantling feudal estates and bringing millions of cultivators into direct relationship with the state.
+Therefore, Option C is the correct answer.], answer: [C])
+
+#mcq(15, [The primary socio-political consequence of the Green Revolution in rural northern India was:], (
+  [The complete eradication of landlessness across all states],
+  [The immediate collapse of private industrial corporations],
+  [The elimination of commercial cash crop agriculture],
+  [The rise of a prosperous, politically assertive middle-peasant class ('kulaks')],
+))
+#solution(15, [Rise of the Kulak Peasantry:
+- The Green Revolution enriched medium and large farmers in the north, creating an influential class of prosperous middle-caste peasants (*"kulaks"*) who emerged as powerful political actors.
+Therefore, Option D is the correct answer.], answer: [D])

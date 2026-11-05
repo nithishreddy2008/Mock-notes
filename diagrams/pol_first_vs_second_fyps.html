@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px 32px;
+    overflow: hidden;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #071A4D;
+    padding: 16px 28px;
+    border-radius: 12px;
+    border-bottom: 4px solid #1F5EFF;
+    margin-bottom: 16px;
+  }
+  .header-left h1 {
+    color: #FFFFFF;
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+  }
+  .header-left p {
+    color: #94A3B8;
+    font-size: 13px;
+    font-weight: 500;
+    margin-top: 3px;
+  }
+  .badge {
+    background: #1F5EFF;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+  }
+  .main-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    height: 740px;
+  }
+  .card {
+    background: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    border-radius: 12px;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+  }
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #E2E8F0;
+    margin-bottom: 12px;
+  }
+  .card-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: #EFF6FF;
+    color: #1F5EFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 15px;
+  }
+  .card-title {
+    font-size: 15px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .card-subtitle {
+    font-size: 11px;
+    color: #64748B;
+  }
+  .sub-box {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin-bottom: 10px;
+  }
+  .sub-title {
+    font-size: 12.5px;
+    font-weight: 800;
+    color: #1E293B;
+    margin-bottom: 4px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .sub-title span {
+    font-size: 11px;
+    color: #1F5EFF;
+    font-weight: 700;
+  }
+  .detail-list {
+    font-size: 11px;
+    line-height: 1.45;
+    color: #334155;
+  }
+  .detail-list li {
+    margin-left: 14px;
+    margin-bottom: 2px;
+  }
+  .tag {
+    display: inline-block;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 700;
+  }
+  .tag-green { background: #DCFCE7; color: #166534; }
+  .tag-blue { background: #DBEAFE; color: #1E40AF; }
+  .tag-amber { background: #FEF3C7; color: #92400E; }
+  .tag-purple { background: #F3E8FF; color: #6B21A8; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <h1>POLITICS OF PLANNED DEVELOPMENT: FIVE-YEAR PLANS & REVOLUTIONS</h1>
+    <p>CUET UG Political Science · Unit X · Bombay Plan, K.N. Raj vs Mahalanobis, Green Revolution & Operation Flood</p>
+  </div>
+  <div class="badge">NTA HIGH-FREQUENCY MATRIX</div>
+</div>
+
+<div class="main-grid">
+  <!-- Col 1: Planning Architecture & The Mixed Economy -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon">1</div>
+      <div>
+        <div class="card-title">Planning Architecture & Mixed Model</div>
+        <div class="card-subtitle">Bombay Plan, Planning Commission & State Ideology</div>
+      </div>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">The Bombay Plan (1944) <span class="tag tag-amber">Industrialist Pact</span></div>
+      <ul class="detail-list">
+        <li>Joint memorandum signed by big industrialists (J.R.D. Tata, G.D. Birla, Purshotamdas Thakurdas).</li>
+        <li>Demanded state intervention: the state must make massive capital investments in heavy industry and infrastructure.</li>
+        <li>Established national consensus that market forces alone could not industrialize post-colonial India.</li>
+      </ul>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">The Planning Commission (March 1950) <span class="tag tag-blue">Advisory Body</span></div>
+      <ul class="detail-list">
+        <li>Set up via cabinet resolution (extra-constitutional, non-statutory body).</li>
+        <li>Prime Minister as ex-officio Chairman; formulated Five-Year Plans (FYPs).</li>
+        <li>Replaced on <strong>1 January 2015</strong> by <strong>NITI Aayog</strong> under Prime Minister Narendra Modi.</li>
+      </ul>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">The Mixed Economy Consensus <span class="tag tag-green">Public + Private</span></div>
+      <ul class="detail-list">
+        <li>Refused extremes of pure capitalism (US) and total state collectivization (USSR).</li>
+        <li>State commanded heavy industries, mining, power, transport; private sector dominated agriculture, trade, consumer goods.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Col 2: First vs Second Five-Year Plans -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon">2</div>
+      <div>
+        <div class="card-title">First vs Second Five-Year Plans</div>
+        <div class="card-subtitle">K.N. Raj (Agrarian) vs P.C. Mahalanobis (Heavy Industry)</div>
+      </div>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">First FYP (1951–1956) <span class="tag tag-green">Agrarian Consolidation</span></div>
+      <ul class="detail-list">
+        <li>Drafted by young economist <strong>K.N. Raj</strong>; mantra: India must <em>"hasten slowly"</em>.</li>
+        <li>Prioritized agriculture, massive irrigation networks, and power projects (e.g., <strong>Bhakra Nangal Dam</strong>).</li>
+        <li>Emphasized raising national savings rates; aimed to pull the country out of post-partition agrarian poverty.</li>
+      </ul>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">Second FYP (1956–1961) <span class="tag tag-purple">Heavy Industrialisation</span></div>
+      <ul class="detail-list">
+        <li>Architect: <strong>P.C. Mahalanobis</strong> (founder of Indian Statistical Institute, ISI).</li>
+        <li>Promoted structural transformation via rapid heavy industrialization (capital goods, machinery, steel).</li>
+        <li>Built three massive public steel plants: <strong>Bhilai, Rourkela, Durgapur</strong>.</li>
+        <li>Imposed heavy import tariffs to protect domestic industries (import substitution).</li>
+      </ul>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">Third FYP & Plan Holidays <span class="tag tag-amber">1961–1969</span></div>
+      <ul class="detail-list">
+        <li>Third Plan (1961–66) derailed by 1962 China War, 1965 Pak War, and two successive monsoon failures.</li>
+        <li>Led to three annual <strong>"Plan Holidays" (1966–1969)</strong>.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Col 3: Contrapuntal Debates & Agri Revolutions -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon">3</div>
+      <div>
+        <div class="card-title">Debates & Agricultural Revolutions</div>
+        <div class="card-subtitle">Charan Singh, Green Revolution & Operation Flood</div>
+      </div>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">Major Developmental Debates <span class="tag tag-blue">Ideological Cleavages</span></div>
+      <ul class="detail-list">
+        <li><strong>Agriculture vs Industry:</strong> <em>Chaudhary Charan Singh</em> argued industrial planning devastated villages; <em>J.C. Kumarappa</em> proposed Gandhian rural decentralization (<em>Economy of Permanence</em>).</li>
+        <li><strong>Land Reforms:</strong> Abolition of Zamindari succeeded; land ceilings and tenancy laws were subverted by big landlords.</li>
+      </ul>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">The Green Revolution <span class="tag tag-green">High-Yielding Varieties</span></div>
+      <ul class="detail-list">
+        <li>Mid-1960s food crisis & Bihar famine forced end of US <strong>PL-480</strong> import dependence.</li>
+        <li>Pioneered by <strong>M.S. Swaminathan</strong> using Norman Borlaug's Mexican dwarf wheat strains, chemical fertilizers, tubewell irrigation, and guaranteed MSPs.</li>
+        <li>Concentrated in <strong>Punjab, Haryana, Western UP</strong>; created rich peasant class ("kulaks"); heightened regional disparities.</li>
+      </ul>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">The White Revolution (Operation Flood) <span class="tag tag-amber">Dairy Co-ops</span></div>
+      <ul class="detail-list">
+        <li>Launched in 1970 by National Dairy Development Board (NDDB); led by <strong>Dr. Verghese Kurien</strong> ("Milkman of India").</li>
+        <li>Centered in Anand (Gujarat); transformed dairy farming via rural milk cooperatives (<strong>Amul</strong>).</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
