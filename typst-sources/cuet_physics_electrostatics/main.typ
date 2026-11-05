@@ -439,8 +439,8 @@ Connecting two charged capacitors $C_1, C_2$ at potentials $V_1, V_2$ in paralle
   [An electric dipole $vec(p)$ in a uniform field $vec(E)$ is rotated from stable to unstable equilibrium. The work done by an external agent is:],
   (
     [$p E$],
-    [$2 p E$],
     [$-2 p E$],
+    [$2 p E$],
     [$0$],
   ),
 )
@@ -449,7 +449,7 @@ Connecting two charged capacitors $C_1, C_2$ at potentials $V_1, V_2$ in paralle
   [
     Stable: $theta_1 = 0 degree ==> U_1 = -p E$. Unstable: $theta_2 = 180 degree ==> U_2 = +p E$. Work done $W = U_2 - U_1 = p E - (-p E) = 2 p E$.
   ],
-  answer: [B],
+  answer: [C],
 )
 
 #mcq(
@@ -457,8 +457,8 @@ Connecting two charged capacitors $C_1, C_2$ at potentials $V_1, V_2$ in paralle
   [A point charge $q$ is at the center of a cube of side $L$. The electric flux through any single face of the cube is:],
   (
     [$q / epsilon_0$],
-    [$q / (6 epsilon_0)$],
     [$q / (24 epsilon_0)$],
+    [$q / (6 epsilon_0)$],
     [$q L^2 / (6 epsilon_0)$],
   ),
 )
@@ -467,7 +467,7 @@ Connecting two charged capacitors $C_1, C_2$ at potentials $V_1, V_2$ in paralle
   [
     Total flux emerging from all 6 faces is $Phi_("total") = q/epsilon_0$. By cubic symmetry, each individual face receives $Phi = 1/6 Phi_("total") = q / (6 epsilon_0)$.
   ],
-  answer: [B],
+  answer: [C],
 )
 
 #mcq(
@@ -531,8 +531,8 @@ Connecting two charged capacitors $C_1, C_2$ at potentials $V_1, V_2$ in paralle
   [Capacitors $4 mu"F"$ and $6 mu"F"$ charged to $200" V"$ and $100" V"$ are connected in parallel with like plates together. Common potential $V_c$ is:],
   (
     [$150" V"$],
-    [$140" V"$],
     [$120" V"$],
+    [$140" V"$],
     [$160" V"$],
   ),
 )
@@ -541,7 +541,7 @@ Connecting two charged capacitors $C_1, C_2$ at potentials $V_1, V_2$ in paralle
   [
     $Q_1 = 4 times 200 = 800 mu"C"$, $Q_2 = 6 times 100 = 600 mu"C"$. $Q_("total") = 1400 mu"C"$. $C_p = 4 + 6 = 10 mu"F"$. $V_c = 1400 / 10 = 140" V"$.
   ],
-  answer: [B],
+  answer: [C],
 )
 
 #mcq(
@@ -605,9 +605,9 @@ Connecting two charged capacitors $C_1, C_2$ at potentials $V_1, V_2$ in paralle
   [Point charges $+4 mu"C"$ and $+1 mu"C"$ are separated by $30" cm"$. The neutral point where net $E = 0$ is located from $+4 mu"C"$ at:],
   (
     [$10" cm"$],
-    [$20" cm"$],
-    [$15" cm"$],
     [$25" cm"$],
+    [$15" cm"$],
+    [$20" cm"$],
   ),
 )
 #solution(
@@ -615,7 +615,7 @@ Connecting two charged capacitors $C_1, C_2$ at potentials $V_1, V_2$ in paralle
   [
     $k (4)/x^2 = k (1)/(30-x)^2 ==> 2/x = 1/(30-x) ==> 60 - 2x = x ==> 3x = 60 ==> x = 20" cm"$.
   ],
-  answer: [B],
+  answer: [D],
 )
 
 #mcq(
