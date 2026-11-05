@@ -532,38 +532,38 @@ $ Y = frac(bar(A), 1 - c + m) $
 #solution(1, [Under double-entry BoP accounting, any transaction that results in an *inflow of foreign exchange* into the domestic economy is recorded as a *Credit Entry ($+$)*. Foreign direct investment (FDI) into Bengaluru brings USD into India. Payments for imports, overseas tourism, and outward foreign aid involve outflows of foreign exchange and are recorded as Debits ($-$).], answer: "C")
 
 #mcq(2, [Inward remittances sent by non-resident Indian (NRI) workers living in Dubai to their families in Kerala are classified under which component of the Balance of Payments?], (
-  [Capital Account under External Commercial Borrowings],
   [Current Account under Unilateral Transfers (Invisibles)],
+  [Capital Account under External Commercial Borrowings],
   [Capital Account under Foreign Direct Investment],
   [Current Account under Merchandise Visible Trade],
 ))
-#solution(2, [Worker remittances are unilateral transfers—one-way transactions made without any corresponding exchange of goods, services, or repayment liabilities. Because they neither create a sovereign liability nor extinguish an asset, they are classified under *Current Account — Invisibles (Current Transfers)*.], answer: "B")
+#solution(2, [Worker remittances are unilateral transfers—one-way transactions made without any corresponding exchange of goods, services, or repayment liabilities. Because they neither create a sovereign liability nor extinguish an asset, they are classified under *Current Account — Invisibles (Current Transfers)*.], answer: "A")
 
 #mcq(3, [If an economy's Merchandise Exports are ₹2,400 crore, Merchandise Imports are ₹3,100 crore, and Net Invisibles are ₹900 crore, what is the Current Account Balance (CAB)?], (
   [Deficit of ₹700 crore],
-  [Surplus of ₹200 crore],
-  [Surplus of ₹1,600 crore],
   [Deficit of ₹200 crore],
+  [Surplus of ₹1,600 crore],
+  [Surplus of ₹200 crore],
 ))
 #solution(3, [The Balance of Trade (BoT) is:
 $ B o T = "Merchandise Exports" - "Merchandise Imports" = 2400 - 3100 = -₹700 " crore" ("Trade Deficit") $
-$ C A B = B o T + "Net Invisibles" = -700 + 900 = +₹200 " crore" ("Current Account Surplus"). $], answer: "B")
+$ C A B = B o T + "Net Invisibles" = -700 + 900 = +₹200 " crore" ("Current Account Surplus"). $], answer: "D")
 
 #mcq(4, [Why are transactions termed "Autonomous Transactions" in the Balance of Payments?], (
-  [Because they are automatically executed by computerised banking algorithms],
   [Because they are undertaken independently for economic motives like profit or trade, regardless of the BoP position],
+  [Because they are automatically executed by computerised banking algorithms],
   [Because they are executed solely by autonomous government agencies to eliminate BoP deficits],
   [Because they are completely free of all domestic taxes and import tariffs],
 ))
-#solution(4, [Autonomous transactions ("above the line") are undertaken independently for commercial, profit-seeking, or personal considerations (e.g., exports, imports, private foreign investments). They occur completely irrespective of whether the overall BoP account is in surplus or deficit.], answer: "B")
+#solution(4, [Autonomous transactions ("above the line") are undertaken independently for commercial, profit-seeking, or personal considerations (e.g., exports, imports, private foreign investments). They occur completely irrespective of whether the overall BoP account is in surplus or deficit.], answer: "A")
 
 #mcq(5, [When an economy faces an autonomous Balance of Payments Deficit, how does the Central Bank accommodate the shortfall, and how is it recorded?], (
   [The Central Bank purchases foreign exchange; recorded as Credit ($+$)],
-  [The Central Bank sells foreign exchange reserves; recorded as Credit ($+$) in Official Reserve Transactions],
-  [The Central Bank increases reserve requirements; recorded as Debit ($-$) in Current Account],
   [The Central Bank sells foreign exchange reserves; recorded as Debit ($-$) in Official Reserve Transactions],
+  [The Central Bank increases reserve requirements; recorded as Debit ($-$) in Current Account],
+  [The Central Bank sells foreign exchange reserves; recorded as Credit ($+$) in Official Reserve Transactions],
 ))
-#solution(5, [To bridge an autonomous BoP deficit, the Central Bank sells foreign exchange reserves into the market. Under the official reserve accounting convention, a *decrease in official reserves* represents an inflow of foreign currency into the BoP ledger and is recorded as a *Credit ($+$)* in Official Reserve Transactions.], answer: "B")
+#solution(5, [To bridge an autonomous BoP deficit, the Central Bank sells foreign exchange reserves into the market. Under the official reserve accounting convention, a *decrease in official reserves* represents an inflow of foreign currency into the BoP ledger and is recorded as a *Credit ($+$)* in Official Reserve Transactions.], answer: "D")
 
 ---
 
@@ -574,20 +574,20 @@ $ C A B = B o T + "Net Invisibles" = -700 + 900 = +₹200 " crore" ("Current Acc
 = Practice Questions — Part 2 (Q6 to Q10)
 
 #mcq(6, [What is the key structural difference between Foreign Direct Investment (FDI) and Foreign Portfolio Investment (FPI)?], (
-  [FDI is recorded in the Current Account, whereas FPI is recorded in the Capital Account],
   [FDI conveys lasting interest and direct managerial control over assets, whereas FPI involves purchasing financial securities without control],
+  [FDI is recorded in the Current Account, whereas FPI is recorded in the Capital Account],
   [FDI is conducted exclusively by foreign governments, whereas FPI is conducted exclusively by private citizens],
   [FDI is highly liquid "hot money", whereas FPI involves permanent physical infrastructure],
 ))
-#solution(6, [FDI involves establishing a lasting interest, long-term ownership, and direct operational or managerial control over a business enterprise (e.g., building a factory). FPI involves investing in tradable financial securities (shares, bonds) strictly for financial returns, without exercising managerial control.], answer: "B")
+#solution(6, [FDI involves establishing a lasting interest, long-term ownership, and direct operational or managerial control over a business enterprise (e.g., building a factory). FPI involves investing in tradable financial securities (shares, bonds) strictly for financial returns, without exercising managerial control.], answer: "A")
 
 #mcq(7, [Under a flexible exchange rate regime, what will happen to the exchange rate ($e$ in ₹/USD) if Indian demand for American electronic gadgets surges dramatically?], (
   [Demand for USD shifts rightward, causing the exchange rate $e$ to fall (Rupee appreciates)],
-  [Demand for USD shifts rightward, causing the exchange rate $e$ to rise (Rupee depreciates)],
   [Supply of USD shifts rightward, causing the exchange rate $e$ to rise (Rupee appreciates)],
+  [Demand for USD shifts rightward, causing the exchange rate $e$ to rise (Rupee depreciates)],
   [Demand for USD shifts leftward, leaving the exchange rate completely unchanged],
 ))
-#solution(7, [An import surge requires Indian importers to buy more US Dollars to settle payments. This shifts the demand curve for USD to the right. In the foreign exchange market, the intersection with the upward-sloping supply curve occurs at a higher exchange rate ($e$ in ₹/USD rises, e.g. from ₹75 to ₹83), signifying *currency depreciation of the Rupee*.], answer: "B")
+#solution(7, [An import surge requires Indian importers to buy more US Dollars to settle payments. This shifts the demand curve for USD to the right. In the foreign exchange market, the intersection with the upward-sloping supply curve occurs at a higher exchange rate ($e$ in ₹/USD rises, e.g. from ₹75 to ₹83), signifying *currency depreciation of the Rupee*.], answer: "C")
 
 #mcq(8, [The operational mechanism of "Managed Floating" (Dirty Floating) practiced by the Reserve Bank of India is best characterized as:], (
   [A rigid currency peg where the exchange rate is permanently fixed by constitutional law],
@@ -598,14 +598,14 @@ $ C A B = B o T + "Net Invisibles" = -700 + 900 = +₹200 " crore" ("Current Acc
 #solution(8, [Managed floating is a hybrid regime. While the day-to-day exchange rate is determined by the market forces of demand and supply, the Central Bank (RBI) intervenes dynamically by buying or selling USD reserves to moderate acute, speculative swings and prevent macroeconomic disruption.], answer: "C")
 
 #mcq(9, [If the nominal exchange rate is $e = 80$ ₹/USD, the foreign price index is $P_f = 120$, and the domestic price index is $P = 96$, the Real Exchange Rate ($R E R$) is:], (
-  [1.00],
   [100.00],
+  [1.00],
   [0.80],
   [64.00],
 ))
 #solution(9, [Using the Real Exchange Rate formula:
 $ R E R = frac(e times P_f, P) = frac(80 times 120, 96) = frac(9600, 96) = 100.00 $
-An $R E R$ of 100 (when normalized to an index base) reflects the relative purchasing power ratio between domestic and foreign price levels.], answer: "B")
+An $R E R$ of 100 (when normalized to an index base) reflects the relative purchasing power ratio between domestic and foreign price levels.], answer: "A")
 
 #mcq(10, [According to the theory of Purchasing Power Parity (PPP), if domestic inflation in India is 8% while inflation in the United States is 2%, what must happen to the nominal exchange rate (₹/USD) in the long run?], (
   [The Rupee must appreciate against the USD by approximately 6%],
@@ -625,13 +625,13 @@ An $R E R$ of 100 (when normalized to an index base) reflects the relative purch
 
 #mcq(11, [In an open economy, if the Marginal Propensity to Consume is $c = 0.75$ and the Marginal Propensity to Import is $m = 0.15$, the Open Economy Multiplier ($k_"open"$) is:], (
   [4.00],
-  [2.50],
   [1.11],
+  [2.50],
   [5.00],
 ))
 #solution(11, [The Open Economy Multiplier formula is:
 $ k_"open" = frac(1, 1 - c + m) = frac(1, 1 - 0.75 + 0.15) = frac(1, 0.25 + 0.15) = frac(1, 0.40) = 2.50 $
-Note that in a closed economy, the multiplier would have been $1 / (1 - 0.75) = 4.00$. Import leakage lowers it to 2.50.], answer: "B")
+Note that in a closed economy, the multiplier would have been $1 / (1 - 0.75) = 4.00$. Import leakage lowers it to 2.50.], answer: "C")
 
 #mcq(12, [Which of the following describes the fundamental reason why the Open Economy Multiplier is ALWAYS smaller than the Closed Economy Multiplier?], (
   [Open economies face higher domestic income tax rates],
@@ -659,8 +659,8 @@ Note that in a closed economy, the multiplier would have been $1 / (1 - 0.75) = 
 
 #mcq(15, [Under the official balance of payments accounting framework, why does the grand Balance of Payments ALWAYS balance to zero?], (
   [Because governments are prohibited by international law from running trade deficits],
-  [Because the double-entry accounting system matches every credit inflow with a corresponding debit entry, incorporating official reserve transactions],
-  [Because foreign exchange rates are fixed permanently by the United Nations],
   [Because exports of goods are always legally equal to imports of goods],
+  [Because foreign exchange rates are fixed permanently by the United Nations],
+  [Because the double-entry accounting system matches every credit inflow with a corresponding debit entry, incorporating official reserve transactions],
 ))
-#solution(15, [Under the universal double-entry bookkeeping framework, every economic transaction has two equal and offsetting sides (Credit and Debit). When autonomous receipts do not match autonomous payments, the accommodating official reserve transactions bridge the gap, ensuring that Total Credits identically equal Total Debits: $C A B + "Capital Account Balance" + E O == 0$.], answer: "B")
+#solution(15, [Under the universal double-entry bookkeeping framework, every economic transaction has two equal and offsetting sides (Credit and Debit). When autonomous receipts do not match autonomous payments, the accommodating official reserve transactions bridge the gap, ensuring that Total Credits identically equal Total Debits: $C A B + "Capital Account Balance" + E O == 0$.], answer: "D")
