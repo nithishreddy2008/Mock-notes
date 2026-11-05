@@ -39,8 +39,9 @@
 ]
 
 #pagebreak()
-#set text(size: 9.4pt)
-#set par(leading: 0.38em, spacing: 0.42em)
+#set text(size: 8.7pt)
+#set par(leading: 0.34em, spacing: 0.34em)
+
 = Aggregate Demand and Its Components
 
 #concept-box(title: "Concept of Aggregate Demand (AD)")[
@@ -489,7 +490,7 @@ Macroeconomic gaps do not automatically self-correct in the short run. Governmen
 
 #pagebreak()
 #figure(
-  image("assets/econ_income_multiplier_mindmap.png", width: 80%),
+  image("assets/econ_income_multiplier_mindmap.png", width: 70%),
   caption: [Figure 3: Master Synthesis Mindmap. Integrating the 4 core pillars: AD & AS Components, Equilibrium Determination ($A D = A S$ and $S = I$), The Multiplier Engine ($K$), and Macroeconomic Gaps with Fiscal and Monetary remedies.],
 )
 
@@ -560,12 +561,12 @@ $ S = Y - C = Y - (80 + 0.75 Y) = -80 + (1 - 0.75)Y = -80 + 0.25 Y $
 Autonomous saving is $-80$ and $M P S = 1 - 0.75 = 0.25$.], answer: "A")
 
 #mcq(3, [At the "Breakeven Point" of an economy, which of the following mathematical conditions holds strictly true?], (
-  [$A P C = 0 " and " A P S = 1$],
   [$C = Y, S = 0, " and " A P C = 1$],
+  [$A P C = 0 " and " A P S = 1$],
   [$A D = A S " and " S = I$],
   [$M P C = 1 " and " M P S = 0$],
 ))
-#solution(3, [The breakeven point occurs where consumption expenditure equals national income exactly ($C = Y$). At this level of income, household saving is exactly zero ($S = 0$), which implies $A P C = C / Y = 1$ and $A P S = S / Y = 0$.], answer: "B")
+#solution(3, [The breakeven point occurs where consumption expenditure equals national income exactly ($C = Y$). At this level of income, household saving is exactly zero ($S = 0$), which implies $A P C = C / Y = 1$ and $A P S = S / Y = 0$.], answer: "A")
 
 #mcq(4, [If the Marginal Propensity to Save ($M P S$) of an economy is $0.20$, what is the numerical value of the investment multiplier ($K$)?], (
   [0.80],
@@ -579,15 +580,15 @@ An initial injection of autonomous investment will expand equilibrium national i
 
 #mcq(5, [If an initial increase in autonomous investment of ₹500 crore generates an ultimate expansion in national income of ₹2,000 crore, the Marginal Propensity to Consume ($M P C$) of the economy is:], (
   [0.25],
-  [0.75],
   [0.80],
+  [0.75],
   [4.0],
 ))
 #solution(5, [Step 1: Calculate the multiplier $K$:
 $ K = (Delta Y) / (Delta I) = 2000 / 500 = 4 $
 Step 2: Use the multiplier formula to find $M P C$:
 $ K = 1 / (1 - M P C) ==> 4 = 1 / (1 - M P C) ==> 1 - M P C = 1 / 4 = 0.25 $
-$ M P C = 1 - 0.25 = 0.75. $], answer: "B")
+$ M P C = 1 - 0.25 = 0.75. $], answer: "C")
 
 ---
 
@@ -599,14 +600,14 @@ $ M P C = 1 - 0.25 = 0.75. $], answer: "B")
 
 #mcq(6, [In a two-sector economy, the consumption function is $C = 120 + 0.80 Y$ and autonomous investment is $bar(I) = ₹80$ crore. The equilibrium level of national income ($Y^*$) is:], (
   [₹800 crore],
-  [₹1,000 crore],
-  [₹1,200 crore],
   [₹200 crore],
+  [₹1,200 crore],
+  [₹1,000 crore],
 ))
 #solution(6, [At macroeconomic equilibrium:
 $ Y = C + I ==> Y = 120 + 0.80 Y + 80 $
 $ Y - 0.80 Y = 200 ==> 0.20 Y = 200 $
-$ Y^* = 200 / 0.20 = ₹1,000 "crore". $], answer: "B")
+$ Y^* = 200 / 0.20 = ₹1,000 "crore". $], answer: "D")
 
 #mcq(7, [When planned Aggregate Demand exceeds planned Aggregate Supply ($A D > A S$) in a two-sector economy, how do business firms restore equilibrium?], (
   [Unplanned inventories accumulate, so firms cut back production],
@@ -618,11 +619,11 @@ $ Y^* = 200 / 0.20 = ₹1,000 "crore". $], answer: "B")
 
 #mcq(8, [The theoretical minimum and maximum limits for the value of the investment multiplier ($K$) are:], (
   [0 and 1],
-  [1 and $infinity$],
-  [0 and $infinity$],
   [$-1$ and $+1$],
+  [0 and $infinity$],
+  [1 and $infinity$],
 ))
-#solution(8, [When $M P C = 0$, $K = 1 / (1 - 0) = 1$ (minimum possible value). When $M P C = 1$, $K = 1 / (1 - 1) = infinity$ (maximum possible value). Therefore, the value of the multiplier is strictly bounded: $1 <= K <= infinity$.], answer: "B")
+#solution(8, [When $M P C = 0$, $K = 1 / (1 - 0) = 1$ (minimum possible value). When $M P C = 1$, $K = 1 / (1 - 1) = infinity$ (maximum possible value). Therefore, the value of the multiplier is strictly bounded: $1 <= K <= infinity$.], answer: "D")
 
 #mcq(9, [An "Inflationary Gap" is officially defined in macroeconomics as:], (
   [The excess of Aggregate Supply over Aggregate Demand at zero income],
@@ -634,11 +635,11 @@ $ Y^* = 200 / 0.20 = ₹1,000 "crore". $], answer: "B")
 
 #mcq(10, [Why does national real output FAIL to increase during periods of Excess Demand?], (
   [Because central banks prohibit further manufacturing],
-  [Because all available labor, machinery, and resources in the economy are already fully employed],
-  [Because the marginal propensity to consume turns negative],
   [Because inventory stocks pile up in warehouses],
+  [Because the marginal propensity to consume turns negative],
+  [Because all available labor, machinery, and resources in the economy are already fully employed],
 ))
-#solution(10, [At full employment ($Y_F$), all productive economic resources are 100% utilized. In the short run, technology and resource endowments are fixed. Therefore, excess demand cannot call forth additional physical output; it only bids up the general price level.], answer: "B")
+#solution(10, [At full employment ($Y_F$), all productive economic resources are 100% utilized. In the short run, technology and resource endowments are fixed. Therefore, excess demand cannot call forth additional physical output; it only bids up the general price level.], answer: "D")
 
 ---
 
