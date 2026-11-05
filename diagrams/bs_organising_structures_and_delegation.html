@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CUET Business Studies: Organization Structures & Delegation Dynamics</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 16px 22px;
+    overflow: hidden;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+  }
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .brand-badge {
+    background: #071A4D;
+    color: #B8FF34;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .title-group h1 {
+    font-size: 19px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .title-group p {
+    font-size: 11px;
+    color: #64748B;
+    margin-top: 1px;
+  }
+  .header-tag {
+    background: #EEF2FF;
+    color: #3730A3;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 6px;
+    border: 1px solid #C7D2FE;
+  }
+  .main-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: 14px;
+    height: 740px;
+  }
+  .card {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 10px;
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+  }
+  .card-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+    border-bottom: 1.5px solid #F1F5F9;
+  }
+  .badge {
+    font-size: 10px;
+    font-weight: 800;
+    padding: 3px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+  .badge-blue { background: #DBEAFE; color: #1E40AF; }
+  .badge-purple { background: #F3E8FF; color: #6B21A8; }
+  .badge-emerald { background: #D1FAE5; color: #065F46; }
+  .card-title {
+    font-size: 13px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .structure-box {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 9px 11px;
+    margin-bottom: 8px;
+  }
+  .struct-title {
+    font-size: 12px;
+    font-weight: 800;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4px;
+  }
+  .struct-desc {
+    font-size: 10.5px;
+    color: #475569;
+    line-height: 1.38;
+  }
+  .struct-desc strong { color: #0F172A; }
+  table.comp-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 10px;
+    margin-top: 6px;
+  }
+  table.comp-table th {
+    background: #071A4D;
+    color: #FFFFFF;
+    font-weight: 700;
+    padding: 5px 7px;
+    text-align: left;
+    border: 1px solid #071A4D;
+  }
+  table.comp-table td {
+    padding: 4.5px 7px;
+    border: 1px solid #E2E8F0;
+    color: #334155;
+    line-height: 1.25;
+  }
+  table.comp-table tr:nth-child(even) { background: #F8FAFC; }
+  table.comp-table td:first-child { font-weight: 700; color: #0F172A; }
+  .triad-box {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .triad-item {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-left: 4px solid #0284C7;
+    border-radius: 7px;
+    padding: 8px 11px;
+  }
+  .triad-item.purple { border-left-color: #8B5CF6; }
+  .triad-item.rose { border-left-color: #E11D48; }
+  .triad-head {
+    font-size: 11.5px;
+    font-weight: 800;
+    color: #0F172A;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2px;
+  }
+  .triad-text {
+    font-size: 10.5px;
+    color: #475569;
+    line-height: 1.35;
+  }
+  .bottom-strip {
+    grid-column: 1 / -1;
+    background: #071A4D;
+    color: #FFFFFF;
+    border-radius: 8px;
+    padding: 9px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: -2px;
+  }
+  .strip-title {
+    font-size: 11px;
+    font-weight: 800;
+    color: #B8FF34;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .strip-content {
+    font-size: 10.5px;
+    color: #E2E8F0;
+    line-height: 1.35;
+    flex: 1;
+    margin-left: 16px;
+  }
+  .strip-content strong { color: #FFFFFF; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <div class="brand-badge">OURMOCKS · CUET UG ARCHITECTURE</div>
+    <div class="title-group">
+      <h1>Organizational Design & Authority Allocation: Functional vs Divisional Structures & Delegation Dynamics</h1>
+      <p>Unit 5: Organising — Structural Blueprints, Delegation Triad & Decentralisation Mechanics</p>
+    </div>
+  </div>
+  <div class="header-tag">NCERT & NTA CUET 2027 SPECIFICATION</div>
+</div>
+
+<div class="main-grid">
+  <!-- Left Column: Structures -->
+  <div class="card">
+    <div class="card-head">
+      <span class="card-title">Organisation Structures: Functional vs. Divisional</span>
+      <span class="badge badge-blue">Departmental Architecture</span>
+    </div>
+    
+    <div class="structure-box">
+      <div class="struct-title">
+        <span style="color:#0284C7;">1. Functional Structure (Grouping by Functions)</span>
+        <span style="font-size:9.5px; color:#64748B;">Single Product Line</span>
+      </div>
+      <div class="struct-desc">
+        • <strong>Mechanism:</strong> Activities are grouped strictly on the basis of specific functions (e.g., Managing Director $arrow$ Production, Marketing, Finance, HR).<br>
+        • <strong>Advantages:</strong> Occupational specialization, minimal duplication of efforts, economies of scale, simplified departmental training.<br>
+        • <strong>Disadvantages:</strong> Functional empires (departmental interest supersedes corporate goals), inter-departmental conflicts, inflexibility.
+      </div>
+    </div>
+
+    <div class="structure-box">
+      <div class="struct-title">
+        <span style="color:#8B5CF6;">2. Divisional Structure (Grouping by Products)</span>
+        <span style="font-size:9.5px; color:#64748B;">Multi-Product Diversification</span>
+      </div>
+      <div class="struct-desc">
+        • <strong>Mechanism:</strong> Units are grouped on the basis of distinct product lines (e.g., MD $arrow$ Cosmetics, Garments, Footwear, Electronics). Each product division is an autonomous profit center with its own functional heads.<br>
+        • <strong>Advantages:</strong> Product specialization, clear profit center accountability, rapid decision making, facilitates diversification.<br>
+        • <strong>Disadvantages:</strong> Costly duplication of functional facilities across divisions, inter-divisional allocation conflicts.
+      </div>
+    </div>
+
+    <table class="comp-table">
+      <thead>
+        <tr>
+          <th>Basis</th>
+          <th>Functional Structure</th>
+          <th>Divisional Structure</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Formation</td>
+          <td>Based on functions of work</td>
+          <td>Based on product lines & geography</td>
+        </tr>
+        <tr>
+          <td>Specialization</td>
+          <td>Functional / Occupational specialization</td>
+          <td>Product / Divisional specialization</td>
+        </tr>
+        <tr>
+          <td>Accountability</td>
+          <td>Difficult to fix on a single department</td>
+          <td>Easy to fix (autonomous profit centers)</td>
+        </tr>
+        <tr>
+          <td>Managerial Growth</td>
+          <td>Difficult (narrow specialized perspective)</td>
+          <td>Easy (holistic general manager experience)</td>
+        </tr>
+        <tr>
+          <td>Cost Structure</td>
+          <td>Economical (zero facility duplication)</td>
+          <td>Expensive (duplicated functional teams)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Right Column: Delegation Triad & Decentralisation -->
+  <div class="card">
+    <div class="card-head">
+      <span class="card-title">The Delegation Triad & Decentralisation</span>
+      <span class="badge badge-purple">Authority Allocation</span>
+    </div>
+
+    <div class="triad-box">
+      <div class="triad-item">
+        <div class="triad-head">
+          <span style="color:#0284C7;">1. Authority (The Right to Command)</span>
+          <span style="font-size:9.5px; color:#0284C7;">Downward Flow</span>
+        </div>
+        <div class="triad-text">
+          Official right of a manager to make decisions, give orders, and allocate resources. Arises from formal position in the scalar chain. Flows <strong>downward</strong> from superior to subordinate. Can be delegated.
+        </div>
+      </div>
+
+      <div class="triad-item purple">
+        <div class="triad-head">
+          <span style="color:#8B5CF6;">2. Responsibility (Obligation to Perform)</span>
+          <span style="font-size:9.5px; color:#8B5CF6;">Upward Flow</span>
+        </div>
+        <div class="triad-text">
+          Correlative obligation of a subordinate to properly carry out assigned duties. Arises from superior-subordinate reporting relationship. Flows <strong>upward</strong>. Can be shared, but superior remains responsible.
+        </div>
+      </div>
+
+      <div class="triad-item rose">
+        <div class="triad-head">
+          <span style="color:#E11D48;">3. Accountability (Answerability for Outcome)</span>
+          <span style="font-size:9.5px; color:#E11D48;">Upward Flow · Inviolable</span>
+        </div>
+        <div class="triad-text">
+          Answerability for the final outcome of the assigned task. Arises from responsibility. Flows <strong>upward</strong>. <strong>ABSOLUTELY CANNOT BE DELEGATED!</strong> Even after delegating authority, the superior remains 100% accountable to higher management.
+        </div>
+      </div>
+    </div>
+
+    <div class="structure-box" style="margin-top: 8px;">
+      <div class="struct-title">
+        <span style="color:#059669;">Delegation vs. Decentralisation Horizon</span>
+        <span class="badge badge-emerald">Scope & Autonomy</span>
+      </div>
+      <div class="struct-desc">
+        • <strong>Delegation:</strong> Mandatory two-person devolution of routine authority from superior to immediate subordinate; essential for day-to-day operations.<br>
+        • <strong>Decentralisation:</strong> Optional, systematic enterprise-wide policy philosophy dispersing decision-making power down to the lowest operational tiers.
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Banner -->
+  <div class="bottom-strip">
+    <div class="strip-title">CUET 2027 Key Distinction</div>
+    <div class="strip-content">
+      <strong>Core Conceptual Anchors:</strong> <strong>Span of Management</strong> determines the number of hierarchical levels; <strong>Accountability is absolute</strong> and cannot be shifted; <strong>Functional structure</strong> suits single-product enterprises seeking cost efficiency; <strong>Divisional structure</strong> suits diversified conglomerates requiring autonomous profit center accountability; <strong>Decentralisation</strong> is an enterprise-wide extension of delegation.
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
