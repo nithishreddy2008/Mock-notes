@@ -48,6 +48,9 @@
   *CUET UG Exam Architecture:* Unit 7 (Dual Nature) constitutes 6% to 8% of the total physics paper (typically 3 to 4 MCQs). The questions are heavily numerical and graphical: stopping potential graphs (slope $h/e$), work function conversions ($"eV" <-> "J"$), de Broglie wavelength ratios of proton, deuteron, and alpha particles accelerated across identical potentials, and Davisson-Germer peak parameters.
 ]
 
+#set text(size: 10.0pt)
+#set par(leading: 0.38em, spacing: 0.40em)
+
 = Concept Module 1: Electron Emission & Work Function Fundamentals
 
 == Free Electrons in Metals & Surface Energy Barrier
@@ -109,7 +112,7 @@ The apparatus consists of an evacuated quartz-glass envelope containing two elec
 Monochromatic light from an external source passes through a quartz window (which transmits UV light transparently) and falls on plate $C$. A variable DC voltage is applied between $C$ and $A$ using a commutator and potential divider, while a microammeter ($mu"A"$) measures the resulting photocurrent.
 
 #align(center)[
-  #image("assets/physics_dual_nature_photoelectric_einstein.png", width: 84%)
+  #image("assets/physics_dual_nature_photoelectric_einstein.png", width: 78%)
 ]
 
 == Variation of Photocurrent with Light Intensity
@@ -247,7 +250,7 @@ Substituting into the de Broglie equation:
 $ lambda = h / sqrt(2 m q V) $
 
 #align(center)[
-  #image("assets/physics_dual_nature_debroglie_matter_waves.png", width: 84%)
+  #image("assets/physics_dual_nature_debroglie_matter_waves.png", width: 78%)
 ]
 
 == Standard Particle Acceleration Formulas (V in Volts)
@@ -358,9 +361,7 @@ For an electromagnetic beam of power $P$ and wavelength $lambda$:
   [*Deflection*], [No deflection in electric/magnetic fields], [Deflected by $E, B$ fields if charged],
 )
 
-#align(center)[
-  #image("assets/physics_dual_nature_mindmap.png", width: 84%)
-]
+
 
 #worked-example("Radiation Force on a Reflecting Mirror")[
   *Problem:* A 100 W laser beam ($lambda = 660" nm"$) strikes a perfectly reflecting mirror normally. Calculate: (a) photons striking per second, (b) radiation force exerted.
@@ -369,6 +370,24 @@ For an electromagnetic beam of power $P$ and wavelength $lambda$:
   (a) Photon energy $E = (h c)/lambda = 3.01 times 10^(-19)" J"$. Rate $n = P / E = 100 / (3.01 times 10^(-19)) = 3.32 times 10^(20)" s"^(-1)$.
   (b) Force on perfectly reflecting mirror: $F = (2 P) / c = (2 times 100) / (3 times 10^8) = 6.67 times 10^(-7)" N"$.
 ]
+
+#pagebreak()
+
+= Concept Module 7: Conceptual Synthesis & Mindmap
+
+#v(1fr)
+#align(center)[
+  #image("assets/physics_dual_nature_mindmap.png", width: 70%)
+]
+#v(1fr)
+
+
+#pagebreak()
+
+#set text(size: 7.5pt)
+#set par(leading: 0.36em, spacing: 0.38em)
+
+= High-Yield Formula Cheatsheet & Key Traps
 
 #cheatsheet-box(title: "Master Revision Formula Matrix: Dual Nature of Matter & Radiation")[
   - *Photoelectric Equation:* $K_"max" = h nu - Phi_0 = e V_0 = h c (1/lambda - 1/lambda_0)$
@@ -382,9 +401,24 @@ For an electromagnetic beam of power $P$ and wavelength $lambda$:
   - *Radiation Pressure:* Absorbing: $p = I/c$; Reflecting: $p = 2I/c$
 ]
 
-#pagebreak()
+#v(4pt)
 
-= Practice MCQs & Solutions
+#tip-box(title: "The Seven Fatal CUET Traps in Dual Nature")[
+  1. *Stopping Potential Independence of Intensity:* Increasing light intensity increases photocurrent (number of photons), but has *zero effect* on stopping potential $V_0$ and maximum kinetic energy $K_"max"$.
+  2. *Slope of $V_0$ vs $nu$ Curve:* The slope $d V_0 / d nu = h / e$ is a *universal constant* identical for all metals.
+  3. *Rest Mass of Photon:* The rest mass of a photon is *strictly zero*. Its dynamic (inertial) mass is $m = h nu / c^2$.
+  4. *de Broglie Wavelength of Uncharged Neutrons:* Uncharged particles cannot be accelerated by electric potential $V$. For thermal neutrons, $lambda = h / sqrt(3 m k_B T)$.
+  5. *Davisson-Germer Angle Trap:* The scattering angle $phi$ is the angle between incident and scattered beams ($phi = 50 degree$). The glancing angle on lattice planes is $theta = (180 degree - phi)/2 = 65 degree$.
+  6. *Radiation Force on Reflecting Surface:* Radiation force on a completely reflecting surface is $F = 2 P / c$, exactly *twice* that of an absorbing surface ($F = P / c$).
+  7. *Threshold Frequency vs Cutoff Wavelength:* $Phi_0 = h nu_0 = h c / lambda_0$. Ejection occurs for $nu >= nu_0$ (higher frequency) but $lambda <= lambda_0$ (shorter wavelength)!
+]
+
+
+#pagebreak()
+#set text(size: 8.5pt)
+#set par(leading: 0.40em, spacing: 0.42em)
+
+= Practice Questions — Part 1 (Q1 to Q5)
 
 #mcq(
   1,
@@ -427,9 +461,9 @@ For an electromagnetic beam of power $P$ and wavelength $lambda$:
   [In a photoelectric experiment, the graph of stopping potential $V_0$ versus frequency $nu$ of incident radiation for two different metals $A$ and $B$ (where $Phi_A > Phi_B$) consists of two straight lines that:],
   (
     [Intersect at the origin],
-    [Are parallel, with line $A$ shifted towards higher frequency],
-    [Are parallel, with line $B$ shifted towards higher frequency],
     [Have different slopes proportional to their respective work functions],
+    [Are parallel, with line $B$ shifted towards higher frequency],
+    [Are parallel, with line $A$ shifted towards higher frequency],
   ),
 )
 #solution(
@@ -437,7 +471,7 @@ For an electromagnetic beam of power $P$ and wavelength $lambda$:
   [
     Slope of $V_0$ vs $nu$ is $h/e$, which is universal for all metals. Thus the lines are parallel. Since $Phi_A > Phi_B$, metal $A$ has higher threshold frequency $nu_(0A) > nu_(0B)$, so line $A$ is shifted towards higher frequency.
   ],
-  answer: [B],
+  answer: [D],
 )
 
 #mcq(
@@ -477,6 +511,10 @@ For an electromagnetic beam of power $P$ and wavelength $lambda$:
 )
 
 #pagebreak()
+#set text(size: 8.5pt)
+#set par(leading: 0.40em, spacing: 0.42em)
+
+= Practice Questions — Part 2 (Q6 to Q10)
 
 #mcq(
   6,
@@ -501,9 +539,9 @@ For an electromagnetic beam of power $P$ and wavelength $lambda$:
   [A proton and an alpha particle have the same de Broglie wavelength. The ratio of their velocities ($v_p : v_alpha$) is ($m_alpha = 4 m_p$):],
   (
     [$1 : 4$],
-    [$4 : 1$],
-    [$1 : 2$],
     [$2 : 1$],
+    [$1 : 2$],
+    [$4 : 1$],
   ),
 )
 #solution(
@@ -511,7 +549,7 @@ For an electromagnetic beam of power $P$ and wavelength $lambda$:
   [
     $lambda = h / (m v) ==> m_p v_p = m_alpha v_alpha ==> v_p / v_alpha = m_alpha / m_p = (4 m_p) / m_p = 4 / 1$.
   ],
-  answer: [B],
+  answer: [D],
 )
 
 #mcq(
@@ -570,6 +608,10 @@ For an electromagnetic beam of power $P$ and wavelength $lambda$:
 )
 
 #pagebreak()
+#set text(size: 8.5pt)
+#set par(leading: 0.40em, spacing: 0.42em)
+
+= Practice Questions — Part 3 (Q11 to Q15)
 
 #mcq(
   11,
@@ -611,9 +653,9 @@ For an electromagnetic beam of power $P$ and wavelength $lambda$:
   13,
   [Monochromatic light of wavelength $lambda$ falls on a metal surface of work function $Phi_0$. If the threshold wavelength is $lambda_0$, the stopping potential $V_0$ is given by:],
   (
-    [$((h c) / e) (1/lambda - 1/lambda_0)$],
-    [$((h c) / e) (1/lambda + 1/lambda_0)$],
     [$((h c) / e) (lambda_0 - lambda)$],
+    [$((h c) / e) (1/lambda + 1/lambda_0)$],
+    [$((h c) / e) (1/lambda - 1/lambda_0)$],
     [$(h / e) (lambda_0 / lambda)$],
   ),
 )
@@ -622,7 +664,7 @@ For an electromagnetic beam of power $P$ and wavelength $lambda$:
   [
     $e V_0 = h nu - Phi_0 = (h c) / lambda - (h c) / lambda_0 = h c (1/lambda - 1/lambda_0) ==> V_0 = ((h c) / e) (1/lambda - 1/lambda_0)$.
   ],
-  answer: [A],
+  answer: [C],
 )
 
 #mcq(
