@@ -29,7 +29,7 @@
 #let om-site = "www.ourmocks.com"
 
 // ---------------- Fonts ----------------
-#let om-display-font = "Carlito"          // cover + headings (modern sans)
+#let om-display-font = ("Helvetica Neue", "Arial") // cover + headings (modern sans)
 #let om-body-font = "New Computer Modern" // body + math
 
 // ---------------- Logo ----------------

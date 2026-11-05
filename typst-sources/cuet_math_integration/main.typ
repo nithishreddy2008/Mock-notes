@@ -79,7 +79,6 @@ $ integral f(g(x)) g'(x) d x = integral f(t) d t quad "where" t = g(x) $
   - For $sqrt(frac(a - x, a + x))$: Substitute $x = a cos 2theta$.
 ]
 
----
 
 = 2. The Special 9 Quadratic Integrals
 
@@ -110,7 +109,6 @@ $ 9. quad integral sqrt(x^2 + a^2) d x = frac(x, 2) sqrt(x^2 + a^2) + frac(a^2, 
      $ integral frac(p x + q, a x^2 + b x + c) d x = A underbracket(integral frac(2a x + b, a x^2 + b x + c) d x, ln|"quadratic"|) + B underbracket(integral frac(d x, a x^2 + b x + c) d x, "Complete the square") $
 ]
 
----
 
 = 3. Integration by Parts & Partial Fractions
 
@@ -152,7 +150,7 @@ When integrating a rational function $frac(P(x), Q(x))$:
 
 
 #figure(
-  image("assets/math_integration_methods_vault.png", width: 100%),
+  image("assets/math_integration_methods_vault.png", width: 84%),
   caption: [Figure 1: Comprehensive Indefinite Integration Methods, Special 9 Forms, ILATE Strategy, and Partial Fraction Decompositions.],
 )
 
@@ -227,7 +225,6 @@ $ frac(d, d x) [integral_(u(x))^(v(x)) f(t) d t] = f(v(x)) dot v'(x) - f(u(x)) d
 - Taking the limit:
   $ lim_(x -> 0) frac(2x cos(x^4), sin x + x cos x) = lim_(x -> 0) frac(2 cos(x^4), frac(sin x, x) + cos x) = frac(2(1), 1 + 1) = 1 $
 
----
 
 = 5. Applications of Integrals: Bounded Area (AOI)
 
@@ -247,7 +244,7 @@ The Application of Integrals (AOI) in CUET tests geometric comprehension, spatia
 
 
 #figure(
-  image("assets/math_definite_properties_aoi.png", width: 100%),
+  image("assets/math_definite_properties_aoi.png", width: 84%),
   caption: [Figure 2: Definite Integral Properties, Symmetry & Leibniz Rule, and Area Bounded by Curves Geometric Engine.],
 )
 
@@ -286,277 +283,193 @@ To finish the 50-question CUET Mathematics paper within 60 minutes, aspirants mu
   - $"Area" = frac(2, 3) dot (4a) dot (a) = frac(8 a^2, 3)$ sq units!
 ]
 
+#pagebreak()
+= Chapter Synthesis & Cognitive Mindmap
 
 #figure(
-  image("assets/math_integration_mindmap.png", width: 100%),
+  image("assets/math_integration_mindmap.png", width: 70%),
   caption: [Figure 3: Integral Calculus Architectural Mindmap — Synthesis of Indefinite Methods, Definite Integral Properties, and Area Bounded by Curves.],
 )
 
-*Key Architectural Takeaways from Figure 3:*
-1. *Unified Calculus Hierarchy:* Integral calculus flows seamlessly from local differential inversions (antiderivatives) to global accumulative invariants (definite integral properties) and spatial physical measurements (area bounded).
-2. *Strategic Prerequisite Flow:* Always test for symmetry ($P_7$ odd/even or $P_4$ King's Rule) BEFORE attempting algebraic manipulation on definite integrals.
-3. *Algebraic Sanity in AOI:* Solve for intersection points first. The limits of integration $x = a, b$ are ALWAYS the real roots of $f(x) - g(x) = 0$.
-
-#pagebreak()
-
-= 7. High-Yield Revision Cheatsheet
-
-#table(
-  columns: (1.2fr, 1.8fr, 1.0fr),
-  align: (left, left, left),
-  stroke: (x, y) => if y == 0 { (bottom: 1.5pt + om-navy) } else { 0.5pt + rgb("#CBD5E1") },
-  fill: (col, row) => if row == 0 { rgb("#EFF6FF") } else if calc.even(row) { rgb("#F8FAFC") } else { white },
-  table.header[*Concept / Formula*][*Mathematical Expression*][*Exam Anchor*],
-  [Power Rule], [$integral x^n d x = frac(x^(n+1), n + 1) + C, quad n != -1$], [Algebraic Base],
-  [Logarithmic Integral], [$integral frac(1, x) d x = ln|x| + C$], [Reciprocal Form],
-  [Exponential Form], [$integral a^x d x = frac(a^x, ln a) + C; quad integral e^(k x) d x = frac(e^(k x), k) + C$], [Exponential Base],
-  [Tangent Integral], [$integral tan x d x = ln|sec x| + C = -ln|cos x| + C$], [Trig Standard],
-  [Secant Integral], [$integral sec x d x = ln|sec x + tan x| + C$], [Trig Standard],
-  [Inverse Sine Form], [$integral frac(d x, sqrt(a^2 - x^2)) = sin^(-1)(frac(x, a)) + C$], [Radical Denominator],
-  [Inverse Tan Form], [$integral frac(d x, x^2 + a^2) = frac(1, a) tan^(-1)(frac(x, a)) + C$], [Quadratic Sum],
-  [Radical Quadratic], [$integral frac(d x, sqrt(x^2 plus.minus a^2)) = ln|x + sqrt(x^2 plus.minus a^2)| + C$], [Log Radical],
-  [Master Product Radical], [$integral sqrt(a^2 - x^2) d x = frac(x, 2) sqrt(a^2 - x^2) + frac(a^2, 2) sin^(-1)(frac(x, a)) + C$], [AOI Triad Form],
-  [Exponential Shortcut], [$integral e^x [f(x) + f'(x)] d x = e^x f(x) + C$], [Product Collapse],
-  [By Parts Formula], [$integral u v' d x = u v - integral u' v d x quad ("ILATE priority for" u)$], [Product Rule],
-  [King's Property], [$integral_a^b f(x) d x = integral_a^b f(a + b - x) d x$], [Symmetry Master],
-  [Queen's Property], [$integral_0^(2a) f(x) d x = 2 integral_0^a f(x) d x quad "if" f(2a - x) = f(x)$], [Upper Limit Halver],
-  [Odd Function Rule], [$integral_(-a)^a f(x) d x = 0 quad "if" f(-x) = -f(x)$], [Symmetric Limits],
-  [Even Function Rule], [$integral_(-a)^a f(x) d x = 2 integral_0^a f(x) d x quad "if" f(-x) = f(x)$], [Symmetric Limits],
-  [Periodic Property], [$integral_0^(n T) f(x) d x = n integral_0^T f(x) d x quad "where" f(x + T) = f(x)$], [Periodic Cycle],
-  [Leibniz Rule], [$frac(d, d x) [integral_(u(x))^(v(x)) f(t) d t] = f(v(x)) v'(x) - f(u(x)) u'(x)$], [Integral Derivative],
-  [Orthogonal Parabolas], [Area between $y^2 = 4 a x$ and $x^2 = 4 b y$ is $frac(16, 3) a b$], [AOI Shortcut],
-  [Parabola and Line], [Area between $y^2 = 4 a x$ and $y = m x$ is $frac(8 a^2, 3 m^3)$], [AOI Shortcut],
-  [Standard Ellipse Area], [Area of $frac(x^2, a^2) + frac(y^2, b^2) = 1$ is $pi a b$], [AOI Shortcut],
-)
-
-#pagebreak()
-
-= 8. NTA Common Traps & High-Risk Fallacies
-
-#exception-box(title: "Massive NTA Trap Warnings in Integration")[
-  #table(
-    columns: (1.2fr, 1.4fr, 1.4fr),
-    align: (left, left, left),
-    stroke: (x, y) => if y == 0 { (bottom: 1.5pt + om-navy) } else { 0.5pt + rgb("#CBD5E1") },
-    fill: (col, row) => if row == 0 { rgb("#FFF1F2") } else if calc.even(row) { rgb("#FFF7ED") } else { white },
-    table.header[*Common Student Error*][*Mathematically Rigorous Reality*][*The Exact Trap Mechanism*],
-    [Adding $1/a$ to Inverse Sine Integrals],
-    [$integral frac(d x, sqrt(a^2 - x^2)) = sin^(-1)(frac(x, a)) + C$. There is NO $1/a$ outside!],
-    [Students confuse $sin^(-1)(x/a)$ with $frac(1, a) tan^(-1)(x/a)$, selecting distractor options with $1/a$.],
-    [Integrating Modulus Without Splitting],
-    [$integral_a^b |x - c| d x$ MUST be partitioned at root $x = c$: $integral_a^c (c - x) d x + integral_c^b (x - c) d x$.],
-    [Students drop the modulus sign directly, calculating $(b^2 - a^2)/2 - c(b - a)$, producing incorrect values.],
-    [Allowing Area Cancellation Below Axis],
-    [Area is strictly positive: $"Area" = integral_a^c f(x) d x + |integral_c^b f(x) d x|$.],
-    [Evaluating $integral_0^(2pi) sin x d x = 0$ instead of $4$ sq units for total bounded area.],
-    [Applying Partial Fractions on Improper Forms],
-    [If $deg(P) >= deg(Q)$, polynomial long division is MANDATORY before decomposition.],
-    [Writing $frac(x^2, x^2 - 1) = frac(A, x - 1) + frac(B, x + 1)$, leading to unsolvable or incorrect constants.],
-    [Forgetting Chain Factor in $e^(k x) [k f(x) + f'(x)]$],
-    [$integral e^(2x) [2 tan x + sec^2 x] d x = e^(2x) tan x + C$. The derivative must match $k f(x)$.],
-    [Students omit the factor $2$ or divide when the inner derivative already accounts for the chain rule.],
-    [Incorrect Variable Substitution Limits],
-    [When transforming $x -> t$, integration limits MUST change: $t_1 = g(a)$ and $t_2 = g(b)$.],
-    [Students evaluate the transformed antiderivative using the original $x$-limits $a$ and $b$.],
-    [Misidentifying Parabola Line Intersection],
-    [In $y^2 = 4 a x$ and $y = m x$, limits are $x = 0$ to $x = frac(4a, m^2)$.],
-    [Using $y$-limits as $x$-limits or vice versa during integration strip formulation.],
-  )
+#exam-pointer(title: "High-Yield Memory Hooks for CUET 2027")[
+  Keep these fundamental integration triggers primed:
+  - *Radical Inversion:* $integral frac(d x, sqrt(a^2 - x^2)) = sin^(-1)(frac(x, a)) + C$. Remember: there is NO $1/a$ outside!
+  - *Quadratic Sum:* $integral frac(d x, x^2 + a^2) = frac(1, a) tan^(-1)(frac(x, a)) + C$. Always includes $1/a$!
+  - *Exponential Collapse:* $integral e^x [f(x) + f'(x)] d x = e^x f(x) + C$.
+  - *King's Rule ($P_4$):* $integral_a^b f(x) d x = integral_a^b f(a + b - x) d x$. If integrand is $frac(f(x), f(x) + f(a+b-x))$, integral is simply $frac(b - a, 2)$.
+  - *Symmetry Null:* $integral_(-a)^a f(x) d x = 0$ for any odd function ($f(-x) = -f(x)$).
+  - *Parabola Envelope:* Area bounded by $y^2 = 4 a x$ and $x^2 = 4 b y$ is exactly $frac(16, 3) a b$.
 ]
 
+
 #pagebreak()
-#set text(size: 8.2pt)
-#set par(leading: 0.34em, spacing: 0.36em)
+#cheatsheet-box(title: "Master Formula & Decision Cheatsheet — Integral Calculus")[
+  *1. Standard Radical & Quadratic Forms:*
+  $ integral frac(d x, sqrt(a^2 - x^2)) = sin^(-1)(frac(x, a)) + C, quad quad integral frac(d x, x^2 + a^2) = frac(1, a) tan^(-1)(frac(x, a)) + C, quad quad integral frac(d x, sqrt(x^2 plus.minus a^2)) = ln|x + sqrt(x^2 plus.minus a^2)| + C $
 
-= Practice Questions — Part 1 (Q1 to Q5)
+  *2. Master Product Quadratic Forms:*
+  $ integral sqrt(a^2 - x^2) d x = frac(x, 2) sqrt(a^2 - x^2) + frac(a^2, 2) sin^(-1)(frac(x, a)) + C, quad quad integral sqrt(x^2 + a^2) d x = frac(x, 2) sqrt(x^2 + a^2) + frac(a^2, 2) ln|x + sqrt(x^2 + a^2)| + C $
 
-#mcq(1, [The indefinite integral $integral frac(cos x - sin x, 1 + sin 2x) d x$ is equal to:], (
-  [$frac(1, sin x + cos x) + C$],
-  [$-frac(1, sin x + cos x) + C$],
-  [$ln|sin x + cos x| + C$],
-  [$-ln|sin x + cos x| + C$],
+  *3. By Parts & Exponential Shortcuts:*
+  $ integral u v' d x = u v - integral u' v d x quad ("ILATE priority"), quad quad integral e^(k x) [k f(x) + f'(x)] d x = e^(k x) f(x) + C $
+
+  *4. Definite Integral Properties & Symmetries:*
+  $ integral_a^b f(x) d x = integral_a^b f(a + b - x) d x quad ("King's Rule"), quad quad integral_0^(2a) f(x) d x = 2 integral_0^a f(x) d x quad ("if " f(2a - x) = f(x)) $
+  $ integral_(-a)^a f(x) d x = cases(0 &"if " f(-x) = -f(x) quad ("odd"), 2 integral_0^a f(x) d x &"if " f(-x) = f(x) quad ("even")), quad quad frac(d, d x) [integral_(u(x))^(v(x)) f(t) d t] = f(v(x)) v'(x) - f(u(x)) u'(x) $
+
+  *5. Area Bounded by Curves Shortcuts:*
+  $ "Parabolas:" quad "Area"(y^2 = 4 a x, x^2 = 4 b y) = frac(16, 3) a b, quad quad "Line & Parabola:" quad "Area"(y^2 = 4 a x, y = m x) = frac(8 a^2, 3 m^3), quad quad "Ellipse:" quad pi a b $
+]
+
+#exception-box(title: "The Seven Fatal CUET Traps in Integration")[
+  1. *Inventing $1/a$ in Inverse Sine:* Writing $1/a sin^(-1)(x/a)$ instead of $sin^(-1)(x/a)$. Confusing $sin^(-1)$ with $1/a tan^(-1)(x/a)$ is NTA's most frequent distractor.
+  2. *Modulus Integration Without Split:* Evaluating $integral_a^b |x - c| d x$ directly without partitioning at the root $x = c$. You must write $integral_a^c (c - x) d x + integral_c^b (x - c) d x$.
+  3. *Signed Definite Integral vs Geometric Area:* Allowing negative area below the $x$-axis to cancel positive area above. Total bounded area requires $|integral f(x) d x|$ across separate segments.
+  4. *Improper Rational Forms in Partial Fractions:* Failing to perform polynomial long division when $deg(P) >= deg(Q)$ before setting up partial fraction fractions.
+  5. *Chain Rule Factor Error in Exponential Shortcut:* In $integral e^(k x) [k f(x) + f'(x)] d x = e^(k x) f(x) + C$, forgetting that $k$ must multiply $f(x)$, not $f'(x)$.
+  6. *Omitting Limit Transformation in Substitutions:* Transforming $x -> t$ without updating the integration limits to $t_1 = g(a)$ and $t_2 = g(b)$.
+  7. *Intersection Strip Mismatch in AOI:* Integrating with respect to $x$ when curves overlap vertically. Choosing horizontal strips ($d y$) avoids piecewise curve splitting.
+]
+
+
+#pagebreak()
+#set text(size: 7.6pt)
+#set par(leading: 0.32em, spacing: 0.32em)
+
+= Practice Questions (Exam Pattern)
+
+Fifteen authentic CUET UG examination-standard multiple-choice questions testing conceptual, procedural, and computational mastery of integral calculus. Marking scheme: +5 for correct answer, -1 for incorrect attempt.
+
+== Part 1: Indefinite Integration & Algebraic/Trigonometric Methods
+
+#mcq(1, [The indefinite integral $integral frac(x^2, 1 + x^6) d x$ evaluates to:], (
+  [$frac(1, 2) tan^(-1)(x^3) + C$],
+  [$frac(1, 3) tan^(-1)(x^3) + C$],
+  [$frac(1, 3) ln|1 + x^6| + C$],
+  [$tan^(-1)(x^3) + C$],
 ))
-#solution(1, [Express the denominator using the trigonometric identity $1 + sin 2x = cos^2 x + sin^2 x + 2 sin x cos x = (sin x + cos x)^2$.
-The integral becomes:
-$ I = integral frac(cos x - sin x, (sin x + cos x)^2) d x $
-Substitute $t = sin x + cos x ==> d t = (cos x - sin x) d x$:
-$ I = integral frac(d t, t^2) = integral t^(-2) d t = -frac(1, t) + C = -frac(1, sin x + cos x) + C $], answer: [B])
+#solution(1, [Let $t = x^3$, then $d t = 3 x^2 d x$, giving $x^2 d x = frac(d t, 3)$. The integral becomes $frac(1, 3) integral frac(d t, 1 + t^2) = frac(1, 3) tan^(-1)(t) + C = frac(1, 3) tan^(-1)(x^3) + C$.], answer: [B])
 
-#mcq(2, [The value of the integral $integral e^x (frac(1 + sin x, 1 + cos x)) d x$ is equal to:], (
-  [$e^x tan(x/2) + C$],
-  [$e^x cot(x/2) + C$],
-  [$frac(1, 2) e^x tan(x/2) + C$],
-  [$e^x sec^2(x/2) + C$],
+#mcq(2, [The value of the indefinite integral $integral frac(e^(2x) - 1, e^(2x) + 1) d x$ is equal to:], (
+  [$frac(1, 2) ln(e^(2x) + 1) + C$],
+  [$2 ln(e^x + e^(-x)) + C$],
+  [$ln(e^x + e^(-x)) + C$],
+  [$ln(e^(2x) + 1) - x + C$],
 ))
-#solution(2, [Use half-angle formulas: $1 + sin x = 1 + 2 sin(x/2) cos(x/2)$ and $1 + cos x = 2 cos^2(x/2)$.
-Split the fraction:
-$ frac(1 + sin x, 1 + cos x) = frac(1, 2 cos^2(x/2)) + frac(2 sin(x/2) cos(x/2), 2 cos^2(x/2)) = frac(1, 2) sec^2(frac(x, 2)) + tan(frac(x, 2)) $
-Let $f(x) = tan(x/2) ==> f'(x) = frac(1, 2) sec^2(x/2)$.
-The integral matches the master form $integral e^x [f(x) + f'(x)] d x = e^x f(x) + C$:
-$ I = integral e^x [tan(frac(x, 2)) + frac(1, 2) sec^2(frac(x, 2))] d x = e^x tan(frac(x, 2)) + C $], answer: [A])
+#solution(2, [Divide numerator and denominator by $e^x$: $integral frac(e^x - e^(-x), e^x + e^(-x)) d x$. Let $t = e^x + e^(-x)$, so $d t = (e^x - e^(-x)) d x$. The integral becomes $integral frac(d t, t) = ln|t| + C = ln(e^x + e^(-x)) + C$. Matches Option C.], answer: [C])
 
-#mcq(3, [The value of the indefinite integral $integral frac(d x, x (x^7 + 1))$ is equal to:], (
-  [$frac(1, 7) ln|frac(x^7 + 1, x^7)| + C$],
-  [$frac(1, 7) ln|frac(x^7, x^7 + 1)| + C$],
-  [$7 ln|frac(x^7, x^7 + 1)| + C$],
-  [$ln|frac(x^7, x^7 + 1)| + C$],
-))
-#solution(3, [Multiply numerator and denominator by $x^6$:
-$ I = integral frac(x^6 d x, x^7 (x^7 + 1)) $
-Substitute $t = x^7 ==> d t = 7 x^6 d x ==> x^6 d x = frac(d t, 7)$:
-$ I = frac(1, 7) integral frac(d t, t(t + 1)) = frac(1, 7) integral [frac(1, t) - frac(1, t + 1)] d t = frac(1, 7) [ln|t| - ln|t + 1|] + C = frac(1, 7) ln|frac(x^7, x^7 + 1)| + C $], answer: [B])
-
-#mcq(4, [The integral $integral frac(d x, sqrt(9 - 25 x^2))$ is equal to:], (
-  [$frac(1, 5) sin^(-1)(frac(5x, 3)) + C$],
+#mcq(3, [The evaluation of $integral frac(d x, sqrt(9 - 25 x^2))$ yields:], (
   [$frac(1, 3) sin^(-1)(frac(5x, 3)) + C$],
+  [$frac(1, 5) sin^(-1)(frac(5x, 3)) + C$],
   [$frac(1, 15) sin^(-1)(frac(5x, 3)) + C$],
   [$sin^(-1)(frac(5x, 3)) + C$],
 ))
-#solution(4, [Factor out $25$ from the square root in the denominator:
-$ sqrt(9 - 25x^2) = 5 sqrt((3/5)^2 - x^2) $
-The integral becomes:
-$ I = frac(1, 5) integral frac(d x, sqrt((3/5)^2 - x^2)) $
-Using the standard formula $integral frac(d x, sqrt(a^2 - x^2)) = sin^(-1)(frac(x, a)) + C$ with $a = 3/5$:
-$ I = frac(1, 5) sin^(-1)(frac(x, 3/5)) + C = frac(1, 5) sin^(-1)(frac(5x, 3)) + C $], answer: [A])
+#solution(3, [Factor out $25$ from the radical: $integral frac(d x, 5 sqrt((3/5)^2 - x^2)) = frac(1, 5) sin^(-1)(frac(x, 3/5)) + C = frac(1, 5) sin^(-1)(frac(5x, 3)) + C$.], answer: [B])
 
-#mcq(5, [The value of $integral x^2 e^(x^3) d x$ is equal to:], (
-  [$frac(1, 3) e^(x^3) + C$],
-  [$3 e^(x^3) + C$],
-  [$frac(1, 2) e^(x^3) + C$],
-  [$e^(x^3) + C$],
+#mcq(4, [The antiderivative $integral e^x (frac(1 + sin x, 1 + cos x)) d x$ simplifies to:], (
+  [$e^x tan(x) + C$],
+  [$e^x sec^2(frac(x, 2)) + C$],
+  [$frac(1, 2) e^x tan(frac(x, 2)) + C$],
+  [$e^x tan(frac(x, 2)) + C$],
 ))
-#solution(5, [Substitute $t = x^3$. Differentiating gives $d t = 3x^2 d x ==> x^2 d x = frac(d t, 3)$.
-Substitute into the integral:
-$ I = integral e^t (frac(d t, 3)) = frac(1, 3) integral e^t d t = frac(1, 3) e^t + C = frac(1, 3) e^(x^3) + C $], answer: [A])
+#solution(4, [Express using half-angle formulas: $frac(1 + 2 sin(x/2) cos(x/2), 2 cos^2(x/2)) = frac(1, 2) sec^2(frac(x, 2)) + tan(frac(x, 2))$. Here $f(x) = tan(x/2)$ and $f'(x) = frac(1, 2) sec^2(x/2)$. By $integral e^x [f(x) + f'(x)] d x = e^x f(x) + C$, we obtain $e^x tan(frac(x, 2)) + C$. Matches Option D.], answer: [D])
+
+#mcq(5, [The value of the integral $integral x^2 e^(3x) d x$ is given by:], (
+  [$frac(e^(3x), 27) (9 x^2 - 6 x + 2) + C$],
+  [$frac(e^(3x), 9) (3 x^2 - 2 x + 2) + C$],
+  [$frac(e^(3x), 27) (9 x^2 + 6 x + 2) + C$],
+  [$frac(e^(3x), 3) (x^2 - 2x) + C$],
+))
+#solution(5, [Using repeated integration by parts (tabular method): signs are $+ - + -$, derivatives of $x^2$ are $x^2, 2x, 2, 0$, and integrals of $e^(3x)$ are $frac(e^(3x), 3), frac(e^(3x), 9), frac(e^(3x), 27)$. Summing products: $frac(x^2 e^(3x), 3) - frac(2x e^(3x), 9) + frac(2 e^(3x), 27) + C = frac(e^(3x), 27) (9 x^2 - 6 x + 2) + C$.], answer: [A])
+
 
 #pagebreak()
-#set text(size: 7.8pt)
-#set par(leading: 0.28em, spacing: 0.30em)
+== Part 2: Partial Fractions & Definite Integrals Properties
 
-= Practice Questions — Part 2 (Q6 to Q10)
+#mcq(6, [The decomposition of $integral frac(x, (x - 1)(x - 2)) d x$ results in:], (
+  [$ln|frac(x - 1, x - 2)| + C$],
+  [$ln|(x - 1)(x - 2)| + C$],
+  [$2 ln|x - 2| - ln|x - 1| + C$],
+  [$ln|x - 1| - 2 ln|x - 2| + C$],
+))
+#solution(6, [By partial fractions: $frac(x, (x-1)(x-2)) = frac(A, x-1) + frac(B, x-2)$. Using cover-up rule: $A = frac(1, 1-2) = -1$, and $B = frac(2, 2-1) = 2$. Integrating gives $-ln|x - 1| + 2 ln|x - 2| + C = 2 ln|x - 2| - ln|x - 1| + C$.], answer: [C])
 
-#mcq(6, [The value of the definite integral $integral_0^(pi/2) frac(sqrt(sin x), sqrt(sin x) + sqrt(cos x)) d x$ is equal to:], (
+#mcq(7, [The value of the definite integral $integral_0^(pi/2) frac(sqrt(sin x), sqrt(sin x) + sqrt(cos x)) d x$ is:], (
   [$pi$],
   [$frac(pi, 2)$],
+  [$0$],
   [$frac(pi, 4)$],
-  [$0$],
 ))
-#solution(6, [Let $I = integral_0^(pi/2) frac(sqrt(sin x), sqrt(sin x) + sqrt(cos x)) d x$ ...(1).
-Apply Property $P_4$ ($integral_0^a f(x) d x = integral_0^a f(a - x) d x$): $I = integral_0^(pi/2) frac(sqrt(cos x), sqrt(cos x) + sqrt(sin x)) d x$ ...(2).
-Adding (1) and (2): $2I = integral_0^(pi/2) 1 d x = [x]_0^(pi/2) = pi/2 ==> I = pi/4$.], answer: [C])
+#solution(7, [Let $I = integral_0^(pi/2) frac(sqrt(sin x), sqrt(sin x) + sqrt(cos x)) d x$. Applying King's Property ($P_4$): $I = integral_0^(pi/2) frac(sqrt(cos x), sqrt(cos x) + sqrt(sin x)) d x$. Adding both equations: $2 I = integral_0^(pi/2) 1 d x = frac(pi, 2) arrow.r I = frac(pi, 4)$. Matches Option D.], answer: [D])
 
-#mcq(7, [The value of the definite integral $integral_(-1)^2 |x^3 - x| d x$ is equal to:], (
-  [$frac(11, 4)$],
-  [$frac(7, 4)$],
-  [$frac(9, 4)$],
-  [$frac(5, 2)$],
-))
-#solution(7, [Roots of $x^3 - x = x(x - 1)(x + 1) = 0$ are $x = -1, 0, 1$.
-Testing signs: $x^3 - x >= 0$ on $[-1, 0]$, $x^3 - x <= 0$ on $[0, 1]$, and $x^3 - x >= 0$ on $[1, 2]$.
-By Property $P_2$: $I = integral_(-1)^0 (x^3 - x) d x - integral_0^1 (x^3 - x) d x + integral_1^2 (x^3 - x) d x$.
-Evaluating each: $[x^4/4 - x^2/2]_(-1)^0 - [x^4/4 - x^2/2]_0^1 + [x^4/4 - x^2/2]_1^2 = 1/4 - (-1/4) + (2 - (-1/4)) = 1/4 + 1/4 + 9/4 = 11/4$.], answer: [A])
-
-#mcq(8, [The value of the integral $integral_(-pi/2)^(pi/2) (x^3 + x cos x + tan^5 x + 1) d x$ is equal to:], (
+#mcq(8, [The value of $integral_(-1)^1 (x^3 + x cos x + tan^5 x + 1) d x$ is:], (
   [$0$],
-  [$pi$],
-  [$2 pi$],
-  [$frac(pi, 2)$],
-))
-#solution(8, [The functions $x^3$, $x cos x$, and $tan^5 x$ are all odd functions because $f(-x) = -f(x)$.
-By Property $P_7$ ($integral_(-a)^a f(x) d x = 0$ for odd functions), all three integrals vanish identically.
-Only the even constant function $1$ survives:
-$ I = 0 + 0 + 0 + integral_(-pi/2)^(pi/2) 1 d x = [x]_(-pi/2)^(pi/2) = frac(pi, 2) - (-frac(pi, 2)) = pi $], answer: [B])
-
-#mcq(9, [The value of $lim_(x -> 0) frac(integral_0^x sin(t^2) d t, x^3)$ is equal to:], (
-  [$0$],
-  [$frac(1, 3)$],
+  [$2$],
   [$1$],
-  [$3$],
+  [$4$],
 ))
-#solution(9, [Substitution gives indeterminate form $0/0$. Apply L'Hôpital's Rule.
-Differentiating numerator via Leibniz Rule: $frac(d, d x)[integral_0^x sin(t^2) d t] = sin(x^2) dot 1 - 0 = sin(x^2)$.
-Differentiating denominator: $frac(d, d x)[x^3] = 3x^2$.
-Evaluating limit: $lim_(x -> 0) frac(sin(x^2), 3x^2) = frac(1, 3) lim_(x -> 0) frac(sin(x^2), x^2) = frac(1, 3) dot 1 = frac(1, 3)$.], answer: [B])
+#solution(8, [The functions $x^3$, $x cos x$, and $tan^5 x$ are all odd functions ($f(-x) = -f(x)$). By $P_7$, their integrals over the symmetric interval $[-1, 1]$ evaluate to zero. The remaining integral is $integral_(-1)^1 1 d x = [x]_(-1)^1 = 1 - (-1) = 2$.], answer: [B])
 
-#mcq(10, [The value of the definite integral $integral_0^pi frac(x sin x, 1 + cos^2 x) d x$ is equal to:], (
+#mcq(9, [The definite integral $integral_0^4 |x - 2| d x$ evaluates to:], (
+  [$2$],
+  [$4$],
+  [$8$],
+  [$0$],
+))
+#solution(9, [The integrand $|x - 2|$ changes sign at $x = 2$. Partition the integral: $integral_0^2 (2 - x) d x + integral_2^4 (x - 2) d x$. First part: $[2x - x^2/2]_0^2 = 4 - 2 = 2$. Second part: $[x^2/2 - 2x]_2^4 = (8 - 8) - (2 - 4) = 2$. Total area $= 2 + 2 = 4$.], answer: [B])
+
+#mcq(10, [The value of $integral_0^pi frac(x sin x, 1 + cos^2 x) d x$ is:], (
   [$frac(pi^2, 4)$],
   [$frac(pi^2, 2)$],
-  [$pi^2$],
   [$frac(pi, 4)$],
+  [$pi^2$],
 ))
-#solution(10, [Let $I = integral_0^pi frac(x sin x, 1 + cos^2 x) d x$ ...(1). Apply Property $P_4$ ($x -> pi - x$):
-$I = integral_0^pi frac((pi - x) sin x, 1 + cos^2 x) d x$ ...(2). Adding (1) and (2):
-$2I = pi integral_0^pi frac(sin x, 1 + cos^2 x) d x$. Substitute $u = cos x ==> d u = -sin x d x$:
-$2I = pi integral_(-1)^1 frac(d u, 1 + u^2) = pi [tan^(-1) u]_(-1)^1 = pi [pi/4 - (-pi/4)] = frac(pi^2, 2) ==> I = frac(pi^2, 4)$.], answer: [A])
+#solution(10, [Let $I = integral_0^pi frac(x sin x, 1 + cos^2 x) d x$. Using $P_4$: $I = integral_0^pi frac((pi - x) sin x, 1 + cos^2 x) d x$. Adding: $2 I = pi integral_0^pi frac(sin x, 1 + cos^2 x) d x$. Let $t = cos x, d t = -sin x d x$. When $x = 0 arrow.r t = 1$, $x = pi arrow.r t = -1$. Then $2 I = pi integral_(-1)^1 frac(d t, 1 + t^2) = pi [tan^(-1) t]_(-1)^1 = pi [frac(pi, 4) - (-frac(pi, 4))] = frac(pi^2, 2) arrow.r I = frac(pi^2, 4)$.], answer: [A])
+
 
 #pagebreak()
-#set text(size: 8.0pt)
-#set par(leading: 0.32em, spacing: 0.34em)
+== Part 3: Advanced Definite Integrals & Area Bounded by Curves
 
-= Practice Questions — Part 3 (Q11 to Q15)
-
-#mcq(11, [The area of the region bounded by the parabola $y^2 = 8x$ and the line $y = 2x$ is equal to:], (
-  [$frac(4, 3) "sq units"$],
-  [$frac(8, 3) "sq units"$],
-  [$frac(16, 3) "sq units"$],
-  [$frac(2, 3) "sq units"$],
+#mcq(11, [If $f(x) = integral_0^x t sin t d t$, then the derivative $f'(x)$ is:], (
+  [$sin x + x cos x$],
+  [$x^2 sin x$],
+  [$cos x - x sin x$],
+  [$x sin x$],
 ))
-#solution(11, [Method 1 (CUET Shortcut): For parabola $y^2 = 4 a x$ and line $y = m x$, Area $= frac(8 a^2, 3 m^3)$.
-Here $4a = 8 ==> a = 2$, and $m = 2$.
-$ "Area" = frac(8 (2)^2, 3 (2)^3) = frac(8 dot 4, 3 dot 8) = frac(4, 3) "sq units" $
-Method 2 (Definite Integration): Find intersection points by equating: $(2x)^2 = 8x ==> 4x^2 = 8x ==> 4x(x - 2) = 0 ==> x = 0, 2$.
-Upper curve is parabola $y = sqrt(8x) = 2 sqrt(2) x^(1/2)$, lower curve is line $y = 2x$:
-$ "Area" = integral_0^2 [2 sqrt(2) x^(1/2) - 2x] d x = [2 sqrt(2) dot frac(2, 3) x^(3/2) - x^2]_0^2 = frac(4 sqrt(2), 3) (2 sqrt(2)) - 4 = frac(16, 3) - 4 = frac(4, 3) "sq units" $], answer: [A])
+#solution(11, [By the Fundamental Theorem of Calculus (Leibniz Rule): $frac(d, d x) [integral_0^(v(x)) g(t) d t] = g(v(x)) dot v'(x)$. Here $v(x) = x$, so $v'(x) = 1$, and $g(t) = t sin t$. Therefore $f'(x) = x sin x dot (1) = x sin x$. Matches Option D.], answer: [D])
 
-#mcq(12, [The area enclosed between the two parabolas $y^2 = 4x$ and $x^2 = 4y$ is equal to:], (
-  [$frac(16, 3) "sq units"$],
-  [$frac(8, 3) "sq units"$],
-  [$16 "sq units"$],
-  [$frac(32, 3) "sq units"$],
+#mcq(12, [The area bounded by the curve $y = cos x$ between $x = 0$ and $x = 2 pi$ and the $x$-axis is:], (
+  [$4$ sq units],
+  [$0$ sq units],
+  [$2$ sq units],
+  [$1$ sq unit],
 ))
-#solution(12, [Using the standard shortcut for orthogonal parabolas $y^2 = 4 a x$ and $x^2 = 4 b y$:
-$ "Area" = frac(16 a b, 3) $
-Here $4a = 4 ==> a = 1$, and $4b = 4 ==> b = 1$.
-$ "Area" = frac(16 (1)(1), 3) = frac(16, 3) "sq units" $
-Verification: Intersection is $(0, 0)$ and $(4, 4)$. Area $= integral_0^4 [2 sqrt(x) - frac(x^2, 4)] d x = [frac(4, 3) x^(3/2) - frac(x^3, 12)]_0^4 = frac(4, 3)(8) - frac(64, 12) = frac(32, 3) - frac(16, 3) = frac(16, 3)$.], answer: [A])
+#solution(12, [Total bounded geometric area is strictly positive. The cosine curve has four symmetric quarter-period segments of area $1$ sq unit each: from $0$ to $pi/2$ (above), $pi/2$ to $3pi/2$ (below, area $2$), and $3pi/2$ to $2pi$ (above, area $1$). Total area $= 1 + |-2| + 1 = 4$ sq units. (Note: the algebraic integral evaluates to $0$, but geometric area is $4$).], answer: [A])
 
-#mcq(13, [The area of the region bounded by the ellipse $frac(x^2, 16) + frac(y^2, 9) = 1$ in the first quadrant is:], (
-  [$12 pi "sq units"$],
-  [$6 pi "sq units"$],
-  [$3 pi "sq units"$],
-  [$4 pi "sq units"$],
+#mcq(13, [The area enclosed between the two parabolas $y^2 = 4 x$ and $x^2 = 4 y$ is equal to:], (
+  [$frac(8, 3)$ sq units],
+  [$frac(32, 3)$ sq units],
+  [$frac(16, 3)$ sq units],
+  [$4$ sq units],
 ))
-#solution(13, [For standard ellipse $frac(x^2, a^2) + frac(y^2, b^2) = 1$, semi-major axis $a = sqrt(16) = 4$ and semi-minor axis $b = sqrt(9) = 3$.
-Total area of the entire ellipse is given by:
-$ "Total Area" = pi a b = pi (4)(3) = 12 pi "sq units" $
-The first quadrant represents exactly one-fourth ($1/4$) of the symmetrical ellipse:
-$ "Area"_("Q1") = frac(1, 4) (pi a b) = frac(1, 4) (12 pi) = 3 pi "sq units" $], answer: [C])
+#solution(13, [Here $4a = 4 arrow.r a = 1$ and $4b = 4 arrow.r b = 1$. Using the standard formula for orthogonal parabolas $y^2 = 4 a x$ and $x^2 = 4 b y$: $"Area" = frac(16, 3) a b = frac(16, 3) dot (1) dot (1) = frac(16, 3)$ sq units.], answer: [C])
 
-#mcq(14, [The area bounded by the curve $y = cos x$ between $x = 0$ and $x = 2pi$ and the $x$-axis is equal to:], (
-  [$0 "sq units"$],
-  [$2 "sq units"$],
-  [$4 "sq units"$],
-  [$8 "sq units"$],
+#mcq(14, [The area of the region bounded by the parabola $y^2 = 8 x$ and its latus rectum is:], (
+  [$frac(16, 3)$ sq units],
+  [$8$ sq units],
+  [$frac(32, 3)$ sq units],
+  [$frac(64, 3)$ sq units],
 ))
-#solution(14, [The curve $y = cos x$ crosses the $x$-axis at $x = pi/2$ and $x = 3pi/2$.
-Bounded area requires taking the absolute magnitude of each lobe:
-- From $0$ to $pi/2$: $cos x >= 0 ==> A_1 = integral_0^(pi/2) cos x d x = [sin x]_0^(pi/2) = 1 - 0 = 1$.
-- From $pi/2$ to $3pi/2$: $cos x <= 0 ==> A_2 = |integral_(pi/2)^(3pi/2) cos x d x| = |[sin x]_(pi/2)^(3pi/2)| = |-1 - 1| = 2$.
-- From $3pi/2$ to $2pi$: $cos x >= 0 ==> A_3 = integral_(3pi/2)^(2pi) cos x d x = [sin x]_(3pi/2)^(2pi) = 0 - (-1) = 1$.
-Total bounded area $= A_1 + A_2 + A_3 = 1 + 2 + 1 = 4 "sq units"$. (Note: Simple integration without modulus yields 0, which is incorrect).], answer: [C])
+#solution(14, [For $y^2 = 4 a x$, $4a = 8 arrow.r a = 2$. The latus rectum is the vertical line $x = a = 2$. The area bounded is $2 integral_0^2 sqrt(8x) d x = 2 dot 2 sqrt(2) [frac(x^(3/2), 3/2)]_0^2 = 4 sqrt(2) dot frac(2, 3) dot (2 sqrt(2)) = frac(32, 3)$ sq units. Alternatively, using Archimedes formula: $frac(2, 3) dot ("base") dot ("height") = frac(2, 3) dot (4a) dot (a) = frac(8 a^2, 3) = frac(8 dot 4, 3) = frac(32, 3)$ sq units.], answer: [C])
 
-#mcq(15, [The area of the region bounded by the curve $y = |x - 1|$ and the line $y = 3$ is equal to:], (
-  [$9 "sq units"$],
-  [$6 "sq units"$],
-  [$12 "sq units"$],
-  [$4.5 "sq units"$],
+#mcq(15, [The total area enclosed by the ellipse $frac(x^2, 16) + frac(y^2, 9) = 1$ is:], (
+  [$12 pi$ sq units],
+  [$25 pi$ sq units],
+  [$7 pi$ sq units],
+  [$144 pi$ sq units],
 ))
-#solution(15, [Find intersection points of $y = |x - 1|$ and $y = 3$:
-$ |x - 1| = 3 ==> x - 1 = 3 "or" x - 1 = -3 ==> x = 4 "or" x = -2 $
-The bounded region is a triangle with:
-- Horizontal base along $y = 3$ from $x = -2$ to $x = 4$: $"Base length" = 4 - (-2) = 6$.
-- Vertex at the point $(1, 0)$ where the modulus reaches zero.
-- Vertical height from $y = 0$ to $y = 3$: $"Height" = 3 - 0 = 3$.
-Using the geometric formula for the area of a triangle:
-$ "Area" = frac(1, 2) dot "Base" dot "Height" = frac(1, 2) (6) (3) = 9 "sq units" $
-Integration verification: $integral_(-2)^4 [3 - |x - 1|] d x = integral_(-2)^1 [3 - (1 - x)] d x + integral_1^4 [3 - (x - 1)] d x = [2x + x^2/2]_(-2)^1 + [4x - x^2/2]_1^4 = 4.5 + 4.5 = 9$.], answer: [A])
+#solution(15, [For the standard ellipse $frac(x^2, a^2) + frac(y^2, b^2) = 1$, semi-major axis $a = sqrt(16) = 4$ and semi-minor axis $b = sqrt(9) = 3$. The total enclosed area is $pi a b = pi dot 4 dot 3 = 12 pi$ sq units.], answer: [A])
+
+#block(width: 100%, inset: (top: 4pt), above: 4pt)[
+  #align(center, text(fill: om-grey, size: 8pt)[© OurMocks · www.ourmocks.com · CUET UG Mathematics · Integration & Its Applications · 2027 cycle])
+]
