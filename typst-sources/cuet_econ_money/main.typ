@@ -39,7 +39,8 @@
 ]
 
 #pagebreak()
-#set text(size: 9.1pt)
+#set text(size: 8.5pt)
+#set par(leading: 0.36em, spacing: 0.38em)
 #set par(leading: 0.36em, spacing: 0.38em)
 = The Barter System and the Genesis of Money
 
@@ -456,7 +457,7 @@ At the time of the announcement, ₹500 and ₹1,000 notes accounted for *86.4% 
 
 #pagebreak()
 #figure(
-  image("assets/econ_money_banking_mindmap.png", width: 80%),
+  image("assets/econ_money_banking_mindmap.png", width: 70%),
   caption: [Figure 3: Master Synthesis Mindmap. Unifying the 4 pillars of the chapter: Money & Money Supply ($M_1-M_4, H$), Commercial Banking & Credit Multiplier, Central Bank Functions (RBI), and Monetary Policy Tools & Demonetisation.],
 )
 
@@ -509,12 +510,12 @@ At the time of the announcement, ₹500 and ₹1,000 notes accounted for *86.4% 
 = Practice Questions — Part 1 (Q1 to Q5)
 
 #mcq(1, [Which of the following functions of money directly resolves the problem of "lack of double coincidence of wants" inherent in the barter system?], (
-  [Measure of value (Unit of account)],
   [Medium of exchange],
+  [Measure of value (Unit of account)],
   [Standard of deferred payment],
   [Store of value],
 ))
-#solution(1, [Under barter, trade requires a simultaneous mutual desire for each other's goods (double coincidence of wants). Money as a *medium of exchange* separates the single barter transaction into two distinct acts: sale (Goods $arrow.r$ Money) and purchase (Money $arrow.r$ Goods), thereby completely dissolving the necessity of double coincidence of wants.], answer: "B")
+#solution(1, [Under barter, trade requires a simultaneous mutual desire for each other's goods (double coincidence of wants). Money as a *medium of exchange* separates the single barter transaction into two distinct acts: sale (Goods $arrow.r$ Money) and purchase (Money $arrow.r$ Goods), thereby completely dissolving the necessity of double coincidence of wants.], answer: "A")
 
 #mcq(2, [Which of the following items is strictly EXCLUDED when estimating the money supply measure $M_1$ in India?], (
   [Currency notes and coins held by the general public],
@@ -526,20 +527,20 @@ At the time of the announcement, ₹500 and ₹1,000 notes accounted for *86.4% 
 
 #mcq(3, [If the Legal Reserve Ratio ($L R R$) fixed by the Central Bank is 12.5%, what is the numerical value of the money multiplier ($k$)?], (
   [12.5],
-  [8.0],
-  [5.0],
   [0.125],
+  [5.0],
+  [8.0],
 ))
 #solution(3, [The money multiplier formula is:
 $ k = 1 / (L R R) $
 Given $L R R = 12.5% = 12.5 / 100 = 1 / 8 = 0.125$.
 Therefore:
 $ k = 1 / (0.125) = 8.0 $
-Every ₹1 of fresh primary cash reserves will expand total deposits up to ₹8 across the banking system.], answer: "B")
+Every ₹1 of fresh primary cash reserves will expand total deposits up to ₹8 across the banking system.], answer: "D")
 
 #mcq(4, [Suppose an initial primary cash deposit of ₹50,000 is placed in a commercial bank. If the Cash Reserve Ratio ($C R R$) is 4% and the Statutory Liquidity Ratio ($S L R$) is 16%, the TOTAL CREDIT (loans) created by the banking system will be:], (
-  [₹2,50,000],
   [₹2,00,000],
+  [₹2,50,000],
   [₹50,000],
   [₹1,50,000],
 ))
@@ -550,7 +551,7 @@ $ k = 1 / (L R R) = 1 / 0.20 = 5 $
 Step 3: Calculate Total Deposits:
 $ "Total Deposits" = "Primary Deposit" times k = 50,000 times 5 = ₹2,50,000 $
 Step 4: Calculate Total Credit (Loans) Created:
-$ "Total Credit" = "Total Deposits" - "Initial Primary Deposit" = 2,50,000 - 50,000 = ₹2,00,000. $], answer: "B")
+$ "Total Credit" = "Total Deposits" - "Initial Primary Deposit" = 2,50,000 - 50,000 = ₹2,00,000. $], answer: "A")
 
 #mcq(5, [In the context of the Indian monetary system, who among the following officially issues the One-Rupee note and all metallic coins, and whose signature is inscribed on the One-Rupee note?], (
   [Governor of the Reserve Bank of India; Reserve Bank of India],
@@ -570,13 +571,13 @@ $ "Total Credit" = "Total Deposits" - "Initial Primary Deposit" = 2,50,000 - 50,
 
 #mcq(6, [During periods of severe demand-pull inflation, which combination of monetary policy actions should the Reserve Bank of India execute to curb price rise?], (
   [Reduce Repo Rate and Purchase government securities in the open market],
-  [Increase Repo Rate and Sell government securities in the open market],
   [Reduce Cash Reserve Ratio and Increase Margin Requirements],
+  [Increase Repo Rate and Sell government securities in the open market],
   [Lower Statutory Liquidity Ratio and Lower Bank Rate],
 ))
 #solution(6, [To combat inflation (Excess Demand), the central bank must execute a *Dear / Tight Money Policy* to contract liquidity:
 1. *Increase Repo Rate:* Elevates bank borrowing costs, prompting commercial banks to raise lending rates, which chokes borrowing.
-2. *Sell Government Securities (OMOs):* Central bank sales absorb liquid funds from commercial bank accounts into the RBI, shrinking bank reserves and halting credit creation.], answer: "B")
+2. *Sell Government Securities (OMOs):* Central bank sales absorb liquid funds from commercial bank accounts into the RBI, shrinking bank reserves and halting credit creation.], answer: "C")
 
 #mcq(7, [When the Reserve Bank of India raises the Reverse Repo Rate, what is the direct impact on the commercial banking system?], (
   [Borrowing from the central bank becomes more expensive for commercial banks],
@@ -588,13 +589,13 @@ $ "Total Credit" = "Total Deposits" - "Initial Primary Deposit" = 2,50,000 - 50,
 
 #mcq(8, [What is the fundamental operational difference between the Cash Reserve Ratio ($C R R$) and the Statutory Liquidity Ratio ($S L R$)?], (
   [CRR is maintained in gold; SLR is maintained in cash],
-  [CRR is maintained with the RBI in cash; SLR is maintained by banks with themselves in liquid assets (cash, gold, G-Secs)],
-  [CRR applies to public sector banks; SLR applies only to private banks],
   [CRR is a qualitative tool; SLR is a quantitative tool],
+  [CRR applies to public sector banks; SLR applies only to private banks],
+  [CRR is maintained with the RBI in cash; SLR is maintained by banks with themselves in liquid assets (cash, gold, G-Secs)],
 ))
 #solution(8, [The fundamental distinction lies in custody and asset composition:
 - *$C R R$* is the percentage of Net Demand and Time Liabilities (NDTL) that commercial banks must statutorily deposit in *liquid cash directly with the Reserve Bank of India*.
-- *$S L R$* is the percentage of NDTL that commercial banks must maintain *internally with themselves* in the form of specified *liquid assets* (cash, gold, and unencumbered approved government securities).], answer: "B")
+- *$S L R$* is the percentage of NDTL that commercial banks must maintain *internally with themselves* in the form of specified *liquid assets* (cash, gold, and unencumbered approved government securities).], answer: "D")
 
 #mcq(9, [Which of the following instruments of monetary control is classified as a QUALITATIVE (Selective) credit control tool?], (
   [Statutory Liquidity Ratio (SLR)],
@@ -605,14 +606,14 @@ $ "Total Credit" = "Total Deposits" - "Initial Primary Deposit" = 2,50,000 - 50,
 #solution(9, [Quantitative tools (Repo Rate, Bank Rate, CRR, SLR, OMOs) regulate the aggregate volume and overall cost of credit across the whole economy. In contrast, *Margin Requirement* is a *Qualitative (Selective) tool* that regulates the flow and direction of credit to specific sectors without altering the economy-wide volume of money supply.], answer: "C")
 
 #mcq(10, [High-Powered Money ($H$), also known as the Monetary Base or Reserve Money, consists mathematically of:], (
-  [Currency held by the public + Demand deposits of commercial banks],
   [Currency held by the public + Total cash reserves of the banking system (CRR, excess reserves, vault cash)],
+  [Currency held by the public + Demand deposits of commercial banks],
   [Net time deposits + Post office savings deposits],
   [Currency with banks + Foreign exchange reserves],
 ))
 #solution(10, [High-Powered Money ($H$) represents the ultimate monetary liabilities of the monetary authorities (RBI and Government). Its formula is:
 $ H = C + R $
-Where $C$ is currency held by the public, and $R$ encompasses total commercial bank cash reserves (statutory CRR balances with RBI + excess reserves + vault cash). It forms the base upon which the deposit multiplier operates.], answer: "B")
+Where $C$ is currency held by the public, and $R$ encompasses total commercial bank cash reserves (statutory CRR balances with RBI + excess reserves + vault cash). It forms the base upon which the deposit multiplier operates.], answer: "A")
 
 ---
 
@@ -624,11 +625,11 @@ Where $C$ is currency held by the public, and $R$ encompasses total commercial b
 
 #mcq(11, [In Indian monetary accounting, why is the aggregate $M_3$ officially designated as "Broad Money" while $M_1$ is designated as "Narrow Money"?], (
   [Because $M_3$ includes post office national savings certificates while $M_1$ excludes them],
-  [Because $M_3$ includes net time (fixed) deposits of commercial banks in addition to liquid transaction balances ($M_1$)],
   [Because $M_3$ is more liquid than $M_1$],
+  [Because $M_3$ includes net time (fixed) deposits of commercial banks in addition to liquid transaction balances ($M_1$)],
   [Because $M_3$ includes government cash balances in treasuries],
 ))
-#solution(11, [$M_1$ is termed *Narrow Money* because it includes only immediately spendable, highly liquid transaction balances ($C + D D + O D$). $M_3$ is termed *Broad Money* because it encompasses $M_1$ plus *Net Time Deposits with commercial banks* (fixed and recurring deposits), reflecting the broader store of value and wealth in the financial system.], answer: "B")
+#solution(11, [$M_1$ is termed *Narrow Money* because it includes only immediately spendable, highly liquid transaction balances ($C + D D + O D$). $M_3$ is termed *Broad Money* because it encompasses $M_1$ plus *Net Time Deposits with commercial banks* (fixed and recurring deposits), reflecting the broader store of value and wealth in the financial system.], answer: "C")
 
 #mcq(12, [What is the primary structural distinction between the Bank Rate and the Repo Rate?], (
   [Bank Rate is short-term with collateral; Repo Rate is long-term without collateral],
@@ -641,12 +642,12 @@ Where $C$ is currency held by the public, and $R$ encompasses total commercial b
 - *Bank Rate* is a *long-term* rate at which the RBI lends or rediscounts first-class commercial bills of exchange *without requiring collateral securities*.], answer: "B")
 
 #mcq(13, [Why is an individual commercial bank incapable of creating credit equal to $1 / (L R R)$ times its initial deposit on its own?], (
-  [Because central banking laws prohibit individual banks from advancing loans],
   [Because loans disbursed by a single bank leak out to other banks as borrowers spend their borrowed funds],
+  [Because central banking laws prohibit individual banks from advancing loans],
   [Because a single bank does not hold any cash reserves],
   [Because the money multiplier applies only to the central bank],
 ))
-#solution(13, [An individual commercial bank can safely lend out *only its own excess reserves* (Initial Deposit minus LRR). If a single bank attempted to lend out 10 times its deposit, borrowers would immediately write cheques to third parties who deposit them into *other banks*, causing an immediate, catastrophic cash drain from the first bank. Only the *entire banking system as an integrated whole* achieves multiple credit creation as leaked funds redeposit into other banks.], answer: "B")
+#solution(13, [An individual commercial bank can safely lend out *only its own excess reserves* (Initial Deposit minus LRR). If a single bank attempted to lend out 10 times its deposit, borrowers would immediately write cheques to third parties who deposit them into *other banks*, causing an immediate, catastrophic cash drain from the first bank. Only the *entire banking system as an integrated whole* achieves multiple credit creation as leaked funds redeposit into other banks.], answer: "A")
 
 #mcq(14, [Which of the following was a primary macroeconomic objective behind the Demonetisation of ₹500 and ₹1,000 currency notes on November 8, 2016?], (
   [To permanently eliminate commercial bank demand deposits],
@@ -659,7 +660,7 @@ Where $C$ is currency held by the public, and $R$ encompasses total commercial b
 #mcq(15, [Under which function does the Reserve Bank of India intervene to provide emergency liquidity accommodation to a solvent commercial bank facing an acute crisis of confidence (bank run)?], (
   [Bank of Issue],
   [Banker to the Government],
-  [Lender of the Last Resort],
   [Custodian of Foreign Exchange],
+  [Lender of the Last Resort],
 ))
-#solution(15, [The *Lender of the Last Resort* function guarantees that when a solvent commercial bank faces an unanticipated liquidity crunch or bank run and cannot obtain accommodation from the inter-bank money market, the central bank steps in with emergency credit against eligible securities, thereby preserving public confidence and halting systemic banking panic.], answer: "C")
+#solution(15, [The *Lender of the Last Resort* function guarantees that when a solvent commercial bank faces an unanticipated liquidity crunch or bank run and cannot obtain accommodation from the inter-bank money market, the central bank steps in with emergency credit against eligible securities, thereby preserving public confidence and halting systemic banking panic.], answer: "D")
