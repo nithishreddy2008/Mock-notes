@@ -473,28 +473,28 @@ Three decades of economic reforms have profoundly reshaped the Indian economic l
 #solution(1, [While Dadabhai Naoroji was the pioneer who first calculated national income in colonial India, economists and historians universally consider the estimates prepared by Dr. V.K.R.V. Rao to be the most rigorous and statistically significant.], answer: "C")
 
 #mcq(2, [Why is the year 1921 regarded as the "Year of the Great Divide" in India's demographic history?], (
-  [Because India conducted its very first population census in 1921],
   [Because India transitioned from the first stage of demographic transition to the second stage of continuous, accelerating population growth],
+  [Because India conducted its very first population census in 1921],
   [Because the death rate in India rose above the birth rate for the first time],
   [Because the British government made family planning mandatory],
 ))
-#solution(2, [Prior to 1921, India was in the first stage of demographic transition where high birth rates were cancelled by high, erratic death rates (famines, epidemics), keeping population growth stagnant. After 1921, death rates began declining while birth rates remained high, leading to unbroken, continuous population growth.], answer: "B")
+#solution(2, [Prior to 1921, India was in the first stage of demographic transition where high birth rates were cancelled by high, erratic death rates (famines, epidemics), keeping population growth stagnant. After 1921, death rates began declining while birth rates remained high, leading to unbroken, continuous population growth.], answer: "A")
 
 #mcq(3, [Which of the following was an immediate catastrophic consequence of the 1947 Partition of India on domestic industry?], (
   [Complete shutdown of all cotton textile mills in Bombay],
-  [Acute raw material shortage for the jute mills of Bengal as raw jute fields went to East Pakistan while mills remained in India],
-  [A total ban on iron and steel production by TISCO],
   [The loss of all coal mines to West Pakistan],
+  [A total ban on iron and steel production by TISCO],
+  [Acute raw material shortage for the jute mills of Bengal as raw jute fields went to East Pakistan while mills remained in India],
 ))
-#solution(3, [Before partition, India held a virtual global monopoly in jute. Partition allocated the fertile jute-producing agricultural tracts to East Pakistan (now Bangladesh), while all the processing jute mills remained clustered around Kolkata in India, precipitating an acute raw material crisis.], answer: "B")
+#solution(3, [Before partition, India held a virtual global monopoly in jute. Partition allocated the fertile jute-producing agricultural tracts to East Pakistan (now Bangladesh), while all the processing jute mills remained clustered around Kolkata in India, precipitating an acute raw material crisis.], answer: "D")
 
 #mcq(4, [Under the Industrial Policy Resolution (IPR) of 1956, industries in "Schedule A" were characterized by which of the following ownership rules?], (
-  [They were developed entirely by private enterprise with zero government regulation],
   [They were reserved as an exclusive monopoly of the State, with private capital completely barred],
+  [They were developed entirely by private enterprise with zero government regulation],
   [They were jointly owned by Indian firms and foreign multinational corporations],
   [They were exclusively reserved for small-scale cottage industries],
 ))
-#solution(4, [IPR 1956 categorized industries into three schedules. Schedule A comprised 17 heavy, basic, and strategic industries (defense, atomic energy, iron and steel, railways) whose future development was the exclusive preserve of the State.], answer: "B")
+#solution(4, [IPR 1956 categorized industries into three schedules. Schedule A comprised 17 heavy, basic, and strategic industries (defense, atomic energy, iron and steel, railways) whose future development was the exclusive preserve of the State.], answer: "A")
 
 #mcq(5, [The Village and Small-Scale Industries Committee, which recommended using small-scale industries to promote rural development and employment in 1955, is popularly known as the:], (
   [Narasimham Committee],
@@ -513,12 +513,12 @@ Three decades of economic reforms have profoundly reshaped the Indian economic l
 = Practice Questions — Part 2 (Q6 to Q10)
 
 #mcq(6, [The term "Marketed Surplus" in the context of the Green Revolution refers to:], (
-  [The portion of agricultural production retained by farmers for family consumption],
   [The portion of agricultural production sold in the market by farmers after meeting their own consumption needs],
+  [The portion of agricultural production retained by farmers for family consumption],
   [The agricultural buffer stock stored exclusively in foreign warehouses],
   [The volume of chemical fertilizers sold by multinational agrochemical companies],
 ))
-#solution(6, [Marketed surplus is the excess of total agricultural produce over and above the farm household's subsistence consumption requirements ($"Marketed Surplus" = "Total Output" - "On-Farm Consumption"$). This surplus is marketed to feed the urban industrial population and build national buffer stocks.], answer: "B")
+#solution(6, [Marketed surplus is the excess of total agricultural produce over and above the farm household's subsistence consumption requirements ($"Marketed Surplus" = "Total Output" - "On-Farm Consumption"$). This surplus is marketed to feed the urban industrial population and build national buffer stocks.], answer: "A")
 
 #mcq(7, [Which of the following was NOT an immediate trigger of the 1991 Indian Balance of Payments crisis?], (
   [Depletion of foreign exchange reserves to under USD 1 billion (barely two weeks of imports)],
@@ -537,12 +537,12 @@ Three decades of economic reforms have profoundly reshaped the Indian economic l
 #solution(8, [Under the July 1991 New Industrial Policy, licensing was abolished for almost all sectors, retaining compulsory licenses for only a handful of strategic, hazardous, or socially sensitive items: alcohol, tobacco/cigarettes, hazardous chemicals, industrial explosives, and defense equipment.], answer: "B")
 
 #mcq(9, [Under the 1991 financial sector reforms guided by the Narasimham Committee, how did the role of the Reserve Bank of India fundamentally change?], (
-  [From a commercial lending bank to an agricultural cooperative],
   [From a rigid "Regulator" dictating interest rates and branch openings to an enabling "Facilitator" fostering market competition],
+  [From a commercial lending bank to an agricultural cooperative],
   [From an independent central bank to a subsidiary of the World Bank],
   [From managing foreign exchange to printing unlimited paper currency],
 ))
-#solution(9, [The 1991 reforms transformed the RBI from a micro-managing regulator that fixed interest rates and approved every branch opening into a macro-prudential facilitator, granting commercial banks operational autonomy to set deposit/lending rates and open branches.], answer: "B")
+#solution(9, [The 1991 reforms transformed the RBI from a micro-managing regulator that fixed interest rates and approved every branch opening into a macro-prudential facilitator, granting commercial banks operational autonomy to set deposit/lending rates and open branches.], answer: "A")
 
 #mcq(10, [On which date was the World Trade Organisation (WTO) officially established, succeeding GATT 1948?], (
   [15 August 1947],
@@ -562,11 +562,11 @@ Three decades of economic reforms have profoundly reshaped the Indian economic l
 
 #mcq(11, [Why is India's post-1991 economic growth frequently criticized by development economists as "Jobless Growth"?], (
   [Because total national employment declined to zero],
-  [Because GDP growth was driven by capital-intensive and service sectors without a proportional expansion in formal manufacturing employment],
-  [Because the government banned all private hiring in multinational corporations],
   [Because all workers were replaced by artificial intelligence in the 1990s],
+  [Because the government banned all private hiring in multinational corporations],
+  [Because GDP growth was driven by capital-intensive and service sectors without a proportional expansion in formal manufacturing employment],
 ))
-#solution(11, [While India achieved high GDP growth rates post-1991, the growth was heavily concentrated in skill-intensive tertiary sectors (IT, finance, telecom) rather than labour-intensive manufacturing. Formal factory jobs did not expand sufficiently to absorb the millions leaving agriculture, leading to widespread informalisation.], answer: "B")
+#solution(11, [While India achieved high GDP growth rates post-1991, the growth was heavily concentrated in skill-intensive tertiary sectors (IT, finance, telecom) rather than labour-intensive manufacturing. Formal factory jobs did not expand sufficiently to absorb the millions leaving agriculture, leading to widespread informalisation.], answer: "D")
 
 #mcq(12, [Which of the following was a major criticism regarding the agricultural sector under the post-1991 economic reforms?], (
   [Over-investment of government capital in rural irrigation projects],
