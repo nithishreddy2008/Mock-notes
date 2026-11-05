@@ -48,6 +48,9 @@
 
 ---
 
+#set text(size: 9.9pt)
+#set par(leading: 0.58em, spacing: 0.76em)
+
 = Poverty in India: Dimensions, Measurement & Policy Response
 
 Poverty is a multidimensional state of deprivation in which an individual or household lacks the financial resources and essential capabilities required to attain a socially acceptable minimum standard of living.
@@ -200,7 +203,7 @@ Agricultural production features long gestation lags between planting crops and 
 ---
 
 #figure(
-  image("assets/econ_challenges_human_capital_rural.png", width: 100%),
+  image("assets/econ_challenges_human_capital_rural.png", width: 78%),
   caption: [Figure 1: Human Capital Formation & Rural Development Architecture — Five Sources of HCF, Institutional Rural Credit Systems, Marketing Interventions, and Agricultural Diversification.],
 )
 
@@ -262,7 +265,7 @@ India's workforce is divided into three distinct operational categories:
 ---
 
 #figure(
-  image("assets/econ_challenges_employment_informalisation.png", width: 100%),
+  image("assets/econ_challenges_employment_informalisation.png", width: 78%),
   caption: [Figure 2: Employment, Labour Force & Informalisation Dynamics — Worker categories, Disguised Unemployment mechanics ($M P_L = 0$), and the Formal vs Informal Sector divide.],
 )
 
@@ -334,10 +337,7 @@ An *Environmental Crisis* occurs when human economic demands overwhelm natural e
 
 ---
 
-#figure(
-  image("assets/econ_challenges_environment_sustainability.png", width: 100%),
-  caption: [Figure 3: Environment & Sustainable Development Framework — The four environmental functions, ecological thresholds, India's environmental pressures, and sustainable development strategies.],
-)
+
 
 ---
 
@@ -362,6 +362,21 @@ India's environment faces a unique dual challenge: *Poverty-induced environmenta
   4. *Wind Power & Mini-Hydel Plants:* Utilizing perennial mountain streams in hilly regions to generate decentralized electricity without inundating vast ecological habitats.
   5. *Traditional Knowledge & Practices:* Reviving traditional building materials, Ayurvedic healthcare, and local natural remedies that work in harmony with nature.
   6. *Biopesticides & Biofertilizers:* Replacing chemical poisons with neem-based pesticides, compost, and introducing biological predator insects to manage agricultural pests sustainably.
+
+#pagebreak()
+= Synthesis & Sustainable Development Framework
+
+The multi-dimensional challenges confronting the Indian economy demand a holistic policy synthesis:
+1. *Poverty Eradication:* Shifting from welfare subsistence to productive human capability expansion.
+2. *Human Capital Formation:* Prioritising quality public education and preventive primary healthcare as social investments.
+3. *Rural Diversification:* Expanding non-farm rural employment, institutional micro-credit, and chemical-free organic farming.
+4. *Employment Generation:* Accelerating formal employment opportunities while extending statutory social security to the informal majority.
+5. *Ecological Stewardship:* Safeguarding environmental carrying capacity through rapid transition to renewable energy and sustainable agricultural practices.
+
+#figure(
+  image("assets/econ_challenges_environment_sustainability.png", width: 70%),
+  caption: [Figure 3: Environment & Sustainable Development Framework — The four environmental functions, ecological thresholds, India's environmental pressures, and sustainable development strategies.],
+)
 
 #pagebreak()
 #set text(size: 7.0pt)
@@ -411,36 +426,36 @@ India's environment faces a unique dual challenge: *Poverty-induced environmenta
 = Practice Questions — Part 1 (Q1 to Q5)
 
 #mcq(1, [Under the nutritional calorie norms established by the Planning Commission Task Force (1979), why is the minimum daily calorie requirement for rural areas (2,400 kcal) higher than that for urban areas (2,100 kcal)?], (
-  [Because foodgrains are cheaper in rural areas],
   [Because rural workers engage in substantially more strenuous, manual physical labour in agriculture],
+  [Because foodgrains are cheaper in rural areas],
   [Because urban residents consume more vitamin supplements],
   [Because the rural population suffers from higher metabolic disease rates],
 ))
-#solution(1, [The Planning Commission Task Force fixed 2,400 calories/day for rural areas and 2,100 calories/day for urban areas because agricultural work in villages involves rigorous, arduous manual physical exertion, requiring significantly higher daily caloric energy expenditure than urban service occupations.], answer: "B")
+#solution(1, [The Planning Commission Task Force fixed 2,400 calories/day for rural areas and 2,100 calories/day for urban areas because agricultural work in villages involves rigorous, arduous manual physical exertion, requiring significantly higher daily caloric energy expenditure than urban service occupations.], answer: "A")
 
 #mcq(2, [Small and marginal farmers who regularly move into and out of poverty depending on the success or failure of their seasonal crops are categorized as:], (
-  [Chronic poor],
   [Churning poor],
+  [Chronic poor],
   [Occasionally poor],
   [Never poor],
 ))
-#solution(2, [The "churning poor" are a subcategory of the transient poor who regularly drift back and forth across the poverty line—rising above it during bountiful harvest seasons and falling below it during lean periods or crop failures.], answer: "B")
+#solution(2, [The "churning poor" are a subcategory of the transient poor who regularly drift back and forth across the poverty line—rising above it during bountiful harvest seasons and falling below it during lean periods or crop failures.], answer: "A")
 
 #mcq(3, [Which of the following is considered the single most important source of Human Capital Formation, yielding the highest social and economic rate of return?], (
   [Investment in information on real estate prices],
-  [Investment in education],
   [Expenditure on international air travel],
+  [Investment in education],
   [Investment in corporate equity shares],
 ))
-#solution(3, [Investment in education is universally recognized as the primary engine of human capital formation. It expands mental horizons, fosters technological innovation, enhances labor productivity, and generates profound positive social externalities across generations.], answer: "B")
+#solution(3, [Investment in education is universally recognized as the primary engine of human capital formation. It expands mental horizons, fosters technological innovation, enhances labor productivity, and generates profound positive social externalities across generations.], answer: "C")
 
 #mcq(4, [The 86th Constitutional Amendment Act, 2002, which made free and compulsory elementary education a Fundamental Right for children aged 6 to 14 years, inserted which Article into the Constitution of India?], (
   [Article 19(1)(a)],
-  [Article 21A],
   [Article 370],
+  [Article 21A],
   [Article 39(b)],
 ))
-#solution(4, [The 86th Constitutional Amendment Act of 2002 inserted Article 21A into Part III of the Constitution, declaring that the State shall provide free and compulsory education to all children aged 6 to 14 years as a Fundamental Right, later operationalized via the RTE Act 2009.], answer: "B")
+#solution(4, [The 86th Constitutional Amendment Act of 2002 inserted Article 21A into Part III of the Constitution, declaring that the State shall provide free and compulsory education to all children aged 6 to 14 years as a Fundamental Right, later operationalized via the RTE Act 2009.], answer: "C")
 
 #mcq(5, [Which apex refinancing financial institution was established on 12 July 1982 to supervise, coordinate, and refinance all credit operations across the rural and agricultural sector of India?], (
   [State Bank of India (SBI)],
@@ -459,36 +474,36 @@ India's environment faces a unique dual challenge: *Poverty-induced environmenta
 = Practice Questions — Part 2 (Q6 to Q10)
 
 #mcq(6, [The historic "Operation Flood" (The White Revolution), launched in India in 1970 under the leadership of Dr. Verghese Kurien, transformed which rural agricultural sub-sector?], (
-  [Wheat and cereal grain storage],
   [Dairy farming and milk production],
+  [Wheat and cereal grain storage],
   [Horticulture and honey extraction],
   [Marine fisheries and coastal aquaculture],
 ))
-#solution(6, [Operation Flood, initiated in 1970 by the National Dairy Development Board (NDDB) led by Dr. Verghese Kurien, created a nationwide milk grid based on the Anand (Amul) dairy cooperative model, transforming India from a milk-deficient nation into the world's largest milk producer.], answer: "B")
+#solution(6, [Operation Flood, initiated in 1970 by the National Dairy Development Board (NDDB) led by Dr. Verghese Kurien, created a nationwide milk grid based on the Anand (Amul) dairy cooperative model, transforming India from a milk-deficient nation into the world's largest milk producer.], answer: "A")
 
 #mcq(7, [Which Indian state achieved the unique global milestone of becoming the world's first 100% certified organic farming state in 2016?], (
-  [Punjab],
   [Sikkim],
+  [Punjab],
   [Kerala],
   [Maharashtra],
 ))
-#solution(7, [In January 2016, Sikkim became the first state in India and the world to officially transition 100% of its agricultural land to certified organic farming practices, completely eliminating synthetic chemical pesticides and fertilizers.], answer: "B")
+#solution(7, [In January 2016, Sikkim became the first state in India and the world to officially transition 100% of its agricultural land to certified organic farming practices, completely eliminating synthetic chemical pesticides and fertilizers.], answer: "A")
 
 #mcq(8, [In an agricultural field where 8 family members are cultivating a small parcel of land, if 3 members are withdrawn and total crop output remains completely unchanged, what type of unemployment were those 3 members experiencing?], (
   [Seasonal unemployment],
-  [Disguised unemployment],
   [Open unemployment],
+  [Disguised unemployment],
   [Frictional unemployment],
 ))
-#solution(8, [Disguised unemployment occurs when surplus workers are engaged in an activity where their marginal product of labour is identically zero ($M P_L = 0$). Removing them has zero negative effect on total production output.], answer: "B")
+#solution(8, [Disguised unemployment occurs when surplus workers are engaged in an activity where their marginal product of labour is identically zero ($M P_L = 0$). Removing them has zero negative effect on total production output.], answer: "C")
 
 #mcq(9, [Under the official Indian statistical classification, an establishment is legally categorized as belonging to the FORMAL / ORGANISED SECTOR if it employs at least how many hired workers?], (
   [5 or more hired workers],
-  [10 or more hired workers],
-  [50 or more hired workers],
   [100 or more hired workers],
+  [50 or more hired workers],
+  [10 or more hired workers],
 ))
-#solution(9, [The formal/organised sector encompasses all public sector enterprises plus all private establishments that employ 10 or more hired workers. Workers in this sector enjoy statutory social security benefits (PF, gratuity, pensions) and union rights.], answer: "B")
+#solution(9, [The formal/organised sector encompasses all public sector enterprises plus all private establishments that employ 10 or more hired workers. Workers in this sector enjoy statutory social security benefits (PF, gratuity, pensions) and union rights.], answer: "D")
 
 #mcq(10, [Why is the recorded Worker-Population Ratio (WPR) for women in India significantly lower than that for men?], (
   [Because women are legally prohibited from working in corporate offices],
@@ -508,19 +523,19 @@ India's environment faces a unique dual challenge: *Poverty-induced environmenta
 
 #mcq(11, [An "Environmental Crisis" occurs when which of the following ecological conditions is breached?], (
   [When national spending on pollution control exceeds 5% of GDP],
-  [When the rate of resource extraction exceeds the rate of resource regeneration, or waste generation exceeds the absorptive capacity of the environment],
-  [When renewable energy becomes cheaper than fossil fuels],
   [When the government enacts strict criminal penalties on plastic bags],
+  [When renewable energy becomes cheaper than fossil fuels],
+  [When the rate of resource extraction exceeds the rate of resource regeneration, or waste generation exceeds the absorptive capacity of the environment],
 ))
-#solution(11, [An environmental crisis arises when human economic exploitation breaches the carrying capacity of the ecosystem—meaning either resource extraction outstrips the natural regeneration rate, or waste generation exceeds the environment's absorptive capacity.], answer: "B")
+#solution(11, [An environmental crisis arises when human economic exploitation breaches the carrying capacity of the ecosystem—meaning either resource extraction outstrips the natural regeneration rate, or waste generation exceeds the environment's absorptive capacity.], answer: "D")
 
 #mcq(12, [The classic definition of Sustainable Development as "development that meets the needs of the present without compromising the ability of future generations to meet their own needs" was formulated by which international body?], (
   [The World Trade Organisation (WTO) in 1995],
-  [The Brundtland Commission Report ("Our Common Future") in 1987],
-  [The International Monetary Fund (IMF) in 1991],
   [The Kyoto Protocol Summit in 1997],
+  [The International Monetary Fund (IMF) in 1991],
+  [The Brundtland Commission Report ("Our Common Future") in 1987],
 ))
-#solution(12, [This landmark definition of sustainable development was articulated in 1987 by the United Nations World Commission on Environment and Development, chaired by Gro Harlem Brundtland, in its historic report titled "Our Common Future".], answer: "B")
+#solution(12, [This landmark definition of sustainable development was articulated in 1987 by the United Nations World Commission on Environment and Development, chaired by Gro Harlem Brundtland, in its historic report titled "Our Common Future".], answer: "D")
 
 #mcq(13, [Which statutory environmental watchdog was established in 1974 by the Government of India to investigate, set standards, and enforce regulatory control over water and air pollution?], (
   [NITI Aayog],
