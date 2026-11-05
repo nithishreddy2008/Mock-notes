@@ -113,7 +113,7 @@ Common-size statements convert each individual figure into a percentage of a com
 
 // PAGE 5: FIGURE 1 & LIMITATIONS
 #figure(
-  image("assets/acc_analysis_tools_and_comparative.png", width: 84%),
+  image("assets/acc_analysis_tools_and_comparative.png", width: 78%),
   caption: [Financial Statement Architecture: Schedule III structure, comparative analysis, and common-size vertical models.],
 )
 
@@ -223,7 +223,7 @@ Profitability ratios measure the operational efficiency and overall earning powe
 
 // PAGE 9: FIGURE 2 & CASH FLOW FUNDAMENTALS
 #figure(
-  image("assets/acc_analysis_ratios_matrix.png", width: 84%),
+  image("assets/acc_analysis_ratios_matrix.png", width: 78%),
   caption: [Master Accounting Ratios Matrix: Formulas, benchmarks, and interpretation across the four ratio families.],
 )
 
@@ -285,103 +285,29 @@ Less: Refund of Income Tax received
 // PAGE 11: MASTER WORKED PROBLEM 1 — CASH FLOW STATEMENT
 = 9. Comprehensive Master Worked Problems
 
-#worked-example("Master Problem 1 — Comprehensive Cash Flow Statement (AS-3 Revised)")[
-  From the following Balance Sheets of Sunrise Ltd, prepare a Cash Flow Statement:
-
-  #table(
-    inset: 4pt,
-    columns: (2.2fr, 0.9fr, 0.9fr),
-    table.header[*Particulars*][*31.3.2025 (₹)*][*31.3.2024 (₹)*],
-    [*I. Equity and Liabilities:*], [], [],
-    [1. Shareholders' Funds: Equity Share Capital], [7,00,000], [5,00,000],
-    [#h(1em) Reserves & Surplus (Balance in Statement of P&L)], [3,50,000], [2,00,000],
-    [2. Non-Current Liabilities: 10% Debentures], [2,00,000], [3,00,000],
-    [3. Current Liabilities: Trade Payables], [1,20,000], [80,000],
-    [#h(1em) Provision for Tax], [50,000], [40,000],
-    [*Total*], [*14,20,000*], [*11,20,000*],
-    [*II. Assets:*], [], [],
-    [1. Non-Current Assets: Plant & Machinery], [8,00,000], [5,00,000],
-    [#h(1em) Accumulated Depreciation], [(1,60,000)], [(1,00,000)],
-    [#h(1em) Non-Current Investments], [1,50,000], [1,00,000],
-    [2. Current Assets: Inventories], [3,20,000], [2,80,000],
-    [#h(1em) Trade Receivables], [2,10,000], [2,60,000],
-    [#h(1em) Cash and Cash Equivalents], [1,00,000], [80,000],
-    [*Total*], [*14,20,000*], [*11,20,000*],
-  )
-
-  *Additional Information:*
-  1. During the year, machinery costing ₹1,00,000 (accumulated depreciation ₹40,000) was sold for ₹50,000.
-  2. Tax paid during the year amounted to ₹35,000. Debentures were redeemed on 31st March 2025.
-  3. Proposed dividend for the year ended 31st March 2024 was ₹50,000; for 31st March 2025 was ₹70,000.
-
-  *Working Notes & Ledger Accounts:*
-  - *Plant & Machinery Account:* Opening ₹5,00,000 + Purchases (balancing figure: *₹4,00,000*) = Sold ₹1,00,000 + Closing ₹8,00,000.
-  - *Accumulated Depreciation Account:* Opening ₹1,00,000 + Depreciation for the year (balancing figure: *₹1,00,000*) = Sold ₹40,000 + Closing ₹1,60,000.
-  - *Loss on Sale of Machinery:* Book Value = ₹1,00,000 − ₹40,000 = ₹60,000. Sold for ₹50,000. Loss = *₹10,000*.
-  - *Provision for Tax Account:* Opening ₹40,000 + Provision made (balancing figure: *₹45,000*) = Tax Paid ₹35,000 + Closing ₹50,000.
-  - *Net Profit Before Tax (NPBT):* Difference in Surplus (₹3,50,000 − ₹2,00,000 = ₹1,50,000) + Previous Year Dividend ₹50,000 + Tax Provision Made ₹45,000 = bold("₹2,45,000").
-]
-
-#pagebreak()
-
-// PAGE 12: MASTER PROBLEM 1 SOLUTION & MASTER PROBLEM 2
-#worked-example("Master Problem 1 Solution (Cash Flow Statement)")[
-  *Cash Flow Statement of Sunrise Ltd for the year ended 31st March 2025:*
-  ```text
-  A. Cash Flows from Operating Activities:
-     Net Profit Before Tax and Extraordinary Items                   ₹2,45,000
-     Add: Non-Cash & Non-Operating Charges:
-          - Depreciation on Plant & Machinery                        ₹1,00,000
-          - Loss on Sale of Machinery                                  ₹10,000
-          - Interest on 10% Debentures (10% on ₹3,00,000)              ₹30,000
-     Operating Profit Before Working Capital Changes                 ₹3,85,000
-     Add: Decrease in Trade Receivables (2,60,000 - 2,10,000)          ₹50,000
-     Add: Increase in Trade Payables (1,20,000 - 80,000)               ₹40,000
-     Less: Increase in Inventories (3,20,000 - 2,80,000)              (₹40,000)
-     Cash Generated from Operations                                  ₹4,35,000
-     Less: Income Tax Paid                                            (₹35,000)
-     Net Cash Flow from Operating Activities (A)                    bold(₹4,00,000)
-
-  B. Cash Flows from Investing Activities:
-     Proceeds from Sale of Machinery                                   ₹50,000
-     Purchase of Plant & Machinery                                   (₹4,00,000)
-     Purchase of Non-Current Investments (1,50,000 - 1,00,000)        (₹50,000)
-     Net Cash Used in Investing Activities (B)                      bold((₹4,00,000))
-
-  C. Cash Flows from Financing Activities:
-     Proceeds from Issue of Equity Share Capital (7,00,000 - 5,00,000)₹2,00,000
-     Redemption of 10% Debentures (3,00,000 - 2,00,000)              (₹1,00,000)
-     Payment of Previous Year Proposed Dividend                       (₹50,000)
-     Payment of Interest on Debentures                                (₹30,000)
-     Net Cash Flow from Financing Activities (C)                     bold(₹20,000)
-
-  Net Increase in Cash & Cash Equivalents (A + B + C)                  bold(₹20,000)
-  Add: Opening Cash & Cash Equivalents (1.4.2024)                      ₹80,000
-  Closing Cash & Cash Equivalents (31.3.2025)                         bold(₹1,00,000)
-  ```
+#worked-example("Master Problem 1 — Comprehensive Cash Flow Computation (AS-3 Revised)")[
+  *Financial Data of Sunrise Ltd (₹ in Lakhs):* Opening / Closing: Equity Capital (5.0 / 7.0), Reserves & Surplus (2.0 / 3.5), 10% Debentures (3.0 / 2.0), Trade Payables (0.8 / 1.2), Provision for Tax (0.4 / 0.5), Plant & Machinery (5.0 / 8.0, Acc. Dep. 1.0 / 1.6), Non-Current Investments (1.0 / 1.5), Inventories (2.8 / 3.2), Trade Receivables (2.6 / 2.1), Cash & Bank (0.8 / 1.0).
+  *Additional Information:* Machinery sold for ₹0.5L (Cost ₹1.0L, Acc. Dep. ₹0.4L). Tax paid ₹0.35L. Debentures redeemed at par. Previous year proposed dividend ₹0.5L paid.
+  *Step-by-Step Solution:*
+  - *NPBT:* $Delta$ Surplus (₹1.5L) + Prev. Yr Dividend (₹0.5L) + Tax Provision Made (₹0.45L) = *₹2.45L*.
+  - *Operating Activities:* NPBT (₹2.45L) + Dep. (₹1.0L) + Loss on Sale (₹0.10L) + Interest (₹0.30L) = Operating Profit before WC ₹3.85L. Adjusting $Delta$ TR (+₹0.5L), $Delta$ TP (+₹0.4L), $Delta$ Inv (-₹0.4L) and Tax Paid (-₹0.35L) $==>$ *Cash from Operations = ₹4.00 Lakhs*.
+  - *Investing Activities:* Sale of Machine (+₹0.5L) − Purchase of Machine (-₹4.0L) − Purchase of Inv. (-₹0.5L) $==>$ *Cash Used in Investing = (₹4.00 Lakhs)*.
+  - *Financing Activities:* Issue of Shares (+₹2.0L) − Redemption of Debentures (-₹1.0L) − Dividend Paid (-₹0.5L) − Interest (-₹0.3L) $==>$ *Cash from Financing = ₹0.20 Lakhs*.
+  - *Net Reconciliation:* Net Increase = ₹0.20L; Opening Cash = ₹0.80L; Closing Cash = *₹1.00 Lakhs*.
 ]
 
 #worked-example("Master Problem 2 — Balance Sheet Reconstruction via Accounting Ratios")[
   *Data:* Working Capital: ₹1,50,000; Current Ratio: 2.5; Quick Ratio: 1.5; Proprietary Ratio: 0.6; Total Debt: ₹4,00,000 (Non-Current Debt ₹3,00,000). Compute Balance Sheet components:
-  1. *Current Assets & Current Liabilities:*
-    Working Capital = 2.5 − 1 = 1.5 units = ₹1,50,000.
-    Current Liabilities = ₹1,50,000 / 1.5 = *₹1,00,000*.
-    Current Assets = 2.5 × ₹1,00,000 = *₹2,50,000*.
-  2. *Inventory:*
-    Quick Assets = 1.5 × ₹1,00,000 = ₹1,50,000.
-    Inventory = Current Assets − Quick Assets = ₹2,50,000 − ₹1,50,000 = *₹1,00,000*.
-  3. *Total Assets & Shareholders' Funds:*
-    Total Debt = Non-Current Debt (₹3,00,000) + Current Liabilities (₹1,00,000) = ₹4,00,000.
-    Since Proprietary Ratio = 0.6, Total Debt represents 40% of Total Assets.
-    Total Assets = ₹4,00,000 / 0.4 = *₹10,00,000*.
-    Shareholders' Funds = 0.6 × ₹10,00,000 = *₹6,00,000*.
+  1. *Current Assets & Current Liabilities:* Working Capital = $2.5 - 1 = 1.5$ units = ₹1,50,000 $==> text("CL") = 1,50,000 / 1.5 =$ *₹1,00,000*; $text("CA") = 2.5 times 1,00,000 =$ *₹2,50,000*.
+  2. *Inventory:* Quick Assets = $1.5 times 1,00,000 = ₹1,50,000 ==> text("Inventory") = text("CA") - text("QA") = 2,50,000 - 1,50,000 =$ *₹1,00,000*.
+  3. *Total Assets & Shareholders' Funds:* Total Debt = Non-Current Debt (₹3,00,000) + CL (₹1,00,000) = ₹4,00,000. Since Proprietary Ratio = 0.6, Debt = 40% of Total Assets $==> text("Total Assets") = 4,00,000 / 0.4 =$ *₹10,00,000*; $text("Shareholders' Funds") = 0.6 times 10,00,000 =$ *₹6,00,000*.
 ]
 
 #pagebreak()
 
-// PAGE 13: MASTER MINDMAP & SYNTHESIS
+// PAGE 12: MASTER MINDMAP & SYNTHESIS
 #figure(
-  image("assets/acc_analysis_mindmap.png", width: 78%),
+  image("assets/acc_analysis_mindmap.png", width: 70%),
   caption: [Master Synthesis Mindmap: Structural framework of Unit V Analysis of Financial Statements.],
 )
 
@@ -394,7 +320,7 @@ The complete financial statement analysis toolkit links corporate reporting to a
 
 #pagebreak()
 
-// PAGE 14: CHEATSHEET & TOP 7 TRAPS
+// PAGE 13: CHEATSHEET & TOP 7 TRAPS
 #cheatsheet-box(title: "Master Financial Analysis Revision Cheatsheet")[
   - *Schedule III Major Heads:* Equity: Shareholders' Funds, Non-Current Liab, Current Liab | Assets: Non-Current Assets, Current Assets.
   - *Common-Size Bases:* Balance Sheet = *Total Assets (100%)* | Income Statement = *Revenue from Operations (100%)*.
@@ -420,7 +346,7 @@ The complete financial statement analysis toolkit links corporate reporting to a
 
 #pagebreak()
 
-// PAGE 15: PRACTICE MCQS (Q1 - Q5)
+// PAGE 14: PRACTICE MCQS (Q1 - Q5)
 = CUET UG Exam-Style Practice Questions
 
 #mcq(
@@ -479,17 +405,17 @@ The complete financial statement analysis toolkit links corporate reporting to a
 
 #mcq(
   4,
-  [The Current Ratio of a enterprise is 2.5 : 1. Which of the following transactions will IMPROVE the Current Ratio?],
+  [The Current Ratio of an enterprise is 2.5 : 1. Which of the following transactions will IMPROVE the Current Ratio?],
   (
     [Purchasing goods of ₹20,000 on credit],
-    [Paying a trade creditor ₹30,000 in cash],
     [Selling goods costing ₹10,000 for ₹10,000 cash],
     [Purchasing machinery of ₹50,000 for cash],
+    [Paying a trade creditor ₹30,000 in cash],
   ),
 )
 #solution(
   4,
-  answer: [B],
+  answer: [D],
   [
     When original CR > 1, an equal decrease in both numerator (CA) and denominator (CL) increases the ratio. For example: $(2,50,000 - 30,000) / (1,00,000 - 30,000) = 2,20,000 / 70,000 = bold("3.14 : 1")$.
   ],
@@ -515,7 +441,7 @@ The complete financial statement analysis toolkit links corporate reporting to a
 
 #pagebreak()
 
-// PAGE 16: PRACTICE MCQS (Q6 - Q10)
+// PAGE 15: PRACTICE MCQS (Q6 - Q10)
 #mcq(
   6,
   [Cost of Revenue from Operations is ₹6,00,000; Opening Inventory is ₹1,40,000; Closing Inventory is ₹1,00,000. What is the Inventory Turnover Ratio?],
@@ -539,14 +465,14 @@ The complete financial statement analysis toolkit links corporate reporting to a
   [A company has a Debt-Equity Ratio of 2 : 1. Which of the following transactions will DECREASE the Debt-Equity Ratio?],
   (
     [Issue of 10% Debentures of ₹1,00,000 for cash],
-    [Issue of Equity Shares of ₹2,00,000 for cash],
     [Purchasing goods on credit of ₹50,000],
     [Redemption of preference shares at par],
+    [Issue of Equity Shares of ₹2,00,000 for cash],
   ),
 )
 #solution(
   7,
-  answer: [B],
+  answer: [D],
   [
     Issuing equity shares increases Shareholders' Funds (the denominator) without changing Long-Term Debt, thereby reducing the Debt-Equity Ratio.
   ],
@@ -608,20 +534,20 @@ The complete financial statement analysis toolkit links corporate reporting to a
 
 #pagebreak()
 
-// PAGE 17: PRACTICE MCQS (Q11 - Q15)
+// PAGE 16: PRACTICE MCQS (Q11 - Q15)
 #mcq(
   11,
   [Total Sales of a firm are ₹8,00,000 (including cash sales of ₹1,60,000). Sales returns are ₹40,000. Trade Receivables stand at ₹1,00,000. What is the Trade Receivables Turnover Ratio?],
   (
-    [6 times],
+    [6.4 times],
     [7.6 times],
     [8 times],
-    [6.4 times],
+    [6 times],
   ),
 )
 #solution(
   11,
-  answer: [A],
+  answer: [D],
   [
     Net Credit Sales = Total Sales (₹8,00,000) − Cash Sales (₹1,60,000) − Returns (₹40,000) = ₹6,00,000. $"TRTR" = 6,00,000 / 1,00,000 = bold("6 times")$.
   ],
