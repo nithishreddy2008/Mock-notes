@@ -43,6 +43,9 @@
   *CUET UG Exam Blueprint:* The Accountancy paper (Code 301) presents *50 compulsory questions* in *60 minutes* (+5 for correct, -1 for incorrect). Reconstitution forms the largest single thematic block in partnership accounting, contributing 8–10 questions. NTA heavily tests ratio transitions, AS-26 goodwill restrictions, Workmen Compensation Reserve claim brackets, hidden goodwill on admission, and Section 37 executor settlements.
 ]
 
+#set text(size: 9.8pt)
+#set par(leading: 0.58em, spacing: 0.75em)
+
 = 1. Changes in the Profit-Sharing Ratio
 
 A change in the profit-sharing ratio (PSR) among existing partners constitutes a *reconstitution* of the firm. The existing partnership agreement ends, and a new agreement comes into existence without dissolving the business entity itself.
@@ -120,7 +123,7 @@ Assets and liabilities are recorded in the books at historical cost or unadjuste
 - *Closure:* The balance (net profit or loss on revaluation) is strictly transferred to the *Old Partners' Capital/Current Accounts in their OLD profit-sharing ratio*. It is never carried forward.
 
 #figure(
-  image("assets/acc_reconstitution_ratios_and_revaluation.png", width: 88%),
+  image("assets/acc_reconstitution_ratios_and_revaluation.png", width: 78%),
   caption: [Reconstitution Mechanics: Sacrificing & Gaining Ratios, Revaluation Account rules, and Net Adjustment Entries.],
 )
 
@@ -292,7 +295,7 @@ Under Section 31 of the Indian Partnership Act, 1932, a new partner can be admit
   $"New Share" = "Old Share" - "Sacrifice"$.
 
 #figure(
-  image("assets/acc_reconstitution_goodwill_admission_retirement.png", width: 88%),
+  image("assets/acc_reconstitution_goodwill_admission_retirement.png", width: 78%),
   caption: [Admission, Retirement & Goodwill Protocols: Valuation equations, Premium pathways, and Section 37 dues.],
 )
 
@@ -402,10 +405,24 @@ The balance in the deceased partner's Capital Account is transferred to the *Exe
   - *Total Payment over Two Years:* ₹1,09,000 (Principal ₹1,00,000 + Total Interest ₹9,000).
 ]
 
+#pagebreak()
+
+= 7. Strategic Examination Synthesis
+
+The complete reconstitution framework integrates five interconnected transitions across the life cycle of a partnership firm:
+1. *Profit-Sharing Adjustment:* Quantifying Sacrificing and Gaining shares ($sum "Sacrifices" = sum "Gains"$) and passing net compensatory entries without altering ledger values.
+2. *Asset & Liability Revaluation:* Operating a nominal Revaluation Account to determine unrecorded values and distribute net gain/loss strictly in the old PSR.
+3. *Reserves & Balance Sheet Clean-up:* Fully transferring free reserves, accumulated profits, and losses to existing partners prior to any capital restructuring.
+4. *Goodwill & Capital Restructuring:* Enforcing mandatory AS-26 standards (internally generated goodwill is never recognized as an asset) and adjusting capital through incoming or outgoing settlements.
+5. *Dissolution of Outgoing Claims:* Computing deceased or retiring partners' claims, interim profits, and applying Section 37 statutory interest (6% p.a.) on unpaid balances.
+
 #figure(
-  image("assets/acc_reconstitution_mindmap.png", width: 84%),
+  image("assets/acc_reconstitution_mindmap.png", width: 70%),
   caption: [Master Synthesis Mindmap: Structural framework of Unit II Reconstitution of a Partnership Firm.],
 )
+
+#pagebreak()
+
 
 #cheatsheet-box(title: "Master Reconstitution of Partnership Revision Cheatsheet")[
   - *Ratios:* Sacrificing Share = $"Old" - "New"$ | Gaining Share = $"New" - "Old"$ | $sum "Sacrifices" = sum "Gains"$.
@@ -510,9 +527,9 @@ The balance in the deceased partner's Capital Account is transferred to the *Exe
   [A firm has a Workmen Compensation Reserve of ₹80,000. At reconstitution, an admitted compensation claim is ₹92,000. The excess ₹12,000 is:],
   (
     [Credited to Revaluation A/c],
-    [Debited to Revaluation A/c],
-    [Distributed among old partners],
     [Borne by the incoming partner],
+    [Distributed among old partners],
+    [Debited to Revaluation A/c],
   ),
 )
 #solution(
@@ -520,7 +537,7 @@ The balance in the deceased partner's Capital Account is transferred to the *Exe
   [
     The initial ₹80,000 is absorbed by the reserve. The excess claim of ₹12,000 is a reconstitution loss debited to Revaluation Account.
   ],
-  answer: [B],
+  answer: [D],
 )
 
 #pagebreak()
@@ -548,9 +565,9 @@ The balance in the deceased partner's Capital Account is transferred to the *Exe
   [Capital employed is ₹5,00,000, NRR is 10%, and average maintainable profit is ₹62,000. Goodwill at 2 years' purchase of super profit is:],
   (
     [₹12,000],
-    [₹24,000],
-    [₹50,000],
     [₹62,000],
+    [₹50,000],
+    [₹24,000],
   ),
 )
 #solution(
@@ -558,7 +575,7 @@ The balance in the deceased partner's Capital Account is transferred to the *Exe
   [
     Normal profit = ₹5,00,000 × 10% = ₹50,000. Super profit = ₹62,000 − ₹50,000 = ₹12,000. Goodwill = ₹12,000 × 2 = ₹24,000.
   ],
-  answer: [B],
+  answer: [D],
 )
 
 #mcq(
@@ -601,10 +618,10 @@ The balance in the deceased partner's Capital Account is transferred to the *Exe
   10,
   [Under AS-26, when an incoming partner cannot bring his share of goodwill premium in cash, the debit is made to:],
   (
-    [Incoming Partner's Current A/c],
+    [Profit and Loss Adjustment A/c],
     [Goodwill Account],
     [Sacrificing Partners' Capital A/cs],
-    [Profit and Loss Adjustment A/c],
+    [Incoming Partner's Current A/c],
   ),
 )
 #solution(
@@ -612,7 +629,7 @@ The balance in the deceased partner's Capital Account is transferred to the *Exe
   [
     Under AS-26, self-generated goodwill cannot be raised. The new partner's Current A/c is debited to preserve his agreed capital contribution.
   ],
-  answer: [A],
+  answer: [D],
 )
 
 #pagebreak()
