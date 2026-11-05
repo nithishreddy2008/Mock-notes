@@ -48,6 +48,9 @@
   *CUET UG Pattern (NTA 2026–2027 Baseline):* The Physics paper contains 50 compulsory MCQs in 60 minutes ($+5$ marks for correct, $-1$ mark for incorrect). Unit 6 (Ray Optics & Optical Instruments) typically yields 4 to 6 questions spanning mirror/lens sign conventions, TIR critical angle conditions, minimum deviation of prisms, and telescope/microscope tube lengths.
 ]
 
+#set text(size: 10.5pt)
+#set par(leading: 0.44em, spacing: 0.46em)
+
 = Reflection at Spherical Mirrors
 
 A spherical mirror is a small slice cut from a hollow glass sphere, silvered on one side. When the *inner* (concave) surface reflects, the mirror converges parallel incident rays towards a real focal point. When the *outer* (convex) surface reflects, the mirror diverges rays outward, causing them to appear to diverge from a virtual focal point behind the mirror.
@@ -127,7 +130,7 @@ $ x = (t sin(i - r)) / (cos r) $
 Where $t$ is the thickness of the slab.
 
 #figure(
-  image("assets/physics_ray_optics_refraction_tir_prism.png", width: 84%),
+  image("assets/physics_ray_optics_refraction_tir_prism.png", width: 78%),
   caption: [Refraction, Total Internal Reflection & Prism Dynamics: Snell's law geometry, apparent depth shift, critical angle conditions in optical fibres, and minimum deviation symmetry in triangular prisms.],
 )
 
@@ -234,7 +237,7 @@ $ (1/f_("liq")) / (1/f_("air")) = ((mu_g / mu_l - 1)) / (mu_g - 1) ==> f_("liq")
 - *Cut Perpendicular to Principal Axis (Transverse):* An equiconvex lens ($R_1 = R, R_2 = -R$) has $1/f = (mu-1)(2/R)$. Each resulting plano-convex half has surfaces $R$ and $oo$, so $1/f' = (mu-1)(1/R) = 1/(2f)$. The focal length *doubles* ($f' = 2f$) and power is *halved* ($P' = P / 2$).
 
 #figure(
-  image("assets/physics_ray_optics_lenses_instruments.png", width: 84%),
+  image("assets/physics_ray_optics_lenses_instruments.png", width: 78%),
   caption: [Lensmaker's Formula & Optical Instruments: Biconvex lens curvature and focal convergence, compound microscope two-stage magnification relay, and astronomical vs Cassegrain reflecting telescopes.],
 )
 
@@ -330,10 +333,22 @@ Modern astronomical observatories exclusively utilize reflecting telescopes with
 4. *Giant Light-Gathering Power:* High-diameter apertures ($D_a > 10" m"$) gather vast amounts of light ($I prop D_a^2$) and provide razor-sharp angular resolution:
    $ theta = (1.22 lambda) / D_a $
 
-#figure(
-  image("assets/physics_ray_optics_mindmap.png", width: 84%),
-  caption: [Master Synthesis Mindmap: Structural framework of Unit 6 Ray Optics and Optical Instruments.],
-)
+#pagebreak()
+= Master Mindmap: Ray Optics & Optical Instruments
+
+#v(1em)
+#align(center)[
+  #figure(
+    image("assets/physics_ray_optics_mindmap.png", width: 70%),
+    caption: [Master Synthesis Mindmap: Structural framework of Unit 6 Ray Optics and Optical Instruments.],
+  )
+]
+
+#pagebreak()
+= High-Yield Cheatsheet & Exam Traps
+
+#set text(size: 7.5pt)
+#set par(leading: 0.36em, spacing: 0.38em)
 
 #cheatsheet-box(title: "Master Ray Optics & Optical Instruments Revision Cheatsheet")[
   - *Mirror Equation:* $1/v + 1/u = 1/f = 2/R$ | Magnification: $m = -v/u = f/(f-u)$.
@@ -350,7 +365,7 @@ Modern astronomical observatories exclusively utilize reflecting telescopes with
   - *Astronomical Telescope:* $M_oo = -f_o / f_e$ | $L = f_o + f_e$ | Near point: $M_D = -(f_o / f_e)(1 + f_e / D)$.
 ]
 
-#exception-box(title: "Top 7 High-Frequency CUET Traps in Ray Optics")[
+#tip-box(title: "The Seven Fatal CUET Traps in Ray Optics")[
   1. *The Mirror vs Lens Sign Trap:* Mirror formula is $1/v + 1/u = 1/f$ with $m = -v/u$; Lens formula is $1/v - 1/u = 1/f$ with $m = +v/u$. Mixing signs is the single most common source of $-1$ marks!
   2. *The Normal Shift Independence Trap:* Normal shift $Delta t = d(1 - 1/mu)$ depends *strictly on slab thickness $d$ and index $mu$*. It does *not* depend on the distance of the object from the slab!
   3. *TIR Direction Criterion Trap:* Total internal reflection can *never* occur when light enters from air to glass or water to glass. The ray *must* travel from denser to rarer medium with $i > theta_c$.
@@ -359,19 +374,22 @@ Modern astronomical observatories exclusively utilize reflecting telescopes with
   6. *Prism Minimum Deviation Base-Parallel Trap:* The ray inside a prism travels parallel to the base *only* when the prism is equilateral or isosceles *and* operating at minimum deviation ($i = e$).
   7. *Telescope vs Microscope Objective Trap:* A telescope requires a *large* $f_o$ and large aperture for high $M$ and resolution; a microscope requires a *very small* $f_o$ to maximize linear magnification $m_o approx L/f_o$!
 ]
-
 #pagebreak()
 
-= CUET UG Exam-Style Practice Questions
+= CUET UG Exam-Style Practice Questions (15 MCQs)
+
+#set text(size: 8.5pt)
+#set par(leading: 0.40em, spacing: 0.42em)
+
 
 #mcq(
   1,
   [An object is placed at a distance of $30.0" cm"$ in front of a concave mirror of focal length $20.0" cm"$. The image formed is:],
   (
     [Virtual, erect, at $60.0" cm"$ behind mirror],
-    [Real, inverted, at $60.0" cm"$ in front of mirror],
-    [Real, inverted, at $12.0" cm"$ in front of mirror],
     [Virtual, erect, at $12.0" cm"$ behind mirror],
+    [Real, inverted, at $12.0" cm"$ in front of mirror],
+    [Real, inverted, at $60.0" cm"$ in front of mirror],
   ),
 )
 #solution(
@@ -380,7 +398,7 @@ Modern astronomical observatories exclusively utilize reflecting telescopes with
     $1/v = 1/f - 1/u = 1/(-20) - 1/(-30) = -1/60 ==> v = -60.0" cm"$.
     $m = -v/u = -(-60)/(-30) = -2.0$. Real, inverted, magnified image at $60.0" cm"$ in front.
   ],
-  answer: [B],
+  answer: [D],
 )
 
 #mcq(
@@ -425,8 +443,8 @@ Modern astronomical observatories exclusively utilize reflecting telescopes with
   [A glass plate ($mu = 1.50$) of thickness $6.0" cm"$ is placed over a stamp. By what distance does the stamp appear raised when viewed normally?],
   (
     [$4.0" cm"$],
-    [$2.0" cm"$],
     [$1.5" cm"$],
+    [$2.0" cm"$],
     [$3.0" cm"$],
   ),
 )
@@ -435,7 +453,7 @@ Modern astronomical observatories exclusively utilize reflecting telescopes with
   [
     Normal shift $Delta t = d (1 - 1/mu) = 6.0 (1 - 1/1.50) = 6.0 (1/3) = 2.0" cm"$.
   ],
-  answer: [B],
+  answer: [C],
 )
 
 #mcq(
@@ -482,9 +500,9 @@ Modern astronomical observatories exclusively utilize reflecting telescopes with
   [A biconvex lens of glass ($mu = 1.50$) has radii of curvature $R_1 = 20.0" cm"$ and $R_2 = -30.0" cm"$. Its focal length in air is:],
   (
     [$+12.0" cm"$],
-    [$+24.0" cm"$],
-    [$+50.0" cm"$],
     [$+15.0" cm"$],
+    [$+50.0" cm"$],
+    [$+24.0" cm"$],
   ),
 )
 #solution(
@@ -492,7 +510,7 @@ Modern astronomical observatories exclusively utilize reflecting telescopes with
   [
     Lensmaker's formula: $1/f = (mu - 1)(1/R_1 - 1/R_2) = (1.5 - 1)(1/20 - (-1/30)) = 0.5 times (3 + 2)/60 = 0.5 times 5/60 = 5/120 = 1/24 ==> f = +24.0" cm"$.
   ],
-  answer: [B],
+  answer: [D],
 )
 
 #mcq(
@@ -558,9 +576,9 @@ Modern astronomical observatories exclusively utilize reflecting telescopes with
   [An equilateral triangular glass prism ($A = 60 degree$) produces an angle of minimum deviation $delta_m = 30 degree$. The refractive index of the prism material is:],
   (
     [$1.50$],
-    [$sqrt(2) approx 1.414$],
-    [$sqrt(3) approx 1.732$],
     [$1.33$],
+    [$sqrt(3) approx 1.732$],
+    [$sqrt(2) approx 1.414$],
   ),
 )
 #solution(
@@ -568,7 +586,7 @@ Modern astronomical observatories exclusively utilize reflecting telescopes with
   [
     Prism formula: $mu = (sin((A + delta_m)/2)) / (sin(A/2)) = (sin((60 degree + 30 degree)/2)) / (sin(60 degree / 2)) = (sin 45 degree) / (sin 30 degree) = (1/sqrt(2)) / (1/2) = 2 / sqrt(2) = sqrt(2) approx 1.414$.
   ],
-  answer: [B],
+  answer: [D],
 )
 
 #mcq(
