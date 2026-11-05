@@ -43,6 +43,11 @@
   *CUET UG Pattern (NTA 2026–2027 Baseline):* The Accountancy paper (Code 301) carries 50 compulsory MCQs in 60 minutes ($+5$ marks for correct, $-1$ mark for incorrect). Unit I (Partnership Fundamentals) serves as the conceptual bedrock for all reconstitution and company accounting units, typically contributing 6 to 8 direct computation and concept MCQs.
 ]
 
+#pagebreak()
+
+#set text(size: 9.9pt)
+#set par(leading: 0.58em, spacing: 0.78em)
+
 = The Partnership Firm & Statutory Rules
 
 Two entrepreneurs establish a commercial venture together. One contributes greater capital, while the other devotes full-time managerial labor. At the close of the financial year, a decisive question emerges: how should the net surplus be allocated fairly and transparently? Partnership accounting exists to resolve that allocation without ambiguity. The firm's first legal safeguard is a written *Partnership Deed*—the foundational contract executed by all partners.
@@ -195,7 +200,7 @@ Under this system, only *one single account*—the *Partner's Capital Account*�
 ]
 
 #figure(
-  image("assets/acc_partnership_provisions_and_accounts.png", width: 84%),
+  image("assets/acc_partnership_provisions_and_accounts.png", width: 76%),
   caption: [Partnership Fundamentals: Statutory default provisions under the Indian Partnership Act 1932, Capital Ledger Architectures, and Charges vs Appropriations.],
 )
 
@@ -311,7 +316,7 @@ Drawings represent amounts withdrawn by partners for personal household use. Int
 ]
 
 #figure(
-  image("assets/acc_partnership_appropriation_and_drawings.png", width: 84%),
+  image("assets/acc_partnership_appropriation_and_drawings.png", width: 76%),
   caption: [Appropriation Architecture & Drawings Valuation: P&L Appropriation T-Account layout, Average-Period interest matrix, and Guarantee hierarchy.],
 )
 
@@ -385,10 +390,21 @@ Instead, a single composite adjustment entry is passed at the beginning of the n
   (Being omission of interest on capital adjusted through partners' current accounts).
 ]
 
+#pagebreak()
+
 #figure(
-  image("assets/acc_partnership_mindmap.png", width: 84%),
-  caption: [Master Synthesis Mindmap: Structural framework of Unit I Accounting for Partnership: Basic Concepts.],
+  image("assets/acc_partnership_mindmap.png", width: 70%),
+  caption: [Master Synthesis Architecture: Complete Unit I cognitive roadmap integrating partnership provisions, ledger architectures, interest formulas, and guarantee hierarchies.],
 )
+
+#v(2pt)
+
+#exam-pointer(title: "Master Synthesis Map & Problem-Solving Diagnostics")[
+  - *Charges vs Appropriations Distinction:* Items categorized as charges (Interest on Partner's Loan @ 6% p.a., Rent paid to partner, Manager's commission) MUST be debited to Profit & Loss Account even if the firm suffers net losses. In contrast, appropriations (Interest on Capital, Partner Salary, Commission) are debited to P&L Appropriation Account and are restricted to the extent of available divisible profits.
+  - *Fixed vs Fluctuating Ledger Architecture:* Under Fixed Capital, Partner's Capital Account records ONLY opening balance, fresh capital introduced, and permanent withdrawals (drawings out of capital). All routine entitlements (drawings out of profit, IOC, IOD, salary, profit share) flow exclusively through the Partner's Current Account. Under Fluctuating Capital, all entries are combined into a single Capital Account.
+  - *Interest on Drawings Shortcuts:* For regular monthly drawings: Beginning of each month = 6.5 months; Middle of each month = 6.0 months; End of each month = 5.5 months. For quarterly drawings: Beginning = 7.5 months; Middle = 6.0 months; End = 4.5 months. When dates are omitted, apply average 6 months!
+  - *Guarantee Deficiency Ordering:* When a partner guarantees a minimum profit to the firm, any deficiency between actual earnings and guaranteed amount is first debited to that partner's capital. Divisible profit is then determined and allocated according to agreed profit-sharing ratios and personal guarantees.
+]
 
 #pagebreak()
 
@@ -459,8 +475,8 @@ Instead, a single composite adjustment entry is passed at the beginning of the n
   3,
   [Under the fixed capital system, where is a partner's annual salary entitlement recorded in the accounting records?],
   (
-    [Credit side of Partner's Capital Account],
     [Credit side of Partner's Current Account],
+    [Credit side of Partner's Capital Account],
     [Debit side of Partner's Current Account],
     [Debit side of Profit & Loss Account],
   ),
@@ -470,7 +486,7 @@ Instead, a single composite adjustment entry is passed at the beginning of the n
   [
     In the fixed capital system, the Capital Account records only permanent capital changes. All operational entitlements (salary, IOC, profit) are credited to Current Account.
   ],
-  answer: [B],
+  answer: [A],
 )
 
 #mcq(
@@ -495,8 +511,8 @@ Instead, a single composite adjustment entry is passed at the beginning of the n
   5,
   [A partner draws ₹2,000 on the first day of every month throughout the year. If interest on drawings is charged @ 6% p.a., the total interest is:],
   (
-    [₹720],
     [₹780],
+    [₹720],
     [₹840],
     [₹1,440],
   ),
@@ -507,7 +523,7 @@ Instead, a single composite adjustment entry is passed at the beginning of the n
     Total drawings $= 2,000 times 12 = "₹24,000"$. Beginning of month: $T_("avg") = (12 + 1)/2 = 6.5" mos"$.
     $"IOD" = 24,000 times 6/100 times 6.5/12 = "₹780"$.
   ],
-  answer: [B],
+  answer: [A],
 )
 
 #pagebreak()
@@ -535,9 +551,9 @@ Instead, a single composite adjustment entry is passed at the beginning of the n
   [A, B and C share profits equally. Firm profit is ₹36,000. C is guaranteed a minimum profit of ₹15,000 by the firm. B's final share of profit is:],
   (
     [₹12,000],
-    [₹10,500],
-    [₹13,500],
     [₹15,000],
+    [₹13,500],
+    [₹10,500],
   ),
 )
 #solution(
@@ -545,7 +561,7 @@ Instead, a single composite adjustment entry is passed at the beginning of the n
   [
     Normal share $= 36,000 / 3 = "₹12,000"$ each. Deficiency for C $= 15,000 - 12,000 = "₹3,000"$, borne equally by A and B (₹1,500 each). B's final $= 12,000 - 1,500 = "₹10,500"$.
   ],
-  answer: [B],
+  answer: [D],
 )
 
 #mcq(
@@ -553,9 +569,9 @@ Instead, a single composite adjustment entry is passed at the beginning of the n
   [When an omission of interest on capital is corrected through a single past adjustment entry, the journal entry requires:],
   (
     [Debiting P&L Appropriation Account],
-    [Debiting Gaining Partner and Crediting Sacrificing Partner],
-    [Debiting Cash Account],
     [Crediting General Reserve Account],
+    [Debiting Cash Account],
+    [Debiting Gaining Partner and Crediting Sacrificing Partner],
   ),
 )
 #solution(
@@ -563,7 +579,7 @@ Instead, a single composite adjustment entry is passed at the beginning of the n
   [
     Single adjustment entries correct inter-partner imbalances without reopening closed books: Gaining Partner's Capital/Current A/c Dr. to Sacrificing Partner's Capital/Current A/c Cr.
   ],
-  answer: [B],
+  answer: [D],
 )
 
 #mcq(
