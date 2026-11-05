@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CUET Business Studies: Fayol vs Taylor Principles & Techniques Matrix</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 18px 24px;
+    overflow: hidden;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 10px;
+    margin-bottom: 12px;
+  }
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .brand-badge {
+    background: #071A4D;
+    color: #B8FF34;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .title-group h1 {
+    font-size: 19px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .title-group p {
+    font-size: 11.5px;
+    color: #64748B;
+    margin-top: 1px;
+  }
+  .header-tag {
+    background: #EAF0FF;
+    color: #1F5EFF;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+    border: 1px solid #C7D9FE;
+  }
+
+  /* Top Banner: Fayol vs Taylor */
+  .diff-banner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+  .diff-box {
+    background: #FFFFFF;
+    border: 1.5px solid #CBD5E1;
+    border-radius: 9px;
+    padding: 8px 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .diff-box.fayol { border-left: 5px solid #1F5EFF; }
+  .diff-box.taylor { border-left: 5px solid #0E7A4A; }
+  .diff-badge {
+    font-size: 11px;
+    font-weight: 800;
+    padding: 3px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    flex-shrink: 0;
+  }
+  .fayol .diff-badge { background: #DBEAFE; color: #1E40AF; }
+  .taylor .diff-badge { background: #DCFCE7; color: #166534; }
+  .diff-txt {
+    font-size: 11.5px;
+    color: #334155;
+    line-height: 1.35;
+  }
+  .diff-txt b { color: #0F172A; }
+
+  /* 4 Pillars Grid */
+  .grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    height: 645px;
+  }
+
+  .col-card {
+    background: #FFFFFF;
+    border: 1.5px solid #CBD5E1;
+    border-radius: 11px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .col-header {
+    padding: 9px 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid #E2E8F0;
+  }
+  .col-1 .col-header { background: #EEF4FF; border-top: 4px solid #1F5EFF; }
+  .col-2 .col-header { background: #F0FDF4; border-top: 4px solid #0E7A4A; }
+  .col-3 .col-header { background: #FFF7ED; border-top: 4px solid #C2410C; }
+  .col-4 .col-header { background: #FAF5FF; border-top: 4px solid #7E22CE; }
+
+  .col-header h2 {
+    font-size: 13.5px;
+    font-weight: 800;
+  }
+  .col-1 .col-header h2 { color: #1F5EFF; }
+  .col-2 .col-header h2 { color: #0E7A4A; }
+  .col-3 .col-header h2 { color: #C2410C; }
+  .col-4 .col-header h2 { color: #7E22CE; }
+
+  .col-badge {
+    margin-left: auto;
+    font-size: 9.5px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+  .col-1 .col-badge { background: #DBEAFE; color: #1E40AF; }
+  .col-2 .col-badge { background: #DCFCE7; color: #166534; }
+  .col-3 .col-badge { background: #FFEDD5; color: #9A3412; }
+  .col-4 .col-badge { background: #F3E8FF; color: #6B21A8; }
+
+  .col-body {
+    padding: 9px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+    overflow: hidden;
+  }
+
+  .item-box {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 7px;
+    padding: 7px 9px;
+  }
+  .item-box h3 {
+    font-size: 11.5px;
+    font-weight: 700;
+    color: #0F172A;
+    margin-bottom: 2px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .item-box p {
+    font-size: 10.5px;
+    color: #475569;
+    line-height: 1.35;
+  }
+  .item-box .tag {
+    font-size: 8.5px;
+    font-weight: 700;
+    padding: 1px 4px;
+    border-radius: 3px;
+    background: #E2E8F0;
+    color: #334155;
+  }
+
+  .highlight-rule {
+    background: #FEF3C7;
+    border: 1px solid #F59E0B;
+    border-radius: 6px;
+    padding: 6px 8px;
+    font-size: 10px;
+    color: #92400E;
+    line-height: 1.35;
+    margin-top: auto;
+  }
+  .highlight-rule b {
+    color: #78350F;
+  }
+
+  .footer-bar {
+    grid-column: span 4;
+    background: #071A4D;
+    color: #FFFFFF;
+    border-radius: 7px;
+    padding: 7px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 11px;
+    margin-top: 10px;
+  }
+  .footer-bar b {
+    color: #B8FF34;
+  }
+  .footer-pills {
+    display: flex;
+    gap: 6px;
+  }
+  .footer-pill {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 2px 7px;
+    border-radius: 4px;
+    font-size: 9.5px;
+    font-weight: 600;
+    color: #E2E8F0;
+  }
+</style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-left">
+      <div class="brand-badge">OurMocks CUET UG</div>
+      <div class="title-group">
+        <h1>Principles of Management: Classical vs Scientific Comparative Framework</h1>
+        <p>Nature & Significance of Principles, Henri Fayol's 14 Administrative Laws, and F.W. Taylor's Scientific Techniques</p>
+      </div>
+    </div>
+    <div class="header-tag">CUET Business Studies · Unit 2</div>
+  </div>
+
+  <!-- Fayol vs Taylor Comparative Banner -->
+  <div class="diff-banner">
+    <div class="diff-box fayol">
+      <span class="diff-badge">Henri Fayol</span>
+      <div class="diff-txt"><b>Administrative Top-Down Perspective:</b> Mining engineer; focus on overarching administrative efficiency, 14 universal principles, general theory of management, and functional processes.</div>
+    </div>
+    <div class="diff-box taylor">
+      <span class="diff-badge">F.W. Taylor</span>
+      <div class="diff-txt"><b>Scientific Bottom-Up Shop-Floor:</b> Mechanical engineer; focus on factory floor productivity, eliminating physical waste, standardizing tools, work-study experiments, and differential wages.</div>
+    </div>
+  </div>
+
+  <!-- Grid of 4 Pillars -->
+  <div class="grid-4">
+
+    <!-- Pillar 1: Nature of Principles -->
+    <div class="col-card col-1">
+      <div class="col-header">
+        <h2>1. Nature of Principles</h2>
+        <span class="col-badge">Core Essence</span>
+      </div>
+      <div class="col-body">
+        <div class="item-box">
+          <h3>Universal & General Guidelines <span class="tag">Scope</span></h3>
+          <p>Applicable to all enterprises regardless of size, ownership, or culture. Provide practical guidance rather than rigid, ready-made solutions.</p>
+        </div>
+        <div class="item-box">
+          <h3>Formed by Observation & Trial <span class="tag">Empirical</span></h3>
+          <p>Derived through decades of empirical observation in real factories and validated through continuous workplace experimentation.</p>
+        </div>
+        <div class="item-box">
+          <h3>Flexible & Dynamic Adaptation <span class="tag">Modifiable</span></h3>
+          <p>Not rigid mathematical formulas. Managers have the discretion to modify them according to changing organizational contingencies.</p>
+        </div>
+        <div class="item-box">
+          <h3>Behavioral & Cause-Effect <span class="tag">Human Focus</span></h3>
+          <p>Aims primarily to influence human behavior at work. Establishes predictive relationships: if action X is taken, consequence Y tends to follow.</p>
+        </div>
+        <div class="highlight-rule">
+          <b>CUET Crucial Fact:</b> Principles are <i>contingent</i>. Their application depends entirely on prevailing workplace situations at a given point in time.
+        </div>
+      </div>
+    </div>
+
+    <!-- Pillar 2: Fayol's 14 Principles -->
+    <div class="col-card col-2">
+      <div class="col-header">
+        <h2>2. Fayol's 14 Principles</h2>
+        <span class="col-badge">Administrative</span>
+      </div>
+      <div class="col-body">
+        <div class="item-box">
+          <h3>Division of Work & Discipline <span class="tag">Specialization</span></h3>
+          <p><b>Division of Work:</b> Specialization increases output.<br><b>Discipline:</b> Obedience to organizational rules and fair penalties.<br><b>Authority & Responsibility:</b> Parity between the two.</p>
+        </div>
+        <div class="item-box">
+          <h3>Unity of Command & Direction <span class="tag">Chain</span></h3>
+          <p><b>Unity of Command:</b> One subordinate receives orders from ONE superior only.<br><b>Unity of Direction:</b> One head and one plan for a group of activities with the same objective.</p>
+        </div>
+        <div class="item-box">
+          <h3>Scalar Chain & Gang Plank <span class="tag">Communication</span></h3>
+          <p>Formal line of authority from top to bottom. <b>Gang Plank:</b> Direct cross-communication between employees of equal rank in emergencies.</p>
+        </div>
+        <div class="item-box">
+          <h3>Order, Equity & Esprit de Corps <span class="tag">Human Spirit</span></h3>
+          <p><b>Order:</b> Right place for everything and everyone.<br><b>Equity:</b> Fair, kind, and just treatment.<br><b>Esprit de Corps:</b> Replaces 'I' with 'We' for team spirit.</p>
+        </div>
+        <div class="highlight-rule">
+          <b>Key Distinction:</b> Unity of Command prevents dual subordination; Unity of Direction prevents overlapping activities.
+        </div>
+      </div>
+    </div>
+
+    <!-- Pillar 3: Taylor's Scientific Principles -->
+    <div class="col-card col-3">
+      <div class="col-header">
+        <h2>3. Taylor's Principles</h2>
+        <span class="col-badge">Scientific Base</span>
+      </div>
+      <div class="col-body">
+        <div class="item-box">
+          <h3>Science, Not Rule of Thumb <span class="tag">Standardization</span></h3>
+          <p>Replace trial-and-error intuition with scientific analysis of every job element to discover the "one best method" of performing work.</p>
+        </div>
+        <div class="item-box">
+          <h3>Harmony, Not Discord <span class="tag">Mental Revolution</span></h3>
+          <p>Complete mental revolution between workers and management. Realization that prosperity for employer cannot exist without prosperity for worker.</p>
+        </div>
+        <div class="item-box">
+          <h3>Cooperation, Not Individualism <span class="tag">Involvement</span></h3>
+          <p>Extension of Harmony. Management should take workers into confidence before setting standards and welcome constructive worker suggestions.</p>
+        </div>
+        <div class="item-box">
+          <h3>Development of Each Person <span class="tag">Efficiency</span></h3>
+          <p>Scientific selection of workers, systematic training in the best methods, and assignment of tasks matching physical and mental capabilities.</p>
+        </div>
+        <div class="highlight-rule">
+          <b>Mental Revolution:</b> Transformation of mutual mindset from fighting over division of surplus to cooperating to maximize the surplus.
+        </div>
+      </div>
+    </div>
+
+    <!-- Pillar 4: Taylor's Scientific Techniques -->
+    <div class="col-card col-4">
+      <div class="col-header">
+        <h2>4. Taylor's Techniques</h2>
+        <span class="col-badge">Shop Floor</span>
+      </div>
+      <div class="col-body">
+        <div class="item-box">
+          <h3>Functional Foremanship <span class="tag">8 Bosses</span></h3>
+          <p>Separates Planning from Execution. <b>Planning Incharge:</b> Instruction Card, Route, Time & Cost, Disciplinarian.<br><b>Production Incharge:</b> Speed, Gang, Repair, Inspector.</p>
+        </div>
+        <div class="item-box">
+          <h3>Work-Study Experiments <span class="tag">Time & Motion</span></h3>
+          <p><b>Method Study:</b> Finding the one best way.<br><b>Motion Study:</b> Eliminating unproductive gestures.<br><b>Time Study:</b> Standard time & workforce size.<br><b>Fatigue Study:</b> Rest intervals frequency & length.</p>
+        </div>
+        <div class="item-box">
+          <h3>Differential Piece Wage System <span class="tag">Incentive</span></h3>
+          <p>Higher wage rate for workers who achieve or exceed standard output; lower wage rate for workers falling below standard (sharp incentive).</p>
+        </div>
+        <div class="highlight-rule">
+          <b>Foremanship Violation:</b> Functional Foremanship deliberately violates Fayol's Unity of Command by placing 8 bosses over 1 worker!
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bottom Strategy Banner -->
+  <div class="footer-bar">
+    <div><b>CUET EXAM PRINCIPLE:</b> Fayol builds an administrative architecture applicable to any organization; Taylor builds operational precision engineering on the factory floor.</div>
+    <div class="footer-pills">
+      <span class="footer-pill">Fayol: Unity of Command</span>
+      <span class="footer-pill">Taylor: Functional Foremanship</span>
+      <span class="footer-pill">Gang Plank Emergency Rule</span>
+      <span class="footer-pill">Mental Revolution</span>
+    </div>
+  </div>
+
+</body>
+</html>
