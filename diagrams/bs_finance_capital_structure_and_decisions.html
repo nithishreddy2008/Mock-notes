@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px 32px;
+    overflow: hidden;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #071A4D;
+    padding: 16px 28px;
+    border-radius: 12px;
+    border-bottom: 4px solid #1F5EFF;
+    margin-bottom: 20px;
+  }
+  .header-left h1 {
+    color: #FFFFFF;
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+  }
+  .header-left p {
+    color: #94A3B8;
+    font-size: 13px;
+    font-weight: 500;
+    margin-top: 3px;
+  }
+  .badge {
+    background: #1F5EFF;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+  }
+  .main-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.95fr 1.1fr;
+    gap: 18px;
+    height: 690px;
+  }
+  .card {
+    background: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    border-radius: 12px;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+  }
+  .card-title {
+    font-size: 16px;
+    font-weight: 800;
+    color: #071A4D;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #E2E8F0;
+  }
+  .card-title .icon {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #1F5EFF;
+  }
+
+  /* Left Column: Trading on Equity & EBIT-EPS */
+  .leverage-box {
+    background: #F1F5F9;
+    border: 1px solid #CBD5E1;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 12px;
+  }
+  .lev-title {
+    font-size: 13px;
+    font-weight: 800;
+    color: #0F172A;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+  }
+  .tag-green {
+    background: #DCFCE7;
+    color: #166534;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 6px;
+  }
+  .tag-red {
+    background: #FEE2E2;
+    color: #991B1B;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 6px;
+  }
+  .lev-body {
+    font-size: 12px;
+    color: #334155;
+    line-height: 1.45;
+  }
+  .formula-box {
+    background: #071A4D;
+    color: #FFFFFF;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 12px;
+    margin-top: 8px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  }
+  .formula-box span {
+    color: #38BDF8;
+    font-weight: bold;
+  }
+
+  /* Center Column: Determinants of Capital Structure */
+  .factor-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    padding: 8px 10px;
+    background: #F8FAFC;
+    border-radius: 8px;
+    border-left: 3px solid #1F5EFF;
+  }
+  .factor-num {
+    background: #071A4D;
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: 800;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .factor-text h4 {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: #071A4D;
+  }
+  .factor-text p {
+    font-size: 11.5px;
+    color: #475569;
+    line-height: 1.35;
+    margin-top: 2px;
+  }
+
+  /* Right Column: Fixed vs Working Capital */
+  .sub-section {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 12px;
+  }
+  .sub-title {
+    font-size: 13px;
+    font-weight: 800;
+    color: #071A4D;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .sub-title span {
+    font-size: 11px;
+    color: #64748B;
+    font-weight: normal;
+  }
+  .caps-list {
+    list-style: none;
+    font-size: 11.5px;
+    color: #334155;
+    line-height: 1.5;
+  }
+  .caps-list li {
+    position: relative;
+    padding-left: 14px;
+    margin-bottom: 4px;
+  }
+  .caps-list li::before {
+    content: "•";
+    position: absolute;
+    left: 2px;
+    color: #1F5EFF;
+    font-weight: bold;
+  }
+  .caps-list b {
+    color: #071A4D;
+  }
+
+  /* Bottom Banner */
+  .summary-banner {
+    grid-column: 1 / -1;
+    background: #EEF2FF;
+    border: 1px solid #C7D2FE;
+    border-radius: 8px;
+    padding: 10px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12.5px;
+    color: #1E1B4B;
+    font-weight: 600;
+  }
+  .summary-banner span {
+    color: #1F5EFF;
+    font-weight: 800;
+  }
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="header-left">
+      <h1>FINANCIAL MANAGEMENT: CAPITAL STRUCTURE & WORKING CAPITAL DYNAMICS</h1>
+      <p>Unit IX · Official CUET UG Architecture · Trading on Equity, EBIT-EPS Leverage & Capital Determinants</p>
+    </div>
+    <div class="badge">FIGURE 2 · CONCEPT MATRIX</div>
+  </div>
+
+  <div class="main-grid">
+    <!-- Column 1: Financial Leverage & Trading on Equity -->
+    <div class="card">
+      <div class="card-title">
+        <div class="icon"></div>
+        Trading on Equity & EBIT-EPS Mechanics
+      </div>
+
+      <div class="leverage-box">
+        <div class="lev-title">
+          <span>Favorable Financial Leverage (Trading on Equity)</span>
+          <span class="tag-green">ROI &gt; Cost of Debt</span>
+        </div>
+        <div class="lev-body">
+          • Occurs when Return on Investment (ROI) exceeds contractual interest rate on debt.<br>
+          • Adding cheaper debt in capital structure magnifies Earnings Per Share (EPS).<br>
+          • <b>Shareholders benefit</b> directly from fixed-interest contractual claims.
+        </div>
+        <div class="formula-box">
+          Condition: <span>ROI (e.g. 15%) &gt; Cost of Debt (10%)</span><br>
+          Outcome: EPS increases with higher Debt-Equity ratio
+        </div>
+      </div>
+
+      <div class="leverage-box">
+        <div class="lev-title">
+          <span>Unfavorable Leverage (Negative Trading on Equity)</span>
+          <span class="tag-red">ROI &lt; Cost of Debt</span>
+        </div>
+        <div class="lev-body">
+          • Occurs when Return on Investment falls below the contractual cost of debt.<br>
+          • Fixed interest charges burden operating profits, causing EPS to plummet.<br>
+          • Heightens <b>financial risk</b> and probability of insolvency.
+        </div>
+        <div class="formula-box" style="background:#450A0A;">
+          Condition: <span style="color:#FCA5A5;">ROI (e.g. 6%) &lt; Cost of Debt (10%)</span><br>
+          Outcome: EPS collapses; equity value destroyed
+        </div>
+      </div>
+
+      <div style="font-size:11.5px; color:#475569; line-height:1.4; padding:6px 8px; background:#F8FAFC; border-radius:6px; border:1px dashed #CBD5E1;">
+        <b>Core CUET Takeaway:</b> Debt is a double-edged sword. It is the cheapest source due to interest tax-deductibility ($Cost = I(1 - T)$), but carries mandatory legal financial obligation.
+      </div>
+    </div>
+
+    <!-- Column 2: Determinants of Capital Structure -->
+    <div class="card">
+      <div class="card-title">
+        <div class="icon" style="background:#059669;"></div>
+        Capital Structure Determinants (NCERT)
+      </div>
+
+      <div class="factor-item">
+        <div class="factor-num">1</div>
+        <div class="factor-text">
+          <h4>Cash Flow Position</h4>
+          <p>Adequate operating cash flow required to service fixed debt commitments (interest + principal).</p>
+        </div>
+      </div>
+
+      <div class="factor-item">
+        <div class="factor-num">2</div>
+        <div class="factor-text">
+          <h4>ICR & DSCR Ratios</h4>
+          <p>Interest Coverage Ratio ($EBIT / Interest$) & Debt Service Coverage Ratio evaluate cash solvency.</p>
+        </div>
+      </div>
+
+      <div class="factor-item">
+        <div class="factor-num">3</div>
+        <div class="factor-text">
+          <h4>Tax Rate & Cost of Debt</h4>
+          <p>Higher corporate tax rate makes debt relatively cheaper because interest is tax-deductible.</p>
+        </div>
+      </div>
+
+      <div class="factor-item">
+        <div class="factor-num">4</div>
+        <div class="factor-text">
+          <h4>Control Consideration</h4>
+          <p>Debt financing prevents dilution of voting control; equity issue risks management takeover.</p>
+        </div>
+      </div>
+
+      <div class="factor-item">
+        <div class="factor-num">5</div>
+        <div class="factor-text">
+          <h4>Floatation Costs & Flexibility</h4>
+          <p>Public equity entails higher floatation costs (underwriting, broker fees) than private debt loans.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Column 3: Fixed vs Working Capital Determinants -->
+    <div class="card">
+      <div class="card-title">
+        <div class="icon" style="background:#7C3AED;"></div>
+        Capital Requirements Determinants
+      </div>
+
+      <div class="sub-section">
+        <div class="sub-title">
+          <span>Determinants of Fixed Capital</span>
+          <span>(Long-Term)</span>
+        </div>
+        <ul class="caps-list">
+          <li><b>Nature of Business:</b> Manufacturing &gt; Trading.</li>
+          <li><b>Scale of Operations:</b> Large enterprises need higher fixed assets.</li>
+          <li><b>Choice of Technique:</b> Capital-intensive &gt; Labor-intensive.</li>
+          <li><b>Technology Upgradation:</b> Fast obsolescence demands more capital.</li>
+          <li><b>Growth Prospects & Diversification:</b> Expands plant assets.</li>
+          <li><b>Financing / Leasing Alternatives:</b> Leasing reduces fixed capital.</li>
+        </ul>
+      </div>
+
+      <div class="sub-section">
+        <div class="sub-title">
+          <span>Determinants of Working Capital</span>
+          <span>(Short-Term)</span>
+        </div>
+        <ul class="caps-list">
+          <li><b>Operating Cycle:</b> Longer conversion cycle = Higher working capital.</li>
+          <li><b>Business Cycle & Seasonal:</b> Peak season / boom requires more WC.</li>
+          <li><b>Credit Allowed vs Availed:</b> Liberal credit given increases WC.</li>
+          <li><b>Operating Efficiency:</b> Higher inventory turnover reduces WC.</li>
+          <li><b>Inflation:</b> Rising raw material prices inflate WC requirement.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom Summary Banner -->
+    <div class="summary-banner">
+      <div><span>OPTIMAL CAPITAL STRUCTURE:</span> That mix of Debt and Equity which minimizes the overall Weighted Average Cost of Capital (WACC) and maximizes the market value of Equity Shares ($P_0$).</div>
+      <div style="font-size:11.5px; color:#475569;">CUET UG Business Studies · Code 310</div>
+    </div>
+  </div>
+
+</body>
+</html>
