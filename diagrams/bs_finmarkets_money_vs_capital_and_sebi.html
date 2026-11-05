@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px 32px;
+    overflow: hidden;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #071A4D;
+    padding: 16px 28px;
+    border-radius: 12px;
+    border-bottom: 4px solid #1F5EFF;
+    margin-bottom: 20px;
+  }
+  .header-left h1 {
+    color: #FFFFFF;
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+  }
+  .header-left p {
+    color: #94A3B8;
+    font-size: 13px;
+    font-weight: 500;
+    margin-top: 3px;
+  }
+  .badge {
+    background: #1F5EFF;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+  }
+  .main-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr 1.05fr;
+    gap: 18px;
+    height: 690px;
+  }
+  .card {
+    background: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    border-radius: 12px;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+  }
+  .card-title {
+    font-size: 15.5px;
+    font-weight: 800;
+    color: #071A4D;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #E2E8F0;
+  }
+  .card-title .icon {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #1F5EFF;
+  }
+
+  /* Column 1: Money Market Instruments */
+  .inst-box {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-left: 3.5px solid #1F5EFF;
+    border-radius: 8px;
+    padding: 9px 12px;
+    margin-bottom: 8px;
+  }
+  .inst-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3px;
+  }
+  .inst-head h4 {
+    font-size: 12.5px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .inst-badge {
+    font-size: 10.5px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 4px;
+    background: #E0E7FF;
+    color: #3730A3;
+  }
+  .inst-desc {
+    font-size: 11.2px;
+    color: #334155;
+    line-height: 1.38;
+  }
+  .inst-desc b {
+    color: #0F172A;
+  }
+
+  /* Column 2: Trading Pipeline */
+  .step-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .step-box {
+    display: flex;
+    gap: 12px;
+    background: #F8FAFC;
+    border: 1px solid #CBD5E1;
+    border-radius: 8px;
+    padding: 10px 12px;
+  }
+  .step-num {
+    background: #071A4D;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: 800;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .step-content h4 {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: #071A4D;
+  }
+  .step-content p {
+    font-size: 11.2px;
+    color: #475569;
+    line-height: 1.35;
+    margin-top: 2px;
+  }
+
+  /* Column 3: SEBI Triad & Depositories */
+  .sebi-group {
+    background: #F8FAFC;
+    border-radius: 8px;
+    border: 1px solid #E2E8F0;
+    padding: 10px 12px;
+    margin-bottom: 9px;
+  }
+  .sebi-title {
+    font-size: 12.5px;
+    font-weight: 800;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .sebi-list {
+    list-style: none;
+    font-size: 11px;
+    color: #334155;
+    line-height: 1.45;
+  }
+  .sebi-list li {
+    position: relative;
+    padding-left: 12px;
+    margin-bottom: 2px;
+  }
+  .sebi-list li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: #1F5EFF;
+    font-weight: bold;
+  }
+
+  /* Bottom Banner */
+  .summary-banner {
+    grid-column: 1 / -1;
+    background: #EEF2FF;
+    border: 1px solid #C7D2FE;
+    border-radius: 8px;
+    padding: 9px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: #1E1B4B;
+    font-weight: 600;
+  }
+  .summary-banner span {
+    color: #1F5EFF;
+    font-weight: 800;
+  }
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="header-left">
+      <h1>FINANCIAL MARKETS: INSTRUMENTS, TRADING PIPELINE & SEBI REGULATION</h1>
+      <p>Unit X · Official CUET UG Architecture · Money Market Instruments, T+1 Trading & Regulatory Triad</p>
+    </div>
+    <div class="badge">FIGURE 2 · CONCEPT MATRIX</div>
+  </div>
+
+  <div class="main-grid">
+    <!-- Column 1: Five Money Market Instruments -->
+    <div class="card">
+      <div class="card-title">
+        <div class="icon"></div>
+        5 Money Market Instruments (NCERT)
+      </div>
+
+      <div class="inst-box">
+        <div class="inst-head">
+          <h4>1. Treasury Bills (T-Bills)</h4>
+          <span class="inst-badge">14 to 364 Days</span>
+        </div>
+        <div class="inst-desc">
+          Issued by <b>RBI on behalf of Central Govt</b>. Also called <b>Zero Coupon Bonds</b>. Issued at discount and redeemed at par. Min lot: <b>₹25,000</b>. Zero default risk.
+        </div>
+      </div>
+
+      <div class="inst-box">
+        <div class="inst-head">
+          <h4>2. Commercial Paper (CP)</h4>
+          <span class="inst-badge">15 Days to 1 Year</span>
+        </div>
+        <div class="inst-desc">
+          Unsecured promissory note issued by <b>highly rated corporates</b>. Used for seasonal working capital & <b>Bridge Financing</b> (meeting floatation costs of equity).
+        </div>
+      </div>
+
+      <div class="inst-box">
+        <div class="inst-head">
+          <h4>3. Call Money</h4>
+          <span class="inst-badge">1 to 15 Days</span>
+        </div>
+        <div class="inst-desc">
+          Short-term inter-bank borrowing utilized by commercial banks to maintain mandatory <b>Cash Reserve Ratio (CRR)</b> with RBI. Highly volatile call rates.
+        </div>
+      </div>
+
+      <div class="inst-box">
+        <div class="inst-head">
+          <h4>4. Certificate of Deposit (CD)</h4>
+          <span class="inst-badge">91 Days to 1 Year</span>
+        </div>
+        <div class="inst-desc">
+          Unsecured negotiable bearer instruments issued by <b>commercial banks and DFIs</b> to mobilize large institutional deposits during periods of tight liquidity.
+        </div>
+      </div>
+
+      <div class="inst-box">
+        <div class="inst-head">
+          <h4>5. Commercial Bill (Trade Bill)</h4>
+          <span class="inst-badge">Up to 90 Days</span>
+        </div>
+        <div class="inst-desc">
+          Bill of exchange drawn by a <b>seller on buyer</b> to finance credit sales of goods. Accepted by buyer; can be <b>discounted with a commercial bank</b> before maturity.
+        </div>
+      </div>
+    </div>
+
+    <!-- Column 2: Screen-Based Trading Procedure -->
+    <div class="card">
+      <div class="card-title">
+        <div class="icon" style="background:#059669;"></div>
+        Stock Exchange Trading Sequence
+      </div>
+
+      <div class="step-container">
+        <div class="step-box">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h4>Select Broker & Client Registration</h4>
+            <p>Investor selects SEBI-registered broker. Mandatorily submits <b>PAN card</b>, bank details, and opens a <b>Demat Account</b> with a Depository Participant (DP).</p>
+          </div>
+        </div>
+
+        <div class="step-box">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h4>Placement of Order</h4>
+            <p>Investor instructs broker specifying security name, quantity, and target limit price (or market price). Broker generates an order confirmation slip.</p>
+          </div>
+        </div>
+
+        <div class="step-box">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h4>Order Execution on Automated Terminal</h4>
+            <p>Electronic trading terminal automatically matches matching buy and sell orders. Trade is executed; broker sends trade confirmation slip.</p>
+          </div>
+        </div>
+
+        <div class="step-box">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <h4>Issue of Contract Note</h4>
+            <p>Issued by broker within <b>24 hours</b> of execution. Contains <b>Unique Client Code (UCC)</b>, transaction details, and statutory brokerage charges.</p>
+          </div>
+        </div>
+
+        <div class="step-box">
+          <div class="step-num">5</div>
+          <div class="step-content">
+            <h4>Settlement (Rolling T+1)</h4>
+            <p>Pay-in occurs when cash/shares are delivered before T+1. Pay-out releases funds/shares on <b>T+1 day</b> directly to investor's Demat / Bank account.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Column 3: SEBI Functions & Depository System -->
+    <div class="card">
+      <div class="card-title">
+        <div class="icon" style="background:#7C3AED;"></div>
+        SEBI Functions & Depositories
+      </div>
+
+      <div class="sebi-group">
+        <div class="sebi-title" style="color:#071A4D;">
+          <span style="color:#DC2626;">●</span> 1. Protective Functions
+        </div>
+        <ul class="sebi-list">
+          <li>Prohibiting <b>Price Rigging</b> (manipulating stock prices).</li>
+          <li>Prohibiting <b>Insider Trading</b> using non-public price-sensitive info.</li>
+          <li>Promoting fair practices and issuing investor protection guidelines.</li>
+        </ul>
+      </div>
+
+      <div class="sebi-group">
+        <div class="sebi-title" style="color:#071A4D;">
+          <span style="color:#2563EB;">●</span> 2. Regulatory Functions
+        </div>
+        <ul class="sebi-list">
+          <li>Registration of stock brokers, sub-brokers, and merchant bankers.</li>
+          <li>Registration & regulation of Collective Investment Schemes / Mutual Funds.</li>
+          <li>Conducting inquiries, audits, and inspections of stock exchanges.</li>
+        </ul>
+      </div>
+
+      <div class="sebi-group">
+        <div class="sebi-title" style="color:#071A4D;">
+          <span style="color:#16A34A;">●</span> 3. Development Functions
+        </div>
+        <ul class="sebi-list">
+          <li>Training intermediaries and promoting investor education campaigns.</li>
+          <li>Conducting research and publishing market survey data.</li>
+          <li>Facilitating electronic screen trading and internet broking channels.</li>
+        </ul>
+      </div>
+
+      <div style="font-size:11px; color:#475569; line-height:1.35; padding:6px 10px; background:#F1F5F9; border-radius:6px; border:1px solid #CBD5E1;">
+        <b>Depository Architecture:</b> NSDL (NSE, IDBI promoted) & CDSL (BSE, SBI promoted). Investors interact solely via <b>Depository Participants (DPs)</b>. Demat converts physical certificates into electronic ledger balances.
+      </div>
+    </div>
+
+    <!-- Bottom Summary Banner -->
+    <div class="summary-banner">
+      <div><span>CUET GOLDEN RULES:</span> Commercial Paper (CP) funds Bridge Financing; Call Money maintains CRR; T-Bills are Zero Coupon Bonds issued at discount; Primary Market creates securities; Secondary Market provides liquidity.</div>
+      <div style="font-size:11px; color:#475569;">CUET UG Business Studies · Unit 10</div>
+    </div>
+  </div>
+
+</body>
+</html>
