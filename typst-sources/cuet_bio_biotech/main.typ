@@ -57,8 +57,10 @@
   *Biotechnology: Principles and Processes* is one of the most core conceptually rigorous chapters in CUET UG Biology, contributing *4 to 6 compulsory questions (16–24 marks)* per examination session. Questions rigorously probe: (1) Decoding the precise 4-part nomenclature of restriction enzymes (_EcoRI_); (2) Palindromic sequence recognition and cleavage polarity; (3) The agarose gel electrophoresis matrix principles (anode migration, EtBr orange fluorescence under UV, elution); (4) Vector anatomy of pBR322 (_ori_, _rop_, insertional inactivation of _tet#super[R]_ via BamHI); (5) The three sequential temperature stages of PCR ($94^circle "C" arrow.r 54^circle "C" arrow.r 72^circle "C"$) and the source organism of thermostable _Taq_ polymerase (_Thermus aquaticus_); and (6) Distinguishing upstream microbial biosynthesis from downstream separation, purification, and clinical quality control.
 ]
 
-
 #pagebreak()
+#set text(size: 9.8pt)
+#set par(leading: 0.52em, spacing: 0.60em)
+
 #set text(size: 9.8pt)
 #set par(leading: 0.52em, spacing: 0.60em)
 
@@ -91,7 +93,7 @@ To integrate traditional microbiological applications with modern recombinant DN
 - *Pioneers:* Stanley Cohen and Herbert Boyer constructed the world's first artificial recombinant DNA molecule in *1972*.
 - *Experimental Protocol:* Cohen and Boyer isolated an antibiotic resistance gene by enzymatically cleaving a plasmid from the bacterium _Salmonella typhimurium_. They ligated this gene into a plasmid vector using DNA ligase and transferred it into _Escherichia coli_, where host DNA polymerase autonomously replicated the gene, generating millions of copies (gene cloning).
 
-#pagebreak()
+
 
 = 2. Molecular Tools: Restriction Enzymes & Cleavage Kinetics
 
@@ -134,10 +136,10 @@ A *palindromic nucleotide sequence* reads identically on both complementary anti
   When restriction endonucleases cut both foreign donor DNA and plasmid vector DNA at identical palindromic sites, they produce complementary single-stranded overhanging "sticky ends." These overhangs form spontaneous hydrogen bonds with each other, facilitating rapid sealing of the sugar-phosphate backbone by *T4 DNA Ligase*.
 ]
 
-#pagebreak()
+
 
 #figure(
-  image("assets/bio_rdna_pbr322_flow.png", width: 78%),
+  image("assets/bio_rdna_pbr322_flow.png", width: 80%),
   caption: [Recombinant DNA tools & pBR322 vector architecture — restriction endonuclease palindromes, agarose gel electrophoresis, plasmid cloning sites, and selectable markers.],
 )
 
@@ -155,7 +157,7 @@ Following restriction endonuclease digestion, the resulting DNA fragments of var
 - *Ultraviolet Transillumination:* Upon exposure to ultraviolet (UV) radiation (wavelength 302–365 nm), EtBr-bound DNA fluoresces intensely as bright *orange-colored bands*. DNA cannot be visualized in ordinary daylight!
 - *Elution Protocol:* The separated target DNA band is physically excised from the agarose gel with a clean scalpel and chemically extracted from the gel slice using silica spin columns, a process termed *Elution*. The purified DNA is then ready for ligation into a cloning vector.
 
-#pagebreak()
+
 
 = 3. Cloning Vectors Architecture & pBR322
 
@@ -183,7 +185,7 @@ Constructed by Bolivar and Rodriguez (p = plasmid, BR = Bolivar & Rodriguez, 322
 - *_tet_#super[R] Gene (Tetracycline Resistance):* Houses unique cleavage sites for *_BamHI_* and *_Sal I_*.
 - Additional unique restriction sites: *_EcoRI_*, *_Cla I_*, and *_Hind III_*.
 
-#pagebreak()
+
 
 = 4. Selection Strategies: Insertional Inactivation & Blue-White Screening
 
@@ -213,7 +215,7 @@ To bypass the labor-intensive replica plating required by pBR322, modern vectors
 - *Recombinant Plasmids:* Foreign DNA inserted into the MCS causes *insertional inactivation of _lacZ_*. No functional $beta$-galactosidase is produced; colonies fail to hydrolyze X-Gal and remain uncolored arrow.r.double *White Colonies*.
 - *Diagnostic Exam Rule:* *White colonies represent successful recombinant clones*!
 
-#pagebreak()
+
 
 = 5. Vectors for Higher Organisms & Host Transformation Methods
 
@@ -249,7 +251,7 @@ Because DNA is a hydrophilic polyanion, it cannot spontaneously traverse the hyd
   [Bacterial cells, yeast, and mammalian protoplasts.],
 )
 
-#pagebreak()
+
 
 = 6. Processes of Recombinant DNA: DNA Isolation & Enzymatic Lysis
 
@@ -277,10 +279,10 @@ For restriction endonucleases to cut DNA, it must be isolated in a pure macromol
 4. *Precipitation via Ice-Cold Ethanol:* When chilled ethanol (95–100% at -20°C) is gently layered over the aqueous phase, pure DNA instantly precipitates out of solution as a visible white fibrous meshwork.
 5. *Spooling:* The precipitated DNA threads are collected onto a clean glass rod by gentle rotation, a mechanical harvesting technique termed *Spooling*.
 
-#pagebreak()
+
 
 #figure(
-  image("assets/bio_pcr_bioreactor_flow.png", width: 78%),
+  image("assets/bio_pcr_bioreactor_flow.png", width: 80%),
   caption: [PCR thermocycling kinetics & bioreactor engineering — step-by-step DNA amplification (denaturation, annealing, Taq extension) alongside industrial stirred bioreactors and downstream processing.],
 )
 
@@ -302,7 +304,7 @@ Invented by *Kary Mullis in 1983* (Nobel Prize in Chemistry, 1993), the *Polymer
 - *Exponential Amplification Equation:* With each cycle, DNA copies double ($2^n$). After $n = 30$ continuous cycles:
   $ N = N_0 times 2^n arrow.r.double 1 times 2^(30) approx 10^9 "copies (approximately 1 billion-fold amplification!)" $
 
-#pagebreak()
+
 
 = 7. Industrial Fermentation & Bioreactor Engineering
 
@@ -328,7 +330,7 @@ Bioreactors provide closed, computer-monitored environments that maintain optima
 - *Continuous Culture System:* An open system where *fresh nutrient medium is continuously pumped in from one side* while spent medium containing waste and harvested cells is continuously withdrawn from the other side at an equal rate.
 - *The Kinetic Advantage:* A continuous culture maintains the cell population continuously in their physiologically most active *exponential / log phase of growth*, achieving substantially higher biomass accumulation and recombinant protein production rates than batch cultivation.
 
-#pagebreak()
+
 
 = 8. Downstream Processing (DSP) & Quality Control Analytics
 
@@ -356,7 +358,7 @@ Following the completion of the biosynthetic fermentation phase in the bioreacto
 = Strategic Chapter Synthesis: Integrated Molecular Framework
 
 #figure(
-  image("assets/bio_biotech_mindmap.png", width: 78%),
+  image("assets/bio_biotech_mindmap.png", width: 70%),
   caption: [Master synthesis mindmap — high-yield integrated architecture of Biotechnology: Principles and Processes covering tools, vectors, transformation, PCR, and industrial bioprocessing.],
 )
 
@@ -397,16 +399,18 @@ Following the completion of the biosynthetic fermentation phase in the bioreacto
 ]
 
 #pagebreak()
+#set text(size: 9.6pt)
+#set par(leading: 0.52em, spacing: 0.60em)
 
 = Practice Questions — Part 1 (Q1 to Q5)
 
 #mcq(1, [In the standardized nomenclature of the restriction endonuclease _EcoRI_, the letter "R" and the Roman numeral "I" designate respectively:], (
-  [The resistance gene marker and the number of cleavage sites on the plasmid],
   [The specific bacterial strain (RY13) and the chronological order of its isolation],
+  [The resistance gene marker and the number of cleavage sites on the plasmid],
   [The restriction capability and the first palindromic nucleotide sequence],
   [The circular plasmid replicon and the single-stranded sticky end overhang],
 ))
-#solution(1, [Restriction enzymes are named following a strict universal convention: the first letter indicates the genus (_Escherichia_), the next two letters represent the species (_coli_), the fourth letter represents the specific *bacterial strain* (strain #strong[R]Y13), and the terminal Roman numeral represents the *chronological order of discovery/isolation* of the enzyme from that bacterial strain (isolated first = *I*).], answer: [B])
+#solution(1, [Restriction enzymes are named following a strict universal convention: the first letter indicates the genus (_Escherichia_), the next two letters represent the species (_coli_), the fourth letter represents the specific *bacterial strain* (strain #strong[R]Y13), and the terminal Roman numeral represents the *chronological order of discovery/isolation* of the enzyme from that bacterial strain (isolated first = *I*).], answer: [A])
 
 #mcq(2, [Which of the following DNA sequences represents a true palindromic nucleotide recognition sequence that reads identically on both complementary strands when read in the 5' to 3' direction?], (
   [5' - G A A T T C - 3'],
@@ -426,11 +430,11 @@ Following the completion of the biosynthetic fermentation phase in the bioreacto
 
 #mcq(4, [The widely utilized artificial cloning vector pBR322 harbors two antibiotic resistance genes that serve as selectable markers to identify transformants. These two genes are:], (
   [Kanamycin resistance and Neomycin resistance genes],
-  [Ampicillin resistance (_amp_#super[R]) and Tetracycline resistance (_tet_#super[R]) genes],
-  [Tetracycline resistance gene and the _lacZ_ gene],
   [Chloramphenicol resistance gene and the _rop_ locus],
+  [Tetracycline resistance gene and the _lacZ_ gene],
+  [Ampicillin resistance (_amp_#super[R]) and Tetracycline resistance (_tet_#super[R]) genes],
 ))
-#solution(4, [Plasmid *pBR322* carries two distinct selectable antibiotic resistance marker genes: the *ampicillin resistance gene (_amp_#super[R])* (containing cleavage sites for _Pst I_ and _Pvu I_) and the *tetracycline resistance gene (_tet_#super[R])* (containing cleavage sites for _BamHI_ and _Sal I_). These genes permit researchers to identify and select transformants from non-transformants.], answer: [B])
+#solution(4, [Plasmid *pBR322* carries two distinct selectable antibiotic resistance marker genes: the *ampicillin resistance gene (_amp_#super[R])* (containing cleavage sites for _Pst I_ and _Pvu I_) and the *tetracycline resistance gene (_tet_#super[R])* (containing cleavage sites for _BamHI_ and _Sal I_). These genes permit researchers to identify and select transformants from non-transformants.], answer: [D])
 
 #mcq(5, [Bacterial cells can be rendered chemically competent to take up hydrophilic foreign recombinant DNA molecules from their surroundings through treatment with:], (
   [Monovalent sodium ions followed by continuous incubation at 100°C],
@@ -448,12 +452,12 @@ Following the completion of the biosynthetic fermentation phase in the bioreacto
 
 #mcq(6, [A molecular biology technician initiates a Polymerase Chain Reaction (PCR) in a thermocycler with exactly 2 copies of a target double-stranded DNA template. After 5 complete cycles, the total number of DNA copies synthesized will be:], (
   [32 copies],
-  [64 copies],
   [128 copies],
+  [64 copies],
   [16 copies],
 ))
 #solution(6, [In the Polymerase Chain Reaction (PCR), the number of DNA copies amplifies geometrically according to the exponential formula: $"Total Copies" = N_0 times 2^n$, where $N_0$ is the initial template number and $n$ is the number of complete cycles. Here, $N_0 = 2$ and $n = 5$:
-$ "Total Copies" = 2 times 2^5 = 2 times 32 = 64 "copies." $], answer: [B])
+$ "Total Copies" = 2 times 2^5 = 2 times 32 = 64 "copies." $], answer: [C])
 
 #mcq(7, [The thermostable DNA polymerase (_Taq_ polymerase) that withstands repeated high-temperature denaturation stages during automated PCR is extracted from:], (
   [_Escherichia coli_],
@@ -465,19 +469,19 @@ $ "Total Copies" = 2 times 2^5 = 2 times 32 = 64 "copies." $], answer: [B])
 
 #mcq(8, [During agarose gel electrophoresis, the physical movement and separation of digested DNA fragments is governed by which principles?], (
   [DNA fragments are positively charged and migrate toward the cathode according to base composition],
-  [DNA fragments are negatively charged and migrate toward the anode, with smaller fragments traveling fastest],
-  [DNA fragments move strictly based on their molecular charge, while fragment length has no effect],
   [DNA fragments remain stationary in the loading wells until ultraviolet light is applied],
+  [DNA fragments move strictly based on their molecular charge, while fragment length has no effect],
+  [DNA fragments are negatively charged and migrate toward the anode, with smaller fragments traveling fastest],
 ))
-#solution(8, [DNA possesses a uniform negative charge along its sugar-phosphate backbone and therefore migrates toward the *positive electrode (anode)* under an electric field. The porous agarose gel acts as a molecular sieve: *smaller DNA fragments experience less frictional resistance and travel faster and farther*, while larger fragments remain closer to the origin wells.], answer: [B])
+#solution(8, [DNA possesses a uniform negative charge along its sugar-phosphate backbone and therefore migrates toward the *positive electrode (anode)* under an electric field. The porous agarose gel acts as a molecular sieve: *smaller DNA fragments experience less frictional resistance and travel faster and farther*, while larger fragments remain closer to the origin wells.], answer: [D])
 
 #mcq(9, [In industrial fermentation, a sparged stirred-tank bioreactor provides superior cell cultivation compared to a simple stirred-tank vessel because it:], (
-  [Uses electromagnetic radiation to sterilize the liquid broth continuously],
   [Sparges sterile air bubbles from the vessel bottom, dramatically increasing oxygen transfer surface area],
+  [Uses electromagnetic radiation to sterilize the liquid broth continuously],
   [Operates completely without mechanical impellers to eliminate cellular shear stress],
   [Prevents the accumulation of foam without requiring chemical anti-foaming agents],
 ))
-#solution(9, [In a *sparged stirred-tank bioreactor*, sterile air or oxygen is bubbled (sparged) under pressure from the base of the vessel. The formation of thousands of rising air bubbles dramatically increases the gas-liquid surface contact area, vastly enhancing *oxygen transfer* into the liquid culture to support high-density aerobic microbial growth.], answer: [B])
+#solution(9, [In a *sparged stirred-tank bioreactor*, sterile air or oxygen is bubbled (sparged) under pressure from the base of the vessel. The formation of thousands of rising air bubbles dramatically increases the gas-liquid surface contact area, vastly enhancing *oxygen transfer* into the liquid culture to support high-density aerobic microbial growth.], answer: [A])
 
 #mcq(10, [Following the completion of the biosynthetic phase in a bioreactor, a recombinant therapeutic protein must undergo downstream processing. Which option details the correct chronological sequence of these downstream events?], (
   [Formulation with preservatives $arrow.r$ Cell separation $arrow.r$ Clinical trials $arrow.r$ Protein purification],
@@ -495,11 +499,11 @@ $ "Total Copies" = 2 times 2^5 = 2 times 32 = 64 "copies." $], answer: [B])
 
 #mcq(11, [In recombinant DNA technology, transformants can be differentiated from non-transformants using blue-white screening based on insertional inactivation of the _lacZ_ gene. Which observation confirms successful recombinant colonies?], (
   [Formation of dark blue colonies on nutrient medium containing X-gal],
-  [Development of white colonies due to insertional inactivation of beta-galactosidase],
-  [Total absence of any bacterial colony growth on the selection plate],
   [Formation of colonies that change from blue to yellow under UV exposure],
+  [Total absence of any bacterial colony growth on the selection plate],
+  [Development of white colonies due to insertional inactivation of beta-galactosidase],
 ))
-#solution(11, [In blue-white screening, foreign DNA is inserted into the coding sequence of the $beta$-galactosidase gene (*_lacZ_*). In non-recombinants, intact $beta$-galactosidase hydrolyzes the chromogenic substrate X-gal to form *blue colonies*. In recombinants, insertional inactivation destroys $beta$-galactosidase activity, so X-gal is not hydrolyzed and colonies appear *white*. Thus, *white colonies confirm successful recombinants*.], answer: [B])
+#solution(11, [In blue-white screening, foreign DNA is inserted into the coding sequence of the $beta$-galactosidase gene (*_lacZ_*). In non-recombinants, intact $beta$-galactosidase hydrolyzes the chromogenic substrate X-gal to form *blue colonies*. In recombinants, insertional inactivation destroys $beta$-galactosidase activity, so X-gal is not hydrolyzed and colonies appear *white*. Thus, *white colonies confirm successful recombinants*.], answer: [D])
 
 #mcq(12, [Which soil bacterium is widely celebrated as nature's genetic engineer due to the ability of its tumor-inducing (Ti) plasmid to transfer a segment of T-DNA into plant nuclear chromosomes?], (
   [_Bacillus thuringiensis_],
@@ -511,11 +515,11 @@ $ "Total Copies" = 2 times 2^5 = 2 times 32 = 64 "copies." $], answer: [B])
 
 #mcq(13, [In biolistics or the gene gun method of genetic transformation, recombinant DNA is coated onto microscopic high-velocity microprojectiles composed of which inert heavy metals?], (
   [Iron or Copper],
-  [Gold or Tungsten],
   [Silver or Platinum],
+  [Gold or Tungsten],
   [Lead or Zinc],
 ))
-#solution(13, [In the *biolistics (gene gun)* transformation method—designed primarily to introduce foreign DNA across rigid plant cell walls—microscopic microprojectiles composed of biologically inert, high-density metals, specifically *Gold or Tungsten*, are coated with recombinant DNA and accelerated at high velocity into target plant cells.], answer: [B])
+#solution(13, [In the *biolistics (gene gun)* transformation method—designed primarily to introduce foreign DNA across rigid plant cell walls—microscopic microprojectiles composed of biologically inert, high-density metals, specifically *Gold or Tungsten*, are coated with recombinant DNA and accelerated at high velocity into target plant cells.], answer: [C])
 
 #mcq(14, [During the extraction and isolation of pure DNA from eukaryotic plant tissue, cellular proteins, RNAs, and cell walls are enzymatically digested. The final precipitation of purified DNA as fine spoolable threads is achieved by adding:], (
   [Chilled absolute ethanol],
