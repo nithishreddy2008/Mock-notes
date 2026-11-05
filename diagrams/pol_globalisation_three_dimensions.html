@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px 32px;
+    overflow: hidden;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #071A4D;
+    padding: 16px 28px;
+    border-radius: 12px;
+    border-bottom: 4px solid #1F5EFF;
+    margin-bottom: 16px;
+  }
+  .header-left h1 {
+    color: #FFFFFF;
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+  }
+  .header-left p {
+    color: #94A3B8;
+    font-size: 13px;
+    font-weight: 500;
+    margin-top: 3px;
+  }
+  .badge {
+    background: #1F5EFF;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+  }
+  .main-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    height: 740px;
+  }
+  .card {
+    background: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    border-radius: 12px;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+  }
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #E2E8F0;
+    margin-bottom: 12px;
+  }
+  .card-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: #EFF6FF;
+    color: #1F5EFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 15px;
+  }
+  .card-title {
+    font-size: 15px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .card-subtitle {
+    font-size: 11px;
+    color: #64748B;
+  }
+  .sub-box {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin-bottom: 10px;
+  }
+  .sub-title {
+    font-size: 12.5px;
+    font-weight: 800;
+    color: #1E293B;
+    margin-bottom: 4px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .sub-title span {
+    font-size: 11px;
+    color: #1F5EFF;
+    font-weight: 700;
+  }
+  .detail-list {
+    font-size: 11px;
+    line-height: 1.45;
+    color: #334155;
+  }
+  .detail-list li {
+    margin-left: 14px;
+    margin-bottom: 2px;
+  }
+  .tag {
+    display: inline-block;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 700;
+  }
+  .tag-green { background: #DCFCE7; color: #166534; }
+  .tag-blue { background: #DBEAFE; color: #1E40AF; }
+  .tag-amber { background: #FEF3C7; color: #92400E; }
+  .tag-purple { background: #F3E8FF; color: #6B21A8; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <h1>GLOBALISATION: POLITICAL, ECONOMIC & CULTURAL MATRIX</h1>
+    <p>CUET UG Political Science · Unit VII · Four Transnational Flows, State Capacity, Cultural Dialectics & World Social Forum</p>
+  </div>
+  <div class="badge">NTA HIGH-FREQUENCY MATRIX</div>
+</div>
+
+<div class="main-grid">
+  <!-- Col 1: Political Dimensions -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon">1</div>
+      <div>
+        <div class="card-title">Political Consequences</div>
+        <div class="card-subtitle">State Capacity, Minimalist State & Sovereignty</div>
+      </div>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">The Minimalist State <span class="tag tag-amber">Welfare Retreat</span></div>
+      <ul class="detail-list">
+        <li>State withdraws from traditional social welfare functions (subsidies, universal healthcare, public enterprise).</li>
+        <li>State role reduced to core sovereign functions: maintaining law and order, national defense, and property rights.</li>
+        <li>Market forces and multinational corporations (MNCs) dictate socio-economic priorities.</li>
+      </ul>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">Enhanced State Capacity <span class="tag tag-blue">Digital Surveillance</span></div>
+      <ul class="detail-list">
+        <li>Advanced digital information technology, biometric databases, and big-data analytics dramatically empower the state.</li>
+        <li>States gather comprehensive intelligence on citizens, strengthening administrative efficiency, tax collection, and policing.</li>
+      </ul>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">Primacy of the Sovereign State <span class="tag tag-green">Enduring Power</span></div>
+      <ul class="detail-list">
+        <li>State sovereignty is not destroyed; states remain the undisputed primary legal and geopolitical actors.</li>
+        <li>National security rivalries and inter-state power politics remain paramount.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Col 2: Economic Dimensions & India -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon">2</div>
+      <div>
+        <div class="card-title">Economic Consequences & India</div>
+        <div class="card-subtitle">Four Interconnected Flows, Bretton Woods & 1991 LPG</div>
+      </div>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">The Four Transnational Flows <span class="tag tag-blue">Core Drivers</span></div>
+      <ul class="detail-list">
+        <li><strong>Flow of Ideas:</strong> Free cross-border dissemination of philosophy, scientific knowledge, and democratic norms.</li>
+        <li><strong>Flow of Capital:</strong> Massive electronic movement of investments, FDI, and portfolio capital.</li>
+        <li><strong>Flow of Commodities:</strong> Removal of tariff and non-tariff trade barriers under WTO rules.</li>
+        <li><strong>Flow of People:</strong> Movement of labor; remains the most restricted due to strict immigration barriers in the Global North.</li>
+      </ul>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">Unequal Distribution of Gains <span class="tag tag-amber">Inequality</span></div>
+      <ul class="detail-list">
+        <li>Creates a small class of affluent winners (corporates, tech elites) and a large mass of vulnerable losers.</li>
+        <li>Erodes institutional social safety nets, exposing unorganized workers to market volatility.</li>
+      </ul>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">India's 1991 LPG Paradigm Shift <span class="tag tag-green">Reforms</span></div>
+      <ul class="detail-list">
+        <li>Shifted from post-1947 autarky/protectionism to <strong>Liberalisation, Privatisation, Globalisation (LPG)</strong> under P.V. Narasimha Rao.</li>
+        <li>Spurred GDP growth, expanded IT/services exports, but widened urban-rural income disparities.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Col 3: Cultural Dialectics & Global Resistance -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon">3</div>
+      <div>
+        <div class="card-title">Cultural Dialectics & Resistance</div>
+        <div class="card-subtitle">Homogenisation, Heterogenisation & Anti-Globalisation</div>
+      </div>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">Cultural Homogenisation <span class="tag tag-purple">Americanisation</span></div>
+      <ul class="detail-list">
+        <li>Rise of a uniform global consumerist monoculture dominated by Western/American cultural icons.</li>
+        <li>Popularly termed <strong>"McDonaldization"</strong>: blue jeans, fast food, Hollywood, pop music.</li>
+        <li>Threatens to erode fragile indigenous cultural heritage and local languages.</li>
+      </ul>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">Cultural Heterogenisation <span class="tag tag-green">Creative Fusion</span></div>
+      <ul class="detail-list">
+        <li>External global cultural elements do not simply destroy local culture; they are modified and assimilated.</li>
+        <li>Produces unique hybridization: e.g., wearing a Khadi Kurta over blue jeans, or Indianized fast food (McAloo Tikki burger).</li>
+      </ul>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">Resistance & World Social Forum <span class="tag tag-amber">Anti-Corporate</span></div>
+      <ul class="detail-list">
+        <li><strong>1999 Seattle Protests:</strong> Protests at WTO Ministerial against non-transparent, anti-labor trade rules.</li>
+        <li><strong>World Social Forum (WSF):</strong> Founded in <strong>Porto Alegre, Brazil (2001)</strong>: "Another World is Possible."</li>
+        <li><strong>4th WSF Meeting (2004):</strong> Held in <strong>Mumbai, India</strong>, bringing together anti-globalisation coalitions.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
