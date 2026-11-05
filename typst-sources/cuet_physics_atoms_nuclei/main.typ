@@ -48,6 +48,9 @@
   *CUET UG Exam Architecture:* Unit 8 carries substantial weightage in Section II Physics (typically 4 to 5 direct MCQs). The questions rigorously test numerical scaling ($r prop n^2$, $v prop 1/n$, $E prop 1/n^2$), energy differences in hydrogen transitions, nuclear radius ratio ($R_1 / R_2 = (A_1 / A_2)^(1/3)$), constant nuclear density, and Q-value calculations in fission and fusion.
 ]
 
+#set text(size: 9.8pt)
+#set par(leading: 0.38em, spacing: 0.40em)
+
 = Concept Module 1: Alpha-Particle Scattering & Rutherford's Nuclear Model
 
 == The Geiger-Marsden Experiment (1911)
@@ -108,7 +111,7 @@ To overcome the limitations of Rutherford's model, Niels Bohr incorporated Planc
 3. *Postulate 3 (Frequency Condition):* Radiation is emitted/absorbed on quantum jumps: $E_2 - E_1 = h nu = (h c) / lambda$.
 
 #align(center)[
-  #image("assets/physics_atoms_bohr_energy_spectra.png", width: 84%)
+  #image("assets/physics_atoms_bohr_energy_spectra.png", width: 78%)
 ]
 
 == Derivation of Orbital Radius ($r_n$)
@@ -253,7 +256,7 @@ $ R = R_0 A^(1/3) $
 where $R_0 = (1.20 plus.minus 0.1) times 10^(-15)" m" approx 1.2" fm"$.
 
 #align(center)[
-  #image("assets/physics_nuclei_binding_energy_fission_fusion.png", width: 84%)
+  #image("assets/physics_nuclei_binding_energy_fission_fusion.png", width: 78%)
 ]
 
 == Proof that Nuclear Density is Independent of Mass Number
@@ -373,9 +376,7 @@ In the core of the Sun, the *Proton-Proton Chain* cycle dominates:
 $ 4 ""^1_1"H" -> ""^4_2"He" + 2 e^+ + 2 nu_e + 2 gamma + 26.7" MeV" $
 Energy released per unit mass in fusion is $approx 6.7" MeV/amu"$, nearly 8 times higher than fission ($0.85" MeV/amu"$).
 
-#align(center)[
-  #image("assets/physics_atoms_nuclei_mindmap.png", width: 84%)
-]
+
 
 #worked-example("Energy Released in Nuclear Fission")[
   *Problem:* Calculate energy released in fission of $1" g"$ of $""^(235)_92"U"$ ($200" MeV"$ per event, $N_A = 6.023 times 10^(23)" mol"^(-1)$).
@@ -383,6 +384,24 @@ Energy released per unit mass in fusion is $approx 6.7" MeV/amu"$, nearly 8 time
   *Solution:* Number of nuclei $N = (1 / 235) times 6.023 times 10^(23) = 2.563 times 10^(21)$.
   Total energy: $E = 2.563 times 10^(21) times 200 times 1.6 times 10^(-13)" J" = 8.20 times 10^(10)" J" approx 22.8" MWh"$ (~2.5 tons of coal!).
 ]
+
+#pagebreak()
+
+= Concept Module 7: Conceptual Synthesis & Mindmap
+
+#v(1fr)
+#align(center)[
+  #image("assets/physics_atoms_nuclei_mindmap.png", width: 70%)
+]
+#v(1fr)
+
+
+#pagebreak()
+
+#set text(size: 7.5pt)
+#set par(leading: 0.36em, spacing: 0.38em)
+
+= High-Yield Formula Cheatsheet & Key Traps
 
 #cheatsheet-box(title: "Master Revision Formula Matrix: Atoms & Nuclei")[
   - *Distance of Closest Approach:* $r_0 = (2 Z e^2) / (4 pi epsilon_0 K_alpha) = (4 k Z e^2) / (m v^2)$
@@ -396,18 +415,33 @@ Energy released per unit mass in fusion is $approx 6.7" MeV/amu"$, nearly 8 time
   - *Fission of U-235:* $Q approx 200" MeV"$; Thermonuclear Fusion: $4 ""^1"H" -> ""^4"He" + 26.7" MeV"$
 ]
 
-#pagebreak()
+#v(4pt)
 
-= Practice MCQs & Solutions
+#tip-box(title: "The Seven Fatal CUET Traps in Atoms & Nuclei")[
+  1. *Total Energy Sign:* Forgetting that electron orbital total energy $E_n$ is *negative*. $K_n = -E_n$ (positive) and $U_n = 2 E_n$ (negative).
+  2. *Bohr Radius vs Atomic Number:* Orbital radius $r_n prop n^2 / Z$, not $n^2 Z$. Speed $v_n prop Z / n$.
+  3. *Spectral Series Region:* Lyman is strictly Ultraviolet; Balmer is Visible (first 4 lines) + near UV; Paschen, Brackett, Pfund are strictly Infrared.
+  4. *Nuclear Density Invariance:* Nuclear density is *strictly constant* ($rho approx 2.3 times 10^(17)" kg/m"^3$) and completely independent of mass number $A$!
+  5. *Binding Energy per Nucleon Peak:* The peak occurs at Iron-56 ($""^(56)_26"Fe"$ at $8.75" MeV/nucleon"$), not Uranium or Lead.
+  6. *Mass Defect vs Fusion:* In fusion, lighter nuclei combine because binding energy per nucleon of the daughter nucleus is *higher*, releasing mass defect as energy.
+  7. *Rydberg Constant Formula:* $1 / lambda = R Z^2 (1/n_1^2 - 1/n_2^2)$ includes $Z^2$! For hydrogen-like ions ($"He"^+, "Li"^(2+)$), always multiply by $Z^2$ ($Z=2$ gives 4, $Z=3$ gives 9).
+]
+
+
+#pagebreak()
+#set text(size: 8.5pt)
+#set par(leading: 0.40em, spacing: 0.42em)
+
+= Practice Questions — Part 1 (Q1 to Q5)
 
 #mcq(
   1,
   [In the Geiger-Marsden alpha-particle scattering experiment, the distance of closest approach for a head-on collision of an alpha particle of kinetic energy $K$ with a gold nucleus of atomic number $Z$ is directly proportional to:],
   (
     [$K$],
-    [$1 / K$],
-    [$sqrt(K)$],
     [$1 / sqrt(K)$],
+    [$sqrt(K)$],
+    [$1 / K$],
   ),
 )
 #solution(
@@ -415,7 +449,7 @@ Energy released per unit mass in fusion is $approx 6.7" MeV/amu"$, nearly 8 time
   [
     At closest approach, $K = (1 / (4 pi epsilon_0)) ((2 Z e^2) / r_0) ==> r_0 = (2 Z e^2) / (4 pi epsilon_0 K) prop 1 / K$.
   ],
-  answer: [B],
+  answer: [D],
 )
 
 #mcq(
@@ -423,9 +457,9 @@ Energy released per unit mass in fusion is $approx 6.7" MeV/amu"$, nearly 8 time
   [The radius of the first orbit of a hydrogen atom is $r_0$. The radius of the second orbit of a singly ionized helium ion ($""^4_2"He"^+$, $Z = 2$) is:],
   (
     [$r_0$],
-    [$2 r_0$],
-    [$4 r_0$],
     [$r_0 / 2$],
+    [$4 r_0$],
+    [$2 r_0$],
   ),
 )
 #solution(
@@ -434,7 +468,7 @@ Energy released per unit mass in fusion is $approx 6.7" MeV/amu"$, nearly 8 time
     Orbital radius scales as $r_n = r_0 (n^2 / Z)$. For $""^4_2"He"^+$, $Z = 2$ and $n = 2$:
     $r_2 = r_0 (2^2 / 2) = 2 r_0$.
   ],
-  answer: [B],
+  answer: [D],
 )
 
 #mcq(
@@ -459,10 +493,10 @@ Energy released per unit mass in fusion is $approx 6.7" MeV/amu"$, nearly 8 time
   4,
   [The ratio of the longest wavelength in the Lyman series to the longest wavelength in the Balmer series of hydrogen is:],
   (
-    [$5 / 27$],
+    [$9 / 4$],
     [$27 / 5$],
     [$4 / 9$],
-    [$9 / 4$],
+    [$5 / 27$],
   ),
 )
 #solution(
@@ -472,7 +506,7 @@ Energy released per unit mass in fusion is $approx 6.7" MeV/amu"$, nearly 8 time
     Balmer longest ($3 -> 2$): $1 / lambda_B = R (1/4 - 1/9) = 5R / 36 ==> lambda_B = 36 / (5R)$. \
     Ratio $lambda_L / lambda_B = (4 / (3R)) / (36 / (5R)) = 4/3 times 5/36 = 20 / 108 = 5 / 27$.
   ],
-  answer: [A],
+  answer: [D],
 )
 
 #mcq(
@@ -494,6 +528,10 @@ Energy released per unit mass in fusion is $approx 6.7" MeV/amu"$, nearly 8 time
 )
 
 #pagebreak()
+#set text(size: 8.5pt)
+#set par(leading: 0.40em, spacing: 0.42em)
+
+= Practice Questions — Part 2 (Q6 to Q10)
 
 #mcq(
   6,
@@ -587,6 +625,10 @@ Energy released per unit mass in fusion is $approx 6.7" MeV/amu"$, nearly 8 time
 )
 
 #pagebreak()
+#set text(size: 8.5pt)
+#set par(leading: 0.40em, spacing: 0.42em)
+
+= Practice Questions — Part 3 (Q11 to Q15)
 
 #mcq(
   11,
