@@ -48,6 +48,9 @@
   *CUET UG Exam Architecture:* Unit 9 (Electronic Devices) consistently yields 3 to 5 questions in Section II Physics. High-frequency question archetypes include: (1) Energy band gap thresholds ($E_g$ of $"Si"$, $"Ge"$, Diamond); (2) Mass-action law calculations ($n_e n_h = n_i^2$); (3) Depletion layer behavior under forward/reverse bias; (4) Rectifier output ripple frequency ($50" Hz" -> 50" Hz"$ vs $100" Hz"$); and (5) Zener diode series resistance sizing ($R_S$).
 ]
 
+#set text(size: 10.4pt)
+#set par(leading: 0.38em, spacing: 0.40em)
+
 = Concept Module 1: Energy Bands in Solids & Material Classification
 
 == Band Formation in Crystalline Solids
@@ -95,7 +98,7 @@ $ E_g = E_c - E_v $
 = Concept Module 2: Intrinsic & Extrinsic Semiconductors
 
 #figure(
-  image("assets/physics_semiconductors_energy_bands_doping.png", width: 84%),
+  image("assets/physics_semiconductors_energy_bands_doping.png", width: 78%),
   caption: [Energy band structures in solids, intrinsic hole-electron pair generation, and donor/acceptor energy levels in extrinsic semiconductors.],
 )
 
@@ -204,7 +207,7 @@ $ r_d = (Delta V) / (Delta I) $
 = Concept Module 4: Diode as a Rectifier (AC to DC Conversion)
 
 #figure(
-  image("assets/physics_diode_rectifiers_zener.png", width: 84%),
+  image("assets/physics_diode_rectifiers_zener.png", width: 78%),
   caption: [p-n junction I-V curves, half-wave & full-wave rectifier topologies with smoothing filter, and Zener diode voltage regulator circuit.],
 )
 
@@ -298,34 +301,26 @@ $ V_"in" - V_Z = I_S R_S ==> R_S = (V_"in" - V_Z) / (I_Z + I_L) $
   - *I-V Curve:* Plotted strictly in the *fourth quadrant* because the cell supplies power to the circuit rather than absorbing it.
   - *Key Parameters:* Open-Circuit Voltage ($V_"oc"$) and Short-Circuit Current ($I_"sc"$).
 
-= Concept Module 6: Problem-Solving Shortcuts, CUET Traps & Cheatsheet
+#pagebreak()
 
-#figure(
-  image("assets/physics_electronic_devices_mindmap.png", width: 84%),
-  caption: [Electronic Devices Master Synthesis Mindmap covering solid-state physics, junction dynamics, rectifiers, and optoelectronics.],
-)
+= Concept Module 7: Conceptual Synthesis & Mindmap
 
-== Top CUET Traps & Common Misconceptions
-1. *Neutrality of Doped Semiconductors:* Always remember that n-type and p-type semiconductors are *electrically neutral*. Donor and acceptor impurities enter as neutral atoms; every free carrier has a corresponding fixed, oppositely charged ion in the lattice.
-2. *Rectifier Output Frequency:*
-  - Half-Wave: $f_"out" = f_"in"$.
-  - Full-Wave: $f_"out" = 2 f_"in"$. A common CUET error is assuming $f_"out" = f_"in"$ for full-wave rectifiers!
-3. *Photodiode vs. LED Bias:* Photodiodes operate in *reverse bias*; LEDs operate in *forward bias*; Solar cells operate with *no bias*.
-4. *Ideal Diode Analysis Rules:*
-  - *Forward-biased ideal diode:* Acts as a closed switch ($V_"drop" = 0$, $R = 0$).
-  - *Reverse-biased ideal diode:* Acts as an open switch ($I = 0$, $R = infinity$).
-  - *Silicon diode with barrier potential:* Replace with a $0.7" V"$ opposing counter-EMF battery when conducting forward.
-
-#worked-example("Diode Logic Circuit State")[
-  *Problem:* Two ideal diodes $D_1$ and $D_2$ are connected in parallel. Anode of $D_1$ is connected to $+5" V"$; anode of $D_2$ is connected to $+3" V"$. Both cathodes are joined together and connected to ground through a $1" k" \u{03A9}$ resistor. Find the voltage at the common cathode node and current through the resistor.
-
-  *Solution:*
-  $D_1$ has a higher anode potential ($+5" V"$) than $D_2$ ($+3" V"$). 
-  If $D_1$ conducts, the cathode node rises to $+5" V"$.
-  Cathode of $D_2$ is at $+5" V"$ while its anode is at $+3" V"$, so $D_2$ is reverse-biased by $2" V"$ and stays OFF.
-  Hence, node voltage $V_"out" = +5" V"$.
-  Current through resistor: $I = V_"out" / R = (5" V") / (1000 " \u{03A9}") = 5" mA"$.
+#v(1fr)
+#align(center)[
+  #figure(
+    image("assets/physics_electronic_devices_mindmap.png", width: 70%),
+    caption: [Electronic Devices Master Synthesis Mindmap covering solid-state physics, junction dynamics, rectifiers, and optoelectronics.],
+  )
 ]
+#v(1fr)
+
+
+#pagebreak()
+
+#set text(size: 7.5pt)
+#set par(leading: 0.36em, spacing: 0.38em)
+
+= High-Yield Formula Cheatsheet & Key Traps
 
 #cheatsheet-box(title: "Master Revision Formula Matrix: Electronic Devices")[
   - *Band Gap Criterion:* Insulator ($E_g > 3" eV"$), Semiconductor ($0 < E_g < 3" eV"$), Metal ($E_g = 0$)
@@ -340,16 +335,31 @@ $ V_"in" - V_Z = I_S R_S ==> R_S = (V_"in" - V_Z) / (I_Z + I_L) $
   - *LED Wavelength Condition:* $lambda = (h c) / E_g <= (1242" eV" dot "nm") / E_g quad (E_g >= 1.8" eV" "for visible")$
 ]
 
-#pagebreak()
+#v(4pt)
 
-= Practice MCQs & Solutions
+#tip-box(title: "The Seven Fatal CUET Traps in Electronic Devices")[
+  1. *Neutrality of Doped Semiconductors:* Always remember that n-type and p-type semiconductors are *electrically neutral*. Donor/acceptor ions balance free carriers.
+  2. *Rectifier Output Frequency:* Half-wave: $f_"out" = f_"in"$. Full-wave: $f_"out" = 2 f_"in"$.
+  3. *Photodiode vs LED Bias:* Photodiodes operate in *reverse bias*; LEDs operate in *forward bias*; Solar cells operate with *no external bias*.
+  4. *Ideal Diode Analysis Rules:* Forward-biased ideal diode is a closed switch ($V=0, R=0$); reverse-biased is an open switch ($I=0, R=oo$).
+  5. *Zener Diode Heavy Doping:* Zener diodes are *heavily doped*, producing an extremely thin depletion layer and high internal electric field ($~10^6" V/m"$).
+  6. *Photodiode Reverse Saturation Current Fractional Change:* Measured in reverse bias because the fractional increase in minority carrier reverse current ($Delta I / I_0$) is vastly larger and easier to measure than in forward bias.
+  7. *Temperature Coefficient of Resistance:* Semiconductors have *negative temperature coefficient* ($alpha < 0$): conductivity increases exponentially with temperature.
+]
+
+
+#pagebreak()
+#set text(size: 8.5pt)
+#set par(leading: 0.40em, spacing: 0.42em)
+
+= Practice Questions — Part 1 (Q1 to Q5)
 
 #mcq(
   1,
   [Carbon, Silicon, and Germanium each have four valence electrons. Their forbidden energy gaps are represented by $(E_g)_"C"$, $(E_g)_"Si"$, and $(E_g)_"Ge"$ respectively. Which of the following relationships is correct?],
   (
-    [$(E_g)_"C" < (E_g)_"Si" < (E_g)_"Ge"$],
     [$(E_g)_"C" > (E_g)_"Si" > (E_g)_"Ge"$],
+    [$(E_g)_"C" < (E_g)_"Si" < (E_g)_"Ge"$],
     [$(E_g)_"C" = (E_g)_"Si" = (E_g)_"Ge"$],
     [$(E_g)_"Si" > (E_g)_"C" > (E_g)_"Ge"$],
   ),
@@ -359,7 +369,7 @@ $ V_"in" - V_Z = I_S R_S ==> R_S = (V_"in" - V_Z) / (I_Z + I_L) $
   [
     Carbon (diamond) has $E_g approx 5.4" eV"$, Silicon has $E_g = 1.1" eV"$, and Germanium has $E_g = 0.7" eV"$. Therefore, $(E_g)_"C" > (E_g)_"Si" > (E_g)_"Ge"$.
   ],
-  answer: [B],
+  answer: [A],
 )
 
 #mcq(
@@ -421,8 +431,8 @@ $ V_"in" - V_Z = I_S R_S ==> R_S = (V_"in" - V_Z) / (I_Z + I_L) $
   5,
   [When a p-n junction diode is forward-biased, the width of the depletion layer and the height of the potential barrier respectively:],
   (
-    [Increase, Increase],
     [Decrease, Decrease],
+    [Increase, Increase],
     [Increase, Decrease],
     [Decrease, Increase],
   ),
@@ -432,10 +442,14 @@ $ V_"in" - V_Z = I_S R_S ==> R_S = (V_"in" - V_Z) / (I_Z + I_L) $
   [
     Forward bias opposes the built-in field, reducing effective barrier height to $(V_0 - V)$ and narrowing the depletion layer width.
   ],
-  answer: [B],
+  answer: [A],
 )
 
 #pagebreak()
+#set text(size: 8.5pt)
+#set par(leading: 0.40em, spacing: 0.42em)
+
+= Practice Questions — Part 2 (Q6 to Q10)
 
 #mcq(
   6,
@@ -481,8 +495,8 @@ $ V_"in" - V_Z = I_S R_S ==> R_S = (V_"in" - V_Z) / (I_Z + I_L) $
   (
     [$25" Hz"$],
     [$50" Hz"$],
-    [$100" Hz"$],
     [$200" Hz"$],
+    [$100" Hz"$],
   ),
 )
 #solution(
@@ -490,7 +504,7 @@ $ V_"in" - V_Z = I_S R_S ==> R_S = (V_"in" - V_Z) / (I_Z + I_L) $
   [
     In a full-wave rectifier, both half-cycles of the AC input are rectified, doubling output ripple frequency: $f_"out" = 2 f_"in" = 2 times 50" Hz" = 100" Hz"$.
   ],
-  answer: [C],
+  answer: [D],
 )
 
 #mcq(
@@ -530,6 +544,10 @@ $ V_"in" - V_Z = I_S R_S ==> R_S = (V_"in" - V_Z) / (I_Z + I_L) $
 )
 
 #pagebreak()
+#set text(size: 8.5pt)
+#set par(leading: 0.40em, spacing: 0.42em)
+
+= Practice Questions — Part 3 (Q11 to Q15)
 
 #mcq(
   11,
