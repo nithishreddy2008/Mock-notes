@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CUET Business Studies: Directing Dynamics & Communication Barriers</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 16px 22px;
+    overflow: hidden;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+  }
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .brand-badge {
+    background: #071A4D;
+    color: #B8FF34;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .title-group h1 {
+    font-size: 19px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .title-group p {
+    font-size: 11px;
+    color: #64748B;
+    margin-top: 1px;
+  }
+  .header-tag {
+    background: #EEF2FF;
+    color: #3730A3;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 6px;
+    border: 1px solid #C7D2FE;
+  }
+  .main-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 1.1fr 1.35fr;
+    gap: 14px;
+    height: 740px;
+  }
+  .card {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 10px;
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+  }
+  .card-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+    border-bottom: 1.5px solid #F1F5F9;
+  }
+  .badge {
+    font-size: 10px;
+    font-weight: 800;
+    padding: 3px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+  .badge-blue { background: #DBEAFE; color: #1E40AF; }
+  .badge-purple { background: #F3E8FF; color: #6B21A8; }
+  .badge-emerald { background: #D1FAE5; color: #065F46; }
+  .card-title {
+    font-size: 13px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .sub-box {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 9px 11px;
+    margin-bottom: 8px;
+  }
+  .sub-box:last-child { margin-bottom: 0; }
+  .sub-title {
+    font-size: 11.5px;
+    font-weight: 800;
+    color: #1E293B;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 3px;
+  }
+  .sub-desc {
+    font-size: 10.5px;
+    color: #475569;
+    line-height: 1.36;
+  }
+  .sub-desc strong { color: #0F172A; }
+  .barrier-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .barrier-item {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-left: 3.5px solid #0284C7;
+    border-radius: 6px;
+    padding: 6.5px 9px;
+  }
+  .barrier-item.alt { border-left-color: #8B5CF6; }
+  .barrier-item.emerald { border-left-color: #10B981; }
+  .barrier-item.amber { border-left-color: #F59E0B; }
+  .barrier-head {
+    font-size: 11px;
+    font-weight: 700;
+    color: #0F172A;
+    display: flex;
+    justify-content: space-between;
+  }
+  .barrier-text {
+    font-size: 10px;
+    color: #475569;
+    line-height: 1.32;
+    margin-top: 1.5px;
+  }
+  .bottom-strip {
+    grid-column: 1 / -1;
+    background: #071A4D;
+    color: #FFFFFF;
+    border-radius: 8px;
+    padding: 9px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: -2px;
+  }
+  .strip-title {
+    font-size: 11px;
+    font-weight: 800;
+    color: #B8FF34;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .strip-content {
+    font-size: 10.5px;
+    color: #E2E8F0;
+    line-height: 1.35;
+    flex: 1;
+    margin-left: 16px;
+  }
+  .strip-content strong { color: #FFFFFF; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <div class="brand-badge">OURMOCKS · CUET UG ARCHITECTURE</div>
+    <div class="title-group">
+      <h1>Directing Dynamics: Leadership Styles, Motivational Incentives & Communication Barriers</h1>
+      <p>Unit 7: Directing — Four Elements of Direction, Behavioral Leadership Models & Communication Taxonomy</p>
+    </div>
+  </div>
+  <div class="header-tag">NCERT & NTA CUET 2027 SPECIFICATION</div>
+</div>
+
+<div class="main-grid">
+  <!-- Column 1: Elements & Leadership Styles -->
+  <div class="card">
+    <div class="card-head">
+      <span class="card-title">Leadership Styles Triad</span>
+      <span class="badge badge-blue">Behavioral Models</span>
+    </div>
+    
+    <div class="sub-box">
+      <div class="sub-title">
+        <span style="color:#0284C7;">1. Autocratic (Authoritarian)</span>
+        <span style="font-size:9.5px; color:#64748B;">Leader-Centric</span>
+      </div>
+      <div class="sub-desc">
+        • <strong>Mechanism:</strong> Leader issues orders and expects unquestioning compliance; zero employee consultation.<br>
+        • <strong>Communication:</strong> Strictly one-way downward flow.<br>
+        • <strong>Suitability:</strong> Crisis situations, factory floors with unskilled labor requiring immediate decisive action.
+      </div>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">
+        <span style="color:#8B5CF6;">2. Democratic (Participative)</span>
+        <span style="font-size:9.5px; color:#64748B;">Group-Centric</span>
+      </div>
+      <div class="sub-desc">
+        • <strong>Mechanism:</strong> Leader consults subordinates, encourages participation, and makes collective decisions.<br>
+        • <strong>Communication:</strong> Active two-way interactive dialogue.<br>
+        • <strong>Suitability:</strong> Professional knowledge workers, creative teams, and highly skilled specialists.
+      </div>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">
+        <span style="color:#059669;">3. Laissez-Faire (Free-Rein)</span>
+        <span style="font-size:9.5px; color:#64748B;">Subordinate-Centric</span>
+      </div>
+      <div class="sub-desc">
+        • <strong>Mechanism:</strong> Leader grants complete operational and decision autonomy to group members; acts merely as a resource liaison.<br>
+        • <strong>Communication:</strong> Horizontal peer-to-peer exchange.<br>
+        • <strong>Suitability:</strong> Highly motivated, independent scientists and advanced R&D engineers.
+      </div>
+    </div>
+  </div>
+
+  <!-- Column 2: Financial vs Non-Financial Incentives -->
+  <div class="card">
+    <div class="card-head">
+      <span class="card-title">Motivational Incentives Matrix</span>
+      <span class="badge badge-purple">Maslow Alignment</span>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">
+        <span style="color:#0284C7;">Financial Incentives (Monetary)</span>
+      </div>
+      <div class="sub-desc">
+        • <strong>Pay & Allowances:</strong> Basic wage, dearness allowance.<br>
+        • <strong>Productivity Wages:</strong> Piece wage incentives.<br>
+        • <strong>Bonus:</strong> Ex-gratia payment above regular wages.<br>
+        • <strong>Profit Sharing:</strong> Share in audited enterprise profits.<br>
+        • <strong>Co-partnership / ESOPs:</strong> Shares issued to employees at concessional prices.<br>
+        • <strong>Retirement Benefits:</strong> Provident fund, pension, gratuity.
+      </div>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">
+        <span style="color:#8B5CF6;">Non-Financial Incentives (Psychological)</span>
+      </div>
+      <div class="sub-desc">
+        • <strong>Status:</strong> Authority, rank, prestige, corporate title.<br>
+        • <strong>Organisational Climate:</strong> Individual autonomy, trust.<br>
+        • <strong>Career Advancement:</strong> Structured promotional pathways.<br>
+        • <strong>Job Enrichment:</strong> Greater variety, autonomy, challenge.<br>
+        • <strong>Employee Recognition:</strong> Certificates, awards, praise.<br>
+        • <strong>Job Security:</strong> Stability of employment tenure.<br>
+        • <strong>Employee Empowerment:</strong> Greater decision discretion.
+      </div>
+    </div>
+  </div>
+
+  <!-- Column 3: Communication Process & Barriers -->
+  <div class="card">
+    <div class="card-head">
+      <span class="card-title">Communication Process & Four Barriers</span>
+      <span class="badge badge-emerald">Information Flow</span>
+    </div>
+
+    <div class="barrier-list">
+      <div class="barrier-item">
+        <div class="barrier-head">
+          <span>1. Semantic Barriers</span>
+          <span style="color:#0284C7; font-size:9.5px;">Language & Symbols</span>
+        </div>
+        <div class="barrier-text">Badly expressed messages, symbols with different meanings, technical jargon, faulty translations, unclarified assumptions.</div>
+      </div>
+
+      <div class="barrier-item alt">
+        <div class="barrier-head">
+          <span>2. Psychological Barriers</span>
+          <span style="color:#8B5CF6; font-size:9.5px;">Emotional & Cognitive</span>
+        </div>
+        <div class="barrier-text">Premature evaluation, inattention, loss by transmission and poor retention, mutual distrust between sender and receiver.</div>
+      </div>
+
+      <div class="barrier-item emerald">
+        <div class="barrier-head">
+          <span>3. Organisational Barriers</span>
+          <span style="color:#10B981; font-size:9.5px;">Structure & Policy</span>
+        </div>
+        <div class="barrier-text">Rigid corporate policy, complex scalar chain hierarchies, status distances, restrictive organizational rules and lack of facilities.</div>
+      </div>
+
+      <div class="barrier-item amber">
+        <div class="barrier-head">
+          <span>4. Personal Barriers</span>
+          <span style="color:#D97706; font-size:9.5px;">Individual Factors</span>
+        </div>
+        <div class="barrier-text">Fear of challenge to authority, lack of confidence in subordinates, unwillingness to communicate, lack of proper incentives.</div>
+      </div>
+    </div>
+
+    <div class="sub-box" style="margin-top: 8px;">
+      <div class="sub-title" style="color:#059669;">The Communication Pipeline Loop</div>
+      <div class="sub-desc" style="font-size:10px;">
+        <strong>Sender</strong> $arrow$ <strong>Message</strong> $arrow$ <strong>Encoding</strong> $arrow$ <strong>Media / Channel</strong> $arrow$ <strong>Decoding</strong> $arrow$ <strong>Receiver</strong> $arrow$ <strong>Feedback</strong> (subject to environmental <strong>Noise</strong>).
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Banner -->
+  <div class="bottom-strip">
+    <div class="strip-title">CUET 2027 Key Distinction</div>
+    <div class="strip-content">
+      <strong>Core Conceptual Anchors:</strong> <strong>Semantic Barriers</strong> stem from words, symbols, and technical vocabulary; <strong>Psychological Barriers</strong> stem from emotions and prejudices (premature evaluation); <strong>Organisational Barriers</strong> stem from rules and hierarchy; <strong>Personal Barriers</strong> stem from individual fear of losing authority; <strong>ESOPs</strong> give ownership status (financial); <strong>Job Enrichment</strong> provides psychological challenge (non-financial).
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
