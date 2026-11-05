@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px 32px;
+    overflow: hidden;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #071A4D;
+    padding: 16px 28px;
+    border-radius: 12px;
+    border-bottom: 4px solid #1F5EFF;
+    margin-bottom: 16px;
+  }
+  .header-left h1 {
+    color: #FFFFFF;
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+  }
+  .header-left p {
+    color: #94A3B8;
+    font-size: 13px;
+    font-weight: 500;
+    margin-top: 3px;
+  }
+  .badge {
+    background: #1F5EFF;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+  }
+  .main-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    height: 740px;
+  }
+  .card {
+    background: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    border-radius: 12px;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+  }
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #E2E8F0;
+    margin-bottom: 12px;
+  }
+  .card-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: #EFF6FF;
+    color: #1F5EFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 15px;
+  }
+  .card-title {
+    font-size: 15px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .card-subtitle {
+    font-size: 11px;
+    color: #64748B;
+  }
+  .sub-box {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin-bottom: 10px;
+  }
+  .sub-title {
+    font-size: 12.5px;
+    font-weight: 800;
+    color: #1E293B;
+    margin-bottom: 4px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .sub-title span {
+    font-size: 11px;
+    color: #1F5EFF;
+    font-weight: 700;
+  }
+  .detail-list {
+    font-size: 11px;
+    line-height: 1.45;
+    color: #334155;
+  }
+  .detail-list li {
+    margin-left: 14px;
+    margin-bottom: 2px;
+  }
+  .tag {
+    display: inline-block;
+    background: #E2E8F0;
+    color: #334155;
+    font-size: 9.5px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-right: 4px;
+    margin-top: 4px;
+  }
+  .tag-blue { background: #DBEAFE; color: #1E40AF; }
+  .tag-green { background: #DCFCE7; color: #166534; }
+  .tag-amber { background: #FEF3C7; color: #92400E; }
+  .tag-red { background: #FEE2E2; color: #991B1B; }
+  .highlight-strip {
+    background: #F1F5F9;
+    border-left: 3px solid #1F5EFF;
+    padding: 6px 10px;
+    font-size: 10.5px;
+    color: #0F172A;
+    border-radius: 0 6px 6px 0;
+    margin-top: auto;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <h1>REGIONAL ASPIRATIONS, CONFLICTS & PEACE ACCORDS</h1>
+    <p>Jammu & Kashmir · Punjab Crisis & Longowal Accord · North-East Reorganisation & Rajiv Peace Accords</p>
+  </div>
+  <div class="badge">POLITICAL SCIENCE UNIT 14 · CONCEPT MATRIX</div>
+</div>
+
+<div class="main-grid">
+
+  <!-- Column 1 -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon">1</div>
+      <div>
+        <div class="card-title">Jammu & Kashmir Theatre</div>
+        <div class="card-subtitle">Accession, Special Autonomy & Cross-Border Militancy</div>
+      </div>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">Accession & Article 370 <span>1947–1953</span></div>
+      <ul class="detail-list">
+        <li><strong>Instrument of Accession (26 Oct 1947):</strong> Signed by Maharaja Hari Singh following Pakistani tribal raider invasion.</li>
+        <li><strong>Article 370:</strong> Granted special constitutional status; Parliament's jurisdiction restricted to Defense, External Affairs, and Communications.</li>
+        <li><strong>Sheikh Abdullah Reforms:</strong> Land to the tiller without compensation; dismissed and arrested in August 1953 over autonomy disputes.</li>
+      </ul>
+      <span class="tag tag-blue">Hari Singh</span>
+      <span class="tag tag-amber">Article 370</span>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">Accords & Rise of Insurgency <span>1974–1989</span></div>
+      <ul class="detail-list">
+        <li><strong>Indira-Sheikh Accord (1974):</strong> Sheikh Abdullah renounced plebiscite demand; became Chief Minister with National Conference.</li>
+        <li><strong>1987 Assembly Elections:</strong> Widespread allegations of electoral rigging against the National Conference-Congress coalition.</li>
+        <li><strong>Cross-Border Insurgency (1989):</strong> Eruption of armed militancy supported by Pakistan; exodus of Kashmiri Pandits from the Valley.</li>
+      </ul>
+      <span class="tag tag-green">1974 Accord</span>
+      <span class="tag tag-red">1989 Militancy</span>
+    </div>
+
+    <div class="highlight-strip">
+      <strong>Core Fact:</strong> Sheikh Abdullah signed the 1974 Accord with Indira Gandhi, dropping plebiscite demands to join democratic governance.
+    </div>
+  </div>
+
+  <!-- Column 2 -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon">2</div>
+      <div>
+        <div class="card-title">The Punjab Crisis & Accords</div>
+        <div class="card-subtitle">Anandpur Resolution, Operation Blue Star & Peace</div>
+      </div>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">From Autonomy to Extremism <span>1973–1984</span></div>
+      <ul class="detail-list">
+        <li><strong>Anandpur Sahib Resolution (1973):</strong> Akali Dal demanded federal restructuring, river water redistribution, and greater autonomy.</li>
+        <li><strong>Rise of Extremism:</strong> Militant faction led by Jarnail Singh Bhindranwale fortified the Golden Temple complex.</li>
+        <li><strong>Operation Blue Star (June 1984):</strong> Military assault to flush out militants; caused severe damage to Akal Takht and deep emotional trauma.</li>
+        <li><strong>1984 Aftermath:</strong> Indira Gandhi assassinated (31 Oct 1984) by Sikh bodyguards; widespread anti-Sikh violence in Delhi and northern India.</li>
+      </ul>
+      <span class="tag tag-amber">Anandpur 1973</span>
+      <span class="tag tag-red">Blue Star June 1984</span>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">Rajiv-Longowal Punjab Accord <span>July 1985</span></div>
+      <ul class="detail-list">
+        <li><strong>Signatories:</strong> PM Rajiv Gandhi and Akali Dal President Sant Harchand Singh Longowal.</li>
+        <li><strong>Key Terms:</strong> Transfer of Chandigarh to Punjab, tribunal for Ravi-Beas river waters, rehabilitation of military detainees.</li>
+        <li><strong>Assassination:</strong> Longowal was assassinated by extremists a month later; full peace restored in mid-1990s under KPS Gill.</li>
+      </ul>
+      <span class="tag tag-green">July 1985 Accord</span>
+      <span class="tag tag-blue">Nanavati Commission</span>
+    </div>
+
+    <div class="highlight-strip">
+      <strong>CUET Distinction:</strong> The Punjab Accord was signed with moderate leader Harchand Singh Longowal, NOT with Bhindranwale.
+    </div>
+  </div>
+
+  <!-- Column 3 -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon">3</div>
+      <div>
+        <div class="card-title">North-East Autonomy & Accords</div>
+        <div class="card-subtitle">Tribal Reorganisation, Mizo Peace & Assam Accord</div>
+      </div>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">Tribal Reorganisation & Nagas <span>1963–1987</span></div>
+      <ul class="detail-list">
+        <li><strong>Composite Assam:</strong> Reorganised into Nagaland (1963), Meghalaya, Manipur, Tripura (1972), and Mizoram, Arunachal (1987).</li>
+        <li><strong>Naga Struggle:</strong> Naga National Council (NNC) under Angami Zapu Phizo demanded independent sovereignty from 1947.</li>
+        <li><strong>Mizo Accord (1986):</strong> 1959 Mautam famine triggered insurgency by Mizo National Front (MNF) under Laldenga; signed 1986 peace pact.</li>
+      </ul>
+      <span class="tag tag-blue">Phizo (NNC)</span>
+      <span class="tag tag-green">Laldenga (MNF) 1986</span>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">Assam Movement & 1985 Accord <span>AASU to AGP</span></div>
+      <ul class="detail-list">
+        <li><strong>Anti-Foreigner Agitation (1979–85):</strong> All Assam Students Union (AASU) led mass stir against illegal Bangladesh migrants.</li>
+        <li><strong>Assam Accord (15 Aug 1985):</strong> Rajiv Gandhi & AASU; cutoff date of <strong>24 March 1971</strong> for detection and deportation.</li>
+        <li><strong>Birth of AGP:</strong> AASU student leaders formed Asom Gana Parishad (AGP) in 1985, sweeping state assembly elections under Mahanta.</li>
+      </ul>
+      <span class="tag tag-amber">Cutoff: 24 March 1971</span>
+      <span class="tag tag-green">AGP Victory</span>
+    </div>
+
+    <div class="highlight-strip">
+      <strong>Philosophical Core:</strong> India rejects melting-pot assimilation; it practices <em>democratic accommodation</em> via asymmetrical federalism.
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
