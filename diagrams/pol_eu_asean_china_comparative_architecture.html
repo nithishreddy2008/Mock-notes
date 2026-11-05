@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px 32px;
+    overflow: hidden;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #071A4D;
+    padding: 16px 28px;
+    border-radius: 12px;
+    border-bottom: 4px solid #1F5EFF;
+    margin-bottom: 16px;
+  }
+  .header-left h1 {
+    color: #FFFFFF;
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+  }
+  .header-left p {
+    color: #94A3B8;
+    font-size: 13px;
+    font-weight: 500;
+    margin-top: 3px;
+  }
+  .badge {
+    background: #1F5EFF;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+  }
+  .main-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr 1.05fr;
+    gap: 16px;
+    height: 696px;
+  }
+  .card {
+    background: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    border-radius: 12px;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+  }
+  .card-title {
+    font-size: 15px;
+    font-weight: 800;
+    color: #071A4D;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #E2E8F0;
+  }
+  .card-title .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+  .dot-blue { background: #1F5EFF; }
+  .dot-green { background: #16A34A; }
+  .dot-red { background: #DC2626; }
+
+  .sub-box {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin-bottom: 10px;
+  }
+  .sub-head {
+    font-size: 12px;
+    font-weight: 800;
+    color: #071A4D;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .sub-desc {
+    font-size: 11px;
+    color: #334155;
+    line-height: 1.42;
+  }
+  .sub-desc b {
+    color: #0F172A;
+  }
+
+  .banner {
+    grid-column: 1 / -1;
+    background: #EEF2FF;
+    border: 1px solid #C7D2FE;
+    border-radius: 8px;
+    padding: 10px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11.8px;
+    color: #1E1B4B;
+    font-weight: 600;
+  }
+  .banner span {
+    color: #1F5EFF;
+    font-weight: 800;
+  }
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="header-left">
+      <h1>ALTERNATIVE CENTERS OF POWER: COMPARATIVE ARCHITECTURAL MATRIX</h1>
+      <p>CUET UG Political Science · Regional Blocs, Economic Superpowers & Diplomatic Mechanisms</p>
+    </div>
+    <div class="badge">FIGURE 1 · COMPARATIVE REGIONAL MATRIX</div>
+  </div>
+
+  <div class="main-grid">
+    <!-- Column 1: European Union -->
+    <div class="card">
+      <div class="card-title">
+        <div class="dot dot-blue"></div>
+        <span>1. European Union (EU) · Supranational Model</span>
+      </div>
+
+      <div class="sub-box">
+        <div class="sub-head">A. Evolution & Treaties</div>
+        <div class="sub-desc">
+          <b>Marshall Plan (1948):</b> OEEC created for post-war recovery.<br>
+          <b>Treaty of Rome (1957):</b> Established European Economic Community (EEC) with 6 founding nations.<br>
+          <b>Maastricht Treaty (1992):</b> Created the European Union (effective 1993); single currency Euro launched in 1999/2002.
+        </div>
+      </div>
+
+      <div class="sub-box">
+        <div class="sub-head">B. Economic & Military Power</div>
+        <div class="sub-desc">
+          <b>Global Economic Stature:</b> World's 2nd largest economy after US; single market with free movement of goods, capital, and labor.<br>
+          <b>Diplomatic Leverage:</b> Permanent veto seat on UN Security Council (France); combined military second only to US.
+        </div>
+      </div>
+
+      <div class="sub-box">
+        <div class="sub-head">C. Structural Limitations</div>
+        <div class="sub-desc">
+          <b>Euro-Skepticism:</b> National resistance to common constitution (rejected in 2005 by France/Netherlands); <b>Brexit (2020)</b>.<br>
+          <b>Foreign Policy Discord:</b> Deep divisions over US foreign wars (e.g. UK joined 2003 Iraq invasion; Germany/France opposed).
+        </div>
+      </div>
+    </div>
+
+    <!-- Column 2: ASEAN -->
+    <div class="card">
+      <div class="card-title">
+        <div class="dot dot-green"></div>
+        <span>2. ASEAN · Consensus & Intergovernmental</span>
+      </div>
+
+      <div class="sub-box">
+        <div class="sub-head">A. Genesis & Membership</div>
+        <div class="sub-desc">
+          <b>Bangkok Declaration (8 Aug 1967):</b> Founded by 5 nations: Indonesia, Malaysia, Philippines, Singapore, Thailand.<br>
+          <b>Expansion to 10:</b> Added Brunei (1984), Vietnam (1995), Laos & Myanmar (1997), and Cambodia (1999).
+        </div>
+      </div>
+
+      <div class="sub-box">
+        <div class="sub-head">B. The 'ASEAN Way' & 3 Pillars (2003)</div>
+        <div class="sub-desc">
+          <b>The 'ASEAN Way':</b> Informal, non-confrontational, sovereign-respecting consensus diplomacy with NO supranational parliament.<br>
+          <b>Three Pillars:</b> Security Community (ARF 1994 for dialogue), Economic Community (AEC free trade area), Socio-Cultural Community.
+        </div>
+      </div>
+
+      <div class="sub-box">
+        <div class="sub-head">C. India's Engagement</div>
+        <div class="sub-desc">
+          <b>Look East (1991) to Act East (2014):</b> Signed FTAs on goods (2009) and services (2014); strategic partner in defense and maritime security.
+        </div>
+      </div>
+    </div>
+
+    <!-- Column 3: Rise of China -->
+    <div class="card">
+      <div class="card-title">
+        <div class="dot dot-red"></div>
+        <span>3. Rise of China · Gradual Market Socialism</span>
+      </div>
+
+      <div class="sub-box">
+        <div class="sub-head">A. Maoist Model vs Reforms</div>
+        <div class="sub-desc">
+          <b>Maoist Economy (1949–1978):</b> State ownership, self-reliant command model, basic social guarantees, but low industrial productivity.<br>
+          <b>Deng Xiaoping (1978):</b> Abandoned Shock Therapy; launched "Socialism with Chinese Characteristics" & <b>Open Door Policy</b>.
+        </div>
+      </div>
+
+      <div class="sub-box">
+        <div class="sub-head">B. Phased Modernization Strategy</div>
+        <div class="sub-desc">
+          <b>Four Modernizations (1973):</b> Zhou Enlai proposed agriculture, industry, science/tech, defense.<br>
+          <b>Stepwise Privatization:</b> Agriculture privatized in <b>1982</b>; Industry privatized in <b>1998</b>; Special Economic Zones (SEZs); WTO entry (2001).
+        </div>
+      </div>
+
+      <div class="sub-box">
+        <div class="sub-head">C. India-China Relations</div>
+        <div class="sub-desc">
+          <b>Conflict & Thaw:</b> 1962 Border War severed ties; restored by Rajiv Gandhi's 1988 Beijing visit; massive trade surplus despite LAC border disputes.
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Banner -->
+    <div class="banner">
+      <div><span>East Asian Economic Dynamism:</span> Japan (G7 member, 1% defense ceiling, global tech giant: Sony, Toyota, Honda); South Korea (OECD member, Chaebol giants: Samsung, Hyundai, LG).</div>
+      <div><span>Projection:</span> China projected to surpass US economy by 2040.</div>
+    </div>
+  </div>
+
+</body>
+</html>
