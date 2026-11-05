@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px 32px;
+    overflow: hidden;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #071A4D;
+    padding: 16px 28px;
+    border-radius: 12px;
+    border-bottom: 4px solid #1F5EFF;
+    margin-bottom: 16px;
+  }
+  .header-left h1 {
+    color: #FFFFFF;
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+  }
+  .header-left p {
+    color: #94A3B8;
+    font-size: 13px;
+    font-weight: 500;
+    margin-top: 3px;
+  }
+  .badge {
+    background: #1F5EFF;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+  }
+  .main-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    height: 740px;
+  }
+  .card {
+    background: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    border-radius: 12px;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+  }
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #E2E8F0;
+    margin-bottom: 12px;
+  }
+  .card-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: #EFF6FF;
+    color: #1F5EFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 15px;
+  }
+  .card-title {
+    font-size: 15px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .card-subtitle {
+    font-size: 11px;
+    color: #64748B;
+  }
+  .sub-box {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin-bottom: 10px;
+  }
+  .sub-title {
+    font-size: 12.5px;
+    font-weight: 800;
+    color: #1E293B;
+    margin-bottom: 4px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .sub-title span {
+    font-size: 11px;
+    color: #1F5EFF;
+    font-weight: 700;
+  }
+  .detail-list {
+    font-size: 11px;
+    line-height: 1.45;
+    color: #334155;
+  }
+  .detail-list li {
+    margin-left: 14px;
+    margin-bottom: 2px;
+  }
+  .tag {
+    display: inline-block;
+    background: #E2E8F0;
+    color: #334155;
+    font-size: 9.5px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-right: 4px;
+    margin-top: 4px;
+  }
+  .tag-blue { background: #DBEAFE; color: #1E40AF; }
+  .tag-green { background: #DCFCE7; color: #166534; }
+  .tag-amber { background: #FEF3C7; color: #92400E; }
+  .tag-red { background: #FEE2E2; color: #991B1B; }
+  .highlight-strip {
+    background: #F1F5F9;
+    border-left: 3px solid #1F5EFF;
+    padding: 6px 10px;
+    font-size: 10.5px;
+    color: #0F172A;
+    border-radius: 0 6px 6px 0;
+    margin-top: auto;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <h1>THE SYNDICATE VS. INDIRA GANDHI & THE 1969 CONGRESS SPLIT</h1>
+    <p>Dual Successions (1964, 1966) · 1967 Electoral Upset · Conscience Vote · 1971 Landslide & Systemic Transformation</p>
+  </div>
+  <div class="badge">POLITICAL SCIENCE UNIT 12 · CONCEPT MATRIX</div>
+</div>
+
+<div class="main-grid">
+
+  <!-- Column 1 -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon">1</div>
+      <div>
+        <div class="card-title">The Syndicate & Successions</div>
+        <div class="card-subtitle">Organizational Bosses vs Executive Leadership</div>
+      </div>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">The Syndicate Power Troika <span>Key Figures</span></div>
+      <ul class="detail-list">
+        <li><strong>K. Kamaraj:</strong> Former TN CM & Congress President (creator of Kamaraj Plan 1963). Kingmaker in both 1964 and 1966.</li>
+        <li><strong>S. Nijalingappa:</strong> Powerful Karnataka leader; Congress President during the 1969 split.</li>
+        <li><strong>S.K. Patil (Bombay), Atulya Ghosh (WB), N. Sanjiva Reddy (AP):</strong> Regional organisational stalwarts.</li>
+        <li><strong>Ideological Tilt:</strong> Conservative, pro-business, cautious, party-machine supremacy over the Prime Minister.</li>
+      </ul>
+      <span class="tag tag-blue">Organisational Bosses</span>
+      <span class="tag tag-amber">Party Supremacy</span>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">Succession Trials (1964 & 1966) <span>Smooth Transitions</span></div>
+      <ul class="detail-list">
+        <li><strong>1964 (Nehru Death):</strong> Kamaraj consulted MPs/party workers; consensus selected Lal Bahadur Shastri. Gulzarilal Nanda served as caretaker.</li>
+        <li><strong>Shastri Premiership:</strong> Guided India through 1965 War (coined <em>Jai Jawan, Jai Kisan</em>); died Tashkent (10 Jan 1966).</li>
+        <li><strong>1966 Contest:</strong> Morarji Desai forced secret ballot. Indira won 355 to 169 with Syndicate backing.</li>
+        <li><strong>Syndicate Calculation:</strong> Expected Indira to be inexperienced (<em>Gungi Gudiya</em>) and dependent on party bosses.</li>
+      </ul>
+      <span class="tag tag-green">Consensus (1964)</span>
+      <span class="tag tag-blue">Secret Ballot (1966)</span>
+    </div>
+
+    <div class="highlight-strip">
+      <strong>CUET Distinction:</strong> Gulzarilal Nanda was twice caretaker PM (1964, 1966); Shastri and Indira were the duly designated Prime Ministers.
+    </div>
+  </div>
+
+  <!-- Column 2 -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon">2</div>
+      <div>
+        <div class="card-title">1967 Shock & The 1969 Split</div>
+        <div class="card-subtitle">Non-Congressism, Populism & Factional Rupture</div>
+      </div>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">1967 Fourth General Election <span>"Political Earthquake"</span></div>
+      <ul class="detail-list">
+        <li><strong>Economic Crises:</strong> Consecutive monsoon failures, food shortages, price rise, and 1966 Rupee devaluation.</li>
+        <li><strong>Non-Congressism:</strong> Dr. Rammanohar Lohia united disparate opposition forces against the Congress umbrella.</li>
+        <li><strong>Electoral Upset:</strong> Congress Lok Sabha majority slashed to 283; lost power in 8 states (7 at polls + Haryana via defection).</li>
+        <li><strong>SVD Coalitions & Defections:</strong> Samyukta Vidhayak Dal ministries formed; Gaya Lal coined <em>Aaya Ram, Gaya Ram</em>.</li>
+      </ul>
+      <span class="tag tag-red">283 LS Seats</span>
+      <span class="tag tag-amber">SVD Coalitions</span>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">The Great Split of 1969 <span>Conscience Vote</span></div>
+      <ul class="detail-list">
+        <li><strong>Socialist Pivot:</strong> Indira floated 10-Point Programme (1967); nationalised 14 banks (July 1969); stripped Morarji of Finance.</li>
+        <li><strong>Presidential Crisis:</strong> Zakir Husain died (May 1969). Syndicate nominated N. Sanjiva Reddy; Indira backed VP V.V. Giri.</li>
+        <li><strong>Conscience Vote:</strong> Indira urged MPs/MLAs to vote conscience; V.V. Giri won as Independent.</li>
+        <li><strong>Formal Split:</strong> Nijalingappa expelled Indira (Nov 1969). Split into Congress (O) [Syndicate] & Congress (R) [Indira].</li>
+      </ul>
+      <span class="tag tag-blue">14 Banks Nationalised</span>
+      <span class="tag tag-green">Congress (R) vs (O)</span>
+    </div>
+
+    <div class="highlight-strip">
+      <strong>Core Fact:</strong> Indira headed a minority government (1969–1971) surviving on external floor support from CPI and DMK.
+    </div>
+  </div>
+
+  <!-- Column 3 -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon">3</div>
+      <div>
+        <div class="card-title">1971 Landslide & Restoration</div>
+        <div class="card-subtitle">Electoral Triumph & Altered Institutional Fabric</div>
+      </div>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">1971 Fifth Lok Sabha Elections <span>Garibi Hatao</span></div>
+      <ul class="detail-list">
+        <li><strong>The Grand Alliance:</strong> Cong(O), Swatantra, Jana Sangh, SSP, PSP formed anti-Indira bloc with slogan <em>Indira Hatao</em>.</li>
+        <li><strong>Indira's Positive Narrative:</strong> Countered with pro-poor, radical agenda: <em>Garibi Hatao</em> (Abolish Poverty).</li>
+        <li><strong>Abolition of Privy Purses:</strong> Passed 26th Amendment (1971) ending royal pensions after Supreme Court initially blocked it.</li>
+        <li><strong>Tectonic Verdict:</strong> Congress (R) won 352 seats (375 with CPI ally; 48.4% vote). Cong(O) won only 16 seats.</li>
+      </ul>
+      <span class="tag tag-green">352 Cong(R) Seats</span>
+      <span class="tag tag-red">Cong(O) Collapsed</span>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">Restoration or Reinvention? <span>Structural Shift</span></div>
+      <ul class="detail-list">
+        <li><strong>Nehruvian Congress:</strong> Inclusive umbrella accommodating diverse factions, state satraps, and internal debates.</li>
+        <li><strong>Indira's Congress:</strong> Centralised, highly personalised command structure centred entirely around supreme leader.</li>
+        <li><strong>Erosion of Satraps:</strong> State CMs became central nominees rather than independent mass leaders.</li>
+        <li><strong>Bangladesh Triumph:</strong> Dec 1971 war victory solidified Indira's unchallenged authority across national politics.</li>
+      </ul>
+      <span class="tag tag-blue">Centralised Command</span>
+      <span class="tag tag-amber">Personalised Mandate</span>
+    </div>
+
+    <div class="highlight-strip">
+      <strong>Analytical Core:</strong> Indira restored the Congress to supreme power, but NOT the original internal consensus-based 'Congress System'.
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
