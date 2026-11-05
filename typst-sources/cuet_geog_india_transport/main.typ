@@ -7,6 +7,9 @@
   subtitle: "Arterial Road Corridors, Railway Modernization, Inland Navigation, Coastal Gateways, Telecom Networks & Global Trade Dynamics",
 )
 
+#set text(size: 10.85pt)
+#set par(leading: 0.68em, spacing: 0.94em)
+
 = Module 1: Surface Transport — Road Networks & Strategic Corridors
 
 == 1.1 Historical Evolution and Road Classification in India
@@ -272,8 +275,8 @@ The *BharatNet Project* (originally launched as the National Optical Fibre Netwo
   1,
   [The first commercial passenger railway train in India ran between which pair of stations and in which year?],
   (
-    [Calcutta to Raniganj, 1854],
     [Bombay to Thane, 1853],
+    [Calcutta to Raniganj, 1854],
     [Madras to Arkonam, 1856],
     [Delhi to Meerut, 1860],
   )
@@ -282,16 +285,16 @@ The *BharatNet Project* (originally launched as the National Optical Fibre Netwo
 #solution(
   1,
   [The first commercial passenger train in India ran over a distance of 34 km between Bombay (Bori Bunder) and Thane on April 16, 1853.],
-  answer: [B]
+  answer: [A]
 )
 
 #mcq(
   2,
   [The North-South Corridor and East-West Corridor under the National Highway Development Project physically intersect at which city?],
   (
-    [Nagpur],
-    [Bhopal],
     [Jhansi],
+    [Bhopal],
+    [Nagpur],
     [Gwalior],
   )
 )
@@ -299,15 +302,15 @@ The *BharatNet Project* (originally launched as the National Optical Fibre Netwo
 #solution(
   2,
   [The North-South Corridor (Srinagar to Kanyakumari) and East-West Corridor (Silchar to Porbandar) intersect at Jhansi in Uttar Pradesh.],
-  answer: [C]
+  answer: [A]
 )
 
 #mcq(
   3,
   [Which major seaport was developed in the post-Independence era on the Gulf of Kutch to compensate for the loss of Karachi Port to Pakistan?],
   (
-    [Marmagao Port],
     [Kandla (Deendayal Port)],
+    [Marmagao Port],
     [Jawaharlal Nehru Port],
     [New Mangalore Port],
   )
@@ -316,7 +319,7 @@ The *BharatNet Project* (originally launched as the National Optical Fibre Netwo
 #solution(
   3,
   [Kandla Port (now Deendayal Port) was constructed in Gujarat in the 1950s to serve north-western India and offset the loss of Karachi Port.],
-  answer: [B]
+  answer: [A]
 )
 
 #mcq(
@@ -324,25 +327,25 @@ The *BharatNet Project* (originally launched as the National Optical Fibre Netwo
   [National Waterway-1 (NW-1), the longest operational inland waterway in India, extends across which river system and terminals?],
   (
     [Brahmaputra river from Sadiya to Dhubri],
-    [Ganga-Bhagirathi-Hooghly river system from Prayagraj to Haldia],
-    [West Coast Canal from Kottapuram to Kollam],
     [Godavari-Krishna rivers from Kakinada to Puducherry],
+    [West Coast Canal from Kottapuram to Kollam],
+    [Ganga-Bhagirathi-Hooghly river system from Prayagraj to Haldia],
   )
 )
 
 #solution(
   4,
   [National Waterway-1 covers a distance of 1,620 km along the Ganga-Bhagirathi-Hooghly river system from Prayagraj in UP to Haldia in West Bengal.],
-  answer: [B]
+  answer: [D]
 )
 
 #mcq(
   5,
   [The landmark 9.02-kilometre-long 'Atal Tunnel', constructed by the Border Roads Organisation at an altitude above 3,000 metres, passes under which Himalayan pass?],
   (
-    [Nathu La Pass],
-    [Zoji La Pass],
     [Rohtang Pass],
+    [Zoji La Pass],
+    [Nathu La Pass],
     [Banihal Pass],
   )
 )
@@ -350,7 +353,7 @@ The *BharatNet Project* (originally launched as the National Optical Fibre Netwo
 #solution(
   5,
   [The Atal Tunnel was engineered under the Rohtang Pass in the Pir Panjal range of Himachal Pradesh, connecting Manali to Lahaul-Spiti valley.],
-  answer: [C]
+  answer: [A]
 )
 
 #pagebreak()
@@ -378,15 +381,15 @@ The *BharatNet Project* (originally launched as the National Optical Fibre Netwo
   (
     [Paradip Port],
     [Haldia Port],
-    [Kolkata Port (Syama Prasad Mookerjee Port)],
     [Visakhapatnam Port],
+    [Kolkata Port (Syama Prasad Mookerjee Port)],
   )
 )
 
 #solution(
   7,
   [Kolkata Port is India's only major riverine port, situated on the banks of the Hooghly River, 128 km inland from the open Bay of Bengal.],
-  answer: [C]
+  answer: [D]
 )
 
 #mcq(
@@ -395,15 +398,15 @@ The *BharatNet Project* (originally launched as the National Optical Fibre Netwo
   (
     [1.000 metre],
     [1.435 metres],
-    [1.676 metres],
     [0.762 metre],
+    [1.676 metres],
   )
 )
 
 #solution(
   8,
   [Broad Gauge has a width of 1.676 metres (5 feet 6 inches) between the inner faces of rails and comprises over 90% of India's rail network.],
-  answer: [C]
+  answer: [D]
 )
 
 #mcq(
