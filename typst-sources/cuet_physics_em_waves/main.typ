@@ -48,6 +48,9 @@
   *CUET UG Exam Architecture:* Unit 5 accounts for roughly 6% to 8% of the CUET UG Physics test (3 to 4 MCQs). Standard question archetypes include identifying spectral bands by wavelength/frequency, calculating displacement current during capacitor charging, finding $E_0$ or $B_0$ using $c = E_0 / B_0$, and radiation pressure / intensity relations.
 ]
 
+#set text(size: 9.8pt)
+#set par(leading: 0.38em, spacing: 0.40em)
+
 = Concept of Displacement Current & Ampere-Maxwell Law
 
 == Inconsistency of Ampere's Circuital Law
@@ -168,7 +171,7 @@ Consider an electromagnetic wave propagating along the $+x$-direction. The elect
 ]
 
 #figure(
-  image("assets/physics_em_waves_displacement_propagation.png", width: 84%),
+  image("assets/physics_em_waves_displacement_propagation.png", width: 78%),
   caption: [Electromagnetic Wave Propagation: Displacement current in capacitor gaps, transverse orthogonal field vectors ($E bot B bot k$), and energy equipartition.],
 )
 
@@ -327,7 +330,7 @@ The electromagnetic spectrum comprises the entire continuous range of electromag
 )
 
 #figure(
-  image("assets/physics_em_spectrum_classification_applications.png", width: 84%),
+  image("assets/physics_em_spectrum_classification_applications.png", width: 78%),
   caption: [Electromagnetic Spectrum Architecture: Wavelength ladder, physical generation mechanisms, and essential CUET technological applications.],
 )
 
@@ -442,12 +445,22 @@ Electromagnetic waves propagate through the atmosphere via three distinct mechan
   $ "Population" = "Area" times "Density" = 6434 times 1200 approx 7.72 times 10^6 " persons" = 77.2 " lakhs" $
 ]
 
-= Master Mindmap & High-Yield Cheatsheet
+#pagebreak()
+= Master Mindmap: Electromagnetic Waves
 
-#figure(
-  image("assets/physics_em_waves_mindmap.png", width: 84%),
-  caption: [Master Synthesis Mindmap: Structural framework of Unit 5 Electromagnetic Waves.],
-)
+#v(1em)
+#align(center)[
+  #figure(
+    image("assets/physics_em_waves_mindmap.png", width: 70%),
+    caption: [Master Synthesis Mindmap: Structural framework of Unit 5 Electromagnetic Waves.],
+  )
+]
+
+#pagebreak()
+= High-Yield Cheatsheet & Exam Traps
+
+#set text(size: 7.5pt)
+#set par(leading: 0.36em, spacing: 0.38em)
 
 #cheatsheet-box(title: "Master Electromagnetic Waves Revision Cheatsheet")[
   - *Displacement Current:* $I_d = epsilon_0 (d Phi_E / d t) = epsilon_0 A (d E / d t)$ | Ampere-Maxwell: $integral.cont vec(B) dot d vec(l) = mu_0 (I_c + I_d)$.
@@ -462,9 +475,22 @@ Electromagnetic waves propagate through the atmosphere via three distinct mechan
   - *Ozone Shielding:* Absorbs UV radiation below $300" nm"$; Greenhouse effect caused by selective IR trapping by atmospheric $"CO"_2$ and $"H"_2"O"$.
 ]
 
+#tip-box(title: "The Seven Fatal CUET Traps in Electromagnetic Waves")[
+  1. *Displacement Current vs Conduction Current:* $I_d = epsilon_0 (d Phi_E / d t)$. In a purely DC circuit at steady state, $d Phi_E / d t = 0$, so $I_d = 0$ even if $I_c$ flowed during transient charging.
+  2. *Magnetic Field Inside Capacitor Gap:* Do not use standard long-wire formula $B = (mu_0 I)/(2 pi r)$ for points inside the plates! Inside $r <= R$, Ampere-Maxwell law gives $B(r) = (mu_0 I_d r) / (2 pi R^2)$, which increases linearly from center to edge.
+  3. *Phase of E and B Fields:* In a vacuum plane EM wave, $vec(E)$ and $vec(B)$ oscillate *in phase* ($Delta phi = 0$). They reach their maxima and zeros at the exact same instant, even though their spatial vectors are perpendicular ($vec(E) bot vec(B)$).
+  4. *Energy Equipartition Trap:* Even though $E_0 / B_0 = c approx 3 times 10^8" m/s"$ (making $E_0$ appear huge compared to $B_0$), the electric energy density and magnetic energy density are exactly equal: $u_E = u_B = 1/4 epsilon_0 E_0^2$.
+  5. *Radiation Pressure: Absorbing vs Reflecting:* For normal incidence, completely absorbing surface exerts pressure $P = I / c$, while completely reflecting surface exerts *double* the pressure: $P = (2 I) / c$ due to momentum reversal ($Delta p = 2 p$).
+  6. *Wave Direction Vector:* The direction of wave propagation is along $vec(E) times vec(B)$, NOT $vec(B) times vec(E)$! Switching the vector cross product flips the wave direction by $180 degree$.
+  7. *Spectrum Ordering Confusions:* Frequency is highest for Gamma rays and lowest for Radio waves ($nu_gamma > nu_X > nu_"UV" > nu_"Vis" > nu_"IR" > nu_"Micro" > nu_"Radio"$). Wavelength order is the exact reverse! Remember that microwaves have longer wavelength than infrared.
+]
 #pagebreak()
 
 = CUET UG Exam-Style Practice Questions (15 MCQs)
+
+#set text(size: 8.5pt)
+#set par(leading: 0.40em, spacing: 0.42em)
+
 
 #mcq(
   1,
@@ -488,8 +514,8 @@ Electromagnetic waves propagate through the atmosphere via three distinct mechan
   2,
   [Which of Maxwell's equations implies the non-existence of isolated magnetic monopoles in nature?],
   (
-    [$integral.cont vec(E) dot d vec(A) = q / epsilon_0$],
     [$integral.cont vec(B) dot d vec(A) = 0$],
+    [$integral.cont vec(E) dot d vec(A) = q / epsilon_0$],
     [$integral.cont vec(E) dot d vec(l) = - d Phi_B / d t$],
     [$integral.cont vec(B) dot d vec(l) = mu_0 (I_c + I_d)$],
   ),
@@ -499,15 +525,15 @@ Electromagnetic waves propagate through the atmosphere via three distinct mechan
   [
     $integral.cont vec(B) dot d vec(A) = 0$ (Gauss's Law for Magnetism) signifies that net magnetic flux over any closed Gaussian surface is zero, confirming magnetic monopoles do not exist.
   ],
-  answer: [B],
+  answer: [A],
 )
 
 #mcq(
   3,
   [The electric field of a plane electromagnetic wave in vacuum is $E_y = 30 sin(1.8 x + 5.4 times 10^8 t)" V/m"$. The wavelength of the wave is:],
   (
-    [$1.8" m"$],
     [$3.49" m"$],
+    [$1.8" m"$],
     [$2.50" m"$],
     [$0.56" m"$],
   ),
@@ -518,7 +544,7 @@ Electromagnetic waves propagate through the atmosphere via three distinct mechan
     Comparing with $E_y = E_0 sin(k x + omega t)$, the wave propagation constant is $k = 1.8" rad/m"$.
     $lambda = (2 pi) / k = (2 pi) / 1.8 = 3.49" m"$.
   ],
-  answer: [B],
+  answer: [A],
 )
 
 #mcq(
@@ -545,8 +571,8 @@ Electromagnetic waves propagate through the atmosphere via three distinct mechan
   [The average electric energy density $u_E$ and average magnetic energy density $u_B$ in an electromagnetic wave travelling in vacuum satisfy:],
   (
     [$u_E = 2 u_B$],
-    [$u_E = u_B$],
     [$u_B = 2 u_E$],
+    [$u_E = u_B$],
     [$u_E = c u_B$],
   ),
 )
@@ -555,7 +581,7 @@ Electromagnetic waves propagate through the atmosphere via three distinct mechan
   [
     By the equipartition principle of electromagnetic waves, energy is equally divided between electric and magnetic fields, so $u_E = u_B = 1/4 epsilon_0 E_0^2$.
   ],
-  answer: [B],
+  answer: [C],
 )
 
 #pagebreak()
@@ -565,9 +591,9 @@ Electromagnetic waves propagate through the atmosphere via three distinct mechan
   [An electromagnetic wave of intensity $I = 600" W/m"^2$ falls normally on a completely reflecting flat mirror of area $0.50" m"^2$. The radiation force exerted on the mirror is:],
   (
     [$1.0 times 10^(-6)" N"$],
-    [$2.0 times 10^(-6)" N"$],
-    [$4.0 times 10^(-6)" N"$],
     [$8.0 times 10^(-6)" N"$],
+    [$4.0 times 10^(-6)" N"$],
+    [$2.0 times 10^(-6)" N"$],
   ),
 )
 #solution(
@@ -576,7 +602,7 @@ Electromagnetic waves propagate through the atmosphere via three distinct mechan
     Radiation pressure on a perfectly reflecting mirror is $P_"rad" = (2 I) / c$.
     Force $F = P_"rad" A = ((2 I) / c) A = (2 times 600 times 0.50) / (3.0 times 10^8) = 600 / (3.0 times 10^8) = 2.0 times 10^(-6)" N"$.
   ],
-  answer: [B],
+  answer: [D],
 )
 
 #mcq(
@@ -602,8 +628,8 @@ Electromagnetic waves propagate through the atmosphere via three distinct mechan
   [The radiation used in RADAR systems for detection and navigation of aircraft is:],
   (
     [Infrared rays],
-    [Microwaves],
     [Ultraviolet rays],
+    [Microwaves],
     [Radio waves (short wavelength)],
   ),
 )
@@ -612,7 +638,7 @@ Electromagnetic waves propagate through the atmosphere via three distinct mechan
   [
     Microwaves ($1" mm" - 0.1" m"$) are used in RADAR because their short wavelength allows transmission as concentrated narrow beams that do not diffract or spread significantly.
   ],
-  answer: [B],
+  answer: [C],
 )
 
 #mcq(
