@@ -364,162 +364,154 @@ When price controls prevent the market from reaching equilibrium, mutually benef
   7. *Simultaneous Opposite Shifts Quantity Confusion:* When demand increases and supply decreases, students wrongly guess quantity rises. Quantity is *indeterminate*; only price is guaranteed to rise!
 ]
 
----
-
-
 #pagebreak()
-
-#block(width: 100%, inset: (y: 4pt, x: 8pt), fill: om-navy, radius: 3pt)[
-  #text(fill: white, font: om-display-font, size: 12pt, weight: 800)[Practice Questions (Exam Pattern) — Part 1 (Q1 to Q5)]
-]
 #set text(size: 8.5pt)
+#set par(leading: 0.40em, spacing: 0.42em)
+
+= Practice Questions — Part 1 (Q1 to Q5)
 
 #mcq(1, [In a competitive market, the market demand and market supply functions are given by $q_D = 1000 - 50 P$ and $q_S = 200 + 30 P$. The equilibrium price ($P^*$) and equilibrium quantity ($Q^*$) are:], (
-  [(A) $P^* = ₹10, Q^* = 500$ units],
-  [(B) $P^* = ₹12, Q^* = 600$ units],
-  [(C) $P^* = ₹15, Q^* = 250$ units],
-  [(D) $P^* = ₹8, Q^* = 440$ units],
+  [$P^* = ₹10, Q^* = 500$ units],
+  [$P^* = ₹12, Q^* = 600$ units],
+  [$P^* = ₹15, Q^* = 250$ units],
+  [$P^* = ₹8, Q^* = 440$ units],
 ))
-#solution(1, [At market equilibrium, quantity demanded equals quantity supplied: $q_D = q_S ==> 1000 - 50 P = 200 + 30 P$. Rearranging terms: $1000 - 200 = 30 P + 50 P ==> 800 = 80 P ==> P^* = ₹10$. Substituting $P^* = 10$ into either function: $Q^* = 1000 - 50(10) = 1000 - 500 = 500$ units. Cross-check with supply: $q_S = 200 + 30(10) = 500$ units.], answer: "A")
+#solution(1, [At market equilibrium, quantity demanded equals quantity supplied:
+$ q_D = q_S ==> 1000 - 50 P = 200 + 30 P $
+$ 1000 - 200 = 30 P + 50 P ==> 800 = 80 P ==> P^* = ₹10. $
+Substitute $P^* = 10$ into either demand or supply function:
+$ Q^* = 1000 - 50(10) = 1000 - 500 = 500 " units". $
+Thus, equilibrium price is ₹10 and equilibrium quantity is 500 units.], answer: "A")
 
-#mcq(2, [When the prevailing market price is strictly above the equilibrium price, the competitive market experiences:], (
-  [(A) Excess Demand, which exerts upward pressure on price],
-  [(B) Excess Supply, which induces sellers to bid price downward],
-  [(C) Zero transacted volume because buyers exit the market],
-  [(D) An automatic upward shift in the market demand curve],
+#mcq(2, [When the prevailing market price is strictly above the equilibrium price ($P > P^*$), market forces produce:], (
+  [Excess Demand, which exerts upward pressure on market price],
+  [An automatic upward shift in the market demand curve],
+  [Zero transacted volume because buyers exit the market],
+  [Excess Supply, which induces sellers to bid price downward toward equilibrium],
 ))
-#solution(2, [When market price is above equilibrium ($P > P^*$), producers are willing to supply more than consumers wish to purchase ($q_S > q_D$), resulting in an Excess Supply (Surplus). Faced with accumulating unsold inventories, competitive sellers undercut one another's prices to liquidate stock, exerting downward pressure on price until equilibrium is restored at $P^*$.], answer: "B")
+#solution(2, [At any price above equilibrium ($P > P^*$), suppliers are eager to produce more ($q_S$ expands) while consumers cut back purchases ($q_D$ contracts). Consequently, $q_S > q_D$, generating an *Excess Supply (surplus)*. Faced with unsold stock accumulating in inventories, competing producers lower prices to attract buyers, driving market price down until $P = P^*$.], answer: "D")
 
-#mcq(3, [If the market demand curve is given by $q_D = 500 - 20 P$ and the current price is ₹15, while market supply is fixed at 100 units, the market exhibits an:], (
-  [(A) Excess Demand of 100 units],
-  [(B) Excess Supply of 100 units],
-  [(C) Excess Demand of 200 units],
-  [(D) Equilibrium with zero shortage],
+#mcq(3, [If the market demand curve is given by $q_D = 500 - 20 P$ and market supply curve is $q_S = 100 + 10 P$, what situation arises in the market if price is arbitrarily fixed at ₹10?], (
+  [Excess Demand of 100 units],
+  [Excess Supply of 100 units],
+  [Excess Demand of 200 units],
+  [Equilibrium with zero shortage],
 ))
-#solution(3, [At price $P = 15$, quantity demanded is $q_D = 500 - 20(15) = 500 - 300 = 200$ units. Quantity supplied is fixed at $q_S = 100$ units. Since $q_D > q_S$, the market experiences Excess Demand equal to $q_D - q_S = 200 - 100 = 100$ units.], answer: "A")
+#solution(3, [Substitute $P = 10$ into both functions:
+$ q_D = 500 - 20(10) = 500 - 200 = 300 " units". $
+$ q_S = 100 + 10(10) = 100 + 100 = 200 " units". $
+Since $q_D (300) > q_S (200)$, there is an *Excess Demand (shortage)* equal to:
+$ "Excess Demand" = q_D - q_S = 300 - 200 = 100 " units". $], answer: "A")
 
-#mcq(4, [What happens to equilibrium price and quantity when market demand decreases while market supply remains unchanged?], (
-  [(A) Both equilibrium price and quantity increase],
-  [(B) Equilibrium price falls and equilibrium quantity decreases],
-  [(C) Equilibrium price rises while equilibrium quantity decreases],
-  [(D) Equilibrium price falls while equilibrium quantity increases],
+#mcq(4, [What happens to equilibrium price and quantity when market supply shifts to the right (supply increases) while demand remains constant?], (
+  [Both equilibrium price and quantity increase],
+  [Equilibrium price rises while equilibrium quantity contracts],
+  [Equilibrium price falls and equilibrium quantity expands],
+  [Equilibrium price falls while equilibrium quantity contracts],
 ))
-#solution(4, [A decrease in demand shifts the demand curve to the left. At the initial equilibrium price, quantity supplied exceeds quantity demanded, creating a temporary surplus (excess supply). Competitive sellers lower prices to clear inventory. As price falls, quantity supplied contracts along the supply curve until a new equilibrium is reached with a lower price ($P^* arrow.b$) and a smaller quantity ($Q^* arrow.b$).], answer: "B")
+#solution(4, [An outward rightward shift of the supply curve creates an excess supply at the initial equilibrium price. Competition among sellers bids the price downward. As price falls, consumers move down along the demand curve, purchasing a larger quantity. Hence, the new equilibrium exhibits a *lower price and a larger quantity* ($P^* arrow.b, Q^* arrow.t$).], answer: "C")
 
-#mcq(5, [If the supply of a commodity decreases due to an increase in wages of workers while demand remains constant:], (
-  [(A) Equilibrium price falls and quantity expands],
-  [(B) Equilibrium price rises and quantity contracts],
-  [(C) Both equilibrium price and quantity rise],
-  [(D) Equilibrium price and quantity remain unaffected],
+#mcq(5, [If the supply of a commodity decreases due to an increase in input prices (cost of production), while consumer demand remains unchanged:], (
+  [Equilibrium price falls and quantity expands],
+  [Equilibrium price and quantity remain unaffected],
+  [Both equilibrium price and quantity rise],
+  [Equilibrium price rises and quantity contracts],
 ))
-#solution(5, [An increase in wage rates raises marginal production costs, causing the market supply curve to shift upward and to the left. At the existing price, a shortage (excess demand) emerges. Frustrated buyers bid up the price. As price rises, quantity demanded contracts along the unchanged demand curve, establishing a higher equilibrium price ($P^* arrow.t$) and a smaller equilibrium quantity ($Q^* arrow.b$).], answer: "B")
+#solution(5, [Higher input costs increase marginal costs, shifting the industry supply curve leftward (inward). At the original price, quantity demanded exceeds new quantity supplied (excess demand). Competing buyers bid prices up. As price rises, consumers demand less. In the new equilibrium, price is higher and transacted quantity is lower ($P^* arrow.t, Q^* arrow.b$).], answer: "D")
 
----
-
-
+#pagebreak()
 #set text(size: 8.5pt)
 #set par(leading: 0.40em, spacing: 0.42em)
 
 = Practice Questions — Part 2 (Q6 to Q10)
 
-#pagebreak()
-
-#block(width: 100%, inset: (y: 4pt, x: 8pt), fill: om-navy, radius: 3pt)[
-  #text(fill: white, font: om-display-font, size: 12pt, weight: 800)[Practice Questions (Exam Pattern) — Part 2 (Q6 to Q10)]
-]
-#set text(size: 8.5pt)
-
-#mcq(6, [If market demand and market supply both increase by the EXACT SAME proportionate magnitude ($Delta D = Delta S$):], (
-  [(A) Equilibrium price rises while quantity remains constant],
-  [(B) Equilibrium price falls while quantity expands],
-  [(C) Equilibrium quantity expands while price remains strictly constant],
-  [(D) Both equilibrium price and quantity remain completely unchanged],
+#mcq(6, [If market demand and market supply both increase by the EXACT SAME magnitude ($Delta D = Delta S$), the new market equilibrium will feature:], (
+  [Equilibrium price rises while quantity remains unchanged],
+  [Equilibrium price falls while quantity expands],
+  [Equilibrium quantity expands while price remains completely unchanged],
+  [Both equilibrium price and quantity remain completely constant],
 ))
-#solution(6, [When demand and supply both shift to the right by equal amounts, the upward price pressure from increased demand is exactly canceled out by the downward price pressure from increased supply. Consequently, the equilibrium price remains completely unchanged ($Delta P^* = 0$). However, because both curves shifted to the right, equilibrium quantity expands unambiguously ($Q^* arrow.t$).], answer: "C")
+#solution(6, [The rightward shift in demand exerts upward pressure on price and increases quantity. The equal rightward shift in supply exerts downward pressure on price and increases quantity. Because the upward price pressure from $Delta D$ exactly cancels the downward price pressure from $Delta S$, market price remains strictly unchanged ($Delta P = 0$), while transacted quantity expands unambiguously.], answer: "C")
 
-#mcq(7, [Under what condition will an increase in market demand cause an increase in equilibrium quantity with ZERO change in equilibrium price?], (
-  [(A) When supply is perfectly inelastic ($e_s = 0$)],
-  [(B) When supply is perfectly elastic ($e_s = oo$)],
-  [(C) When demand is unitary elastic ($e_d = 1$)],
-  [(D) When the number of firms in the industry is strictly fixed],
+#mcq(7, [Under what condition will an increase in market demand cause equilibrium quantity to expand with ZERO change in equilibrium price?], (
+  [When supply is perfectly inelastic ($e_s = 0$)],
+  [When supply is perfectly elastic ($e_s = oo$)],
+  [When demand is unitary elastic ($e_d = 1$)],
+  [When the number of firms in the industry is strictly fixed],
 ))
-#solution(7, [A perfectly elastic supply curve is represented graphically as a horizontal straight line parallel to the quantity axis ($e_s = oo$). When market demand shifts to the right, it intersects the horizontal supply curve at a larger quantity, but at the exact same horizontal price level. Hence, quantity expands while price remains strictly constant.], answer: "B")
+#solution(7, [When supply is perfectly elastic, the supply curve is a horizontal line at price $P_0$. Any rightward shift in the demand curve intersects this horizontal supply line at the exact same vertical height. Producers are willing to supply any desired quantity at price $P_0$. Therefore, quantity expands to $Q_1$ while equilibrium price remains strictly constant at $P_0$.], answer: "B")
 
-#mcq(8, [If supply is perfectly inelastic (a vertical line) and market demand increases:], (
-  [(A) Equilibrium price rises while equilibrium quantity remains constant],
-  [(B) Equilibrium quantity expands while price remains constant],
-  [(C) Both equilibrium price and quantity increase],
-  [(D) Equilibrium price falls while quantity remains constant],
+#mcq(8, [If supply is perfectly inelastic (a vertical line) and market demand increases, what is the net impact on equilibrium?], (
+  [Equilibrium price rises while equilibrium quantity remains strictly unchanged],
+  [Equilibrium quantity expands while price remains constant],
+  [Both equilibrium price and quantity increase],
+  [Equilibrium price falls while quantity remains constant],
 ))
-#solution(8, [A perfectly inelastic supply curve ($e_s = 0$) is a vertical line at a fixed physical quantity $macron(Q)$. When market demand shifts rightward, consumers compete for the unchanged stock of goods. Frustrated buyers bid up the price, causing equilibrium price to rise sharply ($P^* arrow.t$), while equilibrium quantity remains completely unchanged at $macron(Q)$.], answer: "A")
+#solution(8, [A perfectly inelastic supply curve ($e_s = 0$) is fixed at quantity $Q_0$ (e.g., rare art, agricultural land). When demand shifts rightward, buyers compete for the fixed, unexpandable quantity, bidding prices upward. The new demand curve intersects the vertical supply line at a higher price ($P_1 > P_0$), but transacted quantity remains strictly locked at $Q_0$.], answer: "A")
 
 #mcq(9, [Demand increases while supply simultaneously decreases. What can be unambiguously concluded regarding the new equilibrium?], (
-  [(A) Equilibrium quantity will definitely increase],
-  [(B) Equilibrium quantity will definitely decrease],
-  [(C) Equilibrium price will definitely rise],
-  [(D) Equilibrium price will definitely fall],
+  [Equilibrium quantity will definitely increase],
+  [Equilibrium quantity will definitely decrease],
+  [Equilibrium price will definitely rise],
+  [Equilibrium price will definitely fall],
 ))
-#solution(9, [An increase in demand pushes price upward; a decrease in supply also pushes price upward. Because both shift forces act in the same direction on price, equilibrium price will *definitely rise* ($P^* arrow.t$). However, higher demand tends to increase quantity while lower supply tends to reduce quantity; therefore, the net change in quantity is indeterminate without knowing the exact relative shift sizes.], answer: "C")
+#solution(9, [An increase in demand pushes price upward ($P arrow.t$). A decrease in supply also pushes price upward ($P arrow.t$). Because both forces act in the same direction on price, equilibrium price will *definitely and unambiguously rise*. However, increased demand expands quantity while decreased supply contracts quantity; therefore, the net change in equilibrium quantity is mathematically indeterminate without knowing relative magnitudes.], answer: "C")
 
-#mcq(10, [In a competitive industry with FREE ENTRY AND EXIT, the market price in long-run equilibrium is determined by:], (
-  [(A) The intersection of market demand with the short-run supply curve],
-  [(B) The minimum point of the Long-Run Average Cost (LAC) curve],
-  [(C) The maximum point of the Marginal Revenue curve],
-  [(D) The total number of consumers in the market],
+#mcq(10, [In a competitive industry with FREE ENTRY AND EXIT, the market equilibrium price in the long run is determined exclusively by:], (
+  [The intersection of market demand with the short-run industry supply curve],
+  [The minimum point of the Long-Run Average Cost curve ($P^* = min L A C$)],
+  [The maximum point of the Marginal Revenue curve],
+  [The total number of consumers in the market],
 ))
-#solution(10, [Under free entry and exit, firms enter if economic profits exist ($P > min L A C$) and exit if losses occur ($P < min L A C$). Long-run industry equilibrium requires zero economic profit, forcing market price to settle precisely at the minimum point of Long-Run Average Cost ($P^* = min L A C$). At this price, every active firm earns its normal profit.], answer: "B")
+#solution(10, [Free entry and exit guarantees that firms can earn neither supernormal profit nor economic losses in long-run equilibrium. If price were above minimum $L A C$, new firms would enter, shifting supply rightward and lowering price. If price were below, firms would exit. Long-run price is anchored strictly at the minimum average cost of production ($P^* = min L A C$). Demand changes affect only the number of operating firms ($n^*$), leaving price unchanged.], answer: "B")
 
----
-
-
+#pagebreak()
 #set text(size: 8.5pt)
 #set par(leading: 0.40em, spacing: 0.42em)
 
 = Practice Questions — Part 3 (Q11 to Q15)
 
-#pagebreak()
-
-#block(width: 100%, inset: (y: 4pt, x: 8pt), fill: om-navy, radius: 3pt)[
-  #text(fill: white, font: om-display-font, size: 12pt, weight: 800)[Practice Questions (Exam Pattern) — Part 3 (Q11 to Q15)]
-]
-#set text(size: 8.5pt)
-
-#mcq(11, [In an industry with free entry and exit, $L A C$ is minimized at ₹20 where each firm produces 50 units. If market demand is $Q_D = 2000 - 40 P$, the equilibrium number of firms ($n^*$) in the industry is:], (
-  [(A) 24 firms],
-  [(B) 40 firms],
-  [(C) 50 firms],
-  [(D) 100 firms],
+#mcq(11, [In an industry with free entry and exit, $L A C$ is minimized at ₹20 with each firm producing 25 units. Market demand is given by $q_D = 1000 - 20 P$. How many active firms ($n^*$) will populate the industry in long-run equilibrium?], (
+  [24 firms],
+  [40 firms],
+  [50 firms],
+  [100 firms],
 ))
-#solution(11, [Under free entry and exit, long-run price is fixed at $P^* = min L A C = ₹20$. Each individual firm produces $q^* = 50$ units. Total industry quantity demanded at this price is $Q_D = 2000 - 40(20) = 2000 - 800 = 1200$ units. Since total output is supplied equally by $n^*$ identical firms: $n^* = Q^* / q^* = 1200 / 50 = 24$ firms.], answer: "A")
+#solution(11, [Step 1: In free entry equilibrium, long-run market price equals minimum $L A C$:
+$ P^* = min L A C = ₹20. $
+Step 2: Total market quantity demanded at $P^* = 20$:
+$ Q^* = 1000 - 20(20) = 1000 - 400 = 600 " units". $
+Step 3: Each firm supplies $q_f = 25$ units. The equilibrium number of firms is:
+$ n^* = frac(Q^*, q_f) = frac(600, 25) = 24 " firms". $], answer: "A")
 
-#mcq(12, [A Price Ceiling imposed by the government on an essential commodity will be economically binding (effective) ONLY if it is set:], (
-  [(A) Above the free market equilibrium price],
-  [(B) Below the free market equilibrium price],
-  [(C) Exactly equal to the Marginal Cost of production],
-  [(D) At the point of unitary price elasticity of demand],
+#mcq(12, [A Price Ceiling imposed by the government on an essential commodity becomes economically BINDING and effective only when it is fixed:], (
+  [Above the free market equilibrium price],
+  [Exactly equal to the Marginal Cost of production],
+  [Below the free market equilibrium price],
+  [At the point of unitary price elasticity of demand],
 ))
-#solution(12, [A Price Ceiling establishes a legal maximum price. If the ceiling is set above the market equilibrium price ($P_c > P^*$), market forces naturally clear at $P^*$, rendering the ceiling non-binding with zero effect. To be legally binding and force the price down to protect consumers, the ceiling must be imposed *strictly below* the free market equilibrium price ($P_c < P^*$).], answer: "B")
+#solution(12, [A price ceiling is a legally enforced maximum price. If the government sets the ceiling above the market equilibrium price ($P_c > P^*$), market forces naturally settle at $P^*$ anyway, rendering the ceiling redundant and non-binding. A price ceiling has an actual economic impact only when set *below the equilibrium price ($P_c < P^*$)*, creating an artificial shortage (excess demand).], answer: "C")
 
-#mcq(13, [Which of the following is an adverse economic consequence of an effective Price Ceiling?], (
-  [(A) Unsold surpluses accumulating in warehouses],
-  [(B) Emergency of a Black Market where goods are sold above the ceiling price],
-  [(C) Involuntary unemployment among low-skilled workers],
-  [(D) Government incurring massive storage costs for buffer stocks],
+#mcq(13, [Which of the following is an adverse economic consequence of an effective Price Ceiling accompanied by rationing?], (
+  [Unsold surpluses accumulating in warehouses],
+  [Government incurring massive storage costs for buffer stocks],
+  [Involuntary unemployment among low-skilled workers],
+  [Emergence of a Black Market where goods are sold at price $P_B > P^*$],
 ))
-#solution(13, [An effective price ceiling ($P_c < P^*$) creates a chronic shortage (excess demand). Because available supply is curtailed to $Q_S$, frustrated consumers are willing to pay a much higher price to obtain the good. This creates lucrative incentives for illegal black markets where the good is traded at prices exceeding both the legal ceiling and the free market equilibrium ($P_B > P^* > P_c$). Options A, C, and D are consequences of Price Floors.], answer: "B")
+#solution(13, [Because an effective price ceiling fixes price below equilibrium ($P_c < P^*$), quantity demanded greatly exceeds available supply ($q_D > q_S$). Dissatisfied consumers who are unable to procure sufficient goods through official fair-price shops are willing to pay a much higher price to obtain the good illegally. This gives rise to an underground *Black Market* where dealers sell hoarded rationed goods at price $P_B > P^*$.], answer: "D")
 
-#mcq(14, [The government fixes a Minimum Support Price (MSP) for wheat above the market equilibrium price. To maintain this price floor, the government MUST:], (
-  [(A) Ration wheat among consumers using ration cards],
-  [(B) Purchase the entire surplus quantity of wheat from farmers],
-  [(C) Impose an excise tax on the production of wheat],
-  [(D) Subsidize consumers to reduce wheat demand],
+#mcq(14, [The government fixes a Minimum Support Price (MSP) for wheat above the equilibrium price. To prevent the market price from collapsing, the government MUST:], (
+  [Ration wheat among consumers using ration cards],
+  [Purchase the entire surplus quantity of wheat at the MSP to build buffer stocks],
+  [Impose an excise tax on the production of wheat],
+  [Subsidize consumers to reduce wheat demand],
 ))
-#solution(14, [An effective Price Floor ($P_f > P^*$) creates an excess supply (surplus) because farmers supply more than consumers demand ($Q_S > Q_D$). If left alone, desperate farmers would secretly sell below $P_f$, causing the price floor to collapse. To sustain the legal minimum price, the government (through FCI) must actively purchase the entire unsold surplus ($Q_S - Q_D$) and store it as buffer stock.], answer: "B")
+#solution(14, [An effective price floor (MSP) set above equilibrium ($P_f > P^*$) creates an excess supply ($q_S > q_D$). If left alone, desperate farmers would compete to sell their unsold grain by undercutting the official MSP. To make the price floor effective and sustainable, the government (via Food Corporation of India) must step into the market and purchase the entire surplus grain ($q_S - q_D$) at the floor price for public buffer stocks.], answer: "B")
 
-#mcq(15, [If the free market equilibrium price of milk is ₹60 per liter and the government sets a legal Maximum Price of ₹75 per liter, the market price of milk will be:], (
-  [(A) ₹75 per liter with excess supply],
-  [(B) ₹60 per liter with neither shortage nor surplus],
-  [(C) ₹67.50 per liter as an average],
-  [(D) Zero because sellers will boycott the market],
+#mcq(15, [If the free market equilibrium price of milk is ₹60 per liter and the government passes a legislation declaring a Price Ceiling of ₹75 per liter, the actual prevailing market price will be:], (
+  [₹75 per liter with excess supply],
+  [₹60 per liter with neither shortage nor surplus],
+  [₹67.50 per liter as an average],
+  [Zero because sellers will boycott the market],
 ))
-#solution(15, [A legal maximum price of ₹75 is a Price Ceiling set *above* the equilibrium price of ₹60 ($P_c > P^*$). Because the ceiling only prohibits selling above ₹75, sellers and buyers are completely free to transact at the market clearing price of ₹60. The ceiling is *non-binding and ineffective*; the market clears naturally at ₹60 with zero excess demand or supply.], answer: "B")
+#solution(15, [A Price Ceiling specifies the maximum legal price that sellers can charge. Since the legal limit is ₹75, sellers are legally permitted to charge any price up to ₹75. Because the market-clearing equilibrium price is ₹60 (which is strictly below ₹75), competitive forces will naturally set the price at ₹60. The ceiling of ₹75 is *non-binding* and has zero effect on market price or quantity.], answer: "B")
