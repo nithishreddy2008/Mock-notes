@@ -41,6 +41,9 @@
 #pagebreak()
 
 
+#set text(size: 10.3pt)
+#set par(leading: 0.64em, spacing: 0.88em)
+
 = Concept Module 1: Rate of Chemical Reaction
 
 *Chemical Kinetics* investigates the speeds of chemical reactions, the factors governing their rates, and the molecular mechanisms by which they proceed.
@@ -168,7 +171,7 @@ $ [R] = [R]_0 - k t quad "or" quad k = ([R]_0 - [R]) / t $
 - *Time for 100% Completion:* $t_(100%) = [R]_0 / k = 2 times t_(1/2)$.
 
 #figure(
-  image("assets/chem_rate_laws_halflife.png", width: 84%),
+  image("assets/chem_rate_laws_halflife.png", width: 76%),
   caption: [Integrated Rate Laws: Zero Order vs First Order linear kinetics, half-life concentration invariance, and pseudo-first-order solvent excess mechanics.],
 )
 
@@ -273,7 +276,7 @@ $ k = A e^(-E_a / (R T)) $
 - $e^(-E_a / (R T))$: The *Boltzmann Fraction* of molecules possessing kinetic energy greater than or equal to $E_a$.
 
 #figure(
-  image("assets/chem_energy_profile.png", width: 84%),
+  image("assets/chem_energy_profile.png", width: 76%),
   caption: [Potential Energy Profile: Activation energy barrier ($E_a$), transition state (X\*), and the lowering of $E_a$ via an alternate catalysed reaction pathway.],
 )
 
@@ -341,7 +344,7 @@ A *catalyst* is a substance that alters the rate of a chemical reaction without 
 #pagebreak()
 
 #figure(
-  image("assets/chem_kinetics_mindmap.png", width: 88%),
+  image("assets/chem_kinetics_mindmap.png", width: 70%),
   caption: [Unit III Chemical Kinetics Master Mindmap: Comprehensive synthesis of rates, order vs molecularity, integrated rate laws, temperature scaling, Arrhenius kinetics, and collision theory.],
 )
 
@@ -453,8 +456,8 @@ A *catalyst* is a substance that alters the rate of a chemical reaction without 
   4,
   [Which of the following statements regarding the molecularity and order of a chemical reaction is strictly INCORRECT?],
   (
-    [Order can be zero, fractional, or negative, but molecularity is always an integer from 1 to 3],
     [Molecularity is applicable to complex multi-step reactions as a whole],
+    [Order can be zero, fractional, or negative, but molecularity is always an integer from 1 to 3],
     [Order is determined experimentally, whereas molecularity is deduced from an elementary step],
     [For elementary reactions, the order is always equal to its molecularity],
   ),
@@ -462,7 +465,7 @@ A *catalyst* is a substance that alters the rate of a chemical reaction without 
 #solution(
   4,
   [Molecularity has no meaning for a complex reaction as a whole; it is meaningful only for individual elementary single-step reactions.],
-  answer: [B],
+  answer: [A],
 )
 
 #mcq(
@@ -470,15 +473,15 @@ A *catalyst* is a substance that alters the rate of a chemical reaction without 
   [A zero order reaction $A arrow.r B$ has rate constant $k = 0.050" mol L"^(-1)" s"^(-1)$. If initial concentration $[A]_0 = 0.50" M"$, its half-life ($t_(1/2}$) is:],
   (
     [$10" s"$],
-    [$5.0" s"$],
     [$2.5" s"$],
+    [$5.0" s"$],
     [$0.50" s"$],
   ),
 )
 #solution(
   5,
   [For zero order: $t_(1/2) = [A]_0 / (2 k) = 0.50 / (2 times 0.050) = 5.0" s"$.],
-  answer: [B],
+  answer: [C],
 )
 
 #pagebreak()
@@ -525,15 +528,15 @@ A *catalyst* is a substance that alters the rate of a chemical reaction without 
   [A radioactive sample of Carbon-14 ($t_(1/2) = 5730" years"$) undergoes first order decay. What fraction of the original activity remains after $17,190" years"$?],
   (
     [$1/4$ ($25%$) ],
-    [$1/8$ ($12.5%$) ],
     [$1/16$ ($6.25%$) ],
+    [$1/8$ ($12.5%$) ],
     [$1/32$ ($3.125%$) ],
   ),
 )
 #solution(
   8,
   [Number of half-lives $n = 17190 / 5730 = 3$. Remaining fraction $= (1/2)^n = (1/2)^3 = 1/8$ ($12.5%$).],
-  answer: [B],
+  answer: [C],
 )
 
 #mcq(
@@ -541,15 +544,15 @@ A *catalyst* is a substance that alters the rate of a chemical reaction without 
   [Acid-catalysed hydrolysis of ethyl acetate ($C H_3 C O O C_2 H_5 + H_2 O arrow.r^(H^+) C H_3 C O O H + C_2 H_5 O H$) is classified as a pseudo-first-order reaction because:],
   (
     [The acid catalyst completely inhibits the backward reaction],
-    [Water is present in large stoichiometric excess, so $[H_2 O]$ remains constant],
-    [Both ethyl acetate and water react in equimolar amounts],
     [The reaction proceeds via a free-radical chain mechanism],
+    [Both ethyl acetate and water react in equimolar amounts],
+    [Water is present in large stoichiometric excess, so $[H_2 O]$ remains constant],
   ),
 )
 #solution(
   9,
   [Water is the solvent ($approx 55.5" M"$) present in huge excess. Its concentration remains constant, yielding Rate $= k [C H_3 C O O C_2 H_5]$.],
-  answer: [B],
+  answer: [D],
 )
 
 #mcq(
@@ -644,13 +647,13 @@ A *catalyst* is a substance that alters the rate of a chemical reaction without 
   [For a gas-phase first order reaction $A(g) arrow.r B(g) + C(g)$, if $p_i$ is initial pressure of $A$ and $p_t$ is total pressure at time $t$, the rate constant $k$ is:],
   (
     [$k = (2.303 / t) log [p_i / (p_i - p_t)]$],
-    [$k = (2.303 / t) log [p_i / (2 p_i - p_t)]$],
-    [$k = (2.303 / t) log [(2 p_i - p_t) / p_i]$],
     [$k = (2.303 / t) log [p_t / (2 p_i - p_t)]$],
+    [$k = (2.303 / t) log [(2 p_i - p_t) / p_i]$],
+    [$k = (2.303 / t) log [p_i / (2 p_i - p_t)]$],
   ),
 )
 #solution(
   15,
   [At time $t$: $p_A = p_i - x$, $p_B = x$, $p_C = x$. Total $p_t = p_i + x ==> x = p_t - p_i$. Hence $p_A = p_i - (p_t - p_i) = 2 p_i - p_t$. Substituting into 1st order: $k = (2.303/t) log [p_i / (2 p_i - p_t)]$.],
-  answer: [B],
+  answer: [D],
 )
