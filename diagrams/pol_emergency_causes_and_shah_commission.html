@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px 32px;
+    overflow: hidden;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #071A4D;
+    padding: 16px 28px;
+    border-radius: 12px;
+    border-bottom: 4px solid #1F5EFF;
+    margin-bottom: 16px;
+  }
+  .header-left h1 {
+    color: #FFFFFF;
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+  }
+  .header-left p {
+    color: #94A3B8;
+    font-size: 13px;
+    font-weight: 500;
+    margin-top: 3px;
+  }
+  .badge {
+    background: #1F5EFF;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+  }
+  .main-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    height: 740px;
+  }
+  .card {
+    background: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    border-radius: 12px;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+  }
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #E2E8F0;
+    margin-bottom: 12px;
+  }
+  .card-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: #EFF6FF;
+    color: #1F5EFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 15px;
+  }
+  .card-title {
+    font-size: 15px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .card-subtitle {
+    font-size: 11px;
+    color: #64748B;
+  }
+  .sub-box {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin-bottom: 10px;
+  }
+  .sub-title {
+    font-size: 12.5px;
+    font-weight: 800;
+    color: #1E293B;
+    margin-bottom: 4px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .sub-title span {
+    font-size: 11px;
+    color: #1F5EFF;
+    font-weight: 700;
+  }
+  .detail-list {
+    font-size: 11px;
+    line-height: 1.45;
+    color: #334155;
+  }
+  .detail-list li {
+    margin-left: 14px;
+    margin-bottom: 2px;
+  }
+  .tag {
+    display: inline-block;
+    background: #E2E8F0;
+    color: #334155;
+    font-size: 9.5px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-right: 4px;
+    margin-top: 4px;
+  }
+  .tag-blue { background: #DBEAFE; color: #1E40AF; }
+  .tag-green { background: #DCFCE7; color: #166534; }
+  .tag-amber { background: #FEF3C7; color: #92400E; }
+  .tag-red { background: #FEE2E2; color: #991B1B; }
+  .highlight-strip {
+    background: #F1F5F9;
+    border-left: 3px solid #1F5EFF;
+    padding: 6px 10px;
+    font-size: 10.5px;
+    color: #0F172A;
+    border-radius: 0 6px 6px 0;
+    margin-top: auto;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <h1>THE CRISIS OF THE CONSTITUTIONAL ORDER & THE EMERGENCY (1973–1977)</h1>
+    <p>Economic Shocks · Navnirman & Bihar Movements · Midnight Proclamation · 42nd Amendment · Shah Commission</p>
+  </div>
+  <div class="badge">POLITICAL SCIENCE UNIT 13 · CONCEPT MATRIX</div>
+</div>
+
+<div class="main-grid">
+
+  <!-- Column 1 -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon">1</div>
+      <div>
+        <div class="card-title">Economic Headwinds & Agitations</div>
+        <div class="card-subtitle">Popular Discontent & Mass Student Movements</div>
+      </div>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">Economic Crisis (1972–1975) <span>Fiscal Shock</span></div>
+      <ul class="detail-list">
+        <li><strong>Post-War Burden:</strong> Absorbing 10 million Bangladesh refugees and defense outlays depleted forex and capital budgets.</li>
+        <li><strong>US Aid Cut & Oil Shock:</strong> US terminated PL-480 shipments; 1973 OPEC oil price quadrupled import bills.</li>
+        <li><strong>Runaway Inflation:</strong> Prices rose 23% in 1973 and 30% in 1974; widespread black-marketing and food rationing.</li>
+        <li><strong>Railway Strike (May 1974):</strong> George Fernandes led 20-day nationwide rail strike; crushed via mass arrests.</li>
+      </ul>
+      <span class="tag tag-red">30% Inflation</span>
+      <span class="tag tag-amber">20-Day Rail Strike</span>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">Gujarat & Bihar Movements (1974) <span>Student Spark</span></div>
+      <ul class="detail-list">
+        <li><strong>Gujarat Navnirman (Jan 1974):</strong> Student unrest over hostel mess fees expanded against state corruption. Morarji Desai's fast forced assembly dissolution.</li>
+        <li><strong>Bihar Movement (March 1974):</strong> Students invited Jayaprakash Narayan (JP) from retirement to lead anti-corruption agitation.</li>
+        <li><strong>JP's Two Conditions:</strong> Agitation must remain strictly non-violent and expand nationally beyond Bihar.</li>
+        <li><strong>Total Revolution (Sampoorna Kranti):</strong> JP demanded moral, social, economic, educational, and political transformation.</li>
+      </ul>
+      <span class="tag tag-blue">Navnirman (Gujarat)</span>
+      <span class="tag tag-green">Total Revolution (JP)</span>
+    </div>
+
+    <div class="highlight-strip">
+      <strong>CUET Distinction:</strong> Lohia propounded <em>Non-Congressism</em> (1967); Jayaprakash Narayan called for <em>Total Revolution</em> (1974).
+    </div>
+  </div>
+
+  <!-- Column 2 -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon">2</div>
+      <div>
+        <div class="card-title">The Judicial Clash & Midnight Emergency</div>
+        <div class="card-subtitle">Institutional Rupture & Executive Clampdown</div>
+      </div>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">Judicial Supersession & Allahabad Verdict <span>The Sparks</span></div>
+      <ul class="detail-list">
+        <li><strong>Kesavananda Bharati (1973):</strong> Supreme Court established the Basic Structure doctrine; executive demanded a "committed" judiciary.</li>
+        <li><strong>Supersession:</strong> Government bypassed 3 senior judges (Shelat, Hegde, Grover) to appoint Justice A.N. Ray as CJI.</li>
+        <li><strong>Allahabad Verdict (12 June 1975):</strong> Justice Jagmohan Lal Sinha invalidated Indira's 1971 election on Raj Narain's petition (use of government machinery).</li>
+        <li><strong>Conditional Stay:</strong> Vacation Judge Justice V.R. Krishna Iyer allowed Indira to remain PM but barred her from voting in Parliament.</li>
+      </ul>
+      <span class="tag tag-amber">Basic Structure</span>
+      <span class="tag tag-red">Justice J.L. Sinha</span>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">The Proclamation: 25 June 1975 <span>Article 352</span></div>
+      <ul class="detail-list">
+        <li><strong>Ramlila Maidan Rally:</strong> JP announced nationwide Satyagraha, appealing to army/police to refuse illegal unconstitutional orders.</li>
+        <li><strong>Midnight Proclamation:</strong> Indira advised President Fakhruddin Ali Ahmed under Article 352 citing <em>internal disturbance</em>.</li>
+        <li><strong>Cabinet Bypassed:</strong> The Union Cabinet was not consulted beforehand; ministers were informed at 6:00 AM on 26 June.</li>
+        <li><strong>Immediate Crackdown:</strong> Power to newspaper presses disconnected; opposition leaders (JP, Morarji, Advani) jailed overnight.</li>
+      </ul>
+      <span class="tag tag-red">Internal Disturbance</span>
+      <span class="tag tag-blue">Cabinet Bypassed</span>
+    </div>
+
+    <div class="highlight-strip">
+      <strong>Core Fact:</strong> Proclaimed under Article 352 on grounds of <em>"internal disturbance"</em>; <em>"armed rebellion"</em> was only substituted in 1978.
+    </div>
+  </div>
+
+  <!-- Column 3 -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon">3</div>
+      <div>
+        <div class="card-title">Excesses, 1977 Rout & Restoration</div>
+        <div class="card-subtitle">Authoritarian Subversion & Democratic Rebirth</div>
+      </div>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">Emergency Regimes & Excesses (1975–77) <span>MISA & Censorship</span></div>
+      <ul class="detail-list">
+        <li><strong>MISA & Preventive Arrests:</strong> 1.1 lakh citizens detained without trial under MISA; fundamental rights suspended (ADM Jabalpur case).</li>
+        <li><strong>Press Censorship:</strong> Pre-censorship enforced; <em>Indian Express</em> and <em>Statesman</em> published blank editorial columns.</li>
+        <li><strong>Sanjay Gandhi & Extra-Constitutional Power:</strong> Forced mass sterilisations (vasectomies) and Turkman Gate slum demolitions.</li>
+        <li><strong>42nd Amendment (1976):</strong> "Mini-Constitution"; 6-year Lok Sabha term; inserted "Socialist, Secular, Integrity" into Preamble.</li>
+      </ul>
+      <span class="tag tag-red">1.1 Lakh Arrests</span>
+      <span class="tag tag-amber">42nd Amendment</span>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">1977 Landslide Rout & Safeguards <span>Janata Party</span></div>
+      <ul class="detail-list">
+        <li><strong>Janata Party Wave:</strong> Cong(O), Jana Sangh, BLD, Socialists merged; swept 295 seats; Morarji Desai became first non-Congress PM.</li>
+        <li><strong>North India Wipeout:</strong> Congress won zero seats in UP, Bihar, Punjab, Haryana; both Indira and Sanjay Gandhi lost their seats.</li>
+        <li><strong>Shah Commission (May 1977):</strong> Justice J.C. Shah unmasked administrative abuses, illegal detentions, and extra-constitutional excess.</li>
+        <li><strong>44th Amendment (1978):</strong> Made Article 20 & 21 non-suspendable; replaced "internal disturbance" with "armed rebellion"; restored 5-year term.</li>
+      </ul>
+      <span class="tag tag-green">Janata 295 Seats</span>
+      <span class="tag tag-blue">44th Amendment 1978</span>
+    </div>
+
+    <div class="highlight-strip">
+      <strong>Analytical Core:</strong> Emergency demonstrated that Indian democracy cannot be destroyed easily, catalyzing the modern civil liberties movement (PUCL).
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
