@@ -48,6 +48,9 @@
   *CUET UG Exam Architecture:* In the CUET UG Physics examination, Unit 2 (Current Electricity) is one of the highest-yield topics, consistently contributing 5 to 6 MCQs out of 50. Questions range from straightforward numerical problems on cell combinations and drift velocity to conceptual questions on temperature dependence of resistivity and circuit reductions using Kirchhoff's rules.
 ]
 
+#set text(size: 9.4pt)
+#set par(leading: 0.35em, spacing: 0.36em)
+
 = Electric Current & Microscopic Conduction
 
 Electric current quantifies the rate of flow of electric charge across a cross-sectional area of a conductor.
@@ -104,7 +107,7 @@ Consider a conductor of uniform cross-sectional area $A$ containing $n$ free con
 ]
 
 #figure(
-  image("assets/physics_current_microscopic_conduction.png", width: 84%),
+  image("assets/physics_current_microscopic_conduction.png", width: 78%),
   caption: [Microscopic Conduction Dynamics: Random thermal agitation, electric field induced drift velocity ($v_d = e E tau / m$), and current density relations.],
 )
 
@@ -349,7 +352,7 @@ $ sum Delta V = 0 quad ==> quad sum E = sum I R $
 ]
 
 #figure(
-  image("assets/physics_current_circuits_kirchhoff.png", width: 84%),
+  image("assets/physics_current_circuits_kirchhoff.png", width: 78%),
   caption: [Circuit Analysis Architecture: Kirchhoff's junction & loop laws, sign traversal rules, and Wheatstone bridge null deflection topology.],
 )
 
@@ -407,10 +410,26 @@ The meter bridge operates on the principle of the balanced Wheatstone bridge. It
   - *Optimal Balance Point:* Sensitivity is maximized and relative measurement error is minimized ($d X / X -> "minimum"$) when the null point falls near the exact center of the wire ($l approx 50" cm"$).
 ]
 
-#figure(
-  image("assets/physics_current_electricity_mindmap.png", width: 84%),
-  caption: [Master Synthesis Mindmap: Microscopic conduction, Ohm's law, Joule heating, cell grouping, and bridge analysis.],
-)
+#pagebreak()
+
+= Concept Module 6: Conceptual Synthesis & Mindmap
+
+#v(1fr)
+#align(center)[
+  #figure(
+    image("assets/physics_current_electricity_mindmap.png", width: 70%),
+    caption: [Master Synthesis Mindmap: Microscopic conduction, Ohm's law, Joule heating, cell grouping, and bridge analysis.],
+  )
+]
+#v(1fr)
+
+
+#pagebreak()
+
+#set text(size: 7.5pt)
+#set par(leading: 0.36em, spacing: 0.38em)
+
+= High-Yield Formula Cheatsheet & Key Traps
 
 #cheatsheet-box(title: "Master Current Electricity Revision Formula Cheatsheet")[
   - *Current & Drift Velocity:* $I = n e A v_d$ | $v_d = (e E tau)/m$ | $vec(J) = n e vec(v)_d = sigma vec(E)$ | $mu = v_d / E = (e tau)/m$
@@ -424,18 +443,33 @@ The meter bridge operates on the principle of the balanced Wheatstone bridge. It
   - *Wheatstone Bridge:* Balanced condition $P / Q = R / S$ | Meter bridge: $X = R (100 - l) / l$
 ]
 
-#pagebreak()
+#v(4pt)
 
-= CUET UG Exam-Style Practice Questions
+#tip-box(title: "The Seven Fatal CUET Traps in Current Electricity")[
+  1. *Stretching vs Cutting Wire:* If a wire is stretched $n$ times ($L -> n L$), its cross-sectional area contracts ($A -> A/n$), so $R' = n^2 R$. If it is merely cut into $n$ pieces, $R' = R/n$!
+  2. *Terminal Voltage During Charging:* When a cell is discharging, $V = E - I r < E$. But when being charged by an external source, $V = E + I r > E$!
+  3. *Maximum Power Transfer Theorem:* Maximum power is transferred to external load when $R_L = r$, but efficiency at maximum power is strictly $50%$, not $100%$.
+  4. *Bulbs in Series vs Parallel:* In series, current is identical, so power consumed is $P = I^2 R prop R$ (higher resistance / lower rated bulb glows brighter). In parallel, voltage is identical, so $P = V^2 / R prop 1/R$ (higher wattage bulb glows brighter).
+  5. *Internal Resistance of Ideal Sources:* Ideal voltmeter has $R -> oo$ (infinite resistance); ideal ammeter has $R -> 0$ (zero resistance); ideal battery has $r = 0$.
+  6. *Meter Bridge Balance Point Sensitivity:* Error is minimized and sensitivity maximized when the balance point occurs near the exact center ($l approx 50" cm"$).
+  7. *Current Density vs Current:* Electric current $I$ is a *scalar* quantity; current density $vec(J)$ is a *vector* quantity pointing in the direction of electric field $vec(E)$.
+]
+
+
+#pagebreak()
+#set text(size: 8.5pt)
+#set par(leading: 0.40em, spacing: 0.42em)
+
+= Practice Questions — Part 1 (Q1 to Q5)
 
 #mcq(
   1,
   [A copper wire of resistance $R$ is stretched uniformly so that its length increases by $0.2%$. The percentage change in its electrical resistance is approximately:],
   (
     [$+0.2%$],
-    [$+0.4%$],
-    [$-0.4%$],
     [$+0.1%$],
+    [$-0.4%$],
+    [$+0.4%$],
   ),
 )
 #solution(
@@ -443,7 +477,7 @@ The meter bridge operates on the principle of the balanced Wheatstone bridge. It
   [
     By volume invariance, $R prop L^2$. For small fractional changes ($<= 5%$), $(Delta R)/R approx 2 (Delta L)/L = 2(+0.2%) = +0.4%$. Resistance increases by $0.4%$.
   ],
-  answer: [B],
+  answer: [D],
 )
 
 #mcq(
@@ -519,14 +553,18 @@ The meter bridge operates on the principle of the balanced Wheatstone bridge. It
 )
 
 #pagebreak()
+#set text(size: 8.5pt)
+#set par(leading: 0.40em, spacing: 0.42em)
+
+= Practice Questions — Part 2 (Q6 to Q10)
 
 #mcq(
   6,
   [A cell of EMF $E$ and internal resistance $r$ is connected across a variable external load resistor $R$. The maximum power dissipated in the external resistor is:],
   (
     [$E^2 / (2 r)$],
-    [$E^2 / (4 r)$],
     [$E^2 / r$],
+    [$E^2 / (4 r)$],
     [$2 E^2 / r$],
   ),
 )
@@ -535,7 +573,7 @@ The meter bridge operates on the principle of the balanced Wheatstone bridge. It
   [
     By the maximum power transfer theorem, power dissipated in external load is maximized when $R = r$. Maximum power $P_("max") = E^2 R / (R + r)^2 = E^2 r / (2 r)^2 = E^2 / (4 r)$.
   ],
-  answer: [B],
+  answer: [C],
 )
 
 #mcq(
@@ -597,9 +635,9 @@ The meter bridge operates on the principle of the balanced Wheatstone bridge. It
   [In a meter bridge experiment, the null point is obtained at $40" cm"$ from the left end when a resistance of $6 Omega$ is in the left gap. The unknown resistance in the right gap is:],
   (
     [$4 Omega$],
-    [$9 Omega$],
-    [$6 Omega$],
     [$12 Omega$],
+    [$6 Omega$],
+    [$9 Omega$],
   ),
 )
 #solution(
@@ -607,18 +645,22 @@ The meter bridge operates on the principle of the balanced Wheatstone bridge. It
   [
     Using meter bridge balance condition: $R/X = l/(100 - l) ==> 6/X = 40/(100 - 40) = 40/60 = 2/3 ==> X = (6 times 3)/2 = 9 Omega$.
   ],
-  answer: [B],
+  answer: [D],
 )
 
 #pagebreak()
+#set text(size: 8.5pt)
+#set par(leading: 0.40em, spacing: 0.42em)
+
+= Practice Questions — Part 3 (Q11 to Q15)
 
 #mcq(
   11,
   [Two identical cells, each of EMF $1.5" V"$ and internal resistance $0.5 Omega$, are connected in parallel. The equivalent EMF and equivalent internal resistance of the combination are:],
   (
     [$3.0" V", 1.0 Omega$],
-    [$1.5" V", 0.25 Omega$],
     [$1.5" V", 1.0 Omega$],
+    [$1.5" V", 0.25 Omega$],
     [$3.0" V", 0.25 Omega$],
   ),
 )
@@ -627,7 +669,7 @@ The meter bridge operates on the principle of the balanced Wheatstone bridge. It
   [
     In parallel combination of identical cells, equivalent EMF equals single cell EMF: $E_("eq") = E = 1.5" V"$. Equivalent internal resistance is $r_("eq") = r/m = 0.5/2 = 0.25 Omega$.
   ],
-  answer: [B],
+  answer: [C],
 )
 
 #mcq(
