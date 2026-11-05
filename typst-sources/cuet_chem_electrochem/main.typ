@@ -51,6 +51,9 @@
 #pagebreak()
 
 
+#set text(size: 10.4pt)
+#set par(leading: 0.64em, spacing: 0.88em)
+
 = Concept Module 1: Electrochemical Cells & The Daniell Cell
 
 An *electrochemical cell* is a device capable of either generating electrical energy from chemical reactions or using electrical energy to cause chemical reactions.
@@ -69,7 +72,7 @@ The model galvanic cell couples a zinc half-cell with a copper half-cell:
   $ Z n(s) + C u^(2+)("aq") arrow.r Z n^(2+)("aq") + C u(s) quad (E^0_"cell" = +1.10" V") $
 
 #figure(
-  image("assets/chem_daniell_cell.png", width: 84%),
+  image("assets/chem_daniell_cell.png", width: 76%),
   caption: [The Daniell Cell: Zn oxidation anode, Cu reduction cathode, porous salt bridge, and external electron flow through the voltmeter.],
 )
 
@@ -193,7 +196,7 @@ Electric current passes through solutions via the movement of hydrated ions (*el
    where $C$ is molar concentration ($"mol/L"$). (In SI units: $Lambda_m = kappa / (1000 times C)$ in $"S m"^2" mol"^(-1)$).
 
 #figure(
-  image("assets/chem_conductance_kohlrausch.png", width: 84%),
+  image("assets/chem_conductance_kohlrausch.png", width: 76%),
   caption: [Electrolytic Conductance & Kohlrausch's Law: Dilution dynamics of strong vs weak electrolytes, Debye-Hückel-Onsager plot, and Faraday's electrolysis stoichiometry.],
 )
 
@@ -319,7 +322,7 @@ An electrochemical phenomenon where metal surfaces undergo oxidation:
 #pagebreak()
 
 #figure(
-  image("assets/chem_electrochem_mindmap.png", width: 88%),
+  image("assets/chem_electrochem_mindmap.png", width: 70%),
   caption: [Unit II Electrochemistry Master Architectural Mindmap: Integrated overview of galvanic cells, thermodynamic equations, electrolytic conductance dynamics, Kohlrausch's law, Faraday's electrolysis laws, and commercial batteries.],
 )
 
@@ -383,8 +386,8 @@ An electrochemical phenomenon where metal surfaces undergo oxidation:
   1,
   [In a operating Daniell cell ($Z n | Z n^(2+) || C u^(2+) | C u$), which statement correctly describes the electrodes and electron flow?],
   (
-    [Zinc is the cathode, copper is the anode, and electrons flow from copper to zinc],
     [Zinc is the negative anode, copper is the positive cathode, and electrons flow from zinc to copper],
+    [Zinc is the cathode, copper is the anode, and electrons flow from copper to zinc],
     [Copper is the negative anode, zinc is the positive cathode, and electrons flow from zinc to copper],
     [Zinc is the positive anode, copper is the negative cathode, and current flows from zinc to copper],
   ),
@@ -392,7 +395,7 @@ An electrochemical phenomenon where metal surfaces undergo oxidation:
 #solution(
   1,
   [Oxidation occurs at the zinc anode (negative terminal, LOAN), releasing electrons that travel through the external circuit to the copper cathode (positive terminal).],
-  answer: [B],
+  answer: [A],
 )
 
 #mcq(
@@ -415,8 +418,8 @@ An electrochemical phenomenon where metal surfaces undergo oxidation:
   3,
   [What is the standard hydrogen electrode potential ($E^0$) by international convention, and what is its composition?],
   (
-    [$E^0 = 1.00" V"$, with $H_2$ at 1 atm bubbled over copper foil in $1" M" H C l$],
     [$E^0 = 0.00" V"$, with $H_2$ at 1 bar bubbled over platinised Pt in $1.0" M" H^+$],
+    [$E^0 = 1.00" V"$, with $H_2$ at 1 atm bubbled over copper foil in $1" M" H C l$],
     [$E^0 = -0.76" V"$, with $H_2$ gas dissolved in saturated $K C l$ agar gel],
     [$E^0 = 0.059" V"$, with pure $H_2 O$ at $298" K"$ under 1 atm pressure],
   ),
@@ -424,7 +427,7 @@ An electrochemical phenomenon where metal surfaces undergo oxidation:
 #solution(
   3,
   [SHE is assigned $E^0 = 0.00" V"$ at all temperatures by IUPAC convention: $P t | H_2(g, 1" bar") | H^+("aq", 1" M")$.],
-  answer: [B],
+  answer: [A],
 )
 
 #mcq(
@@ -447,8 +450,8 @@ An electrochemical phenomenon where metal surfaces undergo oxidation:
   5,
   [The standard cell potential ($E^0_"cell"$) for a 2-electron transfer redox reaction is $+0.2955" V"$ at $298" K"$. The equilibrium constant ($K_c$) for the reaction is:],
   (
-    [$1 times 10^5$],
     [$1 times 10^(10)$],
+    [$1 times 10^5$],
     [$2 times 10^(10)$],
     [$1 times 10^(-10)$],
   ),
@@ -456,7 +459,7 @@ An electrochemical phenomenon where metal surfaces undergo oxidation:
 #solution(
   5,
   [$log K_c = (n E^0_"cell") / 0.0591 = (2 times 0.2955) / 0.0591 = 10.0 ==> K_c = 10^(10) = 1 times 10^(10)$.],
-  answer: [B],
+  answer: [A],
 )
 
 #pagebreak()
@@ -503,15 +506,15 @@ An electrochemical phenomenon where metal surfaces undergo oxidation:
   [Given: $Lambda_m^0(N a C l) = 126.4$, $Lambda_m^0(H C l) = 425.9$, and $Lambda_m^0(C H_3 C O O N a) = 91.0" S cm"^2" mol"^(-1)$. The $Lambda_m^0$ for acetic acid is:],
   (
     [$516.9" S cm"^2" mol"^(-1)$],
-    [$390.5" S cm"^2" mol"^(-1)$],
     [$208.5" S cm"^2" mol"^(-1)$],
+    [$390.5" S cm"^2" mol"^(-1)$],
     [$643.3" S cm"^2" mol"^(-1)$],
   ),
 )
 #solution(
   8,
   [Kohlrausch's law: $Lambda_m^0(C H_3 C O O H) = Lambda_m^0(C H_3 C O O N a) + Lambda_m^0(H C l) - Lambda_m^0(N a C l) = 91.0 + 425.9 - 126.4 = 390.5" S cm"^2" mol"^(-1)$.],
-  answer: [B],
+  answer: [C],
 )
 
 #mcq(
@@ -574,15 +577,15 @@ An electrochemical phenomenon where metal surfaces undergo oxidation:
   [During the electrolysis of concentrated aqueous sodium chloride solution (brine) using inert electrodes, the products liberated at cathode and anode are respectively:],
   (
     [Cathode: $N a(s)$; Anode: $O_2(g)$],
-    [Cathode: $H_2(g)$; Anode: $C l_2(g)$],
     [Cathode: $H_2(g)$; Anode: $O_2(g)$],
+    [Cathode: $H_2(g)$; Anode: $C l_2(g)$],
     [Cathode: $N a(s)$; Anode: $C l_2(g)$],
   ),
 )
 #solution(
   12,
   [Water reduces preferentially to yield $H_2(g)$ at cathode. At anode, $C l_2(g)$ discharges instead of $O_2$ due to the high *overpotential* of oxygen.],
-  answer: [B],
+  answer: [C],
 )
 
 #mcq(
@@ -590,15 +593,15 @@ An electrochemical phenomenon where metal surfaces undergo oxidation:
   [When an aqueous solution of $C u S O_4$ is electrolysed using pure copper electrodes, what reactions occur at the anode and cathode?],
   (
     [Anode: $O_2(g)$; Cathode: $H_2(g)$],
-    [Anode: $C u$ dissolves; Cathode: $C u$ deposits],
-    [Anode: $C l_2(g)$; Cathode: $C u$ deposits],
     [Anode: $O_2(g)$; Cathode: $C u$ deposits],
+    [Anode: $C l_2(g)$; Cathode: $C u$ deposits],
+    [Anode: $C u$ dissolves; Cathode: $C u$ deposits],
   ),
 )
 #solution(
   13,
   [With active copper electrodes, copper oxidises at anode ($C u arrow.r C u^(2+) + 2 e^-$) and reduces onto cathode ($C u^(2+) + 2 e^- arrow.r C u$).],
-  answer: [B],
+  answer: [D],
 )
 
 #mcq(
@@ -606,15 +609,15 @@ An electrochemical phenomenon where metal surfaces undergo oxidation:
   [Why does a mercury cell provide a remarkably constant potential ($1.35" V"$) throughout its operational lifetime?],
   (
     [It uses an extremely large excess of zinc-mercury amalgam],
-    [The overall cell reaction does not involve any dissolved ions whose concentrations can change],
-    [It operates as a secondary cell that self-recharges continuously],
     [Mercury acts as an inert catalyst that prevents electrode polarisation],
+    [It operates as a secondary cell that self-recharges continuously],
+    [The overall cell reaction does not involve any dissolved ions whose concentrations can change],
   ),
 )
 #solution(
   14,
   [Overall reaction: $Z n(H g) + H g O(s) arrow.r Z n O(s) + H g(l)$. No ions appear in the net reaction, so voltage is invariant with time.],
-  answer: [B],
+  answer: [D],
 )
 
 #mcq(
@@ -622,13 +625,13 @@ An electrochemical phenomenon where metal surfaces undergo oxidation:
   [Galvanised iron sheets remain immune to corrosion even after the protective zinc layer is scratched because:],
   (
     [Zinc oxide barrier seals the scratch],
-    [Zinc has more negative $E^0$ and acts as sacrificial anode],
-    [Zinc forms a passivating alloy with iron],
     [Iron is more electropositive than zinc],
+    [Zinc forms a passivating alloy with iron],
+    [Zinc has more negative $E^0$ and acts as sacrificial anode],
   ),
 )
 #solution(
   15,
   [$E^0(Z n^(2+)/Z n) = -0.76" V"$ is more negative than $E^0(F e^(2+)/F e) = -0.44" V"$. Zinc oxidises sacrificially, preserving iron cathodic.],
-  answer: [B],
+  answer: [D],
 )
