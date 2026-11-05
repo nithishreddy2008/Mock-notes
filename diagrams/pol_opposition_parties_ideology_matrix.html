@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px 32px;
+    overflow: hidden;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #071A4D;
+    padding: 16px 28px;
+    border-radius: 12px;
+    border-bottom: 4px solid #1F5EFF;
+    margin-bottom: 16px;
+  }
+  .header-left h1 {
+    color: #FFFFFF;
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+  }
+  .header-left p {
+    color: #94A3B8;
+    font-size: 13px;
+    font-weight: 500;
+    margin-top: 3px;
+  }
+  .badge {
+    background: #1F5EFF;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+  }
+  .main-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    height: 740px;
+  }
+  .card {
+    background: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    border-radius: 12px;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+  }
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #E2E8F0;
+    margin-bottom: 12px;
+  }
+  .card-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: #EFF6FF;
+    color: #1F5EFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 15px;
+  }
+  .card-title {
+    font-size: 15px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .card-subtitle {
+    font-size: 11px;
+    color: #64748B;
+  }
+  .sub-box {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin-bottom: 10px;
+  }
+  .sub-title {
+    font-size: 12.5px;
+    font-weight: 800;
+    color: #1E293B;
+    margin-bottom: 4px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .sub-title span {
+    font-size: 11px;
+    color: #1F5EFF;
+    font-weight: 700;
+  }
+  .detail-list {
+    font-size: 11px;
+    line-height: 1.45;
+    color: #334155;
+  }
+  .detail-list li {
+    margin-left: 14px;
+    margin-bottom: 2px;
+  }
+  .tag {
+    display: inline-block;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 700;
+  }
+  .tag-green { background: #DCFCE7; color: #166534; }
+  .tag-blue { background: #DBEAFE; color: #1E40AF; }
+  .tag-amber { background: #FEF3C7; color: #92400E; }
+  .tag-purple { background: #F3E8FF; color: #6B21A8; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <h1>ERA OF ONE-PARTY DOMINANCE: CONGRESS SYSTEM & OPPOSITION MATRIX</h1>
+    <p>CUET UG Political Science · Unit IX · First 3 General Elections, Kothari's Congress System & Ideological Formations</p>
+  </div>
+  <div class="badge">NTA HIGH-FREQUENCY MATRIX</div>
+</div>
+
+<div class="main-grid">
+  <!-- Col 1: Elections & The Congress System -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon">1</div>
+      <div>
+        <div class="card-title">Elections & The Congress System</div>
+        <div class="card-subtitle">Electoral Hegemony in a Competitive Democracy</div>
+      </div>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">1st General Election (1951–52) <span class="tag tag-blue">Sukumar Sen</span></div>
+      <ul class="detail-list">
+        <li>EC set up in Jan 1950; 1st CEC: <strong>Sukumar Sen</strong>.</li>
+        <li>17.32 crore voters, 85% illiterate; separate ballot box for each candidate with party symbol.</li>
+        <li>Hailed as the "biggest gamble in history"; proved democracy could flourish in a poor, illiterate society.</li>
+      </ul>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">First Three Lok Sabha Tallies <span class="tag tag-green">Sweeping Wins</span></div>
+      <ul class="detail-list">
+        <li><strong>1952:</strong> Congress won 364 / 489 seats (45% vote share); CPI second with 16 seats.</li>
+        <li><strong>1957:</strong> Congress won 371 / 494 seats; CPI won 27 seats.</li>
+        <li><strong>1962:</strong> Congress won 361 / 494 seats; CPI won 29 seats.</li>
+      </ul>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">Rajni Kothari's "Congress System" <span class="tag tag-purple">Coalition Nature</span></div>
+      <ul class="detail-list">
+        <li><strong>Social Coalition:</strong> Accommodated peasants, industrial tycoons, urban elites, dalits, minorities.</li>
+        <li><strong>Ideological Coalition:</strong> Encompassed socialists, capitalists, conservatives, radicals.</li>
+        <li><strong>Factional Balancing:</strong> Internal factions served as an internal opposition, maintaining ideological equilibrium.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Col 2: The Left Formations -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon">2</div>
+      <div>
+        <div class="card-title">Socialist & Communist Formations</div>
+        <div class="card-subtitle">CSP, PSP, CPI & The 1957 Kerala Historic Milestone</div>
+      </div>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">The Socialist Party (1948) <span class="tag tag-amber">Democratic Socialism</span></div>
+      <ul class="detail-list">
+        <li>Originated as Congress Socialist Party (CSP, 1934) inside Congress; separated in 1948.</li>
+        <li><strong>Founding Leaders:</strong> Acharya Narendra Deva, Jayaprakash Narayan (JP), Ram Manohar Lohia, Asoka Mehta.</li>
+        <li>Later evolved into Praja Socialist Party (PSP) and Samyukta Socialist Party (SSP); split over alliance with Congress.</li>
+      </ul>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">Communist Party of India (CPI) <span class="tag tag-purple">Marxist-Leninist</span></div>
+      <ul class="detail-list">
+        <li>Inspired by 1917 Bolshevik Revolution; early 1920s origin; organized armed Telangana Peasant Rebellion (1948–51).</li>
+        <li>Abandoned armed insurgency in 1951 to enter parliamentary electoral path.</li>
+        <li><strong>Key Leaders:</strong> A.K. Gopalan, S.A. Dange, P.C. Joshi, E.M.S. Namboodiripad.</li>
+      </ul>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">The Kerala 1957 Milestone <span class="tag tag-green">First Non-Congress Govt</span></div>
+      <ul class="detail-list">
+        <li>CPI won 60 of 126 seats in Kerala assembly; formed government under <strong>E.M.S. Namboodiripad</strong> (first democratically elected communist government in the world).</li>
+        <li>Dismissed in 1959 under controversial use of <strong>Article 356</strong>.</li>
+        <li>Split in 1964 into <strong>CPI</strong> (pro-Soviet) and <strong>CPI(M)</strong> (pro-China/independent).</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Col 3: Right-Wing, Liberal & Dalit Formations -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon">3</div>
+      <div>
+        <div class="card-title">Right-Wing, Liberal & Dalit Formations</div>
+        <div class="card-subtitle">Bharatiya Jana Sangh, Swatantra Party & Ambedkar's RPI</div>
+      </div>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">Bharatiya Jana Sangh (BJS, 1951) <span class="tag tag-amber">Cultural Nationalism</span></div>
+      <ul class="detail-list">
+        <li>Founded in October 1951 by <strong>Dr. Shyama Prasad Mukherjee</strong>; ideological roots in RSS and Hindu Mahasabha.</li>
+        <li><strong>Core Ideology:</strong> "One Country, One Nation, One Culture" (Akhand Bharat); Hindi as official language; opposition to cow slaughter; pro-nuclear weapons.</li>
+        <li><strong>Deendayal Upadhyaya:</strong> Propounded the philosophy of <em>Integral Humanism</em> (indigenous holistic development).</li>
+      </ul>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">The Swatantra Party (1959) <span class="tag tag-blue">Free Enterprise</span></div>
+      <ul class="detail-list">
+        <li>Formed in August 1959 by <strong>C. Rajagopalachari (Rajaji)</strong>, Minoo Masani, N.G. Ranga, and K.M. Munshi.</li>
+        <li><strong>Ideology:</strong> Classic economic liberalism; opposed state-led planning, public sector monopolies, land ceiling, and "License-Permit Raj."</li>
+        <li>Advocated pro-Western foreign policy; supported by rich landlords, princes, and industrialists.</li>
+      </ul>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">Dr. Ambedkar & Dalit Politics <span class="tag tag-purple">Social Justice</span></div>
+      <ul class="detail-list">
+        <li>Dr. B.R. Ambedkar founded the Independent Labour Party (1936) and Scheduled Castes Federation (SCF, 1942).</li>
+        <li>Laid foundation for the Republican Party of India (RPI); embraced Buddhism with thousands of followers in Oct 1956.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
