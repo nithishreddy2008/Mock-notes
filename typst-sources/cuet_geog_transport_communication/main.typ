@@ -7,6 +7,9 @@
   subtitle: "Fundamentals of Human Geography: Land, Water, Air, Pipelines, Cyberspace, WTO, Regional Blocs, and World Seaports",
 )
 
+#set text(size: 10.6pt)
+#set par(leading: 0.66em, spacing: 0.90em)
+
 = Module 1: Land Transport: Roadways, Railways & Trans-Continental Corridors
 
 == 1.1 Scope and Spatial Mechanics of Land Transport
@@ -311,8 +314,8 @@ Seaports serve as the cardinal transfer terminals between maritime oceanic carri
   1,
   [The Trans-Siberian Railway, the longest railway line in the world spanning 9,332 km, connects which two terminal cities?],
   (
-    [Moscow and Irkutsk],
     [St. Petersburg and Vladivostok],
+    [Moscow and Irkutsk],
     [Novosibirsk and Beijing],
     [Kiev and Vladivostok],
   )
@@ -321,7 +324,7 @@ Seaports serve as the cardinal transfer terminals between maritime oceanic carri
 #solution(
   1,
   [The Trans-Siberian Railway runs from St. Petersburg on the Baltic coast across Eurasia to Vladivostok on the Pacific coast.],
-  answer: [B]
+  answer: [A]
 )
 
 #mcq(
@@ -329,8 +332,8 @@ Seaports serve as the cardinal transfer terminals between maritime oceanic carri
   [The Canadian Pacific Railway traverses the Rocky Mountains through which famous mountain pass?],
   (
     [Culebra Cut],
-    [Kicking Horse Pass],
     [Khyber Pass],
+    [Kicking Horse Pass],
     [Bolan Pass],
   )
 )
@@ -338,15 +341,15 @@ Seaports serve as the cardinal transfer terminals between maritime oceanic carri
 #solution(
   2,
   [The Canadian Pacific Railway traverses the Canadian Rockies through Kicking Horse Pass to reach Vancouver on the Pacific coast.],
-  answer: [B]
+  answer: [C]
 )
 
 #mcq(
   3,
   [Which is the world's most heavily trafficked inland waterway, connecting the Ruhr industrial region with the North Sea at Rotterdam?],
   (
-    [The Danube Waterway],
     [The Rhine Waterway],
+    [The Danube Waterway],
     [The Volga Waterway],
     [The Mississippi Waterway],
   )
@@ -355,7 +358,7 @@ Seaports serve as the cardinal transfer terminals between maritime oceanic carri
 #solution(
   3,
   [The Rhine is the world's busiest inland waterway, navigable 700 km from Rotterdam to Basel, serving the Ruhr industrial heartland.],
-  answer: [B]
+  answer: [A]
 )
 
 #mcq(
@@ -363,8 +366,8 @@ Seaports serve as the cardinal transfer terminals between maritime oceanic carri
   [What is the standard rail track gauge used across North America, the United Kingdom, and Western Europe?],
   (
     [1.676 m],
-    [1.435 m],
     [1.000 m],
+    [1.435 m],
     [0.762 m],
   )
 )
@@ -372,15 +375,15 @@ Seaports serve as the cardinal transfer terminals between maritime oceanic carri
 #solution(
   4,
   [The standard railway gauge measures exactly 1.435 meters (4 feet 8.5 inches) and is the most widespread track gauge globally.],
-  answer: [B]
+  answer: [C]
 )
 
 #mcq(
   5,
   [The Suez Canal differs fundamentally from the Panama Canal because the Suez Canal:],
   (
-    [Utilizes a 6-stage lock system across a central lake],
     [Is an engineered sea-level canal operating without any locks],
+    [Utilizes a 6-stage lock system across a central lake],
     [Connects the Atlantic Ocean with the Pacific Ocean],
     [Was opened in 1914 by the United States],
   )
@@ -389,7 +392,7 @@ Seaports serve as the cardinal transfer terminals between maritime oceanic carri
 #solution(
   5,
   [The Suez Canal (opened 1869) is a sea-level canal without locks, whereas the Panama Canal operates with a 6-stage lock system.],
-  answer: [B]
+  answer: [A]
 )
 
 #pagebreak()
@@ -399,8 +402,8 @@ Seaports serve as the cardinal transfer terminals between maritime oceanic carri
   [The North Atlantic Sea Route is universally designated as "The Big Trunk Route" primarily because:],
   (
     [It is the longest ocean route traversing the Indian Ocean],
-    [It connects the two most industrially developed regions and carries one-fourth of global ocean freight],
     [It operates solely for passenger luxury cruise liners],
+    [It connects the two most industrially developed regions and carries one-fourth of global ocean freight],
     [It requires no modern navigational equipment],
   )
 )
@@ -408,15 +411,15 @@ Seaports serve as the cardinal transfer terminals between maritime oceanic carri
 #solution(
   6,
   [The North Atlantic Route connects North-Eastern USA and North-Western Europe, carrying one-fourth of world foreign ocean freight.],
-  answer: [B]
+  answer: [C]
 )
 
 #mcq(
   7,
   [The famous 24-inch diameter "Big Inch" pipeline in the United States transports:],
   (
-    [Refined aviation gasoline from Chicago to Canada],
     [Crude petroleum from the Gulf of Mexico oil wells to North-East refineries],
+    [Refined aviation gasoline from Chicago to Canada],
     [Liquid natural gas from Alaska to Texas],
     [Iron ore slurry from Minnesota to Detroit],
   )
@@ -425,7 +428,7 @@ Seaports serve as the cardinal transfer terminals between maritime oceanic carri
 #solution(
   7,
   [Big Inch is a 24-inch (60 cm) pipeline moving crude petroleum from Gulf of Mexico wells to refineries in the north-eastern USA.],
-  answer: [B]
+  answer: [A]
 )
 
 #mcq(
@@ -450,16 +453,16 @@ Seaports serve as the cardinal transfer terminals between maritime oceanic carri
   [The World Trade Organization (WTO) was officially established on which date, succeeding the General Agreement on Tariffs and Trade (GATT)?],
   (
     [1 January 1948],
-    [1 January 1995],
-    [15 August 1947],
     [24 October 1945],
+    [15 August 1947],
+    [1 January 1995],
   )
 )
 
 #solution(
   9,
   [The WTO was formally established on 1 January 1995 as the permanent successor to GATT (1948), headquartered in Geneva.],
-  answer: [B]
+  answer: [D]
 )
 
 #mcq(
@@ -467,16 +470,16 @@ Seaports serve as the cardinal transfer terminals between maritime oceanic carri
   [When the monetary value of a country's total imported commodities exceeds the monetary value of its total exported commodities, it experiences a:],
   (
     [Favorable Balance of Trade],
-    [Unfavorable / Deficit Balance of Trade],
-    [Bilateral Free Trade Surplus],
     [Zero Net Tariff Equilibrium],
+    [Bilateral Free Trade Surplus],
+    [Unfavorable / Deficit Balance of Trade],
   )
 )
 
 #solution(
   10,
   [When imports exceed exports, a nation incurs an unfavorable (deficit) balance of trade, which depletes foreign currency reserves.],
-  answer: [B]
+  answer: [D]
 )
 
 #pagebreak()
@@ -486,16 +489,16 @@ Seaports serve as the cardinal transfer terminals between maritime oceanic carri
   [The trade practice of selling an exported commodity in a foreign nation at a price below its domestic cost of production is termed:],
   (
     [Entrepot Trading],
-    [Dumping],
-    [Tariff Protectionism],
     [Multilateral Barter],
+    [Tariff Protectionism],
+    [Dumping],
   )
 )
 
 #solution(
   11,
   [Dumping is the practice of exporting goods below production cost or home market price to undermine local competitors.],
-  answer: [B]
+  answer: [D]
 )
 
 #mcq(
