@@ -370,46 +370,44 @@ In long-run competitive equilibrium, every firm produces at the minimum point of
 = Practice Questions — Part 1 (Q1 to Q5)
 
 #mcq(1, [For a perfectly competitive firm, which of the following relationships between Price (P), Average Revenue (AR), and Marginal Revenue (MR) is strictly true across all output levels?], (
-  [(A) $P = A R > M R$],
-  [(B) $P > A R = M R$],
-  [(C) $P = A R = M R$],
-  [(D) $P > A R > M R$],
+  [$P = A R = M R$],
+  [$P > A R = M R$],
+  [$P = A R > M R$],
+  [$P > A R > M R$],
 ))
-#solution(1, [In perfect competition, the firm is a price taker and can sell any quantity at the constant market price $P$. Therefore, Average Revenue is $A R = T R / Q = (P times Q) / Q = P$. Marginal Revenue is $M R = Delta T R / Delta Q = P$. Hence, $P = A R = M R$ holds identically as a constant horizontal line parallel to the output axis.], answer: "C")
+#solution(1, [In perfect competition, the firm is a price taker and can sell any quantity at the constant market price ($P$). Total Revenue is $T R = P times Q$, Average Revenue is $A R = T R / Q = P$, and Marginal Revenue is $M R = d(T R)/d Q = P$. Therefore, $P = A R = M R$ holds as a strict equality throughout.], answer: "A")
 
-#mcq(2, [A competitive firm maximizes its total profit by producing an output where Marginal Cost equals Marginal Revenue, provided that at this output level:], (
-  [(A) Marginal Cost is falling],
-  [(B) Marginal Cost is rising (cuts MR from below)],
-  [(C) Average Total Cost is at its absolute maximum],
-  [(D) Total Revenue is equal to Total Variable Cost],
+#mcq(2, [A competitive firm maximizes its total profit by producing at the output level where Price equals Marginal Cost ($P = M C$) PROVIDED that:], (
+  [Marginal Cost is falling],
+  [Total Revenue is equal to Total Variable Cost],
+  [Average Total Cost is at its absolute maximum],
+  [Marginal Cost is rising (cuts MR from below)],
 ))
-#solution(2, [The first-order condition $M R = M C$ is necessary but not sufficient, because a U-shaped $M C$ cuts horizontal $M R$ at two points. At the first intersection where $M C$ is falling, producing further units costs less than the price received, meaning profit increases by expanding output. True profit maximization requires the second-order condition: $M C$ must be rising ($d(M C)/d Q > 0$), cutting $M R$ from below.], answer: "B")
+#solution(2, [The first-order condition $P = M C$ is necessary but not sufficient for profit maximization. If $M C$ is falling, producing additional units adds more to revenue than to cost, meaning profit would increase by expanding output. Therefore, the second-order condition strictly requires that $M C$ must be non-decreasing (rising) at the equilibrium point, cutting the horizontal $P = M R$ line from below.], answer: "D")
 
 #mcq(3, [The demand curve facing an individual firm under perfect competition is:], (
-  [(A) Downward sloping with unitary elasticity],
-  [(B) Strictly vertical with zero price elasticity],
-  [(C) Strictly horizontal with infinite price elasticity],
-  [(D) U-shaped reflecting diminishing marginal returns],
+  [Downward sloping with unitary elasticity],
+  [Strictly vertical with zero price elasticity],
+  [Strictly horizontal with infinite price elasticity ($e_d = oo$)],
+  [U-shaped reflecting diminishing marginal returns],
 ))
-#solution(3, [Because an individual firm supplies an infinitesimally small fraction of total market output and products are completely homogeneous, the firm can sell as much as it desires at the prevailing market price, but cannot sell a single unit at any price above it. This produces a perfectly horizontal demand curve with infinite price elasticity ($e_d = oo$).], answer: "C")
+#solution(3, [Because an individual firm is an atomistic player producing an infinitesimal fraction of total market output, it has zero pricing power. It can sell any desired quantity at the prevailing market price, but attempting to charge even a paisa more causes sales to collapse to zero. Geometrically, this translates to a perfectly elastic (infinitely elastic, $e_d = oo$) horizontal demand curve at market price $P$.], answer: "C")
 
-#mcq(4, [Total Revenue (TR) for a perfectly competitive firm is graphically represented as:], (
-  [(A) An inverted U-shaped curve reaching a maximum],
-  [(B) A straight line passing through the origin with constant positive slope],
-  [(C) A horizontal straight line at the level of market price],
-  [(D) A rectangular hyperbola asymptotic to both axes],
+#mcq(4, [Total Revenue (TR) for a perfectly competitive firm is graphically depicted as:], (
+  [A straight line passing through the origin with a constant positive slope ($P$)],
+  [An inverted U-shaped curve reaching a maximum],
+  [A horizontal straight line at the level of market price],
+  [A rectangular hyperbola asymptotic to both axes],
 ))
-#solution(4, [Total Revenue is given by $T R = P times Q$. Since the market price $P$ is constant for a competitive price-taker, every additional unit sold adds exactly $P$ to total receipts ($d(T R)/d Q = P$). Therefore, $T R$ is a straight ray originating from $(0, 0)$ with a constant positive slope equal to $P$.], answer: "B")
+#solution(4, [Because price is constant ($P = c$), $T R = P times Q$. This is a linear homogeneous equation of the form $y = m x$ with slope $m = P$ and intercept 0. At $Q = 0, T R = 0$. As $Q$ increases, $T R$ grows in exact direct proportion to output. Geometrically, it is an upward-sloping straight ray through the origin with constant slope $d(T R)/d Q = P = M R$.], answer: "A")
 
-#mcq(5, [If the market price in a competitive industry is ₹25, the Marginal Revenue of the firm from selling the 100th unit of output is:], (
-  [(A) ₹2,500],
-  [(B) ₹250],
-  [(C) ₹25],
-  [(D) ₹0],
+#mcq(5, [If the market price in a competitive industry is ₹25, the Marginal Revenue earned by a firm selling its 100th unit of output is:], (
+  [₹2,500],
+  [₹250],
+  [₹25],
+  [₹0],
 ))
-#solution(5, [In perfect competition, $P = A R = M R = "Constant"$. Regardless of whether the firm sells the 1st unit, the 50th unit, or the 100th unit, each additional unit sold adds exactly the market price to total revenue. Since $P = ₹25$, $M R_(100) = ₹25$.], answer: "C")
-
----
+#solution(5, [In a perfectly competitive market, price is completely fixed for the individual seller ($P = ₹25$). Every additional unit sold yields exactly the prevailing market price in additional revenue. Therefore, $M R = P = ₹25$ regardless of whether the firm sells its 1st, 10th, or 100th unit.], answer: "C")
 
 #pagebreak()
 #set text(size: 8.5pt)
@@ -417,47 +415,45 @@ In long-run competitive equilibrium, every firm produces at the minimum point of
 
 = Practice Questions — Part 2 (Q6 to Q10)
 
-#mcq(6, [The short-run supply curve of a perfectly competitive firm is defined by:], (
-  [(A) The entire rising portion of the Average Total Cost (ATC) curve],
-  [(B) The rising segment of the Short-Run Marginal Cost (SMC) curve on and above the minimum AVC],
-  [(C) The downward-sloping segment of the Short-Run Marginal Cost curve],
-  [(D) The horizontal line corresponding to the Break-Even price],
+#mcq(6, [The short-run supply curve of a perfectly competitive firm is represented by:], (
+  [The entire rising portion of the Average Total Cost (ATC) curve],
+  [The horizontal line corresponding to the Break-Even Price],
+  [The downward-sloping segment of the Short-Run Marginal Cost curve],
+  [The rising segment of the Short-Run Marginal Cost (SMC) curve on or above the minimum Average Variable Cost (AVC)],
 ))
-#solution(6, [A competitive firm maximizes profit where $P = S M C$ along the rising branch of $S M C$, provided price covers variable costs ($P >= A V C_"min"$). If price falls below minimum $A V C$, the firm shuts down and supplies zero. Therefore, the firm's short-run supply curve is strictly the rising segment of $S M C$ lying on or above the minimum point of the $A V C$ curve.], answer: "B")
+#solution(6, [In the short run, the firm will produce if price covers at least its Average Variable Cost ($P >= A V C_"min"$). For any price on or above $A V C_"min"$, the profit-maximizing output is found where $P = S M C$ along the upward-sloping limb. If $P < A V C_"min"$, the firm shuts down and supplies zero. Thus, the short-run supply curve is the rising segment of $S M C$ at or above minimum $A V C$, plus the zero-output point along the price axis for $P < A V C_"min"$.], answer: "D")
 
-#mcq(7, [A firm continues to produce output in the short run despite incurring an economic loss when:], (
-  [(A) Price is less than minimum Average Variable Cost ($P < A V C_"min"$)],
-  [(B) Price is between minimum AVC and minimum ATC ($A V C_"min" <= P < A T C_"min"$)],
-  [(C) Total Revenue is less than Total Variable Cost ($T R < T V C$)],
-  [(D) Total Fixed Cost is equal to zero],
+#mcq(7, [A firm continues to produce output in the short run despite incurring economic losses (negative profit) if:], (
+  [Price is less than minimum Average Variable Cost ($P < A V C_"min"$)],
+  [Price is between minimum AVC and minimum ATC ($A V C_"min" <= P < A T C_"min"$)],
+  [Total Revenue is less than Total Variable Cost ($T R < T V C$)],
+  [Total Fixed Cost is equal to zero],
 ))
-#solution(7, [When $A V C_"min" <= P < A T C_"min"$, the firm cannot cover its full costs ($T R < T C$), resulting in an economic loss. However, because $P >= A V C$, revenue covers all variable operating costs and leaves a residual surplus to offset a portion of fixed overheads ($T F C$). If the firm shut down, it would lose the entire $T F C$. Operating keeps losses smaller than $T F C$, making operation rational in the short run.], answer: "B")
+#solution(7, [In the short run, fixed costs are sunk and must be paid even if the firm produces zero ($"Loss at shutdown" = T F C$). If price covers $A V C$ and leaves a surplus ($P > A V C$), that operating surplus goes toward defraying part of $T F C$. Therefore, continuing operations minimizes short-run losses compared to shutting down. Only when price drops below $A V C$ (where losses exceed $T F C$) will the firm shut down immediately.], answer: "B")
 
 #mcq(8, [At the Break-Even Point of a competitive firm:], (
-  [(A) $P = A V C_"min"$ and economic profit is negative],
-  [(B) $P = A T C_"min"$ and economic profit is zero (earns normal profit)],
-  [(C) $T R = T V C$ and the firm shuts down immediately],
-  [(D) Marginal Cost is at its absolute minimum],
+  [$P = A V C_"min"$ and economic profit is negative],
+  [$P = A T C_"min"$ and economic profit is zero (Normal Profit)],
+  [$T R = T V C$ and the firm shuts down immediately],
+  [Marginal Cost is at its absolute minimum],
 ))
-#solution(8, [The Break-Even Point occurs where market price equals the minimum point of Average Total Cost ($P = A T C_"min"$). At this output, Total Revenue equals Total Cost ($T R = T C$). Net economic profit is strictly zero ($pi = 0$). Since economic cost includes implicit costs (normal profit), the firm is fully covering all costs and earning its normal entrepreneurial return.], answer: "B")
+#solution(8, [The Break-Even Point occurs where Total Revenue equals Total Cost ($T R = T C$), which corresponds on a per-unit basis to $P = A T C$. Since a competitive firm operates where $P = M C$, break-even requires $M C = A T C$, which geometrically happens strictly at the minimum point of the $A T C$ curve ($A T C_"min"$). At this point, economic profit is zero, meaning the entrepreneur earns exactly their normal profit (implicit opportunity cost of capital).], answer: "B")
 
-#mcq(9, [If the government imposes a specific per-unit sales tax of ₹5 on the production of a good, how does this affect the firm's short-run supply curve?], (
-  [(A) The supply curve shifts horizontally to the right by 5 units],
-  [(B) The supply curve shifts vertically upward (leftward) by ₹5],
-  [(C) The supply curve becomes perfectly inelastic],
-  [(D) The supply curve remains completely unaffected because tax is a fixed cost],
+#mcq(9, [If the government imposes a specific per-unit sales tax of ₹5 on a competitive good, how does the firm's supply curve adjust?], (
+  [The supply curve shifts horizontally to the right by ₹5],
+  [The supply curve shifts vertically upward (leftward) by ₹5],
+  [The supply curve becomes perfectly inelastic],
+  [The supply curve remains completely unaffected],
 ))
-#solution(9, [A specific per-unit tax increases the variable cost of producing every single unit by ₹5. Consequently, the firm's Marginal Cost curve shifts vertically upward by ₹5 ($S M C_"new" = S M C_"old" + 5$). Since the firm's supply curve is the rising portion of $S M C$, the entire supply curve shifts vertically upward by ₹5, which corresponds to a leftward shift in supply at any given price.], answer: "B")
+#solution(9, [A specific per-unit tax of $t$ increases the firm's marginal cost and average variable cost by $t$ at every output level ($M C' = M C + t$). To supply the same output as before, the firm now requires a price that is ₹5 higher. Consequently, the firm's supply curve shifts vertically upward by exactly ₹5 (the amount of the tax), reflecting a leftward reduction in supply at any given market price.], answer: "B")
 
-#mcq(10, [At the Shutdown Point of a competitive firm in the short run, the firm's net economic loss is equal to:], (
-  [(A) Zero],
-  [(B) Total Variable Cost (TVC)],
-  [(C) Total Fixed Cost (TFC)],
-  [(D) Total Revenue (TR)],
+#mcq(10, [At the Shutdown Point of a competitive firm in the short run, the firm's total loss is exactly equal to:], (
+  [Zero],
+  [Total Variable Cost (TVC)],
+  [Total Revenue (TR)],
+  [Total Fixed Cost (TFC)],
 ))
-#solution(10, [At the shutdown point, price equals minimum Average Variable Cost ($P = A V C_"min"$). Therefore, Total Revenue exactly covers Total Variable Cost ($T R = T V C$). Total profit is $pi = T R - T C = T V C - (T F C + T V C) = -T F C$. The firm incurs a loss exactly equal to its Total Fixed Cost whether it operates or shuts down.], answer: "C")
-
----
+#solution(10, [At the shutdown point, price equals minimum Average Variable Cost ($P = A V C_"min"$), so $T R = T V C$. Operating revenue covers variable costs with zero surplus remaining to cover fixed costs. Thus, Total Profit is $pi = T R - T C = T V C - (T F C + T V C) = -T F C$. The firm incurs a loss exactly equal to its Total Fixed Cost whether it produces or shuts down.], answer: "D")
 
 #pagebreak()
 #set text(size: 8.5pt)
@@ -465,42 +461,47 @@ In long-run competitive equilibrium, every firm produces at the minimum point of
 
 = Practice Questions — Part 3 (Q11 to Q15)
 
-#mcq(11, [Any straight-line supply curve that passes directly through the origin has a price elasticity of supply ($e_s$) equal to:], (
-  [(A) Greater than 1 at all points],
-  [(B) Less than 1 at all points],
-  [(C) Strictly equal to 1 at all points regardless of its slope],
-  [(D) Zero at the origin and increasing as output rises],
+#mcq(11, [Any straight-line supply curve that passes directly through the origin has a price elasticity of supply ($e_s$) that is:], (
+  [Strictly equal to 1 at all points regardless of slope],
+  [Less than 1 at all points],
+  [Greater than 1 at all points],
+  [Zero at the origin and increasing as output rises],
 ))
-#solution(11, [For any linear supply curve passing through the origin, the equation is $Q = b P$ (where $b = d Q / d P$). Applying the elasticity formula: $e_s = (d Q / d P) times (P / Q) = b times (P / (b P)) = 1.0$. This result is independent of the value of $b$ (the angle of inclination). Whether the supply line is steep or flat, if it passes through the origin, $e_s = 1.0$ at every single point!], answer: "C")
+#solution(11, [The geometric formula for elasticity of a linear supply curve is $e_s = frac(Q - Q_0, Q)$, where $Q_0$ is the intercept on the horizontal axis. For any ray originating from the origin, $Q_0 = 0$. Therefore, $e_s = frac(Q - 0, Q) = 1$ at every single point along the curve. This is an invariant geometric theorem: steepness/slope does NOT change elasticity for origin-passing rays; $e_s = 1$ always.], answer: "A")
 
-#mcq(12, [A straight-line supply curve intercepts the positive vertical (price) axis. The price elasticity of supply at any point on this curve is:], (
-  [(A) Elastic ($e_s > 1$)],
-  [(B) Unitary ($e_s = 1$)],
-  [(C) Inelastic ($e_s < 1$)],
-  [(D) Infinite ($e_s = oo$)],
+#mcq(12, [A straight-line supply curve intercepts the positive vertical (price) axis. The price elasticity of supply ($e_s$) at any point on this curve is:], (
+  [Elastic ($e_s > 1$)],
+  [Unitary ($e_s = 1$)],
+  [Inelastic ($e_s < 1$)],
+  [Infinite ($e_s = oo$)],
 ))
-#solution(12, [A supply curve intercepting the positive price axis has the linear form $P = a + b Q$ (with $a > 0$), which rearranges to $Q = - frac(a, b) + frac(1, b) P$. By the geometric intercept method, any supply curve whose backward extension cuts the price axis above the origin yields a percentage change in quantity that exceeds the percentage change in price, establishing $e_s > 1.0$ (Elastic) at all points.], answer: "A")
+#solution(12, [When a linear supply curve extends to intercept the positive price axis ($y$-axis), its extension intersects the horizontal quantity axis at a negative quantity ($Q_0 < 0$). By the geometric formula $e_s = frac(Q - Q_0, Q) = frac(Q - (-c), Q) = frac(Q + c, Q) > 1$. Therefore, any linear supply curve with a positive price-axis intercept is strictly elastic ($e_s > 1$) across its entire positive domain.], answer: "A")
 
-#mcq(13, [When the market price of a good rises from ₹20 to ₹25, the quantity supplied by a firm expands from 100 units to 150 units. The price elasticity of supply using the percentage method is:], (
-  [(A) 1.25],
-  [(B) 1.50],
-  [(C) 2.00],
-  [(D) 2.50],
+#mcq(13, [When the market price of a good rises from ₹20 to ₹25, the quantity supplied by a firm expands from 100 units to 150 units. The price elasticity of supply ($e_s$) is:], (
+  [1.25],
+  [1.50],
+  [2.00],
+  [2.50],
 ))
-#solution(13, [Given: Initial price $P = 20$, new price $P_1 = 25 ==> Delta P = 25 - 20 = 5$. Initial quantity $Q = 100$, new quantity $Q_1 = 150 ==> Delta Q = 150 - 100 = 50$. Using the elasticity formula: $e_s = (Delta Q / Delta P) times (P / Q) = (50 / 5) times (20 / 100) = 10 times 0.2 = 2.00$. The supply is price elastic ($e_s > 1$).], answer: "C")
+#solution(13, [Using the percentage / proportionate method:
+$ e_s = frac(Delta Q, Delta P) times frac(P, Q) $
+Given: $P = 20$, $P_1 = 25 ==> Delta P = 25 - 20 = 5$.
+$Q = 100$, $Q_1 = 150 ==> Delta Q = 150 - 100 = 50$.
+$ e_s = frac(50, 5) times frac(20, 100) = 10 times 0.20 = 2.00. $
+Supply is highly elastic ($e_s = 2.00 > 1$).], answer: "C")
 
-#mcq(14, [In the long-run equilibrium of a perfectly competitive industry with free entry and exit, every firm earns:], (
-  [(A) Supernormal economic profit because market demand is high],
-  [(B) Strictly Zero Economic Profit, while fully covering Normal Profit],
-  [(C) Negative economic profit subsidized by the government],
-  [(D) A profit equal to Total Fixed Cost],
+#mcq(14, [In the long-run equilibrium of a perfectly competitive industry, every individual firm earns:], (
+  [Supernormal economic profit because market demand expands],
+  [Strictly Zero Economic Profit, while fully covering all opportunity costs (Normal Profit)],
+  [Negative economic profit subsidized by the government],
+  [A profit equal to Total Fixed Cost],
 ))
-#solution(14, [Free entry and exit ensures that supernormal profits and economic losses cannot persist in the long run. If firms earn supernormal profit ($P > L A C$), new firms enter, expanding market supply and lowering price. If firms suffer losses ($P < L A C$), firms exit, contracting supply and raising price. Long-run equilibrium forces $P = min L A C$, where economic profit is zero ($pi = 0$). Since normal profit is included in economic cost as an implicit cost, firms earn their normal profit.], answer: "B")
+#solution(14, [In the long run, the absence of entry and exit barriers ensures that if existing firms earn supernormal profit ($P > L A C$), new firms enter, increasing industry supply and driving price down. If firms incur losses ($P < L A C$), existing firms exit, reducing supply and lifting price. Long-run equilibrium settles where $P = L M C = L A C_"min"$. Every firm earns exactly Normal Profit (Zero Economic Profit), operating at minimum efficient scale.], answer: "B")
 
 #mcq(15, [Market supply curve is derived by:], (
-  [(A) Vertical summation of individual firms' marginal cost curves],
-  [(B) Horizontal summation of individual firms' supply curves at various prices],
-  [(C) Multiplying the individual supply curve by the price elasticity of demand],
-  [(D) Taking the average of the lowest and highest cost firms in the industry],
+  [Vertical summation of individual firms' marginal revenue curves],
+  [Multiplying the individual supply curve by the price level],
+  [Horizontal summation of individual firms' supply curves at each given price],
+  [Taking the average of the lowest and highest cost firms' supply curves],
 ))
-#solution(15, [Market supply represents the total aggregate quantity of a commodity that all participating producers in the market are willing to sell at each given price level. It is constructed through the process of *horizontal summation*: at each specific price on the vertical axis, the quantities supplied by each individual firm ($q_1 + q_2 + dots + q_n$) are added together to find total market quantity ($Q_M$).], answer: "B")
+#solution(15, [The market supply curve shows the total quantity of a commodity that all producers in the industry are willing to sell at various prices during a given period. It is obtained by horizontally adding the quantities supplied by each individual firm at each specific price level ($Q_"market"(P) = sum_(i=1)^n q_i(P)$).], answer: "C")
