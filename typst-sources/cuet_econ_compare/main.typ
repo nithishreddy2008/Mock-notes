@@ -329,12 +329,12 @@ To match and exceed China's developmental achievements while safeguarding its vi
 = Practice Questions — Part 1 (Q1 to Q5)
 
 #mcq(1, [In which chronological order did China, Pakistan, and India launch their comprehensive market-oriented economic reform programs?], (
-  [India (1978) $==>$ Pakistan (1988) $==>$ China (1991)],
   [China (1978) $==>$ Pakistan (1988) $==>$ India (1991)],
+  [India (1978) $==>$ Pakistan (1988) $==>$ China (1991)],
   [Pakistan (1978) $==>$ China (1988) $==>$ India (1991)],
   [China (1991) $==>$ India (1988) $==>$ Pakistan (1978)],
 ))
-#solution(1, [China was the first to initiate market-oriented economic reforms in 1978 under Deng Xiaoping. Pakistan followed in 1988 under an IMF structural adjustment program, and India launched its historic New Economic Policy (NEP) in July 1991.], answer: "B")
+#solution(1, [China was the first to initiate market-oriented economic reforms in 1978 under Deng Xiaoping. Pakistan followed in 1988 under an IMF structural adjustment program, and India launched its historic New Economic Policy (NEP) in July 1991.], answer: "A")
 
 #mcq(2, [In which years did India, China, and Pakistan launch their respective First Five Year Plans?], (
   [India in 1951, China in 1953, Pakistan in 1956],
@@ -346,19 +346,19 @@ To match and exceed China's developmental achievements while safeguarding its vi
 
 #mcq(3, [The "Great Leap Forward" (GLF) campaign, launched in China in 1958 by Mao Zedong, focused primarily on which of the following twin strategies?], (
   [Privatizing state banks and joining the World Trade Organisation],
-  [Encouraging people to establish backyard steel furnaces and organizing rural collective "Communes"],
-  [Banning all agricultural production to promote software exports],
   [Introducing the One-Child Policy and abolishing all taxes],
+  [Banning all agricultural production to promote software exports],
+  [Encouraging people to establish backyard steel furnaces and organizing rural collective "Communes"],
 ))
-#solution(3, [Initiated in 1958, China's Great Leap Forward campaign mobilized citizens to set up backyard furnaces to smelt steel on a widespread domestic scale, while rural agriculture was reorganized into 26,000 collective agricultural "Communes".], answer: "B")
+#solution(3, [Initiated in 1958, China's Great Leap Forward campaign mobilized citizens to set up backyard furnaces to smelt steel on a widespread domestic scale, while rural agriculture was reorganized into 26,000 collective agricultural "Communes".], answer: "D")
 
 #mcq(4, [What did the "Dual Pricing System" introduced in China during its post-1978 economic reforms signify?], (
-  [Charging higher commodity prices to foreign tourists and lower prices to domestic citizens],
   [Requiring farmers and industrial units to buy and sell a fixed quota of goods at state-fixed prices, and transacting the remaining surplus output at market-determined prices],
+  [Charging higher commodity prices to foreign tourists and lower prices to domestic citizens],
   [Charging separate prices for luxury goods and agricultural goods],
   [Fixing prices in rural areas while leaving urban prices completely unregulated],
 ))
-#solution(4, [Under China's dual pricing reform, enterprises and farmers had to fulfill a fixed output quota at government-controlled prices. The output produced over and above the quota could be purchased and sold freely at market-determined prices, stimulating productivity.], answer: "B")
+#solution(4, [Under China's dual pricing reform, enterprises and farmers had to fulfill a fixed output quota at government-controlled prices. The output produced over and above the quota could be purchased and sold freely at market-determined prices, stimulating productivity.], answer: "A")
 
 #mcq(5, [Why does China exhibit a significantly LOWER population density (approx. 150 persons per sq km) compared to India (approx. 435 persons per sq km), despite having a slightly larger population?], (
   [Because China has a much larger geographical land area (approx. 9.6 million sq km) than India (approx. 3.28 million sq km)],
@@ -402,11 +402,11 @@ To match and exceed China's developmental achievements while safeguarding its vi
 
 #mcq(9, [According to the United Nations Development Programme (UNDP) Human Development Index (HDI) rankings, what is the correct relative rank ordering of the three neighbours from highest to lowest human development?], (
   [India $==>$ Pakistan $==>$ China],
-  [China (High) $==>$ India (Medium) $==>$ Pakistan (Low)],
-  [Pakistan $==>$ India $==>$ China],
   [China $==>$ Pakistan $==>$ India],
+  [Pakistan $==>$ India $==>$ China],
+  [China (High) $==>$ India (Medium) $==>$ Pakistan (Low)],
 ))
-#solution(9, [On all standard composite HDI metrics (life expectancy, schooling, per capita GNI, infant/maternal mortality), China ranks highest (~79th, High Human Development), India ranks in the middle (~134th, Medium Human Development), and Pakistan ranks lowest (~161st, Low Human Development).], answer: "B")
+#solution(9, [On all standard composite HDI metrics (life expectancy, schooling, per capita GNI, infant/maternal mortality), China ranks highest (~79th, High Human Development), India ranks in the middle (~134th, Medium Human Development), and Pakistan ranks lowest (~161st, Low Human Development).], answer: "D")
 
 #mcq(10, [What is the fundamental limitation of standard Human Development Index (HDI) metrics when evaluating a nation's total development, and what concept addresses this gap?], (
   [HDI measures only industrial output; addressed by Green GDP],
@@ -426,11 +426,11 @@ To match and exceed China's developmental achievements while safeguarding its vi
 
 #mcq(11, [During China's "Great Proletarian Cultural Revolution" (1966–1976), what mandate was enforced upon students and professionals by Mao Zedong's Red Guards?], (
   [They were sent to the United States to study modern finance],
-  [They were sent to the rural countryside to work and learn from manual agricultural peasants],
   [They were ordered to build nuclear power plants in urban centers],
   [They were required to launch private e-commerce corporations],
+  [They were sent to the rural countryside to work and learn from manual agricultural peasants],
 ))
-#solution(11, [During the Cultural Revolution (1966–1976), Mao mobilized student-led Red Guards to conduct an ideological purge. Millions of urban university students, intellectuals, and professionals were forcibly sent to the countryside to perform manual field labour and learn from peasants.], answer: "B")
+#solution(11, [During the Cultural Revolution (1966–1976), Mao mobilized student-led Red Guards to conduct an ideological purge. Millions of urban university students, intellectuals, and professionals were forcibly sent to the countryside to perform manual field labour and learn from peasants.], answer: "D")
 
 #mcq(12, [Which primary factor explains why China was able to achieve rapid industrial manufacturing success post-1978, compared to India and Pakistan?], (
   [China had higher foreign debt liabilities than India and Pakistan],
