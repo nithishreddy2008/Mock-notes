@@ -387,8 +387,8 @@ A bar magnet of length $2 l$ and pole strength $m$ has magnetic dipole moment $M
   [A circular coil of radius $R$ carries an electric current $I$. The magnetic field at a point on the axis at distance $x = sqrt(3) R$ from the center is related to center field $B_0$ by:],
   (
     [$B = B_0 / 4$],
-    [$B = B_0 / 8$],
     [$B = B_0 / 16$],
+    [$B = B_0 / 8$],
     [$B = B_0 / (2 sqrt(2))$],
   ),
 )
@@ -397,7 +397,7 @@ A bar magnet of length $2 l$ and pole strength $m$ has magnetic dipole moment $M
   [
     $B(x) = (mu_0 I R^2)/(2(R^2+x^2)^(3/2))$. Substituting $x = sqrt(3) R$ yields denominator $2(R^2 + 3 R^2)^(3/2) = 2(4 R^2)^(3/2) = 2(8 R^3) = 16 R^3$. Thus $B = (mu_0 I)/(16 R) = 1/8 ((mu_0 I)/(2 R)) = B_0 / 8$.
   ],
-  answer: [B],
+  answer: [C],
 )
 
 #mcq(
@@ -497,9 +497,9 @@ A bar magnet of length $2 l$ and pole strength $m$ has magnetic dipole moment $M
   [A magnetic dipole of magnetic moment $vec(M)$ is rotated from stable equilibrium ($theta = 0 degree$) to unstable equilibrium ($theta = 180 degree$) in a uniform field $vec(B)$. Work done is:],
   (
     [$M B$],
-    [$2 M B$],
-    [$-2 M B$],
     [$0$],
+    [$-2 M B$],
+    [$2 M B$],
   ),
 )
 #solution(
@@ -507,7 +507,7 @@ A bar magnet of length $2 l$ and pole strength $m$ has magnetic dipole moment $M
   [
     Work done against magnetic field: $W = U_f - U_i = -M B cos(180 degree) - (-M B cos(0 degree)) = M B - (-M B) = 2 M B$.
   ],
-  answer: [B],
+  answer: [D],
 )
 
 #mcq(
@@ -533,9 +533,9 @@ A bar magnet of length $2 l$ and pole strength $m$ has magnetic dipole moment $M
   [Which of the following substances exhibits a negative magnetic susceptibility that is independent of temperature?],
   (
     [Aluminum],
-    [Copper],
-    [Iron],
     [Sodium],
+    [Iron],
+    [Copper],
   ),
 )
 #solution(
@@ -543,7 +543,7 @@ A bar magnet of length $2 l$ and pole strength $m$ has magnetic dipole moment $M
   [
     Diamagnetic materials like copper, bismuth, and water possess negative magnetic susceptibility ($chi < 0$) resulting from Lenz's law action on paired electron orbits, which is completely independent of temperature.
   ],
-  answer: [B],
+  answer: [D],
 )
 
 #mcq(
@@ -625,9 +625,9 @@ A bar magnet of length $2 l$ and pole strength $m$ has magnetic dipole moment $M
   [A galvanometer with coil resistance $G = 100 Omega$ requires a series resistor $R_s = 4900 Omega$ to read $0 - 50" V"$. Full-scale current $I_g$ is:],
   (
     [$1" mA"$],
-    [$10" mA"$],
-    [$0.1" mA"$],
     [$5" mA"$],
+    [$0.1" mA"$],
+    [$10" mA"$],
   ),
 )
 #solution(
@@ -635,7 +635,7 @@ A bar magnet of length $2 l$ and pole strength $m$ has magnetic dipole moment $M
   [
     $V = I_g (G + R_s) ==> 50 = I_g (100 + 4900) = 5000 I_g ==> I_g = 50 / 5000 = 0.010" A" = 10" mA"$.
   ],
-  answer: [B],
+  answer: [D],
 )
 
 #mcq(
