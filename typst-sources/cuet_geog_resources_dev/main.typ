@@ -7,6 +7,9 @@
   subtitle: "Land Resources, Agricultural Systems, Water Dynamics, Mineral Belts, Energy Transition & Major Industrial Corridors",
 )
 
+#set text(size: 10.6pt)
+#set par(leading: 0.64em, spacing: 0.90em)
+
 = Module 1: Land Resources & Agricultural Land Use
 
 == 1.1 Land-Use Records and 9-Fold Reporting Categories
@@ -325,23 +328,23 @@ Industrial location is determined by complex spatial interactions of raw materia
   (
     [Current fallow],
     [Fallow other than current fallow],
-    [Culturable waste land],
     [Barren and unculturable waste],
+    [Culturable waste land],
   )
 )
 
 #solution(
   1,
   [Culturable waste land is land capable of being cultivated but left fallowed for more than 5 consecutive years. It can be rehabilitated through soil reclamation.],
-  answer: [C]
+  answer: [D]
 )
 
 #mcq(
   2,
   [In the context of Indian agriculture, which of the following mathematical formulas accurately represents 'Cropping Intensity'?],
   (
-    [$( "Gross Cropped Area" / "Total Geographical Area" ) times 100$],
     [$( "Gross Cropped Area" / "Net Sown Area" ) times 100$],
+    [$( "Gross Cropped Area" / "Total Geographical Area" ) times 100$],
     [$( "Net Sown Area" / "Gross Cropped Area" ) times 100$],
     [$( "Net Cultivated Area" / "Total Agricultural Population" ) times 100$],
   )
@@ -350,15 +353,15 @@ Industrial location is determined by complex spatial interactions of raw materia
 #solution(
   2,
   [Cropping Intensity is computed as (Gross Cropped Area ÷ Net Sown Area) × 100, measuring the frequency of cropping on net sown land within a single year.],
-  answer: [B]
+  answer: [A]
 )
 
 #mcq(
   3,
   [In eastern Indian states such as West Bengal and Assam, farmers cultivate three seasonal crops of rice in an agricultural year. These three crops are locally designated as:],
   (
-    [Rabi, Kharif, and Zaid],
     [Aus, Aman, and Boro],
+    [Rabi, Kharif, and Zaid],
     [Jowar, Bajra, and Ragi],
     [Kallar, Reh, and Usar],
   )
@@ -367,7 +370,7 @@ Industrial location is determined by complex spatial interactions of raw materia
 #solution(
   3,
   [In West Bengal and Assam, the three seasonal rice crops grown across the agricultural cycle are known as Aus (autumn), Aman (winter), and Boro (summer).],
-  answer: [B]
+  answer: [A]
 )
 
 #mcq(
@@ -392,16 +395,16 @@ Industrial location is determined by complex spatial interactions of raw materia
   [Which ecological problem emerged as a severe consequence of excessive canal over-irrigation in the Green Revolution heartlands of Punjab and Haryana?],
   (
     [Arsenic contamination in shallow wells],
-    [Soil salinization, waterlogging, and formation of 'kallar' encrustations],
-    [Accelerated laterization of alluvial soils],
     [Severe loss of organic topsoil due to wind deflation],
+    [Accelerated laterization of alluvial soils],
+    [Soil salinization, waterlogging, and formation of 'kallar' encrustations],
   )
 )
 
 #solution(
   5,
   [Over-irrigation in poorly drained canal commands caused water tables to rise, bringing mineral salts to the surface via capillary action, creating saline kallar soils.],
-  answer: [B]
+  answer: [D]
 )
 
 #pagebreak()
