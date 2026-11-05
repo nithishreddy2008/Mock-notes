@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CUET Business Studies: Taxonomy of Organizational Plans</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 16px 22px;
+    overflow: hidden;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+  }
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .brand-badge {
+    background: #071A4D;
+    color: #B8FF34;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .title-group h1 {
+    font-size: 19px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .title-group p {
+    font-size: 11px;
+    color: #64748B;
+    margin-top: 1px;
+  }
+  .header-tag {
+    background: #EEF2FF;
+    color: #3730A3;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 6px;
+    border: 1px solid #C7D2FE;
+  }
+  .top-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 12px;
+  }
+  .plan-card {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 10px;
+    padding: 12px 14px;
+  }
+  .card-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    padding-bottom: 6px;
+    border-bottom: 1.5px solid #F1F5F9;
+  }
+  .badge {
+    font-size: 10px;
+    font-weight: 800;
+    padding: 3px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+  .badge-blue { background: #DBEAFE; color: #1E40AF; }
+  .badge-purple { background: #F3E8FF; color: #6B21A8; }
+  .card-title {
+    font-size: 13px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .items-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+  .single-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .plan-pill {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 7px;
+    padding: 7px 9px;
+  }
+  .pill-title {
+    font-size: 11.5px;
+    font-weight: 800;
+    color: #0F172A;
+    margin-bottom: 3px;
+  }
+  .pill-desc {
+    font-size: 10px;
+    color: #475569;
+    line-height: 1.32;
+  }
+  .matrix-card {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 10px;
+    padding: 10px 14px;
+    margin-bottom: 10px;
+  }
+  .matrix-head {
+    font-size: 12px;
+    font-weight: 800;
+    color: #071A4D;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  table.comp-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 10.5px;
+  }
+  table.comp-table th {
+    background: #071A4D;
+    color: #FFFFFF;
+    font-weight: 700;
+    padding: 6px 8px;
+    text-align: left;
+    border: 1px solid #071A4D;
+  }
+  table.comp-table td {
+    padding: 5.5px 8px;
+    border: 1px solid #E2E8F0;
+    color: #334155;
+    line-height: 1.3;
+  }
+  table.comp-table tr:nth-child(even) {
+    background: #F8FAFC;
+  }
+  table.comp-table tr td:first-child {
+    font-weight: 700;
+    color: #0F172A;
+  }
+  .bottom-strip {
+    background: #071A4D;
+    color: #FFFFFF;
+    border-radius: 8px;
+    padding: 9px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .strip-title {
+    font-size: 11px;
+    font-weight: 800;
+    color: #B8FF34;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .strip-content {
+    font-size: 10.5px;
+    color: #E2E8F0;
+    line-height: 1.35;
+    flex: 1;
+    margin-left: 16px;
+  }
+  .strip-content strong { color: #FFFFFF; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <div class="brand-badge">OURMOCKS · CUET UG ARCHITECTURE</div>
+    <div class="title-group">
+      <h1>Taxonomy of Organizational Plans: Standing vs Single-Use Plans & Comparative Matrix</h1>
+      <p>Unit 4: Planning — Hierarchical Classification, Structural Parameters & Applied Corporate Archetypes</p>
+    </div>
+  </div>
+  <div class="header-tag">NCERT & NTA CUET 2027 SPECIFICATION</div>
+</div>
+
+<!-- Top Section: Standing vs Single-Use -->
+<div class="top-split">
+  <!-- Standing Plans -->
+  <div class="plan-card">
+    <div class="card-head">
+      <span class="card-title">Standing Plans (Recurring & Multi-Use)</span>
+      <span class="badge badge-blue">Long-Term Continuity</span>
+    </div>
+    <div class="items-grid">
+      <div class="plan-pill">
+        <div class="pill-title" style="color:#0284C7;">1. Objectives</div>
+        <div class="pill-desc">The end points towards which all management activities are directed. Measurable, qualitative or quantitative targets.</div>
+      </div>
+      <div class="plan-pill">
+        <div class="pill-title" style="color:#2563EB;">2. Strategy</div>
+        <div class="pill-desc">Comprehensive blueprint defining long-term goals, adopting course of action, and allocating scarce resources against rivals.</div>
+      </div>
+      <div class="plan-pill">
+        <div class="pill-title" style="color:#4F46E5;">3. Policy</div>
+        <div class="pill-desc">General decision-making boundaries guiding managerial discretion (e.g., "Recruitment strictly through open merit").</div>
+      </div>
+      <div class="plan-pill">
+        <div class="pill-title" style="color:#0D9488;">4. Procedure</div>
+        <div class="pill-desc">Chronological, step-by-step sequence of specific actions required to execute routine departmental activities.</div>
+      </div>
+      <div class="plan-pill">
+        <div class="pill-title" style="color:#D97706;">5. Method</div>
+        <div class="pill-desc">The standardized, prescribed technique of executing a single specific task within a procedure (e.g., FIFO inventory).</div>
+      </div>
+      <div class="plan-pill">
+        <div class="pill-title" style="color:#E11D48;">6. Rule</div>
+        <div class="pill-desc">Specific, rigid directives stating what must or must not be done, permitting zero managerial discretion (e.g., "No Smoking").</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Single-Use Plans -->
+  <div class="plan-card">
+    <div class="card-head">
+      <span class="card-title">Single-Use Plans (Unique & Non-Recurring)</span>
+      <span class="badge badge-purple">Project-Specific</span>
+    </div>
+    <div class="single-grid">
+      <div class="plan-pill" style="height: 100%;">
+        <div class="pill-title" style="color:#7C3AED; font-size:12px;">7. Programme</div>
+        <div class="pill-desc" style="font-size:10.5px; line-height:1.45;">
+          • <strong>Composite Architecture:</strong> Detailed, multi-faceted operational blueprint encompassing objectives, policies, procedures, rules, task allocations, and physical/financial resources.<br>
+          • <strong>Execution Horizon:</strong> Designed for an entire major undertaking (e.g., establishing a new EV manufacturing plant or expanding into international retail). Discarded once the project concludes.
+        </div>
+      </div>
+      <div class="plan-pill" style="height: 100%;">
+        <div class="pill-title" style="color:#059669; font-size:12px;">8. Budget</div>
+        <div class="pill-desc" style="font-size:10.5px; line-height:1.45;">
+          • <strong>Quantified Blueprint:</strong> Statement of expected future results expressed strictly in numerical financial or quantitative physical terms.<br>
+          • <strong>Dual Function:</strong> Operates as a foundational <strong>planning tool</strong> and an essential <strong>controlling standard</strong> (e.g., Cash Budget forecasting monthly liquidity surpluses and deficits).
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bottom Section: Comparative Matrix Table -->
+<div class="matrix-card">
+  <div class="matrix-head">
+    <span>Comprehensive Comparative Taxonomy of the Eight Plan Types</span>
+    <span style="font-size:10.5px; color:#64748B; font-weight:600;">Evaluated across 5 Core NCERT & CUET Dimensions</span>
+  </div>
+  <table class="comp-table">
+    <thead>
+      <tr>
+        <th style="width: 12%;">Plan Type</th>
+        <th style="width: 14%;">Classification</th>
+        <th style="width: 25%;">Core Strategic Purpose</th>
+        <th style="width: 18%;">Managerial Discretion</th>
+        <th style="width: 13%;">Quantified?</th>
+        <th style="width: 18%;">Real-World Corporate Archetype</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Objective</td>
+        <td>Neither Standing nor Single-use</td>
+        <td>Defines desired end results for all activities</td>
+        <td>Zero (Guides all future action)</td>
+        <td>Yes (Must be measurable)</td>
+        <td>"Increase annual sales revenue by 25%"</td>
+      </tr>
+      <tr>
+        <td>Strategy</td>
+        <td>Neither Standing nor Single-use</td>
+        <td>Competitive response to external environment</td>
+        <td>Broad executive discretion</td>
+        <td>Mixed (Qualitative & quant)</td>
+        <td>"Direct-to-consumer e-commerce pivot"</td>
+      </tr>
+      <tr>
+        <td>Policy</td>
+        <td>Standing Plan</td>
+        <td>General guide for thinking and decision-making</td>
+        <td>High managerial latitude</td>
+        <td>No (Qualitative boundaries)</td>
+        <td>"Wholesale credit extended up to 30 days"</td>
+      </tr>
+      <tr>
+        <td>Procedure</td>
+        <td>Standing Plan</td>
+        <td>Chronological sequence of operational steps</td>
+        <td>Minimal (Follow fixed sequence)</td>
+        <td>No (Chronological routine)</td>
+        <td>"7-step vendor bill clearance workflow"</td>
+      </tr>
+      <tr>
+        <td>Rule</td>
+        <td>Standing Plan</td>
+        <td>Rigid directive of what to do / not do</td>
+        <td>Zero discretion (Strict penalties)</td>
+        <td>No (Normative command)</td>
+        <td>"Mandatory hard hats in factory floor"</td>
+      </tr>
+      <tr>
+        <td>Method</td>
+        <td>Standing Plan</td>
+        <td>Prescribed standardized way to perform one step</td>
+        <td>Zero (Follow standard technique)</td>
+        <td>No (Operational standard)</td>
+        <td>"Straight-line depreciation method"</td>
+      </tr>
+      <tr>
+        <td>Programme</td>
+        <td>Single-Use Plan</td>
+        <td>Broad composite plan for a major project</td>
+        <td>Moderate tactical flexibility</td>
+        <td>Yes (Resource timelines)</td>
+        <td>"Commissioning of semiconductor fab plant"</td>
+      </tr>
+      <tr>
+        <td>Budget</td>
+        <td>Single-Use Plan</td>
+        <td>Financial/physical statement in numerical terms</td>
+        <td>Zero (Strict variance tracking)</td>
+        <td>Always 100% Numerical</td>
+        <td>"Quarterly marketing budget of ₹15 Crore"</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Bottom Strip -->
+<div class="bottom-strip">
+  <div class="strip-title">CUET 2027 Key Anchors</div>
+  <div class="strip-content">
+    <strong>Essential Distinctions:</strong> <strong>Objectives & Strategies</strong> are neither standing nor single-use; <strong>Rules</strong> allow zero discretion and enforce penalties; <strong>Policies</strong> guide thinking; <strong>Procedures</strong> guide action in chronological steps; <strong>Budgets</strong> are always quantified and act as controlling benchmarks; <strong>Programmes</strong> integrate objectives, policies, procedures, and budgets into a single composite project architecture.
+  </div>
+</div>
+
+</body>
+</html>
