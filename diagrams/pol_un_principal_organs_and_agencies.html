@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px 32px;
+    overflow: hidden;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #071A4D;
+    padding: 16px 28px;
+    border-radius: 12px;
+    border-bottom: 4px solid #1F5EFF;
+    margin-bottom: 16px;
+  }
+  .header-left h1 {
+    color: #FFFFFF;
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+  }
+  .header-left p {
+    color: #94A3B8;
+    font-size: 13px;
+    font-weight: 500;
+    margin-top: 3px;
+  }
+  .badge {
+    background: #1F5EFF;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+  }
+  .main-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    height: 740px;
+  }
+  .card {
+    background: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    border-radius: 12px;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+  }
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #E2E8F0;
+    margin-bottom: 12px;
+  }
+  .card-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: #EFF6FF;
+    color: #1F5EFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 15px;
+  }
+  .card-title {
+    font-size: 15px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .card-subtitle {
+    font-size: 11px;
+    color: #64748B;
+  }
+  .sub-box {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin-bottom: 10px;
+  }
+  .sub-title {
+    font-size: 12.5px;
+    font-weight: 800;
+    color: #1E293B;
+    margin-bottom: 4px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .sub-title span {
+    font-size: 11px;
+    color: #1F5EFF;
+    font-weight: 700;
+  }
+  .detail-list {
+    font-size: 11px;
+    line-height: 1.45;
+    color: #334155;
+  }
+  .detail-list li {
+    margin-left: 14px;
+    margin-bottom: 2px;
+  }
+  .tag {
+    display: inline-block;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 700;
+  }
+  .tag-green { background: #DCFCE7; color: #166534; }
+  .tag-blue { background: #DBEAFE; color: #1E40AF; }
+  .tag-amber { background: #FEF3C7; color: #92400E; }
+  .tag-purple { background: #F3E8FF; color: #6B21A8; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <h1>UNITED NATIONS SYSTEM, SPECIALIZED AGENCIES & GOVERNANCE REFORM</h1>
+    <p>CUET UG Political Science · Unit IV · Comparative Architectural Matrix of Organs, Financial Bodies & Reform Agendas</p>
+  </div>
+  <div class="badge">NTA HIGH-FREQUENCY MATRIX</div>
+</div>
+
+<div class="main-grid">
+  <!-- Col 1: UN Principal Organs -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon">1</div>
+      <div>
+        <div class="card-title">UN Principal Organs & Powers</div>
+        <div class="card-subtitle">Charter Architecture (San Francisco, 1945)</div>
+      </div>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">General Assembly (UNGA) <span class="tag tag-blue">193 Members</span></div>
+      <ul class="detail-list">
+        <li>Universal plenary body: 1 nation = 1 vote.</li>
+        <li>Approves annual UN budget and peacekeeping assessments.</li>
+        <li>Elects non-permanent UNSC members, ECOSOC, ICJ judges.</li>
+        <li>Resolutions are non-binding recommendations.</li>
+      </ul>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">Security Council (UNSC) <span class="tag tag-amber">15 Members</span></div>
+      <ul class="detail-list">
+        <li><strong>P5 Permanent:</strong> US, UK, France, Russia, China with absolute Veto power.</li>
+        <li><strong>10 Non-Permanent:</strong> 2-year terms, elected regionally, no immediate re-election.</li>
+        <li>Primary responsibility for international peace & security; decisions binding under Chapter VII.</li>
+      </ul>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">Secretariat & Secretary-General <span class="tag tag-purple">Executive</span></div>
+      <ul class="detail-list">
+        <li>Chief administrative officer appointed by UNGA upon UNSC recommendation (5-year renewable term).</li>
+        <li>First SG: Trygve Lie (Norway); Current SG: António Guterres (Portugal). Dag Hammarskjöld won Nobel Peace Prize (1961).</li>
+      </ul>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">ICJ & Specialized Bodies <span class="tag tag-green">Judicial / Social</span></div>
+      <ul class="detail-list">
+        <li><strong>ICJ (The Hague):</strong> 15 judges (9-year terms); settles legal disputes between sovereign states.</li>
+        <li><strong>ECOSOC:</strong> 54 members (3-year terms); coordinates economic, social, human rights initiatives.</li>
+        <li><strong>Trusteeship Council:</strong> Suspended ops in 1994 after Palau independence.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Col 2: Global Economic & Autonomous Agencies -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon">2</div>
+      <div>
+        <div class="card-title">Economic Organs & Specialized Agencies</div>
+        <div class="card-subtitle">Bretton Woods, WTO, IAEA & Humanitarian Bodies</div>
+      </div>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">World Bank & IMF <span class="tag tag-amber">Bretton Woods (1944)</span></div>
+      <ul class="detail-list">
+        <li><strong>IMF:</strong> 190 members; oversees global monetary system, balance of payments; weighted voting based on quotas (US holds ~16.5% veto).</li>
+        <li><strong>World Bank (IBRD/IDA):</strong> Human development loans, infrastructure financing for developing countries.</li>
+        <li>Headquartered in Washington D.C.; structural adjustment conditionalities.</li>
+      </ul>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">WTO & Trade Governance <span class="tag tag-blue">Geneva (1995)</span></div>
+      <ul class="detail-list">
+        <li>Successor to 1948 GATT (General Agreement on Tariffs and Trade).</li>
+        <li>164 members; rule-based multilateral trade, dispute settlement mechanism.</li>
+        <li>Decisions nominally by consensus, but heavily shaped by US, EU, and Japan.</li>
+      </ul>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">IAEA: Atoms for Peace <span class="tag tag-green">Vienna (1957)</span></div>
+      <ul class="detail-list">
+        <li>Founded following US President Eisenhower's "Atoms for Peace" address.</li>
+        <li>Monitors peaceful use of nuclear energy; inspects nuclear facilities worldwide.</li>
+        <li>Awarded Nobel Peace Prize in 2005 (with Director-General Mohamed ElBaradei).</li>
+      </ul>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">Humanitarian & Civil Society Actors <span class="tag tag-purple">Advocacy</span></div>
+      <ul class="detail-list">
+        <li><strong>UNHCR & UNICEF:</strong> Refugees protection, children's emergency welfare.</li>
+        <li><strong>Amnesty International & Human Rights Watch (HRW):</strong> Independent global NGOs exposing human rights violations and lobbying governments.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Col 3: UN Reforms & India's Position -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon">3</div>
+      <div>
+        <div class="card-title">UN Reforms & India's Candidature</div>
+        <div class="card-subtitle">Jurisdiction, Council Expansion & Structural Debates</div>
+      </div>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">Two Broad Dimensions of Reform <span class="tag tag-blue">Structural vs Agenda</span></div>
+      <ul class="detail-list">
+        <li><strong>Structural Reform:</strong> Restructuring UNSC membership (expanding permanent & non-permanent seats) and reviewing the P5 veto power.</li>
+        <li><strong>Jurisdictional Reform:</strong> Shifting focus toward development/humanitarian work vs peace enforcement/counter-terrorism.</li>
+      </ul>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">Kofi Annan's 1997 Criteria <span class="tag tag-amber">Benchmarking</span></div>
+      <ul class="detail-list">
+        <li>A major economic power.</li>
+        <li>A major military power.</li>
+        <li>A substantial contributor to the UN budget.</li>
+        <li>A large nation in terms of population.</li>
+        <li>A nation that respects democracy and human rights.</li>
+        <li>Capable of making the Council more representative of world diversity.</li>
+      </ul>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">60th Anniversary Reforms (2005) <span class="tag tag-green">Institutional</span></div>
+      <ul class="detail-list">
+        <li>Creation of the <strong>Peacebuilding Commission</strong>.</li>
+        <li>Establishment of the <strong>Human Rights Council</strong> (operational 2006, replacing Commission on Human Rights).</li>
+        <li>Acceptance of <strong>Responsibility to Protect (R2P)</strong> for citizens from genocide/war crimes.</li>
+        <li>Agreement to wind up Trusteeship Council and create Democracy Fund.</li>
+      </ul>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">India's Claim to Permanent Seat <span class="tag tag-purple">G4 Coalition</span></div>
+      <ul class="detail-list">
+        <li>Largest democracy, 2nd most populous, rising economic powerhouse.</li>
+        <li>Foremost historical contributor to UN Peacekeeping operations (UNPKF).</li>
+        <li><strong>Obstacles:</strong> Chinese opposition, nuclear status outside NPT, Pakistani resistance ("Uniting for Consensus" / Coffee Club), and reluctance of P5 to dilute veto.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
+
