@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px 32px;
+    overflow: hidden;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #071A4D;
+    padding: 16px 28px;
+    border-radius: 12px;
+    border-bottom: 4px solid #1F5EFF;
+    margin-bottom: 18px;
+  }
+  .header-left h1 {
+    color: #FFFFFF;
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+  }
+  .header-left p {
+    color: #94A3B8;
+    font-size: 13px;
+    font-weight: 500;
+    margin-top: 3px;
+  }
+  .badge {
+    background: #1F5EFF;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+  }
+  .main-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1.05fr 1.15fr;
+    gap: 18px;
+    height: 692px;
+  }
+  .card {
+    background: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    border-radius: 12px;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+  }
+  .card-title {
+    font-size: 15.5px;
+    font-weight: 800;
+    color: #071A4D;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #E2E8F0;
+  }
+  .card-title .icon {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #1F5EFF;
+  }
+
+  /* Left Column: 6 Rights */
+  .right-box {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-left: 3.5px solid #1F5EFF;
+    border-radius: 8px;
+    padding: 8px 12px;
+    margin-bottom: 7px;
+  }
+  .right-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3px;
+  }
+  .right-head h4 {
+    font-size: 12.2px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .right-desc {
+    font-size: 11px;
+    color: #334155;
+    line-height: 1.35;
+  }
+  .right-desc b {
+    color: #0F172A;
+  }
+
+  /* Middle Column: Responsibilities & Marks */
+  .resp-box {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin-bottom: 10px;
+  }
+  .resp-title {
+    font-size: 12.5px;
+    font-weight: 800;
+    color: #071A4D;
+    margin-bottom: 6px;
+  }
+  .resp-list {
+    list-style: none;
+    font-size: 11px;
+    color: #334155;
+    line-height: 1.45;
+  }
+  .resp-list li {
+    position: relative;
+    padding-left: 12px;
+    margin-bottom: 3px;
+  }
+  .resp-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #1F5EFF;
+    font-weight: bold;
+  }
+  .mark-badge {
+    display: inline-block;
+    font-size: 10.5px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 4px;
+    margin: 2px 4px 2px 0;
+    background: #EEF2FF;
+    color: #3730A3;
+  }
+
+  /* Right Column: CPA 2019 Innovations & CCPA */
+  .cpa-box {
+    background: #F8FAFC;
+    border: 1px solid #CBD5E1;
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin-bottom: 8px;
+  }
+  .cpa-head {
+    font-size: 12.5px;
+    font-weight: 800;
+    color: #071A4D;
+    margin-bottom: 4px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .cpa-desc {
+    font-size: 11.2px;
+    color: #334155;
+    line-height: 1.38;
+  }
+  .cpa-desc b {
+    color: #0F172A;
+  }
+
+  /* Bottom Banner */
+  .summary-banner {
+    grid-column: 1 / -1;
+    background: #EEF2FF;
+    border: 1px solid #C7D2FE;
+    border-radius: 8px;
+    padding: 9px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: #1E1B4B;
+    font-weight: 600;
+  }
+  .summary-banner span {
+    color: #1F5EFF;
+    font-weight: 800;
+  }
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="header-left">
+      <h1>CONSUMER PROTECTION ACT 2019: RIGHTS, RESPONSIBILITIES & REDRESSAL ARCHITECTURE</h1>
+      <p>Unit XII · Official CUET UG Architecture · 6 Statutory Rights, Certification Marks, CCPA Powers & Remedies</p>
+    </div>
+    <div class="badge">FIGURE 2 · CONCEPT MATRIX</div>
+  </div>
+
+  <div class="main-grid">
+    <!-- Left Column: 6 Statutory Consumer Rights -->
+    <div class="card">
+      <div class="card-title">
+        <div class="icon"></div>
+        The Six Statutory Consumer Rights
+      </div>
+
+      <div class="right-box">
+        <div class="right-head"><h4>1. Right to Safety</h4></div>
+        <div class="right-desc">
+          Protection against marketing of goods hazardous to life/health (e.g. electrical appliances must carry <b>ISI mark</b>).
+        </div>
+      </div>
+
+      <div class="right-box">
+        <div class="right-head"><h4>2. Right to be Informed</h4></div>
+        <div class="right-desc">
+          Complete factual disclosure on packaging regarding ingredients, date of mfg, expiry, MRP, batch number, and directions.
+        </div>
+      </div>
+
+      <div class="right-box">
+        <div class="right-head"><h4>3. Right to Choose</h4></div>
+        <div class="right-desc">
+          Assurance of access to a variety of goods and services at competitive prices without monopolistic or coercive tying.
+        </div>
+      </div>
+
+      <div class="right-box">
+        <div class="right-head"><h4>4. Right to be Heard</h4></div>
+        <div class="right-desc">
+          Consumer interests receive due consideration in appropriate dispute forums; companies must maintain consumer care cells.
+        </div>
+      </div>
+
+      <div class="right-box">
+        <div class="right-head"><h4>5. Right to Seek Redressal</h4></div>
+        <div class="right-desc">
+          Right to fair legal remedies against unfair trade practices, including repair, product replacement, or cash compensation.
+        </div>
+      </div>
+
+      <div class="right-box">
+        <div class="right-head"><h4>6. Right to Consumer Education</h4></div>
+        <div class="right-desc">
+          Acquiring knowledge and awareness to remain a vigilant consumer throughout life (e.g. <i>Jago Grahak Jago</i> campaign).
+        </div>
+      </div>
+    </div>
+
+    <!-- Middle Column: Consumer Responsibilities & Marks -->
+    <div class="card">
+      <div class="card-title">
+        <div class="icon" style="background:#059669;"></div>
+        Responsibilities & Quality Marks
+      </div>
+
+      <div class="resp-box">
+        <div class="resp-title">Key Consumer Responsibilities (NCERT)</div>
+        <ul class="resp-list">
+          <li>Be aware of product quality, prices, and terms of purchase.</li>
+          <li>Buy only standardized goods with quality certification marks.</li>
+          <li>Learn about the risks associated with manufactured products.</li>
+          <li><b>Insist on a Cash Memo:</b> Indispensable legal proof of purchase.</li>
+          <li>File legitimate complaints even for small monetary losses.</li>
+          <li>Form consumer organizations to educate the community.</li>
+        </ul>
+      </div>
+
+      <div class="resp-box">
+        <div class="resp-title">Quality Certification Marks (Mandatory)</div>
+        <div style="margin-top:4px;">
+          <span class="mark-badge">ISI Mark: Industrial & Electrical Goods</span>
+          <span class="mark-badge">AGMARK: Agricultural Produce</span>
+          <span class="mark-badge">Hallmark: Gold & Silver Jewelry</span>
+          <span class="mark-badge">FPO: Processed Fruit Products</span>
+          <span class="mark-badge">Eco-Mark: Environment-Friendly Products</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Column: CPA 2019 Innovations & CCPA -->
+    <div class="card">
+      <div class="card-title">
+        <div class="icon" style="background:#7C3AED;"></div>
+        CPA 2019 Landmark Architecture
+      </div>
+
+      <div class="cpa-box">
+        <div class="cpa-head">
+          <span>Central Consumer Protection Authority (CCPA)</span>
+        </div>
+        <div class="cpa-desc">
+          Regulatory body with powers to investigate violations, order product recalls, mandate price refunds, and impose fines up to <b>₹10 Lakhs (₹50 Lakhs for repeat)</b> on misleading advertisements and celebrity endorsers.
+        </div>
+      </div>
+
+      <div class="cpa-box">
+        <div class="cpa-head">
+          <span>Product Liability Provisions</span>
+        </div>
+        <div class="cpa-desc">
+          Manufacturers, service providers, and product sellers are held strictly liable to compensate consumers for physical injury, death, or property damage caused by defective products or deficient services.
+        </div>
+      </div>
+
+      <div class="cpa-box">
+        <div class="cpa-head">
+          <span>E-Commerce Inclusion & Mediation</span>
+        </div>
+        <div class="cpa-desc">
+          Direct sellers and digital marketplaces (Amazon, Flipkart) are held liable for unfair trade practices. <b>Mediation Cells</b> attached to all commissions enable speedy out-of-court settlements.
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Summary Banner -->
+    <div class="summary-banner">
+      <div><span>PECUNIARY JURISDICTIONS (CPA 2019):</span> District Commission: Up to ₹1 Crore; State Commission: ₹1 Crore to ₹10 Crores; National Commission: Exceeds ₹10 Crores. Appeal from National Commission lies to Supreme Court within 30 days.</div>
+      <div style="font-size:11px; color:#475569;">CUET UG Business Studies · Unit 12</div>
+    </div>
+  </div>
+
+</body>
+</html>
