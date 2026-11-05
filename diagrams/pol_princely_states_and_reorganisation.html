@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px 32px;
+    overflow: hidden;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #071A4D;
+    padding: 16px 28px;
+    border-radius: 12px;
+    border-bottom: 4px solid #1F5EFF;
+    margin-bottom: 16px;
+  }
+  .header-left h1 {
+    color: #FFFFFF;
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+  }
+  .header-left p {
+    color: #94A3B8;
+    font-size: 13px;
+    font-weight: 500;
+    margin-top: 3px;
+  }
+  .badge {
+    background: #1F5EFF;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+  }
+  .main-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    height: 740px;
+  }
+  .card {
+    background: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    border-radius: 12px;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+  }
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #E2E8F0;
+    margin-bottom: 12px;
+  }
+  .card-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: #EFF6FF;
+    color: #1F5EFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 15px;
+  }
+  .card-title {
+    font-size: 15px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .card-subtitle {
+    font-size: 11px;
+    color: #64748B;
+  }
+  .sub-box {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin-bottom: 10px;
+  }
+  .sub-title {
+    font-size: 12.5px;
+    font-weight: 800;
+    color: #1E293B;
+    margin-bottom: 4px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .sub-title span {
+    font-size: 11px;
+    color: #1F5EFF;
+    font-weight: 700;
+  }
+  .detail-list {
+    font-size: 11px;
+    line-height: 1.45;
+    color: #334155;
+  }
+  .detail-list li {
+    margin-left: 14px;
+    margin-bottom: 2px;
+  }
+  .tag {
+    display: inline-block;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 700;
+  }
+  .tag-green { background: #DCFCE7; color: #166534; }
+  .tag-blue { background: #DBEAFE; color: #1E40AF; }
+  .tag-amber { background: #FEF3C7; color: #92400E; }
+  .tag-purple { background: #F3E8FF; color: #6B21A8; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <h1>NATION-BUILDING, PRINCELY STATES & STATE REORGANISATION MATRIX</h1>
+    <p>CUET UG Political Science · Unit VIII · Three Challenges, Partition Trauma, Patel's Integration & Linguistic Reorganisation</p>
+  </div>
+  <div class="badge">NTA HIGH-FREQUENCY MATRIX</div>
+</div>
+
+<div class="main-grid">
+  <!-- Col 1: Three Challenges & Partition Trauma -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon">1</div>
+      <div>
+        <div class="card-title">Three Challenges & Partition Trauma</div>
+        <div class="card-subtitle">Foundational Trials of Independent India (1947)</div>
+      </div>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">Three Foundational Challenges <span class="tag tag-blue">National Goals</span></div>
+      <ul class="detail-list">
+        <li><strong>Challenge 1 (Unity in Diversity):</strong> Forge a united nation accommodating enormous continental linguistic, cultural, and religious heterogeneity.</li>
+        <li><strong>Challenge 2 (Democratic Institutionalization):</strong> Establish representative parliamentary democracy based on universal adult franchise.</li>
+        <li><strong>Challenge 3 (Egalitarian Development):</strong> Ensure welfare and economic development of all citizens, eradicating mass poverty (Directive Principles).</li>
+      </ul>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">Partition & Displacement Trauma <span class="tag tag-amber">Cataclysm</span></div>
+      <ul class="detail-list">
+        <li><strong>Two-Nation Theory:</strong> Propounded by Muslim League (Jinnah); opposed by Khan Abdul Ghaffar Khan ("Frontier Gandhi").</li>
+        <li><strong>Territorial Bifurcation:</strong> Radcliffe Line divided Punjab and Bengal; non-contiguous East and West Pakistan.</li>
+        <li>Over 80 lakh refugees displaced; 5 to 10 lakh lives lost in communal massacres; massive atrocities against women ("honor killings").</li>
+      </ul>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">Mahatma Gandhi's Martyrdom <span class="tag tag-purple">30 Jan 1948</span></div>
+      <ul class="detail-list">
+        <li>Undertook fasts unto death in Calcutta (Sept 1947) and Delhi (Jan 1948) to halt communal rioting.</li>
+        <li>Assassinated by Nathuram Godse on 30 January 1948; prompted banning of RSS.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Col 2: Integration of Princely States -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon">2</div>
+      <div>
+        <div class="card-title">Integration of Princely States</div>
+        <div class="card-subtitle">Sardar Patel, V.P. Menon & 565 Princely Polities</div>
+      </div>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">The Instrument of Accession <span class="tag tag-blue">Legal Framework</span></div>
+      <ul class="detail-list">
+        <li>British lapse of paramountcy created potential "balkanisation" into 565 independent states.</li>
+        <li>Patel (Home Minister) and V.P. Menon persuaded rulers to sign the <strong>Instrument of Accession</strong>, ceding Defense, External Affairs, and Communications.</li>
+      </ul>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">Four Complex Integration Case Studies <span class="tag tag-amber">Accords & Police Actions</span></div>
+      <ul class="detail-list">
+        <li><strong>Hyderabad (Operation Polo):</strong> Nizam wanted independence; unleashed communal militia (<strong>Razakars</strong> led by Kasim Razvi). Indian Army entered in Sept 1948 to liberate the state.</li>
+        <li><strong>Junagadh:</strong> Nawab acceded to Pakistan despite Hindu majority; popular rebellion forced Nawab to flee; <strong>Plebiscite (Feb 1948)</strong> ratified merger with India.</li>
+        <li><strong>Jammu & Kashmir:</strong> Maharaja Hari Singh signed Instrument of Accession on <strong>26 October 1947</strong> following Pakistani tribal invasion; special status under Article 370.</li>
+        <li><strong>Manipur:</strong> Maharaja Bodhchandra Singh held first Indian election based on <strong>universal adult franchise in June 1948</strong>; merged in Sept 1949.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Col 3: Linguistic Reorganisation of States -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon">3</div>
+      <div>
+        <div class="card-title">Linguistic Reorganisation of States</div>
+        <div class="card-subtitle">From Nagpur 1920 to SRC 1956 & Subsequent Bifurcations</div>
+      </div>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">The Andhra Movement & Martyrdom <span class="tag tag-purple">Historic Catalyst</span></div>
+      <ul class="detail-list">
+        <li><strong>Nagpur Congress (1920):</strong> Promised linguistic reorganization of provincial Congress committees.</li>
+        <li>Post-1947 leadership feared linguistic states would trigger national balkanisation.</li>
+        <li>Veteran Gandhian <strong>Potti Sriramulu</strong> died on 15 December 1952 after a 58-day fast; forced Nehru to announce <strong>Andhra State in Dec 1952</strong> (carved from Madras).</li>
+      </ul>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">States Reorganisation Commission (SRC) <span class="tag tag-green">1953–1956</span></div>
+      <ul class="detail-list">
+        <li>Appointed in Dec 1953; headed by <strong>Justice Fazal Ali</strong>, with members <strong>K.M. Panikkar</strong> and <strong>H.N. Kunzru</strong>.</li>
+        <li>Recommended linguistic reorganization; led to the <strong>States Reorganisation Act, 1956</strong> creating <strong>14 States and 6 Union Territories</strong>.</li>
+      </ul>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">Chronology of Later Statehoods <span class="tag tag-blue">Bifurcations</span></div>
+      <ul class="detail-list">
+        <li><strong>1960:</strong> Bombay bifurcated into Maharashtra and Gujarat.</li>
+        <li><strong>1963:</strong> Nagaland carved out of Assam.</li>
+        <li><strong>1966:</strong> Punjab bifurcated into Punjab, Haryana, and Himachal Pradesh UT.</li>
+        <li><strong>1972:</strong> Meghalaya, Manipur, Tripura; <strong>1987:</strong> Mizoram, Arunachal, Goa.</li>
+        <li><strong>2000:</strong> Chhattisgarh, Uttarakhand, Jharkhand; <strong>2014:</strong> Telangana.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
