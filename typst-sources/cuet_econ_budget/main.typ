@@ -358,11 +358,11 @@ To legally discipline chronic deficits, the Indian Parliament enacted the *FRBM 
 
 #mcq(1, [Under which Article of the Constitution of India is the central government required to lay before Parliament an "Annual Financial Statement"?], (
   [Article 110],
-  [Article 112],
-  [Article 280],
   [Article 360],
+  [Article 280],
+  [Article 112],
 ))
-#solution(1, [Article 112 of the Constitution of India mandates that the President shall cause to be laid before both Houses of Parliament an "Annual Financial Statement" for each financial year, which represents the official constitutional terminology for the Union Government Budget.], answer: "B")
+#solution(1, [Article 112 of the Constitution of India mandates that the President shall cause to be laid before both Houses of Parliament an "Annual Financial Statement" for each financial year, which represents the official constitutional terminology for the Union Government Budget.], answer: "D")
 
 #mcq(2, [Which of the following budgetary measures is an example of the objective of "Reallocation of Resources"?], (
   [Levying heavy punitive excise duties on cigarettes and alcohol while giving subsidies to solar energy],
@@ -381,12 +381,12 @@ To legally discipline chronic deficits, the Indian Parliament enacted the *FRBM 
 #solution(3, [Dividends received from the RBI and PSUs represent *Non-Tax Revenue Receipts* because they neither create any future debt liability nor reduce government assets. Disinvestment and recovery of loans reduce assets (Non-debt Capital Receipts); bond issuance creates a liability (Debt Capital Receipt).], answer: "C")
 
 #mcq(4, [Why is the recovery of loans previously advanced to State Governments classified as a CAPITAL RECEIPT?], (
-  [Because it creates a sovereign financial liability for the Central Government],
   [Because it causes a reduction in the financial assets of the Central Government],
+  [Because it creates a sovereign financial liability for the Central Government],
   [Because it is a compulsory payment without personal quid pro quo],
   [Because it is an unrequited unilateral transfer receipt],
 ))
-#solution(4, [When a State Government repays a loan to the Centre, the Central Government's financial asset (its loan book/debtors) is reduced. By the Twin Diagnostic Test, any receipt that reduces government assets is classified as a *Non-Debt Capital Receipt*.], answer: "B")
+#solution(4, [When a State Government repays a loan to the Centre, the Central Government's financial asset (its loan book/debtors) is reduced. By the Twin Diagnostic Test, any receipt that reduces government assets is classified as a *Non-Debt Capital Receipt*.], answer: "A")
 
 #mcq(5, [Which of the following statements correctly distinguishes a DIRECT TAX from an INDIRECT TAX?], (
   [Direct taxes can be easily shifted to buyers, whereas indirect taxes cannot be shifted],
@@ -414,14 +414,14 @@ To legally discipline chronic deficits, the Indian Parliament enacted the *FRBM 
 
 #mcq(7, [If an economy's Revenue Expenditure is ₹1,800 crore and its Revenue Receipts are ₹1,350 crore, the Revenue Deficit is:], (
   [₹3,150 crore],
-  [₹450 crore],
-  [₹1,350 crore],
   [-₹450 crore],
+  [₹1,350 crore],
+  [₹450 crore],
 ))
 #solution(7, [The Revenue Deficit formula is:
 $ R D = "Revenue Expenditure" (R E) - "Revenue Receipts" (R R) $
 $ R D = 1800 - 1350 = ₹450  " crore". $
-The government is dissaving ₹450 crore on its daily running operational account.], answer: "B")
+The government is dissaving ₹450 crore on its daily running operational account.], answer: "D")
 
 #mcq(8, [The Fiscal Deficit of a government is ALWAYS identically equal to which of the following budgetary figures?], (
   [Total tax revenue collected during the fiscal year],
@@ -433,22 +433,22 @@ The government is dissaving ₹450 crore on its daily running operational accoun
 
 #mcq(9, [In a budget, Fiscal Deficit is ₹85,000 crore and annual Interest Payments on past debt are ₹35,000 crore. The Primary Deficit is:], (
   [₹1,20,000 crore],
-  [₹50,000 crore],
   [₹85,000 crore],
+  [₹50,000 crore],
   [₹35,000 crore],
 ))
 #solution(9, [The Primary Deficit formula is:
 $ P D = "Fiscal Deficit" - "Interest Payments" $
 $ P D = 85000 - 35000 = ₹50,000  " crore". $
-The government's current-year fiscal decisions account for ₹50,000 crore of fresh debt, while the remaining ₹35,000 crore is inherited interest servicing.], answer: "B")
+The government's current-year fiscal decisions account for ₹50,000 crore of fresh debt, while the remaining ₹35,000 crore is inherited interest servicing.], answer: "C")
 
 #mcq(10, [What is the precise macroeconomic implication when a government's PRIMARY DEFICIT is exactly ZERO?], (
   [The government has zero public debt and zero liabilities],
-  [The government is borrowing money solely to pay interest on past accumulated loans],
-  [The government's revenue deficit is also exactly zero],
   [The economy is experiencing severe demand-pull hyperinflation],
+  [The government's revenue deficit is also exactly zero],
+  [The government is borrowing money solely to pay interest on past accumulated loans],
 ))
-#solution(10, [Since $P D = F D - "Interest Payments"$, when $P D = 0$, it follows that $F D = "Interest Payments"$. This implies that the government's entire borrowing during the year is dedicated strictly to servicing the interest liabilities on past accumulated debts, with zero fresh borrowing for current non-interest expenses.], answer: "B")
+#solution(10, [Since $P D = F D - "Interest Payments"$, when $P D = 0$, it follows that $F D = "Interest Payments"$. This implies that the government's entire borrowing during the year is dedicated strictly to servicing the interest liabilities on past accumulated debts, with zero fresh borrowing for current non-interest expenses.], answer: "D")
 
 ---
 
