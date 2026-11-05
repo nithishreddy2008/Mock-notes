@@ -43,6 +43,11 @@
   *CUET UG Exam Pattern & Strategy:* The NTA CUET UG Chemistry paper contains *50 compulsory questions* to be solved in *60 minutes* (+5 for correct, -1 for incorrect). Physical chemistry opens with Unit I Solutions, delivering 4–5 numerical and conceptual questions focusing on concentration conversions, Henry's law, azeotropic deviations, and colligative equations corrected with the van 't Hoff factor $i$.
 ]
 
+#pagebreak()
+
+#set text(size: 10.1pt)
+#set par(leading: 0.60em, spacing: 0.82em)
+
 = Concept Module 1: Types of Solutions & Concentration Metrics
 
 A *solution* is a homogeneous mixture of two or more chemically non-reacting substances whose composition can be varied within certain limits.
@@ -166,7 +171,7 @@ The solubility of any gas in a liquid increases with increase in pressure. Willi
 Vapour pressure is the equilibrium pressure exerted by the vapour phase above a liquid surface at a constant temperature.
 
 #figure(
-  image("assets/chem_deviation_curves.png", width: 84%),
+  image("assets/chem_deviation_curves.png", width: 76%),
   caption: [Raoult's Law on Vapour Pressure: Linear ideal behaviour vs positive deviation (minimum-boiling azeotrope) and negative deviation (maximum-boiling azeotrope).],
 )
 
@@ -246,7 +251,7 @@ An *azeotrope* is a binary liquid mixture having identical composition in both l
 *Colligative properties* are physical properties of dilute solutions that depend solely on the *number of solute particles* (molecules or ions) present in solution and are completely *independent of their chemical nature or identity*.
 
 #figure(
-  image("assets/chem_colligative_properties.png", width: 84%),
+  image("assets/chem_colligative_properties.png", width: 76%),
   caption: [The Four Colligative Properties & Van 't Hoff Factor Matrix: Mathematical equations, molar mass determinations, and dissociation/association equilibria.],
 )
 
@@ -357,44 +362,78 @@ $ 2 C_6 H_5 C O O H arrow.r.l (C_6 H_5 C O O H)_2 $
 Because particle count is halved, the observed molar mass is approximately double the normal molar mass:
 $ M_("normal") = 122" g/mol", quad M_("obs") approx 244" g/mol", quad i approx 0.5 $
 
+#pagebreak()
+
 #figure(
-  image("assets/chem_solutions_mindmap.png", width: 84%),
-  caption: [Master Synthesis Mindmap: Comprehensive architectural summary of Unit 1 Solutions across all six concept modules.],
+  image("assets/chem_solutions_mindmap.png", width: 70%),
+  caption: [Master Synthesis Architecture: Complete Unit I cognitive roadmap integrating solution classifications, Raoult's law deviations, colligative mechanics, and van 't Hoff factor calculations.],
 )
 
-#cheatsheet-box(title: "Master Solutions Revision Cheatsheet")[
-  - *Concentration Interconversion:* $m = (1000 M) / (1000 d - M M_2)$ | Molality, mole fraction, mass % are temperature-independent; Molarity decreases with rising temperature ($d V / d T > 0$).
-  - *Henry's Law:* $p = K_H x$ | As $T$ increases, $K_H$ increases, solubility of gas decreases | Diver breathing mix: $11.7% H e + 56.2% N_2 + 32.1% O_2$.
-  - *Raoult's Law (Binary Volatiles):* $p_1 = p_1^0 x_1, p_2 = p_2^0 x_2$ | $P_"total" = p_1^0 + (p_2^0 - p_1^0) x_2$ | Vapour mole fraction: $y_1 = p_1 / P_"total"$.
-  - *Ideal Solution Criteria:* $f_(A B) = f_(A A) = f_(B B)$ | $Delta_("mix") H = 0$ | $Delta_("mix") V = 0$ | Examples: Benzene + Toluene, $n$-Hexane + $n$-Heptane.
-  - *Positive Deviation ($P_"exp" > P_"ideal"$):* $f_(A B) < f_(A A), f_(B B)$ | $Delta H > 0, Delta V > 0$ | Minimum boiling azeotrope (e.g. $95.4%$ ethanol $+ 4.6%$ water, b.p. $351.15" K"$).
-  - *Negative Deviation ($P_"exp" < P_"ideal"$):* $f_(A B) > f_(A A), f_(B B)$ | $Delta H < 0, Delta V < 0$ | Maximum boiling azeotrope (e.g. $68% H N O_3 + 32% H_2 O$, b.p. $393.5" K"$, Chloroform + Acetone).
-  - *Four Colligative Equations:* $(p_1^0 - p_1)/p_1^0 = i x_2$ | $Delta T_b = i K_b m$ | $Delta T_f = i K_f m$ | $Pi = i C R T$.
-  - *Water Constants:* $K_b(H_2 O) = 0.52" K kg mol"^(-1)$ | $K_f(H_2 O) = 1.86" K kg mol"^(-1)$ | Camphor $K_f = 39.7" K kg mol"^(-1)$.
-  - *Van 't Hoff Factor ($i$):* $i = M_("normal") / M_("obs")$ | Dissociation: $i = 1 + (n - 1) alpha$ ($i > 1$) | Association: $i = 1 - (1 - 1/n) beta$ ($i < 1$).
-  - *Colligative Magnitude Order ($0.1" M"$ aqueous):* $A l_2 (S O_4)_3 (i=5) > K_2 S O_4 (i=3) = B a C l_2 (i=3) > N a C l (i=2) > "Glucose" (i=1)$.
+#v(2pt)
+
+#exam-pointer(title: "Master Synthesis Map & Problem-Solving Diagnostics")[
+  - *Raoult's Law as a Limiting Case of Henry's Law:* In any real binary solution, as the solute mole fraction approaches zero ($x_2 arrow.r 0$), the solute obeys Henry's law ($p_2 = K_H x_2$), while the solvent ($x_1 arrow.r 1$) simultaneously obeys Raoult's law ($p_1 = p_1^0 x_1$). Raoult's law is mathematically identical to Henry's law with $K_H = p_1^0$.
+  - *Azeotropic Phase Boundaries:* Azeotropes boil at constant temperature and distill without any composition change ($y_i = x_i$). Minimum-boiling azeotropes stem from large positive deviations (ethanol-water $95.4%$), whereas maximum-boiling azeotropes stem from strong negative deviations ($68% H N O_3 + 32% H_2 O$).
+  - *Colligative Equivalence & Ranking Rules:* For equimolar ($0.1" M"$) aqueous solutions, colligative magnitudes ($Delta T_b, Delta T_f, Pi, "RLVP"$) follow the exact order of total particle concentration: $i times C$. Thus: $A l_2(S O_4)_3 (i=5) > K_2 S O_4 (i=3) = B a C l_2 (i=3) > N a C l (i=2) > "Urea" / "Glucose" (i=1)$.
+  - *Abnormal Molecular Mass Diagnostics:* Solute association (e.g. benzoic acid in benzene) reduces total particles ($i < 1$), doubling apparent molar mass, whereas ionic dissociation (e.g. $K C l$ in water) multiplies particles ($i > 1$), halving apparent molar mass.
 ]
 
 #pagebreak()
 
-= CUET UG Exam-Style Practice Questions (15 MCQs)
+#cheatsheet-box(title: "Unit I Master Formula & High-Yield Cheatsheet")[
+  #set text(size: 7.8pt)
+  #table(
+    columns: (1.2fr, 1.8fr, 2fr),
+    inset: 2.2pt,
+    table.header[*Core Law / Property*][*Mathematical Expression*][*CUET Problem Strategy & Constraints*],
+    [Concentration Conversion], [$m = (1000 M) / (1000 d - M M_2)$], [Molality ($m$), mole fraction ($x$), and mass % are invariant with temperature; Molarity decreases with rising $T$.],
+    [Henry's Law], [$p = K_H x$ ($K_H$ in bar / atm)], [Higher $T arrow.r$ higher $K_H arrow.r$ lower gas solubility. Scuba mix: $11.7% H e + 56.2% N_2 + 32.1% O_2$.],
+    [Raoult's Law (Volatile)], [$p_1 = p_1^0 x_1, quad p_2 = p_2^0 x_2$], [Total pressure: $P_"total" = p_1^0 + (p_2^0 - p_1^0) x_2$. Vapour mole fraction: $y_1 = p_1 / P_"total"$.],
+    [Positive Deviation], [$f_(A B) < f_(A A), f_(B B); Delta H > 0, Delta V > 0$], [Minimum-boiling azeotrope (e.g. $95.4%$ ethanol $+ 4.6%$ water, b.p. $351.15" K"$, acetone + $"CS"_2$).],
+    [Negative Deviation], [$f_(A B) > f_(A A), f_(B B); Delta H < 0, Delta V < 0$], [Maximum-boiling azeotrope (e.g. $68% H N O_3 + 32% H_2 O$, b.p. $393.5" K"$, chloroform + acetone).],
+    [RLVP (Colligative)], [$(p_1^0 - p_1) / p_1^0 = i x_2 approx i (n_2 / n_1)$], [Relative lowering equals mole fraction of solute; independent of solvent identity when expressed as $x_2$.],
+    [Boiling Elevation], [$Delta T_b = i K_b m; quad M_2 = (1000 K_b w_2) / (Delta T_b w_1)$], [$K_b$ (ebullioscopic constant) depends solely on solvent: $K_b(H_2 O) = 0.52" K kg mol"^(-1)$.],
+    [Freezing Depression], [$Delta T_f = i K_f m; quad M_2 = (1000 K_f w_2) / (Delta T_f w_1)$], [Antifreeze: ethylene glycol in water ($35% "v/v"$ protects down to $-17.6 degree "C"$). $K_f(H_2 O) = 1.86$.],
+    [Osmotic Pressure], [$Pi = i C R T = i (n_2 / V) R T$], [Best method for polymers / biomolecules: measured at room temperature; uses molarity; high magnitude.],
+    [Van 't Hoff Factor ($i$)], [$i = M_("normal") / M_("obs") = "Observed" / "Calculated"$], [Dissociation: $i = 1 + (n - 1) alpha$ ($i > 1$). Association: $i = 1 - (1 - 1/n) beta$ ($i < 1$).],
+  )
+]
+
+#v(2pt)
+
+#exception-box(title: "Top 7 High-Frequency CUET Traps & Pitfalls")[
+  #set text(size: 7.8pt)
+  1. *Temperature Dependence of Concentration:* Molarity ($M$) and Normality ($N$) change with temperature because liquid volume expands with heating ($d V / d T > 0$). In contrast, Molality ($m$), Mole Fraction ($x$), and Mass Percentage ($% "w/w"$) are based purely on mass and are *strictly temperature-independent*.
+  2. *Henry's Constant ($K_H$) vs Solubility Paradox:* Henry's law states $p = K_H x$. Therefore, at constant gas pressure $p$, a *higher $K_H$ corresponds to lower gas solubility*. Because $K_H$ increases with rising temperature, aquatic species prefer cold water where dissolved oxygen is substantially higher!
+  3. *Azeotropic Distillation Failure:* Azeotropes cannot be separated into pure components by fractional distillation because the liquid and vapour phases have identical compositions ($y_1 = x_1$). Pure $100%$ ethanol cannot be obtained by distilling beer/wine; distillation terminates at the azeotropic composition ($95.4%$ ethanol).
+  4. *Chloroform-Acetone H-Bond Formation:* Mixing chloroform ($C H C l_3$) and acetone ($C H_3 C O C H_3$) releases heat ($Delta H < 0$) and contracts volume ($Delta V < 0$) because a new, strong intermolecular hydrogen bond ($C l_3 C-H dots.c O=C(C H_3)_2$) forms between dissimilar molecules (negative deviation).
+  5. *Freezing Point vs Depression Distinction:* For electrolyte solutions, higher $i$ produces a larger *depression* in freezing point ($Delta T_f$), which means the *actual freezing point ($T_f = T_f^0 - Delta T_f$) is the LOWEST*. $0.1" M" A l_2(S O_4)_3$ has the lowest freezing point, while $0.1" M"$ glucose has the highest freezing point!
+  6. *Osmotic Pressure Supremacy for Macromolecules:* Osmotic pressure is universally preferred over boiling elevation or freezing depression for measuring molecular masses of proteins, polymers, and biomolecules because: (a) osmotic pressure is measurable at room temperature (preventing protein denaturation), and (b) molarity changes produce huge, readily readable hydrostatic heads.
+  7. *Dimerization of Carboxylic Acids in Benzene:* Benzoic acid or acetic acid dissolved in non-polar solvents like benzene undergoes near-complete dimerization via two intermolecular hydrogen bonds ($2 C_6 H_5 C O O H arrow.r (C_6 H_5 C O O H)_2$). The particle count halves ($i approx 0.5$), doubling observed molar mass!
+]
+
+#pagebreak()
+#set text(size: 8.8pt)
+#set par(leading: 0.52em, spacing: 0.60em)
+
+#block(width: 100%, inset: (y: 6pt, x: 10pt), fill: om-navy, radius: 4pt)[
+  #text(fill: white, font: om-display-font, size: 13pt, weight: 800)[Practice Questions (Exam Pattern) — Part 1 (Q1 to Q5)]
+]
 
 #mcq(
   1,
   [Which of the following mixtures represents an example of a solid solution where a liquid is dissolved in a solid?],
   (
-    [Brass alloy (copper dissolved in zinc)],
     [Sodium amalgam (mercury dissolved in sodium)],
+    [Brass alloy (copper dissolved in zinc)],
     [Camphor in nitrogen gas],
     [Hydrated copper sulphate crystals],
   ),
 )
 #solution(
   1,
-  [
-    In sodium amalgam, liquid mercury ($H g$) is dispersed homogeneously into solid sodium metal ($N a$). Thus, mercury is the liquid solute and sodium is the solid solvent, forming a liquid-in-solid solution. Brass is solid-in-solid, and camphor in nitrogen is solid-in-gas.
-  ],
-  answer: [B],
+  [In sodium amalgam, liquid mercury ($H g$) is dispersed homogeneously into solid sodium metal ($N a$). Thus, mercury is the liquid solute and sodium is the solid solvent, forming a liquid-in-solid solution. Brass is solid-in-solid, and camphor in nitrogen is solid-in-gas.],
+  answer: [A],
 )
 
 #mcq(
@@ -409,83 +448,76 @@ $ M_("normal") = 122" g/mol", quad M_("obs") approx 244" g/mol", quad i approx 0
 )
 #solution(
   2,
-  [
-    Moles of solute $N a O H$: $n_2 = w_2 / M_2 = 4.0 / 40 = 0.10" mol"$.
-    Mass of solvent $w_1 = 250" g" = 0.250" kg"$.
-    Molality: $m = n_2 / W_1 ("kg") = 0.10 / 0.250 = 0.40" mol/kg" = 0.40" m"$.
-  ],
+  [Moles of solute $N a O H$: $n_2 = w_2 / M_2 = 4.0 / 40 = 0.10" mol"$. Mass of solvent $w_1 = 250" g" = 0.250" kg"$. Molality: $m = n_2 / W_1 ("kg") = 0.10 / 0.250 = 0.40" mol/kg" = 0.40" m"$.],
   answer: [B],
 )
 
 #mcq(
   3,
-  [Which of the following concentration units changes its numerical value when the ambient temperature changes?],
+  [Which of the following concentration metrics changes with a change in temperature?],
   (
     [Molality ($m$)],
     [Mole fraction ($x$)],
     [Molarity ($M$)],
-    [Mass percentage ($% w/w$)],
+    [Mass percentage ($% "w/w"$)],
   ),
 )
 #solution(
   3,
-  [
-    Molarity ($M$) is defined per litre of solution volume ($V$). Because liquids expand with increasing temperature ($Delta V > 0$), the volume of the solution increases, causing Molarity to decrease with rising temperature. Molality, mole fraction, and mass % depend strictly on mass, which is temperature-invariant.
-  ],
+  [Molarity is defined as moles of solute per litre of solution. Since volume expands with temperature ($d V / d T > 0$), molarity decreases with rising temperature. Molality, mole fraction, and mass percentage depend purely on masses and are temperature-independent.],
   answer: [C],
 )
 
 #mcq(
   4,
-  [The Henry's law constants for gases $W, X, Y,$ and $Z$ in water at $298" K"$ are $0.5, 2.0, 35.0,$ and $76.0" kbar"$ respectively. The gas with the highest solubility in water at $298" K"$ and $1" bar"$ is:],
+  [According to Henry's law, the solubility of a gas in a liquid is directly proportional to its partial pressure ($p = K_H x$). Which statement about Henry's constant $K_H$ is strictly correct?],
   (
-    [Gas $Z$],
-    [Gas $Y$],
-    [Gas $X$],
-    [Gas $W$],
+    [Higher $K_H$ value indicates higher solubility of the gas in the liquid],
+    [$K_H$ remains constant regardless of the temperature of the solution],
+    [Gases with lower $K_H$ values are less soluble at the same partial pressure],
+    [Higher $K_H$ value indicates lower solubility; $K_H$ increases with temperature],
   ),
 )
 #solution(
   4,
-  [
-    From Henry's law: $p = K_H x ==> x = p / K_H$. At constant pressure $p$, solubility (mole fraction $x$) is inversely proportional to $K_H$. Gas $W$ possesses the lowest $K_H$ value ($0.5" kbar"$) and therefore exhibits the highest solubility in water.
-  ],
+  [From $x = p / K_H$, at constant pressure, a larger $K_H$ produces a smaller mole fraction $x$ (lower solubility). As temperature increases, gas solubility decreases, meaning $K_H$ increases with rising temperature. Hence aquatic species thrive in cold water.],
   answer: [D],
 )
 
 #mcq(
   5,
-  [For an ideal binary liquid solution formed by mixing volatile components $A$ and $B$, which set of thermodynamic parameters is strictly correct?],
+  [Scuba divers often encounter decompression sickness ('the bends') when surfacing rapidly. Deep-sea diving air cylinders are diluted with helium gas because helium:],
   (
-    [$Delta_("mix") H = 0, Delta_("mix") V = 0, Delta_("mix") S > 0$],
-    [$Delta_("mix") H > 0, Delta_("mix") V > 0, Delta_("mix") S = 0$],
-    [$Delta_("mix") H < 0, Delta_("mix") V < 0, Delta_("mix") S > 0$],
-    [$Delta_("mix") H = 0, Delta_("mix") V = 0, Delta_("mix") S = 0$],
+    [Has exceptionally low solubility in blood even under high pressure],
+    [Acts as an oxygen activator at low oceanic temperatures],
+    [Forms a toxic complex with blood hemoglobin],
+    [Reacts exothermically with blood plasma to maintain body heat],
   ),
 )
 #solution(
   5,
-  [
-    Ideal mixing exhibits identical forces ($f_(A B) = f_(A A) = f_(B B)$), so $Delta_("mix") H = 0$ and $Delta_("mix") V = 0$. Spontaneous mixing increases entropy, so $Delta_("mix") S > 0$ (and $Delta_("mix") G < 0$).
-  ],
+  [High underwater pressure forces nitrogen into blood. Rapid surfacing causes nitrogen bubbles to block capillaries. Helium is added ($11.7% H e + 56.2% N_2 + 32.1% O_2$) because it has extremely low blood solubility, avoiding nitrogen narcosis and the bends.],
   answer: [A],
 )
 
 #pagebreak()
+#block(width: 100%, inset: (y: 6pt, x: 10pt), fill: om-navy, radius: 4pt)[
+  #text(fill: white, font: om-display-font, size: 13pt, weight: 800)[Practice Questions (Exam Pattern) — Part 2 (Q6 to Q10)]
+]
 
 #mcq(
   6,
-  [When ethanol is mixed with acetone, the resulting solution exhibits a positive deviation from Raoult's law because:],
+  [Two liquids A and B form an ideal binary solution. At $300" K"$, $p_A^0 = 100" Torr"$ and $p_B^0 = 200" Torr"$. If the liquid phase has mole fraction $x_A = 0.40$, the mole fraction of A in the vapour phase ($y_A$) is:],
   (
-    [Strong H-bonds form between ethanol and acetone],
-    [Acetone molecules break existing ethanol H-bonds],
-    [Both liquids become completely immiscible in each other],
-    [Dipole moment of acetone is neutralized by ethanol],
+    [$0.40$],
+    [$0.25$],
+    [$0.60$],
+    [$0.75$],
   ),
 )
 #solution(
   6,
-  [Acetone disrupts ethanol H-bonds, weakening net attraction ($f_(A B) < f_(A A)$) and increasing vapour pressure ($P_"exp" > P_"ideal"$).],
+  [$p_A = 0.40 times 100 = 40" Torr"$, $p_B = 0.60 times 200 = 120" Torr"$. Total pressure $P = 40 + 120 = 160" Torr"$. Mole fraction in vapour: $y_A = p_A / P = 40 / 160 = 0.25$.],
   answer: [B],
 )
 
@@ -494,153 +526,153 @@ $ M_("normal") = 122" g/mol", quad M_("obs") approx 244" g/mol", quad i approx 0
   [A mixture of chloroform ($C H C l_3$) and acetone ($C H_3 C O C H_3$) exhibits negative deviation from Raoult's law. What thermal and volume changes occur during mixing?],
   (
     [$Delta H > 0$ and $Delta V > 0$ (endothermic, volume expansion)],
-    [$Delta H < 0$ and $Delta V < 0$ (exothermic, volume contraction)],
-    [$Delta H < 0$ and $Delta V > 0$ (exothermic, volume expansion)],
     [$Delta H > 0$ and $Delta V < 0$ (endothermic, volume contraction)],
+    [$Delta H < 0$ and $Delta V > 0$ (exothermic, volume expansion)],
+    [$Delta H < 0$ and $Delta V < 0$ (exothermic, volume contraction)],
   ),
 )
 #solution(
   7,
   [Forms strong new $C l_3 C - H dots.c O = C(C H_3)_2$ H-bonds, releasing heat ($Delta H < 0$) and contracting volume ($Delta V < 0$).],
-  answer: [B],
+  answer: [D],
 )
 
 #mcq(
   8,
-  [An azeotropic mixture of two liquids boils at a lower temperature than either pure component when:],
+  [Which of the following binary liquid pairs forms a minimum boiling azeotrope?],
   (
-    [The solution shows large negative deviation from Raoult's law],
-    [The solution behaves as an ideal solution at all concentrations],
-    [The solution shows large positive deviation from Raoult's law],
-    [The components undergo complete association in solution],
+    [Nitric acid and Water ($68% H N O_3$)],
+    [Chloroform and Acetone],
+    [Ethanol and Water ($95.4%$ ethanol by volume)],
+    [Benzene and Toluene],
   ),
 )
 #solution(
   8,
-  [Maximum vapour pressure peak at a specific composition corresponds to a minimum boiling point (*minimum-boiling azeotrope*).],
+  [Solutions exhibiting large positive deviations from Raoult's law form minimum boiling azeotropes at a specific intermediate composition. Ethanol-water ($95.4%$ ethanol) boils at $351.15" K"$, below both pure ethanol ($351.5" K"$) and pure water ($373.15" K"$).],
   answer: [C],
 )
 
 #mcq(
   9,
-  [The freezing point depression constant ($K_f$) of water is $1.86" K kg mol"^(-1)$. When $18.0" g"$ of glucose ($M_2 = 180" g/mol"$) dissolves in $500" g"$ of water, the freezing point of the solution is:],
+  [The vapour pressure of pure water at $293" K"$ is $17.535" mm Hg"$. When $25" g"$ of glucose ($C_6 H_12 O_6$, molar mass $= 180" g/mol"$) is dissolved in $450" g"$ of water, the relative lowering of vapour pressure is:],
   (
-    [$-0.372 degree"C"$],
-    [$-0.186 degree"C"$],
-    [$+0.372 degree"C"$],
-    [$-0.744 degree"C"$],
+    [$0.0055$],
+    [$0.055$],
+    [$0.0125$],
+    [$0.125$],
   ),
 )
 #solution(
   9,
-  [$m = (18 / 180) / 0.5 = 0.20" m"$. $Delta T_f = K_f m = 1.86 times 0.20 = 0.372" K"$. $T_f = 0 - 0.372 degree"C" = -0.372 degree"C"$.],
+  [Moles of glucose $n_2 = 25 / 180 = 0.1389" mol"$. Moles of water $n_1 = 450 / 18 = 25.0" mol"$. Relative lowering of vapour pressure: $(p^0 - p) / p^0 approx n_2 / n_1 = 0.1389 / 25.0 = 0.00555 approx 0.0055$.],
   answer: [A],
 )
 
 #mcq(
   10,
-  [Human red blood cells (RBCs) retain their normal structure in $0.9% (w/v) N a C l$ solution. If placed into a $0.2% (w/v) N a C l$ aqueous solution, the cells will:],
+  [The molal boiling point elevation constant ($K_b$) of a solvent depends exclusively on:],
   (
-    [Shrink and crenate due to exosmosis],
-    [Remain unchanged because both solutions are isotonic],
-    [Swell and burst (haemolysis) due to endosmosis],
-    [Dissolve completely into free lipid droplets],
+    [The nature of the solute dissolved in it],
+    [The molarity and molality of the solute particles],
+    [The nature and thermodynamic properties of the solvent],
+    [The atmospheric pressure and ambient room temperature],
   ),
 )
 #solution(
   10,
-  [$0.2% N a C l$ is *hypotonic* relative to RBC fluid ($0.9% N a C l$). Water enters cells via endosmosis, causing swelling and haemolysis.],
+  [$K_b = (R M_1 T_b^2) / (1000 Delta_("vap") H)$, which is an intensive thermodynamic constant determined entirely by the molecular weight, normal boiling point, and enthalpy of vaporization of the solvent alone.],
   answer: [C],
 )
 
 #pagebreak()
+#block(width: 100%, inset: (y: 6pt, x: 10pt), fill: om-navy, radius: 4pt)[
+  #text(fill: white, font: om-display-font, size: 13pt, weight: 800)[Practice Questions (Exam Pattern) — Part 3 (Q11 to Q15)]
+]
 
 #mcq(
   11,
-  [During the desalination of seawater via reverse osmosis, which condition must be maintained across the semi-permeable membrane?],
+  [Which of the following $0.10" M"$ aqueous solutions exhibits the LOWEST freezing point?],
   (
-    [Atmospheric pressure must be maintained on both sides of the membrane],
-    [A pressure lower than osmotic pressure must be applied to the seawater side],
-    [A pressure greater than osmotic pressure must be applied to the seawater compartment],
-    [The temperature must be raised above $100 degree"C"$ at 1 atm],
+    [$0.10" M"$ Glucose ($C_6 H_12 O_6$)],
+    [$0.10" M" N a C l$],
+    [$0.10" M" A l_2 (S O_4)_3$],
+    [$0.10" M" K_2 S O_4$],
   ),
 )
 #solution(
   11,
-  [
-    Applying external pressure exceeding osmotic pressure ($P > Pi$) to the saline compartment forces pure water through the cellulose acetate SPM in reverse, purifying seawater into fresh water.
-  ],
+  [$Delta T_f = i K_f m$. Since $T_f = T_f^0 - Delta T_f$, the solution with the HIGHEST $i$ suffers the largest depression, giving the LOWEST freezing point: $A l_2(S O_4)_3$ dissociates into 5 ions ($2 A l^(3+) + 3 S O_4^(2-)$), so $i = 5$. Thus it has the lowest freezing point.],
   answer: [C],
 )
 
 #mcq(
   12,
-  [Assuming complete electrolytic dissociation, the van 't Hoff factor ($i$) for potassium sulphate ($K_2 S O_4$) and aluminium sulphate ($A l_2 (S O_4)_3$) are respectively:],
+  [Why is osmotic pressure ($Pi$) universally preferred over freezing point depression ($Delta T_f$) or boiling elevation ($Delta T_b$) for determining the molar masses of proteins and synthetic polymers?],
   (
-    [2 and 3],
-    [3 and 5],
-    [3 and 4],
-    [2 and 5],
+    [Proteins are insoluble in cold water at freezing temperatures],
+    [Measurements can be conducted at room temperature where biomolecules remain stable, and produce large measurable values even for dilute solutions],
+    [The van 't Hoff factor $i$ is always exactly zero for macromolecular solutions],
+    [Osmotic pressure depends on the chemical nature rather than particle count],
   ),
 )
 #solution(
   12,
-  [
-    $K_2 S O_4 arrow.r 2 K^+ + S O_4^(2-) ==> n = 3$ ions ($i = 3$). $A l_2 (S O_4)_3 arrow.r 2 A l^(3+) + 3 S O_4^(2-) ==> n = 5$ ions ($i = 5$).
-  ],
+  [Proteins denature and degrade at high boiling temperatures. Because polymers have high molar masses, their molality is miniscule, giving imperceptible $Delta T_f$ values ($approx 10^(-3)" K"$). In contrast, osmotic pressure gives measurable heads ($Pi = C R T$) at room temperature.],
   answer: [B],
 )
 
 #mcq(
   13,
-  [A $0.01" M"$ aqueous solution of a monobasic weak acid $H A$ has a freezing point depression of $0.0205" K"$. If $K_f$ of water is $1.86" K kg mol"^(-1)$, the degree of dissociation ($alpha$) of the acid is approximately (assume $M approx m$):],
+  [What happens to human red blood cells (RBCs) when suspended in an aqueous solution containing $1.5% ("w/v") N a C l$? (Normal saline isotonic with blood plasma is $0.9% ("w/v")$).],
   (
-    [$0.10$ ($10%$) ],
-    [$0.05$ ($5%$) ],
-    [$0.20$ ($20%$) ],
-    [$0.50$ ($50%$) ],
+    [Water flows out of the erythrocytes via exosmosis, causing cells to shrink and crenate],
+    [Water enters the erythrocytes via endosmosis, causing cells to swell and burst],
+    [No net movement of water occurs because the membrane is impermeable to water],
+    [Sodium ions diffuse into the cell until ionic equilibrium is established],
   ),
 )
 #solution(
   13,
-  [
-    Theoretical $Delta T_f^0 = 1.86 times 0.01 = 0.0186" K"$. Factor $i = 0.0205 / 0.0186 approx 1.10$. For $H A arrow.r.l H^+ + A^-$ ($n = 2$): $alpha = (i - 1)/(n - 1) = (1.10 - 1)/(2 - 1) = 0.10$ ($10%$).
-  ],
+  [$1.5% N a C l$ is hypertonic relative to intracellular plasma ($0.9% N a C l$). Water diffuses out of the cell across the semipermeable cell membrane by exosmosis into the more concentrated external solution, causing the red blood cells to shrink and shrivel (crenation).],
   answer: [A],
 )
 
 #mcq(
   14,
-  [When benzoic acid ($C_6 H_5 C O O H$, normal molar mass $= 122" g/mol"$) is dissolved in benzene, it dimerizes completely via intermolecular hydrogen bonding. The experimentally determined molar mass and van 't Hoff factor are:],
+  [A $0.10" m"$ aqueous solution of potassium ferricyanide ($K_3 [F e(C N)_6]$) has a freezing point of $-0.651 degree "C"$. Given $K_f = 1.86" K kg mol"^(-1)$, the experimental van 't Hoff factor $i$ and percentage dissociation $alpha$ are:],
   (
-    [$M_"obs" = 122" g/mol", i = 1.0$],
-    [$M_"obs" = 244" g/mol", i = 0.5$],
-    [$M_"obs" = 61" g/mol", i = 2.0$],
-    [$M_"obs" = 244" g/mol", i = 2.0$],
+    [$i = 3.0, alpha = 66.7%$],
+    [$i = 3.5, alpha = 83.3%$],
+    [$i = 4.0, alpha = 100%$],
+    [$i = 2.5, alpha = 50.0%$],
   ),
 )
 #solution(
   14,
-  [
-    Complete dimerization ($n = 2, beta = 1$) gives $i = 1 - (1 - 1/2)(1) = 0.50$. Since $i = M_("normal") / M_("obs")$, experimental molar mass doubles: $M_("obs") = 122 / 0.50 = 244" g/mol"$.
-  ],
+  [$Delta T_f = 0.651" K"$. $Delta T_f = i K_f m ==> 0.651 = i times 1.86 times 0.10 ==> i = 0.651 / 0.186 = 3.50$. For $K_3[F e(C N)_6]$, $n = 3 + 1 = 4$ ions. $alpha = (i - 1) / (n - 1) = (3.50 - 1) / (4 - 1) = 2.50 / 3 = 0.833 = 83.3%$.],
   answer: [B],
 )
 
 #mcq(
   15,
-  [Which of the following $0.10" M"$ aqueous solutions will exhibit the largest elevation in boiling point ($Delta T_b$)?],
+  [When benzoic acid ($C_6 H_5 C O O H$, molar mass $= 122" g/mol"$) is dissolved in benzene, it undergoes dimerization. If the degree of association is $beta = 0.80$, the observed experimental molar mass is approximately:],
   (
-    [$0.10" M Glucose" (C_6 H_12 O_6)$],
-    [$0.10" M Sodium Chloride" (N a C l)$],
-    [$0.10" M Barium Chloride" (B a C l_2)$],
-    [$0.10" M Aluminium Sulphate" (A l_2 (S O_4)_3)$],
+    [$122" g/mol"$],
+    [$61" g/mol"$],
+    [$150" g/mol"$],
+    [$203" g/mol"$],
   ),
 )
 #solution(
   15,
-  [
-    $Delta T_b prop i C$. Glucose ($i=1, i C=0.10$), $N a C l$ ($i=2, i C=0.20$), $B a C l_2$ ($i=3, i C=0.30$), $A l_2 (S O_4)_3$ ($i=5, i C=0.50$). Aluminium sulphate produces the largest effective particle count ($i=5$) and largest elevation.
-  ],
+  [Dimerization: $n = 2$. $i = 1 - (1 - 1/n) beta = 1 - (1 - 1/2)(0.80) = 1 - 0.40 = 0.60$. Van 't Hoff factor: $i = M_("normal") / M_("obs") ==> M_("obs") = M_("normal") / i = 122 / 0.60 approx 203.3" g/mol"$.],
   answer: [D],
 )
+
+#v(8pt)
+#align(center)[
+  #text(fill: om-grey, size: 8.5pt)[
+    © OurMocks · www.ourmocks.com · CUET UG Chemistry · Solutions · 2027 Cycle
+  ]
+]
