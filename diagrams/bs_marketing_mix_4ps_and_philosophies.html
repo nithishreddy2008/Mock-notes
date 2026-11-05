@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px 32px;
+    overflow: hidden;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #071A4D;
+    padding: 16px 28px;
+    border-radius: 12px;
+    border-bottom: 4px solid #1F5EFF;
+    margin-bottom: 18px;
+  }
+  .header-left h1 {
+    color: #FFFFFF;
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+  }
+  .header-left p {
+    color: #94A3B8;
+    font-size: 13px;
+    font-weight: 500;
+    margin-top: 3px;
+  }
+  .badge {
+    background: #1F5EFF;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+  }
+  .main-grid {
+    display: grid;
+    grid-template-columns: 1.25fr 1.05fr;
+    gap: 18px;
+    height: 692px;
+  }
+  .card {
+    background: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    border-radius: 12px;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+  }
+  .card-title {
+    font-size: 15.5px;
+    font-weight: 800;
+    color: #071A4D;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #E2E8F0;
+  }
+  .card-title .icon {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #1F5EFF;
+  }
+
+  /* Left Column: 5 Philosophies */
+  .philo-box {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-left: 3.5px solid #1F5EFF;
+    border-radius: 8px;
+    padding: 8px 12px;
+    margin-bottom: 7px;
+  }
+  .philo-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3px;
+  }
+  .philo-head h4 {
+    font-size: 12.5px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .philo-badge {
+    font-size: 10.5px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 4px;
+    background: #E0E7FF;
+    color: #3730A3;
+  }
+  .philo-desc {
+    font-size: 11.2px;
+    color: #334155;
+    line-height: 1.38;
+  }
+  .philo-desc b {
+    color: #0F172A;
+  }
+
+  /* Right Column: Promotion Mix */
+  .promo-box {
+    background: #F8FAFC;
+    border: 1px solid #CBD5E1;
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin-bottom: 9px;
+  }
+  .promo-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4px;
+  }
+  .promo-head h4 {
+    font-size: 12.5px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .promo-tag {
+    font-size: 10.5px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 4px;
+    background: #DCFCE7;
+    color: #166534;
+  }
+  .promo-list {
+    list-style: none;
+    font-size: 11.2px;
+    color: #334155;
+    line-height: 1.42;
+  }
+  .promo-list li {
+    position: relative;
+    padding-left: 12px;
+    margin-bottom: 2px;
+  }
+  .promo-list li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: #1F5EFF;
+    font-weight: bold;
+  }
+
+  /* Bottom Banner */
+  .summary-banner {
+    grid-column: 1 / -1;
+    background: #EEF2FF;
+    border: 1px solid #C7D2FE;
+    border-radius: 8px;
+    padding: 9px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: #1E1B4B;
+    font-weight: 600;
+  }
+  .summary-banner span {
+    color: #1F5EFF;
+    font-weight: 800;
+  }
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="header-left">
+      <h1>MARKETING MANAGEMENT: PHILOSOPHIES & PROMOTION MIX MATRIX</h1>
+      <p>Unit XI · Official CUET UG Architecture · 5 Marketing Philosophies, 4Ps & Promotion Mix Quadrants</p>
+    </div>
+    <div class="badge">FIGURE 2 · CONCEPT MATRIX</div>
+  </div>
+
+  <div class="main-grid">
+    <!-- Left Column: 5 Marketing Philosophies -->
+    <div class="card">
+      <div class="card-title">
+        <div class="icon"></div>
+        The Five Marketing Management Philosophies (NCERT)
+      </div>
+
+      <div class="philo-box">
+        <div class="philo-head">
+          <h4>1. Production Concept</h4>
+          <span class="philo-badge">Starting Point: Factory</span>
+        </div>
+        <div class="philo-desc">
+          • <b>Core Belief:</b> Consumers favor products that are widely available and inexpensive.<br>
+          • <b>Focus:</b> Large-scale production, reducing unit costs, extensive distribution.<br>
+          • <b>Ends:</b> Profits through high production volume.
+        </div>
+      </div>
+
+      <div class="philo-box">
+        <div class="philo-head">
+          <h4>2. Product Concept</h4>
+          <span class="philo-badge">Starting Point: Factory</span>
+        </div>
+        <div class="philo-desc">
+          • <b>Core Belief:</b> Consumers favor products offering superior quality, performance, and features.<br>
+          • <b>Focus:</b> Continuous product improvement and engineering innovations.<br>
+          • <b>Ends:</b> Profits through product quality. (Risk: <i>Marketing Myopia</i>).
+        </div>
+      </div>
+
+      <div class="philo-box">
+        <div class="philo-head">
+          <h4>3. Selling Concept</h4>
+          <span class="philo-badge">Starting Point: Factory</span>
+        </div>
+        <div class="philo-desc">
+          • <b>Core Belief:</b> Consumers will not buy enough without aggressive selling and promotion.<br>
+          • <b>Focus:</b> Existing products; "sell what you make" via aggressive sales pressure.<br>
+          • <b>Ends:</b> Profits through sales volume.
+        </div>
+      </div>
+
+      <div class="philo-box">
+        <div class="philo-head">
+          <h4>4. Marketing Concept</h4>
+          <span class="philo-badge" style="background:#DCFCE7; color:#166534;">Starting Point: Target Market</span>
+        </div>
+        <div class="philo-desc">
+          • <b>Core Belief:</b> Customer satisfaction is the key to achieving organizational goals.<br>
+          • <b>Focus:</b> Customer needs; "make what you can sell" via integrated marketing.<br>
+          • <b>Ends:</b> Long-term profits through customer satisfaction.
+        </div>
+      </div>
+
+      <div class="philo-box">
+        <div class="philo-head">
+          <h4>5. Societal Marketing Concept</h4>
+          <span class="philo-badge" style="background:#FEF3C7; color:#92400E;">Market + Society</span>
+        </div>
+        <div class="philo-desc">
+          • <b>Core Belief:</b> Balance customer satisfaction with long-term societal well-being.<br>
+          • <b>Focus:</b> Customer needs + ethical environmental stewardship (curbing pollution, deforestation).<br>
+          • <b>Ends:</b> Profits through customer satisfaction & social welfare.
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Column: Promotion Mix Quadrants -->
+    <div class="card">
+      <div class="card-title">
+        <div class="icon" style="background:#059669;"></div>
+        The Four Elements of Promotion Mix
+      </div>
+
+      <div class="promo-box">
+        <div class="promo-head">
+          <h4>1. Advertising</h4>
+          <span class="promo-tag">Paid · Impersonal</span>
+        </div>
+        <ul class="promo-list">
+          <li><b>Characteristics:</b> Paid form, identified sponsor, mass reach, builds brand legitimacy.</li>
+          <li><b>Merits & Demerits:</b> Expressive and economical per contact; but inflexible and lacks direct feedback.</li>
+        </ul>
+      </div>
+
+      <div class="promo-box">
+        <div class="promo-head">
+          <h4>2. Personal Selling</h4>
+          <span class="promo-tag">Direct · Oral</span>
+        </div>
+        <ul class="promo-list">
+          <li><b>Characteristics:</b> Face-to-face oral communication with prospective buyers for making sales.</li>
+          <li><b>Merits:</b> Highly flexible, direct immediate feedback, creates long-term personal relationships.</li>
+        </ul>
+      </div>
+
+      <div class="promo-box">
+        <div class="promo-head">
+          <h4>3. Sales Promotion</h4>
+          <span class="promo-tag">Short-Term Incentives</span>
+        </div>
+        <ul class="promo-list">
+          <li><b>Techniques:</b> Rebates, Discounts, Refunds, Product Combinations, Quantity Gifts, Lucky Draws.</li>
+          <li><b>Role:</b> Stimulates immediate trial and spikes short-term sales volume during off-peak periods.</li>
+        </ul>
+      </div>
+
+      <div class="promo-box">
+        <div class="promo-head">
+          <h4>4. Public Relations (PR)</h4>
+          <span class="promo-tag">Corporate Image</span>
+        </div>
+        <ul class="promo-list">
+          <li><b>Tools:</b> Press releases, press conferences, event sponsorships, lobbying, public service.</li>
+          <li><b>Role:</b> Protects corporate reputation against negative rumors and builds positive goodwill.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom Summary Banner -->
+    <div class="summary-banner">
+      <div><span>CUET GOLDEN AXIOM:</span> Selling focuses on the Seller's Needs (converting goods into cash); Marketing focuses on the Buyer's Needs (delivering customer satisfaction). 4Ps = Product, Price, Place, Promotion.</div>
+      <div style="font-size:11px; color:#475569;">CUET UG Business Studies · Unit 11</div>
+    </div>
+  </div>
+
+</body>
+</html>
