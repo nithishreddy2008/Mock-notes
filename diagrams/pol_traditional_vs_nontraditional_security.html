@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px 32px;
+    overflow: hidden;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #071A4D;
+    padding: 16px 28px;
+    border-radius: 12px;
+    border-bottom: 4px solid #1F5EFF;
+    margin-bottom: 16px;
+  }
+  .header-left h1 {
+    color: #FFFFFF;
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+  }
+  .header-left p {
+    color: #94A3B8;
+    font-size: 13px;
+    font-weight: 500;
+    margin-top: 3px;
+  }
+  .badge {
+    background: #1F5EFF;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+  }
+  .main-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    height: 740px;
+  }
+  .card {
+    background: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    border-radius: 12px;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+  }
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #E2E8F0;
+    margin-bottom: 12px;
+  }
+  .card-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: #EFF6FF;
+    color: #1F5EFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 15px;
+  }
+  .card-title {
+    font-size: 15px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .card-subtitle {
+    font-size: 11px;
+    color: #64748B;
+  }
+  .sub-box {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin-bottom: 10px;
+  }
+  .sub-title {
+    font-size: 12.5px;
+    font-weight: 800;
+    color: #1E293B;
+    margin-bottom: 4px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .sub-title span {
+    font-size: 11px;
+    color: #1F5EFF;
+    font-weight: 700;
+  }
+  .detail-list {
+    font-size: 11px;
+    line-height: 1.45;
+    color: #334155;
+  }
+  .detail-list li {
+    margin-left: 14px;
+    margin-bottom: 2px;
+  }
+  .tag {
+    display: inline-block;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 700;
+  }
+  .tag-green { background: #DCFCE7; color: #166534; }
+  .tag-blue { background: #DBEAFE; color: #1E40AF; }
+  .tag-amber { background: #FEF3C7; color: #92400E; }
+  .tag-purple { background: #F3E8FF; color: #6B21A8; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <h1>SECURITY IN CONTEMPORARY WORLD: ARCHITECTURAL PARADIGM MATRIX</h1>
+    <p>CUET UG Political Science · Unit V · Traditional vs Non-Traditional Threats, Arms Regimes & India's 4-Pillar Strategy</p>
+  </div>
+  <div class="badge">NTA HIGH-FREQUENCY MATRIX</div>
+</div>
+
+<div class="main-grid">
+  <!-- Col 1: Traditional Security Paradigm -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon">1</div>
+      <div>
+        <div class="card-title">Traditional Security (State-Centric)</div>
+        <div class="card-subtitle">Military Threats, Sovereignty & Interstate Balance</div>
+      </div>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">External Security Dimensions <span class="tag tag-blue">Military Defense</span></div>
+      <ul class="detail-list">
+        <li><strong>Referent Object:</strong> The sovereign state, territorial integrity, and independence.</li>
+        <li><strong>Primary Threat:</strong> External military aggression from rival states.</li>
+        <li><strong>Core Mechanisms:</strong> Deterrence (preventing war), Defense (limiting damage), Balance of Power (military/economic parity), and Alliances (NATO, Warsaw Pact).</li>
+      </ul>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">Internal Security Dimensions <span class="tag tag-amber">Domestic Order</span></div>
+      <ul class="detail-list">
+        <li>Maintenance of domestic peace, law, and order within national borders.</li>
+        <li>Mitigating separatist insurrections, communal strife, and armed civil conflicts.</li>
+        <li>Historical focus: Western states prioritized external threats; newly independent post-colonial states faced acute internal separatist pressures.</li>
+      </ul>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">Traditional Security & Cooperation <span class="tag tag-green">Treaty Regimes</span></div>
+      <ul class="detail-list">
+        <li><strong>Disarmament:</strong> Biological Weapons Convention (BWC, 1972), Chemical Weapons Convention (CWC, 1992).</li>
+        <li><strong>Arms Control:</strong> NPT (1968), Anti-Ballistic Missile Treaty (ABM, 1972), SALT I/II, START I/II.</li>
+        <li><strong>Confidence-Building Measures (CBMs):</strong> Military transparency, hotline communication, military observers.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Col 2: Non-Traditional Security & Global Threats -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon">2</div>
+      <div>
+        <div class="card-title">Non-Traditional Security (Human-Centric)</div>
+        <div class="card-subtitle">Human Security, Global Public Bads & Transnational Crises</div>
+      </div>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">Human Security Foundations <span class="tag tag-purple">People-Centric</span></div>
+      <ul class="detail-list">
+        <li><strong>Referent Object:</strong> Individual human beings and communities (not state borders).</li>
+        <li><strong>Narrow Concept:</strong> "Freedom from Fear" (protection from violent conflicts, state repression, crimes).</li>
+        <li><strong>Broad Concept:</strong> "Freedom from Want" (protection from hunger, disease, natural disasters, economic deprivation).</li>
+      </ul>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">New Sources of Global Threats <span class="tag tag-amber">Transnational</span></div>
+      <ul class="detail-list">
+        <li><strong>Terrorism:</strong> Asymmetric violence targeting unarmed civilians (e.g., 9/11 US attacks, 26/11 Mumbai attacks).</li>
+        <li><strong>Human Rights Atrocities:</strong> Genocides, ethnic cleansing (e.g., Rwanda 1994, Srebrenica).</li>
+        <li><strong>Global Poverty:</strong> Massive North-South inequality, agrarian distress, urban squalor.</li>
+        <li><strong>Migration & Displacement:</strong> Refugees (crossing international borders) vs Internally Displaced Persons (IDPs).</li>
+        <li><strong>Health Epidemics:</strong> HIV/AIDS, Ebola, Bird Flu, SARS, COVID-19 pandemics.</li>
+      </ul>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">Cooperative Security Framework <span class="tag tag-blue">Multilateralism</span></div>
+      <ul class="detail-list">
+        <li>Non-military transnational threats cannot be resolved through national armed forces.</li>
+        <li>Requires bilateral, regional, continental, and global cooperation (UN, WHO, civil society NGOs).</li>
+        <li>Force is sanctioned only as a collective, multilateral measure of last resort.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Col 3: India's 4-Pillar Security Strategy -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon">3</div>
+      <div>
+        <div class="card-title">India's 4-Pillar Security Strategy</div>
+        <div class="card-subtitle">Integrated National Defense & Socio-Economic Architecture</div>
+      </div>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">Pillar 1: Military Capabilities <span class="tag tag-blue">Deterrence</span></div>
+      <ul class="detail-list">
+        <li>Surrounded by nuclear-armed neighbors (China, Pakistan); fought wars in 1947–48, 1962, 1965, 1971, 1999.</li>
+        <li>Conducted peaceful nuclear explosion (Pokhran-I, 1974) and weapon tests (Pokhran-II, 1998).</li>
+        <li>Maintains Credible Minimum Deterrence & "No First Use" (NFU) nuclear posture.</li>
+      </ul>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">Pillar 2: Strengthening Global Norms <span class="tag tag-green">Multilateral</span></div>
+      <ul class="detail-list">
+        <li>Championed Non-Aligned Movement (NAM) to preserve strategic autonomy during the Cold War.</li>
+        <li>Consistent advocacy for non-discriminatory universal nuclear disarmament.</li>
+        <li>Committed to United Nations peacekeeping, international climate conventions, and multilateral trade rules.</li>
+      </ul>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">Pillar 3: Preserving Internal Cohesion <span class="tag tag-amber">Integration</span></div>
+      <ul class="detail-list">
+        <li>Managing internal secessionist and insurgent pressures: Nagaland, Mizoram, Punjab, Jammu & Kashmir.</li>
+        <li>Democratic power-sharing, federal autonomy, constitutional protections for linguistic/ethnic minorities.</li>
+      </ul>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">Pillar 4: Economic Transformation <span class="tag tag-purple">Development</span></div>
+      <ul class="detail-list">
+        <li>Eradicating mass poverty, inequality, hunger, and disease to ensure genuine human security.</li>
+        <li>Balancing high defense expenditure with essential social sector allocations (health, education, rural development).</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
