@@ -7,6 +7,9 @@
   subtitle: "Environmental Pollution Vectors, Municipal Solid Waste Crises, Slum Ecosystems, Land Degradation & Community Watershed Restoration Models",
 )
 
+#set text(size: 10.6pt)
+#set par(leading: 0.66em, spacing: 0.95em)
+
 = Module 1: Environmental Pollution — Typologies, Vectors & Impacts
 
 == 1.1 Nature and Scale of Environmental Degradation
@@ -290,8 +293,8 @@ India's environmental planning is directly aligned with the United Nations *2030
   1,
   [Which empirical parameter is utilized by environmental scientists as the primary indicator to assess the degree of organic pollution in a river or freshwater body?],
   (
-    [Total Dissolved Solids (TDS)],
     [Biochemical Oxygen Demand (BOD)],
+    [Total Dissolved Solids (TDS)],
     [Potential of Hydrogen (pH scale)],
     [Electrical Conductivity (EC)],
   )
@@ -300,7 +303,7 @@ India's environmental planning is directly aligned with the United Nations *2030
 #solution(
   1,
   [Biochemical Oxygen Demand (BOD) measures the amount of dissolved oxygen required by aerobic microbes to decompose organic waste in water; high BOD indicates heavy organic pollution.],
-  answer: [B]
+  answer: [A]
 )
 
 #mcq(
@@ -324,8 +327,8 @@ India's environmental planning is directly aligned with the United Nations *2030
   3,
   [What is the maximum permissible daytime ambient noise limit prescribed for 'Residential Areas' under the Noise Pollution (Regulation and Control) Rules, 2000?],
   (
-    [45 dB],
     [55 dB],
+    [45 dB],
     [65 dB],
     [75 dB],
   )
@@ -334,7 +337,7 @@ India's environmental planning is directly aligned with the United Nations *2030
 #solution(
   3,
   [The Central Pollution Control Board prescribes a daytime noise limit of 55 dB and night-time limit of 45 dB for residential areas.],
-  answer: [B]
+  answer: [A]
 )
 
 #mcq(
@@ -343,15 +346,15 @@ India's environmental planning is directly aligned with the United Nations *2030
   (
     [Lateritization and podzolization],
     [Gully erosion and badland formation],
-    [Waterlogging and soil salinization (Reh/Kallar)],
     [Desertification caused by wind deflation],
+    [Waterlogging and soil salinization (Reh/Kallar)],
   )
 )
 
 #solution(
   4,
   [Over-irrigation in canal commands raises groundwater levels, causing capillary action to deposit dissolved salts on the surface as a sterile crust known as Reh or Kallar.],
-  answer: [C]
+  answer: [D]
 )
 
 #mcq(
@@ -377,8 +380,8 @@ India's environmental planning is directly aligned with the United Nations *2030
   6,
   [Dharavi, celebrated as one of Asia's largest informal settlements, is situated in which metropolitan city and spans what approximate geographical area?],
   (
-    [Kolkata, spanning 5.5 square kilometres],
     [Mumbai, spanning 2.16 square kilometres],
+    [Kolkata, spanning 5.5 square kilometres],
     [Delhi, spanning 3.8 square kilometres],
     [Chennai, spanning 1.5 square kilometres],
   )
@@ -387,7 +390,7 @@ India's environmental planning is directly aligned with the United Nations *2030
 #solution(
   6,
   [Dharavi is situated in central Mumbai, sandwiched between the Western and Central suburban railway corridors, spanning approximately 2.16 sq km with over 700,000 residents.],
-  answer: [B]
+  answer: [A]
 )
 
 #mcq(
@@ -396,15 +399,15 @@ India's environmental planning is directly aligned with the United Nations *2030
   (
     [Rajasthan],
     [Gujarat],
-    [Madhya Pradesh],
     [Maharashtra],
+    [Madhya Pradesh],
   )
 )
 
 #solution(
   7,
   [Jhabua is a tribal district in western Madhya Pradesh where the Bhil community revitalized degraded lands under the Rajiv Gandhi Mission for Watershed Management.],
-  answer: [C]
+  answer: [D]
 )
 
 #mcq(
@@ -446,16 +449,16 @@ India's environmental planning is directly aligned with the United Nations *2030
   [The 'Air (Prevention and Control of Pollution) Act' was enacted in 1981, but in which year was it formally amended to explicitly categorize 'Noise' as an air pollutant?],
   (
     [1984],
-    [1987],
-    [1991],
     [2000],
+    [1991],
+    [1987],
   )
 )
 
 #solution(
   10,
   [The Air Act of 1981 was amended in 1987 to explicitly include noise within the statutory definition of air pollutants under Section 2(a).],
-  answer: [B]
+  answer: [D]
 )
 
 #pagebreak()
