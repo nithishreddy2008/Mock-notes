@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px 32px;
+    overflow: hidden;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #071A4D;
+    padding: 16px 28px;
+    border-radius: 12px;
+    border-bottom: 4px solid #1F5EFF;
+    margin-bottom: 16px;
+  }
+  .header-left h1 {
+    color: #FFFFFF;
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+  }
+  .header-left p {
+    color: #94A3B8;
+    font-size: 13px;
+    font-weight: 500;
+    margin-top: 3px;
+  }
+  .badge {
+    background: #1F5EFF;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+  }
+  .main-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    height: 740px;
+  }
+  .card {
+    background: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    border-radius: 12px;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+  }
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #E2E8F0;
+    margin-bottom: 12px;
+  }
+  .card-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: #EFF6FF;
+    color: #1F5EFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 15px;
+  }
+  .card-title {
+    font-size: 15px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .card-subtitle {
+    font-size: 11px;
+    color: #64748B;
+  }
+  .sub-box {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin-bottom: 10px;
+  }
+  .sub-title {
+    font-size: 12.5px;
+    font-weight: 800;
+    color: #1E293B;
+    margin-bottom: 4px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .sub-title span {
+    font-size: 11px;
+    color: #1F5EFF;
+    font-weight: 700;
+  }
+  .detail-list {
+    font-size: 11px;
+    line-height: 1.45;
+    color: #334155;
+  }
+  .detail-list li {
+    margin-left: 14px;
+    margin-bottom: 2px;
+  }
+  .tag {
+    display: inline-block;
+    background: #E2E8F0;
+    color: #334155;
+    font-size: 9.5px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-right: 4px;
+    margin-top: 4px;
+  }
+  .tag-blue { background: #DBEAFE; color: #1E40AF; }
+  .tag-green { background: #DCFCE7; color: #166534; }
+  .tag-amber { background: #FEF3C7; color: #92400E; }
+  .tag-red { background: #FEE2E2; color: #991B1B; }
+  .highlight-strip {
+    background: #F1F5F9;
+    border-left: 3px solid #1F5EFF;
+    padding: 6px 10px;
+    font-size: 10.5px;
+    color: #0F172A;
+    border-radius: 0 6px 6px 0;
+    margin-top: auto;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <h1>CONTEMPORARY CHALLENGES, COALITIONS & SECULARISM DEBATES</h1>
+    <p>1991 LPG Reforms · Dalit Electoral & Non-Electoral Assertion · Ayodhya Dispute · Indian vs. Western Secularism</p>
+  </div>
+  <div class="badge">POLITICAL SCIENCE UNIT 16 · CONCEPT MATRIX</div>
+</div>
+
+<div class="main-grid">
+
+  <!-- Column 1 -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon">1</div>
+      <div>
+        <div class="card-title">Globalisation & LPG Reforms</div>
+        <div class="card-subtitle">1991 Macroeconomic Crisis & Multi-Sectoral Resistance</div>
+      </div>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">1991 Balance of Payments Crisis <span>Forex Crunch</span></div>
+      <ul class="detail-list">
+        <li><strong>Forex Depletion:</strong> Foreign reserves fell to $1.2 billion in June 1991, barely sufficient for 2 weeks of essential imports.</li>
+        <li><strong>Emergency Measure:</strong> Caretaker government pledged 67 tonnes of gold to Bank of England and UBS.</li>
+        <li><strong>Structural Reforms:</strong> PM Narasimha Rao & Finance Minister Manmohan Singh launched LPG (Liberalisation, Privatisation, Globalisation).</li>
+        <li><strong>WTO Accession:</strong> India joined the World Trade Organization (WTO) as an original founding member in 1995.</li>
+      </ul>
+      <span class="tag tag-red">2 Weeks Reserves</span>
+      <span class="tag tag-blue">LPG 1991</span>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">Multi-Sectoral Opposition <span>Resistance</span></div>
+      <ul class="detail-list">
+        <li><strong>Trade Unions (CITU/AITUC):</strong> General strikes protesting worker retrenchment, PSU sell-offs, and casualisation.</li>
+        <li><strong>Farmers' Movements:</strong> KRRS (Prof. M.D. Nanjundaswamy) and BKU opposed WTO TRIPS seed patents and subsidy cuts.</li>
+        <li><strong>Cultural Resistance:</strong> Left and Swadeshi Jagran Manch opposed Western commercialism and consumerist ethos.</li>
+      </ul>
+      <span class="tag tag-amber">KRRS (Nanjundaswamy)</span>
+      <span class="tag tag-green">TRIPS Protests</span>
+    </div>
+
+    <div class="highlight-strip">
+      <strong>Core Fact:</strong> 1991 reforms dismantled the "Licence Raj", lowering peak tariffs and opening FDI to private/foreign enterprise.
+    </div>
+  </div>
+
+  <!-- Column 2 -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon">2</div>
+      <div>
+        <div class="card-title">Dalit & Backward Assertion</div>
+        <div class="card-subtitle">Electoral Power (BSP) & Militant Rights (Dalit Panthers)</div>
+      </div>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">Dalit Panthers (May 1972) <span>Non-Electoral Arena</span></div>
+      <ul class="detail-list">
+        <li><strong>Origins:</strong> Formed in Bombay slums by young radical writers: Namdeo Dhasal (author of <em>Golpitha</em>) and J.V. Pawar.</li>
+        <li><strong>Ideological Stance:</strong> Inspired by Black Panther Party; militant resistance against rural untouchability and upper-caste violence.</li>
+        <li><strong>Legislative Climax:</strong> Direct struggles contributed to passing the SC/ST (Prevention of Atrocities) Act, 1989.</li>
+      </ul>
+      <span class="tag tag-blue">Maharashtra 1972</span>
+      <span class="tag tag-red">Namdeo Dhasal</span>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">Kanshi Ram & The BSP <span>Electoral Arena</span></div>
+      <ul class="detail-list">
+        <li><strong>BAMCEF (1978):</strong> Employees' federation providing financial, intellectual, and organisational backbone.</li>
+        <li><strong>DS-4 (1981):</strong> Direct agitational forum before launching electoral party.</li>
+        <li><strong>BSP (1984):</strong> Formed to capture state power for the 85% Bahujan majority; Mayawati became UP CM in 1995.</li>
+        <li><strong>OBC Regional Formations:</strong> SP (Mulayam), RJD (Lalu), and JD(U) consolidated intermediate agrarian power.</li>
+      </ul>
+      <span class="tag tag-amber">BAMCEF 1978</span>
+      <span class="tag tag-green">BSP (1984)</span>
+    </div>
+
+    <div class="highlight-strip">
+      <strong>CUET Distinction:</strong> BAMCEF (1978) was a non-electoral employee federation; BSP (1984) was the formal political party.
+    </div>
+  </div>
+
+  <!-- Column 3 -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon">3</div>
+      <div>
+        <div class="card-title">Communalism & Secularism</div>
+        <div class="card-subtitle">Ayodhya Timeline, Gujarat 2002 & Principled Distance</div>
+      </div>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">Ayodhya Dispute & Fallout <span>Chronology</span></div>
+      <ul class="detail-list">
+        <li><strong>Feb 1986:</strong> Faizabad District Court ordered locks opened for Hindu worship, reigniting dispute.</li>
+        <li><strong>1990 Rath Yatra:</strong> L.K. Advani from Somnath to Ayodhya; Advani arrested in Bihar; V.P. Singh govt fell.</li>
+        <li><strong>6 Dec 1992:</strong> Demolition of Babri Masjid; CM Kalyan Singh resigned; President's Rule in 4 BJP states.</li>
+        <li><strong>S.R. Bommai (1994):</strong> Supreme Court upheld dismissals, declaring secularism part of the Basic Structure.</li>
+        <li><strong>Inquiry:</strong> Liberhan Commission investigated demolition; submitted report in 2009.</li>
+      </ul>
+      <span class="tag tag-amber">Locks 1986</span>
+      <span class="tag tag-red">6 Dec 1992</span>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">Indian vs Western Secularism <span>Model</span></div>
+      <ul class="detail-list">
+        <li><strong>Western Model:</strong> Strict mutual exclusion ("wall of separation"); state neither aids nor intervenes in religion.</li>
+        <li><strong>Indian Model:</strong> "Principled Distance" (Rajeev Bhargava); equal respect (<em>Sarva Dharma Sambhava</em>) and reform.</li>
+        <li><strong>Gujarat Riots (2002):</strong> Godhra train carnage; Best Bakery case transferred by SC to Maharashtra for fair trial.</li>
+      </ul>
+      <span class="tag tag-green">Principled Distance</span>
+      <span class="tag tag-blue">Best Bakery Retrial</span>
+    </div>
+
+    <div class="highlight-strip">
+      <strong>Philosophical Core:</strong> Indian secularism protects minority educational rights (Articles 29/30) while allowing state social reform.
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
