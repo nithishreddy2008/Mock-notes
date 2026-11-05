@@ -26,6 +26,9 @@
 
 ---
 
+#set text(size: 10.3pt)
+#set par(leading: 0.40em, spacing: 0.42em)
+
 = 1. Foundations of Macroeconomics & Basic Concepts
 
 == 1.1 Emergence and Scope of Macroeconomics
@@ -120,7 +123,7 @@ Consider a simplified closed economy consisting of only two economic sectors: *H
   - Households spend their entire factor income on Consumption Outlay to purchase goods from firms.
 
 #figure(
-  image("assets/econ_ni_circular_flow_aggregates.png", width: 95%),
+  image("assets/econ_ni_circular_flow_aggregates.png", width: 78%),
   caption: [Figure 1: Circular Flow of Income in a Two-Sector Economy (Left) and the 3 Conversion Pillars with 8 National Income Aggregates Bridge (Right)],
 )
 
@@ -220,7 +223,7 @@ Measures the net contribution of each producing enterprise in the domestic terri
   2. *Value Added Method:* Sum only the *Value Added* ($"Value of Output" - "Intermediate Consumption"$) at each successive processing stage.
 
 #figure(
-  image("assets/econ_ni_three_measurement_methods.png", width: 95%),
+  image("assets/econ_ni_three_measurement_methods.png", width: 78%),
   caption: [Figure 2: The Three Methods of Estimating National Income: Step-by-Step Formulations, Flow Paths, and Precautionary Checklists],
 )
 
@@ -328,13 +331,23 @@ While GDP is universally employed as an indicator of economic growth, it cannot 
    - *Green GDP* adjusts traditional GDP by explicitly deducting the monetary cost of natural resource depletion and environmental degradation:
      $ "Green GDP" = "GDP" - "Net Depletion of Natural Capital" - "Environmental Pollution Damage" $
 
+#pagebreak()
+= Macroeconomics Synthesis & Strategic Blueprint
+
+The complete national income framework unites macro accounting across four foundational stages:
+1. *Production & Circular Flow:* Value of total production ($Sigma "GVA"_("MP")$) equals Factor Income Generated ($"NDP"_("FC")$) equals Total Final Expenditure ($"GDP"_("MP")$).
+2. *The Three Conversion Pillars:* Gross vs Net (Depreciation), Domestic vs National (NFIA), Market Price vs Factor Cost (Net Indirect Taxes).
+3. *Measurement Consistency:* The Value Added Method, Income Method, and Expenditure Method independently arrive at identical aggregate totals when precautions against double counting and transfers are strictly maintained.
+4. *Welfare Calibration:* Real GDP eliminates inflationary price illusions via the GDP Deflator, while acknowledging welfare distortions caused by negative externalities and non-monetary transactions.
+
 #figure(
-  image("assets/econ_ni_macroeconomics_mindmap.png", width: 95%),
+  image("assets/econ_ni_macroeconomics_mindmap.png", width: 70%),
   caption: [Figure 3: National Income Accounting Master Synthesis: Core Foundations, The 3 Pillars, Measurement Framework, and Welfare Indicators],
 )
 
----
-
+#pagebreak()
+#set text(size: 7.5pt)
+#set par(leading: 0.38em, spacing: 0.40em)
 = 7. Master Formula Cheatsheet & Diagnostic Traps
 
 #cheatsheet-box(title: "Master Formula Cheatsheet — National Income Accounting")[
@@ -457,11 +470,11 @@ While GDP is universally employed as an indicator of economic growth, it cannot 
 
 #mcq(9, [The problem of "Double Counting" in national income accounting arises when:], (
   [(A) Imports are added to domestic production],
-  [(B) The value of intermediate goods is counted in addition to the value of final goods],
+  [(B) Both factor payments and transfer payments are taxed],
   [(C) Depreciation is subtracted twice from Gross Domestic Product],
-  [(D) Both factor payments and transfer payments are taxed],
+  [(D) The value of intermediate goods is counted in addition to the value of final goods],
 ))
-#solution(9, [Double counting occurs when the value of a commodity is included more than once as it progresses through different processing stages (e.g., adding the value of raw cotton, then cotton yarn, then cloth, and then final garments). This artificially exaggerates true national output. It is solved either by counting only final output or by summing value added at each stage.], answer: "B")
+#solution(9, [Double counting occurs when the value of a commodity is included more than once as it progresses through different processing stages (e.g., adding the value of raw cotton, then cotton yarn, then cloth, and then final garments). This artificially exaggerates true national output. It is solved either by counting only final output or by summing value added at each stage.], answer: "D")
 
 #mcq(10, [Operating Surplus in the Income Method is composed of:], (
   [(A) Wages and salaries in cash and kind],
@@ -489,11 +502,11 @@ While GDP is universally employed as an indicator of economic growth, it cannot 
 
 #mcq(12, [If Nominal GDP of an economy is ₹8,400 crore and the GDP Deflator is 140, the Real GDP is:], (
   [(A) ₹11,760 crore],
-  [(B) ₹6,000 crore],
+  [(B) ₹5,800 crore],
   [(C) ₹7,000 crore],
-  [(D) ₹5,800 crore],
+  [(D) ₹6,000 crore],
 ))
-#solution(12, [By the GDP Deflator formula: $"GDP Deflator" = ("Nominal GDP" / "Real GDP") times 100$. Rearranging to solve for Real GDP: $"Real GDP" = ("Nominal GDP" / "GDP Deflator") times 100 = (8400 / 140) times 100 = 60 times 100 = ₹6,000$ crore. Real output was ₹6,000 crore; the remaining ₹2,400 crore in nominal value was purely due to price inflation.], answer: "B")
+#solution(12, [By the GDP Deflator formula: $"GDP Deflator" = ("Nominal GDP" / "Real GDP") times 100$. Rearranging to solve for Real GDP: $"Real GDP" = ("Nominal GDP" / "GDP Deflator") times 100 = (8400 / 140) times 100 = 60 times 100 = ₹6,000$ crore. Real output was ₹6,000 crore; the remaining ₹2,400 crore in nominal value was purely due to price inflation.], answer: "D")
 
 #mcq(13, [Which of the following transactions will be INCLUDED in the estimation of National Income?], (
   [(A) Money received by a son from his father as a pocket allowance],
@@ -505,11 +518,11 @@ While GDP is universally employed as an indicator of economic growth, it cannot 
 
 #mcq(14, [Why is GDP an imperfect index of economic welfare when negative externalities exist?], (
   [(A) Because negative externalities reduce the market prices of consumer goods],
-  [(B) Because GDP includes the value of output but fails to deduct the environmental pollution and health damage created],
+  [(B) Because negative externalities inflate the GDP Deflator],
   [(C) Because negative externalities convert flow variables into stock variables],
-  [(D) Because negative externalities inflate the GDP Deflator],
+  [(D) Because GDP includes the value of output but fails to deduct the environmental pollution and health damage created],
 ))
-#solution(14, [Negative externalities (such as industrial toxic waste in rivers, air smog, and noise pollution) impose uncompensated health and environmental costs on citizens. Traditional GDP accounts for the monetary value of industrial goods produced, but does not deduct the welfare damage caused by pollution. As a result, GDP overstates genuine social welfare.], answer: "B")
+#solution(14, [Negative externalities (such as industrial toxic waste in rivers, air smog, and noise pollution) impose uncompensated health and environmental costs on citizens. Traditional GDP accounts for the monetary value of industrial goods produced, but does not deduct the welfare damage caused by pollution. As a result, GDP overstates genuine social welfare.], answer: "D")
 
 #mcq(15, [If all producing firms in an economy are owned by foreign multi-nationals, but all workers are resident citizens, an increase in factory production will:], (
   [(A) Increase Domestic Income more than National Income],
