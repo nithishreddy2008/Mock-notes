@@ -48,6 +48,9 @@
   *CUET UG Exam Architecture:* Unit 6 (Optics) carries the highest weightage in CUET UG Physics (approx 12% to 15%, 7 to 8 MCQs). Wave Optics contributes 3 to 4 direct conceptual and numerical questions, particularly focused on YDSE fringe width scaling in liquids, central diffraction maximum width, ratio of $I_"max" / I_"min"$, and Brewster's angle relations.
 ]
 
+#set text(size: 9.8pt)
+#set par(leading: 0.38em, spacing: 0.40em)
+
 = Wavefronts & Huygens' Principle
 
 == Concept of Wavefront
@@ -116,7 +119,7 @@ Consider a plane wavefront $A B$ incident at an angle $i$ on a plane reflecting 
 ]
 
 #figure(
-  image("assets/physics_wave_optics_huygens_reflection_refraction.png", width: 84%),
+  image("assets/physics_wave_optics_huygens_reflection_refraction.png", width: 78%),
   caption: [Huygens' Principle in Action: Wavefront topologies, RHS triangle congruence reflection proof, and Snell's refraction law derivation.],
 )
 
@@ -240,7 +243,7 @@ Thomas Young (1801) demonstrated the wave nature of light using two narrow paral
 ]
 
 #figure(
-  image("assets/physics_wave_optics_ydse_diffraction.png", width: 84%),
+  image("assets/physics_wave_optics_ydse_diffraction.png", width: 78%),
   caption: [Interference and Diffraction Architecture: YDSE geometry, Fraunhofer single-slit central maximum width ($2 beta$), and Brewster's polarization angle.],
 )
 
@@ -366,12 +369,22 @@ At Brewster's polarizing angle of incidence $i_p$, the reflected ray is $100\%$ 
   Transmitted intensity is *$I_0 / 8$*. (Without $P_3$, transmitted intensity is zero).
 ]
 
-= Master Mindmap & High-Yield Cheatsheet
+#pagebreak()
+= Master Mindmap: Wave Optics
 
-#figure(
-  image("assets/physics_wave_optics_mindmap.png", width: 84%),
-  caption: [Master Synthesis Mindmap: Structural framework of Unit 6 Wave Optics.],
-)
+#v(1em)
+#align(center)[
+  #figure(
+    image("assets/physics_wave_optics_mindmap.png", width: 70%),
+    caption: [Master Synthesis Mindmap: Structural framework of Unit 6 Wave Optics.],
+  )
+]
+
+#pagebreak()
+= High-Yield Cheatsheet & Exam Traps
+
+#set text(size: 7.5pt)
+#set par(leading: 0.36em, spacing: 0.38em)
 
 #cheatsheet-box(title: "Master Wave Optics Revision Cheatsheet")[
   - *Wavefront Types:* Point source: Spherical ($I prop 1/r^2$) | Slit source: Cylindrical ($I prop 1/r$) | Distant: Plane ($I = "const"$).
@@ -385,18 +398,31 @@ At Brewster's polarizing angle of incidence $i_p$, the reflected ray is $100\%$ 
   - *Brewster's Law:* $tan i_p = mu$ | Perpendicular rays: $i_p + r_p = 90 degree$ (reflected ray is $100\%$ linearly polarized).
 ]
 
+#tip-box(title: "The Seven Fatal CUET Traps in Wave Optics")[
+  1. *Frequency Invariance in Refraction:* Frequency $nu$ and energy $E = h nu$ depend strictly on the oscillating source and *never* change across media! Only velocity ($v = c/mu$) and wavelength ($lambda' = lambda/mu$) decrease.
+  2. *YDSE Fringe Width vs Film Shift:* Introducing a thin transparent sheet of thickness $t$ and index $mu$ shifts the entire fringe pattern by $Delta y = (D/d)(mu - 1)t$, but *does not change fringe width* $beta = lambda D / d$!
+  3. *Diffraction Minima vs Interference Minima:* In single-slit diffraction, minima occur at $a sin theta = n lambda$ (looks like interference *maxima* condition!). Secondary maxima occur at $a sin theta = (n + 1/2)lambda$.
+  4. *Central Diffraction Peak Width:* The central diffraction maximum extends between the first minima on either side (from $-lambda/a$ to $+lambda/a$), so its angular width is $2 lambda / a$ and linear width is $(2 lambda D)/a$—*twice* the width of secondary fringes!
+  5. *Unpolarized Light Through First Polaroid:* Unpolarized light passing through any ideal polaroid always drops to exactly half its intensity ($I = I_0/2$), regardless of the transmission axis orientation. Malus's law ($I = I_1 cos^2 theta$) applies only to already polarized light entering subsequent polaroids.
+  6. *Brewster's Law Reflection Angle:* At Brewster's angle $i_p = arctan(mu)$, the reflected and refracted rays are strictly mutually perpendicular ($i_p + r_p = 90 degree$). The angle of refraction is $r_p = 90 degree - i_p$, NOT $i_p$!
+  7. *Coherence Requirement:* Two independent monochromatic light bulbs or torches can *never* produce sustained interference fringes because phase fluctuations between independent atom emissions occur in $\~10^(-10)" s"$.
+]
 #pagebreak()
 
 = CUET UG Exam-Style Practice Questions (15 MCQs)
+
+#set text(size: 8.5pt)
+#set par(leading: 0.40em, spacing: 0.42em)
+
 
 #mcq(
   1,
   [When a monochromatic light wave of wavelength $600" nm"$ travelling in vacuum enters a medium of refractive index $1.50$, its frequency and wavelength in the medium are:],
   (
     [$5.0 times 10^(14)" Hz", 600" nm"$],
-    [$5.0 times 10^(14)" Hz", 400" nm"$],
-    [$7.5 times 10^(14)" Hz", 400" nm"$],
     [$3.33 times 10^(14)" Hz", 900" nm"$],
+    [$7.5 times 10^(14)" Hz", 400" nm"$],
+    [$5.0 times 10^(14)" Hz", 400" nm"$],
   ),
 )
 #solution(
@@ -405,7 +431,7 @@ At Brewster's polarizing angle of incidence $i_p$, the reflected ray is $100\%$ 
     Frequency is invariant: $nu = c / lambda = (3.0 times 10^8)/(600 times 10^(-9)) = 5.0 times 10^(14)" Hz"$.
     Wavelength in medium compresses: $lambda' = lambda / mu = 600 / 1.50 = 400" nm"$.
   ],
-  answer: [B],
+  answer: [D],
 )
 
 #mcq(
@@ -451,8 +477,8 @@ At Brewster's polarizing angle of incidence $i_p$, the reflected ray is $100\%$ 
   [In a Young's double slit experiment, the fringe width is found to be $0.40" mm"$. If the entire apparatus is immersed in water ($mu = 4/3$) without altering other parameters, the new fringe width is:],
   (
     [$0.53" mm"$],
-    [$0.30" mm"$],
     [$0.40" mm"$],
+    [$0.30" mm"$],
     [$0.20" mm"$],
   ),
 )
@@ -461,7 +487,7 @@ At Brewster's polarizing angle of incidence $i_p$, the reflected ray is $100\%$ 
   [
     In medium of refractive index $mu$, fringe width scales as $beta' = beta / mu = (0.40" mm") / (4 / 3) = 0.40 times 3 / 4 = 0.30" mm"$.
   ],
-  answer: [B],
+  answer: [C],
 )
 
 #mcq(
@@ -507,9 +533,9 @@ At Brewster's polarizing angle of incidence $i_p$, the reflected ray is $100\%$ 
   [The linear width of the central maximum in a single-slit Fraunhofer diffraction pattern on a screen at distance $D$ from a slit of width $a$ is:],
   (
     [$(lambda D) / a$],
-    [$(2 lambda D) / a$],
-    [$(lambda D) / (2 a)$],
     [$(4 lambda D) / a$],
+    [$(lambda D) / (2 a)$],
+    [$(2 lambda D) / a$],
   ),
 )
 #solution(
@@ -517,7 +543,7 @@ At Brewster's polarizing angle of incidence $i_p$, the reflected ray is $100\%$ 
   [
     The central maximum extends between the first minima on either side ($-lambda/a$ to $+lambda/a$). Angular width is $2 lambda / a$, so linear width is $beta_0 = (2 lambda D) / a$.
   ],
-  answer: [B],
+  answer: [D],
 )
 
 #mcq(
@@ -561,9 +587,9 @@ At Brewster's polarizing angle of incidence $i_p$, the reflected ray is $100\%$ 
   [Light is incident on a glass plate of refractive index $mu = sqrt(3)$ at Brewster's polarizing angle $i_p$. The angle of refraction $r_p$ inside the glass is:],
   (
     [$60 degree$],
-    [$30 degree$],
-    [$45 degree$],
     [$90 degree$],
+    [$45 degree$],
+    [$30 degree$],
   ),
 )
 #solution(
@@ -572,7 +598,7 @@ At Brewster's polarizing angle of incidence $i_p$, the reflected ray is $100\%$ 
     $tan i_p = mu = sqrt(3) ==> i_p = 60 degree$.
     At Brewster's angle, reflected and refracted rays are perpendicular: $i_p + r_p = 90 degree ==> r_p = 90 degree - 60 degree = 30 degree$.
   ],
-  answer: [B],
+  answer: [D],
 )
 
 #pagebreak()
