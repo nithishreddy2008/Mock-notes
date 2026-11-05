@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CUET Business Studies: Staffing Recruitment, Selection & Training</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 16px 22px;
+    overflow: hidden;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+  }
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .brand-badge {
+    background: #071A4D;
+    color: #B8FF34;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .title-group h1 {
+    font-size: 19px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .title-group p {
+    font-size: 11px;
+    color: #64748B;
+    margin-top: 1px;
+  }
+  .header-tag {
+    background: #EEF2FF;
+    color: #3730A3;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 6px;
+    border: 1px solid #C7D2FE;
+  }
+  .main-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 1.35fr 1.15fr;
+    gap: 14px;
+    height: 740px;
+  }
+  .card {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 10px;
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+  }
+  .card-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+    border-bottom: 1.5px solid #F1F5F9;
+  }
+  .badge {
+    font-size: 10px;
+    font-weight: 800;
+    padding: 3px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+  .badge-blue { background: #DBEAFE; color: #1E40AF; }
+  .badge-purple { background: #F3E8FF; color: #6B21A8; }
+  .badge-emerald { background: #D1FAE5; color: #065F46; }
+  .card-title {
+    font-size: 13px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .sub-box {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 9px 11px;
+    margin-bottom: 8px;
+  }
+  .sub-box:last-child { margin-bottom: 0; }
+  .sub-title {
+    font-size: 11.5px;
+    font-weight: 700;
+    color: #1E293B;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 4px;
+  }
+  .sub-desc {
+    font-size: 10.5px;
+    color: #475569;
+    line-height: 1.38;
+  }
+  .sub-desc strong { color: #0F172A; }
+  .step-list {
+    display: flex;
+    flex-direction: column;
+    gap: 5.5px;
+  }
+  .step-item {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-left: 3.5px solid #0284C7;
+    border-radius: 6px;
+    padding: 6px 9px;
+  }
+  .step-item.alt { border-left-color: #8B5CF6; }
+  .step-item.emerald { border-left-color: #10B981; }
+  .step-item.amber { border-left-color: #F59E0B; }
+  .step-item.rose { border-left-color: #F43F5E; }
+  .step-head {
+    font-size: 11px;
+    font-weight: 700;
+    color: #0F172A;
+    display: flex;
+    justify-content: space-between;
+  }
+  .step-text {
+    font-size: 10px;
+    color: #475569;
+    line-height: 1.3;
+    margin-top: 1.5px;
+  }
+  .bottom-strip {
+    grid-column: 1 / -1;
+    background: #071A4D;
+    color: #FFFFFF;
+    border-radius: 8px;
+    padding: 9px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: -2px;
+  }
+  .strip-title {
+    font-size: 11px;
+    font-weight: 800;
+    color: #B8FF34;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .strip-content {
+    font-size: 10.5px;
+    color: #E2E8F0;
+    line-height: 1.35;
+    flex: 1;
+    margin-left: 16px;
+  }
+  .strip-content strong { color: #FFFFFF; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <div class="brand-badge">OURMOCKS · CUET UG ARCHITECTURE</div>
+    <div class="title-group">
+      <h1>Staffing Dynamics: Recruitment Channels, Selection Hurdle Pipeline & Training Methodologies</h1>
+      <p>Unit 6: Staffing — Sourcing Paradigms, Psychometric Screening, and Skill Acquisition Architectures</p>
+    </div>
+  </div>
+  <div class="header-tag">NCERT & NTA CUET 2027 SPECIFICATION</div>
+</div>
+
+<div class="main-grid">
+  <!-- Column 1: Recruitment Sources -->
+  <div class="card">
+    <div class="card-head">
+      <span class="card-title">Recruitment Architecture (Positive)</span>
+      <span class="badge badge-blue">Talent Sourcing</span>
+    </div>
+    
+    <div class="sub-box">
+      <div class="sub-title">
+        <span style="color:#0284C7; font-weight:800;">1. Internal Sources (Within Firm)</span>
+      </div>
+      <div class="sub-desc">
+        • <strong>Transfers:</strong> Shifting employees between jobs/departments without change in rank, pay, or status.<br>
+        • <strong>Promotions:</strong> Vertical upward movement with higher pay, prestige, and responsibilities.<br>
+        • <strong>Merits:</strong> Economical, boosts employee morale, simplifies induction.<br>
+        • <strong>Demerits:</strong> Infuses no fresh talent, fosters employee complacency, limits competition.
+      </div>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">
+        <span style="color:#8B5CF6; font-weight:800;">2. External Sources (Open Market)</span>
+      </div>
+      <div class="sub-desc">
+        • <strong>Direct Recruitment:</strong> Notice on factory gate for casual laborers.<br>
+        • <strong>Casual Callers:</strong> Database of past unsolicited applicants.<br>
+        • <strong>Campus Recruitment:</strong> Sourcing fresh graduates directly from colleges.<br>
+        • <strong>Placement Agencies:</strong> Specialized agencies for executive search.<br>
+        • <strong>Web Publishing:</strong> Digital portals (Naukri, LinkedIn).<br>
+        • <strong>Merits:</strong> Fresh talent, wide choice, qualified personnel.<br>
+        • <strong>Demerits:</strong> Expensive, time-consuming, causes employee friction.
+      </div>
+    </div>
+  </div>
+
+  <!-- Column 2: 8-Stage Selection Hurdle -->
+  <div class="card">
+    <div class="card-head">
+      <span class="card-title">Selection Hurdle Pipeline (Negative)</span>
+      <span class="badge badge-purple">Screening Funnel</span>
+    </div>
+
+    <div class="step-list">
+      <div class="step-item">
+        <div class="step-head">
+          <span>1. Preliminary Screening</span>
+          <span style="color:#0284C7; font-size:9.5px;">Application Review</span>
+        </div>
+        <div class="step-text">Eliminating unqualified or unfit job seekers based on resume discrepancies.</div>
+      </div>
+
+      <div class="step-item alt">
+        <div class="step-head">
+          <span>2. Selection Tests (Psychometric Suite)</span>
+          <span style="color:#8B5CF6; font-size:9.5px;">5 Core Tests</span>
+        </div>
+        <div class="step-text">
+          • <strong>Intelligence:</strong> IQ & learning capacity.<br>
+          • <strong>Aptitude:</strong> Potential to learn new skills.<br>
+          • <strong>Personality:</strong> Value systems, emotions, maturity.<br>
+          • <strong>Trade:</strong> Existing technical proficiency.<br>
+          • <strong>Interest:</strong> Pattern of personal preferences.
+        </div>
+      </div>
+
+      <div class="step-item emerald">
+        <div class="step-head">
+          <span>3. Employment Interview</span>
+          <span style="color:#10B981; font-size:9.5px;">In-Depth Dialogue</span>
+        </div>
+        <div class="step-text">Formal, comprehensive oral exchange evaluating applicant suitability.</div>
+      </div>
+
+      <div class="step-item amber">
+        <div class="step-head">
+          <span>4. Reference & Background Check</span>
+          <span style="color:#D97706; font-size:9.5px;">Verification</span>
+        </div>
+        <div class="step-text">Verifying character, police records, and past employer performance.</div>
+      </div>
+
+      <div class="step-item rose">
+        <div class="step-head">
+          <span>5. Selection Decision</span>
+          <span style="color:#E11D48; font-size:9.5px;">Managerial Choice</span>
+        </div>
+        <div class="step-text">Final selection made in consultation with the concerned departmental head.</div>
+      </div>
+
+      <div class="step-item">
+        <div class="step-head">
+          <span>6. Medical Exam & Job Offer</span>
+          <span style="color:#0284C7; font-size:9.5px;">Physical Fitness</span>
+        </div>
+        <div class="step-text">Physical fitness check followed by formal letter of appointment (Job Offer).</div>
+      </div>
+
+      <div class="step-item alt">
+        <div class="step-head">
+          <span>7. Contract of Employment</span>
+          <span style="color:#8B5CF6; font-size:9.5px;">Legal Binding</span>
+        </div>
+        <div class="step-text">Signing written contract detailing pay, terms, leave rules, and code of conduct.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Column 3: Training & Development -->
+  <div class="card">
+    <div class="card-head">
+      <span class="card-title">Training & Development Taxonomy</span>
+      <span class="badge badge-emerald">Human Capital</span>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">
+        <span style="color:#059669; font-weight:800;">1. On-the-Job Methods (Learn while Working)</span>
+      </div>
+      <div class="sub-desc">
+        • <strong>Apprenticeship Training:</strong> Trainee is put under direct supervision of a master craftsperson (e.g., plumbers, electricians, ironworkers) for a prescribed multi-year period.<br>
+        • <strong>Internship Training:</strong> Joint program between educational institutes and business firms to balance theory with practical experience.<br>
+        • <strong>Job Rotation:</strong> Moving trainees across departments to gain broad cross-functional competence.
+      </div>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">
+        <span style="color:#0284C7; font-weight:800;">2. Off-the-Job Methods (Learn before Working)</span>
+      </div>
+      <div class="sub-desc">
+        • <strong>Vestibule Training:</strong> Trainees learn on actual machinery located in a simulated, dummy workshop away from the factory floor. Eliminates risk of costly equipment damage and production stoppages.<br>
+        • <strong>Case Studies & Computer Modeling:</strong> Simulating real-world management dilemmas to sharpen executive decision-making.
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Banner -->
+  <div class="bottom-strip">
+    <div class="strip-title">CUET 2027 Key Distinction</div>
+    <div class="strip-content">
+      <strong>Core Conceptual Anchors:</strong> <strong>Recruitment is Positive</strong> (stimulating applications); <strong>Selection is Negative</strong> (rejecting unsuitable candidates); <strong>Aptitude Test</strong> measures potential capacity to acquire new skills; <strong>Trade Test</strong> measures already acquired technical skill; <strong>Vestibule Training</strong> is off-the-job using actual dummy machinery; <strong>Workload Analysis</strong> determines headcount needed; <strong>Workforce Analysis</strong> counts personnel currently available.
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
