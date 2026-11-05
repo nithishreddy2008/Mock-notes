@@ -284,78 +284,63 @@ Modern spreadsheets provide specialized built-in functions for financial modelin
 
 // PAGE 10: FIGURE 2 & PAYROLL ACCOUNTING
 #figure(
-  image("assets/acc_cas_dbms_and_sql.png", width: 84%),
-  caption: [DBMS Architecture & SQL: Data hierarchy, relational keys, DDL vs DML commands, and accounting SQL models.],
+  image("assets/acc_cas_dbms_and_sql.png", width: 70%),
+  caption: [Relational Database & SQL Architecture: DBMS schema, data hierarchy, and core SQL queries.],
 )
 
 = 8. Payroll Accounting & Financial Modeling in Spreadsheets
 
-Payroll accounting computes gross earnings, statutory deductions, and net take-home pay for employees across pay periods.
+Payroll accounting involves calculating gross earnings, statutory deductions, and net salary for all employees on a recurring periodic schedule.
 
-== Mathematical Structure of Payroll
-1. *Gross Salary (Total Earnings):*
-  $ "Gross Salary" = "Basic Pay" + "Dearness Allowance (DA)" + "House Rent Allowance (HRA)" + "Transport Allowance" + "Special Allowances" $
-  - *DA:* Computed as a fixed percentage of Basic Pay (e.g., $40%$ of Basic).
-  - *HRA:* Computed as a percentage of Basic Pay (e.g., $20%$ in metro cities, $10%$ in non-metros).
-2. *Total Statutory Deductions:*
-  $ "Total Deductions" = "Provident Fund (PF)" + "Employee State Insurance (ESI)" + "Professional Tax (PT)" + "Tax Deducted at Source (TDS)" $
-  - *Provident Fund (PF):* Statutorily fixed at *12% of (Basic Pay + DA)*.
-3. *Net Salary (Take-Home Pay):*
-  $ "Net Salary" = "Gross Salary" - "Total Deductions" $
+== Core Components of a Payroll Schedule
+- *Gross Pay:* Basic Pay + Dearness Allowance (DA) + House Rent Allowance (HRA) + Conveyance/Transport Allowance.
+- *Statutory Deductions:*
+  - *Employees' Provident Fund (EPF):* 12% of (Basic Pay + DA).
+  - *Employee State Insurance (ESI):* Statutory percentage of Gross Salary for eligible salary thresholds.
+  - *Professional Tax:* Fixed state-specific statutory levy (e.g., ₹200/month).
+  - *Tax Deducted at Source (TDS):* Progressive income tax deduction based on projected annual tax liability.
+- *Net Salary Formula:*
+  $ "Net Salary" = "Gross Earnings" - "Total Deductions" $
+
+#worked-example("Master Problem — Loan Amortisation & Depreciation Modeling")[
+  1. *Loan EMI Computation:* A company takes a bank loan of ₹6,00,000 at 12% p.a. for 3 years repayable monthly.
+    - Monthly Rate = 12% / 12 = 1% = 0.01; Nper = 3 × 12 = 36 months; Pv = ₹6,00,000.
+    - Spreadsheet formula: `=PMT(0.01, 36, -600000)` yields *₹19,929* per month.
+  2. *Straight-Line Depreciation:* Plant purchased for ₹5,00,000; Salvage value ₹50,000; Useful life 5 years.
+    - Spreadsheet formula: `=SLN(500000, 50000, 5)` yields (₹5,00,000 − ₹50,000) / 5 = *₹90,000* per year.
+]
 
 #pagebreak()
 
 // PAGE 11: SECURITY, CONTROLS & AUDIT TRAIL
 = 9. Security, Internal Controls & Audit Trail in CAS
 
-A computerised accounting environment introduces unique technological vulnerabilities, necessitating comprehensive administrative and digital safeguards.
+Information security in computerised accounting ensures confidentiality, integrity, and availability of financial records.
 
-== Security Threats in CAS
-- *Internal Threats:* Unauthorized data modification by disgruntled employees, accidental deletion of vouchers, fraudulent creation of phantom vendors.
-- *External Threats:* Malware, ransomware infections, hacking, phishing, and denial-of-service attacks.
-- *Physical / Hardware Threats:* Hard disk crashes, server room fires, floods, and power surges.
+== Threats to Accounting Information Systems
+- *Internal Threats:* Unauthorized data alteration, employee fraud, accidental erasure, password sharing.
+- *External Threats:* Malware, ransomware infections, phishing attacks, unauthorized remote intrusions.
 
-== Internal Control Architecture in Modern CAS
-#table(
-  inset: 4.5pt,
-  columns: (1fr, 1.4fr, 1.6fr),
-  table.header[*Control Layer*][*Technical Safeguard*][*Operational Function in Accounting*],
-  [*1. Access Controls*], [User ID & Role-Based Permissions.], [Segregation of duties: Data Entry Clerk can enter vouchers but *cannot approve* or view general ledgers.],
-  [*2. Password Controls*], [Complex passwords & Multi-Factor Auth.], [Mandatory 90-day password expiry, biometric logins, automatic session lockouts.],
-  [*3. Data Vault*], [Encrypted data storage.], [Financial database is stored in an encrypted vault, preventing direct unauthorized file copying.],
-  [*4. Audit Trail*], [Immutable, write-once event log.], [Mandatory log capturing every edit, deletion, user ID, and timestamp. Cannot be disabled!],
-  [*5. Backup & Recovery*], [Automated off-site cloud replication.], [Daily incremental backups and weekly full backups to ensure business continuity.],
-)
+== Multi-tier Access Control Architecture
+1. *Authentication Controls:* Multi-factor authentication (MFA), biometric verification, complex passwords.
+2. *Authorization & Role-Based Access Control (RBAC):* Restricting voucher entry, posting, and reporting privileges by user role.
+3. *Data Encryption:* Cryptographic encoding of database files in transit and at rest.
 
-#important-box(title: "Statutory Mandate: The Audit Trail Rule")[
-  Under the Companies (Accounts) Rules (Ministry of Corporate Affairs, India), every company using accounting software *must use software that has an unalterable audit trail feature* recording an edit log of every transaction modification with exact timestamps!
-]
+== Digital Audit Trail Requirement (MCA Mandate)
+Under the Companies (Accounts) Rules, accounting software used by registered companies must maintain an immutable, unalterable digital audit trail:
+- Automatically logs every transaction creation, modification, and deletion.
+- Captures exact date, time, and user ID timestamps for all edits.
+- The audit trail feature *cannot be disabled or bypassed*.
 
-#pagebreak()
-
-// PAGE 12: MASTER WORKED PROBLEMS — PAYROLL & AMORTISATION
-= 10. Comprehensive Master Worked Problems
+== Data Backup and Recovery Protocol
+- *Grandfather-Father-Son (GFS) Rotation:* Systematic daily, weekly, and monthly offsite backups.
+- *Disaster Recovery Plan (DRP):* Redundant cloud synchronization to maintain business continuity.
 
 #worked-example("Master Problem 1 — Automated Payroll Accounting Schedule")[
-  *Fact Pattern:* Excel Enterprises employs 3 executives whose compensation structure is given below. Basic Pay: Amit ₹60,000; Priya ₹50,000; Rohit ₹40,000.
-  - *Rules:* DA = 40% of Basic Pay; HRA = 20% of Basic Pay; Conveyance = ₹3,000 fixed for all.
-  - *Deductions:* PF = 12% of (Basic + DA); Professional Tax = ₹200 fixed; TDS = 10% of Gross Salary.
-  Construct the payroll sheet and determine Net Salary for each employee.
-
-  *Step-by-Step Calculations for Amit:*
-  1. *Earnings:*
-    - Basic = ₹60,000; DA = 40% × ₹60,000 = ₹24,000.
-    - HRA = 20% × ₹60,000 = ₹12,000; Conveyance = ₹3,000.
-    - Gross Salary = ₹60,000 + ₹24,000 + ₹12,000 + ₹3,000 = *₹99,000*.
-  2. *Deductions:*
-    - PF = 12% × (₹60,000 + ₹24,000) = 12% × ₹84,000 = ₹10,080.
-    - Professional Tax = ₹200; TDS = 10% × ₹99,000 = ₹9,900.
-    - Total Deductions = ₹10,080 + ₹200 + ₹9,900 = *₹20,180*.
-  3. *Net Salary:* Net Salary = ₹99,000 − ₹20,180 = *₹78,820*.
-
-  *Consolidated Payroll Table:*
+  *Fact Pattern:* Excel Enterprises compensation rules: Basic Pay: Amit ₹60,000, Priya ₹50,000, Rohit ₹40,000. DA = 40% of Basic; HRA = 20% of Basic; Conveyance = ₹3,000 fixed. Deductions: PF = 12% of (Basic + DA); Prof. Tax = ₹200; TDS = 10% of Gross.
+  - *Amit Calculations:* Gross = 60,000 + 24,000 + 12,000 + 3,000 = *₹99,000*. Deductions: PF (12% × ₹84,000 = ₹10,080) + Tax ₹200 + TDS (10% × ₹99,000 = ₹9,900) = *₹20,180*. Net Salary = *₹78,820*.
   #table(
-    inset: 4pt,
+    inset: 3.5pt,
     columns: (1fr, 0.9fr, 0.8fr, 0.8fr, 0.9fr, 0.9fr, 0.9fr),
     table.header[*Employee*][*Basic (₹)*][*DA (₹)*][*HRA (₹)*][*Gross (₹)*][*Deductions (₹)*][*Net Salary (₹)*],
     [Amit], [60,000], [24,000], [12,000], [99,000], [20,180], [*78,820*],
@@ -365,19 +350,11 @@ A computerised accounting environment introduces unique technological vulnerabil
   )
 ]
 
-#worked-example("Master Problem 2 — Loan Amortisation & Depreciation Modeling")[
-  1. *Loan EMI Computation:* A company takes a bank loan of ₹6,00,000 at 12% p.a. for 3 years repayable in monthly instalments.
-    - Monthly Rate = 12% / 12 = 1% = 0.01; Nper = 3 × 12 = 36 months; Pv = ₹6,00,000.
-    - Spreadsheet formula: `=PMT(0.01, 36, -600000)` yields *₹19,929* per month.
-  2. *Straight-Line Depreciation:* Plant purchased for ₹5,00,000; Salvage value ₹50,000; Useful life 5 years.
-    - Spreadsheet formula: `=SLN(500000, 50000, 5)` yields (₹5,00,000 − ₹50,000) / 5 = *₹90,000* per year.
-]
-
 #pagebreak()
 
-// PAGE 13: MASTER MINDMAP & SYNTHESIS
+// PAGE 12: MASTER MINDMAP & SYNTHESIS
 #figure(
-  image("assets/acc_cas_mindmap.png", width: 78%),
+  image("assets/acc_cas_mindmap.png", width: 70%),
   caption: [Master Synthesis Mindmap: Structural framework of Unit VI Computerised Accounting System.],
 )
 
@@ -391,7 +368,7 @@ The complete computerised accounting architecture connects four foundational dom
 
 #pagebreak()
 
-// PAGE 14: CHEATSHEET & TOP 7 TRAPS
+// PAGE 13: CHEATSHEET & TOP 7 TRAPS
 #cheatsheet-box(title: "Master Computerised Accounting Revision Cheatsheet")[
   - *AIS Five Pillars:* Hardware, Software, People, Procedures, Data. Transaction entered once via digital voucher!
   - *Software Sourcing:* Ready-to-use (Low cost, rigid) | Customised (Moderate cost) | Tailor-made (High cost, bespoke).
@@ -417,7 +394,7 @@ The complete computerised accounting architecture connects four foundational dom
 
 #pagebreak()
 
-// PAGE 15: PRACTICE MCQS (Q1 - Q5)
+// PAGE 14: PRACTICE MCQS (Q1 - Q5)
 = CUET UG Exam-Style Practice Questions
 
 #mcq(
@@ -442,15 +419,15 @@ The complete computerised accounting architecture connects four foundational dom
   2,
   [A large nationalized bank requiring unique, confidential, and multi-branch transaction software should ideally opt for which type of software?],
   (
-    [Ready-to-Use Software],
     [Tailor-Made (Bespoke) Software],
+    [Ready-to-Use Software],
     [Generic Spreadsheet Software],
     [Off-the-shelf Free Software],
   ),
 )
 #solution(
   2,
-  answer: [B],
+  answer: [A],
   [
     Large corporations and banks with specialized, high-volume, and confidential transactions require tailor-made (bespoke) software developed specifically to match their unique operational and security needs.
   ],
@@ -460,15 +437,15 @@ The complete computerised accounting architecture connects four foundational dom
   3,
   [In a Relational Database Management System (RDBMS), the rows and columns of a table are formally termed as:],
   (
-    [Fields and Records],
     [Tuples and Attributes],
+    [Fields and Records],
     [Keys and Domains],
     [Entities and Schemas],
   ),
 )
 #solution(
   3,
-  answer: [B],
+  answer: [A],
   [
     In formal relational database theory, rows representing individual records are called *Tuples*, and columns representing specific data characteristics are called *Attributes*.
   ],
@@ -512,20 +489,20 @@ The complete computerised accounting architecture connects four foundational dom
 
 #pagebreak()
 
-// PAGE 16: PRACTICE MCQS (Q6 - Q10)
+// PAGE 15: PRACTICE MCQS (Q6 - Q10)
 #mcq(
   6,
   [In an SQL query, which clause is used to filter records AFTER an aggregate function has been applied?],
   (
-    [WHERE],
     [HAVING],
+    [WHERE],
     [ORDER BY],
     [GROUP BY],
   ),
 )
 #solution(
   6,
-  answer: [B],
+  answer: [A],
   [
     The `HAVING` clause is used to filter aggregated group results created by `GROUP BY`. In contrast, the `WHERE` clause filters individual records before any grouping or aggregation takes place.
   ],
@@ -535,15 +512,15 @@ The complete computerised accounting architecture connects four foundational dom
   7,
   [If the formula `=$A$1*B1` located in cell `C1` is copied and pasted into cell `C2`, what formula will appear in cell `C2`?],
   (
-    [`=$A$2*B2`],
     [`=$A$1*B2`],
+    [`=$A$2*B2`],
     [`=A1*B2`],
     [`=$A$1*$B$1`],
   ),
 )
 #solution(
   7,
-  answer: [B],
+  answer: [A],
   [
     `$A$1` is an absolute reference and remains fixed. `B1` is a relative reference and shifts down one row to `B2`. Thus, the copied formula becomes `=$A$1*B2`.
   ],
@@ -572,14 +549,14 @@ The complete computerised accounting architecture connects four foundational dom
   [A machine is purchased for ₹2,00,000 with an estimated salvage value of ₹20,000 and a useful life of 5 years. What is the annual depreciation returned by the spreadsheet formula `=SLN(200000, 20000, 5)`?],
   (
     [₹40,000],
-    [₹36,000],
-    [₹44,000],
     [₹30,000],
+    [₹44,000],
+    [₹36,000],
   ),
 )
 #solution(
   9,
-  answer: [B],
+  answer: [D],
   [
     `SLN` computes Straight-Line Depreciation: (Cost − Salvage) / Life = (₹2,00,000 − ₹20,000) / 5 = ₹1,80,000 / 5 = *₹36,000*.
   ],
@@ -590,14 +567,14 @@ The complete computerised accounting architecture connects four foundational dom
   [When using the `VLOOKUP` function to retrieve an exact ledger balance matching an account code, what value should be passed as the fourth argument (`[range_lookup]`)?],
   (
     [`TRUE` or `1`],
-    [`FALSE` or `0`],
     [`"APPROX"`],
+    [`FALSE` or `0`],
     [`OMITTED`],
   ),
 )
 #solution(
   10,
-  answer: [B],
+  answer: [C],
   [
     Setting the fourth argument to `FALSE` (or `0`) forces `VLOOKUP` to find an exact match for the lookup key, preventing erroneous approximate data retrieval.
   ],
@@ -605,20 +582,20 @@ The complete computerised accounting architecture connects four foundational dom
 
 #pagebreak()
 
-// PAGE 17: PRACTICE MCQS (Q11 - Q15)
+// PAGE 16: PRACTICE MCQS (Q11 - Q15)
 #mcq(
   11,
   [An employee has a Basic Pay of ₹40,000 and Dearness Allowance (DA) of ₹16,000. Statutory Provident Fund (PF) deduction @ 12% amounts to:],
   (
     [₹4,800],
-    [₹6,720],
-    [₹1,920],
     [₹5,600],
+    [₹1,920],
+    [₹6,720],
   ),
 )
 #solution(
   11,
-  answer: [B],
+  answer: [D],
   [
     Under statutory payroll rules, Provident Fund is calculated at 12% on (Basic Pay + DA): 12% × (₹40,000 + ₹16,000) = 12% × ₹56,000 = *₹6,720*.
   ],
