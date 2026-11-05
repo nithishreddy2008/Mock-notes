@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1440px;
+    height: 880px;
+    background: #F8FAFC;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px 32px;
+    overflow: hidden;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #071A4D;
+    padding: 16px 28px;
+    border-radius: 12px;
+    border-bottom: 4px solid #1F5EFF;
+    margin-bottom: 16px;
+  }
+  .header-left h1 {
+    color: #FFFFFF;
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+  }
+  .header-left p {
+    color: #94A3B8;
+    font-size: 13px;
+    font-weight: 500;
+    margin-top: 3px;
+  }
+  .badge {
+    background: #1F5EFF;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+  }
+  .main-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    height: 740px;
+  }
+  .card {
+    background: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    border-radius: 12px;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+  }
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #E2E8F0;
+    margin-bottom: 12px;
+  }
+  .card-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: #EFF6FF;
+    color: #1F5EFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 15px;
+  }
+  .card-title {
+    font-size: 15px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .card-subtitle {
+    font-size: 11px;
+    color: #64748B;
+  }
+  .sub-box {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin-bottom: 10px;
+  }
+  .sub-title {
+    font-size: 12.5px;
+    font-weight: 800;
+    color: #1E293B;
+    margin-bottom: 4px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .sub-title span {
+    font-size: 11px;
+    color: #1F5EFF;
+    font-weight: 700;
+  }
+  .detail-list {
+    font-size: 11px;
+    line-height: 1.45;
+    color: #334155;
+  }
+  .detail-list li {
+    margin-left: 14px;
+    margin-bottom: 2px;
+  }
+  .tag {
+    display: inline-block;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 700;
+  }
+  .tag-green { background: #DCFCE7; color: #166534; }
+  .tag-blue { background: #DBEAFE; color: #1E40AF; }
+  .tag-amber { background: #FEF3C7; color: #92400E; }
+  .tag-purple { background: #F3E8FF; color: #6B21A8; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <h1>GLOBAL COMMONS, CBDR PRINCIPLE & ENVIRONMENTAL GEOPOLITICS</h1>
+    <p>CUET UG Political Science · Unit VI · Climate Treaties, North-South Divide, Resource Conflicts & Indigenous Rights</p>
+  </div>
+  <div class="badge">NTA HIGH-FREQUENCY MATRIX</div>
+</div>
+
+<div class="main-grid">
+  <!-- Col 1: Global Commons & Treaties -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon">1</div>
+      <div>
+        <div class="card-title">The Four Global Commons</div>
+        <div class="card-subtitle">Res Communis Beyond National Jurisdiction</div>
+      </div>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">Defining Global Commons <span class="tag tag-blue">Jurisdiction</span></div>
+      <ul class="detail-list">
+        <li>Resources not owned by any single sovereign state, requiring common global governance.</li>
+        <li><strong>Four Recognized Commons:</strong> The Earth's Atmosphere, Antarctica, the Ocean Floor (High Seas), and Outer Space.</li>
+        <li>Governed under the international legal principle of <em>res communis</em> (common heritage of mankind).</li>
+      </ul>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">Antarctica & Polar Treaties <span class="tag tag-green">Treaty Regimes</span></div>
+      <ul class="detail-list">
+        <li><strong>Antarctic Treaty (1959):</strong> Demilitarized Antarctica; froze territorial claims; dedicated continent to peaceful scientific research.</li>
+        <li><strong>Madrid Protocol (1991):</strong> Protocol on Environmental Protection to the Antarctic Treaty; banned commercial mining exploration indefinitely.</li>
+      </ul>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">Ozone Layer & Atmosphere <span class="tag tag-amber">Montreal 1987</span></div>
+      <ul class="detail-list">
+        <li><strong>Montreal Protocol (1987):</strong> Legally binding global treaty mandating the phase-out of chlorofluorocarbons (CFCs) and ozone-depleting substances.</li>
+        <li>Considered the most successful international environmental agreement in history.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Col 2: The North-South Divide & CBDR -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon">2</div>
+      <div>
+        <div class="card-title">North-South Divide & CBDR</div>
+        <div class="card-subtitle">Historical Responsibility vs Right to Development</div>
+      </div>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">Foundational Reports <span class="tag tag-purple">Intellectual Roots</span></div>
+      <ul class="detail-list">
+        <li><strong>Club of Rome (1972):</strong> Published <em>Limits to Growth</em>, warning of finite resource exhaustion.</li>
+        <li><strong>Brundtland Report (1987):</strong> Published <em>Our Common Future</em>, formalizing the concept of <strong>Sustainable Development</strong>.</li>
+      </ul>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">Rio Earth Summit (June 1992) <span class="tag tag-blue">UNCED</span></div>
+      <ul class="detail-list">
+        <li>Convened in Rio de Janeiro, Brazil; produced <strong>Agenda 21</strong> (action blueprint).</li>
+        <li>Birthed the <strong>UNFCCC</strong> (Climate Change) and the Convention on Biological Diversity (CBD).</li>
+        <li>Enshrined <strong>CBDR (Principle 7)</strong>: Common But Differentiated Responsibilities.</li>
+      </ul>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">Kyoto Protocol vs Paris Agreement <span class="tag tag-amber">Emission Regimes</span></div>
+      <ul class="detail-list">
+        <li><strong>Kyoto Protocol (1997):</strong> Set legally binding cuts (5% below 1990 levels) exclusively for developed Annex-I countries. India ratified in August 2002.</li>
+        <li><strong>Paris Agreement (2015):</strong> Shifted to bottom-up Nationally Determined Contributions (NDCs) targeting well below 2°C / 1.5°C limits.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Col 3: Resource Geopolitics & Indigenous Rights -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon">3</div>
+      <div>
+        <div class="card-title">Resource Geopolitics & Indigenous Rights</div>
+        <div class="card-subtitle">Petroleum, Water Wars, Adivasis & India's Leadership</div>
+      </div>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">Geopolitics of Oil & Water <span class="tag tag-amber">Strategic Resources</span></div>
+      <ul class="detail-list">
+        <li><strong>Oil Hegemony:</strong> The Persian Gulf houses ~64% of global crude oil reserves. Major driver of Gulf War (1990–91) and Iraq invasion (2003).</li>
+        <li><strong>Water Wars:</strong> Upstream damming vs downstream flow conflicts across the Jordan river, Euphrates-Tigris basin, and the Nile river basin.</li>
+      </ul>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">Indigenous Peoples' Rights <span class="tag tag-purple">WCIP 1975</span></div>
+      <ul class="detail-list">
+        <li><strong>UN Definition:</strong> Descendants of original inhabitants prior to conquest who maintain distinct socio-cultural institutions.</li>
+        <li><strong>WCIP (1975):</strong> World Council of Indigenous Peoples formed to lobby the UN.</li>
+        <li><strong>Indian Context:</strong> Refers to <em>Scheduled Tribes (Adivasis)</em>, who constitute ~8% of the population, rather than European settler-colonial categories.</li>
+      </ul>
+    </div>
+
+    <div class="sub-box">
+      <div class="sub-title">India's Environmental Leadership <span class="tag tag-green">National Strategy</span></div>
+      <ul class="detail-list">
+        <li><strong>NAPCC (2008):</strong> National Action Plan on Climate Change with 8 National Missions (Solar, Water, Green India, etc.).</li>
+        <li><strong>International Solar Alliance (ISA, 2015):</strong> Co-founded by India & France at COP21; headquartered in Gurugram, India.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
