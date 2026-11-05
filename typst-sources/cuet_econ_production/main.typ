@@ -29,7 +29,8 @@
 #pagebreak()
 
 
-#set text(size: 10.0pt)
+#set text(size: 9.5pt)
+#set par(leading: 0.38em, spacing: 0.40em)
 #set par(leading: 0.46em, spacing: 0.48em)
 = 1. The Production Function: Core Concepts & Time Horizons
 
@@ -387,7 +388,7 @@ Profit is defined as $pi = T R - T C$. Maximizing profit requires two golden con
 #pagebreak()
 
 #figure(
-  image("assets/econ_production_costs_mindmap.png", width: 88%),
+  image("assets/econ_production_costs_mindmap.png", width: 70%),
   caption: [Figure 3: Comprehensive Synthesis Mindmap of Production & Cost Theory: Short-Run Laws, Long-Run Optimization, Cost Dualities, and Revenue Structures],
 )
 
@@ -438,163 +439,144 @@ Profit is defined as $pi = T R - T C$. Maximizing profit requires two golden con
   7. *LAC Tangency to Minimum SAC:* $L A C$ is tangent to the minimum of an $S A C$ curve *only at the single lowest point of the LAC curve itself*! On the falling phase, $L A C$ touches $S A C$ on its falling segment; on the rising phase, it touches $S A C$ on its rising segment.
 ]
 
----
-
 #pagebreak()
 #set text(size: 8.5pt)
 #set par(leading: 0.40em, spacing: 0.42em)
 
-#block(width: 100%, inset: (y: 4pt, x: 8pt), fill: om-navy, radius: 3pt)[
-  #text(fill: white, font: om-display-font, size: 12pt, weight: 800)[Practice Questions (Exam Pattern) — Part 1 (Q1 to Q5)]
-]
-#set text(size: 8.5pt)
+= Practice Questions — Part 1 (Q1 to Q5)
 
 #mcq(1, [According to the Law of Variable Proportions, a rational producer will always operate in:], (
-  [(A) Stage I where Marginal Product is increasing],
-  [(B) Stage II where both A P and M P are falling but M P is positive],
-  [(C) Stage III where Total Product is maximized],
-  [(D) Either Stage I or Stage III depending on input prices],
+  [Stage II where both A P and M P are falling but M P is positive],
+  [Stage I where Marginal Product is increasing],
+  [Stage III where Total Product is maximized],
+  [Either Stage I or Stage III depending on input prices],
 ))
-#solution(1, [A rational producer will never produce in Stage I because the fixed factor is under-utilized, meaning expanding employment increases average productivity ($A P$ is rising). A producer will never produce in Stage III because Marginal Product is negative ($M P < 0$), meaning additional workers physically reduce total output. Therefore, the rational firm operates exclusively in Stage II (Diminishing Returns), where $M P > 0$ and $A P$ is declining.], answer: "B")
+#solution(1, [A rational producer will never produce in Stage I because the fixed factor is under-utilized, meaning expanding employment increases average productivity ($A P$ is rising). A producer will never produce in Stage III because Marginal Product is negative ($M P < 0$), meaning additional workers physically reduce total output. Therefore, the rational firm operates exclusively in Stage II (Diminishing Returns), where $M P > 0$ and $A P$ is declining.], answer: "A")
 
 #mcq(2, [At the Point of Inflection on the Total Product (TP) curve:], (
-  [(A) Total Product is at its absolute maximum],
-  [(B) Average Product is equal to Marginal Product],
-  [(C) Marginal Product reaches its maximum value],
-  [(D) Marginal Product is equal to zero],
+  [Total Product is at its absolute maximum],
+  [Average Product is equal to Marginal Product],
+  [Marginal Product reaches its maximum value],
+  [Marginal Product is equal to zero],
 ))
 #solution(2, [The point of inflection marks the transition point where the $T P$ curve ceases to be convex to the origin and becomes concave. Geometrically, this means the slope of the $T P$ curve ($d(T P)/d L = M P$) stops increasing and begins to decrease. Thus, at the point of inflection, Marginal Product ($M P$) achieves its absolute maximum peak value.], answer: "C")
 
 #mcq(3, [When Average Product ($A P$) is at its maximum point, the relationship between $A P$ and $M P$ is:], (
-  [(A) $M P > A P$],
-  [(B) $M P < A P$],
-  [(C) $M P = A P$],
-  [(D) $M P = 0$],
+  [$M P = A P$],
+  [$M P < A P$],
+  [$M P > A P$],
+  [$M P = 0$],
 ))
-#solution(3, [Mathematically, $frac(d(A P), d L) = frac(1, L)(M P - A P)$. When $A P$ reaches its maximum, its first derivative with respect to labor equals zero ($frac(d(A P), d L) = 0$). This directly requires $M P - A P = 0 ==> M P = A P$. Thus, the Marginal Product curve cuts the Average Product curve from above at the exact peak of the $A P$ curve.], answer: "C")
+#solution(3, [Mathematically, $frac(d(A P), d L) = frac(1, L)(M P - A P)$. When $A P$ reaches its maximum, its first derivative with respect to labor equals zero ($frac(d(A P), d L) = 0$). This directly requires $M P - A P = 0 ==> M P = A P$. Thus, the Marginal Product curve cuts the Average Product curve from above at the exact peak of the $A P$ curve.], answer: "A")
 
 #mcq(4, [Total Product ($T P$) is maximized when:], (
-  [(A) Average Product ($A P$) is zero],
-  [(B) Marginal Product ($M P$) is zero],
-  [(C) Marginal Product ($M P$) is at its maximum],
-  [(D) Average Product ($A P$) equals Marginal Product ($M P$)],
+  [Average Product ($A P$) is zero],
+  [Marginal Product ($M P$) is zero],
+  [Marginal Product ($M P$) is at its maximum],
+  [Average Product ($A P$) equals Marginal Product ($M P$)],
 ))
 #solution(4, [By basic differential calculus, a continuous function reaches its maximum when its first derivative equals zero. Since $M P = frac(d(T P), d L)$, Total Product reaches its peak (the boundary between Stage II and Stage III) precisely when $M P = 0$. Once $M P$ turns negative, $T P$ begins to decline.], answer: "B")
 
 #mcq(5, [If a firm doubles all its inputs simultaneously and output increases by 150%, the production function exhibits:], (
-  [(A) Constant Returns to Scale],
-  [(B) Diminishing Returns to a Variable Factor],
-  [(C) Increasing Returns to Scale],
-  [(D) Decreasing Returns to Scale],
+  [Constant Returns to Scale],
+  [Diminishing Returns to a Variable Factor],
+  [Increasing Returns to Scale],
+  [Decreasing Returns to Scale],
 ))
 #solution(5, [Doubling inputs represents a 100% increase in all factor inputs. The resulting increase in output is 150%. Because the percentage increase in output (150%) strictly exceeds the percentage increase in inputs (100%), the firm is experiencing Increasing Returns to Scale (IRS). Note: "Returns to a variable factor" applies only when one factor is fixed, whereas here ALL inputs were doubled.], answer: "C")
 
----
-
-
+#pagebreak()
 #set text(size: 8.5pt)
 #set par(leading: 0.40em, spacing: 0.42em)
 
 = Practice Questions — Part 2 (Q6 to Q10)
 
-#pagebreak()
-
-#block(width: 100%, inset: (y: 4pt, x: 8pt), fill: om-navy, radius: 3pt)[
-  #text(fill: white, font: om-display-font, size: 12pt, weight: 800)[Practice Questions (Exam Pattern) — Part 2 (Q6 to Q10)]
-]
-#set text(size: 8.5pt)
-
 #mcq(6, [Which of the following cost curves is shaped as a rectangular hyperbola?], (
-  [(A) Total Fixed Cost (TFC)],
-  [(B) Average Variable Cost (AVC)],
-  [(C) Marginal Cost (MC)],
-  [(D) Average Fixed Cost (AFC)],
+  [Total Fixed Cost (TFC)],
+  [Average Variable Cost (AVC)],
+  [Marginal Cost (MC)],
+  [Average Fixed Cost (AFC)],
 ))
 #solution(6, [Average Fixed Cost is defined as $A F C = frac(T F C, Q)$, which rearranges to $A F C times Q = T F C = "Constant"$. In coordinate geometry, any equation of the form $x times y = c$ represents an equilateral or rectangular hyperbola. The area under the curve is constant ($T F C$) at every output level, and the curve is asymptotic to both axes.], answer: "D")
 
 #mcq(7, [A firm produces 0 units of output. Its Total Variable Cost is ₹0 and its Total Cost is ₹150. If output increases to 10 units and Total Cost becomes ₹350, the Total Variable Cost at 10 units is:], (
-  [(A) ₹150],
-  [(B) ₹200],
-  [(C) ₹350],
-  [(D) ₹500],
+  [₹150],
+  [₹200],
+  [₹350],
+  [₹500],
 ))
 #solution(7, [At zero output ($Q = 0$), $T C = T F C + T V C ==> 150 = T F C + 0 ==> T F C = ₹150$. Because fixed costs are constant regardless of output, $T F C$ remains ₹150 at 10 units of output. Therefore, $T V C(10) = T C(10) - T F C = 350 - 150 = ₹200$.], answer: "B")
 
 #mcq(8, [The vertical distance between the Total Cost (TC) curve and the Total Variable Cost (TVC) curve is always equal to:], (
-  [(A) Marginal Cost (MC)],
-  [(B) Average Fixed Cost (AFC)],
-  [(C) Total Fixed Cost (TFC)],
-  [(D) Zero as output increases],
+  [Marginal Cost (MC)],
+  [Average Fixed Cost (AFC)],
+  [Zero as output increases],
+  [Total Fixed Cost (TFC)],
 ))
-#solution(8, [By definition, $T C = T F C + T V C$. Subtracting $T V C$ from both sides gives $T C - T V C = T F C$. Because Total Fixed Cost ($T F C$) is a constant positive amount at all output levels, the vertical distance between the two curves is strictly constant and equal to $T F C$ at every single point along the output axis.], answer: "C")
+#solution(8, [By definition, $T C = T F C + T V C$. Subtracting $T V C$ from both sides gives $T C - T V C = T F C$. Because Total Fixed Cost ($T F C$) is a constant positive amount at all output levels, the vertical distance between the two curves is strictly constant and equal to $T F C$ at every single point along the output axis.], answer: "D")
 
 #mcq(9, [The Marginal Cost (MC) curve intersects the Average Total Cost (ATC) curve and Average Variable Cost (AVC) curve:], (
-  [(A) At their respective minimum points],
-  [(B) At their respective maximum points],
-  [(C) While both curves are still falling],
-  [(D) At the point where A F C is zero],
+  [At their respective minimum points],
+  [At their respective maximum points],
+  [While both curves are still falling],
+  [At the point where A F C is zero],
 ))
 #solution(9, [By the Dual-Cut Theorem, whenever Marginal Cost is below Average Cost ($M C < A C$), it pulls Average Cost down; whenever $M C > A C$, it pulls Average Cost up. Consequently, $M C$ must intersect both $A V C$ and $A T C$ from below at their exact lowest (minimum) points. Furthermore, the minimum of $A V C$ occurs at a lower output than the minimum of $A T C$.], answer: "A")
 
 #mcq(10, [If factory rent increases from ₹10,000 to ₹15,000 per month, how does this affect the firm's Marginal Cost (MC) curve?], (
-  [(A) The M C curve shifts upward],
-  [(B) The M C curve shifts downward],
-  [(C) The M C curve remains completely unchanged],
-  [(D) The M C curve rotates clockwise],
+  [The M C curve shifts upward],
+  [The M C curve shifts downward],
+  [The M C curve remains completely unchanged],
+  [The M C curve rotates clockwise],
 ))
 #solution(10, [Factory rent is a contractual fixed cost ($T F C$). Marginal cost is the change in variable cost or total cost from one additional unit: $M C_n = T V C_n - T V C_(n-1)$. Because $Delta T F C$ is independent of output, fixed costs cancel out completely in the derivative ($frac(d(T F C), d Q) = 0$). An increase in fixed costs shifts $T F C, T C$, and $A T C$ upward, but leaves $M C$ entirely unaffected.], answer: "C")
 
----
-
-
+#pagebreak()
 #set text(size: 8.5pt)
 #set par(leading: 0.40em, spacing: 0.42em)
 
 = Practice Questions — Part 3 (Q11 to Q15)
 
-#pagebreak()
-
-#block(width: 100%, inset: (y: 4pt, x: 8pt), fill: om-navy, radius: 3pt)[
-  #text(fill: white, font: om-display-font, size: 12pt, weight: 800)[Practice Questions (Exam Pattern) — Part 3 (Q11 to Q15)]
-]
-#set text(size: 8.5pt)
-
 #mcq(11, [As output expands, the vertical distance between Average Total Cost (ATC) and Average Variable Cost (AVC):], (
-  [(A) Remains constant throughout],
-  [(B) Increases continuously],
-  [(C) Decreases continuously and they eventually intersect],
-  [(D) Decreases continuously but they never intersect],
+  [Remains constant throughout],
+  [Increases continuously],
+  [Decreases continuously and they eventually intersect],
+  [Decreases continuously but they never intersect],
 ))
 #solution(11, [The vertical distance between $A T C$ and $A V C$ is $A T C - A V C = A F C$. As output $Q$ increases, $A F C = T F C / Q$ declines continuously toward zero, causing the curves to get closer and closer. However, since $T F C > 0$, $A F C$ is always strictly positive ($A F C > 0$), meaning $A T C$ and $A V C$ can never intersect or touch!], answer: "D")
 
 #mcq(12, [The total area enclosed under the Marginal Cost (MC) curve from $Q = 0$ to output $Q_1$ represents:], (
-  [(A) Total Fixed Cost (TFC)],
-  [(B) Total Cost (TC)],
-  [(C) Total Variable Cost (TVC)],
-  [(D) Average Total Cost (ATC)],
+  [Total Fixed Cost (TFC)],
+  [Total Cost (TC)],
+  [Total Variable Cost (TVC)],
+  [Average Total Cost (ATC)],
 ))
-#solution(12, [Mathematically, the definite integral of Marginal Cost is $integral_0^(Q_1) M C \, d q = T C(Q_1) - T C(0)$. Since $T C(0) = T F C$, we have $integral_0^(Q_1) M C \, d q = (T F C + T V C(Q_1)) - T F C = T V C(Q_1)$. The area under the $M C$ curve is strictly equal to Total Variable Cost, NOT Total Cost!], answer: "C")
+#solution(12, [By the Fundamental Theorem of Calculus, the definite integral of Marginal Cost ($M C = d(T V C)/d Q$) with respect to output is $integral_0^(Q_1) M C space d Q = T V C(Q_1) - T V C(0) = T V C(Q_1)$ (since $T V C(0) = 0$). Therefore, the area under the $M C$ curve strictly equals Total Variable Cost ($T V C$), NOT Total Cost ($T C$). To get $T C$, one must add $T F C$.], answer: "C")
 
 #mcq(13, [In a Cobb-Douglas production function $Q = 5 K^(0.4) L^(0.8)$, the production function demonstrates:], (
-  [(A) Constant Returns to Scale],
-  [(B) Decreasing Returns to Scale],
-  [(C) Increasing Returns to Scale],
-  [(D) Negative Returns to Scale],
+  [Increasing Returns to Scale],
+  [Decreasing Returns to Scale],
+  [Constant Returns to Scale],
+  [Negative Returns to Scale],
 ))
-#solution(13, [For a Cobb-Douglas production function of the form $Q = A K^alpha L^beta$, returns to scale are determined by the sum of powers ($alpha + beta$). Here, $alpha = 0.4$ and $beta = 0.8$. Summing them: $0.4 + 0.8 = 1.2$. Since $1.2 > 1$, output expands more than proportionately when all inputs are scaled up, establishing Increasing Returns to Scale (IRS).], answer: "C")
+#solution(13, [For a generalized Cobb-Douglas production function $Q = A K^alpha L^beta$, returns to scale are determined by the sum of exponents $(alpha + beta)$:
+- If $alpha + beta = 1$, Constant Returns to Scale (CRS).
+- If $alpha + beta > 1$, Increasing Returns to Scale (IRS).
+- If $alpha + beta < 1$, Decreasing Returns to Scale (DRS).
+Here, $alpha + beta = 0.4 + 0.8 = 1.2 > 1$. Therefore, the function exhibits *Increasing Returns to Scale* (IRS).], answer: "A")
 
-#mcq(14, [Why does the minimum point of the Average Total Cost (ATC) curve occur at a higher output level than the minimum point of the Average Variable Cost (AVC) curve?], (
-  [(A) Because M C cuts A T C before cutting AVC],
-  [(B) Because falling A F C continues to pull A T C down even after A V C has started rising],
-  [(C) Because T F C increases at higher output levels],
-  [(D) Because of diminishing returns to capital in the long run],
+#mcq(14, [Why does the minimum point of the Average Total Cost (ATC) curve lie to the RIGHT of the minimum point of the Average Variable Cost (AVC) curve?], (
+  [Because M C cuts A T C before cutting AVC],
+  [Because falling A F C continues to pull A T C down even after AVC has begun to rise],
+  [Because T F C increases at higher output levels],
+  [Because of diminishing returns to capital in the short run],
 ))
-#solution(14, [$A T C = A V C + A F C$. At the output where $A V C$ reaches its minimum, $A F C$ is still falling steeply. Over the next few units of output, the drop in $A F C$ is larger than the slight rise in $A V C$, which keeps net $A T C$ falling. Only when the rise in $A V C$ outweighs the drop in $A F C$ does $A T C$ finally hit bottom and begin to rise. Hence, $Q_("min ATC") > Q_("min AVC")$.], answer: "B")
+#solution(14, [By definition, $A T C = A V C + A F C$. When $A V C$ reaches its minimum point and begins to rise slowly, $A F C$ is still falling steeply. Over a certain range of output, the rate of decline in $A F C$ exceeds the rate of increase in $A V C$. Thus, the net combined sum ($A T C$) continues to fall even after $A V C$ has turned upward. $A T C$ reaches its minimum only when the upward pull of $A V C$ exactly offsets the downward pull of $A F C$, which occurs at a higher output level ($Q_("min ATC") > Q_("min AVC")$).], answer: "B")
 
 #mcq(15, [The Long-Run Average Cost (LAC) curve is often called the "Envelope Curve" because:], (
-  [(A) It encloses all possible profit levels of the firm],
-  [(B) It is tangent to and envelopes a family of Short-Run Average Cost (SAC) curves],
-  [(C) It passes through the minimum points of all S A C curves],
-  [(D) It has a constant horizontal shape like an envelope flap],
+  [It encloses all possible profit levels of the firm],
+  [It is tangent to and envelopes a family of Short-Run Average Cost (SAC) curves],
+  [It passes through the minimum points of all S A C curves],
+  [It has a constant horizontal shape like an envelope],
 ))
-#solution(15, [In the long run, a firm can select from an infinite variety of plant sizes, each represented by a short-run $S A C$ curve. The $L A C$ curve surrounds and supports all these individual curves, forming an envelope tangent to each $S A C$ curve at some output level. Note that $L A C$ is tangent to the minimum of an $S A C$ ONLY at the single lowest point of the $L A C$ curve itself (Option C is a classic false trap).], answer: "B")
+#solution(15, [In the long run, all inputs are variable and the firm can choose among various plant sizes, each represented by a Short-Run Average Cost ($S A C$) curve. The Long-Run Average Cost ($L A C$) curve is formed by drawing a smooth curve that is tangent to each of these individual $S A C$ curves from below, effectively forming an outer "envelope" that encloses all short-run operational alternatives. Note: It is tangent to the minimum point of an $S A C$ curve ONLY at the single absolute minimum point of the $L A C$ curve itself (the optimal plant size).], answer: "B")
