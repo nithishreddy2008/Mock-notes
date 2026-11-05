@@ -467,8 +467,8 @@ A transformer is a static electromagnetic device that steps AC voltage up or dow
   2,
   [A metal rod of length $1.0" m"$ rotates about one of its ends in a plane perpendicular to a uniform magnetic field $B = 0.50" T"$ at an angular velocity of $100" rad/s"$. The potential difference induced between the two ends of the rod is:],
   (
-    [$50" V"$],
     [$25" V"$],
+    [$50" V"$],
     [$100" V"$],
     [$12.5" V"$],
   ),
@@ -478,7 +478,7 @@ A transformer is a static electromagnetic device that steps AC voltage up or dow
   [
     Induced EMF in a rotating rod: $e = 1/2 B omega l^2 = 1/2 times 0.50 times 100 times (1.0)^2 = 25" V"$.
   ],
-  answer: [B],
+  answer: [A],
 )
 
 #mcq(
@@ -523,8 +523,8 @@ A transformer is a static electromagnetic device that steps AC voltage up or dow
   (
     [Charge],
     [Linear Momentum],
-    [Energy],
     [Angular Momentum],
+    [Energy],
   ),
 )
 #solution(
@@ -532,7 +532,7 @@ A transformer is a static electromagnetic device that steps AC voltage up or dow
   [
     Lenz's law ensures mechanical work done in moving a magnet against opposing electromagnetic forces is transformed into electrical/thermal energy, adhering to the Conservation of Energy.
   ],
-  answer: [C],
+  answer: [D],
 )
 
 #pagebreak()
@@ -562,9 +562,9 @@ A transformer is a static electromagnetic device that steps AC voltage up or dow
   [A series LCR circuit has $R = 8.0 Omega$, $X_L = 12.0 Omega$, and $X_C = 6.0 Omega$. The power factor of the circuit is:],
   (
     [$0.60$],
-    [$0.80$],
-    [$1.0$],
     [$0.50$],
+    [$1.0$],
+    [$0.80$],
   ),
 )
 #solution(
@@ -574,7 +574,7 @@ A transformer is a static electromagnetic device that steps AC voltage up or dow
     Impedance $Z = sqrt(R^2 + X^2) = sqrt(8^2 + 6^2) = sqrt(64 + 36) = 10 Omega$.
     Power factor $cos phi = R / Z = 8.0 / 10.0 = 0.80$.
   ],
-  answer: [B],
+  answer: [D],
 )
 
 #mcq(
