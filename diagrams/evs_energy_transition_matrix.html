@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 600px;
+    background: #FFFFFF;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .title-block p {
+    font-size: 11.5px;
+    color: #64748B;
+    margin-top: 3px;
+    font-weight: 600;
+  }
+  .badge {
+    background: #EEF1F8;
+    color: #1F5EFF;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 12px;
+  }
+  th {
+    background: #071A4D;
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 7px 8px;
+    text-align: left;
+    border: 1px solid #CBD5E1;
+  }
+  td {
+    font-size: 10.5px;
+    padding: 6.5px 8px;
+    border: 1px solid #E2E8F0;
+    line-height: 1.35;
+  }
+  tr:nth-child(even) { background: #F8FAFC; }
+  .vector { font-weight: 800; color: #1E3A8A; }
+  .physics { color: #334155; }
+  .efficiency { font-weight: 700; color: #0284C7; }
+  .impact { font-weight: 600; color: #DC2626; }
+  .invariant { font-weight: 700; color: #047857; }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    color: #94A3B8;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 8px;
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <div class="title-block">
+      <h1>Energy Systems, Thermodynamic Efficiencies & Decarbonization Pathways</h1>
+      <p>Comparative Matrix: Conversion Mechanisms, Capacity Factors, EROI, Environmental Trade-offs & CUET Invariants</p>
+    </div>
+    <div class="badge">CUET UG · EVS UNIT 5 · FIG 1</div>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 16%;">Energy Source</th>
+        <th style="width: 22%;">Conversion Mechanism</th>
+        <th style="width: 18%;">EROI & Capacity Factor</th>
+        <th style="width: 22%;">Ecological Footprint</th>
+        <th style="width: 22%;">CUET Core Invariant</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="vector">Solar PV & Thermal</td>
+        <td class="physics">Photovoltaic effect (silicon p-n junction); Concentrated Solar Power (CSP mirrors heating molten salts).</td>
+        <td class="efficiency">EROI: ~10-15:1<br>Capacity Factor: 18-25%</td>
+        <td class="impact">Land occupation, mineral mining (silver, cadmium, tellurium), toxic waste in end-of-life disposal.</td>
+        <td class="invariant">India target: 500 GW non-fossil by 2030; National Solar Mission flagship.</td>
+      </tr>
+      <tr>
+        <td class="vector">Wind Energy</td>
+        <td class="physics">Aerodynamic lift on airfoil rotor blades driving induction generators; Betz limit constraint.</td>
+        <td class="efficiency">EROI: ~18-25:1<br>Capacity Factor: 25-40%</td>
+        <td class="impact">Avian/bat collision mortality, low-frequency acoustic noise, rare-earth magnets (neodymium).</td>
+        <td class="invariant">Theoretical maximum power extraction limit is 59.3% (Betz's Law).</td>
+      </tr>
+      <tr>
+        <td class="vector">Hydroelectric Power</td>
+        <td class="physics">Gravitational potential energy of impounded water driving hydraulic turbines (Francis, Pelton, Kaplan).</td>
+        <td class="efficiency">EROI: ~40-100:1<br>Capacity Factor: 35-50%</td>
+        <td class="impact">Reservoir submergence, seismic risk (reservoir-induced seismicity RIS), methane from drowned organic decay.</td>
+        <td class="invariant">Small hydro (&le; 25 MW) classified as renewable in India; minimizes displacement.</td>
+      </tr>
+      <tr>
+        <td class="vector">Nuclear Fission</td>
+        <td class="physics">Induced thermal neutron fission of Uranium-235; Pressurized Heavy Water Reactors (PHWR) in India.</td>
+        <td class="efficiency">EROI: ~15-20:1<br>Capacity Factor: 85-90%</td>
+        <td class="impact">High-level radioactive waste (actinides), thermal water pollution, decommissioning challenges.</td>
+        <td class="invariant">India's 3-Stage Program: PHWR (Natural U) &rarr; Fast Breeder (Pu) &rarr; Thorium-232 breeders.</td>
+      </tr>
+      <tr>
+        <td class="vector">Biomass & Biofuels</td>
+        <td class="physics">Anaerobic digestion (biogas: 55-70% CH4); Fermentation (1G sugarcane/corn ethanol); Pyrolysis (bio-oil).</td>
+        <td class="efficiency">EROI: 1.3:1 (1G) to 5:1 (2G)<br>Capacity Factor: 60-80%</td>
+        <td class="impact">Food vs fuel land diversion (1G ethanol), monoculture fertilizer runoff, water footprint.</td>
+        <td class="invariant">2G ethanol uses non-food lignocellulose (paddy straw); 3G uses algae; 4G uses engineered microbes.</td>
+      </tr>
+      <tr>
+        <td class="vector">Green Hydrogen</td>
+        <td class="physics">Electrolysis of purified water (PEM / Alkaline) powered strictly by renewable solar or wind electricity.</td>
+        <td class="efficiency">Efficiency: ~60-70%<br>High storage energy density</td>
+        <td class="impact">Requires high purity demineralized water (9 liters H2O per kg H2); embrittlement of pipeline steel.</td>
+        <td class="invariant">National Green Hydrogen Mission: 5 MMT production per annum by 2030.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="footer">
+    <span>OURMOCKS ENERGY TRANSITION MATRIX</span>
+    <span>CODE 307 · UNIT 5: ENERGY, SUSTAINABLE AGRI & RESOURCE ECONOMICS</span>
+    <span>PAGE 5 CONCEPT MATRIX</span>
+  </div>
+</body>
+</html>

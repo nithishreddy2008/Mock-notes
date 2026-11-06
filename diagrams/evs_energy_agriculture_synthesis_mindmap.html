@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 600px;
+    background: #FFFFFF;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .title-block p {
+    font-size: 11.5px;
+    color: #64748B;
+    margin-top: 3px;
+    font-weight: 600;
+  }
+  .badge {
+    background: #EEF1F8;
+    color: #1F5EFF;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+  }
+  .mindmap-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr 1fr;
+    gap: 14px;
+    align-items: center;
+    margin: auto 0;
+  }
+  .col {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .center-node {
+    background: linear-gradient(135deg, #071A4D 0%, #1E3A8A 100%);
+    color: #FFFFFF;
+    border-radius: 12px;
+    padding: 20px 16px;
+    text-align: center;
+    box-shadow: 0 10px 15px -3px rgba(7, 26, 77, 0.2);
+    border: 2px solid #1F5EFF;
+  }
+  .center-node h2 {
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: -0.3px;
+    margin-bottom: 6px;
+    line-height: 1.25;
+  }
+  .center-node p {
+    font-size: 10px;
+    color: #93C5FD;
+    line-height: 1.4;
+  }
+  .center-node .core-tag {
+    display: inline-block;
+    background: #1F5EFF;
+    color: #FFFFFF;
+    font-size: 9.5px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-top: 8px;
+  }
+  .node {
+    background: #F8FAFC;
+    border: 1px solid #CBD5E1;
+    border-radius: 8px;
+    padding: 10px 12px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  }
+  .node h3 {
+    font-size: 11.5px;
+    font-weight: 800;
+    color: #071A4D;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 6px;
+    border-bottom: 1.5px solid #E2E8F0;
+    padding-bottom: 4px;
+  }
+  .node ul {
+    list-style: none;
+    font-size: 9.5px;
+    line-height: 1.45;
+    color: #334155;
+  }
+  .node ul li {
+    position: relative;
+    padding-left: 10px;
+    margin-bottom: 2px;
+  }
+  .node ul li::before {
+    content: "▸";
+    color: #1F5EFF;
+    position: absolute;
+    left: 0;
+  }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    color: #94A3B8;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 8px;
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <div class="title-block">
+      <h1>Energy, Sustainable Agriculture & Resource Economics Mindmap</h1>
+      <p>Architectural Topology: Decarbonization Physics, Agroecology, IPM Decision Gates & Natural Capital Valuation</p>
+    </div>
+    <div class="badge">CUET UG · EVS UNIT 5 · FIG 3</div>
+  </div>
+
+  <div class="mindmap-wrapper">
+    <div class="col">
+      <div class="node">
+        <h3>1. Renewable Energy & Physics</h3>
+        <ul>
+          <li><strong>Betz's Law:</strong> Max aerodynamic limit 59.3% for wind kinetic conversion.</li>
+          <li><strong>EROI Metric:</strong> Hydro (40-100:1) &gt; Wind (20:1) &gt; Solar (12:1).</li>
+          <li><strong>Nuclear 3-Stage:</strong> PHWR &rarr; Fast Breeder (Pu) &rarr; Thorium-232.</li>
+          <li><strong>BEE Energy Codes:</strong> Star appliance labeling & PAT trading scheme.</li>
+        </ul>
+      </div>
+      <div class="node">
+        <h3>2. Biofuels & Green Hydrogen</h3>
+        <ul>
+          <li><strong>1G Biofuels:</strong> Edible crops (sugarcane ethanol, palm biodiesel).</li>
+          <li><strong>2G Biofuels:</strong> Lignocellulosic crop waste (paddy stubble, bagasse).</li>
+          <li><strong>3G & 4G Biofuels:</strong> Microalgae cultivation & synthetic biology.</li>
+          <li><strong>Green Hydrogen:</strong> Zero-carbon electrolysis powered by renewables.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="center-node">
+      <h2>ENERGY, SUSTAINABLE AGRI & RESOURCE ECONOMICS</h2>
+      <p>Systemic Integration of Clean Energy Transition, Agroecological Food Security, IPM Control Thresholds & Natural Capital Markets</p>
+      <div class="core-tag">CUET CODE 307 · UNIT 5</div>
+    </div>
+
+    <div class="col">
+      <div class="node">
+        <h3>3. Agroecology & IPM Thresholds</h3>
+        <ul>
+          <li><strong>Biofertilizers:</strong> <em>Rhizobium</em>, <em>Azotobacter</em>, <em>Azolla</em>, VAM fungi.</li>
+          <li><strong>Biopesticides:</strong> Neem (Azadirachtin), <em>Bt</em> Cry protein endotoxins.</li>
+          <li><strong>IPM Golden Gate:</strong> Economic Threshold (ET) &lt; Economic Injury Level (EIL).</li>
+          <li><strong>Soil Conservation:</strong> Zero-tillage, contour bunding, shelterbelts.</li>
+        </ul>
+      </div>
+      <div class="node">
+        <h3>4. Resource Valuation & Circularity</h3>
+        <ul>
+          <li><strong>Costanza Baseline:</strong> Biosphere services valued at $33 trillion/yr.</li>
+          <li><strong>TEV Framework:</strong> Direct, Indirect, Option, and Non-use Existence values.</li>
+          <li><strong>Market Instruments:</strong> Pigouvian carbon taxes & Cap-and-trade permits.</li>
+          <li><strong>Circular Economy:</strong> Ellen MacArthur loops & Kalundborg symbiosis.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>OURMOCKS CONCEPT SYNTHESIZER MINDMAP</span>
+    <span>CODE 307 · UNIT 5: ENERGY, SUSTAINABLE AGRI & RESOURCE ECONOMICS</span>
+    <span>PAGE 12 HIGH-YIELD REVISION BOARD</span>
+  </div>
+</body>
+</html>

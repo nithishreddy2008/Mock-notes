@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 600px;
+    background: #FFFFFF;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .title-block p {
+    font-size: 11.5px;
+    color: #64748B;
+    margin-top: 3px;
+    font-weight: 600;
+  }
+  .badge {
+    background: #FEF3C7;
+    color: #92400E;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+  }
+  .flow-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-top: 14px;
+  }
+  .card {
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 12px;
+    background: #F8FAFC;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .card-header {
+    font-size: 12.5px;
+    font-weight: 800;
+    color: #071A4D;
+    border-bottom: 2px solid #1F5EFF;
+    padding-bottom: 5px;
+    margin-bottom: 8px;
+  }
+  .stage-tag {
+    display: inline-block;
+    font-size: 9.5px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .tag-red { background: #FEE2E2; color: #991B1B; }
+  .tag-blue { background: #DBEAFE; color: #1E40AF; }
+  .tag-amber { background: #FEF3C7; color: #92400E; }
+  .tag-green { background: #D1FAE5; color: #065F46; }
+  .bullet-list {
+    list-style: none;
+    font-size: 10px;
+    line-height: 1.42;
+    color: #334155;
+    margin-bottom: 8px;
+  }
+  .bullet-list li {
+    margin-bottom: 5px;
+    position: relative;
+    padding-left: 10px;
+  }
+  .bullet-list li::before {
+    content: "•";
+    color: #1F5EFF;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+  }
+  .highlight-box {
+    background: #FFFFFF;
+    border-left: 3px solid #1F5EFF;
+    padding: 6px 8px;
+    border-radius: 4px;
+    font-size: 9.5px;
+    font-weight: 600;
+    color: #0F172A;
+    line-height: 1.35;
+  }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    color: #94A3B8;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 8px;
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <div class="title-block">
+      <h1>The Agroecological Transition & Circular Bioeconomy Framework</h1>
+      <p>Systemic Sequence: Green Revolution Critique, Agroecology, IPM Decision Thresholds & Natural Capital Valuation</p>
+    </div>
+    <div class="badge">CUET UG · EVS UNIT 5 · FIG 2</div>
+  </div>
+
+  <div class="flow-container">
+    <div class="card">
+      <div>
+        <span class="stage-tag tag-red">STAGE 1 · INDUSTRIAL CRISIS</span>
+        <div class="card-header">1. Green Revolution Limits</div>
+        <ul class="bullet-list">
+          <li><strong>NPK Chemical Imbalance:</strong> Distorted application ratios deplete micronutrients (Zn, Fe, B) and acidify soils.</li>
+          <li><strong>Pesticide Treadmill:</strong> Broad-spectrum insecticides destroy beneficial predators, triggering secondary pest resurgence.</li>
+          <li><strong>Aquifer Over-draft:</strong> Deep tube wells collapse groundwater tables across Punjab and Haryana.</li>
+          <li><strong>Soil Salinization:</strong> Canal waterlogging and capillary evaporation deposit mineral salts.</li>
+        </ul>
+      </div>
+      <div class="highlight-box">
+        <strong>CUET Invariant:</strong> High-yield varieties (HYVs) require responsive chemical fertilizers and intensive irrigation.
+      </div>
+    </div>
+
+    <div class="card">
+      <div>
+        <span class="stage-tag tag-blue">STAGE 2 · AGROECOLOGICAL INPUTS</span>
+        <div class="card-header">2. Biofertilizers & Biocontrol</div>
+        <ul class="bullet-list">
+          <li><strong>Nitrogen Fixers:</strong> Symbiotic <em>Rhizobium</em> (legumes), free-living <em>Azotobacter</em>, and <em>Anabaena-Azolla</em> (paddy).</li>
+          <li><strong>Phosphorus Solubilizers:</strong> Vesicular-Arbuscular Mycorrhizae (VAM) mobilize bound soil phosphorus.</li>
+          <li><strong>Botanical Biopesticides:</strong> Neem seed extract (Azadirachtin) acts as antifeedant and insect growth disruptor.</li>
+          <li><strong>Microbial Biocontrol:</strong> <em>Bacillus thuringiensis</em> (Bt Cry toxin) targets lepidopteran larvae.</li>
+        </ul>
+      </div>
+      <div class="highlight-box">
+        <strong>Certification:</strong> NPOP (third-party export certification) and PGS-India (participatory domestic guarantee).
+      </div>
+    </div>
+
+    <div class="card">
+      <div>
+        <span class="stage-tag tag-amber">STAGE 3 · IPM DECISION MATRIX</span>
+        <div class="card-header">3. Integrated Pest Management</div>
+        <ul class="bullet-list">
+          <li><strong>General Equilibrium Position (GEP):</strong> Mean population density of pest over long periods.</li>
+          <li><strong>Economic Injury Level (EIL):</strong> Lowest pest population that will cause economic damage exceeding control costs.</li>
+          <li><strong>Economic Threshold (ET):</strong> Pest density at which control action MUST be initiated to prevent reaching EIL (ET &lt; EIL).</li>
+          <li><strong>Tiered Hierarchy:</strong> Cultural &rarr; Physical/Mechanical &rarr; Biological &rarr; Targeted bio-rational chemical spray.</li>
+        </ul>
+      </div>
+      <div class="highlight-box">
+        <strong>Golden Rule:</strong> ET is ALWAYS numerically lower than EIL (Action Threshold &lt; Damage Threshold).
+      </div>
+    </div>
+
+    <div class="card">
+      <div>
+        <span class="stage-tag tag-green">STAGE 4 · CIRCULAR BIOECONOMY</span>
+        <div class="card-header">4. Valuation & Circularity</div>
+        <ul class="bullet-list">
+          <li><strong>Total Economic Value (TEV):</strong> Direct use, Indirect functional ecosystem services, Option, and Non-use Existence values.</li>
+          <li><strong>Valuation Methods:</strong> Contingent Valuation (WTP/WTA), Travel Cost Method, Hedonic property pricing.</li>
+          <li><strong>Pigouvian Instruments:</strong> Carbon taxation internalizing social costs; Cap-and-trade emissions trading.</li>
+          <li><strong>Industrial Symbiosis:</strong> Kalundborg model where one industry's waste becomes another's raw material.</li>
+        </ul>
+      </div>
+      <div class="highlight-box">
+        <strong>Costanza Baseline:</strong> Global biosphere services valued at $33 trillion/yr, vastly exceeding global GDP.
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>OURMOCKS AGROECOLOGY & CIRCULAR BIOECONOMY</span>
+    <span>CODE 307 · UNIT 5: ENERGY, SUSTAINABLE AGRI & RESOURCE ECONOMICS</span>
+    <span>PAGE 8 THEMATIC PROCESS BOARD</span>
+  </div>
+</body>
+</html>
