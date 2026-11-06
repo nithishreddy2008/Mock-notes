@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 600px;
+    background: #FFFFFF;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #1E3A8A;
+    letter-spacing: -0.02em;
+  }
+  .title-block p {
+    font-size: 11px;
+    color: #64748B;
+    margin-top: 3px;
+    font-weight: 500;
+  }
+  .badge {
+    background: #FEF2F2;
+    color: #B91C1C;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 700;
+    border: 1px solid #FECACA;
+    text-transform: uppercase;
+  }
+  .workflow-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin: 16px 0;
+  }
+  .stage-box {
+    border: 1.5px solid #CBD5E1;
+    border-radius: 8px;
+    background: #F8FAFC;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 220px;
+  }
+  .stage-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 8px;
+  }
+  .step-num {
+    background: #1E3A8A;
+    color: white;
+    font-size: 10px;
+    font-weight: 800;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .stage-title {
+    font-size: 12px;
+    font-weight: 800;
+    color: #1E293B;
+  }
+  .stage-desc {
+    font-size: 10px;
+    color: #475569;
+    line-height: 1.4;
+  }
+  .hazard-section {
+    background: #FFFBEB;
+    border: 1.5px solid #FCD34D;
+    border-radius: 8px;
+    padding: 12px 16px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+  }
+  .hazard-card h4 {
+    font-size: 11px;
+    font-weight: 800;
+    color: #92400E;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .hazard-card p {
+    font-size: 9.5px;
+    color: #78350F;
+    margin-top: 3px;
+    line-height: 1.35;
+  }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 8px;
+    font-size: 9.5px;
+    color: #94A3B8;
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <div class="title-block">
+      <h1>The E-Waste Hazard Matrix & Sustainable Recycling Lifecycle</h1>
+      <p>Scientific recycling trajectory from collection to precious metal recovery and toxic heavy metal containment</p>
+    </div>
+    <div class="badge">CUET Code 308 · Ecological Protocol</div>
+  </div>
+
+  <div class="workflow-grid">
+    <div class="stage-box" style="border-color: #3B82F6; background: #EFF6FF;">
+      <div>
+        <div class="stage-header">
+          <div class="step-num">1</div>
+          <div class="stage-title">Collection & Sorting</div>
+        </div>
+        <div class="stage-desc">
+          Formal take-back collection points, segregation of obsolete computers, mobile phones, servers, and CRTs.
+        </div>
+      </div>
+      <div style="font-size: 9px; color: #1D4ED8; font-weight: 700;">Prevents unauthorized dumping into municipal landfills.</div>
+    </div>
+
+    <div class="stage-box" style="border-color: #10B981; background: #ECFDF5;">
+      <div>
+        <div class="stage-header">
+          <div class="step-num" style="background: #059669;">2</div>
+          <div class="stage-title">Dismantling & De-manufacturing</div>
+        </div>
+        <div class="stage-desc">
+          Manual disassembly isolating printed circuit boards (PCBs), batteries, display panels, and plastics.
+        </div>
+      </div>
+      <div style="font-size: 9px; color: #047857; font-weight: 700;">Safe extraction of mercury lamps and lithium cells.</div>
+    </div>
+
+    <div class="stage-box" style="border-color: #F59E0B; background: #FFFBEB;">
+      <div>
+        <div class="stage-header">
+          <div class="step-num" style="background: #D97706;">3</div>
+          <div class="stage-title">Shredding & Separation</div>
+        </div>
+        <div class="stage-desc">
+          Mechanical shredding followed by magnetic (iron), eddy-current (aluminum/copper), and density separation.
+        </div>
+      </div>
+      <div style="font-size: 9px; color: #B45309; font-weight: 700;">Recovers raw plastics and ferrous metals.</div>
+    </div>
+
+    <div class="stage-box" style="border-color: #8B5CF6; background: #F5F3FF;">
+      <div>
+        <div class="stage-header">
+          <div class="step-num" style="background: #7C3AED;">4</div>
+          <div class="stage-title">Smelting & Leaching</div>
+        </div>
+        <div class="stage-desc">
+          Certified hydrometallurgical and pyrometallurgical recovery of gold, silver, palladium, and platinum.
+        </div>
+      </div>
+      <div style="font-size: 9px; color: #6D28D9; font-weight: 700;">Slag encapsulated in secure hazardous waste landfills.</div>
+    </div>
+  </div>
+
+  <div class="hazard-section">
+    <div class="hazard-card">
+      <h4>Lead (Pb)</h4>
+      <p>Found in CRT screens and solder. Causes severe central nervous system, kidney, and brain damage.</p>
+    </div>
+    <div class="hazard-card">
+      <h4>Mercury (Hg)</h4>
+      <p>Found in flat-panel backlights and switches. Causes chronic bioaccumulation and neural impairment.</p>
+    </div>
+    <div class="hazard-card">
+      <h4>Cadmium (Cd)</h4>
+      <p>Found in SMD chip resistors and Ni-Cd batteries. Toxic to kidneys and causes bone fragility.</p>
+    </div>
+    <div class="hazard-card">
+      <h4>Chromium (Cr-VI)</h4>
+      <p>Used for corrosion protection on chassis. Hexavalent form causes DNA mutations and respiratory cancer.</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>OurMocks CUET UG Series · Computer Science (Code 308)</span>
+    <span>Fig 2: E-Waste Processing & Toxicological Hazards</span>
+  </div>
+</body>
+</html>

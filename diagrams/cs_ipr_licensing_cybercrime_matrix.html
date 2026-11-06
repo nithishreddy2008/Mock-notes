@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 600px;
+    background: #FFFFFF;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #1E3A8A;
+    letter-spacing: -0.02em;
+  }
+  .title-block p {
+    font-size: 11px;
+    color: #64748B;
+    margin-top: 3px;
+    font-weight: 500;
+  }
+  .badge {
+    background: #EFF6FF;
+    color: #1D4ED8;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 700;
+    border: 1px solid #BFDBFE;
+    text-transform: uppercase;
+  }
+  .matrix-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 14px;
+    background: #FFFFFF;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #CBD5E1;
+  }
+  .matrix-table th {
+    background: #1E3A8A;
+    color: #FFFFFF;
+    text-align: left;
+    padding: 10px 12px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    border-right: 1px solid #3B82F6;
+  }
+  .matrix-table th:last-child { border-right: none; }
+  .matrix-table td {
+    padding: 8px 11px;
+    font-size: 10px;
+    line-height: 1.35;
+    border-bottom: 1px solid #E2E8F0;
+    border-right: 1px solid #E2E8F0;
+    vertical-align: top;
+  }
+  .matrix-table td:last-child { border-right: none; }
+  .matrix-table tr:nth-child(even) { background: #F8FAFC; }
+  .feature-name {
+    font-weight: 700;
+    color: #0F172A;
+    background: #F1F5F9;
+  }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 8px;
+    font-size: 9.5px;
+    color: #94A3B8;
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <div class="title-block">
+      <h1>Comparative Legal & Security Matrix: IPR Frameworks & Cyber Offenses</h1>
+      <p>Intellectual Property classifications, software licensing archetypes, and IT Act penal sections</p>
+    </div>
+    <div class="badge">CUET Code 308 · Legal Matrix</div>
+  </div>
+
+  <table class="matrix-table">
+    <thead>
+      <tr>
+        <th style="width: 15%;">Domain Element</th>
+        <th style="width: 20%;">Core Definition & Scope</th>
+        <th style="width: 22%;">Governing Framework / Law</th>
+        <th style="width: 21%;">Violation Typology</th>
+        <th style="width: 22%;">CUET High-Yield Invariant</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="feature-name">Copyright</td>
+        <td>Protects original literary, artistic, musical, dramatic, and software source code works.</td>
+        <td>Copyright Act, 1957. Grants exclusive rights to reproduce, distribute, and adapt.</td>
+        <td><b>Plagiarism & Piracy:</b> Unauthorized copying or republishing of source code/text.</td>
+        <td>Protects the <i>expression</i> of an idea, NOT the abstract idea or algorithm itself!</td>
+      </tr>
+      <tr>
+        <td class="feature-name">Patent</td>
+        <td>Protects novel, non-obvious industrial inventions and manufacturing processes.</td>
+        <td>Patents Act, 1970. Grants monopoly protection for strictly 20 years from filing.</td>
+        <td><b>Patent Infringement:</b> Commercial exploitation of patented claims without license.</td>
+        <td>Pure software algorithms are generally non-patentable unless tied to hardware utility.</td>
+      </tr>
+      <tr>
+        <td class="feature-name">Trademark</td>
+        <td>Protects distinctive brand names, logos, slogans, and symbols distinguishing goods.</td>
+        <td>Trade Marks Act, 1999. Renewable indefinitely every 10 years upon fee payment.</td>
+        <td><b>Infringement & Passing Off:</b> Using deceptively similar brand marks to mislead buyers.</td>
+        <td>Protects commercial reputation and market brand identity, not technical mechanics.</td>
+      </tr>
+      <tr>
+        <td class="feature-name">FOSS / GPL</td>
+        <td>Free and Open Source Software granting 4 fundamental freedoms (run, study, modify, share).</td>
+        <td>GNU General Public License (GPL), MIT, Apache, BSD copyleft / permissive licenses.</td>
+        <td>Violating copyleft by closing derived source code in commercial distributions.</td>
+        <td>FOSS is free as in 'freedom' (speech), NOT necessarily free of monetary cost (beer)!</td>
+      </tr>
+      <tr>
+        <td class="feature-name">IT Act Sec 66</td>
+        <td>Penal code for unauthorized hacking, system damage, identity theft, and cyber crimes.</td>
+        <td>Information Technology Act, 2000 (Amended 2008): Sec 43, 66, 66C, 66D, 66E, 67.</td>
+        <td>Hacking (66), Identity Theft (66C), Impersonation Cheating (66D), Privacy Violation (66E).</td>
+        <td>Section 66A was struck down as unconstitutional by Supreme Court in Shreya Singhal (2015).</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="footer">
+    <span>OurMocks CUET UG Series · Computer Science (Code 308)</span>
+    <span>Fig 1: IPR & Cyber Law Comparative Matrix</span>
+  </div>
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 750px;
+    background: #FFFFFF;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #1E3A8A;
+    letter-spacing: -0.02em;
+  }
+  .title-block p {
+    font-size: 11px;
+    color: #64748B;
+    margin-top: 3px;
+    font-weight: 500;
+  }
+  .badge {
+    background: #FDF2F8;
+    color: #DB2777;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 700;
+    border: 1px solid #FBCFE8;
+    text-transform: uppercase;
+  }
+  .mindmap-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 14px;
+    margin: 14px 0;
+    height: 600px;
+  }
+  .branch-card {
+    border: 1.5px solid #CBD5E1;
+    border-radius: 8px;
+    padding: 12px;
+    background: #F8FAFC;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .b-blue { border-color: #3B82F6; background: #EFF6FF; }
+  .b-emerald { border-color: #10B981; background: #ECFDF5; }
+  .b-purple { border-color: #8B5CF6; background: #F5F3FF; }
+  .b-amber { border-color: #F59E0B; background: #FFFBEB; }
+  .b-rose { border-color: #F43F5E; background: #FFF1F2; }
+  .b-cyan { border-color: #06B6D4; background: #ECFEFF; }
+  .branch-title {
+    font-size: 13px;
+    font-weight: 800;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .branch-items {
+    list-style: none;
+    font-size: 10.5px;
+    line-height: 1.45;
+    color: #334155;
+  }
+  .branch-items li {
+    margin-bottom: 5px;
+    position: relative;
+    padding-left: 14px;
+  }
+  .branch-items li::before {
+    content: "•";
+    position: absolute;
+    left: 2px;
+    color: #1E3A8A;
+    font-weight: bold;
+    font-size: 14px;
+    top: -2px;
+  }
+  .branch-items code {
+    background: rgba(255, 255, 255, 0.8);
+    border: 0.5px solid #CBD5E1;
+    padding: 1px 4px;
+    border-radius: 3px;
+    font-size: 9.5px;
+    color: #0F172A;
+  }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 8px;
+    font-size: 9.5px;
+    color: #94A3B8;
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <div class="title-block">
+      <h1>Master Synthesis Mindmap: Societal Impacts, Cyber Law & Digital Ethics</h1>
+      <p>Comprehensive knowledge taxonomy across Digital Footprints, IPR, Cyber Crime, E-waste, and Accessibility</p>
+    </div>
+    <div class="badge">CUET Code 308 · Syllabus Mindmap</div>
+  </div>
+
+  <div class="mindmap-container">
+    <div class="branch-card b-blue">
+      <div class="branch-title" style="color: #1D4ED8;">1. Digital Footprint & Netiquette</div>
+      <ul class="branch-items">
+        <li><b>Active Footprint:</b> Deliberately shared data (posts, emails, blog comments).</li>
+        <li><b>Passive Footprint:</b> Involuntary data trails (IP logs, cookies, browsing history).</li>
+        <li><b>Netiquette:</b> Respect copyright, avoid flaming/trolling, verify sources.</li>
+        <li>Digital identity curation & long-term online reputation management.</li>
+      </ul>
+    </div>
+
+    <div class="branch-card b-emerald">
+      <div class="branch-title" style="color: #047857;">2. IPR & Software Licensing</div>
+      <ul class="branch-items">
+        <li><b>IPR Triad:</b> Copyright (code), Patent (invention), Trademark (brand).</li>
+        <li><b>Plagiarism:</b> Passing another's work as one's own without attribution.</li>
+        <li><b>FOSS vs Proprietary:</b> 4 freedoms; GPL copyleft requires open derivative code.</li>
+        <li><b>Creative Commons:</b> Flexible modular public attribution licenses (BY, NC, ND, SA).</li>
+      </ul>
+    </div>
+
+    <div class="branch-card b-purple">
+      <div class="branch-title" style="color: #6D28D9;">3. Cyber Crimes & Threat Vectors</div>
+      <ul class="branch-items">
+        <li><b>Phishing:</b> Fraudulent emails imitating banks to steal credentials.</li>
+        <li><b>Cyberstalking & Bullying:</b> Harassment, intimidation, defamation online.</li>
+        <li><b>Malware Spectrum:</b> Ransomware, Spyware, Trojan Horses, Worms, Adware.</li>
+        <li><b>DDoS Attack:</b> Botnet overwhelming target server with packet flood.</li>
+      </ul>
+    </div>
+
+    <div class="branch-card b-amber">
+      <div class="branch-title" style="color: #B45309;">4. Indian IT Act (2000 & 2008)</div>
+      <ul class="branch-items">
+        <li><b>Sec 43:</b> Civil penalty for unauthorized computer damage/extraction.</li>
+        <li><b>Sec 66:</b> Criminal hacking penalty (up to 3 years imprisonment).</li>
+        <li><b>Sec 66C:</b> Identity theft (stolen passwords, biometric tokens).</li>
+        <li><b>Sec 66D:</b> Cheating by personation using computer resource.</li>
+        <li><b>CERT-In:</b> National agency for cyber security incident response.</li>
+      </ul>
+    </div>
+
+    <div class="branch-card b-rose">
+      <div class="branch-title" style="color: #BE123C;">5. E-Waste Management</div>
+      <ul class="branch-items">
+        <li><b>Toxic Heavy Metals:</b> Lead (brain/nerves), Mercury, Cadmium, Chromium (Cr-VI).</li>
+        <li><b>Environmental Impact:</b> Groundwater contamination via landfill leaching.</li>
+        <li><b>Sustainable Lifecycle:</b> Reduce, Reuse, Refurbish, Certified Recycling.</li>
+        <li>E-Waste Management Rules, 2016 / 2022: Extended Producer Responsibility (EPR).</li>
+      </ul>
+    </div>
+
+    <div class="branch-card b-cyan">
+      <div class="branch-title" style="color: #0E7490;">6. Digital Divide & Accessibility</div>
+      <ul class="branch-items">
+        <li><b>Digital Divide:</b> Infrastructure, socio-economic, linguistic, gender gap.</li>
+        <li><b>Assistive Tech:</b> Screen readers (NVDA, JAWS), Braille displays, speech input.</li>
+        <li><b>Accessibility Guidelines:</b> WCAG (Perceivable, Operable, Understandable, Robust).</li>
+        <li>Universal design for equitable access to digital government services.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>OurMocks CUET UG Series · Computer Science (Code 308)</span>
+    <span>Fig 3: Societal Impacts & Cyber Law Mindmap</span>
+  </div>
+</body>
+</html>
