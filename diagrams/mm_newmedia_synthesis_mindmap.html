@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 600px;
+    background: #FFFFFF;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 19px;
+    font-weight: 800;
+    color: #071A4D;
+    letter-spacing: -0.02em;
+  }
+  .title-block p {
+    font-size: 11px;
+    color: #64748B;
+    margin-top: 2px;
+    font-weight: 500;
+  }
+  .badge {
+    background: #EEF1F8;
+    color: #1F5EFF;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 700;
+    border: 1px solid #C7D7FE;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .map-wrapper {
+    position: relative;
+    flex-grow: 1;
+    margin: 12px 0;
+    background: #FAFCFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .svg-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+  }
+  .nodes-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 16px;
+    padding: 16px 20px;
+    z-index: 2;
+  }
+  .node-card {
+    background: #FFFFFF;
+    border: 1.5px solid #CBD5E1;
+    border-radius: 8px;
+    padding: 10px 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+  }
+  .top-left { border-top: 3px solid #1F5EFF; }
+  .top-mid { border-top: 3px solid #0EA5E9; }
+  .top-right { border-top: 3px solid #10B981; }
+  .bot-left { border-bottom: 3px solid #F59E0B; }
+  .bot-mid { border-bottom: 3px solid #EF4444; }
+  .bot-right { border-bottom: 3px solid #8B5CF6; }
+  .node-title {
+    font-size: 11.5px;
+    font-weight: 800;
+    color: #071A4D;
+    margin-bottom: 3px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .node-desc {
+    font-size: 9.8px;
+    color: #475569;
+    line-height: 1.35;
+    flex-grow: 1;
+  }
+  .node-tags {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+    margin-top: 5px;
+  }
+  .tag {
+    background: #F1F5F9;
+    color: #334155;
+    font-size: 8.5px;
+    font-weight: 700;
+    padding: 2px 5px;
+    border-radius: 4px;
+  }
+  .hub {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #071A4D;
+    color: #FFFFFF;
+    border: 3px solid #1F5EFF;
+    border-radius: 12px;
+    padding: 12px 18px;
+    text-align: center;
+    width: 240px;
+    box-shadow: 0 8px 20px rgba(7, 26, 77, 0.25);
+    z-index: 3;
+  }
+  .hub-title {
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    color: #FFFFFF;
+  }
+  .hub-subtitle {
+    font-size: 9px;
+    color: #93C5FD;
+    font-weight: 600;
+    margin-top: 2px;
+    text-transform: uppercase;
+  }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 8px;
+    font-size: 10px;
+    color: #64748B;
+  }
+  .footer-brand {
+    font-weight: 700;
+    color: #071A4D;
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <div class="title-block">
+      <h1>Master Synthesis Mindmap: New Media, Digital Convergence & Cyber Ethics</h1>
+      <p>Comprehensive Cognitive Architecture for CUET UG Mass Media Studies · Unit 8</p>
+    </div>
+    <div class="badge">FIGURE 3 · SYNTHESIZER MINDMAP</div>
+  </div>
+
+  <div class="map-wrapper">
+    <!-- SVG Connection Lines -->
+    <svg class="svg-lines" width="100%" height="100%">
+      <line x1="280" y1="130" x2="400" y2="230" stroke="#CBD5E1" stroke-width="2" stroke-dasharray="4 4" />
+      <line x1="500" y1="170" x2="500" y2="220" stroke="#CBD5E1" stroke-width="2" stroke-dasharray="4 4" />
+      <line x1="720" y1="130" x2="600" y2="230" stroke="#CBD5E1" stroke-width="2" stroke-dasharray="4 4" />
+      <line x1="280" y1="360" x2="400" y2="280" stroke="#CBD5E1" stroke-width="2" stroke-dasharray="4 4" />
+      <line x1="500" y1="340" x2="500" y2="290" stroke="#CBD5E1" stroke-width="2" stroke-dasharray="4 4" />
+      <line x1="720" y1="360" x2="600" y2="280" stroke="#CBD5E1" stroke-width="2" stroke-dasharray="4 4" />
+    </svg>
+
+    <!-- 6 Nodes Grid -->
+    <div class="nodes-grid">
+      <!-- Node 1: Top Left -->
+      <div class="node-card top-left">
+        <div class="node-title">1. New Media Nature & Characteristics</div>
+        <div class="node-desc">Digital Convergence (Negroponte: 'bits vs atoms'); Interactivity (user control over choice and pace); Hypertextuality (Ted Nelson, non-linear node hopping); Virtuality (simulated immersion); Networkability (dispersed nodes, peer-to-peer).</div>
+        <div class="node-tags">
+          <span class="tag">Digitization</span>
+          <span class="tag">Hypertext</span>
+          <span class="tag">Interactivity</span>
+          <span class="tag">Convergence</span>
+        </div>
+      </div>
+
+      <!-- Node 2: Top Mid -->
+      <div class="node-card top-mid">
+        <div class="node-title">2. Web Evolution & Participatory Culture</div>
+        <div class="node-desc">Web 1.0 (Static, Read-Only, webmaster-curated); Web 2.0 (Read-Write, Tim O'Reilly 2004, wikis, social feeds); Web 3.0 (Semantic, decentralized, machine-readable); Henry Jenkins (Participatory Culture); Alvin Toffler ('Prosumer').</div>
+        <div class="node-tags">
+          <span class="tag">Web 2.0 O'Reilly</span>
+          <span class="tag">Prosumer</span>
+          <span class="tag">Participatory Culture</span>
+          <span class="tag">Semantic Web</span>
+        </div>
+      </div>
+
+      <!-- Node 3: Top Right -->
+      <div class="node-card top-right">
+        <div class="node-title">3. Social Networks & Algorithmic Reality</div>
+        <div class="node-desc">Microblogging (X), Social networking (LinkedIn), Short-form video (Reels, Shorts); Algorithmic recommendation feeds; Eli Pariser's 'Filter Bubble' (isolation in tailored content); Echo Chambers; Virality metrics and dopamine loops.</div>
+        <div class="node-tags">
+          <span class="tag">Filter Bubble</span>
+          <span class="tag">Echo Chamber</span>
+          <span class="tag">Algorithms</span>
+          <span class="tag">Microblogging</span>
+        </div>
+      </div>
+
+      <!-- Node 4: Bot Left -->
+      <div class="node-card bot-left">
+        <div class="node-title">4. Citizen Journalism & Disinformation</div>
+        <div class="node-desc">Citizen Journalism (smartphones, live streaming, eyewitness reports, Arab Spring, Nirbhaya); UGC crowdsourcing vs editorial gatekeeping; Verification deficits; Misinformation (unintentional) vs Disinformation (malicious) vs Deepfakes; Fact-checking.</div>
+        <div class="node-tags">
+          <span class="tag">Citizen Journalism</span>
+          <span class="tag">UGC Crowdsourcing</span>
+          <span class="tag">Disinformation</span>
+          <span class="tag">Deepfakes</span>
+        </div>
+      </div>
+
+      <!-- Node 5: Bot Mid -->
+      <div class="node-card bot-mid">
+        <div class="node-title">5. Sociological Impacts & Net Neutrality</div>
+        <div class="node-desc">Digital Divide (access, literacy, urban-rural, gender divides); Net Neutrality (equal treatment of data packets; TRAI 2016 ban on discriminatory zero-rating like Free Basics); Shoshana Zuboff's Surveillance Capitalism (behavioral data extraction).</div>
+        <div class="node-tags">
+          <span class="tag">Digital Divide</span>
+          <span class="tag">Net Neutrality</span>
+          <span class="tag">TRAI 2016</span>
+          <span class="tag">Surveillance Cap.</span>
+        </div>
+      </div>
+
+      <!-- Node 6: Bot Right -->
+      <div class="node-card bot-right">
+        <div class="node-title">6. Cyber Law & Governance in India</div>
+        <div class="node-desc">IT Act 2000 (Sec 43A data, Sec 66A struck down in Shreya Singhal 2015, Sec 69A blocking, Sec 79 safe harbor); IT Rules 2021 (3-tier grievance mechanism, 24-hr takedown, RGO); Digital Personal Data Protection (DPDP) Act 2023.</div>
+        <div class="node-tags">
+          <span class="tag">IT Act 2000</span>
+          <span class="tag">Shreya Singhal 2015</span>
+          <span class="tag">IT Rules 2021</span>
+          <span class="tag">DPDP Act 2023</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Center Hub -->
+    <div class="hub">
+      <div class="hub-title">New Media Studies</div>
+      <div class="hub-subtitle">Convergence, Social Networks & Cyber Governance</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div><strong>CUET Core Anchor:</strong> Web 2.0 empowers prosumers; Net Neutrality bars data discrimination; IT Rules 2021 govern digital media accountability.</div>
+    <div class="footer-brand">OURMOCKS · Mass Media Studies</div>
+  </div>
+</body>
+</html>

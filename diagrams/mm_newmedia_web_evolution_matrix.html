@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 600px;
+    background: #FFFFFF;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #071A4D;
+    letter-spacing: -0.02em;
+  }
+  .title-block p {
+    font-size: 11px;
+    color: #64748B;
+    margin-top: 3px;
+    font-weight: 500;
+  }
+  .badge {
+    background: #EEF1F8;
+    color: #1F5EFF;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .table-container {
+    flex-grow: 1;
+    margin: 16px 0;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  table {
+    width: 100%;
+    height: 100%;
+    border-collapse: collapse;
+    font-size: 11px;
+    table-layout: fixed;
+  }
+  th {
+    background: #F8FAFC;
+    color: #071A4D;
+    padding: 10px 12px;
+    text-align: left;
+    font-weight: 700;
+    font-size: 11px;
+    border-bottom: 2px solid #CBD5E1;
+    border-right: 1px solid #E2E8F0;
+  }
+  th:last-child { border-right: none; }
+  td {
+    padding: 8px 12px;
+    border-bottom: 1px solid #E2E8F0;
+    border-right: 1px solid #E2E8F0;
+    vertical-align: middle;
+    line-height: 1.35;
+    color: #334155;
+  }
+  td:last-child { border-right: none; }
+  tr:last-child td { border-bottom: none; }
+  tr:nth-child(even) td { background: #FAFBFD; }
+  .param-col {
+    font-weight: 700;
+    color: #071A4D;
+    background: #F1F5F9 !important;
+    width: 16%;
+  }
+  .trad-col { width: 21%; color: #475569; }
+  .w1-col { width: 21%; color: #0F172A; }
+  .w2-col { width: 21%; font-weight: 600; color: #1E3A8A; }
+  .w3-col { width: 21%; font-weight: 600; color: #047857; }
+  .tag {
+    display: inline-block;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 9.5px;
+    font-weight: 700;
+    margin-bottom: 3px;
+  }
+  .tag-trad { background: #E2E8F0; color: #334155; }
+  .tag-w1 { background: #DBEAFE; color: #1E40AF; }
+  .tag-w2 { background: #FEF3C7; color: #92400E; }
+  .tag-w3 { background: #DCFCE7; color: #166534; }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 8px;
+    font-size: 10px;
+    color: #64748B;
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <div class="title-block">
+      <h1>Comparative Paradigm: Web 1.0 vs. Web 2.0 vs. Web 3.0 vs. Traditional Media</h1>
+      <p>Technological, Participatory, and Governance Architecture for CUET UG Mass Media Studies · Unit 8</p>
+    </div>
+    <div class="badge">FIGURE 1 · CONCEPT MATRIX</div>
+  </div>
+
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 16%;">Core Dimension</th>
+          <th style="width: 21%;">Traditional Mass Media</th>
+          <th style="width: 21%;">Web 1.0 (Static Web)</th>
+          <th style="width: 21%;">Web 2.0 (Social / Read-Write)</th>
+          <th style="width: 21%;">Web 3.0 (Semantic / Spatial)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="param-col">User Agency & Role</td>
+          <td><span class="tag tag-trad">PASSIVE AUDIENCE</span><br>One-way linear consumption; audience cannot reply or co-create broadcasts.</td>
+          <td><span class="tag tag-w1">READ-ONLY CONSUMER</span><br>Browsing static hyperlinked portals (AltaVista, early Yahoo, personal HTML homepages).</td>
+          <td><span class="tag tag-w2">PROSUMER / CREATOR</span><br>Read-Write participatory culture; users co-create, upload, remix, comment & share.</td>
+          <td><span class="tag tag-w3">OWNER / DECENTRALIZED</span><br>Read-Write-Own; sovereign digital identity, semantic interoperability & smart contracts.</td>
+        </tr>
+        <tr>
+          <td class="param-col">Content Architecture</td>
+          <td><span class="tag tag-trad">ANALOG BROADCAST</span><br>Fixed print column inches, scheduled TV programming slots, rigid physical editions.</td>
+          <td><span class="tag tag-w1">STATIC HYPERTEXT</span><br>Server-hosted static HTML documents; webmaster updates files manually via FTP.</td>
+          <td><span class="tag tag-w2">DYNAMIC USER-GENERATED</span><br>Folksonomies, wikis, social feeds, AJAX, cloud databases, live streaming video.</td>
+          <td><span class="tag tag-w3">SEMANTIC & SPATIAL</span><br>Ontology standards (RDF, OWL), machine-readable linked metadata, spatial 3D/AI models.</td>
+        </tr>
+        <tr>
+          <td class="param-col">Gatekeeping & Curation</td>
+          <td><span class="tag tag-trad">INSTITUTIONAL EDITORS</span><br>Chief editors, censor boards, and broadcasting executives filter all content.</td>
+          <td><span class="tag tag-w1">WEBMASTER CURATION</span><br>Webmasters curate directory categories and external hyperlink directories.</td>
+          <td><span class="tag tag-w2">ALGORITHMIC CURATION</span><br>Engagement algorithms, recommendation AI, viral shares, peer crowdsourcing.</td>
+          <td><span class="tag tag-w3">DECENTRALIZED PROTOCOLS</span><br>Community consensus mechanisms, cryptographic trust, transparent open algorithms.</td>
+        </tr>
+        <tr>
+          <td class="param-col">Data Ownership & Capital</td>
+          <td><span class="tag tag-trad">MEDIA CONGLOMERATE</span><br>Corporate owners own printing presses, broadcast licenses, and copyright archives.</td>
+          <td><span class="tag tag-w1">DOMAIN HOSTING</span><br>Proprietary web hosts and server owners control all access and hosted content.</td>
+          <td><span class="tag tag-w2">SURVEILLANCE CAPITALISM</span><br>Centralized tech monopolies (Big Tech) harvest behavioral user data for targeted ads.</td>
+          <td><span class="tag tag-w3">USER DATA SOVEREIGNTY</span><br>Decentralized ledgers, cryptographic self-sovereign identity, portable user assets.</td>
+        </tr>
+        <tr>
+          <td class="param-col">Interactivity & Social Flow</td>
+          <td><span class="tag tag-trad">ONE-TO-MANY (MONOLOGUE)</span><br>Central transmitter to dispersed, atomized mass audience without feedback channels.</td>
+          <td><span class="tag tag-w1">ONE-TO-MANY (DIGITAL)</span><br>Webmaster publishes information; basic email contact forms with delayed response.</td>
+          <td><span class="tag tag-w2">MANY-TO-MANY (NETWORK)</span><br>Ubiquitous viral sharing, social tagging, hashtag movements, synchronous messaging.</td>
+          <td><span class="tag tag-w3">PEER-TO-PEER (AUTONOMOUS)</span><br>Autonomous agents, machine-to-machine exchange, contextual ubiquitous computing.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="footer">
+    <span>OurMocks CUET Architecture v2.6 · Conceptual Framework</span>
+    <span>Source: Tim O'Reilly (Web 2.0 Principles) & Tim Berners-Lee (Semantic Web Architecture)</span>
+  </div>
+</body>
+</html>

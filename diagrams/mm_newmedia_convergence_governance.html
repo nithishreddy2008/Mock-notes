@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 600px;
+    background: #FFFFFF;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 19px;
+    font-weight: 800;
+    color: #071A4D;
+    letter-spacing: -0.02em;
+  }
+  .title-block p {
+    font-size: 11px;
+    color: #64748B;
+    margin-top: 2px;
+    font-weight: 500;
+  }
+  .badge {
+    background: #EEF1F8;
+    color: #1F5EFF;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .content-area {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 12px 0;
+    flex-grow: 1;
+  }
+  .section-label {
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #1E3A8A;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section-label::after {
+    content: "";
+    flex-grow: 1;
+    height: 1px;
+    background: #E2E8F0;
+  }
+  .grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+  }
+  .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+  .card {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 10px 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 6px;
+  }
+  .step-num {
+    background: #071A4D;
+    color: #FFFFFF;
+    font-size: 10px;
+    font-weight: 800;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .step-title {
+    font-size: 11.5px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .step-subtitle {
+    font-size: 9.5px;
+    color: #1F5EFF;
+    font-weight: 700;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+  }
+  .card ul {
+    list-style: none;
+    font-size: 10px;
+    color: #475569;
+    line-height: 1.35;
+  }
+  .card ul li {
+    margin-bottom: 4px;
+    position: relative;
+    padding-left: 10px;
+  }
+  .card ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #1F5EFF;
+    font-weight: bold;
+  }
+  .gov-card {
+    background: #F0FDF4;
+    border: 1px solid #BBF7D0;
+  }
+  .gov-num {
+    background: #15803D;
+    color: white;
+  }
+  .gov-title {
+    color: #166534;
+  }
+  .gov-sub {
+    color: #15803D;
+  }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 8px;
+    font-size: 10px;
+    color: #64748B;
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <div class="title-block">
+      <h1>Media Convergence Framework & Digital Grievance Governance</h1>
+      <p>Jenkins' Convergence Dimensions & India's 3-Tier Redressal Mechanism under IT Rules 2021</p>
+    </div>
+    <div class="badge">FIGURE 2 · CONVERGENCE & GOVERNANCE</div>
+  </div>
+
+  <div class="content-area">
+    <div>
+      <div class="section-label">PART A: Henry Jenkins' Multi-Dimensional Media Convergence</div>
+      <div class="grid-4" style="margin-top: 8px;">
+        <div class="card">
+          <div class="card-header">
+            <span class="step-title">Technological</span>
+            <span class="step-num">1</span>
+          </div>
+          <div class="step-subtitle">Digital Digitization</div>
+          <ul>
+            <li>Words, images, video & audio merge into 0s & 1s</li>
+            <li>Smartphones unite phone, TV, camera & press</li>
+            <li>Cross-platform content delivery pipelines</li>
+            <li>Bandwidth expansion & cloud streaming</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <span class="step-title">Economic</span>
+            <span class="step-num">2</span>
+          </div>
+          <div class="step-subtitle">Corporate Conglomeration</div>
+          <ul>
+            <li>Horizontal & vertical media integration</li>
+            <li>Transmedia storytelling franchises</li>
+            <li>Big Tech acquiring content & ad platforms</li>
+            <li>Monopolistic platform ecosystems</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <span class="step-title">Cultural</span>
+            <span class="step-num">3</span>
+          </div>
+          <div class="step-subtitle">Participatory Culture</div>
+          <ul>
+            <li>Users evolve from viewers to 'Prosumers'</li>
+            <li>User-generated content (UGC) & meme culture</li>
+            <li>Remixing, fanfiction & grassroots activism</li>
+            <li>Collective intelligence & crowdsourcing</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <span class="step-title">Global</span>
+            <span class="step-num">4</span>
+          </div>
+          <div class="step-subtitle">Transnational Flows</div>
+          <ul>
+            <li>McLuhan's Global Village realized</li>
+            <li>Instantaneous borderless news dissemination</li>
+            <li>Hybrid cultural glocalization (K-pop, anime)</li>
+            <li>Cultural imperialism vs local resistance</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="section-label" style="color: #166534;">PART B: India's 3-Tier Grievance Redressal Architecture (IT Rules 2021)</div>
+      <div class="grid-3" style="margin-top: 8px;">
+        <div class="card gov-card">
+          <div class="card-header">
+            <span class="step-title gov-title">Level I: Platform Self-Regulation</span>
+            <span class="step-num gov-num">I</span>
+          </div>
+          <div class="step-subtitle gov-sub">Publisher / Intermediary</div>
+          <ul>
+            <li>Appoint Resident Grievance Officer (RGO) based in India</li>
+            <li>Acknowledge user complaints within 24 hours</li>
+            <li>Resolve grievances within 15 days</li>
+            <li>Takedown non-consensual sexual content within 24 hours</li>
+          </ul>
+        </div>
+        <div class="card gov-card">
+          <div class="card-header">
+            <span class="step-title gov-title">Level II: Institutional Body</span>
+            <span class="step-num gov-num">II</span>
+          </div>
+          <div class="step-subtitle gov-sub">Self-Regulating Council</div>
+          <ul>
+            <li>Independent industry body registered with MIB</li>
+            <li>Headed by retired Supreme Court or High Court judge</li>
+            <li>Hears unresolved appeals from Level I decisions</li>
+            <li>Issues compliance orders, warnings, or censures</li>
+          </ul>
+        </div>
+        <div class="card gov-card">
+          <div class="card-header">
+            <span class="step-title gov-title">Level III: Oversight Committee</span>
+            <span class="step-num gov-num">III</span>
+          </div>
+          <div class="step-subtitle gov-sub">Government of India (MIB / MeitY)</div>
+          <ul>
+            <li>Inter-Departmental Committee headed by Joint Secretary</li>
+            <li>Issues directions for blocking content under Sec 69A IT Act</li>
+            <li>Emergency blocking powers during national security crises</li>
+            <li>Final appellate authority for regulatory non-compliance</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>OurMocks CUET Architecture v2.6 · Convergence & Cyber Governance</span>
+    <span>Statutory Base: Information Technology (Intermediary Guidelines and Digital Media Ethics Code) Rules, 2021</span>
+  </div>
+</body>
+</html>
