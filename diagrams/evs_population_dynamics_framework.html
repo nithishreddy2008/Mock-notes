@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 600px;
+    background: #FFFFFF;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .title-block p {
+    font-size: 11.5px;
+    color: #64748B;
+    margin-top: 3px;
+    font-weight: 600;
+  }
+  .badge {
+    background: #FEF3C7;
+    color: #92400E;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+  }
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-top: 14px;
+  }
+  .card {
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 12px;
+    background: #F8FAFC;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .card-header {
+    font-size: 12.5px;
+    font-weight: 800;
+    color: #071A4D;
+    border-bottom: 1px solid #CBD5E1;
+    padding-bottom: 6px;
+    margin-bottom: 8px;
+  }
+  .formula {
+    font-family: monospace;
+    font-size: 10.5px;
+    color: #1F5EFF;
+    font-weight: 700;
+    background: #EFF6FF;
+    padding: 3px 6px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .item-list {
+    list-style: none;
+    font-size: 9.8px;
+    color: #334155;
+    line-height: 1.45;
+  }
+  .item-list li { margin-bottom: 4px; }
+  .highlight { font-weight: 700; color: #0F172A; }
+  .tag {
+    display: inline-block;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 9px;
+    font-weight: 700;
+    margin-top: 6px;
+  }
+  .tag-blue { background: #DBEAFE; color: #1E40AF; }
+  .tag-emerald { background: #D1FAE5; color: #065F46; }
+  .tag-purple { background: #EDE9FE; color: #5B21B6; }
+  .tag-amber { background: #FEF3C7; color: #92400E; }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    color: #94A3B8;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 8px;
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <div class="title-block">
+      <h1>Population Dynamics Architecture: Growth Models, r/K Strategies & Demography</h1>
+      <p>Mathematical Formulations, Survivorship Profiles, Density Dependence, and Demographic Transitions</p>
+    </div>
+    <div class="badge">MATHEMATICAL DYNAMICS · FIG 2</div>
+  </div>
+
+  <div class="grid-container">
+    <div class="card">
+      <div>
+        <div class="card-header">1. Growth Models</div>
+        <div class="formula">dN/dt = rN · (K-N)/K</div>
+        <ul class="item-list">
+          <li><span class="highlight">Exponential (J-Curve):</span> Unlimited resources; dN/dt = rN; crashes when threshold exceeded.</li>
+          <li><span class="highlight">Logistic (S-Curve):</span> Verhulst-Pearl model; environmental resistance slows growth as N approaches K.</li>
+          <li><span class="highlight">Carrying Capacity (K):</span> Maximum sustainable density an environment supports indefinitely.</li>
+        </ul>
+      </div>
+      <span class="tag tag-blue">Mathematical Ecology</span>
+    </div>
+
+    <div class="card">
+      <div>
+        <div class="card-header">2. r vs. K Selection</div>
+        <div class="formula">Life History Evolution</div>
+        <ul class="item-list">
+          <li><span class="highlight">r-Strategists:</span> Small size, rapid maturation, high fecundity, low parental care, unstable environments (insects, weeds).</li>
+          <li><span class="highlight">K-Strategists:</span> Large body, slow maturation, low reproductive output, high parental investment, stable habitats (elephants, humans).</li>
+        </ul>
+      </div>
+      <span class="tag tag-emerald">Evolutionary Adaptation</span>
+    </div>
+
+    <div class="card">
+      <div>
+        <div class="card-header">3. Survivorship Curves</div>
+        <div class="formula">Type I, II, & III Curves</div>
+        <ul class="item-list">
+          <li><span class="highlight">Type I (Convex):</span> High juvenile survival; mortality concentrated in old age (humans, large mammals).</li>
+          <li><span class="highlight">Type II (Diagonal):</span> Constant mortality rate throughout life span (songbirds, hydra).</li>
+          <li><span class="highlight">Type III (Concave):</span> High juvenile mortality; survivors enjoy long longevity (oysters, trees, pelagic fish).</li>
+        </ul>
+      </div>
+      <span class="tag tag-purple">Cohort Demography</span>
+    </div>
+
+    <div class="card">
+      <div>
+        <div class="card-header">4. Demographic Transition</div>
+        <div class="formula">5-Stage Population Model</div>
+        <ul class="item-list">
+          <li><span class="highlight">Stage 1:</span> High CBR, High CDR (Stable).</li>
+          <li><span class="highlight">Stage 2:</span> High CBR, Plummeting CDR (Explosion).</li>
+          <li><span class="highlight">Stage 3:</span> Falling CBR, Low CDR (Deceleration).</li>
+          <li><span class="highlight">Stage 4:</span> Low CBR, Low CDR (Stabilization).</li>
+          <li><span class="highlight">Stage 5:</span> Sub-replacement fertility (Decline).</li>
+        </ul>
+      </div>
+      <span class="tag tag-amber">Human Demography</span>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>OURMOCKS POPULATION ECOLOGY ARCHITECTURE</span>
+    <span>THEMATIC BOARD: MATHEMATICAL GROWTH TO HUMAN DEMOGRAPHIC TRANSITIONS</span>
+    <span>PAGE 8 THEMATIC BOARD</span>
+  </div>
+</body>
+</html>

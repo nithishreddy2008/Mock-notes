@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 600px;
+    background: #FFFFFF;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .title-block p {
+    font-size: 11.5px;
+    color: #64748B;
+    margin-top: 3px;
+    font-weight: 600;
+  }
+  .badge {
+    background: #EEF1F8;
+    color: #1F5EFF;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+  }
+  .mindmap-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr 1fr;
+    gap: 14px;
+    align-items: center;
+    margin: auto 0;
+  }
+  .col {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .center-node {
+    background: linear-gradient(135deg, #071A4D 0%, #1E3A8A 100%);
+    color: #FFFFFF;
+    border-radius: 12px;
+    padding: 20px 16px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(7, 26, 77, 0.15);
+  }
+  .center-node h2 {
+    font-size: 16px;
+    font-weight: 800;
+    margin-bottom: 6px;
+  }
+  .center-node p {
+    font-size: 10.5px;
+    color: #93C5FD;
+    line-height: 1.4;
+  }
+  .node-box {
+    border: 1px solid #CBD5E1;
+    border-radius: 8px;
+    padding: 10px 12px;
+    background: #F8FAFC;
+  }
+  .node-box h3 {
+    font-size: 11.5px;
+    font-weight: 800;
+    color: #071A4D;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .node-box p {
+    font-size: 9.8px;
+    color: #475569;
+    line-height: 1.35;
+  }
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .dot-blue { background: #2563EB; }
+  .dot-emerald { background: #059669; }
+  .dot-amber { background: #D97706; }
+  .dot-purple { background: #7C3AED; }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    color: #94A3B8;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 8px;
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <div class="title-block">
+      <h1>Unit 2: Population and Conservation Ecology — Comprehensive Synthesis Mindmap</h1>
+      <p>Integrated Framework: Population Kinetics, Demographic Transitions, In-Situ/Ex-Situ Biology, and IUCN Red List Protocols</p>
+    </div>
+    <div class="badge">CUET UG · SYNTHESIS MINDMAP</div>
+  </div>
+
+  <div class="mindmap-wrapper">
+    <div class="col">
+      <div class="node-box">
+        <h3><span class="dot dot-blue"></span>1. Population Dynamics</h3>
+        <p>• <b>Growth Models:</b> Exponential (dN/dt = rN) vs Logistic (Verhulst-Pearl).<br>• <b>Demographic Transitions:</b> 5-stage CBR/CDR evolution, age-sex pyramids.<br>• <b>Life History:</b> r vs K selection, survivorship curves (Type I, II, III).</p>
+      </div>
+      <div class="node-box">
+        <h3><span class="dot dot-emerald"></span>2. Conservation Protocols</h3>
+        <p>• <b>In-Situ:</b> National Parks (zero human use), Sanctuaries, Biosphere Reserves.<br>• <b>Ex-Situ:</b> Zoological parks, Botanical gardens, Cryopreservation, Gene banks.<br>• <b>Flagship Projects:</b> Project Tiger (1973), Project Elephant (1992).</p>
+      </div>
+    </div>
+
+    <div class="center-node">
+      <h2>POPULATION & CONSERVATION</h2>
+      <p>CUET UG Environmental Science · Code 307<br>Kinetics, Carrying Capacity (K)<br>Biodiversity Hotspots & IUCN Status</p>
+    </div>
+
+    <div class="col">
+      <div class="node-box">
+        <h3><span class="dot dot-purple"></span>3. Biodiversity Hotspots</h3>
+        <p>• <b>Criteria (Norman Myers):</b> 1,500 endemic plants + ≥70% habitat lost.<br>• <b>Global Count:</b> 36 hotspots covering only 2.4% land area, &gt;50% plants.<br>• <b>Indian Hotspots:</b> Western Ghats, Himalayas, Indo-Burma, Sundaland.</p>
+      </div>
+      <div class="node-box">
+        <h3><span class="dot dot-amber"></span>4. Ecological Interactions</h3>
+        <p>• <b>Keystone Species:</b> Disproportionate impact on community structure.<br>• <b>IUCN Red List:</b> EX, EW, CR (50% extinction in 10 yrs), EN, VU, NT, LC.<br>• <b>Energetics:</b> Lindeman's 10% rule, upright energy pyramids, biogeochemistry.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>OURMOCKS SYNTHESIZER MINDMAP · ENVIRONMENTAL SCIENCE CODE 307</span>
+    <span>SYNTHESIS: POPULATION MODELS + CONSERVATION + HOTSPOTS + IUCN</span>
+    <span>PAGE 12 CORE ARTIFACT · FIG 3</span>
+  </div>
+</body>
+</html>

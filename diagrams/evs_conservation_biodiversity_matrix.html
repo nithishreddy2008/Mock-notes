@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 600px;
+    background: #FFFFFF;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .title-block p {
+    font-size: 11.5px;
+    color: #64748B;
+    margin-top: 3px;
+    font-weight: 600;
+  }
+  .badge {
+    background: #EEF1F8;
+    color: #1F5EFF;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 12px;
+  }
+  th {
+    background: #071A4D;
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 7px 8px;
+    text-align: left;
+    border: 1px solid #CBD5E1;
+  }
+  td {
+    font-size: 10.5px;
+    padding: 6.5px 8px;
+    border: 1px solid #E2E8F0;
+    line-height: 1.35;
+  }
+  tr:nth-child(even) { background: #F8FAFC; }
+  .strat-name { font-weight: 800; color: #1E3A8A; }
+  .type { font-weight: 700; color: #0284C7; }
+  .rule { font-weight: 600; color: #047857; }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    color: #94A3B8;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 8px;
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <div class="title-block">
+      <h1>Protected Areas & Biodiversity Conservation Matrix: In-Situ vs. Ex-Situ Systems</h1>
+      <p>Comparative Legal Architecture, IUCN Categorization, Permissible Anthropogenic Activities & Benchmark Examples</p>
+    </div>
+    <div class="badge">CUET UG · EVS UNIT 2 · FIG 1</div>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 17%;">Conservation Mode</th>
+        <th style="width: 15%;">Classification Type</th>
+        <th style="width: 16%;">Governing Framework</th>
+        <th style="width: 27%;">Permissible Activities & Restrictions</th>
+        <th style="width: 25%;">Benchmark Indian Examples</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="strat-name">National Park</td>
+        <td class="type">In-Situ (IUCN Cat II)</td>
+        <td>Wildlife Protection Act (1972)</td>
+        <td class="rule">Highest protection; zero human habitation, private rights, timber logging, or livestock grazing allowed. Focus on total ecosystem integrity.</td>
+        <td>Jim Corbett (Uttarakhand), Kaziranga (Assam), Keoladeo Ghana (Rajasthan).</td>
+      </tr>
+      <tr>
+        <td class="strat-name">Wildlife Sanctuary</td>
+        <td class="type">In-Situ (IUCN Cat IV)</td>
+        <td>Wildlife Protection Act (1972)</td>
+        <td class="rule">Species-oriented protection; limited human activities (regulated livestock grazing, traditional firewood/NTFP collection) permitted under DC control.</td>
+        <td>Gir (Gujarat), Bharatpur, Periyar (Kerala), Chilika Nalaban (Odisha).</td>
+      </tr>
+      <tr>
+        <td class="strat-name">Biosphere Reserve</td>
+        <td class="type">In-Situ (MAB UNESCO)</td>
+        <td>UNESCO MAB Protocol</td>
+        <td class="rule">Tri-zonal structure: Core (strictly protected), Buffer (research/education), Transition zone (sustainable human settlements & agriculture).</td>
+        <td>18 in India (12 in WNBR): Nilgiri (1st, 1986), Nanda Devi, Sundarbans, Gulf of Mannar.</td>
+      </tr>
+      <tr>
+        <td class="strat-name">Sacred Groves</td>
+        <td class="type">In-Situ (Community-led)</td>
+        <td>Customary Law / WPA (2002)</td>
+        <td class="rule">Community-managed forest patches protected through spiritual taboos and cultural veneration; zero commercial exploitation; micro-refugia.</td>
+        <td>Orans (Rajasthan), Devarakadu (Karnataka), Law Kyntang (Meghalaya), Sarnas (Jharkhand).</td>
+      </tr>
+      <tr>
+        <td class="strat-name">Botanical Garden & Zoo</td>
+        <td class="type">Ex-Situ (Captive Care)</td>
+        <td>Central Zoo Authority (CZA)</td>
+        <td class="rule">Off-site maintenance, pedigree breeding programs, captive propagation of endangered flora/fauna, public environmental education.</td>
+        <td>Acharya Jagadish Chandra Bose Indian Botanic Garden (Howrah), Padmaja Naidu Himalayan Zoo.</td>
+      </tr>
+      <tr>
+        <td class="strat-name">Cryopreservation & Seed Bank</td>
+        <td class="type">Ex-Situ (Germplasm Storage)</td>
+        <td>National Bureau of Plant Genetic Resources (NBPGR)</td>
+        <td class="rule">Ultra-low temperature storage (-196°C in liquid nitrogen) of gametes, seeds, pollen, tissue cultures; prevents extinction of landraces.</td>
+        <td>National Gene Bank (NBPGR, New Delhi), Svalbard Global Seed Vault (Norway).</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="footer">
+    <span>OURMOCKS CONSERVATION ECOLOGY SUITE</span>
+    <span>CODE 307 · UNIT 2: POPULATION & CONSERVATION ECOLOGY</span>
+    <span>PAGE 5 CONCEPT MATRIX</span>
+  </div>
+</body>
+</html>
