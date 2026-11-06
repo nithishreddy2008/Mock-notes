@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="sa">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 600px;
+    background: #FFFFFF;
+    font-family: "Kohinoor Devanagari", "Devanagari Sangam MN", -apple-system, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .title-block p {
+    font-size: 11.5px;
+    color: #64748B;
+    margin-top: 2px;
+    font-weight: 600;
+  }
+  .badge {
+    background: #EEF1F8;
+    color: #1F5EFF;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  .map-container {
+    flex-grow: 1;
+    margin: 12px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 12px;
+  }
+  .node-card {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 10px 14px;
+    display: flex;
+    flex-direction: column;
+  }
+  .node-card.c1 { border-left: 4px solid #3730A3; }
+  .node-card.c2 { border-left: 4px solid #B45309; }
+  .node-card.c3 { border-left: 4px solid #15803D; }
+  .node-card.c4 { border-left: 4px solid #B91C1C; }
+  .node-title {
+    font-size: 13px;
+    font-weight: 800;
+    margin-bottom: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .node-title.t1 { color: #3730A3; }
+  .node-title.t2 { color: #B45309; }
+  .node-title.t3 { color: #15803D; }
+  .node-title.t4 { color: #B91C1C; }
+  .node-pill {
+    font-size: 9.5px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 700;
+  }
+  .p1 { background: #E0E7FF; color: #3730A3; }
+  .p2 { background: #FEF3C7; color: #92400E; }
+  .p3 { background: #DCFCE7; color: #166534; }
+  .p4 { background: #FEE2E2; color: #991B1B; }
+  .node-content {
+    font-size: 10.5px;
+    color: #334155;
+    line-height: 1.45;
+  }
+  .node-content ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  .node-content li {
+    margin-bottom: 4px;
+  }
+  .node-content strong {
+    color: #0F172A;
+  }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 8px;
+    font-size: 10px;
+    color: #64748B;
+  }
+  .brand-tag { font-weight: 800; color: #071A4D; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="title-block">
+    <h1>संस्कृत-सन्धि-प्रकरणम् : सर्वाङ्गीणं महामानचित्रम् (Synthesis Mindmap)</h1>
+    <p>CUET UG संस्कृतम् (Code 325) · अच्-हल्-विसर्ग-सन्धयः, पाणिनीय-सूत्राणि, अपवादाः परीक्षा-सूत्राणि च</p>
+  </div>
+  <div class="badge">चित्रम् ३ · Master Mindmap</div>
+</div>
+
+<div class="map-container">
+  <div class="node-card c1">
+    <div class="node-title t1">
+      <span>१. अच्-सन्धिः (स्वर-सन्धयः · ८ भेदाः)</span>
+      <span class="node-pill p1">स्वरयोः सन्निधिः</span>
+    </div>
+    <div class="node-content">
+      <ul>
+        <li>• <b>सवर्णदीर्घः:</b> <i>अकः सवर्णे दीर्घः</i> → विद्या + आलयः = विद्यालयः, भानु + उदयः = भानूदयः</li>
+        <li>• <b>गुण-सन्धिः:</b> <i>आद्गुणः</i> (अ/आ + इ/उ/ऋ) → उपेन्द्रः (ए), सूर्योदयः (ओ), देवर्षिः (अर्)</li>
+        <li>• <b>वृद्धि-सन्धिः:</b> <i>वृद्धिरेचि</i> (अ/आ + एच्) → तथैव (ऐ), जलौघः (औ), महौदार्यम् (औ)</li>
+        <li>• <b>यण्-सन्धिः:</b> <i>इको यणचि</i> (इक् + असवर्ण अच्) → यदि + अपि = यद्यपि, अनु + अयः = अन्वयः</li>
+        <li>• <b>अयादि / पूर्वरूपम्:</b> <i>एचोऽयवायावः</i> (नयनम्, गायकः, पवनः, पावकः) / <i>एङः पदान्तादति</i> (हरेऽव, विष्णोऽव)</li>
+        <li>• <b>पररूप / प्रकृतिभावः:</b> <i>एङि पररूपम्</i> (प्रेजते, उपोषति) / <i>प्लुतप्रगृह्या...</i> (हरी एतौ, लते एते)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="node-card c2">
+    <div class="node-title t2">
+      <span>२. हल्-सन्धिः (व्यञ्जन-सन्धयः · ८ भेदाः)</span>
+      <span class="node-pill p2">व्यञ्जन-विकारः</span>
+    </div>
+    <div class="node-content">
+      <ul>
+        <li>• <b>श्चुत्व-सन्धिः:</b> <i>स्तोः श्चुना श्चुः</i> (स्/तवर्ग + श्/चवर्ग = श्/चवर्ग) → रामश्शेते, सच्चित्, शार्ङ्गिञ्जयः</li>
+        <li>• <b>ष्टुत्व-सन्धिः:</b> <i>ष्टुना ष्टुः</i> (स्/तवर्ग + ष्/टवर्ग = ष्/टवर्ग) → रामष्षष्ठः, तट्टीका, उड्डीनः</li>
+        <li>• <b>जश्त्वम्:</b> <i>झलां जशोऽन्ते</i> (पदान्ते झल् → ३य वर्णः) → वागीशः, जगदीशः, सुबन्तः, षडाननः</li>
+        <li>• <b>चर्त्वम्:</b> <i>खरि च</i> (झल् + खर् → १म वर्णः) → सद् + कारः = सत्कारः, उद् + पन्नः = उत्पन्नः</li>
+        <li>• <b>अनुस्वारः / परसवर्णः:</b> <i>मोऽनुस्वारः</i> (हरिं वन्दे) / <i>अनुस्वारस्य ययि परसवर्णः</i> (शङ्का, चञ्चुः)</li>
+        <li>• <b>तोर्लि / छत्वम्:</b> <i>तोर्लि</i> (तत् + लयः = तल्लयः) / <i>शश्छोऽटि</i> (तत् + शिवः = तच्छिवः)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="node-card c3">
+    <div class="node-title t3">
+      <span>३. विसर्ग-सन्धिः (विसर्गस्य रूपाणि)</span>
+      <span class="node-pill p3">रुत्व-उत्व-सत्व-लोपाः</span>
+    </div>
+    <div class="node-content">
+      <ul>
+        <li>• <b>उत्व-सन्धिः:</b> <i>अतो रोरप्लुतादप्लुते</i> (अ + : + अ → ओऽ) → शिवोऽर्च्यः, कोऽपि, प्रथमोध्यायः</li>
+        <li>• <b>हशि च उत्वम्:</b> <i>हशि च</i> (अ + : + ३/४/५/यवरलह → ओ) → रामो गच्छति, शिवो वन्द्यः</li>
+        <li>• <b>रुत्वम्:</b> <i>ससजुषो रुः</i> (पदान्त सकारस्य रुः, रेफः) → मुनिः + अयम् = मुनिरयम्, गुरुः + जयति = गुरुर्जयति</li>
+        <li>• <b>सत्व-सन्धिः:</b> <i>विसर्जनीयस्य सः</i> (विसर्ग + खर्) → नमः + ते = नमस्ते, कः + चित् = कश्चित्</li>
+        <li>• <b>रो रि & ढ्रलोपः:</b> <i>रो रि</i> (र् + र् → पूर्व रेफलोपः, पूर्वस्वरस्य दीर्घः) → पुनर् + रमते = पुनारमते</li>
+        <li>• <b>विसर्ग-लोपः:</b> <i>भोभगोअघोअपूर्वस्य...</i> / <i>एतत्तदोः सुलोपोऽकोरनञ्पे...</i> → सः गच्छति = स गच्छति</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="node-card c4">
+    <div class="node-title t4">
+      <span>४. CUET Fatal Traps & परीक्षा-सूत्राणि</span>
+      <span class="node-pill p4">उच्च-भ्रामकाः अंशाः</span>
+    </div>
+    <div class="node-content">
+      <ul>
+        <li>• <b>Trap १ (पूर्वरूप vs अयादि):</b> हरे + अव = <i>हरेऽव</i> (पूर्वरूपम्); किन्तु प्रभो + एहि = <i>प्रभवेहि</i> (अयादिः)!</li>
+        <li>• <b>Trap २ (प्रकृतिभावः):</b> 'हरी एतौ', 'विष्णू इमौ', 'गङ्गे अमू' — <i>ईदूदेद् द्विवचनं प्रगृह्यम्</i>, सन्धिः न भवति!</li>
+        <li>• <b>Trap ३ (सः / एषः विसर्ग-लोपः):</b> 'सः + पठति' = <i>स पठति</i> ('अ' भिन्ने व्यञ्जने विसर्ग-लोपः, 'सः अपठत्' = <i>सोऽपठत्</i>)!</li>
+        <li>• <b>Trap ४ (रो रि रेफलोपः):</b> 'पुनर् + रमते' = <i>पुनारमते</i> (दीर्घः अनिवार्यः, 'पुनरमते' अशुद्धम्)!</li>
+        <li>• <b>Trap ५ (पररूप-अपवादः):</b> प्र + एजते = <i>प्रेजते</i>, उप + ओषति = <i>उपोषति</i> (वृद्धिः न भवति, पररूपं भवति)!</li>
+        <li>• <b>Trap ६ (जश्त्व-विच्छेद-भ्रमः):</b> 'दिगम्बरः' = <i>दिक् + अम्बरः</i> (न तु 'दिग् + अम्बरः'); 'अजन्तम्' = <i>अच् + अन्तम्</i>!</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <span class="brand-tag">OurMocks CUET UG Series</span>
+  <span>संहिता-ज्ञानम् : सन्धिविच्छेदेषु अर्थ-प्रकृति-प्रत्यय-संरक्षणम्</span>
+  <span>संस्कृतम् (Code 325) · Unit 3 Master Mindmap</span>
+</div>
+
+</body>
+</html>

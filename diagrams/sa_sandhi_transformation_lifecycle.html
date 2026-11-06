@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="sa">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 600px;
+    background: #FFFFFF;
+    font-family: "Kohinoor Devanagari", "Devanagari Sangam MN", -apple-system, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #071A4D;
+    letter-spacing: -0.01em;
+  }
+  .title-block p {
+    font-size: 12px;
+    color: #64748B;
+    margin-top: 3px;
+    font-weight: 600;
+  }
+  .badge {
+    background: #EEF1F8;
+    color: #1F5EFF;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .flow-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 12px;
+    margin: 16px 0;
+    flex-grow: 1;
+  }
+  .stage-card {
+    flex: 1;
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 14px 12px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  .stage-card.active {
+    border-color: #1F5EFF;
+    background: #F0F4FF;
+  }
+  .stage-num {
+    font-size: 10px;
+    font-weight: 800;
+    color: #1F5EFF;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 4px;
+  }
+  .stage-title {
+    font-size: 13.5px;
+    font-weight: 800;
+    color: #071A4D;
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+  .stage-body {
+    font-size: 11px;
+    color: #334155;
+    line-height: 1.45;
+    flex-grow: 1;
+  }
+  .rule-box {
+    background: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    border-radius: 6px;
+    padding: 8px;
+    margin-top: 8px;
+    font-size: 10.5px;
+  }
+  .rule-box strong { color: #071A4D; }
+  .arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #94A3B8;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 8px;
+    font-size: 10.5px;
+    color: #64748B;
+  }
+  .brand-tag { font-weight: 800; color: #071A4D; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="title-block">
+    <h1>संस्कृत-सन्धि-प्रक्रिया : पञ्च-सोपानात्मकः पाणिनीय-निर्णय-प्रवाहः</h1>
+    <p>CUET UG संस्कृतम् (Code 325) · वर्णसन्निधि-परीक्षणात् पदनिष्पत्तिपर्यन्तं प्रक्रिया-प्रवाहः</p>
+  </div>
+  <div class="badge">चित्रम् २ · Process Lifecycle</div>
+</div>
+
+<div class="flow-container">
+  <div class="stage-card">
+    <div class="stage-num">सोपानम् १ · सन्निधिः</div>
+    <div class="stage-title">वर्ण-संनिकर्ष-परीक्षणम्</div>
+    <div class="stage-body">
+      पदयोः सन्निधौ अर्धमात्राकालादपि न्यूनः व्यवधानरहितः कालः:
+      <div class="rule-box">
+        <strong>"परः संनिकर्षः संहिता"</strong><br>
+        (अष्टाध्यायी १.४.१०९)<br>
+        पूर्वपदस्य अन्त्यवर्णः + उत्तरपदस्य प्रथमवर्णः परस्परं मिलतः।
+      </div>
+    </div>
+  </div>
+
+  <div class="arrow">→</div>
+
+  <div class="stage-card">
+    <div class="stage-num">सोपानम् २ · वर्गीकरणम्</div>
+    <div class="stage-title">पूर्ववर्ण-स्वरूप-निर्णयः</div>
+    <div class="stage-body">
+      पूर्वपदस्य अन्त्यवर्णस्य प्रकृति-परीक्षणम्:
+      <div class="rule-box">
+        • यदि <strong>अच् (स्वरः)</strong> → स्वर-सन्धिः<br>
+        • यदि <strong>हल् (व्यञ्जनम्)</strong> → व्यञ्जन-सन्धिः<br>
+        • यदि <strong>विसर्गः (:)</strong> → विसर्ग-सन्धिः<br>
+        प्रत्याहार-निर्धारणम् (अक्, इक्, एङ्, झल्, खर्)।
+      </div>
+    </div>
+  </div>
+
+  <div class="arrow">→</div>
+
+  <div class="stage-card active">
+    <div class="stage-num">सोपानम् ३ · सूत्र-प्रवृत्तिः</div>
+    <div class="stage-title">पाणिनीय-नियम-संयोगः</div>
+    <div class="stage-body">
+      परवर्णस्य साहचर्येण विशिष्य सूत्र-प्रवर्तनम्:
+      <div class="rule-box">
+        • सवर्ण अच्? → <strong>अकः सवर्णे दीर्घः</strong><br>
+        • असवर्ण अच्? → <strong>इको यणचि</strong><br>
+        • एङ् + ह्रस्व अ? → <strong>एङः पदान्तादति</strong><br>
+        • झल् + खर्? → <strong>खरि च (चर्त्वम्)</strong><br>
+        • अतो रोः + अशि? → <strong>हशि च / उत्वम्</strong>
+      </div>
+    </div>
+  </div>
+
+  <div class="arrow">→</div>
+
+  <div class="stage-card">
+    <div class="stage-num">सोपानम् ४ · रूपान्तरणम्</div>
+    <div class="stage-title">आदेशः एकादेशः आगमो वा</div>
+    <div class="stage-body">
+      वर्णयोः विकारस्य पाणिनीया विधा:
+      <div class="rule-box">
+        • <strong>एकादेशः:</strong> द्वयोः स्थाने एकः (दीर्घ/गुण/वृद्धि/पूर्वरूप)<br>
+        • <strong>आदेशः:</strong> शत्रुमद् विनाशकः (यण्/श्चुत्व/जश्त्व)<br>
+        • <strong>आगमः:</strong> मित्रवत् प्रविष्टः (तुगागमः, नुडागमः)<br>
+        • <strong>लोपः:</strong> दर्शनस्याभावः (रो रि, विसर्गलोपः)
+      </div>
+    </div>
+  </div>
+
+  <div class="arrow">→</div>
+
+  <div class="stage-card">
+    <div class="stage-num">सोपानम् ५ · निष्पत्तिः</div>
+    <div class="stage-title">शुद्ध-पद-निष्पत्तिः विच्छेदश्च</div>
+    <div class="stage-body">
+      CUET परीक्षायाम् अर्थपूर्ण-विच्छेदस्य सिद्धिः:
+      <div class="rule-box">
+        • <strong>संधिः:</strong> देव + ऋषिः = देवर्षिः<br>
+        • <strong>विच्छेदः:</strong> जगदीशः = जगत् + ईशः<br>
+        • <strong>अपवादः:</strong> प्र + एजते = प्रेजते (पररूपम्)<br>
+        • <strong>प्रकृतिभावः:</strong> हरी एतौ = हरी एतौ (प्लुतप्रगृह्याः)
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <span class="brand-tag">OurMocks CUET UG Series</span>
+  <span>संहिता-प्रक्रिया : एकादेश-आदेश-आगम-लोप-व्यवस्था</span>
+  <span>संस्कृतम् (Code 325) · Unit 3 Lifecycle Flow</span>
+</div>
+
+</body>
+</html>

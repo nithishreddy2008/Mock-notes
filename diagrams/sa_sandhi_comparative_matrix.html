@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="sa">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 600px;
+    background: #FFFFFF;
+    font-family: "Kohinoor Devanagari", "Devanagari Sangam MN", -apple-system, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #071A4D;
+    letter-spacing: -0.01em;
+  }
+  .title-block p {
+    font-size: 12px;
+    color: #64748B;
+    margin-top: 3px;
+    font-weight: 600;
+  }
+  .badge {
+    background: #EEF1F8;
+    color: #1F5EFF;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .table-container {
+    flex-grow: 1;
+    margin: 14px 0;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  table {
+    width: 100%;
+    height: 100%;
+    border-collapse: collapse;
+    font-size: 11px;
+  }
+  th {
+    background: #071A4D;
+    color: #FFFFFF;
+    padding: 8px 10px;
+    text-align: left;
+    font-weight: 700;
+    border-right: 1px solid #1E293B;
+  }
+  th:last-child { border-right: none; }
+  td {
+    padding: 6px 10px;
+    border-bottom: 1px solid #E2E8F0;
+    border-right: 1px solid #E2E8F0;
+    line-height: 1.35;
+  }
+  td:last-child { border-right: none; }
+  tr:nth-child(even) { background: #F8FAFC; }
+  tr:last-child td { border-bottom: none; }
+  .col-sandhi { font-weight: 800; color: #071A4D; width: 14%; }
+  .col-sutra { font-family: monospace; font-size: 10.5px; font-weight: 700; color: #1F5EFF; width: 23%; }
+  .col-rule { color: #334155; width: 33%; }
+  .col-ex { font-weight: 700; color: #0F172A; width: 30%; }
+  .tag {
+    display: inline-block;
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-size: 9.5px;
+    font-weight: 700;
+    margin-right: 4px;
+  }
+  .tag-ach { background: #E0E7FF; color: #3730A3; }
+  .tag-hal { background: #FEF3C7; color: #92400E; }
+  .tag-vis { background: #DCFCE7; color: #166534; }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 8px;
+    font-size: 10.5px;
+    color: #64748B;
+  }
+  .brand-tag { font-weight: 800; color: #071A4D; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="title-block">
+    <h1>संस्कृत-सन्धि-व्यवस्था : त्रिविध-सन्धयः पाणिनीय-सूत्राणि च</h1>
+    <p>CUET UG संस्कृतम् (Code 325) · अच्-सन्धिः, हल्-सन्धिः, विसर्ग-सन्धिः तुलनात्मिका शास्त्रीया तालिका</p>
+  </div>
+  <div class="badge">चित्रम् १ · Comparative Matrix</div>
+</div>
+
+<div class="table-container">
+  <table>
+    <thead>
+      <tr>
+        <th>सन्धि-भेदः</th>
+        <th>पाणिनीय-सूत्रम् & प्रत्याहारः</th>
+        <th>सन्धि-नियमः / विकार-स्वरूपम्</th>
+        <th>परीक्षा-दृष्ट्या प्रमुखोदाहरणानि</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="col-sandhi"><span class="tag tag-ach">अच्</span> सवर्णदीर्घः</td>
+        <td class="col-sutra">अकः सवर्णे दीर्घः (६.१.१०१)</td>
+        <td class="col-rule">अक् (अ, इ, उ, ऋ, ऌ) + सवर्ण अक् = पूर्व-परयोः दीर्घ एकादेशः (आ, ई, ऊ, ॠ)</td>
+        <td class="col-ex">दैत्य + अरिः = <b>दैत्यारिः</b>, श्री + ईशः = <b>श्रीशः</b>, पितृ + ऋणम् = <b>पितॄणम्</b></td>
+      </tr>
+      <tr>
+        <td class="col-sandhi"><span class="tag tag-ach">अच्</span> गुण-सन्धिः</td>
+        <td class="col-sutra">आद्गुणः (६.१.८७) / अदेङ् गुणः</td>
+        <td class="col-rule">अ/आ + (इ/ई, उ/ऊ, ऋ/ॠ, ऌ) = पूर्व-परयोः गुण एकादेशः (ए, ओ, अर्, अल्)</td>
+        <td class="col-ex">नर + ईशः = <b>नरेशः</b>, सूर्य + उदयः = <b>सूर्योदयः</b>, महा + ऋषिः = <b>महर्षिः</b></td>
+      </tr>
+      <tr>
+        <td class="col-sandhi"><span class="tag tag-ach">अच्</span> वृद्धि-सन्धिः</td>
+        <td class="col-sutra">वृद्धिरेचि (६.१.८८) / वृद्धिरादैच्</td>
+        <td class="col-rule">अ/आ + एच (ए, ऐ, ओ, औ) = पूर्व-परयोः वृद्धि एकादेशः (ऐ, औ)</td>
+        <td class="col-ex">एक + एकम् = <b>एकैकम्</b>, जल + ओघः = <b>जलौघः</b>, देव + ऐश्वर्यम् = <b>देवैश्वर्यम्</b></td>
+      </tr>
+      <tr>
+        <td class="col-sandhi"><span class="tag tag-ach">अच्</span> यण्-सन्धिः</td>
+        <td class="col-sutra">इको यणचि (६.१.७७)</td>
+        <td class="col-rule">इक् (इ/ई, उ/ऊ, ऋ/ॠ, ऌ) + असवर्ण अच् = इक् स्थाने यण् (य्, व्, र्, ल्) आदेशः</td>
+        <td class="col-ex">प्रति + एकम् = <b>प्रत्येकम्</b>, मधु + अरिः = <b>मध्वरिः</b>, पितृ + आदेशः = <b>पित्रादेशः</b></td>
+      </tr>
+      <tr>
+        <td class="col-sandhi"><span class="tag tag-ach">अच्</span> अयादि / पूर्वरूप</td>
+        <td class="col-sutra">एचोऽयवायावः / एङः पदान्तादति</td>
+        <td class="col-rule">एच + अच् = अय्, अव्, आय्, आव् / पदान्ते ए/ओ + ह्रस्व अ = पूर्वरूपम् (ऽ)</td>
+        <td class="col-ex">ने + अनम् = <b>नयनम्</b>, पौ + अकः = <b>पावकः</b>; हरे + अव = <b>हरेऽव</b></td>
+      </tr>
+      <tr>
+        <td class="col-sandhi"><span class="tag tag-hal">हल्</span> श्चुत्व / ष्टुत्व</td>
+        <td class="col-sutra">स्तोः श्चुना श्चुः / ष्टुना ष्टुः</td>
+        <td class="col-rule">स्/तवर्गस्य श्/चवर्गेण योगे श्/चवर्गः; ष्/टवर्गेण योगे ष्/टवर्ग आदेशः</td>
+        <td class="col-ex">सत् + चित् = <b>सच्चित्</b>, रामस् + शेते = <b>रामश्शेते</b>; तत् + टीका = <b>तट्टीका</b></td>
+      </tr>
+      <tr>
+        <td class="col-sandhi"><span class="tag tag-hal">हल्</span> जश्त्व / चर्त्व</td>
+        <td class="col-sutra">झलां जशोऽन्ते (८.२.३९) / खरि च</td>
+        <td class="col-rule">पदान्ते झल् स्थाने जश् (३य वर्णः: ग्, ज्, ड्, द्, ब्); खर् परे चर् (१म वर्णः)</td>
+        <td class="col-ex">वाक् + ईशः = <b>वागीशः</b>, जगत् + ईशः = <b>जगदीशः</b>; सद् + कारः = <b>सत्कारः</b></td>
+      </tr>
+      <tr>
+        <td class="col-sandhi"><span class="tag tag-vis">विसर्ग</span> उत्वम् / रुत्वम्</td>
+        <td class="col-sutra">अतो रोरप्लुतादप्लुते / हशि च</td>
+        <td class="col-rule">ह्रस्व 'अ' + विसर्ग + ह्रस्व 'अ'/'हश्' (३,४,५, यवरलह) = विसर्गस्य 'उ', गुणश्च (ओ)</td>
+        <td class="col-ex">शिवः + अर्च्यः = <b>शिवोऽर्च्यः</b>, रामः + गच्छति = <b>रामो गच्छति</b></td>
+      </tr>
+      <tr>
+        <td class="col-sandhi"><span class="tag tag-vis">विसर्ग</span> सत्वम् / रो रि</td>
+        <td class="col-sutra">विसर्जनीयस्य सः / रो रि (८.३.१४)</td>
+        <td class="col-rule">विसर्ग + खर् = स्; रेफात् परे रेफे पूर्वरेफस्य लोपः, 'ढ्रलोपे...' पूर्वदीर्घश्च</td>
+        <td class="col-ex">नमः + ते = <b>नमस्ते</b>, धनुः + टङ्कारः = <b>धनुष्टङ्कारः</b>; पुनर् + रमते = <b>पुनारमते</b></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="footer">
+  <span class="brand-tag">OurMocks CUET UG Series</span>
+  <span>संहिता-लक्षणम् : "परः संनिकर्षः संहिता" (अष्टाध्यायी १.४.१०९)</span>
+  <span>संस्कृतम् (Code 325) · Unit 3 Concept Matrix</span>
+</div>
+
+</body>
+</html>
