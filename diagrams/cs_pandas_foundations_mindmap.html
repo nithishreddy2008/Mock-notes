@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 600px;
+    background: #FFFFFF;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #1E3A8A;
+    letter-spacing: -0.02em;
+  }
+  .title-block p {
+    font-size: 11px;
+    color: #64748B;
+    margin-top: 3px;
+    font-weight: 500;
+  }
+  .badge {
+    background: #EFF6FF;
+    color: #1D4ED8;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 700;
+    border: 1px solid #BFDBFE;
+    text-transform: uppercase;
+  }
+  .mindmap-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 12px;
+    margin: 14px 0;
+    flex: 1;
+  }
+  .branch-card {
+    background: #F8FAFC;
+    border: 1.5px solid #CBD5E1;
+    border-radius: 8px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+  }
+  .branch-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    padding-bottom: 6px;
+    border-bottom: 1.5px solid #E2E8F0;
+  }
+  .branch-icon {
+    width: 22px;
+    height: 22px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    font-weight: 800;
+    font-size: 11px;
+  }
+  .b-purple { background: #8B5CF6; }
+  .b-blue { background: #3B82F6; }
+  .b-green { background: #10B981; }
+  .b-amber { background: #F59E0B; }
+  .b-red { background: #EF4444; }
+  .b-teal { background: #0D9488; }
+  .branch-title { font-size: 12px; font-weight: 800; color: #0F172A; }
+  .branch-content {
+    font-size: 10.5px;
+    line-height: 1.4;
+    color: #334155;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .branch-content strong { color: #0F172A; }
+  .tag {
+    display: inline-block;
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-size: 9px;
+    font-weight: 700;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    background: #E2E8F0;
+    color: #1E293B;
+  }
+  .footer-bar {
+    border-top: 1px solid #E2E8F0;
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 10px;
+    color: #64748B;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="title-block">
+    <h1>Master Synthesis Mindmap: Pandas Series & DataFrames Foundations</h1>
+    <p>CUET UG Computer Science (Code 308) · Complete Architectural Blueprint of 1D & 2D Tabular Structures</p>
+  </div>
+  <div class="badge">Comprehensive Mindmap</div>
+</div>
+
+<div class="mindmap-grid">
+  <!-- Card 1 -->
+  <div class="branch-card" style="border-top: 4px solid #8B5CF6;">
+    <div class="branch-header">
+      <div class="branch-icon b-purple">1</div>
+      <div class="branch-title">Pandas Series (1D Array)</div>
+    </div>
+    <div class="branch-content">
+      <div>• <strong>Nature:</strong> 1D labeled array; homogeneous data types.</div>
+      <div>• <strong>Mutability:</strong> Value mutable, <em>size immutable</em>.</div>
+      <div>• <strong>Core Attributes:</strong> <span class="tag">.values</span> (NumPy array), <span class="tag">.index</span> (labels), <span class="tag">.dtype</span>, <span class="tag">.shape</span> <code style="font-size:9px;">(n,)</code>, <span class="tag">.ndim</span> <code style="font-size:9px;">= 1</code>, <span class="tag">.size</span>, <span class="tag">.empty</span>.</div>
+      <div>• <strong>Default Index:</strong> 0 to $n-1$ if omitted.</div>
+    </div>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="branch-card" style="border-top: 4px solid #3B82F6;">
+    <div class="branch-header">
+      <div class="branch-icon b-blue">2</div>
+      <div class="branch-title">Series Creation & Alignment</div>
+    </div>
+    <div class="branch-content">
+      <div>• <strong>Sources:</strong> Python list, 1D ndarray, scalar (replicated), dict (keys become index labels).</div>
+      <div>• <strong>Index Alignment:</strong> Binary math aligns by <em>Index Label</em>, NOT position. Unmatched labels become <span class="tag">NaN</span> (<code style="font-size:9px;">float64</code>).</div>
+      <div>• <strong>Fill Value:</strong> <span class="tag">s1.add(s2, fill_value=0)</span> preserves numbers.</div>
+    </div>
+  </div>
+
+  <!-- Card 3 -->
+  <div class="branch-card" style="border-top: 4px solid #10B981;">
+    <div class="branch-header">
+      <div class="branch-icon b-green">3</div>
+      <div class="branch-title">DataFrame Structure (2D)</div>
+    </div>
+    <div class="branch-content">
+      <div>• <strong>Nature:</strong> 2D tabular heterogeneous structure; spreadsheet model.</div>
+      <div>• <strong>Mutability:</strong> <em>Both value & size mutable</em>.</div>
+      <div>• <strong>Core Attributes:</strong> <span class="tag">.axes</span> <code style="font-size:9px;">[rows, cols]</code>, <span class="tag">.columns</span>, <span class="tag">.index</span>, <span class="tag">.shape</span> <code style="font-size:9px;">(r, c)</code>, <span class="tag">.size</span> <code style="font-size:9px;">r×c</code>, <span class="tag">.dtypes</span>, <span class="tag">.T</span> (transpose).</div>
+    </div>
+  </div>
+
+  <!-- Card 4 -->
+  <div class="branch-card" style="border-top: 4px solid #F59E0B;">
+    <div class="branch-header">
+      <div class="branch-icon b-amber">4</div>
+      <div class="branch-title">DataFrame Constructors</div>
+    </div>
+    <div class="branch-content">
+      <div>• <strong>Dict of Lists:</strong> Keys become column names. <em>All lists MUST be equal length</em> (or ValueError).</div>
+      <div>• <strong>Dict of Series:</strong> Series can have unequal lengths; missing index entries automatically become <span class="tag">NaN</span>!</div>
+      <div>• <strong>2D ndarray:</strong> Custom row/column names passed via <span class="tag">index</span> and <span class="tag">columns</span> parameters.</div>
+    </div>
+  </div>
+
+  <!-- Card 5 -->
+  <div class="branch-card" style="border-top: 4px solid #EF4444;">
+    <div class="branch-header">
+      <div class="branch-icon b-red">5</div>
+      <div class="branch-title">Indexing & Slicing Invariants</div>
+    </div>
+    <div class="branch-content">
+      <div>• <span class="tag">loc[row, col]:</span> Label-based. <strong>INCLUDES stop label!</strong> (<code style="font-size:9px;">'a':'c'</code> includes <code style="font-size:9px;">'c'</code>).</div>
+      <div>• <span class="tag">iloc[row, col]:</span> Integer-based. <strong>EXCLUDES stop index!</strong> (<code style="font-size:9px;">0:3</code> includes 0, 1, 2).</div>
+      <div>• <strong>Selection:</strong> <span class="tag">df['Col']</span> returns Series; <span class="tag">df[['C1', 'C2']]</span> returns DataFrame.</div>
+    </div>
+  </div>
+
+  <!-- Card 6 -->
+  <div class="branch-card" style="border-top: 4px solid #0D9488;">
+    <div class="branch-header">
+      <div class="branch-icon b-teal">6</div>
+      <div class="branch-title">Inspection & Manipulation</div>
+    </div>
+    <div class="branch-content">
+      <div>• <span class="tag">head(n):</span> First $n$ rows (default $n=5$).</div>
+      <div>• <span class="tag">tail(n):</span> Last $n$ rows (default $n=5$).</div>
+      <div>• <strong>Column Add/Drop:</strong> <span class="tag">df['New'] = val</span> adds; <span class="tag">del df['Col']</span> or <span class="tag">df.drop('Col', axis=1)</span> removes.</div>
+      <div>• <strong>Boolean Masking:</strong> <span class="tag">df[df['A'] > 50]</span> filters rows.</div>
+    </div>
+  </div>
+</div>
+
+<div class="footer-bar">
+  <div><strong>CUET Core Focus:</strong> Shape Tuples · Size vs Ndim · loc (Closed) vs iloc (Half-open) · Dict of Lists vs Dict of Series · Automatic Alignment</div>
+  <div>© OurMocks Education · CUET UG Computer Science</div>
+</div>
+
+</body>
+</html>

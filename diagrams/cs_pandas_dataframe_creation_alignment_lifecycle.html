@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 600px;
+    background: #FFFFFF;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #1E3A8A;
+    letter-spacing: -0.02em;
+  }
+  .title-block p {
+    font-size: 11px;
+    color: #64748B;
+    margin-top: 3px;
+    font-weight: 500;
+  }
+  .badge {
+    background: #EFF6FF;
+    color: #1D4ED8;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 700;
+    border: 1px solid #BFDBFE;
+    text-transform: uppercase;
+  }
+  .process-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin: 16px 0;
+    flex: 1;
+  }
+  .stage-card {
+    background: #F8FAFC;
+    border: 1.5px solid #CBD5E1;
+    border-radius: 8px;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+  }
+  .stage-card.active-1 { border-top: 4px solid #3B82F6; }
+  .stage-card.active-2 { border-top: 4px solid #10B981; }
+  .stage-card.active-3 { border-top: 4px solid #8B5CF6; }
+  .stage-card.active-4 { border-top: 4px solid #F59E0B; }
+  .stage-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+  .step-num {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .step-1 { background: #3B82F6; }
+  .step-2 { background: #10B981; }
+  .step-3 { background: #8B5CF6; }
+  .step-4 { background: #F59E0B; }
+  .stage-title { font-size: 12.5px; font-weight: 800; color: #0F172A; }
+  .stage-sub { font-size: 10px; color: #64748B; font-weight: 600; }
+  .flow-box {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 10px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .code-block {
+    background: #0F172A;
+    color: #F8FAFC;
+    padding: 6px 8px;
+    border-radius: 4px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 9px;
+    line-height: 1.35;
+    overflow-x: hidden;
+  }
+  .code-token {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 9.5px;
+    font-weight: 700;
+    color: #1E3A8A;
+    background: #EFF6FF;
+    padding: 1px 4px;
+    border-radius: 3px;
+    border: 1px solid #BFDBFE;
+  }
+  .key-rule {
+    background: #F1F5F9;
+    padding: 8px;
+    border-radius: 6px;
+    font-size: 10px;
+    color: #334155;
+    line-height: 1.35;
+  }
+  .key-rule strong { color: #0F172A; }
+  .footer-bar {
+    border-top: 1px solid #E2E8F0;
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 10px;
+    color: #64748B;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="title-block">
+    <h1>Pandas Data Pipeline: Creation, Alignment & Slicing Lifecycle</h1>
+    <p>CUET UG Computer Science (Code 308) · Constructor Dispatch, Automatic Index Union, Vectorization & Slicing Rules</p>
+  </div>
+  <div class="badge">Pandas Core Mechanics</div>
+</div>
+
+<div class="process-container">
+  <!-- Stage 1 -->
+  <div class="stage-card active-1">
+    <div class="stage-header">
+      <div class="step-num step-1">1</div>
+      <div>
+        <div class="stage-title">Constructor Creation</div>
+        <div class="stage-sub">Dict of Lists vs Series</div>
+      </div>
+    </div>
+    <div class="flow-box">
+      <div class="code-block">
+d = {'A': [10, 20],<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'B': [30, 40]}<br>
+df = pd.DataFrame(d)
+      </div>
+      <div style="font-size: 9.5px; color: #3B82F6; font-weight: 700; text-align: center;">
+        Keys → Columns · Arrays → Rows
+      </div>
+      <div class="code-block">
+# Dict of Series with index<br>
+s1 = pd.Series([1, 2], index=['r1', 'r2'])<br>
+df = pd.DataFrame({'C1': s1})
+      </div>
+    </div>
+    <div class="key-rule">
+      <strong>CUET Invariant:</strong> In a Dict of Lists, all lists <em>must have equal length</em> (or ValueError). In a Dict of Series, lengths can vary; missing entries fill with <code class="code-token">NaN</code>!
+    </div>
+  </div>
+
+  <!-- Stage 2 -->
+  <div class="stage-card active-2">
+    <div class="stage-header">
+      <div class="step-num step-2">2</div>
+      <div>
+        <div class="stage-title">Index Alignment</div>
+        <div class="stage-sub">Automatic Union & NaN</div>
+      </div>
+    </div>
+    <div class="flow-box">
+      <div class="code-block">
+s1 = pd.Series([10, 20], index=['a', 'b'])<br>
+s2 = pd.Series([30, 40], index=['b', 'c'])<br>
+s3 = s1 + s2
+      </div>
+      <div style="font-size: 9.5px; color: #10B981; font-weight: 700;">Resulting Index: ['a', 'b', 'c']</div>
+      <div style="font-family: monospace; font-size: 9px; line-height: 1.3;">
+        a : NaN (missing in s2)<br>
+        b : 50.0 (20 + 30)<br>
+        c : NaN (missing in s1)
+      </div>
+    </div>
+    <div class="key-rule">
+      <strong>CUET Invariant:</strong> Arithmetic aligns strictly by <strong>Index Label</strong>, NOT positional order! Unmatched labels produce <code class="code-token">NaN</code> (float64).
+    </div>
+  </div>
+
+  <!-- Stage 3 -->
+  <div class="stage-card active-3">
+    <div class="stage-header">
+      <div class="step-num step-3">3</div>
+      <div>
+        <div class="stage-title">Vectorized Operations</div>
+        <div class="stage-sub">Element-wise & NaN Rules</div>
+      </div>
+    </div>
+    <div class="flow-box">
+      <div class="code-block">
+# Scalar Broadcasting<br>
+df['Bonus'] = df['Salary'] * 0.10<br><br>
+# Boolean Filtering<br>
+high = df[df['Score'] >= 80]<br><br>
+# NaN Propagation<br>
+10 + np.nan  →  np.nan
+      </div>
+      <div style="font-size: 9.5px; color: #8B5CF6; font-weight: 700; text-align: center;">
+        No Python loops required!
+      </div>
+    </div>
+    <div class="key-rule">
+      <strong>CUET Invariant:</strong> Any arithmetic operation performed with <code class="code-token">NaN</code> unconditionally evaluates to <code class="code-token">NaN</code>. Use <code class="code-token">add(fill_value=0)</code> to prevent NaN.
+    </div>
+  </div>
+
+  <!-- Stage 4 -->
+  <div class="stage-card active-4">
+    <div class="stage-header">
+      <div class="step-num step-4">4</div>
+      <div>
+        <div class="stage-title">Indexing & Slicing</div>
+        <div class="stage-sub">loc vs iloc Boundaries</div>
+      </div>
+    </div>
+    <div class="flow-box">
+      <div class="code-block">
+# Label-based: loc[row, col]<br>
+df.loc['r1':'r3', 'A':'B']<br>
+<span style="color: #F59E0B;">★ INCLUDES 'r3' and 'B'!</span><br><br>
+# Positional: iloc[row, col]<br>
+df.iloc[0:3, 0:2]<br>
+<span style="color: #38BDF8;">★ EXCLUDES 3 and 2!</span>
+      </div>
+      <div style="font-size: 9.5px; color: #B45309; font-weight: 700; text-align: center;">
+        Direct: df['Col'] / df[['C1','C2']]
+      </div>
+    </div>
+    <div class="key-rule">
+      <strong>FATAL CUET TRAP:</strong> <code class="code-token">loc</code> includes stop labels; <code class="code-token">iloc</code> excludes stop indices! Column selection <code class="code-token">df['A']</code> returns Series; <code class="code-token">df[['A']]</code> returns DataFrame.
+    </div>
+  </div>
+</div>
+
+<div class="footer-bar">
+  <div><strong>Key Slicing Invariant:</strong> <code class="code-token">loc</code> is Closed Interval <code class="code-token">[start, stop]</code> · <code class="code-token">iloc</code> is Half-Open Interval <code class="code-token">[start, stop)</code></div>
+  <div>© OurMocks Education · CUET UG Computer Science</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 600px;
+    background: #FFFFFF;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #1E3A8A;
+    letter-spacing: -0.02em;
+  }
+  .title-block p {
+    font-size: 11px;
+    color: #64748B;
+    margin-top: 3px;
+    font-weight: 500;
+  }
+  .badge {
+    background: #EFF6FF;
+    color: #1D4ED8;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 700;
+    border: 1px solid #BFDBFE;
+    text-transform: uppercase;
+  }
+  .matrix-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 14px;
+    font-size: 11px;
+  }
+  .matrix-table th {
+    background: #1E3A8A;
+    color: #FFFFFF;
+    font-weight: 700;
+    text-align: left;
+    padding: 8px 10px;
+    font-size: 10.5px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
+  .matrix-table th:first-child { border-top-left-radius: 6px; }
+  .matrix-table th:last-child { border-top-right-radius: 6px; }
+  .matrix-table td {
+    padding: 7px 10px;
+    border-bottom: 1px solid #E2E8F0;
+    vertical-align: middle;
+  }
+  .matrix-table tr:nth-child(even) td { background: #F8FAFC; }
+  .matrix-table tr:hover td { background: #EFF6FF; }
+  .code-token {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-weight: 700;
+    color: #1E3A8A;
+    background: #EFF6FF;
+    padding: 2px 6px;
+    border-radius: 4px;
+    border: 1px solid #BFDBFE;
+    font-size: 10.5px;
+  }
+  .pill {
+    display: inline-block;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 9.5px;
+    font-weight: 700;
+  }
+  .pill-series { background: #EDE9FE; color: #6D28D9; border: 1px solid #DDD6FE; }
+  .pill-df { background: #DCFCE7; color: #15803D; border: 1px solid #BBF7D0; }
+  .footer-bar {
+    border-top: 1px solid #E2E8F0;
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 10px;
+    color: #64748B;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="title-block">
+    <h1>Pandas Data Structures: Series vs DataFrame Comparative Matrix</h1>
+    <p>CUET UG Computer Science (Code 308) · Dimensionality, Mutability, Core Attributes, Slicing Bounds & Exam Traps</p>
+  </div>
+  <div class="badge">Pandas 2.x API Standards</div>
+</div>
+
+<table class="matrix-table">
+  <thead>
+    <tr>
+      <th style="width: 14%;">Property / Attribute</th>
+      <th style="width: 22%;">Pandas Series (1D Structure)</th>
+      <th style="width: 26%;">Pandas DataFrame (2D Structure)</th>
+      <th style="width: 38%;">CUET High-Yield Exam Trap & Behavior</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Dimensionality</strong></td>
+      <td><span class="pill pill-series">1-Dimensional (1D)</span></td>
+      <td><span class="pill pill-df">2-Dimensional (2D Tabular)</span></td>
+      <td>Series has 1 axis (Index); DataFrame has 2 axes (Index = rows, Columns = cols)</td>
+    </tr>
+    <tr>
+      <td><strong>Data Homogeneity</strong></td>
+      <td>Homogeneous (Single <code class="code-token">dtype</code>)</td>
+      <td>Heterogeneous (Columns can have different <code class="code-token">dtypes</code>)</td>
+      <td>If mixed types passed to Series, upcasts to <code class="code-token">object</code> or <code class="code-token">float64</code></td>
+    </tr>
+    <tr>
+      <td><strong>Mutability</strong></td>
+      <td>Value Mutable; <strong>Size Immutable</strong></td>
+      <td><strong>Value Mutable; Size Mutable</strong></td>
+      <td>Cannot insert elements into Series without creating a new object</td>
+    </tr>
+    <tr>
+      <td><code class="code-token">.shape</code></td>
+      <td>Tuple: <code class="code-token">(n,)</code> (Single integer)</td>
+      <td>Tuple: <code class="code-token">(num_rows, num_cols)</code></td>
+      <td>Series shape has length 1: <code class="code-token">(5,)</code>, NOT <code class="code-token">(5, 1)</code>!</td>
+    </tr>
+    <tr>
+      <td><code class="code-token">.ndim</code></td>
+      <td>Integer: <code class="code-token">1</code></td>
+      <td>Integer: <code class="code-token">2</code></td>
+      <td>Strictly returns integer dimensions: 1 for Series, 2 for DataFrame</td>
+    </tr>
+    <tr>
+      <td><code class="code-token">.size</code></td>
+      <td>Integer: <code class="code-token">n</code> (Total elements)</td>
+      <td>Integer: <code class="code-token">num_rows × num_cols</code></td>
+      <td>DataFrame size is the product of row count and column count</td>
+    </tr>
+    <tr>
+      <td><code class="code-token">.axes</code></td>
+      <td>List of 1 item: <code class="code-token">[Index]</code></td>
+      <td>List of 2 items: <code class="code-token">[Index, Columns]</code></td>
+      <td><code class="code-token">df.axes[0]</code> is row index; <code class="code-token">df.axes[1]</code> is column index</td>
+    </tr>
+    <tr>
+      <td><code class="code-token">.T</code> (Transpose)</td>
+      <td>Returns self (no-op; 1D array)</td>
+      <td>Swaps rows and columns (<code class="code-token">(r, c) → (c, r)</code>)</td>
+      <td>Transposing Series does nothing; transposing DataFrame flips axes</td>
+    </tr>
+    <tr>
+      <td><strong>Positional Slicing</strong></td>
+      <td><code class="code-token">s[0:3]</code> <strong>Excludes</strong> stop index</td>
+      <td><code class="code-token">df.iloc[0:3]</code> <strong>Excludes</strong> stop index</td>
+      <td>Standard Python half-open slice: includes 0, 1, 2; excludes 3</td>
+    </tr>
+    <tr>
+      <td><strong>Label-based Slicing</strong></td>
+      <td><code class="code-token">s['a':'c']</code> <strong>INCLUDES</strong> stop label!</td>
+      <td><code class="code-token">df.loc['a':'c']</code> <strong>INCLUDES</strong> stop label!</td>
+      <td><strong>FATAL TRAP:</strong> Label slicing is closed; includes label <code class="code-token">'c'</code>!</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="footer-bar">
+  <div><strong>Core Invariant:</strong> Positional slice <code class="code-token">[0:n]</code> stops at <code class="code-token">n-1</code> · Label slice <code class="code-token">['a':'c']</code> stops at <code class="code-token">'c'</code> (inclusive)</div>
+  <div>© OurMocks Education · CUET UG Computer Science & Informatics Practices</div>
+</div>
+
+</body>
+</html>
