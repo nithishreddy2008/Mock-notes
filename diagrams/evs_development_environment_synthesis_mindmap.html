@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 600px;
+    background: #FFFFFF;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .title-block p {
+    font-size: 11.5px;
+    color: #64748B;
+    margin-top: 3px;
+    font-weight: 600;
+  }
+  .badge {
+    background: #EEF1F8;
+    color: #1F5EFF;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+  }
+  .mindmap-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr 1fr;
+    gap: 14px;
+    align-items: center;
+    margin: auto 0;
+  }
+  .col {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .center-node {
+    background: linear-gradient(135deg, #071A4D 0%, #1E3A8A 100%);
+    color: #FFFFFF;
+    border-radius: 12px;
+    padding: 20px 16px;
+    text-align: center;
+    box-shadow: 0 10px 15px -3px rgba(7, 26, 77, 0.2);
+    border: 2px solid #1F5EFF;
+  }
+  .center-node h2 {
+    font-size: 17px;
+    font-weight: 800;
+    letter-spacing: -0.3px;
+    margin-bottom: 6px;
+  }
+  .center-node p {
+    font-size: 10.5px;
+    color: #93C5FD;
+    line-height: 1.4;
+  }
+  .center-node .core-tag {
+    display: inline-block;
+    background: #1F5EFF;
+    color: #FFFFFF;
+    font-size: 9.5px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-top: 8px;
+  }
+  .node {
+    background: #F8FAFC;
+    border: 1px solid #CBD5E1;
+    border-radius: 8px;
+    padding: 10px 12px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  }
+  .node h3 {
+    font-size: 11.5px;
+    font-weight: 800;
+    color: #071A4D;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 6px;
+    border-bottom: 1.5px solid #E2E8F0;
+    padding-bottom: 4px;
+  }
+  .node ul {
+    list-style: none;
+    font-size: 9.5px;
+    line-height: 1.45;
+    color: #334155;
+  }
+  .node ul li {
+    position: relative;
+    padding-left: 10px;
+    margin-bottom: 2px;
+  }
+  .node ul li::before {
+    content: "▸";
+    color: #1F5EFF;
+    position: absolute;
+    left: 0;
+  }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    color: #94A3B8;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 8px;
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <div class="title-block">
+      <h1>Development and Environment: Core Concept Synthesizer Mindmap</h1>
+      <p>Architectural Topology: Growth Limits, Ostrom's Commons, Urban Metabolism & Environmental Equity</p>
+    </div>
+    <div class="badge">CUET UG · EVS UNIT 4 · FIG 3</div>
+  </div>
+
+  <div class="mindmap-wrapper">
+    <div class="col">
+      <div class="node">
+        <h3>1. Growth Limits & Steady State</h3>
+        <ul>
+          <li><strong>Herman Daly:</strong> Steady-State Economics (constant physical capital stocks).</li>
+          <li><strong>Club of Rome (1972):</strong> <em>Limits to Growth</em> World3 overshoot model.</li>
+          <li><strong>Ecological Footprint:</strong> Rees & Wackernagel; Global Hectares (gha).</li>
+          <li><strong>Overshoot Day:</strong> Consumption exceeds annual Earth biocapacity.</li>
+        </ul>
+      </div>
+      <div class="node">
+        <h3>2. The Commons & Ostrom's Rules</h3>
+        <ul>
+          <li><strong>Garrett Hardin (1968):</strong> Tragedy of open-access pasture.</li>
+          <li><strong>Elinor Ostrom (1990):</strong> 8 Design Principles for enduring CPRs.</li>
+          <li><strong>Economic CPR Matrix:</strong> High subtractability + high exclusion cost.</li>
+          <li><strong>Polycentric Governance:</strong> Layered community self-organization.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="center-node">
+      <h2>DEVELOPMENT & ENVIRONMENT</h2>
+      <p>Systemic Integration of Biophysical Carrying Capacity, Urbanization Pressures, Commons Institutions & Socio-Ecological Justice</p>
+      <div class="core-tag">CUET CODE 307 · UNIT 4</div>
+    </div>
+
+    <div class="col">
+      <div class="node">
+        <h3>3. Urbanization & Green Cities</h3>
+        <ul>
+          <li><strong>Morphology:</strong> Push-pull migration, sprawl, impervious surfaces.</li>
+          <li><strong>Urban Heat Island (UHI):</strong> ΔT up to 8°C; low albedo materials.</li>
+          <li><strong>Sponge Cities & SuDS:</strong> Permeable paving, retention wetlands.</li>
+          <li><strong>Green Building Standards:</strong> GRIHA (TERI/MNRE), LEED, ECBC.</li>
+        </ul>
+      </div>
+      <div class="node">
+        <h3>4. Carrying Capacity & Eco-Equity</h3>
+        <ul>
+          <li><strong>IPAT Equation:</strong> Impact = Population × Affluence × Technology.</li>
+          <li><strong>Dual Capacities:</strong> Supportive (inputs) vs Assimilative (waste sink).</li>
+          <li><strong>Planetary Boundaries:</strong> Rockström & Steffen (9 Earth systems).</li>
+          <li><strong>Environmental Justice:</strong> Warren County 1982, Climate refugees.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>OURMOCKS CONCEPT SYNTHESIZER MINDMAP</span>
+    <span>CODE 307 · UNIT 4: DEVELOPMENT AND ENVIRONMENT</span>
+    <span>PAGE 12 HIGH-YIELD REVISION BOARD</span>
+  </div>
+</body>
+</html>

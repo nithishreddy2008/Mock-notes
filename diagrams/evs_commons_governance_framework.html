@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 600px;
+    background: #FFFFFF;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .title-block p {
+    font-size: 11.5px;
+    color: #64748B;
+    margin-top: 3px;
+    font-weight: 600;
+  }
+  .badge {
+    background: #FEF3C7;
+    color: #92400E;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+  }
+  .flow-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-top: 14px;
+  }
+  .card {
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 12px;
+    background: #F8FAFC;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .card-header {
+    font-size: 12.5px;
+    font-weight: 800;
+    color: #071A4D;
+    border-bottom: 2px solid #1F5EFF;
+    padding-bottom: 5px;
+    margin-bottom: 8px;
+  }
+  .stage-tag {
+    display: inline-block;
+    font-size: 9.5px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .tag-red { background: #FEE2E2; color: #991B1B; }
+  .tag-blue { background: #DBEAFE; color: #1E40AF; }
+  .tag-amber { background: #FEF3C7; color: #92400E; }
+  .tag-green { background: #D1FAE5; color: #065F46; }
+  .bullet-list {
+    list-style: none;
+    font-size: 10px;
+    line-height: 1.42;
+    color: #334155;
+    margin-bottom: 8px;
+  }
+  .bullet-list li {
+    margin-bottom: 5px;
+    position: relative;
+    padding-left: 10px;
+  }
+  .bullet-list li::before {
+    content: "•";
+    color: #1F5EFF;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+  }
+  .highlight-box {
+    background: #FFFFFF;
+    border-left: 3px solid #1F5EFF;
+    padding: 6px 8px;
+    border-radius: 4px;
+    font-size: 9.5px;
+    font-weight: 600;
+    color: #0F172A;
+    line-height: 1.35;
+  }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    color: #94A3B8;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 8px;
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <div class="title-block">
+      <h1>The Commons Governance & Ecological Transition Lifecycle</h1>
+      <p>Systemic Framework: Open-Access Ruin, CPR Institutional Diagnostics, Ostrom's 8 Principles & Steady-State Equilibrium</p>
+    </div>
+    <div class="badge">CUET UG · EVS UNIT 4 · FIG 2</div>
+  </div>
+
+  <div class="flow-container">
+    <div class="card">
+      <div>
+        <span class="stage-tag tag-red">PHASE 1 · HARDIN'S DILEMMA</span>
+        <div class="card-header">1. Open-Access Tragedy</div>
+        <ul class="bullet-list">
+          <li><strong>Garrett Hardin (1968):</strong> Unregulated pasture grazed by herdsmen.</li>
+          <li><strong>Rational Utility Trap:</strong> Positive utility (+1) of adding another animal accrues solely to the individual herdsman.</li>
+          <li><strong>Externalized Cost:</strong> Fractional negative utility (-1/n) of overgrazing is shared across the entire community.</li>
+          <li><strong>Systemic Collapse:</strong> Freedom in an open unmanaged commons brings ruin to all.</li>
+        </ul>
+      </div>
+      <div class="highlight-box">
+        <strong>CUET Trap:</strong> Hardin conflated unowned <em>Open-Access</em> regimes with communal <em>Common Property Resources</em>.
+      </div>
+    </div>
+
+    <div class="card">
+      <div>
+        <span class="stage-tag tag-blue">PHASE 2 · OSTROM'S DIAGNOSTICS</span>
+        <div class="card-header">2. CPR Economic Taxonomy</div>
+        <ul class="bullet-list">
+          <li><strong>Elinor Ostrom (1990):</strong> Nobel Laureate 2009 for empirical commons research.</li>
+          <li><strong>High Subtractability / Rivalry:</strong> Consumption by one appropriator subtracts from available resource stock.</li>
+          <li><strong>High Exclusion Cost:</strong> Extremely difficult or prohibitively expensive to fence or exclude users.</li>
+          <li><strong>Empirical Evidence:</strong> Swiss alpine grazing, Spanish acequia canals, Indian irrigation tanks.</li>
+        </ul>
+      </div>
+      <div class="highlight-box">
+        <strong>Core Invariant:</strong> Neither state top-down control nor total privatization is universally superior to community tenure.
+      </div>
+    </div>
+
+    <div class="card">
+      <div>
+        <span class="stage-tag tag-amber">PHASE 3 · INSTITUTIONAL DESIGN</span>
+        <div class="card-header">3. Ostrom's 8 Design Principles</div>
+        <ul class="bullet-list">
+          <li><strong>1. Defined Boundaries:</strong> Clear delineation of users and resource boundaries.</li>
+          <li><strong>2. Local Congruence:</strong> Rules tailored to ecological conditions.</li>
+          <li><strong>3. Collective Choice:</strong> Users participate in modifying rules.</li>
+          <li><strong>4. Accountable Monitors:</strong> Audited by users themselves.</li>
+          <li><strong>5. Graduated Sanctions:</strong> Penalties escalate with repeat offenses.</li>
+          <li><strong>6. Low-Cost Conflict Resolution:</strong> Rapid local mediation.</li>
+          <li><strong>7. Minimal External Recognition:</strong> State respects autonomy.</li>
+          <li><strong>8. Nested Enterprises:</strong> Layered polycentric tiers.</li>
+        </ul>
+      </div>
+      <div class="highlight-box">
+        <strong>Ostrom Rule:</strong> Self-organizing users sustain CPRs for centuries through robust polycentric governance.
+      </div>
+    </div>
+
+    <div class="card">
+      <div>
+        <span class="stage-tag tag-green">PHASE 4 · ECOLOGICAL STEADY-STATE</span>
+        <div class="card-header">4. Limits to Growth & Equity</div>
+        <ul class="bullet-list">
+          <li><strong>Herman Daly:</strong> Steady-State Economy with constant physical capital and population stocks.</li>
+          <li><strong>Biophysical Limits:</strong> Raw material throughput held strictly within ecosystem regenerative capacity.</li>
+          <li><strong>Waste Assimilation:</strong> Pollution output cannot exceed biospheric absorption sinks.</li>
+          <li><strong>Dual Equity Dimensions:</strong> Intergenerational (future generations) & Intragenerational equity (Global North vs South).</li>
+        </ul>
+      </div>
+      <div class="highlight-box">
+        <strong>Brundtland Baseline:</strong> Meets present needs without compromising future generations' capacity to meet their own.
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>OURMOCKS COMMONS GOVERNANCE LIFECYCLE</span>
+    <span>CODE 307 · UNIT 4: DEVELOPMENT AND ENVIRONMENT</span>
+    <span>PAGE 8 THEMATIC PROCESS BOARD</span>
+  </div>
+</body>
+</html>

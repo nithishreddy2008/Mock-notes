@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 600px;
+    background: #FFFFFF;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .title-block p {
+    font-size: 11.5px;
+    color: #64748B;
+    margin-top: 3px;
+    font-weight: 600;
+  }
+  .badge {
+    background: #EEF1F8;
+    color: #1F5EFF;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 12px;
+  }
+  th {
+    background: #071A4D;
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 7px 8px;
+    text-align: left;
+    border: 1px solid #CBD5E1;
+  }
+  td {
+    font-size: 10.5px;
+    padding: 6.5px 8px;
+    border: 1px solid #E2E8F0;
+    line-height: 1.35;
+  }
+  tr:nth-child(even) { background: #F8FAFC; }
+  .vector { font-weight: 800; color: #1E3A8A; }
+  .stress { font-weight: 700; color: #DC2626; }
+  .mechanism { color: #334155; }
+  .solution { font-weight: 600; color: #047857; }
+  .invariant { font-weight: 700; color: #0369A1; }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    color: #94A3B8;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 8px;
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <div class="title-block">
+      <h1>Urbanization Pressures, Spatial Morphology & Sustainable City Diagnostics</h1>
+      <p>Comparative Matrix: Demographic Drivers, Urban Heat Island, Hydrology, Green Building Codes & Invariants</p>
+    </div>
+    <div class="badge">CUET UG · EVS UNIT 4 · FIG 1</div>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 18%;">Urban Vector</th>
+        <th style="width: 18%;">Ecological Stressor</th>
+        <th style="width: 22%;">Biophysical Mechanism</th>
+        <th style="width: 22%;">Sustainable Planning Response</th>
+        <th style="width: 20%;">CUET Core Invariant</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="vector">Spatial Land Use</td>
+        <td class="stress">Urban Sprawl & Fragmentation</td>
+        <td class="mechanism">Pervious agricultural soil replaced by concrete; per capita land consumption surges.</td>
+        <td class="solution">Compact city design, urban growth boundaries (UGB), infill redevelopment.</td>
+        <td class="invariant">Sprawl accelerates habitat fragmentation and motor vehicle dependency.</td>
+      </tr>
+      <tr>
+        <td class="vector">Microclimate</td>
+        <td class="stress">Urban Heat Island (UHI)</td>
+        <td class="mechanism">Low albedo asphalt/concrete absorbs solar flux; tall street canyons trap longwave IR radiation.</td>
+        <td class="solution">High-albedo cool roofs, green vegetative roofs, urban shade tree canopy corridors.</td>
+        <td class="invariant">UHI temperature delta (ΔT) reaches 2°C to 8°C higher than surrounding rural plains.</td>
+      </tr>
+      <tr>
+        <td class="vector">Urban Hydrology</td>
+        <td class="stress">Flash Floods & Depletion</td>
+        <td class="mechanism">Impervious surface ratio surges; stormwater runoff fraction jumps from ~10% to over 55%.</td>
+        <td class="solution">Sponge City design, Sustainable Drainage Systems (SuDS), rooftop rainwater harvesting.</td>
+        <td class="invariant">Runoff peaks dramatically; baseflow and groundwater recharge sharply collapse.</td>
+      </tr>
+      <tr>
+        <td class="vector">Transport & Air</td>
+        <td class="stress">Street Canyon Smog & Noise</td>
+        <td class="mechanism">Concentrated tailpipe combustion (PM2.5, NOx, CO); high building height-to-width ratio limits dispersion.</td>
+        <td class="solution">Transit-Oriented Development (TOD), Bus Rapid Transit (BRTS), non-motorized lanes.</td>
+        <td class="invariant">TOD concentrates high-density zoning within 400-800m of mass rapid transit hubs.</td>
+      </tr>
+      <tr>
+        <td class="vector">Built Environment</td>
+        <td class="stress">High Embodied Carbon</td>
+        <td class="mechanism">Extensive energy and water footprints in HVAC, cement, glass, and artificial lighting.</td>
+        <td class="solution">GRIHA (TERI/MNRE rating), LEED (USGBC), IGBC rating, ECBC building code.</td>
+        <td class="invariant">GRIHA is India's indigenous green building rating tool evaluating lifecycle energy.</td>
+      </tr>
+      <tr>
+        <td class="vector">Social Ecology</td>
+        <td class="stress">Environmental Injustice</td>
+        <td class="mechanism">Disproportionate siting of municipal landfills, waste incinerators, and polluting zones near slums.</td>
+        <td class="solution">Inclusive decentralized civic infrastructure, community tenure, participatory zoning.</td>
+        <td class="invariant">Environmental racism / injustice identified in Warren County 1982 PCB protests.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="footer">
+    <span>OURMOCKS DEVELOPMENT & ENVIRONMENT MATRIX</span>
+    <span>CODE 307 · UNIT 4: DEVELOPMENT AND ENVIRONMENT</span>
+    <span>PAGE 5 CONCEPT MATRIX</span>
+  </div>
+</body>
+</html>
