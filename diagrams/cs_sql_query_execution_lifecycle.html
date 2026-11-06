@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1440, height=880">
+  <title>SQL Query Logical Execution Lifecycle & Clause Pipeline</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 1440px;
+      height: 880px;
+      background-color: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0F172A;
+      padding: 26px 36px;
+      overflow: hidden;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 16px;
+      border-bottom: 2px solid #E2E8F0;
+      padding-bottom: 10px;
+    }
+    .title-group h1 {
+      font-size: 24px;
+      font-weight: 800;
+      color: #0F2C59;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+    .title-group p {
+      font-size: 13.5px;
+      color: #64748B;
+      font-weight: 500;
+    }
+    .badge {
+      background: #0066FF;
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .pipeline-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+      position: relative;
+    }
+    .step-box {
+      flex: 1;
+      background: white;
+      border: 1px solid #CBD5E1;
+      border-radius: 8px;
+      padding: 12px 10px;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+      position: relative;
+      text-align: center;
+    }
+    .step-box.active {
+      border-top: 4px solid #0066FF;
+    }
+    .step-num {
+      position: absolute;
+      top: -10px;
+      left: 10px;
+      background: #0F2C59;
+      color: white;
+      font-size: 10px;
+      font-weight: 800;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .step-clause {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 14px;
+      font-weight: 800;
+      color: #0066FF;
+      margin-bottom: 4px;
+      margin-top: 4px;
+    }
+    .step-action {
+      font-size: 11px;
+      color: #475569;
+      line-height: 1.3;
+    }
+    .arrow-icon {
+      font-size: 16px;
+      color: #94A3B8;
+      font-weight: 800;
+    }
+
+    .dual-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    .info-card {
+      background: white;
+      border: 1px solid #CBD5E1;
+      border-radius: 10px;
+      padding: 14px 16px;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+    }
+    .card-title {
+      font-size: 14px;
+      font-weight: 800;
+      color: #0F2C59;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 2px solid #F1F5F9;
+      padding-bottom: 6px;
+    }
+    .tag {
+      font-size: 10px;
+      font-weight: 800;
+      padding: 2px 7px;
+      border-radius: 6px;
+      color: white;
+      background: #0F2C59;
+    }
+
+    .syntax-compare {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 12px;
+    }
+    .syntax-row {
+      display: flex;
+      align-items: center;
+      background: #F8FAFC;
+      padding: 8px 12px;
+      border-radius: 6px;
+      border: 1px solid #E2E8F0;
+    }
+    .syntax-label {
+      width: 140px;
+      font-weight: 700;
+      color: #334155;
+    }
+    .syntax-code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 11px;
+      color: #0066FF;
+      font-weight: 600;
+    }
+
+    .scalar-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 10px;
+      font-size: 11.5px;
+    }
+    .scalar-col {
+      background: #F8FAFC;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #E2E8F0;
+    }
+    .scalar-col h4 {
+      font-size: 12px;
+      font-weight: 800;
+      color: #0F2C59;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .scalar-col ul {
+      list-style-type: none;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .scalar-col li code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 10.5px;
+      background: #E2E8F0;
+      padding: 1px 4px;
+      border-radius: 3px;
+      color: #0F172A;
+      font-weight: 600;
+    }
+
+    .trap-banner {
+      background: #FFFBEB;
+      border: 1px solid #FDE68A;
+      border-left: 5px solid #F59E0B;
+      border-radius: 8px;
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 12px;
+    }
+    .trap-title {
+      font-weight: 800;
+      color: #92400E;
+      font-size: 12.5px;
+      min-width: 150px;
+    }
+    .trap-desc {
+      color: #78350F;
+      line-height: 1.35;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="title-group">
+      <h1>SQL Query Logical Execution Lifecycle & Clause Processing Pipeline</h1>
+      <p>Lexical Written Syntax vs Logical Evaluation Order, Row Filtering & Scalar Function Operations</p>
+    </div>
+    <div class="badge">OurMocks Execution Engine</div>
+  </div>
+
+  <!-- 8 STEP PIPELINE -->
+  <div class="pipeline-container">
+    <div class="step-box active">
+      <div class="step-num">1</div>
+      <div class="step-clause">FROM</div>
+      <div class="step-action">Loads table & evaluates joins</div>
+    </div>
+    <div class="arrow-icon">→</div>
+    <div class="step-box active">
+      <div class="step-num">2</div>
+      <div class="step-clause">WHERE</div>
+      <div class="step-action">Filters individual tuples</div>
+    </div>
+    <div class="arrow-icon">→</div>
+    <div class="step-box active">
+      <div class="step-num">3</div>
+      <div class="step-clause">GROUP BY</div>
+      <div class="step-action">Partitions rows into buckets</div>
+    </div>
+    <div class="arrow-icon">→</div>
+    <div class="step-box active">
+      <div class="step-num">4</div>
+      <div class="step-clause">HAVING</div>
+      <div class="step-action">Filters grouped partitions</div>
+    </div>
+    <div class="arrow-icon">→</div>
+    <div class="step-box active">
+      <div class="step-num">5</div>
+      <div class="step-clause">SELECT</div>
+      <div class="step-action">Projects columns & expressions</div>
+    </div>
+    <div class="arrow-icon">→</div>
+    <div class="step-box active">
+      <div class="step-num">6</div>
+      <div class="step-clause">DISTINCT</div>
+      <div class="step-action">Purges duplicate tuples</div>
+    </div>
+    <div class="arrow-icon">→</div>
+    <div class="step-box active">
+      <div class="step-num">7</div>
+      <div class="step-clause">ORDER BY</div>
+      <div class="step-action">Sorts result (ASC / DESC)</div>
+    </div>
+    <div class="arrow-icon">→</div>
+    <div class="step-box active">
+      <div class="step-num">8</div>
+      <div class="step-clause">LIMIT</div>
+      <div class="step-action">Truncates output rows</div>
+    </div>
+  </div>
+
+  <div class="dual-grid">
+    <!-- LEFT: WRITTEN VS LOGICAL EXECUTION -->
+    <div class="info-card">
+      <div class="card-title">
+        <span class="tag">ORDER</span>
+        <span>Written Lexical Syntax vs Logical Execution Pipeline</span>
+      </div>
+      <div class="syntax-compare">
+        <div class="syntax-row">
+          <div class="syntax-label">1. Written Syntax Order:</div>
+          <div class="syntax-code">SELECT → FROM → WHERE → GROUP BY → HAVING → ORDER BY → LIMIT</div>
+        </div>
+        <div class="syntax-row">
+          <div class="syntax-label">2. Logical Execution Order:</div>
+          <div class="syntax-code" style="color: #059669;">FROM → WHERE → GROUP BY → HAVING → SELECT → DISTINCT → ORDER BY → LIMIT</div>
+        </div>
+        <div class="syntax-row">
+          <div class="syntax-label">Key Consequence:</div>
+          <div style="color: #475569; font-size: 11.5px;">Aliases defined in <code>SELECT</code> (Stage 5) are <b>completely invisible</b> to <code>WHERE</code> (Stage 2) because WHERE executes beforehand!</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: SCALAR FUNCTIONS EVALUATION TRACK -->
+    <div class="info-card">
+      <div class="card-title">
+        <span class="tag">FUNCTIONS</span>
+        <span>Scalar Built-in Function Execution (Single-Row Operations)</span>
+      </div>
+      <div class="scalar-grid">
+        <div class="scalar-col">
+          <h4>🔤 String</h4>
+          <ul>
+            <li><code>LENGTH(str)</code></li>
+            <li><code>LOWER() / UPPER()</code></li>
+            <li><code>SUBSTR(s, pos, len)</code></li>
+            <li><code>TRIM() / LTRIM()</code></li>
+            <li><code>INSTR(str, sub)</code></li>
+          </ul>
+        </div>
+        <div class="scalar-col">
+          <h4>🔢 Numeric</h4>
+          <ul>
+            <li><code>POWER(x, y)</code></li>
+            <li><code>ROUND(x, d)</code></li>
+            <li><code>TRUNCATE(x, d)</code></li>
+            <li><code>MOD(n, m)</code></li>
+            <li><code>ABS(x)</code></li>
+          </ul>
+        </div>
+        <div class="scalar-col">
+          <h4>📅 Date/Time</h4>
+          <ul>
+            <li><code>CURDATE() / NOW()</code></li>
+            <li><code>DATE(expr)</code></li>
+            <li><code>MONTH(date)</code></li>
+            <li><code>YEAR(date)</code></li>
+            <li><code>DAYNAME(date)</code></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="trap-banner">
+    <div class="trap-title">⚠️ Fatal CUET Trap: WHERE vs HAVING</div>
+    <div class="trap-desc">
+      <code>WHERE</code> filters individual records <i>before</i> aggregation and cannot contain aggregate functions like <code>COUNT()</code> or <code>AVG()</code> (e.g., <code>WHERE AVG(Salary) > 50000</code> is a fatal SQL syntax error!). <code>HAVING</code> filters aggregate groups <i>after</i> grouping and is evaluated at Stage 4.
+    </div>
+  </div>
+
+</body>
+</html>

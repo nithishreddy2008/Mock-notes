@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1440, height=880">
+  <title>SQL Command Sublanguages & Constraints Architecture Matrix</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 1440px;
+      height: 880px;
+      background-color: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0F172A;
+      padding: 26px 36px;
+      overflow: hidden;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 16px;
+      border-bottom: 2px solid #E2E8F0;
+      padding-bottom: 10px;
+    }
+    .title-group h1 {
+      font-size: 24px;
+      font-weight: 800;
+      color: #0F2C59;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+    .title-group p {
+      font-size: 13.5px;
+      color: #64748B;
+      font-weight: 500;
+    }
+    .badge {
+      background: #0066FF;
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    .card {
+      background: white;
+      border: 1px solid #CBD5E1;
+      border-radius: 10px;
+      padding: 16px;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+      display: flex;
+      flex-direction: column;
+    }
+    .card-title {
+      font-size: 15px;
+      font-weight: 800;
+      color: #0F2C59;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 2px solid #F1F5F9;
+      padding-bottom: 8px;
+    }
+    .card-title .icon-tag {
+      font-size: 11px;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: 6px;
+      color: white;
+    }
+    .tag-ddl { background: #0284C7; }
+    .tag-dml { background: #059669; }
+    .tag-const { background: #7C3AED; }
+    .item-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-size: 12.5px;
+    }
+    .item-box {
+      background: #F8FAFC;
+      border-left: 4px solid #CBD5E1;
+      padding: 8px 10px;
+      border-radius: 0 6px 6px 0;
+    }
+    .item-box.ddl-border { border-left-color: #0284C7; }
+    .item-box.dml-border { border-left-color: #059669; }
+    .item-box.const-border { border-left-color: #7C3AED; }
+    .item-header {
+      font-weight: 700;
+      color: #1E293B;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 3px;
+    }
+    .item-code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 11px;
+      background: #E2E8F0;
+      padding: 2px 6px;
+      border-radius: 4px;
+      color: #0F172A;
+    }
+    .item-desc {
+      color: #475569;
+      line-height: 1.35;
+    }
+    .table-card {
+      background: white;
+      border: 1px solid #CBD5E1;
+      border-radius: 10px;
+      padding: 14px 16px;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+    }
+    .table-title {
+      font-size: 14px;
+      font-weight: 800;
+      color: #0F2C59;
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+      text-align: left;
+    }
+    th {
+      background: #0F2C59;
+      color: white;
+      padding: 7px 10px;
+      font-weight: 700;
+    }
+    th:first-child { border-top-left-radius: 6px; }
+    th:last-child { border-top-right-radius: 6px; }
+    td {
+      padding: 6px 10px;
+      border-bottom: 1px solid #E2E8F0;
+      color: #334155;
+    }
+    tr:nth-child(even) td {
+      background: #F8FAFC;
+    }
+    .pill {
+      display: inline-block;
+      padding: 2px 7px;
+      border-radius: 12px;
+      font-size: 10.5px;
+      font-weight: 700;
+    }
+    .pill-yes { background: #DCFCE7; color: #15803D; }
+    .pill-no { background: #FEE2E2; color: #B91C1C; }
+    .pill-auto { background: #FEF3C7; color: #B45309; }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="title-group">
+      <h1>SQL Command Sublanguages, Schema Architecture & Constraints Matrix</h1>
+      <p>Data Definition (DDL) vs Data Manipulation (DML), Table Integrity Constraints & Transaction Reversibility</p>
+    </div>
+    <div class="badge">OurMocks CUET CS Guide</div>
+  </div>
+
+  <div class="grid">
+    <!-- DDL CARD -->
+    <div class="card">
+      <div class="card-title">
+        <span class="icon-tag tag-ddl">DDL</span>
+        <span>Data Definition Language</span>
+      </div>
+      <div class="item-list">
+        <div class="item-box ddl-border">
+          <div class="item-header"><span>CREATE TABLE</span><span class="item-code">DDL</span></div>
+          <div class="item-desc">Defines new relations, attribute names, data types, and declarative column/table constraints.</div>
+        </div>
+        <div class="item-box ddl-border">
+          <div class="item-header"><span>ALTER TABLE (ADD / MODIFY / DROP)</span><span class="item-code">DDL</span></div>
+          <div class="item-desc">Modifies existing table schema: adds new attributes, modifies data types/widths, drops columns or constraints.</div>
+        </div>
+        <div class="item-box ddl-border">
+          <div class="item-header"><span>DROP TABLE vs TRUNCATE TABLE</span><span class="item-code">DDL</span></div>
+          <div class="item-desc"><b>DROP:</b> Destroys schema + data entirely. <b>TRUNCATE:</b> Purges all rows instantly; retains the empty table schema. Both auto-commit!</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DML CARD -->
+    <div class="card">
+      <div class="card-title">
+        <span class="icon-tag tag-dml">DML</span>
+        <span>Data Manipulation Language</span>
+      </div>
+      <div class="item-list">
+        <div class="item-box dml-border">
+          <div class="item-header"><span>INSERT INTO</span><span class="item-code">DML</span></div>
+          <div class="item-desc">Appends new tuples into a relation. Requires matching data types; omitted non-null columns without defaults trigger errors.</div>
+        </div>
+        <div class="item-box dml-border">
+          <div class="item-header"><span>UPDATE ... SET ... WHERE</span><span class="item-code">DML</span></div>
+          <div class="item-desc">Modifies existing attribute values in matching tuples. Omitting the WHERE clause updates <b>every tuple</b> in the table!</div>
+        </div>
+        <div class="item-box dml-border">
+          <div class="item-header"><span>DELETE FROM ... WHERE</span><span class="item-code">DML</span></div>
+          <div class="item-desc">Removes specific tuples satisfying WHERE predicate. Omitting WHERE empties the table row-by-row. Transactional (rollback allowed).</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONSTRAINTS CARD -->
+    <div class="card">
+      <div class="card-title">
+        <span class="icon-tag tag-const">CONSTRAINTS</span>
+        <span>Relational Integrity Enforcers</span>
+      </div>
+      <div class="item-list">
+        <div class="item-box const-border">
+          <div class="item-header"><span>PRIMARY KEY</span><span class="item-code">NOT NULL + UNIQUE</span></div>
+          <div class="item-desc">Uniquely identifies each row. Exactly one per table. Strictly prohibits duplicate values and NULL entries.</div>
+        </div>
+        <div class="item-box const-border">
+          <div class="item-header"><span>FOREIGN KEY (REFERENCES)</span><span class="item-code">Referential</span></div>
+          <div class="item-desc">Links child attribute to parent Primary Key. Enforces referential integrity (ON DELETE CASCADE, SET NULL, RESTRICT).</div>
+        </div>
+        <div class="item-box const-border">
+          <div class="item-header"><span>UNIQUE, NOT NULL, CHECK, DEFAULT</span><span class="item-code">Domain</span></div>
+          <div class="item-desc"><b>UNIQUE:</b> Prohibits duplicates (allows multiple NULLs). <b>CHECK:</b> Enforces custom ranges. <b>DEFAULT:</b> Supplies fallback value.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="table-card">
+    <div class="table-title">
+      <span>Architectural Comparison: SQL Command Categories, Target Levels & Reversibility</span>
+      <span style="font-size: 11px; color: #64748B; font-weight: 600;">Critical CUET Distinction: DDL (Auto-Commit) vs DML (Rollback Support)</span>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>Full Form</th>
+          <th>Primary Target</th>
+          <th>Typical Commands</th>
+          <th>Auto-Commit?</th>
+          <th>Can ROLLBACK?</th>
+          <th>Schema vs Data Impact</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>DDL</b></td>
+          <td>Data Definition Language</td>
+          <td>Database Schema & Structure</td>
+          <td><code>CREATE, ALTER, DROP, TRUNCATE</code></td>
+          <td><span class="pill pill-auto">Implicit Auto-Commit</span></td>
+          <td><span class="pill pill-no">No (Permanent)</span></td>
+          <td>Modifies / creates metadata and table structure.</td>
+        </tr>
+        <tr>
+          <td><b>DML</b></td>
+          <td>Data Manipulation Language</td>
+          <td>Data Instances (Tuples)</td>
+          <td><code>INSERT, UPDATE, DELETE, SELECT</code></td>
+          <td><span class="pill pill-yes">No (Manual in txn)</span></td>
+          <td><span class="pill pill-yes">Yes (with ROLLBACK)</span></td>
+          <td>Alters row data; leaves table schema unchanged.</td>
+        </tr>
+        <tr>
+          <td><b>DCL</b></td>
+          <td>Data Control Language</td>
+          <td>User Privileges & Security</td>
+          <td><code>GRANT, REVOKE</code></td>
+          <td><span class="pill pill-auto">Implicit Auto-Commit</span></td>
+          <td><span class="pill pill-no">No (Permanent)</span></td>
+          <td>Administers access control lists and roles.</td>
+        </tr>
+        <tr>
+          <td><b>TCL</b></td>
+          <td>Transaction Control Language</td>
+          <td>Transaction Boundaries</td>
+          <td><code>COMMIT, ROLLBACK, SAVEPOINT</code></td>
+          <td><span class="pill pill-no">N/A (Manages Commit)</span></td>
+          <td><span class="pill pill-yes">Yes (via SAVEPOINT)</span></td>
+          <td>Commits or rolls back active transactional DML changes.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</body>
+</html>

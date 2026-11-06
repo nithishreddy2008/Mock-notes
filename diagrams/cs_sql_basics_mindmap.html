@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1440, height=880">
+  <title>Master Synthesis Mindmap: Structured Query Language (SQL) Basics</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 1440px;
+      height: 880px;
+      background: radial-gradient(circle at center, #0F172A 0%, #080D1A 100%);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #F8FAFC;
+      padding: 24px 36px;
+      overflow: hidden;
+      position: relative;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 16px;
+      position: relative;
+      z-index: 10;
+    }
+    .header h1 {
+      font-size: 25px;
+      font-weight: 800;
+      color: #FFFFFF;
+      letter-spacing: -0.01em;
+      margin-bottom: 3px;
+    }
+    .header p {
+      font-size: 13px;
+      color: #94A3B8;
+      font-weight: 500;
+    }
+    .badge {
+      display: inline-block;
+      background: #0066FF;
+      color: white;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 3px 12px;
+      border-radius: 14px;
+      margin-bottom: 5px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .mindmap-container {
+      width: 1360px;
+      height: 740px;
+      position: relative;
+      margin: 0 auto;
+    }
+
+    /* Central Hub */
+    .center-hub {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 250px;
+      height: 125px;
+      background: linear-gradient(135deg, #1E3A8A 0%, #0F2C59 100%);
+      border: 3px solid #3B82F6;
+      border-radius: 20px;
+      box-shadow: 0 0 35px rgba(59, 130, 246, 0.45);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 12px;
+      z-index: 20;
+    }
+    .center-hub h2 {
+      font-size: 18px;
+      font-weight: 800;
+      color: #FFFFFF;
+      line-height: 1.25;
+    }
+    .center-hub span {
+      font-size: 11px;
+      color: #93C5FD;
+      font-weight: 600;
+      margin-top: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    /* Node Cards */
+    .node {
+      position: absolute;
+      border-radius: 14px;
+      padding: 14px 18px;
+      box-shadow: 0 10px 25px -5px rgba(0,0,0,0.5);
+      z-index: 10;
+    }
+    .node h3 {
+      font-size: 14px;
+      font-weight: 800;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .node ul {
+      list-style: none;
+      font-size: 11.5px;
+      line-height: 1.45;
+    }
+    .node li {
+      margin-bottom: 4px;
+      display: flex;
+      align-items: flex-start;
+      gap: 5px;
+    }
+    .node li::before {
+      content: "▸";
+      color: inherit;
+      font-weight: 800;
+    }
+
+    /* Specific Quadrants */
+    .node-ddl {
+      top: 15px;
+      left: 30px;
+      width: 480px;
+      background: rgba(15, 23, 42, 0.90);
+      border: 2px solid #0284C7;
+      border-left: 6px solid #0284C7;
+      color: #BAE6FD;
+    }
+    .node-ddl h3 { color: #38BDF8; }
+
+    .node-constraints {
+      top: 15px;
+      right: 30px;
+      width: 480px;
+      background: rgba(15, 23, 42, 0.90);
+      border: 2px solid #8B5CF6;
+      border-left: 6px solid #8B5CF6;
+      color: #DDD6FE;
+    }
+    .node-constraints h3 { color: #A78BFA; }
+
+    .node-dml {
+      bottom: 15px;
+      left: 30px;
+      width: 480px;
+      background: rgba(15, 23, 42, 0.90);
+      border: 2px solid #10B981;
+      border-left: 6px solid #10B981;
+      color: #A7F3D0;
+    }
+    .node-dml h3 { color: #34D399; }
+
+    .node-functions {
+      bottom: 15px;
+      right: 30px;
+      width: 480px;
+      background: rgba(15, 23, 42, 0.90);
+      border: 2px solid #F59E0B;
+      border-left: 6px solid #F59E0B;
+      color: #FDE68A;
+    }
+    .node-functions h3 { color: #FBBF24; }
+
+    /* SVG Connecting Lines */
+    .lines-svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
+    }
+    .connector-line {
+      fill: none;
+      stroke-width: 2.5;
+      stroke-dasharray: 6, 4;
+      opacity: 0.65;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="badge">Master Synthesis Mindmap</div>
+    <h1>Structured Query Language (SQL) — DDL, DML & Scalar Functions</h1>
+    <p>Comprehensive Cognitive Architecture for CUET UG Computer Science (Code 308)</p>
+  </div>
+
+  <div class="mindmap-container">
+    <svg class="lines-svg">
+      <!-- Hub to Top-Left -->
+      <path class="connector-line" stroke="#0284C7" d="M 680 370 C 500 370, 360 250, 270 230" />
+      <!-- Hub to Top-Right -->
+      <path class="connector-line" stroke="#8B5CF6" d="M 680 370 C 860 370, 1000 250, 1090 230" />
+      <!-- Hub to Bottom-Left -->
+      <path class="connector-line" stroke="#10B981" d="M 680 370 C 500 370, 360 490, 270 510" />
+      <!-- Hub to Bottom-Right -->
+      <path class="connector-line" stroke="#F59E0B" d="M 680 370 C 860 370, 1000 490, 1090 510" />
+    </svg>
+
+    <!-- CENTER HUB -->
+    <div class="center-hub">
+      <h2>SQL BASICS &amp;<br>FUNCTIONS</h2>
+      <span>Core Architecture</span>
+    </div>
+
+    <!-- NODE 1: DDL & SCHEMA DEFINITION -->
+    <div class="node node-ddl">
+      <h3>🏛️ DDL: Schema Definition &amp; Modification</h3>
+      <ul>
+        <li><b>CREATE TABLE:</b> Defines relation name, attribute data types (<code>CHAR</code>, <code>VARCHAR</code>, <code>INT</code>, <code>DATE</code>) and constraints.</li>
+        <li><b>ALTER TABLE:</b> Modifies schema dynamically via <code>ADD</code> (new column), <code>MODIFY</code> (data type/size), or <code>DROP</code> (removes attribute).</li>
+        <li><b>DROP TABLE:</b> Permanently removes both the table schema and all records from database.</li>
+        <li><b>TRUNCATE TABLE:</b> Flushes all rows instantaneously while preserving the empty table schema.</li>
+        <li><b>Auto-Commit Rule:</b> All DDL statements implicitly auto-commit; cannot be reversed using <code>ROLLBACK</code>!</li>
+      </ul>
+    </div>
+
+    <!-- NODE 2: INTEGRITY CONSTRAINTS -->
+    <div class="node node-constraints">
+      <h3>🛡️ Declarative Integrity Constraints</h3>
+      <ul>
+        <li><b>PRIMARY KEY:</b> Enforces entity integrity: strictly <code>UNIQUE</code> and <code>NOT NULL</code>. Exactly one per table.</li>
+        <li><b>FOREIGN KEY:</b> Enforces referential integrity pointing to parent PK. Supports <code>CASCADE</code> and <code>SET NULL</code>.</li>
+        <li><b>UNIQUE:</b> Prohibits duplicate non-null entries; permits multiple <code>NULL</code> values.</li>
+        <li><b>NOT NULL:</b> Forbids missing or absent values in the specified attribute.</li>
+        <li><b>CHECK:</b> Validates custom domain predicates (e.g., <code>CHECK (Salary &gt; 0)</code>).</li>
+        <li><b>DEFAULT:</b> Supplies an automatic value when omitted during tuple insertion.</li>
+      </ul>
+    </div>
+
+    <!-- NODE 3: DML & QUERY FILTERING -->
+    <div class="node node-dml">
+      <h3>⚡ DML: Manipulation, Filtering &amp; Sorting</h3>
+      <ul>
+        <li><b>INSERT INTO:</b> Appends single or multi-row tuples into existing tables.</li>
+        <li><b>UPDATE ... SET:</b> Modifies attribute values. Omitting <code>WHERE</code> updates all rows!</li>
+        <li><b>DELETE FROM:</b> Purges matching rows. Omitting <code>WHERE</code> deletes all rows (rollback supported).</li>
+        <li><b>Predicate Operators:</b> <code>=, &lt;&gt;, &lt;, &gt;, &lt;=, &gt;=</code> combined with <code>AND, OR, NOT</code>.</li>
+        <li><b>Special Operators:</b> <code>BETWEEN ... AND</code> (inclusive), <code>IN</code> (discrete list), <code>IS NULL</code>.</li>
+        <li><b>Pattern Matching:</b> <code>LIKE '%'</code> (0 or more chars) and <code>LIKE '_'</code> (exactly 1 char).</li>
+        <li><b>ORDER BY:</b> Sorts output rows by one or more columns in <code>ASC</code> (default) or <code>DESC</code>.</li>
+      </ul>
+    </div>
+
+    <!-- NODE 4: SCALAR BUILT-IN FUNCTIONS -->
+    <div class="node node-functions">
+      <h3>📐 Built-in Scalar (Single-Row) Functions</h3>
+      <ul>
+        <li><b>String:</b> <code>LENGTH()</code>, <code>LOWER()</code>/<code>UPPER()</code>, <code>SUBSTR(s, pos, len)</code> (1-indexed!), <code>TRIM()</code>, <code>INSTR(s, sub)</code>, <code>CONCAT()</code>.</li>
+        <li><b>Numeric:</b> <code>POWER(x, y)</code>, <code>ROUND(x, d)</code> (nearest), <code>TRUNCATE(x, d)</code> (chops digits), <code>MOD(n, m)</code>.</li>
+        <li><b>Date/Time:</b> <code>CURDATE()</code>, <code>NOW()</code>, <code>DATE()</code>, <code>MONTH()</code>, <code>YEAR()</code>, <code>DAYNAME()</code>, <code>DAYOFMONTH()</code>.</li>
+        <li><b>Invariant:</b> Single-row functions operate on individual tuples and return exactly one result per input row.</li>
+      </ul>
+    </div>
+
+  </div>
+
+</body>
+</html>
