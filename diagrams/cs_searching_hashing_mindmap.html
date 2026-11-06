@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1440, height=880">
+  <title>Master Synthesis Mindmap: Searching & Hashing Techniques</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 1440px;
+      height: 880px;
+      background: radial-gradient(circle at center, #0F172A 0%, #080D1A 100%);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #F8FAFC;
+      padding: 30px 40px;
+      overflow: hidden;
+      position: relative;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 24px;
+      position: relative;
+      z-index: 10;
+    }
+    .header h1 {
+      font-size: 26px;
+      font-weight: 800;
+      color: #FFFFFF;
+      letter-spacing: -0.01em;
+      margin-bottom: 4px;
+    }
+    .header p {
+      font-size: 13.5px;
+      color: #94A3B8;
+      font-weight: 500;
+    }
+    .badge {
+      display: inline-block;
+      background: #0066FF;
+      color: white;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 4px 12px;
+      border-radius: 14px;
+      margin-bottom: 6px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .mindmap-container {
+      width: 1360px;
+      height: 720px;
+      position: relative;
+      margin: 0 auto;
+    }
+
+    /* Central Hub */
+    .center-hub {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 230px;
+      height: 120px;
+      background: linear-gradient(135deg, #1E3A8A 0%, #0F2C59 100%);
+      border: 3px solid #3B82F6;
+      border-radius: 20px;
+      box-shadow: 0 0 35px rgba(59, 130, 246, 0.45);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 12px;
+      z-index: 20;
+    }
+    .center-hub h2 {
+      font-size: 18.5px;
+      font-weight: 800;
+      color: #FFFFFF;
+      line-height: 1.2;
+    }
+    .center-hub span {
+      font-size: 11px;
+      color: #93C5FD;
+      font-weight: 600;
+      margin-top: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    /* Node Cards */
+    .node {
+      position: absolute;
+      border-radius: 14px;
+      padding: 16px 18px;
+      box-shadow: 0 10px 25px -5px rgba(0,0,0,0.5);
+      z-index: 10;
+      transition: all 0.3s ease;
+    }
+    .node h3 {
+      font-size: 14.5px;
+      font-weight: 800;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .node ul {
+      list-style: none;
+      font-size: 11.5px;
+      line-height: 1.5;
+    }
+    .node li {
+      margin-bottom: 4px;
+      display: flex;
+      align-items: flex-start;
+      gap: 5px;
+    }
+    .node li::before {
+      content: "▸";
+      color: inherit;
+      opacity: 0.8;
+      font-size: 12px;
+    }
+    .node strong {
+      color: #FFFFFF;
+    }
+
+    /* Node 1: Top Left - Linear Search */
+    .node-1 {
+      top: 10px;
+      left: 30px;
+      width: 380px;
+      background: rgba(30, 41, 59, 0.85);
+      border: 1px solid #38BDF8;
+      border-left: 5px solid #38BDF8;
+    }
+    .node-1 h3 { color: #38BDF8; }
+    .node-1 { color: #CBD5E1; }
+
+    /* Node 2: Top Right - Binary Search */
+    .node-2 {
+      top: 10px;
+      right: 30px;
+      width: 390px;
+      background: rgba(30, 41, 59, 0.85);
+      border: 1px solid #34D399;
+      border-left: 5px solid #34D399;
+    }
+    .node-2 h3 { color: #34D399; }
+    .node-2 { color: #CBD5E1; }
+
+    /* Node 3: Bottom Left - Hash Functions */
+    .node-3 {
+      bottom: 20px;
+      left: 30px;
+      width: 400px;
+      background: rgba(30, 41, 59, 0.85);
+      border: 1px solid #FBBF24;
+      border-left: 5px solid #FBBF24;
+    }
+    .node-3 h3 { color: #FBBF24; }
+    .node-3 { color: #CBD5E1; }
+
+    /* Node 4: Bottom Right - Collision Resolution */
+    .node-4 {
+      bottom: 20px;
+      right: 30px;
+      width: 390px;
+      background: rgba(30, 41, 59, 0.85);
+      border: 1px solid #C084FC;
+      border-left: 5px solid #C084FC;
+    }
+    .node-4 h3 { color: #C084FC; }
+    .node-4 { color: #CBD5E1; }
+
+    /* Node 5: Top Middle - Load Factor & Python Dict */
+    .node-5 {
+      top: 15px;
+      left: 450px;
+      width: 460px;
+      background: rgba(30, 41, 59, 0.85);
+      border: 1px solid #60A5FA;
+      border-top: 4px solid #60A5FA;
+    }
+    .node-5 h3 { color: #60A5FA; }
+    .node-5 { color: #CBD5E1; }
+
+    /* Node 6: Bottom Middle - CUET Fatal Traps */
+    .node-6 {
+      bottom: 20px;
+      left: 470px;
+      width: 420px;
+      background: rgba(30, 41, 59, 0.85);
+      border: 1px solid #F87171;
+      border-bottom: 4px solid #F87171;
+    }
+    .node-6 h3 { color: #F87171; }
+    .node-6 { color: #CBD5E1; }
+
+    /* SVG Connecting Lines */
+    svg.connections {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 5;
+      pointer-events: none;
+    }
+    path.wire {
+      fill: none;
+      stroke-width: 2;
+      stroke-dasharray: 4, 4;
+      animation: dash 30s linear infinite;
+    }
+    @keyframes dash {
+      to { stroke-dashoffset: -1000; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="badge">Master Synthesis Mindmap</div>
+    <h1>Searching & Hashing: Complete Algorithmic Architecture</h1>
+    <p>Unit 4: Linear Search, Binary Halving, Hash Functions, Collision Protocols & CPython Dict Architecture</p>
+  </div>
+
+  <div class="mindmap-container">
+    <svg class="connections">
+      <path class="wire" stroke="#38BDF8" opacity="0.6" d="M 680,330 C 500,280 350,200 240,110" />
+      <path class="wire" stroke="#60A5FA" opacity="0.6" d="M 680,300 L 680,140" />
+      <path class="wire" stroke="#34D399" opacity="0.6" d="M 680,330 C 860,280 1000,200 1120,110" />
+      <path class="wire" stroke="#FBBF24" opacity="0.6" d="M 680,390 C 500,440 350,520 250,570" />
+      <path class="wire" stroke="#F87171" opacity="0.6" d="M 680,420 L 680,570" />
+      <path class="wire" stroke="#C084FC" opacity="0.6" d="M 680,390 C 860,440 1000,520 1110,570" />
+    </svg>
+
+    <!-- CENTER HUB -->
+    <div class="center-hub">
+      <h2>SEARCHING & HASHING</h2>
+      <span>Key Lookup Paradigms</span>
+    </div>
+
+    <!-- NODE 1: Linear Search -->
+    <div class="node node-1">
+      <h3>1. Linear Search (Sequential)</h3>
+      <ul>
+        <li><strong>Mechanism:</strong> Scans array sequentially from index $0$ to $N - 1$.</li>
+        <li><strong>Preconditions:</strong> Zero preconditions. Operates on unsorted lists.</li>
+        <li><strong>Complexity:</strong> Best $O(1)$, Worst $O(N)$, Average $O(N)$.</li>
+        <li><strong>Use Case:</strong> Small collections or unordered dynamic datasets.</li>
+      </ul>
+    </div>
+
+    <!-- NODE 5: Load Factor & Python Dict -->
+    <div class="node node-5">
+      <h3>2. Load Factor & CPython Dict Internals</h3>
+      <ul>
+        <li><strong>Load Factor ($\lambda$):</strong> $\lambda = N / m$ (Occupancy density metric).</li>
+        <li><strong>Rehashing:</strong> Table doubles when $\lambda > 0.66$; re-computes all hash indices.</li>
+        <li><strong>SipHash Algorithm:</strong> Cryptographic hash preventing collision DoS attacks.</li>
+        <li><strong>Compact Dict Layout:</strong> Dense entry array + sparse index table (saves $30\%$ RAM).</li>
+      </ul>
+    </div>
+
+    <!-- NODE 2: Binary Search -->
+    <div class="node node-2">
+      <h3>3. Binary Search (Divide-and-Conquer)</h3>
+      <ul>
+        <li><strong>Precondition:</strong> Strictly sorted array ($O(1)$ random access).</li>
+        <li><strong>Range Halving:</strong> $mid = low + (high - low) // 2$. Halves search space.</li>
+        <li><strong>Complexity:</strong> Best $O(1)$, Worst $O(\log N)$, Average $O(\log N)$.</li>
+        <li><strong>Recurrence:</strong> $T(N) = T(N/2) + O(1) \implies O(\log N)$.</li>
+      </ul>
+    </div>
+
+    <!-- NODE 3: Hash Functions -->
+    <div class="node node-3">
+      <h3>4. Hash Function Architectures</h3>
+      <ul>
+        <li><strong>Division / Modulo:</strong> $h(k) = k \bmod m$, where $m$ is a prime number.</li>
+        <li><strong>Mid-Square:</strong> Square key $k^2$, extract middle $r$ digits ($m = 10^r$).</li>
+        <li><strong>Folding Method:</strong> Partition key into equal parts, sum parts, modulo $m$.</li>
+        <li><strong>Multiplication Method:</strong> $h(k) = \lfloor m (k A \bmod 1) \rfloor$, $A \approx 0.618$.</li>
+      </ul>
+    </div>
+
+    <!-- NODE 6: Exam Traps -->
+    <div class="node node-6">
+      <h3>5. The Seven Fatal CUET Traps</h3>
+      <ul>
+        <li><strong>Unsorted Binary Search:</strong> Yields invalid results without prior sorting.</li>
+        <li><strong>Midpoint Overflow:</strong> <code>(low + high) // 2</code> vs <code>low + (high - low) // 2</code>.</li>
+        <li><strong>Tombstone Erasure Bug:</strong> Deleting in open addressing requires tombstones.</li>
+        <li><strong>Primary Clustering:</strong> Long occupied blocks degrade linear probe to $O(N)$.</li>
+      </ul>
+    </div>
+
+    <!-- NODE 4: Collision Resolution -->
+    <div class="node node-4">
+      <h3>6. Collision Resolution Strategies</h3>
+      <ul>
+        <li><strong>Separate Chaining:</strong> Linked list buckets at each slot; $\lambda$ can exceed 1.</li>
+        <li><strong>Linear Probing:</strong> $(h(k) + i) \bmod m$; primary clustering hazard.</li>
+        <li><strong>Quadratic Probing:</strong> $(h(k) + c_1 i + c_2 i^2) \bmod m$; reduces clustering.</li>
+        <li><strong>Double Hashing:</strong> $(h_1(k) + i \cdot h_2(k)) \bmod m$; optimal scatter.</li>
+      </ul>
+    </div>
+  </div>
+
+</body>
+</html>
