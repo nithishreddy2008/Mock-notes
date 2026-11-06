@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="sa">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 600px;
+    background: #FFFFFF;
+    font-family: "Kohinoor Devanagari", "Devanagari Sangam MN", -apple-system, sans-serif;
+    color: #0F172A;
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 19px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .title-block p {
+    font-size: 11px;
+    color: #64748B;
+    font-weight: 600;
+  }
+  .badge {
+    background: #EEF1F8;
+    color: #1F5EFF;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  .content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 12px;
+    flex-grow: 1;
+    margin-top: 10px;
+    margin-bottom: 8px;
+  }
+  .card {
+    background: #F8FAFC;
+    border: 1px solid #CBD5E1;
+    border-radius: 8px;
+    padding: 10px 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 6px;
+    border-bottom: 1.5px solid #E2E8F0;
+    padding-bottom: 4px;
+  }
+  .card-num {
+    background: #071A4D;
+    color: #FFF;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 800;
+  }
+  .card-title {
+    font-size: 12px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .card-body {
+    font-size: 10px;
+    line-height: 1.4;
+    color: #334155;
+    flex-grow: 1;
+  }
+  .rule-box {
+    background: #EFF6FF;
+    border-left: 3px solid #1F5EFF;
+    padding: 4px 8px;
+    margin: 4px 0;
+    border-radius: 0 4px 4px 0;
+    font-size: 9.5px;
+    color: #1E3A8A;
+  }
+  .highlight-box {
+    background: #ECFDF5;
+    border-left: 3px solid #059669;
+    padding: 4px 8px;
+    margin: 4px 0;
+    border-radius: 0 4px 4px 0;
+    font-size: 9.5px;
+    color: #064E3B;
+  }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 6px;
+    font-size: 10px;
+    color: #64748B;
+  }
+  .brand-tag {
+    color: #1F5EFF;
+    font-weight: 700;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="title-block">
+    <h1>संस्कृत-नाट्य-साहित्यम् : प्रमुख-नाटककाराः, रूपकाणि & नाट्य-तत्त्वानि</h1>
+    <p>भासस्य १३ रूपकाणि, कालिदासस्य त्रिरूपकम्, भवभूतेः उत्तररामचरितम् एवं शूद्रकस्य मृच्छकटिकम्</p>
+  </div>
+  <div class="badge">Dramaturgy & Theatre Engine</div>
+</div>
+
+<div class="content-grid">
+  <!-- Card 1 -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-num">१</div>
+      <div class="card-title">महाकवि-भासस्य त्रयोदश (१३) रूपकाणि</div>
+    </div>
+    <div class="card-body">
+      <div class="rule-box">
+        <b>टी. गणपतिशास्त्रिणा (१९०९-१९१२) केरले त्रिवेन्द्रम् नगरे आविष्कृतानि।</b>
+      </div>
+      <div style="margin-top: 3px;">
+        <p>• <b>रामायण-मूलके (२):</b> <i>प्रतिमानाटकम्</i> (७ अङ्काः - प्रतिमागृहे दशरथ-प्रतिमा), <i>अभिषेकनाटकम्</i> (६ अङ्काः)।</p>
+        <p>• <b>महाभारत-मूलके (६):</b> <i>पञ्चरात्रम्</i>, <i>मध्यमव्यायोगः</i>, <i>दूतवाक्यम्</i>, <i>दूतघटोत्कचम्</i>, <i>कर्णभारम्</i>, <i>ऊरुभङ्गम्</i> (एकमात्रं दुःखान्तं रूपकम्)।</p>
+        <p>• <b>उदयन-कथा-मूलके (२):</b> <b>स्वप्नवासवदत्तम्</b> (६ अङ्काः - भासस्य सर्वश्रेष्ठं नाटकम्; लावणक-दाहः, वासवदत्ता-पद्मावती-उदयनः), <i>प्रतिज्ञायौगन्धरायणम्</i>।</p>
+        <p>• <b>अन्ये (३):</b> <i>अविमारकम्</i>, <i>चारुदत्तम्</i> (४ अङ्काः), <i>बालचरितम्</i> (कृष्णचरितम्)।</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-num">२</div>
+      <div class="card-title">कालिदासस्य नाट्य-त्रयी (Abhijnanashakuntala Focus)</div>
+    </div>
+    <div class="card-body">
+      <div class="highlight-box">
+        <b>"काव्येषु नाटकं रम्यं तत्र रम्या शकुन्तला। तत्रापि च चतुर्थोऽङ्कस्तत्र श्लोकचतुष्टयम्॥"</b>
+      </div>
+      <div style="margin-top: 3px;">
+        <p>• <b>१. अभिज्ञानशाकुन्तलम् (७ अङ्काः):</b> हस्तिनापुर-नरेशस्य दुष्यन्तस्य कण्व-पालित-शकुन्तलया सह गान्धर्व-विवाहः; दुर्वाससः शापः; धीरोदात्तः नायकः; अङ्गुलीयक-प्राप्तिः; रसः <b>शृङ्गारः</b>।</p>
+        <p>• <b>२. मालविकाग्निमित्रम् (५ अङ्काः):</b> कालिदासस्य प्रथमं रूपकम्; विदिशा-नरेशस्य अग्निमित्रस्य मालविकया सह प्रणयः।</p>
+        <p>• <b>३. विक्रमोर्वशीयम् (५ अङ्काः - त्रोटकम्):</b> महाराजस्य पुरूरवसः अप्सरसा उर्वश्या सह प्रेमकथा।</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 3 -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-num">३</div>
+      <div class="card-title">भवभूतेः उत्तररामचरितम् & करुणरसः</div>
+    </div>
+    <div class="card-body">
+      <div class="rule-box">
+        <b>"एको रसः करुण एव निमित्तभेदात्" · "कारुण्यं भवभूतिरेव तनुते"</b>
+      </div>
+      <div style="margin-top: 3px;">
+        <p>• <b>उत्तररामचरितम् (७ अङ्काः):</b> सीता-निर्वासनतः आरभ्य राम-सीता-पुनर्मिलन-पर्यन्तं कथा; तृतीयोऽङ्कः <b>'छायाङ्कः'</b> (सीता छायारूपेण रामं पश्यति); रसः <b>करुणः</b>।</p>
+        <p>• <b>महावीरचरितम् (७ अङ्काः):</b> रामस्य विवाह-रावणवध-पर्यन्तं वीररस-प्रधानं नाटकम्।</p>
+        <p>• <b>मालतीमाधवम् (१० अङ्काः - प्रकरणम्):</b> मालती-माधवयोः प्रणयः; कपालकुण्डला-अघोरघण्टयोः तान्त्रिक-क्रियाः।</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 4 -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-num">४</div>
+      <div class="card-title">शूद्रकस्य मृच्छकटिकम् & विशाखदत्तस्य मुद्राराक्षसम्</div>
+    </div>
+    <div class="card-body">
+      <div style="margin-top: 2px;">
+        <p>• <b>मृच्छकटिकम् (शूद्रकः - १० अङ्काः):</b> 'प्रकरणम्'; दरिद्र-सार्थवाहस्य चारुदत्तस्य गणिकया वसन्तसेनया सह प्रणयः; मणिनिमित्तं मृतिका-शकटिका (मिट्टी की गाड़ी); खलनायकः शकारः; विदूषकः मैत्रेयः; समाज-चित्रणम्।</p>
+        <p>• <b>मुद्राराक्षसम् (विशाखदत्तः - ७ अङ्काः):</b> <u>नायिका-विदूषक-रहितं</u> राजनीति-प्रधानं नाटकम्; चाणक्यस्य कूटनीत्या नन्द-मन्त्री राक्षसः चन्द्रगुप्तस्य मन्त्री क्रियते; मुद्रा-चिह्नित-कथा।</p>
+        <p>• <b>वेणीसंहारम् (भट्टनारायणः - ६ अङ्काः):</b> भीम-प्रतिज्ञा; दुःशासन-वधः; द्रौपदी-वेणी-बन्धनम्।</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <span class="brand-tag">OurMocks CUET UG Series</span>
+  <span>नाट्य-सिद्धान्तः : "न तज्ज्ञानं न तच्छिल्पं न सा विद्या न सा कला। नासौ योगो न तत्कर्म नाट्येऽस्मिन् यन्न दृश्यते॥"</span>
+  <span>संस्कृतम् (Code 325) · Unit 9 Dramaturgy Board</span>
+</div>
+
+</body>
+</html>

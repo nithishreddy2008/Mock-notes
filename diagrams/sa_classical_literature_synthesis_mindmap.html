@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="sa">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 600px;
+    background: #FFFFFF;
+    font-family: "Kohinoor Devanagari", "Devanagari Sangam MN", -apple-system, sans-serif;
+    color: #0F172A;
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 19px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .title-block p {
+    font-size: 11px;
+    color: #64748B;
+    font-weight: 600;
+  }
+  .badge {
+    background: #EEF1F8;
+    color: #1F5EFF;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  .mindmap-wrapper {
+    position: relative;
+    flex-grow: 1;
+    margin: 10px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 12px;
+  }
+  .central-hub {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #071A4D;
+    color: #FFFFFF;
+    padding: 10px 18px;
+    border-radius: 30px;
+    border: 3px solid #1F5EFF;
+    box-shadow: 0 4px 14px rgba(7, 26, 77, 0.25);
+    text-align: center;
+    z-index: 10;
+  }
+  .central-hub h2 {
+    font-size: 13px;
+    font-weight: 800;
+  }
+  .central-hub p {
+    font-size: 9.5px;
+    color: #93C5FD;
+    font-weight: 600;
+  }
+  .branch-card {
+    background: #F8FAFC;
+    border: 1px solid #CBD5E1;
+    border-radius: 8px;
+    padding: 10px 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .branch-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 6px;
+    border-bottom: 1.5px solid #E2E8F0;
+    padding-bottom: 4px;
+  }
+  .branch-pill {
+    padding: 2px 7px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 800;
+  }
+  .pill-red { background: #FEE2E2; color: #991B1B; }
+  .pill-blue { background: #DBEAFE; color: #1E40AF; }
+  .pill-green { background: #D1FAE5; color: #065F46; }
+  .pill-purple { background: #F3E8FF; color: #6B21A8; }
+  .branch-title {
+    font-size: 11.5px;
+    font-weight: 700;
+    color: #0F172A;
+  }
+  .item-list {
+    font-size: 9.5px;
+    line-height: 1.45;
+    color: #334155;
+  }
+  .item-list li {
+    list-style: none;
+    margin-bottom: 3px;
+    padding-left: 10px;
+    position: relative;
+  }
+  .item-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #1F5EFF;
+    font-weight: bold;
+  }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 6px;
+    font-size: 10px;
+    color: #64748B;
+  }
+  .brand-tag {
+    color: #1F5EFF;
+    font-weight: 700;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="title-block">
+    <h1>लौकिक-संस्कृत-साहित्य-इतिहास सम्पूर्ण-संश्लेषण-मानचित्रम्</h1>
+    <p>महाकाव्यानि, रूपकाणि, गद्यकाव्यानि, कथा-साहित्यम् एवं वृहत्त्रयी-लघुत्रयी-समन्वयः</p>
+  </div>
+  <div class="badge">Comprehensive Synthesis Map</div>
+</div>
+
+<div class="mindmap-wrapper">
+  <div class="central-hub">
+    <h2>लौकिक-साहित्यम्</h2>
+    <p>काव्य-नाट्य-गद्य-दर्शनम्</p>
+  </div>
+
+  <!-- Quadrant 1: Top-Left -->
+  <div class="branch-card">
+    <div class="branch-header">
+      <span class="branch-pill pill-blue">विभागः १</span>
+      <span class="branch-title">आदिकाव्ये & पुराणानि (Epics & Purāṇas)</span>
+    </div>
+    <ul class="item-list">
+      <li><b>रामायणम्:</b> वाल्मीकिः (आदिकविः); २४००० श्लोकाः, ७ काण्डानि; अनुष्टुप् छन्दः; करुणरसः</li>
+      <li><b>महाभारतम्:</b> वेदव्यासः; १००००० श्लोकाः, १८ पर्वाणि; शान्तरसः; जय $\to$ भारत $\to$ महाभारत</li>
+      <li><b>श्रीमद्भगवद्गीता:</b> भीष्मपर्वणि (अ. २५-४२), १८ अध्यायाः, ७०० श्लोकाः; कर्मयोगः</li>
+      <li><b>अष्टादश-पुराणानि:</b> पञ्चलक्षणम् (सर्ग, प्रतिसर्ग, वंश, मन्वन्तर, वंशानुचरित); श्रीमद्भागवतम्</li>
+    </ul>
+  </div>
+
+  <!-- Quadrant 2: Top-Right -->
+  <div class="branch-card">
+    <div class="branch-header">
+      <span class="branch-pill pill-green">विभागः २</span>
+      <span class="branch-title">महाकाव्यानि (Laghutrayī & Bṛhattrayī)</span>
+    </div>
+    <ul class="item-list">
+      <li><b>लघुत्रयी (कालिदासः):</b> रघुवंशम् (१९ सर्गाः), कुमारसम्भवम् (१७ सर्गाः), मेघदूतम् (गीतिकाव्यम्)</li>
+      <li><b>वृहत्त्रयी:</b> किरातार्जुनीयम् (१८ सर्गाः - भारविः); शिशुपालवधम् (२० सर्गाः - माघः); नैषधीयचरितम् (२२ सर्गाः - श्रीहर्षः)</li>
+      <li><b>अश्वघोषः:</b> बुद्धचरितम् (२८ सर्गाः), सौन्दरनन्दम् (१८ सर्गाः) — बौद्ध-महाकाव्ये</li>
+      <li><b>काव्य-प्रशस्तिः:</b> उपमा कालिदासस्य, भारवेरर्थगौरवम्, दण्डिनः पदलालित्यम्, माघे सन्ति त्रयो गुणाः</li>
+    </ul>
+  </div>
+
+  <!-- Quadrant 3: Bottom-Left -->
+  <div class="branch-card">
+    <div class="branch-header">
+      <span class="branch-pill pill-purple">विभागः ३</span>
+      <span class="branch-title">दृश्यकाव्यम् (Dramaturgy & Plays)</span>
+    </div>
+    <ul class="item-list">
+      <li><b>भासः (१३ रूपकाणि):</b> स्वप्नवासवदत्तम् (६ अङ्काः - सर्वश्रेष्ठम्); प्रतिमानाटकम्, कर्णभारम्, ऊरुभङ्गम्</li>
+      <li><b>कालिदासः:</b> अभिज्ञानशाकुन्तलम् (७ अङ्काः - रम्यं शकुन्तला); मालविकाग्निमित्रम्, विक्रमोर्वशीयम्</li>
+      <li><b>भवभूतिः:</b> उत्तररामचरितम् (७ अङ्काः - छायाङ्कः, करुणरसः); महावीरचरितम्, मालतीमाधवम्</li>
+      <li><b>शूद्रकः & विशाखदत्तः:</b> मृच्छकटिकम् (चारुदत्त-वसन्तसेना); मुद्राराक्षसम् (चाणक्य-राक्षस-कूटनीतिः)</li>
+    </ul>
+  </div>
+
+  <!-- Quadrant 4: Bottom-Right -->
+  <div class="branch-card">
+    <div class="branch-header">
+      <span class="branch-pill pill-red">विभागः ४</span>
+      <span class="branch-title">गद्यकाव्यम्, कथा & शतक-साहित्यम्</span>
+    </div>
+    <ul class="item-list">
+      <li><b>बाणभट्टः:</b> कादम्बरी (कथा - चन्द्रापीड-कादम्बरी त्रिजन्म); हर्षचरितम् (आख्यायिका - ८ उच्छ्वासाः)</li>
+      <li><b>दण्डी & सुबन्धुः:</b> दशकुमारचरितम् (८ कुमाराणां चरितम्); वासवदत्ता (प्रत्यक्षर-श्लेष-मयम्)</li>
+      <li><b>नीतिकथा-साहित्यम्:</b> पञ्चतन्त्रम् (विष्णुशर्मा - ५ तन्त्राणि); हितोपदेशः (नारायणपण्डितः - ४ भागाः)</li>
+      <li><b>कथासरित्सागरः & शतकत्रयम्:</b> सोमदेवः; भर्तृहरिः (नीतिशतकम्, शृङ्गारशतकम्, वैराग्यशतकम्)</li>
+    </ul>
+  </div>
+</div>
+
+<div class="footer">
+  <span class="brand-tag">OurMocks CUET UG Series</span>
+  <span>संस्कृत-साहित्य-प्रशस्तिः : "पुरा कवीनां गणनाप्रसङ्गे कनिष्ठिकाधिष्ठितकालिदासः"</span>
+  <span>संस्कृतम् (Code 325) · Unit 9 Synthesis Mindmap</span>
+</div>
+
+</body>
+</html>

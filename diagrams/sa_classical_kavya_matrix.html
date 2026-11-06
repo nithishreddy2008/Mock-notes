@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="sa">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 600px;
+    background: #FFFFFF;
+    font-family: "Kohinoor Devanagari", "Devanagari Sangam MN", -apple-system, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .title-block p {
+    font-size: 11.5px;
+    color: #64748B;
+    margin-top: 3px;
+    font-weight: 600;
+  }
+  .badge {
+    background: #EEF1F8;
+    color: #1F5EFF;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  .table-container {
+    flex-grow: 1;
+    margin-top: 10px;
+    margin-bottom: 8px;
+    border: 1px solid #CBD5E1;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  table {
+    width: 100%;
+    height: 100%;
+    border-collapse: collapse;
+    font-size: 10px;
+    text-align: left;
+  }
+  thead {
+    background: #071A4D;
+    color: #FFFFFF;
+  }
+  th {
+    padding: 7px 8px;
+    font-weight: 700;
+    font-size: 11px;
+    border-right: 1px solid #1E293B;
+  }
+  th:last-child { border-right: none; }
+  tbody tr {
+    border-bottom: 1px solid #E2E8F0;
+  }
+  tbody tr:nth-child(even) {
+    background: #F8FAFC;
+  }
+  tbody tr:last-child { border-bottom: none; }
+  td {
+    padding: 5px 8px;
+    vertical-align: middle;
+    line-height: 1.35;
+    border-right: 1px solid #E2E8F0;
+  }
+  td:last-child { border-right: none; }
+  .col-cat { width: 13%; font-weight: 700; }
+  .col-kavya { width: 17%; font-weight: 700; color: #1E3A8A; }
+  .col-author { width: 15%; font-weight: 600; color: #047857; }
+  .col-extent { width: 13%; font-size: 9.5px; color: #64748B; }
+  .col-theme { width: 42%; font-size: 9.5px; color: #0F172A; }
+  .tag {
+    display: inline-block;
+    padding: 1.5px 5px;
+    border-radius: 4px;
+    font-size: 9px;
+    font-weight: 700;
+    margin-right: 3px;
+  }
+  .tag-laghu { background: #E0E7FF; color: #3730A3; }
+  .tag-brhat { background: #FEF3C7; color: #92400E; }
+  .tag-iti   { background: #D1FAE5; color: #065F46; }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 8px;
+    font-size: 10px;
+    color: #64748B;
+  }
+  .brand-tag {
+    color: #1F5EFF;
+    font-weight: 700;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="title-block">
+    <h1>लौकिक-संस्कृत-महाकाव्य-परम्परा : वृहत्त्रयी & लघुत्रयी तुलनात्मक-सारणी</h1>
+    <p>उपमा कालिदासस्य, भारवेरर्थगौरवम्, दण्डिनः पदलालित्यम्, माघे सन्ति त्रयो गुणाः</p>
+  </div>
+  <div class="badge">संस्कृतम् (325) · Classical Matrix</div>
+</div>
+
+<div class="table-container">
+  <table>
+    <thead>
+      <tr>
+        <th>काव्य-प्रवर्गः</th>
+        <th>महाकाव्यम् / ग्रन्थः</th>
+        <th>कविः & विशिष्टता</th>
+        <th>विस्तारः & रसः</th>
+        <th>कथावस्तु, नायकः & CUET परीक्षा-महत्त्वम्</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="col-cat" rowspan="2"><span class="tag tag-iti">इतिहासौ</span><br>आदिकाव्ये</td>
+        <td class="col-kavya">रामायणम्</td>
+        <td class="col-author">महर्षिः <b>वाल्मीकिः</b><br>(आदिकविः)</td>
+        <td class="col-extent">७ काण्डानि, २४००० श्लोकाः<br>रसः: <b>करुणः</b></td>
+        <td class="col-theme">चतुर्विंशतिसाहस्री संहिता; अनुष्टुप् छन्दसः उत्पत्तिः ("मा निषाद..."); बाल, अयोध्या, अरण्य, किष्किन्धा, सुन्दर, युद्ध, उत्तरकाण्डम्।</td>
+      </tr>
+      <tr>
+        <td class="col-kavya">महाभारतम्</td>
+        <td class="col-author">महर्षिः <b>वेदव्यासः</b><br>(कृष्णद्वैपायनः)</td>
+        <td class="col-extent">१८ पर्वाणि, १००००० श्लोकाः<br>रसः: <b>शान्तः</b></td>
+        <td class="col-theme">शतसाहस्री संहिता; त्रयः विकासाः: जय (८८००) $\to$ भारत (२४०००) $\to$ महाभारत (१०००००); भीष्मपर्वे <b>श्रीमद्भगवद्गीता</b> (१८ अध्यायाः, ७०० श्लोकाः)।</td>
+      </tr>
+      <tr>
+        <td class="col-cat" rowspan="3"><span class="tag tag-laghu">लघुत्रयी</span><br>(कालिदास-रचिता)</td>
+        <td class="col-kavya">१. रघुवंशम्</td>
+        <td class="col-author">महाकविः <b>कालिदासः</b><br>(उपमा कालिदासस्य)</td>
+        <td class="col-extent">१९ सर्गाः, १५६९ श्लोकाः<br>रसः: <b>वीर-शृङ्गारौ</b></td>
+        <td class="col-theme">सूर्यवंशस्य दिलीप-रघु-अज-दशरथ-राम-अग्निवर्ण-पर्यन्तं २९ राज्ञां वर्णनम्; दिलीपस्य नन्दिनी-गोसेवा; अजविलापः; "वागर्थाविव सम्पृक्तौ..." मङ्गलाचरणम्।</td>
+      </tr>
+      <tr>
+        <td class="col-kavya">२. कुमारसम्भवम्</td>
+        <td class="col-author">महाकविः <b>कालिदासः</b><br>(प्रकृति-सौन्दर्यम्)</td>
+        <td class="col-extent">१७ सर्गाः (८ प्रसिद्धाः)<br>रसः: <b>शृङ्गारः</b></td>
+        <td class="col-theme">हिमालय-वर्णनम्; कामदहनम्; रतिविलापः; पार्वत्याः कठोर-तपः (पञ्चाग्नि); शिव-पार्वती-विवाहः; कार्तिकेय-जन्म; तारकासुर-वधः।</td>
+      </tr>
+      <tr>
+        <td class="col-kavya">३. मेघदूतम्</td>
+        <td class="col-author">महाकविः <b>कालिदासः</b><br>(खण्डकाव्यम्/गीतिकाव्यम्)</td>
+        <td class="col-extent">२ भागौ (पूर्व-उत्तरमेघौ)<br>रसः: <b>विप्रलम्भ-शृङ्गारः</b></td>
+        <td class="col-theme">अलकाधीशात् कुबेरात् शापग्रस्तस्य यक्षस्य रामगिरौ विरहः; मेघं दूतं कृत्वा अलकापुरीं सन्देश-प्रेषणम्; सर्वत्र <b>मन्दाक्रान्ता</b> छन्दः प्रयुक्तम्।</td>
+      </tr>
+      <tr>
+        <td class="col-cat" rowspan="3"><span class="tag tag-brhat">वृहत्त्रयी</span><br>(प्रौढ-काव्यानि)</td>
+        <td class="col-kavya">१. किरातार्जुनीयम्</td>
+        <td class="col-author">महाकविः <b>भारविः</b><br>(भारवेरर्थगौरवम्)</td>
+        <td class="col-extent">१८ सर्गाः, १०४० श्लोकाः<br>रसः: <b>वीररसः</b></td>
+        <td class="col-theme">महाभारतस्य वनपर्व-मूलकम्; युधिष्ठिर-वनेचर-संवादः ("हितं मनोहारि च दुर्लभं वचः"); अर्जुनस्य किरातवेषधारिणा शिवेन सह युद्धम्; पाशुपतास्त्र-प्राप्तिः।</td>
+      </tr>
+      <tr>
+        <td class="col-kavya">२. शिशुपालवधम्</td>
+        <td class="col-author">महाकविः <b>माघः</b><br>(माघे सन्ति त्रयो गुणाः)</td>
+        <td class="col-extent">२० सर्गाः, १६५० श्लोकाः<br>रसः: <b>वीररसः</b></td>
+        <td class="col-theme">महाभारतस्य सभापर्व-मूलकम्; राजसूय-यज्ञे श्रीकृष्णस्य अग्रपूजा; शिशुपालस्य शत-अपराधानां क्षमा; सुदर्शनचक्रेण शिशुपाल-वधः; "नवसर्गगते माघे नवशब्दो न विद्यते"।</td>
+      </tr>
+      <tr>
+        <td class="col-kavya">३. नैषधीयचरितम्</td>
+        <td class="col-author">महाकविः <b>श्रीहर्षः</b><br>(नैषधं विद्वदौषधम्)</td>
+        <td class="col-extent">२२ सर्गाः, २८३० श्लोकाः<br>रसः: <b>शृङ्गाररसः</b></td>
+        <td class="col-theme">महाभारतस्य नलोपाख्यान-मूलकम्; नल-दमयन्ती-प्रणयः; स्वर्णहंस-दौत्यम्; दमयन्ती-स्वयंवरः; पञ्चनली-वर्णनम् (इन्द्रादि-देवाः नलवेषं धारयन्ति)।</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="footer">
+  <span class="brand-tag">OurMocks CUET UG Series</span>
+  <span>काव्य-प्रशस्तिः : "काव्येषु नाटकं रम्यं तत्र रम्या शकुन्तला" · "किरात-शिशुपाल-नैषधं वृहत्त्रयी"</span>
+  <span>संस्कृतम् (Code 325) · Unit 9 Classical Matrix</span>
+</div>
+
+</body>
+</html>
