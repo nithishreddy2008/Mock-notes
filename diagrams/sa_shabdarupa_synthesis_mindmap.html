@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="sa">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 600px;
+    background: #FFFFFF;
+    font-family: "Kohinoor Devanagari", "Devanagari Sangam MN", -apple-system, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 19px;
+    font-weight: 800;
+    color: #071A4D;
+    letter-spacing: -0.01em;
+  }
+  .title-block p {
+    font-size: 11.5px;
+    color: #64748B;
+    margin-top: 2px;
+    font-weight: 600;
+  }
+  .badge {
+    background: #EEF1F8;
+    color: #1F5EFF;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 700;
+    border: 1px solid #C7D7FE;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .map-wrapper {
+    position: relative;
+    flex-grow: 1;
+    margin: 12px 0;
+    background: #FAFCFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .svg-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+  }
+  .nodes-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 16px;
+    padding: 16px 20px;
+    z-index: 2;
+  }
+  .node-card {
+    background: #FFFFFF;
+    border: 1.5px solid #CBD5E1;
+    border-radius: 8px;
+    padding: 10px 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+  }
+  .top-left { border-top: 3px solid #1F5EFF; }
+  .top-mid { border-top: 3px solid #0EA5E9; }
+  .top-right { border-top: 3px solid #10B981; }
+  .bot-left { border-bottom: 3px solid #F59E0B; }
+  .bot-mid { border-bottom: 3px solid #EF4444; }
+  .bot-right { border-bottom: 3px solid #8B5CF6; }
+  .node-title {
+    font-size: 11.5px;
+    font-weight: 800;
+    color: #071A4D;
+    margin-bottom: 3px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .node-desc {
+    font-size: 10px;
+    color: #475569;
+    line-height: 1.4;
+    flex-grow: 1;
+  }
+  .node-tags {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+    margin-top: 5px;
+  }
+  .tag {
+    background: #F1F5F9;
+    color: #334155;
+    font-size: 9px;
+    font-weight: 700;
+    padding: 2px 5px;
+    border-radius: 4px;
+  }
+  .hub {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #071A4D;
+    color: #FFFFFF;
+    border: 3px solid #1F5EFF;
+    border-radius: 12px;
+    padding: 12px 18px;
+    text-align: center;
+    width: 250px;
+    box-shadow: 0 8px 20px rgba(7, 26, 77, 0.25);
+    z-index: 3;
+  }
+  .hub-title {
+    font-size: 13.5px;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    color: #FFFFFF;
+  }
+  .hub-subtitle {
+    font-size: 9.5px;
+    color: #93C5FD;
+    font-weight: 600;
+    margin-top: 2px;
+  }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 8px;
+    font-size: 11px;
+    color: #64748B;
+  }
+  .footer-brand {
+    font-weight: 700;
+    color: #071A4D;
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <div class="title-block">
+      <h1>संस्कृत-शब्दरूपाणि विभक्तिप्रयोगाः च · महामानचित्रम्</h1>
+      <p>अजन्त-हलन्त-सर्वनाम-शब्दानां कारक-उपपद-प्रयोगाणां च सर्वाङ्गीणं संकलनम् · CUET UG संस्कृतम् (Code 325)</p>
+    </div>
+    <div class="badge">चित्रम् ३ · समग्र-मानचित्रम्</div>
+  </div>
+
+  <div class="map-wrapper">
+    <!-- SVG Connection Lines -->
+    <svg class="svg-lines" width="100%" height="100%">
+      <line x1="280" y1="130" x2="400" y2="230" stroke="#CBD5E1" stroke-width="2" stroke-dasharray="4 4" />
+      <line x1="500" y1="170" x2="500" y2="220" stroke="#CBD5E1" stroke-width="2" stroke-dasharray="4 4" />
+      <line x1="720" y1="130" x2="600" y2="230" stroke="#CBD5E1" stroke-width="2" stroke-dasharray="4 4" />
+      <line x1="280" y1="360" x2="400" y2="280" stroke="#CBD5E1" stroke-width="2" stroke-dasharray="4 4" />
+      <line x1="500" y1="340" x2="500" y2="290" stroke="#CBD5E1" stroke-width="2" stroke-dasharray="4 4" />
+      <line x1="720" y1="360" x2="600" y2="280" stroke="#CBD5E1" stroke-width="2" stroke-dasharray="4 4" />
+    </svg>
+
+    <!-- 6 Nodes Grid -->
+    <div class="nodes-grid">
+      <!-- Node 1: Top Left -->
+      <div class="node-card top-left">
+        <div class="node-title">१. अजन्त-पुंल्लिङ्ग-रूपाणि</div>
+        <div class="node-desc">अकारान्त (बालक/राम: -ः, -ौ, -ाः); इकारान्त (कवि: कविः, कवी, कवयः; सखि: सखा, सखायौ, सखायः; पति: पतिः, पती, पतयः); उकारान्त (भानु/शिशु: -उः, -ऊ, -अवः); ऋकारान्त (पितृ: पिता, पितरौ, पितरः; दातृ: दाता); ओकारान्त (गो: गौः, गावौ, गावः)।</div>
+        <div class="node-tags">
+          <span class="tag">बालक/राम</span>
+          <span class="tag">कवि/सखि</span>
+          <span class="tag">भानु/शिशु</span>
+          <span class="tag">पितृ/दातृ</span>
+        </div>
+      </div>
+
+      <!-- Node 2: Top Mid -->
+      <div class="node-card top-mid">
+        <div class="node-title">२. अजन्त-स्त्रीलिङ्ग-रूपाणि</div>
+        <div class="node-desc">आकारान्त (लता/रमा: -आ, -ए, -आः); ह्रस्व-इकारान्त (मति/धृति: मतिः, मती, मतयः; चतुर्थी-पञ्चमी-षष्ठी-सप्तमीषु द्वैविध्यम् - मत्यै/मतये); दीर्घ-ईकारान्त (नदी: नदी, नद्यौ, नद्यः); उकारान्त (धेनु); ऊकारान्त (वधू: वधूः, वध्वौ, वध्वः); ऋकारान्त (मातृ: माता, मातरौ, मातरः; स्वसृ)।</div>
+        <div class="node-tags">
+          <span class="tag">लता/रमा</span>
+          <span class="tag">मति/बुद्धि</span>
+          <span class="tag">नदी/स्त्री</span>
+          <span class="tag">मातृ/धेनु</span>
+        </div>
+      </div>
+
+      <!-- Node 3: Top Right -->
+      <div class="node-card top-right">
+        <div class="node-title">३. अजन्त-नपुंसकलिङ्ग-रूपाणि</div>
+        <div class="node-desc">अकारान्त (फल: फलम्, फले, फलानि; प्रथमा-द्वितीया समाने); इकारान्त (वारि: वारि, वारिणी, वारीणि; अक्षि: अक्षि, अक्षिणी, अक्षीणि); उकारान्त (मधु: मधु, मधुनी, मधूनि; वस्तु)। नियमः: तृतीयाविभक्तितः सप्तमीपर्यन्तं रूपाणि पुंल्लिङ्गवत् भवन्ति।</div>
+        <div class="node-tags">
+          <span class="tag">फल/पुष्प</span>
+          <span class="tag">वारि/अक्षि</span>
+          <span class="tag">मधु/वस्तु</span>
+          <span class="tag">तृतीयातः पुंवत्</span>
+        </div>
+      </div>
+
+      <!-- Node 4: Bot Left -->
+      <div class="node-card bot-left">
+        <div class="node-title">४. हलन्त-शब्दाः (व्यञ्जनान्ताः)</div>
+        <div class="node-desc">नकारान्त पुं. (राजन्: राजा, राजानौ, राजानः; आत्मन्: आत्मा; पथिन्: पन्थाः); सकारान्त पुं. (विद्वस्: विद्वान्, विद्वांसौ, विद्वांसः); नपुं. (मनस्: मनः, मनसी, मनांसि; पयस्); तकारान्त (भवत्: भवान्; मरुत्; जगत्); चकारान्त/शकारान्त (वाच्: वाक्/वाग्, वाचौ, वाचः; दिश्: दिक्)।</div>
+        <div class="node-tags">
+          <span class="tag">राजन्/आत्मन्</span>
+          <span class="tag">विद्वस्/पथिन्</span>
+          <span class="tag">भवत्/मरुत्</span>
+          <span class="tag">वाच्/जगत्</span>
+        </div>
+      </div>
+
+      <!-- Node 5: Bot Mid -->
+      <div class="node-card bot-mid">
+        <div class="node-title">५. सर्वनाम-शब्दाः (सर्वादीनि)</div>
+        <div class="node-desc">अस्मद् (अहम्, आवाम्, वयम् - सर्वलिङ्गेषु समानम्); युष्मद् (त्वम्, युवाम्, यूयम्); तत् (सः/सा/तत्); यत् (यः/या/यत्); किम् (कः/का/किम्); इदम् (अयम्/इयम्/इदम्); सर्व (सर्वः/सर्वा/सर्वम्); सर्वनाम्नां सम्बोधनं न भवति; अस्मद्/युष्मदोः वैकल्पिक-रूपाणि (मा, मे, मे / त्वा, ते, ते)।</div>
+        <div class="node-tags">
+          <span class="tag">अस्मद्/युष्मद्</span>
+          <span class="tag">तत्/यत्/किम्</span>
+          <span class="tag">इदम्/सर्व</span>
+          <span class="tag">न सम्बोधनम्</span>
+        </div>
+      </div>
+
+      <!-- Node 6: Bot Right -->
+      <div class="node-card bot-right">
+        <div class="node-title">६. विभक्ति-प्रयोगाः कारक-नियमाः च</div>
+        <div class="node-desc">कारकमूलक-विभक्तयः (षट् कारकाणि); उपपद-विभक्तयः (सह योगे तृतीया, नमः योगे चतुर्थी, बहिः योगे पञ्चमी, उपरि योगे षष्ठी, निपुण योगे सप्तमी); "उपपदविभक्तेः कारकविभक्तिर्बलीयसी"; येनाङ्गविकारः (तृतीया); रुच्यर्थानां प्रीयमाणः (चतुर्थी); भीत्रार्थानां भयहेतुः (पञ्चमी)।</div>
+        <div class="node-tags">
+          <span class="tag">कारक-षट्कम्</span>
+          <span class="tag">उपपद-विभक्तयः</span>
+          <span class="tag">अङ्गविकारः</span>
+          <span class="tag">कारकविभक्तिर्बलीयसी</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Center Hub -->
+    <div class="hub">
+      <div class="hub-title">संस्कृत-शब्दरूपाणि</div>
+      <div class="hub-subtitle">अजन्त · हलन्त · सर्वनाम · विभक्तिप्रयोगाः</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div><strong>CUET प्रधान-सूत्रम्:</strong> प्रातिपदिकार्थे प्रथमा; कर्तृकरणयोस्तृतीया; सम्प्रदाने चतुर्थी; उपपदविभक्तेः कारकविभक्तिर्बलीयसी।</div>
+    <div class="footer-brand">OURMOCKS · संस्कृतम् (Code 325)</div>
+  </div>
+</body>
+</html>

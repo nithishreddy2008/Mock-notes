@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="sa">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 600px;
+    background: #FFFFFF;
+    font-family: "Kohinoor Devanagari", "Devanagari Sangam MN", -apple-system, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 19px;
+    font-weight: 800;
+    color: #071A4D;
+    letter-spacing: -0.01em;
+  }
+  .title-block p {
+    font-size: 11.5px;
+    color: #64748B;
+    margin-top: 2px;
+    font-weight: 600;
+  }
+  .badge {
+    background: #EEF1F8;
+    color: #1F5EFF;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .content-area {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 12px 0;
+    flex-grow: 1;
+  }
+  .section-label {
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #1E3A8A;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section-label::after {
+    content: "";
+    flex-grow: 1;
+    height: 1px;
+    background: #E2E8F0;
+  }
+  .grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+  }
+  .card {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 10px 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 6px;
+  }
+  .step-num {
+    background: #071A4D;
+    color: #FFFFFF;
+    font-size: 10px;
+    font-weight: 800;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .step-title {
+    font-size: 12px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .step-subtitle {
+    font-size: 10px;
+    color: #1F5EFF;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .card ul {
+    list-style: none;
+    font-size: 10.5px;
+    color: #475569;
+    line-height: 1.4;
+  }
+  .card ul li {
+    margin-bottom: 4px;
+    position: relative;
+    padding-left: 10px;
+  }
+  .card ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #1F5EFF;
+    font-weight: bold;
+  }
+  .upapada-card {
+    background: #F0FDF4;
+    border: 1px solid #BBF7D0;
+  }
+  .upapada-num {
+    background: #15803D;
+    color: white;
+  }
+  .upapada-title {
+    color: #166534;
+  }
+  .upapada-sub {
+    color: #15803D;
+  }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 8px;
+    font-size: 11px;
+    color: #64748B;
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <div class="title-block">
+      <h1>कारक-विभक्ति-सम्बन्धः उपपदविभक्ति-प्रक्रिया च</h1>
+      <p>वाक्येषु शब्दरूपाणां कारक-उपपद-नियमानुसारं व्याकरणिकः प्रयोगः · CUET UG संस्कृतम् (Code 325)</p>
+    </div>
+    <div class="badge">चित्रम् २ · विभक्ति-प्रयोग-प्रक्रिया</div>
+  </div>
+
+  <div class="content-area">
+    <div>
+      <div class="section-label">भागः क : कारकमूलक-विभक्तयः (पाणिनीय-कारक-षट्कम्)</div>
+      <div class="grid-4" style="margin-top: 8px;">
+        <div class="card">
+          <div class="card-header">
+            <span class="step-title">प्रथमा & द्वितीया</span>
+            <span class="step-num">१-२</span>
+          </div>
+          <div class="step-subtitle">कर्ता & कर्म कारकम्</div>
+          <ul>
+            <li><strong>प्रथमा:</strong> स्वतन्त्रः कर्ता (यथा- रामः पठति)</li>
+            <li>प्रातिपदिकार्थ-लिङ्ग-परिमाण-वचने प्रथमा</li>
+            <li><strong>द्वितीया:</strong> कर्तुरीप्सिततमं कर्म (यथा- ग्रामं गच्छति)</li>
+            <li>क्रियाविशेषणे द्वितीया (यथा- मधुरं गायति)</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <span class="step-title">तृतीया & चतुर्थी</span>
+            <span class="step-num">३-४</span>
+          </div>
+          <div class="step-subtitle">करण & सम्प्रदान कारकम्</div>
+          <ul>
+            <li><strong>तृतीया:</strong> साधकतमं करणम् (कलमेन लिखति)</li>
+            <li>कर्तृकरणयोस्तृतीया (अनुक्ते कर्तरि तृतीया)</li>
+            <li><strong>चतुर्थी:</strong> कर्मणा यमभिप्रैति स सम्प्रदानम्</li>
+            <li>विप्राय गां ददाति; रुच्यर्थानां प्रीयमाणः</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <span class="step-title">पञ्चमी & षष्ठी</span>
+            <span class="step-num">५-६</span>
+          </div>
+          <div class="step-subtitle">अपादान & सम्बन्धः</div>
+          <ul>
+            <li><strong>पञ्चमी:</strong> ध्रुवमपायेऽपादानम् (वृक्षात् पत्रं पतति)</li>
+            <li>भीत्रार्थानां भयहेतुः (सिंहात् बिभेति)</li>
+            <li><strong>षष्ठी:</strong> षष्ठी शेषे (राज्ञः पुरुषः, मम गृहम्)</li>
+            <li>सम्बन्धः कारकं न मन्यते (क्रियान्वयित्वाभावात्)</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <span class="step-title">सप्तमी & सम्बोधनम्</span>
+            <span class="step-num">७-८</span>
+          </div>
+          <div class="step-subtitle">अधिकरण कारकम्</div>
+          <ul>
+            <li><strong>सप्तमी:</strong> आधारोऽधिकरणम् (कटे आस्ते)</li>
+            <li>सप्तम्यधिकरणे च; यस्य च भावेन भावलक्षणम्</li>
+            <li>यतश्च निर्धारणम् (कविषु कालिदासः श्रेष्ठः)</li>
+            <li><strong>सम्बोधनम्:</strong> सम्बोधने च (हे बालकाः!)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="section-label" style="color: #166534;">भागः ख : उपपदविभक्तयः (विशिष्ट-पद-संयोगे प्रयुक्ताः विभक्तयः)</div>
+      <div class="grid-4" style="margin-top: 8px;">
+        <div class="card upapada-card">
+          <div class="card-header">
+            <span class="step-title upapada-title">द्वितीया उपपदम्</span>
+            <span class="step-num upapada-num">२</span>
+          </div>
+          <div class="step-subtitle upapada-sub">उभयतः · परितः · प्रति</div>
+          <ul>
+            <li>उभयतः, परितः, सर्वतः (ग्रामं परितः वृक्षाः)</li>
+            <li>प्रति, अनु, धिक् (दीनं प्रति दया कुरु)</li>
+            <li>विना योगे (जलं विना जीवनं न भवति)</li>
+            <li>अन्तरा, अन्तरेण (त्वां मां चान्तरा हरिः)</li>
+          </ul>
+        </div>
+        <div class="card upapada-card">
+          <div class="card-header">
+            <span class="step-title upapada-title">तृतीया उपपदम्</span>
+            <span class="step-num upapada-num">३</span>
+          </div>
+          <div class="step-subtitle upapada-sub">सह · अलम् · अङ्गविकारः</div>
+          <ul>
+            <li>सह, साकम्, सार्धम्, समम् (रामेण सह)</li>
+            <li>येनाङ्गविकारः (अक्ष्णा काणः, पादेन खञ्जः)</li>
+            <li>अलम् (निषेधार्थे) - अलम् विवादेन!</li>
+            <li>प्रकृत्यादिभ्य उपसङ्ख्यानम् (प्रकृत्या चारुः)</li>
+          </ul>
+        </div>
+        <div class="card upapada-card">
+          <div class="card-header">
+            <span class="step-title upapada-title">चतुर्थी उपपदम्</span>
+            <span class="step-num upapada-num">४</span>
+          </div>
+          <div class="step-subtitle upapada-sub">नमः · स्वस्ति · स्वाहा</div>
+          <ul>
+            <li>नमः, स्वस्ति, स्वाहा, स्वधा (गुरवे नमः)</li>
+            <li>अलम् (समर्थार्थे) - दैत्येभ्यो हरिरलम्</li>
+            <li>क्रुध्, द्रुह्, ईर्ष्य्, असूय् (दुर्जनः सज्जनेभ्यः क्रुध्यति)</li>
+            <li>स्पृह् (स्पृहेरीप्सितः) - पुष्पेभ्यः स्पृहयति</li>
+          </ul>
+        </div>
+        <div class="card upapada-card">
+          <div class="card-header">
+            <span class="step-title upapada-title">पञ्चमी/षष्ठी/सप्तमी</span>
+            <span class="step-num upapada-num">५-७</span>
+          </div>
+          <div class="step-subtitle upapada-sub">बहिः · उपरि · कुशलः</div>
+          <ul>
+            <li><strong>पञ्चमी:</strong> बहिः (ग्रामात् बहिः), ऋते (ज्ञानात् ऋते)</li>
+            <li><strong>षष्ठी:</strong> उपरि, अधः, पुरतः (वृक्षस्य उपरि खगः)</li>
+            <li><strong>सप्तमी:</strong> कुशलः, निपुणः, प्रवीणः (शास्त्रे निपुणः)</li>
+            <li>स्नेह् (शिष्येषु स्निह्यति), विश्वस् धातुयोगे</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>OurMocks CUET Architecture v2.6 · कारक-उपपद-नियमावलिः</span>
+    <span>नियमः: "उपपदविभक्तेः कारकविभक्तिर्बलीयसी" (कारकेण सह विरोधे कारकविभक्तिरेव ग्राह्या)</span>
+  </div>
+</body>
+</html>

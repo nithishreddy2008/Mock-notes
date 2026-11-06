@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="sa">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 600px;
+    background: #FFFFFF;
+    font-family: "Kohinoor Devanagari", "Devanagari Sangam MN", -apple-system, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #071A4D;
+    letter-spacing: -0.01em;
+  }
+  .title-block p {
+    font-size: 12px;
+    color: #64748B;
+    margin-top: 3px;
+    font-weight: 600;
+  }
+  .badge {
+    background: #EEF1F8;
+    color: #1F5EFF;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .table-container {
+    flex-grow: 1;
+    margin: 16px 0;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  table {
+    width: 100%;
+    height: 100%;
+    border-collapse: collapse;
+    font-size: 11.5px;
+    table-layout: fixed;
+  }
+  th {
+    background: #F8FAFC;
+    color: #071A4D;
+    padding: 10px 12px;
+    text-align: left;
+    font-weight: 700;
+    font-size: 11.5px;
+    border-bottom: 2px solid #CBD5E1;
+    border-right: 1px solid #E2E8F0;
+  }
+  th:last-child { border-right: none; }
+  td {
+    padding: 8px 12px;
+    border-bottom: 1px solid #E2E8F0;
+    border-right: 1px solid #E2E8F0;
+    vertical-align: middle;
+    line-height: 1.4;
+    color: #334155;
+  }
+  td:last-child { border-right: none; }
+  tr:last-child td { border-bottom: none; }
+  tr:nth-child(even) td { background: #FAFBFD; }
+  .param-col {
+    font-weight: 700;
+    color: #071A4D;
+    background: #F1F5F9 !important;
+    width: 17%;
+  }
+  .ajanta-col { width: 28%; font-weight: 600; color: #1E3A8A; }
+  .halanta-col { width: 28%; color: #0F172A; }
+  .sarva-col { width: 27%; color: #047857; }
+  .tag {
+    display: inline-block;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 700;
+    margin-bottom: 3px;
+  }
+  .tag-aj { background: #DBEAFE; color: #1E40AF; }
+  .tag-hal { background: #FEF3C7; color: #92400E; }
+  .tag-sarv { background: #DCFCE7; color: #166534; }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 8px;
+    font-size: 11px;
+    color: #64748B;
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <div class="title-block">
+      <h1>संस्कृत-शब्दरूपाणाम् आधारभूत-वर्गीकरण-तुलनात्मक-फलकम्</h1>
+      <p>अजन्त-हलन्त-सर्वनाम-शब्दानां संरचनात्मकं तुलनात्मकं च विश्लेषणम् · CUET UG संस्कृतम् (Code 325)</p>
+    </div>
+    <div class="badge">चित्रम् १ · सङ्कल्पना-व्यूहः</div>
+  </div>
+
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 17%;">वर्गीकरण-मानदण्डः</th>
+          <th style="width: 28%;">अजन्ताः (स्वरान्त-शब्दाः)</th>
+          <th style="width: 28%;">हलन्ताः (व्यञ्जनान्त-शब्दाः)</th>
+          <th style="width: 27%;">सर्वनामानि (सर्वनाम-शब्दाः)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="param-col">प्रातिपदिक-स्वरूपम्</td>
+          <td><span class="tag tag-aj">अच्-अन्ताः (स्वरान्ताः)</span><br>अन्ते स्वराः वर्तन्ते (अ, आ, इ, ई, उ, ऊ, ऋ)। यथा- बालक, लता, कवि, नदी, भानु, पितृ, वारि।</td>
+          <td><span class="tag tag-hal">हल्-अन्ताः (व्यञ्जनान्ताः)</span><br>अन्ते व्यञ्जनानि वर्तन्ते (न्, त्, स्, च्, श्)। यथा- राजन्, आत्मन्, विद्वस्, भवत्, पथिन्, वाच्, जगत्।</td>
+          <td><span class="tag tag-sarv">सर्वादि-गणीयाः</span><br>सर्वेषां नाम्नां स्थाने प्रयुज्यमानाः। यथा- अस्मद्, युष्मद्, तत्, यत्, किम्, इदम्, सर्व।</td>
+        </tr>
+        <tr>
+          <td class="param-col">लिङ्ग-वैविध्यम्</td>
+          <td><span class="tag tag-aj">त्रिषु लिङ्गेषु पृथक्</span><br>पुंल्लिङ्ग (बालक, कवि), स्त्रीलिङ्ग (लता, नदी, मति), नपुंसकलिङ्ग (फल, वारि, मधु)।</td>
+          <td><span class="tag tag-hal">त्रिषु लिङ्गेषु पृथक्</span><br>पुंल्लिङ्ग (राजन्, आत्मन्), स्त्रीलिङ्ग (वाच्, दिश्), नपुंसकलिङ्ग (नामन्, पयस्, जगत्)।</td>
+          <td><span class="tag tag-sarv">त्रिलिङ्गि / अलिङ्गि</span><br>तत्, यत्, किम् (त्रिषु लिङ्गेषु भिन्नानि); अस्मद्-युष्मद् (त्रिषु लिङ्गेषु समानानि)।</td>
+        </tr>
+        <tr>
+          <td class="param-col">सम्बोधन-नियमः</td>
+          <td><span class="tag tag-aj">सम्बोधनं भवति</span><br>प्रथमाविभक्तिवत् सम्बोधन-रूपाणि भवन्ति (किञ्चित् स्वरविकारः, यथा- हे बालक!, हे कवे!)।</td>
+          <td><span class="tag tag-hal">सम्बोधनं भवति</span><br>प्रथमाविभक्तेः अनुसरणं करोति (यथा- हे राजन्!, हे विद्वन्!, हे भवन्!)।</td>
+          <td><span class="tag tag-sarv">सम्बोधनं न भवति</span><br>सर्वनामशब्दानां सम्बोधन-रूपाणि न भवन्ति (अस्मद्, युष्मद्, तत् प्रभृतीनां सम्बोधनं नास्ति)।</td>
+        </tr>
+        <tr>
+          <td class="param-col">सुप्-प्रत्यय-सङ्ख्या</td>
+          <td><span class="tag tag-aj">२१ प्रत्ययाः (सप्त विभक्तयः)</span><br>सु-औ-जस्, अम्-औट्-शस्, टा-भ्याम्-भिस्, ङे-भ्याम्-भ्यस्, ङसि-भ्याम्-भ्यस्, ङस्-ओस्-आम्, ङि-ओस्-सुप्।</td>
+          <td><span class="tag tag-hal">२१ प्रत्ययाः (संयोग-लोप-नियमाः)</span><br>व्यञ्जनानां पदसंयोगे हल्-ङ्याब्भ्यो दीर्घात् सुतिस्यपृक्तं हल् इत्यादि-सूत्रैः लोपः विकारः च।</td>
+          <td><span class="tag tag-sarv">२१ प्रत्ययाः (आदेश-विशेषाः)</span><br>अस्मद्/युष्मद् शब्देषु 'आवाम्/युवाम्', 'मह्यम्/तुभ्यम्', 'मम/तव' इत्यादयः विशेष-आदेशाः।</td>
+        </tr>
+        <tr>
+          <td class="param-col">CUET परीक्षा-भ्रमाः</td>
+          <td><span class="tag tag-aj">द्विवचन-सादृश्यम्</span><br>प्रथमा-द्वितीया द्विवचने समानम्; तृतीया-चतुर्थी-पञ्चमी द्विवचने 'भ्याम्' (बालकाभ्याम्); षष्ठी-सप्तमी द्विवचने 'योः'।</td>
+          <td><span class="tag tag-hal">नकारान्त-दीर्घ-भ्रमः</span><br>राजन् (प्रथमा एकवचने 'राजा', न तु राजाः); विद्वस् (प्रथमा एकवचने 'विद्वान्', बहुवचने 'विद्वांसः')।</td>
+          <td><span class="tag tag-sarv">वैकल्पिक-रूपाणि</span><br>द्वितीया-चतुर्थी-षष्ठीषु मा/मे/मे, त्वा/ते/ते, नौ/नः, वाम्/वः विकल्पाः वाक्यादौ न प्रयुज्यन्ते!</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="footer">
+    <span>OurMocks CUET Architecture v2.6 · संस्कृत-व्याकरण-मानकम्</span>
+    <span>पाणिनीय-अष्टाध्यायी-सूत्राणि (सुप्तिङन्तं पदम् · अजन्त-हलन्त-प्रकरणम्)</span>
+  </div>
+</body>
+</html>
