@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 750px;
+    background: #FFFFFF;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #1E3A8A;
+    letter-spacing: -0.02em;
+  }
+  .title-block p {
+    font-size: 11px;
+    color: #64748B;
+    margin-top: 3px;
+    font-weight: 500;
+  }
+  .badge {
+    background: #FDF2F8;
+    color: #DB2777;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 700;
+    border: 1px solid #FBCFE8;
+    text-transform: uppercase;
+  }
+  .mindmap-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 14px;
+    margin: 14px 0;
+    height: 600px;
+  }
+  .branch-card {
+    border: 1.5px solid #CBD5E1;
+    border-radius: 8px;
+    padding: 12px;
+    background: #F8FAFC;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .b-blue { border-color: #3B82F6; background: #EFF6FF; }
+  .b-emerald { border-color: #10B981; background: #ECFDF5; }
+  .b-purple { border-color: #8B5CF6; background: #F5F3FF; }
+  .b-amber { border-color: #F59E0B; background: #FFFBEB; }
+  .b-rose { border-color: #F43F5E; background: #FFF1F2; }
+  .b-cyan { border-color: #06B6D4; background: #ECFEFF; }
+  .branch-title {
+    font-size: 13px;
+    font-weight: 800;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .branch-items {
+    list-style: none;
+    font-size: 10.5px;
+    line-height: 1.45;
+    color: #334155;
+  }
+  .branch-items li {
+    margin-bottom: 5px;
+    position: relative;
+    padding-left: 14px;
+  }
+  .branch-items li::before {
+    content: "•";
+    position: absolute;
+    left: 2px;
+    color: #1E3A8A;
+    font-weight: bold;
+    font-size: 14px;
+    top: -2px;
+  }
+  .branch-items code {
+    background: rgba(255, 255, 255, 0.8);
+    border: 0.5px solid #CBD5E1;
+    padding: 1px 4px;
+    border-radius: 3px;
+    font-size: 9.5px;
+    color: #0F172A;
+  }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 8px;
+    font-size: 9.5px;
+    color: #94A3B8;
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <div class="title-block">
+      <h1>Master Synthesis Mindmap: Advanced Pandas & Relational Data Operations</h1>
+      <p>Comprehensive knowledge taxonomy across Sorting, Pivoting, GroupBy, Merging, and Cleaning</p>
+    </div>
+    <div class="badge">CUET Code 308 · Syllabus Mindmap</div>
+  </div>
+
+  <div class="mindmap-container">
+    <div class="branch-card b-blue">
+      <div class="branch-title" style="color: #1D4ED8;">1. Sorting & Ranking</div>
+      <ul class="branch-items">
+        <li><code>df.sort_values(by='col', ascending=True)</code>: Sorts rows by column values.</li>
+        <li>Multi-column sort: <code>by=['Dept', 'Salary'], ascending=[True, False]</code>.</li>
+        <li><code>df.sort_index(axis=0/1)</code>: Reorders rows or columns by label.</li>
+        <li><code>inplace=True</code> modifies object in-place; returns <code>None</code>.</li>
+      </ul>
+    </div>
+
+    <div class="branch-card b-emerald">
+      <div class="branch-title" style="color: #047857;">2. Reshaping & Pivoting</div>
+      <ul class="branch-items">
+        <li><code>df.pivot(index, columns, values)</code>: Reshaping without aggregation; fails on duplicates.</li>
+        <li><code>df.pivot_table()</code>: Handles duplicates using <code>aggfunc='mean'</code>.</li>
+        <li><code>fill_value=0</code>: Replaces empty intersection NaNs.</li>
+        <li><code>margins=True</code>: Generates subtotal/grand total summary margins.</li>
+      </ul>
+    </div>
+
+    <div class="branch-card b-purple">
+      <div class="branch-title" style="color: #6D28D9;">3. GroupBy Split-Apply-Combine</div>
+      <ul class="branch-items">
+        <li><code>df.groupby('col')</code>: Returns lazy <code>DataFrameGroupBy</code> object.</li>
+        <li>Standard aggregations: <code>.sum()</code>, <code>.mean()</code>, <code>.count()</code>, <code>.std()</code>, <code>.min()</code>, <code>.max()</code>.</li>
+        <li>Multi-aggregation: <code>g.agg({'A': ['min', 'max'], 'B': 'sum'})</code>.</li>
+        <li><code>as_index=False</code> keeps group keys as regular columns instead of index.</li>
+      </ul>
+    </div>
+
+    <div class="branch-card b-amber">
+      <div class="branch-title" style="color: #B45309;">4. Merging & Relational Joins</div>
+      <ul class="branch-items">
+        <li><code>pd.merge(df1, df2, on='key', how='inner/left/right/outer')</code>.</li>
+        <li>Mismatched keys: <code>left_on='id1', right_on='id2'</code>.</li>
+        <li><code>df1.join(df2)</code>: Index-based join; defaults to <code>how='left'</code>.</li>
+        <li>Requires <code>lsuffix</code> and <code>rsuffix</code> if column names clash.</li>
+      </ul>
+    </div>
+
+    <div class="branch-card b-rose">
+      <div class="branch-title" style="color: #BE123C;">5. Concatenation & Stacking</div>
+      <ul class="branch-items">
+        <li><code>pd.concat([df1, df2], axis=0)</code>: Vertical row stack.</li>
+        <li><code>pd.concat([df1, df2], axis=1)</code>: Horizontal column stack.</li>
+        <li><code>ignore_index=True</code>: Resets index to <code>0, 1, ..., n-1</code>.</li>
+        <li><code>join='inner'</code> retains only intersecting axis labels.</li>
+      </ul>
+    </div>
+
+    <div class="branch-card b-cyan">
+      <div class="branch-title" style="color: #0E7490;">6. Advanced Cleaning & Nulls</div>
+      <ul class="branch-items">
+        <li>Null masks: <code>df.isna()</code>, <code>df.notnull()</code>, <code>df.isnull().sum()</code>.</li>
+        <li>Pruning: <code>df.dropna(how='any'/'all', thresh=k)</code>.</li>
+        <li>Imputation: <code>df.fillna(value, method='ffill'/'bfill')</code>.</li>
+        <li>Duplicates: <code>df.duplicated()</code> and <code>df.drop_duplicates()</code>.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>OurMocks CUET UG Series · Computer Science (Code 308)</span>
+    <span>Fig 3: Advanced Pandas Core Taxonomy & Operation Mindmap</span>
+  </div>
+</body>
+</html>

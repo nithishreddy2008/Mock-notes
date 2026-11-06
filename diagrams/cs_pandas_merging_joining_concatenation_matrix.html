@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 600px;
+    background: #FFFFFF;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #1E3A8A;
+    letter-spacing: -0.02em;
+  }
+  .title-block p {
+    font-size: 11px;
+    color: #64748B;
+    margin-top: 3px;
+    font-weight: 500;
+  }
+  .badge {
+    background: #EFF6FF;
+    color: #1D4ED8;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 700;
+    border: 1px solid #BFDBFE;
+    text-transform: uppercase;
+  }
+  .matrix-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 14px;
+    background: #FFFFFF;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #CBD5E1;
+  }
+  .matrix-table th {
+    background: #1E3A8A;
+    color: #FFFFFF;
+    text-align: left;
+    padding: 10px 12px;
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    border-right: 1px solid #3B82F6;
+  }
+  .matrix-table th:last-child { border-right: none; }
+  .matrix-table td {
+    padding: 9px 12px;
+    font-size: 10.5px;
+    line-height: 1.35;
+    border-bottom: 1px solid #E2E8F0;
+    border-right: 1px solid #E2E8F0;
+    vertical-align: top;
+  }
+  .matrix-table td:last-child { border-right: none; }
+  .matrix-table tr:nth-child(even) { background: #F8FAFC; }
+  .feature-name {
+    font-weight: 700;
+    color: #0F172A;
+    background: #F1F5F9;
+  }
+  .tag-merge { color: #0284C7; font-weight: 700; }
+  .tag-join { color: #0D9488; font-weight: 700; }
+  .tag-concat { color: #7C3AED; font-weight: 700; }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 8px;
+    font-size: 9.5px;
+    color: #94A3B8;
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <div class="title-block">
+      <h1>Comparative Architecture: pd.merge() vs df.join() vs pd.concat()</h1>
+      <p>Systematic matrix of Pandas relational data combinations, alignment axes, and syntax rules</p>
+    </div>
+    <div class="badge">CUET Code 308 · High-Yield Matrix</div>
+  </div>
+
+  <table class="matrix-table">
+    <thead>
+      <tr>
+        <th style="width: 18%;">Architectural Feature</th>
+        <th style="width: 27%;">pd.merge() (Database Join)</th>
+        <th style="width: 27%;">df.join() (Index-Based Join)</th>
+        <th style="width: 28%;">pd.concat() (Physical Stacking)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="feature-name">Primary Operation Type</td>
+        <td><span class="tag-merge">Relational SQL-style joins</span> matching on common column keys or index labels.</td>
+        <td><span class="tag-join">Convenience join wrapper</span> matching left columns to right DataFrame index.</td>
+        <td><span class="tag-concat">Physical gluing / binding</span> of Series or DataFrames along an axis.</td>
+      </tr>
+      <tr>
+        <td class="feature-name">Default Matching Key</td>
+        <td>Intersection of column names present in both DataFrames (common columns).</td>
+        <td>Row index of both DataFrames (or caller's column onto caller index).</td>
+        <td>None (aligns on row index if axis=1; aligns on column names if axis=0).</td>
+      </tr>
+      <tr>
+        <td class="feature-name">Default Join Mechanism</td>
+        <td><code>how='inner'</code> (retains only rows with keys matching in both tables).</td>
+        <td><code>how='left'</code> (retains all rows of left DataFrame; fills NaNs on right).</td>
+        <td><code>join='outer'</code> (preserves union of all indices/columns across inputs).</td>
+      </tr>
+      <tr>
+        <td class="feature-name">Axis Orientation</td>
+        <td>Implicit horizontal column merge (synthesizes wider 2D grid).</td>
+        <td>Horizontal column join along Axis 1 (adds columns horizontally).</td>
+        <td>Explicit axis control: <code>axis=0</code> (stack rows), <code>axis=1</code> (stack columns).</td>
+      </tr>
+      <tr>
+        <td class="feature-name">Handling Column Clashes</td>
+        <td>Appends <code>suffixes=('_x', '_y')</code> automatically to duplicate column names.</td>
+        <td>Raises <code>ValueError</code> unless <code>lsuffix</code> and <code>rsuffix</code> are specified.</td>
+        <td>Keeps duplicated column names in output grid (MultiIndex columns possible).</td>
+      </tr>
+      <tr>
+        <td class="feature-name">CUET Fatal Exam Trap</td>
+        <td>Specifying non-existent column in <code>on='key'</code> throws instant <code>KeyError</code>.</td>
+        <td>Default is <b>left join</b>, unlike <code>merge()</code> which defaults to <b>inner join</b>.</td>
+        <td>Index labels are preserved by default; use <code>ignore_index=True</code> to reset.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="footer">
+    <span>OurMocks CUET UG Series · Computer Science (Code 308)</span>
+    <span>Fig 1: Relational Combination Protocol Matrix</span>
+  </div>
+</body>
+</html>
