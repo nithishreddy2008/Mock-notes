@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="sa">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 600px;
+    background: #FFFFFF;
+    font-family: "Kohinoor Devanagari", "Devanagari Sangam MN", -apple-system, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #071A4D;
+    letter-spacing: -0.01em;
+  }
+  .title-block p {
+    font-size: 12px;
+    color: #64748B;
+    margin-top: 3px;
+    font-weight: 600;
+  }
+  .badge {
+    background: #EEF1F8;
+    color: #1F5EFF;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .flow-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 12px;
+    margin: 16px 0;
+    flex-grow: 1;
+  }
+  .stage-card {
+    flex: 1;
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 14px 12px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  .stage-card.active {
+    border-color: #1F5EFF;
+    background: #F0F4FF;
+  }
+  .stage-num {
+    font-size: 10px;
+    font-weight: 800;
+    color: #1F5EFF;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 4px;
+  }
+  .stage-title {
+    font-size: 13.5px;
+    font-weight: 800;
+    color: #071A4D;
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+  .stage-body {
+    font-size: 11px;
+    color: #334155;
+    line-height: 1.45;
+    flex-grow: 1;
+  }
+  .rule-box {
+    background: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    border-radius: 6px;
+    padding: 8px;
+    margin-top: 8px;
+    font-size: 10.5px;
+  }
+  .rule-box strong { color: #071A4D; }
+  .arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #94A3B8;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 8px;
+    font-size: 10.5px;
+    color: #64748B;
+  }
+  .brand-tag { font-weight: 800; color: #071A4D; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="title-block">
+    <h1>संस्कृत-समास-निर्णय-प्रक्रिया : पञ्च-सोपानात्मकः विग्रह-प्रवाहः</h1>
+    <p>CUET UG संस्कृतम् (Code 325) · पदच्छेद-प्राधान्य-लक्षण-विग्रह-सिद्धि-पर्यन्तं निर्णय-प्रवाहः</p>
+  </div>
+  <div class="badge">चित्रम् २ · Process Lifecycle</div>
+</div>
+
+<div class="flow-container">
+  <div class="stage-card">
+    <div class="stage-num">सोपानम् १ · पदच्छेदः</div>
+    <div class="stage-title">समस्तपदस्य विभाजनम्</div>
+    <div class="stage-body">
+      समस्तपदं दृष्ट्वा पूर्वपदं उत्तरपदं च विभज्यते:
+      <div class="rule-box">
+        • <strong>पूर्वपदम्:</strong> आदिमः शब्दः<br>
+        • <strong>उत्तरपदम्:</strong> अन्तिमः शब्दः<br>
+        • <i>सुपो धातुप्रातिपदिकयोः</i> (२.४.७१) सूत्रेण समासे पूर्वपदस्य विभक्ति-लोपो जातः, तस्याः पुनरुद्धारः।
+      </div>
+    </div>
+  </div>
+
+  <div class="arrow">→</div>
+
+  <div class="stage-card">
+    <div class="stage-num">सोपानम् २ · प्राधान्यम्</div>
+    <div class="stage-title">पदार्थ-प्राधान्य-परीक्षणम्</div>
+    <div class="stage-body">
+      वाक्ये कस्य पदस्य अर्थः मुख्यः अस्ति?
+      <div class="rule-box">
+        • <strong>पूर्वपदार्थः?</strong> → अव्ययीभावः<br>
+        • <strong>उत्तरपदार्थः?</strong> → तत्पुरुषः/कर्म/द्विगु<br>
+        • <strong>उभयपदार्थः?</strong> → द्वन्द्वः<br>
+        • <strong>अन्यपदार्थः?</strong> → बहुव्रीहिः
+      </div>
+    </div>
+  </div>
+
+  <div class="arrow">→</div>
+
+  <div class="stage-card active">
+    <div class="stage-num">सोपानम् ३ · लक्षणम्</div>
+    <div class="stage-title">विशेष-चिह्नानां मिलनम्</div>
+    <div class="stage-body">
+      पदयोः व्याकरणिक-सङ्केतानां शोधनम्:
+      <div class="rule-box">
+        • पूर्वपदे अव्ययम्? → उप, निर्, अनु, यथा<br>
+        • पूर्वपदे सङ्ख्या? → पञ्च, त्रि, अष्ट<br>
+        • विशेषण-विशेष्यः? → नील + उत्पलम्<br>
+        • 'च' संयोजनम्? → रामश्च कृष्णश्च<br>
+        • यस्य/येन विग्रहः? → अन्यपदार्थः
+      </div>
+    </div>
+  </div>
+
+  <div class="arrow">→</div>
+
+  <div class="stage-card">
+    <div class="stage-num">सोपानम् ४ · अपवादः</div>
+    <div class="stage-title">विशिष्टापवाद-परीक्षणम्</div>
+    <div class="stage-body">
+      CUET घातक-भ्रमाणां निराकरणम्:
+      <div class="rule-box">
+        • सङ्ख्या + <strong>नदी</strong>? → <i>नदीभिश्च</i> (अव्ययीभावः, न द्विगुः!)<br>
+        • पीताम्बरः (हरिः) vs पीताम्बरम् (वस्त्रम्)<br>
+        • नञ्: व्यञ्जने 'अ' (अब्राह्मणः), स्वरे 'अन्' (अनश्वः)<br>
+        • उपपद: क्रियां विना विग्रहाभावः
+      </div>
+    </div>
+  </div>
+
+  <div class="arrow">→</div>
+
+  <div class="stage-card">
+    <div class="stage-num">सोपानम् ५ · विग्रहः</div>
+    <div class="stage-title">लौकिक-विग्रह-निष्पत्तिः</div>
+    <div class="stage-body">
+      परीक्षा-प्रश्ने शुद्ध-वाक्यस्य निर्माणम्:
+      <div class="rule-box">
+        • उपगङ्गम् → <strong>गङ्गायाः समीपम्</strong><br>
+        • राजपुरुषः → <strong>राज्ञः पुरुषः</strong><br>
+        • घनश्यामः → <strong>घन इव श्यामः</strong><br>
+        • पञ्चपात्रम् → <strong>पञ्चानां पात्राणां समाहारः</strong><br>
+        • चक्रपाणिः → <strong>चक्रं पाणौ यस्य सः</strong>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <span class="brand-tag">OurMocks CUET UG Series</span>
+  <span>समास-प्रक्रिया : प्रातिपदिक-संज्ञा, सुब्लोपः, एकार्थीभावश्च</span>
+  <span>संस्कृतम् (Code 325) · Unit 4 Lifecycle Flow</span>
+</div>
+
+</body>
+</html>

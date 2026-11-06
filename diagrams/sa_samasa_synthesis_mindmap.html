@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="sa">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 600px;
+    background: #FFFFFF;
+    font-family: "Kohinoor Devanagari", "Devanagari Sangam MN", -apple-system, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .title-block p {
+    font-size: 11.5px;
+    color: #64748B;
+    margin-top: 2px;
+    font-weight: 600;
+  }
+  .badge {
+    background: #EEF1F8;
+    color: #1F5EFF;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  .map-container {
+    flex-grow: 1;
+    margin: 12px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 12px;
+  }
+  .node-card {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 10px 14px;
+    display: flex;
+    flex-direction: column;
+  }
+  .node-card.c1 { border-left: 4px solid #3730A3; }
+  .node-card.c2 { border-left: 4px solid #B45309; }
+  .node-card.c3 { border-left: 4px solid #15803D; }
+  .node-card.c4 { border-left: 4px solid #B91C1C; }
+  .node-title {
+    font-size: 13px;
+    font-weight: 800;
+    margin-bottom: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .node-title.t1 { color: #3730A3; }
+  .node-title.t2 { color: #B45309; }
+  .node-title.t3 { color: #15803D; }
+  .node-title.t4 { color: #B91C1C; }
+  .node-pill {
+    font-size: 9.5px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 700;
+  }
+  .p1 { background: #E0E7FF; color: #3730A3; }
+  .p2 { background: #FEF3C7; color: #92400E; }
+  .p3 { background: #DCFCE7; color: #166534; }
+  .p4 { background: #FEE2E2; color: #991B1B; }
+  .node-content {
+    font-size: 10.5px;
+    color: #334155;
+    line-height: 1.45;
+  }
+  .node-content ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  .node-content li {
+    margin-bottom: 4px;
+  }
+  .node-content strong {
+    color: #0F172A;
+  }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 8px;
+    font-size: 10px;
+    color: #64748B;
+  }
+  .brand-tag { font-weight: 800; color: #071A4D; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="title-block">
+    <h1>संस्कृत-समास-प्रकरणम् : सर्वाङ्गीणं महामानचित्रम् (Synthesis Mindmap)</h1>
+    <p>CUET UG संस्कृतम् (Code 325) · अव्ययीभाव-तत्पुरुष-द्वन्द्व-बहुव्रीहि, विग्रह-सूत्राणि, अपवादाः परीक्षा-ट्रिक्स च</p>
+  </div>
+  <div class="badge">चित्रम् ३ · Master Mindmap</div>
+</div>
+
+<div class="map-container">
+  <div class="node-card c1">
+    <div class="node-title t1">
+      <span>१. पूर्वपदार्थप्रधानः : अव्ययीभावः</span>
+      <span class="node-pill p1">अव्ययं विभक्ति...</span>
+    </div>
+    <div class="node-content">
+      <ul>
+        <li>• <b>समीपम्:</b> उपगङ्गम् (गङ्गायाः समीपम्), उपनगरम् (नगरस्य समीपम्)</li>
+        <li>• <b>अभावः:</b> निर्मक्षिकम् (मक्षिकाणाम् अभावः), निर्विघ्नम् (विघ्नानामभावः)</li>
+        <li>• <b>अनतिक्रम्य:</b> यथारुचि (रुचिम् अनतिक्रम्य), यथाशक्ति (शक्तिम् अनतिक्रम्य)</li>
+        <li>• <b>वीप्सा / पश्चात्:</b> प्रत्यहम् (अहनि अहनि), अनुविष्णु (विष्णोः पश्चात्)</li>
+        <li>• <b>नदीभिश्च (अपवादः!):</b> पञ्चगङ्गम्, द्वियमुनम्, सप्तगोदावरम् (अव्ययीभावः, न द्विगुः)</li>
+        <li>• <b>लिङ्ग-नियमः:</b> नित्यं क्लीबलिङ्गे (नपुंसकलिङ्गे) एकवचने भवति।</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="node-card c2">
+    <div class="node-title t2">
+      <span>२. उत्तरपदार्थप्रधानः : तत्पुरुष-कर्मधारय-द्विगु</span>
+      <span class="node-pill p2">विभक्ति-समानाधिकरण</span>
+    </div>
+    <div class="node-content">
+      <ul>
+        <li>• <b>द्वितीया-सप्तमी:</b> कृष्णश्रितः (२), हरित्रातः (३), यूपदारु (४), चोरभयम् (५), राजपुरुषः (६), अक्षशौण्डः (७)</li>
+        <li>• <b>नञ् तत्पुरुषः:</b> अब्राह्मणः (न ब्राह्मणः), अनश्वः (न अश्वः - स्वरे 'अन्')</li>
+        <li>• <b>उपपद तत्पुरुषः:</b> कुम्भकारः (कुम्भं करोति इति), धनदः (धनं ददाति)</li>
+        <li>• <b>कर्मधारयः:</b> नीलोत्पलम् (नीलं च तत् उत्पलं च), घनश्यामः, पुरुषव्याघ्रः</li>
+        <li>• <b>द्विगु-समासः:</b> त्रिलोकी (त्रयाणां लोकानां समाहारः), पञ्चपात्रम्, अष्टाध्यायी</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="node-card c3">
+    <div class="node-title t3">
+      <span>३. उभयपदार्थप्रधानः : द्वन्द्व-समासः</span>
+      <span class="node-pill p3">चार्थे द्वन्द्वः</span>
+    </div>
+    <div class="node-content">
+      <ul>
+        <li>• <b>इतरेतर द्वन्द्वः:</b> घटक-पदसङ्ख्यानुगुणं वचनम्:
+          <br>– <i>रामलक्ष्मणौ</i> (रामश्च लक्ष्मणश्च - द्विवचनम्)
+          <br>– <i>कन्दमूलफलानि</i> (कन्दश्च मूलं च फलं च - बहुवचनम्)
+          <br>– <i>मातापितरौ</i> / <i>पितरौ</i> (एकशेष द्वन्द्वः)</li>
+        <li>• <b>समाहार द्वन्द्वः:</b> नित्यं नपुंसकलिंगैकवचनम्:
+          <br>– शरीराङ्गानि: <i>पाणिपादम्</i> (पाणि च पादौ च एषां समाहारः)
+          <br>– नित्य-विरोधिनः: <i>अहिनकुलम्</i>, <i>मार्जारमूषकम्</i>
+          <br>– वाद्य-सेनाङ्गानि: <i>मार्दङ्गिकपाणविकम्</i>, <i>रथिकपादातम्</i></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="node-card c4">
+    <div class="node-title t4">
+      <span>४. अन्यपदार्थप्रधानः : बहुव्रीहिः & Fatal Traps</span>
+      <span class="node-pill p4">अनेकमन्यपदार्थे</span>
+    </div>
+    <div class="node-content">
+      <ul>
+        <li>• <b>समानाधिकरण:</b> पीताम्बरः (पीतं च अम्बरं यस्य सः - विष्णुः), दशाननः</li>
+        <li>• <b>व्यधिकरण:</b> चक्रपाणिः (चक्रं पाणौ यस्य सः), चन्द्रमौलिः (शिवः)</li>
+        <li>• <b>सहपूर्वः:</b> सपरिवारः (परिवारेण सहितः), सविनयम् (विनयेन सहितम्)</li>
+        <li>• <b>Fatal Trap १ (पीताम्बरम् vs पीताम्बरः):</b>
+          <br>– <i>पीताम्बरं धारयति</i> = कर्मधारयः (वस्त्रम्)
+          <br>– <i>पीताम्बरः रक्षतु</i> = बहुव्रीहिः (श्रीकृष्णः)</li>
+        <li>• <b>Fatal Trap २ (पञ्चगङ्गम् vs पञ्चपात्रम्):</b> 'पञ्चगङ्गम्' नदीयोगे अव्ययीभावः; 'पञ्चपात्रम्' समाहारे द्विगुः!</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <span class="brand-tag">OurMocks CUET UG Series</span>
+  <span>समास-ज्ञानम् : विग्रह-वाक्येषु लौकिक-अलौकिक-स्वरूप-संरक्षणम्</span>
+  <span>संस्कृतम् (Code 325) · Unit 4 Master Mindmap</span>
+</div>
+
+</body>
+</html>

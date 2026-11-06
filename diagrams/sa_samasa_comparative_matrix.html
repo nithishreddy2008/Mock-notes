@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="sa">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 600px;
+    background: #FFFFFF;
+    font-family: "Kohinoor Devanagari", "Devanagari Sangam MN", -apple-system, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #071A4D;
+    letter-spacing: -0.01em;
+  }
+  .title-block p {
+    font-size: 12px;
+    color: #64748B;
+    margin-top: 3px;
+    font-weight: 600;
+  }
+  .badge {
+    background: #EEF1F8;
+    color: #1F5EFF;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .table-container {
+    flex-grow: 1;
+    margin: 14px 0;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  table {
+    width: 100%;
+    height: 100%;
+    border-collapse: collapse;
+    font-size: 11px;
+  }
+  th {
+    background: #071A4D;
+    color: #FFFFFF;
+    padding: 8px 10px;
+    text-align: left;
+    font-weight: 700;
+    border-right: 1px solid #1E293B;
+  }
+  th:last-child { border-right: none; }
+  td {
+    padding: 6px 10px;
+    border-bottom: 1px solid #E2E8F0;
+    border-right: 1px solid #E2E8F0;
+    line-height: 1.35;
+  }
+  td:last-child { border-right: none; }
+  tr:nth-child(even) { background: #F8FAFC; }
+  tr:last-child td { border-bottom: none; }
+  .col-type { font-weight: 800; color: #071A4D; width: 14%; }
+  .col-focus { font-weight: 700; color: #1F5EFF; width: 15%; }
+  .col-sutra { font-family: monospace; font-size: 10px; font-weight: 700; color: #0284C7; width: 22%; }
+  .col-rule { color: #334155; width: 23%; }
+  .col-ex { font-weight: 700; color: #0F172A; width: 26%; }
+  .tag {
+    display: inline-block;
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-size: 9.5px;
+    font-weight: 700;
+    margin-right: 4px;
+  }
+  .tag-avya { background: #E0E7FF; color: #3730A3; }
+  .tag-tat { background: #FEF3C7; color: #92400E; }
+  .tag-kar { background: #DCFCE7; color: #166534; }
+  .tag-dvi { background: #F3E8FF; color: #6B21A8; }
+  .tag-dva { background: #FFEDD5; color: #9A3412; }
+  .tag-bahu { background: #FEE2E2; color: #991B1B; }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 8px;
+    font-size: 10.5px;
+    color: #64748B;
+  }
+  .brand-tag { font-weight: 800; color: #071A4D; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="title-block">
+    <h1>संस्कृत-समास-व्यवस्था : षोढा-वर्गीकरणं पाणिनीय-सूत्राणि च</h1>
+    <p>CUET UG संस्कृतम् (Code 325) · अव्ययीभाव-तत्पुरुष-कर्मधारय-द्विगु-द्वन्द्व-बहुव्रीहि तुलनात्मिका तालिका</p>
+  </div>
+  <div class="badge">चित्रम् १ · Comparative Matrix</div>
+</div>
+
+<div class="table-container">
+  <table>
+    <thead>
+      <tr>
+        <th>समास-भेदः</th>
+        <th>पदार्थ-प्राधान्यम्</th>
+        <th>पाणिनीय-सूत्रम्</th>
+        <th>विग्रह-लक्षणम् & लिङ्ग-व्यवस्था</th>
+        <th>प्रमुख-शास्त्रीयोदाहरणानि</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="col-type"><span class="tag tag-avya">अव्ययी</span> अव्ययीभावः</td>
+        <td class="col-focus">पूर्वपदार्थप्रधानः</td>
+        <td class="col-sutra">अव्ययं विभक्ति... (२.१.६)<br>नदीभिश्च (२.१.२०)</td>
+        <td class="col-rule">पूर्वपदम् अव्ययं/उपसर्गः, नित्यं नपुंसकलिंगैकवचनम्; नदीयोगे सङ्ख्यायाम्</td>
+        <td class="col-ex">उपगङ्गम्, निर्मक्षिकम्, यथारुचि, प्रत्यहम्; <b>पञ्चगङ्गम्</b>, <b>द्वियमुनम्</b></td>
+      </tr>
+      <tr>
+        <td class="col-type"><span class="tag tag-tat">तत्पु</span> व्यधिकरण तत्पुरुषः</td>
+        <td class="col-focus">उत्तरपदार्थप्रधानः</td>
+        <td class="col-sutra">द्वितीया श्रितातीत...<br>षष्ठी (२.२.८)</td>
+        <td class="col-rule">पूर्वपदे द्वितीया-सप्तमी विभक्तयः, उत्तरपदे प्रथमा; उत्तरपदलिङ्गम्</td>
+        <td class="col-ex">कृष्णश्रितः (२), हरित्रातः (३), भूतबलिः (४), चोरभयम् (५), <b>राजपुरुषः</b> (६), अक्षशौण्डः (७)</td>
+      </tr>
+      <tr>
+        <td class="col-type"><span class="tag tag-tat">तत्पु</span> विशिष्ट-तत्पुरुषौ</td>
+        <td class="col-focus">उत्तरपदार्थप्रधानः</td>
+        <td class="col-sutra">नञ् (२.२.६)<br>उपपदमतिङ् (२.२.१९)</td>
+        <td class="col-rule">अ/अन् निषेधार्थे (नञ्); कृदन्त-क्रियोपपदे कारक-संज्ञा (उपपद)</td>
+        <td class="col-ex"><b>अब्राह्मणः</b>, <b>अनश्वः</b> (नञ्); <b>कुम्भकारः</b>, <b>धनदः</b>, <b>नृपः</b> (उपपद)</td>
+      </tr>
+      <tr>
+        <td class="col-type"><span class="tag tag-kar">कर्म</span> कर्मधारयः</td>
+        <td class="col-focus">उत्तरपदार्थप्रधानः</td>
+        <td class="col-sutra">तत्पुरुषः समानाधिकरणः...<br>विशेषणं विशेष्येण बहुलम्</td>
+        <td class="col-rule">द्वयोः पदयोः समाना विभक्तिः; विशेषण-विशेष्यः, उपमान-उपमेयः, रूपकम्</td>
+        <td class="col-ex"><b>नीलोत्पलम्</b>, <b>महात्मा</b>, घनश्यामः (उपमान), पुरुषव्याघ्रः, <b>विद्याधनम्</b></td>
+      </tr>
+      <tr>
+        <td class="col-type"><span class="tag tag-dvi">द्विगु</span> द्विगु-समासः</td>
+        <td class="col-focus">उत्तरपदार्थप्रधानः</td>
+        <td class="col-sutra">सङ्ख्यापूर्वो द्विगुः (२.१.५२)<br>द्विगुरेकवचनम् (२.४.१)</td>
+        <td class="col-rule">पूर्वपदं सङ्ख्यावाचकम्, समूहे (समाहारे) नित्यं क्लीबलिङ्गम् ईकारान्तो वा</td>
+        <td class="col-ex"><b>त्रिलोकी</b>, <b>पञ्चपात्रम्</b>, सप्ताहः, अष्टाध्यायी, पञ्चामृतम्</td>
+      </tr>
+      <tr>
+        <td class="col-type"><span class="tag tag-dva">द्वन्द्व</span> द्वन्द्व-समासः</td>
+        <td class="col-focus">उभयपदार्थप्रधानः</td>
+        <td class="col-sutra">चार्थे द्वन्द्वः (२.२.२९)<br>द्वन्द्वश्च प्राणितूर्य... (२.४.२)</td>
+        <td class="col-rule">'च' इत्यर्थे; इतरेतर (द्वि/बहुवचनम्), समाहार (नित्यैकवचनम्)</td>
+        <td class="col-ex"><b>रामलक्ष्मणौ</b>, मातापितरौ (इतरेतर); <b>पाणिपादम्</b>, <b>अहिनकुलम्</b> (समाहार)</td>
+      </tr>
+      <tr>
+        <td class="col-type"><span class="tag tag-bahu">बहु</span> बहुव्रीहि-समासः</td>
+        <td class="col-focus">अन्यपदार्थप्रधानः</td>
+        <td class="col-sutra">अनेकमन्यपदार्थे (२.२.२४)<br>तेन सहेति तुल्ययोगे</td>
+        <td class="col-rule">समस्तपदं भिन्नस्य तृतीय-पदस्य विशेषणम्; समानाधिकरण / व्यधिकरण</td>
+        <td class="col-ex"><b>पीताम्बरः</b> (हरिः), दशाननः, चक्रपाणिः, चन्द्रमौलिः, <b>सपरिवारः</b></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="footer">
+  <span class="brand-tag">OurMocks CUET UG Series</span>
+  <span>समास-लक्षणम् : "समसनं समासः" (संक्षिप्तिकरणम् एकार्थीभावश्च)</span>
+  <span>संस्कृतम् (Code 325) · Unit 4 Concept Matrix</span>
+</div>
+
+</body>
+</html>
