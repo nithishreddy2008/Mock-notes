@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 600px;
+    background: #FFFFFF;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .title-block p {
+    font-size: 11.5px;
+    color: #64748B;
+    margin-top: 3px;
+    font-weight: 600;
+  }
+  .badge {
+    background: #EEF1F8;
+    color: #1F5EFF;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+  }
+  .mindmap-wrapper {
+    position: relative;
+    flex-grow: 1;
+    margin: 16px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .center-node {
+    width: 200px;
+    height: 100px;
+    background: #071A4D;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 12px;
+    color: #FFFFFF;
+    box-shadow: 0 4px 14px rgba(7, 26, 77, 0.25);
+    z-index: 10;
+  }
+  .center-node h2 {
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 1.25;
+  }
+  .center-node span {
+    font-size: 10px;
+    color: #94A3B8;
+    margin-top: 4px;
+    font-weight: 600;
+  }
+  .branch-grid {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 24px;
+  }
+  .quadrant {
+    border: 1.5px solid #CBD5E1;
+    border-radius: 10px;
+    padding: 12px 14px;
+    background: #F8FAFC;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .quadrant.top-left { border-left: 5px solid #1F5EFF; }
+  .quadrant.top-right { border-left: 5px solid #059669; }
+  .quadrant.bottom-left { border-left: 5px solid #D97706; }
+  .quadrant.bottom-right { border-left: 5px solid #7C3AED; }
+
+  .q-title {
+    font-size: 12.5px;
+    font-weight: 800;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .top-left .q-title { color: #1F5EFF; }
+  .top-right .q-title { color: #059669; }
+  .bottom-left .q-title { color: #D97706; }
+  .bottom-right .q-title { color: #7C3AED; }
+
+  .item-list {
+    list-style: none;
+    font-size: 10.5px;
+    color: #334155;
+    line-height: 1.45;
+  }
+  .item-list li {
+    margin-bottom: 4px;
+    display: flex;
+    align-items: flex-start;
+    gap: 5px;
+  }
+  .item-list li::before {
+    content: "•";
+    color: #64748B;
+    font-weight: bold;
+  }
+  .item-list strong {
+    color: #0F172A;
+  }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 8px;
+    font-size: 10.5px;
+    color: #64748B;
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <div class="title-block">
+      <h1>Synthesis Mindmap: EIA, Environmental Auditing & ISO Standards</h1>
+      <p>Unit 7 Master Knowledge Map &bull; Clearance Regimes, Leopold Matrix, Audit Cycles & Life Cycle Assessment</p>
+    </div>
+    <div class="badge">FIGURE 3: CONCEPT SYNTHESIZER</div>
+  </div>
+
+  <div class="mindmap-wrapper">
+    <div class="branch-grid">
+      <!-- Top Left: Statutory Architecture -->
+      <div class="quadrant top-left">
+        <div class="q-title">EIA STATUTORY ARCHITECTURE &amp; STAGES</div>
+        <ul class="item-list">
+          <li><strong>Origins:</strong> US NEPA 1969; India 1976–77 (Planning Commission); statutory under EPA 1986 (1994 &amp; 2006 Notifications).</li>
+          <li><strong>Categorization:</strong> Category A (MoEFCC &amp; EAC, mandatory EIA); Category B (SEIAA &amp; SEAC, screened into B1 [EIA] &amp; B2 [No EIA]).</li>
+          <li><strong>4 Sequential Stages:</strong> 1. Screening (Cat B) &bull; 2. Scoping (ToR &amp; 1-season baseline) &bull; 3. Public Consultation (45-day SPCB hearing) &bull; 4. Appraisal.</li>
+          <li><strong>EMP &amp; Monitoring:</strong> Mitigation hierarchy, disaster plans; mandatory half-yearly compliance reports submitted to MoEFCC.</li>
+        </ul>
+      </div>
+
+      <!-- Top Right: Methodologies -->
+      <div class="quadrant top-right">
+        <div class="q-title">EIA IMPACT PREDICTION METHODOLOGIES</div>
+        <ul class="item-list">
+          <li><strong>Checklists:</strong> Simple, descriptive, scaling, weighting; structured inventories preventing omission of sensitive parameters.</li>
+          <li><strong>Leopold Matrix (1971):</strong> 100 actions &times; 88 environmental characteristics (8,800 cells); scored for Magnitude / Importance (1–10).</li>
+          <li><strong>Sorensen Network:</strong> Cause-condition-effect trees explicitly tracing secondary and tertiary indirect ecological cascades.</li>
+          <li><strong>Overlays &amp; Battelle BEES:</strong> McHarg map layering (GIS corridors); Battelle BEES quantitative index across 78 parameters.</li>
+        </ul>
+      </div>
+
+      <!-- Bottom Left: Environmental Auditing -->
+      <div class="quadrant bottom-left">
+        <div class="q-title">ENVIRONMENTAL AUDITING &amp; RULE 14</div>
+        <ul class="item-list">
+          <li><strong>Definition:</strong> Systematic, documented, periodic, and objective evaluation of environmental performance and regulatory compliance.</li>
+          <li><strong>Rule 14 EPA 1986:</strong> Mandatory annual submission of Environmental Statement (Form V) by September 30 to State Pollution Control Board.</li>
+          <li><strong>3-Phase Methodology:</strong> 1. Pre-Audit (scoping, questionnaire) &bull; 2. On-Site (inspection, sampling) &bull; 3. Post-Audit (report, corrective actions).</li>
+          <li><strong>Audit Typology:</strong> Compliance audits, liabilities audits, waste minimization audits, and energy audits.</li>
+        </ul>
+      </div>
+
+      <!-- Bottom Right: ISO Standards & LCA -->
+      <div class="quadrant bottom-right">
+        <div class="q-title">ISO 14000, LCA &amp; ECO-LABELING</div>
+        <ul class="item-list">
+          <li><strong>ISO 14001 EMS:</strong> Environmental Management Systems based on Deming's Plan-Do-Check-Act (PDCA) continual improvement cycle.</li>
+          <li><strong>ISO 14040/14044 LCA:</strong> Life Cycle Assessment across 4 phases: Goal &amp; Scope, Inventory (LCI), Impact Assessment (LCIA), Interpretation.</li>
+          <li><strong>ISO 19011:</strong> Consolidated standard for auditing management systems (integrating quality and environment).</li>
+          <li><strong>Eco-Mark Scheme (1991):</strong> Indian earthen pot (Matka) logo issued by CPCB and BIS for eco-friendly consumer goods.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Center Node -->
+    <div class="center-node">
+      <h2>EIA &amp; AUDITING</h2>
+      <span>Clearance, Matrix &amp; ISO</span>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>OUR MOCKS &bull; CUET UG ENVIRONMENTAL SCIENCE (CODE 307)</span>
+    <span>SYNTHESIZER MASTER OVERVIEW &bull; ALL RIGHTS RESERVED</span>
+  </div>
+</body>
+</html>

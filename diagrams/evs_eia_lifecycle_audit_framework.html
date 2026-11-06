@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 600px;
+    background: #FFFFFF;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .title-block p {
+    font-size: 11.5px;
+    color: #64748B;
+    margin-top: 3px;
+    font-weight: 600;
+  }
+  .badge {
+    background: #EEF1F8;
+    color: #1F5EFF;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+  }
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 14px;
+    margin-top: 14px;
+    flex-grow: 1;
+  }
+  .card {
+    border: 1.5px solid #CBD5E1;
+    border-radius: 8px;
+    padding: 12px 14px;
+    background: #F8FAFC;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .card.highlight {
+    border-color: #1F5EFF;
+    background: #F0F4FF;
+  }
+  .card.emerald {
+    border-color: #059669;
+    background: #ECFDF5;
+  }
+  .card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+  }
+  .step-num {
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    background: #071A4D;
+    color: #FFFFFF;
+  }
+  .stage-tag {
+    font-size: 11px;
+    font-weight: 700;
+    color: #1F5EFF;
+  }
+  .card-title {
+    font-size: 13.5px;
+    font-weight: 800;
+    color: #0F172A;
+    margin-bottom: 4px;
+  }
+  .card-desc {
+    font-size: 10.5px;
+    color: #334155;
+    line-height: 1.45;
+  }
+  .card-key {
+    margin-top: 6px;
+    padding-top: 6px;
+    border-top: 1px dashed #CBD5E1;
+    font-size: 10px;
+    color: #475569;
+    font-weight: 600;
+  }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 8px;
+    font-size: 10.5px;
+    color: #64748B;
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <div class="title-block">
+      <h1>EIA Clearance Lifecycle & Environmental Auditing Architecture</h1>
+      <p>CUET UG Environmental Science &bull; 4-Stage EC Process, Audit Cycles & ISO 14001 Standards</p>
+    </div>
+    <div class="badge">FIGURE 2: LIFECYCLE &amp; AUDIT WORKFLOW</div>
+  </div>
+
+  <div class="grid-container">
+    <div class="card">
+      <div>
+        <div class="card-top">
+          <span class="step-num">STAGE 1</span>
+          <span class="stage-tag">Screening (Cat B)</span>
+        </div>
+        <div class="card-title">Screening: B1 vs B2</div>
+        <div class="card-desc">Applies only to Category 'B' projects at State level (SEAC). Category 'A' projects bypass screening (mandatory EIA). Divides Category B into B1 (requires full EIA report) and B2 (exempt from EIA).</div>
+      </div>
+      <div class="card-key"><strong>Authority:</strong> State Expert Appraisal Committee (SEAC) via Form 1.</div>
+    </div>
+
+    <div class="card">
+      <div>
+        <div class="card-top">
+          <span class="step-num">STAGE 2</span>
+          <span class="stage-tag">Scoping &amp; ToR</span>
+        </div>
+        <div class="card-title">Scoping &amp; Terms of Reference</div>
+        <div class="card-desc">Formulates comprehensive, site-specific Terms of Reference (ToR) addressing all key environmental impacts. Baseline data collected for one season (other than monsoon) across air, water, ecology, and noise.</div>
+      </div>
+      <div class="card-key"><strong>Output:</strong> Draft EIA Report &amp; Environmental Management Plan (EMP).</div>
+    </div>
+
+    <div class="card highlight">
+      <div>
+        <div class="card-top">
+          <span class="step-num">STAGE 3</span>
+          <span class="stage-tag">Public Hearing</span>
+        </div>
+        <div class="card-title">Public Consultation</div>
+        <div class="card-desc">Mandatory democratic participation. SPCB conducts Public Hearing on-site within 45 days, presided by District Magistrate, plus invites written responses from all stakeholders. Videographed and minuted.</div>
+      </div>
+      <div class="card-key"><strong>Exemptions:</strong> National defense, border roads, small unit modernization.</div>
+    </div>
+
+    <div class="card">
+      <div>
+        <div class="card-top">
+          <span class="step-num">STAGE 4</span>
+          <span class="stage-tag">Appraisal &amp; EC</span>
+        </div>
+        <div class="card-title">Appraisal &amp; Grant of EC</div>
+        <div class="card-desc">Detailed scrutiny of final EIA, EMP, and public hearing proceedings by EAC (Category A) or SEAC (Category B). Recommends grant of Environmental Clearance (EC) with binding conditions or rejection within 45 days.</div>
+      </div>
+      <div class="card-key"><strong>Compliance:</strong> Half-yearly compliance reports submitted to MoEFCC.</div>
+    </div>
+
+    <div class="card emerald">
+      <div>
+        <div class="card-top">
+          <span class="step-num">AUDIT</span>
+          <span class="stage-tag">Rule 14 EPA</span>
+        </div>
+        <div class="card-title">Environmental Auditing</div>
+        <div class="card-desc">Systematic, periodic, and objective evaluation of compliance. Rule 14 mandates submission of annual Environmental Statement (Form V) by September 30. Conducted across 3 phases: Pre-Audit, On-Site, and Post-Audit.</div>
+      </div>
+      <div class="card-key"><strong>Types:</strong> Compliance, Liability, Waste Minimization, Energy Audits.</div>
+    </div>
+
+    <div class="card emerald">
+      <div>
+        <div class="card-top">
+          <span class="step-num">ISO 14001</span>
+          <span class="stage-tag">PDCA Cycle</span>
+        </div>
+        <div class="card-title">EMS &amp; Life Cycle Assessment</div>
+        <div class="card-desc">ISO 14001 specifies Environmental Management Systems based on Deming's Plan-Do-Check-Act (PDCA) continual improvement cycle. ISO 14040/14044 governs Life Cycle Assessment (LCA) from cradle to grave.</div>
+      </div>
+      <div class="card-key"><strong>Eco-Mark:</strong> Indian Matka logo (1991) for eco-friendly consumer goods.</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>OUR MOCKS &bull; CUET UG EXAMINATION PREPARATION SUITE</span>
+    <span>STRICTLY COMPLIANT WITH NTA CUET SYLLABUS CODE 307</span>
+  </div>
+</body>
+</html>
