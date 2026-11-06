@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="sa">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 600px;
+    background: #FFFFFF;
+    font-family: "Kohinoor Devanagari", "Devanagari Sangam MN", -apple-system, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #071A4D;
+    letter-spacing: -0.01em;
+  }
+  .title-block p {
+    font-size: 12px;
+    color: #64748B;
+    margin-top: 3px;
+    font-weight: 600;
+  }
+  .badge {
+    background: #EEF1F8;
+    color: #1F5EFF;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .flow-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 12px;
+    margin: 16px 0;
+    flex-grow: 1;
+  }
+  .stage-card {
+    flex: 1;
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 14px 12px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  .stage-card.active {
+    border-color: #1F5EFF;
+    background: #F0F4FF;
+  }
+  .stage-num {
+    font-size: 10px;
+    font-weight: 800;
+    color: #1F5EFF;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 4px;
+  }
+  .stage-title {
+    font-size: 13.5px;
+    font-weight: 800;
+    color: #071A4D;
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+  .stage-body {
+    font-size: 11px;
+    color: #334155;
+    line-height: 1.45;
+    flex-grow: 1;
+  }
+  .rule-box {
+    background: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    border-radius: 6px;
+    padding: 8px;
+    margin-top: 8px;
+    font-size: 10.5px;
+  }
+  .rule-box strong { color: #071A4D; }
+  .arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #94A3B8;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 8px;
+    font-size: 10.5px;
+    color: #64748B;
+  }
+  .brand-tag { font-weight: 800; color: #071A4D; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="title-block">
+    <h1>संस्कृत-प्रत्यय-साधन-प्रक्रिया : पञ्च-सोपानात्मकः पाणिनीय-प्रवाहः</h1>
+    <p>CUET UG संस्कृतम् (Code 325) · प्रकृति-निर्धारणात् पदनिष्पत्तिपर्यन्तं प्रक्रिया-प्रवाहः</p>
+  </div>
+  <div class="badge">चित्रम् २ · Process Lifecycle</div>
+</div>
+
+<div class="flow-container">
+  <div class="stage-card">
+    <div class="stage-num">सोपानम् १ · प्रकृतिः</div>
+    <div class="stage-title">मूलप्रकृति-निर्धारणम्</div>
+    <div class="stage-body">
+      शब्दस्य मूलप्रकृतेः परीक्षणम्:
+      <div class="rule-box">
+        • यदि <strong>धातुः</strong> (क्रियामूलम्) → <i>कृत्-प्रत्ययः</i><br>
+        • यदि <strong>प्रातिपदिकम्</strong> (संज्ञा/विशेषणम्) → <i>तद्धित-प्रत्ययः</i><br>
+        • यदि <strong>स्त्रीत्व-विवक्षा</strong> → <i>स्त्री-प्रत्ययः</i> (टाप्, ङीप्)।
+      </div>
+    </div>
+  </div>
+
+  <div class="arrow">→</div>
+
+  <div class="stage-card">
+    <div class="stage-num">सोपानम् २ · इत्-संज्ञा</div>
+    <div class="stage-title">अनुबन्ध-लोप-प्रक्रिया</div>
+    <div class="stage-body">
+      प्रत्ययस्य अनुबन्धानां निष्कासनम्:
+      <div class="rule-box">
+        • <strong>हलन्त्यम्:</strong> अन्त्य-हल् वर्णस्य इत्<br>
+        • <strong>लशक्वतद्धिते / चुटू:</strong> आदिवर्णानाम् इत्<br>
+        • <strong>तस्य लोपः:</strong> इत्संज्ञकस्य अदर्शनम्<br>
+        (क्त्वा → त्वा, ल्यप् → य, तुमुन् → तुम्, क्त → त)।
+      </div>
+    </div>
+  </div>
+
+  <div class="arrow">→</div>
+
+  <div class="stage-card active">
+    <div class="stage-num">सोपानम् ३ · विकारः</div>
+    <div class="stage-title">गुण-वृद्धि-आगमाः</div>
+    <div class="stage-body">
+      धातोः प्रातिपदिकस्य वा विकारः:
+      <div class="rule-box">
+        • <strong>कित्-ङित्:</strong> गुणे प्रतिषेधः (<i>क्ङिति च</i> १.१.५)<br>
+        • <strong>ञ्णित् / कित् (तद्धिते):</strong> आदिवृद्धिः (<i>किति च</i> ७.२.११८: धर्म → धार्मिक)<br>
+        • <strong>इडागमः:</strong> <i>आर्धधातुकस्येड् वलादेः</i> (पठ् + तुम् = पठितुम्)।
+      </div>
+    </div>
+  </div>
+
+  <div class="arrow">→</div>
+
+  <div class="stage-card">
+    <div class="stage-num">सोपानम् ४ · सङ्गतिः</div>
+    <div class="stage-title">वाच्य-कारक-नियमः</div>
+    <div class="stage-body">
+      वाक्ये प्रत्ययार्थस्य अन्वयः:
+      <div class="rule-box">
+        • <strong>कर्तरि:</strong> क्तवतु, शतृ, शानच्, तृच्<br>
+        • <strong>कर्मणि/भावे:</strong> क्त, तव्यत्, अनीयर्<br>
+        • <strong>अव्ययम्:</strong> क्त्वा, ल्यप्, तुमुन् (न लिङ्ग-भेदः)<br>
+        • <strong>उपसर्ग-योगे:</strong> क्त्वा स्थाने ल्यप्!
+      </div>
+    </div>
+  </div>
+
+  <div class="arrow">→</div>
+
+  <div class="stage-card">
+    <div class="stage-num">सोपानम् ५ · निष्पत्तिः</div>
+    <div class="stage-title">पद-सिद्धिः रूप-रूपाणि च</div>
+    <div class="stage-body">
+      त्रिषु लिङ्गेषु विभक्ति-रूपाणि:
+      <div class="rule-box">
+        • <strong>पुंलिङ्गे:</strong> गतवान्, पठन्, धार्मिकः<br>
+        • <strong>स्त्रीलिङ्गे:</strong> गतवती, पठन्ती, बालिका<br>
+        • <strong>नपुंसकलिङ्गे:</strong> गतवत्, पठत्, देवत्वम्<br>
+        CUET परीक्षायाम् शुद्ध-पद-चयनम्।
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <span class="brand-tag">OurMocks CUET UG Series</span>
+  <span>प्रत्यय-प्रक्रिया : अनुबन्ध-लोपः, आगमः, गुण-वृद्धि-व्यवस्था च</span>
+  <span>संस्कृतम् (Code 325) · Unit 5 Lifecycle Flow</span>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="sa">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 600px;
+    background: #FFFFFF;
+    font-family: "Kohinoor Devanagari", "Devanagari Sangam MN", -apple-system, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .title-block p {
+    font-size: 11.5px;
+    color: #64748B;
+    margin-top: 2px;
+    font-weight: 600;
+  }
+  .badge {
+    background: #EEF1F8;
+    color: #1F5EFF;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  .map-container {
+    flex-grow: 1;
+    margin: 12px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 12px;
+  }
+  .node-card {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 10px 14px;
+    display: flex;
+    flex-direction: column;
+  }
+  .node-card.c1 { border-left: 4px solid #3730A3; }
+  .node-card.c2 { border-left: 4px solid #B45309; }
+  .node-card.c3 { border-left: 4px solid #9D174D; }
+  .node-card.c4 { border-left: 4px solid #B91C1C; }
+  .node-title {
+    font-size: 13px;
+    font-weight: 800;
+    margin-bottom: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .node-title.t1 { color: #3730A3; }
+  .node-title.t2 { color: #B45309; }
+  .node-title.t3 { color: #9D174D; }
+  .node-title.t4 { color: #B91C1C; }
+  .node-pill {
+    font-size: 9.5px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 700;
+  }
+  .p1 { background: #E0E7FF; color: #3730A3; }
+  .p2 { background: #FEF3C7; color: #92400E; }
+  .p3 { background: #FCE7F3; color: #9D174D; }
+  .p4 { background: #FEE2E2; color: #991B1B; }
+  .node-content {
+    font-size: 10.5px;
+    color: #334155;
+    line-height: 1.45;
+  }
+  .node-content ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  .node-content li {
+    margin-bottom: 4px;
+  }
+  .node-content strong {
+    color: #0F172A;
+  }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 8px;
+    font-size: 10px;
+    color: #64748B;
+  }
+  .brand-tag { font-weight: 800; color: #071A4D; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="title-block">
+    <h1>संस्कृत-प्रत्यय-प्रकरणम् : सर्वाङ्गीणं महामानचित्रम् (Synthesis Mindmap)</h1>
+    <p>CUET UG संस्कृतम् (Code 325) · कृत्-तद्धित-स्त्री-प्रत्ययाः, पाणिनीय-सूत्राणि, रूपाणि परीक्षा-ट्रिक्स च</p>
+  </div>
+  <div class="badge">चित्रम् ३ · Master Mindmap</div>
+</div>
+
+<div class="map-container">
+  <div class="node-card c1">
+    <div class="node-title t1">
+      <span>१. कृत्-प्रत्ययाः (धातुभ्यः विहिताः)</span>
+      <span class="node-pill p1">कृदतिङ् (३.१.९३)</span>
+    </div>
+    <div class="node-content">
+      <ul>
+        <li>• <b>अव्ययरूपाणि:</b> <i>क्त्वा</i> (पठित्वा), <i>ल्यप्</i> (उपसर्गे: प्रणम्य, आगत्य), <i>तुमुन्</i> (पठितुम्, गन्तुम्)</li>
+        <li>• <b>निष्ठा (भूतकालः):</b> <i>क्त</i> (गतः, पठितः - कर्मणि/भावे), <i>क्तवतु</i> (गतवान्, कृतवान् - कर्तरि)</li>
+        <li>• <b>कृत्याः (योग्यतार्थे):</b> <i>तव्यत्</i> (पठितव्यम्), <i>अनीयर्</i> (पठनीयम्) - कर्मणि भावे च</li>
+        <li>• <b>सत् (वर्तमानकालः):</b> <i>शतृ</i> (पठन्/पठन्ती/पठत् - परस्मैपदे), <i>शानच्</i> (सेवमानः - आत्मनेपदे)</li>
+        <li>• <b>कर्त्रर्थे & भावे:</b> <i>ण्वुल्</i> (पाठकः), <i>तृच्</i> (कर्ता, नेता), <i>क्तिन्</i> (गतिः, मतिः, श्रुतिः)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="node-card c2">
+    <div class="node-title t2">
+      <span>२. तद्धित-प्रत्ययाः (प्रातिपदिकेभ्यः)</span>
+      <span class="node-pill p2">तद्धिताः (४.१.७६)</span>
+    </div>
+    <div class="node-content">
+      <ul>
+        <li>• <b>मतुबर्थीयौ:</b> <i>मतुप्</i> (श्रीमान्, धीमान्); <i>वतुप्</i> (अ/आ उपधायाम्: धनवान्, बलवान्, रूपवान्)</li>
+        <li>• <b>धर्म/भाववाचकाः:</b> <i>त्व</i> (देवत्वम्, पशुत्वम् - क्लीबे); <i>तल्</i> (देवता, पशुता - स्त्रीलिङ्गे)</li>
+        <li>• <b>आदिवृद्धि-प्रत्ययाः:</b> <i>ठक्</i> (धार्मिकः, ऐतिहासिकः, दैनिकः - आदिवृद्धिः 'इक')</li>
+        <li>• <b>अतिशायने:</b> <i>तरप्</i> (लघुतरः, पटुतरः), <i>तमप्</i> (लघुतमः, श्रेष्ठतमः)</li>
+        <li>• <b>विकार-प्रचुर्ययोः:</b> <i>मयट्</i> (आनन्दमयः, स्वर्णमयः, मृन्मयः), <i>इन्/इनि</i> (धनी, गुणी)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="node-card c3">
+    <div class="node-title t3">
+      <span>३. स्त्री-प्रत्ययाः (स्त्रीत्व-विवक्षायाम्)</span>
+      <span class="node-pill p3">स्त्रियाम् (४.१.३)</span>
+    </div>
+    <div class="node-content">
+      <ul>
+        <li>• <b>टाप् (आ):</b> <i>अजाद्यतष्टाप्</i> (अजा, चटका, कोकिला, बाला, वृद्धा, चपला)
+          <br>– 'प्रत्ययस्थात् कात्...': <i>बालिका</i>, <i>नायिका</i>, <i>पाचिका</i>, <i>अध्यापिका</i></li>
+        <li>• <b>ङीप् (ई):</b> <i>ऋन्नेभ्यो ङीप्</i> (कर्तरी, दात्री); <i>वयसि प्रथमे</i> (किशोरी, तरुणी, कुमारी)
+          <br>– मतुप्/शतृ योगे: <i>श्रीमती</i>, <i>बुद्धिमती</i>; <i>पठन्ती</i>, <i>गच्छन्ती</i></li>
+        <li>• <b>ङीष् (ई):</b> <i>षिद्गौरादिभ्यश्च</i> (गौरी, नर्तकी, ब्राह्मणी, महिषी, मयूरी)</li>
+        <li>• <b>ङीन् / ऊङ् / ति:</b> <i>शार्ङ्गरवी</i>, <i>नरी</i> (ङीन्); <i>कद्रूः</i>, <i>करभोरूः</i> (ऊङ्); <i>युवतिः</i> (ति)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="node-card c4">
+    <div class="node-title t4">
+      <span>४. Fatal CUET Traps & परीक्षा-सूत्राणि</span>
+      <span class="node-pill p4">उच्च-भ्रामकाः अंशाः</span>
+    </div>
+    <div class="node-content">
+      <ul>
+        <li>• <b>Trap १ (क्त्वा vs ल्यप्):</b> उपसर्गे सति 'क्त्वा' कदापि न भवति, 'ल्यप्' एव भवति (<i>प्रणम्य</i>, न तु 'प्रनमित्वा')!</li>
+        <li>• <b>Trap २ (शतृ vs शानच् पद-नियमः):</b> परस्मैपदी-धातुभ्यः 'शतृ' (पठन्), आत्मनेपदिभ्यः 'शानच्' (सेवमानः)!</li>
+        <li>• <b>Trap ३ (मतुप् vs वतुप् उपधा-भेदः):</b> अ/आ उपधायाम् 'वत्' (धनवान्); इ/उ/ऋ उपधायाम् 'मत्' (श्रीमान्, धीमान्)!</li>
+        <li>• <b>Trap ४ (बालक + टाप् = बालिका):</b> 'क' पूर्व अकारस्य इकारः भवति (<i>बालिका</i>, न तु 'बालका')!</li>
+        <li>• <b>Trap ५ (क्तवतु vs क्त वाच्य-भेदः):</b> क्तवतु कर्तरि प्रयुज्यते (सः गतवान्); क्त कर्मणि/भावे (तेन ग्रन्थः पठितः)!</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <span class="brand-tag">OurMocks CUET UG Series</span>
+  <span>प्रत्यय-ज्ञानम् : धातोः प्रातिपदिकाच्च रूप-निर्माण-कौशलम्</span>
+  <span>संस्कृतम् (Code 325) · Unit 5 Master Mindmap</span>
+</div>
+
+</body>
+</html>

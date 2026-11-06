@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="sa">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 600px;
+    background: #FFFFFF;
+    font-family: "Kohinoor Devanagari", "Devanagari Sangam MN", -apple-system, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #071A4D;
+    letter-spacing: -0.01em;
+  }
+  .title-block p {
+    font-size: 12px;
+    color: #64748B;
+    margin-top: 3px;
+    font-weight: 600;
+  }
+  .badge {
+    background: #EEF1F8;
+    color: #1F5EFF;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .table-container {
+    flex-grow: 1;
+    margin: 14px 0;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  table {
+    width: 100%;
+    height: 100%;
+    border-collapse: collapse;
+    font-size: 11px;
+  }
+  th {
+    background: #071A4D;
+    color: #FFFFFF;
+    padding: 8px 10px;
+    text-align: left;
+    font-weight: 700;
+    border-right: 1px solid #1E293B;
+  }
+  th:last-child { border-right: none; }
+  td {
+    padding: 6px 10px;
+    border-bottom: 1px solid #E2E8F0;
+    border-right: 1px solid #E2E8F0;
+    line-height: 1.35;
+  }
+  td:last-child { border-right: none; }
+  tr:nth-child(even) { background: #F8FAFC; }
+  tr:last-child td { border-bottom: none; }
+  .col-type { font-weight: 800; color: #071A4D; width: 14%; }
+  .col-prat { font-weight: 700; color: #1F5EFF; width: 18%; }
+  .col-sutra { font-family: monospace; font-size: 10px; font-weight: 700; color: #0284C7; width: 23%; }
+  .col-nature { color: #334155; width: 22%; }
+  .col-ex { font-weight: 700; color: #0F172A; width: 23%; }
+  .tag {
+    display: inline-block;
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-size: 9.5px;
+    font-weight: 700;
+    margin-right: 4px;
+  }
+  .tag-krit { background: #E0E7FF; color: #3730A3; }
+  .tag-tadd { background: #FEF3C7; color: #92400E; }
+  .tag-stri { background: #FCE7F3; color: #9D174D; }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 8px;
+    font-size: 10.5px;
+    color: #64748B;
+  }
+  .brand-tag { font-weight: 800; color: #071A4D; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="title-block">
+    <h1>संस्कृत-प्रत्यय-व्यवस्था : कृत्-तद्धित-स्त्री-प्रत्ययानां तुलनात्मिका तालिका</h1>
+    <p>CUET UG संस्कृतम् (Code 325) · प्रकृति-प्रत्यय-संयोगः, पाणिनीय-सूत्राणि, रूप-साधनं च</p>
+  </div>
+  <div class="badge">चित्रम् १ · Comparative Matrix</div>
+</div>
+
+<div class="table-container">
+  <table>
+    <thead>
+      <tr>
+        <th>प्रत्यय-वर्गः</th>
+        <th>प्रमुख-प्रत्ययाः</th>
+        <th>पाणिनीय-सूत्रम्</th>
+        <th>प्रकृतिः & अर्थ-विधानम्</th>
+        <th>प्रमुख-शास्त्रीयोदाहरणानि</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="col-type"><span class="tag tag-krit">कृत्</span> अव्यय-कृत्</td>
+        <td class="col-prat">क्त्वा / ल्यप् / तुमुन्</td>
+        <td class="col-sutra">समानकर्तृकयोः पूर्वकाले<br>समासेऽनञ्पूर्वे क्त्वो ल्यप्</td>
+        <td class="col-nature">धातुभ्यः; पूर्वकालिक-क्रिया (क्त्वा/ल्यप्), क्रियार्था क्रिया (तुमुन्); अव्ययरूपाणि</td>
+        <td class="col-ex">पठित्वा, गत्वा; <b>प्रणम्य</b>, <b>विहृत्य</b>; <b>पठितुम्</b>, <b>गन्तुम्</b>, द्रष्टुम्</td>
+      </tr>
+      <tr>
+        <td class="col-type"><span class="tag tag-krit">कृत्</span> निष्ठा-प्रत्ययौ</td>
+        <td class="col-prat">क्त (त) / क्तवतु (तवत्)</td>
+        <td class="col-sutra">क्तक्तवतू निष्ठा (१.१.२६)<br>भूते (३.२.८४)</td>
+        <td class="col-nature">धातुभ्यः; भूतकाले; क्त (कर्मणि/भावे), क्तवतु (कर्तरि); त्रिषु लिङ्गेषु</td>
+        <td class="col-ex">गतः/गता/गतम् (क्त); <b>गतवान्</b>/गतवती/गतवत् (क्तवतु)</td>
+      </tr>
+      <tr>
+        <td class="col-type"><span class="tag tag-krit">कृत्</span> कृत्य-प्रत्ययौ</td>
+        <td class="col-prat">तव्यत् / अनीयर्</td>
+        <td class="col-sutra">तव्यत्तव्यानीयरः (३.१.९६)<br>कृत्याः (३.१.९५)</td>
+        <td class="col-nature">धातुभ्यः; योग्यतार्थे/चाहिए अर्थे; कर्मणि भावे च प्रयोगः; त्रिषु लिङ्गेषु</td>
+        <td class="col-ex"><b>पठितव्यम्</b>, <b>कर्तव्यम्</b>; <b>पठनीयम्</b>, <b>करणीयम्</b>, गमनीयम्</td>
+      </tr>
+      <tr>
+        <td class="col-type"><span class="tag tag-krit">कृत्</span> शतृ-शानचौ</td>
+        <td class="col-prat">शतृ (अत्) / शानच् (मान)</td>
+        <td class="col-sutra">लटः शतृशानचावप्रथमा...<br>तौ सत् (३.२.१२७)</td>
+        <td class="col-nature">धातुभ्यः; वर्तमान-काल-सातत्ये; शतृ (परस्मैपदी), शानच् (आत्मनेपदी)</td>
+        <td class="col-ex"><b>पठन्</b> (पठन्ती/पठत्); <b>सेवमानः</b>, <b>लभमानः</b>, कुर्वाणः</td>
+      </tr>
+      <tr>
+        <td class="col-type"><span class="tag tag-tadd">तद्धित</span> मतुबर्थीयौ</td>
+        <td class="col-prat">मतुप् (मत्/वत्)</td>
+        <td class="col-sutra">तदस्यास्त्यस्मिन्निति मतुप्<br>मादुपधायाश्च मतोर्वोऽयवादिभ्यः</td>
+        <td class="col-nature">प्रातिपदिकेभ्यः; 'युक्त/वाला' अर्थे; अ/आ उपधायाम् 'वतुप्', अन्यत्र 'मतुप्'</td>
+        <td class="col-ex"><b>श्रीमान्</b>, <b>धीमान्</b>; <b>धनवान्</b>, <b>बलवान्</b>, रूपवान्</td>
+      </tr>
+      <tr>
+        <td class="col-type"><span class="tag tag-tadd">तद्धित</span> भाव/धर्मादिः</td>
+        <td class="col-prat">त्व / तल् / ठक् (इक)</td>
+        <td class="col-sutra">तस्य भावस्त्वतलौ (५.१.११९)<br>तेन दीव्यति खनति... (४.४.२)</td>
+        <td class="col-nature">प्रातिपदिकेभ्यः; त्व (क्लीबे), तल् (स्त्रीलिङ्गे ता); ठक् (आदिवृद्धिः 'इक')</td>
+        <td class="col-ex"><b>देवत्वम्</b>, <b>मनुष्यता</b>; <b>धार्मिकः</b>, <b>ऐतिहासिकः</b>, दैनिकः</td>
+      </tr>
+      <tr>
+        <td class="col-type"><span class="tag tag-stri">स्त्री</span> स्त्री-प्रत्ययाः</td>
+        <td class="col-prat">टाप् (आ) / ङीप् (ई)</td>
+        <td class="col-sutra">अजाद्यतष्टाप् (४.१.४)<br>ऋन्नेभ्यो ङीप् (४.१.५)</td>
+        <td class="col-nature">पुंलिङ्ग-शब्देभ्यः स्त्रीत्व-विवक्षायाम्; अकारान्तेभ्यः (टाप्), ऋकारान्तेभ्यः (ङीप्)</td>
+        <td class="col-ex"><b>अजा</b>, <b>बालिका</b> (टाप्); <b>कर्तरी</b>, <b>किशोरी</b>, श्रीमती, नदी</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="footer">
+  <span class="brand-tag">OurMocks CUET UG Series</span>
+  <span>प्रत्यय-लक्षणम् : "प्रत्ययः परश्च" (प्रकृति-संयोगात् परतः विधानम्)</span>
+  <span>संस्कृतम् (Code 325) · Unit 5 Concept Matrix</span>
+</div>
+
+</body>
+</html>
