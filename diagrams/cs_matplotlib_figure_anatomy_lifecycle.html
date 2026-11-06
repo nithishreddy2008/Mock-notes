@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 600px;
+    background: #FFFFFF;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #1E3A8A;
+    letter-spacing: -0.02em;
+  }
+  .title-block p {
+    font-size: 11px;
+    color: #64748B;
+    margin-top: 3px;
+    font-weight: 500;
+  }
+  .badge {
+    background: #ECFDF5;
+    color: #047857;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 700;
+    border: 1px solid #A7F3D0;
+    text-transform: uppercase;
+  }
+  .main-content {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 16px;
+    margin: 14px 0;
+  }
+  .canvas-mockup {
+    border: 2px solid #94A3B8;
+    background: #F8FAFC;
+    border-radius: 8px;
+    padding: 16px;
+    position: relative;
+    height: 380px;
+  }
+  .figure-boundary {
+    border: 1.5px dashed #3B82F6;
+    border-radius: 6px;
+    padding: 12px;
+    height: 340px;
+    position: relative;
+    background: #FFFFFF;
+  }
+  .figure-tag {
+    position: absolute;
+    top: -10px;
+    left: 12px;
+    background: #3B82F6;
+    color: white;
+    font-size: 9px;
+    font-weight: 800;
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+  .axes-box {
+    border: 2px solid #0F172A;
+    margin: 28px 24px 24px 28px;
+    height: 230px;
+    position: relative;
+    background: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .axes-tag {
+    position: absolute;
+    top: -10px;
+    right: 12px;
+    background: #0F172A;
+    color: white;
+    font-size: 9px;
+    font-weight: 800;
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+  .anno-title {
+    position: absolute;
+    top: 6px;
+    font-size: 12px;
+    font-weight: 800;
+    color: #1E3A8A;
+  }
+  .anno-xlabel {
+    position: absolute;
+    bottom: -22px;
+    font-size: 10.5px;
+    font-weight: 700;
+    color: #334155;
+  }
+  .anno-ylabel {
+    position: absolute;
+    left: -24px;
+    transform: rotate(-90deg);
+    font-size: 10.5px;
+    font-weight: 700;
+    color: #334155;
+  }
+  .anno-legend {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    border: 1px solid #CBD5E1;
+    background: #F1F5F9;
+    padding: 4px 8px;
+    font-size: 9px;
+    font-weight: 600;
+    border-radius: 4px;
+  }
+  .lifecycle-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 380px;
+  }
+  .step-card {
+    border: 1.5px solid #CBD5E1;
+    border-radius: 6px;
+    background: #F8FAFC;
+    padding: 8px 12px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  .step-num {
+    background: #1E3A8A;
+    color: white;
+    font-size: 10px;
+    font-weight: 800;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .step-info h4 {
+    font-size: 11px;
+    font-weight: 800;
+    color: #0F172A;
+  }
+  .step-info p {
+    font-size: 9.5px;
+    color: #64748B;
+    margin-top: 1px;
+    font-family: ui-monospace, Menlo, Consolas, monospace;
+  }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 8px;
+    font-size: 9.5px;
+    color: #94A3B8;
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <div class="title-block">
+      <h1>The Matplotlib Architecture: Figure Anatomy & Plotting Lifecycle</h1>
+      <p>Hierarchical structural elements of a Matplotlib canvas and the 5-phase generation pipeline</p>
+    </div>
+    <div class="badge">CUET Code 308 · Architecture Board</div>
+  </div>
+
+  <div class="main-content">
+    <div class="canvas-mockup">
+      <div class="figure-boundary">
+        <div class="figure-tag">Figure (Overall Canvas)</div>
+        <div class="anno-title">plt.title("Experimental Results")</div>
+        
+        <div class="axes-box">
+          <div class="axes-tag">Axes (Plotting Area)</div>
+          <div class="anno-legend">plt.legend()</div>
+          <div style="color: #3B82F6; font-size: 11px; font-weight: 700;">Data Geometry (Lines, Bars, Points)</div>
+          <div style="color: #94A3B8; font-size: 9px; margin-top: 4px;">Grid Lines: plt.grid(True)</div>
+          <div class="anno-xlabel">plt.xlabel("Time (s)")</div>
+          <div class="anno-ylabel">plt.ylabel("Voltage (V)")</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="lifecycle-panel">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <div class="step-info">
+          <h4>Data Preparation</h4>
+          <p>x = [1, 2, 3]; y = [10, 20, 15]</p>
+        </div>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <div class="step-info">
+          <h4>Canvas & Geometry Call</h4>
+          <p>plt.plot(x, y, color='blue', marker='o')</p>
+        </div>
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <div class="step-info">
+          <h4>Decorators & Annotations</h4>
+          <p>plt.title(), plt.xlabel(), plt.grid()</p>
+        </div>
+      </div>
+      <div class="step-card">
+        <div class="step-num">4</div>
+        <div class="step-info">
+          <h4>Ticks & Limits Configuration</h4>
+          <p>plt.xlim(0, 10), plt.xticks(rotation=45)</p>
+        </div>
+      </div>
+      <div class="step-card">
+        <div class="step-num">5</div>
+        <div class="step-info">
+          <h4>Persistence or Rendering</h4>
+          <p>plt.savefig('out.png') / plt.show()</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>OurMocks CUET UG Series · Computer Science (Code 308)</span>
+    <span>Fig 2: Pyplot Visual Canvas Architecture</span>
+  </div>
+</body>
+</html>

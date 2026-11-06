@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 600px;
+    background: #FFFFFF;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #1E3A8A;
+    letter-spacing: -0.02em;
+  }
+  .title-block p {
+    font-size: 11px;
+    color: #64748B;
+    margin-top: 3px;
+    font-weight: 500;
+  }
+  .badge {
+    background: #EFF6FF;
+    color: #1D4ED8;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 700;
+    border: 1px solid #BFDBFE;
+    text-transform: uppercase;
+  }
+  .matrix-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 14px;
+    background: #FFFFFF;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #CBD5E1;
+  }
+  .matrix-table th {
+    background: #1E3A8A;
+    color: #FFFFFF;
+    text-align: left;
+    padding: 10px 12px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    border-right: 1px solid #3B82F6;
+  }
+  .matrix-table th:last-child { border-right: none; }
+  .matrix-table td {
+    padding: 8px 11px;
+    font-size: 10px;
+    line-height: 1.35;
+    border-bottom: 1px solid #E2E8F0;
+    border-right: 1px solid #E2E8F0;
+    vertical-align: top;
+  }
+  .matrix-table td:last-child { border-right: none; }
+  .matrix-table tr:nth-child(even) { background: #F8FAFC; }
+  .feature-name {
+    font-weight: 700;
+    color: #0F172A;
+    background: #F1F5F9;
+  }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 8px;
+    font-size: 9.5px;
+    color: #94A3B8;
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <div class="title-block">
+      <h1>Comparative Matrix: Matplotlib Chart Typologies & Calling Signatures</h1>
+      <p>Systematic parameter matrix across Line, Bar, Histogram, and Scatter plots in Pyplot</p>
+    </div>
+    <div class="badge">CUET Code 308 · High-Yield Matrix</div>
+  </div>
+
+  <table class="matrix-table">
+    <thead>
+      <tr>
+        <th style="width: 16%;">Chart Type</th>
+        <th style="width: 16%;">Pyplot Function</th>
+        <th style="width: 20%;">Primary Analytical Purpose</th>
+        <th style="width: 24%;">Key Parameters & Flags</th>
+        <th style="width: 24%;">CUET High-Yield Trap</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="feature-name">Line Plot</td>
+        <td><code>plt.plot(x, y)</code></td>
+        <td>Display trends, continuous temporal changes, and mathematical curves.</td>
+        <td><code>color</code>, <code>linestyle</code> (<code>'-'</code>, <code>'--'</code>, <code>':'</code>), <code>linewidth</code>, <code>marker</code>, <code>markersize</code>, <code>label</code>.</td>
+        <td>Passing single list <code>plt.plot([1, 4, 9])</code> uses it as <b>Y-values</b>; X defaults to <code>0, 1, 2</code>!</td>
+      </tr>
+      <tr>
+        <td class="feature-name">Vertical Bar Chart</td>
+        <td><code>plt.bar(x, height)</code></td>
+        <td>Compare discrete discrete categorical metrics side-by-side.</td>
+        <td><code>width</code> (default 0.8), <code>color</code>, <code>edgecolor</code>, <code>bottom</code> (for stacking), <code>align</code>.</td>
+        <td>For multiple bar charts, X-coordinates must be manually shifted by bar <code>width</code>!</td>
+      </tr>
+      <tr>
+        <td class="feature-name">Horizontal Bar Chart</td>
+        <td><code>plt.barh(y, width)</code></td>
+        <td>Compare categories with long text labels that crowd vertical axes.</td>
+        <td><code>height</code> (default 0.8), <code>left</code> (for horizontal stacking), <code>color</code>, <code>edgecolor</code>.</td>
+        <td>Arguments are flipped: 1st argument is vertical Y position; 2nd is horizontal <code>width</code>.</td>
+      </tr>
+      <tr>
+        <td class="feature-name">Histogram</td>
+        <td><code>plt.hist(x)</code></td>
+        <td>Visualize frequency distributions of continuous numerical datasets.</td>
+        <td><code>bins</code> (default 10 or sequence), <code>range</code>, <code>density=True</code>, <code>cumulative=True</code>, <code>edgecolor</code>.</td>
+        <td>A histogram plots frequency over <b>binned intervals</b>, NOT discrete categories like a bar chart!</td>
+      </tr>
+      <tr>
+        <td class="feature-name">Scatter Plot</td>
+        <td><code>plt.scatter(x, y)</code></td>
+        <td>Detect correlation, clustering, and relationships between two continuous variables.</td>
+        <td><code>s</code> (marker size in points^2), <code>c</code> (color sequence), <code>marker</code>, <code>alpha</code> (transparency), <code>cmap</code>.</td>
+        <td>Parameter for size is strictly <code>s</code> (not <code>size</code>); parameter for color is <code>c</code>.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="footer">
+    <span>OurMocks CUET UG Series · Computer Science (Code 308)</span>
+    <span>Fig 1: Pyplot Chart Specification Matrix</span>
+  </div>
+</body>
+</html>
