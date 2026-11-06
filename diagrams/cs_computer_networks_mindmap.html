@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1440, height=880">
+  <title>Master Synthesis Mindmap: Computer Networks — Architecture & Topologies</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 1440px;
+      height: 880px;
+      background: radial-gradient(circle at center, #0F172A 0%, #080D1A 100%);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #F8FAFC;
+      padding: 24px 36px;
+      overflow: hidden;
+      position: relative;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 16px;
+      position: relative;
+      z-index: 10;
+    }
+    .header h1 {
+      font-size: 25px;
+      font-weight: 800;
+      color: #FFFFFF;
+      letter-spacing: -0.01em;
+      margin-bottom: 3px;
+    }
+    .header p {
+      font-size: 13px;
+      color: #94A3B8;
+      font-weight: 500;
+    }
+    .badge {
+      display: inline-block;
+      background: #0066FF;
+      color: white;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 3px 12px;
+      border-radius: 14px;
+      margin-bottom: 5px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .mindmap-container {
+      width: 1360px;
+      height: 740px;
+      position: relative;
+      margin: 0 auto;
+    }
+
+    /* Central Hub */
+    .center-hub {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 250px;
+      height: 125px;
+      background: linear-gradient(135deg, #1E3A8A 0%, #0F2C59 100%);
+      border: 3px solid #3B82F6;
+      border-radius: 20px;
+      box-shadow: 0 0 35px rgba(59, 130, 246, 0.45);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 12px;
+      z-index: 20;
+    }
+    .center-hub h2 {
+      font-size: 17px;
+      font-weight: 800;
+      color: #FFFFFF;
+      line-height: 1.25;
+    }
+    .center-hub span {
+      font-size: 11px;
+      color: #93C5FD;
+      font-weight: 600;
+      margin-top: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    /* Node Cards */
+    .node {
+      position: absolute;
+      border-radius: 14px;
+      padding: 14px 18px;
+      box-shadow: 0 10px 25px -5px rgba(0,0,0,0.5);
+      z-index: 10;
+    }
+    .node h3 {
+      font-size: 14px;
+      font-weight: 800;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .node ul {
+      list-style: none;
+      font-size: 11.5px;
+      line-height: 1.45;
+    }
+    .node li {
+      margin-bottom: 4px;
+      display: flex;
+      align-items: flex-start;
+      gap: 5px;
+    }
+    .node li::before {
+      content: "▸";
+      color: inherit;
+      font-weight: 800;
+    }
+
+    /* Specific Quadrants */
+    .node-types {
+      top: 15px;
+      left: 30px;
+      width: 480px;
+      background: rgba(15, 23, 42, 0.90);
+      border: 2px solid #0284C7;
+      border-left: 6px solid #0284C7;
+      color: #BAE6FD;
+    }
+    .node-types h3 { color: #38BDF8; }
+
+    .node-media {
+      top: 15px;
+      right: 30px;
+      width: 480px;
+      background: rgba(15, 23, 42, 0.90);
+      border: 2px solid #8B5CF6;
+      border-left: 6px solid #8B5CF6;
+      color: #DDD6FE;
+    }
+    .node-media h3 { color: #A78BFA; }
+
+    .node-topologies {
+      bottom: 15px;
+      left: 30px;
+      width: 480px;
+      background: rgba(15, 23, 42, 0.90);
+      border: 2px solid #10B981;
+      border-left: 6px solid #10B981;
+      color: #A7F3D0;
+    }
+    .node-topologies h3 { color: #34D399; }
+
+    .node-devices {
+      bottom: 15px;
+      right: 30px;
+      width: 480px;
+      background: rgba(15, 23, 42, 0.90);
+      border: 2px solid #F59E0B;
+      border-left: 6px solid #F59E0B;
+      color: #FDE68A;
+    }
+    .node-devices h3 { color: #FBBF24; }
+
+    /* SVG Connecting Lines */
+    .lines-svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
+    }
+    .connector-line {
+      fill: none;
+      stroke-width: 2.5;
+      stroke-dasharray: 6, 4;
+      opacity: 0.65;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="badge">Master Synthesis Mindmap</div>
+    <h1>Computer Networks: Architecture, Topologies &amp; Devices</h1>
+    <p>Comprehensive Cognitive Architecture for CUET UG Computer Science (Code 308)</p>
+  </div>
+
+  <div class="mindmap-container">
+    <svg class="lines-svg">
+      <!-- Hub to Top-Left -->
+      <path class="connector-line" stroke="#0284C7" d="M 680 370 C 500 370, 360 250, 270 230" />
+      <!-- Hub to Top-Right -->
+      <path class="connector-line" stroke="#8B5CF6" d="M 680 370 C 860 370, 1000 250, 1090 230" />
+      <!-- Hub to Bottom-Left -->
+      <path class="connector-line" stroke="#10B981" d="M 680 370 C 500 370, 360 490, 270 510" />
+      <!-- Hub to Bottom-Right -->
+      <path class="connector-line" stroke="#F59E0B" d="M 680 370 C 860 370, 1000 490, 1090 510" />
+    </svg>
+
+    <!-- CENTER HUB -->
+    <div class="center-hub">
+      <h2>COMPUTER<br>NETWORKS</h2>
+      <span>Architecture &amp; Devices</span>
+    </div>
+
+    <!-- NODE 1: NETWORK TYPES & SCALES -->
+    <div class="node node-types">
+      <h3>🌐 Network Scales &amp; Classification</h3>
+      <ul>
+        <li><b>PAN (Personal Area):</b> Span $&lt; 10$ m. Bluetooth, Zigbee, infrared personal devices.</li>
+        <li><b>LAN (Local Area):</b> Office, school building, lab ($&lt; 1$–10 km). High data rate, low error rate.</li>
+        <li><b>MAN (Metropolitan Area):</b> City-wide scope (10–50 km). Cable TV networks, municipal fiber.</li>
+        <li><b>WAN (Wide Area):</b> Country/global scale. Connects disparate LANs/MANs via routers &amp; satellites.</li>
+        <li><b>Architectures:</b> Client-Server (centralized service) vs Peer-to-Peer (equal node rights, torrents).</li>
+      </ul>
+    </div>
+
+    <!-- NODE 2: TRANSMISSION MEDIA -->
+    <div class="node node-media">
+      <h3>📡 Transmission Media (Guided &amp; Unguided)</h3>
+      <ul>
+        <li><b>Twisted Pair (UTP/STP):</b> Copper wires twisted to cancel EMI and crosstalk. Cheap, RJ-45 jack.</li>
+        <li><b>Coaxial Cable:</b> Solid copper core, dielectric insulator, braided shield. BNC connectors.</li>
+        <li><b>Optical Fiber:</b> Total Internal Reflection of light. Immense bandwidth, immune to EMI, low loss.</li>
+        <li><b>Radio Waves:</b> Omni-directional, penetrates walls (Wi-Fi, Bluetooth).</li>
+        <li><b>Microwaves:</b> Unidirectional, line-of-sight required. Relay towers every 25–50 km.</li>
+        <li><b>Infrared &amp; Satellite:</b> Infrared cannot penetrate walls (secure). Satellite for global WAN links.</li>
+      </ul>
+    </div>
+
+    <!-- NODE 3: NETWORK TOPOLOGIES -->
+    <div class="node node-topologies">
+      <h3>📐 Network Topologies &amp; Layouts</h3>
+      <ul>
+        <li><b>Star Topology:</b> Central hub/switch. Easy fault isolation. Central hub failure halts network.</li>
+        <li><b>Bus Topology:</b> Single linear backbone wire with terminators. Cheap cable; cable break disables all.</li>
+        <li><b>Tree Topology:</b> Hierarchical star-bus combination. Scalable; root failure impacts whole branch.</li>
+        <li><b>Mesh Topology:</b> Point-to-point links between all nodes ($n(n-1)/2$ cables). Highest fault tolerance.</li>
+        <li><b>Ring Topology:</b> Circular unidirectional loop. Token passing protocol. Cable break halts network.</li>
+      </ul>
+    </div>
+
+    <!-- NODE 4: CONNECTING DEVICES -->
+    <div class="node node-devices">
+      <h3>⚙️ Network Connecting Devices</h3>
+      <ul>
+        <li><b>Repeater &amp; Hub (L1):</b> Amplifies signals. Hub broadcasts to all ports (1 collision domain).</li>
+        <li><b>Bridge &amp; Switch (L2):</b> Filters frames by physical 48-bit <b>MAC address</b>. Isolates collision domains.</li>
+        <li><b>Router (L3):</b> Forwards packets using logical 32-bit <b>IP addresses</b>. Blocks broadcasts.</li>
+        <li><b>Gateway (L4–L7):</b> Protocol converter linking incompatible network architectures.</li>
+        <li><b>Modem:</b> Modulates digital bits to analog carrier waves and demodulates returning analog.</li>
+      </ul>
+    </div>
+
+  </div>
+
+</body>
+</html>

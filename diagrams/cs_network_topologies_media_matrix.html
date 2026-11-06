@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1440, height=880">
+  <title>Computer Networks: Topologies & Transmission Media Matrix</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 1440px;
+      height: 880px;
+      background-color: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0F172A;
+      padding: 26px 36px;
+      overflow: hidden;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 16px;
+      border-bottom: 2px solid #E2E8F0;
+      padding-bottom: 10px;
+    }
+    .title-group h1 {
+      font-size: 24px;
+      font-weight: 800;
+      color: #0F2C59;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+    .title-group p {
+      font-size: 13.5px;
+      color: #64748B;
+      font-weight: 500;
+    }
+    .badge {
+      background: #0066FF;
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    .card {
+      background: white;
+      border: 1px solid #CBD5E1;
+      border-radius: 10px;
+      padding: 14px 16px;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+      display: flex;
+      flex-direction: column;
+    }
+    .card-title {
+      font-size: 14.5px;
+      font-weight: 800;
+      color: #0F2C59;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 2px solid #F1F5F9;
+      padding-bottom: 6px;
+    }
+    .icon-tag {
+      font-size: 10.5px;
+      font-weight: 800;
+      padding: 2px 7px;
+      border-radius: 6px;
+      color: white;
+    }
+    .tag-topo { background: #2563EB; }
+    .tag-guided { background: #059669; }
+    .tag-wireless { background: #7C3AED; }
+    .item-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 12px;
+    }
+    .item-box {
+      background: #F8FAFC;
+      border-left: 4px solid #CBD5E1;
+      padding: 8px 10px;
+      border-radius: 0 6px 6px 0;
+    }
+    .item-box.topo-border { border-left-color: #2563EB; }
+    .item-box.guided-border { border-left-color: #059669; }
+    .item-box.wireless-border { border-left-color: #7C3AED; }
+    .item-header {
+      font-weight: 700;
+      color: #1E293B;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 2px;
+    }
+    .item-code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 10.5px;
+      background: #E2E8F0;
+      padding: 1px 5px;
+      border-radius: 4px;
+      color: #0F172A;
+    }
+    .item-desc {
+      color: #475569;
+      line-height: 1.35;
+    }
+    .table-card {
+      background: white;
+      border: 1px solid #CBD5E1;
+      border-radius: 10px;
+      padding: 12px 16px;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+    }
+    .table-title {
+      font-size: 13.5px;
+      font-weight: 800;
+      color: #0F2C59;
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 11.5px;
+      text-align: left;
+    }
+    th {
+      background: #0F2C59;
+      color: white;
+      padding: 6px 8px;
+      font-weight: 700;
+    }
+    th:first-child { border-top-left-radius: 6px; }
+    th:last-child { border-top-right-radius: 6px; }
+    td {
+      padding: 5px 8px;
+      border-bottom: 1px solid #E2E8F0;
+      color: #334155;
+    }
+    tr:nth-child(even) td {
+      background: #F8FAFC;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="title-group">
+      <h1>Computer Networks: Topologies &amp; Transmission Media Matrix</h1>
+      <p>Comparative Architecture of Topologies, Physical Guided Cables, and Wireless Communication Channels</p>
+    </div>
+    <div class="badge">OurMocks Networks Guide</div>
+  </div>
+
+  <div class="grid">
+    <!-- TOPOLOGIES -->
+    <div class="card">
+      <div class="card-title">
+        <span class="icon-tag tag-topo">TOPOLOGY</span>
+        <span>Physical Topologies</span>
+      </div>
+      <div class="item-list">
+        <div class="item-box topo-border">
+          <div class="item-header"><span>Star Topology</span><span class="item-code">Hub / Switch</span></div>
+          <div class="item-desc">All nodes connect to a central hub/switch. Easy fault isolation. Single point of failure: central hub. Most popular LAN layout.</div>
+        </div>
+        <div class="item-box topo-border">
+          <div class="item-header"><span>Bus Topology</span><span class="item-code">Backbone Cable</span></div>
+          <div class="item-desc">Single central backbone wire with terminators at ends. Low cable cost. Central cable break disables entire network. Hard to isolate faults.</div>
+        </div>
+        <div class="item-box topo-border">
+          <div class="item-header"><span>Tree &amp; Mesh Topologies</span><span class="item-code">Hierarchical / Full</span></div>
+          <div class="item-desc"><b>Tree:</b> Hierarchical star-bus hybrid. <b>Mesh:</b> Point-to-point links between every node ($n(n-1)/2$ links). Maximum fault tolerance, highest cost.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GUIDED MEDIA -->
+    <div class="card">
+      <div class="card-title">
+        <span class="icon-tag tag-guided">GUIDED MEDIA</span>
+        <span>Physical Wired Cables</span>
+      </div>
+      <div class="item-list">
+        <div class="item-box guided-border">
+          <div class="item-header"><span>Twisted Pair (UTP / STP)</span><span class="item-code">RJ-45 Jack</span></div>
+          <div class="item-desc">Pairs twisted to minimize crosstalk and electromagnetic interference (EMI). Cheap, flexible, max run 100m. Cat5e/Cat6 LANs.</div>
+        </div>
+        <div class="item-box guided-border">
+          <div class="item-header"><span>Coaxial Cable</span><span class="item-code">BNC / F-Type</span></div>
+          <div class="item-desc">Central copper conductor with dielectric insulator and braided metallic shielding. Higher bandwidth than twisted pair. Cable TV/broadband.</div>
+        </div>
+        <div class="item-box guided-border">
+          <div class="item-header"><span>Optical Fiber Cable</span><span class="item-code">Light Waves</span></div>
+          <div class="item-desc">Glass/plastic core transmits light via <b>Total Internal Reflection</b>. Immense bandwidth, immune to EMI, lowest attenuation over long distances.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WIRELESS MEDIA -->
+    <div class="card">
+      <div class="card-title">
+        <span class="icon-tag tag-wireless">UNGUIDED MEDIA</span>
+        <span>Wireless Channels</span>
+      </div>
+      <div class="item-list">
+        <div class="item-box wireless-border">
+          <div class="item-header"><span>Radio Waves</span><span class="item-code">Omni-directional</span></div>
+          <div class="item-desc">3 kHz to 1 GHz. Penetrates walls and solid obstacles easily. Used in AM/FM radio, Wi-Fi, cordless phones. Subject to interference.</div>
+        </div>
+        <div class="item-box wireless-border">
+          <div class="item-header"><span>Microwaves</span><span class="item-code">Unidirectional Line-of-Sight</span></div>
+          <div class="item-desc">1 GHz to 300 GHz. Cannot penetrate obstacles; requires line-of-sight parabolic dish alignment. Repeaters every 25–50 km. Cellular towers.</div>
+        </div>
+        <div class="item-box wireless-border">
+          <div class="item-header"><span>Infrared &amp; Satellite</span><span class="item-code">Short Range / Global</span></div>
+          <div class="item-desc"><b>Infrared:</b> Cannot penetrate walls (high security, TV remotes). <b>Satellite:</b> Geostationary orbits (36,000 km) for transcontinental WAN links.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="table-card">
+    <div class="table-title">
+      <span>Architectural Comparison: Transmission Media Specifications &amp; Performance</span>
+      <span style="font-size: 11px; color: #64748B; font-weight: 600;">CUET High-Yield Metric: Bandwidth, Attenuation &amp; EMI Resistance</span>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Transmission Medium</th>
+          <th>Physical Signal Form</th>
+          <th>Data Transfer Rate</th>
+          <th>Attenuation / Range</th>
+          <th>EMI Resistance</th>
+          <th>Installation Cost</th>
+          <th>Primary Deployment</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>Twisted Pair (UTP)</b></td>
+          <td>Electrical Voltage</td>
+          <td>10 Mbps – 10 Gbps</td>
+          <td>High (Repeater required &gt; 100m)</td>
+          <td>Low / Moderate</td>
+          <td>Lowest</td>
+          <td>Office / Building LANs</td>
+        </tr>
+        <tr>
+          <td><b>Coaxial Cable</b></td>
+          <td>Electrical Voltage</td>
+          <td>10 Mbps – 100 Mbps</td>
+          <td>Moderate (up to 500m)</td>
+          <td>Moderate / Good</td>
+          <td>Moderate</td>
+          <td>Cable TV, legacy Ethernet</td>
+        </tr>
+        <tr>
+          <td><b>Optical Fiber</b></td>
+          <td>Photons (Light pulses)</td>
+          <td>1 Gbps – 100+ Gbps</td>
+          <td>Extremely Low (tens of km)</td>
+          <td><b>Complete Immunity</b></td>
+          <td>Highest</td>
+          <td>Campus backbones, Undersea WAN</td>
+        </tr>
+        <tr>
+          <td><b>Radio Waves</b></td>
+          <td>Radio Frequency</td>
+          <td>1 Mbps – 1 Gbps</td>
+          <td>Moderate (attenuated by rain)</td>
+          <td>Susceptible to noise</td>
+          <td>Moderate (antenna setup)</td>
+          <td>Wi-Fi, Bluetooth, AM/FM</td>
+        </tr>
+        <tr>
+          <td><b>Microwave</b></td>
+          <td>Electromagnetic waves</td>
+          <td>10 Mbps – 10 Gbps</td>
+          <td>Line-of-sight (towers needed)</td>
+          <td>Susceptible to weather</td>
+          <td>High (tall towers)</td>
+          <td>Inter-building line-of-sight</td>
+        </tr>
+        <tr>
+          <td><b>Satellite</b></td>
+          <td>Uplink / Downlink RF</td>
+          <td>Hundreds of Mbps</td>
+          <td>Global (long latency ~250ms)</td>
+          <td>Weather attenuation (rain fade)</td>
+          <td>Very High</td>
+          <td>Remote areas, Global GPS / WAN</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</body>
+</html>
