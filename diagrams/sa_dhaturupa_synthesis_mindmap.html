@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="sa">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 600px;
+    background: #FFFFFF;
+    font-family: "Kohinoor Devanagari", "Devanagari Sangam MN", -apple-system, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 19px;
+    font-weight: 800;
+    color: #071A4D;
+    letter-spacing: -0.01em;
+  }
+  .title-block p {
+    font-size: 11.5px;
+    color: #64748B;
+    margin-top: 2px;
+    font-weight: 600;
+  }
+  .badge {
+    background: #EEF1F8;
+    color: #1F5EFF;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 700;
+    border: 1px solid #C7D7FE;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .map-wrapper {
+    position: relative;
+    flex-grow: 1;
+    margin: 12px 0;
+    background: #FAFCFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .svg-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+  }
+  .nodes-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 16px;
+    padding: 16px 20px;
+    z-index: 2;
+  }
+  .node-card {
+    background: #FFFFFF;
+    border: 1.5px solid #CBD5E1;
+    border-radius: 8px;
+    padding: 10px 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+  }
+  .top-left { border-top: 3px solid #1F5EFF; }
+  .top-mid { border-top: 3px solid #0EA5E9; }
+  .top-right { border-top: 3px solid #10B981; }
+  .bot-left { border-bottom: 3px solid #F59E0B; }
+  .bot-mid { border-bottom: 3px solid #EF4444; }
+  .bot-right { border-bottom: 3px solid #8B5CF6; }
+  .node-title {
+    font-size: 11.5px;
+    font-weight: 800;
+    color: #071A4D;
+    margin-bottom: 3px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .node-desc {
+    font-size: 10px;
+    color: #475569;
+    line-height: 1.4;
+    flex-grow: 1;
+  }
+  .node-tags {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+    margin-top: 5px;
+  }
+  .tag {
+    background: #F1F5F9;
+    color: #334155;
+    font-size: 9px;
+    font-weight: 700;
+    padding: 2px 5px;
+    border-radius: 4px;
+  }
+  .hub {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #071A4D;
+    color: #FFFFFF;
+    border: 3px solid #1F5EFF;
+    border-radius: 12px;
+    padding: 12px 18px;
+    text-align: center;
+    width: 250px;
+    box-shadow: 0 8px 20px rgba(7, 26, 77, 0.25);
+    z-index: 3;
+  }
+  .hub-title {
+    font-size: 13.5px;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    color: #FFFFFF;
+  }
+  .hub-subtitle {
+    font-size: 9.5px;
+    color: #93C5FD;
+    font-weight: 600;
+    margin-top: 2px;
+  }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 8px;
+    font-size: 11px;
+    color: #64748B;
+  }
+  .footer-brand {
+    font-weight: 700;
+    color: #071A4D;
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <div class="title-block">
+      <h1>संस्कृत-धातुरूपाणि लकारप्रयोगाः च · महामानचित्रम्</h1>
+      <p>परस्मैपद · आत्मनेपद · उभयपद · पञ्चलकार-रूपाणां वाक्यान्वयस्य च समग्र-सङ्कलनम् · CUET UG संस्कृतम् (Code 325)</p>
+    </div>
+    <div class="badge">चित्रम् ३ · समग्र-मानचित्रम्</div>
+  </div>
+
+  <div class="map-wrapper">
+    <!-- SVG Connection Lines -->
+    <svg class="svg-lines" width="100%" height="100%">
+      <line x1="280" y1="130" x2="400" y2="230" stroke="#CBD5E1" stroke-width="2" stroke-dasharray="4 4" />
+      <line x1="500" y1="170" x2="500" y2="220" stroke="#CBD5E1" stroke-width="2" stroke-dasharray="4 4" />
+      <line x1="720" y1="130" x2="600" y2="230" stroke="#CBD5E1" stroke-width="2" stroke-dasharray="4 4" />
+      <line x1="280" y1="360" x2="400" y2="280" stroke="#CBD5E1" stroke-width="2" stroke-dasharray="4 4" />
+      <line x1="500" y1="340" x2="500" y2="290" stroke="#CBD5E1" stroke-width="2" stroke-dasharray="4 4" />
+      <line x1="720" y1="360" x2="600" y2="280" stroke="#CBD5E1" stroke-width="2" stroke-dasharray="4 4" />
+    </svg>
+
+    <!-- 6 Nodes Grid -->
+    <div class="nodes-grid">
+      <!-- Node 1: Top Left -->
+      <div class="node-card top-left">
+        <div class="node-title">१. परस्मैपदि-धातवः (सामान्य-रूपाणि)</div>
+        <div class="node-desc">भू (भवति), गम् (गच्छति / लृटि गमिष्यति), पा (पिबति / पास्यति), स्था (तिष्ठति / स्थास्यति), दृश् (पश्यति / द्रक्ष्यति), नम् (नमति / नंस्यति), हस्, धाव्, लिख्, जीव्, पठ्; तिप्-तस्-झि प्रत्यय-संयोजनम्।</div>
+        <div class="node-tags">
+          <span class="tag">भू/गम्</span>
+          <span class="tag">पा/स्था</span>
+          <span class="tag">दृश्/नम्</span>
+          <span class="tag">तिप्-तस्-झि</span>
+        </div>
+      </div>
+
+      <!-- Node 2: Top Mid -->
+      <div class="node-card top-mid">
+        <div class="node-title">२. विशिष्टाः क्लिष्टाः परस्मैपदिनः</div>
+        <div class="node-desc">अस् (अस्ति, स्तः, सन्ति; आसीत्, स्यात्; लृटि भविष्यति); श्रु (शृणोति, शृणुतः, शृण्वन्ति; अशृणोत्, शृणुयात्); आप् (आप्नोति); शक् (शक्नोति); ज्ञा (जानाति, जानीतः, जानन्ति; अजानात्; जानीयात्); प्रच्छ् (पृच्छति / प्रक्ष्यति)।</div>
+        <div class="node-tags">
+          <span class="tag">अस् (अस्ति)</span>
+          <span class="tag">ज्ञा (जानाति)</span>
+          <span class="tag">श्रु (शृणोति)</span>
+          <span class="tag">शक् (शक्नोति)</span>
+        </div>
+      </div>
+
+      <!-- Node 3: Top Right -->
+      <div class="node-card top-right">
+        <div class="node-title">३. आत्मनेपदि-धातवः</div>
+        <div class="node-desc">लभ् (लभते, लभेते, लभन्ते; अलभत; लभताम्; लभेत; लप्स्यते); सेव् (सेवते; सेविष्यते); वन्द् (वन्दते); याच् (याचते); रुच् (रोचते / रोचिष्यते); वृत् (वर्तते); जन् (जायते; जनिष्यते); त-आथाम्-झ प्रत्यय-व्यवस्था।</div>
+        <div class="node-tags">
+          <span class="tag">लभ् (लभते)</span>
+          <span class="tag">सेव् (सेवते)</span>
+          <span class="tag">रुच् (रोचते)</span>
+          <span class="tag">जन् (जायते)</span>
+        </div>
+      </div>
+
+      <!-- Node 4: Bot Left -->
+      <div class="node-card bot-left">
+        <div class="node-title">४. उभयपदि-धातवः</div>
+        <div class="node-desc">कृ (करोति / कुरुते; अकरोत् / अकुरुत; करिष्यति / करिष्यते; करोतु / कुरुताम्; कुर्यात् / कुर्वीत); नी (नयति / नयते); पच् (पचति / पचते); दा (यच्छति / ददाति / दत्ते); भज् (भजति / भजते); क्रियाफल-स्वामित्व-भेदः।</div>
+        <div class="node-tags">
+          <span class="tag">कृ (करोति/कुरुते)</span>
+          <span class="tag">नी (नयति/नयते)</span>
+          <span class="tag">पच् (पचति/पचते)</span>
+          <span class="tag">दा (ददाति/दत्ते)</span>
+        </div>
+      </div>
+
+      <!-- Node 5: Bot Mid -->
+      <div class="node-card bot-mid">
+        <div class="node-title">५. पञ्च-लकार-व्यवस्था</div>
+        <div class="node-desc">लट् (वर्तमाने: पठति); लृट् (भविष्यति: पठिष्यति); लङ् (अनद्यतन-भूते: अपठत्, अडागमः); लोट् (आज्ञार्थे: पठतु, पठ); विधिलिङ् (कर्त्तव्ये: पठेत्); 'स्म' प्रयोगः (पठति स्म = अपठत्; लट् क्रिया भूतकाल-वाचिका भवति)।</div>
+        <div class="node-tags">
+          <span class="tag">लट् वर्तमान</span>
+          <span class="tag">लृट् भविष्यत्</span>
+          <span class="tag">लङ् भूतकाल</span>
+          <span class="tag">स्म प्रयोगः</span>
+        </div>
+      </div>
+
+      <!-- Node 6: Bot Right -->
+      <div class="node-card bot-right">
+        <div class="node-title">६. पुरुष-वचन-सङ्गतिः भ्रमाः च</div>
+        <div class="node-desc">प्रथमपुरुषः (सः/सा/भवत्); मध्यमपुरुषः (त्वम्/युवाम्/यूयम्); उत्तमपुरुषः (अहम्/आवाम्/वयम्); लृट् लकारे विकरण-लोपात् आदेश-निवृत्तिः (पा $\to$ पास्यति, दृश् $\to$ द्रक्ष्यति, स्था $\to$ स्थास्यति); कर्तृ-क्रिया-अन्वय-नियमाः।</div>
+        <div class="node-tags">
+          <span class="tag">पुरुष-सङ्गतिः</span>
+          <span class="tag">भवत् योगे प्रथमः</span>
+          <span class="tag">लृट् आदेश-लोपः</span>
+          <span class="tag">अन्वय-नियमः</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Center Hub -->
+    <div class="hub">
+      <div class="hub-title">संस्कृत-धातुरूपाणि</div>
+      <div class="hub-subtitle">पदत्रयम् · पञ्चलकाराः · वाक्यान्वयः</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div><strong>CUET प्रधान-सूत्रम्:</strong> शेषात् कर्तरि परस्मैपदम्; स्वरितञितः कर्त्रभिप्राये क्रियाफले; वर्तमाने लट्; लृट् शेषे च।</div>
+    <div class="footer-brand">OURMOCKS · संस्कृतम् (Code 325)</div>
+  </div>
+</body>
+</html>

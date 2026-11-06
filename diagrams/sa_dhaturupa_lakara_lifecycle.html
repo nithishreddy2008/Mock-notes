@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="sa">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 600px;
+    background: #FFFFFF;
+    font-family: "Kohinoor Devanagari", "Devanagari Sangam MN", -apple-system, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 19px;
+    font-weight: 800;
+    color: #071A4D;
+    letter-spacing: -0.01em;
+  }
+  .title-block p {
+    font-size: 11.5px;
+    color: #64748B;
+    margin-top: 2px;
+    font-weight: 600;
+  }
+  .badge {
+    background: #EEF1F8;
+    color: #1F5EFF;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .content-area {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin: 10px 0;
+    flex-grow: 1;
+  }
+  .section-label {
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #1E3A8A;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section-label::after {
+    content: "";
+    flex-grow: 1;
+    height: 1px;
+    background: #E2E8F0;
+  }
+  .grid-5 {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+  }
+  .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+  .card {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 9px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5px;
+  }
+  .step-num {
+    background: #071A4D;
+    color: #FFFFFF;
+    font-size: 10px;
+    font-weight: 800;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .step-title {
+    font-size: 12px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .step-subtitle {
+    font-size: 9.5px;
+    color: #1F5EFF;
+    font-weight: 700;
+    margin-bottom: 5px;
+  }
+  .card ul {
+    list-style: none;
+    font-size: 10px;
+    color: #475569;
+    line-height: 1.4;
+  }
+  .card ul li {
+    margin-bottom: 3px;
+    position: relative;
+    padding-left: 9px;
+  }
+  .card ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #1F5EFF;
+    font-weight: bold;
+  }
+  .purusha-card {
+    background: #F0FDF4;
+    border: 1px solid #BBF7D0;
+  }
+  .purusha-num {
+    background: #15803D;
+    color: white;
+  }
+  .purusha-title {
+    color: #166534;
+  }
+  .purusha-sub {
+    color: #15803D;
+  }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 8px;
+    font-size: 11px;
+    color: #64748B;
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <div class="title-block">
+      <h1>पञ्च-लकार-प्रयोग-प्रक्रिया पुरुष-वचन-सङ्गतिः च</h1>
+      <p>लट्, लृट्, लङ्, लोट्, विधिलिङ् इति पञ्चसु लकारेषु धातुरूपाणां कालार्थिकः प्रयोगः · CUET UG संस्कृतम् (Code 325)</p>
+    </div>
+    <div class="badge">चित्रम् २ · लकार-प्रयोग-प्रक्रिया</div>
+  </div>
+
+  <div class="content-area">
+    <div>
+      <div class="section-label">भागः क : पञ्चसु लकारेषु कालार्थ-विधानम् (पाणिनीय-सूत्राणि)</div>
+      <div class="grid-5" style="margin-top: 8px;">
+        <div class="card">
+          <div class="card-header">
+            <span class="step-title">१. लट् लकारः</span>
+            <span class="step-num">१</span>
+          </div>
+          <div class="step-subtitle">वर्तमानकालः</div>
+          <ul>
+            <li><strong>सूत्रम्:</strong> वर्तमाने लट् (३.२.१२३)</li>
+            <li>प्रवर्तमान-क्रियायाः बोधः</li>
+            <li>यथा- छात्रः ग्रन्थं पठति</li>
+            <li>प्रत्ययाः: अति, अतः, अन्ति</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <span class="step-title">२. लृट् लकारः</span>
+            <span class="step-num">२</span>
+          </div>
+          <div class="step-subtitle">भविष्यत्कालः</div>
+          <ul>
+            <li><strong>सूत्रम्:</strong> लृट् शेषे च (३.३.१३)</li>
+            <li>आगामि-क्रियायाः बोधः</li>
+            <li>यथा- सः श्वः गमिष्यति</li>
+            <li>प्रत्ययाः: इष्यति, स्यति</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <span class="step-title">३. लङ् लकारः</span>
+            <span class="step-num">३</span>
+          </div>
+          <div class="step-subtitle">अनद्यतन-भूतकालः</div>
+          <ul>
+            <li><strong>सूत्रम्:</strong> अनद्यतने लङ् (३.२.१११)</li>
+            <li>अद्यतनात् पूर्वतन-भूतकालः</li>
+            <li>यथा- रामः वनम् अगच्छत्</li>
+            <li>अडागमः (अ-), त्, ताम्, अन्</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <span class="step-title">४. लोट् लकारः</span>
+            <span class="step-num">४</span>
+          </div>
+          <div class="step-subtitle">आज्ञा / प्रार्थना</div>
+          <ul>
+            <li><strong>सूत्रम्:</strong> लोट् च (३.३.१६२)</li>
+            <li>आज्ञा, अनुमतिः, प्रार्थना</li>
+            <li>यथा- त्वं सत्यं वद, पठतु</li>
+            <li>प्रत्ययाः: तु, ताम्, अन्तु</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <span class="step-title">५. विधिलिङ्</span>
+            <span class="step-num">५</span>
+          </div>
+          <div class="step-subtitle">विधिः / सम्भावना</div>
+          <ul>
+            <li><strong>सूत्रम्:</strong> विधिनिमन्त्रण... (३.३.१६१)</li>
+            <li>उचितम्, कर्त्तव्यम्, सम्भावना</li>
+            <li>यथा- सदा धर्मं चरेत्</li>
+            <li>प्रत्ययाः: एत्, एताम्, एयुः</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="section-label" style="color: #166534;">भागः ख : पुरुष-वचन-सङ्गतिः व्याकरणिक-नियमाः च (Subject-Verb Agreement)</div>
+      <div class="grid-3" style="margin-top: 8px;">
+        <div class="card purusha-card">
+          <div class="card-header">
+            <span class="step-title purusha-title">प्रथमपुरुषः (अन्यपुरुषः)</span>
+            <span class="step-num purusha-num">१</span>
+          </div>
+          <div class="step-subtitle purusha-sub">सः, सा, तत्, बालकाः</div>
+          <ul>
+            <li>अस्मद्-युष्मद् वर्जयित्वा सर्वे संज्ञाशब्दाः सर्वनामानि च</li>
+            <li>सः गच्छति (एक.), तौ गच्छतः (द्वि.), ते गच्छन्ति (बहु.)</li>
+            <li>'भवत्' (आप) शब्दयोगे प्रथमपुरुषः एव (भवान् गच्छति)!</li>
+          </ul>
+        </div>
+        <div class="card purusha-card">
+          <div class="card-header">
+            <span class="step-title purusha-title">मध्यमपुरुषः (श्रोता)</span>
+            <span class="step-num purusha-num">२</span>
+          </div>
+          <div class="step-subtitle purusha-sub">त्वम्, युवाम्, यूयम्</div>
+          <ul>
+            <li>केवलम् 'युष्मद्' प्रातिपदिक-कर्तृकेषु वाक्येषु प्रयुज्यते</li>
+            <li>त्वं पठसि / पठ (एक.), युवां पठथः (द्वि.), यूयं पठथ (बहु.)</li>
+            <li>लोट् लकारे मध्यमपुरुषैकवचने प्रायः मूल-विकरणम् (कुरु, भव)</li>
+          </ul>
+        </div>
+        <div class="card purusha-card">
+          <div class="card-header">
+            <span class="step-title purusha-title">उत्तमपुरुषः (वक्ता)</span>
+            <span class="step-num purusha-num">३</span>
+          </div>
+          <div class="step-subtitle purusha-sub">अहम्, आवाम्, वयम्</div>
+          <ul>
+            <li>केवलम् 'अस्मद्' प्रातिपदिक-कर्तृकेषु वाक्येषु प्रयुज्यते</li>
+            <li>अहं लिखामि (एक.), आवां लिखावः (द्वि.), वयं लिखामः (बहु.)</li>
+            <li><strong>'स्म' नियमः:</strong> लट्-क्रिया + स्म = भूतकालः (यथा- पठति स्म = अपठत्)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>OurMocks CUET Architecture v2.6 · तिङन्त-लकार-नियमावलिः</span>
+    <span>नियमः: "कर्तरि प्रथमपुरुष-मध्यमपुरुष-उत्तमपुरुषाणां युगपद्-प्रयोगे उत्तमपुरुषस्य प्राधान्यम्" (यथा- सः, त्वम्, अहं च गच्छामः)</span>
+  </div>
+</body>
+</html>

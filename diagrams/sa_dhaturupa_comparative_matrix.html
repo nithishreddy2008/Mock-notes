@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="sa">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 600px;
+    background: #FFFFFF;
+    font-family: "Kohinoor Devanagari", "Devanagari Sangam MN", -apple-system, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #071A4D;
+    letter-spacing: -0.01em;
+  }
+  .title-block p {
+    font-size: 12px;
+    color: #64748B;
+    margin-top: 3px;
+    font-weight: 600;
+  }
+  .badge {
+    background: #EEF1F8;
+    color: #1F5EFF;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .table-container {
+    flex-grow: 1;
+    margin: 16px 0;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  table {
+    width: 100%;
+    height: 100%;
+    border-collapse: collapse;
+    font-size: 11.5px;
+    table-layout: fixed;
+  }
+  th {
+    background: #F8FAFC;
+    color: #071A4D;
+    padding: 10px 12px;
+    text-align: left;
+    font-weight: 700;
+    font-size: 11.5px;
+    border-bottom: 2px solid #CBD5E1;
+    border-right: 1px solid #E2E8F0;
+  }
+  th:last-child { border-right: none; }
+  td {
+    padding: 8px 12px;
+    border-bottom: 1px solid #E2E8F0;
+    border-right: 1px solid #E2E8F0;
+    vertical-align: middle;
+    line-height: 1.4;
+    color: #334155;
+  }
+  td:last-child { border-right: none; }
+  tr:last-child td { border-bottom: none; }
+  tr:nth-child(even) td { background: #FAFBFD; }
+  .param-col {
+    font-weight: 700;
+    color: #071A4D;
+    background: #F1F5F9 !important;
+    width: 17%;
+  }
+  .para-col { width: 28%; font-weight: 600; color: #1E3A8A; }
+  .atma-col { width: 28%; color: #0F172A; }
+  .ubha-col { width: 27%; color: #047857; }
+  .tag {
+    display: inline-block;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 700;
+    margin-bottom: 3px;
+  }
+  .tag-para { background: #DBEAFE; color: #1E40AF; }
+  .tag-atma { background: #FEF3C7; color: #92400E; }
+  .tag-ubha { background: #DCFCE7; color: #166534; }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 8px;
+    font-size: 11px;
+    color: #64748B;
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <div class="title-block">
+      <h1>संस्कृत-धातुरूप-संरचना-तुलनात्मक-फलकम् (पदत्रय-व्यवस्था)</h1>
+      <p>परस्मैपद-आत्मनेपद-उभयपद-प्रक्रियाणां प्रत्यय-सङ्घटना-दृष्ट्या विश्लेषणम् · CUET UG संस्कृतम् (Code 325)</p>
+    </div>
+    <div class="badge">चित्रम् १ · सङ्कल्पना-व्यूहः</div>
+  </div>
+
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 17%;">मानदण्डः (Dimension)</th>
+          <th style="width: 28%;">परस्मैपदिनः धातवः</th>
+          <th style="width: 28%;">आत्मनेपदिनः धातवः</th>
+          <th style="width: 27%;">उभयपदिनः धातवः</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="param-col">फलभागित्वम् (व्याकरणार्थः)</td>
+          <td><span class="tag tag-para">परस्मै फलम्</span><br>क्रियायाः फलं यदा अन्यस्मै भवति (परगामिनि फले)। सूत्रम्- <em>'शेषात् कर्तरि परस्मैपदम्'</em> (१.३.७८)।</td>
+          <td><span class="tag tag-atma">आत्मने फलम्</span><br>क्रियायाः फलं यदा साक्षात् कर्त्रे भवति (आत्मगामिनि फले)। सूत्रम्- <em>'स्वरितञितः कर्त्रभिप्राये क्रियाफले'</em> (१.३.७२)।</td>
+          <td><span class="tag tag-ubha">उभयगामि फलम्</span><br>कर्तृगामिनि परगामिनि वा क्रियाफले पदद्वयस्य प्रवृत्त्या उभयत्र रूपाणि भवन्ति।</td>
+        </tr>
+        <tr>
+          <td class="param-col">तिङ्-प्रत्ययाः (९ + ९ = १८)</td>
+          <td><span class="tag tag-para">तिप्-तस्-झि...</span><br>तिप्, तस्, झि (अन्ति), सिप्, थस्, थ, मिप्, वस्, मस् (नव प्रत्ययाः परस्मैपदे)।</td>
+          <td><span class="tag tag-atma">त-आथाम्-झ...</span><br>त, आताम्, झ (अन्त), थास्, आथाम्, ध्वम्, इट्, वहि, महिङ् (नव प्रत्ययाः आत्मनेपदे)।</td>
+          <td><span class="tag tag-ubha">अष्टादश (१८) प्रत्ययाः</span><br>उभये १८ प्रत्ययाः प्रयुज्यन्ते (यथा- करोति / कुरुते; नयति / नयते; पचति / पचते)।</td>
+        </tr>
+        <tr>
+          <td class="param-col">प्रतिनिधि-धातवः (CUET)</td>
+          <td><span class="tag tag-para">भू, गम्, दृश्, स्था</span><br>भू (भवति), गम् (गच्छति), अस् (अस्ति), नम् (नमति), पा (पिबति), स्था (तिष्ठति), दृश् (पश्यति), शक्, इष्।</td>
+          <td><span class="tag tag-atma">लभ्, सेव्, वन्द्</span><br>लभ् (लभते), सेव् (सेवते), वन्द् (वन्दते), याच् (याचते), रुच् (रोचते), वृत् (वर्तते), जन् (जायते)।</td>
+          <td><span class="tag tag-ubha">कृ, नी, पच्, दा</span><br>कृ (करोति / कुरुते), नी (नयति / नयते), पच् (पचति / पचते), भज् (भजति / भजते)।</td>
+        </tr>
+        <tr>
+          <td class="param-col">लकार-व्याप्तिः (५ लकाराः)</td>
+          <td><span class="tag tag-para">पञ्चसु लकारेषु</span><br>लट् (गच्छति), लृट् (गमिष्यति), लङ् (अगच्छत्), लोट् (गच्छतु), विधिलिङ् (गच्छेत्)।</td>
+          <td><span class="tag tag-atma">पञ्चसु लकारेषु</span><br>लट् (लभते), लृट् (लप्स्यते), लङ् (अलभत), लोट् (लभताम्), विधिलिङ् (लभेत)।</td>
+          <td><span class="tag tag-ubha">उभयत्र पञ्चसु लकारेषु</span><br>लट् (करोति/कुरुते), लृट् (करिष्यति/करिष्यते), लङ् (अकरोत्/अकुरुत), लोट्, विधिलिङ्।</td>
+        </tr>
+        <tr>
+          <td class="param-col">CUET परीक्षा-भ्रमाः</td>
+          <td><span class="tag tag-para">आदेश-भ्रमाः</span><br>पा $\to$ पिब्, स्था $\to$ तिष्ठ्, गम् $\to$ गच्छ् लट्/लोट्/लङ्/विधिलिङ्गेषु, किन्तु लृटि मूलधातुः (पास्यति, स्थास्यति, गमिष्यति)!</td>
+          <td><span class="tag tag-atma">इट् & इकार-भ्रमः</span><br>उत्तमपुरुषैकवचने 'लभे' (लट्), 'अलभे' (लङ्), 'लभेय' (विधिलिङ्)। 'रोचते' योगे चतुर्थ्याः प्रयोगः।</td>
+          <td><span class="tag tag-ubha">कर्तरि/कर्मणि भेदः</span><br>कर्मवाच्ये सर्वे धातवः आत्मनेपदिनः भवन्ति (यथा- गम्यते, क्रियते, पठ्यते)।</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="footer">
+    <span>OurMocks CUET Architecture v2.6 · संस्कृत-व्याकरण-मानकम्</span>
+    <span>पाणिनीय-अष्टाध्यायी (तिङन्त-प्रकरणम् · लः परस्मैपदम् · तङानावात्मनेपदम्)</span>
+  </div>
+</body>
+</html>
