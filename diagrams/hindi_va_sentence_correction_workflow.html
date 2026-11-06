@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 600px;
+    background: #FFFFFF;
+    font-family: -apple-system, BlinkMacSystemFont, "Kohinoor Devanagari", "Devanagari Sangam MN", "Segoe UI", Roboto, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #1E3A8A;
+    letter-spacing: -0.01em;
+  }
+  .title-block p {
+    font-size: 11px;
+    color: #64748B;
+    margin-top: 3px;
+    font-weight: 500;
+  }
+  .badge {
+    background: #F0FDF4;
+    color: #166534;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 700;
+    border: 1px solid #BBF7D0;
+    text-transform: uppercase;
+  }
+  .process-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 12px;
+    margin: 16px 0;
+    flex: 1;
+  }
+  .step-card {
+    flex: 1;
+    background: #F8FAFC;
+    border: 1.5pt solid #CBD5E1;
+    border-radius: 8px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  .step-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #E2E8F0;
+    padding-bottom: 6px;
+  }
+  .step-num {
+    width: 24px;
+    height: 24px;
+    background: #071A4D;
+    color: #B8FF34;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 800;
+  }
+  .step-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #071A4D;
+  }
+  .step-action {
+    font-size: 10.5px;
+    color: #1E293B;
+    line-height: 1.4;
+    margin-bottom: 8px;
+  }
+  .step-tip {
+    background: #EFF6FF;
+    border-left: 3px solid #1F5EFF;
+    padding: 6px 8px;
+    border-radius: 4px;
+    font-size: 9.5px;
+    color: #1E40AF;
+    line-height: 1.35;
+    margin-top: auto;
+  }
+  .step-trap {
+    background: #FEF2F2;
+    border-left: 3px solid #DC2626;
+    padding: 6px 8px;
+    border-radius: 4px;
+    font-size: 9.5px;
+    color: #991B1B;
+    line-height: 1.35;
+    margin-top: 6px;
+  }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 10px;
+    font-size: 10px;
+    color: #64748B;
+  }
+  .footer strong { color: #071A4D; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="title-block">
+    <h1>चित्र 2: वाक्य शुद्धि एवं वाक्य पुनर्व्यवस्था का 5-चरणीय संज्ञान चक्र</h1>
+    <p>पदक्रम, अन्वय, कारक-संगति, पुनरुक्ति निवारण एवं पैरा जंबल्स समाधान की परीक्षा-प्रमाणित विधि</p>
+  </div>
+  <div class="badge">कार्यप्रणाली चक्र · CUET UG 102</div>
+</div>
+
+<div class="process-container">
+  <div class="step-card">
+    <div class="step-header">
+      <div class="step-num">1</div>
+      <div class="step-title">पदक्रम (Word Order)</div>
+    </div>
+    <div class="step-action">
+      हिंदी वाक्य के मूल ढाँचे की जाँच करें: <strong>[कर्ता $ \rightarrow $ कर्म $ \rightarrow $ पूरक $ \rightarrow $ क्रिया]</strong>। विशेषण विशेष्य से पूर्व तथा क्रिया-विशेषण क्रिया से पूर्व आए।
+    </div>
+    <div class="step-tip">
+      <strong>नियम:</strong> 'यहाँ शुद्ध गाय का दूध मिलता है' गलत है; सही होगा: 'यहाँ गाय का शुद्ध दूध मिलता है'।
+    </div>
+    <div class="step-trap">
+      <strong>CUET ट्रैप:</strong> 'केवल' या 'भी' जैसे निपातों का गलत स्थान पर प्रयोग अर्थ का अनर्थ कर देता है।
+    </div>
+  </div>
+
+  <div class="step-card">
+    <div class="step-header">
+      <div class="step-num">2</div>
+      <div class="step-title">अन्वय व लिंग-वचन</div>
+    </div>
+    <div class="step-action">
+      कर्ता और क्रिया के मध्य लिंग, वचन और पुरुष की संगति परखें। आदरार्थ एकवचन में भी बहुवचन क्रिया लगती है।
+    </div>
+    <div class="step-tip">
+      <strong>नियम:</strong> 'पिताजी आ रहा है' गलत; 'पिताजी आ रहे हैं' शुद्ध। अनेक कर्ता 'और' से जुड़ें तो क्रिया पुल्लिंग बहुवचन होगी।
+    </div>
+    <div class="step-trap">
+      <strong>CUET ट्रैप:</strong> 'अनेकों लोग आए' गलत है; 'अनेक' स्वयं में बहुवचन है, अतः 'अनेक लोग आए' शुद्ध है।
+    </div>
+  </div>
+
+  <div class="step-card">
+    <div class="step-header">
+      <div class="step-num">3</div>
+      <div class="step-title">कारक व 'ने' का प्रयोग</div>
+    </div>
+    <div class="step-action">
+      सकर्मक क्रिया के भूतकाल में कर्ता के साथ 'ने' का अनिवार्य प्रयोग। इस स्थिति में क्रिया कर्म के लिंग-वचन अनुसार होगी।
+    </div>
+    <div class="step-tip">
+      <strong>नियम:</strong> 'राम ने रोटी खाया' गलत; 'रोटी' स्त्रीलिंग है, अतः 'राम ने रोटी खाई' शुद्ध रूप है।
+    </div>
+    <div class="step-trap">
+      <strong>CUET ट्रैप:</strong> अकर्मक क्रिया (हँसना, रोना, सोना, चलना) के भूतकाल में कभी भी 'ने' नहीं लगता।
+    </div>
+  </div>
+
+  <div class="step-card">
+    <div class="step-header">
+      <div class="step-num">4</div>
+      <div class="step-title">पुनरुक्ति दोष निवारण</div>
+    </div>
+    <div class="step-action">
+      वाक्य में एक ही अर्थ प्रकट करने वाले दो शब्दों के अनावश्यक प्रयोग (Redundancy) को पहचान कर हटाएं।
+    </div>
+    <div class="step-tip">
+      <strong>नियम:</strong> 'केवल मात्र ₹10' गलत $ \rightarrow $ 'केवल ₹10' शुद्ध। 'सकुशलपूर्वक' गलत $ \rightarrow $ 'सकुशल' शुद्ध।
+    </div>
+    <div class="step-trap">
+      <strong>CUET ट्रैप:</strong> 'कृपया मुझे अवकाश देने की कृपा करें' में 'कृपया' व 'कृपा' की पुनरुक्ति भारी अशुद्धि है।
+    </div>
+  </div>
+
+  <div class="step-card">
+    <div class="step-header">
+      <div class="step-num">5</div>
+      <div class="step-title">वाक्य पुनर्व्यवस्था</div>
+    </div>
+    <div class="step-action">
+      पैरा जंबल्स (P, Q, R, S) में स्वतंत्र आरंभिक वाक्य (संज्ञा/अवधारणा) खोजें, फिर सर्वनाम व योजक से क्रम बैठाएं।
+    </div>
+    <div class="step-tip">
+      <strong>नियम:</strong> 'किंतु', 'अतः', 'इस प्रकार' से वाक्य प्रारंभ नहीं होता। वे मध्यवर्ती या अंतिम निष्कर्ष होते हैं।
+    </div>
+    <div class="step-trap">
+      <strong>CUET ट्रैप:</strong> सीधे विकल्पों (A-B-C-D) का मिलान करके 30 सेकंड में गलत क्रम को काटें।
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <span>सीयूईटी यूजी हिंदी (कोड 102) · <strong>अध्याय 2: मौखिक क्षमता, व्याकरण एवं शब्द संपदा</strong></span>
+  <span>OURMOCKS · www.ourmocks.com · 2027 मानक संस्करण</span>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 600px;
+    background: #FFFFFF;
+    font-family: -apple-system, BlinkMacSystemFont, "Kohinoor Devanagari", "Devanagari Sangam MN", "Segoe UI", Roboto, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #1E3A8A;
+    letter-spacing: -0.01em;
+  }
+  .title-block p {
+    font-size: 11px;
+    color: #64748B;
+    margin-top: 3px;
+    font-weight: 500;
+  }
+  .badge {
+    background: #EFF6FF;
+    color: #1D4ED8;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 700;
+    border: 1px solid #BFDBFE;
+    text-transform: uppercase;
+  }
+  .matrix-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 14px;
+  }
+  .matrix-table th {
+    background: #071A4D;
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 9px 10px;
+    text-align: left;
+    border: 1px solid #071A4D;
+  }
+  .matrix-table td {
+    padding: 7px 10px;
+    font-size: 10px;
+    line-height: 1.35;
+    border: 1px solid #CBD5E1;
+    vertical-align: top;
+  }
+  .matrix-table tr:nth-child(even) {
+    background: #F8FAFC;
+  }
+  .cat-cell {
+    font-weight: 700;
+    color: #0F172A;
+    background: #F1F5F9;
+    width: 14%;
+  }
+  .badge-tag {
+    display: inline-block;
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-size: 9px;
+    font-weight: 700;
+    margin-bottom: 2px;
+  }
+  .tag-swar { background: #DBEAFE; color: #1E40AF; }
+  .tag-vyanjan { background: #FEF3C7; color: #92400E; }
+  .tag-visarga { background: #F3E8FF; color: #6B21A8; }
+  .tag-samas { background: #DCFCE7; color: #166534; }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 8px;
+    font-size: 10px;
+    color: #64748B;
+  }
+  .footer strong { color: #071A4D; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="title-block">
+    <h1>चित्र 1: संधि एवं समास — संरचनात्मक नियम, भेद एवं परीक्षा-सूत्र मैट्रिक्स</h1>
+    <p>CUET UG हिंदी में सर्वाधिक पूछे जाने वाले संधि-विच्छेद एवं समास-विग्रह के अनिवार्य नियम</p>
+  </div>
+  <div class="badge">व्याकरण मैट्रिक्स · CUET UG 102</div>
+</div>
+
+<table class="matrix-table">
+  <thead>
+    <tr>
+      <th style="width: 14%;">व्याकरणिक कोटि</th>
+      <th style="width: 22%;"><span class="badge-tag tag-swar">मूल परिभाषा व पहचान</span></th>
+      <th style="width: 32%;">परिवर्तन सूत्र / बीजगणितीय नियम</th>
+      <th style="width: 32%;">CUET उच्च-प्राथमिकता उदाहरण</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="cat-cell">स्वर संधि (5 भेद)</td>
+      <td>दो स्वरों के मेल से होने वाला ध्वनि विकार।</td>
+      <td>
+        • दीर्घ: अ/आ + अ/आ = आ, इ/ई + इ/ई = ई<br>
+        • गुण: अ/आ + इ/ई = ए, + उ/ऊ = ओ, + ऋ = अर्<br>
+        • वृद्धि: अ/आ + ए/ऐ = ऐ, + ओ/औ = औ<br>
+        • यण: इ/ई + भिन्न = य्, उ/ऊ + भिन्न = व्, ऋ = र्<br>
+        • अयादि: ए = अय्, ऐ = आय्, ओ = अव्, औ = आव्
+      </td>
+      <td>
+        • विद्या + आलय = विद्यालय (दीर्घ)<br>
+        • देव + इंद्र = देवेंद्र, महा + ऋषि = महर्षि (गुण)<br>
+        • मत + ऐक्य = मतैक्य, वन + औषधि = वनौषधि (वृद्धि)<br>
+        • यदि + अपि = यद्यपि, अनु + अय = अन्वय (यण)<br>
+        • ने + अन = नयन, पौ + अक = पावक (अयादि)
+      </td>
+    </tr>
+    <tr>
+      <td class="cat-cell">व्यंजन संधि</td>
+      <td>व्यंजन का व्यंजन या स्वर से मेल होने पर विकार।</td>
+      <td>
+        • वर्ग के 1ले वर्ण का 3रे में परिवर्तन: क्/त्/प् + घोष = ग्/द्/ब्<br>
+        • वर्ग के 1ले वर्ण का 5वें में परिवर्तन: क्/त् + न्/म् = ङ्/न्<br>
+        • त्-संबंधी नियम: त् + च् = च्च, त् + ज् = ज्ज, त् + ल् = ल्ल
+      </td>
+      <td>
+        • दिक् + अंत = दिगंत, वाक् + ईश = वागीश<br>
+        • उत् + नति = उन्नति, जगत् + नाथ = जगन्नाथ<br>
+        • उत् + चारण = उच्चारण, उत् + ज्वल = उज्ज्वल<br>
+        • तत् + लीन = तल्लीन, सत् + जन = सज्जन
+      </td>
+    </tr>
+    <tr>
+      <td class="cat-cell">विसर्ग संधि</td>
+      <td>विसर्ग (:) के साथ स्वर या व्यंजन के मेल पर विकार।</td>
+      <td>
+        • विसर्ग का 'ओ': अः + घोष व्यंजन = ओ<br>
+        • विसर्ग का 'र्': अ/आ से भिन्न स्वर + विसर्ग + घोष = र्<br>
+        • विसर्ग का 'श्/ष्/स्': विसर्ग + च्/छ् = श्, + ट्/ठ् = ष्, + त्/थ् = स्
+      </td>
+      <td>
+        • मनः + योग = मनोयोग, तपः + वन = तपोवन<br>
+        • निः + धन = निर्धन, दुः + बल = दुर्बल<br>
+        • निः + चल = निश्चल, धनुः + टंकार = धनुष्टंकार<br>
+        • नमः + ते = नमस्ते, निः + संतान = निस्संतान
+      </td>
+    </tr>
+    <tr>
+      <td class="cat-cell">समास (6 भेद)</td>
+      <td>दो या अधिक पदों का विभक्ति-लोप द्वारा संक्षिप्त रूप।</td>
+      <td>
+        • अव्ययीभाव: पूर्वपद प्रधान व अव्यय (यथा-, प्रति-, आ-)<br>
+        • तत्पुरुष: उत्तरपद प्रधान, कारक विभक्तियों का लोप<br>
+        • कर्मधारय: विशेषण-विशेष्य या उपमान-उपमेय संबंध<br>
+        • द्विगु: पूर्वपद संख्यावाचक, समूह/समाहार का बोध<br>
+        • द्वंद्व: दोनों पद प्रधान, योजक 'और', 'या' का लोप<br>
+        • बहुव्रीहि: दोनों पद अप्रधान, तीसरा सांकेतिक अर्थ प्रधान
+      </td>
+      <td>
+        • आजन्म (जन्म भर), यथाशक्ति (शक्ति के अनुसार)<br>
+        • राजपुत्र (राजा का पुत्र), रोगमुक्त (रोग से मुक्त)<br>
+        • चरणकमल (कमल रूपी चरण), नीलगगन<br>
+        • पंचवटी (पाँच वटों का समाहार), चौराहा<br>
+        • माता-पिता (माता और पिता), सुख-दुख<br>
+        • चक्रपाणि (विष्णु), पीतांबर (श्रीकृष्ण), दशानन (रावण)
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="footer">
+  <span>सीयूईटी यूजी हिंदी (कोड 102) · <strong>अध्याय 2: मौखिक क्षमता, व्याकरण एवं शब्द संपदा</strong></span>
+  <span>OURMOCKS · www.ourmocks.com · 2027 मानक संस्करण</span>
+</div>
+
+</body>
+</html>

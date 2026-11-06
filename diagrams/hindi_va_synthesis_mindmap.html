@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 750px;
+    background: #FFFFFF;
+    font-family: -apple-system, BlinkMacSystemFont, "Kohinoor Devanagari", "Devanagari Sangam MN", "Segoe UI", Roboto, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #1E3A8A;
+    letter-spacing: -0.01em;
+  }
+  .title-block p {
+    font-size: 11px;
+    color: #64748B;
+    margin-top: 3px;
+    font-weight: 500;
+  }
+  .badge {
+    background: #FDF2F8;
+    color: #DB2777;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 700;
+    border: 1px solid #FBCFE8;
+    text-transform: uppercase;
+  }
+  .mindmap-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 12px;
+    margin: 12px 0;
+    height: 605px;
+  }
+  .branch-card {
+    border: 1.5px solid #CBD5E1;
+    border-radius: 8px;
+    padding: 11px;
+    background: #F8FAFC;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .b-blue { border-color: #3B82F6; background: #EFF6FF; }
+  .b-emerald { border-color: #10B981; background: #ECFDF5; }
+  .b-purple { border-color: #8B5CF6; background: #F5F3FF; }
+  .b-amber { border-color: #F59E0B; background: #FFFBEB; }
+  .b-rose { border-color: #F43F5E; background: #FFF1F2; }
+  .b-cyan { border-color: #06B6D4; background: #ECFEFF; }
+  .branch-title {
+    font-size: 12.5px;
+    font-weight: 800;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .branch-items {
+    list-style: none;
+    font-size: 10px;
+    line-height: 1.45;
+    color: #334155;
+  }
+  .branch-items li {
+    margin-bottom: 4px;
+    position: relative;
+    padding-left: 13px;
+  }
+  .branch-items li::before {
+    content: "•";
+    position: absolute;
+    left: 2px;
+    color: #1E3A8A;
+    font-weight: bold;
+    font-size: 13px;
+    top: -2px;
+  }
+  .branch-items strong {
+    color: #0F172A;
+  }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 8px;
+    font-size: 9.5px;
+    color: #94A3B8;
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="title-block">
+    <h1>चित्र 3: संपूर्ण संश्लेषण माइंडमैप — मौखिक क्षमता, व्याकरण एवं शब्द संपदा</h1>
+    <p>वाक्य पुनर्व्यवस्था, वाक्य-शुद्धि, संधि, समास, शब्द-भेद, पर्यायवाची, विलोम, मुहावरे एवं वर्तनी</p>
+  </div>
+  <div class="badge">संश्लेषण माइंडमैप · CUET UG 102</div>
+</div>
+
+<div class="mindmap-container">
+  <div class="branch-card b-blue">
+    <div class="branch-title" style="color: #1E40AF;">
+      <span>🔀</span> 1. मौखिक क्षमता एवं वाक्य पुनर्व्यवस्था
+    </div>
+    <ul class="branch-items">
+      <li><strong>पदक्रम के बुनियादी नियम:</strong> कर्ता $ \rightarrow $ कर्म $ \rightarrow $ पूरक $ \rightarrow $ क्रिया। विशेषण विशेष्य से पहले आता है।</li>
+      <li><strong>स्वतंत्र वाक्य पहचान:</strong> पैराजंबल्स का आरंभिक वाक्य सामान्यतः संज्ञा, परिभाषा या काल-संदर्भ होता है।</li>
+      <li><strong>सर्वनाम-संज्ञा मिलान:</strong> 'यह', 'वह', 'उन्होंने' जैसे सर्वनाम पूर्ववर्ती संज्ञा के बाद ही आएँगे।</li>
+      <li><strong>तार्किक योजक (Connectors):</strong> 'किंतु', 'अतः', 'परिणामतः' मध्यवर्ती अथवा निष्कर्ष वाक्य बनाते हैं।</li>
+    </ul>
+  </div>
+
+  <div class="branch-card b-emerald">
+    <div class="branch-title" style="color: #065F46;">
+      <span>⚖️</span> 2. वाक्य शुद्धि एवं अन्वय (Concord)
+    </div>
+    <ul class="branch-items">
+      <li><strong>लिंग व वचन दोष:</strong> 'अनेकों' के स्थान पर सदैव 'अनेक' का प्रयोग; 'दही', 'पानी', 'घी' पुल्लिंग हैं।</li>
+      <li><strong>कारक व 'ने' का नियम:</strong> केवल सकर्मक क्रियाओं के भूतकाल में कर्ता के साथ 'ने' का प्रयोग होता है।</li>
+      <li><strong>कर्मानुसार क्रिया:</strong> 'ने' लगने पर क्रिया कर्म के लिंग-वचन अनुसार (उदा. राम ने पुस्तक पढ़ी)।</li>
+      <li><strong>पुनरुक्ति निवारण:</strong> 'केवल मात्र', 'सकुशलपूर्वक', 'कृपया कृपा करें' जैसी अनावश्यक पुनरुक्ति अशुद्ध।</li>
+    </ul>
+  </div>
+
+  <div class="branch-card b-purple">
+    <div class="branch-title" style="color: #5B21B6;">
+      <span>🔗</span> 3. संधि एवं संधि-विच्छेद
+    </div>
+    <ul class="branch-items">
+      <li><strong>स्वर संधि (5 भेद):</strong> दीर्घ (विद्या+आलय), गुण (देव+इंद्र), वृद्धि (मत+ऐक्य), यण (यदि+अपि), अयादि (ने+अन)।</li>
+      <li><strong>व्यंजन संधि:</strong> 1ले वर्ण का 3रे में परिवर्तन (दिक्+अंत=दिगंत), 1ले का 5वें में (उत्+नति=उन्नति)।</li>
+      <li><strong>त्-संबंधी परिवर्तन:</strong> उत्+ज्वल=उज्ज्वल, उत्+चारण=उच्चारण, सत्+जन=सज्जन।</li>
+      <li><strong>विसर्ग संधि:</strong> विसर्ग का ओ (मनः+योग=मनोयोग), विसर्ग का र् (निः+धन=निर्धन), विसर्ग का श्/ष्/स्।</li>
+    </ul>
+  </div>
+
+  <div class="branch-card b-amber">
+    <div class="branch-title" style="color: #92400E;">
+      <span>🧩</span> 4. समास एवं समास-विग्रह
+    </div>
+    <ul class="branch-items">
+      <li><strong>अव्ययीभाव:</strong> पूर्वपद प्रधान व अव्यय (यथाशक्ति, आजन्म, प्रतिदिन, भरपेट)।</li>
+      <li><strong>तत्पुरुष समास:</strong> उत्तरपद प्रधान; कारक विभक्तियों का लोप (राजपुत्र, रोगमुक्त, लोकमंगल)।</li>
+      <li><strong>कर्मधारय व द्विगु:</strong> विशेषण-विशेष्य (चरणकमल, पीतांबर) तथा संख्यावाचक समाहार (पंचवटी, चौराहा)।</li>
+      <li><strong>द्वंद्व व बहुव्रीहि:</strong> दोनों पद प्रधान (माता-पिता) तथा तीसरा सांकेतिक पद प्रधान (दशानन, चक्रपाणि)।</li>
+    </ul>
+  </div>
+
+  <div class="branch-card b-rose">
+    <div class="branch-title" style="color: #9F1239;">
+      <span>📚</span> 5. शब्द-संपदा एवं शब्दावली
+    </div>
+    <ul class="branch-items">
+      <li><strong>पर्यायवाची समूह:</strong> जल (वारि, तोय), कमल (जलज, नीरज), बादल (जलद, नीरद), समुद्र (जलधि, नीरधि)।</li>
+      <li><strong>विलोम युग्म:</strong> स्थावर-जंगम, अनुराग-विराग, तिमिर-प्रकाश, उत्कर्ष-अपकर्ष, मूक-वाचाल।</li>
+      <li><strong>समश्रुत भिन्नार्थक:</strong> अलि (भौंरा) / अली (सखी), कुल (वंश) / कूल (किनारा), अंस (कंधा) / अंश (भाग)।</li>
+      <li><strong>वाक्यांश के लिए एक शब्द:</strong> जिजीविषा (जीने की इच्छा), युयुत्सु (युद्ध का इच्छुक), कृतघ्न (उपकार न मानने वाला)।</li>
+    </ul>
+  </div>
+
+  <div class="branch-card b-cyan">
+    <div class="branch-title" style="color: #155E75;">
+      <span>✨</span> 6. मुहावरे, लोकोक्तियाँ व वर्तनी शुद्धि
+    </div>
+    <ul class="branch-items">
+      <li><strong>उच्च-आवृत्ति मुहावरे:</strong> गागर में सागर भरना (संक्षेप में गूढ़ बात), ईंट से ईंट बजाना (नष्ट करना)।</li>
+      <li><strong>परीक्षा लोकोक्तियाँ:</strong> अधजल गगरी छलकत जाए (अल्पज्ञ का आडंबर), उल्टा चोर कोतवाल को डांटे।</li>
+      <li><strong>शुद्ध वर्तनी संकलन:</strong> उज्ज्वल (दो आधे ज), कवयित्री, शृंगार, आशीर्वाद, अंत्याक्षरी, ज्योत्स्ना।</li>
+      <li><strong>उपसर्ग व प्रत्यय:</strong> उपसर्ग शब्द के आरंभ में (अति, निर्, सम्) तथा प्रत्यय अंत में (इक, इत, ता, त्व)।</li>
+    </ul>
+  </div>
+</div>
+
+<div class="footer">
+  <span>सीयूईटी यूजी हिंदी (कोड 102) · <strong>अध्याय 2: मौखिक क्षमता, व्याकरण एवं शब्द संपदा</strong></span>
+  <span>OURMOCKS · www.ourmocks.com · 2027 मानक संस्करण</span>
+</div>
+
+</body>
+</html>
