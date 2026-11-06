@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1440, height=880">
+  <title>Python Exception & File Handling Master Synthesis Mindmap</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 1440px;
+      height: 880px;
+      background-color: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0F172A;
+      padding: 24px 36px;
+      overflow: hidden;
+      position: relative;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 16px;
+      border-bottom: 2px solid #E2E8F0;
+      padding-bottom: 12px;
+    }
+    .title-group h1 {
+      font-size: 24px;
+      font-weight: 800;
+      color: #0F2C59;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+    .title-group p {
+      font-size: 13px;
+      color: #64748B;
+      font-weight: 500;
+    }
+    .badge {
+      background: #0066FF;
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .mindmap-canvas {
+      position: relative;
+      width: 100%;
+      height: calc(100% - 80px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .center-hub {
+      position: absolute;
+      width: 250px;
+      height: 110px;
+      background: linear-gradient(135deg, #071A4D, #1F5EFF);
+      border-radius: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 25px rgba(7, 26, 77, 0.25);
+      border: 3px solid #B8FF34;
+      z-index: 10;
+      text-align: center;
+      padding: 12px;
+    }
+    .center-hub h2 { font-size: 17px; font-weight: 800; color: #FFFFFF; }
+    .center-hub span { font-size: 11px; font-weight: 700; color: #B8FF34; letter-spacing: 0.05em; }
+
+    .node {
+      position: absolute;
+      width: 280px;
+      background: #FFFFFF;
+      border: 2px solid #CBD5E1;
+      border-radius: 12px;
+      padding: 14px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      z-index: 5;
+    }
+    .node-header {
+      font-size: 14px;
+      font-weight: 800;
+      margin-bottom: 8px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #F1F5F9;
+      display: flex;
+      justify-content: space-between;
+    }
+    .node-list {
+      list-style: none;
+      font-size: 11px;
+      color: #334155;
+      line-height: 1.5;
+    }
+    .node-list li { margin-bottom: 4px; }
+    .node-list li b { color: #0F2C59; }
+
+    .node-tl { top: 20px; left: 40px; border-top: 5px solid #0066FF; }
+    .node-tr { top: 20px; right: 40px; border-top: 5px solid #0EA5E9; }
+    .node-bl { bottom: 20px; left: 40px; border-top: 5px solid #10B981; }
+    .node-br { bottom: 20px; right: 40px; border-top: 5px solid #8B5CF6; }
+
+    svg.connector-layer {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: 1;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="title-group">
+      <h1>Python Exception & File Handling Master Synthesis Mindmap</h1>
+      <p>Figure 3: Comprehensive Structural Blueprint for CUET UG Computer Science (Unit 1)</p>
+    </div>
+    <div class="badge">Master Mindmap · Figure 3</div>
+  </div>
+
+  <div class="mindmap-canvas">
+    <svg class="connector-layer">
+      <!-- Curved connector lines from center to 4 corner nodes -->
+      <path d="M 600 400 C 450 350, 350 250, 320 180" fill="none" stroke="#0066FF" stroke-width="3" stroke-dasharray="6,4"/>
+      <path d="M 840 400 C 990 350, 1090 250, 1120 180" fill="none" stroke="#0EA5E9" stroke-width="3" stroke-dasharray="6,4"/>
+      <path d="M 600 480 C 450 530, 350 630, 320 700" fill="none" stroke="#10B981" stroke-width="3" stroke-dasharray="6,4"/>
+      <path d="M 840 480 C 990 530, 1090 630, 1120 700" fill="none" stroke="#8B5CF6" stroke-width="3" stroke-dasharray="6,4"/>
+    </svg>
+
+    <div class="center-hub">
+      <span>CUET UG CODE 308</span>
+      <h2>Exception & File Handling</h2>
+      <span style="color:#FFFFFF; font-size:10px; margin-top:2px;">Python Robust I/O Framework</span>
+    </div>
+
+    <!-- Top Left: Exception Handling -->
+    <div class="node node-tl">
+      <div class="node-header" style="color:#0066FF;">
+        <span>1. Exception Handling Architecture</span>
+        <span>TRY-EXCEPT</span>
+      </div>
+      <ul class="node-list">
+        <li><b>Syntax Error vs Exception:</b> Parsing stage vs runtime occurrence.</li>
+        <li><b>Hierarchy:</b> BaseException &rarr; Exception &rarr; Built-in classes.</li>
+        <li><b>try-except-else-finally:</b> else runs on 0 errors; finally runs always.</li>
+        <li><b>raise statement:</b> Explicitly triggers built-in or custom errors.</li>
+        <li><b>Custom Exceptions:</b> Inherit from <code>Exception</code> class.</li>
+      </ul>
+    </div>
+
+    <!-- Top Right: Text File Handling -->
+    <div class="node node-tr">
+      <div class="node-header" style="color:#0EA5E9;">
+        <span>2. Text File Processing</span>
+        <span>OPEN &amp; READ</span>
+      </div>
+      <ul class="node-list">
+        <li><b>Context Manager:</b> <code>with open(...) as f:</code> auto-closes file.</li>
+        <li><b>read([n]):</b> Reads $n$ characters or entire file into single str.</li>
+        <li><b>readline():</b> Reads single line including newline '
+'.</li>
+        <li><b>readlines():</b> Reads all lines into a Python list of strings.</li>
+        <li><b>write() &amp; writelines():</b> String output (no automatic '
+').</li>
+      </ul>
+    </div>
+
+    <!-- Bottom Left: Pointer Navigation -->
+    <div class="node node-bl">
+      <div class="node-header" style="color:#10B981;">
+        <span>3. Stream Pointer Navigation</span>
+        <span>SEEK &amp; TELL</span>
+      </div>
+      <ul class="node-list">
+        <li><b>tell():</b> Returns current byte offset of file pointer.</li>
+        <li><b>seek(offset, whence):</b> Relocates stream position.</li>
+        <li><b>whence=0:</b> Absolute offset from file beginning (SEEK_SET).</li>
+        <li><b>whence=1:</b> Relative offset from current pos (Binary only).</li>
+        <li><b>whence=2:</b> Relative offset from EOF (Binary only).</li>
+      </ul>
+    </div>
+
+    <!-- Bottom Right: Binary Files & Pickle -->
+    <div class="node node-br">
+      <div class="node-header" style="color:#8B5CF6;">
+        <span>4. Binary Files &amp; Pickle</span>
+        <span>DUMP &amp; LOAD</span>
+      </div>
+      <ul class="node-list">
+        <li><b>Binary Modes:</b> 'rb', 'wb', 'ab' (raw byte streams, no encoding).</li>
+        <li><b>pickle.dump(obj, f):</b> Serializes Python object into binary file.</li>
+        <li><b>pickle.load(f):</b> Deserializes byte stream back into Python object.</li>
+        <li><b>EOF Detection:</b> Loop terminates via <code>except EOFError: break</code>.</li>
+        <li><b>Preservation:</b> Dictionaries, lists, and tuples keep exact types.</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>

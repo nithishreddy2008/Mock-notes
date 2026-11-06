@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1440, height=880">
+  <title>Python Exception Hierarchy & File Access Modes Matrix</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 1440px;
+      height: 880px;
+      background-color: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0F172A;
+      padding: 32px 40px;
+      overflow: hidden;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 24px;
+      border-bottom: 2px solid #E2E8F0;
+      padding-bottom: 16px;
+    }
+    .title-group h1 {
+      font-size: 26px;
+      font-weight: 800;
+      color: #0F2C59;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+    .title-group p {
+      font-size: 14px;
+      color: #64748B;
+      font-weight: 500;
+    }
+    .badge {
+      background: #0066FF;
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1.2fr;
+      gap: 24px;
+      height: calc(100% - 110px);
+    }
+    .card {
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      border-radius: 14px;
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+      position: relative;
+    }
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      border-radius: 14px 14px 0 0;
+    }
+    .card-1::before { background: #0066FF; }
+    .card-2::before { background: #0EA5E9; }
+    .card-3::before { background: #8B5CF6; }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+    .card-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #0F2C59;
+    }
+    .tag {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 6px;
+      background: #F1F5F9;
+      color: #475569;
+    }
+
+    /* Content styling */
+    .tree-box {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 8px;
+      padding: 12px;
+      font-family: "Courier New", Courier, monospace;
+      font-size: 12px;
+      line-height: 1.5;
+      color: #1E293B;
+      flex-grow: 1;
+      overflow: hidden;
+    }
+    .tree-node-root { font-weight: 800; color: #0066FF; }
+    .tree-node-mid { font-weight: 700; color: #0284C7; }
+    .tree-node-leaf { color: #334155; }
+    .tree-comment { color: #64748B; font-style: italic; font-size: 11px; }
+
+    .flow-step {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 12px;
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 8px;
+      padding: 10px;
+    }
+    .flow-num {
+      background: #0EA5E9;
+      color: white;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 700;
+      margin-right: 10px;
+      flex-shrink: 0;
+    }
+    .flow-text h4 { font-size: 13px; font-weight: 700; color: #0F2C59; margin-bottom: 2px; }
+    .flow-text p { font-size: 11px; color: #475569; line-height: 1.4; }
+
+    table.matrix-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 11px;
+      flex-grow: 1;
+    }
+    table.matrix-table th {
+      background: #F1F5F9;
+      color: #0F2C59;
+      font-weight: 700;
+      text-align: left;
+      padding: 8px 6px;
+      border-bottom: 2px solid #CBD5E1;
+    }
+    table.matrix-table td {
+      padding: 7px 6px;
+      border-bottom: 1px solid #E2E8F0;
+      color: #334155;
+    }
+    table.matrix-table tr:hover { background: #F8FAFC; }
+    .mode-code { font-family: monospace; font-weight: 700; color: #8B5CF6; font-size: 12px; }
+    .status-yes { color: #16A34A; font-weight: 700; }
+    .status-no { color: #DC2626; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="title-group">
+      <h1>Python Exception Hierarchy & File Access Modes Matrix</h1>
+      <p>Figure 1: Core Architectural Comparison for CUET UG Computer Science (Unit 1)</p>
+    </div>
+    <div class="badge">Concept Matrix · Figure 1</div>
+  </div>
+
+  <div class="grid">
+    <!-- Card 1: Exception Hierarchy -->
+    <div class="card card-1">
+      <div class="card-header">
+        <span class="card-title">Python Exception Class Hierarchy</span>
+        <span class="tag">OOP Inheritance</span>
+      </div>
+      <div class="tree-box">
+        <span class="tree-node-root">BaseException</span><br>
+        ├── SystemExit, KeyboardInterrupt<br>
+        └── <span class="tree-node-mid">Exception</span> <span class="tree-comment">(Standard user base)</span><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;├── <span class="tree-node-mid">ArithmeticError</span><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├── <b>ZeroDivisionError</b> ($x / 0$)<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;└── OverflowError, FloatingPoint<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;├── <span class="tree-node-mid">LookupError</span><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├── <b>IndexError</b> (out-of-range seq)<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;└── <b>KeyError</b> (missing dict key)<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;├── <b>TypeError</b> (mismatched data types)<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;├── <b>ValueError</b> (valid type, invalid val)<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;├── <b>NameError</b> (unbound identifier)<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;└── <span class="tree-node-mid">OSError / IOError</span><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── <b>FileNotFoundError</b> (mode 'r')<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── <b>EOFError</b> (pickle.load past end)
+      </div>
+    </div>
+
+    <!-- Card 2: Try-Except-Else-Finally -->
+    <div class="card card-2">
+      <div class="card-header">
+        <span class="card-title">Exception Handling Control Flow</span>
+        <span class="tag">try-except-else-finally</span>
+      </div>
+      <div style="display:flex; flex-direction:column; justify-content:space-between; flex-grow:1;">
+        <div class="flow-step">
+          <div class="flow-num">1</div>
+          <div class="flow-text">
+            <h4>try block</h4>
+            <p>Guarded code executes. If error occurs, normal execution halts immediately; jumps to matching <code>except</code>.</p>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-num">2</div>
+          <div class="flow-text">
+            <h4>except Class as err</h4>
+            <p>Catches specific exception. Evaluated top-to-bottom. Most specific exceptions must precede broad parents.</p>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-num">3</div>
+          <div class="flow-text">
+            <h4>else clause</h4>
+            <p>Executes strictly when <b>zero exceptions</b> were raised in the <code>try</code> block. Avoids masking unexpected errors.</p>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-num">4</div>
+          <div class="flow-text">
+            <h4>finally clause</h4>
+            <p><b>Always executes</b> unconditionally before leaving construct (closing files, releasing locks), even if unhandled error or <code>return</code> occurred.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3: File Access Modes Matrix -->
+    <div class="card card-3">
+      <div class="card-header">
+        <span class="card-title">File Access Modes Comparative Matrix</span>
+        <span class="tag">Text & Binary Modes</span>
+      </div>
+      <table class="matrix-table">
+        <thead>
+          <tr>
+            <th>Mode</th>
+            <th>Operations</th>
+            <th>File Pointer</th>
+            <th>Creates New?</th>
+            <th>Truncates?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="mode-code">'r'</span></td>
+            <td>Read Only</td>
+            <td>Beginning (0)</td>
+            <td><span class="status-no">Error (FNF)</span></td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td><span class="mode-code">'w'</span></td>
+            <td>Write Only</td>
+            <td>Beginning (0)</td>
+            <td><span class="status-yes">Yes</span></td>
+            <td><span class="status-yes">Yes (0 bytes)</span></td>
+          </tr>
+          <tr>
+            <td><span class="mode-code">'a'</span></td>
+            <td>Append Only</td>
+            <td>End ($EOF$)</td>
+            <td><span class="status-yes">Yes</span></td>
+            <td>No (Preserved)</td>
+          </tr>
+          <tr>
+            <td><span class="mode-code">'r+'</span></td>
+            <td>Read & Write</td>
+            <td>Beginning (0)</td>
+            <td><span class="status-no">Error (FNF)</span></td>
+            <td>No (Overwrites)</td>
+          </tr>
+          <tr>
+            <td><span class="mode-code">'w+'</span></td>
+            <td>Read & Write</td>
+            <td>Beginning (0)</td>
+            <td><span class="status-yes">Yes</span></td>
+            <td><span class="status-yes">Yes (0 bytes)</span></td>
+          </tr>
+          <tr>
+            <td><span class="mode-code">'a+'</span></td>
+            <td>Read & Append</td>
+            <td>End ($EOF$)</td>
+            <td><span class="status-yes">Yes</span></td>
+            <td>No (Appends)</td>
+          </tr>
+          <tr>
+            <td><span class="mode-code">'rb'/'wb'</span></td>
+            <td>Binary I/O</td>
+            <td>0 / 0</td>
+            <td>No / Yes</td>
+            <td>No / Yes</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>
