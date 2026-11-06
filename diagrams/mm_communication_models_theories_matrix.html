@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 600px;
+    background: #FFFFFF;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #1E3A8A;
+    letter-spacing: -0.02em;
+  }
+  .title-block p {
+    font-size: 11px;
+    color: #64748B;
+    margin-top: 3px;
+    font-weight: 500;
+  }
+  .badge {
+    background: #EFF6FF;
+    color: #1D4ED8;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 700;
+    border: 1px solid #BFDBFE;
+    text-transform: uppercase;
+  }
+  .matrix-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 14px;
+  }
+  .matrix-table th {
+    background: #071A4D;
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 9px 10px;
+    text-align: left;
+    border: 1px solid #071A4D;
+  }
+  .matrix-table td {
+    padding: 8px 10px;
+    font-size: 10.5px;
+    line-height: 1.35;
+    border: 1px solid #CBD5E1;
+    vertical-align: top;
+  }
+  .matrix-table tr:nth-child(even) {
+    background: #F8FAFC;
+  }
+  .matrix-table tr:hover {
+    background: #F1F5F9;
+  }
+  .cat-cell {
+    font-weight: 700;
+    color: #0F172A;
+    background: #F1F5F9;
+    width: 16%;
+  }
+  .badge-tag {
+    display: inline-block;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 9px;
+    font-weight: 700;
+    margin-bottom: 3px;
+  }
+  .tag-linear { background: #DBEAFE; color: #1E40AF; }
+  .tag-circular { background: #FEF3C7; color: #92400E; }
+  .tag-effects { background: #F3E8FF; color: #6B21A8; }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 10px;
+    font-size: 10px;
+    color: #64748B;
+  }
+  .footer strong { color: #071A4D; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="title-block">
+    <h1>Fig 1: Classical & Modern Communication Models and Theoretical Frameworks</h1>
+    <p>Comprehensive comparative analysis of Transmission, Circular, and Mass Effects Models for CUET UG</p>
+  </div>
+  <div class="badge">Concept Matrix · CUET UG 318</div>
+</div>
+
+<table class="matrix-table">
+  <thead>
+    <tr>
+      <th style="width: 16%;">Model / Theorist</th>
+      <th style="width: 28%;"><span class="badge-tag tag-linear">Core Structural Elements</span></th>
+      <th style="width: 28%;">Defining Mechanisms & Theoretical Premise</th>
+      <th style="width: 28%;">CUET Exam Traps & Fatal Distinctions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="cat-cell">Aristotle's Rhetoric<br><span style="font-size: 9px; color: #64748B;">Classical (300 BCE)</span></td>
+      <td>Speaker &rarr; Speech &rarr; Occasion &rarr; Audience &rarr; Effect.<br>Three proofs: Ethos, Pathos, Logos.</td>
+      <td>Speaker-centric linear model designed for public speaking; persuasion is the paramount goal.</td>
+      <td><strong>Trap:</strong> No feedback loop and no noise factor. Primarily for interpersonal/public rhetoric, not electronic mass media.</td>
+    </tr>
+    <tr>
+      <td class="cat-cell">Lasswell's Formula<br><span style="font-size: 9px; color: #64748B;">Harold Lasswell (1948)</span></td>
+      <td>Who &rarr; Says What &rarr; In Which Channel &rarr; To Whom &rarr; With What Effect.</td>
+      <td>Unilinear transmission mapping five distinct research areas: Control, Content, Media, Audience, Effects.</td>
+      <td><strong>Trap:</strong> Assumes a direct, unmediated effect (Hypodermic Needle Theory lineage). Omits noise and reciprocal feedback.</td>
+    </tr>
+    <tr>
+      <td class="cat-cell">Shannon & Weaver<br><span style="font-size: 9px; color: #64748B;">Mathematical (1949)</span></td>
+      <td>Info Source &rarr; Transmitter &rarr; Channel (Noise) &rarr; Receiver &rarr; Destination.</td>
+      <td>Engineered for telecommunications; introduced the concept of <em>Noise</em> (mechanical, semantic, psychological).</td>
+      <td><strong>Trap:</strong> Mathematical/engineering model originally devoid of human feedback (added later by Weaver as secondary loop).</td>
+    </tr>
+    <tr>
+      <td class="cat-cell">Berlo's SMCR Model<br><span style="font-size: 9px; color: #64748B;">David Berlo (1960)</span></td>
+      <td>Source &rarr; Message &rarr; Channel &rarr; Receiver.<br>5 sensory channels (hearing, seeing, touching, etc.).</td>
+      <td>Focuses on psychological variables: communication skills, attitude, knowledge, social system, culture.</td>
+      <td><strong>Trap:</strong> Completely linear with no provision for feedback or noise. Requires source and receiver encoder/decoder parity.</td>
+    </tr>
+    <tr>
+      <td class="cat-cell">Osgood-Schramm<br><span style="font-size: 9px; color: #64748B;">Circular Model (1954)</span></td>
+      <td>Encoder, Interpreter, Decoder &harr; Message.<br>Overlapping <em>Field of Experience</em>.</td>
+      <td>Circular and interactive; both parties simultaneously act as transmitters and receivers. Communication is dynamic.</td>
+      <td><strong>Trap:</strong> Communication fails if there is zero overlap between the Source and Receiver's <em>Field of Experience</em>.</td>
+    </tr>
+    <tr>
+      <td class="cat-cell">Agenda Setting & Cultivation<br><span style="font-size: 9px; color: #64748B;">McCombs-Shaw / Gerbner</span></td>
+      <td>Media Agenda &rarr; Public Agenda.<br>Heavy TV viewing &rarr; "Mean World Syndrome".</td>
+      <td>Media tells audiences <em>what to think about</em> (salience), not <em>what to think</em>. Television cultivates perceptions of reality over time.</td>
+      <td><strong>Trap:</strong> Agenda setting does not dictate opinion valence; Cultivation applies to long-term cumulative TV exposure, not single broadcasts.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="footer">
+  <span>CUET UG Mass Media Studies (Code 318) · <strong>Unit 1: Communication Models & Theories</strong></span>
+  <span>OURMOCKS · www.ourmocks.com · 2027 Invariant Standard</span>
+</div>
+
+</body>
+</html>

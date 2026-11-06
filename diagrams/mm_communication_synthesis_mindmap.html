@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 750px;
+    background: #FFFFFF;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #1E3A8A;
+    letter-spacing: -0.02em;
+  }
+  .title-block p {
+    font-size: 11px;
+    color: #64748B;
+    margin-top: 3px;
+    font-weight: 500;
+  }
+  .badge {
+    background: #FDF2F8;
+    color: #DB2777;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 700;
+    border: 1px solid #FBCFE8;
+    text-transform: uppercase;
+  }
+  .mindmap-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 12px;
+    margin: 12px 0;
+    height: 605px;
+  }
+  .branch-card {
+    border: 1.5px solid #CBD5E1;
+    border-radius: 8px;
+    padding: 11px;
+    background: #F8FAFC;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .b-blue { border-color: #3B82F6; background: #EFF6FF; }
+  .b-emerald { border-color: #10B981; background: #ECFDF5; }
+  .b-purple { border-color: #8B5CF6; background: #F5F3FF; }
+  .b-amber { border-color: #F59E0B; background: #FFFBEB; }
+  .b-rose { border-color: #F43F5E; background: #FFF1F2; }
+  .b-cyan { border-color: #06B6D4; background: #ECFEFF; }
+  .branch-title {
+    font-size: 12.5px;
+    font-weight: 800;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .branch-items {
+    list-style: none;
+    font-size: 10px;
+    line-height: 1.45;
+    color: #334155;
+  }
+  .branch-items li {
+    margin-bottom: 4px;
+    position: relative;
+    padding-left: 13px;
+  }
+  .branch-items li::before {
+    content: "•";
+    position: absolute;
+    left: 2px;
+    color: #1E3A8A;
+    font-weight: bold;
+    font-size: 13px;
+    top: -2px;
+  }
+  .branch-items strong {
+    color: #0F172A;
+  }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 8px;
+    font-size: 9.5px;
+    color: #94A3B8;
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="title-block">
+    <h1>Fig 3: Master Synthesis Mindmap — Communication Foundations, Theories & Indian Media History</h1>
+    <p>Comprehensive synoptic map covering Communication Levels, Theoretical Frameworks, Cultural Dynamics, and Evolutionary History</p>
+  </div>
+  <div class="badge">Master Mindmap · CUET UG 318</div>
+</div>
+
+<div class="mindmap-container">
+  <div class="branch-card b-blue">
+    <div class="branch-title" style="color: #1E40AF;">
+      <span>📡</span> 1. Communication Levels & Foundations
+    </div>
+    <ul class="branch-items">
+      <li><strong>Intrapersonal:</strong> Cognitive internal monologue, self-concept, sensory processing.</li>
+      <li><strong>Interpersonal:</strong> Dyadic dialogue, immediate bidirectional feedback, non-verbal richness.</li>
+      <li><strong>Group Communication:</strong> Cohesion, collective decision-making, groupthink vulnerabilities.</li>
+      <li><strong>Mass Communication:</strong> Institutional sender, mediated transmission, vast heterogeneous audience, delayed/indirect feedback.</li>
+    </ul>
+  </div>
+
+  <div class="branch-card b-emerald">
+    <div class="branch-title" style="color: #065F46;">
+      <span>📐</span> 2. Transmission & Linear Models
+    </div>
+    <ul class="branch-items">
+      <li><strong>Aristotle (300 BCE):</strong> Speaker &rarr; Speech &rarr; Occasion &rarr; Audience &rarr; Effect (Ethos, Pathos, Logos).</li>
+      <li><strong>Lasswell (1948):</strong> 5 Ws unilinear formula; foundation of media effects and propaganda analysis.</li>
+      <li><strong>Shannon-Weaver (1949):</strong> Mathematical information theory; introduced physical/mechanical <em>Noise</em>.</li>
+      <li><strong>Berlo's SMCR (1960):</strong> Source-Message-Channel-Receiver; focuses on human senses and socio-cultural parity.</li>
+    </ul>
+  </div>
+
+  <div class="branch-card b-purple">
+    <div class="branch-title" style="color: #5B21B6;">
+      <span>🔄</span> 3. Circular & Interactive Paradigms
+    </div>
+    <ul class="branch-items">
+      <li><strong>Osgood-Schramm (1954):</strong> Circular reciprocity; dual roles of Encoder/Decoder; <em>Field of Experience</em>.</li>
+      <li><strong>Newcomb's ABX Model:</strong> Co-orientation and psychological equilibrium between two communicators about topic X.</li>
+      <li><strong>Westley & MacLean Model:</strong> Gatekeeper role (C) filtering sensory environment (X) for consumer (B).</li>
+      <li><strong>Gerbner's Model:</strong> Dual dimension (Perceptual and Operational); subjective reality vs. media message.</li>
+    </ul>
+  </div>
+
+  <div class="branch-card b-amber">
+    <div class="branch-title" style="color: #92400E;">
+      <span>🎭</span> 4. Culture, Ideology & Representation
+    </div>
+    <ul class="branch-items">
+      <li><strong>Cultural Transmission:</strong> Media as vehicle reproducing cultural hegemony, values, and socialization.</li>
+      <li><strong>Stuart Hall's Model:</strong> Three decoding positions: Dominant-Hegemonic, Negotiated, Oppositional.</li>
+      <li><strong>Stereotyping & Tropes:</strong> Reductionist framing of gender, caste, minorities, and marginalized bodies.</li>
+      <li><strong>Cultural Imperialism:</strong> Asymmetric flow of western media programming altering indigenous cultural identities.</li>
+    </ul>
+  </div>
+
+  <div class="branch-card b-rose">
+    <div class="branch-title" style="color: #9F1239;">
+      <span>🌱</span> 5. Media & Social Change Dynamics
+    </div>
+    <ul class="branch-items">
+      <li><strong>Diffusion of Innovations:</strong> Rogers' 5 adopter categories: Innovators, Early Adopters, Early/Late Majority, Laggards.</li>
+      <li><strong>Development Support Comm:</strong> Daniel Lerner, Wilbur Schramm; media as national development accelerator.</li>
+      <li><strong>SITE (1975-76):</strong> NASA ATS-6 satellite beaming education to 2,400 Indian villages; rural empowerment benchmark.</li>
+      <li><strong>Kheda Project (1975):</strong> Decentralized community participatory television in Gujarat; rural empowerment.</li>
+    </ul>
+  </div>
+
+  <div class="branch-card b-cyan">
+    <div class="branch-title" style="color: #155E75;">
+      <span>🇮🇳</span> 6. Evolutionary History of Indian Media
+    </div>
+    <ul class="branch-items">
+      <li><strong>Print Press:</strong> James Hicky's <em>Bengal Gazette</em> (1780); Raja Ram Mohan Roy's socio-religious reform press.</li>
+      <li><strong>Radio Broadcasting:</strong> Radio Club of Bombay (1923), AIR (1936), Akashvani nomenclature (1956), Vividh Bharati (1957).</li>
+      <li><strong>Television History:</strong> Experimental Delhi launch (1959), Krishi Darshan (1967), DD autonomy/split (1976), Color TV (1982).</li>
+      <li><strong>Digital Dawn:</strong> VSNL internet rollout (1995), Cable TV explosion (1991), OTT streaming and social media convergence.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="footer">
+  <span>CUET UG Mass Media Studies (Code 318) · <strong>Unit 1: Communication Models & Theories</strong></span>
+  <span>OURMOCKS · www.ourmocks.com · 2027 Invariant Standard</span>
+</div>
+
+</body>
+</html>
