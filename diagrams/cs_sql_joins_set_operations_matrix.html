@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1440, height=880">
+  <title>SQL Relational Joins & Set Operations Architecture Matrix</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 1440px;
+      height: 880px;
+      background-color: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0F172A;
+      padding: 26px 36px;
+      overflow: hidden;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 16px;
+      border-bottom: 2px solid #E2E8F0;
+      padding-bottom: 10px;
+    }
+    .title-group h1 {
+      font-size: 24px;
+      font-weight: 800;
+      color: #0F2C59;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+    .title-group p {
+      font-size: 13.5px;
+      color: #64748B;
+      font-weight: 500;
+    }
+    .badge {
+      background: #0066FF;
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    .card {
+      background: white;
+      border: 1px solid #CBD5E1;
+      border-radius: 10px;
+      padding: 14px 16px;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+      display: flex;
+      flex-direction: column;
+    }
+    .card-title {
+      font-size: 14.5px;
+      font-weight: 800;
+      color: #0F2C59;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 2px solid #F1F5F9;
+      padding-bottom: 6px;
+    }
+    .icon-tag {
+      font-size: 10.5px;
+      font-weight: 800;
+      padding: 2px 7px;
+      border-radius: 6px;
+      color: white;
+    }
+    .tag-inner { background: #2563EB; }
+    .tag-outer { background: #7C3AED; }
+    .tag-set { background: #059669; }
+    .item-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 12px;
+    }
+    .item-box {
+      background: #F8FAFC;
+      border-left: 4px solid #CBD5E1;
+      padding: 8px 10px;
+      border-radius: 0 6px 6px 0;
+    }
+    .item-box.inner-border { border-left-color: #2563EB; }
+    .item-box.outer-border { border-left-color: #7C3AED; }
+    .item-box.set-border { border-left-color: #059669; }
+    .item-header {
+      font-weight: 700;
+      color: #1E293B;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 2px;
+    }
+    .item-code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 10.5px;
+      background: #E2E8F0;
+      padding: 1px 5px;
+      border-radius: 4px;
+      color: #0F172A;
+    }
+    .item-desc {
+      color: #475569;
+      line-height: 1.35;
+    }
+    .table-card {
+      background: white;
+      border: 1px solid #CBD5E1;
+      border-radius: 10px;
+      padding: 12px 16px;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+    }
+    .table-title {
+      font-size: 13.5px;
+      font-weight: 800;
+      color: #0F2C59;
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 11.5px;
+      text-align: left;
+    }
+    th {
+      background: #0F2C59;
+      color: white;
+      padding: 6px 8px;
+      font-weight: 700;
+    }
+    th:first-child { border-top-left-radius: 6px; }
+    th:last-child { border-top-right-radius: 6px; }
+    td {
+      padding: 5px 8px;
+      border-bottom: 1px solid #E2E8F0;
+      color: #334155;
+    }
+    tr:nth-child(even) td {
+      background: #F8FAFC;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="title-group">
+      <h1>SQL Relational Joins & Set Operations Architecture Matrix</h1>
+      <p>Inner vs Outer Joins, Natural Join Degree Rules, Dangling Tuples & Set Compatibility Invariants</p>
+    </div>
+    <div class="badge">OurMocks Advanced SQL</div>
+  </div>
+
+  <div class="grid">
+    <!-- INNER & CROSS JOINS -->
+    <div class="card">
+      <div class="card-title">
+        <span class="icon-tag tag-inner">INNER / CROSS</span>
+        <span>Equi-Joins & Cross Products</span>
+      </div>
+      <div class="item-list">
+        <div class="item-box inner-border">
+          <div class="item-header"><span>INNER JOIN ... ON</span><span class="item-code">Equi-Join</span></div>
+          <div class="item-desc">Pairs tuples satisfying join condition. Discards all non-matching dangling tuples. Degree: <code>n1 + n2</code>.</div>
+        </div>
+        <div class="item-box inner-border">
+          <div class="item-header"><span>NATURAL JOIN</span><span class="item-code">Equi-Join</span></div>
+          <div class="item-desc">Implicitly matches on all identically named columns. Projects out duplicate common columns! Degree: <code>n1 + n2 - k</code>.</div>
+        </div>
+        <div class="item-box inner-border">
+          <div class="item-header"><span>CROSS JOIN</span><span class="item-code">Cartesian Product</span></div>
+          <div class="item-desc">Pairs every row in R with every row in S without condition. Degree: <code>n1 + n2</code>. Cardinality: <code>m1 × m2</code>.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- OUTER JOINS -->
+    <div class="card">
+      <div class="card-title">
+        <span class="icon-tag tag-outer">OUTER JOINS</span>
+        <span>Preserving Dangling Tuples</span>
+      </div>
+      <div class="item-list">
+        <div class="item-box outer-border">
+          <div class="item-header"><span>LEFT OUTER JOIN</span><span class="item-code">Preserves Left</span></div>
+          <div class="item-desc">Retains all tuples of Left table R. Unmatched rows are padded with NULL for all Right table S attributes.</div>
+        </div>
+        <div class="item-box outer-border">
+          <div class="item-header"><span>RIGHT OUTER JOIN</span><span class="item-code">Preserves Right</span></div>
+          <div class="item-desc">Retains all tuples of Right table S. Unmatched rows are padded with NULL for all Left table R attributes.</div>
+        </div>
+        <div class="item-box outer-border">
+          <div class="item-header"><span>FULL OUTER JOIN</span><span class="item-code">Preserves Both</span></div>
+          <div class="item-desc">Preserves unmatched tuples from both relations with NULL padding. Emulated in MySQL via <code>LEFT JOIN UNION RIGHT JOIN</code>.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SET OPERATIONS -->
+    <div class="card">
+      <div class="card-title">
+        <span class="icon-tag tag-set">SET OPS</span>
+        <span>Union & Set Operations</span>
+      </div>
+      <div class="item-list">
+        <div class="item-box set-border">
+          <div class="item-header"><span>UNION vs UNION ALL</span><span class="item-code">Union Compat.</span></div>
+          <div class="item-desc"><b>UNION:</b> Combines query results and <i>purges duplicates</i>. <b>UNION ALL:</b> Retains all duplicate rows (faster execution!).</div>
+        </div>
+        <div class="item-box set-border">
+          <div class="item-header"><span>INTERSECT &amp; EXCEPT</span><span class="item-code">Set Logic</span></div>
+          <div class="item-desc"><b>INTERSECT:</b> Returns rows common to both queries. <b>EXCEPT (MINUS):</b> Returns rows in query 1 not present in query 2.</div>
+        </div>
+        <div class="item-box set-border">
+          <div class="item-header"><span>Union Compatibility</span><span class="item-code">Precondition</span></div>
+          <div class="item-desc">Both queries must have identical column counts and corresponding columns must have compatible data types.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="table-card">
+    <div class="table-title">
+      <span>Architectural Comparison: Relational Joins &amp; Set Operations Invariants</span>
+      <span style="font-size: 11px; color: #64748B; font-weight: 600;">CUET High-Yield Invariant: Degree &amp; Cardinality Bounds</span>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Operation</th>
+          <th>Standard SQL Syntax</th>
+          <th>Dangling Tuple Handling</th>
+          <th>Result Degree</th>
+          <th>Result Cardinality Range</th>
+          <th>Duplicate Elimination</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>CROSS JOIN</b></td>
+          <td><code>R CROSS JOIN S</code></td>
+          <td>No matching required (all paired)</td>
+          <td><code>n1 + n2</code></td>
+          <td>Strictly <code>m1 × m2</code></td>
+          <td>None</td>
+        </tr>
+        <tr>
+          <td><b>INNER JOIN</b></td>
+          <td><code>R JOIN S ON R.id = S.id</code></td>
+          <td>Silently dropped</td>
+          <td><code>n1 + n2</code></td>
+          <td><code>0 ≤ Card ≤ m1 × m2</code></td>
+          <td>None (duplicate keys pair)</td>
+        </tr>
+        <tr>
+          <td><b>NATURAL JOIN</b></td>
+          <td><code>R NATURAL JOIN S</code></td>
+          <td>Silently dropped</td>
+          <td><code>n1 + n2 - k</code></td>
+          <td><code>0 ≤ Card ≤ m1 × m2</code></td>
+          <td>Shared columns projected once</td>
+        </tr>
+        <tr>
+          <td><b>LEFT JOIN</b></td>
+          <td><code>R LEFT JOIN S ON R.id = S.id</code></td>
+          <td>Left tuples padded with NULLs</td>
+          <td><code>n1 + n2</code></td>
+          <td><code>m1 ≤ Card ≤ m1 × m2</code></td>
+          <td>None</td>
+        </tr>
+        <tr>
+          <td><b>UNION</b></td>
+          <td><code>Q1 UNION Q2</code></td>
+          <td>N/A (Set operation)</td>
+          <td><code>n1 = n2</code></td>
+          <td><code>max(m1, m2) ≤ Card ≤ m1 + m2</code></td>
+          <td><b>Yes</b> (Purges duplicates)</td>
+        </tr>
+        <tr>
+          <td><b>UNION ALL</b></td>
+          <td><code>Q1 UNION ALL Q2</code></td>
+          <td>N/A (Bag operation)</td>
+          <td><code>n1 = n2</code></td>
+          <td>Strictly <code>m1 + m2</code></td>
+          <td><b>No</b> (Retains duplicates)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</body>
+</html>

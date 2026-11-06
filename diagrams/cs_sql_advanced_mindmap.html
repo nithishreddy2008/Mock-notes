@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1440, height=880">
+  <title>Master Synthesis Mindmap: Advanced SQL — Grouping, Joins & Set Operations</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 1440px;
+      height: 880px;
+      background: radial-gradient(circle at center, #0F172A 0%, #080D1A 100%);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #F8FAFC;
+      padding: 24px 36px;
+      overflow: hidden;
+      position: relative;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 16px;
+      position: relative;
+      z-index: 10;
+    }
+    .header h1 {
+      font-size: 25px;
+      font-weight: 800;
+      color: #FFFFFF;
+      letter-spacing: -0.01em;
+      margin-bottom: 3px;
+    }
+    .header p {
+      font-size: 13px;
+      color: #94A3B8;
+      font-weight: 500;
+    }
+    .badge {
+      display: inline-block;
+      background: #0066FF;
+      color: white;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 3px 12px;
+      border-radius: 14px;
+      margin-bottom: 5px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .mindmap-container {
+      width: 1360px;
+      height: 740px;
+      position: relative;
+      margin: 0 auto;
+    }
+
+    /* Central Hub */
+    .center-hub {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 250px;
+      height: 125px;
+      background: linear-gradient(135deg, #1E3A8A 0%, #0F2C59 100%);
+      border: 3px solid #3B82F6;
+      border-radius: 20px;
+      box-shadow: 0 0 35px rgba(59, 130, 246, 0.45);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 12px;
+      z-index: 20;
+    }
+    .center-hub h2 {
+      font-size: 17px;
+      font-weight: 800;
+      color: #FFFFFF;
+      line-height: 1.25;
+    }
+    .center-hub span {
+      font-size: 11px;
+      color: #93C5FD;
+      font-weight: 600;
+      margin-top: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    /* Node Cards */
+    .node {
+      position: absolute;
+      border-radius: 14px;
+      padding: 14px 18px;
+      box-shadow: 0 10px 25px -5px rgba(0,0,0,0.5);
+      z-index: 10;
+    }
+    .node h3 {
+      font-size: 14px;
+      font-weight: 800;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .node ul {
+      list-style: none;
+      font-size: 11.5px;
+      line-height: 1.45;
+    }
+    .node li {
+      margin-bottom: 4px;
+      display: flex;
+      align-items: flex-start;
+      gap: 5px;
+    }
+    .node li::before {
+      content: "▸";
+      color: inherit;
+      font-weight: 800;
+    }
+
+    /* Specific Quadrants */
+    .node-aggregates {
+      top: 15px;
+      left: 30px;
+      width: 480px;
+      background: rgba(15, 23, 42, 0.90);
+      border: 2px solid #0284C7;
+      border-left: 6px solid #0284C7;
+      color: #BAE6FD;
+    }
+    .node-aggregates h3 { color: #38BDF8; }
+
+    .node-grouping {
+      top: 15px;
+      right: 30px;
+      width: 480px;
+      background: rgba(15, 23, 42, 0.90);
+      border: 2px solid #8B5CF6;
+      border-left: 6px solid #8B5CF6;
+      color: #DDD6FE;
+    }
+    .node-grouping h3 { color: #A78BFA; }
+
+    .node-joins {
+      bottom: 15px;
+      left: 30px;
+      width: 480px;
+      background: rgba(15, 23, 42, 0.90);
+      border: 2px solid #10B981;
+      border-left: 6px solid #10B981;
+      color: #A7F3D0;
+    }
+    .node-joins h3 { color: #34D399; }
+
+    .node-sets {
+      bottom: 15px;
+      right: 30px;
+      width: 480px;
+      background: rgba(15, 23, 42, 0.90);
+      border: 2px solid #F59E0B;
+      border-left: 6px solid #F59E0B;
+      color: #FDE68A;
+    }
+    .node-sets h3 { color: #FBBF24; }
+
+    /* SVG Connecting Lines */
+    .lines-svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
+    }
+    .connector-line {
+      fill: none;
+      stroke-width: 2.5;
+      stroke-dasharray: 6, 4;
+      opacity: 0.65;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="badge">Master Synthesis Mindmap</div>
+    <h1>Advanced SQL: Grouping, Joins &amp; Set Operations</h1>
+    <p>Comprehensive Cognitive Architecture for CUET UG Computer Science (Code 308)</p>
+  </div>
+
+  <div class="mindmap-container">
+    <svg class="lines-svg">
+      <!-- Hub to Top-Left -->
+      <path class="connector-line" stroke="#0284C7" d="M 680 370 C 500 370, 360 250, 270 230" />
+      <!-- Hub to Top-Right -->
+      <path class="connector-line" stroke="#8B5CF6" d="M 680 370 C 860 370, 1000 250, 1090 230" />
+      <!-- Hub to Bottom-Left -->
+      <path class="connector-line" stroke="#10B981" d="M 680 370 C 500 370, 360 490, 270 510" />
+      <!-- Hub to Bottom-Right -->
+      <path class="connector-line" stroke="#F59E0B" d="M 680 370 C 860 370, 1000 490, 1090 510" />
+    </svg>
+
+    <!-- CENTER HUB -->
+    <div class="center-hub">
+      <h2>ADVANCED SQL &amp;<br>OPERATIONS</h2>
+      <span>Grouping, Joins &amp; Sets</span>
+    </div>
+
+    <!-- NODE 1: AGGREGATE FUNCTIONS & NULLS -->
+    <div class="node node-aggregates">
+      <h3>📊 Aggregate Functions &amp; NULL Semantics</h3>
+      <ul>
+        <li><b>COUNT(*):</b> Evaluates total row count of relation/group, including rows containing <code>NULL</code> values.</li>
+        <li><b>COUNT(column):</b> Counts only non-null values. <code>COUNT(DISTINCT col)</code> counts unique non-nulls.</li>
+        <li><b>SUM() &amp; AVG():</b> Computes arithmetic sum and average of non-null numeric attributes.</li>
+        <li><b>The AVG() Trap:</b> <code>AVG(col) = SUM(col) / COUNT(col)</code>, dividing strictly by non-null count!</li>
+        <li><b>MIN() &amp; MAX():</b> Finds extremes for numbers, dates, and alphabetical strings (ignoring NULL).</li>
+      </ul>
+    </div>
+
+    <!-- NODE 2: GROUP BY & HAVING -->
+    <div class="node node-grouping">
+      <h3>📁 Partitioning &amp; Group Filtering</h3>
+      <ul>
+        <li><b>GROUP BY:</b> Partitions rows into buckets based on identical column values. Multi-column grouping supported.</li>
+        <li><b>Grouping Column Rule:</b> Every non-aggregate attribute in <code>SELECT</code> <i>must</i> be included in <code>GROUP BY</code>!</li>
+        <li><b>NULL in GROUP BY:</b> Multiple rows containing <code>NULL</code> are consolidated into a <i>single summary group</i>.</li>
+        <li><b>HAVING Clause:</b> Filters summary partitions <i>after</i> grouping. Supports aggregate predicates (<code>HAVING COUNT(*) &gt; 2</code>).</li>
+        <li><b>Execution Order:</b> <code>FROM → WHERE → GROUP BY → HAVING → SELECT → ORDER BY</code>.</li>
+      </ul>
+    </div>
+
+    <!-- NODE 3: RELATIONAL JOINS -->
+    <div class="node node-joins">
+      <h3>🔗 Relational Joins &amp; Outer Joins</h3>
+      <ul>
+        <li><b>INNER JOIN:</b> Combines matching tuples on predicate (<code>ON R.id = S.id</code>). Dangling tuples discarded.</li>
+        <li><b>NATURAL JOIN:</b> Equi-join on all common attributes; automatically eliminates duplicate shared columns!</li>
+        <li><b>CROSS JOIN:</b> Unrestricted Cartesian product: <code>Degree = n1 + n2</code>, <code>Card = m1 × m2</code>.</li>
+        <li><b>LEFT OUTER JOIN:</b> Preserves all rows of Left table; fills unmatched Right attributes with <code>NULL</code>.</li>
+        <li><b>RIGHT OUTER JOIN:</b> Preserves all rows of Right table; fills unmatched Left attributes with <code>NULL</code>.</li>
+        <li><b>FULL OUTER JOIN:</b> Preserves unmatched rows from both tables (emulated via <code>UNION</code> in MySQL).</li>
+      </ul>
+    </div>
+
+    <!-- NODE 4: SET OPERATIONS & SUBQUERIES -->
+    <div class="node node-sets">
+      <h3>🧩 Set Operations &amp; Nested Queries</h3>
+      <ul>
+        <li><b>Union Compatibility:</b> Identical degree and pairwise compatible data types required across queries.</li>
+        <li><b>UNION:</b> Combines results and <i>eliminates duplicate rows</i> via internal sorting.</li>
+        <li><b>UNION ALL:</b> Combines results <i>without eliminating duplicates</i> (much faster performance!).</li>
+        <li><b>INTERSECT &amp; EXCEPT:</b> Returns shared tuples (Intersection) or tuples unique to query 1 (Difference).</li>
+        <li><b>Subqueries:</b> Single-row (<code>=, &lt;, &gt;</code>) vs Multi-row (<code>IN, NOT IN, ANY, ALL, EXISTS</code>).</li>
+      </ul>
+    </div>
+
+  </div>
+
+</body>
+</html>

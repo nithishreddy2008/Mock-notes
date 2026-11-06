@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1440, height=880">
+  <title>SQL Aggregation & Grouping Execution Lifecycle</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 1440px;
+      height: 880px;
+      background-color: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0F172A;
+      padding: 26px 36px;
+      overflow: hidden;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 16px;
+      border-bottom: 2px solid #E2E8F0;
+      padding-bottom: 10px;
+    }
+    .title-group h1 {
+      font-size: 24px;
+      font-weight: 800;
+      color: #0F2C59;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+    .title-group p {
+      font-size: 13.5px;
+      color: #64748B;
+      font-weight: 500;
+    }
+    .badge {
+      background: #0066FF;
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .lifecycle-grid {
+      display: grid;
+      grid-template-columns: 1fr 40px 1fr 40px 1.1fr;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+    .stage-card {
+      background: white;
+      border: 1px solid #CBD5E1;
+      border-radius: 10px;
+      padding: 14px;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+      height: 380px;
+      display: flex;
+      flex-direction: column;
+    }
+    .stage-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+      border-bottom: 2px solid #F1F5F9;
+      padding-bottom: 6px;
+    }
+    .stage-num {
+      background: #0F2C59;
+      color: white;
+      font-size: 11px;
+      font-weight: 800;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .stage-title {
+      font-size: 13.5px;
+      font-weight: 800;
+      color: #0F2C59;
+    }
+    .flow-arrow {
+      font-size: 24px;
+      color: #94A3B8;
+      text-align: center;
+      font-weight: 800;
+    }
+
+    .mini-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 11px;
+      margin-top: 6px;
+    }
+    .mini-table th {
+      background: #E2E8F0;
+      color: #0F2C59;
+      padding: 4px 6px;
+      font-weight: 700;
+      text-align: left;
+    }
+    .mini-table td {
+      padding: 4px 6px;
+      border-bottom: 1px solid #F1F5F9;
+      color: #334155;
+    }
+    .row-dropped {
+      background: #FEE2E2 !important;
+      text-decoration: line-through;
+      color: #991B1B !important;
+    }
+    .group-box {
+      border: 1px dashed #3B82F6;
+      background: #EFF6FF;
+      border-radius: 6px;
+      padding: 6px;
+      margin-bottom: 8px;
+      font-size: 11px;
+    }
+    .group-title {
+      font-weight: 800;
+      color: #1D4ED8;
+      margin-bottom: 3px;
+    }
+
+    .dual-bottom {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 16px;
+    }
+    .info-card {
+      background: white;
+      border: 1px solid #CBD5E1;
+      border-radius: 10px;
+      padding: 12px 16px;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+    }
+    .info-title {
+      font-size: 13.5px;
+      font-weight: 800;
+      color: #0F2C59;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .info-title .tag {
+      background: #059669;
+      color: white;
+      font-size: 10px;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+    .rule-list {
+      list-style: none;
+      font-size: 11.5px;
+      line-height: 1.45;
+      color: #334155;
+    }
+    .rule-list li {
+      margin-bottom: 5px;
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+    }
+    .rule-list li::before {
+      content: "▸";
+      color: #0066FF;
+      font-weight: 800;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="title-group">
+      <h1>SQL Aggregation &amp; Grouping Execution Lifecycle</h1>
+      <p>Tuple Filtering (WHERE), Partitioning (GROUP BY), Aggregate Computation &amp; Group Filtering (HAVING)</p>
+    </div>
+    <div class="badge">OurMocks Execution Engine</div>
+  </div>
+
+  <div class="lifecycle-grid">
+    <!-- STAGE 1: FROM + WHERE -->
+    <div class="stage-card">
+      <div class="stage-header">
+        <div class="stage-num">1</div>
+        <div class="stage-title">WHERE: Row Filtering</div>
+      </div>
+      <p style="font-size: 11px; color: #64748B; margin-bottom: 6px;">Filters base rows <i>before</i> grouping. Aggregate functions strictly prohibited.</p>
+      <table class="mini-table">
+        <thead>
+          <tr><th>Emp</th><th>Dept</th><th>Salary</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>E1</td><td>IT</td><td>60000</td></tr>
+          <tr><td>E2</td><td>HR</td><td>45000</td></tr>
+          <tr><td>E3</td><td>IT</td><td>75000</td></tr>
+          <tr class="row-dropped"><td>E4</td><td>HR</td><td>25000</td></tr>
+          <tr><td>E5</td><td>IT</td><td>NULL</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size: 10.5px; color: #991B1B; margin-top: 8px;">Predicate <code>WHERE Salary &gt;= 40000</code> discards E4. E5 passes if IS NULL or unchecked.</p>
+    </div>
+
+    <div class="flow-arrow">→</div>
+
+    <!-- STAGE 2: GROUP BY -->
+    <div class="stage-card">
+      <div class="stage-header">
+        <div class="stage-num">2</div>
+        <div class="stage-title">GROUP BY: Partitioning</div>
+      </div>
+      <p style="font-size: 11px; color: #64748B; margin-bottom: 6px;">Partitions surviving tuples into buckets by Dept. Multiple NULLs form one group.</p>
+      <div class="group-box">
+        <div class="group-title">Dept = 'IT' (3 rows)</div>
+        <div>E1 (60000), E3 (75000), E5 (NULL)</div>
+      </div>
+      <div class="group-box" style="border-color: #10B981; background: #ECFDF5;">
+        <div class="group-title" style="color: #047857;">Dept = 'HR' (1 row)</div>
+        <div>E2 (45000)</div>
+      </div>
+      <p style="font-size: 10.5px; color: #475569; margin-top: 6px;">Rule: Every non-aggregate column in <code>SELECT</code> must appear in <code>GROUP BY</code>!</p>
+    </div>
+
+    <div class="flow-arrow">→</div>
+
+    <!-- STAGE 3: AGGREGATE + HAVING -->
+    <div class="stage-card">
+      <div class="stage-header">
+        <div class="stage-num">3</div>
+        <div class="stage-title">HAVING: Group Filter</div>
+      </div>
+      <p style="font-size: 11px; color: #64748B; margin-bottom: 6px;">Calculates aggregates per group, then filters groups with predicate.</p>
+      <div class="group-box">
+        <div class="group-title">Group: 'IT'</div>
+        <div><code>COUNT(*) = 3</code>, <code>COUNT(Salary) = 2</code></div>
+        <div><code>SUM(Salary) = 135000</code>, <code>AVG = 67500</code></div>
+        <div style="color: #15803D; font-weight: 700; margin-top: 3px;">✓ Passes HAVING COUNT(*) &gt; 1</div>
+      </div>
+      <div class="group-box" style="border-color: #EF4444; background: #FEF2F2;">
+        <div class="group-title" style="color: #B91C1C;">Group: 'HR'</div>
+        <div><code>COUNT(*) = 1</code>, <code>AVG = 45000</code></div>
+        <div style="color: #B91C1C; font-weight: 700; margin-top: 3px;">✗ Dropped by HAVING COUNT(*) &gt; 1</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dual-bottom">
+    <!-- LEFT: NULL HANDLING IN AGGREGATE FUNCTIONS -->
+    <div class="info-card">
+      <div class="info-title">
+        <span class="tag">NULL INVARIANT</span>
+        <span>The Golden Invariant of Aggregate Functions &amp; NULLs</span>
+      </div>
+      <ul class="rule-list">
+        <li><b>COUNT(*) Counts Rows:</b> Evaluates total row count of the partition, including rows where attributes are <code>NULL</code>.</li>
+        <li><b>All Other Aggregates Ignore NULL:</b> <code>COUNT(column)</code>, <code>SUM(column)</code>, <code>AVG(column)</code>, <code>MIN(column)</code>, <code>MAX(column)</code> strictly ignore NULL values!</li>
+        <li><b>AVG Calculation Trap:</b> <code>AVG(Salary)</code> divides by <code>COUNT(Salary)</code>, *not* by <code>COUNT(*)</code>! If 3 employees have salaries <code>60000, 75000, NULL</code>, <code>AVG = 135000 / 2 = 67500</code> (not 45000).</li>
+      </ul>
+    </div>
+
+    <!-- RIGHT: WHERE VS HAVING COMPARISON -->
+    <div class="info-card">
+      <div class="info-title">
+        <span class="tag" style="background: #2563EB;">WHERE vs HAVING</span>
+        <span>Critical Architectural Distinction</span>
+      </div>
+      <ul class="rule-list">
+        <li><b>WHERE Clause:</b> Evaluated at Stage 2. Operates on individual rows *before* aggregation. Cannot contain aggregate functions.</li>
+        <li><b>HAVING Clause:</b> Evaluated at Stage 4. Operates on summary group partitions *after* aggregation. Can contain aggregate functions (<code>HAVING AVG(Salary) &gt; 50000</code>).</li>
+        <li><b>Optimization:</b> Always filter individual rows using <code>WHERE</code> before grouping to minimize group computation overhead!</li>
+      </ul>
+    </div>
+  </div>
+
+</body>
+</html>
