@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 600px;
+    background: #FFFFFF;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #1E3A8A;
+    letter-spacing: -0.02em;
+  }
+  .title-block p {
+    font-size: 11px;
+    color: #64748B;
+    margin-top: 3px;
+    font-weight: 500;
+  }
+  .badge {
+    background: #EFF6FF;
+    color: #1D4ED8;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 700;
+    border: 1px solid #BFDBFE;
+    text-transform: uppercase;
+  }
+  .mindmap-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 12px;
+    margin: 14px 0;
+    flex: 1;
+  }
+  .branch-card {
+    background: #F8FAFC;
+    border: 1.5px solid #CBD5E1;
+    border-radius: 8px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+  }
+  .branch-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    padding-bottom: 6px;
+    border-bottom: 1.5px solid #E2E8F0;
+  }
+  .branch-icon {
+    width: 22px;
+    height: 22px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    font-weight: 800;
+    font-size: 11px;
+  }
+  .b-blue { background: #3B82F6; }
+  .b-green { background: #10B981; }
+  .b-purple { background: #8B5CF6; }
+  .b-amber { background: #F59E0B; }
+  .b-red { background: #EF4444; }
+  .b-indigo { background: #6366F1; }
+  .branch-title {
+    font-size: 12px;
+    font-weight: 800;
+    color: #0F172A;
+  }
+  .branch-content {
+    font-size: 10.5px;
+    line-height: 1.4;
+    color: #334155;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .branch-content strong {
+    color: #0F172A;
+  }
+  .tag {
+    display: inline-block;
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-size: 9px;
+    font-weight: 700;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    background: #E2E8F0;
+    color: #1E293B;
+  }
+  .footer-bar {
+    border-top: 1px solid #E2E8F0;
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 10px;
+    color: #64748B;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="title-block">
+    <h1>Master Synthesis Mindmap: Data Communication & Network Protocols</h1>
+    <p>CUET UG Computer Science (Code 308) · Complete Architectural Blueprint of Transmission, Layers & Protocols</p>
+  </div>
+  <div class="badge">Comprehensive Mindmap</div>
+</div>
+
+<div class="mindmap-grid">
+  <!-- Card 1 -->
+  <div class="branch-card" style="border-top: 4px solid #3B82F6;">
+    <div class="branch-header">
+      <div class="branch-icon b-blue">1</div>
+      <div class="branch-title">Data Transmission & Switching</div>
+    </div>
+    <div class="branch-content">
+      <div>• <strong>Transmission Modes:</strong> Simplex (unidirectional), Half-Duplex (alternating), Full-Duplex (simultaneous).</div>
+      <div>• <strong>Impairments:</strong> Attenuation (loss), Distortion (shape), Noise & Crosstalk (EMI).</div>
+      <div>• <strong>Switching Methods:</strong></div>
+      <div style="padding-left: 8px;">- <em>Circuit:</em> Dedicated physical path (PSTN).</div>
+      <div style="padding-left: 8px;">- <em>Message:</em> Store-and-forward whole message.</div>
+      <div style="padding-left: 8px;">- <em>Packet:</em> Independent packets (Datagram / Virtual Circuit). Internet foundation.</div>
+    </div>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="branch-card" style="border-top: 4px solid #10B981;">
+    <div class="branch-header">
+      <div class="branch-icon b-green">2</div>
+      <div class="branch-title">OSI & TCP/IP Layered Models</div>
+    </div>
+    <div class="branch-content">
+      <div>• <strong>OSI 7 Layers:</strong> Application, Presentation, Session, Transport, Network, Data Link, Physical.</div>
+      <div>• <strong>TCP/IP 4 Layers:</strong> Application (5-7), Transport (4), Internet (3), Network Access (1-2).</div>
+      <div>• <strong>PDUs:</strong> Data → Segment (L4) → Packet (L3) → Frame (L2) → Bits (L1).</div>
+      <div>• <strong>Encapsulation:</strong> Headers added going down; stripped going up (decapsulation).</div>
+    </div>
+  </div>
+
+  <!-- Card 3 -->
+  <div class="branch-card" style="border-top: 4px solid #8B5CF6;">
+    <div class="branch-header">
+      <div class="branch-icon b-purple">3</div>
+      <div class="branch-title">Transport Layer (TCP vs UDP)</div>
+    </div>
+    <div class="branch-content">
+      <div>• <strong>TCP:</strong> Connection-oriented, 3-way handshake (<span class="tag">SYN</span>, <span class="tag">SYN-ACK</span>, <span class="tag">ACK</span>). Reliable, ordered delivery, sliding window flow control.</div>
+      <div>• <strong>UDP:</strong> Connectionless, unreliable, best-effort. Zero handshake, minimal overhead. Ideal for VoIP, DNS, live video streaming.</div>
+      <div>• <strong>Addressing:</strong> 16-bit Port Numbers (<span class="tag">0–65535</span>). Well-known: 0–1023.</div>
+    </div>
+  </div>
+
+  <!-- Card 4 -->
+  <div class="branch-card" style="border-top: 4px solid #F59E0B;">
+    <div class="branch-header">
+      <div class="branch-icon b-amber">4</div>
+      <div class="branch-title">Network Layer & Addressing</div>
+    </div>
+    <div class="branch-content">
+      <div>• <strong>IPv4 Addressing:</strong> 32 bits (4 octets). Classes A (<span class="tag">/8</span>), B (<span class="tag">/16</span>), C (<span class="tag">/24</span>), D (Multicast), E (Experimental). Loopback: <span class="tag">127.0.0.1</span>.</div>
+      <div>• <strong>IPv6 Addressing:</strong> 128 bits (8 colon-hex groups). Massive space.</div>
+      <div>• <strong>Resolution Protocols:</strong></div>
+      <div style="padding-left: 8px;">- <span class="tag">ARP:</span> Maps known IP → unknown physical MAC.</div>
+      <div style="padding-left: 8px;">- <span class="tag">ICMP:</span> Error reporting & diagnostics (Ping, Traceroute).</div>
+    </div>
+  </div>
+
+  <!-- Card 5 -->
+  <div class="branch-card" style="border-top: 4px solid #EF4444;">
+    <div class="branch-header">
+      <div class="branch-icon b-red">5</div>
+      <div class="branch-title">Application Web & File Protocols</div>
+    </div>
+    <div class="branch-content">
+      <div>• <strong>HTTP (<span class="tag">Port 80</span>):</strong> Stateless plaintext request/response.</div>
+      <div>• <strong>HTTPS (<span class="tag">Port 443</span>):</strong> Encrypted HTTP over TLS/SSL certificates.</div>
+      <div>• <strong>FTP:</strong> <span class="tag">Port 21</span> (Commands/Control) & <span class="tag">Port 20</span> (Data transfer).</div>
+      <div>• <strong>DNS (<span class="tag">Port 53</span>):</strong> Hierarchical hostname-to-IP resolution. Uses UDP for queries, TCP for zone sync.</div>
+    </div>
+  </div>
+
+  <!-- Card 6 -->
+  <div class="branch-card" style="border-top: 4px solid #6366F1;">
+    <div class="branch-header">
+      <div class="branch-icon b-indigo">6</div>
+      <div class="branch-title">Email, Remote Access & Voice</div>
+    </div>
+    <div class="branch-content">
+      <div>• <strong>Email Protocols:</strong></div>
+      <div style="padding-left: 8px;">- <span class="tag">SMTP (25/587):</span> <em>Pushes</em> outgoing mail.</div>
+      <div style="padding-left: 8px;">- <span class="tag">POP3 (110):</span> Downloads mail & deletes from server.</div>
+      <div style="padding-left: 8px;">- <span class="tag">IMAP (143):</span> Syncs mail across multiple devices.</div>
+      <div>• <strong>Remote Access:</strong> Telnet (<span class="tag">23</span>, plaintext) vs SSH (<span class="tag">22</span>, encrypted).</div>
+      <div>• <strong>VoIP:</strong> Voice over IP using SIP (signaling) & RTP (voice media).</div>
+    </div>
+  </div>
+</div>
+
+<div class="footer-bar">
+  <div><strong>CUET Core Focus:</strong> Port Numbers · TCP 3-Way Handshake · DNS Resolution · ARP vs RARP · SMTP vs POP3/IMAP</div>
+  <div>© OurMocks Education · CUET UG Computer Science</div>
+</div>
+
+</body>
+</html>

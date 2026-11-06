@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 600px;
+    background: #FFFFFF;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #1E3A8A;
+    letter-spacing: -0.02em;
+  }
+  .title-block p {
+    font-size: 11px;
+    color: #64748B;
+    margin-top: 3px;
+    font-weight: 500;
+  }
+  .badge {
+    background: #EFF6FF;
+    color: #1D4ED8;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 700;
+    border: 1px solid #BFDBFE;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .matrix-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 14px;
+    font-size: 11px;
+  }
+  .matrix-table th {
+    background: #1E3A8A;
+    color: #FFFFFF;
+    font-weight: 700;
+    text-align: left;
+    padding: 8px 10px;
+    font-size: 10.5px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
+  .matrix-table th:first-child { border-top-left-radius: 6px; }
+  .matrix-table th:last-child { border-top-right-radius: 6px; }
+  .matrix-table td {
+    padding: 7px 10px;
+    border-bottom: 1px solid #E2E8F0;
+    vertical-align: middle;
+  }
+  .matrix-table tr:nth-child(even) td {
+    background: #F8FAFC;
+  }
+  .matrix-table tr:hover td {
+    background: #EFF6FF;
+  }
+  .layer-pill {
+    display: inline-block;
+    padding: 3px 7px;
+    border-radius: 4px;
+    font-size: 9.5px;
+    font-weight: 700;
+  }
+  .layer-app { background: #EDE9FE; color: #6D28D9; border: 1px solid #DDD6FE; }
+  .layer-trans { background: #E0E7FF; color: #3730A3; border: 1px solid #C7D2FE; }
+  .layer-net { background: #DCFCE7; color: #15803D; border: 1px solid #BBF7D0; }
+  .layer-link { background: #FEF3C7; color: #B45309; border: 1px solid #FDE68A; }
+  .port-badge {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-weight: 700;
+    color: #0F172A;
+    background: #F1F5F9;
+    padding: 2px 6px;
+    border-radius: 4px;
+    border: 1px solid #CBD5E1;
+    font-size: 10px;
+  }
+  .trans-badge {
+    display: inline-block;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 9.5px;
+  }
+  .trans-tcp { background: #EFF6FF; color: #1D4ED8; border: 1px solid #BFDBFE; }
+  .trans-udp { background: #FEF2F2; color: #B91C1C; border: 1px solid #FECACA; }
+  .trans-both { background: #F3E8FF; color: #7E22CE; border: 1px solid #E9D5FF; }
+  .trans-na { background: #F1F5F9; color: #64748B; border: 1px solid #E2E8F0; }
+  .footer-bar {
+    border-top: 1px solid #E2E8F0;
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 10px;
+    color: #64748B;
+  }
+  .legend {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 600;
+  }
+  .legend-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="title-block">
+    <h1>Computer Network Protocols: Protocol Stack Architecture Matrix</h1>
+    <p>CUET UG Computer Science (Code 308) · Standard Port Numbers, Transport Binding, Layer Mapping & Exam Traps</p>
+  </div>
+  <div class="badge">NTA Core Standards</div>
+</div>
+
+<table class="matrix-table">
+  <thead>
+    <tr>
+      <th style="width: 14%;">Protocol</th>
+      <th style="width: 16%;">Layer (OSI / TCP-IP)</th>
+      <th style="width: 12%;">Port No.</th>
+      <th style="width: 12%;">Transport</th>
+      <th style="width: 22%;">Operational Function</th>
+      <th style="width: 24%;">CUET High-Yield Trap</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>HTTP</strong> (Hypertext Transfer)</td>
+      <td><span class="layer-pill layer-app">L7 App / Application</span></td>
+      <td><span class="port-badge">TCP 80</span></td>
+      <td><span class="trans-badge trans-tcp">TCP</span></td>
+      <td>Transfers plaintext web documents</td>
+      <td>Stateless protocol; uses cookies for state tracking</td>
+    </tr>
+    <tr>
+      <td><strong>HTTPS</strong> (HTTP Secure)</td>
+      <td><span class="layer-pill layer-app">L7 App / Application</span></td>
+      <td><span class="port-badge">TCP 443</span></td>
+      <td><span class="trans-badge trans-tcp">TCP</span></td>
+      <td>Encrypted web traffic via TLS/SSL</td>
+      <td>Uses asymmetric key for handshake, symmetric for data</td>
+    </tr>
+    <tr>
+      <td><strong>FTP</strong> (File Transfer)</td>
+      <td><span class="layer-pill layer-app">L7 App / Application</span></td>
+      <td><span class="port-badge">20 & 21</span></td>
+      <td><span class="trans-badge trans-tcp">TCP</span></td>
+      <td>Transfers files between client & server</td>
+      <td>Port 21 for Control/Commands, Port 20 for actual Data</td>
+    </tr>
+    <tr>
+      <td><strong>DNS</strong> (Domain Name System)</td>
+      <td><span class="layer-pill layer-app">L7 App / Application</span></td>
+      <td><span class="port-badge">53</span></td>
+      <td><span class="trans-badge trans-both">UDP / TCP</span></td>
+      <td>Translates human names to IP addresses</td>
+      <td>Queries use UDP 53; Zone transfers use TCP 53</td>
+    </tr>
+    <tr>
+      <td><strong>SMTP</strong> (Simple Mail Transfer)</td>
+      <td><span class="layer-pill layer-app">L7 App / Application</span></td>
+      <td><span class="port-badge">TCP 25 / 587</span></td>
+      <td><span class="trans-badge trans-tcp">TCP</span></td>
+      <td>Pushes outgoing email between servers</td>
+      <td>*Push* protocol only; cannot retrieve mail from server</td>
+    </tr>
+    <tr>
+      <td><strong>POP3</strong> (Post Office Protocol v3)</td>
+      <td><span class="layer-pill layer-app">L7 App / Application</span></td>
+      <td><span class="port-badge">TCP 110 / 995</span></td>
+      <td><span class="trans-badge trans-tcp">TCP</span></td>
+      <td>Downloads email to single device</td>
+      <td>Deletes mail from server upon download (no multi-sync)</td>
+    </tr>
+    <tr>
+      <td><strong>IMAP</strong> (Internet Message Access)</td>
+      <td><span class="layer-pill layer-app">L7 App / Application</span></td>
+      <td><span class="port-badge">TCP 143 / 993</span></td>
+      <td><span class="trans-badge trans-tcp">TCP</span></td>
+      <td>Two-way synchronized email access</td>
+      <td>Keeps mail on server; allows multi-client folder sync</td>
+    </tr>
+    <tr>
+      <td><strong>Telnet vs SSH</strong></td>
+      <td><span class="layer-pill layer-app">L7 App / Application</span></td>
+      <td><span class="port-badge">23 vs 22</span></td>
+      <td><span class="trans-badge trans-tcp">TCP</span></td>
+      <td>Remote terminal CLI access</td>
+      <td>Telnet transmits plaintext credentials; SSH is fully encrypted</td>
+    </tr>
+    <tr>
+      <td><strong>TCP vs UDP</strong></td>
+      <td><span class="layer-pill layer-trans">L4 Transport</span></td>
+      <td><span class="port-badge">Host Ports</span></td>
+      <td><span class="trans-badge trans-na">—</span></td>
+      <td>Host-to-host process delivery</td>
+      <td>TCP: 3-way handshake, reliable; UDP: fast, connectionless</td>
+    </tr>
+    <tr>
+      <td><strong>IP & ARP</strong></td>
+      <td><span class="layer-pill layer-net">L3 Network</span></td>
+      <td><span class="port-badge">—</span></td>
+      <td><span class="trans-badge trans-na">—</span></td>
+      <td>Logical routing & MAC resolution</td>
+      <td>ARP maps known IP to unknown MAC; RARP does reverse</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="footer-bar">
+  <div class="legend">
+    <div class="legend-item"><div class="legend-dot" style="background: #6D28D9;"></div> Application Layer</div>
+    <div class="legend-item"><div class="legend-dot" style="background: #3730A3;"></div> Transport Layer</div>
+    <div class="legend-item"><div class="legend-dot" style="background: #15803D;"></div> Network Layer</div>
+    <div class="legend-item"><div class="legend-dot" style="background: #1D4ED8;"></div> Connection-Oriented (TCP)</div>
+    <div class="legend-item"><div class="legend-dot" style="background: #B91C1C;"></div> Connectionless (UDP)</div>
+  </div>
+  <div>© OurMocks Education · CUET UG Computer Science Protocol Suite</div>
+</div>
+
+</body>
+</html>
