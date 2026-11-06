@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 600px;
+    background: #FFFFFF;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #071A4D;
+    letter-spacing: -0.02em;
+  }
+  .title-block p {
+    font-size: 11px;
+    color: #64748B;
+    margin-top: 3px;
+    font-weight: 500;
+  }
+  .badge {
+    background: #EEF1F8;
+    color: #1F5EFF;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .table-container {
+    flex-grow: 1;
+    margin: 16px 0;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  table {
+    width: 100%;
+    height: 100%;
+    border-collapse: collapse;
+    font-size: 11px;
+    table-layout: fixed;
+  }
+  th {
+    background: #F8FAFC;
+    color: #071A4D;
+    padding: 10px 12px;
+    text-align: left;
+    font-weight: 700;
+    font-size: 11px;
+    border-bottom: 2px solid #CBD5E1;
+    border-right: 1px solid #E2E8F0;
+  }
+  th:last-child { border-right: none; }
+  td {
+    padding: 8px 12px;
+    border-bottom: 1px solid #E2E8F0;
+    border-right: 1px solid #E2E8F0;
+    vertical-align: middle;
+    line-height: 1.35;
+    color: #334155;
+  }
+  td:last-child { border-right: none; }
+  tr:last-child td { border-bottom: none; }
+  tr:nth-child(even) td { background: #FAFBFD; }
+  .param-col {
+    font-weight: 700;
+    color: #071A4D;
+    background: #F1F5F9 !important;
+    width: 15%;
+  }
+  .pr-col { width: 22%; font-weight: 600; color: #1E3A8A; }
+  .ad-col { width: 21%; color: #0F172A; }
+  .pub-col { width: 21%; color: #0F172A; }
+  .prop-col { width: 21%; color: #991B1B; }
+  .tag {
+    display: inline-block;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 9.5px;
+    font-weight: 700;
+    margin-bottom: 3px;
+  }
+  .tag-pr { background: #DBEAFE; color: #1E40AF; }
+  .tag-ad { background: #FEF3C7; color: #92400E; }
+  .tag-pub { background: #DCFCE7; color: #166534; }
+  .tag-prop { background: #FEE2E2; color: #991B1B; }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 8px;
+    font-size: 10px;
+    color: #64748B;
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <div class="title-block">
+      <h1>Comparative Paradigm: PR vs. Advertising vs. Publicity vs. Propaganda</h1>
+      <p>Systematic Structural Differentiation for CUET UG Mass Media Studies · Unit 7</p>
+    </div>
+    <div class="badge">FIGURE 1 · CONCEPT MATRIX</div>
+  </div>
+
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 15%;">Core Dimension</th>
+          <th style="width: 22%;">Public Relations (PR)</th>
+          <th style="width: 21%;">Advertising</th>
+          <th style="width: 21%;">Publicity</th>
+          <th style="width: 21%;">Propaganda</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="param-col">Primary Objective</td>
+          <td><span class="tag tag-pr">MUTUAL GOODWILL</span><br>Build long-term sustained trust, understanding & reputational equity between org & publics.</td>
+          <td><span class="tag tag-ad">SALES CONVERSION</span><br>Directly induce purchase of commercial goods, services, or branded propositions.</td>
+          <td><span class="tag tag-pub">MEDIA EXPOSURE</span><br>Generate immediate news buzz and public visibility via third-party media coverage.</td>
+          <td><span class="tag tag-prop">IDEOLOGICAL CONTROL</span><br>Manipulate mass beliefs, dogmas, and political allegiances, often subverting logic.</td>
+        </tr>
+        <tr>
+          <td class="param-col">Financial Cost & Media Space</td>
+          <td><span class="tag tag-pr">EARNED & OWNED MEDIA</span><br>No payment for media placement; time/editorial space is earned through news value.</td>
+          <td><span class="tag tag-ad">PAID MEDIA SPACE</span><br>Explicit financial payment for print column cm, TV airtime, or digital ad inventory.</td>
+          <td><span class="tag tag-pub">ZERO MEDIA COST</span><br>Unpaid editorial coverage resulting from organic events, leaks, or press releases.</td>
+          <td><span class="tag tag-prop">STATE/SPONSORED</span><br>Funded heavily by political regimes, covert interest groups, or state apparatus.</td>
+        </tr>
+        <tr>
+          <td class="param-col">Control Over Content & Timing</td>
+          <td><span class="tag tag-pr">LOW-TO-MODERATE</span><br>Gatekeepers (journalists, editors) decide if, when, and how information is reported.</td>
+          <td><span class="tag tag-ad">TOTAL CONTROL</span><br>Advertiser dictates exact creative layout, copy, duration, placement, and run frequency.</td>
+          <td><span class="tag tag-pub">NO EDITORIAL CONTROL</span><br>Media outlets can frame, critique, distort, or dismiss the story entirely.</td>
+          <td><span class="tag tag-prop">COERCIVE CONTROL</span><br>Censorship or monopolistic message repetition suppressing opposing narratives.</td>
+        </tr>
+        <tr>
+          <td class="param-col">Perceived Credibility</td>
+          <td><span class="tag tag-pr">HIGH (3RD-PARTY ENDORSEMENT)</span><br>Perceived as independent, objective editorial reportage rather than sales pitch.</td>
+          <td><span class="tag tag-ad">LOW-TO-MODERATE</span><br>Consumers exhibit commercial skepticism; recognized as self-serving promotion.</td>
+          <td><span class="tag tag-pub">VERY HIGH</span><br>Regarded as genuine organic news discovered independently by journalists.</td>
+          <td><span class="tag tag-prop">SUSPECT / DOGMATIC</span><br>Highly polarizing; relies on emotional bias, selective truth, or disinformation.</td>
+        </tr>
+        <tr>
+          <td class="param-col">Direction of Communication</td>
+          <td><span class="tag tag-pr">TWO-WAY SYMMETRICAL</span><br>Encourages dialogue, stakeholder feedback loops, social audits, and responsiveness.</td>
+          <td><span class="tag tag-ad">ONE-WAY PERSUASIVE</span><br>Monologue directed at target audience to stimulate commercial buying actions.</td>
+          <td><span class="tag tag-pub">ONE-WAY TRANSMISSION</span><br>Information dissemination to public channels without formal feedback channels.</td>
+          <td><span class="tag tag-prop">ONE-WAY INDOCTRINATION</span><br>Authoritarian messaging designed to stifle dissent and enforce conformity.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="footer">
+    <span>OurMocks CUET Architecture v2.6 · Conceptual Framework</span>
+    <span>Source: Cutlip & Center's Effective PR & Grunig-Hunt Communication Models</span>
+  </div>
+</body>
+</html>

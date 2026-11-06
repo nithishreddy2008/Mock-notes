@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 600px;
+    background: #FFFFFF;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 19px;
+    font-weight: 800;
+    color: #071A4D;
+    letter-spacing: -0.02em;
+  }
+  .title-block p {
+    font-size: 11px;
+    color: #64748B;
+    margin-top: 2px;
+    font-weight: 500;
+  }
+  .badge {
+    background: #EEF1F8;
+    color: #1F5EFF;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 700;
+    border: 1px solid #C7D7FE;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .map-wrapper {
+    position: relative;
+    flex-grow: 1;
+    margin: 12px 0;
+    background: #FAFCFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .svg-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+  }
+  .nodes-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 16px;
+    padding: 16px 20px;
+    z-index: 2;
+  }
+  .node-card {
+    background: #FFFFFF;
+    border: 1.5px solid #CBD5E1;
+    border-radius: 8px;
+    padding: 10px 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+  }
+  .top-left { border-top: 3px solid #1F5EFF; }
+  .top-mid { border-top: 3px solid #0EA5E9; }
+  .top-right { border-top: 3px solid #10B981; }
+  .bot-left { border-bottom: 3px solid #F59E0B; }
+  .bot-mid { border-bottom: 3px solid #EF4444; }
+  .bot-right { border-bottom: 3px solid #8B5CF6; }
+  .node-title {
+    font-size: 11.5px;
+    font-weight: 800;
+    color: #071A4D;
+    margin-bottom: 3px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .node-desc {
+    font-size: 9.8px;
+    color: #475569;
+    line-height: 1.35;
+    flex-grow: 1;
+  }
+  .node-tags {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+    margin-top: 5px;
+  }
+  .tag {
+    background: #F1F5F9;
+    color: #334155;
+    font-size: 8.5px;
+    font-weight: 700;
+    padding: 2px 5px;
+    border-radius: 4px;
+  }
+  .hub {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #071A4D;
+    color: #FFFFFF;
+    border: 3px solid #1F5EFF;
+    border-radius: 12px;
+    padding: 12px 18px;
+    text-align: center;
+    width: 240px;
+    box-shadow: 0 8px 20px rgba(7, 26, 77, 0.25);
+    z-index: 3;
+  }
+  .hub-title {
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    color: #FFFFFF;
+  }
+  .hub-subtitle {
+    font-size: 9px;
+    color: #93C5FD;
+    font-weight: 600;
+    margin-top: 2px;
+    text-transform: uppercase;
+  }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 8px;
+    font-size: 10px;
+    color: #64748B;
+  }
+  .footer-brand {
+    font-weight: 700;
+    color: #071A4D;
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <div class="title-block">
+      <h1>Master Synthesis Mindmap: Public Relations & Corporate Communication</h1>
+      <p>Comprehensive Cognitive Architecture for CUET UG Mass Media Studies · Unit 7</p>
+    </div>
+    <div class="badge">FIGURE 3 · SYNTHESIZER MINDMAP</div>
+  </div>
+
+  <div class="map-wrapper">
+    <!-- SVG Connection Lines -->
+    <svg class="svg-lines" width="100%" height="100%">
+      <line x1="280" y1="130" x2="400" y2="230" stroke="#CBD5E1" stroke-width="2" stroke-dasharray="4 4" />
+      <line x1="500" y1="170" x2="500" y2="220" stroke="#CBD5E1" stroke-width="2" stroke-dasharray="4 4" />
+      <line x1="720" y1="130" x2="600" y2="230" stroke="#CBD5E1" stroke-width="2" stroke-dasharray="4 4" />
+      <line x1="280" y1="360" x2="400" y2="280" stroke="#CBD5E1" stroke-width="2" stroke-dasharray="4 4" />
+      <line x1="500" y1="340" x2="500" y2="290" stroke="#CBD5E1" stroke-width="2" stroke-dasharray="4 4" />
+      <line x1="720" y1="360" x2="600" y2="280" stroke="#CBD5E1" stroke-width="2" stroke-dasharray="4 4" />
+    </svg>
+
+    <!-- 6 Nodes Grid -->
+    <div class="nodes-grid">
+      <!-- Node 1: Top Left -->
+      <div class="node-card top-left">
+        <div class="node-title">1. Foundations & Conceptual Distinctions</div>
+        <div class="node-desc">Ivy Lee (Declaration of Principles 1906: truth & openness); Edward Bernays (Father of modern PR, Crystallizing Public Opinion 1923); PR vs Advertising (Earned vs Paid); PR vs Publicity vs Propaganda (Ideological manipulation).</div>
+        <div class="node-tags">
+          <span class="tag">Ivy Lee 1906</span>
+          <span class="tag">Bernays</span>
+          <span class="tag">Earned Media</span>
+          <span class="tag">Grunig-Hunt</span>
+        </div>
+      </div>
+
+      <!-- Node 2: Top Mid -->
+      <div class="node-card top-mid">
+        <div class="node-title">2. Strategic PR Planning Frameworks</div>
+        <div class="node-desc">John Marston's RACE Model: Research, Action, Communication, Evaluation; ROPE Model (Objectives, Programming); Primary surveys & secondary audits; Stakeholder mapping: internal (employees) vs external (media, investors, public).</div>
+        <div class="node-tags">
+          <span class="tag">RACE Model</span>
+          <span class="tag">ROPE Model</span>
+          <span class="tag">Stakeholder Audit</span>
+          <span class="tag">SMART Goals</span>
+        </div>
+      </div>
+
+      <!-- Node 3: Top Right -->
+      <div class="node-card top-right">
+        <div class="node-title">3. Key PR Tools & Media Relations</div>
+        <div class="node-desc">Press Release anatomy: Headline, Dateline, Lead (5Ws & 1H), Inverted Pyramid, Boilerplate, Embargo, Contact info; Press Kit (media dossier); Press Conference protocol; House Journals (internal magazine); Pitch letter & media monitoring.</div>
+        <div class="node-tags">
+          <span class="tag">Press Release</span>
+          <span class="tag">Embargo</span>
+          <span class="tag">Boilerplate</span>
+          <span class="tag">House Journal</span>
+        </div>
+      </div>
+
+      <!-- Node 4: Bot Left -->
+      <div class="node-card bot-left">
+        <div class="node-title">4. Corporate Communication & CSR</div>
+        <div class="node-desc">Internal communication (employee engagement, downward/upward flow); Investor Relations (annual reports, shareholder meetings); Corporate Identity vs Reputation; CSR (Section 135 Companies Act 2013 - 2% net profit mandate in India).</div>
+        <div class="node-tags">
+          <span class="tag">Internal Comms</span>
+          <span class="tag">Investor Relations</span>
+          <span class="tag">CSR Sec 135</span>
+          <span class="tag">Reputation</span>
+        </div>
+      </div>
+
+      <!-- Node 5: Bot Mid -->
+      <div class="node-card bot-mid">
+        <div class="node-title">5. Crisis Communication & "Golden Hour"</div>
+        <div class="node-desc">Four crisis stages: Prodromal, Acute, Chronic, Resolution; The "Golden Hour" principle (respond within 60 mins); Crisis Management Team (CMT); Single authorized spokesperson; Transparency, human empathy, strictly NO "No Comment".</div>
+        <div class="node-tags">
+          <span class="tag">Golden Hour</span>
+          <span class="tag">Spokesperson</span>
+          <span class="tag">Coombs SCCT</span>
+          <span class="tag">No "No Comment"</span>
+        </div>
+      </div>
+
+      <!-- Node 6: Bot Right -->
+      <div class="node-card bot-right">
+        <div class="node-title">6. Professional Ethics & Governing Codes</div>
+        <div class="node-desc">Public Relations Society of India (PRSI, est. 1958, Kolkata); International Public Relations Association (IPRA); Code of Athens (1965, UN Declaration of Human Rights grounding); Code of Venice; Prohibiting Spin, Astroturfing & Greenwashing.</div>
+        <div class="node-tags">
+          <span class="tag">PRSI 1958</span>
+          <span class="tag">Code of Athens</span>
+          <span class="tag">Astroturfing</span>
+          <span class="tag">Greenwashing</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Center Hub -->
+    <div class="hub">
+      <div class="hub-title">Public Relations</div>
+      <div class="hub-subtitle">Corporate Communication, Crisis Leadership & Ethics</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div><strong>CUET Core Anchor:</strong> Ivy Lee pioneered factual PR; RACE defines systematic planning; Code of Athens anchors global ethical conduct.</div>
+    <div class="footer-brand">OURMOCKS · Mass Media Studies</div>
+  </div>
+</body>
+</html>
