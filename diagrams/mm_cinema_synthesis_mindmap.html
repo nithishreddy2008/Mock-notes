@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 600px;
+    background: #FFFFFF;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 19px;
+    font-weight: 800;
+    color: #071A4D;
+    letter-spacing: -0.02em;
+  }
+  .title-block p {
+    font-size: 11px;
+    color: #64748B;
+    margin-top: 2px;
+    font-weight: 500;
+  }
+  .badge {
+    background: #EEF1F8;
+    color: #1F5EFF;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 700;
+    border: 1px solid #C7D7FE;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .map-wrapper {
+    position: relative;
+    flex-grow: 1;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .hub {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #071A4D, #1F5EFF);
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 16px;
+    box-shadow: 0 8px 24px rgba(31, 94, 255, 0.25);
+    z-index: 5;
+    border: 4px solid #B8FF34;
+  }
+  .hub-title {
+    font-size: 13px;
+    font-weight: 800;
+    line-height: 1.25;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .hub-subtitle {
+    font-size: 9.5px;
+    color: #E0E7FF;
+    margin-top: 4px;
+    font-weight: 600;
+  }
+  .nodes-grid {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 16px;
+  }
+  .node-card {
+    background: #F8FAFC;
+    border: 1px solid #CBD5E1;
+    border-radius: 8px;
+    padding: 10px 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+  }
+  .node-card.top-left { border-left: 4px solid #3B82F6; }
+  .node-card.top-mid { border-top: 4px solid #10B981; }
+  .node-card.top-right { border-right: 4px solid #F59E0B; }
+  .node-card.bot-left { border-left: 4px solid #8B5CF6; }
+  .node-card.bot-mid { border-bottom: 4px solid #EC4899; }
+  .node-card.bot-right { border-right: 4px solid #06B6D4; }
+  
+  .node-title {
+    font-size: 11.5px;
+    font-weight: 800;
+    color: #071A4D;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .node-desc {
+    font-size: 9.5px;
+    line-height: 1.35;
+    color: #334155;
+  }
+  .node-tags {
+    margin-top: 4px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .tag {
+    font-size: 8.5px;
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-weight: 600;
+    background: #E2E8F0;
+    color: #1E293B;
+  }
+  .footer {
+    border-top: 1px solid #E2E8F0;
+    padding-top: 8px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    color: #64748B;
+  }
+  .footer-brand {
+    font-weight: 700;
+    color: #071A4D;
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <div class="title-block">
+      <h1>Master Synthesis Mindmap: Cinema History, Film Aesthetics & Language</h1>
+      <p>Six-pillar conceptual synthesis covering early cinema, global movements, Indian film history, mise-en-scène, editing & sound</p>
+    </div>
+    <div class="badge">CUET Mass Media · Unit 5 Synthesis</div>
+  </div>
+
+  <div class="map-wrapper">
+    <div class="nodes-grid">
+      <!-- Node 1: Top Left -->
+      <div class="node-card top-left">
+        <div class="node-title">1. Early Cinema & Pioneers</div>
+        <div class="node-desc">Persistence of vision (Roget, Wertheimer); Muybridge galloping horse (1878); Edison Kinetoscope (1891); Lumière Brothers Cinématographe (28 Dec 1895, Paris); Georges Méliès trick films (1902); Porter cross-cutting; D.W. Griffith.</div>
+        <div class="node-tags">
+          <span class="tag">Lumière 1895</span>
+          <span class="tag">Méliès 1902</span>
+          <span class="tag">Kinetoscope</span>
+          <span class="tag">D.W. Griffith</span>
+        </div>
+      </div>
+
+      <!-- Node 2: Top Mid -->
+      <div class="node-card top-mid">
+        <div class="node-title">2. World Cinema Movements</div>
+        <div class="node-desc">German Expressionism (Caligari, chiaroscuro, painted shadows); Soviet Montage (Kuleshov effect, Eisensteinian collision editing, Potemkin); Italian Neorealism (Bicycle Thieves, non-actors); French New Wave (Godard, jump cut, Auteur theory).</div>
+        <div class="node-tags">
+          <span class="tag">Expressionism</span>
+          <span class="tag">Soviet Montage</span>
+          <span class="tag">Neorealism</span>
+          <span class="tag">Auteur Theory</span>
+        </div>
+      </div>
+
+      <!-- Node 3: Top Right -->
+      <div class="node-card top-right">
+        <div class="node-title">3. Indian Cinema Milestones</div>
+        <div class="node-desc">Dadasaheb Phalke (Raja Harishchandra, 3 May 1913); Ardeshir Irani (Alam Ara, 14 March 1931); Golden Age 1950s (Mother India, Pyaasa, Awaara); Parallel Cinema / New Wave: Satyajit Ray (Pather Panchali, 1955), Ritwik Ghatak, Mrinal Sen.</div>
+        <div class="node-tags">
+          <span class="tag">Phalke 1913</span>
+          <span class="tag">Alam Ara 1931</span>
+          <span class="tag">Pather Panchali</span>
+          <span class="tag">Mother India</span>
+        </div>
+      </div>
+
+      <!-- Node 4: Bot Left -->
+      <div class="node-card bot-left">
+        <div class="node-title">4. Mise-en-scène & Cinematography</div>
+        <div class="node-desc">French "placing on stage": Setting/decor, costumes, lighting (chiaroscuro, high/low key), actor blocking & spatial proxemics; Aspect ratios: Academy (1.37:1), Widescreen (1.85:1), CinemaScope (2.39:1); Focal length & depth of field.</div>
+        <div class="node-tags">
+          <span class="tag">Mise-en-scène</span>
+          <span class="tag">Chiaroscuro</span>
+          <span class="tag">Aspect Ratios</span>
+          <span class="tag">Blocking</span>
+        </div>
+      </div>
+
+      <!-- Node 5: Bot Mid -->
+      <div class="node-card bot-mid">
+        <div class="node-title">5. Film Editing & Continuity</div>
+        <div class="node-desc">Continuity Editing (180° rule, eyeline match, match-on-action, shot-reverse-shot, cross-cutting); Disjunctive editing: Jump Cut; Eisenstein's 5 Montages: Metric, Rhythmic, Tonal, Overtonal, Intellectual (abstract concept synthesis).</div>
+        <div class="node-tags">
+          <span class="tag">180° Rule</span>
+          <span class="tag">Jump Cut</span>
+          <span class="tag">Cross-Cutting</span>
+          <span class="tag">5 Montages</span>
+        </div>
+      </div>
+
+      <!-- Node 6: Bot Right -->
+      <div class="node-card bot-right">
+        <div class="node-title">6. Film Sound & Regulation</div>
+        <div class="node-desc">Diegetic sound (inside story world: dialogue, footsteps) vs Non-diegetic sound (outside: score, narrator VO); Foley effects; Cinematograph Act 1952; CBFC certification (U, U/A 7+/13+/16+, A, S); National Film Development Corp (NFDC), FTII.</div>
+        <div class="node-tags">
+          <span class="tag">Diegetic Sound</span>
+          <span class="tag">Foley</span>
+          <span class="tag">CBFC / 1952 Act</span>
+          <span class="tag">NFDC / FTII</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Center Hub -->
+    <div class="hub">
+      <div class="hub-title">Cinema Studies</div>
+      <div class="hub-subtitle">Film History, Visual Aesthetics & Cinematic Grammar</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div><strong>CUET Core Anchor:</strong> Phalke founded Indian silent film; Alam Ara birthed talkies; Ray's Pather Panchali won Cannes; Mise-en-scène is pro-filmic staging.</div>
+    <div class="footer-brand">OURMOCKS · Mass Media Studies</div>
+  </div>
+</body>
+</html>

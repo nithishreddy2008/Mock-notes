@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 600px;
+    background: #FFFFFF;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #071A4D;
+    letter-spacing: -0.02em;
+  }
+  .title-block p {
+    font-size: 11px;
+    color: #64748B;
+    margin-top: 3px;
+    font-weight: 500;
+  }
+  .badge {
+    background: #EEF1F8;
+    color: #1F5EFF;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 700;
+    border: 1px solid #C7D7FE;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .stages-container {
+    display: flex;
+    gap: 12px;
+    margin-top: 14px;
+    flex-grow: 1;
+  }
+  .stage-card {
+    flex: 1;
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  .stage-card.primary {
+    background: #F0FDF4;
+    border-color: #86EFAC;
+  }
+  .stage-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #E2E8F0;
+    margin-bottom: 10px;
+  }
+  .stage-num {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #071A4D;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .stage-title {
+    font-size: 13px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .sub-box {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    padding: 8px 10px;
+    margin-bottom: 8px;
+  }
+  .sub-title {
+    font-size: 10px;
+    font-weight: 800;
+    color: #1F5EFF;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 4px;
+  }
+  .sub-content {
+    font-size: 10px;
+    line-height: 1.35;
+    color: #334155;
+  }
+  .arrow-indicator {
+    position: absolute;
+    right: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    background: #1F5EFF;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 800;
+    z-index: 10;
+  }
+  .footer {
+    border-top: 1px solid #E2E8F0;
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    color: #64748B;
+  }
+  .footer-brand {
+    font-weight: 700;
+    color: #071A4D;
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <div class="title-block">
+      <h1>The Anatomy of Film Language: Mise-en-scène, Montage & Sound Design</h1>
+      <p>End-to-end cinematic grammar: Pro-filmic space, cinematography, Eisensteinian montage, and sound design</p>
+    </div>
+    <div class="badge">CUET Mass Media · Film Grammar Pipeline</div>
+  </div>
+
+  <div class="stages-container">
+    <!-- Stage 1 -->
+    <div class="stage-card">
+      <div class="stage-header">
+        <div class="stage-num">1</div>
+        <div class="stage-title">Mise-en-scène</div>
+      </div>
+      <div class="sub-box">
+        <div class="sub-title">1. Pro-Filmic Setting & Decor</div>
+        <div class="sub-content">Everything placed before the camera: studio soundstages, authentic outdoor locations, set dressings, and symbolic props.</div>
+      </div>
+      <div class="sub-box">
+        <div class="sub-title">2. Lighting Architecture</div>
+        <div class="sub-content">Chiaroscuro (extreme contrast); High-key (bright, even, comedy/musical); Low-key (dark, moody, noir mystery).</div>
+      </div>
+      <div class="sub-box">
+        <div class="sub-title">3. Costume, Makeup & Blocking</div>
+        <div class="sub-content">Character visual coding; spatial proxemics and actor choreography (blocking) within the camera frame.</div>
+      </div>
+      <div class="arrow-indicator">➔</div>
+    </div>
+
+    <!-- Stage 2 -->
+    <div class="stage-card">
+      <div class="stage-header">
+        <div class="stage-num">2</div>
+        <div class="stage-title">Cinematography & Framing</div>
+      </div>
+      <div class="sub-box">
+        <div class="sub-title">1. Aspect Ratio Standards</div>
+        <div class="sub-content">Academy Ratio (1.37:1); Flat Widescreen (1.85:1); Anamorphic CinemaScope (2.39:1); Panavision.</div>
+      </div>
+      <div class="sub-box">
+        <div class="sub-title">2. Lenses & Depth of Field</div>
+        <div class="sub-content">Wide-angle (deep focus, exaggerated depth); Telephoto (shallow focus, compressed space); Normal 50mm (natural perspective).</div>
+      </div>
+      <div class="sub-box">
+        <div class="sub-title">3. Camera Movement Mechanics</div>
+        <div class="sub-content">Pan & Tilt (tripod axis); Steadicam (fluid handheld stabilizer); Dolly/Tracking; Technocrane swings.</div>
+      </div>
+      <div class="arrow-indicator">➔</div>
+    </div>
+
+    <!-- Stage 3 -->
+    <div class="stage-card primary">
+      <div class="stage-header">
+        <div class="stage-num" style="background:#16A34A;">3</div>
+        <div class="stage-title">Editing & Soviet Montage</div>
+      </div>
+      <div class="sub-box">
+        <div class="sub-title" style="color:#15803D;">Continuity (Invisible) Editing</div>
+        <div class="sub-content">180° Rule (Axis of action), Eyeline Match, Match-on-action, Shot-reverse-shot, Cross-cutting / Parallel editing.</div>
+      </div>
+      <div class="sub-box">
+        <div class="sub-title" style="color:#15803D;">Disjunctive Editing & Jump Cuts</div>
+        <div class="sub-content">French New Wave abrupt temporal jumps; violation of the 30° rule; jarring aesthetic self-reflexivity.</div>
+      </div>
+      <div class="sub-box">
+        <div class="sub-title" style="color:#15803D;">Eisenstein's 5 Montage Tiers</div>
+        <div class="sub-content">Metric (cut length), Rhythmic (action pace), Tonal (emotional light), Overtonal (synthesis), Intellectual (metaphor collision).</div>
+      </div>
+      <div class="arrow-indicator">➔</div>
+    </div>
+
+    <!-- Stage 4 -->
+    <div class="stage-card">
+      <div class="stage-header">
+        <div class="stage-num">4</div>
+        <div class="stage-title">Sound & Certification</div>
+      </div>
+      <div class="sub-box">
+        <div class="sub-title">1. Diegetic vs Non-Diegetic</div>
+        <div class="sub-content">Diegetic: originating inside story world (speech, radio, footsteps). Non-Diegetic: outside story world (score, VO).</div>
+      </div>
+      <div class="sub-box">
+        <div class="sub-title">2. Sound Design & Foley</div>
+        <div class="sub-content">ADR dialogue replacement; physical Foley props; ambient wild tracks; Dolby Atmos immersive surround panning.</div>
+      </div>
+      <div class="sub-box">
+        <div class="sub-title">3. CBFC Film Certification</div>
+        <div class="sub-content">Cinematograph Act 1952: U (Universal), U/A (7+, 13+, 16+ parental guidance), A (Adults only), S (Specialized audience).</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div><strong>Core Invariant:</strong> Mise-en-scène is what is put before the camera; Montage creates meaning across cuts; Diegetic sound belongs to the film's narrative world.</div>
+    <div class="footer-brand">OURMOCKS · Mass Media Studies</div>
+  </div>
+</body>
+</html>
