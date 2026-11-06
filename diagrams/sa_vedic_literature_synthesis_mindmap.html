@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="sa">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 600px;
+    background: #FFFFFF;
+    font-family: "Kohinoor Devanagari", "Devanagari Sangam MN", -apple-system, sans-serif;
+    color: #0F172A;
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 19px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .title-block p {
+    font-size: 11px;
+    color: #64748B;
+    font-weight: 600;
+  }
+  .badge {
+    background: #EEF1F8;
+    color: #1F5EFF;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  .mindmap-wrapper {
+    position: relative;
+    flex-grow: 1;
+    margin: 10px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 12px;
+  }
+  .central-hub {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #071A4D;
+    color: #FFFFFF;
+    padding: 10px 18px;
+    border-radius: 30px;
+    border: 3px solid #1F5EFF;
+    box-shadow: 0 4px 14px rgba(7, 26, 77, 0.25);
+    text-align: center;
+    z-index: 10;
+  }
+  .central-hub h2 {
+    font-size: 13px;
+    font-weight: 800;
+  }
+  .central-hub p {
+    font-size: 9.5px;
+    color: #93C5FD;
+    font-weight: 600;
+  }
+  .branch-card {
+    background: #F8FAFC;
+    border: 1px solid #CBD5E1;
+    border-radius: 8px;
+    padding: 10px 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .branch-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 6px;
+    border-bottom: 1.5px solid #E2E8F0;
+    padding-bottom: 4px;
+  }
+  .branch-pill {
+    padding: 2px 7px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 800;
+  }
+  .pill-red { background: #FEE2E2; color: #991B1B; }
+  .pill-blue { background: #DBEAFE; color: #1E40AF; }
+  .pill-green { background: #D1FAE5; color: #065F46; }
+  .pill-purple { background: #F3E8FF; color: #6B21A8; }
+  .branch-title {
+    font-size: 11.5px;
+    font-weight: 700;
+    color: #0F172A;
+  }
+  .item-list {
+    font-size: 9.5px;
+    line-height: 1.45;
+    color: #334155;
+  }
+  .item-list li {
+    list-style: none;
+    margin-bottom: 3px;
+    padding-left: 10px;
+    position: relative;
+  }
+  .item-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #1F5EFF;
+    font-weight: bold;
+  }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 6px;
+    font-size: 10px;
+    color: #64748B;
+  }
+  .brand-tag {
+    color: #1F5EFF;
+    font-weight: 700;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="title-block">
+    <h1>वैदिक-साहित्य-इतिहास एवं षड्-वेदाङ्ग सम्पूर्ण-संश्लेषण-मानचित्रम्</h1>
+    <p>चतुर्वेदाः, ब्राह्मणानि, आरण्यकानि, उपनिषदः, महावाक्यानि तथा षड्-वेदाङ्गानाम् एकात्म-दर्शनम्</p>
+  </div>
+  <div class="badge">Comprehensive Synthesis Map</div>
+</div>
+
+<div class="mindmap-wrapper">
+  <div class="central-hub">
+    <h2>वैदिक-साहित्यम्</h2>
+    <p>अपौरुषेय-श्रुति-परम्परा</p>
+  </div>
+
+  <!-- Quadrant 1: Top-Left -->
+  <div class="branch-card">
+    <div class="branch-header">
+      <span class="branch-pill pill-blue">विभागः १</span>
+      <span class="branch-title">चत्वारः वेदाः (The Four Saṃhitās)</span>
+    </div>
+    <ul class="item-list">
+      <li><b>ऋग्वेदः:</b> १० मण्डलानि, १०२८ सूक्तानि, १०५८० मन्त्राः; ऋत्विक्: होता; आयुर्वेदः; अग्नि, पुरुष, नासदीय सूक्तानि</li>
+      <li><b>यजुर्वेदः:</b> गद्यात्मकः, यज्ञ-कर्म; ऋत्विक्: अध्वर्युः; धनुर्वेदः; शुक्लयजुर्वेदः (शतपथ) & कृष्णयजुर्वेदः (तैत्तिरीय)</li>
+      <li><b>सामवेदः:</b> गीति-प्रधानः, १८७५ मन्त्राः; ऋत्विक्: उद्गाता; गान्धर्ववेदः; कौथुम-राणायनीय-जैमिनीय शाखाः</li>
+      <li><b>अथर्ववेदः:</b> २० काण्डानि, ७३० सूक्तानि; ऋत्विक्: ब्रह्मा; अर्थवेदः; शौनक-पैप्पलाद; पृथिवीसूक्तम् (१२.१)</li>
+    </ul>
+  </div>
+
+  <!-- Quadrant 2: Top-Right -->
+  <div class="branch-card">
+    <div class="branch-header">
+      <span class="branch-pill pill-green">विभागः २</span>
+      <span class="branch-title">ब्राह्मणानि & आरण्यकानि</span>
+    </div>
+    <ul class="item-list">
+      <li><b>ब्राह्मण-ग्रन्थाः:</b> यज्ञ-विधि-विनियोग-अर्थवाद-ग्रन्थाः (कर्मकाण्डम्)</li>
+      <li><b>ऐतरेय & शाङ्खायन:</b> ऋग्वेदस्य (शुनःशेप-आख्यानम्, महिदास ऐतरेयः)</li>
+      <li><b>शतपथ-ब्राह्मणम्:</b> शुक्लयजुर्वेदस्य (१०० अध्यायाः, याज्ञवल्क्यः, जलप्लावन-कथा)</li>
+      <li><b>ताण्ड्य & गोपथ:</b> सामवेदस्य ताण्ड्यम् (महाब्राह्मणम्); अथर्ववेदस्य एकमेव 'गोपथ-ब्राह्मणम्'</li>
+      <li><b>आरण्यकानि:</b> वानप्रस्थ-रहस्यम्; ऋक्, यजुः, साम्नां सन्ति; <i>अथर्ववेदस्य आरण्यकं नास्ति</i></li>
+    </ul>
+  </div>
+
+  <!-- Quadrant 3: Bottom-Left -->
+  <div class="branch-card">
+    <div class="branch-header">
+      <span class="branch-pill pill-purple">विभागः ३</span>
+      <span class="branch-title">उपनिषदः & चत्वारि महावाक्यानि</span>
+    </div>
+    <ul class="item-list">
+      <li><b>स्वरूपम्:</b> ज्ञानकाण्डम्, वेदान्तः, ब्रह्मविद्या (उप + नि + सद् = ब्रह्मसमीपे उपवेशनम्)</li>
+      <li><b>ईशावास्योपनिषद्:</b> शुक्लयजुर्वेदस्य ४०तमोऽध्यायः ("ईशा वास्यमिदं सर्वम्")</li>
+      <li><b>कठोपनिषद्:</b> यम-नचिकेता-संवादः, श्रेयः-प्रेयः-मार्गौ, रथरूपकम्</li>
+      <li><b>चत्वारि महावाक्यानि:</b>
+        <br>• ऋग्वेदः: <b>प्रज्ञानं ब्रह्म</b> (ऐतरेय) | यजुर्वेदः: <b>अहं ब्रह्मास्मि</b> (बृहदारण्यक)
+        <br>• सामवेदः: <b>तत्त्वमसि</b> (छान्दोग्य) | अथर्ववेदः: <b>अयमात्मा ब्रह्म</b> (माण्डूक्य)</li>
+      <li><b>सत्यमेव जयते:</b> मुण्डकोपनिषद् (३.१.६); तमसो मा ज्योतिर्गमय (बृहदारण्यक)</li>
+    </ul>
+  </div>
+
+  <!-- Quadrant 4: Bottom-Right -->
+  <div class="branch-card">
+    <div class="branch-header">
+      <span class="branch-pill pill-red">विभागः ४</span>
+      <span class="branch-title">षड्-वेदाङ्गानि (Six Vedāṅgas)</span>
+    </div>
+    <ul class="item-list">
+      <li><b>१. शिक्षा (घ्राणम्):</b> वर्ण-स्वर-उच्चारणम् (पाणिनीय-शिक्षा, ऋक्-प्रातिशाख्यम्)</li>
+      <li><b>२. कल्पः (हस्तौ):</b> श्रौतसूत्र, गृह्यसूत्र (१६ संस्काराः), धर्मसूत्र, शुल्बसूत्र (ज्यामितिः)</li>
+      <li><b>३. व्याकरणम् (मुखम्):</b> शब्द-साधुत्वम् (पाणिनि-अष्टाध्यायी, त्रयः मुनयः)</li>
+      <li><b>४. निरुक्तम् (श्रोत्रम्):</b> शब्द-व्युत्पत्तिः (यास्कः; ४ पदजातानि, ६ भावविकाराः)</li>
+      <li><b>५. छन्दः (पादौ):</b> पिङ्गलः (गायत्री २४, उष्णिक् २८, अनुष्टुप् ३२, त्रिष्टुप् ४४, जगती ४८)</li>
+      <li><b>६. ज्योतिषम् (चक्षुः):</b> काल-निर्णयः (लगधमुनिः, वेदाङ्ग-ज्योतिषम्)</li>
+    </ul>
+  </div>
+</div>
+
+<div class="footer">
+  <span class="brand-tag">OurMocks CUET UG Series</span>
+  <span>वैदिक-साहित्य-दर्शनम् : "अनन्ता वै वेदाः" (श्रुति-स्मृति-वेदाङ्ग-परम्परा)</span>
+  <span>संस्कृतम् (Code 325) · Unit 8 Synthesis Mindmap</span>
+</div>
+
+</body>
+</html>

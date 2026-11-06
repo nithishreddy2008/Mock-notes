@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="sa">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 600px;
+    background: #FFFFFF;
+    font-family: "Kohinoor Devanagari", "Devanagari Sangam MN", -apple-system, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .title-block p {
+    font-size: 11.5px;
+    color: #64748B;
+    margin-top: 3px;
+    font-weight: 600;
+  }
+  .badge {
+    background: #EEF1F8;
+    color: #1F5EFF;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  .table-container {
+    flex-grow: 1;
+    margin-top: 10px;
+    margin-bottom: 8px;
+    border: 1px solid #CBD5E1;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  table {
+    width: 100%;
+    height: 100%;
+    border-collapse: collapse;
+    font-size: 10.5px;
+    text-align: left;
+  }
+  thead {
+    background: #071A4D;
+    color: #FFFFFF;
+  }
+  th {
+    padding: 7px 9px;
+    font-weight: 700;
+    font-size: 11px;
+    border-right: 1px solid #1E293B;
+  }
+  th:last-child { border-right: none; }
+  tbody tr {
+    border-bottom: 1px solid #E2E8F0;
+  }
+  tbody tr:nth-child(even) {
+    background: #F8FAFC;
+  }
+  tbody tr:last-child { border-bottom: none; }
+  td {
+    padding: 6.5px 8px;
+    vertical-align: middle;
+    line-height: 1.35;
+    border-right: 1px solid #E2E8F0;
+  }
+  td:last-child { border-right: none; }
+  .col-veda { width: 14%; font-weight: 700; }
+  .col-rtvik { width: 15%; font-size: 10px; color: #1E3A8A; font-weight: 600; }
+  .col-shakha { width: 16%; font-size: 10px; color: #047857; }
+  .col-brah { width: 22%; font-size: 10px; color: #334155; }
+  .col-up { width: 33%; font-size: 10px; color: #0F172A; }
+  .tag {
+    display: inline-block;
+    padding: 1.5px 5px;
+    border-radius: 4px;
+    font-size: 9px;
+    font-weight: 700;
+    margin-right: 3px;
+  }
+  .tag-rg   { background: #E0E7FF; color: #3730A3; }
+  .tag-yaj  { background: #DBEAFE; color: #1D4ED8; }
+  .tag-sam  { background: #D1FAE5; color: #065F46; }
+  .tag-ath  { background: #FEF3C7; color: #92400E; }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 8px;
+    font-size: 10px;
+    color: #64748B;
+  }
+  .brand-tag {
+    color: #1F5EFF;
+    font-weight: 700;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="title-block">
+    <h1>चतुर्वेद-वाङ्मय-संरचना एवं शास्त्रीय-प्रवर्ग-तुलना</h1>
+    <p>ऋत्विक्, उपवेदः, शाखाः, ब्राह्मणानि, आरण्यकानि, उपनिषदः तथा महावाक्य-समन्वयः</p>
+  </div>
+  <div class="badge">संस्कृतम् (325) · Canonical Matrix</div>
+</div>
+
+<div class="table-container">
+  <table>
+    <thead>
+      <tr>
+        <th>वेदः (स्वरूपम्)</th>
+        <th>ऋत्विक् & उपवेदः</th>
+        <th>मुख्याः शाखाः</th>
+        <th>ब्राह्मणानि & आरण्यकानि</th>
+        <th>मुख्याः उपनिषदः & महावाक्यम्</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="col-veda"><span class="tag tag-rg">ऋग्वेदः</span><br>स्तोत्र-प्रधानः (पद्यम्)<br>१० मण्डलानि, १०२८ सूक्तानि</td>
+        <td class="col-rtvik">ऋत्विक्: <b>होता</b> (शंसकः)<br>उपवेदः: <b>आयुर्वेदः</b></td>
+        <td class="col-shakha">शाकल (उपलब्धा), बाष्कल, आश्वलायन, शाङ्खायन, माण्डूकायन</td>
+        <td class="col-brah"><b>ब्राह्मणम्:</b> ऐतरेय, शाङ्खायन (कौषीतकि)<br><b>आरण्यकम्:</b> ऐतरेयारण्यकम्, शाङ्खायनम्</td>
+        <td class="col-up"><b>उपनिषदः:</b> ऐतरेय, कौषीतकि<br><b>महावाक्यम्:</b> <span style="color:#1F5EFF; font-weight:700;">"प्रज्ञानं ब्रह्म"</span> (ऐतरेयोपनिषद्)</td>
+      </tr>
+      <tr>
+        <td class="col-veda"><span class="tag tag-yaj">शुक्ल-यजुर्वेदः</span><br>वाजसनेयि-संहिता (याज्ञवल्क्यः)<br>४० अध्यायाः, १९७५ कण्डिकाः</td>
+        <td class="col-rtvik" rowspan="2">ऋत्विक्: <b>अध्वर्युः</b> (याज्ञिकः)<br>उपवेदः: <b>धनुर्वेदः</b></td>
+        <td class="col-shakha">माध्यन्दिना, काण्व-शाखा</td>
+        <td class="col-brah"><b>ब्राह्मणम्:</b> शतपथ-ब्राह्मणम् (१०० अध्यायाः)<br><b>आरण्यकम्:</b> बृहदारण्यकम्</td>
+        <td class="col-up"><b>उपनिषदः:</b> ईशावास्य (४०तमोऽध्यायः), बृहदारण्यक<br><b>महावाक्यम्:</b> <span style="color:#1F5EFF; font-weight:700;">"अहं ब्रह्मास्मि"</span> (बृहदारण्यकोपनिषद्)</td>
+      </tr>
+      <tr>
+        <td class="col-veda"><span class="tag tag-yaj">कृष्ण-यजुर्वेदः</span><br>मन्त्र-ब्राह्मण-मिश्रितः (गद्य-पद्यम्)</td>
+        <td class="col-shakha">तैत्तिरीय, मैत्रायणी, कठ, कपिष्ठल-कठ</td>
+        <td class="col-brah"><b>ब्राह्मणम्:</b> तैत्तिरीय-ब्राह्मणम्<br><b>आरण्यकम्:</b> तैत्तिरीयारण्यकम्</td>
+        <td class="col-up"><b>उपनिषदः:</b> कठ, तैत्तिरीय, श्वेताश्वतर, मैत्रायणी<br><b>आदर्श-वाक्यम्:</b> "सत्यं वद, धर्मं चर" (तैत्तिरीय)</td>
+      </tr>
+      <tr>
+        <td class="col-veda"><span class="tag tag-sam">सामवेदः</span><br>गीति-प्रधानः (१८७५ मन्त्राः)<br>पूर्वार्चिकः & उत्तरार्चिकः</td>
+        <td class="col-rtvik">ऋत्विक्: <b>उद्गाता</b> (गायकः)<br>उपवेदः: <b>गान्धर्ववेदः</b></td>
+        <td class="col-shakha">कौथुम (प्रसिद्धा), राणायनीय, जैमिनीय (तलवकार)</td>
+        <td class="col-brah"><b>ब्राह्मणम्:</b> ताण्ड्य (पञ्चविंश), षड्विंश, जैमिनीय... (९)<br><b>आरण्यकम्:</b> तलवकार, छान्दोग्यारण्यकम्</td>
+        <td class="col-up"><b>उपनिषदः:</b> छान्दोग्य, केन (तलवकार)<br><b>महावाक्यम्:</b> <span style="color:#1F5EFF; font-weight:700;">"तत्त्वमसि"</span> (छान्दोग्योपनिषद् ६.८.७)</td>
+      </tr>
+      <tr>
+        <td class="col-veda"><span class="tag tag-ath">अथर्ववेदः</span><br>ब्रह्मवेदः / भेषजवेदः<br>२० काण्डानि, ७३० सूक्तानि</td>
+        <td class="col-rtvik">ऋत्विक्: <b>ब्रह्मा</b> (निरीक्षकः)<br>उपवेदः: <b>अर्थवेदः</b> / स्थापत्य</td>
+        <td class="col-shakha">शौनक-शाखा (प्रसिद्धा), पैप्पलाद-शाखा</td>
+        <td class="col-brah"><b>ब्राह्मणम्:</b> गोपथ-ब्राह्मणम् (एकमेव)<br><b>आरण्यकम्:</b> <i>नास्ति (सर्वथा अभावः)</i></td>
+        <td class="col-up"><b>उपनिषदः:</b> प्रश्न, मुण्डक, माण्डूक्य<br><b>महावाक्यम्:</b> <span style="color:#1F5EFF; font-weight:700;">"अयमात्मा ब्रह्म"</span>; "सत्यमेव जयते" (मुण्डक)</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="footer">
+  <span class="brand-tag">OurMocks CUET UG Series</span>
+  <span>वेद-प्रामाण्यम् : "प्रत्यक्षेणानुमित्या वा यस्तूपायो न बुध्यते। एनं विदन्ति वेदेन तस्माद् वेदस्य वेदता॥"</span>
+  <span>संस्कृतम् (Code 325) · Unit 8 Canonical Matrix</span>
+</div>
+
+</body>
+</html>
