@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 600px;
+    background: #FFFFFF;
+    font-family: -apple-system, BlinkMacSystemFont, "Kohinoor Devanagari", "Devanagari Sangam MN", "Segoe UI", Roboto, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #1E3A8A;
+    letter-spacing: -0.01em;
+  }
+  .title-block p {
+    font-size: 11px;
+    color: #64748B;
+    margin-top: 3px;
+    font-weight: 500;
+  }
+  .badge {
+    background: #EFF6FF;
+    color: #1D4ED8;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 700;
+    border: 1px solid #BFDBFE;
+    text-transform: uppercase;
+  }
+  .matrix-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 14px;
+  }
+  .matrix-table th {
+    background: #071A4D;
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 9px 10px;
+    text-align: left;
+    border: 1px solid #071A4D;
+  }
+  .matrix-table td {
+    padding: 8px 10px;
+    font-size: 10.5px;
+    line-height: 1.35;
+    border: 1px solid #CBD5E1;
+    vertical-align: top;
+  }
+  .matrix-table tr:nth-child(even) {
+    background: #F8FAFC;
+  }
+  .matrix-table tr:hover {
+    background: #F1F5F9;
+  }
+  .cat-cell {
+    font-weight: 700;
+    color: #0F172A;
+    background: #F1F5F9;
+    width: 15%;
+  }
+  .badge-tag {
+    display: inline-block;
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-size: 9px;
+    font-weight: 700;
+    margin-bottom: 3px;
+  }
+  .tag-factual { background: #DBEAFE; color: #1E40AF; }
+  .tag-narrative { background: #FEF3C7; color: #92400E; }
+  .tag-literary { background: #F3E8FF; color: #6B21A8; }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 10px;
+    font-size: 10px;
+    color: #64748B;
+  }
+  .footer strong { color: #071A4D; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="title-block">
+    <h1>चित्र 1: CUET हिंदी अपठित गद्यांश — स्वरूप, भाषायी संरचना एवं हल रणनीति मैट्रिक्स</h1>
+    <p>तथ्यात्मक (Factual), वर्णनात्मक (Narrative) एवं साहित्यिक/विचारात्मक (Literary/Discursive) गद्यांशों की तुलनात्मक परीक्षा-दृष्टि</p>
+  </div>
+  <div class="badge">अवधारणा मैट्रिक्स · CUET UG 102</div>
+</div>
+
+<table class="matrix-table">
+  <thead>
+    <tr>
+      <th style="width: 14%;">तुलना का आधार</th>
+      <th style="width: 28%;"><span class="badge-tag tag-factual">तथ्यात्मक गद्यांश (Factual)</span></th>
+      <th style="width: 29%;"><span class="badge-tag tag-narrative">वर्णनात्मक/आख्यानात्मक (Narrative)</span></th>
+      <th style="width: 29%;"><span class="badge-tag tag-literary">साहित्यिक/विचारात्मक (Literary)</span></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="cat-cell">विषय-वस्तु एवं स्रोत</td>
+      <td>वैज्ञानिक शोध, ऐतिहासिक घटनाएँ, आर्थिक आँकड़े, पर्यावरण, राष्ट्रीय नीतियाँ, रिपोर्ट।</td>
+      <td>यात्रा-वृत्तांत, संस्मरण, जीवन-चरित्र, व्यक्तिगत अनुभव, दृश्य-चित्रण, कथात्मक प्रसंग।</td>
+      <td>दार्शनिक विमर्श, सामाजिक कुरीतियाँ, कला-संस्कृति, नैतिक मूल्य, मानवीय संवेदनाएँ।</td>
+    </tr>
+    <tr>
+      <td class="cat-cell">भाषायी शैली व शब्द-चयन</td>
+      <td>अभिधा प्रधान, वस्तुनिष्ठ, सटीक पारिभाषिक शब्दावली, प्रत्यक्ष कथन, भावुकता-रहित।</td>
+      <td>बिम्बप्रधान, प्रभावोत्पादक, भावात्मक, आख्यानपरक, अलंकृत, दृश्यात्मक शब्दावली।</td>
+      <td>लक्षणा व व्यंजना प्रधान, प्रतीकात्मक, विचारोत्तेजक, गूढ़, मुहावरेदार व लाक्षणिक भाषा।</td>
+    </tr>
+    <tr>
+      <td class="cat-cell">प्रमुख प्रश्न प्रकार</td>
+      <td>सीधे तथ्य (किसने, कब, कहाँ), आँकड़ों का मिलान, कारण-प्रभाव संबंध, कालक्रम।</td>
+      <td>घटनाक्रम, पात्रों का दृष्टिकोण, संवेगात्मक स्थिति, मनोभाव, प्रसंगानुकूल शब्दार्थ।</td>
+      <td>केंद्रीय भाव, लेखक का मंतव्य/टोन, उपयुक्त शीर्षक, व्यंग्य/प्रतीक का अर्थ, उपदेश।</td>
+    </tr>
+    <tr>
+      <td class="cat-cell">पठन गति व रणनीति</td>
+      <td><strong>स्कैनिंग (Scanning):</strong> प्रश्नों के मुख्य शब्दों को गद्यांश में सीधे खोजें।</td>
+      <td><strong>प्रवाह-पठन (Flow Reading):</strong> घटनाओं के क्रम और पात्रों के भाव को समझें।</td>
+      <td><strong>सघन पठन (Close Reading):</strong> पंक्तियों के अंतर्निहित भाव व व्यंजना को पकड़ें।</td>
+    </tr>
+    <tr>
+      <td class="cat-cell">CUET घातक ट्रैप</td>
+      <td>अनुमान या बाह्य ज्ञान का प्रयोग करना; गद्यांश में दिए तथ्य से इतर सोचना।</td>
+      <td>गौण घटना को मुख्य बिंदु मान लेना; भावनात्मक अतिरेक में बहकर उत्तर चुनना।</td>
+      <td>शाब्दिक/वाच्यार्थ में उलझना; लेखक के वैचारिक झुकाव (Tone) को न पहचान पाना।</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="footer">
+  <span>सीयूईटी यूजी हिंदी (कोड 102) · <strong>अध्याय 1: अपठित बोध एवं गद्यांश विश्लेषण</strong></span>
+  <span>OURMOCKS · www.ourmocks.com · 2027 मानक संस्करण</span>
+</div>
+
+</body>
+</html>

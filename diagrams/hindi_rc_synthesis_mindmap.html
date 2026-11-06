@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 750px;
+    background: #FFFFFF;
+    font-family: -apple-system, BlinkMacSystemFont, "Kohinoor Devanagari", "Devanagari Sangam MN", "Segoe UI", Roboto, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #1E3A8A;
+    letter-spacing: -0.01em;
+  }
+  .title-block p {
+    font-size: 11px;
+    color: #64748B;
+    margin-top: 3px;
+    font-weight: 500;
+  }
+  .badge {
+    background: #FDF2F8;
+    color: #DB2777;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 700;
+    border: 1px solid #FBCFE8;
+    text-transform: uppercase;
+  }
+  .mindmap-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 12px;
+    margin: 12px 0;
+    height: 605px;
+  }
+  .branch-card {
+    border: 1.5px solid #CBD5E1;
+    border-radius: 8px;
+    padding: 11px;
+    background: #F8FAFC;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .b-blue { border-color: #3B82F6; background: #EFF6FF; }
+  .b-emerald { border-color: #10B981; background: #ECFDF5; }
+  .b-purple { border-color: #8B5CF6; background: #F5F3FF; }
+  .b-amber { border-color: #F59E0B; background: #FFFBEB; }
+  .b-rose { border-color: #F43F5E; background: #FFF1F2; }
+  .b-cyan { border-color: #06B6D4; background: #ECFEFF; }
+  .branch-title {
+    font-size: 12.5px;
+    font-weight: 800;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .branch-items {
+    list-style: none;
+    font-size: 10px;
+    line-height: 1.45;
+    color: #334155;
+  }
+  .branch-items li {
+    margin-bottom: 4px;
+    position: relative;
+    padding-left: 13px;
+  }
+  .branch-items li::before {
+    content: "•";
+    position: absolute;
+    left: 2px;
+    color: #1E3A8A;
+    font-weight: bold;
+    font-size: 13px;
+    top: -2px;
+  }
+  .branch-items strong {
+    color: #0F172A;
+  }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 8px;
+    font-size: 9.5px;
+    color: #94A3B8;
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="title-block">
+    <h1>चित्र 3: संपूर्ण संश्लेषण माइंडमैप — CUET हिंदी अपठित बोध एवं गद्यांश विश्लेषण</h1>
+    <p>गद्यांश प्रारूप, प्रश्न श्रेणियाँ, शीर्षक निर्धारण, संदर्भ-बोध, परीक्षा ट्रैप्स एवं अचूक हल रणनीति</p>
+  </div>
+  <div class="badge">संश्लेषण माइंडमैप · CUET UG 102</div>
+</div>
+
+<div class="mindmap-container">
+  <div class="branch-card b-blue">
+    <div class="branch-title" style="color: #1E40AF;">
+      <span>📌</span> 1. गद्यांश के विविध प्रारूप
+    </div>
+    <ul class="branch-items">
+      <li><strong>तथ्यात्मक (Factual):</strong> वैज्ञानिक शोध, इतिहास, आँकड़े, नीतियाँ, रिपोर्ट; प्रत्यक्ष सूचना की प्रधानता।</li>
+      <li><strong>वर्णनात्मक (Narrative):</strong> यात्रा-वृत्तांत, संस्मरण, जीवन-चरित्र, दृश्य व घटना चित्रण।</li>
+      <li><strong>साहित्यिक/विचारात्मक (Literary):</strong> दार्शनिक चिंतन, समाज सुधार, कला-संस्कृति, मानवीय मूल्य।</li>
+      <li><strong>संवादात्मक (Dialogue):</strong> पात्रों के बीच वाद-विवाद, वैचारिक मतभेद, दृष्टिकोण टकराव।</li>
+    </ul>
+  </div>
+
+  <div class="branch-card b-emerald">
+    <div class="branch-title" style="color: #065F46;">
+      <span>🎯</span> 2. प्रश्न संरचना एवं श्रेणियाँ
+    </div>
+    <ul class="branch-items">
+      <li><strong>प्रत्यक्ष तथ्य प्रश्न:</strong> 'किसने, क्या, कब, कहाँ' आधारित; गद्यांश में सीधे शब्द मिलान।</li>
+      <li><strong>निष्कर्ष व अनुमिति (Inference):</strong> पंक्तियों के बीच छुपा भाव; 'लेखक के अनुसार क्या सत्य है?'</li>
+      <li><strong>लेखक की दृष्टि व टोन (Tone):</strong> उपदेशात्मक, व्यंग्यात्मक, आलोचनात्मक, विश्लेषणात्मक या आशावादी।</li>
+      <li><strong>कारण-प्रभाव संबंध:</strong> घटना के पीछे के वास्तविक उत्प्रेरक की पहचान।</li>
+    </ul>
+  </div>
+
+  <div class="branch-card b-purple">
+    <div class="branch-title" style="color: #5B21B6;">
+      <span>🏷️</span> 3. शीर्षक निर्धारण के अचूक नियम
+    </div>
+    <ul class="branch-items">
+      <li><strong>केंद्रीय भाव का प्रतिबिंब:</strong> शीर्षक गद्यांश के 80-90% कथ्य को समाहित करे, संक्षिप्त व सटीक हो।</li>
+      <li><strong>प्रारंभ व अंत का संयोजन:</strong> प्रथम अनुच्छेद में समस्या/विषय और अंतिम में समाधान/निष्कर्ष से सूत्र।</li>
+      <li><strong>अति-संकीर्ण विकल्प वर्जित:</strong> किसी एक उप-अनुच्छेद या गौण उदाहरण पर आधारित शीर्षक न चुनें।</li>
+      <li><strong>आकर्षक व प्रतीकात्मक:</strong> साहित्यिक गद्यांशों में लाक्षणिक पद ही सर्वाधिक उपयुक्त शीर्षक बनते हैं।</li>
+    </ul>
+  </div>
+
+  <div class="branch-card b-amber">
+    <div class="branch-title" style="color: #92400E;">
+      <span>📖</span> 4. संदर्भ-बोध एवं शब्दावली
+    </div>
+    <ul class="branch-items">
+      <li><strong>प्रसंगानुकूल अर्थ (Contextual):</strong> शब्द का रूढ़ अर्थ नहीं, बल्कि गद्यांश के संदर्भ में निहित लाक्षणिक भाव।</li>
+      <li><strong>पर्याय एवं विलोम:</strong> गद्यांश में प्रयुक्त विशेषणों या संज्ञाओं के सही समानार्थी/विपरीतार्थी।</li>
+      <li><strong>सामासिक व संधि पद:</strong> रेखांकित पदों का व्याकरणिक विच्छेद (जैसे 'लोकमंगल', 'प्रत्युपकार')।</li>
+      <li><strong>मुहावरेदार प्रयोग:</strong> वाक्यों में अंतर्निहित व्यंग्य, लोकोक्ति या मुहावरे का यथार्थ अर्थ ग्रहण।</li>
+    </ul>
+  </div>
+
+  <div class="branch-card b-rose">
+    <div class="branch-title" style="color: #9F1239;">
+      <span>⚠️</span> 5. CUET घातक परीक्षा ट्रैप्स
+    </div>
+    <ul class="branch-items">
+      <li><strong>पूर्व-ज्ञान ट्रैप (Outside Bias):</strong> गद्यांश से बाहर की वास्तविक जानकारी को सही मानकर टिक करना।</li>
+      <li><strong>अतिवादी शब्द (Extreme Words):</strong> 'केवल', 'सर्वथा', 'सदैव', 'कभी नहीं' युक्त विकल्प 90% भ्रामक।</li>
+      <li><strong>आंशिक सत्य ट्रैप (Half-Truth):</strong> विकल्प का आधा हिस्सा सही किंतु शेष आधा गद्यांश-विरुद्ध।</li>
+      <li><strong>विरोधी अर्थ ट्रैप (Opposite Reversal):</strong> 'कौन-सा कथन असत्य है' में 'सत्य' कथन चुन लेना।</li>
+    </ul>
+  </div>
+
+  <div class="branch-card b-cyan">
+    <div class="branch-title" style="color: #155E75;">
+      <span>⚡</span> 6. समय प्रबंधन व हल प्रवाह
+    </div>
+    <ul class="branch-items">
+      <li><strong>25 सेकंड प्रश्न पूर्वावलोकन:</strong> गद्यांश पढ़ने से पूर्व प्रश्नों के कीवर्ड्स को मस्तिष्क में बैठाना।</li>
+      <li><strong>50 सेकंड द्रुत विहंगावलोकन:</strong> संपूर्ण गद्यांश का संरचनात्मक मानचित्र मस्तिष्क में तैयार करना।</li>
+      <li><strong>3-चरणीय निष्कासन (Elimination):</strong> 2 स्पष्ट असत्य विकल्पों को तुरंत काटकर 50-50 पर आना।</li>
+      <li><strong>साक्ष्य मिलान (Evidence Verification):</strong> उत्तर लगाने से पहले गद्यांश की पंक्ति से सीधा मिलान।</li>
+    </ul>
+  </div>
+</div>
+
+<div class="footer">
+  <span>सीयूईटी यूजी हिंदी (कोड 102) · <strong>अध्याय 1: अपठित बोध एवं गद्यांश विश्लेषण</strong></span>
+  <span>OURMOCKS · www.ourmocks.com · 2027 मानक संस्करण</span>
+</div>
+
+</body>
+</html>
