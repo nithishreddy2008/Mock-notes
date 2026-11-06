@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="sa">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 600px;
+    background: #FFFFFF;
+    font-family: "Kohinoor Devanagari", "Devanagari Sangam MN", -apple-system, sans-serif;
+    color: #0F172A;
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 19px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .title-block p {
+    font-size: 11px;
+    color: #64748B;
+    font-weight: 600;
+  }
+  .badge {
+    background: #EEF1F8;
+    color: #1F5EFF;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  .content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 12px;
+    flex-grow: 1;
+    margin-top: 10px;
+    margin-bottom: 8px;
+  }
+  .card {
+    background: #F8FAFC;
+    border: 1px solid #CBD5E1;
+    border-radius: 8px;
+    padding: 10px 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 6px;
+    border-bottom: 1.5px solid #E2E8F0;
+    padding-bottom: 4px;
+  }
+  .card-num {
+    background: #071A4D;
+    color: #FFF;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 800;
+  }
+  .card-title {
+    font-size: 12px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .card-body {
+    font-size: 10px;
+    line-height: 1.4;
+    color: #334155;
+    flex-grow: 1;
+  }
+  .rule-box {
+    background: #EFF6FF;
+    border-left: 3px solid #1F5EFF;
+    padding: 4px 8px;
+    margin: 4px 0;
+    border-radius: 0 4px 4px 0;
+    font-size: 9.5px;
+    color: #1E3A8A;
+  }
+  .highlight-box {
+    background: #ECFDF5;
+    border-left: 3px solid #059669;
+    padding: 4px 8px;
+    margin: 4px 0;
+    border-radius: 0 4px 4px 0;
+    font-size: 9.5px;
+    color: #064E3B;
+  }
+  .warn-box {
+    background: #FEF2F2;
+    border-left: 3px solid #DC2626;
+    padding: 4px 8px;
+    margin: 4px 0;
+    border-radius: 0 4px 4px 0;
+    font-size: 9.5px;
+    color: #991B1B;
+  }
+  .flow-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin: 4px 0;
+    font-size: 9.5px;
+  }
+  .flow-pill {
+    padding: 3px 6px;
+    border-radius: 4px;
+    font-weight: 700;
+  }
+  .pill-blue { background: #DBEAFE; color: #1E40AF; }
+  .pill-green { background: #D1FAE5; color: #065F46; }
+  .pill-amber { background: #FEF3C7; color: #92400E; }
+  .pill-purple { background: #F3E8FF; color: #6B21A8; }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 6px;
+    font-size: 10px;
+    color: #64748B;
+  }
+  .brand-tag {
+    color: #1F5EFF;
+    font-weight: 700;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="title-block">
+    <h1>वाच्य-त्रैविध्यम्, रूपान्तरण-प्रक्रिया एवं क्रिया-निर्माण-इञ्जन्</h1>
+    <p>कर्तृवाच्यम्, कर्मवाच्यम्, भाववाच्यम् तथा द्विकर्मक-धातूनां कर्मवाच्य-विधानम्</p>
+  </div>
+  <div class="badge">Voice Transformation Workflow</div>
+</div>
+
+<div class="content-grid">
+  <!-- Card 1 -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-num">१</div>
+      <div class="card-title">कर्तृवाच्यम् (Active Voice Architecture)</div>
+    </div>
+    <div class="card-body">
+      <div class="rule-box">
+        <b>लक्षणम्:</b> कर्ता प्रधानः (उक्तः); क्रिया कर्तुः पुरुष-वचनानुसारिणी।
+      </div>
+      <p style="margin-top:3px;">• <b>कर्ता:</b> प्रथमा विभक्तिः (यथा: रामः, बालकाः, अहम्)।</p>
+      <p>• <b>कर्म:</b> द्वितीया विभक्तिः (सकर्मक-धातुषु: ग्रन्थम्, ग्रामम्)।</p>
+      <p>• <b>क्रिया:</b> परस्मैपदि अथवा आत्मनेपदि (धातुस्वभावतः) कर्तुरनुसारम्।</p>
+      <div class="highlight-box" style="margin-top: 4px;">
+        <b>दृष्टान्तः:</b> <u>बालकः</u> (प्रथमा) <u>पुस्तकं</u> (द्वितीया) <u>पठति</u> (कर्तुरनुसारम्)।<br>
+        <u>अहम्</u> ग्रन्थं <u>पठामि</u>; <u>वयम्</u> देशं <u>रक्षामः</u>।
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-num">२</div>
+      <div class="card-title">कर्मवाच्यम् (Passive Voice Architecture)</div>
+    </div>
+    <div class="card-body">
+      <div class="rule-box">
+        <b>लक्षणम्:</b> कर्म प्रधानम् (उक्तम्); सकर्मक-धातुषु एव सम्भवति; क्रिया कर्मानुसारिणी।
+      </div>
+      <p style="margin-top:3px;">• <b>कर्ता:</b> तृतीया विभक्तिः (अनुक्ते कर्तरि तृतीया - बालकेन, मया, तैः)।</p>
+      <p>• <b>कर्म:</b> प्रथमा विभक्तिः (उक्तकर्मणि प्रथमा - पुस्तकम्, ग्रन्थाः)।</p>
+      <p>• <b>क्रिया:</b> <b>धातुः + यक् (य) + आत्मनेपदम् (ते/एते/न्ते)</b>।</p>
+      <div class="highlight-box" style="margin-top: 4px;">
+        <b>दृष्टान्तः:</b> <u>बालकेन</u> (तृतीया) <u>पुस्तकं</u> (प्रथमा) <u>पठ्यते</u> (कर्मानुसारम्)।<br>
+        <u>मया</u> <u>ग्रन्थाः</u> <u>पठ्यन्ते</u> (ग्रन्थाः बहुवचने, अतः क्रिया बहुवचने पठ्यन्ते)!
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 3 -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-num">३</div>
+      <div class="card-title">भाववाच्यम् (Impersonal Passive Architecture)</div>
+    </div>
+    <div class="card-body">
+      <div class="rule-box">
+        <b>लक्षणम्:</b> केवलम् अकर्मक-धातुषु; कर्म सर्वथा नास्ति; केवलं क्रियायाः भावः विवक्षितः।
+      </div>
+      <p style="margin-top:3px;">• <b>कर्ता:</b> तृतीया विभक्तिः (तेन, बालकैः, मया, त्वया)।</p>
+      <p>• <b>कर्म:</b> न भवति (अकर्मक-धातुत्वात् - हस्, गम्, स्था, शी, रुद्, भू)।</p>
+      <p>• <b>क्रिया-नियमः:</b> <u>सर्वदा प्रथमपुरुष-एकवचने आत्मनेपदे</u> (नित्यम्)!</p>
+      <div class="warn-box" style="margin-top: 4px;">
+        <b>दृष्टान्तः:</b> बालकैः (बहुवचनेऽपि) <u>हस्यते</u> (एकवचनमेव)।<br>
+        मया <u>गम्यते</u>; त्वया <u>स्थीयते</u>; शिशुना <u>रुद्यते</u>।
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 4 -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-num">४</div>
+      <div class="card-title">द्विकर्मक-धातुषु वाच्यपरिवर्तन-रहस्यम् (Dual Karma Rules)</div>
+    </div>
+    <div class="card-body">
+      <div class="rule-box">
+        <b>कारिका:</b> "गौणे कर्मणि दुह्यादेः प्रधाने नीहृकृष्वहाम्।"
+      </div>
+      <div style="margin-top: 4px;">
+        <p><b>१. दुहादि-१२ धातुषु (गौणे प्रथमा):</b></p>
+        <p>• कर्तृवाच्ये: गोपः <u>गां</u> (गौणम्) <u>पयः</u> (मुख्यम्) दोग्धि।</p>
+        <p>• कर्मवाच्ये: गोपेन <b>गौः</b> (प्रथमा) <b>पयः</b> (द्वितीया) <b>दुह्यते</b>।</p>
+        <p style="margin-top:3px;"><b>२. नी-हृ-कृष्-वह् धातुषु (प्रधाने प्रथमा):</b></p>
+        <p>• कर्तृवाच्ये: कृषकः <u>ग्रामम्</u> (गौणम्) <u>अजाम्</u> (मुख्यम्) नयति।</p>
+        <p>• कर्मवाच्ये: कृषकेन <b>ग्रामम्</b> (द्वितीया) <b>अजा</b> (प्रथमा) <b>नीयते</b>।</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <span class="brand-tag">OurMocks CUET UG Series</span>
+  <span>वाच्य-त्रैविध्य-सूत्रम् : कर्तृकर्मभावभेदेन त्रिविधं वाक्यम्</span>
+  <span>संस्कृतम् (Code 325) · Unit 7 Grammar Engine</span>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="sa">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 600px;
+    background: #FFFFFF;
+    font-family: "Kohinoor Devanagari", "Devanagari Sangam MN", -apple-system, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .title-block p {
+    font-size: 11.5px;
+    color: #64748B;
+    margin-top: 3px;
+    font-weight: 600;
+  }
+  .badge {
+    background: #EEF1F8;
+    color: #1F5EFF;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  .table-container {
+    flex-grow: 1;
+    margin-top: 10px;
+    margin-bottom: 8px;
+    border: 1px solid #CBD5E1;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  table {
+    width: 100%;
+    height: 100%;
+    border-collapse: collapse;
+    font-size: 10.5px;
+    text-align: left;
+  }
+  thead {
+    background: #071A4D;
+    color: #FFFFFF;
+  }
+  th {
+    padding: 7px 9px;
+    font-weight: 700;
+    font-size: 11px;
+    border-right: 1px solid #1E293B;
+  }
+  th:last-child { border-right: none; }
+  tbody tr {
+    border-bottom: 1px solid #E2E8F0;
+  }
+  tbody tr:nth-child(even) {
+    background: #F8FAFC;
+  }
+  tbody tr:last-child { border-bottom: none; }
+  td {
+    padding: 5px 8px;
+    vertical-align: middle;
+    line-height: 1.35;
+    border-right: 1px solid #E2E8F0;
+  }
+  td:last-child { border-right: none; }
+  .col-up { width: 15%; font-weight: 700; }
+  .col-meaning { width: 22%; font-size: 10px; color: #1E3A8A; font-weight: 600; }
+  .col-morph { width: 25%; font-size: 10px; color: #047857; }
+  .col-ex { width: 38%; font-size: 10px; color: #0F172A; }
+  .tag {
+    display: inline-block;
+    padding: 1.5px 5px;
+    border-radius: 4px;
+    font-size: 9px;
+    font-weight: 700;
+    margin-right: 3px;
+  }
+  .tag-pra { background: #E0E7FF; color: #3730A3; }
+  .tag-vi  { background: #DBEAFE; color: #1D4ED8; }
+  .tag-sam { background: #D1FAE5; color: #065F46; }
+  .tag-anu { background: #FEF3C7; color: #92400E; }
+  .tag-ud  { background: #FEE2E2; color: #991B1B; }
+  .tag-ati { background: #F3E8FF; color: #6B21A8; }
+  .tag-prati{ background: #CCFBF1; color: #115E59; }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 8px;
+    font-size: 10px;
+    color: #64748B;
+  }
+  .brand-tag {
+    color: #1F5EFF;
+    font-weight: 700;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="title-block">
+    <h1>द्वाविंशति-उपसर्गाः एवं धात्वर्थ-परिवर्तन-सारणी</h1>
+    <p>उपसर्गाः क्रियायोगे (१.४.५९) — "उपसर्गेण धात्वर्थो बलादन्यत्र नीयते"</p>
+  </div>
+  <div class="badge">संस्कृतम् (325) · Concept Matrix</div>
+</div>
+
+<div class="table-container">
+  <table>
+    <thead>
+      <tr>
+        <th>उपसर्गः & वर्गः</th>
+        <th>मौलिक-अर्थः / व्याप्तिः</th>
+        <th>'हृ' धातोः धात्वर्थ-परिवर्तनम्</th>
+        <th>CUET प्रामाणिक-क्रियारूपाणि वाक्यानि च</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="col-up"><span class="tag tag-pra">प्र</span> प्र, परा, अप</td>
+        <td class="col-meaning">प्र (आधिक्य/आरम्भ); परा (विपरीत/पराजय); अप (हीनता/दूर)</td>
+        <td class="col-morph">प्र + हृ = <b>प्रहरति</b> (आघातं करोति)<br>अप + हृ = <b>अपहरति</b> (चोरयति)</td>
+        <td class="col-ex">गङ्गा हिमवतः <b>प्रभवति</b>; सैनिकः शत्रून् <b>पराजयते</b>; दुर्जनः धनम् <b>अपहरति</b></td>
+      </tr>
+      <tr>
+        <td class="col-up"><span class="tag tag-sam">सम्</span> सम्, अनु, अव</td>
+        <td class="col-meaning">सम् (सम्यक्/संयोग); अनु (पश्चात्/सादृश्य); अव (हीनता/अधः)</td>
+        <td class="col-morph">सम् + हृ = <b>संहरति</b> (नाशयति)<br>अनु + हृ = <b>अनुहरति</b> (अनुकरोति)</td>
+        <td class="col-ex">शिवः संसारं <b>संहरति</b>; पुत्रः पितरम् <b>अनुगच्छति</b>; मुनिः तत्त्वम् <b>अवगच्छति</b></td>
+      </tr>
+      <tr>
+        <td class="col-up"><span class="tag tag-ud">निर्</span> निस्, निर्, दुस्, दुर्</td>
+        <td class="col-meaning">निस्/निर् (बहिः/निश्चय/विना); दुस्/दुर् (कठिन/निन्दित/दुष्ट)</td>
+        <td class="col-morph">निर् + हृ = <b>निहरति</b> (बहिष्कारयति)<br>दुस् + चर् = <b>दुश्चरति</b> (अधर्मः)</td>
+        <td class="col-ex">ग्रामात् <b>निर्गच्छति</b>; कार्यम् अतीव <b>दुष्करम्</b>; अयम् <b>दुर्जनः</b> वर्तते</td>
+      </tr>
+      <tr>
+        <td class="col-up"><span class="tag tag-vi">वि</span> वि, आङ् (आ)</td>
+        <td class="col-meaning">वि (वैशिष्ट्य/विपरीत/विभाग); आङ् (सीमा/अभिविधि/विपर्यय)</td>
+        <td class="col-morph">वि + हृ = <b>विहरति</b> (भ्रमति)<br>आ + हृ = <b>आहरति</b> (भोजयति/आनयति)</td>
+        <td class="col-ex">उद्याने <b>विहरति</b> बालः; भिक्षुः भिक्षाम् <b>आहरति</b>; रामः वनम् <b>आगच्छति</b></td>
+      </tr>
+      <tr>
+        <td class="col-up"><span class="tag tag-ati">नि</span> नि, अधि, अपि, अति</td>
+        <td class="col-meaning">नि (अधः/नितराम्); अधि (उपरि/प्रधान); अपि (पिधान); अति (आधिक्य)</td>
+        <td class="col-morph">नि + धा = <b>निदधाति</b> (स्थापयति)<br>अधि + कृ = <b>अधिकरोति</b> (स्वाम्यम्)</td>
+        <td class="col-ex">वृक्षात् <b>निपतति</b>; वैकुण्ठम् <b>अधितिष्ठति</b> हरिः; जलम् <b>अतिशेते</b></td>
+      </tr>
+      <tr>
+        <td class="col-up"><span class="tag tag-pra">सु</span> सु, उद् (उत्)</td>
+        <td class="col-meaning">सु (शोभन/सुष्ठु/आनुकूल्य); उत् (ऊर्ध्व/उन्नति/प्रकर्ष)</td>
+        <td class="col-morph">उद् + हृ = <b>उद्धरति</b> (रक्षति/उत्थापयति)<br>सु + शोभ् = <b>सुशोभते</b></td>
+        <td class="col-ex">कृष्णः गोवर्धनम् <b>उद्धरति</b>; खगः आकाशे <b>उत्पतति</b>; सभायां <b>सुशोभते</b></td>
+      </tr>
+      <tr>
+        <td class="col-up"><span class="tag tag-prati">प्रति</span> अभि, प्रति, परि, उप</td>
+        <td class="col-meaning">अभि (आभिमुख्य); प्रति (विपरीत/प्रत्येक); परि (समन्तात्); उप (समीप)</td>
+        <td class="col-morph">परि + हृ = <b>परिहरति</b> (त्यजति)<br>उप + हृ = <b>उपहरति</b> (भेंट ददाति)</td>
+        <td class="col-ex">शत्रुम् <b>अभिक्रुध्यति</b>; गुरुम् <b>प्रतिवदति</b>; दोषं <b>परिहरति</b>; शिष्यः <b>उपदिशति</b></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="footer">
+  <span class="brand-tag">OurMocks CUET UG Series</span>
+  <span>धात्वर्थ-विपर्यय-सूत्रम् : "प्रहाराहारसंहारविहारपरिहारवत्" (हृ-धातोः उपसर्ग-भेदेन षडर्थाः)</span>
+  <span>संस्कृतम् (Code 325) · Unit 7 Upasarga Matrix</span>
+</div>
+
+</body>
+</html>

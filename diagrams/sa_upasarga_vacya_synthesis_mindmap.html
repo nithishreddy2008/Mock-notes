@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="sa">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 600px;
+    background: #FFFFFF;
+    font-family: "Kohinoor Devanagari", "Devanagari Sangam MN", -apple-system, sans-serif;
+    color: #0F172A;
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 19px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .title-block p {
+    font-size: 11px;
+    color: #64748B;
+    font-weight: 600;
+  }
+  .badge {
+    background: #EEF1F8;
+    color: #1F5EFF;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  .mindmap-wrapper {
+    position: relative;
+    flex-grow: 1;
+    margin: 10px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 12px;
+  }
+  .central-hub {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #071A4D;
+    color: #FFFFFF;
+    padding: 10px 18px;
+    border-radius: 30px;
+    border: 3px solid #1F5EFF;
+    box-shadow: 0 4px 14px rgba(7, 26, 77, 0.25);
+    text-align: center;
+    z-index: 10;
+  }
+  .central-hub h2 {
+    font-size: 13px;
+    font-weight: 800;
+  }
+  .central-hub p {
+    font-size: 9.5px;
+    color: #93C5FD;
+    font-weight: 600;
+  }
+  .branch-card {
+    background: #F8FAFC;
+    border: 1px solid #CBD5E1;
+    border-radius: 8px;
+    padding: 10px 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .branch-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 6px;
+    border-bottom: 1.5px solid #E2E8F0;
+    padding-bottom: 4px;
+  }
+  .branch-pill {
+    padding: 2px 7px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 800;
+  }
+  .pill-red { background: #FEE2E2; color: #991B1B; }
+  .pill-blue { background: #DBEAFE; color: #1E40AF; }
+  .pill-green { background: #D1FAE5; color: #065F46; }
+  .pill-purple { background: #F3E8FF; color: #6B21A8; }
+  .branch-title {
+    font-size: 11.5px;
+    font-weight: 700;
+    color: #0F172A;
+  }
+  .item-list {
+    font-size: 9.5px;
+    line-height: 1.45;
+    color: #334155;
+  }
+  .item-list li {
+    list-style: none;
+    margin-bottom: 3px;
+    padding-left: 10px;
+    position: relative;
+  }
+  .item-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #1F5EFF;
+    font-weight: bold;
+  }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 6px;
+    font-size: 10px;
+    color: #64748B;
+  }
+  .brand-tag {
+    color: #1F5EFF;
+    font-weight: 700;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="title-block">
+    <h1>उपसर्ग-अव्यय-वाच्य-वाक्यरचना सम्पूर्ण-संश्लेषण-मानचित्रम्</h1>
+    <p>२२ उपसर्गाः, त्रिलिङ्ग-अविकारी-अव्ययानि, वाच्य-त्रैविध्यम् एवं संस्कृत-वाक्य-निर्माण-नियमाः</p>
+  </div>
+  <div class="badge">Comprehensive Synthesis Map</div>
+</div>
+
+<div class="mindmap-wrapper">
+  <div class="central-hub">
+    <h2>उपसर्ग-अव्यय-वाच्यम्</h2>
+    <p>संस्कृत-वाक्य-विन्यास-दर्शनम्</p>
+  </div>
+
+  <!-- Quadrant 1: Top-Left -->
+  <div class="branch-card">
+    <div class="branch-header">
+      <span class="branch-pill pill-blue">विभागः १</span>
+      <span class="branch-title">द्वाविंशति-उपसर्गाः (२२ Prefixes)</span>
+    </div>
+    <ul class="item-list">
+      <li><b>संज्ञा-सूत्रम्:</b> "उपसर्गाः क्रियायोगे" (१.४.५९); "प्रादयः" (१.४.५८)</li>
+      <li><b>संख्या:</b> द्वाविंशतिः (२२) — प्र, परा, अप, सम्, अनु, अव, निस्, निर्, दुस्, दुर्, वि, आङ्, नि, अधि, अपि, अति, सु, उत्, अभि, प्रति, परि, उप</li>
+      <li><b>धात्वर्थ-परिवर्तनम्:</b> "उपसर्गेण धात्वर्थो बलादन्यत्र नीयते" (प्रहार, आहार, संहार, विहार, परिहार)</li>
+      <li><b>अकर्मकस्य सकर्मकत्वम्:</b> हसति (अकर्मक) $\to$ उपहसति (सकर्मक); वसति $\to$ अधिवसति</li>
+    </ul>
+  </div>
+
+  <!-- Quadrant 2: Top-Right -->
+  <div class="branch-card">
+    <div class="branch-header">
+      <span class="branch-pill pill-green">विभागः २</span>
+      <span class="branch-title">अव्ययानि & प्रकाराः (Indeclinables)</span>
+    </div>
+    <ul class="item-list">
+      <li><b>लक्षणम्:</b> "सदृशं त्रिषु लिङ्गेषु सर्वासु च विभक्तिषु। वचनेषु च सर्वेषु यन्न व्येति तदव्ययम्॥"</li>
+      <li><b>कालवाचकाः:</b> अद्य, श्वः, ह्यः, परश्वः, इदानीम्, तदानीम्, कदा, यदा, तदा, सदा, सर्वदा</li>
+      <li><b>स्थानवाचकाः:</b> अत्र, तत्र, कुत्र, यत्र, सर्वत्र, एकत्र, उभयतः, परितः, बहिः, अन्तः</li>
+      <li><b>रीति/समुच्चय:</b> यथा-तथा, कथम्, नूनम्, खलु; च, वा, अपि, तु, यदि-तर्हि, चेत्, न, मा</li>
+    </ul>
+  </div>
+
+  <!-- Quadrant 3: Bottom-Left -->
+  <div class="branch-card">
+    <div class="branch-header">
+      <span class="branch-pill pill-purple">विभागः ३</span>
+      <span class="branch-title">वाच्य-त्रैविध्यम् (Voice System)</span>
+    </div>
+    <ul class="item-list">
+      <li><b>कर्तृवाच्यम्:</b> कर्तरि प्रथमा, कर्मणि द्वितीया, क्रिया कर्तुरनुसारिणी (बालकः ग्रन्थं पठति)</li>
+      <li><b>कर्मवाच्यम्:</b> कर्तरि तृतीया, कर्मणि प्रथमा, धातुः + यक् + आत्मनेपदम् (बालकेन ग्रन्थः पठ्यते)</li>
+      <li><b>भाववाच्यम्:</b> अकर्मक-धातुषु, कर्म नास्ति, क्रिया नित्यं प्र.पु. एकवचने (मया गम्यते, बालकैः हस्यते)</li>
+      <li><b>द्विकर्मकेषु नियमः:</b> "गौणे कर्मणि दुह्यादेः प्रधाने नीहृकृष्वहाम्" (गोपेन गौः पयो दुह्यते)</li>
+    </ul>
+  </div>
+
+  <!-- Quadrant 4: Bottom-Right -->
+  <div class="branch-card">
+    <div class="branch-header">
+      <span class="branch-pill pill-red">विभागः ४</span>
+      <span class="branch-title">वाक्यरचना & अशुद्धि-संशोधनम्</span>
+    </div>
+    <ul class="item-list">
+      <li><b>विशेषण-विशेष्य-सङ्गतिः:</b> यल्लिङ्गं यद्वचनं या च विभक्तिर्विशेष्यस्य, तदेव विशेषणस्यापि</li>
+      <li><b>संख्या-नियमः:</b> १-४ त्रिषु लिङ्गेषु भिन्नाः (एकः/एका/एकम्; द्वौ/द्वे; त्रयः/तिस्रः; चत्वारः/चतस्रः); ५+ समानाः</li>
+      <li><b>सर्वनाम-रूपान्तरणम्:</b> अहम् $\to$ मया, त्वम् $\to$ त्वया, सः $\to$ तेन, सा $\to$ तया, वयम् $\to$ अस्माभिः</li>
+      <li><b>घातक-भ्रमाः:</b> 'तेन पठति' (अशुद्धम्) $\to$ 'तेन पठ्यते' (शुद्धम्); 'मया ग्रन्थाः पठ्यते' $\to$ 'पठ्यन्ते'!</li>
+    </ul>
+  </div>
+</div>
+
+<div class="footer">
+  <span class="brand-tag">OurMocks CUET UG Series</span>
+  <span>संस्कृत-वाक्य-शास्त्रम् : उपसर्ग-अव्यय-वाच्य-सङ्गतिरेव वाक्य-सौन्दर्यस्य मूलम्</span>
+  <span>संस्कृतम् (Code 325) · Unit 7 Synthesis Mindmap</span>
+</div>
+
+</body>
+</html>
