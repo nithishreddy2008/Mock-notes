@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 750px;
+    background: #FFFFFF;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #1E3A8A;
+    letter-spacing: -0.02em;
+  }
+  .title-block p {
+    font-size: 11px;
+    color: #64748B;
+    margin-top: 3px;
+    font-weight: 500;
+  }
+  .badge {
+    background: #FDF2F8;
+    color: #DB2777;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 700;
+    border: 1px solid #FBCFE8;
+    text-transform: uppercase;
+  }
+  .mindmap-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 12px;
+    margin: 12px 0;
+    height: 605px;
+  }
+  .branch-card {
+    border: 1.5px solid #CBD5E1;
+    border-radius: 8px;
+    padding: 11px;
+    background: #F8FAFC;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .b-blue { border-color: #3B82F6; background: #EFF6FF; }
+  .b-emerald { border-color: #10B981; background: #ECFDF5; }
+  .b-purple { border-color: #8B5CF6; background: #F5F3FF; }
+  .b-amber { border-color: #F59E0B; background: #FFFBEB; }
+  .b-rose { border-color: #F43F5E; background: #FFF1F2; }
+  .b-cyan { border-color: #06B6D4; background: #ECFEFF; }
+  .branch-title {
+    font-size: 12.5px;
+    font-weight: 800;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .branch-items {
+    list-style: none;
+    font-size: 10px;
+    line-height: 1.45;
+    color: #334155;
+  }
+  .branch-items li {
+    margin-bottom: 4px;
+    position: relative;
+    padding-left: 13px;
+  }
+  .branch-items li::before {
+    content: "•";
+    position: absolute;
+    left: 2px;
+    color: #1E3A8A;
+    font-weight: bold;
+    font-size: 13px;
+    top: -2px;
+  }
+  .branch-items strong {
+    color: #0F172A;
+  }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 8px;
+    font-size: 9.5px;
+    color: #94A3B8;
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="title-block">
+    <h1>Fig 3: Master Synthesis Mindmap — Journalism, News Values & Editorial Ethics</h1>
+    <p>Comprehensive synoptic map covering News Values, Writing Architecture, Professional Ethics, and Legal Frameworks</p>
+  </div>
+  <div class="badge">Master Mindmap · CUET UG 318</div>
+</div>
+
+<div class="mindmap-container">
+  <div class="branch-card b-blue">
+    <div class="branch-title" style="color: #1E40AF;">
+      <span>📰</span> 1. Journalism & The Fourth Estate
+    </div>
+    <ul class="branch-items">
+      <li><strong>Democratic Mandate:</strong> The Fourth Estate acting as an adversarial watchdog holding public power accountable.</li>
+      <li><strong>Qualities of a Journalist:</strong> "Nose for News", persistent curiosity, linguistic clarity, empathy, skepticism.</li>
+      <li><strong>Verification Principle:</strong> "If your mother says she loves you, check it out" — on-record attribution.</li>
+      <li><strong>Objectivity vs Neutrality:</strong> Impartial reporting of factual evidence without taking false moral equivalence.</li>
+    </ul>
+  </div>
+
+  <div class="branch-card b-emerald">
+    <div class="branch-title" style="color: #065F46;">
+      <span>🎯</span> 2. News Values & Determinants
+    </div>
+    <ul class="branch-items">
+      <li><strong>Impact / Consequence:</strong> Scale and gravity of citizens affected by the reported event.</li>
+      <li><strong>Timeliness & Currency:</strong> Immediacy of breaking events; relevance to prevailing public discourse.</li>
+      <li><strong>Proximity:</strong> Geographical distance and cultural relevance to local readership.</li>
+      <li><strong>Prominence & Conflict:</strong> Public figures, political controversy, institutional struggles, and human interest.</li>
+    </ul>
+  </div>
+
+  <div class="branch-card b-purple">
+    <div class="branch-title" style="color: #5B21B6;">
+      <span>📐</span> 3. Inverted Pyramid & Story Anatomy
+    </div>
+    <ul class="branch-items">
+      <li><strong>The Lead (Lede):</strong> 5 Ws & 1 H (Who, What, When, Where, Why, How) encapsulated in the opening 30 words.</li>
+      <li><strong>Nut Graf:</strong> The paragraph establishing context, background, and the broader societal significance.</li>
+      <li><strong>Body Copy:</strong> Supporting evidence, quotes, and secondary facts in strict descending order of importance.</li>
+      <li><strong>Headline & Byline:</strong> Snappy active headline, author credit, and dateline indicating location of origin.</li>
+    </ul>
+  </div>
+
+  <div class="branch-card b-amber">
+    <div class="branch-title" style="color: #92400E;">
+      <span>✍️</span> 4. Journalistic Forms & Genres
+    </div>
+    <ul class="branch-items">
+      <li><strong>Hard News:</strong> Time-sensitive, factual, objective, breaking coverage (accidents, parliamentary votes).</li>
+      <li><strong>Soft News & Features:</strong> Evergreen, narrative, emotional, lifestyle, and character profiles.</li>
+      <li><strong>Investigative Reporting:</strong> Long-term, in-depth unearthing of concealed public corruption or crime.</li>
+      <li><strong>Opinion & Editorial:</strong> Editorials (institutional voice of paper), Op-Eds, signed columns, and letters.</li>
+    </ul>
+  </div>
+
+  <div class="branch-card b-rose">
+    <div class="branch-title" style="color: #9F1239;">
+      <span>⚠️</span> 5. Ethical Breaches & Pitfalls
+    </div>
+    <ul class="branch-items">
+      <li><strong>Paid News:</strong> Covert editorial coverage bought with commercial or political cash payments.</li>
+      <li><strong>Sensationalism / Yellow Journalism:</strong> Tabloid hysteria, melodramatic speculation, and media trials.</li>
+      <li><strong>Disinformation Triad:</strong> Misinformation (false/no harm), Disinformation (false/harm), Malinformation (true/leaked to harm).</li>
+      <li><strong>Sting Operations:</strong> Entrapment hazards; legally permissible only as last resort for grave public interest.</li>
+    </ul>
+  </div>
+
+  <div class="branch-card b-cyan">
+    <div class="branch-title" style="color: #155E75;">
+      <span>⚖️</span> 6. Indian Press Law & Regulation
+    </div>
+    <ul class="branch-items">
+      <li><strong>Article 19(1)(a):</strong> Fundamental right to freedom of speech and expression (incorporates press freedom).</li>
+      <li><strong>Article 19(2) Restrictions:</strong> Sovereignty, security of state, public order, decency, defamation, contempt.</li>
+      <li><strong>Defamation Law:</strong> IPC Section 499/500 criminal defamation & civil torts; truth exception.</li>
+      <li><strong>Regulatory Bodies:</strong> Press Council of India (PCI - statutory quasi-judicial) & NBDSA (self-regulatory TV body).</li>
+    </ul>
+  </div>
+</div>
+
+<div class="footer">
+  <span>CUET UG Mass Media Studies (Code 318) · <strong>Unit 2: Journalism & Editorial Ethics</strong></span>
+  <span>OURMOCKS · www.ourmocks.com · 2027 Invariant Standard</span>
+</div>
+
+</body>
+</html>

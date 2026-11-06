@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 600px;
+    background: #FFFFFF;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #1E3A8A;
+    letter-spacing: -0.02em;
+  }
+  .title-block p {
+    font-size: 11px;
+    color: #64748B;
+    margin-top: 3px;
+    font-weight: 500;
+  }
+  .badge {
+    background: #F0FDF4;
+    color: #166534;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 700;
+    border: 1px solid #BBF7D0;
+    text-transform: uppercase;
+  }
+  .process-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 12px;
+    margin: 16px 0;
+    flex: 1;
+  }
+  .step-card {
+    flex: 1;
+    background: #F8FAFC;
+    border: 1.5pt solid #CBD5E1;
+    border-radius: 8px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  .step-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #E2E8F0;
+    padding-bottom: 6px;
+  }
+  .step-num {
+    width: 24px;
+    height: 24px;
+    background: #071A4D;
+    color: #B8FF34;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 800;
+  }
+  .step-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #071A4D;
+  }
+  .step-action {
+    font-size: 10.5px;
+    color: #1E293B;
+    line-height: 1.4;
+    margin-bottom: 8px;
+  }
+  .step-rule {
+    background: #EFF6FF;
+    border-left: 3px solid #1F5EFF;
+    padding: 6px 8px;
+    border-radius: 4px;
+    font-size: 9.5px;
+    color: #1E40AF;
+    line-height: 1.35;
+    margin-top: auto;
+  }
+  .step-trap {
+    background: #FEF2F2;
+    border-left: 3px solid #DC2626;
+    padding: 6px 8px;
+    border-radius: 4px;
+    font-size: 9.5px;
+    color: #991B1B;
+    line-height: 1.35;
+    margin-top: 6px;
+  }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 10px;
+    font-size: 10px;
+    color: #64748B;
+  }
+  .footer strong { color: #071A4D; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="title-block">
+    <h1>Fig 2: The 5-Stage Editorial Lifecycle & Newsroom Workflow</h1>
+    <p>From Tip-Off to Inverted Pyramid Drafting, Copy Desk Gatekeeping, and Multiplatform Release</p>
+  </div>
+  <div class="badge">Workflow Lifecycle · CUET UG 318</div>
+</div>
+
+<div class="process-container">
+  <div class="step-card">
+    <div class="step-header">
+      <div class="step-num">1</div>
+      <div class="step-title">Scouting & "Nose for News"</div>
+    </div>
+    <div class="step-action">
+      Reporter detects a potential story through beat monitoring, whistleblower leaks, press releases, or civic anomalies.
+    </div>
+    <div class="step-rule">
+      <strong>Core Standard:</strong> Filter via <em>News Values</em>: Impact, Timeliness, Proximity, Prominence, Conflict, and Novelty.
+    </div>
+    <div class="step-trap">
+      <strong>Fatal Trap:</strong> Blindly copying a PR agency handout without assessing genuine public interest.
+    </div>
+  </div>
+
+  <div class="step-card">
+    <div class="step-header">
+      <div class="step-num">2</div>
+      <div class="step-title">Sourcing & Fact-Verification</div>
+    </div>
+    <div class="step-action">
+      Field investigation, witness interviews, RTI document retrieval, and seeking the subject's right of reply.
+    </div>
+    <div class="step-rule">
+      <strong>Sourcing Hierarchy:</strong> On-the-record (ideal) &rarr; On background &rarr; Deep background (off-the-record) needing cross-proof.
+    </div>
+    <div class="step-trap">
+      <strong>Fatal Trap:</strong> Single-source reliance or accepting unverified social media viral claims.
+    </div>
+  </div>
+
+  <div class="step-card">
+    <div class="step-header">
+      <div class="step-num">3</div>
+      <div class="step-title">Inverted Pyramid Drafting</div>
+    </div>
+    <div class="step-action">
+      Constructing the report: Headline &rarr; Byline & Dateline &rarr; 5 Ws & 1 H Lead &rarr; Nut Graf &rarr; Descending Body Details.
+    </div>
+    <div class="step-rule">
+      <strong>Lead Principle:</strong> Answer <em>Who, What, When, Where, Why, How</em> in the opening 25–35 words with strong active verbs.
+    </div>
+    <div class="step-trap">
+      <strong>Fatal Trap:</strong> "Burying the lead" by placing the most critical, breaking revelation in the middle of the story.
+    </div>
+  </div>
+
+  <div class="step-card">
+    <div class="step-header">
+      <div class="step-num">4</div>
+      <div class="step-title">Copy Desk & Sub-Editing</div>
+    </div>
+    <div class="step-action">
+      Sub-editor (copy editor) scrutinizes text for factual errors, grammar, stylebook compliance, and legal clearance.
+    </div>
+    <div class="step-rule">
+      <strong>Gatekeeping Duty:</strong> Trim from the bottom up without loss of core meaning; craft accurate, catchy headlines.
+    </div>
+    <div class="step-trap">
+      <strong>Fatal Trap:</strong> Sensationalizing the headline beyond the substantive facts supported by the reporter's body copy.
+    </div>
+  </div>
+
+  <div class="step-card">
+    <div class="step-header">
+      <div class="step-num">5</div>
+      <div class="step-title">Publication & Accountability</div>
+    </div>
+    <div class="step-action">
+      Multiplatform dissemination across print, web portal, broadcast feed, and official verified social handles.
+    </div>
+    <div class="step-rule">
+      <strong>Ethical Obligation:</strong> Immediate, prominent correction or apology if an error is identified; ombudsman review.
+    </div>
+    <div class="step-trap">
+      <strong>Fatal Trap:</strong> Silent deletions of erroneous stories without editorial transparency (stealth editing).
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <span>CUET UG Mass Media Studies (Code 318) · <strong>Unit 2: Journalism & Editorial Ethics</strong></span>
+  <span>OURMOCKS · www.ourmocks.com · 2027 Invariant Standard</span>
+</div>
+
+</body>
+</html>
