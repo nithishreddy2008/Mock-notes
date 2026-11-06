@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1440, height=880">
+  <title>Master Synthesis Mindmap: Understanding Data & Descriptive Statistics</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 1440px;
+      height: 880px;
+      background: radial-gradient(circle at center, #0F172A 0%, #080D1A 100%);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #F8FAFC;
+      padding: 28px 40px;
+      overflow: hidden;
+      position: relative;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 10;
+    }
+    .header h1 {
+      font-size: 26px;
+      font-weight: 800;
+      color: #FFFFFF;
+      letter-spacing: -0.01em;
+      margin-bottom: 4px;
+    }
+    .header p {
+      font-size: 13.5px;
+      color: #94A3B8;
+      font-weight: 500;
+    }
+    .badge {
+      display: inline-block;
+      background: #0066FF;
+      color: white;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 4px 12px;
+      border-radius: 14px;
+      margin-bottom: 6px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .mindmap-container {
+      width: 1360px;
+      height: 730px;
+      position: relative;
+      margin: 0 auto;
+    }
+
+    /* Central Hub */
+    .center-hub {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 250px;
+      height: 125px;
+      background: linear-gradient(135deg, #1E3A8A 0%, #0F2C59 100%);
+      border: 3px solid #3B82F6;
+      border-radius: 20px;
+      box-shadow: 0 0 35px rgba(59, 130, 246, 0.45);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 12px;
+      z-index: 20;
+    }
+    .center-hub h2 {
+      font-size: 18px;
+      font-weight: 800;
+      color: #FFFFFF;
+      line-height: 1.25;
+    }
+    .center-hub span {
+      font-size: 11px;
+      color: #93C5FD;
+      font-weight: 600;
+      margin-top: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    /* Node Cards */
+    .node {
+      position: absolute;
+      border-radius: 14px;
+      padding: 15px 18px;
+      box-shadow: 0 10px 25px -5px rgba(0,0,0,0.5);
+      z-index: 10;
+    }
+    .node h3 {
+      font-size: 14.5px;
+      font-weight: 800;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .node ul {
+      list-style: none;
+      font-size: 11.5px;
+      line-height: 1.5;
+    }
+    .node li {
+      margin-bottom: 4px;
+      display: flex;
+      align-items: flex-start;
+      gap: 5px;
+    }
+    .node li::before {
+      content: "▸";
+      color: inherit;
+      opacity: 0.8;
+      font-size: 12px;
+    }
+    .node strong {
+      color: #FFFFFF;
+    }
+
+    /* Node 1: Top Left - Data Types */
+    .node-1 {
+      top: 10px;
+      left: 20px;
+      width: 395px;
+      background: rgba(30, 41, 59, 0.85);
+      border: 1px solid #38BDF8;
+      border-left: 5px solid #38BDF8;
+    }
+    .node-1 h3 { color: #38BDF8; }
+    .node-1 { color: #CBD5E1; }
+
+    /* Node 2: Top Right - Central Tendency */
+    .node-2 {
+      top: 10px;
+      right: 20px;
+      width: 395px;
+      background: rgba(30, 41, 59, 0.85);
+      border: 1px solid #34D399;
+      border-left: 5px solid #34D399;
+    }
+    .node-2 h3 { color: #34D399; }
+    .node-2 { color: #CBD5E1; }
+
+    /* Node 3: Bottom Left - Dispersion */
+    .node-3 {
+      bottom: 15px;
+      left: 20px;
+      width: 395px;
+      background: rgba(30, 41, 59, 0.85);
+      border: 1px solid #FBBF24;
+      border-left: 5px solid #FBBF24;
+    }
+    .node-3 h3 { color: #FBBF24; }
+    .node-3 { color: #CBD5E1; }
+
+    /* Node 4: Bottom Right - Normal & Outliers */
+    .node-4 {
+      bottom: 15px;
+      right: 20px;
+      width: 395px;
+      background: rgba(30, 41, 59, 0.85);
+      border: 1px solid #F472B6;
+      border-left: 5px solid #F472B6;
+    }
+    .node-4 h3 { color: #F472B6; }
+    .node-4 { color: #CBD5E1; }
+
+    /* SVG Connecting Lines */
+    .connector-svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="badge">CUET UG Computer Science (308) &bull; Unit 6</div>
+    <h1>Master Synthesis Mindmap: Understanding Data & Statistics</h1>
+    <p>Data Structures, Descriptive Metrics, Distribution Theorems, Outlier Fences & Data Hygiene</p>
+  </div>
+
+  <div class="mindmap-container">
+    <svg class="connector-svg">
+      <!-- To Node 1 (Top Left) -->
+      <path d="M 555 330 C 435 270, 350 200, 280 180" fill="none" stroke="#38BDF8" stroke-width="2.5" stroke-dasharray="6,4" opacity="0.75" />
+      <!-- To Node 2 (Top Right) -->
+      <path d="M 805 330 C 925 270, 1010 200, 1080 180" fill="none" stroke="#34D399" stroke-width="2.5" stroke-dasharray="6,4" opacity="0.75" />
+      <!-- To Node 3 (Bottom Left) -->
+      <path d="M 555 395 C 435 450, 350 520, 280 540" fill="none" stroke="#FBBF24" stroke-width="2.5" stroke-dasharray="6,4" opacity="0.75" />
+      <!-- To Node 4 (Bottom Right) -->
+      <path d="M 805 395 C 925 450, 1010 520, 1080 540" fill="none" stroke="#F472B6" stroke-width="2.5" stroke-dasharray="6,4" opacity="0.75" />
+    </svg>
+
+    <!-- Center Hub -->
+    <div class="center-hub">
+      <h2>UNDERSTANDING<br>DATA</h2>
+      <span>Unit 6 Core Architecture</span>
+    </div>
+
+    <!-- Node 1: Top-Left: Data Types & Lifecycle -->
+    <div class="node node-1">
+      <h3>1. Data Taxonomy & Lifecycle</h3>
+      <ul>
+        <li><strong>Structured:</strong> Tabular relational model with fixed rigid schema (RDBMS, CSV, SQL tables, DataFrames).</li>
+        <li><strong>Semi-Structured:</strong> Self-describing schema using hierarchical tags or key-value trees (JSON, XML, YAML, NoSQL).</li>
+        <li><strong>Unstructured:</strong> Lacks predefined model; binary or freeform (audio, images, video, text documents, sensor logs).</li>
+        <li><strong>Processing Pipeline:</strong> Ingestion &rarr; Storage (Lake/Warehouse) &rarr; Sanitization &rarr; Transformation &rarr; Descriptive Analytics.</li>
+      </ul>
+    </div>
+
+    <!-- Node 2: Top-Right: Central Tendency -->
+    <div class="node node-2">
+      <h3>2. Measures of Central Tendency</h3>
+      <ul>
+        <li><strong>Arithmetic Mean:</strong> $\bar{X} = \sum X_i / N$. Sensitive to extreme values; pulled toward the long tail.</li>
+        <li><strong>Median:</strong> Middle value in sorted series (Rank $\frac{N+1}{2}$ for odd, avg of $\frac{N}{2}$ and $\frac{N}{2}+1$ for even). <strong>Robust to outliers</strong>.</li>
+        <li><strong>Mode:</strong> Most frequently occurring value. Can be unimodal, bimodal, multimodal, or non-existent. Sole central metric for categorical data.</li>
+        <li><strong>Skewness Order:</strong> Right (Positive): $\text{Mean} > \text{Median} > \text{Mode}$. Left (Negative): $\text{Mean} < \text{Median} < \text{Mode}$.</li>
+      </ul>
+    </div>
+
+    <!-- Node 3: Bottom-Left: Dispersion & Spread -->
+    <div class="node node-3">
+      <h3>3. Measures of Dispersion & Spread</h3>
+      <ul>
+        <li><strong>Range:</strong> $\text{Max} - \text{Min}$. Extreme sensitivity to outliers; ignores intermediate distribution.</li>
+        <li><strong>Quartiles & IQR:</strong> $Q_1$ (25th), $Q_2$ (50th, Median), $Q_3$ (75th). $\text{IQR} = Q_3 - Q_1$. Represents middle 50% spread.</li>
+        <li><strong>Variance & Std Dev:</strong> $\sigma^2 = \sum (X_i - \mu)^2 / N$; $\sigma = \sqrt{\sigma^2}$. Measures average dispersion from mean.</li>
+        <li><strong>Coeff. of Variation:</strong> $\text{CV} = (\sigma / \mu) \times 100\%$. Dimensionless metric comparing variability across different scales.</li>
+      </ul>
+    </div>
+
+    <!-- Node 4: Bottom-Right: Normal Curve & Outliers -->
+    <div class="node node-4">
+      <h3>4. Normal Distribution & Outliers</h3>
+      <ul>
+        <li><strong>Gaussian Normal Curve:</strong> Symmetric, bell-shaped ($\text{Mean} = \text{Median} = \text{Mode}$). Total area $= 1.0$.</li>
+        <li><strong>Empirical Rule:</strong> $68.27\%$ within $\mu \pm 1\sigma$; $95.45\%$ within $\mu \pm 2\sigma$; $99.73\%$ within $\mu \pm 3\sigma$.</li>
+        <li><strong>Tukey's Outlier Fences:</strong> Lower: $Q_1 - 1.5 \times \text{IQR}$; Upper: $Q_3 + 1.5 \times \text{IQR}$. Extreme outliers: $3.0 \times \text{IQR}$.</li>
+        <li><strong>Data Sanitization:</strong> Drop duplicates (`drop_duplicates`), impute missing numericals with Median (skewed) or Mean (symmetric), Mode for categoricals.</li>
+      </ul>
+    </div>
+  </div>
+
+</body>
+</html>

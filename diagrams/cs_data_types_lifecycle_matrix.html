@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1440, height=880">
+  <title>Data Types Taxonomy & Data Processing Lifecycle Matrix</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 1440px;
+      height: 880px;
+      background-color: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0F172A;
+      padding: 30px 40px;
+      overflow: hidden;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 18px;
+      border-bottom: 2px solid #E2E8F0;
+      padding-bottom: 12px;
+    }
+    .title-group h1 {
+      font-size: 25px;
+      font-weight: 800;
+      color: #0F2C59;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+    .title-group p {
+      font-size: 13.5px;
+      color: #64748B;
+      font-weight: 500;
+    }
+    .badge {
+      background: #0066FF;
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr 1.1fr;
+      gap: 18px;
+      height: calc(100% - 92px);
+    }
+    .card {
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      border-radius: 12px;
+      padding: 16px 18px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04);
+    }
+    .card-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #0F2C59;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 1.5px solid #F1F5F9;
+      padding-bottom: 8px;
+    }
+    .card-title .icon {
+      width: 22px;
+      height: 22px;
+      border-radius: 6px;
+      background: #EFF6FF;
+      color: #0066FF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    /* Comparison Table */
+    .comp-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 11px;
+      margin-bottom: 12px;
+    }
+    .comp-table th, .comp-table td {
+      border: 1px solid #E2E8F0;
+      padding: 6px 8px;
+      text-align: left;
+    }
+    .comp-table th {
+      background: #F1F5F9;
+      color: #1E293B;
+      font-weight: 700;
+    }
+    .type-badge {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+    .type-struct { background: #DCFCE7; color: #166534; }
+    .type-semi { background: #FEF3C7; color: #92400E; }
+    .type-unstruct { background: #FEE2E2; color: #991B1B; }
+
+    /* Lifecycle Pipeline */
+    .lifecycle-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 10px;
+      position: relative;
+    }
+    .step-number {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #0066FF;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+    .step-content {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 8px;
+      padding: 8px 10px;
+      flex-grow: 1;
+    }
+    .step-content h4 {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: #0F2C59;
+      margin-bottom: 3px;
+    }
+    .step-content p {
+      font-size: 10.5px;
+      color: #475569;
+      line-height: 1.35;
+    }
+
+    /* Traps & Imputation */
+    .impute-box {
+      background: #F0FDF4;
+      border: 1px solid #BBF7D0;
+      border-radius: 8px;
+      padding: 9px 12px;
+      margin-bottom: 10px;
+      font-size: 11px;
+      color: #166534;
+    }
+    .impute-box strong {
+      display: block;
+      color: #15803D;
+      font-size: 11.5px;
+      margin-bottom: 3px;
+    }
+    .trap-box {
+      background: #FEF2F2;
+      border-left: 4px solid #EF4444;
+      border-radius: 6px;
+      padding: 8px 10px;
+      margin-bottom: 8px;
+      font-size: 10.5px;
+      color: #991B1B;
+      line-height: 1.4;
+    }
+    .trap-box strong {
+      display: block;
+      color: #B91C1C;
+      font-size: 11px;
+      margin-bottom: 2px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="title-group">
+      <h1>Data Types Taxonomy & Data Processing Lifecycle</h1>
+      <p>Structural Dimensions, End-to-End Processing Stages, and Missing Data Imputation Strategies</p>
+    </div>
+    <div class="badge">CUET Core Data Matrix</div>
+  </div>
+
+  <div class="grid">
+    <!-- COLUMN 1: Data Types Taxonomy -->
+    <div class="card">
+      <div class="card-title">
+        <div class="icon">1</div>
+        Structural Taxonomy of Data
+      </div>
+
+      <table class="comp-table">
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Schema & Organization</th>
+            <th>Formats & Examples</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="type-badge type-struct">Structured</span></td>
+            <td>Strict predefined tabular schema (rows & columns). Highly normalized.</td>
+            <td>RDBMS tables, CSV files, SQL databases, Pandas DataFrames.</td>
+          </tr>
+          <tr>
+            <td><span class="type-badge type-semi">Semi-Structured</span></td>
+            <td>Self-describing tags or key-value hierarchies. No rigid relational schema.</td>
+            <td>JSON, XML, YAML, NoSQL documents, HTML trees.</td>
+          </tr>
+          <tr>
+            <td><span class="type-badge type-unstruct">Unstructured</span></td>
+            <td>No conceptual schema or organizational structure. Binary or raw text.</td>
+            <td>Images (JPEG/PNG), Audio (WAV/MP3), Video (MP4), PDFs, Free text blogs.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div style="background: #F1F5F9; border-radius: 8px; padding: 10px; font-size: 11px; color: #334155; line-height: 1.4;">
+        <strong>Storage & Query Paradigms:</strong>
+        <ul style="margin-left: 14px; margin-top: 4px;">
+          <li><strong>Structured:</strong> Queried with declarative SQL; relational algebra.</li>
+          <li><strong>Semi-Structured:</strong> Queried via XPath, JSONPath, MongoDB queries.</li>
+          <li><strong>Unstructured:</strong> Indexed via full-text search, OCR, embeddings, or deep neural networks.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- COLUMN 2: Data Processing Lifecycle -->
+    <div class="card">
+      <div class="card-title">
+        <div class="icon">2</div>
+        Data Processing Lifecycle Stages
+      </div>
+
+      <div class="lifecycle-step">
+        <div class="step-number">1</div>
+        <div class="step-content">
+          <h4>Data Collection & Ingestion</h4>
+          <p>Sensors, web scraping, APIs, surveys, and logs gather raw data into landing storage.</p>
+        </div>
+      </div>
+
+      <div class="lifecycle-step">
+        <div class="step-number">2</div>
+        <div class="step-content">
+          <h4>Storage & Organization</h4>
+          <p>Data lakes (raw), Data warehouses (structured/normalized), or distributed filesystems.</p>
+        </div>
+      </div>
+
+      <div class="lifecycle-step">
+        <div class="step-number">3</div>
+        <div class="step-content">
+          <h4>Cleaning & Sanitization</h4>
+          <p>Deduplication, handling NaN/null values, trimming whitespace, and type casting.</p>
+        </div>
+      </div>
+
+      <div class="lifecycle-step">
+        <div class="step-number">4</div>
+        <div class="step-content">
+          <h4>Transformation & Aggregation</h4>
+          <p>Feature scaling (Min-Max, Z-score), binning, encoding categorical variables, groupby.</p>
+        </div>
+      </div>
+
+      <div class="lifecycle-step" style="margin-bottom: 0;">
+        <div class="step-number">5</div>
+        <div class="step-content">
+          <h4>Analysis, Interpretation & Visualization</h4>
+          <p>Descriptive statistics (Mean, Median, StdDev), distributions, charts, and reporting.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- COLUMN 3: Missing Data & Traps -->
+    <div class="card">
+      <div class="card-title">
+        <div class="icon">3</div>
+        Missing Values & Imputation Matrix
+      </div>
+
+      <div class="impute-box">
+        <strong>Numerical Data Imputation Strategies</strong>
+        &bull; <strong>Symmetric Data:</strong> Impute with <em>Mean</em>.<br>
+        &bull; <strong>Skewed Data with Outliers:</strong> Impute with <em>Median</em> (robust against extremes).<br>
+        &bull; <strong>Time Series:</strong> <em>Forward Fill (ffill)</em> or <em>Interpolation</em>.
+      </div>
+
+      <div class="impute-box" style="background: #EFF6FF; border-color: #BFDBFE; color: #1E40AF;">
+        <strong style="color: #1D4ED8;">Categorical Data Imputation</strong>
+        &bull; Impute with <em>Mode</em> (most frequent value) or assign special sentinel <code>"Missing"</code> category.
+      </div>
+
+      <div class="trap-box">
+        <strong>Trap 1: Mean Imputation on Skewed Data</strong>
+        Substituting missing values with the arithmetic mean in skewed distributions introduces artificial bias toward the heavy tail! Always use Median.
+      </div>
+
+      <div class="trap-box">
+        <strong>Trap 2: Deletion vs Imputation Threshold</strong>
+        Dropping rows (`dropna`) is safe only if missingness is completely random and &lt; 5%. Broad deletion distorts sample statistics.
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
