@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 600px;
+    background: #FFFFFF;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .title-block p {
+    font-size: 11.5px;
+    color: #64748B;
+    margin-top: 3px;
+    font-weight: 600;
+  }
+  .badge {
+    background: #ECFDF5;
+    color: #065F46;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+  }
+  .flow-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-top: 14px;
+  }
+  .stage-card {
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 12px;
+    background: #F8FAFC;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .stage-number {
+    font-size: 10px;
+    font-weight: 800;
+    color: #1F5EFF;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .stage-title {
+    font-size: 13px;
+    font-weight: 800;
+    color: #071A4D;
+    margin: 4px 0 8px 0;
+    border-bottom: 1px solid #CBD5E1;
+    padding-bottom: 6px;
+  }
+  .stage-desc {
+    font-size: 10.2px;
+    color: #475569;
+    line-height: 1.45;
+  }
+  .highlight-box {
+    margin-top: 8px;
+    padding: 6px 8px;
+    border-radius: 4px;
+    font-size: 9.5px;
+    font-weight: 600;
+  }
+  .hl-blue { background: #EFF6FF; color: #1E40AF; border-left: 3px solid #3B82F6; }
+  .hl-green { background: #F0FDF4; color: #166534; border-left: 3px solid #22C55E; }
+  .hl-amber { background: #FFFBEB; color: #92400E; border-left: 3px solid #F59E0B; }
+  .hl-purple { background: #FAF5FF; color: #6B21A8; border-left: 3px solid #A855F7; }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    color: #94A3B8;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 8px;
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <div class="title-block">
+      <h1>Evolutionary Paradigm of Human-Nature Interactions & Environmental Ethics</h1>
+      <p>From Frontier Exploitation to Ecocentric Stewardship, Earth Democracy, and Rights of Nature</p>
+    </div>
+    <div class="badge">PARADIGM LIFECYCLE · FIG 2</div>
+  </div>
+
+  <div class="flow-container">
+    <div class="stage-card">
+      <div>
+        <div class="stage-number">Stage 01 · Frontier Paradigm</div>
+        <div class="stage-title">Anthropocentric Domination</div>
+        <div class="stage-desc">
+          • Nature viewed purely as an inexhaustible sink and resource quarry for human economic expansion.<br>
+          • Mechanistic Cartesian-Baconian worldview: humans are masters and possessors of nature.<br>
+          • Instrumental value only; zero intrinsic moral standing for non-human species.
+        </div>
+      </div>
+      <div class="highlight-box hl-amber">
+        Consequence: Rampant deforestation, industrial contamination, tragedy of open-access commons.
+      </div>
+    </div>
+
+    <div class="stage-card">
+      <div>
+        <div class="stage-number">Stage 02 · Reform Paradigm</div>
+        <div class="stage-title">Resource Conservation & Stewardship</div>
+        <div class="stage-desc">
+          • Utilitarian conservation (Gifford Pinchot): "Greatest good for the greatest number for the longest time."<br>
+          • Wendell Berry's agrarian stewardship: ethical obligation of humans as caretakers of living soil.<br>
+          • Regulatory controls: Clean air and water mandates; sustained-yield forestry models.
+        </div>
+      </div>
+      <div class="highlight-box hl-blue">
+        Focus: Intergenerational equity, mitigation of wasteful resource depletion, scientific forestry.
+      </div>
+    </div>
+
+    <div class="stage-card">
+      <div>
+        <div class="stage-number">Stage 03 · Ecocentric Paradigm</div>
+        <div class="stage-title">Biocentric Egalitarianism & Land Ethic</div>
+        <div class="stage-desc">
+          • Aldo Leopold's Land Ethic: expanding moral consideration to soils, waters, fauna, and flora.<br>
+          • Arne Næss's Deep Ecology: all living beings possess inherent intrinsic worth independent of utility.<br>
+          • Preservationist movement (John Muir): wilderness must be preserved untouched for spiritual value.
+        </div>
+      </div>
+      <div class="highlight-box hl-green">
+        Principle: Ecosystem integrity, population reduction, structural downscaling of consumerism.
+      </div>
+    </div>
+
+    <div class="stage-card">
+      <div>
+        <div class="stage-number">Stage 04 · Transformative Paradigm</div>
+        <div class="stage-title">Earth Democracy & Rights of Nature</div>
+        <div class="stage-desc">
+          • Vandana Shiva's Earth Democracy: living economies, cultural diversity, and reclaimed seed sovereignty.<br>
+          • Legal personhood for rivers, glaciers, and ecosystems (e.g., Whanganui River, Te Urewera, Gangotri).<br>
+          • Murray Bookchin's Social Ecology: dismantling social hierarchies as a prerequisite for ecological harmony.
+        </div>
+      </div>
+      <div class="highlight-box hl-purple">
+        Current Frontier: Constitutional rights of Mother Earth (Pachamama), biocultural conservation.
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>OURMOCKS ARCHITECTURAL FRAMEWORKS</span>
+    <span>THEMATIC INTERACTION WORKFLOW: ANTHROPOCENTRIC TO ECOCENTRIC TRANSITION</span>
+    <span>PAGE 8 THEMATIC BOARD</span>
+  </div>
+</body>
+</html>

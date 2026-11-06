@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 600px;
+    background: #FFFFFF;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .title-block p {
+    font-size: 11.5px;
+    color: #64748B;
+    margin-top: 3px;
+    font-weight: 600;
+  }
+  .badge {
+    background: #EEF1F8;
+    color: #1F5EFF;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+  }
+  .mindmap-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr 1fr;
+    gap: 14px;
+    align-items: center;
+    margin: auto 0;
+  }
+  .col {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .center-node {
+    background: linear-gradient(135deg, #071A4D 0%, #065F46 100%);
+    color: #FFFFFF;
+    border-radius: 12px;
+    padding: 22px 16px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(7, 26, 77, 0.15);
+  }
+  .center-node h2 {
+    font-size: 16px;
+    font-weight: 800;
+    margin-bottom: 6px;
+  }
+  .center-node p {
+    font-size: 10.5px;
+    color: #A7F3D0;
+    line-height: 1.4;
+  }
+  .node-box {
+    border: 1px solid #CBD5E1;
+    border-radius: 8px;
+    padding: 10px 12px;
+    background: #F8FAFC;
+  }
+  .node-box h3 {
+    font-size: 11.5px;
+    font-weight: 800;
+    color: #071A4D;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .node-box p {
+    font-size: 9.8px;
+    color: #475569;
+    line-height: 1.35;
+  }
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .dot-green { background: #059669; }
+  .dot-blue { background: #2563EB; }
+  .dot-amber { background: #D97706; }
+  .dot-purple { background: #7C3AED; }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    color: #94A3B8;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 8px;
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <div class="title-block">
+      <h1>Unit 1: Human Beings and Nature — Comprehensive Synthesis Mindmap</h1>
+      <p>Ecological Philosophy, Environmental Ethics, Social Ecology, Ecofeminism & Green Political Ideologies</p>
+    </div>
+    <div class="badge">CUET UG · SYNTHESIS MINDMAP</div>
+  </div>
+
+  <div class="mindmap-wrapper">
+    <div class="col">
+      <div class="node-box">
+        <h3><span class="dot dot-green"></span>1. Ecological Philosophy</h3>
+        <p>• <b>Deep Ecology:</b> Arne Næss, intrinsic value, biocentric egalitarianism, 8 principles.<br>• <b>Shallow Ecology:</b> Anthropocentric reformism, resource management, tech solutions.<br>• <b>Land Ethic:</b> Aldo Leopold, Sand County Almanac, biotic community integrity.</p>
+      </div>
+      <div class="node-box">
+        <h3><span class="dot dot-blue"></span>2. Stewardship & Land Ethics</h3>
+        <p>• <b>Wendell Berry:</b> Agrarian stewardship, critique of industrial agriculture.<br>• <b>Pinchot vs Muir:</b> Utilitarian conservation vs Wilderness preservation debate.<br>• <b>Indigenous Knowledge:</b> Traditional ecological wisdom, sacred groves.</p>
+      </div>
+    </div>
+
+    <div class="center-node">
+      <h2>HUMAN BEINGS & NATURE</h2>
+      <p>CUET UG Environmental Science · Code 307<br>Modern Ecological Thought<br>Ethics, Politics, & Earth Democracy</p>
+    </div>
+
+    <div class="col">
+      <div class="node-box">
+        <h3><span class="dot dot-purple"></span>3. Social Ecology & Ecofeminism</h3>
+        <p>• <b>Murray Bookchin:</b> Domination of nature stems from human hierarchies.<br>• <b>Barry Commoner:</b> 4 Laws of Ecology, socialist ecology, production tech critique.<br>• <b>Ecofeminism:</b> Vandana Shiva, Maria Mies, Chipko movement, seed defense.</p>
+      </div>
+      <div class="node-box">
+        <h3><span class="dot dot-amber"></span>4. Green Politics & Praxis</h3>
+        <p>• <b>Four Pillars:</b> Ecological wisdom, social justice, grassroots democracy, peace.<br>• <b>Activism:</b> Earth First! (Dave Foreman), direct action, biocentric defense.<br>• <b>Earth Democracy:</b> Rights of Nature, legal standing for rivers/ecosystems.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>OURMOCKS SYNTHESIZER MINDMAP · ENVIRONMENTAL SCIENCE CODE 307</span>
+    <span>SYNTHESIS: PHILOSOPHY + ETHICS + FEMINISM + GREEN POLITICS</span>
+    <span>PAGE 12 CORE ARTIFACT · FIG 3</span>
+  </div>
+</body>
+</html>
