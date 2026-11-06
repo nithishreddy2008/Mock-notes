@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="sa">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 600px;
+    background: #FFFFFF;
+    font-family: "Kohinoor Devanagari", "Devanagari Sangam MN", -apple-system, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .title-block p {
+    font-size: 11.5px;
+    color: #64748B;
+    margin-top: 3px;
+    font-weight: 600;
+  }
+  .badge {
+    background: #EEF1F8;
+    color: #1F5EFF;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 12px;
+  }
+  th {
+    background: #071A4D;
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 7px 8px;
+    text-align: left;
+    border: 1px solid #CBD5E1;
+  }
+  td {
+    font-size: 10.5px;
+    padding: 6.5px 8px;
+    border: 1px solid #E2E8F0;
+    line-height: 1.35;
+  }
+  tr:nth-child(even) { background: #F8FAFC; }
+  .chhanda-name { font-weight: 800; color: #1E3A8A; }
+  .syllables { font-weight: 700; color: #0284C7; text-align: center; }
+  .gana { font-family: monospace; font-size: 10px; font-weight: 600; color: #334155; }
+  .yati { font-weight: 600; color: #047857; }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    color: #94A3B8;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 8px;
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <div class="title-block">
+      <h1>संस्कृत-छन्दो-विज्ञानम् : एकादश-प्रमुख-वृत्तानां तुलनात्मिका तालिका</h1>
+      <p>Metrical Prosody Comparative Matrix: Syllables, Gaṇa Structure, Caesura (Yati) & Lakṣaṇa</p>
+    </div>
+    <div class="badge">CUET UG · छन्दो-मीमांसा</div>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 15%;">छन्दः (Metre)</th>
+        <th style="width: 10%; text-align: center;">प्रतिपाद-वर्णः</th>
+        <th style="width: 25%;">गण-विन्यासः (Gaṇa Pattern)</th>
+        <th style="width: 18%;">यति-स्थानम् (Pause)</th>
+        <th style="width: 32%;">प्रसिद्ध-लक्षणम् / उदाहरणम्</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="chhanda-name">१. अनुष्टुप् (श्लोकः)</td>
+        <td class="syllables">८ वर्णाः (३२)</td>
+        <td class="gana">पञ्चमं लघु सर्वत्र, सप्तमं द्विचतुर्थयोः</td>
+        <td class="yati">पादान्ते (८ वर्णेषु)</td>
+        <td>श्लोके षष्ठं गुरु ज्ञेयं सर्वत्र लघु पञ्चमम्। (रामायणम्)</td>
+      </tr>
+      <tr>
+        <td class="chhanda-name">२. इन्द्रवज्रा</td>
+        <td class="syllables">११ वर्णाः</td>
+        <td class="gana">त-त-ज-गौ (ऽ ऽ । , ऽ ऽ । , । ऽ । , ऽ ऽ)</td>
+        <td class="yati">पादान्ते</td>
+        <td>स्यादिन्द्रवज्रा यदि तौ जगौ गः। (अर्थो हि कन्या...)</td>
+      </tr>
+      <tr>
+        <td class="chhanda-name">३. उपेन्द्रवज्रा</td>
+        <td class="syllables">११ वर्णाः</td>
+        <td class="gana">ज-त-ज-गौ (। ऽ । , ऽ ऽ । , । ऽ । , ऽ ऽ)</td>
+        <td class="yati">पादान्ते</td>
+        <td>उपेन्द्रवज्रा जतजास्ततो गौ। (त्वमेव माता च पिता...)</td>
+      </tr>
+      <tr>
+        <td class="chhanda-name">४. उपजातिः</td>
+        <td class="syllables">११ वर्णाः</td>
+        <td class="gana">इन्द्रवज्रा-उपेन्द्रवज्रयोः मिश्रणम् (१४ भेदाः)</td>
+        <td class="yati">पादान्ते</td>
+        <td>अनन्तरोदीरितलक्ष्मभाजौ पादौ यदीयावुपजातयस्ताः।</td>
+      </tr>
+      <tr>
+        <td class="chhanda-name">५. शालिनी</td>
+        <td class="syllables">११ वर्णाः</td>
+        <td class="gana">म-त-त-गौ (ऽ ऽ ऽ , ऽ ऽ । , ऽ ऽ । , ऽ ऽ)</td>
+        <td class="yati">४ तथा ७ वर्णेषु</td>
+        <td>शालिन्युक्ता म्तौ तगौ गोऽब्धिलोकैः। (वैदिके / लौकिके)</td>
+      </tr>
+      <tr>
+        <td class="chhanda-name">६. वसन्ततिलका</td>
+        <td class="syllables">१४ वर्णाः</td>
+        <td class="gana">त-भ-ज-ज-गौ (ऽ ऽ । , ऽ । । , । ऽ । , । ऽ । , ऽ ऽ)</td>
+        <td class="yati">पादान्ते (१४ वर्णेषु)</td>
+        <td>उक्ता वसन्ततिलका तभजा जगौ गः। (कालिदास-प्रियम्)</td>
+      </tr>
+      <tr>
+        <td class="chhanda-name">७. मालिनी</td>
+        <td class="syllables">१५ वर्णाः</td>
+        <td class="gana">न-न-म-य-य (। । । , । । । , ऽ ऽ ऽ , । ऽ ऽ , । ऽ ऽ)</td>
+        <td class="yati">८ तथा ७ वर्णेषु (भोगि-लोकैः)</td>
+        <td>ननमयययुतेयं मालिनी भोगिलोकैः। (सरसिजमनुविद्धं...)</td>
+      </tr>
+      <tr>
+        <td class="chhanda-name">८. शिखरिणी</td>
+        <td class="syllables">१७ वर्णाः</td>
+        <td class="gana">य-म-न-स-भ-ला-गः (। ऽ ऽ , ऽ ऽ ऽ , । । । ...)</td>
+        <td class="yati">६ तथा ११ वर्णेषु (रसैः रुद्रैः)</td>
+        <td>रसै रुद्रैश्छिन्ना यमनसभला गः शिखरिणी। (भवभूतिः)</td>
+      </tr>
+      <tr>
+        <td class="chhanda-name">९. मन्दाक्रान्ता</td>
+        <td class="syllables">१७ वर्णाः</td>
+        <td class="gana">म-भ-न-त-त-गौ (ऽ ऽ ऽ , ऽ । । , । । । , ऽ ऽ । ...)</td>
+        <td class="yati">४, ६ तथा ७ वर्णेषु (जलधि-षड्-अङ्गैः)</td>
+        <td>मन्दाक्रान्ता जलधिषडगैर्म्भौ नतौ ताद्गुरू चेत्। (मेघदूतम्)</td>
+      </tr>
+      <tr>
+        <td class="chhanda-name">१०. शार्दूलविक्रीडितम्</td>
+        <td class="syllables">१९ वर्णाः</td>
+        <td class="gana">म-स-ज-स-त-त-गः (ऽ ऽ ऽ , । । ऽ , । ऽ । ...)</td>
+        <td class="yati">१२ तथा ७ वर्णेषु (सूर्य-अश्वैः)</td>
+        <td>सूर्याश्वैर्मसजस्तथाः सगुरवः शार्दूलविक्रीडितम्। (नीतिशतकम्)</td>
+      </tr>
+      <tr>
+        <td class="chhanda-name">११. स्रग्धरा</td>
+        <td class="syllables">२१ वर्णाः</td>
+        <td class="gana">म-र-भ-न-य-य-य (ऽ ऽ ऽ , ऽ । ऽ , ऽ । । ...)</td>
+        <td class="yati">७, ७ तथा ७ वर्णेषु (त्रिमुनि-यतिः)</td>
+        <td>म्राभ्नैर्यानां त्रयेण त्रिमुनियुतियुता स्रग्धरा कीर्तितेयम्।</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="footer">
+    <span>OURMOCKS COMPREHENSIVE SANSKRIT METRICS</span>
+    <span>सूत्रम्: यमाताराजभानसलगाम् (८ गणाः + लघु-गुरू)</span>
+    <span>CUET CODE 325 · UNIT 10 · FIG 1</span>
+  </div>
+</body>
+</html>

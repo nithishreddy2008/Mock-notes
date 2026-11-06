@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="sa">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 600px;
+    background: #FFFFFF;
+    font-family: "Kohinoor Devanagari", "Devanagari Sangam MN", -apple-system, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .title-block p {
+    font-size: 11.5px;
+    color: #64748B;
+    margin-top: 3px;
+    font-weight: 600;
+  }
+  .badge {
+    background: #FEF3C7;
+    color: #92400E;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+  }
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-top: 14px;
+  }
+  .card {
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 12px;
+    background: #F8FAFC;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .card-header {
+    font-size: 12.5px;
+    font-weight: 800;
+    color: #071A4D;
+    border-bottom: 1px solid #CBD5E1;
+    padding-bottom: 6px;
+    margin-bottom: 8px;
+  }
+  .source {
+    font-size: 10px;
+    color: #1F5EFF;
+    font-weight: 700;
+  }
+  .item-list {
+    list-style: none;
+    font-size: 10px;
+    color: #334155;
+    line-height: 1.5;
+  }
+  .item-list li { margin-bottom: 5px; }
+  .highlight { font-weight: 700; color: #0F172A; }
+  .tag {
+    display: inline-block;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 9.5px;
+    font-weight: 700;
+    margin-top: 6px;
+  }
+  .tag-blue { background: #DBEAFE; color: #1E40AF; }
+  .tag-emerald { background: #D1FAE5; color: #065F46; }
+  .tag-purple { background: #EDE9FE; color: #5B21B6; }
+  .tag-amber { background: #FEF3C7; color: #92400E; }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    color: #94A3B8;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 8px;
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <div class="title-block">
+      <h1>पाठ्यपुस्तक-अवबोधन-प्रक्रिया : ‘भास्वती’ एवं ‘शाश्वती’ प्रमुख-पाठानां विश्लेषणात्मकं चक्रम्</h1>
+      <p>Textbook Comprehension Framework: Thematic Core, Syntactic Reordering (Anvaya), & Exam Focus</p>
+    </div>
+    <div class="badge">भास्वती-शाश्वती · NCERT CORE</div>
+  </div>
+
+  <div class="grid-container">
+    <div class="card">
+      <div>
+        <div class="card-header">
+          १. कर्मगौरवम् / अनुशासनम्
+          <div class="source">श्रीमद्भगवद्गीता & तैत्तिरीयोपनिषद्</div>
+        </div>
+        <ul class="item-list">
+          <li><span class="highlight">कथावस्तु:</span> निष्काम-कर्मयोगः तथा दीक्षान्त-उपदेशः (सत्यं वद, धर्मं चर)।</li>
+          <li><span class="highlight">अन्वय-केन्द्रम्:</span> "कर्मण्येवाधिकारस्ते मा फलेषु कदाचन..."</li>
+          <li><span class="highlight">सूक्ति-सम्पदा:</span> स्वाध्यायान्मा प्रमदः; मातृदेवो भव, पितृदेवो भव।</li>
+        </ul>
+      </div>
+      <span class="tag tag-blue">नीतिशास्त्रम् & वेदान्तः</span>
+    </div>
+
+    <div class="card">
+      <div>
+        <div class="card-header">
+          २. प्रजापालनम् / मयूरव्यंसकः
+          <div class="source">महाभारतम् (शान्तिपर्व) & तत्त्वचिन्ता</div>
+        </div>
+        <ul class="item-list">
+          <li><span class="highlight">कथावस्तु:</span> राजधर्मः, प्रजा-रक्षणम्, समासोक्तौ धूर्त-वञ्चन-कथा।</li>
+          <li><span class="highlight">अन्वय-केन्द्रम्:</span> "प्रजासुखे सुखं राज्ञः प्रजानां च हिते हितम्।"</li>
+          <li><span class="highlight">सूक्ति-सम्पदा:</span> दण्डो हि पालयति प्रजाः सर्वाः।</li>
+        </ul>
+      </div>
+      <span class="tag tag-emerald">राजधर्मः & व्याकरणम्</span>
+    </div>
+
+    <div class="card">
+      <div>
+        <div class="card-header">
+          ३. विद्यासुधा / सौवर्णशकटिका
+          <div class="source">हितोपदेशः & मृच्छकटिकम् (अङ्क ६)</div>
+        </div>
+        <ul class="item-list">
+          <li><span class="highlight">कथावस्तु:</span> विद्यायाः विनय-दातृत्वम् तथा रोहसेनस्य मृत्तिका-शकटिका।</li>
+          <li><span class="highlight">अन्वय-केन्द्रम्:</span> "विद्या ददाति विनयं विनयाद्याति पात्रताम्।"</li>
+          <li><span class="highlight">सूक्ति-सम्पदा:</span> वसन्तसेनायाः आभरण-समर्पणम्, बाल-मनोविज्ञानम्।</li>
+        </ul>
+      </div>
+      <span class="tag tag-purple">नाट्य-संवादः & संस्काराः</span>
+    </div>
+
+    <div class="card">
+      <div>
+        <div class="card-header">
+          ४. अवबोधन-परीक्षण-विधिः
+          <div class="source">CUET 5-Step Diagnostic Protocol</div>
+        </div>
+        <ul class="item-list">
+          <li><span class="highlight">१. एकपदेन उत्तरम्:</span> विभक्ति-वचन-सटीकता।</li>
+          <li><span class="highlight">२. पूर्णवाक्येन उत्तरम्:</span> कर्तृ-क्रिया-सम्बन्धः।</li>
+          <li><span class="highlight">३. भाषिक-कार्यम्:</span> कर्तृ-क्रिया-चयनम्, विशेष्य-विशेषणम्।</li>
+          <li><span class="highlight">४. विलोम-पर्याय-शोधनम्:</span> सन्दर्भ-आधारितम्।</li>
+        </ul>
+      </div>
+      <span class="tag tag-amber">५/५ परीक्षा-दक्षता</span>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>OURMOCKS NCERT TEXTBOOK COMPREHENSION MATRIX</span>
+    <span>लक्ष्यम्: शतप्रतिशतं शुद्ध-अवबोधनम् (Reading Mastery)</span>
+    <span>CUET CODE 325 · UNIT 10 · FIG 2</span>
+  </div>
+</body>
+</html>

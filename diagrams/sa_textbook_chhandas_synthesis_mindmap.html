@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="sa">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 600px;
+    background: #FFFFFF;
+    font-family: "Kohinoor Devanagari", "Devanagari Sangam MN", -apple-system, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .title-block p {
+    font-size: 11.5px;
+    color: #64748B;
+    margin-top: 3px;
+    font-weight: 600;
+  }
+  .badge {
+    background: #EEF1F8;
+    color: #1F5EFF;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+  }
+  .mindmap-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr 1fr;
+    gap: 14px;
+    align-items: center;
+    margin: auto 0;
+  }
+  .col {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .center-node {
+    background: linear-gradient(135deg, #071A4D 0%, #1E3A8A 100%);
+    color: #FFFFFF;
+    border-radius: 12px;
+    padding: 20px 16px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(7, 26, 77, 0.15);
+  }
+  .center-node h2 {
+    font-size: 16px;
+    font-weight: 800;
+    margin-bottom: 6px;
+  }
+  .center-node p {
+    font-size: 10.5px;
+    color: #93C5FD;
+    line-height: 1.4;
+  }
+  .node-box {
+    border: 1px solid #CBD5E1;
+    border-radius: 8px;
+    padding: 10px 12px;
+    background: #F8FAFC;
+    position: relative;
+  }
+  .node-box h3 {
+    font-size: 11.5px;
+    font-weight: 800;
+    color: #071A4D;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .node-box p {
+    font-size: 9.8px;
+    color: #475569;
+    line-height: 1.35;
+  }
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .dot-blue { background: #2563EB; }
+  .dot-emerald { background: #059669; }
+  .dot-amber { background: #D97706; }
+  .dot-purple { background: #7C3AED; }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    color: #94A3B8;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 8px;
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <div class="title-block">
+      <h1>संस्कृत-पाठ्यपुस्तकम्, अवबोधनम्, सूक्तयः छन्दांसि च : सम्पूर्ण-संश्लेषण-मानचित्रम्</h1>
+      <p>Comprehensive Synthesis Mindmap: Textbook Corpus, Prosody, Subhāṣitas, & Comprehension Diagnostics</p>
+    </div>
+    <div class="badge">CUET UG · SYNTHESIS MINDMAP</div>
+  </div>
+
+  <div class="mindmap-wrapper">
+    <div class="col">
+      <div class="node-box">
+        <h3><span class="dot dot-blue"></span>१. पाठ्यपुस्तकम् (Bhasvati-Shashvati)</h3>
+        <p>• गद्य-पद्य-नाटकांश-त्रिविध-पाठ-संरचना।<br>• उपनिषद्, गीता, रामायण, हितोपदेश, मृच्छकटिक-मूलानि।<br>• अन्वय-योजना, शब्दार्थ-ग्रहणम्, सन्दर्भ-ज्ञानम्।</p>
+      </div>
+      <div class="node-box">
+        <h3><span class="dot dot-emerald"></span>२. सूक्तयः एवं नैतिक-मूल्यानि</h3>
+        <p>• सत्यं वद, धर्मं चर (स्वाध्याय-प्रवचनम्)।<br>• परोपकाराय सतां विभूतयः (सुभाषितानि)।<br>• विद्या ददाति विनयं (सदाचार-संहिता)।</p>
+      </div>
+    </div>
+
+    <div class="center-node">
+      <h2>पाठ्यपुस्तकम् & छन्दो-मीमांसा</h2>
+      <p>NCERT भास्वती-शाश्वती अवबोधनम्<br>एकादश-वृत्तानि (अनुष्टुप्-स्रग्धरा)<br>अन्वय-भाषिककार्य-परीक्षण-व्यूहः</p>
+    </div>
+
+    <div class="col">
+      <div class="node-box">
+        <h3><span class="dot dot-purple"></span>३. छन्दो-विज्ञानम् (Classical Prosody)</h3>
+        <p>• यमाताराजभानसलगाम् (८ गणाः + ल-गौ)।<br>• एकादश-प्रमुख-वृत्तानां वर्ण-संख्या, यतिः, लक्षणम्।<br>• श्लोके पाद-विभाजनम्, मात्रा-गणना-कौशलम्।</p>
+      </div>
+      <div class="node-box">
+        <h3><span class="dot dot-amber"></span>४. अवबोधन-परीक्षण-कौशलम्</h3>
+        <p>• कर्तृ-क्रिया-सङ्गतिः, विशेष्य-विशेषण-सम्बन्धः।<br>• पर्याय-विलोम-पद-चयनम्, सर्वनाम-स्थाने संज्ञा।<br>• गद्यांशे शीर्षाभिधानम् (Title Determination)।</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>OURMOCKS SYNTHESIZER MINDMAP · SANSKRIT CODE 325</span>
+    <span>अन्तिम-एकीकरणम्: पाठ्यपुस्तकम् + छन्दः + सूक्ति + अवबोधनम्</span>
+    <span>PAGE 12 CORE ARTIFACT · FIG 3</span>
+  </div>
+</body>
+</html>
