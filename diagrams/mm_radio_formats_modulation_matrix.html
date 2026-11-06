@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 600px;
+    background: #FFFFFF;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #071A4D;
+    letter-spacing: -0.02em;
+  }
+  .title-block p {
+    font-size: 11px;
+    color: #64748B;
+    margin-top: 3px;
+    font-weight: 500;
+  }
+  .badge {
+    background: #EEF1F8;
+    color: #1F5EFF;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 700;
+    border: 1px solid #C7D7FE;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-top: 14px;
+    flex-grow: 1;
+  }
+  .col {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+  }
+  .col.highlight {
+    background: #F0FDF4;
+    border-color: #86EFAC;
+  }
+  .col.featured {
+    background: #EEF2FF;
+    border-color: #A5B4FC;
+  }
+  .col-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #E2E8F0;
+  }
+  .col-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 800;
+  }
+  .col-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #071A4D;
+  }
+  .section-label {
+    font-size: 9px;
+    font-weight: 800;
+    color: #64748B;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 6px 0 2px 0;
+  }
+  .content-text {
+    font-size: 10.5px;
+    line-height: 1.35;
+    color: #334155;
+  }
+  .tag-pill {
+    display: inline-block;
+    background: #E2E8F0;
+    color: #334155;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 9px;
+    font-weight: 600;
+    margin-right: 4px;
+    margin-top: 3px;
+  }
+  .spec-tag {
+    background: #DBEAFE;
+    color: #1E40AF;
+  }
+  .rule-tag {
+    background: #FEF3C7;
+    color: #92400E;
+  }
+  .footer {
+    border-top: 1px solid #E2E8F0;
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    color: #64748B;
+  }
+  .footer-brand {
+    font-weight: 700;
+    color: #071A4D;
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <div class="title-block">
+      <h1>Comparative Matrix: Radio Modulation Standards, Formats & Audio Pickups</h1>
+      <p>Technical spectrum physics, broadcasting tiers, propagation models, and studio microphone polar patterns</p>
+    </div>
+    <div class="badge">CUET Mass Media · Technical Matrix</div>
+  </div>
+
+  <div class="grid">
+    <!-- Tier 1: AM -->
+    <div class="col">
+      <div class="col-header">
+        <div class="col-icon" style="background:#475569; color:#fff;">AM</div>
+        <div class="col-title">Amplitude Modulation (AM)</div>
+      </div>
+      <div class="section-label">Spectrum & Physics</div>
+      <div class="content-text">Medium Wave (526–1606 kHz) & Short Wave (3–30 MHz). Constant frequency; audio modulates carrier amplitude.</div>
+      <div class="section-label">Propagation & Range</div>
+      <div class="content-text">
+        <span class="tag-pill spec-tag">Skywave</span> Ionospheric reflection at night.<br>
+        <span class="tag-pill spec-tag">Massive Reach</span> Hundreds of kilometers across national borders.
+      </div>
+      <div class="section-label">Audio Fidelity</div>
+      <div class="content-text">Narrow bandwidth (5 kHz); mono audio; highly vulnerable to electrical static and lightning interference.</div>
+      <div class="section-label">Exam Significance</div>
+      <div class="content-text"><span class="tag-pill rule-tag">AIR Backbone</span> Primary medium for national news and agricultural outreach to remote rural zones.</div>
+    </div>
+
+    <!-- Tier 2: Commercial FM -->
+    <div class="col featured">
+      <div class="col-header">
+        <div class="col-icon" style="background:#2563EB; color:#fff;">FM</div>
+        <div class="col-title">Commercial FM Radio</div>
+      </div>
+      <div class="section-label">Spectrum & Physics</div>
+      <div class="content-text">VHF Band II (88–108 MHz). Constant carrier amplitude; audio signal modulates carrier frequency directly.</div>
+      <div class="section-label">Propagation & Range</div>
+      <div class="content-text">
+        <span class="tag-pill spec-tag">Line-of-Sight</span> Ground wave propagation.<br>
+        <span class="tag-pill spec-tag">Local Radius</span> 50–70 km urban metro coverage from hilltop/tower antennas.
+      </div>
+      <div class="section-label">Audio Fidelity</div>
+      <div class="content-text">Wide bandwidth (15 kHz audio, 200 kHz channel); high-fidelity stereo; totally immune to electrical static.</div>
+      <div class="section-label">Exam Significance</div>
+      <div class="content-text"><span class="tag-pill rule-tag">Private FM Auctions</span> Phase I-III licensing; restricted from producing independent news.</div>
+    </div>
+
+    <!-- Tier 3: Community Radio -->
+    <div class="col highlight">
+      <div class="col-header">
+        <div class="col-icon" style="background:#16A34A; color:#fff;">CR</div>
+        <div class="col-title">Community Radio (CRS)</div>
+      </div>
+      <div class="section-label">Spectrum & Physics</div>
+      <div class="content-text">Dedicated low-power FM frequencies (88–108 MHz) assigned by WPC wing of DoT under MIB guidelines.</div>
+      <div class="section-label">Propagation & Range</div>
+      <div class="content-text">
+        <span class="tag-pill spec-tag">100W Transmitter</span> Max ERP limit.<br>
+        <span class="tag-pill spec-tag">10–15 km Radius</span> Hyper-local geographic or campus community footprint.
+      </div>
+      <div class="section-label">Philosophy & Format</div>
+      <div class="content-text">Non-profit, community-owned and operated. Local dialects, indigenous folk arts, maternal health, local farming.</div>
+      <div class="section-label">Exam Significance</div>
+      <div class="content-text"><span class="tag-pill rule-tag">Pioneers</span> Anna FM (2004, Campus); Sangham Radio (2008, Rural NGO); 5 min/hr ad cap.</div>
+    </div>
+
+    <!-- Tier 4: Podcasting & Digital -->
+    <div class="col">
+      <div class="col-header">
+        <div class="col-icon" style="background:#9333EA; color:#fff;">POD</div>
+        <div class="col-title">Podcasting & Digital Audio</div>
+      </div>
+      <div class="section-label">Spectrum & Physics</div>
+      <div class="content-text">Internet protocol audio packets (MP3/AAC); syndicated via RSS feeds over cellular networks and broadband.</div>
+      <div class="section-label">Propagation & Range</div>
+      <div class="content-text">
+        <span class="tag-pill spec-tag">Global Reach</span> On-demand asynchronous streaming.<br>
+        <span class="tag-pill spec-tag">Time-Shifted</span> Non-linear listener control.
+      </div>
+      <div class="section-label">Audio Fidelity</div>
+      <div class="content-text">Variable/Lossless bitrates (128–320 kbps); binaural 3D spatial audio; pristine multi-track studio mastering.</div>
+      <div class="section-label">Exam Significance</div>
+      <div class="content-text"><span class="tag-pill rule-tag">Niche Culture</span> Intimate long-form talk; true crime; bypasses terrestrial spectrum licensing.</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div><strong>Key Invariant:</strong> AM reflects off the ionosphere (long distance); FM is line-of-sight (static-free); Community Radio is restricted to 100W and 15 km.</div>
+    <div class="footer-brand">OURMOCKS · Mass Media Studies</div>
+  </div>
+</body>
+</html>
