@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 600px;
+    background: #FFFFFF;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #071A4D;
+    letter-spacing: -0.02em;
+  }
+  .title-block p {
+    font-size: 11px;
+    color: #64748B;
+    margin-top: 3px;
+    font-weight: 500;
+  }
+  .badge {
+    background: #EEF1F8;
+    color: #1F5EFF;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 700;
+    border: 1px solid #C7D7FE;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .stages-container {
+    display: flex;
+    gap: 12px;
+    margin-top: 14px;
+    flex-grow: 1;
+  }
+  .stage-card {
+    flex: 1;
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  .stage-card.primary {
+    background: #F0FDF4;
+    border-color: #86EFAC;
+  }
+  .stage-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #E2E8F0;
+    margin-bottom: 10px;
+  }
+  .stage-num {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #071A4D;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .stage-title {
+    font-size: 13px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .sub-box {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    padding: 8px 10px;
+    margin-bottom: 8px;
+  }
+  .sub-title {
+    font-size: 10px;
+    font-weight: 800;
+    color: #1F5EFF;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 4px;
+  }
+  .sub-content {
+    font-size: 10px;
+    line-height: 1.35;
+    color: #334155;
+  }
+  .arrow-indicator {
+    position: absolute;
+    right: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    background: #1F5EFF;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 800;
+    z-index: 10;
+  }
+  .footer {
+    border-top: 1px solid #E2E8F0;
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    color: #64748B;
+  }
+  .footer-brand {
+    font-weight: 700;
+    color: #071A4D;
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <div class="title-block">
+      <h1>Advertising Agency Operations & Comprehensive Campaign Lifecycle</h1>
+      <p>End-to-end agency workflow: Client servicing, creative brief, media planning, production, and ASCI compliance</p>
+    </div>
+    <div class="badge">CUET Mass Media · Agency Workflow</div>
+  </div>
+
+  <div class="stages-container">
+    <!-- Stage 1 -->
+    <div class="stage-card">
+      <div class="stage-header">
+        <div class="stage-num">1</div>
+        <div class="stage-title">Client Brief & Planning</div>
+      </div>
+      <div class="sub-box">
+        <div class="sub-title">1. Client Servicing Intake</div>
+        <div class="sub-content">Account Executive receives marketing objectives, product specs, competitor landscape, and budget parameters from client.</div>
+      </div>
+      <div class="sub-box">
+        <div class="sub-title">2. Account Planning Research</div>
+        <div class="sub-content">Qualitative focus groups, demographic & psychographic profiling; identifying core consumer insights.</div>
+      </div>
+      <div class="sub-box">
+        <div class="sub-title">3. The Creative Brief</div>
+        <div class="sub-content">One-page strategic contract guiding creative team: Single-minded proposition (SMP), target audience, tone of voice, mandatories.</div>
+      </div>
+      <div class="arrow-indicator">➔</div>
+    </div>
+
+    <!-- Stage 2 -->
+    <div class="stage-card primary">
+      <div class="stage-header">
+        <div class="stage-num" style="background:#16A34A;">2</div>
+        <div class="stage-title">Creative Execution</div>
+      </div>
+      <div class="sub-box">
+        <div class="sub-title" style="color:#15803D;">Copywriting Craft</div>
+        <div class="sub-content">Crafting headlines (direct, blind, question), persuasive body copy, memorable taglines/slogans, and call-to-actions.</div>
+      </div>
+      <div class="sub-box">
+        <div class="sub-title" style="color:#15803D;">Art Direction & Visualization</div>
+        <div class="sub-content">Visual hierarchy, typography selection, color psychology, print scamps, and 24-frame storyboard for TVCs.</div>
+      </div>
+      <div class="sub-box">
+        <div class="sub-title" style="color:#15803D;">Internal Creative Review</div>
+        <div class="sub-content">Creative Director evaluates alignment against Creative Brief; pitches refined concepts to client brand managers.</div>
+      </div>
+      <div class="arrow-indicator">➔</div>
+    </div>
+
+    <!-- Stage 3 -->
+    <div class="stage-card">
+      <div class="stage-header">
+        <div class="stage-num">3</div>
+        <div class="stage-title">Media Planning & Buying</div>
+      </div>
+      <div class="sub-box">
+        <div class="sub-title">1. Media Strategy Formulation</div>
+        <div class="sub-content">Balancing Reach (% of target audience exposed) versus Frequency (average number of exposures per viewer).</div>
+      </div>
+      <div class="sub-box">
+        <div class="sub-title">2. Quantitative Analytics</div>
+        <div class="sub-content">Calculating Gross Rating Points (GRP), Cost Per Thousand (CPM), Cost Per Rating Point (CPRP), and target Dayparts.</div>
+      </div>
+      <div class="sub-box">
+        <div class="sub-title">3. Media Buying & Negotiation</div>
+        <div class="sub-content">Contracting prime-time television slots, print full pages, OOH billboard sites, and programmatic digital ad auctions.</div>
+      </div>
+      <div class="arrow-indicator">➔</div>
+    </div>
+
+    <!-- Stage 4 -->
+    <div class="stage-card">
+      <div class="stage-header">
+        <div class="stage-num">4</div>
+        <div class="stage-title">Production & Governance</div>
+      </div>
+      <div class="sub-box">
+        <div class="sub-title">1. Commercial Production</div>
+        <div class="sub-content">Filming live TV commercials (TVC), recording radio jingles, digital banners, and final print proofing.</div>
+      </div>
+      <div class="sub-box">
+        <div class="sub-title">2. ASCI Ethical Audit</div>
+        <div class="sub-content">Verifying adherence to Advertising Standards Council of India Code: Truthfulness, non-misleading, no surrogate alcohol/tobacco.</div>
+      </div>
+      <div class="sub-box">
+        <div class="sub-title">3. Post-Campaign Evaluation</div>
+        <div class="sub-content">Pre-testing and post-testing recall, brand lift studies, digital Click-Through Rates (CTR), and sales conversion ROI.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div><strong>Key Exam Invariant:</strong> The Creative Brief bridges account management and creative; Media Planning balances Reach vs Frequency; ASCI enforces self-regulation.</div>
+    <div class="footer-brand">OURMOCKS · Mass Media Studies</div>
+  </div>
+</body>
+</html>

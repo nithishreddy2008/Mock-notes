@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 600px;
+    background: #FFFFFF;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #071A4D;
+    letter-spacing: -0.02em;
+  }
+  .title-block p {
+    font-size: 11px;
+    color: #64748B;
+    margin-top: 3px;
+    font-weight: 500;
+  }
+  .badge {
+    background: #EEF1F8;
+    color: #1F5EFF;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 700;
+    border: 1px solid #C7D7FE;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-top: 14px;
+    flex-grow: 1;
+  }
+  .col {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+  }
+  .col.highlight {
+    background: #F0FDF4;
+    border-color: #86EFAC;
+  }
+  .col.featured {
+    background: #EEF2FF;
+    border-color: #A5B4FC;
+  }
+  .col-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #E2E8F0;
+  }
+  .col-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 800;
+  }
+  .col-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #071A4D;
+  }
+  .section-label {
+    font-size: 9px;
+    font-weight: 800;
+    color: #64748B;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 6px 0 2px 0;
+  }
+  .content-text {
+    font-size: 10.5px;
+    line-height: 1.35;
+    color: #334155;
+  }
+  .tag-pill {
+    display: inline-block;
+    background: #E2E8F0;
+    color: #334155;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 9px;
+    font-weight: 600;
+    margin-right: 4px;
+    margin-top: 3px;
+  }
+  .spec-tag {
+    background: #DBEAFE;
+    color: #1E40AF;
+  }
+  .rule-tag {
+    background: #FEF3C7;
+    color: #92400E;
+  }
+  .footer {
+    border-top: 1px solid #E2E8F0;
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    color: #64748B;
+  }
+  .footer-brand {
+    font-weight: 700;
+    color: #071A4D;
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <div class="title-block">
+      <h1>Comparative Matrix: Theoretical Advertising Models & Strategic Appeals</h1>
+      <p>Hierarchical response frameworks, creative positioning doctrines, and psychological appeal classifications</p>
+    </div>
+    <div class="badge">CUET Mass Media · Advertising Matrix</div>
+  </div>
+
+  <div class="grid">
+    <!-- Model 1: AIDA -->
+    <div class="col featured">
+      <div class="col-header">
+        <div class="col-icon" style="background:#2563EB; color:#fff;">AI</div>
+        <div class="col-title">AIDA Hierarchy (1898)</div>
+      </div>
+      <div class="section-label">Origin & Author</div>
+      <div class="content-text">E. St. Elmo Lewis. Foundational sales and advertising funnel model tracking consumer cognitive progression.</div>
+      <div class="section-label">Sequential Stages</div>
+      <div class="content-text">
+        <span class="tag-pill spec-tag">Attention</span> Visual hook / headline.<br>
+        <span class="tag-pill spec-tag">Interest</span> Engaging body copy / facts.<br>
+        <span class="tag-pill spec-tag">Desire</span> Emotional / benefit longing.<br>
+        <span class="tag-pill spec-tag">Action</span> Purchase / call-to-action (CTA).
+      </div>
+      <div class="section-label">CUET Examination Invariant</div>
+      <div class="content-text"><span class="tag-pill rule-tag">Linear Funnel</span> Cognitive $->$ Affective $->$ Conative response hierarchy.</div>
+    </div>
+
+    <!-- Model 2: DAGMAR -->
+    <div class="col">
+      <div class="col-header">
+        <div class="col-icon" style="background:#0D9488; color:#fff;">DA</div>
+        <div class="col-title">DAGMAR Model (1961)</div>
+      </div>
+      <div class="section-label">Origin & Author</div>
+      <div class="content-text">Russell H. Colley. <em>Defining Advertising Goals for Measured Advertising Results</em>. Separates ad communication from sales.</div>
+      <div class="section-label">Sequential Stages (ACCA)</div>
+      <div class="content-text">
+        <span class="tag-pill spec-tag">Awareness</span> Brand existence recognition.<br>
+        <span class="tag-pill spec-tag">Comprehension</span> Understanding attributes.<br>
+        <span class="tag-pill spec-tag">Conviction</span> Psychological preference.<br>
+        <span class="tag-pill spec-tag">Action</span> Measurable consumer behavior.
+      </div>
+      <div class="section-label">CUET Examination Invariant</div>
+      <div class="content-text"><span class="tag-pill rule-tag">Measurable Target</span> Ad goals must define specific target audience, benchmark, and time frame.</div>
+    </div>
+
+    <!-- Model 3: USP -->
+    <div class="col highlight">
+      <div class="col-header">
+        <div class="col-icon" style="background:#16A34A; color:#fff;">US</div>
+        <div class="col-title">Unique Selling Proposition (USP)</div>
+      </div>
+      <div class="section-label">Origin & Author</div>
+      <div class="content-text">Rosser Reeves (Ted Bates agency, 1940s/1961 in <em>Reality in Advertising</em>). Hard-sell functional superiority principle.</div>
+      <div class="section-label">Three Inviolable Rules</div>
+      <div class="content-text">
+        <span class="tag-pill spec-tag">Specific Benefit</span> "Buy X to get Y."<br>
+        <span class="tag-pill spec-tag">Unique Claim</span> Competitor cannot/does not offer.<br>
+        <span class="tag-pill spec-tag">Mass Pull</span> Strong enough to move millions.
+      </div>
+      <div class="section-label">CUET Examination Invariant</div>
+      <div class="content-text"><span class="tag-pill rule-tag">Functional Hook</span> Classic example: M&Ms ("Melts in your mouth, not in your hand").</div>
+    </div>
+
+    <!-- Model 4: Brand Positioning -->
+    <div class="col">
+      <div class="col-header">
+        <div class="col-icon" style="background:#7C3AED; color:#fff;">BP</div>
+        <div class="col-title">Brand Positioning (1972/81)</div>
+      </div>
+      <div class="section-label">Origin & Author</div>
+      <div class="content-text">Al Ries and Jack Trout (<em>Positioning: The Battle for Your Mind</em>). Owning a singular perception in an over-communicated society.</div>
+      <div class="section-label">Core Strategic Logic</div>
+      <div class="content-text">
+        <span class="tag-pill spec-tag">Mental Ladder</span> First brand on category rung.<br>
+        <span class="tag-pill spec-tag">Repositioning</span> Redefining competitors.<br>
+        <span class="tag-pill spec-tag">Perceptual Space</span> Owning a single word (e.g. Volvo = "Safety").
+      </div>
+      <div class="section-label">CUET Examination Invariant</div>
+      <div class="content-text"><span class="tag-pill rule-tag">Mind Over Product</span> Positioning is not what you do to a product; it is what you do to the prospect's mind.</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div><strong>Core Invariant:</strong> AIDA tracks sales stages; DAGMAR measures communication goals (ACCA); Reeves coined USP; Ries & Trout pioneered Positioning.</div>
+    <div class="footer-brand">OURMOCKS · Mass Media Studies</div>
+  </div>
+</body>
+</html>
