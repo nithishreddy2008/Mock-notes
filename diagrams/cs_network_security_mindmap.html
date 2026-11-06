@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 600px;
+    background: #FFFFFF;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #1E3A8A;
+    letter-spacing: -0.02em;
+  }
+  .title-block p {
+    font-size: 11px;
+    color: #64748B;
+    margin-top: 3px;
+    font-weight: 500;
+  }
+  .badge {
+    background: #EFF6FF;
+    color: #1D4ED8;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 700;
+    border: 1px solid #BFDBFE;
+    text-transform: uppercase;
+  }
+  .mindmap-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 12px;
+    margin: 14px 0;
+    flex: 1;
+  }
+  .branch-card {
+    background: #F8FAFC;
+    border: 1.5px solid #CBD5E1;
+    border-radius: 8px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+  }
+  .branch-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    padding-bottom: 6px;
+    border-bottom: 1.5px solid #E2E8F0;
+  }
+  .branch-icon {
+    width: 22px;
+    height: 22px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    font-weight: 800;
+    font-size: 11px;
+  }
+  .b-red { background: #EF4444; }
+  .b-orange { background: #F97316; }
+  .b-purple { background: #8B5CF6; }
+  .b-blue { background: #3B82F6; }
+  .b-green { background: #10B981; }
+  .b-indigo { background: #6366F1; }
+  .branch-title {
+    font-size: 12px;
+    font-weight: 800;
+    color: #0F172A;
+  }
+  .branch-content {
+    font-size: 10.5px;
+    line-height: 1.4;
+    color: #334155;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .branch-content strong {
+    color: #0F172A;
+  }
+  .tag {
+    display: inline-block;
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-size: 9px;
+    font-weight: 700;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    background: #E2E8F0;
+    color: #1E293B;
+  }
+  .footer-bar {
+    border-top: 1px solid #E2E8F0;
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 10px;
+    color: #64748B;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="title-block">
+    <h1>Master Synthesis Mindmap: Network Security, Cyber Threats & Defenses</h1>
+    <p>CUET UG Computer Science (Code 308) · Complete Architectural Blueprint of Threat Models, Cryptography & Law</p>
+  </div>
+  <div class="badge">Comprehensive Mindmap</div>
+</div>
+
+<div class="mindmap-grid">
+  <!-- Card 1 -->
+  <div class="branch-card" style="border-top: 4px solid #EF4444;">
+    <div class="branch-header">
+      <div class="branch-icon b-red">1</div>
+      <div class="branch-title">Malware Taxonomy</div>
+    </div>
+    <div class="branch-content">
+      <div>• <strong>Virus:</strong> Parasitic code attaching to host files (<span class="tag">.exe</span>); needs user to execute.</div>
+      <div>• <strong>Worm:</strong> Standalone, self-replicating code exploiting network sockets. Bandwidth hog.</div>
+      <div>• <strong>Trojan:</strong> Disguised as legitimate utility; opens backdoors. <em>Never replicates</em>.</div>
+      <div>• <strong>Ransomware:</strong> Cryptographically locks files; demands ransom.</div>
+      <div>• <strong>Spyware:</strong> Secret keylogger tracking user behavior.</div>
+    </div>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="branch-card" style="border-top: 4px solid #F97316;">
+    <div class="branch-header">
+      <div class="branch-icon b-orange">2</div>
+      <div class="branch-title">Cyber Attack Vectors</div>
+    </div>
+    <div class="branch-content">
+      <div>• <strong>DoS / DDoS:</strong> Traffic flooding (SYN flood, UDP storm) via zombie botnets. Hits <em>Availability</em>.</div>
+      <div>• <strong>Phishing:</strong> Fraudulent emails spoofing trusted entities.</div>
+      <div>• <strong>Pharming:</strong> DNS poisoning redirecting valid URL to fake IP.</div>
+      <div>• <strong>Spoofing:</strong> IP / MAC / Email address forgery.</div>
+      <div>• <strong>MitM:</strong> Packet interception & eavesdropping.</div>
+    </div>
+  </div>
+
+  <!-- Card 3 -->
+  <div class="branch-card" style="border-top: 4px solid #8B5CF6;">
+    <div class="branch-header">
+      <div class="branch-icon b-purple">3</div>
+      <div class="branch-title">Cryptography & PKI</div>
+    </div>
+    <div class="branch-content">
+      <div>• <strong>Symmetric:</strong> Single shared secret key (AES, DES). Fast.</div>
+      <div>• <strong>Asymmetric:</strong> Public key encrypts, Private key decrypts (RSA, ECC). Slower, solves key exchange.</div>
+      <div>• <strong>Hashing:</strong> One-way digest (SHA-256). Proves <em>Integrity</em>.</div>
+      <div>• <strong>Digital Signature:</strong> Hash encrypted with <strong>Sender Private Key</strong> (Authenticity & Non-Repudiation).</div>
+      <div>• <strong>Digital Certificate:</strong> CA-signed binding of public key.</div>
+    </div>
+  </div>
+
+  <!-- Card 4 -->
+  <div class="branch-card" style="border-top: 4px solid #3B82F6;">
+    <div class="branch-header">
+      <div class="branch-icon b-blue">4</div>
+      <div class="branch-title">Firewalls & Defenses</div>
+    </div>
+    <div class="branch-content">
+      <div>• <strong>Packet Filter:</strong> L3/L4 rules (IP, Port, Protocol). Stateless.</div>
+      <div>• <strong>Stateful Inspection:</strong> Tracks active TCP 3-way handshakes.</div>
+      <div>• <strong>Application Proxy:</strong> L7 deep packet inspection (DPI).</div>
+      <div>• <strong>Antivirus:</strong> Signature matching, heuristic behavioral scanning.</div>
+      <div>• <strong>DMZ:</strong> Demilitarized subnetwork isolating public servers.</div>
+    </div>
+  </div>
+
+  <!-- Card 5 -->
+  <div class="branch-card" style="border-top: 4px solid #10B981;">
+    <div class="branch-header">
+      <div class="branch-icon b-green">5</div>
+      <div class="branch-title">Web Security & Identity</div>
+    </div>
+    <div class="branch-content">
+      <div>• <strong>HTTPS (Port 443):</strong> HTTP over TLS/SSL encryption.</div>
+      <div>• <strong>Cookies:</strong> Session (RAM) vs Persistent (Disk) vs 3rd Party (Tracking). Can be hijacked.</div>
+      <div>• <strong>Authentication:</strong> 2FA / MFA combining Knowledge (password), Possession (OTP/token), Inherence (biometrics).</div>
+      <div>• <strong>Digital Footprints:</strong> Active (posts) vs Passive (IP logs).</div>
+    </div>
+  </div>
+
+  <!-- Card 6 -->
+  <div class="branch-card" style="border-top: 4px solid #6366F1;">
+    <div class="branch-header">
+      <div class="branch-icon b-indigo">6</div>
+      <div class="branch-title">Cyber Law & Ethics (IT Act 2000)</div>
+    </div>
+    <div class="branch-content">
+      <div>• <strong>IT Act 2000:</strong> Legal recognition of electronic records & digital signatures. 2008 amendments.</div>
+      <div>• <strong>Hacker vs Cracker:</strong> Ethical white-hat testing vs malicious criminal intrusion.</div>
+      <div>• <strong>IPR:</strong> Copyright (code), Patent (algorithm), Trademark (brand).</div>
+      <div>• <strong>Offenses:</strong> Section 66 (Hacking), 66E (Privacy), 43 (Tampering).</div>
+    </div>
+  </div>
+</div>
+
+<div class="footer-bar">
+  <div><strong>CUET Core Focus:</strong> Malware Differences · Digital Signature Signing Key · Firewall Tiers · IT Act 2000 · Phishing vs Pharming</div>
+  <div>© OurMocks Education · CUET UG Computer Science Security Suite</div>
+</div>
+
+</body>
+</html>

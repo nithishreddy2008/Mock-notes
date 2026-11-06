@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 600px;
+    background: #FFFFFF;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #1E3A8A;
+    letter-spacing: -0.02em;
+  }
+  .title-block p {
+    font-size: 11px;
+    color: #64748B;
+    margin-top: 3px;
+    font-weight: 500;
+  }
+  .badge {
+    background: #EFF6FF;
+    color: #1D4ED8;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 700;
+    border: 1px solid #BFDBFE;
+    text-transform: uppercase;
+  }
+  .matrix-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 14px;
+    font-size: 11px;
+  }
+  .matrix-table th {
+    background: #1E3A8A;
+    color: #FFFFFF;
+    font-weight: 700;
+    text-align: left;
+    padding: 8px 10px;
+    font-size: 10.5px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
+  .matrix-table th:first-child { border-top-left-radius: 6px; }
+  .matrix-table th:last-child { border-top-right-radius: 6px; }
+  .matrix-table td {
+    padding: 7px 10px;
+    border-bottom: 1px solid #E2E8F0;
+    vertical-align: middle;
+  }
+  .matrix-table tr:nth-child(even) td { background: #F8FAFC; }
+  .matrix-table tr:hover td { background: #EFF6FF; }
+  .threat-pill {
+    display: inline-block;
+    padding: 2px 7px;
+    border-radius: 4px;
+    font-size: 9.5px;
+    font-weight: 700;
+  }
+  .t-red { background: #FEE2E2; color: #991B1B; border: 1px solid #FECACA; }
+  .t-orange { background: #FFEDD5; color: #9A3412; border: 1px solid #FED7AA; }
+  .t-purple { background: #F3E8FF; color: #6B21A8; border: 1px solid #E9D5FF; }
+  .t-blue { background: #EFF6FF; color: #1E40AF; border: 1px solid #BFDBFE; }
+  .t-amber { background: #FEF3C7; color: #92400E; border: 1px solid #FDE68A; }
+  .action-yes { color: #DC2626; font-weight: 700; }
+  .action-no { color: #16A34A; font-weight: 700; }
+  .footer-bar {
+    border-top: 1px solid #E2E8F0;
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 10px;
+    color: #64748B;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="title-block">
+    <h1>Cyber Threats & Defense Taxonomy Matrix</h1>
+    <p>CUET UG Computer Science (Code 308) · Malware Propagation, User Action Dependency, Impact & Defense Mechanisms</p>
+  </div>
+  <div class="badge">NTA Threat Invariants</div>
+</div>
+
+<table class="matrix-table">
+  <thead>
+    <tr>
+      <th style="width: 14%;">Threat Category</th>
+      <th style="width: 16%;">Propagation Vector</th>
+      <th style="width: 12%;">User Action?</th>
+      <th style="width: 22%;">Payload Damage Mechanism</th>
+      <th style="width: 16%;">Primary Defense</th>
+      <th style="width: 20%;">CUET Exam Distinguisher</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="threat-pill t-red">Computer Virus</span></td>
+      <td>Attaches to executable host files (`.exe`, `.docx`)</td>
+      <td><span class="action-yes">Yes (Must run file)</span></td>
+      <td>Corrupts files, modifies boot sector, wipes disks</td>
+      <td>Signature Antivirus</td>
+      <td>Parasitic; <em>cannot</em> propagate without host file execution</td>
+    </tr>
+    <tr>
+      <td><span class="threat-pill t-red">Computer Worm</span></td>
+      <td>Network ports & OS socket vulnerabilities</td>
+      <td><span class="action-no">No (Self-propagates)</span></td>
+      <td>Exhausts network bandwidth, creates botnet zombies</td>
+      <td>Patching & Firewalls</td>
+      <td>Standalone; replicates automatically across network links</td>
+    </tr>
+    <tr>
+      <td><span class="threat-pill t-orange">Trojan Horse</span></td>
+      <td>Disguised as useful software (games, cracks)</td>
+      <td><span class="action-yes">Yes (User installs)</span></td>
+      <td>Installs backdoors, disables firewalls, rootkits</td>
+      <td>App whitelisting</td>
+      <td><em>Does not replicate</em>; relies entirely on deception</td>
+    </tr>
+    <tr>
+      <td><span class="threat-pill t-purple">Ransomware</span></td>
+      <td>Phishing attachments, drive-by downloads</td>
+      <td><span class="action-yes">Yes (Opens link)</span></td>
+      <td>Encrypts user data using asymmetric ciphers (AES/RSA)</td>
+      <td>Offline backups</td>
+      <td>Demands cryptocurrency ransom for decryption key</td>
+    </tr>
+    <tr>
+      <td><span class="threat-pill t-amber">Spyware / Keylogger</span></td>
+      <td>Bundled with freeware, malicious browser ads</td>
+      <td><span class="action-yes">Yes (Silent install)</span></td>
+      <td>Logs keystrokes, steals passwords & credentials</td>
+      <td>Anti-spyware tools</td>
+      <td>Stealth surveillance; transmits telemetry to remote C2</td>
+    </tr>
+    <tr>
+      <td><span class="threat-pill t-blue">Phishing</span></td>
+      <td>Spoofed emails, fake banking landing pages</td>
+      <td><span class="action-yes">Yes (Enters info)</span></td>
+      <td>Harvests login credentials, 2FA codes, credit cards</td>
+      <td>2FA & User awareness</td>
+      <td>Social engineering trickery; relies on user credulity</td>
+    </tr>
+    <tr>
+      <td><span class="threat-pill t-blue">Pharming</span></td>
+      <td>DNS cache poisoning, local `hosts` file modification</td>
+      <td><span class="action-no">No (URL is valid)</span></td>
+      <td>Silently redirects correct URL to counterfeit server IP</td>
+      <td>DNSSEC verification</td>
+      <td>Technical attack; user types 100% correct URL but redirected</td>
+    </tr>
+    <tr>
+      <td><span class="threat-pill t-red">DoS / DDoS</span></td>
+      <td>Flooding packet streams (SYN flood, UDP storm)</td>
+      <td><span class="action-no">No (Target server)</span></td>
+      <td>Exhausts server CPU/bandwidth, causes service outage</td>
+      <td>Rate-limiting & CDN</td>
+      <td>Target is availability; does not steal or corrupt data</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="footer-bar">
+  <div><strong>Core Distinctions:</strong> Virus (Host-dependent) vs Worm (Self-replicating) vs Trojan (Non-replicating disguise) vs Pharming (DNS redirection)</div>
+  <div>© OurMocks Education · CUET UG Computer Science</div>
+</div>
+
+</body>
+</html>

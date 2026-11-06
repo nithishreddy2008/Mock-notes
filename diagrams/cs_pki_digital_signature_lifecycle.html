@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 600px;
+    background: #FFFFFF;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #1E3A8A;
+    letter-spacing: -0.02em;
+  }
+  .title-block p {
+    font-size: 11px;
+    color: #64748B;
+    margin-top: 3px;
+    font-weight: 500;
+  }
+  .badge {
+    background: #EFF6FF;
+    color: #1D4ED8;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 700;
+    border: 1px solid #BFDBFE;
+    text-transform: uppercase;
+  }
+  .process-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin: 16px 0;
+    flex: 1;
+  }
+  .stage-card {
+    background: #F8FAFC;
+    border: 1.5px solid #CBD5E1;
+    border-radius: 8px;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+  }
+  .stage-card.active-1 { border-top: 4px solid #3B82F6; }
+  .stage-card.active-2 { border-top: 4px solid #8B5CF6; }
+  .stage-card.active-3 { border-top: 4px solid #F59E0B; }
+  .stage-card.active-4 { border-top: 4px solid #10B981; }
+  .stage-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+  .step-num {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .step-1 { background: #3B82F6; }
+  .step-2 { background: #8B5CF6; }
+  .step-3 { background: #F59E0B; }
+  .step-4 { background: #10B981; }
+  .stage-title {
+    font-size: 12.5px;
+    font-weight: 800;
+    color: #0F172A;
+  }
+  .stage-sub {
+    font-size: 10px;
+    color: #64748B;
+    font-weight: 600;
+  }
+  .flow-box {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 10px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .data-item {
+    padding: 4px 6px;
+    border-radius: 4px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 9.5px;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+  }
+  .di-blue { background: #EFF6FF; color: #1D4ED8; border-left: 3px solid #3B82F6; }
+  .di-purple { background: #F5F3FF; color: #6D28D9; border-left: 3px solid #8B5CF6; }
+  .di-amber { background: #FFFBEB; color: #B45309; border-left: 3px solid #F59E0B; }
+  .di-green { background: #ECFDF5; color: #047857; border-left: 3px solid #10B981; }
+  .key-rule {
+    background: #F1F5F9;
+    padding: 8px;
+    border-radius: 6px;
+    font-size: 10px;
+    color: #334155;
+    line-height: 1.35;
+  }
+  .key-rule strong {
+    color: #0F172A;
+  }
+  .footer-bar {
+    border-top: 1px solid #E2E8F0;
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 10px;
+    color: #64748B;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="title-block">
+    <h1>Public Key Infrastructure (PKI) & Digital Signature Lifecycle</h1>
+    <p>CUET UG Computer Science (Code 308) · Cryptographic Hashing, Asymmetric Signing, CA Validation & Verification</p>
+  </div>
+  <div class="badge">RFC 5280 · IT Act 2000</div>
+</div>
+
+<div class="process-container">
+  <!-- Stage 1 -->
+  <div class="stage-card active-1">
+    <div class="stage-header">
+      <div class="step-num step-1">1</div>
+      <div>
+        <div class="stage-title">Hashing (SHA-256)</div>
+        <div class="stage-sub">Message Digest Generation</div>
+      </div>
+    </div>
+    <div class="flow-box">
+      <div class="data-item di-blue">
+        <span>Original Document</span>
+        <span>M bytes</span>
+      </div>
+      <div style="text-align: center; font-size: 11px; color: #3B82F6; font-weight: 800;">↓</div>
+      <div class="data-item di-blue">
+        <span>One-Way Hash Func</span>
+        <span>SHA-256</span>
+      </div>
+      <div style="text-align: center; font-size: 11px; color: #3B82F6; font-weight: 800;">↓</div>
+      <div class="data-item di-blue">
+        <span>Message Digest</span>
+        <span>Fixed 256 bits</span>
+      </div>
+    </div>
+    <div class="key-rule">
+      <strong>Property:</strong> Cryptographic hash is one-way (pre-image resistant) and collision resistant. A single altered bit changes the digest completely (Avalanche Effect).
+    </div>
+  </div>
+
+  <!-- Stage 2 -->
+  <div class="stage-card active-2">
+    <div class="stage-header">
+      <div class="step-num step-2">2</div>
+      <div>
+        <div class="stage-title">Digital Signing</div>
+        <div class="stage-sub">Sender Private Key Encryption</div>
+      </div>
+    </div>
+    <div class="flow-box">
+      <div class="data-item di-purple">
+        <span>Message Digest</span>
+        <span>256 bits</span>
+      </div>
+      <div style="text-align: center; font-size: 11px; color: #8B5CF6; font-weight: 800;">+</div>
+      <div class="data-item di-purple">
+        <span>Sender Private Key</span>
+        <span>K<sub>priv, sender</sub></span>
+      </div>
+      <div style="text-align: center; font-size: 11px; color: #8B5CF6; font-weight: 800;">↓ (RSA/ECC)</div>
+      <div class="data-item di-purple">
+        <span>Digital Signature</span>
+        <span>Encrypted Hash</span>
+      </div>
+    </div>
+    <div class="key-rule">
+      <strong>CUET Fatal Trap:</strong> Digital signatures are created by encrypting the hash with the <strong>Sender's Private Key</strong> (NOT public key, NOT recipient key).
+    </div>
+  </div>
+
+  <!-- Stage 3 -->
+  <div class="stage-card active-3">
+    <div class="stage-header">
+      <div class="step-num step-3">3</div>
+      <div>
+        <div class="stage-title">Certificate & Transit</div>
+        <div class="stage-sub">CA Binding & Network Transmission</div>
+      </div>
+    </div>
+    <div class="flow-box">
+      <div class="data-item di-amber">
+        <span>Original Document</span>
+        <span>Plaintext / Payload</span>
+      </div>
+      <div class="data-item di-amber">
+        <span>Digital Signature</span>
+        <span>Attached Token</span>
+      </div>
+      <div class="data-item di-amber">
+        <span>Digital Certificate</span>
+        <span>X.509 format</span>
+      </div>
+      <div class="data-item di-amber">
+        <span>CA Root Signature</span>
+        <span>Binds Identity</span>
+      </div>
+    </div>
+    <div class="key-rule">
+      <strong>Certifying Authority (CA):</strong> Licensed under IT Act 2000. Issues Digital Certificates binding a user's identity to their public key.
+    </div>
+  </div>
+
+  <!-- Stage 4 -->
+  <div class="stage-card active-4">
+    <div class="stage-header">
+      <div class="step-num step-4">4</div>
+      <div>
+        <div class="stage-title">Recipient Verification</div>
+        <div class="stage-sub">Dual-Hash Equivalence Check</div>
+      </div>
+    </div>
+    <div class="flow-box">
+      <div class="data-item di-green">
+        <span>Signature Decrypted</span>
+        <span>Via K<sub>pub, sender</sub> → Hash A</span>
+      </div>
+      <div class="data-item di-green">
+        <span>Document Re-hashed</span>
+        <span>Via SHA-256 → Hash B</span>
+      </div>
+      <div style="text-align: center; font-size: 10px; color: #047857; font-weight: 800; padding: 2px;">
+        Hash A == Hash B ?
+      </div>
+      <div class="data-item di-green">
+        <span>MATCH = VALID</span>
+        <span>Integrity Proven</span>
+      </div>
+    </div>
+    <div class="key-rule">
+      <strong>Guaranteed Triad:</strong> Proves <strong>Authenticity</strong> (sender identity), <strong>Integrity</strong> (unaltered text), and <strong>Non-Repudiation</strong> (sender cannot deny).
+    </div>
+  </div>
+</div>
+
+<div class="footer-bar">
+  <div><strong>Triad Guarantees:</strong> Authenticity (Public Key matches) · Data Integrity (Hashes match) · Non-Repudiation (Only private key could sign)</div>
+  <div>© OurMocks Education · CUET UG Computer Science Security Suite</div>
+</div>
+
+</body>
+</html>
