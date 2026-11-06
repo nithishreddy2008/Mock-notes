@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="sa">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 600px;
+    background: #FFFFFF;
+    font-family: "Kohinoor Devanagari", "Devanagari Sangam MN", -apple-system, sans-serif;
+    color: #0F172A;
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 19px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .title-block p {
+    font-size: 11px;
+    color: #64748B;
+    font-weight: 600;
+  }
+  .badge {
+    background: #EEF1F8;
+    color: #1F5EFF;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  .content-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 12px;
+    flex-grow: 1;
+    margin-top: 10px;
+    margin-bottom: 8px;
+  }
+  .card {
+    background: #F8FAFC;
+    border: 1px solid #CBD5E1;
+    border-radius: 8px;
+    padding: 10px 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 6px;
+    border-bottom: 1.5px solid #E2E8F0;
+    padding-bottom: 4px;
+  }
+  .card-num {
+    background: #071A4D;
+    color: #FFF;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 800;
+  }
+  .card-title {
+    font-size: 12px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .card-body {
+    font-size: 10px;
+    line-height: 1.4;
+    color: #334155;
+    flex-grow: 1;
+  }
+  .rule-box {
+    background: #EFF6FF;
+    border-left: 3px solid #1F5EFF;
+    padding: 4px 8px;
+    margin: 4px 0;
+    border-radius: 0 4px 4px 0;
+    font-size: 9.5px;
+    color: #1E3A8A;
+  }
+  .highlight-box {
+    background: #ECFDF5;
+    border-left: 3px solid #059669;
+    padding: 4px 8px;
+    margin: 4px 0;
+    border-radius: 0 4px 4px 0;
+    font-size: 9.5px;
+    color: #064E3B;
+  }
+  .warn-box {
+    background: #FEF2F2;
+    border-left: 3px solid #DC2626;
+    padding: 4px 8px;
+    margin: 4px 0;
+    border-radius: 0 4px 4px 0;
+    font-size: 9.5px;
+    color: #991B1B;
+  }
+  .root-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4px;
+    margin-top: 4px;
+    font-size: 9px;
+    background: #FFFFFF;
+    padding: 5px;
+    border: 1px solid #E2E8F0;
+    border-radius: 4px;
+  }
+  .root-item {
+    background: #F1F5F9;
+    padding: 2px 4px;
+    border-radius: 3px;
+    text-align: center;
+    font-weight: 700;
+    color: #0F172A;
+  }
+  .flow-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin: 4px 0;
+    font-size: 9.5px;
+  }
+  .flow-pill {
+    padding: 3px 6px;
+    border-radius: 4px;
+    font-weight: 700;
+  }
+  .pill-blue { background: #DBEAFE; color: #1E40AF; }
+  .pill-green { background: #D1FAE5; color: #065F46; }
+  .pill-amber { background: #FEF3C7; color: #92400E; }
+  .pill-purple { background: #F3E8FF; color: #6B21A8; }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 6px;
+    font-size: 10px;
+    color: #64748B;
+  }
+  .brand-tag {
+    color: #1F5EFF;
+    font-weight: 700;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="title-block">
+    <h1>कारक-निर्णय-प्रक्रिया, द्विकर्मक-व्यवस्था एवं उपपद-बलीयस्त्वम्</h1>
+    <p>क्रियान्वय-परीक्षणम्, अकथित-कर्म-व्यवस्था तथा "उपपदविभक्तेः कारकविभक्तिर्बलीयसी" परिभाषीय-प्रवाहः</p>
+  </div>
+  <div class="badge">Syntax & Hierarchy Engine</div>
+</div>
+
+<div class="content-grid">
+  <!-- Card 1 -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-num">१</div>
+      <div class="card-title">कारकत्व-निर्णयः एवं षट्कारकाणि (Pāṇinian Hierarchy)</div>
+    </div>
+    <div class="card-body">
+      <div class="rule-box">
+        <b>लक्षणम्:</b> "क्रियान्वयित्वं कारकत्वम्" / "क्रियाजनकत्वं कारकत्वम्" (साक्षात् क्रियासम्बन्धः)
+      </div>
+      <p style="margin-top:3px;">वाक्ये यस्य साक्षात् क्रियान्वयः भवति स एव कारकम्। षष्ठी (सम्बन्धः) क्रियारहिता अस्ति, अतस्तस्याः कारकत्वं न विद्यते (षष्ठी शेषे)।</p>
+      <div class="flow-row" style="margin-top: 5px;">
+        <span class="flow-pill pill-blue">१. कर्ता (स्वतन्त्रः)</span> →
+        <span class="flow-pill pill-green">२. कर्म (ईप्सिततमम्)</span> →
+        <span class="flow-pill pill-amber">३. करणम् (साधकतमम्)</span>
+      </div>
+      <div class="flow-row">
+        <span class="flow-pill pill-purple">४. सम्प्रदानम् (दानपात्रम्)</span> →
+        <span class="flow-pill pill-amber">५. अपादानम् (ध्रुवमपाये)</span> →
+        <span class="flow-pill pill-blue">६. अधिकरणम् (आधारः)</span>
+      </div>
+      <div class="highlight-box" style="margin-top: 4px;">
+        <b>दृष्टान्तः:</b> हे नराः! नृपस्य पुत्रः ययातिः स्वहस्तेन कोशात् याचकाय ग्रामे धनं ददाति। (अत्र ६ कारकाणि सम्बद्धाः)।
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-num">२</div>
+      <div class="card-title">द्विकर्मक-धातवः (अकथितं च सूत्रम् - १६ धातवः)</div>
+    </div>
+    <div class="card-body">
+      <div class="rule-box">
+        <b>सूत्रम्:</b> "अकथितं च" (१.४.५१) — अपादानादिविशेषैरविवक्षितं कारकं कर्मसंज्ञं स्यात्।
+      </div>
+      <div class="root-grid">
+        <div class="root-item">१. दुह् (दोह्)</div>
+        <div class="root-item">२. याच् (याचना)</div>
+        <div class="root-item">३. पच् (पाकः)</div>
+        <div class="root-item">४. दण्ड् (दण्डः)</div>
+        <div class="root-item">५. रुध् (अवरोधः)</div>
+        <div class="root-item">६. प्रच्छ् (पृच्छा)</div>
+        <div class="root-item">७. चि (चयनम्)</div>
+        <div class="root-item">८. ब्रू (वचनम्)</div>
+        <div class="root-item">९. शास् (अनुशासन)</div>
+        <div class="root-item">१०. जि (जयः)</div>
+        <div class="root-item">११. मन्थ् (मन्थन)</div>
+        <div class="root-item">१२. मुष् (स्तेयम्)</div>
+        <div class="root-item">१३. नी (नयनम्)</div>
+        <div class="root-item">१४. हृ (हरणम्)</div>
+        <div class="root-item">१५. कृष् (कर्षणम्)</div>
+        <div class="root-item">१६. वह् (वहनम्)</div>
+      </div>
+      <div class="highlight-box" style="margin-top: 4px;">
+        <b>कर्म-द्वैविध्यम्:</b> गां (गौणकर्म / अकथितम्) दोग्धि पयः (प्रधानकर्म / ईप्सिततमम्)।
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 3 -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-num">३</div>
+      <div class="card-title">उपपदविभक्तेः कारकविभक्तिर्बलीयसी (Overriding Engine)</div>
+    </div>
+    <div class="card-body">
+      <div class="warn-box">
+        <b>परिभाषा:</b> "उपपदविभक्तेः कारकविभक्तिर्बलीयसी" — यदि एकत्र उपपद-नियमः कारक-नियमश्च विरोधे तिष्ठतः, तर्हि कारकविभक्तिरेव प्रवर्तते।
+      </div>
+      <div style="margin-top: 4px;">
+        <p>• <b>उपपद-प्रवृत्तिः:</b> देवाय नमः (नमः योगे चतुर्थी)।</p>
+        <p>• <b>कारक-बाधः:</b> <u>देवान् नमस्करोति</u> (अत्र 'कृ' धातोः कर्म कारकम् अस्ति, अतः द्वितीया प्रवर्तते, न तु चतुर्थी)।</p>
+        <p>• <b>क्रुध्-द्रुह् नियमः:</b> हरये क्रुध्यति (चतुर्थी) vs <u>शत्रुम् अभिक्रुध्यति</u> (उपसर्गसहित क्रुध्/द्रुह् धातुयोगे द्वितीया)।</p>
+        <p>• <b>अलम् द्वैविध्यम्:</b> अलं विवादेन (तृतीया = वारणार्थे) vs दैत्येभ्यो हरिरलम् (चतुर्थी = पर्याप्त्यर्थे)।</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 4 -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-num">४</div>
+      <div class="card-title">आधार-त्रैविध्यम् एवं सति-सप्तमी (Adhikarana & Locative)</div>
+    </div>
+    <div class="card-body">
+      <div class="rule-box">
+        <b>आधारोऽधिकरणम् (१.४.४५):</b> कर्तृकर्मद्वारा तन्निष्ठक्रियाधारः अधिकरणम्।
+      </div>
+      <div style="margin-top: 4px;">
+        <p><b>१. औपश्लेषिकः आधारः:</b> भौतिक-संश्लेषयुक्तः (उदा. <b>कटे आस्ते</b>, स्थाल्यां पचति)।</p>
+        <p><b>२. वैषयिकः आधारः:</b> विषयविषयक-सम्बन्धः (उदा. <b>मोक्षे इच्छा अस्ति</b>, वेदे रुचिः)।</p>
+        <p><b>३. अभिव्यापकः आधारः:</b> सर्वत्र व्याप्तः (उदा. <b>तिलेषु तैलम्</b>, सर्वस्मिन् आत्मा अस्ति)।</p>
+      </div>
+      <div class="highlight-box" style="margin-top: 4px;">
+        <b>सति-सप्तमी (यस्य च भावेन भावलक्षणम्):</b> एकया क्रियया अपरान्तरक्रिया लक्ष्यते चेत् सप्तमी — <b>सूर्ये उदिते</b> अन्धकारो विनश्यति; <b>रामे वनं गते</b> दशरथो दिवं गतः।
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <span class="brand-tag">OurMocks CUET UG Series</span>
+  <span>कारक-उपपद-निर्णय-सूत्रम् : साक्षात् क्रियान्वयः > पदसम्बन्धः</span>
+  <span>संस्कृतम् (Code 325) · Unit 6 Grammar Board</span>
+</div>
+
+</body>
+</html>

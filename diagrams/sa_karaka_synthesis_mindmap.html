@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="sa">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 600px;
+    background: #FFFFFF;
+    font-family: "Kohinoor Devanagari", "Devanagari Sangam MN", -apple-system, sans-serif;
+    color: #0F172A;
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 19px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .title-block p {
+    font-size: 11px;
+    color: #64748B;
+    font-weight: 600;
+  }
+  .badge {
+    background: #EEF1F8;
+    color: #1F5EFF;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  .mindmap-wrapper {
+    position: relative;
+    flex-grow: 1;
+    margin: 10px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 12px;
+  }
+  .central-hub {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #071A4D;
+    color: #FFFFFF;
+    padding: 10px 18px;
+    border-radius: 30px;
+    border: 3px solid #1F5EFF;
+    box-shadow: 0 4px 14px rgba(7, 26, 77, 0.25);
+    text-align: center;
+    z-index: 10;
+  }
+  .central-hub h2 {
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+  }
+  .central-hub p {
+    font-size: 9.5px;
+    color: #93C5FD;
+    font-weight: 600;
+  }
+  .branch-card {
+    background: #F8FAFC;
+    border: 1px solid #CBD5E1;
+    border-radius: 8px;
+    padding: 10px 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .branch-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 6px;
+    border-bottom: 1.5px solid #E2E8F0;
+    padding-bottom: 4px;
+  }
+  .branch-pill {
+    padding: 2px 7px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 800;
+  }
+  .pill-red { background: #FEE2E2; color: #991B1B; }
+  .pill-blue { background: #DBEAFE; color: #1E40AF; }
+  .pill-green { background: #D1FAE5; color: #065F46; }
+  .pill-purple { background: #F3E8FF; color: #6B21A8; }
+  .branch-title {
+    font-size: 11.5px;
+    font-weight: 700;
+    color: #0F172A;
+  }
+  .item-list {
+    font-size: 9.5px;
+    line-height: 1.45;
+    color: #334155;
+  }
+  .item-list li {
+    list-style: none;
+    margin-bottom: 3px;
+    padding-left: 10px;
+    position: relative;
+  }
+  .item-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #1F5EFF;
+    font-weight: bold;
+  }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 6px;
+    font-size: 10px;
+    color: #64748B;
+  }
+  .brand-tag {
+    color: #1F5EFF;
+    font-weight: 700;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="title-block">
+    <h1>कारक-उपपद-सम्पूर्ण-संश्लेषण-मानचित्रम् (Synthesis Mindmap)</h1>
+    <p>षट्कारकाणि, शेषे षष्ठी, उपपदविभक्तयः, सति-सप्तमी एवं बलीयस्त्व-नियमानाम् एकात्म-दर्शनम्</p>
+  </div>
+  <div class="badge">Comprehensive Synthesis Map</div>
+</div>
+
+<div class="mindmap-wrapper">
+  <div class="central-hub">
+    <h2>कारक-उपपद-व्यवस्था</h2>
+    <p>क्रियान्वयित्वं कारकत्वम् (षट् कारकाणि)</p>
+  </div>
+
+  <!-- Quadrant 1: Top-Left -->
+  <div class="branch-card">
+    <div class="branch-header">
+      <span class="branch-pill pill-blue">विभागः १</span>
+      <span class="branch-title">कर्ता (प्रथमा) & कर्म (द्वितीया)</span>
+    </div>
+    <ul class="item-list">
+      <li><b>कर्ता:</b> स्वतन्त्रः कर्ता (१.४.५४); प्रातिपदिकार्थ-लिङ्ग-परिमाण-वचनमात्रे प्रथमा</li>
+      <li><b>कर्म:</b> कर्तुरीप्सिततमं कर्म (१.४.४९); कर्मणि द्वितीया (२.३.२)</li>
+      <li><b>द्विकर्मक-व्यवस्था:</b> अकथितं च (१.४.५१) — १६ धातवः (गां दोग्धि पयः)</li>
+      <li><b>उपान्वध्याङ्वसः / अधिशीङ्स्थासां कर्म:</b> वैकुण्ठम् अधिशेते हरिः</li>
+      <li><b>उपपद द्वितीया:</b> अभितः, परितः, उभयतः, सर्वतः, धिक्, प्रति, विना, अन्तरेण</li>
+    </ul>
+  </div>
+
+  <!-- Quadrant 2: Top-Right -->
+  <div class="branch-card">
+    <div class="branch-header">
+      <span class="branch-pill pill-green">विभागः २</span>
+      <span class="branch-title">करणम् (तृतीया) & सम्प्रदानम् (चतुर्थी)</span>
+    </div>
+    <ul class="item-list">
+      <li><b>करणम्:</b> साधकतमं करणम् (१.४.४२); कर्तृकरणयोस्तृतीया (२.३.१८)</li>
+      <li><b>तृतीया विशेषाः:</b> सहयुक्तेऽप्रधाने, येनाङ्गविकारः (अक्षिणा काणः), इत्थम्भूतलक्षणे</li>
+      <li><b>सम्प्रदानम्:</b> कर्मणा यमभिप्रेति स सम्प्रदानम् (१.४.३२); चतुर्थी सम्प्रदाने</li>
+      <li><b>चतुर्थी विशेषाः:</b> रुच्यार्थानां प्रीयमाणः (हरये रोचते), स्पृहेरीप्सितः, तादर्थ्ये चतुर्थी</li>
+      <li><b>उपपद चतुर्थी:</b> नमःस्वस्तिस्वाहास्वधाऽलंवषड्योगाच्च (शिवाय नमः, प्रजाभ्यः स्वस्ति)</li>
+    </ul>
+  </div>
+
+  <!-- Quadrant 3: Bottom-Left -->
+  <div class="branch-card">
+    <div class="branch-header">
+      <span class="branch-pill pill-purple">विभागः ३</span>
+      <span class="branch-title">अपादानम् (पञ्चमी) & अधिकरणम् (सप्तमी)</span>
+    </div>
+    <ul class="item-list">
+      <li><b>अपादानम्:</b> ध्रुवमपायेऽपादानम् (१.४.२४); अपादाने पञ्चमी (वृक्षात् पत्रं पतति)</li>
+      <li><b>पञ्चमी सूत्राणि:</b> भीत्रार्थानां भयहेतुः (चोराद् बिभेति), आख्यातोपयोगे, भुवः प्रभवः</li>
+      <li><b>उपपद पञ्चमी:</b> ऋते (ज्ञानादृते न मुक्तिः), बहिः, प्रभृति, विना, पृथक्, परम्</li>
+      <li><b>अधिकरणम्:</b> आधारोऽधिकरणम् (१.४.४५); त्रिविध-आधारः (औपश्लेषिक/वैषयिक/अभिव्यापक)</li>
+      <li><b>सति-सप्तमी:</b> यस्य च भावेन भावलक्षणम् (सूर्ये उदिते); साध्वसाधुप्रयोगे, निर्धारणे च</li>
+    </ul>
+  </div>
+
+  <!-- Quadrant 4: Bottom-Right -->
+  <div class="branch-card">
+    <div class="branch-header">
+      <span class="branch-pill pill-red">विभागः ४</span>
+      <span class="branch-title">षष्ठी (सम्बन्धः) & बलीयस्त्व-रहस्यानि</span>
+    </div>
+    <ul class="item-list">
+      <li><b>षष्ठी शेषे:</b> कारक-प्रातिपदिकार्थातिरिक्तः स्वस्वामिभावः (राज्ञः पुरुषः; न कारकम्)</li>
+      <li><b>यतश्च निर्धारणम्:</b> कवीनां/कविषु कालिदासः श्रेष्ठः (षष्ठी / सप्तमी विकल्पः)</li>
+      <li><b>उपपद षष्ठी:</b> उपरि, अधः, पुरतः, पश्चात्, अग्रे, समक्षम् (वृक्षस्य उपरि खगाः)</li>
+      <li><b>बलीयस्त्वम्:</b> "उपपदविभक्तेः कारकविभक्तिर्बलीयसी" — देवान् नमस्करोति (द्वितीया)</li>
+      <li><b>अलम्-द्विरूपता:</b> अलं विवादेन (वारणे तृतीया) vs दैत्येभ्यो हरिरलम् (सामर्थ्ये चतुर्थी)</li>
+    </ul>
+  </div>
+</div>
+
+<div class="footer">
+  <span class="brand-tag">OurMocks CUET UG Series</span>
+  <span>अष्टाध्यायी-कारक-प्रकरणम् : "कारके" (१.४.२३) इति महाधिकार-सूत्र-सम्बद्धम्</span>
+  <span>संस्कृतम् (Code 325) · Unit 6 Synthesis Mindmap</span>
+</div>
+
+</body>
+</html>

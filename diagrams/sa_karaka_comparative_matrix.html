@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="sa">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 600px;
+    background: #FFFFFF;
+    font-family: "Kohinoor Devanagari", "Devanagari Sangam MN", -apple-system, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #071A4D;
+    letter-spacing: -0.01em;
+  }
+  .title-block p {
+    font-size: 11.5px;
+    color: #64748B;
+    margin-top: 3px;
+    font-weight: 600;
+  }
+  .badge {
+    background: #EEF1F8;
+    color: #1F5EFF;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .table-container {
+    flex-grow: 1;
+    margin-top: 10px;
+    margin-bottom: 8px;
+    border: 1px solid #CBD5E1;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  table {
+    width: 100%;
+    height: 100%;
+    border-collapse: collapse;
+    font-size: 10.5px;
+    text-align: left;
+  }
+  thead {
+    background: #071A4D;
+    color: #FFFFFF;
+  }
+  th {
+    padding: 7px 9px;
+    font-weight: 700;
+    font-size: 11px;
+    border-right: 1px solid #1E293B;
+  }
+  th:last-child { border-right: none; }
+  tbody tr {
+    border-bottom: 1px solid #E2E8F0;
+  }
+  tbody tr:nth-child(even) {
+    background: #F8FAFC;
+  }
+  tbody tr:last-child {
+    border-bottom: none;
+  }
+  td {
+    padding: 5.5px 8px;
+    vertical-align: middle;
+    line-height: 1.35;
+    border-right: 1px solid #E2E8F0;
+  }
+  td:last-child { border-right: none; }
+  .col-karaka { width: 14%; font-weight: 700; }
+  .col-sutra { width: 22%; font-family: monospace; font-size: 10px; color: #1E3A8A; font-weight: 600; }
+  .col-vidhana { width: 22%; font-size: 10px; color: #334155; }
+  .col-upapada { width: 22%; font-size: 10px; color: #047857; font-weight: 500; }
+  .col-ex { width: 20%; font-size: 10px; color: #0F172A; }
+  .tag {
+    display: inline-block;
+    padding: 1.5px 5px;
+    border-radius: 4px;
+    font-size: 9px;
+    font-weight: 700;
+    margin-right: 3px;
+  }
+  .tag-prathama { background: #E0E7FF; color: #3730A3; }
+  .tag-dvitiya  { background: #DBEAFE; color: #1D4ED8; }
+  .tag-tritiya  { background: #D1FAE5; color: #065F46; }
+  .tag-chaturthi{ background: #FEF3C7; color: #92400E; }
+  .tag-panchami { background: #FEE2E2; color: #991B1B; }
+  .tag-shashthi { background: #F3E8FF; color: #6B21A8; }
+  .tag-saptami  { background: #CCFBF1; color: #115E59; }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 8px;
+    font-size: 10.5px;
+    color: #64748B;
+  }
+  .brand-tag {
+    color: #1F5EFF;
+    font-weight: 700;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="title-block">
+    <h1>पाणिनीय-कारक-विभक्ति-व्यवस्था एवं उपपद-नियमाः</h1>
+    <p>षट्-कारकाणि, प्रातिपदिकार्थ-सम्बोधन-विभक्तयः तथा उपपद-कारकयोः बलीयस्त्व-तुलना</p>
+  </div>
+  <div class="badge">संस्कृतम् (325) · Core Concept Matrix</div>
+</div>
+
+<div class="table-container">
+  <table>
+    <thead>
+      <tr>
+        <th>कारकम् & विभक्तिः</th>
+        <th>संज्ञा / विधान-सूत्रम्</th>
+        <th>लक्षणम् / अर्थ-व्याख्या</th>
+        <th>विशिष्ट-उपपद-सम्बन्धः</th>
+        <th>CUET प्रामाणिक-उदाहरणानि</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="col-karaka"><span class="tag tag-prathama">प्रथमा</span> कर्ता</td>
+        <td class="col-sutra">स्वतन्त्रः कर्ता (१.४.५४)<br>प्रातिपदिकार्थ... (२.३.४६)</td>
+        <td class="col-vidhana">क्रियायां स्वातन्त्र्येण विवक्षितः; लिङ्ग-परिमाण-वचनमात्रे प्रथमा; उक्तकर्मणि च</td>
+        <td class="col-upapada">इति-शब्दप्रयोगे (दशरथ इति राजा); सम्बोधने प्रथमा</td>
+        <td class="col-ex"><b>रामः</b> पठति; <b>द्रोणो व्रीहिः</b>; मया <b>ग्रन्थः</b> दृश्यते (उक्तकर्म)</td>
+      </tr>
+      <tr>
+        <td class="col-karaka"><span class="tag tag-dvitiya">द्वितीया</span> कर्म</td>
+        <td class="col-sutra">कर्तुरीप्सिततमं कर्म (१.४.४९)<br>अकथितं च (१.४.५१)</td>
+        <td class="col-vidhana">कर्तुः क्रियया आप्तुम् इष्टतमम्; १६ द्विकर्मक-धातवः (गौणकर्मणि द्वितीया)</td>
+        <td class="col-upapada">अभितः, परितः, उभयतः, सर्वतः, धिक्, प्रति, विना, अन्तरेण</td>
+        <td class="col-ex"><b>ग्रामं</b> गच्छति; <b>गां</b> दोग्धि <b>पयः</b>; <b>विद्यालयं परितः</b> वृक्षाः सन्ति</td>
+      </tr>
+      <tr>
+        <td class="col-karaka"><span class="tag tag-tritiya">तृतीया</span> करणम्</td>
+        <td class="col-sutra">साधकतमं करणम् (१.४.४२)<br>कर्तृकरणयोस्तृतीया (२.३.१८)</td>
+        <td class="col-vidhana">क्रियासिद्धौ प्रकृष्टोपकारकम्; अनुक्ते कर्तरि करणे च तृतीया; अङ्गविकारः, हेतौ</td>
+        <td class="col-upapada">सह, साकम्, सार्धम्, समम्; अलम् (वारणार्थे); विना, प्रयोजनम्</td>
+        <td class="col-ex"><b>कलमेन</b> लिखति; <b>अक्षिणा</b> काणः; <b>पित्रा सह</b> गच्छति; <b>अलं विवादेन</b></td>
+      </tr>
+      <tr>
+        <td class="col-karaka"><span class="tag tag-chaturthi">चतुर्थी</span> सम्प्रदानम्</td>
+        <td class="col-sutra">कर्मणा यमभिप्रेति... (१.४.३२)<br>रुच्यार्थानां... (१.४.३३)</td>
+        <td class="col-vidhana">दानस्य कर्मणा यम् अभिप्रेति; रोचते (प्रीयमाणः); स्पृह् (ईप्सितः); क्रुध्-द्रुह्</td>
+        <td class="col-upapada">नमः, स्वस्ति, स्वाहा, स्वधा, वषट्, अलम् (पर्याप्त्यर्थे)</td>
+        <td class="col-ex"><b>विप्राय</b> गां ददाति; <b>बालकाय</b> मोदकं रोचते; <b>शिवाय नमः</b>; दैत्येभ्यो <b>हरिरलम्</b></td>
+      </tr>
+      <tr>
+        <td class="col-karaka"><span class="tag tag-panchami">पञ्चमी</span> अपादानम्</td>
+        <td class="col-sutra">ध्रुवमपायेऽपादानम् (१.४.२४)<br>भीत्रार्थानां भयहेतुः (१.४.२५)</td>
+        <td class="col-vidhana">विश्लेषे अवधिभूतम्; भय-त्राण-हेतुः; आख्यातोपयोगे (गुरुतः विद्याग्रहणे); प्रभवः</td>
+        <td class="col-upapada">ऋते, बहिः, विना, प्रभृति, पूर्वम्, परम्, अनन्तरम्, पृथक्</td>
+        <td class="col-ex"><b>वृक्षात्</b> पत्रं पतति; <b>चोराद्</b> बिभेति; <b>उपाध्यायाद्</b> अधीते; <b>ज्ञानादृते</b> न सुखम्</td>
+      </tr>
+      <tr>
+        <td class="col-karaka"><span class="tag tag-shashthi">षष्ठी</span> [सम्बन्धः]</td>
+        <td class="col-sutra">षष्ठी शेषे (२.३.५०)<br>यतश्च निर्धारणम् (२.३.४१)</td>
+        <td class="col-vidhana">कारक-प्रातिपदिकार्थातिरिक्तः स्वस्वामि-भावादिसम्बन्धः (न कारकम्); जाति-गुण-समुदाय</td>
+        <td class="col-upapada">उपरि, अधः, पुरतः, पश्चात्, अग्रे, समक्षम्, दूरम्, अन्तिकम्</td>
+        <td class="col-ex"><b>राज्ञः</b> पुरुषः; <b>कवीनां</b> कालिदासः श्रेष्ठः; <b>गृहस्य पृष्ठतः</b> वाटिका</td>
+      </tr>
+      <tr>
+        <td class="col-karaka"><span class="tag tag-saptami">सप्तमी</span> अधिकरणम्</td>
+        <td class="col-sutra">आधारोऽधिकरणम् (१.४.४५)<br>यस्य च भावेन... (२.३.३७)</td>
+        <td class="col-vidhana">कर्तृ-कर्म-द्वारा तन्निष्ठक्रियाया आधारः (औपश्लेषिक-वैषयिक-अभिव्यापक); सति-सप्तमी</td>
+        <td class="col-upapada">कुशल, निपुण, प्रवीण, साधु, असाधु, अनुराग, स्नेह-धातुषु</td>
+        <td class="col-ex"><b>कटे</b> आस्ते; <b>मोक्षे</b> इच्छा; <b>तिलेषु</b> तैलम्; <b>सूर्ये उदिते</b> कमलं विकसति</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="footer">
+  <span class="brand-tag">OurMocks CUET UG Series</span>
+  <span>कारक-सिद्धान्तः : "क्रियाजनकत्वं कारकत्वम्" (सम्बन्धस्य क्रियान्वयाभावान्न कारकत्वम्)</span>
+  <span>संस्कृतम् (Code 325) · Unit 6 Concept Matrix</span>
+</div>
+
+</body>
+</html>
