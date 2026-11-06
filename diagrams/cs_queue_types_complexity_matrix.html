@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1440, height=880">
+  <title>Queue Types, Operations & Complexity Matrix</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 1440px;
+      height: 880px;
+      background-color: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0F172A;
+      padding: 32px 40px;
+      overflow: hidden;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #E2E8F0;
+      padding-bottom: 14px;
+    }
+    .title-group h1 {
+      font-size: 26px;
+      font-weight: 800;
+      color: #0F2C59;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+    .title-group p {
+      font-size: 14px;
+      color: #64748B;
+      font-weight: 500;
+    }
+    .badge {
+      background: #0066FF;
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1.05fr 1.25fr;
+      gap: 20px;
+      height: calc(100% - 100px);
+    }
+    .card {
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      border-radius: 12px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+    }
+    .card-title {
+      font-size: 16px;
+      font-weight: 800;
+      color: #1E293B;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .icon {
+      width: 22px;
+      height: 22px;
+      border-radius: 6px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 800;
+      color: white;
+    }
+    .icon-blue { background: #0066FF; }
+    .icon-amber { background: #D97706; }
+    .icon-green { background: #16A34A; }
+
+    .queue-viz {
+      background: #F1F5F9;
+      border: 2px dashed #94A3B8;
+      border-radius: 8px;
+      padding: 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 14px;
+      position: relative;
+    }
+    .queue-slot {
+      width: 54px;
+      height: 48px;
+      background: #FFFFFF;
+      border: 2px solid #CBD5E1;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 800;
+      color: #1E293B;
+      position: relative;
+    }
+    .slot-front {
+      background: #DBEAFE;
+      border-color: #3B82F6;
+      color: #1D4ED8;
+    }
+    .slot-rear {
+      background: #DCFCE7;
+      border-color: #22C55E;
+      color: #15803D;
+    }
+    .tag-ptr {
+      position: absolute;
+      bottom: -22px;
+      font-size: 10px;
+      font-weight: 800;
+      padding: 1px 5px;
+      border-radius: 3px;
+    }
+    .ptr-front { background: #3B82F6; color: white; }
+    .ptr-rear { background: #22C55E; color: white; }
+
+    .op-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 12px;
+      margin-top: 14px;
+    }
+    .op-list li {
+      padding: 7px 10px;
+      border-radius: 6px;
+      background: #F8FAFC;
+      border-left: 3px solid #0066FF;
+    }
+    .op-list strong { color: #0F2C59; }
+
+    .variant-card {
+      border: 1px solid #E2E8F0;
+      border-radius: 8px;
+      padding: 9px 12px;
+      margin-bottom: 8px;
+      background: #FAFAFA;
+      font-size: 11.5px;
+    }
+    .variant-header {
+      display: flex;
+      justify-content: space-between;
+      font-weight: 800;
+      color: #0F2C59;
+      margin-bottom: 4px;
+    }
+    .badge-sm {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 8px;
+    }
+    .b-blue { background: #DBEAFE; color: #1D4ED8; }
+    .b-amber { background: #FEF3C7; color: #B45309; }
+    .b-green { background: #DCFCE7; color: #15803D; }
+    .b-purple { background: #F3E8FF; color: #7E22CE; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 11px;
+      margin-top: 4px;
+    }
+    th {
+      background: #0F2C59;
+      color: white;
+      text-align: left;
+      padding: 7px 8px;
+      font-weight: 700;
+    }
+    th:first-child { border-top-left-radius: 6px; }
+    th:last-child { border-top-right-radius: 6px; }
+    td {
+      padding: 6.5px 8px;
+      border-bottom: 1px solid #E2E8F0;
+      color: #334155;
+    }
+    tr:nth-child(even) td { background: #F8FAFC; }
+    .o1 { color: #16A34A; font-weight: 700; font-family: monospace; }
+    .on { color: #DC2626; font-weight: 700; font-family: monospace; }
+    .ologn { color: #2563EB; font-weight: 700; font-family: monospace; }
+
+    .trap-box {
+      margin-top: 10px;
+      background: #FEF3C7;
+      border: 1px solid #FCD34D;
+      border-radius: 8px;
+      padding: 10px 12px;
+      font-size: 11px;
+      color: #92400E;
+      line-height: 1.4;
+    }
+    .trap-box strong { color: #78350F; }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="title-group">
+      <h1>Queue ADT: Taxonomy, Operations & Complexity Matrix</h1>
+      <p>Unit 3: FIFO Principles, Circular Queues, Deques, Priority Structures & Python Implementation Overhead</p>
+    </div>
+    <div class="badge">CUET UG CS · UNIT 3 MATRIX</div>
+  </div>
+
+  <div class="grid">
+    <!-- COLUMN 1: FIFO PRIMITIVES -->
+    <div class="card">
+      <div class="card-title">
+        <span class="icon icon-blue">1</span>
+        Queue ADT & FIFO Architecture
+      </div>
+
+      <div class="queue-viz">
+        <div style="font-size: 10px; font-weight: 700; color: #3B82F6;">&larr; DEQUEUE (Front)</div>
+        <div class="queue-slot slot-front">
+          10
+          <span class="tag-ptr ptr-front">FRONT</span>
+        </div>
+        <div class="queue-slot">20</div>
+        <div class="queue-slot">30</div>
+        <div class="queue-slot slot-rear">
+          40
+          <span class="tag-ptr ptr-rear">REAR</span>
+        </div>
+        <div style="font-size: 10px; font-weight: 700; color: #16A34A;">ENQUEUE (Rear) &rarr;</div>
+      </div>
+
+      <ul class="op-list">
+        <li>
+          <strong>enqueue(item):</strong> Inserts element at <em>Rear</em>. Moves $Rear arrow.r Rear + 1$. Bounded queues check for <em>Overflow</em>.
+        </li>
+        <li>
+          <strong>dequeue():</strong> Removes and returns element from <em>Front</em>. Moves $Front arrow.r Front + 1$. Checks for <em>Underflow</em>.
+        </li>
+        <li>
+          <strong>peek() / front():</strong> Inspects front element without mutation.
+        </li>
+        <li>
+          <strong>is_empty():</strong> Returns `True` if $Front == -1$ or $Front > Rear$.
+        </li>
+        <li>
+          <strong>size():</strong> Calculates element count: $(Rear - Front + 1)$.
+        </li>
+      </ul>
+    </div>
+
+    <!-- COLUMN 2: QUEUE VARIATIONS -->
+    <div class="card">
+      <div class="card-title">
+        <span class="icon icon-amber">2</span>
+        Queue Architectural Variations
+      </div>
+
+      <div class="variant-card">
+        <div class="variant-header">
+          <span>Linear Queue</span>
+          <span class="badge-sm b-amber">Memory Drift Hazard</span>
+        </div>
+        Pointer drift causes "False Overflow" when $Rear == Max-1$ even if front slots are empty after dequeues.
+      </div>
+
+      <div class="variant-card">
+        <div class="variant-header">
+          <span>Circular Queue</span>
+          <span class="badge-sm b-green">Ring Buffer / Modulo</span>
+        </div>
+        Wraps pointers via $P = (P + 1) mod Max$. Full when $(Rear + 1) mod Max == Front$. Completely reuses reclaimed slots.
+      </div>
+
+      <div class="variant-card">
+        <div class="variant-header">
+          <span>Double-Ended Queue (Deque)</span>
+          <span class="badge-sm b-blue">Bi-Directional</span>
+        </div>
+        Inserts and deletes permitted at both ends. Subtypes: Input-Restricted (insert at 1 end, delete at 2) vs Output-Restricted (delete at 1, insert at 2).
+      </div>
+
+      <div class="variant-card">
+        <div class="variant-header">
+          <span>Priority Queue</span>
+          <span class="badge-sm b-purple">Key-Driven Order</span>
+        </div>
+        Elements dequeued based on priority key (min-heap or max-heap), regardless of arrival sequence.
+      </div>
+    </div>
+
+    <!-- COLUMN 3: COMPLEXITY MATRIX -->
+    <div class="card">
+      <div class="card-title">
+        <span class="icon icon-green">3</span>
+        Implementation & Complexity Matrix
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Structure</th>
+            <th>Enqueue (Rear)</th>
+            <th>Dequeue (Front)</th>
+            <th>Peek Front</th>
+            <th>Memory Model</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Python List (`append`/`pop(0)`)</strong></td>
+            <td class="o1">O(1)*</td>
+            <td class="on">O(N) Trap</td>
+            <td class="o1">O(1)</td>
+            <td>Contiguous Array</td>
+          </tr>
+          <tr>
+            <td><strong>Circular Array</strong></td>
+            <td class="o1">O(1)</td>
+            <td class="o1">O(1)</td>
+            <td class="o1">O(1)</td>
+            <td>Fixed Ring Buffer</td>
+          </tr>
+          <tr>
+            <td><strong>collections.deque</strong></td>
+            <td class="o1">O(1)</td>
+            <td class="o1">O(1)</td>
+            <td class="o1">O(1)</td>
+            <td>Doubly-Linked Blocks</td>
+          </tr>
+          <tr>
+            <td><strong>Linked Queue</strong></td>
+            <td class="o1">O(1)</td>
+            <td class="o1">O(1)</td>
+            <td class="o1">O(1)</td>
+            <td>Singly-Linked Nodes</td>
+          </tr>
+          <tr>
+            <td><strong>PriorityQueue (Heap)</strong></td>
+            <td class="ologn">O(log N)</td>
+            <td class="ologn">O(log N)</td>
+            <td class="o1">O(1)</td>
+            <td>Binary Min-Heap</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="trap-box">
+        <strong>CUET Fatal Trap: `list.pop(0)` Dequeue Performance!</strong><br>
+        Using Python's standard `list` for a queue with `s.append(x)` and `s.pop(0)` is a common textbook anti-pattern. `pop(0)` requires shifting all $N-1$ subsequent elements in physical RAM, costing $O(N)$ linear time! Production and CUET optimal implementations strictly require `collections.deque` (`popleft()` is strictly $O(1)$).
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

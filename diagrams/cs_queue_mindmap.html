@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1440, height=880">
+  <title>Master Synthesis Mindmap: Queue Data Structure</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 1440px;
+      height: 880px;
+      background: radial-gradient(circle at center, #0F172A 0%, #080D1A 100%);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #F8FAFC;
+      padding: 30px 40px;
+      overflow: hidden;
+      position: relative;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 24px;
+      position: relative;
+      z-index: 10;
+    }
+    .header h1 {
+      font-size: 26px;
+      font-weight: 800;
+      color: #FFFFFF;
+      letter-spacing: -0.01em;
+      margin-bottom: 4px;
+    }
+    .header p {
+      font-size: 13.5px;
+      color: #94A3B8;
+      font-weight: 500;
+    }
+    .badge {
+      display: inline-block;
+      background: #0066FF;
+      color: white;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 4px 12px;
+      border-radius: 14px;
+      margin-bottom: 6px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .mindmap-container {
+      width: 1360px;
+      height: 720px;
+      position: relative;
+      margin: 0 auto;
+    }
+
+    /* Central Hub */
+    .center-hub {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 220px;
+      height: 120px;
+      background: linear-gradient(135deg, #1E3A8A 0%, #0F2C59 100%);
+      border: 3px solid #3B82F6;
+      border-radius: 20px;
+      box-shadow: 0 0 35px rgba(59, 130, 246, 0.45);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 12px;
+      z-index: 20;
+    }
+    .center-hub h2 {
+      font-size: 19px;
+      font-weight: 800;
+      color: #FFFFFF;
+      line-height: 1.2;
+    }
+    .center-hub span {
+      font-size: 11.5px;
+      color: #93C5FD;
+      font-weight: 600;
+      margin-top: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    /* Node Cards */
+    .node {
+      position: absolute;
+      border-radius: 14px;
+      padding: 16px 18px;
+      box-shadow: 0 10px 25px -5px rgba(0,0,0,0.5);
+      z-index: 10;
+      transition: all 0.3s ease;
+    }
+    .node h3 {
+      font-size: 14.5px;
+      font-weight: 800;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .node ul {
+      list-style: none;
+      font-size: 11.5px;
+      line-height: 1.5;
+    }
+    .node li {
+      margin-bottom: 4px;
+      display: flex;
+      align-items: flex-start;
+      gap: 5px;
+    }
+    .node li::before {
+      content: "▸";
+      color: inherit;
+      opacity: 0.8;
+      font-size: 12px;
+    }
+    .node strong {
+      color: #FFFFFF;
+    }
+
+    /* Node 1: Top Left - FIFO Principles & Invariants */
+    .node-1 {
+      top: 10px;
+      left: 30px;
+      width: 380px;
+      background: rgba(30, 41, 59, 0.85);
+      border: 1px solid #38BDF8;
+      border-left: 5px solid #38BDF8;
+    }
+    .node-1 h3 { color: #38BDF8; }
+    .node-1 { color: #CBD5E1; }
+
+    /* Node 2: Top Right - Implementations */
+    .node-2 {
+      top: 10px;
+      right: 30px;
+      width: 390px;
+      background: rgba(30, 41, 59, 0.85);
+      border: 1px solid #34D399;
+      border-left: 5px solid #34D399;
+    }
+    .node-2 h3 { color: #34D399; }
+    .node-2 { color: #CBD5E1; }
+
+    /* Node 3: Bottom Left - Circular Queues */
+    .node-3 {
+      bottom: 20px;
+      left: 30px;
+      width: 400px;
+      background: rgba(30, 41, 59, 0.85);
+      border: 1px solid #FBBF24;
+      border-left: 5px solid #FBBF24;
+    }
+    .node-3 h3 { color: #FBBF24; }
+    .node-3 { color: #CBD5E1; }
+
+    /* Node 4: Bottom Right - Applications & Systems */
+    .node-4 {
+      bottom: 20px;
+      right: 30px;
+      width: 390px;
+      background: rgba(30, 41, 59, 0.85);
+      border: 1px solid #C084FC;
+      border-left: 5px solid #C084FC;
+    }
+    .node-4 h3 { color: #C084FC; }
+    .node-4 { color: #CBD5E1; }
+
+    /* Node 5: Top Middle - Deque Variations */
+    .node-5 {
+      top: 15px;
+      left: 450px;
+      width: 460px;
+      background: rgba(30, 41, 59, 0.85);
+      border: 1px solid #60A5FA;
+      border-top: 4px solid #60A5FA;
+    }
+    .node-5 h3 { color: #60A5FA; }
+    .node-5 { color: #CBD5E1; }
+
+    /* Node 6: Bottom Middle - CUET Fatal Traps */
+    .node-6 {
+      bottom: 20px;
+      left: 470px;
+      width: 420px;
+      background: rgba(30, 41, 59, 0.85);
+      border: 1px solid #F87171;
+      border-bottom: 4px solid #F87171;
+    }
+    .node-6 h3 { color: #F87171; }
+    .node-6 { color: #CBD5E1; }
+
+    /* SVG Connecting Lines */
+    svg.connections {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 5;
+      pointer-events: none;
+    }
+    path.wire {
+      fill: none;
+      stroke-width: 2;
+      stroke-dasharray: 4, 4;
+      animation: dash 30s linear infinite;
+    }
+    @keyframes dash {
+      to { stroke-dashoffset: -1000; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="badge">Master Synthesis Mindmap</div>
+    <h1>Queue & Deque Data Structures: Comprehensive Architectural Taxonomy</h1>
+    <p>Unit 3: FIFO Mechanics, Circular Buffers, Deque Restrictions, Priority Heaps & System Schedulers</p>
+  </div>
+
+  <div class="mindmap-container">
+    <svg class="connections">
+      <path class="wire" stroke="#38BDF8" opacity="0.6" d="M 680,330 C 500,280 350,200 240,110" />
+      <path class="wire" stroke="#60A5FA" opacity="0.6" d="M 680,300 L 680,140" />
+      <path class="wire" stroke="#34D399" opacity="0.6" d="M 680,330 C 860,280 1000,200 1120,110" />
+      <path class="wire" stroke="#FBBF24" opacity="0.6" d="M 680,390 C 500,440 350,520 250,570" />
+      <path class="wire" stroke="#F87171" opacity="0.6" d="M 680,420 L 680,570" />
+      <path class="wire" stroke="#C084FC" opacity="0.6" d="M 680,390 C 860,440 1000,520 1110,570" />
+    </svg>
+
+    <!-- CENTER HUB -->
+    <div class="center-hub">
+      <h2>QUEUE ADT</h2>
+      <span>FIFO Architecture</span>
+    </div>
+
+    <!-- NODE 1: FIFO Principles -->
+    <div class="node node-1">
+      <h3>1. Core ADT & FIFO Rules</h3>
+      <ul>
+        <li><strong>FIFO Access Rule:</strong> First-In, First-Out. Insertion at Rear, extraction at Front.</li>
+        <li><strong>Pointers:</strong> $Front$ (points to first active element), $Rear$ (points to last added).</li>
+        <li><strong>Empty State:</strong> $Front = -1, Rear = -1$ (or $Front > Rear$).</li>
+        <li><strong>Linear Queue Drift:</strong> $Rear$ reaches $Max - 1$, causing false overflow despite free front slots.</li>
+      </ul>
+    </div>
+
+    <!-- NODE 5: Deque Variations -->
+    <div class="node node-5">
+      <h3>2. Double-Ended Queue (Deque)</h3>
+      <ul>
+        <li><strong>Bi-Directional Operations:</strong> Insert & delete at both Front and Rear ($O(1)$).</li>
+        <li><strong>Input-Restricted Deque:</strong> Insert allowed only at Rear; delete allowed at Front and Rear.</li>
+        <li><strong>Output-Restricted Deque:</strong> Delete allowed only at Front; insert allowed at Front and Rear.</li>
+        <li><strong>Universal ADT:</strong> Can natively emulate both Stacks (LIFO) and Queues (FIFO).</li>
+      </ul>
+    </div>
+
+    <!-- NODE 2: Implementations -->
+    <div class="node node-2">
+      <h3>3. Implementation Paradigms</h3>
+      <ul>
+        <li><strong>collections.deque:</strong> Doubly-linked blocks; strict $O(1)$ <code>append</code>, <code>popleft</code>.</li>
+        <li><strong>Python List:</strong> <code>append()</code> ($O(1)$) + <code>pop(0)</code> ($O(N)$ linear trap!).</li>
+        <li><strong>Linked Queue:</strong> Head = Front ($O(1)$ pop), Tail = Rear ($O(1)$ append).</li>
+        <li><strong>Priority Queue:</strong> Heap-backed ordering; $O(log N)$ enqueue/dequeue via <code>heapq</code>.</li>
+      </ul>
+    </div>
+
+    <!-- NODE 3: Circular Queues -->
+    <div class="node node-3">
+      <h3>4. Circular Queue Ring Buffers</h3>
+      <ul>
+        <li><strong>Ring Geometry:</strong> Modulo arithmetic $ptr = (ptr + 1) mod Max$.</li>
+        <li><strong>Full / Overflow Condition:</strong> $(Rear + 1) mod Max == Front$.</li>
+        <li><strong>Empty / Underflow Condition:</strong> $Front == -1$.</li>
+        <li><strong>Memory Reclaim:</strong> Re-utilizes vacated memory slots at index 0 after front dequeues.</li>
+      </ul>
+    </div>
+
+    <!-- NODE 6: Exam Traps -->
+    <div class="node node-6">
+      <h3>5. The Seven Fatal CUET Traps</h3>
+      <ul>
+        <li><strong>List pop(0) Anti-Pattern:</strong> Destroys efficiency from $O(1)$ to $O(N)$ due to memory shifts.</li>
+        <li><strong>False Overflow Pitfall:</strong> Linear queue rejecting inserts when $Rear == Max-1$.</li>
+        <li><strong>Deque Subtype Inversion:</strong> Confusing Input-Restricted with Output-Restricted rules.</li>
+        <li><strong>Modulo Parentheses Bug:</strong> <code>(Rear + 1) % Max</code> vs <code>Rear + 1 % Max</code>.</li>
+      </ul>
+    </div>
+
+    <!-- NODE 4: Systems Applications -->
+    <div class="node node-4">
+      <h3>6. Systems & Algorithm Applications</h3>
+      <ul>
+        <li><strong>CPU Round-Robin:</strong> Time-sliced process execution ready queue.</li>
+        <li><strong>BFS Graph Traversal:</strong> Level-by-level shortest unweighted path traversal.</li>
+        <li><strong>Print Spooling:</strong> Printer jobs served in chronological FIFO submission order.</li>
+        <li><strong>I/O Streams:</strong> Audio/video streaming buffers and producer-consumer pipes.</li>
+      </ul>
+    </div>
+  </div>
+
+</body>
+</html>

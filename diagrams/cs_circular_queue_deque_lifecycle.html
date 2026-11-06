@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1440, height=880">
+  <title>Circular Queue Ring Buffer & Deque Bi-Directional Lifecycle</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 1440px;
+      height: 880px;
+      background-color: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0F172A;
+      padding: 32px 40px;
+      overflow: hidden;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #E2E8F0;
+      padding-bottom: 14px;
+    }
+    .title-group h1 {
+      font-size: 26px;
+      font-weight: 800;
+      color: #0F2C59;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+    .title-group p {
+      font-size: 14px;
+      color: #64748B;
+      font-weight: 500;
+    }
+    .badge {
+      background: #0066FF;
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1.15fr 1.15fr 0.8fr;
+      gap: 20px;
+      height: calc(100% - 100px);
+    }
+    .card {
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      border-radius: 12px;
+      padding: 18px 20px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+    }
+    .card-title {
+      font-size: 15.5px;
+      font-weight: 800;
+      color: #1E293B;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .icon {
+      width: 22px;
+      height: 22px;
+      border-radius: 6px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 800;
+      color: white;
+    }
+    .icon-blue { background: #0066FF; }
+    .icon-indigo { background: #4F46E5; }
+    .icon-purple { background: #9333EA; }
+
+    /* Circular Buffer Graphic */
+    .ring-container {
+      width: 100%;
+      height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      margin-bottom: 10px;
+    }
+    svg.ring-svg {
+      width: 210px;
+      height: 210px;
+    }
+    .ring-track {
+      fill: none;
+      stroke: #E2E8F0;
+      stroke-width: 24;
+    }
+    .slot-cell {
+      fill: #FFFFFF;
+      stroke: #94A3B8;
+      stroke-width: 2;
+    }
+    .slot-active {
+      fill: #DBEAFE;
+      stroke: #2563EB;
+      stroke-width: 2;
+    }
+    .slot-text {
+      font-size: 11px;
+      font-weight: 800;
+      fill: #0F2C59;
+      text-anchor: middle;
+      dominant-baseline: central;
+    }
+
+    .formula-box {
+      background: #F1F5F9;
+      border-radius: 8px;
+      padding: 10px 12px;
+      font-size: 11.5px;
+      color: #1E293B;
+      line-height: 1.45;
+      font-family: ui-monospace, SFMono-Regular, monospace;
+      margin-bottom: 8px;
+    }
+    .formula-box strong { color: #0066FF; }
+
+    .deque-diagram {
+      border: 2px dashed #CBD5E1;
+      border-radius: 8px;
+      padding: 14px;
+      background: #F8FAFC;
+      margin-bottom: 12px;
+    }
+    .deque-rail {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .deque-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .action-btn {
+      font-size: 10px;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: 4px;
+      text-align: center;
+    }
+    .btn-front { background: #DBEAFE; color: #1D4ED8; border: 1px solid #93C5FD; }
+    .btn-rear { background: #DCFCE7; color: #15803D; border: 1px solid #86EFAC; }
+    .deque-core {
+      display: flex;
+      gap: 4px;
+    }
+    .deque-cell {
+      width: 44px;
+      height: 40px;
+      background: #FFFFFF;
+      border: 2px solid #64748B;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 800;
+      color: #0F2C59;
+    }
+
+    .restriction-box {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 8px;
+      padding: 10px;
+      font-size: 11.5px;
+      line-height: 1.4;
+      color: #334155;
+    }
+    .restriction-box h4 {
+      font-size: 12px;
+      color: #0F2C59;
+      margin-bottom: 4px;
+      font-weight: 700;
+    }
+
+    .app-card {
+      background: #F8FAFC;
+      border: 1px solid #CBD5E1;
+      border-radius: 8px;
+      padding: 10px;
+      margin-bottom: 10px;
+      font-size: 11.5px;
+      line-height: 1.4;
+      color: #334155;
+    }
+    .app-card strong { color: #0F2C59; }
+
+    .trap-callout {
+      background: #FEF3C7;
+      border: 1px solid #FCD34D;
+      border-radius: 8px;
+      padding: 10px 12px;
+      font-size: 11px;
+      color: #92400E;
+      line-height: 1.4;
+      margin-top: 10px;
+    }
+    .trap-callout strong { color: #78350F; }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="title-group">
+      <h1>Circular Queue Modulo Mechanics & Deque Operational Lifecycle</h1>
+      <p>Unit 3: Ring Buffer Pointer Wrap-Arounds, Input/Output Restrictions & Practical Operating System Schedulers</p>
+    </div>
+    <div class="badge">CUET UG CS · UNIT 3 PROCESS BOARD</div>
+  </div>
+
+  <div class="grid">
+    <!-- PANEL 1: CIRCULAR QUEUE RING BUFFER -->
+    <div class="card">
+      <div class="card-title">
+        <span class="icon icon-blue">A</span>
+        Circular Queue Ring Buffer Lifecycle
+      </div>
+
+      <div class="ring-container">
+        <svg class="ring-svg" viewBox="0 0 200 200">
+          <circle cx="100" cy="100" r="75" class="ring-track" />
+          <!-- 6 circular slots -->
+          <!-- Slot 0: Top -->
+          <circle cx="100" cy="25" r="16" class="slot-active" />
+          <text x="100" y="25" class="slot-text">0: [E]</text>
+          <!-- Slot 1: Top Right -->
+          <circle cx="165" cy="62" r="16" class="slot-active" />
+          <text x="165" y="62" class="slot-text">1: [F]</text>
+          <!-- Slot 2: Bottom Right -->
+          <circle cx="165" cy="138" r="16" class="slot-active" />
+          <text x="165" y="138" class="slot-text">2: [C]</text>
+          <!-- Slot 3: Bottom -->
+          <circle cx="100" cy="175" r="16" class="slot-active" />
+          <text x="100" y="175" class="slot-text">3: [D]</text>
+          <!-- Slot 4: Bottom Left -->
+          <circle cx="35" cy="138" r="16" class="slot-cell" />
+          <text x="35" y="138" class="slot-text">4: &empty;</text>
+          <!-- Slot 5: Top Left -->
+          <circle cx="35" cy="62" r="16" class="slot-cell" />
+          <text x="35" y="62" class="slot-text">5: &empty;</text>
+          
+          <!-- Center Labels -->
+          <text x="100" y="93" font-size="10" font-weight="800" fill="#2563EB" text-anchor="middle">FRONT = 2</text>
+          <text x="100" y="112" font-size="10" font-weight="800" fill="#16A34A" text-anchor="middle">REAR = 1</text>
+        </svg>
+      </div>
+
+      <div class="formula-box">
+        <strong>&bull; Circular Advance:</strong> ptr = (ptr + 1) % MAX<br>
+        <strong>&bull; Full / Overflow:</strong> (Rear + 1) % MAX == Front<br>
+        <strong>&bull; Empty / Underflow:</strong> Front == -1<br>
+        <strong>&bull; Element Count:</strong> (Rear - Front + MAX) % MAX + 1
+      </div>
+
+      <p style="font-size: 11.5px; color: #475569; line-height: 1.4;">
+        Slots 0 and 1 were vacated by previous dequeues and are now successfully reused as $Rear$ wraps around past slot 5 back to 0 and 1, completely resolving the linear queue drift problem!
+      </p>
+    </div>
+
+    <!-- PANEL 2: DEQUE BI-DIRECTIONAL OPERATIONS -->
+    <div class="card">
+      <div class="card-title">
+        <span class="icon icon-indigo">B</span>
+        Double-Ended Queue (Deque) Architecture
+      </div>
+
+      <div class="deque-diagram">
+        <div class="deque-rail">
+          <!-- Front Operations -->
+          <div class="deque-actions">
+            <span class="action-btn btn-front">appendleft(x) &rarr;</span>
+            <span class="action-btn btn-front">&larr; popleft()</span>
+          </div>
+
+          <!-- Deque Core -->
+          <div class="deque-core">
+            <div class="deque-cell">10</div>
+            <div class="deque-cell">20</div>
+            <div class="deque-cell">30</div>
+            <div class="deque-cell">40</div>
+          </div>
+
+          <!-- Rear Operations -->
+          <div class="deque-actions">
+            <span class="action-btn btn-rear">&larr; append(x)</span>
+            <span class="action-btn btn-rear">pop() &rarr;</span>
+          </div>
+        </div>
+        <div style="display: flex; justify-content: space-between; font-size: 11px; font-weight: 700; color: #475569;">
+          <span>&uarr; FRONT END</span>
+          <span>REAR END &uarr;</span>
+        </div>
+      </div>
+
+      <div class="restriction-box">
+        <h4>Specialized Deque Subtypes (High-Yield):</h4>
+        <strong>1. Input-Restricted Deque:</strong> Insertion is strictly confined to one end (Rear), while deletion is permitted at <em>both</em> Front and Rear.<br>
+        <strong>2. Output-Restricted Deque:</strong> Deletion is strictly confined to one end (Front), while insertion is permitted at <em>both</em> Front and Rear.
+      </div>
+
+      <div class="trap-callout">
+        <strong>Deque as Stack or Queue:</strong><br>
+        &bull; <em>Stack emulation:</em> Use <code>append()</code> + <code>pop()</code> (LIFO at Rear).<br>
+        &bull; <em>Queue emulation:</em> Use <code>append()</code> + <code>popleft()</code> (FIFO from Rear to Front).
+      </div>
+    </div>
+
+    <!-- PANEL 3: REAL-WORLD SYSTEMS APPLICATIONS -->
+    <div class="card">
+      <div class="card-title">
+        <span class="icon icon-purple">C</span>
+        Systems & Algorithmic Applications
+      </div>
+
+      <div class="app-card">
+        <strong>1. CPU Round-Robin Scheduling:</strong><br>
+        Processes reside in a circular ready queue. The OS dispatcher grants CPU execution for a fixed time quantum. Preempted tasks re-enter at Rear.
+      </div>
+
+      <div class="app-card">
+        <strong>2. BFS Graph / Tree Level-Order:</strong><br>
+        Nodes are visited layer-by-layer. A node is dequeued from Front, inspected, and its unvisited adjacent neighbors are enqueued at Rear.
+      </div>
+
+      <div class="app-card">
+        <strong>3. Asynchronous I/O Buffering:</strong><br>
+        Media streaming (YouTube / Spotify) buffers chunks in a FIFO queue. Producer network thread enqueues; consumer audio hardware dequeues.
+      </div>
+
+      <div class="app-card">
+        <strong>4. Print Spooler (`lpd`):</strong><br>
+        Multiple users dispatch print jobs. The printer driver serves requests strictly in arrival sequence via a FIFO spooler queue.
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
