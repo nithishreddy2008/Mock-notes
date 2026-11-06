@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 600px;
+    background: #FFFFFF;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #071A4D;
+    letter-spacing: -0.02em;
+  }
+  .title-block p {
+    font-size: 11px;
+    color: #64748B;
+    margin-top: 3px;
+    font-weight: 500;
+  }
+  .badge {
+    background: #EEF1F8;
+    color: #1F5EFF;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 700;
+    border: 1px solid #C7D7FE;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-top: 14px;
+    flex-grow: 1;
+  }
+  .col {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+  }
+  .col.highlight {
+    background: #F0FDF4;
+    border-color: #86EFAC;
+  }
+  .col.featured {
+    background: #EEF2FF;
+    border-color: #A5B4FC;
+  }
+  .col-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #E2E8F0;
+  }
+  .col-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 800;
+  }
+  .col-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #071A4D;
+  }
+  .section-label {
+    font-size: 9px;
+    font-weight: 800;
+    color: #64748B;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 6px 0 2px 0;
+  }
+  .content-text {
+    font-size: 10.5px;
+    line-height: 1.35;
+    color: #334155;
+  }
+  .tag-pill {
+    display: inline-block;
+    background: #E2E8F0;
+    color: #334155;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 9px;
+    font-weight: 600;
+    margin-right: 4px;
+    margin-top: 3px;
+  }
+  .camera-tag {
+    background: #DBEAFE;
+    color: #1E40AF;
+  }
+  .rule-tag {
+    background: #FEF3C7;
+    color: #92400E;
+  }
+  .footer {
+    border-top: 1px solid #E2E8F0;
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    color: #64748B;
+  }
+  .footer-brand {
+    font-weight: 700;
+    color: #071A4D;
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <div class="title-block">
+      <h1>Comparative Matrix: Television Formats, Camera Framing & Studio Architecture</h1>
+      <p>Systematic classification of program genres, multi-camera setups, shot grammar, and control room parameters</p>
+    </div>
+    <div class="badge">CUET Mass Media · Concept Matrix</div>
+  </div>
+
+  <div class="grid">
+    <!-- Format 1 -->
+    <div class="col featured">
+      <div class="col-header">
+        <div class="col-icon" style="background:#4338CA; color:#fff;">TV</div>
+        <div class="col-title">Live News & Bulletins</div>
+      </div>
+      <div class="section-label">Production Paradigm</div>
+      <div class="content-text">Multi-camera studio setup (3-4 cameras), teleprompter sync, real-time live graphics, PCR switcher routing, and satellite live links (OB van / DSNG).</div>
+      <div class="section-label">Dominant Shot Grammar</div>
+      <div class="content-text">
+        <span class="tag-pill camera-tag">Mid Shot (MS)</span> Anchor presentation.<br>
+        <span class="tag-pill camera-tag">Close Up (CU)</span> Emotional intensity.<br>
+        <span class="tag-pill camera-tag">Two-Shot</span> Co-anchors & debates.
+      </div>
+      <div class="section-label">Scripting & Audio</div>
+      <div class="content-text">Two-column TV script (video/audio), run-down software, lavalier lapel mics, ear-piece IFB talkback.</div>
+      <div class="section-label">Key Exam Metric</div>
+      <div class="content-text"><span class="tag-pill rule-tag">Zero Delay</span> PCR vision mixer switches cut-to-cut; lowest post-production latency.</div>
+    </div>
+
+    <!-- Format 2 -->
+    <div class="col">
+      <div class="col-header">
+        <div class="col-icon" style="background:#0284C7; color:#fff;">SO</div>
+        <div class="col-title">Soap Operas / Daily Serials</div>
+      </div>
+      <div class="section-label">Production Paradigm</div>
+      <div class="content-text">Multi-camera indoor sound stage sets with controlled grid lighting, fixed floor plans, continuous shooting, fast turnaround for daily broadcasting.</div>
+      <div class="section-label">Dominant Shot Grammar</div>
+      <div class="content-text">
+        <span class="tag-pill camera-tag">Over-The-Shoulder</span> Dialogues.<br>
+        <span class="tag-pill camera-tag">Extreme CU (ECU)</span> Dramatic gasps/eyes.<br>
+        <span class="tag-pill camera-tag">Three-Shot / Master</span> Family scenes.
+      </div>
+      <div class="section-label">Scripting & Audio</div>
+      <div class="content-text">Episodic screenplay, heavy background score, dramatic stings, boom microphones and hidden wireless mics.</div>
+      <div class="section-label">Key Exam Metric</div>
+      <div class="content-text"><span class="tag-pill rule-tag">Emotional Hook</span> Formulaic cliffhangers, non-linear editing (NLE), high character continuity.</div>
+    </div>
+
+    <!-- Format 3 -->
+    <div class="col highlight">
+      <div class="col-header">
+        <div class="col-icon" style="background:#15803D; color:#fff;">DC</div>
+        <div class="col-title">Documentaries & Docudramas</div>
+      </div>
+      <div class="section-label">Production Paradigm</div>
+      <div class="content-text">Single-camera setup (EFP - Electronic Field Production), natural location lighting, extensive b-roll capture, observational or participatory style.</div>
+      <div class="section-label">Dominant Shot Grammar</div>
+      <div class="content-text">
+        <span class="tag-pill camera-tag">Extreme Long Shot</span> Geography/Context.<br>
+        <span class="tag-pill camera-tag">POV Shot</span> Eyewitness perspective.<br>
+        <span class="tag-pill camera-tag">Tracking / Pan</span> Dynamic environment.
+      </div>
+      <div class="section-label">Scripting & Audio</div>
+      <div class="content-text">Post-shoot scripting, voice-over (VO) narration, ambient audio (wild track), directional shotgun mics.</div>
+      <div class="section-label">Key Exam Metric</div>
+      <div class="content-text"><span class="tag-pill rule-tag">Investigative Rigor</span> High post-production ratio (30:1 footage-to-cut), archival research.</div>
+    </div>
+
+    <!-- Format 4 -->
+    <div class="col">
+      <div class="col-header">
+        <div class="col-icon" style="background:#B45309; color:#fff;">RY</div>
+        <div class="col-title">Reality & Game Shows</div>
+      </div>
+      <div class="section-label">Production Paradigm</div>
+      <div class="content-text">Massive multi-camera arrays (20–40 fixed robotic, crane & handheld cameras), isolated recording (ISO tracks), live audience floor management.</div>
+      <div class="section-label">Dominant Shot Grammar</div>
+      <div class="content-text">
+        <span class="tag-pill camera-tag">Jib / Crane Shot</span> Sweeping arena views.<br>
+        <span class="tag-pill camera-tag">Reaction Shots</span> Judges/Contestants.<br>
+        <span class="tag-pill camera-tag">Wide Master</span> Stage choreography.
+      </div>
+      <div class="section-label">Scripting & Audio</div>
+      <div class="content-text">Semi-scripted format bible, host teleprompter, multi-track audio mixing, extensive audience microphones.</div>
+      <div class="section-label">Key Exam Metric</div>
+      <div class="content-text"><span class="tag-pill rule-tag">Format Licensing</span> Global syndicated templates (e.g. KBC / Idol); high commercial TRP index.</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div><strong>CUET Invariant:</strong> Camera framing determines emotional proximity; Multi-camera PCR allows real-time switching; Single-camera EFP offers post-production flexibility.</div>
+    <div class="footer-brand">OURMOCKS · Mass Media Studies</div>
+  </div>
+</body>
+</html>

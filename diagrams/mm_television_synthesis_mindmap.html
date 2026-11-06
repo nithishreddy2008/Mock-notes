@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 600px;
+    background: #FFFFFF;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 19px;
+    font-weight: 800;
+    color: #071A4D;
+    letter-spacing: -0.02em;
+  }
+  .title-block p {
+    font-size: 11px;
+    color: #64748B;
+    margin-top: 2px;
+    font-weight: 500;
+  }
+  .badge {
+    background: #EEF1F8;
+    color: #1F5EFF;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 700;
+    border: 1px solid #C7D7FE;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .map-wrapper {
+    position: relative;
+    flex-grow: 1;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .hub {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #071A4D, #1F5EFF);
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 16px;
+    box-shadow: 0 8px 24px rgba(31, 94, 255, 0.25);
+    z-index: 5;
+    border: 4px solid #B8FF34;
+  }
+  .hub-title {
+    font-size: 13px;
+    font-weight: 800;
+    line-height: 1.25;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .hub-subtitle {
+    font-size: 9.5px;
+    color: #E0E7FF;
+    margin-top: 4px;
+    font-weight: 600;
+  }
+  .nodes-grid {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 16px;
+  }
+  .node-card {
+    background: #F8FAFC;
+    border: 1px solid #CBD5E1;
+    border-radius: 8px;
+    padding: 10px 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+  }
+  .node-card.top-left { border-left: 4px solid #3B82F6; }
+  .node-card.top-mid { border-top: 4px solid #10B981; }
+  .node-card.top-right { border-right: 4px solid #F59E0B; }
+  .node-card.bot-left { border-left: 4px solid #8B5CF6; }
+  .node-card.bot-mid { border-bottom: 4px solid #EC4899; }
+  .node-card.bot-right { border-right: 4px solid #06B6D4; }
+  
+  .node-title {
+    font-size: 11.5px;
+    font-weight: 800;
+    color: #071A4D;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .node-desc {
+    font-size: 9.5px;
+    line-height: 1.35;
+    color: #334155;
+  }
+  .node-tags {
+    margin-top: 4px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .tag {
+    font-size: 8.5px;
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-weight: 600;
+    background: #E2E8F0;
+    color: #1E293B;
+  }
+  .footer {
+    border-top: 1px solid #E2E8F0;
+    padding-top: 8px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    color: #64748B;
+  }
+  .footer-brand {
+    font-weight: 700;
+    color: #071A4D;
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <div class="title-block">
+      <h1>Master Synthesis Mindmap: Television Production & Broadcast Mechanics</h1>
+      <p>Six-pillar conceptual synthesis covering technology, public broadcasting, studio systems, grammar, and playout</p>
+    </div>
+    <div class="badge">CUET Mass Media · Unit 3 Synthesis</div>
+  </div>
+
+  <div class="map-wrapper">
+    <div class="nodes-grid">
+      <!-- Node 1: Top Left -->
+      <div class="node-card top-left">
+        <div class="node-title">1. TV Evolution & Milestones</div>
+        <div class="node-desc">Baird mechanical TV (1926); Farnsworth electronic TV (1927); India experimental launch (1959); SITE experiment (1975–76); Color TV & Asian Games (1982); Cable revolution (1991 Gulf War); OTT convergence.</div>
+        <div class="node-tags">
+          <span class="tag">Baird</span>
+          <span class="tag">SITE 1975</span>
+          <span class="tag">1982 Color TV</span>
+          <span class="tag">Cable 1991</span>
+        </div>
+      </div>
+
+      <!-- Node 2: Top Mid -->
+      <div class="node-card top-mid">
+        <div class="node-title">2. Public vs Commercial TV</div>
+        <div class="node-desc">Prasar Bharati Act (1990/1997); Doordarshan public service mandate (Krishi Darshan, Gyan Darshan) vs ad-funded private commercial TV; TRP (Television Rating Points); BARC audio watermarking via BAR-O-meters.</div>
+        <div class="node-tags">
+          <span class="tag">Prasar Bharati</span>
+          <span class="tag">Public Service</span>
+          <span class="tag">BARC</span>
+          <span class="tag">TRP</span>
+        </div>
+      </div>
+
+      <!-- Node 3: Top Right -->
+      <div class="node-card top-right">
+        <div class="node-title">3. Pre-Production Planning</div>
+        <div class="node-desc">Concept ideation & pitch bible; Two-column TV script (Left: Video/Shots, Right: Audio/Dialogue); Storyboarding frame composition; Studio floor plans; Talent casting & call-sheet scheduling.</div>
+        <div class="node-tags">
+          <span class="tag">Two-Column Script</span>
+          <span class="tag">Storyboard</span>
+          <span class="tag">Floor Plan</span>
+          <span class="tag">Call Sheet</span>
+        </div>
+      </div>
+
+      <!-- Node 4: Bot Left -->
+      <div class="node-card bot-left">
+        <div class="node-title">4. Studio Floor & PCR Architecture</div>
+        <div class="node-desc">Studio Floor (Floor Manager, teleprompter, lapel mics, chroma green screen); PCR (Director, Technical Director, Vision Mixer / Switcher, CCU camera control, Intercom/IFB talkback).</div>
+        <div class="node-tags">
+          <span class="tag">Vision Mixer</span>
+          <span class="tag">PCR vs MCR</span>
+          <span class="tag">Floor Manager</span>
+          <span class="tag">Chroma Key</span>
+        </div>
+      </div>
+
+      <!-- Node 5: Bot Mid -->
+      <div class="node-card bot-mid">
+        <div class="node-title">5. Visual Grammar & Lighting</div>
+        <div class="node-desc">Three-Point Lighting (Key Light: 45° primary, Fill Light: softens shadows, Back Light: separates from background); Framing (ELS, LS, MS, CU, ECU, POV, Over-the-shoulder); Camera moves (Pan, Tilt, Dolly, Crane/Jib).</div>
+        <div class="node-tags">
+          <span class="tag">Key-Fill-Back</span>
+          <span class="tag">Shot Scales</span>
+          <span class="tag">Pan/Tilt</span>
+          <span class="tag">180° Rule</span>
+        </div>
+      </div>
+
+      <!-- Node 6: Bot Right -->
+      <div class="node-card bot-right">
+        <div class="node-title">6. Post-Production & Playout</div>
+        <div class="node-desc">Non-Linear Editing (NLE); Video transitions (Cut, Dissolve, Wipe, Fade to Black); Sound design, Foley, VO & audio equalization; Lower-third supers & Aston tickers; MCR broadcast automation & transmission.</div>
+        <div class="node-tags">
+          <span class="tag">NLE</span>
+          <span class="tag">Foley</span>
+          <span class="tag">Lower Third</span>
+          <span class="tag">MCR Playout</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Center Hub -->
+    <div class="hub">
+      <div class="hub-title">Television Production</div>
+      <div class="hub-subtitle">Studio Workflow, Broadcast Formats & Industry Ecosystem</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div><strong>CUET Core Anchor:</strong> Television is an audiovisual team medium; PCR coordinates real-time switching; Prasar Bharati safeguards public interest broadcasting.</div>
+    <div class="footer-brand">OURMOCKS · Mass Media Studies</div>
+  </div>
+</body>
+</html>
