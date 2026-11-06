@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1440, height=880">
+  <title>Sorting Pass Tracing, Partitioning & Algorithmic Invariants</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 1440px;
+      height: 880px;
+      background-color: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0F172A;
+      padding: 30px 38px;
+      overflow: hidden;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 18px;
+      border-bottom: 2px solid #E2E8F0;
+      padding-bottom: 12px;
+    }
+    .title-group h1 {
+      font-size: 25px;
+      font-weight: 800;
+      color: #0F2C59;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+    .title-group p {
+      font-size: 13.5px;
+      color: #64748B;
+      font-weight: 500;
+    }
+    .badge {
+      background: #0066FF;
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1.15fr 0.85fr;
+      gap: 18px;
+      height: calc(100% - 92px);
+    }
+    .card {
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      border-radius: 12px;
+      padding: 16px 18px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04);
+    }
+    .card-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #0F2C59;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 1.5px solid #F1F5F9;
+      padding-bottom: 8px;
+    }
+    .card-title .icon {
+      width: 22px;
+      height: 22px;
+      border-radius: 6px;
+      background: #EFF6FF;
+      color: #0066FF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 800;
+    }
+    
+    /* Step Tracing Elements */
+    .trace-section {
+      margin-bottom: 12px;
+    }
+    .trace-title {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #1E293B;
+      margin-bottom: 6px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .trace-title span.tag {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 4px;
+      background: #F1F5F9;
+      color: #475569;
+    }
+    .array-row {
+      display: flex;
+      gap: 4px;
+      margin-bottom: 5px;
+      align-items: center;
+    }
+    .row-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: #64748B;
+      width: 52px;
+    }
+    .elem {
+      width: 32px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 700;
+      border-radius: 6px;
+      border: 1.5px solid #CBD5E1;
+      background: #F8FAFC;
+      color: #0F172A;
+    }
+    .elem.fixed {
+      background: #DCFCE7;
+      border-color: #86EFAC;
+      color: #166534;
+    }
+    .elem.active {
+      background: #FEF3C7;
+      border-color: #FCD34D;
+      color: #92400E;
+    }
+    .elem.pivot {
+      background: #EFF6FF;
+      border-color: #93C5FD;
+      color: #1E40AF;
+    }
+
+    /* Divide & Conquer Visual */
+    .tree-step {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 8px;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+    .tree-step h4 {
+      font-size: 12px;
+      font-weight: 700;
+      color: #0F2C59;
+      margin-bottom: 6px;
+    }
+    .tree-flow {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-size: 11px;
+    }
+    .flow-row {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+    .flow-box {
+      padding: 4px 8px;
+      border-radius: 6px;
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      font-weight: 700;
+      font-size: 11px;
+      color: #1E293B;
+    }
+    .flow-box.highlight {
+      border-color: #0066FF;
+      background: #EFF6FF;
+      color: #0066FF;
+    }
+    
+    /* Table & Traps */
+    .invariant-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 11px;
+      margin-bottom: 12px;
+    }
+    .invariant-table th, .invariant-table td {
+      border: 1px solid #E2E8F0;
+      padding: 6px 8px;
+      text-align: left;
+    }
+    .invariant-table th {
+      background: #F1F5F9;
+      color: #1E293B;
+      font-weight: 700;
+    }
+    .trap-card {
+      background: #FEF2F2;
+      border-left: 4px solid #EF4444;
+      padding: 8px 12px;
+      border-radius: 6px;
+      margin-bottom: 8px;
+      font-size: 10.5px;
+      color: #991B1B;
+      line-height: 1.4;
+    }
+    .trap-card strong {
+      display: block;
+      color: #B91C1C;
+      font-size: 11px;
+      margin-bottom: 2px;
+    }
+    .key-metric {
+      display: flex;
+      justify-content: space-between;
+      padding: 6px 8px;
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 6px;
+      font-size: 11px;
+      margin-bottom: 6px;
+    }
+    .key-metric span.val {
+      font-weight: 700;
+      color: #0066FF;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="title-group">
+      <h1>Sorting Pass Tracing & Divide-and-Conquer Lifecycle</h1>
+      <p>Pass-by-Pass Array State Transitions, Partition Invariants, and Recursion Depth Trees</p>
+    </div>
+    <div class="badge">CUET Core Process Blueprint</div>
+  </div>
+
+  <div class="grid">
+    <!-- COLUMN 1: Quadratic Sorts Pass Traces -->
+    <div class="card">
+      <div class="card-title">
+        <div class="icon">1</div>
+        Quadratic Pass Tracing [Initial: 5, 2, 8, 3, 1]
+      </div>
+
+      <!-- Bubble Sort -->
+      <div class="trace-section">
+        <div class="trace-title">
+          Bubble Sort (Adjacent Swaps)
+          <span class="tag">Right Fixed Invariant</span>
+        </div>
+        <div class="array-row">
+          <div class="row-label">Pass 1:</div>
+          <div class="elem">2</div><div class="elem">5</div><div class="elem">3</div><div class="elem">1</div><div class="elem fixed">8</div>
+        </div>
+        <div class="array-row">
+          <div class="row-label">Pass 2:</div>
+          <div class="elem">2</div><div class="elem">3</div><div class="elem">1</div><div class="elem fixed">5</div><div class="elem fixed">8</div>
+        </div>
+        <div class="array-row">
+          <div class="row-label">Pass 3:</div>
+          <div class="elem">2</div><div class="elem">1</div><div class="elem fixed">3</div><div class="elem fixed">5</div><div class="elem fixed">8</div>
+        </div>
+        <div class="array-row">
+          <div class="row-label">Pass 4:</div>
+          <div class="elem fixed">1</div><div class="elem fixed">2</div><div class="elem fixed">3</div><div class="elem fixed">5</div><div class="elem fixed">8</div>
+        </div>
+      </div>
+
+      <!-- Selection Sort -->
+      <div class="trace-section">
+        <div class="trace-title">
+          Selection Sort (Select Min & Swap)
+          <span class="tag">Left Fixed Invariant</span>
+        </div>
+        <div class="array-row">
+          <div class="row-label">Pass 1:</div>
+          <div class="elem fixed">1</div><div class="elem">2</div><div class="elem">8</div><div class="elem">3</div><div class="elem">5</div>
+        </div>
+        <div class="array-row">
+          <div class="row-label">Pass 2:</div>
+          <div class="elem fixed">1</div><div class="elem fixed">2</div><div class="elem">8</div><div class="elem">3</div><div class="elem">5</div>
+        </div>
+        <div class="array-row">
+          <div class="row-label">Pass 3:</div>
+          <div class="elem fixed">1</div><div class="elem fixed">2</div><div class="elem fixed">3</div><div class="elem">8</div><div class="elem">5</div>
+        </div>
+        <div class="array-row">
+          <div class="row-label">Pass 4:</div>
+          <div class="elem fixed">1</div><div class="elem fixed">2</div><div class="elem fixed">3</div><div class="elem fixed">5</div><div class="elem fixed">8</div>
+        </div>
+      </div>
+
+      <!-- Insertion Sort -->
+      <div class="trace-section" style="margin-bottom: 0;">
+        <div class="trace-title">
+          Insertion Sort (Shift & Insert)
+          <span class="tag">Locally Sorted Prefix</span>
+        </div>
+        <div class="array-row">
+          <div class="row-label">Pass 1:</div>
+          <div class="elem active">2</div><div class="elem active">5</div><div class="elem">8</div><div class="elem">3</div><div class="elem">1</div>
+        </div>
+        <div class="array-row">
+          <div class="row-label">Pass 2:</div>
+          <div class="elem active">2</div><div class="elem active">5</div><div class="elem active">8</div><div class="elem">3</div><div class="elem">1</div>
+        </div>
+        <div class="array-row">
+          <div class="row-label">Pass 3:</div>
+          <div class="elem active">2</div><div class="elem active">3</div><div class="elem active">5</div><div class="elem active">8</div><div class="elem">1</div>
+        </div>
+        <div class="array-row">
+          <div class="row-label">Pass 4:</div>
+          <div class="elem fixed">1</div><div class="elem fixed">2</div><div class="elem fixed">3</div><div class="elem fixed">5</div><div class="elem fixed">8</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- COLUMN 2: Divide & Conquer Lifecycle -->
+    <div class="card">
+      <div class="card-title">
+        <div class="icon">2</div>
+        Divide & Conquer: Merge vs Quick Sort
+      </div>
+
+      <!-- Merge Sort Tree -->
+      <div class="tree-step">
+        <h4>Merge Sort: Divide (log N) & 2-Way Merge (O(N))</h4>
+        <div class="tree-flow">
+          <div class="flow-row">
+            <div class="flow-box">[7, 2, 9, 4, 3, 8]</div>
+          </div>
+          <div class="flow-row">
+            <div class="flow-box">[7, 2, 9]</div>
+            <div style="color: #94A3B8; font-weight: bold;">&darr; Split &darr;</div>
+            <div class="flow-box">[4, 3, 8]</div>
+          </div>
+          <div class="flow-row">
+            <div class="flow-box">[2, 7, 9]</div>
+            <div style="color: #0066FF; font-weight: bold;">&uarr; Merge &uarr;</div>
+            <div class="flow-box">[3, 4, 8]</div>
+          </div>
+          <div class="flow-row">
+            <div class="flow-box highlight" style="width: 85%; text-align: center;">Result: [2, 3, 4, 7, 8, 9] &bull; Space: O(N) auxiliary</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Sort Partition -->
+      <div class="tree-step" style="margin-bottom: 0;">
+        <h4>Quick Sort: Lomuto Partitioning Invariant</h4>
+        <div style="font-size: 11px; color: #475569; margin-bottom: 8px;">
+          Choose pivot $P = A[high]$. Maintain pointer $i$: elements $\le P$ left, elements $> P$ right.
+        </div>
+        <div class="array-row" style="margin-bottom: 6px;">
+          <div class="row-label">Array:</div>
+          <div class="elem">4</div><div class="elem">7</div><div class="elem">2</div><div class="elem">6</div><div class="elem pivot">5</div>
+          <div style="font-size: 10px; color: #1E40AF; font-weight: 700; margin-left: 6px;">Pivot = 5</div>
+        </div>
+        <div class="array-row" style="margin-bottom: 6px;">
+          <div class="row-label">Part 1:</div>
+          <div class="elem fixed">4</div><div class="elem fixed">2</div><div class="elem pivot">5</div><div class="elem">7</div><div class="elem">6</div>
+        </div>
+        <div style="background: #EFF6FF; border: 1px solid #BFDBFE; border-radius: 6px; padding: 6px 8px; font-size: 10.5px; color: #1E40AF; line-height: 1.35;">
+          <strong>Pivot Guarantee:</strong> After 1 partition call, pivot <strong>5</strong> is placed at its exact final sorted index (Index 2). Left subarray &le; 5, Right subarray &gt; 5.
+        </div>
+      </div>
+    </div>
+
+    <!-- COLUMN 3: Invariants, Comparisons & Traps -->
+    <div class="card">
+      <div class="card-title">
+        <div class="icon">3</div>
+        CUET Invariants & Fatal Traps
+      </div>
+
+      <table class="invariant-table">
+        <thead>
+          <tr>
+            <th>Algorithm</th>
+            <th>State Guarantee After Pass k</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Bubble Sort</strong></td>
+            <td>Last $k$ elements are in their final sorted positions.</td>
+          </tr>
+          <tr>
+            <td><strong>Selection Sort</strong></td>
+            <td>First $k$ elements are in their final sorted positions.</td>
+          </tr>
+          <tr>
+            <td><strong>Insertion Sort</strong></td>
+            <td>First $k+1$ elements are sorted among themselves (not globally final).</td>
+          </tr>
+          <tr>
+            <td><strong>Quick Sort</strong></td>
+            <td>Pivot element is strictly in its final sorted position.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="key-metric">
+        <span>Bubble Max Swaps:</span>
+        <span class="val">n(n - 1) / 2</span>
+      </div>
+      <div class="key-metric">
+        <span>Selection Max Swaps:</span>
+        <span class="val">n - 1 (Linear!)</span>
+      </div>
+      <div class="key-metric">
+        <span>Merge Sort Aux Space:</span>
+        <span class="val">O(n)</span>
+      </div>
+
+      <div class="trap-card">
+        <strong>Trap 1: Insertion Sort State After Pass k</strong>
+        Students assume $A[0 \dots k]$ are in their final positions. FALSE! An element smaller than all of them appearing later will displace them.
+      </div>
+      <div class="trap-card">
+        <strong>Trap 2: Quick Sort Worst-Case Trigger</strong>
+        Already sorted array with first or last element as pivot leads to unbalanced tree of depth $O(n)$, triggering $O(n^2)$ time!
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

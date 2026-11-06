@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1440, height=880">
+  <title>Sorting Algorithms & Complexity Matrix</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 1440px;
+      height: 880px;
+      background-color: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0F172A;
+      padding: 32px 40px;
+      overflow: hidden;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #E2E8F0;
+      padding-bottom: 14px;
+    }
+    .title-group h1 {
+      font-size: 26px;
+      font-weight: 800;
+      color: #0F2C59;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+    .title-group p {
+      font-size: 14px;
+      color: #64748B;
+      font-weight: 500;
+    }
+    .badge {
+      background: #0066FF;
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1.35fr;
+      gap: 20px;
+      height: calc(100% - 100px);
+    }
+    .card {
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      border-radius: 12px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+    }
+    .card-title {
+      font-size: 16px;
+      font-weight: 800;
+      color: #1E293B;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .icon {
+      width: 22px;
+      height: 22px;
+      border-radius: 6px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 800;
+      color: white;
+    }
+    .icon-blue { background: #0066FF; }
+    .icon-amber { background: #D97706; }
+    .icon-green { background: #16A34A; }
+
+    .algo-card {
+      border: 1px solid #E2E8F0;
+      border-radius: 8px;
+      padding: 9px 12px;
+      margin-bottom: 8px;
+      background: #F8FAFC;
+      font-size: 11.5px;
+    }
+    .algo-header {
+      display: flex;
+      justify-content: space-between;
+      font-weight: 800;
+      color: #0F2C59;
+      margin-bottom: 3px;
+    }
+    .tag {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 6px;
+    }
+    .tag-stable { background: #DCFCE7; color: #15803D; }
+    .tag-unstable { background: #FEE2E2; color: #B91C1C; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 11px;
+      margin-top: 4px;
+    }
+    th {
+      background: #0F2C59;
+      color: white;
+      text-align: left;
+      padding: 7px 8px;
+      font-weight: 700;
+    }
+    th:first-child { border-top-left-radius: 6px; }
+    th:last-child { border-top-right-radius: 6px; }
+    td {
+      padding: 6.5px 8px;
+      border-bottom: 1px solid #E2E8F0;
+      color: #334155;
+    }
+    tr:nth-child(even) td { background: #F8FAFC; }
+    .o1 { color: #16A34A; font-weight: 700; font-family: monospace; }
+    .on { color: #D97706; font-weight: 700; font-family: monospace; }
+    .on2 { color: #DC2626; font-weight: 700; font-family: monospace; }
+    .onlogn { color: #2563EB; font-weight: 700; font-family: monospace; }
+
+    .trap-box {
+      margin-top: 10px;
+      background: #FEF3C7;
+      border: 1px solid #FCD34D;
+      border-radius: 8px;
+      padding: 10px 12px;
+      font-size: 11px;
+      color: #92400E;
+      line-height: 1.4;
+    }
+    .trap-box strong { color: #78350F; }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="title-group">
+      <h1>Sorting Algorithms: Mechanics, Stability & Complexity Matrix</h1>
+      <p>Unit 5: Bubble Sort, Selection Sort, Insertion Sort, Merge Sort, Quick Sort & Python Timsort Architecture</p>
+    </div>
+    <div class="badge">CUET UG CS · UNIT 5 MATRIX</div>
+  </div>
+
+  <div class="grid">
+    <!-- COLUMN 1: ELEMENTARY ALGORITHMS -->
+    <div class="card">
+      <div class="card-title">
+        <span class="icon icon-blue">1</span>
+        Elementary Sorting Mechanics
+      </div>
+
+      <div class="algo-card">
+        <div class="algo-header">
+          <span>Bubble Sort (Sinking Sort)</span>
+          <span class="tag tag-stable">STABLE</span>
+        </div>
+        Compares adjacent pairs $(j, j+1)$ and swaps if out of order. Bubbles largest element to end each pass. With early termination flag, achieves $O(N)$ best case on sorted inputs.
+      </div>
+
+      <div class="algo-card">
+        <div class="algo-header">
+          <span>Selection Sort</span>
+          <span class="tag tag-unstable">UNSTABLE</span>
+        </div>
+        Scans unsorted prefix to find absolute minimum; performs exactly <em>one swap</em> per pass. Performs strictly $N(N-1)/2 = O(N^2)$ comparisons in <em>all</em> cases (best, average, worst).
+      </div>
+
+      <div class="algo-card">
+        <div class="algo-header">
+          <span>Insertion Sort</span>
+          <span class="tag tag-stable">STABLE</span>
+        </div>
+        Maintains sorted subarray on left; shifts larger elements rightward to insert incoming key. Extremely fast ($O(N)$) for nearly-sorted data and online streaming input.
+      </div>
+    </div>
+
+    <!-- COLUMN 2: ADVANCED DIVIDE & CONQUER -->
+    <div class="card">
+      <div class="card-title">
+        <span class="icon icon-amber">2</span>
+        Advanced Divide & Conquer
+      </div>
+
+      <div class="algo-card">
+        <div class="algo-header">
+          <span>Merge Sort</span>
+          <span class="tag tag-stable">STABLE</span>
+        </div>
+        Divides array into halves, recursively sorts, then merges two sorted subarrays. Strictly $O(N \log N)$ in all cases. Requires $O(N)$ auxiliary buffer memory.
+      </div>
+
+      <div class="algo-card">
+        <div class="algo-header">
+          <span>Quick Sort</span>
+          <span class="tag tag-unstable">UNSTABLE</span>
+        </div>
+        Partitions array around a pivot such that elements $\le$ pivot are left and $\ge$ pivot are right. In-place. Best/Avg: $O(N \log N)$; Worst: $O(N^2)$ on already sorted arrays.
+      </div>
+
+      <div class="algo-card">
+        <div class="algo-header">
+          <span>Timsort (Python Standard)</span>
+          <span class="tag tag-stable">STABLE</span>
+        </div>
+        Hybrid adaptive algorithm combining Merge Sort and Insertion Sort. Identifies natural ordered "runs". Powers Python's built-in `list.sort()` and `sorted()`.
+      </div>
+    </div>
+
+    <!-- COLUMN 3: METRIC COMPARISON MATRIX -->
+    <div class="card">
+      <div class="card-title">
+        <span class="icon icon-green">3</span>
+        Complexity & Operational Reference
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Algorithm</th>
+            <th>Best Time</th>
+            <th>Avg Time</th>
+            <th>Worst Time</th>
+            <th>Space</th>
+            <th>Stable?</th>
+            <th>Swaps</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Bubble Sort</strong></td>
+            <td class="on">O(N)*</td>
+            <td class="on2">O(N^2)</td>
+            <td class="on2">O(N^2)</td>
+            <td class="o1">O(1)</td>
+            <td>Yes</td>
+            <td>$O(N^2)$</td>
+          </tr>
+          <tr>
+            <td><strong>Selection Sort</strong></td>
+            <td class="on2">O(N^2)</td>
+            <td class="on2">O(N^2)</td>
+            <td class="on2">O(N^2)</td>
+            <td class="o1">O(1)</td>
+            <td>No</td>
+            <td><strong>O(N)</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Insertion Sort</strong></td>
+            <td class="on">O(N)</td>
+            <td class="on2">O(N^2)</td>
+            <td class="on2">O(N^2)</td>
+            <td class="o1">O(1)</td>
+            <td>Yes</td>
+            <td>$O(N^2)$</td>
+          </tr>
+          <tr>
+            <td><strong>Merge Sort</strong></td>
+            <td class="onlogn">O(N log N)</td>
+            <td class="onlogn">O(N log N)</td>
+            <td class="onlogn">O(N log N)</td>
+            <td class="on">O(N)</td>
+            <td>Yes</td>
+            <td>N/A</td>
+          </tr>
+          <tr>
+            <td><strong>Quick Sort</strong></td>
+            <td class="onlogn">O(N log N)</td>
+            <td class="onlogn">O(N log N)</td>
+            <td class="on2">O(N^2)</td>
+            <td class="ologn">O(log N)</td>
+            <td>No</td>
+            <td>$O(N)$</td>
+          </tr>
+          <tr>
+            <td><strong>Timsort</strong></td>
+            <td class="on">O(N)</td>
+            <td class="onlogn">O(N log N)</td>
+            <td class="onlogn">O(N log N)</td>
+            <td class="on">O(N)</td>
+            <td>Yes</td>
+            <td>Adaptive</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="trap-box">
+        <strong>CUET Fatal Trap: Selection Sort Best-Case Comparisons!</strong><br>
+        Many students mistakenly assume Selection Sort runs in $O(N)$ when the array is already sorted. In reality, Selection Sort <em>always</em> executes exactly $N(N-1)/2$ comparisons regardless of input ordering, because it must scan the entire unsorted subarray to confirm the minimum. Its best-case time complexity is strictly $O(N^2)$!
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
