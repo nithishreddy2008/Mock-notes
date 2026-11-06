@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1440, height=880">
+  <title>Relational Algebra Operators: Unary, Binary & Join Lifecycles</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 1440px;
+      height: 880px;
+      background-color: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0F172A;
+      padding: 30px 40px;
+      overflow: hidden;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 18px;
+      border-bottom: 2px solid #E2E8F0;
+      padding-bottom: 12px;
+    }
+    .title-group h1 {
+      font-size: 25px;
+      font-weight: 800;
+      color: #0F2C59;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+    .title-group p {
+      font-size: 13.5px;
+      color: #64748B;
+      font-weight: 500;
+    }
+    .badge {
+      background: #0066FF;
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1.05fr 1.1fr 1.05fr;
+      gap: 18px;
+      height: calc(100% - 92px);
+    }
+    .card {
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      border-radius: 12px;
+      padding: 16px 18px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04);
+    }
+    .card-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #0F2C59;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 1.5px solid #F1F5F9;
+      padding-bottom: 8px;
+    }
+    .card-title .icon {
+      width: 22px;
+      height: 22px;
+      border-radius: 6px;
+      background: #EFF6FF;
+      color: #0066FF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    /* Operator Block */
+    .op-block {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 8px;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+    .op-block h4 {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #0F2C59;
+      margin-bottom: 4px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .op-symbol {
+      background: #0066FF;
+      color: white;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 1px 7px;
+      border-radius: 4px;
+    }
+    .op-block p {
+      font-size: 10.5px;
+      color: #475569;
+      line-height: 1.35;
+      margin-bottom: 5px;
+    }
+    .op-meta {
+      display: flex;
+      gap: 8px;
+      font-size: 10px;
+      font-weight: 700;
+    }
+    .op-meta span {
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      padding: 2px 6px;
+      border-radius: 4px;
+      color: #1E293B;
+    }
+    .op-meta span.deg { color: #0066FF; border-color: #93C5FD; }
+    .op-meta span.card { color: #166534; border-color: #86EFAC; }
+
+    /* Invariant Table */
+    .op-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 10.5px;
+      margin-bottom: 10px;
+    }
+    .op-table th, .op-table td {
+      border: 1px solid #E2E8F0;
+      padding: 5px 6px;
+      text-align: left;
+    }
+    .op-table th {
+      background: #F1F5F9;
+      color: #1E293B;
+      font-weight: 700;
+    }
+
+    .trap-box {
+      background: #FEF2F2;
+      border-left: 4px solid #EF4444;
+      border-radius: 6px;
+      padding: 8px 10px;
+      margin-top: auto;
+      font-size: 10.5px;
+      color: #991B1B;
+      line-height: 1.4;
+    }
+    .trap-box strong {
+      display: block;
+      color: #B91C1C;
+      font-size: 11px;
+      margin-bottom: 2px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="title-group">
+      <h1>Relational Algebra Operations: Unary, Set & Join Lifecycle</h1>
+      <p>Mathematical Signatures, Degree and Cardinality Transformations, and Union Compatibility Invariants</p>
+    </div>
+    <div class="badge">CUET Relational Algebra Blueprint</div>
+  </div>
+
+  <div class="grid">
+    <!-- COLUMN 1: Unary Operators -->
+    <div class="card">
+      <div class="card-title">
+        <div class="icon">1</div>
+        Unary Relational Operators
+      </div>
+
+      <!-- Selection -->
+      <div class="op-block">
+        <h4>
+          <span>Selection (Horizontal Filter)</span>
+          <span class="op-symbol">&sigma;</span>
+        </h4>
+        <p>Filters rows satisfying predicate condition $C$: $\sigma_C(R) = \{ t \mid t \in R \text{ and } C(t) = \text{True} \}$.</p>
+        <div class="op-meta">
+          <span class="deg">Degree: Identical ($= n$)</span>
+          <span class="card">Cardinality: $\le m$</span>
+        </div>
+      </div>
+
+      <!-- Projection -->
+      <div class="op-block">
+        <h4>
+          <span>Projection (Vertical Filter)</span>
+          <span class="op-symbol">&pi;</span>
+        </h4>
+        <p>Selects specified columns and strictly eliminates duplicate tuples: $\pi_{A_1, \dots, A_k}(R)$.</p>
+        <div class="op-meta">
+          <span class="deg">Degree: Number of cols ($k$)</span>
+          <span class="card">Cardinality: $\le m$</span>
+        </div>
+      </div>
+
+      <!-- Rename -->
+      <div class="op-block" style="margin-bottom: 0;">
+        <h4>
+          <span>Rename Operator</span>
+          <span class="op-symbol">&rho;</span>
+        </h4>
+        <p>Renames relation or its attributes: $\rho_{S(B_1, \dots, B_n)}(R)$ without altering data or structure.</p>
+        <div class="op-meta">
+          <span class="deg">Degree: Unchanged ($= n$)</span>
+          <span class="card">Cardinality: Unchanged ($= m$)</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- COLUMN 2: Binary Set Operators -->
+    <div class="card">
+      <div class="card-title">
+        <div class="icon">2</div>
+        Binary Set Theoretic Operators
+      </div>
+
+      <div style="background: #EFF6FF; border: 1px solid #BFDBFE; border-radius: 6px; padding: 6px 8px; font-size: 10.5px; color: #1E40AF; margin-bottom: 8px;">
+        <strong>Union Compatibility Rule:</strong><br>
+        Two relations $R$ and $S$ are union-compatible if and only if:
+        1. Both have identical degree: $\text{deg}(R) = \text{deg}(S)$.
+        2. Corresponding attribute domains are compatible: $\text{dom}(A_i) = \text{dom}(B_i)$.
+      </div>
+
+      <table class="op-table">
+        <thead>
+          <tr>
+            <th>Operator</th>
+            <th>Notation</th>
+            <th>Result Degree &amp; Cardinality</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Union</strong></td>
+            <td>$R \cup S$</td>
+            <td>Deg: $n$ &bull; Card: $\le m_1 + m_2$ (no duplicates)</td>
+          </tr>
+          <tr>
+            <td><strong>Intersection</strong></td>
+            <td>$R \cap S$</td>
+            <td>Deg: $n$ &bull; Card: $\le \min(m_1, m_2)$</td>
+          </tr>
+          <tr>
+            <td><strong>Difference</strong></td>
+            <td>$R - S$</td>
+            <td>Deg: $n$ &bull; Card: $\le m_1$ (tuples in $R$ only)</td>
+          </tr>
+          <tr>
+            <td><strong>Cartesian Product</strong></td>
+            <td>$R \times S$</td>
+            <td><strong>Deg: $n_1 + n_2$</strong> &bull; <strong>Card: $m_1 \times m_2$</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div style="font-size: 10.5px; color: #475569; line-height: 1.35;">
+        <em>Note:</em> Cartesian Product does <strong>NOT</strong> require union compatibility! It pairs every tuple of $R$ with every tuple of $S$.
+      </div>
+    </div>
+
+    <!-- COLUMN 3: Join Operators & Traps -->
+    <div class="card">
+      <div class="card-title">
+        <div class="icon">3</div>
+        Relational Join & CUET Invariants
+      </div>
+
+      <div class="op-block">
+        <h4>
+          <span>Theta Join (&theta;-Join)</span>
+          <span class="op-symbol">&bowtie;<sub>&theta;</sub></span>
+        </h4>
+        <p>A Cartesian product followed by a Selection condition $\theta$: $R \bowtie_\theta S = \sigma_\theta(R \times S)$.</p>
+        <div class="op-meta">
+          <span class="deg">Degree: $n_1 + n_2$</span>
+          <span class="card">Card: $\le m_1 \times m_2$</span>
+        </div>
+      </div>
+
+      <div class="op-block" style="margin-bottom: 8px;">
+        <h4>
+          <span>Natural Join</span>
+          <span class="op-symbol">&bowtie;</span>
+        </h4>
+        <p>Equi-join over all identically named common attributes, automatically projecting out duplicate column copies.</p>
+        <div class="op-meta">
+          <span class="deg">Degree: $n_1 + n_2 - k$</span>
+          <span class="card">Card: $0$ to $m_1 \times m_2$</span>
+        </div>
+      </div>
+
+      <div class="trap-box">
+        <strong>CUET Fatal Trap: Cartesian Degree vs Cardinality!</strong><br>
+        Students constantly confuse Degree with Cardinality in $R \times S$:
+        &bull; <strong>Degree</strong> is ADDITIVE: $\text{Deg} = n_1 + n_2$.<br>
+        &bull; <strong>Cardinality</strong> is MULTIPLICATIVE: $\text{Card} = m_1 \times m_2$.<br>
+        Example: If $R$ has $(3 \text{ cols}, 4 \text{ rows})$ and $S$ has $(2 \text{ cols}, 5 \text{ rows})$, $R \times S$ has <strong>5 cols</strong> and <strong>20 rows</strong>!
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

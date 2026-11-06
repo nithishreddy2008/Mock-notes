@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1440, height=880">
+  <title>Database Concepts, Relational Data Model & Keys Hierarchy</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 1440px;
+      height: 880px;
+      background-color: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0F172A;
+      padding: 30px 40px;
+      overflow: hidden;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 18px;
+      border-bottom: 2px solid #E2E8F0;
+      padding-bottom: 12px;
+    }
+    .title-group h1 {
+      font-size: 25px;
+      font-weight: 800;
+      color: #0F2C59;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+    .title-group p {
+      font-size: 13.5px;
+      color: #64748B;
+      font-weight: 500;
+    }
+    .badge {
+      background: #0066FF;
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1.15fr;
+      gap: 18px;
+      height: calc(100% - 92px);
+    }
+    .card {
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      border-radius: 12px;
+      padding: 16px 18px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04);
+    }
+    .card-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #0F2C59;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 1.5px solid #F1F5F9;
+      padding-bottom: 8px;
+    }
+    .card-title .icon {
+      width: 22px;
+      height: 22px;
+      border-radius: 6px;
+      background: #EFF6FF;
+      color: #0066FF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    /* Comparison Table */
+    .comp-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 11px;
+      margin-bottom: 12px;
+    }
+    .comp-table th, .comp-table td {
+      border: 1px solid #E2E8F0;
+      padding: 6px 8px;
+      text-align: left;
+    }
+    .comp-table th {
+      background: #F1F5F9;
+      color: #1E293B;
+      font-weight: 700;
+    }
+
+    /* Hierarchy visual */
+    .key-hierarchy {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 12px;
+    }
+    .key-box {
+      border-radius: 8px;
+      padding: 8px 10px;
+      font-size: 11px;
+      border: 1px solid #CBD5E1;
+      background: #F8FAFC;
+    }
+    .key-box.super { border-left: 4px solid #64748B; }
+    .key-box.candidate { border-left: 4px solid #3B82F6; background: #EFF6FF; }
+    .key-box.primary { border-left: 4px solid #10B981; background: #ECFDF5; }
+    .key-box.foreign { border-left: 4px solid #F59E0B; background: #FFFBEB; }
+    .key-box h4 {
+      font-size: 12px;
+      font-weight: 700;
+      color: #0F2C59;
+      margin-bottom: 2px;
+    }
+
+    /* Metric rows */
+    .metric-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 6px 8px;
+      border-radius: 6px;
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      margin-bottom: 6px;
+      font-size: 11px;
+    }
+    .metric-row span.val {
+      font-weight: 700;
+      color: #0066FF;
+    }
+
+    .trap-box {
+      background: #FEF2F2;
+      border-left: 4px solid #EF4444;
+      border-radius: 6px;
+      padding: 8px 10px;
+      margin-top: auto;
+      font-size: 10.5px;
+      color: #991B1B;
+      line-height: 1.4;
+    }
+    .trap-box strong {
+      display: block;
+      color: #B91C1C;
+      font-size: 11px;
+      margin-bottom: 2px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="title-group">
+      <h1>Relational Database Architecture, Data Model & Keys Hierarchy</h1>
+      <p>File System Limitations, Formal Relational Invariants, and Referential Integrity Constraints</p>
+    </div>
+    <div class="badge">CUET Core RDBMS Matrix</div>
+  </div>
+
+  <div class="grid">
+    <!-- COLUMN 1: File System vs DBMS -->
+    <div class="card">
+      <div class="card-title">
+        <div class="icon">1</div>
+        File System vs Relational DBMS
+      </div>
+
+      <table class="comp-table">
+        <thead>
+          <tr>
+            <th>Dimension</th>
+            <th>File System</th>
+            <th>RDBMS</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Redundancy</strong></td>
+            <td>High duplicate copies across isolated files.</td>
+            <td>Controlled & centralized; normalized.</td>
+          </tr>
+          <tr>
+            <td><strong>Inconsistency</strong></td>
+            <td>Updating one file leaves others outdated.</td>
+            <td>Single source of truth prevents mismatches.</td>
+          </tr>
+          <tr>
+            <td><strong>Concurrency</strong></td>
+            <td>File locks block simultaneous writes.</td>
+            <td>ACID multi-user concurrency control.</td>
+          </tr>
+          <tr>
+            <td><strong>Integrity</strong></td>
+            <td>Hardcoded validation checks in each app.</td>
+            <td>Declarative constraints (PK, FK, CHECK).</td>
+          </tr>
+          <tr>
+            <td><strong>Atomicity</strong></td>
+            <td>Partial crashes corrupt data.</td>
+            <td>Transaction rollback / WAL guarantee.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div style="background: #F1F5F9; border-radius: 8px; padding: 8px 10px; font-size: 11px; color: #334155; line-height: 1.35;">
+        <strong>Three-Schema Architecture:</strong><br>
+        &bull; <em>Physical / Internal:</em> Disk storage, B-trees, indexing.<br>
+        &bull; <em>Conceptual / Logical:</em> Tables, attributes, entities, constraints.<br>
+        &bull; <em>External / View:</em> Customized user views and dashboards.
+      </div>
+    </div>
+
+    <!-- COLUMN 2: Relational Terminology -->
+    <div class="card">
+      <div class="card-title">
+        <div class="icon">2</div>
+        Relational Data Model Terminology
+      </div>
+
+      <div class="metric-row">
+        <span>Formal Model Term:</span>
+        <span class="val">Common Table Analogy</span>
+      </div>
+      <div class="metric-row">
+        <span><strong>Relation</strong>:</span>
+        <span class="val">Table</span>
+      </div>
+      <div class="metric-row">
+        <span><strong>Tuple</strong>:</span>
+        <span class="val">Row / Record</span>
+      </div>
+      <div class="metric-row">
+        <span><strong>Attribute</strong>:</span>
+        <span class="val">Column / Field</span>
+      </div>
+      <div class="metric-row">
+        <span><strong>Degree</strong>:</span>
+        <span class="val">Number of Columns</span>
+      </div>
+      <div class="metric-row">
+        <span><strong>Cardinality</strong>:</span>
+        <span class="val">Number of Rows</span>
+      </div>
+      <div class="metric-row">
+        <span><strong>Domain</strong>:</span>
+        <span class="val">Set of Atomic Permitted Values</span>
+      </div>
+
+      <div style="background: #EFF6FF; border: 1px solid #BFDBFE; border-radius: 8px; padding: 8px 10px; font-size: 11px; color: #1E40AF; line-height: 1.4; margin-top: 6px;">
+        <strong>Cartesian Product Foundation:</strong><br>
+        Mathematically, a relation $R$ of degree $n$ is defined as a formal subset of the Cartesian product of $n$ attribute domains:
+        $$R \subseteq D_1 \times D_2 \times \dots \times D_n$$
+      </div>
+    </div>
+
+    <!-- COLUMN 3: Keys Hierarchy & Integrity -->
+    <div class="card">
+      <div class="card-title">
+        <div class="icon">3</div>
+        Keys Hierarchy & Integrity Constraints
+      </div>
+
+      <div class="key-hierarchy">
+        <div class="key-box super">
+          <h4>Super Key</h4>
+          Any set of one or more attributes that uniquely identifies a tuple within a relation.
+        </div>
+        <div class="key-box candidate">
+          <h4>Candidate Key</h4>
+          A <em>minimal</em> super key (no proper subset can uniquely identify a tuple).
+        </div>
+        <div class="key-box primary">
+          <h4>Primary Key</h4>
+          The chosen candidate key uniquely identifying tuples. <em>Cannot contain NULL!</em>
+        </div>
+        <div class="key-box" style="border-left: 4px solid #8B5CF6; background: #F5F3FF;">
+          <h4>Alternate Key</h4>
+          Any candidate key not selected as the primary key ($AK = CK - \{PK\}$).
+        </div>
+        <div class="key-box foreign">
+          <h4>Foreign Key (Referential Integrity)</h4>
+          Attribute in child table that references the Primary Key of a parent table.
+        </div>
+      </div>
+
+      <div class="trap-box">
+        <strong>CUET Fatal Trap: Foreign Key NULL Value Rule!</strong><br>
+        Students assume foreign keys can never be NULL. FALSE! A foreign key <em>can</em> contain NULL values unless explicitly defined with `NOT NULL`. If non-null, every FK value must match an existing PK in the parent table!
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

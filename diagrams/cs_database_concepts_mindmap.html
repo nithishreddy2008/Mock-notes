@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1440, height=880">
+  <title>Master Synthesis Mindmap: Database Concepts & Relational Algebra</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 1440px;
+      height: 880px;
+      background: radial-gradient(circle at center, #0F172A 0%, #080D1A 100%);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #F8FAFC;
+      padding: 28px 40px;
+      overflow: hidden;
+      position: relative;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 10;
+    }
+    .header h1 {
+      font-size: 26px;
+      font-weight: 800;
+      color: #FFFFFF;
+      letter-spacing: -0.01em;
+      margin-bottom: 4px;
+    }
+    .header p {
+      font-size: 13.5px;
+      color: #94A3B8;
+      font-weight: 500;
+    }
+    .badge {
+      display: inline-block;
+      background: #0066FF;
+      color: white;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 4px 12px;
+      border-radius: 14px;
+      margin-bottom: 6px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .mindmap-container {
+      width: 1360px;
+      height: 730px;
+      position: relative;
+      margin: 0 auto;
+    }
+
+    /* Central Hub */
+    .center-hub {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 250px;
+      height: 125px;
+      background: linear-gradient(135deg, #1E3A8A 0%, #0F2C59 100%);
+      border: 3px solid #3B82F6;
+      border-radius: 20px;
+      box-shadow: 0 0 35px rgba(59, 130, 246, 0.45);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 12px;
+      z-index: 20;
+    }
+    .center-hub h2 {
+      font-size: 18px;
+      font-weight: 800;
+      color: #FFFFFF;
+      line-height: 1.25;
+    }
+    .center-hub span {
+      font-size: 11px;
+      color: #93C5FD;
+      font-weight: 600;
+      margin-top: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    /* Node Cards */
+    .node {
+      position: absolute;
+      border-radius: 14px;
+      padding: 15px 18px;
+      box-shadow: 0 10px 25px -5px rgba(0,0,0,0.5);
+      z-index: 10;
+    }
+    .node h3 {
+      font-size: 14.5px;
+      font-weight: 800;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .node ul {
+      list-style: none;
+      font-size: 11.5px;
+      line-height: 1.5;
+    }
+    .node li {
+      margin-bottom: 4px;
+      display: flex;
+      align-items: flex-start;
+      gap: 5px;
+    }
+    .node li::before {
+      content: "▸";
+      color: inherit;
+      opacity: 0.8;
+      font-size: 12px;
+    }
+    .node strong {
+      color: #FFFFFF;
+    }
+
+    /* Node 1: Top Left - DBMS vs Files */
+    .node-1 {
+      top: 10px;
+      left: 20px;
+      width: 395px;
+      background: rgba(30, 41, 59, 0.85);
+      border: 1px solid #38BDF8;
+      border-left: 5px solid #38BDF8;
+    }
+    .node-1 h3 { color: #38BDF8; }
+    .node-1 { color: #CBD5E1; }
+
+    /* Node 2: Top Right - Relational Model & Keys */
+    .node-2 {
+      top: 10px;
+      right: 20px;
+      width: 395px;
+      background: rgba(30, 41, 59, 0.85);
+      border: 1px solid #34D399;
+      border-left: 5px solid #34D399;
+    }
+    .node-2 h3 { color: #34D399; }
+    .node-2 { color: #CBD5E1; }
+
+    /* Node 3: Bottom Left - Relational Algebra */
+    .node-3 {
+      bottom: 15px;
+      left: 20px;
+      width: 395px;
+      background: rgba(30, 41, 59, 0.85);
+      border: 1px solid #FBBF24;
+      border-left: 5px solid #FBBF24;
+    }
+    .node-3 h3 { color: #FBBF24; }
+    .node-3 { color: #CBD5E1; }
+
+    /* Node 4: Bottom Right - Joins & Integrity */
+    .node-4 {
+      bottom: 15px;
+      right: 20px;
+      width: 395px;
+      background: rgba(30, 41, 59, 0.85);
+      border: 1px solid #F472B6;
+      border-left: 5px solid #F472B6;
+    }
+    .node-4 h3 { color: #F472B6; }
+    .node-4 { color: #CBD5E1; }
+
+    /* SVG Connecting Lines */
+    .connector-svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="badge">CUET UG Computer Science (308) &bull; Unit 7</div>
+    <h1>Master Synthesis Mindmap: Database Concepts & Relational Algebra</h1>
+    <p>RDBMS Architecture, Relational Model, Keys Hierarchy, Algebraic Operators & Referential Integrity</p>
+  </div>
+
+  <div class="mindmap-container">
+    <svg class="connector-svg">
+      <!-- To Node 1 (Top Left) -->
+      <path d="M 555 330 C 435 270, 350 200, 280 180" fill="none" stroke="#38BDF8" stroke-width="2.5" stroke-dasharray="6,4" opacity="0.75" />
+      <!-- To Node 2 (Top Right) -->
+      <path d="M 805 330 C 925 270, 1010 200, 1080 180" fill="none" stroke="#34D399" stroke-width="2.5" stroke-dasharray="6,4" opacity="0.75" />
+      <!-- To Node 3 (Bottom Left) -->
+      <path d="M 555 395 C 435 450, 350 520, 280 540" fill="none" stroke="#FBBF24" stroke-width="2.5" stroke-dasharray="6,4" opacity="0.75" />
+      <!-- To Node 4 (Bottom Right) -->
+      <path d="M 805 395 C 925 450, 1010 520, 1080 540" fill="none" stroke="#F472B6" stroke-width="2.5" stroke-dasharray="6,4" opacity="0.75" />
+    </svg>
+
+    <!-- Center Hub -->
+    <div class="center-hub">
+      <h2>DATABASE<br>CONCEPTS</h2>
+      <span>Unit 7 Core Architecture</span>
+    </div>
+
+    <!-- Node 1: Top-Left: DBMS vs Files -->
+    <div class="node node-1">
+      <h3>1. DBMS Foundations & Architecture</h3>
+      <ul>
+        <li><strong>File System Drawbacks:</strong> Data redundancy, inconsistency, lack of atomicity, uncoordinated concurrent access, poor security.</li>
+        <li><strong>Three-Level Architecture:</strong> Physical (disk representation), Conceptual (logical tables/constraints), External (user views).</li>
+        <li><strong>Data Independence:</strong> <em>Physical</em> (modify disk without altering logic) vs <em>Logical</em> (modify schema without breaking apps).</li>
+        <li><strong>ACID Properties:</strong> Atomicity (all-or-nothing), Consistency (integrity valid), Isolation (concurrent safety), Durability (persisted).</li>
+      </ul>
+    </div>
+
+    <!-- Node 2: Top-Right: Relational Model & Keys -->
+    <div class="node node-2">
+      <h3>2. Relational Model & Keys Hierarchy</h3>
+      <ul>
+        <li><strong>Model Invariants:</strong> Relation (Table), Tuple (Row), Attribute (Column), Domain (atomic permitted values).</li>
+        <li><strong>Degree vs Cardinality:</strong> Degree = Number of Columns ($n$); Cardinality = Number of Rows ($m$).</li>
+        <li><strong>Super Key &rarr; Candidate Key:</strong> Candidate Key is a <em>minimal</em> super key uniquely identifying tuples.</li>
+        <li><strong>Primary & Alternate Keys:</strong> Chosen candidate key is Primary Key (cannot be NULL). Remaining candidate keys are Alternate Keys.</li>
+        <li><strong>Foreign Key:</strong> Attribute referencing PK in parent table. Enforces <strong>Referential Integrity</strong>. <em>Can be NULL!</em></li>
+      </ul>
+    </div>
+
+    <!-- Node 3: Bottom-Left: Relational Algebra -->
+    <div class="node node-3">
+      <h3>3. Relational Algebra Operations</h3>
+      <ul>
+        <li><strong>Selection ($\sigma_C$):</strong> Horizontal filter of tuples satisfying condition $C$. Degree unchanged; Cardinality $\le m$.</li>
+        <li><strong>Projection ($\pi_L$):</strong> Vertical column filter of list $L$. Strictly eliminates duplicate tuples. Degree $= |L|$.</li>
+        <li><strong>Union Compatibility:</strong> Requires identical degree and compatible attribute domains. Required for $\cup, \cap, -$.</li>
+        <li><strong>Cartesian Product ($R \times S$):</strong> Unrestricted pairs. Degree $= n_1 + n_2$ (Additive); Cardinality $= m_1 \times m_2$ (Multiplicative).</li>
+      </ul>
+    </div>
+
+    <!-- Node 4: Bottom-Right: Joins & Integrity -->
+    <div class="node node-4">
+      <h3>4. Relational Joins & Integrity Rules</h3>
+      <ul>
+        <li><strong>Theta Join ($R \bowtie_\theta S$):</strong> Selection applied on Cartesian product: $\sigma_\theta(R \times S)$.</li>
+        <li><strong>Natural Join ($R \bowtie S$):</strong> Equi-join on common attributes, automatically projecting out duplicate column copies.</li>
+        <li><strong>Natural Join Degree:</strong> $\text{Deg}(R \bowtie S) = n_1 + n_2 - k$ (where $k$ is number of shared attributes).</li>
+        <li><strong>Integrity Constraints:</strong> <em>Entity Integrity</em> (PK $\ne$ NULL); <em>Referential Integrity</em> (FK matches PK or NULL); <em>Domain Integrity</em>.</li>
+      </ul>
+    </div>
+  </div>
+
+</body>
+</html>
