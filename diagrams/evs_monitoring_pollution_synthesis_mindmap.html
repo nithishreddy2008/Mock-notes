@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 600px;
+    background: #FFFFFF;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .title-block p {
+    font-size: 11.5px;
+    color: #64748B;
+    margin-top: 3px;
+    font-weight: 600;
+  }
+  .badge {
+    background: #EEF1F8;
+    color: #1F5EFF;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+  }
+  .mindmap-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr 1fr;
+    gap: 14px;
+    align-items: center;
+    margin: auto 0;
+  }
+  .col {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .center-node {
+    background: linear-gradient(135deg, #071A4D 0%, #1E3A8A 100%);
+    color: #FFFFFF;
+    border-radius: 12px;
+    padding: 20px 16px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(7, 26, 77, 0.15);
+  }
+  .center-node h2 {
+    font-size: 16px;
+    font-weight: 800;
+    margin-bottom: 6px;
+  }
+  .center-node p {
+    font-size: 10.5px;
+    color: #93C5FD;
+    line-height: 1.4;
+  }
+  .node-box {
+    border: 1px solid #CBD5E1;
+    border-radius: 8px;
+    padding: 10px 12px;
+    background: #F8FAFC;
+  }
+  .node-box h3 {
+    font-size: 11.5px;
+    font-weight: 800;
+    color: #071A4D;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .node-box p {
+    font-size: 9.8px;
+    color: #475569;
+    line-height: 1.35;
+  }
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .dot-blue { background: #2563EB; }
+  .dot-emerald { background: #059669; }
+  .dot-amber { background: #D97706; }
+  .dot-purple { background: #7C3AED; }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    color: #94A3B8;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 8px;
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <div class="title-block">
+      <h1>Unit 3: Monitoring Pollution — Comprehensive Synthesis Mindmap</h1>
+      <p>Integrated Diagnostics: Air NAAQS/AQI, Water BOD/COD/Eutrophication, Solid/E-Waste, and Biomedical Laws</p>
+    </div>
+    <div class="badge">CUET UG · SYNTHESIS MINDMAP</div>
+  </div>
+
+  <div class="mindmap-wrapper">
+    <div class="col">
+      <div class="node-box">
+        <h3><span class="dot dot-blue"></span>1. Atmospheric Monitoring</h3>
+        <p>• <b>Particulates:</b> PM2.5, PM10, smog, ESP (&gt;99% removal), baghouse filters.<br>• <b>Gases:</b> SO2, NOx, CO, O3, photochemical smog (PAN).<br>• <b>AQI Matrix:</b> 8 pollutants, 6 health categories (Good to Severe).</p>
+      </div>
+      <div class="node-box">
+        <h3><span class="dot dot-emerald"></span>2. Aquatic Diagnostics</h3>
+        <p>• <b>Organic Metrics:</b> Dissolved Oxygen (DO), BOD5 (20°C), COD (dichromate).<br>• <b>Pathologies:</b> Cultural eutrophication, hypolimnetic anoxia, algal blooms.<br>• <b>Toxicology:</b> Biomagnification (DDT), Minamata (Hg), Itai-Itai (Cd).</p>
+      </div>
+    </div>
+
+    <div class="center-node">
+      <h2>MONITORING POLLUTION</h2>
+      <p>CUET UG Environmental Science · Code 307<br>Air, Water, Soil, Noise & Waste<br>Diagnostic Protocols & Legal Rules</p>
+    </div>
+
+    <div class="col">
+      <div class="node-box">
+        <h3><span class="dot dot-purple"></span>3. Waste Management Systems</h3>
+        <p>• <b>Sewage (STP):</b> Primary physical, secondary biological (ASP), tertiary UV.<br>• <b>Biomedical (2016):</b> Yellow (incinerate), Red (autoclave), White, Blue.<br>• <b>E-Waste (2022):</b> Extended Producer Responsibility (EPR) targets.</p>
+      </div>
+      <div class="node-box">
+        <h3><span class="dot dot-amber"></span>4. Noise & Biomonitoring</h3>
+        <p>• <b>Noise:</b> Leq, decibel scale, CPCB zones (Industrial to Silence).<br>• <b>Bioindicators:</b> Lichens (SO2), Tubifex (sludge), E. coli (fecal coliform).<br>• <b>Radioactive:</b> Vitrification, deep geological repositories.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>OURMOCKS SYNTHESIZER MINDMAP · ENVIRONMENTAL SCIENCE CODE 307</span>
+    <span>SYNTHESIS: AIR + WATER + SEWAGE + BIOMEDICAL + BIOINDICATORS</span>
+    <span>PAGE 12 CORE ARTIFACT · FIG 3</span>
+  </div>
+</body>
+</html>

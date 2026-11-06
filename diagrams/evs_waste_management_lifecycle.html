@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1000px;
+    height: 600px;
+    background: #FFFFFF;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #0F172A;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-block h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #071A4D;
+  }
+  .title-block p {
+    font-size: 11.5px;
+    color: #64748B;
+    margin-top: 3px;
+    font-weight: 600;
+  }
+  .badge {
+    background: #FEF3C7;
+    color: #92400E;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+  }
+  .flow-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-top: 14px;
+  }
+  .card {
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 12px;
+    background: #F8FAFC;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .card-header {
+    font-size: 12.5px;
+    font-weight: 800;
+    color: #071A4D;
+    border-bottom: 1px solid #CBD5E1;
+    padding-bottom: 6px;
+    margin-bottom: 8px;
+  }
+  .stage-tag {
+    font-size: 9.5px;
+    font-weight: 800;
+    color: #1F5EFF;
+    text-transform: uppercase;
+  }
+  .item-list {
+    list-style: none;
+    font-size: 9.8px;
+    color: #334155;
+    line-height: 1.45;
+  }
+  .item-list li { margin-bottom: 4px; }
+  .highlight { font-weight: 700; color: #0F172A; }
+  .badge-row {
+    display: flex;
+    gap: 4px;
+    margin-top: 6px;
+    flex-wrap: wrap;
+  }
+  .badge-mini {
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 8.5px;
+    font-weight: 700;
+  }
+  .bm-yellow { background: #FEF08A; color: #854D0E; }
+  .bm-red { background: #FECACA; color: #991B1B; }
+  .bm-blue { background: #BFDBFE; color: #1E40AF; }
+  .bm-white { background: #E2E8F0; color: #334155; }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    color: #94A3B8;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 8px;
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <div class="title-block">
+      <h1>Integrated Waste Management & Sewage Treatment Architecture</h1>
+      <p>Multi-Barrier STP Operations, Waste Hierarchy, Biomedical Protocols & Hazardous Waste Management</p>
+    </div>
+    <div class="badge">PROCESS ARCHITECTURE · FIG 2</div>
+  </div>
+
+  <div class="flow-container">
+    <div class="card">
+      <div>
+        <div class="stage-tag">Stage 01 · Physical Treatment</div>
+        <div class="card-header">Preliminary & Primary STP</div>
+        <ul class="item-list">
+          <li><span class="highlight">Bar Screens:</span> Intercepts coarse rags, plastics, floating debris.</li>
+          <li><span class="highlight">Grit Chambers:</span> Removes dense inorganic sand, gravel, eggshells.</li>
+          <li><span class="highlight">Primary Clarifiers:</span> Gravitational sedimentation settles 50-70% SS and 30-40% BOD as primary sludge.</li>
+        </ul>
+      </div>
+      <div class="badge-row">
+        <span class="badge-mini bm-white">Screening</span>
+        <span class="badge-mini bm-white">Sedimentation</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div>
+        <div class="stage-tag">Stage 02 · Biological Treatment</div>
+        <div class="card-header">Secondary Biological STP</div>
+        <ul class="item-list">
+          <li><span class="highlight">Aeration Tank:</span> Cultivates aerobic microbial flocs (bacteria + fungi) digesting dissolved organic matter.</li>
+          <li><span class="highlight">Activated Sludge:</span> Sludge return preserves continuous biomass kinetics.</li>
+          <li><span class="highlight">Secondary Clarifier:</span> Sinks biological flocs; drops total BOD by &gt;90%.</li>
+        </ul>
+      </div>
+      <div class="badge-row">
+        <span class="badge-mini bm-blue">Aerobic Flocs</span>
+        <span class="badge-mini bm-blue">BOD &gt; 90% Removal</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div>
+        <div class="stage-tag">Stage 03 · Advanced Finishing</div>
+        <div class="card-header">Tertiary Polishing & Disinfection</div>
+        <ul class="item-list">
+          <li><span class="highlight">Nutrient Removal:</span> Nitrification-denitrification for N; chemical precipitation for P.</li>
+          <li><span class="highlight">Filtration:</span> Dual-media sand and activated carbon adsorption of toxic micropollutants.</li>
+          <li><span class="highlight">Disinfection:</span> Chlorination, Ozonation, or UV irradiation to eradicate fecal pathogens.</li>
+        </ul>
+      </div>
+      <div class="badge-row">
+        <span class="badge-mini bm-blue">UV Irradation</span>
+        <span class="badge-mini bm-blue">Zero Fecal Coliform</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div>
+        <div class="stage-tag">Special Waste · Legal Protocol</div>
+        <div class="card-header">Biomedical & Hazardous Waste</div>
+        <ul class="item-list">
+          <li><span class="highlight">Yellow:</span> Anatomical, soiled, expired drugs (Incineration).</li>
+          <li><span class="highlight">Red:</span> Contaminated recyclable plastics (Autoclaving).</li>
+          <li><span class="highlight">White (Translucent):</span> Needles, scalpels (Autoclave + Shred).</li>
+          <li><span class="highlight">Blue:</span> Glassware, metallic implants (Disinfection).</li>
+        </ul>
+      </div>
+      <div class="badge-row">
+        <span class="badge-mini bm-yellow">Yellow: Burn</span>
+        <span class="badge-mini bm-red">Red: Recycle</span>
+        <span class="badge-mini bm-white">White: Puncture</span>
+        <span class="badge-mini bm-blue">Blue: Glass</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>OURMOCKS ENVIRONMENTAL ENGINEERING SUITE</span>
+    <span>WASTEWATER ENGINEERING + BIOMEDICAL SEGREGATION PROTOCOL (RULES 2016)</span>
+    <span>PAGE 8 THEMATIC BOARD</span>
+  </div>
+</body>
+</html>
