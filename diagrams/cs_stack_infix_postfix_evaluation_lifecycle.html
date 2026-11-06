@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1440, height=880">
+  <title>Stack Expression Conversion & Evaluation Lifecycle</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 1440px;
+      height: 880px;
+      background-color: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0F172A;
+      padding: 32px 40px;
+      overflow: hidden;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #E2E8F0;
+      padding-bottom: 14px;
+    }
+    .title-group h1 {
+      font-size: 26px;
+      font-weight: 800;
+      color: #0F2C59;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+    .title-group p {
+      font-size: 14px;
+      color: #64748B;
+      font-weight: 500;
+    }
+    .badge {
+      background: #0066FF;
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1.15fr 1.15fr 0.8fr;
+      gap: 20px;
+      height: calc(100% - 100px);
+    }
+    .card {
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      border-radius: 12px;
+      padding: 18px 20px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+    }
+    .card-title {
+      font-size: 15.5px;
+      font-weight: 800;
+      color: #1E293B;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .icon {
+      width: 22px;
+      height: 22px;
+      border-radius: 6px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 800;
+      color: white;
+    }
+    .icon-blue { background: #0066FF; }
+    .icon-indigo { background: #4F46E5; }
+    .icon-purple { background: #9333EA; }
+
+    .trace-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 11px;
+      margin-bottom: 10px;
+    }
+    .trace-table th {
+      background: #0F2C59;
+      color: white;
+      padding: 6px 8px;
+      text-align: left;
+      font-weight: 700;
+    }
+    .trace-table td {
+      padding: 5.5px 8px;
+      border-bottom: 1px solid #E2E8F0;
+      color: #334155;
+      font-family: ui-monospace, SFMono-Regular, monospace;
+    }
+    .trace-table tr:nth-child(even) td { background: #F8FAFC; }
+    .highlight-row { background: #EFF6FF !important; font-weight: 700; color: #1D4ED8 !important; }
+
+    .banner {
+      background: #F1F5F9;
+      border-radius: 8px;
+      padding: 8px 12px;
+      font-size: 12px;
+      color: #334155;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .banner strong { color: #0F2C59; }
+
+    .rules-card {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 8px;
+      padding: 10px;
+      font-size: 11.5px;
+      line-height: 1.4;
+      color: #475569;
+    }
+    .rules-card h4 {
+      font-size: 12px;
+      color: #0F2C59;
+      margin-bottom: 4px;
+      font-weight: 700;
+    }
+
+    .operand-pop-box {
+      background: #FEF2F2;
+      border: 1px solid #FECACA;
+      border-radius: 8px;
+      padding: 10px;
+      font-size: 11.5px;
+      color: #991B1B;
+      margin-top: 10px;
+      line-height: 1.4;
+    }
+    .operand-pop-box strong { color: #7F1D1D; }
+
+    .prec-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 11px;
+      margin-top: 8px;
+    }
+    .prec-table th {
+      background: #1E293B;
+      color: white;
+      padding: 6px 8px;
+      text-align: left;
+    }
+    .prec-table td {
+      padding: 6px 8px;
+      border-bottom: 1px solid #CBD5E1;
+      color: #334155;
+    }
+    .prec-badge {
+      font-weight: 700;
+      font-size: 10.5px;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+    .p-high { background: #FEE2E2; color: #B91C1C; }
+    .p-mid { background: #FEF3C7; color: #B45309; }
+    .p-low { background: #DCFCE7; color: #15803D; }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="title-group">
+      <h1>Stack Expression Conversion & Evaluation Lifecycle</h1>
+      <p>Unit 2: Shunting-Yard Infix &rarr; Postfix Transformation & Postfix Operand Stack Evaluation Traces</p>
+    </div>
+    <div class="badge">CUET UG CS · UNIT 2 PROCESS BOARD</div>
+  </div>
+
+  <div class="grid">
+    <!-- PANEL 1: INFIX TO POSTFIX CONVERSION -->
+    <div class="card">
+      <div class="card-title">
+        <span class="icon icon-blue">A</span>
+        Infix &rarr; Postfix Conversion: `A + B * (C - D) / E`
+      </div>
+
+      <div class="banner">
+        <span>Scanned Left &rarr; Right</span>
+        <strong>Target Postfix: A B C D - * E / +</strong>
+      </div>
+
+      <table class="trace-table">
+        <thead>
+          <tr>
+            <th>Token</th>
+            <th>Operator Stack</th>
+            <th>Postfix Expression</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>A</td><td>[ ]</td><td>A</td></tr>
+          <tr><td>+</td><td>[ + ]</td><td>A</td></tr>
+          <tr><td>B</td><td>[ + ]</td><td>A B</td></tr>
+          <tr><td>*</td><td>[ +, * ]</td><td>A B</td></tr>
+          <tr><td>(</td><td>[ +, *, ( ]</td><td>A B</td></tr>
+          <tr><td>C</td><td>[ +, *, ( ]</td><td>A B C</td></tr>
+          <tr><td>-</td><td>[ +, *, (, - ]</td><td>A B C</td></tr>
+          <tr><td>D</td><td>[ +, *, (, - ]</td><td>A B C D</td></tr>
+          <tr class="highlight-row"><td>)</td><td>[ +, * ]</td><td>A B C D -</td></tr>
+          <tr class="highlight-row"><td>/</td><td>[ +, / ]</td><td>A B C D - *</td></tr>
+          <tr><td>E</td><td>[ +, / ]</td><td>A B C D - * E</td></tr>
+          <tr class="highlight-row"><td>End</td><td>[ ]</td><td>A B C D - * E / +</td></tr>
+        </tbody>
+      </table>
+
+      <div class="rules-card">
+        <h4>Conversion Invariants:</h4>
+        &bull; <strong>Operands:</strong> Sent immediately to Postfix output.<br>
+        &bull; <strong>Left Parenthesis `(`:</strong> Pushed directly to stack.<br>
+        &bull; <strong>Right Parenthesis `)`:</strong> Pop and output operators until matching `(` is popped and discarded.<br>
+        &bull; <strong>Operator $op$:</strong> Pop stack while $Top$ has $\ge$ precedence (or $>$ if right-associative).
+      </div>
+    </div>
+
+    <!-- PANEL 2: POSTFIX EVALUATION TRACE -->
+    <div class="card">
+      <div class="card-title">
+        <span class="icon icon-indigo">B</span>
+        Postfix Evaluation: `8 2 3 * - 4 /`
+      </div>
+
+      <div class="banner">
+        <span>Scanned Left &rarr; Right</span>
+        <strong>Final Result: 0.5</strong>
+      </div>
+
+      <table class="trace-table">
+        <thead>
+          <tr>
+            <th>Token</th>
+            <th>Action Performed</th>
+            <th>Operand Stack</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>8</td><td>Push operand</td><td>[ 8 ]</td></tr>
+          <tr><td>2</td><td>Push operand</td><td>[ 8, 2 ]</td></tr>
+          <tr><td>3</td><td>Push operand</td><td>[ 8, 2, 3 ]</td></tr>
+          <tr class="highlight-row">
+            <td>*</td>
+            <td>Pop 3 (op2), 2 (op1) &rarr; 2 * 3 = 6</td>
+            <td>[ 8, 6 ]</td>
+          </tr>
+          <tr class="highlight-row">
+            <td>-</td>
+            <td>Pop 6 (op2), 8 (op1) &rarr; 8 - 6 = 2</td>
+            <td>[ 2 ]</td>
+          </tr>
+          <tr><td>4</td><td>Push operand</td><td>[ 2, 4 ]</td></tr>
+          <tr class="highlight-row">
+            <td>/</td>
+            <td>Pop 4 (op2), 2 (op1) &rarr; 2 / 4 = 0.5</td>
+            <td>[ 0.5 ]</td>
+          </tr>
+          <tr class="highlight-row"><td>End</td><td>Pop final result</td><td><strong>0.5</strong></td></tr>
+        </tbody>
+      </table>
+
+      <div class="operand-pop-box">
+        <strong>CRITICAL OPERAND POP ORDER TRAP:</strong><br>
+        When an operator is encountered:<br>
+        <code>first_pop = op2 (Right Operand)</code><br>
+        <code>second_pop = op1 (Left Operand)</code><br>
+        Calculation is <code>op1 - op2</code> or <code>op1 / op2</code>. Inverting this order to <code>op2 - op1</code> produces catastrophic sign and division errors!
+      </div>
+    </div>
+
+    <!-- PANEL 3: PRECEDENCE & ASSOCIATIVITY -->
+    <div class="card">
+      <div class="card-title">
+        <span class="icon icon-purple">C</span>
+        Precedence Hierarchy
+      </div>
+
+      <table class="prec-table">
+        <thead>
+          <tr>
+            <th>Operators</th>
+            <th>Precedence</th>
+            <th>Associativity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>( ) [ ]</code></td>
+            <td><span class="prec-badge p-high">Highest (4)</span></td>
+            <td>N/A (Grouping)</td>
+          </tr>
+          <tr>
+            <td><code>**</code> (Exponent)</td>
+            <td><span class="prec-badge p-high">Level 3</span></td>
+            <td><strong>Right-to-Left</strong></td>
+          </tr>
+          <tr>
+            <td><code>* / // %</code></td>
+            <td><span class="prec-badge p-mid">Level 2</span></td>
+            <td>Left-to-Right</td>
+          </tr>
+          <tr>
+            <td><code>+ -</code></td>
+            <td><span class="prec-badge p-low">Level 1</span></td>
+            <td>Left-to-Right</td>
+          </tr>
+          <tr>
+            <td><code>== != &lt; &gt;</code></td>
+            <td><span class="prec-badge p-low">Level 0</span></td>
+            <td>Left-to-Right</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="rules-card" style="margin-top: 12px;">
+        <h4>Exponentiation Trap (`**`):</h4>
+        <code>2 ** 3 ** 2</code> evaluates from right-to-left as <code>2 ** (3 ** 2) = 2 ** 9 = 512</code>, NOT <code>(2 ** 3) ** 2 = 64</code>!<br><br>
+        When pushing <code>**</code> to stack, an incoming <code>**</code> does <em>not</em> pop an existing <code>**</code> because of Right-to-Left associativity.
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

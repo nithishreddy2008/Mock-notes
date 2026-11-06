@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1440, height=880">
+  <title>Stack Operations, Implementations & Complexity Matrix</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 1440px;
+      height: 880px;
+      background-color: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0F172A;
+      padding: 32px 40px;
+      overflow: hidden;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #E2E8F0;
+      padding-bottom: 14px;
+    }
+    .title-group h1 {
+      font-size: 26px;
+      font-weight: 800;
+      color: #0F2C59;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+    .title-group p {
+      font-size: 14px;
+      color: #64748B;
+      font-weight: 500;
+    }
+    .badge {
+      background: #0066FF;
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1.05fr 1.25fr;
+      gap: 20px;
+      height: calc(100% - 100px);
+    }
+    .card {
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      border-radius: 12px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+    }
+    .card-title {
+      font-size: 16px;
+      font-weight: 800;
+      color: #1E293B;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .icon {
+      width: 22px;
+      height: 22px;
+      border-radius: 6px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 800;
+      color: white;
+    }
+    .icon-blue { background: #0066FF; }
+    .icon-amber { background: #D97706; }
+    .icon-green { background: #16A34A; }
+    
+    .stack-viz {
+      background: #F1F5F9;
+      border: 2px dashed #94A3B8;
+      border-radius: 8px;
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 14px;
+    }
+    .stack-item {
+      width: 80%;
+      padding: 8px 12px;
+      text-align: center;
+      font-size: 13px;
+      font-weight: 700;
+      border-radius: 6px;
+      border: 1px solid #CBD5E1;
+      position: relative;
+    }
+    .stack-top {
+      background: #DBEAFE;
+      color: #1D4ED8;
+      border-color: #3B82F6;
+    }
+    .stack-mid {
+      background: #FFFFFF;
+      color: #334155;
+    }
+    .stack-base {
+      background: #F1F5F9;
+      color: #64748B;
+      border-bottom: 3px solid #64748B;
+    }
+    .pointer-tag {
+      position: absolute;
+      right: -80px;
+      top: 6px;
+      font-size: 11px;
+      font-weight: 800;
+      color: #DC2626;
+      background: #FEE2E2;
+      padding: 2px 6px;
+      border-radius: 4px;
+      border: 1px solid #FCA5A5;
+    }
+    .op-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 12.5px;
+    }
+    .op-list li {
+      padding: 8px 10px;
+      border-radius: 6px;
+      background: #F8FAFC;
+      border-left: 3px solid #0066FF;
+    }
+    .op-list strong { color: #0F2C59; }
+
+    .impl-box {
+      border: 1px solid #E2E8F0;
+      border-radius: 8px;
+      padding: 10px;
+      margin-bottom: 10px;
+      background: #FAFAFA;
+    }
+    .impl-header {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      font-weight: 700;
+      color: #1E293B;
+      margin-bottom: 6px;
+    }
+    .tag {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 10px;
+    }
+    .tag-blue { background: #DBEAFE; color: #1D4ED8; }
+    .tag-green { background: #DCFCE7; color: #15803D; }
+    .tag-purple { background: #F3E8FF; color: #7E22CE; }
+    .code-snip {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 11.5px;
+      background: #1E293B;
+      color: #F8FAFC;
+      padding: 6px 10px;
+      border-radius: 6px;
+      margin-bottom: 4px;
+    }
+    .impl-desc {
+      font-size: 11.5px;
+      color: #475569;
+      line-height: 1.35;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 11.5px;
+      margin-top: 4px;
+    }
+    th {
+      background: #0F2C59;
+      color: white;
+      text-align: left;
+      padding: 8px 10px;
+      font-weight: 700;
+    }
+    th:first-child { border-top-left-radius: 6px; }
+    th:last-child { border-top-right-radius: 6px; }
+    td {
+      padding: 7px 10px;
+      border-bottom: 1px solid #E2E8F0;
+      color: #334155;
+    }
+    tr:nth-child(even) td { background: #F8FAFC; }
+    .comp-o1 {
+      font-weight: 700;
+      color: #16A34A;
+      font-family: ui-monospace, SFMono-Regular, monospace;
+    }
+    .comp-on {
+      font-weight: 700;
+      color: #DC2626;
+      font-family: ui-monospace, SFMono-Regular, monospace;
+    }
+    .trap-callout {
+      margin-top: 10px;
+      background: #FEF3C7;
+      border: 1px solid #FCD34D;
+      border-radius: 8px;
+      padding: 10px 12px;
+      font-size: 11.5px;
+      color: #92400E;
+      line-height: 1.4;
+    }
+    .trap-callout strong { color: #78350F; }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="title-group">
+      <h1>Stack ADT: Operations, Implementations & Complexity Analysis</h1>
+      <p>Unit 2: Fundamental LIFO Mechanics, Built-in Structures, Time/Space Invariants & Boundary Guards</p>
+    </div>
+    <div class="badge">CUET UG CS · UNIT 2 MATRIX</div>
+  </div>
+
+  <div class="grid">
+    <!-- COLUMN 1 -->
+    <div class="card">
+      <div class="card-title">
+        <span class="icon icon-blue">1</span>
+        Stack ADT & Primitive Operations
+      </div>
+
+      <div class="stack-viz">
+        <div class="stack-item stack-top">
+          Element C (Top of Stack)
+          <span class="pointer-tag">&larr; TOP</span>
+        </div>
+        <div class="stack-item stack-mid">Element B</div>
+        <div class="stack-item stack-base">Element A (Stack Base)</div>
+      </div>
+
+      <ul class="op-list">
+        <li>
+          <strong>push(item):</strong> Adds an element to the logical top. Shifts Top pointer to $(Top + 1)$. Triggers <em>Overflow</em> if capacity is bounded and full.
+        </li>
+        <li>
+          <strong>pop():</strong> Removes and returns the top element. Shifts Top to $(Top - 1)$. Triggers <em>Underflow</em> if stack is already empty.
+        </li>
+        <li>
+          <strong>peek() / top():</strong> Returns the top item without removing it. Essential for evaluating precedence in expression conversion.
+        </li>
+        <li>
+          <strong>is_empty():</strong> Returns Boolean `True` if element count equals 0. Guard against underflow runtime exceptions.
+        </li>
+        <li>
+          <strong>size():</strong> Returns the total number of elements currently residing on the stack.
+        </li>
+      </ul>
+    </div>
+
+    <!-- COLUMN 2 -->
+    <div class="card">
+      <div class="card-title">
+        <span class="icon icon-amber">2</span>
+        Python Implementation Paradigms
+      </div>
+
+      <div class="impl-box">
+        <div class="impl-header">
+          <span>Python Dynamic List (`list`)</span>
+          <span class="tag tag-blue">Standard / CUET Default</span>
+        </div>
+        <div class="code-snip">s.append(x) | s.pop() | s[-1]</div>
+        <div class="impl-desc">
+          Uses dynamic contiguous array. Amortized $O(1)$ push/pop at the end. Over-allocation resizing creates rare $O(N)$ memory copies. Guard: `if not s: Underflow`.
+        </div>
+      </div>
+
+      <div class="impl-box">
+        <div class="impl-header">
+          <span>collections.deque (Double-ended Queue)</span>
+          <span class="tag tag-green">High Performance</span>
+        </div>
+        <div class="code-snip">dq.append(x) | dq.pop() | dq[-1]</div>
+        <div class="impl-desc">
+          Doubly-linked block buffer (64 items per node). Strictly $O(1)$ push/pop with zero resizing latency spikes. Superior memory efficiency for massive pipelines.
+        </div>
+      </div>
+
+      <div class="impl-box">
+        <div class="impl-header">
+          <span>queue.LifoQueue</span>
+          <span class="tag tag-purple">Thread-Safe</span>
+        </div>
+        <div class="code-snip">q.put(x) | q.get() | q.empty()</div>
+        <div class="impl-desc">
+          Synchronized wrapper with mutex locks. Enforces thread safety in multi-threaded concurrency at the cost of execution locking overhead.
+        </div>
+      </div>
+    </div>
+
+    <!-- COLUMN 3 -->
+    <div class="card">
+      <div class="card-title">
+        <span class="icon icon-green">3</span>
+        Complexity & Operational Invariants
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Operation</th>
+            <th>List End</th>
+            <th>List Front</th>
+            <th>deque</th>
+            <th>Linked List</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>push(x)</strong></td>
+            <td class="comp-o1">O(1)*</td>
+            <td class="comp-on">O(N)</td>
+            <td class="comp-o1">O(1)</td>
+            <td class="comp-o1">O(1)</td>
+          </tr>
+          <tr>
+            <td><strong>pop()</strong></td>
+            <td class="comp-o1">O(1)</td>
+            <td class="comp-on">O(N)</td>
+            <td class="comp-o1">O(1)</td>
+            <td class="comp-o1">O(1)</td>
+          </tr>
+          <tr>
+            <td><strong>peek()</strong></td>
+            <td class="comp-o1">O(1)</td>
+            <td class="comp-o1">O(1)</td>
+            <td class="comp-o1">O(1)</td>
+            <td class="comp-o1">O(1)</td>
+          </tr>
+          <tr>
+            <td><strong>is_empty()</strong></td>
+            <td class="comp-o1">O(1)</td>
+            <td class="comp-o1">O(1)</td>
+            <td class="comp-o1">O(1)</td>
+            <td class="comp-o1">O(1)</td>
+          </tr>
+          <tr>
+            <td><strong>Space Overhead</strong></td>
+            <td>Low (Cache)</td>
+            <td>Low</td>
+            <td>Medium</td>
+            <td>High (Pointers)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="trap-callout">
+        <strong>CUET Fatal Trap: List Index 0 as Stack Top!</strong><br>
+        If a program implements stack push via `list.insert(0, item)` and pop via `list.pop(0)`, every operation forces an $O(N)$ memory element shift across the entire array! The Pythonic stack strictly treats index `-1` (end of list) as the Top of Stack ($O(1)$ amortized).
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
